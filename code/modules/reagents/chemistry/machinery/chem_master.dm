@@ -170,7 +170,7 @@
 			ui.open()
 	else
 		if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_master/condimaster))
-			to_chat(user, span_warning("The legion has no use for drugs! Better to destroy it."))
+			to_chat(user, span_warning("You stare at a machine you'll never understand."))
 			return
 		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ) && !istype(src, /obj/machinery/chem_master/condimaster))
 			to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))

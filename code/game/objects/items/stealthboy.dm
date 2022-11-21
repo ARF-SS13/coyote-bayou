@@ -9,51 +9,113 @@
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	var/mob/living/carbon/human/user = null
-	var/charge = 350
-	var/max_charge = 350
+	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high
+	var/use_per_tick = 400 // normal cell has 10000 charge, 200 charge/second = 50 seconds of stealth
 	var/on = FALSE
-	var/old_alpha = 0
 	actions_types = list(/datum/action/item_action/stealthboy_cloak)
 
+/obj/item/stealthboy/Initialize()
+	. = ..()
+	if(ispath(cell))
+		cell = new cell(src)
+
+/obj/item/stealthboy/Destroy()
+	. = ..()
+	var/mob/living/carbon/human/user = loc
+	if(ishuman(user))
+		user.alpha = initial(user.alpha)
+
 /obj/item/stealthboy/ui_action_click(mob/user)
+	if(!ishuman(user))
+		return
 	if(user.get_item_by_slot(SLOT_BELT) == src)
-		if(!on)
-			Activate(usr)
+		on = !on
+		if(on)
+			Activate(user)
 		else
-			Deactivate()
+			Deactivate(user)
 	return
+
+/obj/item/stealthboy/AltClick(mob/living/user)
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return ..()
+	eject_cell(user)
+	return
+
+/obj/item/stealthboy/proc/eject_cell(mob/living/user)
+	if(!cell)
+		to_chat(user, span_warning("[src] has no cell installed."))
+		return
+	if(on && user.get_item_by_slot(SLOT_BELT) == src)
+		Deactivate(user)
+	cell.add_fingerprint(user)
+	user.put_in_hands(cell)
+	user.show_message(span_notice("You remove [cell]."))
+	cell = null
+
+/obj/item/stealthboy/proc/insert_cell(mob/living/user, obj/item/stock_parts/cell/new_cell)
+	if(cell)
+		eject_cell(user)
+	if(user.transferItemToLoc(new_cell, src))
+		cell = new_cell
+		to_chat(user, span_notice("You successfully install \the [cell] into [src]."))
+
+/obj/item/stealthboy/attackby(obj/item/I, mob/living/carbon/human/user, params)
+	if(istype(I, /obj/item/stock_parts/cell))
+		insert_cell(user, I)
+		return
+	. = ..()
 
 /obj/item/stealthboy/item_action_slot_check(slot, mob/user)
 	if(slot == SLOT_BELT)
 		return 1
 
+/obj/item/stealthboy/examine(mob/user)
+	. = ..()
+	if(istype(cell))
+		. += "The charge meter reads [round(cell.percent() )]%."
+
 /obj/item/stealthboy/proc/Activate(mob/living/carbon/human/user)
 	if(!user)
+		Deactivate(FALSE)
+		return
+	if(!istype(cell))
+		user.show_message(span_alert("There's no cell in [src]!"))
+		Deactivate(FALSE)
+		return
+	if(!cell.use(use_per_tick))
+		user.show_message(span_alert("There's not enough power in [src]'s [cell.name]!"))
+		Deactivate(FALSE)
 		return
 	to_chat(user, span_notice("You activate \The [src]."))
-	src.user = user
+	animate(user, alpha = 0, time = 3 SECONDS)
 	START_PROCESSING(SSobj, src)
-	old_alpha = user.alpha
 	on = TRUE
 
-/obj/item/stealthboy/proc/Deactivate()
+/obj/item/stealthboy/proc/Deactivate(mob/living/carbon/human/user)
+	if(!ishuman(user))
+		user = loc
+		if(!ishuman(user))
+			return
+	animate(user, alpha = initial(user.alpha), time = 3 SECONDS)
 	to_chat(user, span_notice("You deactivate \The [src]."))
 	STOP_PROCESSING(SSobj, src)
-	if(user)
-		user.alpha = old_alpha
 	on = FALSE
-	user = null
 
 /obj/item/stealthboy/dropped(mob/user)
 	..()
-	if(user && user.get_item_by_slot(SLOT_BELT) != src)
-		Deactivate()
+	Deactivate(user)
+
+/obj/item/stealthboy/equipped(mob/user, slot)
+	. = ..()
+	if(user?.get_item_by_slot(SLOT_BELT) != src)
+		Deactivate(user)
 
 /obj/item/stealthboy/process()
-	if(user.get_item_by_slot(SLOT_BELT) != src)
+	var/mob/living/carbon/human/user = loc
+	if(!ishuman(user) || user.get_item_by_slot(SLOT_BELT) != src)
 		Deactivate()
 		return
-	if(on)
-		animate(user,alpha = CLAMP(255 - charge,0,255),time = 10)
-		charge = max(0,charge - 4)
+	if((!istype(cell) || !cell?.use(use_per_tick)))
+		Deactivate(user)
+		return

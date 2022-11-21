@@ -307,3 +307,83 @@
 	time = 100
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
+
+/datum/crafting_recipe/fiery_purgative
+	name = "Fiery purgative"
+	result = /obj/item/reagent_containers/pill/fiery_purgative
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/horsenettle = 1,
+				/obj/item/reagent_containers/food/snacks/grown/feracactus = 1, //this will have to do in lieu of wild jalapenos
+				/datum/reagent/consumable/ethanol/vodka = 50) //distill this from fermented punga
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/fiery_purgative5
+	name = "Fiery purgative (x5)"
+	result = /obj/item/storage/box/medicine/fiery_purgative5
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/horsenettle = 5,
+				/obj/item/reagent_containers/food/snacks/grown/feracactus = 5,
+				/datum/reagent/consumable/ethanol/vodka = 250)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_MEDICAL
+
+/obj/item/storage/box/medicine/fiery_purgative5
+	name = "box of fiery purgative"
+	desc = "A box full of fiery purgative."
+	icon = 'icons/fallout/objects/storage.dmi'
+	icon_state = "leather_bag"
+	illustration = null
+
+/obj/item/storage/box/medicine/fiery_purgative5/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/fiery_purgative(src)
+
+/datum/crafting_recipe/antivenom
+	name = "Bottle antivenom"
+	result = /obj/item/reagent_containers/pill/antivenom
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
+				/obj/item/reagent_containers/food/snacks/grown/datura = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/antivenom
+	name = "Bottle antivenom"
+	result = /obj/item/reagent_containers/pill/antivenom
+	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2,
+				/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/antivenom5
+	name = "Bottle antivenom (x5)"
+	result = /obj/item/storage/box/medicine/antivenom5
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
+				/obj/item/reagent_containers/food/snacks/grown/datura = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/antivenom5_2
+	name = "Bottle antivenom (x5)"
+	result = /obj/item/storage/box/medicine/antivenom5
+	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 10,
+				/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_MEDICAL
+
+/obj/item/storage/box/medicine/antivenom5
+	name = "box of antivenom"
+	desc = "A box full of antivenom flasks."
+	icon = 'icons/fallout/objects/storage.dmi'
+	icon_state = "medicinebox_simple"
+	illustration = "overlay_bitter" // eventually will be changed to unique
+
+/obj/item/storage/box/medicine/antivenom5/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/antivenom(src)

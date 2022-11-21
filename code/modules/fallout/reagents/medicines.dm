@@ -282,19 +282,23 @@
 
 /datum/reagent/medicine/radaway
 	name = "Radaway"
-
 	description = "A potent anti-toxin drug."
 	reagent_state = LIQUID
 	color = "#ff7200"
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 2.5 * REAGENTS_METABOLISM //1u per tick. quite weak per single unit, but bloodbags have 200u. IV stands should inject twice as fast if using a bloodbag.
 	ghoulfriendly = TRUE
 
+/datum/reagent/medicine/radaway/reaction_mob(mob/living/M, method=INJECT, reac_volume) //40% of radaway only works if injected or via IV
+	if(iscarbon(M))
+		if(M.stat == DEAD) // Doesnt work on the dead
+			return
+		if(method != INJECT) // Gotta be injected
+			return
+		M.radiation = max(M.radiation - (reac_volume*2), 0) //two times reaction volume, double check my work
+	..()
+
 /datum/reagent/medicine/radaway/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
-	M.radiation -= min(M.radiation, 16)
-	if(ishuman(M) && prob(7))
-		var/mob/living/carbon/human/H = M
-		H.confused = max(M.confused, 3)
+	M.radiation = max(M.radiation - 3, 0) //the other 60% works if drank or otherwise overtime
 	. = TRUE
 	..()
 
@@ -578,3 +582,78 @@
 /datum/reagent/medicine/gaia/overdose_start(mob/living/M)
 	metabolization_rate = 15 * REAGENTS_METABOLISM
 	..()
+
+/datum/reagent/medicine/punga_extract
+	name = "Punga Extract"
+	description = "A tasty and refreshing but addictive drink. Be careful not to drink too much at once."
+	reagent_state = LIQUID
+	color = "#B8EF1B" //think this is gud color
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	taste_description = "refreshing citrus"
+	addiction_threshold = 11 //safe to eat two whole fruits or one farm grown fruit
+	pH = 5 //mild citrus
+	ghoulfriendly = TRUE
+	var/punga_power = 4
+
+/datum/reagent/medicine/punga_extract/on_mob_life(mob/living/carbon/M)
+	if(HAS_TRAIT(M, TRAIT_PUNGAPOWER))
+		punga_power = 10
+	if(M.radiation > 0)
+		M.radiation = max(M.radiation - punga_power, 0) //half as strong as pentetic, twice as strong as potassium iodide
+	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0, TRUE) //we'll be nice to the slimes today
+	..()
+	. = 1
+
+/datum/reagent/medicine/punga_extract/on_addiction_start(mob/living/carbon/M)
+	if(iscarbon(M))
+		ADD_TRAIT(M, TRAIT_PUNGAPOWER, "pungaddiction")
+
+/datum/reagent/medicine/punga_extract/on_addiction_end(mob/living/carbon/M)
+	if(iscarbon(M))
+		REMOVE_TRAIT(M, TRAIT_PUNGAPOWER, "pungaddiction")
+
+/// Fiery Purgative - ultraviolent antitoxin
+/datum/reagent/medicine/fiery_purgative
+	name = "Fiery Purgative"
+	description = "A potent mixture that violently removes toxins and radioactive elements."
+	reagent_state = SOLID
+	color = "#e5f6df" //random color I pulled out my ass, which is mildly related to the plants used to make it
+	taste_description = "vile poison and alcohol"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+	var/list/misery_message = list(
+		"You feel miserable",
+		"A war wages on in your gut!",
+		"What have you put in your body?",
+		"It's working, but at what cost?",
+		"You feel ill.",
+		"Your insides hate you.",
+		"everything hurts.",
+		"You feel like you ate firecrackers.",
+		"It will all be over soon.",
+		"You feel like your intestines are dying.",
+		"Everything is purging in a fiery manner.",
+		"You're going to be severely dehydrated after this...")
+
+/datum/reagent/medicine/fiery_purgative/on_mob_life(mob/living/carbon/M) //this might be OP, but I had fun with it. will see
+	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	if(M.radiation > 0)
+		M.radiation = max(M.radiation - 16, 0) //this stuff is potent, but has side effects
+	for(var/A in M.reagents.reagent_list)
+		var/datum/reagent/R = A
+		if(R != src)
+			M.reagents.remove_reagent(R.type,3)
+	
+	M.disgust = max(M.disgust, 100) // instant violent pain
+	M.Dizzy(5)
+	M.Jitter(5)
+	M.adjust_nutrition(-5) //everything is leaving your body. everything.
+	if(M.getStaminaLoss() < 75)
+		M.adjustStaminaLoss(5*REAGENTS_EFFECT_MULTIPLIER) //double check syntax
+	if(prob(10))
+		to_chat(M, span_danger("[pick(misery_message)]"))
+	if(prob(25))
+		M.vomit()
+	..()
+	. = 1
+

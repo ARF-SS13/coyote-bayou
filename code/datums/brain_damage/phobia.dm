@@ -204,3 +204,11 @@
 /datum/brain_trauma/mild/phobia/conspiracies
 	phobia_type = "conspiracies"
 	random_gain = FALSE
+
+/datum/brain_trauma/mild/phobia/eye
+	phobia_type = "eye"
+	random_gain = FALSE
+
+/datum/brain_trauma/mild/phobia/cats
+	phobia_type = "cats"
+	random_gain = FALSE

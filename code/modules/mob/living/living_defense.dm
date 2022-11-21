@@ -18,13 +18,16 @@
 			armor = max(0, armor*(1-armour_penetration))
 		if(armor < 100)
 			armor = max(0, (100*armor/(100-armor)*(1-armour_penetration))/(armor/(100-armor)*(1-armour_penetration)+1))
-		if(penetrated_text)
+		if(penetrated_text && COOLDOWN_FINISHED(src, armor_message_antispam))
+			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
 			to_chat(src, span_danger("[penetrated_text]"))
 	else if(armor >= 100)
-		if(absorb_text)
+		if(absorb_text && COOLDOWN_FINISHED(src, armor_message_antispam))
+			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
 			to_chat(src, span_danger("[absorb_text]"))
 	else if(armor > 0)
-		if(soften_text)
+		if(soften_text && COOLDOWN_FINISHED(src, armor_message_antispam))
+			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
 			to_chat(src, span_danger("[soften_text]"))
 	return armor
 
@@ -80,6 +83,7 @@
 
 /mob/living/bullet_act(obj/item/projectile/P, def_zone)
 	var/totaldamage = P.damage
+	var/staminadamage = P.stamina
 	var/final_percent = 0
 	if(P.original != src || P.firer != src) //try to block or reflect the bullet, can't do so when shooting oneself
 		var/list/returnlist = list()
@@ -94,10 +98,13 @@
 			P.on_hit(src, final_percent, def_zone)
 			return BULLET_ACT_BLOCK
 		totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
+		staminadamage = block_calculate_resultant_damage(staminadamage, returnlist)
 	var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
 	var/dt = max(run_armor_check(def_zone, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
 	if(!P.nodamage)
 		apply_damage(totaldamage, P.damage_type, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = P.sharpness, damage_threshold = dt)
+		if(staminadamage)
+			apply_damage(staminadamage, STAMINA, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = SHARP_NONE, damage_threshold = dt)
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
 	var/missing = 100 - final_percent
@@ -148,8 +155,10 @@
 
 		if(!blocked)
 			if(!nosell_hit)
-				visible_message(span_danger("[src] is hit by [I]!"), \
-								span_userdanger("You're hit by [I]!"))
+				if(COOLDOWN_FINISHED(src, projectile_message_antispam))
+					COOLDOWN_START(src, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
+					visible_message(span_danger("[src] is hit by [I]!"), \
+									span_userdanger("You're hit by [I]!"))
 				if(!I.throwforce)
 					return
 				var/armor = run_armor_check(impacting_zone, "melee", "Your armor has protected your [parse_zone(impacting_zone)].", "Your armor has softened hit to your [parse_zone(impacting_zone)].",I.armour_penetration)

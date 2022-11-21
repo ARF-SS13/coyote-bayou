@@ -2,7 +2,7 @@
  * ARMOR DEFINES
  */
 
-/* Zero armor values 
+/* Zero armor values
  * * * * * * * * * * * */
 #define ARMOR_VALUE_ZERO list(\
 		"linemelee" = 0, \
@@ -54,9 +54,9 @@
 /* Light armor values
  * High mobility
  * Mild environmental resistances
- * Low defense 
+ * Low defense
  * Low DT
- * 
+ *
  * +20 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_LIGHT list(\
@@ -75,9 +75,9 @@
 /* Medium armor values
  * Decent mobility
  * Decent environmental resistances
- * Decent defense 
+ * Decent defense
  * Decent DT
- * 
+ *
  * +35 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_MEDIUM list(\
@@ -96,9 +96,9 @@
 /* Heavy armor values
  * Low mobility
  * Decent environmental resistances
- * High defense 
+ * High defense
  * Lot of DT
- * 
+ *
  * +45 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_HEAVY list(\
@@ -119,7 +119,7 @@
  * Good environmental resistances
  * Great defense
  * Lots of DT
- * 
+ *
  * +80 effective HP
  * +20 laser HP
  * * * * * * * * * * * */
@@ -140,7 +140,7 @@
  * High mobility
  * Amazing environmental resistances
  * OP defense
- * 
+ *
  * +125 effective HP
  * +25 laser HP
  * * * * * * * * * * * */
@@ -468,7 +468,7 @@
 /* Raider combat armor (rusty)
  * Resistant to bullet and laser
  * Less resistant to melee
- * 
+ *
  * decent DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY list(\
@@ -487,7 +487,7 @@
 /* Raider combat armor (good stuff)
  * Rusty combat armor, but better
  * For mango~
- * 
+ *
  * decent DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS list(\
@@ -507,7 +507,7 @@
  * Reinforced metal armor
  * Heavy melee and laser resist
  * less good bullet resist
- * 
+ *
  * high DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_METAL_ARMOR list(\
@@ -527,7 +527,7 @@
  * raider armor
  * leather armor, but less laser weak
  * Also resists plasma
- * 
+ *
  * Lowish DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_ARMOR list(\
@@ -547,7 +547,7 @@
  * Resistant to bullet and laser
  * Less resistant to melee
  * Pretty good, in general
- * 
+ *
  * decent DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR list(\
@@ -567,7 +567,7 @@
  * Resistant to bullet and laser
  * Less resistant to melee
  * Better in general
- * 
+ *
  * decent DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR_REINFORCED list(\
@@ -587,7 +587,7 @@
  * HEAVY melee / bullet resistance
  * less heavy laser resistance
  * Plasma melts thru
- * 
+ *
  * heavy DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR_SUPER list(\
@@ -606,7 +606,7 @@
 /* Renegade sniper armor
  * Generally low resistances
  * High laser / plasma resist tho
- * 
+ *
  * low DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RENEGADE_SNIPER_ARMOR list(\
@@ -626,7 +626,7 @@
  * Its power armor. Heavy. Fuckin. Power armor
  * Good luck
  * Plasma melts thru a little
- * 
+ *
  * heavy DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RENEGADE_POWER_ARMOR list(\
@@ -641,6 +641,25 @@
 		"acid" = 0, \
 		"wound" = 0, \
 		"damage_threshold" = 15)
+
+
+/* Ant
+ * Good melee / bullet resist
+ * meh laser / plas
+ * heavy DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_ANTS list(\
+		"melee" = 60, \
+		"bullet" = 50, \
+		"laser" = 10, \
+		"energy" = 10, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 5)
 
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values
@@ -858,53 +877,53 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 /* Armor slowdowns
  * * * * * * * * * * * */
 
-/* 
+/*
  * Global multiplier for armor slowdown
  * Change this, changes them all
 */
 #define ARMOR_SLOWDOWN_GLOBAL_MULT 1
 
-/* 
+/*
  * No slowdown
  * Yup
 */
 #define ARMOR_SLOWDOWN_NONE 0
 
-/* 
+/*
  * Light Armor
  * Basically clothes, but more
 */
 #define ARMOR_SLOWDOWN_LIGHT 0
 
-/* 
+/*
  * Medium Armor
  * Substantial armor
 */
 #define ARMOR_SLOWDOWN_MEDIUM 0.5
 
-/* 
+/*
  * Heavy Armor
  * Bulky suits of heavy armor
 */
 #define ARMOR_SLOWDOWN_HEAVY 1
 
-/* 
+/*
  * Salvaged Power Armor
  * Basically wearing a car
 */
 #define ARMOR_SLOWDOWN_SALVAGE 2
 
-/* 
+/*
  * Power Armor
  * Basically driving a car
 */
 #define ARMOR_SLOWDOWN_PA 1
 
 /* Armor slowdown modifiers
- * Multipliers to armor slowdown 
+ * Multipliers to armor slowdown
  * * * * * * * * * * * */
 
-/* 
+/*
  * Less armor slowdown, yay!
  * T1 - Slightly lighter materials, less clothes
  * T2 - Lightened materials, streamlined or something
@@ -914,7 +933,7 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 #define ARMOR_SLOWDOWN_LESS_T2 0.8
 #define ARMOR_SLOWDOWN_LESS_T3 0.7
 
-/* 
+/*
  * More armor slowdown, ack!
  * T1 - Heavier clothing or padding
  * T2 - Substantial extra plating
@@ -959,7 +978,7 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 #define HEAVY_STIFFNESS 2
 
 /// Damages DT is effective with
-GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire"))
+GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire", "oxy", "stamina"))
 
 /// All armor types
 GLOBAL_LIST_INIT(all_armor_types, list(

@@ -277,13 +277,17 @@
 			playsound(loc, hitsound, 5, TRUE, -1)
 		else if(suppressed)
 			playsound(loc, hitsound, 5, 1, -1)
-			to_chat(L, span_userdanger("You're shot by \a [src][organ_hit_text]!"))
+			if(COOLDOWN_FINISHED(L, projectile_message_antispam))
+				COOLDOWN_START(L, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
+				to_chat(L, span_userdanger("You're shot by \a [src][organ_hit_text]!"))
 		else
 			if(hitsound)
 				var/volume = vol_by_damage()
 				playsound(loc, hitsound, volume, 1, -1)
-			L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
-					span_userdanger("[L] is hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
+			if(COOLDOWN_FINISHED(L, projectile_message_antispam))
+				COOLDOWN_START(L, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
+				L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
+						span_userdanger("[L] is hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
 		if(candink && def_zone == BODY_ZONE_HEAD) //fortuna edit
 			var/playdink = rand(1, 10)
 			if(playdink <= 3)
@@ -299,7 +303,8 @@
 	else
 		L.log_message("has been shot by [firer] with [src]", LOG_ATTACK, color="orange")
 
-	return L.apply_effects(stun, knockdown, unconscious, irradiate, slur, stutter, eyeblur, drowsy, blocked, stamina, jitter, knockdown_stamoverride, knockdown_stam_max)
+	// stamina is handled elsewhere, no more armor piercing rubbers!
+	return L.apply_effects(stun, knockdown, unconscious, irradiate, slur, stutter, eyeblur, drowsy, blocked, 0, jitter, knockdown_stamoverride, knockdown_stam_max)
 
 /obj/item/projectile/proc/vol_by_damage()
 	if(src.damage)
@@ -501,7 +506,7 @@
 	else
 		pixels_tick_leftover = required_pixels
 
-/obj/item/projectile/proc/fire(angle, atom/direct_target)
+/obj/item/projectile/proc/fire(angle, atom/direct_target, spread_override)
 	if(fired_from)
 		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_BEFORE_FIRE, src, original)	//If no angle needs to resolve it from xo/yo!
 	if(LAZYLEN(embedding))//our embedding stats change, possibly
@@ -515,8 +520,8 @@
 			return
 	if(isnum(angle))
 		setAngle(angle)
-	if(spread)
-		setAngle(Angle + ((rand() - 0.5) * spread))
+	if(spread_override)
+		setAngle(Angle + rand(-spread_override, spread_override))
 	var/turf/starting = get_turf(src)
 	if(isnull(Angle))	//Try to resolve through offsets if there's no angle set.
 		if(isnull(xo) || isnull(yo))

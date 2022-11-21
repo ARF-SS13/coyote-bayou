@@ -20,6 +20,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	//mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/can_cover_up = TRUE
 	var/can_build_on = TRUE
+	sunlight_state = 1
 
 /turf/open/transparent/openspace/airless
 	initial_gas_mix = AIRLESS_ATMOS

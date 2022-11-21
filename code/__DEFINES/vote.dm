@@ -10,7 +10,8 @@
 #define SHOW_WINNER (1<<2)
 #define SHOW_ABSTENTION (1<<3)
 
-GLOBAL_LIST_INIT(vote_score_options,list("Bad","Poor","Acceptable","Good","Great"))
+GLOBAL_LIST_INIT(vote_score_options,list("Ginormo Megaballs","Couch-Sized Butts","Send Pizza","Bedlike Gazongas","Gerbils")) 
+//GLOBAL_LIST_INIT(vote_score_options,list("Bad","Poor","Acceptable","Good","Great"))
 
 GLOBAL_LIST_INIT(vote_type_names,list(\
 "Plurality (default)" = PLURALITY_VOTING,\

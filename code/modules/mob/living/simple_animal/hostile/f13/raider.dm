@@ -31,6 +31,9 @@
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 3.1
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
 	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
@@ -173,12 +176,15 @@
 	health = 150
 	extra_projectiles = 2
 	rapid_melee = 1
+	waddle_amount = 4
+	waddle_up_time = 2
+	waddle_side_time = 1
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	loot = list(/obj/item/gun/ballistic/automatic/smg/greasegun, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	move_to_delay = 4.0 //faster than average, but not a lot
-	retreat_distance = 2 //mob retreats 1 tile when in min distance
-	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 3 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	projectile_sound_properties = list(
@@ -244,6 +250,60 @@
 		"*growl",\
 		"*come",\
 		"Fuck em' up!"\
+		))
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates
+	name = "Blueberry Bates and his Bottom-Feeder Buys"
+	desc = "Hello, Blueberry Bates and his Bottom-Feeder Buys. Has a shotgun with APDS incendiary slugs and is ready to fucking kill you."
+	icon_state = "blueberry_bates"
+	icon_living = "blueberry_bates"
+	icon_dead = "blueberry_bates_dead"
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
+	move_to_delay = 4 //S L O W
+	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	maxHealth = 200 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
+	health = 200
+	extra_projectiles = 0
+	retreat_distance = 3
+	minimum_distance = 3
+	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
+	speak_emote = list(
+		"mutters",
+		"counts his caps to himself",
+		"yells at someone to pick up the pace",
+		"barks",
+		"grumbles",
+		"grouches"
+		)
+	emote_see = list(
+		"chitters",
+		"idly gnaws on a hat",
+		)
+	attack_verb_simple = list(
+		"bayonets",
+		"smacks",
+		"bites",
+		"mauls",
+		"slashes",
+		"thrashes",
+		"bashes",
+		"glomps",
+		"robusts on"
+		)
+	variation_list = list() // so he keeps his stupid name
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates/Aggro()
+	..()
+	summon_backup(15)
+	say(pick(\
+		"TO ME, BOYS!",\
+		"KICK THEIR ASS!",\
+		"Fuck 'em up!",\
+		"*chitter",\
+		"*kyaa",\
+		"*come",\
+		"YOU'RE ABOUT TO GET A DISCOUNT ON A GRAVE, BUDDY!",\
 		))
 
 // RANGED RAIDER WITH ARMOR

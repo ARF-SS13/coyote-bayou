@@ -225,6 +225,12 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	if(prob(30))
 		to_chat(M, span_boldannounce("You're not feeling good at all! You really need some [name]."))
 
+/datum/reagent/proc/on_addiction_start(mob/living/M)
+	return
+
+/datum/reagent/proc/on_addiction_end(mob/living/M)
+	return
+
 /**
  * New, standardized method for chemicals to affect hydroponics trays.
  * Defined on a per-chem level as opposed to by the tray.

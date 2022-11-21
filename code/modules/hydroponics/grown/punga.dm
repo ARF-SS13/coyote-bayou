@@ -18,12 +18,13 @@
 	icon_dead = "punga-dead"
 	icon_harvest = "punga-harvest"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/medicine/charcoal = 0.1, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/radaway = 0.05)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/punga_extract = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/pungafruit
 	seed = /obj/item/seeds/punga
 	name = "pungafruit"
-	desc = "Punga fruit plants flower at a single point at the terminus of their stems, gradually developing into large, fleshy fruits with a yellow/brown, thick skin. They are common throughout Point Lookout, due to the unique conditions offered by the swamps, and scrub radiation when ingested."
+	desc = "A leathery, green fruit, with an excellent taste and radiation cleansing properties, but highly addictive."
 	icon_state = "Punga Fruit"
 	filling_color = "#FF6347"
-	juice_results = list(/datum/reagent/consumable/ethanol/pungajuice = 0)
+	juice_results = list(/datum/reagent/medicine/potass_iodide = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/vodka

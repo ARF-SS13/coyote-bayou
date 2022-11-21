@@ -113,6 +113,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/diamond
 	material_type = /datum/material/diamond
 	walltype = /turf/closed/wall/mineral/diamond
+	custom_price = 100
 
 GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	new/datum/stack_recipe("diamond door", /obj/structure/mineral_door/transparent/diamond, 10, one_per_turf = 1, on_floor = 1), \
@@ -126,6 +127,12 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 /obj/item/stack/sheet/mineral/diamond/get_main_recipes()
 	. = ..()
 	. += GLOB.diamond_recipes
+
+/obj/item/stack/sheet/mineral/diamond/twentyfive
+	amount = 25
+
+/obj/item/stack/sheet/mineral/diamond/fifty
+	amount = 50
 
 /*
  * Uranium
@@ -143,6 +150,7 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/uranium
 	material_type = /datum/material/uranium
 	walltype = /turf/closed/wall/mineral/uranium
+	custom_price = 40
 
 GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	new/datum/stack_recipe("uranium door", /obj/structure/mineral_door/uranium, 10, one_per_turf = 1, on_floor = 1), \
@@ -155,6 +163,12 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 /obj/item/stack/sheet/mineral/uranium/get_main_recipes()
 	. = ..()
 	. += GLOB.uranium_recipes
+
+/obj/item/stack/sheet/mineral/uranium/twentyfive
+	amount = 25
+
+/obj/item/stack/sheet/mineral/uranium/fifty
+	amount = 50
 
 /*
  * Plasma
@@ -173,6 +187,7 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/plasma
 	material_type = /datum/material/plasma
 	walltype = /turf/closed/wall/mineral/plasma
+	custom_price = 45
 
 /obj/item/stack/sheet/mineral/plasma/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins licking \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -201,6 +216,12 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 /obj/item/stack/sheet/mineral/plasma/fire_act(exposed_temperature, exposed_volume)
 	atmos_spawn_air("plasma=[amount*10];TEMP=[exposed_temperature]")
 	qdel(src)
+
+/obj/item/stack/sheet/mineral/plasma/twentyfive
+	amount = 25
+
+/obj/item/stack/sheet/mineral/plasma/fifty
+	amount = 50
 
 /*
  * Gold
@@ -234,6 +255,12 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	. = ..()
 	. += GLOB.gold_recipes
 
+/obj/item/stack/sheet/mineral/gold/twnetyfive
+	amount = 25
+
+/obj/item/stack/sheet/mineral/gold/fifty
+	amount = 50
+
 /*
  * Silver
  */
@@ -250,6 +277,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	material_type = /datum/material/silver
 	tableVariant = /obj/structure/table/optable
 	walltype = /turf/closed/wall/mineral/silver
+	custom_price = 45
 
 GLOBAL_LIST_INIT(silver_recipes, list ( \
 	new/datum/stack_recipe("silver door", /obj/structure/mineral_door/silver, 10, one_per_turf = 1, on_floor = 1), \
@@ -265,6 +293,12 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 /obj/item/stack/sheet/mineral/silver/get_main_recipes()
 	. = ..()
 	. += GLOB.silver_recipes
+
+/obj/item/stack/sheet/mineral/silver/twentyfive
+	amount = 25
+
+/obj/item/stack/sheet/mineral/silver/fifty
+	amount = 50
 
 /*
  * Titanium
@@ -297,6 +331,9 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	. = ..()
 	. += GLOB.titanium_recipes
 
+/obj/item/stack/sheet/mineral/titanium/twentyfive
+	amount = 25
+
 /obj/item/stack/sheet/mineral/titanium/fifty
 	amount = 50
 
@@ -319,6 +356,9 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	point_value = 45
 	merge_type = /obj/item/stack/sheet/mineral/plastitanium
 	walltype = /turf/closed/wall/mineral/plastitanium
+
+/obj/item/stack/sheet/mineral/plastitanium/twentyfive
+	amount = 25
 
 /obj/item/stack/sheet/mineral/plastitanium/fifty
 	amount = 50

@@ -534,6 +534,14 @@
 			if("shade")
 				M.change_mob_type( /mob/living/simple_animal/shade , null, null, delmob )
 
+	/////////////////////////////////////removes player profile pic
+	else if(href_list["removeProfilePic"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		if(alert(usr, "Are you sure you want to remove their profile picture?", "Confirmation", "Yes", "No") == "Yes")
+			var/mob/living/carbon/human/H = locate(href_list["removeProfilePic"])
+			H.RemoveProfilePic()
 
 	/////////////////////////////////////new ban stuff
 	else if(href_list["unbanf"])

@@ -455,7 +455,7 @@
 	name = "green stripper outfit"
 	path = /obj/item/clothing/under/misc/stripper/green
 	cost = 5
-/*
+
 /datum/gear/uniform/qipao
 	name = "Qipao, Black"
 	path = /obj/item/clothing/under/costume/qipao
@@ -491,7 +491,7 @@
 	path = /obj/item/clothing/under/costume/cheongsam/red
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 	cost = 3
-*/
+
 
 /datum/gear/uniform/dress/black
 	name = "black dress"
@@ -512,7 +512,7 @@
 /datum/gear/uniform/bathrobe
 	name = "bathrobe"
 	path = /obj/item/clothing/under/misc/bathrobe
-/*
+
 /datum/gear/uniform/kimono
 	name = "Kimono"
 	path = /obj/item/clothing/under/costume/kimono
@@ -532,7 +532,7 @@
 /datum/gear/uniform/kimono/sakura
 	name = "Sakura kimono"
 	path = /obj/item/clothing/under/costume/kimono/sakura
-*/
+
 
 //POLICE
 
@@ -1161,3 +1161,49 @@
 	path = /obj/item/clothing/under/f13/female/whitelegs
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/kimono/red
+	name = "Red Kimono"
+	path = /obj/item/clothing/under/kimono/red
+	cost = 0
+
+/datum/gear/uniform/kimono/orange
+	name = "Orange Kimono"
+	path = /obj/item/clothing/under/kimono/orange
+	cost = 0
+
+/datum/gear/uniform/kimono/yellow
+	name = "Yellow Kimono"
+	path = /obj/item/clothing/under/kimono/yellow
+	cost = 0
+
+/datum/gear/uniform/kimono/green
+	name = "Green Kimono"
+	path = /obj/item/clothing/under/kimono/green
+	cost = 0
+
+/datum/gear/uniform/kimono/blue
+	name = "Blue Kimono"
+	path = /obj/item/clothing/under/kimono/blue
+	cost = 0
+
+/datum/gear/uniform/kimono/purple
+	name = "Purple Kimono"
+	path = /obj/item/clothing/under/kimono/purple
+	cost = 0
+
+/datum/gear/uniform/kimono/violet
+	name = "Violet Kimono"
+	path = /obj/item/clothing/under/kimono/violet
+	cost = 0
+
+/datum/gear/uniform/kimono/pink
+	name = "Pink Kimono"
+	path = /obj/item/clothing/under/kimono/pink
+	cost = 0
+
+/datum/gear/uniform/kimono/earth
+	name = "Earth Kimono"
+	path = /obj/item/clothing/under/kimono/earth
+	cost = 0
+

@@ -68,16 +68,16 @@
 // Saltpetre Tribal Edition
 /datum/reagent/alacritous_compost
 	name = "alacritous compost"
-	description = "A strange mixture of compost, ashes and pungajuice. This potent mixture will hasten the plant's harvest while increasing the yield."
+	description = "A strange mixture of compost, ashes and pink pulque. This potent mixture will hasten the plant's harvest while increasing the yield."
 	reagent_state = "LIQUID"
-	color = "#4CB529"
-	taste_description = "cool, salty rot"
+	color = "#ECACEC"
+	taste_description = "cool, semisweet rot"
 
 //Making Saltpetre Tribal Edition
 /datum/chemical_reaction/alacritous_compost
 	id = /datum/reagent/alacritous_compost
 	results = list(/datum/reagent/alacritous_compost = 3)
-	required_reagents = list(/datum/reagent/ash = 1, /datum/reagent/consumable/ethanol/pungajuice = 1, /datum/reagent/compost = 1)
+	required_reagents = list(/datum/reagent/ash = 1, /datum/reagent/consumable/ethanol/pinkpulque = 1, /datum/reagent/compost = 1)
 	mix_message = "The compost starts smelling like manure"
 
 // If added to tray

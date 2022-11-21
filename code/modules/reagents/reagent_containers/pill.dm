@@ -290,3 +290,19 @@
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_buff"
 	list_reagents = list(/datum/reagent/drug/buffout = 10)
+
+/obj/item/reagent_containers/pill/fiery_purgative
+	name = "Fiery purgative"
+	desc = "A home remedy that has been specially mixed to purge many things from the body. use at your own risk."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "patch_berserkpowder"
+	list_reagents = list(/datum/reagent/medicine/fiery_purgative = 10)
+	self_delay = 5
+
+/obj/item/reagent_containers/pill/antivenom // 25 tox heal and 25u purged toxins
+	name = "Antivenom"
+	desc = "A specially prepared solution that stimulates the production of antibodies to fight venoms and poisons."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "patch_bitterdrink" //awaiting unique icon for antivenom
+	list_reagents = list(/datum/reagent/medicine/antitoxin = 5)
+	self_delay = 5

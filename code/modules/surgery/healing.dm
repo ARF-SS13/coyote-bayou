@@ -29,22 +29,26 @@
 	time = 15
 	var/brutehealing = 0
 	var/burnhealing = 0
+	var/woundhealing = 5
 	var/missinghpbonus = 0 //heals an extra point of damager per X missing damage of type (burn damage for burn healing, brute for brute). Smaller Number = More Healing!
 
 /datum/surgery_step/heal/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	var/woundtype
-	if(brutehealing && burnhealing)
-		woundtype = "wounds"
-	else if(brutehealing)
-		woundtype = "bruises"
-	else //why are you trying to 0,0...?
-		woundtype = "burns"
+	var/list/woundtype
+	if(woundhealing && target.getBleedLoss())
+		woundtype += "wounds"
+	if(brutehealing && target.getBruteLoss())
+		woundtype += "bruises"
+	if(burnhealing && target.getFireLoss())
+		woundtype += "burns"
+	if(!LAZYLEN(woundtype)) //why are you trying to 0,0...?
+		woundtype += "injuries"
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
+		var/woundtype_out = "[english_list(woundtype)]"
 		if(!the_surgery.antispam)
-			display_results(user, target, span_notice("You attempt to patch some of [target]'s [woundtype]."),
-		span_notice("[user] attempts to patch some of [target]'s [woundtype]."),
-		span_notice("[user] attempts to patch some of [target]'s [woundtype]."))
+			display_results(user, target, span_notice("You attempt to patch some of [target]'s [woundtype_out]."),
+		span_notice("[user] attempts to patch some of [target]'s [woundtype_out]."),
+		span_notice("[user] attempts to patch some of [target]'s [woundtype_out]."))
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(..())
@@ -57,7 +61,7 @@
 	var/tmsg = "[user] fixes some of [target]'s wounds" //see above
 	var/urhealedamt_brute = brutehealing
 	var/urhealedamt_burn = burnhealing
-	var/urhealedamt_bleed = (brutehealing > burnhealing ? brutehealing : burnhealing)
+	var/urhealedamt_bleed = woundhealing
 	if(missinghpbonus)
 		if(target.stat != DEAD)
 			urhealedamt_brute += round((target.getBruteLoss()/ missinghpbonus),0.1)
@@ -86,13 +90,13 @@
 	display_results(user, target, span_warning("You screwed up!"),
 		span_warning("[user] screws up!"),
 		span_notice("[user] fixes some of [target]'s wounds."), TRUE)
-	var/urdamageamt_burn = brutehealing * 0.8
-	var/urdamageamt_brute = burnhealing * 0.8
+	var/urdamageamt_burn = (burnhealing * 0.8) + woundhealing
+	var/urdamageamt_brute = (brutehealing * 0.8) + woundhealing
 	if(missinghpbonus)
 		urdamageamt_brute += round((target.getBruteLoss()/ (missinghpbonus*2)),0.1)
 		urdamageamt_burn += round((target.getFireLoss()/ (missinghpbonus*2)),0.1)
 
-	target.take_bodypart_damage(urdamageamt_brute, urdamageamt_burn, wound_bonus=CANT_WOUND)
+	target.take_bodypart_damage(urdamageamt_brute, urdamageamt_burn, wound_bonus = woundhealing, sharpness = pick(SHARP_EDGED, SHARP_POINTY))
 	return FALSE
 
 /***************************BRUTE***************************/

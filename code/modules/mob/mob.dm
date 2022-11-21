@@ -41,6 +41,11 @@
 	update_movespeed(TRUE)
 	become_hearing_sensitive()
 
+/mob/ComponentInitialize()
+	. = ..()
+	if(!isnull(waddle_amount) && !isnull(waddle_up_time) && !isnull(waddle_side_time))
+		AddComponent(/datum/component/waddling, waddle_amount, waddle_up_time, waddle_side_time)
+
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
 
@@ -151,8 +156,8 @@
 		hearers -= src
 
 	var/raw_msg = message
-	if(visible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b> [message]</span>"
+	//if(visible_message_flags & EMOTE_MESSAGE)
+	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 
 	for(var/mob/M in hearers)
 		if(!M.client)
@@ -196,8 +201,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(self_message)
 		hearers -= src
 	var/raw_msg = message
-	if(audible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b> [message]</span>"
+	//if(audible_message_flags & EMOTE_MESSAGE)
+	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags) && M.can_hear())
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)

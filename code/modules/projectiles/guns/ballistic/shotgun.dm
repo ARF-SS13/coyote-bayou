@@ -32,7 +32,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 
-	gun_skill_check = AFFECTED_BY_FAST_PUMP
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	can_scope = FALSE
 	flags_1 =  CONDUCT_1
 	casing_ejector = FALSE
@@ -115,7 +115,7 @@
 
 /// Pump if click with empty thing
 /obj/item/gun/ballistic/shotgun/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	if(chambered)
+	if(chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP))
 		attack_self(user)
 	else
 		..()

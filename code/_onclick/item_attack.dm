@@ -91,44 +91,47 @@
 		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
-	var/bigleagues = 10 //flat additive
-	var/littleleagues = 5
-	var/gentle = -5
-	var/wimpy = -10
-	var/FEVbonus = force*0.35 //used to be a flat additive of 20. changed after someone beat someone to death with a book. TODO: balance this further, possibly with a switch statement depending on force value
-	var/buffout = force*0.25
-	var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
-	var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
+	//var/bigleagues = 10 //flat additive
+	//var/littleleagues = 5
+	//var/gentle = -5
+	//var/wimpy = -10
+	//var/FEVbonus = force*0.35 //used to be a flat additive of 20. changed after someone beat someone to death with a book. TODO: balance this further, possibly with a switch statement depending on force value
+	//var/buffout = force*0.25
+	//var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
+	//var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
 
 	//var/regular = force*(user.special_s/100)//SPECIAL integration
 
 	//force += regular//SPECIAL integration
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-		force += bigleagues
+	var/force_modifier = 0
+	if(force >= 5)
+		if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
+			force_modifier += 10
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
-		force += littleleagues
+		if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
+			force_modifier += 5
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GENTLE))
-		force += gentle
+		if(HAS_TRAIT(user, TRAIT_GENTLE))
+			force_modifier += -5
 
-	if (force >= 10 && HAS_TRAIT(user, TRAIT_WIMPY))
-		force += wimpy
+		if(HAS_TRAIT(user, TRAIT_WIMPY))
+			force_modifier += -10
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-		force += buffout
+		if(HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
+			force_modifier += (force * 0.25)
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_FEV))
-		force += FEVbonus
+		if(HAS_TRAIT(user, TRAIT_FEV))
+			force_modifier += (force * 0.35)
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
-		force += smutant
+		if(HAS_TRAIT(user, TRAIT_SMUTANT))
+			force_modifier += (force * 0.25)
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
-		force -= ghoulmelee
+		if(HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
+			force_modifier += (-force * 0.25)
 
-	if(!force)
+	var/force_out = force + force_modifier
+	if(force_out <= 0)
 		playsound(loc, pokesound, get_clamped_volume(), 1, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), 1, -1)
@@ -137,27 +140,10 @@
 	M.lastattackerckey = user.ckey
 
 	user.do_attack_animation(M)
-	M.attacked_by(src, user, attackchain_flags, damage_multiplier)
+	M.attacked_by(src, user, attackchain_flags, damage_multiplier, damage_addition = force_modifier)
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
-
-	//force -= regular//SPECIAL integration
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-		force -= bigleagues
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_FEV))
-		force -= FEVbonus
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-		force -= buffout
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
-		force -= smutant
-
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE))
-		force += ghoulmelee
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
@@ -175,8 +161,8 @@
 /atom/movable/proc/attacked_by()
 	return
 
-/obj/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
-	var/totitemdamage = I.force * damage_multiplier
+/obj/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0)
+	var/totitemdamage = (I.force * damage_multiplier) + damage_addition
 	var/bad_trait
 
 	var/stamloss = user.getStaminaLoss()
@@ -202,9 +188,9 @@
 		log_combat(user, src, "attacked", I)
 	take_damage(totitemdamage, I.damtype, "melee", 1)
 
-/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0)
 	var/list/block_return = list()
-	var/totitemdamage = pre_attacked_by(I, user) * damage_multiplier
+	var/totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
 	if((user != src) && mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_IS_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, null, block_return) & BLOCK_SUCCESS)
 		return FALSE
 	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
@@ -221,7 +207,7 @@
 					user.add_mob_blood(src)
 		return TRUE //successful attack
 
-/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition)
 	if(I.force < force_threshold || I.damtype == STAMINA)
 		playsound(src, 'sound/weapons/tap.ogg', I.get_clamped_volume(), 1, -1)
 	else

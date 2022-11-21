@@ -10,7 +10,7 @@
 	icon_state = null
 	covers_chest = FALSE
 
-// please make sure they're sorted alphabetically and categorized
+// please make sure they're sorted alphabetically and categorized  //No. ~TK
 
 /datum/sprite_accessory/underwear/top/cowboyshirt
 	name = "Cowboy Shirt Black"
@@ -66,7 +66,7 @@
 /datum/sprite_accessory/underwear/top/alienshirt
 	name = "Shirt - Alien"
 	icon_state = "shirt_alien"
-
+*/
 /datum/sprite_accessory/underwear/top/mondmondjaja
 	name = "Shirt - Band"
 	icon_state = "band"
@@ -99,11 +99,11 @@
 /datum/sprite_accessory/underwear/top/ian
 	name = "Shirt - Ian"
 	icon_state = "ian"
-
+/*
 /datum/sprite_accessory/underwear/top/ilovent
 	name = "Shirt - I Love NT"
 	icon_state = "ilovent"
-
+*/
 /datum/sprite_accessory/underwear/top/bluejersey
 	name = "Shirt, Jersey - Blue"
 	icon_state = "shirt_bluejersey"
@@ -115,12 +115,12 @@
 /datum/sprite_accessory/underwear/top/lover
 	name = "Shirt - Lover"
 	icon_state = "lover"
-*/
+
 
 /datum/sprite_accessory/underwear/top/matroska
 	name = "Shirt - Matroska"
 	icon_state = "matroska"
-/*
+
 /datum/sprite_accessory/underwear/top/meat
 	name = "Shirt - Meat"
 	icon_state = "shirt_meat"
@@ -149,14 +149,14 @@
 /datum/sprite_accessory/underwear/top/skull
 	name = "Shirt - Skull"
 	icon_state = "shirt_skull"
-*/
+
 
 /datum/sprite_accessory/underwear/top/shortsleeve
 	name = "Shirt - Short Sleeved"
 	icon_state = "shortsleeve"
 	has_color = TRUE
 
-/*
+
 /datum/sprite_accessory/underwear/top/blueshirtsport
 	name = "Shirt, Sports - Blue"
 	icon_state = "blueshirtsport"
@@ -169,10 +169,12 @@
 	name = "Shirt, Sports - Red"
 	icon_state = "redshirtsport"
 
+/*
 /datum/sprite_accessory/underwear/top/ss13
 	name = "Shirt - SS13"
 	icon_state = "shirt_ss13"
 	has_color = TRUE
+*/
 
 /datum/sprite_accessory/underwear/top/stripe
 	name = "Shirt - Striped"
@@ -189,7 +191,7 @@
 /datum/sprite_accessory/underwear/top/usa
 	name = "Shirt - USA"
 	icon_state = "shirt_assblastusa"
-*/
+
 
 /datum/sprite_accessory/underwear/top/tanktop
 	name = "Tank Top"
@@ -201,11 +203,11 @@
 	icon_state = "tanktop_alt"
 	has_color = TRUE
 
-/*
+
 /datum/sprite_accessory/underwear/top/tankfire
 	name = "Tank Top - Fire"
 	icon_state = "tank_fire"
-*/
+
 
 /datum/sprite_accessory/underwear/top/tanktop_midriff
 	name = "Tank Top - Midriff"
@@ -219,7 +221,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
-/*
+
 /datum/sprite_accessory/underwear/top/tankstripe
 	name = "Tank Top - Striped"
 	icon_state = "tank_stripes"
@@ -227,7 +229,7 @@
 /datum/sprite_accessory/underwear/top/tank_top_sun
 	name = "Tank top - Sun"
 	icon_state = "tank_sun"
-*/
+
 
 //feminine accessories from here on
 
@@ -249,12 +251,12 @@
 	has_color = TRUE
 	gender = FEMALE
 
-/*
+
 /datum/sprite_accessory/underwear/top/bra_beekini
 	name = "Bra - Bee-kini"
 	icon_state = "bra_bee-kini"
 	gender = FEMALE
-*/
+
 
 /datum/sprite_accessory/underwear/top/bra_binder
 	name = "Bra (binder)"
@@ -266,7 +268,7 @@
 	icon_state = "bra_binder_strapless"
 	has_color = TRUE
 
-/*
+
 /datum/sprite_accessory/underwear/top/bra_commie
 	name = "Bra - Commie"
 	icon_state = "bra_commie"
@@ -276,7 +278,7 @@
 	name = "Bra - Freedom"
 	icon_state = "bra_assblastusa"
 	gender = FEMALE
-*/
+
 
 /datum/sprite_accessory/underwear/top/halterneck_bra
 	name = "Bra - Halterneck"
@@ -325,7 +327,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
-/*
+
 /datum/sprite_accessory/underwear/top/bra_neko
 	name = "Bra - Neko"
 	icon_state = "bra_neko"
@@ -336,7 +338,7 @@
 	name = "Bra - UK"
 	icon_state = "bra_uk"
 	gender = FEMALE
-*/
+
 
 /datum/sprite_accessory/underwear/top/fishnet_gloves
 	name = "Fishnet - gloves"
@@ -370,3 +372,106 @@
 	icon_state = "tubetop"
 	has_color = TRUE
 	gender = FEMALE
+
+/datum/sprite_accessory/underwear/top/auxilla
+	name = "Brown Top" //Auxilla Top
+	icon_state = "legauxf"
+
+
+/datum/sprite_accessory/underwear/top/priestess
+	name = "Shirtless Brown Top" //Priestess Top
+	icon_state = "priestess"
+
+
+/datum/sprite_accessory/underwear/top/greenscrubs
+	name = "Green Scrubs" 
+	icon_state = "scrubsgreen"
+
+/datum/sprite_accessory/underwear/top/purplescrubs
+	name = "Purple Scrubs" 
+	icon_state = "scrubspurple"
+
+/datum/sprite_accessory/underwear/top/blacktango
+	name = "Tango Top" 
+	icon_state = "black_tango"
+
+/datum/sprite_accessory/underwear/top/plaidred
+	name = "Blouse, Red Tie, long sleeve" 
+	icon_state = "plaid_red"
+
+
+/datum/sprite_accessory/underwear/top/plaidredshort
+	name = "Blouse, Red Tie, short sleeve" 
+	icon_state = "plaid_red_d"
+
+/datum/sprite_accessory/underwear/top/plaidredtied
+	name = "Blouse - Tied, Red Tie, short sleeve" 
+	icon_state = "plaid_red_tied"
+
+/datum/sprite_accessory/underwear/top/plaidblue
+	name = "Blouse, Blue Tie, long sleeve" 
+	icon_state = "plaid_blue"
+
+/datum/sprite_accessory/underwear/top/plaidblueshort
+	name = "Blouse, Blue Tie, short sleeve" 
+	icon_state = "plaid_blue_d"
+
+/datum/sprite_accessory/underwear/top/plaidbluetied
+	name = "Blouse - Tied, Blue Tie, short sleeve" 
+	icon_state = "plaid_blue_tied"
+
+/datum/sprite_accessory/underwear/top/plaidpurple
+	name = "Blouse, Purple Tie, long sleeve" 
+	icon_state = "plaid_purple"
+
+/datum/sprite_accessory/underwear/top/plaidblueshort
+	name = "Blouse, Purple Tie, short sleeve" 
+	icon_state = "plaid_purple_d"
+
+/datum/sprite_accessory/underwear/top/plaidbluetied
+	name = "Blouse - Tied, Blue Tie, short sleeve" 
+	icon_state = "plaid_blue_tied"
+
+/datum/sprite_accessory/underwear/top/plaidgreen
+	name = "Blouse, Green Tie, long sleeve" 
+	icon_state = "plaid_green"
+
+/datum/sprite_accessory/underwear/top/plaidgreenshort
+	name = "Blouse, Green Tie, short sleeve" 
+	icon_state = "plaid_green_d"
+
+/datum/sprite_accessory/underwear/top/plaidgreentied
+	name = "Blouse - Tied, Green Tie, short sleeve" 
+	icon_state = "plaid_green_tied"
+
+/datum/sprite_accessory/underwear/top/blousefullnotie
+	name = "Blouse, No Tie, long sleeve" 
+	icon_state = "blouse_full_notie"
+
+/datum/sprite_accessory/underwear/top/blouseshortnotie
+	name = "Blouse, No Tie, short sleeve" 
+	icon_state = "blouse_short_notie"
+
+/datum/sprite_accessory/underwear/top/blousetiednotie
+	name = "Blouse, No Tie, tied up" 
+	icon_state = "blouse_tied_notie"
+
+/datum/sprite_accessory/underwear/top/bluepuffbra
+	name = "Puffy Blue Bra"
+	icon_state = "bride_blue"
+	
+/datum/sprite_accessory/underwear/top/orangepuffbra
+	name = "Puffy Orange Bra"
+	icon_state = "bride_orange"
+	
+/datum/sprite_accessory/underwear/top/purplepuffbra
+	name = "Puffy Purple Bra"
+	icon_state = "bride_purple"
+	
+/datum/sprite_accessory/underwear/top/redpuffbra
+	name = "Puffy Red Bra"
+	icon_state = "bride_red"
+
+/datum/sprite_accessory/underwear/top/ncrcfjacketcrop
+	name = "cropped denim jacket"
+	icon_state = "ncrcfjacketcrop"

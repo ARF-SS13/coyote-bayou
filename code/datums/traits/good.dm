@@ -134,7 +134,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/freerunning
 	name = "Freerunning"
-	desc = "You're great at quick moves! You climb tables more quickly. Still trying to figure out how to jump off buildings safely tho..."
+	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up."
 	value = 1
 	mob_trait = TRAIT_FREERUNNING
 	gain_text = span_notice("You feel lithe on your feet!")
@@ -672,4 +672,175 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	mob_trait = TRAIT_BONEDANCER_TRAD
 	gain_text = span_notice("The mysteries of your ancestors are revealed to you.")
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
+	locked =  FALSE
+
+/datum/quirk/brickwall
+	name = "Brick wall"
+	desc = "You just don't move when people try to push you out of the way, for whatever reason."
+	value = 1
+	mob_trait = TRAIT_PUSHIMMUNE
+	gain_text = span_notice("You feel stronger than a brick wall.")
+	lose_text = span_danger("Your feel like you could get thrown down again.")
+	locked =  FALSE
+
+/datum/quirk/heatresist
+	name = "Heat Resistant"
+	desc = "Heat doesn't bother you too much."
+	value = 1
+	mob_trait = TRAIT_RESISTHEAT
+	gain_text = span_notice("It could be a little warmer in here.")
+	lose_text = span_danger("You know? Being hot kind of sucks actually.")
+	locked =  FALSE
+
+/datum/quirk/coldresist
+	name = "Cold Resistant"
+	desc = "Cold doesn't bother you too much."
+	value = 1
+	mob_trait = TRAIT_RESISTCOLD
+	gain_text = span_notice("It could be a little colder in here.")
+	lose_text = span_danger("You know? Being cold kind of sucks actually.")
+	locked =  FALSE
+
+/datum/quirk/radimmune
+	name = "Radiation - Immune"
+	desc = "Gieger Counters are for suckers."
+	value = 5
+	mob_trait = TRAIT_RADIMMUNE
+	gain_text = span_notice("You've decided radiation just doesn't matter.")
+	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
+	locked =  FALSE
+
+/datum/quirk/radimmuneish
+	name = "Radiation - Mostly Immune"
+	desc = "Gieger Counters are for suckers, mostly."
+	value = 4
+	mob_trait = TRAIT_75_RAD_RESIST
+	gain_text = span_notice("You've decided radiation just doesn't matter much.")
+	lose_text = span_danger("You no longer feel like you could roll around in a rad puddle for a while.")
+	locked =  FALSE
+
+/datum/quirk/radimmunesorta
+	name = "Radiation - Sorta Immune"
+	desc = "Gieger Counters are for suckers, sorta."
+	value = 3
+	mob_trait = TRAIT_50_RAD_RESIST
+	gain_text = span_notice("You've decided radiation only kind of matters.")
+	lose_text = span_danger("You no longer think you should hang out next to rad puddles.")
+	locked =  FALSE
+
+/datum/quirk/nohunger
+	name = "Does not Eat"
+	desc = "You don't need to eat to live, lucky you."
+	value = 4
+	mob_trait = TRAIT_NOHUNGER
+	gain_text = span_notice("Your need for food has left you.")
+	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
+	locked =  FALSE
+
+/datum/quirk/thickskin
+	name = "Thick Skin"
+	desc = "You just don't get splinters, or shrapnel for that matter.  MASSIVE UNINTENDED EFFECTS, BEING REWORKED~TK"
+	value = 3
+	mob_trait = TRAIT_PIERCEIMMUNE
+	gain_text = span_notice("Your skin feels way stronger.")
+	lose_text = span_danger("You feel like your skin is about as tough as tissue paper.")
+	locked =  TRUE
+
+/datum/quirk/quickercarry
+	name = "Quicker Carry"
+	desc = "You're real good at just scooping people up."
+	value = 2
+	mob_trait = TRAIT_QUICKER_CARRY
+	gain_text = span_notice("You feel like a MASTER fireman!")
+	lose_text = span_danger("You're ability to carry folk seems massively diminished.")
+	locked =  FALSE
+
+/datum/quirk/quickcarry
+	name = "Quick Carry"
+	desc = "You're better than most at just scooping people up."
+	value = 1
+	mob_trait = TRAIT_QUICK_CARRY
+	gain_text = span_notice("You feel like an ACCEPTABLE fireman!")
+	lose_text = span_danger("You're ability to carry folk seems a bit diminished.")
+	locked =  FALSE
+
+/datum/quirk/builder
+	name = "Experienced Builder"
+	desc = "You're good at putting stuff together!"
+	value = 1
+	mob_trait = TRAIT_QUICK_BUILD
+	gain_text = span_notice("You could throw up a house if you wanted to!")
+	lose_text = span_danger("What's a two by four again?")
+	locked =  FALSE
+
+/datum/quirk/grappler
+	name = "Trained Grappler"
+	desc = "You've got real skills when it comes to grabbing people by the bits!"
+	value = 2
+	mob_trait = TRAIT_STRONG_GRABBER
+	gain_text = span_notice("You could wrassle a deathclaw!!")
+	lose_text = span_danger("You no longer feel like you should wrestle deathclaws.")
+	locked =  FALSE
+
+/datum/quirk/mastermartialartist
+	name = "Master Martial Artist"
+	desc = "Sometimes you hit so hard you're pretty sure they stop being human!"
+	value = 4
+	mob_trait = TRAIT_KI_VAMPIRE
+	gain_text = span_notice("They are already dead.")
+	lose_text = span_danger("Your fists no longer feel so powerful.")
+	locked =  FALSE
+
+/datum/quirk/surestrike
+	name = "Sure Strike"
+	desc = "Your technique for punching has been perfected! Your punches always do MAX damage!"
+	value = 4
+	mob_trait = TRAIT_PERFECT_ATTACKER
+	gain_text = span_notice("They are already dead.")
+	lose_text = span_danger("Your fists no longer feel so powerful.")
+	locked =  FALSE
+
+/datum/quirk/quietstep
+	name = "Quiet Step"
+	desc = "Your steps just don't make any noise at all."
+	value = 3
+	mob_trait = TRAIT_SILENT_STEP
+	gain_text = span_notice("Your footsteps fade away.")
+	lose_text = span_danger("You're pretty sure that's the sound of your asscheeks clapping, but it might be footsteps.")
+	locked =  FALSE
+
+/datum/quirk/deadeye
+	name = "Dead Eye"
+	desc = "You hit the shots you aim. No ifs, ands, or buts."
+	value = 12 //WIP for sure, lmfao ~TK
+	mob_trait = TRAIT_INSANE_AIM
+	gain_text = span_notice("Your aim is legendary, and you know it.")
+	lose_text = span_danger("Your aim could use some work...")
+	locked =  FALSE
+
+/datum/quirk/straightshooter
+	name = "Straight Shooter"
+	desc = "You're a better than average shot."
+	value = 6
+	mob_trait = TRAIT_NICE_SHOT
+	gain_text = span_notice("Your aim is amazing, and you know it.")
+	lose_text = span_danger("Your aim could use some work...")
+	locked =  FALSE
+
+/datum/quirk/bowtrained
+	name = "Bow Trained"
+	desc = "You've trained quite a bit with bows of many types, and are pretty good with them for it."
+	value = 2
+	mob_trait = TRAIT_AUTO_DRAW
+	gain_text = span_notice("You feel like all that training with bows has paidfuzzz off.")
+	lose_text = span_danger("Guns were always better...")
+	locked =  FALSE
+
+/datum/quirk/masterrifleman
+	name = "Bolt Worker"
+	desc = "You've spent a lot of time working the bolt of a rifle, or the pump action of a shotgun. Your skill allows you to click to work the action instead of doing it manually."
+	value = 2
+	mob_trait = TRAIT_FAST_PUMP
+	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
+	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE

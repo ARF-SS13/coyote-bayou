@@ -297,7 +297,7 @@
 		AREA_SOUND('sound/f13ambience/rattlesnake_1.ogg', 10 SECONDS),
 		AREA_SOUND('sound/f13ambience/rattlesnake_2.ogg', 10 SECONDS),
 		AREA_SOUND('sound/f13ambience/rattlesnake_3.ogg', 10 SECONDS))
-	outdoors = 1
+	outdoors = 0
 	open_space = 1
 	blob_allowed = 0
 	environment = 5

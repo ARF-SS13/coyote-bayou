@@ -750,7 +750,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_NECKPRON_GENERIC_MAX_TOTAL_SPACE STORAGE_NECKPRON_GENERIC_MAX_SIZE * STORAGE_NECKPRON_GENERIC_MAX_ITEMS
 
 /// How many items total fit in a holster neckpron
-#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 3
+#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 7
 /// How big a thing can fit in a holster neckpron
 #define STORAGE_NECKPRON_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a holster neckpron

@@ -549,7 +549,8 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Gun spread modifiers
 #define GUN_SPREAD_NONE 0
-#define GUN_SPREAD_POOR 1
+#define GUN_SPREAD_NORMAL 1
+#define GUN_SPREAD_POOR (GUN_SPREAD_NORMAL * 2)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
 
 /// Gun fire delay Base
@@ -613,6 +614,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_LESS_DAMAGE_T3 0.75
 #define GUN_LESS_DAMAGE_T4 0.65
 #define GUN_LESS_DAMAGE_T5 0.50
+#define GUN_LESS_DAMAGE_T6 0.25
 
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
@@ -623,6 +625,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_MELEE_FORCE_RIFLE_LIGHT (GUN_MELEE_FORCE_BASE * 1.5) //18
 #define GUN_MELEE_FORCE_RIFLE_HEAVY (GUN_MELEE_FORCE_BASE * 2) // 24
 #define GUN_MELEE_FORCE_RIFLE_GUNBLADE (GUN_MELEE_FORCE_BASE * 2.5) //30
+#define GUN_MELEE_FORCE_RIFLE_HEAVIER (GUN_MELEE_FORCE_BASE * 3) //36
 
 /// Gun slowdown
 #define GUN_SLOWDOWN_NONE 0.1
@@ -661,8 +664,13 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 /// Refire speed multiplier for manual action guns, cus we no longer care about your cock length
 #define GUN_RIFLEMAN_REFIRE_DELAY_MULT 0.8
 
+/// Refire speed multiplier for manual action guns if you're not a pr0 and click-to-cycle it
+#define GUN_AUTOPUMP_REFIRE_DELAY_MULT 1.8
+
+//#define RECOIL_SPREAD_CALC(x)  (0.0075 * (x ** 4)) // Funky way of exponentiating bullet spread from recoil
+#define RECOIL_SPREAD_CALC(x)  (x) // funky recoil kidna turbofucks things in wierd says, maybe
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
-#define RECOIL_REDUCTION_TIME 1 SECONDS
+#define RECOIL_REDUCTION_TIME 1 SECONDS // unused
 
 #define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
 #define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )
@@ -750,6 +758,12 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 /// Gun skill flags
 /// Gun is affected by rifleman skill
 #define AFFECTED_BY_FAST_PUMP (1<<0)
+/// If you autopump this gun, it'll have a debuff to its refire rate till you fire again
+#define AFFECTED_BY_AUTO_PUMP (1<<1)
+
+/// Gun cooldown mod flags
+/// Gun is slower to refire if you autopump it (without fast pump)
+#define GUN_AUTO_PUMPED (1<<0)
 
 /// Gun handedness defines -- for picking which direction to toss casings
 #define GUN_EJECTOR_RIGHT 1
@@ -792,4 +806,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	GUN_MF_CHANCE = chance,\
 	GUN_MF_DUMP_THROW = throw_chance)
 
+/// cooldown for being spammed with messages you're holding the stupid gun wrong
+#define GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME 1 SECONDS
+
+/// cooldown for being spammed with messages that you shot the gun
+#define GUN_SHOOT_MESSAGE_ANTISPAM_TIME 0.5 SECONDS
 

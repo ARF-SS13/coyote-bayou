@@ -681,3 +681,144 @@
 	icon_state = "cia_badge"
 	item_state = "cia_badge"
 	minimize_when_attached = FALSE
+
+//Skirts
+/obj/item/clothing/accessory/pinkishskirt
+	name = "Pinkish Skirt - Accessory"
+	desc = "A pinkish Skirt that can be worn over underwear or clothing. Or nothing, I guess. Usually has a black top, but this is just the skirt!"
+	item_state = "pinkskirt"
+	icon_state = "pinkskirt"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/brownskirt
+	name = "Brown Skirt - Accessory"
+	desc = "A brown Skirt that can be worn over underwear or clothing. Or nothing, I guess."
+	item_state = "pinkskirt"
+	icon_state = "pinkskirt"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/priestess
+	name = "Reddish Skirt w/ Belt - Accessory"
+	desc = "A reddish Skirt that can be worn over underwear or clothing. Or nothing, I guess."
+	item_state = "priestess"
+	icon_state = "priestess"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/greenfrillyskirt
+	name = "Green and Purple Frilly Skirt - Accessory"
+	desc = "There's something funny about this skirt."
+	item_state = "greenfrilly"
+	icon_state = "greenfrilly"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/checkerskirt
+	name = "Black and White Checker Skirt - Accessory"
+	desc = "Is there something you should keep quiet about?"
+	item_state = "checker"
+	icon_state = "checker"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/maidskirt
+	name = "Maid Skirt - Accessory"
+	desc = "You feel like cleaning something by just holding this."
+	item_state = "maid"
+	icon_state = "maid"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidredlongskirt
+	name = "Plaid Red Skirt, Long - Accessory"
+	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
+	item_state = "plaid_red"
+	icon_state = "plaid_red"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidredshortskirt
+	name = "Plaid Red Skirt, Short - Accessory"
+	desc = "Pole not included."
+	item_state = "plaid_red_short"
+	icon_state = "plaid_red_short"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidbluelongskirt
+	name = "Plaid Blue Skirt, Long - Accessory"
+	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
+	item_state = "plaid_blue"
+	icon_state = "plaid_blue"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidblueshortskirt
+	name = "Plaid Blue Skirt, Short - Accessory"
+	desc = "Pole not included."
+	item_state = "plaid_blue_short"
+	icon_state = "plaid_blue_short"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidpurplelongskirt
+	name = "Plaid Purple Skirt, Long - Accessory"
+	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
+	item_state = "plaid_purple"
+	icon_state = "plaid_purple"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidpurpleshortskirt
+	name = "Plaid Purple Skirt, Short - Accessory"
+	desc = "Pole not included."
+	item_state = "plaid_purple_short"
+	icon_state = "plaid_purple_short"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidgreenlongskirt
+	name = "Plaid Green Skirt, Long - Accessory"
+	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
+	item_state = "plaid_green"
+	icon_state = "plaid_green"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/plaidgreenshortskirt
+	name = "Plaid Green Skirt, Short - Accessory"
+	desc = "Pole not included."
+	item_state = "plaid_green_short"
+	icon_state = "plaid_green_short"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/engineskirt
+	name = "Orange and Yellow Skirt"
+	desc = "For some reason, this makes you feel industrious!"
+	item_state = "engine_skirt"
+	icon_state = "engine_skirt"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/cmoskirt
+	name = "Soft Blue and White Skirt"
+	desc = "Something about this skirt feels healthy."
+	item_state = "cmo_skirt"
+	icon_state = "cmo_skirt"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/hopskirt
+	name = "Navy Blue Skirt"
+	desc = "A nice blue skirt, nothing about it seems to stand out."
+	item_state = "hop_skirt"
+	icon_state = "hop_skirt"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/draculass
+	name = "Goth Skirt w/ Stockings"
+	desc = "You probably are a bloodsucker, or at least you tell people you are."
+	item_state = "draculass"
+	icon_state = "draculass"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/prisonerskirt
+	name = "Orange Skirt w/ Belt"
+	desc = "This skirt is so freeing!"
+	item_state = "prisoner_skirt"
+	icon_state = "prisoner_skirt"
+	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/ncrfjacketcrop
+	name = "Cropped Denim Jacket"
+	desc = "Yeah, you go hard."
+	item_state = "ncrcfjacketcrop"
+	icon_state = "ncrcfjacketcrop"
+	minimize_when_attached = FALSE

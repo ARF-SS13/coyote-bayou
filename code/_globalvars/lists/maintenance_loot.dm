@@ -495,6 +495,7 @@ GLOBAL_LIST_INIT(loot_t4_melee, list(
 	/obj/item/melee/unarmed/lacerator,
 	/obj/item/melee/unarmed/maceglove,
 	/obj/item/melee/unarmed/punchdagger,
+	/obj/item/melee/powerfist/f13,
 	/obj/item/shield/riot
 ))
 
@@ -502,11 +503,11 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/twohanded/thermic_lance,
 	/obj/item/twohanded/chainsaw,
 	/obj/item/melee/powered/ripper,
-	/obj/item/melee/powerfist/f13,
 	/obj/item/twohanded/sledgehammer/rockethammer,
 	/obj/item/gun/ballistic/revolver/ballisticfist,
 	/obj/item/twohanded/sledgehammer/supersledge,
 	/obj/item/shishkebabpack,
+	/obj/item/melee/powerfist/f13/goliath,
 	/obj/item/melee/unarmed/deathclawgauntlet,
 	/obj/item/melee/powerfist/f13/moleminer
 ))
@@ -618,12 +619,13 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
-	/obj/item/gun/energy/laser/plasma,
+	/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+	/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 	/obj/item/gun/ballistic/automatic/smg/tommygun,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
 	/obj/item/gun/ballistic/revolver/hunting,
-	/obj/item/gun/ballistic/automatic/bozar
+	/obj/item/gun/ballistic/revolver/sequoia/bayonet,
 ))
 
 GLOBAL_LIST_INIT(loot_unique_range, list(

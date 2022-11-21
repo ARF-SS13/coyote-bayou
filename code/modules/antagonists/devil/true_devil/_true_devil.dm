@@ -115,8 +115,8 @@
 /mob/living/carbon/true_devil/get_ear_protection()
 	return 2
 
-/mob/living/carbon/true_devil/attacked_by(obj/item/I, mob/living/user, def_zone, attackchain_flags = NONE, damage_multiplier = 1)
-	var/totitemdamage = pre_attacked_by(I, user)
+/mob/living/carbon/true_devil/attacked_by(obj/item/I, mob/living/user, def_zone, attackchain_flags = NONE, damage_multiplier = 1, damage_addition)
+	var/totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
 	totitemdamage *= check_weakness(I, user)
 	apply_damage(totitemdamage, I.damtype, def_zone)
 	send_item_attack_message(I, user, null, totitemdamage)

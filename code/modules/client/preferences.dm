@@ -390,6 +390,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Refresh once the game has finished setting up...</b><br>"
 			dat += "</td>"
 
+			dat += "<b>Profile Picture:</b><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "</td>"
+
 /*
 			dat += "<b>Special Names:</b><BR>"
 			var/old_group
@@ -2998,6 +3002,7 @@ Records disabled until a use for them is found
 				if("tab")
 					if(href_list["tab"])
 						current_tab = text2num(href_list["tab"])
+	chat_toggles |= CHAT_LOOC // the LOOC stays on during sex
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])
 			loadout_data["SAVE_[loadout_slot]"] = list()

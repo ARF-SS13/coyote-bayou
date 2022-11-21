@@ -7,20 +7,21 @@
 
 /mob/living/simple_animal/hostile/giantant
 	name = "giant ant"
-	desc = "A large mutated insect that finds its way everywhere."
+	desc = "A giant ant with twitching, darting antennae. Its outsides are a mixture of crusted, unrotting rock and chitin that bounce off bullets and melee weapons. Hardened insides compact once valueless sand and dirt to gemstones. Many a fool in their search for wealth have become part of the gemstones. Can be butchered down the thorax for minerals and shinies."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
 	icon_state = "GiantAnt"
 	icon_living = "GiantAnt"
 	icon_dead = "GiantAnt_dead"
 	icon_gib = "GiantAnt_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	mob_armor = ARMOR_VALUE_ANTS
 	speak_chance = 0
 	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 0
 	//how far they pull back
-	
+
 	minimum_distance = 0
 	// how close you can get before they try to pull back
 
@@ -34,7 +35,7 @@
 	emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
 	attack_verb_simple = list ("rips", "tears", "stings")
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/effect/spawner/lootdrop/f13/deadantloot = 1)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
@@ -44,6 +45,9 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
 	maxHealth = 128
 	health = 128
 	harm_intent_damage = 8
@@ -57,8 +61,8 @@
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
-	decompose = TRUE
 	blood_volume = 0
+	decompose = FALSE
 
 /mob/living/simple_animal/hostile/giantant/Initialize()
 	. = ..()
@@ -70,7 +74,7 @@
 // FIREANT
 /mob/living/simple_animal/hostile/fireant
 	name = "fireant"
-	desc = "A large reddish ant."
+	desc = "A large reddish ant. The furnace it holds inside itself blasts intruders and the dirt it chews with flaming heat. Its insides contain more gemstones than its unremarkable kin, accessible by butchering them straight down the thorax."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
 	icon_state = "FireAnt"
 	icon_living = "FireAnt"
@@ -79,7 +83,10 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 2)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
@@ -101,7 +108,7 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
-	decompose = TRUE
+	decompose = FALSE
 	a_intent = INTENT_HARM
 	blood_volume = 0
 
@@ -116,12 +123,12 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/napalm, 0.1)
+		H.reagents.add_reagent(/datum/reagent/hellwater, 1)
 
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
 	name = "giant ant queen"
-	desc = "The queen of a giant ant colony."
+	desc = "The queen of a giant ant colony. Butchering it seems like a good way to a pretty penny."
 	icon = 'icons/fallout/mobs/animals/antqueen.dmi'
 	icon_state = "antqueen"
 	icon_living = "antqueen"
@@ -130,7 +137,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 5)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 3)
 	butcher_difficulty = 1.5
 	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10)
@@ -140,7 +147,7 @@
 	emote_taunt = list("chitters")
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
-	speed = 1
+	speed = 5
 	maxHealth = 560
 	health = 560
 	ranged = 1
@@ -208,13 +215,15 @@
 	obj_damage = 20
 	melee_damage_lower = 15
 	melee_damage_upper = 35
-
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 1
 	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 0
 	//how far they pull back
-	
+
 	minimum_distance = 0
 	// how close you can get before they try to pull back
 
@@ -311,13 +320,13 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	
+
 	move_to_delay = 2.0
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 3
 	//how far they pull back
-	
+
 	minimum_distance = 1
 	// how close you can get before they try to pull back
 
@@ -430,6 +439,9 @@
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 8
+	waddle_amount = 4
+	waddle_up_time = 3
+	waddle_side_time = 2
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -472,6 +484,9 @@
 	icon_living = "radroach"
 	icon_dead = "radroach_dead"
 	icon_gib = "radroach_gib"
+	waddle_amount = 1
+	waddle_up_time = 1
+	waddle_side_time = 1
 
 	speed = 1
 	maxHealth = 20

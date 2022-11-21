@@ -143,6 +143,14 @@
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
+//.45 rubber
+/obj/item/ammo_box/magazine/m45/rubber
+	name = "handgun magazine (.45 rubber)"
+	ammo_type = /obj/item/ammo_casing/c45/rubber
+
+/obj/item/ammo_box/magazine/m45/rubber/empty
+	start_empty = 1
+
 //.45 socom
 /obj/item/ammo_box/magazine/m45/socom
 	name = "socom magazine (.45)"

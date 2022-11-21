@@ -310,6 +310,7 @@
 					if(R.addiction_threshold)
 						if(R.volume > R.addiction_threshold && !is_type_in_list(R, cached_addictions))
 							var/datum/reagent/new_reagent = new R.type()
+							R.on_addiction_start(my_atom)
 							cached_addictions.Add(new_reagent)
 					if(R.overdosed)
 						need_mob_update += R.overdose_process(C)
@@ -336,6 +337,7 @@
 					else if(R.addiction_stage3_end < R.addiction_stage && R.addiction_stage <= R.addiction_stage4_end)
 						need_mob_update += R.addiction_act_stage4(C)
 					else if(R.addiction_stage4_end < R.addiction_stage)
+						R.on_addiction_end(my_atom)
 						remove_addiction(R)
 					else
 						SEND_SIGNAL(C, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
@@ -764,6 +766,8 @@
 					R.on_mob_end_metabolize(M)
 				R.on_mob_delete(M)
 			//Clear from relevant lists
+			if(R in addiction_list)
+				R.on_addiction_end(my_atom)
 			addiction_list -= R
 			qdel(R)
 			reagent_list -= R
