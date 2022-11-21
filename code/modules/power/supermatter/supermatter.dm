@@ -476,7 +476,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			//Prevents huge bursts of gas/heat when a large amount of something is introduced
 			//They range between 0 and 1
 			for(var/gasID in gases_we_care_about)
-				if(!(gas_id in gas_comp))
+				if(!(gasID in gas_comp))
 					gas_comp[gasID] = 0
 				gas_comp[gasID] += clamp(max(removed.get_moles(gasID)/combined_gas, 0) - gas_comp[gasID], -1, gas_change_rate)
 

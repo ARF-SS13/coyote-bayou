@@ -39,6 +39,10 @@
 	color = "#FFC8C8"
 	metabolization_rate = 4
 	taste_description = "burning"
+	/* no gaseous CLF3 until i can think of a good way to get it to burn that doesn't destroy matter in mysterious ways
+	boiling_point = 289.4
+	*/
+	condensation_amount = 2
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
 
@@ -76,6 +80,12 @@
 			M.IgniteMob()
 			if(!locate(/obj/effect/hotspot) in M.loc)
 				new /obj/effect/hotspot(M.loc)
+
+/datum/reagent/clf3/define_gas()
+	var/datum/gas/G = ..()
+	G.enthalpy = -163200
+	G.oxidation_temperature = T0C - 50
+	return G
 
 /datum/reagent/sorium
 	name = "Sorium"
@@ -147,8 +157,17 @@
 	reagent_state = LIQUID
 	color = "#FA00AF"
 	taste_description = "burning"
+	boiling_point = T20C-10
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+
+/datum/reagent/phlogiston/define_gas()
+	var/datum/gas/G = ..()
+	G.enthalpy = FIRE_PLASMA_ENERGY_RELEASED / 100
+	G.fire_products = list(GAS_O2 = 0.25, GAS_METHANE = 0.75) // meanwhile this is just magic
+	G.fire_burn_rate = 1
+	G.fire_temperature = T20C+1
+	return G
 
 /datum/reagent/phlogiston/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	M.adjust_fire_stacks(1)
@@ -276,6 +295,9 @@
 	taste_description = "the inside of a fire extinguisher"
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+
+/datum/reagent/firefighting_foam/define_gas()
+	return null
 
 /datum/reagent/firefighting_foam/reaction_turf(turf/open/T, reac_volume)
 	if (!istype(T))
