@@ -905,7 +905,8 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	playsound(T, 'sound/effects/supermatter.ogg', 50, 1)
 	T.visible_message(span_danger("[T] smacks into [src] and rapidly flashes to ash."),\
 	span_italic("You hear a loud crack as you are washed with a wave of heat."))
-	T.ImmediateCalculateAdjacentTurfs()
+	//T.ImmediateCalculateAdjacentTurfs()
+	CALCULATE_ADJACENT_TURFS(T)
 
 //Do not blow up our internal radio
 /obj/machinery/power/supermatter_crystal/contents_explosion(severity, target)
