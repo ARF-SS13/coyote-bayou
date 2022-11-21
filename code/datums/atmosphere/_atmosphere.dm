@@ -16,10 +16,17 @@
 /datum/atmosphere/New()
 	generate_gas_string()
 
+/datum/atmosphere/proc/check_for_sanity(datum/gas_mixture/mix)
+	return
+
 /datum/atmosphere/proc/generate_gas_string()
 	var/list/spicy_gas = restricted_gases.Copy()
 	var/target_pressure = rand(minimum_pressure, maximum_pressure)
 	var/pressure_scale = target_pressure / maximum_pressure
+
+	// TODO: Port https://github.com/Citadel-Station-13/Citadel-Station-13/pull/15423 for this feature
+	//if(HAS_TRAIT(SSstation, STATION_TRAIT_UNNATURAL_ATMOSPHERE))
+	//.	restricted_chance = restricted_chance + 40
 
 	// First let's set up the gasmix and base gases for this template
 	// We make the string from a gasmix in this proc because gases need to calculate their pressure
@@ -51,6 +58,8 @@
 		var/moles_to_remove = (1 - target_pressure / gasmix.return_pressure()) * gasmix.total_moles()
 		gasmix.adjust_moles(gastype, -moles_to_remove)
 	gasmix.set_moles(gastype, FLOOR(gasmix.get_moles(gastype), 0.1))
+
+	check_for_sanity(gasmix)
 
 	// Now finally lets make that string
 	var/list/gas_string_builder = list()
