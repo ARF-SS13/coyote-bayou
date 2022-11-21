@@ -5,6 +5,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"aJ" = (
+/obj/machinery/smoke_machine{
+	name = "HVAC Machine"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "aN" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -21,6 +28,27 @@
 "bo" = (
 /turf/open/indestructible,
 /area/f13/tcoms)
+"bs" = (
+/obj/structure/fence{
+	dir = 4;
+	pixel_y = 34
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"bt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/trash/f13,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"bA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/ladder{
+	pixel_y = -10;
+	id = "schoolroof";
+	height = 2
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "ce" = (
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
@@ -33,12 +61,47 @@
 /obj/machinery/smartfridge/bottlerack/grownbin,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"cp" = (
+/obj/structure/fence{
+	dir = 4;
+	pixel_y = -5
+	},
+/obj/structure/fence{
+	icon_state = "corner";
+	dir = 1;
+	pixel_y = -5;
+	pixel_x = -14
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = -18
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "cr" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/machinery/smartfridge/bottlerack/seedbin/primitive,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"dt" = (
+/obj/structure/fence{
+	dir = 4;
+	pixel_y = 34
+	},
+/obj/structure/fence{
+	icon_state = "corner";
+	dir = 1;
+	pixel_y = 2;
+	pixel_x = 18
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18;
+	pixel_y = 33
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "dH" = (
 /obj/structure/table/reinforced,
@@ -56,6 +119,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"eo" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "eQ" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
@@ -190,6 +257,14 @@
 /obj/structure/reagent_dispensers/compostbin,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"mo" = (
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18;
+	pixel_y = -5
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "mG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -207,6 +282,13 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"nv" = (
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "nF" = (
 /obj/structure/railing/corner{
@@ -238,6 +320,15 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"oT" = (
+/mob/living/simple_animal/hostile/molerat{
+	faction = list("deathclaw");
+	name = "Peabling";
+	color = "#D4D977"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "pm" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
@@ -248,8 +339,34 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"pO" = (
+/obj/structure/fence{
+	icon_state = "corner";
+	dir = 1;
+	pixel_y = 2;
+	pixel_x = 18
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "ql" = (
 /obj/effect/decal/cleanable/dirt,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"qV" = (
+/obj/structure/fence{
+	dir = 4;
+	pixel_y = -5
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18;
+	pixel_y = -5;
+	dir = 1
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18
+	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "ri" = (
@@ -293,6 +410,14 @@
 "tM" = (
 /turf/closed/indestructible/riveted,
 /area/f13/tcoms)
+"tQ" = (
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = -18;
+	pixel_y = 0
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "uq" = (
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -345,6 +470,11 @@
 /obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"vj" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "vI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -368,6 +498,10 @@
 /obj/machinery/power/tracker,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"wK" = (
+/obj/item/trash/f13,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "xs" = (
 /turf/closed/indestructible/rock{
 	desc = "A pre-War wall made of solid concrete.";
@@ -382,6 +516,14 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"yk" = (
+/mob/living/simple_animal/hostile/molerat{
+	faction = list("deathclaw");
+	name = "Peabling";
+	color = "#D4D977"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "yC" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -425,6 +567,31 @@
 /obj/structure/simple_door/house,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building/hospital)
+"At" = (
+/obj/structure/fence{
+	dir = 4;
+	pixel_y = 34
+	},
+/obj/structure/fence{
+	icon_state = "corner";
+	dir = 1;
+	pixel_y = 2;
+	pixel_x = 18
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 17;
+	pixel_y = 33
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"Az" = (
+/obj/structure/fence{
+	dir = 4;
+	pixel_y = -5
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "AZ" = (
 /obj/structure/railing{
 	dir = 1
@@ -445,6 +612,12 @@
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Dl" = (
+/mob/living/simple_animal/hostile/deathclaw/legendary{
+	desc = "That is fucking PEABUS!"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "Do" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
@@ -462,6 +635,13 @@
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Es" = (
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = -18
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Ey" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -502,6 +682,19 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"HU" = (
+/obj/item/reagent_containers/food/snacks/butteredtoast{
+	desc = "That's a very stale piece of toast, Peabus had it in his mouth.";
+	name = "Peabus's Toast"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"HW" = (
+/obj/machinery/smoke_machine{
+	name = "HVAC Machine"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "Ik" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -516,6 +709,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"IM" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Jo" = (
 /obj/structure/cable{
@@ -555,6 +752,23 @@
 /obj/item/stock_parts/capacitor,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Ls" = (
+/obj/structure/fence{
+	dir = 4;
+	pixel_y = 34
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = -18;
+	pixel_y = 0
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = -17;
+	pixel_y = 33
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "LT" = (
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
@@ -592,6 +806,11 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Py" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "PZ" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -629,6 +848,12 @@
 	pixel_y = 6
 	},
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Ss" = (
+/obj/structure/window/fulltile/wood{
+	max_integrity = 140
+	},
+/turf/closed/wall/f13/wood,
 /area/f13/wasteland)
 "St" = (
 /obj/structure/cable{
@@ -714,6 +939,15 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"Wv" = (
+/obj/structure/fence{
+	icon_state = "corner";
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = -5
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "WH" = (
 /turf/open/transparent/openspace,
 /area/f13/building)
@@ -750,6 +984,10 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Yt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "ZO" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 1
@@ -6274,17 +6512,17 @@ hm
 hm
 hm
 rN
+Ss
+Ss
+Ss
+Ss
 rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
+Ss
+Ss
+Ss
+Ss
+Ss
+Ss
 rN
 sn
 hm
@@ -8333,11 +8571,11 @@ rN
 rN
 hS
 hS
-rN
+Ss
 rN
 hS
 hS
-rN
+Ss
 hS
 hS
 rN
@@ -37891,26 +38129,26 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+mo
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+nv
+pO
 hm
 hm
 hm
@@ -38148,27 +38386,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -38405,27 +38643,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -38662,27 +38900,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+HW
+HW
+HW
+HW
+Yt
+zC
+zC
+HW
+zC
+zC
+zC
+zC
+HW
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -38919,27 +39157,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+Yt
+zC
+zC
+Yt
+zC
+zC
+HW
+zC
+zC
+Yt
+zC
+HW
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -39176,27 +39414,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+bt
+Yt
+zC
+zC
+Yt
+zC
+zC
+HW
+zC
+zC
+zC
+Yt
+HW
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -39433,27 +39671,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+Yt
+zC
+Yt
+zC
+Yt
+zC
+zC
+HW
+zC
+zC
+zC
+Yt
+HW
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -39690,27 +39928,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+Yt
+zC
+Yt
+Yt
+zC
+HW
+zC
+zC
+eo
+Yt
+HW
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -39947,27 +40185,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+HW
+HW
+aJ
+HW
+zC
+Yt
+zC
+HW
+zC
+zC
+zC
+Yt
+HW
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -40204,27 +40442,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+Yt
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -40461,27 +40699,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -40718,27 +40956,27 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wv
+Es
+Es
+Es
+Es
+cp
+zC
+zC
+Yt
+Yt
+zC
+zC
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -40980,22 +41218,22 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+wK
+zC
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+wK
+zC
+zC
+bs
 hm
 hm
 hm
@@ -41237,22 +41475,22 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+Yt
+Yt
+zC
+zC
+zC
+Yt
+Yt
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -41494,22 +41732,22 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+Yt
+zC
+yk
+zC
+zC
+zC
+Yt
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -41751,22 +41989,22 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+zC
+zC
+zC
+yk
+yk
+zC
+Yt
+zC
+zC
+zC
+zC
+dt
 hm
 hm
 hm
@@ -42008,23 +42246,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+zC
+yk
+zC
+Dl
+yk
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -42265,23 +42503,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+wK
+Yt
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -42522,23 +42760,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+zC
+eo
+yk
+HU
+yk
+yk
+zC
+oT
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -42779,23 +43017,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+zC
+Yt
+zC
+zC
+zC
+yk
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -43036,23 +43274,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+zC
+Yt
+Yt
+zC
+zC
+Yt
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -43293,23 +43531,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -43550,23 +43788,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -43807,22 +44045,22 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+zC
+zC
+Yt
+zC
+zC
+zC
+Ls
+tQ
+tQ
+tQ
+tQ
+tQ
 hm
 hm
 hm
@@ -44064,17 +44302,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+zC
+zC
+Yt
+zC
+zC
+zC
+At
 hm
 hm
 hm
@@ -44321,18 +44559,18 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+zC
+zC
+Yt
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -44578,18 +44816,18 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -44830,23 +45068,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+mo
+nv
+nv
+nv
+nv
+qV
+zC
+zC
+wK
+zC
+zC
+zC
+zC
+zC
+bA
+zC
+bs
 hm
 hm
 hm
@@ -45087,23 +45325,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -45344,23 +45582,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+Yt
+Yt
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -45601,23 +45839,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+IM
+HW
+HW
+IM
+HW
+zC
+zC
+zC
+zC
+Yt
+Yt
+zC
+zC
+bs
 hm
 hm
 hm
@@ -45858,23 +46096,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+Yt
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+bs
 hm
 hm
 hm
@@ -46115,23 +46353,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+zC
+zC
+zC
+Yt
+Yt
+zC
+zC
+eo
+zC
+zC
+Yt
+zC
+zC
+bs
 hm
 hm
 hm
@@ -46372,23 +46610,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+bs
 hm
 hm
 hm
@@ -46629,23 +46867,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+Yt
+zC
+zC
+zC
+Yt
+zC
+zC
+bs
 hm
 hm
 hm
@@ -46886,23 +47124,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+Yt
+vj
+HW
+HW
+IM
+HW
+Yt
+Py
+zC
+zC
+Yt
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -47143,23 +47381,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+Yt
+zC
+zC
+Yt
+Yt
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -47400,23 +47638,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Az
+zC
+zC
+zC
+Yt
+Yt
+Yt
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+zC
+bs
 hm
 hm
 hm
@@ -47658,21 +47896,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
+Es
 hm
 hm
 hm
@@ -47876,7 +48114,7 @@ hm
 NT
 ZO
 Im
-ce
+Tt
 ce
 rv
 aN
