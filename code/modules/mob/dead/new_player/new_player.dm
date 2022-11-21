@@ -96,7 +96,7 @@
 				SELECT pollid FROM [format_table_name("poll_textreply")]
 				WHERE ckey = :ckey
 			)
-		"}, list("isadmin" = isadmin, "ckey" = ckey))
+		"}, list("isadmin" = isadmin, "ckey" = sanitizeSQL(ckey)))
 		var/rs = REF(src)
 		if(!query_get_new_polls.Execute())
 			qdel(query_get_new_polls)

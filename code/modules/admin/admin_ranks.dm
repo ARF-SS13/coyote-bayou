@@ -157,7 +157,7 @@ GLOBAL_PROTECT(protected_ranks)
 			else
 				while(query_load_admin_ranks.NextRow())
 					var/skip
-					var/rank_name = ckeyEx(query_load_admin_ranks.item[1])
+					var/rank_name = ckeyEx(unsanitizeSQL(query_load_admin_ranks.item[1]))
 					for(var/datum/admin_rank/R in GLOB.admin_ranks)
 						if(R.name == rank_name) //this rank was already loaded from txt override
 							skip = 1
@@ -243,8 +243,8 @@ GLOBAL_PROTECT(protected_ranks)
 			dbfail = 1
 		else
 			while(query_load_admins.NextRow())
-				var/admin_ckey = ckey(query_load_admins.item[1])
-				var/admin_rank = ckeyEx(query_load_admins.item[2])
+				var/admin_ckey = ckey(unsanitizeSQL(query_load_admins.item[1]))
+				var/admin_rank = ckeyEx(unsanitizeSQL(query_load_admins.item[2]))
 				var/skip
 				if(rank_names[admin_rank] == null)
 					message_admins("[admin_ckey] loaded with invalid admin rank [admin_rank].")

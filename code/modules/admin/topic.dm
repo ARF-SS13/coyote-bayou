@@ -1411,7 +1411,7 @@
 			qdel(query_get_message_edits)
 			return
 		if(query_get_message_edits.NextRow())
-			var/edit_log = query_get_message_edits.item[1]
+			var/edit_log = unsanitizeSQL(query_get_message_edits.item[1])
 			if(!QDELETED(usr))
 				var/datum/browser/browser = new(usr, "Note edits", "Note edits")
 				browser.set_content(jointext(edit_log, ""))
@@ -3321,7 +3321,7 @@
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_get_mentor = SSdbcore.NewQuery(
 			"SELECT id FROM [format_table_name("mentor")] WHERE ckey = :ckey",
-			list("ckey" = ckey)
+			list("ckey" = sanitizeSQL(ckey))
 		)
 		if(!query_get_mentor.warn_execute())
 			qdel(query_get_mentor)
@@ -3331,7 +3331,7 @@
 			qdel(query_get_mentor)
 			return
 		qdel(query_get_mentor)
-		var/datum/db_query/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, :ckey)", list("ckey" = ckey))
+		var/datum/db_query/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, :ckey)", list("ckey" = sanitizeSQL(ckey)))
 		if(!query_add_mentor.warn_execute())
 			return
 		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // Just comments out the admin part, as it seems to not be functioning.
@@ -3366,7 +3366,7 @@
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_remove_mentor = SSdbcore.NewQuery(
 			"DELETE FROM [format_table_name("mentor")] WHERE ckey = :ckey",
-			list("ckey" = ckey)
+			list("ckey" = sanitizeSQL(ckey))
 		)
 		if(!query_remove_mentor.warn_execute())
 			return		

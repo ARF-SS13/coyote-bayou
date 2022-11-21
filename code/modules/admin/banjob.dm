@@ -6,13 +6,13 @@
 	if(!M.client) //no cache. fallback to a datum/db_query
 		var/datum/db_query/query_jobban_check_ban = SSdbcore.NewQuery(
 			"SELECT reason FROM [format_table_name("ban")] WHERE ckey = :ckey AND (bantype = 'JOB_PERMABAN'  OR (bantype = 'JOB_TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned) AND job = :job",
-			list("ckey" = M.ckey, "job" = rank)
+			list("ckey" = sanitizeSQL(M.ckey), "job" = sanitizeSQL(rank))
 		)
 		if(!query_jobban_check_ban.warn_execute())
 			qdel(query_jobban_check_ban)
 			return
 		if(query_jobban_check_ban.NextRow())
-			var/reason = query_jobban_check_ban.item[1]
+			var/reason = unsanitizeSQL(query_jobban_check_ban.item[1])
 			qdel(query_jobban_check_ban)
 			return reason ? reason : TRUE //we don't want to return "" if there is no ban reason, as that would evaluate to false
 		qdel(query_jobban_check_ban)
@@ -33,13 +33,13 @@
 		C.jobbancache = list()
 		var/datum/db_query/query_jobban_build_cache = SSdbcore.NewQuery(
 			"SELECT job, reason FROM [format_table_name("ban")] WHERE ckey = :ckey AND (bantype = 'JOB_PERMABAN'  OR (bantype = 'JOB_TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned)",
-			list("ckey" = C.ckey)
+			list("ckey" = sanitizeSQL(C.ckey))
 		)
 		if(!query_jobban_build_cache.warn_execute())
 			qdel(query_jobban_build_cache)
 			return
 		while(query_jobban_build_cache.NextRow())
-			C.jobbancache[query_jobban_build_cache.item[1]] = query_jobban_build_cache.item[2]
+			C.jobbancache[unsanitizeSQL(query_jobban_build_cache.item[1])] = unsanitizeSQL(query_jobban_build_cache.item[2])
 		qdel(query_jobban_build_cache)
 
 /proc/ban_unban_log_save(formatted_log)

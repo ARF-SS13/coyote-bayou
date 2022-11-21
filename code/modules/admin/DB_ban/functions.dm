@@ -82,7 +82,7 @@
 	banned_mob = null
 	var/datum/db_query/query_add_ban_get_ckey = SSdbcore.NewQuery(
 		"SELECT 1 FROM [format_table_name("player")] WHERE ckey = :ckey",
-		list("ckey" = ckey)
+		list("ckey" = sanitizeSQL(ckey))
 	)
 	if(!query_add_ban_get_ckey.warn_execute())
 		qdel(query_add_ban_get_ckey)
@@ -127,7 +127,7 @@
 	if(maxadminbancheck)
 		var/datum/db_query/query_check_adminban_amt = SSdbcore.NewQuery(
 			"SELECT count(id) AS num FROM [format_table_name("ban")] WHERE ( a_ckey = :a_ckey) AND (bantype = 'ADMIN_PERMABAN'  OR (bantype = 'ADMIN_TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned)",
-			list("a_ckey" = a_ckey)
+			list("a_ckey" = sanitizeSQL(a_ckey))
 		)
 		if(!query_check_adminban_amt.warn_execute())
 			qdel(query_check_adminban_amt)
@@ -148,7 +148,7 @@
 		ip = "0.0.0.0"
 	var/datum/db_query/query_add_ban = SSdbcore.NewQuery(
 		"INSERT INTO [format_table_name("ban")] (`bantime`,`server_ip`,`server_port`,`round_id`,`bantype`,`reason`,`job`,`duration`,`expiration_time`,`ckey`,`computerid`,`ip`,`a_ckey`,`a_computerid`,`a_ip`,`who`,`adminwho`) VALUES (Now(), INET_ATON(:internet_address), :port, :round_id, :bantype, :reason, :job, IFNULL(:duration, \"0\"), Now() + INTERVAL IF(:duration > 0, :duration, 0) MINUTE, :ckey, :computerid, INET_ATON(:ip), :a_ckey, :a_computerid, INET_ATON(:a_ip), :who, :adminwho)",
-		list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "bantype" = bantype_str, "reason" = reason, "job" = job, "duration" = duration, "ckey" = ckey, "computerid" = computerid, "ip" = ip, "a_ckey" = a_ckey, "a_computerid" = a_computerid, "a_ip" = a_ip, "who" = who, "adminwho" = adminwho)
+		list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "bantype" = bantype_str, "reason" = sanitizeSQL(reason), "job" = sanitizeSQL(job), "duration" = duration, "ckey" = sanitizeSQL(ckey), "computerid" = computerid, "ip" = ip, "a_ckey" = sanitizeSQL(a_ckey), "a_computerid" = a_computerid, "a_ip" = a_ip, "who" = sanitizeSQL(who), "adminwho" = sanitizeSQL(adminwho))
 	)
 	if(!query_add_ban.warn_execute())
 		qdel(query_add_ban)
@@ -212,9 +212,9 @@
 		bantype_sql = "(bantype = 'JOB_PERMABAN' OR (bantype = 'JOB_TEMPBAN' AND expiration_time > Now() ) )"
 	else
 		bantype_sql = "bantype = '[bantype_str]'"
-	var/sql = "SELECT id FROM [format_table_name("ban")] WHERE ckey = '[ckey]' AND [bantype_sql] AND (unbanned is null OR unbanned = false)"
+	var/sql = "SELECT id FROM [format_table_name("ban")] WHERE ckey = '[sanitizeSQL(ckey)]' AND [bantype_sql] AND (unbanned is null OR unbanned = false)"
 	if(job)
-		sql += " AND job = '[job]'"
+		sql += " AND job = '[sanitizeSQL(job)]'"
 
 	if(!SSdbcore.Connect())
 		return
@@ -267,9 +267,9 @@
 	var/reason				//Old reason
 
 	if(query_edit_ban_get_details.NextRow())
-		p_key = query_edit_ban_get_details.item[1]
+		p_key = unsanitizeSQL(query_edit_ban_get_details.item[1])
 		duration = query_edit_ban_get_details.item[2]
-		reason = query_edit_ban_get_details.item[3]
+		reason = unsanitizeSQL(query_edit_ban_get_details.item[3])
 	else
 		to_chat(usr, "Invalid ban id. Contact the database admin")
 		qdel(query_edit_ban_get_details)
@@ -287,8 +287,8 @@
 					return
 
 			var/datum/db_query/query_edit_ban_reason = SSdbcore.NewQuery(
-				"UPDATE [format_table_name("ban")] SET reason = :reason, edits = CONCAT(edits,'- [e_key] changed ban reason from <cite><b>\\\"[reason]\\\"</b></cite> to <cite><b>\\\"[value]\\\"</b></cite><BR>') WHERE id = [banid]",
-				list("reason" = value)
+				"UPDATE [format_table_name("ban")] SET reason = :reason, edits = CONCAT(edits,'- [sanitizeSQL(e_key)] changed ban reason from <cite><b>\\\"[sanitizeSQL(reason)]\\\"</b></cite> to <cite><b>\\\"[sanitizeSQL(value)]\\\"</b></cite><BR>') WHERE id = [banid]",
+				list("reason" = sanitizeSQL(value))
 			)
 			if(!query_edit_ban_reason.warn_execute())
 				qdel(query_edit_ban_reason)
@@ -302,7 +302,7 @@
 					to_chat(usr, "Cancelled")
 					return
 
-			var/datum/db_query/query_edit_ban_duration = SSdbcore.NewQuery("UPDATE [format_table_name("ban")] SET duration = [value], edits = CONCAT(edits,'- [e_key] changed ban duration from [duration] to [value]<br>'), expiration_time = DATE_ADD(bantime, INTERVAL [value] MINUTE) WHERE id = [banid]")
+			var/datum/db_query/query_edit_ban_duration = SSdbcore.NewQuery("UPDATE [format_table_name("ban")] SET duration = [value], edits = CONCAT(edits,'- [sanitizeSQL(e_key)] changed ban duration from [duration] to [value]<br>'), expiration_time = DATE_ADD(bantime, INTERVAL [value] MINUTE) WHERE id = [banid]")
 			if(!query_edit_ban_duration.warn_execute())
 				qdel(query_edit_ban_duration)
 				return
@@ -337,7 +337,7 @@
 		qdel(query_unban_get_ckey)
 		return
 	while(query_unban_get_ckey.NextRow())
-		p_key = query_unban_get_ckey.item[1]
+		p_key = unsanitizeSQL(query_unban_get_ckey.item[1])
 		ban_number++;
 	qdel(query_unban_get_ckey)
 
@@ -356,7 +356,7 @@
 	var/unban_computerid = owner.computer_id
 	var/unban_ip = owner.address
 
-	var/sql_update = "UPDATE [format_table_name("ban")] SET unbanned = 1, unbanned_datetime = Now(), unbanned_ckey = '[unban_ckey]', unbanned_computerid = '[unban_computerid]', unbanned_ip = INET_ATON('[unban_ip]') WHERE id = [id]"
+	var/sql_update = "UPDATE [format_table_name("ban")] SET unbanned = 1, unbanned_datetime = Now(), unbanned_ckey = '[sanitizeSQL(unban_ckey)]', unbanned_computerid = '[unban_computerid]', unbanned_ip = INET_ATON('[unban_ip]') WHERE id = [id]"
 	var/datum/db_query/query_unban = SSdbcore.NewQuery(sql_update)
 	if(!query_unban.warn_execute())
 		qdel(query_unban)
@@ -459,8 +459,8 @@
 				(:player_ip IS NULL OR ip = INET_ATON(:player_ip)) AND
 				(:player_cid IS NULL OR computerid = :player_cid)
 		"}, list(
-			"player_key" = ckey(playerckey),
-			"admin_key" = ckey(adminckey),
+			"player_key" = sanitizeSQL(ckey(playerckey)),
+			"admin_key" = sanitizeSQL(ckey(adminckey)),
 			"player_ip" = ip,
 			"player_cid" = cid,
 		))
@@ -520,8 +520,8 @@
 				(:player_cid IS NULL OR computerid = :player_cid)
 			ORDER BY bantime DESC LIMIT :skip, :take
 			"}, list(
-			"player_key" = ckey(playerckey) || null, // we need to use || null in case it's the empty string
-			"admin_key" = ckey(adminckey) || null,   // because SQL expects null, not ''
+			"player_key" = sanitizeSQL(ckey(playerckey)) || null, // we need to use || null in case it's the empty string
+			"admin_key" = sanitizeSQL(ckey(adminckey)) || null,   // because SQL expects null, not ''
 			"player_ip" = ip || null,
 			"player_cid" = cid || null,
 			"skip" = bansperpage * page,
@@ -535,16 +535,16 @@
 			var/banid = query_search_bans.item[1]
 			var/bantime = query_search_bans.item[2]
 			var/bantype  = query_search_bans.item[3]
-			var/reason = query_search_bans.item[4]
-			var/job = query_search_bans.item[5]
+			var/reason = unsanitizeSQL(query_search_bans.item[4])
+			var/job = unsanitizeSQL(query_search_bans.item[5])
 			var/duration = query_search_bans.item[6]
 			var/expiration = query_search_bans.item[7]
 			var/ban_key = query_search_bans.item[8]
 			var/a_key = query_search_bans.item[9]
 			var/unbanned = query_search_bans.item[10]
-			var/unban_key = query_search_bans.item[11]
+			var/unban_key = unsanitizeSQL(query_search_bans.item[11])
 			var/unbantime = query_search_bans.item[12]
-			var/edits = query_search_bans.item[13]
+			var/edits = unsanitizeSQL(query_search_bans.item[13])
 			var/round_id = query_search_bans.item[14]
 
 			var/lcolor = blcolor

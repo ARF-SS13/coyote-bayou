@@ -102,16 +102,16 @@
 
 		var/datum/db_query/query_ban_check = SSdbcore.NewQuery(
 			"SELECT IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].ckey), ckey), IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].a_ckey), a_ckey), reason, expiration_time, duration, bantime, bantype, id, round_id FROM [format_table_name("ban")] WHERE ( ckey = :ckey [ipquery] [cidquery]) AND (bantype = 'PERMABAN' OR bantype = 'ADMIN_PERMABAN' OR ((bantype = 'TEMPBAN' OR bantype = 'ADMIN_TEMPBAN') AND expiration_time > Now())) AND isnull(unbanned)",
-			list("ckey" = ckey)
+			list("ckey" = sanitizeSQL(ckey))
 		)
 		if(!query_ban_check.Execute(async = TRUE))
 			qdel(query_ban_check)
 			key_cache[key] = 0
 			return
 		while(query_ban_check.NextRow())
-			var/pkey = query_ban_check.item[1]
-			var/akey = query_ban_check.item[2]
-			var/reason = query_ban_check.item[3]
+			var/pkey = unsanitizeSQL(query_ban_check.item[1])
+			var/akey = unsanitizeSQL(query_ban_check.item[2])
+			var/reason = unsanitizeSQL(query_ban_check.item[3])
 			var/expiration = query_ban_check.item[4]
 			var/duration = query_ban_check.item[5]
 			var/bantime = query_ban_check.item[6]
