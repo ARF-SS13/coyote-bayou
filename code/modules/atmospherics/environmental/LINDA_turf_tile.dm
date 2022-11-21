@@ -28,14 +28,14 @@
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
 
-// /turf/open/Initialize()
-// 	if(!blocks_air)
+/turf/open/Initialize()
+	if(!blocks_air)
 
-// 		air = new(2500,src)
+		air = new(2500,src)
 
-// 		air.copy_from_turf(src)
-// 		update_air_ref(planetary_atmos ? 1 : 2)
-// 	. = ..()
+		air.copy_from_turf(src)
+		update_air_ref(planetary_atmos ? 1 : 2)
+	. = ..()
 
 /turf/open/Destroy()
 	if(active_hotspot)

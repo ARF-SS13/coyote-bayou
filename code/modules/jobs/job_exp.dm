@@ -158,7 +158,7 @@ GLOBAL_PROTECT(exp_to_update)
 		return -1
 	var/datum/db_query/exp_read = SSdbcore.NewQuery(
 		"SELECT job, minutes FROM [format_table_name("role_time")] WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey))
+		list("ckey" = ckey)
 	)
 	if(!exp_read.Execute(async = TRUE))
 		qdel(exp_read)
@@ -193,7 +193,7 @@ GLOBAL_PROTECT(exp_to_update)
 
 	var/datum/db_query/flag_update = SSdbcore.NewQuery(
 		"UPDATE [format_table_name("player")] SET flags = :flags WHERE ckey= :ckey",
-		list("flags" = prefs.db_flags, "ckey" = sanitizeSQL(ckey))
+		list("flags" = prefs.db_flags, "ckey" = ckey)
 	)
 
 	if(!flag_update.Execute())
@@ -276,7 +276,7 @@ GLOBAL_PROTECT(exp_to_update)
 
 	var/datum/db_query/flags_read = SSdbcore.NewQuery(
 		"SELECT flags FROM [format_table_name("player")] WHERE ckey=:ckey",
-		list("ckey" = sanitizeSQL(ckey))
+		list("ckey" = ckey)
 	)
 
 	if(!flags_read.Execute(async = TRUE))

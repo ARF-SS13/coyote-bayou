@@ -31,7 +31,7 @@
 		if("Write")
 			var/datum/db_query/query_memocheck = SSdbcore.NewQuery(
 				"SELECT ckey FROM [format_table_name("mentor_memo")] WHERE ckey = :ckey",
-				list("ckey" = sanitizeSQL(ckey))
+				list("ckey" = ckey)
 			)
 			if(!query_memocheck.Execute())
 				var/err = query_memocheck.ErrorMsg()
@@ -49,7 +49,7 @@
 			var/timestamp = SQLtime()
 			var/datum/db_query/query_memoadd = SSdbcore.NewQuery(
 				"INSERT INTO [format_table_name("mentor_memo")] (ckey, memotext, timestamp) VALUES (:ckey, :memotext, :timestamp)",
-				list("ckey" = sanitizeSQL(ckey), "memotext" = sanitizeSQL(memotext), "timestamp" = timestamp)
+				list("ckey" = ckey, "memotext" = sanitizeSQL(memotext), "timestamp" = timestamp)
 			)
 			if(!query_memoadd.Execute())
 				var/err = query_memoadd.ErrorMsg()
@@ -79,7 +79,7 @@
 				return
 			var/datum/db_query/query_memofind = SSdbcore.NewQuery(
 				"SELECT memotext FROM [format_table_name("mentor_memo")] WHERE ckey = :ckey",
-				list("ckey" = sanitizeSQL(target_ckey))
+				list("ckey" = target_ckey)
 			)
 			if(!query_memofind.Execute())
 				var/err = query_memofind.ErrorMsg()
@@ -95,7 +95,7 @@
 				var/edit_text = "Edited by [ckey] on [SQLtime()] from<br>[old_memo]<br>to<br>[new_memo]<hr>"
 				var/datum/db_query/update_query = SSdbcore.NewQuery(
 					"UPDATE [format_table_name("mentor_memo")] SET memotext = :memotext, last_editor = :last_editor, edits = CONCAT(IFNULL(edits,''), :edit_text) WHERE ckey = :ckey",
-					list("memotext" = sanitizeSQL(new_memo), "last_editor" = sanitizeSQL(ckey), "ckey" = sanitizeSQL(target_ckey), "edit_text" = sanitizeSQL(edit_text))
+					list("memotext" = sanitizeSQL(new_memo), "last_editor" = ckey, "ckey" = target_ckey, "edit_text" = sanitizeSQL(edit_text))
 				)
 				if(!update_query.Execute())
 					var/err = update_query.ErrorMsg()
@@ -120,10 +120,10 @@
 				return
 			var/output = null
 			while(query_memoshow.NextRow())
-				var/ckey = unsanitizeSQL(query_memoshow.item[1])
+				var/ckey = query_memoshow.item[1]
 				var/memotext = unsanitizeSQL(query_memoshow.item[2])
 				var/timestamp = query_memoshow.item[3]
-				var/last_editor = unsanitizeSQL(query_memoshow.item[4])
+				var/last_editor = query_memoshow.item[4]
 				output += "<span class='memo'>Mentor memo by <span class='prefix'>[ckey]</span> on [timestamp]"
 				if(last_editor)
 					output += "<br><span class='memoedit'>Last edit by [last_editor] <A href='?_src_=holder;mentormemoeditlist=[ckey]'>(Click here to see edit log)</A></span>"
@@ -142,7 +142,7 @@
 				return
 			var/list/memolist = list()
 			while(query_memodellist.NextRow())
-				var/ckey = unsanitizeSQL(query_memodellist.item[1])
+				var/ckey = query_memodellist.item[1]
 				memolist += "[ckey]"
 			qdel(query_memodellist)
 			if(!memolist.len)
@@ -153,7 +153,7 @@
 				return
 			var/datum/db_query/query_memodel = SSdbcore.NewQuery(
 				"DELETE FROM [format_table_name("memo")] WHERE ckey = :ckey",
-				list("ckey" = sanitizeSQL(target_ckey))
+				list("ckey" = target_ckey)
 			)
 			if(!query_memodel.Execute())
 				var/err = query_memodel.ErrorMsg()

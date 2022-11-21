@@ -82,7 +82,7 @@ GLOBAL_PROTECT(mentor_href_token)
 		if(!query_load_mentors.Execute())
 			return
 		while(query_load_mentors.NextRow())
-			var/ckey = unsanitizeSQL(ckey(query_load_mentors.item[1]))
+			var/ckey = ckey(query_load_mentors.item[1])
 			new /datum/mentors(ckey)
 
 // new client var: mentor_datum. Acts the same way holder does towards admin: it holds the mentor datum. if set, the guy's a mentor.

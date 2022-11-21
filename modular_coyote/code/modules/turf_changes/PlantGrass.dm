@@ -33,16 +33,11 @@
 	var/obj/structure/flora/turfPlant = null
 
 /turf/open/Initialize()
-	if(!blocks_air)
-		air = new(2500,src)
-		air.copy_from_turf(src)
-		update_air_ref(planetary_atmos ? 1 : 2)
-	// DO NOT MODIFY THIS PROC BEFORE THIS LINE
-
+	. = ..()
+	
 	if(spawnPlants)
 		if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 			plantGrass()
-	. = ..()
 
 /turf/open/ChangeTurf(path, new_baseturf, flags)
 	if(turfPlant)

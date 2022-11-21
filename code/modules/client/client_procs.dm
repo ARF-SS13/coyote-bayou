@@ -538,25 +538,25 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return
 	var/datum/db_query/query_get_related_ip = SSdbcore.NewQuery(
 		"SELECT ckey FROM [format_table_name("player")] WHERE ip = INET_ATON(:address) AND ckey != :ckey",
-		list("address" = address, "ckey" = sanitizeSQL(ckey))
+		list("address" = address, "ckey" = ckey)
 	)
 	if(!query_get_related_ip.Execute())
 		qdel(query_get_related_ip)
 		return
 	related_accounts_ip = ""
 	while(query_get_related_ip.NextRow())
-		related_accounts_ip += "[unsanitizeSQL(query_get_related_ip.item[1])], "
+		related_accounts_ip += "[query_get_related_ip.item[1]], "
 	qdel(query_get_related_ip)
 	var/datum/db_query/query_get_related_cid = SSdbcore.NewQuery(
 		"SELECT ckey FROM [format_table_name("player")] WHERE computerid = :computerid AND ckey != :ckey",
-		list("computerid" = computer_id, "ckey" = sanitizeSQL(ckey))
+		list("computerid" = computer_id, "ckey" = ckey)
 	)
 	if(!query_get_related_cid.Execute())
 		qdel(query_get_related_cid)
 		return
 	related_accounts_cid = ""
 	while (query_get_related_cid.NextRow())
-		related_accounts_cid += "[unsanitizeSQL(query_get_related_cid.item[1])], "
+		related_accounts_cid += "[query_get_related_cid.item[1]], "
 	qdel(query_get_related_cid)
 	var/admin_rank = "Player"
 	if (src.holder && src.holder.rank)
@@ -567,7 +567,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/new_player
 	var/datum/db_query/query_client_in_db = SSdbcore.NewQuery(
 		"SELECT 1 FROM [format_table_name("player")] WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey))
+		list("ckey" = ckey)
 	)
 	if(!query_client_in_db.Execute())
 		qdel(query_client_in_db)
@@ -602,7 +602,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/datum/db_query/query_add_player = SSdbcore.NewQuery({"
 			INSERT INTO [format_table_name("player")] (`ckey`, `byond_key`, `firstseen`, `firstseen_round_id`, `lastseen`, `lastseen_round_id`, `ip`, `computerid`, `lastadminrank`, `accountjoindate`)
 			VALUES (:ckey, :key, Now(), :round_id, Now(), :round_id, INET_ATON(:ip), :computerid, :adminrank, :account_join_date)
-		"}, list("ckey" = sanitizeSQL(ckey), "key" = sanitizeSQL(key), "round_id" = GLOB.round_id, "ip" = address, "computerid" = computer_id, "adminrank" = sanitizeSQL(admin_rank), "account_join_date" = account_join_date || null))
+		"}, list("ckey" = ckey, "key" = key, "round_id" = GLOB.round_id, "ip" = address, "computerid" = computer_id, "adminrank" = admin_rank, "account_join_date" = account_join_date || null))
 		if(!query_add_player.Execute())
 			qdel(query_client_in_db)
 			qdel(query_add_player)
@@ -628,7 +628,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	qdel(query_client_in_db)
 	var/datum/db_query/query_get_client_age = SSdbcore.NewQuery(
 		"SELECT firstseen, DATEDIFF(Now(),firstseen), accountjoindate, DATEDIFF(Now(),accountjoindate) FROM [format_table_name("player")] WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey))
+		list("ckey" = ckey)
 	)
 	if(!query_get_client_age.Execute())
 		qdel(query_get_client_age)
@@ -659,7 +659,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(!new_player)
 		var/datum/db_query/query_log_player = SSdbcore.NewQuery(
 			"UPDATE [format_table_name("player")] SET lastseen = Now(), lastseen_round_id = :round_id, ip = INET_ATON(:ip), computerid = :computerid, lastadminrank = :admin_rank, accountjoindate = :account_join_date WHERE ckey = :ckey",
-			list("round_id" = GLOB.round_id, "ip" = address, "computerid" = computer_id, "admin_rank" = sanitizeSQL(admin_rank), "account_join_date" = account_join_date || null, "ckey" = sanitizeSQL(ckey))
+			list("round_id" = GLOB.round_id, "ip" = address, "computerid" = computer_id, "admin_rank" = admin_rank, "account_join_date" = account_join_date || null, "ckey" = ckey)
 		)
 		if(!query_log_player.Execute())
 			qdel(query_log_player)
@@ -670,7 +670,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/datum/db_query/query_log_connection = SSdbcore.NewQuery({"
 		INSERT INTO `[format_table_name("connection_log")]` (`id`,`datetime`,`server_ip`,`server_port`,`round_id`,`ckey`,`ip`,`computerid`)
 		VALUES(null,Now(),INET_ATON(:internet_address),:port,:round_id,:ckey,INET_ATON(:ip),:computerid)
-	"}, list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "ckey" = sanitizeSQL(ckey), "ip" = address, "computerid" = computer_id))
+	"}, list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "ckey" = ckey, "ip" = address, "computerid" = computer_id))
 	query_log_connection.Execute()
 	qdel(query_log_connection)
 
@@ -697,13 +697,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/key
 	var/datum/db_query/query_check_byond_key = SSdbcore.NewQuery(
 		"SELECT byond_key FROM [format_table_name("player")] WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey))
+		list("ckey" = ckey)
 	)
 	if(!query_check_byond_key.Execute())
 		qdel(query_check_byond_key)
 		return
 	if(query_check_byond_key.NextRow())
-		key = unsanitizeSQL(query_check_byond_key.item[1])
+		key = query_check_byond_key.item[1]
 	qdel(query_check_byond_key)
 	if(key != key)
 		var/list/http = world.Export("http://byond.com/members/[ckey]?format=text")
@@ -716,7 +716,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			if(R.Find(F))
 				var/datum/db_query/query_update_byond_key = SSdbcore.NewQuery(
 					"UPDATE [format_table_name("player")] SET byond_key = :byond_key WHERE ckey = :ckey",
-					list("byond_key" = sanitizeSQL(R.group[1]), "ckey" = sanitizeSQL(ckey))
+					list("byond_key" = R.group[1], "ckey" = ckey)
 				)
 				query_update_byond_key.Execute()
 				qdel(query_update_byond_key)
@@ -736,7 +736,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/static/cidcheck_spoofckeys = list()
 	var/datum/db_query/query_cidcheck = SSdbcore.NewQuery(
 		"SELECT computerid FROM [format_table_name("player")] WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey))
+		list("ckey" = ckey)
 	)
 	query_cidcheck.Execute()
 
@@ -815,7 +815,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	//check to see if we noted them in the last day.
 	var/datum/db_query/query_get_notes = SSdbcore.NewQuery(
 		"SELECT id FROM [format_table_name("messages")] WHERE type = 'note' AND targetckey = :targetckey AND adminckey = :adminckey AND timestamp + INTERVAL 1 DAY < NOW() AND deleted = 0 AND expire_timestamp > NOW()",
-		list("targetckey" = sanitizeSQL(ckey), "adminckey" = sanitizeSQL(system_ckey))
+		list("targetckey" = ckey, "adminckey" = system_ckey)
 	)
 	if(!query_get_notes.Execute())
 		qdel(query_get_notes)
@@ -827,13 +827,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	//regardless of above, make sure their last note is not from us, as no point in repeating the same note over and over.
 	query_get_notes = SSdbcore.NewQuery(
 		"SELECT adminckey FROM [format_table_name("messages")] WHERE targetckey = :targetckey AND deleted = 0 AND expire_timestamp > NOW() ORDER BY timestamp DESC LIMIT 1",
-		list("targetckey" = sanitizeSQL(ckey))
+		list("targetckey" = ckey)
 	)
 	if(!query_get_notes.Execute())
 		qdel(query_get_notes)
 		return
 	if(query_get_notes.NextRow())
-		if (unsanitizeSQL(query_get_notes.item[1]) == system_ckey)
+		if (query_get_notes.item[1] == system_ckey)
 			qdel(query_get_notes)
 			return
 	qdel(query_get_notes)

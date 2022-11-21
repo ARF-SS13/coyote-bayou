@@ -1534,7 +1534,7 @@ Records disabled until a use for them is found
 	if(href_list["jobbancheck"])
 		var/datum/db_query/query_get_jobban = SSdbcore.NewQuery(
 			"SELECT reason, bantime, duration, expiration_time, IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].a_ckey), a_ckey) FROM [format_table_name("ban")] WHERE ckey = :ckey AND (bantype = 'JOB_PERMABAN'  OR (bantype = 'JOB_TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned) AND job = :job",
-			list("ckey" = sanitizeSQL(user.ckey), "job" = href_list["jobbancheck"])
+			list("ckey" = user.ckey, "job" = href_list["jobbancheck"])
 		)
 		if(!query_get_jobban.warn_execute())
 			qdel(query_get_jobban)
@@ -1544,7 +1544,7 @@ Records disabled until a use for them is found
 			var/bantime = query_get_jobban.item[2]
 			var/duration = query_get_jobban.item[3]
 			var/expiration_time = query_get_jobban.item[4]
-			var/admin_key = unsanitizeSQL(query_get_jobban.item[5])
+			var/admin_key = query_get_jobban.item[5]
 			var/text
 			text = "<span class='redtext'>You, or another user of this computer, ([user.key]) is banned from playing [href_list["jobbancheck"]]. The ban reason is:<br>[reason]<br>This ban was applied by [admin_key] on [bantime]"
 			if(text2num(duration) > 0)

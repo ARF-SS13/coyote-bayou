@@ -419,7 +419,7 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 					else
 
 						var/msg = "[key_name(usr)] has uploaded the book titled [scanner.cache.name], [length(scanner.cache.dat)] signs"
-						var/datum/db_query/query_library_upload = SSdbcore.NewQuery("INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, datetime, round_id_created) VALUES ('[sanitizeSQL(scanner.cache.author)]', '[scanner.cache.name]', '[sanitizeSQL(scanner.cache.dat)]', '[sanitizeSQL(upload_category)]', '[sanitizeSQL(usr.ckey)]', Now(), '[GLOB.round_id]')")
+						var/datum/db_query/query_library_upload = SSdbcore.NewQuery("INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, datetime, round_id_created) VALUES ('[sanitizeSQL(scanner.cache.author)]', '[sanitizeSQL(scanner.cache.name)]', '[sanitizeSQL(scanner.cache.dat)]', '[upload_category]', '[usr.ckey]', Now(), '[GLOB.round_id]')")
 						if(!query_library_upload.Execute())
 							qdel(query_library_upload)
 							alert("Database error encountered uploading to Archive")

@@ -19,7 +19,7 @@
 		return -1
 	var/datum/db_query/whitelist_read = SSdbcore.NewQuery(
 		"SELECT whitelist FROM [format_table_name("role_whitelist")] WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey))
+		list("ckey" = ckey)
 	)
 	if(!whitelist_read.Execute())
 		qdel(whitelist_read)
@@ -27,7 +27,7 @@
 	var/list/play_records = list()
 	var/list/whitelists = list()
 	while(whitelist_read.NextRow())
-		whitelists[unsanitizeSQL(whitelist_read.item[1])] = unsanitizeSQL(whitelist_read.item[1])  // should create a whitelists["whitelist name"] for each whitelist held by the user
+		whitelists[whitelist_read.item[1]] = whitelist_read.item[1]  // should create a whitelists["whitelist name"] for each whitelist held by the user
 
 	for(var/rtype in SSjob.name_occupations)    //cycle through all of the jobs and add them to the full list
 		play_records[rtype] = rtype

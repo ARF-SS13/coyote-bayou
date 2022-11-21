@@ -8,7 +8,7 @@
 	newMoney = currentMoney += amount
 	var/datum/db_query/query_set_money = SSdbcore.NewQuery(
 		"UPDATE money SET amount = :amount WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey), "amount" = newMoney)
+		list("ckey" = ckey, "amount" = newMoney)
 		)
 	if(!query_set_money.warn_execute())
 		qdel(query_set_money)
@@ -22,7 +22,7 @@
 		return 0
 	var/datum/db_query/query_get_money = SSdbcore.NewQuery(
 	"SELECT amount FROM [format_table_name("money")] WHERE ckey = :ckey",
-	list("ckey" = sanitizeSQL(ckey))
+	list("ckey" = ckey)
 	)
 	if(!query_get_money.warn_execute())
 		qdel(query_get_money)
@@ -34,7 +34,7 @@
 	qdel(query_get_money)
 	var/datum/db_query/query_add_new_account = SSdbcore.NewQuery(
 	"INSERT INTO [format_table_name("money")] VALUES (:ckey, '0')",
-	list("ckey" = sanitizeSQL(ckey))
+	list("ckey" = ckey)
 	)
 	if(!query_add_new_account.warn_execute())
 		qdel(query_add_new_account)
@@ -97,7 +97,7 @@
 	newMoney = currentMoney += amount
 	var/datum/db_query/query_set_money = SSdbcore.NewQuery(
 		"UPDATE money SET amount = :amount WHERE ckey = :ckey",
-		list("ckey" = sanitizeSQL(ckey), "amount" = newMoney)
+		list("ckey" = ckey, "amount" = newMoney)
 		)
 	if(!query_set_money.warn_execute())
 		qdel(query_set_money)
@@ -111,7 +111,7 @@
 		return 0
 	var/datum/db_query/query_get_money = SSdbcore.NewQuery(
 	"SELECT amount FROM [format_table_name("money")] WHERE ckey = :ckey",
-	list("ckey" = sanitizeSQL(ckey))
+	list("ckey" = ckey)
 	)
 	if(!query_get_money.warn_execute())
 		qdel(query_get_money)
@@ -123,7 +123,7 @@
 	qdel(query_get_money)
 	var/datum/db_query/query_add_new_account = SSdbcore.NewQuery(
 	"INSERT INTO [format_table_name("money")] VALUES (:ckey, '0')",
-	list("ckey" = sanitizeSQL(ckey))
+	list("ckey" = ckey)
 	)
 	if(!query_add_new_account.warn_execute())
 		qdel(query_add_new_account)
