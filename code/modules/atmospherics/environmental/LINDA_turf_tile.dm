@@ -24,7 +24,7 @@
 	var/datum/gas_mixture/turf/air
 
 	var/obj/effect/hotspot/active_hotspot
-	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
+	var/planetary_atmos = TRUE //air will revert to initial_gas_mix over time
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
 
