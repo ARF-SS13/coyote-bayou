@@ -441,6 +441,10 @@
 /obj/structure/railing/corner,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"aAw" = (
+/obj/structure/simple_door/repaired,
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "aBR" = (
 /obj/machinery/light{
 	dir = 4
@@ -598,11 +602,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
-"aQv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
 "aQV" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -917,17 +916,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"bkg" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 2
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
 "bkV" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1479,17 +1467,6 @@
 /obj/structure/chair/sofa/right,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"cgA" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 2
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
 "chc" = (
 /obj/structure/closet,
 /obj/item/geiger_counter,
@@ -1615,6 +1592,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"ctb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "ctf" = (
 /obj/effect/overlay/junk/toilet{
 	dir = 4;
@@ -2302,6 +2284,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"dBd" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 8
+	},
+/area/f13/building/hospital)
 "dBf" = (
 /obj/structure/railing/wood{
 	dir = 8
@@ -2937,26 +2929,12 @@
 	dir = 10
 	},
 /area/f13/building/hospital)
-"exY" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Mall Desperados"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 5
-	},
-/area/f13/building/hospital)
 "eyV" = (
 /obj/effect/landmark/vertibird{
 	name = "Mass Fusion Landing Pad"
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/massfusion)
-"eAm" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
 "eAG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/booth,
@@ -3206,13 +3184,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/mall)
-"eRb" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
 "eRm" = (
 /obj/structure/closet,
 /obj/item/storage/box/masks,
@@ -3739,6 +3710,11 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
+"fJA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "fOQ" = (
 /obj/structure/railing{
 	dir = 6
@@ -3804,15 +3780,6 @@
 	icon_state = "wide-broken5"
 	},
 /area/f13/wasteland)
-"fRB" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paper{
-	info = "PEABUS COMES"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/building/abandoned)
 "fRC" = (
 /obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
@@ -3987,16 +3954,6 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
-"gbh" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Mall Desperados"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 8
-	},
-/area/f13/building/hospital)
 "gbV" = (
 /obj/structure/closet/crate/bin{
 	pixel_y = 8
@@ -4015,12 +3972,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"gdj" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken1"
-	},
-/area/f13/wasteland)
 "gdU" = (
 /obj/structure/table,
 /obj/structure/junk/small/tv,
@@ -4105,6 +4056,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
+"ghr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper{
+	info = "PEABUS COMES"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/abandoned)
 "ghx" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -4142,6 +4102,13 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/mall)
+"gjK" = (
+/obj/machinery/smoke_machine{
+	name = "HVAC Machine"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "gkm" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/medicine,
@@ -4392,6 +4359,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"gDS" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
 "gEk" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -6370,6 +6347,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"jzs" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken1"
+	},
+/area/f13/wasteland)
 "jzy" = (
 /turf/closed/wall/f13/store,
 /area/f13/building)
@@ -6837,6 +6820,16 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"kms" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 5
+	},
+/area/f13/building/hospital)
 "kmU" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -6871,13 +6864,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"koo" = (
-/obj/machinery/smoke_machine{
-	name = "HVAC Machine"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "koM" = (
 /obj/structure/rack,
 /obj/item/storage/bag/plants/portaseeder,
@@ -7152,6 +7138,11 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/mall)
+"kFn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "kFD" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/indestructible/ground/outside/roof,
@@ -7297,8 +7288,8 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "kTF" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/roof,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood_common,
 /area/f13/wasteland)
 "kTQ" = (
 /obj/structure/closet/cardboard,
@@ -7384,6 +7375,17 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/building)
+"lco" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "lcv" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -7806,8 +7808,7 @@
 /area/f13/building)
 "lLE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_wide,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "lLI" = (
 /obj/structure/chair/stool{
@@ -7939,11 +7940,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"lYq" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet,
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
 "lYF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -8009,6 +8005,13 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/building)
+"mdw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "mdB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/metal/dirtystore{
@@ -8180,6 +8183,11 @@
 /obj/structure/decoration/rag,
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"msC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood,
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "mta" = (
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/f13{
@@ -8202,6 +8210,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"muV" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken5"
+	},
+/area/f13/wasteland)
 "mvo" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/circuitry,
@@ -8259,6 +8273,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/mall)
+"myk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib5-old"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "myv" = (
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8338,10 +8359,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"mDW" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
 "mEz" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
@@ -8564,16 +8581,6 @@
 /obj/item/pda/captain,
 /turf/open/floor/carpet/black,
 /area/f13/building)
-"mWn" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Mall Desperados"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
 "mWs" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/f13/npc_raider,
@@ -9637,6 +9644,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"ows" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib5-old"
+	},
+/turf/open/floor/wood_common{
+	icon_state = "common-broken2"
+	},
+/area/f13/building/abandoned)
 "owR" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/old{
@@ -9959,11 +9975,6 @@
 /obj/structure/wreck/trash/machinepile,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
-"oUv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "oVn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
@@ -10435,11 +10446,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/ruins)
-"pRB" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/bin,
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
 "pSt" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -10657,6 +10663,17 @@
 /obj/item/trash/cheesie,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"qiZ" = (
+/obj/machinery/libraryscanner,
+/obj/machinery/light{
+	bulb_colour = "#BC8F8F";
+	icon_state = "tube-burned";
+	light_color = "#BC8F8F";
+	name = "bar light";
+	dir = 1
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "qju" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -10892,6 +10909,12 @@
 /obj/item/crafting/duct_tape,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/mall)
+"qCs" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood_common{
+	icon_state = "common-broken2"
+	},
+/area/f13/wasteland)
 "qDx" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
@@ -11041,14 +11064,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
-"qPc" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Mall Desperados"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side,
-/area/f13/building/hospital)
 "qPu" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
@@ -11501,16 +11516,6 @@
 	sunlight_state = 1
 	},
 /area/f13/building/abandoned)
-"rBa" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Mall Desperados"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 4
-	},
-/area/f13/building/hospital)
 "rBR" = (
 /obj/structure/barricade/bars,
 /obj/structure/window/reinforced/fulltile,
@@ -12468,17 +12473,6 @@
 	icon_state = "rubbleplate"
 	},
 /area/f13/building/mall)
-"thM" = (
-/obj/machinery/libraryscanner,
-/obj/machinery/light{
-	bulb_colour = "#BC8F8F";
-	icon_state = "tube-burned";
-	light_color = "#BC8F8F";
-	name = "bar light";
-	dir = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
 "tik" = (
 /obj/structure/railing{
 	dir = 4
@@ -12794,6 +12788,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"tFq" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "tHJ" = (
 /obj/item/clothing/under/f13/petrochico,
 /obj/effect/decal/cleanable/dirt{
@@ -13506,6 +13510,16 @@
 /obj/structure/chair/sofa,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"uHB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/abandoned)
 "uJQ" = (
 /mob/living/simple_animal/hostile/raider/junker,
 /turf/open/indestructible/ground/outside/roof,
@@ -13523,9 +13537,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/tentwall,
 /area/f13/building)
-"uNL" = (
+"uOi" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood,
+/obj/structure/chair{
+	dir = 8
+	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "uOS" = (
@@ -13978,12 +13994,6 @@
 /obj/structure/junk/locker,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
-"vHB" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken5"
-	},
-/area/f13/wasteland)
 "vIy" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical"
@@ -14016,6 +14026,17 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/mall)
+"vMj" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "vNT" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
@@ -14182,12 +14203,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"wbd" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken6"
-	},
-/area/f13/wasteland)
 "wbR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -14244,6 +14259,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"wgW" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side,
+/area/f13/building/hospital)
 "whs" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 9
@@ -14348,6 +14371,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"wrN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "wse" = (
 /obj/structure/curtain,
 /obj/item/shard,
@@ -14748,13 +14776,6 @@
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"xdV" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair{
-	dir = 8
-	},
-/turf/open/floor/wood_common,
-/area/f13/wasteland)
 "xfA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -14778,6 +14799,11 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"xht" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet,
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "xhL" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/attachments,
@@ -14841,13 +14867,6 @@
 	icon_state = "rubbleplate"
 	},
 /area/f13/building/mall)
-"xkF" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old"
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
 "xkN" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -14862,16 +14881,6 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
-"xmg" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood_common{
-	icon_state = "common-broken2"
-	},
-/area/f13/wasteland)
-"xmS" = (
-/obj/structure/simple_door/repaired,
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
 "xnw" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -14922,6 +14931,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/hospital)
+"xrC" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken6"
+	},
+/area/f13/wasteland)
 "xsf" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -15180,15 +15195,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
-"xQH" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old"
-	},
-/turf/open/floor/wood_common{
-	icon_state = "common-broken2"
-	},
-/area/f13/building/abandoned)
 "xSN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
@@ -15225,6 +15231,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"xVM" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "xWX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -29223,7 +29233,7 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 hMq
 hMq
@@ -29231,10 +29241,10 @@ hMq
 hMq
 aKa
 aKa
-kTF
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
+lLE
 oez
 oez
 oez
@@ -29480,7 +29490,7 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 hMq
 vRx
@@ -29488,10 +29498,10 @@ udS
 hMq
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 oez
 oez
 oez
@@ -29736,8 +29746,8 @@ oez
 oez
 oez
 oez
-kTF
-kTF
+lLE
+lLE
 aKa
 hMq
 mjO
@@ -29748,7 +29758,7 @@ hMq
 hMq
 aKa
 aKa
-kTF
+lLE
 oez
 oez
 oez
@@ -29993,7 +30003,7 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 aKa
 hMq
@@ -30004,8 +30014,8 @@ cdN
 axq
 hMq
 aKa
-kTF
-kTF
+lLE
+lLE
 oez
 oez
 oez
@@ -30261,7 +30271,7 @@ sNs
 sNs
 hMq
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -30518,7 +30528,7 @@ rVk
 oSo
 ubl
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -30775,7 +30785,7 @@ sNs
 rVk
 kvu
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -31032,7 +31042,7 @@ qNu
 rVk
 ubl
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -31288,8 +31298,8 @@ cGS
 ykw
 rVk
 ubl
-kTF
-kTF
+lLE
+lLE
 aKa
 oez
 oez
@@ -31546,7 +31556,7 @@ ddK
 cdN
 hMq
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -31792,7 +31802,7 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 aKa
 hMq
@@ -31803,7 +31813,7 @@ aas
 mRc
 hMq
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -32049,7 +32059,7 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 aKa
 hMq
@@ -32060,7 +32070,7 @@ pzp
 mHH
 hMq
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -32306,8 +32316,8 @@ oez
 oez
 oez
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 hMq
 hMq
@@ -32562,9 +32572,9 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 hMq
@@ -32819,7 +32829,7 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 hMq
 hMq
 hMq
@@ -34293,7 +34303,7 @@ oez
 oez
 oez
 oZc
-thM
+qiZ
 ksv
 ksv
 ksv
@@ -43264,7 +43274,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -43519,11 +43529,11 @@ oez
 oez
 oez
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -43779,12 +43789,12 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -44036,12 +44046,12 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -44293,13 +44303,13 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -44546,19 +44556,19 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 kjh
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 oez
@@ -44803,19 +44813,19 @@ oez
 oez
 oez
 oez
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -45062,11 +45072,11 @@ oez
 oez
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -47965,7 +47975,7 @@ dUa
 dUa
 dUa
 dUa
-mDW
+xVM
 gen
 fRz
 oez
@@ -48145,8 +48155,8 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -48219,21 +48229,21 @@ dUa
 dUa
 oRM
 dUa
-mDW
+xVM
 dUa
-vHB
+muV
 dUa
 dUa
 dUa
 oez
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 oez
 oez
 aKa
@@ -48242,9 +48252,9 @@ kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 kjh
-kTF
+lLE
 aKa
 oez
 oez
@@ -48298,10 +48308,10 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -48401,8 +48411,8 @@ oez
 aKa
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 aKa
 kjh
 aKa
@@ -48475,33 +48485,33 @@ dUa
 gen
 dUa
 dUa
-mDW
+xVM
 fRz
-mDW
+xVM
 dUa
 dUa
 dUa
 dUa
 oez
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 oez
 oez
 aKa
-kTF
-koo
+lLE
+gjK
 aKa
 aKa
 aKa
-kTF
-koo
-kTF
+lLE
+gjK
+lLE
 aKa
 oez
 oez
@@ -48549,16 +48559,16 @@ oez
 aKa
 aKa
 aKa
-kTF
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
+lLE
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -48658,7 +48668,7 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 kjh
@@ -48728,12 +48738,12 @@ dUa
 gen
 dUa
 dUa
-mDW
-mDW
+xVM
+xVM
 dUa
-mDW
+xVM
 dUa
-mDW
+xVM
 dUa
 dUa
 dUa
@@ -48741,13 +48751,13 @@ dUa
 dUa
 oez
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 oez
 oez
 aKa
@@ -48755,67 +48765,67 @@ aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
-koo
-aKa
-aKa
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+gjK
 aKa
 aKa
-kTF
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 aKa
 aKa
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
 aKa
-kTF
+aKa
+lLE
+aKa
+lLE
 aKa
 aKa
 oez
@@ -48915,7 +48925,7 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 kjh
@@ -48984,10 +48994,10 @@ oez
 dUa
 dUa
 dUa
-wbd
-gdj
+xrC
+jzs
 dUa
-mDW
+xVM
 dUa
 dUa
 dUa
@@ -48998,24 +49008,24 @@ dUa
 gen
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -49062,7 +49072,7 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -49070,9 +49080,9 @@ kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -49172,17 +49182,17 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -49240,39 +49250,39 @@ oez
 oez
 dUa
 dUa
-mDW
+xVM
 dUa
 dUa
-mDW
-mDW
+xVM
+xVM
 dUa
 dUa
-mDW
-wbd
+xVM
+xrC
 cbg
-mDW
-mDW
+xVM
+xVM
 dUa
 oez
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -49322,14 +49332,14 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -49435,11 +49445,11 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -49496,7 +49506,7 @@ oez
 oez
 oez
 dUa
-mDW
+xVM
 dUa
 gen
 dUa
@@ -49504,32 +49514,32 @@ dUa
 fRz
 dUa
 dUa
-mDW
+xVM
 dUa
 fRz
-mDW
+xVM
 dUa
 dUa
 oez
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -49579,19 +49589,19 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -49683,7 +49693,7 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -49691,13 +49701,13 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 kjh
 aKa
-kTF
-kTF
+lLE
+lLE
 oez
 oez
 oez
@@ -49756,15 +49766,15 @@ dUa
 dUa
 dUa
 dUa
-mDW
+xVM
 dUa
 dUa
 dUa
 dUa
-mDW
+xVM
 dUa
 dUa
-mDW
+xVM
 dUa
 gen
 oez
@@ -49779,7 +49789,7 @@ aKa
 oez
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -49836,7 +49846,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -49848,7 +49858,7 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -49940,20 +49950,20 @@ oez
 oez
 oez
 oez
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
-kTF
-kTF
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
+lLE
+lLE
 aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -50011,13 +50021,13 @@ oez
 oez
 dUa
 dUa
-mDW
-wbd
+xVM
+xrC
 dUa
 oRM
 dUa
 dUa
-mDW
+xVM
 dUa
 dUa
 dUa
@@ -50036,11 +50046,11 @@ aKa
 oez
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -50093,19 +50103,19 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -50198,11 +50208,11 @@ oez
 oez
 oez
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -50273,11 +50283,11 @@ dUa
 dUa
 dUa
 gen
-mDW
+xVM
 dUa
 dUa
 dUa
-mDW
+xVM
 gen
 dUa
 dUa
@@ -50348,20 +50358,20 @@ oez
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -50457,10 +50467,10 @@ oez
 aKa
 aKa
 aKa
-kTF
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -50528,13 +50538,13 @@ gen
 dUa
 dUa
 dUa
-mDW
-mDW
+xVM
+xVM
 dUa
 oRM
 dUa
 dUa
-vHB
+muV
 dUa
 dUa
 oRM
@@ -50604,23 +50614,23 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
-aKa
-aKa
-aKa
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
 aKa
-kTF
+aKa
+aKa
+lLE
+aKa
+lLE
 aKa
 aKa
 oez
@@ -50783,14 +50793,14 @@ oez
 dUa
 dUa
 dUa
-mDW
+xVM
 dUa
 dUa
 dUa
 dUa
-mDW
+xVM
 dUa
-mDW
+xVM
 dUa
 dUa
 dUa
@@ -50864,7 +50874,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -50874,10 +50884,10 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -51044,8 +51054,8 @@ dUa
 dUa
 dUa
 dUa
-mDW
-mDW
+xVM
+xVM
 dUa
 dUa
 dUa
@@ -51121,7 +51131,7 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -51134,7 +51144,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -51296,11 +51306,11 @@ oez
 oez
 dUa
 cbg
-mDW
-mDW
+xVM
+xVM
 gen
 dUa
-lLE
+ctb
 dUa
 dUa
 dUa
@@ -51378,8 +51388,8 @@ aKa
 aKa
 kjh
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 kjh
@@ -51387,10 +51397,10 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -51555,8 +51565,8 @@ dUa
 dUa
 dUa
 dUa
-mDW
-mDW
+xVM
+xVM
 dUa
 cbg
 dUa
@@ -51634,20 +51644,20 @@ aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
-kTF
-aKa
-kjh
-aKa
+lLE
 aKa
 kjh
 aKa
-kTF
+aKa
+kjh
+aKa
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -51891,20 +51901,20 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -52151,16 +52161,16 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -52353,10 +52363,10 @@ cdN
 cVV
 hMq
 aKa
-kTF
+lLE
 aKa
 kjh
-kTF
+lLE
 aKa
 oez
 oez
@@ -52408,14 +52418,14 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -52610,10 +52620,10 @@ vdI
 ega
 hMq
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -52665,14 +52675,14 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
-kTF
-aKa
-aKa
+lLE
 aKa
 aKa
-kTF
+aKa
+aKa
+lLE
 aKa
 aKa
 aKa
@@ -52922,14 +52932,14 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -53124,10 +53134,10 @@ rbh
 lOb
 hMq
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -53164,9 +53174,6 @@ oez
 oez
 oez
 oez
-aKa
-aKa
-aKa
 aKa
 aKa
 aKa
@@ -53174,6 +53181,9 @@ aKa
 aKa
 aKa
 aKa
+aKa
+aKa
+aKa
 oez
 oez
 oez
@@ -53181,7 +53191,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -53384,7 +53394,7 @@ aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 oez
 oez
@@ -53424,7 +53434,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -53437,17 +53447,17 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-aKa
-kjh
-kTF
 aKa
 kjh
-kTF
-oUv
+lLE
+aKa
+kjh
+lLE
+kFn
 aKa
 aKa
 oez
@@ -53563,7 +53573,7 @@ aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -53638,10 +53648,10 @@ hMq
 hMq
 hMq
 aKa
-kTF
+lLE
 aKa
 kjh
-kTF
+lLE
 aKa
 oez
 oez
@@ -53678,13 +53688,13 @@ oez
 oez
 oez
 oez
-aKa
-aKa
-kjh
-kTF
 aKa
 aKa
 kjh
+lLE
+aKa
+aKa
+kjh
 aKa
 aKa
 aKa
@@ -53693,18 +53703,18 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-oUv
+kFn
 aKa
 aKa
 oez
@@ -53820,10 +53830,10 @@ aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -53889,16 +53899,16 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -53938,7 +53948,7 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 kjh
@@ -53950,18 +53960,18 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 oez
@@ -54077,18 +54087,18 @@ aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -54195,7 +54205,7 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 kjh
@@ -54211,14 +54221,14 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -54334,18 +54344,18 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
-aKa
-kjh
-aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
+aKa
+kjh
+aKa
+lLE
 aKa
 kjh
 aKa
@@ -54452,30 +54462,30 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 oez
@@ -54598,15 +54608,15 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -54709,7 +54719,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -54720,19 +54730,19 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -54848,22 +54858,22 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
-oUv
-kTF
-kTF
-kTF
-kTF
-kTF
+lLE
+kFn
+lLE
+lLE
+lLE
+lLE
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -54920,10 +54930,10 @@ oez
 oez
 lOV
 lOV
-kTF
-kTF
+lLE
+lLE
 aKa
-kTF
+lLE
 lOV
 aKa
 lOV
@@ -54969,26 +54979,26 @@ kjh
 aKa
 aKa
 aKa
-koo
-kTF
+gjK
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -55104,22 +55114,22 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -55176,11 +55186,11 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -55225,24 +55235,24 @@ aKa
 kjh
 aKa
 aKa
-kTF
-koo
+lLE
+gjK
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -55360,26 +55370,26 @@ oez
 aKa
 aKa
 aKa
-kTF
-oUv
-kTF
-kTF
-kTF
+lLE
+kFn
+lLE
+lLE
+lLE
 aKa
 aKa
-kTF
-aKa
-aKa
-aKa
-kTF
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
-oUv
-kTF
-kTF
+lLE
+lLE
+aKa
+aKa
+aKa
+lLE
+kFn
+lLE
+lLE
 oez
 oez
 oez
@@ -55390,8 +55400,8 @@ oez
 oez
 oez
 oIp
-xmg
-xmg
+qCs
+qCs
 ygs
 xKZ
 cVY
@@ -55433,7 +55443,7 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -55482,28 +55492,28 @@ aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -55621,34 +55631,34 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 kjh
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 kjh
 aKa
 aKa
+lLE
+gjK
+lLE
+aKa
+aKa
+aKa
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+vMj
 kTF
-koo
 kTF
-aKa
-aKa
-aKa
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-bkg
-eAm
-eAm
 ygs
 wBG
 ojh
@@ -55695,7 +55705,7 @@ kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -55738,8 +55748,8 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -55760,7 +55770,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -55903,9 +55913,9 @@ oez
 oez
 oez
 oIp
-eRb
-aQv
-aQv
+mdw
+fJA
+fJA
 oZc
 oZc
 vAd
@@ -55951,8 +55961,8 @@ aKa
 kjh
 aKa
 lOV
-kTF
-kTF
+lLE
+lLE
 aKa
 oez
 oez
@@ -55995,7 +56005,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -56005,7 +56015,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -56016,7 +56026,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -56160,9 +56170,9 @@ oez
 oez
 oez
 oIp
-uNL
-xmg
-eAm
+msC
+qCs
+kTF
 ntT
 ccl
 giG
@@ -56208,7 +56218,7 @@ aKa
 aKa
 lOV
 qqQ
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -56262,7 +56272,7 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -56270,10 +56280,10 @@ aKa
 kjh
 aKa
 aKa
-kTF
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
+lLE
 aKa
 aKa
 oez
@@ -56417,9 +56427,9 @@ oez
 oez
 oez
 oIp
-xdV
-eAm
-xmg
+uOi
+kTF
+qCs
 fvt
 wBG
 drs
@@ -56465,7 +56475,7 @@ aKa
 aKa
 qqQ
 oez
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -56519,19 +56529,19 @@ oez
 oez
 oez
 oez
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 oez
 oez
@@ -56674,9 +56684,9 @@ oez
 oez
 oez
 oIp
-eAm
-aQv
-eAm
+kTF
+fJA
+kTF
 ooa
 oZc
 tJb
@@ -56777,16 +56787,16 @@ oez
 oez
 oez
 aKa
-kTF
-kTF
-kTF
-kTF
-kTF
-kTF
-kTF
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
+lLE
+lLE
+lLE
+lLE
+lLE
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -56931,9 +56941,9 @@ oez
 oez
 oez
 oIp
-eAm
-eAm
-aQv
+kTF
+kTF
+fJA
 ygs
 btx
 ips
@@ -56941,11 +56951,11 @@ bNT
 bfW
 ips
 ppD
-xkF
+myk
 oPT
 oZc
 oPT
-lYq
+xht
 rAp
 qwh
 hHO
@@ -57188,9 +57198,9 @@ oez
 oez
 oez
 oIp
-eRb
-xmg
-eAm
+mdw
+qCs
+kTF
 ntT
 yiS
 drs
@@ -57445,9 +57455,9 @@ oez
 oez
 oez
 oIp
-uNL
-eAm
-aQv
+msC
+kTF
+fJA
 oZc
 gXJ
 btl
@@ -57492,8 +57502,8 @@ oez
 oez
 oez
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 kjh
 lOV
@@ -57702,10 +57712,10 @@ oez
 oez
 oez
 oIp
-xdV
-aQv
-eAm
-xmS
+uOi
+fJA
+kTF
+aAw
 drs
 ips
 ppD
@@ -57716,7 +57726,7 @@ ips
 ips
 ojh
 ips
-xQH
+ows
 qlH
 qlH
 hHO
@@ -57750,8 +57760,8 @@ oez
 oez
 lOV
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 lOV
 lOV
@@ -57959,10 +57969,10 @@ oez
 oez
 oez
 oIp
-eAm
-eAm
-xmg
-xmS
+kTF
+kTF
+qCs
+aAw
 ips
 drs
 drs
@@ -58216,9 +58226,9 @@ oez
 oez
 oez
 oIp
-pRB
-aQv
-eAm
+wrN
+fJA
+kTF
 oZc
 gXJ
 ips
@@ -58473,9 +58483,9 @@ oez
 oez
 oez
 oIp
-eRb
-eAm
-aQv
+mdw
+kTF
+fJA
 ntT
 fFL
 ips
@@ -58730,9 +58740,9 @@ oez
 oez
 oez
 oIp
-uNL
-eAm
-eAm
+msC
+kTF
+kTF
 fvt
 qhs
 qjv
@@ -58987,9 +58997,9 @@ oez
 oez
 oez
 oIp
-xdV
-eAm
-aQv
+uOi
+kTF
+fJA
 ooa
 ooa
 ips
@@ -59029,7 +59039,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -59202,7 +59212,7 @@ dtb
 dtb
 vqz
 bhm
-exY
+kms
 mjv
 mjv
 tYl
@@ -59244,9 +59254,9 @@ oez
 oez
 oez
 oez
-cgA
-eAm
-eAm
+lco
+kTF
+kTF
 fvt
 bih
 cSp
@@ -59255,7 +59265,7 @@ ips
 oZc
 jfA
 jfA
-fRB
+ghr
 dQg
 oez
 oez
@@ -59286,15 +59296,15 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -59316,7 +59326,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -59502,8 +59512,8 @@ oez
 oez
 oez
 oIp
-eAm
-eAm
+kTF
+kTF
 rsw
 jyE
 cSp
@@ -59512,7 +59522,7 @@ ips
 oZc
 xXo
 hnv
-jfA
+uHB
 dQg
 oez
 oez
@@ -59544,14 +59554,14 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -59568,12 +59578,12 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -59741,13 +59751,13 @@ bhm
 lDT
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 oez
@@ -59804,10 +59814,10 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -59825,15 +59835,15 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -59997,14 +60007,14 @@ oab
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -60054,17 +60064,17 @@ oez
 oez
 oez
 oez
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -60082,15 +60092,15 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -60254,11 +60264,11 @@ oab
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -60312,39 +60322,39 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
-aKa
-aKa
-kTF
-aKa
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+lLE
 aKa
 aKa
-kTF
+lLE
+aKa
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+aKa
+aKa
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -60519,7 +60529,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -60569,13 +60579,13 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -60596,15 +60606,15 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 kjh
@@ -60768,15 +60778,15 @@ rpk
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -60827,41 +60837,41 @@ oez
 oez
 aKa
 aKa
-koo
+gjK
 aKa
 aKa
-kTF
-aKa
-aKa
-aKa
-kjh
-aKa
-aKa
-aKa
-aKa
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+lLE
 aKa
 aKa
 aKa
 kjh
 aKa
-kTF
-kTF
 aKa
 aKa
 aKa
-kTF
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+aKa
+aKa
+aKa
+kjh
+aKa
+lLE
+lLE
+aKa
+aKa
+aKa
+lLE
 aKa
 aKa
 kjh
@@ -61025,15 +61035,15 @@ bfJ
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 aKa
 oez
 oez
@@ -61087,38 +61097,38 @@ aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
-aKa
-kjh
-aKa
-kTF
-aKa
-aKa
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-aKa
-aKa
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
+aKa
+aKa
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+aKa
 aKa
 aKa
 kjh
 aKa
-kTF
+lLE
+aKa
+aKa
+kjh
+aKa
+lLE
 aKa
 aKa
 aKa
@@ -61282,14 +61292,14 @@ oab
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
-kTF
+lLE
 aKa
 aKa
 oez
@@ -61344,33 +61354,33 @@ aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
-aKa
-kjh
-aKa
-aKa
-kTF
-kTF
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-aKa
-aKa
+lLE
 aKa
 kjh
 aKa
-kTF
+aKa
+lLE
+lLE
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+aKa
+aKa
+aKa
+kjh
+aKa
+lLE
 aKa
 aKa
 kjh
@@ -61515,7 +61525,7 @@ vqz
 lDT
 lDT
 bhm
-mWn
+gDS
 kJl
 roa
 dfR
@@ -61539,14 +61549,14 @@ kJl
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 aKa
-koo
-kTF
+gjK
+lLE
 aKa
 aKa
 oez
@@ -61590,10 +61600,10 @@ oez
 aKa
 aKa
 aKa
-kTF
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
+lLE
 oez
 oez
 aKa
@@ -61602,7 +61612,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -61610,9 +61620,6 @@ aKa
 aKa
 aKa
 aKa
-oez
-oez
-oez
 oez
 oez
 oez
@@ -61622,12 +61629,15 @@ oez
 oez
 oez
 oez
+oez
+oez
+oez
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 kjh
@@ -61635,7 +61645,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -61796,13 +61806,13 @@ oab
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -61846,7 +61856,7 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -61859,7 +61869,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -61891,7 +61901,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -62053,7 +62063,7 @@ kJl
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -62147,7 +62157,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -62310,7 +62320,7 @@ oab
 bhm
 lDT
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -62402,8 +62412,8 @@ oez
 oez
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 kjh
@@ -62566,7 +62576,7 @@ gah
 kJl
 bhm
 lDT
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -62659,7 +62669,7 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -62808,7 +62818,7 @@ dfR
 bvd
 mYX
 gLr
-qPc
+wgW
 mYX
 nss
 jWA
@@ -62823,7 +62833,7 @@ gah
 kJl
 bhm
 tAz
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -63080,7 +63090,7 @@ gLr
 kJl
 bhm
 tAz
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -63337,15 +63347,15 @@ gLr
 oab
 bhm
 tAz
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 vqz
 oez
@@ -63578,7 +63588,7 @@ njL
 pZN
 qhg
 mYX
-mWn
+gDS
 gnV
 mYX
 cym
@@ -63602,7 +63612,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 vqz
 oez
@@ -63851,15 +63861,15 @@ eNW
 oab
 bhm
 tAz
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 vqz
 oez
@@ -63915,14 +63925,14 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 oez
 oez
 oez
@@ -64108,16 +64118,16 @@ gah
 kJl
 bhm
 tAz
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 vqz
 oez
 oez
@@ -64172,14 +64182,14 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 kjh
 aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 oez
 oez
 oez
@@ -64206,7 +64216,7 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -64365,16 +64375,16 @@ gah
 oab
 bhm
 tAz
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 vqz
 oez
 oez
@@ -64430,13 +64440,13 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 oez
 oez
 oez
@@ -64463,7 +64473,7 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
@@ -64622,16 +64632,16 @@ gah
 kJl
 bhm
 tAz
-kTF
+lLE
 aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
-kTF
+lLE
 vqz
 oez
 oez
@@ -64687,13 +64697,13 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 kjh
 aKa
-kTF
+lLE
 kjh
-kTF
-kTF
+lLE
+lLE
 oez
 oez
 oez
@@ -64716,17 +64726,17 @@ oez
 oez
 oez
 oez
-aKa
-aKa
-kjh
-kTF
 aKa
 aKa
 kjh
+lLE
 aKa
 aKa
-kTF
-kTF
+kjh
+aKa
+aKa
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -64872,23 +64882,23 @@ lSK
 tYl
 mjv
 mjv
-gbh
+dBd
 nem
 tYl
 nQy
 kJl
 bhm
 tAz
-kTF
+lLE
 aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
-kTF
+lLE
 vqz
 oez
 oez
@@ -64944,45 +64954,45 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
-aKa
-aKa
-aKa
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-aKa
-aKa
-kTF
-kTF
+lLE
 aKa
 aKa
 aKa
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 aKa
-kTF
-kTF
+aKa
+lLE
+lLE
+aKa
+aKa
+aKa
+aKa
+lLE
+lLE
 kjh
 aKa
 aKa
@@ -65115,7 +65125,7 @@ cym
 vGi
 whs
 xam
-rBa
+tFq
 xam
 xam
 xam
@@ -65136,16 +65146,16 @@ xam
 upn
 bhm
 tAz
-kTF
+lLE
 aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
-kTF
+lLE
 vqz
 oez
 oez
@@ -65201,11 +65211,11 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -65236,14 +65246,14 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 kjh
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -65398,7 +65408,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -65458,13 +65468,13 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
-kTF
-aKa
-aKa
+lLE
 aKa
 aKa
+aKa
+aKa
 oez
 oez
 oez
@@ -65488,18 +65498,18 @@ oez
 oez
 oez
 aKa
-aKa
-kjh
-aKa
-kTF
-kTF
-kjh
-aKa
-kTF
 aKa
 kjh
 aKa
-kTF
+lLE
+lLE
+kjh
+aKa
+lLE
+aKa
+kjh
+aKa
+lLE
 aKa
 aKa
 oez
@@ -65651,11 +65661,11 @@ tAz
 tAz
 tAz
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -65717,9 +65727,9 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -65747,15 +65757,15 @@ oez
 aKa
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 aKa
 kjh
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -65909,9 +65919,9 @@ gJH
 aFS
 aFS
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -65974,9 +65984,9 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -66001,18 +66011,18 @@ oez
 oez
 oez
 oez
-aKa
-aKa
-kjh
-kTF
 aKa
 aKa
 kjh
+lLE
+aKa
+aKa
+kjh
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -66231,9 +66241,9 @@ oez
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 oez
 oez
@@ -66258,8 +66268,6 @@ oez
 oez
 oez
 oez
-aKa
-aKa
 aKa
 aKa
 aKa
@@ -66267,8 +66275,10 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+aKa
+aKa
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -66489,8 +66499,8 @@ aKa
 aKa
 kjh
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 oez
 oez
@@ -67758,7 +67768,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -68015,8 +68025,8 @@ aKa
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 oez
 oez
@@ -68269,7 +68279,7 @@ vje
 vje
 vje
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -68288,7 +68298,7 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -68527,11 +68537,11 @@ vje
 vje
 aKa
 aKa
-koo
-kTF
+gjK
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -68545,7 +68555,7 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -68785,12 +68795,12 @@ oez
 aKa
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 oez
 oez
 oez
@@ -68801,8 +68811,8 @@ oez
 aKa
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -69043,11 +69053,11 @@ aKa
 aKa
 kjh
 aKa
-kTF
-kTF
+lLE
+lLE
 kjh
 aKa
-kTF
+lLE
 oez
 oez
 oez
@@ -69058,7 +69068,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -69301,7 +69311,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -69315,7 +69325,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -69569,10 +69579,10 @@ oez
 oez
 oez
 oez
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -69814,9 +69824,9 @@ oez
 oez
 oez
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -69826,10 +69836,10 @@ oez
 oez
 oez
 oez
-kTF
-kTF
+lLE
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -70073,20 +70083,20 @@ oez
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 oez
 oez
 oez
 oez
 aKa
-kTF
+lLE
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -70334,18 +70344,18 @@ aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 oez
 oez
 oez
 oez
 aKa
-kTF
+lLE
 acK
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -70591,18 +70601,18 @@ aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 oez
 oez
 oez
 oez
 aKa
-kTF
+lLE
 acK
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -70848,8 +70858,8 @@ aKa
 aKa
 aKa
 kjh
-kTF
-kTF
+lLE
+lLE
 oez
 oez
 oez
@@ -70858,7 +70868,7 @@ aKa
 aKa
 kjh
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
@@ -71106,7 +71116,7 @@ aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 oez
 oez
 oez
@@ -71114,8 +71124,8 @@ oez
 aKa
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -71358,12 +71368,12 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
 aKa
-kTF
+lLE
 oez
 oez
 oez
@@ -71371,7 +71381,7 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 oez
@@ -71614,8 +71624,8 @@ oez
 oez
 aKa
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -71870,8 +71880,8 @@ oez
 oez
 oez
 aKa
-kTF
-kTF
+lLE
+lLE
 aKa
 aKa
 aKa
@@ -72384,7 +72394,7 @@ oez
 oez
 oez
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
@@ -72641,13 +72651,13 @@ oez
 oez
 aKa
 aKa
-kTF
+lLE
 kjh
 aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 oez
 oez
@@ -72899,12 +72909,12 @@ oez
 aKa
 aKa
 aKa
-koo
+gjK
 aKa
 aKa
 aKa
 kjh
-kTF
+lLE
 aKa
 oez
 oez
@@ -73156,12 +73166,12 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
-kTF
-kTF
+lLE
+lLE
+lLE
 aKa
 oez
 oez
@@ -73413,10 +73423,10 @@ oez
 aKa
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
-kTF
+lLE
 aKa
 aKa
 aKa
