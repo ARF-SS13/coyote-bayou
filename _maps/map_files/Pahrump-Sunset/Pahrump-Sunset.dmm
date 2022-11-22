@@ -7999,7 +7999,7 @@
 	dir = 5;
 	icon_state = "rubble"
 	},
-/area/f13/building/mall)
+/area/f13/wasteland)
 "aCJ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -8442,7 +8442,7 @@
 	dir = 6;
 	icon_state = "rubble"
 	},
-/area/f13/building/mall)
+/area/f13/wasteland)
 "aEe" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt{
@@ -8457,7 +8457,7 @@
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleslab"
 	},
-/area/f13/building/mall)
+/area/f13/wasteland)
 "aEf" = (
 /obj/structure/spacevine,
 /turf/closed/indestructible/rock{
@@ -11084,7 +11084,7 @@
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
-/area/f13/building/mall)
+/area/f13/wasteland)
 "aMM" = (
 /obj/structure/table/wood/settler,
 /obj/item/trash/f13/borscht,
@@ -11289,7 +11289,7 @@
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleplate"
 	},
-/area/f13/building/mall)
+/area/f13/wasteland)
 "aNo" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -21653,12 +21653,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "cgn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/ruins)
 "cgz" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks,
@@ -22931,6 +22934,21 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/ruins)
+"crd" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/overlay/junk/sink{
+	pixel_y = 15
+	},
+/obj/effect/overlay/junk/mirror{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/white/side,
+/area/f13/wasteland)
 "crg" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -28732,7 +28750,7 @@
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubblepillar"
 	},
-/area/f13/building/mall)
+/area/f13/wasteland)
 "ewv" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
@@ -38322,6 +38340,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"ieE" = (
+/turf/closed/wall/f13/store,
+/area/f13/building/mall)
 "ieG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -42655,6 +42676,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
+"jNs" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/closed/wall/f13/ruins,
+/area/f13/wasteland)
 "jND" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -49194,7 +49221,6 @@
 /obj/effect/overlay/junk/mirror{
 	pixel_y = 34
 	},
-/obj/item/m2flamethrowertank,
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess/neutralchess2,
 /area/f13/ruins)
@@ -51588,7 +51614,7 @@
 "nfd" = (
 /obj/structure/debris/v2,
 /turf/closed/wall/f13/ruins,
-/area/f13/building/mall)
+/area/f13/wasteland)
 "nfe" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2"
@@ -69860,7 +69886,7 @@
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleslab"
 	},
-/area/f13/building/mall)
+/area/f13/wasteland)
 "unX" = (
 /obj/machinery/microwave/stove,
 /obj/machinery/light/small{
@@ -123647,7 +123673,7 @@ mcC
 aFD
 aFD
 mcC
-aae
+odO
 iDt
 xfv
 aMn
@@ -123904,8 +123930,8 @@ mcC
 aKe
 mcC
 mcC
-aae
-aae
+odO
+odO
 xfv
 dQw
 gAg
@@ -124161,7 +124187,7 @@ mcC
 aEs
 aGq
 mcC
-aae
+odO
 xfv
 xfv
 xfv
@@ -124418,7 +124444,7 @@ mcC
 oHk
 aGq
 mcC
-aae
+odO
 xfv
 gTN
 syJ
@@ -124675,7 +124701,7 @@ vmG
 aJp
 bfz
 mcC
-aae
+cuO
 xfv
 oVo
 tKP
@@ -124908,7 +124934,7 @@ xOe
 aCB
 cnn
 iDt
-cuO
+aCD
 mcC
 aEt
 aGq
@@ -124932,7 +124958,7 @@ mcC
 aJp
 aGq
 mcC
-aae
+cuO
 xfv
 dCD
 fRG
@@ -125165,7 +125191,7 @@ lyL
 cnn
 cnn
 cuO
-cuO
+aCD
 mcC
 aEs
 aKA
@@ -125189,7 +125215,7 @@ mcC
 aJp
 aGq
 mcC
-aae
+cuO
 xfv
 dmq
 ucH
@@ -125422,7 +125448,7 @@ cuO
 iDt
 iDt
 cuO
-aae
+aCD
 bbN
 aEs
 kKf
@@ -125446,7 +125472,7 @@ mcC
 fut
 aGq
 mcC
-aae
+odO
 xfv
 aOB
 aMo
@@ -125678,8 +125704,8 @@ mGt
 iDt
 iDt
 cuO
-aae
-aae
+cuO
+aCD
 bbN
 aJp
 aKA
@@ -125703,7 +125729,7 @@ mcC
 aJp
 bfz
 mcC
-aae
+odO
 xfv
 xfv
 xfv
@@ -125935,8 +125961,8 @@ cuO
 mGt
 aCD
 aCD
-aae
-aae
+aCD
+aCD
 bbN
 aEt
 bfz
@@ -125960,7 +125986,7 @@ eFX
 aEt
 aGq
 mcC
-aae
+cuO
 xAr
 xAr
 xAr
@@ -126192,8 +126218,8 @@ aCd
 aCd
 aCE
 uJh
-aae
-aae
+aCD
+aCD
 bbN
 aEs
 aKA
@@ -126217,7 +126243,7 @@ mcC
 aEs
 aGq
 mcC
-aae
+cuO
 xAr
 oso
 meY
@@ -126474,7 +126500,7 @@ mcC
 qmp
 aGq
 mcC
-aae
+cuO
 aMC
 aGa
 dTl
@@ -126731,7 +126757,7 @@ mcC
 aJp
 aKA
 mcC
-aae
+cuO
 xAr
 umx
 oso
@@ -126988,8 +127014,8 @@ aFY
 aOG
 bfz
 mcC
-aae
-xAr
+odO
+cgn
 aGa
 aGa
 aGa
@@ -127245,7 +127271,7 @@ aNr
 aIV
 aGq
 mcC
-aae
+odO
 xAr
 cFc
 aTr
@@ -127502,7 +127528,7 @@ mcC
 aEs
 bfz
 mcC
-aae
+odO
 xAr
 aGa
 aGa
@@ -127759,7 +127785,7 @@ mcC
 oHk
 bfz
 mcC
-aae
+cuO
 xAr
 aGa
 dTl
@@ -128016,7 +128042,7 @@ aKe
 aEt
 aKA
 eGu
-aae
+cuO
 qWS
 aGa
 aGa
@@ -128273,7 +128299,7 @@ mcC
 aEs
 aKA
 mcC
-aae
+odO
 qWS
 aGa
 aGa
@@ -128530,7 +128556,7 @@ mcC
 jDy
 aKA
 mcC
-aae
+cuO
 xAr
 lMm
 aGa
@@ -128783,11 +128809,11 @@ wbZ
 wbZ
 wbZ
 wbZ
-mcC
+aKe
 nKu
 aKA
 mcC
-aae
+odO
 qWS
 aGa
 aGa
@@ -129044,7 +129070,7 @@ mcC
 qtn
 bfz
 mcC
-aae
+odO
 qWS
 aGa
 aGa
@@ -129297,11 +129323,11 @@ wbZ
 wbZ
 wbZ
 wbZ
-xXG
-aJp
-aKA
 mcC
-aae
+wDq
+dJE
+mcC
+odO
 xAr
 aGa
 aGa
@@ -129555,10 +129581,10 @@ deq
 aHQ
 vcr
 mcC
-wDq
-dJE
+unn
+unn
 mcC
-aae
+odO
 xAr
 xAw
 xAw
@@ -129804,18 +129830,18 @@ mcC
 mcC
 mcC
 mcC
-unn
-unn
 mcC
 mcC
 mcC
 mcC
 mcC
 mcC
-unn
-unn
 mcC
-aae
+mcC
+mcC
+mcC
+mcC
+odO
 xAr
 bfY
 bfY
@@ -130044,35 +130070,35 @@ ejY
 ejY
 ejY
 niz
-nCn
-xLC
-xLC
-xLC
-xLC
-nCn
-gtu
-cgn
-gtu
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-gtu
-gtu
-gtu
-gtu
-aae
-aae
-aae
-aae
-gtu
-gtu
-gtu
-gtu
-aae
+iRI
+ejY
+ejY
+ejY
+ejY
+iRI
+ieE
+axM
+ieE
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+cuO
+odO
 xAr
 wle
 doa
@@ -135183,7 +135209,7 @@ ejY
 uRJ
 qPS
 kSZ
-qvN
+aNn
 qvN
 gAj
 uSc
@@ -135440,7 +135466,7 @@ ejY
 dbb
 aID
 qvN
-cnB
+crd
 aBJ
 aBJ
 uSc
@@ -136476,7 +136502,7 @@ bSu
 pRq
 vvk
 aML
-aET
+jNs
 ewp
 hij
 hip
@@ -136734,7 +136760,7 @@ iFU
 hij
 unV
 aNn
-aET
+jNs
 qvN
 qvN
 qvN
@@ -137246,8 +137272,8 @@ uSc
 aDr
 pRq
 aNn
-aET
-aET
+jNs
+jNs
 qvN
 aFe
 arS
