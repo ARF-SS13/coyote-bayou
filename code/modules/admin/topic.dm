@@ -1411,7 +1411,7 @@
 			qdel(query_get_message_edits)
 			return
 		if(query_get_message_edits.NextRow())
-			var/edit_log = query_get_message_edits.item[1]
+			var/edit_log = unsanitizeSQL(query_get_message_edits.item[1])
 			if(!QDELETED(usr))
 				var/datum/browser/browser = new(usr, "Note edits", "Note edits")
 				browser.set_content(jointext(edit_log, ""))

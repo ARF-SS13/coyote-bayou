@@ -8,6 +8,13 @@
  *			Misc
  */
 
+// Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
+/proc/sanitizeSQL(t as text)
+	return html_encode(t);
+
+/proc/unsanitizeSQL(t as text)
+	return html_decode(t);
+
 /proc/format_table_name(table as text)
 	return CONFIG_GET(string/feedback_tableprefix) + table
 
