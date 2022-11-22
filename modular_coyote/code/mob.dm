@@ -39,7 +39,7 @@
 	response_help_simple = "hugs"
 	response_disarm_simple = "rudely paps"
 	response_harm_simple = "punches"
-	waddle_amount = 5
+	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
 	harm_intent_damage = 2
@@ -64,3 +64,7 @@
 		color = newcolor
 	picked_color = TRUE
 	update_icon()
+
+/mob/living/simple_animal/catslug/Initialize()
+    . = ..()
+    verbs += /mob/living/simple_animal/catslug/proc/catslug_color
