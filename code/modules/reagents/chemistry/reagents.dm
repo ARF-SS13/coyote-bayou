@@ -71,7 +71,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/New()
 	. = ..()
 
-	if(material)
+	if(material && SSmaterials) // Stops the material from runtiming when unit testing, as SSMaterials isnt enabled when these are generated. :(
 		material = SSmaterials.GetMaterialRef(material)
 
 
