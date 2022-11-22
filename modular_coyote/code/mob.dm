@@ -23,7 +23,7 @@
 
 //Cat slugs
 
-/mob/living/simple_animal/catslug
+/mob/living/simple_animal/catslugwiggler
 	name = "catslug"
 	desc = "A noodley bodied creature with thin arms and legs, and gloomy dark eyes."
 	icon_state = "catslug"
@@ -39,7 +39,9 @@
 	response_help_simple = "hugs"
 	response_disarm_simple = "rudely paps"
 	response_harm_simple = "punches"
-
+	waddle_amount = 5
+	waddle_up_time = 1
+	waddle_side_time = 2
 	harm_intent_damage = 2
 	melee_damage_lower = 2
 	melee_damage_upper = 5
@@ -61,3 +63,26 @@
 		color = newcolor
 	picked_color = TRUE
 	update_icon()
+
+/mob/living/simple_animal/catslug
+	name = "catslug"
+	desc = "A noodley bodied creature with thin arms and legs, and gloomy dark eyes."
+	icon_state = "catslug"
+	icon_living = "catslug"
+	icon_dead = "catslug_dead"
+	icon = 'modular_coyote/icons/mob/slugcat.dmi'
+
+	faction = "catslug"
+	maxHealth = 50
+	health = 50
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
+
+	response_help_simple = "hugs"
+	response_disarm_simple = "rudely paps"
+	response_harm_simple = "punches"
+	harm_intent_damage = 2
+	melee_damage_lower = 2
+	melee_damage_upper = 5
+
+	dextrous = TRUE
+	see_in_dark = 8
