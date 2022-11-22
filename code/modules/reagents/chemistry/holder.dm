@@ -48,8 +48,8 @@
 		build_chemical_reagent_list()
 	
 	for(var/reagent in GLOB.chemical_reagents_list)
-		var/datum/reagent/R = reagent
-		R.GetMaterial()
+		var/datum/reagent/R = GLOB.chemical_reagents_list[reagent]
+w		R.GetMaterial()
 
 ///////////////////////////////////////////////////////////////////////////////////
 
