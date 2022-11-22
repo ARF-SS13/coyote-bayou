@@ -67,7 +67,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
 	multiple_choice = list(
 		"Primary" = LOADOUT_ROOT_ENTRIES,
-		"Secondary" = LOADOUT_MELEE
+		"Secondary" = list(LOADOUT_MELEE)
 	)
 
 /obj/item/kit_spawner/tribal
@@ -76,7 +76,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	allowed_flags = LOADOUT_TRIBAL
 	multiple_choice = list(
 		"Primary" = LOADOUT_ROOT_ENTRIES,
-		"Secondary" = LOADOUT_MELEE
+		"Secondary" = list(LOADOUT_MELEE)
 	)
 
 /obj/item/kit_spawner/debug_waster
@@ -774,11 +774,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/tribal/spearquiver/PopulateContents()
 	new /obj/item/storage/backpack/spearquiver(src)
 
-/obj/item/storage/box/gun/tribal/sturdy
+/obj/item/storage/box/gun/bow/sturdy
 	name = "sturdy bow case"
 
-/obj/item/storage/box/gun/tribal/sturdy/PopulateContents()
+/obj/item/storage/box/gun/bow/sturdy/PopulateContents()
 	new /obj/item/gun/ballistic/bow/sturdy(src)
+	new /obj/item/storage/bag/tribe_quiver/archer(src)
+
+/obj/item/storage/box/gun/bow/crossbow
+	name = "crossbow case"
+
+/obj/item/storage/box/gun/bow/sturdy/PopulateContents()
+	new /obj/item/gun/ballistic/bow/crossbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 
 /obj/item/storage/box/gun/tribal/warclub
@@ -1262,17 +1269,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/tribal/warmace
 
-/datum/loadout_box/spearquiver
+/datum/loadout_box/spearquivergun/bow/sturdy
 	entry_tag = "Spear Quiver"
 	entry_flags = LOADOUT_TRIBAL
 	entry_class = LOADOUT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/tribal/spearquiver
-
-/datum/loadout_box/sturdy
-	entry_tag = "Sturdy Bow"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_BOW
-	spawn_thing = /obj/item/storage/box/gun/tribal/sturdy
 
 /datum/loadout_box/warclub
 	entry_tag = "War Club"
@@ -1286,6 +1287,19 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/tribal/boneaxe
 
+/// BOWS
+
+/datum/loadout_box/sturdy
+	entry_tag = "Sturdy Bow"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_BOW
+	spawn_thing = /obj/item/storage/box/gun/bow/sturdy
+
+/datum/loadout_box/crossbow
+	entry_tag = "Crossbow"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_BOW
+	spawn_thing = /obj/item/storage/box/gun/bow/crossbow
 
 
 
