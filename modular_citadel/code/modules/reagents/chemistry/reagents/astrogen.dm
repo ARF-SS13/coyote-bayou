@@ -29,7 +29,7 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 	var/sleepytime = 0
 	inverse_chem_val = 0.25
 	can_synth = FALSE
-	var/datum/action/chem/astral/AS = new/datum/action/chem/astral()
+//	var/datum/action/chem/astral/AS = new/datum/action/chem/astral() // FUCK OFF M88888888 FUCKKK OFFFFFFFFFF
 	value = REAGENT_VALUE_AMAZING
 
 /datum/action/chem/astral

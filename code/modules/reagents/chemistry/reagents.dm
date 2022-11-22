@@ -68,12 +68,9 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	/// How much this reagent slows bleeding to by while in you
 	var/bleed_mult = 1
 
-/datum/reagent/New()
-	. = ..()
-
-	if(material && SSmaterials) // Stops the material from runtiming when unit testing, as SSMaterials isnt enabled when these are generated. :(
+/datum/reagent/proc/GetMaterial()
+	if(material)
 		material = SSmaterials.GetMaterialRef(material)
-
 
 /datum/reagent/Destroy() // This should only be called by the holder, so it's already handled clearing its references
 	. = ..()

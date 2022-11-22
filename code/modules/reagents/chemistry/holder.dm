@@ -43,6 +43,14 @@
 			GLOB.chemical_reactions_list[id] += D
 			break // Don't bother adding ourselves to other reagent ids, it is redundant
 
+/proc/build_chemical_materials()
+	if(!GLOB.chemical_reagents_list)
+		build_chemical_reagent_list()
+	
+	for(var/reagent in GLOB.chemical_reagents_list)
+		var/datum/reagent/R = reagent
+		R.GetMaterial()
+
 ///////////////////////////////////////////////////////////////////////////////////
 
 /datum/reagents
