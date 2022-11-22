@@ -322,12 +322,12 @@ Versioning
 		INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, mapname, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss, last_words, suicide)
 		VALUES (:pod, :x_coord, :y_coord, :z_coord, :map, INET_ATON(:internet_address), :port, :round_id, :time, :job, :special, :name, :key, :laname, :lakey, :brute, :fire, :brain, :oxy, :tox, :clone, :stamina, :last_words, :suicide)
 	"}, list(
-		"name" = L.real_name,
+		"name" = sanitizeSQL(L.real_name),
 		"key" = L.ckey,
 		"job" = L.mind.assigned_role,
 		"special" = L.mind.special_role,
 		"pod" = get_area_name(L, TRUE),
-		"laname" = L.lastattacker,
+		"laname" = sanitizeSQL(L.lastattacker),
 		"lakey" = L.lastattackerckey,
 		"brute" = L.getBruteLoss(),
 		"fire" = L.getFireLoss(),
@@ -339,7 +339,7 @@ Versioning
 		"x_coord" = L.x,
 		"y_coord" = L.y,
 		"z_coord" = L.z,
-		"last_words" = L.last_words,
+		"last_words" = sanitizeSQL(L.last_words),
 		"suicide" = L.suiciding,
 		"map" = SSmapping.config.map_name,
 		"internet_address" = world.internet_address || "0",

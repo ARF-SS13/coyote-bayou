@@ -55,8 +55,8 @@
 					dat += "<font color=red><b>ERROR</b>: Unable to retrieve book listings. Please contact your system administrator for assistance.</font><BR>"
 				else
 					while(query_library_list_books.NextRow())
-						var/author = query_library_list_books.item[1]
-						var/title = query_library_list_books.item[2]
+						var/author = unsanitizeSQL(query_library_list_books.item[1])
+						var/title = unsanitizeSQL(query_library_list_books.item[2])
 						var/category = query_library_list_books.item[3]
 						var/id = query_library_list_books.item[4]
 						dat += "<tr><td>[author]</td><td>[title]</td><td>[category]</td><td>[id]</td></tr>"
@@ -97,9 +97,9 @@
 	if(href_list["search"])
 		SQLquery = "SELECT author, title, category, id FROM [format_table_name("library")] WHERE isnull(deleted) AND "
 		if(category == "Any")
-			SQLquery += "author LIKE '%[author]%' AND title LIKE '%[title]%'"
+			SQLquery += "author LIKE '%[sanitizeSQL(author)]%' AND title LIKE '%[sanitizeSQL(title)]%'"
 		else
-			SQLquery += "author LIKE '%[author]%' AND title LIKE '%[title]%' AND category='[category]'"
+			SQLquery += "author LIKE '%[sanitizeSQL(author)]%' AND title LIKE '%[sanitizeSQL(title)]%' AND category='[sanitizeSQL(category)]'"
 		screenstate = 1
 
 	if(href_list["back"])
@@ -143,8 +143,8 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 	while(query_library_cache.NextRow())
 		var/datum/cachedbook/newbook = new()
 		newbook.id = query_library_cache.item[1]
-		newbook.author = query_library_cache.item[2]
-		newbook.title = query_library_cache.item[3]
+		newbook.author = unsanitizeSQL(query_library_cache.item[2])
+		newbook.title = unsanitizeSQL(query_library_cache.item[3])
 		newbook.category = query_library_cache.item[4]
 		GLOB.cachedbooks += newbook
 	qdel(query_library_cache)
@@ -419,7 +419,7 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 					else
 
 						var/msg = "[key_name(usr)] has uploaded the book titled [scanner.cache.name], [length(scanner.cache.dat)] signs"
-						var/datum/db_query/query_library_upload = SSdbcore.NewQuery("INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, datetime, round_id_created) VALUES ('[scanner.cache.author]', '[scanner.cache.name]', '[scanner.cache.dat]', '[upload_category]', '[usr.ckey]', Now(), '[GLOB.round_id]')")
+						var/datum/db_query/query_library_upload = SSdbcore.NewQuery("INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, datetime, round_id_created) VALUES ('[sanitizeSQL(scanner.cache.author)]', '[sanitizeSQL(scanner.cache.name)]', '[sanitizeSQL(scanner.cache.dat)]', '[upload_category]', '[usr.ckey]', Now(), '[GLOB.round_id]')")
 						if(!query_library_upload.Execute())
 							qdel(query_library_upload)
 							alert("Database error encountered uploading to Archive")
@@ -462,9 +462,9 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 				say("PRINTER ERROR! Failed to print document (0x0000000F)")
 				return
 			while(query_library_print.NextRow())
-				var/author = query_library_print.item[2]
-				var/title = query_library_print.item[3]
-				var/content = query_library_print.item[4]
+				var/author = unsanitizeSQL(query_library_print.item[2])
+				var/title = unsanitizeSQL(query_library_print.item[3])
+				var/content = unsanitizeSQL(query_library_print.item[4])
 				if(!QDELETED(src))
 					var/obj/item/book/B = new(get_turf(src))
 					B.name = "Book: [title]"

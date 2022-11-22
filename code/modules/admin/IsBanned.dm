@@ -111,7 +111,7 @@
 		while(query_ban_check.NextRow())
 			var/pkey = query_ban_check.item[1]
 			var/akey = query_ban_check.item[2]
-			var/reason = query_ban_check.item[3]
+			var/reason = unsanitizeSQL(query_ban_check.item[3])
 			var/expiration = query_ban_check.item[4]
 			var/duration = query_ban_check.item[5]
 			var/bantime = query_ban_check.item[6]

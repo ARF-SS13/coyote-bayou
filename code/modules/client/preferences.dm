@@ -1540,7 +1540,7 @@ Records disabled until a use for them is found
 			qdel(query_get_jobban)
 			return
 		if(query_get_jobban.NextRow())
-			var/reason = query_get_jobban.item[1]
+			var/reason = unsanitizeSQL(query_get_jobban.item[1])
 			var/bantime = query_get_jobban.item[2]
 			var/duration = query_get_jobban.item[3]
 			var/expiration_time = query_get_jobban.item[4]

@@ -61,7 +61,7 @@
 			var/admin_key  = query_search_admin_logs.item[3]
 			operation = query_search_admin_logs.item[4]
 			target = query_search_admin_logs.item[5]
-			var/log = query_search_admin_logs.item[6]
+			var/log = unsanitizeSQL(query_search_admin_logs.item[6])
 			output += "<p style='margin:0px'><b>[datetime] | Round ID [round_id] | Admin [admin_key] | Operation [operation] on [target]</b><br>[log]</p><hr style='background:#000000; border:0; height:3px'>"
 		qdel(query_search_admin_logs)
 	if(action == 2)
@@ -423,7 +423,7 @@
 		var/datum/db_query/query_change_rank_flags_log = SSdbcore.NewQuery({"
 			INSERT INTO [format_table_name("admin_log")] (datetime, round_id, adminckey, adminip, operation, target, log)
 			VALUES (:time, :round_id, :adminckey, INET_ATON(:adminip), 'change rank flags', :rank_name, :log)
-		"}, list("time" = SQLtime(), "round_id" = "[GLOB.round_id]", "adminckey" = usr.ckey, "adminip" = usr.client.address, "rank_name" = D.rank.name, "log" = log_message))
+		"}, list("time" = SQLtime(), "round_id" = "[GLOB.round_id]", "adminckey" = usr.ckey, "adminip" = usr.client.address, "rank_name" = D.rank.name, "log" = sanitizeSQL(log_message)))
 		if(!query_change_rank_flags_log.warn_execute())
 			qdel(query_change_rank_flags_log)
 			return

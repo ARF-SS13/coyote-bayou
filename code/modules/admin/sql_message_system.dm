@@ -78,7 +78,7 @@
 			return
 	var/datum/db_query/query_create_message = SSdbcore.NewQuery(
 		"INSERT INTO [format_table_name("messages")] (type, targetckey, adminckey, text, timestamp, server, server_ip, server_port, round_id, secret, expire_timestamp, severity) VALUES (:type, :target_ckey, :admin_ckey, :text, :timestamp, :server, INET_ATON(:internet_address), :port, :round_id, :secret, :expiry, :note_severity)",
-		list("type" = type, "target_ckey" = target_ckey, "admin_ckey" = admin_ckey, "text" = text, "timestamp" = timestamp, "server" = server, "internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "secret" = secret, "expiry" = expiry || null, "note_severity" = note_severity)
+		list("type" = type, "target_ckey" = target_ckey, "admin_ckey" = admin_ckey, "text" = sanitizeSQL(text), "timestamp" = timestamp, "server" = server, "internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "secret" = secret, "expiry" = expiry || null, "note_severity" = note_severity)
 	)
 	var/pm = "[key_name(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]: [text]"
 	var/header = "[key_name_admin(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]"
@@ -118,7 +118,7 @@
 	if(query_find_del_message.NextRow())
 		type = query_find_del_message.item[1]
 		target_key = query_find_del_message.item[2]
-		text = query_find_del_message.item[3]
+		text = unsanitizeSQL(query_find_del_message.item[3])
 	qdel(query_find_del_message)
 	var/datum/db_query/query_del_message = SSdbcore.NewQuery(
 		"UPDATE [format_table_name("messages")] SET deleted = 1 WHERE id = :message_id",
@@ -158,14 +158,14 @@
 		var/type = query_find_edit_message.item[1]
 		var/target_key = query_find_edit_message.item[2]
 		var/admin_key = query_find_edit_message.item[3]
-		var/old_text = query_find_edit_message.item[4]
+		var/old_text = unsanitizeSQL(query_find_edit_message.item[4])
 		var/new_text = input("Input new [type]", "New [type]", "[old_text]") as null|message
 		if(!new_text)
 			qdel(query_find_edit_message)
 			return
 		var/datum/db_query/query_edit_message = SSdbcore.NewQuery(
 			"UPDATE [format_table_name("messages")] SET text = :text, lasteditor = :lasteditor, edits = CONCAT(IFNULL(edits,''), 'Edited by :lasteditor on :time from<br>:old_text<br>to<br>:text<hr>') WHERE id = :message_id AND deleted = 0",
-			list("text" = new_text, "lasteditor" = usr.ckey, "time" = SQLtime(), "old_text" = old_text, "message_id" = message_id)
+			list("text" = sanitizeSQL(new_text), "lasteditor" = usr.ckey, "time" = SQLtime(), "old_text" = sanitizeSQL(old_text), "message_id" = message_id)
 		)
 		if(!query_edit_message.warn_execute())
 			qdel(query_edit_message)
@@ -306,7 +306,7 @@
 		var/edit_text = "Made [secret ? "not secret" : "secret"] by [usr.key] on [SQLtime()]<hr>"
 		var/datum/db_query/query_message_secret = SSdbcore.NewQuery(
 			"UPDATE [format_table_name("messages")] SET secret = NOT secret, lasteditor = :lasteditor, edits = CONCAT(IFNULL(edits,''), :edit_text) WHERE id = :message_id",
-			list("lasteditor" = usr.ckey, "edit_text" = edit_text, "message_id" = message_id)
+			list("lasteditor" = usr.ckey, "edit_text" = sanitizeSQL(edit_text), "message_id" = message_id)
 		)
 		if(!query_message_secret.warn_execute())
 			qdel(query_find_message_secret)
@@ -363,7 +363,7 @@
 			if(type == "watchlist entry" && filter && !(t_ckey in GLOB.directory))
 				continue
 			var/admin_key = query_get_type_messages.item[4]
-			var/text = query_get_type_messages.item[5]
+			var/text = unsanitizeSQL(query_get_type_messages.item[5])
 			var/timestamp = query_get_type_messages.item[6]
 			var/server = query_get_type_messages.item[7]
 			var/editor_key = query_get_type_messages.item[8]
@@ -406,7 +406,7 @@
 				continue
 			var/id = query_get_messages.item[3]
 			var/admin_key = query_get_messages.item[4]
-			var/text = query_get_messages.item[5]
+			var/text = unsanitizeSQL(query_get_messages.item[5])
 			var/timestamp = query_get_messages.item[6]
 			var/server = query_get_messages.item[7]
 			var/editor_key = query_get_messages.item[8]
@@ -561,7 +561,7 @@
 	while(query_get_message_output.NextRow())
 		var/message_id = query_get_message_output.item[1]
 		var/admin_key = query_get_message_output.item[2]
-		var/text = query_get_message_output.item[3]
+		var/text = unsanitizeSQL(query_get_message_output.item[3])
 		var/timestamp = query_get_message_output.item[4]
 		var/editor_key = query_get_message_output.item[5]
 		switch(type)
