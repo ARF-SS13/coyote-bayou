@@ -63,6 +63,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	ears = null
 
+/*
 /datum/outfit/job/tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -76,6 +77,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	H.grant_language(/datum/language/tribal)
 	for(var/datum/crafting_recipe/recipe as() in GLOB.tribal_job_recipes)
 		H.mind.teach_crafting_recipe(recipe)
+*/
 
 /*
 Tribal Chief
@@ -100,12 +102,14 @@ Tribal Chief
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
+/*
 /datum/outfit/job/tribal/f13chief/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13chief
 	name =	"Chief"
@@ -158,12 +162,14 @@ Tribal Shaman
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+*/
 
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
@@ -236,12 +242,14 @@ Tribal Head Hunter
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13Hhunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13Hhunter
 	name = "Hunter"
@@ -297,12 +305,14 @@ Druid
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13druid/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+*/
 
 /datum/outfit/job/tribal/f13druid
 	name = "Druid"
@@ -461,12 +471,14 @@ Hunter
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13hunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13hunter
 	name = "Hunter"
@@ -563,12 +575,14 @@ Guardian
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
+/*
 /datum/outfit/job/tribal/f13guardian/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13guardian
 	name = "Guardian"

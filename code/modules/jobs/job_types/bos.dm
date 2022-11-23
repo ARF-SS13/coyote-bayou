@@ -36,6 +36,7 @@ Main doors: ACCESS_CAPTAIN 20
 	if(visualsOnly)
 		return
 
+/*
 /datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -51,6 +52,7 @@ Main doors: ACCESS_CAPTAIN 20
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/bosoutcastlight)
+*/
 
 /*
 Elder
@@ -74,6 +76,7 @@ Elder
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13elder/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -92,6 +95,7 @@ Elder
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+*/
 
 /datum/outfit/job/bos/f13elder
 	name = "Elder"
@@ -139,11 +143,13 @@ Head Paladin
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13sentinel/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+
 
 /datum/outfit/job/bos/f13sentinel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -168,6 +174,7 @@ Head Paladin
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
+*/
 
 /datum/outfit/job/bos/f13sentinel
 	name = "Head Paladin"
@@ -255,6 +262,7 @@ Head Scribe
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13headscribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -278,6 +286,7 @@ Head Scribe
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+*/
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
@@ -337,12 +346,13 @@ Head Knight
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_ARMORY, ACCESS_BRIG, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_ARMORY, ACCESS_BRIG, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13knightcap/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-
+*/
 
 
 /datum/outfit/job/bos/f13knightcap
@@ -621,7 +631,7 @@ Senior Scribe
 		),
 	)
 
-
+/*
 /datum/outfit/job/bos/f13seniorscribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -642,6 +652,7 @@ Senior Scribe
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
+*/
 
 /datum/outfit/job/bos/f13seniorscribe
 	name =	"Senior Scribe"
@@ -720,12 +731,13 @@ Scribe
 		/obj/item/storage/firstaid/regular=1,
 		)
 
+/*
 /datum/outfit/job/bos/f13scribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
-
+*/
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"
@@ -778,6 +790,7 @@ Senior Knight
 		),
 	)
 
+/*
 /datum/outfit/job/bos/f13seniorknight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -786,6 +799,7 @@ Senior Knight
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
+*/
 
 /datum/outfit/job/bos/f13seniorknight
 	name = "Senior Knight"
@@ -890,6 +904,7 @@ Knight
 		),
 	)
 
+/*
 /datum/outfit/job/bos/f13knight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -897,6 +912,7 @@ Knight
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+*/
 
 /datum/outfit/job/bos/f13knight
 	name = "Knight"
@@ -1027,12 +1043,13 @@ Initiate
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
 
+/*
 /datum/outfit/job/bos/f13initiate/post_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
-
+*/
 
 /datum/outfit/loadout/initiatek
 	name = "Knight-Aspirant"

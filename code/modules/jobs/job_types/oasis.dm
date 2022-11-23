@@ -333,6 +333,7 @@ Mayor
 		/obj/item/gun/energy/laser/auto/oasis = 1,
 		)*/
 
+/*
 /datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -344,6 +345,7 @@ Mayor
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+*/
 
 /*--------------------------------------------------------------*/
 
@@ -452,11 +454,13 @@ Mayor
 		/obj/item/stock_parts/cell/ammo/mfc = 1
 		)
 
+/*
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+*/
 
 /*--------------------------------------------------------------*/
 /*

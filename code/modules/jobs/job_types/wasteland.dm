@@ -156,12 +156,13 @@ Raider
 		/obj/item/gun/ballistic/automatic/pistol/type17, \
 		)
 
-
+/*
 /datum/outfit/job/wasteland/f13raider/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LONGPORKLOVER, src)
+*/
 
 	H.social_faction = FACTION_RAIDERS
 	add_verb(H, /mob/living/proc/creategang)
@@ -490,11 +491,13 @@ Raider
 			/obj/item/clothing/neck/mantle/gecko,\
 			/obj/item/clothing/neck/garlic_necklace)
 
+/*
 /datum/outfit/job/wasteland/f13raider/watcher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LONGPORKLOVER, src)
+*/
 
 	H.social_faction = FACTION_RAIDERS
 	add_verb(H, /mob/living/proc/creategang)
@@ -765,11 +768,13 @@ Raider
 			/obj/item/clothing/suit/armor/light/kit/shoulder, \
 			/obj/item/clothing/suit/armor/light/kit)
 
+/*
 /datum/outfit/job/wasteland/f13raider/resident/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LONGPORKLOVER, src)
+*/
 
 	H.social_faction = FACTION_RAIDERS
 	add_verb(H, /mob/living/proc/creategang)
@@ -1770,12 +1775,14 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/restraints/handcuffs=2, \
 		/obj/item/storage/bag/money/small/wastelander)
 
+/*
 /datum/outfit/job/wasteland/f13vigilante/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
+*/
 
 /datum/outfit/loadout/desert_ranger
 	name = "Desert Ranger"
@@ -1887,6 +1894,7 @@ datum/job/wasteland/f13dendoctor
 	/datum/outfit/loadout/bonedancerexile*/
 	)
 
+/*
 /datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -1898,6 +1906,8 @@ datum/job/wasteland/f13dendoctor
 	ADD_TRAIT(H, TRAIT_AUTO_DRAW, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	H.grant_language(/datum/language/tribal)
+*/
+
 	var/list/recipes = list(
 		/datum/crafting_recipe/tribal_pa,
 		/datum/crafting_recipe/tribal_pa_helmet,
