@@ -65,7 +65,6 @@
 				to_chat(src, span_warning("You taste a strong acidic flavour!"))
 
 /proc/generate_taste_message(minimum_percent=15, atom/thing_tasted, datum/reagents/reagent_thing)
-	// the lower the minimum percent, the more sensitive the message is.
 	var/list/out = list()
 	var/list/flavors = list() //descriptor = strength
 	if(thing_tasted)
@@ -74,45 +73,53 @@
 		else
 			flavors = thing_tasted.tastes
 	var/datum/reagents/reagents_in = reagent_thing
-	if(minimum_percent <= 100)
-		if(reagents_in)
-			for(var/datum/reagent/R in reagents_in.reagent_list)
-				if(!R.taste_mult)
-					continue
+	if(!reagent_thing.force_alt_taste) // If there's a force taste var on a chem, ignore all this code!
+		// the lower the minimum percent, the more sensitive the message is.
+		if(minimum_percent <= 100)
+			if(reagents_in)
+				for(var/datum/reagent/R in reagents_in.reagent_list)
+					if(!R.taste_mult)
+						continue
 
-				if(istype(R, /datum/reagent/consumable/nutriment))
-					var/list/taste_data = R.data
-					for(var/taste in taste_data)
-						var/ratio = taste_data[taste]
-						var/amount = ratio * R.taste_mult * R.volume
-						if(taste in flavors)
-							flavors[taste] += amount
-						else
-							flavors[taste] = amount
-				else
-					var/taste_desc = R.taste_description
-					var/taste_amount = R.volume * R.taste_mult
-					if(taste_desc in flavors)
-						flavors[taste_desc] += taste_amount
+					if(istype(R, /datum/reagent/consumable/nutriment))
+						var/list/taste_data = R.data
+						for(var/taste in taste_data)
+							var/ratio = taste_data[taste]
+							var/amount = ratio * R.taste_mult * R.volume
+							if(taste in flavors)
+								flavors[taste] += amount
+							else
+								flavors[taste] = amount
 					else
-						flavors[taste_desc] = taste_amount
-		//deal with percentages
-		// TODO it would be great if we could sort these from strong to weak
-		var/total_taste = counterlist_sum(flavors)
-		if(total_taste > 0)
-			for(var/taste_desc in flavors)
-				var/percent = flavors[taste_desc]/total_taste * 100
-				if(percent < minimum_percent)
-					continue
-				var/intensity_desc = "a hint of"
-				if(ISINRANGE(percent, minimum_percent * 2, minimum_percent * 3)|| percent == 100)
-					intensity_desc = ""
-				else if(percent > minimum_percent * 3)
-					intensity_desc = "the strong flavor of"
-				if(intensity_desc != "")
-					out += "[intensity_desc] [taste_desc]"
-				else
-					out += "[taste_desc]"
+						var/taste_desc = R.taste_description
+						var/taste_amount = R.volume * R.taste_mult
+						if(taste_desc in flavors)
+							flavors[taste_desc] += taste_amount
+						else
+							flavors[taste_desc] = taste_amount
+			//deal with percentages
+			// TODO it would be great if we could sort these from strong to weak
+			var/total_taste = counterlist_sum(flavors)
+			if(total_taste > 0)
+				for(var/taste_desc in flavors)
+					var/percent = flavors[taste_desc]/total_taste * 100
+					if(percent < minimum_percent)
+						continue
+					var/intensity_desc = "a hint of"
+					if(ISINRANGE(percent, minimum_percent * 2, minimum_percent * 3)|| percent == 100)
+						intensity_desc = ""
+					else if(percent > minimum_percent * 3)
+						intensity_desc = "the strong flavor of"
+					if(intensity_desc != "")
+						out += "[intensity_desc] [taste_desc]"
+					else
+						out += "[taste_desc]"
+
+	else
+		// alternate taste is to force the taste of the atom if its a food item
+		if(reagent_thing.my_atom && isfood(reagent_thing.my_atom))
+			var/obj/item/reagent_containers/food/snacks/F = reagent_thing.my_atom
+			out = F.tastes
 
 	return english_list(out, "something indescribable")
 

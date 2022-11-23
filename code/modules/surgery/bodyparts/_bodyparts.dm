@@ -183,7 +183,7 @@
 			. += organ_check
 
 //Return TRUE to get whatever mob this is in to update health.
-/obj/item/bodypart/proc/on_life()
+/obj/item/bodypart/proc/on_life(seconds, times_fired)
 	if(current_gauze)
 		bandage_heal()
 		needs_processing = TRUE
