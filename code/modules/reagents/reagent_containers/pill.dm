@@ -295,7 +295,7 @@
 	name = "Fiery purgative"
 	desc = "A home remedy that has been specially mixed to purge many things from the body. use at your own risk."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
-	icon_state = "patch_berserkpowder"
+	icon_state = "patch_berserkerpowder"
 	list_reagents = list(/datum/reagent/medicine/fiery_purgative = 10)
 	self_delay = 5
 
