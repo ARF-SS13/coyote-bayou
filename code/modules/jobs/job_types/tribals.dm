@@ -54,6 +54,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 /datum/outfit/job/tribal/
 	name = "Tribal"
 	jobtype = /datum/job/tribal/
+	belt = /obj/item/kit_spawner/tribal
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	backpack = /obj/item/storage/backpack/explorer
@@ -123,6 +124,7 @@ Tribal Chief
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/flashlight/lantern = 1,
+		/obj/item/kit_spawner/tribal = 1
 	)
 
 /*
@@ -168,6 +170,7 @@ Tribal Shaman
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
 	jobtype = /datum/job/tribal/f13shaman
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/tribe
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -256,7 +259,8 @@ Tribal Head Hunter
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/flashlight/lantern = 1
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/kit_spawner/tribal = 1,
 	)
 
 /*
@@ -308,6 +312,7 @@ Druid
 	name = "Druid"
 	jobtype = /datum/job/tribal/f13druid
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/wayfarer/acolyte
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -369,6 +374,7 @@ Villager
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
 	jobtype = /datum/job/tribal/f13villager
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -477,6 +483,7 @@ Hunter
 	name = "Hunter"
 	jobtype = /datum/job/tribal/f13hunter
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/hunter
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -544,6 +551,7 @@ Spirit-Pledged
 	jobtype = /datum/job/tribal/f13spiritpledged
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	id = /obj/item/card/id/tribetattoo
+	belt = /obj/item/kit_spawner/tribal
 
 /*
 Guardian

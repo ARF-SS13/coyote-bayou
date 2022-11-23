@@ -14,7 +14,7 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/job/den
 	name = "Nash Default Template"
 	ears = /obj/item/radio/headset/headset_town
-	belt = null
+	belt = /obj/item/kit_spawner/waster
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -79,6 +79,7 @@ Mayor
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
 	jobtype = /datum/job/oasis/f13mayor
+	belt = /obj/item/kit_spawner/premium
 	id = /obj/item/card/id/silver/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -178,6 +179,7 @@ Mayor
 	name = "Secretary"
 	jobtype = /datum/job/oasis/f13secretary
 	id = /obj/item/card/id/silver
+	belt = /obj/item/kit_spawner/premium
 	ears = /obj/item/radio/headset/headset_town/mayor
 	glasses = /obj/item/clothing/glasses/regular/hipster
 	gloves = /obj/item/clothing/gloves/color/white
@@ -270,12 +272,11 @@ Mayor
 	name = "Sheriff"
 	jobtype = /datum/job/oasis/f13sheriff
 	id = /obj/item/card/id/dogtag/sheriff
-	belt = null
+	belt = /obj/item/kit_spawner/lawman/sheriff
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	uniform = /obj/item/clothing/under/f13/sheriff
-	belt = /obj/item/storage/belt/army
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_pocket = /obj/item/storage/bag/money/small/den
@@ -285,7 +286,8 @@ Mayor
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
-		/obj/item/grenade/flashbang = 1
+		/obj/item/grenade/flashbang = 1,
+		/obj/item/storage/belt/army = 1
 		)
 
 /datum/outfit/loadout/thelaw
@@ -387,7 +389,7 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/storage/belt/army/assault
+	belt = /obj/item/kit_spawner/lawman
 	suit_store = /obj/item/storage/belt/legholster
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
@@ -398,7 +400,8 @@ Mayor
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
-		/obj/item/flashlight/seclight =1
+		/obj/item/flashlight/seclite = 1,
+		/obj/item/storage/belt/army/assault = 1
 		)
 
 /datum/outfit/loadout/frontierjustice
@@ -669,6 +672,7 @@ Mayor
 	name = "Doctor"
 	jobtype = /datum/job/oasis/f13dendoc
 	chemwhiz = TRUE
+	belt = /obj/item/kit_spawner/townie/doctor
 	ears = /obj/item/radio/headset/headset_town/commerce
 	uniform = /obj/item/clothing/under/f13/medic
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -776,7 +780,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	//belt = /obj/item/gun/ballistic/revolver/caravan_shotgun
+	belt = /obj/item/kit_spawner/townie/barkeep
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
@@ -861,7 +865,7 @@ Mayor
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/oasis/f13settler
-	belt = null
+	belt = /obj/item/kit_spawner/townie
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -1071,6 +1075,7 @@ Mayor
 /datum/outfit/job/oasis/f13detective
 	name = "Detective"
 	jobtype = /datum/job/oasis/f13detective
+	belt = /obj/item/kit_spawner/lawman
 	suit = /obj/item/clothing/suit/det_suit/grey
 	uniform = /obj/item/clothing/under/f13/detectivealt
 	head = /obj/item/clothing/head/f13/det_hat_alt
@@ -1089,7 +1094,7 @@ Mayor
 		/obj/item/toy/crayon/white=1,
 		/obj/item/detective_scanner=1,
 		/obj/item/storage/box/gloves=1,
-		/obj/item/storage/box/evidence=1,
+		/obj/item/storage/box/evidence=1)
 		///obj/item/ammo_box/a357=2)
 
 /*--------------------------------------------------------------*/
@@ -1118,6 +1123,7 @@ Mayor
 /datum/outfit/job/den/f13banker
 	name = "Banker"
 	jobtype = /datum/job/oasis/f13banker
+	belt = /obj/item/kit_spawner/lawman
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
@@ -1207,6 +1213,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13shopkeeper
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
+	belt = /obj/item/kit_spawner/townie/trader
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel

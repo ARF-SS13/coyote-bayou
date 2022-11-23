@@ -5,6 +5,7 @@
 #define LOADOUT_LAWMAN (1<<1)
 #define LOADOUT_PREMIUM (1<<2)
 #define LOADOUT_TRIBAL (1<<3)
+#define LOADOUT_PREACHER (1<<4)
 
 #define LOADOUT_BITFIELD "loadout_bitfield"
 #define LOADOUT_CLASS "loadout_class"
@@ -16,10 +17,11 @@
 #define LOADOUT_LONGGUN "Long Guns"
 #define LOADOUT_HOBO "Improvised Guns"
 #define LOADOUT_BOW "Bows"
+#define LOADOUT_NULLROD "Spiritual Device"
 #define LOADOUT_SHIELD "Shields"
 #define LOADOUT_ENERGY "Energy Weapons"
 
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_ENERGY)
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_BOW, LOADOUT_ENERGY)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -32,6 +34,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
+	slot_flags = ITEM_SLOT_BELT
 	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
 	/// MUST be set
 	var/allowed_flags
@@ -42,6 +45,112 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "Wasteland survival kit"
 	desc = "Packed with the essentials: Some kind of weapon."
 	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/raider
+	name = "Rugged survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/raider/doctor
+	name = "Rugged survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/raider/civvy
+	name = "Rugged survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/raider/boss
+	name = "Ruggedest survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/townie
+	name = "Civilian survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/townie/doctor
+	name = "Medical survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/townie/barkeep
+	name = "Barkeep survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/townie/banker
+	name = "Banker survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+
+/obj/item/kit_spawner/townie/trader
+	name = "Trader survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES,
+		"Secondary" = list(LOADOUT_MELEE)
+	)
+
+/obj/item/kit_spawner/follower
+	name = "Volunteer survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER
+
+/obj/item/kit_spawner/follower/guard
+	name = "Guard survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES,
+		"Secondary" = list(LOADOUT_MELEE)
+	)
+
+/obj/item/kit_spawner/follower/doctor
+	name = "Doctor survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+
+/obj/item/kit_spawner/follower/scientist
+	name = "Science survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+
+/obj/item/kit_spawner/bos
+	name = "Techy survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+
+/obj/item/kit_spawner/bos/boss
+	name = "Techy survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+
+/obj/item/kit_spawner/bos/combat
+	name = "Techy survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES,
+		"Secondary" = list(LOADOUT_MELEE)
+	)
+
+/obj/item/kit_spawner/bos/scientist
+	name = "Techy survival kit"
+	desc = "Packed with the essentials: Some kind of cool weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+
+/obj/item/kit_spawner/preacher
+	name = "Spiritual survival kit"
+	desc = "Packed with the essentials: Some kind of weapon, and a cool holy stick."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES,
+		"Rod" = list(LOADOUT_NULLROD)
+	)
 
 /obj/item/kit_spawner/lawman
 	name = "Lawman equipment kit"
@@ -72,6 +181,15 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/kit_spawner/tribal
 	name = "Tribal equipment kit"
+	desc = "Primitive equipment for a primitive person!"
+	allowed_flags = LOADOUT_TRIBAL
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES,
+		"Secondary" = list(LOADOUT_MELEE)
+	)
+
+/obj/item/kit_spawner/tribal/farlands
+	name = "Farlands tribal equipment kit"
 	desc = "Primitive equipment for a primitive person!"
 	allowed_flags = LOADOUT_TRIBAL
 	multiple_choice = list(
@@ -801,6 +919,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/tribal/boneaxe/PopulateContents()
 	new /obj/item/twohanded/fireaxe/boneaxe(src)
 
+/// Preacher Stuff
+
+/obj/item/storage/box/gun/preacher/nullrod
+	name = "spriritual device case"
+
+/obj/item/storage/box/gun/preacher/nullrod/PopulateContents()
+	new /obj/item/nullrod(src)
+
 /// ENERGY!
 
 /obj/item/storage/box/gun/energy
@@ -1300,6 +1426,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_WASTER
 	entry_class = LOADOUT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/crossbow
+
+/// Preacher Stuff
+
+/datum/loadout_box/nullrod
+	entry_tag = "Spiritual Device"
+	entry_flags = LOADOUT_PREACHER
+	entry_class = LOADOUT_NULLROD
+	spawn_thing = /obj/item/storage/box/gun/preacher/nullrod
 
 
 
