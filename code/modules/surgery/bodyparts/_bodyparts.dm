@@ -1016,6 +1016,7 @@
 				span_notice("\The [current_gauze] on [owner]'s [name] fall away, no longer needed."),
 				span_notice("\The [current_gauze] on your [name] fall away, no longer needed."))
 		QDEL_NULL(current_gauze)
+		. = TRUE
 	if(current_suture && (which_covering == "suture" || which_covering == "both"))
 		if(intentionally_removed)
 			if(by_who && by_who == owner)
@@ -1031,6 +1032,7 @@
 				span_notice("\The [current_suture] on [owner]'s [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."),
 				span_notice("\The [current_suture] on your [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."))
 		QDEL_NULL(current_suture)
+		. = TRUE
 
 /obj/item/bodypart/proc/get_bleed_rate(include_reductions = TRUE)
 	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
