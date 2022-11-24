@@ -209,7 +209,7 @@
 // internal slimy button in case the loop stops playing but the player wants to hear it
 /mob/living/proc/preyloop_refresh()
 	set name = "Internal loop refresh"
-	set category = "Vore"
+	set category = "IC"
 	src.stop_sound_channel(CHANNEL_PREYLOOP) // sanity just in case
 	if(isbelly(loc))
 		var/sound/preyloop = sound('sound/vore/prey/loop.ogg')
@@ -221,7 +221,7 @@
 //
 /mob/living/proc/escapeOOC()
 	set name = "OOC Escape"
-	set category = "Vore"
+	set category = "IC"
 
 	//You're in a belly!
 	if(isbelly(loc))
@@ -344,7 +344,7 @@
 //
 /mob/living/proc/lick()
 	set name = "Lick Someone"
-	set category = "Vore"
+	set category = "IC"
 	set desc = "Lick someone nearby!"
 
 	if(incapacitated(ignore_restraints = TRUE))
@@ -396,7 +396,7 @@
 //
 /mob/living/proc/smell_someone()
 	set name = "Smell Someone"
-	set category = "Vore"
+	set category = "IC"
 	set desc = "Smell someone nearby!"
 
 	if(incapacitated(ignore_restraints = TRUE))

@@ -13,7 +13,7 @@
 
 /mob/living/proc/insidePanel()
 	set name = "Vore Panel"
-	set category = "Vore"
+	set category = "IC"
 
 	if(!vorePanel)
 		log_game("VORE: [src] ([type], \ref[src]) didn't have a vorePanel and tried to use the verb.")
