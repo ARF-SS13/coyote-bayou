@@ -715,7 +715,7 @@
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_150,
 		SEMI_AUTO_NODELAY
 	)
 

@@ -681,6 +681,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
 
 //Quick defines for fire modes
+#define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")
 #define FULL_AUTO_200		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 3, burst_size = 1, icon="auto")
 #define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto")
 #define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto")

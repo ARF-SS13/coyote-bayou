@@ -286,7 +286,7 @@ GLOBAL_LIST_INIT(trash_misc, list(
 
 GLOBAL_LIST_INIT(trash_attachment, list(
 	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
 	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
 	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
@@ -905,7 +905,7 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 
 GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
 	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
 	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,

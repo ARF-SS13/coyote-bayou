@@ -433,7 +433,7 @@
 
 /obj/item/storage/box/large/custom_kit/greed2323/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/m29/alt(src)
-	new /obj/item/gun_upgrade/trigger/dangerzone(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
 
 // H
 // I

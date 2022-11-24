@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/advanced
 
 GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/stock_parts,
 			/obj/item/gun_upgrade/scope/watchman,
-			/obj/item/gun_upgrade/trigger/dangerzone,
+			/obj/item/gun_upgrade/trigger/raidertrigger,
 			/obj/item/tool_upgrade/productivity/ergonomic_grip,
 			/obj/item/tool_upgrade/refinement/ported_barrel,
 			/obj/item/tool_upgrade/refinement/stabilized_grip,
