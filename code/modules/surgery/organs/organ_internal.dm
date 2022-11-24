@@ -91,18 +91,18 @@
 	on_death() //Kinda hate doing it like this, but I really don't want to call process directly.
 
 //Sources; life.dm process_organs
-/obj/item/organ/proc/on_death() //Runs when outside AND inside.
+/obj/item/organ/proc/on_death(seconds, times_fired) //Runs when outside AND inside.
 	decay()
 
 //Applys the slow damage over time decay
-/obj/item/organ/proc/decay()
+/obj/item/organ/proc/decay(seconds, times_fired)
 	if(!can_decay())
 		STOP_PROCESSING(SSobj, src)
 		return
 	is_cold()
 	if(organ_flags & ORGAN_FROZEN)
 		return
-	applyOrganDamage(maxHealth * decay_factor)
+	applyOrganDamage(maxHealth * decay_factor * (seconds * 0.5))
 
 /obj/item/organ/proc/can_decay()
 	//if(CHECK_BITFIELD(organ_flags, ORGAN_NO_SPOIL | ORGAN_SYNTHETIC | ORGAN_FAILING))
@@ -150,7 +150,7 @@
 	organ_flags &= ~ORGAN_FROZEN
 	return FALSE
 
-/obj/item/organ/proc/on_life()	//repair organ damage if the organ is not failing or synthetic
+/obj/item/organ/proc/on_life(seconds, times_fired)	//repair organ damage if the organ is not failing or synthetic
 	if(organ_flags & ORGAN_FAILING || !owner)
 		return FALSE
 	if(!is_cold() && damage)
