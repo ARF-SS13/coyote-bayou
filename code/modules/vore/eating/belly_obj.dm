@@ -32,7 +32,6 @@
 	var/can_taste = FALSE					// If this belly prints the flavor of prey when it eats someone.
 	var/bulge_size = 0.25					// The minimum size the prey has to be in order to show up on examine.
 //	var/shrink_grow_size = 1				// This horribly named variable determines the minimum/maximum size it will shrink/grow prey to.
-
 	var/transferlocation					// Location that the prey is released if they struggle and get dropped off.
 	var/transferchance = 0 					// % Chance of prey being transferred to transfer location when resisting
 	var/autotransferchance = 0 				// % Chance of prey being autotransferred to transfer location
@@ -46,6 +45,7 @@
 	var/tmp/static/list/digest_modes = list(DM_HOLD,DM_DIGEST,DM_HEAL,DM_NOISY,DM_ABSORB,DM_UNABSORB)	// Possible digest modes
 
 	var/tmp/mob/living/owner					// The mob whose belly this is.
+	var/tmp/mob/living/prey
 	var/tmp/digest_mode = DM_HOLD				// Current mode the belly is set to from digest_modes (+transform_modes if human)
 	var/tmp/next_process = 0					// Waiting for this SSbellies times_fired to process again.
 	var/tmp/list/items_preserved = list()		// Stuff that wont digest so we shouldn't process it again.
@@ -263,7 +263,7 @@
 // Release a specific atom from the contents of this belly into the owning mob's location.
 // If that location is another mob, the atom is transferred into whichever of its bellies the owning mob is in.
 // Returns the number of atoms so released.
-/obj/belly/proc/release_specific_contents(var/atom/movable/M, silent = FALSE)
+/obj/belly/proc/release_specific_contents(atom/movable/M, silent = FALSE)
 	if (!(M in contents))
 		return FALSE // They weren't in this belly anyway
 
@@ -319,7 +319,7 @@
 // Actually perform the mechanics of devouring the tasty prey.
 // The purpose of this method is to avoid duplicate code, and ensure that all necessary
 // steps are taken.
-/obj/belly/proc/nom_mob(var/mob/prey, var/mob/user)
+/obj/belly/proc/nom_mob(var/mob/prey , user)
 	if(owner.stat == DEAD)
 		return
 	if (prey.buckled)
@@ -343,7 +343,7 @@
 	if(transferlocation != null && autotransferchance > 0)
 		addtimer(CALLBACK(src, /obj/belly/.proc/check_autotransfer, prey), autotransferwait)
 
-/obj/belly/proc/check_autotransfer(var/mob/prey, var/obj/belly/target)
+/obj/belly/proc/check_autotransfer(prey, var/obj/belly/target)
 	// Some sanity checks
 	if(transferlocation && (autotransferchance > 0) && (prey in contents))
 		if(prob(autotransferchance))
