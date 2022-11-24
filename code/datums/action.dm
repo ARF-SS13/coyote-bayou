@@ -24,8 +24,6 @@
 	var/mob/owner
 
 /datum/action/New(Target)
-	if(!src)
-		return
 	link_to(Target)
 	button = new
 	button.linked_action = src

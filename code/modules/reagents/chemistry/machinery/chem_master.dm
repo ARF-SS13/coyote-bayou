@@ -453,11 +453,11 @@
 		var/datum/reagent/R = GLOB.chemical_reagents_list[reagent]
 		if(R)
 			var/state = "Unknown"
-			if(initial(R.reagent_state) == SOLID)
+			if(initial(R.reagent_state) == 1)
 				state = "Solid"
-			else if(initial(R.reagent_state) == LIQUID)
+			else if(initial(R.reagent_state) == 2)
 				state = "Liquid"
-			else if(initial(R.reagent_state) == GAS)
+			else if(initial(R.reagent_state) == 3)
 				state = "Gas"
 			var/const/P = 3 //The number of seconds between life ticks
 			var/T = initial(R.metabolization_rate) * (60 / P)
