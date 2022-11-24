@@ -179,30 +179,40 @@ GENETICS SCANNER
 	var/list/dmgreport = list()
 	if(iscarbon(M) && mode == 1)
 		var/mob/living/carbon/C = M
-		var/list/damaged = C.get_damaged_bodyparts(1,1)
-		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
+		var/list/damaged = C.get_damaged_bodyparts(1,1, bleed = TRUE)
+		if(length(damaged) > 0 || oxy_loss > 0 || tox_loss > 0 || fire_loss > 0 || bleed_loss > 0)
 			dmgreport += "<table style='margin-left:33px'><tr><font face='Verdana'>\
 							<td style='width: 90px;'><font color='#0000CC'>Damage:</font></td>\
 							<td style='width: 55px;'><font color='red'><b>Brute</b></font></td>\
 							<td style='width: 45px;'><font color='orange'><b>Burn</b></font></td>\
 							<td style='width: 45px;'><font color='green'><b>Toxin</b></font></td>\
-							<td style='width: 40px;'><font color='purple'><b>Oxy</b></font></td>\
-							<td style='width: 60px;'><font color='red'><b>Wound</b></font></td></tr>\
+							<td style='width: 40px;'><font color='purple'><b>Oxy</b></font></td></tr>\
 							<tr><td><font color='#0000CC'>Overall:</font></td>\
 							<td><font color='red'>[brute_loss]</font></td>\
 							<td><font color='orange'>[fire_loss]</font></td>\
 							<td><font color='green'>[tox_loss]</font></td>\
 							<td><font color='purple'>[oxy_loss]</font></td>\
-							<td></td></tr>"
+							<td></td>\
+							</tr>"
 
-			for(var/o in damaged)
-				var/obj/item/bodypart/org = o //head, left arm, right arm, etc.
-				dmgreport += "<tr><td><font color='#0000CC'>[capitalize(org.name)]:</font></td>\
-								<td><font color='red'>[(org.brute_dam > 0) ? "[org.brute_dam]" : "0"]</font></td>\
-								<td><font color='orange'>[(org.burn_dam > 0) ? "[org.burn_dam]" : "0"]</font></td>\
-								<td></td>\
-								<td></td>\
-								<td><font color='red'>[(org.bleed_dam > 0) ? "[org.bleed_dam]" : "0"]</font></td></tr>"
+			if(LAZYLEN(damaged))
+				dmgreport += "<tr><font face='Verdana'>\
+							<td style='width: 90px;'></td>\
+							<td style='width: 55px;'><font color='red'><b>Brute</b></font></td>\
+							<td style='width: 45px;'><font color='orange'><b>Burn</b></font></td>\
+							<td style='width: 45px;'><font color='red'><b>Wound</b></font></td></td>\
+							<td style='width: 40px;'></td>\
+							</tr>"
+				for(var/o in damaged)
+					var/obj/item/bodypart/org = o //head, left arm, right arm, etc.
+					dmgreport += "<tr>\
+									<td><font color='#0000CC'>[capitalize(org.name)]:</font></td>\
+									<td><font color='red'>[(org.brute_dam > 0) ? "[org.brute_dam]" : "0"]</font></td>\
+									<td><font color='orange'>[(org.burn_dam > 0) ? "[org.burn_dam]" : "0"]</font></td>\
+									<td><font color='red'>[(org.bleed_dam > 0) ? "[org.bleed_dam]" : "0"]</font></td>\
+									<td></td>\
+									<td></td>\
+									</tr>"
 			dmgreport += "</table>"
 			to_chat(user, dmgreport.Join())
 

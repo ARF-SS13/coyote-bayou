@@ -592,6 +592,7 @@
 				var/status = ""
 				var/brutedamage = LB.brute_dam
 				var/burndamage = LB.burn_dam
+				var/bleeddamage = LB.bleed_dam
 				if(hallucination)
 					if(prob(30))
 						brutedamage += rand(30,40)
@@ -599,7 +600,7 @@
 						burndamage += rand(30,40)
 
 				if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-					status = "[brutedamage] brute damage and [burndamage] burn damage"
+					status = "[brutedamage] brute, [burndamage] burn, and [bleeddamage] bleed damage"
 					if(!brutedamage && !burndamage)
 						status = "no damage"
 
@@ -646,6 +647,11 @@
 						to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>")
 					else
 						to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
+
+				if(LB.current_gauze)
+					to_chat(src, "\t [span_notice("It is covered with [LB.current_gauze.name]\s.")] <a href='?src=[REF(src)];remove_covering=[TRUE];bandage=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>")
+				if(LB.current_suture)
+					to_chat(src, "\t [span_notice("It is stitched with [LB.current_suture.name]\s.")] <a href='?src=[REF(src)];remove_covering=[TRUE];suture=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>")
 
 			for(var/t in missing)
 				to_send += span_boldannounce("Your [parse_zone(t)] is missing!")
@@ -783,14 +789,15 @@
 		var/status = ""
 		var/brutedamage = LB.brute_dam
 		var/burndamage = LB.burn_dam
+		var/bleeddamage = LB.bleed_dam
 		if(hallucination)
 			if(prob(30))
 				brutedamage += rand(30,40)
 			if(prob(30))
 				burndamage += rand(30,40)
 
-		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-			status = "[brutedamage] brute damage and [burndamage] burn damage"
+		if(self_aware)
+			status = "[brutedamage] brute, [burndamage] burn, and [bleeddamage] damage"
 			if(!brutedamage && !burndamage)
 				status = "no damage"
 
@@ -845,6 +852,88 @@
 			else
 				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
 
+		if(LB.current_gauze)
+			to_chat(src, "\t [span_notice("It is covered with [LB.current_gauze.name].")] <a href='?src=[REF(src)];remove_covering=[TRUE];bandage=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>")
+		if(LB.current_suture)
+			to_chat(src, "\t [span_notice("It is stitched with [LB.current_suture.name].")] <a href='?src=[REF(src)];remove_covering=[TRUE];suture=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>")
+
+/mob/living/carbon/human/examine_more(mob/user)
+	. = ..()
+
+	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/LB = X
+		missing -= LB.body_zone
+		if(LB.is_pseudopart) //don't show injury text for fake bodyparts; ie chainsaw arms or synthetic armblades
+			continue
+		var/limb_max_damage = LB.max_damage
+		var/brutedamage = LB.brute_dam
+		var/burndamage = LB.burn_dam
+		var/bleeddamage = LB.bleed_dam
+		if(hallucination)
+			if(prob(30))
+				brutedamage += rand(30,40)
+			if(prob(30))
+				burndamage += rand(30,40)
+
+		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))// If whoever's beeing looked at has self-aware, you can see it too 
+			. += span_notice("[src]'s [LB.name]:")
+			. += "\t <font color='red'>BRUTE: [brutedamage]</font>, \
+					<font color='orange'>BURN: [burndamage]</font>, \
+					<font color='red'>BLEED: [bleeddamage]</font>"
+			if(LB.is_disabled())
+				. += span_alert("\t Limb is disabled.")
+
+		else
+			var/msg = "[src]'s [LB.name] is "
+			var/list/damage_words = list()
+			if(brutedamage || burndamage || bleeddamage)
+				switch(brutedamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_brute_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_brute_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_brute_msg
+				switch(burndamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_burn_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_burn_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_burn_msg
+				switch(bleeddamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_bleed_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_bleed_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_bleed_msg
+				msg += english_list(damage_words)
+			else
+				msg += "intact"
+			if(LB.is_disabled())
+				msg += ", and is also disabled"
+			msg += "."
+			. += span_notice(msg)
+
+		for(var/thing in LB.wounds)
+			var/datum/wound/W = thing
+			switch(W.severity)
+				if(WOUND_SEVERITY_TRIVIAL)
+					. += "\t <span class='danger'>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)].</span>"
+				if(WOUND_SEVERITY_MODERATE)
+					. += "\t <span class='warning'>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</span>"
+				if(WOUND_SEVERITY_SEVERE)
+					. += "\t <span class='warning'><b>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</b></span>"
+				if(WOUND_SEVERITY_CRITICAL)
+					. += "\t <span class='warning'><b>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!!</b></span>"
+
+		if(LB.current_gauze)
+			. += "\t [span_notice("It is covered with [LB.current_gauze.name].")] <a href='?src=[REF(src)];remove_covering=[TRUE];bandage=[TRUE];limb=[REF(LB)];other_doer=[REF(user)]' class='notice'>(Remove?)</a>"
+		if(LB.current_suture)
+			. += "\t [span_notice("It is stitched with [LB.current_suture.name].")] <a href='?src=[REF(src)];remove_covering=[TRUE];suture=[TRUE];limb=[REF(LB)];other_doer=[REF(user)]' class='notice'>(Remove?)</a>"
 
 /mob/living/carbon/human/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)
 	if(damage_type != BRUTE && damage_type != BURN)

@@ -296,6 +296,19 @@
 			return
 		SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
 		return
+	if(href_list["remove_covering"] && usr.canUseTopic(src, BE_CLOSE))
+		var/obj/item/bodypart/L = locate(href_list["limb"]) in bodyparts
+		if(!L)
+			return
+		var/mob/bandage_breaker = href_list["other_doer"]
+		if(!ismob(bandage_breaker))
+			bandage_breaker = null
+		if(href_list["bandage"])
+			if(!L.destroy_coverings("bandage", TRUE, bandage_breaker))
+				show_message(span_alert("You couldn't remove anything!"))
+		if(href_list["suture"])
+			if(!L.destroy_coverings("suture", TRUE, bandage_breaker))
+				show_message(span_alert("You couldn't remove anything!"))
 
 /mob/living/carbon/fall(forced)
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
