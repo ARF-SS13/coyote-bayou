@@ -53,6 +53,9 @@
 	var/tmp/recent_sound						// Prevent audio spam
 	var/tmp/last_hearcheck = 0
 	var/tmp/list/hearing_mobs
+	var/newloc = null
+	var/include_absorbed = FALSE
+	var/silent = FALSE
 
 	// Don't forget to watch your commas at the end of each line if you change these.
 	var/list/struggle_messages_outside = list(
@@ -151,7 +154,7 @@
 	. = ..()
 	take_ownership(src.loc)
 
-/obj/belly/proc/take_ownership(var/newloc)
+/obj/belly/proc/take_ownership(newloc)
 	//If not, we're probably just in a prefs list or something.
 	if(isliving(newloc))
 		owner = loc
@@ -210,7 +213,7 @@
 // Release all contents of this belly into the owning mob's location.
 // If that location is another mob, contents are transferred into whichever of its bellies the owning mob is in.
 // Returns the number of mobs so released.
-/obj/belly/proc/release_all_contents(var/include_absorbed = FALSE, var/silent = FALSE)
+/obj/belly/proc/release_all_contents(include_absorbed = FALSE, silent = FALSE)
 //	var/atom/destination = drop_location()
 	//Don't bother if we don't have contents
 	if(!contents.len)
@@ -260,7 +263,7 @@
 // Release a specific atom from the contents of this belly into the owning mob's location.
 // If that location is another mob, the atom is transferred into whichever of its bellies the owning mob is in.
 // Returns the number of atoms so released.
-/obj/belly/proc/release_specific_contents(var/atom/movable/M, var/silent = FALSE)
+/obj/belly/proc/release_specific_contents(var/atom/movable/M, silent = FALSE)
 	if (!(M in contents))
 		return FALSE // They weren't in this belly anyway
 
