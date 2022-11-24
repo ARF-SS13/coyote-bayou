@@ -103,7 +103,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(0.5)
 	init_firemodes = list(
-		FULL_AUTO_1200
+		FULL_AUTO_300
 	)
 	
 	flags_1 = CONDUCT_1

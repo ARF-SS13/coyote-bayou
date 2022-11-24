@@ -188,7 +188,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(0.7)
 	init_firemodes = list(
-		FULL_AUTO_1200
+		FULL_AUTO_300
 	)
 
 	is_automatic = TRUE
@@ -240,7 +240,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(0.8)
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_150,
 		BURST_3_ROUND
 	)
 
@@ -291,7 +291,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_150,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -340,7 +340,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_300
+		FULL_AUTO_150
 	)
 
 /* * * * * * * * * * *
@@ -376,7 +376,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -426,7 +426,8 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(1.2)
 	init_firemodes = list(
-		BURST_5_ROUND
+		FULL_AUTO_150,
+		SEMI_AUTO_NODELAY
 	)
 
 
@@ -463,7 +464,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_600
+		FULL_AUTO_200
 	)
 
 	automatic = 1
@@ -564,7 +565,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(0.8)
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -611,7 +612,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_200,
 		BURST_5_ROUND
 	)
 
@@ -688,7 +689,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(0.8)
 	init_firemodes = list(
-		FULL_AUTO_800,
+		FULL_AUTO_200,
 		BURST_3_ROUND,
 		SEMI_AUTO_NODELAY
 	)
@@ -738,7 +739,7 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		BURST_5_ROUND,
+		BURST_3_ROUND,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -774,7 +775,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -820,10 +821,10 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTEST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		FULL_AUTO_800
+		FULL_AUTO_300
 	)
 
 	is_automatic = TRUE
@@ -2360,11 +2361,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.8)
 	init_firemodes = list(
-		FULL_AUTO_200,
+		FULL_AUTO_150,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -2407,11 +2408,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -2458,11 +2459,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -2508,11 +2509,12 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_300
+		FULL_AUTO_200,
+		SEMI_AUTO_NODELAY
 	)
 
 	semi_auto = TRUE
@@ -2641,12 +2643,12 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.8)
 	init_firemodes = list(
-		FULL_AUTO_1000,
-		BURST_10_ROUND
+		FULL_AUTO_300,
+		BURST_2_ROUND
 	)
 
 	is_automatic = TRUE
@@ -2689,12 +2691,13 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_300,
-		BURST_3_ROUND
+		FULL_AUTO_200,
+		BURST_3_ROUND,
+		SEMI_AUTO_NODELAY
 	)
 	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	is_automatic = TRUE
@@ -2746,11 +2749,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 	gun_tags = list(GUN_SCOPE)
@@ -2808,17 +2811,17 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T4 // 57 damage per shot, full auto, great grouping? not on my watch!
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_200,
+		FULL_AUTO_150,
 		SEMI_AUTO_NODELAY
 	)
 
 	is_automatic = TRUE
 	automatic = 1
-	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
@@ -2888,7 +2891,7 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.3)
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_150,
 		SEMI_AUTO_NODELAY
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -2933,7 +2936,7 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.8)
 	init_firemodes = list(
-		BURST_5_ROUND,
+		BURST_3_ROUND_RAPID,
 		SEMI_AUTO_NODELAY
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -2983,7 +2986,7 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_200,
 		BURST_3_ROUND
 	)
 
@@ -3044,7 +3047,7 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_400
+		FULL_AUTO_200
 	)
 
 	is_automatic = TRUE
@@ -3092,7 +3095,7 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_600
+		FULL_AUTO_200
 	)
 
 	is_automatic = TRUE
@@ -3143,7 +3146,7 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_400
+		FULL_AUTO_200
 	)
 
 	is_automatic = TRUE
@@ -3284,11 +3287,11 @@ obj/item/gun/ballistic/automatic/bar
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.6)
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_200,
 		BURST_3_ROUND,
 		SEMI_AUTO_NODELAY
 	)

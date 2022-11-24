@@ -92,17 +92,17 @@
 /obj/item/gun_upgrade/trigger
 
 //Disables the ability to toggle the safety, toggles the safety permanently off, decreases fire delay. Acquired through loot spawns
-/obj/item/gun_upgrade/trigger/dangerzone
+/obj/item/gun_upgrade/trigger/raidertrigger
 	name = "Raider trigger"
 	desc = "Who needs safeties anyways?"
 	icon_state = "Danger_Zone"
 
 
-/obj/item/gun_upgrade/trigger/dangerzone/New()
+/obj/item/gun_upgrade/trigger/raidertrigger/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.85,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.80,
 		GUN_UPGRADE_FORCESAFETY = FALSE
 		)
 	I.gun_loc_tag = GUN_TRIGGER
@@ -475,8 +475,8 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 0.9, // lowering the power output of the weapon should realistically lower the recoil - risingstarslash
 	GUN_UPGRADE_DAMAGE_MULT = 0.5,
-	GUN_UPGRADE_CHARGECOST = 0.65,
-	GUN_UPGRADE_FULLAUTO = TRUE)
+	GUN_UPGRADE_CHARGECOST = 0.65)
+	//GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 

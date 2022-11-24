@@ -455,7 +455,7 @@
 	burst_size = 3
 
 	init_firemodes = list(
-		FULL_AUTO_300,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
