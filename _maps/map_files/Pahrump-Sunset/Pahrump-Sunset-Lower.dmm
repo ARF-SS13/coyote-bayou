@@ -583,7 +583,9 @@
 	pixel_x = 9
 	},
 /obj/structure/wreck/trash/machinepiletwo,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "awh" = (
 /obj/item/storage/trash_stack,
@@ -1164,7 +1166,9 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "aYX" = (
 /obj/machinery/light{
@@ -1387,7 +1391,9 @@
 /area/f13/caves)
 "bix" = (
 /obj/structure/wreck/trash/five_tires,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "biC" = (
 /mob/living/simple_animal/hostile/ghoul/legendary{
@@ -1407,7 +1413,9 @@
 "biK" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "biP" = (
 /obj/structure/decoration/vent,
@@ -1844,7 +1852,9 @@
 	pixel_x = 6;
 	pixel_y = 18
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "bzD" = (
 /turf/open/floor/f13/wood,
@@ -6823,7 +6833,9 @@
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
 /obj/effect/mob_spawn/human/corpse/vault,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "cyD" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
@@ -7174,7 +7186,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "cQy" = (
 /obj/structure/flora/ausbushes/fernybush,
@@ -7245,7 +7259,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "cVq" = (
 /obj/structure/table/wood,
@@ -8292,7 +8308,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "dRN" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
@@ -8936,7 +8954,9 @@
 /area/f13/caves)
 "esO" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "esP" = (
 /obj/structure/barricade/wooden/strong,
@@ -9016,7 +9036,9 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "ewm" = (
 /obj/structure/spider/stickyweb,
@@ -9395,7 +9417,9 @@
 /area/f13/tunnel)
 "eLf" = (
 /obj/structure/wreck/trash/four_barrels,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "eLg" = (
 /obj/machinery/hydroponics/soil,
@@ -10564,7 +10588,9 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "fQm" = (
 /obj/structure/nest/ghoul,
@@ -10617,7 +10643,9 @@
 "fTx" = (
 /obj/structure/displaycase,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "fTM" = (
 /obj/structure/noticeboard{
@@ -10717,7 +10745,9 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "fYJ" = (
 /obj/structure/table,
@@ -11285,7 +11315,9 @@
 	color = "#363636"
 	},
 /obj/structure/wreck/trash/engine,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "gxy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11567,7 +11599,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "gHC" = (
 /obj/structure/table,
@@ -12096,7 +12130,9 @@
 "hhU" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "hil" = (
 /obj/item/storage/secure/safe{
@@ -12276,7 +12312,9 @@
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibtorso"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "hoP" = (
 /obj/effect/decal/remains{
@@ -12509,7 +12547,9 @@
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
 /obj/effect/mob_spawn/human/corpse/vault,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "hAW" = (
 /obj/structure/reagent_dispensers/barrel/old,
@@ -13714,7 +13754,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "iBf" = (
 /obj/structure/barricade/bars,
@@ -14654,7 +14696,9 @@
 /obj/structure/wreck/trash/machinepile{
 	pixel_x = -17
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "joN" = (
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
@@ -15602,7 +15646,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "kat" = (
 /obj/effect/spawner/lootdrop/trash,
@@ -15738,7 +15784,9 @@
 /area/f13/building)
 "kho" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "khp" = (
 /obj/effect/spawner/lootdrop/trash,
@@ -15988,7 +16036,9 @@
 /area/f13/building/sewers)
 "ktc" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "kth" = (
 /mob/living/simple_animal/hostile/ghoul,
@@ -16506,7 +16556,9 @@
 /area/f13/tunnel)
 "kNX" = (
 /obj/effect/mob_spawn/human/corpse/vault,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "kNY" = (
 /obj/structure/fluff/railing{
@@ -17379,7 +17431,9 @@
 "lyj" = (
 /obj/structure/bonfire/prelit,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "lym" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17928,7 +17982,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "lRv" = (
 /obj/structure/bed/mattress{
@@ -17988,7 +18044,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "lUb" = (
 /obj/structure/bed,
@@ -18024,7 +18082,9 @@
 /area/f13/tunnel)
 "lUl" = (
 /obj/structure/table/wood,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "lUo" = (
 /obj/structure/nest/scorpion,
@@ -18259,7 +18319,9 @@
 "mcG" = (
 /obj/structure/displaycase,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "mcX" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -18353,7 +18415,9 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "mfJ" = (
 /obj/machinery/light/small{
@@ -18385,7 +18449,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "mip" = (
 /obj/structure/barricade/wooden/strong,
@@ -19812,7 +19878,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "nuj" = (
 /obj/structure/destructible/tribal_torch/lit,
@@ -20751,7 +20819,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "okO" = (
 /obj/effect/mapping_helpers/airlock/locked,
@@ -21364,7 +21434,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "oMu" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -21542,7 +21614,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "oUv" = (
 /obj/structure/disposalpipe/trunk{
@@ -22056,7 +22130,9 @@
 /area/f13/tunnel)
 "plW" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "pmA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22139,7 +22215,9 @@
 "ppq" = (
 /obj/structure/table/wood,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "ppF" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -22179,7 +22257,9 @@
 /area/f13/building)
 "prT" = (
 /obj/structure/closet/firecloset,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "prW" = (
 /mob/living/simple_animal/hostile/radroach,
@@ -23082,7 +23162,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "pWt" = (
 /obj/effect/decal/remains{
@@ -23931,7 +24013,9 @@
 	dir = 1;
 	light_color = "#706891"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "qDv" = (
 /obj/machinery/door/poddoor/shutters{
@@ -24282,7 +24366,9 @@
 "qRk" = (
 /obj/item/reagent_containers/food/snacks/deadmouse,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "qRv" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
@@ -24345,7 +24431,9 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "qTN" = (
 /obj/structure/barricade/wooden,
@@ -24581,7 +24669,9 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /obj/item/reagent_containers/hypospray/combat,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "rfp" = (
 /obj/structure/spider/cocoon,
@@ -24786,7 +24876,9 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "rob" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -25040,7 +25132,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "rCJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25113,7 +25207,9 @@
 /area/f13/caves)
 "rHk" = (
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "rHB" = (
 /turf/closed/mineral/random/low_chance,
@@ -25130,7 +25226,9 @@
 /obj/structure/table,
 /obj/item/stock_parts/cell/high,
 /obj/item/defibrillator,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "rIZ" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -25260,7 +25358,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "rMI" = (
 /obj/structure/janitorialcart,
@@ -25535,7 +25635,9 @@
 	},
 /area/f13/caves)
 "rZz" = (
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "rZE" = (
 /obj/structure/nest/ghoul,
@@ -26570,7 +26672,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "sTj" = (
 /obj/structure/rack,
@@ -26842,7 +26946,9 @@
 	name = "Vault Intercom";
 	pixel_x = -30
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "tfm" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
@@ -28137,7 +28243,9 @@
 "uqh" = (
 /obj/structure/spider/cocoon,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "uqE" = (
 /obj/structure/ladder/unbreakable{
@@ -28244,7 +28352,9 @@
 	},
 /area/f13/tunnel)
 "uuU" = (
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "uvu" = (
 /obj/effect/decal/waste{
@@ -29005,7 +29115,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "vbw" = (
 /obj/effect/decal/cleanable/dirt{
@@ -30051,7 +30163,9 @@
 /area/f13/building/hospital)
 "vVY" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "vWd" = (
 /obj/effect/turf_decal/stripes/line,
@@ -31383,7 +31497,9 @@
 /area/f13/caves)
 "xeD" = (
 /obj/structure/wreck/trash/four_barrels,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "xeS" = (
 /obj/structure/cable{
@@ -31783,7 +31899,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "xuH" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
@@ -31850,7 +31968,9 @@
 	icon_state = "2-4"
 	},
 /obj/structure/wreck/trash/four_barrels,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "xxJ" = (
 /obj/structure/chair/stool/bar,
@@ -32303,7 +32423,9 @@
 /area/f13/radiation)
 "xOD" = (
 /obj/structure/wreck/trash/machinepile,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "xOS" = (
 /obj/structure/bed/mattress{
@@ -32468,7 +32590,9 @@
 	},
 /obj/structure/kitchenspike,
 /obj/effect/mob_spawn/human/corpse/vault,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 "xWh" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -32899,7 +33023,9 @@
 "ylT" = (
 /obj/item/trash/sosjerky,
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
 /area/f13/caves)
 
 (1,1,1) = {"

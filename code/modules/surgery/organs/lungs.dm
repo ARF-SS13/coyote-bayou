@@ -54,8 +54,7 @@
 
 	var/SA_para_min = 1 //nitrous values
 	var/SA_sleep_min = 5
-	var/BZ_trip_balls_min = 0.1 //BZ gas
-	var/BZ_brain_damage_min = 1
+	var/BZ_trip_balls_min = 1 //BZ gas
 	var/gas_stimulation_min = 0.002 //Nitryl and Stimulum
 
 	var/cold_message = "your face freezing and an icicle forming"
@@ -75,8 +74,6 @@
 	var/heat_level_2_damage = HEAT_GAS_DAMAGE_LEVEL_2
 	var/heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
 	var/heat_damage_type = BURN
-
-	var/smell_sensitivity = 1
 
 	var/crit_stabilizing_reagent = /datum/reagent/medicine/epinephrine
 
@@ -220,10 +217,12 @@
 		var/alert_type = null
 		if(ispath(breathing_class))
 			breathing_class = breathing_classes[breathing_class]
+			var/list/gases = breathing_class.gases
 			alert_category = breathing_class.high_alert_category
 			alert_type = breathing_class.high_alert_datum
 			danger_reagent = breathing_class.danger_reagent
-			found_pp = breathing_class.get_effective_pp(breath)
+			for(var/gas in gases)
+				found_pp += PP(breath, gas)
 		else
 			danger_reagent = danger_reagents[entry]
 			if(entry in breath_alert_info)
@@ -242,16 +241,12 @@
 		else if(alert_category)
 			H.clear_alert(alert_category)
 	var/list/breath_reagents = GLOB.gas_data.breath_reagents
-	var/static/datum/reagents/reagents_holder = new
-	reagents_holder.clear_reagents()
-	reagents_holder.chem_temp = breath.return_temperature()
 	for(var/gas in breath.get_gases())
 		if(gas in breath_reagents)
 			var/datum/reagent/R = breath_reagents[gas]
-			reagents_holder.add_reagent(R, breath.get_moles(gas) * initial(R.molarity))
+			H.reagents.add_reagent(R, PP(breath,gas))
 			mole_adjustments[gas] = (gas in mole_adjustments) ? mole_adjustments[gas] - breath.get_moles(gas) : -breath.get_moles(gas)
-	reagents_holder.reaction(H, VAPOR, from_gas = 1)
-	H.smell(breath)
+
 	for(var/gas in mole_adjustments)
 		breath.adjust_moles(gas, mole_adjustments[gas])
 
@@ -274,13 +269,13 @@
 	// BZ
 
 		var/bz_pp = PP(breath, GAS_BZ)
-		if(bz_pp > BZ_brain_damage_min)
+		if(bz_pp > BZ_trip_balls_min)
 			H.hallucination += 10
 			H.reagents.add_reagent(/datum/reagent/bz_metabolites,5)
 			if(prob(33))
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
 
-		else if(bz_pp > BZ_trip_balls_min)
+		else if(bz_pp > 0.01)
 			H.hallucination += 5
 			H.reagents.add_reagent(/datum/reagent/bz_metabolites,1)
 
@@ -475,7 +470,7 @@
 	safe_breath_min = 13
 	safe_breath_max = 100
 	emp_vulnerability = 2
-	smell_sensitivity = 1.5
+
 
 /obj/item/organ/lungs/cybernetic/emp_act()
 	. = ..()
@@ -498,9 +493,9 @@
 	)
 	SA_para_min = 30
 	SA_sleep_min = 50
-	BZ_brain_damage_min = 30
+	BZ_trip_balls_min = 30
 	emp_vulnerability = 3
-	smell_sensitivity = 2
+
 
 	cold_level_1_threshold = 200
 	cold_level_2_threshold = 140
@@ -522,29 +517,8 @@
 	heat_level_2_threshold = 600 // up 200 from level 1, 1000 is silly but w/e for level 3
 
 /obj/item/organ/lungs/ashwalker/populate_gas_info()
-	// humans usually breathe 21 but require 16/17, so 80% - 1, which is more lenient but it's fine
-	#define SAFE_THRESHOLD_RATIO 0.8
-	var/datum/gas_mixture/breath = SSair.planetary[LAVALAND_DEFAULT_ATMOS] // y'all know
-	var/pressure = breath.return_pressure()
-	var/total_moles = breath.total_moles()
-	for(var/id in breath.get_gases())
-		var/this_pressure = PP(breath, id)
-		var/req_pressure = (this_pressure * SAFE_THRESHOLD_RATIO) - 1
-		if(req_pressure > 0)
-			gas_min[id] = req_pressure
-		if(id in gas_max)
-			gas_max[id] += this_pressure
-	var/bz = breath.get_moles(GAS_BZ)
-	if(bz)
-		BZ_trip_balls_min += bz
-		BZ_brain_damage_min += bz
-
-	gas_max[GAS_N2] = PP(breath, GAS_N2) + 5
-	var/o2_pp = PP(breath, GAS_O2)
-	safe_breath_min = 0.3 * o2_pp
-	safe_breath_max = 1.3 * o2_pp
 	..()
-	#undef SAFE_THRESHOLD_RATIO
+	gas_max[GAS_N2] = 28
 
 /obj/item/organ/lungs/slime
 	name = "vacuole"

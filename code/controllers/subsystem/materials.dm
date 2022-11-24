@@ -32,8 +32,6 @@ SUBSYSTEM_DEF(materials)
 			materials_by_category[c] += list(ref)
 			materialtypes_by_category[c] += list(type)
 
-	build_chemical_materials()
-
 /datum/controller/subsystem/materials/proc/GetMaterialRef(datum/material/fakemat)
 	if(!materials)
 		InitializeMaterials()

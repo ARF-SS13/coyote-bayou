@@ -23,10 +23,6 @@
 #define COMSIG_GLOB_PLAY_CINEMATIC "!play_cinematic"
 	#define COMPONENT_GLOB_BLOCK_CINEMATIC 1
 
-/// called by auxgm add_gas: (gas_id)
-#define COMSIG_GLOB_NEW_GAS "!new_gas"
-
-
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
 #define COMSIG_SUN_MOVED "sun_moved"

@@ -106,10 +106,6 @@
 	if(datum_flags & DF_USE_TAG)
 		GenerateTag()
 
-#ifdef UNIT_TESTS // My scuffed attempt to stop runtiming before everything is initialised i guess idk.
-	if(!SSatoms)
-		return
-#endif
 	var/do_initialize = SSatoms.initialized
 	if(do_initialize != INITIALIZATION_INSSATOMS)
 		args[1] = do_initialize == INITIALIZATION_INNEW_MAPLOAD
