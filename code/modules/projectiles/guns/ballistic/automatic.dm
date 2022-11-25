@@ -1013,6 +1013,67 @@
 			. += "<br><span class='notice'>The readout displays \".45ACP Mode\", indicating it'll accept most .45 SMG and pistol mags.</span>"
 	. += "<br><span class='notice'>Unload the gun and click the action button to change the caliber.</span>"
 
+//worn sidewinder
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/worn
+	name = "worn multi-caliber smg"
+	desc = "The answer to all your ammo-scrounging problems! The TwisTactical Spindoctor SMMG (sub-machine multi-gun) integrates \
+			rotation-reactive metalmers in the upper assembly to change what ammunition it accepts, from .22LR to .45ACP with a \
+			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
+			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
+			inherently poor accuracy. Doesn't accept awkwardly shaped magazines, though. That's for the PRO model, which isn't \
+			available out here. The burstfire and semi auto functions have been utterly trashed by time."
+	icon_state = "sidewinder"
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	current_caliber = "9mm"
+	added_spread = GUN_SPREAD_POOR
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+
+	is_automatic = TRUE
+	automatic = 1
+
+	gun_tags = list(GUN_SCOPE, GUN_SILENCABLE)
+	can_scope = TRUE
+	scope_state = "AEP7_scope"
+	scope_x_offset = 10
+	scope_y_offset = 22
+	can_flashlight = TRUE
+
+	can_flashlight = TRUE
+	scope_state = "flight"
+	flight_x_offset = 16
+	flight_y_offset = 18
+
+	can_suppress = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 31
+	suppressor_y_offset = 17
+
+	actions_types = list(/datum/action/item_action/toggle_sidewinder)
+	fire_sound = 'sound/f13weapons/9mm.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
 /* * * * * * *
  * Carbines  *
  * * * * * * */
