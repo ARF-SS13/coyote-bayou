@@ -6341,12 +6341,10 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_access_txt = null;
-	req_one_access_txt = "25, 28"
+/obj/structure/simple_door/room{
+	name = "Heaven's Night"
 	},
-/turf/open/floor/plasteel/f13,
+/turf/open/floor/wood_common,
 /area/f13/bar)
 "awU" = (
 /obj/structure/barricade/sandbags,
@@ -23840,6 +23838,8 @@
 	color = "#363636"
 	},
 /obj/structure/closet/cabinet/anchored,
+/obj/item/key,
+/obj/item/lock_construct,
 /turf/open/floor/wood_common,
 /area/f13/bar)
 "cDe" = (
@@ -91829,7 +91829,7 @@ vWh
 aIi
 bgz
 tTF
-nNt
+awT
 ayJ
 ayJ
 ayJ
@@ -92600,7 +92600,7 @@ iDs
 aQA
 aIi
 aIi
-awT
+aTm
 aIi
 aIi
 gbX
