@@ -209,7 +209,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	if(confusion && confused < confusion)
 		confused = confusion
 	if(blurry && prob(35))
-		blur_eyes(blurry)
+		adjust_blurriness(blurry)
 	if(knockdown_chance && prob(knockdown_chance))
 		to_chat(src, span_warning("You stumble over, dazed by your blood loss!"))
 		AdjustKnockdown(knockdown_time, TRUE)

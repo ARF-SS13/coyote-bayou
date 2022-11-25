@@ -3035,6 +3035,7 @@ obj/item/gun/ballistic/automatic/bar
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/m473
 	init_mag_type = /obj/item/ammo_box/magazine/m473
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m473/small, /obj/item/ammo_box/magazine/m473/small/empty)
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -3083,7 +3084,7 @@ obj/item/gun/ballistic/automatic/bar
 	item_state = "m90"
 	icon_state = "WT550"
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/m473
+	mag_type = /obj/item/ammo_box/magazine/m473/small
 	init_mag_type = /obj/item/ammo_box/magazine/m473/small
 
 	slowdown = GUN_SLOWDOWN_CARBINE
