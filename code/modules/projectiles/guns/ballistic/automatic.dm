@@ -1874,6 +1874,56 @@
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
 
+// Worn Marksman Carbine
+
+/obj/item/gun/ballistic/automatic/marksman/worn
+	name = "battle-worn marksman carbine"
+	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a civilian version and is semi-auto only. This one seems worn with time..."
+	icon_state = "marksman_rifle"
+	item_state = "marksman"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.4)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+	can_scope = FALSE
+	zoom_factor = 1
+	can_bayonet = FALSE
+	bayonet_state = "rifles"
+	knife_x_offset = 22
+	knife_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "suppressor"
+	suppressor_x_offset = 31
+	suppressor_y_offset = 15
+	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
+
 /* * * * * * * * * * *
  * Police Rifle
  * Cool semi-auto rifle

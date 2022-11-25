@@ -48,7 +48,7 @@
 
 /obj/item/gun/energy/laser/rcw/nayriin
 	name = "Model laser RCW"
-	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds."
+	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
 	icon_state = "lasercw"
 	item_state = "rcw"
 	automatic = 1
@@ -294,6 +294,7 @@
 	new /obj/item/ammo_box/magazine/m45/rubber(src)
 	new /obj/item/ammo_box/c45/rubber(src)
 	new /obj/item/storage/belt/legholster(src)
+	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
 
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
@@ -382,6 +383,7 @@
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
 	new /obj/item/choice_beacon/box/carpet(src)
+	new /obj/item/gun/energy/laser/plasma/pistol/adam(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
