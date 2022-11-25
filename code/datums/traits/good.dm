@@ -89,6 +89,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_FORMER_TRIBAL, "ex_tribal_traditions")
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
