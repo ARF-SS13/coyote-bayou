@@ -170,7 +170,7 @@
 	icon_state = "honey"
 
 /obj/item/reagent_containers/glass/beaker/big_red
-	name = "Big Red bottle"
+	name = "Atomic Red bottle"
 	desc = "A bottle of an old southern classic soda, still mixed to this day. A creamy blend of bubblegum-esque orange-lemon, topped off with vanilla for a uniquely pleasant flavor. A favorite of otterlike folk. Unable to withstand extreme pH, its a soda bottle."
 	icon_state = "bigred"
 
