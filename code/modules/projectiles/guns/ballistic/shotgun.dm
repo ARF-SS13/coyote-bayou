@@ -63,6 +63,7 @@
 	return !!chambered?.BB
 
 /obj/item/gun/ballistic/shotgun/attack_self(mob/living/user)
+	update_icon()
 	//if(recentpump > world.time)
 	//	return
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes pumping shotguns impossible in stamina softcrit
@@ -305,7 +306,7 @@
 	)
 
 /obj/item/gun/ballistic/revolver/shotpistol/update_icon_state()
-	if(!magazine || !magazine.ammo_count(TRUE))
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
 		icon_state = "[initial(icon_state)]-e"
 	else
 		icon_state = "[initial(icon_state)]"
