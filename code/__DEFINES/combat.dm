@@ -276,7 +276,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define STAM_COST_BATON_MOB_MULT	1
 #define STAM_COST_NO_COMBAT_MULT	1.25
 #define STAM_COST_W_CLASS_MULT		1.25
-#define STAM_COST_THROW_MULT		2
+#define STAM_COST_THROW_MULT		1
 #define STAM_COST_THROW_MOB			2.5 //multiplied by (mob size + 1)^2.
 
 ///Multiplier of the (STAMINA_NEAR_CRIT - user current stamina loss) : (STAMINA_NEAR_CRIT - STAMINA_SOFTCRIT) ratio used in damage penalties when stam soft-critted.
