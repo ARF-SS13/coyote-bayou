@@ -21190,6 +21190,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
+"bWu" = (
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "bWM" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -42962,6 +42966,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"jQB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/table/booth,
+/obj/machinery/light,
+/turf/open/floor/wood_common,
+/area/f13/bar)
 "jQN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/interior,
@@ -89769,7 +89781,7 @@ oTM
 abP
 abP
 adO
-adO
+bWu
 qyO
 abP
 mpO
@@ -94137,7 +94149,7 @@ aHw
 ayJ
 ayJ
 bai
-bai
+jQB
 aIi
 pJO
 pJO
@@ -95165,8 +95177,8 @@ bbm
 ayJ
 ayJ
 bai
-bai
-bmf
+jQB
+aIi
 nuR
 kZu
 nVM
