@@ -261,7 +261,7 @@
 	)
 
 /* * * * * * * * * * *
- * Greasegun SMG
+ * Greasegun SMG!
  * Easy-handle .45ACP SMG
  * .45 ACP
  * One-handed
