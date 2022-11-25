@@ -50,7 +50,7 @@
 	e_cost = 375 //4 shots
 
 /obj/item/ammo_casing/energy/plasma/pistol/adam
-	projectile_type = /obj/item/projectile/f13plasma/pistol/eve
+	projectile_type = /obj/item/projectile/f13plasma/pistol/adam
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
 	e_cost = 250 //6 shots
 
