@@ -1361,7 +1361,7 @@
 	)
 
 /* * * * * * * * * * *
- * Worn Combat Carbine
+ * Trusty Combat Carbine
  * Slightly softer .45 carbine
  * Less damage
  * less accurate
@@ -1371,7 +1371,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/combat/worn/brim
-	name = "Worn Combat Carbine"
+	name = "Trusty Combat Carbine"
 	desc = "A well loved .45 semi-automatic combat carbine, with so many parts replaced and fixed up that it wouldn't give the artisan who \
 		maintained this thing enough credit to say it's a pre-war design. Covered in forge marks where repairs were needed. While everything \
 		looks to be of high-quality crafting, the precision of such parts look a bit... off, like a master swordsmith were asked to forge a \
