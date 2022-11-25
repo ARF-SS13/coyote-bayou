@@ -164,7 +164,7 @@
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
