@@ -388,6 +388,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"ja" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
 "jj" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
@@ -427,6 +433,12 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"kc" = (
+/mob/living/simple_animal/hostile/raider/ranged/boss{
+	name = "Fruit Gang Strongarm"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "kd" = (
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
@@ -746,6 +758,12 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"uW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "vb" = (
 /obj/machinery/light/broken{
 	dir = 8
@@ -837,6 +855,12 @@
 	smooth = 1
 	},
 /area/f13/building)
+"wX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "xh" = (
 /obj/item/reagent_containers/food/snacks/butteredtoast{
 	desc = "That's a very stale piece of toast, Peabus had it in his mouth.";
@@ -941,6 +965,11 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"As" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "AI" = (
 /obj/structure/fence{
 	dir = 4;
@@ -1149,6 +1178,10 @@
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/tcoms)
+"FI" = (
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "Go" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -1276,6 +1309,7 @@
 	dir = 4
 	},
 /obj/machinery/light/floor,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
@@ -1304,6 +1338,11 @@
 "Ks" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"KB" = (
+/obj/structure/spacevine,
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "KT" = (
@@ -1435,6 +1474,11 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"NW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "NX" = (
 /obj/structure/rack/shelf_metal,
 /turf/open/indestructible/ground/outside/roof,
@@ -1575,12 +1619,9 @@
 	},
 /area/f13/building)
 "RC" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/supermutant/rangedmutant{
-	faction = list("raider")
-	},
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
+/area/f13/building)
 "RF" = (
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
@@ -1789,6 +1830,11 @@
 	dir = 4
 	},
 /turf/open/transparent/openspace,
+/area/f13/wasteland)
+"WB" = (
+/obj/effect/decal/cleanable/blood,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "WH" = (
 /turf/open/transparent/openspace,
@@ -49308,8 +49354,8 @@ hm
 NT
 SK
 mG
-ce
-ce
+ja
+ja
 ce
 ce
 ce
@@ -49825,7 +49871,7 @@ mG
 ce
 ce
 ce
-ce
+ja
 Yg
 ce
 ce
@@ -51111,7 +51157,7 @@ SK
 SK
 SK
 SK
-SK
+FI
 SK
 BJ
 SK
@@ -53435,7 +53481,7 @@ rC
 cD
 GP
 GP
-yG
+NX
 fx
 SK
 xC
@@ -54703,8 +54749,8 @@ SK
 SK
 SK
 Rz
-BJ
-Rz
+KB
+uW
 La
 JG
 sn
@@ -54961,7 +55007,7 @@ SK
 BJ
 SK
 bT
-oF
+wX
 SK
 SK
 SK
@@ -54987,7 +55033,7 @@ La
 La
 SK
 SK
-RC
+La
 xC
 SK
 SK
@@ -55217,7 +55263,7 @@ xC
 xC
 La
 SK
-Zc
+SK
 Lj
 oF
 bT
@@ -55236,7 +55282,7 @@ fx
 fx
 fx
 fx
-SK
+FI
 La
 La
 bT
@@ -55493,8 +55539,8 @@ xC
 xC
 SK
 SK
-SK
-bT
+FI
+WB
 GN
 La
 SK
@@ -55748,7 +55794,7 @@ BJ
 SK
 SK
 SK
-Zc
+SK
 SK
 SK
 SK
@@ -55999,7 +56045,7 @@ La
 SK
 BJ
 xC
-La
+As
 SK
 BJ
 SK
@@ -56018,7 +56064,7 @@ SK
 SK
 SK
 fx
-yG
+NX
 wo
 GP
 Wk
@@ -56256,7 +56302,7 @@ xC
 La
 Lj
 nL
-SK
+FI
 fx
 fx
 Bz
@@ -56272,7 +56318,7 @@ Bz
 Bz
 RB
 SK
-Zc
+SK
 SK
 fx
 NX
@@ -57273,10 +57319,10 @@ La
 SK
 BJ
 fx
-eA
+NX
 GP
 GP
-GP
+RT
 tg
 GP
 yT
@@ -57531,11 +57577,11 @@ Rz
 SK
 fx
 eA
-GP
+kc
 GP
 XF
 GP
-wo
+PC
 Wk
 wO
 SK
@@ -57788,11 +57834,11 @@ ea
 La
 wO
 Hu
-wo
-PC
-RT
-PC
-GP
+NW
+NW
+RC
+NW
+RC
 yT
 wO
 SK
@@ -58049,7 +58095,7 @@ sn
 sn
 sn
 sn
-wo
+NW
 gr
 fx
 xC
@@ -58060,7 +58106,7 @@ fx
 NX
 uT
 NX
-yG
+NX
 GK
 GP
 Hu
@@ -58306,7 +58352,7 @@ sn
 sn
 sn
 sn
-wo
+NW
 NX
 fx
 SK
@@ -58563,7 +58609,7 @@ sn
 UF
 sn
 sn
-GP
+RC
 uQ
 fx
 xC
@@ -60386,7 +60432,7 @@ fx
 SK
 SK
 Bz
-yG
+NX
 tg
 xm
 GP
@@ -61930,7 +61976,7 @@ SK
 bs
 GK
 dQ
-yG
+NX
 NX
 Of
 PW
