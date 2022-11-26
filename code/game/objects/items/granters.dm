@@ -1246,9 +1246,9 @@
 					/datum/crafting_recipe/tribalwar/bone/helmet
 					)
 			
-			if("Former Tribal")
-				traitname = "Former Tribal"
-				grainted_trait = TRAIT_FORMER_TRIBAL
+			if("Ex Tribal Traditions")
+				traitname = "Ex Tribal"
+				granted_trait = TRAIT_FORMER_TRIBAL
 				crafting_recipe_types = list(
 					/datum/crafting_recipe/tribal/bonetalisman,
 					/datum/crafting_recipe/spearfisher,
