@@ -319,7 +319,7 @@
 // Actually perform the mechanics of devouring the tasty prey.
 // The purpose of this method is to avoid duplicate code, and ensure that all necessary
 // steps are taken.
-/obj/belly/proc/nom_mob(var/mob/prey , user)
+/obj/belly/proc/nom_mob(mob/prey , mob/user)
 	if(owner.stat == DEAD)
 		return
 	if (prey.buckled)
