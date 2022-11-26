@@ -649,10 +649,10 @@
  * heavy DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_ANTS list(\
-		"melee" = 60, \
-		"bullet" = 50, \
-		"laser" = 10, \
-		"energy" = 10, \
+		"melee" = 30, \
+		"bullet" = 25, \
+		"laser" = 5, \
+		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
