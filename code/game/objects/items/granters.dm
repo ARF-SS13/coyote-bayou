@@ -1257,7 +1257,6 @@
 					/datum/crafting_recipe/food/pemmican,
 					/datum/crafting_recipe/tribal/bonebag
 					)
-				)
 		return ..()
 
 
