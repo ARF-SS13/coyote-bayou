@@ -31,6 +31,7 @@
 	emote_taunt = list("stares ferociously", "stomps")
 	speak_chance = 10
 	taunt_chance = 25
+	tastes = list("a bad time" = 5, "dirt" = 1)
 
 	see_in_dark = 8
 	decompose = FALSE

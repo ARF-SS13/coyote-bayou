@@ -99,6 +99,7 @@
 		"charges"
 		)
 
+	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')

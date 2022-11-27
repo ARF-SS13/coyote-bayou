@@ -11,6 +11,7 @@
 	icon_living = "centaur"
 	icon_dead = "centaur_dead"
 	icon_gib = "centaur_g"
+	tastes = list("sadness" = 1, "nastyness" = 1)
 
 	maxHealth = 80
 	health = 80
