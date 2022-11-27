@@ -8,6 +8,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER * MATS_AMMO_POWDER_MATCH_MULT)
+	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/a762/improvised
 	name = "shoddy .308 bullet casing"
@@ -16,6 +17,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/a762/sport
 	name = ".308 bullet casing"
@@ -24,11 +26,13 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER)
+	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/a762/microshrapnel
 	name = "7.62mm microshrapnel bullet casing"
 	desc = "Like shrapnel, but smaller, and thus more annoying."
 	projectile_type = /obj/item/projectile/bullet/a762/microshrapnel
+	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_MATCH
 
 /*
 /obj/item/ammo_casing/a762/uraniumtipped
@@ -44,6 +48,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 // 5.56mm
 /obj/item/ammo_casing/a556
@@ -54,6 +59,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_MATCH_MULT)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/a556/rubber
 	name = "5.56mm rubber bullet casing"
@@ -62,11 +68,13 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/a556/microshrapnel
 	name = "5.56mm microshrapnel bullet casing"
 	desc = "Like shrapnel, but smaller, and thus more annoying."
 	projectile_type = /obj/item/projectile/bullet/a556/microshrapnel
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_MATCH
 
 /*
 /obj/item/ammo_casing/a556/uranium_tipped
@@ -82,6 +90,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/a556/improvised
 	name = "shoddy .223 bullet casing"
@@ -90,6 +99,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 //5mm
 
@@ -101,6 +111,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/m5mm/improvised
 	name = "shoddy 5mm bullet casing"
@@ -110,11 +121,13 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/m5mm/shock
 	name = "5mm shock bullet casing"
 	desc = "A 5mm shock bullet casing."
 	projectile_type = /obj/item/projectile/bullet/m5mm/shock
+	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 // 40mm (Grenade Launcher)
 /obj/item/ammo_casing/a40mm
@@ -126,6 +139,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_GRENADE_CASING + MATS_GRENADE_BULLET,
 		/datum/material/blackpowder = MATS_GRENADE_POWDER)
+	fire_power = CASING_POWER_GRENADE * CASING_POWER_MOD_SURPLUS
 
 // 2mm EC
 /obj/item/ammo_casing/c2mm
@@ -136,8 +150,10 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_GAUSS_CASING + MATS_GAUSS_BULLET,
 		/datum/material/blackpowder = MATS_GAUSS_POWDER)
+	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/c2mm/blender
 	name = "2mm gauss blender projectile casing"
 	desc = "A 2mm gauss projectile casing, \"Blender\" variant. Bounces off walls at hypersonic speeds."
 	projectile_type = /obj/item/projectile/bullet/c2mm/blender
+	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_MATCH
