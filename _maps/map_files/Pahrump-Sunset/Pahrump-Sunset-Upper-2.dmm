@@ -509,8 +509,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "mU" = (
-/obj/machinery/atmospherics/pipe/simple/general/hidden,
-/obj/structure/wreck/trash/machinepiletwo,
+/obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/ghoul/scorched/ranged{
+	faction = list("raider")
+	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "nF" = (
@@ -593,6 +595,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"pG" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	pixel_y = 6
+	},
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "qc" = (
 /obj/structure/railing{
 	dir = 8
@@ -653,6 +662,13 @@
 "rN" = (
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
+"rY" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
 "sn" = (
 /turf/open/transparent/openspace{
 	name = "air";
@@ -684,6 +700,7 @@
 	dir = 8
 	},
 /obj/machinery/light/floor,
+/obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
@@ -768,9 +785,7 @@
 /obj/machinery/light/broken{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/supermutant/rangedmutant{
-	faction = list("raider")
-	},
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "ve" = (
@@ -1315,8 +1330,12 @@
 	},
 /area/f13/wasteland)
 "JG" = (
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/wasteland)
+/obj/machinery/door/airlock/medical{
+	name = null;
+	req_one_access_txt = "124"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "JP" = (
 /mob/living/simple_animal/hostile/deathclaw/legendary{
 	desc = "That is fucking PEABUS!"
@@ -1768,6 +1787,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Vd" = (
+/obj/structure/spacevine,
+/mob/living/simple_animal/hostile/ghoul/scorched/ranged{
+	faction = list("raider")
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "Vn" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
 /obj/machinery/power/terminal{
@@ -1917,60 +1943,22 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Zn" = (
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = 0;
-	pixel_x = 7
+/obj/structure/railing{
+	dir = 5
 	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -7;
-	pixel_x = 4
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -3;
-	pixel_x = -5
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -7;
-	pixel_x = -6
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = 2;
-	pixel_x = -3
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -2;
-	pixel_x = 3
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = 5;
-	pixel_x = 6
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = 2;
-	pixel_x = -6
-	},
-/turf/open/floor/f13/wood,
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Zy" = (
 /obj/structure/simple_door/bunker,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "ZD" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/ghoul/scorched/ranged{
-	faction = list("raider")
+/obj/structure/rack/shelf_metal,
+/obj/machinery/light/broken{
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
+/area/f13/building)
 "ZO" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 1
@@ -48333,8 +48321,8 @@ ce
 ce
 ce
 ce
-oA
-Sn
+rY
+pG
 SK
 SK
 BJ
@@ -48593,15 +48581,15 @@ Yg
 oA
 SK
 SK
-SK
-ie
-pm
-SK
-Ef
-SK
-hH
-hH
-SK
+bc
+uI
+id
+bc
+uI
+id
+bc
+uI
+id
 SK
 SK
 AZ
@@ -48850,15 +48838,15 @@ ce
 Mq
 BJ
 SK
-SK
-mU
-hH
-SK
-SK
-SK
-hH
-pm
-SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
 AZ
@@ -49106,16 +49094,16 @@ CQ
 ce
 GG
 Sn
-BJ
 SK
-ie
-hH
-SK
-SK
-SK
-hH
-hH
-SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
 AZ
@@ -49363,16 +49351,16 @@ Rs
 ce
 oA
 SK
-BJ
 SK
-ie
-hH
-SK
-SK
-SK
-pm
-hH
-SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
 AZ
@@ -49621,15 +49609,15 @@ ce
 oA
 SK
 SK
-BJ
-mU
-hH
-SK
-SK
-SK
-hH
-hH
-SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
 AZ
@@ -49878,14 +49866,14 @@ ce
 oA
 Sn
 SK
-pp
+SK
+Ik
 SK
 SK
+Ik
 SK
 SK
-SK
-SK
-SK
+Ik
 SK
 SK
 SK
@@ -50135,16 +50123,16 @@ Hw
 RU
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
+Tq
+ic
+jX
+jX
+ic
+jX
+jX
+ic
+jX
+wD
 SK
 AZ
 hm
@@ -50392,15 +50380,15 @@ pq
 SK
 SK
 SK
-bc
-uI
-id
-bc
-uI
-id
-bc
-uI
-id
+SK
+SK
+SK
+SK
+SK
+Ef
+SK
+SK
+SK
 SK
 SK
 AZ
@@ -50646,18 +50634,18 @@ BJ
 SK
 SK
 SK
+FI
 SK
 SK
 SK
-bc
-uJ
-id
-bc
-uJ
-id
-bc
-uJ
-id
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 SK
 SK
 AZ
@@ -50903,18 +50891,18 @@ SK
 BJ
 BJ
 Um
-SK
-SK
-SK
-bc
-uJ
-id
-bc
-uJ
-id
-bc
-uJ
-id
+FI
+FI
+FI
+hH
+pm
+ie
+hH
+pm
+hH
+pm
+hH
+hH
 SK
 SK
 AZ
@@ -51163,15 +51151,15 @@ BJ
 SK
 SK
 SK
-bc
-uJ
-id
-bc
-uJ
-id
-bc
-uJ
-id
+pm
+hH
+ie
+hH
+hH
+hH
+hH
+pm
+hH
 SK
 SK
 AZ
@@ -51420,15 +51408,15 @@ SK
 SK
 SK
 SK
-bc
-uJ
-id
-bc
-uJ
-id
-bc
-uJ
-id
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 SK
 SK
 AZ
@@ -51678,18 +51666,18 @@ SK
 SK
 SK
 SK
-Ik
-SK
-SK
-Ik
-SK
-SK
-Ik
 SK
 SK
 SK
-AZ
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+Zn
+XU
 hm
 hm
 hm
@@ -51934,19 +51922,19 @@ ch
 lk
 Jr
 SK
-Tq
-ic
-jX
-jX
-ic
-jX
-jX
-ic
-jX
-wD
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 SK
 AZ
-hm
 hm
 hm
 hm
@@ -52190,7 +52178,7 @@ qc
 qc
 qc
 qc
-Zn
+qc
 qc
 qc
 qc
@@ -52201,9 +52189,9 @@ qc
 qc
 qc
 RQ
-XX
-aj
-hm
+jU
+SK
+AZ
 hm
 hm
 hm
@@ -52444,7 +52432,7 @@ SK
 SK
 SK
 SK
-qZ
+SK
 BJ
 Rz
 La
@@ -52459,7 +52447,7 @@ SK
 SK
 fx
 fx
-fx
+JG
 fx
 fx
 hm
@@ -52698,7 +52686,7 @@ La
 La
 xC
 SK
-qZ
+SK
 SK
 La
 Rz
@@ -52715,8 +52703,8 @@ SK
 SK
 xC
 fx
-NX
-CF
+ZD
+GP
 Af
 fx
 hm
@@ -52970,7 +52958,7 @@ hm
 hm
 hm
 La
-qZ
+SK
 fx
 cD
 GP
@@ -53743,7 +53731,7 @@ fx
 SK
 BJ
 fx
-Kf
+NX
 AM
 wo
 fx
@@ -53980,7 +53968,7 @@ wo
 fx
 SK
 xC
-ZD
+oF
 La
 IO
 Bz
@@ -54752,7 +54740,7 @@ Rz
 KB
 uW
 La
-JG
+SK
 sn
 lO
 Af
@@ -55283,7 +55271,7 @@ fx
 fx
 fx
 FI
-La
+Zi
 La
 bT
 SK
@@ -55786,7 +55774,7 @@ Rz
 BJ
 SK
 BJ
-BJ
+Vd
 SK
 xC
 La
@@ -58595,7 +58583,7 @@ hm
 hm
 NT
 Bz
-wo
+hP
 wo
 vb
 sn
@@ -58614,7 +58602,7 @@ uQ
 fx
 xC
 SK
-La
+Zi
 Rz
 fx
 NX
@@ -58854,7 +58842,7 @@ NT
 Bz
 GP
 GP
-GP
+RC
 sn
 sn
 SK
@@ -59111,19 +59099,19 @@ NT
 fx
 sn
 wo
-GP
+RC
 sn
 sn
 La
 nL
 oF
-La
+As
 sn
 sn
 LJ
 LJ
 oo
-La
+As
 SK
 SK
 xC
@@ -59368,19 +59356,19 @@ NT
 fx
 wo
 GP
-GP
+RC
 sn
 sn
 Rz
 Rz
 oU
-BJ
+KB
 sn
 LJ
 PX
 LJ
 zF
-SK
+FI
 SK
 SK
 Ks
@@ -59625,19 +59613,19 @@ NT
 fx
 GP
 GP
-wo
-GP
+NW
+RC
 fx
 SK
 SK
 SK
-SK
-SK
-La
-oF
-La
-SK
-SK
+FI
+FI
+As
+wX
+As
+FI
+FI
 SK
 BJ
 xC
@@ -59894,7 +59882,7 @@ BJ
 SK
 bT
 bT
-bT
+mU
 bT
 BJ
 SK
