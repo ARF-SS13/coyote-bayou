@@ -231,6 +231,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//bad stuff
 	var/cit_toggles = TOGGLES_CITADEL
 
+	//good stuff
+	var/cb_toggles = AIM_CURSOR_ON
+
 	//backgrounds
 	var/mutable_appearance/character_background
 	var/icon/bgstate = "steel"
@@ -880,6 +883,7 @@ Records disabled until a use for them is found
 			dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Disabled" : "Enabled" ]</a><br>"
 			dat += "<b>Force Slot Storage HUD:</b> <a href='?_src_=prefs;preference=no_tetris_storage'>[no_tetris_storage ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Gun Cursor:</b> <a href='?_src_=prefs;preference=guncursor'>[(cb_toggles & AIM_CURSOR_ON) ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Screen Shake:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Full" : ((screenshake==0) ? "None" : "[screenshake]")]</a><br>"
 			if (user && user.client && !user.client.prefs.screenshake==0)
 				dat += "<b>Damage Screen Shake:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "On" : ((damagescreenshake==0) ? "Off" : "Only when down")]</a><br>"
@@ -2722,6 +2726,8 @@ Records disabled until a use for them is found
 					auto_ooc = !auto_ooc
 				if("no_tetris_storage")
 					no_tetris_storage = !no_tetris_storage
+				if("guncursor")
+					cb_toggles ^= AIM_CURSOR_ON
 				if ("screenshake")
 					var/desiredshake = input(user, "Set the amount of screenshake you want. \n(0 = disabled, 100 = full, 200 = maximum.)", "Character Preference", screenshake)  as null|num
 					if (!isnull(desiredshake))

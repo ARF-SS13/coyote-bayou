@@ -104,3 +104,6 @@
 #define CHAOS_MED "Medium"
 #define CHAOS_HIGH "High"
 #define CHAOS_MAX "Maximum"
+
+//CB Toggles
+#define AIM_CURSOR_ON (1<<0)

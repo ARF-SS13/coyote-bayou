@@ -2,6 +2,9 @@
 
 /obj/item/gun/equipped(mob/living/H)
 	. = ..()
+	if(H.client && !CHECK_BITFIELD(H.client.prefs.cb_toggles, AIM_CURSOR_ON))
+		H.remove_cursor()
+		return
 	if(H.get_active_held_item() == src && !safety)
 		H.update_cursor(src)
 	else
