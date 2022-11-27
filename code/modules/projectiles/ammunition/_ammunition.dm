@@ -26,6 +26,8 @@
 	var/heavy_metal = TRUE
 	var/harmful = TRUE //pacifism check for boolet, set to FALSE if bullet is non-lethal
 	var/is_pickable = TRUE
+	/// The power of the casing on the gun itself, mostly for hobo guns checking whats loaded for misfires
+	var/fire_power = CASING_POWER_NONE * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/spent
 	name = "spent bullet casing"

@@ -55,6 +55,7 @@
 
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
+	caliber = SHOTGUNBAT_AMMO_CALIBERS
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	max_ammo = 1
 

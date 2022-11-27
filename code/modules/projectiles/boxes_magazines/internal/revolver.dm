@@ -59,7 +59,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	name = "improvised internal magazine .45"
 	ammo_type = /obj/item/ammo_casing/c45
-	caliber = list(CALIBER_45ACP)
+	caliber = KNUCKLEGUN_AMMO_CALIBERS
 	max_ammo = 4
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised9mm
@@ -83,7 +83,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder/improvised44
 	name = "improvised internal magazine .44"
 	ammo_type = /obj/item/ammo_casing/m44
-	caliber = list(CALIBER_44)
+	caliber = KNUCKLEGUN_AMMO_CALIBERS
 	max_ammo = 1
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised762

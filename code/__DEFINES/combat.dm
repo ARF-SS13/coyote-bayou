@@ -22,6 +22,8 @@
 #define CLONELOSS		(1<<7)
 #define EMPLOSS			(1<<8)
 
+#define DAMAGES_LIST list(BRUTELOSS, FIRELOSS, TOXLOSS, OXYLOSS, RADIATIONLOSS, CLONELOSS, EMPLOSS)
+
 #define EFFECT_STUN		"stun"
 #define EFFECT_KNOCKDOWN		"knockdown"
 #define EFFECT_UNCONSCIOUS	"unconscious"

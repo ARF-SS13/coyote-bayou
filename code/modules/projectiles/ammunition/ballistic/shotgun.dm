@@ -10,6 +10,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
@@ -18,6 +19,7 @@
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	pellets = 6
 	variance = 18
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"
@@ -29,6 +31,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"
@@ -38,24 +41,28 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
 obj/item/ammo_casing/shotgun/executioner
 	name = "executioner slug"
 	desc = "A 12 gauge lead slug purpose built to annihilate flesh on impact."
 	icon_state = "stunshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug/executioner
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/pulverizer
 	name = "pulverizer slug"
 	desc = "A 12 gauge lead slug purpose built to annihilate bones on impact."
 	icon_state = "stunshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug/pulverizer
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/incendiary
 	name = "incendiary slug"
 	desc = "An incendiary-coated shotgun slug."
 	icon_state = "ishell"
 	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/shotgun/dragonsbreath
 	name = "dragonsbreath shell"
@@ -64,6 +71,7 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	pellets = 4
 	variance = 35
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/shotgun/stunslug
 	name = "taser slug"
@@ -73,12 +81,14 @@ obj/item/ammo_casing/shotgun/executioner
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/shotgun/meteorslug
 	name = "meteorslug shell"
 	desc = "A shotgun shell rigged with CMC technology, which launches a massive slug when fired."
 	icon_state = "mshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_meteorslug
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/pulseslug
 	name = "pulse slug"
@@ -87,12 +97,14 @@ obj/item/ammo_casing/shotgun/executioner
 	would have difficulty with."
 	icon_state = "pshell"
 	projectile_type = /obj/item/projectile/beam/pulse/shotgun
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/frag12
 	name = "FRAG-12 slug"
 	desc = "A high explosive breaching round for a 12 gauge shotgun."
 	icon_state = "heshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_frag12
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/rubbershot
 	name = "rubber shot"
@@ -104,6 +116,7 @@ obj/item/ammo_casing/shotgun/executioner
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"
@@ -113,6 +126,7 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/ion/weak
 	pellets = 4
 	variance = 35
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/laserslug
 	name = "scatter laser shell"
@@ -121,12 +135,14 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/beam/scatter
 	pellets = 6
 	variance = 35
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/techshell
 	name = "unloaded technological shell"
 	desc = "A high-tech shotgun shell which can be loaded with materials to produce unique effects."
 	icon_state = "cshell"
 	projectile_type = null
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/dart
 	name = "shotgun dart"
@@ -134,6 +150,7 @@ obj/item/ammo_casing/shotgun/executioner
 	icon_state = "cshell"
 	projectile_type = /obj/item/projectile/bullet/dart
 	var/reagent_amount = 30
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/dart/Initialize()
 	. = ..()
@@ -147,6 +164,7 @@ obj/item/ammo_casing/shotgun/executioner
 	desc = "A dart for use in shotguns. Uses technology similar to cryostasis beakers to keep internal reagents from reacting. Can be injected with up to 10 units of any chemical."
 	icon_state = "cnrshell"
 	reagent_amount = 10
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/dart/noreact/Initialize()
 	. = ..()
@@ -156,6 +174,7 @@ obj/item/ammo_casing/shotgun/executioner
 	desc = "A shotgun dart filled with an obscene amount of lethal reagents. God help whoever is shot with this."
 	projectile_type = /obj/item/projectile/bullet/dart/piercing
 	reagent_amount = 50
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/dart/bioterror/Initialize()
 	. = ..()
@@ -175,6 +194,7 @@ obj/item/ammo_casing/shotgun/executioner
 	pellets = 12//double the pellets, but half the stun power of each, which makes this best for just dumping right in someone's face.
 	variance = 25
 	custom_materials = list(/datum/material/iron=4000)
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/magnumshot
 	name = "12 gauge magnum buckshot shell"
@@ -183,6 +203,7 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/bullet/pellet/magnum_buckshot
 	pellets = 7
 	variance = 15
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/shotgun/trainshot
 	name = "12 gauge trainshot shell"
@@ -191,6 +212,7 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/bullet/pellet/trainshot
 	pellets = 3
 	variance = 15
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH
 
 // BETA STUFF // Obsolete
 /obj/item/ammo_casing/shotgun/buckshot/test
@@ -200,3 +222,4 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot/test
 	pellets = 6
 	variance = 18
+	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH

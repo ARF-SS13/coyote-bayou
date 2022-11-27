@@ -3,7 +3,7 @@
 
 
 /obj/item/gun/ballistic/automatic/hobo
-	slowdown = 0.3
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -14,7 +14,7 @@
 	)
 
 /obj/item/gun/ballistic/revolver/hobo
-	slowdown = 0.2
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -25,7 +25,7 @@
 	)
 
 /obj/item/gun/ballistic/rifle/hobo
-	slowdown = 0.4
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
@@ -66,10 +66,9 @@
 	icon_state = "zipgun"
 	desc = "A clever little makeshift pistol, one of the few easily-constructed firearms that accept more rounds than it has barrels. \
 		Light, compact, and packing a surprising punch, the zip gun serves as a waster's insurance policy when doing business, \
-		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. <br><br> \
-		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
-		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
-		casing in there. Be sure to unload it first!"
+		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. \
+		A brave, enterprising waster can stuff just about anything into the improvised clipazine, though anything more powerful \
+		than a handloaded 9mm round will run the risk of voiding the warranty on your fingers."
 	item_state = "gun"
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
@@ -89,8 +88,9 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS),
+		GUN_MISFIRE_HURTS_USER(5, 5, 15, BRUTELOSS),
 		GUN_MISFIRE_THROWS_GUN(2),
 		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
 	)
@@ -137,6 +137,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	prefered_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
 		GUN_MISFIRE_THROWS_GUN(0.5),
@@ -182,6 +183,7 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
 	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
 		GUN_MISFIRE_THROWS_GUN(0.5),
@@ -205,7 +207,7 @@
 	desc = "A heavy home-run worthy baseball bat bolted onto the side of a sturdy slam-fire shotgun barrel thing. \
 		While the bat itself would make for a poor, painful stock, the trigger plate on the other side of the bat \
 		would suggest that, yes, it'll likely shoot someone if you hit them with it. Hopefully that someone isn't you. \
-		Also doubles as a pipebomb when you least expect it."
+		Also doubles as a pipebomb when you least expect it. Especially if you stick a .50 MG round in there. Which you totally can do."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -215,6 +217,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 
+	added_spread = 5 // its a melee weapon lol
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -223,16 +226,17 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3.1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	prefered_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS // can fire handloadeds fine, everything else has *a price~*
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
-		GUN_MISFIRE_THROWS_GUN(5),
+		GUN_MISFIRE_HURTS_USER(20, 15, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(30),
 		GUN_MISFIRE_UNLOADS_GUN(5, 50)
 	)
 
@@ -278,6 +282,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(5, 5, 10, BRUTELOSS | FIRELOSS),
 		GUN_MISFIRE_THROWS_GUN(10),
@@ -321,6 +326,7 @@
 	init_firemodes = list(
 		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
 	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 10, 25, BRUTELOSS | FIRELOSS),
 		GUN_MISFIRE_THROWS_GUN(5),
@@ -448,7 +454,7 @@
 
 /obj/item/gun/ballistic/automatic/hobo/destroyer
 	name = "destroyer carbine"
-	desc = "There are many ways to describe this, very few of them nice. This is a 9mm silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
+	desc = "There are many ways to describe this, very few of them nice. This is a .45ACP silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
 	icon_state = "destroyer-carbine"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
@@ -539,6 +545,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	prefered_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
