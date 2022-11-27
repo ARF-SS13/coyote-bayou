@@ -525,8 +525,8 @@
 	name = "\improper Freeblade Blaster"
 	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
-	icon_state = "alienblaster"
-	item_state = "alienblaster"
+	icon_state = "freeblade"
+	item_state = "shrink_ray"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
