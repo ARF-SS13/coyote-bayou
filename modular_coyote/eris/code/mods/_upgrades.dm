@@ -275,6 +275,8 @@
 		G.projectile_speed_multiplier *= weapon_upgrades[GUN_UPGRADE_PROJ_SPEED_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
 		G.fire_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+		G.autofire_shot_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+		G.burst_shot_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.slowdown *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
@@ -349,20 +351,21 @@
 
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
+	
+	G.update_firemode()
 
 /datum/component/item_upgrade/proc/add_values_gun(obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
-		G.add_firemode(FULL_AUTO_200)
+		G.firemodes.Add(new /datum/firemode/automatic/rpm200(G))
 
 /datum/component/item_upgrade/proc/apply_values_firemode(datum/firemode/F)
-	for(var/i in F.settings)
-		switch(i)
-			if("fire_delay")
-				if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
-					F.settings[i] *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-			//if("move_delay")
-			//	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
-			//		F.settings[i] *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
+	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
+		F.settings["fire_delay"] *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+		F.settings["autofire_shot_delay"] *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+		F.settings["burst_shot_delay"] *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+	//if("move_delay")
+	//	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
+	//		F.settings[i] *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 
 /datum/component/item_upgrade/proc/on_examine(atom/source, mob/user, list/examine_list)
 	if(tool_upgrades[UPGRADE_SANCTIFY])

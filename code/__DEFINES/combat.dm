@@ -553,39 +553,6 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_SPREAD_POOR (GUN_SPREAD_NORMAL * 2)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
 
-/// Gun fire delay Base
-#define GUN_FIRE_DELAY_BASE (1 SECONDS)
-
-/// Gun fire delay modifiers
-#define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0.1) // Mostly just good for automatics
-#define GUN_FIRE_DELAY_FASTER (GUN_FIRE_DELAY_BASE * 0.2) // 0.2s Mostly just good for automatics
-#define GUN_FIRE_DELAY_FAST (GUN_FIRE_DELAY_BASE * 0.4) // 0.4s
-#define GUN_FIRE_DELAY_NORMAL (GUN_FIRE_DELAY_BASE * 0.6) // 0.6s
-#define GUN_FIRE_DELAY_SLOW (GUN_FIRE_DELAY_BASE * 0.8) //0.8s
-#define GUN_FIRE_DELAY_SLOWER (GUN_FIRE_DELAY_BASE * 1.5) //1.5s
-
-/// Gun autofire delay Base
-#define GUN_AUTOFIRE_DELAY_BASE 1
-
-/// Gun fire delay modifiers
-#define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0.1)
-#define GUN_AUTOFIRE_DELAY_FASTER (GUN_AUTOFIRE_DELAY_BASE * 1)
-#define GUN_AUTOFIRE_DELAY_FAST (GUN_AUTOFIRE_DELAY_BASE * 2)
-#define GUN_AUTOFIRE_DELAY_NORMAL (GUN_AUTOFIRE_DELAY_BASE * 3)
-#define GUN_AUTOFIRE_DELAY_SLOW (GUN_AUTOFIRE_DELAY_BASE * 4)
-#define GUN_AUTOFIRE_DELAY_SLOWER (GUN_AUTOFIRE_DELAY_BASE * 5)
-
-/// Gun burstfire delay Base
-#define GUN_BURSTFIRE_DELAY_BASE 1
-
-/// Gun fire delay modifiers
-#define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0.1)
-#define GUN_BURSTFIRE_DELAY_FASTER (GUN_BURSTFIRE_DELAY_BASE * 0.5)
-#define GUN_BURSTFIRE_DELAY_FAST (GUN_BURSTFIRE_DELAY_BASE * 1)
-#define GUN_BURSTFIRE_DELAY_NORMAL (GUN_BURSTFIRE_DELAY_BASE * 2)
-#define GUN_BURSTFIRE_DELAY_SLOW (GUN_BURSTFIRE_DELAY_BASE * 3)
-#define GUN_BURSTFIRE_DELAY_SLOWER (GUN_BURSTFIRE_DELAY_BASE * 4)
-
 /// Time after you draw a gun that you're able to shoot it
 #define GUN_AIMING_TIME (1.5 SECONDS)
 
@@ -681,7 +648,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
 
 //Quick defines for fire modes
-#define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")
+#define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "150 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")
 #define FULL_AUTO_200		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 3, burst_size = 1, icon="auto")
 #define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto")
 #define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto")
@@ -703,6 +670,53 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BURST_10_ROUND		list(mode_name="10-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=10, fire_delay=null, icon="burst")
 
 #define WEAPON_NORMAL		list(mode_name="standard", burst_size=1, icon="semi")
+
+
+#define GUN_FIRE_RATE_40 15
+#define GUN_FIRE_RATE_75 8
+#define GUN_FIRE_RATE_100 6
+#define GUN_FIRE_RATE_150 4
+#define GUN_FIRE_RATE_200 3
+#define GUN_FIRE_RATE_300 2
+#define GUN_FIRE_RATE_400 1.5
+#define GUN_FIRE_RATE_600 1
+#define GUN_FIRE_RATE_800 0.8
+#define GUN_FIRE_RATE_1000 0.6
+#define GUN_FIRE_RATE_1200 0.5
+
+
+/// Gun fire delay Base
+#define GUN_FIRE_DELAY_BASE (1 SECONDS)
+
+/// Gun fire delay modifiers
+#define GUN_FIRE_DELAY_FASTEST GUN_FIRE_RATE_600
+#define GUN_FIRE_DELAY_FASTER GUN_FIRE_RATE_300
+#define GUN_FIRE_DELAY_FAST GUN_FIRE_RATE_150
+#define GUN_FIRE_DELAY_NORMAL GUN_FIRE_RATE_100
+#define GUN_FIRE_DELAY_SLOW GUN_FIRE_RATE_75
+#define GUN_FIRE_DELAY_SLOWER GUN_FIRE_RATE_40
+
+/// Gun autofire delay Base
+#define GUN_AUTOFIRE_DELAY_BASE 1
+
+/// Gun fire delay modifiers
+#define GUN_AUTOFIRE_DELAY_FASTEST GUN_FIRE_RATE_800
+#define GUN_AUTOFIRE_DELAY_FASTER GUN_FIRE_RATE_600
+#define GUN_AUTOFIRE_DELAY_FAST GUN_FIRE_RATE_400
+#define GUN_AUTOFIRE_DELAY_NORMAL GUN_FIRE_RATE_300
+#define GUN_AUTOFIRE_DELAY_SLOW GUN_FIRE_RATE_200
+#define GUN_AUTOFIRE_DELAY_SLOWER GUN_FIRE_RATE_150
+
+/// Gun burstfire delay Base
+#define GUN_BURSTFIRE_DELAY_BASE 1
+
+/// Gun fire delay modifiers
+#define GUN_BURSTFIRE_DELAY_FASTEST GUN_FIRE_RATE_1200
+#define GUN_BURSTFIRE_DELAY_FASTER GUN_FIRE_RATE_1000
+#define GUN_BURSTFIRE_DELAY_FAST GUN_FIRE_RATE_800
+#define GUN_BURSTFIRE_DELAY_NORMAL GUN_FIRE_RATE_600
+#define GUN_BURSTFIRE_DELAY_SLOW GUN_FIRE_RATE_400
+#define GUN_BURSTFIRE_DELAY_SLOWER GUN_FIRE_RATE_300
 
 /// Bullet zone favoring defines
 /// High accuracy, generally goes where you mean to put it, for precision rifles and such

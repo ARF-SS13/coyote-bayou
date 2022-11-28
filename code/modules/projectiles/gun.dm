@@ -59,6 +59,7 @@ ATTACHMENTS
 	/// can we be put in an emitter
 	var/can_emitter = TRUE
 
+	/// the following is controlled almost entirely by the firemode, changing it here wouldnt do anything meaningful
 	/// Weapon is burst fire if this is above 1
 	var/burst_size = 1
 	/// The time between shots in burst.
@@ -67,6 +68,8 @@ ATTACHMENTS
 	var/fire_delay = GUN_FIRE_DELAY_NORMAL
 	/// Time between individual shots when firing full-auto.
 	var/autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	var/automatic = 0 // Does the gun fire when the clicker's held down?
+
 	/// Last world.time this was fired
 	var/last_fire = 0
 	/// Currently firing, whether or not it's a burst or not.
@@ -132,8 +135,6 @@ ATTACHMENTS
 	/// Time that much pass between cocking your gun, if it supports it
 	var/cock_delay = GUN_COCK_SHOTGUN_BASE
 
-	var/automatic = 0 // Does the gun fire when the clicker's held down?
-
 	/// Gun's inherent inaccuracy, basically the minimum spread
 	var/added_spread = GUN_SPREAD_NONE
 	var/datum/recoil/recoil_dat // Reference to the recoil datum in datum/recoil.dm
@@ -146,7 +147,7 @@ ATTACHMENTS
 
 	var/sel_mode = 1 //index of the currently selected mode
 	var/list/firemodes = list()
-	var/list/init_firemodes = list()
+	var/list/init_firemodes = list(/datum/firemode/semi_auto)
 
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 	var/gilded = FALSE
@@ -201,19 +202,19 @@ ATTACHMENTS
 	hud_actions += action
 	initialize_firemodes()
 	initialize_scope()
-	if(firemodes.len)
+	if(LAZYLEN(firemodes))
 		set_firemode(sel_mode)
 	generate_guntags()
 
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)
 
-	for(var/i in 1 to init_firemodes.len)
-		var/list/L = init_firemodes[i]
-		add_firemode(L)
+	for(var/i in 1 to LAZYLEN(init_firemodes))
+		var/datum/firemode/FM = init_firemodes[i]
+		firemodes.Add(new FM(src))
 	update_firemode_hud()
 
-/obj/item/gun/proc/update_firemode_hud()
+/obj/item/gun/proc/update_firemode_hud() // this has never worked
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
 	if(firemodes.len > 1)
 		if(!action)
@@ -244,6 +245,7 @@ ATTACHMENTS
 		QDEL_NULL(bayonet)
 	if(chambered)
 		QDEL_NULL(chambered)
+	QDEL_LIST(firemodes)
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
@@ -276,7 +278,7 @@ ATTACHMENTS
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
 	if(recoil_dat.getRating(RECOIL_TWOHAND) > 0.4)
-		. += span_warning("This gun needs to be braced against something to be used effectively.")
+		. += span_warning("This gun needs to be held steady to be used effectively.")
 	else if(recoil_dat.getRating(RECOIL_ONEHAND) > 0.6)
 		. += span_warning("This gun needs to be wielded in both hands to be used most effectively.")
 
@@ -962,39 +964,31 @@ ATTACHMENTS
 
 	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
-/obj/item/gun/proc/add_firemode(list/firemode)
-	//If this var is set, it means spawn a specific subclass of firemode
-	if (firemode["mode_type"])
-		var/newtype = firemode["mode_type"]
-		firemodes.Add(new newtype(src, firemode))
-	else
-		firemodes.Add(new /datum/firemode(src, firemode))
-
 /obj/item/gun/proc/switch_firemodes()
-	if(firemodes.len <= 1)
+	if(LAZYLEN(firemodes) <= 1)
 		return null
 	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
 	sel_mode++
-	if(sel_mode > firemodes.len)
+	if(sel_mode > LAZYLEN(firemodes))
 		sel_mode = 1
 	return set_firemode(sel_mode)
 
 /obj/item/gun/proc/set_firemode(index)
 	//refresh_upgrades()
-	if(index > firemodes.len)
+	if(index > LAZYLEN(firemodes))
 		index = 1
 	var/datum/firemode/new_mode = firemodes[sel_mode]
-	new_mode.apply_to(src)
+	new_mode.apply_firemode()
 	new_mode.update()
 	update_hud_actions()
 	return new_mode
 
 /// Set firemode , but without a refresh_upgrades at the start
 /obj/item/gun/proc/very_unsafe_set_firemode(index)
-	if(index > firemodes.len)
+	if(index > LAZYLEN(firemodes))
 		index = 1
 	var/datum/firemode/new_mode = firemodes[sel_mode]
-	new_mode.apply_to(src)
+	new_mode.apply_firemode()
 	new_mode.update()
 	update_hud_actions()
 	return new_mode
@@ -1114,7 +1108,7 @@ ATTACHMENTS
 
 	var/total_recoil = 0
 	var/list/recoilList = recoil_dat.getFancyList()
-	if(recoilList.len)
+	if(LAZYLEN(recoilList))
 		var/list/recoil_vals = list()
 		for(var/i in recoilList)
 			if(recoilList[i])
@@ -1129,9 +1123,9 @@ ATTACHMENTS
 
 	data += ui_data_projectile(get_dud_projectile())
 
-	if(firemodes.len)
+	if(LAZYLEN(firemodes))
 		var/list/firemodes_info = list()
-		for(var/i = 1 to firemodes.len)
+		for(var/i = 1 to LAZYLEN(firemodes))
 			data["firemode_count"] += 1
 			var/datum/firemode/F = firemodes[i]
 			var/list/firemode_info = list(
@@ -1191,8 +1185,9 @@ ATTACHMENTS
 //When gun is picked up
 //When gun is readied
 /obj/item/gun/proc/update_firemode(force_state = null)
-	if (sel_mode && firemodes && firemodes.len)
+	if (sel_mode && LAZYLEN(firemodes))
 		var/datum/firemode/new_mode = firemodes[sel_mode]
+		new_mode.apply_firemode()
 		new_mode.update(force_state)
 
 /obj/item/gun/proc/generate_guntags()
@@ -1244,7 +1239,7 @@ ATTACHMENTS
 	update_firemode_hud()
 	update_hud_actions()
 
-	if(firemodes.len)
+	if(LAZYLEN(firemodes))
 		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
 
 	update_icon()
@@ -1501,6 +1496,33 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/ammo_box/magazine/d12g/buck(src)
 	new /obj/item/ammo_box/magazine/d12g/buck(src)
 	new /obj/item/ammo_box/magazine/d12g/buck(src)
+
+
+/obj/item/storage/backpack/debug_gun_kit_mods
+	name = "Bag of Gunstuff"
+	desc = "Cool shit for testing various guns!"
+
+/obj/item/storage/backpack/debug_gun_kit_mods/PopulateContents()
+	. = ..()
+	new /obj/item/screwdriver/abductor(src)
+	new /obj/item/crowbar/abductor(src)
+	new /obj/item/weldingtool/advanced(src)
+	new /obj/item/gun/ballistic/automatic/smg/american180(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	new /obj/item/gun/ballistic/automatic/shotgun/pancor(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/gun_upgrade/barrel/forged(src)
+	new /obj/item/gun_upgrade/barrel/forged(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/tool_upgrade/productivity/red_paint(src)
+	new /obj/item/tool_upgrade/productivity/red_paint(src)
+	new /obj/item/tool_upgrade/refinement/ported_barrel(src)
+	new /obj/item/tool_upgrade/refinement/ported_barrel(src)
 
 
 ///////////////////

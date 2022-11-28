@@ -366,7 +366,7 @@
 	automatic = 1
 	init_recoil = RIFLE_RECOIL(2.7)
 	init_firemodes = list(
-		FULL_AUTO_300,
+		/datum/firemode/automatic/rpm300,
 		BURST_3_ROUND,
 		SEMI_AUTO_NODELAY
 	)

@@ -42,7 +42,7 @@
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	init_recoil = RIFLE_RECOIL(2.5)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto/slow
 	)
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -154,8 +154,8 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
-		list(mode_name="Both Barrels", mode_desc="Give them the side-by-side", burst_size=2, icon="burst"),
+		/datum/firemode/semi_auto/shotgun_fixed,
+		/datum/firemode/burst/two/shotgun_fixed,
 	)
 
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
@@ -219,10 +219,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
-		list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
-		list(mode_name="Both Barrels", mode_desc="Give them the side-by-side", burst_size=2, icon="burst"),
+		/datum/firemode/semi_auto/shotgun_fixed,
+		/datum/firemode/burst/two/shotgun_fixed,
 	)
-
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 	gun_sound_properties = list(
@@ -289,7 +288,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		list(mode_name="Single-fire", mode_desc="Punch a hole in something", burst_size=1, icon="semi")
+		/datum/firemode/semi_auto/shotgun_fixed
 	)
 
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
@@ -339,6 +338,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
 	if(sawn_off)
@@ -383,6 +385,9 @@
 	gunlight_state = "flightangle"
 	flight_x_offset = 23
 	flight_y_offset = 21
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
 	. = ..()
@@ -442,6 +447,9 @@
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 22
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/shotgun/trench/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
@@ -478,6 +486,9 @@
 		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
 		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
 	)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
@@ -509,6 +520,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
@@ -544,6 +558,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	can_bayonet = TRUE
@@ -576,6 +593,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_recoil = RIFLE_RECOIL(2.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
@@ -636,6 +656,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_recoil = RIFLE_RECOIL(2.8)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
@@ -669,8 +692,9 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
+
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -715,8 +739,8 @@
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		FULL_AUTO_150,
-		SEMI_AUTO_NODELAY
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto
 	)
 
 	automatic = 1
