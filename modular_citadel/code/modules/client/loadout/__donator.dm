@@ -376,14 +376,14 @@
 	ckeywhitelist = list("fuzlet", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/fuzlet/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/sportcarbine/m1_22(src)
-	new /obj/item/ammo_box/magazine/m22/extended(src)
+	new /obj/item/gun/ballistic/automatic/m1carbine/compact(src)
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
-	new /obj/item/choice_beacon/box/carpet(src)
 	new /obj/item/gun/energy/laser/plasma/pistol/adam(src)
+	new /obj/item/storage/survivalkit/triple(src)
+	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
@@ -495,8 +495,8 @@
 	ckeywhitelist = list("lucine")
 
 /obj/item/storage/box/large/custom_kit/lucine/PopulateContents()
-	new /obj/item/gun/energy/laser/pistol(src)
-	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/gun/energy/laser/freeblade(src)
+	new /obj/item/gun/energy/laser/freeblade(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
@@ -619,6 +619,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
+	new /obj/item/gun/ballistic/automatic/smg/sidewinder/worn(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"

@@ -71,9 +71,9 @@
 		return try_unseal(FALSE, user, I)
 
 	if(istype(I, /obj/item/stack/rods))
-		return try_seal(user, I, I.type, "rods", 2 HOURS)
+		return try_seal(user, I, I.type, "rods", 0)
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
-		return try_seal(user, I, I.type, "planks", 30 MINUTES)
+		return try_seal(user, I, I.type, "planks", 1 HOURS)
 
 	if(covered) // allow you to interact only when it's sealed
 		..()
@@ -115,7 +115,8 @@
 	covertype = itempath
 	var/image/overlay_image = image(icon, icon_state = cover_state)
 	add_overlay(overlay_image)
-	addtimer(CALLBACK(src, .proc/do_unseal), timer)
+	if(timer)
+		addtimer(CALLBACK(src, .proc/do_unseal), timer)
 
 /obj/structure/nest/proc/try_unseal(mob/user = null, obj/item/I = null)
 	if(!istype(user))

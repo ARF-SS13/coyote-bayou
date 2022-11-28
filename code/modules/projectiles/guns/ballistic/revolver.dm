@@ -48,6 +48,7 @@
 /obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	..()
 	chamber_round(1)
+	update_icon()
 
 /obj/item/gun/ballistic/revolver/attack_self(mob/living/user)
 	if(!eject_shells(user, TRUE))
@@ -71,6 +72,7 @@
 			chambered = null
 		ammo_mag[index] = null // eject a shell, it leaves a gap
 		num_unloaded++
+	update_icon()
 	if (num_unloaded)
 		if(just_empties)
 			to_chat(user, span_notice("You unload [num_unloaded] empty shell\s from [src]."))

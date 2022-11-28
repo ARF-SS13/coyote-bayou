@@ -349,7 +349,7 @@
 	time = 10
 	category = CAT_MEDICAL
 
-/datum/crafting_recipe/antivenom
+/datum/crafting_recipe/antivenom_2
 	name = "Bottle antivenom"
 	result = /obj/item/reagent_containers/pill/antivenom
 	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2,

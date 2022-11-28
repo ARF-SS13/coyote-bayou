@@ -164,7 +164,10 @@ ATTACHMENTS
 	var/gun_skill_check
 	/// What kind of temporary refire delay modifiers do we have?
 	var/cooldown_delay_mods
+	/// What kind of misfires can this thing do? Check out combat.dm for details
 	var/list/misfire_possibilities = list()
+	/// What power of cartridge does this gun prefer? Mostly used for hoboguns that explode
+	var/prefered_power
 	var/list/gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_LIGHT_VOLUME),
@@ -1277,21 +1280,33 @@ ATTACHMENTS
 		return FALSE
 	if(!islist(misfire_possibilities))
 		return FALSE
+	if(prefered_power <= 0)
+		return FALSE
+	var/misfire_mod = 1
+	if(istype(chambered) && chambered.BB)
+		if(chambered.fire_power <= 0)
+			return FALSE
+		if(chambered.fire_power <= prefered_power)
+			return FALSE
+		if(chambered.fire_power > prefered_power)
+			misfire_mod = chambered.fire_power / prefered_power
+	else
+		return FALSE
 
 	for(var/gun_jank in misfire_possibilities)
-		if(!prob(misfire_possibilities[gun_jank][GUN_MF_CHANCE]))
+		if(!prob(misfire_mod * misfire_possibilities[gun_jank][GUN_MF_CHANCE]))
 			continue
 		switch(gun_jank)
 			if(GUN_MF_HURTS_YOU)
-				if(misfire_hurt_user(user))
+				if(misfire_hurt_user(user, misfire_mod))
 					. = TRUE
 					break
 			if(GUN_MF_DUMP)
-				if(misfire_dump_ammo(user))
+				if(misfire_dump_ammo(user, misfire_mod))
 					. = TRUE
 					break
 			if(GUN_MF_YEET)
-				if(misfire_yeet_gun(user))
+				if(misfire_yeet_gun(user, misfire_mod))
 					. = TRUE
 					break
 	if(prob(50)) // cus ur gun suxorz
@@ -1300,47 +1315,75 @@ ATTACHMENTS
 		do_sparks(3, FALSE, src)
 	return TRUE
 
-/obj/item/gun/proc/misfire_hurt_user(mob/living/user)
+/obj/item/gun/proc/misfire_hurt_user(mob/living/user, extra_hurt)
 	if(!user || !isliving(user))
 		return FALSE
+	
+	var/is_pow = extra_hurt > 1.5 ? TRUE : FALSE
+	extra_hurt = clamp(extra_hurt, 1, 2.5) // lets not literally kill whoever's using this thing
+
+	var/damage_divisor = 0
+	for(var/dmg in DAMAGES_LIST)
+		if(CHECK_BITFIELD(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE], dmg))
+			damage_divisor += 1
+	hurt_the_holder(user, extra_hurt, damage_divisor)
 
 	/// "The Shitgun misfires,"
 	var/what_happen_to_you = list()
 	var/what_happen_to_them = list()
 	if(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & BRUTELOSS)
-		user.adjustBruteLoss(rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
-		what_happen_to_you += "slamming itself into you"
-		what_happen_to_them += "slamming itself into [user.p_them()]"
+		if(is_pow)
+			what_happen_to_you += "clobbering you into next week"
+			what_happen_to_them += "clobbering [user.p_them()] into next week"
+		else
+			what_happen_to_you += "slamming itself into you"
+			what_happen_to_them += "slamming itself into [user.p_them()]"
 		playsound(src, 'sound/weapons/genhit2.ogg', 50, 1)
 	if(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & FIRELOSS)
-		user.adjustFireLoss(rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
-		what_happen_to_you += "burning your flesh"
-		what_happen_to_them += "burning [user.p_their()] flesh"
+		if(is_pow)
+			what_happen_to_you += "searing you well done"
+			what_happen_to_them += "searing [user.p_them()] well done"
+		else
+			what_happen_to_you += "burning your flesh"
+			what_happen_to_them += "burning [user.p_their()] flesh"
 		playsound(src, 'sound/items/welder.ogg', 50, 1)
 	if(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & TOXLOSS)
-		user.adjustToxLoss(rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
-		what_happen_to_you += "blasting you with toxic fumes"
-		what_happen_to_them += "blasting [user.p_them()] with toxic fumes"
+		if(is_pow)
+			what_happen_to_you += "hosing you down with deadly grime"
+			what_happen_to_them += "hosing [user.p_them()]down with deadly grimt"
+		else
+			what_happen_to_you += "blasting you with toxic fumes"
+			what_happen_to_them += "blasting [user.p_them()] with toxic fumes"
 		playsound(src, 'sound/effects/zzzt.ogg', 50, 1)
 	if(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & OXYLOSS)
-		user.adjustOxyLoss(rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
 		what_happen_to_you += "knocking the wind out of you"
 		what_happen_to_them += "knocking the wind out of [user.p_them()]"
 		playsound(src, 'sound/weapons/genhit1.ogg', 50, 1)
 	if(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & CLONELOSS)
-		user.adjustCloneLoss(rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
-		what_happen_to_you += "damaging your genes"
-		what_happen_to_them += "damaging [user.p_their()] genes"
+		if(is_pow)
+			what_happen_to_you += "shredding your genetics"
+			what_happen_to_them += "shredding [user.p_their()] genetics"
+		else
+			what_happen_to_you += "damaging your genes"
+			what_happen_to_them += "damaging [user.p_their()] genes"
 		playsound(src, 'sound/weapons/ParticleBlaster.ogg', 50, 1)
 	if(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & RADIATIONLOSS)
-		user.rad_act(rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
-		what_happen_to_you += "zapping you with radiation"
-		what_happen_to_them += "zapping [user.p_them()] with radiation"
+		user.rad_act(extra_hurt * rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
+		if(is_pow)
+			what_happen_to_you += "just about guaranteeing you'll never have kids"
+			what_happen_to_them += "nuking [user.p_them()] in a sickly green glow"
+		else
+			what_happen_to_you += "zapping you with radiation"
+			what_happen_to_them += "zapping [user.p_them()] with radiation"
 		playsound(src, 'sound/weapons/resonator_blast.ogg', 50, 1)
 	if(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & EMPLOSS)
-		user.emp_act(rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
-		what_happen_to_you += "frying you with EMP"
-		what_happen_to_them += "frying [user.p_them()] with EMP"
+		user.emp_act(extra_hurt * rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]))
+		if(is_pow)
+			what_happen_to_you += "frying the daylights out of you with EMP"
+			what_happen_to_them += "frying [user.p_them()] with EMP"
+		else
+			what_happen_to_you += "frying you with EMP"
+			what_happen_to_them += "frying [user.p_them()] with EMP"
 		playsound(src, 'sound/weapons/ZapBang.ogg', 50, 1)
 	var/you_are_so_lucky = span_warning("[src] misfires, [english_list(what_happen_to_you)]!")
 	var/god_i_wish_i_was_them = span_alert("[user]'s [src] misfires, [english_list(what_happen_to_them)]!")
@@ -1353,14 +1396,34 @@ ATTACHMENTS
 	playsound(
 		user,
 		fire_sound,
-		gun_sound_properties[SOUND_PROPERTY_VOLUME] * 2,
+		gun_sound_properties[SOUND_PROPERTY_VOLUME] * extra_hurt * 2,
 		gun_sound_properties[SOUND_PROPERTY_VARY],
-		gun_sound_properties[SOUND_PROPERTY_NORMAL_RANGE] * 2,
+		gun_sound_properties[SOUND_PROPERTY_NORMAL_RANGE] * extra_hurt * 2,
 		ignore_walls = gun_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
-		distant_sound = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND] * 2,
-		distant_range = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE] * 2
+		distant_sound = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND] * extra_hurt * 2,
+		distant_range = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE] * extra_hurt * 2
 		)
 	return TRUE
+
+/obj/item/gun/proc/hurt_the_holder(mob/living/user, extra_hurt, dmg_divisor)
+	if(dmg_divisor <= 0)
+		dmg_divisor = 1
+	var/damage = rand(misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_LOW], misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_HIGH]) * extra_hurt
+	var/obj/item/bodypart/affecting = user.get_bodypart(ran_zone(user.get_active_hand()))
+	if(!affecting)
+		affecting = user.get_bodypart(BODY_ZONE_CHEST)
+	var/armor = user.run_armor_check(affecting, "melee")
+	var/dt = max(user.run_armor_check(affecting, "damage_threshold"), 0)
+	user.apply_damages(
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & BRUTELOSS ? damage / dmg_divisor : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & FIRELOSS ? damage / dmg_divisor : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & TOXLOSS ? damage / dmg_divisor : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & OXYLOSS ? damage / dmg_divisor : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & CLONELOSS ? damage / dmg_divisor : 0,
+		def_zone = affecting,
+		blocked = armor,
+		damagethreshold = dt
+	)
 
 GLOBAL_LIST_INIT(gun_yeet_words, list(
 	"prefix" = list(
@@ -1391,7 +1454,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	)
 ))
 
-/obj/item/gun/proc/misfire_dump_ammo(mob/user)
+/obj/item/gun/proc/misfire_dump_ammo(mob/user, dump_harder)
 	if(!user)
 		return FALSE
 	
@@ -1400,7 +1463,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	if(istype(src, /obj/item/gun/energy))
 		var/obj/item/gun/energy/zappergun = src
 		thing_2_yeet = zappergun.cell
-		if(zappergun.eject_cell(user, FALSE, FALSE))
+		if(!zappergun.eject_cell(user, FALSE, FALSE))
 			thing_2_yeet = null
 	else if(istype(src, /obj/item/gun/ballistic))
 		var/obj/item/gun/ballistic/gungun = src
@@ -1414,36 +1477,71 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	var/falls_or_flies = "falls"
 	if(prob(misfire_possibilities[GUN_MF_DUMP][GUN_MF_DUMP_THROW]))
 		falls_or_flies = "flies"
-		var/turf/throw_it_here = get_ranged_target_turf(get_turf(src), pick(GLOB.alldirs), rand(1,6), 3)
+		var/turf/throw_it_here = get_ranged_target_turf(get_turf(src), pick(GLOB.alldirs), rand(1,6) * dump_harder, 3 * dump_harder)
 		if(!isturf(throw_it_here))
 			return FALSE
-		thing_2_yeet.throw_at(throw_it_here, 10, rand(1,3))
+		thing_2_yeet.throw_at(throw_it_here, 10 * dump_harder, rand(1,3) * dump_harder)
 	user.visible_message(
 		span_alert("[user]'s [thing_2_yeet] [falls_or_flies] out of [user.p_their()] [src] like \a [pick(GLOB.gun_yeet_words["prefix"])] [pick(GLOB.gun_yeet_words["suffix"])]!")
 		)
 	playsound(src, "sound/f13weapons/garand_ping.ogg", 70, 1)
 	return TRUE
 
-/obj/item/gun/proc/misfire_yeet_gun(mob/user)
+/obj/item/gun/proc/misfire_yeet_gun(mob/user, throw_harder)
 	if(!user)
 		return FALSE
 	
 	user.dropItemToGround(src)
-	var/turf/throw_it_here = get_ranged_target_turf(get_turf(src), pick(GLOB.alldirs), rand(1,6), 3)
+	var/turf/throw_it_here = get_ranged_target_turf(get_turf(src), pick(GLOB.alldirs), rand(1,6) * throw_harder, 3 * throw_harder)
 	if(!isturf(throw_it_here))
 		return FALSE
-	src.throw_at(throw_it_here, 10, rand(1,3))
+	src.throw_at(throw_it_here, 10 * throw_harder, rand(1,3) * throw_harder)
 	user.visible_message(
 		span_alert("[user]'s [src] flies out of [user.p_their()] grip like \a [pick(GLOB.gun_yeet_words["prefix"])] [pick(GLOB.gun_yeet_words["suffix"])]!")
 		)
 	playsound(src, "sound/weapons/punchmiss.ogg", 100, 1)
 	return TRUE
 
+/obj/item/storage/backpack/debug_gun_hobo
+	name = "Bag of Gunstuff 4 hobos"
+	desc = "Cool shit for testing various guns!"
+
+/obj/item/storage/backpack/debug_gun_hobo/PopulateContents()
+	. = ..()
+	new /obj/item/screwdriver/abductor(src)
+	new /obj/item/crowbar/abductor(src)
+	new /obj/item/weldingtool/advanced(src)
+	new /obj/item/stack/crafting/metalparts/five(src)
+	new /obj/item/gun_upgrade/scope/watchman(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
+	new /obj/item/melee/onehanded/knife/bayonet(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/gun/ballistic/automatic/autopipe(src)
+	new /obj/item/gun/ballistic/revolver/hobo/piperifle(src)
+	new /obj/item/gun/ballistic/revolver/winchesterrebored(src)
+	new /obj/item/gun/ballistic/automatic/hobo/zipgun(src)
+	new /obj/item/ammo_box/magazine/zipgun(src)
+	new /obj/item/gun/ballistic/revolver/hobo/knucklegun(src)
+	new /obj/item/gun/ballistic/revolver/hobo/knifegun(src)
+	new /obj/item/gun/ballistic/revolver/hobo/single_shotgun(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/ammo_box/a762box(src)
+	new /obj/item/ammo_box/a762box(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/shotgun/slug(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+	new /obj/item/ammo_box/shotgun/improvised(src)
+	new /obj/item/ammo_box/m22(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/c10mm(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m14mm(src)
+
 /obj/item/storage/backpack/debug_gun_kitauto
 	name = "Bag of Gunstuff"
 	desc = "Cool shit for testing various guns!"
 
-/obj/item/storage/backpack/debug_gun_kit/PopulateContents()
+/obj/item/storage/backpack/debug_gun_kitauto/PopulateContents()
 	. = ..()
 	new /obj/item/screwdriver/abductor(src)
 	new /obj/item/crowbar/abductor(src)
@@ -1654,7 +1752,7 @@ ATTACHING SLING
 HOOK GUN CODE. Bizarre but could be made into something useful.
 /obj/item/gun/ballistic/shotgun/doublebarrel/hook
 	name = "hook modified sawn-off shotgun"
-	desc = "Range isn't an issue when you can bring your victim to you."
+	desc = "Range isn't an issue when you can bring your user to you."
 	icon_state = "hookshotgun"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bounty

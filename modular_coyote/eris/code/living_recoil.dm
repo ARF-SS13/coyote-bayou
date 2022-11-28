@@ -19,7 +19,7 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 
 /mob/living/proc/calc_recoil()
 
-	var/base = 0.4
+	var/base = 1.2
 	var/scale = 0.9
 
 	if(HAS_TRAIT(src, SPREAD_CONTROL))
@@ -50,8 +50,8 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 	if(istype(G) && G)
 		G.check_safety_cursor(src)
 
-	if(recoil != 0)
-		recoil_reduction_timer = addtimer(CALLBACK(src, .proc/calc_recoil), 0.1 SECONDS, TIMER_STOPPABLE)
+	if(recoil > 0)
+		recoil_reduction_timer = addtimer(CALLBACK(src, .proc/calc_recoil), 0.3 SECONDS, TIMER_STOPPABLE)
 	else
 		if(!istype(G))
 			remove_cursor()
@@ -62,6 +62,9 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 		remove_cursor()
 		return
 	if(client)
+		if(!CHECK_BITFIELD(client.prefs.cb_toggles, AIM_CURSOR_ON))
+			remove_cursor()
+			return
 		client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
 		var/offset = round(calculate_offset(G.added_spread) * 0.8)
 		var/icon/base = find_cursor_icon('modular_coyote/eris/icons/standard.dmi', offset)
