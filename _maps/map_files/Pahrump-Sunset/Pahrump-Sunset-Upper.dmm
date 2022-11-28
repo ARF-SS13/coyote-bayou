@@ -11530,10 +11530,7 @@
 /area/f13/wasteland)
 "qUA" = (
 /obj/structure/simple_door/house,
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
-	icon_state = "whitedirtysolid"
-	},
+/turf/open/floor/wood_common,
 /area/f13/building/hospital)
 "qVi" = (
 /obj/item/shard,
@@ -13676,6 +13673,7 @@
 /area/f13/building)
 "uez" = (
 /obj/structure/simple_door/house,
+/obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
 "ueM" = (
