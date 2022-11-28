@@ -114,6 +114,11 @@ obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
 	list_reagents = list(/datum/reagent/consumable/ethanol/nukabomb = 50)
 	foodtype = NUKA
 
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/vimcap
+	name = "Vim Captains Blend"
+	list_reagents = list(/datum/reagent/consumable/ethanol/vimcap = 50)
+	foodtype = NUKA
+
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
 	name = "Syndicate Bomb"
 	list_reagents = list(/datum/reagent/consumable/ethanol/syndicatebomb = 50)
