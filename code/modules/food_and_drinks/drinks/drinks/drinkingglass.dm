@@ -99,6 +99,26 @@ obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
 	list_reagents = list(/datum/reagent/consumable/nukafloat = 50)
 	foodtype = NUKA
 
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacide
+	name = "Nukacide"
+	list_reagents = list(/datum/reagent/consumable/ethanol/nukacide = 50)
+	foodtype = NUKA
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaxtreme
+	name = "Nuka X-Treme"
+	list_reagents = list(/datum/reagent/consumable/ethanol/nukaxtreme = 50)
+	foodtype = NUKA
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukabomb
+	name = "Nuka Bombdrop"
+	list_reagents = list(/datum/reagent/consumable/ethanol/nukabomb = 50)
+	foodtype = NUKA
+
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/vimcap
+	name = "Vim Captains Blend"
+	list_reagents = list(/datum/reagent/consumable/ethanol/vimcap = 50)
+	foodtype = NUKA
+
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
 	name = "Syndicate Bomb"
 	list_reagents = list(/datum/reagent/consumable/ethanol/syndicatebomb = 50)
