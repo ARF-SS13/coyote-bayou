@@ -74,6 +74,12 @@
 	//var/heal_over_time_per_tick // unused, pending rework
 	/// Told our wearer that we're out of healstuffs
 	var/told_owner_its_out_of_juice = FALSE
+	/// Infinite?
+	var/infinite_uses = FALSE
+	/// Sound to play on use
+	var/start_sound
+	/// Sound to play on end
+	var/end_sound
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -82,7 +88,8 @@
 /obj/item/stack/medical/proc/try_heal(mob/living/M, mob/user, silent = FALSE)
 	if(heal(M, user))
 		log_combat(user, M, "healed", src.name)
-		use(1)
+		if(!infinite_uses)
+			use(1)
 		if(repeating && amount > 0)
 			try_heal(M, user, TRUE)
 
@@ -161,6 +168,9 @@
 			if(burndies.flesh_damage || burndies.infestation)
 				ENABLE_BITFIELD(., DO_UNBURN_WOUND)
 
+/* * * * * * * * * * * * * * * * * * *
+ * Proc that heals simplemobs
+ * * * * * * * * * * * * * * * * * * */
 /obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/user)
 	if(!isanimal(M))
 		return
@@ -178,6 +188,9 @@
 	M.heal_bodypart_damage(heal_brute)
 	return TRUE
 
+/* * * * * * * * * * * * * * * * * * *
+ * Proc that actually does the healing
+ * * * * * * * * * * * * * * * * * * */
 /obj/item/stack/medical/proc/heal_carbon(mob/living/carbon/C, mob/living/user)
 	if(!iscarbon(C) || !user)
 		return FALSE
@@ -205,6 +218,8 @@
 	is_healing = TRUE
 	var/covering_output = null
 	//var/is_skilled = 1
+	if(start_sound)
+		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
 	if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE))
 		to_chat(user, span_warning("You were interrupted!"))
 		is_healing = FALSE
@@ -234,10 +249,12 @@
 	if(heal_operations & DO_APPLY_SUTURE)
 		covering_output = affected_bodypart.apply_suture(src, 1)
 
+	if(end_sound)
+		playsound(get_turf(user), end_sound, 50, 1, SOUND_DISTANCE(4))
 	do_medical_message(user, C, affected_bodypart, "end", 1, covering_output)
 	return TRUE
 
-/// Returns if the user is skilled enough to use this thing effectively
+/// Returns if the user is skilled enough to use this thing effectively (unused, currently)
 /obj/item/stack/medical/proc/is_skilled_enough(mob/user, mob/target)
 	return NO_SKILLS_REQUIRED
 /* 	if(!needed_trait)
@@ -273,6 +290,9 @@
 	if(!is_skilled)
 		. *= unskilled_speed_mult
 
+/* * * * * * * * * * * * * * * * * * *
+ * Outputs a message at the start or end of use
+ */
 /obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, obj/item/bodypart/part, which_message, is_skilled, bandage_code)
 	if(!user || !target)
 		return
@@ -361,6 +381,38 @@
 	other_delay = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10, /datum/reagent/medicine/silver_sulfadiazine = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
+
+/obj/item/stack/medical/bruise_pack/lick
+	name = "healing saliva"
+	singular_name = "healing saliva"
+	desc = "A fresh coating of somehow medicinal saliva, good for soothing shallow injuries. Not the best of treatments, but somehow better than nothing."
+	icon_state = "brutepack"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	//needed_trait = TRAIT_SURGERY_LOW
+	infinite_uses = TRUE
+	heal_brute = 1
+	heal_burn = 1
+	self_delay = 1 SECONDS
+	other_delay = 1 SECONDS
+	end_sound = 'sound/effects/lick.ogg'
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 10, /datum/reagent/medicine/silver_sulfadiazine = 10)
+	merge_type = /obj/item/stack/medical/bruise_pack/lick
+
+/obj/item/stack/medical/bruise_pack/lick/do_medical_message(mob/user, mob/target, obj/item/bodypart/part, which_message, is_skilled, bandage_code)
+	if(!user || !target)
+		return
+	var/target_part = istype(part) ? "[part.name]" : "wounds"
+	switch(which_message)
+		if("start")
+			user.visible_message(
+				span_notice("[user] starts lapping at [target]'s [target_part]..."), 
+				span_notice("You lick at [user == target ? "your" : "[target]'s"] [target_part]..."))
+
+		if("end")
+			user.visible_message(
+				span_green("[user] lick [target]'s [target_part]!"), 
+				span_green("You lick [user == target ? "your" : "[target]'s"] [target_part]!"))
 
 /obj/item/stack/medical/bruise_pack/one
 	amount = 1
@@ -509,6 +561,7 @@
 	amount = 1
 	max_amount = 1
 	is_bandage = TRUE
+	end_sound = 'sound/effects/lick.ogg'
 	covering_lifespan = LICK_MAX_DURATION
 	splint_factor = 0.35
 	custom_price = PRICE_REALLY_CHEAP

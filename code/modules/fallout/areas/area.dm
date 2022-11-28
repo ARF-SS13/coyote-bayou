@@ -173,9 +173,9 @@
 	name = "Bar"
 	icon_state = "bar"
 	ambience_area = list(
-		/datum/looping_sound/ambient/radiomusic,
-		/datum/looping_sound/ambient/radiostatic,
-		/datum/looping_sound/ambient/djswampass,
+		///datum/looping_sound/ambient/radiomusic,
+		///datum/looping_sound/ambient/radiostatic,
+		///datum/looping_sound/ambient/djswampass,
 		/datum/looping_sound/ambient/town,
 		/datum/looping_sound/ambient/woodcreak,
 	)

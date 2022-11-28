@@ -553,16 +553,14 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
 	if(!our_tongue)
 		return //welp
-	our_tongue.lick_heal_brute = 1
-	our_tongue.lick_heal_burn = 1
+	our_tongue.initialize_lickpack(/obj/item/stack/medical/bruise_pack/lick)
 
 /datum/quirk/lick_heal/remove()
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
 	if(!our_tongue)
 		return //welp
-	our_tongue.lick_heal_brute = 0
-	our_tongue.lick_heal_burn = 0
+	QDEL_NULL(our_tongue.lick_healer)
 
 /datum/quirk/lick_bandage
 	name = "Sanguine Saliva"
