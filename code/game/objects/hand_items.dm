@@ -156,46 +156,13 @@
 	if(!iscarbon(licked))
 		return FALSE
 	var/obj/item/organ/tongue/our_tongue = user.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue.lick_heal_brute && !our_tongue.lick_heal_burn)
+	if(!istype(our_tongue))
 		return FALSE
-	var/mob/living/carbon/mlemmed = licked
-	var/obj/item/bodypart/target_bodypart = mlemmed.get_bodypart(user.zone_selected)
-	if(!target_bodypart)
+	var/obj/item/stack/medical/tongue_healer = our_tongue.lick_healer
+	if(!istype(tongue_healer))
 		return FALSE
-	if(target_bodypart.status != BODYPART_ORGANIC)
-		return FALSE
-	if(target_bodypart.brute_dam <= 0 && target_bodypart.burn_dam <= 0 && target_bodypart.stamina_dam <= 0)
-		return FALSE
-	licking = TRUE
-	user.visible_message(
-		span_notice("[user] starts tenderly licking the injuries on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]..."), 
-		span_notice("You start tenderly licking at the injuries on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]..."),
-		span_notice("You hear licking."),
-		LICK_SOUND_TEXT_RANGE
-		)
 	lick_flavor(atom_licked = licked, licker = user)
-	if(!do_mob(user, mlemmed, (user == mlemmed ? 7 SECONDS : 3 SECONDS), progress = TRUE))
-		user.visible_message(span_alert("[user] was interrupted!"))
-		licking = FALSE
-		return LICK_CANCEL
-	licking = FALSE
-	if(QDELETED(our_tongue))
-		user.visible_message(span_notice("[user]'s tongue went missing!"))
-		return LICK_CANCEL
-	target_bodypart.heal_damage(
-		our_tongue.lick_heal_brute,
-		our_tongue.lick_heal_burn,
-		our_tongue.lick_heal_brute + our_tongue.lick_heal_burn,
-		FALSE,
-		TRUE,
-		TRUE,
-		0)
-	user.visible_message(
-		span_green("[user] licks the injuries on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]!"), 
-		span_green("You lick the injuries on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]!"),
-		span_notice("You hear licking."),
-		LICK_SOUND_TEXT_RANGE)
-	lick_flavor(atom_licked = licked, licker = user)
+	tongue_healer.attack(licked, user)
 	return TRUE
 
 /obj/item/hand_item/licker/proc/get_lick_words(mob/living/carbon/user)
