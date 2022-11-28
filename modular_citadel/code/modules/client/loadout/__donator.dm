@@ -67,8 +67,8 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
 	init_firemodes = list(
-		FULL_AUTO_400,
-		WEAPON_NORMAL
+		/datum/firemode/automatic/rpm400,
+		/datum/firemode/semi_auto
 	)
 
 /datum/gear/donator/risingstarslash

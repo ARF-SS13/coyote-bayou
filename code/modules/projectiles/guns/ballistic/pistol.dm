@@ -36,7 +36,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	init_recoil = HANDGUN_RECOIL(1)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto/fast
 	)
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -87,7 +87,9 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.6)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // plug em in the skull!
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fastest
+	)
 	can_suppress = FALSE
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
@@ -116,7 +118,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 19
@@ -146,6 +150,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 
 /* * * * * * * * * * *
  * Beretta M9FS Semi-Auto
@@ -171,7 +178,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	can_suppress = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
@@ -203,8 +212,8 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(1.2)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		/datum/firemode/semi_auto/faster,
+		/datum/firemode/burst/three/faster,
 	)
 
 	automatic_burst_overlay = TRUE
@@ -241,7 +250,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 	suppressor_state = "n99_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 15
@@ -281,7 +292,10 @@
 	burst_size = 2
 	semi_auto = FALSE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto,
+		/datum/firemode/burst/three
+	)
 /* * * * * * * * * * *
  * Crusader Pistol Semi-Auto
  * Cool Medium pistol
@@ -304,7 +318,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 /* * * * * * * * * * *
  * Type 17 Semi-Auto
@@ -341,7 +357,9 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 /* * * * * * * * * * *
  * Sig P220
  * Light Mediumer pistol
@@ -369,7 +387,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.7)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
@@ -393,7 +413,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.7)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
@@ -418,7 +440,9 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.8)
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
@@ -455,8 +479,8 @@
 	burst_size = 3
 
 	init_firemodes = list(
-		FULL_AUTO_200,
-		SEMI_AUTO_NODELAY
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/fast,
 	)
 
 /* * * * * * * * * * *
@@ -485,7 +509,9 @@
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 21
@@ -523,7 +549,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fastest
+	)
 /* * * * * * * * * * *
  * Mk. 23 Semi-Auto
  * Tacticool Medium pistol
@@ -552,7 +580,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	can_flashlight = TRUE
 	gunlight_state = "flight"
 	flight_x_offset = 16
@@ -603,7 +633,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(1.2)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
@@ -643,7 +675,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 // POW
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 /* * * * * * * * * * *
@@ -674,7 +708,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
@@ -715,7 +751,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	gun_sound_properties = list(
@@ -755,7 +793,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(1.2)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 /* * * * * * * * * * *
  * Little Devil Semi-Auto
  * Super Duper Heavy pistol
@@ -782,7 +822,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //
 /////////////////////////////////obsolete

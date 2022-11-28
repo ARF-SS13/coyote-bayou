@@ -14,6 +14,11 @@
 	clumsy_check = 0
 	item_flags = NONE
 	casing_ejector = FALSE
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three,
+		/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/automatic/toy/unrestricted
 	pin = /obj/item/firing_pin
@@ -30,6 +35,9 @@
 	fire_delay = 0
 	actions_types = list()
 	automatic_burst_overlay = FALSE
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/automatic/toy/pistol/update_icon_state()
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
@@ -90,6 +98,11 @@
 	init_mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
 	casing_ejector = FALSE
 	clumsy_check = FALSE
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three,
+		/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
@@ -110,6 +123,11 @@
 	init_mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 	casing_ejector = FALSE
 	clumsy_check = FALSE
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three,
+		/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
@@ -135,6 +153,11 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	dualwield_spread_mult = 1.4
 	w_class = WEIGHT_CLASS_BULKY
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three,
+		/datum/firemode/semi_auto
+	)
 
 /obj/item/gun/ballistic/shotgun/toy/mag
 	name = "foam force magpistol"
@@ -148,3 +171,8 @@
 	slot_flags = SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three,
+		/datum/firemode/semi_auto
+	)

@@ -112,8 +112,8 @@
 	item_flags = SLOWS_WHILE_IN_HAND
 	var/obj/item/m2flamethrowertank/ammo_pack
 	init_firemodes = list(
-		BURST_2_ROUND,
-		SEMI_AUTO_NODELAY
+		/datum/firemode/burst/three,
+		/datum/firemode/semi_auto
 	)
 
 /obj/item/gun/ballistic/m2flamethrower/Initialize()

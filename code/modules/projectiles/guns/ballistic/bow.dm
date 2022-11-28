@@ -23,7 +23,7 @@
 	safety = 0
 	restrict_safety = 1
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	gun_sound_properties = list(

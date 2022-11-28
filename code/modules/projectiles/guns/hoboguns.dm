@@ -86,7 +86,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(2.1)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto/slow
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	misfire_possibilities = list(
@@ -135,7 +135,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto/slow
 	)
 	prefered_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 	misfire_possibilities = list(
@@ -180,8 +180,8 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(2.4)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
-		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/four/fastest/hobo
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	misfire_possibilities = list(
@@ -230,7 +230,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3.1)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	prefered_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS // can fire handloadeds fine, everything else has *a price~*
@@ -280,7 +280,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(2)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto/slow
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
 	misfire_possibilities = list(
@@ -324,7 +324,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(1.6)
 	init_firemodes = list(
-		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
+		/datum/firemode/burst/four/fastest/hobo
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
 	misfire_possibilities = list(
@@ -372,9 +372,9 @@
 	automatic = 1
 	init_recoil = RIFLE_RECOIL(2.7)
 	init_firemodes = list(
-		FULL_AUTO_300,
-		BURST_3_ROUND,
-		SEMI_AUTO_NODELAY
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/burst/three/slow,
+		/datum/firemode/semi_auto
 	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -413,7 +413,7 @@
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
-		WEAPON_NORMAL
+		/datum/firemode/semi_auto
 	)
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(2, 5, 10, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
@@ -438,7 +438,7 @@
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
-		WEAPON_NORMAL
+		/datum/firemode/semi_auto
 	)
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 30, 35, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
@@ -478,7 +478,7 @@
 	semi_auto = FALSE
 	init_recoil = CARBINE_RECOIL(2.3)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
 
 
@@ -507,7 +507,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(4)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
 
 	can_scope = FALSE
@@ -543,7 +543,8 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.3)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto,
+		/datum/firemode/burst/two/shotgun_fixed
 	)
 	prefered_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
 
