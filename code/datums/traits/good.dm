@@ -107,6 +107,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+		H.mind.learned_recipes -= GLOB.weaponcrafting_gun_recipes
 
 /datum/quirk/apathetic
 	name = "Apathetic"
