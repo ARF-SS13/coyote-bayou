@@ -213,9 +213,10 @@ ATTACHMENTS
 	QDEL_LIST(firemodes)
 
 	///prefiltering
-	for(var/thing in init_firemodes)
-		if(!ispath(thing, /datum/firemode))
-			init_firemodes -= thing
+	for(var/i in 1 to LAZYLEN(init_firemodes))
+		if(!ispath(init_firemodes[i], /datum/firemode))
+			init_firemodes.Cut(i, i+1)
+
 	
 	if(!LAZYLEN(init_firemodes)) // Nothing passed the filter
 		init_firemodes = list(/datum/firemode/semi_auto) // good enough
