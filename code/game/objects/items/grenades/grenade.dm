@@ -27,7 +27,7 @@
 	var/ex_light = 0
 	///how big of a flame explosion radius on prime
 	var/ex_flame = 0
-		tastes = list("metal" = 1, "a bad time" = 2)
+	tastes = list("metal" = 1, "a bad time" = 2)
 
 	// dealing with creating a [/datum/component/pellet_cloud] on prime
 	/// if set, will spew out projectiles of this type
