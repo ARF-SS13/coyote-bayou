@@ -212,6 +212,14 @@ ATTACHMENTS
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)
 
+	///prefiltering
+	for(var/thing in init_firemodes)
+		if(!ispath(thing, /datum/firemode))
+			init_firemodes -= thing
+	
+	if(!LAZYLEN(init_firemodes)) // Nothing passed the filter
+		init_firemodes = list(/datum/firemode/semi_auto) // good enough
+
 	for(var/i in 1 to LAZYLEN(init_firemodes))
 		var/datum/firemode/FM = init_firemodes[i]
 		firemodes.Add(new FM(src))

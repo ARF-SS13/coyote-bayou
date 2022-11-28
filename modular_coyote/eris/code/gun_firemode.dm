@@ -205,8 +205,45 @@
 	desc = "Quick, controlled bursts."
 	firerate_burst = GUN_BURSTFIRE_DELAY_FASTEST
 
+/datum/firemode/burst/four
+	name = "4-Round Burst"
+	desc = "Short, controlled bursts."
+	fire_type = GUN_FIREMODE_BURST
+	firerate_burst = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_count = 4
+
+/datum/firemode/burst/four/slower
+	name = "4-Round Burst"
+	desc = "Sedate, controlled bursts."
+	firerate_burst = GUN_BURSTFIRE_DELAY_SLOWER
+
+/datum/firemode/burst/four/slow
+	name = "4-Round Burst"
+	desc = "Calm, controlled bursts."
+	firerate_burst = GUN_BURSTFIRE_DELAY_SLOW
+
+/datum/firemode/burst/four/fast
+	name = "4-Round Burst"
+	desc = "Fast, controlled bursts."
+	firerate_burst = GUN_BURSTFIRE_DELAY_FAST
+
+/datum/firemode/burst/four/faster
+	name = "4-Round Burst"
+	desc = "Quick, controlled bursts."
+	firerate_burst = GUN_BURSTFIRE_DELAY_FASTER
+
+/datum/firemode/burst/four/fastest
+	name = "4-Round Burst"
+	desc = "Quick, controlled bursts."
+	firerate_burst = GUN_BURSTFIRE_DELAY_FASTEST
+
+/datum/firemode/burst/four/fastest/hobo
+	name = "All four barrels"
+	desc = "Unleash the whole gun at once."
+	firerate_burst = GUN_BURSTFIRE_DELAY_FASTEST
+
 /datum/firemode/burst/three
-	name = "2-Round Burst"
+	name = "3-Round Burst"
 	desc = "Short, controlled bursts."
 	fire_type = GUN_FIREMODE_BURST
 	firerate_burst = GUN_BURSTFIRE_DELAY_NORMAL

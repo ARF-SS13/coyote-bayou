@@ -40,10 +40,7 @@
 	init_recoil = SMG_RECOIL(1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm400,
-		/datum/firemode/automatic/rpm800,
-		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND,
-		BURST_5_ROUND
+		/datum/firemode/semi_auto/faster
 	)
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -243,7 +240,7 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/burst/three/slow,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/faster
 	)
 
 	is_automatic = TRUE
@@ -294,7 +291,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/faster
 	)
 
 	is_automatic = TRUE
@@ -379,7 +376,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/faster
 	)
 
 	is_automatic = TRUE
@@ -429,7 +426,7 @@
 	init_recoil = SMG_RECOIL(1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/faster
 	)
 
 
@@ -568,7 +565,7 @@
 	init_recoil = SMG_RECOIL(0.8)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/faster
 	)
 
 	is_automatic = TRUE
@@ -615,7 +612,7 @@
 	init_recoil = SMG_RECOIL(1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/fast
 	)
 
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
@@ -693,7 +690,7 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three/fast,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/fast
 	)
 
 	is_automatic = TRUE
@@ -742,7 +739,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/burst/five/slow,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/fast
 	)
 
 /* * * * * * * * * * *
@@ -778,7 +775,7 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/faster
 	)
 
 	is_automatic = TRUE
@@ -827,7 +824,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/fast
 	)
 
 	is_automatic = TRUE
@@ -886,7 +883,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto,
+		/datum/firemode/semi_auto/fast,
 		/datum/firemode/burst/three/fast
 	)
 
@@ -1041,7 +1038,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto/fast
 	)
 
 	is_automatic = TRUE
@@ -2579,7 +2576,7 @@
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
 
 	is_automatic = TRUE
