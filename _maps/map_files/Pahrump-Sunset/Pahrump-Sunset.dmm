@@ -7476,6 +7476,7 @@
 	},
 /area/f13/building/hospital)
 "aAY" = (
+/obj/machinery/mineral/equipment_vendor,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalrightborderleft1"
 	},
@@ -34350,6 +34351,7 @@
 /area/f13/wasteland)
 "gCf" = (
 /obj/structure/rack,
+/obj/item/stock_parts/chem_cartridge/pristine,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
@@ -63686,12 +63688,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/museum)
-"rQH" = (
-/obj/machinery/vending/matvend,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/building/hospital)
 "rQZ" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -73773,7 +73769,7 @@
 	},
 /area/f13/wasteland/massfusion)
 "vMv" = (
-/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/machinery/vending/matvend,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright0"
 	},
@@ -129279,7 +129275,7 @@ gXZ
 uKu
 sWV
 pGU
-rQH
+tCg
 aBG
 tHJ
 qZv

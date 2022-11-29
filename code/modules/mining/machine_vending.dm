@@ -10,11 +10,11 @@
 	var/icon_deny = "mining-deny"
 	var/obj/item/card/id/inserted_id
 	var/list/prize_list = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
-		new /datum/data/mining_equipment("50 caps",						/obj/item/stack/f13Cash/caps/fivezero,								500),
-		new /datum/data/mining_equipment("100 caps",					/obj/item/stack/f13Cash/caps/onezerozero,							1000),
-		new /datum/data/mining_equipment("150 caps",					/obj/item/stack/f13Cash/caps/onefivezero,							1500),
-		new /datum/data/mining_equipment("200 caps",					/obj/item/stack/f13Cash/caps/twozerozero,							2000),
-		new /datum/data/mining_equipment("250 caps",					/obj/item/stack/f13Cash/caps/twofivezero,							2500),
+		new /datum/data/mining_equipment("50 caps",						/obj/item/stack/f13Cash/caps/fivezero,								1000),
+		new /datum/data/mining_equipment("100 caps",					/obj/item/stack/f13Cash/caps/onezerozero,							2000),
+		new /datum/data/mining_equipment("150 caps",					/obj/item/stack/f13Cash/caps/onefivezero,							3000),
+		new /datum/data/mining_equipment("200 caps",					/obj/item/stack/f13Cash/caps/twozerozero,							4000),
+		new /datum/data/mining_equipment("250 caps",					/obj/item/stack/f13Cash/caps/twofivezero,							5000),
 		new /datum/data/mining_equipment("1 Marker Beacon",				/obj/item/stack/marker_beacon,										10),
 		new /datum/data/mining_equipment("10 Marker Beacons",			/obj/item/stack/marker_beacon/ten,									100),
 		new /datum/data/mining_equipment("30 Marker Beacons",			/obj/item/stack/marker_beacon/thirty,								300),
