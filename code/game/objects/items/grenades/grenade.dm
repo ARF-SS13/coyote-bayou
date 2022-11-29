@@ -115,6 +115,16 @@
 	item_state = initial(item_state) + "_active"
 	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
 
+// Turn on the grenade if shot
+/obj/item/grenade/bullet_act(obj/item/projectile/P)
+	. = ..()
+	preprime(null, null, FALSE, 100)
+
+// Blow up the grenade if exploded
+/obj/item/grenade/ex_act(severity, target)
+	prime()
+	. = ..()
+
 // for ticking sound until detonation
 /obj/item/grenade/proc/primetimer(mob/user, delayoverride, msg = TRUE, volume = 60) 
 	var/turf/T = get_turf(src)

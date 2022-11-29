@@ -533,11 +533,13 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 		H.mind.learned_recipes = list()
 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
 	H.mind.learned_recipes |= GLOB.basic_explosive_recipes
+	H.mind.learned_recipes |= GLOB.adv_explosive_recipes
 
 /datum/quirk/explosive_crafting/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
+		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
 /datum/quirk/lick_heal
 	name = "Soothing Saliva"
