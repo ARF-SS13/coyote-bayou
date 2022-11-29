@@ -244,8 +244,8 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(1.2)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY,
-		BURST_3_ROUND
+		/datum/firemode/semi_auto/faster,
+		/datum/firemode/burst/three/faster
 	)
 
 	automatic_burst_overlay = TRUE

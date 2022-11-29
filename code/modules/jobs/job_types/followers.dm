@@ -124,7 +124,8 @@ Administrator
 	name =	"Research Specialist"
 	backpack_contents = list(
 		/obj/item/disk/medical/defib_heal = 1,
-		/obj/item/circuitboard/machine/mining_equipment_vendor = 1,
+		/obj/item/disk/medical/defib_shock = 1,
+		/obj/item/disk/medical/defib_speed = 1,
 		/obj/item/blueprint/research = 1,
 	)
 

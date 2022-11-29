@@ -618,6 +618,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukadark(src)
 	new /obj/item/gun/ballistic/automatic/smg/sidewinder/worn(src)
 
 /datum/gear/donator/kits/risingstarslash2
@@ -628,6 +629,9 @@
 /obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
 	new /obj/item/lighter/slime(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
 
 /datum/gear/donator/kits/risingstarslash3
 	name = "Head Paladin Kit"
@@ -635,7 +639,7 @@
 	ckeywhitelist = list("risingstarslash")
 
 /obj/item/storage/box/large/custom_kit/risingstarslash3/PopulateContents()
-	new /obj/item/lighter/gold (src)
+	new /obj/item/lighter/gold(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/card/id/dogtag/risingstarslash(src)
 
@@ -702,6 +706,19 @@
 	new /obj/item/clothing/mask/surgical/sloaff(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
+
+/datum/gear/donator/kits/sloaff3
+	name = "Sloan's Food Pack"
+	path = /obj/item/storage/box/large/custom_kit/sloaff3
+	ckeywhitelist = list("sloaff")
+
+/obj/item/storage/box/large/custom_kit/sloaff3/PopulateContents()
+	new /obj/item/storage/fancy/cigarettes/cigpack_cannabis(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
+	new /obj/item/clothing/suit/toggle/labcoat/followers(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaberry(src)
+	new /obj/item/reagent_containers/food/snacks/jellysandwich/pbj/cherry(src)
+	new /obj/item/reagent_containers/food/drinks/flask/vault13(src)
 
 /datum/gear/donator/kits/soulwinter446
 	name = "Shocome's relic cross"
@@ -811,6 +828,19 @@
 	new /obj/item/lockpick_set(src)
 	new /obj/item/lockpick_set(src)
 	new /obj/item/lockpick_set(src)
+
+/datum/gear/donator/kits/tonyburritos
+	name = "NCR Scout"
+	path = /obj/item/storage/box/large/custom_kit/tonyburritos
+	ckeywhitelist = list("tonyburritos")
+
+/obj/item/storage/box/large/custom_kit/tonyburritos/PopulateContents()
+	new /obj/item/clothing/gloves/f13/leather/fingerless(src)
+	new /obj/item/clothing/under/f13/ncr(src)
+	new /obj/item/clothing/shoes/f13/military/ncr(src)
+	new /obj/item/clothing/head/f13/ncr/ncr_flapcap(src)
+	new /obj/item/clothing/suit/armor/light/leather(src)
+	new /obj/item/clothing/mask/ncr_facewrap(src)
 
 /datum/gear/donator/kits/truedark
 	name = "Stolen Brotherhood Supplies"
