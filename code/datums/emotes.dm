@@ -81,16 +81,14 @@
 
 	var/message_flags = (only_overhead ? (EMOTE_MESSAGE | ONLY_OVERHEAD) : (EMOTE_MESSAGE))
 
-	if(omit_left_name)
-		msg = "<span class='emote'>[msg]</span>"
-	else
-		msg = "<span class='emote'><b>[user]</b> [msg]</span>"
-
+	msg = "<span class='emote'>[msg]</span>"
+	if(!omit_left_name)
+		ENABLE_BITFIELD(message_flags, PUT_NAME_IN)
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = "<span class='emote'>You see how <b>[user]</b> [msg]</span>", audible_message_flags = message_flags)
+		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags)
 	else
-		user.visible_message(msg, blind_message = intentional ? "<b>[user]</b> [msg]" : "<span class='emote'>You hear how <b>[user]</b> [msg]</span>", visible_message_flags = message_flags)
+		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags)
 
 
 /// Sends the given emote message for all ghosts with ghost sight enabled, excluding close enough to listen normally.

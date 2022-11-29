@@ -151,6 +151,8 @@
 		else if(T.lighting_object && T.lighting_object.invisibility <= target.see_invisible && T.is_softly_lit() && !in_range(T,target))
 			msg = blind_message
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
+			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
+				msg = "<b>[src]</b> [msg]"
 			target.show_message(msg, MSG_VISUAL,blind_message, MSG_AUDIBLE)
 	if(self_message)
 		hearers -= src
@@ -171,6 +173,8 @@
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
 
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
+			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
+				msg = "<b>[src]</b> [msg]"
 			M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
@@ -201,6 +205,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(self_message)
 		hearers -= src
 	var/raw_msg = message
+	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
+		message = "<b>[src]</b> [message]"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)
