@@ -102,3 +102,5 @@
 #define EMOTE_MESSAGE (1<<0)
 // Only show the overhead thing
 #define ONLY_OVERHEAD (1<<1)
+// Append the player's name to the front
+#define PUT_NAME_IN (1<<2)
