@@ -833,7 +833,8 @@
 				/obj/item/gun/energy/laser/badlands,
 				/obj/item/gun/energy/laser/scatter/laserbuss,
 				/obj/item/gun/energy/laser/plasma/pistol/eve,
-				/obj/item/gun/energy/laser/wattz2ks
+				/obj/item/gun/energy/laser/wattz2ks,
+				/obj/item/gun/energy/laser/plasma/pistol/adam
 				)
 
 //Ballistic Weapon Spawners

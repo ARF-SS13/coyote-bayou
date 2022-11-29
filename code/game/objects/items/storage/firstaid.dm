@@ -198,14 +198,14 @@
 /obj/item/storage/firstaid/tactical/PopulateContents()
 	if(empty)
 		return
-	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/stack/medical/gauze/adv(src)
+	new /obj/item/stack/medical/suture/medicated(src)
+	new /obj/item/stack/medical/mesh/advanced(src)
 	new /obj/item/defibrillator/compact/combat/loaded(src)
 	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
-	new /obj/item/reagent_containers/medspray/styptic(src)
-	new /obj/item/reagent_containers/medspray/silver_sulf(src)
 	new /obj/item/healthanalyzer/advanced(src)
-	new /obj/item/reagent_containers/syringe/lethal/choral(src) // what the fuck does anyone use this piece of shit for
-	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
+	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
+	new /obj/item/clothing/glasses/hud/health/sunglasses/prescription(src)
 
 /obj/item/storage/firstaid/tactical/nukeop
 	name = "improved combat medical kit"
@@ -274,10 +274,10 @@
 	STR.click_gather = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/dice))
 	STR.cant_hold = typecacheof(list(
-		/obj/item/reagent_containers/pill/patch/jet, 
-		/obj/item/reagent_containers/pill/patch/turbo, 
-		/obj/item/reagent_containers/pill/healingpowder, 
-		/obj/item/reagent_containers/pill/bitterdrink, 
+		/obj/item/reagent_containers/pill/patch/jet,
+		/obj/item/reagent_containers/pill/patch/turbo,
+		/obj/item/reagent_containers/pill/healingpowder,
+		/obj/item/reagent_containers/pill/bitterdrink,
 		/obj/item/reagent_containers/pill/patch/healpoultice))
 
 /obj/item/storage/pill_bottle/AltClick(mob/living/carbon/user)
@@ -668,4 +668,4 @@
 /obj/item/storage/pill_bottle/chem_tin/buffout/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/buffout(src)
-	
+

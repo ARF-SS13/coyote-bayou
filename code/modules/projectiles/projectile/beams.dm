@@ -587,7 +587,7 @@
 /obj/item/projectile/f13plasma/pistol/adam //Adam
 	icon = 'icons/fallout/objects/guns/projectiles.dmi'
 	icon_state = "adam"
-	damage = 65
+	damage = 55
 	wound_bonus = 35 //Adam is stronger, but not in the wounding department.
 	light_color = LIGHT_COLOR_RED
 

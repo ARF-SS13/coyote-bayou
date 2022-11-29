@@ -219,6 +219,38 @@
 	automatic_burst_overlay = TRUE
 	semi_auto = FALSE
 
+/* * * * * * * * * * *
+ * Worn Beretta M9R Burst
+ * Burst Light pistol
+ * 9mm
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/beretta/automatic/worn
+	name = "Trusty Beretta M93R"
+	desc = "A rare select fire variant of the M93R. Aged and reliable, but still with that strong punch!"
+	icon_state = "m93r"
+	w_class = WEIGHT_CLASS_SMALL
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
+	extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) // let it take smg mags
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_QUICK
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(1.2)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+	)
+
+	automatic_burst_overlay = TRUE
+	semi_auto = FALSE
+
 /* * * * * * * * * *
  * MEDIUM PISTOLS  *
  * * * * * * * * * */
