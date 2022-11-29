@@ -27,6 +27,7 @@
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
+	tastes = list("people" = 1, "dust" = 2)
 
 /mob/living/simple_animal/hostile/chinese/ranged
 	icon_state = "chinesepistol"

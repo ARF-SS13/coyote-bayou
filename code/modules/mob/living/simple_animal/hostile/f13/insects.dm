@@ -63,6 +63,7 @@
 	a_intent = INTENT_HARM
 	blood_volume = 0
 	decompose = FALSE
+	tastes = list("dirt" = 1, "sand" = 1, "metal?" = 1)
 
 /mob/living/simple_animal/hostile/giantant/Initialize()
 	. = ..()

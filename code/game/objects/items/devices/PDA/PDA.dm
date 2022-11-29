@@ -29,6 +29,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	tastes = list("old metal" = 1, "rust" = 1)
 
 	//Main variables
 	var/owner = null // String name of owner
