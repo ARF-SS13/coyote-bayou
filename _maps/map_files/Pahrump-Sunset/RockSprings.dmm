@@ -32874,10 +32874,6 @@
 	},
 /turf/open/floor/carpet,
 /area/f13/building/abandoned)
-"pXT" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/caves)
 "pYs" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -36084,10 +36080,6 @@
 	name = "rocky dirt"
 	},
 /area/f13/building)
-"rwH" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/caves)
 "rwS" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -36572,15 +36564,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building)
-"rJA" = (
-/obj/structure/billboard/ritas{
-	desc = "A billboard for a really City panda.";
-	icon_state = "advert3";
-	name = "City Panda billboard";
-	pixel_y = -4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "rJL" = (
 /obj/structure/flora/ausbushes/reedbush,
 /obj/effect/decal/cleanable/dirt,
@@ -50746,11 +50729,11 @@ qdr
 qdr
 qdr
 qdr
-rwH
-pXT
-pXT
-pXT
-rwH
+qdr
+qdr
+qdr
+qdr
+qdr
 qdr
 qdr
 qdr
@@ -87038,7 +87021,7 @@ nQW
 nQW
 nQW
 nQW
-rJA
+nQW
 nQW
 nQW
 nQW
