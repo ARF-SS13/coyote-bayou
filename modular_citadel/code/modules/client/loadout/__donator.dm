@@ -708,7 +708,7 @@
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 
 /datum/gear/donator/kits/sloaff3
-	name = "Danger Doggo Kit"
+	name = "Sloan's Food Pack"
 	path = /obj/item/storage/box/large/custom_kit/sloaff3
 	ckeywhitelist = list("sloaff")
 
