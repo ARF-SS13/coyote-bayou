@@ -1329,11 +1329,11 @@
 		mytray.adjustToxic(round(chems.get_reagent_amount(src.type) * 2))
 
 /datum/reagent/bluespace
-	name = "Bluespace Dust"
-	description = "A dust composed of microscopic bluespace crystals, with minor space-warping properties."
+	name = "Ultracit Dust"
+	description = "A dust composed of microscopic ultracite crystals with dense unstable energy properties."
 	reagent_state = SOLID
 	color = "#0000CC"
-	taste_description = "fizzling blue"
+	taste_description = "fizzling energy"
 	pH = 12
 	value = REAGENT_VALUE_RARE
 	material = /datum/material/bluespace
@@ -2930,7 +2930,7 @@ datum/reagent/eldritch
 		return ..()
 	B.modify_size(-0.05)
 	return ..()
-	
+
 /datum/reagent/penis_enlarger // Due to popular demand...!
 	name = "Incubus draft"
 	description = "A volatile collodial mixture derived from various masculine solutions that encourages a larger gentleman's package via a potent testosterone mix, formula derived from a collaboration from Fermichem  and Doctor Ronald Hyatt, who is well known for his phallus palace." //The toxic masculinity thing is a joke because I thought it would be funny to include it in the reagents, but I don't think many would find it funny? dumb
