@@ -6753,10 +6753,15 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "ays" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/ghoul,
-/turf/open/floor/f13/wood,
-/area/f13/ruins)
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain2"
+	},
+/area/f13/wasteland/city)
 "ayt" = (
 /obj/structure/chair,
 /obj/effect/decal/cleanable/dirt,
@@ -26496,12 +26501,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dDR" = (
-/mob/living/simple_animal/hostile/hellpig{
-	color = "#8b0000";
-	name = "Nago"
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2left"
 	},
 /area/f13/wasteland/city)
 "dDS" = (
@@ -29746,11 +29752,6 @@
 "ePl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Texarkana Residential District 1"
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2"
 	},
@@ -36165,9 +36166,8 @@
 	randomizer_kind = "mid level mobs";
 	randomizer_tag = "Texarkana Residential District 1"
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 1;
-	icon_state = "dirtcorner"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2right"
 	},
 /area/f13/wasteland/city)
 "hlI" = (
@@ -40122,9 +40122,13 @@
 	},
 /area/f13/building/mall)
 "iKc" = (
-/mob/living/simple_animal/hostile/hellpig,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Downtown Detractors"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city)
 "iKd" = (
@@ -48616,10 +48620,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/nest/protectron{
-	layer = 3;
-	pixel_y = 20
-	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/building/mall)
 "lZq" = (
@@ -55528,16 +55528,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "oBH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Texarkana Residential District 1"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom2left"
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright2"
 	},
 /area/f13/wasteland/city)
 "oBY" = (
@@ -57180,13 +57173,16 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "phS" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Downtown Detractors"
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
 	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/city)
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building/abandoned)
 "phY" = (
 /obj/item/folder{
 	pixel_y = 5
@@ -61653,10 +61649,13 @@
 	},
 /area/f13/building/abandoned)
 "qWl" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	dir = 8;
+	dir = 4;
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland/city)
@@ -67781,6 +67780,13 @@
 /obj/item/clothing/under/f13/worn,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"tui" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/mob/living/simple_animal/hostile/hellpig,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "tuk" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -72781,11 +72787,16 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "vrV" = (
-/obj/structure/nest/ghoul,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain2"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
 	},
-/area/f13/wasteland/city)
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building/abandoned)
 "vsg" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
@@ -78976,17 +78987,16 @@
 /turf/open/floor/wood_wide,
 /area/f13/building/abandoned)
 "xPS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Texarkana Residential District 1"
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2"
+/obj/structure/flora/grass/coyote/one,
+/mob/living/simple_animal/hostile/hellpig{
+	color = "#8b0000";
+	name = "Nago"
 	},
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "xPT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/rolling,
@@ -79290,6 +79300,12 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/water,
 /area/f13/wasteland)
+"xVR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/floor/f13/wood,
+/area/f13/ruins)
 "xVV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{
@@ -89438,7 +89454,7 @@ oFO
 oFO
 oFO
 oFO
-iKc
+oFO
 oFO
 oFO
 oFO
@@ -104669,7 +104685,7 @@ ngf
 oLJ
 aOk
 cmf
-lFQ
+aOk
 www
 mSg
 lVH
@@ -104678,7 +104694,7 @@ bpP
 lVH
 psD
 uba
-sRo
+xPS
 bjb
 aOk
 iUU
@@ -105192,7 +105208,7 @@ lVH
 cyh
 mEq
 biO
-deN
+tui
 aOk
 iUU
 cFK
@@ -106227,7 +106243,7 @@ aOk
 hyv
 aOk
 aOk
-kmn
+etg
 aOk
 bcE
 wdO
@@ -107527,7 +107543,7 @@ nvn
 hEG
 anR
 hkV
-aOk
+evA
 aOk
 aHF
 blu
@@ -107983,7 +107999,7 @@ aJA
 cnn
 rgG
 sgj
-oBH
+fAU
 sol
 mWz
 eSK
@@ -108494,7 +108510,7 @@ ejY
 ejY
 ejY
 awI
-iDt
+ays
 cgE
 thr
 epK
@@ -109033,7 +109049,7 @@ hCc
 fit
 hCc
 xsl
-vAP
+vrV
 vAP
 wyy
 obh
@@ -110043,7 +110059,7 @@ foY
 bwO
 cNt
 aQi
-wJo
+qWl
 hCc
 hCc
 bdD
@@ -110825,7 +110841,7 @@ hXr
 hXr
 kdA
 rlg
-xPS
+xqB
 cWn
 eWG
 azb
@@ -111069,7 +111085,7 @@ fCP
 wXy
 usA
 vrL
-hlG
+wlS
 poJ
 viS
 fam
@@ -111852,7 +111868,7 @@ aSP
 rIM
 hCc
 rgG
-kjj
+dDR
 hCc
 vXc
 aUY
@@ -113663,7 +113679,7 @@ aYS
 hvb
 iEJ
 tZI
-vAP
+phS
 vAP
 irR
 rUL
@@ -114670,7 +114686,7 @@ oFO
 mWz
 hAd
 ePl
-sVn
+hlG
 gkX
 cgE
 sVn
@@ -115205,7 +115221,7 @@ epi
 lku
 muX
 hov
-cnF
+ttS
 obz
 aqQ
 xlG
@@ -116434,7 +116450,7 @@ iWY
 iWY
 iWY
 aFy
-vnq
+iKc
 rTG
 sol
 dxN
@@ -117467,7 +117483,7 @@ fsi
 cTR
 ejY
 ejY
-phS
+ejY
 eau
 cTR
 eau
@@ -122843,7 +122859,7 @@ eEu
 mWz
 fbb
 pXY
-nfe
+oBH
 xkK
 iWY
 iWY
@@ -123358,7 +123374,7 @@ dxN
 hAd
 azm
 gCB
-ays
+gCB
 hKC
 wsB
 wsB
@@ -124391,7 +124407,7 @@ xOe
 xOe
 xOe
 cnn
-vrV
+iDt
 cuO
 cuO
 cuO
@@ -124902,7 +124918,7 @@ lyL
 eWg
 rCX
 kRn
-aQy
+xVR
 aQy
 hKC
 wsB
@@ -132446,7 +132462,7 @@ iRI
 oqr
 aiE
 oqr
-qWl
+shn
 ubB
 ubB
 acT
@@ -137845,7 +137861,7 @@ asX
 aKP
 aKP
 vnq
-dDR
+kTu
 hXr
 sxj
 sxj
