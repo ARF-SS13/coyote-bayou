@@ -829,6 +829,12 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"tI" = (
+/obj/structure/sign/poster/official/cleanliness{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/hospital)
 "tM" = (
 /turf/closed/indestructible/riveted,
 /area/f13/tcoms)
@@ -969,6 +975,7 @@
 	pixel_y = 17
 	},
 /obj/structure/curtain,
+/obj/structure/decoration/vent,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -1091,6 +1098,15 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"zg" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/sign/poster/contraband/rip_badger{
+	pixel_y = -33
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/hospital)
 "zx" = (
 /obj/structure/railing{
 	dir = 4
@@ -2000,6 +2016,9 @@
 /obj/machinery/light/small{
 	dir = 4;
 	light_color = "#d8b1b1"
+	},
+/obj/structure/sign/poster/contraband/have_a_puff{
+	pixel_x = 32
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
@@ -6468,7 +6487,7 @@ xp
 sV
 nS
 yC
-rN
+tI
 kW
 yC
 fR
@@ -8268,7 +8287,7 @@ yC
 yC
 yC
 kW
-yo
+zg
 yC
 yC
 yC
@@ -14674,7 +14693,7 @@ hm
 hm
 hm
 hm
-ql
+hm
 hm
 hm
 hm
