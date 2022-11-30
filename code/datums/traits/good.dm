@@ -43,6 +43,14 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/steeltower,
 	/datum/crafting_recipe/durathread_vest))
 
+GLOBAL_LIST_INIT(former_tribal_recipes, list(
+	/datum/crafting_recipe/tribal/bonetalisman,
+	/datum/crafting_recipe/spearfisher,
+	/datum/crafting_recipe/healpoultice,
+	/datum/crafting_recipe/healpoultice5,
+	/datum/crafting_recipe/food/pemmican,
+	/datum/crafting_recipe/tribal/bonebag))
+
 
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
@@ -89,12 +97,17 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_FORMER_TRIBAL, "ex_tribal_traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.former_tribal_recipes
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+		H.mind.learned_recipes -= GLOB.weaponcrafting_gun_recipes
 
 /datum/quirk/apathetic
 	name = "Apathetic"
