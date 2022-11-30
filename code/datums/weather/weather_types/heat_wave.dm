@@ -18,7 +18,7 @@
 	end_message = span_notice("The heat outside seems to wane to a more bearable degree. You feel as though the outdoors may be viable once more.")
 
 	tag_weather = WEATHER_HEAT
-	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 

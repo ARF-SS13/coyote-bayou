@@ -302,7 +302,7 @@
 	blob_allowed = 0
 	environment = 5
 	grow_chance = 5
-	weather_tags = list(WEATHER_ALL)
+
 
 /area/f13/shack
 	name = "Shack"
