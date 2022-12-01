@@ -2158,14 +2158,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/lootdrop/f13/traitbooks
 	name = "trait book spawner"
 	lootcount = 1
-	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
-				/obj/item/book/granter/trait/chemistry = 10,
-				/obj/item/book/granter/trait/trekking = 10,
-				/obj/item/book/granter/trait/techno = 10,
-				/obj/item/book/granter/trait/pa_wear = 1,
-				/obj/item/book/granter/trait/explosives = 10,
+	loot = list(/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/trait/explosives_advanced = 5,
-				/obj/item/book/granter/trait/rifleman = 5,
 				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
 				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
 				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
@@ -2174,10 +2168,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/lootdrop/f13/traitbooks/low
 	name = "low trait book spawner"
 	lootcount = 1
-	loot = list(/obj/item/book/granter/trait/lowsurgery = 5,
-				/obj/item/book/granter/trait/chemistry = 1,
-				/obj/item/book/granter/trait/techno = 10,
-				/obj/item/book/granter/crafting_recipe/scav_one = 10,
+	loot = list(/obj/item/book/granter/crafting_recipe/scav_one = 10,
 				/obj/item/book/granter/crafting_recipe/scav_two = 10,
 				/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/crafting_recipe/ODF = 10,
