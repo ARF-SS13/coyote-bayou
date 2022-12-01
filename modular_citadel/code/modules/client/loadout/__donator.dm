@@ -842,6 +842,22 @@
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/clothing/mask/ncr_facewrap(src)
 
+/datum/gear/donator/kits/tonyburritos2
+	name = "Traveling Ranger"
+	path = /obj/item/storage/box/large/custom_kit/tonyburritos2
+	ckeywhitelist = list("tonyburritos")
+
+/obj/item/storage/box/large/custom_kit/tonyburritos2/PopulateContents()
+	new /obj/item/clothing/suit/armor/medium/combat/desert_ranger(src)
+	new /obj/item/clothing/under/f13/ranger/modif_ranger(src)
+	new /obj/item/clothing/accessory/ranger(src)
+	new /obj/item/clothing/gloves/f13/leather/fingerless(src)
+	new /obj/item/clothing/mask/bandana/legion/legprime(src)
+	new /obj/item/clothing/shoes/f13/military/desert(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/whiskey(src)
+	new /obj/item/gun/ballistic/revolver/revolver45(src)
+
 /datum/gear/donator/kits/truedark
 	name = "Stolen Brotherhood Supplies"
 	path = /obj/item/storage/box/large/custom_kit/truedark
