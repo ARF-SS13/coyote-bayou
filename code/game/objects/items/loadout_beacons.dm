@@ -21,7 +21,7 @@
 #define LOADOUT_SHIELD "Shields"
 #define LOADOUT_ENERGY "Energy Weapons"
 
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_BOW, LOADOUT_ENERGY)
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_BOW, LOADOUT_ENERGY, LOADOUT_NULLROD, LOADOUT_SHIELD)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -146,7 +146,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/kit_spawner/preacher
 	name = "Spiritual survival kit"
 	desc = "Packed with the essentials: Some kind of weapon, and a cool holy stick."
-	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL | LOADOUT_PREACHER
 	multiple_choice = list(
 		"Primary" = LOADOUT_ROOT_ENTRIES,
 		"Rod" = list(LOADOUT_NULLROD)
@@ -269,7 +269,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 		build_output_list()
 		if(!LAZYLEN(GLOB.loadout_boxes[type]))
 			message_admins(span_phobia("Hey Lagg, [src] didnt set up its lists, like, at all. And cant!. The list is empty! point and laugh"))
-	var/list/first_key
+	var/first_key
 	var/list/first_list
 	if(LAZYLEN(multiple_choice))
 		first_key = input(user, "Pick a category!", "Pick a category!") as null|anything in multiple_choice
@@ -286,21 +286,41 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 				first_list -= in_it
 	else
 		first_list = GLOB.loadout_boxes[type]
+	var/one_only
 	//first, show the player the root menu! ROOT is just a list of strings
-	var/second_choice = input(user, "Pick a category!", "Pick a category!") as null|anything in first_list
-	if(!second_choice)
+	var/second_key
+	if(LAZYLEN(first_list) > 1)
+		second_key = input(user, "Pick a category!", "Pick a category!") as null|anything in first_list
+	else
+		for(var/choosething in first_list)
+			if(choosething)
+				second_key = choosething
+		one_only = TRUE
+	if(!second_key)
 		user.show_message(span_alert("Invalid selection!"))
 		return
-	user.show_message("[second_choice] selected!")
+	user.show_message("[second_key] selected!")
 	/// now the actual gunweapon! entries are formatted as "thingname" = path
-	var/third_choice = input(user, "Pick a weapon!", "Pick a weapon!") as null|anything in GLOB.loadout_boxes[type][second_choice]
-	if(!check_choice(GLOB.loadout_boxes[type][second_choice][third_choice]))
+	var/final_key
+	if(LAZYLEN(GLOB.loadout_boxes[type][second_key]) == 1 && one_only)
+		for(var/choosethinge in GLOB.loadout_boxes[type][second_key])
+			if(choosethinge)
+				final_key = choosethinge
+	else
+		final_key = input(user, "Pick a weapon!", "Pick a weapon!") as null|anything in GLOB.loadout_boxes[type][second_key]
+	if(!check_choice(GLOB.loadout_boxes[type][second_key][final_key]))
 		user.show_message(span_alert("Invalid selection!"))
 		return
-	user.show_message("[third_choice] selected!")
-	if(spawn_the_thing(user, GLOB.loadout_boxes[type][second_choice][third_choice]) && first_key && (first_key in multiple_choice))
+	//user.show_message("[final_key] selected!")
+	if(!spawn_the_thing(user, GLOB.loadout_boxes[type][second_key][final_key]))
+		user.show_message(span_alert("Couldn't get the thing out of the case. Try again?"))
+		return
+	if(first_key && (first_key in multiple_choice))
+		multiple_choice[first_key] = null
 		multiple_choice -= first_key
-		user.show_message(span_green("[first_key] removed from multiple choice!"))
+	if(LAZYLEN(multiple_choice) < 1)
+		qdel(src)
+
 
 /obj/item/kit_spawner/proc/check_choice(choice_to_check)
 	if(!choice_to_check)
@@ -313,13 +333,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	var/turf/spawn_here
 	spawn_here = user ? get_turf(user) : get_turf(src)
 	var/obj/item/new_thing = new the_thing(spawn_here)
-	user.show_message(span_greenannounce("[new_thing] spawned under [user]!!!"))
-	return TRUE
-
-
-
-
-
+	if(istype(new_thing))
+		user.show_message(span_green("You pull \a [new_thing.name] out of [src]."))
+		return TRUE
 
 /obj/item/storage/box/gun
 	name = "weapon case"
@@ -330,6 +346,10 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
 	component_type = /datum/component/storage/concrete/box
+
+/obj/item/storage/box/gun/update_icon_state()
+	if(contents.len == 0)
+		qdel(src)
 
 /// Guns for the LAWman
 /obj/item/storage/box/gun/law

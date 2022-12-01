@@ -1900,11 +1900,11 @@ datum/job/wasteland/f13dendoctor
 	/datum/outfit/loadout/bonedancerexile
 	)
 
-/*
 /datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+/*
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
