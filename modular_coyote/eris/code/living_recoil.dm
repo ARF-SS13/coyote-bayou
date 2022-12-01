@@ -19,8 +19,8 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 
 /mob/living/proc/calc_recoil()
 
-	var/base = 1.2
-	var/scale = 0.9
+	var/base = 0.8
+	var/scale = 0.8
 
 	if(HAS_TRAIT(src, SPREAD_CONTROL))
 		scale = 0.5
@@ -51,7 +51,7 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 		G.check_safety_cursor(src)
 
 	if(recoil > 0)
-		recoil_reduction_timer = addtimer(CALLBACK(src, .proc/calc_recoil), 0.3 SECONDS, TIMER_STOPPABLE)
+		recoil_reduction_timer = addtimer(CALLBACK(src, .proc/calc_recoil), 0.1 SECONDS, TIMER_STOPPABLE)
 	else
 		if(!istype(G))
 			remove_cursor()
