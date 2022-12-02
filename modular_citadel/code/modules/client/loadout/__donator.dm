@@ -868,6 +868,7 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stack/cable_coil/thirty(src)
+	new /obj/item/gun/energy/laser/rcw/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
 
 /datum/gear/donator/kits/truedark2
@@ -879,7 +880,6 @@
 	new /obj/item/gun/ballistic/bow/xbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 	new /obj/item/smelling_salts/wayfarer(src)
-	new /obj/item/gun/energy/laser/rcw/nayriin(src)
 	new /obj/item/reagent_containers/glass/bottle/gaia(src)
 	new /obj/item/reagent_containers/glass/bottle/ichor/red(src)
 	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
