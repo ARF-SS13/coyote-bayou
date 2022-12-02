@@ -162,7 +162,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	)
 
 /obj/item/kit_spawner/lawman/sheriff
-	name = "Sherff equipment kit"
+	name = "Sheriff equipment kit"
 	desc = "Now with access to better things!"
 	allowed_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
 	multiple_choice = list(
@@ -922,7 +922,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/bow/crossbow
 	name = "crossbow case"
 
-/obj/item/storage/box/gun/bow/sturdy/PopulateContents()
+/obj/item/storage/box/gun/bow/crossbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/crossbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 
@@ -1015,7 +1015,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_tag = "Maria"
 	entry_flags = LOADOUT_PREMIUM
 	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/premium
+	spawn_thing = /obj/item/storage/box/gun/premium/maria
 
 /datum/loadout_box/beretta_auto
 	entry_tag = "Beretta M93R"
@@ -1123,7 +1123,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /datum/loadout_box/mk23
 	entry_tag = "Tactical MK-23"
-	entry_flags = LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	entry_flags = LOADOUT_LAWMAN
 	entry_class = LOADOUT_PISTOL_SEMI
 	spawn_thing = /obj/item/storage/box/gun/law/mk23
 
@@ -1354,7 +1354,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/melee/brass
 
 /datum/loadout_box/fryingpan
-	entry_tag = "Brass Knuckles"
+	entry_tag = "Frying Pan"
 	entry_flags = LOADOUT_WASTER
 	entry_class = LOADOUT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/fryingpan
