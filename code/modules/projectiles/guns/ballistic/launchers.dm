@@ -103,6 +103,35 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	magazine_wording = "rocket"
 
+/obj/item/gun/ballistic/rocketlauncher/romket
+	name = "\improper romckit launcher"
+	desc = ""
+	icon_state = "rocketlauncher"
+	item_state = "rocketlauncher"
+	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
+	fire_sound = 'sound/weapons/rocketlaunch.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	can_suppress = FALSE
+	burst_size = 1
+	slowdown = 1
+	projectile_speed_multiplier = 0.1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	casing_ejector = FALSE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	magazine_wording = "rocket"
+
+/obj/item/storage/box/rocketlauncher_tox
+	name = "romckit launcher kit"
+	desc = "Contains a romckit launcher!"
+
+/obj/item/storage/box/rocketlauncher_tox/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/rocketlauncher/romket(src)
+	new /obj/item/ammo_casing/caseless/rocket(src)
+	new /obj/item/ammo_casing/caseless/rocket(src)
+	new /obj/item/ammo_casing/caseless/rocket(src)
+	new /obj/item/ammo_casing/caseless/rocket(src)
+
 /obj/item/gun/ballistic/rocketlauncher/handle_atom_del(atom/A)
 	if(A == chambered)
 		chambered = null
