@@ -714,8 +714,6 @@
 
 /obj/item/storage/box/large/custom_kit/sloaff3/PopulateContents()
 	new /obj/item/storage/fancy/cigarettes/cigpack_cannabis(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
-	new /obj/item/clothing/suit/toggle/labcoat/followers(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaberry(src)
 	new /obj/item/reagent_containers/food/snacks/jellysandwich/pbj/cherry(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault13(src)
