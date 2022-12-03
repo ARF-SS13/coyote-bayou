@@ -85,7 +85,7 @@
 /datum/design/moleminer
 	name = "mole miner gauntlet"
 	desc = "A hand-held mining and cutting implement, repurposed into a deadly melee weapon.  Its name origins are a mystery..."
-	id = "mole_miner_g"
+	id = "mole_miner"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 2000, /datum/material/silver = 2000, /datum/material/diamond = 6000)
 	build_path = /obj/item/melee/powerfist/f13/moleminer
