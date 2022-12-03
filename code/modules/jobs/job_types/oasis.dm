@@ -83,6 +83,7 @@ Mayor
 	id = /obj/item/card/id/silver/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
+	belt = /obj/item/kit_spawner/townie/mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/oasis
 	r_pocket = /obj/item/flashlight/seclite
@@ -179,7 +180,7 @@ Mayor
 	name = "Secretary"
 	jobtype = /datum/job/oasis/f13secretary
 	id = /obj/item/card/id/silver
-	belt = /obj/item/kit_spawner/premium
+	belt = /obj/item/kit_spawner/townie/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
 	glasses = /obj/item/clothing/glasses/regular/hipster
 	gloves = /obj/item/clothing/gloves/color/white
