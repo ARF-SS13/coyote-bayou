@@ -102,7 +102,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_behaviour = TOOL_MINING
 	var/digrange = 0
-	toolspeed = 0.4
+	toolspeed = 0.6
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
