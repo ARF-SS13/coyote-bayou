@@ -232,7 +232,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/kit_spawner/tribal/farlands
 	name = "Farlands tribal equipment kit"
 	desc = "Primitive equipment for a primitive person!"
-	allowed_flags = LOADOUT_FLAG_TRIBAL
+	allowed_flags = LOADOUT_FLAG_TRIBAL | LOADOUT_FLAG_WASTER
 	multiple_choice = list(
 		"Primary" = LOADOUT_ROOT_ENTRIES,
 		"Secondary" = list(LOADOUT_CAT_MELEE)
