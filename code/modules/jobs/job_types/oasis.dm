@@ -1169,14 +1169,14 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13shopkeeper
-	title = "Shopkeeper"
+	title = "Texarkana Trade Worker"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "the free market and Nash's laws"
-	description = "The big trading caravan companies have often neglected humble Nash. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
-	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
+	description = "You are one of the many workers who live in the city of Nash. Working with the town council you have rented out a space in the shop for you to make your living."
+	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 300
 

@@ -1228,13 +1228,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"bBk" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress2";
-	pixel_y = 5
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
 "bBI" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
@@ -1526,12 +1519,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "bYj" = (
-/obj/structure/sign/poster/contraband/pinup_topless{
-	pixel_x = 32
+/obj/structure/chair/f13chair2{
+	dir = 1
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bYy" = (
@@ -2036,10 +2027,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "cGI" = (
-/obj/structure/junk/micro,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/wood,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "cGR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
@@ -2331,13 +2322,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/mall)
 "daP" = (
-/obj/structure/spacevine{
-	name = "vines"
+/obj/structure/chair/f13chair2{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/house,
-/area/f13/building/abandoned)
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "dbA" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
@@ -3998,16 +3988,11 @@
 	},
 /area/f13/building/tribal)
 "fnx" = (
-/obj/effect/overlay/junk/sink{
-	dir = 8;
-	pixel_x = -12
+/obj/machinery/light/small{
+	dir = 4
 	},
-/obj/structure/destructible/tribal_torch/wall{
-	dir = 1;
-	pixel_y = 8
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "fnX" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -4837,10 +4822,12 @@
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/bar)
 "gmD" = (
-/obj/structure/chair/stool,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/abandoned)
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "gnV" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
@@ -8303,6 +8290,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "kMo" = (
@@ -12744,6 +12732,10 @@
 	dir = 4;
 	pixel_x = 10
 	},
+/obj/structure/mirror{
+	pixel_x = 22;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "qTA" = (
@@ -13567,11 +13559,9 @@
 	},
 /area/f13/building/massfusion)
 "rVP" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
+/obj/structure/closet/cabinet,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "rYe" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Clinic";
@@ -15691,7 +15681,7 @@
 /area/f13/building/hospital)
 "uSO" = (
 /obj/machinery/microwave/stove,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "uSX" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16037,18 +16027,6 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
-"vqV" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
-	},
-/area/f13/wasteland)
 "vsN" = (
 /obj/structure/chair/f13chair2{
 	dir = 4
@@ -16259,7 +16237,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "vHx" = (
 /obj/structure/junk/locker,
@@ -17286,16 +17265,11 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "xlg" = (
-/obj/structure/curtain{
-	color = "#845f58"
+/obj/machinery/light/small{
+	dir = 4
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
-/obj/structure/window/fulltile/house,
-/obj/structure/spacevine,
-/turf/open/floor/wood_common,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "xlN" = (
 /obj/structure/table,
@@ -17741,11 +17715,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
-"ybv" = (
-/obj/structure/closet/fridge,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "yby" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -27050,15 +27019,15 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+hMq
+mMG
+mMG
+mMG
+uuw
+hMq
+mMG
+mMG
+uuw
 oez
 oez
 hqx
@@ -27307,15 +27276,15 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+uuw
+oSo
+cdN
+rVP
+hMq
+oSo
+cdN
+uRt
+wWL
 oez
 oez
 dtb
@@ -27564,15 +27533,15 @@ dtb
 dtb
 hqx
 oez
-hqx
-dtb
-dtb
-hqx
-dtb
-dtb
-hqx
-dtb
-dtb
+kjX
+nLO
+rVk
+rVk
+hMq
+daP
+rVk
+cdN
+wWL
 oez
 oez
 dtb
@@ -27821,15 +27790,15 @@ dtb
 dtb
 dtb
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+kjX
+frB
+bYj
+rVk
+hMq
+frB
+bYj
+cdN
+wWL
 oez
 oez
 hqx
@@ -28078,15 +28047,15 @@ dtb
 dtb
 dtb
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+kjX
+cVV
+fnx
+cdN
+hMq
+cVV
+xlg
+cdN
+hMq
 oez
 oez
 dtb
@@ -28336,14 +28305,14 @@ dtb
 hqx
 oez
 uuw
-xlg
-mMG
-mMG
-uuw
-uuw
+hMq
+hMq
 lnR
 hMq
 hMq
+hMq
+lnR
+uuw
 oez
 oez
 dtb
@@ -28594,12 +28563,12 @@ dtb
 oez
 kjX
 uSO
-cqK
-cqK
-hMq
-oSo
 cdN
-uRt
+rVk
+gmD
+rVk
+rVk
+cdN
 wWL
 oez
 oez
@@ -28851,11 +28820,11 @@ dtb
 oez
 kjX
 vHu
-cqK
-cqK
-lnR
-cdN
-cdN
+rVk
+rVk
+rVk
+daP
+sNs
 cdN
 wWL
 oez
@@ -29111,7 +29080,7 @@ hMq
 sun
 hMq
 hMq
-cVV
+frB
 bYj
 cdN
 wWL
@@ -29346,7 +29315,7 @@ dtb
 dtb
 dtb
 oez
-vqV
+oez
 dtb
 oez
 dtb
@@ -29370,7 +29339,7 @@ wex
 hMq
 hMq
 hMq
-lnR
+cGI
 hMq
 dmX
 oez
@@ -29627,7 +29596,7 @@ gcv
 hMq
 aNu
 nBD
-cdN
+rVk
 buW
 odJ
 oez
@@ -29879,12 +29848,12 @@ oez
 oez
 uuw
 uuw
-uuw
 hMq
 hMq
+hMq
 cdN
-cdN
-cdN
+rVk
+rVk
 nLO
 odJ
 oez
@@ -30138,9 +30107,9 @@ oez
 oez
 oez
 oez
-hMq
+uuw
 kLp
-cdN
+rVk
 gzL
 frB
 odJ
@@ -31435,7 +31404,7 @@ oez
 oez
 oez
 mDF
-gmD
+oez
 oez
 oez
 oez
@@ -31696,7 +31665,7 @@ oez
 oez
 oez
 fPa
-bBk
+oez
 tnO
 oez
 mDF
@@ -32206,7 +32175,7 @@ oez
 oez
 oez
 mDF
-fnx
+oez
 oez
 mDF
 oez
@@ -32463,7 +32432,7 @@ oez
 oez
 oez
 mDF
-drs
+oez
 oez
 oez
 oez
@@ -32724,10 +32693,10 @@ bSu
 oez
 xcV
 mDF
-cGI
-rVP
 mDF
-ybv
+oez
+mDF
+mDF
 mDF
 oez
 dtb
@@ -32982,9 +32951,9 @@ mKG
 mDF
 mDF
 bPu
-daP
+oez
 mDF
-vDc
+mDF
 mDF
 oez
 hqx
