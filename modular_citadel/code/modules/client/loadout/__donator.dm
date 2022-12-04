@@ -682,6 +682,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
 	new /obj/item/storage/belt/shoulderholster/ranger45(src)
 	new /obj/item/clothing/under/costume/soviet(src)
+	new /obj/item/storage/box/rocketlauncher_tox(src)
 	new /obj/item/binoculars(src)
 
 /datum/gear/donator/kits/sloaff
