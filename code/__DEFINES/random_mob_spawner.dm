@@ -26,6 +26,7 @@
 #define MOB_SPAWNER_TUNNELLER "tunneller"
 #define MOB_SPAWNER_SPORECARRIER "spore_boy"
 #define MOB_SPAWNER_WANAMINGO "vs_purple_alien"
+#define MOB_SPAWNER_RATTLER "texasrattler"
 #define MOB_SPAWNER_DEBUG "debuggo"
 
 /// Mob difficulties
@@ -150,6 +151,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_WANAMINGO,
 		MOB_SPAWNER_WOLF,
 		MOB_SPAWNER_YAOGUAI
+		MOB_SPAWNER_RATTLER
 	)
 
 /// low level robots
@@ -269,7 +271,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_RAIDER_MIXED
 	)
 
-/* 
+/*
  * Animals mostly
  * Good for most wildlife, includes centaurs and wannamingoes
  */
@@ -323,6 +325,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_SPORECARRIER,
 		MOB_SPAWNER_WOLF,
 		MOB_SPAWNER_YAOGUAI
+		MOB_SPAWNER_RATTLER
 	)
 
 /// Higher tier animals
@@ -347,7 +350,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_HELLPIG,
 		MOB_SPAWNER_WANAMINGO
 	)
-/* 
+/*
  * Swamp animals
  * Mutant animals, minus the wierd super duper mutant things
  */
@@ -399,6 +402,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		MOB_SPAWNER_NIGHTSTALKER,
 		MOB_SPAWNER_WOLF,
 		MOB_SPAWNER_YAOGUAI
+		MOB_SPAWNER_RATTLER
 	)
 
 /// Higher tier swamp animals
@@ -473,7 +477,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -503,7 +507,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -533,7 +537,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONGEST
 	mob_list_easy = list(
@@ -559,7 +563,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONGEST
 	mob_list_easy = list(
@@ -583,7 +587,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 4
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -607,7 +611,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 3
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -631,7 +635,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -655,7 +659,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with two kinds of monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 3
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -682,7 +686,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 4
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_QUICK
 	mob_list_easy = list(
@@ -706,7 +710,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -733,7 +737,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -761,7 +765,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -787,7 +791,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -814,7 +818,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A consumer-grade storage device full of consumer grade robots."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_ROBOT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -843,7 +847,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A security-grade storage device full of security grade robots."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_ROBOT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -873,7 +877,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A military-grade storage device full of military grade robots."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_ROBOT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -905,7 +909,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
@@ -933,7 +937,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters and their pets in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
@@ -964,7 +968,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -988,7 +992,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A crude tunnel used by raiders to travel across the wasteland."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_VENT // RAIDER VENTED
 	sound_to_play = MOB_SPAWNER_SOUND_VENT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
@@ -1023,7 +1027,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A crude tunnel used by raiders to travel across the wasteland."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_VENT
 	sound_to_play = MOB_SPAWNER_SOUND_VENT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
@@ -1053,7 +1057,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A crude tunnel used by raiders to travel across the wasteland."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_VENT
 	sound_to_play = MOB_SPAWNER_SOUND_VENT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
@@ -1097,7 +1101,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -1121,7 +1125,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -1145,7 +1149,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
@@ -1169,7 +1173,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
@@ -1195,7 +1199,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "A gross hole in the ground with monsters in it."
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 1
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
 	mob_list_easy = list(
@@ -1212,6 +1216,29 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 		/mob/living/simple_animal/hostile/alien = 3
 		)
 
+// rattle 'em, boys.
+/datum/random_mob_spawner/rattler
+	nest_tag = MOB_SPAWNER_RATTLER
+	nest_name = "rattling hole"
+	nest_desc = "A burrow of rattlers."
+	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/texas_rattler = 1
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/texas_rattler = 2
+		)
+	num_mobs_to_spawn_hard = 3
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/texas_rattler = 3
+		)
+
 /// debug
 /datum/random_mob_spawner/debug
 	nest_tag = MOB_SPAWNER_DEBUG
@@ -1219,7 +1246,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_desc = "This also works!"
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_ROBOT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
-	
+
 	num_mobs_to_spawn_easy = 5
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_QUICKEST
 	mob_list_easy = list(
