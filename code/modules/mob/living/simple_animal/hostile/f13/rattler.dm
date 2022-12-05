@@ -7,7 +7,7 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 //Rattler
 /mob/living/simple_animal/hostile/texas_rattler
 	name = "texas rattler"
-	desc = "Keratin gleams and articulates over its massive fourty-foot body. Distended venom glands behind its upper pterygoid shudder and pressure deadly venom into its victims. A coil of thick muscle allows it to pounce. In layman's terms: don't get bit."
+	desc = "Keratin gleams and articulates over its massive sixty-foot body. Distended venom glands behind its upper pterygoid shudder and pressure deadly venom into its victims. A coil of thick muscle allows it to pounce. In layman's terms: don't get bit."
 	icon = 'icons/mob/texas_rattler.dmi'
 	icon_state = "texasrattler"
 	icon_living = "texasrattler"
@@ -18,7 +18,7 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	health = 150
 	reach = 2
 	speed = -1
-	move_to_delay = 2.2
+	move_to_delay = 2.1
 	tastes = list("weird oil" = 5, "dirt" = 1)
 
 	speak_emote = list("hisses", "shakes its rattle")
@@ -28,9 +28,15 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	speak_chance = 10
 	taunt_chance = 25
 
+	melee_damage_lower = 20
+	melee_damage_upper = 45
+
+	attack_verb_simple = "bites and constricts"
 	see_in_dark = 8
 
 	retreat_distance = 2
+
+	faction = list("hostile", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
 
 
 
@@ -39,3 +45,4 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
+		H.AdjustStaminaLoss(7)
