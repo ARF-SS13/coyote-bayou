@@ -485,6 +485,22 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser/badlands
 	impact_type = /obj/effect/projectile/impact/laser/badlands
 
+/obj/item/projectile/beam/laser/pistol/badlands/worn //Worn Badland's Special
+	name = "badland's special beam"
+	damage = 20
+	armour_penetration = 0.3
+	icon_state = "bluelaser"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+
+/obj/item/projectile/beam/laser/pistol/badlands/worn/hitscan
+	name = "badland's special beam"
+	damage = 24
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser/badlands
+	muzzle_type = /obj/effect/projectile/muzzle/laser/badlands
+	impact_type = /obj/effect/projectile/impact/laser/badlands
+
 /obj/item/projectile/beam/laser/pistol/freeblade //Freeblade Blaster
 	name = "freeblade beam"
 	damage = 15

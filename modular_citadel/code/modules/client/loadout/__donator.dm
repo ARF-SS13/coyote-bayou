@@ -717,6 +717,7 @@
 	new /obj/item/clothing/mask/surgical/sloaff(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
+	new /obj/item/gun/energy/laser/badlands/worn(src)
 
 /datum/gear/donator/kits/sloaff3
 	name = "Sloan's Food Pack"
