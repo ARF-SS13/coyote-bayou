@@ -178,6 +178,12 @@
 	max_mobs = 1
 	mob_types = list(/mob/living/simple_animal/hostile/alien = 3)
 
+/obj/structure/nest/rattle
+	name = "rattling hole"
+	spawn_time = 40 SECONDS
+	max_mobs = 2
+	mob_types = list(/mob/living/simple_animal/hostile/texas_rattler = 3)
+
 /obj/structure/nest/molerat
 	name = "molerat nest"
 	max_mobs = 3
