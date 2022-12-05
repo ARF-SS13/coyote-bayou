@@ -687,7 +687,7 @@
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_ONLY
+	weapon_weight = GUN_ONE_HAND_AKIMBO // DOUBLE DEAGLE
 	draw_time = GUN_DRAW_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
@@ -729,7 +729,7 @@
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_ONLY
+	weapon_weight = GUN_ONE_HAND_AKIMBO // DOUBLE DEAGLE
 	draw_time = GUN_DRAW_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
@@ -762,7 +762,7 @@
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_ONLY
+	weapon_weight = GUN_ONE_HAND_AKIMBO // DOUBLE DEAGLE
 	draw_time = GUN_DRAW_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
