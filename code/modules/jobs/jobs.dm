@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Mayor",
 "Sheriff",
 "Deputy",
-"Shopkeeper",
+"Texarkana Trade Worker",
 "Doctor",
 "Prospector",
 "Detective",
