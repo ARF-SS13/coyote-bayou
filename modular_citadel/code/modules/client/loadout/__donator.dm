@@ -376,12 +376,12 @@
 	ckeywhitelist = list("fuzlet", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/fuzlet/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/beretta/automatic/worn(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sig/blackkite(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sig/blackkite(src)
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
-	new /obj/item/storage/survivalkit/triple(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 
 /datum/gear/donator/kits/fuzlet2
