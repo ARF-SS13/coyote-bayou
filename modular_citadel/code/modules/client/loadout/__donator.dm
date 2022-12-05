@@ -677,12 +677,23 @@
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
-	ckeywhitelist = list("seermankhajiit00")
+	ckeywhitelist = list("seermankhajiit00", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
 	new /obj/item/storage/belt/shoulderholster/ranger45(src)
 	new /obj/item/clothing/under/costume/soviet(src)
+	new /obj/item/storage/box/rocketlauncher_tox(src)
+	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/binoculars(src)
+
+/obj/item/pet_carrier/paws
+	name = "Paws' carrier"
+	desc = "Hey look who it is!"
+
+/obj/item/pet_carrier/paws/Initialize()
+	. = ..()
+	var/mob/living/simple_animal/pet/fox/paws/pet_paws = new(src)
+	add_occupant(pet_paws)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"
