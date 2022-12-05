@@ -153,10 +153,14 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fastest
+		/datum/firemode/semi_auto/faster
 	)
 	obj_flags = UNIQUE_RENAME
-	var/list/safe_calibers
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 5, 15, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_THROWS_GUN(2)
+	)
 
 /obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
@@ -197,7 +201,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fastest
+		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	gun_sound_properties = list(
@@ -868,7 +872,7 @@
 	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fastest
+		/datum/firemode/semi_auto/faster
 	)
 	silenced = TRUE
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
@@ -890,7 +894,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fastest
+		/datum/firemode/semi_auto/faster
 	)
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
