@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 			heirloom_type = /obj/item/clothing/accessory/medal/silver
 		if("Deputy")
 			heirloom_type = /obj/item/clothing/accessory/medal/bronze_heart
-		if("Shopkeeper")
+		if("Texarkana Trade Worker")
 			heirloom_type = /obj/item/coin/plasma
 		if("Followers Doctor")
 			heirloom_type = pick(/obj/item/clothing/neck/stethoscope,/obj/item/toy/tragicthegarnering)

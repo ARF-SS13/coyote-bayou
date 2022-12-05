@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Doctor",
 	"Detective",
 	"Banker",
-	"Shopkeeper",
+	"Texarkana Trade Worker",
 	"Barkeep",
 	"Citizen",
 ))
