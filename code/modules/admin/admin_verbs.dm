@@ -26,7 +26,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
 	/client/proc/check_ai_laws,			/*shows AI and borg laws*/
 	/datum/admins/proc/toggleooc,		/*toggles ooc on/off for everyone*/
-	/datum/admins/proc/toggleooclocal,	/*toggles looc on/off for everyone*/ 
+	/datum/admins/proc/toggleooclocal,	/*toggles looc on/off for everyone*/
 	/datum/admins/proc/toggleoocdead,	/*toggles ooc on/off for everyone who is dead*/
 	/datum/admins/proc/toggleaooc,		/*toggles antag ooc on/off*/
 	/datum/admins/proc/toggleenter,		/*toggles whether people can join the current game*/
@@ -189,8 +189,8 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/generate_wikichem_list, //DO NOT PRESS UNLESS YOU WANT SUPERLAG
 	)
 GLOBAL_PROTECT(admin_verbs_debug)
-GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
-GLOBAL_PROTECT(admin_verbs_possess)
+//GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
+//GLOBAL_PROTECT(admin_verbs_possess)
 GLOBAL_LIST_INIT(admin_verbs_permissions, list(/client/proc/edit_admin_permissions))
 GLOBAL_PROTECT(admin_verbs_permissions)
 GLOBAL_LIST_INIT(admin_verbs_poll, list(/client/proc/create_poll))
@@ -250,8 +250,8 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_debug_del_all,
 	/client/proc/enable_debug_verbs,
-	/proc/possess,
-	/proc/release,
+//	/proc/possess,
+//	/proc/release,
 	/client/proc/reload_admins,
 	/client/proc/panicbunker,
 	/client/proc/admin_change_sec_level,
@@ -283,8 +283,8 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		if(rights & R_DEBUG)
 			add_verb(src, GLOB.admin_verbs_debug)
 		if(rights & R_POSSESS)
-			add_verb(src, GLOB.admin_verbs_possess)
-		if(rights & R_PERMISSIONS)
+//			add_verb(src, GLOB.admin_verbs_possess)
+//		if(rights & R_PERMISSIONS)
 			add_verb(src, GLOB.admin_verbs_permissions)
 		if(rights & R_STEALTH)
 			add_verb(src, /client/proc/stealth)
@@ -307,7 +307,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		GLOB.admin_verbs_fun,
 		GLOB.admin_verbs_server,
 		GLOB.admin_verbs_debug,
-		GLOB.admin_verbs_possess,
+//		GLOB.admin_verbs_possess,
 		GLOB.admin_verbs_permissions,
 		/client/proc/stealth,
 		GLOB.admin_verbs_poll,
