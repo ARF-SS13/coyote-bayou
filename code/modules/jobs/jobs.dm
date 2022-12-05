@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Mayor",
 "Sheriff",
 "Deputy",
-"Shopkeeper",
+"Texarkana Trade Worker",
 "Doctor",
 "Prospector",
 "Detective",
@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Doctor",
 	"Detective",
 	"Banker",
-	"Shopkeeper",
+	"Texarkana Trade Worker",
 	"Barkeep",
 	"Citizen",
 ))
