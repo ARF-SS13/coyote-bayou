@@ -286,7 +286,7 @@ GLOBAL_LIST_INIT(trash_misc, list(
 
 GLOBAL_LIST_INIT(trash_attachment, list(
 	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
 	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
 	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
@@ -551,7 +551,6 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/ammo_box/a357,
 	/obj/item/ammo_box/a357,
 	/obj/item/gun/ballistic/revolver/colt357,
-	/obj/item/gun/ballistic/revolver/single_shotgun,
 	/obj/item/ammo_box/a357,
 	/obj/item/gun/ballistic/automatic/service,
 	/obj/item/ammo_box/magazine/m556/rifle,
@@ -619,12 +618,13 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
-	/obj/item/gun/energy/laser/plasma,
+	/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+	/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 	/obj/item/gun/ballistic/automatic/smg/tommygun,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
 	/obj/item/gun/ballistic/revolver/hunting,
-	/obj/item/gun/ballistic/automatic/bozar
+	/obj/item/gun/ballistic/revolver/sequoia/bayonet,
 ))
 
 GLOBAL_LIST_INIT(loot_unique_range, list(
@@ -904,7 +904,7 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 
 GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/gun_upgrade/scope/watchman = 1,
-	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/gun_upgrade/trigger/raidertrigger = 1,
 	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
 	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,

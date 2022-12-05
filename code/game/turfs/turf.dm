@@ -92,6 +92,8 @@
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
 		add_overlay(/obj/effect/fullbright)
 	else
+		if(A.outdoors == TRUE)
+			sunlight_state = SUNLIGHT_SOURCE
 		switch(sunlight_state)
 			if(SUNLIGHT_SOURCE)
 				setup_sunlight_source()

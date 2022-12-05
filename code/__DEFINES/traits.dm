@@ -317,6 +317,7 @@
 #define TRAIT_SURGERY_HIGH		"highsurgery"
 
 // fallout crafting traits
+#define TRAIT_FORMER_TRIBAL     "ex_tribal_traditions"
 #define TRAIT_GUNSMITH_ONE      "gunsmith_one" //crafts poor guns
 #define TRAIT_GUNSMITH_TWO      "gunsmith_two" //crafts mid level guns
 #define TRAIT_GUNSMITH_THREE    "gunsmith_three" //crafts weapon parts

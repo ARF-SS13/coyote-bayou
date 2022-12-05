@@ -425,3 +425,8 @@
 	name = "Orange Skirt w/ Belt"
 	path = /obj/item/clothing/accessory/prisonerskirt
 	cost = 1
+
+/datum/gear/backpack/ncrcfjacket
+	name = "Cropped Denim Jacket - Accessory"
+	path = /obj/item/clothing/accessory/ncrfjacketcrop
+	cost = 1

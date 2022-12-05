@@ -17,7 +17,7 @@
 	end_message = "<span class='notice'><font size=2>You start to hear the last of the rain as the sky begins to clear up.</font></span>"
 	end_overlay = "rain_gathering"
 	tag_weather = WEATHER_RAIN
-	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 	protect_indoors = TRUE
@@ -175,7 +175,7 @@
 	end_duration = 250
 	end_message = "<span class='notice'><font size=2>The blanket of fog finally lifts up.</font></span>"
 	end_overlay = "fog"
-	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 	protect_indoors = TRUE

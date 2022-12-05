@@ -22,7 +22,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
 	handedness = GUN_EJECTOR_ANY
 
@@ -48,6 +48,7 @@
 /obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	..()
 	chamber_round(1)
+	update_icon()
 
 /obj/item/gun/ballistic/revolver/attack_self(mob/living/user)
 	if(!eject_shells(user, TRUE))
@@ -71,6 +72,7 @@
 			chambered = null
 		ammo_mag[index] = null // eject a shell, it leaves a gap
 		num_unloaded++
+	update_icon()
 	if (num_unloaded)
 		if(just_empties)
 			to_chat(user, span_notice("You unload [num_unloaded] empty shell\s from [src]."))
@@ -150,9 +152,15 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 	obj_flags = UNIQUE_RENAME
-	var/list/safe_calibers
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 5, 15, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_THROWS_GUN(2)
+	)
 
 /obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
@@ -192,7 +200,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -231,7 +241,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -266,7 +278,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 /* * * * * * * * * * *
@@ -291,7 +305,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	block_chance = 20
 
 /* * * * * * * * * * *
@@ -325,7 +341,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
 	gun_sound_properties = list(
@@ -378,7 +396,9 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 /* * * * * * * * * * *
  * Pearly .44 magnum revolver
  * Cute heavier revolver
@@ -403,7 +423,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 /* * * * * * * * * * *
  * Peacekeeper revolver
@@ -430,7 +452,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 	automatic = 0
 	autofire_shot_delay = 0
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -467,7 +491,9 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 /* * * * * * * * * * *
  * .44 single-action revolver
  * Slow heavier revolver
@@ -499,7 +525,9 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -539,7 +567,9 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 /* * * * * * * * * * *
  * M2045 Magnum Revolver Rifle
  * Heavy revolver rifle
@@ -567,7 +597,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(2.2)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -622,7 +654,9 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 /* * * * * * * * * * *
  * Degraded hunting revolver
  * Really heavy revolver
@@ -644,7 +678,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 /* * * * * * * * * * *
  * Sequoia revolvers
  * Super heavy revolver
@@ -674,7 +710,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -703,7 +741,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
 /obj/item/gun/ballistic/revolver/sequoia/death
@@ -721,7 +761,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 /* * * * * * * * * * *
  * Single Action Army revolvers
  * Bouncy revolver
@@ -747,7 +789,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -788,7 +832,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -825,7 +871,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 	silenced = TRUE
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 	fire_sound_silenced = 'sound/weapons/gunshot_silenced.ogg'
@@ -845,7 +893,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
 // LEGACY STUFF

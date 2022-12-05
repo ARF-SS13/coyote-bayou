@@ -77,18 +77,37 @@
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps
 
+/obj/item/stack/f13Cash/caps/fivezero
+	amount = 50
+	merge_type = /obj/item/stack/f13Cash/caps
+
 /obj/item/stack/f13Cash/caps/onezerozero
 	amount = 100
 	merge_type = /obj/item/stack/f13Cash/caps
 
-/obj/item/stack/f13Cash/caps/fivezerozero
-	amount = 500
+/obj/item/stack/f13Cash/caps/onefivezero
+	amount = 150
+	merge_type = /obj/item/stack/f13Cash/caps
+
+/obj/item/stack/f13Cash/caps/twozerozero
+	amount = 200
+	merge_type = /obj/item/stack/f13Cash/caps
+
+/obj/item/stack/f13Cash/caps/twofivezero
+	amount = 250
+	merge_type = /obj/item/stack/f13Cash/caps
+
+/obj/item/stack/f13Cash/caps/threezerozero
+	amount = 300
 	merge_type = /obj/item/stack/f13Cash/caps
 
 /obj/item/stack/f13Cash/caps/threefivezero
 	amount = 350
 	merge_type = /obj/item/stack/f13Cash/caps
 
+/obj/item/stack/f13Cash/caps/fivezerozero
+	amount = 500
+	merge_type = /obj/item/stack/f13Cash/caps
 
 /obj/item/stack/f13Cash/caps/onezerozerozero
 	amount = 1000

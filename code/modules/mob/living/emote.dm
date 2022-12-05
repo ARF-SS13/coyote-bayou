@@ -2,6 +2,7 @@
 	key = "blush"
 	key_third_person = "blushes"
 	message = "blushes."
+	message_param = "blushes at %t."
 	sound = 'sound/f13effects/sunsetsounds/blush.ogg' //Sunset Edit - TK
 
 /datum/emote/living/blush/run_emote(mob/user, params)
@@ -20,6 +21,7 @@
 	key = "burp"
 	key_third_person = "burps"
 	message = "burps."
+	message_param = "burps from the %t."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/f13effects/sunsetsounds/lilburp.ogg' //Sunset Edit - TK
 
@@ -27,31 +29,31 @@
 	key = "choke"
 	key_third_person = "chokes"
 	message = "chokes!"
+	message_param = "chokes on the %t."
 	emote_type = EMOTE_AUDIBLE
-	sound = 'sound/f13effects/sunsetsounds/choke.ogg' //Sunset Edit - TK
+	// sound = 'sound/f13effects/sunsetsounds/choke.ogg' Turned off due to upset tummies
 
 /datum/emote/living/cross
 	key = "cross"
 	key_third_person = "crosses"
 	message = "crosses their arms."
+	message_param = "crosses their arms at %t."
 	restraint_check = TRUE
 
 /datum/emote/living/chuckle
 	key = "chuckle"
 	key_third_person = "chuckles"
 	message = "chuckles."
+	message_param = "chuckles at %t."
 	emote_type = EMOTE_AUDIBLE
 
 
-/datum/emote/living/chuckle/get_sound(mob/living/M) 
-	. = ..()
+/datum/emote/living/chuckle/get_sound(mob/living/M)
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
+			return 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
 		else
-			sound = 'sound/f13effects/sunsetsounds/malechuckle.ogg'
-		return 
-
+			return 'sound/f13effects/sunsetsounds/malechuckle.ogg'
 
 /datum/emote/living/collapse
 	key = "collapse"
@@ -69,6 +71,7 @@
 	key = "cough"
 	key_third_person = "coughs"
 	message = "coughs!"
+	message_param = "coughs from the %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
@@ -76,19 +79,47 @@
 	if(HAS_TRAIT(user, TRAIT_SOOTHED_THROAT))
 		return FALSE
 
-/datum/emote/living/cough/get_sound(mob/living/M) 
-	. = ..()
+/datum/emote/living/cough/get_sound(mob/living/M)
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/female_cough.ogg'
+			return 'sound/effects/female_cough.ogg'
 		else
-			sound = 'sound/effects/male_cough.ogg'
-		return 
+			return 'sound/effects/male_cough.ogg'
 
 /datum/emote/living/dance
 	key = "dance"
 	key_third_person = "dances"
 	message = "dances around happily."
+	message_param = "dances %t."
+	restraint_check = TRUE
+
+/datum/emote/hearthand
+	key = "hearthand"
+	key_third_person = "hearthands"
+	message = "makes a heart with their hands."
+	message_param = "makes a heart with their hands at %t."
+	restraint_check = TRUE
+
+/datum/emote/ok
+	key = "ok"
+	key_third_person = "oks"
+	message = "makes an okay sign with their hand."
+	message_param = "makes an okay sign with their hand at %t."
+	restraint_check = TRUE
+
+
+/datum/emote/thumbup
+	key = "thumbsup"
+	key_third_person = "thumbsups"
+	message = "makes a thumbs up sign with their hand."
+	message_param = "makes a thumbs up sign with their hand at %t."
+	restraint_check = TRUE
+
+/datum/emote/thumbdown
+	key = "thumbsdown"
+	key_third_person = "thumbsdowns"
+	message = "makes a thumbs down sign with their hand."
+	message_param = "makes a thumbs down sign with their hand at %t."
 	restraint_check = TRUE
 
 /datum/emote/living/deathgasp
@@ -122,11 +153,13 @@
 	key = "drool"
 	key_third_person = "drools"
 	message = "drools."
+	message_param = "drools at %t."
 
 /datum/emote/living/faint
 	key = "faint"
 	key_third_person = "faints"
 	message = "faints."
+	message_param = "faints from %t."
 
 /datum/emote/living/faint/run_emote(mob/user, params)
 	. = ..()
@@ -168,34 +201,45 @@
 	key = "frown"
 	key_third_person = "frowns"
 	message = "frowns."
+	message_param = "frowns at %t."
 
 /datum/emote/living/gag
 	key = "gag"
 	key_third_person = "gags"
 	message = "gags."
+	message_param = "gags from %t."
 	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/gag.ogg'
+	sound_volume = 100
 
 /datum/emote/living/gasp
 	key = "gasp"
 	key_third_person = "gasps"
 	message = "gasps!"
+	message_param = "gasps at %t."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 
-/datum/emote/living/gasp/get_sound(mob/living/M) 
-	. = ..()
+/datum/emote/living/gasp/get_sound(mob/living/M)
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/female_gasp.ogg'
+			return 'sound/effects/female_gasp.ogg'
 		else
-			sound = 'sound/effects/male_gasp.ogg'
-		return 
+			return 'sound/effects/male_gasp.ogg'
 
 /datum/emote/living/giggle
 	key = "giggle"
 	key_third_person = "giggles"
 	message = "giggles."
+	message_param = "giggles at %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/giggle/get_sound(mob/living/M)
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			return 'sound/effects/femalegiggle1.ogg'
+		else
+			return 'sound/effects/malegiggle1.ogg'
 
 /datum/emote/living/glare
 	key = "glare"
@@ -208,16 +252,19 @@
 	key = "grin"
 	key_third_person = "grins"
 	message = "grins."
+	message_param = "grins at %t."
 
 /datum/emote/living/groan
 	key = "groan"
 	key_third_person = "groans"
 	message = "groans!"
+	message_param = "groans at %t."
 
 /datum/emote/living/grimace
 	key = "grimace"
 	key_third_person = "grimaces"
 	message = "grimaces."
+	message_param = "grimaces at %t."
 
 /datum/emote/living/jump
 	key = "jump"
@@ -231,6 +278,7 @@
 	message = "blows a kiss."
 	message_param = "blows a kiss to %t."
 	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/kiss.ogg'
 
 /datum/emote/living/audible
 	emote_type = EMOTE_AUDIBLE
@@ -245,6 +293,7 @@
 	key = "laugh"
 	key_third_person = "laughs"
 	message = "laughs."
+	message_param = "laughs about %t."
 
 /datum/emote/living/audible/laugh/get_sound(mob/living/user)
 	. = ..()
@@ -259,6 +308,7 @@
 	key = "chitter"
 	key_third_person = "chitters"
 	message = "chitters."
+	message_param = "chitters at %t."
 
 /datum/emote/living/audible/chitter/get_sound(mob/living/user)
 	. = ..()
@@ -309,78 +359,94 @@
 	key = "pout"
 	key_third_person = "pouts"
 	message = "pouts."
+	message_param = "pouts at %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/scream
 	key = "scream"
 	key_third_person = "screams"
 	message = "screams."
+	message_param = "screams at %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/scowl
 	key = "scowl"
 	key_third_person = "scowls"
 	message = "scowls."
+	message_param = "scowls at %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/shake
 	key = "shake"
 	key_third_person = "shakes"
 	message = "shakes their head."
+	message_param = "shakes their head at %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/shiver
 	key = "shiver"
 	key_third_person = "shiver"
 	message = "shivers."
+	message_param = "shivers from the %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/sigh
 	key = "sigh"
 	key_third_person = "sighs"
 	message = "sighs."
+	message_param = "sighs about %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/sigh/get_sound(mob/living/M)
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			return 'sound/effects/femalesigh1.ogg'
+		else
+			return 'sound/effects/malesigh1.ogg'
 
 /datum/emote/living/sit
 	key = "sit"
 	key_third_person = "sits"
 	message = "sits down."
+	message_param = "sits down on %t."
 
 /datum/emote/living/smile
 	key = "smile"
 	key_third_person = "smiles"
 	message = "smiles."
+	message_param = "smiles at %t."
 
 /datum/emote/living/smirk
 	key = "smirk"
 	key_third_person = "smirks"
 	message = "smirks."
+	message_param = "smirks at %t."
 
 /datum/emote/living/sneeze
 	key = "sneeze"
 	key_third_person = "sneezes"
 	message = "sneezes."
+	message_param = "sneezes from %t."
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/sneeze/get_sound(mob/living/M) 
-	. = ..()
+/datum/emote/living/sneeze/get_sound(mob/living/M)
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/female_sneeze.ogg'
+			return 'sound/effects/female_sneeze.ogg'
 		else
-			sound = 'sound/effects/male_sneeze.ogg'
-		return 
-
+			return 'sound/effects/male_sneeze.ogg'
 
 /datum/emote/living/smug
 	key = "smug"
 	key_third_person = "smugs"
 	message = "grins smugly."
+	message_param = "smugly grins at %t."
 
 /datum/emote/living/sniff
 	key = "sniff"
 	key_third_person = "sniffs"
 	message = "sniffs."
+	message_param = "sniffs at %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/snore
@@ -389,6 +455,13 @@
 	message = "snores."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
+
+/datum/emote/living/snore/get_sound(mob/living/M)
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			return 'sound/effects/femalesnore1.ogg'
+		else
+			return 'sound/effects/malesnore1.ogg'
 
 /datum/emote/living/stare
 	key = "stare"
@@ -400,6 +473,7 @@
 	key = "stretch"
 	key_third_person = "stretches"
 	message = "stretches their arms."
+	message_param = "stretches their %t."
 
 /datum/emote/living/sulk
 	key = "sulk"
@@ -435,6 +509,7 @@
 	key = "tremble"
 	key_third_person = "trembles"
 	message = "trembles in fear!"
+	message_param = "trembles in fear at %t."
 
 /datum/emote/living/twitch
 	key = "twitch"
@@ -449,21 +524,31 @@
 	key = "wave"
 	key_third_person = "waves"
 	message = "waves."
+	message_param = "waves at %t."
 
 /datum/emote/living/whimper
 	key = "whimper"
 	key_third_person = "whimpers"
 	message = "whimpers."
 
+
+/datum/emote/living/whimper/get_sound(mob/living/M)
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			return 'sound/effects/femalewhimper1.ogg'
+		else
+			return 'sound/effects/malewhimper1.ogg'
+
 /datum/emote/living/wsmile
 	key = "wsmile"
 	key_third_person = "wsmiles"
 	message = "smiles weakly."
-
+	message_param = "weakly smiles at %t."
 /datum/emote/living/yawn
 	key = "yawn"
 	key_third_person = "yawns"
 	message = "yawns."
+	message_param = "yawns at %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/custom
@@ -499,7 +584,12 @@
 		if(type_override)
 			emote_type = type_override
 	message = user.say_emphasis(message)
+	var/msg_check = user.say_narrate_replace(message, user)
+	if(msg_check)
+		message = msg_check
+		omit_left_name = TRUE
 	. = ..()
+	omit_left_name = FALSE
 	message = null
 
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
@@ -837,6 +927,13 @@
 		var/mob/living/carbon/C = user
 		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
 			pick(playsound(C, 'sound/f13effects/sunsetsounds/wah1.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah2.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah3.ogg', 34, 1),)
+
+
+/datum/emote/living/boowomp
+	key = "boowomp"
+	key_third_person = "frowns heavily."
+	message = "frowns heavily."
+	sound = 'sound/effects/boowomp.ogg'
 
 /datum/emote/weh
 	key = "weh"

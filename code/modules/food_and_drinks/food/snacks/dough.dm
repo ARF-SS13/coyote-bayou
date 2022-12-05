@@ -13,7 +13,6 @@
 	tastes = list("dough" = 1)
 	foodtype = GRAIN
 
-
 // Dough + rolling pin = flat dough
 /obj/item/reagent_containers/food/snacks/dough/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/kitchen/rollingpin))
@@ -52,7 +51,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("bread" = 1)
 	foodtype = GRAIN
-
+	tastes = list("bread" = 2, "salt" = 1)
 
 /obj/item/reagent_containers/food/snacks/doughslice
 	name = "dough slice"
@@ -76,6 +75,7 @@
 	tastes = list("bun" = 1) // the bun tastes of bun.
 	foodtype = GRAIN
 
+
 /obj/item/reagent_containers/food/snacks/cakebatter
 	name = "cake batter"
 	desc = "Cook it to get a cake."
@@ -84,8 +84,8 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/store/cake/plain
 	list_reagents = list(/datum/reagent/consumable/nutriment = 9)
 	w_class = WEIGHT_CLASS_NORMAL
-	tastes = list("batter" = 1)
 	foodtype = GRAIN | DAIRY
+	tastes = list("sugar" = 1, "eggs" = 1, "deliciousness" = 1)
 
 // Cake batter + rolling pin = pie dough
 /obj/item/reagent_containers/food/snacks/cakebatter/attackby(obj/item/I, mob/user, params)

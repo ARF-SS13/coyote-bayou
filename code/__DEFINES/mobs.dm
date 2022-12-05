@@ -592,3 +592,6 @@
 #define MOB_EMP_DAMAGE "mob_gets_hurt"
 /// Mob gets their combat setting scrambled
 #define MOB_EMP_SCRAMBLE "mob_gets_geckoed"
+
+/// cooldown for being spammed with projectile messages
+#define ATTACK_MESSAGE_ANTISPAM_TIME 0.5 SECONDS

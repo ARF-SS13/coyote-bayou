@@ -28,8 +28,10 @@
 	mood_change = 2
 	timeout = 5 MINUTES
 
+/*
 /datum/mood_event/pet_animal/add_effects(mob/animal)
 	description = span_nicegreen("\The [animal.name] is adorable! I can't stop petting [animal.p_them()]!")
+*/
 
 /datum/mood_event/honk
 	description = span_nicegreen("Maybe clowns aren't so bad after all. Honk!")

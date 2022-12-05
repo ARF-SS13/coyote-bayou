@@ -649,10 +649,10 @@
  * heavy DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_ANTS list(\
-		"melee" = 60, \
-		"bullet" = 50, \
-		"laser" = 10, \
-		"energy" = 10, \
+		"melee" = 30, \
+		"bullet" = 25, \
+		"laser" = 5, \
+		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
@@ -674,6 +674,7 @@
  * T1 - Heavy clothes like jackets and dusters
  * T2 - Hybrid environmental / armor things
  * T3 - Dedicated hazardous environmental suits
+ * T4 - Super duper protection
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_ENV_T1 list(\
 		"bio" = 1.5, \
@@ -688,10 +689,17 @@
 		"acid" = 2)
 
 #define ARMOR_MODIFIER_UP_ENV_T3 list(\
-		"bio" = 5, \
-		"rad" = 5, \
+		"bio" = 3, \
+		"rad" = 3, \
 		"fire" = 3, \
-		"acid" = 5)
+		"acid" = 3)
+
+/// total protection!!!
+#define ARMOR_MODIFIER_UP_ENV_T4 list(\
+		"bio" = 20, \
+		"rad" = 20, \
+		"fire" = 20, \
+		"acid" = 20)
 
 #define ARMOR_MODIFIER_DOWN_ENV_T1 list(\
 		"bio" = 0.5, \

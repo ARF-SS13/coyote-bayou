@@ -540,8 +540,7 @@
 	loot = list(
 				/obj/item/defibrillator/compact/combat/loaded,
 				/obj/item/reagent_containers/hypospray/combat,
-				/obj/item/clothing/glasses/hud/health/night,
-				///obj/item/disk/surgery/revival
+				/obj/item/disk/medical/defib_heal
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds  //no drugs, didn't add
@@ -833,7 +832,8 @@
 				/obj/item/gun/energy/laser/badlands,
 				/obj/item/gun/energy/laser/scatter/laserbuss,
 				/obj/item/gun/energy/laser/plasma/pistol/eve,
-				/obj/item/gun/energy/laser/wattz2ks
+				/obj/item/gun/energy/laser/wattz2ks,
+				/obj/item/gun/energy/laser/plasma/pistol/adam
 				)
 
 //Ballistic Weapon Spawners
@@ -1402,7 +1402,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	name = "combat rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/combat,
-				/obj/item/ammo_box/magazine/greasegun/
+				/obj/item/ammo_box/magazine/tommygunm45/stick
 				)
 
 /obj/effect/spawner/bundle/f13/rcw
@@ -2157,14 +2157,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/lootdrop/f13/traitbooks
 	name = "trait book spawner"
 	lootcount = 1
-	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
-				/obj/item/book/granter/trait/chemistry = 10,
-				/obj/item/book/granter/trait/trekking = 10,
-				/obj/item/book/granter/trait/techno = 10,
-				/obj/item/book/granter/trait/pa_wear = 1,
-				/obj/item/book/granter/trait/explosives = 10,
+	loot = list(/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/trait/explosives_advanced = 5,
-				/obj/item/book/granter/trait/rifleman = 5,
 				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
 				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
 				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
@@ -2173,10 +2167,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/lootdrop/f13/traitbooks/low
 	name = "low trait book spawner"
 	lootcount = 1
-	loot = list(/obj/item/book/granter/trait/lowsurgery = 5,
-				/obj/item/book/granter/trait/chemistry = 1,
-				/obj/item/book/granter/trait/techno = 10,
-				/obj/item/book/granter/crafting_recipe/scav_one = 10,
+	loot = list(/obj/item/book/granter/crafting_recipe/scav_one = 10,
 				/obj/item/book/granter/crafting_recipe/scav_two = 10,
 				/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/crafting_recipe/ODF = 10,
@@ -2195,7 +2186,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/advanced_crafting_components/assembly,
 		/obj/item/advanced_crafting_components/alloys,
 		/obj/item/gun_upgrade/scope/watchman,
-		/obj/item/gun_upgrade/trigger/dangerzone,
+		/obj/item/gun_upgrade/trigger/raidertrigger,
 		/obj/item/tool_upgrade/productivity/ergonomic_grip,
 		/obj/item/tool_upgrade/refinement/ported_barrel,
 		/obj/item/tool_upgrade/productivity/red_paint
@@ -2214,7 +2205,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/advanced_crafting_components/assembly = 2,
 		/obj/item/advanced_crafting_components/alloys = 2,
 		/obj/item/gun_upgrade/scope/watchman,
-		/obj/item/gun_upgrade/trigger/dangerzone,
+		/obj/item/gun_upgrade/trigger/raidertrigger,
 		/obj/item/tool_upgrade/productivity/ergonomic_grip,
 		/obj/item/tool_upgrade/refinement/ported_barrel,
 		/obj/item/tool_upgrade/productivity/red_paint
@@ -2324,7 +2315,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	lootdoubles = FALSE
 	loot = list(
 		/obj/item/gun_upgrade/scope/watchman,
-		/obj/item/gun_upgrade/trigger/dangerzone,
+		/obj/item/gun_upgrade/trigger/raidertrigger,
 		/obj/item/tool_upgrade/productivity/ergonomic_grip,
 		/obj/item/tool_upgrade/refinement/ported_barrel,
 		/obj/item/tool_upgrade/refinement/stabilized_grip,

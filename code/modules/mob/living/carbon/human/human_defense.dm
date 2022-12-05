@@ -86,7 +86,7 @@
 	..()
 
 
-/mob/living/carbon/human/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+/mob/living/carbon/human/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition)
 	if(!I || !user)
 		return 0
 
@@ -103,7 +103,7 @@
 	SSblackbox.record_feedback("tally", "zone_targeted", 1, target_area)
 
 	// the attacked_by code varies among species
-	return dna.species.spec_attacked_by(I, user, affecting, a_intent, src, attackchain_flags, damage_multiplier)
+	return dna.species.spec_attacked_by(I, user, affecting, a_intent, src, attackchain_flags, damage_multiplier, damage_addition)
 
 /mob/living/carbon/human/attack_hulk(mob/living/carbon/human/user, does_attack_animation = FALSE)
 	if(user.a_intent == INTENT_HARM)
@@ -592,6 +592,7 @@
 				var/status = ""
 				var/brutedamage = LB.brute_dam
 				var/burndamage = LB.burn_dam
+				var/bleeddamage = LB.bleed_dam
 				if(hallucination)
 					if(prob(30))
 						brutedamage += rand(30,40)
@@ -599,7 +600,7 @@
 						burndamage += rand(30,40)
 
 				if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-					status = "[brutedamage] brute damage and [burndamage] burn damage"
+					status = "[brutedamage] brute, [burndamage] burn, and [bleeddamage] bleed damage"
 					if(!brutedamage && !burndamage)
 						status = "no damage"
 
@@ -646,6 +647,11 @@
 						to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>")
 					else
 						to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
+
+				if(LB.current_gauze)
+					to_chat(src, "\t [span_notice("It is covered with [LB.current_gauze.name]\s.")] <a href='?src=[REF(src)];remove_covering=[TRUE];bandage=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>")
+				if(LB.current_suture)
+					to_chat(src, "\t [span_notice("It is stitched with [LB.current_suture.name]\s.")] <a href='?src=[REF(src)];remove_covering=[TRUE];suture=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>")
 
 			for(var/t in missing)
 				to_send += span_boldannounce("Your [parse_zone(t)] is missing!")
@@ -776,68 +782,119 @@
 		missing -= LB.body_zone
 		if(LB.is_pseudopart) //don't show injury text for fake bodyparts; ie chainsaw arms or synthetic armblades
 			continue
-		var/self_aware = FALSE
-		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-			self_aware = TRUE
 		var/limb_max_damage = LB.max_damage
-		var/status = ""
 		var/brutedamage = LB.brute_dam
 		var/burndamage = LB.burn_dam
+		var/bleeddamage = LB.bleed_dam
 		if(hallucination)
 			if(prob(30))
 				brutedamage += rand(30,40)
 			if(prob(30))
 				burndamage += rand(30,40)
 
-		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-			status = "[brutedamage] brute damage and [burndamage] burn damage"
-			if(!brutedamage && !burndamage)
-				status = "no damage"
+		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))// If whoever's beeing looked at has self-aware, you can see it too 
+			var/sa_msg = span_notice("[src]'s [LB.name]: ")
+			if(brutedamage || burndamage || bleeddamage)
+				sa_msg += "<font color='red'>BRUTE: [brutedamage]</font>, \
+						<font color='orange'>BURN: [burndamage]</font>, \
+						<font color='red'>BLEED: [bleeddamage]</font>"
+			else
+				sa_msg += span_green("Unharmed.")
+			if(LB.is_disabled())
+				sa_msg += span_alert(" \[DISABLED!\].")
+			to_chat(src, sa_msg)
 
 		else
-			if(brutedamage > 0)
-				status = LB.light_brute_msg
-			if(brutedamage > (limb_max_damage*0.4))
-				status = LB.medium_brute_msg
-			if(brutedamage > (limb_max_damage*0.8))
-				status = LB.heavy_brute_msg
-			if(brutedamage > 0 && burndamage > 0)
-				status += " and "
-
-			if(burndamage > (limb_max_damage*0.8))
-				status += LB.heavy_burn_msg
-			else if(burndamage > (limb_max_damage*0.2))
-				status += LB.medium_burn_msg
-			else if(burndamage > 0)
-				status += LB.light_burn_msg
-
-			if(status == "")
-				status = "OK"
-		var/no_damage
-		if(status == "OK" || status == "no damage")
-			no_damage = TRUE
-		var/isdisabled = " "
-		if(LB.is_disabled())
-			isdisabled = " is disabled "
-			if(no_damage)
-				isdisabled += " but otherwise "
+			var/msg = span_notice("[src]'s [LB.name] is ")
+			var/list/damage_words = list()
+			if(brutedamage || burndamage || bleeddamage)
+				switch(brutedamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_brute_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_brute_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_brute_msg
+				switch(burndamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_burn_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_burn_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_burn_msg
+				switch(bleeddamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_bleed_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_bleed_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_bleed_msg
+				msg += span_alert(english_list(damage_words))
 			else
-				isdisabled += " and "
-		to_chat(src, "\t <span class='[no_damage ? "notice" : "warning"]'>Your [LB.name][isdisabled][self_aware ? " has " : " is "][status].</span>")
+				msg += span_green("intact")
+			if(LB.is_disabled())
+				msg += ", and is also [span_alert("disabled")]"
+			msg += "."
+			to_chat(src, msg)
 
 		for(var/thing in LB.wounds)
 			var/datum/wound/W = thing
-			var/msg
 			switch(W.severity)
 				if(WOUND_SEVERITY_TRIVIAL)
-					msg = "\t <span class='danger'>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)].</span>"
+					to_chat(src, "\t <span class='danger'>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)].</span>")
 				if(WOUND_SEVERITY_MODERATE)
-					msg = "\t <span class='warning'>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</span>"
+					to_chat(src, "\t <span class='warning'>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</span>")
 				if(WOUND_SEVERITY_SEVERE)
-					msg = "\t <span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</b></span>"
+					to_chat(src, "\t <span class='warning'><b>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</b></span>")
 				if(WOUND_SEVERITY_CRITICAL)
-					msg = "\t <span class='warning'><b>Your [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!!</b></span>"
-			to_chat(src, msg)
+					to_chat(src, "\t <span class='warning'><b>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!!</b></span>")
+
+		var/has_bleed_wounds = LB.has_bleed_wounds()
+		if(LB.current_gauze)
+			var/message_bandage = ""
+			message_bandage += "It is coated with "
+			var/bandaid_max_time = initial(LB.current_gauze.covering_lifespan)
+			var/bandaid_time = LB.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
+			// how much life we have left in these bandages
+			switch(bandaid_time)
+				if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
+					message_bandage += "fresh "
+				if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
+					message_bandage += "slightly worn "
+				if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
+					message_bandage += "badly worn "
+				if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
+					message_bandage += "nearly ruined "
+			message_bandage += "[LB.current_gauze.name]"
+			if(has_bleed_wounds)
+				message_bandage += span_warning(" covering a bleeding wound! ")
+			else
+				message_bandage += "! "
+			message_bandage += "<a href='?src=[REF(src)];remove_covering=[TRUE];bandage=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>"
+			to_chat(src, "\t[span_notice(message_bandage)]")
+
+		if(LB.current_suture)
+			var/message_suture
+			message_suture += "It is stitched up with "
+			var/bandaid_max_time = initial(LB.current_suture.covering_lifespan)
+			var/bandaid_time = LB.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
+			// how much life we have left in these bandages
+			switch(bandaid_time)
+				if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
+					message_suture += "sturdy "
+				if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
+					message_suture += "slightly frayed "
+				if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
+					message_suture += "badly frayed "
+				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
+					message_suture += "nearly popped "
+			message_suture += "[LB.current_suture.name]"
+			if(has_bleed_wounds)
+				message_suture += span_warning(" closing a bleeding wound! ")
+			else
+				message_suture += "! "
+			message_suture += "<a href='?src=[REF(src)];remove_covering=[TRUE];suture=[TRUE];limb=[REF(LB)]g' class='notice'>(Remove?)</a>"
+			to_chat(src, "\t[span_notice(message_suture)]")
 
 		for(var/obj/item/I in LB.embedded_objects)
 			if(I.isEmbedHarmless())
@@ -845,6 +902,129 @@
 			else
 				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
 
+/mob/living/carbon/human/examine_more(mob/user)
+	. = ..()
+
+	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/LB = X
+		missing -= LB.body_zone
+		if(LB.is_pseudopart) //don't show injury text for fake bodyparts; ie chainsaw arms or synthetic armblades
+			continue
+		var/limb_max_damage = LB.max_damage
+		var/brutedamage = LB.brute_dam
+		var/burndamage = LB.burn_dam
+		var/bleeddamage = LB.bleed_dam
+		if(hallucination)
+			if(prob(30))
+				brutedamage += rand(30,40)
+			if(prob(30))
+				burndamage += rand(30,40)
+
+		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))// If whoever's beeing looked at has self-aware, you can see it too 
+			var/sa_msg = span_notice("[src]'s [LB.name]: ")
+			if(brutedamage || burndamage || bleeddamage)
+				sa_msg += "<font color='red'>BRUTE: [brutedamage]</font>, \
+						<font color='orange'>BURN: [burndamage]</font>, \
+						<font color='red'>BLEED: [bleeddamage]</font>"
+			else
+				sa_msg += span_green("Unharmed.")
+			if(LB.is_disabled())
+				sa_msg += span_alert(" \[DISABLED!\].")
+			. += sa_msg
+
+		else
+			var/msg = "[src]'s [LB.name] is "
+			var/list/damage_words = list()
+			if(brutedamage || burndamage || bleeddamage)
+				switch(brutedamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_brute_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_brute_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_brute_msg
+				switch(burndamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_burn_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_burn_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_burn_msg
+				switch(bleeddamage)
+					if(1 to (limb_max_damage*0.4))
+						damage_words += LB.light_bleed_msg
+					if((limb_max_damage*0.4) to (limb_max_damage*0.8))
+						damage_words += LB.medium_bleed_msg
+					if((limb_max_damage*0.8) to INFINITY)
+						damage_words += LB.heavy_bleed_msg
+				msg += english_list(damage_words)
+			else
+				msg += "intact"
+			if(LB.is_disabled())
+				msg += ", and is also disabled"
+			msg += "."
+			. += span_notice(msg)
+
+		for(var/thing in LB.wounds)
+			var/datum/wound/W = thing
+			switch(W.severity)
+				if(WOUND_SEVERITY_TRIVIAL)
+					. += "\t <span class='danger'>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)].</span>"
+				if(WOUND_SEVERITY_MODERATE)
+					. += "\t <span class='warning'>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</span>"
+				if(WOUND_SEVERITY_SEVERE)
+					. += "\t <span class='warning'><b>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!</b></span>"
+				if(WOUND_SEVERITY_CRITICAL)
+					. += "\t <span class='warning'><b>[p_their(TRUE)] [LB.name] is suffering [W.a_or_from] [lowertext(W.name)]!!</b></span>"
+
+		var/has_bleed_wounds = LB.has_bleed_wounds()
+		if(LB.current_gauze)
+			var/message_bandage = ""
+			message_bandage += "It is coated with "
+			var/bandaid_max_time = initial(LB.current_gauze.covering_lifespan)
+			var/bandaid_time = LB.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
+			// how much life we have left in these bandages
+			switch(bandaid_time)
+				if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
+					message_bandage += "fresh "
+				if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
+					message_bandage += "slightly worn "
+				if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
+					message_bandage += "badly worn "
+				if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
+					message_bandage += "nearly ruined "
+			message_bandage += "[LB.current_gauze.name]"
+			if(has_bleed_wounds)
+				message_bandage += span_warning(" covering a bleeding wound! ")
+			else
+				message_bandage += "! "
+			message_bandage += "<a href='?src=[REF(src)];remove_covering=[TRUE];bandage=[TRUE];limb=[REF(LB)];other_doer=[REF(user)]' class='notice'>(Remove?)</a>"
+			. += "\t[span_notice(message_bandage)]"
+
+		if(LB.current_suture)
+			var/message_suture
+			message_suture += "It is stitched up with "
+			var/bandaid_max_time = initial(LB.current_suture.covering_lifespan)
+			var/bandaid_time = LB.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
+			// how much life we have left in these bandages
+			switch(bandaid_time)
+				if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
+					message_suture += "sturdy "
+				if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
+					message_suture += "slightly frayed "
+				if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
+					message_suture += "badly frayed "
+				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
+					message_suture += "nearly popped "
+			message_suture += "[LB.current_suture.name]"
+			if(has_bleed_wounds)
+				message_suture += span_warning(" closing a bleeding wound! ")
+			else
+				message_suture += "! "
+			message_suture += "<a href='?src=[REF(src)];remove_covering=[TRUE];suture=[TRUE];limb=[REF(LB)];other_doer=[REF(user)]' class='notice'>(Remove?)</a>"
+			. += "\t[span_notice(message_suture)]"
 
 /mob/living/carbon/human/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)
 	if(damage_type != BRUTE && damage_type != BURN)

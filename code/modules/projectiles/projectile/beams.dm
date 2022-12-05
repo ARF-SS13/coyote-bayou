@@ -112,11 +112,11 @@
 /obj/item/projectile/beam/gamma
 	name = "gamma beam"
 	icon_state = "xray"
-	damage = 5
+	damage = 15 //makes it more useful against mobs
 	flag = "energy"
 	armour_penetration = 1 //it only does 5 damage.
-	damage_type = "toxin"
-	irradiate = 200
+	damage_type = "burn"
+	irradiate = 100 //incase friendly fire
 	range = 15
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE | PASSCLOSEDTURF
 
@@ -471,7 +471,7 @@
 
 /obj/item/projectile/beam/laser/pistol/badlands //Badland's Special
 	name = "badland's special beam"
-	damage = 15
+	damage = 25
 	armour_penetration = 0.3
 	icon_state = "bluelaser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -484,6 +484,30 @@
 	tracer_type = /obj/effect/projectile/tracer/laser/badlands
 	muzzle_type = /obj/effect/projectile/muzzle/laser/badlands
 	impact_type = /obj/effect/projectile/impact/laser/badlands
+
+/obj/item/projectile/beam/laser/pistol/badlands/worn //Worn Badland's Special
+	name = "badland's special beam"
+	damage = 20
+	armour_penetration = 0.3
+	icon_state = "bluelaser"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+
+/obj/item/projectile/beam/laser/pistol/badlands/worn/hitscan
+	name = "badland's special beam"
+	damage = 24
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser/badlands
+	muzzle_type = /obj/effect/projectile/muzzle/laser/badlands
+	impact_type = /obj/effect/projectile/impact/laser/badlands
+
+/obj/item/projectile/beam/laser/pistol/freeblade //Freeblade Blaster
+	name = "freeblade beam"
+	damage = 15
+	armour_penetration = 0.6
+	icon_state = "freeblade"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	light_color = LIGHT_COLOR_RED
 
 /obj/item/projectile/beam/laser/tribeam //Tribeam laser, fires 3 shots, will melt you
 	name = "tribeam laser"
@@ -575,6 +599,13 @@
 	damage = 35
 	wound_bonus = 65 //being hit with plasma is horrific
 	light_color = LIGHT_COLOR_PINK
+
+/obj/item/projectile/f13plasma/pistol/adam //Adam
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	icon_state = "adam"
+	damage = 55
+	wound_bonus = 35 //Adam is stronger, but not in the wounding department.
+	light_color = LIGHT_COLOR_RED
 
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 30

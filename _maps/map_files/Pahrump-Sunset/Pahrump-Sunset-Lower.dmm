@@ -1106,9 +1106,12 @@
 /turf/open/floor/wood_wide,
 /area/f13/building/sewers)
 "aWr" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/junker,
-/turf/open/indestructible/ground/inside/subway,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkrusty"
+	},
 /area/f13/building/sewers)
 "aWU" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1425,7 +1428,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -1507,11 +1509,10 @@
 /area/f13/building/hospital)
 "bon" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
+	dir = 8;
+	light_color = "#f4e3b0"
 	},
-/turf/open/floor/f13{
-	icon_state = "yellowrustychess"
-	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "boq" = (
 /obj/structure/window/reinforced{
@@ -5196,9 +5197,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/machinery/button/door{
-	id = "factorybasement";
+	id = "factbasementcontrol";
 	name = "shutters button";
-	pixel_x = 28
+	pixel_x = 28;
+	max_integrity = 1000;
+	obj_integrity = 1000
 	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -5217,9 +5220,7 @@
 	},
 /area/f13/building/massfusion)
 "bRE" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/raiderloot,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/machinery/door/unpowered/secure_legion,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "bRH" = (
@@ -5477,12 +5478,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bWq" = (
-/mob/living/simple_animal/hostile/ghoul/legendary{
-	armour_penetration = 0.5;
-	health = 300;
-	maxHealth = 300;
-	melee_damage_lower = 30
-	},
 /turf/open/water,
 /area/f13/radiation)
 "bWr" = (
@@ -6571,10 +6566,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"cqO" = (
-/mob/living/simple_animal/hostile/ghoul/reaver,
-/turf/open/water,
-/area/f13/radiation)
 "crj" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -7394,8 +7385,10 @@
 "daN" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	name = "shutters"
+	id = "factbasementcontrol";
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -8252,8 +8245,10 @@
 "dOG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	name = "shutters"
+	id = "factorybasementboss";
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -8292,7 +8287,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/am_containment/loot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/hospital)
 "dQn" = (
@@ -8323,8 +8317,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dRV" = (
-/obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "bargaindealsmarket";
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -8919,7 +8916,9 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/mob/living/simple_animal/hostile/ghoul/glowing/strong{
+	maxHealth = 225
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -8970,7 +8969,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9396,8 +9395,10 @@
 /area/f13/building/museum)
 "eJI" = (
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	name = "shutters"
+	id = "factorybasementboss";
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -11195,7 +11196,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "gqY" = (
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -11330,6 +11331,15 @@
 "gxz" = (
 /obj/item/stack/sheet/mineral/uranium,
 /obj/effect/decal/cleanable/greenglow,
+/mob/living/simple_animal/hostile/abomination{
+	melee_damage_lower = 15;
+	name = "big bob";
+	desc = "Bob does what bob does best.";
+	armour_penetration = 0.05;
+	health = 1250;
+	maxHealth = 1250;
+	melee_damage_upper = 60
+	},
 /turf/open/water,
 /area/f13/radiation)
 "gxF" = (
@@ -13978,8 +13988,9 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/structure/simple_door/metal/dirtystore{
-	name = "Bottom-Feeder Open Emporium"
+/obj/machinery/door/poddoor/shutters{
+	id = "bargaindealsmarket";
+	name = "Bottom-Feeder Offices"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
@@ -14784,8 +14795,10 @@
 	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	name = "shutters"
+	id = "factbasementcontrol";
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -15203,11 +15216,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"jIK" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/wood_fancy,
-/area/f13/tunnel)
 "jJj" = (
 /obj/structure/handrail/g_central{
 	dir = 1;
@@ -16386,7 +16394,9 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -16409,15 +16419,6 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/ash,
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
-"kHv" = (
-/obj/machinery/rnd/production/techfab/department/science,
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor4-old"
-	},
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
 /area/f13/caves)
 "kIe" = (
 /turf/open/floor/plasteel/f13{
@@ -17490,7 +17491,9 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/machinery/vending/matvend,
+/obj/item/am_containment/loot,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/deadantloot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/hospital)
 "lAI" = (
@@ -20137,7 +20140,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "nGt" = (
-/obj/structure/filingcabinet,
+/obj/structure/rack/shelf_metal,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "nGS" = (
@@ -20187,11 +20191,12 @@
 	},
 /area/f13/building/sewers)
 "nJn" = (
-/obj/machinery/computer/rdconsole/experiment{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "floor4-old"
+	},
+/obj/item/paper{
+	info = "There was a console here, now it's gone.";
+	name = "Old Reference"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -20241,6 +20246,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/spawner/lootdrop/f13/deadantloot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/hospital)
 "nLr" = (
@@ -21049,6 +21055,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/locked_box/misc/money/all/high,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "ovs" = (
@@ -21253,12 +21261,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"oEP" = (
-/obj/structure/window/fulltile/store,
-/obj/structure/barricade/wooden/planks,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "oFe" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib3-old"
@@ -21679,11 +21681,14 @@
 	},
 /area/f13/building/massfusion)
 "oWf" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "supermutantvaultext"
+/obj/effect/spawner/lootdrop/trash,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/floor/plasteel/dark,
-/area/f13/tunnel)
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/sewers)
 "oWm" = (
 /obj/machinery/defibrillator_mount,
 /turf/closed/wall/r_wall/rust,
@@ -22909,11 +22914,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "pMC" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
 /obj/machinery/computer/cargo{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
@@ -23383,10 +23385,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
-"qfr" = (
-/obj/structure/filingcabinet/chestdrawer,
-/turf/open/floor/wood_fancy,
-/area/f13/tunnel)
 "qfG" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -24017,8 +24015,9 @@
 	},
 /area/f13/caves)
 "qDv" = (
-/obj/structure/simple_door/metal/dirtystore{
-	name = "Bottom-Feeder Open Emporium"
+/obj/machinery/door/poddoor/shutters{
+	id = "bargaindealsmarket";
+	name = "Bottom-Feeder Offices"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
@@ -24340,6 +24339,7 @@
 /obj/item/stock_parts/chem_cartridge/simple,
 /obj/item/stock_parts/chem_cartridge/simple,
 /obj/item/stock_parts/chem_cartridge/simple,
+/obj/item/vending_refill/boozeomat,
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "qQF" = (
@@ -24513,9 +24513,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "qWI" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/structure/table/wood/junk,
+/obj/machinery/porta_turret/f13/turret_22lr/burstfire/raider{
+	name = "Bottom-Feeder Market Turret"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
@@ -24546,8 +24546,8 @@
 	},
 /area/f13/caves)
 "qZn" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/money/all/high,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "qZv" = (
@@ -26750,10 +26750,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
-"sXe" = (
-/obj/structure/chair/stool/retro/black,
-/turf/open/floor/wood_fancy,
-/area/f13/tunnel)
 "sXf" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -27321,6 +27317,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	pixel_y = 20;
+	id = "factorybasementboss";
+	max_integrity = 10000;
+	obj_integrity = 10000
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -27810,10 +27812,8 @@
 	},
 /area/f13/caves)
 "tUp" = (
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/f13{
-	icon_state = "yellowrustychess"
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "tUX" = (
 /obj/structure/window/reinforced/spawner,
@@ -27927,7 +27927,9 @@
 	},
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -28475,6 +28477,12 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
+/obj/machinery/button/door{
+	pixel_y = 20;
+	id = "factorybasement";
+	max_integrity = 1000;
+	obj_integrity = 1000
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -28849,8 +28857,10 @@
 	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	name = "shutters"
+	id = "factbasementcontrol";
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -29254,7 +29264,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/obj/item/locked_box/weapon/melee/tier3_5,
+/obj/item/locked_box/armor/tier5,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -32404,7 +32414,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -32688,7 +32697,9 @@
 "xZu" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -41659,7 +41670,7 @@ uUw
 dwU
 vaB
 vaB
-pMC
+vaB
 vaB
 vaB
 mOi
@@ -41686,7 +41697,7 @@ uuv
 abB
 ejQ
 uhZ
-kHv
+gQb
 bOn
 aaa
 aae
@@ -42686,7 +42697,7 @@ aak
 bPe
 lxr
 bLL
-bLL
+pMC
 mNK
 bLL
 ngl
@@ -57191,7 +57202,7 @@ cod
 bHa
 bHH
 bHa
-oWf
+ucf
 sJw
 sJw
 kkn
@@ -74589,7 +74600,7 @@ tMl
 cEg
 qtA
 ydM
-dzm
+bsC
 ptq
 oXH
 pOs
@@ -74597,7 +74608,7 @@ xbU
 hTI
 eFN
 hro
-tYU
+aWr
 tYU
 kPo
 bCt
@@ -74845,17 +74856,17 @@ dzm
 dzm
 dzm
 jgQ
-dzm
-dzm
-dzm
-dzm
+bsC
+bsC
+bCt
+bCt
 bEZ
 pHT
 bEZ
 eFN
 tYU
-gwu
-tYU
+oWf
+aWr
 dRV
 cBO
 rpA
@@ -75102,15 +75113,15 @@ cTO
 dzm
 dsA
 dsA
-dzm
-rgP
+bCt
 nGt
-dzm
+nGt
+bCt
 tJv
 kyV
 oXH
 dVL
-tYU
+aWr
 gwu
 tYU
 rVe
@@ -75359,10 +75370,10 @@ rgP
 dzm
 wFa
 dsA
-jgQ
+bRE
 rcp
-qfr
-dzm
+cTO
+bCt
 kyV
 khp
 kyV
@@ -75616,17 +75627,17 @@ cTO
 jgQ
 lbb
 dsA
-dzm
+bCt
+nGt
 cTO
-jIK
-dzm
+bCt
 ykz
 pOs
 kyV
 dVL
-tYU
+aWr
 gwu
-tYU
+aWr
 nuL
 cBO
 rpA
@@ -75873,10 +75884,10 @@ rgP
 dzm
 lbb
 crn
-dzm
-sXe
-bRE
-dzm
+bCt
+cTO
+cTO
+bCt
 njF
 pOs
 ptq
@@ -76130,10 +76141,10 @@ cTO
 dzm
 jrO
 lbb
-dzm
+bCt
 ovm
 qZn
-dzm
+bCt
 xbU
 aXY
 kyV
@@ -76387,10 +76398,10 @@ dzm
 dzm
 wkr
 lbb
-dzm
-dzm
-dzm
-dzm
+bCt
+bCt
+bCt
+bCt
 kyV
 kyV
 qUF
@@ -77418,14 +77429,14 @@ blM
 blM
 blM
 qSc
-dua
-dua
+kyV
+kyV
 bon
-dua
-dua
-qWI
+kyV
+kyV
+kyV
 xjW
-myJ
+kyV
 blM
 bsC
 aah
@@ -77675,10 +77686,10 @@ bDG
 dua
 xvp
 kyV
-aWr
-dua
-ckq
-tUp
+pOs
+wlO
+pOs
+ijd
 kyV
 kyV
 gBF
@@ -77936,7 +77947,7 @@ kyV
 kyV
 pOs
 kyV
-tJv
+kyV
 pOs
 kyV
 aGK
@@ -78966,8 +78977,8 @@ oFf
 xRa
 lkf
 eRS
-lWI
-kyV
+qWI
+tUp
 bsC
 aah
 agZ
@@ -81424,7 +81435,7 @@ whm
 iqw
 dAT
 sGc
-oEP
+dEX
 gYI
 gYI
 dEX
@@ -81938,7 +81949,7 @@ whm
 lkl
 sGc
 awR
-oEP
+dEX
 kDe
 gYI
 dEX
@@ -86496,7 +86507,7 @@ pua
 biU
 eCq
 dWL
-cqO
+bWq
 pua
 aae
 aak

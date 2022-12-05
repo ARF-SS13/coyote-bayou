@@ -148,7 +148,7 @@
 		ip = "0.0.0.0"
 	var/datum/db_query/query_add_ban = SSdbcore.NewQuery(
 		"INSERT INTO [format_table_name("ban")] (`bantime`,`server_ip`,`server_port`,`round_id`,`bantype`,`reason`,`job`,`duration`,`expiration_time`,`ckey`,`computerid`,`ip`,`a_ckey`,`a_computerid`,`a_ip`,`who`,`adminwho`) VALUES (Now(), INET_ATON(:internet_address), :port, :round_id, :bantype, :reason, :job, IFNULL(:duration, \"0\"), Now() + INTERVAL IF(:duration > 0, :duration, 0) MINUTE, :ckey, :computerid, INET_ATON(:ip), :a_ckey, :a_computerid, INET_ATON(:a_ip), :who, :adminwho)",
-		list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "bantype" = bantype_str, "reason" = reason, "job" = job, "duration" = duration, "ckey" = ckey, "computerid" = computerid, "ip" = ip, "a_ckey" = a_ckey, "a_computerid" = a_computerid, "a_ip" = a_ip, "who" = who, "adminwho" = adminwho)
+		list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "bantype" = bantype_str, "reason" = sanitizeSQL(reason), "job" = job, "duration" = duration, "ckey" = ckey, "computerid" = computerid, "ip" = ip, "a_ckey" = a_ckey, "a_computerid" = a_computerid, "a_ip" = a_ip, "who" = who, "adminwho" = adminwho)
 	)
 	if(!query_add_ban.warn_execute())
 		qdel(query_add_ban)
@@ -269,7 +269,7 @@
 	if(query_edit_ban_get_details.NextRow())
 		p_key = query_edit_ban_get_details.item[1]
 		duration = query_edit_ban_get_details.item[2]
-		reason = query_edit_ban_get_details.item[3]
+		reason = unsanitizeSQL(query_edit_ban_get_details.item[3])
 	else
 		to_chat(usr, "Invalid ban id. Contact the database admin")
 		qdel(query_edit_ban_get_details)
@@ -287,8 +287,8 @@
 					return
 
 			var/datum/db_query/query_edit_ban_reason = SSdbcore.NewQuery(
-				"UPDATE [format_table_name("ban")] SET reason = :reason, edits = CONCAT(edits,'- [e_key] changed ban reason from <cite><b>\\\"[reason]\\\"</b></cite> to <cite><b>\\\"[value]\\\"</b></cite><BR>') WHERE id = [banid]",
-				list("reason" = value)
+				"UPDATE [format_table_name("ban")] SET reason = :reason, edits = CONCAT(edits,'- [e_key] changed ban reason from <cite><b>\\\"[sanitizeSQL(reason)]\\\"</b></cite> to <cite><b>\\\"[sanitizeSQL(value)]\\\"</b></cite><BR>') WHERE id = [banid]",
+				list("reason" = sanitizeSQL(value))
 			)
 			if(!query_edit_ban_reason.warn_execute())
 				qdel(query_edit_ban_reason)
@@ -535,7 +535,7 @@
 			var/banid = query_search_bans.item[1]
 			var/bantime = query_search_bans.item[2]
 			var/bantype  = query_search_bans.item[3]
-			var/reason = query_search_bans.item[4]
+			var/reason = unsanitizeSQL(query_search_bans.item[4])
 			var/job = query_search_bans.item[5]
 			var/duration = query_search_bans.item[6]
 			var/expiration = query_search_bans.item[7]
@@ -544,7 +544,7 @@
 			var/unbanned = query_search_bans.item[10]
 			var/unban_key = query_search_bans.item[11]
 			var/unbantime = query_search_bans.item[12]
-			var/edits = query_search_bans.item[13]
+			var/edits = unsanitizeSQL(query_search_bans.item[13])
 			var/round_id = query_search_bans.item[14]
 
 			var/lcolor = blcolor

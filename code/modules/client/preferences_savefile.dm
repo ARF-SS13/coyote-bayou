@@ -222,6 +222,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["default_slot"]		>> default_slot
 	S["chat_toggles"]		>> chat_toggles
+	S["cb_toggles"]			>> cb_toggles
 	S["toggles"]			>> toggles
 	S["ghost_form"]			>> ghost_form
 	S["ghost_orbit"]		>> ghost_orbit
@@ -288,6 +289,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	windowflashing		= sanitize_integer(windowflashing, 0, 1, initial(windowflashing))
 	default_slot	= sanitize_integer(default_slot, 1, max_save_slots, initial(default_slot))
 	toggles			= sanitize_integer(toggles, 0, 16777215, initial(toggles))
+	cb_toggles			= sanitize_integer(cb_toggles, 0, 16777215, initial(cb_toggles))
 	clientfps		= sanitize_integer(clientfps, 0, 1000, 0)
 	parallax		= sanitize_integer(parallax, PARALLAX_INSANE, PARALLAX_DISABLE, null)
 	ambientocclusion	= sanitize_integer(ambientocclusion, 0, 1, initial(ambientocclusion))
@@ -385,6 +387,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["be_special"], be_special)
 	WRITE_FILE(S["default_slot"], default_slot)
 	WRITE_FILE(S["toggles"], toggles)
+	WRITE_FILE(S["cb_toggles"], cb_toggles)
 	WRITE_FILE(S["chat_toggles"], chat_toggles)
 	WRITE_FILE(S["ghost_form"], ghost_form)
 	WRITE_FILE(S["ghost_orbit"], ghost_orbit)
@@ -724,6 +727,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
+	// !! COYOTE SAVE FILE STUFF !!
+	S["profilePicture"] >> profilePicture // Profile picklies
+
+	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
+	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
+	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"] // Typing sounds!
+	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
+
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
@@ -885,6 +896,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	scars_list["3"] = sanitize_text(scars_list["3"])
 	scars_list["4"] = sanitize_text(scars_list["4"])
 	scars_list["5"] = sanitize_text(scars_list["5"])
+
+	// !! COYOTE SANITISATION !!
+	profilePicture = sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+
+	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
+	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
+
+	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds, "Default")
+	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
+
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -1081,6 +1102,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		S["loadout"] << safe_json_encode(list())
 
 	WRITE_FILE(S["matchmaking_prefs"], matchmaking_prefs)
+
+	// !! COYOTE SAVEFILE STUFF !!
+	WRITE_FILE(S["profilePicture"],	profilePicture)
+
+	WRITE_FILE(S["gradient_color"]			, features_override["grad_color"])
+	WRITE_FILE(S["gradient_style"]			, features_override["grad_style"])
+
+	WRITE_FILE(S["typing_indicator_sound"]				, features_speech["typing_indicator_sound"])
+	WRITE_FILE(S["typing_indicator_sound_play"]			, features_speech["typing_indicator_sound_play"])
+
 
 	cit_character_pref_save(S)
 

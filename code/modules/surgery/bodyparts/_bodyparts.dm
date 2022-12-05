@@ -17,7 +17,7 @@
 	var/mob/living/carbon/owner = null
 	var/mob/living/carbon/original_owner = null
 	var/status = BODYPART_ORGANIC
-	var/needs_processing = FALSE
+	var/needs_processing = TRUE
 
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	var/list/aux_icons // associative list, currently used for hands
@@ -76,9 +76,13 @@
 	var/medium_brute_msg = "battered"
 	var/heavy_brute_msg = "mangled"
 
-	var/light_burn_msg = "numb"
-	var/medium_burn_msg = "blistered"
-	var/heavy_burn_msg = "peeling away"
+	var/light_burn_msg = "singed"
+	var/medium_burn_msg = "burnt"
+	var/heavy_burn_msg = "charred"
+
+	var/light_bleed_msg = "roughed up"
+	var/medium_bleed_msg = "cut up"
+	var/heavy_bleed_msg = "shredded"
 
 	var/render_like_organic = FALSE // forces limb to render as if it were an organic limb
 
@@ -168,6 +172,8 @@
 	if(status != BODYPART_ROBOTIC)
 		playsound(T, 'sound/misc/splort.ogg', 50, 1, -1)
 	if(current_gauze)
+		QDEL_NULL(current_gauze)
+	if(current_suture)
 		QDEL_NULL(current_gauze)
 	for(var/obj/item/organ/drop_organ in get_organs())
 		drop_organ.transfer_to_limb(src, owner)
@@ -992,18 +998,41 @@
  * destroy_coverings() destroys coverings, not much else to say
  *
  */
-/obj/item/bodypart/proc/destroy_coverings()
-	if(current_gauze)
-		owner.visible_message(
-			span_notice("\The [current_gauze] on [owner]'s [name] fall away, no longer needed."),
-			span_notice("\The [current_gauze] on your [name] fall away, no longer needed."))
+/obj/item/bodypart/proc/destroy_coverings(which_covering, intentionally_removed, by_who)
+	if(!which_covering)
+		which_covering = "both"
+	if(current_gauze && (which_covering == "bandage" || which_covering == "both"))
+		if(intentionally_removed)
+			if(by_who && by_who == owner)
+				owner.visible_message(
+					span_notice("[by_who] removes the [current_gauze.name] on [owner]'s [name]."),
+					span_notice("You remove the [current_gauze.name] on [owner]'s [name]."))
+			else
+				owner.visible_message(
+					span_notice("[owner] removes the [current_gauze.name] on [owner.p_their()] [name]."),
+					span_notice("You remove the [current_gauze.name] on your [name]."))
+		else
+			owner.visible_message(
+				span_notice("\The [current_gauze] on [owner]'s [name] fall away, no longer needed."),
+				span_notice("\The [current_gauze] on your [name] fall away, no longer needed."))
 		QDEL_NULL(current_gauze)
-	if(current_suture)
-		owner.visible_message(
-			span_notice("\The [current_suture] on [owner]'s [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."),
-			span_notice("\The [current_suture] on your [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."))
+		. = TRUE
+	if(current_suture && (which_covering == "suture" || which_covering == "both"))
+		if(intentionally_removed)
+			if(by_who && by_who == owner)
+				owner.visible_message(
+					span_notice("[by_who] removes the [current_suture.name] on [owner]'s [name]."),
+					span_notice("You remove the [current_suture.name] on [owner]'s [name]."))
+			else
+				owner.visible_message(
+					span_notice("[owner] pops the [current_suture.name] on [owner.p_their()] [name]."),
+					span_notice("You pop the [current_suture.name] on your [name]."))
+		else
+			owner.visible_message(
+				span_notice("\The [current_suture] on [owner]'s [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."),
+				span_notice("\The [current_suture] on your [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."))
 		QDEL_NULL(current_suture)
-	needs_processing = FALSE
+		. = TRUE
 
 /obj/item/bodypart/proc/get_bleed_rate(include_reductions = TRUE)
 	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
@@ -1095,8 +1124,6 @@
 		span_warning("\The [current_gauze] on your [name] become totally soaked, and fall off in a bloody heap."),
 		vision_distance=COMBAT_MESSAGE_RANGE)
 	QDEL_NULL(current_gauze)
-	if(!current_suture)
-		needs_processing = FALSE
 	return BANDAGE_TIMED_OUT
 
 /**
@@ -1233,8 +1260,6 @@
 		span_danger("\The [current_suture] on your [name] fray to the point of breaking!"),
 		vision_distance=COMBAT_MESSAGE_RANGE)
 	QDEL_NULL(current_suture)
-	if(!current_gauze)
-		needs_processing = FALSE
 	return SUTURE_TIMED_OUT
 
 /**

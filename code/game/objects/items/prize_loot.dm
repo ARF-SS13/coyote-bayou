@@ -94,7 +94,7 @@
 /obj/item/locked_box/proc/initialize_prizes()
 	if(!global_loot_lists.len)
 		return // Stop proceeding if we have no prizes.
-	
+
 	potential_prizes = list() //we are setting them to an empty list so you can't double the amount of stuff
 	prizes = list()
 	for(var/i in global_loot_lists) //go back up to understand why we populate potential_prizes
@@ -400,7 +400,7 @@
 
 /obj/item/locked_box/weapon/range/tier3_5
 	lock_tier = 4
-	prize_amount = 3
+	prize_amount = 1
 
 /obj/item/locked_box/weapon/range/tier3_5/initialize_prizes()
 	global_loot_lists = list(GLOB.loot_t3_range, GLOB.loot_t4_range, GLOB.loot_t5_range)

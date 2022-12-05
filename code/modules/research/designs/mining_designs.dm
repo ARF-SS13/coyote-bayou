@@ -82,13 +82,13 @@
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
-/datum/design/jackhammer
-	name = "Sonic Jackhammer"
-	desc = "Essentially a handheld planet-cracker. Can drill through walls with ease as well."
-	id = "jackhammer"
+/datum/design/moleminer
+	name = "mole miner gauntlet"
+	desc = "A hand-held mining and cutting implement, repurposed into a deadly melee weapon.  Its name origins are a mystery..."
+	id = "mole_miner"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 2000, /datum/material/silver = 2000, /datum/material/diamond = 6000)
-	build_path = /obj/item/pickaxe/drill/jackhammer
+	build_path = /obj/item/melee/powerfist/f13/moleminer
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 

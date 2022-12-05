@@ -9444,12 +9444,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/abandoned)
-"fsV" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/caves)
 "ftk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -22182,12 +22176,6 @@
 /obj/structure/reagent_dispensers/barrel/four,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
-"mUD" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "mVn" = (
 /obj/structure/flora/tallgrass7,
 /obj/structure/flora/rock/pile/largejungle,
@@ -24054,15 +24042,6 @@
 "oes" = (
 /turf/open/floor/carpet,
 /area/f13/building)
-"oey" = (
-/obj/effect/decal/marking{
-	icon_state = "doublehorizontal"
-	},
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "ofr" = (
 /obj/structure/nest/securitron,
 /turf/open/floor/f13{
@@ -24343,6 +24322,13 @@
 	icon_state = "crossborder"
 	},
 /area/f13/wasteland/city)
+"okv" = (
+/obj/structure/flora/small_bush,
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "olc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light,
@@ -28672,12 +28658,6 @@
 	dir = 10
 	},
 /area/f13/wasteland)
-"qPt" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/caves)
 "qPG" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -30041,12 +30021,6 @@
 	icon_state = "asteroidfloor"
 	},
 /area/f13/building/abandoned)
-"rFY" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "rGl" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontaloutermain2right"
@@ -32776,12 +32750,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"tku" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/caves)
 "tkw" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /obj/effect/decal/waste{
@@ -41461,10 +41429,10 @@ gMW
 fhy
 jwE
 sNX
-mUD
-mUD
-oey
-mUD
+aFQ
+aFQ
+gub
+aFQ
 aFQ
 iff
 cxL
@@ -41717,12 +41685,12 @@ wWK
 qRO
 fhy
 jwE
-fsV
+sNX
 vWU
 vWU
 gOI
 vWU
-rFY
+aFQ
 iff
 cxL
 fhy
@@ -61536,7 +61504,7 @@ oph
 oph
 oph
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -62045,12 +62013,12 @@ kCf
 lmY
 tiN
 oph
-oph
+wEK
 oph
 oph
 pkw
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -62064,7 +62032,7 @@ rYb
 rYb
 ucR
 kad
-tku
+kad
 kad
 kgF
 kgF
@@ -62558,13 +62526,13 @@ dME
 kCf
 tiN
 oph
-oph
+wEK
 oph
 lmY
 oph
 oph
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -62815,13 +62783,13 @@ dME
 kCf
 oph
 tiN
-oph
+wEK
 oph
 lmY
 pkw
 oph
 oph
-oph
+wEK
 oph
 oph
 gMW
@@ -63071,14 +63039,14 @@ cAq
 dME
 kCf
 oph
-tiN
+tDc
 oph
 tiN
 oph
 pkw
 oph
 oph
-oph
+wEK
 oph
 gMW
 gMW
@@ -63349,7 +63317,7 @@ rYb
 rYb
 ucR
 wpn
-qPt
+wpn
 wpn
 pnb
 pnb
@@ -66127,8 +66095,8 @@ tiN
 tiN
 gEj
 lZN
-oph
-tfn
+wEK
+vsk
 oph
 oph
 oph
@@ -66384,7 +66352,7 @@ hia
 tiN
 oph
 afz
-tiN
+tDc
 oph
 nTJ
 oph
@@ -67663,7 +67631,7 @@ oph
 oph
 tiN
 tiN
-tiN
+tDc
 oph
 lmY
 oph
@@ -68462,7 +68430,7 @@ wEK
 pkw
 oph
 gEj
-egf
+quF
 afz
 oph
 oph
@@ -68977,7 +68945,7 @@ tiN
 oph
 oph
 oph
-oph
+wEK
 tiN
 oph
 oph
@@ -69749,7 +69717,7 @@ oph
 oph
 oph
 afz
-oph
+wEK
 oph
 oph
 gMW
@@ -71805,7 +71773,7 @@ tiN
 oph
 smZ
 oph
-pkw
+okv
 oph
 oph
 oph
@@ -72063,7 +72031,7 @@ tiN
 wBf
 oph
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -72321,7 +72289,7 @@ oph
 wEK
 oph
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -72579,7 +72547,7 @@ oph
 oph
 pkw
 oph
-oph
+wEK
 oph
 oph
 gMW
@@ -72836,7 +72804,7 @@ lmY
 oph
 fgw
 oph
-oph
+wEK
 oph
 oph
 gMW
@@ -80807,7 +80775,7 @@ tiN
 tiN
 oph
 oph
-oph
+wEK
 oph
 oph
 gMW
@@ -81064,7 +81032,7 @@ oph
 tiN
 oph
 oph
-oph
+wEK
 oph
 oph
 gMW
@@ -81322,7 +81290,7 @@ tiN
 tiN
 oph
 oph
-oph
+wEK
 oph
 gMW
 gMW
@@ -81579,7 +81547,7 @@ oph
 oph
 oph
 oph
-oph
+wEK
 oph
 gMW
 gMW
@@ -82093,7 +82061,7 @@ pkw
 oph
 oph
 oph
-oph
+wEK
 oph
 oph
 gMW
@@ -83374,7 +83342,7 @@ lmY
 oph
 oph
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -83633,9 +83601,9 @@ oph
 oph
 oph
 oph
+wEK
 oph
-oph
-oph
+wEK
 oph
 oph
 oph
@@ -83894,7 +83862,7 @@ oph
 oph
 oph
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -84152,7 +84120,7 @@ oph
 oph
 oph
 oph
-oph
+wEK
 oph
 oph
 gMW
@@ -88776,7 +88744,7 @@ hia
 lmY
 lmY
 oph
-oph
+wEK
 oph
 oph
 oph
@@ -89546,7 +89514,7 @@ pkw
 oph
 egf
 afz
-oph
+wEK
 oph
 pkw
 oph
@@ -89803,7 +89771,7 @@ oph
 oph
 lmY
 oph
-tiN
+tDc
 oph
 oph
 oph
@@ -90048,7 +90016,7 @@ oph
 tfn
 oph
 tiN
-oph
+wEK
 oph
 oph
 lmY
@@ -90305,7 +90273,7 @@ oph
 tfn
 oph
 oph
-tiN
+tDc
 egf
 oph
 oph
@@ -90316,7 +90284,7 @@ oph
 tiN
 oph
 afz
-oph
+wEK
 oph
 oph
 oph
@@ -90562,7 +90530,7 @@ oph
 oph
 pkw
 oph
-oph
+wEK
 oph
 tiN
 oph
@@ -90573,7 +90541,7 @@ tiN
 tiN
 kmk
 ddh
-tiN
+tDc
 oph
 oph
 oph
@@ -91085,7 +91053,7 @@ oph
 oph
 oph
 oph
-oph
+wEK
 afz
 oph
 oph
@@ -91333,7 +91301,7 @@ oph
 oph
 xpI
 oph
-oph
+wEK
 egf
 oph
 oph
@@ -92104,7 +92072,7 @@ oph
 oph
 oph
 oph
-oph
+wEK
 lmY
 tiN
 gEj

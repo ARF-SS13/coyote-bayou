@@ -18,7 +18,7 @@ GLOBAL_LIST(custom_item_list_db)
 	var/list/custom_items = list()
 
 	while(custom_item_read.NextRow())
-		custom_items[custom_item_read.item[1]] += list(custom_item_read.item[2],custom_item_read.item[3], custom_item_read.item[4], custom_item_read.item[5], custom_item_read.item[6])
+		custom_items[custom_item_read.item[1]] += list(custom_item_read.item[2],unsanitizeSQL(custom_item_read.item[3]), custom_item_read.item[4], custom_item_read.item[5], unsanitizeSQL(custom_item_read.item[6]))
 
 	qdel(custom_item_read)
 

@@ -23,7 +23,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
 
 /obj/item/gun/energy/laser/attackby(obj/item/A, mob/user, params)
@@ -167,7 +167,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 //Laser Cannon
 /obj/item/gun/energy/lasercannon
 	name = "accelerator laser cannon"
@@ -189,7 +191,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/item/projectile/beam/laser/accelerator
 	select_name = "accelerator"
@@ -223,7 +227,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 ////////Laser Tag////////////////////
 
 /obj/item/gun/energy/laser/bluetag
@@ -303,7 +309,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 //Wattz 1000 Magneto-laser pistol
 /obj/item/gun/energy/laser/wattz/magneto
 	name = "Wattz 1000 magneto-laser pistol"
@@ -320,7 +328,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 //Wattz 1000s Laser pistol
 /obj/item/gun/energy/laser/wattzs
 	name = "Wattz 1000s laser pistol"
@@ -344,7 +354,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 //Recharger Pistol
 /obj/item/gun/energy/laser/wattz/recharger
 	name = "Recharger Pistol"
@@ -365,7 +377,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 //AEP 7 Laser pistol
 /obj/item/gun/energy/laser/pistol
 	name = "\improper AEP7 laser pistol"
@@ -391,7 +405,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 // Debug laser pistol that does 10 damage and 0 DT piercing
 /obj/item/gun/energy/laser/pistol/debug_10_damage_0_dt_pierce
 	name = "\improper Debug laser pistol that does 10 damage and 0 DT piercing"
@@ -437,7 +453,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 /obj/item/gun/energy/laser/pistol/cyborg/gutsy
 	name = "\improper integrated laser pistol"
 	desc = "An integrated laser pistol that draws power directly from your cell."
@@ -472,7 +490,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 //Solar Scorcher
 /obj/item/gun/energy/laser/solar
 	name = "\improper Solar Scorcher"
@@ -496,7 +516,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 //Badland's Special
 /obj/item/gun/energy/laser/badlands
 	name = "\improper Badland's Special"
@@ -513,9 +535,54 @@
 
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
+//Worn Badland's Special
+/obj/item/gun/energy/laser/badlands/worn
+	name = "\improper Worn Badland's Special"
+	slowdown = 0.2
+	desc = "A jury-rigged AEP7, this pistol carves out every safety feature and shortens the lenses length to cram a second emitter inside. This ones seems aged."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "bspecial"
+	item_state = "laser-pistol"
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/badlands/worn)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
+//Freeblade Blaster
+/obj/item/gun/energy/laser/freeblade
+	name = "\improper Freeblade Blaster"
+	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "freeblade"
+	item_state = "freeblade"
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
@@ -542,7 +609,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fastest
+	)
 //Worn compact RCW
 /obj/item/gun/energy/laser/auto/worn
 	name = "worn compact rcw"
@@ -564,7 +633,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster
+	)
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
@@ -579,7 +650,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fastest
+	)
 //Ultracite Laser pistol
 /obj/item/gun/energy/laser/ultra_pistol
 	name = "\improper Ultracite laser pistol"
@@ -602,7 +675,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 ////////////////
 //LASER RIFLES//
@@ -634,7 +709,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 //Wattz 2000 Extended
 /obj/item/gun/energy/laser/wattz2k/extended
 	name = "wattz 2000e"
@@ -658,7 +735,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 //Wattz 2000s Laser rifle
 /obj/item/gun/energy/laser/wattz2ks
 	name = "wattz 2000s"
@@ -686,7 +765,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 
 //AER9 Laser rifle
@@ -715,7 +796,9 @@
 	burst_size = 1
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 /obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
@@ -730,7 +813,9 @@
 	burst_size = 1
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle
 	name = "\improper Ultracite laser rifle"
@@ -752,7 +837,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 //Tribeam Laser rifle
 /obj/item/gun/energy/laser/scatter
@@ -773,7 +860,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 /obj/item/gun/energy/laser/scatter/nonlethal
 	name = "tribeam stunrifle"
 	desc = "A modified AER9 equipped with a refraction kit that divides the laser shot into three separate beams. This one has its power consumption lowered, delivering only non-lethal strikes and charging faster."
@@ -791,7 +880,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 /obj/item/gun/energy/laser/scatter/laserbuss
 	name = "Laserbuss"
 	desc = "A questionably-designed tribeam laser rifle that has been modified to feature a dense array of emitters and scatter lenses."
@@ -810,7 +901,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 //AER12 Laser rifle
 /obj/item/gun/energy/laser/aer12
@@ -838,7 +931,9 @@
 	burst_size = 1
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 //AER14 Laser rifle
 /obj/item/gun/energy/laser/aer14
@@ -864,7 +959,9 @@
 	burst_size = 1
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 //LAER Energy rifle
 /obj/item/gun/energy/laser/laer
@@ -885,7 +982,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 //Fallout 4 laser tommy gun.
 /obj/item/gun/energy/laser/rcw
@@ -908,8 +1007,8 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
 	init_firemodes = list(
-		FULL_AUTO_400,
-		WEAPON_NORMAL
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/slow
 	)
 
 
@@ -933,7 +1032,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 //Gamma gun
 /obj/item/gun/energy/gammagun
 	name = "Gamma gun"
@@ -954,7 +1055,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 //Gatling Laser
 
@@ -1070,7 +1173,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
 	init_firemodes = list(
-		FULL_AUTO_1000
+		/datum/firemode/automatic/rpm300
 	)
 
 /obj/item/gun/energy/minigun/Initialize()

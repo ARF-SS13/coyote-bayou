@@ -47,16 +47,15 @@
 	
 /*
 /datum/emote/living/carbon/moan/get_sound(mob/living/M) //need better, ie. more pleasured (because these are mostly when doing drugs) moans
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = list(
+			. = list(
 				'sound/effects/female_moan1.ogg',
 				'sound/effects/female_moan2.ogg',
 				'sound/effects/female_moan3.ogg'
 			)
 		else
-			sound = list(
+			. = list(
 				'sound/effects/male_moan1.ogg',
 				'sound/effects/male_moan2.ogg',
 				'sound/effects/male_moan3.ogg'

@@ -22,6 +22,8 @@
 #define CLONELOSS		(1<<7)
 #define EMPLOSS			(1<<8)
 
+#define DAMAGES_LIST list(BRUTELOSS, FIRELOSS, TOXLOSS, OXYLOSS, RADIATIONLOSS, CLONELOSS, EMPLOSS)
+
 #define EFFECT_STUN		"stun"
 #define EFFECT_KNOCKDOWN		"knockdown"
 #define EFFECT_UNCONSCIOUS	"unconscious"
@@ -276,7 +278,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define STAM_COST_BATON_MOB_MULT	1
 #define STAM_COST_NO_COMBAT_MULT	1.25
 #define STAM_COST_W_CLASS_MULT		1.25
-#define STAM_COST_THROW_MULT		2
+#define STAM_COST_THROW_MULT		1
 #define STAM_COST_THROW_MOB			2.5 //multiplied by (mob size + 1)^2.
 
 ///Multiplier of the (STAMINA_NEAR_CRIT - user current stamina loss) : (STAMINA_NEAR_CRIT - STAMINA_SOFTCRIT) ratio used in damage penalties when stam soft-critted.
@@ -549,41 +551,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Gun spread modifiers
 #define GUN_SPREAD_NONE 0
-#define GUN_SPREAD_POOR 1
+#define GUN_SPREAD_NORMAL 1
+#define GUN_SPREAD_POOR (GUN_SPREAD_NORMAL * 2)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
-
-/// Gun fire delay Base
-#define GUN_FIRE_DELAY_BASE (1 SECONDS)
-
-/// Gun fire delay modifiers
-#define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0.1) // Mostly just good for automatics
-#define GUN_FIRE_DELAY_FASTER (GUN_FIRE_DELAY_BASE * 0.2) // 0.2s Mostly just good for automatics
-#define GUN_FIRE_DELAY_FAST (GUN_FIRE_DELAY_BASE * 0.4) // 0.4s
-#define GUN_FIRE_DELAY_NORMAL (GUN_FIRE_DELAY_BASE * 0.6) // 0.6s
-#define GUN_FIRE_DELAY_SLOW (GUN_FIRE_DELAY_BASE * 0.8) //0.8s
-#define GUN_FIRE_DELAY_SLOWER (GUN_FIRE_DELAY_BASE * 1.5) //1.5s
-
-/// Gun autofire delay Base
-#define GUN_AUTOFIRE_DELAY_BASE 1
-
-/// Gun fire delay modifiers
-#define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0.1)
-#define GUN_AUTOFIRE_DELAY_FASTER (GUN_AUTOFIRE_DELAY_BASE * 1)
-#define GUN_AUTOFIRE_DELAY_FAST (GUN_AUTOFIRE_DELAY_BASE * 2)
-#define GUN_AUTOFIRE_DELAY_NORMAL (GUN_AUTOFIRE_DELAY_BASE * 3)
-#define GUN_AUTOFIRE_DELAY_SLOW (GUN_AUTOFIRE_DELAY_BASE * 4)
-#define GUN_AUTOFIRE_DELAY_SLOWER (GUN_AUTOFIRE_DELAY_BASE * 5)
-
-/// Gun burstfire delay Base
-#define GUN_BURSTFIRE_DELAY_BASE 1
-
-/// Gun fire delay modifiers
-#define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0.1)
-#define GUN_BURSTFIRE_DELAY_FASTER (GUN_BURSTFIRE_DELAY_BASE * 0.5)
-#define GUN_BURSTFIRE_DELAY_FAST (GUN_BURSTFIRE_DELAY_BASE * 1)
-#define GUN_BURSTFIRE_DELAY_NORMAL (GUN_BURSTFIRE_DELAY_BASE * 2)
-#define GUN_BURSTFIRE_DELAY_SLOW (GUN_BURSTFIRE_DELAY_BASE * 3)
-#define GUN_BURSTFIRE_DELAY_SLOWER (GUN_BURSTFIRE_DELAY_BASE * 4)
 
 /// Time after you draw a gun that you're able to shoot it
 #define GUN_AIMING_TIME (1.5 SECONDS)
@@ -613,6 +583,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_LESS_DAMAGE_T3 0.75
 #define GUN_LESS_DAMAGE_T4 0.65
 #define GUN_LESS_DAMAGE_T5 0.50
+#define GUN_LESS_DAMAGE_T6 0.25
 
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
@@ -623,6 +594,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_MELEE_FORCE_RIFLE_LIGHT (GUN_MELEE_FORCE_BASE * 1.5) //18
 #define GUN_MELEE_FORCE_RIFLE_HEAVY (GUN_MELEE_FORCE_BASE * 2) // 24
 #define GUN_MELEE_FORCE_RIFLE_GUNBLADE (GUN_MELEE_FORCE_BASE * 2.5) //30
+#define GUN_MELEE_FORCE_RIFLE_HEAVIER (GUN_MELEE_FORCE_BASE * 3) //36
 
 /// Gun slowdown
 #define GUN_SLOWDOWN_NONE 0.1
@@ -678,6 +650,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
 
 //Quick defines for fire modes
+#define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "150 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")
 #define FULL_AUTO_200		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 3, burst_size = 1, icon="auto")
 #define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto")
 #define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto")
@@ -699,6 +672,53 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BURST_10_ROUND		list(mode_name="10-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=10, fire_delay=null, icon="burst")
 
 #define WEAPON_NORMAL		list(mode_name="standard", burst_size=1, icon="semi")
+
+
+#define GUN_FIRE_RATE_40 15
+#define GUN_FIRE_RATE_75 8
+#define GUN_FIRE_RATE_100 6
+#define GUN_FIRE_RATE_150 4
+#define GUN_FIRE_RATE_200 3
+#define GUN_FIRE_RATE_300 2
+#define GUN_FIRE_RATE_400 1.5
+#define GUN_FIRE_RATE_600 1
+#define GUN_FIRE_RATE_800 0.8
+#define GUN_FIRE_RATE_1000 0.6
+#define GUN_FIRE_RATE_1200 0.5
+
+
+/// Gun fire delay Base
+#define GUN_FIRE_DELAY_BASE (1 SECONDS)
+
+/// Gun fire delay modifiers
+#define GUN_FIRE_DELAY_FASTEST GUN_FIRE_RATE_600
+#define GUN_FIRE_DELAY_FASTER GUN_FIRE_RATE_300
+#define GUN_FIRE_DELAY_FAST GUN_FIRE_RATE_150
+#define GUN_FIRE_DELAY_NORMAL GUN_FIRE_RATE_100
+#define GUN_FIRE_DELAY_SLOW GUN_FIRE_RATE_75
+#define GUN_FIRE_DELAY_SLOWER GUN_FIRE_RATE_40
+
+/// Gun autofire delay Base
+#define GUN_AUTOFIRE_DELAY_BASE 1
+
+/// Gun fire delay modifiers
+#define GUN_AUTOFIRE_DELAY_FASTEST GUN_FIRE_RATE_800
+#define GUN_AUTOFIRE_DELAY_FASTER GUN_FIRE_RATE_600
+#define GUN_AUTOFIRE_DELAY_FAST GUN_FIRE_RATE_400
+#define GUN_AUTOFIRE_DELAY_NORMAL GUN_FIRE_RATE_300
+#define GUN_AUTOFIRE_DELAY_SLOW GUN_FIRE_RATE_200
+#define GUN_AUTOFIRE_DELAY_SLOWER GUN_FIRE_RATE_150
+
+/// Gun burstfire delay Base
+#define GUN_BURSTFIRE_DELAY_BASE 1
+
+/// Gun fire delay modifiers
+#define GUN_BURSTFIRE_DELAY_FASTEST GUN_FIRE_RATE_1200
+#define GUN_BURSTFIRE_DELAY_FASTER GUN_FIRE_RATE_1000
+#define GUN_BURSTFIRE_DELAY_FAST GUN_FIRE_RATE_800
+#define GUN_BURSTFIRE_DELAY_NORMAL GUN_FIRE_RATE_600
+#define GUN_BURSTFIRE_DELAY_SLOW GUN_FIRE_RATE_400
+#define GUN_BURSTFIRE_DELAY_SLOWER GUN_FIRE_RATE_300
 
 /// Bullet zone favoring defines
 /// High accuracy, generally goes where you mean to put it, for precision rifles and such
@@ -803,4 +823,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	GUN_MF_CHANCE = chance,\
 	GUN_MF_DUMP_THROW = throw_chance)
 
+/// cooldown for being spammed with messages you're holding the stupid gun wrong
+#define GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME 1 SECONDS
+
+/// cooldown for being spammed with messages that you shot the gun
+#define GUN_SHOOT_MESSAGE_ANTISPAM_TIME 0.5 SECONDS
 

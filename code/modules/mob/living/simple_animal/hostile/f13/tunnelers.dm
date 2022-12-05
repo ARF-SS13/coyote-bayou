@@ -13,7 +13,9 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	harm_intent_damage = 5
-
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE
 	turns_per_move = 5

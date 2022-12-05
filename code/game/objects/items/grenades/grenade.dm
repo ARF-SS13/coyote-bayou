@@ -27,6 +27,7 @@
 	var/ex_light = 0
 	///how big of a flame explosion radius on prime
 	var/ex_flame = 0
+	tastes = list("metal" = 1, "a bad time" = 2)
 
 	// dealing with creating a [/datum/component/pellet_cloud] on prime
 	/// if set, will spew out projectiles of this type
@@ -113,6 +114,16 @@
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"
 	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+
+// Turn on the grenade if shot
+/obj/item/grenade/bullet_act(obj/item/projectile/P)
+	. = ..()
+	preprime(null, null, FALSE, 100)
+
+// Blow up the grenade if exploded
+/obj/item/grenade/ex_act(severity, target)
+	prime()
+	. = ..()
 
 // for ticking sound until detonation
 /obj/item/grenade/proc/primetimer(mob/user, delayoverride, msg = TRUE, volume = 60) 

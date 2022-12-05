@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 4
 	multiload = 0
@@ -55,6 +55,7 @@
 
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
+	caliber = SHOTGUNBAT_AMMO_CALIBERS
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	max_ammo = 1
 

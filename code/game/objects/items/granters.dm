@@ -1171,39 +1171,92 @@
 		switch(choice)
 			if(null)
 				return 0
+			
 			if("White Legs traditions")
 				traitname = "White Legs traditions"
 				granted_trait = TRAIT_WHITELEGS_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/whitelegs/lightarmour, /datum/crafting_recipe/tribalwar/whitelegs/armour, /datum/crafting_recipe/tribalwar/whitelegs/garb, /datum/crafting_recipe/tribalwar/whitelegs/femalegarb, /datum/crafting_recipe/tribalwar/whitelegs/heavyarmour)
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribalwar/whitelegs/lightarmour,
+					/datum/crafting_recipe/tribalwar/whitelegs/armour,
+					/datum/crafting_recipe/tribalwar/whitelegs/garb,
+					/datum/crafting_recipe/tribalwar/whitelegs/femalegarb,
+					/datum/crafting_recipe/tribalwar/whitelegs/heavyarmour
+					)
+			
 			if("Dead Horses traditions")
 				traitname = "Dead Horses traditions"
 				granted_trait = TRAIT_DEADHORSES_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/deadhorses/lightarmour, /datum/crafting_recipe/tribalwar/deadhorses/armour, /datum/crafting_recipe/tribalwar/deadhorses/garb,
-								/datum/crafting_recipe/tribalwar/deadhorses/femalegarb, /datum/crafting_recipe/tribalwar/deadhorses/heavyarmour)
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribalwar/deadhorses/lightarmour,
+					/datum/crafting_recipe/tribalwar/deadhorses/armour,
+					/datum/crafting_recipe/tribalwar/deadhorses/garb,
+					/datum/crafting_recipe/tribalwar/deadhorses/femalegarb,
+					/datum/crafting_recipe/tribalwar/deadhorses/heavyarmour
+					)
+			
 			if("Rustwalkers traditions")
 				traitname = "Rustwalkers traditions"
 				granted_trait = TRAIT_RUSTWALKERS_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour, /datum/crafting_recipe/tribalwar/rustwalkers/armour, /datum/crafting_recipe/tribalwar/rustwalkers/garb,
-								/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb, /datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour)
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour,
+					/datum/crafting_recipe/tribalwar/rustwalkers/armour,
+					/datum/crafting_recipe/tribalwar/rustwalkers/garb,
+					/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb,
+					/datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour
+					)
+			
 			if("Eighties traditions")
 				traitname = "Eighties traditions"
 				granted_trait = TRAIT_EIGHTIES_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/eighties/lightarmour, /datum/crafting_recipe/tribalwar/eighties/armour, /datum/crafting_recipe/tribalwar/eighties/garb,
-								/datum/crafting_recipe/tribalwar/eighties/femalegarb, /datum/crafting_recipe/tribalwar/eighties/heavyarmour)
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribalwar/eighties/lightarmour,
+					/datum/crafting_recipe/tribalwar/eighties/armour,
+					/datum/crafting_recipe/tribalwar/eighties/garb,
+					/datum/crafting_recipe/tribalwar/eighties/femalegarb,
+					/datum/crafting_recipe/tribalwar/eighties/heavyarmour
+					)
+			
 			if("Sorrows traditions")
 				traitname = "Sorrows traditions"
 				granted_trait = TRAIT_SORROWS_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/sorrows/armour, /datum/crafting_recipe/tribalwar/sorrows/garb, /datum/crafting_recipe/tribalwar/sorrows/femalegarb,
-								/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet)
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribalwar/sorrows/armour,
+					/datum/crafting_recipe/tribalwar/sorrows/garb,
+					/datum/crafting_recipe/tribalwar/sorrows/femalegarb,
+					/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet
+					)
+			
 			if("Wayfarer traditions")
 				traitname = "Wayfarer traditions"
 				granted_trait = TRAIT_WAYFARER_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace)
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribalwar/lighttribe,
+					/datum/crafting_recipe/tribalwar/heavytribe,
+					/datum/crafting_recipe/warmace
+					)
+			
 			if("Bone Dancer traditions")
 				traitname = "Bone Dancer traditions"
 				granted_trait = TRAIT_BONEDANCER_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
-								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribalwar/bone/lightarmour,
+					/datum/crafting_recipe/tribalwar/bone/armour,
+					/datum/crafting_recipe/tribalwar/bone/heavyarmour,
+					/datum/crafting_recipe/tribalwar/bone/garb,
+					/datum/crafting_recipe/tribalwar/bone/helmet
+					)
+			
+			if("Ex Tribal Traditions")
+				traitname = "Ex Tribal"
+				granted_trait = TRAIT_FORMER_TRIBAL
+				crafting_recipe_types = list(
+					/datum/crafting_recipe/tribal/bonetalisman,
+					/datum/crafting_recipe/spearfisher,
+					/datum/crafting_recipe/healpoultice,
+					/datum/crafting_recipe/healpoultice5,
+					/datum/crafting_recipe/food/pemmican,
+					/datum/crafting_recipe/tribal/bonebag
+					)
 		return ..()
 
 

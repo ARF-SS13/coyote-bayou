@@ -38,6 +38,61 @@
 #define CALIBER_FOAM "foam darts"
 #define CALIBER_ANY "anything even remotely ammolike"
 
+/// Caliber POW levels
+/// for hobo guns scaling their explodiness to the casing fired
+/// Heavier rounds than the gun can handle? more chance to POW
+/// Lighter rounds? doesnt explode, shrimple as
+#define CASING_POWER_NONE 0
+#define CASING_POWER_LIGHT_PISTOL 1
+#define CASING_POWER_MEDIUM_PISTOL 2
+#define CASING_POWER_HEAVY_PISTOL 4
+#define CASING_POWER_HEAVIER_PISTOL 10
+#define CASING_POWER_LIGHT_RIFLE 4
+#define CASING_POWER_MEDIUM_RIFLE 8
+#define CASING_POWER_HEAVY_RIFLE 12
+#define CASING_POWER_SHOTGUN 5
+#define CASING_POWER_GRENADE 5
+
+/// Modifiers for different loads
+#define CASING_POWER_MOD_HANDLOAD 0.5
+#define CASING_POWER_MOD_SURPLUS 1
+#define CASING_POWER_MOD_MATCH 2
+
+#define ZIPGUN_AMMO_CALIBERS list(\
+	CALIBER_22LR,\
+	CALIBER_9MM,\
+	CALIBER_10MM,\
+	CALIBER_38,\
+	CALIBER_357,\
+	CALIBER_44,\
+	CALIBER_45LC,\
+	CALIBER_45ACP\
+	)
+
+#define AUTOPIPE_AMMO_CALIBERS list(\
+	CALIBER_22LR,\
+	CALIBER_9MM,\
+	CALIBER_10MM,\
+	CALIBER_38,\
+	CALIBER_357,\
+	CALIBER_45ACP\
+	)
+
+#define KNUCKLEGUN_AMMO_CALIBERS list(\
+	CALIBER_9MM,\
+	CALIBER_10MM,\
+	CALIBER_38,\
+	CALIBER_357,\
+	CALIBER_44,\
+	CALIBER_45ACP\
+	)
+
+/// this is an awful, awful idea
+#define SHOTGUNBAT_AMMO_CALIBERS list(\
+	CALIBER_SHOTGUN,\
+	CALIBER_50MG,\
+	)
+
 GLOBAL_LIST_INIT(pipe_rifle_valid_calibers, list(
 	CALIBER_22LR,
 	CALIBER_5MM,
@@ -53,23 +108,19 @@ GLOBAL_LIST_INIT(pipe_rifle_valid_calibers, list(
 	CALIBER_45ACP,
 	CALIBER_4570,
 	CALIBER_50MG,
+	CALIBER_40MM,
 	CALIBER_FOAM,
 	CALIBER_MUSKET_BALL,
 	CALIBER_SHOTGUN))
 
-GLOBAL_LIST_INIT(zipgun_valid_calibers, list(
-	CALIBER_22LR,
-	CALIBER_9MM,
-	CALIBER_10MM,
-	CALIBER_38,
-	CALIBER_45LC,
-	CALIBER_45ACP))
+GLOBAL_LIST_INIT(zipgun_valid_calibers, ZIPGUN_AMMO_CALIBERS)
 
 GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 	"prefix" = list("bullet","casing","cartridge","shell"),
 	"suffix" = list("chamber","holder","slot","hole","thing","pit"),
 	"postfix" = list("-thingy","-majig","...?"," assembly")
 ))
+
 #define MAGAZINE_CALIBER_CHANGE_STEP_0 0 // use screwdriver to get to step 1
 #define MAGAZINE_CALIBER_CHANGE_STEP_1 1 // used a screwdriver on it, ready for a metal part
 #define MAGAZINE_CALIBER_CHANGE_STEP_2 2 // used a metal part on it, ready for welding

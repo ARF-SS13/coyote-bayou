@@ -269,6 +269,17 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 /datum/verbs/menu/Settings/listen_bank_card/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_BANKCARD
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, toggle_gun_cursor)()
+	set name = "Show Gun Cursor"
+	set category = "Preferences"
+	set desc = "Show the gun cursor when you have one our"
+	usr.client.prefs.cb_toggles ^= AIM_CURSOR_ON
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & AIM_CURSOR_ON) ? "now" : "no longer"] see a sickass cursor when you have a gun out.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Gun Cursor", "[(usr.client.prefs.chat_toggles & CHAT_BANKCARD) ? "Enabled" : "Disabled"]"))
+/datum/verbs/menu/Settings/toggle_gun_cursor/Get_checked(client/C)
+	return C.prefs.cb_toggles & AIM_CURSOR_ON
+
 GLOBAL_LIST_INIT(ghost_forms, list("ghost","ghostking","ghostian2","skeleghost","ghost_red","ghost_black", \
 							"ghost_blue","ghost_yellow","ghost_green","ghost_pink", \
 							"ghost_cyan","ghost_dblue","ghost_dred","ghost_dgreen", \

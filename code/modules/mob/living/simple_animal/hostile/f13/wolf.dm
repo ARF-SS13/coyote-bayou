@@ -22,6 +22,9 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	aggro_vision_range = 15
+	waddle_amount = 2
+	waddle_up_time = 0 //Dogs can't look up ~TK
+	waddle_side_time = 1
 //	idle_vision_range = 7
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/weapons/bite.ogg'

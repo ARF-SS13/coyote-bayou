@@ -71,23 +71,23 @@
 			return getStaminaLoss()
 
 
-/mob/living/proc/apply_damages(brute = 0, burn = 0, tox = 0, oxy = 0, clone = 0, def_zone = null, blocked = FALSE, stamina = 0, brain = 0)
+/mob/living/proc/apply_damages(brute = 0, burn = 0, tox = 0, oxy = 0, clone = 0, def_zone = null, blocked = FALSE, stamina = 0, brain = 0, damagethreshold = 0)
 	if(blocked >= 100)
 		return 0
 	if(brute)
-		apply_damage(brute, BRUTE, def_zone, blocked)
+		apply_damage(brute, BRUTE, def_zone, blocked, damage_threshold = damagethreshold)
 	if(burn)
-		apply_damage(burn, BURN, def_zone, blocked)
+		apply_damage(burn, BURN, def_zone, blocked, damage_threshold = damagethreshold)
 	if(tox)
-		apply_damage(tox, TOX, def_zone, blocked)
+		apply_damage(tox, TOX, def_zone, blocked, damage_threshold = damagethreshold)
 	if(oxy)
-		apply_damage(oxy, OXY, def_zone, blocked)
+		apply_damage(oxy, OXY, def_zone, blocked, damage_threshold = damagethreshold)
 	if(clone)
-		apply_damage(clone, CLONE, def_zone, blocked)
+		apply_damage(clone, CLONE, def_zone, blocked, damage_threshold = damagethreshold)
 	if(stamina)
-		apply_damage(stamina, STAMINA, def_zone, blocked)
+		apply_damage(stamina, STAMINA, def_zone, blocked, damage_threshold = damagethreshold)
 	if(brain)
-		apply_damage(brain, BRAIN, def_zone, blocked)
+		apply_damage(brain, BRAIN, def_zone, blocked, damage_threshold = damagethreshold)
 	return 1
 
 /mob/living/proc/apply_effect(effect = 0,effecttype = EFFECT_STUN, blocked = FALSE, knockdown_stamoverride, knockdown_stammax)

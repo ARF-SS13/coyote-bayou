@@ -32,7 +32,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.2)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		/datum/firemode/semi_auto
 	)
 
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
@@ -144,7 +144,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 	scope_x_offset = 5
 	scope_y_offset = 13
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
@@ -183,7 +185,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -220,7 +224,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3.3)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -258,7 +264,9 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3.6)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -297,7 +305,9 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.4)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -358,7 +368,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -369,6 +379,11 @@
 	scope_y_offset = 12
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
@@ -408,7 +423,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 /obj/item/gun/ballistic/rifle/hunting/remington/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
@@ -445,7 +460,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.2)
 
@@ -487,7 +502,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.5)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -512,7 +527,9 @@
 		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
  * Quick Bolt-Action Rifle
@@ -594,7 +611,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 /obj/item/gun/ballistic/rifle/mag/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click to remove the magazine.")
@@ -657,7 +676,9 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HMG_RECOIL(3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13

@@ -671,12 +671,14 @@
 	build_path = /obj/item/ammo_box/m473/rubber
 	category = list("initial", "Advanced Ammo")
 
+/*
 /datum/design/ammolathe/m473incin
 	name = "4.73mm incendiary caseless ammo box"
 	id = "m473incin"
 	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 3000)
 	build_path = /obj/item/ammo_box/m473/incendiary
 	category = list("initial", "Advanced Ammo")
+*/
 
 /*
 /datum/design/ammolathe/m473u235
@@ -685,7 +687,7 @@
 	materials = list(/datum/material/titanium = 10000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/m473/uraniumtipped
 	category = list("initial", "Advanced Ammo")
-*/
+
 
 /datum/design/ammolathe/m473wound
 	name = "4.73mm flat-nose caseless ammo box"
@@ -707,6 +709,7 @@
 	materials = list(/datum/material/iron = 12000, /datum/material/titanium = 15000, /datum/material/blackpowder = 3000)
 	build_path = /obj/item/ammo_box/m473/hv
 	category = list("initial", "Advanced Ammo")
+*/
 
 /datum/design/ammolathe/a357ricochet
 	name = ".357 ricochet ammo"

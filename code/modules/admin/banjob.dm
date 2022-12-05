@@ -12,7 +12,7 @@
 			qdel(query_jobban_check_ban)
 			return
 		if(query_jobban_check_ban.NextRow())
-			var/reason = query_jobban_check_ban.item[1]
+			var/reason = unsanitizeSQL(query_jobban_check_ban.item[1])
 			qdel(query_jobban_check_ban)
 			return reason ? reason : TRUE //we don't want to return "" if there is no ban reason, as that would evaluate to false
 		qdel(query_jobban_check_ban)
@@ -39,7 +39,7 @@
 			qdel(query_jobban_build_cache)
 			return
 		while(query_jobban_build_cache.NextRow())
-			C.jobbancache[query_jobban_build_cache.item[1]] = query_jobban_build_cache.item[2]
+			C.jobbancache[query_jobban_build_cache.item[1]] = unsanitizeSQL(query_jobban_build_cache.item[2])
 		qdel(query_jobban_build_cache)
 
 /proc/ban_unban_log_save(formatted_log)

@@ -471,3 +471,7 @@
 /datum/sprite_accessory/underwear/top/redpuffbra
 	name = "Puffy Red Bra"
 	icon_state = "bride_red"
+
+/datum/sprite_accessory/underwear/top/ncrcfjacketcrop
+	name = "cropped denim jacket"
+	icon_state = "ncrcfjacketcrop"

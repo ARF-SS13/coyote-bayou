@@ -62,6 +62,7 @@
 		if(!botch_check(user))
 			to_chat(user, span_warning("You start the timer! Tick tock"))
 			primetimer(user, null, FALSE)
+			playsound(src, 'sound/f13weapons/garand_ping.ogg', 100, 1)
 			soundloop.start()
 
 /obj/item/grenade/homemade/coffeepotbomb/prime(mob/living/lanced_by)
@@ -101,15 +102,17 @@
 	icon_state = "molotov"
 	item_state = "ied"
 	list_reagents = list()
+	volume = 50
 	var/list/accelerants = list(
-		/datum/reagent/consumable/ethanol,
-		/datum/reagent/fuel,
-		/datum/reagent/clf3,
-		/datum/reagent/phlogiston,
-		/datum/reagent/napalm,
-		/datum/reagent/hellwater,
-		/datum/reagent/toxin/plasma,
-		/datum/reagent/toxin/spore_burning,
+		/datum/reagent/consumable/ethanol = 1,
+		/datum/reagent/fuel = 2,
+		/datum/reagent/clf3 = 3,
+		/datum/reagent/phlogiston = 4,
+		/datum/reagent/blackpowder = 1,
+		/datum/reagent/napalm = 3,
+		/datum/reagent/hellwater = 4,
+		/datum/reagent/toxin/plasma = 5,
+		/datum/reagent/toxin/spore_burning = 7,
 		)
 	var/active = FALSE
 
@@ -129,17 +132,19 @@
 		desc = "[desc] You're not sure if making this out of a carton was the brightest idea."
 		isGlass = FALSE
 
+/obj/item/reagent_containers/food/drinks/bottle/molotov/bullet_act(obj/item/projectile/P)
+	. = ..()
+	make_boom()
+	qdel(src)
+
+/obj/item/reagent_containers/food/drinks/bottle/molotov/ex_act()
+	make_boom()
+	. = ..()
+
 /obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	var/firestarter = FALSE
-	for(var/datum/reagent/reagent_in_bottle as anything in reagents.reagent_list)
-		for(var/accelerant_type in accelerants)
-			if(istype(reagent_in_bottle, accelerant_type))
-				firestarter = TRUE
-				break
-	if(firestarter && active)
-		hit_atom.fire_act()
-		new /obj/effect/hotspot(get_turf(hit_atom))
-	return ..()
+	make_boom()
+	. = ..()
+	qdel(src)
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
 	if(I.get_temperature() && !active)
@@ -156,6 +161,19 @@
 			return
 		addtimer(CALLBACK(src, .proc/splash_and_boom), 5 SECONDS)
 
+/obj/item/reagent_containers/food/drinks/bottle/molotov/proc/make_boom()
+	var/boomsize
+	var/extra_boom = 0
+	for(var/datum/reagent/reagent_in_bottle as anything in reagents.reagent_list)
+		if(reagent_in_bottle.volume < 1)
+			continue
+		if(!(reagent_in_bottle.type in accelerants))
+			continue
+		if(reagent_in_bottle.type == /datum/reagent/blackpowder && (reagent_in_bottle.volume > (volume * 0.8)))
+			extra_boom = 1
+		boomsize = accelerants[reagent_in_bottle.type] * (reagent_in_bottle.volume / volume)
+	if(boomsize >= 1 || extra_boom)
+		explosion(get_turf(src),-1, -1, extra_boom, flame_range = (boomsize + extra_boom))
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/proc/splash_and_boom()
 	if(QDELETED(src) || !active || isnull(loc))
@@ -168,8 +186,9 @@
 				break
 	if(!isturf(target))
 		target = get_turf(target) // Too deep, let's just bypass to the end.
-	SplashReagents(target)
-	target.fire_act()
+	make_boom()
+	if(!QDELETED(src))
+		SplashReagents(target)
 	qdel(src)
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attack_self(mob/user)

@@ -12,6 +12,7 @@
 	light_range = 3
 	var/range = 2
 	var/intensity = 20
+	tastes = list("a flavor thats definitely not green apple" = 2, "a whole lot of regret" = 1)
 
 /obj/effect/decal/waste/New()
 	..()
