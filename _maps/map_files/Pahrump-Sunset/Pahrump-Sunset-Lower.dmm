@@ -25182,6 +25182,10 @@
 /obj/structure/wreck/trash/five_tires,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
+"srx" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/caves)
 "ssl" = (
 /obj/structure/closet/crate/miningcar,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
@@ -26815,6 +26819,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/obj/structure/sink/deep_water{
+	pixel_x = 2;
+	pixel_y = -4
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "tKh" = (
@@ -27706,6 +27714,13 @@
 	icon_state = "tunnelchess"
 	},
 /area/f13/caves)
+"uDs" = (
+/obj/machinery/shower{
+	dir = 1;
+	color = "#2d221a"
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/tribal)
 "uDF" = (
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/plasteel/f13,
@@ -31283,6 +31298,13 @@
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
+/area/f13/caves)
+"xFI" = (
+/obj/structure/stone_tile/block{
+	dir = 4;
+	layer = 5
+	},
+/turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "xFT" = (
 /obj/structure/bodycontainer/morgue{
@@ -35613,7 +35635,7 @@ aae
 aae
 aae
 wEA
-asR
+srx
 toj
 bOa
 wCC
@@ -39936,7 +39958,7 @@ srb
 bJS
 bNg
 bJS
-aae
+xFI
 bJS
 bJS
 bJS
@@ -40968,7 +40990,7 @@ bKR
 bKR
 dFE
 bxo
-bxo
+uDs
 bxo
 bxo
 kRZ
