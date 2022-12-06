@@ -54,6 +54,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 /datum/outfit/job/tribal/
 	name = "Tribal"
 	jobtype = /datum/job/tribal/
+	belt = /obj/item/kit_spawner/tribal
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	backpack = /obj/item/storage/backpack/explorer
@@ -63,6 +64,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	ears = null
 
+/*
 /datum/outfit/job/tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -76,6 +78,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	H.grant_language(/datum/language/tribal)
 	for(var/datum/crafting_recipe/recipe as() in GLOB.tribal_job_recipes)
 		H.mind.teach_crafting_recipe(recipe)
+*/
 
 /*
 Tribal Chief
@@ -100,12 +103,14 @@ Tribal Chief
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
+/*
 /datum/outfit/job/tribal/f13chief/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13chief
 	name =	"Chief"
@@ -123,6 +128,7 @@ Tribal Chief
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/flashlight/lantern = 1,
+		/obj/item/kit_spawner/tribal = 1
 	)
 
 /*
@@ -158,16 +164,19 @@ Tribal Shaman
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+*/
 
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
 	jobtype = /datum/job/tribal/f13shaman
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/tribe
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -236,12 +245,14 @@ Tribal Head Hunter
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13Hhunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13Hhunter
 	name = "Hunter"
@@ -256,7 +267,8 @@ Tribal Head Hunter
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/flashlight/lantern = 1
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/kit_spawner/tribal = 1,
 	)
 
 /*
@@ -297,17 +309,20 @@ Druid
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13druid/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+*/
 
 /datum/outfit/job/tribal/f13druid
 	name = "Druid"
 	jobtype = /datum/job/tribal/f13druid
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/wayfarer/acolyte
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -345,7 +360,6 @@ Villager
 
 	loadout_options = list(
 		/datum/outfit/loadout/gatherer, //Bone Spear, Bone Knife, Healing powder
-		/datum/outfit/loadout/gardener,
 		/datum/outfit/loadout/mender,	//Ritual dagger, Improvized gauze, Healing powders, Mortar
 		/datum/outfit/loadout/craftsman, //Crude tools
 	)
@@ -370,6 +384,7 @@ Villager
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
 	jobtype = /datum/job/tribal/f13villager
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -384,11 +399,16 @@ Villager
 /datum/outfit/loadout/gatherer
 	name = "Gatherer"
 	backpack_contents = list(
-		/obj/item/twohanded/spear/bonespear = 1,
+		///obj/item/twohanded/spear/bonespear = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
+		/obj/item/storage/bag/plants=1,
+		/obj/item/scythe=1,
+		/obj/item/cultivator=1,
+		/obj/item/reagent_containers/glass/bucket/wood=1
 	)
 
+/*
 /datum/outfit/loadout/gardener
 	name = "Gardener"
 	backpack_contents = list(
@@ -397,6 +417,7 @@ Villager
 		/obj/item/cultivator=1,
 		/obj/item/reagent_containers/glass/bucket/wood=1
 	)
+*/
 
 /datum/outfit/loadout/mender
 	name = "Mender"
@@ -461,17 +482,20 @@ Hunter
 		),
 	)
 
+/*
 /datum/outfit/job/tribal/f13hunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13hunter
 	name = "Hunter"
 	jobtype = /datum/job/tribal/f13hunter
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/hunter
+	belt = /obj/item/kit_spawner/tribal
 	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
@@ -487,10 +511,9 @@ Hunter
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/bow/sturdy = 1,
-		/obj/item/storage/bag/tribe_quiver/bone = 1,
+		///obj/item/gun/ballistic/bow/sturdy = 1,
+		///obj/item/storage/bag/tribe_quiver/bone = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
-		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
 	)
@@ -499,10 +522,10 @@ Hunter
 	name = "Frontline"
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bone = 1,
-		/obj/item/binoculars = 1,
-		/obj/item/restraints/legcuffs/bola/tactical = 1,
-		/obj/item/reagent_containers/pill/healingpowder = 1,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 1,
+		///obj/item/binoculars = 1,
+		/obj/item/restraints/legcuffs/bola/tactical = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
+		///obj/item/twohanded/spear/bonespear/deathclaw = 1,
 	)
 
 /*
@@ -540,6 +563,7 @@ Spirit-Pledged
 	jobtype = /datum/job/tribal/f13spiritpledged
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	id = /obj/item/card/id/tribetattoo
+	belt = /obj/item/kit_spawner/tribal
 
 /*
 Guardian
@@ -563,12 +587,14 @@ Guardian
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
+/*
 /datum/outfit/job/tribal/f13guardian/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+*/
 
 /datum/outfit/job/tribal/f13guardian
 	name = "Guardian"
@@ -577,7 +603,7 @@ Guardian
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
 	suit = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
-	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	//suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,

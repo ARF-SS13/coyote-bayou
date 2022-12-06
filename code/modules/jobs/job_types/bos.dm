@@ -24,6 +24,7 @@ Main doors: ACCESS_CAPTAIN 20
 	name = "bosdatums"
 	jobtype = 	/datum/job/bos
 	backpack = 	/obj/item/storage/backpack/explorer
+	belt = /obj/item/kit_spawner/bos
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	ears = 		/obj/item/radio/headset/headset_bos
 	uniform =	/obj/item/clothing/under/syndicate/brotherhood
@@ -36,6 +37,7 @@ Main doors: ACCESS_CAPTAIN 20
 	if(visualsOnly)
 		return
 
+/*
 /datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -51,6 +53,7 @@ Main doors: ACCESS_CAPTAIN 20
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/bosoutcastlight)
+*/
 
 /*
 Elder
@@ -74,6 +77,7 @@ Elder
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13elder/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -92,22 +96,24 @@ Elder
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+*/
 
 /datum/outfit/job/bos/f13elder
 	name = "Elder"
 	jobtype = /datum/job/bos/f13elder
 	pa_wear = TRUE
+	belt = /obj/item/kit_spawner/bos/boss
 	suit =	/obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
 	glasses =	/obj/item/clothing/glasses/night
 	accessory =	/obj/item/clothing/accessory/bos/elder
-	suit_store =	/obj/item/gun/energy/laser/laer
+//	suit_store =	/obj/item/gun/energy/laser/laer
 	neck =	/obj/item/clothing/neck/mantle/bos/right
 	ears = /obj/item/radio/headset/headset_bos/command
-	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-	)
+//	backpack_contents = list(
+//		/obj/item/stock_parts/cell/ammo/mfc = 2,
+//		/obj/item/melee/onehanded/knife/hunting = 1,
+//		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+//	)
 
 /*
 Head Paladin
@@ -139,11 +145,13 @@ Head Paladin
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13sentinel/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+
 
 /datum/outfit/job/bos/f13sentinel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -168,6 +176,7 @@ Head Paladin
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
+*/
 
 /datum/outfit/job/bos/f13sentinel
 	name = "Head Paladin"
@@ -175,7 +184,7 @@ Head Paladin
 	uniform = 		/obj/item/clothing/under/f13/recon
 	accessory = 	/obj/item/clothing/accessory/bos/sentinel
 	glasses =       /obj/item/clothing/glasses/sunglasses
-	belt =			/obj/item/storage/belt/army/assault
+	belt = /obj/item/kit_spawner/bos/combat
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	ears =			/obj/item/radio/headset/headset_bos/command
 	id = 			/obj/item/card/id/dogtag
@@ -186,6 +195,7 @@ Head Paladin
 		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 1,
 		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
+		/obj/item/storage/belt/army/assault = 1
 		)
 
 /datum/outfit/loadout/sentstand
@@ -255,6 +265,7 @@ Head Scribe
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13headscribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -278,11 +289,13 @@ Head Scribe
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+*/
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
 	jobtype = /datum/job/bos/f13headscribe
 	chemwhiz = TRUE
+	belt = /obj/item/kit_spawner/bos/scientist
 	uniform = 		/obj/item/clothing/under/syndicate/brotherhood
 	accessory = 	/obj/item/clothing/accessory/bos/headscribe
 	glasses =       /obj/item/clothing/glasses/sunglasses
@@ -326,23 +339,26 @@ Head Knight
 
 	exp_requirements = 60
 
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/capstand, //Wattz 2k
 	/datum/outfit/loadout/capsap, //Marksman
 	/datum/outfit/loadout/capalt //Neostead with buck because they don't know slugs are better
 	)
+*/
 
 	outfit = /datum/outfit/job/bos/f13knightcap
 
 	access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_ARMORY, ACCESS_BRIG, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS, ACCESS_ARMORY, ACCESS_BRIG, ACCESS_CHANGE_IDS)
 
+/*
 /datum/outfit/job/bos/f13knightcap/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-
+*/
 
 
 /datum/outfit/job/bos/f13knightcap
@@ -356,16 +372,18 @@ Head Knight
 	glasses =		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	accessory =		/obj/item/clothing/accessory/bos/knightcaptain
-	belt =			/obj/item/storage/belt/army/security/full
+	belt = /obj/item/kit_spawner/bos/combat
 	l_pocket =			/obj/item/storage/belt/shoulderholster
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id =			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/storage/belt/army/security/full = 1
 		)
 
+/*
 /datum/outfit/loadout/capstand
 	name = "Scout Leader"
 	backpack_contents = list(
@@ -386,6 +404,7 @@ Head Knight
 		/obj/item/gun/ballistic/shotgun/hunting = 1,
 		/obj/item/ammo_box/shotgun/buck = 3,
 	)
+*/
 
 /*
 Star Paladin
@@ -442,12 +461,13 @@ Star Paladin
 	accessory =	/obj/item/clothing/accessory/bos/seniorpaladin
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
-	belt =	/obj/item/storage/belt/army/assault
+	belt = /obj/item/kit_spawner/bos/combat
 	neck =	/obj/item/clothing/neck/mantle/bos/paladin
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/storage/belt/army/assault = 1
 	)
 
 /datum/outfit/loadout/spaladina
@@ -542,11 +562,12 @@ Paladin
 	head =	/obj/item/clothing/head/helmet/f13/power_armor/midwest
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
-	belt =	/obj/item/storage/belt/army/assault
+	belt = /obj/item/kit_spawner/bos/combat
 	neck =	/obj/item/clothing/neck/mantle/bos/paladin
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak= 1,
 		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/storage/belt/army/assault = 1
 	)
 
 /datum/outfit/loadout/paladina
@@ -621,7 +642,7 @@ Senior Scribe
 		),
 	)
 
-
+/*
 /datum/outfit/job/bos/f13seniorscribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -642,6 +663,7 @@ Senior Scribe
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
+*/
 
 /datum/outfit/job/bos/f13seniorscribe
 	name =	"Senior Scribe"
@@ -649,6 +671,7 @@ Senior Scribe
 	chemwhiz =	TRUE
 	uniform =	/obj/item/clothing/under/syndicate/brotherhood
 	shoes =	/obj/item/clothing/shoes/combat
+	belt = /obj/item/kit_spawner/bos/scientist
 	belt =	/obj/item/storage/belt/utility/full/engi
 	accessory =	/obj/item/clothing/accessory/bos/seniorscribe
 	suit =	/obj/item/clothing/suit/armor/light/duster/bos/scribe/seniorscribe
@@ -709,23 +732,25 @@ Scribe
 	chemwhiz = TRUE
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	shoes = 		/obj/item/clothing/shoes/combat
-	belt = 			/obj/item/storage/belt/utility/full/engi
+	belt = /obj/item/kit_spawner/bos/scientist
 	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/scribe
 	id = 			/obj/item/card/id/dogtag
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/gun/energy/laser/pistol=1,
+//		/obj/item/stock_parts/cell/ammo/ec=2,
+//		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/storage/firstaid/regular=1,
 		)
 
+/*
 /datum/outfit/job/bos/f13scribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
-
+*/
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"
@@ -778,6 +803,7 @@ Senior Knight
 		),
 	)
 
+/*
 /datum/outfit/job/bos/f13seniorknight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -786,6 +812,7 @@ Senior Knight
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
+*/
 
 /datum/outfit/job/bos/f13seniorknight
 	name = "Senior Knight"
@@ -795,7 +822,7 @@ Senior Knight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	glasses =       /obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer
-	belt = 			/obj/item/storage/belt/army/assault
+	belt = /obj/item/kit_spawner/bos/combat
 	l_pocket =			/obj/item/storage/belt/shoulderholster
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
 	id = 			/obj/item/card/id/dogtag
@@ -805,6 +832,7 @@ Senior Knight
 	gunsmith_four = TRUE
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting=1,
+		/obj/item/storage/belt/army/assault = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_two=1
@@ -890,6 +918,7 @@ Knight
 		),
 	)
 
+/*
 /datum/outfit/job/bos/f13knight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -897,6 +926,7 @@ Knight
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+*/
 
 /datum/outfit/job/bos/f13knight
 	name = "Knight"
@@ -904,7 +934,7 @@ Knight
 	suit = 			/obj/item/clothing/suit/armor/medium/combat/brotherhood
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	mask =			/obj/item/clothing/mask/gas/sechailer
-	belt = 			/obj/item/storage/belt/army/assault
+	belt = /obj/item/kit_spawner/bos/combat
 	l_pocket =			/obj/item/storage/belt/shoulderholster
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
 	id = 			/obj/item/card/id/dogtag
@@ -914,6 +944,7 @@ Knight
 	gunsmith_four = TRUE
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/survival=1,
+		/obj/item/storage/belt/army/assault = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_two=1
@@ -1021,18 +1052,20 @@ Initiate
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
+	belt = /obj/item/kit_spawner/bos/combat
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
 
+/*
 /datum/outfit/job/bos/f13initiate/post_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
-
+*/
 
 /datum/outfit/loadout/initiatek
 	name = "Knight-Aspirant"
@@ -1040,8 +1073,8 @@ Initiate
 	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/outcast
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/wattz=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+//		/obj/item/gun/energy/laser/wattz=1,
+//		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/initiateK=1,
 		)
 

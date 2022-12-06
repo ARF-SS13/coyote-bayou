@@ -12,6 +12,7 @@
 	name =		"FOLLOWERSdatums"
 	jobtype =	/datum/job/followers/
 	shoes =		/obj/item/clothing/shoes/sneakers/black
+	belt = /obj/item/kit_spawner/follower
 	id =		null
 	ears =		/obj/item/radio/headset/headset_town/medical
 	uniform =	/datum/outfit/job/followers/f13followers
@@ -94,7 +95,7 @@ Administrator
 	uniform =	/obj/item/clothing/under/f13/followers
 	suit=	/obj/item/clothing/suit/toggle/labcoat/followers
 	shoes =	/obj/item/clothing/shoes/f13/brownie
-	belt =	/obj/item/healthanalyzer/advanced
+	belt = /obj/item/kit_spawner/follower/admin
 	backpack =	/obj/item/storage/backpack/medic
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
@@ -104,6 +105,7 @@ Administrator
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/book/granter/trait/techno = 1,
+		/obj/item/healthanalyzer/advanced = 1,
 	)
 
 /datum/outfit/loadout/surgical_specialist
@@ -182,12 +184,13 @@ Administrator
 	backpack = /obj/item/storage/backpack/explorer
 	uniform = /obj/item/clothing/under/f13/followers
 	suit= /obj/item/clothing/suit/toggle/labcoat/followers
-	belt =/obj/item/storage/belt/utility/full/engi
+	belt = /obj/item/kit_spawner/follower/scientist
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
+		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/storage/firstaid/ancient=1,)
 
 /datum/outfit/loadout/environmental_scientist
@@ -282,7 +285,7 @@ Practitioner
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
-	belt = /obj/item/gun/energy/laser/complianceregulator
+	belt = /obj/item/kit_spawner/follower/doctor
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
@@ -290,6 +293,7 @@ Practitioner
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/gun/energy/laser/complianceregulator = 1,
 	)
 
 /datum/outfit/loadout/physician
@@ -377,6 +381,7 @@ Follower Volunteer
 	name = "Town Medical Assistant"
 	jobtype = /datum/job/followers/f13followervolunteer
 	id = 		/obj/item/card/id/silver
+	belt = /obj/item/kit_spawner/follower
 	uniform = 	/obj/item/clothing/under/f13/followers
 	shoes = 	/obj/item/clothing/shoes/f13/explorer
 	backpack = 	/obj/item/storage/backpack/explorer
@@ -444,16 +449,20 @@ Follower Volunteer
 
 	outfit = /datum/outfit/job/followers/f13followerguard
 
-	loadout_options = list(/datum/outfit/loadout/guard_ranged,
-	/datum/outfit/loadout/guard_close, /datum/outfit/loadout/guard_energy
+/*
+	loadout_options = list(
+		/datum/outfit/loadout/guard_ranged,
+		/datum/outfit/loadout/guard_close, 
+		/datum/outfit/loadout/guard_energy
 	)
+	*/
 	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 
 /datum/outfit/job/followers/f13followerguard
 	name =	"Town Paramedic"
 	jobtype =	/datum/job/followers/f13followerguard
-	belt =	/obj/item/storage/belt/army/followers
+	belt = /obj/item/kit_spawner/follower/guard
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
 	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
@@ -469,8 +478,10 @@ Follower Volunteer
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/storage/belt/army/followers = 1,
 	)
 
+/*
 /datum/outfit/loadout/guard_ranged
 	name = "Followers Ranged Guard"
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
@@ -494,3 +505,4 @@ Follower Volunteer
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec = 1,
 	)
+*/
