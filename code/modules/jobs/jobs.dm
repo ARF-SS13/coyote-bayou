@@ -126,8 +126,8 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Kipchak",
 
 "Senior Doctor",
-"Followers Doctor",
-"Followers Guard",
+"Town Doctor",
+"Town Paramedic",
 
 "Cyborg",
 "Overseer",
@@ -289,10 +289,10 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 //Followers
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Senior Doctor",
-	"Followers Doctor",
-	"Followers Guard",
-	"Followers Volunteer",
-	"Followers Scientist",
+	"Town Doctor",
+	"Town Paramedic",
+	"Town Medical Assistant",
+	"Town Scientist",
 ))
 
 // job categories for rendering the late join menu
