@@ -15522,13 +15522,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"bbv" = (
-/obj/structure/ladder{
-	id = "etower";
-	height = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "bbw" = (
 /obj/structure/car/rubbish2{
 	icon_state = "car_rubish3"
@@ -59851,14 +59844,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"oJn" = (
-/obj/structure/ladder{
-	id = "netower";
-	height = 1;
-	pixel_y = -9
-	},
-/turf/open/floor/wood_common,
-/area/f13/building)
 "oJr" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 8;
@@ -82144,16 +82129,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/church)
-"wHT" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/ladder{
-	id = "setower";
-	height = 1;
-	pixel_y = -13;
-	pixel_x = 7
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
 "wHX" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/curtain{
@@ -100353,7 +100328,7 @@ acl
 puU
 bie
 dQs
-oJn
+cex
 hHX
 vaN
 vaN
@@ -103256,7 +103231,7 @@ aZl
 aHF
 vJD
 jQB
-wHT
+cnF
 aHF
 apX
 apX
@@ -103483,7 +103458,7 @@ aOk
 flt
 apX
 apX
-bbv
+xyU
 whb
 feN
 feN
