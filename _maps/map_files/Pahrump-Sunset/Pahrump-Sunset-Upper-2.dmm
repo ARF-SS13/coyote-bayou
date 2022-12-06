@@ -414,6 +414,10 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"iE" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "iF" = (
 /obj/structure/railing{
 	dir = 1
@@ -463,6 +467,10 @@
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"jT" = (
+/obj/item/binoculars,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "jU" = (
 /obj/structure/railing{
 	dir = 10
@@ -521,6 +529,13 @@
 /obj/structure/reagent_dispensers/compostbin,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"lm" = (
+/obj/structure/ladder{
+	id = "setower";
+	height = 2
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "lG" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
@@ -677,6 +692,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"qs" = (
+/obj/structure/ladder{
+	id = "etower";
+	height = 2
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "qJ" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/spacevine,
@@ -1083,6 +1105,13 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
+"AG" = (
+/obj/structure/ladder{
+	id = "netower";
+	height = 2
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "AI" = (
 /obj/structure/fence{
 	dir = 4;
@@ -1316,6 +1345,13 @@
 /obj/structure/bed/dogbed,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"EU" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "EZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/pet/dog/corgi/puppy{
@@ -1534,6 +1570,9 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Kz" = (
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "KB" = (
 /obj/structure/spacevine,
 /obj/structure/barricade/sandbags,
@@ -15968,12 +16007,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+LV
+EU
+EU
+EU
+EU
+Ow
 hm
 hm
 hm
@@ -16225,12 +16264,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+AG
+Kz
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -16482,12 +16521,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+Kz
+Kz
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -16739,12 +16778,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+Kz
+jT
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -16996,12 +17035,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+Kz
+iE
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -17253,12 +17292,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+JW
+zD
+zD
+zD
+zD
+OI
 hm
 hm
 hm
@@ -18846,6 +18885,12 @@ hm
 hm
 hm
 hm
+LV
+EU
+EU
+EU
+EU
+Ow
 hm
 hm
 hm
@@ -18873,18 +18918,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+LV
+EU
+EU
+EU
+EU
+Ow
 hm
 hm
 hm
@@ -19103,6 +19142,12 @@ hm
 hm
 hm
 hm
+NC
+qs
+Kz
+jT
+Kz
+rK
 hm
 hm
 hm
@@ -19130,18 +19175,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+lm
+Kz
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -19360,6 +19399,12 @@ hm
 hm
 hm
 hm
+NC
+Kz
+Kz
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -19387,18 +19432,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+Kz
+jT
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -19617,6 +19656,12 @@ hm
 hm
 hm
 hm
+NC
+Kz
+Kz
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -19644,18 +19689,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+Kz
+Kz
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -19874,6 +19913,12 @@ hm
 hm
 hm
 hm
+NC
+Kz
+iE
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -19901,18 +19946,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+NC
+Kz
+iE
+Kz
+Kz
+rK
 hm
 hm
 hm
@@ -20131,6 +20170,12 @@ hm
 hm
 hm
 hm
+JW
+zD
+zD
+zD
+zD
+OI
 hm
 hm
 hm
@@ -20158,18 +20203,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+JW
+zD
+zD
+zD
+zD
+OI
 hm
 hm
 hm
