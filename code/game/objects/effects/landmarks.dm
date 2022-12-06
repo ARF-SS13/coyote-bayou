@@ -897,7 +897,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 //Followers of the Apocalypse
 /obj/effect/landmark/start/f13/followersadministrator
-	name = "Followers Administrator"
+	name = "Senior Doctor"
 	icon_state = "Chief Medical Officer"
 
 /obj/effect/landmark/start/f13/followersdoctor

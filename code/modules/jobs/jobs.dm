@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Khorchin",
 "Kipchak",
 
-"Followers Administrator",
+"Senior Doctor",
 "Followers Doctor",
 "Followers Guard",
 
@@ -288,7 +288,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 ))
 //Followers
 GLOBAL_LIST_INIT(followers_positions, list(
-	"Followers Administrator",
+	"Senior Doctor",
 	"Followers Doctor",
 	"Followers Guard",
 	"Followers Volunteer",
@@ -339,7 +339,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),
 
 	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
-	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Followers Administrator")),
+	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Senior Doctor")),
 	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant First Class","NCR Captain", "NCR Veteran Ranger"))
 ))
 
