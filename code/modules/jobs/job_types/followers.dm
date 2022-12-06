@@ -36,7 +36,7 @@
 Administrator
 */
 /datum/job/followers/f13leadpractitioner
-	title = "Followers Administrator"
+	title = "Senior Doctor"
 	flag = F13LEADPRACTITIONER
 	department_flag = FOLLOWERS
 	head_announce = list("Security")
@@ -44,7 +44,7 @@ Administrator
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "No one."
-	description = "You are the Followers Administrator. You are the administrator, supervisor and director for the on-site followers and the facility. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
+	description = "You are the Senior Doctor. You are the supervisor and director for the on-site followers and the facility. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
 	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
 	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FF95FF"
@@ -87,7 +87,7 @@ Administrator
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
-	name =	"Followers Administrator"
+	name =	"Senior Doctor"
 	jobtype =	/datum/job/followers/f13leadpractitioner
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
