@@ -376,12 +376,12 @@
 	ckeywhitelist = list("fuzlet", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/fuzlet/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/beretta/automatic/worn(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sig/blackkite(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sig/blackkite(src)
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
-	new /obj/item/storage/survivalkit/triple(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 
 /datum/gear/donator/kits/fuzlet2
@@ -677,12 +677,23 @@
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
-	ckeywhitelist = list("seermankhajiit00")
+	ckeywhitelist = list("seermankhajiit00", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
 	new /obj/item/storage/belt/shoulderholster/ranger45(src)
 	new /obj/item/clothing/under/costume/soviet(src)
+	new /obj/item/storage/box/rocketlauncher_tox(src)
+	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/binoculars(src)
+
+/obj/item/pet_carrier/paws
+	name = "Paws' carrier"
+	desc = "Hey look who it is!"
+
+/obj/item/pet_carrier/paws/Initialize()
+	. = ..()
+	var/mob/living/simple_animal/pet/fox/paws/pet_paws = new(src)
+	add_occupant(pet_paws)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"
@@ -706,6 +717,7 @@
 	new /obj/item/clothing/mask/surgical/sloaff(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
+	new /obj/item/gun/energy/laser/badlands/worn(src)
 
 /datum/gear/donator/kits/sloaff3
 	name = "Sloan's Food Pack"
@@ -714,8 +726,6 @@
 
 /obj/item/storage/box/large/custom_kit/sloaff3/PopulateContents()
 	new /obj/item/storage/fancy/cigarettes/cigpack_cannabis(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
-	new /obj/item/clothing/suit/toggle/labcoat/followers(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaberry(src)
 	new /obj/item/reagent_containers/food/snacks/jellysandwich/pbj/cherry(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault13(src)
@@ -842,6 +852,22 @@
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/clothing/mask/ncr_facewrap(src)
 
+/datum/gear/donator/kits/tonyburritos2
+	name = "Traveling Ranger"
+	path = /obj/item/storage/box/large/custom_kit/tonyburritos2
+	ckeywhitelist = list("tonyburritos")
+
+/obj/item/storage/box/large/custom_kit/tonyburritos2/PopulateContents()
+	new /obj/item/clothing/suit/armor/medium/combat/desert_ranger(src)
+	new /obj/item/clothing/under/f13/ranger/modif_ranger(src)
+	new /obj/item/clothing/accessory/ranger(src)
+	new /obj/item/clothing/gloves/f13/leather/fingerless(src)
+	new /obj/item/clothing/mask/bandana/legion/legprime(src)
+	new /obj/item/clothing/shoes/f13/military/desert(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/whiskey(src)
+	new /obj/item/gun/ballistic/revolver/revolver45(src)
+
 /datum/gear/donator/kits/truedark
 	name = "Stolen Brotherhood Supplies"
 	path = /obj/item/storage/box/large/custom_kit/truedark
@@ -852,6 +878,7 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stack/cable_coil/thirty(src)
+	new /obj/item/gun/energy/laser/rcw/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
 
 /datum/gear/donator/kits/truedark2
@@ -863,7 +890,6 @@
 	new /obj/item/gun/ballistic/bow/xbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 	new /obj/item/smelling_salts/wayfarer(src)
-	new /obj/item/gun/energy/laser/rcw/nayriin(src)
 	new /obj/item/reagent_containers/glass/bottle/gaia(src)
 	new /obj/item/reagent_containers/glass/bottle/ichor/red(src)
 	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)

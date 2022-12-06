@@ -21,7 +21,6 @@
 		/area/f13/desert,
 		/area/f13/farm,
 		/area/f13/forest,
-		/area/f13/ruins
 		)
 	protect_indoors = TRUE
 	target_trait = ZTRAIT_ASHSTORM
@@ -145,7 +144,7 @@
 	end_duration = 3000
 	end_overlay = "light_ash"
 
-	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protect_indoors = TRUE
 	target_trait = ZTRAIT_STATION
 

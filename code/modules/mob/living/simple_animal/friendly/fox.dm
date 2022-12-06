@@ -34,3 +34,9 @@
 	gender = FEMALE
 	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
+
+//Paws!
+/mob/living/simple_animal/pet/fox/paws
+	name = "Paws"
+	desc = "It's Paws!"
+	unique_pet = TRUE

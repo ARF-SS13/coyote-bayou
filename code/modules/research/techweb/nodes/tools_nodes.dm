@@ -21,7 +21,7 @@
 	display_name = "Advanced Mining Technology"
 	description = "Efficiency Level 127"	//dumb mc references
 	prereq_ids = list("basic_mining", "adv_engi", "adv_power", "adv_plasma")
-	design_ids = list("drill_diamond", "jackhammer", "hypermod", "ore_silo", "plasteel_pick", "titanium_pick") //CB Edit Yeet Plasma Cutter
+	design_ids = list("drill_diamond", "mole_miner", "hypermod", "ore_silo", "plasteel_pick", "titanium_pick") //CB Edit Yeet Plasma Cutter
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/janitor
