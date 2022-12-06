@@ -13,7 +13,7 @@
 	jobtype =	/datum/job/followers/
 	shoes =		/obj/item/clothing/shoes/sneakers/black
 	id =		null
-	ears =		/obj/item/radio/headset/headset_followers
+	ears =		/obj/item/radio/headset/headset_town/medical
 	uniform =	/datum/outfit/job/followers/f13followers
 
 /datum/outfit/job/followers/f13followers
@@ -132,7 +132,7 @@ Administrator
 //Professor
 
 /datum/job/followers/f13Professor
-	title = "Followers Scientist"
+	title = "Town Scientist"
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
@@ -177,7 +177,7 @@ Administrator
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/followers/f13Professor
-	name = "Followers Scientist"
+	name = "Town Scientist"
 	jobtype = /datum/job/followers/f13Professor
 	backpack = /obj/item/storage/backpack/explorer
 	uniform = /obj/item/clothing/under/f13/followers
@@ -216,7 +216,7 @@ Administrator
 Practitioner
 */
 /datum/job/followers/f13practitioner
-	title = "Followers Doctor"
+	title = "Town Doctor"
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
@@ -276,7 +276,7 @@ Practitioner
 
 
 /datum/outfit/job/followers/f13practitioner
-	name =	"Followers Doctor"
+	name =	"Town Doctor"
 	jobtype =	/datum/job/followers/f13practitioner
 	uniform =	/obj/item/clothing/under/f13/followers
 	id =	/obj/item/card/id/silver
@@ -341,7 +341,7 @@ Follower Volunteer
 */
 
 /datum/job/followers/f13followervolunteer
-	title = "Followers Volunteer"
+	title = "Town Medical Assistant"
 	flag = F13FOLLOWERVOLUNTEER
 	department_flag = FOLLOWERS
 	faction = "Followers"
@@ -374,7 +374,7 @@ Follower Volunteer
 	//the follower volunteer doesn't need more access as it is already stored in the /datum/job/followers
 
 /datum/outfit/job/followers/f13followervolunteer
-	name = "Followers Volunteer"
+	name = "Town Medical Assistant"
 	jobtype = /datum/job/followers/f13followervolunteer
 	id = 		/obj/item/card/id/silver
 	uniform = 	/obj/item/clothing/under/f13/followers
@@ -430,7 +430,7 @@ Follower Volunteer
 // Follower Guard
 
 /datum/job/followers/f13followerguard
-	title = "Followers Guard"
+	title = "Town Paramedic"
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
@@ -451,7 +451,7 @@ Follower Volunteer
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 
 /datum/outfit/job/followers/f13followerguard
-	name =	"Followers Guard"
+	name =	"Town Paramedic"
 	jobtype =	/datum/job/followers/f13followerguard
 	belt =	/obj/item/storage/belt/army/followers
 	id =	/obj/item/card/id/silver
