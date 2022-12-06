@@ -53,7 +53,7 @@
 /obj/item/radio/headset/headset_bos/virt
 	name = "Brotherhood VR Radio"
 
-/obj/item/radio/headset/headset_followers/virt
+/obj/item/radio/headset/headset_town/medical/virt
 	name = "Followers VR Radio"
 
 /obj/item/radio/headset/headset_den/virt
@@ -63,7 +63,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
-/obj/item/radio/headset/headset_followers/virt/Initialize()
+/obj/item/radio/headset/headset_town/medical/virt/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
@@ -84,7 +84,7 @@
 
 /datum/outfit/vr/followers
 	name = "Followers"
-	ears =		/obj/item/radio/headset/headset_followers/virt
+	ears =		/obj/item/radio/headset/headset_town/medical/virt
 	starting_funds = 0
 
 /datum/outfit/vr/den

@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Mayor",
 "Sheriff",
 "Deputy",
-"Shopkeeper",
+"Texarkana Trade Worker",
 "Doctor",
 "Prospector",
 "Detective",
@@ -125,9 +125,9 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Khorchin",
 "Kipchak",
 
-"Followers Administrator",
-"Followers Doctor",
-"Followers Guard",
+"Senior Doctor",
+"Town Doctor",
+"Town Paramedic",
 
 "Cyborg",
 "Overseer",
@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Doctor",
 	"Detective",
 	"Banker",
-	"Shopkeeper",
+	"Texarkana Trade Worker",
 	"Barkeep",
 	"Citizen",
 ))
@@ -288,11 +288,11 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 ))
 //Followers
 GLOBAL_LIST_INIT(followers_positions, list(
-	"Followers Administrator",
-	"Followers Doctor",
-	"Followers Guard",
-	"Followers Volunteer",
-	"Followers Scientist",
+	"Senior Doctor",
+	"Town Doctor",
+	"Town Paramedic",
+	"Town Medical Assistant",
+	"Town Scientist",
 ))
 
 // job categories for rendering the late join menu
@@ -339,7 +339,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),
 
 	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
-	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Followers Administrator")),
+	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Senior Doctor")),
 	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant First Class","NCR Captain", "NCR Veteran Ranger"))
 ))
 

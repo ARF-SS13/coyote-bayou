@@ -678,7 +678,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13dendoc
 	chemwhiz = TRUE
 	belt = /obj/item/kit_spawner/townie/doctor
-	ears = /obj/item/radio/headset/headset_town/commerce
+	ears = /obj/item/radio/headset/headset_town/medical
 	uniform = /obj/item/clothing/under/f13/medic
 	glasses = /obj/item/clothing/glasses/hud/health
 	neck = /obj/item/clothing/neck/stethoscope

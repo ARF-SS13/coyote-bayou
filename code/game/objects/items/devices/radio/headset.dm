@@ -428,10 +428,19 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash mayor channel, use :y.\
 		\nTo access the Nash sheriff channel, use :l.\
+		\nTo access the Nash medical channel, use :m.\
 		\nTo access the Nash commerce channel, use :j."
 	bowman = TRUE
 	command = TRUE
 	keyslot = new /obj/item/encryptionkey/headset_town/mayor
+
+/obj/item/radio/headset/headset_town/medical
+	name = "Nash medical radio headset"
+	desc = "This is used by Nash's medical folk.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the medical channel, use :m"
+	icon_state = "med_headset"
+	keyslot = new /obj/item/encryptionkey/headset_town/medical
 
 /obj/item/radio/headset/headset_followers
 	name = "followers radio headset"

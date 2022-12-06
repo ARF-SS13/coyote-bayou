@@ -895,25 +895,25 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Guardian"
 	icon_state = "Tribal"
 
-//Followers of the Apocalypse
+//Followers of the Apocalypse -- nah, nash medical stuff
 /obj/effect/landmark/start/f13/followersadministrator
-	name = "Followers Administrator"
+	name = "Senior Doctor"
 	icon_state = "Chief Medical Officer"
 
 /obj/effect/landmark/start/f13/followersdoctor
-	name = "Followers Doctor"
+	name = "Town Doctor"
 	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersguard
-	name = "Followers Guard"
+	name = "Nash Paramedic"
 	icon_state = "Security Officer"
 
 /obj/effect/landmark/start/f13/followersvolunteer
-	name = "Followers Volunteer"
+	name = "Town Medical Assistant"
 	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersscientist
-	name = "Followers Scientist"
+	name = "Town Scientist"
 
 
 
