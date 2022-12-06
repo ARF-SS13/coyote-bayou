@@ -12892,6 +12892,13 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"ivM" = (
+/obj/structure/stone_tile/block{
+	dir = 4;
+	layer = 5
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "ivX" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/trash,
@@ -16193,6 +16200,12 @@
 /obj/item/clothing/head/hardhat,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"ldK" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/tribal)
 "leB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -24314,6 +24327,10 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
+"rDl" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/caves)
 "rDm" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -25181,10 +25198,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/five_tires,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
-/area/f13/caves)
-"srx" = (
-/obj/machinery/autolathe,
-/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/caves)
 "ssl" = (
 /obj/structure/closet/crate/miningcar,
@@ -27714,13 +27727,6 @@
 	icon_state = "tunnelchess"
 	},
 /area/f13/caves)
-"uDs" = (
-/obj/machinery/shower{
-	dir = 1;
-	color = "#2d221a"
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/building/tribal)
 "uDF" = (
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/plasteel/f13,
@@ -31298,13 +31304,6 @@
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
-/area/f13/caves)
-"xFI" = (
-/obj/structure/stone_tile/block{
-	dir = 4;
-	layer = 5
-	},
-/turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "xFT" = (
 /obj/structure/bodycontainer/morgue{
@@ -35635,7 +35634,7 @@ aae
 aae
 aae
 wEA
-srx
+rDl
 toj
 bOa
 wCC
@@ -39958,7 +39957,7 @@ srb
 bJS
 bNg
 bJS
-xFI
+ivM
 bJS
 bJS
 bJS
@@ -40990,7 +40989,7 @@ bKR
 bKR
 dFE
 bxo
-uDs
+ldK
 bxo
 bxo
 kRZ
