@@ -12892,6 +12892,13 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"ivM" = (
+/obj/structure/stone_tile/block{
+	dir = 4;
+	layer = 5
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "ivX" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/trash,
@@ -16193,6 +16200,12 @@
 /obj/item/clothing/head/hardhat,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"ldK" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/tribal)
 "leB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -24314,6 +24327,10 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
+"rDl" = (
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/caves)
 "rDm" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -26814,6 +26831,10 @@
 "tJE" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
+	},
+/obj/structure/sink/deep_water{
+	pixel_x = 2;
+	pixel_y = -4
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
@@ -35613,7 +35634,7 @@ aae
 aae
 aae
 wEA
-asR
+rDl
 toj
 bOa
 wCC
@@ -39936,7 +39957,7 @@ srb
 bJS
 bNg
 bJS
-aae
+ivM
 bJS
 bJS
 bJS
@@ -40968,7 +40989,7 @@ bKR
 bKR
 dFE
 bxo
-bxo
+ldK
 bxo
 bxo
 kRZ
