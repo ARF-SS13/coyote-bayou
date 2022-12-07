@@ -307,7 +307,6 @@ Druid
 		return
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
-	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
 
 
 /datum/outfit/job/tribal/f13druid
