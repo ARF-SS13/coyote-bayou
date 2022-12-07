@@ -4617,10 +4617,10 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/machinery/button/door{
 	id = "factbasementcontrol";
-	name = "shutters button";
-	pixel_x = 28;
 	max_integrity = 1000;
-	obj_integrity = 1000
+	name = "shutters button";
+	obj_integrity = 1000;
+	pixel_x = 28
 	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -6775,8 +6775,8 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factbasementcontrol";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -7617,8 +7617,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasementboss";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -8762,8 +8762,8 @@
 "eJI" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasementboss";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -10639,13 +10639,13 @@
 /obj/item/stack/sheet/mineral/uranium,
 /obj/effect/decal/cleanable/greenglow,
 /mob/living/simple_animal/hostile/abomination{
-	melee_damage_lower = 15;
-	name = "big bob";
-	desc = "Bob does what bob does best.";
 	armour_penetration = 0.05;
+	desc = "Bob does what bob does best.";
 	health = 1250;
 	maxHealth = 1250;
-	melee_damage_upper = 60
+	melee_damage_lower = 15;
+	melee_damage_upper = 60;
+	name = "big bob"
 	},
 /turf/open/water,
 /area/f13/radiation)
@@ -14078,8 +14078,8 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factbasementcontrol";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -15626,8 +15626,8 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -23324,6 +23324,13 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"qIt" = (
+/turf/open/floor/f13{
+	color = "#d9c4b9";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/caves)
 "qIu" = (
 /obj/structure/falsewall/rust,
 /turf/open/floor/plating/tunnel,
@@ -26492,10 +26499,10 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
-	pixel_y = 20;
 	id = "factorybasementboss";
 	max_integrity = 10000;
-	obj_integrity = 10000
+	obj_integrity = 10000;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -27113,8 +27120,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -27644,10 +27651,10 @@
 	dir = 5
 	},
 /obj/machinery/button/door{
-	pixel_y = 20;
 	id = "factorybasement";
 	max_integrity = 1000;
-	obj_integrity = 1000
+	obj_integrity = 1000;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -28024,8 +28031,8 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factbasementcontrol";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -31822,8 +31829,8 @@
 "xZu" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters";
 	max_integrity = 1000000;
+	name = "shutters";
 	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
@@ -35643,7 +35650,7 @@ wEA
 aaa
 aaa
 aaa
-aaa
+gGV
 aaa
 aaa
 aaa
@@ -35901,8 +35908,8 @@ aae
 aae
 aae
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 bOn
 bOn
@@ -36158,8 +36165,8 @@ aak
 aak
 aae
 gGV
-vDJ
-vDJ
+ajF
+ajF
 vDJ
 vDJ
 vDJ
@@ -36415,8 +36422,8 @@ aak
 aak
 aae
 gGV
-vDJ
-vDJ
+ajF
+ajF
 vDJ
 vDJ
 vDJ
@@ -36672,8 +36679,8 @@ aak
 aak
 aae
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 bOn
 bOn
@@ -36929,14 +36936,14 @@ bCG
 bCG
 bCG
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -37186,14 +37193,14 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
-bOn
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
+ajF
+ajF
+ajF
+qIt
+qIt
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -37443,14 +37450,14 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
-bOn
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
+ajF
+ajF
+ajF
+qIt
+qIt
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -37700,14 +37707,14 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -37957,14 +37964,14 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -38214,12 +38221,12 @@ bOn
 bOn
 bOn
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
 bOn
 bOn
 bOn
@@ -38471,12 +38478,12 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -38728,12 +38735,12 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -38985,12 +38992,12 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -39242,12 +39249,12 @@ bOn
 bOn
 bOn
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
-vDJ
-vDJ
-vDJ
+qIt
+qIt
+qIt
 bOn
 vDJ
 vDJ
@@ -39499,8 +39506,8 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 bOn
 bOn
@@ -39756,13 +39763,13 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
+ajF
+ajF
+ajF
+ajF
+ajF
+ajF
+ajF
 vDJ
 vDJ
 vDJ
@@ -40013,13 +40020,13 @@ vDJ
 vDJ
 vDJ
 gGV
+ajF
+ajF
 vDJ
 vDJ
 vDJ
 vDJ
-vDJ
-vDJ
-vDJ
+ajF
 vDJ
 vDJ
 vDJ
@@ -40270,13 +40277,13 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
-vDJ
+ajF
+ajF
+ajF
+ajF
+ajF
+ajF
+ajF
 vDJ
 vDJ
 vDJ
@@ -40527,8 +40534,8 @@ vDJ
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 bOn
 bOn
@@ -40784,8 +40791,8 @@ bCG
 bOn
 bOn
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 vDJ
 vDJ
@@ -41041,8 +41048,8 @@ bCG
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 vDJ
 vDJ
@@ -41298,8 +41305,8 @@ bCG
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 vDJ
 vDJ
@@ -41555,8 +41562,8 @@ bCG
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 vDJ
 vDJ
@@ -41812,8 +41819,8 @@ bCG
 vDJ
 vDJ
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 vDJ
 vDJ
@@ -42069,8 +42076,8 @@ bCG
 bCG
 bCG
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 bOn
 bOn
@@ -42326,8 +42333,8 @@ aae
 aae
 bCG
 gGV
-vDJ
-vDJ
+ajF
+ajF
 vDJ
 vDJ
 vDJ
@@ -42583,8 +42590,8 @@ bCG
 bCG
 bCG
 gGV
-vDJ
-vDJ
+ajF
+ajF
 vDJ
 vDJ
 vDJ
@@ -42840,8 +42847,8 @@ gGV
 gGV
 gGV
 gGV
-vDJ
-vDJ
+ajF
+ajF
 bOn
 bOn
 bOn
@@ -43097,8 +43104,8 @@ gGV
 vDJ
 vDJ
 vDJ
-vDJ
-vDJ
+ajF
+ajF
 bOn
 vDJ
 vDJ
@@ -43354,8 +43361,8 @@ gGV
 vDJ
 vDJ
 vDJ
-vDJ
-vDJ
+ajF
+ajF
 bOn
 vDJ
 vDJ
