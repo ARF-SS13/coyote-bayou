@@ -3675,11 +3675,12 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
 "bOj" = (
-/obj/machinery/light,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "redwatersewersmiddle"
 	},
-/area/f13/building/trainstation)
+/turf/open/floor/plating/tunnel,
+/area/f13/caves)
 "bOk" = (
 /obj/structure/toilet{
 	pixel_y = 13
@@ -3754,12 +3755,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "bOE" = (
-/obj/structure/simple_door/house{
-	icon_state = "interior"
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/building/trainstation)
 "bOF" = (
 /obj/machinery/light{
@@ -16060,6 +16056,13 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
+"kXs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/trainstation)
 "kXx" = (
 /obj/effect/overlay/junk/oldpipes,
 /turf/open/indestructible/ground/inside/subway,
@@ -34130,7 +34133,7 @@ iFX
 bOZ
 iFX
 riU
-bOE
+ehC
 ehC
 ehC
 bOO
@@ -34387,7 +34390,7 @@ ehC
 riU
 ehC
 riU
-red
+riU
 ehC
 ehC
 bOO
@@ -34643,7 +34646,7 @@ ehC
 riU
 ehC
 ehC
-bOj
+ehC
 red
 ehC
 ehC
@@ -34900,7 +34903,7 @@ dHd
 ehC
 riU
 riU
-riU
+kXs
 red
 kTq
 kTq
@@ -35156,8 +35159,8 @@ fTZ
 fTZ
 oMS
 oMS
-bOO
-bOO
+ehC
+bOE
 bOO
 bOO
 bOO
@@ -35413,7 +35416,7 @@ bOO
 bOO
 bOO
 bOO
-bOO
+bOE
 vDJ
 bOn
 aae
@@ -38475,8 +38478,8 @@ vDJ
 vDJ
 vDJ
 vDJ
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -38732,8 +38735,8 @@ vDJ
 vDJ
 vDJ
 vDJ
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -38989,8 +38992,8 @@ vDJ
 vDJ
 vDJ
 vDJ
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -39246,8 +39249,8 @@ vDJ
 bOn
 bOn
 bOn
-bOn
-bOn
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -39500,11 +39503,11 @@ aae
 bCG
 vDJ
 vDJ
-bOn
 vDJ
 vDJ
 vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -39757,12 +39760,12 @@ aae
 bCG
 vDJ
 vDJ
-bOn
 vDJ
+bOj
 vDJ
-vDJ
-vDJ
-gGV
+ajF
+ajF
+ajF
 ajF
 ajF
 ajF
@@ -40014,15 +40017,15 @@ aae
 bCG
 vDJ
 vDJ
-bOn
 vDJ
 vDJ
 vDJ
-vDJ
-gGV
 ajF
 ajF
-vDJ
+ajF
+ajF
+ajF
+ajF
 vDJ
 vDJ
 vDJ
@@ -40271,12 +40274,12 @@ aae
 bCG
 vDJ
 vDJ
-bOn
 vDJ
 vDJ
 vDJ
-vDJ
-gGV
+ajF
+ajF
+ajF
 ajF
 ajF
 ajF
@@ -40531,8 +40534,8 @@ vDJ
 bOn
 vDJ
 vDJ
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -40788,8 +40791,8 @@ vDJ
 bCG
 bCG
 bCG
-bOn
-bOn
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -41045,8 +41048,8 @@ vDJ
 bCG
 aae
 bCG
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -41302,8 +41305,8 @@ vDJ
 bCG
 aae
 bCG
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -41559,8 +41562,8 @@ bCG
 bCG
 aae
 bCG
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
@@ -41816,8 +41819,8 @@ aae
 aae
 aae
 bCG
-vDJ
-vDJ
+ajF
+ajF
 gGV
 ajF
 ajF
