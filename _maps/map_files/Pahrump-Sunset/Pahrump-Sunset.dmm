@@ -12908,12 +12908,9 @@
 /area/f13/building/abandoned)
 "aRV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cum,
 /obj/structure/table/wood/club,
-/obj/item/reagent_containers/rag{
-	desc = "Why is it sticky?";
-	name = "cum rag"
-	},
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/flour,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "aRW" = (
@@ -22890,10 +22887,7 @@
 /area/f13/store)
 "clu" = (
 /obj/structure/target_stake,
-/obj/item/target/clown{
-	desc = "A shooting target that looks like Caesar! Ave, true to Kimball!";
-	name = "caesar"
-	},
+/obj/item/target/clown,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "clw" = (
@@ -32977,6 +32971,17 @@
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
+"frN" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt/harsh,
+/area/f13/wasteland)
 "fsa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -42202,6 +42207,13 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/junglebush/b,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"izY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/c10mm/improvised,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain1"
+	},
 /area/f13/wasteland)
 "iAa" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -52368,10 +52380,10 @@
 /area/f13/building/hospital)
 "maz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cum,
 /obj/structure/dresser{
 	pixel_y = 5
 	},
+/obj/effect/decal/cleanable/flour,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "maC" = (
@@ -69917,15 +69929,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "sdh" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/door/window{
-	dir = 8;
-	pixel_x = 25
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "redmark"
-	},
-/area/f13/building)
+/obj/structure/simple_door/tent,
+/turf/open/indestructible/ground/outside/dirt/harsh,
+/area/f13/wasteland)
 "sdl" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -71234,7 +71249,6 @@
 	color = "#a98c5d";
 	dir = 1
 	},
-/obj/effect/decal/cleanable/shreds,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 8
@@ -71246,6 +71260,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 4
+	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "redwatersewersresidential"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -72859,6 +72877,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "teg" = (
@@ -81785,6 +81805,12 @@
 "wnb" = (
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
+"wne" = (
+/obj/structure/car/rubbish1,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop0"
+	},
+/area/f13/wasteland)
 "wnk" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -95438,7 +95464,7 @@ aZX
 nvn
 aeC
 kDp
-pWU
+izY
 ayn
 hEG
 anR
@@ -102630,12 +102656,12 @@ rrW
 wqq
 xWr
 dfq
-apX
-apX
+sdh
+frN
 koC
 aVl
 nvn
-igF
+wne
 hEG
 anR
 aOk
@@ -109594,7 +109620,7 @@ pXP
 bOv
 bOv
 hHQ
-sdh
+ilO
 abP
 aae
 aae
