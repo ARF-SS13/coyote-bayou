@@ -162,6 +162,8 @@ ATTACHMENTS
 	var/gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
 	/// What kind of traits should this gun be affected by
 	var/gun_skill_check
+	// Fallout Skill used
+	var/gun_skill_used = SKILL_GUNS
 	/// What kind of temporary refire delay modifiers do we have?
 	var/cooldown_delay_mods
 	/// What kind of misfires can this thing do? Check out combat.dm for details
@@ -533,11 +535,11 @@ ATTACHMENTS
 		SEND_SIGNAL(user, COMSIG_LIVING_GUN_PROCESS_FIRE, target, params, zone_override, stam_cost)
 
 /obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
-	var/sprd = 0
+	var/sprd = min((90 - user.skill_value(SKILL_GUNS))/100, 0)
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
 		if(chambered)
-			sprd = user.calculate_offset()
+			sprd = user.calculate_offset(sprd, gun_skill_used)
 			before_firing(target,user)
 			var/BB = chambered.BB
 			if(!chambered.fire_casing(target, user, params, added_spread, silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))

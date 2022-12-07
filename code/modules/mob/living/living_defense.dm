@@ -143,6 +143,11 @@
 		blocked = TRUE
 		total_damage = block_calculate_resultant_damage(total_damage, block_return)
 	if(I)
+		if (isliving(throwingdatum.thrower) && !throwingdatum.thrower.skill_roll(SKILL_THROWING))
+			visible_message(span_danger("[src] is narrowly missed by [I]!"), \
+				span_userdanger("You're missed by [I]!"))
+			playsound(src, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+			return
 		var/nosell_hit = SEND_SIGNAL(I, COMSIG_MOVABLE_IMPACT_ZONE, src, impacting_zone, throwingdatum, FALSE, blocked)
 		if(nosell_hit)
 			skipcatch = TRUE

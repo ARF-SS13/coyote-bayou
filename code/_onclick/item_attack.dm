@@ -105,6 +105,7 @@
 	//force += regular//SPECIAL integration
 
 	var/force_modifier = 0
+	force_modifier += (user.special_s - 5)
 	if(force >= 5)
 		if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 			force_modifier += 10
@@ -131,6 +132,13 @@
 			force_modifier += (-force * 0.25)
 
 	var/force_out = force + force_modifier
+
+	if(!user.skill_roll(SKILL_MELEE))
+		M.visible_message(span_warning("[user]'s swing of [src.name] misses!"), target = user, \
+			target_message = span_warning("You missed your attack, weapon swinging wide!"))
+		playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+		return
+
 	if(force_out <= 0)
 		playsound(loc, pokesound, get_clamped_volume(), 1, -1)
 	else if(hitsound)

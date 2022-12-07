@@ -277,6 +277,48 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/special_a = 5
 	var/special_l = 5
 
+	//Combat
+	var/skill_guns_base = 35
+	var/skill_energy_base = 20
+	var/skill_unarmed_base = 65
+	var/skill_melee_base = 55
+	var/skill_throwing_base = 40
+
+	//Active
+	var/skill_first_aid_base = 35
+	var/skill_doctor_base = 15
+	var/skill_sneak_base = 25
+	var/skill_lockpick_base = 20
+	var/skill_traps_base = 20
+	var/skill_science_base = 15
+	var/skill_repair_base = 20
+
+	//Passive
+	var/skill_speech_base = 25
+	var/skill_barter_base = 20
+	var/skill_outdoorsman_base = 15
+
+	//Combat
+	var/skill_guns = 0
+	var/skill_energy = 0
+	var/skill_unarmed = 0
+	var/skill_melee = 0
+	var/skill_throwing = 0
+
+	//Active
+	var/skill_first_aid = 0
+	var/skill_doctor = 0
+	var/skill_sneak = 0
+	var/skill_lockpick = 0
+	var/skill_traps = 0
+	var/skill_science = 0
+	var/skill_repair = 0
+
+	//Passive
+	var/skill_speech = 0
+	var/skill_barter = 0
+	var/skill_outdoorsman = 0
+
 	/// Associative list: matchmaking_prefs[/datum/matchmaking_pref subtype] -> number of desired matches
 	var/list/matchmaking_prefs = list()
 
@@ -364,6 +406,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
+			dat += "<center><h2>Skills</h2>"
+			dat += "<a href='?_src_=prefs;preference=skill;task=menu'>Allocate Points</a><br></center>"
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>Identity</h2>"
 			if(jobban_isbanned(user, "appearance"))
@@ -1490,7 +1534,7 @@ Records disabled until a use for them is found
 	var/total = special_s + special_p + special_e + special_c + special_i + special_a + special_l
 
 	dat += "<center><b>Allocate points</b></center>"
-	dat += "<center>Note: SPECIAL is purely cosmetic. These points have no effect on gameplay.</center><br>"
+	dat += "<center>Note: SPECIAL has mechanical effects on gameplay and governs skills too.</center><br>"
 	dat += "<center>[total] out of 40 possible</center><br>"
 	dat += "<b>Strength	   :</b> <a href='?_src_=prefs;preference=special_s;task=input'>[special_s]</a><BR>"
 	dat += "<b>Perception  :</b> <a href='?_src_=prefs;preference=special_p;task=input'>[special_p]</a><BR>"
@@ -1510,6 +1554,74 @@ Records disabled until a use for them is found
 	popup.set_content(dat.Join())
 	popup.open(0)
 	return
+
+/datum/preferences/proc/SetSkills(mob/user)
+
+	var/list/dat = list()
+
+	//Combat
+	var/skill_guns_t = skill_guns + skill_guns_base + special_a
+	var/skill_energy_t = skill_energy + skill_energy_base + special_a
+	var/skill_unarmed_t = skill_unarmed + skill_unarmed_base + round((special_a + special_s)/2)
+	var/skill_melee_t = skill_melee + skill_melee_base + round((special_a + special_s)/2)
+	var/skill_throwing_t = skill_throwing + skill_throwing_base + special_a
+
+	//Active
+	var/skill_first_aid_t = skill_first_aid + skill_first_aid_base + round((special_p*2 + special_i)/2)
+	var/skill_doctor_t = skill_doctor + skill_doctor_base + round((special_p*2 + special_i)/2)
+	var/skill_sneak_t = skill_sneak + skill_sneak_base + special_a
+	var/skill_lockpick_t = skill_lockpick + skill_lockpick_base + round((special_p*2 + special_a)/2)
+	var/skill_traps_t = skill_traps + skill_traps_base + round((special_p*2 + special_a)/2)
+	var/skill_science_t = skill_science + skill_science_base + (special_i * 2)
+	var/skill_repair_t = skill_repair + skill_repair_base + special_i
+
+	//Passive
+	var/skill_speech_t = skill_speech + skill_speech_base + (special_c * 2)
+	var/skill_barter_t = skill_barter + skill_barter_base + (special_c * 2)
+	var/skill_outdoorsman_t = skill_outdoorsman + skill_outdoorsman_base + round((special_i + special_e)/2)
+
+	var/total = skill_guns + skill_energy + skill_unarmed + skill_melee + skill_throwing + skill_first_aid + skill_doctor + skill_sneak + skill_lockpick + skill_traps + skill_science + skill_repair + skill_speech + skill_barter + skill_outdoorsman
+	var/max_skill = 45 + (special_i*2)
+
+	dat += "<center><b>Allocate points</b></center>"
+	dat += "<center>[total] out of [max_skill] possible</center><br>"
+	dat += "<b>Combat skills:</b><BR>"	
+	dat += "<b>Guns	       :</b> <a href='?_src_=prefs;preference=skill_guns;task=input'>[skill_guns]</a>: [skill_guns_t]<BR>"
+	dat += "<b>Energy Guns :</b> <a href='?_src_=prefs;preference=skill_energy;task=input'>[skill_energy]</a>: [skill_energy_t]<BR>"
+	dat += "<b>Unarmed     :</b> <a href='?_src_=prefs;preference=skill_unarmed;task=input'>[skill_unarmed]</a>: [skill_unarmed_t]<BR>"
+	dat += "<b>Melee       :</b> <a href='?_src_=prefs;preference=skill_melee;task=input'>[skill_melee]</a>: [skill_melee_t]<BR>"
+	dat += "<b>Throwing    :</b> <a href='?_src_=prefs;preference=skill_throwing;task=input'>[skill_throwing]</a>: [skill_throwing_t]<BR>"
+	dat += "<b>Active skills:</b><BR>"	
+	dat += "<b>First Aid   :</b> <a href='?_src_=prefs;preference=skill_first_aid;task=input'>[skill_first_aid]</a>: [skill_first_aid_t]<BR>"
+	dat += "<b>Doctor      :</b> <a href='?_src_=prefs;preference=skill_doctor;task=input'>[skill_doctor]</a>: [skill_doctor_t]<BR>"
+	dat += "<b>Sneak       :</b> <a href='?_src_=prefs;preference=skill_sneak;task=input'>[skill_sneak]</a>: [skill_sneak_t]<BR>"
+	dat += "<b>Lock Picking:</b> <a href='?_src_=prefs;preference=skill_lockpick;task=input'>[skill_lockpick]</a>: [skill_lockpick_t]<BR>"
+	dat += "<b>Traps       :</b> <a href='?_src_=prefs;preference=skill_traps;task=input'>[skill_traps]</a>: [skill_traps_t]<BR>"
+	dat += "<b>Science     :</b> <a href='?_src_=prefs;preference=skill_science;task=input'>[skill_science]</a>: [skill_science_t]<BR>"
+	dat += "<b>Repair      :</b> <a href='?_src_=prefs;preference=skill_repair;task=input'>[skill_repair]</a>: [skill_repair_t]<BR>"
+	dat += "<b>Passive skills:</b><BR>"
+	dat += "<b>Speech      :</b> <a href='?_src_=prefs;preference=skill_speech;task=input'>[skill_speech]</a>: [skill_speech_t]<BR>"
+	dat += "<b>Barter      :</b> <a href='?_src_=prefs;preference=skill_barter;task=input'>[skill_barter]</a>: [skill_barter_t]<BR>"
+	dat += "<b>Outdoorsman :</b> <a href='?_src_=prefs;preference=skill_outdoorsman;task=input'>[skill_outdoorsman]</a>: [skill_outdoorsman_t]<BR>"
+
+	if (total > max_skill)
+		dat += "<center>Maximum exceeded, please change until your total is at or below [max_skill]<center>"
+	else
+		dat += "<center><a href='?_src_=prefs;preference=skill;task=close'>Done</a></center>"
+
+	user << browse(null, "window=preferences")
+	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Skills</div>", 400, 500) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(0)
+	return
+
+
+/datum/preferences/proc/remainingSpecialBalance()
+	return 40 - (special_s + special_p + special_e + special_c + special_i + special_a + special_l)
+
+/datum/preferences/proc/remainingSkillBalance()
+	return 45 + (special_i*2) - (skill_guns + skill_energy + skill_unarmed + skill_melee + skill_throwing + skill_first_aid + skill_doctor + skill_sneak + skill_lockpick + skill_traps + skill_science + skill_repair + skill_speech + skill_barter + skill_outdoorsman)
 
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 5
@@ -1639,6 +1751,18 @@ Records disabled until a use for them is found
 				SetSpecial(user)
 		return TRUE
 
+		
+	else if(href_list["preference"] == "skill")
+		switch(href_list["task"])
+			if("close")
+				user << browse(null, "window=mob_occupation")
+				ShowChoices(user)
+			if("update")
+			if("reset")
+			else
+				SetSkills(user)
+		return TRUE
+
 	switch(href_list["task"])
 		if("random")
 			switch(href_list["preference"])
@@ -1688,44 +1812,164 @@ Records disabled until a use for them is found
 				if("special_s")
 					var/new_point = input(user, "Choose Amount(1-9)", "Strength") as num|null
 					if(new_point)
-						special_s = max(min(round(text2num(new_point)), 9),1)
+						special_s = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_s)),1)
 					SetSpecial(user)
 					return 1
 				if("special_p")
 					var/new_point = input(user, "Choose Amount(1-9)", "Perception") as num|null
 					if(new_point)
-						special_p = max(min(round(text2num(new_point)), 9),1)
+						special_p = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_p)),1)
 					SetSpecial(user)
 					return 1
 				if("special_e")
 					var/new_point = input(user, "Choose Amount(1-9)", "Endurance") as num|null
 					if(new_point)
-						special_e = max(min(round(text2num(new_point)), 9),1)
+						special_e = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_e)),1)
 					SetSpecial(user)
 					return 1
 				if("special_c")
 					var/new_point = input(user, "Choose Amount(1-9)", "Charisma") as num|null
 					if(new_point)
-						special_c = max(min(round(text2num(new_point)), 9),1)
+						special_c = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_c)),1)
 					SetSpecial(user)
 					return 1
 				if("special_i")
 					var/new_point = input(user, "Choose Amount(1-9)", "Intelligence") as num|null
 					if(new_point)
-						special_i = max(min(round(text2num(new_point)), 9),1)
+						special_i = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_i)),1)
 					SetSpecial(user)
 					return 1
 				if("special_a")
 					var/new_point = input(user, "Choose Amount(1-9)", "Agility") as num|null
 					if(new_point)
-						special_a = max(min(round(text2num(new_point)), 9),1)
+						special_a = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_a)),1)
 					SetSpecial(user)
 					return 1
 				if("special_l")
 					var/new_point = input(user, "Choose Amount(1-9)", "Luck") as num|null
 					if(new_point)
-						special_l = max(min(round(text2num(new_point)), 9),1)
+						special_l = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_l)),1)
 					SetSpecial(user)
+					return 1
+				if("skill_guns")
+					var/new_point = input(user, "Choose Amount(0-99)", "Guns") as num|null
+					if(new_point)
+						skill_guns = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_guns)),0)
+					else
+						skill_guns = 0
+					SetSkills(user)
+					return 1
+				if("skill_energy")
+					var/new_point = input(user, "Choose Amount(0-99)", "Energy") as num|null
+					if(new_point)
+						skill_energy = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_energy)),0)
+					else
+						skill_energy = 0
+					SetSkills(user)
+					return 1
+				if("skill_unarmed")
+					var/new_point = input(user, "Choose Amount(0-99)", "Unarmed") as num|null
+					if(new_point)
+						skill_unarmed = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_unarmed)),0)
+					else
+						skill_unarmed = 0
+					SetSkills(user)
+					return 1
+				if("skill_melee")
+					var/new_point = input(user, "Choose Amount(0-99)", "Melee") as num|null
+					if(new_point)
+						skill_melee = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_melee)),0)
+					else
+						skill_melee = 0
+					SetSkills(user)
+					return 1
+				if("skill_throwing")
+					var/new_point = input(user, "Choose Amount(0-99)", "Throwing") as num|null
+					if(new_point)
+						skill_throwing = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_throwing)),0)
+					else
+						skill_throwing = 0
+					SetSkills(user)
+					return 1
+				if("skill_first_aid")
+					var/new_point = input(user, "Choose Amount(0-99)", "First Aid") as num|null
+					if(new_point)
+						skill_first_aid = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_first_aid)),0)
+					else
+						skill_first_aid = 0
+					SetSkills(user)
+					return 1
+				if("skill_doctor")
+					var/new_point = input(user, "Choose Amount(0-99)", "Doctor") as num|null
+					if(new_point)
+						skill_doctor = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_doctor)),0)
+					else
+						skill_doctor = 0
+					SetSkills(user)
+					return 1
+				if("skill_sneak")
+					var/new_point = input(user, "Choose Amount(0-99)", "Sneak") as num|null
+					if(new_point)
+						skill_sneak = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_sneak)),0)
+					else
+						skill_sneak = 0
+					SetSkills(user)
+					return 1
+				if("skill_lockpick")
+					var/new_point = input(user, "Choose Amount(0-99)", "Lockpicking") as num|null
+					if(new_point)
+						skill_lockpick = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_lockpick)),0)
+					else
+						skill_lockpick = 0
+					SetSkills(user)
+					return 1
+				if("skill_traps")
+					var/new_point = input(user, "Choose Amount(0-99)", "Traps") as num|null
+					if(new_point)
+						skill_traps = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_traps)),0)
+					else
+						skill_traps = 0
+					SetSkills(user)
+					return 1
+				if("skill_science")
+					var/new_point = input(user, "Choose Amount(0-99)", "Science") as num|null
+					if(new_point)
+						skill_science = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_science)),0)
+					else
+						skill_science = 0
+					SetSkills(user)
+					return 1
+				if("skill_repair")
+					var/new_point = input(user, "Choose Amount(0-99)", "Repair") as num|null
+					if(new_point)
+						skill_repair = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_repair)),0)
+					else
+						skill_repair = 0
+					SetSkills(user)
+					return 1
+				if("skill_speech")
+					var/new_point = input(user, "Choose Amount(0-99)", "Speech") as num|null
+					if(new_point)
+						skill_speech = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_speech)),0)
+					else
+						skill_speech = 0
+					SetSkills(user)
+					return 1
+				if("skill_barter")
+					var/new_point = input(user, "Choose Amount(0-99)", "Barter") as num|null
+					if(new_point)
+						skill_barter = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_barter)),0)
+					else
+						skill_barter = 0
+					SetSkills(user)
+					return 1
+				if("skill_outdoorsman")
+					var/new_point = input(user, "Choose Amount(0-99)", "Outdoorsman") as num|null
+					if(new_point)
+						skill_outdoorsman = max(min(round(text2num(new_point)), min(99, remainingSkillBalance() + skill_outdoorsman)),0)
+					else
+						skill_outdoorsman = 0
+					SetSkills(user)
 					return 1
 				if("ghostform")
 					if(unlock_content)
@@ -3103,6 +3347,22 @@ Records disabled until a use for them is found
 	character.special_i = special_i
 	character.special_a = special_a
 	character.special_l = special_l
+	//skills stuff
+	character.skill_guns = skill_guns + skill_guns_base
+	character.skill_energy = skill_energy + skill_energy_base
+	character.skill_unarmed = skill_unarmed + skill_unarmed_base
+	character.skill_melee = skill_melee + skill_melee_base
+	character.skill_sneak = skill_sneak + skill_sneak_base
+	character.skill_lockpick = skill_lockpick + skill_lockpick_base
+	character.skill_traps = skill_traps + skill_traps_base
+	character.skill_first_aid = skill_first_aid + skill_first_aid_base
+	character.skill_doctor = skill_doctor + skill_doctor_base
+	character.skill_science = skill_science + skill_science_base
+	character.skill_repair = skill_repair + skill_repair_base
+	character.skill_throwing = skill_throwing + skill_throwing_base
+	character.skill_speech = skill_speech + skill_speech_base
+	character.skill_outdoorsman = skill_outdoorsman + skill_outdoorsman_base
+	character.skill_barter = skill_barter + skill_barter_base
 
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color

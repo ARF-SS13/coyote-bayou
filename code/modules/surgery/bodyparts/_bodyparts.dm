@@ -640,6 +640,7 @@
 		C = source
 		if(!original_owner)
 			original_owner = source
+			max_damage = (max_damage - 15) + (source.special_e * 3)
 	else if(original_owner && owner != original_owner) //Foreign limb
 		no_update = TRUE
 	else
