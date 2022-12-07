@@ -69,7 +69,7 @@
 		return
 
 	var/obj/item/R //Our radio. Uses the generic /obj/item just in case someone is wearing a non-radio in the ear slot.
-	if(ears)
+	if(ears && istype(ears, /obj/item/radio))//Prioritize headsets first.
 		R = ears
 	else if(gloves && istype(gloves, /obj/item/pda))//Are we wearing a pipboy on our hands?
 		var/obj/item/pda/P = gloves
@@ -77,6 +77,8 @@
 	else if(wear_id && istype(wear_id, /obj/item/pda))//Are we wearing a pipboy in the ID slot?
 		var/obj/item/pda/P = wear_id
 		R = P.radio
+	else if(ears)//Fallback to using a non-radio object on the player's ear.
+		R = ears
 
 	switch(message_mode)
 		if(MODE_HEADSET)
