@@ -116,6 +116,7 @@
 	new /obj/item/stack/medical/gauze/adv(src)
 	new /obj/item/stack/medical/suture/medicated(src)
 	new /obj/item/stack/medical/mesh/advanced(src)
+	new /datum/reagent/medicine/gaia(src)
 
 /// Tribal med pouch!
 /obj/item/storage/survivalkit/medical/tribal
