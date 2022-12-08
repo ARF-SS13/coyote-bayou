@@ -67,19 +67,12 @@
 	. = ..()
 	AddComponent(/datum/component/caltrop, 20, 30, 100, CALTROP_BYPASS_SHOES)
 
-/obj/structure/obstacle/barbedwire/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/wirecutters))
-
-		to_chat(user, span_notice("You start cutting the [src]..."))
-		if(!I.use_tool(src, user, 4 SECONDS, volume=50) && !QDELETED(src))
-			return ..()
-		if(QDELETED(src)) // if we were deconstructed while sleeping in use_tool
-			return STOP_ATTACK_PROC_CHAIN // don't do anything to a deleted atom
-		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
+/obj/structure/obstacle/barbedwire/wirecutter_act(mob/user, obj/item/tool)
+	user.visible_message(span_warning("[user] cuts apart [src]."), span_notice("You start to cut apart [src]."), "You hear cutting.")
+	if(tool.use_tool(src, user, 4 SECONDS, volume=50))
 		deconstruct(TRUE)
-		return STOP_ATTACK_PROC_CHAIN
-
-	return ..()
+		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
+	return TRUE
 
 /obj/structure/obstacle/barbedwire/proc/shock(mob/user, prb) 	// war crime mode, if you can find an electrical generator
 	
@@ -227,6 +220,12 @@
 	name = "junk"
 	icon = 'icons/fallout/objects/furniture/junk.dmi'
 	icon_state = "junk_clock"
+	
+/obj/effect/overlay/junk/wrench_act(mob/user, obj/item/tool)
+	if(tool.use_tool(src, user, 30, volume=100))
+		to_chat(user, span_notice("You dismantle the junk."))
+		qdel(src)
+	return TRUE
 
 /obj/effect/overlay/junk/toilet
 	icon_state = "junk_toilet"
