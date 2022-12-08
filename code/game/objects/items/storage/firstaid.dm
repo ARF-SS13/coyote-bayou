@@ -73,7 +73,7 @@
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/reagent_containers/syringe/charcoal(src)
 
 /obj/item/storage/firstaid/fire
 	name = "burn treatment kit"
