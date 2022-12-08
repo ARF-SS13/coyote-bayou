@@ -1786,6 +1786,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/mall)
+"cmw" = (
+/obj/machinery/smartfridge/bottlerack/seedbin{
+	pixel_y = 8;
+	pixel_x = -5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "cmR" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
@@ -2449,6 +2456,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_wide,
 /area/f13/building)
+"diW" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "djj" = (
 /obj/structure/simple_door/house{
 	name = "New Age Gardening"
@@ -3696,6 +3710,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"eOA" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/legion_extractor{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "ePI" = (
 /obj/machinery/light,
 /turf/open/floor/f13{
@@ -3833,6 +3857,11 @@
 	color = "#a1a1a1"
 	},
 /area/f13/building/mall)
+"eXl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hydroponics/soil/pot,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "eYY" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
@@ -3953,6 +3982,12 @@
 /obj/structure/flora/grass/coyote/two,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"fhk" = (
+/obj/structure/chair/f13chair2{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "fhC" = (
 /obj/structure/spacevine,
 /turf/open/floor/f13{
@@ -4368,6 +4403,17 @@
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
+/area/f13/wasteland)
+"fNM" = (
+/obj/structure/reagent_dispensers/compostbin{
+	pixel_y = 15;
+	pixel_x = -3
+	},
+/obj/machinery/smartfridge/bottlerack/grownbin{
+	pixel_y = -2;
+	pixel_x = -3
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "fOQ" = (
 /obj/structure/railing{
@@ -7607,6 +7653,13 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/mall)
+"jIv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "jII" = (
 /obj/machinery/light{
 	dir = 8
@@ -9566,6 +9619,12 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
+"msQ" = (
+/obj/structure/chair/f13chair2{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "mta" = (
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/f13{
@@ -10316,6 +10375,14 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/massfusion)
+"nuz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "nuB" = (
 /obj/effect/overlay/junk/sink{
 	pixel_y = 15
@@ -10883,6 +10950,16 @@
 	sunlight_state = 1
 	},
 /area/f13/building/hospital)
+"obU" = (
+/obj/machinery/smartfridge/bottlerack/gardentool,
+/obj/item/shovel/spade,
+/obj/item/cultivator/rake,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/storage/bag/plants,
+/obj/item/storage/bag/plants,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "oce" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -11593,6 +11670,17 @@
 	},
 /turf/open/floor/carpet/green,
 /area/f13/building/abandoned)
+"oXl" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 17
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "oXx" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -13516,6 +13604,13 @@
 	icon_state = "wide-broken3"
 	},
 /area/f13/building)
+"rKh" = (
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "rKK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/boritos,
@@ -14093,6 +14188,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"sCa" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/machinery/hydroponics/soil/pot,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "sCM" = (
 /obj/structure/closet/cardboard,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -15746,6 +15848,13 @@
 "uWP" = (
 /turf/closed/wall/f13/wood,
 /area/f13/building/tribal)
+"uXC" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 10
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "uXJ" = (
 /obj/effect/gibspawner/generic/animal,
 /turf/open/floor/f13{
@@ -16055,6 +16164,13 @@
 	icon_state = "common-broken4"
 	},
 /area/f13/building/abandoned)
+"vAh" = (
+/obj/structure/table,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "vAv" = (
 /obj/structure/chair{
 	dir = 1
@@ -17035,6 +17151,12 @@
 /obj/machinery/light,
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
+"wXu" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "wXJ" = (
 /obj/structure/flora/branch_broken,
 /turf/open/indestructible/ground/outside/desert,
@@ -17358,6 +17480,13 @@
 /obj/structure/flora/grass/coyote/twentyseven,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"xtA" = (
+/obj/machinery/smartfridge/drying_rack{
+	pixel_y = 9;
+	pixel_x = -6
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "xtO" = (
 /obj/machinery/light{
 	bulb_colour = "#BC8F8F";
@@ -17518,6 +17647,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"xIM" = (
+/obj/machinery/hydroponics/soil/pot,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "xJf" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -18836,10 +18969,10 @@ mRc
 mRc
 mRc
 hKq
-oez
-oez
-oez
-oez
+sRu
+sRu
+sRu
+dmX
 oez
 oez
 oez
@@ -19092,11 +19225,11 @@ mRc
 eEx
 uZl
 mRc
-uHi
-oez
-oez
-oez
-oez
+aZf
+dtb
+dtb
+dtb
+odJ
 oez
 oez
 oez
@@ -19350,10 +19483,10 @@ mRc
 mRc
 mRc
 ffo
-oez
-oez
-oez
-oez
+msQ
+dtb
+dtb
+odJ
 oez
 oez
 oez
@@ -19607,10 +19740,10 @@ gKy
 jhg
 mRc
 hKq
-oez
-oez
-oez
+vAh
+fhk
 dtb
+diW
 dtb
 dtb
 dtb
@@ -19867,7 +20000,7 @@ uHi
 kwW
 gYZ
 dtb
-dtb
+diW
 dtb
 dtb
 dtb
@@ -20122,9 +20255,9 @@ cTA
 haB
 mRc
 gcS
-slU
+gYZ
 dtb
-dtb
+diW
 dtb
 dtb
 hqx
@@ -20379,9 +20512,9 @@ dSA
 nDe
 koZ
 mRc
-rrs
-hqx
-dtb
+gYZ
+jIv
+diW
 brR
 jnz
 dtb
@@ -20638,7 +20771,7 @@ koZ
 nLw
 osH
 dtb
-dtb
+diW
 dtb
 dtb
 dtb
@@ -20889,13 +21022,13 @@ mcX
 gYZ
 uHi
 gYZ
-eph
+gYZ
 mcX
-mNn
-mNn
+uHi
+uHi
 sMy
 dtb
-dtb
+diW
 dtb
 dtb
 hqx
@@ -21152,7 +21285,7 @@ mDs
 ylF
 vfM
 hqx
-dtb
+diW
 hqx
 dtb
 oez
@@ -21408,8 +21541,8 @@ mDs
 aGo
 mQC
 vfM
-dtb
-dtb
+wXu
+diW
 dtb
 dtb
 oez
@@ -21656,17 +21789,17 @@ oez
 oez
 uHi
 uHi
-ivG
+uHi
 gYZ
 vfM
 uHi
 vfM
-ivG
+uHi
 uHi
 uHi
 uHi
 dtb
-dtb
+diW
 dtb
 dtb
 oez
@@ -21910,20 +22043,20 @@ oez
 oez
 oez
 oez
-oez
+tXH
+sCa
 dtb
 dtb
 dtb
 dtb
+obU
+eOA
+xtA
+fNM
+cmw
+oXl
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+diW
 dtb
 dtb
 oez
@@ -22167,7 +22300,8 @@ oez
 oez
 oez
 oez
-oez
+tXH
+xIM
 dtb
 dtb
 dtb
@@ -22179,8 +22313,7 @@ dtb
 dtb
 dtb
 dtb
-dtb
-dtb
+diW
 dtb
 dtb
 oez
@@ -22424,8 +22557,12 @@ oez
 oez
 oez
 oez
-oez
-hqx
+tXH
+eXl
+dtb
+xIM
+xIM
+xIM
 dtb
 dtb
 dtb
@@ -22433,11 +22570,7 @@ dtb
 dtb
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+diW
 hqx
 dtb
 oez
@@ -22681,20 +22814,20 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
+afb
+mrM
+mrM
+mrM
+mrM
+uXC
+xIM
 dtb
 dtb
+xIM
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
+xIM
+diW
 dtb
 dtb
 oez
@@ -22943,15 +23076,15 @@ oez
 oez
 oez
 oez
-oez
+tXH
+xIM
 dtb
 dtb
+xIM
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
+xIM
+diW
 dtb
 dtb
 oez
@@ -23200,15 +23333,15 @@ oez
 oez
 oez
 oez
-oez
-hqx
+tXH
+eXl
 dtb
 dtb
-hqx
+eXl
 dtb
 hqx
-dtb
-hqx
+xIM
+nuz
 hqx
 dtb
 oez
@@ -23457,15 +23590,15 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+afb
+mrM
+mrM
+mrM
+mrM
+mrM
+mrM
+mrM
+rKh
 oez
 oez
 oez
