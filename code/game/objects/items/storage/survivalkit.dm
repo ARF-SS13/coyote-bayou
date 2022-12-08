@@ -116,7 +116,7 @@
 	new /obj/item/stack/medical/gauze/adv(src)
 	new /obj/item/stack/medical/suture/medicated(src)
 	new /obj/item/stack/medical/mesh/advanced(src)
-	new /datum/reagent/medicine/gaia(src)
+	new /obj/item/reagent_containers/syringe/sanguirite(src)
 
 /// Tribal med pouch!
 /obj/item/storage/survivalkit/medical/tribal
