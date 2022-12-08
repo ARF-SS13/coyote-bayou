@@ -7384,9 +7384,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"dEf" = (
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
 "dEL" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
@@ -8011,6 +8008,9 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/water,
 /area/f13/building/sewers)
+"eeh" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "eek" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbear1"
@@ -35616,7 +35616,7 @@ aae
 aae
 aae
 rmV
-dEf
+eeh
 toj
 bOa
 wCC
@@ -35873,7 +35873,7 @@ aae
 aae
 aae
 rmV
-dEf
+eeh
 qbG
 tfS
 tfS
@@ -36130,9 +36130,9 @@ aae
 aae
 aae
 rmV
-dEf
-dEf
-dEf
+eeh
+eeh
+eeh
 oLG
 tfS
 rmV
@@ -48478,7 +48478,7 @@ tkZ
 vOn
 joe
 aty
-bCt
+eFN
 aak
 aae
 aae
