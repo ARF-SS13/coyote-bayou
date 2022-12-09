@@ -178,6 +178,13 @@
 	amount_per_transfer_from_this = 10
 	list_reagents = null
 
+/obj/item/reagent_containers/hypospray/medipen/stimpak/glucose
+	name = "glucose injector"
+	desc = "An autoinjector filled with glucose for restoring bloodloss."
+	amount_per_transfer_from_this = 30
+	volume = 30
+	list_reagents = list(/datum/reagent/consumable/sugar = 30)
+
 /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak
 	name = "epipak"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful antiseptic that can help fight infections."

@@ -73,6 +73,14 @@
 	build_path = /obj/item/reagent_containers/syringe/large
 	category = list("initial", "Medical")
 
+/datum/design/hypospraymkii
+	name = "hypospray mk.II"
+	id = "hypospraymkii"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 40, /datum/material/glass = 80, /datum/material/plastic = 120)
+	build_path = /obj/item/hypospray/mkii
+	category = list("initial", "Medical")
+
 /datum/design/xlargesyringex
 	name = "X-Large syringe"
 	id = "xlargesyringe"

@@ -201,6 +201,11 @@
 	desc = "Contains charcoal."
 	list_reagents = list(/datum/reagent/medicine/charcoal = 15)
 
+/obj/item/reagent_containers/syringe/sanguirite
+	name = "syringe (sanguirite)"
+	desc = "Contains sanguirite."
+	list_reagents = list(/datum/reagent/medicine/coagulant = 15)
+
 /obj/item/reagent_containers/syringe/antiviral
 	name = "syringe (penicillin)"
 	desc = "Contains antiviral agents."
