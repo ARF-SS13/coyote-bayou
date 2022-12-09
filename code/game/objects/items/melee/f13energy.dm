@@ -24,10 +24,6 @@
 	var/hitcost = 750
 	var/preload_cell_type //if not empty the cutter starts with this type of cell
 
-/obj/item/melee/energy/examine(mob/user)
-	. = ..()
-	. += span_notice("Right click attack while in combat mode to disarm instead of stun.")
-
 /obj/item/melee/energy/get_cell()
 	. = cell
 	if(iscyborg(loc))
@@ -56,7 +52,6 @@
 		switch_status(FALSE, TRUE)
 		return FALSE
 	//Note this value returned is significant, as it will determine
-	//if a stun is applied or not
 
 	copper_top.use(min(chrgdeductamt, copper_top.charge), explode)
 	if(QDELETED(src))
