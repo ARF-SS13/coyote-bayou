@@ -4,6 +4,7 @@
 	time = 5
 	reqs = list(/datum/reagent/blackpowder = 50)
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_SCIENCE
 
 /datum/crafting_recipe/explosive/explosive_collar
 	name = "Explosive Collar"
@@ -26,6 +27,8 @@
 	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
 	time = 30
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/explosive/molotov
 	name = "Molotov Cocktail (empty)"
@@ -35,6 +38,8 @@
 		)
 	time = 2
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_TRAPS
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/explosive/firebomb
 	name = "Firebomb"
@@ -45,6 +50,8 @@
 				/obj/item/reagent_containers/food/drinks/flask = 1)
 	time = 5
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_TRAPS
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/explosive/firebomb_2
 	name = "Firebomb (from scrap)"
@@ -55,6 +62,8 @@
 				/obj/item/stack/sheet/metal = 2)
 	time = 5
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_TRAPS
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/explosive/coffeepotbomb
 	name = "Coffeepot Bomb"
@@ -65,6 +74,8 @@
 				/obj/item/assembly/timer = 1)
 	time = 5
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_TRAPS
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/explosive/coffeepotbomb_2
 	name = "Coffeepot Bomb (from scrap)"
@@ -76,6 +87,8 @@
 				/obj/item/stack/crafting/electronicparts = 3)
 	time = 5
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_TRAPS
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/explosive/bottlecap_mine
 	name = "Bottlecap Mine"
@@ -87,6 +100,9 @@
 			/obj/item/stack/f13Cash/caps = 200)
 	time = 15
 	category = CAT_EXPLOSIVE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
+
 /datum/crafting_recipe/explosive/shrapnelmine
 	name = "Shrapnel Mine"
 	result = /obj/item/mine/shrapnel/random
@@ -99,6 +115,8 @@
 	time = 15
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/explosive/explomine
 	name = "High-Explosive Mine"
@@ -114,6 +132,8 @@
 	time = 15
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/explosive/stingmine
 	name = "Stingball Mine"
@@ -129,6 +149,8 @@
 	time = 15
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/explosive/pulsemine
 	name = "Pulse Mine"
@@ -143,6 +165,8 @@
 	time = 15
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/explosive/stunmine
 	name = "Stun Mine"
@@ -156,7 +180,8 @@
 	time = 15
 	category = CAT_EXPLOSIVE
 	always_available = FALSE
-
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/lance
 	name = "Explosive Spear (Grenade)"
@@ -167,6 +192,7 @@
 				/obj/item/grenade = 1)
 	time = 15
 	category = CAT_EXPLOSIVE
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/concussion
 	name = "High Explosive Grenade" //this one has no shrapnel
@@ -201,6 +227,8 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/incendiary
 	name = "Incendiary Grenade"
@@ -218,6 +246,8 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/stinger
 	name = "Stinger Grenade"
@@ -234,6 +264,8 @@
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/radgrenade
 	name = "Radiation Grenade"
@@ -252,6 +284,8 @@
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/flashbang
 	name = "Flashbang"
@@ -268,6 +302,8 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/smokebomb
 	name = "Smokebomb"
@@ -284,6 +320,8 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/empgrenade
 	name = "Pulse Grenade"
@@ -300,6 +338,8 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/rocket_base
 	name = "Empty rocket shell"
@@ -315,6 +355,7 @@
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/weakrocket
 	name = "Low-yield HE rocket"
@@ -329,6 +370,8 @@
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/strongrocket
 	name = "High-yield HE rocket"
@@ -343,6 +386,8 @@
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/incendiaryrocket
 	name = "Incendiary rocket"
@@ -358,3 +403,5 @@
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
 	always_available = FALSE
+	skill_needed = SKILL_TRAPS
+	skill_level = REGULAR_CHECK

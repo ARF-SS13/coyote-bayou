@@ -70,7 +70,7 @@
 	category = CAT_TRIBAL
 
 /datum/crafting_recipe/duct_tape
-	name = "Bonfire"
+	name = "tape"
 	time = 60
 	always_available = TRUE
 	tools = list(TOOL_WORKBENCH)
@@ -244,6 +244,7 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
@@ -255,6 +256,7 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/tribalwar/bonebow
 	name = "Deathclaw Bow"
@@ -275,6 +277,7 @@
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
 	always_available = TRUE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/tribalwar/crossbow
 	name = "CrossBow"
@@ -286,6 +289,7 @@
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/stack/sheet/glass = 4)
 	category = CAT_TRIBAL
+	skill_level = REGULAR_CHECK
 
 //ARROWS
 
@@ -527,6 +531,7 @@
 				/obj/item/stack/cable_coil = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	skill_level = HARD_CHECK
 
 /* tdo
 /datum/crafting_recipe/beartrap

@@ -29,6 +29,7 @@
 				/obj/item/stack/rods = 2)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/crudewrench
 	name = "Crude Wrench"
@@ -84,6 +85,7 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/basicwrench
 	name = "Basic Wrench"
@@ -120,6 +122,7 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/msreloader
 	name = "Makeshift Reloading Press"
@@ -130,3 +133,4 @@
 				/obj/item/stack/rods = 2)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
+	skill_level = REGULAR_CHECK

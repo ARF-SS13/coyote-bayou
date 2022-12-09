@@ -258,8 +258,8 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 /obj/item/salvage/proc/make_loot(mob/user, place_to_put_it)
 	if(!place_to_put_it || !isturf(place_to_put_it))
 		place_to_put_it = get_turf(src) //just dump it on the floor you filthy animal
-	// base 1 loot roll, +1 if technophreak, 50% for +1, and 25% for +1
-	var/loot_rolls = 1 + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK)) + (prob(50)) + (prob(25))
+	// easy repair skill check for first loot roll, standard repair check for +1, +1 if technophreak, and 25% for +1
+	var/loot_rolls = (user.skill_check(SKILL_REPAIR, EASY_CHECK)) + (user.skill_check(SKILL_REPAIR)) + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK)) + (prob(25))
 	for(var/i in 1 to loot_rolls)
 		var/obj/I = pick(src.Loot)
 		new I (place_to_put_it)

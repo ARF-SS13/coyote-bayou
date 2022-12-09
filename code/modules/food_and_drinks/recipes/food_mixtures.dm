@@ -2,6 +2,7 @@
 	var/real_parts
 	category = CAT_FOOD
 	time = 5
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/food/New()
 	real_parts = parts.Copy()

@@ -10,6 +10,9 @@
 	var/category = CAT_NONE //where it shows up in the crafting UI
 	var/subcategory = CAT_NONE
 	var/always_available = TRUE //Set to FALSE if it needs to be learned first.
+	var/skill_needed = SKILL_REPAIR
+	var/skill_level = EASY_CHECK
+	var/falls_back_on_outdoors = FALSE
 
 /datum/crafting_recipe/New()
 	if(!(result in reqs))

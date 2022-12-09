@@ -16,9 +16,10 @@
 	var/skill_barter = 100
 	var/skill_outdoorsman = 100
 
-// -20 for difficulty on a 'normal' check
-// 0 for a challenging check
-// +20 for a expert check
+// -20 for an easy roll
+// -10 for difficulty on a 'normal' roll
+// 0 for a challenging roll
+// +20 for an expert roll
 /mob/proc/skill_roll(check, difficulty = DIFFICULTY_NORMAL)
 	return ((skill_value(check) + special_l) >= (rand(1,99) + difficulty))
 

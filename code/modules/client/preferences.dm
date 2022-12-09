@@ -1555,6 +1555,21 @@ Records disabled until a use for them is found
 	popup.open(0)
 	return
 
+/datum/preferences/proc/reset_skills()
+	skill_barter = 0
+	skill_guns = 0
+	skill_doctor = 0
+	skill_energy = 0
+	skill_melee = 0
+	skill_unarmed = 0
+	skill_first_aid = 0
+	skill_repair = 0
+	skill_science = 0
+	skill_lockpick = 0
+	skill_outdoorsman = 0
+	skill_speech = 0
+	skill_traps = 0
+
 /datum/preferences/proc/SetSkills(mob/user)
 
 	var/list/dat = list()
@@ -1836,6 +1851,7 @@ Records disabled until a use for them is found
 				if("special_i")
 					var/new_point = input(user, "Choose Amount(1-9)", "Intelligence") as num|null
 					if(new_point)
+						reset_skills()
 						special_i = max(min(round(text2num(new_point)), min(9, remainingSpecialBalance() + special_i)),1)
 					SetSpecial(user)
 					return 1

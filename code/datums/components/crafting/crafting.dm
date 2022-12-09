@@ -196,9 +196,16 @@
 			return FALSE
 	return TRUE
 
+/datum/component/personal_crafting/proc/has_skill_needed_to_construct(mob/user, datum/crafting_recipe/R)
+	return (user.skill_check(R.skill_needed, R.skill_level) || ((R.falls_back_on_outdoors || R.category == CAT_TRIBAL) && user.skill_check(SKILL_OUTDOORSMAN, R.skill_level)))
+
 /datum/component/personal_crafting/proc/construct_item(atom/a, datum/crafting_recipe/R)
 	var/list/contents = get_surroundings(a)
 	var/send_feedback = 1
+	if (ismob(a))
+		var/mob/user = a
+		if (!has_skill_needed_to_construct(user, R))
+			return ", lacking the required skill."
 	if(check_contents(a, R, contents))
 		if(check_tools(a, R, contents))
 			//If we're a mob we'll try a do_after; non mobs will instead instantly construct the item
@@ -373,7 +380,10 @@
 	for(var/rec in GLOB.crafting_recipes)
 		var/datum/crafting_recipe/R = rec
 
-		if(!R.always_available && !(R.type in user?.mind?.learned_recipes)) //User doesn't actually know how to make this.
+		if(!R.always_available && !(R.type in user?.mind?.learned_recipes) && !user.skill_check(R.skill_needed, EXPERT_CHECK)) //User doesn't actually know how to make this.
+			continue
+
+		if(!has_skill_needed_to_construct(user, R)) //User doesn't have the skill to make this
 			continue
 
 		if((R.category != cur_category) || (R.subcategory != cur_subcategory))
@@ -386,7 +396,10 @@
 
 /datum/component/personal_crafting/ui_static_data(mob/user)
 	var/list/data = list()
-
+	log_world("Easy: " + num2text(EASY_CHECK))
+	log_world("Reg: " + num2text(REGULAR_CHECK))
+	log_world("Hard: " + num2text(HARD_CHECK))
+	log_world("Exp: " + num2text(EXPERT_CHECK))
 	var/list/crafting_recipes = list()
 	for(var/rec in GLOB.crafting_recipes)
 		var/datum/crafting_recipe/R = rec
@@ -394,7 +407,10 @@
 		if(R.name == "") //This is one of the invalid parents that sneaks in
 			continue
 
-		if(!R.always_available && !(R.type in user?.mind?.learned_recipes)) //User doesn't actually know how to make this.
+		if(!R.always_available && !(R.type in user?.mind?.learned_recipes) && !user.skill_check(R.skill_needed, EXPERT_CHECK)) //User doesn't actually know how to make this.
+			continue
+
+		if(!has_skill_needed_to_construct(user, R)) //User doesn't have the skill to make this
 			continue
 
 		if(isnull(crafting_recipes[R.category]))

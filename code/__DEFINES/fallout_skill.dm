@@ -24,6 +24,7 @@
 #define DIFFICULTY_CHALLENGE  0
 #define DIFFICULTY_EXPERT     20
 
+#define VERY_EASY_CHECK       10
 #define EASY_CHECK            35
 #define REGULAR_CHECK         50
 #define HARD_CHECK            65

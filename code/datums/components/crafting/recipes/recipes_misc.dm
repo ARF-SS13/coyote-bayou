@@ -7,6 +7,7 @@
 	tools = list(TOOL_SCREWDRIVER,TOOL_WORKBENCH)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = HARD_CHECK
 
 /////////////////
 //Large Objects//
@@ -21,6 +22,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/legiongate
 	name = "Legion iron gate"
@@ -30,6 +32,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/gate_bos
 	name = "Brotherhood steel door"
@@ -39,6 +42,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/gate_khanate
 	name = "Khans steel-reinforced wood door"
@@ -49,6 +53,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/plant
 	name = "Potted plant"
@@ -58,6 +63,7 @@
 	time = 20
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = VERY_EASY_CHECK
 
 /datum/crafting_recipe/toilet
 	name = "Toilet"
@@ -67,6 +73,7 @@
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/sink
 	name = "Sink"
@@ -76,6 +83,7 @@
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/shower
 	name = "Shower"
@@ -86,6 +94,7 @@
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/showercurtain
 	name = "Shower Curtains"
@@ -95,6 +104,7 @@
 	result = /obj/structure/curtain
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = VERY_EASY_CHECK
 
 /datum/crafting_recipe/curtain
 	name = "Curtains"
@@ -103,6 +113,7 @@
 	result = /obj/structure/curtain
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = VERY_EASY_CHECK
 
 /datum/crafting_recipe/dogbed
 	name = "Dog Bed"
@@ -112,6 +123,7 @@
 	time = 10
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = VERY_EASY_CHECK
 
 /datum/crafting_recipe/junk_table
 	name = "Makeshift Bar Table"
@@ -121,6 +133,7 @@
 	time = 10
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_needed = VERY_EASY_CHECK
 
 ///////////////////////////
 //Scavenging and Tinkering//
@@ -136,6 +149,7 @@
 	time = 50
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/pin_removal/check_requirements(mob/user, list/collected_requirements)
 	var/obj/item/gun/G = collected_requirements[/obj/item/gun][1]
@@ -151,12 +165,14 @@
 	result = /obj/item/circuitboard/machine/vr_sleeper
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/set_vrboard
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 	time = 15
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/set_vrboard/bos
 	name = "Modify VR Sleeper Board (BoS)"
@@ -189,6 +205,7 @@
 	result = /obj/structure/statue/wood/headstonewood
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3)
 	time = 10
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/rip/coffin
 	name = "Coffin"
@@ -255,6 +272,7 @@
 	time = 15 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/blast_doors
 	name = "Blast Door"
@@ -267,6 +285,7 @@
 	time = 30 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/shutters/window
 	name = "Windowed Shutters"
@@ -280,6 +299,7 @@
 	time = 15 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = REGULAR_CHECK
 
 /*
 /datum/crafting_recipe/bloodsucker/vassalrack
@@ -317,6 +337,7 @@
 	reqs = list(/obj/item/paper = 5)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/smallcarton
 	name = "Small Carton"
@@ -325,6 +346,7 @@
 	reqs = list(/obj/item/stack/sheet/cardboard = 1)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/picket_sign
 	name = "Picket Sign"
@@ -334,6 +356,7 @@
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/wheelchair
 	name = "Wheelchair"
@@ -343,6 +366,7 @@
 	time = 100
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/blackcarpet
 	name = "Black Carpet"
@@ -358,6 +382,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5, /obj/item/paper = 20)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/naturalpaper
 	name = "Hand-Pressed Paper"
@@ -366,6 +391,8 @@
 	result = /obj/item/paper_bin/bundlenatural
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = EASY_CHECK
+	skill_needed = SKILL_OUTDOORSMAN
 
 /*
 /datum/crafting_recipe/electrochromatic_kit
@@ -439,6 +466,7 @@
 	time = 10
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/rolling_paper_bulk
 	name = "Rolling Paper (Bulk)"
@@ -448,6 +476,7 @@
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/well
 	name = "Water Well"

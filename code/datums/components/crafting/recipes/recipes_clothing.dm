@@ -13,6 +13,7 @@
 	time = 40
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/belt
 	name = "Fannypack"
@@ -25,6 +26,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/chestrig
 	name = "Chest Rig"
@@ -37,6 +39,7 @@
 	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/webbing
 	name = "Webbing"
@@ -49,6 +52,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/shoulderholster
 	name = "Shoulder Holster"
@@ -61,6 +65,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/legholster
 	name = "Leg Holster"
@@ -73,6 +78,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/medolier
 	name = "Medolier"
@@ -84,6 +90,7 @@
 	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/durathread_toolbelt
 	name = "Durathread Toolbelt"
@@ -94,6 +101,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/durathread_bandolier
 	name = "Durathread Bandolier"
@@ -104,6 +112,8 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/durathread_wintercoat
 	name = "Durathread Winter Coat"
@@ -114,6 +124,8 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/heavysheath
 	name = "Heavy-Duty Sheath"
@@ -125,6 +137,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/bandolierknife
 	name = "Knife Bandolier"
@@ -136,6 +149,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/twinsheath
 	name = "Twin Sheath"
@@ -147,6 +161,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+	falls_back_on_outdoors = TRUE
 
 /* * * * * *
  * APRONS  *
@@ -162,6 +177,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/medical_apron
 	name = "Nurse's Apron"
@@ -173,6 +189,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/surgical_apron
 	name = "Surgeon's Apron"
@@ -184,6 +201,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/chef_apron
 	name = "Chef's Apron"
@@ -195,6 +213,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/labor_apron
 	name = "Labor Apron"
@@ -206,6 +225,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/forge_apron
 	name = "Smith's Apron"
@@ -217,6 +237,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/housewife_apron
 	name = "Housewife Apron"
@@ -241,6 +262,7 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/sneakers
 	name = "Sneakers"
@@ -250,6 +272,7 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/footcloths
 	name = "Footcloths"
@@ -259,6 +282,8 @@
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	skill_level = VERY_EASY_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/cowboy
 	name = "Cowboy boots"
@@ -268,6 +293,7 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/explorer
 	name = "Work boots"
@@ -277,6 +303,7 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/fancy
 	name = "Leather shoes, black"
@@ -286,6 +313,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/brownie
 	name = "Leather shoes, brown"
@@ -295,6 +323,7 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/tan
 	name = "Leather shoes, tan"
@@ -304,6 +333,7 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_SHOES
+	falls_back_on_outdoors = TRUE
 
 /*
 /datum/crafting_recipe/armwraps
@@ -394,6 +424,8 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING	//F13 category
+	falls_back_on_outdoors = TRUE
+	skill_level = VERY_EASY_CHECK
 
 /*
 /datum/crafting_recipe/hudsunsec

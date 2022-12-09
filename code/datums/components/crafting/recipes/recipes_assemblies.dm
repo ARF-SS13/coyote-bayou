@@ -11,6 +11,7 @@
 	time = 40
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/trading_machine
 	name = "Vending machine"
@@ -24,6 +25,7 @@
 	time = 80
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
@@ -65,6 +67,7 @@
 	time = 10
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/timer
 	name = "Timer"
@@ -75,6 +78,7 @@
 	time = 10
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/signaler
 	name = "Remote signaling device"
@@ -86,6 +90,7 @@
 	time = 10
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/infrared
 	name = "Infrared emitter"
@@ -96,6 +101,7 @@
 	time = 10
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/proximity
 	name = "Proximity sensor"
@@ -106,6 +112,7 @@
 	time = 10
 	category = CAT_CRAFTING
 	subcategory = CAT_ROBOT
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
@@ -139,6 +146,7 @@
 	time = 30
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/dryingrack //In sandstone inhand now
 	name = "Drying Rack"
@@ -148,6 +156,7 @@
 	time = 30
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/seedextractor //In metal inhand now
 	name = "Seed Extractor"
@@ -157,6 +166,7 @@
 	time = 40
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/stove
 	name = "Cook stove"
@@ -171,6 +181,7 @@
 	time = 80
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+	skill_needed = REGULAR_CHECK
 
 /datum/crafting_recipe/bellystove
 	name = "Pot belly stove"
@@ -182,6 +193,7 @@
 	time = 80
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/grill
 	name = "Grill"
@@ -203,6 +215,7 @@
 	tools = list(TOOL_WORKBENCH)
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/beartrap
 	name = "Bear trap"
@@ -212,6 +225,7 @@
 	time = 80
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+	falls_back_on_outdoors = TRUE
 /*
 /datum/crafting_recipe/msgterminal
 	name = "Communications terminal"
