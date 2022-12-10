@@ -96,7 +96,7 @@
 						return
 					to_chat(user, "<B>Your wish is granted, but at a terrible cost...</B>")
 					to_chat(user, "The Wish Granter punishes you for your wickedness, warping itself into a dastardly creature for you to kill! ...but it almost seems to reward you for this.")
-					var/obj/item/melee/transforming/energy/sword/cx/killreward = new /obj/item/melee/transforming/energy/sword/cx(get_turf(user))
+					var/obj/item/melee/transforming/plasmacutter/sword/cx/killreward = new /obj/item/melee/transforming/plasmacutter/sword/cx(get_turf(user))
 					if(user.put_in_hands(killreward))
 						to_chat(user, "[killreward] materializes into your hands!")
 					else

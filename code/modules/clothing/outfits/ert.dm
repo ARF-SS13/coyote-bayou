@@ -53,7 +53,7 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer/swat=1,\
 		/obj/item/gun/energy/e_gun=1)
-	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	l_pocket = /obj/item/melee/transforming/plasmacutter/sword/saber
 
 /datum/outfit/ert/commander/alert/red
 	name = "ERT Commander - Red Alert"
