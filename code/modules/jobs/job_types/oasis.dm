@@ -1183,6 +1183,97 @@ Mayor
 		)
 /*--------------------------------------------------------------*/
 
+//The Quartermaster
+/datum/job/oasis/f13quartermaster
+	title = "Texarkana Quartermaster"
+	flag = F13SHOPKEEPER
+	department_flag = DEP_OASIS
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the free market and Nash's laws"
+	description = "You are the team leader for your various workers in the shop. Guide them as you see fit towards a profitable future."
+	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
+	selection_color = "#dcba97"
+	exp_requirements = 400
+
+	loadout_options = list(
+	/datum/outfit/loadout/laser_master,
+	/datum/outfit/loadout/ballistic_master
+	)
+
+	outfit = /datum/outfit/job/den/f13quartermaster
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+/datum/outfit/job/den/f13quartermaster
+	name = "Texarkana Quartermaster"
+	jobtype = /datum/job/oasis/f13quartermaster
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town/commerce
+	belt = /obj/item/kit_spawner/townie
+	uniform = /obj/item/clothing/under/f13/roving
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	gloves = /obj/item/clothing/gloves/fingerless
+	l_pocket = /obj/item/storage/bag/money/small/den
+	r_pocket = /obj/item/flashlight/glowstick
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/pda/quartermaster)
+
+/datum/outfit/loadout/laser_master
+	name = "Laser Master"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/plasmarifle = 1
+	)
+
+/datum/outfit/loadout/ballistic_master
+	name = "Ballistic Master"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/armalite = 1
+	)
+
+/datum/outfit/job/den/f13quartermaster/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/a180)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
+
+/datum/outfit/job/den/f13quartermaster/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+//The Trade Workers
 /datum/job/oasis/f13shopkeeper
 	title = "Texarkana Trade Worker"
 	flag = F13SHOPKEEPER
