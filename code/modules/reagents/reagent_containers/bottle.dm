@@ -475,6 +475,18 @@
 	volume = 60
 	list_reagents = list(/datum/reagent/medicine/gaia = 60)
 
+/obj/item/reagent_containers/glass/bottle/omnizine
+	name = "omnizine bottle"
+	desc = "A large bottle containing omnizine."
+	volume = 60
+	list_reagents = list(/datum/reagent/medicine/omnizine = 60)
+
+/obj/item/reagent_containers/glass/bottle/sanguirite
+	name = "sanguirite bottle"
+	desc = "A large bottle containing sanguirite."
+	volume = 30
+	list_reagents = list(/datum/reagent/medicine/coagulant = 30)
+
 /obj/item/reagent_containers/glass/bottle/primitive
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "bottle_primitive"
@@ -489,7 +501,7 @@
 		return
 
 //f13 - Coyote
-/obj/item/reagent_containers/glass/bottle/nicotine 
+/obj/item/reagent_containers/glass/bottle/nicotine
 	name = "nicotine bottle"
 	list_reagents = list(/datum/reagent/drug/nicotine = 30)
 

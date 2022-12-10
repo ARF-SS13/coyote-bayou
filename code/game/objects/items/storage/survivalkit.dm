@@ -56,7 +56,7 @@
 	new /obj/item/flashlight(src)
 	new /obj/item/flashlight/glowstick(src)
 	new /obj/item/melee/onehanded/knife/bowie(src)
-	
+
 /obj/item/storage/survivalkit/outlaw/empty/PopulateContents()
 	return
 
@@ -82,6 +82,7 @@
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/reagent_containers/pill/charcoal(src)
 
 /obj/item/storage/survivalkit/medical/empty/PopulateContents()
 	return
@@ -115,6 +116,7 @@
 	new /obj/item/stack/medical/gauze/adv(src)
 	new /obj/item/stack/medical/suture/medicated(src)
 	new /obj/item/stack/medical/mesh/advanced(src)
+	new /obj/item/reagent_containers/syringe/sanguirite(src)
 
 /// Tribal med pouch!
 /obj/item/storage/survivalkit/medical/tribal
@@ -129,6 +131,7 @@
 	new /obj/item/reagent_containers/pill/healingpowder(src)
 	new /obj/item/stack/medical/gauze/improvised(src)
 	new /obj/item/stack/medical/mesh/aloe(src)
+	new /obj/item/reagent_containers/pill/antivenom(src)
 
 /obj/item/storage/survivalkit/medical/tribal/empty/PopulateContents()
 	return
