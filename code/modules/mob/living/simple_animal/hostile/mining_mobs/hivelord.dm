@@ -376,7 +376,7 @@
 			uniform = /obj/item/clothing/under/misc/assistantformal
 			mask = /obj/item/clothing/mask/breath
 			shoes = /obj/item/clothing/shoes/sneakers/black
-			r_pocket = /obj/item/melee/transforming/energy/sword/cx/broken
+			r_pocket = /obj/item/melee/transforming/plasmacutter/sword/cx/broken
 			suit = /obj/item/clothing/suit/space/hardsuit/lavaknight
 			suit_store = /obj/item/tank/internals/oxygen
 			id = /obj/item/card/id/knight
