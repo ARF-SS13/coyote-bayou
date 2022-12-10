@@ -1186,7 +1186,7 @@ Mayor
 //The Quartermaster
 /datum/job/oasis/f13quartermaster
 	title = "Texarkana Quartermaster"
-	flag = F13SHOPKEEPER
+	flag = F13QUARTERMASTER
 	department_flag = DEP_OASIS
 	total_positions = 1
 	spawn_positions = 1
@@ -1229,7 +1229,8 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/pda/quartermaster)
+		/obj/item/pda/quartermaster,
+		/obj/item/stack/f13Cash/caps/twofivezero)
 
 /datum/outfit/loadout/laser_master
 	name = "Laser Master"
