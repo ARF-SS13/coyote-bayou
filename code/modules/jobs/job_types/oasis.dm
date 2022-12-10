@@ -299,7 +299,7 @@ Mayor
 	neck = /obj/item/storage/belt/shoulderholster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	shoes = /obj/item/clothing/shoes/f13/military/plated
-	
+
 	//backpack_contents = list(
 	//	/obj/item/ammo_box/tube/c4570 = 3,
 	//	/obj/item/gun_upgrade/scope/watchman = 1
@@ -1218,7 +1218,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13shopkeeper
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie/trader
+	belt = /obj/item/kit_spawner/townie
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
