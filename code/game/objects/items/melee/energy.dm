@@ -70,6 +70,7 @@
 	name = "plasma cutter"
 	desc = "A bright green plasma cutter."
 	icon_state = "axe0"
+	icon_state_on = "axe1"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	force = 10
@@ -96,6 +97,7 @@
 	name = "plasma cutter adam"
 	desc = "A bright crimson plasma cutter.."
 	icon_state = "adam0"
+	icon_state_on = "adam1"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	force = 10
@@ -118,6 +120,7 @@
 	name = "plasma cutter eve"
 	desc = "A violet colored plasma cutter. An inscription on it reads: In the land of the shadow of death a light has dawned."
 	icon_state = "eve0"
+	icon_state_on = "eve1"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	force = 10
