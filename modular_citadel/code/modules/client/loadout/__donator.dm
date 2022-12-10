@@ -176,7 +176,7 @@
 	new /obj/item/clothing/head/beret/headband(src)
 	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
 	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
-	new /obj/item/melee/energy/eve(src)
+	new /obj/item/melee/transforming/energy/plasmacutter/sword/eve(src)
 
 // B
 
