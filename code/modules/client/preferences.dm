@@ -278,10 +278,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/special_l = 5
 
 	//Combat
-	var/skill_guns_base = 35
+	var/skill_guns_base = 30
 	var/skill_energy_base = 20
-	var/skill_unarmed_base = 65
-	var/skill_melee_base = 55
+	var/skill_unarmed_base = 60
+	var/skill_melee_base = 50
 	var/skill_throwing_base = 40
 
 	//Active
@@ -297,6 +297,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skill_speech_base = 25
 	var/skill_barter_base = 20
 	var/skill_outdoorsman_base = 15
+
+	var/skill_points = 70
 
 	//Combat
 	var/skill_guns = 0
@@ -1596,7 +1598,7 @@ Records disabled until a use for them is found
 	var/skill_outdoorsman_t = skill_outdoorsman + skill_outdoorsman_base + round((special_i + special_e)/2)
 
 	var/total = skill_guns + skill_energy + skill_unarmed + skill_melee + skill_throwing + skill_first_aid + skill_doctor + skill_sneak + skill_lockpick + skill_traps + skill_science + skill_repair + skill_speech + skill_barter + skill_outdoorsman
-	var/max_skill = 45 + (special_i*2)
+	var/max_skill = skill_points + (special_i*2)
 
 	dat += "<center><b>Allocate points</b></center>"
 	dat += "<center>[total] out of [max_skill] possible</center><br>"
@@ -1636,7 +1638,7 @@ Records disabled until a use for them is found
 	return 40 - (special_s + special_p + special_e + special_c + special_i + special_a + special_l)
 
 /datum/preferences/proc/remainingSkillBalance()
-	return 45 + (special_i*2) - (skill_guns + skill_energy + skill_unarmed + skill_melee + skill_throwing + skill_first_aid + skill_doctor + skill_sneak + skill_lockpick + skill_traps + skill_science + skill_repair + skill_speech + skill_barter + skill_outdoorsman)
+	return skill_points + (special_i*2) - (skill_guns + skill_energy + skill_unarmed + skill_melee + skill_throwing + skill_first_aid + skill_doctor + skill_sneak + skill_lockpick + skill_traps + skill_science + skill_repair + skill_speech + skill_barter + skill_outdoorsman)
 
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 5

@@ -11,6 +11,7 @@
 	add_verb(src, /mob/living/carbon/human/verb/underwear_toggle)
 	add_verb(src, /mob/living/verb/subtle)
 	add_verb(src, /mob/living/verb/subtler)
+	add_verb(src, /mob/living/verb/try_to_talk_to)
 	//initialize limbs first
 	create_bodyparts()
 

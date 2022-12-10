@@ -540,7 +540,9 @@ ATTACHMENTS
 		misfire_act(user)
 		if(chambered)
 			sprd = user.calculate_offset(sprd, gun_skill_used)
-			sprd += max((90 - user.skill_value(SKILL_GUNS))/100, 0)
+			if(user.skill_roll(gun_skill_used))
+				sprd += ((100 - user.skill_value(gun_skill_used))/20)
+				to_chat(user, span_danger("You fumble your aim!"))
 			before_firing(target,user)
 			var/BB = chambered.BB
 			if(!chambered.fire_casing(target, user, params, added_spread, silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))

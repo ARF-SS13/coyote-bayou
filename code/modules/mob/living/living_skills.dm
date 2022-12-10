@@ -21,7 +21,7 @@
 // 0 for a challenging roll
 // +20 for an expert roll
 /mob/proc/skill_roll(check, difficulty = DIFFICULTY_NORMAL)
-	return ((skill_value(check) + special_l) >= (rand(1,99) + difficulty))
+	return ((skill_value(check) + special_l) >= (rand(1,100) + difficulty))
 
 /mob/proc/skill_check(check, threshold = REGULAR_CHECK)
 	return (skill_value(check) >= threshold)
@@ -58,3 +58,14 @@
 	if (SKILL_OUTDOORSMAN == check)
 		return skill_outdoorsman + round((special_i + special_e)/2)
 	return 0
+
+/mob/living/verb/try_to_talk_to(atom/A as mob in view())
+	set name = "Talk to"
+	set category = "IC"
+
+	var/mob/m = A
+	if(!(A in view(client ? client.view : world.view, src)) || !m.will_talk)
+		// shift-click catcher may issue examinate() calls for out-of-sight turfs
+		return
+	
+	m.talk_to(src)

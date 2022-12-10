@@ -168,7 +168,12 @@
 			to_chat(user, span_danger("You fumble your energy gun!"))
 			playsound(user, dryfire_sound, 25, 1, -1)
 			return
-	return ..()
+	if (user.skill_roll(SKILL_ENERGY, DIFFICULTY_EASY))
+		return ..()
+	else
+		to_chat(user, span_danger("You fumble your energy gun!"))
+		playsound(user, dryfire_sound, 25, 1, -1)
+		return
 
 // Firemodes/Ammotypes
 

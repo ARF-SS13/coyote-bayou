@@ -216,6 +216,15 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 			M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
 /**
+ * Use the talk verb on a mob
+ *
+ * vars:
+ * * talker the mob who is attempting to talk to us
+ */
+/mob/proc/talk_to(mob/talker)
+	return FALSE
+
+/**
  * Show a message to all mobs in earshot of this one
  *
  * This would be for audible actions by the src mob
