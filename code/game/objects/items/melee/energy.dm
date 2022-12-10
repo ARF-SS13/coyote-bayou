@@ -1,4 +1,4 @@
-/obj/item/melee/transforming/energy
+/obj/item/melee/transforming/plasmacutter
 	hitsound_on = 'sound/weapons/blade1.ogg'
 	heat = 3500
 	max_integrity = 200
@@ -10,7 +10,7 @@
 	var/sword_color
 	total_mass = 0.4 //Survival flashlights typically weigh around 5 ounces.
 
-/obj/item/melee/transforming/energy/Initialize()
+/obj/item/melee/transforming/plasmacutter/Initialize()
 	. = ..()
 	total_mass_on = (total_mass_on ? total_mass_on : (w_class_on * 0.75))
 	if(active)
@@ -19,26 +19,26 @@
 		set_light_on(TRUE)
 		START_PROCESSING(SSobj, src)
 
-/obj/item/melee/transforming/energy/Destroy()
+/obj/item/melee/transforming/plasmacutter/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/melee/transforming/energy/suicide_act(mob/user)
+/obj/item/melee/transforming/plasmacutter/suicide_act(mob/user)
 	if(!active)
 		transform_weapon(user, TRUE)
 	user.visible_message(span_suicide("[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku!"))
 	return (BRUTELOSS|FIRELOSS)
 
-/obj/item/melee/transforming/energy/add_blood_DNA(list/blood_dna)
+/obj/item/melee/transforming/plasmacutter/add_blood_DNA(list/blood_dna)
 	return FALSE
 
-/obj/item/melee/transforming/energy/get_sharpness()
+/obj/item/melee/transforming/plasmacutter/get_sharpness()
 	return active * sharpness
 
-/obj/item/melee/transforming/energy/process()
+/obj/item/melee/transforming/plasmacutter/process()
 	open_flame()
 
-/obj/item/melee/transforming/energy/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/plasmacutter/transform_weapon(mob/living/user, supress_message_text)
 	. = ..()
 	if(.)
 		if(active)
@@ -50,10 +50,10 @@
 			STOP_PROCESSING(SSobj, src)
 			set_light_on(FALSE)
 
-/obj/item/melee/transforming/energy/get_temperature()
+/obj/item/melee/transforming/plasmacutter/get_temperature()
 	return active * heat
 
-/obj/item/melee/transforming/energy/ignition_effect(atom/A, mob/user)
+/obj/item/melee/transforming/plasmacutter/ignition_effect(atom/A, mob/user)
 	if(!active)
 		return ""
 
@@ -66,16 +66,67 @@
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
-/obj/item/melee/transforming/energy/axe
-	name = "energy axe"
-	desc = "An energized battle axe."
+/obj/item/melee/transforming/plasmacutter/regular
+	name = "plasma cutter"
+	desc = "A bright green plasma cutter."
 	icon_state = "axe0"
+	icon_state_on = "axe1"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
-	force = 40
-	force_on = 80
-	throwforce = 25
-	throwforce_on = 30
+	force = 10
+	force_on = 25
+	throwforce = 5
+	throwforce_on = 20
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	armour_penetration = 0.25
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#40ceff"
+	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular/suicide_act(mob/user)
+	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
+	return (BRUTELOSS|FIRELOSS)
+
+/obj/item/melee/transforming/plasmacutter/regular/adam
+	name = "plasma cutter adam"
+	desc = "A bright crimson plasma cutter.."
+	icon_state = "adam0"
+	icon_state_on = "adam1"
+	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	force = 10
+	force_on = 40
+	throwforce = 5
+	throwforce_on = 20
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	armour_penetration = 0.75
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#40ceff"
+	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular/eve
+	name = "plasma cutter eve"
+	desc = "A violet colored plasma cutter. An inscription on it reads: In the land of the shadow of death a light has dawned."
+	icon_state = "eve0"
+	icon_state_on = "eve1"
+	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	force = 10
+	force_on = 30
+	throwforce = 5
+	throwforce_on = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
@@ -83,16 +134,12 @@
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
 	armour_penetration = 0.5
-	attack_verb_off = list("attacked", "chopped", "cleaved", "torn", "cut")
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#40ceff"
 	total_mass = null
 
-/obj/item/melee/transforming/energy/axe/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS|FIRELOSS)
-
-/obj/item/melee/transforming/energy/sword
+/obj/item/melee/transforming/plasmacutter/sword
 	name = "energy sword"
 	desc = "May the force be within you."
 	icon_state = "sword0"
@@ -129,39 +176,39 @@
 	parry_failed_stagger_duration = 4 SECONDS
 	parry_cooldown = 0.5 SECONDS
 
-/obj/item/melee/transforming/energy/sword/Initialize(mapload)
+/obj/item/melee/transforming/plasmacutter/sword/Initialize(mapload)
 	. = ..()
 	set_sword_color()
 
-/obj/item/melee/transforming/energy/sword/proc/set_sword_color()
+/obj/item/melee/transforming/plasmacutter/sword/proc/set_sword_color()
 	if(LAZYLEN(possible_colors))
 		set_light_color(possible_colors[pick(possible_colors)])
 
-/obj/item/melee/transforming/energy/sword/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/plasmacutter/sword/transform_weapon(mob/living/user, supress_message_text)
 	. = ..()
 	if(active)
 		AddElement(/datum/element/sword_point)
 	else
 		RemoveElement(/datum/element/sword_point)
 
-/obj/item/melee/transforming/energy/sword/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+/obj/item/melee/transforming/plasmacutter/sword/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(!active)
 		return NONE
 	return ..()
 
-/obj/item/melee/transforming/energy/sword/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
+/obj/item/melee/transforming/plasmacutter/sword/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 	. = ..()
 	if(parry_efficiency >= 80)		// perfect parry
 		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER
 		. |= BLOCK_SHOULD_REDIRECT
 
-/obj/item/melee/transforming/energy/sword/cyborg
+/obj/item/melee/transforming/plasmacutter/sword/cyborg
 	sword_color = "red"
 	light_color = "#ff0000"
 	possible_colors = null
 	var/hitcost = 50
 
-/obj/item/melee/transforming/energy/sword/cyborg/attack(mob/M, mob/living/silicon/robot/R)
+/obj/item/melee/transforming/plasmacutter/sword/cyborg/attack(mob/M, mob/living/silicon/robot/R)
 	if(R.cell)
 		var/obj/item/stock_parts/cell/C = R.cell
 		if(active && !(C.use(hitcost)))
@@ -170,7 +217,7 @@
 			return
 		return ..()
 
-/obj/item/melee/transforming/energy/sword/cyborg/saw //Used by medical Syndicate cyborgs
+/obj/item/melee/transforming/plasmacutter/sword/cyborg/saw //Used by medical Syndicate cyborgs
 	name = "energy saw"
 	desc = "For heavy duty cutting. It has a carbon-fiber blade in addition to a toggleable hard-light edge to dramatically increase sharpness."
 	force_on = 30
@@ -187,37 +234,37 @@
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.7
 
-/obj/item/melee/transforming/energy/sword/cyborg/saw/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+/obj/item/melee/transforming/plasmacutter/sword/cyborg/saw/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	return NONE
 
-/obj/item/melee/transforming/energy/sword/saber
+/obj/item/melee/transforming/plasmacutter/sword/saber
 	possible_colors = list("red" = LIGHT_COLOR_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
 	var/hacked = FALSE
 
-/obj/item/melee/transforming/energy/sword/saber/set_sword_color()
+/obj/item/melee/transforming/plasmacutter/sword/saber/set_sword_color()
 	if(LAZYLEN(possible_colors))
 		sword_color = pick(possible_colors)
 		set_light_color(possible_colors[sword_color])
 
-/obj/item/melee/transforming/energy/sword/saber/process()
+/obj/item/melee/transforming/plasmacutter/sword/saber/process()
 	. = ..()
 	if(hacked)
 		var/set_color = pick(possible_colors)
 		set_light_color(possible_colors[set_color])
 
-/obj/item/melee/transforming/energy/sword/saber/red
+/obj/item/melee/transforming/plasmacutter/sword/saber/red
 	possible_colors = list("red" = LIGHT_COLOR_RED)
 
-/obj/item/melee/transforming/energy/sword/saber/blue
+/obj/item/melee/transforming/plasmacutter/sword/saber/blue
 	possible_colors = list("blue" = LIGHT_COLOR_LIGHT_CYAN)
 
-/obj/item/melee/transforming/energy/sword/saber/green
+/obj/item/melee/transforming/plasmacutter/sword/saber/green
 	possible_colors = list("green" = LIGHT_COLOR_GREEN)
 
-/obj/item/melee/transforming/energy/sword/saber/purple
+/obj/item/melee/transforming/plasmacutter/sword/saber/purple
 	possible_colors = list("purple" = LIGHT_COLOR_LAVENDER)
 
-/obj/item/melee/transforming/energy/sword/saber/attackby(obj/item/W, mob/living/user, params)
+/obj/item/melee/transforming/plasmacutter/sword/saber/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/multitool))
 		if(!hacked)
 			hacked = TRUE
@@ -232,7 +279,7 @@
 	else
 		return ..()
 
-/obj/item/melee/transforming/energy/sword/pirate
+/obj/item/melee/transforming/plasmacutter/sword/pirate
 	name = "energy cutlass"
 	desc = "Arrrr matey."
 	icon_state = "cutlass0"
@@ -242,7 +289,7 @@
 	light_color = "#ff0000"
 	possible_colors = null
 
-/obj/item/melee/transforming/energy/blade
+/obj/item/melee/transforming/plasmacutter/blade
 	name = "energy blade"
 	desc = "A concentrated beam of energy in the shape of a blade. Very stylish... and lethal."
 	icon_state = "blade"
@@ -259,16 +306,16 @@
 	sharpness = SHARP_EDGED
 
 //Most of the other special functions are handled in their own files. aka special snowflake code so kewl
-/obj/item/melee/transforming/energy/blade/Initialize()
+/obj/item/melee/transforming/plasmacutter/blade/Initialize()
 	. = ..()
 	spark_system = new /datum/effect_system/spark_spread()
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
 
-/obj/item/melee/transforming/energy/blade/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/plasmacutter/blade/transform_weapon(mob/living/user, supress_message_text)
 	return
 
-/obj/item/melee/transforming/energy/blade/hardlight
+/obj/item/melee/transforming/plasmacutter/blade/hardlight
 	name = "hardlight blade"
 	desc = "An extremely sharp blade made out of hard light. Packs quite a punch."
 	icon_state = "lightblade"
@@ -278,7 +325,7 @@
 /////////////		The TRUE Energy Sword		///////////////////////////
 *//////////////////////////////////////////////////////////////////////////
 
-/obj/item/melee/transforming/energy/sword/cx
+/obj/item/melee/transforming/plasmacutter/sword/cx
 	name = "non-eutactic blade"
 	desc = "The Non-Eutactic Blade utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable."
 	icon_state = "cxsword_hilt"
@@ -299,29 +346,29 @@
 	light_color = "#37FFF7"
 	actions_types = list()
 
-/obj/item/melee/transforming/energy/sword/cx/Initialize()
+/obj/item/melee/transforming/plasmacutter/sword/cx/Initialize()
 	icon_state_on = icon_state
 	return ..()
 
-/obj/item/melee/transforming/energy/sword/cx/ComponentInitialize()
+/obj/item/melee/transforming/plasmacutter/sword/cx/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/melee/transforming/energy/sword/cx/alt_pre_attack(atom/A, mob/living/user, params)	//checks if it can do right click memes
+/obj/item/melee/transforming/plasmacutter/sword/cx/alt_pre_attack(atom/A, mob/living/user, params)	//checks if it can do right click memes
 	altafterattack(A, user, TRUE, params)
 	return TRUE
 
-/obj/item/melee/transforming/energy/sword/cx/transform_weapon(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/plasmacutter/sword/cx/transform_weapon(mob/living/user, supress_message_text)
 	. = ..()
 	update_icon()
 
-/obj/item/melee/transforming/energy/sword/cx/transform_messages(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/plasmacutter/sword/cx/transform_messages(mob/living/user, supress_message_text)
 	playsound(user, active ? 'sound/weapons/nebon.ogg' : 'sound/weapons/neboff.ogg', 65, 1)
 	if(!supress_message_text)
 		to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"]."))
 
 
-/obj/item/melee/transforming/energy/sword/cx/update_overlays()
+/obj/item/melee/transforming/plasmacutter/sword/cx/update_overlays()
 	. = ..()
 	var/mutable_appearance/blade_overlay = mutable_appearance(icon, "cxsword_blade")
 	var/mutable_appearance/gem_overlay = mutable_appearance(icon, "cxsword_gem")
@@ -335,7 +382,7 @@
 	if(active)
 		. += blade_overlay
 
-/obj/item/melee/transforming/energy/sword/cx/AltClick(mob/living/user)
+/obj/item/melee/transforming/plasmacutter/sword/cx/AltClick(mob/living/user)
 	. = ..()
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
@@ -350,11 +397,11 @@
 		update_icon()
 	return TRUE
 
-/obj/item/melee/transforming/energy/sword/cx/examine(mob/user)
+/obj/item/melee/transforming/plasmacutter/sword/cx/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click to recolor it.")
 
-/obj/item/melee/transforming/energy/sword/cx/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
+/obj/item/melee/transforming/plasmacutter/sword/cx/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
 	. = ..()
 	if(active)
 		if(isinhands)
@@ -363,13 +410,13 @@
 			. += blade_inhand
 
 //Broken version. Not a toy, but not as strong.
-/obj/item/melee/transforming/energy/sword/cx/broken
+/obj/item/melee/transforming/plasmacutter/sword/cx/broken
 	name = "misaligned non-eutactic blade"
 	desc = "The Non-Eutactic Blade utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. This one seems to have a damaged handle and misaligned components, causing the blade to be unstable at best"
 	force_on = 15 //As strong a survival knife/bone dagger
 
-/obj/item/melee/transforming/energy/sword/cx/attackby(obj/item/W, mob/living/user, params)
-	if(istype(W, /obj/item/melee/transforming/energy/sword/cx))
+/obj/item/melee/transforming/plasmacutter/sword/cx/attackby(obj/item/W, mob/living/user, params)
+	if(istype(W, /obj/item/melee/transforming/plasmacutter/sword/cx))
 		if(HAS_TRAIT(W, TRAIT_NODROP) || HAS_TRAIT(src, TRAIT_NODROP))
 			to_chat(user, span_warning("\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!"))
 			return
@@ -382,7 +429,7 @@
 		return ..()
 
 ////////		Tatortot NEB		/////////////// (same stats as regular esword)
-/obj/item/melee/transforming/energy/sword/cx/traitor
+/obj/item/melee/transforming/plasmacutter/sword/cx/traitor
 	name = "\improper Dragon's Tooth Sword"
 	desc = "The Dragon's Tooth sword is a blackmarket modification of a Non-Eutactic Blade, \
 			which utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. \
@@ -395,7 +442,7 @@
 	hitsound_on = 'sound/weapons/blade1.ogg'
 	light_color = "#37F0FF"
 
-/obj/item/melee/transforming/energy/sword/cx/traitor/transform_messages(mob/living/user, supress_message_text)
+/obj/item/melee/transforming/plasmacutter/sword/cx/traitor/transform_messages(mob/living/user, supress_message_text)
 	playsound(user, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 35, 1)
 	if(!supress_message_text)
 		to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"]."))

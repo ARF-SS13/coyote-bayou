@@ -47,7 +47,7 @@
 			new /obj/item/screwdriver/power(src) //2 tc item
 
 		if("murder") // 35 tc
-			new /obj/item/melee/transforming/energy/sword/saber(src)
+			new /obj/item/melee/transforming/plasmacutter/sword/saber(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/card/emag(src)
 			new /obj/item/clothing/shoes/chameleon/noslip(src)
