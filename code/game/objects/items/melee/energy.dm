@@ -66,16 +66,64 @@
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
-/obj/item/melee/transforming/plasmacutter/axe
-	name = "energy axe"
-	desc = "An energized battle axe."
+/obj/item/melee/transforming/plasmacutter/regular
+	name = "plasma cutter"
+	desc = "A bright green plasma cutter."
 	icon_state = "axe0"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
-	force = 40
-	force_on = 80
-	throwforce = 25
-	throwforce_on = 30
+	force = 10
+	force_on = 25
+	throwforce = 5
+	throwforce_on = 20
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	armour_penetration = 0.25
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#40ceff"
+	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular/suicide_act(mob/user)
+	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
+	return (BRUTELOSS|FIRELOSS)
+
+/obj/item/melee/transforming/plasmacutter/regular/adam
+	name = "plasma cutter adam"
+	desc = "A bright crimson plasma cutter.."
+	icon_state = "adam0"
+	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	force = 10
+	force_on = 40
+	throwforce = 5
+	throwforce_on = 20
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	armour_penetration = 0.75
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#40ceff"
+	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular/eve
+	name = "plasma cutter eve"
+	desc = "A violet colored plasma cutter. An inscription on it reads: In the land of the shadow of death a light has dawned."
+	icon_state = "eve0"
+	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	force = 10
+	force_on = 30
+	throwforce = 5
+	throwforce_on = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
@@ -83,14 +131,10 @@
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
 	armour_penetration = 0.5
-	attack_verb_off = list("attacked", "chopped", "cleaved", "torn", "cut")
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#40ceff"
 	total_mass = null
-
-/obj/item/melee/transforming/plasmacutter/axe/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/melee/transforming/plasmacutter/sword
 	name = "energy sword"
