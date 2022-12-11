@@ -2,6 +2,8 @@
 	will_talk = TRUE
 	var/list/broken_trust = list()
 	var/list/introduced = list()
+	var/list/failed = list()
+	var/intimidated = FALSE
 	
 /mob/living/simple_animal/hostile/retaliate/talker/basic
 	name = "Nanotrasen Private Security Officer"
@@ -22,7 +24,6 @@
 	speed = 0
 	stat_attack = CONSCIOUS
 	ranged_cooldown_time = 22
-	extra_projectiles = 2
 	ranged = TRUE
 	robust_searching = TRUE
 	healable = TRUE
@@ -46,7 +47,7 @@
 	rapid = 3
 	retreat_distance = 3
 	minimum_distance = 5
-	casingtype = /obj/item/ammo_casing/c46x30mm
+	casingtype = /obj/item/ammo_casing/c9mm
 	projectiletype = /obj/item/projectile/bullet/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/autopipe,
@@ -76,16 +77,21 @@
 	if (introduced.Find(WEAKREF(talker)))
 		reply_name = talker.name
 		we_introduced = TRUE
-
-	var/dat = "Hello [reply_name]."
+	var/dat = ""
+	if (!failed.Find(talker))
+		dat +=  "Hello [reply_name]."
+	else
+		dat +=  "Oh, you again. What do you want?"
 	if (say_hello)
 		say(dat)
 	if(!we_introduced)
 		dat += "<center><a href='?src=[REF(src)];introduce=1'>Intoduce yourself</a></center>"
-	dat += dialog_options(talker, we_introduced)
+	if(!friends.Find(talker))
+		dat += "<center><a href='?src=[REF(src)];stare=1'>Remain silent and stare. (Speech - Intimidate)</a></center>"
+	dat += dialog_options(talker, we_introduced || intimidated)
 	return dat
 
-/mob/living/simple_animal/hostile/retaliate/talker/proc/dialog_options(mob/talker, introduced)
+/mob/living/simple_animal/hostile/retaliate/talker/proc/dialog_options(mob/talker, display_options)
 	return ""
 
 
@@ -94,5 +100,15 @@
 		usr.say("My name is [usr.name].")
 		introduced |= WEAKREF(usr)
 		say("Pleased to meet you, [usr.name].")
+		show_dialog_box(usr, FALSE)
+	if(href_list["stare"])
+		usr.emote("stare")
+		introduced |= WEAKREF(usr)
+		if (usr.skill_roll(SKILL_SPEECH) && !failed.Find(WEAKREF(usr)))
+			say("Right... Can I help you?")
+			intimidated = TRUE
+		else
+			emote("stare")
+			failed |= WEAKREF(usr)
 		show_dialog_box(usr, FALSE)
 
