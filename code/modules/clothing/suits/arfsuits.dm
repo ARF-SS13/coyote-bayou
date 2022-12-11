@@ -1298,6 +1298,7 @@
 	name = "retro fitted riot combat armor"
 	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, however most of the plates have been torn out to make room for various storage compartments."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T1)
