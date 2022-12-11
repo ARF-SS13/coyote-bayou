@@ -86,7 +86,7 @@
 	armour_penetration = 0.25
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
-	light_color = "#40ceff"
+	light_color = "#00FF00"
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/regular/suicide_act(mob/user)
@@ -113,7 +113,7 @@
 	armour_penetration = 0.75
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
-	light_color = "#40ceff"
+	light_color = "#FF0000"
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/regular/eve
@@ -136,7 +136,7 @@
 	armour_penetration = 0.5
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
-	light_color = "#40ceff"
+	light_color = "#A020F0"
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/sword
