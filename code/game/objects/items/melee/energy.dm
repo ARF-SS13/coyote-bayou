@@ -69,10 +69,10 @@
 /obj/item/melee/transforming/plasmacutter/regular
 	name = "plasma cutter"
 	desc = "A bright green plasma cutter."
-	icon_state = "axe0"
-	icon_state_on = "axe1"
-	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	icon_state = "plasmacutter0"
+	icon_state_on = "plasmacutter1"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
 	force_on = 25
 	throwforce = 5
@@ -98,8 +98,8 @@
 	desc = "A bright crimson plasma cutter.."
 	icon_state = "adam0"
 	icon_state_on = "adam1"
-	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
 	force_on = 40
 	throwforce = 5
@@ -121,8 +121,8 @@
 	desc = "A violet colored plasma cutter. An inscription on it reads: In the land of the shadow of death a light has dawned."
 	icon_state = "eve0"
 	icon_state_on = "eve1"
-	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
 	force_on = 30
 	throwforce = 5
