@@ -28,13 +28,13 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("metal rod", /obj/item/stack/rods, 1, 2, 60), \
 	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 6, time = 100), \
-	new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \
+	new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5, skill_threshold = REGULAR_CHECK), \
 	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
 	null, \
-	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1), \
+	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1, skill_threshold = EASY_CHECK), \
 	new/datum/stack_recipe("coffee pot", /obj/item/crafting/coffee_pot, 1), \
 	new/datum/stack_recipe("lunchbox", /obj/item/crafting/lunchbox, 1), \
-	new/datum/stack_recipe("key", /obj/item/key, 1), \
+	new/datum/stack_recipe("key", /obj/item/key, 1, skill_threshold = EASY_CHECK), \
 	new/datum/stack_recipe("key chain", /obj/item/storage/keys_set, 1), \
 	null, \
 	new/datum/stack_recipe("seed extractor", /obj/structure/legion_extractor, 6, one_per_turf = TRUE, on_floor = TRUE), \
@@ -81,34 +81,34 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("closet", /obj/structure/closet, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("trash bin", /obj/structure/closet/crate/bin, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
-	new/datum/stack_recipe("computer frame", /obj/structure/frame/computer, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("modular console", /obj/machinery/modular_computer/console/buildable/, 10, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("machine frame", /obj/structure/frame/machine, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("computer frame", /obj/structure/frame/computer, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE, skill_threshold = HARD_CHECK), \
+	new/datum/stack_recipe("modular console", /obj/machinery/modular_computer/console/buildable/, 10, time = 25, one_per_turf = TRUE, on_floor = TRUE, skill_threshold = HARD_CHECK), \
+	new/datum/stack_recipe("machine frame", /obj/structure/frame/machine, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE, skill_threshold = REGULAR_CHECK), \
 	null, \
 	new /datum/stack_recipe_list("airlock assemblies", list( \
-		new /datum/stack_recipe("standard airlock assembly", /obj/structure/door_assembly, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("public airlock assembly", /obj/structure/door_assembly/door_assembly_public, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("command airlock assembly", /obj/structure/door_assembly/door_assembly_com, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("security airlock assembly", /obj/structure/door_assembly/door_assembly_sec, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("engineering airlock assembly", /obj/structure/door_assembly/door_assembly_eng, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("research airlock assembly", /obj/structure/door_assembly/door_assembly_research, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("freezer airlock assembly", /obj/structure/door_assembly/door_assembly_fre, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("medical airlock assembly", /obj/structure/door_assembly/door_assembly_med, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("maintenance airlock assembly", /obj/structure/door_assembly/door_assembly_mai, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("external airlock assembly", /obj/structure/door_assembly/door_assembly_ext, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("airtight hatch assembly", /obj/structure/door_assembly/door_assembly_hatch, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("maintenance hatch assembly", /obj/structure/door_assembly/door_assembly_mhatch, 4, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("standard airlock assembly", /obj/structure/door_assembly, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("public airlock assembly", /obj/structure/door_assembly/door_assembly_public, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("command airlock assembly", /obj/structure/door_assembly/door_assembly_com, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("security airlock assembly", /obj/structure/door_assembly/door_assembly_sec, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("engineering airlock assembly", /obj/structure/door_assembly/door_assembly_eng, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("research airlock assembly", /obj/structure/door_assembly/door_assembly_research, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("freezer airlock assembly", /obj/structure/door_assembly/door_assembly_fre, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("medical airlock assembly", /obj/structure/door_assembly/door_assembly_med, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("maintenance airlock assembly", /obj/structure/door_assembly/door_assembly_mai, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("external airlock assembly", /obj/structure/door_assembly/door_assembly_ext, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("airtight hatch assembly", /obj/structure/door_assembly/door_assembly_hatch, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("maintenance hatch assembly", /obj/structure/door_assembly/door_assembly_mhatch, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
 	)), \
 	null, \
-	new/datum/stack_recipe("turret frame", /obj/machinery/porta_turret_construct, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("turret frame", /obj/machinery/porta_turret_construct, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE, skill_threshold = HARD_CHECK), \
 	new/datum/stack_recipe("meatspike frame", /obj/structure/kitchenspike_frame, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE, skill_threshold = HARD_CHECK), \
 	null, \
-	new/datum/stack_recipe("large light fixture frame", /obj/item/wallframe/light_fixture, 2), \
-	new/datum/stack_recipe("small light fixture frame", /obj/item/wallframe/light_fixture/small, 1), \
+	new/datum/stack_recipe("large light fixture frame", /obj/item/wallframe/light_fixture, 2, skill_threshold = EASY_CHECK), \
+	new/datum/stack_recipe("small light fixture frame", /obj/item/wallframe/light_fixture/small, 1, skill_threshold = EASY_CHECK), \
 	null, \
 	new/datum/stack_recipe("extinguisher cabinet frame", /obj/item/wallframe/extinguisher_cabinet, 2), \
-	new/datum/stack_recipe("button frame", /obj/item/wallframe/button, 1), \
+	new/datum/stack_recipe("button frame", /obj/item/wallframe/button, 1, skill_threshold = EASY_CHECK), \
 	new /datum/stack_recipe_list("chess pieces", list( \
 		new /datum/stack_recipe("White Pawn", /obj/structure/chess/whitepawn, 2, time = 10, one_per_turf = 1, on_floor = 1), \
 		new /datum/stack_recipe("White Rook", /obj/structure/chess/whiterook, 2, time = 10, one_per_turf = 1, on_floor = 1), \
@@ -126,16 +126,16 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 ))
 
 /* Temp cache of commented out metal stack stuff.
-		new /datum/stack_recipe("science airlock assembly", /obj/structure/door_assembly/door_assembly_science, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("mining airlock assembly", /obj/structure/door_assembly/door_assembly_min, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("atmospherics airlock assembly", /obj/structure/door_assembly/door_assembly_atmo, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("virology airlock assembly", /obj/structure/door_assembly/door_assembly_viro, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("external maintenance airlock assembly", /obj/structure/door_assembly/door_assembly_extmai, 4, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("science airlock assembly", /obj/structure/door_assembly/door_assembly_science, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("mining airlock assembly", /obj/structure/door_assembly/door_assembly_min, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("atmospherics airlock assembly", /obj/structure/door_assembly/door_assembly_atmo, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("virology airlock assembly", /obj/structure/door_assembly/door_assembly_viro, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
+		new /datum/stack_recipe("external maintenance airlock assembly", /obj/structure/door_assembly/door_assembly_extmai, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = REGULAR_CHECK), \
 
-	new/datum/stack_recipe("reflector frame", /obj/structure/reflector, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("apc frame", /obj/item/wallframe/apc, 2), \
-	new/datum/stack_recipe("air alarm frame", /obj/item/wallframe/airalarm, 2), \
-	new/datum/stack_recipe("fire alarm frame", /obj/item/wallframe/firealarm, 2), \
+	new/datum/stack_recipe("reflector frame", /obj/structure/reflector, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE, skill_threshold = HARD_CHECK), \
+	new/datum/stack_recipe("apc frame", /obj/item/wallframe/apc, 2, skill_threshold = HARD_CHECK), \
+	new/datum/stack_recipe("air alarm frame", /obj/item/wallframe/airalarm, 2, skill_threshold = HARD_CHECK), \
+	new/datum/stack_recipe("fire alarm frame", /obj/item/wallframe/firealarm, 2, skill_threshold = HARD_CHECK), \
 */
 
 /obj/item/stack/sheet/metal
@@ -220,8 +220,8 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 // Plasteel
 
 GLOBAL_LIST_INIT(plasteel_recipes, list ( \
-	new/datum/stack_recipe("bomb assembly", /obj/machinery/syndicatebomb/empty, 10, time = 50), \
-	new/datum/stack_recipe("micro powered fan assembly", /obj/machinery/fan_assembly, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("bomb assembly", /obj/machinery/syndicatebomb/empty, 10, time = 50, skill_threshold = HARD_CHECK), \
+	new/datum/stack_recipe("micro powered fan assembly", /obj/machinery/fan_assembly, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE, skill_threshold = HARD_CHECK), \
 	new /datum/stack_recipe_list("crates", list( \
 		new /datum/stack_recipe("gray crate", /obj/structure/closet/crate, 5, time = 50, one_per_turf = 1, on_floor = 1), \
 		new /datum/stack_recipe("internals crate", /obj/structure/closet/crate/internals, 5, time = 50, one_per_turf = 1, on_floor = 1), \
@@ -238,8 +238,8 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 		new /datum/stack_recipe("science crate", /obj/structure/closet/crate/science, 5, time = 50, one_per_turf = 1, on_floor = 1), \
 	)), \
 	new /datum/stack_recipe_list("airlock assemblies", list( \
-		new/datum/stack_recipe("high security airlock assembly", /obj/structure/door_assembly/door_assembly_highsecurity, 4, time = 50, one_per_turf = 1, on_floor = 1), \
-		new/datum/stack_recipe("vault door assembly", /obj/structure/door_assembly/door_assembly_vault, 6, time = 50, one_per_turf = 1, on_floor = 1), \
+		new/datum/stack_recipe("high security airlock assembly", /obj/structure/door_assembly/door_assembly_highsecurity, 4, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = HARD_CHECK), \
+		new/datum/stack_recipe("vault door assembly", /obj/structure/door_assembly/door_assembly_vault, 6, time = 50, one_per_turf = 1, on_floor = 1, skill_threshold = HARD_CHECK), \
 	)), \
 ))
 

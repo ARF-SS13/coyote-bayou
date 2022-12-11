@@ -23,6 +23,9 @@
 /mob/proc/skill_roll(check, difficulty = DIFFICULTY_NORMAL)
 	return ((skill_value(check) + special_l) >= (rand(1,100) + difficulty))
 
+/mob/proc/skill_roll_under(check, difficulty = DIFFICULTY_NORMAL)
+	return  ((rand(1,100) + difficulty) - (skill_value(check)))
+
 /mob/proc/skill_check(check, threshold = REGULAR_CHECK)
 	return (skill_value(check) >= threshold)
 

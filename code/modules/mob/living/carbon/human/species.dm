@@ -1652,7 +1652,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			randn -= 25 //if you are a pugilist, you're slapping that item from them pretty reliably
 		if(HAS_TRAIT(target, TRAIT_PUGILIST))
 			randn += 25 //meanwhile, pugilists are less likely to get disarmed
-
+		randn += user.skill_roll_under(SKILL_UNARMED, DIFFICULTY_CHALLENGE)
+		randn -= target.skill_roll_under(SKILL_UNARMED, DIFFICULTY_CHALLENGE)
 		if(randn <= 35)//CIT CHANGE - changes this back to a 35% chance to accomodate for the above being commented out in favor of right-click pushing
 			var/obj/item/I = null
 			if(target.pulling)

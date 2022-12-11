@@ -396,10 +396,10 @@
 
 /datum/component/personal_crafting/ui_static_data(mob/user)
 	var/list/data = list()
-	log_world("Easy: " + num2text(EASY_CHECK))
-	log_world("Reg: " + num2text(REGULAR_CHECK))
-	log_world("Hard: " + num2text(HARD_CHECK))
-	log_world("Exp: " + num2text(EXPERT_CHECK))
+	//log_world("Easy: " + num2text(EASY_CHECK))
+	//log_world("Reg: " + num2text(REGULAR_CHECK))
+	//log_world("Hard: " + num2text(HARD_CHECK))
+	//log_world("Exp: " + num2text(EXPERT_CHECK))
 	var/list/crafting_recipes = list()
 	for(var/rec in GLOB.crafting_recipes)
 		var/datum/crafting_recipe/R = rec

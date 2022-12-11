@@ -185,7 +185,7 @@
 			var/max_multiplier = round(get_amount() / R.req_amount)
 			var/title
 			var/can_build = 1
-			can_build = can_build && (max_multiplier>0)
+			can_build = (can_build && (max_multiplier>0) && user.skill_check(SKILL_REPAIR, R.skill_threshold))
 
 			if (R.res_amount>1)
 				title+= "[R.res_amount]x [R.title]\s"
@@ -197,7 +197,7 @@
 			else
 				t1 += text("[]", title)
 				continue
-			if (R.max_res_amount>1 && max_multiplier>1)
+			if (R.max_res_amount>1 && max_multiplier>1 && can_build)
 				max_multiplier = min(max_multiplier, round(R.max_res_amount/R.res_amount))
 				t1 += " |"
 				var/list/multipliers = list(5,10,25)
@@ -230,7 +230,7 @@
 		var/multiplier = round(text2num(href_list["multiplier"]))
 		if (multiplier < 1) //href protection
 			return
-		if(!building_checks(R, multiplier))
+		if(!building_checks(R, multiplier) && !usr.skill_check(SKILL_REPAIR, R.skill_threshold))
 			return
 		if (R.time)
 			var/adjusted_time = 0
@@ -547,8 +547,9 @@
 	var/applies_mats = FALSE
 	var/trait_booster = null
 	var/trait_modifier = 1
+	var/skill_threshold = VERY_EASY_CHECK
 
-/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE, applies_mats = FALSE, trait_booster = null, trait_modifier = 1)
+/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE, applies_mats = FALSE, trait_booster = null, trait_modifier = 1, skill_threshold = VERY_EASY_CHECK)
 
 
 	src.title = title
@@ -564,6 +565,7 @@
 	src.applies_mats = applies_mats
 	src.trait_booster = trait_booster
 	src.trait_modifier = trait_modifier
+	src.skill_threshold = skill_threshold
 /*
  * Recipe list datum
  */
