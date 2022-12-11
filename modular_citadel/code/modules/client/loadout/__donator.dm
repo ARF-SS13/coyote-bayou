@@ -174,8 +174,9 @@
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
 	new /obj/item/clothing/head/beret/headband(src)
-	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
-	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
+	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
+	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
+	new /obj/item/clothing/suit/armor/light/leather/marine(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 
 // B
@@ -267,6 +268,20 @@
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/storage/belt/legholster(src)
 	new /obj/item/storage/book/bible(src)
+
+/datum/gear/donator/kits/caseapollo58143_2
+	name = "Missionary Preacher Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_2
+	ckeywhitelist = list("caseapollo58143")
+
+/obj/item/storage/box/large/custom_kit/caseapollo58143_2/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/duster/battlecoat(src)
+	new /obj/item/nullrod/rosary(src)
+	new /obj/item/gun/ballistic/rifle/mosin(src)
+	new /obj/item/reagent_containers/food/drinks/flask/russian(src)
+	new /datum/uplink_item/device_tools/syndicate_eyepatch(src)
+	new /obj/item/clothing/shoes/russian(src)
+	new /obj/item/clothing/under/syndicate/rus_army(src)
 
 /datum/gear/donator/kits/cavusogluzevk
 	name = "Raider Kit"
@@ -617,7 +632,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukadark(src)
+	new /obj/item/melee/transforming/plasmacutter/regular/celestia(src)
 	new /obj/item/gun/ballistic/automatic/smg/sidewinder/worn(src)
 
 /datum/gear/donator/kits/risingstarslash2
@@ -879,6 +894,7 @@
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/gun/energy/laser/rcw/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
+	new /obj/item/clothing/under/rank/security/officer(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
@@ -901,6 +917,8 @@
 
 /obj/item/storage/box/large/custom_kit/truedark3/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/leather/rig(src)
+	new /obj/item/clothing/under/rank/rnd/roboticist(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/robotics(src)
 	new /obj/item/gun/ballistic/revolver/hobo/piperifle(src)
 	new /obj/item/ammo_box/a556(src)
 	new /obj/item/toy/plush/lampplushie(src)
