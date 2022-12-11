@@ -693,7 +693,8 @@
 				/obj/item/melee/onehanded/knife/cosmicdirty,
 				/obj/item/melee/onehanded/machete,
 				/obj/item/melee/unarmed/brass,
-				/obj/item/melee/unarmed/brass/spiked
+				/obj/item/melee/unarmed/brass/spiked,
+				/obj/item/melee/transforming/plasmacutter/regular
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 //TIER 3 MELEE WEAPON
@@ -708,7 +709,8 @@
 				/obj/item/melee/onehanded/machete/forgedmachete,
 				/obj/item/shield/riot/buckler,
 				/obj/item/melee/unarmed/tigerclaw,
-				/obj/item/melee/unarmed/sappers
+				/obj/item/melee/unarmed/sappers,
+				/obj/item/melee/transforming/plasmacutter/regular/eve
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 //TIER 4 MELEE WEAPON
@@ -724,7 +726,8 @@
 				/obj/item/twohanded/baseball/louisville,
 				/obj/item/shield/riot,
 				/obj/item/melee/onehanded/machete/gladius,
-				/obj/item/melee/onehanded/machete/spatha
+				/obj/item/melee/onehanded/machete/spatha,
+				/obj/item/melee/transforming/plasmacutter/regular/adam
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 //TIER 5 MELEE WEAPON
