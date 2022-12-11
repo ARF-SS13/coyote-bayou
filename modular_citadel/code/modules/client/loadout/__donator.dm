@@ -617,7 +617,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukadark(src)
+	new /obj/item/melee/transforming/plasmacutter/regular/celestia(src)
 	new /obj/item/gun/ballistic/automatic/smg/sidewinder/worn(src)
 
 /datum/gear/donator/kits/risingstarslash2

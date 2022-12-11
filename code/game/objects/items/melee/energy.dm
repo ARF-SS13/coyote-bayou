@@ -139,6 +139,29 @@
 	light_color = "#A020F0"
 	total_mass = null
 
+/obj/item/melee/transforming/plasmacutter/regular/celestia
+	name = "plasma cutter celestia"
+	desc = "A sapphire colored plasma cutter."
+	icon_state = "celestia0"
+	icon_state_on = "celestia1"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 10
+	force_on = 20
+	throwforce = 5
+	throwforce_on = 15
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	armour_penetration = 0.3
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#0F52BA"
+	total_mass = null
+
 /obj/item/melee/transforming/plasmacutter/sword
 	name = "energy sword"
 	desc = "May the force be within you."

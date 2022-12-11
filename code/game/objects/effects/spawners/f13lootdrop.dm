@@ -674,7 +674,8 @@
 				/obj/item/pickaxe,
 				/obj/item/shovel,
 				/obj/item/instrument/guitar,
-				/obj/item/surgicaldrill
+				/obj/item/surgicaldrill,
+				/obj/item/melee/transforming/plasmacutter/regular/celestia
 				)
 
 
