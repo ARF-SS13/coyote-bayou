@@ -772,6 +772,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/dendoc
 	name = "Doctor"
 
+/obj/effect/landmark/start/f13/quartermaster
+	name = "Texarkana Quartermaster"
+	icon_state = "Shopkeeper"
+
 /obj/effect/landmark/start/f13/shopkeeper
 	name = "Shopkeeper"
 	icon_state = "Shopkeeper"
