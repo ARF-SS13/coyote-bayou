@@ -48,6 +48,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/spearfisher,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
+	/datum/crafting_recipe/redpotion,
+	/datum/crafting_recipe/bluepotion,
+	/datum/crafting_recipe/greenpotion,
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag))
 
