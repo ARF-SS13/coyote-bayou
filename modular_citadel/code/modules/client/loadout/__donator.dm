@@ -696,7 +696,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
 	new /obj/item/storage/belt/shoulderholster/ranger45(src)
 	new /obj/item/clothing/under/costume/soviet(src)
-//	new /obj/item/storage/box/rocketlauncher_tox(src) //locked away 'til the end days or until someone figures out how to balance it
+	new /obj/item/storage/box/hobo_tox(src)
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/binoculars(src)
 

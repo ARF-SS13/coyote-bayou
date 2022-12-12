@@ -117,6 +117,7 @@
 	var/ignore_source_check = FALSE
 
 	var/damage = 10
+	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE are the only things that should be in here
 	var/nodamage = 0 //Determines if the projectile will skip any damage inflictions
 	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
@@ -385,7 +386,7 @@
 		var/mob/living/L = target
 		for(var/F in L.faction)
 			if(F in supereffective_faction)
-				damage += supereffective_damage
+				damage += (supereffective_damage * damage_mod)
 				break
 	if(QDELETED(src) || !T || !target)		//We're done, nothing's left.
 		if((qdel_self == FORCE_QDEL) || ((qdel_self == QDEL_SELF) && !temporary_unstoppable_movement && !CHECK_BITFIELD(movement_type, UNSTOPPABLE)))

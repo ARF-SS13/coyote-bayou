@@ -146,6 +146,32 @@
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
+/// Multicaliber shouldergun
+/obj/item/gun/ballistic/revolver/hobo/piperifle/romckit
+	name = "\improper romckit launcher"
+	desc = "An advanced recoilless rifle made from the fancy memory steel used in the twist-action \
+		series of guns, able to load and fire just about anything without problem. \
+		However, the energy-absorbing metal ends up slowing whatever travels through it, making \
+		anything fired through it hit like a wet noodle."
+	icon_state = "rocketlauncher"
+	item_state = "rocketlauncher"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised_any
+	fire_sound = 'sound/weapons/magrifle.ogg'
+
+	damage_multiplier = GUN_LESS_DAMAGE_T5
+	projectile_speed_multiplier = 0.1
+	misfire_possibilities = list()
+
+/obj/item/storage/box/hobo_tox
+	name = "romckit launcher kit"
+	desc = "Contains a romckit launcher! (romckit, launcher, and explosives not included)"
+
+/obj/item/storage/box/hobo_tox/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/revolver/hobo/piperifle/romckit(src)
+	new /obj/item/ammo_box/magazine/amr(src)
+	new /obj/item/ammo_box/magazine/amr(src)
+
 /* * * * * * * * * * *
  * Pepperbox Gun
  * Pistol, but four of them
