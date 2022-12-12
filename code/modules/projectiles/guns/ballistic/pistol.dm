@@ -483,8 +483,8 @@
 /obj/item/gun/ballistic/automatic/pistol/sig/blackkite
 	name = "Black Kite"
 	desc = "These large Sig Sauer pistols have seen much wear, and have been kept maintained with parts from the more common P220, necessitating the rechambering to .45ACP."
-	icon_state = "sig"
-	item_state = "44magnum"
+	icon_state = "pistol14"
+	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
