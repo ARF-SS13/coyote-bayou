@@ -56,6 +56,13 @@
 	name += " [pick(GLOB.hobo_gun_mag_fluff["prefix"])] [pick(GLOB.hobo_gun_mag_fluff["suffix"])][prob(20) ? pick(GLOB.hobo_gun_mag_fluff["prefix"]) : ""]"
 	valid_new_calibers = GLOB.pipe_rifle_valid_calibers
 
+/obj/item/ammo_box/magazine/internal/cylinder/improvised_any
+	name = "omnicaliber loadseat"
+	ammo_type = /obj/item/ammo_casing/a556/sport
+	caliber = list(CALIBER_ANY)
+	max_ammo = 1
+	can_change_caliber = FALSE
+
 /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	name = "improvised internal magazine .45"
 	ammo_type = /obj/item/ammo_casing/c45

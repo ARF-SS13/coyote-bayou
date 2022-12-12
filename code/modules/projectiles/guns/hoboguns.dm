@@ -146,6 +146,27 @@
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
+/// Made to fire 40mm, but needs some rechambering to do it
+/obj/item/gun/ballistic/revolver/hobo/piperifle/romckit
+	name = "\improper romckit launcher"
+	desc = "An advanced pipe rifle made from the fancy memory steel used in the twist-action \
+		series of guns, able to load and fire just about anything without problem. \
+		However, the energy-absorbing metal ends up slowing whatever travels through it, making \
+		anything fired through it hit like a wet noodle."
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised_any
+
+	damage_multiplier = GUN_LESS_DAMAGE_T5
+	projectile_speed_multiplier = 0.1
+	misfire_possibilities = list()
+
+/obj/item/storage/box/hobo_tox
+	name = "romckit launcher kit"
+	desc = "Contains a romckit launcher! (romckit, launcher, and explosives not included)"
+
+/obj/item/storage/box/hobo_tox/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/revolver/hobo/piperifle/romckit(src)
+
 /* * * * * * * * * * *
  * Pepperbox Gun
  * Pistol, but four of them
