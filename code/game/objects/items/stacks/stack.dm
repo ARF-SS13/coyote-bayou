@@ -194,8 +194,11 @@
 			title+= " ([R.req_amount] [singular_name]\s)"
 			if (can_build)
 				t1 += text("<A href='?src=[REF(src)];sublist=[recipes_sublist];make=[i];multiplier=1'>[title]</A>  ")
-			else
+			else if (user.skill_check(SKILL_REPAIR, R.skill_threshold))
 				t1 += text("[]", title)
+				continue
+			else
+				//Don't show anything if we don't have the skill to make it, you don't know what you don't know!
 				continue
 			if (R.max_res_amount>1 && max_multiplier>1 && can_build)
 				max_multiplier = min(max_multiplier, round(R.max_res_amount/R.res_amount))

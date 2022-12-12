@@ -513,7 +513,10 @@ GENETICS SCANNER
 			msg += span_notice("Detected cybernetic modifications:")
 			msg += span_notice("[cyberimp_detect]")
 	msg += span_notice("*---------*")
-	to_chat(user, msg)
+	if (user.skill_check(SKILL_DOCTOR, EASY_CHECK) || user.skill_check(SKILL_FIRST_AID, REGULAR_CHECK) || user.skill_check(SKILL_SCIENCE, HARD_CHECK))
+		to_chat(user, msg)
+	else
+		to_chat(user, span_danger("You don't know how to work this damn thing."))
 	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
 
 /proc/chemscan(mob/living/user, mob/living/M)
@@ -558,7 +561,10 @@ GENETICS SCANNER
 						msg += span_danger("Subject contains a extremely dangerous amount of toxic isomers.")
 
 			msg += "*---------*</span>"
-			to_chat(user, msg)
+			if (user.skill_check(SKILL_DOCTOR, EASY_CHECK) || user.skill_check(SKILL_SCIENCE, REGULAR_CHECK) || user.skill_check(SKILL_FIRST_AID, HARD_CHECK))
+				to_chat(user, msg)
+			else
+				to_chat(user, span_danger("You don't know how to work this damn thing."))
 
 /obj/item/healthanalyzer/verb/toggle_mode()
 	set name = "Switch Verbosity"
@@ -585,7 +591,9 @@ GENETICS SCANNER
 /proc/woundscan(mob/user, mob/living/carbon/patient, obj/item/healthanalyzer/wound/scanner)
 	if(!istype(patient))
 		return
-
+	if (!istype(scanner) && !(user.skill_check(SKILL_DOCTOR, EASY_CHECK) || user.skill_check(SKILL_FIRST_AID, REGULAR_CHECK) || user.skill_check(SKILL_SCIENCE, HARD_CHECK)))
+		to_chat(user, "<span class='notice ml-1'>You don't know how to work this mode.</span>")
+		return
 	var/render_list = ""
 	for(var/i in patient.get_wounded_bodyparts())
 		var/obj/item/bodypart/wounded_part = i
@@ -797,7 +805,8 @@ GENETICS SCANNER
 	var/pressure = environment.return_pressure()
 	var/total_moles = environment.total_moles()
 	var/cached_scan_results = environment.analyzer_results
-
+	if (!user.skill_check(SKILL_SCIENCE, EASY_CHECK))
+		to_chat(user, span_info("You don't know how to work this."))
 	to_chat(user, "<span class='info'><B>Results:</B></span>")
 	if(abs(pressure - ONE_ATMOSPHERE) < 10)
 		to_chat(user, span_info("Pressure: [round(pressure, 0.01)] kPa"))
@@ -881,7 +890,10 @@ GENETICS SCANNER
 		to_chat(user, span_warning("This device can only scan slimes!"))
 		return
 	var/mob/living/simple_animal/slime/T = M
-	slime_scan(T, user)
+	if (user.skill_check(SKILL_SCIENCE, HARD_CHECK))
+		slime_scan(T, user)
+	else
+		to_chat(user, span_notice("Hehe, slimes go jiggle!"))
 
 /proc/slime_scan(mob/living/simple_animal/slime/T, mob/living/user)
 	to_chat(user, "========================")
@@ -938,9 +950,12 @@ GENETICS SCANNER
 
 	add_fingerprint(user)
 
-	var/response = SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, TRUE)
-	if(!response)
-		to_chat(user, span_info("No nanites detected in the subject."))
+	if (user.skill_check(SKILL_REPAIR, EXPERT_CHECK) || user.skill_check(SKILL_SCIENCE, HARD_CHECK))
+		var/response = SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, TRUE)
+		if(!response)
+			to_chat(user, span_info("No nanites detected in the subject."))
+	else
+		to_chat(user, span_notice("Uhhh.... it says something about parts per million."))
 
 /obj/item/sequence_scanner
 	name = "genetic sequence scanner"
@@ -968,8 +983,10 @@ GENETICS SCANNER
 	if (!HAS_TRAIT_NOT_FROM(M, TRAIT_RADIMMUNE,BLOODSUCKER_TRAIT)) //no scanning if its a husk or DNA-less Species
 		user.visible_message(span_notice("[user] analyzes [M]'s genetic sequence."), \
 							span_notice("You analyze [M]'s genetic sequence."))
-		gene_scan(M, user)
-
+		if (user.skill_check(SKILL_SCIENCE, HARD_CHECK) || user.skill_check(SKILL_DOCTOR, HARD_CHECK))
+			gene_scan(M, user)
+		else
+			to_chat(user, span_notice("That's a pretty readout."))
 	else
 		user.visible_message(span_notice("[user] failed to analyse [M]'s genetic sequence."), span_warning("[M] has no readable genetic sequence!"))
 
