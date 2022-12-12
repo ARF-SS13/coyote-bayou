@@ -59,6 +59,7 @@
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from
 		BB.damage *= G.damage_multiplier
+		BB.damage_mod = G.damage_multiplier
 		BB.armour_penetration *= G.penetration_multiplier
 		BB.pixels_per_second *= G.projectile_speed_multiplier
 		if(BB.zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE)
