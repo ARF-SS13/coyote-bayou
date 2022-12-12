@@ -1154,6 +1154,9 @@
 		/datum/crafting_recipe/tribalwar/heavytribe,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
+		/datum/crafting_recipe/redpotion,
+		/datum/crafting_recipe/bluepotion,
+		/datum/crafting_recipe/greenpotion,
 		/datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/trait/tribaltraditions
@@ -1171,7 +1174,7 @@
 		switch(choice)
 			if(null)
 				return 0
-			
+
 			if("White Legs traditions")
 				traitname = "White Legs traditions"
 				granted_trait = TRAIT_WHITELEGS_TRAD
@@ -1182,7 +1185,7 @@
 					/datum/crafting_recipe/tribalwar/whitelegs/femalegarb,
 					/datum/crafting_recipe/tribalwar/whitelegs/heavyarmour
 					)
-			
+
 			if("Dead Horses traditions")
 				traitname = "Dead Horses traditions"
 				granted_trait = TRAIT_DEADHORSES_TRAD
@@ -1193,7 +1196,7 @@
 					/datum/crafting_recipe/tribalwar/deadhorses/femalegarb,
 					/datum/crafting_recipe/tribalwar/deadhorses/heavyarmour
 					)
-			
+
 			if("Rustwalkers traditions")
 				traitname = "Rustwalkers traditions"
 				granted_trait = TRAIT_RUSTWALKERS_TRAD
@@ -1204,7 +1207,7 @@
 					/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb,
 					/datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour
 					)
-			
+
 			if("Eighties traditions")
 				traitname = "Eighties traditions"
 				granted_trait = TRAIT_EIGHTIES_TRAD
@@ -1215,7 +1218,7 @@
 					/datum/crafting_recipe/tribalwar/eighties/femalegarb,
 					/datum/crafting_recipe/tribalwar/eighties/heavyarmour
 					)
-			
+
 			if("Sorrows traditions")
 				traitname = "Sorrows traditions"
 				granted_trait = TRAIT_SORROWS_TRAD
@@ -1225,7 +1228,7 @@
 					/datum/crafting_recipe/tribalwar/sorrows/femalegarb,
 					/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet
 					)
-			
+
 			if("Wayfarer traditions")
 				traitname = "Wayfarer traditions"
 				granted_trait = TRAIT_WAYFARER_TRAD
@@ -1234,7 +1237,7 @@
 					/datum/crafting_recipe/tribalwar/heavytribe,
 					/datum/crafting_recipe/warmace
 					)
-			
+
 			if("Bone Dancer traditions")
 				traitname = "Bone Dancer traditions"
 				granted_trait = TRAIT_BONEDANCER_TRAD
@@ -1245,7 +1248,7 @@
 					/datum/crafting_recipe/tribalwar/bone/garb,
 					/datum/crafting_recipe/tribalwar/bone/helmet
 					)
-			
+
 			if("Ex Tribal Traditions")
 				traitname = "Ex Tribal"
 				granted_trait = TRAIT_FORMER_TRIBAL
@@ -1254,6 +1257,9 @@
 					/datum/crafting_recipe/spearfisher,
 					/datum/crafting_recipe/healpoultice,
 					/datum/crafting_recipe/healpoultice5,
+					/datum/crafting_recipe/redpotion,
+					/datum/crafting_recipe/bluepotion,
+					/datum/crafting_recipe/greenpotion,
 					/datum/crafting_recipe/food/pemmican,
 					/datum/crafting_recipe/tribal/bonebag
 					)

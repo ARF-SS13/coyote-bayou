@@ -1940,6 +1940,9 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribal/bonetalisman,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
+		/datum/crafting_recipe/redpotion,
+		/datum/crafting_recipe/bluepotion,
+		/datum/crafting_recipe/greenpotion,
 		/datum/crafting_recipe/food/pemmican,
 		/datum/crafting_recipe/tribal/bonebag
 	)
