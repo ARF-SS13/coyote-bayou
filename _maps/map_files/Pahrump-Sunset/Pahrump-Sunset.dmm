@@ -2014,7 +2014,6 @@
 /area/f13/building)
 "ahG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/followersdoctor,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
@@ -3952,11 +3951,10 @@
 /area/f13/ruins)
 "aoo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/end/wooden,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
-	},
-/area/f13/wasteland)
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/f13/wood,
+/area/f13/bar)
 "aop" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -11167,13 +11165,10 @@
 	},
 /area/f13/building/hospital)
 "aMz" = (
-/mob/living/simple_animal/pet/dog/corgi{
-	collar_type = "Mangy corgi";
-	desc = "It's a corgi. He looks hungry";
-	name = "Ol' Scruff"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/building/hospital)
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/store/cake/pavlova,
+/turf/open/floor/f13/wood,
+/area/f13/bar)
 "aMA" = (
 /obj/structure/rack,
 /obj/item/storage/backpack,
@@ -27329,14 +27324,6 @@
 	icon_state = "rubblecorner"
 	},
 /area/f13/wasteland/city)
-"dwN" = (
-/obj/effect/landmark/start/f13/farmer,
-/obj/effect/landmark/start/f13/prospector,
-/obj/effect/landmark/start/f13/dendoctor,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
 "dxd" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building)
@@ -31324,11 +31311,7 @@
 "eNF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_access_txt = null;
-	req_one_access_txt = "25, 28"
-	},
+/obj/structure/table/wood/bar,
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "eNJ" = (
@@ -39489,13 +39472,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "hEx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/followersdoctor,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
+/obj/machinery/vending/boozeomat,
+/turf/open/floor/f13/wood,
+/area/f13/bar)
 "hEG" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
@@ -39738,11 +39717,10 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "hJm" = (
-/obj/effect/landmark/start/f13/followersscientist,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
+/obj/structure/table/wood,
+/obj/item/kitchen/rollingpin,
+/turf/open/floor/f13/wood,
+/area/f13/bar)
 "hJz" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -46289,12 +46267,10 @@
 	},
 /area/f13/building/massfusion)
 "jTK" = (
-/obj/structure/window/fulltile/wood{
-	layer = 3
-	},
-/obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/retro/tan,
+/turf/open/floor/f13/wood,
 /area/f13/bar)
 "jTM" = (
 /obj/structure/decoration/rag,
@@ -47472,12 +47448,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/mall)
-"koN" = (
-/obj/effect/landmark/start/f13/followersdoctor,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
 "koS" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -49211,6 +49181,7 @@
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
+/obj/effect/landmark/start/f13/dendoctor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/hospital)
 "kVx" = (
@@ -51901,8 +51872,12 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "lSA" = (
-/obj/machinery/vending/boozeomat,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/unpowered/securedoor{
+	name = "Bar";
+	req_access_txt = null;
+	req_one_access_txt = "25, 28"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "lSJ" = (
@@ -60558,12 +60533,6 @@
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"oKz" = (
-/obj/effect/landmark/start/f13/followersguard,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
 "oKC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -63750,7 +63719,6 @@
 "pMP" = (
 /obj/effect/landmark/start/f13/farmer,
 /obj/effect/landmark/start/f13/prospector,
-/obj/effect/landmark/start/f13/dendoctor,
 /obj/effect/landmark/start/f13/settler,
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
@@ -66052,14 +66020,6 @@
 "qFO" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/f13/inside/gravel,
-/area/f13/wasteland)
-"qGl" = (
-/obj/structure/flora/ausbushes/pointybush,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/end/wooden,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
-	},
 /area/f13/wasteland)
 "qGn" = (
 /obj/structure/lamp_post/doubles/bent,
@@ -75987,7 +75947,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "ufz" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -79819,11 +79778,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/building/abandoned)
 "vzh" = (
-/obj/structure/table/wood,
-/obj/item/kitchen/rollingpin,
-/obj/machinery/reagentgrinder,
-/turf/open/floor/f13/wood,
-/area/f13/bar)
+/obj/structure/ladder/unbreakable{
+	id = "nashwall";
+	height = 1
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/wasteland)
 "vzi" = (
 /obj/structure/fluff/rails{
 	dir = 4
@@ -83431,12 +83393,6 @@
 	},
 /turf/open/water,
 /area/f13/building/sewers)
-"wOF" = (
-/obj/effect/landmark/start/f13/followersadministrator,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
 "wOR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -84017,6 +83973,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/kitchen/knife,
 /obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/food/drinks/shaker,
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "xaS" = (
@@ -88242,7 +88199,7 @@ dam
 kfF
 jxQ
 dDs
-dwN
+amC
 amC
 pMP
 pMP
@@ -88263,12 +88220,12 @@ pRC
 pRC
 lIp
 lIp
-lIp
-qGl
-lIp
-vaN
-vaN
-vaN
+uYZ
+uYZ
+uYZ
+oVr
+oVr
+oVr
 oVr
 oVr
 oVr
@@ -88520,12 +88477,12 @@ nFA
 nFA
 wqq
 dYT
-vaN
-vaN
-vAp
-lIp
-vaN
-vaN
+oVr
+gGO
+mkb
+uDW
+fha
+rAF
 oVr
 oHH
 kCY
@@ -88777,12 +88734,12 @@ ixy
 nFA
 wqq
 lIp
-lIp
+uYZ
 aoo
-lIp
-vaN
-vaN
-vaN
+rbT
+mkb
+mkb
+mkb
 oVr
 kCY
 kCY
@@ -89015,8 +88972,8 @@ jRC
 ubt
 pvx
 ubt
-hJm
-oKz
+pvx
+pvx
 pvx
 pMY
 pvx
@@ -89034,12 +88991,12 @@ uAQ
 nFA
 wqq
 vaN
-vAp
-vaN
-kiU
-pzk
-vaN
-vaN
+oVr
+hJm
+mkb
+mkb
+mkb
+mkb
 oVr
 kCY
 ikb
@@ -89272,8 +89229,8 @@ pvx
 jRC
 vlA
 pvx
-wOF
-oKz
+pvx
+pvx
 pvx
 pvx
 pvx
@@ -89291,12 +89248,12 @@ uAQ
 oVr
 rnG
 sSk
-pzk
-byU
-nFA
 oVr
-nFA
-nFA
+daN
+mkb
+aMz
+mkb
+mkb
 oVr
 sMi
 jxf
@@ -89551,10 +89508,10 @@ oVr
 uYZ
 nhF
 uYZ
-vzh
-gGO
-daN
-jTK
+oVr
+oVr
+fJj
+uYZ
 wmY
 gXa
 eaZ
@@ -89786,8 +89743,8 @@ pvx
 ptC
 bqK
 ubt
-koN
-koN
+pvx
+pvx
 sWj
 sWj
 cHF
@@ -89808,7 +89765,7 @@ ndL
 xaR
 opI
 uDW
-mkb
+hEx
 xJE
 xJE
 jrf
@@ -90043,7 +90000,7 @@ sWj
 pRT
 kwQ
 ubt
-hEx
+jRC
 ahG
 bKH
 nGj
@@ -90067,7 +90024,7 @@ rbT
 mkb
 qdw
 nuY
-rAF
+rbT
 hor
 eiJ
 aWK
@@ -90322,9 +90279,9 @@ cFF
 rbT
 bnx
 xJE
+rbT
 ufz
 nmh
-fha
 hor
 qpR
 ksL
@@ -90578,8 +90535,8 @@ jwq
 kSA
 ayA
 ayA
-fJj
-oVr
+ayA
+ayA
 nFA
 oVr
 oVr
@@ -90835,8 +90792,8 @@ kFk
 kFk
 kFk
 kFk
-xJE
-mkb
+jTK
+ahA
 kNW
 vaN
 kai
@@ -95694,7 +95651,7 @@ apX
 apX
 apX
 vaN
-ljA
+vaN
 dPR
 aQZ
 tRk
@@ -95950,7 +95907,7 @@ apX
 apX
 apX
 eML
-vaN
+vzh
 yju
 dPR
 jne
@@ -96465,7 +96422,7 @@ apX
 apX
 vaN
 vaN
-vXM
+vaN
 byU
 qxJ
 rBs
@@ -132176,7 +132133,7 @@ mcC
 uZi
 uZi
 lCD
-aMz
+uZi
 uZi
 lCD
 cDe
