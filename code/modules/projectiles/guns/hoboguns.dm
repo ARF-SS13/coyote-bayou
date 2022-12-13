@@ -162,6 +162,9 @@
 	projectile_speed_multiplier = 0.1
 	misfire_possibilities = list()
 
+/obj/item/gun/ballistic/revolver/hobo/piperifle/romckit/update_icon_state()
+	icon_state = "[initial(icon_state)]-[chambered ? "1" : "0"]"
+
 /obj/item/storage/box/hobo_tox
 	name = "romckit launcher kit"
 	desc = "Contains a romckit launcher! (romckit, launcher, and explosives not included)"
