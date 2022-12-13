@@ -11167,6 +11167,9 @@
 "aMz" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/store/cake/pavlova,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "aMA" = (
@@ -69982,6 +69985,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/museum)
+"sdO" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/transparent/openspace,
+/area/f13/bar)
 "sdZ" = (
 /obj/effect/decal/waste{
 	icon_state = "goo12"
@@ -88479,7 +88489,7 @@ dYT
 oVr
 gGO
 mkb
-uDW
+sdO
 fha
 rAF
 oVr

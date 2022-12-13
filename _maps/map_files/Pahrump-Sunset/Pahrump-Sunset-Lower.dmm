@@ -18217,6 +18217,13 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/museum)
+"mvv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13,
+/area/f13/building)
 "mvW" = (
 /obj/structure/chair/bench,
 /turf/open/floor/plasteel/f13/vault_floor/red{
@@ -24470,6 +24477,7 @@
 /obj/structure/shelf_wood,
 /obj/item/storage/box/ingredients/fiesta,
 /obj/item/storage/box/ingredients/fiesta,
+/obj/machinery/light,
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "rnh" = (
@@ -33411,7 +33419,7 @@ aae
 aae
 aae
 abP
-uvv
+mvv
 uvv
 uvv
 qtg
