@@ -17165,6 +17165,12 @@
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
+"lGz" = (
+/obj/effect/landmark/start/f13/followersadministrator,
+/obj/effect/landmark/start/f13/followersdoctor,
+/obj/effect/landmark/start/f13/followersguard,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/caves)
 "lGB" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gib2_flesh"
@@ -31684,6 +31690,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"xyc" = (
+/obj/effect/landmark/start/f13/followersscientist,
+/obj/effect/landmark/start/f13/followersvolunteer,
+/obj/effect/landmark/start/f13/dendoctor,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/caves)
 "xyM" = (
 /obj/structure/rack,
 /obj/item/stack/crafting/electronicparts/three,
@@ -36485,7 +36497,7 @@ aae
 aae
 wEA
 tcm
-asR
+lGz
 asR
 asR
 xCs
@@ -36742,7 +36754,7 @@ aae
 aae
 wEA
 tcm
-asR
+xyc
 asR
 asR
 xCs

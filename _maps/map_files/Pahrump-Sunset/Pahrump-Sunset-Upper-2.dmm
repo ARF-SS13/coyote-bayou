@@ -942,13 +942,6 @@
 	smooth = 1
 	},
 /area/f13/building)
-"vt" = (
-/obj/effect/landmark/start/f13/followersscientist,
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/hospital)
 "vw" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/f13/wood,
@@ -985,13 +978,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"wz" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/obj/effect/landmark/start/f13/followersguard,
-/turf/open/floor/wood_common,
-/area/f13/building/hospital)
 "wB" = (
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken3"
@@ -1524,13 +1510,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
-"Hy" = (
-/obj/effect/landmark/start/f13/followersdoctor,
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/hospital)
 "HG" = (
 /obj/structure/chair/comfy/plywood{
 	dir = 8
@@ -1668,13 +1647,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"KJ" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/obj/effect/landmark/start/f13/followersdoctor,
-/turf/open/floor/wood_common,
-/area/f13/building/hospital)
 "KT" = (
 /obj/machinery/light{
 	dir = 1
@@ -1982,20 +1954,12 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/followersvolunteer,
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
 "Qx" = (
 /obj/structure/spacevine,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"QN" = (
-/obj/effect/landmark/start/f13/followersguard,
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/hospital)
 "QV" = (
 /obj/structure/chair/comfy/plywood{
 	dir = 4
@@ -2050,13 +2014,6 @@
 "RF" = (
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
-"RH" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/obj/effect/landmark/start/f13/followersscientist,
-/turf/open/floor/wood_common,
-/area/f13/building/hospital)
 "RQ" = (
 /obj/structure/railing{
 	dir = 8
@@ -2314,13 +2271,6 @@
 /obj/machinery/hydroponics/constructable,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"WZ" = (
-/obj/effect/landmark/start/f13/followersvolunteer,
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/hospital)
 "Xo" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/spacevine,
@@ -2428,7 +2378,6 @@
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/followersadministrator,
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
 "Zc" = (
@@ -4163,10 +4112,10 @@ hm
 hm
 rN
 AQ
-Hy
-vt
-QN
-WZ
+AQ
+AQ
+AQ
+AQ
 AQ
 rN
 AQ
@@ -4677,9 +4626,9 @@ hm
 hm
 rN
 AQ
-KJ
-RH
-wz
+Qn
+Qn
+Qn
 Qn
 AQ
 rN
