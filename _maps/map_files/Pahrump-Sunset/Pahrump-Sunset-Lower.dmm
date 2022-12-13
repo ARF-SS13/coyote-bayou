@@ -1594,6 +1594,9 @@
 /area/f13/caves)
 "brU" = (
 /obj/machinery/vending/wardrobe/science_wardrobe/free,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/caves)
 "bsl" = (
@@ -10947,6 +10950,13 @@
 /obj/structure/sign/warning/biohazard,
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/tunnel)
+"gGO" = (
+/obj/structure/table,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/caves)
 "gGQ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -37012,7 +37022,7 @@ aae
 wEA
 wEA
 lEg
-tAR
+gGO
 oRI
 wEA
 wbm
