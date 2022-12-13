@@ -176,7 +176,7 @@
 	new /obj/item/clothing/head/beret/headband(src)
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
 	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
-	new /obj/item/clothing/suit/armor/light/leather/marine(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 
 // B
