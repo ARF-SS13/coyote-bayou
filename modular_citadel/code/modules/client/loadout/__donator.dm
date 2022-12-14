@@ -894,7 +894,7 @@
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/gun/energy/laser/rcw/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
-	new /obj/item/clothing/under/rank/security/officer(src)
+	new /obj/item/clothing/under/rank/security/officer/skirt(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
