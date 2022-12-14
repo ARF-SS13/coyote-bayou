@@ -18,6 +18,14 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"aao" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants/random,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/bar)
 "aas" = (
 /obj/item/clothing/under/costume/gondola,
 /turf/open/indestructible/ground/outside/desert,
@@ -890,8 +898,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "aZf" = (
-/obj/structure/legion_extractor,
-/turf/open/floor/f13/wood,
+/obj/structure/simple_door/room{
+	name = "Heaven's Night"
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/bar)
 "aZG" = (
 /obj/structure/chair/sofa/corner{
@@ -1264,11 +1274,10 @@
 	},
 /area/f13/building)
 "bwi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58"
 	},
-/obj/item/kirbyplants/random,
 /turf/open/floor/carpet/blue,
 /area/f13/bar)
 "bxT" = (
@@ -3392,12 +3401,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "eun" = (
-/obj/machinery/smartfridge/bottlerack/seedbin,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/apple,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/banana,
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/bar)
 "eur" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -3616,6 +3625,14 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/mall)
+"eFC" = (
+/obj/machinery/smartfridge/bottlerack/seedbin,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/apple,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/banana,
+/turf/open/floor/f13/wood,
+/area/f13/bar)
 "eFF" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3978,10 +3995,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "ffo" = (
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
-	},
-/turf/open/floor/carpet/blue,
+/obj/structure/legion_extractor,
+/turf/open/floor/f13/wood,
 /area/f13/bar)
 "ffs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5276,11 +5291,11 @@
 /area/f13/building/mall)
 "gKy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
+/obj/machinery/light/small{
+	dir = 4
 	},
-/turf/open/indestructible/ground/outside/desert,
+/obj/item/kirbyplants/random,
+/turf/open/floor/carpet/blue,
 /area/f13/bar)
 "gKQ" = (
 /obj/effect/decal/cleanable/dirt{
@@ -7257,9 +7272,8 @@
 	},
 /area/f13/building/mall)
 "jhg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/kirbyplants/random,
-/turf/open/floor/carpet/blue,
+/obj/structure/reagent_dispensers/compostbin,
+/turf/open/floor/f13/wood,
 /area/f13/bar)
 "jhl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8883,10 +8897,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "lkn" = (
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58"
 	},
-/turf/closed/wall/mineral/brick,
+/turf/open/floor/wood_common,
 /area/f13/bar)
 "lkL" = (
 /obj/item/kirbyplants/random,
@@ -9230,10 +9245,6 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/hospital)
-"lHP" = (
-/obj/structure/reagent_dispensers/compostbin,
-/turf/open/floor/f13/wood,
-/area/f13/bar)
 "lIp" = (
 /obj/structure/table/wood,
 /obj/item/storage/bag/easterbasket{
@@ -14618,12 +14629,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "sZR" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/window/fulltile/house,
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/floor/carpet/blue,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/bar)
 "tao" = (
 /obj/machinery/light/small/broken{
@@ -15507,10 +15518,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "ubl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/room{
 	name = "Heaven's Night"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/bar)
 "ubO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18683,8 +18696,8 @@ gYZ
 vfM
 uHi
 uHi
-oez
-oez
+uHi
+uHi
 oez
 oez
 oez
@@ -18933,15 +18946,15 @@ lvU
 oIp
 ngO
 kZs
-eun
-hKq
+eFC
+lkn
 meB
+jZv
+mRc
 mRc
 jZv
 meB
-hKq
-dtb
-dtb
+bwi
 dtb
 dtb
 dtb
@@ -19190,15 +19203,15 @@ lvU
 oIp
 ngO
 kZs
-aZf
-hKq
+ffo
+lkn
 mRc
 eJE
 mRc
+eJE
+eJE
 mRc
-hKq
-dtb
-dtb
+eun
 dtb
 dtb
 dtb
@@ -19448,14 +19461,14 @@ oIp
 ngO
 kZs
 kZs
-lkn
+aZf
 mRc
+eJE
 eEx
 uZl
 mRc
-ubl
-uHi
-uHi
+mRc
+aZf
 dtb
 dtb
 dtb
@@ -19704,15 +19717,15 @@ oez
 afb
 sFc
 kZs
-lHP
+jhg
+eun
+mRc
+eJE
+mRc
+eJE
+mRc
+mRc
 sZR
-mRc
-eJE
-mRc
-eJE
-mRc
-mRc
-gYZ
 hqx
 dtb
 dtb
@@ -19962,14 +19975,14 @@ oez
 afb
 mrM
 mrM
-sZR
+eun
 mRc
-bwi
+gKy
 eJE
 mRc
-jhg
+aao
 mRc
-gYZ
+sZR
 hqx
 dtb
 dtb
@@ -20220,12 +20233,12 @@ oez
 uHi
 uHi
 gYZ
-gKy
+ubl
 gYZ
 uHi
 gYZ
 osH
-ffo
+aZf
 kwW
 gYZ
 dtb
