@@ -923,6 +923,14 @@
 /obj/structure/flora/brushwood,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
+"bbG" = (
+/obj/structure/fence/corner/wooden{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/building/tribal)
 "bcY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/ammo/shotgun,
@@ -1267,6 +1275,15 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"bvw" = (
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/building/tribal)
 "bvK" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -7917,14 +7934,13 @@
 /area/f13/building/tribal)
 "jYw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/corner/wooden,
-/obj/structure/fence/wooden{
-	dir = 1;
-	icon_state = "post_wood"
-	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 1
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -10686,11 +10702,7 @@
 	},
 /area/f13/building/mall)
 "nBo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	dir = 1;
-	icon_state = "post_wood"
-	},
+/obj/structure/fence/corner/wooden,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -26363,14 +26375,14 @@ oez
 oez
 oez
 jYw
-nBo
-nBo
-nBo
-nBo
-nBo
-vGd
-vGd
-vGd
+dYg
+dYg
+anc
+anc
+xTy
+xTy
+xTy
+bbG
 jFI
 tmU
 qSl
@@ -26619,15 +26631,15 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+bvw
+kCD
+kCD
+fdQ
+xTy
+xTy
+eLX
+xTy
+bvw
 oez
 oez
 oez
@@ -26876,15 +26888,15 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+nBo
+vGd
+vGd
+vGd
+vGd
+vGd
+vGd
+vGd
+nBo
 oez
 oez
 oez

@@ -521,13 +521,6 @@
 "kd" = (
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
-"kg" = (
-/obj/structure/chair/comfy/plywood{
-	dir = 4
-	},
-/obj/structure/fluff/beach_umbrella/syndi,
-/turf/open/floor/f13/wood,
-/area/f13/building/abandoned)
 "kq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -558,6 +551,13 @@
 /obj/item/clothing/gloves/color/red/insulated,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"li" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 1
+	},
+/obj/structure/fluff/beach_umbrella/cap,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "lk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -983,6 +983,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"wl" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 4
+	},
+/obj/structure/fluff/beach_umbrella/syndi,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "wo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
@@ -1140,13 +1147,6 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"Ag" = (
-/obj/structure/chair/comfy/plywood{
-	dir = 1
-	},
-/obj/structure/fluff/beach_umbrella/cap,
-/turf/open/floor/f13/wood,
-/area/f13/building/abandoned)
 "As" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/sandbags,
@@ -16929,7 +16929,7 @@ hm
 hm
 hm
 NC
-Ag
+li
 jT
 Kz
 Kz
@@ -17445,7 +17445,7 @@ hm
 NC
 Kz
 OM
-kg
+wl
 Ct
 OM
 Kz
