@@ -20862,6 +20862,11 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
+"bHt" = (
+/obj/structure/table/wood/bar,
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/floor/f13/wood,
+/area/f13/bar)
 "bHD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -21534,6 +21539,7 @@
 "bSb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/lighter,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -34619,6 +34625,20 @@
 	icon_state = "plating"
 	},
 /area/f13/ruins)
+"fRM" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/wasteland)
 "fSs" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-25";
@@ -41667,6 +41687,7 @@
 "iqf" = (
 /obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/lighter,
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "iqw" = (
@@ -61010,6 +61031,11 @@
 	icon_state = "verticalinnermain1"
 	},
 /area/f13/building)
+"oQD" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "oQJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -74428,6 +74454,13 @@
 	name = "concrete wall"
 	},
 /area/f13/building/abandoned)
+"tDL" = (
+/obj/structure/sink/kitchen{
+	dir = 8;
+	pixel_x = 12
+	},
+/turf/open/floor/f13/wood,
+/area/f13/bar)
 "tDN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -77210,6 +77243,12 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building/abandoned)
+"uEO" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "uEP" = (
 /mob/living/simple_animal/cow/brahmin,
 /turf/open/indestructible/ground/outside/road{
@@ -81556,6 +81595,7 @@
 /area/f13/building/abandoned)
 "whb" = (
 /obj/structure/table/booth,
+/obj/effect/spawner/lootdrop/lighter,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "whl" = (
@@ -89348,11 +89388,11 @@ oVr
 uAQ
 uAQ
 oVr
-rnG
+fRM
 sSk
 oVr
 daN
-mkb
+tDL
 aMz
 mkb
 mkb
@@ -90638,7 +90678,7 @@ kSA
 ayA
 ayA
 ayA
-ayA
+bHt
 nFA
 oVr
 oVr
@@ -100122,7 +100162,7 @@ apX
 apX
 acl
 cex
-bxH
+oQD
 acl
 ahu
 btL
@@ -100665,7 +100705,7 @@ bwZ
 kVQ
 abu
 mli
-mli
+uEO
 abu
 fEu
 vBW

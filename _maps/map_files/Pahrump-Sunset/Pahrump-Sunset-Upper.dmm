@@ -264,6 +264,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
+"akS" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/lighter,
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/mall)
 "amk" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -1869,6 +1878,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_wide,
 /area/f13/building)
+"coV" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/floor/wood_common,
+/area/f13/building/hospital)
 "cqK" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
@@ -2412,6 +2426,7 @@
 "dbF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken,
+/obj/item/lighter/fusion,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -4906,6 +4921,7 @@
 /area/f13/building/abandoned)
 "giL" = (
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/lighter,
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken5"
 	},
@@ -5495,6 +5511,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
+/area/f13/building)
+"gUG" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "gWI" = (
 /obj/structure/sink/greyscale{
@@ -7502,6 +7523,7 @@
 	pixel_x = -9;
 	pixel_y = 11
 	},
+/obj/item/lighter/royalgold,
 /turf/open/floor/carpet/black,
 /area/f13/bar)
 "jrM" = (
@@ -14481,6 +14503,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/mall)
+"sII" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/lighter,
+/turf/open/floor/carpet/blue,
+/area/f13/bar)
 "sIR" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/indestructible/ground/outside/dirt{
@@ -18986,7 +19014,7 @@ ngO
 kZs
 eFC
 lkn
-meB
+sII
 jZv
 mRc
 mRc
@@ -23128,7 +23156,7 @@ lcB
 auN
 eTN
 tcf
-xvZ
+coV
 wDI
 oez
 oez
@@ -28247,7 +28275,7 @@ dtb
 dtb
 oez
 kjX
-frB
+gUG
 eoY
 rVk
 hMq
@@ -71366,7 +71394,7 @@ oez
 oez
 vqz
 gJH
-nPr
+akS
 kdF
 pSW
 kwK
@@ -72137,7 +72165,7 @@ oez
 oez
 vqz
 gJH
-nPr
+akS
 kdF
 aFS
 vAz
