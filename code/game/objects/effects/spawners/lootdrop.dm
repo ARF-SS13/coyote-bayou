@@ -409,6 +409,22 @@
 				/obj/item/storage/fancy/cigarettes/cigars/havana = 25,
 				)
 
+/obj/effect/spawner/lootdrop/lighter
+	lootcount = 1
+	loot = list(
+				/obj/item/lighter/slime = 10,
+				/obj/item/lighter/fusion = 10,
+				/obj/item/lighter/royalgold = 5,
+				/obj/item/lighter/iconic = 10,
+				/obj/item/lighter/ian = 10,
+				/obj/item/lighter/holy = 5,
+				/obj/item/lighter/fox = 10,
+				/obj/item/lighter/rainbow = 10,
+				/obj/item/lighter/heart = 10,
+				/obj/item/lighter/moff = 10,
+				/obj/item/lighter/bullet = 10,
+				)
+
 /obj/effect/spawner/lootdrop/space_cash
 	lootcount = 1
 	loot = list(
