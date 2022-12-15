@@ -3161,6 +3161,12 @@
 /obj/machinery/computer/arcade,
 /turf/open/floor/carpet/arcade,
 /area/f13/building/mall)
+"ecJ" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "edr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -6311,6 +6317,16 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"hZB" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "hZY" = (
 /obj/effect/decal/waste{
 	pixel_x = 18;
@@ -7314,6 +7330,13 @@
 /turf/open/floor/grass{
 	color = "#444444"
 	},
+/area/f13/wasteland)
+"jkU" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "Nashwall3"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "jla" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
@@ -14734,6 +14757,13 @@
 /turf/open/floor/grass{
 	color = "#444444"
 	},
+/area/f13/wasteland)
+"tfP" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "Nashwall2"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "tfV" = (
 /obj/structure/chair/booth,
@@ -33857,7 +33887,7 @@ dtb
 dtb
 dtb
 dtb
-dtb
+tfP
 dtb
 dtb
 dtb
@@ -34155,10 +34185,10 @@ oez
 dtb
 dtb
 dtb
-dtb
-dtb
-oez
-oez
+rrx
+rrx
+sRu
+sRu
 oez
 oez
 oez
@@ -34411,12 +34441,12 @@ dtb
 dtb
 dtb
 dtb
+ecJ
 dtb
 dtb
 dtb
-dtb
-dtb
-oez
+jkU
+odJ
 oez
 oez
 oez
@@ -34668,12 +34698,12 @@ dtb
 dtb
 dtb
 dtb
+ecJ
 dtb
 dtb
 dtb
 dtb
-dtb
-oez
+odJ
 oez
 oez
 oez
@@ -34925,7 +34955,7 @@ dtb
 dtb
 dtb
 dtb
-dtb
+ecJ
 dtb
 dtb
 mvX
@@ -35182,9 +35212,9 @@ osd
 rrx
 rrx
 osd
-rrx
-rrx
-osd
+hZB
+dtb
+hqx
 mvX
 aqO
 mDF
