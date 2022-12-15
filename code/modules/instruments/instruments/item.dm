@@ -301,3 +301,13 @@
 			var/atom/A = V
 			instruments[initial(A.name)] = A
 	return instruments
+
+/obj/item/instrument/musicalmoth
+	name = "musical moth"
+	desc = "Despite its popularity, this controversial musical toy was eventually banned due to its unethically sampled sounds of moths screaming in agony."
+	icon_state = "mothsician"
+	allowed_instrument_ids = "mothscream"
+	attack_verb = list("fluttered", "flaped")
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	hitsound = 'sound/voice/moth/mothchitter.ogg'
