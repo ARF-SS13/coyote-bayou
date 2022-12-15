@@ -6673,6 +6673,15 @@
 	color = "#9c9c9c"
 	},
 /area/f13/building/tribal)
+"ioS" = (
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#808080"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "ipe" = (
 /obj/machinery/light,
 /obj/structure/junk/locker,
@@ -12756,6 +12765,9 @@
 "qah" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -15563,9 +15575,6 @@
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -28068,9 +28077,9 @@ ixY
 ixY
 ixY
 ixY
-ixY
+ioS
 cjk
-ixY
+ioS
 ixY
 oez
 oez
@@ -28576,7 +28585,7 @@ dtb
 dtb
 oez
 oez
-ixY
+ioS
 tLJ
 jxp
 jxp
@@ -28585,7 +28594,7 @@ jxp
 jxp
 ejB
 jxp
-ixY
+ioS
 oez
 oez
 oez
@@ -29090,7 +29099,7 @@ dtb
 dtb
 oez
 oez
-ixY
+ioS
 tNC
 jxp
 jxp
@@ -29099,7 +29108,7 @@ aLJ
 lmQ
 ejB
 rtZ
-ixY
+ioS
 oez
 oez
 dtb
@@ -29604,7 +29613,7 @@ dtb
 dtb
 oez
 oez
-ixY
+ioS
 mFI
 jxp
 ejB
@@ -29613,7 +29622,7 @@ sdP
 mcK
 jxp
 rtZ
-ixY
+ioS
 oez
 oez
 hqx
@@ -31410,7 +31419,7 @@ oez
 ixY
 ixY
 ixY
-ixY
+ioS
 ixY
 ixY
 oez

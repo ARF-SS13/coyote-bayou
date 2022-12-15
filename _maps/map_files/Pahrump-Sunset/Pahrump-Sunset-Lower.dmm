@@ -7089,6 +7089,10 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"dra" = (
+/obj/structure/junk/drawer,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "dsa" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13{
@@ -8063,6 +8067,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"ejg" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "ejs" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/indestructible/ground/inside/mountain,
@@ -9396,6 +9404,10 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"fqP" = (
+/obj/structure/junk/cabinet,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "fqQ" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/handrail/g_central{
@@ -10332,6 +10344,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"gmj" = (
+/obj/structure/closet/fridge{
+	anchored = 1
+	},
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "gmM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
@@ -14715,6 +14734,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/vaultdoor,
 /area/f13/caves)
+"jTV" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "jUa" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
@@ -15639,6 +15662,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/f13/building/museum)
+"kMq" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "kMC" = (
 /obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/dirt,
@@ -16414,6 +16444,13 @@
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/building/museum)
+"lqS" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelchess2"
+	},
+/area/f13/building)
 "lrv" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -16556,6 +16593,12 @@
 	},
 /obj/item/stamp,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
+"lxF" = (
+/obj/effect/overlay/junk/toilet{
+	dir = 8
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/building)
 "lxG" = (
 /obj/machinery/light/small{
@@ -19312,6 +19355,11 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"nIK" = (
+/obj/structure/bed/old,
+/obj/item/blanket,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "nJc" = (
 /obj/structure/simple_door/metal/store,
 /obj/structure/barricade/wooden/planks,
@@ -20690,6 +20738,14 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
+"oUi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 10
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "oUq" = (
 /obj/item/reagent_containers/food/snacks/deadmouse,
 /obj/structure/spider/stickyweb,
@@ -21284,6 +21340,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"poS" = (
+/obj/structure/table,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "ppe" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -23703,6 +23763,10 @@
 	icon_state = "tunnelchess"
 	},
 /area/f13/building/sewers)
+"rga" = (
+/obj/item/chair/wood/modern,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "rgx" = (
 /obj/structure/fence{
 	dir = 4
@@ -24162,6 +24226,10 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
+"rDj" = (
+/obj/structure/junk/locker,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "rDl" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -26319,6 +26387,11 @@
 /obj/machinery/conveyor/inverted,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
+"ttD" = (
+/obj/structure/junk/small/table,
+/obj/item/chair/wood/modern,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "tuh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
@@ -29387,6 +29460,12 @@
 	dir = 10
 	},
 /area/f13/tunnel)
+"wdQ" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelchess2"
+	},
+/area/f13/building)
 "weh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -46102,11 +46181,11 @@ aty
 bOE
 vQc
 sku
+kMq
+vQc
+fqP
 jLS
-jLS
-jLS
-jLS
-jLS
+nIK
 vQc
 aae
 aae
@@ -46358,12 +46437,12 @@ vQc
 kpv
 joe
 vQc
-jLS
-jLS
-jLS
+vQc
+qWG
+vQc
 fYJ
 nJn
-jLS
+dra
 vQc
 aae
 aae
@@ -46617,10 +46696,10 @@ cwz
 vQc
 jLS
 jLS
-jLS
+vQc
 nJn
 jLS
-jLS
+vQc
 vQc
 aae
 aae
@@ -46872,12 +46951,12 @@ pLf
 aty
 eaB
 vQc
+gmj
+jTV
 jLS
 jLS
-jLS
-jLS
-jLS
-jLS
+ejg
+rDj
 vQc
 aae
 aae
@@ -47129,11 +47208,11 @@ xDR
 joe
 hXU
 vQc
-nJn
-nJn
-jLS
-jLS
-jLS
+lqS
+wdQ
+ejg
+ttD
+rga
 jLS
 vQc
 aae
@@ -47386,12 +47465,12 @@ pLf
 pLf
 pLf
 vQc
-jLS
-jLS
-jLS
-jLS
-jLS
-jLS
+poS
+poS
+ejg
+ejg
+oUi
+lxF
 vQc
 aae
 aae
