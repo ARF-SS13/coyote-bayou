@@ -71330,7 +71330,7 @@
 	dir = 4
 	},
 /obj/structure/ladder/unbreakable{
-	height = 1;
+	height = 2;
 	id = "redwatersewersresidential"
 	},
 /turf/open/indestructible/ground/outside/dirt{
@@ -79953,6 +79953,19 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
+"vAR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/ladder/unbreakable{
+	id = "nashwall2";
+	height = 1
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/wasteland)
 "vAW" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -84546,6 +84559,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"xiP" = (
+/obj/structure/ladder/unbreakable{
+	id = "nashwall3";
+	height = 1
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/wasteland)
 "xjm" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -102945,7 +102967,7 @@ acl
 rnG
 mpV
 pzk
-pzk
+vAR
 aoQ
 pzk
 pzk
@@ -102990,7 +103012,7 @@ hJI
 hJI
 dfq
 ybq
-vaN
+xiP
 apX
 apX
 eoi
