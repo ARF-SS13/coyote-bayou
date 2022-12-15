@@ -279,15 +279,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "anc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
-	},
+/obj/structure/flora/twig2,
+/obj/structure/flora/tallgrass1,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "and" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mirror{
@@ -3755,11 +3752,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "eLX" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "eMD" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
@@ -3988,11 +3986,11 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "fdQ" = (
-/obj/structure/flora/ausbushes,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "fdT" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -7666,11 +7664,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "jCJ" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
+/obj/structure/barricade/wooden/strong,
+/obj/structure/curtain{
+	color = "#363636";
+	layer = 5
 	},
-/area/f13/wasteland)
+/turf/open/floor/wood_common,
+/area/f13/building/tribal)
 "jCQ" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /obj/machinery/light/broken{
@@ -7802,12 +7802,12 @@
 	},
 /area/f13/building/massfusion)
 "jPp" = (
-/obj/structure/flora/ausbushes/fernybush,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/twig4,
+/obj/structure/flora/tallgrass1,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "jQf" = (
 /obj/structure/window/reinforced/tinted{
 	dir = 8
@@ -17166,15 +17166,11 @@
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
 "wDF" = (
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "wDI" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/curtain{
@@ -21234,7 +21230,7 @@ oez
 oez
 oez
 iqB
-bmt
+jCJ
 iqB
 jwh
 sYU
@@ -22262,7 +22258,7 @@ dtb
 dtb
 dtb
 iqB
-bmt
+jCJ
 mvB
 xXK
 iqB
@@ -24578,7 +24574,7 @@ dtb
 pXV
 dYg
 dYg
-dYg
+eLX
 kCD
 vpi
 kCD
@@ -24834,12 +24830,12 @@ oez
 oez
 sqS
 dYg
-kCD
-wDF
-wDF
 xTy
-wDF
-jPp
+xTy
+xTy
+xTy
+xTy
+xTy
 dYg
 phh
 nBD
@@ -25091,11 +25087,11 @@ oez
 oez
 ykM
 dYg
-dYg
-fdQ
 xTy
-jPp
-wDF
+xTy
+xTy
+xTy
+xTy
 xTy
 ioD
 uWP
@@ -25347,11 +25343,11 @@ dtb
 oez
 oez
 sqS
-kCD
-dYg
+fdQ
 xTy
 xTy
-anc
+xTy
+xTy
 xTy
 xTy
 xGj
@@ -25605,12 +25601,12 @@ oez
 oez
 sqS
 kCD
-dYg
-jCJ
-jPp
 xTy
 xTy
-eLX
+xTy
+xTy
+xTy
+xTy
 ioD
 daP
 cVB
@@ -25862,10 +25858,10 @@ oez
 oez
 qIs
 kCD
-kCD
 xTy
-wDF
-fdQ
+xTy
+xTy
+xTy
 xTy
 xTy
 kCD
@@ -26119,12 +26115,12 @@ oez
 oez
 bqH
 dYg
-kCD
-xTy
-wDF
 xTy
 xTy
-jCJ
+xTy
+xTy
+xTy
+xTy
 dYg
 daP
 bYj
@@ -26376,12 +26372,12 @@ oez
 oez
 jYw
 dYg
-dYg
+kCD
 anc
-anc
-xTy
-xTy
-xTy
+kCD
+kCD
+kCD
+kCD
 bbG
 jFI
 tmU
@@ -26632,13 +26628,13 @@ oez
 oez
 oez
 bvw
+wDF
 kCD
 kCD
-fdQ
-xTy
-xTy
-eLX
-xTy
+jPp
+anc
+kCD
+kCD
 bvw
 oez
 oez
@@ -27243,12 +27239,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -27500,12 +27496,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -27757,12 +27753,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -28014,12 +28010,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -28271,12 +28267,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -28528,12 +28524,12 @@ dtb
 hqx
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -28785,12 +28781,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -29042,12 +29038,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -29299,12 +29295,12 @@ dtb
 dtb
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
@@ -29556,12 +29552,12 @@ dtb
 hqx
 dtb
 dtb
-oez
-oez
-oez
-oez
-oez
-oez
+qeo
+qeo
+qeo
+qeo
+qeo
+qeo
 oez
 oez
 oez
