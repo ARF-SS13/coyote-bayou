@@ -19807,9 +19807,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "bwi" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21"
-	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
 	pixel_y = 12
@@ -62478,14 +62475,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pqU" = (
-/obj/machinery/recycler{
-	color = "#A47449";
-	desc = "A large, rumbling machine. A soft glow emits from it, as if it has been blessed by the gods themselves. A name is etched into the side of it, one that read EarthMother";
-	light_range = 1;
-	name = "Blesed Recycler";
-	pixel_x = 15
-	},
 /obj/structure/stone_tile/slab,
+/obj/item/broom{
+	name = "Sulphur Tribe Floor Scepter";
+	color = "#893b00"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "pro" = (
@@ -74996,6 +74990,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"tMz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/guardian,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "tMD" = (
 /obj/effect/turf_decal/huge{
 	dir = 4
@@ -79374,6 +79376,20 @@
 /obj/machinery/autolathe/ammo,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"vqw" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/obj/structure/stone_tile/slab,
+/obj/machinery/recycler{
+	color = "#A47449";
+	desc = "A large, rumbling machine. A soft glow emits from it, as if it has been blessed by the gods themselves. A name is etched into the side of it, one that read EarthMother";
+	light_range = 1;
+	name = "Blesed Recycler"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "vqy" = (
 /obj/structure/fence,
 /obj/effect/decal/cleanable/dirt,
@@ -89054,7 +89070,7 @@ sUI
 vcr
 lGI
 hda
-jRC
+tMz
 ubt
 pvx
 ubt
@@ -91861,7 +91877,7 @@ vKX
 aXn
 apX
 sUI
-bwi
+vqw
 aZW
 dmG
 dmG
