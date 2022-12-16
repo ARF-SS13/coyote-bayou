@@ -12,6 +12,8 @@
 		/datum/material/blackpowder = MATS_PISTOL_SMALL_CASING)
 	/// Used to deduct powder and bullet mats from the bullet when fired
 	var/material_class = BULLET_IS_LIGHT_PISTOL
+	/// Used to deduct the right amount of bullet mats from the bullet when fired
+	var/casing_quality = BULLET_IS_SURPLUS
 	var/fire_sound = null						//What sound should play when this ammo is fired
 	var/caliber = null							//Which kind of guns it can be loaded into - NOT a list!
 	var/projectile_type = null					//The bullet type to create when New() is called
@@ -86,6 +88,11 @@
 		if(BULLET_IS_GAUSS)
 			iron_to_deduct = MATS_GAUSS_BULLET
 			powder_to_deduct = MATS_GAUSS_POWDER // surprise its nothing
+	switch(casing_quality)
+		if(BULLET_IS_MATCH)
+			iron_to_deduct *= MATS_AMMO_BULLET_MATCH_MULT
+		if(BULLET_IS_HANDLOAD, BULLET_IS_RUBBER)
+			iron_to_deduct *= MATS_AMMO_BULLET_HANDLOAD_MULT
 	var/list/newmats = custom_materials
 	if(iron_to_deduct && newmats[/datum/material/iron])
 		newmats[/datum/material/iron] -= iron_to_deduct

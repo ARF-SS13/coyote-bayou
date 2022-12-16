@@ -7,6 +7,8 @@
 	icon_state = "bbshell"
 	caliber = CALIBER_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug
+	material_class = BULLET_IS_SHOTGUN
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
@@ -28,8 +30,9 @@
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
 	pellets = SHOTGUN_PELLET_IMPROVISED
 	variance = SHOTGUN_SPREAD_IMPROVISED
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/iron = (MATS_SHOTGUN_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_SHOTGUN_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
@@ -38,6 +41,8 @@
 	desc = "A weak beanbag slug for riot control."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
+	material_class = BULLET_IS_SHOTGUN
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
@@ -78,6 +83,8 @@ obj/item/ammo_casing/shotgun/executioner
 	desc = "A stunning taser slug."
 	icon_state = "stunshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_stunslug
+	material_class = BULLET_IS_SHOTGUN
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
@@ -111,8 +118,10 @@ obj/item/ammo_casing/shotgun/executioner
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
-	pellets = 6
-	variance = 25
+	pellets = SHOTGUN_PELLET_BASE
+	variance = SHOTGUN_SPREAD_BASE
+	material_class = BULLET_IS_SHOTGUN
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
