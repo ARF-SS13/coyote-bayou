@@ -33,7 +33,7 @@
 #define RECIPE_UNITOOL "bbu"  //bend bend upset
 
 //Legion specific
-#define RECIPE_LANCE "dbdf" //draw bend fold fold
+#define RECIPE_LANCE "ddfp" //draw draw fold punch
 #define RECIPE_GLADIUS "fbf" //fold bend fold
 #define RECIPE_SPATHA "ffbf" // fold fold bend fold
 #define RECIPE_WARHONED "udup" //upset draw upset punch
