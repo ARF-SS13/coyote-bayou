@@ -710,7 +710,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/radium = 5)
 
 /obj/item/lighter/royalgold
-	name = "fusion zippo"
+	name = "royal zippo"
 	desc = "A high quality lighter made from gold and rare materials."
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "royal_zippo"
@@ -782,6 +782,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/moff
 	name = "moff zippo"
 	desc = "A lighter with a cute moff picture on the side!"
+	icon = 'icons/obj/custom.dmi'
 	icon_state = "moff_zippo"
 	item_state = "moff_zippo"
 	heat = 3500
@@ -791,6 +792,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/bullet
 	name = "bullet zippo"
 	desc = "A lighter for gun enthusiasts."
+	icon = 'icons/obj/custom.dmi'
 	icon_state = "bullet_zippo"
 	item_state = "bullet_zippo"
 	heat = 5000
