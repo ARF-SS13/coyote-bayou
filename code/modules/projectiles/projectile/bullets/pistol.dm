@@ -125,7 +125,7 @@
 /obj/item/projectile/bullet/c9mm/improvised
 	name = "handloaded 9mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_9MM_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_9MM_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_9MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_9MM_HANDLOAD
 
@@ -304,7 +304,7 @@
 /obj/item/projectile/bullet/c38/improvised
 	name = "handloaded .38 bullet"
 	damage = BULLET_DAMAGE_PISTOL_38_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_38_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38_HANDLOAD
 
@@ -408,7 +408,7 @@
 	name = "nail flechette"
 	icon_state = "cbbolt"
 	damage = BULLET_DAMAGE_PISTOL_NEEDLE_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_NEEDLE_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_NEEDLE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_NEEDLE
 
@@ -462,7 +462,7 @@
 /obj/item/projectile/bullet/c10mm/improvised
 	name = "handloaded 10mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_10MM_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_10MM_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_10MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_10MM_HANDLOAD
 
@@ -501,7 +501,7 @@
 	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
-	pixels_per_second = RUBBERY_SPEED_PISTOL_10MM
+	pixels_per_second = BULLET_SPEED_PISTOL_10MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	
 	sharpness = SHARP_NONE
@@ -583,7 +583,7 @@
 /obj/item/projectile/bullet/c45/improvised
 	name = "handloaded .45 bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_45ACP_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD
 
@@ -681,7 +681,7 @@
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
 	damage = BULLET_DAMAGE_PISTOL_38_MATCH
-	stamina = BULLET_STAMINA_PISTOL_38_MATCH
+	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38_MATCH
 
@@ -750,7 +750,7 @@
 /obj/item/projectile/bullet/a357/acid
 	name = ".357 acid-tipped bullet"
 	damage = BULLET_DAMAGE_PISTOL_38_MATCH * BULLET_DAMAGE_ACID
-	stamina = BULLET_STAMINA_PISTOL_38_MATCH * BULLET_STAMINA_ACID
+	stamina = BULLET_STAMINA_PISTOL_38 * BULLET_STAMINA_ACID
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38_MATCH
 
@@ -786,7 +786,7 @@
 /obj/item/projectile/bullet/a357/incendiary
 	name = ".357 incendiary bullet"
 	damage = BULLET_DAMAGE_PISTOL_38_MATCH * BULLET_DAMAGE_FIRE
-	stamina = BULLET_STAMINA_PISTOL_38_MATCH * BULLET_STAMINA_FIRE
+	stamina = BULLET_STAMINA_PISTOL_38 * BULLET_STAMINA_FIRE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38_MATCH
 
@@ -849,7 +849,7 @@
 /obj/item/projectile/bullet/m44/improvised
 	name = "handloaded .44 bullet"
 	damage = BULLET_DAMAGE_PISTOL_44_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_44_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44_HANDLOAD
 
@@ -944,7 +944,7 @@
 /obj/item/projectile/bullet/mm14/improvised
 	name = "handloaded 14mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_14MM_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_14MM_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_14MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_14MM_HANDLOAD
 
@@ -970,7 +970,7 @@
 	recoil = BULLET_RECOIL_PISTOL_14MM
 
 	wound_bonus = BULLET_WOUND_PISTOL_14MM * BULLET_WOUND_POISON
-	bare_wound_bonus = BULLET_WOUND_PISTOL_14MM_NAKED_MULT * BULLET_NAKED_POISON
+	bare_wound_bonus = BULLET_WOUND_PISTOL_14MM_NAKED_MULT * BULLET_NAKED_WOUND_POISON
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_14MM
@@ -1047,7 +1047,7 @@
 /obj/item/projectile/bullet/a45lc/improvised
 	name = "handloaded .45 LC bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
-	stamina = BULLET_STAMINA_PISTOL_45ACP_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD
 

@@ -17,8 +17,8 @@
 	desc = "A 12 gauge buckshot shell."
 	icon_state = "gshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
-	pellets = 6
-	variance = 18
+	pellets = SHOTGUN_PELLET_BASE
+	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/shotgun/improvised
@@ -26,8 +26,8 @@
 	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
 	icon_state = "improvshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
-	pellets = 12
-	variance = 30
+	pellets = SHOTGUN_PELLET_IMPROVISED
+	variance = SHOTGUN_SPREAD_IMPROVISED
 	custom_materials = list(
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
