@@ -6446,10 +6446,7 @@
 "hZB" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 4
-	},
-/obj/structure/railing{
-	color = "#A47449"
+	dir = 6
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -7497,7 +7494,7 @@
 "jkU" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "Nashwall3"
+	id = "nashwall3"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -15097,7 +15094,7 @@
 "tfP" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "Nashwall2"
+	id = "nashwall2"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -18155,6 +18152,12 @@
 /obj/structure/rack,
 /turf/open/floor/carpet/arcade,
 /area/f13/building/mall)
+"xzL" = (
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "xAT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -34555,12 +34558,12 @@ oez
 oez
 dtb
 dtb
-dtb
+xzL
 rrx
 rrx
 sRu
 sRu
-oez
+dmX
 oez
 oez
 oez
