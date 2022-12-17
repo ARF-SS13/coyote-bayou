@@ -63,11 +63,8 @@
 			gun.vars["charge_cost"] *= IU.weapon_upgrades[GUN_UPGRADE_CHARGECOST]
 		if(IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
 			gun.fire_delay *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-			gun.fire_delay = round(gun.fire_delay, 0.1)
 			gun.autofire_shot_delay *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-			gun.autofire_shot_delay = round(gun.autofire_shot_delay, 0.1)
 			gun.burst_shot_delay *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-			gun.burst_shot_delay = round(gun.burst_shot_delay, 0.1)
 
 //Called whenever the firemode is switched to, or the gun is picked up while its active
 /datum/firemode/proc/update()
