@@ -23,3 +23,9 @@
 	id = "nyanyanya"
 	real_samples = list("79" = 'modular_citadel/sound/voice/nya.ogg')
 	admin_only = TRUE
+
+/datum/instrument/fun/mothscream
+	name = "Moth Scream"
+	id = "mothscream"
+	real_samples = list("60"='sound/voice/moth/mothchitter.ogg')
+	admin_only = TRUE
