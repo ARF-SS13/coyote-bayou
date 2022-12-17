@@ -47,8 +47,8 @@
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_SMALL_CASING + MATS_PISTOL_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER)
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/c9mm/improvised
@@ -58,8 +58,8 @@
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = (MATS_PISTOL_SMALL_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_SMALL_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/c9mm/rubber
@@ -69,8 +69,8 @@
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
-		/datum/material/iron = (MATS_PISTOL_SMALL_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_SMALL_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/c9mm/incendiary
@@ -126,8 +126,8 @@
 	material_class = BULLET_IS_LIGHT_PISTOL
 	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_SMALL_CASING + MATS_PISTOL_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/a22/rubber
@@ -135,10 +135,10 @@
 	desc = "A .22lr rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c22/rubber
 	material_class = BULLET_IS_LIGHT_PISTOL
-	casing_quality = BULLET_IS_HANDLOAD
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
-		/datum/material/iron = (MATS_PISTOL_SMALL_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_SMALL_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/a22/shock

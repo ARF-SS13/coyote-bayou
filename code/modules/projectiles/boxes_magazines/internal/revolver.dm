@@ -107,7 +107,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	name = ".223 pistol cylinder"
-	ammo_type = /obj/item/ammo_casing/a556
+	ammo_type = /obj/item/ammo_casing/a556/sport
 	caliber = list(CALIBER_556)
 	max_ammo = 5
 

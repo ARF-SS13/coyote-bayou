@@ -17,7 +17,7 @@
 /obj/item/ammo_box/magazine/m556
 	name = "toploader magazine (5.56mm)"
 	icon_state = "5.56m"
-	ammo_type = /obj/item/ammo_casing/a556
+	ammo_type = /obj/item/ammo_casing/a556/sport
 	caliber = list(CALIBER_556)
 	max_ammo = 30
 	multiple_sprites = 2
@@ -72,6 +72,7 @@
 	name = "rifle magazine (5.56mm)"
 	icon_state = "r30"
 	max_ammo = 30
+	ammo_type = /obj/item/ammo_casing/a556
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_LARGE_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -82,6 +83,7 @@
 	name = "extended rifle magazine (5.56mm)"
 	icon_state = "r50"
 	max_ammo = 50
+	ammo_type = /obj/item/ammo_casing/a556
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_EXTENDED_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
 

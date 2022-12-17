@@ -261,9 +261,9 @@
 
 /obj/item/storage/belt/legholster/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
 
 ///////////////////
 /// Belt bandolier
@@ -452,9 +452,9 @@
 
 /obj/item/storage/belt/shoulderholster/ranger357/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
 
 /obj/item/storage/belt/shoulderholster/ranger45/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/revolver45(src)

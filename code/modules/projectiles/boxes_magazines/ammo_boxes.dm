@@ -74,7 +74,7 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a22
 	caliber = list(CALIBER_22LR)
-	max_ammo = 40
+	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 
@@ -98,7 +98,7 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_9MM)
 	ammo_type = /obj/item/ammo_casing/c9mm
-	max_ammo = 30
+	max_ammo = 45
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 
@@ -128,7 +128,7 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_38)
 	ammo_type = /obj/item/ammo_casing/c38
-	max_ammo = 30
+	max_ammo = 25
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 
@@ -189,9 +189,9 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_357, CALIBER_38)
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 30
+	max_ammo = 20
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/a357box/ricochet
 	name = "ammo box (.357 Magnum ricochet)"
@@ -219,8 +219,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_44)
 	ammo_type = /obj/item/ammo_casing/m44
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 
 /obj/item/ammo_box/m44box/incendiary
@@ -243,7 +243,7 @@
 	caliber = list(CALIBER_45LC)
 	ammo_type = /obj/item/ammo_casing/a45lc
 	max_ammo = 30
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 
 /obj/item/ammo_box/a45lcbox/improvised
@@ -293,8 +293,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_4570)
 	ammo_type = /obj/item/ammo_casing/c4570
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 15
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 
 /obj/item/ammo_box/c4570box/explosive
@@ -324,8 +324,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_5MM)
 	ammo_type = /obj/item/ammo_casing/m5mm
-	max_ammo = 60
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 
 /obj/item/ammo_box/m5mmbox/shock
@@ -348,8 +348,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_556)
 	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 40
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 
 /obj/item/ammo_box/a556/sport
@@ -400,8 +400,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_762)
 	ammo_type = /obj/item/ammo_casing/a762/sport
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 
 /obj/item/ammo_box/a308box/improvised
@@ -418,8 +418,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_762)
 	ammo_type = /obj/item/ammo_casing/a762
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 
 /*
@@ -459,8 +459,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_50MG)
 	ammo_type = /obj/item/ammo_casing/a50MG
-	max_ammo = 25
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 12
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_HEAVY_BOX)
 
 /obj/item/ammo_box/a50MGbox/rubber
@@ -479,7 +479,7 @@
 
 /obj/item/ammo_box/a50MGbox/contam
 	name = "ammo box (12.7mm contaminated)"
-	max_ammo = 15
+	max_ammo = 12
 	desc = "12.7mm bullets loaded with a gaseous hepatoxic payload, which reduces the effectiveness of medicine and toxins."
 	ammo_type = /obj/item/ammo_casing/a50MG/contam
 
@@ -498,8 +498,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_14MM)
 	ammo_type = /obj/item/ammo_casing/p14mm
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 18
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 
 /obj/item/ammo_box/m14mm/contam
@@ -522,7 +522,7 @@
 	caliber = list(CALIBER_CASELESS)
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 50
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 
