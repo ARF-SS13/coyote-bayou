@@ -2646,6 +2646,15 @@
 	item_state = "elite_riot"
 	icon = 'icons/obj/clothing/suits.dmi'
 
+/obj/item/clothing/suit/armor/heavy/riot/eliteweak
+	name = "worn elite riot gear"
+	desc = "A heavily reinforced set of military grade armor. This one appears to be aged..."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	icon = 'icons/obj/clothing/suits.dmi'
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
+
 //////////////////////////
 // Salvaged Power Armor //
 //////////////////////////

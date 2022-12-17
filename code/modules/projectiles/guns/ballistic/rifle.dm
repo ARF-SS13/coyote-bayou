@@ -403,6 +403,48 @@
 		if(W.active)
 			sawoff(user)
 
+/obj/item/gun/ballistic/rifle/hunting/special
+	name = "hypocritical oath"
+	desc = "An old, worn-in hunting rifle with leather wrapping the stock. Do (no) harm."
+	icon_state = "308special"
+	item_state = "308special"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
+	can_scope = TRUE
+	scope_state = "scope_long"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	pump_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
+
 /* * * * * * * * * * *
  * Remmington Bolt-Action Rifle
  * Accurate Bolt-Action Rifle

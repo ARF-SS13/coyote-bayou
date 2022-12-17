@@ -55360,6 +55360,10 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland/city)
+"mWA" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "mWD" = (
 /mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -82382,6 +82386,13 @@
 	icon_state = "horizontaltopborderbottom2left"
 	},
 /area/f13/wasteland/city)
+"wuA" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/machinery/vending/snack,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "wvD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt{
@@ -83512,19 +83523,9 @@
 	},
 /area/f13/building/massfusion)
 "wNX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/end/wooden{
-	pixel_y = 5
-	},
-/obj/structure/fence/end/wooden{
-	pixel_y = 21
-	},
-/obj/item/flag/followers{
-	pixel_y = 16
-	},
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/structure/sign/poster/official/medical_green_cross,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital)
 "wOh" = (
 /obj/structure/fence,
 /obj/effect/decal/cleanable/dirt,
@@ -94573,7 +94574,7 @@ oRd
 cex
 jxf
 xvQ
-bcq
+wNX
 fsI
 fsI
 lsk
@@ -94582,7 +94583,7 @@ vCY
 lsk
 fsI
 fsI
-bcq
+wNX
 wqq
 xvQ
 cxc
@@ -94830,16 +94831,16 @@ kgM
 hdl
 jxf
 bdy
-wNX
+nkd
 cex
 cex
 wYA
 huu
 huu
-oRd
+wuA
+mWA
 cex
-cex
-wNX
+nkd
 pzk
 bdy
 xtm
