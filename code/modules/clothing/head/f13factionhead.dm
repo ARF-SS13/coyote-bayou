@@ -703,6 +703,13 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriotweak
+	name = "worn elite riot gear helmet"
+	desc = "An old combat helmet seen in the divide, repurposed for higher ranking Rangers. This one seems aged..."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
+
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	name = "desert ranger combat helmet"
 	desc = "An U.S Marine Corps helmet, used by the legendary Desert Rangers."
