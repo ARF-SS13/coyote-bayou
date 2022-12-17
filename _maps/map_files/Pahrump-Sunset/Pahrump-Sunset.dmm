@@ -29690,13 +29690,6 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"emz" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/machinery/vending/snack,
-/turf/open/floor/wood_common,
-/area/f13/building)
 "emF" = (
 /obj/structure/chair/greyscale{
 	dir = 1
@@ -50153,6 +50146,10 @@
 	color = "#9c9c9c"
 	},
 /area/f13/wasteland)
+"lkY" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "llo" = (
 /obj/structure/simple_door/room{
 	name = "wooden door"
@@ -83519,9 +83516,9 @@
 	},
 /area/f13/building/massfusion)
 "wNX" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/structure/sign/poster/official/medical_green_cross,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital)
 "wOh" = (
 /obj/structure/fence,
 /obj/effect/decal/cleanable/dirt,
@@ -86190,6 +86187,13 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"xKZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/machinery/vending/snack,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "xLa" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -94570,7 +94574,7 @@ oRd
 cex
 jxf
 xvQ
-bcq
+wNX
 fsI
 fsI
 lsk
@@ -94579,7 +94583,7 @@ vCY
 lsk
 fsI
 fsI
-bcq
+wNX
 wqq
 xvQ
 cxc
@@ -94833,8 +94837,8 @@ cex
 wYA
 huu
 huu
-emz
-wNX
+xKZ
+lkY
 cex
 nkd
 pzk
