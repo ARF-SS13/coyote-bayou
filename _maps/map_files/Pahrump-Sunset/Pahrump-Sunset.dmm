@@ -64899,7 +64899,8 @@
 /obj/item/stack/rods,
 /obj/structure/stone_tile/slab,
 /obj/structure/table/reinforced{
-	color = "#3c2c21"
+	color = "#3c2c21";
+	max_integrity = 1000000
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
@@ -83668,7 +83669,8 @@
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/item/stack/rods,
 /obj/structure/table/reinforced{
-	color = "#3c2c21"
+	color = "#3c2c21";
+	max_integrity = 1000000
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
