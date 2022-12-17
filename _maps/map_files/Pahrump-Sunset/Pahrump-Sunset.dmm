@@ -50146,10 +50146,6 @@
 	color = "#9c9c9c"
 	},
 /area/f13/wasteland)
-"lkY" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/wood_common,
-/area/f13/building)
 "llo" = (
 /obj/structure/simple_door/room{
 	name = "wooden door"
@@ -55364,6 +55360,10 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland/city)
+"mWA" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "mWD" = (
 /mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -82386,6 +82386,13 @@
 	icon_state = "horizontaltopborderbottom2left"
 	},
 /area/f13/wasteland/city)
+"wuA" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/machinery/vending/snack,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "wvD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt{
@@ -86187,13 +86194,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"xKZ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/machinery/vending/snack,
-/turf/open/floor/wood_common,
-/area/f13/building)
 "xLa" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -94837,8 +94837,8 @@ cex
 wYA
 huu
 huu
-xKZ
-lkY
+wuA
+mWA
 cex
 nkd
 pzk
