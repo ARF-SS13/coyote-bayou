@@ -709,6 +709,96 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	light_color = LIGHT_COLOR_CYAN
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/radium = 5)
 
+/obj/item/lighter/royalgold
+	name = "royal zippo"
+	desc = "A high quality lighter made from gold and rare materials."
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "royal_zippo"
+	item_state = "royal_zippo"
+	heat = 4000
+	light_color = LIGHT_COLOR_PURPLE
+	grind_results = list(/datum/reagent/gold = 1, /datum/reagent/fuel = 5, /datum/reagent/radium = 5)
+
+/obj/item/lighter/iconic
+	name = "iconic zippo"
+	desc = "An old style zippo lighter. Very retro!"
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "iconic_zippo"
+	item_state = "iconic_zippo"
+	heat = 2500
+	light_color = LIGHT_COLOR_YELLOW
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/water = 50)
+
+/obj/item/lighter/ian
+	name = "ian zippo"
+	desc = "Very cute corgi zippo!"
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "ian_zippo"
+	item_state = "ian_zippo"
+	heat = 1500
+	light_color = LIGHT_COLOR_YELLOW
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/consumable/cooking_oil = 5, /datum/reagent/consumable/nutriment = 5)
+
+/obj/item/lighter/holy
+	name = "holy zippo"
+	desc = "Repent sinner!"
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "holy_zippo"
+	item_state = "holy_zippo"
+	heat = 777
+	light_color = LIGHT_COLOR_HOLY_MAGIC
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/teslium = 50)
+
+/obj/item/lighter/fox
+	name = "fox zippo"
+	desc = "Very cute fox zippo!"
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "fox_zippo"
+	item_state = "fox_zippo"
+	heat = 1500
+	light_color = LIGHT_COLOR_YELLOW
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/consumable/cooking_oil = 5, /datum/reagent/consumable/nutriment = 69) // *insert lenny face here*
+
+/obj/item/lighter/rainbow
+	name = "rainbow zippo"
+	desc = "A very colorful lighter."
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "rainbow_zippo"
+	item_state = "rainbow_zippo"
+	heat = 4564
+	light_color = LIGHT_COLOR_WHITE
+	grind_results = list(/datum/reagent/colorful_reagent/crayonpowder/green = 15, /datum/reagent/colorful_reagent/crayonpowder/blue = 15, /datum/reagent/colorful_reagent/crayonpowder/red = 15)
+
+/obj/item/lighter/heart
+	name = "heart zippo"
+	desc = "For that lovely sweetheart in your life."
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "heart_zippo"
+	item_state = "heart_zippo"
+	heat = 2500
+	light_color = LIGHT_COLOR_RED
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/consumable/ethanol/nukalove = 50)
+
+/obj/item/lighter/moff
+	name = "moff zippo"
+	desc = "A lighter with a cute moff picture on the side!"
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "moff_zippo"
+	item_state = "moff_zippo"
+	heat = 3500
+	light_color = LIGHT_COLOR_CYAN
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/flash_powder = 50)
+
+/obj/item/lighter/bullet
+	name = "bullet zippo"
+	desc = "A lighter for gun enthusiasts."
+	icon = 'icons/obj/custom.dmi'
+	icon_state = "bullet_zippo"
+	item_state = "bullet_zippo"
+	heat = 5000
+	light_color = LIGHT_COLOR_YELLOW
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/blackpowder = 50)
+
 ///////////
 //ROLLING//
 ///////////

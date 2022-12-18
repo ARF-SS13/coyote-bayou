@@ -1294,15 +1294,6 @@
 	siemens_coefficient = 0.9
 	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
 
-/obj/item/clothing/suit/armor/light/leather/marine
-	name = "retro fitted riot combat armor"
-	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, however most of the plates have been torn out to make room for various storage compartments."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
-	icon = 'icons/obj/clothing/suits.dmi'
-	icon_state = "usmc_riot_gear"
-	item_state = "usmc_riot_gear"
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T1)
-
 /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	name = "bouncer jacket"
 	icon_state = "leather_jacket_fighter"
@@ -2640,12 +2631,29 @@
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 
+/obj/item/clothing/suit/armor/heavy/riot/retrofitted
+	name = "retro fitted riot combat armor"
+	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, however most of the plates have been torn out to make room for various storage compartments."
+	icon_state = "usmc_riot_gear"
+	item_state = "usmc_riot_gear"
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
+
 /obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"
 	desc = "A heavily reinforced set of military grade armor."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	icon = 'icons/obj/clothing/suits.dmi'
+
+/obj/item/clothing/suit/armor/heavy/riot/eliteweak
+	name = "worn elite riot gear"
+	desc = "A heavily reinforced set of military grade armor. This one appears to be aged..."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	icon = 'icons/obj/clothing/suits.dmi'
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
 
 //////////////////////////
 // Salvaged Power Armor //

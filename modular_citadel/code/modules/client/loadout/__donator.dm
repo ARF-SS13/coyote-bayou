@@ -176,7 +176,7 @@
 	new /obj/item/clothing/head/beret/headband(src)
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
 	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
-	new /obj/item/clothing/suit/armor/light/leather/marine(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 
 // B
@@ -411,6 +411,16 @@
 	new /obj/item/melee/onehanded/knife/switchblade(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 
+/datum/gear/donator/kits/fuzlet3
+	name = "Thiefy thief Kit"
+	path = /obj/item/storage/box/large/custom_kit/fuzlet3
+	ckeywhitelist = list("fuzlet")
+
+/obj/item/storage/box/large/custom_kit/fuzlet3/PopulateContents()
+	new /obj/item/storage/survivalkit/triple(src)
+	new /obj/item/storage/bag/trash/sack(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
+
 // G
 
 /datum/gear/donator/kits/generalpantsu
@@ -460,9 +470,9 @@
 	ckeywhitelist = list("jackson1112")
 
 /obj/item/storage/box/large/custom_kit/jackson1112/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/m1carbine/compact(src)
-	new /obj/item/ammo_box/magazine/m10mm/adv(src)
-	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
 	new /obj/item/melee/onehanded/knife/bayonet(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/storage/box/ration/ranger_breakfast(src)
@@ -598,6 +608,14 @@
 /obj/item/storage/box/large/custom_kit/pipes_wildin/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/combat/worn(src)
 
+/datum/gear/donator/kits/pipes_wildin2
+	name = "Zimnt's Kit"
+	path = /obj/item/storage/box/large/custom_kit/pipes_wildin2
+	ckeywhitelist = list("pipes_wildin")
+
+/obj/item/storage/box/large/custom_kit/pipes_wildin2/PopulateContents()
+	new /obj/item/stealthboy(src)
+
 /datum/gear/donator/kits/pixelexip
 	name = "Bruiser's Kit"
 	path = /obj/item/storage/box/large/custom_kit/pixelexip
@@ -607,6 +625,14 @@
 	new /obj/item/clothing/suit/armor/light/poachervest(src)
 	new /obj/item/reagent_containers/food/drinks/flask/gold(src)
 	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
+
+/datum/gear/donator/kits/pixelexip2
+	name = "Hypocritical Oath Kit"
+	path = /obj/item/storage/box/large/custom_kit/pixelexip2
+	ckeywhitelist = list("pixelexip")
+
+/obj/item/storage/box/large/custom_kit/pixelexip2/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/hunting/special(src)
 
 /datum/gear/donator/kits/planetary
 	name = "Collector"
@@ -619,6 +645,16 @@
 	new /obj/item/clothing/suit/armor/harpercoat(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/toy/plush/mammal/fox(src)
+
+/datum/gear/donator/kits/planetary2
+	name = "Replica"
+	path = /obj/item/storage/box/large/custom_kit/planetary2
+	ckeywhitelist = list("planetary")
+
+/obj/item/storage/box/large/custom_kit/planetary2/PopulateContents()
+	new /obj/item/clothing/suit/armor/heavy/riot/eliteweak(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriotweak(src)
+	new /obj/item/gun/ballistic/revolver/revolver44/desert_ranger(src)
 
 // Q
 // R
@@ -696,7 +732,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
 	new /obj/item/storage/belt/shoulderholster/ranger45(src)
 	new /obj/item/clothing/under/costume/soviet(src)
-//	new /obj/item/storage/box/rocketlauncher_tox(src) //locked away 'til the end days or until someone figures out how to balance it
+	new /obj/item/storage/box/hobo_tox(src)
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/binoculars(src)
 
@@ -894,7 +930,7 @@
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/gun/energy/laser/rcw/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
-	new /obj/item/clothing/under/rank/security/officer(src)
+	new /obj/item/clothing/under/rank/security/officer/skirt(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"

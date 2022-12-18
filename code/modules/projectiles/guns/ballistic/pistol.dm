@@ -484,13 +484,12 @@
 	name = "Black Kite"
 	desc = "These large Sig Sauer pistols have seen much wear, and have been kept maintained with parts from the more common P220, necessitating the rechambering to .45ACP."
 	icon_state = "pistol14"
-	item_state = "44magnum"
+	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 
-	auto_eject = TRUE
 	auto_eject_sound = 'sound/weapons/gun_magazine_remove_full.ogg'
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT

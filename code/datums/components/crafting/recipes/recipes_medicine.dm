@@ -1,3 +1,39 @@
+/datum/crafting_recipe/redpotion
+	name = "Red Potion"
+	result = /obj/item/reagent_containers/glass/bottle/ichor/red
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 1,
+				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+				/obj/item/stack/sheet/glass = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/bluepotion
+	name = "Blue Potion"
+	result = /obj/item/reagent_containers/glass/bottle/ichor/blue
+	reqs = list(/obj/item/reagent_containers/food/snacks/rawantbrain = 1,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+				/obj/item/stack/sheet/glass = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/greenpotion
+	name = "Green Potion"
+	result = /obj/item/reagent_containers/glass/bottle/ichor/green
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+				/obj/item/stack/sheet/glass = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+	always_available = FALSE
+
 /datum/crafting_recipe/upgraded_gauze
 	name = "Improved Gauze"
 	result = /obj/item/stack/medical/gauze/adv/one

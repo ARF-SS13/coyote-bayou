@@ -623,8 +623,8 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 /obj/item/toy/plush/mothplushie
 	name = "insect plushie"
 	desc = "An adorable stuffed toy that resembles some kind of insect."
-	icon_state = "bumble"
-	item_state = "bumble"
+	icon_state = "moth"
+	item_state = "moth"
 	squeak_override = list('modular_citadel/sound/voice/mothsqueak.ogg' = 1)
 	can_random_spawn = FALSE
 

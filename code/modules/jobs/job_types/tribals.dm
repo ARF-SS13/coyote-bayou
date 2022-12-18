@@ -48,6 +48,9 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/spearfisher,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
+	/datum/crafting_recipe/redpotion,
+	/datum/crafting_recipe/bluepotion,
+	/datum/crafting_recipe/greenpotion,
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag))
 
@@ -63,7 +66,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	box = /obj/item/storage/survivalkit/tribal
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	ears = null
- 
+
 /datum/outfit/job/tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
