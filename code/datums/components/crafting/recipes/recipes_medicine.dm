@@ -9,6 +9,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/bluepotion
 	name = "Blue Potion"
@@ -21,6 +23,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/greenpotion
 	name = "Green Potion"
@@ -33,6 +37,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/upgraded_gauze
 	name = "Improved Gauze"
@@ -53,7 +59,7 @@
 				/datum/reagent/medicine/styptic_powder = 10)
 	category = CAT_MEDICAL
 	skill_needed = SKILL_SCIENCE
-	skill_level = REGULAR_CHECK
+	skill_level = EASY_CHECK
 
 /datum/crafting_recipe/ointment
 	name = "Improvised Ointment"
@@ -63,7 +69,8 @@
 				/obj/item/reagent_containers/food/snacks/grown/agave = 1)
 	category = CAT_MEDICAL
 	skill_needed = SKILL_SCIENCE
-	skill_level = REGULAR_CHECK
+	skill_level = EASY_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/burn_pack
 	name = "Regenerative Mesh"
