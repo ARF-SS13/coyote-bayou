@@ -4,7 +4,7 @@
 	return t
 
 /mob/living/simple_animal/hostile/retaliate/talker/follower
-	var/list/known_commands = list("stay", "stop", "attack", "follow", "friend")
+	var/list/known_commands = list("stay", "stop", "attack", "follow", "trust")
 	var/list/allowed_targets = list() //WHO CAN I KILL D:
 	var/retribution = 1 //whether or not they will attack us if we attack them like some kinda dick.
 	emote_hear = list("Okay.", "Got it.", "Yep.", "Yup.", "Yes.")
@@ -14,18 +14,22 @@
 
 /mob/living/simple_animal/hostile/retaliate/talker/follower/dialog_options(mob/talker, display_options)
 	var/dat = "" 
-	if (!friends.Find(WEAKREF(talker)) && (intimidated || introduced.Find(WEAKREF(talker))))
+	if (!friends.Find(WEAKREF(talker)) && (intimidated.Find(WEAKREF(talker)) || introduced.Find(WEAKREF(talker))))
 		dat += "<center><a href='?src=[REF(src)];together=1'>Try to convince them to follow you (Speech - persuade)</a></center>"
 	if (friends.Find(WEAKREF(talker)) && !trust_no_one)
 		dat += "<center><a href='?src=[REF(src)];only=1'>Convince them to only trust you (Speech - persuade)</a></center>"
+		say("Just say who you want me to +follow+, who I can +trust+ or who to +attack+ and I'm on it.")
 	return dat
 
 /mob/living/simple_animal/hostile/retaliate/talker/follower/Topic(href, href_list)
 	if(href_list["together"])
 		usr.say("The wastes are a dangerous place, we should stick together.")
-		if (!trust_no_one && !failed.Find(WEAKREF(usr)) && (usr.skill_check(SKILL_SPEECH, HARD_CHECK) || usr.skill_roll(SKILL_SPEECH) || intimidated))
+		if (!trust_no_one && !failed.Find(WEAKREF(usr)) && (usr.skill_check(SKILL_SPEECH, HARD_CHECK) || usr.skill_roll(SKILL_SPEECH) || intimidated.Find(WEAKREF(usr))))
 			say("Alright you look like you've got it together. Where to?")
 			friends |= WEAKREF(usr)
+			if (istype(usr, /mob/living/carbon/human))
+				var/mob/living/carbon/human/H = usr
+				H.mob_friends |= src
 			show_dialog_box(usr, FALSE)
 		else
 			say("I'll take my chances out here.")
@@ -67,7 +71,7 @@
 						if(emote_hear && emote_hear.len)
 							say("[pick(emote_hear)]")
 						break
-				if("friend")
+				if("trust")
 					if(friend_command(speaker,text))
 						if(emote_hear && emote_hear.len)
 							say("[pick(emote_hear)]")

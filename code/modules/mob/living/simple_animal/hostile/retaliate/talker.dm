@@ -3,7 +3,8 @@
 	var/list/broken_trust = list()
 	var/list/introduced = list()
 	var/list/failed = list()
-	var/intimidated = FALSE
+	var/list/intimidated = list()
+	var/intimidation_difficulty = DIFFICULTY_NORMAL
 	
 /mob/living/simple_animal/hostile/retaliate/talker/basic
 	name = "Nanotrasen Private Security Officer"
@@ -86,9 +87,9 @@
 		say(dat)
 	if(!we_introduced)
 		dat += "<center><a href='?src=[REF(src)];introduce=1'>Intoduce yourself</a></center>"
-	if(!friends.Find(talker))
+	if(!friends.Find(WEAKREF(talker)))
 		dat += "<center><a href='?src=[REF(src)];stare=1'>Remain silent and stare. (Speech - Intimidate)</a></center>"
-	dat += dialog_options(talker, we_introduced || intimidated)
+	dat += dialog_options(talker, we_introduced || intimidated.Find(WEAKREF(talker)))
 	return dat
 
 /mob/living/simple_animal/hostile/retaliate/talker/proc/dialog_options(mob/talker, display_options)
@@ -104,9 +105,9 @@
 	if(href_list["stare"])
 		usr.emote("stare")
 		introduced |= WEAKREF(usr)
-		if (usr.skill_roll(SKILL_SPEECH) && !failed.Find(WEAKREF(usr)))
+		if (usr.skill_roll(SKILL_SPEECH, intimidation_difficulty) && !failed.Find(WEAKREF(usr)))
 			say("Right... Can I help you?")
-			intimidated = TRUE
+			intimidated |= WEAKREF(usr)
 		else
 			emote("stare")
 			failed |= WEAKREF(usr)

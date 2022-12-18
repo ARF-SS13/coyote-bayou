@@ -78,6 +78,8 @@
 	var/account_id
 	var/last_fire_update
 
+	var/list/mob_friends = list()
+
 	var/busy= FALSE
 
 /// Unarmed parry data for human

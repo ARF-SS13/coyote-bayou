@@ -63,6 +63,10 @@
 			var/martial_art_result = mind.martial_art.on_projectile_hit(src, P, def_zone)
 			if(!(martial_art_result == BULLET_ACT_HIT))
 				return martial_art_result
+	//we got hit, let our friends know we're in danger!
+	for (var/mob/living/simple_animal/hostile/retaliate/talker/talker in mob_friends)
+		if (src != P.firer)
+			talker.enemies |= WEAKREF(P.firer)
 	return ..()
 
 /mob/living/carbon/human/proc/check_martial_melee_block()
@@ -81,6 +85,10 @@
 		..()
 
 /mob/living/carbon/human/grippedby(mob/living/user, instant = FALSE)
+	//we're getting grabbed! let our friends know we're in danger!
+	for (var/mob/living/simple_animal/hostile/retaliate/talker/talker in mob_friends)
+		if (src != user)
+			talker.enemies |= WEAKREF(user)
 	if(w_uniform)
 		w_uniform.add_fingerprint(user)
 	..()
@@ -101,7 +109,14 @@
 
 	SSblackbox.record_feedback("nested tally", "item_used_for_combat", 1, list("[I.force]", "[I.type]"))
 	SSblackbox.record_feedback("tally", "zone_targeted", 1, target_area)
-
+	
+	//we got hit, let our friends know we're in danger!
+	for (var/mob/l in mob_friends)
+		if (src != user)
+			if (istype(l, /mob/living/simple_animal/hostile/retaliate/talker))
+				var/mob/living/simple_animal/hostile/retaliate/talker/talk = l
+				talk.enemies |= WEAKREF(user)
+	
 	// the attacked_by code varies among species
 	return dna.species.spec_attacked_by(I, user, affecting, a_intent, src, attackchain_flags, damage_multiplier, damage_addition)
 

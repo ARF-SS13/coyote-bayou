@@ -28,6 +28,7 @@ ATTACHMENTS
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=2000)
+	custom_price = PRICE_ALMOST_EXPENSIVE
 	w_class = WEIGHT_CLASS_NORMAL
 	var/icon_prefix = null
 	throwforce = 5
