@@ -153,6 +153,7 @@
 		series of guns, able to load and fire just about anything without problem. \
 		However, the energy-absorbing metal ends up slowing whatever travels through it, making \
 		anything fired through it hit like a wet noodle."
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised_any
