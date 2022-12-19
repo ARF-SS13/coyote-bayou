@@ -17,7 +17,7 @@
 	var/list/protected_zones = list(BODY_ZONE_HEAD)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
-
+	custom_price = PRICE_EXPENSIVE
 	dog_fashion = /datum/dog_fashion/head/helmet
 
 	var/can_flashlight = FALSE //if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.

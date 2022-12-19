@@ -859,7 +859,7 @@ ATTACHMENTS
 
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message(span_danger("[user] grabs \a [G]!")) // probably could code in differences as to where you're picking it up from and so forth. later.
-	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
+	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay())) * min((50/user.skill_value(gun_skill_used)), 1.5)
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	if(safety && user.a_intent == INTENT_HARM)
 		toggle_safety(user, ignore_held = TRUE)
