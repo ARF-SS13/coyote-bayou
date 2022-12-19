@@ -10,6 +10,7 @@
 	name = "stairs"
 	icon = 'icons/obj/stairs.dmi'
 	icon_state = "stairs"
+	resistance_flags = INDESTRUCTIBLE
 	anchored = TRUE
 
 	var/force_open_above = FALSE // replaces the turf above this stair obj with /turf/open/transparent/openspace
