@@ -534,6 +534,19 @@
 	icon = 'icons/fallout/objects/tools.dmi'
 	icon_state = "brahminbrand"
 
+/obj/item/storage/backpack/duffelbag/debug_brahmin_kit
+	name = "Lets test brahmin!"
+
+/obj/item/storage/backpack/duffelbag/debug_brahmin_kit/PopulateContents()
+	. = ..()
+	new /obj/item/brahminbags(src)
+	new /obj/item/brahmincollar(src)
+	new /obj/item/brahminbridle(src)
+	new /obj/item/brahminsaddle(src)
+	new /obj/item/brahminbrand(src)
+	new /obj/item/choice_beacon/pet(src)
+	new /obj/item/gun/ballistic/rifle/mag/antimateriel(src)
+
 /datum/crafting_recipe/brahminbags
 	name = "Brahmin bags"
 	result = /obj/item/brahminbags
@@ -585,6 +598,22 @@
 	tools = list(TOOL_WORKBENCH)
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+
+/mob/living/simple_animal/cow/brahmin/death(gibbed)
+	. = ..()
+	if(can_buckle)
+		can_buckle = FALSE
+	if(buckled_mobs)
+		for(var/mob/living/M in buckled_mobs)
+			unbuckle_mob(M)
+	for(var/atom/movable/stuff_innit in contents)
+		stuff_innit.forceMove(get_turf(src))
+	if(collar)
+		new /obj/item/brahmincollar(get_turf(src))
+	if(bridle)
+		new /obj/item/brahminbridle(get_turf(src))
+	if(saddle)
+		new /obj/item/brahminsaddle(get_turf(src))
 
 /mob/living/simple_animal/cow/brahmin/attackby(obj/item/I, mob/user)
 	. = ..()
@@ -679,6 +708,10 @@
 
 
 /mob/living/simple_animal/cow/brahmin/proc/handle_following()
+	if(stat == DEAD)
+		return
+	if(health <= 0)
+		return
 	if(owner)
 		if(!follow)
 			return
@@ -694,16 +727,19 @@
 		tame = FALSE
 		owner = null
 		to_chat(user, span_notice("You remove the bridle gear from [src], dropping it on the ground."))
-		new /obj/item/brahminbridle(user.loc)
+		new /obj/item/brahminbridle(get_turf(user))
 
 	if(collar && user.a_intent == INTENT_GRAB)
 		collar = FALSE
 		name = initial(name)
 		to_chat(user, span_notice("You remove the collar from [src], dropping it on the ground."))
-		new /obj/item/brahmincollar(user.loc)
+		new /obj/item/brahmincollar(get_turf(user))
 
 	if(user == owner)
 		if(bridle && user.a_intent == INTENT_HELP)
+			if(stat == DEAD || health <= 0)
+				to_chat(user, span_alert("[src] can't obey your commands anymore. It is dead."))
+				return
 			if(follow)
 				to_chat(user, span_notice("You tug on the reins of [src], telling it to stay."))
 				follow = FALSE

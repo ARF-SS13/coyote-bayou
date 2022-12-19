@@ -175,6 +175,11 @@
 	if(user.incapacitated())
 		Unbuckle(user)
 		return
+	if(isliving(parent))
+		var/mob/living/critterthing = parent
+		if(critterthing.stat != CONSCIOUS || critterthing.health <= 0)
+			Unbuckle(user)
+			return
 	if(world.time < last_vehicle_move + ((last_move_diagonal? 2 : 1) * vehicle_move_delay))
 		return
 	last_vehicle_move = world.time
