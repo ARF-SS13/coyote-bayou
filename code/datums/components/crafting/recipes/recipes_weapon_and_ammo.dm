@@ -661,8 +661,8 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 	
-//Coyote Repeater
-/datum/crafting_recipe/CoyoteRepeater
+//coyote repeater
+/datum/crafting_recipe/coyoterepeater
 	name = "Coyote Repeater"
 	result = /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal
 	reqs = list(/obj/item/gun/ballistic/rifle/repeater/cowboy,
@@ -674,8 +674,8 @@
 	subcategory = CAT_WEAPON
 	always_available = TRUE
 
-//Rainstick
-/datum/crafting_recipe/Rainstick
+//rainstick
+/datum/crafting_recipe/rainstick
 	name = "Rainstick"
 	result = /obj/item/gun/ballistic/rifle/repeater/trail/tribal
 	reqs = list(/obj/item/gun/ballistic/rifle/repeater/trail,
@@ -688,8 +688,8 @@
 	subcategory = CAT_WEAPON
 	always_available = TRUE
 	
-//MedicineStick
-/datum/crafting_recipe/MedicineStick
+//medicinestick
+/datum/crafting_recipe/medicinestick
 	name = "Medicine Stick"
 	result = /obj/item/gun/ballistic/rifle/repeater/brush/tribal
 	reqs = list(/obj/item/gun/ballistic/rifle/repeater/brush,
@@ -703,8 +703,8 @@
 	subcategory = CAT_WEAPON
 	always_available = TRUE
 	
-//SmellTheRoses
-/datum/crafting_recipe/SmellTheRoses
+//smelltheroses
+/datum/crafting_recipe/smelltheroses
 	name = "Smell-The-Roses"
 	result = /obj/item/gun/ballistic/rifle/repeater/ranger/tribal
 	reqs = list(/obj/item/gun/ballistic/rifle/repeater/ranger,
@@ -717,8 +717,8 @@
 	subcategory = CAT_WEAPON
 	always_available = TRUE
 	
-//MourningSunrise
-/datum/crafting_recipe/MourningSunrise
+//mourningsunrise
+/datum/crafting_recipe/mourningsunrise
 	name = "Mourning Sunrise"
 	result = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock/tribal
 	reqs = list(/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
