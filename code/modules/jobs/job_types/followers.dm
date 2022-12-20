@@ -54,8 +54,7 @@ Administrator
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 	loadout_options = list(
 	/datum/outfit/loadout/surgical_specialist,
-	/datum/outfit/loadout/chemical_specialist,
-	/datum/outfit/loadout/research_specialist
+	/datum/outfit/loadout/chemical_specialist
 	)
 
 	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
@@ -82,6 +81,11 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
@@ -112,23 +116,12 @@ Administrator
 	name =	"Surgical Specialist"
 	backpack_contents = list(
 		/obj/item/storage/belt/medical/surgery_belt_adv = 1,
-		/obj/item/organ/cyberimp/arm/medibeam = 1,
 	)
 
 /datum/outfit/loadout/chemical_specialist
 	name =	"Chemical Specialist"
 	backpack_contents = list(
-		/obj/item/circuitboard/machine/chem_master/advanced = 1,
 		/obj/item/hypospray/mkii/CMO = 1,
-	)
-
-/datum/outfit/loadout/research_specialist
-	name =	"Research Specialist"
-	backpack_contents = list(
-		/obj/item/disk/medical/defib_heal = 1,
-		/obj/item/disk/medical/defib_shock = 1,
-		/obj/item/disk/medical/defib_speed = 1,
-		/obj/item/blueprint/research = 1,
 	)
 
 //Professor
@@ -175,6 +168,11 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -269,6 +267,11 @@ Practitioner
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
@@ -452,7 +455,7 @@ Follower Volunteer
 /*
 	loadout_options = list(
 		/datum/outfit/loadout/guard_ranged,
-		/datum/outfit/loadout/guard_close, 
+		/datum/outfit/loadout/guard_close,
 		/datum/outfit/loadout/guard_energy
 	)
 	*/

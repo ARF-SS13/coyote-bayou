@@ -12,7 +12,7 @@
 	category = list("Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/BS_RPED
+/*/datum/design/BS_RPED
 	name = "Bluespace RPED"
 	desc = "Powered by bluespace technology, this RPED variant can upgrade buildings from a distance, without needing to remove the panel first."
 	id = "bs_rped"
@@ -20,7 +20,7 @@
 	materials = list(/datum/material/iron = 15000, /datum/material/glass = 5000, /datum/material/silver = 2500) //hardcore
 	build_path = /obj/item/storage/part_replacer/bluespace
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE*/
 
 //Capacitors
 /datum/design/basic_capacitor
@@ -45,7 +45,7 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/super_capacitor
+/*/datum/design/super_capacitor
 	name = "Advanced Capacitor"
 	desc = "A stock part used in the construction of various devices."
 	id = "super_capacitor"
@@ -65,7 +65,7 @@
 	build_path = /obj/item/stock_parts/capacitor/quadratic
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE*/
 
 //Scanning modules
 /datum/design/basic_scanning
@@ -90,7 +90,7 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/phasic_scanning
+/*/datum/design/phasic_scanning
 	name = "Advanced Antenna"
 	desc = "A stock part used in the construction of various devices."
 	id = "phasic_scanning"
@@ -110,7 +110,7 @@
 	build_path = /obj/item/stock_parts/scanning_module/triphasic
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE*/
 
 //Maipulators
 /datum/design/micro_mani
@@ -135,7 +135,7 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/pico_mani
+/*/datum/design/pico_mani
 	name = "Delicate Mechanism"
 	desc = "A stock part used in the construction of various devices."
 	id = "pico_mani"
@@ -155,7 +155,7 @@
 	build_path = /obj/item/stock_parts/manipulator/femto
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE*/
 
 //Micro-lasers
 /datum/design/basic_micro_laser
@@ -180,7 +180,7 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/ultra_micro_laser
+/*/datum/design/ultra_micro_laser
 	name = "Laser Diode"
 	desc = "A stock part used in the construction of various devices."
 	id = "ultra_micro_laser"
@@ -200,7 +200,7 @@
 	build_path = /obj/item/stock_parts/micro_laser/quadultra
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE*/
 
 /datum/design/basic_matter_bin
 	name = "Funnel"
@@ -224,7 +224,7 @@
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/super_matter_bin
+/*/datum/design/super_matter_bin
 	name = "Storage Bin"
 	desc = "A stock part used in the construction of various devices."
 	id = "super_matter_bin"
@@ -244,7 +244,7 @@
 	build_path = /obj/item/stock_parts/matter_bin/bluespace
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE*/
 
 //T-Comms devices
 /datum/design/subspace_ansible
