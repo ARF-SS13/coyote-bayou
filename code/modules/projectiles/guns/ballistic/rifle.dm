@@ -443,7 +443,7 @@
  * Tribal Only
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/rifle/repeater/ranger
+/obj/item/gun/ballistic/rifle/repeater/ranger/Tribal
 	name = "Smell-The-Roses"
 	desc = "A .308 lever action. Clunky, Heavy and decorated by someone with a sick sense of humor. A flowering rose around the bore, it's stem trailing along and petals on a string."
 	icon_state = "smell-the-roses"
