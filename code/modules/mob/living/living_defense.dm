@@ -292,6 +292,9 @@
 /mob/living/on_attack_hand(mob/user, act_intent = user.a_intent, attackchain_flags)
 	..() //Ignoring parent return value here.
 	SEND_SIGNAL(src, COMSIG_MOB_ATTACK_HAND, user)
+	if (istype(user, /mob/living))
+		var/mob/living/mo = user
+		mo.stop_sneaking()
 	if((user != src) && act_intent != INTENT_HELP && (mob_run_block(user, 0, user.name, ATTACK_TYPE_UNARMED | ATTACK_TYPE_MELEE | ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_TYPE_PARRY_COUNTERATTACK : NONE), null, user, check_zone(user.zone_selected), null) & BLOCK_SUCCESS))
 		log_combat(user, src, "attempted to touch")
 		visible_message(span_warning("[user] attempted to touch [src]!"),
