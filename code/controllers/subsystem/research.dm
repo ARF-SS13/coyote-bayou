@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(research)
 	var/list/techweb_nodes_experimental = list()	//Node ids that are exclusive to the BEPIS.
 
 	var/list/techweb_point_items = list(		//path = list(point type = value)
-	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
+	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
 	/obj/item/scrap/research                       = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
 
 	/obj/item/assembly/signaler/anomaly            = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
@@ -365,9 +365,9 @@ SUBSYSTEM_DEF(research)
 		for(var/obj/machinery/rnd/server/miner in VAULTservers)
 			if(miner.working)
 				VAULTbitcoins = VAULTsingle_server_income.Copy()
-				break	
+				break
 	var/income_time_difference = world.time - last_income
-		
+
 	science_tech.last_bitcoins = VAULTbitcoins  // Doesn't take tick drift into account
 	bos_tech.last_bitcoins = BOSbitcoins
 	unknown_tech.last_bitcoins = bitcoins
