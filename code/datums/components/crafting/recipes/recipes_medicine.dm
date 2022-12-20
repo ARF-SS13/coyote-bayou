@@ -432,7 +432,8 @@
 	result = /obj/item/organ/cyberimp/arm/toolset
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/glass = 1,
-				/obj/item/stack/sheet/mineral/silver = 1)
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_MEDICAL
@@ -443,7 +444,8 @@
 	result = /obj/item/organ/cyberimp/arm/surgery
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/glass = 1,
-				/obj/item/stack/sheet/mineral/silver = 1)
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_MEDICAL
@@ -454,7 +456,8 @@
 	result = /obj/item/organ/cyberimp/arm/janitor
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/glass = 1,
-				/obj/item/stack/sheet/mineral/silver = 1)
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_MEDICAL
@@ -465,7 +468,8 @@
 	result = /obj/item/organ/cyberimp/arm/service
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/glass = 1,
-				/obj/item/stack/sheet/mineral/silver = 1)
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_MEDICAL
@@ -476,7 +480,8 @@
 	result = /obj/item/organ/cyberimp/chest/nutriment
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/glass = 1,
-				/obj/item/stack/sheet/mineral/gold = 1)
+				/obj/item/stack/sheet/mineral/gold = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_MEDICAL
