@@ -200,6 +200,45 @@
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
 /* * * * * * * * * * *
+ * Coyote Repeater
+ * Baseline Repeater Tribal Skin
+ * .357 Magnum
+ * Tribal Only
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/repeater/cowboy/tribal
+	name = "coyote repeater"
+	desc = "A sanctified .357 lever action rifle, bearing a paw print, teeth painted on the handguard and what appears to be a severed paw."
+	icon_state = "cowboyrepeaterT"
+	item_state = "cowboyrepeater"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
+/* * * * * * * * * * *
  * Trail Repeater
  * Big Repeater
  * .44 Magnum
@@ -210,6 +249,45 @@
 	name = "trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
+	item_state = "trailcarbine"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3.3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
+/* * * * * * * * * * *
+ * Trail Repeater Tribal
+ * Rain Stick
+ * .44 Magnum
+ * Tribal Only
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/repeater/trail/Tribal
+	name = "Rainstick"
+	desc = "A sactified .44 lever action rifle, coated in detailed markings and a carved bead chain that sounds like rain."
+	icon_state = "trailcarbineT"
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 
@@ -278,7 +356,46 @@
 		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
 	)
+/* * * * * * * * * * *
+ * Brush Repeater Tribal
+ * Medicine Stick
+ * .45-70 Bigboy
+ * Tribal Only
+ * * * * * * * * * * */
 
+/obj/item/gun/ballistic/rifle/repeater/brush/Tribal
+	name = "Medicine Stick"
+	desc = "A heavy .45-70 Lever-action rifle. Beautiful paintings coat the fine weapon, a bead that whistles when spun hangs from a hand woven cord."
+	icon_state = "brushgunT"
+	item_state = "brushgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3.6)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
+	)
 /* * * * * * * * * * *
  * Ranger repeater
  * Biggest repeater
@@ -319,7 +436,46 @@
 		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
 	)
+/* * * * * * * * * * *
+ * Ranger repeater tribal
+ * Smell-The-Roses
+ * .308
+ * Tribal Only
+ * * * * * * * * * * */
 
+/obj/item/gun/ballistic/rifle/repeater/ranger
+	name = "Smell-The-Roses"
+	desc = "A .308 lever action. Clunky, Heavy and decorated by someone with a sick sense of humor. A flowering rose around the bore, it's stem trailing along and petals on a string."
+	icon_state = "smell-the-roses"
+	item_state = "brushgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_BASE
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(2.4)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
+	)
 /* * * * * * * * * * *
  * Three oh hate
  * unique repeater
