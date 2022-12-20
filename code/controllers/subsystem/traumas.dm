@@ -384,7 +384,7 @@ SUBSYSTEM_DEF(traumas)
 						/turf/closed/wall/clockwork,
 						/turf/open/floor/plasteel/cult,
 						/turf/closed/wall/mineral/cult)),
-					
+
 					"aliens" = typecacheof(list(
 						/turf/open/floor/plating/abductor,
 						/turf/open/floor/plating/abductor2,
@@ -424,9 +424,9 @@ SUBSYSTEM_DEF(traumas)
 							),
 
 						"aliens" = typecacheof(list(
-						/datum/species/abductor, 
-						/datum/species/jelly, 
-						/datum/species/pod, 
+						/datum/species/abductor,
+						/datum/species/jelly,
+						/datum/species/pod,
 						/datum/species/shadow)
 						),
 
