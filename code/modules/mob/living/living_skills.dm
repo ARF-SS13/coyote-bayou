@@ -15,6 +15,7 @@
 	var/skill_speech = 100
 	var/skill_barter = 100
 	var/skill_outdoorsman = 100
+	var/sneaking = FALSE
 
 // -20 for an easy roll
 // -10 for difficulty on a 'normal' roll
@@ -72,3 +73,27 @@
 		return
 	
 	m.talk_to(src)
+
+
+/mob/living/verb/sneak()
+	set name = "Sneak"
+	set category = "IC"
+	if (!sneaking)
+		start_sneaking()
+	else
+		stop_sneaking()
+
+/mob/living/proc/start_sneaking()
+	if (!sneaking)
+		sneaking = TRUE
+		src.alpha = (255 - (src.skill_value(SKILL_SNEAK) * 2))
+		to_chat(src, span_notice("You start sneaking."))
+		if (m_intent != MOVE_INTENT_WALK)
+			toggle_move_intent()
+		
+
+/mob/living/proc/stop_sneaking()
+	if (sneaking)
+		sneaking = FALSE
+		src.alpha = 255
+		to_chat(src, span_warning("You stop sneaking."))
