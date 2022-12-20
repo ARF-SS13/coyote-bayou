@@ -1112,7 +1112,7 @@
 	category = list("Misc","Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/*/datum/design/autosurgeon
+/datum/design/autosurgeon
 	name = "Autosurgeon"
 	desc = "An automatic surgeon used to install organs or implants automatically."
 	id = "autosurgeon"
@@ -1121,5 +1121,5 @@
 	construction_time = 100
 	build_path = /obj/item/autosurgeon
 	category = list("Misc","Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE*/
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
