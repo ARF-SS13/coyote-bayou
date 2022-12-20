@@ -284,8 +284,8 @@
  * Tribal Only
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/rifle/repeater/trail/Tribal
-	name = "Rainstick"
+/obj/item/gun/ballistic/rifle/repeater/trail/tribal
+	name = "rainstick"
 	desc = "A sactified .44 lever action rifle, coated in detailed markings and a carved bead chain that sounds like rain."
 	icon_state = "trailcarbineT"
 	item_state = "trailcarbine"
@@ -363,8 +363,8 @@
  * Tribal Only
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/rifle/repeater/brush/Tribal
-	name = "Medicine Stick"
+/obj/item/gun/ballistic/rifle/repeater/brush/tribal
+	name = "medicine stick"
 	desc = "A heavy .45-70 Lever-action rifle. Beautiful paintings coat the fine weapon, a bead that whistles when spun hangs from a hand woven cord."
 	icon_state = "brushgunT"
 	item_state = "brushgun"
@@ -443,7 +443,7 @@
  * Tribal Only
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/rifle/repeater/ranger/Tribal
+/obj/item/gun/ballistic/rifle/repeater/ranger/tribal
 	name = "Smell-The-Roses"
 	desc = "A .308 lever action. Clunky, Heavy and decorated by someone with a sick sense of humor. A flowering rose around the bore, it's stem trailing along and petals on a string."
 	icon_state = "smell-the-roses"
