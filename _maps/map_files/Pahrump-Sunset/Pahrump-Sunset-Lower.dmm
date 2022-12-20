@@ -1118,6 +1118,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
+/obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -13879,6 +13880,11 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/caves)
+"jhO" = (
+/obj/structure/rack,
+/obj/item/storage/box/stockparts/deluxe,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/tunnel)
 "jhP" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
@@ -16084,6 +16090,11 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bar)
+"lag" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/stockparts/deluxe,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "lak" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -57951,7 +57962,7 @@ apg
 bDt
 bDf
 apg
-ust
+jhO
 kef
 kCu
 apg
@@ -76278,7 +76289,7 @@ ira
 dEX
 uUZ
 tYi
-uUZ
+lag
 dEX
 kyb
 gYI
