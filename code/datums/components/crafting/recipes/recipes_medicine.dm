@@ -5,7 +5,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
 				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
 				/obj/item/stack/sheet/glass = 1)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -19,7 +19,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
 				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
 				/obj/item/stack/sheet/glass = 1)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -33,7 +33,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
 				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
 				/obj/item/stack/sheet/glass = 1)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -107,7 +107,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
 				/obj/item/reagent_containers/glass/bottle = 1)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE // Only the Twin Mothers Tribe knew the secret to making bitter drink prior to legion annexation. Any clever chemist can bootleg the recipe though.
@@ -120,7 +120,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/glass/bottle = 5)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -134,7 +134,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
 				/obj/item/reagent_containers/food/snacks/grown/agave = 1,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE // only tribals know the secret
@@ -148,7 +148,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/food/snacks/grown/agave = 5,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 5)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -162,6 +162,7 @@
 				/obj/item/reagent_containers/food/snacks/onion_slice = 4,    //Sliced onions, 2 total split into 4 slices.
 				/obj/item/reagent_containers/food/snacks/grown/garlic = 2,   //Pungent garlic.
 				/obj/item/reagent_containers/food/snacks/grown/bee_balm = 2) //Beebalm was a smelling salt utilized in the victorian era for vaporous herbal remedies to things like sore throats.
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 50
 	category = CAT_MEDICAL
 	skill_needed = SKILL_OUTDOORSMAN
@@ -361,7 +362,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia  = 6,
 	/datum/reagent/water = 50)
 	time = 20
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	category = CAT_MEDICAL
 	skill_needed = SKILL_SCIENCE
 	falls_back_on_outdoors = TRUE
@@ -414,7 +415,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/horsenettle = 1,
 				/obj/item/reagent_containers/food/snacks/grown/feracactus = 1, //this will have to do in lieu of wild jalapenos
 				/datum/reagent/consumable/ethanol/vodka = 50) //distill this from fermented punga
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 
@@ -424,7 +425,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/horsenettle = 5,
 				/obj/item/reagent_containers/food/snacks/grown/feracactus = 5,
 				/datum/reagent/consumable/ethanol/vodka = 250)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
 	skill_needed = SKILL_OUTDOORSMAN
@@ -448,7 +449,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
 				/obj/item/reagent_containers/food/snacks/grown/datura = 1)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	skill_needed = SKILL_SCIENCE
@@ -473,7 +474,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/food/snacks/grown/datura = 5)
-	tools = list(TOOL_WORKBENCH)
+	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
 	skill_needed = SKILL_SCIENCE
