@@ -107,7 +107,6 @@ Administrator
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 	)
@@ -210,7 +209,6 @@ Administrator
 	name =	"Medical Specialist"
 	neck = /obj/item/clothing/neck/stethoscope
 	gloves = /obj/item/clothing/gloves/color/latex
-	glasses =	/obj/item/clothing/glasses/hud/health
 	backpack_contents = list(
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/circuitboard/machine/bloodbankgen = 1,
@@ -309,7 +307,6 @@ Practitioner
 	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
 	mask =	/obj/item/clothing/mask/surgical
 	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
-	glasses =	/obj/item/clothing/glasses/hud/health
 	backpack_contents = list(
 		/obj/item/clothing/suit/hooded/surgical = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
@@ -330,7 +327,6 @@ Practitioner
 	name =	"Paramedic"
 	head =	/obj/item/clothing/head/soft/emt
 	suit =	/obj/item/clothing/suit/toggle/labcoat/emt
-	glasses =	/obj/item/clothing/glasses/hud/health
 	belt =	/obj/item/storage/belt/medical
 	backpack_contents = list(
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
