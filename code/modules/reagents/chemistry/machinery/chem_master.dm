@@ -532,6 +532,7 @@
 	flags_1 = NODECONSTRUCT_1
 	can_be_unanchored = TRUE
 	basereagents = 240
+	machine_tool_behaviour = TOOL_ALCHEMY_TABLE
 
 /obj/machinery/chem_master/primitive/update_icon_state()
 	if(beaker)
