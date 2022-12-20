@@ -823,9 +823,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/revolver/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src) //smol round, so extra loader
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src) //smol round, so extra loader
 
 /obj/item/storage/box/gun/revolver/revolver45
 	name = ".45 ACP revolver case"

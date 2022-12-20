@@ -189,7 +189,7 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_357, CALIBER_38)
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 20
+	max_ammo = 25
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -261,7 +261,7 @@
 	multiple_sprites = 2
 	icon_state = "45box"
 	ammo_type = /obj/item/ammo_casing/c45
-	max_ammo = 30
+	max_ammo = 25
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 
@@ -604,7 +604,7 @@
 /obj/item/ammo_box/c38
 	name = "speed loader (.38)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "38"
+	icon_state = "357"
 	caliber = list(CALIBER_38)
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 6
@@ -613,6 +613,21 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
 
 /obj/item/ammo_box/c38/empty
+	start_empty = 1
+
+//.22
+/obj/item/ammo_box/c22
+	name = "speed loader (.22 LR)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "38"
+	caliber = list(CALIBER_22LR)
+	ammo_type = /obj/item/ammo_casing/a22
+	max_ammo = 6
+	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+
+/obj/item/ammo_box/c22/empty
 	start_empty = 1
 
 //10mm
