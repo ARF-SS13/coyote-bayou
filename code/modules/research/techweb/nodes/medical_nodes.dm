@@ -52,7 +52,7 @@
 	description = "Basic fragile prosthetics for the impaired."
 	starting_node = TRUE
 	prereq_ids = list("biotech")
-	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg", "autosurgeon")
+	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg")
 
 /datum/techweb_node/advance_limbs
 	id = "advance_limbs"
