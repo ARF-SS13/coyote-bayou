@@ -425,6 +425,19 @@
 				/obj/item/lighter/bullet = 10,
 				)
 
+/obj/effect/spawner/lootdrop/implants
+	lootcount = 1
+	loot = list(
+				/obj/item/organ/eyes/robotic/shield = 20,
+				/obj/item/organ/cyberimp/brain/anti_drop = 20,
+				/obj/item/organ/cyberimp/brain/anti_stun = 10,
+				/obj/item/organ/cyberimp/chest/nutriment/plus = 10,
+				/obj/item/organ/cyberimp/chest/reviver = 10,
+				/obj/item/organ/heart/cybernetic/upgraded = 5,
+				/obj/item/organ/liver/cybernetic/upgraded = 10,
+				/obj/item/organ/ears/cybernetic/upgraded =15,
+				)
+
 /obj/effect/spawner/lootdrop/space_cash
 	lootcount = 1
 	loot = list(
