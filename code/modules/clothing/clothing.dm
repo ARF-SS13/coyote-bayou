@@ -291,10 +291,10 @@
 		armor_list += list("LASER" = armor.laser)
 	if(armor.energy)
 		armor_list += list("ENERGY" = armor.energy)
+	if(armor.wound)
+		armor_list += list("WOUND" = armor.wound)
 	if(armor.damage_threshold)
 		armor_list += list("THRESHOLD" = armor.damage_threshold)
-	if(armor.wound)
-		environmental_list += list("WOUND" = armor.wound)
 
 	if(LAZYLEN(environmental_list))
 		environmental_list.Cut()
