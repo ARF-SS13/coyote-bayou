@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/internal/cylinder
 	name = "revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/a357
+	ammo_type = /obj/item/ammo_casing/c38
 	caliber = list(CALIBER_357, CALIBER_38)
 	max_ammo = 7
 	replace_spent_rounds = 1

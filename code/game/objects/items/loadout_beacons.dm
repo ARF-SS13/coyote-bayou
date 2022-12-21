@@ -558,16 +558,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/premium/mateba/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
 
 /obj/item/storage/box/gun/premium/lucky //not sure if this should be allowed, or if is supposed to be unique
 	name = ".357 magnum revolver case"
 
 /obj/item/storage/box/gun/premium/lucky/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357/lucky(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
 
 /obj/item/storage/box/gun/premium/alt //pearly .44 mag
 	name = "pearl .44 magnum case"
@@ -823,9 +823,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/revolver/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src) //smol round, so extra loader
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src) //smol round, so extra loader
 
 /obj/item/storage/box/gun/revolver/revolver45
 	name = ".45 ACP revolver case"
@@ -840,16 +842,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/revolver/colt357/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
 
 /obj/item/storage/box/gun/revolver/police
 	name = "police revolver case"
 
 /obj/item/storage/box/gun/revolver/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
 
 /obj/item/storage/box/gun/revolver/m29
 	name = ".44 magnum revolver case"

@@ -5,6 +5,8 @@
 	desc = "A .45 FMJ bullet casing."
 	caliber = CALIBER_45ACP
 	projectile_type = /obj/item/projectile/bullet/c45
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
@@ -15,8 +17,10 @@
 	desc = "A handmade .45 bullet casing."
 	caliber = CALIBER_45ACP
 	projectile_type = /obj/item/projectile/bullet/c45
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/iron = (MATS_PISTOL_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_HANDLOAD
 
@@ -30,8 +34,10 @@
 	name = ".45 rubber bullet casing"
 	desc = "A .45 rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c45/rubber
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/iron = (MATS_PISTOL_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_HANDLOAD
 

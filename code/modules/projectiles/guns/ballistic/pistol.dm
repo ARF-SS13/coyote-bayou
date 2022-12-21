@@ -420,7 +420,7 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.7)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/semi_auto/fast
 	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -570,7 +570,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto
 	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -608,9 +608,9 @@
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto
 	)
 /* * * * * * * * * * *
  * Mk. 23 Semi-Auto

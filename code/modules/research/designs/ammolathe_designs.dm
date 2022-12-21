@@ -108,6 +108,13 @@
 	build_path = /obj/item/ammo_box/c38/empty
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
 
+/datum/design/ammolathe/speedloader22
+	name = "empty speed loader (.22 LR)"
+	id = "speedloader22"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_box/c22/empty
+	category = list("initial", "Simple Magazines", "Handmade Magazines")
+
 /datum/design/ammolathe/speedloader44
 	name = "empty speed loader (.44)"
 	id = "speedloader44"
