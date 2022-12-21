@@ -660,6 +660,77 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	
+//coyote repeater
+/datum/crafting_recipe/coyoterepeater
+	name = "Coyote Repeater"
+	result = /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/cowboy,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/bone = 4)
+	tools = list(TOOL_ALCHEMY_TABLE)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
+
+//rainstick
+/datum/crafting_recipe/rainstick
+	name = "Rainstick"
+	result = /obj/item/gun/ballistic/rifle/repeater/trail/tribal
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/trail,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/bone = 3,
+				/obj/item/grown/rose = 1)
+	tools = list(TOOL_ALCHEMY_TABLE)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
+	
+//medicinestick
+/datum/crafting_recipe/medicinestick
+	name = "Medicine Stick"
+	result = /obj/item/gun/ballistic/rifle/repeater/brush/tribal
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/brush,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/bone = 2,
+				/obj/item/grown/rose = 1,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1)
+	tools = list(TOOL_ALCHEMY_TABLE)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
+	
+//smelltheroses
+/datum/crafting_recipe/smelltheroses
+	name = "Smell-The-Roses"
+	result = /obj/item/gun/ballistic/rifle/repeater/ranger/tribal
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/ranger,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/bone = 2,
+				/obj/item/grown/rose = 1)
+	tools = list(TOOL_ALCHEMY_TABLE)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
+	
+//mourningsunrise
+/datum/crafting_recipe/mourningsunrise
+	name = "Mourning Sunrise"
+	result = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock/tribal
+	reqs = list(/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/bone = 2,
+				/obj/item/grown/rose = 1,
+				/obj/item/stack/sheet/mineral/wood = 2)
+	tools = list(TOOL_ALCHEMY_TABLE)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
 
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
