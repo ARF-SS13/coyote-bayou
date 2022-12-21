@@ -167,6 +167,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	icon_state = "gardener"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	component_type = /datum/component/storage/concrete/belt/specialized/utility
 
 /obj/item/storage/belt/janitor
 	name = "janibelt"
