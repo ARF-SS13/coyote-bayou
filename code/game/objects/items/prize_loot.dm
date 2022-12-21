@@ -6,10 +6,17 @@
 	var/in_use = FALSE
 	w_class = WEIGHT_CLASS_TINY
 	var/uses_left = 6 //15% chance to success, might need more.  Needs Playtesting.
+	var/min_uses_left = 2
+
+/obj/item/lockpick_set/bobby_pin
+	name = "a bobby pin"
+	desc = "Doubles up as a basic lockpicking instrument."
+	uses_left = 1
+	min_uses_left = 1
 
 /obj/item/lockpick_set/Initialize()
 	. = ..()
-	uses_left = rand(2, initial(src.uses_left))
+	uses_left = rand(initial(src.min_uses_left), initial(src.uses_left))
 
 /obj/item/lockpick_set/proc/use_pick(mob/user)
 	uses_left--
@@ -86,7 +93,7 @@
 		. += "[src] appears to be unlocked."
 	if(fragile)
 		. += "There are cracks, [src] may crumble from any sudden movements."
-	if(user.client.prefs.special_p >= 8 || user.skill_roll(SKILL_TRAPS, DIFFICULTY_CHALLENGE))
+	if(user.client.prefs.special_p >= 8 || user.skill_check(SKILL_TRAPS, REGULAR_CHECK))
 		if(trapped)
 			. += "The lock looks tampered with."
 		. += "There [prize_amount > 1 ? "are" : "is"] [prize_amount] [prize_amount > 1 ? "objects" : "object"]."

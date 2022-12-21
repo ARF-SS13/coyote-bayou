@@ -281,7 +281,8 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/reagent_containers/syringe = 5,
 	/obj/item/restraints/handcuffs = 5,
 	/obj/item/toy/crayon/spraycan = 5,
-	/obj/item/laser_pointer = 5
+	/obj/item/laser_pointer = 5,
+	/obj/item/lockpick_set/bobby_pin = 5
 ))
 
 GLOBAL_LIST_INIT(trash_attachment, list(

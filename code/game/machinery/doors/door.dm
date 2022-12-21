@@ -228,7 +228,7 @@
 		ignore_walls = FALSE
 		)
 	
-	if(prob(15))
+	if(user.skill_roll(SKILL_LOCKPICK, DIFFICULTY_CHALLENGE))
 		user.show_message(span_green(pick(pick_messages["successmessages"])))
 		try_to_activate_door(user, TRUE)
 		. = TRUE
