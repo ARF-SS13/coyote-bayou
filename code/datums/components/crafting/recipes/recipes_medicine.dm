@@ -503,3 +503,65 @@
 /obj/item/storage/box/medicine/antivenom5/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/antivenom(src)
+
+// IMPLANTS
+
+/datum/crafting_recipe/cyberimp_toolset
+	name = "Toolset Arm Implant"
+	result = /obj/item/organ/cyberimp/arm/toolset
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/cyberimp_surgical
+	name = "Surgical Arm Implant"
+	result = /obj/item/organ/cyberimp/arm/surgery
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/cyberimp_janitor
+	name = "Janitor Arm Implant"
+	result = /obj/item/organ/cyberimp/arm/janitor
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/cyberimp_service
+	name = "Service Arm Implant"
+	result = /obj/item/organ/cyberimp/arm/service
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/cyberimp_nutriment
+	name = "Nutriment Pump Implant"
+	result = /obj/item/organ/cyberimp/chest/nutriment
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/mineral/gold = 1,
+				/obj/item/advanced_crafting_components/alloys = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_MEDICAL
+	always_available = FALSE

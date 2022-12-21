@@ -1118,6 +1118,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
+/obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -1359,6 +1360,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
+/obj/effect/spawner/lootdrop/implants,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -8834,6 +8836,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 /obj/effect/spawner/lootdrop/ammo/military,
+/obj/effect/spawner/lootdrop/implants,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -10457,6 +10460,12 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"gqs" = (
+/obj/effect/spawner/lootdrop/implants,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/radiation)
 "gqG" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/indestructible/ground/inside/subway,
@@ -11420,6 +11429,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/implants,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
 "hiR" = (
@@ -13879,6 +13889,11 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/caves)
+"jhO" = (
+/obj/structure/rack,
+/obj/item/storage/box/stockparts/deluxe,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/tunnel)
 "jhP" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
@@ -14650,6 +14665,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/spawner/lootdrop/implants,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "jQC" = (
@@ -16084,6 +16100,11 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bar)
+"lag" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/stockparts/deluxe,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "lak" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -57951,7 +57972,7 @@ apg
 bDt
 bDf
 apg
-ust
+jhO
 kef
 kCu
 apg
@@ -76278,7 +76299,7 @@ ira
 dEX
 uUZ
 tYi
-uUZ
+lag
 dEX
 kyb
 gYI
@@ -83395,7 +83416,7 @@ bWe
 jnp
 taP
 taP
-taP
+gqs
 xkI
 lcF
 pua

@@ -5552,6 +5552,7 @@
 "gSj" = (
 /obj/machinery/light/broken,
 /obj/effect/decal/waste,
+/obj/effect/spawner/lootdrop/implants,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -8447,8 +8448,7 @@
 /area/f13/building)
 "kqG" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/good,
+/obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -11720,6 +11720,7 @@
 	color = "#968d87";
 	dir = 4
 	},
+/obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "oAZ" = (

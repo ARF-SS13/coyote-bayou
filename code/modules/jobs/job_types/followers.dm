@@ -45,17 +45,16 @@ Administrator
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "No one."
-	description = "You are the Senior Doctor. You are the supervisor and director for the on-site followers and the facility. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	description = "You are the Senior Doctor. You are the supervisor and director for the on-site doctors and the facility. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
+	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
+	enforces = "Preach the values of Good Will. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FF95FF"
 	exp_requirements = 750
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 	loadout_options = list(
 	/datum/outfit/loadout/surgical_specialist,
-	/datum/outfit/loadout/chemical_specialist,
-	/datum/outfit/loadout/research_specialist
+	/datum/outfit/loadout/chemical_specialist
 	)
 
 	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
@@ -82,6 +81,11 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
@@ -103,7 +107,6 @@ Administrator
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 	)
@@ -112,23 +115,12 @@ Administrator
 	name =	"Surgical Specialist"
 	backpack_contents = list(
 		/obj/item/storage/belt/medical/surgery_belt_adv = 1,
-		/obj/item/organ/cyberimp/arm/medibeam = 1,
 	)
 
 /datum/outfit/loadout/chemical_specialist
 	name =	"Chemical Specialist"
 	backpack_contents = list(
-		/obj/item/circuitboard/machine/chem_master/advanced = 1,
 		/obj/item/hypospray/mkii/CMO = 1,
-	)
-
-/datum/outfit/loadout/research_specialist
-	name =	"Research Specialist"
-	backpack_contents = list(
-		/obj/item/disk/medical/defib_heal = 1,
-		/obj/item/disk/medical/defib_shock = 1,
-		/obj/item/disk/medical/defib_speed = 1,
-		/obj/item/blueprint/research = 1,
 	)
 
 //Professor
@@ -140,10 +132,10 @@ Administrator
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
-	description = "You are a Follower Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the Followers."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	supervisors = "Having no strict command structure, scientists don't report to anyone- though they will look to the Senior Doctor for guidance."
+	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
+	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 540
 	exp_type = EXP_TYPE_FOLLOWERS
@@ -175,6 +167,16 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_toolset)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_surgical)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_janitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_service)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_nutriment)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -207,7 +209,6 @@ Administrator
 	name =	"Medical Specialist"
 	neck = /obj/item/clothing/neck/stethoscope
 	gloves = /obj/item/clothing/gloves/color/latex
-	glasses =	/obj/item/clothing/glasses/hud/health
 	backpack_contents = list(
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/circuitboard/machine/bloodbankgen = 1,
@@ -225,10 +226,10 @@ Practitioner
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
-	description = "You are a Followers Doctor. As a Followers Doctor it is your responsibility to maintain working order in the hospital and to manage its staff and to treat patients who come in regardless of whether or not they can afford care. Some Doctors are known for leaving the hospital with a guard to look for injured or those who need help who may not come to a health facility, however it is key that those who do travel around to give aid keep in touch with the rest of staff and if there are no other able physicans or chemist that they stay to offer the best aid possible."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	supervisors = "The clinic, having no strict command structure, doesn't report to anyone- though they will look to the Senior Doctor for guidance."
+	description = "You are a Town Doctor. As a Town Doctor it is your responsibility to maintain working order in the clinic and to manage its staff and to treat patients who come in regardless of whether or not they can afford care. Some Doctors are known for leaving the clinic with a guard to look for injured or those who need help who may not come to a health facility, however it is key that those who do travel around to give aid keep in touch with the rest of staff and if there are no other able physicans or chemist that they stay to offer the best aid possible."
+	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
+	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 300
 
@@ -269,6 +270,11 @@ Practitioner
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
@@ -301,7 +307,6 @@ Practitioner
 	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
 	mask =	/obj/item/clothing/mask/surgical
 	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
-	glasses =	/obj/item/clothing/glasses/hud/health
 	backpack_contents = list(
 		/obj/item/clothing/suit/hooded/surgical = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
@@ -322,7 +327,6 @@ Practitioner
 	name =	"Paramedic"
 	head =	/obj/item/clothing/head/soft/emt
 	suit =	/obj/item/clothing/suit/toggle/labcoat/emt
-	glasses =	/obj/item/clothing/glasses/hud/health
 	belt =	/obj/item/storage/belt/medical
 	backpack_contents = list(
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
@@ -351,10 +355,10 @@ Follower Volunteer
 	faction = "Followers"
 	total_positions = 6
 	spawn_positions = 6
-	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
-	description = "You are a Follower Volunteer. As a Volunteer, you make sure they get connected to the right people to find treatment, assist in the functions of the hospital, learn from senior Followers, and utilize first aid to the best of your capacity when Doctors are not present."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	supervisors = "The doctors, having no strict command structure, don't report to anyone- though they will look to the Senior Doctor for guidance and the other Doctors as well."
+	description = "You are a Town Medical Assistant. As a Medical Assistant, you make sure they get connected to the right people to find treatment, assist in the functions of the clinic, learn from senior Doctors, and utilize first aid to the best of your capacity when Doctors are not present."
+	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
+	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	outfit = /datum/outfit/job/followers/f13followervolunteer
 	loadout_options = list(
@@ -441,10 +445,10 @@ Follower Volunteer
 	faction = "Followers"
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
-	description = "You are a Followers Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. You may also be responsible as an escort to the various non-combat staff at the hospital."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or notifying non-combat personnel. Treating or otherwise aiding raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	supervisors = "The clinic, having no strict command structure, don't report to anyone- though they will look to the Senior Doctor for guidance and the other Doctors as well."
+	description = "You are a Town Paramedic. As a Paramedic for the clinic, you are responsible for the safety and the maintenance of order in the clinic and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. You may also be responsible as an escort to the various non-combat staff at the clinic."
+	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or notifying non-combat personnel. Treating or otherwise aiding raiders or slavers without a good reason."
+	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard
@@ -452,7 +456,7 @@ Follower Volunteer
 /*
 	loadout_options = list(
 		/datum/outfit/loadout/guard_ranged,
-		/datum/outfit/loadout/guard_close, 
+		/datum/outfit/loadout/guard_close,
 		/datum/outfit/loadout/guard_energy
 	)
 	*/

@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/internal/boltaction
 	name = "bolt action rifle internal magazine"
 	desc = "Oh god, this shouldn't be here"
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/a762/sport
 	caliber = list(CALIBER_762)
 	max_ammo = 5
 	multiload = 1
@@ -21,7 +21,7 @@
 	multiload = 1
 	
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 5
 	multiload = 1
 

@@ -1,16 +1,18 @@
 /obj/item/projectile/bullet
 	name = "bullet"
 	icon_state = "bullet"
-	stamina = BULLET_STAMINA_PISTOL_LIGHT
-	damage = BULLET_DAMAGE_PISTOL_LIGHT
-	spread = BULLET_SPREAD_BASE
-	recoil = BULLET_RECOIL_PISTOL_LIGHT
+	damage = BULLET_DAMAGE_PISTOL_22
+	stamina = BULLET_STAMINA_PISTOL_22
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_22
 
-	wound_bonus = BULLET_WOUND_PISTOL_LIGHT
-	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_bonus = BULLET_WOUND_PISTOL_22
+	bare_wound_bonus = BULLET_WOUND_PISTOL_22_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_22
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
-	pixels_per_second = BULLET_SPEED_BASE
 	range = 100
 	damage_type = BRUTE
 	nodamage = FALSE

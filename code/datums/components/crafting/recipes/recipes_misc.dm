@@ -139,6 +139,55 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
+/datum/crafting_recipe/pico_manip
+	name = "Delicate Mechanism"
+	result = /obj/item/stock_parts/manipulator/pico
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stock_parts/manipulator/nano = 1)
+	time = 5
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/super_matter_bin
+	name = "Storage Bin"
+	result = /obj/item/stock_parts/matter_bin/super
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stock_parts/matter_bin/adv = 1)
+	time = 5
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/phasic_scanning
+	name = "Advanced Antenna"
+	result = /obj/item/stock_parts/scanning_module/phasic
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stock_parts/scanning_module/adv = 1)
+	time = 5
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/super_capacitor
+	name = "Advanced Capacitor"
+	result = /obj/item/stock_parts/capacitor/super
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stock_parts/capacitor/adv = 1)
+	time = 5
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/ultra_micro_laser
+	name = "Laser Diode"
+	result = /obj/item/stock_parts/micro_laser/ultra
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stock_parts/micro_laser/high = 1)
+	time = 5
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
 
 /datum/crafting_recipe/pin_removal
 	name = "Render gun unusable"

@@ -1181,7 +1181,7 @@
 	name = "colt 357 and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/colt357,
-				/obj/item/ammo_box/a357
+				/obj/item/ammo_box/c38
 				)
 
 /obj/effect/spawner/bundle/f13/service
@@ -1195,7 +1195,7 @@
 	name = "police revolver and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/police,
-				/obj/item/ammo_box/a357
+				/obj/item/ammo_box/c38
 	)
 
 /obj/effect/spawner/bundle/f13/laserpistol

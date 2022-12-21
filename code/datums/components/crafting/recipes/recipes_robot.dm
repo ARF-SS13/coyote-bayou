@@ -61,6 +61,7 @@
 	time = 40
 	category = CAT_ROBOT
 	skill_level = HARD_CHECK
+	category = CAT_ROBOT
 
 /datum/crafting_recipe/Firebot
 	name = "Firebot"

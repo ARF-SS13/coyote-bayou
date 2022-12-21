@@ -5,8 +5,10 @@
 	icon_state = "762-casing"
 	caliber = CALIBER_762
 	projectile_type = /obj/item/projectile/bullet/a762
+	material_class = BULLET_IS_MEDIUM_RIFLE
+	casing_quality = BULLET_IS_MATCH
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
+		/datum/material/iron = (MATS_RIFLE_MEDIUM_CASING * MATS_AMMO_CASING_MATCH_MULT) + (MATS_RIFLE_MEDIUM_BULLET * MATS_AMMO_BULLET_MATCH_MULT),
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER * MATS_AMMO_POWDER_MATCH_MULT)
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_MATCH
 
@@ -14,8 +16,10 @@
 	name = "shoddy .308 bullet casing"
 	desc = "A handmade .308 bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a762/improvised
+	material_class = BULLET_IS_MEDIUM_RIFLE
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
+		/datum/material/iron = (MATS_RIFLE_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_RIFLE_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_HANDLOAD
 
@@ -23,6 +27,8 @@
 	name = ".308 bullet casing"
 	desc = "A .308 sporting bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a762/sport
+	material_class = BULLET_IS_MEDIUM_RIFLE
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER)
@@ -45,8 +51,10 @@
 	name = "7.62 rubber bullet casing"
 	desc = "A 7.62 rubber bullet casing, for training purposes."
 	projectile_type = /obj/item/projectile/bullet/a762/rubber
+	material_class = BULLET_IS_MEDIUM_RIFLE
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
+		/datum/material/iron = (MATS_RIFLE_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_RIFLE_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_HANDLOAD
 
@@ -56,18 +64,22 @@
 	desc = "A 5.56mm bullet casing."
 	caliber = CALIBER_556
 	projectile_type = /obj/item/projectile/bullet/a556
+	material_class = BULLET_IS_LIGHT_RIFLE
+	casing_quality = BULLET_IS_MATCH
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_MATCH_MULT)
+		/datum/material/iron = (MATS_RIFLE_LIGHT_CASING * MATS_AMMO_CASING_MATCH_MULT) + (MATS_RIFLE_LIGHT_BULLET * MATS_AMMO_BULLET_MATCH_MULT),
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER * MATS_AMMO_POWDER_MATCH_MULT)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/a556/rubber
 	name = "5.56mm rubber bullet casing"
 	desc = "A 5.56mm rubber bullet casing, for training purposes."
 	projectile_type = /obj/item/projectile/bullet/a556/rubber
+	material_class = BULLET_IS_LIGHT_RIFLE
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_RIFLE_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_RIFLE_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/a556/microshrapnel
@@ -87,30 +99,36 @@
 	name = ".223 bullet casing"
 	desc = "A .223 bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a556/sport
+	material_class = BULLET_IS_LIGHT_RIFLE
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER)
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/a556/improvised
 	name = "shoddy .223 bullet casing"
 	desc = "A handmade .223 bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a556/improvised
+	material_class = BULLET_IS_LIGHT_RIFLE
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_RIFLE_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_RIFLE_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 
-//5mm
+//5mm (no match)
 
 /obj/item/ammo_casing/m5mm
 	name = "5mm FMJ bullet casing"
 	desc = "A 5mm bullet casing."
 	caliber = CALIBER_5MM
 	projectile_type = /obj/item/projectile/bullet/m5mm
+	material_class = BULLET_IS_LIGHT_RIFLE
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER)
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_MATCH
 
 /obj/item/ammo_casing/m5mm/improvised
@@ -118,9 +136,11 @@
 	desc = "A handmade 5mm bullet casing."
 	caliber = CALIBER_5MM
 	projectile_type = /obj/item/projectile/bullet/m5mm/improvised
+	material_class = BULLET_IS_LIGHT_RIFLE
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_SMALL_CASING + MATS_RIFLE_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_RIFLE_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_RIFLE_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/m5mm/shock
@@ -136,6 +156,8 @@
 	caliber = CALIBER_40MM
 	icon_state = "40mmHE"
 	projectile_type = /obj/item/projectile/bullet/a40mm
+	material_class = BULLET_IS_GRENADE
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_GRENADE_CASING + MATS_GRENADE_BULLET,
 		/datum/material/blackpowder = MATS_GRENADE_POWDER)
@@ -147,6 +169,8 @@
 	desc = "A 2mm gauss projectile casing."
 	caliber = CALIBER_2MM
 	projectile_type = /obj/item/projectile/bullet/c2mm
+	material_class = BULLET_IS_GAUSS
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_GAUSS_CASING + MATS_GAUSS_BULLET,
 		/datum/material/blackpowder = MATS_GAUSS_POWDER)
