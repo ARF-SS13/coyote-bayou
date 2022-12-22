@@ -1267,8 +1267,8 @@
 	item_state = "vaultcity_skirt"
 
 /obj/item/clothing/under/f13/followers
-	name = "followers outfit"
-	desc = "A white shirt with a pair of dark brown cargo pants - an outfit commonly worn by Followers of the Apocalypse.<br><i>Nihil boni sine labore.</i>"
+	name = "clinic outfit"
+	desc = "A white shirt with a pair of dark brown cargo pants - an outfit commonly worn by the town clinic workers.<br><i>Nihil boni sine labore.</i>"
 	icon_state = "followers"
 	item_state = "bar_suit"
 	item_color = "followers"

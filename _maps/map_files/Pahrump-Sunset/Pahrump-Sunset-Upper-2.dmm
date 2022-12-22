@@ -69,7 +69,9 @@
 	req_access_txt = null;
 	req_one_access_txt = "62"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "bn" = (
 /obj/effect/decal/cleanable/dirt/dust,
