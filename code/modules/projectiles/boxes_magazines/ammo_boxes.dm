@@ -86,7 +86,6 @@
 /obj/item/ammo_box/m22/shock
 	name = "ammo box (.22lr electroshock)"
 	icon_state = "22shockbox"
-	multiple_sprites = 1
 	desc = "A box of .22 electroshock rounds."
 	ammo_type = /obj/item/ammo_casing/a22/shock
 
