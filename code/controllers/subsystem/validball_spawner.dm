@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(validball_spawn_randomizer)
 	if(!vb_index)
 		message_admins("Couldn't find any validballs to spawn!!")
 		return
-	for(var/index in GLOB.valid_ball_spawners)
+	for(var/index in 1 to LAZYLEN(GLOB.valid_ball_spawners))
 		var/obj/effect/validball_spawner/the_spawner = GLOB.valid_ball_spawners[index]
 		if(!the_spawner)
 			message_admins("There was an empty entry in the validball spawner list! how the fuc")
