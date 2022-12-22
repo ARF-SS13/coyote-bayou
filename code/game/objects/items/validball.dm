@@ -1,6 +1,7 @@
 /// Some kind of thing that makes people valid
 
 GLOBAL_LIST_EMPTY(valid_balls)
+GLOBAL_LIST_EMPTY(valid_ball_spawners)
 
 //==========DAT FUKKEN MACGUFFIN===============
 /obj/item/validball
@@ -90,4 +91,30 @@ GLOBAL_LIST_EMPTY(valid_balls)
 	playsound(src, 'sound/items/screwdriver2.ogg', 50, 1)
 	START_PROCESSING(SSfastprocess, src)
 	update_icon()
+
+/obj/effect/validball_spawner
+	name = "validball spawner"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "x2"
+	color = "#00FF00"
+	var/obj/item/validball/the_thing = /obj/item/validball
+
+/obj/effect/validball_spawner/Initialize(mapload)
+	. = ..()
+	add_spawner_to_list()
+
+/obj/effect/validball_spawner/proc/add_spawner_to_list()
+	if(src in GLOB.valid_ball_spawners)
+		return
+	GLOB.valid_ball_spawners += src
+
+/obj/effect/validball_spawner/proc/spawn_the_thing()
+	var/turf/right_here = get_turf(src)
+	if(isturf(right_here))
+		message_admins("Spawning [src] at [ADMIN_VERBOSEJMP(right_here)]. Validball is go!")
+		new the_thing(right_here)
+		return the_thing
+
+
+
 
