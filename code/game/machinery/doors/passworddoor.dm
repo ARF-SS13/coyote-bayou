@@ -12,6 +12,7 @@
 	var/password = "Swordfish"
 	var/interaction_activated = TRUE //use the door to enter the password
 	var/voice_activated = FALSE //Say the password nearby to open the door.
+	var/list/failures = list()
 
 /obj/machinery/door/password/voice
 	voice_activated = TRUE
@@ -68,9 +69,12 @@
 			return TRUE
 		return FALSE
 	else
-		if(do_after(user, 10 SECONDS, target = src) && user.skill_roll(SKILL_SCIENCE, DIFFICULTY_CHALLENGE))
+		if(do_after(user, 10 SECONDS, target = src) && user.skill_roll(SKILL_SCIENCE, DIFFICULTY_CHALLENGE) && !failures.Find(WEAKREF(user)))
+			user.visible_message(span_good("[user] hacks the door!"), span_good("Got it!"))
 			return TRUE
 		else
+			failures |= WEAKREF(user)
+			user.visible_message(span_warning("[user] fails to hack the door!"), span_warning("Dang, looks like it's locked itself down from me."))
 			return FALSE
 
 /obj/machinery/door/password/emp_act(severity)

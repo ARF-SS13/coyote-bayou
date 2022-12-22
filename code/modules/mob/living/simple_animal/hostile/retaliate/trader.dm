@@ -6,6 +6,9 @@
 	var/default_price = PRICE_ABOVE_NORMAL
 	var/extra_price = PRICE_REALLY_EXPENSIVE
 	var/vend_ready = TRUE
+	var/myplace = null
+	var/my_original_loc = null
+	var/walking = FALSE
 	intimidation_difficulty = DIFFICULTY_EXPERT
 
 	//format is weakref of mob as key, entry is number (That way no one can steal, vending machines might be stupid, but people are not)
@@ -20,7 +23,19 @@
 
 /mob/living/simple_animal/hostile/retaliate/talker/trader/Initialize(mapload)
 	restock()
+	myplace = get_turf(src)
+	my_original_loc = loc
 	..()
+
+/mob/living/simple_animal/hostile/retaliate/talker/trader/handle_automated_movement()
+	if (my_original_loc != loc)
+		if (!walking)
+			walking = TRUE
+			walk_to(src, myplace, 0 , move_to_delay)
+	else
+		walk_to(src, 0)
+		walking = FALSE
+		..()
 
 /mob/living/simple_animal/hostile/retaliate/talker/trader/proc/restock()
 	var/list/random_list = list()

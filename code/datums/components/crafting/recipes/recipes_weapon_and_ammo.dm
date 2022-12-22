@@ -709,6 +709,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
+	skill_level = REGULAR_CHECK
 
 //rainstick
 /datum/crafting_recipe/rainstick
@@ -723,6 +724,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 	
 //medicinestick
 /datum/crafting_recipe/medicinestick
@@ -738,6 +741,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 	
 //smelltheroses
 /datum/crafting_recipe/smelltheroses
@@ -752,7 +757,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-	
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
+
 //mourningsunrise
 /datum/crafting_recipe/mourningsunrise
 	name = "Mourning Sunrise"
@@ -767,7 +774,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
+	
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
 	name = "Varmint Rifle"
