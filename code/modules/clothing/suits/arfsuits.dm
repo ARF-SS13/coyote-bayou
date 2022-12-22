@@ -458,7 +458,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/followers
-	name = "followers lab coat"
+	name = "clinic lab coat"
 	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
 	icon_state = "followers"
 	item_state = "labcoat"

@@ -306,3 +306,11 @@
 	icon_state = "patch_bitterdrink" //awaiting unique icon for antivenom
 	list_reagents = list(/datum/reagent/medicine/antitoxin = 5)
 	self_delay = 5
+
+/obj/item/reagent_containers/pill/breast_enlarger
+	name = "female enhancement tablet"
+	desc = "A heavy, pink tablet with 'Missus' printed on the edges. It smells like ice cream and is somewhat slippery to the touch. \
+		There's a tiny drawing of a foxgirl with cartoonishly huge breasts printed on one side, and a bold '30U' on the other. \
+		It's pretty obvious that if you eat this pill, it'll make your breasts grow larger. Just, uh, something to keep in mind."
+	icon_state = "pill10"
+	list_reagents = list(/datum/reagent/breast_enlarger = 30)
