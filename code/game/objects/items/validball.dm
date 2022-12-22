@@ -113,7 +113,7 @@ GLOBAL_LIST_EMPTY(valid_ball_spawners)
 	if(isturf(right_here))
 		message_admins("Spawning [src] at [ADMIN_VERBOSEJMP(right_here)]. Validball is go!")
 		new the_thing(right_here)
-		return the_thing
+		qdel(src)
 
 
 
