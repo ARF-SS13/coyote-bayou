@@ -432,6 +432,15 @@
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/neurine(src)
 
+/obj/item/storage/pill_bottle/breast_enlarger
+	name = "bottle of female enhancement pills"
+	desc = "Members of the Itty Bitty Titty Committee rejoice! 'Missus' has you covered! Grow large, 100% natural breasts with just one \
+		tablet! Works on any species, and can even grow breasts on creatures who don't normally have them! \
+		Never let nature dictate your curves again! Use the coupon code on the back for a free sizing for a bra!"
+/obj/item/storage/pill_bottle/breast_enlarger/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/breast_enlarger(src)
+
 /////////////
 //Organ Box//
 /////////////
