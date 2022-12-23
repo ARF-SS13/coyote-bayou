@@ -271,7 +271,7 @@
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_MEDICAL_HYPOSPRAY))
 			to_chat(user, span_notice("You replace \the [src] syringe base with a DeForest Medical MK.II Hypospray!"))
 			upgrades |= UPGRADE_MEDICAL_HYPOSPRAY
-			injection_time = 15 //Half the time half the death!
+			injection_time = 30 //Half the time half the death!
 			window_name = "Automatic Medical Unit v2.4 ALPHA"
 			qdel(W)
 		if(!open)
@@ -283,7 +283,7 @@
 		else
 			to_chat(user, span_notice("The [src] already has a DeForest Medical Hypospray base!"))
 
-	else if(istype(W, /obj/item/circuitboard/machine/chem_dispenser))
+/*	else if(istype(W, /obj/item/circuitboard/machine/chem_dispenser))
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_MEDICAL_CHEM_BOARD))
 			to_chat(user, span_notice("You add in the board upgrading \the [src] reagent banks!"))
 			upgrades |= UPGRADE_MEDICAL_CHEM_BOARD
@@ -342,7 +342,7 @@
 			to_chat(user, span_notice("The [src] access pannel locked off to you!"))
 			return
 		else
-			to_chat(user, span_notice("The [src] already has this upgrade!"))
+			to_chat(user, span_notice("The [src] already has this upgrade!"))*/
 
 	else
 		var/current_health = health
