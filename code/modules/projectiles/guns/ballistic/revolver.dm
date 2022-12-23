@@ -136,11 +136,11 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/detective
-	name = ".22 Detective Special"
+	name = ".22LR revolver"
 	desc = "A small revolver thats easily concealable."
 	icon_state = "detective"
 	w_class = WEIGHT_CLASS_TINY
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT

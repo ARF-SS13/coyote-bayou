@@ -818,7 +818,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /// revolvers!
 
 /obj/item/storage/box/gun/revolver
-	name = ".38 Detective Special case"
+	name = ".22LR Revolver case"
 	w_class = WEIGHT_CLASS_NORMAL //revolvers aren't bulky
 
 /obj/item/storage/box/gun/revolver/PopulateContents()
