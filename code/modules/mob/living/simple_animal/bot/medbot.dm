@@ -42,26 +42,26 @@
 	var/oldloc = null
 	var/last_found = 0
 	var/last_newpatient_speak = 0 //Don't spam the "HEY I'M COMING" messages
-	var/injection_amount = 15 //How much reagent do we inject at a time?
-	var/heal_threshold = 10 //Start healing when they have this much damage in a category
+	var/injection_amount = 5 //How much reagent do we inject at a time?
+	var/heal_threshold = 50 //Start healing when they have this much damage in a category
 	var/use_beaker = 0 //Use reagents in beaker instead of default treatment agents.
 	var/declare_crit = 1 //If active, the bot will transmit a critical patient alert to MedHUD users.
 	var/declare_cooldown = 0 //Prevents spam of critical patient alerts.
 	var/stationary_mode = 0 //If enabled, the Medibot will not move automatically.
-	var/injection_time = 30 //How long we take to inject someone
+	var/injection_time = 60 //How long we take to inject someone
 	//Setting which reagents to use to treat what by default. By id.
-	var/treatment_brute_avoid = /datum/reagent/medicine/tricordrazine
-	var/treatment_brute = /datum/reagent/medicine/bicaridine
+	var/treatment_brute_avoid = /datum/reagent/medicine/medbotchem
+	var/treatment_brute = /datum/reagent/medicine/medbotchem
 	var/treatment_oxy_avoid = null
-	var/treatment_oxy = /datum/reagent/medicine/dexalin
-	var/treatment_fire_avoid = /datum/reagent/medicine/tricordrazine
-	var/treatment_fire = /datum/reagent/medicine/kelotane
-	var/treatment_tox_avoid = /datum/reagent/medicine/tricordrazine
-	var/treatment_tox = /datum/reagent/medicine/charcoal
+	var/treatment_oxy = /datum/reagent/medicine/salbutamol
+	var/treatment_fire_avoid = /datum/reagent/medicine/medbotchem
+	var/treatment_fire = /datum/reagent/medicine/medbotchem
+	var/treatment_tox_avoid = /datum/reagent/medicine/medbotchem
+	var/treatment_tox = /datum/reagent/medicine/medbotchem
 	var/treatment_tox_toxlover = /datum/reagent/toxin //Injects toxins into people that heal via toxins
 	var/treatment_virus_avoid = null
 	var/treatment_virus = /datum/reagent/medicine/spaceacillin
-	var/treat_virus = 1 //If on, the bot will attempt to treat viral infections, curing them if possible.
+	var/treat_virus = 0 //If on, the bot will attempt to treat viral infections, curing them if possible.
 	var/shut_up = 0 //self explanatory :)
 
 	var/upgrades = 0

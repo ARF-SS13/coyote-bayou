@@ -100,6 +100,45 @@
 	description = "Rare and experimental particles, that apparently swap the user's body with one from an alternate dimension where it's completely healthy."
 	taste_description = "science"
 
+/datum/reagent/medicine/medbotchem
+	name = "Medbot Tricord"
+	description = "Heals maximum strength when heavily injured, barely any otherwise."
+	reagent_state = LIQUID
+	color = "#e650c0"
+	overdose_threshold = 60
+	taste_description = "grossness"
+
+/datum/reagent/medicine/medbotchem/on_mob_life(mob/living/carbon/M)
+	switch(M.getBruteLoss())
+		if(-INFINITY to 50)
+			M.adjustBruteLoss(-1*REM, 0) //below 50 brute, it heals at full strength
+		if(50 to 75)
+			M.adjustBruteLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+		else
+			M.adjustBruteLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+	..()
+	. = 1
+
+	switch(M.getFireLoss())
+		if(-INFINITY to 50)
+			M.adjustFireLoss(-1*REM, 0) //below 50 Burn, it heals at full strength
+		if(50 to 75)
+			M.adjustFireLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+		else
+			M.adjustFireLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+	..()
+	. = 1
+
+	switch(M.getToxLoss())
+		if(-INFINITY to 50)
+			M.adjustToxLoss(-1*REM, 0) //below 50 Toxin, it heals at full strength
+		if(50 to 75)
+			M.adjustToxLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+		else
+			M.adjustToxLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+	..()
+	. = 1
+
 /datum/reagent/medicine/synaptizine
 	name = "Synaptizine"
 	description = "Increases resistance to stuns as well as reducing drowsiness and hallucinations."
@@ -1713,12 +1752,12 @@
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds stop bleeding. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
 	bleed_mult = 0.05
-/* 
+/*
  * Reduces blood flow on all wounds
  * * User - Mob who's wounds we're treating
  * * bleed_reduction_rate - Base amount their bloodloss will be reduced
  * * coefficient_per_wound - For each wound, multiply the effective bleed rate by this (usually lessening it if theres more than one wound)
- * * single_wound_full_effect - If there's only one wound, should it have its full effect? 
+ * * single_wound_full_effect - If there's only one wound, should it have its full effect?
  */
 /datum/reagent/medicine/proc/clot_bleed_wounds(mob/living/carbon/user, bleed_reduction_rate = 0.25, coefficient_per_wound = 0.9, single_wound_full_effect = FALSE)
 	if(!user || !iscarbon(user))
