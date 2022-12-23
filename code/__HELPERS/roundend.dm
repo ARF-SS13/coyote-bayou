@@ -284,6 +284,9 @@
 	//Antagonists
 	parts += antag_report()
 
+	//validball!
+	parts += validball_report()
+
 	CHECK_TICK
 	//Medals
 	parts += medal_report()
@@ -471,6 +474,39 @@
 	parts += matches_log
 	return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 
+/datum/controller/subsystem/ticker/proc/validball_report()
+	if(!LAZYLEN(GLOB.vb_reports))
+		return ""
+	var/list/report_lines = list()
+	for(var/datum/validball_data_report/vball in GLOB.vb_reports)
+		var/obj/item/validball/the_ball = vball.the_validball.resolve()
+		if((!istype(the_ball) || QDELETED(the_ball)) || vball.was_destroyed)
+			report_lines += span_header("The [vball.vb_name]: ") + span_redtext("Did not survive!")
+			report_lines += "<hr>"
+			continue
+		else if(vball.last_holder_ckey == VB_DUMMY_CKEY || !vball.last_holder_name)
+			report_lines += span_header("The [vball.vb_name]: ") + span_greentext("Remained hidden!")
+			report_lines += "<hr>"
+			continue
+		else
+			report_lines += span_header("The [vball.vb_name]: ") + span_greentext("Survived!")
+		report_lines += " "
+		report_lines += "<u><b>[vball.last_holder_name], the [vball.last_holder_job]</b></u>"
+		report_lines += "<b>Objective:</b> Maintain ownership of [vball.vb_name]. [span_greentext("Success!")]"
+
+		for(var/holder_ckey in vball.prev_holders)
+			if(holder_ckey == vball.last_holder_ckey)
+				continue
+			if(holder_ckey == VB_DUMMY_CKEY)
+				continue
+			var/list/our_hero = vball.prev_holders[holder_ckey]
+			report_lines += "<u><b>[our_hero[VB_MOBNAME]], the [our_hero[VB_JOBNAME]]</b></u>"
+			report_lines += "<b>Objective:</b> Maintain ownership of [vball.vb_name]. [span_redtext("Failure!")]"
+			report_lines += " "
+		report_lines += "<hr>"
+	if(!LAZYLEN(report_lines))
+		return "" 
+	return "<div class='panel stationborder'>[report_lines.Join("<br>")]</div>"
 
 /datum/controller/subsystem/ticker/proc/antag_report()
 	var/list/result = list()
