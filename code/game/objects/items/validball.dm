@@ -1,8 +1,5 @@
 /// Some kind of thing that makes people valid
 
-GLOBAL_LIST_EMPTY(valid_balls) // for tracking the individual object
-GLOBAL_LIST_EMPTY(valid_ball_spawners) // for making sure the spawners spawn the right amount of them
-GLOBAL_LIST_EMPTY(vb_reports) // holds a list of strings: the name of the ball, who held it last, and who else held it
 
 //==========DAT FUKKEN MACGUFFIN===============
 /obj/item/validball
@@ -26,7 +23,7 @@ GLOBAL_LIST_EMPTY(vb_reports) // holds a list of strings: the name of the ball, 
 /obj/item/validball/Initialize()
 	. = ..()
 	register_vb_datum()
-	GLOB.valid_balls |= src
+	SSvalidball.valid_balls |= src
 
 /obj/item/validball/ComponentInitialize()
 	. = ..()
@@ -36,7 +33,7 @@ GLOBAL_LIST_EMPTY(vb_reports) // holds a list of strings: the name of the ball, 
 	var/datum/validball_data_report/vb_datum = new
 	vb_datum.register_your_product(src)
 	our_datum_thing = WEAKREF(vb_datum)
-	GLOB.vb_reports |= vb_datum
+	SSvalidball.vb_reports |= vb_datum
 
 /obj/item/validball/proc/update_holders(mob/holder)
 	if(!ismob(holder))
@@ -87,7 +84,7 @@ GLOBAL_LIST_EMPTY(vb_reports) // holds a list of strings: the name of the ball, 
 	our_report.set_be_destroyed()
 	our_datum_thing = null
 	he_who_is_valid = null
-	GLOB.valid_balls -= src
+	SSvalidball.valid_balls -= src
 	. = ..()
 
 // valid valid ball v-va valid valid ball Z
@@ -107,14 +104,14 @@ GLOBAL_LIST_EMPTY(vb_reports) // holds a list of strings: the name of the ball, 
 		update_icon()
 		return
 
-	if(LAZYLEN(GLOB.valid_balls) < 1)
+	if(LAZYLEN(SSvalidball.valid_balls) < 1)
 		user.show_message(span_alert("Nothing detected, try agan later."))
 		return
 
-	if(LAZYLEN(GLOB.valid_balls) == 1)
-		target = GLOB.valid_balls[1]
+	if(LAZYLEN(SSvalidball.valid_balls) == 1)
+		target = SSvalidball.valid_balls[1]
 	else
-		target = input(user, "Artifact to track", "Pinpoint") in GLOB.valid_balls
+		target = input(user, "Artifact to track", "Pinpoint") in SSvalidball.valid_balls
 		if(!target || QDELETED(src) || QDELETED(target) || !user || !user.is_holding(src) || user.incapacitated())
 			target = null
 			return
@@ -137,16 +134,17 @@ GLOBAL_LIST_EMPTY(vb_reports) // holds a list of strings: the name of the ball, 
 	add_spawner_to_list()
 
 /obj/effect/validball_spawner/proc/add_spawner_to_list()
-	if(src in GLOB.valid_ball_spawners)
+	if(src in SSvalidball.valid_ball_spawners)
 		return
-	GLOB.valid_ball_spawners += src
+	SSvalidball.valid_ball_spawners += src
 
 /obj/effect/validball_spawner/proc/spawn_the_thing()
 	var/turf/right_here = get_turf(src)
 	if(isturf(right_here))
 		message_admins("Spawning [src] at [ADMIN_VERBOSEJMP(right_here)]. Validball is go!")
-		new the_thing(right_here)
-	qdel(src)
+		var/obj/item/validball/thenewvb = new the_thing(right_here)
+		return thenewvb
+	return FALSE
 
 /// so when going through a FUCKHUGE list, I realized, fuck it, immma just datumize it
 /// Holds all the relephant data about who touched the darn thing
@@ -172,8 +170,8 @@ GLOBAL_LIST_EMPTY(vb_reports) // holds a list of strings: the name of the ball, 
 
 /datum/validball_data_report/proc/register_your_product(obj/item/validball/ball)
 	if(!istype(ball)) // wh
-		if(src in GLOB.vb_reports)
-			GLOB.vb_reports -= src
+		if(src in SSvalidball.vb_reports)
+			SSvalidball.vb_reports -= src
 		qdel(src)
 		return
 	the_validball = WEAKREF(ball)

@@ -475,10 +475,10 @@
 	return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 
 /datum/controller/subsystem/ticker/proc/validball_report()
-	if(!LAZYLEN(GLOB.vb_reports))
+	if(!LAZYLEN(SSvalidball.vb_reports))
 		return ""
 	var/list/report_lines = list()
-	for(var/datum/validball_data_report/vball in GLOB.vb_reports)
+	for(var/datum/validball_data_report/vball in SSvalidball.vb_reports)
 		var/obj/item/validball/the_ball = vball.the_validball.resolve()
 		if((!istype(the_ball) || QDELETED(the_ball)) || vball.was_destroyed)
 			report_lines += span_header("The [vball.vb_name]: ") + span_redtext("Did not survive!")

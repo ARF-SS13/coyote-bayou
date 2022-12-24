@@ -93,6 +93,7 @@
 #define INIT_ORDER_NETWORKS			40
 #define INIT_ORDER_HOLODECK			35
 #define INIT_ORDER_ATOMS			30
+#define INIT_ORDER_VALIDBALL		29
 #define INIT_ORDER_LANGUAGE			25
 #define INIT_ORDER_PLANTS			21
 #define INIT_ORDER_MACHINES			20
@@ -114,7 +115,6 @@
 #define INIT_ORDER_PATH				-50
 #define INIT_ORDER_PERSISTENCE		-95
 #define INIT_ORDER_LATELOAD			-97
-#define INIT_ORDER_VALIDBALL		-98
 #define INIT_ORDER_DEMO				-99  // o avoid a bunch of changes related to initialization being written, do this last
 #define INIT_ORDER_CHAT				-100 //Should be last to ensure chat remains smooth during init.
 
