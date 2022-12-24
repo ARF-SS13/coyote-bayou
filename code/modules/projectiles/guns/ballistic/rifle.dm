@@ -209,7 +209,7 @@
 /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal
 	name = "coyote repeater"
 	desc = "A sanctified .357 lever action rifle, bearing a paw print, teeth painted on the handguard and what appears to be a severed paw."
-	icon_state = "cowboyrepeaterT"
+	icon_state = "cowboyrepeatert"
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 
@@ -287,7 +287,7 @@
 /obj/item/gun/ballistic/rifle/repeater/trail/tribal
 	name = "rainstick"
 	desc = "A sactified .44 lever action rifle, coated in detailed markings and a carved bead chain that sounds like rain."
-	icon_state = "trailcarbineT"
+	icon_state = "trailcarbinet"
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 
@@ -366,7 +366,7 @@
 /obj/item/gun/ballistic/rifle/repeater/brush/tribal
 	name = "medicine stick"
 	desc = "A heavy .45-70 Lever-action rifle. Beautiful paintings coat the fine weapon, a bead that whistles when spun hangs from a hand woven cord."
-	icon_state = "brushgunT"
+	icon_state = "brushgunt"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 
