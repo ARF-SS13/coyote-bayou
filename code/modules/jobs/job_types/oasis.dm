@@ -699,6 +699,11 @@ Mayor
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(GLOB.chemwhiz_recipes)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
