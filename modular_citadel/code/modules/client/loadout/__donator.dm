@@ -415,6 +415,7 @@
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
+	new /obj/item/stack/marker_beacon/thirty(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
@@ -480,6 +481,16 @@
 
 // H
 // I
+
+/datum/gear/donator/kits/imbubbl101
+	name = "Magnum Kit"
+	path = /obj/item/storage/box/large/custom_kit/imbubbl101
+	ckeywhitelist = list("imbubbl101")
+
+/obj/item/storage/box/large/custom_kit/imbubbl101/PopulateContents()
+	new /obj/item/clothing/head/f13/enclave/peacekeeper(src)
+	new /obj/item/storage/belt/military(src)
+
 // J
 
 /datum/gear/donator/kits/jackson1112
@@ -686,7 +697,6 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/melee/transforming/plasmacutter/regular/celestia(src)
 	new /obj/item/gun/ballistic/automatic/smg/sidewinder/worn(src)
 
 /datum/gear/donator/kits/risingstarslash2
@@ -700,6 +710,7 @@
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
+	new /obj/item/clothing/glasses/prism_glasses(src)
 
 /datum/gear/donator/kits/risingstarslash3
 	name = "Head Paladin Kit"
