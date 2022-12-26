@@ -579,7 +579,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock
 	name = "lever action shotgun"
 	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
-	icon_state = "LAShotgunStocked"
+	icon_state = "lashotgunstocked"
 	item_state = "shotgunlever"
 	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
@@ -613,7 +613,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock/tribal
 	name = "Mourning Sunrise"
 	desc = "A speedy lever action shotgun with a sunrise painted on the furnishings, morbid in context of it's purpose."
-	icon_state = "LATribal"
+	icon_state = "latribal"
 	item_state = "shotgunlever"
 	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench

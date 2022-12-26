@@ -29,6 +29,13 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	/datum/crafting_recipe/incendiaryrocket,
 	/datum/crafting_recipe/strongrocket))
 
+GLOBAL_LIST_INIT(tier_three_parts, list(
+	/datum/crafting_recipe/pico_manip,
+	/datum/crafting_recipe/super_matter_bin,
+	/datum/crafting_recipe/phasic_scanning,
+	/datum/crafting_recipe/super_capacitor,
+	/datum/crafting_recipe/ultra_micro_laser))
+
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
 	/datum/crafting_recipe/huntingrifle,
@@ -293,6 +300,18 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	mob_trait = TRAIT_TECHNOPHREAK
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
 	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
+
+/datum/quirk/technophreak/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.tier_three_parts
+
+/datum/quirk/technophreak/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.tier_three_parts
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"

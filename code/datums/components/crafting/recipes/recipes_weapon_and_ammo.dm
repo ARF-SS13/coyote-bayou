@@ -701,7 +701,7 @@
 /datum/crafting_recipe/coyoterepeater
 	name = "Coyote Repeater"
 	result = /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal
-	reqs = list(/obj/item/gun/ballistic/rifle/repeater/cowboy,
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/cowboy = 1,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/bone = 4)
 	tools = list(TOOL_ALCHEMY_TABLE)
@@ -715,7 +715,7 @@
 /datum/crafting_recipe/rainstick
 	name = "Rainstick"
 	result = /obj/item/gun/ballistic/rifle/repeater/trail/tribal
-	reqs = list(/obj/item/gun/ballistic/rifle/repeater/trail,
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/trail = 1,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/bone = 3,
 				/obj/item/grown/rose = 1)
@@ -731,7 +731,7 @@
 /datum/crafting_recipe/medicinestick
 	name = "Medicine Stick"
 	result = /obj/item/gun/ballistic/rifle/repeater/brush/tribal
-	reqs = list(/obj/item/gun/ballistic/rifle/repeater/brush,
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/brush = 1,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/bone = 2,
 				/obj/item/grown/rose = 1,
@@ -748,7 +748,7 @@
 /datum/crafting_recipe/smelltheroses
 	name = "Smell-The-Roses"
 	result = /obj/item/gun/ballistic/rifle/repeater/ranger/tribal
-	reqs = list(/obj/item/gun/ballistic/rifle/repeater/ranger,
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/ranger = 1,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/bone = 2,
 				/obj/item/grown/rose = 1)
@@ -764,7 +764,7 @@
 /datum/crafting_recipe/mourningsunrise
 	name = "Mourning Sunrise"
 	result = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock/tribal
-	reqs = list(/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
+	reqs = list(/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/bone = 2,
 				/obj/item/grown/rose = 1,

@@ -812,6 +812,13 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	faction = list("neutral")
 
+//Special Radstag
+/mob/living/simple_animal/radstag/rudostag
+	name = "Rudo the Rednosed Stag"
+	desc = "An almost normal looking radstag. Apart from both of it's noses was a bright, glowing red."
+	icon_state = "rudostag"
+	icon_living = "rudostag"
+	icon_dead = "rudostag_dead"
 
 ///////////////
 // BIGHORNER //
