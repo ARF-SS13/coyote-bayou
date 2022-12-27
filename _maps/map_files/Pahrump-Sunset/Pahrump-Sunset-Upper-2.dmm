@@ -63,6 +63,11 @@
 /obj/machinery/power/solar,
 /turf/open/floor/plasteel/solarpanel,
 /area/f13/wasteland)
+"bd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "bj" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Sheriff's Office";
@@ -377,6 +382,11 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"hw" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "hH" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -449,6 +459,12 @@
 /obj/item/bedsheet,
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
+"im" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bed/old,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "in" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -524,6 +540,7 @@
 /area/f13/building/hospital)
 "jL" = (
 /obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "jT" = (
@@ -819,6 +836,12 @@
 	smooth = 1
 	},
 /area/f13/building)
+"qM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "qZ" = (
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged{
 	faction = list("raider")
@@ -936,6 +959,10 @@
 "tM" = (
 /turf/closed/indestructible/riveted,
 /area/f13/tcoms)
+"tU" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "uq" = (
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -1796,6 +1823,7 @@
 "Kf" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/locked_box/weapon/range/tier2,
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Kj" = (
@@ -2482,6 +2510,12 @@
 /area/f13/building/hospital)
 "XF" = (
 /obj/structure/bonfire/prelit,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
+"XH" = (
+/obj/structure/rack/shelf_metal,
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "XQ" = (
@@ -41032,7 +41066,7 @@ hm
 CD
 zC
 zC
-Go
+bd
 Go
 zC
 zC
@@ -41042,7 +41076,7 @@ zC
 Li
 zC
 zC
-zC
+tU
 Go
 Li
 zC
@@ -43610,7 +43644,7 @@ zC
 Yc
 zC
 zC
-zC
+tU
 uz
 uz
 zC
@@ -47943,7 +47977,7 @@ SK
 SK
 aU
 Vb
-Ey
+Sc
 Ey
 Ey
 Pg
@@ -47971,7 +48005,7 @@ hm
 CU
 zC
 Go
-zC
+tU
 zC
 zC
 Go
@@ -55146,7 +55180,7 @@ Bz
 BJ
 xC
 RB
-DP
+qM
 eI
 Rt
 Bz
@@ -56953,7 +56987,7 @@ SK
 SK
 SK
 fx
-NX
+hw
 IB
 AM
 RS
@@ -57460,7 +57494,7 @@ GP
 GP
 uT
 GP
-NX
+hw
 Wk
 fx
 La
@@ -57729,7 +57763,7 @@ GP
 AM
 wo
 GP
-NX
+hw
 fx
 SK
 AZ
@@ -57951,13 +57985,13 @@ La
 SK
 BJ
 fx
-NX
+hw
 GP
 GP
 RT
 tg
 GP
-yT
+im
 fx
 La
 jx
@@ -57986,7 +58020,7 @@ GP
 GP
 bn
 GP
-lG
+XH
 fx
 SK
 AZ
@@ -58199,7 +58233,7 @@ hm
 hm
 NT
 fx
-NX
+hw
 wo
 tg
 sn
@@ -58985,7 +59019,7 @@ sn
 sn
 sn
 NW
-NX
+hw
 fx
 SK
 oF
@@ -59257,7 +59291,7 @@ NX
 GP
 GP
 GP
-NX
+hw
 UR
 uT
 NX
@@ -60769,7 +60803,7 @@ hm
 hm
 NT
 Bz
-NX
+hw
 LB
 NX
 GP
@@ -61321,7 +61355,7 @@ fx
 SK
 BJ
 wO
-NX
+hw
 tg
 xm
 jm
@@ -62601,7 +62635,7 @@ fx
 fx
 fx
 fx
-NX
+hw
 fx
 SK
 SK
