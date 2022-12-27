@@ -567,3 +567,8 @@
 /datum/config_entry/number/quirk_points
 	config_entry_value = 5
 	min_val = 0
+
+/// Sets the amount of validballs to spawn
+/datum/config_entry/number/validball_count
+	config_entry_value = 1
+	min_val = 0

@@ -1,6 +1,7 @@
 /// Z levels that are more or less above ground and can see the sky
 /// For telling players about the weather
 #define ABOVE_GROUND_Z_LEVELS list(4, 5, 6, 7, 8)
+#define COMMON_Z_LEVELS list(3, 4, 5, 6, 7, 8)
 
 /// Minimum time between weathers
 #define WEATHER_WAIT_MIN 30 MINUTES

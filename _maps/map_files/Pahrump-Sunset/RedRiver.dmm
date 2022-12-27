@@ -40,6 +40,7 @@
 	color = "#363636"
 	},
 /obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -334,6 +335,7 @@
 "ait" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/darkbrown/side{
 	dir = 4
 	},
@@ -1479,6 +1481,12 @@
 	color = " A6635D"
 	},
 /area/f13/wasteland)
+"aRn" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building/abandoned)
 "aRq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3717,6 +3725,7 @@
 	color = "#e09634";
 	pixel_x = -32
 	},
+/obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "chy" = (
@@ -4549,6 +4558,7 @@
 "cFH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "cGo" = (
@@ -4639,6 +4649,10 @@
 /turf/open/floor/plasteel/neutral/side{
 	dir = 4
 	},
+/area/f13/building/abandoned)
+"cJy" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "cJC" = (
 /obj/structure/barricade/wooden,
@@ -4750,6 +4764,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#b2b2b2"
 	},
+/area/f13/building/abandoned)
+"cNC" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/dark,
 /area/f13/building/abandoned)
 "cNN" = (
 /obj/structure/table/wood/poker,
@@ -5491,6 +5509,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/overlay/junk/toilet,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/abandoned)
 "deT" = (
@@ -6682,6 +6701,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"dNR" = (
+/obj/effect/decal/remains/deadeyebot,
+/obj/effect/decal/cleanable/oil,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dNV" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/spacevine,
@@ -7714,6 +7739,7 @@
 /area/f13/wasteland/city)
 "eqj" = (
 /obj/effect/decal/remains/human,
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "eqr" = (
@@ -8702,6 +8728,10 @@
 "eXs" = (
 /turf/closed/wall/f13/supermart,
 /area/f13/building/abandoned)
+"eXt" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building)
 "eXN" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/flora/ausbushes/fernybush,
@@ -11700,6 +11730,7 @@
 /area/f13/wasteland)
 "gJi" = (
 /obj/structure/closet/crate/bin/trashbin,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -11928,6 +11959,7 @@
 	},
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "gPI" = (
@@ -12706,6 +12738,7 @@
 	color = "#c1b6a5"
 	},
 /obj/item/reagent_containers/spray/chemsprayer,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -12749,6 +12782,10 @@
 	dir = 1
 	},
 /area/f13/building/abandoned)
+"hup" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/dark,
+/area/f13/building)
 "huY" = (
 /obj/structure/fence{
 	pixel_x = 1
@@ -12883,6 +12920,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"hzO" = (
+/obj/structure/table/wood/fancy,
+/obj/item/candle/infinite,
+/obj/effect/validball_spawner,
+/turf/open/floor/carpet,
+/area/f13/building/abandoned)
 "hAv" = (
 /obj/structure/chair/stool{
 	icon_state = "bench"
@@ -13004,6 +13047,7 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/item/reagent_containers/food/snacks/grown/tea,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess/redchess2,
 /area/f13/building/abandoned)
 "hES" = (
@@ -15066,6 +15110,12 @@
 /obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"iMS" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "iNs" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
@@ -16891,6 +16941,11 @@
 /obj/structure/nest/molerat,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"jMh" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building/abandoned)
 "jMn" = (
 /obj/structure/chair/sofa/right{
 	dir = 8;
@@ -18199,6 +18254,7 @@
 "kCa" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	color = "#ffe9de";
 	icon_state = "darkrusty";
@@ -18229,6 +18285,7 @@
 /area/f13/wasteland)
 "kCR" = (
 /obj/structure/closet/crate,
+/obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "kCV" = (
@@ -21518,6 +21575,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "mzI" = (
@@ -21958,6 +22016,11 @@
 	color = " A6635D"
 	},
 /area/f13/wasteland/city)
+"mNq" = (
+/obj/structure/closet/fridge,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "mOi" = (
 /obj/structure/fence{
 	dir = 4
@@ -22272,6 +22335,7 @@
 "mXT" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -26448,6 +26512,7 @@
 	color = "#363636"
 	},
 /obj/structure/closet/crate/footchest,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pxj" = (
@@ -29501,6 +29566,7 @@
 /area/f13/building/abandoned)
 "rqj" = (
 /obj/structure/bookcase,
+/obj/effect/validball_spawner,
 /turf/open/floor/carpet,
 /area/f13/building)
 "rqv" = (
@@ -30486,6 +30552,7 @@
 "rVH" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/raiderloot,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "rVX" = (
@@ -30713,6 +30780,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"sdC" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/table,
+/obj/effect/validball_spawner,
+/turf/open/water,
+/area/f13/city)
 "sdE" = (
 /obj/structure/fence{
 	max_integrity = 500;
@@ -33007,6 +33080,7 @@
 	desc = "*Smells of ammonia";
 	name = "abraxo solution"
 	},
+/obj/effect/validball_spawner,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "tsz" = (
@@ -34136,6 +34210,15 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"uaP" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "yellowrustychess"
+	},
+/area/f13/building)
 "ubi" = (
 /obj/structure/wreck/trash/five_tires{
 	pixel_x = 3;
@@ -34602,6 +34685,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/abandoned)
+"ulg" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "ulH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -36708,6 +36795,7 @@
 	icon_state = "eng";
 	name = "radiation equipment closet"
 	},
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -37121,6 +37209,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/storage/fancy/candle_box,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/effect/validball_spawner,
 /turf/open/floor/carpet,
 /area/f13/building/abandoned)
 "vSR" = (
@@ -38478,9 +38567,9 @@
 	},
 /area/f13/radiation)
 "wJX" = (
-/obj/structure/ladder,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/abandoned)
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "wKd" = (
 /obj/structure/barricade/tentclothedge{
 	pixel_y = -4
@@ -38763,6 +38852,7 @@
 /obj/structure/rack,
 /obj/item/clothing/suit/beekeeper_suit,
 /obj/item/clothing/head/beekeeper_head,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -41648,7 +41738,7 @@ sQz
 bft
 jNh
 mzQ
-sdP
+aRn
 awB
 mIE
 fyx
@@ -41913,7 +42003,7 @@ tGv
 mGh
 mtE
 eZn
-wJX
+uhE
 jNh
 izs
 nIh
@@ -44527,7 +44617,7 @@ vsM
 kKd
 gmp
 ebw
-ebw
+cJy
 ecS
 iee
 roR
@@ -45845,7 +45935,7 @@ qMi
 qMi
 mFO
 cVO
-mtr
+jMh
 eIj
 gMW
 gMW
@@ -48331,7 +48421,7 @@ dqB
 qPo
 xdy
 tKf
-xbY
+dNR
 tiN
 gqJ
 jcB
@@ -49398,7 +49488,7 @@ fzk
 oWN
 cQC
 vsM
-nOY
+mNq
 ebw
 ebw
 hpd
@@ -50100,7 +50190,7 @@ mvE
 sRo
 wMe
 ega
-mtC
+iMS
 cnO
 vGg
 lZA
@@ -54961,7 +55051,7 @@ fSr
 bVg
 dBV
 ozb
-tHX
+hup
 fSr
 tHX
 jzE
@@ -57251,7 +57341,7 @@ jpO
 ndZ
 dZs
 nOf
-mva
+uaP
 uSf
 oph
 oph
@@ -60107,7 +60197,7 @@ ugE
 iQw
 ygK
 mqq
-isk
+sdC
 rke
 aOB
 sTu
@@ -61406,7 +61496,7 @@ fAL
 csc
 nFA
 gCE
-gCE
+cNC
 vXz
 ecn
 gMW
@@ -66576,7 +66666,7 @@ fjO
 doA
 ncE
 cpW
-sID
+hzO
 avK
 sID
 cpW
@@ -77589,7 +77679,7 @@ exK
 uiH
 gVD
 gTv
-kwO
+eXt
 kwO
 kwO
 iuE
@@ -78360,7 +78450,7 @@ jRj
 kzG
 gVD
 gTv
-kwO
+eXt
 kwO
 kwO
 iuE
@@ -95888,7 +95978,7 @@ gMW
 gMW
 gMW
 wWK
-wWK
+ulg
 wWK
 wWK
 wWK
@@ -102310,7 +102400,7 @@ gRn
 gRn
 gMW
 gMW
-kOR
+wJX
 aKf
 gMW
 gMW
