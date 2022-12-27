@@ -384,6 +384,24 @@
 	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
 	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
 
+/datum/gear/donator/kits/fireclaw787
+	name = "Jade's Loadout"
+	path = /obj/item/storage/box/large/custom_kit/fireclaw787
+	ckeywhitelist = list("fireclaw787")
+
+/// cure the whole wasteland of the *scourge* that is not having mountainous tits
+/obj/item/storage/box/large/custom_kit/fireclaw787/PopulateContents()
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+
 /datum/gear/donator/kits/fuzlet
 	name = "fuzzy supply box"
 	path = /obj/item/storage/box/large/custom_kit/fuzlet

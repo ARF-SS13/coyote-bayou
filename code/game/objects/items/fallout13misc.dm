@@ -189,8 +189,8 @@
 	item_state = "oasisflag"
 
 /obj/item/flag/followers
-	name = "Followers of the Apocalypse flag"
-	desc = "A white flag with the black Follower's of the Apocalpyse cross on it."
+	name = "Clinic flag"
+	desc = "A white flag with a turqoise cross on it representing the clinic doctors."
 	icon_state = "followersflag"
 	item_state = "followersflag"
 	faction = FACTION_FOLLOWERS
@@ -266,8 +266,8 @@
 						item_state = "bosflag"
 						faction = FACTION_BROTHERHOOD
 					if("Followers")
-						name = "Followers of the Apocalypse flag"
-						desc = "A white flag with the black Follower's of the Apocalpyse cross on it."
+						name = "Clinic flag"
+						desc = "A white flag with a turqoise cross on it representing the clinic doctors."
 						icon_state = "followersflag"
 						item_state = "followersflag"
 						faction = FACTION_FOLLOWERS

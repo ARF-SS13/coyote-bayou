@@ -4,6 +4,8 @@
 	desc = "A 10mm FMJ bullet casing."
 	caliber = CALIBER_10MM
 	projectile_type = /obj/item/projectile/bullet/c10mm
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
@@ -14,16 +16,20 @@
 	desc = "A homemade 10mm FMJ bullet casing."
 	caliber = CALIBER_10MM
 	projectile_type = /obj/item/projectile/bullet/c10mm/improvised
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/iron = (MATS_PISTOL_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/c10mm/rubber
 	name = "A 10mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c10mm/rubber
+	material_class = BULLET_IS_MEDIUM_PISTOL
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/iron = (MATS_PISTOL_MEDIUM_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_MEDIUM_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_HANDLOAD
 
@@ -38,27 +44,33 @@
 	desc = "A 9mm FMJ bullet casing."
 	caliber = CALIBER_9MM
 	projectile_type = /obj/item/projectile/bullet/c9mm
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_SMALL_CASING + MATS_PISTOL_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER)
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 
 /obj/item/ammo_casing/c9mm/improvised
 	name = "homemade 9mm bullet casing"
 	desc = "A homemade 9mm bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c9mm/improvised
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_SMALL_CASING + MATS_PISTOL_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/c9mm/rubber
 	name = "9mm rubber bullet casing"
 	desc = "A 9mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c9mm/rubber
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_RUBBER
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_SMALL_CASING + MATS_PISTOL_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/c9mm/incendiary
@@ -73,6 +85,7 @@
 	desc = "A 14mm FMJ bullet casing."
 	caliber = CALIBER_14MM
 	projectile_type = /obj/item/projectile/bullet/mm14
+	material_class = BULLET_IS_HEAVY_PISTOL
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER)
@@ -83,8 +96,10 @@
 	desc = "A handloaded 14mm bullet casing."
 	caliber = CALIBER_14MM
 	projectile_type = /obj/item/projectile/bullet/mm14
+	material_class = BULLET_IS_HEAVY_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
+		/datum/material/iron = (MATS_PISTOL_HEAVY_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_HEAVY_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_HEAVIER_PISTOL * CASING_POWER_MOD_HANDLOAD
 
@@ -108,15 +123,22 @@
 	desc = "A .22lr bullet casing."
 	caliber = CALIBER_22LR
 	projectile_type = /obj/item/projectile/bullet/c22
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_SMALL_CASING + MATS_PISTOL_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/a22/rubber
 	name = ".22lr rubber bullet casing"
 	desc = "A .22lr rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c22/rubber
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_RUBBER
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
 /obj/item/ammo_casing/a22/shock

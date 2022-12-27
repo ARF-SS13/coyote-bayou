@@ -8,10 +8,12 @@
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(
-		/datum/material/iron = MATS_PISTOL_SMALL_CASING + MATS_PISTOL_SMALL_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_SMALL_CASING)
+		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_CASING)
 	/// Used to deduct powder and bullet mats from the bullet when fired
 	var/material_class = BULLET_IS_LIGHT_PISTOL
+	/// Used to deduct the right amount of bullet mats from the bullet when fired
+	var/casing_quality = BULLET_IS_SURPLUS
 	var/fire_sound = null						//What sound should play when this ammo is fired
 	var/caliber = null							//Which kind of guns it can be loaded into - NOT a list!
 	var/projectile_type = null					//The bullet type to create when New() is called
@@ -32,6 +34,9 @@
 /obj/item/ammo_casing/spent
 	name = "spent bullet casing"
 	BB = null
+
+/obj/item/ammo_casing/spent/Initialize()
+	. = ..()
 	deduct_powder_and_bullet_mats()
 
 /obj/item/ammo_casing/Initialize()
@@ -60,8 +65,8 @@
 	var/powder_to_deduct
 	switch(material_class)
 		if(BULLET_IS_LIGHT_PISTOL)
-			iron_to_deduct = MATS_PISTOL_SMALL_BULLET
-			powder_to_deduct = MATS_PISTOL_SMALL_POWDER
+			iron_to_deduct = MATS_PISTOL_LIGHT_BULLET
+			powder_to_deduct = MATS_PISTOL_LIGHT_POWDER
 		if(BULLET_IS_MEDIUM_PISTOL)
 			iron_to_deduct = MATS_PISTOL_MEDIUM_BULLET
 			powder_to_deduct = MATS_PISTOL_MEDIUM_POWDER
@@ -69,14 +74,14 @@
 			iron_to_deduct = MATS_PISTOL_HEAVY_BULLET
 			powder_to_deduct = MATS_PISTOL_HEAVY_POWDER
 		if(BULLET_IS_LIGHT_RIFLE)
-			iron_to_deduct = MATS_PISTOL_SMALL_BULLET
-			powder_to_deduct = MATS_PISTOL_SMALL_POWDER
+			iron_to_deduct = MATS_RIFLE_LIGHT_BULLET
+			powder_to_deduct = MATS_RIFLE_LIGHT_POWDER
 		if(BULLET_IS_MEDIUM_RIFLE)
-			iron_to_deduct = MATS_PISTOL_MEDIUM_BULLET
-			powder_to_deduct = MATS_PISTOL_MEDIUM_POWDER
+			iron_to_deduct = MATS_RIFLE_MEDIUM_BULLET
+			powder_to_deduct = MATS_RIFLE_MEDIUM_POWDER
 		if(BULLET_IS_HEAVY_RIFLE)
-			iron_to_deduct = MATS_PISTOL_HEAVY_BULLET
-			powder_to_deduct = MATS_PISTOL_HEAVY_POWDER
+			iron_to_deduct = MATS_RIFLE_HEAVY_BULLET
+			powder_to_deduct = MATS_RIFLE_HEAVY_POWDER
 		if(BULLET_IS_SHOTGUN)
 			iron_to_deduct = MATS_SHOTGUN_BULLET
 			powder_to_deduct = MATS_SHOTGUN_POWDER
@@ -86,12 +91,24 @@
 		if(BULLET_IS_GAUSS)
 			iron_to_deduct = MATS_GAUSS_BULLET
 			powder_to_deduct = MATS_GAUSS_POWDER // surprise its nothing
-	var/list/newmats = custom_materials
-	if(iron_to_deduct && newmats[/datum/material/iron])
-		newmats[/datum/material/iron] -= iron_to_deduct
-	if(powder_to_deduct && newmats[/datum/material/blackpowder])
-		newmats[/datum/material/blackpowder] -= (powder_to_deduct * MATS_AMMO_POWDER_BURN_MULT)
-	set_custom_materials(newmats)
+		else
+			return
+	switch(casing_quality)
+		if(BULLET_IS_MATCH)
+			iron_to_deduct *= MATS_AMMO_BULLET_MATCH_MULT
+			powder_to_deduct *= MATS_AMMO_POWDER_MATCH_MULT
+		if(BULLET_IS_HANDLOAD, BULLET_IS_RUBBER)
+			iron_to_deduct *= MATS_AMMO_BULLET_HANDLOAD_MULT
+			powder_to_deduct *= MATS_AMMO_POWDER_HANDLOAD_MULT
+	var/list/newmats = list()
+	var/matz_iron = custom_materials[SSmaterials.GetMaterialRef(/datum/material/iron)]
+	var/matz_bp = custom_materials[SSmaterials.GetMaterialRef(/datum/material/blackpowder)]
+	if(iron_to_deduct && matz_iron)
+		newmats[/datum/material/iron] = (matz_iron - iron_to_deduct)
+	if(powder_to_deduct && matz_bp)
+		newmats[/datum/material/blackpowder] = (matz_bp - (powder_to_deduct * MATS_AMMO_POWDER_BURN_MULT))
+	if(LAZYLEN(newmats))
+		set_custom_materials(newmats)
 
 //proc to magically refill a casing with a new projectile
 /obj/item/ammo_casing/proc/newshot() //For energy weapons, syringe gun, shotgun shells and wands (!).

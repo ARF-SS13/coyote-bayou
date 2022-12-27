@@ -570,6 +570,74 @@
 	knife_y_offset = 23
 
 /* * * * * * * * * * *
+ * Lever-Action shotgun Restocked
+ * Speedy pump shotgun, with stock
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock
+	name = "lever action shotgun"
+	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
+	icon_state = "lashotgunstocked"
+	item_state = "shotgunlever"
+	icon_prefix = "shotgunlever"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_FAST
+	init_recoil = RIFLE_RECOIL(2.8)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	can_bayonet = FALSE
+/* * * * * * * * * * *
+ * Lever-Action shotgun Restocked Tribal
+ * Speedy pump shotgun, with stock
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock/tribal
+	name = "Mourning Sunrise"
+	desc = "A speedy lever action shotgun with a sunrise painted on the furnishings, morbid in context of it's purpose."
+	icon_state = "latribal"
+	item_state = "shotgunlever"
+	icon_prefix = "shotgunlever"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_FAST
+	init_recoil = RIFLE_RECOIL(2.8)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	can_bayonet = FALSE
+/* * * * * * * * * * *
  * Neostead shotgun
  * Two-Tube semi-auto shotgun
  * 12g

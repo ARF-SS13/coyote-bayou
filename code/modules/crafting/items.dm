@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 
 /obj/item/blueprint/research
 	name = "mysterious blueprint"
-	desc = "Some kind of collection of pre-war 'information'. Might be something in here worthwhile to people interested in that kind of thing. <br><br>(grants 10k research points when destructively analyzed)"
+	desc = "Some kind of collection of pre-war 'information'. Might be something in here worthwhile to people interested in that kind of thing. <br><br>(grants 5k research points when destructively analyzed)"
 	icon ='icons/obj/bureaucracy.dmi'
 	icon_state = "docs_generic"
 

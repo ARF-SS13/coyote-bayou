@@ -14466,6 +14466,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
+"lab" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/implants,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/underground/cave)
 "lar" = (
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
@@ -60869,7 +60876,7 @@ thd
 atm
 jyu
 nsS
-cFY
+lab
 lpq
 whY
 cFY

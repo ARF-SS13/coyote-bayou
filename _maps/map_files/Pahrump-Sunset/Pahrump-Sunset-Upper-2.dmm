@@ -71,7 +71,9 @@
 	req_access_txt = null;
 	req_one_access_txt = "62"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "bn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -566,6 +568,7 @@
 /area/f13/building/hospital)
 "jL" = (
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/implants,
 /obj/effect/validball_spawner,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)

@@ -347,6 +347,51 @@
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
+/datum/crafting_recipe/food/imitation_cram
+	name = "Imitation Cram"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/plain = 1,
+		/datum/reagent/consumable/sodiumchloride = 5,
+		/datum/reagent/consumable/blackpepper =5
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/cram
+	category = CAT_FOOD
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/imitation_ss
+	name = "Imitation Salisbury Steak"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/plain = 1,
+		/datum/reagent/consumable/nutriment = 5,
+		/datum/reagent/consumable/cream =5
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/steak
+	category = CAT_FOOD
+	subcategory = CAT_WASTEFOOD
+	
+/datum/crafting_recipe/food/imitation_bcm
+	name = "Imitation BlamCo Mac and Cheese"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/spaghetti = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/datum/reagent/consumable/cream =5
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/blamco
+	category = CAT_FOOD
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/imitation_pab
+	name = "Imitation Pork and Beans"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/plain = 1,
+		/obj/item/reagent_containers/food/snacks/grown/soybeans = 2,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/canned/porknbeans
+	category = CAT_FOOD
+	subcategory = CAT_WASTEFOOD
+	
+	
 /////////////////
 //Sewer Food.  //
 /////////////////

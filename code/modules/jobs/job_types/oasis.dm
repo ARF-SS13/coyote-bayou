@@ -680,7 +680,6 @@ Mayor
 	belt = /obj/item/kit_spawner/townie/doctor
 	ears = /obj/item/radio/headset/headset_town/medical
 	uniform = /obj/item/clothing/under/f13/medic
-	glasses = /obj/item/clothing/glasses/hud/health
 	neck = /obj/item/clothing/neck/stethoscope
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	backpack = /obj/item/storage/backpack/medic

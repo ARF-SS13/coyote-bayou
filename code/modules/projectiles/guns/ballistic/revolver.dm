@@ -136,11 +136,11 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/detective
-	name = ".38 Detective Special"
+	name = ".22LR revolver"
 	desc = "A small revolver thats easily concealable."
 	icon_state = "detective"
 	w_class = WEIGHT_CLASS_TINY
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -150,7 +150,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	init_recoil = HANDGUN_RECOIL(0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
@@ -162,7 +162,7 @@
 		GUN_MISFIRE_THROWS_GUN(2)
 	)
 
-/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
+/* /obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
 		return TRUE
 	if(!(CALIBER_357 in magazine.caliber))
@@ -175,7 +175,7 @@
 			magazine.caliber |= CALIBER_357
 			desc = "The barrel and chamber assembly seems to have been modified."
 			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
-	return TRUE
+	return TRUE */
 
 /* * * * * * * * * * *
  * .45 ACP Revolver
@@ -201,7 +201,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	gun_sound_properties = list(

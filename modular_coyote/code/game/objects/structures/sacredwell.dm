@@ -52,9 +52,9 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(list(/obj/item/gun/energy/las
 				/obj/item/gun/ballistic/automatic/smg/tommygun/whitelegs,
 				/obj/item/gun/ballistic/bow/claw,
 				/obj/item/gun/ballistic/bow/sturdy,
-				/obj/item/gun/ballistic/bow/silver,
 				/obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor,
-				/obj/item/clothing/suit/armor/medium/tribal)
+				/obj/item/clothing/suit/armor/light/tribal/simple,
+				/obj/item/clothing/suit/hooded/cloak)
 
 // sacred items
 
@@ -115,8 +115,8 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(list(/obj/item/gun/energy/las
 	var/sacredmeter_max = 1000 //how much charge it needs before it does the thing
 	var/cooling = 0
 	desc = "A deep well that hums and thrums with power and unknown energies. Despite the fact it is hot to the touch, the geiger counter stays quiet. This is where the mistakes of the old world go to be cleansed. And with enough sacrifice comes gifts."
-	icon = 'icons/obj/Ritas.dmi'
-	icon_state = "wellwheel-filling"
+	icon = 'icons/obj/f13vending.dmi'
+	icon_state = "sacred_well"
 
 /obj/structure/sacredwell/attackby(obj/item/W, mob/user)
 

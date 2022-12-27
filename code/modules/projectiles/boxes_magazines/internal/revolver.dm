@@ -4,6 +4,12 @@
 	caliber = list(CALIBER_38)
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/rev22
+	name = ".22 revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 6
+
 /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	name = "\improper Russian revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
@@ -107,7 +113,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	name = ".223 pistol cylinder"
-	ammo_type = /obj/item/ammo_casing/a556
+	ammo_type = /obj/item/ammo_casing/a556/sport
 	caliber = list(CALIBER_556)
 	max_ammo = 5
 

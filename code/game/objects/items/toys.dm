@@ -1545,6 +1545,7 @@
 	desc = "the greatest pre-war TCG. Dangerously addictive."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "deck_nanotrasen_full"
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("declares an attack against")
 	
 /obj/item/toy/tragicthegarnering/attack_self(mob/user)
