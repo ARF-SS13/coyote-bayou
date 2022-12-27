@@ -852,3 +852,7 @@
 /datum/sprite_accessory/hair/ziegler
 	name = "Ziegler"
 	icon_state = "hair_ziegler"
+
+/datum/sprite_accessory/hair/cobra
+	name = "Cobra Hood"
+	icon_state = "hair_cobra"
