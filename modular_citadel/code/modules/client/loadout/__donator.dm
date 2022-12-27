@@ -418,17 +418,14 @@
 	new /obj/item/stack/marker_beacon/thirty(src)
 
 /datum/gear/donator/kits/fuzlet2
-	name = "Smolfox Kit"
+	name = "Scavfox Kit"
 	path = /obj/item/storage/box/large/custom_kit/fuzlet2
 	ckeywhitelist = list("fuzlet")
 
 /obj/item/storage/box/large/custom_kit/fuzlet2/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/sportcarbine(src)
-	new /obj/item/ammo_box/magazine/m22/extended(src)
-	new /obj/item/gun/ballistic/revolver/detective(src)
-	new /obj/item/ammo_box/c38box(src)
-	new /obj/item/melee/onehanded/knife/switchblade(src)
-	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/storage/survivalkit/triple(src)
+	new /obj/item/storage/bag/trash/sack(src)
 
 /datum/gear/donator/kits/fuzlet3
 	name = "Thiefy thief Kit"
