@@ -9,7 +9,7 @@
 	/// Just dunk the thing somewhere random if it goes out of its zone
 	var/put_somewhere_random = TRUE
 	/// Z levels its allowed to be
-	var/list/allowed_z = ABOVE_GROUND_Z_LEVELS
+	var/list/allowed_z = COMMON_Z_LEVELS
 	/// List of turfs we've recorded as okay to be
 	var/list/put_it_here[LOCATION_LIST_MAX]
 	/// The index of put_it_here to add the new turf reference

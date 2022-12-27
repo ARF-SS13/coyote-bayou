@@ -3,8 +3,10 @@
 
 //==========DAT FUKKEN MACGUFFIN===============
 /obj/item/validball
-	name = "validball"
-	desc = "He who holdeth thy validball be'eth a valide to yon validehunters, so say we all"
+	name = "mysterious keycard"
+	desc = "At first glance, it looks like your every-day run of the mill old keycard, the kind most folks would slip under a table leg \
+		and forget about. But, on closer inspection, it looks clean and well taken care of, not to mention <i>active</i>. \
+		You might want to hold onto this thing!"
 	icon = 'icons/obj/validball.dmi'
 	icon_state = "keycard_gold" // Sarge MacGuffin Keycard
 	w_class = WEIGHT_CLASS_NORMAL
@@ -19,15 +21,17 @@
 	var/activated = FALSE
 	///weakref in case some goob destroys it
 	var/datum/weakref/our_datum_thing
+	var/autoreveal_time = 3 HOURS
 
 /obj/item/validball/Initialize()
 	. = ..()
 	register_vb_datum()
+	addtimer(CALLBACK(src, .proc/activate_the_validball), autoreveal_time)
 	SSvalidball.valid_balls |= src
 
 /obj/item/validball/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, ABOVE_GROUND_Z_LEVELS)
+	AddComponent(/datum/component/stationloving, TRUE, TRUE, FALSE, COMMON_Z_LEVELS)
 
 /obj/item/validball/proc/register_vb_datum()
 	var/datum/validball_data_report/vb_datum = new
@@ -35,38 +39,43 @@
 	our_datum_thing = WEAKREF(vb_datum)
 	SSvalidball.vb_reports |= vb_datum
 
+/obj/item/validball/proc/activate_the_validball()
+	if(activated)
+		return
+	activated = TRUE
+	START_PROCESSING(SSobj, src)
+	visible_message(span_notice("[src]'s transmitter lets out a faint beep. Anyone with a signal divination device can see where this is!"))
+
 /obj/item/validball/proc/update_holders(mob/holder)
 	if(!ismob(holder))
 		return
 	if(!holder.ckey)
 		return
+	var/turf/right_herehere = get_turf(src)
 	if(!our_datum_thing)
-		var/turf/right_herehere = get_turf(src)
 		message_admins("[src] at [ADMIN_VERBOSEJMP(right_herehere)] didn't have a validball datum associated!!!!!!. Validball is maybe not go!")
 		return
 	var/datum/validball_data_report/our_report = our_datum_thing.resolve()
 	if(!istype(our_report))
-		var/turf/right_heretwo = get_turf(src)
-		message_admins("[src] at [ADMIN_VERBOSEJMP(right_heretwo)] didn't resolve anything from its validball datum thing weakref!!!!!!. Validball is maybe not go!")
+		message_admins("[src] at [ADMIN_VERBOSEJMP(right_herehere)] didn't resolve anything from its validball datum thing weakref!!!!!!. Validball is maybe not go!")
 		return
-	our_report.update_ownership(holder)
+	if(isweakref(he_who_is_valid))
+		var/mob/validie = he_who_is_valid.resolve()
+		if(validie == holder) // picking it back up
+			holder.show_message(span_green("You maintain possession of \the [src]! Protect it at all costs!"))
+			return
+		holder.show_message(span_green("You've regained possession of \the [src]! Protect it at all costs!"))
+		log_validball("[worldtime2text()] - [key_name(holder)] took possession of [src] from [key_name(validie)] in [AREACOORD(right_herehere)].")
+	else
+		holder.show_message(span_green("You've gained possession of \the [src]! Protect it at all costs!"))
+		log_validball("[worldtime2text()] - [key_name(holder)] took possession of [src] for the first time at [AREACOORD(right_herehere)].")
+	valid_ckeys |= holder.ckey
+	he_who_is_valid = WEAKREF(holder)
 
 /obj/item/validball/equipped(mob/user, slot)
 	if(ismob(user))
 		update_holders(user)
-		if(user.ckey && (user.ckey in valid_ckeys))
-			if(isweakref(he_who_is_valid) && he_who_is_valid.resolve() == user)
-				user.show_message(span_hypnophrase("Ahh, right where you left it!"))
-				return
-			user.show_message(span_hypnophrase("Never leave my side again!"))
-		else
-			user.show_message(span_hypnophrase("You feel like nobody else should touch this!"))
-		valid_ckeys |= user.ckey
-		he_who_is_valid = WEAKREF(user)
-		if(!activated)
-			START_PROCESSING(SSobj, src)
-			activated = TRUE
-			user.visible_message(span_notice("[src] stirs. Maybe it's waking up?"))
+		activate_the_validball()
 	. = ..()
 
 /obj/item/validball/process()
@@ -87,10 +96,13 @@
 	SSvalidball.valid_balls -= src
 	. = ..()
 
-// valid valid ball v-va valid valid ball Z
+// valid valid ball v-valid valid ball finder
 /obj/item/pinpointer/validball_finder
-	name = "validball finder"
-	desc = "A handheld tracking device that locks onto validballs."
+	name = "signal divination device"
+	desc = "A hobby-made locator device, tuned to a range of proprietary signal frequencies believed to belong to powerful ancient artifacts. \
+		While the scanner is able to detect its target through walls, it has a fairly short range, limited to around a square kilometer. \
+		Rumor has it, this thing will point its user toward an object of unimaginable wealth, or power, or... something, the rumors were never \
+		all too clear, but whatever it is has to be worth it, right?"
 	icon = 'icons/obj/device.dmi'
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
@@ -104,7 +116,12 @@
 		update_icon()
 		return
 
-	if(LAZYLEN(SSvalidball.valid_balls) < 1)
+	var/list/active_balls = list()
+	for(var/obj/item/validball/vball in SSvalidball.valid_balls)
+		if(vball.activated)
+			active_balls += vball
+
+	if(LAZYLEN(active_balls) < 1)
 		user.show_message(span_alert("Nothing detected, try agan later."))
 		return
 
@@ -139,10 +156,11 @@
 	SSvalidball.valid_ball_spawners += src
 
 /obj/effect/validball_spawner/proc/spawn_the_thing()
+	var/atom/spawn_here = loc
 	var/turf/right_here = get_turf(src)
-	if(isturf(right_here))
+	if(isturf(right_here) && isatom(spawn_here))
 		message_admins("Spawning [src] at [ADMIN_VERBOSEJMP(right_here)]. Validball is go!")
-		var/obj/item/validball/thenewvb = new the_thing(right_here)
+		var/obj/item/validball/thenewvb = new the_thing(spawn_here)
 		return thenewvb
 	return FALSE
 
