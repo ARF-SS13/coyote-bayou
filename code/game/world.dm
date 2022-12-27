@@ -128,6 +128,7 @@ GLOBAL_LIST(topic_status_cache)
 	GLOB.query_debug_log = "[GLOB.log_directory]/query_debug.log"
 	GLOB.world_job_debug_log = "[GLOB.log_directory]/job_debug.log"
 	GLOB.world_paper_log = "[GLOB.log_directory]/paper.log"
+	GLOB.world_validball_log = "[GLOB.log_directory]/validball.log"
 	GLOB.tgui_log = "[GLOB.log_directory]/tgui.log"
 	GLOB.subsystem_log = "[GLOB.log_directory]/subsystem.log"
 	GLOB.reagent_log = "[GLOB.log_directory]/reagents.log"
