@@ -645,6 +645,20 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//Caravan Shotgun
+/datum/crafting_recipe/caravanshotty
+	name = "Caravan Shotgun"
+	result = /obj/item/gun/ballistic/rifle/hunting
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 2,)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+
 //battle rifle
 /datum/crafting_recipe/m1garand
 	name = "M1 Garand"
