@@ -1,5 +1,6 @@
 /// Some kind of thing that makes people valid
-
+#define VALIDBALL_DIST_FAR 45
+#define VALIDBALL_DIST_CLOSE 15
 
 //==========DAT FUKKEN MACGUFFIN===============
 /obj/item/validball
@@ -21,7 +22,7 @@
 	var/activated = FALSE
 	///weakref in case some goob destroys it
 	var/datum/weakref/our_datum_thing
-	var/autoreveal_time = 3 HOURS
+	var/autoreveal_time = 1 HOURS
 
 /obj/item/validball/Initialize()
 	. = ..()
@@ -59,13 +60,14 @@
 	if(!istype(our_report))
 		message_admins("[src] at [ADMIN_VERBOSEJMP(right_herehere)] didn't resolve anything from its validball datum thing weakref!!!!!!. Validball is maybe not go!")
 		return
+	our_report.update_ownership(holder)
 	if(isweakref(he_who_is_valid))
 		var/mob/validie = he_who_is_valid.resolve()
 		if(validie == holder) // picking it back up
 			holder.show_message(span_green("You maintain possession of \the [src]! Protect it at all costs!"))
-			return
-		holder.show_message(span_green("You've regained possession of \the [src]! Protect it at all costs!"))
-		log_validball("[worldtime2text()] - [key_name(holder)] took possession of [src] from [key_name(validie)] in [AREACOORD(right_herehere)].")
+		else
+			holder.show_message(span_green("You've regained possession of \the [src]! Protect it at all costs!"))
+			log_validball("[worldtime2text()] - [key_name(holder)] took possession of [src] from [key_name(validie)] in [AREACOORD(right_herehere)].")
 	else
 		holder.show_message(span_green("You've gained possession of \the [src]! Protect it at all costs!"))
 		log_validball("[worldtime2text()] - [key_name(holder)] took possession of [src] for the first time at [AREACOORD(right_herehere)].")
@@ -102,9 +104,245 @@
 	desc = "A hobby-made locator device, tuned to a range of proprietary signal frequencies believed to belong to powerful ancient artifacts. \
 		While the scanner is able to detect its target through walls, it has a fairly short range, limited to around a square kilometer. \
 		Rumor has it, this thing will point its user toward an object of unimaginable wealth, or power, or... something, the rumors were never \
-		all too clear, but whatever it is has to be worth it, right?"
+		all too clear, but whatever it is has to be worth it, right?\
+		<br>Alt-click to emit an active scan pulse."
 	icon = 'icons/obj/device.dmi'
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	var/currently_scanning = FALSE
+	var/scan_time = 5 SECONDS
+	var/datum/weakref/scan_turf
+	var/list/papers = list()
+	var/max_paper = 5
+	var/start_paper = 5
+
+/obj/item/pinpointer/validball_finder/Initialize()
+	. = ..()
+	for(var/i in 1 to start_paper)
+		papers += new /obj/item/paper(src)
+
+/obj/item/pinpointer/validball_finder/AltClick(mob/user)
+	. = ..()
+	playsound(src, 'sound/machines/click.ogg', 30, 1)
+	send_scan_ping(user)
+
+/obj/item/pinpointer/validball_finder/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(istype(W, /obj/item/paper))
+		add_paper(W, user)
+
+/obj/item/pinpointer/validball_finder/proc/add_paper(obj/item/paper/ppr, mob/user)
+	if(!istype(ppr))
+		user.show_message(span_alert("That's not paper!"))
+		return FALSE
+	if(LAZYLEN(papers) >= max_paper)
+		user.show_message(span_alert("The paper bin is full!"))
+		return FALSE
+	if(!ismob(user))
+		user.show_message(span_alert("You can't!"))
+		return FALSE
+	if(!user.canUnEquip(ppr))
+		user.show_message(span_alert("You can't seem to get [ppr] out of your hands!"))
+		return FALSE
+	if(!user.transferItemToLoc(ppr, src))
+		user.show_message(span_alert("[ppr] didn't go in!"))
+		return FALSE
+	papers += ppr
+	user.show_message(span_notice("You insert [ppr] into [src]!"))
+	playsound(src, 'sound/machines/click.ogg', 30, 1)
+	return TRUE
+
+/obj/item/pinpointer/validball_finder/proc/send_scan_ping(mob/user)
+	if(!user)
+		return
+	if(currently_scanning)
+		user.show_message("You press the SCAN button, and [src] lets out a patient beep!")
+		say(span_robot("Scanning in progress, please wait. Error code 3"))
+		return
+	if(!has_paper())
+		user.show_message("You press the SCAN button, and [src] lets out a hungry beep!")
+		say(span_robot("Out of paper. Error code 1"))
+		return
+	var/turf/scan_here = get_turf(user)
+	if(!isturf(scan_here))
+		user.show_message("You press the SCAN button, and [src] lets out an existential beep!")
+		say(span_robot("Location invalid!!! Error code IM-CODER2"))
+		return
+	scan_turf = WEAKREF(scan_here)
+	if(!scan_turf)
+		user.show_message("You press the SCAN button, and [src] lets out a weak beep!")
+		say(span_robot("Scan failed, location invalid!!! Error code AM-CODER"))
+		return
+	playsound(src, 'sound/machines/whistlebeepalert-cb.ogg', 30, 1)
+	playsound(src, 'sound/machines/pc_process.ogg', 60, 1)
+	user.show_message("You press the SCAN button, and [src] lets out an excited beep!")
+	say(span_robot("Scanning for anomalous signals, please wait."))
+	currently_scanning = TRUE
+	addtimer(CALLBACK(src, .proc/read_scan_ping, user), scan_time)
+
+/obj/item/pinpointer/validball_finder/proc/read_scan_ping()
+	if(!isweakref(scan_turf))
+		say(span_robot("Scan origin weakref failed! Error code 13"))
+		visible_message("[src] lets out a confused beep!")
+		return
+	var/turf/scan_from_here = scan_turf.resolve()
+	if(!isturf(scan_from_here))
+		say(span_robot("Scan origin failed! Error code 99-2"))
+		visible_message("[src] lets out a frustrated beep!1")
+		return
+	if(!has_paper())
+		say(span_robot("Out of paper. Error code 1"))
+		visible_message("[src]'s printer module pings!")
+		return
+	var/the_report = build_report(scan_from_here)
+	if(!the_report)
+		say(span_robot("Scan failed! Error code 88-A"))
+		visible_message("[src] lets out an annoyed beep!")
+		return
+	if(!print_report(the_report))
+		say(span_robot("Printer failure! Error code 2000"))
+		visible_message("[src]'s printer module clicks!")
+		return
+	playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
+	say(span_robot("Scan decoded and printed!"))
+	visible_message("[src] prints something!")
+	currently_scanning = FALSE
+
+/obj/item/pinpointer/validball_finder/proc/print_report(report_msg)
+	var/obj/item/paper/our_paper = papers[LAZYLEN(papers)]
+	if(!our_paper)
+		return FALSE
+	papers -= our_paper
+	our_paper.info += "<br>"
+	our_paper.info += report_msg
+	our_paper.update_icon_state()
+	playsound(src, 'sound/machines/printer_thermal.ogg', 50, 1)
+	var/turf/the_here = get_turf(src)
+	our_paper.forceMove(the_here)
+	var/mob/living/carbon/human/someonethere = locate(/mob/living/carbon/human) in the_here
+	if(istype(someonethere))
+		someonethere.put_in_hands(our_paper)
+	return TRUE
+
+/obj/item/pinpointer/validball_finder/proc/build_report(turf/scan_origin)
+	if(!isturf(scan_origin))
+		return
+	var/list/msg_out = list()
+	msg_out += "<hr>"
+	msg_out += "- START REPORT -"
+	msg_out += "- [span_small(uppertext(STATION_TIME_TIMESTAMP(FALSE, world.time)))] -"
+	msg_out += "[FOURSPACES]"
+	msg_out += "<u><b>FoxEye Anomaly Detector v1.23 PRO</b></u>"
+	msg_out += "[FOURSPACES][span_small(readout_fluff("START"))]"
+	msg_out += "[FOURSPACES]"
+	msg_out += "[FOURSPACES] - Initializing..........DONE!"
+	msg_out += "[FOURSPACES]"
+	msg_out += "[FOURSPACES] - Scan origin: [z2text(scan_origin)] - ([local_coords(scan_origin)])"
+	msg_out += "[FOURSPACES] - Margin of error: 10 meters"
+	msg_out += "[FOURSPACES]"
+	var/num_things = LAZYLEN(SSvalidball.valid_balls)
+	msg_out += "[num_things] anomalous signal(s) detected!"
+	var/ball_num = 1
+	for(var/obj/item/validball/vb_thing in SSvalidball.valid_balls)
+		var/is_close = (scan_origin.z == vb_thing.z)
+		msg_out += "[FOURSPACES]Object [ball_num]:"
+		msg_out += "[FOURSPACES] - Decrypting frequency..........DONE!"
+		msg_out += "[FOURSPACES] - Triangulating signal..........DONE!"
+		msg_out += "[FOURSPACES] - Transcribing results..........DONE!"
+		msg_out += "[FOURSPACES]"
+		msg_out += "[FOURSPACES] - Signal origin: [z2text(vb_thing)]"
+		if(is_close)
+			msg_out += "[FOURSPACES] - Signal bearing: [which_direction(scan_origin, vb_thing)]"
+			msg_out += "[FOURSPACES] - Margin of error: 15 degrees"
+		else
+			msg_out += "[FOURSPACES]Signal out of range for precision scan, please get closer!"
+		if(vb_thing.activated)
+			msg_out += "[FOURSPACES]"
+			msg_out += "[FOURSPACES]<b>WARNING:</b> Homing frequency detected in signal!"
+			msg_out += "[FOURSPACES][FOURSPACES]Object will be visible on all local scanners!"
+		msg_out += "[FOURSPACES]"
+		msg_out += "[FOURSPACES][readout_fluff("END")]"
+		msg_out += "[FOURSPACES]"
+	msg_out += "- END OF REPORT -"
+	return span_robot(msg_out.Join("<br>"))
+
+
+/obj/item/pinpointer/validball_finder/proc/z2text(turf/hereturf)
+	if(!hereturf)
+		return "!!UNKNOWN!!"
+	switch(hereturf.z)
+		if(Z_LEVEL_NASH_UNDERGROUND)
+			return "Nash Wastes - Underground"
+		if(Z_LEVEL_NASH_COMMON)
+			return "Nash Wastes - Common"
+		if(Z_LEVEL_NASH_LVL2)
+			return "Nash Wastes - Second Story"
+		if(Z_LEVEL_NASH_LVL3)
+			return "Nash Wastes - Third Story"
+		if(Z_LEVEL_REDWATER)
+			return "Southern Wastes - Common"
+		if(Z_LEVEL_REDLICK)
+			return "Northern Wastes - Common"
+		else
+			return "!!UNKNOWN!!"
+
+/obj/item/pinpointer/validball_finder/proc/local_coords(turf/hereturf)
+	if(!hereturf)
+		return "!!UNKNOWN!!"
+	var/coord_x = abs(hereturf.x + rand(-5, 5))
+	var/coord_y = abs(hereturf.y + rand(-5, 5))
+	return "[coord_x], [coord_y]"
+
+/obj/item/pinpointer/validball_finder/proc/which_direction(turf/hereturf, atom/therething)
+	if(!hereturf)
+		return "!!UNKNOWN!!"
+	if(!therething)
+		return "!!UNKNOWN!!"
+	var/the_angle = Get_Angle(hereturf, therething)
+	the_angle += rand(-15,15)
+	if(the_angle > 360)
+		the_angle -= 360
+	if(the_angle < 0)
+		the_angle += 360
+	var/the_direction = angle2text(the_angle)
+	return "[the_angle] ([the_direction]-ish)"
+
+/obj/item/pinpointer/validball_finder/proc/readout_fluff(typething = "END")
+	if(typething == "START")
+		switch(rand(1,6))
+			if(1)
+				return "Shareware edition!"
+			if(2)
+				return "Unregistered!"
+			if(3)
+				return "=3"
+			if(4)
+				return "Rated 4 geckers out of 5"
+			if(5)
+				return "Now on ThinkDOS!"
+			if(6)
+				return "100% native!"
+
+	if(typething == "END")
+		switch(rand(1,6))
+			if(1)
+				return "Careful, it may be guarded by dangerous creatures and/or folk!"
+			if(2)
+				return "Careful, it may attract unwanted attention!"
+			if(3)
+				return "High-value frequencies detected in the signal, might be something valuable!"
+			if(4)
+				return "Be sure to register your device with the local Boxcar Vixen!"
+			if(5)
+				return "Whatever it is, readings are off the charts!"
+			if(6)
+				return "No hostile readings detected, it's good and safe! =3"
+
+/obj/item/pinpointer/validball_finder/proc/has_paper()
+	if(!LAZYLEN(papers))
+		return FALSE
+	for(var/obj/item/paper/papper in papers)
+		if(papper)
+			return TRUE
 
 /obj/item/pinpointer/validball_finder/attack_self(mob/living/user)
 	if(active)
@@ -220,3 +458,4 @@
 
 	prev_holders[last_holder_ckey] = VB_CKEY_UPDATE(user, last_holder_name, last_holder_job)
 
+#undef VALIDBALL_DIST_FAR
