@@ -1070,9 +1070,9 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
-//.223 pistol
+//.308 pistol
 /datum/crafting_recipe/thatgun
-	name = ".223 Pistol"
+	name = ".308 Pistol"
 	result = /obj/item/gun/ballistic/revolver/thatgun
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/metal = 3,)

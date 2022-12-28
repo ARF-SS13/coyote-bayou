@@ -112,9 +112,9 @@
 	valid_new_calibers = GLOB.pipe_rifle_valid_calibers
 
 /obj/item/ammo_box/magazine/internal/cylinder/thatgun
-	name = ".223 pistol cylinder"
-	ammo_type = /obj/item/ammo_casing/a556/sport
-	caliber = list(CALIBER_556)
+	name = ".308 pistol cylinder"
+	ammo_type = /obj/item/ammo_casing/a762/sport
+	caliber = list(CALIBER_762)
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev44

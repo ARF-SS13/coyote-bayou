@@ -700,7 +700,7 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/trail_carbine)
 
 /obj/item/book/granter/crafting_recipe/blueprint/thatgun
-	name = ".223 pistol blueprint"
+	name = ".308 pistol blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/thatgun)
 
