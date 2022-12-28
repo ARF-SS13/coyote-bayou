@@ -2,6 +2,22 @@
 /// For telling players about the weather
 #define ABOVE_GROUND_Z_LEVELS list(4, 5, 6, 7, 8)
 #define COMMON_Z_LEVELS list(3, 4, 5, 6, 7, 8)
+#define Z_LEVEL_NASH_UNDERGROUND 3
+#define Z_LEVEL_NASH_COMMON 4
+#define Z_LEVEL_NASH_LVL2 5
+#define Z_LEVEL_NASH_LVL3 6
+#define Z_LEVEL_REDWATER 7
+#define Z_LEVEL_REDLICK 8
+
+/* * * * * * * * * * * * *
+ * THE Z LEVELS~
+ * 3 = NASH UNDERGROUND
+ * 4 = NASH CENTRAL
+ * 5 = NASH LVL 2
+ * 6 = NASH LVL 3
+ * 7 = REDWATER
+ * 8 = REDLICK
+ * * * * * * * * * * * * */
 
 /// Minimum time between weathers
 #define WEATHER_WAIT_MIN 30 MINUTES
