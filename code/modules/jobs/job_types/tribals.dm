@@ -188,6 +188,7 @@ Tribal Shaman
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/flashlight/lantern = 1,
+		/obj/item/book/granter/crafting_recipe/bitters = 1,
 	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
