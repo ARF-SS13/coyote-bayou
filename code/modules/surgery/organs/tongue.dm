@@ -324,3 +324,17 @@
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/french)
+
+/obj/item/organ/tongue/scottish
+	name = "A somehow scottish tongue"
+	desc = "A tongue that is quite human like, but is used to the scottish accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/scottish)
+
+/obj/item/organ/tongue/bug
+	name = "A buggish tongue"
+	desc = "A tongue that is quite human like, but is used to the bug accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/bug)
