@@ -876,7 +876,7 @@
 				/obj/effect/spawner/bundle/f13/police_pistol = 5,
 				/obj/effect/spawner/bundle/f13/guns/commando = 5,
 				/obj/effect/spawner/bundle/f13/m1carbine = 5,
-				/obj/effect/spawner/bundle/f13/sidewinder = 1,
+				/obj/effect/spawner/bundle/f13/sidewinder_carbine = 1,
 				/obj/effect/spawner/bundle/f13/mini22uzi = 2
 				)
 
@@ -921,7 +921,8 @@
 				/obj/effect/spawner/lootdrop/f13/weapon/revolver44variants,
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/m1carbine,
-				/obj/effect/spawner/bundle/f13/sidewinder,
+				/obj/effect/spawner/bundle/f13/sidewinder_carbine,
+				/obj/effect/spawner/bundle/f13/sidewinder_magnum,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
 				/obj/effect/spawner/bundle/f13/revolver45
 		)
@@ -934,6 +935,8 @@
 				/obj/effect/spawner/bundle/f13/auto5,
 				/obj/effect/spawner/bundle/f13/marksman,
 				/obj/effect/spawner/bundle/f13/m1garand,
+				/obj/effect/spawner/bundle/f13/sidewinder_magnum,
+				/obj/effect/spawner/bundle/f13/sidewinder,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/automag,
 				/obj/item/gun/ballistic/automatic/pistol/schmeisser,
@@ -1216,7 +1219,21 @@
 	name = "sidewinder and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/sidewinder,
+				/obj/item/ammo_box/magazine/uzim9mm
+	)
+
+/obj/effect/spawner/bundle/f13/sidewinder_carbine
+	name = "sidewinder carbine and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/smg/sidewinder/worn,
 				/obj/item/ammo_box/magazine/m9mm/doublestack
+	)
+
+/obj/effect/spawner/bundle/f13/sidewinder_magnum
+	name = "sidewinder magnum and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum,
+				/obj/item/ammo_box/magazine/m14mm
 	)
 
 /obj/effect/spawner/bundle/f13/guns/commando
