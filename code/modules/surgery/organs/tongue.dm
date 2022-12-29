@@ -317,3 +317,10 @@
 /obj/item/organ/tongue/ethereal/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_ethereal
+
+/obj/item/organ/tongue/french
+	name = "A somehow french tongue"
+	desc = "A tongue that is quite human like, but is used to the french accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/french)

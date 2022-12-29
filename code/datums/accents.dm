@@ -104,3 +104,17 @@
 				O.say(speech_args[SPEECH_MESSAGE])
 	speech_args[SPEECH_MESSAGE] = ""
 	return speech_args
+
+
+//Arfs accents
+
+/datum/accent/french/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "th", "zh")
+		message = replacetext(message, "s", "z")
+		message = replacetext(message, "r", "rr")
+		message = replacetext(message, "h", "'")
+		message = replacetext(message, "i", "e")
+	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	return speech_args
