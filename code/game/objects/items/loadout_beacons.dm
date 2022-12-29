@@ -964,7 +964,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/tribal/bmprsword
 	name = "bumpersword case"
 
-/obj/item/storage/box/gun/tribal/bmprword/PopulateContents()
+/obj/item/storage/box/gun/tribal/bmprsword/PopulateContents()
 	new /obj/item/twohanded/fireaxe/bmprsword(src)
 
 /obj/item/storage/box/gun/tribal/warmace
