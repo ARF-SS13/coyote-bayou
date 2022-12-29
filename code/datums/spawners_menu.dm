@@ -37,8 +37,14 @@
 					this["short_desc"] = MS.short_desc
 					this["flavor_text"] = MS.flavour_text
 					this["important_info"] = MS.important_info
+				else if(istype(spawner_obj, /mob/living/simple_animal))
+					var/mob/living/simple_animal/aminol = spawner_obj
+					this["short_desc"] = aminol.desc_short ? aminol.desc_short : ""
+					this["desc"] = aminol.desc
+					this["flavor_text"] = aminol.desc
+					this["important_info"] = aminol.desc_important
 				else
-					var/obj/O = spawner_obj
+					var/atom/O = spawner_obj
 					this["desc"] = O.desc
 		this["amount_left"] = LAZYLEN(GLOB.mob_spawners[spawner])
 		data["spawners"] += list(this)
@@ -55,8 +61,8 @@
 	var/list/spawnerlist = GLOB.mob_spawners[group_name]
 	if(!spawnerlist.len)
 		return
-	var/obj/effect/mob_spawn/MS = pick(spawnerlist)
-	if(!istype(MS) || !(MS in GLOB.poi_list))
+	var/atom/MS = pick(spawnerlist)
+	if(!istype(MS))
 		return
 	switch(action)
 		if("jump")
@@ -65,5 +71,6 @@
 				. = TRUE
 		if("spawn")
 			if(MS)
+				owner.forceMove(get_turf(MS))
 				MS.attack_ghost(owner)
 				. = TRUE

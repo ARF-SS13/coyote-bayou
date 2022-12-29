@@ -98,8 +98,6 @@
 	if(!targets_from)
 		targets_from = src
 	wanted_objects = typecacheof(wanted_objects)
-	if((auto_fire_delay * extra_projectiles) < ranged_cooldown_time)
-		ranged_cooldown_time = (auto_fire_delay * (extra_projectiles + 1))
 	if(MOB_EMP_DAMAGE in emp_flags)
 		smoke = new /datum/effect_system/smoke_spread/bad
 		smoke.attach(src)
@@ -437,6 +435,8 @@
 	return target.attack_animal(src)
 
 /mob/living/simple_animal/hostile/proc/Aggro()
+	if(ckey)
+		return TRUE
 	vision_range = aggro_vision_range
 	if(target && LAZYLEN(emote_taunt) && prob(taunt_chance))
 		INVOKE_ASYNC(src, .proc/emote, "me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [target].")
@@ -465,17 +465,19 @@
 	..(gibbed)
 
 /mob/living/simple_animal/hostile/proc/summon_backup(distance, exact_faction_match)
+	if(COOLDOWN_FINISHED(src, ding_spam_cooldown))
+		return TRUE
+	COOLDOWN_START(src, ding_spam_cooldown, SIMPLE_MOB_DING_COOLDOWN)
 	do_alert_animation(src)
 	playsound(loc, 'sound/machines/chime.ogg', 50, 1, -1)
 	for(var/mob/living/simple_animal/hostile/M in oview(distance, targets_from))
 		if(faction_check_mob(M, TRUE))
-			if(M.AIStatus == AI_OFF || M.stat == DEAD)
+			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)
 				return
-			else
-				M.Goto(src,M.move_to_delay,M.minimum_distance)
+			M.Goto(src,M.move_to_delay,M.minimum_distance)
 
 /mob/living/simple_animal/hostile/proc/CheckFriendlyFire(atom/A)
-	if(check_friendly_fire)
+	if(check_friendly_fire && !ckey)
 		for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
 			for(var/mob/living/L in T)
 				if(L == src || L == A)
