@@ -35,6 +35,7 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+/*
 /datum/crafting_recipe/armor_plate_deathclaw
 	name = "Armor Plate"
 	result = /obj/item/stack/crafting/armor_plate
@@ -56,6 +57,7 @@
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+*/
 
 /datum/crafting_recipe/leatherarmor
 	name = "Leather Armor"
