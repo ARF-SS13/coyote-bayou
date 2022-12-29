@@ -817,23 +817,23 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/thatgun
-	name = ".223 pistol"
+	name = ".308 Pistol"
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
 	icon_state = "thatgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
+	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/slower
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	gun_sound_properties = list(

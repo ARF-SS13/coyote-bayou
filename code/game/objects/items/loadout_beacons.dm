@@ -878,12 +878,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m44(src)
 
 /obj/item/storage/box/gun/revolver/thatgun
-	name = ".223 pistol case"
+	name = ".308 pistol case"
 
 /obj/item/storage/box/gun/revolver/thatgun/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/thatgun(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
+	new /obj/item/ammo_box/a308(src)
+	new /obj/item/ammo_box/a308(src)
 
 /// Semiauto pistols!
 
