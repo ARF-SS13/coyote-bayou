@@ -154,13 +154,13 @@
 				gib()
 				return
 		if (EXPLODE_HEAVY)
-			var/bloss = 60
+			var/bloss = 100
 			if(prob(bomb_armor))
 				bloss = bloss / 1.5
 			adjustBruteLoss(bloss)
 
 		if(EXPLODE_LIGHT)
-			var/bloss = 30
+			var/bloss = 50
 			if(prob(bomb_armor))
 				bloss = bloss / 1.5
 			adjustBruteLoss(bloss)
