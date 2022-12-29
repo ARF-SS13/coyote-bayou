@@ -854,6 +854,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
+/obj/item/ammo_box/a308/empty
+	start_empty = 1
+
 /obj/item/ammo_box/a762/doublestacked
 	name = "double stack stripper clip (.308 Sport)"
 	desc = "A stripper clip."
@@ -863,6 +866,9 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+
+/obj/item/ammo_box/a762/doublestacked/empty
+	start_empty = 1
 
 //5.56x45mm
 /obj/item/ammo_box/a556/stripper
