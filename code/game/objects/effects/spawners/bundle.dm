@@ -182,3 +182,26 @@
 	items = list(
 		/obj/item/ammo_box/magazine/m10mm/rifle
 	)
+
+/// Mobs!
+/obj/effect/spawner/bundle/mobs/rat/one
+	name = "one rat spawner"
+	items = list(
+		/mob/living/simple_animal/hostile/rat
+	)
+/obj/effect/spawner/bundle/mobs/rat/three
+	name = "three rat spawner"
+	items = list(
+		/mob/living/simple_animal/hostile/rat,
+		/mob/living/simple_animal/hostile/rat,
+		/mob/living/simple_animal/hostile/rat,
+	)
+/obj/effect/spawner/bundle/mobs/rat/five
+	name = "five rat spawner"
+	items = list(
+		/mob/living/simple_animal/hostile/rat,
+		/mob/living/simple_animal/hostile/rat,
+		/mob/living/simple_animal/hostile/rat,
+		/mob/living/simple_animal/hostile/rat,
+		/mob/living/simple_animal/hostile/rat,
+	)
