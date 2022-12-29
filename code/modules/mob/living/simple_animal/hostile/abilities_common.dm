@@ -1,3 +1,18 @@
+/datum/action/innate/ghostify
+	name = "Ghostize"
+	desc = "Leave this creature and return to your ghostly state."
+
+/datum/action/innate/ghostify/IsAvailable(silent = FALSE)
+	if(..())
+		return TRUE
+
+/datum/action/innate/ghostify/Activate()
+	if(!isliving(owner))
+		return
+	var/mob/living/liver = owner
+	liver.ghost()
+	return TRUE
+
 /datum/action/innate/summon_backup
 	name = "Summon Backup"
 	desc = "Draws friendly mobs nearby."

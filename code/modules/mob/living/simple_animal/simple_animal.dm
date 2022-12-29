@@ -168,6 +168,7 @@
 	var/desc_important = "This is important info about the mob, like rules and things to keep in mind. feel free to ignore it"
 	var/obj/effect/proc_holder/direct_mobs/send_mobs
 	var/datum/action/innate/summon_backup/call_backup
+	var/datum/action/innate/ghostify/ghostme
 	COOLDOWN_DECLARE(ding_spam_cooldown)
 
 	/// Sets up mob diversity
@@ -202,6 +203,7 @@
 	if(can_ghost_into)
 		send_mobs = new
 		AddAbility(send_mobs)
+		AddAbility(ghostme)
 		call_backup = new
 		call_backup.Grant(src)
 		LAZYADD(GLOB.mob_spawners[initial(name)], src)
@@ -224,6 +226,9 @@
 		var/mob/dead/observer/O = user
 		if(!O.can_reenter_round())
 			return FALSE
+	if(!(z in COMMON_Z_LEVELS))
+		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
+		return
 	var/ghost_role = alert("Hop into [name]? (This is a ghost role, still in development!)",,"Yes, spawn me in!","No, I wanna be a ghost!")
 	if(ghost_role == "No, I wanna be a ghost!" || !loc)
 		return
@@ -254,7 +259,10 @@
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
-	RemoveAbility(send_mobs)
+	if(send_mobs)
+		RemoveAbility(send_mobs)
+	if(ghostme)
+		RemoveAbility(ghostme)
 	QDEL_NULL(call_backup)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
