@@ -160,6 +160,16 @@
 	var/simple_mob_flags = NONE
 	//Mob may be offset randomly on both axes by this much
 	var/randpixel = 0
+	///Can ghosts just hop into one of these guys?
+	var/can_ghost_into = FALSE
+	///Short desc of the mob
+	var/desc_short = "This is a short desc of the mob. It is very short."
+	///Important info of the mob
+	var/desc_important = "This is important info about the mob, like rules and things to keep in mind. feel free to ignore it"
+	var/obj/effect/proc_holder/direct_mobs/send_mobs
+	var/datum/action/innate/summon_backup/call_backup
+	var/datum/action/innate/ghostify/ghostme
+	COOLDOWN_DECLARE(ding_spam_cooldown)
 
 	/// Sets up mob diversity
 	var/list/variation_list = list()
@@ -190,11 +200,70 @@
 		stack_trace("Invalid type [mob_armor.type] found in .armor during /mob/living/simple_animal Initialize()")
 	/// End duplicated code
 	setup_mob_armor_description()
+	if(can_ghost_into)
+		send_mobs = new
+		AddAbility(send_mobs)
+		AddAbility(ghostme)
+		call_backup = new
+		call_backup.Grant(src)
+		LAZYADD(GLOB.mob_spawners[initial(name)], src)
 	setup_variations()
 
+/mob/living/simple_animal/attack_ghost(mob/user, latejoinercalling)
+	. = ..()
+	if(!can_ghost_into)
+		return
+	if(health <= 0 || stat == DEAD)
+		return
+	if(!SSticker.HasRoundStarted() || !loc)
+		return
+	if(jobban_isbanned(user, ROLE_SYNDICATE))
+		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
+		return
+	if(QDELETED(src) || QDELETED(user))
+		return
+	if(isobserver(user))
+		var/mob/dead/observer/O = user
+		if(!O.can_reenter_round())
+			return FALSE
+	if(!(z in COMMON_Z_LEVELS))
+		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
+		return
+	var/ghost_role = alert("Hop into [name]? (This is a ghost role, still in development!)",,"Yes, spawn me in!","No, I wanna be a ghost!")
+	if(ghost_role == "No, I wanna be a ghost!" || !loc)
+		return
+	if(QDELETED(src) || QDELETED(user))
+		return
+	if(latejoinercalling)
+		var/mob/dead/new_player/NP = user
+		if(istype(NP))
+			NP.close_spawn_windows()
+			NP.stop_sound_channel(CHANNEL_LOBBYMUSIC)
+	log_game("[key_name(user)] hopped into [name]")
+	become_the_mob(user)
+	return TRUE
+
+/mob/living/simple_animal/proc/become_the_mob(mob/user)
+	if(!user.ckey)
+		return
+	user.transfer_ckey(src, TRUE)
+	grant_all_languages()
+
+/mob/living/simple_animal/ComponentInitialize()
+	. = ..()
+	if(can_ghost_into)
+		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
+	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
+	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
+		GLOB.mob_spawners -= initial(name)
+	if(send_mobs)
+		RemoveAbility(send_mobs)
+	if(ghostme)
+		RemoveAbility(ghostme)
+	QDEL_NULL(call_backup)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 
@@ -744,7 +813,7 @@
 					our_new_name += capitalize(pick(GLOB.moth_first)) + " " + capitalize(pick(GLOB.moth_last))
 				if(MOB_NAME_RANDOM_ALL_OF_THEM)
 					our_new_name += get_random_random_name()
-			if(num_names < our_mob_random_name_list[name_token])
+			if(num_names != our_mob_random_name_list[name_token])
 				our_new_name += " "
 		if(number_of_name_tokens_left-- > 0)
 			our_new_name += " "

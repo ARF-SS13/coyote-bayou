@@ -595,3 +595,5 @@
 
 /// cooldown for being spammed with projectile messages
 #define ATTACK_MESSAGE_ANTISPAM_TIME 0.5 SECONDS
+/// cooldown for making the DING
+#define SIMPLE_MOB_DING_COOLDOWN 3 SECONDS

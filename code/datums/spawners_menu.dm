@@ -29,7 +29,13 @@
 		this["flavor_text"] = ""
 		this["important_warning"] = ""
 		this["refs"] = list()
+		var/num_available = LAZYLEN(GLOB.mob_spawners[spawner])
 		for(var/spawner_obj in GLOB.mob_spawners[spawner])
+			if(istype(spawner_obj, /mob/living/simple_animal))
+				var/mob/living/simple_animal/this_thing = spawner_obj
+				if(!(this_thing.z in COMMON_Z_LEVELS))
+					num_available--
+					continue
 			this["refs"] += "[REF(spawner_obj)]"
 			if(!this["desc"])
 				if(istype(spawner_obj, /obj/effect/mob_spawn))
@@ -37,9 +43,17 @@
 					this["short_desc"] = MS.short_desc
 					this["flavor_text"] = MS.flavour_text
 					this["important_info"] = MS.important_info
+				else if(istype(spawner_obj, /mob/living/simple_animal))
+					var/mob/living/simple_animal/aminol = spawner_obj
+					this["short_desc"] = aminol.desc_short
+					this["desc"] = aminol.desc
+					this["flavor_text"] = aminol.desc
+					this["important_info"] = aminol.desc_important
 				else
-					var/obj/O = spawner_obj
+					var/atom/O = spawner_obj
 					this["desc"] = O.desc
+		if(num_available <= 0)
+			continue
 		this["amount_left"] = LAZYLEN(GLOB.mob_spawners[spawner])
 		data["spawners"] += list(this)
 
@@ -55,8 +69,11 @@
 	var/list/spawnerlist = GLOB.mob_spawners[group_name]
 	if(!spawnerlist.len)
 		return
-	var/obj/effect/mob_spawn/MS = pick(spawnerlist)
-	if(!istype(MS) || !(MS in GLOB.poi_list))
+	for(var/mob/living/simple_animal/animal in spawnerlist)
+		if(!(animal.z in COMMON_Z_LEVELS))
+			spawnerlist -= animal
+	var/atom/MS = pick(spawnerlist)
+	if(!istype(MS))
 		return
 	switch(action)
 		if("jump")
@@ -64,6 +81,13 @@
 				owner.forceMove(get_turf(MS))
 				. = TRUE
 		if("spawn")
-			if(MS)
+			// first check if there's a ghostable mob on your turf, and try and insert urself into it
+			var/mob/living/simple_animal/SA = locate(/mob/living/simple_animal) in get_turf(owner)
+			if(istype(SA))
+				owner.forceMove(get_turf(SA))
+				SA.attack_ghost(owner)
+				. = TRUE
+			else if(MS)
+				owner.forceMove(get_turf(MS))
 				MS.attack_ghost(owner)
 				. = TRUE

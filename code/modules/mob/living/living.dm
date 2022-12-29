@@ -1218,12 +1218,16 @@
 	return ..() && !(buckled && buckled.buckle_prevents_pull)
 
 /mob/living/proc/AddAbility(obj/effect/proc_holder/A)
+	if(!A)
+		return
 	abilities.Add(A)
 	A.on_gain(src)
 	if(A.has_action)
 		A.action.Grant(src)
 
 /mob/living/proc/RemoveAbility(obj/effect/proc_holder/A)
+	if(!A)
+		return
 	abilities.Remove(A)
 	A.on_lose(src)
 	if(A.action)

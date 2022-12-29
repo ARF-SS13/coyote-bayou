@@ -52,9 +52,12 @@
 	head = /obj/item/clothing/head/helmet/f13/firefighter
 
 /mob/living/simple_animal/hostile/raider/Aggro()
-	..()
+	. = ..()
+	if(.)
+		return
 	summon_backup(15)
-	say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
+	if(!ckey)
+		say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
 
 // THIEF RAIDER - nabs stuff and runs
 /mob/living/simple_animal/hostile/raider/thief
@@ -206,9 +209,12 @@
 	)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
-	..()
+	. = ..()
+	if(.)
+		return
 	summon_backup(15)
-	say("KILL 'EM, FELLAS!")
+	if(!ckey)
+		say("KILL 'EM, FELLAS!")
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt
 	name = "Mango Mathew and his Merry Meth Madlads"
@@ -521,7 +527,9 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Aggro()
-	..()
+	. = ..()
+	if(.)
+		return
 	summon_backup(10)
 
 /mob/living/simple_animal/hostile/raider/junker/boss
