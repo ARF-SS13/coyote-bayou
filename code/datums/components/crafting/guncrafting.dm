@@ -212,7 +212,7 @@
 				return TRUE
 
 			if(WB_DISASSEMBLY_STEP_CLUB)
-				if(tool.force < 25)
+				if(tool.force < 15)
 					return
 				disassembling = TRUE
 				play_attack_sound(1)
@@ -287,7 +287,7 @@
 					visible_message(span_notice("[user] <b>reenabled</b> [src]'s security!"),
 						span_notice("You <b>reenabled</b> [src]'s security!"))
 
-		if(CHECK_BITFIELD(original_steps, WB_DISASSEMBLY_STEP_CLUB) && tool.force >= 25)
+		if(CHECK_BITFIELD(original_steps, WB_DISASSEMBLY_STEP_CLUB) && tool.force >= 15)
 			did_something = TRUE
 			if(CHECK_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CLUB))
 				play_attack_sound(1)
