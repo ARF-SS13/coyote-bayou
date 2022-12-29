@@ -99,6 +99,7 @@
 	icon_state = "xbow"
 	item_state = "xbow"
 	icon_prefix = "xbow"
+	zoom_factor = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/xbow
 	extra_speed = 400
 
