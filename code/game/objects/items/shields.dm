@@ -193,7 +193,7 @@
 	desc = "A shield for protecting the user from low impact force while giving good visibility."
 	icon_state = "shield_riot"
 	item_state = "shield_riot"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOW_OCLOTHING
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
 	armor = list("melee" = 80, "bullet" = 65, "laser" = 60, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 	force = 10
 	block_parry_data = /datum/block_parry_data/shield/riot
