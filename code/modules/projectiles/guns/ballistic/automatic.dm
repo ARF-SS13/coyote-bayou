@@ -1462,6 +1462,7 @@
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
