@@ -12,7 +12,11 @@
 		var/turf/T = get_turf(src)
 		for(var/path in items)
 			new path(T)
+	extra_do_stuff(mapload)
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/spawner/bundle/proc/extra_do_stuff(mapload)
+	return
 
 /obj/effect/spawner/bundle/costume/chicken
 	name = "chicken costume spawner"
@@ -184,11 +188,19 @@
 	)
 
 /// Mobs!
+
+/obj/effect/spawner/bundle/mobs/rat/extra_do_stuff(mapstart)
+	if(mapstart)
+		return
+	visible_message(span_alert("Eek! Rat!"))
+	playsound(get_turf(src), 'sound/effects/mousesqueek.ogg')
+
 /obj/effect/spawner/bundle/mobs/rat/one
 	name = "one rat spawner"
 	items = list(
 		/mob/living/simple_animal/hostile/rat
 	)
+
 /obj/effect/spawner/bundle/mobs/rat/three
 	name = "three rat spawner"
 	items = list(
