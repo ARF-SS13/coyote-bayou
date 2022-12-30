@@ -150,7 +150,7 @@ Nothing else in the console has ID requirements.
 	if(!istype(TN))
 		say("Node unlock failed: Unknown error.")
 		return FALSE
-	if(!user.skill_check(SKILL_SCIENCE, TN.skill_level_needed) && (TN.alt_skill && !user.skill_check(TN.alt_skill, TN.skill_level_needed)))
+	if(!(user.skill_check(SKILL_SCIENCE, TN.skill_level_needed) || (TN.alt_skill && user.skill_check(TN.alt_skill, TN.skill_level_needed))))
 		to_chat(user, span_warning("You don't have the skill needed to figure this research out."))
 		return FALSE
 	var/list/price = TN.get_price(stored_research)

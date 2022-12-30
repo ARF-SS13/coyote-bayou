@@ -787,6 +787,24 @@
 		/obj/item/stack/sheet/glass = 1)
 	needs_anchored = FALSE
 
+/obj/item/circuitboard/machine/chem_lab
+	name = "Chem Lab (Machine Board)"
+	build_path = /obj/machinery/chem_lab
+	req_components = list(
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/sheet/glass = 1)
+	needs_anchored = FALSE
+
+/obj/item/circuitboard/machine/drug_lab
+	name = "Drug Lab (Machine Board)"
+	build_path = /obj/machinery/chem_lab/drug_lab
+	req_components = list(
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/sheet/glass = 1)
+	needs_anchored = FALSE
+
 /obj/item/circuitboard/machine/chem_master/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		var/new_name = "ChemMaster"

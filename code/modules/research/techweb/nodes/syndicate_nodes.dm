@@ -6,6 +6,8 @@
 	prereq_ids = list("adv_engi", "adv_weaponry")
 	design_ids = list("decloner", "borg_syndicate_module", "suppressor", "donksofttoyvendor", "donksoft_refill", "syndiesleeper")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/syndicate_basic/New()		//Crappy way of making syndicate gear decon supported until there's another way.
 	. = ..()

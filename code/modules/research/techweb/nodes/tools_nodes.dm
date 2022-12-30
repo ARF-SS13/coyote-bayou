@@ -7,6 +7,7 @@
 	prereq_ids = list("base")
 	design_ids = list("screwdriver", "wrench", "wirecutters", "crowbar", "multitool", "welding_tool", "tscanner", "analyzer", "cable_coil", "pipe_painter", "airlock_painter", "decal_painter", "scalpel", "circular_saw", "surgicaldrill", "retractor", "cautery", "hemostat", "cultivator", "plant_analyzer", "shovel", "spade", "hatchet", "mop", "broom", "normtrash", "spraycan")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500)
+	alt_skill = SKILL_REPAIR
 
 /datum/techweb_node/basic_mining
 	id = "basic_mining"
@@ -15,6 +16,7 @@
 	prereq_ids = list("engineering", "basic_plasma")
 	design_ids = list("drill", "superresonator", "triggermod", "damagemod", "cooldownmod", "rangemod", "ore_redemption", "mining_equipment_vendor", "cargoexpress")//CB Edit Yeet Plasma cutter
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	alt_skill = SKILL_REPAIR
 
 /datum/techweb_node/adv_mining
 	id = "adv_mining"
@@ -23,6 +25,9 @@
 	prereq_ids = list("basic_mining", "adv_engi", "adv_power", "adv_plasma")
 	design_ids = list("drill_diamond", "mole_miner", "hypermod", "ore_silo", "plasteel_pick", "titanium_pick") //CB Edit Yeet Plasma Cutter
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/janitor
 	id = "janitor"
@@ -47,6 +52,9 @@
 /*	design_ids = list("exwelder", "jawsoflife", "handdrill", "holosigncombifan", "ranged_analyzer")*/
 	prereq_ids = list("adv_engi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2750)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/sec_basic
 	id = "sec_basic"

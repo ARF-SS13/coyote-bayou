@@ -14,6 +14,7 @@
 	prereq_ids = list("datatheory")
 	design_ids = list("icprinter", "icupgadv", "icupgclo")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	skill_level_needed = REGULAR_CHECK
 
 /////////////////////////plasma tech/////////////////////////
 /datum/techweb_node/basic_plasma
@@ -31,6 +32,7 @@
 	prereq_ids = list("basic_plasma")
 	design_ids = list("mech_plasma_cutter")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	skill_level_needed = REGULAR_CHECK
 
 /////////////////////////EMP tech/////////////////////////
 /datum/techweb_node/emp_basic //EMP tech for some reason
@@ -40,6 +42,7 @@
 	prereq_ids = list("base")
 	design_ids = list("holosign", "holosignsec", "holosignengi", "holosignatmos", "holosignfirelock", "inducer", "tray_goggles", "holopad")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/emp_adv
 	id = "emp_adv"
@@ -48,6 +51,8 @@
 	prereq_ids = list("emp_basic")
 /*	design_ids = list("ultra_micro_laser")*/
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/emp_super
 	id = "emp_super"
@@ -56,6 +61,7 @@
 	prereq_ids = list("emp_adv")
 /*	design_ids = list("quadultra_micro_laser")*/
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	skill_level_needed = HARD_CHECK
 
 
 ////////////////////////Tape tech////////////////////////////

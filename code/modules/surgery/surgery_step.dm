@@ -62,7 +62,7 @@
 		speed_mod = user.mind.action_skill_mod(/datum/skill/numerical/surgery, speed_mod, THRESHOLD_UNTRAINED, FALSE)
 	var/delay = time * speed_mod
 	if(do_after(user, delay, target = target))
-		var/prob_chance = max((user.skill_value(SKILL_DOCTOR) + 10 + tool.toolspeed), 100)
+		var/prob_chance = max((user.skill_value(SKILL_DOCTOR) + (30 - (tool.toolspeed * 10))), 100)
 		if(implement_type)	//this means it isn't a require hand or any item step.
 			prob_chance = implements[implement_type]
 		prob_chance *= surgery.get_propability_multiplier()

@@ -152,6 +152,22 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
 	category = list ("Medical Machinery")
 
+/datum/design/board/chem_lab
+	name = "Machine Design (Portable Chem Dispenser Board)"
+	desc = "The circuit board for a portable chem dispenser."
+	id = "chem_lab"
+	build_path = /obj/item/circuitboard/machine/chem_lab
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
+	category = list ("Medical Machinery")
+
+/datum/design/board/drug_lab
+	name = "Machine Design (Portable Chem Dispenser Board)"
+	desc = "The circuit board for a portable chem dispenser."
+	id = "drug_lab"
+	build_path = /obj/item/circuitboard/machine/drug_lab
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
+	category = list ("Medical Machinery")
+
 /datum/design/board/chem_master
 	name = "Machine Design (Chem Master Board)"
 	desc = "The circuit board for a Chem Master 3000."

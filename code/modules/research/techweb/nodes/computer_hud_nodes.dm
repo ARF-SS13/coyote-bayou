@@ -7,6 +7,8 @@
 	prereq_ids = list("datatheory")
 	design_ids = list("cargo", "cargorequest", "libraryconsole", "mining", "miningshuttle", "crewconsole", "rdcamera", "seccamera")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/computer_hardware_basic				//Modular computers are shitty and nearly useless so until someone makes them actually useful this can be easy to get.
 	id = "computer_hardware_basic"
@@ -17,6 +19,9 @@
 	design_ids = list("hdd_basic", "hdd_advanced", "hdd_super", "hdd_cluster", "ssd_small", "ssd_micro", "netcard_basic", "netcard_advanced", "netcard_wired",
 	"portadrive_basic", "portadrive_advanced", "portadrive_super", "cardslot", "aislot", "miniprinter", "APClink", "bat_control", "bat_normal", "bat_advanced",
 	"bat_super", "bat_micro", "bat_nano", "cpu_normal", "pcpu_normal", "cpu_small", "pcpu_small", "sensorpackage")
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/comp_recordkeeping
 	id = "comp_recordkeeping"
@@ -25,6 +30,9 @@
 	prereq_ids = list("comptech")
 	design_ids = list("secdata", "med_data", "prisonmanage", "vendor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1250)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 /*
 /datum/techweb_node/telecomms
@@ -42,8 +50,11 @@
 	display_name = "Integrated HUDs"
 	description = "The usefulness of computerized records, projected straight onto your eyepiece!"
 	prereq_ids = list("comp_recordkeeping", "emp_basic")
-/*	design_ids = list("health_hud", "security_hud", "diagnostic_hud", "scigoggles", "health_hud_prescription", "security_hud_prescription", "diagnostic_hud_prescription")*/
+	design_ids = list("health_hud", "security_hud", "diagnostic_hud", "scigoggles", "health_hud_prescription", "security_hud_prescription", "diagnostic_hud_prescription")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 /*
 /datum/techweb_node/NVGtech
@@ -62,3 +73,6 @@
 	prereq_ids = list("comptech")
 	design_ids = list("arcade_battle", "arcade_orion", "slotmachine", "autoylathe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+

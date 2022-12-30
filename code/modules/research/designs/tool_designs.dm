@@ -235,7 +235,7 @@
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/*/datum/design/retractor_adv
+/datum/design/retractor_adv
 	name = "Advanced Retractor"
 	desc = "An almagation of rods and gears, able to function as both a surgical clamp and retractor. "
 	id = "retractor_adv"
@@ -263,4 +263,4 @@
 	materials = list(/datum/material/iron = 1500, /datum/material/glass = 1500, /datum/material/silver = 4000, /datum/material/gold = 2500)
 	build_path = /obj/item/scalpel/advanced
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE*/
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE

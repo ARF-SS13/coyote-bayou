@@ -10,6 +10,8 @@
 	"apc_control", "power control", "airlock_board", "firelock_board", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine", "rcd_ammo","oxygen_tank",
 	"plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "colormate")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	alt_skill = SKILL_REPAIR
+
 
 /datum/techweb_node/adv_engi
 	id = "adv_engi"
@@ -19,6 +21,9 @@
 	design_ids = list("forcefield_projector", "weldingmask" , // Removed "rcd_loaded" because we commented it out :v
 	"rcd_upgrade_frames", "rcd_upgrade_simple_circuits", "rcd_ammo_large", "sheetifier")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/anomaly
 	id = "anomaly_research"
@@ -27,6 +32,8 @@
 	prereq_ids = list("adv_engi", "practical_bluespace")
 	design_ids = list("reactive_armour", "anomaly_neutralizer")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
+	skill_level_needed = HARD_CHECK
+
 
 /datum/techweb_node/high_efficiency
 	id = "high_efficiency"
@@ -35,6 +42,8 @@
 	prereq_ids = list("engineering", "datatheory")
 /*	design_ids = list("pico_mani", "super_matter_bin")*/
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/adv_power
 	id = "adv_power"
@@ -43,6 +52,8 @@
 	prereq_ids = list("engineering")
 	design_ids = list("smes", "super_cell", "hyper_cell", "superpacman", "mrspacman", "power_turbine", "power_turbine_console", "power_compressor", "circulator", "teg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /*
 /datum/techweb_node/basic_meteor_defense
