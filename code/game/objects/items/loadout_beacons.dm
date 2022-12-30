@@ -633,12 +633,21 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 
 /obj/item/storage/box/gun/rifle/sidewinder //should this be allowed? not field tested personally
-	name = "multi-caliber smg case"
+	name = "multi-caliber carbine case"
 
 /obj/item/storage/box/gun/rifle/sidewinder/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/sidewinder(src)
+	new /obj/item/gun/ballistic/automatic/smg/sidewinder/worn(src)
 	new /obj/item/ammo_box/magazine/m22(src) //you asked for multicaliber, you get multiple calibers
 	new /obj/item/ammo_box/magazine/m45(src)
+
+/obj/item/storage/box/gun/rifle/sidewinder_magnum //should this be allowed? not field tested personally
+	name = "multi-caliber magnum case"
+
+/obj/item/storage/box/gun/rifle/sidewinder_magnum/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/sidewinder/magnum(src)
+	new /obj/item/ammo_box/magazine/m45(src) //you asked for multicaliber, you get multiple calibers
+	new /obj/item/ammo_box/magazine/m44(src)
+	new /obj/item/ammo_box/magazine/m14mm(src)
 
 /obj/item/storage/box/gun/rifle/m1carbine
 	name = "M1 carbine case"
@@ -736,6 +745,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/melee/chainsaw/PopulateContents()
 	new /obj/item/twohanded/chainsaw(src)
+
+/obj/item/storage/box/gun/melee/fist_of_the_swampstar
+	name = "bands of the swampstar case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/fist_of_the_swampstar/PopulateContents()
+	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
 
 /obj/item/storage/box/gun/melee/militarypolice
 	name = "baton case"
@@ -878,12 +894,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m44(src)
 
 /obj/item/storage/box/gun/revolver/thatgun
-	name = ".223 pistol case"
+	name = ".308 pistol case"
 
 /obj/item/storage/box/gun/revolver/thatgun/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/thatgun(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
+	new /obj/item/ammo_box/a308(src)
+	new /obj/item/ammo_box/a308(src)
 
 /// Semiauto pistols!
 
@@ -955,7 +971,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/tribal/bmprsword
 	name = "bumpersword case"
 
-/obj/item/storage/box/gun/tribal/bmprword/PopulateContents()
+/obj/item/storage/box/gun/tribal/bmprsword/PopulateContents()
 	new /obj/item/twohanded/fireaxe/bmprsword(src)
 
 /obj/item/storage/box/gun/tribal/warmace
@@ -1236,10 +1252,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/rifle/smg22
 
 /datum/loadout_box/sidewinder
-	entry_tag = "Multicaliber SMG"
+	entry_tag = "Multicaliber Carbine"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
+
+/* /datum/loadout_box/sidewinder_magnum
+	entry_tag = "Multicaliber Magnum"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder_magnum */
 
 /datum/loadout_box/m1carbine
 	entry_tag = "M1 Carbine"
@@ -1372,7 +1394,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/revolver/revolver44
 
 /datum/loadout_box/thatgun //thotgun
-	entry_tag = ".223 Revolver"
+	entry_tag = ".308 Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver/thatgun
@@ -1470,6 +1492,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/chainsaw
+
+/datum/loadout_box/fist_of_the_swampstar // pornstar
+	entry_tag = "Bands of the Swamp Star gloves"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/fist_of_the_swampstar
 
 /datum/loadout_box/militarypolice
 	entry_tag = "Police Baton"

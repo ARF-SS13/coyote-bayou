@@ -103,7 +103,6 @@ Mayor
 	backpack_contents = list(
 	/obj/item/clothing/under/f13/general/oasis = 1,
 	/obj/item/clothing/head/f13/army/general = 1,
-	// /obj/item/gun/ballistic/automatic/pistol/m1911/custom = 1,
 	// /obj/item/ammo_box/magazine/m45 = 2,
 	/obj/item/clothing/shoes/jackboots = 1,
 	/obj/item/clothing/mask/cigarette/pipe/cobpipe = 1
@@ -928,7 +927,6 @@ Mayor
 	///obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
 	/obj/item/storage/medical/ancientfirstaid = 1,
 	/obj/item/reagent_containers/food/drinks/flask/survival = 1,
-	/obj/item/book/granter/trait/trekking = 1,
 	///obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 	///obj/item/ammo_box/magazine/m10mm/adv/simple = 1
 	)
@@ -990,7 +988,6 @@ Mayor
 	head = /obj/item/clothing/head/helmet/armyhelmet
 	suit = /obj/item/clothing/suit/armor/medium/vest/breastplate
 	uniform = /obj/item/clothing/under/f13/combat/militia
-	r_hand = /obj/item/gun/ballistic/rifle/hunting
 	gloves = /obj/item/clothing/gloves/f13/leather
 	shoes = /obj/item/clothing/shoes/f13/military
 	belt = /obj/item/storage/belt/bandolier

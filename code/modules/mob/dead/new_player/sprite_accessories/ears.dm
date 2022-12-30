@@ -110,7 +110,7 @@
 	name = "Cobra Hood"
 	icon_state = "cobra"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
-	color_src = SKINTONE
+	color_src = MUTCOLORS
 
 /datum/sprite_accessory/ears/human/cow
 	name = "Cow"
@@ -372,7 +372,7 @@
 	name = "Cobra Hood"
 	icon_state = "cobra"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
-	color_src = SKINTONE
+	color_src = MUTCOLORS
 
 /datum/sprite_accessory/ears/mam_ears/cow
 	name = "Cow"

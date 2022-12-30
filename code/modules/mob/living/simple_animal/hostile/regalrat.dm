@@ -176,13 +176,31 @@
 	see_in_dark = 6
 	maxHealth = 15
 	health = 15
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 7
+	vision_range = 8
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	density = FALSE
 	ventcrawler = VENTCRAWLER_ALWAYS
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
+	randpixel = 6
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	faction = list("rat")
+
+	variation_list = list(
+		MOB_SPEED_LIST(1.5, 1.8, 2.0),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(5, 10, 15, 20, 24),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 3),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(40),
+	)
 
 /mob/living/simple_animal/hostile/rat/Initialize()
 	. = ..()
