@@ -1017,7 +1017,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder/worn
 	name = "multi-caliber carbine"
-	desc = "The answer to all your ammo-scrounging problems! The TwisTactical Spindoctor SMMG (sub-machine multi-gun) integrates \
+	desc = "The answer to all your ammo-scrounging problems! The TwisTactical Spindoctor MGC (multi-gun carbine) integrates \
 			rotation-reactive metalmers in the upper assembly to change what ammunition it accepts, from .22LR to .45ACP with a \
 			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
 			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \

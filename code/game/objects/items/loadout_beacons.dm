@@ -643,7 +643,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/sidewinder_magnum //should this be allowed? not field tested personally
 	name = "multi-caliber magnum case"
 
-/obj/item/storage/box/gun/rifle/sidewinder/PopulateContents()
+/obj/item/storage/box/gun/rifle/sidewinder_magnum/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/smg/sidewinder/magnum(src)
 	new /obj/item/ammo_box/magazine/m45(src) //you asked for multicaliber, you get multiple calibers
 	new /obj/item/ammo_box/magazine/m44(src)
@@ -745,6 +745,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/melee/chainsaw/PopulateContents()
 	new /obj/item/twohanded/chainsaw(src)
+
+/obj/item/storage/box/gun/melee/fist_of_the_swampstar
+	name = "bands of the swampstar case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/fist_of_the_swampstar/PopulateContents()
+	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
 
 /obj/item/storage/box/gun/melee/militarypolice
 	name = "baton case"
@@ -1250,11 +1257,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
 
-/datum/loadout_box/sidewinder_magnum
+/* /datum/loadout_box/sidewinder_magnum
 	entry_tag = "Multicaliber Magnum"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder_magnum
+	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder_magnum */
 
 /datum/loadout_box/m1carbine
 	entry_tag = "M1 Carbine"
@@ -1387,7 +1394,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/revolver/revolver44
 
 /datum/loadout_box/thatgun //thotgun
-	entry_tag = ".223 Revolver"
+	entry_tag = ".308 Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver/thatgun
@@ -1485,6 +1492,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/chainsaw
+
+/datum/loadout_box/fist_of_the_swampstar // pornstar
+	entry_tag = "Bands of the Swamp Star gloves"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/fist_of_the_swampstar
 
 /datum/loadout_box/militarypolice
 	entry_tag = "Police Baton"
