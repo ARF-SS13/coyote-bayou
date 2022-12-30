@@ -21,7 +21,7 @@
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
 	taunt_chance = 30
-	speed = 1
+	speed = 0
 	maxHealth = 35
 	health = 35
 	harm_intent_damage = 8
@@ -97,6 +97,9 @@
 		)
 	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+	can_ghost_into = TRUE // not a bad idea at all
+	desc_short = "Short, angry, and as confused as they are tasty."
+	desc_important = "Still in development! Report wierdness on the discord!"
 
 
 
@@ -144,6 +147,11 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
+/mob/living/simple_animal/hostile/gecko/Aggro()
+	. = ..()
+	if(.)
+		return
+	summon_backup(15)
 
 //////////////////////////
 // NIGHTSTALKERS & PELT //

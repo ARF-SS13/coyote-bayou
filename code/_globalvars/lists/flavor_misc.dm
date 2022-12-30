@@ -276,8 +276,11 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 	"lizard tongue" = /obj/item/organ/tongue/lizard,
 	"cat tongue" = /obj/item/organ/tongue/cat,
 	"dog tongue" = /obj/item/organ/tongue/dog,
-	//"skeleton tongue" = /obj/item/organ/tongue/bone, 
-	//"fly tongue" = /obj/item/organ/tongue/fly, 
+	"french tongue" = /obj/item/organ/tongue/french,
+	"scottish tongue" = /obj/item/organ/tongue/scottish,
+	"bug tongue" = /obj/item/organ/tongue/bug,
+	//"skeleton tongue" = /obj/item/organ/tongue/bone,
+	//"fly tongue" = /obj/item/organ/tongue/fly,
 	//"ipc tongue" = /obj/item/organ/tongue/robot/ipc
 	))
 

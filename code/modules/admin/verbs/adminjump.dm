@@ -96,6 +96,30 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Jump To Key") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/client/proc/jumptovalidball()
+	set category = "Admin.Game"
+	set name = "Jump to Ball"
+	set desc = "Jump to the validballs"
+
+	if(!src.holder)
+		to_chat(src, "Only administrators may use this command.", confidential = TRUE)
+		return
+
+	if(!LAZYLEN(SSvalidball.valid_balls))
+		to_chat(src, "There are no validballs. Validball is not go.", confidential = TRUE)
+		return
+
+	var/obj/item/validball/selection = input("Please, select a validball! This will teleport your mob, so AGHOST FIRST!!!", "Validball Hunting", null, null) as null|anything in SSvalidball.valid_balls
+	if(!selection)
+		to_chat(src, "Nevermind.", confidential = TRUE)
+		return
+	log_admin("[key_name(usr)] jumped to [selection]")
+	message_admins("[key_name_admin(usr)] jumped to [ADMIN_LOOKUPFLW(selection)]")
+
+	usr.forceMove(get_turf(selection))
+
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Jump To Validball") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 /client/proc/Getmob(mob/M in GLOB.mob_list - GLOB.dummy_mob_list)
 	set category = "Admin.Game"
 	set name = "Get Mob"

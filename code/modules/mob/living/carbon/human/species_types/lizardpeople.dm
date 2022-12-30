@@ -5,14 +5,14 @@
 	say_mod = "hisses"
 	default_color = "00FF00"
 	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,LIPS,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE)
-	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
+	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE|MOB_BEAST
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutanttail = /obj/item/organ/tail/lizard
 	coldmod = 1.5
 	heatmod = 0.67
 	mutant_bodyparts = list("mcolor" = "0F0", "mcolor2" = "0F0", "mcolor3" = "0F0", "tail_lizard" = "Smooth", "mam_snouts" = "Round",
 							"horns" = "None", "frills" = "None", "spines" = "None", "mam_body_markings" = list(),
-							"legs" = "Digitigrade", "taur" = "None", "deco_wings" = "None")
+							"legs" = "Digitigrade", "taur" = "None", "deco_wings" = "None", "mam_ears" = "None")
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -29,6 +29,7 @@
 	tail_type = "tail_lizard"
 	wagging_type = "waggingtail_lizard"
 	species_type = "lizard"
+	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)

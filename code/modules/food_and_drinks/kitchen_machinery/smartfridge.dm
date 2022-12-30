@@ -842,12 +842,13 @@
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/books
 	chance_initial_contents = list(
-		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
-		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_one = 1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_two = 1,
-		/obj/item/book/granter/crafting_recipe/gunsmith_three = 1)
+		/obj/item/book/granter/crafting_recipe/gunsmith_three = 1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_four = 1,
+		/obj/item/book/granter/crafting_recipe/scav_two = 1,
+		/obj/item/book/granter/crafting_recipe/scav_three = 1)
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/condiment
 	desc = "A rusted pre-war shelf, this one has a faded label about condiments. "

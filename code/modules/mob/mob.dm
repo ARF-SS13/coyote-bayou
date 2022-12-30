@@ -896,6 +896,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	return faction_check(faction, target.faction, FALSE)
 
 /proc/faction_check(list/faction_A, list/faction_B, exact_match)
+	if(!islist(faction_A))
+		faction_A = list(faction_A)
+	if(!islist(faction_B))
+		faction_B = list(faction_B)
 	var/list/match_list
 	if(exact_match)
 		match_list = faction_A&faction_B //only items in both lists

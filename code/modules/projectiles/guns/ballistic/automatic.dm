@@ -929,9 +929,12 @@
 			user.show_message(span_alert("[src] needs to be <u>completely</u> unloaded before working the TwistForm mechanism!"))
 			return
 
-	var/message2self = "You wrench the upper receiver of [src] out of its socket and it one full turn. "
-	var/message2everyone = "[user] spins [user.p_their()] their gun around. It makes a wierd click."
 	allowed_mags = list()
+	change_the_ammo(user)
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/proc/change_the_ammo(mob/user)
+	var/message2self = "You wrench the upper receiver of [src] out of its socket and give it one full turn."
+	var/message2everyone = "[user] spins [user.p_their()] their gun around. It makes a wierd click."
 	switch(current_caliber)
 		if("22LR")
 			current_caliber = "9mm"
@@ -1013,68 +1016,90 @@
 //worn sidewinder
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder/worn
-	name = "worn multi-caliber smg"
-	desc = "The answer to all your ammo-scrounging problems! The TwisTactical Spindoctor SMMG (sub-machine multi-gun) integrates \
+	name = "multi-caliber carbine"
+	desc = "The answer to all your ammo-scrounging problems! The TwisTactical Spindoctor MGC (multi-gun carbine) integrates \
 			rotation-reactive metalmers in the upper assembly to change what ammunition it accepts, from .22LR to .45ACP with a \
 			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
 			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
 			inherently poor accuracy. Doesn't accept awkwardly shaped magazines, though. That's for the PRO model, which isn't \
-			available out here. The burstfire and semi auto functions have been utterly trashed by time."
+			available out here. This model is locked to semi-auto!"
 	icon_state = "sidewinder"
-	slowdown = GUN_SLOWDOWN_SMG_LIGHT
-	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
-	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
-	current_caliber = "9mm"
-	added_spread = GUN_SPREAD_POOR
-	slowdown = GUN_SLOWDOWN_SMG_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 
-	is_automatic = TRUE
-	automatic = 1
-
-	gun_tags = list(GUN_SCOPE, GUN_SILENCABLE)
-	can_scope = TRUE
-	scope_state = "AEP7_scope"
-	scope_x_offset = 10
-	scope_y_offset = 22
-	can_flashlight = TRUE
-
-	can_flashlight = TRUE
-	scope_state = "flight"
-	flight_x_offset = 16
-	flight_y_offset = 18
-
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 31
-	suppressor_y_offset = 17
-
-	init_firemodes = list(/datum/firemode/semi_auto)
-
-	actions_types = list(/datum/action/item_action/toggle_sidewinder)
-	fire_sound = 'sound/f13weapons/9mm.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+/// multical-magnum
+/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum
+	name = "multi-caliber magnum"
+	desc = "A heavier, more robust multi-caliber carbine! The TwisTactical Magnum uses a thicker-walled roto-mechanism that allows its \
+			rotation-reactive metalmers to withstand higher pressures, now able to safely fire anything from .45ACP to 14mm with a \
+			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
+			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
+			inherently poor accuracy. Only accepts small magazines. This model is locked to semi-auto!"
+	icon_state = "sidewinder-magnum"
+	mag_type = /obj/item/ammo_box/magazine/m44
+	extra_mag_types = /obj/item/ammo_box/magazine/m44/automag
+	init_mag_type = /obj/item/ammo_box/magazine/m44
+	current_caliber = "44"
+	init_recoil = CARBINE_RECOIL(0.8)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
 	)
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum/change_the_ammo(mob/user)
+	var/message2self = "You wrench the upper receiver of [src] out of its socket and give it one full turn. "
+	var/message2everyone = "[user] spins [user.p_their()] their gun around. It makes a wierd click."
+	switch(current_caliber)
+		if("44")
+			current_caliber = "14mm"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m14mm)
+			fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+			message2self += "The panel on the side now reads: \"14mm Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_HEAVY_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+			)
+		if("14mm")
+			current_caliber = "45ACP"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m45)
+			fire_sound = 'sound/weapons/gunshot_smg.ogg'
+			message2self += "The panel on the side now reads: \".45ACP Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+			)
+		if("45ACP")
+			current_caliber = "44"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m44)
+			fire_sound = 'sound/f13weapons/44mag.ogg'
+			message2self += "The panel on the side now reads: \".44 Magnum Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_HEAVY_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+			)
+	playsound(get_turf(src), 'sound/f13weapons/revolverspin.ogg', 60, 1)
+	if(user)
+		user.visible_message(message2everyone,span_notice(message2self))
+
 
 /* * * * * * *
  * Carbines  *
@@ -1437,6 +1462,7 @@
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW

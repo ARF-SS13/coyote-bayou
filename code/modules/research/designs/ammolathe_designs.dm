@@ -122,6 +122,27 @@
 	build_path = /obj/item/ammo_box/m44/empty
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
 
+/datum/design/ammolathe/speedloader45
+	name = "empty speed loader (.45 ACP)"
+	id = "speedloader45"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_box/c45rev/empty
+	category = list("initial", "Simple Magazines", "Handmade Magazines")
+
+/datum/design/ammolathe/a308empty
+	name = "empty 308 stripper clip"
+	id = "a308empty"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_box/a308/empty
+	category = list("initial", "Simple Magazines", "Handmade Magazines")
+
+/datum/design/ammolathe/a308empty_2
+	name = "empty double-stack 308 stripper clip"
+	id = "a308empty-ex"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_box/a762/doublestacked/empty
+	category = list("initial", "Simple Magazines", "Handmade Magazines")
+
 /datum/design/ammolathe/automag44
 	name = "empty automag magazine  (.44 magnum)"
 	id = "magnum"

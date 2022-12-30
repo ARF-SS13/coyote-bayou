@@ -104,3 +104,40 @@
 				O.say(speech_args[SPEECH_MESSAGE])
 	speech_args[SPEECH_MESSAGE] = ""
 	return speech_args
+
+
+//Arfs accents
+
+/datum/accent/french/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "th", "zh")
+		message = replacetext(message, "s", "z")
+		message = replacetext(message, "r", "rr")
+		message = replacetext(message, "h", "'")
+		message = replacetext(message, "i", "e")
+	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	return speech_args
+
+/datum/accent/scottish/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "h", "'")
+		message = replacetext(message, "g", "'")
+		message = replacetext(message, "of", "o")
+		message = replacetext(message, "your", "yer")
+		message = replacetext(message, "and", "agus")
+	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	return speech_args
+
+/datum/accent/bug/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "s", "sz")
+		message = replacetext(message, "s", "z")
+		message = replacetext(message, "s", "zz")
+		message = replacetext(message, "th", "zk")
+		message = replacetext(message, "r", "rk")
+		message = replacetext(message, "f", "zk")
+	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	return speech_args

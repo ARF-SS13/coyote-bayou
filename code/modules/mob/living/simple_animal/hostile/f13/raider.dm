@@ -52,9 +52,12 @@
 	head = /obj/item/clothing/head/helmet/f13/firefighter
 
 /mob/living/simple_animal/hostile/raider/Aggro()
-	..()
+	. = ..()
+	if(.)
+		return
 	summon_backup(15)
-	say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
+	if(!ckey)
+		say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
 
 // THIEF RAIDER - nabs stuff and runs
 /mob/living/simple_animal/hostile/raider/thief
@@ -184,7 +187,7 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	move_to_delay = 4.0 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
-	minimum_distance = 3 //Mob pushes up to melee, then backs off to avoid player attack?
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	projectile_sound_properties = list(
@@ -198,10 +201,20 @@
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
 
+	variation_list = list(
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 4),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(0, 2, 4),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(40),
+	)
+
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
-	..()
+	. = ..()
+	if(.)
+		return
 	summon_backup(15)
-	say("KILL 'EM, FELLAS!")
+	if(!ckey)
+		say("KILL 'EM, FELLAS!")
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt
 	name = "Mango Mathew and his Merry Meth Madlads"
@@ -514,7 +527,9 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Aggro()
-	..()
+	. = ..()
+	if(.)
+		return
 	summon_backup(10)
 
 /mob/living/simple_animal/hostile/raider/junker/boss

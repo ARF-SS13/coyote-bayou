@@ -143,6 +143,9 @@
 /proc/log_paper(text)
 	WRITE_LOG(GLOB.world_paper_log, "PAPER: [text]")
 
+/proc/log_validball(text)
+	WRITE_LOG(GLOB.world_job_debug_log, "VALIDBALL: [text]")
+
 /proc/log_telecomms(text)
 	if (CONFIG_GET(flag/log_telecomms))
 		WRITE_LOG(GLOB.world_telecomms_log, "TCOMMS: [text]")

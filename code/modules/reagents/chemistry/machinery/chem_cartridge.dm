@@ -60,13 +60,13 @@
 	icon_state = "crafted"
 	item_state = "crafted"
 	custom_price = PRICE_ABOVE_EXPENSIVE
-	maxCharge = 15000
+	maxCharge = 7000
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500)
 
 /obj/item/stock_parts/chem_cartridge/simple
 	name = "Knock-off chemical cartridge"
 	desc = "A casing holding a mix of raw material for use in chem dispensors. It looks like a mass produced knock-off."
-	maxCharge = 10000
+	maxCharge = 5000
 	custom_price = PRICE_ABOVE_EXPENSIVE
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500, /datum/material/plasma = 100)
 
@@ -76,5 +76,5 @@
 	icon_state = "pristine"
 	item_state = "pristine"
 	custom_price = PRICE_REALLY_EXPENSIVE
-	maxCharge = 20000
+	maxCharge = 10000
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=1000, /datum/material/plasma = 500)
