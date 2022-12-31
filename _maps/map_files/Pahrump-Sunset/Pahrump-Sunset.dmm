@@ -6552,6 +6552,10 @@
 /area/f13/wasteland/city)
 "axl" = (
 /obj/structure/barricade/sandbags,
+/obj/machinery/light/sign/nash{
+	pixel_x = -8;
+	pixel_y = 28
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
@@ -22990,14 +22994,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
-"clD" = (
-/obj/machinery/light/sign/nash{
-	pixel_x = -14
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland)
 "clE" = (
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/simple_door/metal/store,
@@ -26400,9 +26396,6 @@
 	},
 /area/f13/wasteland)
 "dfQ" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
 	randomizer_kind = "low level mobs";
@@ -39030,6 +39023,12 @@
 	layer = 2.5;
 	pixel_y = 5
 	},
+/obj/item/radio/tribal{
+	pixel_x = -1;
+	pixel_y = 10;
+	anchored = 1
+	},
+/obj/structure/table/wood,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop3"
 	},
@@ -41777,6 +41776,17 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"imR" = (
+/obj/machinery/button/door{
+	id = "nashgate";
+	name = "gate button";
+	pixel_x = 9;
+	pixel_y = 22
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland)
 "imS" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -43247,6 +43257,15 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
+"iLj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "iLn" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -57579,6 +57598,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nwW" = (
@@ -61430,6 +61450,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "oNB" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
 	randomizer_kind = "low level mobs";
@@ -62909,15 +62932,6 @@
 	icon_state = "verticalinnermain1"
 	},
 /area/f13/wasteland/city)
-"pnW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Depot Dregs"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "poa" = (
 /obj/structure/lamp_post{
 	dir = 8
@@ -89237,7 +89251,7 @@ vaN
 vaN
 vaN
 vaN
-vXM
+vaN
 pzk
 vaN
 pzk
@@ -89493,7 +89507,7 @@ oVr
 oVr
 oVr
 oVr
-vaN
+vXM
 hrh
 adE
 tfE
@@ -96223,7 +96237,7 @@ skm
 skm
 skm
 apX
-skm
+imR
 ojt
 rEY
 kxH
@@ -97251,7 +97265,7 @@ tnZ
 ogY
 vAR
 apX
-clD
+tnZ
 cee
 mGE
 aLn
@@ -99467,7 +99481,7 @@ nHY
 iAq
 iAq
 teE
-oNB
+dfQ
 fhA
 aOk
 aOk
@@ -104104,7 +104118,7 @@ etg
 aOk
 vOV
 aOk
-dfQ
+oNB
 aOk
 aOk
 aOk
@@ -104640,7 +104654,7 @@ acD
 aOk
 aOk
 aOk
-pnW
+iLj
 aOk
 aOk
 flt
@@ -106994,7 +107008,7 @@ aOk
 aOk
 aOk
 cFK
-pnW
+iLj
 cFK
 wqe
 hmR
@@ -111602,7 +111616,7 @@ lfZ
 fKh
 lPd
 aOk
-oNB
+dfQ
 www
 tiw
 fby
@@ -112366,7 +112380,7 @@ rAM
 mkA
 etg
 aOk
-oNB
+dfQ
 aOk
 dBg
 etg
