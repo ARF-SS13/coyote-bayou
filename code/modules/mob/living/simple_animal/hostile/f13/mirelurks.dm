@@ -14,6 +14,7 @@
 	icon_living = "mirelurk"
 	icon_dead = "mirelurk_d"
 	speed = 1
+	can_ghost_into = TRUE
 	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
@@ -54,8 +55,8 @@
 	icon_dead = "mirelurkhunter_d"
 	icon_gib = "gib"
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	gold_core_spawnable = HOSTILE_SPAWN

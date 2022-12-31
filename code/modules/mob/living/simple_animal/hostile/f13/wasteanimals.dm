@@ -339,6 +339,7 @@
 	icon_living = "molerat"
 	icon_dead = "molerat_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1,/obj/item/stack/sheet/animalhide/molerat = 1, /obj/item/stack/sheet/bone = 1)
