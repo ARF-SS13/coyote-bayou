@@ -6552,6 +6552,10 @@
 /area/f13/wasteland/city)
 "axl" = (
 /obj/structure/barricade/sandbags,
+/obj/machinery/light/sign/nash{
+	pixel_x = -8;
+	pixel_y = 28
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
@@ -22986,14 +22990,6 @@
 /area/f13/wasteland)
 "cly" = (
 /obj/structure/tires/two,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland)
-"clD" = (
-/obj/machinery/light/sign/nash{
-	pixel_x = -14
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -97269,7 +97265,7 @@ tnZ
 ogY
 vAR
 apX
-clD
+tnZ
 cee
 mGE
 aLn
