@@ -443,6 +443,7 @@
 	waddle_amount = 4
 	waddle_up_time = 3
 	waddle_side_time = 2
+	can_ghost_into = TRUE
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -485,6 +486,7 @@
 	icon_living = "radroach"
 	icon_dead = "radroach_dead"
 	icon_gib = "radroach_gib"
+	can_ghost_into = TRUE
 	waddle_amount = 1
 	waddle_up_time = 1
 	waddle_side_time = 1

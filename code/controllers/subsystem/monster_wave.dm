@@ -1,9 +1,9 @@
 SUBSYSTEM_DEF(monster_wave)
 	name = "Monster Wave"
-	wait = 20 MINUTES //change to either 30 MINUTES or 1 HOURS
+	wait = 5 MINUTES //change to either 30 MINUTES or 1 HOURS
 	var/successful_firing = 0
-	var/allowed_firings = 30
-	var/chance_of_fire = 80 //Fuck you, people need mobs to shoot! -TK
+	var/allowed_firings = 90
+	var/chance_of_fire = 95 //Fuck you, people need mobs to shoot! -TK
 
 //So admins, you want to be a tough guy, like it really rough guy?
 //just know you can't modify the time in between each fire
