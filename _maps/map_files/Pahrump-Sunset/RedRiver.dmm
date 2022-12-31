@@ -3458,6 +3458,12 @@
 /obj/structure/closet/crate/radiation,
 /turf/open/floor/plating/rust,
 /area/f13/building)
+"bZt" = (
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain1"
+	},
+/area/f13/wasteland)
 "bZJ" = (
 /obj/structure/fence{
 	max_integrity = 500;
@@ -11590,6 +11596,11 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"gFy" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "gFC" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -18518,6 +18529,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"kKm" = (
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland)
 "kKw" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -21489,6 +21506,12 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/f13/building/abandoned)
+"mwE" = (
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain1"
+	},
+/area/f13/wasteland)
 "mwN" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/inside/mountain,
@@ -21704,7 +21727,7 @@
 "mBN" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/secure_closet/medical3,
+/obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -23925,6 +23948,12 @@
 	icon_state = "innershade"
 	},
 /area/f13/wasteland)
+"nYd" = (
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "horizontaltopborderbottom1"
+	},
+/area/f13/wasteland)
 "nYv" = (
 /obj/structure/simple_door/repaired,
 /obj/effect/decal/cleanable/dirt,
@@ -24712,6 +24741,10 @@
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"owf" = (
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "owh" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/spacevine,
@@ -26770,6 +26803,12 @@
 "pCT" = (
 /obj/structure/fence/corner,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"pCZ" = (
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
 /area/f13/wasteland)
 "pDh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -32045,6 +32084,10 @@
 /obj/item/reagent_containers/food/snacks/grown/ambrosia,
 /turf/open/floor/plasteel,
 /area/f13/building/abandoned)
+"sOO" = (
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "sOX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/f13/outside/road{
@@ -34146,6 +34189,7 @@
 /obj/structure/lattice{
 	pixel_x = 19
 	},
+/mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontaloutermain2"
 	},
@@ -40955,6 +40999,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
+"ygW" = (
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain2"
+	},
+/area/f13/wasteland)
 "yhu" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /obj/effect/decal/cleanable/oil{
@@ -43068,7 +43118,7 @@ fBS
 mUa
 fBS
 jrv
-fBS
+owf
 iEb
 bvq
 tTT
@@ -44360,7 +44410,7 @@ lrX
 sKg
 uhY
 gic
-ega
+gFy
 cds
 lrX
 nTq
@@ -45374,7 +45424,7 @@ roR
 oFm
 kRw
 kRp
-cQC
+kKm
 fBS
 fBS
 tTT
@@ -45908,7 +45958,7 @@ nNp
 fpu
 oFm
 ojX
-qHL
+mwE
 rlM
 gUg
 duP
@@ -46934,7 +46984,7 @@ uxM
 mXB
 nNp
 cTI
-nhN
+nYd
 pVV
 aGc
 rlM
@@ -47434,7 +47484,7 @@ cQC
 sYs
 ubi
 ykJ
-fBS
+sOO
 quO
 nrv
 yhW
@@ -47474,7 +47524,7 @@ xoW
 lCt
 laC
 laC
-hSC
+ygW
 wkh
 obd
 laC
@@ -53895,7 +53945,7 @@ rlk
 eXs
 tct
 dRB
-oFm
+pCZ
 oMa
 oMa
 noh
@@ -58778,7 +58828,7 @@ oMa
 oMa
 pVV
 hOS
-qHL
+bZt
 oMa
 oMa
 wUE
