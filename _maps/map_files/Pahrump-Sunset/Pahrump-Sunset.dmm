@@ -26400,14 +26400,16 @@
 	},
 /area/f13/wasteland)
 "dfQ" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1"
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
 	},
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dfU" = (
 /obj/structure/flora/burnedtree2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -34153,9 +34155,6 @@
 /area/f13/ruins)
 "fGS" = (
 /obj/effect/decal/marking,
-/mob/living/simple_animal/hostile/eyebot/playable{
-	faction = list("raider")
-	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -41778,15 +41777,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"imR" = (
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 1;
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/city)
 "imS" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -43257,15 +43247,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
-"iLj" = (
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "iLn" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -61449,14 +61430,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "oNB" = (
-/mob/living/simple_animal/hostile/eyebot/playable{
-	faction = list("raider")
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
 	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "oNI" = (
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /turf/open/floor/plasteel/f13{
@@ -62931,13 +62911,13 @@
 /area/f13/wasteland/city)
 "pnW" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/eyebot/playable{
-	faction = list("raider")
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "poa" = (
 /obj/structure/lamp_post{
 	dir = 8
@@ -99487,7 +99467,7 @@ nHY
 iAq
 iAq
 teE
-aOk
+oNB
 fhA
 aOk
 aOk
@@ -104124,7 +104104,7 @@ etg
 aOk
 vOV
 aOk
-etg
+dfQ
 aOk
 aOk
 aOk
@@ -104660,7 +104640,7 @@ acD
 aOk
 aOk
 aOk
-cFK
+pnW
 aOk
 aOk
 flt
@@ -107014,7 +106994,7 @@ aOk
 aOk
 aOk
 cFK
-cFK
+pnW
 cFK
 wqe
 hmR
@@ -111253,7 +111233,7 @@ vnf
 tOa
 aaD
 axc
-iLj
+aaL
 aaD
 akg
 aeu
@@ -111505,7 +111485,7 @@ uxe
 sxj
 sxj
 sxj
-pnW
+xjm
 kIm
 cgE
 aiM
@@ -111622,7 +111602,7 @@ lfZ
 fKh
 lPd
 aOk
-aOk
+oNB
 www
 tiw
 fby
@@ -112286,7 +112266,7 @@ gkX
 cgE
 gkX
 gkX
-imR
+gkX
 wEp
 gkX
 anh
@@ -112386,7 +112366,7 @@ rAM
 mkA
 etg
 aOk
-aOk
+oNB
 aOk
 dBg
 etg
@@ -116131,7 +116111,7 @@ aLT
 aLT
 aLT
 sxj
-oNB
+eDe
 hXr
 sxj
 sxj
@@ -119479,7 +119459,7 @@ ieq
 ofk
 myk
 rTr
-dfQ
+lpx
 isL
 tVD
 gTx
