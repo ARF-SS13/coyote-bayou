@@ -26400,15 +26400,15 @@
 	},
 /area/f13/wasteland)
 "dfQ" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
+/obj/machinery/button/door{
+	id = "nashgate";
+	name = "gate button";
+	pixel_x = 8;
+	pixel_y = 22
 	},
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Depot Dregs"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
 	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dfU" = (
 /obj/structure/flora/burnedtree2,
@@ -41776,6 +41776,17 @@
 	dir = 6;
 	icon_state = "dirt"
 	},
+/area/f13/wasteland)
+"imR" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "imS" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -96223,7 +96234,7 @@ skm
 skm
 skm
 apX
-skm
+dfQ
 ojt
 rEY
 kxH
@@ -104104,7 +104115,7 @@ etg
 aOk
 vOV
 aOk
-dfQ
+imR
 aOk
 aOk
 aOk
