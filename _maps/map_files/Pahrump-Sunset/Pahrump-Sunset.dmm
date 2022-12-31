@@ -15208,11 +15208,9 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "aZX" = (
-/obj/effect/landmark/vertibird{
-	id = "Nash - Middle of Nash town"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "aZY" = (
@@ -19699,6 +19697,10 @@
 "bvj" = (
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/light,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "bvo" = (
@@ -28205,6 +28207,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city)
+"dJp" = (
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2right"
+	},
+/area/f13/wasteland)
 "dJr" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -28304,6 +28312,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
+"dKN" = (
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/mineral/equipment_vendor,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "dKY" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 1;
@@ -33260,7 +33273,9 @@
 	},
 /area/f13/wasteland/massfusion)
 "fsE" = (
-/obj/machinery/mineral/equipment_vendor,
+/obj/structure/railing{
+	color = "#A47449"
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "fsF" = (
@@ -33535,6 +33550,9 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building/museum)
+"fwh" = (
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "fwl" = (
 /obj/effect/decal/marking{
 	icon_state = "dottedverticalcorroded"
@@ -40165,12 +40183,11 @@
 	},
 /area/f13/building/abandoned)
 "hKQ" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "Nashsewers"
+/obj/effect/landmark/vertibird{
+	id = "Nash - Middle of Nash town"
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/building/abandoned)
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "hKS" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -79181,7 +79198,10 @@
 	color = "#a98c5d";
 	dir = 8
 	},
-/obj/structure/flora/grass/coyote/thirteen,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "uXn" = (
@@ -80211,6 +80231,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
+"vpe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland)
 "vph" = (
 /obj/structure/chair{
 	dir = 1
@@ -80698,6 +80725,19 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
+"vxJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "nashwall2"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/wasteland)
 "vxK" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/machinery/light/broken{
@@ -80922,12 +80962,14 @@
 	color = "#a98c5d";
 	dir = 4
 	},
-/obj/structure/ladder/unbreakable{
-	id = "nashwall2";
-	height = 1
+/obj/machinery/button/door{
+	id = "nashgate";
+	name = "gate button";
+	pixel_x = -8;
+	pixel_y = -25
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
 "vAW" = (
@@ -81020,6 +81062,14 @@
 	color = "#9c9c9c"
 	},
 /area/f13/wasteland)
+"vCm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/corner{
+	dir = 8;
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "vCq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken,
@@ -81513,6 +81563,7 @@
 "vMJ" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2left"
 	},
@@ -82233,6 +82284,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"vZl" = (
+/obj/machinery/door/poddoor/gate/preopen{
+	id = "nashgate";
+	name = "outpost gate"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland)
 "vZv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -94122,7 +94182,7 @@ oPM
 fjQ
 lVH
 lVH
-lVH
+hKQ
 lVH
 lVH
 mqk
@@ -96182,7 +96242,7 @@ skm
 skm
 skm
 skm
-skm
+apX
 skm
 ojt
 rEY
@@ -96439,10 +96499,10 @@ nvn
 nvn
 bzm
 nvn
-tRk
+vZl
 nvn
 nvn
-kDp
+xGq
 pWU
 ayn
 hEG
@@ -96696,7 +96756,7 @@ ids
 nvn
 aeC
 tRk
-aZX
+nvn
 nvn
 aeC
 kDp
@@ -97209,14 +97269,14 @@ ogY
 ogY
 tnZ
 ogY
-ogY
-tnZ
+vAR
+apX
 clD
 cee
 mGE
 aLn
 rqu
-gdZ
+dJp
 anR
 ebe
 oNw
@@ -97427,8 +97487,8 @@ cex
 cex
 fMX
 cex
-bxT
-mRf
+cex
+cex
 uIr
 gXa
 hfd
@@ -97470,10 +97530,10 @@ bzz
 apX
 apX
 axl
-mGE
-wVA
+aQJ
+vpe
 vMJ
-hEG
+aZX
 anR
 aOk
 aQd
@@ -97683,9 +97743,9 @@ smI
 fMX
 fMX
 cex
-cex
 fsE
-bxT
+bgk
+mlb
 pvr
 gXa
 rUG
@@ -97936,11 +97996,11 @@ bGz
 lfi
 qpR
 bzk
-lHK
+dKN
 lHK
 cex
 fMX
-fMX
+vCm
 bvj
 axz
 iCZ
@@ -102530,10 +102590,10 @@ puU
 bie
 dQs
 cex
-hHX
+fvw
 vaN
 vaN
-acl
+fvw
 btt
 iXi
 osp
@@ -102563,7 +102623,7 @@ lyN
 aHF
 ufG
 baH
-hKQ
+baH
 fBM
 fYU
 izQ
@@ -102788,8 +102848,8 @@ acl
 acl
 acl
 acl
-vaN
-vaN
+fwh
+fwh
 acl
 abu
 acl
@@ -104103,8 +104163,8 @@ acl
 rnG
 mpV
 pzk
-vAR
-aoQ
+vaN
+vxJ
 pzk
 pzk
 fqS
@@ -104360,7 +104420,7 @@ apX
 apX
 apX
 apX
-apX
+eiJ
 apX
 apX
 apX
@@ -104617,7 +104677,7 @@ apX
 apX
 apX
 apX
-apX
+fwh
 apX
 apX
 apX
@@ -104871,13 +104931,13 @@ oTM
 oTM
 aAH
 aAH
-oTM
+cVr
+apX
+apX
+apX
+apX
+apX
 uXd
-oTM
-oTM
-oTM
-oTM
-oTM
 oTM
 oTM
 oTM
@@ -105129,11 +105189,11 @@ bjb
 aOk
 aOk
 aOk
-aOk
-aOk
-aOk
-aOk
-aOk
+cVr
+apX
+apX
+apX
+uXd
 aOk
 aOk
 aOk
@@ -105387,9 +105447,9 @@ aOk
 aOk
 aOk
 aOk
-aOk
-aOk
-aOk
+oTM
+oTM
+oTM
 fjI
 aOk
 aOk
