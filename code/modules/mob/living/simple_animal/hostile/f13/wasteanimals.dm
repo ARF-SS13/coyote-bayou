@@ -191,7 +191,7 @@
 	response_harm_simple = "bites"
 	emote_taunt = list("growls")
 	taunt_chance = 30
-	speed = -1
+	speed = 1
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
@@ -349,7 +349,7 @@
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
 	taunt_chance = 30
-	speed = -1
+	speed = 2
 	maxHealth = 25
 	health = 25
 	harm_intent_damage = 8
