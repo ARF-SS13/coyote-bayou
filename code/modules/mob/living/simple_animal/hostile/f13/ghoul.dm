@@ -270,7 +270,7 @@
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
-	pop_required_to_jump_into = BIG_MOB_MED_PLAYERS
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 	desc_short = "A glowing creature that may or may not be a reanimated corpse."
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)

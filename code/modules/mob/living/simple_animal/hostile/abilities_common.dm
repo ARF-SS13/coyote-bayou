@@ -126,10 +126,6 @@
 				continue
 			M.Goto(user,M.move_to_delay,1)
 			M.do_alert_animation(M)
-	if(lowpop_is_now)
-		owner.show_message(span_notice("You summon a little bit of help from nearby!"))
-	else
-		owner.show_message(span_notice("You summon help from nearby!"))
 	return TRUE
 
 /* 
@@ -201,10 +197,6 @@
 				continue
 			M.Goto(target,M.move_to_delay,1)
 			M.do_alert_animation(M)
-	if(lowpop_is_now)
-		owner.show_message(span_notice("You summon a little bit of help from nearby!"))
-	else
-		owner.show_message(span_notice("You summon help from nearby!"))
 	remove_ranged_ability()
 	return TRUE
 
