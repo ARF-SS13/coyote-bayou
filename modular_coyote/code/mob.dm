@@ -31,7 +31,7 @@
 	icon_dead = "catslug_dead"
 	icon = 'modular_coyote/icons/mob/slugcat.dmi'
 
-	faction = "catslug"
+	faction = list("catslug", "neutral")
 	maxHealth = 500
 	health = 500
 	healable = 1

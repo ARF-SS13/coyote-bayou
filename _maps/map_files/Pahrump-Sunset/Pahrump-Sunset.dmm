@@ -6552,6 +6552,10 @@
 /area/f13/wasteland/city)
 "axl" = (
 /obj/structure/barricade/sandbags,
+/obj/machinery/light/sign/nash{
+	pixel_x = -8;
+	pixel_y = 28
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
@@ -15208,11 +15212,9 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "aZX" = (
-/obj/effect/landmark/vertibird{
-	id = "Nash - Middle of Nash town"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "aZY" = (
@@ -19699,6 +19701,10 @@
 "bvj" = (
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/light,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "bvo" = (
@@ -22984,14 +22990,6 @@
 /area/f13/wasteland)
 "cly" = (
 /obj/structure/tires/two,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland)
-"clD" = (
-/obj/machinery/light/sign/nash{
-	pixel_x = -14
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -26398,14 +26396,13 @@
 	},
 /area/f13/wasteland)
 "dfQ" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dfU" = (
 /obj/structure/flora/burnedtree2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -28205,6 +28202,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city)
+"dJp" = (
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2right"
+	},
+/area/f13/wasteland)
 "dJr" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -28304,6 +28307,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
+"dKN" = (
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/mineral/equipment_vendor,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "dKY" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 1;
@@ -30775,15 +30783,6 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/building/museum)
-"eBG" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/abandoned)
 "eBH" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
@@ -33260,7 +33259,9 @@
 	},
 /area/f13/wasteland/massfusion)
 "fsE" = (
-/obj/machinery/mineral/equipment_vendor,
+/obj/structure/railing{
+	color = "#A47449"
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "fsF" = (
@@ -33535,6 +33536,9 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building/museum)
+"fwh" = (
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "fwl" = (
 /obj/effect/decal/marking{
 	icon_state = "dottedverticalcorroded"
@@ -34135,9 +34139,6 @@
 /area/f13/ruins)
 "fGS" = (
 /obj/effect/decal/marking,
-/mob/living/simple_animal/hostile/eyebot/playable{
-	faction = list("raider")
-	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -39013,6 +39014,12 @@
 	layer = 2.5;
 	pixel_y = 5
 	},
+/obj/item/radio/tribal{
+	pixel_x = -1;
+	pixel_y = 10;
+	anchored = 1
+	},
+/obj/structure/table/wood,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop3"
 	},
@@ -40165,12 +40172,11 @@
 	},
 /area/f13/building/abandoned)
 "hKQ" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "Nashsewers"
+/obj/effect/landmark/vertibird{
+	id = "Nash - Middle of Nash town"
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/building/abandoned)
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "hKS" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -41762,14 +41768,16 @@
 	},
 /area/f13/wasteland)
 "imR" = (
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
+/obj/machinery/button/door{
+	id = "nashgate";
+	name = "gate button";
+	pixel_x = 9;
+	pixel_y = 22
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	dir = 1;
-	icon_state = "horizontaloutermain1"
+	icon_state = "verticalleftborderleft0"
 	},
-/area/f13/wasteland/city)
+/area/f13/wasteland)
 "imS" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -43241,14 +43249,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "iLj" = (
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
 	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "iLn" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -57581,6 +57589,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nwW" = (
@@ -61432,14 +61441,16 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "oNB" = (
-/mob/living/simple_animal/hostile/eyebot/playable{
-	faction = list("raider")
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
 	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Depot Dregs"
 	},
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "oNI" = (
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /turf/open/floor/plasteel/f13{
@@ -62910,15 +62921,6 @@
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain1"
-	},
-/area/f13/wasteland/city)
-"pnW" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/eyebot/playable{
-	faction = list("raider")
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city)
 "poa" = (
@@ -79181,7 +79183,10 @@
 	color = "#a98c5d";
 	dir = 8
 	},
-/obj/structure/flora/grass/coyote/thirteen,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "uXn" = (
@@ -80211,6 +80216,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
+"vpe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland)
 "vph" = (
 /obj/structure/chair{
 	dir = 1
@@ -80698,6 +80710,19 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
+"vxJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "nashwall2"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/wasteland)
 "vxK" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/machinery/light/broken{
@@ -80922,12 +80947,14 @@
 	color = "#a98c5d";
 	dir = 4
 	},
-/obj/structure/ladder/unbreakable{
-	id = "nashwall2";
-	height = 1
+/obj/machinery/button/door{
+	id = "nashgate";
+	name = "gate button";
+	pixel_x = -8;
+	pixel_y = -25
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
 "vAW" = (
@@ -81020,6 +81047,14 @@
 	color = "#9c9c9c"
 	},
 /area/f13/wasteland)
+"vCm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/corner{
+	dir = 8;
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "vCq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken,
@@ -81513,6 +81548,7 @@
 "vMJ" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2left"
 	},
@@ -82233,6 +82269,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"vZl" = (
+/obj/machinery/door/poddoor/gate/preopen{
+	id = "nashgate";
+	name = "outpost gate"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland)
 "vZv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -89197,7 +89242,7 @@ vaN
 vaN
 vaN
 vaN
-vXM
+vaN
 pzk
 vaN
 pzk
@@ -89453,7 +89498,7 @@ oVr
 oVr
 oVr
 oVr
-vaN
+vXM
 hrh
 adE
 tfE
@@ -94122,7 +94167,7 @@ oPM
 fjQ
 lVH
 lVH
-lVH
+hKQ
 lVH
 lVH
 mqk
@@ -96182,8 +96227,8 @@ skm
 skm
 skm
 skm
-skm
-skm
+apX
+imR
 ojt
 rEY
 kxH
@@ -96439,10 +96484,10 @@ nvn
 nvn
 bzm
 nvn
-tRk
+vZl
 nvn
 nvn
-kDp
+xGq
 pWU
 ayn
 hEG
@@ -96696,7 +96741,7 @@ ids
 nvn
 aeC
 tRk
-aZX
+nvn
 nvn
 aeC
 kDp
@@ -97209,14 +97254,14 @@ ogY
 ogY
 tnZ
 ogY
-ogY
+vAR
+apX
 tnZ
-clD
 cee
 mGE
 aLn
 rqu
-gdZ
+dJp
 anR
 ebe
 oNw
@@ -97427,8 +97472,8 @@ cex
 cex
 fMX
 cex
-bxT
-mRf
+cex
+cex
 uIr
 gXa
 hfd
@@ -97470,10 +97515,10 @@ bzz
 apX
 apX
 axl
-mGE
-wVA
+aQJ
+vpe
 vMJ
-hEG
+aZX
 anR
 aOk
 aQd
@@ -97683,9 +97728,9 @@ smI
 fMX
 fMX
 cex
-cex
 fsE
-bxT
+bgk
+mlb
 pvr
 gXa
 rUG
@@ -97936,11 +97981,11 @@ bGz
 lfi
 qpR
 bzk
-lHK
+dKN
 lHK
 cex
 fMX
-fMX
+vCm
 bvj
 axz
 iCZ
@@ -99427,7 +99472,7 @@ nHY
 iAq
 iAq
 teE
-aOk
+dfQ
 fhA
 aOk
 aOk
@@ -102530,10 +102575,10 @@ puU
 bie
 dQs
 cex
-hHX
+fvw
 vaN
 vaN
-acl
+fvw
 btt
 iXi
 osp
@@ -102563,7 +102608,7 @@ lyN
 aHF
 ufG
 baH
-hKQ
+baH
 fBM
 fYU
 izQ
@@ -102788,8 +102833,8 @@ acl
 acl
 acl
 acl
-vaN
-vaN
+fwh
+fwh
 acl
 abu
 acl
@@ -104064,7 +104109,7 @@ etg
 aOk
 vOV
 aOk
-etg
+oNB
 aOk
 aOk
 aOk
@@ -104103,8 +104148,8 @@ acl
 rnG
 mpV
 pzk
-vAR
-aoQ
+vaN
+vxJ
 pzk
 pzk
 fqS
@@ -104360,7 +104405,7 @@ apX
 apX
 apX
 apX
-apX
+eiJ
 apX
 apX
 apX
@@ -104600,7 +104645,7 @@ acD
 aOk
 aOk
 aOk
-cFK
+iLj
 aOk
 aOk
 flt
@@ -104617,7 +104662,7 @@ apX
 apX
 apX
 apX
-apX
+fwh
 apX
 apX
 apX
@@ -104871,13 +104916,13 @@ oTM
 oTM
 aAH
 aAH
-oTM
+cVr
+apX
+apX
+apX
+apX
+apX
 uXd
-oTM
-oTM
-oTM
-oTM
-oTM
 oTM
 oTM
 oTM
@@ -105129,11 +105174,11 @@ bjb
 aOk
 aOk
 aOk
-aOk
-aOk
-aOk
-aOk
-aOk
+cVr
+apX
+apX
+apX
+uXd
 aOk
 aOk
 aOk
@@ -105387,9 +105432,9 @@ aOk
 aOk
 aOk
 aOk
-aOk
-aOk
-aOk
+oTM
+oTM
+oTM
 fjI
 aOk
 aOk
@@ -106954,7 +106999,7 @@ aOk
 aOk
 aOk
 cFK
-cFK
+iLj
 cFK
 wqe
 hmR
@@ -111193,7 +111238,7 @@ vnf
 tOa
 aaD
 axc
-iLj
+aaL
 aaD
 akg
 aeu
@@ -111445,7 +111490,7 @@ uxe
 sxj
 sxj
 sxj
-pnW
+xjm
 kIm
 cgE
 aiM
@@ -111562,7 +111607,7 @@ lfZ
 fKh
 lPd
 aOk
-aOk
+dfQ
 www
 tiw
 fby
@@ -112226,7 +112271,7 @@ gkX
 cgE
 gkX
 gkX
-imR
+gkX
 wEp
 gkX
 anh
@@ -112326,7 +112371,7 @@ rAM
 mkA
 etg
 aOk
-aOk
+dfQ
 aOk
 dBg
 etg
@@ -114504,7 +114549,7 @@ aak
 aae
 vVo
 csL
-eBG
+aJb
 aJb
 cIE
 pVH
@@ -116071,7 +116116,7 @@ aLT
 aLT
 aLT
 sxj
-oNB
+eDe
 hXr
 sxj
 sxj
@@ -119419,7 +119464,7 @@ ieq
 ofk
 myk
 rTr
-dfQ
+lpx
 isL
 tVD
 gTx

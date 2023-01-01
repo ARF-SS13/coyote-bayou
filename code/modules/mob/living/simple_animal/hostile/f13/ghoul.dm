@@ -11,6 +11,7 @@
 	icon_living = "feralghoul"
 	icon_dead = "feralghoul_dead"
 	var/rare_icon = "feralghoul_h"
+	can_ghost_into = TRUE
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mob_armor = ARMOR_VALUE_GHOUL_NAKED
 	maxHealth = 40 
@@ -222,6 +223,7 @@
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
 	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
+	can_ghost_into = FALSE
 	maxHealth = 200
 	health = 200
 	speed = 2.5
@@ -293,6 +295,7 @@
 	maxHealth = 256
 	health = 256
 	speed = 1.4 // Nyooom
+	can_ghost_into = FALSE
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	armour_penetration = 0.1
@@ -413,6 +416,7 @@
 	desc = "A ferocious feral ghoul, hungry for human meat."
 	faction = list("ghoul")
 	stat_attack = CONSCIOUS
+	can_ghost_into = FALSE
 	maxHealth = 200
 	health = 200
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -433,6 +437,7 @@
 	speed = 2
 	maxHealth = 216
 	health = 216
+	can_ghost_into = FALSE
 	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -448,6 +453,7 @@
 	maxHealth = 192
 	health = 192
 	speed = 2
+	can_ghost_into = FALSE
 	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -481,8 +487,9 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	maxHealth = 520
-	health = 520
+	maxHealth = 200
+	health = 200
+	can_ghost_into = FALSE
 	speed = 2.5
 	harm_intent_damage = 8
 	melee_damage_lower = 30

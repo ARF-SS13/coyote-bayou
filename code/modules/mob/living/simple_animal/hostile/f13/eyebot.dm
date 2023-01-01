@@ -9,6 +9,7 @@
 	icon_state = "eyebot"
 	icon_living = "eyebot"
 	icon_dead = "eyebot_d"
+	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 6
 	environment_smash = 0

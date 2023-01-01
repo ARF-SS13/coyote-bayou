@@ -14,6 +14,7 @@
 	icon_living = "handy"
 	icon_dead = "robot_dead"
 	speed = 2
+	can_ghost_into = TRUE
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	move_resist = MOVE_FORCE_OVERPOWERING // Can't be pulled
@@ -108,6 +109,7 @@
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "robot_dead"
+	can_ghost_into = FALSE
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
 	maxHealth = 100 
 	health = 100
@@ -201,6 +203,7 @@
 	health = 50
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+	can_ghost_into = FALSE
 	attack_verb_simple = "slaps"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
@@ -237,6 +240,7 @@
 	name = "liberator"
 	desc = "A small pre-War droned used by the People's Liberation Army."
 	icon_state = "liberator_y"
+	can_ghost_into = FALSE
 	icon_living = "leberator_y"
 	icon_dead = "liberator_y_d"
 
@@ -250,6 +254,7 @@
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
 	maxHealth = 110 
 	health = 110
+	can_ghost_into = FALSE
 	melee_damage_lower = 20
 	melee_damage_upper = 45
 	attack_verb_simple = "slaps"
@@ -291,6 +296,7 @@
 	name = "robobrain"
 	aggro_vision_range = 15
 	faction = list("raider")
+	can_ghost_into = FALSE
 	obj_damage = 300
 	health = 300
 	maxHealth = 300
@@ -306,6 +312,7 @@
 	maxHealth = 100 
 	health = 100
 	speed = 4
+	can_ghost_into = TRUE
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10
 	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
@@ -415,6 +422,7 @@
 /mob/living/simple_animal/hostile/handy/protectron/nsb //NSB + Raider Bunker specific
 	name = "protectron"
 	aggro_vision_range = 15
+	can_ghost_into = FALSE
 	faction = list("raider")
 	obj_damage = 300
 	send_mobs = null
@@ -429,6 +437,7 @@
 	icon_dead = "protectron_trade_dead"
 	maxHealth = 200
 	health = 200
+	can_ghost_into = FALSE
 	speak_chance = 5
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	faction = list(
@@ -481,6 +490,7 @@
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
 	maxHealth = 100 
 	health = 100
+	can_ghost_into = FALSE
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	speed = 1
 	melee_damage_lower = 25
@@ -507,6 +517,7 @@
 	aggro_vision_range = 15
 	faction = list("raider")
 	obj_damage = 300
+	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/handy/assaultron/playable
 	see_in_dark = 8
@@ -517,6 +528,7 @@
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM, INTENT_GRAB, INTENT_DISARM)
 	dextrous = TRUE
 	deathmessage = "abruptly shuts down, falling to the ground!"
+	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/handy/assaultron/playable/medical
 	name = "SA-S-E"
@@ -532,6 +544,7 @@
 	projectilesound = 'sound/magic/fireball.ogg'
 	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
 	extra_projectiles = 1
+	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/handy/assaultron/laser
 	name = "red eye assaultron"
@@ -552,3 +565,5 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	can_ghost_into = FALSE
+

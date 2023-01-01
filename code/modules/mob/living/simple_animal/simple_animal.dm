@@ -224,6 +224,9 @@
 	if(jobban_isbanned(user, ROLE_SYNDICATE))
 		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
 		return
+	if(client)
+		to_chat(user, span_warning("Someone's in there! Wait your turn!"))
+		return
 	if(QDELETED(src) || QDELETED(user))
 		return
 	if(!(z in COMMON_Z_LEVELS))
