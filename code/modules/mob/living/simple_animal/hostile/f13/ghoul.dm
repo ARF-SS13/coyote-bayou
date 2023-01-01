@@ -50,7 +50,7 @@
 		"goes full tilt"
 		)
 	a_intent = INTENT_HARM
-	speed = 3
+	speed = 1
 	harm_intent_damage = 8
 	melee_damage_lower = 7
 	melee_damage_upper = 13
@@ -107,6 +107,11 @@
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	can_ghost_into = TRUE
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/ghoul
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/ghoul
+	desc_short = "A flimsy creature that may or may not be a reanimated corpse."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 
 /mob/living/simple_animal/hostile/ghoul/Initialize()
 	. = ..()
@@ -125,13 +130,14 @@
 	rare_icon = "ghoulreaver_h"
 	speed = 2
 	mob_armor = ARMOR_VALUE_GHOUL_REAVER
-	maxHealth = 50 
+	maxHealth = 50
 	health = 50
 	rapid_melee = 2
 	retreat_distance = 3
 	minimum_distance = 1
 	ranged = TRUE
 	ranged_message = "throws a rock"
+	ranged_cooldown_time = 1 SECONDS
 	projectiletype = /obj/item/projectile/bullet/ghoul_rock
 	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8
@@ -139,6 +145,8 @@
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	can_ghost_into = TRUE
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
@@ -148,6 +156,7 @@
 			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/jagged_scrap, 1)\
 		)
 	)
+	desc_short = "A beefy creature that may or may not be a reanimated corpse."
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -160,17 +169,20 @@
 	name = "feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
+	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
 	name = "plated feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
+	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
 	name = "feral ghoul officer"
 	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 60
 	speed = 3
+	can_ghost_into = FALSE
 
 //Cold Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/coldferal
@@ -187,6 +199,7 @@
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	can_ghost_into = FALSE
 
 //Frozen Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/frozenreaver
@@ -203,7 +216,8 @@
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 //Legendary Ghoul
 /mob/living/simple_animal/hostile/ghoul/legendary
 	name = "legendary ghoul"
@@ -225,7 +239,12 @@
 	bare_wound_bonus = 0
 	loot = list(/obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE //heeeeeell no
+	call_backup = null
+	send_mobs = null
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
+	desc_short = "A deadly creature that may or may not be reanimated jerky."
+
 //Glowing Ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
 	name = "glowing feral ghoul"
@@ -250,7 +269,10 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = TRUE
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
+	desc_short = "A glowing creature that may or may not be a reanimated corpse."
+
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
 	// we only heal BRUTELOSS because each type directly heals a simplemob's health
@@ -297,7 +319,8 @@
 	health = 60
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier/armored
 	name = "armored ghoul soldier"
@@ -310,7 +333,8 @@
 	maxHealth = 80 
 	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/scorched
 	name = "scorched ghoul soldier"
@@ -332,7 +356,8 @@
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
 	name = "Ranged Ghoul Solder"
@@ -359,7 +384,8 @@
 	attack_verb_simple = "shoots"
 	attack_sound = "punch"
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 //Sunset mob of some sort?
 /mob/living/simple_animal/hostile/ghoul/wyomingghost
 	name = "ghost soldier"
@@ -388,7 +414,8 @@
 	decompose = FALSE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 //Halloween Event Ghouls
 /mob/living/simple_animal/hostile/ghoul/zombie
 	name = "ravenous feral ghoul"
@@ -399,7 +426,8 @@
 	maxHealth = 200
 	health = 200
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 /mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
@@ -420,7 +448,8 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing
 	name = "ravenous glowing feral ghoul"
 	desc = "A ferocious feral ghoul, hungry for human meat. This one has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
@@ -437,7 +466,8 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	
+	can_ghost_into = FALSE
+
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing/Initialize(mapload)
 	. = ..()
 	// we only heal BRUTELOSS because each type directly heals a simplemob's health
@@ -474,4 +504,5 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	can_ghost_into = FALSE
 

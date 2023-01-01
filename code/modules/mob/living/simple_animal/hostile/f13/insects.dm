@@ -351,7 +351,7 @@
 	stat_attack = CONSCIOUS
 	robust_searching = TRUE
 	taunt_chance = 30
-	speed = -0.5
+	speed = 1
 	maxHealth = 24
 	health = 24
 	harm_intent_damage = 8
@@ -432,8 +432,9 @@
 	icon_living = "bloatfly"
 	icon_dead = "bloatfly_dead"
 	icon_gib = null
+	ranged = TRUE
 
-	speed = -1
+	speed = 1
 	maxHealth = 20
 	health = 20
 	harm_intent_damage = 8
@@ -462,17 +463,39 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("hostile", "gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
+	pass_flags = PASSTABLE | PASSMOB
+	density = FALSE
 	a_intent = INTENT_HARM
 	blood_volume = 0
+	casingtype = /obj/item/ammo_casing/shotgun/bloatfly
+	projectiletype = null
+	projectilesound = 'sound/f13npc/bloatfly/shoot1.ogg'
+	sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
+	sound_after_shooting_delay = 1 SECONDS
+	extra_projectiles = 1
+	auto_fire_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	ranged_cooldown_time = 3 SECONDS
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
+		MOB_CASING_LIST(\
+			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly, 4),\
+			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly/two, 3),\
+			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly/three, 3)\
+		)
+	)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 /mob/living/simple_animal/hostile/bloatfly/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
 	if(prob(50))
-		return ..()
-	else
 		visible_message(span_danger("[src] dodges [Proj]!"))
-		return 0
+		return BULLET_ACT_FORCE_PIERCE
+	else
+		. = ..()
 
 //////////////
 // RADROACH //
@@ -522,3 +545,7 @@
 	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	desc_short = "One of countless bugs that move in gross hordes."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
