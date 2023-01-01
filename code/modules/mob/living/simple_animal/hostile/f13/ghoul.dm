@@ -128,13 +128,14 @@
 	rare_icon = "ghoulreaver_h"
 	speed = 2
 	mob_armor = ARMOR_VALUE_GHOUL_REAVER
-	maxHealth = 50 
+	maxHealth = 50
 	health = 50
 	rapid_melee = 2
 	retreat_distance = 3
 	minimum_distance = 1
 	ranged = TRUE
 	ranged_message = "throws a rock"
+	ranged_cooldown_time = 1 SECONDS
 	projectiletype = /obj/item/projectile/bullet/ghoul_rock
 	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8

@@ -69,8 +69,11 @@
 	var/list/spawnerlist = GLOB.mob_spawners[group_name]
 	if(!spawnerlist.len)
 		return
+	var/players_on = living_player_count()
 	for(var/mob/living/simple_animal/animal in spawnerlist)
 		if(!(animal.z in COMMON_Z_LEVELS))
+			spawnerlist -= animal
+		if(animal.pop_required_to_jump_into > players_on && (!animal.lazarused))
 			spawnerlist -= animal
 	var/atom/MS = pick(spawnerlist)
 	if(!istype(MS))

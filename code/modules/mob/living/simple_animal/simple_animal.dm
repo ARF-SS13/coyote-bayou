@@ -262,21 +262,21 @@
 	user.transfer_ckey(src, TRUE)
 	grant_all_languages()
 	if(lazarused)
-		to_chat(user, span_userdanger("[name] has been lazarus injected! There are special rules for playing as this creature!"))
-		to_chat(user, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
+		to_chat(src, span_userdanger("[name] has been lazarus injected! There are special rules for playing as this creature!"))
+		to_chat(src, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
 		var/mob/the_master
 		if(isweakref(lazarused_by))
 			the_master = lazarused_by.resolve()
 		if(the_master)
-			to_chat(user, span_alert("Your master is [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
-			log_game("[key_name(user)] has been informed that they ([name]) are lazarus injected, and will serve [the_master.real_name].")
+			to_chat(src, span_alert("Your master is [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
+			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected, and will serve [the_master.real_name].")
 			if(mind)
 				mind.store_memory("You have been lazarus injected by [the_master.real_name], and you're bound to follow their commands! (within reason)")
 		else
-			to_chat(user, span_alert("Your master is be Nash and its citizens, protect them at all costs!"))
+			to_chat(src, span_alert("Your master is be Nash and its citizens, protect them at all costs!"))
 			if(mind)
 				mind.store_memory("You have been lazarus injected, and are bound to serve the town of Nash and protect its people.")
-			log_game("[key_name(user)] has been informed that they ([name]) are lazarus injected, and will serve Nash.")
+			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected, and will serve Nash.")
 
 /mob/living/simple_animal/ComponentInitialize()
 	. = ..()
@@ -298,6 +298,10 @@
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
+	if(lazarused)
+		LAZYREMOVE(GLOB.mob_spawners["Tame [initial(name)]"], src)
+		if(!LAZYLEN(GLOB.mob_spawners["Tame [initial(name)]"]))
+			GLOB.mob_spawners -= "Tame [initial(name)]"
 	lazarused_by = null
 
 	var/turf/T = get_turf(src)
@@ -318,18 +322,25 @@
 /mob/living/simple_animal/proc/make_ghostable(mob/user)
 	can_ghost_into = TRUE
 	AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
-	if(send_mobs)
-		send_mobs = new
+	if(ispath(send_mobs))
+		var/obj/effect/proc_holder/mob_common/direct_mobs/DM = send_mobs
+		send_mobs = new DM
 		AddAbility(send_mobs)
-	if(call_backup)
-		call_backup = new
+	if(ispath(call_backup))
+		var/obj/effect/proc_holder/mob_common/summon_backup/CB = call_backup
+		call_backup = new CB
 		AddAbility(call_backup)
 	LAZYADD(GLOB.mob_spawners[initial(name)], src)
 	if(istype(user))
+		lazarused = TRUE
 		lazarused_by = WEAKREF(user)
 		if(user.mind)
 			user.mind.store_memory("You were revived by [user.real_name], and thus are compelled to follow their commands and protect them!")
 		show_message(span_userdanger("You were revived by [user.real_name], and are bound to protect them and follow their commands!"))
+		LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
+		if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
+			GLOB.mob_spawners -= initial(name)
+		LAZYADD(GLOB.mob_spawners["Tame [initial(name)]"], src)
 
 /mob/living/simple_animal/updatehealth()
 	..()

@@ -50,7 +50,7 @@
 	if(!istype(user))
 		return FALSE
 	if(banned_from_lowpop && living_player_count() < TOO_LOW_POP_FOR_MOB_HECK)
-		user.show_message(span_alert("There aren't enough people around to do that!"))
+		user.show_message(span_alert("There needs to be at least [TOO_LOW_POP_FOR_MOB_HECK] living players on to do this!"))
 		return FALSE
 	if(!is_available(user))
 		return FALSE
@@ -150,7 +150,6 @@
 
 /obj/effect/proc_holder/mob_common/direct_mobs/Trigger(mob/user)
 	if(!..())
-		user.show_message(span_alert("You can't do that!"))
 		return
 	var/message
 	if(active)
@@ -205,6 +204,8 @@
 	name = "Dig Nest"
 	desc = "Dig down and tap into the endless underground resource that is monsters."
 	var/obj/structure/nest/nest_to_spawn
+	action_icon = 'icons/mob/nest_new.dmi'
+	action_icon_state = "hole"
 	COOLDOWN_DECLARE(nest_cooldown)
 
 /obj/effect/proc_holder/mob_common/make_nest/gecko
@@ -212,15 +213,20 @@
 
 /// Is it available?
 /obj/effect/proc_holder/mob_common/make_nest/is_available(mob/living/user)
-	if(COOLDOWN_TIMELEFT(src, nest_cooldown))
-		user.show_message(span_alert("You can't do this for another<u>[(nest_cooldown-world.time)*0.1] seconds</u>."))
+	if(!..())
 		return FALSE
-	if(user.ckey && LAZYLEN(GLOB.player_made_nests[user.ckey]) > 3)
+	if(COOLDOWN_TIMELEFT(src, nest_cooldown))
+		user.show_message(span_alert("You can't do this for another <u>[(nest_cooldown-world.time)*0.1] seconds</u>."))
+		return FALSE
+	if(user.ckey && LAZYLEN(GLOB.player_made_nests[user.ckey]) >= 3)
 		user.show_message(span_alert("You already have 3 active nests! Go remove some of them if you want more."))
 		return FALSE
 	return TRUE
 
 /obj/effect/proc_holder/mob_common/make_nest/Trigger(mob/user)
+	if(!..())
+		return
+
 	if(!istype(user))
 		return
 
@@ -235,9 +241,14 @@
 	if(!the_turf)
 		return
 	
+	var/obj/structure/nest/herenest = locate(/obj/structure/nest) in the_turf
+	if(herenest)
+		owner.show_message(span_alert("There's a nest here!"))
+		return
+
 	playsound(the_turf, 'sound/effects/shovel_dig.ogg', 50, 1)
 	owner.visible_message(span_alert("[owner] starts to dig a hole..."))
-	if(!do_after(owner, 10 SECONDS, FALSE))
+	if(!do_after(owner, 10 SECONDS, FALSE, owner))
 		owner.show_message(span_alert("You were interrupted!"))
 		return
 

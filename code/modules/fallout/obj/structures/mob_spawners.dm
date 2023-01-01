@@ -75,7 +75,9 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 /obj/structure/nest/proc/register_ckey(ckey)
 	if(!ckey)
 		return
-	GLOB.player_made_nests[ckey] += src
+	if(!islist(GLOB.player_made_nests[ckey]))
+		GLOB.player_made_nests[ckey] = list()
+	GLOB.player_made_nests[ckey] |= src
 	spawned_by_ckey = ckey
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
