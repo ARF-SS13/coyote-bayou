@@ -604,3 +604,15 @@
 #define ATTACK_MESSAGE_ANTISPAM_TIME 0.5 SECONDS
 /// cooldown for making the DING
 #define SIMPLE_MOB_DING_COOLDOWN 3 SECONDS
+
+///living players needed to jump into big mobs
+#define BIG_MOB_MIN_PLAYERS 15
+///living players needed to jump into medium mobs
+#define MED_MOB_MIN_PLAYERS 10
+///living players needed to jump into medium mobs
+#define SMALL_MOB_MIN_PLAYERS 10
+///living players needed to activate full mob ability powers
+#define MOB_POWER_FULL_MIN_PLAYERS 15
+///living players needed to activate limited mob ability powers
+#define MOB_POWER_SOME_MIN_PLAYERS 8
+

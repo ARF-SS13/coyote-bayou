@@ -163,9 +163,9 @@
 	///Can ghosts just hop into one of these guys?
 	var/can_ghost_into = FALSE
 	///Short desc of the mob
-	var/desc_short = "This is a short desc of the mob. It is very short."
+	var/desc_short = "Some kind of horrible monster."
 	///Important info of the mob
-	var/desc_important = "This is important info about the mob, like rules and things to keep in mind. feel free to ignore it"
+	var/desc_important = ""
 	var/obj/effect/proc_holder/mob_common/direct_mobs/send_mobs
 	var/obj/effect/proc_holder/mob_common/summon_backup/call_backup
 	var/datum/action/innate/ghostify/ghostme

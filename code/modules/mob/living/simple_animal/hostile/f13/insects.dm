@@ -485,6 +485,8 @@
 	)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 /mob/living/simple_animal/hostile/bloatfly/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
@@ -545,3 +547,5 @@
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	desc_short = "One of countless bugs that move in gross hordes."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS

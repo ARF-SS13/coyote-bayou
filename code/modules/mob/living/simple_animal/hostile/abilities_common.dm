@@ -1,4 +1,3 @@
-#define TOO_LOW_POP_FOR_MOB_HECK 10
 #define RTS_GHOUL_ALLOWED list(\
 		/mob/living/simple_animal/hostile/ghoul,\
 		/mob/living/simple_animal/hostile/ghoul/reaver,\
@@ -40,7 +39,8 @@
 	action_icon_state = "Chevron_State_0"
 
 	var/list/allowed_mobs = list()
-	var/banned_from_lowpop = FALSE
+	var/banned_from_lowpop = TRUE
+	var/lowpop_is_now
 
 /obj/effect/proc_holder/mob_common/Initialize()
 	. = ..()
@@ -49,16 +49,23 @@
 /obj/effect/proc_holder/mob_common/Trigger(mob/user)
 	if(!istype(user))
 		return FALSE
-	if(banned_from_lowpop && living_player_count() < TOO_LOW_POP_FOR_MOB_HECK)
-		user.show_message(span_alert("There needs to be at least [TOO_LOW_POP_FOR_MOB_HECK] living players on to do this!"))
+	if(banned_from_lowpop && is_lowpop())
+		user.show_message(span_alert("There needs to be at least [MOB_POWER_FULL_MIN_PLAYERS] living players on to do this!"))
 		return FALSE
+	if(is_medpop())
+		lowpop_is_now = TRUE
+	else
+		lowpop_is_now = FALSE
 	if(!is_available(user))
 		return FALSE
 	activate(user)
 	return TRUE
 
 /obj/effect/proc_holder/mob_common/proc/is_lowpop()
-	return living_player_count() < TOO_LOW_POP_FOR_MOB_HECK
+	return living_player_count() < MOB_POWER_FULL_MIN_PLAYERS
+
+/obj/effect/proc_holder/mob_common/proc/is_medpop()
+	return living_player_count() < MOB_POWER_SOME_MIN_PLAYERS
 
 /// Toggles active and inactive
 /obj/effect/proc_holder/mob_common/proc/activate(mob/living/user)
@@ -109,7 +116,7 @@
 	var/allmobs = FALSE
 	if(!LAZYLEN(allowed_mobs))
 		allmobs = TRUE
-	else if(is_lowpop())
+	else if(lowpop_is_now)
 		who_to_check = list(owner.type)
 	else
 		who_to_check = allowed_mobs
@@ -119,6 +126,10 @@
 				continue
 			M.Goto(user,M.move_to_delay,1)
 			M.do_alert_animation(M)
+	if(lowpop_is_now)
+		owner.show_message(span_notice("You summon a little bit of help from nearby!"))
+	else
+		owner.show_message(span_notice("You summon help from nearby!"))
 	return TRUE
 
 /* 
@@ -180,7 +191,7 @@
 	var/allmobs = FALSE
 	if(!LAZYLEN(allowed_mobs))
 		allmobs = TRUE
-	else if(is_lowpop())
+	else if(lowpop_is_now)
 		who_to_check = list(user.type)
 	else
 		who_to_check = allowed_mobs
@@ -190,6 +201,10 @@
 				continue
 			M.Goto(target,M.move_to_delay,1)
 			M.do_alert_animation(M)
+	if(lowpop_is_now)
+		owner.show_message(span_notice("You summon a little bit of help from nearby!"))
+	else
+		owner.show_message(span_notice("You summon help from nearby!"))
 	remove_ranged_ability()
 	return TRUE
 
@@ -211,6 +226,9 @@
 /obj/effect/proc_holder/mob_common/make_nest/gecko
 	nest_to_spawn = /obj/structure/nest/gecko
 
+/obj/effect/proc_holder/mob_common/make_nest/molerat
+	nest_to_spawn = /obj/structure/nest/molerat
+
 /// Is it available?
 /obj/effect/proc_holder/mob_common/make_nest/is_available(mob/living/user)
 	if(!..())
@@ -218,8 +236,8 @@
 	if(COOLDOWN_TIMELEFT(src, nest_cooldown))
 		user.show_message(span_alert("You can't do this for another <u>[(nest_cooldown-world.time)*0.1] seconds</u>."))
 		return FALSE
-	if(user.ckey && LAZYLEN(GLOB.player_made_nests[user.ckey]) >= 3)
-		user.show_message(span_alert("You already have 3 active nests! Go remove some of them if you want more."))
+	if(user.ckey && LAZYLEN(GLOB.player_made_nests[user.ckey]) >= 2)
+		user.show_message(span_alert("You already have 2 active nests! Go remove some of them if you want more."))
 		return FALSE
 	return TRUE
 

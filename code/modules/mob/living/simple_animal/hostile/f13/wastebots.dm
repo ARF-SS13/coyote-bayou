@@ -71,9 +71,8 @@
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three
 		)
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
-	pop_required_to_jump_into = 10
+	pop_required_to_jump_into = MED_MOB_MIN_PLAYERS
+	desc_short = "A snooty robot with a circular saw."
 
 /mob/living/simple_animal/hostile/handy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
@@ -131,7 +130,7 @@
 		)
 	send_mobs = null
 	call_backup = null
-	pop_required_to_jump_into = 15
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 	emote_taunt_sound = list(
 		'sound/f13npc/gutsy/taunt1.ogg',
@@ -164,6 +163,7 @@
 		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
+	desc_short = "A gutsy robot with a plasma gun."
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
@@ -235,6 +235,7 @@
 	)
 	send_mobs = null
 	call_backup = null
+	desc_short = "A robot that shoots lasers."
 
 /mob/living/simple_animal/hostile/handy/liberator/yellow
 	name = "liberator"
@@ -288,6 +289,7 @@
 	)
 	send_mobs = null
 	call_backup = null
+	desc_short = "A brainy robot with lasers."
 
 /mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
 	. = ..()
@@ -397,7 +399,8 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
-	pop_required_to_jump_into = 5
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	desc_short = "A clunky hunk of junk with a laser."
 
 /mob/living/simple_animal/hostile/handy/protectron/playable
 	ranged = FALSE
@@ -511,6 +514,7 @@
 	idlesound = FALSE
 	send_mobs = null
 	call_backup = null
+	desc_short = "A sexy robot."
 
 /mob/living/simple_animal/hostile/handy/assaultron/nsb //NSB + Raider Bunker specific.
 	name = "assaultron"

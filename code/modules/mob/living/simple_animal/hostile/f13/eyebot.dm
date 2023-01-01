@@ -71,6 +71,7 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	desc_short = "A flying metal meatball with lasers."
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
 

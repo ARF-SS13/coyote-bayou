@@ -110,6 +110,8 @@
 	can_ghost_into = TRUE
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/ghoul
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/ghoul
+	desc_short = "A flimsy creature that may or may not be a reanimated corpse."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 
 /mob/living/simple_animal/hostile/ghoul/Initialize()
 	. = ..()
@@ -144,6 +146,7 @@
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
@@ -153,7 +156,7 @@
 			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/jagged_scrap, 1)\
 		)
 	)
-	pop_required_to_jump_into = 10
+	desc_short = "A beefy creature that may or may not be a reanimated corpse."
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -239,7 +242,8 @@
 	can_ghost_into = FALSE //heeeeeell no
 	call_backup = null
 	send_mobs = null
-	pop_required_to_jump_into = 20
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
+	desc_short = "A deadly creature that may or may not be reanimated jerky."
 
 //Glowing Ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
@@ -266,7 +270,8 @@
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
-	pop_required_to_jump_into = 10
+	pop_required_to_jump_into = BIG_MOB_MED_PLAYERS
+	desc_short = "A glowing creature that may or may not be a reanimated corpse."
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
