@@ -581,6 +581,13 @@
 /// Varied projectiles they can shoot, weighted chance to do the thing too
 #define MOB_PROJECTILE_ENTRY(proj, chance) proj = chance
 
+/// Varied casing define
+#define MOB_CASING "varied_projectile"
+/// Varied casing list
+#define MOB_CASING_LIST(x...) MOB_CASING = list(x)
+/// Varied casing they can shoot, weighted chance to do the thing too
+#define MOB_CASING_ENTRY(proj, chance) proj = chance
+
 /// Mob EMP reaction flags
 /// For mobs that react to EMP to do something other than take a little damage
 

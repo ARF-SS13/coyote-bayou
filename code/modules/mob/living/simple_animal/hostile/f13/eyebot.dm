@@ -70,6 +70,8 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
@@ -105,6 +107,8 @@
 
 	projectiletype = /obj/item/projectile/energy/electrode
 	projectilesound = 'sound/weapons/resonator_blast.ogg'
+	send_mobs = null
+	call_backup = null
 
 /mob/living/simple_animal/hostile/eyebot/floatingeye/New()
 	..()
@@ -160,7 +164,9 @@
 	del_on_death = FALSE
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	speed = -1
+	speed = 1
+	send_mobs = null
+	call_backup = null
 
 //Junkers
 /mob/living/simple_animal/hostile/eyebot/reinforced
@@ -177,3 +183,5 @@
 	melee_damage_upper = 10
 	minimum_distance = 4
 	retreat_distance = 6
+	send_mobs = null
+	call_backup = null

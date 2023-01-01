@@ -127,6 +127,34 @@ obj/item/ammo_casing/shotgun/executioner
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_HANDLOAD
 
+/obj/item/ammo_casing/shotgun/bloatfly
+	name = "bloatfly chunks"
+	desc = "A gross pressurized stinger... thing that spits out a spray of gunk. ew."
+	icon_state = "bshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
+	pellets = 1
+	variance = SHOTGUN_SPREAD_BASE
+
+/obj/item/ammo_casing/shotgun/bloatfly/two
+	pellets = 2
+
+/obj/item/ammo_casing/shotgun/bloatfly/three
+	pellets = 3
+
+/obj/item/projectile/bullet/pellet/bloatfly_chunk
+	name = "fly chunk"
+	damage = 2
+	stamina = 2
+	spread = 3
+	recoil = 0
+
+	wound_bonus = -100
+	bare_wound_bonus = -100
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET * 0.25
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"
 	desc = "An advanced shotgun shell which uses a subspace ansible crystal to produce an effect similar to a standard ion rifle. \

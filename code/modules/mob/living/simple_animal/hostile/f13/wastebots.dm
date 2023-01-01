@@ -13,6 +13,7 @@
 	icon_state = "handy"
 	icon_living = "handy"
 	icon_dead = "robot_dead"
+	speed = 2
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	move_resist = MOVE_FORCE_OVERPOWERING // Can't be pulled
@@ -69,6 +70,9 @@
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three
 		)
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
+	pop_required_to_jump_into = 10
 
 /mob/living/simple_animal/hostile/handy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
@@ -123,6 +127,9 @@
 		/obj/item/stack/crafting/electronicparts/three,
 		/obj/item/stock_parts/cell/ammo/mfc
 		)
+	send_mobs = null
+	call_backup = null
+	pop_required_to_jump_into = 15
 
 	emote_taunt_sound = list(
 		'sound/f13npc/gutsy/taunt1.ogg',
@@ -223,6 +230,8 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	send_mobs = null
+	call_backup = null
 
 /mob/living/simple_animal/hostile/handy/liberator/yellow
 	name = "liberator"
@@ -272,6 +281,8 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	send_mobs = null
+	call_backup = null
 
 /mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
 	. = ..()
@@ -379,6 +390,7 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	pop_required_to_jump_into = 5
 
 /mob/living/simple_animal/hostile/handy/protectron/playable
 	ranged = FALSE
@@ -405,6 +417,8 @@
 	aggro_vision_range = 15
 	faction = list("raider")
 	obj_damage = 300
+	send_mobs = null
+	call_backup = null
 
 /mob/living/simple_animal/pet/dog/protectron //Not an actual dog
 	name = "Trading Protectron"
@@ -468,7 +482,7 @@
 	maxHealth = 100 
 	health = 100
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
-	speed = 0
+	speed = 1
 	melee_damage_lower = 25
 	melee_damage_upper = 60
 	environment_smash = 2 //can smash walls
@@ -485,6 +499,8 @@
 
 	aggrosound = FALSE
 	idlesound = FALSE
+	send_mobs = null
+	call_backup = null
 
 /mob/living/simple_animal/hostile/handy/assaultron/nsb //NSB + Raider Bunker specific.
 	name = "assaultron"
