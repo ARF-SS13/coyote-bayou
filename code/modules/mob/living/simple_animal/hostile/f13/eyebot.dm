@@ -81,8 +81,8 @@
 
 /mob/living/simple_animal/hostile/eyebot/playable
 	ranged = FALSE
-	health = 200
-	maxHealth = 200
+	health = 30
+	maxHealth = 30
 	attack_verb_simple = "zaps"
 	emote_taunt_sound = null
 	emote_taunt = null

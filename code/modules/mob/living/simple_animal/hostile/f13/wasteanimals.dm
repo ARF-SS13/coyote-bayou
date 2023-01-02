@@ -118,8 +118,8 @@
 	)
 
 /mob/living/simple_animal/hostile/gecko/playable
-	health = 200
-	maxHealth = 200
+	health = 40
+	maxHealth = 40
 	speed = 0
 	emote_taunt_sound = null
 	emote_taunt = null
@@ -214,8 +214,8 @@
 	waddle_side_time = 1
 
 /mob/living/simple_animal/hostile/stalker/playable
-	health = 300
-	maxHealth = 300
+	health = 80
+	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -282,8 +282,8 @@
 	waddle_side_time = 2
 
 /mob/living/simple_animal/hostile/stalkeryoung/playable
-	health = 250
-	maxHealth = 250
+	health = 80
+	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
