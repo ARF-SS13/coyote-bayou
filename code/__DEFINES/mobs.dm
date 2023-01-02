@@ -606,13 +606,13 @@
 #define SIMPLE_MOB_DING_COOLDOWN 3 SECONDS
 
 ///living players needed to jump into big mobs
-#define BIG_MOB_MIN_PLAYERS 15
+#define BIG_MOB_MIN_PLAYERS 12
 ///living players needed to jump into medium mobs
-#define MED_MOB_MIN_PLAYERS 10
+#define MED_MOB_MIN_PLAYERS 9
 ///living players needed to jump into medium mobs
-#define SMALL_MOB_MIN_PLAYERS 10
+#define SMALL_MOB_MIN_PLAYERS 7
 ///living players needed to activate full mob ability powers
-#define MOB_POWER_FULL_MIN_PLAYERS 15
+#define MOB_POWER_FULL_MIN_PLAYERS 12
 ///living players needed to activate limited mob ability powers
-#define MOB_POWER_SOME_MIN_PLAYERS 8
+#define MOB_POWER_SOME_MIN_PLAYERS 9
 

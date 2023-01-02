@@ -17319,10 +17319,6 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 10
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "policegarage";
-	name = "Police Garage"
-	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building/abandoned)
 "bhw" = (
@@ -36253,14 +36249,6 @@
 /obj/machinery/microwave/stove,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/abandoned)
-"guU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron/playable,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
 "guY" = (
@@ -68107,10 +68095,7 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 6
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "policegarage";
-	name = "Police Garage"
-	},
+/obj/structure/car,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building/abandoned)
 "rfR" = (
@@ -137621,7 +137606,7 @@ gkX
 mFy
 fkX
 aph
-guU
+bAB
 acT
 bnG
 apO

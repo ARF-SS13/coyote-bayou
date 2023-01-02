@@ -167,8 +167,8 @@
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
-	maxHealth = 300 
-	health = 300
+	maxHealth = 100 
+	health = 100
 	speed = 1
 	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
@@ -406,8 +406,8 @@
 	ranged = FALSE
 	melee_damage_lower = 35
 	melee_damage_upper = 45
-	health = 400
-	maxHealth = 400
+	health = 100
+	maxHealth = 100
 	speed = 2
 	attack_verb_simple = "clamps"
 	emote_taunt_sound = null

@@ -234,8 +234,8 @@
 
 //Playable Sentrybot
 /mob/living/simple_animal/hostile/securitron/sentrybot/playable
-	health = 750   //El Beef
-	maxHealth = 750
+	health = 50   //El Beef
+	maxHealth = 50
 	speed = 1
 	attack_verb_simple = "clamps"
 	emote_taunt_sound = null
