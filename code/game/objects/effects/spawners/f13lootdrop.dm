@@ -1255,7 +1255,7 @@
 	name = "223 pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/thatgun,
-				/obj/item/ammo_box/magazine/m556/rifle/small
+				/obj/item/ammo_box/a308
 	)
 
 /obj/effect/spawner/bundle/f13/widowmaker
