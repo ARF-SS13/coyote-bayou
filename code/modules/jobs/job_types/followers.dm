@@ -227,8 +227,8 @@ Practitioner
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 5
+	spawn_positions = 5
 	supervisors = "The clinic, having no strict command structure, doesn't report to anyone- though they will look to the Senior Doctor for guidance."
 	description = "You are a Town Doctor. As a Town Doctor it is your responsibility to maintain working order in the clinic and to manage its staff and to treat patients who come in regardless of whether or not they can afford care. Some Doctors are known for leaving the clinic with a guard to look for injured or those who need help who may not come to a health facility, however it is key that those who do travel around to give aid keep in touch with the rest of staff and if there are no other able physicans or chemist that they stay to offer the best aid possible."
 	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
