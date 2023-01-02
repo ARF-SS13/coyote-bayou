@@ -544,8 +544,8 @@
 	bank_support = ID_LOCKED_BANK_ACCOUNT
 
 /obj/item/card/id/captains_spare
-	name = "captain's spare ID"
-	desc = "The spare ID of the High Lord himself."
+	name = "Mayor's spare ID"
+	desc = "A special ID handed to anyone with status of Mayor."
 	icon_state = "gold"
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
