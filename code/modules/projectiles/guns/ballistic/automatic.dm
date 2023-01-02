@@ -1043,7 +1043,7 @@
 	current_caliber = "44"
 	init_recoil = CARBINE_RECOIL(0.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
