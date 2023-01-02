@@ -100,6 +100,9 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 
 
 
@@ -115,8 +118,8 @@
 	)
 
 /mob/living/simple_animal/hostile/gecko/playable
-	health = 200
-	maxHealth = 200
+	health = 40
+	maxHealth = 40
 	speed = 0
 	emote_taunt_sound = null
 	emote_taunt = null
@@ -191,7 +194,7 @@
 	response_harm_simple = "bites"
 	emote_taunt = list("growls")
 	taunt_chance = 30
-	speed = -1
+	speed = 1
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
@@ -211,8 +214,8 @@
 	waddle_side_time = 1
 
 /mob/living/simple_animal/hostile/stalker/playable
-	health = 300
-	maxHealth = 300
+	health = 80
+	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -253,7 +256,7 @@
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "kicks"
 	taunt_chance = 30
-	speed = -1
+	speed = 1
 	maxHealth = 50
 	health = 50
 	harm_intent_damage = 8
@@ -279,8 +282,8 @@
 	waddle_side_time = 2
 
 /mob/living/simple_animal/hostile/stalkeryoung/playable
-	health = 250
-	maxHealth = 250
+	health = 80
+	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -339,6 +342,7 @@
 	icon_living = "molerat"
 	icon_dead = "molerat_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1,/obj/item/stack/sheet/animalhide/molerat = 1, /obj/item/stack/sheet/bone = 1)
@@ -348,7 +352,7 @@
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
 	taunt_chance = 30
-	speed = -1
+	speed = 2
 	maxHealth = 25
 	health = 25
 	harm_intent_damage = 8
@@ -371,4 +375,9 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	desc_short = "Small, squishy, and numerous."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 

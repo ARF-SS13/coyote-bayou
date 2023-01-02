@@ -9,6 +9,7 @@
 	icon_state = "eyebot"
 	icon_living = "eyebot"
 	icon_dead = "eyebot_d"
+	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 6
 	environment_smash = 0
@@ -70,6 +71,9 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	desc_short = "A flying metal meatball with lasers."
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
@@ -77,8 +81,8 @@
 
 /mob/living/simple_animal/hostile/eyebot/playable
 	ranged = FALSE
-	health = 200
-	maxHealth = 200
+	health = 30
+	maxHealth = 30
 	attack_verb_simple = "zaps"
 	emote_taunt_sound = null
 	emote_taunt = null
@@ -105,6 +109,8 @@
 
 	projectiletype = /obj/item/projectile/energy/electrode
 	projectilesound = 'sound/weapons/resonator_blast.ogg'
+	send_mobs = null
+	call_backup = null
 
 /mob/living/simple_animal/hostile/eyebot/floatingeye/New()
 	..()
@@ -160,7 +166,9 @@
 	del_on_death = FALSE
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	speed = -1
+	speed = 1
+	send_mobs = null
+	call_backup = null
 
 //Junkers
 /mob/living/simple_animal/hostile/eyebot/reinforced
@@ -177,3 +185,5 @@
 	melee_damage_upper = 10
 	minimum_distance = 4
 	retreat_distance = 6
+	send_mobs = null
+	call_backup = null

@@ -91,10 +91,14 @@
 	var/peace_phrase = "" //Makes the mob become peaceful (if it wasn't beforehand) upon hearing
 	var/reveal_phrase = "" //Uncamouflages the mob (if it were to become invisible via the alpha var) upon hearing
 	var/hide_phrase = "" //Camouflages the mob (Sets it to a defined alpha value, regardless if already 'hiddeb') upon hearing
+  
+ 	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
 
 	// sneak detection
 	var/sneak_detection_threshold = REGULAR_CHECK
 	var/sneak_roll_modifier = DIFFICULTY_EASY
+  
+
 
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
@@ -111,9 +115,18 @@
 	friends = null
 	foes = null
 	GiveTarget(null)
+	if(make_a_nest)
+		QDEL_NULL(make_a_nest)
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()
+
+/mob/living/simple_animal/hostile/make_ghostable()
+	. = ..()
+	if(ispath(make_a_nest))
+		var/obj/effect/proc_holder/mob_common/make_nest/MN = make_a_nest
+		make_a_nest = new MN
+		AddAbility(make_a_nest)
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
@@ -513,8 +526,12 @@
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(sound_after_shooting)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
-	if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
-		projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
+	if(projectiletype)
+		if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
+			projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
+	if(casingtype)
+		if(LAZYLEN(variation_list[MOB_CASING]) >= 2) // Gotta have multiple different casings to cycle through
+			casingtype = vary_from_list(variation_list[MOB_CASING], TRUE)
 
 /mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
 	if( QDELETED(targeted_atom) || targeted_atom == targets_from.loc || targeted_atom == targets_from )

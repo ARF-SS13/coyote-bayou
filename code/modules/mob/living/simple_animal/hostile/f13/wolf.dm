@@ -65,8 +65,8 @@
 	melee_damage_upper = 35
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 /mob/living/simple_animal/hostile/wolf/alpha/playable
-	health = 150
-	maxHealth = 150
+	health = 70
+	maxHealth = 70
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null

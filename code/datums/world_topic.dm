@@ -277,7 +277,7 @@
 	.["Command"] = command
 	.["New California Republic"] = ncr
 	.["Legion"] = legion
-	.["Followers"] = followers
+	.["Nash Clinic"] = followers
 	.["Brotherhood of Steel"] = brotherhood
 	.["Nash"] = oasis
 	.["Wastelanders"] = wastelanders

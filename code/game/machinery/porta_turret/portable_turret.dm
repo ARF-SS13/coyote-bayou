@@ -4,7 +4,7 @@
 #define POPUP_ANIM_TIME 5
 #define POPDOWN_ANIM_TIME 5 //Be sure to change the icon animation at the same time or it'll look bad
 
-#define TURRET_LASER_COOLDOWN_TIME 1 SECONDS
+#define TURRET_LASER_COOLDOWN_TIME 0.5 SECONDS
 #define TURRET_SHOOT_DELAY_BASE 1 SECONDS
 #define TURRET_BWEEP_COOLDOWN 1 SECONDS
 #define TURRET_SCAN_RATE 3 SECONDS
@@ -172,6 +172,8 @@
 	var/obj/item/ammo_casing/casing_type_stun
 	/// Are we shooting?
 	var/am_currently_shooting
+	/// did we already drop our loot?
+	var/dropped_loot
 	var/list/stun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(LASER_VOLUME),
@@ -282,6 +284,9 @@
 
 /obj/machinery/porta_turret/Destroy()
 	//deletes its own cover with it
+	if(obj_integrity <= 0) // only when destroyed!
+		playsound(get_turf(src), 'sound/weapons/machine_crunch.ogg', 80, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
+		drop_loot(null, null)
 	QDEL_NULL(cover)
 	base = null
 	if(cp)
@@ -382,23 +387,7 @@
 			//try and salvage its components
 			to_chat(user, span_notice("You begin prying the metal coverings off..."))
 			if(I.use_tool(src, user, 20))
-				var/turf/right_here = get_turf(src)
-				if(isturf(right_here))
-					if(stored_gun)
-						stored_gun.forceMove(right_here)
-						stored_gun = null
-					new /obj/item/stack/sheet/metal(right_here, rand(1,4))
-					new /obj/item/assembly/prox_sensor(right_here)
-					var/num_salvage_to_make = HAS_TRAIT(user, TRAIT_TECHNOPHREAK) ? rand(1,2) : 1
-					for(var/loots in 1 to num_salvage_to_make)
-						switch(rand(1,10))
-							if(1 to 6)
-								new /obj/item/salvage/low(right_here)
-							if(7 to 8)
-								new /obj/item/salvage/tool(right_here)
-							if(9 to 10)
-								new /obj/item/salvage/high(right_here)
-					to_chat(user, span_notice("You remove the turret and salvage some components."))
+				drop_loot(I, user)
 				qdel(src)
 				return
 
@@ -474,9 +463,43 @@
 	. = ..()
 	if(. && obj_integrity > 0) //damage received
 		spark_system.start()
-		if(on && (turret_flags & TF_SHOOT_REACTION) && prob(35))
+		/* if(on && (turret_flags & TF_SHOOT_REACTION) && prob(35))
 			interest_check(lose_interest = TRUE) // Something more interesting's happening!
-			COOLDOWN_RESET(src, turret_scan_cooldown) // Quick, look for them!
+			COOLDOWN_RESET(src, turret_scan_cooldown) */ // Quick, look for them!
+
+/// dumps loot all over the place
+/obj/machinery/porta_turret/proc/drop_loot(obj/item/I, mob/user)
+	if(dropped_loot)
+		return
+	var/turf/right_here = get_turf(src)
+	if(!isturf(right_here))
+		return
+	if(user)
+		to_chat(user, span_notice("You remove the turret and salvage some components."))
+	if(stored_gun)
+		stored_gun.forceMove(right_here)
+		stored_gun = null
+	new /obj/item/stack/sheet/metal(right_here, rand(10,15))
+	new /obj/item/stack/crafting/metalparts(right_here, rand(2,3))
+	new /obj/item/stack/crafting/goodparts(right_here, rand(1,2))
+	new /obj/item/stack/crafting/electronicparts(right_here, rand(4,6))
+	new /obj/item/stack/cable_coil(right_here, rand(15,20))
+	if(prob(80))
+		new /obj/item/assembly/prox_sensor(right_here)
+	if(prob(80))
+		new /obj/item/assembly/prox_sensor(right_here)
+	var/num_salvage_to_make = 1
+	if(user && HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
+		num_salvage_to_make++
+	for(var/loots in 1 to num_salvage_to_make)
+		switch(rand(1,10))
+			if(1 to 3)
+				new /obj/item/salvage/low(right_here)
+			if(4 to 6)
+				new /obj/item/salvage/tool(right_here)
+			if(7 to 10)
+				new /obj/item/salvage/high(right_here)
+	dropped_loot = TRUE
 
 /obj/machinery/porta_turret/proc/reset_attacked()
 	turret_flags &= ~TF_SHOOT_REACTION
@@ -487,6 +510,7 @@
 /obj/machinery/porta_turret/obj_break(damage_flag)
 	. = ..()
 	if(.)
+		playsound(get_turf(src), 'sound/machines/machinery_break_1.ogg', 80, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
 		power_change()
 		invisibility = 0
 		spark_system.start()	//creates some sparks because they look cool
@@ -506,10 +530,9 @@
 		return
 
 	if(interest_check()) // still interested in something? Shoot it!
+		speed_up_processing()
 		handle_weakref_targetting()
 		return // Don't scan while we have a target, too
-
-	slow_down_processing()
 
 	if(COOLDOWN_TIMELEFT(src, turret_scan_cooldown))
 		return
@@ -569,6 +592,7 @@
 			last_target = null // we cant see them!
 		else // we can see them? shoot them!
 			interest_check(TRUE) // seeing our target is very interesting!
+			record_target_weakref(our_mob_target, TRUE) // record their turf
 			target(our_mob_target)
 			return
 	if(last_target_turf)
@@ -593,7 +617,7 @@
 	var/image/I = image(turret_pointer_icon, where_to_shine, turret_pointer_state, -10)
 	I.pixel_x = rand(-5,5)
 	I.pixel_y = rand(-5,5)
-	flick_overlay_view(I, where_to_shine, 1 SECONDS)
+	flick_overlay_view(I, where_to_shine, TURRET_LASER_COOLDOWN_TIME)
 	COOLDOWN_START(src, turret_laser_pointer_antispam, TURRET_LASER_COOLDOWN_TIME)
 
 /obj/machinery/porta_turret/proc/popUp()	//pops the turret up
@@ -667,7 +691,7 @@
 	speed_up_processing()
 	scan_check(TRUE)
 	if(turret_flags & TF_BE_REALLY_LOUD)
-		playsound(get_turf(src), wakeup_sound, 100, FALSE, 5, ignore_walls = TRUE)
+		playsound(get_turf(src), wakeup_sound, 100, FALSE, SOUND_DISTANCE(10), ignore_walls = TRUE)
 	visible_message(span_alert("[src] deploys its active sensors!"))
 
 /// Nothing interesting, go back to sleep
@@ -695,14 +719,11 @@
 /obj/machinery/porta_turret/proc/acquire_target(mob/new_target)
 	if(!ismob(new_target))
 		return
-	last_target = WEAKREF(new_target)
-	var/turf/target_turf = get_turf(new_target)
-	if(isturf(target_turf))
-		last_target_turf = WEAKREF(target_turf)
+	record_target_weakref(new_target)
 	interest_check(TRUE)
 	wake_up()
 	if(turret_flags & TF_BE_REALLY_LOUD)
-		playsound(get_turf(src), target_sound, 100, FALSE, 17, ignore_walls = TRUE) // angry bweep
+		playsound(get_turf(src), target_sound, 100, FALSE, SOUND_DISTANCE(10), ignore_walls = TRUE) // angry bweep
 	point_laser_at(new_target)
 	COOLDOWN_START(src, turret_prefire_delay, prefire_delay)
 	new_target.visible_message(
@@ -710,6 +731,13 @@
 		span_alert("[src] suddenly swivels its gun in your direction!"),
 		span_alert("You hear mechanical whirring!")
 		)
+
+/obj/machinery/porta_turret/proc/record_target_weakref(mob/new_target, just_turf)
+	if(!just_turf)
+		last_target = WEAKREF(new_target)
+	var/turf/target_turf = get_turf(new_target)
+	if(isturf(target_turf))
+		last_target_turf = WEAKREF(target_turf)
 
 /// Sets a timer for how long the turret will keep firing at its target
 /// Also tells the mob they have a new admirer
@@ -722,8 +750,10 @@
 		return FALSE
 	if(become_interested)
 		COOLDOWN_START(src, turret_interest_time, TURRET_INTEREST_TIME)
+		wake_up()
 		return TRUE
 	if(COOLDOWN_TIMELEFT(src, turret_interest_time))
+		speed_up_processing()
 		return TRUE
 	return FALSE
 
@@ -751,6 +781,7 @@
 	if(am_currently_shooting)
 		return
 	popUp() //pop the turret up if it's not already up.
+	speed_up_processing()
 	setDir(get_dir(base, target)) //even if you can't shoot, follow the target
 	INVOKE_ASYNC(src, .proc/point_laser_at, target)
 	INVOKE_ASYNC(src, .proc/start_shooting, target)
@@ -758,6 +789,7 @@
 
 /// Initiates firing procedure
 /obj/machinery/porta_turret/proc/start_shooting(atom/target, stagger_enabled = FALSE)
+	speed_up_processing()
 	if(!raised) //the turret has to be raised in order to fire - makes sense, right?
 		return
 	if(COOLDOWN_TIMELEFT(src, turret_prefire_delay))
@@ -1451,8 +1483,8 @@
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		More of a 'polite' model, designed to kindly request intruders to leave with its itty bitty twenty-two. \
 		This one is chambered in .22LR and maintained by raccoons, apparently."
-	stun_projectile = /obj/item/projectile/bullet/c22
-	lethal_projectile = /obj/item/projectile/bullet/c22/rubber
+	stun_projectile = /obj/item/projectile/bullet/c22/rubber
+	lethal_projectile = /obj/item/projectile/bullet/c22
 	lethal_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
 	stun_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
 	shot_spread = 5
@@ -1719,3 +1751,283 @@
 		At any rate, this fully automatic sentry-shotgun is chambered in 12 gauge and maintained by robots."
 	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("wastebot")
+
+/// Nash's Friendliest Autogun
+/// needs ammo~
+/obj/machinery/porta_turret/f13/nash
+	name = "portable .22LR sentry turret"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A crude, but effective, hand-made auto-turret, chambered in .22LR, with a 300 round hopper. Comes pre-programmed to gun down \
+		a wide variety of wasteland annoyances with a spray of bullets and keep our lovely town safe! Keep away from dogs. \
+		<br><br>\
+		This turret comes unloaded and lacks an ammo-fab, so it will need to be fed <b>.22LR bullets</b> before it can fire. \
+		This is a 'portable' turret, in that it can be packaged back up into a handy carrying case if pulsed with a <b>multitool</b>.\
+		It can be repaired with a <b>welder<b>."
+	density = TRUE
+	use_power = FALSE
+	max_integrity = 160
+	integrity_failure = 0.1
+	armor = ARMOR_VALUE_HEAVY
+	always_up = TRUE
+	has_cover = FALSE
+	scan_range = 9
+	req_access = list()
+	mode = TURRET_LETHAL
+	installation = null
+	turret_flags = TURRET_DEFAULT_TARGET_FLAGS | TURRET_DEFAULT_UTILITY
+	stun_projectile = /obj/item/projectile/bullet/c22/rubber
+	lethal_projectile = /obj/item/projectile/bullet/c22
+	lethal_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
+	stun_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
+	burst_count = 2
+	burst_delay = GUN_BURSTFIRE_DELAY_SLOW
+	shot_spread = 3
+	faction = list("neutral")
+	/// This turret takes ammo!
+	var/obj/item/ammo_box/magazine/internal/our_mag = /obj/item/ammo_box/magazine/internal/turret
+	/// Ammunition loaded in the chamber
+	var/obj/item/ammo_casing/chambered
+	lethal_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/obj/machinery/porta_turret/f13/nash/Initialize()
+	. = ..()
+	if(our_mag)
+		var/obj/item/ammo_box/magazine/internal/newmag = our_mag
+		our_mag = new newmag(src)
+	chamber_new_round(FALSE)
+
+/obj/machinery/porta_turret/f13/nash/Destroy()
+	. = ..()
+	if(istype(our_mag) && obj_integrity <= 0)
+		for(var/obj/item/ammo_casing/casing_to_eject in our_mag.stored_ammo)
+			our_mag.eject_round(casing_to_eject)
+	QDEL_NULL(our_mag)
+	QDEL_NULL(chambered)
+
+/obj/machinery/porta_turret/f13/nash/examine(mob/user)
+	. = ..()
+	if(istype(our_mag) && length(our_mag.caliber))
+		. += "It accepts [span_notice(english_list(our_mag.caliber))]"
+	. += "It has [span_notice("[our_mag.ammo_count() + (!!chambered)]")] / [span_notice("[our_mag.max_ammo]")] round\s remaining."
+
+/obj/machinery/porta_turret/f13/nash/proc/out_of_ammo_alert()
+	playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 100, FALSE, 0, ignore_walls = TRUE)
+	say("OUT OF: AMMO! NEED: [span_notice(english_list(our_mag.caliber))]!")
+
+/obj/machinery/porta_turret/f13/nash/proc/eject_chambered_round(keep_it)
+	if(!istype(chambered))
+		return FALSE
+	if(keep_it && our_mag.give_round(chambered))
+		return TRUE
+	chambered.forceMove(get_turf(src))
+	chambered.bounce_away(TRUE, 3, turn(dir, -90))
+	chambered = null
+	return TRUE
+
+/obj/machinery/porta_turret/f13/nash/proc/chamber_new_round(eject_current)
+	if(istype(chambered))
+		if(eject_current || !chambered.BB)
+			eject_chambered_round()
+	if(istype(our_mag))
+		chambered = our_mag.get_round(FALSE)
+	if(istype(chambered) && chambered.BB)
+		return TRUE
+	return FALSE
+
+/obj/machinery/porta_turret/f13/nash/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/ammo_box))
+		if(istype(our_mag))
+			our_mag.attackby(I, user)
+			chamber_new_round(FALSE)
+			return
+	if(istype(I, /obj/item/ammo_casing))
+		if(istype(our_mag))
+			our_mag.attackby(I, user)
+			chamber_new_round(FALSE)
+	if(istype(I, /obj/item/storage/bag/casings))
+		if(istype(our_mag))
+			dump_bag_in_turret(I, user)
+	if(I.tool_behaviour == TOOL_MULTITOOL)
+		undeploy_turret(I, user)
+		return
+	if(I.tool_behaviour == TOOL_WELDER)
+		heal_turret(I, user)
+		return
+	. = ..()
+
+/obj/machinery/porta_turret/f13/nash/proc/dump_bag_in_turret(obj/item/storage/bag/casings/saq, mob/user)
+	if(!istype(saq))
+		return
+	if(!istype(user))
+		return
+	if(INTERACTING_WITH(user, src))
+		return
+	if(!LAZYLEN(saq.contents))
+		to_chat(user, span_warning("There's nothing in \the [saq] to load into \the [src]!"))
+		return
+	to_chat(user, span_notice("You start dumping \the [saq] into \the [src]."))
+	playsound(get_turf(src), "sound/effects/rustle[rand(1,4)].ogg", 50, TRUE, 0, ignore_walls = TRUE)
+	if(!do_after(user, 1 SECONDS, target = src))
+		to_chat(user, span_alert("You were interrupted!."))
+		return
+	var/count = 0
+	for(var/obj/item/ammo_casing/casing in saq.contents)
+		if(!casing.BB)
+			continue
+		if(our_mag.give_round(casing))
+			SEND_SIGNAL(saq, COMSIG_TRY_STORAGE_TAKE, casing, our_mag)
+		else
+			continue
+		count++
+	if(count > 0)
+		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+		playsound(get_turf(src), "sound/weapons/gun_magazine_insert_empty_[rand(1,4)].ogg", 50, TRUE, 0, ignore_walls = TRUE)
+	else
+		to_chat(user, span_warning("You couldn't fit anything into [src]!"))
+
+/obj/machinery/porta_turret/f13/nash/proc/undeploy_turret(obj/item/m_tool, mob/user)
+	visible_message(span_notice("[user] starts packing up [src]!"),
+		span_notice("You starts packing up [src]!"))
+	if(!m_tool.use_tool(src, user, 3 SECONDS, 0, 100))
+		user.show_message(span_alert("You were interrupted"))
+	visible_message(span_notice("[user] packed up [src]!"),
+		span_green("You packed up [src]!"))
+	var/obj/item/turret_box/the_box = new(get_turf(src))
+	eject_chambered_round(TRUE)
+	the_box.turret_type = type
+	the_box.stored_mag = our_mag
+	our_mag.forceMove(the_box)
+	our_mag = null
+	qdel(src)
+
+/obj/machinery/porta_turret/f13/nash/proc/heal_turret(obj/item/weldertool, mob/user)
+	if(stat & BROKEN)
+		user.show_message(span_alert("It's beyond repair!"))
+		return
+	if(!weldertool.tool_start_check(user, amount=1))
+		user.show_message(span_alert("You need at least 1 unit of fuel in your welder!"))
+		return
+
+	visible_message(span_notice("[user] starts repairing [src]!"),
+		span_notice("You starts repairing [src]!"))
+	if(weldertool.use_tool(src, user, 3 SECONDS, 0, 100))
+		obj_integrity = initial(obj_integrity)
+		visible_message(span_notice("[user] repaired [src]!"),
+			span_green("You repaired [src]!"))
+
+/// modified to use our silly ammo system
+/obj/machinery/porta_turret/f13/nash/shoot_at_target(atom/movable/target, turf/our_turf)
+	if(!target || !our_turf)
+		return FALSE
+	if(!chambered || (chambered && !chambered.BB))
+		eject_chambered_round()
+		chamber_new_round(TRUE)
+		if((!chambered || (chambered && !chambered.BB)) && !our_mag.ammo_count())
+			out_of_ammo_alert()
+			return FALSE
+	if(isliving(target))
+		var/mob/living/are_they_okay = target
+		if(are_they_okay.stat > maximum_valid_stat)
+			return FALSE // Stop stop he's already dead (or in crit)
+		if(maximum_valid_stat == CONSCIOUS && IS_STAMCRIT(are_they_okay))
+			return FALSE // Stop stop he's... mangled by rubbers
+	//use_power(reqpower * 2)
+	var/the_spread = rand(-shot_spread, shot_spread)
+	chambered.fire_casing(
+		target = target,
+		user = src,
+		params = null,
+		distro = shot_spread,
+		quiet = null,
+		zone_override = ran_zone(),
+		spread = the_spread,
+		damage_multiplier = 1,
+		penetration_multiplier = 1,
+		projectile_speed_multiplier = 1,
+		fired_from = src
+		)
+
+	playsound(
+		src,
+		lethal_projectile_sound,
+		lethal_sound_properties[SOUND_PROPERTY_VOLUME],
+		lethal_sound_properties[SOUND_PROPERTY_VARY],
+		lethal_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
+		ignore_walls = lethal_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
+		distant_sound = lethal_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
+		distant_range = lethal_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+		)
+	eject_chambered_round()
+	chamber_new_round(TRUE)
+	if(!chambered && !our_mag.ammo_count())
+		out_of_ammo_alert()
+	return TRUE
+
+/// dumps loot all over the place
+/obj/machinery/porta_turret/f13/nash/drop_loot(obj/item/I, mob/user)
+	new /obj/item/gun/ballistic/automatic/sportcarbine(get_turf(src))
+	..()
+
+/obj/item/ammo_box/magazine/internal/turret
+	name = "turret ammo hopper"
+	desc = "A huge cannister of ammo designed to go into a turret."
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 300
+	start_empty = FALSE
+	w_class = WEIGHT_CLASS_GIGANTIC
+	start_ammo_count = 100
+	randomize_ammo_count = TRUE
+
+/// A packed up turrent
+/obj/item/turret_box
+	name = "packaged port-a-turret"
+	desc = "A turret, packed up and ready to deploy. Ammo not included, unless repackaged."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "hivebot_fab_on"
+	w_class = WEIGHT_CLASS_GIGANTIC
+	/// type of turret to make
+	var/obj/machinery/porta_turret/f13/nash/turret_type = /obj/machinery/porta_turret/f13/nash
+	/// magazine inside the gun, if it was packed up after deploying
+	var/obj/item/ammo_box/magazine/stored_mag
+
+/obj/item/turret_box/Initialize()
+	. = ..()
+	
+/obj/item/turret_box/Destroy()
+	. = ..()
+	QDEL_NULL(stored_mag)
+
+/obj/item/turret_box/attack_self(mob/user)
+	. = ..()
+	var/turf/u_r_here = get_turf(user)
+	if(!u_r_here)
+		return
+	var/obj/machinery/porta_turret/turrent_here = locate(/obj/machinery/porta_turret) in u_r_here
+	if(turrent_here)
+		user.show_message(span_alert("There's already a turret here!"))
+		return
+	user.visible_message(span_notice("[user] starts unpacking [src]."))
+	if(!do_after(user, 3 SECONDS, FALSE, user))
+		user.show_message(span_alert("You were interrupted!"))
+		return
+	var/obj/machinery/porta_turret/f13/nash/turret_new = new turret_type(get_turf(src))
+	if(istype(stored_mag))
+		QDEL_NULL(turret_new.our_mag)
+		turret_new.our_mag = stored_mag
+		stored_mag.forceMove(turret_new)
+		turret_new.eject_chambered_round(TRUE)
+		turret_new.chamber_new_round()
+	user.visible_message(span_notice("[user] unpacks [src], deploying [turret_new]."))
+	stored_mag = null
+	qdel(src)
+	

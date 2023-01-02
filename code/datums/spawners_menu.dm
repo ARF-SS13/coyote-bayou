@@ -22,6 +22,7 @@
 /datum/spawners_menu/ui_data(mob/user)
 	var/list/data = list()
 	data["spawners"] = list()
+	var/players_on = living_player_count()
 	for(var/spawner in GLOB.mob_spawners)
 		var/list/this = list()
 		this["name"] = spawner
@@ -36,6 +37,9 @@
 				if(!(this_thing.z in COMMON_Z_LEVELS))
 					num_available--
 					continue
+				if(this_thing.pop_required_to_jump_into > players_on && (!this_thing.lazarused))
+					num_available--
+					continue
 			this["refs"] += "[REF(spawner_obj)]"
 			if(!this["desc"])
 				if(istype(spawner_obj, /obj/effect/mob_spawn))
@@ -48,7 +52,12 @@
 					this["short_desc"] = aminol.desc_short
 					this["desc"] = aminol.desc
 					this["flavor_text"] = aminol.desc
-					this["important_info"] = aminol.desc_important
+					if(aminol.lazarused)
+						this["important_info"] = "This creature is tamed, and is bound to follow the commands of who/what had tamed them!"
+					else if(aminol.pop_required_to_jump_into < players_on)
+						this["important_info"] = "This creature's abilities are somewhat limited while Nash sleeps."
+					else
+						this["important_info"] = aminol.desc_important
 				else
 					var/atom/O = spawner_obj
 					this["desc"] = O.desc
@@ -69,9 +78,6 @@
 	var/list/spawnerlist = GLOB.mob_spawners[group_name]
 	if(!spawnerlist.len)
 		return
-	for(var/mob/living/simple_animal/animal in spawnerlist)
-		if(!(animal.z in COMMON_Z_LEVELS))
-			spawnerlist -= animal
 	var/atom/MS = pick(spawnerlist)
 	if(!istype(MS))
 		return

@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(player_made_nests)
+
 //base nest and the procs
 /obj/structure/nest
 	name = "monster nest"
@@ -40,6 +42,8 @@
 	var/randomizer_kind
 	/// Which difficulties to pick from - its a bitfield!
 	var/randomizer_difficulty
+	/// If a playermob spawns this, keep track of it
+	var/spawned_by_ckey
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -64,7 +68,17 @@
 /obj/structure/nest/Destroy()
 	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
 	visible_message("[src] collapses!")
+	if(spawned_by_ckey)
+		GLOB.player_made_nests[spawned_by_ckey] -= src
 	. = ..()
+
+/obj/structure/nest/proc/register_ckey(ckey)
+	if(!ckey)
+		return
+	if(!islist(GLOB.player_made_nests[ckey]))
+		GLOB.player_made_nests[ckey] = list()
+	GLOB.player_made_nests[ckey] |= src
+	spawned_by_ckey = ckey
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_CROWBAR)
@@ -186,9 +200,9 @@
 
 /obj/structure/nest/molerat
 	name = "molerat nest"
-	max_mobs = 3
+	max_mobs = 4
 	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20)
-	spawn_time = 20 SECONDS //They just love tunnelin'.. And are pretty soft
+	spawn_time = 10 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
 	name = "mirelurk nest"
@@ -262,7 +276,7 @@
 /obj/structure/nest/gecko
 	name = "gecko nest"
 	max_mobs = 2
-	mob_types = list(/mob/living/simple_animal/hostile/gecko = 10)
+	mob_types = list(/mob/living/simple_animal/hostile/gecko = 25)
 
 /obj/structure/nest/wolf
 	name = "wolf den"

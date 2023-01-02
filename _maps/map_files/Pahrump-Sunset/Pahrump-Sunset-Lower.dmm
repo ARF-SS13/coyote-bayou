@@ -657,6 +657,11 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/sewers)
+"azS" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/deathclaw,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "aAa" = (
 /obj/machinery/gibber,
 /turf/open/floor/plasteel/freezer,
@@ -3158,6 +3163,10 @@
 "bMk" = (
 /obj/effect/spawner/lootdrop/trash,
 /mob/living/simple_animal/hostile/gecko,
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
 "bMl" = (
@@ -5808,6 +5817,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
+"cnR" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/water,
+/area/f13/building/sewers)
 "coa" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
@@ -12891,8 +12906,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
 "itK" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "itV" = (
@@ -17359,6 +17377,9 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/caves)
+"lTi" = (
+/turf/closed/wall/f13/wood/house/broken,
+/area/f13/building)
 "lTr" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
@@ -19380,6 +19401,9 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"nEq" = (
+/turf/closed/mineral/random/low_chance,
+/area/f13/radiation)
 "nEE" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
@@ -20423,6 +20447,13 @@
 /obj/effect/decal/remains/human,
 /turf/open/water,
 /area/f13/building/sewers)
+"oxX" = (
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/radiation)
 "oyg" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -20862,6 +20893,16 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"oSu" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	color = "#d9c4b9";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/building/sewers)
 "oSM" = (
 /obj/effect/decal/cleanable/cobweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
@@ -21662,6 +21703,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"pvl" = (
+/obj/structure/barricade/bars,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building)
 "pvt" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/spider/stickyweb,
@@ -23940,6 +23985,13 @@
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel/neutral/side,
 /area/f13/tunnel)
+"rfB" = (
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/building/sewers)
 "rfJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel{
@@ -27104,6 +27156,15 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"tSb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "tSi" = (
 /obj/structure/wreck/trash/engine,
 /obj/effect/decal/cleanable/glass,
@@ -27582,9 +27643,8 @@
 	},
 /area/f13/caves)
 "uqE" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "Nashsewers"
+/obj/structure/stairs/west{
+	color = "#A47449"
 	},
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
@@ -31018,16 +31078,6 @@
 /obj/item/paper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"xly" = (
-/mob/living/simple_animal/hostile/eyebot{
-	desc = "A hovering eyebot advertising the Bottom-Feeder Market.";
-	faction = list("raider");
-	name = "Bottom-Feeder Bot"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/tunnel)
 "xlS" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -31360,7 +31410,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "xAi" = (
-/obj/machinery/light/broken{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/f13{
@@ -34027,8 +34077,8 @@ aae
 aae
 aae
 aae
-aae
-abP
+boU
+lTi
 wBu
 wBu
 wBu
@@ -34283,8 +34333,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+boU
+boU
 abP
 bMT
 wBu
@@ -34539,10 +34589,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-abP
+boU
+boU
+boU
+lTi
 fLs
 vRx
 tbF
@@ -34771,7 +34821,7 @@ boU
 boU
 boU
 boU
-itK
+pWa
 aal
 aae
 aae
@@ -34786,7 +34836,7 @@ aae
 aae
 aal
 pWa
-bOU
+boU
 boU
 pWa
 ogB
@@ -34796,10 +34846,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-abP
+boU
+boU
+boU
+lTi
 oux
 opd
 mJj
@@ -35052,11 +35102,11 @@ aal
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-abP
+boU
+boU
+boU
+boU
+lTi
 sVs
 xSG
 wBu
@@ -35286,7 +35336,7 @@ aae
 aal
 aal
 pWa
-pWa
+azS
 hRd
 hRd
 hRd
@@ -35304,14 +35354,14 @@ aal
 aae
 boU
 boU
-boU
+itK
 pWa
 aal
 aae
 aae
-aae
-aae
-aae
+boU
+boU
+boU
 aae
 abP
 chY
@@ -35566,8 +35616,8 @@ pWa
 hRd
 aae
 aae
-aae
-aae
+boU
+boU
 aae
 aae
 abP
@@ -35816,15 +35866,15 @@ aae
 aae
 aae
 aae
-aae
-aae
+boU
+boU
 boU
 boU
 hRd
 boU
 boU
-aae
-aae
+boU
+boU
 aae
 aae
 abP
@@ -36074,9 +36124,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+boU
+boU
+boU
 pWa
 hRd
 pWa
@@ -36085,8 +36135,8 @@ aae
 aae
 aae
 abP
-abP
-abP
+lTi
+lTi
 uWL
 qtg
 qQa
@@ -36331,18 +36381,18 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+boU
+boU
+boU
 aae
 pWa
 pWa
 boU
 aal
 aae
-aae
-aae
-aae
+boU
+boU
+boU
 abP
 abP
 abP
@@ -36589,17 +36639,17 @@ aae
 aae
 aae
 aae
-aae
-aae
+boU
+boU
 aae
 boU
 pWa
-pWa
+tSb
 boU
-aae
-aae
-aae
-aae
+boU
+boU
+boU
+boU
 aae
 aae
 aae
@@ -36846,17 +36896,17 @@ aae
 aae
 aae
 aae
-aae
-aae
+boU
+boU
 aae
 aae
 pWa
 pWa
 boU
 pWa
-aae
-aae
-aae
+boU
+boU
+boU
 aae
 aae
 aae
@@ -37102,8 +37152,8 @@ aak
 aak
 aak
 aae
-aak
-aak
+boU
+boU
 aae
 aae
 aae
@@ -37359,8 +37409,8 @@ aae
 aae
 aae
 aak
-aak
-aak
+boU
+boU
 aae
 aae
 aae
@@ -37616,8 +37666,8 @@ aae
 aae
 aae
 aak
-aae
-aak
+boU
+boU
 aae
 aae
 aae
@@ -37872,9 +37922,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaB
+boU
+boU
 aae
 aae
 aae
@@ -38129,19 +38179,19 @@ aae
 aae
 aak
 aak
+boU
+boU
+boU
 aak
 aae
 aae
-aak
-aae
-aae
 aae
 nNV
 nNV
 nNV
-nNV
-nNV
-nNV
+pvl
+pvl
+pvl
 nNV
 nNV
 nNV
@@ -38189,7 +38239,7 @@ jLS
 jLS
 jLS
 bOb
-qIt
+oSu
 qIt
 kZL
 gQr
@@ -38386,17 +38436,17 @@ aae
 aae
 aak
 aak
-aak
-aae
-aae
+boU
+boU
+boU
 aae
 aae
 aae
 aae
 uUw
 vAm
-ixO
 xAD
+ixO
 ixO
 ixO
 ixO
@@ -38455,7 +38505,7 @@ hiR
 hiR
 hiR
 iVO
-tkZ
+cnR
 gcv
 gcv
 bOb
@@ -38470,7 +38520,7 @@ bOb
 bOb
 bOb
 bOb
-gcv
+xAi
 gcv
 gcv
 gcv
@@ -38643,9 +38693,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+boU
+boU
+boU
 aae
 aae
 aae
@@ -38900,9 +38950,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+boU
+boU
+boU
 aae
 aae
 aae
@@ -39157,8 +39207,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+boU
+boU
 aae
 aae
 aae
@@ -39414,7 +39464,7 @@ aak
 aak
 aae
 aae
-aae
+boU
 aae
 aae
 aae
@@ -39463,7 +39513,7 @@ nmE
 nmE
 ixO
 bOb
-gcv
+xAi
 gcv
 gcv
 gcv
@@ -39671,7 +39721,7 @@ aak
 aak
 aae
 aae
-aae
+boU
 aae
 aae
 aae
@@ -39927,8 +39977,8 @@ aae
 aak
 aak
 aae
-aae
-aae
+boU
+boU
 aae
 aae
 aae
@@ -40183,9 +40233,9 @@ aae
 aae
 aak
 aak
-aae
-aae
-aae
+boU
+boU
+boU
 aae
 aae
 aae
@@ -40440,8 +40490,8 @@ aae
 aae
 aak
 aak
-aae
-aae
+boU
+boU
 aae
 aae
 aae
@@ -40697,7 +40747,7 @@ aae
 aae
 aae
 aae
-aae
+boU
 aae
 aae
 aae
@@ -40953,8 +41003,8 @@ bJS
 aae
 aae
 aaa
-aaa
-aae
+boU
+boU
 aae
 aae
 aae
@@ -41209,8 +41259,8 @@ kRZ
 bJS
 aae
 aae
-aae
-aae
+boU
+boU
 aae
 aae
 aae
@@ -41243,8 +41293,8 @@ kET
 aak
 aak
 pLf
-gxy
-gxy
+rfB
+rfB
 aty
 bhY
 uGQ
@@ -41466,7 +41516,7 @@ aea
 bJS
 aae
 aae
-aae
+boU
 aae
 aae
 aae
@@ -43008,7 +43058,7 @@ aae
 aae
 pWa
 pWa
-boU
+itK
 pWa
 aae
 aae
@@ -43306,7 +43356,7 @@ aty
 jGk
 aae
 pLf
-tkZ
+cnR
 gcv
 gcv
 gcv
@@ -45846,7 +45896,7 @@ ajX
 aae
 boU
 boU
-boU
+itK
 aae
 aae
 aae
@@ -46090,8 +46140,8 @@ bKP
 bMK
 bKP
 bKP
-bKP
-bKP
+nEq
+nEq
 aae
 aae
 aae
@@ -46347,7 +46397,7 @@ vdm
 fWG
 bKP
 bKP
-bKP
+oxX
 bMk
 aae
 aae
@@ -76221,7 +76271,7 @@ jGk
 aae
 aae
 bsC
-xly
+rqX
 rqX
 rqX
 ref

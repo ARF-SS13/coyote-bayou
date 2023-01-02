@@ -76,8 +76,8 @@
 
 /mob/living/simple_animal/hostile/supermutant/playable
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
-	maxHealth = 300 
-	health = 300
+	maxHealth = 130
+	health = 130
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null

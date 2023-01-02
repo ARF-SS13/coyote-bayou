@@ -12,7 +12,7 @@
 	icon_dead = "centaur_dead"
 	icon_gib = "centaur_g"
 	tastes = list("sadness" = 1, "nastyness" = 1)
-
+	can_ghost_into = TRUE
 	maxHealth = 80
 	health = 80
 	speed = 2

@@ -18,7 +18,7 @@
 	health = 100
 	healable = 1
 	speed = 1.2
-	stat_attack = 1
+	stat_attack = CONSCIOUS//Fuck you, Exotic Jazz. Use words, for people. ~TK
 	obj_damage = 150
 	melee_damage_lower = 25
 	melee_damage_upper = 40
@@ -182,7 +182,7 @@
 	maxHealth = 130
 	health = 130
 	healable = 1
-	speed = 0.1
+	speed = 1
 	check_friendly_fire = 1
 	melee_damage_lower = 30
 	melee_damage_upper = 40
@@ -265,7 +265,7 @@
 	maxHealth = 150
 	health = 150
 	healable = 1
-	speed = 0.9
+	speed = 1
 	check_friendly_fire = 1
 	minimum_distance = 2
 	ranged_cooldown_time = 3

@@ -33,6 +33,8 @@
 	var/start_empty = 0
 	var/list/bullet_cost
 	var/list/base_cost// override this one as well if you override bullet_cost
+	var/start_ammo_count
+	var/randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/Initialize()
 	. = ..()
@@ -45,7 +47,12 @@
 			material_amount /= max_ammo
 			LAZYSET(bullet_cost, material, material_amount) */
 	if(!start_empty)
-		for(var/i = 1, i <= max_ammo, i++)
+		var/num_bullets = max_ammo
+		if(start_ammo_count)
+			num_bullets = min(start_ammo_count, max_ammo)
+			if(randomize_ammo_count)
+				num_bullets = rand(round(start_ammo_count * 0.5, 1), start_ammo_count)
+		for(var/i in 1 to num_bullets)
 			stored_ammo += new ammo_type(src)
 	if(!islist(caliber))
 		caliber = list()

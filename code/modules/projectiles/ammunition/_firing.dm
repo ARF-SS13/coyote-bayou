@@ -9,20 +9,22 @@
 /obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, atom/fired_from)
 	var/angle_out = 0
 	if(randomspread) // usually true
-		if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
-			angle_out = 0 // nice shot
+		if(istype(user))
+			if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
+				angle_out = 0 // nice shot
 		else
 			var/max_spread = spread + distro + (pellets == 1 ? variance : 0) // hooray vars doing double duty
 			if(istype(BB))
 				max_spread += BB.spread
-			if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
-				max_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
-			if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
-				max_spread += 0.2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
-			if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
-				max_spread += 1.5//This is cripplingly bad. Trust me.
-			if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
-				max_spread *= 0.5 // Nice shot!
+			if(istype(user))
+				if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
+					max_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
+				if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
+					max_spread += 0.2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
+				if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
+					max_spread += 1.5//This is cripplingly bad. Trust me.
+				if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
+					max_spread *= 0.5 // Nice shot!
 			angle_out = clamp(rand(-max_spread, max_spread), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 
 	var/targloc = get_turf(target)
@@ -38,7 +40,8 @@
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
 		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, (variance * HAS_TRAIT(user,TRAIT_INSANE_AIM) ? 0.5 : 1), zone_override, params, angle_out)
 
-	user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
+	if(istype(user))
+		user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
 	user.newtonian_move(get_dir(target, user))
 	update_icon()
 	return 1

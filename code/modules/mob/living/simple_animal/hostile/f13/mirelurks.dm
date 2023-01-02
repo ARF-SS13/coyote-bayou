@@ -14,6 +14,7 @@
 	icon_living = "mirelurk"
 	icon_dead = "mirelurk_d"
 	speed = 1
+	can_ghost_into = TRUE
 	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
@@ -43,6 +44,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	blood_volume = 0
 	footstep_type = FOOTSTEP_MOB_CLAW
+	pop_required_to_jump_into = MED_MOB_MIN_PLAYERS
 
 // MIRELURK HUNTER MALES
 /mob/living/simple_animal/hostile/mirelurk/hunter
@@ -54,12 +56,13 @@
 	icon_dead = "mirelurkhunter_d"
 	icon_gib = "gib"
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 // MIRELURK BABY
 /mob/living/simple_animal/hostile/mirelurk/baby
@@ -80,6 +83,7 @@
 	waddle_side_time = 1
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
+	pop_required_to_jump_into = 0
 
 
 
