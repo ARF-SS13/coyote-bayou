@@ -506,6 +506,58 @@ obj/item/storage/bag/chemistry/tribal
 	icon_state = "tribal_quiver"
 	item_state = "tribal_quiver"
 	component_type = /datum/component/storage/concrete/bag/quiver
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_HUGE
+
+/* /obj/item/storage/bag/tribe_quiver/Initialize()
+	. = ..()
+
+/obj/item/storage/bag/tribe_quiver/Destroy()
+	if(istype(associated_bow))
+		if(associated_bow.associated_quiver == src)
+			associated_bow.associated_quiver = null
+		associated_bow = null
+	return ..()
+
+//Associates a bow with this thing
+/obj/item/storage/bag/tribe_quiver/proc/associate_bow(obj/item/gun/ballistic/bow/the_bow, mob/user)
+	if(!istype(the_bow))
+		return
+	if(istype(the_bow, /obj/item/gun/ballistic/bow/xbow) || istype(the_bow, /obj/item/gun/ballistic/bow/crossbow))
+		if(user)
+			user.show_message("Crossbows dont work with this!")
+		return
+	if(istype(associated_bow))
+		return
+	associated_bow = the_bow
+	associated_bow.associated_quiver = src
+	if(user)
+		user.show_message("You link the bow to the quiver.")
+
+//Disassociates a bow with this thing
+/obj/item/storage/bag/tribe_quiver/proc/disassociate_bow(mob/user)
+	if(!istype(associated_bow))
+		return
+	associated_bow.associated_quiver = null
+	associated_bow = null
+	if(user)
+		user.show_message("You unlink the bow from the quiver.")
+
+/obj/item/storage/bag/tribe_quiver/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/gun/ballistic/bow))
+		var/obj/item/gun/ballistic/bow/bowo = W
+		if(bowo.can_link_to_quiver && can_link_to_bow)
+			if(!associated_bow)
+				associate_bow(W, user)
+				return
+			if(W == associated_bow)
+				disassociate_bow(user)
+				return
+			else
+				disassociate_bow(W, user)
+				associate_bow(W, user)
+				return
+	..() */
 
 /obj/item/storage/bag/tribe_quiver/PopulateContents()
 	new /obj/item/ammo_casing/caseless/arrow(src)
@@ -576,4 +628,3 @@ obj/item/storage/bag/chemistry/tribal
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "sack"
 	item_state = "sack"
-

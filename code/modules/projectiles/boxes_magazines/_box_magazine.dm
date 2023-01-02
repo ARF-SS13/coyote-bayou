@@ -22,7 +22,7 @@
 	var/replace_spent_rounds = 0
 	var/multiload = 1
 	var/fixed_mag = FALSE
-	var/unloadable = FALSE
+	var/unloadable = FALSE // ITS SO INTUITIVE WHAT THIS DOES
 	/// Can this magazine have its caliber changed?
 	var/can_change_caliber = FALSE
 	var/caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
