@@ -44,6 +44,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	blood_volume = 0
 	footstep_type = FOOTSTEP_MOB_CLAW
+	pop_required_to_jump_into = MED_MOB_MIN_PLAYERS
 
 // MIRELURK HUNTER MALES
 /mob/living/simple_animal/hostile/mirelurk/hunter
@@ -61,6 +62,7 @@
 	melee_damage_upper = 35
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 // MIRELURK BABY
 /mob/living/simple_animal/hostile/mirelurk/baby
@@ -81,6 +83,7 @@
 	waddle_side_time = 1
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
+	pop_required_to_jump_into = 0
 
 
 

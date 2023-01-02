@@ -60,7 +60,7 @@
 	stat_attack = CONSCIOUS
 	health = 144
 	maxHealth = 144
-	speed = -1
+	speed = 1
 	melee_damage_lower = 25
 	melee_damage_upper = 40
 	armour_penetration = 0.25
@@ -96,7 +96,7 @@
 	gender = FEMALE
 	resize = 1.3
 	alpha = 150
-	speed = -2
+	speed = 1
 	maxHealth = 150
 	health = 150
 	has_field_of_vision = FALSE

@@ -100,6 +100,9 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 
 
 
@@ -253,7 +256,7 @@
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "kicks"
 	taunt_chance = 30
-	speed = -1
+	speed = 1
 	maxHealth = 50
 	health = 50
 	harm_intent_damage = 8
@@ -372,4 +375,9 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	desc_short = "Small, squishy, and numerous."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 
