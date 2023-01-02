@@ -163,16 +163,22 @@
 	///Can ghosts just hop into one of these guys?
 	var/can_ghost_into = FALSE
 	///Short desc of the mob
-	var/desc_short = "This is a short desc of the mob. It is very short."
+	var/desc_short = "Some kind of horrible monster."
 	///Important info of the mob
-	var/desc_important = "This is important info about the mob, like rules and things to keep in mind. feel free to ignore it"
-	var/obj/effect/proc_holder/direct_mobs/send_mobs
-	var/datum/action/innate/summon_backup/call_backup
+	var/desc_important = ""
+	var/obj/effect/proc_holder/mob_common/direct_mobs/send_mobs
+	var/obj/effect/proc_holder/mob_common/summon_backup/call_backup
 	var/datum/action/innate/ghostify/ghostme
 	COOLDOWN_DECLARE(ding_spam_cooldown)
 
 	/// Sets up mob diversity
 	var/list/variation_list = list()
+	/// has the mob been lazarused?
+	var/lazarused = FALSE
+	/// Who lazarused this mob?
+	var/datum/weakref/lazarused_by
+	/// required pop to hop into this thing
+	var/pop_required_to_jump_into = 0
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -201,12 +207,7 @@
 	/// End duplicated code
 	setup_mob_armor_description()
 	if(can_ghost_into)
-		send_mobs = new
-		AddAbility(send_mobs)
-		AddAbility(ghostme)
-		call_backup = new
-		call_backup.Grant(src)
-		LAZYADD(GLOB.mob_spawners[initial(name)], src)
+		make_ghostable()
 	setup_variations()
 
 /mob/living/simple_animal/attack_ghost(mob/user, latejoinercalling)
@@ -217,6 +218,9 @@
 		return
 	if(!SSticker.HasRoundStarted() || !loc)
 		return
+	if(!lazarused_by && living_player_count() < pop_required_to_jump_into)
+		to_chat(user, span_warning("There needs to be at least [pop_required_to_jump_into] living players to hop in this! This check is bypassed if the mob has had a lazarus injector used on it though. Which it hasn't (yet)."))
+		return
 	if(jobban_isbanned(user, ROLE_SYNDICATE))
 		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
 		return
@@ -225,14 +229,20 @@
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
-	if(isobserver(user))
-		var/mob/dead/observer/O = user
-		if(!O.can_reenter_round())
-			return FALSE
 	if(!(z in COMMON_Z_LEVELS))
 		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
 		return
-	var/ghost_role = alert("Hop into [name]? (This is a ghost role, still in development!)",,"Yes, spawn me in!","No, I wanna be a ghost!")
+	if(lazarused)
+		to_chat(user, span_userdanger("[name] has been lazarus injected! There are special rules for playing as this creature!"))
+		to_chat(user, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
+		var/mob/the_master
+		if(isweakref(lazarused_by))
+			the_master = lazarused_by.resolve()
+		if(the_master)
+			to_chat(user, span_alert("Your master will be [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
+		else
+			to_chat(user, span_alert("Your master will be Nash and its citizens, protect them at all costs!"))
+	var/ghost_role = alert("Hop into [name]? (This is a ghost role, still in development!)","Play as a mob!","Yes, spawn me in!","No, I wanna be a ghost!")
 	if(ghost_role == "No, I wanna be a ghost!" || !loc)
 		return
 	if(QDELETED(src) || QDELETED(user))
@@ -251,26 +261,48 @@
 		return
 	user.transfer_ckey(src, TRUE)
 	grant_all_languages()
+	if(lazarused)
+		to_chat(src, span_userdanger("[name] has been lazarus injected! There are special rules for playing as this creature!"))
+		to_chat(src, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
+		var/mob/the_master
+		if(isweakref(lazarused_by))
+			the_master = lazarused_by.resolve()
+		if(the_master)
+			to_chat(src, span_alert("Your master is [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
+			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected, and will serve [the_master.real_name].")
+			if(mind)
+				mind.store_memory("You have been lazarus injected by [the_master.real_name], and you're bound to follow their commands! (within reason)")
+		else
+			to_chat(src, span_alert("Your master is be Nash and its citizens, protect them at all costs!"))
+			if(mind)
+				mind.store_memory("You have been lazarus injected, and are bound to serve the town of Nash and protect its people.")
+			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected, and will serve Nash.")
 
 /mob/living/simple_animal/ComponentInitialize()
 	. = ..()
 	if(can_ghost_into)
-		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE)
+		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
-	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
-		GLOB.mob_spawners -= initial(name)
 	if(send_mobs)
 		RemoveAbility(send_mobs)
+		QDEL_NULL(send_mobs)
 	if(ghostme)
 		RemoveAbility(ghostme)
+		QDEL_NULL(ghostme)
 	QDEL_NULL(call_backup)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
-
 	sever_link_to_nest()
+	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
+	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
+		GLOB.mob_spawners -= initial(name)
+	if(lazarused)
+		LAZYREMOVE(GLOB.mob_spawners["Tame [initial(name)]"], src)
+		if(!LAZYLEN(GLOB.mob_spawners["Tame [initial(name)]"]))
+			GLOB.mob_spawners -= "Tame [initial(name)]"
+	lazarused_by = null
 
 	var/turf/T = get_turf(src)
 	if (T && AIStatus == AI_Z_OFF)
@@ -282,9 +314,33 @@
 
 /mob/living/simple_animal/examine(mob/user)
 	. = ..()
+	if(lazarused)
+		. += span_danger("This creature looks like it has been revived!")
 	. += mob_armor_description
 	
-
+/// If user is set, the mob will be told to be loyal to that mob
+/mob/living/simple_animal/proc/make_ghostable(mob/user)
+	can_ghost_into = TRUE
+	AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
+	if(ispath(send_mobs))
+		var/obj/effect/proc_holder/mob_common/direct_mobs/DM = send_mobs
+		send_mobs = new DM
+		AddAbility(send_mobs)
+	if(ispath(call_backup))
+		var/obj/effect/proc_holder/mob_common/summon_backup/CB = call_backup
+		call_backup = new CB
+		AddAbility(call_backup)
+	LAZYADD(GLOB.mob_spawners[initial(name)], src)
+	if(istype(user))
+		lazarused = TRUE
+		lazarused_by = WEAKREF(user)
+		if(user.mind)
+			user.mind.store_memory("You were revived by [user.real_name], and thus are compelled to follow their commands and protect them!")
+		show_message(span_userdanger("You were revived by [user.real_name], and are bound to protect them and follow their commands!"))
+		LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
+		if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
+			GLOB.mob_spawners -= initial(name)
+		LAZYADD(GLOB.mob_spawners["Tame [initial(name)]"], src)
 
 /mob/living/simple_animal/updatehealth()
 	..()
@@ -476,6 +532,9 @@
 	movement_type &= ~FLYING
 
 	sever_link_to_nest()
+	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
+	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
+		GLOB.mob_spawners -= initial(name)
 
 	drop_loot()
 	if(dextrous)

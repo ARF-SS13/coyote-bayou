@@ -13,6 +13,7 @@
 	icon_state = "handy"
 	icon_living = "handy"
 	icon_dead = "robot_dead"
+	speed = 2
 	can_ghost_into = TRUE
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
@@ -70,6 +71,8 @@
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three
 		)
+	pop_required_to_jump_into = MED_MOB_MIN_PLAYERS
+	desc_short = "A snooty robot with a circular saw."
 
 /mob/living/simple_animal/hostile/handy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
@@ -125,6 +128,9 @@
 		/obj/item/stack/crafting/electronicparts/three,
 		/obj/item/stock_parts/cell/ammo/mfc
 		)
+	send_mobs = null
+	call_backup = null
+	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 	emote_taunt_sound = list(
 		'sound/f13npc/gutsy/taunt1.ogg',
@@ -157,6 +163,7 @@
 		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
+	desc_short = "A gutsy robot with a plasma gun."
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
@@ -226,6 +233,9 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	send_mobs = null
+	call_backup = null
+	desc_short = "A robot that shoots lasers."
 
 /mob/living/simple_animal/hostile/handy/liberator/yellow
 	name = "liberator"
@@ -277,6 +287,9 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	send_mobs = null
+	call_backup = null
+	desc_short = "A brainy robot with lasers."
 
 /mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
 	. = ..()
@@ -386,6 +399,8 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	desc_short = "A clunky hunk of junk with a laser."
 
 /mob/living/simple_animal/hostile/handy/protectron/playable
 	ranged = FALSE
@@ -413,6 +428,8 @@
 	can_ghost_into = FALSE
 	faction = list("raider")
 	obj_damage = 300
+	send_mobs = null
+	call_backup = null
 
 /mob/living/simple_animal/pet/dog/protectron //Not an actual dog
 	name = "Trading Protectron"
@@ -478,7 +495,7 @@
 	health = 100
 	can_ghost_into = FALSE
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
-	speed = 0
+	speed = 1
 	melee_damage_lower = 25
 	melee_damage_upper = 60
 	environment_smash = 2 //can smash walls
@@ -495,6 +512,9 @@
 
 	aggrosound = FALSE
 	idlesound = FALSE
+	send_mobs = null
+	call_backup = null
+	desc_short = "A sexy robot."
 
 /mob/living/simple_animal/hostile/handy/assaultron/nsb //NSB + Raider Bunker specific.
 	name = "assaultron"
