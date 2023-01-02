@@ -352,7 +352,7 @@
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
 	taunt_chance = 30
-	speed = 1
+	speed = 2
 	maxHealth = 25
 	health = 25
 	harm_intent_damage = 8
