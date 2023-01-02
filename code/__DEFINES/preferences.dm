@@ -83,7 +83,7 @@
 #define EXP_TYPE_SCRIBE         "Scribe"
 #define EXP_TYPE_DECANUS        "Decanus"
 #define EXP_TYPE_TRIBAL			"Tribal"
-#define EXP_TYPE_FOLLOWERS		"FoA"
+#define EXP_TYPE_FOLLOWERS		"Nash Clinic"
 #define EXP_TYPE_OUTLAW			"Outlaw"
 #define EXP_TYPE_KHAN			"Great Khans"
 //Flags in the players table in the db

@@ -187,7 +187,7 @@
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ncr[name]]</td></tr>"
 			even = !even
 	if(length(flw))
-		dat += "<tr><th colspan=3>Town Clinic</th></tr>"
+		dat += "<tr><th colspan=3>Nash Clinic</th></tr>"
 		for(var/name in flw)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[flw[name]]</td></tr>"
 			even = !even
