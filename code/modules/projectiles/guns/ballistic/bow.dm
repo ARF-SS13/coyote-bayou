@@ -44,12 +44,13 @@
 	if(istype(AC)) //there's a chambered round
 		AC.forceMove(drop_location()) //Eject casing onto ground.
 		chambered = null
-/* 
+
 /obj/item/gun/ballistic/bow/examine(mob/user)
 	. = ..()
-	. += "Currently [drawing_from_quiver?"":"not"] drawing from a worn quiver, if any."
-	. += "Alt-click the bow to [drawing_from_quiver?"stop"] drawing from a quiver."
- */
+	if(can_link_to_quiver)
+		. += "Currently [drawing_from_quiver?"":"not"] drawing from a worn quiver, if any."
+		. += "Alt-click the bow to [drawing_from_quiver?"stop"] drawing from a quiver."
+
 /obj/item/gun/ballistic/bow/can_shoot()
 	return chambered
 
@@ -134,7 +135,8 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return FALSE
 	drawing_from_quiver = !drawing_from_quiver
-	user.show_message("You're [drawing_from_quiver?"now":"no longer"] drawing from a quiver, if one is worn.")
+	if(can_link_to_quiver)
+		user.show_message("You're [drawing_from_quiver?"now":"no longer"] drawing from a quiver, if one is worn.")
 	return TRUE
 
 /obj/item/gun/ballistic/bow/xbow
