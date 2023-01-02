@@ -542,6 +542,7 @@
 			/obj/item/stack/crafting/metalparts = 5,
 			/obj/item/stack/crafting/goodparts = 3,
 			/obj/item/stack/crafting/electronicparts = 10,
+			/obj/item/stack/ore/blackpowder = 2,
 			/obj/item/assembly/prox_sensor = 2,
 			/obj/item/stack/cable_coil = 20,
 			/obj/item/gun/ballistic/automatic/sportcarbine = 1

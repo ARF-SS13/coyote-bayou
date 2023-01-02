@@ -4,7 +4,7 @@
 #define POPUP_ANIM_TIME 5
 #define POPDOWN_ANIM_TIME 5 //Be sure to change the icon animation at the same time or it'll look bad
 
-#define TURRET_LASER_COOLDOWN_TIME 1 SECONDS
+#define TURRET_LASER_COOLDOWN_TIME 0.5 SECONDS
 #define TURRET_SHOOT_DELAY_BASE 1 SECONDS
 #define TURRET_BWEEP_COOLDOWN 1 SECONDS
 #define TURRET_SCAN_RATE 3 SECONDS
@@ -530,10 +530,9 @@
 		return
 
 	if(interest_check()) // still interested in something? Shoot it!
+		speed_up_processing()
 		handle_weakref_targetting()
 		return // Don't scan while we have a target, too
-
-	slow_down_processing()
 
 	if(COOLDOWN_TIMELEFT(src, turret_scan_cooldown))
 		return
@@ -593,6 +592,7 @@
 			last_target = null // we cant see them!
 		else // we can see them? shoot them!
 			interest_check(TRUE) // seeing our target is very interesting!
+			record_target_weakref(our_mob_target, TRUE) // record their turf
 			target(our_mob_target)
 			return
 	if(last_target_turf)
@@ -617,7 +617,7 @@
 	var/image/I = image(turret_pointer_icon, where_to_shine, turret_pointer_state, -10)
 	I.pixel_x = rand(-5,5)
 	I.pixel_y = rand(-5,5)
-	flick_overlay_view(I, where_to_shine, 1 SECONDS)
+	flick_overlay_view(I, where_to_shine, TURRET_LASER_COOLDOWN_TIME)
 	COOLDOWN_START(src, turret_laser_pointer_antispam, TURRET_LASER_COOLDOWN_TIME)
 
 /obj/machinery/porta_turret/proc/popUp()	//pops the turret up
@@ -719,10 +719,7 @@
 /obj/machinery/porta_turret/proc/acquire_target(mob/new_target)
 	if(!ismob(new_target))
 		return
-	last_target = WEAKREF(new_target)
-	var/turf/target_turf = get_turf(new_target)
-	if(isturf(target_turf))
-		last_target_turf = WEAKREF(target_turf)
+	record_target_weakref(new_target)
 	interest_check(TRUE)
 	wake_up()
 	if(turret_flags & TF_BE_REALLY_LOUD)
@@ -735,6 +732,13 @@
 		span_alert("You hear mechanical whirring!")
 		)
 
+/obj/machinery/porta_turret/proc/record_target_weakref(mob/new_target, just_turf)
+	if(!just_turf)
+		last_target = WEAKREF(new_target)
+	var/turf/target_turf = get_turf(new_target)
+	if(isturf(target_turf))
+		last_target_turf = WEAKREF(target_turf)
+
 /// Sets a timer for how long the turret will keep firing at its target
 /// Also tells the mob they have a new admirer
 /obj/machinery/porta_turret/proc/interest_check(become_interested, lose_interest)
@@ -746,8 +750,10 @@
 		return FALSE
 	if(become_interested)
 		COOLDOWN_START(src, turret_interest_time, TURRET_INTEREST_TIME)
+		wake_up()
 		return TRUE
 	if(COOLDOWN_TIMELEFT(src, turret_interest_time))
+		speed_up_processing()
 		return TRUE
 	return FALSE
 
@@ -775,6 +781,7 @@
 	if(am_currently_shooting)
 		return
 	popUp() //pop the turret up if it's not already up.
+	speed_up_processing()
 	setDir(get_dir(base, target)) //even if you can't shoot, follow the target
 	INVOKE_ASYNC(src, .proc/point_laser_at, target)
 	INVOKE_ASYNC(src, .proc/start_shooting, target)
@@ -782,6 +789,7 @@
 
 /// Initiates firing procedure
 /obj/machinery/porta_turret/proc/start_shooting(atom/target, stagger_enabled = FALSE)
+	speed_up_processing()
 	if(!raised) //the turret has to be raised in order to fire - makes sense, right?
 		return
 	if(COOLDOWN_TIMELEFT(src, turret_prefire_delay))
@@ -1773,7 +1781,7 @@
 	lethal_projectile = /obj/item/projectile/bullet/c22
 	lethal_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
 	stun_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
-	burst_count = 3
+	burst_count = 2
 	burst_delay = GUN_BURSTFIRE_DELAY_SLOW
 	shot_spread = 3
 	faction = list("neutral")
@@ -1809,19 +1817,21 @@
 	. = ..()
 	if(istype(our_mag) && length(our_mag.caliber))
 		. += "It accepts [span_notice(english_list(our_mag.caliber))]"
-	. += "It has [span_notice("[our_mag.ammo_count() + (!!chambered)]")] round\s remaining."
-	. += "It can hold [span_notice("[our_mag.max_ammo]")] rounds."
+	. += "It has [span_notice("[our_mag.ammo_count() + (!!chambered)]")] / [span_notice("[our_mag.max_ammo]")] round\s remaining."
 
 /obj/machinery/porta_turret/f13/nash/proc/out_of_ammo_alert()
 	playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 100, FALSE, 0, ignore_walls = TRUE)
-	say("OUT OF: AMMO! NEED: [our_mag.caliber]")
+	say("OUT OF: AMMO! NEED: [span_notice(english_list(our_mag.caliber))]!")
 
-/obj/machinery/porta_turret/f13/nash/proc/eject_chambered_round()
+/obj/machinery/porta_turret/f13/nash/proc/eject_chambered_round(keep_it)
 	if(!istype(chambered))
 		return FALSE
+	if(keep_it && our_mag.give_round(chambered))
+		return TRUE
 	chambered.forceMove(get_turf(src))
 	chambered.bounce_away(TRUE, 3, turn(dir, -90))
 	chambered = null
+	return TRUE
 
 /obj/machinery/porta_turret/f13/nash/proc/chamber_new_round(eject_current)
 	if(istype(chambered))
@@ -1843,6 +1853,9 @@
 		if(istype(our_mag))
 			our_mag.attackby(I, user)
 			chamber_new_round(FALSE)
+	if(istype(I, /obj/item/storage/bag/casings))
+		if(istype(our_mag))
+			dump_bag_in_turret(I, user)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		undeploy_turret(I, user)
 		return
@@ -1850,6 +1863,36 @@
 		heal_turret(I, user)
 		return
 	. = ..()
+
+/obj/machinery/porta_turret/f13/nash/proc/dump_bag_in_turret(obj/item/storage/bag/casings/saq, mob/user)
+	if(!istype(saq))
+		return
+	if(!istype(user))
+		return
+	if(INTERACTING_WITH(user, src))
+		return
+	if(!LAZYLEN(saq.contents))
+		to_chat(user, span_warning("There's nothing in \the [saq] to load into \the [src]!"))
+		return
+	to_chat(user, span_notice("You start dumping \the [saq] into \the [src]."))
+	playsound(get_turf(src), "sound/effects/rustle[rand(1,4)].ogg", 50, TRUE, 0, ignore_walls = TRUE)
+	if(!do_after(user, 1 SECONDS, target = src))
+		to_chat(user, span_alert("You were interrupted!."))
+		return
+	var/count = 0
+	for(var/obj/item/ammo_casing/casing in saq.contents)
+		if(!casing.BB)
+			continue
+		if(our_mag.give_round(casing))
+			SEND_SIGNAL(saq, COMSIG_TRY_STORAGE_TAKE, casing, our_mag)
+		else
+			continue
+		count++
+	if(count > 0)
+		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+		playsound(get_turf(src), "sound/weapons/gun_magazine_insert_empty_[rand(1,4)].ogg", 50, TRUE, 0, ignore_walls = TRUE)
+	else
+		to_chat(user, span_warning("You couldn't fit anything into [src]!"))
 
 /obj/machinery/porta_turret/f13/nash/proc/undeploy_turret(obj/item/m_tool, mob/user)
 	visible_message(span_notice("[user] starts packing up [src]!"),
@@ -1859,11 +1902,11 @@
 	visible_message(span_notice("[user] packed up [src]!"),
 		span_green("You packed up [src]!"))
 	var/obj/item/turret_box/the_box = new(get_turf(src))
+	eject_chambered_round(TRUE)
 	the_box.turret_type = type
 	the_box.stored_mag = our_mag
 	our_mag.forceMove(the_box)
 	our_mag = null
-	eject_chambered_round()
 	qdel(src)
 
 /obj/machinery/porta_turret/f13/nash/proc/heal_turret(obj/item/weldertool, mob/user)
@@ -1940,8 +1983,10 @@
 	ammo_type = /obj/item/ammo_casing/a22
 	caliber = list(CALIBER_22LR)
 	max_ammo = 300
-	start_empty = TRUE
+	start_empty = FALSE
 	w_class = WEIGHT_CLASS_GIGANTIC
+	start_ammo_count = 100
+	randomize_ammo_count = TRUE
 
 /// A packed up turrent
 /obj/item/turret_box
@@ -1961,7 +2006,6 @@
 /obj/item/turret_box/Destroy()
 	. = ..()
 	QDEL_NULL(stored_mag)
-
 
 /obj/item/turret_box/attack_self(mob/user)
 	. = ..()
@@ -1984,5 +2028,6 @@
 		turret_new.eject_chambered_round(TRUE)
 		turret_new.chamber_new_round()
 	user.visible_message(span_notice("[user] unpacks [src], deploying [turret_new]."))
+	stored_mag = null
 	qdel(src)
 	
