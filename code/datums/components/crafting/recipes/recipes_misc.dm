@@ -547,7 +547,6 @@
 			/obj/item/stack/cable_coil = 20,
 			/obj/item/gun/ballistic/automatic/sportcarbine = 1
 	)
-	tools = list(TOOL_WORKBENCH)
 	time = 5 SECONDS
 	category = CAT_ROBOT
 

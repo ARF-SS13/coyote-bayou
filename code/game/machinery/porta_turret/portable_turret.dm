@@ -284,9 +284,6 @@
 
 /obj/machinery/porta_turret/Destroy()
 	//deletes its own cover with it
-	if(obj_integrity <= 0) // only when destroyed!
-		playsound(get_turf(src), 'sound/weapons/machine_crunch.ogg', 80, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
-		drop_loot(null, null)
 	QDEL_NULL(cover)
 	base = null
 	if(cp)
@@ -505,6 +502,8 @@
 	turret_flags &= ~TF_SHOOT_REACTION
 
 /obj/machinery/porta_turret/deconstruct(disassembled = TRUE)
+	playsound(get_turf(src), 'sound/weapons/machine_crunch.ogg', 80, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
+	drop_loot(null, null)
 	qdel(src)
 
 /obj/machinery/porta_turret/obj_break(damage_flag)
@@ -789,6 +788,7 @@
 
 /// Initiates firing procedure
 /obj/machinery/porta_turret/proc/start_shooting(atom/target, stagger_enabled = FALSE)
+	slow_down_processing()
 	speed_up_processing()
 	if(!raised) //the turret has to be raised in order to fire - makes sense, right?
 		return
