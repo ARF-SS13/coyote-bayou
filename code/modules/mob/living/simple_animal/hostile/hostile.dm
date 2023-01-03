@@ -92,7 +92,7 @@
 	var/reveal_phrase = "" //Uncamouflages the mob (if it were to become invisible via the alpha var) upon hearing
 	var/hide_phrase = "" //Camouflages the mob (Sets it to a defined alpha value, regardless if already 'hiddeb') upon hearing
   
- 	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
+	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
 
 	// sneak detection
 	var/sneak_detection_threshold = REGULAR_CHECK
