@@ -50,7 +50,7 @@
 /obj/docking_port/has_gravity(turf/T)
 	return FALSE
 
-/obj/docking_port/take_damage()
+/obj/docking_port/take_damage(atom/attacked_by)
 	return
 
 /obj/docking_port/singularity_pull()

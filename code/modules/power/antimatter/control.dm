@@ -183,7 +183,7 @@
 	else
 		return ..()
 
-/obj/machinery/power/am_control_unit/take_damage(damage, damage_type = BRUTE, sound_effect = 1)
+/obj/machinery/power/am_control_unit/take_damage(damage, damage_type = BRUTE, sound_effect = 1, atom/attacked_by)
 	switch(damage_type)
 		if(BRUTE)
 			if(sound_effect)

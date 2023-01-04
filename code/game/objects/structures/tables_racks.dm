@@ -151,7 +151,7 @@
 		extra_wound = 20
 	banged_limb.receive_damage(30, wound_bonus = extra_wound)
 	pushed_mob.apply_damage(60, STAMINA)
-	take_damage(50)
+	take_damage(50, attacked_by = user)
 
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)
 	pushed_mob.visible_message(span_danger("[user] smashes [pushed_mob]'s [banged_limb.name] against \the [src]!"),
@@ -769,7 +769,7 @@
 		return
 	user.do_attack_animation(src, ATTACK_EFFECT_KICK)
 	user.visible_message(span_danger("[user] kicks [src]."), null, null, COMBAT_MESSAGE_RANGE)
-	take_damage(rand(4,8), BRUTE, "melee", 1)
+	take_damage(rand(4,8), BRUTE, "melee", 1, attacked_by = user)
 
 /obj/structure/rack/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)

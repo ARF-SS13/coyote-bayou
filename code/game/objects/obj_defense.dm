@@ -1,6 +1,6 @@
 
 //the essential proc to call when an obj must receive damage of any kind.
-/obj/proc/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0)
+/obj/proc/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	if(QDELETED(src))
 		log_qdel("[src] taking damage after deletion")
 		return
@@ -52,7 +52,7 @@
 		var/obj/O = AM
 		if(O.damtype == STAMINA)
 			throwdamage = 0
-	take_damage(throwdamage, BRUTE, "melee", 1, get_dir(src, AM))
+	take_damage(throwdamage, BRUTE, "melee", 1, get_dir(src, AM), attacked_by = AM)
 
 /obj/ex_act(severity, target)
 	if(resistance_flags & INDESTRUCTIBLE)
@@ -77,7 +77,7 @@
 	if(P.suppressed != SUPPRESSED_VERY)
 		visible_message(span_danger("[src] is hit by \a [P]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
-		take_damage(P.damage, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armour_penetration)
+		take_damage(P.damage, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armour_penetration, attacked_by = P.firer)
 
 /obj/proc/hulk_damage()
 	return 150 //the damage hulks do on punches to this object, is affected by melee armor
@@ -91,7 +91,7 @@
 			user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced="hulk")
 		else
 			playsound(src, 'sound/effects/bang.ogg', 50, 1)
-		take_damage(hulk_damage(), BRUTE, "melee", 0, get_dir(src, user))
+		take_damage(hulk_damage(), BRUTE, "melee", 0, get_dir(src, user), attacked_by = user)
 		return 1
 	return 0
 
@@ -100,7 +100,7 @@
 		var/turf/T = loc
 		if(T.intact && level == 1) //the blob doesn't destroy thing below the floor
 			return
-	take_damage(400, BRUTE, "melee", 0, get_dir(src, B))
+	take_damage(400, BRUTE, "melee", 0, get_dir(src, B), attacked_by = B)
 
 /obj/proc/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0) //used by attack_alien, attack_animal, and attack_slime
 	if(SEND_SIGNAL(src, COMSIG_OBJ_ATTACK_GENERIC, user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration) & COMPONENT_STOP_GENERIC_ATTACK)
@@ -141,7 +141,7 @@
 
 /obj/proc/collision_damage(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	var/amt = max(0, ((force - (move_resist * MOVE_FORCE_CRUSH_RATIO)) / (move_resist * MOVE_FORCE_CRUSH_RATIO)) * 10)
-	take_damage(amt, BRUTE)
+	take_damage(amt, BRUTE, attacked_by = pusher)
 
 #define BLACKLISTED_OBJECTS list(/obj/machinery/power/apc, /obj/machinery/airalarm, /obj/machinery/power/smes, /obj/structure/cable)
 

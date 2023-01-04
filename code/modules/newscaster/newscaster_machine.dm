@@ -93,7 +93,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 			stat |= NOPOWER
 			update_icon()
 
-/obj/machinery/newscaster/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
+/obj/machinery/newscaster/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
 	. = ..()
 	update_icon()
 
@@ -616,7 +616,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 	if(user.a_intent != INTENT_HARM)
 		to_chat(user, span_warning("The news terminal controls are far too complicated for your tiny brain!"))
 	else
-		take_damage(5, BRUTE, "melee")
+		take_damage(5, BRUTE, "melee", attacked_by = user)
 
 /obj/machinery/newscaster/proc/AttachPhoto(mob/user)
 	var/obj/item/photo/photo = user.is_holding_item_of_type(/obj/item/photo)

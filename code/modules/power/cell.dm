@@ -219,7 +219,7 @@
 		var/obj/item/reagent_containers/food/snacks/cell/cell_as_food = new
 		cell_as_food.name = name
 		if(cell_as_food.attack(M, user, def_zone))
-			take_damage(40, sound_effect=FALSE)
+			take_damage(40, sound_effect=FALSE, attacked_by = user)
 		qdel(cell_as_food)
 	else
 		return ..()
