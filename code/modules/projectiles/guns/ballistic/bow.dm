@@ -49,7 +49,7 @@
 	. = ..()
 	if(can_link_to_quiver)
 		. += "Currently [drawing_from_quiver?"":"not"] drawing from a worn quiver, if any."
-		. += "Alt-click the bow to [drawing_from_quiver?"stop"] drawing from a quiver."
+		. += "Alt-click the bow to [drawing_from_quiver?"stop":"start"] drawing from a quiver."
 
 /obj/item/gun/ballistic/bow/can_shoot()
 	return chambered
