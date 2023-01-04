@@ -65,3 +65,62 @@
 	. = ..()
 	verbs += /mob/living/simple_animal/catslug/proc/catslug_color
 	add_verb(src, /mob/living/proc/lay_down)
+
+//Pokemon!
+
+/mob/living/simple_animal/pet/pokemon
+	name = "eevee"
+	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "eevee"
+	icon_living = "eevee"
+	icon_dead = "eevee_d"
+	unsuitable_atmos_damage = 0
+	minbodytemp = TCMB
+	maxbodytemp = T0C + 40
+	health = 200
+	maxHealth = 200
+	healable = 1
+
+/mob/living/simple_animal/pet/pokemon/update_mobility()
+	. = ..()
+	if(client && stat != DEAD)
+		if(!CHECK_MOBILITY(src, MOBILITY_STAND))
+			icon_state = "[icon_living]_rest"
+			collar_type = "[initial(collar_type)]_rest"
+		else
+			icon_state = "[icon_living]"
+			collar_type = "[initial(collar_type)]"
+	regenerate_icons()
+
+/mob/living/simple_animal/pet/pokemon/eevee
+	name = "Eevee"
+	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "eevee"
+	icon_living = "eevee"
+	icon_dead = "eevee_d"
+
+/mob/living/simple_animal/pet/pokemon/vaporeon
+	name = "Vaporeon"
+	desc = "Lives close to water. Its long tail is ridged with a fin which is often mistaken for a mermaid's."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "vaporeon"
+	icon_living = "vaporeon"
+	icon_dead = "vaporeon_d"
+
+/mob/living/simple_animal/pet/pokemon/glaceon
+	name = "Glaceon"
+	desc = "As a protective technique, it can completely freeze its fur to make its hairs stand like needles."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "glaceon"
+	icon_living = "glaceon"
+	icon_dead = "glaceon_d"
+
+/mob/living/simple_animal/pet/pokemon/leafeon
+	name = "Leafeon"
+	desc = "Just like a plant, it uses photosynthesis. As a result, it is always enveloped in clear air."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "leafeon"
+	icon_living = "leafeon"
+	icon_dead = "leafeon_d"
