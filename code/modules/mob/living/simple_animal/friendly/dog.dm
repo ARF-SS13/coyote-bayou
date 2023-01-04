@@ -17,6 +17,7 @@
 	speak_chance = 1
 	turns_per_move = 10
 	var/held_icon = "corgi"
+	can_ghost_into = TRUE
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
