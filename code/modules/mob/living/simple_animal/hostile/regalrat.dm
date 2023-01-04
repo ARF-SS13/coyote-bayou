@@ -271,6 +271,8 @@
 		desc = "A rodent that seems more at ease around people."
 		maxHealth *= 10
 		health *= 10
+		melee_damage_lower *= 4
+		melee_damage_upper *= 6
 
 /mob/living/simple_animal/hostile/rat/Destroy()
 	SSmobs.cheeserats -= src
