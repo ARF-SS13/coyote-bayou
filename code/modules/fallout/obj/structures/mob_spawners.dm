@@ -69,7 +69,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
 	visible_message("[src] collapses!")
 	if(spawned_by_ckey)
-		GLOB.player_made_nests[spawned_by_ckey] -= src
+		GLOB.player_made_nests[spawned_by_ckey][type] -= src
 	. = ..()
 
 /obj/structure/nest/proc/register_ckey(ckey)
@@ -77,8 +77,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		return
 	if(!islist(GLOB.player_made_nests[ckey]))
 		GLOB.player_made_nests[ckey] = list()
-	GLOB.player_made_nests[ckey] |= src
+	if(!islist(GLOB.player_made_nests[ckey][type]))
+		GLOB.player_made_nests[ckey][type] = list()
+	GLOB.player_made_nests[ckey][type] |= src
 	spawned_by_ckey = ckey
+	desc += " Looks recently dug!"
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_CROWBAR)
@@ -210,6 +213,13 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list(/mob/living/simple_animal/hostile/mirelurk = 2,
 					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
 					/mob/living/simple_animal/hostile/mirelurk/baby = 8)
+
+/obj/structure/nest/rat
+	name = "rat nest"
+	max_mobs = 6
+	spawn_time = 7 SECONDS //squeak
+	mob_types = list(/mob/living/simple_animal/hostile/rat = 30,
+					/mob/living/simple_animal/hostile/rat/skitter = 30)
 
 /obj/structure/nest/raider
 	name = "narrow tunnel"

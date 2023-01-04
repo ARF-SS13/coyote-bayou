@@ -28,6 +28,8 @@
 	faction = list("rat")
 	var/datum/action/cooldown/coffer
 	var/datum/action/cooldown/riot
+	can_ghost_into = TRUE
+	desc_short = "King of the squeaks!"
 	///Number assigned to rats and mice, checked when determining infighting.
 
 /mob/living/simple_animal/hostile/regalrat/Initialize()
@@ -165,9 +167,9 @@
 	icon_living = "mouse_gray"
 	icon_dead = "mouse_gray_dead"
 	speak = list("Skree!","SKREEE!","Squeak?")
-	speak_emote = list("squeaks")
-	emote_hear = list("Hisses.")
-	emote_see = list("runs in a circle.", "stands on its hind legs.")
+	speak_emote = list("skrees")
+	emote_hear = list("Hisses!")
+	emote_see = list("charges around angrily.", "stands on its hind legs threateningly.")
 	melee_damage_lower = 3
 	melee_damage_upper = 5
 	obj_damage = 5
@@ -191,6 +193,13 @@
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	faction = list("rat")
+	can_ghost_into = TRUE
+	desc_short = "Squeak!"
+	pop_required_to_jump_into = 0	
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat
+	var/is_smol = FALSE
 
 	variation_list = list(
 		MOB_SPEED_LIST(1.5, 1.8, 2.0),
@@ -202,10 +211,68 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(40),
 	)
 
+/// nerfed rats for above-ground spawn
+/// they run around like assholes and avoid player interaction at all costs
+/mob/living/simple_animal/hostile/rat/skitter
+	name = "mouse"
+	desc = "It's a scared lil rodent with anxiety issues."
+	icon_state = "mouse_gray"
+	icon_living = "mouse_gray"
+	icon_dead = "mouse_gray_dead"
+	speak = list("Squeak!","Squeak!!","Squeak?")
+	speak_emote = list("squeaks")
+	emote_hear = list("Squeaks.")
+	emote_see = list("dances around in a circle.", "stands on its hind legs.")
+	melee_damage_lower = 2
+	melee_damage_upper = 3
+	obj_damage = 10
+	speak_chance = 30
+	turns_per_move = 0
+	see_in_dark = 10
+	maxHealth = 5
+	health = 5
+	retreat_distance = 7
+	minimum_distance = 7
+	aggro_vision_range = 7
+	vision_range = 10
+	faction = list("rat")
+	is_smol = TRUE
+
+	variation_list = list(
+		MOB_SPEED_LIST(0.2, 1.5, 1.8, 2.0, 5.0),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(5, 10, 15, 20, 24),
+		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(2, 3, 4, 5, 6),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
 /mob/living/simple_animal/hostile/rat/Initialize()
 	. = ..()
 	SSmobs.cheeserats += src
 	AddComponent(/datum/component/swarming)
+	AddElement(/datum/element/mob_holder, "mouse_gray")
+	if(!is_smol)
+		do_alert_animation(src)
+		resize = 1.5
+		update_transform()
+
+/mob/living/simple_animal/hostile/rat/skitter/Initialize()
+	. = ..()
+	if(prob(15))
+		faction += "neutral"
+		emote("flip")
+		emote("spin")
+		emote("squeak")
+		visible_message(span_notice("[src] sure looks friendly!"))
+		color = "#bfe0ff"
+		name = "curious mouse"
+		desc = "A rodent that seems more at ease around people."
+		maxHealth *= 10
+		health *= 10
+		melee_damage_lower *= 4
+		melee_damage_upper *= 6
 
 /mob/living/simple_animal/hostile/rat/Destroy()
 	SSmobs.cheeserats -= src

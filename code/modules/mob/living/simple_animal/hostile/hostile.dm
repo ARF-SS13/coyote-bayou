@@ -93,6 +93,7 @@
 	var/hide_phrase = "" //Camouflages the mob (Sets it to a defined alpha value, regardless if already 'hiddeb') upon hearing
 
 	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
+	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
 
 
 /mob/living/simple_animal/hostile/Initialize()
@@ -122,6 +123,8 @@
 		var/obj/effect/proc_holder/mob_common/make_nest/MN = make_a_nest
 		make_a_nest = new MN
 		AddAbility(make_a_nest)
+		unmake_a_nest = new
+		AddAbility(unmake_a_nest)
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))

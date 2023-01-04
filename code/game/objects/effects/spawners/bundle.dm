@@ -8,15 +8,18 @@
 
 /obj/effect/spawner/bundle/Initialize(mapload)
 	. = ..()
-	if(items?.len)
-		var/turf/T = get_turf(src)
-		for(var/path in items)
-			new path(T)
+	spawn_the_things(mapload)
 	extra_do_stuff(mapload)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/bundle/proc/extra_do_stuff(mapload)
 	return
+
+/obj/effect/spawner/bundle/proc/spawn_the_things(mapload)
+	if(items?.len)
+		var/turf/T = get_turf(src)
+		for(var/path in items)
+			new path(T)
 
 /obj/effect/spawner/bundle/costume/chicken
 	name = "chicken costume spawner"
@@ -189,16 +192,28 @@
 
 /// Mobs!
 
+/obj/effect/spawner/bundle/mobs/rat
+	/// Alternate spawnthings for aboveground Zs
+	var/list/alt_spawn = list()
+
 /obj/effect/spawner/bundle/mobs/rat/extra_do_stuff(mapstart)
 	if(mapstart)
 		return
 	visible_message(span_alert("Eek! Rat!"))
-	playsound(get_turf(src), 'sound/effects/mousesqueek.ogg')
+	playsound(get_turf(src), 'sound/effects/mousesqueek.ogg', 100, TRUE)
+
+/obj/effect/spawner/bundle/mobs/rat/spawn_the_things(mapstart)
+	if((z in ABOVE_GROUND_Z_LEVELS) && prob(85))
+		items = alt_spawn
+	..()
 
 /obj/effect/spawner/bundle/mobs/rat/one
 	name = "one rat spawner"
 	items = list(
 		/mob/living/simple_animal/hostile/rat
+	)
+	alt_spawn = list(
+		/mob/living/simple_animal/hostile/rat/skitter
 	)
 
 /obj/effect/spawner/bundle/mobs/rat/three
@@ -208,6 +223,12 @@
 		/mob/living/simple_animal/hostile/rat,
 		/mob/living/simple_animal/hostile/rat,
 	)
+	alt_spawn = list(
+		/mob/living/simple_animal/hostile/rat/skitter,
+		/mob/living/simple_animal/hostile/rat/skitter,
+		/mob/living/simple_animal/hostile/rat/skitter,
+	)
+
 /obj/effect/spawner/bundle/mobs/rat/five
 	name = "five rat spawner"
 	items = list(
@@ -216,4 +237,11 @@
 		/mob/living/simple_animal/hostile/rat,
 		/mob/living/simple_animal/hostile/rat,
 		/mob/living/simple_animal/hostile/rat,
+	)
+	alt_spawn = list(
+		/mob/living/simple_animal/hostile/rat/skitter,
+		/mob/living/simple_animal/hostile/rat/skitter,
+		/mob/living/simple_animal/hostile/rat/skitter,
+		/mob/living/simple_animal/hostile/rat/skitter,
+		/mob/living/simple_animal/hostile/rat/skitter,
 	)
