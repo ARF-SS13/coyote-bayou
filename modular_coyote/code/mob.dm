@@ -23,7 +23,7 @@
 
 //Cat slugs
 
-/mob/living/simple_animal/catslug
+/mob/living/simple_animal/pet/catslug
 	name = "catslug"
 	desc = "A noodley bodied creature with thin arms and legs, and gloomy dark eyes."
 	icon_state = "catslug"
@@ -52,7 +52,7 @@
 	see_in_dark = 8
 	can_ghost_into = TRUE
 
-/mob/living/simple_animal/catslug/proc/catslug_color()
+/mob/living/simple_animal/pet/catslug/proc/catslug_color()
 	set name = "Pick Color"
 	set category = "IC"
 	set desc = "You can set your color!"
@@ -61,10 +61,21 @@
 		color = newcolor
 	update_icon()
 
-/mob/living/simple_animal/catslug/Initialize()
+/mob/living/simple_animal/pet/catslug/Initialize()
 	. = ..()
-	verbs += /mob/living/simple_animal/catslug/proc/catslug_color
+	verbs += /mob/living/simple_animal/pet/catslug/proc/catslug_color
 	add_verb(src, /mob/living/proc/lay_down)
+
+/mob/living/simple_animal/pet/catslug/update_mobility()
+	. = ..()
+	if(client && stat != DEAD)
+		if(!CHECK_MOBILITY(src, MOBILITY_STAND))
+			icon_state = "[icon_living]_rest"
+			collar_type = "[initial(collar_type)]_rest"
+		else
+			icon_state = "[icon_living]"
+			collar_type = "[initial(collar_type)]"
+	regenerate_icons()
 
 //Pokemon!
 
