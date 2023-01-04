@@ -884,6 +884,7 @@
 
 	update_icon()
 
+	COOLDOWN_START(src, turret_refire_delay, shot_delay)
 	am_currently_shooting = TRUE
 	for(var/burst in 1 to burst_count)
 		setDir(get_dir(base, target_turf))
@@ -897,7 +898,6 @@
 	am_currently_shooting = FALSE
 	if(caution_bursts_left)
 		caution_bursts_left--
-	COOLDOWN_START(src, turret_refire_delay, shot_delay)
 	if(forced_target)
 		clear_targets()
 	return TRUE
@@ -2018,7 +2018,8 @@
 		if((!chambered || (chambered && !chambered.BB)) && !our_mag.ammo_count())
 			out_of_ammo_alert()
 			return FALSE
-	if(!turf_has_valid_target(get_turf(target)))
+	target = turf_has_valid_target(get_turf(target))
+	if(!target)
 		return FALSE
 	//use_power(reqpower * 2)
 	var/the_spread = rand(-shot_spread, shot_spread)
