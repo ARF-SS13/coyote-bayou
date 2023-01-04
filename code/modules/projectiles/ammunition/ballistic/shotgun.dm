@@ -131,7 +131,7 @@ obj/item/ammo_casing/shotgun/executioner
 	name = "bloatfly chunks"
 	desc = "A gross pressurized stinger... thing that spits out a spray of gunk. ew."
 	icon_state = "bshell"
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
+	projectile_type = /obj/item/projectile/bullet/pellet/bloafly_chunk
 	pellets = 1
 	variance = SHOTGUN_SPREAD_BASE
 
