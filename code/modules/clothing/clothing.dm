@@ -104,7 +104,7 @@
 		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
 		clothing_as_food.name = name
 		if(clothing_as_food.attack(M, user, def_zone))
-			take_damage(15, sound_effect=FALSE)
+			take_damage(15, sound_effect=FALSE, attacked_by = user)
 		qdel(clothing_as_food)
 	else
 		return ..()

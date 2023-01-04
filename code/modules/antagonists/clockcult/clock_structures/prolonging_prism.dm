@@ -42,7 +42,7 @@
 		if(SSshuttle.emergency.mode == SHUTTLE_DOCKED || SSshuttle.emergency.mode == SHUTTLE_IGNITING || SSshuttle.emergency.mode == SHUTTLE_STRANDED || SSshuttle.emergency.mode == SHUTTLE_ESCAPE)
 			to_chat(user, span_brass("You break [src] apart, refunding some of the power used."))
 			adjust_clockwork_power(power_refund)
-			take_damage(max_integrity)
+			take_damage(max_integrity, attacked_by = user)
 			return 0
 		if(active)
 			return 0

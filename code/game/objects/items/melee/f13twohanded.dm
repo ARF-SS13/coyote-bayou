@@ -66,16 +66,16 @@
 		return
 	if(istype(A, /obj/structure/window)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
 		var/obj/structure/window/W = A
-		W.take_damage(250, BRUTE, "melee", 0)
+		W.take_damage(250, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/structure/grille))
 		var/obj/structure/grille/G = A
-		G.take_damage(60, BRUTE, "melee", 0)
+		G.take_damage(60, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
-		D.take_damage(40, BRUTE, "melee", 0)
+		D.take_damage(40, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/structure/simple_door))
 		var/obj/structure/simple_door/M = A
-		M.take_damage(40, BRUTE, "melee", 0)
+		M.take_damage(40, BRUTE, "melee", 0, attacked_by = user)
 
 // Fire Axe			Keywords: Damage 28/55
 /obj/item/twohanded/fireaxe
@@ -110,16 +110,16 @@
 		return
 	if(istype(A, /obj/structure/window)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
 		var/obj/structure/window/W = A
-		W.take_damage(200, BRUTE, "melee", 0)
+		W.take_damage(200, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/structure/grille))
 		var/obj/structure/grille/G = A
-		G.take_damage(40, BRUTE, "melee", 0)
+		G.take_damage(40, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
-		D.take_damage(20, BRUTE, "melee", 0)
+		D.take_damage(20, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/structure/simple_door))
 		var/obj/structure/simple_door/M = A
-		M.take_damage(20, BRUTE, "melee", 0)
+		M.take_damage(20, BRUTE, "melee", 0, attacked_by = user)
 
 
 // Bone Axe			Keywords: Damage 25/40, Bonus vs door, window
@@ -140,16 +140,16 @@
 		return
 	if(istype(A, /obj/structure/window)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
 		var/obj/structure/window/W = A
-		W.take_damage(100, BRUTE, "melee", 0)
+		W.take_damage(100, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/structure/grille))
 		var/obj/structure/grille/G = A
-		G.take_damage(20, BRUTE, "melee", 0)
+		G.take_damage(20, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
-		D.take_damage(10, BRUTE, "melee", 0)
+		D.take_damage(10, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/structure/simple_door))
 		var/obj/structure/simple_door/M = A
-		M.take_damage(10, BRUTE, "melee", 0)
+		M.take_damage(10, BRUTE, "melee", 0, attacked_by = user)
 
 // Bumper Sword		Keywords: Damage 25/45, Bonus vs window, door
 /obj/item/twohanded/fireaxe/bmprsword
@@ -168,13 +168,13 @@
 		return
 	if(istype(A, /obj/structure/window))
 		var/obj/structure/window/W = A
-		W.take_damage(200, BRUTE, "melee", 0)
+		W.take_damage(200, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
-		D.take_damage(15, BRUTE, "melee", 0)
+		D.take_damage(15, BRUTE, "melee", 0, attacked_by = user)
 	else if(istype(A, /obj/structure/simple_door))
 		var/obj/structure/simple_door/M = A
-		M.take_damage(15, BRUTE, "melee", 0)
+		M.take_damage(15, BRUTE, "melee", 0, attacked_by = user)
 
 
 ////////////
@@ -470,7 +470,7 @@
 		return
 	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
-		W.take_damage(20, BRUTE, "melee", 0)
+		W.take_damage(20, BRUTE, "melee", 0, attacked_by = user)
 
 /////////////////////////////////
 // ADVANCED TWO HANDED WEAPONS //
@@ -505,15 +505,15 @@
 		return
 	if(istype(A, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/M = A
-		M.take_damage(40, BRUTE, "melee", 0)
+		M.take_damage(40, BRUTE, "melee", 0, attacked_by = user)
 		playsound(loc, hitsound, 70, TRUE)
 	else if(istype(A, /obj/structure/simple_door/metal))
 		var/obj/structure/simple_door/metal/G = A
-		G.take_damage(30, BRUTE, "melee", 0)
+		G.take_damage(30, BRUTE, "melee", 0, attacked_by = user)
 		playsound(loc, hitsound, 70, TRUE)
 	else if(istype(A, /obj/machinery/door/unpowered))
 		var/obj/machinery/door/unpowered/U = A
-		U.take_damage(20, BRUTE, "melee", 0)
+		U.take_damage(20, BRUTE, "melee", 0, attacked_by = user)
 		playsound(loc, hitsound, 70, TRUE)
 	else if(istype(A, /obj/structure))
 		playsound(loc, hitsound, 70, TRUE)
@@ -562,7 +562,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		return
 	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
-		W.take_damage(25, BRUTE, "melee", 0)
+		W.take_damage(25, BRUTE, "melee", 0, attacked_by = user)
 		playsound(loc, hitsound, 80, TRUE)
 	else if(istype(A, /obj/machinery))
 		playsound(loc, hitsound, 80, TRUE)
@@ -599,7 +599,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		return
 	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
-		W.take_damage(10, BRUTE, "melee", 0)
+		W.take_damage(10, BRUTE, "melee", 0, attacked_by = user)
 		playsound(loc, hitsound, 50, TRUE)
 	else if(istype(A, /obj/machinery))
 		playsound(loc, hitsound, 80, TRUE)
@@ -622,7 +622,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		return
 	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
-		W.take_damage(10, BRUTE, "melee", 0)
+		W.take_damage(10, BRUTE, "melee", 0, attacked_by = user)
 		playsound(loc, hitsound, 80, TRUE)
 	else if(istype(A, /obj/machinery))
 		playsound(loc, hitsound, 80, TRUE)
@@ -746,7 +746,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		return
 	if(istype(A, /obj/structure/barricade/wooden)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
 		var/obj/structure/barricade/wooden/K = A
-		K.take_damage(40, BRUTE, "melee", 0)
+		K.take_damage(40, BRUTE, "melee", 0, attacked_by = user)
 		playsound(loc, hitsound, 80, TRUE)
 	else if(istype(A, /obj/structure))
 		playsound(loc, hitsound, 80, TRUE)
@@ -821,10 +821,10 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		return
 	if(istype(A, /obj/structure)) //hurts structures more (it can cut through i-beams, it can ostensibly cut through weaker shit)
 		var/obj/structure/S = A
-		S.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration)
+		S.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration, attacked_by = user)
 	else if(istype(A, /obj/machinery/door))
 		var/obj/machinery/door/D = A
-		D.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration)
+		D.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration, attacked_by = user)
 
 
 /obj/item/twohanded/steelsaw/suicide_act(mob/living/carbon/user)

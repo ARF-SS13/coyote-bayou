@@ -9,6 +9,10 @@
 			input.weak_reference = new /datum/weakref(input)
 		return input.weak_reference
 
+/proc/GET_WEAKREF(datum/weakref/input)
+	if(istype(input, /datum/weakref) && !QDELETED(input))
+		return input.resolve()
+
 /datum/proc/create_weakref() //Forced creation for admin proccalls
 	return WEAKREF(src)
 

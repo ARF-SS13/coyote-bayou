@@ -391,7 +391,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/obtainable/table/do_shaping(mob/user, qualitychange)
 	if(prob(2))
 		to_chat(user, "The [src] breaks under the strain!")
-		take_damage(max_integrity)
+		take_damage(max_integrity, attacked_by = user)
 		return FALSE
 	else
 		..()

@@ -430,7 +430,7 @@
 		user.visible_message(span_danger("[user] slams into [W] like a bug, then slowly slides off it!"), span_userdanger("You slam into [W] like a bug, then slowly slide off it!"))
 		user.Paralyze(2)
 		user.DefaultCombatKnockdown(20)
-		W.take_damage(20 * speed)
+		W.take_damage(20 * speed, attacked_by = user)
 		user.adjustStaminaLoss(10 * speed)
 		user.adjustBruteLoss(5 * speed)
 

@@ -37,7 +37,7 @@
 		if(BRUTE)
 			playsound(loc, 'sound/effects/empulse.ogg', 75, 1)
 
-/obj/structure/emergency_shield/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
+/obj/structure/emergency_shield/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
 	. = ..()
 	if(.) //damage was dealt
 		new /obj/effect/temp_visual/impact_effect/ion(loc)
@@ -443,7 +443,7 @@
 			playsound(loc, 'sound/effects/empulse.ogg', 75, 1)
 
 //the shield wall is immune to damage but it drains the stored power of the generators.
-/obj/machinery/shieldwall/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
+/obj/machinery/shieldwall/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
 	. = ..()
 	if(damage_type == BRUTE || damage_type == BURN)
 		drain_power(damage_amount)
