@@ -2914,9 +2914,14 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "bLb" = (
-/mob/living/simple_animal/hostile/gecko,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/building/sewers)
 "bLc" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/mountain,
@@ -3525,6 +3530,12 @@
 	name = "rocky dirt"
 	},
 /area/f13/building/tribal)
+"bNx" = (
+/obj/structure/junk/small/table,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelchess2"
+	},
+/area/f13/building)
 "bNy" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -4970,7 +4981,8 @@
 	dir = 1;
 	pixel_y = 23
 	},
-/obj/machinery/light/small{
+/obj/structure/stairs/west{
+	color = "#A47449";
 	dir = 4
 	},
 /turf/open/floor/f13{
@@ -7103,6 +7115,10 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
+"dqk" = (
+/obj/structure/bed/old,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "dqz" = (
 /obj/item/electronic_assembly/drone/medbot,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
@@ -8810,6 +8826,9 @@
 /area/f13/building/sewers)
 "eLJ" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -13028,6 +13047,10 @@
 	name = "cave"
 	},
 /area/f13/caves)
+"izI" = (
+/obj/structure/junk/small/table,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "izQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
@@ -16498,6 +16521,10 @@
 	name = "cave"
 	},
 /area/f13/caves)
+"lng" = (
+/obj/structure/nest/radroach,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "lnB" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
@@ -19640,11 +19667,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/caves)
 "nNA" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "S5"
+/obj/structure/stairs/west{
+	color = "#A47449"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -25336,6 +25361,11 @@
 /obj/structure/simple_door/room,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"sri" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/trash_stack,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/radiation)
 "srq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -29394,6 +29424,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
+"vOQ" = (
+/mob/living/simple_animal/hostile/raider/ranged/biker{
+	name = "Texarkana Timothy"
+	},
+/turf/open/water,
+/area/f13/building/sewers)
 "vPk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
@@ -29960,13 +29996,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
 "woc" = (
-/mob/living/simple_animal/hostile/raider/ranged/biker{
-	name = "Texarkana Timothy"
-	},
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/building/sewers)
+/obj/effect/decal/waste,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/radiation)
 "wox" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -30486,6 +30518,14 @@
 	icon_state = "whiterustysolid"
 	},
 /area/f13/tunnel)
+"wLR" = (
+/obj/structure/bed/old,
+/turf/open/floor/f13{
+	color = "#d9c4b9";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/building)
 "wMj" = (
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
@@ -31192,9 +31232,9 @@
 	},
 /area/f13/caves)
 "xre" = (
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/sewers)
+/obj/structure/junk/small/table,
+/turf/open/floor/plating/tunnel,
+/area/f13/building)
 "xrp" = (
 /obj/item/storage/trash_stack{
 	layer = 2
@@ -37205,10 +37245,10 @@ aty
 bOb
 jLS
 jLS
+ixO
 jLS
 jLS
-jLS
-jLS
+dqk
 jLS
 bOb
 qIt
@@ -37461,11 +37501,11 @@ kpv
 kpv
 bOb
 jLS
-nJn
+alc
 jLS
-jLS
-jLS
-jLS
+ixO
+ixO
+alc
 nZk
 bOb
 qIt
@@ -37718,9 +37758,9 @@ kXx
 kXx
 bOb
 hbA
-jLS
-nJn
-nJn
+ixO
+ixO
+alc
 jLS
 jLS
 jLS
@@ -37975,12 +38015,12 @@ kyV
 aty
 bOb
 jLS
-jLS
+alc
 jLS
 aZZ
+alc
 jLS
-jLS
-jLS
+alc
 bOb
 qIt
 qIt
@@ -38234,10 +38274,10 @@ bOb
 jLS
 jLS
 jLS
+ixO
 jLS
-jLS
-jLS
-jLS
+xre
+izI
 bOb
 oSu
 qIt
@@ -39254,7 +39294,7 @@ bOb
 ixO
 ixO
 nmE
-nmE
+wLR
 bOb
 gcv
 gcv
@@ -39776,12 +39816,12 @@ gcv
 mEa
 tkZ
 bOb
-jLS
-jLS
-jLS
-jLS
-jLS
-jLS
+xre
+alc
+alc
+alc
+alc
+alc
 jLS
 bOb
 jLS
@@ -40033,13 +40073,13 @@ gcv
 mEa
 tkZ
 bOb
+bNx
+alc
+jLS
 nJn
 jLS
-jLS
-nJn
-jLS
-jLS
-jLS
+ixO
+ixO
 bOb
 bOb
 bOb
@@ -40290,18 +40330,18 @@ gcv
 mEa
 tkZ
 bOb
-jLS
+xre
 nJn
 jLS
 nmE
 nJn
-nJn
+ixO
 jLS
 bOb
+dqk
 jLS
 jLS
-jLS
-jLS
+alc
 jLS
 bOb
 tkZ
@@ -40548,17 +40588,17 @@ tkZ
 tkZ
 bOb
 nmE
-jLS
+ixO
 nJn
-jLS
-jLS
+alc
+ixO
 nJn
 nJn
 bOb
+alc
 jLS
-jLS
-jLS
-jLS
+alc
+alc
 jLS
 bOb
 tkZ
@@ -40805,16 +40845,16 @@ bOb
 bOb
 bOb
 jLS
-jLS
-jLS
-nJn
+ixO
+alc
+alc
 jLS
 nmE
-jLS
+xre
 bOb
+alc
 jLS
-jLS
-fYJ
+lng
 jLS
 jLS
 bOb
@@ -41056,24 +41096,24 @@ iCH
 bOb
 jLS
 nJn
-jLS
-jLS
+alc
+alc
 jLS
 jLS
 ixO
 jLS
 jLS
-jLS
+alc
 jLS
 nJn
 jLS
-jLS
+xre
 bOb
-jLS
-jLS
+alc
+alc
+alc
 nJn
-nJn
-jLS
+alc
 bOb
 tkZ
 pUY
@@ -41315,8 +41355,8 @@ nmE
 jLS
 jLS
 nmE
-jLS
-jLS
+alc
+alc
 ixO
 nmE
 ixO
@@ -41330,7 +41370,7 @@ jLS
 jLS
 jLS
 jLS
-jLS
+alc
 bOb
 tkZ
 gcv
@@ -41577,7 +41617,7 @@ jLS
 jLS
 jLS
 jLS
-jLS
+alc
 jLS
 jLS
 jLS
@@ -41832,8 +41872,8 @@ uUw
 uUw
 bOT
 jLS
-jLS
-nJn
+alc
+alc
 nJn
 jLS
 pLf
@@ -42097,8 +42137,8 @@ pLf
 pAt
 aty
 aty
-aty
-kpv
+kyV
+kyV
 aty
 uuH
 ksR
@@ -42345,17 +42385,17 @@ szL
 cgI
 bPE
 uUw
-jLS
-nJn
-jLS
-jLS
+ixO
+ixO
+ixO
+ixO
 jLS
 pLf
 uuH
 uuH
 kpv
 kpv
-aty
+kyV
 aty
 kyV
 kyV
@@ -42559,8 +42599,8 @@ aae
 aal
 bxH
 boU
-xre
-oqd
+bxH
+pWa
 bPe
 bLL
 tFU
@@ -42816,8 +42856,8 @@ aae
 boU
 boU
 pWa
-oqd
-taG
+pWa
+boU
 bPE
 oEA
 sJK
@@ -43073,8 +43113,8 @@ bpQ
 boU
 pWa
 bxH
-taG
-taG
+boU
+boU
 bOD
 bLL
 sAn
@@ -44069,8 +44109,8 @@ aae
 aae
 aae
 aae
-bpQ
-bpQ
+bLc
+bLc
 aae
 aae
 aae
@@ -44326,9 +44366,9 @@ aae
 aae
 aae
 aae
-boU
-boU
-boU
+bKP
+bKP
+bKP
 aae
 aae
 aae
@@ -44583,20 +44623,20 @@ aae
 aae
 aae
 aae
+bKP
+bKP
+bKP
+bLc
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 boU
-boU
-boU
-bpQ
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-bpO
 pWa
 pWa
 pWa
@@ -44841,9 +44881,9 @@ aae
 aae
 aae
 aae
-boU
-bLb
-boU
+bKP
+bLh
+bKP
 bKP
 bKP
 bKP
@@ -45098,9 +45138,9 @@ aae
 aae
 aae
 aae
-bpQ
-boU
-bLg
+bLc
+bKP
+woc
 bKS
 bKP
 bKP
@@ -45114,7 +45154,7 @@ boU
 bGl
 boU
 bMq
-bpO
+boU
 boU
 aae
 bNJ
@@ -45356,8 +45396,8 @@ aae
 aae
 aae
 aae
-boU
-boU
+bKP
+bKP
 bKP
 vdm
 bKP
@@ -45367,7 +45407,7 @@ bKP
 vdm
 bKS
 bKP
-bpO
+boU
 aae
 boU
 aae
@@ -45614,7 +45654,7 @@ aae
 aae
 aae
 aae
-boU
+bKP
 bKP
 vdm
 bLp
@@ -45871,7 +45911,7 @@ aae
 aae
 aae
 aae
-boU
+bKP
 bKP
 bKP
 bKP
@@ -46135,7 +46175,7 @@ bKP
 bKP
 bKP
 bKP
-bKP
+nNP
 bKP
 bMK
 bKP
@@ -46645,7 +46685,7 @@ aae
 aal
 fWG
 bKP
-bKP
+bLh
 vdm
 bLJ
 bKP
@@ -47416,7 +47456,7 @@ fWG
 bKP
 bKP
 bKP
-vdm
+sri
 bKP
 bKP
 bKP
@@ -47930,7 +47970,7 @@ bKP
 vdm
 vdm
 bKP
-bKP
+bLh
 bKP
 vdm
 vdm
@@ -48209,13 +48249,13 @@ aae
 aae
 aae
 aak
-aae
-aae
-aae
-aae
-aae
-aae
-jGk
+abV
+boU
+boU
+boU
+boU
+boU
+taG
 jgb
 tkZ
 tkZ
@@ -48464,15 +48504,15 @@ aae
 aae
 aae
 aae
-aae
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-jGk
+boU
+boU
+boU
+boU
+boU
+boU
+boU
+boU
+taG
 jgb
 tkZ
 tkZ
@@ -48717,14 +48757,14 @@ bpQ
 boU
 boU
 bpQ
-aae
-aae
-aae
-aae
-aak
-aak
-aak
-aae
+boU
+boU
+boU
+boU
+boU
+boU
+boU
+boU
 aae
 aae
 aae
@@ -48974,11 +49014,11 @@ aae
 boU
 boU
 boU
-aae
-aae
-aae
-aae
-aae
+boU
+boU
+boU
+boU
+bpQ
 aak
 aae
 aae
@@ -49233,7 +49273,7 @@ boU
 aae
 aae
 aae
-aae
+boU
 aae
 aae
 aak
@@ -52622,7 +52662,7 @@ gcv
 gcv
 dHk
 dHk
-woc
+gcv
 gcv
 lUP
 xwF
@@ -62387,7 +62427,7 @@ aae
 aae
 jGk
 tkZ
-tkZ
+vOQ
 jGk
 aae
 aae
@@ -63933,9 +63973,9 @@ bOm
 cLe
 jGk
 jGk
-apO
-cLe
-jGk
+gcv
+gcv
+gcv
 jGk
 jGk
 jGk
@@ -64190,10 +64230,10 @@ tkZ
 bQs
 qLb
 jGk
-gcv
-hXn
 jGk
-rHB
+jGk
+nyH
+jGk
 aae
 aae
 aae
@@ -64447,10 +64487,10 @@ tkZ
 bQs
 gcv
 jGk
-lOZ
 nNA
+nNA
+gcv
 jGk
-rHB
 aae
 aae
 aak
@@ -64704,10 +64744,10 @@ tkZ
 bQs
 gcv
 jGk
+gcv
+gcv
+gcv
 jGk
-jGk
-jGk
-rHB
 aae
 aae
 aae
@@ -64961,10 +65001,10 @@ tkZ
 bQs
 qLb
 jGk
-rHB
-rHB
-rHB
-rHB
+lOZ
+gcv
+hXn
+jGk
 aae
 aae
 aae
@@ -65218,10 +65258,10 @@ tkZ
 bQs
 jGk
 jGk
-aae
-aae
-aae
-aae
+jGk
+jGk
+jGk
+jGk
 aae
 aae
 aar
@@ -79299,7 +79339,7 @@ aae
 aae
 aae
 aae
-aae
+jGk
 jGk
 cLe
 bOm
@@ -79556,8 +79596,8 @@ aae
 aae
 aae
 aae
-aae
 jGk
+bLb
 gcv
 rkp
 rkp
@@ -79813,8 +79853,8 @@ aae
 aae
 aae
 aae
-aae
 jGk
+bLb
 gcv
 tkZ
 tkZ
@@ -80070,7 +80110,7 @@ aae
 aae
 aae
 aae
-aae
+jGk
 jGk
 oNM
 tkZ

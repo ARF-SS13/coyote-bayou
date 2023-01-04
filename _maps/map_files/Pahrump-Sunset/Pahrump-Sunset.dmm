@@ -16228,12 +16228,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "bdR" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 10
-	},
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/f13/wood,
+/turf/open/transparent/openspace,
 /area/f13/building/abandoned)
 "bdS" = (
 /obj/structure/table/wood,
@@ -16366,14 +16361,13 @@
 /turf/open/floor/carpet/green,
 /area/f13/building)
 "beo" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "S5"
+/obj/effect/spawner/lootdrop/trash,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/wasteland/city)
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "bep" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -32475,6 +32469,15 @@
 /obj/item/mine/shrapnel,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"fdw" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city)
 "fdP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
@@ -32871,6 +32874,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"flb" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland/city)
 "fld" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -33987,6 +33996,9 @@
 /area/f13/ruins)
 "fEW" = (
 /obj/machinery/vending/cola,
+/obj/structure/railing{
+	color = "#A47449"
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
 "fFb" = (
@@ -58168,6 +58180,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ruins)
+"nIF" = (
+/turf/open/transparent/openspace,
+/area/f13/wasteland/city)
 "nIG" = (
 /obj/structure/rack,
 /obj/item/cane,
@@ -78069,6 +78084,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
+"uEn" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "uEt" = (
 /obj/structure/nest/molerat,
 /turf/open/indestructible/ground/outside/road{
@@ -109820,7 +109841,7 @@ etg
 bcE
 bds
 vqo
-oBz
+beo
 bcW
 aQZ
 ojS
@@ -110076,7 +110097,7 @@ etg
 aOk
 vKX
 nfQ
-oBz
+uEn
 bdR
 hCc
 aQZ
@@ -110332,9 +110353,9 @@ etg
 etg
 aOk
 hCc
-qki
-qdo
-aqQ
+uqJ
+oBz
+oBz
 vKX
 aQZ
 mHp
@@ -119590,7 +119611,7 @@ sxj
 sxj
 gCO
 uxe
-beo
+sxj
 uxe
 jmD
 isl
@@ -120874,8 +120895,8 @@ cgE
 fDn
 pEd
 fEW
-fDn
-fDn
+nIF
+flb
 fDn
 cTq
 tOd
@@ -135727,7 +135748,7 @@ aCF
 iRr
 xAr
 bBr
-vnq
+fdw
 kTu
 oFO
 nPH
@@ -135984,7 +136005,7 @@ aOx
 aOx
 mjT
 bBr
-vnq
+nIF
 kTu
 oFO
 dPE
@@ -136241,7 +136262,7 @@ xAr
 xAr
 xAr
 bBr
-vnq
+nIF
 kTu
 nDO
 hLo
