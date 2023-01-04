@@ -135,3 +135,51 @@
 	icon_state = "leafeon"
 	icon_living = "leafeon"
 	icon_dead = "leafeon_d"
+
+/mob/living/simple_animal/pet/pokemon/flareon
+	name = "Flareon"
+	desc = "When storing thermal energy in its body, its temperature could soar to over 1600 degrees."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "flareon"
+	icon_living = "flareon"
+	icon_dead = "flareon_d"
+
+/mob/living/simple_animal/pet/pokemon/jolteon
+	name = "Jolteon"
+	desc = "It accumulates negative ions in the atmosphere to blast out 10000-volt lightning bolts."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "jolteon"
+	icon_living = "jolteon"
+	icon_dead = "jolteon_d"
+
+/mob/living/simple_animal/pet/pokemon/sylveon
+	name = "Sylveon"
+	desc = "It sends a soothing aura from its ribbonlike feelers to calm fights."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "sylveon"
+	icon_living = "sylveon"
+	icon_dead = "sylveon_d"
+
+/mob/living/simple_animal/pet/pokemon/espeon
+	name = "Espeon"
+	desc = "It uses the fine hair that covers its body to sense air currents and predict its enemy's actions."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "espeon"
+	icon_living = "espeon"
+	icon_dead = "espeon_d"
+
+/mob/living/simple_animal/pet/pokemon/umbreon
+	name = "Umbreon"
+	desc = "When agitated, this Pokémon protects itself by spraying poisonous sweat from its pores."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "umbreon"
+	icon_living = "umbreon"
+	icon_dead = "umbreon_d"
+
+/mob/living/simple_animal/pet/pokemon/absol
+	name = "Absol"
+	desc = "Every time Absol appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster Pokémon."
+	icon = 'modular_coyote/icons/mob/pokemon.dmi'
+	icon_state = "absol"
+	icon_living = "absol"
+	icon_dead = "absol_d"
