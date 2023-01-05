@@ -18,13 +18,14 @@
 #define LOADOUT_CAT_REVOLVER "Revolvers"
 #define LOADOUT_CAT_LONGGUN "Long Guns"
 #define LOADOUT_CAT_HOBO "Improvised Guns"
+#define LOADOUT_CAT_MISC "Misc Things"
 #define LOADOUT_CAT_BOW "Bows"
 #define LOADOUT_CAT_NULLROD "Spiritual Device"
 #define LOADOUT_CAT_SHIELD "Shields"
 #define LOADOUT_CAT_ENERGY "Energy Weapons"
 
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
-#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
+#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -824,7 +825,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/c45rev(src)
 
 /obj/item/storage/box/gun/hobo/winchesterrebored
-	name = "rebored Whinchester case"
+	name = "rebored Winchester case"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/box/gun/hobo/winchesterrebored/PopulateContents()
@@ -1570,6 +1571,20 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_PREACHER
 	entry_class = LOADOUT_CAT_NULLROD
 	spawn_thing = /obj/item/storage/box/gun/preacher/nullrod
+
+/// misc Stuff
+
+/datum/loadout_box/dynamite
+	entry_tag = "Box of Dynamite"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/storage/box/dynamite_box
+
+/datum/loadout_box/caps
+	entry_tag = "25 Caps"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/stack/f13Cash/caps/twofive
 
 
 
