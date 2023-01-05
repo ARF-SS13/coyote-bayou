@@ -237,6 +237,7 @@
 	vision_range = 10
 	faction = list("rat")
 	is_smol = TRUE
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/mouse
 
 	variation_list = list(
 		MOB_SPEED_LIST(0.2, 1.5, 1.8, 2.0, 5.0),
@@ -258,21 +259,54 @@
 		resize = 1.5
 		update_transform()
 
-/mob/living/simple_animal/hostile/rat/skitter/Initialize()
+/// nerfed rats for above-ground spawn
+/// they like people
+/mob/living/simple_animal/hostile/rat/skitter/curious
+	name = "curious mouse"
+	desc = "A rodent that seems more at ease around people."
+	icon_state = "mouse_gray"
+	icon_living = "mouse_gray"
+	icon_dead = "mouse_gray_dead"
+	color = "#bfe0ff"
+	speak = list("Squeak!","Squeak!!","Squeak?")
+	speak_emote = list("squeaks")
+	emote_hear = list("Squeaks.")
+	emote_see = list("dances around in a circle.", "stands on its hind legs.")
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	obj_damage = 30
+	speak_chance = 30
+	turns_per_move = 0
+	see_in_dark = 10
+	maxHealth = 50
+	health = 50
+	retreat_distance = 7
+	minimum_distance = 7
+	aggro_vision_range = 7
+	vision_range = 10
+	faction = list("rat", "neutral")
+	is_smol = TRUE
+	call_backup = null
+	send_mobs = null
+	make_a_nest = null
+
+	variation_list = list(
+		MOB_SPEED_LIST(0.2, 1.5, 1.8, 2.0, 5.0),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(30, 35, 40, 45, 50),
+		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(2, 3, 4, 5, 6),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
+/mob/living/simple_animal/hostile/rat/skitter/curious/Initialize()
 	. = ..()
-	if(prob(15))
-		faction += "neutral"
-		emote("flip")
-		emote("spin")
-		emote("squeak")
-		visible_message(span_notice("[src] sure looks friendly!"))
-		color = "#bfe0ff"
-		name = "curious mouse"
-		desc = "A rodent that seems more at ease around people."
-		maxHealth *= 10
-		health *= 10
-		melee_damage_lower *= 4
-		melee_damage_upper *= 6
+	emote("flip")
+	emote("spin")
+	emote("squeak")
+	visible_message(span_notice("[src] sure looks friendly!"))
+
 
 /mob/living/simple_animal/hostile/rat/Destroy()
 	SSmobs.cheeserats -= src

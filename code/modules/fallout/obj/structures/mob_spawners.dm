@@ -218,8 +218,13 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "rat nest"
 	max_mobs = 6
 	spawn_time = 7 SECONDS //squeak
-	mob_types = list(/mob/living/simple_animal/hostile/rat = 30,
-					/mob/living/simple_animal/hostile/rat/skitter = 30)
+	mob_types = list(/mob/living/simple_animal/hostile/rat = 30)
+
+/obj/structure/nest/mouse
+	name = "mouse nest"
+	max_mobs = 6
+	spawn_time = 7 SECONDS //squeak
+	mob_types = list(/mob/living/simple_animal/hostile/rat/skitter = 30)
 
 /obj/structure/nest/raider
 	name = "narrow tunnel"
