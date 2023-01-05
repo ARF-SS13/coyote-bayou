@@ -26,12 +26,6 @@
 	else
 		range = pick(2,2,2,3,3,3,4)
 
-/obj/item/grenade/homemade/attack_self(mob/user) //
-	if(!active)
-		if(!botch_check(user))
-			to_chat(user, span_warning("You light the [name]!"))
-			preprime(user, null, FALSE)
-
 /obj/item/grenade/homemade/examine(mob/user)
 	. = ..()
 	. += "You can't tell when it will explode!"
@@ -57,12 +51,10 @@
 	QDEL_NULL(soundloop)
 	return ..()
 
-/obj/item/grenade/homemade/coffeepotbomb/attack_self(mob/user) //
-	if(!active)
-		if(!botch_check(user))
-			to_chat(user, span_warning("You start the timer! Tick tock"))
-			primetimer(user, null, FALSE)
-			soundloop.start()
+/obj/item/grenade/homemade/coffeepotbomb/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
+	. = ..()
+	if(soundloop)
+		soundloop.start()
 
 /obj/item/grenade/homemade/coffeepotbomb/prime(mob/living/lanced_by)
 	. = ..()
