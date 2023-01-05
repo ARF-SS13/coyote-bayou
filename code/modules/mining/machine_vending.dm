@@ -32,6 +32,8 @@
 //		new /datum/data/mining_equipment("Survival Knife",				/obj/item/melee/onehanded/knife/survival,							450),
 //		new /datum/data/mining_equipment("GAR Meson Scanners",			/obj/item/clothing/glasses/meson/gar,								500),
 //		new /datum/data/mining_equipment("Explorer's Webbing",			/obj/item/storage/belt/utility/mining,										500),
+		new /datum/data/mining_equipment("Dynamite Stick",				/obj/item/grenade/f13/dynamite,										250),
+		new /datum/data/mining_equipment("Dynamite Crate",				/obj/item/storage/box/dynamite_box,									1500),
 		new /datum/data/mining_equipment("Larger Ore Bag",				/obj/item/storage/bag/ore/large,									500),
 		new /datum/data/mining_equipment("Medicated Sutures", 			/obj/item/stack/medical/suture/medicated,							2000),
 		new /datum/data/mining_equipment("Advanced Mesh", 				/obj/item/stack/medical/mesh/advanced,								2000),

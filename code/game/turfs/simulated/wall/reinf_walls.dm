@@ -13,6 +13,7 @@
 	girder_type = /obj/structure/girder/reinforced
 	explosion_block = 2
 	rad_insulation = RAD_HEAVY_INSULATION
+	weak_wall = FALSE
 
 /turf/closed/wall/r_wall/deconstruction_hints(mob/user)
 	switch(d_state)

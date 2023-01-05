@@ -62,7 +62,6 @@
 		if(!botch_check(user))
 			to_chat(user, span_warning("You start the timer! Tick tock"))
 			primetimer(user, null, FALSE)
-			playsound(src, 'sound/f13weapons/garand_ping.ogg', 100, 1)
 			soundloop.start()
 
 /obj/item/grenade/homemade/coffeepotbomb/prime(mob/living/lanced_by)
