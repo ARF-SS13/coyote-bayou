@@ -20,6 +20,8 @@
 	var/sheet_type = /obj/item/stack/sheet/metal
 	var/sheet_amount = 2
 	var/girder_type = /obj/structure/girder
+	/// Wall breaks on light blast
+	var/weak_wall = TRUE
 
 	canSmoothWith = list(
 	/turf/closed/wall,
@@ -88,7 +90,7 @@
 			else
 				dismantle_wall(1,1)
 		if(3)
-			if (prob(hardness))
+			if (weak_wall && prob(hardness))
 				dismantle_wall(0,1)
 	if(!density)
 		..()

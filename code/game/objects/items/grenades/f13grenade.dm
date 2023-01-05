@@ -108,10 +108,27 @@
 
 /obj/item/grenade/f13/dynamite
 	name = "stick of dynamite"
-	desc = "I'll hold it down, you light the fuse!"
+	desc = "A stick of good old-fashioned black-powder dynamite. While it doesnt pack as much of a punch as anything else, it'll give rock walls something to think about."
 	icon = 'icons/fallout/objects/guns/explosives.dmi'
 	icon_state = "dynamite"
+	preprime_sound = 'sound/effects/fuse.ogg'
 	ex_dev = 0
-	ex_heavy = 2
+	ex_heavy = 0
 	ex_light = 3
 	ex_flame = 0
+
+/obj/item/storage/box/dynamite_box
+	name = "dynamite crate"
+	desc = "A box full of dynamite!"
+	icon_state = "box_brown"
+	illustration = "loose_ammo"
+
+/obj/item/storage/box/dynamite_box/PopulateContents()
+	. = ..()
+	new /obj/item/grenade/f13/dynamite(src)
+	new /obj/item/grenade/f13/dynamite(src)
+	new /obj/item/grenade/f13/dynamite(src)
+	new /obj/item/grenade/f13/dynamite(src)
+	new /obj/item/grenade/f13/dynamite(src)
+	new /obj/item/grenade/f13/dynamite(src)
+	new /obj/item/grenade/f13/dynamite(src)

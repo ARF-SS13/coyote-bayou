@@ -6,6 +6,7 @@
 //	var/active = null
 	canSmoothWith = null
 	smooth = SMOOTH_TRUE
+	weak_wall = TRUE
 
 /turf/closed/wall/mineral/gold
 	name = "gold wall"
@@ -37,6 +38,7 @@
 	slicing_duration = 200   //diamond wall takes twice as much time to slice
 	explosion_block = 3
 	canSmoothWith = list(/turf/closed/wall/mineral/diamond, /obj/structure/falsewall/diamond)
+	weak_wall = FALSE
 /*
 /turf/closed/wall/mineral/diamond/thermitemelt(mob/user)
 	return
@@ -173,6 +175,7 @@
 	icon_state = "iron"
 	sheet_type = /obj/item/stack/rods
 	canSmoothWith = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
+	weak_wall = FALSE
 
 /turf/closed/wall/mineral/snow
 	name = "packed snow wall"
@@ -193,6 +196,7 @@
 	slicing_duration = 200   //alien wall takes twice as much time to slice
 	explosion_block = 3
 	canSmoothWith = list(/turf/closed/wall/mineral/abductor, /obj/structure/falsewall/abductor)
+	weak_wall = FALSE
 /*
 /turf/closed/wall/mineral/titanium //has to use this path due to how building walls works
 	name = "wall"
