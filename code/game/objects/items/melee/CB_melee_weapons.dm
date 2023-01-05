@@ -36,7 +36,7 @@
 //Knife List//
 //Knife Template
 //Hunting Knife
-// Survival Knife
+//Survival Knife
 //Bayonet Knife
 //Bowie Knife
 //Trench Knife
