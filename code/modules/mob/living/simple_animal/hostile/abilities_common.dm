@@ -241,6 +241,11 @@
 	banned_from_lowpop = FALSE
 	nest_to_spawn = /obj/structure/nest/rat
 
+/obj/effect/proc_holder/mob_common/make_nest/mouse
+	immune_to_lowpop = TRUE
+	banned_from_lowpop = FALSE
+	nest_to_spawn = /obj/structure/nest/mouse
+
 /// Is it available?
 /obj/effect/proc_holder/mob_common/make_nest/is_available(mob/living/user)
 	if(!..())

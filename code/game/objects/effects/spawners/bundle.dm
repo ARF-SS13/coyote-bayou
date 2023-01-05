@@ -205,6 +205,11 @@
 /obj/effect/spawner/bundle/mobs/rat/spawn_the_things(mapstart)
 	if((z in ABOVE_GROUND_Z_LEVELS) && prob(85))
 		items = alt_spawn
+		if(prob(15))
+			for(var/mob/living/simple_animal/hostile/rat/skitter/ratty in items)
+				items -= ratty
+				items += /mob/living/simple_animal/hostile/rat/skitter/curious
+				break
 	..()
 
 /obj/effect/spawner/bundle/mobs/rat/one
@@ -229,18 +234,14 @@
 		/mob/living/simple_animal/hostile/rat/skitter,
 	)
 
-/obj/effect/spawner/bundle/mobs/rat/five
+/obj/effect/spawner/bundle/mobs/rat/five //"""five"""
 	name = "five rat spawner"
 	items = list(
 		/mob/living/simple_animal/hostile/rat,
 		/mob/living/simple_animal/hostile/rat,
 		/mob/living/simple_animal/hostile/rat,
-		/mob/living/simple_animal/hostile/rat,
-		/mob/living/simple_animal/hostile/rat,
 	)
 	alt_spawn = list(
-		/mob/living/simple_animal/hostile/rat/skitter,
-		/mob/living/simple_animal/hostile/rat/skitter,
 		/mob/living/simple_animal/hostile/rat/skitter,
 		/mob/living/simple_animal/hostile/rat/skitter,
 		/mob/living/simple_animal/hostile/rat/skitter,
