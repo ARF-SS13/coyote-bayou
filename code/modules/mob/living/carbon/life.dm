@@ -45,6 +45,13 @@
 
 //Start of a breath chain, calls breathe()
 /mob/living/carbon/handle_breathing(times_fired)
+	if(HAS_TRAIT(src, TRAIT_NOBREATH)) // lol i dont breathe
+		if(getOxyLoss())
+			adjustOxyLoss(-oxyloss)
+		if(failed_last_breath)
+			failed_last_breath = FALSE
+			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
+		return TRUE
 	var/next_breath = 4
 	var/obj/item/organ/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
 	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
@@ -68,6 +75,13 @@
 
 //Second link in a breath chain, calls check_breath()
 /mob/living/carbon/proc/breathe()
+	if(HAS_TRAIT(src, TRAIT_NOBREATH)) // lol i dont breathe
+		if(getOxyLoss())
+			adjustOxyLoss(-oxyloss)
+		if(failed_last_breath)
+			failed_last_breath = FALSE
+			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
+		return TRUE
 	var/obj/item/organ/lungs = getorganslot(ORGAN_SLOT_LUNGS)
 	if(reagents.has_reagent(/datum/reagent/toxin/lexorin))
 		return

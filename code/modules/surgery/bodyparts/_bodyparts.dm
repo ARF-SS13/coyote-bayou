@@ -279,6 +279,7 @@
 				return
 
 	// now we have our wounding_type and are ready to carry on with wounds and dealing the actual damage
+	
 	if(owner && wounding_dmg >= WOUND_MINIMUM_DAMAGE && wound_bonus != CANT_WOUND)
 		check_wounding(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
 
@@ -375,6 +376,9 @@
  */
 /obj/item/bodypart/proc/check_wounding(woundtype, damage, wound_bonus, bare_wound_bonus)
 	// actually roll wounds if applicable
+	if(woundtype == WOUND_SLASH || woundtype == WOUND_PIERCE)
+		if(!is_organic_limb())
+			return // robot parts dont get wounded yet
 
 	damage = min(damage * CONFIG_GET(number/wound_damage_multiplier), WOUND_MAX_CONSIDERED_DAMAGE)
 	

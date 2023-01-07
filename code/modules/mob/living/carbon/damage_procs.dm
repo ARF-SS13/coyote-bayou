@@ -96,12 +96,13 @@
 	return amount
 
 /mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
-		amount = -amount
-		if(amount > 0)
-			blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
-		else
-			blood_volume -= amount
+	if(!forced)
+		if(HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
+			amount = -amount
+			if(amount > 0)
+				blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
+			else
+				blood_volume -= amount
 	return ..()
 
 /mob/living/carbon/getStaminaLoss()
