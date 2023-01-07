@@ -1042,3 +1042,11 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/zorturethewitcher
+	name = "Mayor Card"
+	path = /obj/item/storage/box/large/custom_kit/zorturethewitcher
+	ckeywhitelist = list("zorturethewitcher")
+
+/obj/item/storage/box/large/custom_kit/zorturethewitcher/PopulateContents()
+	new /obj/item/card/id/captains_spare(src)
