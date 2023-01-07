@@ -45,6 +45,9 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 /obj/effect/proc_holder/singularity_pull()
 	return
 
+/obj/effect/proc_holder/on_lose(mob/living/user)
+	return
+
 /obj/effect/proc_holder/Click()
 	return Trigger(usr, FALSE)
 
