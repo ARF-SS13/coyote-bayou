@@ -10,6 +10,8 @@
 #define RTS_RATS_ALLOWED list(\
 		/mob/living/simple_animal/hostile/rat,\
 		/mob/living/simple_animal/hostile/rat/skitter)
+#define RTS_FRATS_ALLOWED list(\
+		/mob/living/simple_animal/hostile/rat/tame)
 #define RTS_ROBOT_ALLOWED list(\
 		/mob/living/simple_animal/hostile/handy,\
 		/mob/living/simple_animal/hostile/handy/protectron,\
@@ -105,6 +107,9 @@
 	immune_to_lowpop = TRUE
 	allowed_mobs = RTS_RATS_ALLOWED
 
+/obj/effect/proc_holder/mob_common/summon_backup/rat/tame
+	allowed_mobs = RTS_FRATS_ALLOWED
+
 /obj/effect/proc_holder/mob_common/summon_backup/robot
 	allowed_mobs = RTS_ROBOT_ALLOWED
 	banned_from_lowpop = TRUE
@@ -165,6 +170,9 @@
 	banned_from_lowpop = FALSE
 	immune_to_lowpop = TRUE
 	allowed_mobs = RTS_RATS_ALLOWED
+
+/obj/effect/proc_holder/mob_common/direct_mobs/rat/tame
+	allowed_mobs = RTS_FRATS_ALLOWED
 
 /obj/effect/proc_holder/mob_common/direct_mobs/robot
 	allowed_mobs = RTS_ROBOT_ALLOWED
@@ -245,6 +253,9 @@
 	immune_to_lowpop = TRUE
 	banned_from_lowpop = FALSE
 	nest_to_spawn = /obj/structure/nest/rat
+
+/obj/effect/proc_holder/mob_common/make_nest/rat/tame
+	nest_to_spawn = /obj/structure/nest/rat/tame
 
 /obj/effect/proc_holder/mob_common/make_nest/mouse
 	immune_to_lowpop = TRUE

@@ -879,3 +879,36 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE
+
+/datum/quirk/ratlord
+	name = "Rat Master"
+	desc = "Whenever by psychic means or not, you gained ability to call forth friendly type of rats. <u>Do note they will attack <b>only</b> the hostile mobs</u>."
+	value = 8 //pve imbalanced af
+	mob_trait = TRAIT_PIEDPIPER
+	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
+	lose_text = span_danger("You've lost your rat crown...")
+	locked = FALSE
+	// `summon_backup` code doesn't work for carbon (human) mobs. Use moveto on character instead for rats to follow.
+	var/obj/effect/proc_holder/mob_common/direct_mobs/rat/tame/moveto
+	var/obj/effect/proc_holder/mob_common/make_nest/rat/tame/build
+	var/obj/effect/proc_holder/mob_common/unmake_nest/clear
+// Damn this action button code structure
+
+/datum/quirk/ratlord/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	moveto = new
+	H.AddAbility(moveto)
+	build = new
+	H.AddAbility(build)
+	clear = new
+	H.AddAbility(clear)
+
+/datum/quirk/ratlord/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.RemoveAbility(moveto)
+		QDEL_NULL(moveto)
+		H.RemoveAbility(build)
+		QDEL_NULL(build)
+		H.RemoveAbility(clear)
+		QDEL_NULL(clear)
