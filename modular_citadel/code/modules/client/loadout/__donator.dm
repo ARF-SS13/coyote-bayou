@@ -1050,3 +1050,5 @@
 
 /obj/item/storage/box/large/custom_kit/zorturethewitcher/PopulateContents()
 	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/kit_spawner/townie/mayor(src)
