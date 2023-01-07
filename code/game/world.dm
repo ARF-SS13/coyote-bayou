@@ -52,6 +52,7 @@ GLOBAL_LIST(topic_status_cache)
 	LoadVerbs(/datum/verbs/menu)
 	if(CONFIG_GET(flag/usewhitelist))
 		load_whitelist()
+	load_multikey_allowlist()
 
 	GLOB.timezoneOffset = text2num(time2text(0,"hh")) * 36000
 

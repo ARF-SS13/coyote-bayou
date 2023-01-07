@@ -287,10 +287,8 @@
 	GLOB.simple_animals[AIStatus] -= src
 	if(send_mobs)
 		RemoveAbility(send_mobs)
-		QDEL_NULL(send_mobs)
 	if(ghostme)
 		RemoveAbility(ghostme)
-		QDEL_NULL(ghostme)
 	QDEL_NULL(call_backup)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
