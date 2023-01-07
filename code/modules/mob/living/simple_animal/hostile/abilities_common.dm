@@ -217,6 +217,7 @@
 
 /obj/effect/proc_holder/mob_common/direct_mobs/on_lose(mob/living/carbon/user)
 	remove_ranged_ability()
+	..()
 
 
 /* 
@@ -356,3 +357,5 @@
 	qdel(smashit)
 	return TRUE
 
+/obj/effect/proc_holder/mob_common/on_lose(mob/living/user)
+	..()
