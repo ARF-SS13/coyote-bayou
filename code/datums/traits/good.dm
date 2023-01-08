@@ -867,7 +867,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	desc = "You've trained quite a bit with bows of many types, and are pretty good with them for it."
 	value = 2
 	mob_trait = TRAIT_AUTO_DRAW
-	gain_text = span_notice("You feel like all that training with bows has paidfuzzz off.")
+	gain_text = span_notice("You feel like all that training with bows has paid off.")
 	lose_text = span_danger("Guns were always better...")
 	locked =  FALSE
 
