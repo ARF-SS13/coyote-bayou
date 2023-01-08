@@ -322,12 +322,12 @@
 	AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
 	if(ispath(send_mobs))
 		var/obj/effect/proc_holder/mob_common/direct_mobs/DM = send_mobs
-		send_mobs = new DM
-		AddAbility(send_mobs)
+		var/local_send_mobs = new DM
+		AddAbility(local_send_mobs)
 	if(ispath(call_backup))
 		var/obj/effect/proc_holder/mob_common/summon_backup/CB = call_backup
-		call_backup = new CB
-		AddAbility(call_backup)
+		var/local_call_backup = new CB
+		AddAbility(local_call_backup)
 	LAZYADD(GLOB.mob_spawners[initial(name)], src)
 	if(istype(user))
 		lazarused = TRUE
