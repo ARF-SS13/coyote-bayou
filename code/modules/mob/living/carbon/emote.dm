@@ -120,3 +120,55 @@
 		to_chat(user, span_notice("You extend your tongue and get ready to lick something."))
 	else
 		qdel(licky)
+
+//Biter//
+/datum/emote/living/carbon/bite
+	key = "bite"
+	key_third_person = "bites"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/bite/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, and therefore you can't bite anything! Don't ask why!"))
+		return
+	var/obj/item/hand_item/biter/bite = new(user)
+	if(user.put_in_active_hand(bite))
+		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
+	else
+		qdel(bite)
+
+//Clawer//
+/datum/emote/living/carbon/claw
+	key = "claw"
+	key_third_person = "claws"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/claw/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your claws are out, makes it hard to handle stuff!"))
+		return
+	var/obj/item/hand_item/clawer/claw = new(user)
+	if(user.put_in_active_hand(claw))
+		to_chat(user, span_notice("You get your claws ready to slice!"))
+	else
+		qdel(claw)
+
+/datum/emote/living/carbon/shover
+	key = "shove"
+	key_third_person = "shoves"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/shover/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("You're too on edge from wanting to shove someone to hold onto something!"))
+		return
+	var/obj/item/hand_item/shover/shove = new(user)
+	if(user.put_in_active_hand(shove))
+		to_chat(user, span_notice("You get ready to shove someone back!"))
+	else
+		qdel(shove)
+
+
