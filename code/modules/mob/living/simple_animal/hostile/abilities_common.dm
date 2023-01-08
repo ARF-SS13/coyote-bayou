@@ -228,6 +228,7 @@
 	var/obj/structure/nest/nest_to_spawn
 	action_icon = 'icons/mob/nest_new.dmi'
 	action_icon_state = "hole"
+	var/doing_the_thing
 	COOLDOWN_DECLARE(nest_cooldown)
 
 /obj/effect/proc_holder/mob_common/make_nest/gecko
@@ -235,6 +236,9 @@
 
 /obj/effect/proc_holder/mob_common/make_nest/molerat
 	nest_to_spawn = /obj/structure/nest/molerat
+
+/obj/effect/proc_holder/mob_common/make_nest/roach
+	nest_to_spawn = /obj/structure/nest/radroach
 
 /obj/effect/proc_holder/mob_common/make_nest/rat
 	immune_to_lowpop = TRUE
@@ -250,17 +254,14 @@
 /obj/effect/proc_holder/mob_common/make_nest/is_available(mob/living/user)
 	if(!..())
 		return FALSE
+	if(doing_the_thing)
+		user.show_message(span_alert("You're already doing that!"))
+		return FALSE
 	if(COOLDOWN_TIMELEFT(src, nest_cooldown))
 		user.show_message(span_alert("You can't do this for another <u>[(nest_cooldown-world.time)*0.1] seconds</u>."))
 		return FALSE
-	if(user.ckey)
-		if(!islist(GLOB.player_made_nests[user.ckey]))
-			GLOB.player_made_nests[user.ckey] = list()
-		if(!islist(GLOB.player_made_nests[user.ckey][nest_to_spawn]))
-			GLOB.player_made_nests[user.ckey][nest_to_spawn] = list()
-		if(LAZYLEN(GLOB.player_made_nests[user.ckey][nest_to_spawn]) >= 2)
-			user.show_message(span_alert("You already have 2 active nests! Go remove some of them if you want more."))
-			return FALSE
+	if(!can_they_nest(user))
+		return FALSE
 	return TRUE
 
 /obj/effect/proc_holder/mob_common/make_nest/Trigger(mob/user)
@@ -286,18 +287,36 @@
 		owner.show_message(span_alert("There's a nest here!"))
 		return
 
+	doing_the_thing = TRUE
 	playsound(the_turf, 'sound/effects/shovel_dig.ogg', 50, 1)
 	owner.visible_message(span_alert("[owner] starts to dig a hole..."))
 	if(!do_after(owner, 10 SECONDS, FALSE, owner))
+		doing_the_thing = FALSE
 		owner.show_message(span_alert("You were interrupted!"))
 		return
+	doing_the_thing = FALSE
 
+	if(!can_they_nest(owner))
+		return FALSE
 	var/obj/structure/nest/makenest = new nest_to_spawn(the_turf)
 	makenest.register_ckey(owner.ckey)
 	owner.visible_message(span_alert("[owner] digs a gross hole in the ground!"))
 	playsound(the_turf, 'sound/effects/shovel_dig.ogg', 50, 1)
 	COOLDOWN_START(src, nest_cooldown, 30 SECONDS)
 	return TRUE
+
+/obj/effect/proc_holder/mob_common/make_nest/proc/can_they_nest(mob/living/user)
+	if(!user.ckey)
+		return FALSE
+	if(!islist(GLOB.player_made_nests[user.ckey]))
+		GLOB.player_made_nests[user.ckey] = list()
+	if(!islist(GLOB.player_made_nests[user.ckey][nest_to_spawn]))
+		GLOB.player_made_nests[user.ckey][nest_to_spawn] = list()
+	if(LAZYLEN(GLOB.player_made_nests[user.ckey][nest_to_spawn]) >= 2)
+		user.show_message(span_alert("You already have 2 active nests! Go remove some of them if you want more."))
+		return FALSE
+	return TRUE
+
 
 /* 
  * Makes a nest!

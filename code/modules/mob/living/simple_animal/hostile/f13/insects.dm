@@ -469,9 +469,9 @@
 	blood_volume = 0
 	casingtype = /obj/item/ammo_casing/shotgun/bloatfly
 	projectiletype = null
-	projectilesound = 'sound/f13npc/bloatfly/shoot1.ogg'
-	sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
-	sound_after_shooting_delay = 1 SECONDS
+	projectilesound = 'sound/f13npc/bloatfly/shoot2.ogg'
+	//sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
+	//sound_after_shooting_delay = 1 SECONDS
 	extra_projectiles = 1
 	auto_fire_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	ranged_cooldown_time = 3 SECONDS
