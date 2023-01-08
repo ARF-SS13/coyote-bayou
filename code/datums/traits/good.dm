@@ -881,9 +881,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	locked =  FALSE
 
 /datum/quirk/ratlord
-	name = "Rat Master"
+	name = "Beastmaster - Rats"
 	desc = "Whenever by psychic means or not, you gained ability to call forth friendly type of rats. <u>Do note they will attack <b>only</b> the hostile mobs</u>."
-	value = 8 //pve imbalanced af
+	value = 4 //might be pve imbalanced af tho
 	mob_trait = TRAIT_PIEDPIPER
 	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
 	lose_text = span_danger("You've lost your rat crown...")

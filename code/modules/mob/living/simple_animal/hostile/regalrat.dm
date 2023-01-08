@@ -310,6 +310,7 @@
 	visible_message(span_notice("[src] sure looks friendly!"))
 
 // Servants to Pied Piper of Wasteland
+// Should be friendly toward players and docile animals, unless they've got faction differing from "neutral" (such as dogs).
 /mob/living/simple_animal/hostile/rat/tame
 	name = "tame rat"
 	desc = "It's a dubious rodent of unknown breed, that seem to be more docile with people. Still have anger issues toward raiders and hostile fauna."
@@ -322,7 +323,7 @@
 	color = "#91fdac"
 	faction = list("neutral", "dog") // Dog faction is here to avoid 'em targeting poor corgis. Rat faction isn't here so they could target hostile ones.
 	//can_ghost_into = FALSE
-	desc_short = "Squeaky squeak!"
+	desc_short = "Squeak friend!"
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat/tame
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat/tame
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat/tame
