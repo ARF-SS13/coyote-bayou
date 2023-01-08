@@ -147,7 +147,7 @@
 /datum/emote/living/carbon/claw/run_emote(mob/user)
 	. = ..()
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your claws are out, makes it hard to handle stuff!"))
+		to_chat(user, span_warning("Your hands are too full to use your claws!"))
 		return
 	var/obj/item/hand_item/clawer/claw = new(user)
 	if(user.put_in_active_hand(claw))
