@@ -130,13 +130,14 @@
 /datum/emote/living/carbon/bite/run_emote(mob/user)
 	. = ..()
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your active hand is full, and therefore you can't bite anything! Don't ask why!"))
+		to_chat(user, span_warning("Your hands are too full to properly bite!  Don't ask!"))
 		return
 	var/obj/item/hand_item/biter/bite = new(user)
 	if(user.put_in_active_hand(bite))
 		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
 	else
 		qdel(bite)
+
 
 //Clawer//
 /datum/emote/living/carbon/claw
@@ -155,6 +156,8 @@
 	else
 		qdel(claw)
 
+
+//Shover//
 /datum/emote/living/carbon/shover
 	key = "shove"
 	key_third_person = "shoves"
@@ -163,7 +166,7 @@
 /datum/emote/living/carbon/shover/run_emote(mob/user)
 	. = ..()
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("You're too on edge from wanting to shove someone to hold onto something!"))
+		to_chat(user, span_warning("Your hands are too full to really shove someone!"))
 		return
 	var/obj/item/hand_item/shover/shove = new(user)
 	if(user.put_in_active_hand(shove))
