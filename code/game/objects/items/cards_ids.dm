@@ -544,14 +544,14 @@
 	bank_support = ID_LOCKED_BANK_ACCOUNT
 
 /obj/item/card/id/captains_spare
-	name = "Mayor's spare ID"
+	name = "Mayor's ID"
 	desc = "A special ID handed to anyone with status of Mayor."
 	icon_state = "gold"
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-	registered_name = "Captain"
-	assignment = "Captain"
+	registered_name = "Jo'Anna Marie"
+	assignment = "Mayor"
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
 
 /obj/item/card/id/centcom
