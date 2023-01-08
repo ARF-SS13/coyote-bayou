@@ -288,26 +288,27 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	var/alert_mob_dupe_login = FALSE
 	if(CONFIG_GET(flag/log_access))
-		for(var/I in GLOB.clients)
-			if(!I || I == src)
-				continue
-			var/client/C = I
-			if(C.key && (C.key != key) )
-				var/matches
-				if( (C.address == address) )
-					matches += "IP ([address])"
-				if( (C.computer_id == computer_id) )
+		if(!check_multikey_allowlist(ckey))
+			for(var/I in GLOB.clients)
+				if(!I || I == src)
+					continue
+				var/client/C = I
+				if(C.key && (C.key != key) )
+					var/matches
+					if( (C.address == address) )
+						matches += "IP ([address])"
+					if( (C.computer_id == computer_id) )
+						if(matches)
+							matches += " and "
+						matches += "ID ([computer_id])"
+						alert_mob_dupe_login = TRUE
 					if(matches)
-						matches += " and "
-					matches += "ID ([computer_id])"
-					alert_mob_dupe_login = TRUE
-				if(matches)
-					if(C)
-						message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)].</span>")
-						log_admin_private("Notice: [key_name(src)] has the same [matches] as [key_name(C)].")
-					else
-						message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). </span>")
-						log_admin_private("Notice: [key_name(src)] has the same [matches] as [key_name(C)] (no longer logged in).")
+						if(C)
+							message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)].</span>")
+							log_admin_private("Notice: [key_name(src)] has the same [matches] as [key_name(C)].")
+						else
+							message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). </span>")
+							log_admin_private("Notice: [key_name(src)] has the same [matches] as [key_name(C)] (no longer logged in).")
 
 	if(GLOB.player_details[ckey])
 		player_details = GLOB.player_details[ckey]
