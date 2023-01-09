@@ -94,11 +94,14 @@
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		flamethrower_screwdriver(I, user)
+		. = ..()
 	/*else if(istype(I, /obj/item/stack/rods))
 		flamethrower_rods(I, user)
 	*/
-	else
-		. = ..()
+	if(I.has_reagent(/datum/reagent/fuel))
+		if(refil_the_tool(I, user))
+			return
+	. = ..()
 	update_icon()
 
 /obj/item/weldingtool/proc/explode()
