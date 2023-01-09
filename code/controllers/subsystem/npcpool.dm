@@ -3,6 +3,8 @@ SUBSYSTEM_DEF(npcpool)
 	flags = SS_KEEP_TIMING | SS_NO_INIT
 	priority = FIRE_PRIORITY_NPC
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
+	wait = 1 SECONDS // currently defines how often mobs attack and flip out
+	// wait = 1 DECISECOND makes retreat/approach mobs just wiggle around in place and cheesegrate people
 
 	var/list/currentrun = list()
 
