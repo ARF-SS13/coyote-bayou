@@ -61,8 +61,8 @@
 	health = 144
 	maxHealth = 144
 	speed = 1
-	melee_damage_lower = 25
-	melee_damage_upper = 40
+	melee_damage_lower = 18
+	melee_damage_upper = 32
 	armour_penetration = 0.25
 	obj_damage = 150
 	see_in_dark = 8
@@ -101,8 +101,8 @@
 	health = 150
 	has_field_of_vision = FALSE
 	obj_damage = 30
-	melee_damage_lower = 25
-	melee_damage_upper = 50
+	melee_damage_lower = 18
+	melee_damage_upper = 40
 	vision_range = 9
 	aggro_vision_range = 18
 	retreat_distance = 6

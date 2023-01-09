@@ -15,8 +15,8 @@
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
-	melee_damage_lower = 25
-	melee_damage_upper = 47
+	melee_damage_lower = 20
+	melee_damage_upper = 38
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM

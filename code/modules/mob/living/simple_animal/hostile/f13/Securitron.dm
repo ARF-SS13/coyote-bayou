@@ -130,8 +130,8 @@
 	maxHealth = 150 
 	health = 150
 	del_on_death = FALSE
-	melee_damage_lower = 28
-	melee_damage_upper = 65
+	melee_damage_lower = 24
+	melee_damage_upper = 55
 	extra_projectiles = 2 //5 projectiles
 	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
 	retreat_distance = 5

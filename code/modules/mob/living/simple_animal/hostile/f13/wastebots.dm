@@ -30,8 +30,8 @@
 	healable = FALSE
 	stat_attack = CONSCIOUS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
-	melee_damage_lower = 14
-	melee_damage_upper = 28
+	melee_damage_lower = 12
+	melee_damage_upper = 24
 	robust_searching = TRUE
 	attack_verb_simple = "saws"
 	faction = list("wastebot")
@@ -112,8 +112,8 @@
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
 	maxHealth = 100 
 	health = 100
-	melee_damage_lower = 20
-	melee_damage_upper = 72
+	melee_damage_lower = 18
+	melee_damage_upper = 64
 	attack_sound = 'sound/items/welder.ogg'
 	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
@@ -256,8 +256,8 @@
 	maxHealth = 110 
 	health = 110
 	can_ghost_into = FALSE
-	melee_damage_lower = 20
-	melee_damage_upper = 45
+	melee_damage_lower = 15
+	melee_damage_upper = 37
 	attack_verb_simple = "slaps"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser
@@ -404,8 +404,8 @@
 
 /mob/living/simple_animal/hostile/handy/protectron/playable
 	ranged = FALSE
-	melee_damage_lower = 35
-	melee_damage_upper = 45
+	melee_damage_lower = 25
+	melee_damage_upper = 38
 	health = 100
 	maxHealth = 100
 	speed = 2
@@ -496,8 +496,8 @@
 	can_ghost_into = FALSE
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	speed = 1
-	melee_damage_lower = 25
-	melee_damage_upper = 60
+	melee_damage_lower = 18
+	melee_damage_upper = 45
 	environment_smash = 2 //can smash walls
 	attack_verb_simple = "grinds their claws on"
 	faction = list("wastebot")
