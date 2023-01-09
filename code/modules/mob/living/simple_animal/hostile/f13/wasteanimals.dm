@@ -36,6 +36,7 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	pass_flags = PASSTABLE
 	speak_emote = list(
 		"squeaks",
 		"cackles",

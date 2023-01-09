@@ -365,6 +365,7 @@
 	faction = list("cazador")
 	movement_type = FLYING
 	a_intent = INTENT_HARM
+	pass_flags = PASSTABLE | PASSMOB
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
