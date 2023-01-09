@@ -98,7 +98,7 @@
 	/*else if(istype(I, /obj/item/stack/rods))
 		flamethrower_rods(I, user)
 	*/
-	if(I.has_reagent(/datum/reagent/fuel))
+	if(I.has_reagent(/datum/reagent/fuel) && !isOn())
 		if(refil_the_tool(I, user))
 			return
 	. = ..()
