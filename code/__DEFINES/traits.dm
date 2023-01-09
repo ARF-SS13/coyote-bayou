@@ -253,7 +253,11 @@
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
-#define TRAIT_PIEDPIPER "rat_lord"
+/// Beast Friend and Beastmaster traits (together for now)
+#define TRAIT_BSF_RAT "beastfriend-rats"
+#define TRAIT_BSM_RAT "beastmaster-rats"
+#define TRAIT_BSF_SC "beastfriend-smallcritters"
+#define TRAIT_BSM_SC "beastmaster-smallcritters"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)

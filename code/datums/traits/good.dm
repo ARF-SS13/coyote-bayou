@@ -880,39 +880,104 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE
 
-/datum/quirk/ratlord
-	name = "Beast Master - Rats (Experimental)"
-	desc = "Whenever by psychic means or not, you gained ability to call forth friendly type of rats. <u>Do note they will attack <b>only</b> the hostile mobs</u>."
-	value = 4 //might be pve imbalanced af tho
-	mob_trait = TRAIT_PIEDPIPER
+/datum/quirk/ratfriend
+	name = "Beast Friend - Rats"
+	desc = "Rattos and wild mice outright ignore you now. You also can try to tame them, which makes them neutral to other players."
+	value = 2
+	mob_trait = TRAIT_BSF_RAT
+	gain_text = span_notice("Rats are friends!")
+	lose_text = span_danger("God of rats curses your name...")
+	locked = FALSE
+	var/obj/effect/proc_holder/mob_common/taming_mobs/rat/tame
+
+/datum/quirk/ratfriend/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.faction |= list("rat-friend")
+	tame = new
+	H.AddAbility(tame)
+
+/datum/quirk/ratfriend/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.faction -= list("rat-friend")
+		H.RemoveAbility(tame)
+		QDEL_NULL(tame)
+
+/datum/quirk/ratmaster
+	name = "Beast Master - Rats"
+	desc = "Whenever by psychic means or not, you gained ability to control the rats of Wasteland.\
+		<br><b>WARNING</b>: While you able to control the mentioned, they will still attack you if you don't have related beast friend quirk (and your pals if not tamed)."
+	value = 2
+	mob_trait = TRAIT_BSM_RAT
 	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
 	lose_text = span_danger("You've lost your rat crown...")
 	locked = FALSE
-	var/obj/effect/proc_holder/mob_common/summon_backup/rat/tame/gather
-	var/obj/effect/proc_holder/mob_common/direct_mobs/rat/tame/moveto
-	var/obj/effect/proc_holder/mob_common/make_nest/rat/tame/build
-	var/obj/effect/proc_holder/mob_common/unmake_nest/clear
+	var/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/rat/gather
+	var/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/rat/moveto
 // Damn this action button code structure
 
-/datum/quirk/ratlord/add()
+/datum/quirk/ratmaster/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	gather = new
 	H.AddAbility(gather)
 	moveto = new
 	H.AddAbility(moveto)
-	build = new
-	H.AddAbility(build)
-	clear = new
-	H.AddAbility(clear)
 
-/datum/quirk/ratlord/remove()
+/datum/quirk/ratmaster/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.RemoveAbility(gather)
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
-		H.RemoveAbility(build)
-		QDEL_NULL(build)
-		H.RemoveAbility(clear)
-		QDEL_NULL(clear)
+
+/datum/quirk/critterfriend
+	name = "Beast Friend - Small Critters"
+	desc = "Roaches, geckos and young nightstalkers outright ignore you now.\
+	<br>You can also try to tame them, together with adult nightstalkers and molerats, which makes beasts neutral to other players."
+	value = 2
+	mob_trait = TRAIT_BSF_SC
+	gain_text = span_notice("Some if not all wasteland critters doesn't seem to mind you now!")
+	lose_text = span_danger("You feel critters of wasteland wouldn't be so friendly with you anymore...") // Perhaps make killing related mobs lose the quirk?
+	locked = FALSE
+	var/obj/effect/proc_holder/mob_common/taming_mobs/small_critter/tame
+
+/datum/quirk/critterfriend/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.faction |= list("critter-friend")
+	tame = new
+	H.AddAbility(tame)
+
+/datum/quirk/critterfriend/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.faction -= list("critter-friend")
+		H.RemoveAbility(tame)
+		QDEL_NULL(tame)
+
+/datum/quirk/crittermaster
+	name = "Beast Master - Small Critters"
+	desc = "Whenever by psychic means or not, you gained ability to control roaches, geckos and molerats.\
+	<br><b>WARNING</b>: While you able to control the mentioned, they will still attack you if you don't have related beast friend quirk (and your pals if not tamed)."
+	value = 2
+	mob_trait = TRAIT_BSM_SC
+	gain_text = span_notice("You tapped to potentials of the critter horde!")
+	lose_text = span_danger("Small critters refuse to obey your commands now.")
+	locked = FALSE
+	var/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/small_critter/gather
+	var/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/small_critter/moveto
+
+/datum/quirk/crittermaster/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	gather = new
+	H.AddAbility(gather)
+	moveto = new
+	H.AddAbility(moveto)
+
+/datum/quirk/crittermaster/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.RemoveAbility(gather)
+		QDEL_NULL(gather)
+		H.RemoveAbility(moveto)
+		QDEL_NULL(moveto)

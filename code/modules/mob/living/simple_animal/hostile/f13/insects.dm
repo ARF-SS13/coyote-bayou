@@ -536,7 +536,7 @@
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("gecko", "critter-friend")
 	a_intent = INTENT_HARM
 	pass_flags = PASSTABLE | PASSMOB
 	density = FALSE
