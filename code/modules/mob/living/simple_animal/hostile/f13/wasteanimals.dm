@@ -26,8 +26,8 @@
 	health = 35
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 5
-	melee_damage_upper = 15
+	melee_damage_lower = 4
+	melee_damage_upper = 12
 	move_to_delay = 1.5
 	retreat_distance = 0
 	minimum_distance = 0
@@ -128,8 +128,8 @@
 	see_in_dark = 8
 	wander = 0
 	anchored = FALSE
-	melee_damage_lower = 20
-	melee_damage_upper = 45
+	melee_damage_lower = 8
+	melee_damage_upper = 12
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /// Testing its randomness
@@ -174,7 +174,7 @@
 	move_to_delay = 2
 	// m2d 3 = standard, less is fast, more is slower.
 
-	retreat_distance = 8
+	retreat_distance = 0
 	//how far they pull back
 	
 	minimum_distance = 0
@@ -199,13 +199,13 @@
 	health = 80
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 6
-	melee_damage_upper = 15
+	melee_damage_lower = 4
+	melee_damage_upper = 12
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/nightstalker_bite.ogg'
 	speak_emote = list("growls")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("nightstalkers")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -223,8 +223,8 @@
 	see_in_dark = 8
 	wander = 0
 	anchored = FALSE
-	melee_damage_lower = 20
-	melee_damage_upper = 45
+	melee_damage_lower = 10
+	melee_damage_upper = 15
 
 /mob/living/simple_animal/hostile/stalker/AttackingTarget()
 	. = ..()
@@ -250,6 +250,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+	retreat_distance = 8
+	minimum_distance = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/stack/sheet/bone = 1)
 	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
 	response_help_simple = "pets"
@@ -291,8 +293,8 @@
 	see_in_dark = 8
 	wander = 0
 	anchored = FALSE
-	melee_damage_lower = 20
-	melee_damage_upper = 45
+	melee_damage_lower = 5
+	melee_damage_upper = 10
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /mob/living/simple_animal/hostile/stalker/AttackingTarget()
@@ -358,7 +360,7 @@
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 4
-	melee_damage_upper = 12
+	melee_damage_upper = 10
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")

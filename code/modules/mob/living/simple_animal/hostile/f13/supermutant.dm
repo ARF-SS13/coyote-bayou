@@ -43,8 +43,8 @@
 		"hostile",
 		"supermutant"
 		)
-	melee_damage_lower = 25
-	melee_damage_upper = 45
+	melee_damage_lower = 20
+	melee_damage_upper = 35
 	aggro_vision_range = 7
 	//tiles within they start attacking, doesn't count the mobs tile
 	vision_range = 8
@@ -143,8 +143,8 @@
 		ARMOR_MODIFIER_DOWN_LASER_T2,
 		ARMOR_MODIFIER_UP_DT_T2
 		)
-	melee_damage_lower = 20
-	melee_damage_upper = 60
+	melee_damage_lower = 18
+	melee_damage_upper = 44
 	attack_sound = "hit_swing"
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -229,8 +229,8 @@
 	icon_state = "hulk_113_s"
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
-	melee_damage_lower = 35
-	melee_damage_upper = 70
+	melee_damage_lower = 27
+	melee_damage_upper = 57
 	mob_size = 5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -252,8 +252,8 @@
 	health = 140
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 35
-	melee_damage_upper = 60
+	melee_damage_lower = 27
+	melee_damage_upper = 50
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -282,8 +282,8 @@
 	ranged = 1
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 35
-	melee_damage_upper = 45
+	melee_damage_lower = 25
+	melee_damage_upper = 37
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	extra_projectiles = 1
@@ -328,8 +328,8 @@
 	health = 130
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 25
-	melee_damage_upper = 55
+	melee_damage_lower = 20
+	melee_damage_upper = 47
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	retreat_distance = 5
@@ -370,8 +370,8 @@
 	maxHealth = 360
 	health = 360
 	damage_coeff = list(BRUTE = 0.5, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 25
-	melee_damage_upper = 60
+	melee_damage_lower = 24
+	melee_damage_upper = 48
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/rain
@@ -383,8 +383,8 @@
 	maxHealth = 360
 	health = 360
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 25
-	melee_damage_upper = 60
+	melee_damage_lower = 24
+	melee_damage_upper = 48
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain
@@ -396,8 +396,8 @@
 	maxHealth = 360
 	health = 360
 	damage_coeff = list(BRUTE = -0.1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 30
-	melee_damage_upper = 65
+	melee_damage_lower = 24
+	melee_damage_upper = 48
 	var/charging = FALSE
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -488,8 +488,8 @@
 	maxHealth = 380
 	health = 380
 	damage_coeff = list(BRUTE = 1, BURN = -0.25, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 40
-	melee_damage_upper = 70
+	melee_damage_lower = 35
+	melee_damage_upper = 60
 	extra_projectiles = 2
 	retreat_distance = 2
 	minimum_distance = 4
@@ -545,8 +545,8 @@
 	maxHealth = 440
 	health = 440
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 35
-	melee_damage_upper = 70
+	melee_damage_lower = 28
+	melee_damage_upper = 62
 	extra_projectiles = 1
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/rain/Initialize(mapload)
