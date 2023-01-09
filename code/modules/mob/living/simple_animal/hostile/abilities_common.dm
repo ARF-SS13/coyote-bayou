@@ -11,7 +11,8 @@
 		/mob/living/simple_animal/hostile/rat,\
 		/mob/living/simple_animal/hostile/rat/skitter)
 #define RTS_FRATS_ALLOWED list(\
-		/mob/living/simple_animal/hostile/rat/tame)
+		/mob/living/simple_animal/hostile/rat/tame,\
+		/mob/living/simple_animal/hostile/rat/skitter/curious)
 #define RTS_ROBOT_ALLOWED list(\
 		/mob/living/simple_animal/hostile/handy,\
 		/mob/living/simple_animal/hostile/handy/protectron,\
@@ -115,11 +116,11 @@
 	banned_from_lowpop = TRUE
 
 /obj/effect/proc_holder/mob_common/summon_backup/activate(mob/user)
-	if(!istype(user, /mob/living/simple_animal))
+	if(!istype(user, /mob/living))
 		return
 	if(user.incapacitated())
 		return
-	var/mob/living/simple_animal/owner = user
+	var/mob/living/owner = user
 
 	var/turf/the_turf = get_turf(owner)
 	if(!the_turf)
