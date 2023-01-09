@@ -184,6 +184,8 @@
 /obj/item/weldingtool/proc/refil_the_tool(atom/O, mob/user)
 	if(!istype(O))
 		return FALSE
+	if(isOn())
+		return FALSE
 	if(!istype(O.reagents))
 		return FALSE
 	var/datum/reagents/tank_reagents = O.reagents
