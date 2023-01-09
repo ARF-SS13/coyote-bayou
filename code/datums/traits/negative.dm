@@ -801,6 +801,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "You forgo some technology, like autolathes and some other machinery."
 	value = -2
 	mob_trait = TRAIT_TECHNOPHOBE
-	gain_text = span_notice("You feel like all that training with bows has paying off.")
-	lose_text = span_danger("Guns were always better...")
+	gain_text = span_notice("All my homies hate machines.")
+	lose_text = span_danger("Maybe industrial society isn't so bad...")
 	locked =  FALSE

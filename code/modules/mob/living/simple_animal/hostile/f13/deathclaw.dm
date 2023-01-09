@@ -17,7 +17,7 @@
 	reach = 2
 	speed = -1
 	obj_damage = 200
-	melee_damage_lower = 15
+	melee_damage_lower = 30
 	melee_damage_upper = 40
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	move_to_delay = 2.4 //hahahahahahahaaaaa
@@ -111,7 +111,7 @@
 	health = 1000
 	stat_attack = CONSCIOUS
 	melee_damage_lower = 40
-	melee_damage_upper = 80
+	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 

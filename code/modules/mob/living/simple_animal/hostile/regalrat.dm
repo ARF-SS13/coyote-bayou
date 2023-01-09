@@ -26,6 +26,7 @@
 	ventcrawler = VENTCRAWLER_ALWAYS
 	unique_name = TRUE
 	faction = list("rat")
+	pass_flags = PASSTABLE | PASSMOB | PASSGRILLE
 	var/datum/action/cooldown/coffer
 	var/datum/action/cooldown/riot
 	can_ghost_into = TRUE

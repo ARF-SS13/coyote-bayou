@@ -19,8 +19,8 @@
 	faction = list("hostile", "wolf")
 	environment_smash = 0
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 1, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 1,/obj/item/stack/sheet/bone = 1)
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	melee_damage_lower = 8
+	melee_damage_upper = 16
 	aggro_vision_range = 15
 	waddle_amount = 2
 	waddle_up_time = 0 //Dogs can't look up ~TK
@@ -61,8 +61,8 @@
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
 	maxHealth = 70
 	health = 70
-	melee_damage_lower = 15
-	melee_damage_upper = 35
+	melee_damage_lower = 12
+	melee_damage_upper = 28
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 /mob/living/simple_animal/hostile/wolf/alpha/playable
 	health = 70
@@ -86,8 +86,8 @@
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
 	maxHealth = 100
 	health = 100
-	melee_damage_lower = 25
-	melee_damage_upper = 35
+	melee_damage_lower = 20
+	melee_damage_upper = 28
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
 //Unique Dogs - Guerilla for Khans is a Rottweiler, Brutus and Lupa german shepherds, Sniffs-the-Earth a sheepdog.

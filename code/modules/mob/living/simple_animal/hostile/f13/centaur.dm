@@ -17,8 +17,8 @@
 	health = 80
 	speed = 2
 	harm_intent_damage = 8
-	melee_damage_lower = 5 // damage range is punch min, average is 15 when in melee
-	melee_damage_upper = 25 
+	melee_damage_lower = 4 // damage range is punch min, average is 15 when in melee
+	melee_damage_upper = 20 
 	ranged = TRUE
 	wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_CRAWL
@@ -90,8 +90,8 @@
 	health = 1000
 	speed = -0.5
 	harm_intent_damage = 8
-	melee_damage_lower = 75
-	melee_damage_upper = 75
+	melee_damage_lower = 30
+	melee_damage_upper = 40
 	armour_penetration = 0.1
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -135,8 +135,8 @@
 	maxHealth = 500
 	health = 500
 	harm_intent_damage = 8
-	melee_damage_lower = 45
-	melee_damage_upper = 45
+	melee_damage_lower = 20
+	melee_damage_upper = 30
 	speed = 2
 
 
@@ -156,8 +156,8 @@
 	maxHealth = 700
 	health = 700
 	harm_intent_damage = 8
-	melee_damage_lower = 50
-	melee_damage_upper = 50
+	melee_damage_lower = 30
+	melee_damage_upper = 40
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE
@@ -172,8 +172,8 @@
 	health = 1000
 	desc = "A terrible fusion of man, animal, and something else entirely. It looks to be in great pain, constantly shuddering violently and seeming relatively docile to the robots and raiders of the bunker. Huh."
 	harm_intent_damage = 8
-	melee_damage_lower = 60
-	melee_damage_upper = 70
+	melee_damage_lower = 40
+	melee_damage_upper = 50
 	obj_damage = 300
 	faction = list("raider")
 	wound_bonus = 20
