@@ -903,12 +903,12 @@
 /datum/emote/aflap
 	key = "aflap"
 	key_third_person = "aflaps"
-	message = "flaps their arms ANGRILY!!"
+	message = "flaps their wings ANGRILY!!"
 
 /datum/emote/flaparms
 	key = "flapa"
 	key_third_person = "flapas"
-	message = "flaps their wings."
+	message = "flaps their arms."
 
 /datum/emote/aflaparms
 	key = "aflapa"
@@ -977,8 +977,65 @@
 
 /datum/emote/look
 	key = "look"
-	key_third_person = "makes a fennec-y bark"
-	message = "makes a fennec-y bark!"
+	key_third_person = "looks"
+	message = "looks!"
+
+/datum/emote/buzz
+	key = "buzz"
+	key_third_person = "buzzes"
+	message = "buzzes."
+	message_param = "buzzes at %t."
+	sound_vary = TRUE
+	sound = 'sound/machines/buzz-sigh.ogg'
+
+/datum/emote/buzz2
+	key = "buzz2"
+	message = "buzzes twice."
+	sound_vary = TRUE
+	sound = 'sound/machines/buzz-two.ogg'
+
+/datum/emote/ping
+	key = "ping"
+	key_third_person = "pings"
+	message = "pings."
+	message_param = "pings at %t."
+	sound_vary = TRUE
+	sound = 'sound/machines/ping.ogg'
+
+/datum/emote/chime
+	key = "chime"
+	key_third_person = "chimes"
+	message = "chimes."
+	sound_vary = TRUE
+	sound = 'sound/machines/chime.ogg'
+
+/datum/emote/ding
+	key = "ding"
+	key_third_person = "dings"
+	message = "dings!"
+	sound_vary = TRUE
+	sound = 'sound/machines/ding.ogg'
+
+/datum/emote/twobeep
+	key = "twobeep1"
+	key_third_person = "be-beeps"
+	message = "be-beeps!"
+	sound_vary = TRUE
+	sound = 'sound/machines/twobeep.ogg'
+
+/datum/emote/twobeep2
+	key = "twobeep2"
+	key_third_person = "be-beeps"
+	message = "be-beeps!"
+	sound_vary = TRUE
+	sound = 'sound/machines/twobeep_high.ogg'
+
+/datum/emote/silicon/dwoop
+	key = "dwoop"
+	key_third_person = "dwoops"
+	message = "chirps happily!"
+	sound_vary = TRUE
+	sound = 'sound/machines/dwoop.ogg'
 
 #define EMOTE_SPECIAL_STR "Strength"
 #define EMOTE_SPECIAL_PER "Perception"

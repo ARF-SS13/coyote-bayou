@@ -162,7 +162,7 @@
 	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs/ipc/up, /obj/effect/decal/cleanable/blood/gibs/ipc/down, /obj/effect/decal/cleanable/blood/gibs/ipc, /obj/effect/decal/cleanable/blood/gibs/ipc, /obj/effect/decal/cleanable/blood/gibs/ipc/body, /obj/effect/decal/cleanable/blood/gibs/ipc/limb, /obj/effect/decal/cleanable/blood/gibs/ipc/core)
 	gibamounts = list(1, 1, 1, 1, 1, 1, 1)
 	gib_mob_type = /mob/living/carbon/human/species/ipc
-	gib_mob_species = /datum/species/ipc
+	gib_mob_species = /datum/species/synthfurry/ipc
 	sound_vol = 50
 	sparks = TRUE
 	sound_to_play = 'sound/effects/bang.ogg'

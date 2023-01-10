@@ -1,6 +1,6 @@
 /datum/species/mammal/synthetic
-	name = "Synthetic Anthropomorph"
-	id = SPECIES_MAMMAL_SYNTHETIC
+	name = "Synthetic Anthromorph"
+	id = "synthfurry"
 
 	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,ROBOTIC_LIMBS,HAS_FLESH,HAS_BONE,WINGCOLOR,HORNCOLOR)
 	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
