@@ -281,7 +281,7 @@
 /mob/living/simple_animal/ComponentInitialize()
 	. = ..()
 	if(can_ghost_into)
-		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
+		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src

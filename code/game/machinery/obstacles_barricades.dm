@@ -112,7 +112,7 @@
 	icon_state = "sandbags"
 	max_integrity = 280
 	proj_pass_rate = 20
-	pass_flags_self = PASSTABLE | LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE
@@ -442,7 +442,6 @@
 	var/slowdown = 40
 	var/buildstacktype = /obj/item/stack/rods
 	var/buildstackamount = 5
-	pass_flags_self = PASSTABLE | LETPASSTHROW
 
 /obj/structure/obstacle/barbedwire/end
 	icon_state = "barbed_end"
@@ -496,7 +495,7 @@
 	max_integrity = 100
 	anchored = 1
 	density = 1
-	pass_flags_self = PASSTABLE | LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	var/buildstacktype = /obj/item/stack/rods
 	var/buildstackamount = 1
 
