@@ -56,6 +56,10 @@ jobs:
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '^18'
       - name: Compile All Maps
         run: |
           bash tools/ci/install_byond.sh
@@ -156,6 +160,10 @@ jobs:
           mysql -u root -proot tg_ci < SQL/tgstation_schema.sql
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '^18'
       - name: Install rust-g
         run: |
           sudo dpkg --add-architecture i386
@@ -221,6 +229,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '^18'
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:

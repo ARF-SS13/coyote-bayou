@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '>=12.13'
+          node-version: '^18'
       - name: Build TGUI
         run: bin/tgui --build
         working-directory: ./tgui
