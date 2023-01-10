@@ -28,8 +28,8 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	speak_chance = 10
 	taunt_chance = 25
 
-	melee_damage_lower = 20
-	melee_damage_upper = 45
+	melee_damage_lower = 18
+	melee_damage_upper = 38
 
 	attack_verb_simple = "bites and constricts"
 	see_in_dark = 8

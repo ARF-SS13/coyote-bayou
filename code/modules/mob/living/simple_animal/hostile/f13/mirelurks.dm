@@ -37,7 +37,7 @@
 	maxHealth = 120
 	health = 120
 	melee_damage_lower = 5
-	melee_damage_upper = 20
+	melee_damage_upper = 18
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
@@ -59,7 +59,7 @@
 	maxHealth = 160
 	health = 160
 	melee_damage_lower = 15
-	melee_damage_upper = 35
+	melee_damage_upper = 28
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS

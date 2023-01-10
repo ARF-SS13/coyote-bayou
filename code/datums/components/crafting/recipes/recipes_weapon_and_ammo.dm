@@ -524,7 +524,7 @@
 
 /datum/crafting_recipe/gun/shotgunbat
 	name = "Shotgun bat"
-	result = /obj/item/gun/ballistic/revolver/single_shotgun
+	result = /obj/item/gun/ballistic/revolver/hobo/single_shotgun
 	reqs = list(/obj/item/screwdriver = 1,
 	/obj/item/twohanded/baseball = 1,
 	/obj/item/stack/crafting/metalparts = 2,
@@ -674,7 +674,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
-	
+
 //coyote repeater
 /datum/crafting_recipe/coyoterepeater
 	name = "Coyote Repeater"
@@ -701,7 +701,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-	
+
 //medicinestick
 /datum/crafting_recipe/medicinestick
 	name = "Medicine Stick"
@@ -716,7 +716,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-	
+
 //smelltheroses
 /datum/crafting_recipe/smelltheroses
 	name = "Smell-The-Roses"
@@ -730,7 +730,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-	
+
 //mourningsunrise
 /datum/crafting_recipe/mourningsunrise
 	name = "Mourning Sunrise"

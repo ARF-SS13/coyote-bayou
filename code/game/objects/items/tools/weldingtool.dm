@@ -94,11 +94,14 @@
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		flamethrower_screwdriver(I, user)
+		. = ..()
 	/*else if(istype(I, /obj/item/stack/rods))
 		flamethrower_rods(I, user)
 	*/
-	else
-		. = ..()
+	if(I.reagents?.has_reagent(/datum/reagent/fuel) && !isOn())
+		if(refil_the_tool(I, user))
+			return
+	. = ..()
 	update_icon()
 
 /obj/item/weldingtool/proc/explode()
@@ -134,10 +137,10 @@
 	. = ..()
 	if(!proximity)
 		return
-	if(!status && O.is_refillable())
-		reagents.trans_to(O, reagents.total_volume)
-		to_chat(user, span_notice("You empty [src]'s fuel tank into [O]."))
-		update_icon()
+	if(refil_the_tool(O, user))
+		return
+	//if(empty_the_tool(O, user))
+	//	return
 	if(isOn())
 		use(1)
 		var/turf/location = get_turf(user)
@@ -150,6 +153,7 @@
 			if(L.IgniteMob())
 				message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(L)] on fire with [src] at [AREACOORD(user)]")
 				log_game("[key_name(user)] set [key_name(L)] on fire with [src] at [AREACOORD(user)]")
+	return ..()
 
 
 /obj/item/weldingtool/attack_self(mob/user)
@@ -162,6 +166,43 @@
 
 	update_icon()
 
+/* /obj/item/weldingtool/proc/empty_the_tool(atom/O, mob/user)
+	if(isOn())
+		return FALSE
+	if(!istype(O))
+		return FALSE
+	if(!O.is_refillable())
+		return FALSE
+	if(O.get_fuel() <= 0)
+		user.show_message(span_alert("[src] is empty!"))
+		return FALSE
+	reagents.trans_to(O, reagents.total_volume)
+	to_chat(user, span_notice("You empty [src]'s fuel tank into [O]."))
+	update_icon()
+	return */
+
+/obj/item/weldingtool/proc/refil_the_tool(atom/O, mob/user)
+	if(!istype(O))
+		return FALSE
+	if(isOn())
+		return FALSE
+	if(!istype(O.reagents))
+		return FALSE
+	var/datum/reagents/tank_reagents = O.reagents
+	if(!tank_reagents.has_reagent(/datum/reagent/fuel))
+		to_chat(user, span_warning("[O] doesn't have any fuel!"))
+		return FALSE
+	var/amt_remaining = get_fuel()
+	if(amt_remaining >= max_fuel)
+		to_chat(user, span_warning("[src] is full!"))
+		return FALSE
+	var/fill_this_much = max_fuel - amt_remaining
+	tank_reagents.trans_to(src, fill_this_much, log = TRUE)
+	user.visible_message(span_notice("[user] refills [user.p_their()] [name]."), span_notice("You refill [src]."))
+	playsound(src, 'sound/effects/refill.ogg', 50, 1)
+	update_icon()
+	O.update_icon()
+	return TRUE
 
 // Returns the amount of fuel in the welder
 /obj/item/weldingtool/proc/get_fuel()

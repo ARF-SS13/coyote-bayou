@@ -398,8 +398,8 @@
 	icon_dead = "baseball_raider_dead"
 	retreat_distance = 1
 	minimum_distance = 1
-	melee_damage_lower = 20
-	melee_damage_upper = 40
+	melee_damage_lower = 15
+	melee_damage_upper = 33
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
 	maxHealth = 125
 	health = 125
@@ -424,8 +424,8 @@
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
 	maxHealth = 125
 	health = 125
-	melee_damage_lower = 15
-	melee_damage_upper = 47
+	melee_damage_lower = 12
+	melee_damage_upper = 37
 	loot = list(/obj/item/twohanded/spear)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	rapid_melee = 1
@@ -451,8 +451,8 @@
 	maxHealth = 135
 	health = 135
 	rapid_melee = 1
-	melee_damage_lower = 20
-	melee_damage_upper = 47
+	melee_damage_lower = 15
+	melee_damage_upper = 37
 	loot = list(/obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -471,8 +471,8 @@
 	maxHealth = 150
 	health = 150
 	rapid_melee = 1
-	melee_damage_lower = 20
-	melee_damage_upper = 55
+	melee_damage_lower = 18
+	melee_damage_upper = 42
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/junker
@@ -487,8 +487,8 @@
 	health = 165
 	damage_coeff = list(BRUTE = 1, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	rapid_melee = 1
-	melee_damage_lower = 25
-	melee_damage_upper = 50
+	melee_damage_lower = 20
+	melee_damage_upper = 38
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/raider/junker/creator

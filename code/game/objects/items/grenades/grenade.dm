@@ -13,6 +13,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = FLAMMABLE
 	max_integrity = 40
+	var/preprime_sound = 'sound/f13weapons/garand_ping.ogg'
 	var/active = 0
 	var/det_time = 50
 	var/display_timer = 1
@@ -109,7 +110,7 @@
 			C.throw_mode_on()
 		if(msg)
 			to_chat(user, span_warning("You prime [src]! [DisplayTimeText(det_time)]!"))
-	playsound(src, 'sound/f13weapons/garand_ping.ogg', volume, 1)
+	playsound(src, preprime_sound, volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"
@@ -135,6 +136,7 @@
 			var/mob/living/carbon/C = user
 			C.throw_mode_on()
 		if(msg)
+			playsound(src, preprime_sound, 100, 1)
 			to_chat(user, span_warning("You prime [src]! [DisplayTimeText(det_time)]!"))
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
@@ -152,7 +154,7 @@
 			C.throw_mode_on()
 		if(msg)
 			to_chat(user, span_warning("You prime [src]! [DisplayTimeText(det_time)]!"))
-	playsound(src, 'sound/effects/fuse.ogg', volume, 1)
+	playsound(src, preprime_sound, volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"
