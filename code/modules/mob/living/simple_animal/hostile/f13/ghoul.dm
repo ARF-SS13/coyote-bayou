@@ -137,7 +137,7 @@
 	minimum_distance = 1
 	ranged = TRUE
 	ranged_message = "throws a rock"
-	ranged_cooldown_time = 1 SECONDS
+	ranged_cooldown_time = 3 SECONDS
 	projectiletype = /obj/item/projectile/bullet/ghoul_rock
 	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8
