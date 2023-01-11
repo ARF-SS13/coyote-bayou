@@ -106,7 +106,9 @@
 	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
-	projectiletype = /obj/item/projectile/bullet/c9mm/op
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -151,7 +153,9 @@
 	retreat_distance = 1
 	minimum_distance = 2
 	rapid_melee = 1
-	projectiletype = /obj/item/projectile/bullet/m44
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
 	obj_damage = 300
@@ -182,7 +186,9 @@
 	waddle_amount = 4
 	waddle_up_time = 2
 	waddle_side_time = 1
-	projectiletype = /obj/item/projectile/bullet/c45/op
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/c45/simple
 	loot = list(/obj/item/gun/ballistic/automatic/smg/greasegun, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	move_to_delay = 4.0 //faster than average, but not a lot
@@ -226,6 +232,8 @@
 	maxHealth = 165
 	health = 165
 	extra_projectiles = 2
+	ranged_cooldown_time = 1 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
 	speak_emote = list(
 		"growls",
 		"murrs",
@@ -273,6 +281,8 @@
 	icon_dead = "blueberry_bates_dead"
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
 	move_to_delay = 4 //S L O W
+	ranged_cooldown_time = 1 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	maxHealth = 200 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
@@ -328,7 +338,9 @@
 	maxHealth = 60
 	health = 60
 	rapid_melee = 1
-	projectiletype = /obj/item/projectile/bullet/c45/op
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/c45/simple
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/heavy/metal/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -366,9 +378,10 @@
 	maxHealth = 125
 	health = 125
 	rapid_melee = 1
-	projectiletype = /obj/item/projectile/bullet/a556/match
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
-	casingtype = /obj/item/ammo_casing/a556
 	loot = list(/obj/item/gun/ballistic/revolver/thatgun, /obj/item/clothing/suit/armor/medium/combat/rusted, /obj/item/clothing/head/helmet/f13/raidercombathelmet, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	projectile_sound_properties = list(
@@ -504,6 +517,8 @@
 	retreat_distance = 6
 	minimum_distance = 8
 	rapid_melee = 1
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
@@ -546,8 +561,9 @@
 	retreat_distance = 4
 	minimum_distance = 6
 	extra_projectiles = 2
-	ranged_cooldown_time = 15
-	projectiletype = /obj/item/projectile/bullet/shrapnel
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/shrapnel/simple
 	projectilesound = 'sound/f13weapons/auto5.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE

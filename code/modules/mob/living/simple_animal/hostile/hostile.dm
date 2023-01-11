@@ -58,6 +58,9 @@
 	var/melee_attack_cooldown = 2 SECONDS
 	COOLDOWN_DECLARE(melee_cooldown)
 
+	var/sight_shoot_delay_time = 0.7 SECONDS
+	COOLDOWN_DECLARE(sight_shoot_delay)
+
 	var/ranged_message = "fires" //Fluff text for ranged mobs
 	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
 	var/ranged_cooldown_time = 3 SECONDS //How long, in deciseconds, the cooldown of ranged attacks is
@@ -247,6 +250,7 @@
 				continue
 		var/Target = PickTarget(.)
 		GiveTarget(Target)
+		COOLDOWN_START(src, sight_shoot_delay, sight_shoot_delay_time)
 		return Target //We now have a target
 
 
@@ -507,6 +511,8 @@
 					return TRUE
 
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
+	if(COOLDOWN_TIMELEFT(src, sight_shoot_delay))
+		return FALSE
 	if(CheckFriendlyFire(A))
 		return
 	visible_message("<span class='danger'><b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!</span>")
