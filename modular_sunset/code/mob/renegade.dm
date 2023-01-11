@@ -54,6 +54,7 @@
 	minimum_distance = 2
 	extra_projectiles = 2
 	ranged_cooldown_time = 2 SECONDS
+	sight_shoot_delay_time = 0.2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
@@ -143,6 +144,7 @@
 	retreat_distance = 7
 	minimum_distance = 3
 	extra_projectiles = 2
+	sight_shoot_delay_time = 0.2 SECONDS
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
@@ -323,6 +325,7 @@
 	extra_projectiles = 5
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 	loot = list(
@@ -369,6 +372,7 @@
 	check_friendly_fire = 1
 	retreat_distance = 6
 	minimum_distance = 8
+	sight_shoot_delay_time = 0.2 SECONDS
 	ranged_cooldown_time = 1 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/m44/simple

@@ -155,6 +155,7 @@
 	rapid_melee = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	sight_shoot_delay_time = 0 SECONDS
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
@@ -233,6 +234,7 @@
 	health = 165
 	extra_projectiles = 2
 	ranged_cooldown_time = 1 SECONDS
+	sight_shoot_delay_time = 0 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
 	speak_emote = list(
 		"growls",
@@ -281,6 +283,7 @@
 	icon_dead = "blueberry_bates_dead"
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
 	move_to_delay = 4 //S L O W
+	sight_shoot_delay_time = 0 SECONDS
 	ranged_cooldown_time = 1 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
