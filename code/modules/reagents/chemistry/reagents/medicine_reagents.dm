@@ -36,6 +36,7 @@
 	taste_description = "badmins"
 	value = REAGENT_VALUE_GLORIOUS
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 // The best stuff there is. For testing/debugging.
 /datum/reagent/medicine/adminordrazine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -107,6 +108,7 @@
 	color = "#e650c0"
 	overdose_threshold = 60
 	taste_description = "grossness"
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/medbotchem/on_mob_life(mob/living/carbon/M)
 	switch(M.getBruteLoss())
@@ -195,6 +197,7 @@
 	pH = 11
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
@@ -238,6 +241,7 @@
 	pH = 12
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/pyroxadone/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
@@ -445,7 +449,7 @@
 	reagent_state = LIQUID
 	color = "#DCDCDC"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 60
+	//overdose_threshold = 60
 	taste_description = "sweetness and salt"
 	var/last_added = 0
 	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
@@ -533,6 +537,7 @@
 	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 40
 	value = REAGENT_VALUE_COMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M))
@@ -644,6 +649,7 @@
 	color = "#14FF3C"
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	pH = 12 //It's a reducing agent
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/potass_iodide/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
@@ -659,6 +665,7 @@
 	pH = 8.9
 	value = REAGENT_VALUE_COMMON //uncraftable
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/prussian_blue/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
@@ -675,6 +682,7 @@
 	value = REAGENT_VALUE_UNCOMMON
 	var/healtoxinlover = FALSE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/pen_acid/on_mob_life(mob/living/carbon/M)
 	//M.radiation -= max(M.radiation-RAD_MOB_SAFE, 0)/50
@@ -728,6 +736,7 @@
 	color = "#00FFFF"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	pH = 2
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/salbutamol/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REM, 0)
@@ -743,6 +752,7 @@
 	color = "#FF6464"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	pH = 11
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/perfluorodecalin/on_mob_life(mob/living/carbon/human/M)
 	M.adjustOxyLoss(-12*REM, 0)
@@ -996,6 +1006,7 @@
 	taste_description = "magnets"
 	pH = 0
 	value = REAGENT_VALUE_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/strange_reagent/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat == DEAD)
@@ -1095,6 +1106,7 @@
 	taste_description = "acid"
 	pH = 2
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
 	M.jitteriness = 0
@@ -1109,6 +1121,7 @@
 	color = "#00B4C8"
 	taste_description = "raw egg"
 	pH = 4
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M)
 	M.dizziness = 0
@@ -1319,6 +1332,7 @@
 	pH = 11
 	value = REAGENT_VALUE_EXCEPTIONAL
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-5*REM, FALSE) //A ton of healing - this is a 50 telecrystal investment.
@@ -1340,6 +1354,7 @@
 	color = "#555555"
 	pH = 11
 	value = REAGENT_VALUE_VERY_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/lesser_syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-2*REM, FALSE)
@@ -1364,6 +1379,7 @@
 	taste_description = "jelly"
 	pH = 11.8
 	value = REAGENT_VALUE_UNCOMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/neo_jelly/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-1.5*REM, FALSE)
@@ -1626,6 +1642,7 @@
 	pH = 9.12
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE // purely psychosomatic
 
 /datum/reagent/medicine/psicodine/on_mob_add(mob/living/L)
 	..()

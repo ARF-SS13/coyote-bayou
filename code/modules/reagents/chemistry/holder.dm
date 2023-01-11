@@ -297,10 +297,13 @@
 			C = R.holder.my_atom
 		if(!R.metabolizing)
 			R.metabolizing = TRUE
-			R.on_mob_metabolize(C)
+			if(isrobotic(C) && !R.synth_metabolism_use_human)
+				R.on_mob_metabolize_synth(C)
+			else
+				R.on_mob_metabolize(C)
 		if(C && R)
 			if(C.reagent_check(R) != 1)
-				if(can_overdose)
+				if(can_overdose && (!isrobotic(C) || (isrobotic(C) && R.synth_can_overdose_and_be_addicted)))
 					if(R.overdose_threshold)
 						if(R.volume > R.overdose_threshold && !R.overdosed)
 							R.overdosed = 1
@@ -319,14 +322,17 @@
 							var/datum/reagent/A = addiction
 							if(istype(R, A))
 								A.addiction_stage = -15 // you're satisfied for a good while.
-				need_mob_update += R.on_mob_life(C)
+				if(isrobotic(C) && !R.synth_metabolism_use_human)
+					need_mob_update += R.on_mob_life_synth(C)
+				else
+					need_mob_update += R.on_mob_life(C)
 
 	if(can_overdose)
 		if(addiction_tick == 6)
 			addiction_tick = 1
 			for(var/addiction in cached_addictions)
 				var/datum/reagent/R = addiction
-				if(C && R)
+				if(C && R && (!isrobotic(C) || (isrobotic(C) && R.synth_can_overdose_and_be_addicted)))
 					R.addiction_stage++
 					if(1 <= R.addiction_stage && R.addiction_stage <= R.addiction_stage1_end)
 						need_mob_update += R.addiction_act_stage1(C)
@@ -370,7 +376,10 @@
 			C = R.holder.my_atom
 		if(R.metabolizing)
 			R.metabolizing = FALSE
-			R.on_mob_end_metabolize(C)
+			if(isrobotic(C) && !R.synth_metabolism_use_human)
+				R.on_mob_end_metabolize_synth(C)
+			else
+				R.on_mob_end_metabolize(C)
 
 /datum/reagents/proc/conditional_update_move(atom/A, Running = 0)
 	var/list/cached_reagents = reagent_list
@@ -821,7 +830,10 @@
 				if(method == VAPOR)
 					var/mob/living/L = A
 					touch_protection = L.get_permeability_protection()
-				R.reaction_mob(A, method, R.volume * volume_modifier, show_message, touch_protection)
+				if(isrobotic(A) && !R.synth_metabolism_use_human)
+					R.reaction_synth(A, method, R.volume * volume_modifier, show_message, touch_protection)
+				else
+					R.reaction_mob(A, method, R.volume * volume_modifier, show_message, touch_protection)
 			if("TURF")
 				R.reaction_turf(A, R.volume * volume_modifier, show_message)
 			if("OBJ")

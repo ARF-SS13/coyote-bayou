@@ -67,11 +67,6 @@
 /datum/species/synthfurry/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	return FALSE
 
-/datum/species/synthfurry/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(istype(chem) && !chem.synthfriendly)
-		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 1000)
-	return ..()
-
 /datum/species/synthfurry/synth_anthromorph
 	name = "Synthetic Anthromorph"
 	id = "synthfurry"

@@ -419,6 +419,10 @@
 		M.adjustToxLoss(5, 0)
 	..()
 
+/datum/reagent/toxin/cazador_venom/on_mob_life_synth(mob/living/M)
+	if(volume >= 15)
+		M.adjustFireLoss(5, 0)
+	..()
 
 //////////////
 // BLOATFLY //

@@ -11,7 +11,7 @@
 	occur_text = "is cut open, slowly leaking blood"
 	sound_effect = 'sound/weapons/slice.ogg'
 	wound_type = WOUND_SLASH
-	severity = FALSE
+	severity = WOUND_SEVERITY_TRIVIAL
 	initial_flow = 4
 	minimum_flow = 2
 	clot_rate = 0.5
