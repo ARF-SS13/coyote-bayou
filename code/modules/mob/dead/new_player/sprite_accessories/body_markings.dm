@@ -12,7 +12,7 @@
 	color_src = MATRIXED
 	gender_specific = 0
 	icon = 'icons/mob/mam/citadel/mam_markings.dmi'
-	recommended_species = list("human", "mammal", "xeno", "insect" "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthanthro", "lizard", "ipc")
+	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
 	matrixed_sections = MATRIX_ALL // this value is used if there is no value in covered_limbs, don't rely on it, it's a backup value
 	var/list/covered_limbs = list("Head", "Chest", "Left Leg", "Right Leg", "Left Arm", "Right Arm")
 
