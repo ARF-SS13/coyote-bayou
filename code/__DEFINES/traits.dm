@@ -255,6 +255,7 @@
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
+#define TRAIT_PIEDPIPER "rat_lord"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)

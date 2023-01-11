@@ -5,6 +5,7 @@
 	icon_state = "s-casing"
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
+	pass_flags = PASSTABLE | LETPASSTHROW // ejected casings can go over things now
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(

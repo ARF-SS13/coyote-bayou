@@ -36,6 +36,15 @@
 	time = 2
 	category = CAT_EXPLOSIVE
 
+/datum/crafting_recipe/explosive/dynamite
+	name = "Stick of Dynamite"
+	result = /obj/item/grenade/f13/dynamite
+	reqs = list(/datum/reagent/fuel = 10,
+				/obj/item/paper = 2,
+				/obj/item/stack/ore/blackpowder = 2)
+	time = 5
+	category = CAT_EXPLOSIVE
+
 /datum/crafting_recipe/explosive/firebomb
 	name = "Firebomb"
 	result = /obj/item/grenade/homemade/firebomb

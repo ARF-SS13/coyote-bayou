@@ -178,6 +178,7 @@
 	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
+	new /obj/item/clothing/glasses/welding(src)
 
 // B
 
@@ -294,6 +295,18 @@
 	new /obj/item/melee/unarmed/brass/spiked(src)
 	new /obj/item/clothing/suit/armor/light/raider/painspike(src)
 	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
+
+/datum/gear/donator/kits/cavusogluzevk2
+	name = "B.O.S Loadout"
+	path = /obj/item/storage/box/large/custom_kit/cavusogluzevk2
+	ckeywhitelist = list("cavusogluzevk")
+
+/obj/item/storage/box/large/custom_kit/cavusogluzevk2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/clothing/accessory/bos/scribe(src)
+	new /obj/item/storage/belt/army/assault(src)
+	new /obj/item/melee/unarmed/brass/spiked(src)
+	new /obj/item/melee/onehanded/knife/survival(src)
 
 // D
 
@@ -1042,3 +1055,13 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/zorturethewitcher
+	name = "Mayor Card"
+	path = /obj/item/storage/box/large/custom_kit/zorturethewitcher
+	ckeywhitelist = list("zorturethewitcher")
+
+/obj/item/storage/box/large/custom_kit/zorturethewitcher/PopulateContents()
+	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/kit_spawner/townie/mayor(src)

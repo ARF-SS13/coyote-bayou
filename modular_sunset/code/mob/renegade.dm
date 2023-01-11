@@ -53,7 +53,9 @@
 	retreat_distance = 6
 	minimum_distance = 2
 	extra_projectiles = 2
-	ranged_cooldown_time = 10
+	ranged_cooldown_time = 2 SECONDS
+	sight_shoot_delay_time = 0.2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
 	loot = list(/obj/effect/spawner/bundle/f13/m1911)
@@ -95,8 +97,8 @@
 	obj_damage = 200
 	retreat_distance = 4
 	minimum_distance = 1
-	ranged_cooldown_time = 4
-	projectiletype = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun
 	loot = list(
@@ -142,7 +144,9 @@
 	retreat_distance = 7
 	minimum_distance = 3
 	extra_projectiles = 2
-	ranged_cooldown_time = 6
+	sight_shoot_delay_time = 0.2 SECONDS
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/combatrifle.ogg'
 	loot = list(
@@ -224,7 +228,8 @@
 	check_friendly_fire = 1
 	retreat_distance = 10
 	minimum_distance = 6
-	ranged_cooldown_time = 10
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/bozar_fire.ogg'
 	loot = list(
@@ -317,8 +322,10 @@
 	ranged = 1
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
-	ranged_cooldown_time = 30
 	extra_projectiles = 5
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 	loot = list(
@@ -365,9 +372,11 @@
 	check_friendly_fire = 1
 	retreat_distance = 6
 	minimum_distance = 8
+	sight_shoot_delay_time = 0.2 SECONDS
+	ranged_cooldown_time = 1 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
-	casingtype = /obj/item/ammo_casing/m44
 	robust_searching = TRUE
 	speak = list(
 		"Running low on meds.",

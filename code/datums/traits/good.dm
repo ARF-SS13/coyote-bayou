@@ -867,7 +867,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	desc = "You've trained quite a bit with bows of many types, and are pretty good with them for it."
 	value = 2
 	mob_trait = TRAIT_AUTO_DRAW
-	gain_text = span_notice("You feel like all that training with bows has paidfuzzz off.")
+	gain_text = span_notice("You feel like all that training with bows has paid off.")
 	lose_text = span_danger("Guns were always better...")
 	locked =  FALSE
 
@@ -879,3 +879,40 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE
+
+/datum/quirk/ratlord
+	name = "Beast Master - Rats (Experimental)"
+	desc = "Whenever by psychic means or not, you gained ability to call forth friendly type of rats. <u>Do note they will attack <b>only</b> the hostile mobs</u>."
+	value = 4 //might be pve imbalanced af tho
+	mob_trait = TRAIT_PIEDPIPER
+	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
+	lose_text = span_danger("You've lost your rat crown...")
+	locked = FALSE
+	var/obj/effect/proc_holder/mob_common/summon_backup/rat/tame/gather
+	var/obj/effect/proc_holder/mob_common/direct_mobs/rat/tame/moveto
+	var/obj/effect/proc_holder/mob_common/make_nest/rat/tame/build
+	var/obj/effect/proc_holder/mob_common/unmake_nest/clear
+// Damn this action button code structure
+
+/datum/quirk/ratlord/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	gather = new
+	H.AddAbility(gather)
+	moveto = new
+	H.AddAbility(moveto)
+	build = new
+	H.AddAbility(build)
+	clear = new
+	H.AddAbility(clear)
+
+/datum/quirk/ratlord/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.RemoveAbility(gather)
+		QDEL_NULL(gather)
+		H.RemoveAbility(moveto)
+		QDEL_NULL(moveto)
+		H.RemoveAbility(build)
+		QDEL_NULL(build)
+		H.RemoveAbility(clear)
+		QDEL_NULL(clear)

@@ -26,6 +26,7 @@
 	ventcrawler = VENTCRAWLER_ALWAYS
 	unique_name = TRUE
 	faction = list("rat")
+	pass_flags = PASSTABLE | PASSMOB | PASSGRILLE
 	var/datum/action/cooldown/coffer
 	var/datum/action/cooldown/riot
 	can_ghost_into = TRUE
@@ -264,6 +265,8 @@
 /mob/living/simple_animal/hostile/rat/skitter/curious
 	name = "curious mouse"
 	desc = "A rodent that seems more at ease around people."
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
 	icon_state = "mouse_gray"
 	icon_living = "mouse_gray"
 	icon_dead = "mouse_gray_dead"
@@ -284,7 +287,7 @@
 	minimum_distance = 7
 	aggro_vision_range = 7
 	vision_range = 10
-	faction = list("rat", "neutral")
+	faction = list("neutral", "dog") // Alas, rats would still attack this mouse even with `rat` faction in it. Thanks to regal rats faction code.
 	is_smol = TRUE
 	call_backup = null
 	send_mobs = null
@@ -307,6 +310,24 @@
 	emote("squeak")
 	visible_message(span_notice("[src] sure looks friendly!"))
 
+// Servants to Pied Piper of Wasteland
+// Should be friendly toward players and docile animals, unless they've got faction differing from "neutral" (such as dogs).
+/mob/living/simple_animal/hostile/rat/tame
+	name = "tame rat"
+	desc = "It's a dubious rodent of unknown breed, that seem to be more docile with people. Still have anger issues toward raiders and hostile fauna."
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	speak = list("Squeak!", "SQUUEEAAAAK!!", "Squeak?")
+	speak_emote = list("squeaks")
+	emote_hear = list("Squeaks.")
+	emote_see = list("charges around in a circle.", "stands on its hind legs.")
+	color = "#91fdac"
+	faction = list("neutral", "dog") // Dog faction is here to avoid 'em targeting poor corgis. Rat faction isn't here so they could target hostile ones.
+	//can_ghost_into = FALSE
+	desc_short = "Squeak friend!"
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat/tame
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat/tame
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat/tame
 
 /mob/living/simple_animal/hostile/rat/Destroy()
 	SSmobs.cheeserats -= src
