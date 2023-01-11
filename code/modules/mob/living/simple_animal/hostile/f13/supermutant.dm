@@ -162,12 +162,6 @@
 	icon_state = "hulk_ranged_s"
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
-	mob_armor = ARMOR_VALUE_MEDIUM
-	mob_armor_tokens = list(
-		ARMOR_MODIFIER_UP_MELEE_T1,
-		ARMOR_MODIFIER_DOWN_LASER_T2,
-		ARMOR_MODIFIER_UP_DT_T2
-		)
 	ranged = 1
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
 	maxHealth = 130 
@@ -180,7 +174,7 @@
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
 	sound_after_shooting_delay = 1 SECONDS
 	extra_projectiles = 1
-	auto_fire_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	auto_fire_delay = GUN_BURSTFIRE_DELAY_FAST
 	ranged_cooldown_time = 4 SECONDS
 	loot = list(
 		/obj/item/ammo_box/shotgun/improvised,

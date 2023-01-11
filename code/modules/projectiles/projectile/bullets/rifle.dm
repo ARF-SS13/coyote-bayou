@@ -142,26 +142,17 @@
  */
 /obj/item/projectile/bullet/a556/simple //for simple mobs, separate to allow balancing
 	name = "5.56 bullet"
+	damage = BULLET_DAMAGE_RIFLE_223_HANDLOAD
+	stamina = BULLET_STAMINA_RIFLE_223
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_223_HANDLOAD
 
-/* 5.56 simple 2
- * DAMAGE: 25
- * STAMIN: 5
- * RECOIL: 1
- * WOUNDS: 6.5
- * WNAKED: 3.75
- */
-/obj/item/projectile/bullet/a556/ap/simple //for simple mobs, separate to allow balancing
-	name = "5.56 bullet"
-
-/* 5.56 match
- * DAMAGE: 37
- * STAMIN: 6.25
- * RECOIL: 1
- * WOUNDS: 6.5
- * WNAKED: 3.75
- */
-/obj/item/projectile/bullet/a556/match // used by mobs currently
-	name = "5.56 match bullet"
+	wound_bonus = BULLET_WOUND_RIFLE_223_HANDLOAD
+	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.5
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /*
 /obj/item/projectile/bullet/a556/uraniumtipped
