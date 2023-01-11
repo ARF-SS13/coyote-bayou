@@ -15,15 +15,15 @@
 		/mob/living/simple_animal/hostile/handy/protectron,\
 		/mob/living/simple_animal/hostile/eyebot)
 
-// Separate defines for taming and control (BSF = Beastfriend; BSM = Beastmaster), else use above.
-#define BSF_SMALLCRITTER_ALLOWED list(\
+// Separate defines for taming and control, else use above.
+#define TAME_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/stalker,\
 		/mob/living/simple_animal/hostile/stalkeryoung,\
 		/mob/living/simple_animal/hostile/gecko,\
 		/mob/living/simple_animal/hostile/molerat,\
 		/mob/living/simple_animal/hostile/radroach)
 
-#define BSM_SMALLCRITTER_ALLOWED list(\
+#define CONTROL_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/gecko,\
 		/mob/living/simple_animal/hostile/molerat,\
 		/mob/living/simple_animal/hostile/radroach)
@@ -123,6 +123,7 @@
 
 // Beastmaster Edition
 /obj/effect/proc_holder/mob_common/summon_backup/beastmaster
+	name = "Gather"
 	banned_from_lowpop = FALSE
 	immune_to_lowpop = TRUE
 
@@ -134,7 +135,7 @@
 /obj/effect/proc_holder/mob_common/summon_backup/beastmaster/small_critter
 	name = "Gather - Small Critters"
 	desc = "Draws small critters nearby."
-	allowed_mobs = BSM_SMALLCRITTER_ALLOWED
+	allowed_mobs = CONTROL_SMALLCRITTER_ALLOWED
 
 /obj/effect/proc_holder/mob_common/summon_backup/activate(mob/user)
 	if(!istype(user, /mob/living))
@@ -210,7 +211,7 @@
 /obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/small_critter
 	name = "Send Mobs - Small Critters"
 	desc = "Direct nearby small critters to the tile."
-	allowed_mobs = BSM_SMALLCRITTER_ALLOWED
+	allowed_mobs = CONTROL_SMALLCRITTER_ALLOWED
 
 /obj/effect/proc_holder/mob_common/direct_mobs/Trigger(mob/user)
 	if(!..())
@@ -231,7 +232,7 @@
 		remove_ranged_ability()
 		return
 
-	var/mob/living/simple_animal/user = ranged_ability_user
+	var/mob/living/user = ranged_ability_user
 
 	var/turf/the_turf = get_turf(target)
 	if(!the_turf)
@@ -422,11 +423,11 @@
 	..()
 
 /*
- * Tame the mobs! (beastfriend)
+ * Tame the mobs! (beastmaster)
  */
 /obj/effect/proc_holder/mob_common/taming_mobs
 	name = "Tame"
-	desc = "Try to make hostile mobs docile."
+	desc = "Try to make hostile mobs docile. Melee range."
 	action_icon = 'icons/effects/crayondecal.dmi'
 	action_icon_state = "peace"
 	banned_from_lowpop = FALSE
@@ -435,13 +436,13 @@
 
 /obj/effect/proc_holder/mob_common/taming_mobs/rat
 	name = "Tame - Rats"
-	desc = "Try to make rats and mice docile."
+	desc = "Try to make rats and mice docile. Melee range."
 	allowed_mobs = RTS_RATS_ALLOWED
 
 /obj/effect/proc_holder/mob_common/taming_mobs/small_critter
 	name = "Tame - Small Critters"
-	desc = "Try to make small critters docile."
-	allowed_mobs = BSF_SMALLCRITTER_ALLOWED
+	desc = "Try to make small critters docile. Melee range."
+	allowed_mobs = TAME_SMALLCRITTER_ALLOWED
 
 /obj/effect/proc_holder/mob_common/taming_mobs/is_available(mob/living/user)
 	if(!..())
@@ -461,7 +462,7 @@
 		allmobs = TRUE
 	else
 		who_to_check = allowed_mobs
-	for(var/mob/living/simple_animal/hostile/M in orange(6, get_turf(user)))
+	for(var/mob/living/simple_animal/hostile/M in range(1, get_turf(user))) // Requires you to be close and personal for taming
 		if(allmobs || (M.type in who_to_check))
 			if(M.stat == DEAD) // hevy is ded
 				continue
@@ -474,10 +475,12 @@
 			if(prob(35)) // Failure chance
 				M.do_alert_animation(M)
 				user.show_message(span_red("The <b>[M.name]</b> wasn't tamed."))
+				COOLDOWN_START(src, taming_cooldown, 30 SECONDS)
 				continue
 			M.faction |= "neutral" // Kinda want to perserve some of F3/NV behavior of tamed not helping with other/same-faction animal
 			user.show_message(span_green("The <b>[M.name]</b> is tamed!"))
 			M.name = "tamed [initial(M.name)]"
 			M.desc = "[initial(M.desc)] This one appears to be tame."
+			M.make_ghostable(user)
 			M.make_a_nest = null
 			COOLDOWN_START(src, taming_cooldown, 60 SECONDS)

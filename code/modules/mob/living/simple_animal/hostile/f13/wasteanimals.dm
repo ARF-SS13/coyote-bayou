@@ -85,7 +85,7 @@
 		"min_n2" = 0,
 		"max_n2" = 0
 		)
-	faction = list("gecko", "critter-friend") // critter-friend is a flag for related beast friend quirk. Makes hostile mob passive for quirk holder.
+	faction = list("gecko", "critter-friend") // critter-friend is a flag for related beast friend/master quirk. Makes hostile mob passive for quirk holder.
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW

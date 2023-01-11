@@ -233,7 +233,7 @@
 		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
 		return
 	if(lazarused)
-		to_chat(user, span_userdanger("[name] has been lazarus injected! There are special rules for playing as this creature!"))
+		to_chat(user, span_userdanger("[name] has been lazarus injected or pacified by beastmaster! There are special rules for playing as this creature!"))
 		to_chat(user, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
 		var/mob/the_master
 		if(isweakref(lazarused_by))
@@ -262,7 +262,7 @@
 	user.transfer_ckey(src, TRUE)
 	grant_all_languages()
 	if(lazarused)
-		to_chat(src, span_userdanger("[name] has been lazarus injected! There are special rules for playing as this creature!"))
+		to_chat(src, span_userdanger("[name] has been lazarus injected or pacified! There are special rules for playing as this creature!"))
 		to_chat(src, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
 		var/mob/the_master
 		if(isweakref(lazarused_by))
@@ -271,11 +271,11 @@
 			to_chat(src, span_alert("Your master is [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
 			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected, and will serve [the_master.real_name].")
 			if(mind)
-				mind.store_memory("You have been lazarus injected by [the_master.real_name], and you're bound to follow their commands! (within reason)")
+				mind.store_memory("You have been lazarus injected or pacified by [the_master.real_name], and you're bound to follow their commands! (within reason)")
 		else
 			to_chat(src, span_alert("Your master is be Nash and its citizens, protect them at all costs!"))
 			if(mind)
-				mind.store_memory("You have been lazarus injected, and are bound to serve the town of Nash and protect its people.")
+				mind.store_memory("You have been lazarus injected or pacified, and are bound to serve the town of Nash and protect its people.")
 			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected, and will serve Nash.")
 
 /mob/living/simple_animal/ComponentInitialize()
