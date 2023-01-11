@@ -901,7 +901,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 /datum/quirk/ratmaster
 	name = "Beast Master - Rats"
 	desc = "Whenever by psychic means or not, you gained ability to control the rats of Wasteland.\
-	<br>Taming will make them passive toward other players (but also makes them a target for wild rats)."
+	<br>Taming will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
 	value = 4
 	mob_trait = TRAIT_BEASTMASTER_RAT
 	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
