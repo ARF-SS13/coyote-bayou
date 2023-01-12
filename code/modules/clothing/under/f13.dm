@@ -114,6 +114,7 @@
 	name = "sniper fatigues"
 	desc = "A standard duty uniform for snipers."
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "ncr_snipermgs"
 	item_state = "ncr_snipermgs"
 	item_color = "ncr_snipermgs"
@@ -145,6 +146,7 @@
 	name = "dress uniform"
 	desc = "A crisp tan dress uniform, complete with tie."
 	can_adjust = TRUE
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "ncr_dress"
 	item_state = "ncr_dress"
 	item_color = "ncr_dress"
@@ -176,6 +178,7 @@
 /obj/item/clothing/under/f13/doctorm
 	name = "doctor fatigues"
 	desc = "It's a white t-shirt with brown trousers made for those who treasure life."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "doctor_m"
 	item_state = "doctor_m"
 	item_color = "doctor_m"
@@ -183,6 +186,7 @@
 /obj/item/clothing/under/f13/doctorf
 	name = "doctor fatigues"
 	desc = "It's a white t-shirt with brown trousers made for those who treasure life."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "doctor_f"
 	item_state = "doctor_f"
 	item_color = "doctor_f"
@@ -197,6 +201,7 @@
 /obj/item/clothing/under/f13/settler
 	name = "settler outfit"
 	desc = "A crudely made cloth robe with a belt worn over grey pants."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "settler"
 	item_state = "settler"
 	item_color = "settler"
@@ -235,6 +240,7 @@
 /obj/item/clothing/under/f13/ranger/vet/foxflannel
 	name = "black ranger flannel outfit"
 	desc = "A black flannel ontop of a pair of slim-fitting pre-war jeans that were kept in excellent condition. The back leather panel is worn out but you can barely make out: '512'."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "foxflannel"
 	item_state = "foxflannel"
 	item_color = "foxflannel"
@@ -242,6 +248,7 @@
 /obj/item/clothing/under/f13/ranger/vet/thaxflannel
 	name = "Thaxton's ranger flannel outfit"
 	desc = "A simple outfit for a burly, big iron packin' lawman. A golden belt-buckle in the rough shape of a medallion is proudly presented atop a leather gunbelt."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "thaxflannel"
 	item_state = "thaxflannel"
 	item_color = "thaxflannel"
@@ -249,12 +256,14 @@
 /obj/item/clothing/under/f13/ranger/erin
 	name = "desert pants"
 	desc = "An old pair of beat up, Pre-War BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "erin_pants"
 	item_state = "erin_pants"
 
 /obj/item/clothing/under/f13/ranger/blue
 	name = "blue ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman. A blue collar shirt with tan slacks."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "blueranger"
 	item_state = "blueranger"
 	item_color = "blueranger"
@@ -262,6 +271,7 @@
 /obj/item/clothing/under/f13/ncr_formal_uniform/majzirilli
 	name = "Major Zirilli's service uniform"
 	desc = "An immaculately maintained NCRA service uniform, weighted down with golden embellishments signifying their authority."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "majzirilli"
 	item_state = "majzirilli"
 	item_color = "majzirilli"
@@ -276,6 +286,7 @@
 /obj/item/clothing/under/f13/ranger/modif_ranger
 	name = "green ranger outfit"
 	desc = "A ranger outfit with a green cotton longshirt and dark grey jeans along with a black bandana around the neck."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "modif_ranger"
 	item_state = "modif_ranger"
 	item_color = "modif_ranger"
@@ -304,6 +315,7 @@
 /obj/item/clothing/under/f13/follower
 	name = "citzen outfit"
 	desc = "A civilized well cared for outfit that good citzens wear."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "follower"
 	item_state = "follower"
 	item_color = "follower"
@@ -537,6 +549,7 @@
 /obj/item/clothing/under/f13/bearvest //This is being used as Donator gear, check as to whether MidgetDragon still donating before using for anything else.
 	name = "Great Bear Vest"
 	desc = "A casual set of ripped jeans and a duster. The duster seems to have a familiar symbol spray painted on the back. The inside of the duster seems to have the letters MEB sewn on."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bearvest"
 	item_state = "bearvest"
 
@@ -613,6 +626,7 @@
 /obj/item/clothing/under/f13/follower
 	name = "follower volunteer uniform"
 	desc = "The uniform of the volunteers in the followers of the apocalypse retinue."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "follower"
 	item_state = "follower"
 	item_color = "follower"
@@ -731,6 +745,7 @@
 /obj/item/clothing/under/f13/wayfarer
 	name = "loincloth"
 	desc = "Hand-woven cotton ornated with pieces of turquoise form covering the groin, which can also be adjusted to cover the breasts as well. Well suited for a simpler life lived by the Wayfarer tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "gatherer"
 	item_state = "gatherer"
 	item_color = "gatherer"
@@ -741,6 +756,7 @@
 /obj/item/clothing/under/f13/wayfarer/shamanblue
 	name = "blue shaman garbs"
 	desc = "Finely crafted cotton clothing, dyed blue with anil. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe. Can be adjusted to suit the wearer's preferences."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "shamanblue"
 	item_state = "shamanblue"
 	item_color = "shamanblue"
@@ -750,6 +766,7 @@
 /obj/item/clothing/under/f13/wayfarer/shamanred
 	name = "red shaman garbs"
 	desc = "Finely crafted cotton clothing, dyed red with madder root. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe. Can be adjusted to suit the wearer's preferences."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "shamanred"
 	item_state = "shamanred"
 	item_color = "shamanred"
@@ -759,6 +776,7 @@
 /obj/item/clothing/under/f13/wayfarer/acolyte
 	name = "acolyte's garbs"
 	desc = "Hand-woven cotton ornated with pieces of turquoise form little more than loincloth, which can be adjusted depending on the wearer's preferences. Well suited for a simpler life lived by the Wayfarer tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "acolyte"
 	item_state = "acolyte"
 	item_color = "acolyte"
@@ -920,6 +938,7 @@
 	desc = "An pre-war People's Liberation Army uniform, worn by enlisted and NCOs."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "chinese_soldier"
 	item_state = "chinese_soldier"
 
@@ -928,6 +947,7 @@
 	desc = "An pre-war People's Liberation Army uniform, worn by officers."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "chinese_officer"
 	item_state = "chinese_officer"
 
@@ -1154,6 +1174,7 @@
 /obj/item/clothing/under/f13/doctor //Male version
 	name = "male doctor fatigues"
 	desc = "A white t-shirt, a small brown satchel bag and brown trousers with pouches attached to the belt.<br>Fitted for male wastelanders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "doctor_m"
 	item_state = "brownjsuit"
 	item_color = "doctor_m"
@@ -1161,6 +1182,7 @@
 /obj/item/clothing/under/f13/female/doctor //Female version
 	name = "female doctor fatigues"
 	desc = "A white t-shirt with brown trousers, and a small brown satchel bag attached to it.<br>Fitted for female wastelanders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "doctor_f"
 	item_state = "brownjsuit"
 	item_color = "doctor_f"
@@ -1258,17 +1280,20 @@
 /obj/item/clothing/under/f13/vault/vcity
 	name = "VTCC jumpsuit"
 	desc = "The regulation clothing worn by the vault dwellers, of Vault-Tec vaults. It's made of sturdy leather. <br>This jumpsuit bears the symbol of the Vault-Tec City Coalition on the back."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "vaultcity"
 	item_state = "vaultcity"
 
 /obj/item/clothing/under/f13/vault/vcity/skirt
 	name = "VTCC jumpskirt"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "vaultcity_skirt"
 	item_state = "vaultcity_skirt"
 
 /obj/item/clothing/under/f13/followers
 	name = "clinic outfit"
 	desc = "A white shirt with a pair of dark brown cargo pants - an outfit commonly worn by the town clinic workers.<br><i>Nihil boni sine labore.</i>"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "followers"
 	item_state = "bar_suit"
 	item_color = "followers"
@@ -1449,12 +1474,14 @@
 /obj/item/clothing/under/f13/bos/bodysuit
 	name = "Brotherhood Knight fatigues"
 	desc = "A bodysuit worn by members of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit"
 	item_state = "bos_bodysuit"
 
 /obj/item/clothing/under/f13/bos/f/bodysuit
 	name = "Brotherhood bodysuit"
 	desc = "A bodysuit worn by members of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit_f"
 	item_state = "bos_bodysuit_f"
 	body_parts_covered = CHEST
@@ -1462,36 +1489,42 @@
 /obj/item/clothing/under/f13/bos/bodysuit/knight
 	name = "Brotherhood Knight bodysuit"
 	desc = "A bodysuit worn by the Knights of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit_navy"
 	item_state = "bos_bodysuit_navy"
 
 /obj/item/clothing/under/f13/bos/f/bodysuit/knight
 	name = "Brotherhood Knight bodysuit"
 	desc = "A bodysuit worn by the Knights of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit_navy_f"
 	item_state = "bos_bodysuit_navy_f"
 
 /obj/item/clothing/under/f13/bos/bodysuit/scribe
 	name = "Brotherhood Scribe bodysuit"
 	desc = "A bodysuit worn by the Scribes of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit_red"
 	item_state = "bos_bodysuit_red"
 
 /obj/item/clothing/under/f13/bos/f/bodysuit/scribe
 	name = "Brotherhood Scribe bodysuit"
 	desc = "A bodysuit worn by the Scribes of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit_red_f"
 	item_state = "bos_bodysuit_red_f"
 
 /obj/item/clothing/under/f13/bos/bodysuit/paladin
 	name = "Brotherhood Paladin bodysuit"
 	desc = "A bodysuit worn by the Paladins of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit_grey"
 	item_state = "bos_bodysuit_grey"
 
 /obj/item/clothing/under/f13/bos/f/bodysuit/paladin
 	name = "Brotherhood Scribe bodysuit"
 	desc = "A bodysuit worn by the Paladins of the Brotherhood of steel."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bos_bodysuit_grey_f"
 	item_state = "bos_bodysuit_grey_f"
 
@@ -1607,6 +1640,7 @@
 /obj/item/clothing/under/f13/locust
 	name = "locust uniform"
 	desc = "An ancient pre-war army combat uniform. In use by the locust mercenaries."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "locust"
 	item_state = "locust"
 
@@ -1619,6 +1653,7 @@
 /obj/item/clothing/under/f13/marlowduds
 	name = "Marlow gang attire"
 	desc = "A washed out crimson overshirt with blue neckerchief and suspended black slacks. The attire is synonymous with the colors of the criminal Marlow gang."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "marlowduds"
 	item_state = "marlowduds"
 	can_adjust = TRUE
@@ -1626,6 +1661,7 @@
 /obj/item/clothing/under/f13/ikeduds
 	name = "gunfighter's gang attire"
 	desc = "A washed out crimson overshirt with blue neckerchief and raw buckskin trousers. The attire is synonymous with the colors of the criminal Marlow gang."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "ikeduds"
 	item_state = "ikeduds"
 	can_adjust = TRUE
@@ -1633,6 +1669,7 @@
 /obj/item/clothing/under/f13/helenduds
 	name = "gambler's gang attire"
 	desc = "A worn black dress shirt under a deep crimson vest with blue neckerchief and suspended black slacks. The attire is synonymous with the colors of the criminal Marlow gang."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "helenduds"
 	item_state = "helenduds"
 	can_adjust = TRUE
@@ -1640,6 +1677,7 @@
 /obj/item/clothing/under/f13/masonduds
 	name = "vagabond's gang attire"
 	desc = "A pair of worn buckskin trousers held up by a heavy pistol belt. The attire is synonymous with the colors of the criminal Marlow gang."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "masonduds"
 	item_state = "masonduds"
 
@@ -1680,6 +1718,7 @@
 /obj/item/clothing/under/f13/densuit
 	name = "the den outfit"
 	desc = "A dark grey, and finely pressed suit, complete with kneepads and a suspiciously golden silk shirt, only the best."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "den_suit"
 	item_state = "den_suit"
 
@@ -1718,6 +1757,7 @@
 /obj/item/clothing/under/f13/whitelegs
 	name = "White Legs garb"
 	desc = "A segmented pair of dark leather shorts with an orange belt, paired with a distinct facewrap, worn by members of the White Legs tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "white_legs_under"
 	item_state = "white_legs_under"
 	item_color = "white_legs_under"
@@ -1726,6 +1766,7 @@
 /obj/item/clothing/under/f13/female/whitelegs
 	name = "White Legs garb"
 	desc = "A segmented pair of dark leather shorts with an orange belt and matching sports bra, paired with a distinct facewrap, worn by members of the White Legs tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "white_legs_under_f"
 	item_state = "white_legs_under_f"
 	item_color = "white_legs_under_f"
@@ -1734,6 +1775,7 @@
 /obj/item/clothing/under/f13/rustwalkers
 	name = "Rustwalkers outfit"
 	desc = "A plaid shirt with torn short sleeves with a set of grey cargo pants, commonly worn by members of the Rustwalkers tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "rustwalkers_under"
 	item_state = "rustwalkers_under"
 	item_color = "rustwalkers_under"
@@ -1742,6 +1784,7 @@
 /obj/item/clothing/under/f13/female/rustwalkers
 	name = "Rustwalkers outfit"
 	desc = "A cropped red leather jacket with a torn sleeve, alongside a pair of torn brown trousers patched with fishnets, commonly worn by members of the Rustwalkers tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "rustwalkers_under_f"
 	item_state = "rustwalkers_under_f"
 	item_color = "rustwalkers_under_f"
@@ -1749,6 +1792,7 @@
 /obj/item/clothing/under/f13/eighties
 	name = "Eighties outfit"
 	desc = "A thin, short sleeved grey shirt that's longer down the back, with black jeans and a series of chains used as a belt. Commonly worn by members of the Eighties tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "80s_under"
 	item_state = "80s_under"
 	item_color = "80s_under"
@@ -1756,6 +1800,7 @@
 /obj/item/clothing/under/f13/female/eighties
 	name = "Eighties outfit"
 	desc = "A simple grey corset with brown jeans and a series of chains used as a belt and harness. Commonly worn by members of the Eighties tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "80s_under_f"
 	item_state = "80s_under_f"
 	item_color = "80s_under_f"
@@ -1763,6 +1808,7 @@
 /obj/item/clothing/under/f13/deadhorses
 	name = "Dead Horses garb"
 	desc = "A simple leather bandolier with a pouch, paired with a gecko-hide loincloth. Commonly worn by members of the Dead Horses tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "dead_horses_under"
 	item_state = "dead_horses_under"
 	item_color = "dead_horses_under"
@@ -1770,6 +1816,7 @@
 /obj/item/clothing/under/f13/female/deadhorses
 	name = "Dead Horses garb"
 	desc = "A simple gecko-hide sports bra and loincloth. Commonly worn by members of the Dead Horses tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "dead_horses_under_f"
 	item_state = "dead_horses_under_f"
 	item_color = "dead_horses_under_f"
@@ -1777,6 +1824,7 @@
 /obj/item/clothing/under/f13/sorrows
 	name = "Sorrows garb"
 	desc = "A simple pair of blue shorts with a length of the fabric extending down each leg. Commonly worn by members of the Sorrows tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "sorrows_under"
 	item_state = "sorrows_under"
 	item_color = "sorrows_under"
@@ -1784,6 +1832,7 @@
 /obj/item/clothing/under/f13/female/sorrows
 	name = "Sorrows garb"
 	desc = "A simple set of blue shorts with a length of the fabric extending down each leg and similarly coloured sports bra. Commonly worn by members of the Sorrows tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "sorrows_under_f"
 	item_state = "sorrows_under_f"
 	item_color = "sorrows_under_f"
@@ -1791,6 +1840,7 @@
 /obj/item/clothing/under/f13/bone
 	name = "Bone Dancer outfit"
 	desc = "A full body skin tight overalls, seemingly of brown color. Commonly worn by members of the Bone Dancers tribe."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bone_dancer"
 	item_state = "bone_dancer"
 	item_color = "bone_dancer"
