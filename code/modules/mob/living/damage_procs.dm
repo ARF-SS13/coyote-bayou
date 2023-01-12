@@ -150,10 +150,21 @@
 /mob/living/proc/getBleedLoss()
 	return 0
 
-/mob/living/proc/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/proc/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
 	bruteloss = clamp((bruteloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
+	if(updating_health)
+		updatehealth()
+	return amount
+
+/mob/living/proc/getFireLoss()
+	return fireloss
+
+/mob/living/proc/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
+	if(!forced && (status_flags & GODMODE))
+		return FALSE
+	fireloss = clamp((fireloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
 	if(updating_health)
 		updatehealth()
 	return amount
@@ -202,17 +213,6 @@
 	if(HAS_TRAIT(src, TRAIT_TOXINIMMUNE))
 		amount = 0 // Yeah, set it to 0
 	toxloss = amount
-	if(updating_health)
-		updatehealth()
-	return amount
-
-/mob/living/proc/getFireLoss()
-	return fireloss
-
-/mob/living/proc/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && (status_flags & GODMODE))
-		return FALSE
-	fireloss = clamp((fireloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
 	if(updating_health)
 		updatehealth()
 	return amount

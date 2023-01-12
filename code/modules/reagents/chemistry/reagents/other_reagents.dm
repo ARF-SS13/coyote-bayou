@@ -1420,8 +1420,8 @@
 
 /datum/reagent/fuel/on_mob_life_synth(mob/living/carbon/M)
 	M.adjustStaminaLoss(-1, 0)
-	M.adjustBruteLoss(-0.5, 0)
-	M.adjustFireLoss(-0.5, 0)
+	M.adjustBruteLoss(-0.5, 0, include_roboparts = TRUE)
+	M.adjustFireLoss(-0.5, 0, include_roboparts = TRUE)
 	..()
 	return TRUE
 

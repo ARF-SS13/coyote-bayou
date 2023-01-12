@@ -73,7 +73,7 @@
 	return amount
 
 
-/mob/living/carbon/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/carbon/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
 	if(!forced && amount < 0 && HAS_TRAIT(src,TRAIT_NONATURALHEAL))
 		return FALSE
 	if(!forced && (status_flags & GODMODE))
@@ -81,10 +81,10 @@
 	if(amount > 0)
 		take_overall_damage(amount, 0, 0, updating_health)
 	else
-		heal_overall_damage(abs(amount), 0, 0, FALSE, TRUE, updating_health)
+		heal_overall_damage(abs(amount), 0, 0, FALSE, TRUE, updating_health, include_roboparts)
 	return amount
 
-/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
 	if(!forced && amount < 0 && HAS_TRAIT(src,TRAIT_NONATURALHEAL))	//Vamps don't heal naturally.
 		return FALSE
 	if(!forced && (status_flags & GODMODE))
@@ -92,7 +92,7 @@
 	if(amount > 0)
 		take_overall_damage(0, amount, 0, updating_health)
 	else
-		heal_overall_damage(0, abs(amount), 0, FALSE, TRUE, updating_health)
+		heal_overall_damage(0, abs(amount), 0, FALSE, TRUE, updating_health, include_roboparts)
 	return amount
 
 /mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE)
@@ -222,7 +222,7 @@
 		update_damage_overlays()
 
 //Heal MANY bodyparts, in random order
-/mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, stamina = 0, only_robotic = FALSE, only_organic = TRUE, updating_health = TRUE, bleed)
+/mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, stamina = 0, only_robotic = FALSE, only_organic = TRUE, updating_health = TRUE, bleed, include_roboparts = FALSE)
 	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(brute, burn, stamina)
 
 	var/update = NONE
@@ -233,7 +233,7 @@
 		var/burn_was = picked.burn_dam
 		var/stamina_was = picked.stamina_dam
 
-		update |= picked.heal_damage(brute, burn, stamina, only_robotic, only_organic, FALSE, bleed)
+		update |= picked.heal_damage(brute, burn, stamina, only_robotic, only_organic, FALSE, bleed, include_roboparts)
 
 		brute = round(brute - (brute_was - picked.brute_dam), DAMAGE_PRECISION)
 		burn = round(burn - (burn_was - picked.burn_dam), DAMAGE_PRECISION)
