@@ -1811,7 +1811,7 @@ datum/job/wasteland/f13dendoctor
 	name = "Retired Veteran"
 	r_hand = /obj/item/gun/ballistic/revolver/sequoia
 	backpack_contents = list(
-							/obj/item/ammo_box/c4570/explosive=2
+							/obj/item/ammo_box/c4570=2
 							)
 
 /datum/job/wasteland/f13adminboos
@@ -1845,7 +1845,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=4, \
 		/obj/item/reagent_containers/pill/radx=1, \
 		/obj/item/restraints/handcuffs=2, \
-		/obj/item/ammo_box/c4570/explosive=6)
+		/obj/item/ammo_box/c4570=6)
 
 /datum/outfit/job/wasteland/f13adminboos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
