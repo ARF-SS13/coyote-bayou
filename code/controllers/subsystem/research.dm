@@ -298,8 +298,8 @@ SUBSYSTEM_DEF(research)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
-	var/list/BOSsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 7)	//citadel edit - techwebs nerf
-	var/list/VAULTsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 35)
+	var/list/BOSsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 2)	//citadel edit - techwebs nerf
+	var/list/VAULTsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 4)
 	var/multiserver_calculation = FALSE
 	var/last_income
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^

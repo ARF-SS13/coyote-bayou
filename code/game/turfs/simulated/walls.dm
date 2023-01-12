@@ -206,7 +206,7 @@
 			return FALSE
 
 		to_chat(user, span_notice("You begin fixing dents on the wall..."))
-		if(W.use_tool(src, user, 0, volume=100))
+		if(W.use_tool(src, user, max(1, 75 - user.skill_value(SKILL_REPAIR)), volume=100))
 			if(iswallturf(src) && LAZYLEN(dent_decals))
 				to_chat(user, span_notice("You fix some dents on the wall."))
 				cut_overlay(dent_decals)

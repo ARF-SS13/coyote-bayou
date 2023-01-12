@@ -189,9 +189,10 @@
 	limb.heal_damage(I.heal_brute, I.heal_burn)
 	user.visible_message(span_green("[user] applies [I] to [victim]."), span_green("You apply [I] to [user == victim ? "your" : "[victim]'s"] [limb.name]."))
 	I.use(1)
-	sanitization += I.sanitization
-	flesh_healing += I.flesh_regeneration
-	infestation -= I.sanitization * 0.05
+	var/multi = user.skill_value(SKILL_FIRST_AID)/REGULAR_CHECK
+	sanitization += I.sanitization * multi
+	flesh_healing += I.flesh_regeneration * multi
+	infestation -= I.sanitization * 0.05 * multi
 
 	if((infestation <= 0 || sanitization >= infestation) && (flesh_damage <= 0 || flesh_healing > flesh_damage))
 		to_chat(user, span_notice("You've done all you can with [I], now you must wait for the flesh on [victim]'s [limb.name] to recover."))
@@ -207,9 +208,10 @@
 	user.visible_message(span_green("[user] applies [I] to [victim]."), span_green("You apply [I] to [user == victim ? "your" : "[victim]'s"] [limb.name]."))
 	limb.heal_damage(I.heal_brute, I.heal_burn)
 	I.use(1)
-	sanitization += I.sanitization
-	flesh_healing += I.flesh_regeneration
-	infestation -= I.sanitization * 0.2
+	var/multi = user.skill_value(SKILL_FIRST_AID)/REGULAR_CHECK
+	sanitization += I.sanitization * multi
+	flesh_healing += I.flesh_regeneration * multi
+	infestation -= I.sanitization * 0.2 * multi
 
 	if(sanitization >= infestation && flesh_healing > flesh_damage)
 		to_chat(user, span_notice("You've done all you can with [I], now you must wait for the flesh on [victim]'s [limb.name] to recover."))
@@ -226,15 +228,16 @@
 		return
 
 	user.visible_message(span_notice("[user] flashes the burns on [victim]'s [limb] with [I]."), span_notice("You flash the burns on [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]."), vision_distance=COMBAT_MESSAGE_RANGE)
-	sanitization += I.uv_power
+	sanitization += I.uv_power * user.skill_value(SKILL_FIRST_AID)/REGULAR_CHECK
 	COOLDOWN_START(I, uv_cooldown, I.uv_cooldown_length)
 
 /// Generic burn wound treatment from whatever'll allow it
 /// No messages, damage healing, or thing usage, they'll be handled on the item doing the healing
 /datum/wound/burn/proc/treat_burn(obj/item/stack/medical/I, mob/user)
-	sanitization += I.sanitization
-	flesh_healing += I.flesh_regeneration
-	infestation -= I.sanitization * 0.05
+	var/multi = user.skill_value(SKILL_FIRST_AID)/REGULAR_CHECK
+	sanitization += I.sanitization * multi
+	flesh_healing += I.flesh_regeneration * multi
+	infestation -= I.sanitization * 0.05 * multi
 
 
 /datum/wound/burn/treat(obj/item/I, mob/user)

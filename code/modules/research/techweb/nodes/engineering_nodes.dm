@@ -40,7 +40,7 @@
 	display_name = "High Efficiency Parts"
 	description = "Finely-tooled manufacturing techniques allowing for picometer-perfect precision levels."
 	prereq_ids = list("engineering", "datatheory")
-/*	design_ids = list("pico_mani", "super_matter_bin")*/
+	design_ids = list("pico_mani", "super_matter_bin")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	alt_skill = SKILL_REPAIR
 	skill_level_needed = REGULAR_CHECK

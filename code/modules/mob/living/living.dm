@@ -821,7 +821,7 @@
 /mob/living/do_resist_grab(moving_resist, forced, silent = FALSE)
 	. = ..()
 	if(pulledby.grab_state > GRAB_PASSIVE)
-		if(CHECK_MOBILITY(src, MOBILITY_RESIST) && prob(30/pulledby.grab_state))
+		if(CHECK_MOBILITY(src, MOBILITY_RESIST) && prob((src.skill_value(SKILL_UNARMED)*30)/(pulledby.grab_state*pulledby.skill_value(SKILL_UNARMED))))
 			pulledby.visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"),
 				span_danger("[src] has broken free of your grip!"), target = src,
 				target_message = span_danger("You have broken free of [pulledby]'s grip!"))

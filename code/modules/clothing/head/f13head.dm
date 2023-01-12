@@ -486,7 +486,7 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/f13
-	flags_inv = HIDEHAIR
+	flags_inv = null
 
 /obj/item/clothing/head/f13/rastacap
 	name = "rastacap"
@@ -501,12 +501,14 @@
 	desc = "Pretty yellow hairband"
 	icon_state = "50shairband"
 	item_state = "50shairband"
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/f13/nursehat
 	name = "nursehat"
 	desc = "White cloth headdress for nurses"
 	icon_state = "nursehat"
 	item_state = "nursehat"
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/f13/beaver
 	name = "beaverkin"

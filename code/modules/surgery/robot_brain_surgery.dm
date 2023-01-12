@@ -18,6 +18,7 @@
 	name = "fix posibrain (multitool)"
 	implements = list(TOOL_MULTITOOL = 100, TOOL_HEMOSTAT = 35, TOOL_SCREWDRIVER = 15)
 	time = 120 //long and complicated
+	mechanical = TRUE
 
 /datum/surgery/robot_brain_surgery/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)

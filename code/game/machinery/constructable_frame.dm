@@ -87,9 +87,12 @@
 					return
 				to_chat(user, span_notice("You start to add cables to the frame..."))
 				if(P.use_tool(src, user, 20, volume=50, amount=5))
-					to_chat(user, span_notice("You add cables to the frame."))
-					state = 2
-					icon_state = "box_1"
+					if (user.skill_check(SKILL_REPAIR) || user.skill_roll(SKILL_REPAIR))
+						to_chat(user, span_notice("You add cables to the frame."))
+						state = 2
+						icon_state = "box_1"
+					else
+						to_chat(user, span_notice("No that's not right... You rip the wiring out and have to start again wasting a length of the coil."))
 
 				return
 			if(istype(P, /obj/item/screwdriver) && !anchored)
@@ -127,6 +130,10 @@
 					to_chat(user, span_warning("The frame needs to be secured first!"))
 					return
 				if(!user.transferItemToLoc(B, src))
+					return
+				if(!(user.skill_check(SKILL_REPAIR) || user.skill_roll(SKILL_REPAIR, DIFFICULTY_NORMAL)))
+					qdel(P)
+					to_chat(user, span_notice("You fumble the board, damaging it to the point where it won't work. You toss it to one side."))
 					return
 				playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 				to_chat(user, span_notice("You add the circuit board to the frame."))

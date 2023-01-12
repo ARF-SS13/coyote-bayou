@@ -264,6 +264,14 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/science_lab
+	name = "Machine Design (Science-Lab Board)"
+	desc = "The circuit board for a Science lab."
+	id = "science_lab"
+	build_path = /obj/item/circuitboard/machine/science_lab
+	category = list("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/circuit_imprinter
 	name = "Machine Design (Circuit Imprinter Board)"
 	desc = "The circuit board for a circuit imprinter."

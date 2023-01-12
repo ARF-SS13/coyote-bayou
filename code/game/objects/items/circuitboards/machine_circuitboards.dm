@@ -930,6 +930,15 @@
 		/obj/item/reagent_containers/glass/beaker = 2)
 	var/offstation_security_levels = TRUE
 
+/obj/item/circuitboard/machine/science_lab
+	name = "Science Lab (Machine Board)"
+	build_path = /obj/machinery/rnd/science_lab
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/manipulator = 2,
+		/obj/item/reagent_containers/glass/beaker = 2)
+	var/offstation_security_levels = TRUE
+
 /obj/item/circuitboard/machine/protolathe/offstation
 	offstation_security_levels = FALSE
 

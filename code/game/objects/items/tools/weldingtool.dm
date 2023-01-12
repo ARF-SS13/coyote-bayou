@@ -116,10 +116,10 @@
 	if(affecting && affecting.status == BODYPART_ROBOTIC && user.a_intent != INTENT_HARM)
 		//only heal to 25 if limb is damaged to or past 25 brute, otherwise heal normally
 		var/difference = affecting.brute_dam - 0 //This was dumb and was bypassable. Only served to cause annoyance.
-		var/heal_amount = 15
+		var/heal_amount = user.skill_value(SKILL_REPAIR)/4
 		if(difference >= 0)
 			heal_amount = difference
-		if(src.use_tool(H, user, 0, volume=50, amount=1))
+		if(src.use_tool(H, user, max(1, 75 - user.skill_value(SKILL_REPAIR)), volume=50, amount=1))
 			if(user == H)
 				user.visible_message(span_notice("[user] starts to fix some of the dents on [H]'s [affecting.name]."),
 					span_notice("You start fixing some of the dents on [H]'s [affecting.name]."))

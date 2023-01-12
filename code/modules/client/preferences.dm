@@ -279,10 +279,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//Combat
 	var/skill_guns_base = 30
-	var/skill_energy_base = 20
-	var/skill_unarmed_base = 60
-	var/skill_melee_base = 50
-	var/skill_throwing_base = 40
+	var/skill_energy_base = 25
+	var/skill_unarmed_base = 45
+	var/skill_melee_base = 40
+	var/skill_throwing_base = 35
 
 	//Active
 	var/skill_first_aid_base = 35
@@ -298,7 +298,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skill_barter_base = 20
 	var/skill_outdoorsman_base = 15
 
-	var/skill_points = 70
+	var/skill_points = 95
 
 	//Combat
 	var/skill_guns = 0

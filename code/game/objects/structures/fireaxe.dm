@@ -32,7 +32,7 @@
 				return
 
 			to_chat(user, span_notice("You begin repairing [src]."))
-			if(I.use_tool(src, user, 40, volume=50, amount=2))
+			if(I.use_tool(src, user, max(1, 75 - user.skill_value(SKILL_REPAIR)), volume=50, amount=2))
 				obj_integrity = max_integrity
 				update_icon()
 				to_chat(user, span_notice("You repair [src]."))

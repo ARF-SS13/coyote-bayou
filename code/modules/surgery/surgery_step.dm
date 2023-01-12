@@ -9,6 +9,7 @@
 	var/list/chems_needed = list()  //list of chems needed to complete the step. Even on success, the step will have no effect if there aren't the chems required in the mob.
 	var/require_all_chems = TRUE    //any on the list or all on the list?
 	var/silicons_obey_prob = FALSE
+	var/mechanical = FALSE
 
 /datum/surgery_step/proc/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	var/success = FALSE
@@ -39,6 +40,8 @@
 			else
 				to_chat(user, span_warning("You need to expose [target]'s [parse_zone(target_zone)] to perform surgery on it!"))
 				return TRUE	//returns TRUE so we don't stab the guy in the dick or wherever.
+	else if (!accept_hand && tool)
+		to_chat(user, span_warning("This step requires a different tool!"))
 	if(repeatable)
 		var/datum/surgery_step/next_step = surgery.get_surgery_next_step()
 		if(next_step)
@@ -62,10 +65,11 @@
 		speed_mod = user.mind.action_skill_mod(/datum/skill/numerical/surgery, speed_mod, THRESHOLD_UNTRAINED, FALSE)
 	var/delay = time * speed_mod
 	if(do_after(user, delay, target = target))
-		var/prob_chance = max((user.skill_value(SKILL_DOCTOR) + (30 - (tool.toolspeed * 10))), 100)
+		var/prob_chance = user.skill_value(mechanical ? SKILL_REPAIR : SKILL_DOCTOR) / REGULAR_CHECK
 		if(implement_type)	//this means it isn't a require hand or any item step.
-			prob_chance = implements[implement_type]
+			prob_chance = implements[implement_type] * user.skill_value(mechanical ? SKILL_REPAIR : SKILL_DOCTOR)/(REGULAR_CHECK + speed_mod)
 		prob_chance *= surgery.get_propability_multiplier()
+		prob_chance = min(prob_chance, 100)
 
 		if((prob(prob_chance) || (iscyborg(user) && !silicons_obey_prob)) && chem_check(target) && !try_to_fail)
 			if(success(user, target, target_zone, tool, surgery))

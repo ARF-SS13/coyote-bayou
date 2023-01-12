@@ -152,7 +152,7 @@
 	if(istype(W, /obj/item/screwdriver))
 		if(!locked)
 			return
-		if(!(user.skill_check(SKILL_LOCKPICK, skill_threshold) || user.skill_roll(SKILL_LOCKPICK, skill_roll_difficulty)))
+		if(!(user.skill_check(SKILL_LOCKPICK, (skill_threshold + 10)) || user.skill_roll(SKILL_LOCKPICK, (skill_roll_difficulty + 5))))
 			if(fragile)
 				to_chat(user, span_warning("You fail to open [src]. It crumbles apart, all the contents being destroyed."))
 				qdel(src)
@@ -166,6 +166,8 @@
 	else if(istype(W, /obj/item/lockpick_set))
 		if(!locked)
 			return
+		var/obj/item/lockpick_set/P = W
+		P.use_pick()
 		if(!(user.skill_check(SKILL_LOCKPICK, skill_threshold) || user.skill_roll(SKILL_LOCKPICK, skill_roll_difficulty)))
 			to_chat(user, span_warning("You fail to pick [src]."))
 			return
@@ -174,8 +176,9 @@
 		return
 	else if (istype(W, /obj/item/weldingtool))
 		var/obj/item/weldingtool/welder = W
-		if(!locked || welder.welding)
+		if(!locked || !welder.welding)
 			return
+		welder.use(2)
 		if(!user.skill_roll(SKILL_REPAIR, skill_repair_roll_difficulty))
 			to_chat(user, span_warning("You fail to open [src]. It crumbles apart, all the contents being destroyed."))
 			qdel(src)

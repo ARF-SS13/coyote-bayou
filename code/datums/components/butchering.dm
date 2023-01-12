@@ -76,7 +76,7 @@
 	if(istype(get_area(butcher), /area/crew_quarters/kitchen))
 		meat_quality = meat_quality + 10
 	var/turf/T = meat.drop_location()
-	var/final_effectiveness = effectiveness - meat.butcher_difficulty
+	var/final_effectiveness = (butcher.skill_value(SKILL_OUTDOORSMAN) + effectiveness/2) - meat.butcher_difficulty
 	var/bonus_chance = max(0, (final_effectiveness - 100) + bonus_modifier) //so 125 total effectiveness = 25% extra chance
 	var/list/butchered_items = list()
 	for(var/V in meat.butcher_results)
