@@ -14,7 +14,7 @@
 	icon_grow = "gourd-grow"
 	icon_dead = "gourd-dead"
 	icon_harvest = "gourd-harvest"
-	reagents_add = list(/datum/reagent/water = 0.2,  /datum/reagent/toxin = 0.1)
+	reagents_add = list(/datum/reagent/water = 0.2, /datum/reagent/toxin = 0.1)
 	lifespan = 50
 	endurance = 40
 	maturation = 10

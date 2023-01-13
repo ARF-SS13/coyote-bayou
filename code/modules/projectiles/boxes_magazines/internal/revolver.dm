@@ -37,7 +37,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
 	name = "4570 cylinder"
-	ammo_type = /obj/item/ammo_casing/c4570/explosive
+	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/revneedler

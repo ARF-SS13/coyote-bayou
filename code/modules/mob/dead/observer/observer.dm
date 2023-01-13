@@ -271,6 +271,7 @@ Works together with spawning an observer, noted above.
 
 /mob/proc/ghostize(can_reenter_corpse = TRUE, special = FALSE, penalize = FALSE, voluntary = FALSE)
 	var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, can_reenter_corpse, special, penalize)
+	SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE_FINAL, can_reenter_corpse, special, penalize)
 	penalize = !(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING) && (suiciding || penalize) // suicide squad.
 	voluntary_ghosted = voluntary
 	if(!key || key[1] == "@" || (sig_flags & COMPONENT_BLOCK_GHOSTING))
