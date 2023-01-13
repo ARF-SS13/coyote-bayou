@@ -148,7 +148,7 @@
 		if(get_fuel() <= 0)
 			set_light_on(FALSE)
 
-		if(isliving(O))
+		if(isliving(O) && user.a_intent == INTENT_HARM)
 			var/mob/living/L = O
 			if(L.IgniteMob())
 				message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(L)] on fire with [src] at [AREACOORD(user)]")
@@ -180,7 +180,46 @@
 	to_chat(user, span_notice("You empty [src]'s fuel tank into [O]."))
 	update_icon()
 	return */
+/* /obj/item/weldingtool/proc/try_healing(mob/living/healtarget, mob/user, actually_heal)
+	if(!isliving(healtarget))
+		return FALSE
+	if(!user)
+		return FALSE
 
+	var/obj/item/bodypart/affecting = healtarget.get_bodypart(check_zone(user.zone_selected))
+
+	if(!affecting)
+		return FALSE
+	if(affecting.status != BODYPART_ROBOTIC)
+		return FALSE
+	if(user.a_intent != INTENT_HELP)
+		return FALSE
+	if(!isOn())
+		return FALSE
+	if(!actually_heal)
+		return TRUE
+	if(!tool_start_check(user, 1))
+		user.show_message(span_alert("It is out of fuel!"))
+		return FALSE
+	if(affecting.brute_dam <= 0)
+		user.show_message(span_alert("[affecting] isn't damaged!"))
+		return TRUE // so we dont set it on fire
+	if(healtarget == user)
+		user.visible_message(
+			span_notice("[user] starts to fix some of the dents on [healtarget]'s [affecting.name]."),
+			span_notice("You start fixing some of the dents on [healtarget]'s [affecting.name]."))
+	else
+		user.visible_message(
+			span_notice("[user] starts to fix some of the dents on [healtarget.p_their()] [affecting.name]."),
+			span_notice("You start fixing some of the dents on your [affecting.name]."))
+	if(!use_tool(healtarget, user, (5 SECONDS * toolspeed * (healtarget == user ? 1 : 0.5)), 1, 50, 1))
+		user.visible_message(
+			span_alert("[user] was interrupted!"),
+			span_alert("You were interrupted!"))
+		return FALSE
+	item_heal_robotic(healtarget, user, 15, 0)
+	return TRUE
+ */
 /obj/item/weldingtool/proc/refil_the_tool(atom/O, mob/user)
 	if(!istype(O))
 		return FALSE

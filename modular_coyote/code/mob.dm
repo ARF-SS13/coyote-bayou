@@ -32,8 +32,9 @@
 	icon = 'modular_coyote/icons/mob/slugcat.dmi'
 
 	faction = list("catslug", "neutral")
-	maxHealth = 500
-	health = 500
+	mob_armor = ARMOR_VALUE_MEDIUM
+	maxHealth = 100
+	health = 100
 	healable = 1
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 

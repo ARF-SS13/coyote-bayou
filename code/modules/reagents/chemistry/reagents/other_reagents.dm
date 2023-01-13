@@ -1406,7 +1406,6 @@
 	pH = 4
 	ghoulfriendly = TRUE
 
-
 /datum/reagent/fuel/reaction_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
 	if(method == TOUCH || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 10)
@@ -1422,6 +1421,7 @@
 	M.adjustStaminaLoss(-1, 0)
 	M.adjustBruteLoss(-0.5, 0, include_roboparts = TRUE)
 	M.adjustFireLoss(-0.5, 0, include_roboparts = TRUE)
+	M.adjust_fire_stacks(1)
 	..()
 	return TRUE
 
@@ -1932,9 +1932,11 @@
 
 /datum/reagent/oil/on_mob_metabolize_synth(mob/living/L)
 	..()
+	L.show_message(span_green("Your joints feel lubricated!"))
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/synthoil)
 
 /datum/reagent/oil/on_mob_end_metabolize_synth(mob/living/L)
+	L.show_message(span_alert("Your joints run out of extra lubricant."))
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/synthoil)
 	..()
 
@@ -2815,7 +2817,7 @@
 /datum/reagent/red_ichor
 	name = "Red Ichor"
 	can_synth = FALSE
-	description = "A unknown red liquid, linked to healing of most moral wounds."
+	description = "A unknown red liquid, linked to healing of most mortal wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE

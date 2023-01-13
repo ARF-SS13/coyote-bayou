@@ -62,7 +62,7 @@
 	M.setCloneLoss(0, 0)
 	M.setOxyLoss(0, 0)
 	M.radiation = 0
-	M.heal_bodypart_damage(5,5)
+	M.heal_bodypart_damage(5,5, include_roboparts = TRUE)
 	M.adjustToxLoss(-5, 0, TRUE)
 	M.hallucination = 0
 	M.setOrganLoss(ORGAN_SLOT_BRAIN, 0)
@@ -113,21 +113,21 @@
 /datum/reagent/medicine/medbotchem/on_mob_life(mob/living/carbon/M)
 	switch(M.getBruteLoss())
 		if(-INFINITY to 50)
-			M.adjustBruteLoss(-1*REM, 0) //below 50 brute, it heals at full strength
+			M.adjustBruteLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 brute, it heals at full strength
 		if(50 to 75)
-			M.adjustBruteLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+			M.adjustBruteLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
-			M.adjustBruteLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+			M.adjustBruteLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
 	. = 1
 
 	switch(M.getFireLoss())
 		if(-INFINITY to 50)
-			M.adjustFireLoss(-1*REM, 0) //below 50 Burn, it heals at full strength
+			M.adjustFireLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 Burn, it heals at full strength
 		if(50 to 75)
-			M.adjustFireLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+			M.adjustFireLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
-			M.adjustFireLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+			M.adjustFireLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
 	. = 1
 
@@ -203,8 +203,8 @@
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
 	if(M.bodytemperature < T0C)
 		M.adjustOxyLoss(-3 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-power, 0)
+		M.adjustBruteLoss(-power, 0, include_roboparts = TRUE)
+		M.adjustFireLoss(-power, 0, include_roboparts = TRUE)
 		M.adjustToxLoss(-power, 0, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-power, 0)
 		for(var/i in M.all_wounds)
@@ -257,8 +257,8 @@
 			power *= 2
 
 		M.adjustOxyLoss(-2 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-1.5 * power, 0)
+		M.adjustBruteLoss(-power, 0, include_roboparts = TRUE)
+		M.adjustFireLoss(-1.5 * power, 0, include_roboparts = TRUE)
 		M.adjustToxLoss(-power, 0, TRUE)
 		M.adjustCloneLoss(-power, 0)
 		for(var/i in M.all_wounds)
@@ -551,8 +551,8 @@
 		else if(method == INJECT)
 			return
 		else if(method in list(PATCH, TOUCH))
-			M.adjustBruteLoss(-1 * reac_volume)
-			M.adjustFireLoss(-1 * reac_volume)
+			M.adjustBruteLoss(-1 * reac_volume, include_roboparts = isrobotic(M))
+			M.adjustFireLoss(-1 * reac_volume, include_roboparts = isrobotic(M))
 			for(var/i in C.all_wounds)
 				var/datum/wound/iter_wound = i
 				iter_wound.on_synthflesh(reac_volume)
@@ -578,6 +578,7 @@
 	taste_description = "ash"
 	pH = 5
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE // they still get stuff in them that needs purging
 
 /datum/reagent/medicine/charcoal/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, 0)
@@ -631,6 +632,7 @@
 	taste_description = "acid"
 	pH = 1.5
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/calomel/on_mob_life(mob/living/carbon/M)
 	for(var/A in M.reagents.reagent_list)
@@ -1335,8 +1337,8 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-5*REM, FALSE) //A ton of healing - this is a 50 telecrystal investment.
-	M.adjustFireLoss(-5*REM, FALSE)
+	M.adjustBruteLoss(-5*REM, FALSE, include_roboparts = TRUE) //A ton of healing - this is a 50 telecrystal investment.
+	M.adjustFireLoss(-5*REM, FALSE, include_roboparts = TRUE)
 	M.adjustOxyLoss(-15, FALSE)
 	M.adjustToxLoss(-5*REM, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
@@ -1357,8 +1359,8 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/lesser_syndicate_nanites/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REM, FALSE)
-	M.adjustFireLoss(-2*REM, FALSE)
+	M.adjustBruteLoss(-2*REM, FALSE, include_roboparts = TRUE)
+	M.adjustFireLoss(-2*REM, FALSE, include_roboparts = TRUE)
 	M.adjustOxyLoss(-5*REM, FALSE)
 	M.adjustToxLoss(-2*REM, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
