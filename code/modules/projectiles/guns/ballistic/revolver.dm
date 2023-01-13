@@ -749,7 +749,7 @@
 /obj/item/gun/ballistic/revolver/sequoia/death
 	name = "Desert Hemlock"
 	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears slight singe-marks..."
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
