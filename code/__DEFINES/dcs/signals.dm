@@ -227,6 +227,7 @@
 #define COMSIG_MOB_STATCHANGE "mob_statchange"
 #define COMSIG_MOB_CLICKON "mob_clickon"						//from base of mob/clickon(): (atom/A, params)
 	#define COMSIG_MOB_CANCEL_CLICKON 1
+#define COMSIG_MOB_GHOSTIZE_FINAL "mob_ghostize_for_real"		//from base of mob/Ghostize(): (can_reenter_corpse, special, penalize) - only when they actually fully ghost, for ghost-logging purposes
 #define COMSIG_MOB_GHOSTIZE "mob_ghostize"						//from base of mob/Ghostize(): (can_reenter_corpse, special, penalize)
 	#define COMPONENT_BLOCK_GHOSTING (1<<0)
 	#define COMPONENT_DO_NOT_PENALIZE_GHOSTING (1<<1)

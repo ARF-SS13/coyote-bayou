@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(client_ghost_timeouts)
 	if(timeout != CANT_REENTER_ROUND && timeout <= world.realtime)
 		return TRUE
 	if(!silent && client)
-		to_chat(src, span_warning("You are unable to reenter the round[timeout != CANT_REENTER_ROUND ? " yet. Your ghost role blacklist will expire in [DisplayTimeText(timeout - world.realtime)]" : ""]."))
+		to_chat(src, span_warning("You are unable to play another mob[timeout != CANT_REENTER_ROUND ? " yet. You'll be able to in: [DisplayTimeText(timeout - world.realtime)]" : ""]."))
 	return FALSE
 
 /datum/element/ghost_role_eligibility/proc/get_ghost_flags()
