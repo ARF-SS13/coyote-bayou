@@ -1065,6 +1065,16 @@
 	sound_vary = TRUE
 	sound = 'sound/items/bikehorn.ogg'
 
+/datum/emote/sad
+	key = "sad"
+	message = "plays a sad trombone..."
+	sound = 'sound/misc/sadtrombone.ogg'
+
+/datum/emote/warn
+	key = "warn"
+	message = "blares an alarm!"
+	sound = 'sound/machines/warning-buzzer.ogg'
+
 #define EMOTE_SPECIAL_STR "Strength"
 #define EMOTE_SPECIAL_PER "Perception"
 #define EMOTE_SPECIAL_END "Endurance"

@@ -12,7 +12,7 @@
 		return
 	return ..()
 
-/datum/emote/silicon/boop
+/* /datum/emote/silicon/boop
 	key = "boop"
 	key_third_person = "boops"
 	message = "boops."
@@ -63,7 +63,7 @@
 /datum/emote/silicon/warn
 	key = "warn"
 	message = "blares an alarm!"
-	sound = 'sound/machines/warning-buzzer.ogg'
+	sound = 'sound/machines/warning-buzzer.ogg' */ // they're usable by everyone now lol
 
 /mob/living/silicon/robot/verb/powerwarn()
 	set category = "Robot Commands"
