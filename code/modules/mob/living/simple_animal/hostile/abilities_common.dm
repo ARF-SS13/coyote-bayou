@@ -481,6 +481,6 @@
 			user.show_message(span_green("The <b>[M.name]</b> is tamed!"))
 			M.name = "tamed [initial(M.name)]"
 			M.desc = "[initial(M.desc)] This one appears to be tame."
+			M.make_a_nest = null // Unless is it possible to make nest dug by neutral mob spawn neutrals without creating yet another nest type.
 			M.make_ghostable(user)
-			M.make_a_nest = null
 			COOLDOWN_START(src, taming_cooldown, 60 SECONDS)
