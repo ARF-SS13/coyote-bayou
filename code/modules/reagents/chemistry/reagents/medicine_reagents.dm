@@ -1255,6 +1255,7 @@
 	overdose_threshold = 30
 	taste_description = "a roll of gauze"
 	pH = 10
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/antitoxin/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, FALSE)

@@ -994,6 +994,18 @@
 	sound_vary = TRUE
 	sound = 'sound/machines/buzz-two.ogg'
 
+/datum/emote/yes
+	key = "yes"
+	message = "emits an affirmative blip."
+	sound_vary = TRUE
+	sound = 'sound/machines/synth_yes.ogg'
+
+/datum/emote/no
+	key = "no"
+	message = "emits a negative blip."
+	sound_vary = TRUE
+	sound = 'sound/machines/synth_no.ogg'
+
 /datum/emote/ping
 	key = "ping"
 	key_third_person = "pings"
@@ -1016,26 +1028,42 @@
 	sound_vary = TRUE
 	sound = 'sound/machines/ding.ogg'
 
-/datum/emote/twobeep
-	key = "twobeep1"
+/datum/emote/beep
+	key = "beep"
 	key_third_person = "be-beeps"
 	message = "be-beeps!"
 	sound_vary = TRUE
 	sound = 'sound/machines/twobeep.ogg'
 
-/datum/emote/twobeep2
-	key = "twobeep2"
+/datum/emote/beep2
+	key = "beep2"
 	key_third_person = "be-beeps"
 	message = "be-beeps!"
 	sound_vary = TRUE
 	sound = 'sound/machines/twobeep_high.ogg'
 
-/datum/emote/silicon/dwoop
+/datum/emote/beep3
+	key = "beep3"
+	key_third_person = "beeps"
+	message = "beeps!"
+	message_param = "beeps at %t."
+	sound_vary = TRUE
+	sound = 'sound/machines/beep.ogg'
+
+/datum/emote/dwoop
 	key = "dwoop"
 	key_third_person = "dwoops"
 	message = "chirps happily!"
 	sound_vary = TRUE
 	sound = 'sound/machines/dwoop.ogg'
+
+/datum/emote/honk
+	key = "honk"
+	key_third_person = "honks"
+	message = "honks."
+	emote_type = EMOTE_AUDIBLE
+	sound_vary = TRUE
+	sound = 'sound/items/bikehorn.ogg'
 
 #define EMOTE_SPECIAL_STR "Strength"
 #define EMOTE_SPECIAL_PER "Perception"

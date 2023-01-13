@@ -1421,7 +1421,8 @@
 	M.adjustStaminaLoss(-1, 0)
 	M.adjustBruteLoss(-0.5, 0, include_roboparts = TRUE)
 	M.adjustFireLoss(-0.5, 0, include_roboparts = TRUE)
-	M.adjust_fire_stacks(1)
+	if(M.fire_stacks < 1)
+		M.adjust_fire_stacks(1)
 	..()
 	return TRUE
 

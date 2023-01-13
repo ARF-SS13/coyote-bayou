@@ -220,7 +220,7 @@
 	item_heal_robotic(healtarget, user, 15, 0)
 	return TRUE
  */
-/obj/item/weldingtool/proc/refil_the_tool(atom/O, mob/user)
+/obj/item/weldingtool/proc/refil_the_tool(obj/O, mob/user)
 	if(!istype(O))
 		return FALSE
 	if(isOn())
