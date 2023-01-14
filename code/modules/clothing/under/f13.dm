@@ -1294,9 +1294,9 @@
 	name = "clinic outfit"
 	desc = "A white shirt with a pair of dark brown cargo pants - an outfit commonly worn by the town clinic workers.<br><i>Nihil boni sine labore.</i>"
 	mutantrace_variation = STYLE_DIGITIGRADE
-	icon_state = "followers"
+	icon_state = "follower"
 	item_state = "bar_suit"
-	item_color = "followers"
+	item_color = "follower"
 
 /obj/item/clothing/under/f13/combat
 	name = "combat uniform"
