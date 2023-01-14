@@ -27,8 +27,8 @@
 	bitesize_mod = 2
 	foodtype = VEGETABLES
 	grind_results = list(/datum/reagent/consumable/soymilk = 0)
+	distill_reagent = /datum/reagent/consumable/soysauce
 	tastes = list("soy" = 1)
-	wine_power = 20
 
 // Koibean
 /obj/item/seeds/soya/koi
