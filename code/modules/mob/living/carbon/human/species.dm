@@ -207,7 +207,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/should_have_brain = TRUE
 	var/should_have_heart = TRUE
 	var/should_have_lungs = !(TRAIT_NOBREATH in inherent_traits)
-	var/should_have_appendix = !(TRAIT_NOHUNGER in inherent_traits)
+	var/should_have_appendix = TRUE
+	if(TRAIT_NOHUNGER in inherent_traits)
+		should_have_appendix = FALSE
+	if(TRAIT_NO_PROCESS_FOOD in inherent_traits)
+		should_have_appendix = FALSE
 	var/should_have_eyes = TRUE
 	var/should_have_ears = TRUE
 	var/should_have_tongue = TRUE

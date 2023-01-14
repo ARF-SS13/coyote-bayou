@@ -4,6 +4,9 @@
 /datum/movespeed_modifier/reagent/stimulants
 	multiplicative_slowdown = -0.5
 
+/datum/movespeed_modifier/reagent/synthoil // pump up ur robomuscles with synthoil
+	multiplicative_slowdown = -0.5
+
 /datum/movespeed_modifier/reagent/changelinghaste
 	multiplicative_slowdown = -2
 

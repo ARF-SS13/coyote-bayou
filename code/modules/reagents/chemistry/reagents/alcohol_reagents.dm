@@ -15,6 +15,7 @@
 	var/boozepwr = 65 //Higher numbers equal higher hardness, higher hardness equals more intense alcohol poisoning
 	pH = 7.33
 	value = REAGENT_VALUE_VERY_COMMON //don't bother tweaking all drinks values, way too many can easily be done roundstart or with an upgraded dispenser.
+	synth_metabolism_use_human = TRUE
 
 /*
 Boozepwr Chart
@@ -114,6 +115,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of green beer"
 	glass_desc = "A freezing pint of green beer. Festive."
 	pH = 6
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/consumable/ethanol/beer/green/on_mob_life(mob/living/carbon/M)
 	if(M.color != color)

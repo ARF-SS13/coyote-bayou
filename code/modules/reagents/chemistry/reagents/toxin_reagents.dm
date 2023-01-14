@@ -23,6 +23,12 @@
 		. = TRUE
 	..()
 
+/datum/reagent/toxin/on_mob_life_synth(mob/living/carbon/M)
+	if(toxpwr)
+		M.adjustBruteLoss(toxpwr*REM, 0)
+		. = TRUE
+	..()
+
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
 	description = "A powerful poison derived from certain species of mushroom."
@@ -314,6 +320,7 @@
 	taste_description = "sourness"
 	pH = 11
 	value = REAGENT_VALUE_UNCOMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/toxin/mindbreaker/on_mob_life(mob/living/carbon/M)
 	M.hallucination += 5
@@ -522,6 +529,7 @@
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 0
 	value = REAGENT_VALUE_VERY_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/toxin/polonium/on_mob_life(mob/living/carbon/M)
 	M.radiation += 4
@@ -595,6 +603,12 @@
 	else
 		..()
 
+/datum/reagent/toxin/venom/on_mob_life_synth(mob/living/carbon/M)
+	toxpwr = 0.2*volume
+	M.adjustBruteLoss((0.3*volume)*REM, 0)
+	. = 1
+	..()
+
 /datum/reagent/toxin/fentanyl
 	name = "Fentanyl"
 	description = "Fentanyl will inhibit brain function and cause toxin damage before eventually knocking out its victim."
@@ -647,6 +661,8 @@
 	color = "#C8C8C8"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	toxpwr = 0
+	synth_metabolism_use_human = TRUE
+
 
 /datum/reagent/toxin/itching_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if((method == TOUCH || method == VAPOR) && M.reagents)
@@ -964,6 +980,18 @@
 		return
 	C.acid_act(acidpwr, reac_volume)
 
+/datum/reagent/toxin/acid/reaction_synth(mob/living/carbon/C, method=TOUCH, reac_volume)
+	if(!istype(C))
+		return
+	reac_volume = round(reac_volume,0.1)
+	if(method == INGEST)
+		C.adjustBruteLoss(min(8*toxpwr, reac_volume * toxpwr))
+		return
+	if(method == INJECT)
+		C.adjustBruteLoss(1.5 * min(8*toxpwr, reac_volume * toxpwr))
+		return
+	C.acid_act(acidpwr, reac_volume)
+
 /datum/reagent/toxin/acid/reaction_obj(obj/O, reac_volume)
 	if(ismob(O.loc)) //handled in human acid_act()
 		return
@@ -1010,6 +1038,18 @@
 	. = 8
 	..()
 
+/datum/reagent/toxin/acid/fluacid/on_mob_life_synth(mob/living/carbon/M)
+	M.adjustBruteLoss(current_cycle*0.1, 0)
+	M.adjustFireLoss(current_cycle*0.1, 0)
+	. = 1
+	..()
+
+/datum/reagent/toxin/acid/fantiacid/on_mob_life_synth(mob/living/carbon/M)
+	M.adjustBruteLoss(current_cycle*0.1, 0)
+	M.adjustFireLoss(current_cycle*0.1, 0)
+	. = 8
+	..()
+
 /datum/reagent/toxin/delayed
 	name = "Toxin Microcapsules"
 	description = "Causes heavy toxin damage after a brief time of inactivity."
@@ -1039,6 +1079,7 @@
 	taste_description = "bone hurting"
 	overdose_threshold = 20
 	value = REAGENT_VALUE_VERY_RARE //because it's very funny.
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/toxin/bonehurtingjuice/on_mob_add(mob/living/carbon/M)
 	M.say("oof ouch my bones", forced = /datum/reagent/toxin/bonehurtingjuice)

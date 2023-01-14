@@ -231,6 +231,7 @@
 	color = "#ff6100"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/radx/reaction_mob(mob/living/M, method=INJECT, reac_volume)
 	. = ..()
@@ -287,6 +288,7 @@
 	color = "#ff7200"
 	metabolization_rate = 2.5 * REAGENTS_METABOLISM //1u per tick. quite weak per single unit, but bloodbags have 200u. IV stands should inject twice as fast if using a bloodbag.
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/radaway/reaction_mob(mob/living/M, method=INJECT, reac_volume) //40% of radaway only works if injected or via IV
 	if(iscarbon(M))
@@ -319,14 +321,14 @@
 	var/od_strike_cooldown = 6 SECONDS
 	var/od_cycles = 0 // Number of cycles we've been ODing
 
-/datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
+/datum/reagent/medicine/medx/on_mob_metabolize(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
 		to_chat(M, span_alert("You feel a dull warmth spread throughout your body, masking all sense of pain with a not-unpleasant tingle. Injuries don't seem to hurt as much."))
 		M.maxHealth += 30
 		M.health += 30
 
-/datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
+/datum/reagent/medicine/medx/on_mob_end_metabolize(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, span_danger("The warmth fades, and every injury you you had slams into you like a truck."))
 		M.maxHealth -= 30
@@ -543,6 +545,7 @@
 	reagent_state = SOLID
 	color = "#C8A5DC"
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/fixer/on_mob_life(mob/living/carbon/M)
 //	for(var/datum/reagent/R in M.reagents.reagent_list)

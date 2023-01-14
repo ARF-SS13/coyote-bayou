@@ -1,4 +1,4 @@
-/datum/species/ipc
+/datum/species/synthfurry/ipc
 	name = "I.P.C."
 	id = "ipc"
 	limbs_id = "ipc"
@@ -7,8 +7,27 @@
 	default_color = "00FF00"
 	blacklisted = 0
 	sexes = 0
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD)
-	species_traits = list(MUTCOLORS,NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
+	species_traits = list(
+		MUTCOLORS,
+		NOTRANSSTING,
+		EYECOLOR,
+		LIPS,
+		HAIR,
+		ROBOTIC_LIMBS,
+		HORNCOLOR,
+		WINGCOLOR,
+		NO_DNA_COPY,
+		)
+	inherent_traits = list(
+		TRAIT_EASYDISMEMBER,
+		TRAIT_LIMBATTACHMENT,
+		TRAIT_NO_PROCESS_FOOD,
+		TRAIT_RADIMMUNE,
+		TRAIT_NOBREATH,
+		TRAIT_CLONEIMMUNE,
+		TRAIT_VIRUSIMMUNE,
+		TRAIT_MUTATION_STASIS,
+		)
 	hair_alpha = 210
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutant_bodyparts = list("ipc_screen" = "Blank", "ipc_antenna" = "None")
@@ -34,13 +53,13 @@
 
 	var/datum/action/innate/monitor_change/screen
 
-/datum/species/ipc/on_species_gain(mob/living/carbon/human/C)
+/datum/species/synthfurry/ipc/on_species_gain(mob/living/carbon/human/C)
 	if(isipcperson(C) && !screen)
 		screen = new
 		screen.Grant(C)
 	..()
 
-/datum/species/ipc/on_species_loss(mob/living/carbon/human/C)
+/datum/species/synthfurry/ipc/on_species_loss(mob/living/carbon/human/C)
 	if(screen)
 		screen.Remove(C)
 	..()
@@ -59,8 +78,16 @@
 	H.dna.features["ipc_screen"] = new_ipc_screen
 	H.update_body()
 
-/datum/species/ipc/spec_life(mob/living/carbon/human/H)
+/datum/species/synthfurry/ipc/spec_life(mob/living/carbon/human/H)
 	if(H.nutrition < NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.nutrition > NUTRITION_LEVEL_FED)
 		H.nutrition = NUTRITION_LEVEL_FED
+
+/datum/species/synthfurry/ipc/handle_mutations_and_radiation(mob/living/carbon/human/H)
+	return FALSE
+
+/datum/species/synthfurry/ipc/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(istype(chem) && !chem.synthfriendly)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 1000)
+	return ..()
