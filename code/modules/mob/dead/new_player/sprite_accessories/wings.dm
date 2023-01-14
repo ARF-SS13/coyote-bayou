@@ -253,6 +253,10 @@
 /datum/sprite_accessory/deco_wings/robotic2
 	name = "Robotic - No Tail"
 	icon_state = "shock2"
+	
+/datum/sprite_accessory/deco_wings/roboticalt
+	name = "Robotic Alt"
+	icon_state = "robotic"
 
 /datum/sprite_accessory/deco_wings/sepulchre
 	name = "Sepulchre"
