@@ -269,6 +269,10 @@
 /obj/item/pinpointer/validball_finder/proc/z2text(turf/hereturf)
 	if(!hereturf)
 		return "!!UNKNOWN!!"
+	if(!isturf(hereturf))
+		hereturf = get_turf(hereturf)
+		if(!isturf(hereturf))
+			return "??UNKNOWN??"
 	switch(hereturf.z)
 		if(Z_LEVEL_NASH_UNDERGROUND)
 			return "Nash Wastes - Underground"
@@ -283,11 +287,15 @@
 		if(Z_LEVEL_REDLICK)
 			return "Northern Wastes - Common"
 		else
-			return "!!UNKNOWN!!"
+			return "~!UNKNOWN!~"
 
 /obj/item/pinpointer/validball_finder/proc/local_coords(turf/hereturf)
 	if(!hereturf)
 		return "!!UNKNOWN!!"
+	if(!isturf(hereturf))
+		hereturf = get_turf(hereturf)
+		if(!isturf(hereturf))
+			return "??UNKNOWN??"
 	var/coord_x = abs(hereturf.x + rand(-5, 5))
 	var/coord_y = abs(hereturf.y + rand(-5, 5))
 	return "[coord_x], [coord_y]"
@@ -296,7 +304,11 @@
 	if(!hereturf)
 		return "!!UNKNOWN!!"
 	if(!therething)
-		return "!!UNKNOWN!!"
+		return "!!!UNKNOWN!!!"
+	if(!isturf(hereturf))
+		hereturf = get_turf(hereturf)
+		if(!isturf(hereturf))
+			return "??UNKNOWN??"
 	var/the_angle = Get_Angle(hereturf, therething)
 	the_angle += rand(-15,15)
 	if(the_angle > 360)
