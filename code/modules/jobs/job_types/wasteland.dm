@@ -396,7 +396,6 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	belt = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 2,
@@ -697,7 +696,6 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	belt = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
