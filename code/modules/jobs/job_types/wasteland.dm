@@ -392,7 +392,7 @@ Raider
 	jobtype = /datum/job/wasteland/f13raider/watcher
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/kit_spawner/raider/doctor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
@@ -692,7 +692,7 @@ Raider
 
 	id = null
 	ears = null
-	belt = /obj/item/kit_spawner/waster
+	belt = /obj/item/kit_spawner/raider/civvy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
