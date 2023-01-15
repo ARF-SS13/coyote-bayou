@@ -492,7 +492,7 @@
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 
 /datum/gear/donator/kits/greed2323
-	name = "Magnum Kit"
+	name = "Greed Kit"
 	path = /obj/item/storage/box/large/custom_kit/greed2323
 	ckeywhitelist = list("greed2323")
 
