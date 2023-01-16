@@ -69,7 +69,7 @@
 		H.adjustToxLoss(-H.toxloss)
 
 /datum/species/synthfurry/handle_mutations_and_radiation(mob/living/carbon/human/H)
-	return FALSE
+	return TRUE
 
 /datum/species/synthfurry/synth_anthromorph
 	name = "Synthetic Anthromorph"
