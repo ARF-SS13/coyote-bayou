@@ -46,6 +46,37 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
+
+/datum/supply_pack/engineering/experimentaltools
+	name = "Experimental Tools Crate"
+	desc = "High tech tools. Comes with an experimental welder, jaws of life, and hand drill!"
+	cost = 15000
+	contains = list(/obj/item/storage/belt/utility/full/engi,
+					/obj/item/storage/belt/utility/full/engi)
+	crate_name = "experimental tools crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
+/datum/supply_pack/engineering/advancedtools
+	name = "Ultracite Tools Crate"
+	desc = "The best tools money can buy!"
+	cost = 50000
+	contains = list(/obj/item/weldingtool/abductor,
+					/obj/item/wrench/abductor,
+					/obj/item/wirecutters/abductor,
+					/obj/item/screwdriver/abductor,
+					/obj/item/crowbar/abductor,
+					/obj/item/multitool/abductor)
+	crate_name = "ultracite tools crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
+/datum/supply_pack/engineering/advancedtools
+	name = "Deluxe Parts Crate"
+	desc = "Two boxes of tier four level parts!"
+	cost = 10000
+	contains = list(/obj/item/storage/box/stockparts/deluxe,
+					/obj/item/storage/box/stockparts/deluxe)
+	crate_name = "deluxe parts crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
 /*
 /datum/supply_pack/engineering/engihardsuit
 	name = "Engineering Hardsuit"
@@ -130,7 +161,7 @@
 					/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high)
 	crate_name = "power cell crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical 
+	crate_type = /obj/structure/closet/crate/engineering/electrical
 /*
 /datum/supply_pack/engineering/shuttle_engine
 	name = "Shuttle Engine Crate"
@@ -164,7 +195,7 @@
 					/obj/item/circuitboard/machine/bsa/back,
 					/obj/item/circuitboard/computer/bsa_control
 					)
-	crate_name= "bluespace artillery parts crate" 
+	crate_name= "bluespace artillery parts crate"
 /*
 /datum/supply_pack/engineering/dna_vault
 	name = "DNA Vault Parts"
