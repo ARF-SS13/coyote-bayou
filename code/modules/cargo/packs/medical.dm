@@ -199,6 +199,19 @@
 	crate_name = "medtek surgery tools"
 	crate_type = /obj/structure/closet/crate/secure/medical
 
+/datum/supply_pack/medical/alien_surgery_tools
+	name = "Alien Surgery Tools"
+	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of sterilizine. Requires Surgery access to open."
+	cost = 35000
+	contains = list(/obj/item/scalpel/alien,
+					/obj/item/retractor/alien,
+					/obj/item/cautery/alien,
+					/obj/item/circular_saw/alien,
+					/obj/item/hemostat/alien,
+					/obj/item/surgicaldrill/alien)
+	crate_name = "medtek surgery tools"
+	crate_type = /obj/structure/closet/crate/secure/medical
+
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
 	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical duffelbag, Sterilizine spray and collapsible roller bed."
