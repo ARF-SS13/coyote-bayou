@@ -414,6 +414,8 @@
 			W.handle_process()
 
 /mob/living/carbon/handle_mutations_and_radiation()
+	if(isrobotic(src))
+		return FALSE
 	if(dna && dna.temporary_mutations.len)
 		for(var/mut in dna.temporary_mutations)
 			if(dna.temporary_mutations[mut] < world.time)
@@ -441,6 +443,8 @@
 			if(HM && HM.timed)
 				dna.remove_mutation(HM.type)
 
+	if(HAS_TRAIT(src, TRAIT_RADIMMUNE))
+		return FALSE
 	//radiation -= min(radiation, RAD_LOSS_PER_TICK) nope, you need radx or radaway. small change to make rads *more*
 	if(radiation > RAD_MOB_SAFE)
 		adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
