@@ -14,7 +14,10 @@
 	icon_grow = "olive-grow"
 	icon_dead = "olive-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(
+		/datum/reagent/consumable/nutriment/vitamin = 0.04,
+		/datum/reagent/consumable/nutriment = 0.1
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/olive
 	seed = /obj/item/seeds/olive

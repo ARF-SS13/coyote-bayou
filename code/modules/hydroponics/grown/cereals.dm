@@ -11,7 +11,10 @@
 	potency = 15
 	instability = 20
 	icon_dead = "wheat-dead"
-	mutatelist = list(/obj/item/seeds/wheat/oat, /obj/item/seeds/wheat/meat)
+	mutatelist = list(
+		/obj/item/seeds/wheat/oat,
+		/obj/item/seeds/wheat/meat
+	)
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/wheat
@@ -95,7 +98,10 @@
 	bitesize_mod = 2
 	seed = /obj/item/seeds/wheat/meat
 	foodtype = MEAT | GRAIN
-	grind_results = list(/datum/reagent/consumable/flour = 0, /datum/reagent/blood = 0)
+	grind_results = list(
+		/datum/reagent/consumable/flour = 0,
+		/datum/reagent/blood = 0
+	)
 	tastes = list("meatwheat" = 1)
 	can_distill = FALSE
 

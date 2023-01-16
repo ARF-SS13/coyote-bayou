@@ -14,23 +14,11 @@
 	icon_grow = "cannabis-grow" // Uses one growth icons set for all the subtypes
 	icon_dead = "cannabis-dead" // Same for the dead icon
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(
-		/obj/item/seeds/cannabis/white,
-		)
-	reagents_add = list(/datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.35) // gives u the munchies
-
-
-/obj/item/seeds/cannabis/white
-	name = "pack of lifeweed seeds"
-	desc = "I will give unto him that is munchies of the fountain of the cravings of life, freely."
-	icon_state = "seed-whitecannabis"
-	species = "whitecannabis"
-	plantname = "Lifeweed"
-	product = /obj/item/reagent_containers/food/snacks/grown/cannabis/white
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/medicine/omnizine = 0.35, /datum/reagent/drug/space_drugs = 0.15, /datum/reagent/toxin/lipolicide = 0.15)
-	rarity = 40
-
+	mutatelist = list(/obj/item/seeds/cannabis/white)
+	reagents_add = list(
+		/datum/reagent/drug/space_drugs = 0.15,
+		/datum/reagent/toxin/lipolicide = 0.35
+	)// gives u the munchies
 
 // ---------------------------------------------------------------
 
@@ -46,6 +34,21 @@
 	tastes = list("cannabis" = 1)
 	wine_power = 20
 
+
+/obj/item/seeds/cannabis/white
+	name = "pack of lifeweed seeds"
+	desc = "I will give unto him that is munchies of the fountain of the cravings of life, freely."
+	icon_state = "seed-whitecannabis"
+	species = "whitecannabis"
+	plantname = "Lifeweed"
+	product = /obj/item/reagent_containers/food/snacks/grown/cannabis/white
+	mutatelist = list()
+	reagents_add = list(
+		/datum/reagent/medicine/omnizine = 0.35,
+		/datum/reagent/drug/space_drugs = 0.15,
+		/datum/reagent/toxin/lipolicide = 0.15
+	)
+	rarity = 40
 
 /obj/item/reagent_containers/food/snacks/grown/cannabis/white
 	seed = /obj/item/seeds/cannabis/white
