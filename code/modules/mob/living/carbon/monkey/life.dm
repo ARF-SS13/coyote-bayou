@@ -27,7 +27,7 @@
 /mob/living/carbon/monkey/handle_mutations_and_radiation()
 	if(radiation)
 		if(radiation > RAD_MONKEY_GORILLIZE)
-			if(prob((((radiation - RAD_MONKEY_GORILLIZE + RAD_MOB_GORILLIZE_FACTOR)/RAD_MOB_GORILLIZE_FACTOR)^RAD_MONKEY_GORILLIZE_EXPONENT) - 1))
+			if(prob((((radiation - RAD_MONKEY_GORILLIZE + RAD_MOB_GORILLIZE_FACTOR)/RAD_MOB_GORILLIZE_FACTOR)**RAD_MONKEY_GORILLIZE_EXPONENT) - 1))
 				gorillize()
 				return
 		if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))

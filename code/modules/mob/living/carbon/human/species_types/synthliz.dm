@@ -65,6 +65,8 @@
 		H.nutrition = NUTRITION_LEVEL_FED
 	if(H.losebreath != 0)
 		H.losebreath = 0 // just in case
+	if(H.toxloss)
+		H.adjustToxLoss(-H.toxloss)
 
 /datum/species/synthfurry/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	return FALSE
