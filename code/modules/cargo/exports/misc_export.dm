@@ -396,7 +396,7 @@
 		/obj/item/grown/log/bamboo
 	)
 
-	/datum/export/item/liquor
+/datum/export/item/liquor
 	k_elasticity = 0
 	cost = 25
 	unit_name = "cheap liquor"
@@ -418,7 +418,7 @@
 	/obj/item/export/bottle/kahlua,
 	)
 	
-	/datum/export/item/highliquor
+/datum/export/item/highliquor
 	k_elasticity = 0
 	cost = 75
 	unit_name = "classy liquor"
