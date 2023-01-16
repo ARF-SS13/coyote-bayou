@@ -17,7 +17,7 @@
 	icon_dead = "pinyon-dead"
 	icon_harvest = "pinyon-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list( /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/pinyon
 	seed = /obj/item/seeds/pinyon

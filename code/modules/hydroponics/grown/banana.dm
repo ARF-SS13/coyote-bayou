@@ -12,8 +12,13 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_dead = "banana-dead"
 	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/repeated_harvest)
-	mutatelist =   (/obj/item/seeds/banana/exotic_banana)
-	reagents_add = list(/datum/reagent/consumable/banana = 0.1, /datum/reagent/potassium = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.02)
+	mutatelist = (/obj/item/seeds/banana/exotic_banana)
+	reagents_add = list(
+		/datum/reagent/consumable/banana = 0.1,
+		/datum/reagent/potassium = 0.1,
+		/datum/reagent/consumable/nutriment/vitamin = 0.04,
+		/datum/reagent/consumable/nutriment = 0.02
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/banana
 	seed = /obj/item/seeds/banana
@@ -65,38 +70,6 @@
 	playsound(loc, 'sound/misc/slip.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
-/*
-// Bluespace Banana
-/obj/item/seeds/banana/bluespace
-	name = "pack of bluespace banana seeds"
-	desc = "They're seeds that grow into bluespace banana trees. When grown, keep away from bluespace clown."
-	icon_state = "seed-banana-blue"
-	species = "bluespacebanana"
-	icon_grow = "banana-grow"
-	plantname = "Bluespace Banana Tree"
-	product = /obj/item/reagent_containers/food/snacks/grown/banana/bluespace
-	mutatelist = list()
-	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/teleport, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/bluespace = 0.2, /datum/reagent/consumable/banana = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.02)
-	rarity = 30
-
-/obj/item/reagent_containers/food/snacks/grown/banana/bluespace
-	seed = /obj/item/seeds/banana/bluespace
-	name = "bluespace banana"
-	icon_state = "banana_blue"
-	item_state = "bluespace_peel"
-	trash = /obj/item/grown/bananapeel/bluespace
-	filling_color = "#0000FF"
-	tastes = list("banana" = 1)
-	wine_power = 60
-	wine_flavor = "slippery hypercubes"
-
-/obj/item/grown/bananapeel/bluespace
-	seed = /obj/item/seeds/banana/bluespace
-	name = "bluespace banana peel"
-	desc = "A peel from a bluespace banana."
-	icon_state = "banana_peel_blue"
-*/
 //Banana Spider.
 /obj/item/seeds/banana/exotic_banana
 	name = "pack of exotic banana seeds"
@@ -132,3 +105,36 @@
 			S.speed += round(10 / max(seed.potency, 1), 1)
 			S.visible_message(span_notice("The banana spider chitters as it stretches its legs."))
 			qdel(src)
+
+/*
+// Bluespace Banana
+/obj/item/seeds/banana/bluespace
+	name = "pack of bluespace banana seeds"
+	desc = "They're seeds that grow into bluespace banana trees. When grown, keep away from bluespace clown."
+	icon_state = "seed-banana-blue"
+	species = "bluespacebanana"
+	icon_grow = "banana-grow"
+	plantname = "Bluespace Banana Tree"
+	product = /obj/item/reagent_containers/food/snacks/grown/banana/bluespace
+	mutatelist = list()
+	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/teleport, /datum/plant_gene/trait/repeated_harvest)
+	reagents_add = list(/datum/reagent/bluespace = 0.2, /datum/reagent/consumable/banana = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.02)
+	rarity = 30
+
+/obj/item/reagent_containers/food/snacks/grown/banana/bluespace
+	seed = /obj/item/seeds/banana/bluespace
+	name = "bluespace banana"
+	icon_state = "banana_blue"
+	item_state = "bluespace_peel"
+	trash = /obj/item/grown/bananapeel/bluespace
+	filling_color = "#0000FF"
+	tastes = list("banana" = 1)
+	wine_power = 60
+	wine_flavor = "slippery hypercubes"
+
+/obj/item/grown/bananapeel/bluespace
+	seed = /obj/item/seeds/banana/bluespace
+	name = "bluespace banana peel"
+	desc = "A peel from a bluespace banana."
+	icon_state = "banana_peel_blue"
+*/

@@ -14,8 +14,14 @@
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	icon_grow = "poppy-grow"
 	icon_dead = "poppy-dead"
-	mutatelist = list(/obj/item/seeds/poppy/geranium, /obj/item/seeds/poppy/lily)
-	reagents_add = list(/datum/reagent/medicine/bicaridine = 0.2, /datum/reagent/consumable/nutriment = 0.05)
+	mutatelist = list(
+		/obj/item/seeds/poppy/geranium,
+		/obj/item/seeds/poppy/lily
+	)
+	reagents_add = list(
+		/datum/reagent/medicine/bicaridine = 0.2,
+		/datum/reagent/consumable/nutriment = 0.05
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy
 	seed = /obj/item/seeds/poppy
@@ -41,7 +47,10 @@
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	icon_grow = "lily-grow"
 	icon_dead = "lily-dead"
-	mutatelist = list(/obj/item/seeds/bee_balm, /obj/item/seeds/poppy/lily/trumpet)
+	mutatelist = list(
+		/obj/item/seeds/bee_balm,
+		/obj/item/seeds/poppy/lily/trumpet
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/lily
 	seed = /obj/item/seeds/poppy/lily
@@ -129,7 +138,10 @@
 	icon_grow = "forget_me_not-grow"
 	icon_dead = "forget_me_not-dead"
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/medicine/kelotane = 0.2, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(
+		/datum/reagent/medicine/kelotane = 0.2,
+		/datum/reagent/consumable/nutriment = 0.05
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot
 	seed = /obj/item/seeds/poppy/geranium/forgetmenot
@@ -184,8 +196,14 @@
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	icon_grow = "sunflower-grow"
 	icon_dead = "sunflower-dead"
-	mutatelist = list(/obj/item/seeds/sunflower/moonflower, /obj/item/seeds/sunflower/novaflower)
-	reagents_add = list(/datum/reagent/consumable/cooking_oil = 0.08, /datum/reagent/consumable/nutriment = 0.04)
+	mutatelist = list(
+		/obj/item/seeds/sunflower/moonflower,
+		/obj/item/seeds/sunflower/novaflower
+	)
+	reagents_add = list(
+		/datum/reagent/consumable/cooking_oil = 0.08,
+		/datum/reagent/consumable/nutriment = 0.04
+	)
 
 /obj/item/seeds/sunflower/microwave_act(obj/machinery/microwave/MW) //The act allows it to be cooked over a bonfire grille too.
 	..()
@@ -196,7 +214,11 @@
 	name = "roasted sunflower seeds"
 	desc = "Nutty tasting black sunflower seeds, roasted to bring out the flavor."
 	icon_state = "roasted_sunflower_seeds"
-	list_reagents = list(/datum/reagent/consumable/cooking_oil = 2 , /datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1.5)
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 2,
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1.5
+	)
 	//bitesize = 2
 	//w_class = WEIGHT_CLASS_TINY
 	tastes = list("nutty" = 1)
@@ -236,7 +258,11 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/moonflower
 	genes = list(/datum/plant_gene/trait/glow/purple)
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/ethanol/moonshine = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.02)
+	reagents_add = list(
+		/datum/reagent/consumable/ethanol/moonshine = 0.2,
+		/datum/reagent/consumable/nutriment/vitamin = 0.02,
+		/datum/reagent/consumable/nutriment = 0.02
+	)
 	rarity = 15
 
 /obj/item/reagent_containers/food/snacks/grown/moonflower
@@ -261,7 +287,11 @@
 	icon_dead = "sunflower-dead"
 	product = /obj/item/grown/novaflower
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/condensedcapsaicin = 0.25, /datum/reagent/consumable/capsaicin = 0.3, /datum/reagent/consumable/nutriment = 0)
+	reagents_add = list(
+		/datum/reagent/consumable/condensedcapsaicin = 0.25,
+		/datum/reagent/consumable/capsaicin = 0.3,
+		/datum/reagent/consumable/nutriment = 0
+	)
 	rarity = 20
 
 /obj/item/grown/novaflower
@@ -279,7 +309,10 @@
 	throw_speed = 1
 	throw_range = 3
 	attack_verb = list("roasted", "scorched", "burned")
-	grind_results = list(/datum/reagent/consumable/capsaicin = 0, /datum/reagent/consumable/condensedcapsaicin = 0)
+	grind_results = list(
+		/datum/reagent/consumable/capsaicin = 0,
+		/datum/reagent/consumable/condensedcapsaicin = 0
+	)
 	tastes = list("cooked sunflower" = 1)
 
 /obj/item/grown/novaflower/add_juice()
@@ -328,8 +361,14 @@
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	icon_grow = "bee_balm-grow"
 	icon_dead = "bee_balm-dead"
-	mutatelist = list(/obj/item/seeds/poppy/geranium, /obj/item/seeds/bee_balm/honey_balm) //Lower odds of becoming honey
-	reagents_add = list(/datum/reagent/medicine/spaceacillin = 0.1, /datum/reagent/abraxo_cleaner/sterilizine = 0.05)
+	mutatelist = list(
+		/obj/item/seeds/poppy/geranium,
+		/obj/item/seeds/bee_balm/honey_balm
+	) //Lower odds of becoming honey
+	reagents_add = list(
+		/datum/reagent/medicine/spaceacillin = 0.1,
+		/datum/reagent/abraxo_cleaner/sterilizine = 0.05
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/bee_balm
 	seed = /obj/item/seeds/bee_balm
@@ -357,7 +396,10 @@
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	icon_grow = "honey_balm-grow"
 	icon_dead = "honey_balm-dead"
-	reagents_add = list(/datum/reagent/consumable/honey = 0.1, /datum/reagent/lye = 0.3) //To make wax
+	reagents_add = list(
+		/datum/reagent/consumable/honey = 0.1,
+		/datum/reagent/lye = 0.3
+	) //To make wax
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/bee_balm/honey

@@ -15,7 +15,10 @@
 	icon_grow = "feverblossom-grow"
 	icon_dead = "feverblossom-dead"
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/drug/aphrodisiac = 0.2, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(
+		/datum/reagent/drug/aphrodisiac = 0.2,
+		/datum/reagent/consumable/nutriment = 0.05
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/fever_blossom
 	seed = /obj/item/seeds/fever_blossom
