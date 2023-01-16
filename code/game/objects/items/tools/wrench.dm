@@ -50,7 +50,7 @@
 	toolspeed = 0.95
 
 /obj/item/wrench/abductor
-	name = "alien wrench"
+	name = "ultracite wrench"
 	desc = "A polarized wrench. It causes anything placed between the jaws to turn."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "wrench"

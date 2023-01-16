@@ -77,7 +77,7 @@
 	toolspeed = 0.95 //Wire cutters have 0 time bars though
 
 /obj/item/wirecutters/abductor
-	name = "alien wirecutters"
+	name = "ultracite wirecutters"
 	desc = "Extremely sharp wirecutters, made out of a silvery-green metal."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cutters"
