@@ -549,11 +549,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Species
 	var/species_id
 	S["species"]			>> species_id
-	if(species_id)
-		if(species_id == "avian" || species_id == "aquatic")
-			species_id = "mammal"
-		else if(species_id == "moth")
-			species_id = "insect"
+	if(species_id) // for ass-backwards compatability
+		switch(species_id)
+			if("avian", "aquatic")
+				species_id = "mammal"
+			if("moth")
+				species_id = "insect"
+			if("synthanthro")
+				species_id = "synthliz"
 
 		var/newtype = GLOB.species_list[species_id]
 		if(newtype)

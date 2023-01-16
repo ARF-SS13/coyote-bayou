@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(playmob_cooldowns)
+
 /mob/living/simple_animal
 	name = "animal"
 	icon = 'icons/mob/animal.dmi'
@@ -162,6 +164,10 @@
 	var/randpixel = 0
 	///Can ghosts just hop into one of these guys?
 	var/can_ghost_into = FALSE
+	///The class of mob this is, for purposes of per-mob ghost cooldowns
+	var/ghost_mob_id = "generic"
+	///Timeout between dying or ghosting in this mob and going back into another mob
+	var/ghost_cooldown_time = 3 MINUTES
 	///Short desc of the mob
 	var/desc_short = "Some kind of horrible monster."
 	///Important info of the mob
@@ -212,25 +218,7 @@
 
 /mob/living/simple_animal/attack_ghost(mob/user, latejoinercalling)
 	. = ..()
-	if(!can_ghost_into)
-		return
-	if(health <= 0 || stat == DEAD)
-		return
-	if(!SSticker.HasRoundStarted() || !loc)
-		return
-	if(!lazarused_by && living_player_count() < pop_required_to_jump_into)
-		to_chat(user, span_warning("There needs to be at least [pop_required_to_jump_into] living players to hop in this! This check is bypassed if the mob has had a lazarus injector used on it though. Which it hasn't (yet)."))
-		return
-	if(jobban_isbanned(user, ROLE_SYNDICATE))
-		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
-		return
-	if(client)
-		to_chat(user, span_warning("Someone's in there! Wait your turn!"))
-		return
-	if(QDELETED(src) || QDELETED(user))
-		return
-	if(!(z in COMMON_Z_LEVELS))
-		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
+	if(!cleared_to_enter(user))
 		return
 	if(lazarused)
 		to_chat(user, span_userdanger("[name] has been lazarus injected! There are special rules for playing as this creature!"))
@@ -278,20 +266,47 @@
 				mind.store_memory("You have been lazarus injected, and are bound to serve the town of Nash and protect its people.")
 			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected, and will serve Nash.")
 
+/mob/living/simple_animal/proc/cleared_to_enter(mob/user)
+	if(!can_ghost_into)
+		return FALSE
+	if(health <= 0 || stat == DEAD)
+		return FALSE
+	if(!SSticker.HasRoundStarted() || !loc)
+		return FALSE
+	if(QDELETED(src) || QDELETED(user))
+		return FALSE
+	if(jobban_isbanned(user, ROLE_SYNDICATE))
+		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
+		return FALSE
+	if(!(z in COMMON_Z_LEVELS))
+		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
+		return FALSE
+	if(!lazarused_by && living_player_count() < pop_required_to_jump_into)
+		to_chat(user, span_warning("There needs to be at least [pop_required_to_jump_into] living players to hop in this! This check is bypassed if the mob has had a lazarus injector used on it though. Which it hasn't (yet)."))
+		return FALSE
+	if(client)
+		to_chat(user, span_warning("Someone's in there! Wait your turn!"))
+		return FALSE
+	if(!user.key)
+		return FALSE
+	if(!islist(GLOB.playmob_cooldowns[user.key]))
+		GLOB.playmob_cooldowns[user.key] = list()
+	if(GLOB.playmob_cooldowns[user.key][ghost_mob_id] > world.time)
+		var/time_left = GLOB.playmob_cooldowns[user.key][ghost_mob_id] - world.time
+		if(check_rights_for(user.client, R_ADMIN))
+			to_chat(user, span_green("You shoud be unable to hop into mobs for another [DisplayTimeText(time_left)], but you're special cus you're an admin and you can ghost into mobs whenever you want, also everyone loves you and thinks you're cool."))
+		else
+			to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
+			return FALSE
+	return TRUE
+
 /mob/living/simple_animal/ComponentInitialize()
 	. = ..()
 	if(can_ghost_into)
-		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
+		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-	if(send_mobs)
-		RemoveAbility(send_mobs)
-		QDEL_NULL(send_mobs)
-	if(ghostme)
-		RemoveAbility(ghostme)
-		QDEL_NULL(ghostme)
-	QDEL_NULL(call_backup)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 	sever_link_to_nest()
@@ -331,6 +346,7 @@
 		call_backup = new CB
 		AddAbility(call_backup)
 	LAZYADD(GLOB.mob_spawners[initial(name)], src)
+	RegisterSignal(src, COMSIG_MOB_GHOSTIZE_FINAL, .proc/set_ghost_timeout)
 	if(istype(user))
 		lazarused = TRUE
 		lazarused_by = WEAKREF(user)
@@ -341,6 +357,15 @@
 		if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 			GLOB.mob_spawners -= initial(name)
 		LAZYADD(GLOB.mob_spawners["Tame [initial(name)]"], src)
+
+/// Player left the mob's body
+/mob/living/simple_animal/proc/set_ghost_timeout()
+	SIGNAL_HANDLER
+	if(!key)
+		return // cant do much without a key!
+	if(!islist(GLOB.playmob_cooldowns[key]))
+		GLOB.playmob_cooldowns[key] = list()
+	GLOB.playmob_cooldowns[key][ghost_mob_id] = world.time + ghost_cooldown_time	
 
 /mob/living/simple_animal/updatehealth()
 	..()

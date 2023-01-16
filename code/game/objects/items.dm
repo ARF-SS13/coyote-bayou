@@ -60,11 +60,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	/// Weight class for how much storage capacity it uses and how big it physically is meaning storages can't hold it if their maximum weight class isn't as high as it.
 	var/w_class = WEIGHT_CLASS_NORMAL
+	
 	/// Volume override for the item, otherwise automatically calculated from w_class.
 	var/w_volume
 
 	/// The amount of stamina it takes to swing an item in a normal melee attack do not lie to me and say it's for realism because it ain't. If null it will autocalculate from w_class.
 	var/total_mass //Total mass in arbitrary pound-like values. If there's no balance reasons for an item to have otherwise, this var should be the item's weight in pounds.
+	
 	/// How long, in deciseconds, this staggers for, if null it will autocalculate from w_class and force. Unlike total mass this supports 0 and negatives.
 	var/stagger_force
 
@@ -176,6 +178,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/item_upgrades = list()
 	var/max_upgrades = 3
 
+	/// extra special transform
+	var/matrix/special_transform
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -205,6 +210,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	
 	if(isnull(body_parts_hidden))
 		body_parts_hidden = body_parts_covered
+	
+	/// Allows items to preserve their transform when picked up
+	if(!special_transform && transform != initial(transform))
+		special_transform = transform
 
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
@@ -851,6 +860,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R) //Used to check for extra requirements for grinding an object
 	return TRUE
+
+/obj/item/proc/reset_transform() //Used to check for extra requirements for grinding an object
+	if(special_transform)
+		transform = special_transform
+	else
+		transform = initial(transform)
 
 //Called BEFORE the object is ground up - use this to change grind results based on conditions
 //Use "return -1" to prevent the grinding from occurring

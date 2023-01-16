@@ -178,6 +178,18 @@
 	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
+	new /obj/item/clothing/glasses/welding(src)
+
+/datum/gear/donator/kits/archyzt
+	name = "Follower's Traveler"
+	path = /obj/item/storage/box/large/custom_kit/archyzt
+	ckeywhitelist = list("archyzt")
+
+/obj/item/storage/box/large/custom_kit/archyzt/PopulateContents()
+	new /obj/item/clothing/suit/toggle/labcoat/paramedic(src)
+	new /obj/item/storage/backpack/medic(src)
+	new /obj/item/pda/medical(src)
+	new /obj/item/gun/energy/laser/pistol(src)
 
 // B
 
@@ -294,6 +306,18 @@
 	new /obj/item/melee/unarmed/brass/spiked(src)
 	new /obj/item/clothing/suit/armor/light/raider/painspike(src)
 	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
+
+/datum/gear/donator/kits/cavusogluzevk2
+	name = "B.O.S Loadout"
+	path = /obj/item/storage/box/large/custom_kit/cavusogluzevk2
+	ckeywhitelist = list("cavusogluzevk")
+
+/obj/item/storage/box/large/custom_kit/cavusogluzevk2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/clothing/accessory/bos/scribe(src)
+	new /obj/item/storage/belt/army/assault(src)
+	new /obj/item/melee/unarmed/brass/spiked(src)
+	new /obj/item/melee/onehanded/knife/survival(src)
 
 // D
 
@@ -468,7 +492,7 @@
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 
 /datum/gear/donator/kits/greed2323
-	name = "Magnum Kit"
+	name = "Greed Kit"
 	path = /obj/item/storage/box/large/custom_kit/greed2323
 	ckeywhitelist = list("greed2323")
 
@@ -985,6 +1009,18 @@
 	new /obj/item/ammo_box/a556(src)
 	new /obj/item/toy/plush/lampplushie(src)
 
+/datum/gear/donator/kits/truedark4
+	name = "Alien Stuff"
+	path = /obj/item/storage/box/large/custom_kit/truedark4
+	ckeywhitelist = list("truedark")
+
+/obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
+	new /obj/item/clothing/suit/radiation(src)
+	new /obj/item/clothing/head/radiation(src)
+	new /obj/item/gun/energy/alien(src)
+	new /obj/item/storage/box/alienhandcuffs(src)
+	new /obj/item/stack/sheet/mineral/abductor/ten(src)
+
 // U
 // V
 // W
@@ -1042,3 +1078,13 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/zorturethewitcher
+	name = "Mayor Card"
+	path = /obj/item/storage/box/large/custom_kit/zorturethewitcher
+	ckeywhitelist = list("zorturethewitcher")
+
+/obj/item/storage/box/large/custom_kit/zorturethewitcher/PopulateContents()
+	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/kit_spawner/townie/mayor(src)

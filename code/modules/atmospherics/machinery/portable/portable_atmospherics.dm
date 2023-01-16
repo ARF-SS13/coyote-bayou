@@ -149,7 +149,7 @@
 
 /obj/machinery/portable_atmospherics/attacked_by(obj/item/I, mob/user, attackchain_flags = NONE, damage_multiplier = 1)
 	if(I.force < 10 && !(stat & BROKEN))
-		take_damage(0)
+		take_damage(0, attacked_by = user)
 	else
 		investigate_log("was smacked with \a [I] by [key_name(user)].", INVESTIGATE_ATMOS)
 		add_fingerprint(user)

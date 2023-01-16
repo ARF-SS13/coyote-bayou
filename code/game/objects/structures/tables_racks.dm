@@ -22,9 +22,8 @@
 	layer = TABLE_LAYER
 	climbable = TRUE
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
-	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.")
-	pass_flags_self = PASSTABLE
-	attack_hand_speed = CLICK_CD_MELEE
+	pass_flags = LETPASSTHROW | PASSTABLE //You can throw objects over this, despite it's density.")	attack_hand_speed = CLICK_CD_MELEE
+	pass_flags_self = PASSTABLE | LETPASSTHROW
 	attack_hand_is_action = TRUE
 	var/frame = /obj/structure/table_frame
 	var/framestack = /obj/item/stack/rods
@@ -151,7 +150,7 @@
 		extra_wound = 20
 	banged_limb.receive_damage(30, wound_bonus = extra_wound)
 	pushed_mob.apply_damage(60, STAMINA)
-	take_damage(50)
+	take_damage(50, attacked_by = user)
 
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)
 	pushed_mob.visible_message(span_danger("[user] smashes [pushed_mob]'s [banged_limb.name] against \the [src]!"),
@@ -694,8 +693,8 @@
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
-	pass_flags = LETPASSTHROW
-	pass_flags_self = PASSTABLE
+	pass_flags = PASSTABLE | LETPASSTHROW
+	pass_flags_self = PASSTABLE | LETPASSTHROW
 	max_integrity = 30
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
@@ -708,8 +707,8 @@
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
-	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.
-	pass_flags_self = PASSTABLE
+	pass_flags = PASSTABLE | LETPASSTHROW
+	pass_flags_self = PASSTABLE | LETPASSTHROW
 	max_integrity = 20
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
@@ -769,7 +768,7 @@
 		return
 	user.do_attack_animation(src, ATTACK_EFFECT_KICK)
 	user.visible_message(span_danger("[user] kicks [src]."), null, null, COMBAT_MESSAGE_RANGE)
-	take_damage(rand(4,8), BRUTE, "melee", 1)
+	take_damage(rand(4,8), BRUTE, "melee", 1, attacked_by = user)
 
 /obj/structure/rack/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)

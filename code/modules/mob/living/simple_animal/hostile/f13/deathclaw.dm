@@ -15,9 +15,9 @@
 	maxHealth = 250 
 	health = 250
 	reach = 2
-	speed = -1
+	speed = 1
 	obj_damage = 200
-	melee_damage_lower = 15
+	melee_damage_lower = 30
 	melee_damage_upper = 40
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	move_to_delay = 2.4 //hahahahahahahaaaaa
@@ -111,17 +111,17 @@
 	health = 1000
 	stat_attack = CONSCIOUS
 	melee_damage_lower = 40
-	melee_damage_upper = 80
+	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
-	if(prob(10))
+	if(!charging)
 		visible_message(span_danger("\The [src] growls, enraged!"))
-
 		addtimer(CALLBACK(src, .proc/Charge), 3)
+	. = ..() // I swear I looked at this like 10 times before, never once noticed this wasnt here, fmdakm
 
 /mob/living/simple_animal/hostile/deathclaw/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!charging)

@@ -17,7 +17,10 @@
 	icon_dead = "mesquite-dead"
 	icon_harvest = "mesquite-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/consumable/honey = 0.1, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(
+		/datum/reagent/consumable/honey = 0.1,
+		/datum/reagent/consumable/nutriment = 0.05
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/mesquite
 	seed = /obj/item/seeds/mesquite

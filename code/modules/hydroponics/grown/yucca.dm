@@ -22,7 +22,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 0.1,
 		/datum/reagent/consumable/banana_peel = 0.1,
 		/datum/reagent/medicine/salglu_solution = 0.2,
-		)
+	)
 
 
 /obj/item/reagent_containers/food/snacks/grown/yucca

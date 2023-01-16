@@ -194,7 +194,7 @@
 		visible_message(span_danger("[user] has hit [src] with [I]!"), null, null, COMBAT_MESSAGE_RANGE)
 		//only witnesses close by and the victim see a hit message.
 		log_combat(user, src, "attacked", I)
-	take_damage(totitemdamage, I.damtype, "melee", 1)
+	take_damage(totitemdamage, I.damtype, "melee", 1, attacked_by = user)
 
 /mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0)
 	var/list/block_return = list()

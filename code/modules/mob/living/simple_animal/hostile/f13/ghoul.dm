@@ -52,8 +52,8 @@
 	a_intent = INTENT_HARM
 	speed = 1
 	harm_intent_damage = 8
-	melee_damage_lower = 7
-	melee_damage_upper = 13
+	melee_damage_lower = 6
+	melee_damage_upper = 12
 	attack_verb_simple = list(
 		"claws",
 		"maims",
@@ -137,12 +137,12 @@
 	minimum_distance = 1
 	ranged = TRUE
 	ranged_message = "throws a rock"
-	ranged_cooldown_time = 1 SECONDS
+	ranged_cooldown_time = 3 SECONDS
 	projectiletype = /obj/item/projectile/bullet/ghoul_rock
 	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8
-	melee_damage_lower = 9
-	melee_damage_upper = 15
+	melee_damage_lower = 8
+	melee_damage_upper = 14
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
@@ -195,7 +195,7 @@
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
-	melee_damage_lower = 15
+	melee_damage_lower = 10
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -212,7 +212,7 @@
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
-	melee_damage_lower = 15
+	melee_damage_lower = 10
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -232,7 +232,7 @@
 	health = 200
 	speed = 2.5
 	harm_intent_damage = 8
-	melee_damage_lower = 25
+	melee_damage_lower = 20
 	melee_damage_upper = 35
 	mob_size = 5
 	wound_bonus = 0
@@ -264,8 +264,8 @@
 	projectiletype = /obj/item/projectile/radiation_thing
 	projectilesound = 'sound/weapons/etherealhit.ogg'
 	harm_intent_damage = 8
-	melee_damage_lower = 12
-	melee_damage_upper = 25
+	melee_damage_lower = 10
+	melee_damage_upper = 22
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -302,8 +302,8 @@
 	health = 256
 	speed = 1.4 // Nyooom
 	can_ghost_into = FALSE
-	melee_damage_lower = 35
-	melee_damage_upper = 35
+	melee_damage_lower = 25
+	melee_damage_upper = 30
 	armour_penetration = 0.1
 
 //Alive Ghoul

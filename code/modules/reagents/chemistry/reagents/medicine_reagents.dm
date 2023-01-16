@@ -36,6 +36,7 @@
 	taste_description = "badmins"
 	value = REAGENT_VALUE_GLORIOUS
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 // The best stuff there is. For testing/debugging.
 /datum/reagent/medicine/adminordrazine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -61,7 +62,7 @@
 	M.setCloneLoss(0, 0)
 	M.setOxyLoss(0, 0)
 	M.radiation = 0
-	M.heal_bodypart_damage(5,5)
+	M.heal_bodypart_damage(5,5, include_roboparts = TRUE)
 	M.adjustToxLoss(-5, 0, TRUE)
 	M.hallucination = 0
 	M.setOrganLoss(ORGAN_SLOT_BRAIN, 0)
@@ -107,25 +108,26 @@
 	color = "#e650c0"
 	overdose_threshold = 60
 	taste_description = "grossness"
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/medbotchem/on_mob_life(mob/living/carbon/M)
 	switch(M.getBruteLoss())
 		if(-INFINITY to 50)
-			M.adjustBruteLoss(-1*REM, 0) //below 50 brute, it heals at full strength
+			M.adjustBruteLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 brute, it heals at full strength
 		if(50 to 75)
-			M.adjustBruteLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+			M.adjustBruteLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
-			M.adjustBruteLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+			M.adjustBruteLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
 	. = 1
 
 	switch(M.getFireLoss())
 		if(-INFINITY to 50)
-			M.adjustFireLoss(-1*REM, 0) //below 50 Burn, it heals at full strength
+			M.adjustFireLoss(-1*REM, 0, include_roboparts = TRUE) //below 50 Burn, it heals at full strength
 		if(50 to 75)
-			M.adjustFireLoss(-0.5*REM, 0) //between 50 and 75, its at half strength
+			M.adjustFireLoss(-0.5*REM, 0, include_roboparts = TRUE) //between 50 and 75, its at half strength
 		else
-			M.adjustFireLoss(-0.1*REM, 0) //Otherwise it barely heals anything
+			M.adjustFireLoss(-0.1*REM, 0, include_roboparts = TRUE) //Otherwise it barely heals anything
 	..()
 	. = 1
 
@@ -195,13 +197,14 @@
 	pH = 11
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
 	if(M.bodytemperature < T0C)
 		M.adjustOxyLoss(-3 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-power, 0)
+		M.adjustBruteLoss(-power, 0, include_roboparts = TRUE)
+		M.adjustFireLoss(-power, 0, include_roboparts = TRUE)
 		M.adjustToxLoss(-power, 0, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-power, 0)
 		for(var/i in M.all_wounds)
@@ -238,6 +241,7 @@
 	pH = 12
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/pyroxadone/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
@@ -253,8 +257,8 @@
 			power *= 2
 
 		M.adjustOxyLoss(-2 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-1.5 * power, 0)
+		M.adjustBruteLoss(-power, 0, include_roboparts = TRUE)
+		M.adjustFireLoss(-1.5 * power, 0, include_roboparts = TRUE)
 		M.adjustToxLoss(-power, 0, TRUE)
 		M.adjustCloneLoss(-power, 0)
 		for(var/i in M.all_wounds)
@@ -445,7 +449,7 @@
 	reagent_state = LIQUID
 	color = "#DCDCDC"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 60
+	//overdose_threshold = 60
 	taste_description = "sweetness and salt"
 	var/last_added = 0
 	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
@@ -533,6 +537,7 @@
 	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 40
 	value = REAGENT_VALUE_COMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M))
@@ -546,8 +551,8 @@
 		else if(method == INJECT)
 			return
 		else if(method in list(PATCH, TOUCH))
-			M.adjustBruteLoss(-1 * reac_volume)
-			M.adjustFireLoss(-1 * reac_volume)
+			M.adjustBruteLoss(-1 * reac_volume, include_roboparts = isrobotic(M))
+			M.adjustFireLoss(-1 * reac_volume, include_roboparts = isrobotic(M))
 			for(var/i in C.all_wounds)
 				var/datum/wound/iter_wound = i
 				iter_wound.on_synthflesh(reac_volume)
@@ -573,6 +578,7 @@
 	taste_description = "ash"
 	pH = 5
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE // they still get stuff in them that needs purging
 
 /datum/reagent/medicine/charcoal/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, 0)
@@ -626,6 +632,7 @@
 	taste_description = "acid"
 	pH = 1.5
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/calomel/on_mob_life(mob/living/carbon/M)
 	for(var/A in M.reagents.reagent_list)
@@ -644,6 +651,7 @@
 	color = "#14FF3C"
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	pH = 12 //It's a reducing agent
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/potass_iodide/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
@@ -659,6 +667,7 @@
 	pH = 8.9
 	value = REAGENT_VALUE_COMMON //uncraftable
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/prussian_blue/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
@@ -675,6 +684,7 @@
 	value = REAGENT_VALUE_UNCOMMON
 	var/healtoxinlover = FALSE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/pen_acid/on_mob_life(mob/living/carbon/M)
 	//M.radiation -= max(M.radiation-RAD_MOB_SAFE, 0)/50
@@ -728,6 +738,7 @@
 	color = "#00FFFF"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	pH = 2
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/salbutamol/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REM, 0)
@@ -743,6 +754,7 @@
 	color = "#FF6464"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	pH = 11
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/perfluorodecalin/on_mob_life(mob/living/carbon/human/M)
 	M.adjustOxyLoss(-12*REM, 0)
@@ -996,6 +1008,7 @@
 	taste_description = "magnets"
 	pH = 0
 	value = REAGENT_VALUE_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/strange_reagent/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat == DEAD)
@@ -1095,6 +1108,7 @@
 	taste_description = "acid"
 	pH = 2
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
 	M.jitteriness = 0
@@ -1109,6 +1123,7 @@
 	color = "#00B4C8"
 	taste_description = "raw egg"
 	pH = 4
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M)
 	M.dizziness = 0
@@ -1240,6 +1255,7 @@
 	overdose_threshold = 30
 	taste_description = "a roll of gauze"
 	pH = 10
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/antitoxin/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, FALSE)
@@ -1319,10 +1335,11 @@
 	pH = 11
 	value = REAGENT_VALUE_EXCEPTIONAL
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-5*REM, FALSE) //A ton of healing - this is a 50 telecrystal investment.
-	M.adjustFireLoss(-5*REM, FALSE)
+	M.adjustBruteLoss(-5*REM, FALSE, include_roboparts = TRUE) //A ton of healing - this is a 50 telecrystal investment.
+	M.adjustFireLoss(-5*REM, FALSE, include_roboparts = TRUE)
 	M.adjustOxyLoss(-15, FALSE)
 	M.adjustToxLoss(-5*REM, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
@@ -1340,10 +1357,11 @@
 	color = "#555555"
 	pH = 11
 	value = REAGENT_VALUE_VERY_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/lesser_syndicate_nanites/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REM, FALSE)
-	M.adjustFireLoss(-2*REM, FALSE)
+	M.adjustBruteLoss(-2*REM, FALSE, include_roboparts = TRUE)
+	M.adjustFireLoss(-2*REM, FALSE, include_roboparts = TRUE)
 	M.adjustOxyLoss(-5*REM, FALSE)
 	M.adjustToxLoss(-2*REM, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
@@ -1364,6 +1382,7 @@
 	taste_description = "jelly"
 	pH = 11.8
 	value = REAGENT_VALUE_UNCOMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/neo_jelly/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-1.5*REM, FALSE)
@@ -1626,6 +1645,7 @@
 	pH = 9.12
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE // purely psychosomatic
 
 /datum/reagent/medicine/psicodine/on_mob_add(mob/living/L)
 	..()

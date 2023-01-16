@@ -28,7 +28,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_223_MATCH
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_223_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -49,7 +49,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_223
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_223
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -70,7 +70,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_223_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -91,7 +91,7 @@
 	wound_bonus = RUBBERY_WOUND_RIFLE_223
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_223
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -115,24 +115,24 @@
 	wound_bonus = BULLET_WOUND_RIFLE_223 * BULLET_WOUND_MICROSHRAPNEL
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT * BULLET_NAKED_WOUND_MICROSHRAPNEL
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_223
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	embed_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	embedding = list(
-		embed_chance=5, 
-		fall_chance=1, 
-		jostle_chance=1, 
-		ignore_throwspeed_threshold=TRUE, 
-		pain_stam_pct=0.5, 
-		pain_mult=5, 
-		jostle_pain_mult=6, 
-		rip_time=10, 
-		embed_chance_turf_mod=100, 
+		embed_chance=5,
+		fall_chance=1,
+		jostle_chance=1,
+		ignore_throwspeed_threshold=TRUE,
+		pain_stam_pct=0.5,
+		pain_mult=5,
+		jostle_pain_mult=6,
+		rip_time=10,
+		embed_chance_turf_mod=100,
 		projectile_payload = /obj/item/shrapnel/bullet/a556/microshrapnel
 		)
-	
+
 /* 5.56 simple
  * DAMAGE: 25
  * STAMIN: 5
@@ -142,26 +142,17 @@
  */
 /obj/item/projectile/bullet/a556/simple //for simple mobs, separate to allow balancing
 	name = "5.56 bullet"
+	damage = BULLET_DAMAGE_RIFLE_223_HANDLOAD
+	stamina = BULLET_STAMINA_RIFLE_223
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_223_HANDLOAD
 
-/* 5.56 simple 2
- * DAMAGE: 25
- * STAMIN: 5
- * RECOIL: 1
- * WOUNDS: 6.5
- * WNAKED: 3.75
- */
-/obj/item/projectile/bullet/a556/ap/simple //for simple mobs, separate to allow balancing
-	name = "5.56 bullet"
+	wound_bonus = BULLET_WOUND_RIFLE_223_HANDLOAD
+	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
-/* 5.56 match
- * DAMAGE: 37
- * STAMIN: 6.25
- * RECOIL: 1
- * WOUNDS: 6.5
- * WNAKED: 3.75
- */
-/obj/item/projectile/bullet/a556/match // used by mobs currently
-	name = "5.56 match bullet"
+	pixels_per_second = BULLET_SPEED_RIFLE_223_HANDLOAD * 0.5
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /*
 /obj/item/projectile/bullet/a556/uraniumtipped
@@ -202,7 +193,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_473
 	bare_wound_bonus = BULLET_WOUND_RIFLE_473_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -223,7 +214,7 @@
 	wound_bonus = RUBBERY_WOUND_RIFLE_473
 	bare_wound_bonus = BULLET_WOUND_RIFLE_473_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -247,7 +238,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_473 * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_RIFLE_473_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -287,7 +278,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_473
 	bare_wound_bonus = BULLET_WOUND_RIFLE_473_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	supereffective_damage = BULLET_DAMAGE_RIFLE_473 * 2
@@ -310,7 +301,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_473 * BULLET_WOUND_EXPLOSIVE
 	bare_wound_bonus = BULLET_WOUND_RIFLE_473_NAKED_MULT * BULLET_NAKED_WOUND_EXPLOSIVE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -338,7 +329,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_473 * BULLET_WOUND_SHOCK
 	bare_wound_bonus = BULLET_WOUND_RIFLE_473_NAKED_MULT * BULLET_NAKED_WOUND_SHOCK
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_473
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -366,9 +357,9 @@
 	wound_bonus = BULLET_WOUND_RIFLE_473
 	bare_wound_bonus = BULLET_WOUND_RIFLE_473_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_473
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT	
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	hitscan = TRUE
 
 ////////////////
@@ -398,7 +389,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_5MM
 	bare_wound_bonus = BULLET_WOUND_RIFLE_5MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_5MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -419,7 +410,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_5MM_MATCH
 	bare_wound_bonus = BULLET_WOUND_RIFLE_5MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_5MM_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -440,7 +431,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_5MM_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_RIFLE_5MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_5MM_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -471,7 +462,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_5MM * BULLET_WOUND_SHOCK
 	bare_wound_bonus = BULLET_WOUND_RIFLE_5MM_NAKED_MULT * BULLET_NAKED_WOUND_SHOCK
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_5MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -504,7 +495,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_5MM
 	bare_wound_bonus = BULLET_WOUND_RIFLE_5MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_5MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -539,7 +530,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_308_MATCH
 	bare_wound_bonus = BULLET_WOUND_RIFLE_308_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_308_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -560,7 +551,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_308
 	bare_wound_bonus = BULLET_WOUND_RIFLE_308_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_308
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -581,7 +572,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_308_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_RIFLE_308_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_308_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -602,7 +593,7 @@
 	wound_bonus = RUBBERY_WOUND_RIFLE_308
 	bare_wound_bonus = BULLET_WOUND_RIFLE_308_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_308
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -626,7 +617,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_308 * BULLET_WOUND_MICROSHRAPNEL
 	bare_wound_bonus = BULLET_WOUND_RIFLE_308_NAKED_MULT * BULLET_NAKED_WOUND_MICROSHRAPNEL
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_308
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -684,7 +675,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_50MG_MATCH
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -705,7 +696,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_50MG
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -726,7 +717,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_50MG_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -747,7 +738,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_50MG * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -779,7 +770,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_50MG * BULLET_WOUND_EXPLOSIVE
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT * BULLET_NAKED_WOUND_EXPLOSIVE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -804,7 +795,7 @@
 	wound_bonus = RUBBERY_WOUND_RIFLE_50MG
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -828,7 +819,7 @@
 	wound_bonus = RUBBERY_WOUND_RIFLE_50MG
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -861,7 +852,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_50MG * BULLET_WOUND_POISON
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT * BULLET_NAKED_WOUND_POISON
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	var/smoke_radius = 3
@@ -913,7 +904,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_4570
 	bare_wound_bonus = BULLET_WOUND_RIFLE_4570_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_4570
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -934,7 +925,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_4570
 	bare_wound_bonus = BULLET_WOUND_RIFLE_4570_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_4570
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -955,7 +946,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_4570
 	bare_wound_bonus = BULLET_WOUND_RIFLE_4570_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_4570
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -976,7 +967,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_4570 * BULLET_WOUND_EXPLOSIVE
 	bare_wound_bonus = BULLET_WOUND_RIFLE_4570_NAKED_MULT * BULLET_NAKED_WOUND_EXPLOSIVE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_4570
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -1004,7 +995,7 @@
 	wound_bonus = BULLET_WOUND_RIFLE_4570 * BULLET_WOUND_ACID
 	bare_wound_bonus = BULLET_WOUND_RIFLE_4570_NAKED_MULT * BULLET_NAKED_WOUND_ACID
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_4570
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -1041,7 +1032,7 @@
 	wound_bonus = RUBBERY_WOUND_RIFLE_4570
 	bare_wound_bonus = BULLET_WOUND_RIFLE_4570_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_4570
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -1086,10 +1077,10 @@
 	wound_bonus = BULLET_WOUND_RIFLE_GAUSS
 	bare_wound_bonus = BULLET_WOUND_RIFLE_GAUSS_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_RIFLE_GAUSS
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	
+
 	movement_type = FLYING | UNSTOPPABLE
 	hitscan = TRUE
 	armour_penetration = 0.5

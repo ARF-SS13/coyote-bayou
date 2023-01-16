@@ -65,4 +65,4 @@
 			L.dizziness = min(L.dizziness + 15, 50)
 			if(L.confused >= 25)
 				L.DefaultCombatKnockdown(FLOOR(L.confused * 0.8, 1))
-		take_damage(max_integrity)
+		take_damage(max_integrity, attacked_by = L)

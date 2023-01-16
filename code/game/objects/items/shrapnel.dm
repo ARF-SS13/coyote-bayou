@@ -40,6 +40,9 @@
 	sharpness = SHARP_EDGED
 	wound_bonus = 50
 
+/obj/item/projectile/bullet/shrapnel/simple
+	pixels_per_second = BULLET_SPEED_BASE * 0.75
+
 /obj/item/projectile/bullet/shrapnel/plasma // plasma grenades
 	name = "plasma split"
 	embedding = list(embed_chance=0, ignore_throwspeed_threshold=FALSE, fall_chance=0, embed_chance_turf_mod=0, payload = /obj/item/shrapnel)

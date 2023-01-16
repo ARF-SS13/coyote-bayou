@@ -861,6 +861,8 @@
 	..()
 
 /mob/living/carbon/human/vomit(lost_nutrition = 10, blood = 0, stun = 1, distance = 0, message = 1, toxic = 0)
+	if(isrobotic(src))
+		return TRUE
 	if(blood && dna?.species && (NOBLOOD in dna.species.species_traits))
 		if(message)
 			visible_message("<span class='warning'>[src] dry heaves!</span>", \
@@ -1274,7 +1276,7 @@
 	race = /datum/species/xeno
 
 /mob/living/carbon/human/species/ipc
-	race = /datum/species/ipc
+	race = /datum/species/synthfurry/ipc
 
 /mob/living/carbon/human/species/roundstartslime
 	race = /datum/species/jelly/roundstartslime

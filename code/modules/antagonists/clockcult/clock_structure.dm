@@ -113,7 +113,7 @@
 		icon_state = unanchored_icon
 		if(do_damage)
 			playsound(src, break_sound, 10 * (40 * (1 - get_efficiency_mod())), 1)
-			take_damage(round(max_integrity * 0.25, 1), BRUTE)
+			take_damage(round(max_integrity * 0.25, 1), BRUTE, attacked_by = user)
 			to_chat(user, span_warning("As you unsecure [src] from the floor, you see cracks appear in its surface!"))
 
 /obj/structure/destructible/clockwork/emp_act(severity)

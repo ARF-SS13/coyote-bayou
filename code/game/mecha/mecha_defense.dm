@@ -6,7 +6,7 @@
 			return facing_modifiers[FRONT_ARMOUR]
 	return facing_modifiers[SIDE_ARMOUR] //if its not a front hit or back hit then assume its from the side
 
-/obj/mecha/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
+/obj/mecha/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
 	. = ..()
 	if(. && obj_integrity > 0)
 		spark_system.start()
@@ -95,7 +95,7 @@
 		log_combat(user, src, "punched", "hulk powers")
 
 /obj/mecha/blob_act(obj/structure/blob/B)
-	take_damage(30, BRUTE, "melee", 0, get_dir(src, B))
+	take_damage(30, BRUTE, "melee", 0, get_dir(src, B), attacked_by = B)
 
 /obj/mecha/attack_tk()
 	return

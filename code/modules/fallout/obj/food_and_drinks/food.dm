@@ -6,7 +6,11 @@
 	name = "gecko fillet"
 	desc = "A tasty fillet of gecko meat.<br>If you cook it, it tastes like chicken!"
 	icon_state = "fishfillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6,  /datum/reagent/toxin  = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/toxin = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	bitesize = 2 //Smaller animal
 	filling_color = "#FA8072"
 	tastes = list("meat" = 4, "scales" = 1)
@@ -18,7 +22,10 @@
 	name = "molerat meat"
 	desc = "A slab of smelly molerat meat."
 	icon_state = "bearmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/toxin = 1
+	)
 	bitesize = 3
 	filling_color = "#FA8072"
 	tastes = list("meat" = 4, "whiskers" = 1)
@@ -29,7 +36,10 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/wolf
 	name = "dog meat"
 	desc = "Some asians love this stuff.<br>It does not taste too bad actually."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	bitesize = 4 //Average animal
 	filling_color = "#FA8072"
 	tastes = list("meat" = 3)
@@ -41,7 +51,11 @@
 	name = "deathclaw meat"
 	desc = "A slab of hard but delicious deathclaw meat."
 	icon_state = "goliathmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 9, /datum/reagent/consumable/nutriment/vitamin = 9, /datum/reagent/medicine/tricordrazine = 5)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 9,
+		/datum/reagent/consumable/nutriment/vitamin = 9,
+		/datum/reagent/medicine/tricordrazine = 5
+	)
 	bitesize = 6 //Big slabs of meat from a massive creature
 	filling_color = "#FA8072"
 	tastes = list("chewy meat" = 3, "scales" = 1)
@@ -56,8 +70,14 @@
 	icon_state = "mirelurk_meat"
 	bitesize = 4 //Big animal, small part of it
 	filling_color = "#406618" //Very dark green.
-	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/nutriment/vitamin = 3)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 7,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/mirelurk
 	tastes = list("crab" = 1)
 	slice_path = null
@@ -67,7 +87,10 @@
 	name = "squirrel meat"
 	desc = "Squirrel meat, the staple of many wasteland dishes when you can catch one."
 	icon_state = "meat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	bitesize = 2
 	tastes = list("rodent" = 3, "chicken" = 1)
 	filling_color = "#FA8072"
@@ -79,7 +102,10 @@
 	name = "radroach meat"
 	desc = "A hunk of still quivering radroach meat, gross."
 	icon_state = "mothmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2,  /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	filling_color = "#e5b73b" //Meat brown associated to "mothmeat"
 	bitesize = 2
 	tastes = list("insect guts" = 3)
@@ -92,7 +118,10 @@
 	desc = "A sizable portion of ant flesh taken from the abdomen, almost looks appetizing, almost."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "antmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2,  /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	filling_color = "#e5b73b"
 	bitesize = 3
 	tastes = list("insect guts" = 1)
@@ -105,7 +134,11 @@
 	desc = "A sizable portion of fire-ant flesh taken from the abdomen, it smellls slightly spicy."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "fireant_meat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/capsaicin = 0.5,  /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/capsaicin = 0.5,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	bitesize = 3
 	tastes = list("insect guts" = 2, "spicyness" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ant_meat
@@ -117,7 +150,10 @@
 	desc = "A slab of black-brown flesh from the abdomen of a bloatfly, disgusting."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "bloatfly_meat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2,  /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	filling_color = "#1c352d" // Medium jungle green
 	bitesize = 2
 	tastes = list("insect guts" = 1)
@@ -129,7 +165,11 @@
 	name = "cazador meat"
 	desc = "Meat extracted from the lean hide of cazador wasp."
 	icon_state = "mothmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 3)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/nutriment/vitamin = 2,
+		/datum/reagent/toxin/carpotoxin = 3
+	)
 	filling_color = "#e5b73b"
 	bitesize = 2
 	tastes = list("insect guts" = 3, "sweet tangy liquid" = 1) //google says toxin is sweet anyway.
@@ -142,7 +182,11 @@
 	desc = "Meat from a radscorpion, still inside its chitin.  Going to need pliers for this."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "radscorpion_meat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3,  /datum/reagent/toxin  = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/toxin = 5,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	filling_color = "#e5b73b"
 	bitesize = 4
 	tastes = list("insect guts" = 3, "sweet tangy liquid" = 2) //google says toxin is sweet anyway.
@@ -154,7 +198,10 @@
 	name = "ghoul meat"
 	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
 	icon_state = "flymeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/radium = 6)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/radium = 6
+	)
 	tastes = list("rotting flesh" = 3)
 	filling_color = "#7c1104" //Dark Red
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
@@ -165,7 +212,10 @@
 	name = "centaur meat"
 	icon_state = "flymeat"
 	desc = "Absolutely disgusting"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/radium = 10)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/radium = 10
+	)
 	tastes = list("abomination" = 2, "mutatated flesh" = 1)
 	filling_color = "#7c1104"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/centaur
@@ -192,7 +242,10 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "moth_steak"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	filling_color = "#967117" //Mode Beige
 	tastes = list("bug protein" = 3)
 
@@ -202,7 +255,10 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "baked_bloatfly"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	filling_color = "#1c352d" // Medium jungle green
 	tastes = list("baked insect" = 1)
 
@@ -228,7 +284,11 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "moth_steak"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/toxin  = 1)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+		/datum/reagent/toxin  = 1
+	)
 	tastes = list("bug protein" = 3, "sweet tangy liquid" = 1)
 	filling_color = "#967117"
 
@@ -238,14 +298,22 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "mirelurk_roast"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 4, /datum/reagent/toxin  = 2)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 4,
+		/datum/reagent/toxin  = 2
+	)
 	tastes = list("bug protein" = 3, "sweet tangy liquid" = 1)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
 	name = "deathclaw steak"
 	desc = "A piece of hot spicy meat, eaten by only the most worthy hunters - or the most rich clients."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/tricordrazine = 8)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 5,
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+		/datum/reagent/medicine/tricordrazine = 8
+	)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
 	name = "squirrel steak"
@@ -253,7 +321,10 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "squirrel_steak"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/mirelurk
 	name = "mirelurk roast"
@@ -261,7 +332,10 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "mirelurk_roast"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 4)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 4
+	)
 	tastes = list("meat" = 2, "crab" = 1)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
@@ -270,7 +344,10 @@
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "ghoul_steak"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	bonus_reagents = list(/datum/reagent/radium = 3, /datum/reagent/consumable/nutriment/vitamin = 0.5)
+	bonus_reagents = list(
+		/datum/reagent/radium = 3,
+		/datum/reagent/consumable/nutriment/vitamin = 0.5
+	)
 	tastes = list("atomtic baked meat" = 3)
 	filling_color = "#465945" //Gray Asparagus
 	foodtype = MEAT | GROSS
@@ -281,7 +358,10 @@
 	icon_state = "ghoul_steak"
 	desc = "No matter how much you cook, it doesn't seem safe to eat."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	bonus_reagents = list(/datum/reagent/radium = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(
+		/datum/reagent/radium = 5,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	tastes = list("atomtic baked meat" = 3, "abominable writhing" = 1)
 	filling_color = "#465945"
 	foodtype = MEAT | GROSS
@@ -297,8 +377,14 @@
 	name = "Bubblegum"
 	desc = "A Big Pops branded bubblegum."
 	icon_state = "bubblegum"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 2)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/sugar = 2
+	)
 	filling_color = "#B22222"
 	foodtype = JUNKFOOD | SUGAR
 
@@ -306,8 +392,14 @@
 	name = "big Bubblegum"
 	desc = "A large \"Extra\" Big Pops branded bubblegum."
 	icon_state = "bubblegum_large"
-	bonus_reagents = list(/datum/reagent/radium = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 4)
+	bonus_reagents = list(
+		/datum/reagent/radium = 4,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/sugar = 4
+	)
 	filling_color = "#B22222"
 	foodtype = JUNKFOOD | SUGAR
 
@@ -315,7 +407,10 @@
 	name = "Cram"
 	desc = "A blue labeled tin of processed meat, primarily used as rations for soldiers during the pre-War times."
 	icon_state = "cram"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 5
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
 	filling_color = "#B22222"
 	foodtype = MEAT
@@ -324,7 +419,10 @@
 	name = "big Cram"
 	desc = "A large blue labeled tin of processed meat, primarily used as rations for soldiers during the pre-War times."
 	icon_state = "cram_large"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 10)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 10
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 40)
 	filling_color = "#B22222"
 	foodtype = MEAT
@@ -333,7 +431,10 @@
 	name = "YumYum"
 	desc = "YumYum was a pre-War company in the United States, producing packaged foods.<br>YumYum Deviled Eggs was their major product."
 	icon_state = "yumyum"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	filling_color = "#B22222"
 	foodtype = MEAT
@@ -342,7 +443,10 @@
 	name = "Fancy Lads"
 	desc = "The presence of snack cakes is a nod to the urban myth that Twinkies and other similar foods would survive a nuclear war.<br>The slogan is \"A big delight in every bite\"."
 	icon_state = "fancylads"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
 	filling_color = "#B22222"
 	foodtype = JUNKFOOD | SUGAR | GRAIN
@@ -351,8 +455,14 @@
 	name = "Sugar Bombs"
 	desc = "Sugar Bombs is a pre-War breakfast cereal that can be found all around the wasteland, packaged in white and blue boxes with a red ovoid logo at the top, fully labeled as \"Sugar Bombs breakfast cereal\"."
 	icon_state = "sugarbombs"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/sugar = 10)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 10,
+		/datum/reagent/consumable/sugar = 10
+	)
 	filling_color = "#B22222"
 	foodtype = JUNKFOOD | SUGAR
 
@@ -360,7 +470,10 @@
 	name = "Crisps"
 	desc = "Potato Crisps are packaged in a small red and green box, with a yellow bubble encouraging the purchaser to \"See Moon Map Offer on Back!\"."
 	icon_state = "crisps"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#B22222"
 	foodtype = JUNKFOOD
@@ -369,7 +482,10 @@
 	name = "Salisbury Steak"
 	desc = "A worn, red box displaying a picture of steak with the words \"Salisbury Steak\" at the top and \"now with Gravy!\" at the bottom."
 	icon_state = "steak"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 5
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 50)
 	filling_color = "#B22222"
 	foodtype = MEAT
@@ -378,8 +494,14 @@
 	name = "Dandy Apples Special"
 	desc = "Dandy Apples Special are a product from the pre-War company Dandy Boy. On the sides of the box there is some sort of apple mascot with a bowler hat, monocle and mustache."
 	icon_state = "specialapples"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/medicine/tricordrazine = 10)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 10,
+		/datum/reagent/medicine/tricordrazine = 10
+	)
 	filling_color = "#B22222"
 	foodtype = DAIRY | SUGAR
 
@@ -387,8 +509,14 @@
 	name = "Dandy Boy Apples"
 	desc = "Dandy Boy Apples are a product from the pre-War company Dandy Boy, consisting of candied apples packaged in a red cardboard box."
 	icon_state = "dandyapples"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/sugar = 10)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 10,
+		/datum/reagent/consumable/sugar = 10
+	)
 	filling_color = "#B22222"
 	foodtype = DAIRY | SUGAR
 
@@ -396,7 +524,10 @@
 	name = "BlamCo"
 	desc = "BlamCo was a pre-War company in the United States, producing packaged foods.<br>BlamCo Mac & Cheese was their major product.<br>Unlike other foods, like apples or eggs, wheat cannot be freeze-dried. How the macaroni remains edible is unclear."
 	icon_state = "blamco"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
 	filling_color = "#B22222"
 	foodtype = DAIRY
@@ -405,7 +536,10 @@
 	name = "big BlamCo"
 	desc = "BlamCo was a pre-War company in the United States, producing packaged foods.<br>BlamCo Mac & Cheese was their major product.<br>Unlike other foods, like apples or eggs, wheat cannot be freeze-dried. How the macaroni remains edible is unclear."
 	icon_state = "blamco_large"
-	bonus_reagents = list(/datum/reagent/radium = 4, /datum/reagent/consumable/nutriment/vitamin = 4)
+	bonus_reagents = list(
+		/datum/reagent/radium = 4,
+		/datum/reagent/consumable/nutriment/vitamin = 4
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	filling_color = "#B22222"
 	foodtype = DAIRY
@@ -414,7 +548,10 @@
 	name = "MechaMash"
 	desc = "MechaMash is packaged in a white box with blue highlights, and a wrench logo printed on the front.<br>It appears to be a form of instant potatoes that smells like WD-40..."
 	icon_state = "mechanist"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
 	filling_color = "#B22222"
 	foodtype = VEGETABLES
@@ -423,7 +560,10 @@
 	name = "InstaMash"
 	desc = "InstaMash is packaged in a white box with blue highlights.<br>It appears to be a form of instant potatoes."
 	icon_state = "instamash"
-	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(
+		/datum/reagent/radium = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
 	filling_color = "#B22222"
 	foodtype = VEGETABLES
@@ -432,7 +572,11 @@
 	name = "MRE"
 	desc = "The Meal, Ready-to-Eat : commonly known as the MRE - is a self-contained, individual field ration in lightweight packaging.<br>It's commonly used by military groups for service members to use in combat or other field conditions where organized food facilities are not available."
 	icon_state = "mre"
-	bonus_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 10, /datum/reagent/medicine/tricordrazine = 10, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(
+		/datum/reagent/medicine/silver_sulfadiazine = 10,
+		/datum/reagent/medicine/tricordrazine = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	filling_color = "#B22222"
 
@@ -440,7 +584,11 @@
 	name = "dehydrated pea soup"
 	desc = "A piece of military food ration.<br>Faded label on the front says: \"Dehydrated peas. Chew well, take with water. 60g.\""
 	icon_state = "galette"
-	bonus_reagents = list(/datum/reagent/consumable/sodiumchloride = 2, /datum/reagent/consumable/sugar = 2, /datum/reagent/medicine/tricordrazine = 2)
+	bonus_reagents = list(
+		/datum/reagent/consumable/sodiumchloride = 2,
+		/datum/reagent/consumable/sugar = 2,
+		/datum/reagent/medicine/tricordrazine = 2
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	filling_color = "#B22222"
 	foodtype = VEGETABLES
@@ -475,7 +623,10 @@
 	bitesize = 5
 	filling_color = "#800000"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	tastes = list("meat" = 2, "salt" = 1)
 	foodtype = MEAT
 
@@ -486,7 +637,10 @@
 	bitesize = 5
 	filling_color = "#800000"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	tastes = list("meat" = 2, "smoke" = 1)
 	foodtype = MEAT
 
@@ -527,7 +681,10 @@
 	desc = "Meat from wasteland critters wrapped in puffy pastry. Delicious, rich and certainly high class."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "wasteland_wellington"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/tricordrazine = 5)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+		/datum/reagent/medicine/tricordrazine = 5
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	filling_color = "B#22222"
 	foodtype = MEAT | GRAIN
@@ -537,7 +694,11 @@
 	desc = "A delicious omelette made from one big deathclaw egg. Hope you're not allergic."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "deathclawomlette"
-	bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/omnizine = 40, /datum/reagent/medicine/dexalin = 10)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+		/datum/reagent/medicine/omnizine = 40,
+		/datum/reagent/medicine/dexalin = 10
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 60)
 	filling_color = "B#22222"
 	foodtype = MEAT
@@ -566,7 +727,10 @@
 	bitesize = 5
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "Mirelurk_cake"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/consumable/nutriment/vitamin = 9)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 20,
+		/datum/reagent/consumable/nutriment/vitamin = 9
+	)
 	tastes = list("cake" = 1, "crab" = 5)
 	filling_color = "#406618"
 	foodtype = MEAT
@@ -579,8 +743,15 @@
 	icon = 'icons/fallout/objects/food&drinks/soupsalad.dmi'
 	icon_state = "molerat_stew"
 	volume = 35
-	list_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/oculine = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
-	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+		/datum/reagent/medicine/oculine = 5,
+		/datum/reagent/consumable/nutriment/vitamin = 5
+	)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 5
+	)
 	tastes = list("gamey meat" = 1, "filling stew" = 1)
 	foodtype = VEGETABLES | MEAT
 
@@ -590,7 +761,10 @@
 	icon = 'icons/fallout/objects/food&drinks/soupsalad.dmi'
 	icon_state = "buffalo_soup"
 	volume = 40
-	bonus_reagents = list( /datum/reagent/consumable/nutriment = 4,  /datum/reagent/consumable/nutriment/vitamin = 6)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/nutriment/vitamin = 6
+	)
 	tastes = list("buttery flesh" = 1, "creamy soup" = 1)
 	foodtype = VEGETABLES
 
@@ -614,7 +788,10 @@
 	bitesize = 4
 	volume = 30
 	list_reagents = list(/datum/reagent/medicine/longpork_stew = 30)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/medicine/longpork_stew = 5)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+		/datum/reagent/medicine/longpork_stew = 5
+	)
 	filling_color = "#a7510b"
 	tastes = list("oily broth" = 5, "chewy meat" = 1)
 	foodtype = MEAT | LONGPORK
@@ -627,7 +804,10 @@
 	bitesize = 6
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/tricordrazine = 5)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+		/datum/reagent/medicine/tricordrazine = 5
+	)
 	tastes = list("crab" = 5, "onions" = 1)
 	filling_color = "#406618"
 	foodtype = MEAT | VEGETABLES
@@ -640,7 +820,11 @@
 	bitesize = 6
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/tricordrazine = 5, /datum/reagent/consumable/capsaicin = 2.5)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+		/datum/reagent/medicine/tricordrazine = 5,
+		/datum/reagent/consumable/capsaicin = 2.5
+	)
 	tastes = list("casserole" = 5, "meat" = 2, "peppers" = 2)
 	filling_color = "#406618"
 	foodtype = MEAT | VEGETABLES
@@ -676,7 +860,10 @@
 	name = "can of pork n' beans"
 	desc = "Pork n' Beans come in a small brown and orange tin, with a label that reads \"Greasy Prospector Improved Pork And Beans\".<br>Toward the bottom of the label is printed that the beans come \"With Hickory Smoked Pig Fat Chunks\"."
 	icon_state = "porknbeans"
-	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(
+		/datum/reagent/radium = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
 	filling_color = "#B22222"
 	tastes = list("doughy beans" = 5, "pork flavoring" = 1)
@@ -686,7 +873,10 @@
 	name = "canned borscht"
 	desc = "A faded label says something in Cyrillic, but you can't understand a thing.<br>\"KOHCEPBA BKYCHOTA TOMAT CMETAHA MOCKBA\"<br>\"cynep cyn!\"<br>An image of a plate with some red soup explains a lot."
 	icon_state = "borscht"
-	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	bonus_reagents = list(
+		/datum/reagent/radium = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
 	filling_color = "#B22222"
 	tastes = list("old beets" = 4, "vegetables" = 2, "meat broth" = 2)
@@ -696,7 +886,10 @@
 	name = "dog food"
 	desc = "A can of greasy meat with a faded cartoon dog on the label.<br>Smells bad, tastes worse, but filling.<br>Not good enough to get bitten over, though." //Mad Max: Road Warrior 1981 dog food scene reference
 	icon_state = "dog"
-	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	bonus_reagents = list(
+		/datum/reagent/radium = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
 	filling_color = "#B22222"
 	tastes = list("mushy kibble" = 4, "musty meat" = 2)
@@ -706,7 +899,10 @@
 	name = "canned military ration"
 	desc = "If you see this, call an admin."
 	filling_color = "#B22222"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 35, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 35,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	icon_state = "c_ration_1"
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_chili
@@ -831,8 +1027,14 @@
 	name = "broiled deathclaw"
 	desc = "All the flavor seared in for extra kick."
 	icon_state = "broiled_death_claw"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/medicine/omnizine = 5)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 10)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 10,
+		/datum/reagent/medicine/omnizine = 5
+	)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 10
+	)
 	tastes = list("deathclaw meat" = 3, "butter" = 1)
 	foodtype = MEAT
 
@@ -850,8 +1052,14 @@
 	desc = "Cracklings are the solid material which remains after rendering animal fat and skin to produce lard, tallow, or schmaltz. It is often eaten as a snack food or made into animal feed. It is also used in cooking."
 	icon_state = "fried_brahmin_skin"
 	filling_color = "#CD5C5C"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
 	tastes = list("crispy skin" = 1)
 	foodtype = MEAT
 
@@ -885,8 +1093,16 @@
 	name = "tato suprise"
 	desc = "The surprise is Tato."
 	icon_state = "tato_surpise"
-	bonus_reagents = list(/datum/reagent/medicine/antitoxin = 0.01, /datum/reagent/medicine/salglu_solution = 0.01, /datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 3)
+	bonus_reagents = list(
+		/datum/reagent/medicine/antitoxin = 0.01,
+		/datum/reagent/medicine/salglu_solution = 0.01,
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 1
+	)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 12,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	tastes = list("tato" = 2, "xander" = 1)
 	foodtype = MEAT
 
@@ -894,8 +1110,14 @@
 	name = "radscorpion en croute"
 	desc = "Radscorpion meat pie, no stingers included."
 	icon_state = "radscorpion_en_croute"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 3
+	)
 	tastes = list("cooked insect guts" = 2, "pastry dough" = 1)
 	foodtype = MEAT | GRAIN
 
@@ -903,7 +1125,11 @@
 	name = "deathclaw egg omelette"
 	desc = "An omelette made from a pristine deathclaw eggs."
 	icon_state = "deathclaw_egg_omelette"
-	bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 16, /datum/reagent/medicine/omnizine = 60, /datum/reagent/medicine/dexalin = 20)
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 16,
+		/datum/reagent/medicine/omnizine = 60,
+		/datum/reagent/medicine/dexalin = 20
+	)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 80)
 	tastes = list("deathclaw eggs" = 2, "deathclaw Meat" = 2, "cheese" = 1)
 	foodtype = MEAT | DAIRY

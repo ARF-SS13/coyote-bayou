@@ -18,13 +18,14 @@
 #define LOADOUT_CAT_REVOLVER "Revolvers"
 #define LOADOUT_CAT_LONGGUN "Long Guns"
 #define LOADOUT_CAT_HOBO "Improvised Guns"
+#define LOADOUT_CAT_MISC "Misc Things"
 #define LOADOUT_CAT_BOW "Bows"
 #define LOADOUT_CAT_NULLROD "Spiritual Device"
 #define LOADOUT_CAT_SHIELD "Shields"
 #define LOADOUT_CAT_ENERGY "Energy Weapons"
 
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
-#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
+#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -824,7 +825,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/c45rev(src)
 
 /obj/item/storage/box/gun/hobo/winchesterrebored
-	name = "rebored Whinchester case"
+	name = "rebored Winchester case"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/box/gun/hobo/winchesterrebored/PopulateContents()
@@ -1045,6 +1046,19 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/energy/laser/complianceregulator(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/obj/item/storage/box/gun/energy/compact_rcw
+	name = "compact RCW case"
+
+/obj/item/storage/box/gun/energy/compact_rcw/PopulateContents()
+	new /obj/item/gun/energy/laser/auto(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+
+/obj/item/storage/box/gun/energy/wattz1000
+	name = "wattz 1000 case"
+
+/obj/item/storage/box/gun/energy/wattz1000/PopulateContents()
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
 
 /obj/item/choice_beacon/box/gun //template for sprites
 	name = "weapon case"
@@ -1094,6 +1108,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_ENERGY
 	spawn_thing = /obj/item/storage/box/gun/energy/stun
+
+/datum/loadout_box/compact_rcw
+	entry_tag = "Compact RCW"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/compact_rcw
+
+/datum/loadout_box/wattz1000
+	entry_tag = "Wattz 1000"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/wattz1000
 
 /// Fancyguns
 
@@ -1495,7 +1521,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /datum/loadout_box/fist_of_the_swampstar // pornstar
 	entry_tag = "Bands of the Swamp Star gloves"
-	entry_flags = LOADOUT_FLAG_WASTER
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/fist_of_the_swampstar
 
@@ -1570,6 +1596,20 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_PREACHER
 	entry_class = LOADOUT_CAT_NULLROD
 	spawn_thing = /obj/item/storage/box/gun/preacher/nullrod
+
+/// misc Stuff
+
+/datum/loadout_box/dynamite
+	entry_tag = "Box of Dynamite"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/storage/box/dynamite_box
+
+/datum/loadout_box/caps
+	entry_tag = "25 Caps"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/stack/f13Cash/caps/twofive
 
 
 

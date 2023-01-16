@@ -15,8 +15,8 @@
 	maxHealth = 80
 	health = 80
 	harm_intent_damage = 8
-	melee_damage_lower = 25
-	melee_damage_upper = 47
+	melee_damage_lower = 20
+	melee_damage_upper = 38
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
@@ -38,7 +38,7 @@
 	health = 110
 	retreat_distance = 4
 	minimum_distance = 6
-	projectiletype = /obj/item/projectile/bullet/c9mm
+	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound =  'sound/f13weapons/ninemil.ogg'
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -59,7 +59,7 @@
 	health = 160
 	extra_projectiles = 2
 	loot = list(/obj/effect/mob_spawn/human/corpse/chineseremnant/assault, /obj/item/gun/ballistic/automatic/type93, /obj/item/ammo_box/magazine/m556/rifle/assault)
-	projectiletype = /obj/item/projectile/bullet/a556/ap
+	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),

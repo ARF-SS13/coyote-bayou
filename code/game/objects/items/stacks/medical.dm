@@ -48,6 +48,8 @@
 	var/heal_brute
 	/// How much burn we heal per application
 	var/heal_burn
+	/// How much to heal simplemobs
+	var/heal_mobs = 10 // shrug
 	/// Is this a bandage?
 	var/is_bandage = FALSE
 	/// Is this a suture?
@@ -187,7 +189,7 @@
 		to_chat(user, span_notice("[M] is at full health."))
 		return FALSE
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
-	M.heal_bodypart_damage(heal_brute)
+	critter.adjustHealth(-heal_mobs)
 	return TRUE
 
 /* * * * * * * * * * * * * * * * * * *
@@ -380,6 +382,7 @@
 	//needed_trait = TRAIT_SURGERY_LOW
 	heal_brute = 30
 	heal_burn = 30
+	heal_mobs = 40
 	self_delay = 40
 	other_delay = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10, /datum/reagent/medicine/silver_sulfadiazine = 10)
@@ -396,6 +399,7 @@
 	infinite_uses = TRUE
 	heal_brute = 1
 	heal_burn = 1
+	heal_mobs = 5
 	self_delay = 1 SECONDS
 	other_delay = 1 SECONDS
 	end_sound = 'sound/effects/lick.ogg'
@@ -447,6 +451,7 @@
 	covering_hitpoints = 3
 	heal_brute = 0
 	heal_burn = 0
+	heal_mobs = 20
 	heal_per_tick = BANDAGE_NORMAL_HEAL_OVER_TIME
 	//heal_over_time_per_tick = BANDAGE_NORMAL_HEAL_RATE
 	bandage_power = BANDAGE_GOOD_WOUND_CLOSURE
@@ -523,6 +528,7 @@
 	covering_hitpoints = 5
 	heal_brute = 0
 	heal_brute = 0
+	heal_mobs = 30
 	self_delay = 10
 	other_delay = 10
 	heal_per_tick = BANDAGE_MEDICAL_HEAL_OVER_TIME
@@ -555,6 +561,7 @@
 	covering_hitpoints = 1
 	heal_brute = 0
 	heal_burn = 0
+	heal_mobs = 2
 	heal_per_tick = 0
 	//heal_over_time_per_tick = BANDAGE_NORMAL_HEAL_RATE
 	bandage_power = BANDAGE_GOOD_WOUND_CLOSURE
@@ -597,6 +604,7 @@
 	other_delay = 60
 	amount = 15
 	max_amount = 15
+	heal_mobs = 40
 	hurt_brute = 3
 	heal_per_tick = SUTURE_NORMAL_HEAL_OVER_TIME
 	//heal_over_time_per_tick = SUTURE_NORMAL_HEAL_RATE
@@ -623,6 +631,7 @@
 	hurt_brute = 8 // Owie
 	self_delay = 100
 	other_delay = 80
+	heal_mobs = 30
 	amount = 5
 	max_amount = 15
 	heal_per_tick = SUTURE_IMPROVISED_HEAL_OVER_TIME
@@ -651,6 +660,7 @@
 	covering_hitpoints = 5
 	self_delay = 80
 	other_delay = 60
+	heal_mobs = 40
 	heal_brute = 3
 	heal_burn = 3
 	heal_per_tick = SUTURE_MEDICAL_HEAL_OVER_TIME

@@ -52,8 +52,8 @@
 	health = 110
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 8
-	melee_damage_upper = 25
+	melee_damage_lower = 6
+	melee_damage_upper = 20
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -101,8 +101,8 @@
 	health = 90
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	melee_damage_lower = 8
+	melee_damage_upper = 16
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -215,7 +215,7 @@
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 15
-	melee_damage_upper = 35
+	melee_damage_upper = 28
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 1
@@ -288,7 +288,7 @@
 	maxHealth = 160
 	health = 160
 	melee_damage_lower = 10
-	melee_damage_upper = 30
+	melee_damage_upper = 28
 	move_to_delay = 4
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -357,7 +357,7 @@
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 5
-	melee_damage_upper = 12
+	melee_damage_upper = 10
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
@@ -365,6 +365,7 @@
 	faction = list("cazador")
 	movement_type = FLYING
 	a_intent = INTENT_HARM
+	pass_flags = PASSTABLE | PASSMOB
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
@@ -373,7 +374,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -419,6 +420,10 @@
 		M.adjustToxLoss(5, 0)
 	..()
 
+/datum/reagent/toxin/cazador_venom/on_mob_life_synth(mob/living/M)
+	if(volume >= 15)
+		M.adjustFireLoss(5, 0)
+	..()
 
 //////////////
 // BLOATFLY //
@@ -439,8 +444,8 @@
 	health = 20
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 5
-	melee_damage_upper = 8
+	melee_damage_lower = 4
+	melee_damage_upper = 7
 	waddle_amount = 4
 	waddle_up_time = 3
 	waddle_side_time = 2
@@ -469,9 +474,9 @@
 	blood_volume = 0
 	casingtype = /obj/item/ammo_casing/shotgun/bloatfly
 	projectiletype = null
-	projectilesound = 'sound/f13npc/bloatfly/shoot1.ogg'
-	sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
-	sound_after_shooting_delay = 1 SECONDS
+	projectilesound = 'sound/f13npc/bloatfly/shoot2.ogg'
+	//sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
+	//sound_after_shooting_delay = 1 SECONDS
 	extra_projectiles = 1
 	auto_fire_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	ranged_cooldown_time = 3 SECONDS
@@ -519,8 +524,8 @@
 	health = 20
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 5
-	melee_damage_upper = 8
+	melee_damage_lower = 4
+	melee_damage_upper = 6
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0

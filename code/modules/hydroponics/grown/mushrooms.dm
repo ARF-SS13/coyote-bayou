@@ -22,7 +22,11 @@
 	growthstages = 4
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list(/datum/reagent/medicine/morphine = 0.35, /datum/reagent/medicine/charcoal = 0.35, /datum/reagent/consumable/nutriment = 0)
+	reagents_add = list(
+		/datum/reagent/medicine/morphine = 0.35,
+		/datum/reagent/medicine/charcoal = 0.35,
+		/datum/reagent/consumable/nutriment = 0
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/reishi
 	seed = /obj/item/seeds/reishi
@@ -49,7 +53,11 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/angel)
-	reagents_add = list(/datum/reagent/drug/mushroomhallucinogen = 0.04, /datum/reagent/toxin/amatoxin = 0.35, /datum/reagent/consumable/nutriment = 0)
+	reagents_add = list(
+		/datum/reagent/drug/mushroomhallucinogen = 0.04,
+		/datum/reagent/toxin/amatoxin = 0.35,
+		/datum/reagent/consumable/nutriment = 0
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/amanita
 	seed = /obj/item/seeds/amanita
@@ -75,7 +83,12 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list(/datum/reagent/drug/mushroomhallucinogen = 0.04, /datum/reagent/toxin/amatoxin = 0.1, /datum/reagent/consumable/nutriment = 0, /datum/reagent/toxin/amanitin = 0.2)
+	reagents_add = list(
+		/datum/reagent/drug/mushroomhallucinogen = 0.04,
+		/datum/reagent/toxin/amatoxin = 0.1,
+		/datum/reagent/consumable/nutriment = 0,
+		/datum/reagent/toxin/amanitin = 0.2
+	)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/angel
@@ -101,7 +114,10 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list(/datum/reagent/drug/mushroomhallucinogen = 0.25, /datum/reagent/consumable/nutriment = 0.02)
+	reagents_add = list(
+		/datum/reagent/drug/mushroomhallucinogen = 0.25,
+		/datum/reagent/consumable/nutriment = 0.02
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap
 	seed = /obj/item/seeds/liberty
@@ -127,7 +143,10 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/plump/walkingmushroom)
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(
+		/datum/reagent/consumable/nutriment/vitamin = 0.04,
+		/datum/reagent/consumable/nutriment = 0.1
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet
 	seed = /obj/item/seeds/plump
@@ -151,7 +170,10 @@
 	yield = 1
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.15)
+	reagents_add = list(
+		/datum/reagent/consumable/nutriment/vitamin = 0.05,
+		/datum/reagent/consumable/nutriment = 0.15
+	)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/walkingmushroom
@@ -254,8 +276,15 @@
 	rarity = 20
 	genes = list(/datum/plant_gene/trait/glow, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	mutatelist = list(/obj/item/seeds/glowshroom/glowcap, /obj/item/seeds/glowshroom/shadowshroom)
-	reagents_add = list(/datum/reagent/radium = 0.1, /datum/reagent/phosphorus = 0.1, /datum/reagent/consumable/nutriment = 0.04)
+	mutatelist = list(
+		/obj/item/seeds/glowshroom/glowcap,
+		/obj/item/seeds/glowshroom/shadowshroom
+	)
+	reagents_add = list(
+		/datum/reagent/radium = 0.1,
+		/datum/reagent/phosphorus = 0.1,
+		/datum/reagent/consumable/nutriment = 0.04
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
 	seed = /obj/item/seeds/glowshroom
@@ -300,7 +329,10 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
 	genes = list(/datum/plant_gene/trait/glow/red, /datum/plant_gene/trait/cell_charge, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/teslium = 0.1, /datum/reagent/consumable/nutriment = 0.04)
+	reagents_add = list(
+		/datum/reagent/teslium = 0.1,
+		/datum/reagent/consumable/nutriment = 0.04
+	)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
@@ -325,7 +357,10 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom
 	genes = list(/datum/plant_gene/trait/glow/shadow, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/radium = 0.2, /datum/reagent/consumable/nutriment = 0.04)
+	reagents_add = list(
+		/datum/reagent/radium = 0.2,
+		/datum/reagent/consumable/nutriment = 0.04
+	)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom
@@ -341,3 +376,151 @@
 	. = ..()
 	if(.)
 		investigate_log("was planted by [key_name(user)] at [AREACOORD(user)]", INVESTIGATE_BOTANY)
+
+/// 'Lavaland' mushrooms
+
+/obj/item/seeds/lavaland
+	name = "lavaland seeds"
+	desc = "You should never see this."
+	lifespan = 50
+	endurance = 25
+	maturation = 7
+	production = 4
+	yield = 4
+	potency = 15
+	growthstages = 3
+	rarity = 20
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/seeds/lavaland/cactus
+	name = "pack of fruiting cactus seeds"
+	desc = "These seeds grow into fruiting cacti."
+	icon_state = "seed-cactus"
+	species = "cactus"
+	plantname = "Fruiting Cactus"
+	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit
+	genes = list(/datum/plant_gene/trait/fire_resistance)
+	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
+	growthstages = 2
+	reagents_add = list(
+		/datum/reagent/consumable/nutriment/vitamin = 0.04,
+		/datum/reagent/consumable/nutriment = 0.04,
+		/datum/reagent/consumable/vitfro = 0.08
+		)
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit
+	name = "cactus fruit"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 2,
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/vitfro = 6
+		)
+	desc = "A cactus fruit covered in a thick, reddish skin. And some ash."
+	icon_state = "cactus_fruit"
+	seed = /obj/item/seeds/lavaland/cactus
+	wine_power = 50
+
+/obj/item/seeds/lavaland/polypore
+	name = "pack of polypore mycelium"
+	desc = "This mycelium grows into bracket mushrooms, also known as polypores. Woody and firm, shaft miners often use them for makeshift crafts."
+	icon_state = "mycelium-polypore"
+	species = "polypore"
+	plantname = "Polypore Mushrooms"
+	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
+	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
+	reagents_add = list(
+		/datum/reagent/consumable/sugar = 0.06,
+		/datum/reagent/consumable/ethanol = 0.04,
+		/datum/reagent/stabilizing_agent = 0.06,
+		/datum/reagent/toxin/minttoxin = 0.02
+		)
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings //for actual crafting
+
+// Porcini (Leafy mushroom)
+
+/obj/item/seeds/lavaland/porcini
+	name = "pack of porcini mycelium"
+	desc = "This mycelium grows into Boletus edulus, also known as porcini. Native to the Earth. Has culinary, medicinal and relaxant effects."
+	icon_state = "mycelium-porcini"
+	species = "porcini"
+	plantname = "Porcini Mushrooms"
+	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
+	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
+	reagents_add = list(
+		/datum/reagent/consumable/nutriment = 0.06,
+		/datum/reagent/consumable/vitfro = 0.04,
+		/datum/reagent/drug/nicotine = 0.04
+		)
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf
+	name = "mushroom leaf"
+	desc = "A leaf, from a mushroom."
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/vitfro = 2,
+		/datum/reagent/drug/nicotine = 2
+		)
+	icon_state = "mushroom_leaf"
+	seed = /obj/item/seeds/lavaland/porcini
+	wine_power = 40
+
+// Inocybe (Mushroom caps)
+
+/obj/item/seeds/lavaland/inocybe
+	name = "pack of inocybe mycelium"
+	desc = "This mycelium grows into an inocybe mushroom, a species of mountain caves origin with hallucinatory and toxic effects."
+	icon_state = "mycelium-inocybe"
+	species = "inocybe"
+	plantname = "Inocybe Mushrooms"
+	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
+	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
+	reagents_add = list(
+		/datum/reagent/toxin/mindbreaker = 0.04,
+		/datum/reagent/consumable/entpoly = 0.08,
+		/datum/reagent/drug/mushroomhallucinogen = 0.04
+		)
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap
+	name = "mushroom cap"
+	desc = "The cap of a large mushroom."
+	list_reagents = list(
+		/datum/reagent/toxin/mindbreaker = 2,
+		/datum/reagent/consumable/entpoly = 4,
+		/datum/reagent/drug/mushroomhallucinogen = 2
+		)
+	icon_state = "mushroom_cap"
+	seed = /obj/item/seeds/lavaland/inocybe
+	wine_power = 70
+
+// Embershroom (Mushroom stem)
+
+/obj/item/seeds/lavaland/ember
+	name = "pack of embershroom mycelium"
+	desc = "This mycelium grows into embershrooms, a species of bioluminescent mushrooms native to the mountain caves."
+	icon_state = "mycelium-ember"
+	species = "ember"
+	plantname = "Embershroom Mushrooms"
+	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/glow, /datum/plant_gene/trait/fire_resistance)
+	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
+	reagents_add = list(
+		/datum/reagent/consumable/tinlux = 0.04,
+		/datum/reagent/consumable/nutriment/vitamin = 0.02,
+		/datum/reagent/drug/space_drugs = 0.02
+		)
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem
+	name = "mushroom stem"
+	desc = "A long mushroom stem. It's slightly glowing."
+	list_reagents = list(
+		/datum/reagent/consumable/tinlux = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+		/datum/reagent/drug/space_drugs = 1
+		)
+	icon_state = "mushroom_stem"
+	seed = /obj/item/seeds/lavaland/ember
+	wine_power = 60

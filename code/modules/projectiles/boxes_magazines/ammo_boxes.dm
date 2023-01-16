@@ -749,7 +749,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
-	
+
 /obj/item/ammo_box/rev308/empty
 	start_empty = 1
 

@@ -722,6 +722,11 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	squeak_override = list('sound/effects/mousesqueek.ogg' = 1)
 	gender = FEMALE
 
+/obj/item/toy/plush/mammal/fox/fuzzy/Initialize(mapload, set_snowflake_id)
+	. = ..()
+	transform *= 0.5
+	special_transform = transform
+
 /obj/item/toy/plush/mammal/fox/squishfox
 	name = "snuggly fox plushie"
 	desc = "A massive, adorable, bottom-heavy beanbag chair resembling a fox. Seems to have a lap that just keeps on going.\n\nIt might not look that big, but trust me, that toy is massive!"
@@ -731,6 +736,12 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	squeak_override = list('modular_coyote/sound/typing/arfs1sounds/fennec2.ogg' = 1)
 	gender = FEMALE
 	w_class = WEIGHT_CLASS_GIGANTIC // bigfox
+
+/obj/item/toy/plush/mammal/fox/squishfox/Initialize(mapload, set_snowflake_id)
+	. = ..()
+	transform *= 2
+	special_transform = transform
+
 
 /obj/item/toy/plush/mammal/fox/squishfox/ComponentInitialize()
 	. = ..()

@@ -215,8 +215,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	if(proximity && isobj(A) && !isitem(A))
 		var/obj/O = A
 		//50 total object damage but split up for stuff like damage deflection.
-		O.take_damage(22)
-		O.take_damage(10)
+		O.take_damage(22, attacked_by = user)
+		O.take_damage(10, attacked_by = user)
 
 /obj/item/storage/toolbox/artistic
 	name = "artistic toolbox"

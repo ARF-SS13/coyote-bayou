@@ -552,7 +552,7 @@
 
 /datum/crafting_recipe/gun/shotgunbat
 	name = "Shotgun bat"
-	result = /obj/item/gun/ballistic/revolver/single_shotgun
+	result = /obj/item/gun/ballistic/revolver/hobo/single_shotgun
 	reqs = list(/obj/item/screwdriver = 1,
 	/obj/item/twohanded/baseball = 1,
 	/obj/item/stack/crafting/metalparts = 2,

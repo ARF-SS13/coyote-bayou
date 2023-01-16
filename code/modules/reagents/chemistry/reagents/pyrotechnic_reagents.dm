@@ -7,6 +7,7 @@
 	taste_description = "sweet tasting metal"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/thermite/reaction_turf(turf/T, reac_volume)
 	if(reac_volume >= 1)
@@ -23,6 +24,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "oil"
 	value = REAGENT_VALUE_EXCEPTIONAL
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/stabilizing_agent
 	name = "Stabilizing Agent"
@@ -31,6 +33,7 @@
 	color = "#FFFF00"
 	value = REAGENT_VALUE_VERY_COMMON
 	taste_description = "metal"
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/clf3
 	name = "Chlorine Trifluoride"
@@ -41,6 +44,7 @@
 	taste_description = "burning"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/clf3/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
@@ -85,6 +89,7 @@
 	taste_description = "air and bitterness"
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/liquid_dark_matter
 	name = "Liquid Dark Matter"
@@ -94,6 +99,7 @@
 	value = REAGENT_VALUE_UNCOMMON
 	taste_description = "compressed bitterness"
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/blackpowder
 	name = "Black Powder"
@@ -104,6 +110,7 @@
 	taste_description = "salt"
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/blackpowder/on_mob_life(mob/living/carbon/M)
 	..()
@@ -124,6 +131,7 @@
 	color = "#C8C8C8"
 	taste_description = "salt"
 	value = REAGENT_VALUE_UNCOMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/smoke_powder
 	name = "Smoke Powder"
@@ -132,6 +140,7 @@
 	color = "#C8C8C8"
 	taste_description = "smoke"
 	value = REAGENT_VALUE_COMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/sonic_powder
 	name = "Sonic Powder"
@@ -140,6 +149,7 @@
 	color = "#C8C8C8"
 	taste_description = "loud noises"
 	value = REAGENT_VALUE_UNCOMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/phlogiston
 	name = "Phlogiston"
@@ -149,6 +159,7 @@
 	taste_description = "burning"
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/phlogiston/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	M.adjust_fire_stacks(1)
@@ -172,6 +183,7 @@
 	taste_description = "burning"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/napalm/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(1)
@@ -190,6 +202,7 @@
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
@@ -210,6 +223,7 @@
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
@@ -227,6 +241,7 @@
 	var/shock_timer = 0
 	value = REAGENT_VALUE_VERY_RARE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/teslium/on_mob_life(mob/living/carbon/M)
 	shock_timer++
@@ -276,6 +291,7 @@
 	taste_description = "the inside of a fire extinguisher"
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/firefighting_foam/reaction_turf(turf/open/T, reac_volume)
 	if (!istype(T))
