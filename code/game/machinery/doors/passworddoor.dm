@@ -13,6 +13,7 @@
 	var/interaction_activated = TRUE //use the door to enter the password
 	var/voice_activated = FALSE //Say the password nearby to open the door.
 	var/list/failures = list()
+	var/terminal_has_pass = FALSE
 
 /obj/machinery/door/password/voice
 	voice_activated = TRUE
@@ -22,6 +23,8 @@
 	. = ..()
 	if(voice_activated)
 		flags_1 |= HEAR_1
+	if(!terminal_has_pass)
+		password = random_string(8, GLOB.alphabet)
 
 /obj/machinery/door/password/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
 	. = ..()
