@@ -613,6 +613,7 @@
 	taste_description = "strawberries"
 	color = "#FFADFF"//PINK, rgb(255, 173, 255)
 	can_synth = FALSE
+	synth_metabolism_use_human = TRUE // robots can honry too
 
 /datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/M)
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO))
@@ -639,6 +640,7 @@
 	addiction_threshold = 20
 	overdose_threshold = 20
 	can_synth = FALSE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/M)
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO))
@@ -695,6 +697,7 @@
 	color = "#D9D9D9"//rgb(217, 217, 217)
 	reagent_state = SOLID
 	can_synth = FALSE
+	synth_metabolism_use_human = TRUE // robots can horno too
 
 /datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/M)
 	if(M && M.client?.prefs.arousable && prob(16))
@@ -713,6 +716,7 @@
 	reagent_state = SOLID
 	overdose_threshold = 20
 	can_synth = FALSE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/M)
 	if(M && M.client?.prefs.arousable)

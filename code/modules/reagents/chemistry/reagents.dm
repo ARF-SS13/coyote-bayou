@@ -33,6 +33,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/can_synth = TRUE // can this reagent be synthesized? (for example: odysseus syringe gun)
 	var/metabolization_rate = REAGENTS_METABOLISM //how fast the reagent is metabolized by the mob
 	var/ghoulfriendly = FALSE //can ghouls metabolize this chemical
+	/// If metabolized by a synth, just use the normal human effects, calling the default on_life, etc instead of the synth-specific ones
+	var/synth_metabolism_use_human = FALSE
+	/// can synths OD and get addictged on this?
+	var/synth_can_overdose_and_be_addicted = FALSE
 	var/overrides_metab = 0
 	var/overdose_threshold = 0
 	var/addiction_threshold = 0
@@ -85,6 +89,19 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 				M.reagents.add_reagent(type, amount)
 	return 1
 
+/datum/reagent/proc/reaction_synth(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	if(!istype(M))
+		return FALSE
+	if(!isrobotic(M))
+		return FALSE
+	if(method == VAPOR) //smoke, foam, spray
+		if(M.reagents)
+			var/modifier = clamp((1 - touch_protection), 0, 1)
+			var/amount = round(reac_volume*modifier, 0.1)
+			if(amount >= 0.5)
+				M.reagents.add_reagent(type, amount)
+	return 1
+
 /datum/reagent/proc/reaction_obj(obj/O, volume)
 	return
 
@@ -95,6 +112,12 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	current_cycle++
 	if(holder)
 		holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency) //By default it slowly disappears.
+
+/datum/reagent/proc/on_mob_life_synth(mob/living/carbon/M)
+	current_cycle++
+	if(holder)
+		holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency) //By default it slowly disappears.
+	return TRUE
 
 //called when a mob processes chems when dead.
 /datum/reagent/proc/on_mob_dead(mob/living/carbon/M)
@@ -145,8 +168,16 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/on_mob_metabolize(mob/living/L)
 	return
 
-// Called when this reagent stops being metabolized by a liver
+// Called when this reagent first starts being metabolized by a synth
+/datum/reagent/proc/on_mob_metabolize_synth(mob/living/L)
+	return
+
+// Called when this reagent stops being metabolized by a synth
 /datum/reagent/proc/on_mob_end_metabolize(mob/living/L)
+	return
+
+// Called when this reagent stops being metabolized by a liver
+/datum/reagent/proc/on_mob_end_metabolize_synth(mob/living/L)
 	return
 
 /datum/reagent/proc/on_move(mob/M)

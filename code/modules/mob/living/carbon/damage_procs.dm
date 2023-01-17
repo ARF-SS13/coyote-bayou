@@ -73,7 +73,7 @@
 	return amount
 
 
-/mob/living/carbon/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/carbon/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
 	if(!forced && amount < 0 && HAS_TRAIT(src,TRAIT_NONATURALHEAL))
 		return FALSE
 	if(!forced && (status_flags & GODMODE))
@@ -81,10 +81,10 @@
 	if(amount > 0)
 		take_overall_damage(amount, 0, 0, updating_health)
 	else
-		heal_overall_damage(abs(amount), 0, 0, FALSE, TRUE, updating_health)
+		heal_overall_damage(abs(amount), 0, 0, FALSE, TRUE, updating_health, include_roboparts = include_roboparts)
 	return amount
 
-/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
 	if(!forced && amount < 0 && HAS_TRAIT(src,TRAIT_NONATURALHEAL))	//Vamps don't heal naturally.
 		return FALSE
 	if(!forced && (status_flags & GODMODE))
@@ -92,16 +92,17 @@
 	if(amount > 0)
 		take_overall_damage(0, amount, 0, updating_health)
 	else
-		heal_overall_damage(0, abs(amount), 0, FALSE, TRUE, updating_health)
+		heal_overall_damage(0, abs(amount), 0, FALSE, TRUE, updating_health, include_roboparts = include_roboparts)
 	return amount
 
 /mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
-		amount = -amount
-		if(amount > 0)
-			blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
-		else
-			blood_volume -= amount
+	if(!forced)
+		if(HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
+			amount = -amount
+			if(amount > 0)
+				blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
+			else
+				blood_volume -= amount
 	return ..()
 
 /mob/living/carbon/getStaminaLoss()
@@ -201,12 +202,12 @@
 //Heals ONE bodypart randomly selected from damaged ones.
 //It automatically updates damage overlays if necessary
 //It automatically updates health status
-/mob/living/carbon/heal_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, only_robotic = FALSE, only_organic = TRUE, bleed = 0)
+/mob/living/carbon/heal_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, only_robotic = FALSE, only_organic = TRUE, bleed = 0, include_roboparts = FALSE)
 	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(brute,burn,bleed = bleed)
 	if(!parts.len)
 		return
 	var/obj/item/bodypart/picked = pick(parts)
-	if(picked.heal_damage(brute, burn, stamina, only_robotic, only_organic, TRUE, bleed))
+	if(picked.heal_damage(brute, burn, stamina, only_robotic, only_organic, TRUE, bleed, ignore_status = include_roboparts))
 		update_damage_overlays()
 
 //Damages ONE bodypart randomly selected from damagable ones.
@@ -221,7 +222,7 @@
 		update_damage_overlays()
 
 //Heal MANY bodyparts, in random order
-/mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, stamina = 0, only_robotic = FALSE, only_organic = TRUE, updating_health = TRUE, bleed)
+/mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, stamina = 0, only_robotic = FALSE, only_organic = TRUE, updating_health = TRUE, bleed, include_roboparts = FALSE)
 	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(brute, burn, stamina)
 
 	var/update = NONE
@@ -232,7 +233,7 @@
 		var/burn_was = picked.burn_dam
 		var/stamina_was = picked.stamina_dam
 
-		update |= picked.heal_damage(brute, burn, stamina, only_robotic, only_organic, FALSE, bleed)
+		update |= picked.heal_damage(brute, burn, stamina, only_robotic, only_organic, FALSE, bleed, ignore_status = include_roboparts)
 
 		brute = round(brute - (brute_was - picked.brute_dam), DAMAGE_PRECISION)
 		burn = round(burn - (burn_was - picked.burn_dam), DAMAGE_PRECISION)

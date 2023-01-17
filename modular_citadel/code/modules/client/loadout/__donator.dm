@@ -180,6 +180,17 @@
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
 
+/datum/gear/donator/kits/archyzt
+	name = "Follower's Traveler"
+	path = /obj/item/storage/box/large/custom_kit/archyzt
+	ckeywhitelist = list("archyzt")
+
+/obj/item/storage/box/large/custom_kit/archyzt/PopulateContents()
+	new /obj/item/clothing/suit/toggle/labcoat/paramedic(src)
+	new /obj/item/storage/backpack/medic(src)
+	new /obj/item/pda/medical(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+
 // B
 
 /datum/gear/donator/kits/baticon
@@ -481,7 +492,7 @@
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 
 /datum/gear/donator/kits/greed2323
-	name = "Magnum Kit"
+	name = "Greed Kit"
 	path = /obj/item/storage/box/large/custom_kit/greed2323
 	ckeywhitelist = list("greed2323")
 
@@ -997,6 +1008,18 @@
 	new /obj/item/gun/ballistic/revolver/hobo/piperifle(src)
 	new /obj/item/ammo_box/a556(src)
 	new /obj/item/toy/plush/lampplushie(src)
+
+/datum/gear/donator/kits/truedark4
+	name = "Alien Stuff"
+	path = /obj/item/storage/box/large/custom_kit/truedark4
+	ckeywhitelist = list("truedark")
+
+/obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
+	new /obj/item/clothing/suit/radiation(src)
+	new /obj/item/clothing/head/radiation(src)
+	new /obj/item/gun/energy/alien(src)
+	new /obj/item/storage/box/alienhandcuffs(src)
+	new /obj/item/stack/sheet/mineral/abductor/ten(src)
 
 // U
 // V

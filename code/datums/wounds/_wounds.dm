@@ -145,8 +145,8 @@
 	if(old_wound)
 		demoted = (severity <= old_wound.severity)
 
-	if(severity == WOUND_SEVERITY_TRIVIAL)
-		return
+	//if(severity == WOUND_SEVERITY_TRIVIAL)
+	//	return
 
 	if(!(silent || demoted))
 		var/msg = span_danger("[victim]'s [limb.name] [occur_text]!")
@@ -205,6 +205,8 @@
 /datum/wound/proc/second_wind()
 	var/add_determ
 	switch(severity)
+		if(WOUND_SEVERITY_TRIVIAL)
+			add_determ = WOUND_DETERMINATION_MODERATE
 		if(WOUND_SEVERITY_MODERATE)
 			add_determ = WOUND_DETERMINATION_MODERATE
 		if(WOUND_SEVERITY_SEVERE)
@@ -214,7 +216,7 @@
 		if(WOUND_SEVERITY_LOSS)
 			add_determ = WOUND_DETERMINATION_LOSS
 	if(victim.has_reagent(/datum/reagent/determination))
-		add_determ *= 0.25 // already determined? kinda demoralizing to keep getting FUCKED
+		add_determ *= 0.5 // already determined? kinda demoralizing to keep getting FUCKED
 	victim.reagents.add_reagent(/datum/reagent/determination, add_determ)
 
 /**

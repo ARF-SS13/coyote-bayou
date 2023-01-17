@@ -152,7 +152,7 @@
 /datum/sprite_accessory/snouts/mam_snouts
 	color_src = MATRIXED
 	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
-	recommended_species = list("mammal", "slimeperson", "insect", "podweak", "lizard","shadekin")
+	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
 	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/snouts/mam_snouts/is_not_visible(mob/living/carbon/human/H, tauric)

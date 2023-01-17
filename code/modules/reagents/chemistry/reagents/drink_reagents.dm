@@ -152,6 +152,7 @@
 	color = "#FF4DD2"
 	taste_description = "laughter"
 	value = REAGENT_VALUE_VERY_COMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/consumable/laughter/on_mob_life(mob/living/carbon/M)
 	M.emote("laugh")
@@ -165,6 +166,7 @@
 	color = "#FF4DD2"
 	taste_description = "laughter"
 	value = REAGENT_VALUE_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/consumable/superlaughter/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
@@ -324,6 +326,7 @@
 	glass_desc = "Drinking it from here would not seem right."
 	effective_blood_max = 200
 	effective_blood_multiplier = 10
+	synth_metabolism_use_human = TRUE // Some robots run on tea
 
 /datum/reagent/consumable/tea/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-2)
@@ -651,6 +654,7 @@
 	glass_name = "glass of Grey Bull"
 	glass_desc = "Surprisingly it isnt grey."
 	value = REAGENT_VALUE_COMMON
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/consumable/grey_bull/on_mob_metabolize(mob/living/L)
 	..()

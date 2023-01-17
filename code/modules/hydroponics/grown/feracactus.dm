@@ -16,7 +16,10 @@
 	growthstages = 2
 	production = 5
 	maturation = 5
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/calomel = 0.1,)
+	reagents_add = list(
+		/datum/reagent/consumable/nutriment = 0.1,
+		/datum/reagent/medicine/calomel = 0.1
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus
 	seed = /obj/item/seeds/feracactus

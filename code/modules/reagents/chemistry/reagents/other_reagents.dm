@@ -13,6 +13,7 @@
 	shot_glass_icon_state = "shotglassred"
 	pH = 7.4
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 // FEED ME,SEYMOUR!
 /datum/reagent/blood/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
@@ -228,6 +229,7 @@
 	color = "#C81040" // rgb: 200, 16, 64
 	taste_description = "slime"
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/vaccine/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(islist(data) && (method == INGEST || method == INJECT))
@@ -253,6 +255,7 @@
 	glass_desc = "The father of all refreshments."
 	shot_glass_icon_state = "shotglassclear"
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
@@ -590,6 +593,7 @@
 	taste_description = "sour oranges"
 	pH = 5
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/spraytan/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(ishuman(M))
@@ -1099,6 +1103,7 @@
 	taste_description = "chlorine"
 	pH = 7.4
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 // You're an idiot for thinking that one of the most corrosive and deadly gasses would be beneficial
 /datum/reagent/chlorine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1134,6 +1139,11 @@
 
 /datum/reagent/fluorine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(1*REM, 0)
+	. = 1
+	..()
+
+/datum/reagent/fluorine/on_mob_life_synth(mob/living/carbon/M)
+	M.adjustBruteLoss(1*REM, 0)
 	. = 1
 	..()
 
@@ -1187,6 +1197,7 @@
 	taste_description = "the colour blue and regret"
 	pH = 10
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/radium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -1213,6 +1224,7 @@
 	taste_description = "bitterness"
 	pH = 10.5
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/abraxo_cleaner/sterilizine/reaction_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
@@ -1307,6 +1319,7 @@
 	pH = 4
 	material = /datum/material/uranium
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/uranium/on_mob_life(mob/living/carbon/M)
 	M.apply_effect(1/M.metabolism_efficiency,EFFECT_IRRADIATE,0)
@@ -1329,7 +1342,7 @@
 		mytray.adjustToxic(round(chems.get_reagent_amount(src.type) * 2))
 
 /datum/reagent/bluespace
-	name = "Ultracit Dust"
+	name = "Ultracite Dust"
 	description = "A dust composed of microscopic ultracite crystals with dense unstable energy properties."
 	reagent_state = SOLID
 	color = "#0000CC"
@@ -1338,6 +1351,7 @@
 	value = REAGENT_VALUE_RARE
 	material = /datum/material/bluespace
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/bluespace/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1361,6 +1375,7 @@
 	color = "#660000" // rgb: 102, 0, 0.
 	taste_description = "contraband"
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/aluminium
 	name = "Aluminium"
@@ -1391,7 +1406,6 @@
 	pH = 4
 	ghoulfriendly = TRUE
 
-
 /datum/reagent/fuel/reaction_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
 	if(method == TOUCH || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 10)
@@ -1403,6 +1417,15 @@
 	..()
 	return TRUE
 
+/datum/reagent/fuel/on_mob_life_synth(mob/living/carbon/M)
+	M.adjustStaminaLoss(-1, 0)
+	M.adjustBruteLoss(-0.5, 0, include_roboparts = TRUE)
+	M.adjustFireLoss(-0.5, 0, include_roboparts = TRUE)
+	if(M.fire_stacks < 1)
+		M.adjust_fire_stacks(1)
+	..()
+	return TRUE
+
 /datum/reagent/abraxo_cleaner
 	name = "Abraxo cleaner"
 	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
@@ -1410,6 +1433,7 @@
 	taste_description = "sourness"
 	pH = 5.5
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/abraxo_cleaner/reaction_obj(obj/O, reac_volume)
 	if(istype(O, /obj/effect/decal/cleanable)  || istype(O, /obj/item/projectile/bullet/reusable/foam_dart) || istype(O, /obj/item/ammo_casing/caseless/foam_dart))
@@ -1478,6 +1502,7 @@
 	pH = 2
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/abraxo_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(3.33)
@@ -1533,6 +1558,7 @@
 	taste_description = "sludge"
 	value = REAGENT_VALUE_GLORIOUS
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/nanomachines/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1743,6 +1769,7 @@
 	no_mob_color = TRUE
 	value = REAGENT_VALUE_NONE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/colorful_reagent/crayonpowder/New()
 	description = "\an [colorname] powder made by grinding down crayons, good for colouring chemical reagents."
@@ -1904,6 +1931,16 @@
 	taste_description = "oil"
 	ghoulfriendly = TRUE
 
+/datum/reagent/oil/on_mob_metabolize_synth(mob/living/L)
+	..()
+	L.show_message(span_green("Your joints feel lubricated!"))
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/synthoil)
+
+/datum/reagent/oil/on_mob_end_metabolize_synth(mob/living/L)
+	L.show_message(span_alert("Your joints run out of extra lubricant."))
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/synthoil)
+	..()
+
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
 	description = "Non-flammable plasma locked into a liquid form that cannot ignite or become gaseous/solid."
@@ -1979,6 +2016,7 @@
 	value = REAGENT_VALUE_RARE
 	var/no_mob_color = FALSE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/colorful_reagent/on_mob_life(mob/living/carbon/M)
 	if(!no_mob_color)
@@ -2009,6 +2047,7 @@
 	taste_description = "sourness"
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/hair_dye/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -2026,6 +2065,7 @@
 	taste_description = "sourness"
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/barbers_aid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -2045,6 +2085,7 @@
 	taste_description = "sourness"
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/concentrated_barbers_aid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -2061,6 +2102,7 @@
 	color = "#ecb2cf"
 	taste_description = "bitterness"
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/baldium/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -2253,6 +2295,7 @@
 	pH = 3
 	value = REAGENT_VALUE_UNCOMMON
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/royal_bee_jelly/on_mob_life(mob/living/carbon/M)
 	if(prob(2))
@@ -2276,6 +2319,7 @@
 	pH = 0.5
 	value = REAGENT_VALUE_GLORIOUS
 	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/romerol/reaction_mob(mob/living/carbon/human/H, method=TOUCH, reac_volume)
 	// Silently add the zombie infection organ to be activated upon death
@@ -2597,6 +2641,7 @@
 	can_synth = FALSE
 	nutriment_factor = 0.5 * REAGENTS_METABOLISM
 	var/decal_path = /obj/effect/decal/cleanable/semen
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/consumable/semen/reaction_turf(turf/T, reac_volume)
 	if(!istype(T))
@@ -2654,6 +2699,7 @@
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 	self_consuming = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
 	if(significant)
@@ -2680,7 +2726,7 @@
 		M.adjustStaminaLoss(-0.25*REM) // the more wounds, the more stamina regen
 	..()
 
-datum/reagent/eldritch
+/datum/reagent/eldritch
 	name = "Eldritch Essence"
 	description = "Strange liquid that defies the laws of physics"
 	taste_description = "Ag'hsj'saje'sh"
@@ -2729,6 +2775,7 @@ datum/reagent/eldritch
 	taste_description = "wet hair"
 	var/amount = 0
 	var/knotted = FALSE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/hairball/on_mob_life(mob/living/carbon/M)
 	amount = M.reagents.get_reagent_amount(/datum/reagent/hairball)
@@ -2771,7 +2818,7 @@ datum/reagent/eldritch
 /datum/reagent/red_ichor
 	name = "Red Ichor"
 	can_synth = FALSE
-	description = "A unknown red liquid, linked to healing of most moral wounds."
+	description = "A unknown red liquid, linked to healing of most mortal wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
@@ -2843,6 +2890,7 @@ datum/reagent/eldritch
 	metabolization_rate = 0.20
 	can_synth = FALSE
 	value = REAGENT_VALUE_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/breast_enlarger/on_mob_metabolize(mob/living/M)
 	. = ..()
@@ -2923,6 +2971,7 @@ datum/reagent/eldritch
 	metabolization_rate = 0.25
 	can_synth = FALSE
 	value = REAGENT_VALUE_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/BEsmaller/on_mob_life(mob/living/carbon/M)
 	var/obj/item/organ/genital/breasts/B = M.getorganslot(ORGAN_SLOT_BREASTS)
@@ -2940,6 +2989,7 @@ datum/reagent/eldritch
 	metabolization_rate = 0.5
 	can_synth = FALSE
 	value = REAGENT_VALUE_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/penis_enlarger/on_mob_metabolize(mob/living/M)
 	. = ..()
@@ -3013,6 +3063,7 @@ datum/reagent/eldritch
 	metabolization_rate = 0.5
 	can_synth = FALSE
 	value = REAGENT_VALUE_RARE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/PEsmaller/on_mob_life(mob/living/carbon/M)
 	if(!ishuman(M))
@@ -3033,6 +3084,7 @@ datum/reagent/eldritch
 	taste_description = "butter with a sweet aftertaste"
 	overdose_threshold = 100
 	can_synth = FALSE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/butt_enlarger/on_mob_metabolize(mob/living/carbon/M)
 	. = ..()
@@ -3085,6 +3137,7 @@ datum/reagent/eldritch
 	description = "A medicine used to treat organomegaly in a patient's ass."
 	metabolization_rate = 0.5
 	can_synth = TRUE
+	synth_metabolism_use_human = TRUE
 
 /datum/reagent/butt_shrinker/on_mob_metabolize(mob/living/M)
 	. = ..()

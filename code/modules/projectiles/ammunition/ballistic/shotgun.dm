@@ -143,7 +143,7 @@ obj/item/ammo_casing/shotgun/executioner
 
 /obj/item/projectile/bullet/pellet/bloatfly_chunk
 	name = "fly chunk"
-	icon_state = "toxin"
+	icon_state = "magspear"
 	damage = 2
 	stamina = 2
 	spread = 3

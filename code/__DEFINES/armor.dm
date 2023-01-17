@@ -661,6 +661,29 @@
 		"wound" = 0, \
 		"damage_threshold" = 5)
 
+/* Catslug armor
+ * Fairly low
+ * Decent mob protection
+ * Squooshy hide doesnt help with bullets
+ * Lasers
+ * Mainly so they can survive mobs a bit more
+ * But arent too tricky for players to kill
+ * Just in case they get annoying
+ * Low DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_CATSLUG list(\
+		"linemelee" = 35, \
+		"linebullet" = -10, \
+		"linelaser" = -10, \
+		"energy" = -50, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 5, \
+		"damage_threshold" = 3)
+
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values
  * Environmental and wound armors are multiplied by these values

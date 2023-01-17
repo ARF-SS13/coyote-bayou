@@ -13,7 +13,10 @@
 	growthstages = 3
 	icon_dead = "tobacco-dead"
 	mutatelist = list(/obj/item/seeds/tobacco/space)
-	reagents_add = list(/datum/reagent/drug/nicotine = 0.03, /datum/reagent/consumable/nutriment = 0.03)
+	reagents_add = list(
+		/datum/reagent/drug/nicotine = 0.03,
+		/datum/reagent/consumable/nutriment = 0.03
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/tobacco
 	seed = /obj/item/seeds/tobacco
@@ -37,7 +40,11 @@
 	plantname = "Space Tobacco Plant"
 	product = /obj/item/reagent_containers/food/snacks/grown/tobacco/space
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/medicine/salbutamol = 0.05, /datum/reagent/drug/nicotine = 0.08, /datum/reagent/consumable/nutriment = 0.03)
+	reagents_add = list(
+		/datum/reagent/medicine/salbutamol = 0.05,
+		/datum/reagent/drug/nicotine = 0.08,
+		/datum/reagent/consumable/nutriment = 0.03
+	)
 	rarity = 20
 	genes = list(/datum/plant_gene/trait/smoke) //get it? because you smoke tobacco? i'm hilarious.
 

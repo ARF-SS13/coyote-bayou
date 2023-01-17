@@ -15,7 +15,10 @@
 	icon_grow = "coyote-grow"
 	icon_dead = "coyote-dead"
 	icon_harvest = "coyote-harvest"
-	reagents_add = list(/datum/reagent/drug/nicotine = 0.1,  /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(
+		/datum/reagent/drug/nicotine = 0.1,
+		/datum/reagent/consumable/nutriment = 0.1
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/coyotetobacco
 	seed = /obj/item/seeds/coyotetobacco

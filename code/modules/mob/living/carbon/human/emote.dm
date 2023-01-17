@@ -165,7 +165,7 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	emote_type = EMOTE_AUDIBLE
 
-/* Fortuna edit: robot sound emotes disabled
+/* Fortuna edit: robot sound emotes disabled - Coyote Bayou edit: everyone can use them now lol
 /datum/emote/human/buzz
 	key = "buzz"
 	key_third_person = "buzzes"

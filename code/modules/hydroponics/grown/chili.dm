@@ -16,8 +16,16 @@
 	icon_grow = "chili-grow" // Uses one growth icons set for all the subtypes
 	icon_dead = "chili-dead" // Same for the dead icon
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/chili/ice, /obj/item/seeds/chili/ghost, /obj/item/seeds/chili/bell_pepper)
-	reagents_add = list(/datum/reagent/consumable/capsaicin = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
+	mutatelist = list(
+		/obj/item/seeds/chili/ice,
+		/obj/item/seeds/chili/ghost,
+		/obj/item/seeds/chili/bell_pepper
+	)
+	reagents_add = list(
+		/datum/reagent/consumable/capsaicin = 0.25,
+		/datum/reagent/consumable/nutriment/vitamin = 0.04,
+		/datum/reagent/consumable/nutriment = 0.04
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/chili
 	seed = /obj/item/seeds/chili
@@ -42,7 +50,11 @@
 	production = 4
 	rarity = 20
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/frostoil = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.02)
+	reagents_add = list(
+		/datum/reagent/consumable/frostoil = 0.25,
+		/datum/reagent/consumable/nutriment/vitamin = 0.02,
+		/datum/reagent/consumable/nutriment = 0.02
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/icepepper
 	seed = /obj/item/seeds/chili/ice
@@ -68,7 +80,11 @@
 	yield = 3
 	rarity = 20
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/condensedcapsaicin = 0.3, /datum/reagent/consumable/capsaicin = 0.55, /datum/reagent/consumable/nutriment = 0.04)
+	reagents_add = list(
+		/datum/reagent/consumable/condensedcapsaicin = 0.3,
+		/datum/reagent/consumable/capsaicin = 0.55,
+		/datum/reagent/consumable/nutriment = 0.04
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/ghost_chili
 	seed = /obj/item/seeds/chili/ghost
@@ -114,7 +130,10 @@
 	rarity = 20
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = null
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.08, /datum/reagent/consumable/nutriment = 0.04)
+	reagents_add = list(
+		/datum/reagent/consumable/nutriment/vitamin = 0.08,
+		/datum/reagent/consumable/nutriment = 0.04
+	)
 
 /obj/item/reagent_containers/food/snacks/grown/bell_pepper
 	seed = /obj/item/seeds/chili/bell_pepper
