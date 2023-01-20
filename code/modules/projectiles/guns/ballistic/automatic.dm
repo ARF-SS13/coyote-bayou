@@ -3099,8 +3099,8 @@ obj/item/gun/ballistic/automatic/bar
 
 //worn g11
 
-/obj/item/gun/ballistic/automatic/g11/worn
-	name = "Worn G11"
+/obj/item/gun/ballistic/automatic/g11/tox
+	name = "Tox's G11M"
 	desc = "This experimental gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm. This one seems slightly damaged."
 	icon_state = "g11"
 	item_state = "arg"

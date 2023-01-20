@@ -805,7 +805,7 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/g11/worn(src)
+	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /obj/item/pet_carrier/paws
