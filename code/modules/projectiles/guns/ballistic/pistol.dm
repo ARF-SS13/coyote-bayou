@@ -392,6 +392,40 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
+
+// Tox's Type 17
+/obj/item/gun/ballistic/automatic/pistol/type17/tox
+	name = "Tox's C96"
+	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
+	icon_state = "chinapistol"
+	w_class = WEIGHT_CLASS_SMALL
+
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL(0.6)
+
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+
+
 /* * * * * * * * * * *
  * Sig P220
  * Light Mediumer pistol

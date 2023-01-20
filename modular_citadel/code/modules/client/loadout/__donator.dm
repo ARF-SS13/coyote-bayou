@@ -237,6 +237,19 @@
 	new /obj/item/clothing/suit/armor/light/poachervest(src)
 	new /obj/item/clothing/gloves/bracer(src)
 
+/datum/gear/donator/kits/bonirus
+	name = "Xal-SH Kit"
+	path = /obj/item/storage/box/large/custom_kit/bonirus
+	ckeywhitelist = list("bonirus")
+
+/obj/item/storage/box/large/custom_kit/bonirus/PopulateContents()
+	new /obj/item/clothing/head/cone(src)
+	new /obj/item/clothing/accessory/bos/initiateS(src)
+	new /obj/item/clothing/accessory/bos/headscribe(src)
+	new /obj/item/pizzabox/infinite(src)
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/flashlight/lantern(src)
+
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
 	path = /obj/item/storage/box/large/custom_kit/brimcon
@@ -718,7 +731,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/gun/ballistic/automatic/smg/sidewinder/worn(src)
+	new /obj/item/clothing/glasses/prism_glasses(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"
@@ -785,6 +798,15 @@
 	new /obj/item/storage/box/hobo_tox(src)
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/binoculars(src)
+
+/datum/gear/donator/kits/seermankhajiit003
+	name = "The Director"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit003
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/g11/worn(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
