@@ -249,6 +249,7 @@
 	new /obj/item/pizzabox/infinite(src)
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/flashlight/lantern(src)
+	new /obj/item/toy/plush/mammal/fox/squishfox(src)
 
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
