@@ -21481,14 +21481,10 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/caves)
 "oRI" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 0
-	},
-/obj/structure/mirror{
-	pixel_y = 5;
-	pixel_x = -24
+/obj/structure/curtain,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/shower{
+	pixel_y = 17
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/sewers)
@@ -38532,7 +38528,7 @@ xnJ
 tfS
 xCs
 oMu
-xCs
+xnJ
 tfS
 xnJ
 tAR
@@ -38789,8 +38785,8 @@ xnJ
 vRx
 xnJ
 uWL
-xnJ
-vRx
+xCs
+rjS
 xnJ
 tAR
 oMu
