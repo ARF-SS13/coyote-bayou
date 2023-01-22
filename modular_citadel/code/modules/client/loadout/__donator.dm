@@ -808,6 +808,9 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/kit_spawner/townie/mayor(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -1102,7 +1105,7 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
-/datum/gear/donator/kits/zorturethewitcher
+/*/datum/gear/donator/kits/zorturethewitcher
 	name = "Mayor Card"
 	path = /obj/item/storage/box/large/custom_kit/zorturethewitcher
 	ckeywhitelist = list("zorturethewitcher")
@@ -1110,4 +1113,4 @@
 /obj/item/storage/box/large/custom_kit/zorturethewitcher/PopulateContents()
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/kit_spawner/townie/mayor(src)*/

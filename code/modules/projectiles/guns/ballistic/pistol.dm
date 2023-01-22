@@ -396,7 +396,7 @@
 // Tox's Type 17
 /obj/item/gun/ballistic/automatic/pistol/type17/tox
 	name = "Tox's C96"
-	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
+	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
 	icon_state = "chinapistol"
 	w_class = WEIGHT_CLASS_SMALL
 
