@@ -39,9 +39,26 @@
 	crate_name = "combo meal w/toy"
 	crate_type = /obj/structure/closet/crate/wooden */
 
+/datum/supply_pack/organic/randomized/chinese
+	name = "Chinese Food Crate"
+	desc = "Tasty chinese!"
+	cost = 8000
+	num_contained = 8
+	contains = list(/obj/item/reagent_containers/food/snacks/sushie_pro,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/maguro_sushi,
+					/obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi,
+					/obj/item/reagent_containers/food/snacks/spicyfiletsushiroll,
+					/obj/item/reagent_containers/food/snacks/soup/milo,
+					/obj/item/reagent_containers/food/snacks/fish_poke,
+					/obj/item/reagent_containers/food/snacks/tobiko,
+					/obj/item/reagent_containers/food/snacks/chawanmushi)
+	crate_name = "chinese food crate"
+
 /datum/supply_pack/organic/randomized/candy
 	name = "Candy Crate"
-	desc = "For people that have an insatiable sweet tooth! Has ten candies to be eaten up.."
+	desc = "For people that have an insatiable sweet tooth! Has ten candies to be eaten up."
 	cost = 2500
 	num_contained = 10
 	contains = list(/obj/item/reagent_containers/food/snacks/candy,
@@ -199,7 +216,7 @@
 					/obj/item/reagent_containers/food/snacks/meat/rawcrab,
 					/obj/item/reagent_containers/food/snacks/spiderleg,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-					/obj/item/reagent_containers/food/snacks/meat/slab/human) 
+					/obj/item/reagent_containers/food/snacks/meat/slab/human)
 	crate_name = "exotic meat crate"
 
 /datum/supply_pack/organic/monkeydripmeat
@@ -233,7 +250,7 @@
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
-					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation) 
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation)
 	crate_name = "meaty crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
@@ -455,7 +472,7 @@
 	cost = 5000
 	contains = list(/mob/living/simple_animal/crab)
 	crate_name = "look sir free crabs"
-	DropPodOnly = TRUE 
+	DropPodOnly = TRUE
 
 /datum/supply_pack/organic/crab/generate()
 	. = ..()
