@@ -410,12 +410,6 @@
 /mob/living/verb/succumb()
 	set name = "Succumb"
 	set category = "IC"
-	var/dienow = alert(src, "You sure you want to Succumb?", "Succumb", "Yes", "No")
-	if(dienow != "Yes")
-		to_chat(src, span_green("You live... for now."))
-		return
-	else
-		to_chat(src, span_green("Guess you'll die!"))
 	if(src.has_status_effect(/datum/status_effect/chem/enthrall))
 		var/datum/status_effect/chem/enthrall/E = src.has_status_effect(/datum/status_effect/chem/enthrall)
 		if(E.phase < 3)
