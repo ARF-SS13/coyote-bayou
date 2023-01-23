@@ -890,6 +890,11 @@
 	message = "whistles to get someones attention!"
 	sound = 'sound/f13effects/sunsetsounds/whistle-overhere.ogg'
 
+/datum/emote/squee
+	key = "squee"
+	key_third_person = "smiles like a dork."
+	message = "smiles like a dork."
+	sound = 'sound/f13effects/sunsetsounds/squee.ogg'
 /datum/emote/warcry
 	key = "warcry"
 	key_third_person = "warcrys"
