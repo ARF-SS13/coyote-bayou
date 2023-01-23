@@ -42,7 +42,7 @@
 /datum/supply_pack/organic/randomized/chinese
 	name = "Chinese Food Crate"
 	desc = "Tasty chinese!"
-	cost = 8000
+	cost = 6000
 	num_contained = 8
 	contains = list(/obj/item/reagent_containers/food/snacks/sushie_pro,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi,
@@ -55,6 +55,27 @@
 					/obj/item/reagent_containers/food/snacks/tobiko,
 					/obj/item/reagent_containers/food/snacks/chawanmushi)
 	crate_name = "chinese food crate"
+
+/datum/supply_pack/organic/randomized/burgbox
+	name = "BurgerBox Crate"
+	desc = "Juicy and Meaty with bun goodness. Yum!"
+	cost = 5000
+	num_contained = 8
+	contains = list(/obj/item/reagent_containers/food/snacks/burger/plain,
+					/obj/item/reagent_containers/food/snacks/burger/fish,
+					/obj/item/reagent_containers/food/snacks/burger/tofu,
+					/obj/item/reagent_containers/food/snacks/burger/bigbite,
+					/obj/item/reagent_containers/food/snacks/burger/superbite,
+					/obj/item/reagent_containers/food/snacks/burger/jelly/cherry,
+					/obj/item/reagent_containers/food/snacks/burger/baconburger,
+					/obj/item/reagent_containers/food/snacks/burger/soylent,
+					/obj/item/reagent_containers/food/snacks/burger/crab,
+					/obj/item/reagent_containers/food/snacks/burger/fivealarm,
+					/obj/item/reagent_containers/food/snacks/burger/rib,
+					/obj/item/reagent_containers/food/snacks/burger/mcguffin,
+					/obj/item/reagent_containers/food/snacks/burger/chicken,
+					/obj/item/reagent_containers/food/snacks/burger/cheese)
+	crate_name = "burgerbox crate"
 
 /datum/supply_pack/organic/randomized/candy
 	name = "Candy Crate"
