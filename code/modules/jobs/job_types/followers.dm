@@ -44,10 +44,9 @@ Administrator
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "You answer to the mayor if anything. Your own good judgment."
-	description = "You are a Senior Doctor. Your rank is giving due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
-	forbids = "Any form of malpractice. Leaving the clinic without a plan or being accompanied by a deputy."
-	enforces = "Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	supervisors = "You answer to the mayor, if anyone. Barring that, your own good judgment."
+	description = "You are a Senior Doctor. Your rank is given due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FF95FF"
 	exp_requirements = 750
 
@@ -118,10 +117,9 @@ Administrator
 	faction = "Followers"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "You answer to the mayor if anything. Barring that, the more senior doctors."
+	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	forbids = "Any form of malpractice. Leaving the clinic without a plan or being accompanied by a deputy."
-	enforces = "Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 540
 	exp_type = EXP_TYPE_FOLLOWERS
@@ -214,10 +212,9 @@ Practitioner
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "You answer to the mayor if anything. Barring that, the more senior doctors."
+	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
 	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
-	forbids = "Any form of malpractice. Leaving the clinic without a plan or being accompanied by a deputy."
-	enforces = "Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 300
 
@@ -342,12 +339,11 @@ Follower Volunteer
 	flag = F13FOLLOWERVOLUNTEER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "You answer to the mayor if anything. Barring that, the more senior doctors."
-	description = "You are a Town Medical Assistant. As a Medical Assistant, you make sure they get connected to the right people to find treatment, assist in the functions of the clinic, learn from senior Doctors, and utilize first aid to the best of your capacity when Doctors or senior doctors are not present."
-	forbids = "Any form of malpractice. Leaving the clinic without a plan or being accompanied by a deputy."
-	enforces = "Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
+	description = "You are a Nurse. As a Nurse, you provide first aid to those that are injured, and assist the clinic doctors as needed."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	outfit = /datum/outfit/job/followers/f13followervolunteer
 	loadout_options = list(
@@ -433,12 +429,11 @@ Follower Volunteer
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "You answer to the mayor if anything. Barring that, the more senior doctors."
-	description = "You are a Town Paramedic. As a Paramedic for the clinic, you are responsible for the safety and the maintenance of order in the clinic and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. You may also be responsible as an escort to the various non-combat staff at the clinic."
-	forbids = "Any form of malpractice. Leaving the clinic without a plan or notifying non-combat personnel."
-	enforces = "Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
+	description = "You are a Town Paramedic. As a Paramedic for the clinic, you are responsible for recovering indured wastelanders and transferring them to waiting doctors for treatment."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard
