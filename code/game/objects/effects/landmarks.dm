@@ -913,7 +913,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Security Officer"
 
 /obj/effect/landmark/start/f13/followersvolunteer
-	name = "Town Medical Assistant"
+	name = "Nurse"
 	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersscientist

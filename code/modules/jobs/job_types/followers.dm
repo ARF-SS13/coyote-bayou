@@ -367,7 +367,7 @@ Follower Volunteer
 	//the follower volunteer doesn't need more access as it is already stored in the /datum/job/followers
 
 /datum/outfit/job/followers/f13followervolunteer
-	name = "Town Medical Assistant"
+	name = "Nurse"
 	jobtype = /datum/job/followers/f13followervolunteer
 	id = 		/obj/item/card/id/silver
 	belt = /obj/item/kit_spawner/follower
