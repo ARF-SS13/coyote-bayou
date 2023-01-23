@@ -4,9 +4,9 @@
 	exp_type = EXP_TYPE_FOLLOWERS
 	access = list(ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_FOLLOWER)
-	forbids = "Aligning oneself with a faction exclusively. Acting in an aggressive and violent way on the offensive, not in defense. Abandoning your facility, peers, and community."
-	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
-	objectivesList = list("Leadership recommends the following goal for this week: Establish medical outposts throughout the wasteland","Leadership recommends the following goal for this week: Experiment with and improve medical techniques and equipment", "Leadership recommends the following goal for this week: Replenish the operation's funds through donations and sales.")
+	forbids = null
+	enforces = "Generallys peaking it can be assumed that your time spent learning how to be a doctor was for the good of others, but ultimately you are on your own path."
+	objectivesList = null
 
 /datum/outfit/job/followers
 	name =		"FOLLOWERSdatums"
@@ -44,7 +44,7 @@ Administrator
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "You answer to the mayor, if anyone. Barring that, your own good judgment."
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor. Assuming they're around."
 	description = "You are a Senior Doctor. Your rank is given due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FF95FF"
@@ -117,7 +117,7 @@ Administrator
 	faction = "Followers"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
@@ -212,7 +212,7 @@ Practitioner
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Senior Doctors. Assuming they're around."
 	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
@@ -341,8 +341,8 @@ Follower Volunteer
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
-	description = "You are a Nurse. As a Nurse, you provide first aid to those that are injured, and assist the clinic doctors as needed."
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor, Doctors, or anyone with more experience than you. Assuming they're around."
+	description = "You are a Nurse. As a Nurse you provide first aid to those that are injured and assist the clinic doctors as needed."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	outfit = /datum/outfit/job/followers/f13followervolunteer
@@ -431,8 +431,8 @@ Follower Volunteer
 	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "You answer to the mayor, if anyone. Barring that, the senior doctors for guidance."
-	description = "You are a Town Paramedic. As a Paramedic for the clinic, you are responsible for recovering indured wastelanders and transferring them to waiting doctors for treatment."
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
+	description = "You are one of the towns Paramedics.  Your job is to prepare parties to go out and try and help those in need that can't make it to the hospital on their own. Be that shooting your way to them or seeking them out with a rescue party."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 
