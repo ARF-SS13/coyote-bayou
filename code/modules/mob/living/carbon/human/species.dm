@@ -149,12 +149,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(clear)
 		GLOB.roundstart_races = list()
 		GLOB.roundstart_race_names = list()
+		/*
 	for(var/I in subtypesof(/datum/species))
 		var/datum/species/S = new I
 		if(S.check_roundstart_eligible())
 			GLOB.roundstart_races |= S.id
 			GLOB.roundstart_race_names["[S.name]"] = S.id
 			qdel(S)
+	*/
 	if(!GLOB.roundstart_races.len)
 		GLOB.roundstart_races += "human"
 

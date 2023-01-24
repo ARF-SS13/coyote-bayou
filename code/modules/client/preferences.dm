@@ -545,8 +545,10 @@ Records disabled until a use for them is found
 					dat += "<b>[modification]: [modified_limbs[modification][1]]</b><BR>"
 			dat += "<BR>"
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
+			/*
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><BR>"
+			*/
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 			dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
@@ -2212,7 +2214,7 @@ Records disabled until a use for them is found
 
 						//switch to the type of eyes the species uses
 						eye_type = pref_species.eye_type
-
+				/*
 				if("custom_species")
 					var/new_species = reject_bad_name(input(user, "Choose your species subtype, if unique. This will show up on examinations and health scans. Do not abuse this:", "Character Preference", custom_species) as null|text)
 					if(new_species)
@@ -2259,10 +2261,11 @@ Records disabled until a use for them is found
 							features["mcolor3"] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
-
+				*/
 				if("mismatched_markings")
 					show_mismatched_markings = !show_mismatched_markings
 
+				/*
 				if("ipc_screen")
 					var/new_ipc_screen
 					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.ipc_screens_list
@@ -2332,13 +2335,13 @@ Records disabled until a use for them is found
 							features["taur"] = "None"
 							features["tail_human"] = "None"
 							features["tail_lizard"] = "None"
-
+				*/
 				if("meat_type")
 					var/new_meat
 					new_meat = input(user, "Choose your character's meat type:", "Character Preference") as null|anything in GLOB.meat_types
 					if(new_meat)
 						features["meat_type"] = new_meat
-
+				/*
 				if("snout")
 					var/list/snowflake_snouts_list = list()
 					for(var/path in GLOB.snouts_list)
@@ -2441,11 +2444,11 @@ Records disabled until a use for them is found
 					new_insect_markings = input(user, "Choose your character's markings:", "Character Preference") as null|anything in GLOB.insect_markings_list
 					if(new_insect_markings)
 						features["insect_markings"] = new_insect_markings
-
+				*/
 				if("s_tone")
 					var/list/choices = GLOB.skin_tones - GLOB.nonstandard_skin_tones
 					if(CONFIG_GET(flag/allow_custom_skintones))
-						choices += "custom"
+						//choices += "custom"
 					var/new_s_tone = input(user, "Choose your character's skin tone:", "Character Preference")  as null|anything in choices
 					if(new_s_tone)
 						if(new_s_tone == "custom")
@@ -2461,7 +2464,7 @@ Records disabled until a use for them is found
 						else
 							use_custom_skin_tone = FALSE
 							skin_tone = new_s_tone
-
+				/*
 				if("taur")
 					var/list/snowflake_taur_list = list()
 					for(var/path in GLOB.taur_list)
@@ -2559,8 +2562,9 @@ Records disabled until a use for them is found
 						features["color_scheme"] = OLD_CHARACTER_COLORING
 					else
 						features["color_scheme"] = ADVANCED_CHARACTER_COLORING
-
+				*/
 				//Genital code
+				/*
 				if("cock_color")
 					var/new_cockcolor = input(user, "Penis color:", "Character Preference","#"+features["cock_color"]) as color|null
 					if(new_cockcolor)
@@ -2571,7 +2575,7 @@ Records disabled until a use for them is found
 							features["cock_color"] = sanitize_hexcolor(new_cockcolor, 6)
 						else
 							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
-
+				*/
 				if("cock_length")
 					var/min_D = CONFIG_GET(number/penis_min_inches_prefs)
 					var/max_D = CONFIG_GET(number/penis_max_inches_prefs)
@@ -2600,7 +2604,7 @@ Records disabled until a use for them is found
 					var/n_vis = input(user, "Penis Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
 					if(n_vis)
 						features["cock_visibility"] = n_vis
-
+				/*
 				if("balls_color")
 					var/new_ballscolor = input(user, "Testicles Color:", "Character Preference","#"+features["balls_color"]) as color|null
 					if(new_ballscolor)
@@ -2611,7 +2615,7 @@ Records disabled until a use for them is found
 							features["balls_color"] = sanitize_hexcolor(new_ballscolor, 6)
 						else
 							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
-
+				*/
 				if("balls_shape")
 					var/new_shape
 					new_shape = input(user, "Balls Shape", "Character Preference") as null|anything in GLOB.balls_shapes_list
@@ -2633,7 +2637,7 @@ Records disabled until a use for them is found
 					new_shape = input(user, "Breast Shape", "Character Preference") as null|anything in GLOB.breasts_shapes_list
 					if(new_shape)
 						features["breasts_shape"] = new_shape
-
+				/*
 				if("breasts_color")
 					var/new_breasts_color = input(user, "Breast Color:", "Character Preference","#"+features["breasts_color"]) as color|null
 					if(new_breasts_color)
@@ -2644,7 +2648,7 @@ Records disabled until a use for them is found
 							features["breasts_color"] = sanitize_hexcolor(new_breasts_color, 6)
 						else
 							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
-
+				*/
 				if("breasts_visibility")
 					var/n_vis = input(user, "Breasts Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
 					if(n_vis)
@@ -2655,7 +2659,7 @@ Records disabled until a use for them is found
 					new_shape = input(user, "Vagina Type", "Character Preference") as null|anything in GLOB.vagina_shapes_list
 					if(new_shape)
 						features["vag_shape"] = new_shape
-
+				/*
 				if("vag_color")
 					var/new_vagcolor = input(user, "Vagina color:", "Character Preference","#"+features["vag_color"]) as color|null
 					if(new_vagcolor)
@@ -2666,12 +2670,12 @@ Records disabled until a use for them is found
 							features["vag_color"] = sanitize_hexcolor(new_vagcolor, 6)
 						else
 							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
-
+				*/
 				if("vag_visibility")
 					var/n_vis = input(user, "Vagina Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
 					if(n_vis)
 						features["vag_visibility"] = n_vis
-
+				/*
 				if("butt_color")
 					var/new_buttcolor = input(user, "Butt color:", "Character Preference","#"+features["butt_color"]) as color|null
 					if(new_buttcolor)
@@ -2682,7 +2686,7 @@ Records disabled until a use for them is found
 							features["butt_color"] = sanitize_hexcolor(new_buttcolor, 6)
 						else
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
-
+				*/
 				if("butt_size")
 					var/min_B = CONFIG_GET(number/butt_min_size_prefs)
 					var/max_B = CONFIG_GET(number/butt_max_size_prefs)
@@ -2815,12 +2819,12 @@ Records disabled until a use for them is found
 								return
 						if(dorfy != "No")
 							features["body_size"] = new_body_size
-
+				/*
 				if("tongue")
 					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues
 					if(selected_custom_tongue)
 						custom_tongue = selected_custom_tongue
-
+				*/
 				if("speech_verb")
 					var/selected_custom_speech_verb = input(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference") as null|anything in GLOB.speech_verbs
 					if(selected_custom_speech_verb)
