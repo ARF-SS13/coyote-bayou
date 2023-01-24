@@ -1,58 +1,67 @@
+"aE" = (/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "aH" = (/obj/structure/simple_door/house,/turf/open/floor/wood_worn,/area/f13/building)
-"aI" = (/turf/closed/wall/r_wall,/area/f13/den)
-"aQ" = (/obj/structure/barricade/bars,/obj/structure/table/reinforced,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
-"bn" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/sunset/brick_small,/area/f13/prison)
+"bf" = (/obj/structure/flora/tree/wasteland,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "bo" = (/obj/machinery/light/lampost,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "cc" = (/obj/structure/window/fulltile/house,/obj/structure/barricade/bars,/turf/open/indestructible/ground/outside/desert,/area/f13/office)
 "cf" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/followers)
+"cl" = (/obj/structure/chair/sofa/right{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "cq" = (/obj/machinery/door/poddoor/gate/preopen,/turf/open/indestructible/ground/outside/graveldirt,/area/f13/den)
-"cz" = (/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "cN" = (/obj/item/reagent_containers/glass/bucket/wood,/obj/effect/spawner/lootdrop/low_loot_toilet,/turf/open/floor/wood_worn,/area/f13/building)
+"cR" = (/turf/closed/wall/r_wall,/area/f13/den)
 "dc" = (/obj/machinery/vending/hydroseeds,/turf/open/indestructible/ground/outside/desert,/area/f13/bar)
+"dh" = (/obj/item/pizzabox/vegetable,/obj/structure/table,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"di" = (/obj/structure/simple_door/metal/store,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "dm" = (/obj/machinery/light{dir = 1},/turf/open/floor/wood_common,/area/f13/bar)
 "dA" = (/obj/structure/window/fulltile/house,/turf/open/indestructible/ground/outside/desert,/area/f13/building)
 "dF" = (/obj/structure/chair/left{dir = 1},/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
+"dS" = (/obj/machinery/door/unpowered/securedoor{req_access_txt = "136"},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "es" = (/obj/structure/chair/right{dir = 1},/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/bar)
 "ev" = (/obj/machinery/smartfridge/bottlerack/seedbin,/turf/open/indestructible/ground/outside/desert,/area/f13/bar)
+"ez" = (/obj/structure/curtain{pixel_x = 32},/obj/structure/closet/crate/medical/anchored,/turf/open/floor/wood_common,/area/f13/followers)
 "eE" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall,/area/f13/followers)
 "eG" = (/obj/effect/spawner/lootdrop/low_loot_toilet,/turf/open/floor/wood_worn,/area/f13/building)
+"eR" = (/turf/closed/wall/f13/sunset/brick_small,/area/f13/prison)
 "eV" = (/obj/structure/chair/comfy/teal,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/carpet/blue,/area/f13/office)
 "fc" = (/turf/closed/wall/f13/wood/house,/area/f13/building)
+"ff" = (/obj/structure/curtain{pixel_x = -32},/obj/structure/closet/crate/freezer/blood,/turf/open/floor/wood_common,/area/f13/followers)
 "fv" = (/obj/structure/fence/wooden,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "fD" = (/obj/structure/stairs/south,/obj/structure/fluff/railing{dir = 4},/turf/open/floor/wood_common,/area/f13/bar)
+"fH" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "fY" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "gi" = (/obj/structure/table/wood,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/machinery/power/apc/fusebox/west,/obj/machinery/light/floor,/turf/open/floor/carpet/blue,/area/f13/office)
 "gj" = (/obj/machinery/vending/hydronutrients,/turf/open/floor/wood_common,/area/f13/bar)
 "gn" = (/obj/structure/fence/corner,/turf/open/indestructible/ground/outside/desert,/area/engine/workshop)
 "gu" = (/obj/machinery/autolathe/ammobench,/turf/open/floor/plasteel/f13,/area/engine/workshop)
-"gG" = (/obj/structure/simple_door/metal/store,/turf/open/floor/wood_common,/area/f13/followers)
 "gJ" = (/obj/structure/table,/turf/open/floor/wood_common,/area/f13/followers)
-"gY" = (/obj/structure/fluff/divine/convertaltar,/turf/open/floor/plasteel/darkred,/area/f13/building/church)
 "hA" = (/obj/structure/chair/f13chair1{dir = 4},/obj/effect/landmark/start/f13/followersadministrator,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/followers)
 "hD" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall,/area/f13/followers)
-"hH" = (/obj/machinery/door/unpowered/securedoor,/turf/open/floor/carpet/blue,/area/f13/office)
+"hH" = (/obj/machinery/door/unpowered/securedoor{req_access_txt = "135"},/turf/open/floor/carpet/blue,/area/f13/office)
 "hO" = (/obj/effect/spawner/structure/window,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/followers)
 "hQ" = (/obj/structure/fence/wooden{dir = 4},/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "hR" = (/obj/machinery/light/sign,/turf/closed/wall/f13/wood/house/clean,/area/f13/bar)
 "hS" = (/obj/machinery/power/apc/fusebox/north,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/bar)
 "ib" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/food,/obj/effect/spawner/lootdrop/food,/obj/item/reagent_containers/food/drinks/bottle/goldschlager,/obj/item/reagent_containers/food/drinks/bottle/wine,/turf/open/floor/wood_common,/area/f13/bar)
-"iC" = (/obj/machinery/door/unpowered/securedoor,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_mosaic,/area/engine/workshop)
-"iI" = (/obj/structure/closet/locker,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"is" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/sunset/brick_small,/area/f13/prison)
+"iC" = (/obj/machinery/door/unpowered/securedoor{req_access_txt = "137"},/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_mosaic,/area/engine/workshop)
+"iH" = (/obj/structure/window/fulltile/house,/turf/open/indestructible/ground/outside/desert,/area/f13/building/church)
 "iV" = (/turf/open/floor/wood_common,/area/f13/bar)
 "iZ" = (/obj/structure/window/fulltile/wood_window,/obj/structure/barricade/bars,/turf/open/indestructible/ground/outside/desert,/area/engine/workshop)
 "jb" = (/obj/structure/chair/left{dir = 1},/turf/open/floor/wood_common,/area/f13/bar)
 "jj" = (/obj/structure/closet/crate/hydroponics,/turf/open/indestructible/ground/outside/desert,/area/f13/bar)
 "jm" = (/obj/machinery/door/airlock/medical/glass,/turf/open/floor/plasteel/neutral,/area/f13/followers)
+"jq" = (/obj/structure/simple_door/metal/store,/turf/open/floor/wood_common,/area/f13/followers)
+"jt" = (/obj/machinery/power/apc/fusebox/south,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "jz" = (/obj/item/storage/box/ingredients/fruity,/obj/item/storage/box/ingredients/fruity,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/sake,/obj/machinery/light{dir = 1},/turf/open/floor/wood_common,/area/f13/bar)
-"jH" = (/obj/structure/table/reinforced,/obj/machinery/light,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "jK" = (/obj/structure/chair/sofa,/turf/open/floor/carpet/purple,/area/f13/office)
-"jP" = (/turf/closed/wall/f13/wood/house/clean,/area/f13/building/church)
+"jM" = (/obj/machinery/door/unpowered/securedoor{req_access_txt = "87"},/turf/open/floor/wood_common,/area/f13/bar)
+"jO" = (/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"jP" = (/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
 "ku" = (/obj/structure/barricade/bars,/obj/structure/table/reinforced,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_mosaic,/area/engine/workshop)
+"kA" = (/obj/machinery/light/lampost{dir = 1},/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "kK" = (/obj/structure/window/fulltile/house,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/desert,/area/f13/building)
 "kL" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/wood/house/clean,/area/engine/workshop)
 "kQ" = (/obj/structure/table/reinforced,/obj/structure/barricade/bars,/turf/open/floor/f13/wood,/area/f13/den)
 "kR" = (/obj/structure/chair/f13chair1{dir = 8},/turf/open/floor/wood_common,/area/f13/followers)
-"kS" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "la" = (/obj/structure/fence{dir = 1},/turf/open/indestructible/ground/outside/desert,/area/engine/workshop)
 "li" = (/obj/structure/table/wood/bar,/obj/item/candle,/obj/machinery/light/floor,/turf/open/floor/wood_common,/area/f13/bar)
 "lq" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 4},/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
@@ -60,12 +69,13 @@
 "lP" = (/obj/structure/table/wood/bar,/obj/item/candle,/turf/open/floor/wood_common,/area/f13/bar)
 "lV" = (/turf/closed/wall/mineral/wood,/area/f13/bar)
 "mb" = (/obj/machinery/light,/turf/open/floor/plasteel/f13,/area/engine/workshop)
+"mh" = (/obj/structure/closet/locker,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "mn" = (/obj/item/storage/box/ingredients/vegetarian,/obj/item/storage/box/ingredients/vegetarian,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/nukashine,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/bar)
 "mo" = (/obj/structure/chair/f13chair2{dir = 4},/turf/open/floor/wood_mosaic,/area/engine/workshop)
-"mr" = (/obj/structure/destructible/tribal_torch/lit,/turf/open/floor/plasteel/dark,/area/f13/building/church)
+"mJ" = (/obj/structure/chair/bench{dir = 8},/turf/open/floor/plasteel/dark,/area/f13/building/church)
 "mK" = (/obj/structure/barricade/bars,/obj/structure/table/reinforced,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/desert,/area/engine/workshop)
 "mM" = (/obj/machinery/vending/cigarette,/turf/open/floor/wood_common,/area/f13/bar)
-"mY" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
+"mS" = (/obj/machinery/vending/nukacolavend,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "nn" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/clothing_low,/obj/effect/spawner/lootdrop/clothing_low,/obj/effect/spawner/lootdrop/f13/medical,/obj/effect/spawner/lootdrop/f13/medical,/turf/open/floor/wood_mosaic,/area/engine/workshop)
 "np" = (/obj/machinery/light,/turf/open/floor/wood_mosaic,/area/engine/workshop)
 "ns" = (/obj/structure/chair/sofa/left,/obj/machinery/light{dir = 4},/turf/open/floor/carpet/purple,/area/f13/office)
@@ -77,197 +87,195 @@
 "oe" = (/obj/structure/sign/poster/contraband/robust_softdrinks{pixel_x = 29},/turf/open/floor/wood_common,/area/f13/bar)
 "ok" = (/obj/structure/table/wood/bar,/turf/open/floor/wood_common,/area/f13/bar)
 "on" = (/obj/structure/chair/f13chair1,/obj/effect/landmark/start/f13/followersguard,/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/followers)
-"os" = (/obj/machinery/door/poddoor/gate/preopen{id = 336},/turf/open/indestructible/ground/outside/desert,/area/f13/den)
+"os" = (/obj/machinery/door/poddoor/gate/preopen{id = 336},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/den)
 "oy" = (/obj/structure/chair/sofa/right{dir = 1},/turf/open/floor/carpet/purple,/area/f13/office)
+"oC" = (/obj/structure/closet/locker,/turf/open/floor/carpet/blue,/area/f13/office)
 "oV" = (/obj/structure/fence/corner/wooden{dir = 4},/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "oY" = (/obj/structure/chair/office/dark{dir = 1},/obj/effect/landmark/start/f13/followersdoctor,/turf/open/floor/wood_common,/area/f13/followers)
-"pm" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
+"po" = (/obj/structure/fluff/divine/convertaltar,/turf/open/floor/plasteel/darkred,/area/f13/building/church)
 "pM" = (/obj/machinery/power/apc/fusebox/north,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/followers)
 "pV" = (/turf/closed/wall/r_wall,/area/f13/wasteland)
 "qa" = (/obj/structure/simple_door/house,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_worn,/area/f13/building)
 "qx" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/wood/house/clean,/area/f13/bar)
-"qy" = (/obj/machinery/door/unpowered/securedoor,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/plasteel/f13,/area/engine/workshop)
+"qy" = (/obj/machinery/door/unpowered/securedoor{req_access_txt = "137"},/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "qG" = (/obj/structure/stairs/west,/turf/open/floor/wood_mosaic,/area/engine/workshop)
 "qJ" = (/obj/machinery/power/port_gen/pacman,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/graveldirt,/area/engine/workshop)
-"qV" = (/obj/item/pizzabox/vegetable,/obj/structure/table,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "qW" = (/obj/structure/destructible/tribal_torch/wall/lit,/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
 "ra" = (/obj/machinery/power/port_gen/pacman,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/graveldirt,/area/engine/workshop)
 "re" = (/obj/structure/table/wood,/obj/item/paper_bin,/turf/open/floor/carpet/blue,/area/f13/office)
 "rk" = (/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/bar)
+"rt" = (/obj/structure/chair{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "rw" = (/obj/machinery/workbench,/turf/open/floor/wood_mosaic,/area/engine/workshop)
 "sd" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 8},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
 "sp" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/ammo/civilian,/obj/effect/spawner/lootdrop/ammo/civilian,/obj/effect/spawner/lootdrop/ammo/civilian,/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,/turf/open/floor/wood_mosaic,/area/engine/workshop)
 "sv" = (/obj/structure/chair/right,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
 "sC" = (/obj/structure/chair/right{dir = 1},/turf/open/floor/wood_common,/area/f13/bar)
 "sD" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/minor,/obj/effect/spawner/lootdrop/minor,/obj/effect/spawner/lootdrop/minor,/obj/item/reagent_containers/food/drinks/bottle/hooch,/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/bar)
+"sF" = (/obj/structure/reagent_dispensers/water_cooler,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "sH" = (/obj/item/storage/box/ingredients/fiesta,/obj/item/storage/box/ingredients/fiesta,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/tequila,/turf/open/floor/wood_common,/area/f13/bar)
 "sT" = (/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "sU" = (/obj/machinery/door/poddoor/gate/preopen{id = 335},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/den)
 "tg" = (/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/followers)
 "th" = (/obj/structure/chair/f13chair1{dir = 8},/obj/machinery/light{dir = 1},/turf/open/floor/wood_common,/area/f13/followers)
+"tz" = (/obj/structure/chair{dir = 8},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "tE" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/wood/house/clean,/area/f13/bar)
-"tW" = (/obj/structure/rack,/obj/item/stack/sheet/metal/fifty,/obj/item/storage/toolbox,/obj/item/stack/sheet/mineral/plasma/fifty,/turf/open/floor/plasteel/f13,/area/engine/workshop)
+"tL" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
+"tW" = (/obj/structure/rack,/obj/item/stack/sheet/metal/fifty,/obj/item/storage/toolbox,/obj/item/stack/sheet/mineral/plasma/fifty,/obj/item/stack/sheet/mineral/coal/ten,/obj/item/stack/sheet/mineral/coal/ten,/obj/item/stack/sheet/mineral/coal/ten,/obj/item/lightreplacer,/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "tY" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/machinery/power/apc/fusebox/north,/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "uk" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/graveldirt,/area/engine/workshop)
 "uq" = (/obj/structure/table/booth,/turf/open/floor/wood_common,/area/f13/bar)
-"ur" = (/obj/structure/chair{dir = 8},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "uw" = (/obj/structure/stairs/south,/turf/open/floor/carpet/blue,/area/f13/office)
 "uQ" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/bar)
 "uR" = (/obj/structure/reagent_dispensers/watertank/high,/obj/machinery/light,/turf/open/indestructible/ground/outside/desert,/area/f13/bar)
-"uS" = (/turf/open/floor/plasteel/darkred,/area/f13/building/church)
-"uV" = (/obj/structure/table,/obj/item/storage/backpack/duffelbag/med/surgery,/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/followers)
-"vf" = (/obj/structure/chair/sofa/right{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
-"vi" = (/obj/structure/table,/obj/item/storage/backpack/duffelbag/med/surgery,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/followers)
-"vF" = (/obj/structure/closet/locker,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"uV" = (/obj/structure/table,/obj/item/storage/backpack/duffelbag/med/surgery,/obj/machinery/light{dir = 4},/obj/item/tank/internals/anesthetic,/obj/item/clothing/mask/breath/medical,/turf/open/floor/wood_common,/area/f13/followers)
+"vi" = (/obj/structure/table,/obj/item/storage/backpack/duffelbag/med/surgery,/obj/machinery/light{dir = 8},/obj/item/tank/internals/anesthetic,/obj/item/clothing/mask/breath/medical,/turf/open/floor/wood_common,/area/f13/followers)
 "vK" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/mre,/obj/effect/spawner/lootdrop/mre,/obj/effect/spawner/lootdrop/mre,/obj/item/reagent_containers/food/drinks/bottle/applejack,/obj/machinery/light,/turf/open/floor/wood_common,/area/f13/bar)
 "vL" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/coin,/obj/effect/spawner/lootdrop/coin,/obj/effect/spawner/lootdrop/f13/medical,/obj/effect/spawner/lootdrop/f13/medical,/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,/turf/open/floor/wood_mosaic,/area/engine/workshop)
+"vV" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "wc" = (/obj/machinery/door/airlock/medical/glass,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/followers)
 "wf" = (/mob/living/simple_animal/cow/brahmin,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "wh" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/food,/obj/effect/spawner/lootdrop/food,/obj/item/reagent_containers/food/drinks/bottle/grappa,/obj/item/reagent_containers/food/drinks/bottle/wine,/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/bar)
 "wj" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 1},/turf/closed/wall/r_wall,/area/f13/den)
 "wl" = (/turf/open/floor/wood_worn,/area/f13/building)
+"wF" = (/turf/open/floor/plasteel/dark,/area/f13/building/church)
+"wG" = (/obj/structure/closet/locker,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "wI" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "wX" = (/obj/machinery/door/airlock/medical,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/followers)
-"xl" = (/turf/open/indestructible/ground/outside/graveldirt,/area/f13/den)
 "xp" = (/turf/open/floor/plating/f13/inside/gravel,/area/f13/wasteland)
 "xq" = (/obj/machinery/door/unpowered/securedoor,/turf/open/floor/wood_common,/area/f13/bar)
 "xy" = (/obj/structure/simple_door/house,/turf/open/floor/carpet/purple,/area/f13/office)
 "xA" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/wood/house/clean,/area/engine/workshop)
-"xP" = (/obj/structure/window/fulltile/house,/turf/open/indestructible/ground/outside/desert,/area/f13/building/church)
 "xU" = (/obj/structure/destructible/tribal_torch/wall/lit,/turf/open/floor/wood_worn,/area/f13/building)
+"xY" = (/obj/structure/simple_door,/turf/open/floor/plasteel/dark,/area/f13/building/church)
 "ym" = (/obj/structure/reagent_dispensers/fueltank,/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "yz" = (/obj/structure/billboard/nukagirl,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "yB" = (/obj/structure/chair/bench,/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
-"yG" = (/obj/machinery/vending/medical/free,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "yJ" = (/obj/structure/table/booth,/obj/item/candle,/turf/open/floor/wood_common,/area/f13/bar)
-"zG" = (/obj/machinery/vending/nukacolavend,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
-"zN" = (/obj/structure/reagent_dispensers/water_cooler,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"yK" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"zz" = (/obj/structure/dresser,/turf/open/floor/wood_worn,/area/f13/building)
 "zW" = (/obj/structure/chair/left,/turf/open/floor/wood_common,/area/f13/bar)
 "Ah" = (/obj/structure/stairs/south,/obj/structure/fluff/railing{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
 "Aj" = (/obj/machinery/door/airlock/wood,/turf/open/floor/wood_common,/area/f13/bar)
-"An" = (/obj/machinery/door/unpowered/celldoor,/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
 "At" = (/obj/structure/chair/office{dir = 1},/turf/open/floor/plasteel/neutral,/area/f13/followers)
 "AA" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/mre,/obj/effect/spawner/lootdrop/mre,/obj/item/reagent_containers/food/drinks/bottle/amaretto,/turf/open/floor/wood_common,/area/f13/bar)
+"AB" = (/obj/structure/barricade/sandbags,/turf/open/floor/f13/wood,/area/f13/den)
 "AE" = (/turf/closed/wall/f13/wood/house/clean,/area/f13/office)
 "AZ" = (/obj/machinery/mineral/wasteland_vendor/medical,/turf/open/floor/wood_common,/area/f13/followers)
-"Ba" = (/obj/structure/chair/sofa/left,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"Bt" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 1; pixel_y = 17},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
+"By" = (/obj/machinery/door/unpowered/celldoor{req_access_txt = "136"},/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
+"BO" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"BX" = (/obj/structure/table/reinforced,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"Cf" = (/obj/structure/table,/obj/item/storage/box/cups,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Cm" = (/obj/structure/chair/sofa/left{dir = 1},/turf/open/floor/carpet/purple,/area/f13/office)
-"Cw" = (/obj/structure/chair/sofa,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Cx" = (/obj/effect/spawner/structure/window,/obj/structure/barricade/bars,/turf/open/floor/wood_common,/area/f13/followers)
 "CI" = (/obj/structure/filingcabinet/chestdrawer,/turf/open/floor/wood_common,/area/f13/followers)
-"CJ" = (/turf/closed/wall,/area/f13/den)
 "CY" = (/obj/item/storage/box/ingredients/american,/obj/item/storage/box/ingredients/american,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/sunset,/turf/open/floor/wood_common,/area/f13/bar)
 "Dp" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/wood/house/clean,/area/f13/office)
-"Du" = (/obj/structure/closet/locker,/obj/item/clothing/head/helmet/riot,/obj/item/clothing/suit/armor/medium/combat/swat,/obj/item/clothing/shoes/cowboyboots/black,/obj/item/clothing/head/f13/cowboy,/obj/item/storage/belt/army,/obj/item/gun/ballistic/revolver/police,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
-"Dy" = (/obj/structure/chair{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
-"DD" = (/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"Dw" = (/obj/structure/bed,/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
 "DE" = (/turf/open/indestructible/ground/outside/desert,/area/f13/followers)
-"DN" = (/turf/open/floor/plasteel/dark,/area/f13/building/church)
-"DP" = (/obj/structure/barricade/bars,/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
 "DT" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/kitchen,/obj/effect/spawner/lootdrop/kitchen,/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,/obj/item/reagent_containers/food/drinks/bottle/vim,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
-"Eg" = (/turf/closed/wall/f13/sunset/brick_small,/area/f13/prison)
 "El" = (/obj/structure/barricade/bars,/obj/structure/table/reinforced,/turf/open/floor/wood_common,/area/f13/followers)
-"Et" = (/obj/machinery/door/unpowered/securedoor,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "EB" = (/obj/machinery/hydroponics/soil,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "EE" = (/obj/structure/stairs/west,/turf/open/floor/wood_common,/area/f13/followers)
-"Fr" = (/obj/structure/rack,/obj/item/stack/sheet/glass/fifty,/obj/effect/spawner/lootdrop/welder_tools,/obj/item/stack/sheet/mineral/plasma/fifty,/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/f13,/area/engine/workshop)
+"Fr" = (/obj/structure/rack,/obj/item/stack/sheet/glass/fifty,/obj/effect/spawner/lootdrop/welder_tools,/obj/item/stack/sheet/mineral/plasma/fifty,/obj/machinery/light{dir = 4},/obj/item/stack/sheet/mineral/coal/ten,/obj/item/stack/sheet/mineral/coal/ten,/obj/item/stack/sheet/mineral/coal/ten,/obj/item/storage/box/lights/bulbs,/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "Fs" = (/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
 "Fu" = (/obj/structure/chair/bench{dir = 8},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
 "FE" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/r_wall,/area/f13/wasteland)
 "FL" = (/turf/open/indestructible/ground/outside/graveldirt,/area/f13/bar)
-"FW" = (/obj/structure/chair/sofa/right{dir = 8},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "FX" = (/obj/machinery/vending/medical/follower,/turf/open/floor/wood_common,/area/f13/followers)
 "Ge" = (/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "Gk" = (/obj/structure/chair/left,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/bar)
 "Gp" = (/turf/open/floor/carpet/purple,/area/f13/office)
 "Gu" = (/obj/item/storage/fancy/candle_box,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/vermouth,/obj/item/reagent_containers/food/drinks/bottle/wine,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
+"GG" = (/turf/closed/wall,/area/f13/den)
 "GL" = (/obj/structure/window/fulltile/house,/turf/open/floor/wood_common,/area/f13/bar)
 "Hv" = (/obj/machinery/light{dir = 4},/turf/open/floor/carpet/purple,/area/f13/office)
 "HA" = (/obj/machinery/light{dir = 4},/turf/open/floor/carpet/blue,/area/f13/office)
-"HN" = (/turf/open/indestructible/ground/outside/desert,/area/f13/den)
+"HC" = (/obj/structure/curtain{pixel_x = -32},/obj/structure/closet/crate/medical/anchored,/turf/open/floor/wood_common,/area/f13/followers)
 "Ie" = (/obj/machinery/light{dir = 8},/turf/open/floor/carpet/blue,/area/f13/office)
 "If" = (/obj/structure/chair{dir = 1},/turf/open/floor/carpet/blue,/area/f13/office)
-"Ii" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
-"Io" = (/obj/item/reagent_containers/glass/bucket,/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
 "Ir" = (/obj/structure/rack,/turf/open/floor/wood_common,/area/f13/bar)
 "Ix" = (/obj/structure/simple_door/metal/store,/turf/open/floor/wood_mosaic,/area/engine/workshop)
-"IM" = (/obj/structure/chair/bench{dir = 8},/turf/open/floor/plasteel/dark,/area/f13/building/church)
 "Je" = (/obj/effect/spawner/structure/window,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/structure/barricade/bars,/turf/open/floor/wood_common,/area/f13/followers)
+"Jg" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 4},/turf/open/floor/plasteel/dark,/area/f13/building/church)
 "JA" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/food,/obj/effect/spawner/lootdrop/food,/obj/item/reagent_containers/food/drinks/bottle/champagne,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
 "JG" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/wood/house,/area/f13/building)
-"JW" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Kb" = (/obj/structure/table/wood/bar,/obj/item/reagent_containers/food/drinks/shaker,/turf/open/floor/wood_common,/area/f13/bar)
 "Kj" = (/obj/structure/chair/stool/bar,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/bar)
 "Km" = (/turf/closed/wall/f13/wood/house/clean,/area/f13/bar)
-"Kn" = (/obj/machinery/light,/turf/open/floor/carpet/blue,/area/f13/office)
+"Kn" = (/obj/machinery/light,/obj/structure/closet/locker,/turf/open/floor/carpet/blue,/area/f13/office)
 "Ks" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/clothing_middle,/obj/effect/spawner/lootdrop/clothing_middle,/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,/obj/machinery/light{dir = 1},/turf/open/floor/wood_mosaic,/area/engine/workshop)
+"KG" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/sunset/brick_small,/area/f13/prison)
+"KP" = (/obj/structure/destructible/tribal_torch/lit,/turf/open/floor/plasteel/dark,/area/f13/building/church)
+"KY" = (/obj/structure/rack,/obj/item/storage/box/lights/bulbs,/turf/open/floor/wood_common,/area/f13/bar)
+"Lb" = (/obj/structure/chair/sofa/right{dir = 8},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Lf" = (/turf/closed/wall/f13/wood/house/clean,/area/engine/workshop)
+"Lk" = (/obj/structure/chair/sofa/right,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Lm" = (/obj/structure/destructible/tribal_torch/lit,/turf/open/floor/wood_common,/area/f13/followers)
+"Ln" = (/turf/closed/wall/f13/wood/house/clean,/area/f13/building/church)
 "Lt" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall,/area/f13/followers)
 "Lz" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 4},/turf/open/floor/wood_worn,/area/f13/building)
 "LB" = (/obj/structure/chair/stool/bar,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/bar)
+"LG" = (/obj/structure/closet/locker,/obj/item/clothing/head/helmet/riot,/obj/item/clothing/suit/armor/medium/combat/swat,/obj/item/clothing/shoes/cowboyboots/black,/obj/item/clothing/head/f13/cowboy,/obj/item/storage/belt/army,/obj/item/gun/ballistic/revolver/police,/obj/item/storage/box/handcuffs,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "LP" = (/obj/structure/window/fulltile/wood_window,/turf/open/indestructible/ground/outside/desert,/area/engine/workshop)
 "Mp" = (/obj/structure/simple_door/metal/fence/wooden,/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
 "MO" = (/obj/item/storage/box/ingredients/italian,/obj/item/storage/box/ingredients/italian,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/patron,/obj/machinery/light{dir = 1},/turf/open/floor/wood_common,/area/f13/bar)
 "MQ" = (/mob/living/simple_animal/chicken,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "Nf" = (/obj/structure/table/optable,/turf/open/floor/wood_common,/area/f13/followers)
 "Nh" = (/turf/closed/wall,/area/f13/wasteland)
-"Ni" = (/obj/structure/table/reinforced,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Ns" = (/obj/machinery/workbench/forge,/turf/open/floor/plasteel/f13,/area/engine/workshop)
-"Nt" = (/obj/structure/chair/sofa/left{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
-"Od" = (/obj/item/storage/box/ingredients/sweets,/obj/item/storage/box/ingredients/sweets,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/rum,/obj/machinery/light{dir = 4},/turf/open/floor/wood_common,/area/f13/bar)
-"Ot" = (/obj/machinery/light,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"NQ" = (/obj/machinery/vending/medical/free,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"NT" = (/obj/structure/table/wood/bar,/obj/item/paper/secretrecipe,/turf/open/floor/wood_common,/area/f13/bar)
+"Oa" = (/obj/structure/table/reinforced,/obj/machinery/light,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"Od" = (/obj/item/storage/box/ingredients/sweets,/obj/item/storage/box/ingredients/sweets,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/rum,/obj/machinery/light{dir = 4},/obj/item/storage/box/lights/bulbs,/turf/open/floor/wood_common,/area/f13/bar)
 "Ox" = (/turf/closed/wall/f13/wood/interior,/area/f13/office)
 "OD" = (/obj/structure/destructible/tribal_torch/wall/lit,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "OM" = (/obj/structure/curtain{pixel_x = -32},/turf/open/floor/wood_common,/area/f13/followers)
 "ON" = (/obj/structure/chair/booth{dir = 4},/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
+"OP" = (/turf/open/floor/plasteel/darkred,/area/f13/building/church)
 "OV" = (/obj/machinery/door/airlock/medical/glass,/turf/open/floor/wood_common,/area/f13/followers)
 "Pc" = (/obj/structure/curtain{pixel_x = 32},/turf/open/floor/wood_common,/area/f13/followers)
 "Pn" = (/turf/open/floor/wood_common,/area/f13/followers)
 "PU" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/minor,/obj/effect/spawner/lootdrop/minor,/obj/effect/spawner/lootdrop/minor,/obj/item/reagent_containers/food/drinks/bottle/hcider,/turf/open/floor/wood_common,/area/f13/bar)
 "PV" = (/obj/machinery/light{dir = 4},/turf/open/floor/wood_mosaic,/area/engine/workshop)
+"PX" = (/obj/structure/chair/sofa/left{dir = 4},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"Qo" = (/obj/structure/barricade/bars,/obj/structure/table/reinforced,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"Qt" = (/obj/structure/chair/sofa,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Qv" = (/obj/structure/window/fulltile/house,/turf/open/indestructible/ground/outside/desert,/area/f13/office)
 "Qw" = (/turf/open/floor/carpet/blue,/area/f13/office)
 "Rd" = (/obj/structure/table,/obj/machinery/chem_lab,/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/neutral,/area/f13/followers)
 "Rh" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/wood_common,/area/f13/bar)
 "Rk" = (/turf/open/floor/f13/wood,/area/f13/den)
+"Rv" = (/obj/structure/curtain{pixel_x = 32},/obj/structure/closet/crate/freezer/blood,/turf/open/floor/wood_common,/area/f13/followers)
 "RE" = (/obj/structure/table,/turf/open/floor/plasteel/neutral,/area/f13/followers)
 "RJ" = (/obj/structure/chair/bench{dir = 1},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
 "RK" = (/obj/structure/fence{dir = 8},/turf/open/indestructible/ground/outside/desert,/area/engine/workshop)
 "RP" = (/obj/machinery/light{dir = 8},/turf/open/indestructible/ground/outside/graveldirt,/area/engine/workshop)
-"RQ" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 1; pixel_y = 17},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
-"SG" = (/obj/structure/chair/sofa/left{dir = 8},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "SK" = (/obj/structure/table/wood/bar,/obj/machinery/light/floor,/turf/open/floor/wood_common,/area/f13/bar)
+"SP" = (/obj/structure/chair/sofa/left{dir = 8},/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Ti" = (/obj/structure/barricade/bars,/obj/structure/table/reinforced,/turf/open/floor/f13/wood,/area/f13/den)
-"Tl" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 4},/turf/open/floor/plasteel/dark,/area/f13/building/church)
-"Tn" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/closed/wall/f13/sunset/brick_small,/area/f13/prison)
 "TC" = (/obj/structure/table/wood/bar,/obj/item/storage/box/drinkingglasses,/obj/item/storage/box/drinkingglasses,/turf/open/floor/wood_common,/area/f13/bar)
-"TG" = (/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
+"TT" = (/obj/item/reagent_containers/glass/bucket,/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
 "Ue" = (/obj/item/storage/box/ingredients,/obj/structure/rack,/obj/item/reagent_containers/food/drinks/bottle/kahlua,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/turf/open/floor/wood_common,/area/f13/bar)
 "Un" = (/obj/structure/chair/booth{dir = 4},/turf/open/floor/wood_common,/area/f13/bar)
-"Uy" = (/obj/machinery/door/unpowered/securedoor,/turf/open/floor/f13/wood,/area/f13/den)
+"Uy" = (/obj/machinery/door/unpowered/securedoor{req_access_txt = "136"},/turf/open/floor/f13/wood,/area/f13/den)
 "Uz" = (/obj/structure/simple_door/wood,/turf/open/floor/plasteel/f13,/area/engine/workshop)
 "UO" = (/obj/effect/spawner/lootdrop/keg,/turf/open/floor/wood_common,/area/f13/bar)
-"UP" = (/obj/machinery/light/lampost{dir = 1},/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "UR" = (/obj/structure/chair/sofa/right,/turf/open/floor/carpet/purple,/area/f13/office)
 "US" = (/obj/machinery/light,/turf/open/floor/wood_common,/area/f13/followers)
 "UY" = (/obj/machinery/vending/medical/free,/turf/open/floor/wood_common,/area/f13/followers)
 "Ve" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/mre,/obj/effect/spawner/lootdrop/mre,/obj/effect/spawner/lootdrop/mre,/obj/item/reagent_containers/food/drinks/bottle/absinthe,/obj/item/reagent_containers/food/drinks/bottle/vodka,/turf/open/floor/wood_common,/area/f13/bar)
 "Vh" = (/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/followers)
 "Vy" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/f13/armor/tier2,/obj/effect/spawner/lootdrop/f13/armor/tier2,/obj/effect/spawner/lootdrop/f13/armor/tier2,/turf/open/floor/wood_mosaic,/area/engine/workshop)
+"VC" = (/turf/open/indestructible/ground/outside/graveldirt,/area/f13/den)
 "VF" = (/obj/structure/chair/right,/obj/machinery/light{dir = 8},/turf/open/floor/wood_common,/area/f13/bar)
-"Wo" = (/obj/machinery/power/apc/fusebox/south,/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Wr" = (/obj/structure/chair/f13chair1,/obj/effect/landmark/start/f13/followersvolunteer,/turf/open/floor/wood_common,/area/f13/followers)
 "Wu" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/weapons/selfdefence,/obj/item/reagent_containers/food/drinks/bottle/gin,/turf/open/floor/wood_common,/area/f13/bar)
-"Wx" = (/obj/structure/table,/obj/item/storage/box/cups,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Xh" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/armylootbasic,/obj/effect/spawner/lootdrop/armylootbasic,/obj/effect/spawner/lootdrop/armylootbasic,/obj/machinery/light{dir = 1},/turf/open/floor/wood_mosaic,/area/engine/workshop)
 "Xj" = (/obj/structure/destructible/tribal_torch/wall/lit{dir = 4},/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
-"Xu" = (/obj/structure/bed,/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
 "XG" = (/obj/machinery/vending/nukacolavend,/turf/open/floor/wood_common,/area/f13/bar)
-"XI" = (/obj/structure/simple_door,/turf/open/floor/plasteel/dark,/area/f13/building/church)
 "XW" = (/turf/open/floor/plasteel/neutral,/area/f13/followers)
 "XZ" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/food,/obj/effect/spawner/lootdrop/food,/obj/item/reagent_containers/food/drinks/bottle/bawls,/turf/open/floor/wood_common,/area/f13/bar)
-"Yc" = (/obj/structure/chair/sofa/right,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "Yd" = (/obj/structure/fence/corner/wooden{dir = 8},/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "Yk" = (/obj/structure/table/wood/bar,/obj/machinery/chem_dispenser/drinks,/turf/open/floor/wood_common,/area/f13/bar)
 "Yl" = (/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,/turf/open/indestructible/ground/outside/graveldirt,/area/f13/wasteland)
@@ -275,7 +283,9 @@
 "YB" = (/obj/structure/bed/mattress,/obj/effect/spawner/lootdrop/bedsheet,/turf/open/floor/wood_worn,/area/f13/building)
 "Zg" = (/obj/machinery/vending/boozeomat{pixel_x = 32},/turf/open/floor/wood_common,/area/f13/bar)
 "Zv" = (/obj/structure/curtain{pixel_y = -32},/obj/machinery/iv_drip,/turf/open/floor/wood_common,/area/f13/followers)
-"ZO" = (/obj/structure/simple_door/metal/store,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"Zw" = (/obj/structure/barricade/bars,/turf/open/floor/plasteel/rockvault/sandstone,/area/f13/prison)
+"ZI" = (/obj/structure/chair/sofa/left,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
+"ZK" = (/obj/machinery/light,/turf/open/floor/plasteel/f13/stone,/area/f13/prison)
 "ZQ" = (/turf/closed/wall,/area/f13/followers)
 
 (1,1,1) = {"
@@ -284,59 +294,59 @@ GeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
 GeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
 GeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
 GeGeGeGeGeGeGeGeGeGeGeGeGeGeODGeGeGeODGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
-pVpVpVpVpVpVpVpVpVpVpVaIaIaIaIcqxlxlpVpVpVpVpVpVpVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
-pVGeGeGeGeGeGeGeGeFsFsUyRkRkTixlxlxlNhFuFsRJRJFspVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
-pVGeGeGeGeGeGeGeGeFsFsCJRkRkTixlxlxlNhFuFsFsFsFspVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
-pVGeGeGeGeGeGeGeGeFsFsCJCJCJCJnWxlxlNhFsFsFsFsFspVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
-pVGeGeGeGeGeGeGeGeFsFsFsFsFsRQFsFsFsRQFsFsFsGeGepVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVGeGe
+pVpVpVpVpVpVpVpVpVpVpVcRcRcRcRcqVCVCpVpVpVpVpVpVpVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
+pVGeGeGeGeGeGeGeGeFsFsUyRkRkTiVCVCVCNhFuFsRJRJFspVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
+pVGeGeGeGeGebfGeGeFsFsGGRkABTiVCVCVCNhFuFsFsFsFspVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
+pVGeGeGeGeGeGeGeGeFsFsGGGGGGGGnWVCVCNhFsFsFsFsFspVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
+pVGebfGeGeGeGeGeGeFsFsFsFsFsBtFsFsFsBtFsFsFsGeGepVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVGeGe
 pVGeGeGeGeGeGeGeODFsqWFsFsFsFsFsFsFsFsFsFsFsGeGeGeGeGeyzGeGeGeGeGeGeGeGeGeGeGeGeGeGepVGeGe
-pVGeZQZQZQZQGeZQZQgGZQZQGeGeGeFsFsGeGeGeFsFsFsqWFsFsFsFsFsqWFsFsFsFsFsFsFsFsGeGeGeGepVGeGe
-pVGeZQhAgJZQGenyAZPnFXZQZQGeGeFsFsGeGeGejPxPxPjPxPxPjPxPxPjPYdhQhQhQhQhQhQMphQhQoVGepVGeGe
-pVGeCxPnCILtLtZQVhPnPnonZQZQGeFsFsUPGeGejPmrIMIMIMIMuSDNTljPfvEBEBGeGeEBEBFsEBEBfvGepVGeGe
-pVGeCxPnPnwccfpMPnPnPnPnthnyGeFsFsGeGeGejPDNDNDNuSuSuSgYDNjPfvEBEBwffvEBEBFsEBEBfvGepVGeGe
-pVGeZQCxCxLtVhLmWrWrWrPnkRnyGeFsFsFsFsFsXImrIMIMIMIMuSDNTljPfvEBEBGefvEBEBFsEBEBfvGepVGeGe
-pVGeGeGeGehDPnPnPnPnPnPnPnnyGeyByBFsFsFsjPxPxPjPxPxPjPxPxPjPfvEBEBMQfvEBEBFsEBEBfvGepVGeGe
-pVGeGeGeGehDOVElElElElElElZQZQZQZQZQFsFsRQFsFsFsFsFsFsFsGeGefvEBEBwffvEBEBFsEBEBfvGepVGeGe
+pVGeZQZQZQZQGeZQZQjqZQZQGeGeGeFsFsGeGeGeFsFsFsqWFsFsFsFsFsqWFsFsFsFsFsFsFsFsGeGebfGepVGeGe
+pVGeZQhAgJZQGenyAZPnFXZQZQGeGeFsFsGeGeGeLniHiHLniHiHLniHiHLnYdhQhQhQhQhQhQMphQhQoVGepVGeGe
+pVGeCxPnCILtLtZQVhPnPnonZQZQGeFsFskAGeGeLnKPmJmJmJmJOPwFJgLnfvEBEBGeGeEBEBFsEBEBfvGepVGeGe
+pVGeCxPnPnwccfpMPnPnPnPnthnyGeFsFsGeGeGeLnwFwFwFOPOPOPpowFLnfvEBEBwffvEBEBFsEBEBfvGepVGeGe
+pVGeZQCxCxLtVhLmWrWrWrPnkRnyGeFsFsFsFsFsxYKPmJmJmJmJOPwFJgLnfvEBEBGefvEBEBFsEBEBfvGepVGeGe
+pVGeGeGeGehDPnPnPnPnPnPnPnnyGeyByBFsFsFsLniHiHLniHiHLniHiHLnfvEBEBMQfvEBEBFsEBEBfvGepVGeGe
+pVGeGeGeGehDOVElElElElElElZQZQZQZQZQFsFsBtFsFsFsFsFsFsFsGeGefvEBEBwffvEBEBFsEBEBfvGepVGeGe
 pVGeGeLthDLtPnPnoYoYPnPnUYZQZQRERdZQFuFsFsFsFsFsFsFsqWFsODGefvEBEBGefvevuRFLdcjjfvGepVGeGe
-pVGeGehDEEPnPnUSPnPnUSPnUSPnjmXWAtZQFuFsGeGeGehRKmGLKmAjKmGLKmKmKmGelVlVlVxqlVlVlVGepVGeGe
+pVGeGehDEEPnPnUSPnPnUSPnUSPnjmXWAtZQFuFsGeGeGehRKmGLKmAjKmGLKmKmKmGelVlVlVjMlVlVlVGepVGeGe
 pVGeGehDhDhDwXLthOhOeEwXhDhDhDhDhDhDFsFsGeGeGeKmVFzWiViVhSmMXGiVKmGelVIrdmiVdmgjlVGepVGeGe
-pVGeGeCxOMUYPnZQDEDEhDPnUYPcCxGeGeGeFsFsGeGeGeGLuqyJiViVuQiViVrkKmGelVIriViViViVlVGepVGeGe
+pVGeGeCxHCUYPnZQDEDEhDPnUYezCxGeGeGeFsFsGeGeGeGLuqyJiViVuQiViVrkKmGelVKYiViViViVlVGepVGeGe
 pVGeGeCxOMPnPnZQDEDEhDPnPnPcnyGeGeGeFsFsGeGeGeGLjbsCiViVuQiViViVKmGelVlVlViVlVlVlVGepVGeGe
 pVGeGeZQVhPnuVZQDEDEhDviPntgZQGeGeboFsFsGeGeGeKmVFzWiViVKjTCnUYkKmKmKmsHjziVMOOdKmGepVGeGe
 pVGeGeCxOMPnPnZQDEDEhDPnPnPcCxGeGeGeFsFsGeGeGeGLuqyJiViVKjKbiVZgiVGuCYiViViViViVKmGepVGeGe
-pVGeGeCxOMZvNfZQDEDEhDNfZvPcCxGeGeGeFsFsGeGeGeGLjbsCiViVKjliiVoelViViViViVUOUemnKmGepVGeGe
-pVGeGeZQZQCxZQZQDEDELthDJehDLtGeGeGeFsFsGeGeGeKmVFzWiViVKjokiViVxqiViViViViViViVKmGepVGeGe
+pVGeGeCxffZvNfZQDEDEhDNfZvRvCxGeGeGeFsFsGeGeGeGLjbsCiViVKjliiVoelViViViViVUOUemnKmGepVGeGe
+pVGeGeZQZQCxZQZQDEDELthDJehDLtGeGeGeFsFsbfGeGeKmVFzWiViVKjNTiViVxqiViViViViViViVKmGepVGeGe
 pVGeGeGeGeGeGeGeGeGeGeGeGeGefYGeGeboFsFsGeGeGeGLuqyJiViVKjlPiVrklVJAXZiVAAiVPUsDKmGepVGeGe
 pVGeGeGeGeGeGeGeGeGeGeGeGeGefYGeGeGeFsFsGeGeGeGLjbsCiViVKjSKiViVlViViViVVeiViViVKmGepVGeGe
 pVpVpVpVpVGeLfLfiZLfLfLfiZLfxAkLkLkLYlYlfYfYfYtEsvGkuQuQLBokiViVlVDTWuiVvKiVibwhKmGepVGeGe
 GeGeGeGepVGeLfXhlEvLlEKslElEmKlErwLPFsFsGeGeGeGLuqyJiViVKjlPokrkKmKmKmKmKmKmKmKmKmGepVGeGe
 GeGeGeGepVGeiZsplEnnlEVylEmokulEPVLfsdFsGeGeGeGLjbsCiViVRhRhiViVGLGeGeGeGeGeGeGeGeGepVGeGe
 GeGeGeGepVGeLflElEnplElElElEkulElEIxFsFsGeGeGeKmONiViVAhfDuQiViVGLGeGeGeGeGeGeGeGeGepVGeGe
-GeGeGeGepVGeLfLfLfLfLfLfqGlEiClEPVLfsdFsGeGeGeKmUniVrkKmKmdFoaesqxGeGeGeGeGeGeGeGeGepVGeGe
-GeGeGeGepVGeLfYAgutWFrLfLfUzkLLfLfLfFsFsGeGeGeKmKmGLGLKmKmGLGLKmqxGeGeGeGeGeGeGeGeGepVGeGe
-GeGepVpVpVGeLfsTsTsTsTsTtYwIqyukqJlaFsFsGeGeGeGeGeGeGeGeGeGeGeGefYGeGeGeGeGeGeGeGeGepVGeGe
-GeGepVGeGeGeLfNssTymsTmbsTsTkLRPralaFsFsGeGeGeGeGeGeGeGeGeGeGeGefYGeGeGeGeGeGeGeGeGepVGeGe
+GeGeGeGepVGeLfLfLfLfLfLfqGlEiClEPVLfsdFsGeGeGeKmUniVrkKmKmdFoaesqxGeGeGeGeGeGeGebfGepVGeGe
+GeGeGeGepVGeLfYAgutWFrLfLfUzkLLfLfLfFsFsGeGeGeKmKmGLGLKmKmGLGLKmqxGebfGeGeGeGeGeGeGepVGeGe
+GeGepVpVpVGeLfsTsTsTsTsTtYwIqyukqJlaFsFsGeGeGeGeGeGeGeGeGeGeGeGefYGeGeGeGeGebfGeGeGepVGeGe
+GeGepVGeGeGeLfNssTymsTmbsTsTkLRPralaFsFsGebfGeGeGeGeGeGeGeGeGeGefYGeGeGeGeGeGeGeGeGepVGeGe
 GeGepVGeGeGeLfLfLfLfLfLfLfLfkLRKRKgnFsFsGeGeGeGeGeGeGeGenBkKJGJGJGdAfcfcfcdAfcfcfcGepVGeGe
-GeGepVGeGeGeGeGeGeGeGeGeGeGefYGeGeGeFsFsFsFsFsFsFsFsUPGeJGwlwlYBfcwlwlYBfcwlwlYBfcGepVGeGe
-GeGepVGeGeGeGeGeGeGeGeGeGeGefYpmGeGeFsFsFsFsFsFsFsFsGeGekKwlxUcNfcwlxUcNfcwlxUcNfcGepVGeGe
-GeGepVGeGeGeGeGeGeGeGeGeGeGeGefYGeGeGeGeGeGeGeGeFsFsGelqJGaHfcfcfcaHfcfcfcaHfcfcfcGepVGeGe
-GeGepVGeGeGeGeGeGeGeGeEgEgIiIiTnbnTnEgIiIiEgEgGeFsFsxpxpqawlxUwlwlwlxUwlwlwlxUwlfcGepVGeGe
-GeGepVGeGeGeGeGeGeGeGeEgDyqVurJWDDbnYcCwBaDDIiGeFsFsGelqJGaHfcfcfcaHfcfcfcaHfcfcfcGepVGeGe
-GeGepVGeGeGeGeGeGeGeGeEgDyWxurczDyaQczczczczIiGeFsFsGeGeJGwlwlLzfcwlwlLzfcwlwlLzfcGepVGeGe
-GeGepVpVpVpVGeGeGeGeGeIiczczczczDyaQczczczkSEgGeFsFsGeGeJGcNwlYBfccNwlYBfceGwlYBfcGepVGeGe
-GeGeGeGeGepVGeGeGeGeGeIizNOtczOtczaQWoczczczZOFsFsFsUPGenBJGJGJGnBJGfcfcfcfcfcfcfcGepVGeGe
-GeGeGeGeGepVGeGeGeGeGeEgEgEgEtEgEgEgEgEgEtEgEgGeFsFsGeGeGeGeGeGeGeFEpVpVpVpVpVpVpVpVpVGeGe
-GeGeGeGeGepVGeGeGeGeGeEgvFiIcziIvFzNyGzGczczIiGeFsFsGeGeGeGeGeGeGefYGeGeGeGeGeGeGeGepVGeGe
-GeGeGeGeGepVGeGeGeGeGeIiczczczczczczczczczczIiGeFsFsGeGeGeAEQvQvAEDpccAEccAEQvAEGeGepVGeGe
-GeGeGeGeGepVGeGeGeGeGeIiczczczczczNtNiFWczDDEgGeFsFsFsFsXjAEURjKnsDpeVQwQwhHQwccGeGepVGeGe
-GeGeGeGeGepVGeGeGeGeGeEgczDuDuDuDuvfjHSGEgEgEgGeFsFsFsFsFsxyGpGpGpAEgireHAOxIeAEGeGepVGeGe
-GeGeGeGeGepVGeEgEgEgEgEgAnEgEgEgEgEgEgEgEgGeGeGeFsFsFsFsXjAECmoyHvAEIfIfQwOxQwccGeGepVGeGe
-GeGeGeGeGepVGeEgTGmYTGTGTGmYTGTGTGTGmYTGEgGeGeFsFsFsGeGeGeAEAEAEGpAEQwQwQwOxuwAEGeGepVGeGe
-GeGeGeGeGepVGeEgAnDPDPEgAnDPDPEgAnDPDPDPEgGeGeFsFsFsUPGeGeGeGeAEGphHQwKnQwOxAEAEGeGepVGeGe
-GeGeGeGeGepVGeEgTGTGTGEgTGTGTGEgTGTGTGTGEgGeGeFsFsFsFsFsGeGeGeAEAEAEccAEccAEAEAEGeGepVGeGe
-GeGeGeGeGepVGeEgIoTGXuEgIoTGXuEgXuIoIoXuEgGeCJsUxlxlCJUyCJaIGeGeGeGeGeGeGeGeGeGeGeGepVGeGe
-GeGeGeGeGepVGeEgEgEgEgEgEgEgEgEgEgEgEgEgEgGeCJxlxlxlkQRkRkaIpVpVpVpVpVpVpVpVpVpVpVpVpVGeGe
-GeGeGeGeGepVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeCJxlxlxlkQRkRkaIGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
-GeGeGeGeGepVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVwjosHNHNwjaIaIaIGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
+GeGepVGeGeGeGeGeGeGeGeGeGeGefYGeGeGeFsFsFsFsFsFsFsFskAGeJGwlzzYBfcwlzzYBfcwlzzYBfcGepVGeGe
+GeGepVGeGeGeGeGeGeGeGeGeGeGefYvVGeGeFsFsFsFsFsFsFsFsGeGekKwlxUcNfcwlxUcNfcwlxUcNfcGepVGeGe
+GeGepVGebfGeGeGeGeGeGeGeGeGeGefYGeGeGeGeGeGeGeGeFsFsGelqJGaHfcfcfcaHfcfcfcaHfcfcfcGepVGeGe
+GeGepVGeGeGeGeGeGeGeGeeReRfHfHKGisKGeRfHfHeReRGeFsFsxpxpqawlxUwlwlwlxUwlwlwlxUwlfcGepVGeGe
+GeGepVGeGeGeGeGeGeGeGeeRrtdhtzBOjOisLkQtZIjOfHGeFsFsGelqJGaHfcfcfcaHfcfcfcaHfcfcfcGepVGeGe
+GeGepVGeGeGeGeGebfGeGeeRrtCftzaErtQoaEaEaEaEfHGeFsFsGeGeJGwlwlLzfcwlwlLzfcwlwlLzfcGepVGeGe
+GeGepVpVpVpVGeGeGeGeGefHaEaEaEaErtQoaEaEaEyKeRGeFsFsGeGeJGcNzzYBfccNzzYBfceGzzYBfcGepVGeGe
+GeGeGeGeGepVGeGeGeGeGefHsFZKaEZKaEQojtaEaEaEdiFsFsFskAGenBJGJGJGnBJGfcfcfcfcfcfcfcGepVGeGe
+GeGeGeGeGepVGeGeGeGeGeeReReRdSeReReReReRdSeReRGeFsFsGeGeGeGeGeGeGeFEpVpVpVpVpVpVpVpVpVGeGe
+GeGeGeGeGepVGeGeGeGeGeeRwGmhaEmhwGsFNQmSaEaEfHGeFsFsGebfGeGeGeGeGefYGeGeGeGeGeGeGeGepVGeGe
+GeGeGeGeGepVGebfGeGeGefHaEaEaEaEaEaEaEaEaEaEfHGeFsFsGeGeGeAEQvQvAEDpccAEccAEQvAEGeGepVGeGe
+GeGeGeGeGepVGeGeGeGeGefHaEaEaEaEaEPXBXLbaEjOeRGeFsFsFsFsXjAEURjKnsDpeVQwQwhHQwccGeGepVGeGe
+GeGeGeGeGepVGeGeGeGeGeeRaELGLGLGLGclOaSPeReReRGeFsFsFsFsFsxyGpGpGpAEgireHAOxIeAEGeGepVGeGe
+GeGeGeGeGepVGeeReReReReRByeReReReReReReReRGeGeGeFsFsFsFsXjAECmoyHvAEIfIfQwOxQwccGeGepVGeGe
+GeGeGeGeGepVGeeRjPtLjPjPjPtLjPjPjPjPtLjPeRGeGeFsFsFsGeGeGeAEAEAEGpAEQwQwQwOxuwAEGeGepVGeGe
+GeGeGeGeGepVGeeRByZwZweRByZwZweRByZwZwZweRGeGeFsFsFskAGeGeGeGeAEGphHQwKnoCOxAEAEGeGepVGeGe
+GeGeGeGeGepVGeeRjPjPjPeRjPjPjPeRjPjPjPjPeRGeGeFsFsFsFsFsGeGeGeAEAEAEccAEccAEAEAEGeGepVGeGe
+GeGeGeGeGepVGeeRTTjPDweRTTjPDweRDwTTTTDweRGeGGsUVCVCGGUyGGcRGeGeGeGeGeGeGeGeGeGeGeGepVGeGe
+GeGeGeGeGepVGeeReReReReReReReReReReReReReRGeGGVCVCVCkQRkRkcRpVpVpVpVpVpVpVpVpVpVpVpVpVGeGe
+GeGeGeGeGepVGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGGVCVCVCkQRkRkcRGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
+GeGeGeGeGepVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVpVwjosVCVCwjcRcRcRGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
 GeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGe
 "}
