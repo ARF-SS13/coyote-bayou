@@ -250,7 +250,7 @@
 	toolspeed = 0.5
 
 /obj/item/multitool/abductor
-	name = "alien multitool"
+	name = "ultracite multitool"
 	desc = "An omni-technological interface."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "multitool"
