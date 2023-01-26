@@ -187,7 +187,7 @@ obj/item/seeds/proc/is_gene_forbidden(typepath)
 	///Name of the grown products.
 	var/product_name
 	///The Number of products produced by the plant, typically the yield.
-	var/product_count = getYield()
+	var/product_count = getYield() + user.skill_roll(SKILL_OUTDOORSMAN, DIFFICULTY_CHALLENGE) + user.skill_roll(SKILL_OUTDOORSMAN, DIFFICULTY_NORMAL)
 
 	while(t_amount < product_count)
 		var/obj/item/reagent_containers/food/snacks/grown/t_prod
@@ -223,7 +223,7 @@ obj/item/seeds/proc/is_gene_forbidden(typepath)
 		t_amount++
 		product_name = parent.myseed.plantname
 	if(getYield() >= 1)
-		SSblackbox.record_feedback("tally", "food_harvested", getYield(), product_name)
+		SSblackbox.record_feedback("tally", "food_harvested", product_count, product_name)
 	parent.update_tray(user)
 
 	return result

@@ -60,6 +60,7 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)
+	custom_price = PRICE_ABOVE_EXPENSIVE
 
 /obj/item/clothing/head/helmet/f13/combat/dark
 	color = "#302E2E" // Dark Grey
@@ -146,6 +147,7 @@
 	item_state = "metalhelmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_MELEE_T2)
+	custom_price = PRICE_EXPENSIVE
 
 /obj/item/clothing/head/helmet/knight/f13/metal/reinforced
 	name = "reinforced metal helmet"
@@ -175,6 +177,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+	custom_price = PRICE_EXPENSIVE
 
 /obj/item/clothing/head/helmet/f13/metalmask/Initialize()
 	. = ..()
@@ -483,7 +486,7 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/f13
-	flags_inv = HIDEHAIR
+	flags_inv = null
 
 /obj/item/clothing/head/f13/rastacap
 	name = "rastacap"
@@ -498,12 +501,14 @@
 	desc = "Pretty yellow hairband"
 	icon_state = "50shairband"
 	item_state = "50shairband"
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/f13/nursehat
 	name = "nursehat"
 	desc = "White cloth headdress for nurses"
 	icon_state = "nursehat"
 	item_state = "nursehat"
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/f13/beaver
 	name = "beaverkin"

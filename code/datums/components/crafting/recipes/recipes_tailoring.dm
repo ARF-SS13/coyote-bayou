@@ -12,6 +12,7 @@
 	time = 60
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/combat_jacket
 	name = "Combat Jacket"
@@ -469,6 +470,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 60
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = HARD_CHECK
 
 //CLOTHING//
 
@@ -493,6 +495,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/tailor/ncruniform
 	name = "NCR Uniform"
@@ -569,6 +572,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
+	skill_level = VERY_EASY_CHECK
 
 //General clothing
 
@@ -580,6 +584,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/warboy
 	name = "War Boy pants"
@@ -589,6 +594,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/khaki
 	name = "Khaki slacks"
@@ -598,6 +604,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/cowboyg
 	name = "Grey Prospector outfit"
@@ -607,6 +614,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/cowboyb
 	name = "Brown Prospector outfit"
@@ -616,6 +624,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/cowboyt
 	name = "Tan Prospector outfit"
@@ -625,6 +634,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/westender
 	name = "Bartender outfit"
@@ -634,6 +644,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/westendervest
 	name = "Bartender vest"
@@ -643,6 +654,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/sleazeball
 	name = "Loanshark outfit"
@@ -652,6 +664,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/greendress
 	name = "Green dress"
@@ -661,6 +674,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/bluedress
 	name = "Blue dress"
@@ -670,6 +684,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/pinkdress
 	name = "Pink dress"
@@ -679,6 +694,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/relaxedwear
 	name = "Sweatervest"
@@ -697,6 +713,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/bennys
 	name = "Fancy Suit"
@@ -706,6 +723,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/mercadv
 	name = "Merc Adventurer outfit"
@@ -715,6 +733,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/fmercadv
 	name = "Female Merc Adventurer outfit"
@@ -724,6 +743,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/brahmin
 	name = "Brahmin-skin outfit (male)"
@@ -733,6 +753,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/fbrahmin
 	name = "Brahmin-skin outfit (female)"
@@ -742,6 +763,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/flapper
 	name = "Flapper Dress"
@@ -751,6 +773,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/overalls_farmer
 	name = "Farmer Overalls"
@@ -760,6 +783,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/overalls_maid
 	name = "Sexy Maid Overalls"
@@ -769,6 +793,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/overalls_blacksmith
 	name = "Smithing Overalls"
@@ -778,6 +803,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
+	skill_level = VERY_EASY_CHECK
 
 /////////////////////
 //HATS, SCARVES ETC//
@@ -791,6 +817,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/ncr_facewrap
 	name = "Facewrap"
@@ -800,6 +827,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/headscarf
 	name = "Headscarf"
@@ -809,6 +837,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarf
 	name = "White scarf"
@@ -818,6 +847,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfb
 	name = "Black scarf"
@@ -827,6 +857,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfr
 	name = "Red scarf"
@@ -836,6 +867,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfblu
 	name = "Blue scarf"
@@ -845,6 +877,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfg
 	name = "Green scarf"
@@ -854,6 +887,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfy
 	name = "Yellow scarf"
@@ -863,6 +897,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfpurp
 	name = "Purple scarf"
@@ -872,6 +907,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfpink
 	name = "Pink scarf"
@@ -881,6 +917,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfstripedred
 	name = "Striped red scarf"
@@ -890,6 +927,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/scarfstripedblue
 	name = "Striped blue scarf"
@@ -899,6 +937,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/stripedgreenscarf
 	name = "Striped green scarf"
@@ -908,6 +947,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 5
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/chestpatch
 	name = "Chest patch / insignia"
@@ -917,6 +957,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 10
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/armpatch
 	name = "Arm patch / insignia"
@@ -926,6 +967,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/rainbowbunchcrown
 	name = "Rainbow Flower Crown"
@@ -935,6 +977,7 @@ datum/crafting_recipe/steelbib/heavy
 				/obj/item/stack/cable_coil = 3)
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/sunflowercrown
 	name = "Sunflower Crown"
@@ -944,6 +987,7 @@ datum/crafting_recipe/steelbib/heavy
 				/obj/item/stack/cable_coil = 3)
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/poppycrown
 	name = "Poppy Crown"
@@ -953,6 +997,7 @@ datum/crafting_recipe/steelbib/heavy
 				/obj/item/stack/cable_coil = 3)
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/lilycrown
 	name = "Lily Crown"
@@ -962,6 +1007,7 @@ datum/crafting_recipe/steelbib/heavy
 				/obj/item/stack/cable_coil = 3)
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
+	skill_level = VERY_EASY_CHECK
 
 /*
 /datum/crafting_recipe/durathread_vest

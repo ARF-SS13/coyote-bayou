@@ -28,6 +28,7 @@ ATTACHMENTS
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=2000)
+	custom_price = PRICE_ALMOST_EXPENSIVE
 	w_class = WEIGHT_CLASS_NORMAL
 	var/icon_prefix = null
 	throwforce = 5
@@ -162,6 +163,8 @@ ATTACHMENTS
 	var/gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
 	/// What kind of traits should this gun be affected by
 	var/gun_skill_check
+	// Fallout Skill used
+	var/gun_skill_used = SKILL_GUNS
 	/// What kind of temporary refire delay modifiers do we have?
 	var/cooldown_delay_mods
 	/// What kind of misfires can this thing do? Check out combat.dm for details
@@ -537,7 +540,10 @@ ATTACHMENTS
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
 		if(chambered)
-			sprd = user.calculate_offset()
+			sprd = user.calculate_offset(sprd, gun_skill_used)
+			if(user.skill_roll(gun_skill_used))
+				sprd += ((100 - user.skill_value(gun_skill_used))/20)
+				to_chat(user, span_danger("You fumble your aim!"))
 			before_firing(target,user)
 			var/BB = chambered.BB
 			if(!chambered.fire_casing(target, user, params, added_spread, silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
@@ -853,7 +859,7 @@ ATTACHMENTS
 
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message(span_danger("[user] grabs \a [G]!")) // probably could code in differences as to where you're picking it up from and so forth. later.
-	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
+	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay())) * min((50/user.skill_value(gun_skill_used)), 1.5)
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	if(safety && user.a_intent == INTENT_HARM)
 		toggle_safety(user, ignore_held = TRUE)

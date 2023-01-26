@@ -7,6 +7,7 @@
 		/obj/item/melee/onehanded/knife	= 50,
 		/obj/item				= 10) // 10% success with any sharp item.
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/mechanic_open/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to unscrew the shell of [target]'s [parse_zone(target_zone)]..."),
@@ -26,6 +27,7 @@
 		/obj/item/melee/onehanded/knife	= 50,
 		/obj/item				= 10) // 10% success with any sharp item.
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/mechanic_close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to screw the shell of [target]'s [parse_zone(target_zone)]..."),
@@ -43,6 +45,7 @@
 		TOOL_MULTITOOL = 100,
 		TOOL_HEMOSTAT = 10) // try to reboot internal controllers via short circuit with some conductor
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/prepare_electronics/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to prepare electronics in [target]'s [parse_zone(target_zone)]..."),
@@ -56,6 +59,7 @@
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 10)
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/mechanic_unwrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to unwrench some bolts in [target]'s [parse_zone(target_zone)]..."),
@@ -69,6 +73,7 @@
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 10)
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/mechanic_wrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to wrench some bolts in [target]'s [parse_zone(target_zone)]..."),
@@ -80,6 +85,7 @@
 	name = "open the hatch"
 	accept_hand = 1
 	time = 10
+	mechanical = TRUE
 
 /datum/surgery_step/open_hatch/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to open the hatch holders in [target]'s [parse_zone(target_zone)]..."),
@@ -95,6 +101,7 @@
 		/obj/item/melee/onehanded/knife	= 50,
 		/obj/item				= 10) // 10% success with any sharp item.
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/cut_wires/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to cut loose wires in [target]'s [parse_zone(target_zone)]..."),
@@ -113,6 +120,7 @@
 		TOOL_CROWBAR = 100,
 		TOOL_HEMOSTAT = 10)
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/pry_off_plating/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	do_sparks(rand(5, 9), FALSE, target.loc)
@@ -129,6 +137,7 @@
 	implements = list(
 		TOOL_WELDER = 100)
 	time = 24
+	mechanical = TRUE
 
 /datum/surgery_step/weld_plating/tool_check(mob/user, obj/item/tool)
 	if(implement_type == TOOL_WELDER && !tool.use_tool(user, user, 0, volume=50, amount=1))
@@ -146,6 +155,7 @@
 	implements = list(/obj/item/stack/cable_coil = 100)
 	time = 24
 	var/cableamount = 5
+	mechanical = TRUE
 
 /datum/surgery_step/replace_wires/tool_check(mob/user, obj/item/tool)
 	var/obj/item/stack/cable_coil/coil = tool
@@ -171,6 +181,7 @@
 	implements = list(/obj/item/stack/sheet/metal = 100)
 	time = 24
 	var/metalamount = 5
+	mechanical = TRUE
 
 /datum/surgery_step/add_plating/tool_check(mob/user, obj/item/tool)
 	var/obj/item/stack/sheet/metal/plat = tool

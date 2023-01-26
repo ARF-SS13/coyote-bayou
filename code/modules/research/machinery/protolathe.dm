@@ -32,3 +32,14 @@
 /obj/machinery/rnd/production/protolathe/offstation
 	offstation_security_levels = FALSE
 	circuit = /obj/item/circuitboard/machine/protolathe/offstation
+
+/obj/machinery/rnd/production/protolathe/Insert_Item(obj/item/I, mob/user)
+	if (istype(I, /obj/item/book/granter/crafting_recipe/blueprint))
+		var/obj/item/book/granter/crafting_recipe/blueprint/bp = I
+		if (bp.design_print)
+			add_blueprint(bp.design_print)
+			return TRUE
+
+/obj/machinery/rnd/production/protolathe/proc/add_blueprint(add)
+	stored_research.add_design(SSresearch.techweb_design_by_id(add), TRUE)
+	say("Design uploaded to protolathe.")

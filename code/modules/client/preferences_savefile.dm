@@ -728,6 +728,26 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["special_a"]			>> special_a
 	S["special_l"]			>> special_l
 
+	S["skill_guns"] >> skill_guns
+	S["skill_energy"] >> skill_energy
+	S["skill_unarmed"] >> skill_unarmed
+	S["skill_melee"] >> skill_melee
+	S["skill_throwing"] >> skill_throwing 
+
+	//Active
+	S["skill_first_aid"] >> skill_first_aid
+	S["skill_doctor"] >> skill_doctor 
+	S["skill_sneak"] >> skill_sneak
+	S["skill_lockpick"] >> skill_lockpick
+	S["skill_traps"] >> skill_traps
+	S["skill_science"] >> skill_science
+	S["skill_repair"] >> skill_repair
+
+	//Passive
+	S["skill_speech"] >> skill_speech
+	S["skill_barter"] >> skill_barter
+	S["skill_outdoorsman"] >> skill_outdoorsman
+
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVE FILE STUFF !!
@@ -776,6 +796,21 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	special_i		= sanitize_integer(special_i, 1, 10, initial(special_i))
 	special_a		= sanitize_integer(special_a, 1, 10, initial(special_a))
 	special_l		= sanitize_integer(special_l, 1, 10, initial(special_l))
+	skill_guns			= sanitize_integer(skill_guns, 0, 99, initial(skill_guns))
+	skill_energy		= sanitize_integer(skill_energy, 0, 99, initial(skill_energy))
+	skill_unarmed		= sanitize_integer(skill_unarmed, 0, 99, initial(skill_unarmed))
+	skill_melee			= sanitize_integer(skill_melee, 0, 99, initial(skill_melee))
+	skill_throwing		= sanitize_integer(skill_throwing, 0, 99, initial(skill_throwing))
+	skill_first_aid		= sanitize_integer(skill_first_aid, 0, 99, initial(skill_first_aid))
+	skill_doctor		= sanitize_integer(skill_doctor, 0, 99, initial(skill_doctor))
+	skill_sneak			= sanitize_integer(skill_sneak, 0, 99, initial(skill_sneak))
+	skill_lockpick		= sanitize_integer(skill_lockpick, 0, 99, initial(skill_lockpick))
+	skill_traps			= sanitize_integer(skill_traps, 0, 99, initial(skill_traps))
+	skill_science		= sanitize_integer(skill_science, 0, 99, initial(skill_science))
+	skill_repair		= sanitize_integer(skill_repair, 0, 99, initial(skill_repair))
+	skill_speech		= sanitize_integer(skill_speech, 0, 99, initial(skill_speech))
+	skill_barter		= sanitize_integer(skill_barter, 0, 99, initial(skill_barter))
+	skill_outdoorsman	= sanitize_integer(skill_outdoorsman, 0, 99, initial(skill_outdoorsman))
 	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
 	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
@@ -1042,6 +1077,28 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_i"]		,special_i)
 	WRITE_FILE(S["special_a"]		,special_a)
 	WRITE_FILE(S["special_l"]		,special_l)
+
+	//combat
+	WRITE_FILE(S["skill_guns"], skill_guns)
+	WRITE_FILE(S["skill_energy"], skill_energy)
+	WRITE_FILE(S["skill_unarmed"], skill_unarmed)
+	WRITE_FILE(S["skill_melee"], skill_melee)
+	WRITE_FILE(S["skill_throwing"], skill_throwing) 
+
+	//Active
+	WRITE_FILE(S["skill_first_aid"], skill_first_aid)
+	WRITE_FILE(S["skill_doctor"], skill_doctor)
+	WRITE_FILE(S["skill_sneak"], skill_sneak)
+	WRITE_FILE(S["skill_lockpick"], skill_lockpick)
+	WRITE_FILE(S["skill_traps"], skill_traps)
+	WRITE_FILE(S["skill_science"], skill_science)
+	WRITE_FILE(S["skill_repair"], skill_repair)
+
+	//Passive
+	WRITE_FILE(S["skill_speech"], skill_speech)
+	WRITE_FILE(S["skill_barter"], skill_barter)
+	WRITE_FILE(S["skill_outdoorsman"], skill_outdoorsman)
+
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
 
 	//save every advanced coloring mode thing in one go

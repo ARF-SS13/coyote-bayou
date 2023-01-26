@@ -18,6 +18,8 @@
 	prereq_ids = list("adv_engi", "biotech")
 	design_ids = list("splitbeaker", "noreactsyringe", "cryotube", "cryo_Grenade")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = REGULAR_CHECK
 /*
 /datum/techweb_node/adv_defibrillator_tec
 	id = "adv_defibrillator_tec"
@@ -53,6 +55,8 @@
 	starting_node = TRUE
 	prereq_ids = list("biotech")
 	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg")
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = EASY_CHECK
 
 /datum/techweb_node/advance_limbs
 	id = "advance_limbs"
@@ -61,6 +65,8 @@
 	prereq_ids = list("adv_biotech", "surplus_limbs")
 	design_ids = list("adv_l_arm", "adv_r_arm", "adv_r_leg", "adv_l_leg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1250)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/subdermal_implants
 	id = "subdermal_implants"
@@ -69,6 +75,7 @@
 	prereq_ids = list("biotech", "datatheory")
 	design_ids = list("implanter", "implantcase", "implant_chem", "implant_tracking", "locator", "implant_loyal")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyber_organs
 	id = "cyber_organs"
@@ -77,21 +84,23 @@
 	prereq_ids = list("adv_biotech")
 	design_ids = list("cybernetic_ears", "cybernetic_heart", "cybernetic_liver", "cybernetic_lungs", "cybernetic_tongue")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyber_organs_upgraded
 	id = "cyber_organs_upgraded"
 	display_name = "Upgraded Cybernetic Organs"
 	description = "We have the technology to upgrade him."
 	prereq_ids = list("cyber_organs")
-/*	design_ids = list("cybernetic_ears_u", "cybernetic_heart_u", "cybernetic_liver_u", "cybernetic_lungs_u")*/
+	design_ids = list("cybernetic_ears_u", "cybernetic_heart_u", "cybernetic_liver_u", "cybernetic_lungs_u")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/cyber_implants
 	id = "cyber_implants"
 	display_name = "Cybernetic Implants"
 	description = "Electronic implants that improve humans."
 	prereq_ids = list("adv_biotech", "adv_datatheory")
-/*	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", "ci-medhud", "ci-sechud", "ci-service")*/
+	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", "ci-medhud", "ci-sechud", "ci-service")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/adv_cyber_implants
@@ -99,16 +108,18 @@
 	display_name = "Advanced Cybernetic Implants"
 	description = "Upgraded and more powerful cybernetic implants."
 	prereq_ids = list("neural_programming", "cyber_implants","integrated_HUDs")
-/*	design_ids = list("ci-toolset", "ci-surgery", "ci-reviver", "ci-nutrimentplus")*/
+	design_ids = list("ci-toolset", "ci-surgery", "ci-reviver", "ci-nutrimentplus")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/combat_cyber_implants
 	id = "combat_cyber_implants"
 	display_name = "Combat Cybernetic Implants"
 	description = "Military grade combat implants to improve performance."
 	prereq_ids = list("adv_cyber_implants","weaponry","high_efficiency")
-/*	design_ids = list("ci-antidrop", "ci-antistun")*/
+	design_ids = list("ci-antidrop", "ci-antistun")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = HARD_CHECK
 
 /////////////////////////Advanced Surgery/////////////////////////
 /datum/techweb_node/imp_wt_surgery
@@ -118,14 +129,17 @@
 	prereq_ids = list("biotech")
 	design_ids = list("surgery_heal_brute_upgrade","surgery_heal_burn_upgrade")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = EASY_CHECK
 
 /datum/techweb_node/advance_surgerytools
 	id = "advance_surgerytools"
 	display_name = "Advanced Surgery Tools"
 	description = "Refined and improved redesigns for the run-of-the-mill medical utensils."
 	prereq_ids = list("adv_biotech", "adv_surgery")
-/*	design_ids = list("drapes", "retractor_adv", "surgicaldrill_adv", "scalpel_adv", "bonesetter", "surgical_tape")*/
+	design_ids = list("drapes", "retractor_adv", "surgicaldrill_adv", "scalpel_adv", "bonesetter", "surgical_tape")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/adv_surgery
 	id = "adv_surgery"
@@ -134,6 +148,8 @@
 	prereq_ids = list("imp_wt_surgery")
 	design_ids = list("surgery_revival", "surgery_lobotomy", "surgery_heal_brute_upgrade_femto","surgery_heal_burn_upgrade_femto", "surgery_heal_combo", "surgery_toxinhealing", "organbox", "surgery_adv_dissection")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/exp_surgery
 	id = "exp_surgery"
@@ -142,6 +158,8 @@
 	prereq_ids = list("adv_surgery")
 	design_ids = list("surgery_vein_thread","surgery_muscled_veins","surgery_nerve_splice","surgery_nerve_ground","surgery_ligament_hook","surgery_ligament_reinforcement","surgery_viral_bond", "surgery_exp_dissection", "surgery_heal_combo_upgrade")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/alien_surgery
 	id = "alien_surgery"
@@ -150,3 +168,5 @@
 	prereq_ids = list("exp_surgery", "alientech")
 	design_ids = list("surgery_brainwashing","surgery_zombie", "surgery_ext_dissection", "surgery_heal_combo_upgrade_femto")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = HARD_CHECK

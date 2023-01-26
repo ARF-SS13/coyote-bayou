@@ -8,6 +8,7 @@
 	time = 80
 	category = CAT_MISC
 	subcategory = CAT_BOTTLE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/bottle
 	reqs = list(/obj/item/stack/sheet/glass = 3,
@@ -16,6 +17,7 @@
 	time = 10
 	category = CAT_MISC
 	subcategory = CAT_BOTTLE
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/bottle/darkbrown
 	name = "Rounded brown bottle"

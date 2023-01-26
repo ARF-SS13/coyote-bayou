@@ -28,6 +28,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/anvil
 	name = "Anvil"
@@ -49,6 +50,7 @@
 	tools = list(TOOL_CROWBAR)
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/furnace
 	name = "Furnace"
@@ -61,6 +63,7 @@
 	tools = list(TOOL_CROWBAR)
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/barrelfire
 	name = "Stoke barrel fire"
@@ -72,6 +75,12 @@
 	time = 80
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
+	falls_back_on_outdoors = TRUE
+	skill_level = VERY_EASY_CHECK
+
+/datum/crafting_recipe/tools/forged
+	falls_back_on_outdoors = TRUE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/tools/forged/sledge
 	name = "Sledgehammer"
@@ -97,8 +106,14 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
+	falls_back_on_outdoors = TRUE
+	skill_level = VERY_EASY_CHECK
 
 //KNIVES//
+
+/datum/crafting_recipe/melee/forged
+	falls_back_on_outdoors = TRUE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/melee/forged/cleaver
 	name = "Butchers Cleaver"
@@ -249,6 +264,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	falls_back_on_outdoors = TRUE
 
 
 // LEGION SPECIFIC
@@ -267,6 +283,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
+	falls_back_on_outdoors = TRUE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/gladius
 	name = "Gladius"
@@ -281,6 +299,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
+	falls_back_on_outdoors = TRUE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/legionlance
 	name = "Legion Lance"
@@ -295,6 +315,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
+	falls_back_on_outdoors = TRUE
+	skill_level = REGULAR_CHECK
 
 
 /datum/crafting_recipe/legionshield
@@ -310,6 +332,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
+	falls_back_on_outdoors = TRUE
+	skill_level = REGULAR_CHECK
 
 
 //polearms
@@ -360,6 +384,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_level = EASY_CHECK
 
 /datum/crafting_recipe/melee/forged/maceglove
 	name = "Mace Glove"
@@ -369,6 +394,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_level = EASY_CHECK
 
 
 ///////////
@@ -387,6 +413,7 @@
 	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/glaive
 	name = "Kinetic Glaive"
@@ -400,6 +427,7 @@
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_level = REGULAR_CHECK
 
 
 /datum/crafting_recipe/tools/forged/fryingpan
@@ -425,6 +453,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_needed = EASY_CHECK
 
 /datum/crafting_recipe/tools/forged/shovel
 	name = "Shovel"
@@ -437,6 +466,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_needed = EASY_CHECK
 
 /datum/crafting_recipe/tools/forged/hatchet
 	name = "Hatchet"
@@ -449,6 +479,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_needed = EASY_CHECK
 
 /datum/crafting_recipe/tools/forged/entrenching_tool
 	name = "Pattern 2281 Entrenching Tool"
@@ -463,3 +494,4 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
+	skill_needed = EASY_CHECK

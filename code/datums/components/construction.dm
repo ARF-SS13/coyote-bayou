@@ -38,9 +38,12 @@
 
 /datum/component/construction/proc/check_step(obj/item/I, mob/living/user)
 	var/diff = is_right_key(I)
-	if(diff && custom_action(I, user, diff))
-		update_index(diff)
-		return TRUE
+	if (user.skill_roll(SKILL_REPAIR, DIFFICULTY_EXPERT) || user.skill_check(SKILL_REPAIR, HARD_CHECK))
+		if(diff && custom_action(I, user, diff))
+			update_index(diff)
+			return TRUE
+	else
+		to_chat(user, span_notice("You're not confident making this."))
 	return FALSE
 
 /datum/component/construction/proc/is_right_key(obj/item/I) // returns index step

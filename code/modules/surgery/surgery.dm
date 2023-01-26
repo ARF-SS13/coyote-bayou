@@ -80,13 +80,13 @@
 // Robotic surgeries
 
 	if(requires_trait== "CYBERNETICIST_2") //robotic brain surgery, augumentation, robotic repairs.
-		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST_EXPERT)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST_EXPERT)|| user.skill_check(SKILL_SCIENCE, HARD_CHECK) || user.skill_check(SKILL_REPAIR, EXPERT_CHECK) ||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
 	if(requires_trait== "CYBERNETICIST_1") //allows robotic limb repairs.
-		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST)|| user.skill_check(SKILL_SCIENCE, REGULAR_CHECK) || user.skill_check(SKILL_REPAIR, REGULAR_CHECK) || HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
@@ -94,13 +94,13 @@
 // Medical Surgeries
 
 	if(requires_trait== "MEDICALEXPERT") // can do explicit cranial resuscitation.
-		if(HAS_TRAIT(user,TRAIT_MEDICALEXPERT)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+		if(HAS_TRAIT(user,TRAIT_MEDICALEXPERT)|| user.skill_check(SKILL_DOCTOR, HARD_CHECK) ||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
 	if(requires_trait== "MEDICALGRADUATE") //doctoring trait for offmap tuition, bypasses at mid level knowledge.
-		if(HAS_TRAIT(user,TRAIT_MEDICALGRADUATE) || HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+		if(HAS_TRAIT(user,TRAIT_MEDICALGRADUATE) || user.skill_check(SKILL_DOCTOR, EASY_CHECK) || HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
@@ -108,24 +108,24 @@
 /* Biological anatomy patient surgeries*/
 
 	if(requires_trait>2)
-		if(HAS_TRAIT(user,TRAIT_SURGERY_HIGH)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+		if(HAS_TRAIT(user,TRAIT_SURGERY_HIGH)|| user.skill_check(SKILL_DOCTOR, HARD_CHECK) ||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
 	if(requires_trait>1)
-		if(HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+		if(HAS_TRAIT(user,TRAIT_SURGERY_MID)|| user.skill_check(SKILL_DOCTOR, REGULAR_CHECK) || HAS_TRAIT(user,TRAIT_SURGERY_HIGH)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
 	if(requires_trait>0)
-		if(HAS_TRAIT(user,TRAIT_SURGERY_LOW)||HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+		if(HAS_TRAIT(user,TRAIT_SURGERY_LOW)|| user.skill_check(SKILL_DOCTOR, EASY_CHECK) || HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 		//
-	if(HAS_TRAIT(user, TRAIT_SURGEON) || HAS_TRAIT(user.mind, TRAIT_SURGEON))
+	if(HAS_TRAIT(user, TRAIT_SURGEON) || user.skill_check(SKILL_DOCTOR, EASY_CHECK) || HAS_TRAIT(user.mind, TRAIT_SURGEON))
 		if(replaced_by)
 			return FALSE
 		else
@@ -175,7 +175,7 @@
 		if(iscyborg(user) && user.a_intent != INTENT_HARM) //to save asimov borgs a LOT of heartache
 			return TRUE
 		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
-			to_chat(user, span_warning("This step requires a different tool!"))
+			//to_chat(user, span_warning("This step requires a different tool!"))
 			return TRUE
 
 /datum/surgery/proc/get_surgery_step()

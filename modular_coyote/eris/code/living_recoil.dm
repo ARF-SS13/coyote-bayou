@@ -32,9 +32,9 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 		recoil *= scale
 	update_recoil()
 
-/mob/living/proc/calculate_offset(var/offset = 0)
+/mob/living/proc/calculate_offset(var/offset = 0, skill_used = SKILL_GUNS)
 	if(recoil)
-		offset += recoil
+		offset += (recoil*(70/skill_value(skill_used)))
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		if(H.head)

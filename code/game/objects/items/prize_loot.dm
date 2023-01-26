@@ -6,10 +6,17 @@
 	var/in_use = FALSE
 	w_class = WEIGHT_CLASS_TINY
 	var/uses_left = 6 //15% chance to success, might need more.  Needs Playtesting.
+	var/min_uses_left = 2
+
+/obj/item/lockpick_set/bobby_pin
+	name = "a bobby pin"
+	desc = "Doubles up as a basic lockpicking instrument."
+	uses_left = 1
+	min_uses_left = 1
 
 /obj/item/lockpick_set/Initialize()
 	. = ..()
-	uses_left = rand(2, initial(src.uses_left))
+	uses_left = rand(initial(src.min_uses_left), initial(src.uses_left))
 
 /obj/item/lockpick_set/proc/use_pick(mob/user)
 	uses_left--
@@ -27,7 +34,7 @@
 
 /obj/item/locked_box
 	name = "locked box"
-	desc = "An object that contains objects that may be useful."
+	desc = "An object that contains objects that may be useful. It can be unlocked with either a screwdriver or a picking set. Alternatively a welder can be used."
 	icon = 'icons/obj/fallout/lockbox.dmi'
 	icon_state = "locked_safe"
 
@@ -57,7 +64,7 @@
 	//this makes it to where one can either allow or disallow the addition of the loot tables
 	var/enable_loot_initialize = TRUE
 	//this is the probability that the lockbox will just open on spawn
-	var/prob_open = 40
+	var/prob_open = 30
 
 /obj/item/locked_box/Initialize(mapload)
 	. = ..()
@@ -86,7 +93,7 @@
 		. += "[src] appears to be unlocked."
 	if(fragile)
 		. += "There are cracks, [src] may crumble from any sudden movements."
-	if(user.client.prefs.special_p >= 8)
+	if(user.client.prefs.special_p >= 8 || user.skill_check(SKILL_TRAPS, REGULAR_CHECK))
 		if(trapped)
 			. += "The lock looks tampered with."
 		. += "There [prize_amount > 1 ? "are" : "is"] [prize_amount] [prize_amount > 1 ? "objects" : "object"]."
@@ -103,23 +110,49 @@
 	for(var/iii in 1 to prize_amount) //go back up to understand why we populate prizes
 		prizes += pick(potential_prizes)
 
-/obj/item/locked_box/proc/spawn_prizes()
-	if(trapped) //gnarly
-		spawn(3 SECONDS)
-			explosion(src, 0,0,1, flame_range = 2)
-			qdel(src)
-		return
+/obj/item/locked_box/proc/spawn_prizes(mob/user)
+	if(trapped && istype(user)) //gnarly
+		if (!user.skill_roll(SKILL_TRAPS, DIFFICULTY_CHALLENGE))
+			spawn(3 SECONDS)
+				explosion(src, 0,0,1, flame_range = 2)
+				qdel(src)
+			return
+		else
+			to_chat(user, span_danger("You manage to defuse the bomb that was on the lock."))
 	var/turf/prize_turf = get_turf(src)
 	for(var/prize in prizes)
 		new prize(prize_turf)
 	qdel(src) //NO MORE, YOU MUST DIE AFTER SPAWNING
 
 /obj/item/locked_box/attackby(obj/item/W, mob/user, params)
+	var/skill_threshold = EXPERT_CHECK
+	var/skill_roll_difficulty = DIFFICULTY_EXPERT
+	var/skill_repair_roll_difficulty = DIFFICULTY_EXPERT
+	switch(lock_tier)
+		if(1)
+			skill_threshold = 20
+			skill_roll_difficulty = -30
+			skill_repair_roll_difficulty = DIFFICULTY_EASY
+		if(2)
+			skill_threshold = EASY_CHECK
+			skill_roll_difficulty = DIFFICULTY_EASY
+			skill_repair_roll_difficulty = DIFFICULTY_NORMAL
+		if(3)
+			skill_threshold = REGULAR_CHECK
+			skill_roll_difficulty = DIFFICULTY_NORMAL
+			skill_repair_roll_difficulty = DIFFICULTY_CHALLENGE
+		if(4)
+			skill_threshold = HARD_CHECK
+			skill_roll_difficulty = DIFFICULTY_CHALLENGE
+			skill_repair_roll_difficulty = DIFFICULTY_EXPERT
+		if(5)
+			skill_threshold = EXPERT_CHECK
+			skill_roll_difficulty = DIFFICULTY_EXPERT
+			skill_repair_roll_difficulty = 30
 	if(istype(W, /obj/item/screwdriver))
 		if(!locked)
 			return
-		var/success_after_tier = max(100 - (lock_tier * 20), 0) / 2 //the higher the lock tier, the harder it is, down to a max of 0, divided by 2
-		if(!prob(success_after_tier))
+		if(!(user.skill_check(SKILL_LOCKPICK, (skill_threshold + 10)) || user.skill_roll(SKILL_LOCKPICK, (skill_roll_difficulty + 5))))
 			if(fragile)
 				to_chat(user, span_warning("You fail to open [src]. It crumbles apart, all the contents being destroyed."))
 				qdel(src)
@@ -133,10 +166,22 @@
 	else if(istype(W, /obj/item/lockpick_set))
 		if(!locked)
 			return
-		var/success_after_tier = max(100 - (lock_tier * 20), 0) //the higher the lock tier, the harder it is, down to a max of 0
-		var/success_after_skill = min((user.client.prefs.special_l * 5) + success_after_tier, 100) //the higher the persons luck, the better, up to a max of 100, with 50 added
-		if(!prob(success_after_skill))
+		var/obj/item/lockpick_set/P = W
+		P.use_pick()
+		if(!(user.skill_check(SKILL_LOCKPICK, skill_threshold) || user.skill_roll(SKILL_LOCKPICK, skill_roll_difficulty)))
 			to_chat(user, span_warning("You fail to pick [src]."))
+			return
+		to_chat(user, span_green("You successfully unlock [src]."))
+		locked = FALSE
+		return
+	else if (istype(W, /obj/item/weldingtool))
+		var/obj/item/weldingtool/welder = W
+		if(!locked || !welder.welding)
+			return
+		welder.use(2)
+		if(!user.skill_roll(SKILL_REPAIR, skill_repair_roll_difficulty))
+			to_chat(user, span_warning("You fail to open [src]. It crumbles apart, all the contents being destroyed."))
+			qdel(src)
 			return
 		to_chat(user, span_green("You successfully unlock [src]."))
 		locked = FALSE
@@ -150,7 +195,7 @@
 		if(used)
 			return
 		used = TRUE
-		spawn_prizes()
+		spawn_prizes(user)
 		return
 	to_chat(user, span_warning("[src] is locked up tight, perhaps you can open it?"))
 

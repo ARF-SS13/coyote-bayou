@@ -216,6 +216,15 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 			M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
 /**
+ * Use the talk verb on a mob
+ *
+ * vars:
+ * * talker the mob who is attempting to talk to us
+ */
+/mob/proc/talk_to(mob/talker)
+	return FALSE
+
+/**
  * Show a message to all mobs in earshot of this one
  *
  * This would be for audible actions by the src mob
@@ -1067,6 +1076,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	var/datum/language_holder/H = get_language_holder()
 	H.open_language_menu(usr)
 
+/*
 /mob/verb/set_taste()
 	set name = "Set how you taste"
 	set category = "IC"
@@ -1075,7 +1085,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(message)
 		tastes = list("[message]" = 1)
 		to_chat(usr, span_notice("You now taste like [message]"))
-
+*/
 ///Adjust the nutrition of a mob
 /mob/proc/adjust_nutrition(change, max = INFINITY) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
 	nutrition = clamp(nutrition + change, 0, max)

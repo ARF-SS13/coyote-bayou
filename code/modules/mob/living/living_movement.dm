@@ -43,6 +43,8 @@
 
 /mob/living/toggle_move_intent()
 	. = ..()
+	if (sneaking && m_intent != MOVE_INTENT_WALK)
+		stop_sneaking()
 	update_move_intent_slowdown()
 
 /mob/living/update_config_movespeed()

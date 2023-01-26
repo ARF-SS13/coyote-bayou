@@ -101,6 +101,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/autoaxe
 	name = "Auto Axe"
@@ -114,6 +115,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 ////////////////
 ///POWER CELLS//
@@ -127,6 +129,7 @@
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/mfcrecharge
 	name = "Microfusion Cell (recycle)"
@@ -136,6 +139,7 @@
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/ecprecharge
 	name = "Electron Charge Pack (recycle)"
@@ -145,6 +149,7 @@
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/batteryboxplasma //plasmamusket ammo
 	name = "Plasma Can"
@@ -156,6 +161,7 @@
 	time = 20
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/batterybox //lasmusket ammo
 	name = "Laser Musket battery pack"
@@ -167,6 +173,7 @@
 	time = 20
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = HARD_CHECK
 
 
 
@@ -197,6 +204,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/m22shock
 	name = ".22 Long Rifle electroshock ammo box"
@@ -211,6 +219,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/c9mmincin
 	name = "9mm incendiary-tipped ammo box"
@@ -224,6 +233,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/c38boxincin
 	name = ".38 incendiary-tipped ammo box"
@@ -237,6 +247,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/c10mmincin
 	name = "10mm incendiary-tipped ammo box"
@@ -250,6 +261,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/a357boxincin
 	name = ".357 incendiary-tipped ammo box"
@@ -263,6 +275,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/m44boxincin
 	name = ".44 incendiary-tipped ammo box"
@@ -276,6 +289,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/c45incin
 	name = ".45 ACP incendiary-tipped ammo box"
@@ -289,6 +303,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/c4570boxheavy
 	name = ".45-70 Gv'mt ultradense ammo box"
@@ -302,6 +317,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/c4570boxheavy
 	name = ".45-70 Gv'mt ultradense ammo box"
@@ -315,6 +331,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/m5mmboxshock
 	name = "5mm ESD ammo box"
@@ -330,6 +347,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/a556shrap
 	name = "5.56mm micro-shrapnel ammo box"
@@ -343,6 +361,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 /*
 /datum/crafting_recipe/a556uranium
 	name = "5.56mm uranium-tipped ammo box"
@@ -386,6 +405,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 
 /*
@@ -417,6 +437,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 
 /datum/crafting_recipe/m14mmboxcontaminated
@@ -432,6 +453,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/m2mmblender
 	name = "2mm \"Blender\" magazine"
@@ -445,6 +467,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+	skill_level = REGULAR_CHECK
 
 /////////////////
 ///GUN CRAFTING//
@@ -463,6 +486,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = HARD_CHECK
 
 //Hobo Guns
 /datum/crafting_recipe/gun/zipgun
@@ -476,6 +500,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/gun/shotpistol
 	name = "Shotpistol"
@@ -486,6 +511,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/gun/pepperbox
 	name = "Pepperbox gun (10mm)"
@@ -498,6 +524,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/gun/piperifle
 	name = "Piperifle (.223)"
@@ -509,6 +536,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/gun/autopiperifle
 	name = "Auto-pipe rifle (.357)"
@@ -567,6 +595,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/gun/lasmusket
 	name = "Laser musket"
@@ -579,6 +608,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/gun/autoshock
 	name = "Autoshock tesla pistol"
@@ -591,6 +621,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = HARD_CHECK
 
 
 //browning hi-power
@@ -605,6 +636,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //m1911
 /datum/crafting_recipe/m1911
@@ -618,6 +650,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //n99
 /datum/crafting_recipe/n99
@@ -631,6 +664,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //hunting rifle
 /datum/crafting_recipe/huntingrifle
@@ -644,6 +678,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 //Caravan Shotgun
 /datum/crafting_recipe/caravanshotty
@@ -674,7 +709,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
-
+	skill_level = HARD_CHECK
+	
 //coyote repeater
 /datum/crafting_recipe/coyoterepeater
 	name = "Coyote Repeater"
@@ -687,6 +723,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
+	skill_level = REGULAR_CHECK
 
 //rainstick
 /datum/crafting_recipe/rainstick
@@ -701,7 +738,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
+	
 //medicinestick
 /datum/crafting_recipe/medicinestick
 	name = "Medicine Stick"
@@ -716,7 +755,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
+	
 //smelltheroses
 /datum/crafting_recipe/smelltheroses
 	name = "Smell-The-Roses"
@@ -730,6 +771,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 //mourningsunrise
 /datum/crafting_recipe/mourningsunrise
@@ -745,7 +788,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = TRUE
-
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
+	
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
 	name = "Varmint Rifle"
@@ -758,6 +803,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //craftable psuedo-ratslayer
 /datum/crafting_recipe/verminkiller
@@ -773,6 +819,7 @@
 	time = 300 //30 sec
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/policerifle
 	name = "Police Rifle"
@@ -784,6 +831,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/dks
 	name = "Marksman Sniper Rifle"
@@ -796,6 +844,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/policepistol
 	name = ".357 Police Pistol"
@@ -807,6 +856,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //rangemaster
 /datum/crafting_recipe/rangemaster
@@ -824,6 +874,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //r91
 /datum/crafting_recipe/r91
@@ -841,6 +892,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/pps
 	name = "Ppsh-41"
@@ -854,6 +906,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/commando
 	name = "DeLisle Commando Carbine"
@@ -867,6 +920,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //infiltrator
 /datum/crafting_recipe/infiltrator
@@ -883,6 +937,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //hunting shotgun
 /datum/crafting_recipe/huntingshotgun
@@ -897,6 +952,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //marksman carbine
 /datum/crafting_recipe/marksmancarbine
@@ -911,6 +967,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/combatrifle
 	name = "Combat Carbine"
@@ -924,6 +981,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //r84 lmg
 /datum/crafting_recipe/lmg
@@ -939,6 +997,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //lsw lmg
 /datum/crafting_recipe/gun/lsw
@@ -955,6 +1014,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 
 //service rifle
@@ -972,6 +1032,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //scout carbine
 /datum/crafting_recipe/scoutcarbine
@@ -987,6 +1048,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/gaussrifle
 	name = "M72 Gauss Rifle"
@@ -1005,6 +1067,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = EXPERT_CHECK
 
 /datum/crafting_recipe/neostead
 	name = "Neostead 2000"
@@ -1020,6 +1083,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 
 //aep7
@@ -1036,6 +1100,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 
 //recharger pistol, followers of the apocalypse
@@ -1055,6 +1120,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //lever action shotgun
 /datum/crafting_recipe/lever_action
@@ -1069,6 +1135,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //trail carbine
 /datum/crafting_recipe/trail_carbine
@@ -1083,6 +1150,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //.308 pistol
 /datum/crafting_recipe/thatgun
@@ -1095,6 +1163,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 //plasma pistol
 /datum/crafting_recipe/plasmapistol
@@ -1110,6 +1179,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //BoS plasma pistol
 /datum/crafting_recipe/lightplasmapistol
@@ -1124,6 +1194,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //uzi
 /datum/crafting_recipe/uzi
@@ -1137,6 +1208,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //10mm smg
 /datum/crafting_recipe/smg10mm
@@ -1150,6 +1222,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //grease gun
 /datum/crafting_recipe/grease_gun
@@ -1163,6 +1236,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 //brush gun
 /datum/crafting_recipe/brush
@@ -1178,6 +1252,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 //r91
 /datum/crafting_recipe/r91
@@ -1194,6 +1269,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //Riot shotgun
 /datum/crafting_recipe/riotshotgun
@@ -1210,6 +1286,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //sniper
 /datum/crafting_recipe/sniper
@@ -1226,6 +1303,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/m1carbine
 	name = "M1 Carbine"
@@ -1239,6 +1317,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //deagle
 /datum/crafting_recipe/deagle
@@ -1255,6 +1334,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //a180
 /datum/crafting_recipe/a180
@@ -1271,6 +1351,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //aer9
 /datum/crafting_recipe/AER9
@@ -1287,6 +1368,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //plasma rifle
 /datum/crafting_recipe/plasmarifle
@@ -1304,6 +1386,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = EXPERT_CHECK
 
 //tribeam
 /datum/crafting_recipe/tribeam
@@ -1321,6 +1404,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = EXPERT_CHECK
 
 //tribeam Stun
 /datum/crafting_recipe/tribeam_stun
@@ -1338,6 +1422,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = EXPERT_CHECK
 
 //rcw
 /datum/crafting_recipe/rcw
@@ -1355,6 +1440,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 
 //AM rifle
@@ -1372,6 +1458,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 	//M2045 Magnum Revolver Rifle
 /datum/crafting_recipe/m2405
@@ -1388,6 +1475,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //city killer
 /datum/crafting_recipe/city_killer
@@ -1404,6 +1492,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //rangemaster
 /datum/crafting_recipe/rangemaster
@@ -1420,6 +1509,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //bozar
 /datum/crafting_recipe/bozar
@@ -1437,6 +1527,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //wattz2000
 /datum/crafting_recipe/gun/energy/wattz2k
@@ -1454,6 +1545,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //magneto
 /datum/crafting_recipe/magnetowattz
@@ -1465,6 +1557,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = HARD_CHECK
 
 //extendo GLOCK
 /datum/crafting_recipe/glock86a
@@ -1478,6 +1571,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	skill_level = HARD_CHECK
 
 //SLR
 /datum/crafting_recipe/slr
@@ -1495,6 +1589,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //R82 heavy service rifle
 /datum/crafting_recipe/R82
@@ -1511,6 +1606,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 //R82 heavy service rifle
 /datum/crafting_recipe/R93
@@ -1527,6 +1623,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 
 //////////////////////////////////
@@ -1546,6 +1643,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/suppressor
 	name = "Silencer"
@@ -1561,6 +1659,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/ergonomic_grip
 	name = "Ergonomic Grip"
@@ -1574,6 +1673,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/metal_guard
 	name = "Metal Guard"
@@ -1602,6 +1702,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/booster
 	name = "Booster Chip"
@@ -1616,6 +1717,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/heatsink
 	name = "Heatsink"
@@ -1630,6 +1732,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/laserguide
 	name = "Laser Guide"
@@ -1643,6 +1746,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = VERY_EASY_CHECK
 
 /datum/crafting_recipe/gigalens
 	name = "GigaLens"
@@ -1657,6 +1761,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/battshunt
 	name = "Poseidon Quantum Injection Electro-shunt"
@@ -1672,6 +1777,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/overdrivemod
 	name = "REPCONN overdrive chip"
@@ -1688,6 +1794,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /*/datum/crafting_recipe/overshootermod
 	name = "Extended internal magazine kit"
@@ -1716,6 +1823,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/coolant
 	name = "Coolant Coil"
@@ -1730,6 +1838,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/coolant
 	name = "Full Auto Kit"
@@ -1744,6 +1853,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/flux
 	name = "Flux capacitor"
@@ -1758,6 +1868,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/lenses
 	name = "Focused crystal lenses"
@@ -1773,6 +1884,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/conductors
 	name = "Superconductor coil"
@@ -1787,6 +1899,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/receiver
 	name = "Advanced modular receiver"
@@ -1801,6 +1914,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/assembly
 	name = "Pre-war weapon assembly"
@@ -1816,6 +1930,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/alloys
 	name = "Superlight alloys"
@@ -1830,6 +1945,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
+	skill_level = HARD_CHECK
 /*
 Not implemented due to balance at the moment
 /datum/crafting_recipe/caws
@@ -1856,6 +1972,7 @@ Not implemented due to balance at the moment
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	skill_level = VERY_EASY_CHECK
 
 //AR-10 armalite
 
@@ -1874,6 +1991,7 @@ Not implemented due to balance at the moment
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/rangerlever
 	name = "Ranger Repeater"
@@ -1888,6 +2006,7 @@ Not implemented due to balance at the moment
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/schmeisser
 	name = "Schmeisser Classic"
@@ -1901,3 +2020,4 @@ Not implemented due to balance at the moment
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+	skill_level = HARD_CHECK

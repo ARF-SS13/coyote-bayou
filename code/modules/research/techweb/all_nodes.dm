@@ -18,9 +18,10 @@
 	display_name = "Biological Technology"
 	description = "What makes us tick."	//the MC, silly!
 	prereq_ids = list("base")
-	design_ids = list("chem_heater", "chem_master", "chem_dispenser", "sleeper", "pandemic", "defibmount", "operating", "soda_dispenser", "beer_dispenser")
+	design_ids = list("chem_heater", "chem_master", "chem_dispenser", "chem_lab", "drug_lab", "sleeper", "pandemic", "defibmount", "operating", "soda_dispenser", "beer_dispenser")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_DOCTOR
 
 /datum/techweb_node/adv_biotech
 	id = "adv_biotech"
@@ -30,6 +31,8 @@
 	design_ids = list("piercesyringe", "smoke_machine", "limbgrower", "defibrillator", "meta_beaker", "virusmaker"/*, "medbeam"*/)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/bio_process
 	id = "bio_process"
@@ -49,6 +52,8 @@
 	design_ids = list("surgery_lobotomy", "surgery_reconstruction")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/exp_surgery
 	id = "exp_surgery"
@@ -58,6 +63,8 @@
 	design_ids = list("surgery_revival","surgery_vein_thread","surgery_nerve_splice","surgery_nerve_ground","surgery_viral_bond", "autosurgeon")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = HARD_CHECK
 
 /*
 /datum/techweb_node/alien_surgery
@@ -87,6 +94,7 @@
 	design_ids = list("icprinter", "icupgadv", "icupgclo")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /////////////////////////engineering tech/////////////////////////
 /datum/techweb_node/engineering
@@ -100,6 +108,8 @@
 	"plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "colormate")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/adv_engi
 	id = "adv_engi"
@@ -111,6 +121,8 @@
 	"rcd_upgrade_simple_circuits", "rcd_ammo_large", "sheetifier")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/high_efficiency
 	id = "high_efficiency"
@@ -120,6 +132,8 @@
 	design_ids = list("pico_mani", "super_matter_bin")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/adv_power
 	id = "adv_power"
@@ -129,6 +143,8 @@
 	design_ids = list("smes", "super_cell", "hyper_cell", "super_capacitor", "superpacman", "mrspacman", "power_turbine", "power_turbine_console", "power_compressor", "circulator", "teg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/future_parts
 	id = "future_parts"
@@ -138,6 +154,7 @@
 	design_ids = list("femto_mani", "triphasic_scanning", "quadratic_capacitor","bluespace_matter_bin")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
+	skill_level_needed = HARD_CHECK
 
 /////////////////////////Bluespace tech/////////////////////////
 
@@ -169,6 +186,7 @@
 	design_ids = list("paicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_REPAIR
 
 /datum/techweb_node/adv_robotics
 	id = "adv_robotics"
@@ -178,6 +196,8 @@
 	design_ids = list("borg_upgrade_diamonddrill", "borg_upgrade_trashofholding", "borg_upgrade_advancedmop")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/neural_programming
 	id = "neural_programming"
@@ -195,6 +215,8 @@
 	design_ids = list("mmi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyborg
 	id = "cyborg"
@@ -205,6 +227,8 @@
 	export_price = 5000
 	design_ids = list("robocontrol", "sflash", "borg_suit", "borg_head", "borg_chest", "borg_r_arm", "borg_l_arm", "borg_r_leg", "borg_l_leg", "borgupload",
 	"cyborgrecharger", "borg_upgrade_restart", "borg_upgrade_rename")
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyborg_upg_util
 	id = "cyborg_upg_util"
@@ -214,6 +238,7 @@
 	design_ids = list("borg_upgrade_lavaproof", "borg_upgrade_thrusters", "borg_upgrade_selfrepair", "borg_upgrade_expand", "borg_upgrade_rped")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyborg_upg_med
 	id = "cyborg_upg_med"
@@ -223,6 +248,7 @@
 	design_ids = list("borg_upgrade_defibrillator", "borg_upgrade_piercinghypospray", "borg_upgrade_highstrengthsynthesiser", "borg_upgrade_expandedsynthesiser", "borg_upgrade_pinpointer")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyborg_upg_combat
 	id = "cyborg_upg_combat"
@@ -232,6 +258,7 @@
 	design_ids = list("borg_upgrade_disablercooler", "borg_upgrade_vtec")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/ai
 	id = "ai"
@@ -243,6 +270,7 @@
 	"default_module", "borg_ai_control", "mecha_tracking_ai_control", "aiupload", "intellicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	skill_level_needed = HARD_CHECK
 
 /////////////////////////EMP tech/////////////////////////
 /datum/techweb_node/emp_basic //EMP tech for some reason
@@ -262,6 +290,7 @@
 	design_ids = list("ultra_micro_laser")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/emp_super
 	id = "emp_super"
@@ -271,6 +300,7 @@
 	design_ids = list("quadultra_micro_laser")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 ////////////////////////Computer tech////////////////////////
 /datum/techweb_node/comptech
@@ -360,6 +390,7 @@
 	prereq_ids = list("plumbing", "adv_engi")
 	design_ids = list("plumb_rcd", "autohydrotray")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = REGULAR_CHECK
 /datum/techweb_node/cryotech
 	id = "cryotech"
 	display_name = "Cryostasis Technology"
@@ -368,6 +399,7 @@
 	design_ids = list("splitbeaker", "noreactsyringe", "cryotube", "cryo_Grenade")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 4000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/subdermal_implants
 	id = "subdermal_implants"
@@ -377,6 +409,7 @@
 	design_ids = list("implanter", "implantcase", "implant_chem", "implant_tracking", "implant_auth", "implant_loyal")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyber_organs
 	id = "cyber_organs"
@@ -385,6 +418,7 @@
 	prereq_ids = list("adv_biotech")
 	design_ids = list("cybernetic_ears", "cybernetic_heart", "cybernetic_liver", "cybernetic_lungs", "cybernetic_tongue")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/cyber_organs_upgraded
 	id = "cyber_organs_upgraded"
@@ -393,6 +427,7 @@
 	prereq_ids = list("cyber_organs")
 	design_ids = list("cybernetic_ears_u", "cybernetic_heart_u", "cybernetic_liver_u", "cybernetic_lungs_u")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	skill_level_needed = HARD_CHECK
 /datum/techweb_node/cyber_implants
 	id = "cyber_implants"
 	display_name = "Cybernetic Implants"
@@ -401,6 +436,7 @@
 	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", "ci-medhud", "ci-sechud", "ci-service")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/adv_cyber_implants
 	id = "adv_cyber_implants"
@@ -410,6 +446,7 @@
 	design_ids = list("ci-reviver", "ci-nutrimentplus")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/combat_cyber_implants
 	id = "combat_cyber_implants"
@@ -419,6 +456,7 @@
 	design_ids = list("ci-antidrop", "ci-antistun")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/advance_limbs
 	id = "advance_limbs"
@@ -427,6 +465,7 @@
 	prereq_ids = list("adv_biotech", "surplus_limbs")
 	design_ids = list("adv_l_arm", "adv_r_arm", "adv_r_leg", "adv_l_leg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1250)
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/surplus_limbs
 	id = "surplus_limbs"
@@ -454,6 +493,7 @@
 	design_ids = list("drill_diamond", "jackhammer", "hypermod")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/janitor
 	id = "janitor"
@@ -481,6 +521,7 @@
 	prereq_ids = list("adv_engi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2750)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 /*
 /datum/techweb_node/exp_flight
 	id = "exp_flight"
@@ -500,6 +541,7 @@
 	design_ids = list("pin_testing", "tele_shield", "mfc", "ec")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/adv_weaponry
 	id = "adv_weaponry"
@@ -509,6 +551,7 @@
 	design_ids = list("pin_loyalty", "ecp", "bullet_shield")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
+	skill_level_needed = REGULAR_CHECK
 
 /*
 /datum/techweb_node/electric_weapons
@@ -810,6 +853,7 @@
 	prereq_ids = list("alientech", "advance_surgerytools")
 	design_ids = list("alien_scalpel", "alien_hemostat", "alien_retractor", "alien_saw", "alien_drill", "alien_cautery", "ayyplantgenes")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	skill_level_needed = EXPERT_CHECK
 
 /datum/techweb_node/alien_engi
 	id = "alien_engi"
@@ -818,6 +862,7 @@
 	prereq_ids = list("alientech", "exp_tools")
 	design_ids = list("alien_wrench", "alien_wirecutters", "alien_screwdriver", "alien_crowbar", "alien_welder", "alien_multitool")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	skill_level_needed = EXPERT_CHECK
 
 /datum/techweb_node/syndicate_basic
 	id = "syndicate_basic"
@@ -827,6 +872,7 @@
 	design_ids = list("decloner", "borg_syndicate_module", "suppressor", "donksofttoyvendor", "donksoft_refill", "syndiesleeper")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
+	skill_level_needed = EXPERT_CHECK
 
 /datum/techweb_node/syndicate_basic/New()		//Crappy way of making syndicate gear decon supported until there's another way.
 	. = ..()

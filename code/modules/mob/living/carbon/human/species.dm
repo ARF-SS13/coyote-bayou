@@ -149,12 +149,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(clear)
 		GLOB.roundstart_races = list()
 		GLOB.roundstart_race_names = list()
+		/*
 	for(var/I in subtypesof(/datum/species))
 		var/datum/species/S = new I
 		if(S.check_roundstart_eligible())
 			GLOB.roundstart_races |= S.id
 			GLOB.roundstart_race_names["[S.name]"] = S.id
 			qdel(S)
+	*/
 	if(!GLOB.roundstart_races.len)
 		GLOB.roundstart_races += "human"
 
@@ -1438,6 +1440,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		target.visible_message(span_warning("[target] blocks [user]'s attack!"), target = user, \
 			target_message = span_warning("[target] blocks your attack!"))
 		return FALSE
+	if(!user.skill_roll(SKILL_UNARMED, target.special_a))
+		target.visible_message(span_warning("[user]'s attack misses!"), target = user, \
+			target_message = span_warning("You missed your attack!"))
+		playsound(user, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+		return FALSE
 
 	if(!(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
 		if(HAS_TRAIT(user, TRAIT_PUGILIST))//CITADEL CHANGE - makes punching cause staminaloss but funny martial artist types get a discount
@@ -1477,6 +1484,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
 			damage *= 0.8
 		//END OF CITADEL CHANGES
+
+		//SPECIAL CHANGES
+		damage *= (0.5 + (user.special_s)/10)
+		//END OF SPECIAL CHANGES
 
 		var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(user.zone_selected))
 
@@ -1647,7 +1658,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			randn -= 25 //if you are a pugilist, you're slapping that item from them pretty reliably
 		if(HAS_TRAIT(target, TRAIT_PUGILIST))
 			randn += 25 //meanwhile, pugilists are less likely to get disarmed
-
+		randn += user.skill_roll_under(SKILL_UNARMED, DIFFICULTY_CHALLENGE)
+		randn -= target.skill_roll_under(SKILL_UNARMED, DIFFICULTY_CHALLENGE)
 		if(randn <= 35)//CIT CHANGE - changes this back to a 35% chance to accomodate for the above being commented out in favor of right-click pushing
 			var/obj/item/I = null
 			if(target.pulling)

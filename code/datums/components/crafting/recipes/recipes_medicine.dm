@@ -9,6 +9,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/bluepotion
 	name = "Blue Potion"
@@ -21,6 +23,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/greenpotion
 	name = "Green Potion"
@@ -33,6 +37,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/upgraded_gauze
 	name = "Improved Gauze"
@@ -42,6 +48,8 @@
 				/datum/reagent/abraxo_cleaner/sterilizine = 10)
 	category = CAT_MEDICAL
 	blacklist = list(/obj/item/stack/medical/gauze/improvised)
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/brute_pack
 	name = "Suture Pack"
@@ -50,6 +58,8 @@
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/medicine/styptic_powder = 10)
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	skill_level = EASY_CHECK
 
 /datum/crafting_recipe/ointment
 	name = "Improvised Ointment"
@@ -58,6 +68,9 @@
 	reqs = list(/obj/item/stack/medical/gauze/improvised = 1,
 				/obj/item/reagent_containers/food/snacks/grown/agave = 1)
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	skill_level = EASY_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/burn_pack
 	name = "Regenerative Mesh"
@@ -66,6 +79,8 @@
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/medicine/silver_sulfadiazine = 10)
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/healpowder  //keep the number of plants needed low so picking wild plants is viable. balance botany instead.
 	name = "Healing powder"
@@ -74,6 +89,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1)
 	time = 5
 	category = CAT_MEDICAL
+	skill_needed = SKILL_OUTDOORSMAN
 
 /datum/crafting_recipe/healpowder5
 	name = "Batch of healing powders (x5)"
@@ -82,6 +98,8 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5)
 	time = 10
 	category = CAT_MEDICAL
+	skill_needed = SKILL_OUTDOORSMAN
+
 
 /datum/crafting_recipe/bitterdrink
 	name = "Bottle bitterdrink"
@@ -93,6 +111,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE // Only the Twin Mothers Tribe knew the secret to making bitter drink prior to legion annexation. Any clever chemist can bootleg the recipe though.
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/bitterdrink5
 	name = "Batch of bitterdrink (x5)"
@@ -104,6 +124,8 @@
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
@@ -116,6 +138,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE // only tribals know the secret
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/healpoultice5
 	name = "Batch of healing poultice (x5)"
@@ -128,6 +152,8 @@
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/smell_salts
 	name = "Smelling salts"
@@ -139,6 +165,8 @@
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 50
 	category = CAT_MEDICAL
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/stimpak // Heals the same amount as healing powder and bitters for its material cost, just more refined and faster.
 	name = "Stimpak"
@@ -150,6 +178,9 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/stimpak/chemistry // Purely chemistry recipe
 	name = "Stimpak (from chems)"
@@ -160,6 +191,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/stimpak5
 	name = "Stimpak x5"
@@ -171,6 +204,8 @@
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/stimpak5/chemistry // Purely chemistry recipe
 	name = "Stimpak x5 (from chems)"
@@ -181,6 +216,8 @@
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/superstimpak
 	name = "Super Stimpak"
@@ -194,6 +231,8 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/superstimpak5
 	name = "Super Stimpak (x5)"
@@ -207,6 +246,8 @@
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/salvage_stimpak
 	name = "Salvage injector"
@@ -215,6 +256,7 @@
 	time = 20
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+	skill_level = VERY_EASY_CHECK
 
 
 /datum/crafting_recipe/jet
@@ -227,6 +269,8 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/turbo
 	name = "Turbo"
@@ -238,6 +282,9 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/psycho
 	name = "Psycho"
@@ -249,6 +296,9 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/medx
 	name = "Med-X"
@@ -260,6 +310,9 @@
 	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = HARD_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/medx/chemistry
 	name = "Med-X (from chems)"
@@ -271,6 +324,8 @@
 	tools = list(TOOL_CHEMMASTER)
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/buffout
 	name = "Buffout"
@@ -284,6 +339,8 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/steady
 	name = "Steady"
@@ -296,6 +353,8 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 	always_available = FALSE
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/extract_gaia
 	name = "Extract gaia"
@@ -305,6 +364,9 @@
 	time = 20
 	tools = list(TOOL_ALCHEMY_TABLE)
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	falls_back_on_outdoors = TRUE
+	skill_level = REGULAR_CHECK
 
 /datum/crafting_recipe/primitive_defib
 	name = "Improvised Defibrillator"
@@ -329,6 +391,7 @@
 	time = 100
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/crafted_chem_cartridge
 	name = "Crafted chemical Cartridge"
@@ -344,6 +407,7 @@
 	time = 100
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
+	skill_level = HARD_CHECK
 
 /datum/crafting_recipe/fiery_purgative
 	name = "Fiery purgative"
@@ -364,6 +428,9 @@
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
+	skill_needed = SKILL_OUTDOORSMAN
+	skill_level = REGULAR_CHECK
+
 
 /obj/item/storage/box/medicine/fiery_purgative5
 	name = "box of fiery purgative"
@@ -385,6 +452,9 @@
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/antivenom_2
 	name = "Bottle antivenom"
@@ -394,6 +464,9 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 10
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/antivenom5
 	name = "Bottle antivenom (x5)"
@@ -404,6 +477,9 @@
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 /datum/crafting_recipe/antivenom5_2
 	name = "Bottle antivenom (x5)"
@@ -413,6 +489,9 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 20
 	category = CAT_MEDICAL
+	skill_needed = SKILL_SCIENCE
+	skill_level = REGULAR_CHECK
+	falls_back_on_outdoors = TRUE
 
 /obj/item/storage/box/medicine/antivenom5
 	name = "box of antivenom"

@@ -36,6 +36,15 @@
 	. = ..()
 	. += span_info("It currently has [src.getPercentage()]% remaining.")
 
+/obj/item/stock_parts/chem_cartridge/empty
+	name = "ancient chemical cartridge"
+	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one is used up."
+	icon_state = "salvaged"
+	item_state = "salvaged"
+	custom_price = PRICE_ABOVE_NORMAL
+	maxCharge = 0
+	custom_materials = list(/datum/material/iron=500, /datum/material/glass=500)
+
 /obj/item/stock_parts/chem_cartridge/garbage
 	name = "ancient chemical cartridge"
 	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one is very worn and mostly used up."

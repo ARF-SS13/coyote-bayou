@@ -554,6 +554,7 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
+	custom_price = PRICE_ALMOST_EXPENSIVE
 
 ////////////////////////
 // LIGHT TRIBAL ARMOR //
@@ -937,6 +938,7 @@
 	max_integrity = 150
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	custom_price = PRICE_EXPENSIVE
 
 /obj/item/clothing/suit/armor/light/raider/badlands
 	name = "badlands raider armor"
@@ -1308,6 +1310,7 @@
 	item_state = "leather_jacket_thick"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = ARMS | CHEST | LEGS
+	custom_price = PRICE_ABOVE_EXPENSIVE
 
 // Recipe : Thick Leather Jacket + Deathclaw Skin
 /obj/item/clothing/suit/armor/light/leather/leathercoat
@@ -1318,6 +1321,7 @@
 	siemens_coefficient = 0.8
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T3)
 	body_parts_hidden = ARMS | CHEST
+	custom_price = PRICE_ABOVE_EXPENSIVE
 
 /obj/item/clothing/suit/armor/light/leather/tanvest
 	name = "tanned vest"
@@ -2247,6 +2251,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
+	custom_price = PRICE_EXPENSIVE
 
 /obj/item/clothing/suit/armor/medium/raider/slam
 	name = "slammer raider armor"
@@ -2484,6 +2489,7 @@
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_PAW_TAURIC
+	custom_price = PRICE_EXPENSIVE
 
 /obj/item/clothing/suit/armor/heavy/metal/polished
 	name = "polished metal armor"

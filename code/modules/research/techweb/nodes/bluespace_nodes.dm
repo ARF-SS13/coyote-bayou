@@ -7,30 +7,34 @@
 	prereq_ids = list("base", "datatheory")
 	design_ids = list("beacon", "xenobioconsole", "telesci_gps", "xenobio_monkeys")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/practical_bluespace
 	id = "practical_bluespace"
 	display_name = "Applied Quantum Research"
 	description = "Using quantum technology to make things faster and better."
 	prereq_ids = list("bluespace_basic", "engineering")
-/*	design_ids = list("bs_rped", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "xenobio_slimebasic")*/
+	design_ids = list("bs_rped", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "xenobio_slimebasic")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/adv_bluespace
 	id = "adv_bluespace"
 	display_name = "Advanced Quantum Research"
 	description = "Deeper understanding of how the Quantum Theory works"
 	prereq_ids = list("practical_bluespace", "high_efficiency")
-/*	design_ids = list("bluespace_matter_bin", "femto_mani", "triphasic_scanning", "bluespace_crystal", "xenobio_slimeadv")*/
+	design_ids = list("bluespace_matter_bin", "femto_mani", "triphasic_scanning", "bluespace_crystal", "xenobio_slimeadv")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	skill_level_needed = HARD_CHECK
 
 /datum/techweb_node/bluespace_power
 	id = "bluespace_power"
 	display_name = "Quantum Power Technology"
 	description = "Even more powerful.. power!"
 	prereq_ids = list("adv_power", "adv_bluespace")
-/*	design_ids = list("bluespace_cell", "quadratic_capacitor")*/
+	design_ids = list("bluespace_cell", "quadratic_capacitor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = HARD_CHECK
 
 /*8
 /datum/techweb_node/bluespace_holding

@@ -7,6 +7,8 @@
 	prereq_ids = list("base")
 	design_ids = list("paicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/mmi
 	id = "mmi"
@@ -14,6 +16,7 @@
 	display_name = "Man Machine Interface"
 	description = "A slightly Frankensteinian device that allows human brains to interface natively with software APIs."
 	design_ids = list("mmi")
+	skill_level_needed = HARD_CHECK
 
 
 /datum/techweb_node/cyborg
@@ -23,6 +26,9 @@
 	description = "Sapient robots with preloaded tool modules and programmable laws."
 	design_ids = list("robocontrol", "borg_suit", "sflash", "borg_head", "borg_chest", "borg_r_arm", "borg_l_arm", "borg_r_leg", "borg_l_leg", "borgupload",
 	"cyborgrecharger", "borg_upgrade_restart", "borg_upgrade_rename")
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 
 /datum/techweb_node/adv_robotics
@@ -32,6 +38,9 @@
 	prereq_ids = list("robotics")
 	design_ids = list("borg_upgrade_diamonddrill", "borg_upgrade_advancedmop", "borg_upgrade_advcutter")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 
 /datum/techweb_node/neural_programming
@@ -40,6 +49,8 @@
 	description = "Study into networks of processing units that mimic our brains."
 	prereq_ids = list("biotech", "datatheory")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/posibrain
 	id = "posibrain"
@@ -48,6 +59,8 @@
 	prereq_ids = list("neural_programming")
 	design_ids = list("mmi_posi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/cyborg_upg_util
 	id = "cyborg_upg_util"
@@ -56,6 +69,9 @@
 	prereq_ids = list("engineering", "robotics")
 	design_ids = list("borg_upgrade_lavaproof", "borg_upgrade_thrusters", "borg_upgrade_selfrepair", "borg_upgrade_expand", "borg_upgrade_rped")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	alt_skill = SKILL_REPAIR
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/cyborg_upg_med
 	id = "cyborg_upg_med"
@@ -64,6 +80,8 @@
 	prereq_ids = list("adv_biotech", "robotics")
 	design_ids = list("borg_upgrade_advhealth", "borg_upgrade_piercinghypospray", "borg_upgrade_highstrengthsynthesiser", "borg_upgrade_expandedsynthesiser", "borg_upgrade_pinpointer", "borg_upgrade_surgicalprocessor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	skill_level_needed = REGULAR_CHECK
+
 
 /datum/techweb_node/cyborg_upg_combat
 	id = "cyborg_upg_combat"
@@ -72,6 +90,8 @@
 	prereq_ids = list("adv_robotics", "adv_engi" , "weaponry")
 	design_ids = list("borg_upgrade_vtec", "borg_upgrade_disablercooler")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	skill_level_needed = REGULAR_CHECK
+
 
 
 /datum/techweb_node/ai
@@ -83,4 +103,6 @@
 	"reset_module", "purge_module", "remove_module", "freeformcore_module", "asimov_module", "paladin_module", "tyrant_module", "corporate_module",
 	"default_module", "borg_ai_control", "mecha_tracking_ai_control", "aiupload", "intellicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	skill_level_needed = HARD_CHECK
+
 

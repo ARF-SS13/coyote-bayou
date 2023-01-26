@@ -12,6 +12,8 @@
 	var/password = "Swordfish"
 	var/interaction_activated = TRUE //use the door to enter the password
 	var/voice_activated = FALSE //Say the password nearby to open the door.
+	var/list/failures = list()
+	var/terminal_has_pass = FALSE
 
 /obj/machinery/door/password/voice
 	voice_activated = TRUE
@@ -21,6 +23,8 @@
 	. = ..()
 	if(voice_activated)
 		flags_1 |= HEAR_1
+	if(!terminal_has_pass)
+		password = random_string(8, GLOB.alphabet)
 
 /obj/machinery/door/password/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
 	. = ..()
@@ -61,10 +65,20 @@
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 30, 1)
 
 /obj/machinery/door/password/proc/ask_for_pass(mob/user)
-	var/guess = stripped_input(user,"Enter the password:", "Password", "")
-	if(guess == password)
-		return TRUE
-	return FALSE
+	var/hack = input(user, "Do you wish to hack or guess the password?", "Hack") in list("Hack", "Guess")
+	if (hack == "Guess")
+		var/guess = stripped_input(user,"Enter the password:", "Password", "")
+		if(guess == password)
+			return TRUE
+		return FALSE
+	else
+		if(do_after(user, 10 SECONDS, target = src) && user.skill_roll(SKILL_SCIENCE, DIFFICULTY_CHALLENGE) && !failures.Find(WEAKREF(user)))
+			user.visible_message(span_good("[user] hacks the door!"), span_good("Got it!"))
+			return TRUE
+		else
+			failures |= WEAKREF(user)
+			user.visible_message(span_warning("[user] fails to hack the door!"), span_warning("Dang, looks like it's locked itself down from me."))
+			return FALSE
 
 /obj/machinery/door/password/emp_act(severity)
 	return

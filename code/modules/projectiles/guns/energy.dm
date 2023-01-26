@@ -25,6 +25,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_skill_used = SKILL_ENERGY
 
 	var/obj/item/stock_parts/cell/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -161,8 +162,18 @@
 
 /obj/item/gun/energy/do_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(!chambered && can_shoot())
-		process_chamber()	// If the gun was drained and then recharged, load a new shot.
-	return ..()
+		if (user.skill_roll(SKILL_ENERGY, -30))
+			process_chamber()	// If the gun was drained and then recharged, load a new shot.
+		else
+			to_chat(user, span_danger("You fumble your energy gun!"))
+			playsound(user, dryfire_sound, 25, 1, -1)
+			return
+	if (user.skill_roll(SKILL_ENERGY, -30))
+		return ..()
+	else
+		to_chat(user, span_danger("You fumble your energy gun!"))
+		playsound(user, dryfire_sound, 25, 1, -1)
+		return
 
 // Firemodes/Ammotypes
 

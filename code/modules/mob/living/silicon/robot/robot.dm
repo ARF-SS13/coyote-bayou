@@ -298,12 +298,12 @@
 	user.DelayNextAction(CLICK_CD_MELEE)
 	if(src == user)
 		to_chat(user, span_notice("You start fixing yourself..."))
-		if(!W.use_tool(src, user, 50))
+		if(!W.use_tool(src, user, max(1, 75 - user.skill_value(SKILL_REPAIR))))
 			return
 		adjustBruteLoss(-10)
 	else
 		to_chat(user, span_notice("You start fixing [src]..."))
-		if(!do_after(user, 30, target = src))
+		if(!do_after(user, max(1, 75 - user.skill_value(SKILL_REPAIR)), target = src))
 			return
 		adjustBruteLoss(-30)
 	updatehealth()
@@ -322,7 +322,7 @@
 			adjustToxLoss(-10)
 		else
 			to_chat(user, span_notice("You start fixing [src]..."))
-			if(!W.use_tool(src, user, 30, 1))
+			if(!W.use_tool(src, user, max(1, 75 - user.skill_value(SKILL_REPAIR)), 1))
 				to_chat(user, span_warning("You need more cable to repair [src]!"))
 				return
 			adjustFireLoss(-30)

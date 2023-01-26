@@ -149,17 +149,19 @@
 		return output_message ? BODYPART_MISSING : UNABLE_TO_HEAL
 	if(target_bodypart.status != BODYPART_ORGANIC)
 		return output_message ? BODYPART_INORGANIC : UNABLE_TO_HEAL
+
+	var/user_skill_first_aid = (user.skill_value(SKILL_FIRST_AID)/REGULAR_CHECK)
 	/// Okay we can reasonably assume this limb is okay to try and treat
 	. = BODYPART_FINE
 	if((heal_brute && target_bodypart.brute_dam) || (heal_burn && target_bodypart.burn_dam))
 		. |= DO_HEAL_DAMAGE
 	if(is_bandage)
-		if(target_bodypart.is_damaged() && target_bodypart.apply_gauze(src, 1, TRUE)) // always apply the stuff if they dont have it
+		if(target_bodypart.is_damaged() && target_bodypart.apply_gauze(src, user_skill_first_aid, TRUE)) // always apply the stuff if they dont have it
 			ENABLE_BITFIELD(., DO_APPLY_BANDAGE)
 		/* else if(target_bodypart.bleed_dam || target_bodypart.burn_dam || target_bodypart.burn_dam)
 			. |= DO_APPLY_BANDAGE */
 	if(is_suture)
-		if(target_bodypart.is_damaged() && target_bodypart.apply_suture(src, 1, TRUE)) // always apply the stuff if they dont have it
+		if(target_bodypart.is_damaged() && target_bodypart.apply_suture(src, user_skill_first_aid, TRUE)) // always apply the stuff if they dont have it
 			ENABLE_BITFIELD(., DO_APPLY_SUTURE)
 	if(CHECK_BITFIELD(., DO_APPLY_SUTURE) && hurt_brute)
 		ENABLE_BITFIELD(., DO_HURT_DAMAGE)
@@ -216,6 +218,7 @@
 
 	var/obj/item/bodypart/affected_bodypart = output_list["bodypart"]
 	var/heal_operations = output_list["operations"]
+	var/user_skill_first_aid = (user.skill_value(SKILL_FIRST_AID)/REGULAR_CHECK)
 	do_medical_message(user, C, affected_bodypart, "start")
 	is_healing = TRUE
 	var/covering_output = null
@@ -229,12 +232,12 @@
 	is_healing = FALSE
 	/// now we start doing 'healy' things!
 	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
-		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
-			if(prob(50))
+		if(affected_bodypart.receive_damage((hurt_brute / user_skill_first_aid), sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
+			if(!user.skill_roll(SKILL_FIRST_AID, DIFFICULTY_NORMAL))
 				C.emote("scream") // a
 			C.update_damage_overlays()
 	if(heal_operations & DO_HEAL_DAMAGE)
-		if(affected_bodypart.heal_damage(heal_brute, heal_burn, (heal_brute + heal_burn), updating_health = TRUE))
+		if(affected_bodypart.heal_damage((heal_brute * user_skill_first_aid), (heal_burn * user_skill_first_aid), (heal_brute + heal_burn), updating_health = TRUE))
 			C.update_damage_overlays()
 	/* if(heal_operations & DO_UNBLEED_WOUND)
 		for(var/datum/wound/wounds_to_unbleed in affected_bodypart.wounds)
@@ -247,9 +250,9 @@
 				wounds_to_unburn.treat_burn(src, user, (user == C))
 				break
 	if(heal_operations & DO_APPLY_BANDAGE)
-		covering_output = affected_bodypart.apply_gauze(src, 1)
+		covering_output = affected_bodypart.apply_gauze(src, user_skill_first_aid)
 	if(heal_operations & DO_APPLY_SUTURE)
-		covering_output = affected_bodypart.apply_suture(src, 1)
+		covering_output = affected_bodypart.apply_suture(src, user_skill_first_aid)
 
 	if(end_sound)
 		playsound(get_turf(user), end_sound, 50, 1, SOUND_DISTANCE(4))

@@ -16,6 +16,8 @@
 	var/autounlock_by_boost = TRUE			//boosting this will autounlock this node.
 	var/list/research_costs = list()		//Point cost to research. type = amount
 	var/category = "Misc"				//Category
+	var/skill_level_needed = EASY_CHECK
+	var/alt_skill = null
 
 /datum/techweb_node/error_node
 	id = "ERROR"
@@ -103,6 +105,6 @@
 	description = "NT default research technologies."
 	// Default research tech, prevents bricking
 	design_ids = list("basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani", "desttagger", "handlabel", "packagewrap",
-	"destructive_analyzer", "circuit_imprinter", "experimentor", "bepis", "design_disk", "tech_disk", "mechfab", "paystand",
+	"destructive_analyzer", "circuit_imprinter", "experimentor", "protolathe", "science_lab", "bepis", "design_disk", "tech_disk", "mechfab", "paystand",
 	"space_heater", "beaker", "large_beaker", "bucket", "xlarge_beaker", "sec_shellclip",
 	"rglass","plasteel","plastitanium","plasmaglass","plasmareinforcedglass","titaniumglass","plastitaniumglass", "prewaralloy")

@@ -137,7 +137,7 @@
 		cut_wires += wire
 		on_cut(wire, mend = FALSE)
 
-/datum/wires/proc/cut_color(color, mob/living/user)
+/datum/wires/proc/cut_color(color, fake_color, mob/living/user)
 	LAZYINITLIST(current_users)
 	if(current_users[user])
 		return FALSE
@@ -145,12 +145,12 @@
 		var/level_diff = req_skill - user.mind.get_skill_level(/datum/skill/level/job/wiring, round = TRUE)
 		if(level_diff > 0)
 			LAZYSET(current_users, user, TRUE)
-			to_chat(user, span_notice("You begin cutting [holder]'s [color] wire..."))
+			to_chat(user, span_notice("You begin cutting [holder]'s [fake_color] wire..."))
 			if(!do_after(user, 0.75 SECONDS * level_diff, target = holder) || !interactable(user))
 				LAZYREMOVE(current_users, user)
 				return FALSE
 			LAZYREMOVE(current_users, user)
-	to_chat(user, span_notice("You cut [holder]'s [color] wire."))
+	to_chat(user, span_notice("You cut [holder]'s [fake_color] wire."))
 	cut(get_wire(color))
 	return TRUE
 
@@ -166,7 +166,7 @@
 		return
 	on_pulse(wire, user)
 
-/datum/wires/proc/pulse_color(color, mob/living/user)
+/datum/wires/proc/pulse_color(color, fake_color, mob/living/user)
 	LAZYINITLIST(current_users)
 	if(current_users[user])
 		return FALSE
@@ -174,12 +174,12 @@
 		var/level_diff = req_skill - user.mind.get_skill_level(/datum/skill/level/job/wiring, round = TRUE)
 		if(level_diff > 0)
 			LAZYSET(current_users, user, TRUE)
-			to_chat(user, span_notice("You begin pulsing [holder]'s [color] wire..."))
+			to_chat(user, span_notice("You begin pulsing [holder]'s [fake_color] wire..."))
 			if(!do_after(user, 1.5 SECONDS * level_diff, target = holder) || !interactable(user))
 				LAZYREMOVE(current_users, user)
 				return FALSE
 			LAZYREMOVE(current_users, user)
-	to_chat(user, span_notice("You pulse [holder]'s [color] wire."))
+	to_chat(user, span_notice("You pulse [holder]'s [fake_color] wire."))
 	pulse(get_wire(color), user)
 	return TRUE
 
@@ -222,6 +222,14 @@
 
 /datum/wires/proc/get_status()
 	return list()
+
+
+/datum/wires/proc/get_bogus_status()
+	var/list/status = list()
+	status += "A red light is flashing seemingly at random"
+	status += "There is a blue under glow."
+	status += "A yellow light is on solid."
+	return status
 
 /datum/wires/proc/on_cut(wire, mend = FALSE)
 	return
@@ -284,20 +292,22 @@
 			"attached" = is_attached(color)
 		)))
 	data["wires"] = payload
-	data["status"] = get_status()
+	data["status"] = (user.skill_check(SKILL_REPAIR, REGULAR_CHECK) || user.skill_check(SKILL_SCIENCE, REGULAR_CHECK)) ? get_status() : get_bogus_status()
 	return data
 
 /datum/wires/ui_act(action, params)
 	if(..() || !interactable(usr))
 		return
 	var/target_wire = params["wire"]
+	var/obfuscated_wire = params["wire"]
 	var/mob/living/L = usr
 	var/obj/item/I
 	switch(action)
 		if("cut")
 			I = L.is_holding_tool_quality(TOOL_WIRECUTTER)
 			if(I || IsAdminGhost(usr))
-				if(cut_color(target_wire, L) && I && holder)
+				target_wire = scramble_input_wire(usr, target_wire)
+				if(cut_color(target_wire, obfuscated_wire, L) && I && holder)
 					I.play_tool_sound(holder, 20)
 				. = TRUE
 			else
@@ -305,13 +315,15 @@
 		if("pulse")
 			I = L.is_holding_tool_quality(TOOL_MULTITOOL)
 			if(I || IsAdminGhost(usr))
-				if(pulse_color(target_wire, L) && I && holder)
+				target_wire = scramble_input_wire(usr, target_wire)
+				if(pulse_color(target_wire, obfuscated_wire, L) && I && holder)
 					I.play_tool_sound(holder, 20)
 				. = TRUE
 			else
 				to_chat(L, span_warning("You need a multitool!"))
 		if("attach")
 			if(is_attached(target_wire))
+				target_wire = scramble_input_wire(usr, target_wire)
 				I = detach_assembly(target_wire)
 				if(I)
 					L.put_in_hands(I)
@@ -328,5 +340,13 @@
 						. = TRUE
 					else
 						to_chat(L, span_warning("You need an attachable assembly!"))
+
+/datum/wires/proc/scramble_input_wire(mob/user, targetwire)
+	if (user.skill_roll(SKILL_REPAIR, DIFFICULTY_EASY))
+		return targetwire
+	else
+		to_chat(user, span_warning("Was that the right wire?"))
+		return shuffle(colors)[1]
+
 
 #undef MAXIMUM_EMP_WIRES

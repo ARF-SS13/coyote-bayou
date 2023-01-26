@@ -5,8 +5,9 @@
 	display_name = "Biological Technology"
 	description = "What makes us tick."	//the MC, silly!
 	prereq_ids = list("base")
-	design_ids = list("medicalkit", "chem_heater", "chem_master", "chem_dispenser", "sleeper", "vr_sleeper", "pandemic", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "blood_bag", "bloodbankgen", "telescopiciv", "medspray","genescanner","chem_pack")
+	design_ids = list("medicalkit", "chem_heater", "chem_master", "chem_dispenser", "chem_lab", "drug_lab", "sleeper", "vr_sleeper", "pandemic", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "blood_bag", "bloodbankgen", "telescopiciv", "medspray","genescanner","chem_pack")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500)
+	alt_skill = SKILL_DOCTOR
 
 /datum/techweb_node/adv_biotech
 	id = "adv_biotech"
@@ -15,6 +16,8 @@
 	prereq_ids = list("biotech")
 	design_ids = list("crewpinpointer", "smoke_machine", "plasmarefiller", "limbgrower", "meta_beaker", "healthanalyzer_advanced", "harvester", "holobarrier_med", "defibrillator_compact", "pHmeter", "containmentbodybag")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	alt_skill = SKILL_DOCTOR
+	skill_level_needed = REGULAR_CHECK
 
 /datum/techweb_node/bio_process
 	id = "bio_process"

@@ -10,6 +10,8 @@
 	var/used = FALSE //only really matters if oneuse but it might be nice to know if someone's used it for admin investigations perhaps
 	var/select = FALSE
 	var/time_per_page = 5 SECONDS
+	var/requires_skill = FALSE
+	var/skill_needed = list()
 
 /obj/item/book/granter/proc/turn_page(mob/user)
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
@@ -50,6 +52,11 @@
 		return FALSE
 	if(used && oneuse)
 		recoil(user)
+	if(requires_skill)
+		for (var/skill in skill_needed)
+			if(user.skill_check(skill, skill_needed[skill]))
+				to_chat(user, span_warning("You lack the skill needed to learn this!"))
+				return FALSE
 	else
 		on_reading_start(user)
 		reading = TRUE
@@ -658,6 +665,21 @@
 	w_class = WEIGHT_CLASS_TINY
 	oneuse = TRUE
 	remarks = list()
+	skill_needed = TRUE
+	requires_skill = list(SKILL_REPAIR = HARD_CHECK)
+	var/datum/design/design_print
+
+/obj/item/book/granter/crafting_recipe/blueprint/n99
+	name = "10mm pistol blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/n99)
+	design_print = "10mmpistol"
+
+/obj/item/book/granter/crafting_recipe/blueprint/tesla
+	name = "tesla revolver"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list()
+	design_print = "stunrevolver"
 
 /obj/item/book/granter/crafting_recipe/blueprint/r82
 	name = "r82 heavy service rifle blueprint"
@@ -673,11 +695,13 @@
 	name = "combat rifle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/combatrifle)
+	design_print = "combatc"
 
 /obj/item/book/granter/crafting_recipe/blueprint/r84
 	name = "r84 lmg blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/lmg)
+	design_print = "r84"
 
 /obj/item/book/granter/crafting_recipe/blueprint/service
 	name = "service rifle blueprint"
@@ -688,6 +712,7 @@
 	name = "aep7 blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/AEP7)
+	design_print = "aep7"
 
 /obj/item/book/granter/crafting_recipe/blueprint/leveraction
 	name = "lever action shotgun blueprint"
@@ -703,16 +728,19 @@
 	name = ".308 pistol blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/thatgun)
+	design_print = "308pistol"
 
 /obj/item/book/granter/crafting_recipe/blueprint/plasmapistol
 	name = "plasma pistol blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/plasmapistol)
+	design_print = "plasmapistol"
 
 /obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol
 	name = "light plasma pistol blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/lightplasmapistol)
+	design_print = "lplasmapistol"
 
 /obj/item/book/granter/crafting_recipe/blueprint/uzi
 	name = "mini uzi blueprint"
@@ -723,6 +751,7 @@
 	name = "10mm smg blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/smg10mm)
+	design_print = "10mmsmg"
 
 /obj/item/book/granter/crafting_recipe/blueprint/greasegun
 	name = "m3a1 grease gun blueprint"
@@ -753,26 +782,31 @@
 	name = "desert eagle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/deagle)
+	design_print = "degal"
 
 /obj/item/book/granter/crafting_recipe/blueprint/aer9
 	name = "aer9 blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/AER9)
+	design_print = "ae9rifle"
 
 /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle
 	name = "plasma rifle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/plasmarifle)
+	design_print = "plasmarifle"
 
 /obj/item/book/granter/crafting_recipe/blueprint/tribeam
 	name = "tribeam laser rifle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribeam)
+	design_print = "tribeam"
 
 /obj/item/book/granter/crafting_recipe/blueprint/tribeam_stun
 	name = "tribeam Stun rifle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribeam_stun)
+	design_print = "stuntribeam"
 
 /obj/item/book/granter/crafting_recipe/blueprint/am_rifle
 	name = "anti-materiel rifle blueprint"
@@ -808,6 +842,7 @@
 	name = "lsw blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/gun/lsw)
+	design_print = "lsw"
 
 /obj/item/book/granter/crafting_recipe/blueprint/m1carbine
 	name = "m1 carbine blueprint"
@@ -870,6 +905,7 @@
 	name = "gauss rifle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/gaussrifle)
+	design_print = "m72guass"
 
 /obj/item/book/granter/crafting_recipe/manual/denvr
 	name = "den vr configuration"

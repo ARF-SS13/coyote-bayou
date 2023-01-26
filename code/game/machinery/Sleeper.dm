@@ -156,7 +156,7 @@
 			ui = new(user, src, "Sleeper", name)
 			ui.open()
 	else
-		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
+		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ) && (!user.skill_check(SKILL_SCIENCE, REGULAR_CHECK) || !user.skill_check(SKILL_DOCTOR, REGULAR_CHECK)))
 			to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))
 			return
 		if(!user.IsAdvancedToolUser())

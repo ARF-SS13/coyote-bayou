@@ -151,7 +151,10 @@
 						return
 					L.visible_message("<span class='danger'>[user] injects [L] with the syringe!", \
 									span_userdanger("[user] injects [L] with the syringe!"))
-
+					if(isliving(L) && (!user.skill_check(SKILL_DOCTOR, EASY_CHECK) || !user.skill_roll(SKILL_FIRST_AID, DIFFICULTY_CHALLENGE)))
+						L.visible_message(span_danger("[user] misses the vein of [L]!"), \
+											span_userdanger("[user] misses the vein of [L]!"))
+						L.take_overall_damage(2)
 				if(L != user)
 					log_combat(user, L, "injected", src, addition="which had [contained]")
 				else
