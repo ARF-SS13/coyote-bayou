@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
 	/datum/crafting_recipe/huntingrifle,
 	/datum/crafting_recipe/n99,
-	/datum/crafting_recipe/huntingrifle,
+	/datum/crafting_recipe/huntingshotgun,
 	/datum/crafting_recipe/m1911,
 	/datum/crafting_recipe/varmintrifle,
 	/datum/crafting_recipe/autoaxe,
@@ -48,7 +48,16 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/tools/forged/entrenching_tool,
 	/datum/crafting_recipe/chainsaw,
 	/datum/crafting_recipe/steeltower,
-	/datum/crafting_recipe/durathread_vest))
+	/datum/crafting_recipe/durathread_vest,
+	/datum/crafting_recipe/scope,
+	/datum/crafting_recipe/suppressor,
+	/datum/crafting_recipe/ergonomic_grip,
+	/datum/crafting_recipe/metal_guard,
+	/datum/crafting_recipe/forged_barrel,
+	/datum/crafting_recipe/booster,
+	/datum/crafting_recipe/heatsink,
+	/datum/crafting_recipe/laserguide,
+	/datum/crafting_recipe/gigalens))
 
 GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/tribal/bonetalisman,
@@ -295,7 +304,8 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/technophreak
 	name = "Technophreak"
-	desc = "You're skilled at breaking down old-war rubble more precisely and therefor you gain more salvage from cars and piles than before."
+	desc = "You're skilled at breaking down old-war rubble more precisely and therefor you gain more salvage from cars and piles than before. Your time with understanding complex technology also \
+	allows you to craft more complex machine parts."
 	value = 2
 	mob_trait = TRAIT_TECHNOPHREAK
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
@@ -315,8 +325,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
-	desc = "You know how to make various weapons and protective vests. The list is too large to try and put here."
+	desc = "You know how to make various weapons, protective vests, and gun mods. The list is too large to try and put here."
 	value = 2
+	mob_trait = TRAIT_WEAPONSMITH
 	gain_text = span_notice("You are adept at crafting makeshift weapons.")
 	lose_text = span_danger("You seem less adept at crafting makeshift weapons.")
 
@@ -622,6 +633,8 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 		return //welp
 	QDEL_NULL(our_tongue.lick_bandage)
 
+// This does the same thing as basic explosive crafting by giving basic_recipe and adv_recipe. -Possum
+/*
 /datum/quirk/advanced_explosive_crafting
 	name = "Advanced Explosive Crafting"
 	desc = "Decades of engineering knowledge have taught you to make all kinds of horrible explosives."
@@ -644,7 +657,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	if(H)
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
-
+*/
 
 /datum/quirk/whitelegstraditions
 	name = "White Legs traditions"
