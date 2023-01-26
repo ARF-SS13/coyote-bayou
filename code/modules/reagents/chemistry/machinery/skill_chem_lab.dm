@@ -331,18 +331,38 @@
 
 /obj/machinery/chem_lab/proc/do_chemical_bad_thing(mob/user)
 	if(prob(10))
-		//blow up
+		small_bang(user)
 		return
 	if(prob(20))
-		//bad gas
+		bad_smoke(user)
 		return
 	if(prob(30))
-		//electric shock
+		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+		s.set_up(5, 1, src)
+		s.start()
+		electrocute_mob(user, get_area(src), src, 0.7, TRUE)
 		return
 	var/datum/reagents/R = beaker.reagents
 	var/free = R.maximum_volume - R.total_volume
 	R.add_reagent(/datum/reagent/liquidgibs/oil, free)
 	to_chat(user, span_warning("The mixture turns to sludge."))
+
+/obj/machinery/chem_lab/proc/bad_smoke(user)
+	visible_message(span_danger("[src]'s seals aren't right, gas is escaping!"))
+	var/chosenchem
+	chosenchem = pick(/datum/reagent/toxin/acid,/datum/reagent/consumable/condensedcapsaicin,/datum/reagent/drug/space_drugs)
+	var/datum/reagents/R = new/datum/reagents(50)
+	R.my_atom = src
+	R.add_reagent(chosenchem , 50)
+	var/datum/effect_system/smoke_spread/chem/smoke = new
+	smoke.set_up(R, 0, src, silent = TRUE)
+	playsound(src, 'sound/effects/smoke.ogg', 50, 1, -3)
+	smoke.start()
+	qdel(R)
+
+/obj/machinery/chem_lab/proc/small_bang(mob/user)
+	visible_message(span_danger("[user] gets the mixture wrong, releasing a large flame!"))
+	explosion(loc, -1, 0, 0, 0, 0, flame_range = 3, flash_range = 2)
 
 /obj/machinery/chem_lab/attackby(obj/item/I, mob/user, params)
 	if(default_unfasten_wrench(user, I))
