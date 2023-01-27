@@ -101,7 +101,7 @@
 	contains = list(/obj/item/melee/onehanded/knife/hunting,
 					/obj/item/melee/onehanded/knife/hunting,
 					/obj/item/melee/onehanded/knife/hunting)
-					
+
 /* /datum/supply_pack/security/dueling_stam
 	name = "Dueling Pistols"
 	desc = "Resolve all your quarrels with some nonlethal fun."
@@ -109,7 +109,7 @@
 	contains = list(/obj/item/storage/lockbox/dueling/hugbox/stamina)
 	crate_name = "dueling pistols"
 
-/datum/supply_pack/security/dueling_stam/generate() 
+/datum/supply_pack/security/dueling_stam/generate()
 	. = ..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/lockbox/dueling/hugbox/stamina(.)
@@ -273,6 +273,25 @@
 	crate_type = /obj/structure/closet/crate/secure // Would have liked a wooden crate but access >:(
 */
 
+/datum/supply_pack/security/plasmagrenade
+	name = "Plasma Grenade Pack"
+	desc = "Plasma bolts in a compact form. Rain death on your enemies!"
+	cost = 5000
+	contains = list(/obj/item/grenade/f13/plasma,
+					/obj/item/grenade/f13/plasma,
+					/obj/item/grenade/f13/plasma,
+					/obj/item/grenade/f13/plasma)
+	crate_name = "plasma grenade pack crate"
+
+/datum/supply_pack/security/stingpack
+	name = "Clusterbang Grenade Pack"
+	desc = "A standard pack of three random sprays of death, regret, and bad ideas."
+	cost = 15000
+	contains = list(/obj/item/grenade/clusterbuster/random,
+					/obj/item/grenade/clusterbuster/random,
+					/obj/item/grenade/clusterbuster/random)
+	crate_name = "clusterbang grenade pack crate"
+
 /datum/supply_pack/security/stingpack
 	name = "Stingbang Grenade Pack"
 	desc = "Contains five \"stingbang\" grenades, perfect for stopping pre-War food riots and shutting down seditious agents."
@@ -315,6 +334,36 @@
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments)
 	crate_name = "gun mods crate"
+
+/datum/supply_pack/security/advmods
+	name = "Weapons - Advanced Gun Mods"
+	desc = "Contains four random advanced gun and energy weapon mods, best for causing pain!"
+	cost = 7500
+	contains = list(/obj/item/tool_upgrade/refinement/vibcompensator,
+					/obj/item/tool_upgrade/productivity/motor,
+					/obj/item/tool_upgrade/reinforcement/plasmablock,
+					/obj/item/gun_upgrade/mechanism/battery_shunt,
+					/obj/item/gun_upgrade/mechanism/overdrive,
+					/obj/item/gun_upgrade/barrel/mag_accel,
+					/obj/item/gun_upgrade/barrel/gauss,
+					/obj/item/gun_upgrade/barrel/blender)
+	crate_name = "advanced gun mods crate"
+
+/datum/supply_pack/security/advmods/randomized
+	var/num_contained = 4
+
+/datum/supply_pack/security/advmods/randomized/fill(obj/structure/closet/crate/C)
+	for(var/i in 1 to num_contained)
+		var/item = pick(contains)
+		new item(C)
+
+/datum/supply_pack/security/aimod
+	name = "Weapons - Zax Module"
+	desc = "Contains two highly advanced energy gun modifications."
+	cost = 20000
+	contains = list(/obj/item/tool_upgrade/augment/ai_tool,
+					/obj/item/tool_upgrade/augment/ai_tool)
+	crate_name = "zax module crate"
 
 /* /datum/supply_pack/security/disabler
 	name = "Weapons - Disabler Crate"
