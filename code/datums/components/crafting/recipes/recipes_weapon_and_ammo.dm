@@ -648,7 +648,7 @@
 //Caravan Shotgun
 /datum/crafting_recipe/caravanshotty
 	name = "Caravan Shotgun"
-	result = /obj/item/gun/ballistic/rifle/hunting
+	result = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/metal = 2,)
