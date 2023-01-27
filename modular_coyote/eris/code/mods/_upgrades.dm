@@ -601,7 +601,7 @@
 		if(toremove == "Cancel")
 			return 1
 		var/datum/component/item_upgrade/IU = toremove.GetComponent(/datum/component/item_upgrade)
-		if(IU.removable == FALSE && !(HAS_TRAIT(user,TRAIT_WEAPONSMITH)))
+		if(IU.removable == FALSE)
 			to_chat(user, span_danger("\the [toremove] seems to be fused with the [upgrade_loc]"))
 		else
 			if(C.use_tool(user = user, target =  upgrade_loc, delay = IU.removal_time))
