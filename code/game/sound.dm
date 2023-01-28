@@ -58,11 +58,10 @@
 	S.channel = channel || SSsounds.random_available_channel()
 	S.volume = vol
 
-	if(vary)
-		if(frequency)
-			S.frequency = frequency
-		else
-			S.frequency = get_rand_frequency()
+	if(frequency) // fun fact, -100 to 100 is used by byond to just multiply the playback, neato
+		S.frequency = frequency
+	else if(vary)
+		S.frequency = get_rand_frequency()
 
 	if(isturf(turf_source))
 		var/turf/T = get_turf(src)
