@@ -8504,12 +8504,11 @@
 	},
 /area/f13/building)
 "juI" = (
-/obj/structure/flora/ausbushes/fernybush,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/grass{
-	color = "#444444"
+/turf/open/floor/carpet/blue{
+	icon_state = "carpetsymbol"
 	},
 /area/f13/wasteland)
 "juL" = (
@@ -19720,7 +19719,9 @@
 "wTd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/tree/jungle{
-	color = "#999999"
+	color = "#999999";
+	pixel_y = -17;
+	pixel_x = -39
 	},
 /turf/open/floor/grass{
 	color = "#444444"

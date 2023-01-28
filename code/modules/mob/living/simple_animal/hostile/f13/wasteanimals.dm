@@ -376,6 +376,8 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 
+	sound_pitch = 70
+	vary_pitches = list(40, 80)
 	emote_taunt = list("screeches")
 	emote_taunt_sound = list(
 		'sound/f13npc/gecko/gecko_charge1.ogg',
@@ -494,6 +496,8 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
+	sound_pitch = -75
+	vary_pitches = list(-100, -80)
 	emote_taunt = list("screeches")
 	emote_taunt_sound = list(
 		'sound/f13npc/gecko/gecko_charge1.ogg',
