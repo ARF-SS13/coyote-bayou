@@ -376,6 +376,8 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 
+	sound_pitch = 70
+	vary_pitches = list(40, 80)
 	emote_taunt = list("screeches")
 	emote_taunt_sound = list(
 		'sound/f13npc/gecko/gecko_charge1.ogg',
@@ -443,10 +445,10 @@
 		MOB_SPEED_LIST(1.8, 2.0, 2.2),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(30, 35, 40),
-		MOB_RETREAT_DISTANCE_LIST(0, 1, 2),
-		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 		MOB_MINIMUM_DISTANCE_LIST(1, 2),
-		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 		)
 
 /mob/living/simple_animal/hostile/gecko/legacy/alpha/AttackingTarget()
@@ -494,6 +496,8 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
+	sound_pitch = -75
+	vary_pitches = list(-100, -80)
 	emote_taunt = list("screeches")
 	emote_taunt_sound = list(
 		'sound/f13npc/gecko/gecko_charge1.ogg',
@@ -512,9 +516,9 @@
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(100, 110, 120),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
-		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 		MOB_MINIMUM_DISTANCE_LIST(1, 2),
-		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	)
 
 /mob/living/simple_animal/hostile/gecko/big/Initialize()
@@ -539,6 +543,8 @@
 
 /// Testing its randomness
 /mob/living/simple_animal/hostile/gecko/debug
+	sound_pitch = 100
+	vary_pitches = list(-200, 200)
 	variation_list = list(
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 2),\

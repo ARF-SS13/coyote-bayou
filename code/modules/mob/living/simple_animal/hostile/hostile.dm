@@ -468,7 +468,7 @@
 		taunt_chance = max(taunt_chance-7,2)
 	if(LAZYLEN(emote_taunt_sound))
 		var/taunt_choice = pick(emote_taunt_sound)
-		playsound(loc, taunt_choice, 50, 0)
+		playsound(loc, taunt_choice, 50, 0, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2]))
 
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()
@@ -548,7 +548,9 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
+			vary = FALSE, 
+			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
 		qdel(casing)
@@ -562,7 +564,9 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
+			vary = FALSE, 
+			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		P.starting = startloc
 		P.firer = src
