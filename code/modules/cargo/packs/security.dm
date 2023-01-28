@@ -10,6 +10,15 @@
 	group = "Munitions"
 	crate_type = /obj/structure/closet/crate/footlocker
 	can_private_buy = 1
+	var/num_contained = 1
+
+/datum/supply_pack/security/randomized
+	num_contained = 15
+
+/datum/supply_pack/security/fill(obj/structure/closet/crate/C)
+	for(var/i in 1 to num_contained)
+		var/item = pick(contains)
+		new item(C)
 
 /* /datum/supply_pack/security/ammosurplus
 	name = "Ammo Crate - Grab-Bag"
@@ -283,7 +292,7 @@
 					/obj/item/grenade/f13/plasma)
 	crate_name = "plasma grenade pack crate"
 
-/datum/supply_pack/security/stingpack
+/datum/supply_pack/security/clusterbangpack
 	name = "Clusterbang Grenade Pack"
 	desc = "A standard pack of three random sprays of death, regret, and bad ideas."
 	cost = 15000
@@ -339,6 +348,7 @@
 	name = "Weapons - Advanced Gun Mods"
 	desc = "Contains four random advanced gun and energy weapon mods, best for causing pain!"
 	cost = 7500
+	num_contained = 4
 	contains = list(/obj/item/tool_upgrade/refinement/vibcompensator,
 					/obj/item/tool_upgrade/productivity/motor,
 					/obj/item/tool_upgrade/reinforcement/plasmablock,
@@ -348,14 +358,6 @@
 					/obj/item/gun_upgrade/barrel/gauss,
 					/obj/item/gun_upgrade/barrel/blender)
 	crate_name = "advanced gun mods crate"
-
-/datum/supply_pack/security/advmods/randomized
-	var/num_contained = 4
-
-/datum/supply_pack/security/advmods/randomized/fill(obj/structure/closet/crate/C)
-	for(var/i in 1 to num_contained)
-		var/item = pick(contains)
-		new item(C)
 
 /datum/supply_pack/security/aimod
 	name = "Weapons - Zax Module"
