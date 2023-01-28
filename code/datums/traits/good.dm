@@ -948,7 +948,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/critterfriend
 	name = "Beast Friend - Small Critters"
-	desc = "Roaches, geckos and young nightstalkers outright ignore you now."
+	desc = "Roaches, most types of geckos and young nightstalkers outright ignore you now."
 	value = 2
 	mob_trait = TRAIT_BEASTFRIEND_SMALLCRITTER
 	gain_text = span_notice("Some if not all wasteland critters doesn't seem to mind you now!")
@@ -966,7 +966,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/crittermaster
 	name = "Beast Master - Small Critters"
-	desc = "Whenever by psychic means or not, you gained ability to control roaches, geckos and molerats (last ones will be initially hostile and needs to be tamed).\
+	desc = "Whenever by psychic means or not, you gained ability to control roaches, most geckos and molerats (last ones will be initially hostile and needs to be tamed).\
 	<br>Taming will make them passive toward other players and tamed fauna. Young and adult nightstalkers can be also tamed, but not controlled."
 	value = 4
 	mob_trait = TRAIT_BEASTMASTER_SMALLCRITTER

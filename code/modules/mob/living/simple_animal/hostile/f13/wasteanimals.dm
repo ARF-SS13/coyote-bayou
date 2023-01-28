@@ -203,7 +203,6 @@
 		"min_n2" = 0,
 		"max_n2" = 0
 		)
-	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -371,7 +370,6 @@
 		"min_n2" = 0,
 		"max_n2" = 0
 		)
-	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
