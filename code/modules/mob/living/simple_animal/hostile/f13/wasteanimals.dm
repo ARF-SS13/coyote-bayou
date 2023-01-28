@@ -540,7 +540,7 @@
 /// Testing its randomness
 /mob/living/simple_animal/hostile/gecko/debug
 	sound_pitch = 100
-	vary_pitch = TRUE
+	vary_pitches = list(-200, 200)
 	variation_list = list(
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 2),\

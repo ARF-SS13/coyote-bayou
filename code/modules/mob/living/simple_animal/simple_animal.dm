@@ -101,8 +101,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/aggrosound = null
 	/// set to a value between -100 and 100 to change the mob's pitch. Set to 0 for default pitch
 	var/sound_pitch = 0
-	/// Should the sounds' pitch vary? will be within 
-	var/vary_pitch = TRUE
+	/// How much will the pitch vary? first is how much lower it can go, second is how high it can go. from -100 to 100. please make the first number smaller than the second
+	var/list/vary_pitches = list(-100, 100)
 
 	///Hot simple_animal baby making vars.
 	var/list/childtype = null
@@ -570,7 +570,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		drop_all_held_items()
 	if(!gibbed)
 		if(death_sound)
-			playsound(get_turf(src),death_sound, 200, ignore_walls = TRUE, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitch))
+			playsound(get_turf(src),death_sound, 200, ignore_walls = TRUE, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2]))
 		if(deathmessage || !del_on_death)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)

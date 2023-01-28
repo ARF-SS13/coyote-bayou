@@ -27,7 +27,7 @@
 
 ///Converts -100 to 100 into 33000 to 55000, for use in pitching up and down sounds without memorizing wacky numbers
 ///Special thanks to fuzlet for doing the maths for me
-#define SOUND_FREQ_NORMALIZED(x, vary) ((105*(vary?(x+(rand(100,-100))):x))+44000)
+#define SOUND_FREQ_NORMALIZED(x, vary_low, vary_high) ((105*(x+(rand(vary_low,vary_high)):x))+44000)
 
 ///Used for mobs, to just use a random pitch
 #define SOUND_VARY "varyplz"
