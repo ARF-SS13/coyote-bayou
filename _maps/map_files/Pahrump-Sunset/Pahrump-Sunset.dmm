@@ -14996,6 +14996,10 @@
 /area/f13/bar)
 "aZa" = (
 /obj/structure/table/glass,
+/obj/machinery/microwave{
+	pixel_y = -2;
+	pixel_x = 2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -48927,20 +48931,20 @@
 	pixel_y = 13
 	},
 /obj/item/storage/box/beakers{
-	pixel_x = 7;
-	pixel_y = 11
+	pixel_x = 13;
+	pixel_y = 13
 	},
 /obj/item/storage/box/beakers{
-	pixel_x = 7;
-	pixel_y = 11
+	pixel_x = 5;
+	pixel_y = 25
 	},
 /obj/item/storage/box/beakers{
-	pixel_x = 7;
-	pixel_y = 11
+	pixel_x = 11;
+	pixel_y = 3
 	},
 /obj/item/storage/box/beakers{
-	pixel_x = 7;
-	pixel_y = 11
+	pixel_x = -5;
+	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -58810,12 +58814,6 @@
 	icon_state = "wide-broken6"
 	},
 /area/f13/building)
-"nmV" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/simple_door/room,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/house,
-/area/f13/building/abandoned)
 "nmW" = (
 /obj/machinery/light/small/broken{
 	dir = 8
@@ -105893,7 +105891,7 @@ sCB
 hCc
 vfw
 vfw
-nmV
+irR
 aUM
 xTu
 eiJ
