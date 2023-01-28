@@ -4,6 +4,10 @@
 		/mob/living/simple_animal/hostile/ghoul/zombie/glowing)
 #define RTS_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/gecko,\
+		/mob/living/simple_animal/hostile/gecko/legacy,\
+		/mob/living/simple_animal/hostile/gecko/fire,\
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha,\
+		/mob/living/simple_animal/hostile/gecko/big,\
 		/mob/living/simple_animal/hostile/molerat,\
 		/mob/living/simple_animal/hostile/bloatfly,\
 		/mob/living/simple_animal/hostile/radroach)
@@ -110,6 +114,7 @@
 
 /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	banned_from_lowpop = FALSE
+	immune_to_lowpop = TRUE
 	allowed_mobs = RTS_SMALLCRITTER_ALLOWED
 
 /obj/effect/proc_holder/mob_common/summon_backup/rat

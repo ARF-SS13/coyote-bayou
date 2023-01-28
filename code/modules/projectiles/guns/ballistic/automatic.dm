@@ -3097,6 +3097,50 @@ obj/item/gun/ballistic/automatic/bar
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
 
+//worn g11
+
+/obj/item/gun/ballistic/automatic/g11/tox
+	name = "Tox's G11M"
+	desc = "A unique G11. With a built in scope and semi-automatic only option, this G11 was bought and repurposed by a wealthy felid named Tox Mckit. Etched on the reciever is a lovely motif of moths and felines surrounding one singular feline under a full moon. On the scope is a engraving that says 'To the sands we stride on'"
+	icon_state = "g11"
+	item_state = "arg"
+	mag_type = /obj/item/ammo_box/magazine/m473
+	init_mag_type = /obj/item/ammo_box/magazine/m473
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m473/small, /obj/item/ammo_box/magazine/m473/small/empty)
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTEST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(0.8)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	is_automatic = TRUE
+	automatic = 1
+	semi_auto = TRUE
+	can_scope = FALSE
+	zoom_factor = 1
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	select = 0
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
+
 /* * * * * * * * * * *
  * WT-550 Carbine
  * 4.73mm caseless

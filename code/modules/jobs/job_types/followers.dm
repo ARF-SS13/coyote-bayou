@@ -4,9 +4,9 @@
 	exp_type = EXP_TYPE_FOLLOWERS
 	access = list(ACCESS_FOLLOWER)
 	minimal_access = list(ACCESS_FOLLOWER)
-	forbids = "Aligning oneself with a faction exclusively. Acting in an aggressive and violent way on the offensive, not in defense. Abandoning your facility, peers, and community."
-	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
-	objectivesList = list("Leadership recommends the following goal for this week: Establish medical outposts throughout the wasteland","Leadership recommends the following goal for this week: Experiment with and improve medical techniques and equipment", "Leadership recommends the following goal for this week: Replenish the operation's funds through donations and sales.")
+	forbids = null
+	enforces = "Generallys peaking it can be assumed that your time spent learning how to be a doctor was for the good of others, but ultimately you are on your own path."
+	objectivesList = null
 
 /datum/outfit/job/followers
 	name =		"FOLLOWERSdatums"
@@ -42,20 +42,15 @@ Administrator
 	department_flag = FOLLOWERS
 	head_announce = list("Security")
 	faction = "Followers"
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "No one."
-	description = "You are the Senior Doctor. You are the supervisor and director for the on-site doctors and the facility. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of Good Will. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor. Assuming they're around."
+	description = "You are a Senior Doctor. Your rank is given due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FF95FF"
 	exp_requirements = 750
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
-	loadout_options = list(
-	/datum/outfit/loadout/surgical_specialist,
-	/datum/outfit/loadout/chemical_specialist
-	)
 
 	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
@@ -110,18 +105,7 @@ Administrator
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/bag/money/small/settler = 1,
-	)
-
-/datum/outfit/loadout/surgical_specialist
-	name =	"Surgical Specialist"
-	backpack_contents = list(
-		/obj/item/storage/belt/medical/surgery_belt_adv = 1,
-	)
-
-/datum/outfit/loadout/chemical_specialist
-	name =	"Chemical Specialist"
-	backpack_contents = list(
-		/obj/item/hypospray/mkii/CMO = 1,
+		/obj/item/hypospray/mkii/CMO = 1
 	)
 
 //Professor
@@ -131,12 +115,11 @@ Administrator
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "Having no strict command structure, scientists don't report to anyone- though they will look to the Senior Doctor for guidance."
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 540
 	exp_type = EXP_TYPE_FOLLOWERS
@@ -227,12 +210,11 @@ Practitioner
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 5
-	spawn_positions = 5
-	supervisors = "The clinic, having no strict command structure, doesn't report to anyone- though they will look to the Senior Doctor for guidance."
-	description = "You are a Town Doctor. As a Town Doctor it is your responsibility to maintain working order in the clinic and to manage its staff and to treat patients who come in regardless of whether or not they can afford care. Some Doctors are known for leaving the clinic with a guard to look for injured or those who need help who may not come to a health facility, however it is key that those who do travel around to give aid keep in touch with the rest of staff and if there are no other able physicans or chemist that they stay to offer the best aid possible."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Senior Doctors. Assuming they're around."
+	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 300
 
@@ -353,16 +335,15 @@ Follower Volunteer
 */
 
 /datum/job/followers/f13followervolunteer
-	title = "Town Medical Assistant"
+	title = "Nurse"
 	flag = F13FOLLOWERVOLUNTEER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 6
-	spawn_positions = 6
-	supervisors = "The doctors, having no strict command structure, don't report to anyone- though they will look to the Senior Doctor for guidance and the other Doctors as well."
-	description = "You are a Town Medical Assistant. As a Medical Assistant, you make sure they get connected to the right people to find treatment, assist in the functions of the clinic, learn from senior Doctors, and utilize first aid to the best of your capacity when Doctors are not present."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor, Doctors, or anyone with more experience than you. Assuming they're around."
+	description = "You are a Nurse. As a Nurse you provide first aid to those that are injured and assist the clinic doctors as needed."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	outfit = /datum/outfit/job/followers/f13followervolunteer
 	loadout_options = list(
@@ -386,7 +367,7 @@ Follower Volunteer
 	//the follower volunteer doesn't need more access as it is already stored in the /datum/job/followers
 
 /datum/outfit/job/followers/f13followervolunteer
-	name = "Town Medical Assistant"
+	name = "Nurse"
 	jobtype = /datum/job/followers/f13followervolunteer
 	id = 		/obj/item/card/id/silver
 	belt = /obj/item/kit_spawner/follower
@@ -448,12 +429,11 @@ Follower Volunteer
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 4
-	spawn_positions = 4
-	supervisors = "The clinic, having no strict command structure, don't report to anyone- though they will look to the Senior Doctor for guidance and the other Doctors as well."
-	description = "You are a Town Paramedic. As a Paramedic for the clinic, you are responsible for the safety and the maintenance of order in the clinic and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. You may also be responsible as an escort to the various non-combat staff at the clinic."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the clinic without a plan or notifying non-combat personnel. Treating or otherwise aiding raiders or slavers without a good reason."
-	enforces = "Preach the values of the clinic. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
+	description = "You are one of the towns Paramedics.  Your job is to prepare parties to go out and try and help those in need that can't make it to the hospital on their own. Be that shooting your way to them or seeking them out with a rescue party."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard

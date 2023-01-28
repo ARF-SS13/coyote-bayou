@@ -93,6 +93,14 @@
 	health = 200
 	maxHealth = 200
 	healable = 1
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "bops"
+	response_disarm_simple = "bop"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "nuzzles"
+	attack_verb_simple = "nuzzle"
 
 /mob/living/simple_animal/pet/pokemon/update_mobility()
 	. = ..()

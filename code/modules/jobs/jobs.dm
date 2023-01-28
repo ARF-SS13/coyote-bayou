@@ -293,7 +293,7 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Senior Doctor",
 	"Town Doctor",
 	"Town Paramedic",
-	"Town Medical Assistant",
+	"Nurse",
 	"Town Scientist",
 ))
 

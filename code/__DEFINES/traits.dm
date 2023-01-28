@@ -255,6 +255,7 @@
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
+#define TRAIT_WEAPONSMITH "weaponsmith"
 #define TRAIT_BEASTFRIEND_RAT "beastfriend-rats"
 #define TRAIT_BEASTFRIEND_SMALLCRITTER "beastfriend-smallcritters"
 #define TRAIT_BEASTMASTER_RAT "beastmaster-rats"

@@ -335,7 +335,7 @@
 		G.recoil_dat = G.recoil_dat.modifyRating(1, 1, weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
 	if(weapon_upgrades[UPGRADE_COLOR])
 		G.color = weapon_upgrades[UPGRADE_COLOR]
-	
+
 	if(!isnull(weapon_upgrades[GUN_UPGRADE_FORCESAFETY]))
 		G.restrict_safety = TRUE
 		G.safety = weapon_upgrades[GUN_UPGRADE_FORCESAFETY]
@@ -351,7 +351,7 @@
 
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
-	
+
 	G.update_firemode()
 
 /datum/component/item_upgrade/proc/add_values_gun(obj/item/gun/G)
@@ -509,7 +509,7 @@
 			examine_list += span_warning("Disables the safety toggle of the weapon.")
 		else if(weapon_upgrades[GUN_UPGRADE_FORCESAFETY] == 1)
 			examine_list += span_warning("Forces the safety toggle of the weapon to always be on.")
-		
+
 		if(weapon_upgrades[GUN_UPGRADE_DNALOCK] == 1)
 			examine_list += span_warning("Adds a biometric scanner to the weapon.")
 
