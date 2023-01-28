@@ -258,7 +258,6 @@
 	range = 4
 	light_range = LIGHT_RANGE_FIRE
 	light_color = LIGHT_COLOR_FIRE
-	projectilesound = 'sound/magic/fireball.ogg'
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_DAMAGE_FIRE
 	stamina = BULLET_STAMINA_SHOTGUN_PELLET * BULLET_STAMINA_FIRE
 	spread = BULLET_SPREAD_SURPLUS
