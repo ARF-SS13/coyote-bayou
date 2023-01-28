@@ -25,6 +25,13 @@
 ///A simple define that'll set the max range of a sound to a number, without any funky minus stuff -- 0 means the originator's tile, 1 means adjacent, etc
 #define SOUND_DISTANCE(x) (-SOUND_RANGE + x)
 
+///Converts -100 to 100 into 33000 to 55000, for use in pitching up and down sounds without memorizing wacky numbers
+///Special thanks to fuzlet for doing the maths for me
+#define SOUND_FREQ_NORMALIZED(x, vary) ((105*(vary?(x+(rand(100,-100))):x))+44000)
+
+///Used for mobs, to just use a random pitch
+#define SOUND_VARY "varyplz"
+
 //THIS SHOULD ALWAYS BE THE LOWEST ONE!
 //KEEP IT UPDATED
 
