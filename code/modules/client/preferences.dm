@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/no_tetris_storage = FALSE
 
 	///loadout stuff
-	var/gear_points = 10
+	var/gear_points = 12
 	var/list/gear_categories
 	var/list/chosen_gear = list()
 	var/list/loadout_data = list()
