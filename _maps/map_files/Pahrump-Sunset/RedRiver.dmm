@@ -6325,6 +6325,16 @@
 	dir = 4
 	},
 /area/f13/wasteland)
+"dEJ" = (
+/obj/structure/billboard/powerlines1,
+/obj/structure/billboard/powerlines2{
+	pixel_y = 64
+	},
+/obj/structure/billboard/powerlines2{
+	pixel_y = 64
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dER" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/spawner/lootdrop/waste_loot_poor,
@@ -9514,6 +9524,14 @@
 /obj/structure/debris/v3,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah/cornersnew,
+/area/f13/wasteland)
+"ftM" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland)
 "ftP" = (
 /turf/open/indestructible/ground/outside/road{
@@ -15428,6 +15446,10 @@
 	dir = 8
 	},
 /area/f13/building)
+"iUt" = (
+/obj/structure/billboard/boardedwell,
+/turf/open/indestructible/ground/outside/savannah,
+/area/f13/wasteland)
 "iVe" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -16995,6 +17017,10 @@
 /obj/structure/simple_door/bunker/glass,
 /turf/open/floor/f13,
 /area/f13/building)
+"jNg" = (
+/obj/structure/flora/tallgrass7,
+/turf/open/indestructible/ground/outside/savannah,
+/area/f13/wasteland)
 "jNh" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/building/abandoned)
@@ -24722,6 +24748,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"ouQ" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain0"
+	},
+/area/f13/wasteland/city)
 "ovd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -30525,6 +30561,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"rTl" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/savannah,
+/area/f13/wasteland)
 "rTI" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -35930,6 +35973,19 @@
 	icon_state = "verticalinnermain2bottom"
 	},
 /area/f13/wasteland)
+"uYy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom2"
+	},
+/area/f13/wasteland/city)
 "uYK" = (
 /obj/item/kirbyplants/dead{
 	desc = "A mummified potted plant.";
@@ -39604,6 +39660,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/abandoned)
+"xqg" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "xqm" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2right"
@@ -49057,7 +49117,7 @@ dqB
 bvJ
 bvJ
 eQa
-ops
+dEJ
 hJZ
 vRG
 nhe
@@ -50592,7 +50652,7 @@ kRp
 xfw
 dRB
 jns
-tiN
+dEJ
 pAw
 vog
 vcQ
@@ -52802,7 +52862,7 @@ vlp
 eDb
 uSf
 eDb
-hQj
+ouQ
 eRP
 sty
 qxv
@@ -52904,7 +52964,7 @@ cCB
 xjw
 pEz
 hmg
-oph
+dEJ
 tiN
 oph
 nCs
@@ -55474,7 +55534,7 @@ oMa
 oWN
 vGR
 roR
-oph
+dEJ
 tiN
 nZZ
 aKV
@@ -56987,7 +57047,7 @@ eWO
 euo
 eSK
 qZY
-oph
+dEJ
 oph
 pkw
 pkw
@@ -57530,7 +57590,7 @@ oMa
 oWN
 cQC
 roR
-oph
+dEJ
 gEj
 sBx
 lmY
@@ -59817,7 +59877,7 @@ euo
 euo
 rye
 qZY
-aKV
+dEJ
 eQa
 nNp
 vsM
@@ -60871,7 +60931,7 @@ oMa
 kRp
 pEz
 vMj
-oph
+dEJ
 oph
 raf
 nZZ
@@ -61713,7 +61773,7 @@ oph
 oph
 oph
 oph
-oph
+dEJ
 oph
 vlF
 roR
@@ -61874,7 +61934,7 @@ euo
 eWO
 eSK
 qZY
-oph
+dEJ
 oph
 oph
 oph
@@ -61995,7 +62055,7 @@ oph
 oph
 oph
 oph
-oph
+dEJ
 tiN
 oph
 tiN
@@ -62006,7 +62066,7 @@ oph
 oph
 oph
 oph
-oph
+dEJ
 oph
 oph
 wTK
@@ -62019,7 +62079,7 @@ oph
 oph
 oph
 oph
-oph
+dEJ
 oph
 oph
 oph
@@ -63796,7 +63856,7 @@ kRp
 uKC
 due
 jeR
-qgq
+dEJ
 kmr
 oph
 oph
@@ -64147,7 +64207,7 @@ nCs
 mQR
 sKQ
 sKQ
-sKQ
+dEJ
 uRH
 oph
 oph
@@ -64193,7 +64253,7 @@ oph
 oph
 oph
 oph
-oph
+dEJ
 tiN
 oph
 oph
@@ -64902,11 +64962,11 @@ oph
 xZC
 bvJ
 aKV
-eQa
+iUt
 dLA
 oph
 jzX
-oph
+dEJ
 aQr
 jNR
 fmm
@@ -65230,7 +65290,7 @@ oph
 oph
 oph
 oph
-oph
+dEJ
 roR
 nhN
 qaR
@@ -65850,7 +65910,7 @@ siv
 pVV
 oMa
 cQC
-oph
+dEJ
 oph
 tiN
 oph
@@ -66268,7 +66328,7 @@ fWt
 toI
 cQC
 oMa
-oph
+dEJ
 oph
 oph
 oph
@@ -67042,7 +67102,7 @@ sma
 wxW
 mff
 oph
-pDv
+dEJ
 oph
 oph
 oph
@@ -67476,7 +67536,7 @@ oJS
 oph
 tae
 xMP
-oph
+dEJ
 mvE
 maU
 dXu
@@ -68841,7 +68901,7 @@ oMa
 kRp
 vGR
 tiN
-lmY
+dEJ
 lmY
 oph
 oph
@@ -69532,7 +69592,7 @@ dPh
 amY
 amY
 amY
-oph
+dEJ
 mvE
 jNR
 fmm
@@ -71331,7 +71391,7 @@ oph
 iPv
 vEK
 mMb
-oah
+dEJ
 mvE
 jNR
 gEy
@@ -71411,7 +71471,7 @@ oMa
 kRp
 vdX
 fBS
-tfn
+dEJ
 lSf
 oph
 oph
@@ -72103,7 +72163,7 @@ xqD
 raT
 raT
 gkh
-rRT
+uYy
 dPo
 eoT
 eoT
@@ -73724,7 +73784,7 @@ oMa
 kRp
 vdX
 fBS
-oph
+dEJ
 tfn
 tfn
 tfn
@@ -76037,7 +76097,7 @@ oMa
 kRp
 vdX
 fBS
-rCS
+dEJ
 oph
 oph
 oph
@@ -78093,7 +78153,7 @@ oMa
 mmC
 uPm
 fBS
-tfn
+dEJ
 tSK
 gEj
 gEj
@@ -80920,7 +80980,7 @@ qHL
 kRp
 cQC
 oph
-tfn
+dEJ
 oph
 oph
 oph
@@ -83490,7 +83550,7 @@ oMa
 kRp
 vdX
 oph
-tiN
+dEJ
 tfn
 tfn
 pkw
@@ -86060,7 +86120,7 @@ gUg
 kRp
 cQC
 oph
-oph
+dEJ
 oph
 tfn
 oph
@@ -87859,7 +87919,7 @@ pVV
 kRp
 vGR
 tiN
-tiN
+dEJ
 tfn
 tiN
 oph
@@ -89915,7 +89975,7 @@ pVV
 oWN
 cQC
 tiN
-oph
+dEJ
 oph
 oph
 oph
@@ -90579,13 +90639,13 @@ pkw
 oph
 oph
 oph
-oph
+eQa
 oph
 tiN
 oph
 oph
 oph
-oph
+eQa
 oph
 oph
 oph
@@ -90841,7 +90901,7 @@ oph
 oph
 oph
 oph
-oph
+eQa
 oph
 oph
 oph
@@ -91010,7 +91070,7 @@ jTL
 nJg
 qYF
 ieU
-hJG
+ftM
 hJG
 hJG
 hJG
@@ -91091,12 +91151,12 @@ oph
 oph
 oph
 oph
+eQa
+eQa
+eQa
+bvJ
 oph
-oph
-oph
-tiN
-oph
-oph
+eQa
 tfn
 oph
 oph
@@ -91348,11 +91408,11 @@ oph
 oph
 oph
 oph
-oph
-oph
+eQa
+eQa
 tfn
-tiN
-oph
+bvJ
+eQa
 oph
 oph
 oph
@@ -91604,12 +91664,12 @@ oph
 tiN
 oph
 oph
-oph
-oph
+eQa
+eQa
 vlJ
-oph
-oph
-oph
+eQa
+eQa
+eQa
 oph
 oph
 oph
@@ -91864,7 +91924,7 @@ oph
 oph
 oph
 tfn
-oph
+eQa
 oph
 oph
 oph
@@ -92115,13 +92175,13 @@ oph
 tiN
 oph
 oph
-oph
-oph
-oph
-oph
+eQa
+eQa
+eQa
+eQa
 tfn
-oph
-tfn
+eQa
+jNg
 oph
 tiN
 oph
@@ -92371,11 +92431,11 @@ oph
 tiN
 oph
 oph
-tiN
+bvJ
 oph
 oph
 oph
-oph
+eQa
 oph
 oph
 oph
@@ -92485,7 +92545,7 @@ qHL
 mmC
 vGR
 tiN
-tfn
+dEJ
 pkw
 tfn
 ddh
@@ -92627,11 +92687,11 @@ tiN
 tiN
 tiN
 tiN
+eQa
 oph
 oph
 oph
-oph
-oph
+eQa
 oph
 oph
 oph
@@ -92884,18 +92944,18 @@ oph
 oph
 oph
 oph
+eQa
+eQa
 oph
-oph
-oph
-oph
-oph
-oph
-oph
+eQa
+eQa
+eQa
+eQa
 oph
 tiN
 yaf
 yaf
-oph
+eQa
 oph
 oph
 oph
@@ -93142,16 +93202,16 @@ oph
 oph
 oph
 oph
-tiN
+bvJ
+oph
+oph
+eQa
+eQa
+eQa
 oph
 oph
 oph
-oph
-oph
-oph
-oph
-oph
-oph
+eQa
 oph
 oph
 oph
@@ -93398,12 +93458,12 @@ oph
 oph
 oph
 oph
+eQa
 oph
 oph
+eQa
 oph
-oph
-oph
-tiN
+bvJ
 oph
 oph
 oph
@@ -93655,17 +93715,17 @@ oph
 oph
 oph
 oph
+eQa
+eQa
+oph
+eQa
 oph
 oph
 oph
 oph
 oph
 oph
-oph
-oph
-oph
-oph
-oph
+eQa
 oph
 oph
 oph
@@ -93912,9 +93972,9 @@ oph
 oph
 oph
 oph
+eQa
 oph
-oph
-tiN
+bvJ
 oph
 oph
 tiN
@@ -93925,7 +93985,7 @@ oph
 oph
 oph
 whc
-lSf
+rTl
 oph
 oph
 yaf
@@ -94169,14 +94229,14 @@ oph
 oph
 oph
 tiN
-oph
+eQa
 tiN
+eQa
+eQa
+eQa
 oph
 oph
-oph
-oph
-oph
-oph
+eQa
 oph
 tfn
 whc
@@ -94427,11 +94487,11 @@ oph
 oph
 oph
 oph
+eQa
 oph
+eQa
 oph
-oph
-oph
-oph
+eQa
 oph
 oph
 whc
@@ -94541,7 +94601,7 @@ qHL
 kRp
 cQC
 tfn
-oph
+dEJ
 oph
 oph
 oph
@@ -94686,21 +94746,21 @@ oph
 tiN
 oph
 oph
+eQa
+eQa
 oph
 oph
-oph
-oph
-tiN
-oph
-oph
-oph
-tiN
 tiN
 oph
 oph
 oph
 tiN
+tiN
 oph
+oph
+oph
+tiN
+eQa
 oph
 oph
 oph
@@ -95714,7 +95774,7 @@ tiN
 tiN
 tSK
 oph
-oph
+eQa
 oph
 oph
 oph
@@ -96597,7 +96657,7 @@ oMa
 kRp
 cQC
 oph
-oph
+dEJ
 nTJ
 pkw
 oph
@@ -97818,8 +97878,8 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
+wWK
+wWK
 gRn
 gRn
 gRn
@@ -98074,10 +98134,10 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
+wWK
+iRq
+wWK
+wWK
 gRn
 gRn
 gMW
@@ -98331,11 +98391,11 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+wWK
+wWK
+wWK
+wWK
+wWK
 gRn
 gMW
 gMW
@@ -98587,14 +98647,14 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gMW
+wWK
+eHB
+wWK
+eHB
+wWK
+wWK
+wWK
+wWK
 gMW
 gMW
 gMW
@@ -98845,14 +98905,14 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
+wWK
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gMW
-gMW
+wWK
+wWK
+wWK
 gMW
 gMW
 wWK
@@ -98911,7 +98971,7 @@ kRp
 cQC
 oph
 oph
-oph
+dEJ
 oph
 oph
 oph
@@ -99102,15 +99162,15 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
+iRq
+wWK
 gRn
 gRn
 gRn
 gRn
 gMW
-gMW
-gMW
+wWK
+wWK
 wWK
 wWK
 wWK
@@ -99358,8 +99418,8 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
+wWK
+wWK
 gRn
 gRn
 gRn
@@ -99615,9 +99675,9 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
+wWK
+wWK
+wWK
 gRn
 gRn
 gRn
@@ -99873,9 +99933,9 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
+wWK
+eHB
+wWK
 gRn
 gRn
 gRn
@@ -100130,9 +100190,9 @@ oph
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
+wWK
+eHB
+wWK
 gRn
 gRn
 gRn
@@ -100387,8 +100447,8 @@ oph
 gRn
 gRn
 gRn
-gRn
-gRn
+wWK
+iRq
 gRn
 gRn
 gRn
@@ -100644,8 +100704,8 @@ oph
 gRn
 gRn
 gRn
-gRn
-gRn
+wWK
+iRq
 gRn
 gRn
 gRn
@@ -100901,13 +100961,13 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gMW
+wWK
+wWK
 wWK
 wWK
 wWK
@@ -101157,14 +101217,14 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
+wWK
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gMW
+wWK
+wWK
+wWK
+wWK
 gMW
 wWK
 wWK
@@ -101413,14 +101473,14 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gMW
+wWK
+wWK
+wWK
+wWK
+wWK
+wWK
+wWK
+wWK
 gMW
 gMW
 gMW
@@ -101670,12 +101730,12 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+eHB
+iRq
+wWK
+wWK
+wWK
+wWK
 gRn
 gMW
 gMW
@@ -101927,11 +101987,11 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+wWK
+wWK
+wWK
+wWK
+wWK
 gRn
 gRn
 gMW
@@ -102185,10 +102245,10 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
 gRn
-gRn
-gRn
-gRn
+wWK
 gRn
 gRn
 gMW
@@ -102445,7 +102505,7 @@ gRn
 gRn
 gRn
 gRn
-gRn
+wWK
 gRn
 gRn
 gMW
@@ -102459,8 +102519,8 @@ kOR
 wWK
 iRq
 wWK
-gMW
-gMW
+wWK
+wWK
 gMW
 gMW
 kOR
@@ -102694,15 +102754,15 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
+wWK
 gRn
 gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
+wWK
 gRn
 gRn
 gRn
@@ -102717,7 +102777,7 @@ mAF
 tNF
 gMW
 gMW
-gMW
+wWK
 gMW
 gMW
 kOR
@@ -102951,15 +103011,15 @@ gRn
 gRn
 gRn
 gRn
+wWK
+gRn
+wWK
+wWK
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+wWK
+wWK
 gRn
 gRn
 gRn
@@ -102974,7 +103034,7 @@ gMW
 gMW
 gMW
 gMW
-gMW
+wWK
 gMW
 gMW
 gMW
@@ -103205,17 +103265,17 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
+wWK
+wWK
+wWK
+gRn
+wWK
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+wWK
 gRn
 gRn
 gRn
@@ -103231,8 +103291,8 @@ gMW
 gMW
 gMW
 gMW
-gMW
-gMW
+wWK
+wWK
 gMW
 gMW
 gMW
@@ -103462,18 +103522,18 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
+iRq
+wWK
+wWK
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+wWK
+wWK
+wWK
+wWK
+wWK
+wWK
 gRn
 gRn
 gRn
@@ -103488,8 +103548,8 @@ gMW
 gMW
 gMW
 gMW
-gMW
-gMW
+wWK
+wWK
 gMW
 gMW
 gMW
@@ -103719,19 +103779,19 @@ gRn
 gRn
 gRn
 gRn
+wWK
+xqg
+eHB
+wWK
 gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+wWK
+wWK
+iRq
+wWK
+wWK
 gRn
 gRn
 gRn
@@ -103745,9 +103805,9 @@ gMW
 gMW
 gMW
 gMW
-gMW
-gMW
-gMW
+wWK
+wWK
+wWK
 gMW
 gMW
 gMW
@@ -103984,11 +104044,11 @@ gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
-gRn
+iRq
+wWK
+wWK
+eHB
+wWK
 gRn
 gRn
 gRn
@@ -104003,8 +104063,8 @@ gMW
 gMW
 gMW
 gMW
-gMW
-gMW
+wWK
+wWK
 gMW
 gMW
 gMW
@@ -104241,14 +104301,14 @@ gRn
 gRn
 gRn
 gRn
+wWK
+wWK
+wWK
+wWK
 gRn
 gRn
 gRn
 gRn
-gRn
-gRn
-gRn
-gRn
 gMW
 gMW
 gMW
@@ -104260,8 +104320,8 @@ gMW
 gMW
 gMW
 gMW
-gMW
-gMW
+wWK
+wWK
 gMW
 gMW
 oph
@@ -104499,13 +104559,13 @@ gRn
 gRn
 gRn
 gRn
+wWK
 gRn
 gRn
 gRn
 gRn
 gRn
 gRn
-gRn
 gMW
 gMW
 gMW
@@ -104517,7 +104577,7 @@ gMW
 gMW
 gMW
 gMW
-gMW
+wWK
 gMW
 gMW
 oph

@@ -4878,6 +4878,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bVx" = (
@@ -5097,10 +5098,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1;
-	layer = 2.9
-	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "cae" = (
@@ -6677,7 +6674,9 @@
 "cQC" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/radroach,
-/obj/machinery/light{
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
@@ -8031,6 +8030,7 @@
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dYy" = (
@@ -8858,6 +8858,12 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"eGB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "eHi" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/glass,
@@ -9030,6 +9036,10 @@
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"eNS" = (
+/obj/structure/nest/ghoul,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "eOb" = (
 /obj/machinery/light{
 	dir = 4;
@@ -9863,6 +9873,18 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
+"fCp" = (
+/obj/effect/spawner/lootdrop/trash,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "fCu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10541,7 +10563,11 @@
 	},
 /area/f13/caves)
 "gjs" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary,
+/mob/living/simple_animal/hostile/deathclaw/legendary{
+	name = "Serena Williams";
+	color = "EE3333";
+	melee_damage_upper = 65
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway{
@@ -12385,6 +12411,16 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
+"hLt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "hLQ" = (
 /obj/structure/obstacle/barbedwire/end{
 	dir = 4
@@ -12587,13 +12623,15 @@
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/tunnel)
 "hWr" = (
-/mob/living/simple_animal/hostile/supermutant/meleemutant,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/building/sewers)
 "hWD" = (
 /obj/effect/mob_spawn/human/corpse/vault/security,
 /turf/open/floor/plating/tunnel,
@@ -12856,6 +12894,12 @@
 "ifZ" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
+/area/f13/caves)
+"igy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "ihn" = (
 /obj/structure/nest/raider/melee,
@@ -17677,6 +17721,11 @@
 /obj/machinery/conveyor/inverted,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
+"lNV" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "lNX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -18328,6 +18377,14 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/water,
 /area/f13/building/sewers)
+"mlN" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
+	},
+/turf/open/water,
+/area/f13/building/sewers)
 "mmk" = (
 /mob/living/simple_animal/hostile/radroach,
 /obj/effect/decal/cleanable/dirt,
@@ -18414,6 +18471,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "mrm" = (
@@ -18430,7 +18488,10 @@
 "mrq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/semen,
-/obj/machinery/light,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "mrt" = (
@@ -19363,12 +19424,13 @@
 	},
 /area/f13/building/massfusion)
 "nen" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 8
+	},
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
+/area/f13/tunnel)
 "nez" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/surgical{
@@ -19501,6 +19563,14 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
+"njI" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "njO" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical/old,
@@ -19686,12 +19756,13 @@
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/caves)
 "nrz" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "nrH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19898,6 +19969,14 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"nAA" = (
+/obj/effect/decal/waste{
+	icon_state = "goo10"
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant/meleemutant,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
 "nAQ" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/item/reagent_containers/food/snacks/deadmouse,
@@ -21978,6 +22057,14 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
+"phf" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "php" = (
 /obj/structure/bed/old,
 /obj/item/trash/f13/dandyapples,
@@ -23729,6 +23816,10 @@
 /obj/structure/spider/stickyweb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"qsK" = (
+/obj/structure/barricade/bars,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "qsS" = (
 /obj/structure/showcase/horrific_experiment{
 	desc = "Some sort of pod. You wonder what could have been in that.";
@@ -24240,6 +24331,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"qKz" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
+/turf/open/water,
+/area/f13/building/sewers)
 "qKC" = (
 /obj/structure/table/booth,
 /obj/item/reagent_containers/food/snacks/enchiladas{
@@ -25190,6 +25288,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/semen/femcum,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 8
+	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "rCg" = (
@@ -25849,6 +25952,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/museum)
@@ -26973,6 +27081,19 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"sZC" = (
+/obj/structure/handrail/g_central{
+	dir = 1;
+	pixel_y = 23
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/building/sewers)
 "sZY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden/strong,
@@ -28224,6 +28345,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/caves)
 "uay" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
+	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "uaH" = (
@@ -28865,9 +28991,10 @@
 /area/f13/caves)
 "uEv" = (
 /obj/structure/table/plasmaglass,
-/obj/machinery/light{
-	dir = 1;
-	layer = 2.9
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 8
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building)
@@ -29305,6 +29432,11 @@
 "uVo" = (
 /obj/structure/chair/sofa{
 	dir = 8
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 4
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
@@ -31294,8 +31426,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "wCz" = (
-/obj/structure/simple_door/metal/barred,
 /obj/structure/lattice/catwalk,
+/obj/structure/barricade/bars,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "wCC" = (
@@ -37028,8 +37160,8 @@ jGk
 roN
 gcv
 gcv
+hWr
 gcv
-bzh
 gcv
 gcv
 gcv
@@ -37311,7 +37443,7 @@ kuN
 xeC
 tyk
 tyk
-tyk
+nrz
 bOb
 urt
 cQm
@@ -37560,7 +37692,7 @@ tPr
 cCM
 bZa
 jNE
-bZa
+hLt
 cCM
 epU
 bZa
@@ -45709,7 +45841,7 @@ aae
 aae
 omO
 omO
-bPE
+qsK
 bPE
 bPE
 bLL
@@ -57447,7 +57579,7 @@ aah
 xHy
 cov
 aah
-aah
+nen
 aah
 aah
 aah
@@ -62449,7 +62581,7 @@ aak
 aae
 jGk
 tkZ
-tkZ
+qKz
 jGk
 aae
 xwF
@@ -65691,7 +65823,7 @@ adz
 adz
 adz
 adz
-aah
+njI
 aah
 bFx
 aae
@@ -70628,7 +70760,7 @@ kQw
 oNM
 tkZ
 tkZ
-bQs
+sZC
 jGk
 dsu
 nbe
@@ -75480,7 +75612,7 @@ aah
 bOl
 aah
 aah
-aah
+njI
 aah
 aah
 aah
@@ -80939,7 +81071,7 @@ tkZ
 tkZ
 tkZ
 tkZ
-tkZ
+mlN
 tkZ
 vOn
 vOn
@@ -80984,7 +81116,7 @@ tkZ
 tkZ
 tkZ
 tkZ
-tkZ
+mlN
 fqQ
 dHk
 bTJ
@@ -81019,7 +81151,7 @@ tkZ
 vOn
 tkZ
 tkZ
-tkZ
+mlN
 nrH
 vOn
 vOn
@@ -82479,8 +82611,8 @@ aae
 aaa
 aae
 aae
-hlL
-hlL
+aaB
+aaB
 aae
 aaa
 aaa
@@ -82736,8 +82868,8 @@ aaa
 aae
 aae
 aae
-xZB
-xZB
+aaB
+aaB
 aae
 aaa
 aae
@@ -83045,7 +83177,7 @@ hHK
 aah
 bTK
 jJz
-mVE
+eNS
 mVE
 lul
 mby
@@ -83075,7 +83207,7 @@ xwF
 xwF
 aaa
 xwF
-qbt
+adz
 mpk
 nnP
 mpk
@@ -83183,7 +83315,7 @@ ilg
 aaB
 aaB
 qip
-nbm
+fCp
 kDe
 eQX
 gYI
@@ -83250,8 +83382,8 @@ aaa
 aae
 aae
 aak
-aaB
-aaB
+xZB
+xZB
 aae
 aaa
 aae
@@ -83291,7 +83423,7 @@ mVE
 bQM
 mVE
 mVE
-mVE
+eNS
 mby
 mby
 fnd
@@ -83299,7 +83431,7 @@ dzm
 aah
 hHK
 aah
-bSG
+aah
 aah
 jJz
 mby
@@ -83332,7 +83464,7 @@ adz
 xwF
 aaa
 xwF
-nSF
+adz
 bBl
 iaq
 adz
@@ -83507,8 +83639,8 @@ aaa
 aae
 aae
 aae
-aaB
-aaB
+hlL
+hlL
 aak
 aaa
 aak
@@ -83591,7 +83723,7 @@ aaa
 xwF
 xwF
 kJd
-hWr
+tjE
 mpk
 iOS
 jUP
@@ -83849,7 +83981,7 @@ aaa
 xwF
 cCU
 iaq
-nen
+nnP
 nYI
 mpk
 uce
@@ -84067,7 +84199,7 @@ cEf
 mby
 mab
 dzm
-bSG
+aah
 hHK
 hUJ
 hHK
@@ -84321,7 +84453,7 @@ bQU
 bRe
 bRq
 mby
-mby
+lNV
 mVE
 cVE
 rpA
@@ -84362,8 +84494,8 @@ xwF
 aaa
 xwF
 xwF
-iqW
-iaq
+nAA
+igy
 yeQ
 adz
 hhp
@@ -84959,11 +85091,11 @@ aaB
 aaa
 aaa
 aaa
-xwF
+phf
 aaB
 aaB
 aaB
-aaB
+phf
 aaa
 aaa
 xwF
@@ -85355,7 +85487,7 @@ ikO
 aah
 rpA
 aah
-aah
+bSG
 bQM
 mVE
 lKP
@@ -85645,7 +85777,7 @@ adz
 xwF
 aaa
 xwF
-nrz
+qbt
 tEd
 htL
 htL
@@ -85902,7 +86034,7 @@ iaq
 xwF
 aaa
 xwF
-mpk
+nSF
 aul
 xwF
 xwF
@@ -86628,7 +86760,7 @@ aaa
 aae
 dzm
 aah
-aah
+bHl
 bvK
 aah
 dzm
@@ -87404,7 +87536,7 @@ dzm
 dzm
 dzm
 mby
-lul
+eGB
 mby
 mby
 mVE
