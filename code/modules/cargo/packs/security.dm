@@ -355,17 +355,25 @@
 					/obj/item/gun_upgrade/mechanism/battery_shunt,
 					/obj/item/gun_upgrade/mechanism/overdrive,
 					/obj/item/gun_upgrade/barrel/mag_accel,
-					/obj/item/gun_upgrade/barrel/gauss,
-					/obj/item/gun_upgrade/barrel/blender)
+					/obj/item/gun_upgrade/barrel/blender,
+					/obj/item/gun_upgrade/scope/killer)
 	crate_name = "advanced gun mods crate"
 
 /datum/supply_pack/security/aimod
 	name = "Weapons - Zax Module"
 	desc = "Contains two highly advanced energy gun modifications."
-	cost = 20000
+	cost = 10000
 	contains = list(/obj/item/tool_upgrade/augment/ai_tool,
 					/obj/item/tool_upgrade/augment/ai_tool)
 	crate_name = "zax module crate"
+
+/datum/supply_pack/security/gaussbarrelmod
+	name = "Weapons - Chinese Gauss Barrel"
+	desc = "Two strong barrels meant to obliterate targets."
+	cost = 20000
+	contains = list(/obj/item/gun_upgrade/barrel/gauss,
+					/obj/item/gun_upgrade/barrel/gauss)
+	crate_name = "chiense gauss barrel crate"
 
 /* /datum/supply_pack/security/disabler
 	name = "Weapons - Disabler Crate"
