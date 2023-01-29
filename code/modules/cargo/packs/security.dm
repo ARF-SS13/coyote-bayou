@@ -33,6 +33,7 @@
 	name = "Armor - Metal Helmets"
 	desc = "Contains three surplus, but solid!, metal helmets. Keep that militia safe!"
 	cost = 1500
+	num_contained = 3
 	contains = list(/obj/item/clothing/head/helmet/armyhelmet,
 					/obj/item/clothing/head/helmet/armyhelmet,
 					/obj/item/clothing/head/helmet/armyhelmet)
@@ -42,6 +43,7 @@
 	name = "Armor - Raider Scraps"
 	desc = "Four sets of armor stripped off of raiders. Cheap, dirty, and quickly supplied. Some of it might even be worthwhile."
 	cost = 1500
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier1,
 					/obj/effect/spawner/lootdrop/f13/armor/tier1,
 					/obj/effect/spawner/lootdrop/f13/armor/tier1,
@@ -52,6 +54,7 @@
 	name = "Armor - Surplus"
 	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
 	cost = 2500
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier3,
 					/obj/effect/spawner/lootdrop/f13/armor/tier3,
 					/obj/effect/spawner/lootdrop/f13/armor/tier3)
@@ -61,6 +64,7 @@
 	name = "Ammo - Energy Cell"
 	desc = "Three fully charged energy cells."
 	cost = 900
+	num_contained = 3
 	contains = list(/obj/item/stock_parts/cell/ammo/ec,
 					/obj/item/stock_parts/cell/ammo/ec,
 					/obj/item/stock_parts/cell/ammo/ec)
@@ -70,6 +74,7 @@
 	name = "Ammo - Microfusion Cell"
 	desc = "Three fully charged microfusion cells."
 	cost = 1300
+	num_contained = 3
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc)
@@ -79,6 +84,7 @@
 	name = "Ammo - Electron Charge Pack"
 	desc = "Three fully charged electron charge packs."
 	cost = 2000
+	num_contained = 3
 	contains = list(/obj/item/stock_parts/cell/ammo/ecp,
 					/obj/item/stock_parts/cell/ammo/ecp,
 					/obj/item/stock_parts/cell/ammo/ecp)
@@ -88,6 +94,7 @@
 	name = "Blueprints - Basic"
 	desc = "A set of three basic weapon blueprints, parts not included!"
 	cost = 2750
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/blueprintMid,
 					/obj/effect/spawner/lootdrop/f13/blueprintMid,
 					/obj/effect/spawner/lootdrop/f13/blueprintMid
@@ -98,6 +105,7 @@
 	name = "Blueprints - Advanced"
 	desc = "A set of two advanced weapon blueprints, parts not included!"
 	cost = 4250
+	num_contained = 2
 	contains = list(/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 					/obj/effect/spawner/lootdrop/f13/blueprintHigh
 					)
@@ -107,6 +115,7 @@
 	name = "Combat Knife Single-Pack"
 	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-standard boot. You know what's better than one knife? Three of 'em!"
 	cost = 750
+	num_contained = 3
 	contains = list(/obj/item/melee/onehanded/knife/hunting,
 					/obj/item/melee/onehanded/knife/hunting,
 					/obj/item/melee/onehanded/knife/hunting)
@@ -185,6 +194,7 @@
 					/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier)
 	cost = 2000
+	num_contained = 4
 	crate_name = "security barriers crate"
 	can_private_buy = TRUE
 /*
@@ -212,6 +222,7 @@
 	name = "Lawman Supplies Crate"
 	desc = "Contains seven flashbangs, seven teargas grenades, six flashes, and seven handcuffs.."
 	cost = 1200
+	num_contained = 4
 	contains = list(/obj/item/storage/box/flashbangs,
 					/obj/item/storage/box/teargas,
 					/obj/item/storage/box/flashes,
@@ -286,6 +297,7 @@
 	name = "Plasma Grenade Pack"
 	desc = "Plasma bolts in a compact form. Rain death on your enemies!"
 	cost = 5000
+	num_contained = 4
 	contains = list(/obj/item/grenade/f13/plasma,
 					/obj/item/grenade/f13/plasma,
 					/obj/item/grenade/f13/plasma,
@@ -296,9 +308,15 @@
 	name = "Clusterbang Grenade Pack"
 	desc = "A standard pack of three random sprays of death, regret, and bad ideas."
 	cost = 15000
-	contains = list(/obj/item/grenade/clusterbuster/random,
-					/obj/item/grenade/clusterbuster/random,
-					/obj/item/grenade/clusterbuster/random)
+	num_contained = 3
+	contains = list(/obj/item/grenade/clusterbuster/emp,
+					/obj/item/grenade/clusterbuster/smoke,
+					/obj/item/grenade/clusterbuster/inferno,
+					/obj/item/grenade/clusterbuster/syndieminibomb,
+					/obj/item/grenade/clusterbuster/teargas,
+					/obj/item/grenade/clusterbuster/clf3,
+					/obj/item/grenade/clusterbuster/slime/volatile,
+					/obj/item/grenade/clusterbuster/facid)
 	crate_name = "clusterbang grenade pack crate"
 
 /datum/supply_pack/security/stingpack
@@ -312,6 +330,7 @@
 	name = "Technical manuals"
 	desc = "A box crammed full of manuals, for reading. SCAV issues, Guns and Ammo, how to operate chem-machines, it's all here! Come in groups of three."
 	cost = 2200
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks,
 					/obj/effect/spawner/lootdrop/f13/traitbooks/low,
 					/obj/effect/spawner/lootdrop/f13/traitbooks/low)
@@ -321,6 +340,7 @@
 	name = "Weapons - Laser Grab-Bag"
 	desc = "Contains three low-powered laser guns, probably in need of some love. Batteries included in shocking excess! Don't want 'em? Sell 'em back! Seriously! We don't judge!"
 	cost = 1600
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low)
@@ -330,6 +350,7 @@
 	name = "Weapons - Energy Grab-Bag"
 	desc = "Contains two energy guns, probably in need of some love. Batteries included!"
 	cost = 3750
+	num_contained = 2
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh)
 	crate_name = "energy crate"
@@ -338,6 +359,7 @@
 	name = "Weapons - Gun Mods"
 	desc = "Contains four random gun and energy weapon mods, fun for the whole family!"
 	cost = 1000
+	num_contained = 4
 	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
@@ -363,6 +385,7 @@
 	name = "Weapons - Zax Module"
 	desc = "Contains two highly advanced energy gun modifications."
 	cost = 10000
+	num_contained = 2
 	contains = list(/obj/item/tool_upgrade/augment/ai_tool,
 					/obj/item/tool_upgrade/augment/ai_tool)
 	crate_name = "zax module crate"
@@ -371,6 +394,7 @@
 	name = "Weapons - Chinese Gauss Barrel"
 	desc = "Two strong barrels meant to obliterate targets."
 	cost = 20000
+	num_contained = 2
 	contains = list(/obj/item/gun_upgrade/barrel/gauss,
 					/obj/item/gun_upgrade/barrel/gauss)
 	crate_name = "chiense gauss barrel crate"
@@ -402,6 +426,7 @@
 	name = "Weapons - High-Tier Guns"
 	desc = "Two high-powered ballistics, perfect for taking down the meanest of muties."
 	cost = 3500
+	num_contained = 2
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high)
 	crate_name = "gun crate"
@@ -410,6 +435,7 @@
 	name = "Weapons - Ballistics Grab-Bag"
 	desc = "Grab-bag is just a polite way of saying pile of junk. It's...a pile of junk. A mixture of around ten civillian and homemade firearms. Comes with an ABSURD amount of surplus ammo."
 	cost = 1350
+	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
