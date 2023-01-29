@@ -55,6 +55,9 @@
 #define LOADOUT_SUBCATEGORY_SUIT_JACKETS 	"Jackets"
 #define LOADOUT_SUBCATEGORY_SUIT_FACTIONS		"Factions"
 
+//Belt
+#define LOADOUT_CATEGORY_BELT 				"Belt"
+
 //head
 #define LOADOUT_CATEGORY_HEAD 				"Head"
 #define LOADOUT_SUBCATEGORY_HEAD_GENERAL 	"General"

@@ -72,7 +72,7 @@
 	path = /obj/item/pen/fountain/captain
 
 
-//// Belts, not alot of belts in the catagory to make there own.
+/* //// Belts, not alot of belts in the catagory to make there own.
 
 /datum/gear/backpack/redbelt
 	name = "primitive belt"
@@ -82,7 +82,7 @@
 /datum/gear/backpack/fannypack
 	name = "fannypack"
 	path = /obj/item/storage/belt/fannypack
-	cost = 3
+	cost = 3 */ // 'Moved' to belt_loadout.dm
 
 //// Cigarettes here, they dont need a special category
 
@@ -283,9 +283,9 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
 	cost = 1
 
-//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!)
+//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!) (but nobody used it cus we dont have vault stuff lol)
 
-//Vault Guns
+/* //Vault Guns
 /datum/gear/backpack/vaultguns/n99
 	name = "10mm Pistol"
 	path = /obj/item/gun/ballistic/automatic/pistol/n99
@@ -330,7 +330,7 @@
 							"Vault-tec Engineer",
 							"Vault Dweller"
 						)
-
+ */ // Covered more betterly by loadout beacons!
 
 
 //Skirt Accessories
