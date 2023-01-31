@@ -377,7 +377,7 @@
 			to_chat(player, msg_dead)
 			continue
 		if(player.has_language(/datum/language/tribal) && !HAS_TRAIT(player, TRAIT_BLIND))
-			if(!is_type_in_list(get_area(player), GLOB.outdoor_areas))
+			if(!player.z == Z_LEVEL_NASH_UNDERGROUND) //Can be seen while indoors, just not sent. Still, can't see while underground.
 				continue
 			var/dirmessage = "somewhere in the distance"
 			if(player.z == B.z)
