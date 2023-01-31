@@ -56124,6 +56124,16 @@
 	color = "#444444"
 	},
 /area/f13/building/tribal)
+"muW" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder"
+	},
+/area/f13/wasteland/city)
 "muX" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building/abandoned)
@@ -69612,6 +69622,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/store)
+"qIl" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city)
 "qIm" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/store)
@@ -72095,6 +72114,14 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"rCq" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "rCB" = (
 /obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
@@ -139728,7 +139755,7 @@ aIx
 aCF
 iRr
 xAr
-bBr
+oFO
 fdw
 kTu
 oFO
@@ -139985,9 +140012,9 @@ aOx
 aOx
 aOx
 mjT
-bBr
+oFO
 nIF
-kTu
+qIl
 oFO
 dPE
 xmT
@@ -140242,9 +140269,9 @@ xAr
 xAr
 xAr
 xAr
-bBr
+oFO
 nIF
-kTu
+qIl
 nDO
 hLo
 uxe
@@ -140500,7 +140527,7 @@ aGa
 wLM
 xAr
 wCW
-lwl
+muW
 kTu
 sol
 nPH
@@ -141817,7 +141844,7 @@ aae
 aae
 aae
 ahz
-aae
+ahz
 agx
 aae
 aae
@@ -142075,7 +142102,7 @@ aHF
 aHF
 pcf
 aaB
-pcf
+rCq
 aae
 aaa
 aaa
