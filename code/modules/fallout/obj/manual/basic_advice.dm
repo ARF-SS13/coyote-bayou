@@ -167,7 +167,7 @@
 				<li>Sutures and Bandages: If you are bleeding, it is best to stop it, and quickly! Suture the wound closed, bandage over the sewed up wound and let it heal.</li>
 				<li>Punga can help purge radiation, but it can also be addicting if you eat more than a few in one sitting.</li>
 				<li>Nash is on the western side of the middle Z (everyone spawns on this Z), and its main entrance is on the southern wall!</li>
-				<li>While you have tons of slots and can make loads of characters it can sometimes be hard to get started. It takes time and being seen fairl often before people realize you're actually for real about hanging around. Maybe consider sticking to one character for a while!</li>
+				<li>While you have tons of slots and can make loads of characters it can sometimes be hard to get started. It takes time and being seen fairly often before people realize you're actually for real about hanging around. Maybe consider sticking to one character for a while!</li>
 				</ol>
 				<p>
 
