@@ -140,7 +140,7 @@
 
 /obj/item/book/manual/advice_surival
 	name = "Survival Guide to the Wastes" //Was tempted to name it "Try not to keel over and die"
-	desc = "A book with advice on how best to survive in the harsh bayou of Texarkana"
+	desc = "A survival book! At Last! .. it looks well loved and has a lot of little notes all over in and around its pages"
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "survbook"
 	title = "Advice on Surviving - How not to get eaten by Gecko's edition"
