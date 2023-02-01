@@ -163,7 +163,7 @@
 				<p>
 				<ol>
 				<li>Sleep : Resting in a safe location, and a bed, and sleeping will help mend your wounds and regain your strength. Don't have a bed in a room? Make one with wood! Make sure to buckle,</li>
-				<li>Powder: Made with one broc flower and one Xander, this handy powder can be made on the go!</li>
+				<li>Healing Powder: Made with one broc flower and one Xander on the crafting menu, this handy powder can be made on the go and heals you just as much as a stimpack, if slower.</li>
 				<li>Sutures and Bandages: If you are bleeding, it is best to stop it, and quickly! Suture the wound closed, bandage over the sewed up wound and let it heal.</li>
 				<li>Punga can help purge radiation, but it can also be addicting if you eat more than a few in one sitting.</li>
 				<li>Nash is on the western side of the middle Z (everyone spawns on this Z), and its main entrance is on the southern wall!</li>
