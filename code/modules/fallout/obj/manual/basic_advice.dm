@@ -25,7 +25,7 @@
 				<body>
 				<h3>The basics of farming in the wasteland of today</h3>
 
-				Slowly starving to death? Stop worrying and start working, the earth will provide, even now. First, you need to understand the basics. 
+				Slowly starving to death? Stop worrying and start working, the earth will provide, even now. First, you need to understand the basics.
 				<p>
 				<ol>
 				<li>To grow plants reliably you need at minimum, a plot of soil, a rake or cultivator to whack weeds, and a bucket for water and fertilizer. </li>
@@ -46,7 +46,7 @@
 				<li>From sandstone: drying racks, soil plots, gardening pots. </li>
 				<li>From cloth: plant bags. </li>
 				<li>From leather: gardeners belt, farmers gloves.</li>
-				<li>From hay: wicker baskets.</li>				
+				<li>From hay: wicker baskets.</li>
 				</ol>
 				<p>
 				From here, you know enough to get started, keep on trying things out and learn from old hands, and soon you will be as fat and content as me.
@@ -107,7 +107,7 @@
 				</ol>
 				<p>
 
-	
+
 				<h3>Some secret smithing recipes.</h3>
 
 				These are some of the items that can be made with hot iron and a steady hand. Results are not always the same depending on the anvil used.
@@ -131,6 +131,55 @@
 				<p>
 
 				Know that there are more things to learn, but this is enough to get you started.
+
+				</body>
+				</html>
+				"}
+
+//Survival guide - Started by Thingpony. My fingers are freezing as I write this. Help.
+
+/obj/item/book/manual/advice_surival
+	name = "Survival Guide to the Wastes" //Was tempted to name it "Try not to keel over and die"
+	desc = "A book with advice on how best to survive in the harsh bayou of Texarkana"
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "survbook"
+	title = "Advice on Surviving - How not to get eaten by Gecko's edition"
+	dat = {"<html>
+				<head>
+				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {list-style: none; margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				</style>
+				</head>
+				<body>
+
+				<h3>What is the first thing you should know? Well, let's get started with the basics..</h3>
+
+				Listed below are a few key things.
+				<p>
+				<ol>
+				<li>Sleep : Resting in a safe location, and a bed, and sleeping will help mend your wounds and regain your strength. Don't have a bed in a room? Make one with wood! Make sure to buckle,</li>
+				<li>Powder: Made with one broc flower and one Xander, this handy powder can be made on the go!</li>
+				<li>Sutures and Bandages: If you are bleeding, it is best to stop it, and quickly! Suture the wound closed, bandage over the sewed up wound and let it heal.</li>
+				</ol>
+				<p>
+
+				<h3>Other small things</h3>
+
+				<p>
+				<ol>
+				<li>The blue matrix tiles you can just walk right through to another map. The green ones are to leave the region (basically Cryo)</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				</ol>
+				<p>
+
+				And if you ever get lost and have questions, the spirits are always there to guide you along.
 
 				</body>
 				</html>
