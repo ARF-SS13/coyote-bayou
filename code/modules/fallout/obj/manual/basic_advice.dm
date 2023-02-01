@@ -165,6 +165,9 @@
 				<li>Sleep : Resting in a safe location, and a bed, and sleeping will help mend your wounds and regain your strength. Don't have a bed in a room? Make one with wood! Make sure to buckle,</li>
 				<li>Powder: Made with one broc flower and one Xander, this handy powder can be made on the go!</li>
 				<li>Sutures and Bandages: If you are bleeding, it is best to stop it, and quickly! Suture the wound closed, bandage over the sewed up wound and let it heal.</li>
+				<li>Punga can help purge radiation, but it can also be addicting if you eat more than a few in one sitting.</li>
+				<li>Nash is on the western side of the middle Z (everyone spawns on this Z), and its main entrance is on the southern wall!</li>
+				<li></li>
 				</ol>
 				<p>
 
@@ -173,8 +176,10 @@
 				<p>
 				<ol>
 				<li>The blue matrix tiles you can just walk right through to another map. The green ones are to leave the region (basically Cryo)</li>
-				<li></li>
-				<li></li>
+				<li>Remember to close Nash's gate, unless you WANT the wildlife to get in!</li>
+				<li>The town can be sealed, if you can find all the ways in.</li>
+				<li>Nash has MULTIPLE watch towers you can use to spot monsters working their way in, and if you use binoculars that high up you can see even further!</li>
+				<li>It's not always faster to pull your pistol, but it is if its a cowboy single action army.</li>
 				<li></li>
 				</ol>
 				<p>
