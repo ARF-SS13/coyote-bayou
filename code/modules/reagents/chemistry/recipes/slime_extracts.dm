@@ -505,7 +505,7 @@
 	required_other = TRUE
 
 /datum/chemical_reaction/slime/adamantine/on_reaction(datum/reagents/holder)
-	new /obj/item/stack/sheet/mineral/adamantine(get_turf(holder.my_atom))
+	new /obj/item/ingot/adamantine(get_turf(holder.my_atom))
 	..()
 
 //Bluespace
