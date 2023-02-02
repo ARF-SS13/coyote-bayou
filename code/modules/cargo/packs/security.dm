@@ -315,7 +315,7 @@
 					/obj/item/grenade/clusterbuster/syndieminibomb,
 					/obj/item/grenade/clusterbuster/teargas,
 					/obj/item/grenade/clusterbuster/clf3,
-					/obj/item/grenade/clusterbuster/slime/volatile,
+					/obj/item/grenade/clusterbuster/slime,
 					/obj/item/grenade/clusterbuster/facid)
 	crate_name = "clusterbang grenade pack crate"
 
