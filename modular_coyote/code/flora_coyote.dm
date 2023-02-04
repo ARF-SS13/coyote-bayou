@@ -597,22 +597,44 @@
 	anchored = TRUE
 
 /obj/structure/flora/tree/chomp/desert_tree
-	name = "palm tree"
+	name = "tree"
 	desc = "woody"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "desert_tree"
 	anchored = TRUE
 
 /obj/structure/flora/tree/chomp/desert_tree1
-	name = "palm tree"
+	name = "tree"
 	desc = "woody"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "desert_tree1"
 	anchored = TRUE
 
 /obj/structure/flora/tree/chomp/desert_tree3
-	name = "palm tree"
+	name = "tree"
 	desc = "woody"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "desert_tree3"
 	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/large_boulder
+	name = "large rock"
+	desc = "best not to be caught between it."
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "large_boulder"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/tall_boulder
+	name = "large rock"
+	desc = "best not to be caught between it."
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "tall_boulder"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/boulder
+	name = "large rock"
+	desc = "best not to be caught between it."
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "boulder"
+	anchored = TRUE
+
