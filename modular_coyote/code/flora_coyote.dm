@@ -868,3 +868,57 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "anthill2"
 	anchored = TRUE
+
+/obj/structure/flora/chomp/palmy0
+	name = "palm bush"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmy0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmy1
+	name = "palm bush"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmy1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmy2
+	name = "palm bush"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmy2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrubber0
+	name = "shrubbery"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrubber0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrubber1
+	name = "shrubbery"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrubber1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrubber2
+	name = "shrubbery"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrubber2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/lbarrelcacti0
+	name = "barrel cactus
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lbarrelcacti0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/lbarrelcacti1
+	name = "barrel cactus
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lbarrelcacti1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/lbarrelcacti2
+	name = "barrel cactus
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lbarrelcacti2"
+	anchored = TRUE
