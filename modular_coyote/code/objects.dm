@@ -182,7 +182,7 @@
 //alien coins from virgo
 
 /obj/item/coin/iron/strangecoin1
-	name "strange coin"
+	name = "strange coin"
 	desc = "A strange triangle shaped coin."
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "triangle-p"
