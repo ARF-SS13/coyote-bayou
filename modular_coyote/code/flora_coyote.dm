@@ -700,3 +700,105 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "desert_stump"
 	anchored = TRUE
+
+/obj/structure/flora/chomp/potplant0
+	name = "Potted Plant"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "potplant0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/potplant1
+	name = "Potted Plant"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "potplant1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/potplant2
+	name = "Potted Plant"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "potplant2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket0
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "thicket0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket1
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "thicket1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket2
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "thicket2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket3
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "thicket3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket4
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "thicket4"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket5
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "thicket5"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket6
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "thicket6"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub0
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrub0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub1
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrub1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub2
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrub2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub3
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrub3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub4
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrub4"
+	anchored = TRUE"
+
+/obj/structure/flora/chomp/shrub5
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrub5
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub1
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "shrub1"
+	anchored = TRUE
