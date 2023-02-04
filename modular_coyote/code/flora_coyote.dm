@@ -797,8 +797,74 @@
 	icon_state = "shrub5
 	anchored = TRUE
 
-/obj/structure/flora/chomp/shrub1
-	name = "shrub"
+/obj/structure/flora/chomp/bush0
+	name = "bush"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
-	icon_state = "shrub1"
+	icon_state = "bush0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush1
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "bush1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush2
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "bush2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush3
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "bush3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush5
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "bush5"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti0
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "barrelcacti0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti1
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "barrelcacti1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti2
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "barrelcacti2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti3
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "barrelcacti3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/anthill0
+	name = "ant hill"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "anthill0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/anthill1
+	name = "ant hill"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "anthill1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/anthill2
+	name = "ant hill"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "anthill2"
 	anchored = TRUE
