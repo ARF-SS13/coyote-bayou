@@ -515,3 +515,104 @@
 	icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "snow"
 	anchored = TRUE
+
+//Flora from Chompers.
+
+//Trees
+/obj/structure/flora/tree/chomp/palmtreeb
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtreeb"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/palmtreeb1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtreeb1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/palmtreech
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/palmtreech1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtree1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/mpalmtreeb
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "mpalmtreeb"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/mpalmtreeb1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "mpalmtreeb1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/mpalmtree
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "mpalmtree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree3
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree3"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree4
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree4"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/desert_tree
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "desert_tree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/desert_tree1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "desert_tree1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/desert_tree3
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "desert_tree3"
+	anchored = TRUE
