@@ -178,3 +178,29 @@
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	icon_state = "nest_chair_large"
 	max_integrity = 80
+
+//alien coins from virgo
+
+/obj/item/coin/iron/strangecoin1
+	name "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle-p"
+
+/obj/item/coin/iron/strangecoin2
+	name "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle-g"
+
+/obj/item/coin/iron/strangecoin3
+	name "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle-s"
+
+/obj/item/coin/iron/strangecoin4
+	name "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle"
