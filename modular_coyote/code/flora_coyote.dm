@@ -638,3 +638,65 @@
 	icon_state = "boulder"
 	anchored = TRUE
 
+/obj/structure/flora/tree/chomp/lcactus
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/lcactus1
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/lcactus2
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus2"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/lcactus3
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmrs_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump1
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmls_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump2
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palml_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump3
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmr_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/desertstump
+	name = "tree stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "desert_stump"
+	anchored = TRUE
