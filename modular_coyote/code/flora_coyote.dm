@@ -789,7 +789,7 @@
 	name = "shrub"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "shrub4"
-	anchored = TRUE"
+	anchored = TRUE
 
 /obj/structure/flora/chomp/shrub5
 	name = "shrub"
