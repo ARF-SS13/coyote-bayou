@@ -617,21 +617,21 @@
 	icon_state = "desert_tree3"
 	anchored = TRUE
 
-/obj/structure/flora/tree/chomp/large_boulder
+/obj/structure/flora/chomp/large_boulder
 	name = "large rock"
 	desc = "best not to be caught between it."
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "large_boulder"
 	anchored = TRUE
 
-/obj/structure/flora/tree/chomp/tall_boulder
+/obj/structure/flora/chomp/tall_boulder
 	name = "large rock"
 	desc = "best not to be caught between it."
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "tall_boulder"
 	anchored = TRUE
 
-/obj/structure/flora/tree/chomp/boulder
+/obj/structure/flora/chomp/boulder
 	name = "large rock"
 	desc = "best not to be caught between it."
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
@@ -906,19 +906,87 @@
 	anchored = TRUE
 
 /obj/structure/flora/chomp/lbarrelcacti0
-	name = "barrel cactus
+	name = "barrel cactus"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "lbarrelcacti0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/lbarrelcacti1
-	name = "barrel cactus
+	name = "barrel cactus"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "lbarrelcacti1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/lbarrelcacti2
-	name = "barrel cactus
+	name = "barrel cactus"
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "lbarrelcacti2"
 	anchored = TRUE
+
+/obj/structure/flora/chomp/palmuria
+	name = "palmuria"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmuria"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmuria1
+	name = "palmuria"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmuria1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lribs
+	name = "ribs"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lribs"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lribs1
+	name = "ribs"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lribs1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lskull
+	name = "skull"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lskull"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lbone
+	name = "bone"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lbone"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lrock"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock1
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lrock1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock2
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lrock2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock3
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lrock3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock4
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lrock4"
+	anchored = TRUE
+
+
