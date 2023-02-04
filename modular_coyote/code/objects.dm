@@ -188,19 +188,19 @@
 	icon_state = "triangle-p"
 
 /obj/item/coin/iron/strangecoin2
-	name "strange coin"
+	name = "strange coin"
 	desc = "A strange triangle shaped coin."
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "triangle-g"
 
 /obj/item/coin/iron/strangecoin3
-	name "strange coin"
+	name = "strange coin"
 	desc = "A strange triangle shaped coin."
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "triangle-s"
 
 /obj/item/coin/iron/strangecoin4
-	name "strange coin"
+	name = "strange coin"
 	desc = "A strange triangle shaped coin."
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "triangle"
