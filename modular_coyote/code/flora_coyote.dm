@@ -988,5 +988,3 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "lrock4"
 	anchored = TRUE
-
-
