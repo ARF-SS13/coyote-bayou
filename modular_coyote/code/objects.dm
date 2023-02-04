@@ -164,3 +164,17 @@
 	icon_state = "deer"
 	attack_verb = list("headbutt", "booped", "bapped", "bumped")
 	squeak_override = list('sound/items/deerplush.ogg' = 1)
+
+/obj/structure/bed/small_nest
+	name = "small nest"
+	desc = "A small round nest that looks soft"
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon_state = "nest_chair"
+	max_integrity = 80
+
+/obj/structure/bed/big_nest
+	name = "big nest"
+	desc = "A big round nest that looks soft"
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon_state = "nest_chair_large"
+	max_integrity = 80
