@@ -690,301 +690,301 @@
 /obj/structure/flora/chomp/palmstump3
 	name = "palm stump"
 	desc = "kinda stumpy"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "palmr_stump"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/desertstump
 	name = "tree stump"
 	desc = "kinda stumpy"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "desert_stump"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/potplant0
 	name = "Potted Plant"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "potplant0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/potplant1
 	name = "Potted Plant"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "potplant1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/potplant2
 	name = "Potted Plant"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "potplant2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/thicket0
 	name = "thicket"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "thicket0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/thicket1
 	name = "thicket"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "thicket1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/thicket2
 	name = "thicket"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "thicket2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/thicket3
 	name = "thicket"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "thicket3"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/thicket4
 	name = "thicket"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "thicket4"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/thicket5
 	name = "thicket"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "thicket5"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/thicket6
 	name = "thicket"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "thicket6"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrub0
 	name = "shrub"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrub0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrub1
 	name = "shrub"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrub1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrub2
 	name = "shrub"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrub2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrub3
 	name = "shrub"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrub3"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrub4
 	name = "shrub"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrub4"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrub5
 	name = "shrub"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrub5"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bush0
 	name = "bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "bush0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bush1
 	name = "bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "bush1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bush2
 	name = "bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "bush2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bush3
 	name = "bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "bush3"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bush5
 	name = "bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "bush5"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/barrelcacti0
 	name = "barrel cactus"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "barrelcacti0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/barrelcacti1
 	name = "barrel cactus"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "barrelcacti1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/barrelcacti2
 	name = "barrel cactus"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "barrelcacti2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/barrelcacti3
 	name = "barrel cactus"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "barrelcacti3"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/anthill0
 	name = "ant hill"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "anthill0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/anthill1
 	name = "ant hill"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "anthill1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/anthill2
 	name = "ant hill"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "anthill2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/palmy0
 	name = "palm bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "palmy0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/palmy1
 	name = "palm bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "palmy1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/palmy2
 	name = "palm bush"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "palmy2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrubber0
 	name = "shrubbery"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrubber0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrubber1
 	name = "shrubbery"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrubber1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/shrubber2
 	name = "shrubbery"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "shrubber2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/lbarrelcacti0
 	name = "barrel cactus"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "lbarrelcacti0"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/lbarrelcacti1
 	name = "barrel cactus"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "lbarrelcacti1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/lbarrelcacti2
 	name = "barrel cactus"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_planet.dmi'
 	icon_state = "lbarrelcacti2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/palmuria
 	name = "palmuria"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "palmuria"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/palmuria1
 	name = "palmuria"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "palmuria1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lribs
 	name = "ribs"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lribs"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lribs1
 	name = "ribs"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lribs1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lskull
 	name = "skull"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lskull"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lbone
 	name = "bone"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lbone"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lrock
 	name = "rock"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lrock1
 	name = "rock"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock1"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lrock2
 	name = "rock"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock2"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lrock3
 	name = "rock"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock3"
 	anchored = TRUE
 
 /obj/structure/flora/chomp/bones/lrock4
 	name = "rock"
-	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock4"
 	anchored = TRUE
