@@ -81,7 +81,7 @@
 //Slugcat OC for thingpony
 /mob/living/simple_animal/pet/slugcat/meadow
 	name = "Meadow"
-	desc = "A noodly creature with soft looking fur. This one has orange and black patches upon it's white fur!"
+	desc = "A noodly creature with soft looking fur. This one has orange and black patches upon it's white fur! Fine with most RP"
 	icon_state = "calicoslug"
 	icon_living = "calicoslug"
 	icon_dead = "calicoslug_dead"
