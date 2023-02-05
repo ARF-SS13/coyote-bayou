@@ -823,7 +823,7 @@
 
 /obj/item/clothing/suit/hooded/cloak/razorclaw
 	name = "razorclaw cloak"
-	icon_state = "razorclaw"
+	icon_state = "rcarmor"
 	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw."
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/razorclaw
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
