@@ -504,7 +504,6 @@
 /obj/item/projectile/beam/laser/pistol/freeblade //Freeblade Blaster
 	name = "freeblade beam"
 	damage = 15
-	armour_penetration = 0.6
 	icon_state = "freeblade"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_color = LIGHT_COLOR_RED
