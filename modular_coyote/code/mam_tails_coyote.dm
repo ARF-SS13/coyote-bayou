@@ -350,3 +350,18 @@
 	icon_state = "feathertail"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/human/gecko
+	name = "Gecko"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "gecko"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/gecko
+	name = "Gecko"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "gecko"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
