@@ -9,7 +9,7 @@
 //--
 
 /datum/crafting_recipe/food/sunset/happyshark/jerky
-	name = "Happy Sharky Jerky"
+	name = "Wasteland Mesquite Smoked Jerky"
 	time = 40
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1,
@@ -23,7 +23,7 @@
 
 
 /datum/crafting_recipe/food/sunset/happyshark/candybar
-	name = "Happy Sharky Sweet Bar"
+	name = "Trail Goers Sweet Bar"
 	time = 40
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
@@ -36,7 +36,7 @@
 
 
 /datum/crafting_recipe/food/sunset/happyshark/bittercola
-	name = "Happy Sharky Bittercola"
+	name = "Soothing Soda"
 	time = 40
 	reqs = list(
 		/datum/reagent/consumable/nuka_cola = 10,

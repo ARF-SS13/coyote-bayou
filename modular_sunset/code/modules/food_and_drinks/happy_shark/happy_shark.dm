@@ -1,8 +1,8 @@
 // CUSTOM FLUFF FOOD FOR HAPPY SHARK JERKY //
 
 /obj/item/reagent_containers/food/snacks/sunset/happyshark/jerky
-	name = "Happy Sharky Jerky"
-	desc = "Specially prepared and well seasoned jerky, brought to you by Happy Sharky Co."
+	name = "Wasteland Mesquite Smoked Jerky"
+	desc = "Specially prepared and well seasoned jerky."
 	icon = 'modular_sunset/icons/obj/food/happy_shark.dmi'
 	icon_state = "shark_jerky"
 	bonus_reagents = list(/datum/reagent/consumable/honey = 1, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/nutriment = 5, /datum/reagent/drug/happiness = 1)
@@ -13,8 +13,8 @@
 
 
 /obj/item/reagent_containers/food/snacks/sunset/happyshark/candybar
-	name = "Happy Sharky Sweet Bar"
-	desc = "A sweet and nutritious candy bar brought to you by Happy Sharky Co."
+	name = "Trail Goers Sweet Bar"
+	desc = "A sweet and nutritious candy bar."
 	icon = 'modular_sunset/icons/obj/food/happy_shark.dmi'
 	icon_state = "shark_candy"
 	bonus_reagents = list(/datum/reagent/consumable/yuccajuice = 1, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/drug/happiness = 1)
@@ -25,8 +25,8 @@
 
 
 /obj/item/reagent_containers/food/drinks/sunset/happyshark/bittercola
-	name = "Happy Sharky Bittercola"
-	desc = "A uniquely mixed cola brought to you by Happy Sharky Co. - Ice not included."
+	name = "Soothing Soda"
+	desc = "A uniquely mixed cola. - Ice not included."
 	icon = 'modular_sunset/icons/obj/food/happy_shark.dmi'
 	icon_state = "shark_drink"
 	list_reagents = list(/datum/reagent/consumable/nuka_cola = 15, /datum/reagent/consumable/sodawater = 15, /datum/reagent/medicine/healing_powder = 10)
