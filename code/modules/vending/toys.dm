@@ -32,3 +32,24 @@
 /obj/item/vending_refill/donksoft
 	machine_name = "Wilson Atomatoys"
 	icon_state = "refill_donksoft"
+
+
+/obj/machinery/vending/kink
+	name = "\improper Kink Vendor"
+	desc = "A place to get all your lewd needs!"
+	product_slogans = "This is where the dildo's are! Come get you one!"
+	product_ads = "Don't have a partner? We got you covered!"
+	icon_state = "kink"
+	vend_reply = "Have fun!"
+	products = list(
+		/obj/item/toy/lewd/dildo/avian = 8,
+		/obj/item/toy/lewd/dildo/canine = 8,
+		/obj/item/toy/lewd/dildo/dragon = 8,
+		/obj/item/toy/lewd/dildo/equine = 8,
+		/obj/item/toy/lewd/dildo/human = 8,
+		/obj/item/toy/lewd/dildo/tentacle = 8,
+		/obj/item/toy/lewd/dildo/double = 8)
+
+	default_price = PRICE_REALLY_CHEAP
+	extra_price = PRICE_PRETTY_CHEAP
+	payment_department = ACCOUNT_SRV
