@@ -567,14 +567,16 @@
 //Nests
 /datum/crafting_recipe/small_nest
 	name = "small nest"
-	result = "/obj/structure/bed/small_nest"
+	result = /obj/structure/bed/small_nest
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5)
 	time = 5 SECONDS
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/large_nest
 	name = "large nest"
-	result = "/obj/structure/bed/large_nest"
+	result = /obj/structure/bed/big_nest
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10)
 	time = 5 SECONDS
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC

@@ -179,6 +179,7 @@
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
 
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"
@@ -446,14 +447,14 @@
 	ckeywhitelist = list("fuzlet", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/fuzlet/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/sig/blackkite(src)
-	new /obj/item/gun/ballistic/automatic/pistol/sig/blackkite(src)
 	new /obj/item/card/fuzzy_license(src)
-	new /obj/item/toy/crayon/orange(src)
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 	new /obj/item/stack/marker_beacon/thirty(src)
+	new /obj/item/screwdriver/nuke/nt(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/storage/survivalkit/combat(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Scavfox Kit"
@@ -528,6 +529,16 @@
 
 // J
 
+/datum/gear/donator/kits/jackalface
+	name = "Recon Kit"
+	path = /obj/item/storage/box/large/custom_kit/jackalface
+	ckeywhitelist = list("jackalface")
+
+/obj/item/storage/box/large/custom_kit/jackalface/PopulateContents()
+	new /obj/item/clothing/under/draculass(src)
+	new /obj/item/clothing/mask/chameleon(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+
 /datum/gear/donator/kits/jackson1112
 	name = "Recon Kit"
 	path = /obj/item/storage/box/large/custom_kit/jackson1112
@@ -562,6 +573,16 @@
 	new /obj/item/clothing/under/syndicate/camo(src)
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/radio(src)
+
+/datum/gear/donator/kits/jaytheavian
+	name = "Mayor Stuff"
+	path = /obj/item/storage/box/large/custom_kit/jaytheavian
+	ckeywhitelist = list("jaytheavian")
+
+/obj/item/storage/box/large/custom_kit/jaytheavian/PopulateContents()
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/card/id/captains_spare(src)
 
 // K
 // L
@@ -733,6 +754,7 @@
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/clothing/glasses/prism_glasses(src)
+	new /obj/item/stealthboy(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"
@@ -808,9 +830,9 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
-	new /obj/item/card/id/captains_spare(src)
+/*	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/kit_spawner/townie/mayor(src)*/
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
