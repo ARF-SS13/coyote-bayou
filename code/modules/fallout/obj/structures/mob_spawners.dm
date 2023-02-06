@@ -220,14 +220,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_time = 7 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat = 30)
 
-/obj/structure/nest/rat/tame
-	name = "tame rat nest"
-	desc = "A man-made nest full of squeakers."
-	mob_types = list(
-		/mob/living/simple_animal/hostile/rat/tame = 9,
-		/mob/living/simple_animal/hostile/rat/skitter/curious = 1
-	)
-
 /obj/structure/nest/mouse
 	name = "mouse nest"
 	max_mobs = 6
