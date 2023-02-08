@@ -79,18 +79,20 @@
     icon_state = "superduper2"
 
 /obj/structure/billboard/random/New()
-    ..()
-    icon_state = pick("hubris1","hubris2","nukagirl1", "nukagirl2", "radiationking1", "redrocket1","redrocket2", "superduper1", "superduper2", "generalatomics1", "generalatomics2", "cola1", "cola2", "cola3", "cola4", "ritas1", "ritas2", "ritas3", "ritas4", "roboco1", "sunset1", "poseiden1", "poseiden2", "poseiden3" )
+	..()
+	icon_state = pick("hubris1","hubris2","nukagirl1", "nukagirl2", "radiationking1", "redrocket1","redrocket2", "superduper1", "superduper2", "generalatomics1", "generalatomics2", "cola1", "cola2", "cola3", "cola4", "ritas1", "ritas2", "ritas3", "ritas4", "roboco1", "sunset1", "poseiden1", "poseiden2", "poseiden3" )
 
 /obj/structure/billboard/powerlines1
-    name = "Broken powerlines"
-    desc = "Old broken powerlines, all that remains of the prewar powergrid."
-    icon_state = "stolb1"
+	name = "Broken powerlines"
+	desc = "Old broken powerlines, all that remains of the prewar powergrid."
+	icon_state = "stolb1"
+	density = 0
 
 /obj/structure/billboard/powerlines2
-    name = "Broken powerlines"
-    desc = "Old broken powerlines, all that remains of the prewar powergrid."
-    icon_state ="stolb2"
+	name = "Broken powerlines"
+	desc = "Old broken powerlines, all that remains of the prewar powergrid."
+	icon_state ="stolb2"
+	density = 0
 
 /obj/structure/billboard/boardedwell
     name = "Boarded up well"
