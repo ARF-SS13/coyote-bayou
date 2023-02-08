@@ -31,6 +31,8 @@
 
 #define CONTROL_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/gecko,\
+		/mob/living/simple_animal/hostile/gecko,\
+		/mob/living/simple_animal/hostile/gecko/legacy,\
 		/mob/living/simple_animal/hostile/gecko/fire,\
 		/mob/living/simple_animal/hostile/molerat,\
 		/mob/living/simple_animal/hostile/radroach)
