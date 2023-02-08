@@ -53,8 +53,7 @@
 
 /obj/item/projectile/energy/teslacannon/oasis
 	name = "shock beam"
-	damage = 10 //high damage but low ap
-	armour_penetration = 0.01 //avoid pa deflect
+	damage = 12 //high damage but low ap
 	flag = "energy"
 	wound_bonus = -5
 	bare_wound_bonus = 35

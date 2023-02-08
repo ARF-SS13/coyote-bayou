@@ -169,7 +169,7 @@
 #define ARMOR_VALUE_GHOUL_NAKED list(\
 		"melee" = 0, \
 		"bullet" = 0, \
-		"laser" = 30, \
+		"laser" = 15, \
 		"energy" = 20, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -188,7 +188,7 @@
 #define ARMOR_VALUE_GHOUL_REAVER list(\
 		"melee" = -50, \
 		"bullet" = 35, \
-		"laser" = 35, \
+		"laser" = 20, \
 		"energy" = 25, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -207,7 +207,7 @@
 #define ARMOR_VALUE_GHOUL_GLOWING list(\
 		"melee" = -50, \
 		"bullet" = -10, \
-		"laser" = 50, \
+		"laser" = 25, \
 		"energy" = 40, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -379,7 +379,7 @@
 #define ARMOR_VALUE_DEATHCLAW_COMMON list(\
 		"melee" = 45, \
 		"bullet" = 75, \
-		"laser" = 35, \
+		"laser" = 10, \
 		"energy" = 10, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -399,7 +399,7 @@
 #define ARMOR_VALUE_DEATHCLAW_MOTHER list(\
 		"melee" = 55, \
 		"bullet" = 80, \
-		"laser" = 45, \
+		"laser" = 30, \
 		"energy" = 15, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -419,7 +419,7 @@
 #define ARMOR_VALUE_DEATHCLAW_LEGEND list(\
 		"melee" = 65, \
 		"bullet" = 85, \
-		"laser" = 25, \
+		"laser" = 20, \
 		"energy" = 15, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -474,7 +474,7 @@
 #define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY list(\
 		"melee" = 25, \
 		"bullet" = 35, \
-		"laser" = 35, \
+		"laser" = 20, \
 		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
@@ -493,7 +493,7 @@
 #define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS list(\
 		"melee" = 35, \
 		"bullet" = 45, \
-		"laser" = 45, \
+		"laser" = 30, \
 		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
@@ -533,7 +533,7 @@
 #define ARMOR_VALUE_RAIDER_ARMOR list(\
 		"melee" = 25, \
 		"bullet" = 5, \
-		"laser" = 35, \
+		"laser" = 20, \
 		"energy" = 35, \
 		"bomb" = 0, \
 		"bio" = 0, \
@@ -553,7 +553,7 @@
 #define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR list(\
 		"melee" = 20, \
 		"bullet" = 35, \
-		"laser" = 35, \
+		"laser" = 20, \
 		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
@@ -573,7 +573,7 @@
 #define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR_REINFORCED list(\
 		"melee" = 25, \
 		"bullet" = 40, \
-		"laser" = 40, \
+		"laser" = 30, \
 		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
@@ -593,7 +593,7 @@
 #define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR_SUPER list(\
 		"melee" = 55, \
 		"bullet" = 45, \
-		"laser" = 40, \
+		"laser" = 30, \
 		"energy" = -5, \
 		"bomb" = 0, \
 		"bio" = 0, \
