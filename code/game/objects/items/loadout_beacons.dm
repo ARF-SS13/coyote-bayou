@@ -286,7 +286,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 			if(GLOB.loadout_datums[loadies][LOADOUT_CLASS] == loadya && CHECK_BITFIELD(GLOB.loadout_datums[loadies][LOADOUT_BITFIELD], allowed_flags))
 				list2add[loadies] = GLOB.loadout_datums[loadies][LOADOUT_PATH]
 		if(LAZYLEN(list2add))
-			if(!islist(list_of_stuff[loadya])) 
+			if(!islist(list_of_stuff[loadya]))
 				list_of_stuff[loadya] = list()
 			list2add = sort_list(list2add)
 			list_of_stuff[loadya] |= list2add
@@ -484,14 +484,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/brushgun/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/brush(src)
 	new /obj/item/ammo_box/c4570box(src)
-
-/obj/item/storage/box/gun/rifle/amr
-	name = "anti-materiel rifle case"
-
-/obj/item/storage/box/gun/rifle/amr/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/mag/antimateriel(src)
-	new /obj/item/ammo_box/magazine/amr(src)
-	new /obj/item/ammo_box/a50MGbox(src)
 
 /obj/item/storage/box/gun/aer9
 	name = "laser rifle case"
@@ -1313,12 +1305,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
 
-/datum/loadout_box/amr
-	entry_tag = "Anti-Materiel Rifle"
-	entry_flags = LOADOUT_FLAG_PREMIUM
-	entry_class = LOADOUT_CAT_PREMIUM
-	spawn_thing = /obj/item/storage/box/gun/rifle/amr
-
 /datum/loadout_box/brushgun
 	entry_tag = "Brush Gun"
 	entry_flags = LOADOUT_FLAG_LAWMAN
@@ -1415,7 +1401,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /datum/loadout_box/revolver44
 	entry_tag = ".44 Single-Action Revolver"
-	entry_flags = LOADOUT_FLAG_WASTER 
+	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver/revolver44
 
