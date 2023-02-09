@@ -375,8 +375,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "aqO" = (
-/obj/structure/flora/tallgrass4,
-/turf/closed/wall/f13/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "aqU" = (
 /obj/structure/chair/stool/bar,
@@ -1561,6 +1562,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/caves)
+"bDX" = (
+/obj/structure/bed/mattress{
+	pixel_y = 15
+	},
+/obj/structure/bed/mattress{
+	pixel_y = 3
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "bEH" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -8666,11 +8676,11 @@
 	},
 /area/f13/building/mall)
 "jrI" = (
-/obj/structure/barricade/wooden,
-/obj/structure/fence/wooden{
-	dir = 4
+/obj/structure/campfire/stove{
+	pixel_y = 10
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/item/grown/log/tree,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "jrK" = (
 /obj/effect/decal/cleanable/dirt{
@@ -18463,6 +18473,12 @@
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/brick,
 /area/f13/building)
+"uqP" = (
+/obj/structure/bed/mattress{
+	pixel_y = 15
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "uro" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowvertical"
@@ -25986,8 +26002,8 @@ cdN
 rrs
 dtb
 dtb
-dtb
-dtb
+hqx
+hqx
 dtb
 dtb
 oez
@@ -26242,8 +26258,8 @@ cdN
 uvA
 hMq
 dtb
-dtb
-dtb
+hqx
+nkA
 dtb
 dtb
 dtb
@@ -26254,8 +26270,8 @@ fSd
 lnR
 fSd
 dtb
-dtb
-dtb
+hqx
+hqx
 oez
 oez
 oez
@@ -26500,7 +26516,7 @@ cdN
 rrs
 dtb
 dtb
-dtb
+nkA
 dtb
 dtb
 dtb
@@ -26511,7 +26527,7 @@ cdN
 cdN
 gYD
 dtb
-dtb
+hqx
 brR
 oez
 oez
@@ -26756,9 +26772,9 @@ gSp
 cdN
 rrs
 dtb
+hqx
 dtb
-dtb
-dtb
+hqx
 dtb
 dtb
 oez
@@ -26768,7 +26784,7 @@ cdN
 rVk
 aJz
 dtb
-dtb
+hqx
 dtb
 oez
 oez
@@ -27013,9 +27029,9 @@ cdN
 cdN
 rrs
 dtb
+hqx
 dtb
-dtb
-dtb
+hqx
 dtb
 dtb
 oez
@@ -27025,7 +27041,7 @@ cdN
 cdN
 aJz
 dtb
-dtb
+hqx
 brR
 oez
 oez
@@ -27270,10 +27286,10 @@ cdN
 uvA
 hMq
 dtb
+hqx
 dtb
 dtb
-dtb
-dtb
+hqx
 dtb
 oez
 fSd
@@ -27282,24 +27298,24 @@ rVk
 cdN
 aJz
 dtb
-brR
+nGe
 dtb
 oez
 oez
 oez
 oez
 dtb
+hqx
+hqx
+hqx
+hqx
 dtb
 dtb
 dtb
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-oez
-oez
+jQu
+jQu
 dtb
 dtb
 dtb
@@ -27527,11 +27543,11 @@ cdN
 cdN
 rrs
 dtb
+hqx
 dtb
 dtb
-dtb
-dtb
-dtb
+hqx
+hqx
 oez
 vFs
 nVR
@@ -27546,7 +27562,7 @@ oez
 oez
 oez
 dtb
-dtb
+hqx
 brR
 dtb
 dtb
@@ -27798,10 +27814,10 @@ fSd
 dtb
 brR
 dtb
-oez
-oez
-oez
-oez
+jQu
+jQu
+jQu
+jQu
 dtb
 dtb
 brR
@@ -27809,8 +27825,8 @@ brR
 dtb
 dtb
 dtb
-brR
-dtb
+nGe
+hqx
 dtb
 oez
 oez
@@ -28046,7 +28062,7 @@ dtb
 dtb
 dtb
 dtb
-oez
+jQu
 dtb
 dtb
 dtb
@@ -28065,8 +28081,8 @@ dtb
 dtb
 brR
 dtb
-dtb
-brR
+hqx
+nGe
 dtb
 dtb
 oez
@@ -28316,12 +28332,12 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+tnK
+tnK
+eEx
+vYm
+hqx
+hqx
 dtb
 brR
 dtb
@@ -28573,16 +28589,16 @@ oez
 oez
 oez
 oez
+tnK
+jrI
+cdN
+glD
+hqx
 dtb
 dtb
 dtb
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
 oez
 oez
 oez
@@ -28598,7 +28614,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -28830,12 +28846,12 @@ oez
 oez
 oez
 oez
+kjX
+bDX
+mNn
+hSU
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
 oez
 oez
 oez
@@ -28855,7 +28871,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -29087,12 +29103,12 @@ oez
 oez
 oez
 oez
+kjX
+vHC
+awW
+rrs
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
 oez
 oez
 oez
@@ -29112,7 +29128,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -29344,12 +29360,12 @@ oez
 oez
 oez
 oez
+hsD
+eEx
+hMq
+dCR
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
 oez
 oez
 oez
@@ -29369,7 +29385,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -29605,6 +29621,7 @@ oez
 oez
 oez
 oez
+tRd
 oez
 oez
 oez
@@ -29625,8 +29642,7 @@ oez
 oez
 oez
 oez
-oez
-oez
+tRd
 oez
 oez
 oez
@@ -29862,7 +29878,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -29883,7 +29899,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -30403,7 +30419,7 @@ oez
 oez
 oez
 oez
-oez
+fSd
 qwX
 hdV
 hdV
@@ -30660,9 +30676,9 @@ oez
 oez
 dtb
 dtb
-dtb
 fSd
 okF
+rVk
 rVk
 bqm
 dtb
@@ -30917,10 +30933,10 @@ oez
 oez
 dtb
 dtb
-dtb
 utV
 aHY
 rVk
+aqO
 nxq
 dtb
 qeo
@@ -31174,9 +31190,9 @@ oez
 oez
 hqx
 brR
-dtb
 fSd
-ega
+jrI
+rVk
 bsb
 xPZ
 dtb
@@ -31431,9 +31447,9 @@ oez
 oez
 dtb
 brR
-dtb
 nDe
 fmJ
+rVk
 cdN
 fBp
 dtb
@@ -31915,7 +31931,7 @@ dtb
 dtb
 dtb
 dtb
-dtb
+hqx
 dtb
 dtb
 dtb
@@ -32172,7 +32188,7 @@ hqx
 dtb
 dtb
 dtb
-dtb
+hqx
 dtb
 dtb
 brR
@@ -32425,12 +32441,12 @@ cdN
 rrs
 oez
 oez
+tnK
+tnK
+glD
+vYm
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+hqx
 dtb
 brR
 oez
@@ -32682,13 +32698,13 @@ cdN
 rrs
 oez
 oez
+tnK
+uqP
+cdN
+hMq
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-brR
+nGe
 dtb
 oez
 oez
@@ -32904,7 +32920,7 @@ oIp
 dtb
 dtb
 uZC
-aqO
+fSd
 fSd
 fSd
 fSd
@@ -32939,13 +32955,13 @@ wpB
 hMq
 dmX
 oez
-dtb
-dtb
-dtb
-dtb
+kjX
+cSN
+mNn
+hSU
 dtb
 brR
-dtb
+hqx
 dtb
 oez
 oez
@@ -33196,14 +33212,14 @@ rVk
 buW
 odJ
 oez
+kjX
+jrI
+awW
+dCR
 dtb
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+hqx
 oez
 oez
 ixY
@@ -33453,10 +33469,10 @@ rVk
 uSO
 odJ
 oez
-hqx
-dtb
-dtb
-dtb
+hsD
+eEx
+hMq
+dCR
 dtb
 hqx
 dtb
@@ -33734,7 +33750,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -33936,7 +33952,7 @@ fSd
 dCS
 cdN
 cdN
-jrI
+qqh
 dtb
 dtb
 hqx
@@ -33991,7 +34007,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 oez
 oez
@@ -34248,7 +34264,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 oez
 dtb
 dtb
@@ -34505,7 +34521,7 @@ sRu
 sRu
 oez
 oez
-oez
+tRd
 oez
 pys
 vxf
@@ -35275,7 +35291,7 @@ bnV
 sNs
 cdN
 mHH
-brR
+nGe
 dtb
 oez
 dtb
@@ -35532,7 +35548,7 @@ nbw
 rVk
 cdN
 uhD
-dtb
+hqx
 dtb
 jQu
 hqx
@@ -35789,7 +35805,7 @@ rVk
 sQl
 ega
 fSd
-dtb
+hqx
 dtb
 oez
 dtb
@@ -36046,7 +36062,7 @@ fSd
 lFN
 vFs
 vFs
-dtb
+hqx
 dtb
 oez
 dtb
@@ -36295,15 +36311,15 @@ dtb
 brR
 dtb
 oez
-dtb
-dtb
+hqx
+hqx
 dtb
 dtb
 dtb
 dtb
 pys
 jwG
-brR
+nGe
 dtb
 oez
 hqx
@@ -36555,11 +36571,11 @@ oez
 hqx
 dtb
 dtb
-dtb
-brR
-dtb
-dtb
-dtb
+hqx
+nGe
+hqx
+hqx
+hqx
 dtb
 dtb
 oez
