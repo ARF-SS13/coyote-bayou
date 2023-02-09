@@ -3983,7 +3983,18 @@
 "aoo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/obj/machinery/reagentgrinder,
+/obj/machinery/reagentgrinder{
+	pixel_y = 8;
+	pixel_x = -3
+	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 8;
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_y = 15;
+	pixel_x = 10
+	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "aop" = (
@@ -41387,6 +41398,18 @@
 "hJm" = (
 /obj/structure/table/wood,
 /obj/item/kitchen/rollingpin,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_y = 17;
+	pixel_x = -9
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_y = 18;
+	pixel_x = -2
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_y = 10;
+	pixel_x = -8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "hJz" = (
