@@ -81,7 +81,7 @@
 //Slugcat OC for thingpony
 /mob/living/simple_animal/pet/catslug/meadow
 	name = "Meadow"
-	desc = "A noodly creature with soft looking fur. This one has orange and black patches upon it's white fur! Fine with most RP"
+	desc = "A noodly creature with soft looking fur. This one has orange and black patches upon it's white fur! (OOC notes : Fine with most Rp! No snuff or scat) Ref: https://cdn.discordapp.com/attachments/986783005743923230/1071899061919166624/Meadow.png"
 	icon_state = "calicoslug"
 	icon_living = "calicoslug"
 	icon_dead = "calicoslug_dead"
@@ -201,3 +201,50 @@
 	icon_state = "absol"
 	icon_living = "absol"
 	icon_dead = "absol_d"
+
+
+//Mobs from Virgo
+
+/mob/living/simple_animal/pet/wolf/direwolf
+	name = "dire wolf"
+	desc = "The biggest and baddest wolf around"
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_dead = "direwolf-dead"
+	icon_living = "direwolf"
+	icon_state = "direwolf"
+	old_x = -16
+	old_y = 0
+	pixel_x = -16
+	pixel_y = 0
+	harm_intent_damage = 10
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	maxHealth = 300
+
+/mob/living/simple_animal/pet/wolf/direwolf/dog
+	name = "large dog"
+	desc = "The biggest and goodest dog around."
+	icon_dead = "diredog-dead"
+	icon_living = "diredog"
+	icon_state = "diredog"
+
+/mob/living/simple_animal/pet/wolf/direwolf/dog/sec
+	name = "large guard dog"
+	icon_dead = "diredogs-dead"
+	icon_living = "diredogs"
+	icon_state = "diredogs"
+
+/mob/living/simple_animal/pet/wolf/direwolf/rykka
+	name = "Rykka"
+	desc = "This big canine looks like a GSD."
+	icon_dead = "rykka-dead"
+	icon_living = "rykka"
+	icon_state = "rykka"
+
+/mob/living/simple_animal/pet/wolf/direwolf/andrews
+	name = "andrewsarchus"
+	desc = "That's one massive mean-looking piece of long extinct megafauna."
+	icon_dead = "andrews-dead"
+	icon_living = "andrews"
+	icon_state = "andrews"
+
