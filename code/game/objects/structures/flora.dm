@@ -463,6 +463,7 @@
 	icon_state = "bushc"
 
 /obj/structure/flora/junglebush/large
+	name = "bush"
 	icon_state = "bush"
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	pixel_x = -16
