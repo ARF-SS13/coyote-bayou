@@ -895,6 +895,13 @@
 	key_third_person = "smiles like a dork."
 	message = "smiles like a dork."
 	sound = 'sound/f13effects/sunsetsounds/squee.ogg'
+
+/datum/emote/waa
+	key = "waa"
+	key_third_person = "waas"
+	message = "let out a lengthy, rather anxious noise."
+	sound = 'sound/f13effects/sunsetsounds/waa.ogg'
+
 /datum/emote/warcry
 	key = "warcry"
 	key_third_person = "warcrys"
