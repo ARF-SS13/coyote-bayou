@@ -48,7 +48,12 @@
 		/obj/item/toy/lewd/dildo/equine = 8,
 		/obj/item/toy/lewd/dildo/human = 8,
 		/obj/item/toy/lewd/dildo/tentacle = 8,
-		/obj/item/toy/lewd/dildo/double = 8)
+		/obj/item/toy/lewd/dildo/double = 8,
+		/obj/item/toy/lewd/fleshlight/green =8,
+		/obj/item/toy/lewd/fleshlight/teal = 8,
+		/obj/item/toy/lewd/fleshlight/pink = 8,
+		/obj/item/toy/lewd/fleshlight/red = 8,
+		/obj/item/toy/lewd/fleshlight/yellow =8)
 
 	default_price = PRICE_REALLY_CHEAP
 	extra_price = PRICE_PRETTY_CHEAP

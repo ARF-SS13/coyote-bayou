@@ -50,3 +50,38 @@
 	icon = 'modular_coyote/icons/objects/lewd_items.dmi'
 	icon_state = "dildo_double"
 	attack_verb = list("penetraded", "slapped", "inseminated")
+
+/obj/item/toy/lewd/fleshlight/green
+	name = "fleshlight"
+	desc = "A green fleshlight!"
+	icon = 'modular_coyote/icons/objects/lewd_items.dmi'
+	icon_state = "fleshlight_green"
+	attack_verb = list("penetraded", "slapped", "inseminated")
+
+/obj/item/toy/lewd/fleshlight/teal
+	name = "fleshlight"
+	desc = "A teal fleshlight!"
+	icon = 'modular_coyote/icons/objects/lewd_items.dmi'
+	icon_state = "fleshlight_teal"
+	attack_verb = list("penetraded", "slapped", "inseminated")
+
+/obj/item/toy/lewd/fleshlight/pink
+	name = "fleshlight"
+	desc = "A pink fleshlight!"
+	icon = 'modular_coyote/icons/objects/lewd_items.dmi'
+	icon_state = "fleshlight_pink"
+	attack_verb = list("penetraded", "slapped", "inseminated")
+
+/obj/item/toy/lewd/fleshlight/red
+	name = "fleshlight"
+	desc = "A red fleshlight!"
+	icon = 'modular_coyote/icons/objects/lewd_items.dmi'
+	icon_state = "fleshlight_red"
+	attack_verb = list("penetraded", "slapped", "inseminated")
+
+/obj/item/toy/lewd/fleshlight/yellow
+	name = "fleshlight"
+	desc = "A yellow fleshlight!"
+	icon = 'modular_coyote/icons/objects/lewd_items.dmi'
+	icon_state = "fleshlight_yellow"
+	attack_verb = list("penetraded", "slapped", "inseminated")

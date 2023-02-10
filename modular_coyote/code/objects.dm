@@ -204,3 +204,98 @@
 	desc = "A strange triangle shaped coin."
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "triangle"
+
+//Playground
+
+/obj/structure/playground/slide
+	name = "Slide"
+	desc = "A slide! Oh god, it's metal. Don't go down in the summer."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "slide"
+
+/obj/structure/playground/merrygoround
+	name = "Merry go Round!"
+	desc = "Speeeeen."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "merry_go_round"
+
+/obj/structure/playground/ride/brown
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "brown_ride"
+
+/obj/structure/playground/ride/white
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "white_ride"
+
+/obj/structure/playground/ride/white2
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "white2_ride"
+
+/obj/structure/playground/ride/black
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "black_ride"
+
+/obj/structure/playground/ride/red
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "red_ride"
+
+/obj/structure/playground/hopscotch_number
+	name = "hopscotch"
+	desc = "Hop to it."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "hopscotch_number"
+
+/obj/structure/playground/hopscotch
+	name = "hopscotch"
+	desc = "Hop to it."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "hopscotch"
+
+/obj/structure/playground/tireswing
+	name = "Tire swing"
+	desc = "Swing Low."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "tire_swing"
+
+/obj/structure/playground/seesaw
+	name = "See Saw"
+	desc = "For all your ups and downs in life."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "see_saw"
+
+/obj/structure/playground/sandbox
+	name = "Sandbox"
+	desc = "Gritty."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "sandbox"
+
+/obj/structure/playground/swings
+	name = "Swings"
+	desc = "Swing high! Swing low! Jump off and break your toe!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "swings"
+
+/obj/structure/playground/vollyball
+	name = "Vollyball"
+	desc = "What goes around comes around."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "vollyball"
+
+/obj/structure/playground/monkeybars
+	name = "Monkey Bars"
+	desc = "Funny..there's no monkeys!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "monkeybars"
+
+
+
