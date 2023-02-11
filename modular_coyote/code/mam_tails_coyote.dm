@@ -365,3 +365,30 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/tails/human/leafeon
+	name = "Leafeon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "leaf"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/leafeon
+	name = "Leafeon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "leaf"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/human/furret
+	name = "Furret"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "furret"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/furret
+	name = "Furret"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "furret"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
