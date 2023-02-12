@@ -430,11 +430,13 @@
 	name = "fieldscribe suit"
 	desc = "A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
 	icon_state = "fieldscribe"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/toggle/labcoat/scribecoat
 	name = "fieldscribe coat"
 	desc = "A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
 	icon_state = "scribecoat"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/toggle/labcoat/emergency
 	name = "first responder jacket"
