@@ -609,6 +609,15 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
 
+/datum/gear/donator/kits/lucine2
+	name = "HAVOC"
+	path = /obj/item/storage/box/large/custom_kit/lucine2
+	ckeywhitelist = list("lucine")
+
+/obj/item/storage/box/large/custom_kit/lucine2/PopulateContents()
+	new /obj/item/clothing/head/helmet/knight/f13/metal(src)
+	new /obj/item/gun/energy/mmlbuster(src)
+
 // M
 
 /datum/gear/donator/kits/mathiel
