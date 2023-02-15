@@ -87,6 +87,7 @@
 	bare_wound_bonus += 50
 	sound_pitch = -50
 	alternate_attack_prob = 75
+	is_low_health = TRUE
 
 /// Override this with what should happen when going from low health to high health
 /mob/living/simple_animal/hostile/deathclaw/make_high_health()
@@ -102,6 +103,7 @@
 	wound_bonus = initial(wound_bonus)
 	bare_wound_bonus = initial(bare_wound_bonus)
 	alternate_attack_prob = initial(alternate_attack_prob)
+	is_low_health = FALSE
 
 /mob/living/simple_animal/hostile/deathclaw/AlternateAttackingTarget(atom/the_target)
 	if(!ismovable(the_target))
