@@ -101,6 +101,7 @@
 	/// Probability it'll do some other kind of melee attack, like a knockback hit.
 	var/alternate_attack_prob = 0
 	/// At what percent of their health does the mob change states? Like, get ANGY on low-health or something. set to 0 or FALSE to disable
+	/// Is a decimal, 0 through 1. 0.5 means half health, 0.25 is quarter health, etc
 	var/low_health_threshold = 0
 	/// Has the mob done its Low Health thing?
 	var/is_low_health = FALSE
@@ -157,10 +158,10 @@
 	if (QDELETED(src)) // diseases can qdel the mob via transformations
 		return FALSE
 	
-	if(is_low_health && health > (maxHealth / low_health_threshold)) // no longer low health
+	if(is_low_health && health > (maxHealth * low_health_threshold)) // no longer low health
 		make_high_health()
 		return TRUE
-	if(!is_low_health && health < (maxHealth / low_health_threshold))
+	if(!is_low_health && health < (maxHealth * low_health_threshold))
 		make_low_health()
 		return TRUE
 

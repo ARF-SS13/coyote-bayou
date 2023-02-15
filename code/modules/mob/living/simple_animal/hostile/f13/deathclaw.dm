@@ -55,7 +55,7 @@
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = 'sound/f13npc/deathclaw/death.ogg'
-	low_health_threshold = 60
+	low_health_threshold = 0.5
 
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null
