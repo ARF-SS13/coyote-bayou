@@ -396,27 +396,7 @@
  * Plasma fucks em to death
  * Lot of DT
  * * * * * * * * * * * */
-#define ARMOR_VALUE_DEATHCLAW_COMMON list(\
-		"melee" = 0, \
-		"bullet" = 0, \
-		"laser" = 0, \
-		"energy" = 0, \
-		"bomb" = 0, \
-		"bio" = 0, \
-		"rad" = 0, \
-		"fire" = 0, \
-		"acid" = 0, \
-		"wound" = 0, \
-		"damage_threshold" = 15)
-
-/* Deathclaw Legend - basically a suer boss fight
- * Just about impervious to bullets
- * Melee is also a bad idea
- * Lasers? Also resistant
- * Plasma fucks em to death
- * Lot of DT
- * * * * * * * * * * * */
-#define ARMOR_VALUE_DEATHCLAW_COMMON list(\
+#define ARMOR_VALUE_DEATHCLAW_MOTHER list(\
 		"melee" = 0, \
 		"bullet" = 0, \
 		"laser" = 0, \
