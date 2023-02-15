@@ -679,6 +679,38 @@
 		/datum/firemode/semi_auto
 	)
 
+// The Synth's Lasergun
+/obj/item/gun/energy/laser/sida
+	name = "S.I.D.A."
+	desc = "A Wattz 1000 Sports Edition that was tampered with by the headscribe XAL, \
+		its body was given a white finish in honor of his partner and also augmented so its cell feeds on radiation decay, \
+		a relationship is made of ups and down after all. The name 'Sida' is etched along the side of its hip."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "sida"
+	item_state = "laser-pistol"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattzs)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = FALSE
+	can_charge = FALSE
+	selfcharge = EGUN_SELFCHARGE
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
 ////////////////
 //LASER RIFLES//
 ////////////////
