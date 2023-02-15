@@ -98,6 +98,14 @@
 	var/reveal_phrase = "" //Uncamouflages the mob (if it were to become invisible via the alpha var) upon hearing
 	var/hide_phrase = "" //Camouflages the mob (Sets it to a defined alpha value, regardless if already 'hiddeb') upon hearing
 
+	/// Probability it'll do some other kind of melee attack, like a knockback hit.
+	var/alternate_attack_prob = 0
+	/// At what percent of their health does the mob change states? Like, get ANGY on low-health or something. set to 0 or FALSE to disable
+	/// Is a decimal, 0 through 1. 0.5 means half health, 0.25 is quarter health, etc
+	var/low_health_threshold = 0
+	/// Has the mob done its Low Health thing?
+	var/is_low_health = FALSE
+
 	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
 	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
 
@@ -140,6 +148,30 @@
 				visible_message(span_notice("\The dead body of the [src] decomposes!"))
 				gib(FALSE, FALSE, FALSE, TRUE)
 		return
+	check_health()
+
+/mob/living/simple_animal/hostile/proc/check_health()
+	if(low_health_threshold <= 0)
+		return FALSE
+	if(stat == DEAD)
+		return FALSE
+	if (QDELETED(src)) // diseases can qdel the mob via transformations
+		return FALSE
+	
+	if(is_low_health && health > (maxHealth * low_health_threshold)) // no longer low health
+		make_high_health()
+		return TRUE
+	if(!is_low_health && health < (maxHealth * low_health_threshold))
+		make_low_health()
+		return TRUE
+
+/// Override this with what should happen when going from low health to high health
+/mob/living/simple_animal/hostile/proc/make_high_health()
+	return
+
+/// Override this with what should happen when going from high health to low health
+/mob/living/simple_animal/hostile/proc/make_low_health()
+	return
 
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF)
@@ -457,7 +489,13 @@
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
 	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, target)
 	in_melee = TRUE
+	if(prob(alternate_attack_prob) && AlternateAttackingTarget(target))
+		return FALSE
 	return target.attack_animal(src)
+
+/// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
+/mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
+	return
 
 /mob/living/simple_animal/hostile/proc/Aggro()
 	if(ckey)
