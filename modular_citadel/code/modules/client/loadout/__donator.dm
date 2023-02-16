@@ -245,6 +245,7 @@
 
 /obj/item/storage/box/large/custom_kit/bonirus/PopulateContents()
 	new /obj/item/clothing/head/cone(src)
+	new /obj/item/gun/energy/laser/sida(src)
 	new /obj/item/clothing/accessory/bos/initiateS(src)
 	new /obj/item/clothing/accessory/bos/headscribe(src)
 	new /obj/item/pizzabox/infinite(src)

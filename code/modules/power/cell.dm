@@ -496,6 +496,11 @@
 	icon_state = "ec-full"
 	maxcharge = 2000
 
+// Microfusion breeder? Okay, sure.
+/obj/item/stock_parts/cell/ammo/breeder/xal
+	name = "S.I.D.A. breeder"
+	maxcharge = 1100
+
 /obj/item/stock_parts/cell/ammo/ec/update_icon()
 	switch(charge)
 		if (1101 to 1600)
