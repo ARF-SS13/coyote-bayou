@@ -83,6 +83,7 @@
 
 /mob/living/bullet_act(obj/item/projectile/P, def_zone)
 	if(ranged_mob_grief(P))
+		P?.firer?.show_message(span_alert("Your shot honorably misses your sleeping or wounded target!"))
 		return FALSE
 	var/totaldamage = P.damage
 	var/staminadamage = P.stamina
