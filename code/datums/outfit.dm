@@ -132,7 +132,7 @@
 			for(var/path2 in stuff_we_all_get)
 				var/number2 = stuff_we_all_get[path2]
 				if(!isnum(number2))//Default to 1
-					number = 1
+					number2 = 1
 				for(var/i in 1 to number2)
 					H.equip_to_slot_or_del(new path2(H),SLOT_IN_BACKPACK)
 
