@@ -28,6 +28,8 @@
 	var/contains_randomisation = FALSE //Used to redo asset loading with randomised outfits
 	var/can_be_admin_equipped = TRUE // Set to FALSE if your outfit requires runtime parameters
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
+	/// SWAG. Everyone gets one of these. Everyone. Fuckin everyone.
+	var/list/stuff_we_all_get = list(/obj/item/book/manual/advice_surival = 1)
 
 	var/static/datum/asset/spritesheet/loadout/loadout_sheet
 
@@ -125,6 +127,14 @@
 					number = 1
 				for(var/i in 1 to number)
 					H.equip_to_slot_or_del(new path(H),SLOT_IN_BACKPACK)
+
+		if(LAZYLEN(stuff_we_all_get))
+			for(var/path2 in stuff_we_all_get)
+				var/number2 = stuff_we_all_get[path2]
+				if(!isnum(number2))//Default to 1
+					number = 1
+				for(var/i in 1 to number2)
+					H.equip_to_slot_or_del(new path2(H),SLOT_IN_BACKPACK)
 
 	if(!H.head && toggle_helmet && istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit))
 		var/obj/item/clothing/suit/space/hardsuit/HS = H.wear_suit
