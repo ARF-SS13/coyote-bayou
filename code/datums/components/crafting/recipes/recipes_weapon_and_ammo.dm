@@ -759,6 +759,20 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//varmint rifle
+/datum/crafting_recipe/salvaged_eastern_rifle
+	name = "Salvaged Eastern Rifle"
+	result = /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle
+	reqs = list(/obj/item/gun/ballistic/automatic/varmint = 1,
+				/obj/item/shovel = 1,
+				/obj/item/stack/crafting/metalparts = 4,
+				/obj/item/stack/sheet/metal = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //craftable psuedo-ratslayer
 /datum/crafting_recipe/verminkiller
 	name = "Upgraded Varmint Rifle"
