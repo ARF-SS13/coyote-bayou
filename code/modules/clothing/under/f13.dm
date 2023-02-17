@@ -752,6 +752,7 @@
 	body_parts_covered = GROIN
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/f13/wayfarer/shamanblue
 	name = "blue shaman garbs"
@@ -791,6 +792,7 @@
 	item_color = "hunter"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
+	alt_covers_chest = TRUE
 
 //OUTLAW DESERTERS
 /obj/item/clothing/under/f13/exile
@@ -824,6 +826,7 @@
 	body_parts_covered = GROIN
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
+	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/f13/exile/enclave
 	name = "disheveled peacekeeper uniform"
