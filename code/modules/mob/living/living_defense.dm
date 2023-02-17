@@ -82,6 +82,8 @@
 			CRASH("Invalid rediretion mode [redirection_mode]")
 
 /mob/living/bullet_act(obj/item/projectile/P, def_zone)
+	if(ranged_mob_grief(P))
+		return FALSE
 	var/totaldamage = P.damage
 	var/staminadamage = P.stamina
 	var/final_percent = 0
@@ -112,6 +114,19 @@
 	if(missing > 0)
 		final_percent += missing * armor_ratio
 	return P.on_hit(src, final_percent, def_zone) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/// Returns TRUE if the thing is fired by a player controlled mob, and we're too wounded to be killed
+/mob/living/proc/ranged_mob_grief(obj/item/projectile/P)
+	if(!istype(P)) // No projectile, no problem (here at least)
+		return FALSE
+	if(!isanimal(P.firer)) // Only simplemobs here pls
+		return FALSE
+	var/mob/living/simple_animal/shootre = P.firer
+	if(!shootre.ckey) // Only player controlled mobs here pls
+		return FALSE
+	if(stat) // Only if the person getting wrecked is not awake (crit, sleeping, etc)
+		return TRUE
+	return FALSE
 
 /mob/living/proc/check_projectile_dismemberment(obj/item/projectile/P, def_zone)
 	return 0
@@ -340,6 +355,9 @@
 	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	M.DelayNextAction()
+	if(M.ckey && stat && ckey) // if both you and your attacker have ckeys, and you're not awake, disallow further attacks
+		M.show_message(span_alert("As an honorable creature of the wastes, you're morally (and mechanically) forbidden from attacking [src] while they're too injured or too sleepy to fight back!"))
+		return FALSE
 	var/list/attack_phrases = list(
 		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
 		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
