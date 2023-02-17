@@ -538,7 +538,7 @@
 /obj/item/storage/box/large/custom_kit/jackalface/PopulateContents()
 	new /obj/item/clothing/under/draculass(src)
 	new /obj/item/clothing/mask/chameleon(src)
-	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal(src)
 
 /datum/gear/donator/kits/jackson1112
 	name = "Recon Kit"
