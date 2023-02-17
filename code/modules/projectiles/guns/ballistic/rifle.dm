@@ -1,7 +1,11 @@
 //IN THIS DOCUMENT: Rifle template, Lever-action rifles, Bolt-action rifles, Magazine-fed bolt-action rifles
 // See gun.dm for keywords and the system used for gun balance
 
-
+/// Main thing that makes boltie guns are:
+///  INTERNAL MAG and CASING_EJECTOR = FALSE
+/// the internal mag makes it be loaded from a box or strip
+/// the casing ejector = FALSE makes it pumped after each shot
+/// enjoy!
 
 ////////////////////
 // RIFLE TEMPLATE //
@@ -768,7 +772,7 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/salvaged.ogg'
 	can_scope = TRUE
-	autopump = TRUE
+	casing_ejector = TRUE
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_LIGHT_VOLUME),

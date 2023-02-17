@@ -84,11 +84,11 @@
 		chambered.forceMove(src)
 
 /obj/item/gun/ballistic/can_shoot()
-	if(!magazine || !magazine.ammo_count(0))
+	return !!chambered?.BB
+/* 	if(!magazine || !magazine.ammo_count(0))
 		return FALSE
 	if(!casing_ejector)
-		return !!chambered?.BB
-	return TRUE
+	return TRUE */
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
