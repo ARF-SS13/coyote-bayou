@@ -531,7 +531,7 @@
 // J
 
 /datum/gear/donator/kits/jackalface
-	name = "Recon Kit"
+	name = "Jackal Kit"
 	path = /obj/item/storage/box/large/custom_kit/jackalface
 	ckeywhitelist = list("jackalface")
 
