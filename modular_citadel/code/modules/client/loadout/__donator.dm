@@ -431,16 +431,8 @@
 
 /// cure the whole wasteland of the *scourge* that is not having mountainous tits
 /obj/item/storage/box/large/custom_kit/fireclaw787/PopulateContents()
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	for(var/i in 1 to 7)
+		new /obj/item/storage/pill_bottle/breast_enlarger(src)
 
 /datum/gear/donator/kits/fuzlet
 	name = "fuzzy supply box"
