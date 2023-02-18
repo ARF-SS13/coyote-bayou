@@ -289,7 +289,7 @@
 
 //ARROWS
 
-/datum/crafting_recipe/tribalwar/arrowburn
+/* /datum/crafting_recipe/tribalwar/arrowburn
 	name = "Burning Oil Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/burning
 	time = 30
@@ -391,7 +391,7 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
-
+ */
 //MELEE
 
 /datum/crafting_recipe/tribalwar/bonespear

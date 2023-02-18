@@ -508,14 +508,14 @@ obj/item/storage/bag/chemistry/tribal
 	component_type = /datum/component/storage/concrete/bag/quiver
 
 /obj/item/storage/bag/tribe_quiver/PopulateContents()
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
+	new /obj/item/ammo_casing/caseless/arrow/field(src)
 
 /obj/item/storage/bag/tribe_quiver/AltClick(mob/living/carbon/user)
 	. = ..()

@@ -1931,7 +1931,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribalwar/sturdybow,
 		/datum/crafting_recipe/tribalwar/warclub,
 		/datum/crafting_recipe/tribalwar/silverbow,
-		/datum/crafting_recipe/tribalwar/arrowbone,
+		///datum/crafting_recipe/tribalwar/arrowbone,
 		/datum/crafting_recipe/tribalwar/bonespear,
 		/datum/crafting_recipe/tribalwar/bonecodpiece,
 		/datum/crafting_recipe/tribalwar/bracers,

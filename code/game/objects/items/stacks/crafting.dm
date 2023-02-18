@@ -46,6 +46,14 @@
 /obj/item/stack/crafting/metalparts/five
 	amount = 5
 
+GLOBAL_LIST_INIT(metalparts_recipes, list(\
+	new/datum/stack_recipe("jagged arrowhead", /obj/item/stack/arrowhead/jagged, 1, 1, 1 SECONDS),\
+	))
+
+/obj/item/stack/crafting/metalparts/get_main_recipes()
+	. = ..()
+	. += GLOB.metalparts_recipes
+
 /obj/item/stack/crafting/goodparts
 	name = "high quality metal parts"
 	icon_state = "sheet-goodparts"
@@ -73,6 +81,14 @@
 
 /obj/item/stack/crafting/electronicparts/five
 	amount = 5
+
+GLOBAL_LIST_INIT(electronicparts_recipes, list(\
+	new/datum/stack_recipe("ion arrowhead", /obj/item/stack/arrowhead/ion, 1, 1, 1 SECONDS),\
+	))
+
+/obj/item/stack/crafting/electronicparts/get_main_recipes()
+	. = ..()
+	. += GLOB.electronicparts_recipes
 
 /obj/item/stack/crafting/powder
 	name = "bullet remnants"
