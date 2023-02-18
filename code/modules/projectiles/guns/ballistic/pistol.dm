@@ -646,6 +646,23 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal
+	name = "Santa Muerte"
+	desc = "A custom built 1911 with a brushed brass plated grip, a shiny chrome finish, and a custom muzzle brake.. It has an excerpt of a prayer to lady death etched neatly in it's slide, evoking her protection from evil forces."
+	icon_state = "santa_muerte"
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 /* * * * * * * * * * *
  * Mk. 23 Semi-Auto
  * Tacticool Medium pistol

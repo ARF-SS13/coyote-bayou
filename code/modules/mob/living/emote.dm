@@ -987,6 +987,40 @@
 	message = "squeaks!"
 	sound = 'sound/f13effects/sunsetsounds/squeak_moth.ogg'
 
+/datum/emote/blep
+	key = "blep"
+	key_third_person = "bleps thier tongue out!"
+	message = "bleps their tongue out!"
+
+/datum/emote/eyeclean
+	key = "eyeclean"
+	key_third_person = "flicks their tongue out, cleaning their eyes!"
+	message = "flicks their tongue out, cleaning their eyes!"
+
+/datum/emote/preen
+	key = "preen"
+	key_third_person = "carefully unruffles themselves, preening and trying to regain composure."
+	message = "carefully unruffles themselves, preening and trying to regain composure."
+
+/datum/emote/comb
+	key = "comb"
+	key_third_person = "runs their fingers through their hair, straightning it up some."
+	message = "runs their fingers through their hair, straightning it up some."
+
+
+
+/datum/emote/rattle
+	key = "rattle"
+	key_third_person = "rattles a warning!"
+	message = "rattles a warning!"
+	sound = 'sound/f13effects/sunsetsounds/rattle.ogg'
+
+/datum/emote/snakehiss
+	key = "shiss"
+	key_third_person = "hisses like a reptile!"
+	message = "hisses like a reptile!"
+	sound = 'sound/f13effects/sunsetsounds/snakehiss.ogg'
+
 /datum/emote/look
 	key = "look"
 	key_third_person = "looks"
