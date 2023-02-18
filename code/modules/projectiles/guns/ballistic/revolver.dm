@@ -126,9 +126,9 @@
  * * * * * * * * * */
 
 /* * * * * * * * * * *
- * .38 detective
+ * .22 detective
  * Extra light revolver
- * .38 Special
+ * .22 Special
  * Tiny
  * Fits in a boot
  * Renamable?

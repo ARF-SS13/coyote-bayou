@@ -36,9 +36,8 @@
 	can_scope = FALSE
 	flags_1 =  CONDUCT_1
 	casing_ejector = FALSE
-	var/recentpump = 0 // to prevent spammage
 	spawnwithmagazine = TRUE
-	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
+	cock_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	init_recoil = RIFLE_RECOIL(2.5)
 	init_firemodes = list(
@@ -56,7 +55,7 @@
 	)
 
 
-/obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
+/* /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
 
 /obj/item/gun/ballistic/shotgun/can_shoot()
@@ -77,17 +76,17 @@
 	if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
 		user.adjustStaminaLossBuffered(2) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
 	return
-
+ */
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
 		. = 1
 
-/obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
+/* /obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
 	if(visible)
 		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
-	playsound(M, pump_sound, 60, 1)
+	playsound(M, cock_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
@@ -111,15 +110,15 @@
 	if (chambered)
 		. += "A [chambered.BB ? "live" : "spent"] one is in the chamber."
 
-/obj/item/gun/ballistic/shotgun/lethal
+ *//obj/item/gun/ballistic/shotgun/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 
-/// Pump if click with empty thing
+/* /// Pump if click with empty thing
 /obj/item/gun/ballistic/shotgun/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	if(chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP))
 		attack_self(user)
 	else
-		..()
+		..() */
 
 /* * * * * * * * * * * * * *
  * Double barrel shotguns  *
@@ -515,21 +514,18 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 
+	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
-/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+/* /obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	..()
-	src.pump(user)
+	src.pump(user) */
 
 /* * * * * * * * * * *
  * Lever-Action shotgun

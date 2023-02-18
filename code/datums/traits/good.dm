@@ -43,6 +43,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/huntingshotgun,
 	/datum/crafting_recipe/m1911,
 	/datum/crafting_recipe/varmintrifle,
+	/datum/crafting_recipe/salvaged_eastern_rifle,
 	/datum/crafting_recipe/autoaxe,
 	/datum/crafting_recipe/steelsaw,
 	/datum/crafting_recipe/tools/forged/entrenching_tool,

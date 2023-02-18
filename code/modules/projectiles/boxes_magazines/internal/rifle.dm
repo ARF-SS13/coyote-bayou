@@ -33,3 +33,11 @@
 	caliber = list(CALIBER_50MG)
 	max_ammo = 4
 	multiload = 0 //one bullet at a time
+
+/obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
+	name = "salvaged eastern rifle internal magazine"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = list(CALIBER_556, CALIBER_5MM)
+	max_ammo = 25
+	multiload = FALSE // one at a time~
