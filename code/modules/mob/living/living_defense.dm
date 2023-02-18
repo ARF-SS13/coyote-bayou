@@ -83,7 +83,7 @@
 
 /mob/living/bullet_act(obj/item/projectile/P, def_zone)
 	if(ranged_mob_grief(P))
-		if(ismob(P.firer)
+		if(ismob(P.firer))
 			var/mob/shootier = P.firer
 			shootier.show_message(span_alert("Your shot honorably misses your sleeping or wounded target!"))
 		return FALSE
