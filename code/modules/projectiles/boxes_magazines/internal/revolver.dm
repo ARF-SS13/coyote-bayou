@@ -147,3 +147,9 @@
 	caliber = list(CALIBER_762)
 	max_ammo = 10
 
+/obj/item/ammo_box/magazine/internal/chassepot
+	name = "Fusil modèle 1866 - Chassepot"
+	ammo_type = /obj/item/ammo_casing/a762/sport
+	caliber = list(CALIBER_762)
+	max_ammo = 1
+
