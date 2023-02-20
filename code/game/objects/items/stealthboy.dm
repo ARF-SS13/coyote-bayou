@@ -1,6 +1,6 @@
 /obj/item/stealthboy
 	name = "Stealth Boy"
-	desc = "The RobCo Stealth Boy 3001 is a personal stealth device worn on one's wrist. It generates a modulating field that transmits the reflected light from one side of an object to the other, making a person much harder to notice (but not completely invisible)."
+	desc = "The RobCo Stealth Boy 3001 is a personal stealth device, this one is designed to be worn on your belt and the battery can be taken out if you can find an ALTERNATIVE way to CLICK the back open and take the battery out. (alt click to take the battery out and recharge it)"
 	icon = 'icons/obj/pda.dmi' //Placeholder till ones sprited
 	icon_state = "pda" //Placeholder till ones sprited
 	item_flags = NOBLUDGEON
