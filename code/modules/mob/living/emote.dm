@@ -947,6 +947,25 @@
 	message = "frowns heavily."
 	sound = 'sound/effects/boowomp.ogg'
 
+/datum/emote/living/augh
+	key = "augh"
+	key_third_person = "looks deeply troubled."
+	message = "looks deeply troubled."
+	sound = 'sound/f13effects/sunsetsounds/augh.ogg'
+
+/datum/emote/living/ree
+	key = "ree"
+	key_third_person = "reeeeeees."
+	message = "reeeeeees."
+	sound = 'sound/f13effects/sunsetsounds/frogree.ogg'
+
+
+/datum/emote/living/frogcry
+	key = "frogcry"
+	key_third_person = "does an amphibian warcry!"
+	message = "does an amphibian warcry!"
+	sound = 'sound/f13effects/sunsetsounds/frogwarcry.ogg'
+
 /datum/emote/weh
 	key = "weh"
 	key_third_person = "wehs"
