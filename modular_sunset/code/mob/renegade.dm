@@ -58,7 +58,7 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
-	loot = list(/obj/effect/spawner/bundle/f13/m1911)
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911)
 	robust_searching = TRUE
 	speak = list(
 		"Come get some!",
@@ -194,7 +194,7 @@
 	attack_sound = 'sound/weapons/slam.ogg'
 	a_intent = INTENT_HARM
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+		//obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 		/obj/effect/spawner/lootdrop/f13/alcoholspawner,
 		/obj/effect/spawner/lootdrop/f13/ncr_c_ration
 		)
@@ -234,7 +234,7 @@
 	projectilesound = 'sound/f13weapons/bozar_fire.ogg'
 	loot = list(
 		/obj/item/stack/f13Cash/random/high,
-		/obj/effect/spawner/bundle/f13/remington,
+		/obj/item/gun/ballistic/rifle/hunting,
 		/obj/effect/spawner/lootdrop/f13/armor/random
 		)
 	robust_searching = TRUE
@@ -278,7 +278,7 @@
 	projectilesound = 'sound/f13weapons/auto5.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(
-		/obj/effect/spawner/bundle/f13/trenchshotgun,
+		/obj/item/gun/ballistic/shotgun/trench,
 		/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 		/obj/item/stack/f13Cash/random/low,
 		/obj/item/clothing/suit/armor/medium/vest/breastplate/light
@@ -389,7 +389,7 @@
 	speak_chance = 1
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/medical/vault/meds, 
-		/obj/effect/spawner/lootdrop/f13/weapon/revolver44variants, 
+		/obj/item/gun/ballistic/revolver/m29, 
 		/obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
 
 	projectile_sound_properties = list(

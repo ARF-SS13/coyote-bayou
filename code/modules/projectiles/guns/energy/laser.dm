@@ -93,20 +93,27 @@
 	charge_delay = 2
 	cell_type = /obj/item/stock_parts/cell/toymagburst
 
-/obj/item/gun/energy/laser/retro
+/obj/item/gun/energy/laser/retro //lets see if these changes don't break horribly
 	name ="retro laser gun"
 	icon_state = "retro"
-	desc = "An older model of the basic lasergun, no longer used by Nanotrasen's private security or military forces. Nevertheless, it is still quite deadly and easy to maintain, making it a favorite amongst pirates and other outlaws."
+	desc = "A compact laser gun in a stylish old Design. its smooth edges make it perfect for fitting in a boot."
 	ammo_x_offset = 3
+	w_class = WEIGHT_CLASS_TINY
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/retro)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_NORMAL
+	draw_time = GUN_DRAW_QUICK
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
 
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
@@ -154,6 +161,8 @@
 	use_cyborg_cell = TRUE
 	selfcharge = EGUN_NO_SELFCHARGE
 
+/*this shares a path with the tribeam laser
+
 /obj/item/gun/energy/laser/scatter
 	name = "scatter laser gun"
 	desc = "A laser gun equipped with a refraction kit that spreads bolts."
@@ -170,6 +179,9 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+*/
+
 //Laser Cannon
 /obj/item/gun/energy/lasercannon
 	name = "accelerator laser cannon"
@@ -874,7 +886,7 @@
 	)
 
 //Tribeam Laser rifle
-/obj/item/gun/energy/laser/scatter
+/obj/item/gun/energy/laser/scatter //this needs higher spread
 	name = "tribeam laser rifle"
 	desc = "A modified AER9 equipped with a refraction kit that divides the laser shot into three separate beams. While powerful, it has a reputation for friendly fire."
 	icon_state = "tribeam"

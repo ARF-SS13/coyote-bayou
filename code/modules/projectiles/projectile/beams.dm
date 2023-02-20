@@ -413,6 +413,10 @@
 	name = "rapid-fire laser beam"
 	damage = 12
 
+/obj/item/projectile/beam/laser/pistol/retro
+	name = "laser beam"
+	damage = 40 //hits the trashmob threshold, the only thing making this gun okay
+
 /obj/item/projectile/beam/laser/pistol/wattz //Wattz pistol
 	name = "laser beam"
 	damage = 30
@@ -664,7 +668,7 @@
 
 /obj/item/projectile/beam/laser/aer14 //AER14
 	name = "laser beam"
-	damage = 38
+	damage = 50 //unique and hefty
 	icon_state = "omnilaser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE

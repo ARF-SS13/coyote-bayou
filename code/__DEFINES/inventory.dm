@@ -556,6 +556,7 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/hobo/knifegun,
 	/obj/item/melee/onehanded/knife,
 	/obj/item/scalpel,
+	/obj/item/gun/energy/laser/retro,
 	)))
 
 GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(

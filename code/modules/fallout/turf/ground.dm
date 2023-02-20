@@ -189,8 +189,9 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 						/obj/item/stack/crafting/metalparts/five = 30,
 						/obj/item/stack/crafting/goodparts/five = 30,
 						/obj/item/stack/ore/blackpowder/twenty = 10,
-						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
-						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
+						/obj/effect/spawner/lootdrop/f13/weapon/wasteland = 6,
+						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
+						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
 						)
 
 //For sculpting with more precision, the random picking does not work very well. Slowdown 0.5 instead of 1. No random armor or gunpowder or titanium. Use directions for control. - Pebbles
