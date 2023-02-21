@@ -564,8 +564,8 @@
 	},
 /area/f13/wasteland/city)
 "apT" = (
-/mob/living/simple_animal/hostile/raider/junker,
-/turf/open/floor/plasteel,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/smg,
+/turf/open/floor/carpet/royalblack,
 /area/f13/building/abandoned)
 "apX" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3751,7 +3751,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "chE" = (
-/obj/structure/musician/piano,
+/obj/structure/chair/sofa/corp{
+	dir = 8
+	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "chN" = (
@@ -5378,6 +5380,12 @@
 /obj/item/target/vaultie2,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"cZC" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 8
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building/abandoned)
 "dab" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/spacevine,
@@ -5941,7 +5949,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "dtu" = (
-/mob/living/simple_animal/hostile/raider/junker,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/shotgun,
 /turf/open/floor/carpet/royalblack,
 /area/f13/building/abandoned)
 "dty" = (
@@ -8849,6 +8857,12 @@
 	},
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
+"faj" = (
+/obj/structure/chair/sofa/corp/left{
+	dir = 8
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building/abandoned)
 "fao" = (
 /obj/structure/simple_door/tentflap_cloth{
 	pixel_y = 3
@@ -9950,7 +9964,8 @@
 	},
 /area/f13/building)
 "fFt" = (
-/mob/living/simple_animal/hostile/raider/firefighter,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/tesla,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "fFL" = (
@@ -14107,8 +14122,8 @@
 	},
 /area/f13/building)
 "ijT" = (
-/mob/living/simple_animal/hostile/raider/firefighter,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
+/mob/living/simple_animal/hostile/raider/cultist/melee,
+/turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "iku" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -18813,6 +18828,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
+"kRY" = (
+/mob/living/simple_animal/hostile/raider/cultist/melee,
+/turf/open/floor/plasteel,
+/area/f13/building/abandoned)
 "kSg" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/condiment/ketchup{
@@ -19962,7 +19981,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "lBV" = (
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/mob/living/simple_animal/hostile/raider/cultist/melee,
 /turf/open/floor/carpet/royalblack,
 /area/f13/building/abandoned)
 "lCg" = (
@@ -21193,10 +21212,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/city)
-"mlR" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "mlZ" = (
 /obj/structure/safe,
 /obj/effect/decal/cleanable/dirt,
@@ -21596,7 +21611,7 @@
 /area/f13/wasteland/city)
 "myE" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/mob/living/simple_animal/hostile/raider/cultist/melee,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "myH" = (
@@ -21744,6 +21759,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"mBx" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/abandoned)
 "mBH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fluff/hedge/opaque,
@@ -24918,6 +24937,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"oBn" = (
+/obj/machinery/porta_turret/f13/turret_22lr,
+/turf/open/floor/carpet/red,
+/area/f13/building/abandoned)
 "oBx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -26214,7 +26237,7 @@
 	},
 /area/f13/city)
 "pls" = (
-/mob/living/simple_animal/hostile/raider/junker/creator,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/smg,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "plG" = (
@@ -26520,7 +26543,6 @@
 "puU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
 /turf/open/floor/carpet/royalblack,
 /area/f13/building/abandoned)
 "pvi" = (
@@ -27356,7 +27378,7 @@
 /area/f13/wasteland)
 "pRA" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/ranged/biker,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/shotgun,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "pRD" = (
@@ -29944,6 +29966,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/abandoned)
+"rzx" = (
+/obj/structure/chair/sofa/corp{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "rzD" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -30460,8 +30488,8 @@
 /turf/open/indestructible/ground/outside/savannah/bottomleft,
 /area/f13/wasteland)
 "rQf" = (
-/mob/living/simple_animal/hostile/raider/junker/boss,
-/turf/open/floor/carpet/red,
+/mob/living/simple_animal/hostile/raider/cultist/melee,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "rQm" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
@@ -31822,10 +31850,6 @@
 "sEb" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
-	},
-/mob/living/simple_animal/hostile/asteroid/ice_demon{
-	melee_damage_lower = 5;
-	melee_damage_type = "burn"
 	},
 /turf/open/floor/plating/ice,
 /area/f13/building/abandoned)
@@ -34817,8 +34841,8 @@
 	},
 /area/f13/wasteland)
 "umW" = (
-/mob/living/simple_animal/hostile/raider/ranged,
-/turf/open/floor/carpet/royalblack,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/shotgun,
+/turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "unG" = (
 /obj/structure/fence{
@@ -35917,11 +35941,6 @@
 /obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/savannah/edgesnew,
 /area/f13/wasteland)
-"uWw" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/junker,
-/turf/open/floor/plasteel,
-/area/f13/building/abandoned)
 "uXa" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/savannah/cornersnew{
@@ -36090,7 +36109,7 @@
 	},
 /area/f13/wasteland)
 "vba" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/tesla,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "vbm" = (
@@ -37695,6 +37714,10 @@
 /obj/structure/nest/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"wfB" = (
+/obj/structure/nest/raider/melee,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building/abandoned)
 "wfC" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/road{
@@ -38076,6 +38099,10 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
+"wsx" = (
+/obj/machinery/porta_turret/f13/turret_shotgun/raider,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "wsC" = (
 /obj/structure/wreck/trash/one_tire{
@@ -38793,10 +38820,6 @@
 /obj/effect/spawner/lootdrop/clothing_low,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"wNI" = (
-/mob/living/simple_animal/hostile/raider/baseball,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "wOb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -83611,7 +83634,7 @@ aOi
 ieU
 qYF
 ina
-rvJ
+mBx
 xPg
 rvJ
 qYF
@@ -84125,9 +84148,9 @@ jTL
 rGM
 ina
 qYF
-rko
+cZC
 chE
-rko
+faj
 ina
 ina
 ieU
@@ -85139,7 +85162,7 @@ oph
 oph
 oph
 ieU
-jTL
+umW
 gvf
 nJg
 jTL
@@ -85413,7 +85436,7 @@ rvJ
 rvJ
 rvJ
 rvJ
-umW
+rvJ
 tlv
 ieU
 oph
@@ -85666,7 +85689,7 @@ ieU
 jTL
 ieU
 qYF
-lBV
+rvJ
 rvJ
 rvJ
 rvJ
@@ -85912,7 +85935,7 @@ oph
 ieU
 qYF
 cmA
-jTL
+ijT
 hyx
 jTL
 hyx
@@ -85923,10 +85946,10 @@ ieU
 jTL
 ieU
 qYF
+dtu
 rvJ
 rvJ
-rvJ
-rvJ
+apT
 rvJ
 qYF
 ieU
@@ -86169,7 +86192,7 @@ oph
 ieU
 qYF
 esF
-mlR
+jTL
 hyx
 jTL
 hyx
@@ -86951,11 +86974,11 @@ ieU
 jTL
 ieU
 qYF
+wsx
 qYF
 qYF
 qYF
-qYF
-qYF
+wsx
 qYF
 ieU
 oph
@@ -87458,7 +87481,7 @@ eIw
 jTL
 qYF
 jTL
-wNI
+jTL
 jTL
 qYF
 ieU
@@ -87714,7 +87737,7 @@ jTL
 ajf
 jTL
 qYF
-qYF
+rQf
 jTL
 qYF
 qYF
@@ -87730,7 +87753,7 @@ mtM
 qYF
 ieU
 oph
-oph
+rzx
 oph
 oph
 oph
@@ -90542,7 +90565,7 @@ jTL
 jTL
 jTL
 jTL
-jTL
+umW
 nJg
 qYF
 ieU
@@ -90795,7 +90818,7 @@ oph
 ieU
 tVa
 jTL
-jTL
+oBn
 jTL
 jTL
 jTL
@@ -90808,7 +90831,7 @@ ieU
 sJJ
 qYF
 oZn
-ijT
+pls
 jTL
 jTL
 qYF
@@ -91053,8 +91076,8 @@ ieU
 kwQ
 jTL
 jTL
-rQf
-nJg
+jTL
+fFt
 nJg
 nJg
 jTL
@@ -91309,7 +91332,7 @@ oph
 ieU
 tVa
 jTL
-jTL
+oBn
 jTL
 jTL
 jTL
@@ -94648,19 +94671,19 @@ oph
 oph
 oph
 ieU
-fFt
+jTL
 ieU
 jTL
 jTL
 jTL
 ieU
 icw
-uWw
+iRN
 ifi
 ifi
-ifi
+kRY
 ieU
-qYF
+wfB
 lFj
 rvJ
 xbp
@@ -94909,7 +94932,7 @@ jTL
 jTL
 jTL
 ieU
-jTL
+ijT
 ieU
 nxP
 ifi
@@ -94922,7 +94945,7 @@ lFj
 rvJ
 xnk
 rvJ
-rvJ
+lBV
 qYF
 ieU
 oph
@@ -95419,7 +95442,7 @@ oph
 oph
 oph
 ieU
-jTL
+ijT
 jTL
 jTL
 ieU
@@ -95436,7 +95459,7 @@ lFj
 rvJ
 fUU
 lFj
-dtu
+rvJ
 tsZ
 ieU
 oph
@@ -95940,7 +95963,7 @@ ieU
 ieU
 ieU
 jSm
-ifi
+kRY
 iRN
 ifi
 ifi
@@ -96199,11 +96222,11 @@ ieU
 xQg
 gTF
 iRN
-apT
+ifi
 ifi
 ieU
 qYF
-dtu
+lBV
 rvJ
 xbp
 rvJ
@@ -96449,7 +96472,7 @@ oph
 ieU
 ieU
 ieU
-nJg
+myE
 ieU
 ieU
 ieU
@@ -96708,7 +96731,7 @@ jTL
 ieU
 jTL
 jTL
-fFt
+jTL
 ieU
 cXs
 sEb
@@ -97989,9 +98012,9 @@ oph
 oph
 oph
 ieU
-jTL
+ijT
 ieU
-fFt
+jTL
 ieU
 jTL
 feN
