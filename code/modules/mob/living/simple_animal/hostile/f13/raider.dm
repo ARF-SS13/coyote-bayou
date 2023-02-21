@@ -571,3 +571,181 @@
 	loot = list(/obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
+// Cultist Stuff
+
+/mob/living/simple_animal/hostile/raider/cultist/melee
+	name = "Cultist Shredder"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cult_axeghoul"
+	icon_living = "cult_axeghoul"
+	icon_dead = "cult_axeghoul"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	turns_per_move = 5
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 100
+	health = 100
+	melee_damage_lower = 10
+	melee_damage_upper = 24
+	attack_verb_simple = "clobbers"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	a_intent = INTENT_HARM
+	faction = list("raider")
+	check_friendly_fire = TRUE
+	status_flags = CANPUSH
+	del_on_death = FALSE
+	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
+	footstep_type = FOOTSTEP_MOB_SHOE
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 1.5
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
+	retreat_distance = 1 //mob retreats 1 tile when in min distance
+	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged
+	name = "Cultist Gunner"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist_pistol"
+	icon_living = "cultist_pistol"
+	icon_dead = "cultist_pistol"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 85
+	health = 85
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/c10mm/simple
+	projectilesound = 'sound/f13weapons/ninemil.ogg'
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/n99, /obj/item/stack/f13Cash/random/med)
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged/shotgun
+	name = "Cultist Crowd Controller"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist_shotgun"
+	icon_living = "cultist_shotgun"
+	icon_dead = "cultist_shotgun"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 85
+	health = 85
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 4 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
+	projectiletype = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
+	loot = list(/obj/item/gun/ballistic/shotgun/trench, /obj/item/stack/f13Cash/random/med)
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged/smg
+	name = "Cultist Bulletmage"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist2_smg"
+	icon_living = "cultist2_smg"
+	icon_dead = "cultist2_smg"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 85
+	health = 85
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 1 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
+	projectiletype = /obj/item/projectile/bullet/c22
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
+	loot = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22, /obj/item/stack/f13Cash/random/med)
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged/tesla
+	name = "Cultist Lasermage"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist3_tesla"
+	icon_living = "cultist3_tesla"
+	icon_dead = "cultist3_tesla"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 150
+	health = 150
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
+	projectiletype = /obj/item/projectile/energy/teslacannon/oasis
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
+	loot = list(/obj/item/gun/energy/laser/auto/oasis, /obj/item/stack/f13Cash/random/high)
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
