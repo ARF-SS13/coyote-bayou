@@ -17,12 +17,11 @@
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/magazine_wording = "magazine"
+	var/cock_wording = "rack"
 	var/en_bloc = 0
 	/// Which direction do the casings fly out?
 	var/handedness = GUN_EJECTOR_RIGHT
-	/// Does the gun automatically load itself?
-	var/autoloading = TRUE
-	var/cock_sound = 'sound/weapons/shotgunpump.ogg'
+	var/cock_sound = "gun_slide_lock"
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_LIGHT_VOLUME),
@@ -194,7 +193,7 @@
 
 /obj/item/gun/ballistic/proc/pump(mob/living/M, visible = TRUE)
 	if(visible)
-		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
+		M.visible_message(span_warning("[M] [cock_wording]\s \the [src]."), span_warning("You [cock_wording] \the [src]."))
 		playsound(M, cock_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
@@ -222,15 +221,17 @@
 
 /obj/item/gun/ballistic/attack_self(mob/living/user)
 	if(magazine)
-		if(magazine.fixed_mag)
+		if(magazine.fixed_mag || !casing_ejector)
 			pump(user, TRUE)
 			update_icon()
-			return
-		eject_magazine(user, en_bloc, !en_bloc, TRUE)
-	else if(chambered)
-		eject_chambered_round(user, TRUE)
-	else
-		to_chat(user, span_notice("There's no magazine in \the [src]."))
+		else
+			eject_magazine(user, en_bloc, !en_bloc, TRUE)
+		return
+	if(chambered)
+		pump(user, TRUE)
+		update_icon()
+		return
+	to_chat(user, span_notice("There's no magazine in \the [src]."))
 	update_icon()
 	return
 
