@@ -567,7 +567,7 @@
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/radio(src)
 
-/datum/gear/donator/kits/jaytheavian
+/*/datum/gear/donator/kits/jaytheavian
 	name = "Mayor Stuff"
 	path = /obj/item/storage/box/large/custom_kit/jaytheavian
 	ckeywhitelist = list("jaytheavian")
@@ -575,7 +575,7 @@
 /obj/item/storage/box/large/custom_kit/jaytheavian/PopulateContents()
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)
-	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/card/id/captains_spare(src)*/
 
 // K
 // L
@@ -835,6 +835,16 @@
 /*	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)*/
+
+/datum/gear/donator/kits/seermankhajiit004
+	name = "Honey Mayor"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
+	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/card/id/captains_spare(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
