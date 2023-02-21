@@ -173,7 +173,7 @@
 	ckeywhitelist = list("aldrictalvalin")
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
-	new /obj/item/clothing/head/beret/headband(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom(src)
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
 	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted(src)
@@ -801,6 +801,17 @@
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/saltyscabbard
+	name = "Warrior Salty Kity"
+	path = /obj/item/storage/box/large/custom_kit/saltyscabbard
+	ckeywhitelist = list("saltyscabbard")
+
+/obj/item/storage/box/large/custom_kit/saltyscabbard/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/wayfarer/shamanred(src)
+	new /obj/item/clothing/head/helmet/f13/wayfarer/shamanblue(src)
+	new /obj/item/shield/riot/buckler(src)
+	new /obj/item/melee/onehanded/machete/spatha(src)
 
 /datum/gear/donator/kits/seermankhajiit00
 	name = "Warmonger"
