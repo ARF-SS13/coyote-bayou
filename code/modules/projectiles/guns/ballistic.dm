@@ -235,6 +235,9 @@
 	update_icon()
 	return
 
+///obj/item/gun/ballistic/AltClick(mob/living/user)
+//	pump(user, TRUE)
+
 /obj/item/gun/ballistic/proc/eject_magazine(mob/living/user, is_enbloc, put_it_in_their_hand, sounds_and_words)
 	if(magazine.fixed_mag)
 		return FALSE
