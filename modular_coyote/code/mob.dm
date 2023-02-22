@@ -248,3 +248,14 @@
 	icon_living = "andrews"
 	icon_state = "andrews"
 
+/mob/living/simple_animal/hostile/alligator
+	name = "Alligator"
+	desc = "A large reptile with sharp looking teeth."
+	icon = 'modular_coyote/icons/mob/alligator.dmi'
+	icon_living = "alligator"
+	icon_dead = "alligator_dead"
+	melee_damage_lower = 30
+	melee_damage_upper = 20
+	maxHealth = 400
+	aggrosound = list('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl3.ogg', )
+	idlesound = list('sound/alien/Voice/hiss1.ogg',)
