@@ -6,7 +6,7 @@
 	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	force = 5
+	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	fire_sound = 'sound/weapons/bowfire.wav'
 	slot_flags = ITEM_SLOT_BACK
@@ -23,7 +23,7 @@
 	safety = 0
 	restrict_safety = 1
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower //we start very sloow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	gun_sound_properties = list(
@@ -93,6 +93,114 @@
 		draw(user, FALSE)
 		recentdraw = world.time + 2
 
+//the main stats we have to work with making each bow different, is size, (normal versus belt, versus back only), damage multiplier, and fire rate
+
+//Tier 1 bow, starter bow
+//shortbow. fits in bags, but otherwise minimum stats.
+/obj/item/gun/ballistic/bow/shortbow
+	name = "shortbow"
+	desc = "A lightweight bow, rather lacking in firepower"
+	icon_state = "shortbow"
+	item_state = "shortbow"
+	icon_prefix = "shortbow"
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
+//dunno if you want to include more information for each bow, but this is the basics
+
+//tier 2 bows. craftable bows
+//recurve bow. +fire rate, but bulky. fits on belts
+/obj/item/gun/ballistic/bow/recurvebow
+	name = "recurve bow"
+	desc = "A light bow designed for ease of draw."
+	icon_state = "recurvebow"
+	item_state = "recurvebow"
+	icon_prefix = "recurvebow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow
+	)
+
+//light crossbow. +damage, bulky but fits on belt
+/obj/item/gun/ballistic/bow/lightxbow
+	name = "light crossbow"
+	desc = "A compact crossbow, with decent firepower."
+	icon_state = "lightxbow"
+	item_state = "lightxbow"
+	icon_prefix = "lightxbow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE //?
+
+//tier 3 bows. looted only? mid tier loot pools, but marked as common. bow gear progression is lacking, especially when you can just make the highest tier weapon from the communal materal pile
+//composite bow. fire rate++ but bulky and back slot only. max potential drawn out with bow trained quirk. will see if it's too wimpy
+/obj/item/gun/ballistic/bow/compositebow
+	name = "Composite bow"
+	desc = "A finely crafted bow with an excellent draw."
+	icon_state = "compositebow"
+	item_state = "compositebow"
+	icon_prefix = "compositebow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+			/datum/firemode/semi_auto //fast bow. skilled archers will make the most use out of this. mebbe needs buff iuno
+	)
+
+//longbow, damage+, speed+, back slot only
+/obj/item/gun/ballistic/bow/longbow
+	name = "longbow"
+	desc = "A tall, elegant bow, with a good balance of firepower and draw speed."
+	icon_state = "lightxbow"
+	item_state = "lightxbow"
+	icon_prefix = "lightxbow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow //a bit faster
+	)
+
+//crossbow. damage++. the brush gun of bows.
+/obj/item/gun/ballistic/bow/crossbow
+	name = "crossbow"
+	desc = "A large crossbow with a heavy draw, for maximum killing power."
+	icon_state = "crossbow"
+	item_state = "crossbow"
+	icon_prefix = "crossbow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5 //60 damage, brush gun power level
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE //?
+
+//tier 4 legendary bow, either boss tier or unique tier, unsure just yet
+//modern compound bow. speed++, damage++. the ultimate bow
+/obj/item/gun/ballistic/bow/compoundbow
+	name = "prewar compound bow"
+	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide."
+	icon_state = "compoundbow"
+	item_state = "compoundbow"
+	icon_prefix = "compoundbow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	init_firemodes = list(
+			/datum/firemode/semi_auto
+	)
+
+/* old bows, stinky, like fenny
 /obj/item/gun/ballistic/bow/xbow
 	name = "magazine-fed crossbow"
 	desc = "A somewhat primitive projectile weapon. Has a spring-loaded magazine, but still requires drawing back before firing. Fires arrows slightly faster than regular bows, improving damage"
@@ -162,3 +270,4 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
+*/

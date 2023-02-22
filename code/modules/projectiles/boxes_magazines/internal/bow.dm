@@ -4,7 +4,7 @@
 	caliber = list(CALIBER_ARROW)
 	max_ammo = 1
 
-
+/* unneeded bow quivers
 /obj/item/ammo_box/magazine/internal/bow/xbow
 	name = "crossbow magazine"
 	max_ammo = 3
@@ -27,3 +27,4 @@
 //Crossbow Ammo
 /obj/item/ammo_box/magazine/internal/bow/cross
 	max_ammo = 3 // 4 shots in total
+*/
