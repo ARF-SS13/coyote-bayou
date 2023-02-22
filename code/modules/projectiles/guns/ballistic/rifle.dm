@@ -38,6 +38,7 @@
 	casing_ejector = FALSE // THIS makes it require manual cocking of the gun!!!
 	spawnwithmagazine = TRUE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	cock_sound = 'sound/weapons/shotgunpump.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_LIGHT_VOLUME),
