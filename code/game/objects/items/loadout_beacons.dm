@@ -618,11 +618,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/widowmaker(src)
 	new /obj/item/ammo_box/shotgun/buck(src)
 
-/obj/item/storage/box/gun/rifle/reprochassepot
-	name = "Reproduction Chassepot"
+/obj/item/storage/box/gun/rifle/gras
+	name = "Gras Rifle"
 
-/obj/item/storage/box/gun/reprochassepot/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/antique/chassepot (src)
+/obj/item/storage/box/gun/gras/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/antique/gras (src)
 	new /obj/item/ammo_box/a308box/improvised(src)
 
 /obj/item/storage/box/gun/rifle/smg22 //only full auto gun you can has roundstart. might not be allowed, will see
@@ -1276,11 +1276,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/smg22
 
-/datum/loadout_box/reprochassepot
-	entry_tag = "Reproduction Chassepot"
+/datum/loadout_box/gras
+	entry_tag = "Gras Rifle"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/reprochassepot
+	spawn_thing = /obj/item/storage/box/gun/rifle/gras
 
 /datum/loadout_box/sidewinder
 	entry_tag = "Multicaliber Carbine"

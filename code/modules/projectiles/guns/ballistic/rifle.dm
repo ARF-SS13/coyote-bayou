@@ -729,13 +729,13 @@
 	)
 
 
-/obj/item/gun/ballistic/rifle/antique/chassepot
-	name = "Chassepot Reproduction"
-	desc = "An reproduction of an incredibly old French black powder rifle, it seems to have been rechambered to 7.62."
+/obj/item/gun/ballistic/rifle/antique/gras
+	name = "Gras"
+	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "chassepot"
+	icon_state = "gras"
 	item_state = "308"
-	mag_type = /obj/item/ammo_box/magazine/internal/chassepot
+	mag_type = /obj/item/ammo_box/magazine/internal/gras
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
@@ -759,8 +759,8 @@
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 25
-	cock_sound = 'sound/f13weapons/chassbolt.ogg'
-	fire_sound = 'sound/f13weapons/chassepot.ogg'
+	cock_sound = 'sound/f13weapons/grasbolt.ogg'
+	fire_sound = 'sound/f13weapons/gras.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
