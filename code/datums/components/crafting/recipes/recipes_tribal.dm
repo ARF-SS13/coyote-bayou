@@ -59,7 +59,7 @@
 	name = "recurve bow"
 	result = /obj/item/gun/ballistic/bow/recurvebow
 	time = 120
-	reqs = list(/obj/item/stack/crafting/leather = 5, //more spendy but an easy step up
+	reqs = list(/obj/item/stack/sheet/leather = 5, //more spendy but an easy step up
 				/obj/item/stack/sheet/mineral/wood = 15,
 				/obj/item/weaponcrafting/string = 2
 				)

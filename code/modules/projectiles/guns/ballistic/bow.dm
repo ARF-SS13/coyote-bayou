@@ -94,6 +94,7 @@
 		recentdraw = world.time + 2
 
 //the main stats we have to work with making each bow different, is size, (normal versus belt, versus back only), damage multiplier, and fire rate
+//NOT ALL BOWS SHOULD BE CRAFTABLE. there's no point in having more types of bows and a variety in their stats and power levels if you just rush to craft your max tier bow and ignore all progression
 
 //Tier 1 bow, starter bow
 //shortbow. fits in bags, but otherwise minimum stats.
