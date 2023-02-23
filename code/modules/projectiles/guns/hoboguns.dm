@@ -443,7 +443,7 @@
 	cock_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(2, 5, 10, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
@@ -468,7 +468,7 @@
 	cock_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 30, 35, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
@@ -537,7 +537,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(4)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 	can_scope = FALSE

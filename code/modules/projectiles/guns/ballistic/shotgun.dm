@@ -41,7 +41,7 @@
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	init_recoil = RIFLE_RECOIL(2.5)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -339,7 +339,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
@@ -386,7 +386,7 @@
 	flight_x_offset = 23
 	flight_y_offset = 21
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
@@ -448,7 +448,7 @@
 	knife_x_offset = 24
 	knife_y_offset = 22
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 /obj/item/gun/ballistic/shotgun/trench/update_icon_state()
@@ -556,7 +556,7 @@
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -594,7 +594,7 @@
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -628,7 +628,7 @@
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -659,7 +659,7 @@
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_recoil = RIFLE_RECOIL(2.2)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 	var/toggled = FALSE
@@ -722,7 +722,7 @@
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
@@ -757,7 +757,7 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 
@@ -805,7 +805,7 @@
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 	automatic = 1
