@@ -621,7 +621,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/gras
 	name = "Gras Rifle"
 
-/obj/item/storage/box/gun/gras/PopulateContents()
+/obj/item/storage/box/gun/rifle/gras/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/antique/gras (src)
 	new /obj/item/ammo_box/a308box/improvised(src)
 
