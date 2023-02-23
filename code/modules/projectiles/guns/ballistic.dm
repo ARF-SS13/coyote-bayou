@@ -20,6 +20,9 @@
 	var/en_bloc = 0
 	/// Which direction do the casings fly out?
 	var/handedness = GUN_EJECTOR_RIGHT
+	/// Does the gun automatically load itself?
+	var/autoloading = TRUE
+	var/cock_sound = 'sound/weapons/shotgunpump.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_LIGHT_VOLUME),
@@ -59,17 +62,20 @@
 	else
 		icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
 
-/obj/item/gun/ballistic/process_chamber(mob/living/user, empty_chamber = 1, soft_eject = FALSE)
+/// Ejects whatever's chambered, and attempts to load a new one from the magazine
+/// chamber_round wont load another one if something's still in the chamber
+/// this is how bolt-action guns require pumping
+/obj/item/gun/ballistic/process_chamber(mob/living/user, soft_eject = FALSE)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(istype(AC)) //there's a chambered round
 		if(casing_ejector)
 			AC.forceMove(drop_location()) //Eject casing onto ground.
 			AC.bounce_away(TRUE, toss_direction = (soft_eject ? null : get_ejector_direction(user)))
 			chambered = null
-		else if(empty_chamber)
-			chambered = null
 	chamber_round()
 
+/// If the chamber is empty, take a round from the magazine and put it in there
+/// If the chamber is not empty, or theres no magazine, do nothing
 /obj/item/gun/ballistic/proc/chamber_round()
 	if (chambered || !magazine)
 		return
@@ -78,9 +84,11 @@
 		chambered.forceMove(src)
 
 /obj/item/gun/ballistic/can_shoot()
-	if(!magazine || !magazine.ammo_count(0))
-		return 0
-	return 1
+	return !!chambered?.BB
+/* 	if(!magazine || !magazine.ammo_count(0))
+		return FALSE
+	if(!casing_ejector)
+	return TRUE */
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
@@ -184,8 +192,40 @@
 			to_chat(user, span_alert("You can't fit \the [casing_or_magazine] into \the [src]!"))
 			return FALSE
 
+/obj/item/gun/ballistic/proc/pump(mob/living/M, visible = TRUE)
+	if(visible)
+		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
+		playsound(M, cock_sound, 60, 1)
+	pump_unload(M)
+	pump_reload(M)
+	update_icon()	//I.E. fix the desc
+	update_firemode()
+	return 1
+
+/obj/item/gun/ballistic/proc/pump_unload(mob/M)
+	if(chambered)//We have a shell in the chamber
+		chambered.forceMove(drop_location())//Eject casing
+		chambered.bounce_away()
+		chambered = null
+
+/obj/item/gun/ballistic/proc/pump_reload(mob/M)
+	if(chambered)
+		return FALSE
+	if(!magazine)
+		return FALSE
+	if(!magazine.ammo_count())
+		return FALSE
+	var/obj/item/ammo_casing/AC = magazine.get_round() //load next casing.
+	if(AC)
+		chambered = AC
+		return TRUE
+
 /obj/item/gun/ballistic/attack_self(mob/living/user)
 	if(magazine)
+		if(magazine.fixed_mag)
+			pump(user, TRUE)
+			update_icon()
+			return
 		eject_magazine(user, en_bloc, !en_bloc, TRUE)
 	else if(chambered)
 		eject_chambered_round(user, TRUE)
@@ -196,7 +236,7 @@
 
 /obj/item/gun/ballistic/proc/eject_magazine(mob/living/user, is_enbloc, put_it_in_their_hand, sounds_and_words)
 	if(magazine.fixed_mag)
-		return
+		return FALSE
 	magazine.forceMove(drop_location())
 	if(put_it_in_their_hand)
 		user.put_in_hands(magazine)
@@ -213,18 +253,28 @@
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		to_chat(user, span_notice("You eject \the [magazine] from \the [src]."))
 	magazine = null
+	return TRUE
+
+/// Pump if click with empty thing
+/obj/item/gun/ballistic/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	if(!casing_ejector && chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP))
+		pump(user, TRUE)
+	else
+		..()
 
 /obj/item/gun/ballistic/proc/eject_chambered_round(mob/living/user, sounds_and_words)
 	if(sounds_and_words)
 		to_chat(user, span_notice("You eject \a [chambered] from \the [src]'s chamber."))
 		playsound(src, "gun_slide_lock", 70, 1)
-	process_chamber(user, FALSE, FALSE)
+	process_chamber(user, FALSE)
 
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
 	if(istype(magazine) && magazine.fixed_mag && length(magazine.caliber))
 		. += "It accepts [span_notice(english_list(magazine.caliber))]"
 	. += "It has [span_notice("[get_ammo()]")] round\s remaining."
+	if (chambered && !casing_ejector)
+		. += "A [chambered.BB ? span_green("live") : span_alert("spent")] one is in the chamber."
 
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = 1)
 	var/boolets = 0 //mature var names for mature people

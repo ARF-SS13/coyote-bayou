@@ -1,7 +1,11 @@
 //IN THIS DOCUMENT: Rifle template, Lever-action rifles, Bolt-action rifles, Magazine-fed bolt-action rifles
 // See gun.dm for keywords and the system used for gun balance
 
-
+/// Main thing that makes boltie guns are:
+///  INTERNAL MAG and CASING_EJECTOR = FALSE
+/// the internal mag makes it be loaded from a box or strip
+/// the casing ejector = FALSE makes it pumped after each shot
+/// enjoy!
 
 ////////////////////
 // RIFLE TEMPLATE //
@@ -9,7 +13,6 @@
 
 
 /obj/item/gun/ballistic/rifle
-
 	name = "rifle template"
 	desc = "Should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -24,10 +27,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.2)
@@ -36,13 +35,9 @@
 	)
 
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
-	flags_1 =  CONDUCT_1
-	casing_ejector = FALSE
-	var/recentpump = 0 // to prevent spammage
+	casing_ejector = FALSE // THIS makes it require manual cocking of the gun!!!
 	spawnwithmagazine = TRUE
-	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
-	var/pump_stam_cost = 2
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_LIGHT_VOLUME),
@@ -54,66 +49,20 @@
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
 
-/obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
+/* /obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
 
 /obj/item/gun/ballistic/rifle/can_shoot()
 	return !!chambered?.BB
 
 /obj/item/gun/ballistic/rifle/attack_self(mob/living/user)
-	//if(recentpump > world.time)
-	//	return
-	if(IS_STAMCRIT(user))//CIT CHANGE - makes pumping shotguns impossible in stamina softcrit
-		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto
-		return//CIT CHANGE - ditto
-	pump(user, TRUE)
-	//if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
-	//	recentpump = world.time + GUN_COCK_RIFLE_LIGHTNING
-	//else
-	//	recentpump = world.time + cock_delay
-	if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
-		user.adjustStaminaLossBuffered(pump_stam_cost) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
-	return
+	pump(user, TRUE) */
 
 /obj/item/gun/ballistic/rifle/blow_up(mob/user)
 	. = 0
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
 		. = 1
-
-/obj/item/gun/ballistic/rifle/proc/pump(mob/M, visible = TRUE)
-	if(visible)
-		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
-	playsound(M, pump_sound, 60, 1)
-	pump_unload(M)
-	pump_reload(M)
-	update_icon()	//I.E. fix the desc
-	update_firemode()
-	return 1
-
-/obj/item/gun/ballistic/rifle/proc/pump_unload(mob/M)
-	if(chambered)//We have a shell in the chamber
-		chambered.forceMove(drop_location())//Eject casing
-		chambered.bounce_away()
-		chambered = null
-
-/obj/item/gun/ballistic/rifle/proc/pump_reload(mob/M)
-	if(!magazine.ammo_count())
-		return 0
-	var/obj/item/ammo_casing/AC = magazine.get_round() //load next casing.
-	chambered = AC
-
-/obj/item/gun/ballistic/rifle/examine(mob/user)
-	. = ..()
-	if (chambered)
-		. += "A [chambered.BB ? "live" : "spent"] one is in the chamber."
-
-/// Pump if click with empty thing
-/obj/item/gun/ballistic/rifle/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	if(chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP))
-		attack_self(user)
-	else
-		..()
 
 /* * * * * * *
  * Repeaters *
@@ -149,7 +98,7 @@
 	)
 	scope_x_offset = 5
 	scope_y_offset = 13
-	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+	cock_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_LIGHT_VOLUME),
@@ -533,7 +482,7 @@
 	scope_state = "scope_long"
 	scope_x_offset = 4
 	scope_y_offset = 12
-	pump_sound = 'sound/weapons/boltpump.ogg'
+	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 	init_firemodes = list(
@@ -583,7 +532,7 @@
 	scope_state = "scope_long"
 	scope_x_offset = 4
 	scope_y_offset = 12
-	pump_sound = 'sound/weapons/boltpump.ogg'
+	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 	init_firemodes = list(
@@ -713,7 +662,7 @@
 	bayonet_state = "bayonet"
 	knife_x_offset = 22
 	knife_y_offset = 21
-	pump_sound = 'sound/weapons/boltpump.ogg'
+	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -766,9 +715,8 @@
 	bayonet_state = "bayonet"
 	knife_x_offset = 22
 	knife_y_offset = 21
-	pump_sound = 'sound/weapons/boltpump.ogg'
+	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
-	pump_stam_cost = 15
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
@@ -780,6 +728,61 @@
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
 
+/* * * * * * * * * * *
+ * Salvaged Eastern Rifle
+ * Fixed-mag semi-auto rifle
+ * .223 / 5.56mm / 5mm
+ * Loads 556 and 5mm!
+ * loaded one at a time
+ *
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle
+	name = "salvaged eastern rifle"
+	desc = "A clever design adapted out of salvaged surplus eastern rifles and wasteland scarcity. It features a complex loading mechanism \
+		and barrel capable of using both 5mm and 5.56mm rifle ammunition with reasonable success. \
+		The magazine is welded to the frame, and the loading port angled <i>just enough</i> to make stripper clips not work. \
+		Apparently these 'features' to the design, being on every instance of this gun."
+	icon_state = "salvaged-eastern-rifle"
+	item_state = "marksman"
+	slot_flags = ITEM_SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
+	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(0.95)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	gun_tags = list(GUN_SCOPE)
+
+	scope_state = "scope_short"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+	fire_sound = 'sound/f13weapons/salvaged.ogg'
+	can_scope = TRUE
+	casing_ejector = TRUE
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * * * * * * * * *
  * Magazine-Fed Bolt-Action Rifles *
@@ -882,7 +885,7 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_HEAVY_VOLUME),

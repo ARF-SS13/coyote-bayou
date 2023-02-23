@@ -163,7 +163,8 @@
 	ckeywhitelist = list("aerodynamique")
 
 /obj/item/storage/box/large/custom_kit/aerodynamique3/PopulateContents()
-	new /obj/item/gun/ballistic/bow/sturdy(src)
+	//new /obj/item/gun/ballistic/bow/sturdy(src)
+	new /obj/item/gun/ballistic/bow/recurvebow(src)
 	new /obj/item/storage/bag/tribe_quiver/bone(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 
@@ -209,7 +210,8 @@
 	ckeywhitelist = list("bladeburstninja")
 
 /obj/item/storage/box/large/custom_kit/bladeburstninja/PopulateContents()
-	new /obj/item/gun/ballistic/bow/silver(src)
+	//new /obj/item/gun/ballistic/bow/silver(src)
+	new /obj/item/gun/ballistic/bow/recurvebow(src)
 	new /obj/item/clothing/head/helmet/f13/metalmask(src)
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/clothing/accessory/talisman(src)
@@ -431,16 +433,8 @@
 
 /// cure the whole wasteland of the *scourge* that is not having mountainous tits
 /obj/item/storage/box/large/custom_kit/fireclaw787/PopulateContents()
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
-	new /obj/item/storage/pill_bottle/breast_enlarger(src)
+	for(var/i in 1 to 7)
+		new /obj/item/storage/pill_bottle/breast_enlarger(src)
 
 /datum/gear/donator/kits/fuzlet
 	name = "fuzzy supply box"
@@ -531,14 +525,14 @@
 // J
 
 /datum/gear/donator/kits/jackalface
-	name = "Recon Kit"
+	name = "Jackal Kit"
 	path = /obj/item/storage/box/large/custom_kit/jackalface
 	ckeywhitelist = list("jackalface")
 
 /obj/item/storage/box/large/custom_kit/jackalface/PopulateContents()
 	new /obj/item/clothing/under/draculass(src)
 	new /obj/item/clothing/mask/chameleon(src)
-	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal(src)
 
 /datum/gear/donator/kits/jackson1112
 	name = "Recon Kit"
@@ -575,7 +569,7 @@
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/radio(src)
 
-/datum/gear/donator/kits/jaytheavian
+/*/datum/gear/donator/kits/jaytheavian
 	name = "Mayor Stuff"
 	path = /obj/item/storage/box/large/custom_kit/jaytheavian
 	ckeywhitelist = list("jaytheavian")
@@ -583,7 +577,7 @@
 /obj/item/storage/box/large/custom_kit/jaytheavian/PopulateContents()
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)
-	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/card/id/captains_spare(src)*/
 
 // K
 // L
@@ -844,6 +838,16 @@
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)*/
 
+/datum/gear/donator/kits/seermankhajiit004
+	name = "Honey Mayor"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
+	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/card/id/captains_spare(src)
+
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
 	desc = "Hey look who it is!"
@@ -1046,7 +1050,8 @@
 	ckeywhitelist = list("truedark")
 
 /obj/item/storage/box/large/custom_kit/truedark2/PopulateContents()
-	new /obj/item/gun/ballistic/bow/xbow(src)
+	//new /obj/item/gun/ballistic/bow/xbow(src)
+	new /obj/item/gun/ballistic/bow/lightxbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 	new /obj/item/reagent_containers/glass/bottle/gaia(src)

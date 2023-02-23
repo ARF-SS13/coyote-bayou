@@ -440,7 +440,7 @@
 	scope_x_offset = 11
 	scope_y_offset = 14
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
-	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
+	cock_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -465,7 +465,7 @@
 	scope_x_offset = 9
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
-	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
+	cock_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
 		/datum/firemode/semi_auto
