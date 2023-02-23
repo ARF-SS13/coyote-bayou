@@ -14,6 +14,10 @@
 	name = "grey gloves"
 	path = /obj/item/clothing/gloves/color/grey
 
+/datum/gear/gloves/brown
+	name = "brown gloves"
+	path = /obj/item/clothing/gloves/color/brown
+
 /datum/gear/gloves/leather
 	name = "leather gloves"
 	path = /obj/item/clothing/gloves/f13/leather
@@ -21,6 +25,11 @@
 /datum/gear/gloves/military
 	name = "military gloves"
 	path = /obj/item/clothing/gloves/f13/military
+	cost = 2
+
+/datum/gear/gloves/rifleman
+	name = "rifleman gloves"
+	path = /obj/item/clothing/gloves/rifleman
 	cost = 2
 
 /datum/gear/gloves/latex
