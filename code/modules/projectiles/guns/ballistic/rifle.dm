@@ -31,7 +31,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.2)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
@@ -94,7 +94,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	scope_x_offset = 5
 	scope_y_offset = 13
@@ -135,7 +135,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	gun_sound_properties = list(
@@ -174,7 +174,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	gun_sound_properties = list(
@@ -213,7 +213,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3.3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_sound_properties = list(
@@ -252,7 +252,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3.3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_sound_properties = list(
@@ -372,7 +372,7 @@
 	init_recoil = RIFLE_RECOIL(2.4)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	gun_sound_properties = list(
@@ -412,7 +412,7 @@
 	init_recoil = RIFLE_RECOIL(2.4)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	gun_sound_properties = list(
@@ -486,7 +486,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 	gun_sound_properties = list(
@@ -536,7 +536,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 	gun_sound_properties = list(
