@@ -729,6 +729,53 @@
 		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
 	)
 
+
+/obj/item/gun/ballistic/rifle/antique/gras
+	name = "Gras"
+	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "gras"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/gras
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(2.5)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
+	can_scope = TRUE
+	scope_state = "scope_mosin"
+	scope_x_offset = 3
+	scope_y_offset = 13
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 24
+	knife_y_offset = 25
+	cock_sound = 'sound/f13weapons/grasbolt.ogg'
+	fire_sound = 'sound/f13weapons/gras.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
  * Fixed-mag semi-auto rifle
