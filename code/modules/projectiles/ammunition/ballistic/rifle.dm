@@ -176,6 +176,9 @@
 	caliber = CALIBER_40MM
 	icon_state = "40mmbuck"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	custom_materials = list(
+		/datum/material/iron = MATS_GRENADE_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
 	pellets = 12 //96 damage. can't complain
 
 // 2mm EC
