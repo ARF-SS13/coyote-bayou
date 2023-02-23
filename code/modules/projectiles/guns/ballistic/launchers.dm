@@ -4,7 +4,8 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher
 	desc = "A break-operated grenade rifle. Projectiles travel slowly."
 	name = "grenade rifle"
-	icon_state = "dshotgun-sawn"
+	icon = 'modular_coyote/icons/objects/gun.dmi'
+	icon_state = "m79" // shinier sprite! but also points left :V
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
@@ -87,6 +88,30 @@
 		to_chat(user, span_notice("You load [num_loaded] spear\s into \the [src]."))
 		update_icon()
 		chamber_round()
+
+//yep~
+/obj/item/gun/ballistic/fatman
+	name = "fatman"
+	desc =  "a man-portable launcher for tactical nuclear ordnance. what's not to love?"
+	icon = 'modular_coyote/icons/objects/gun.dmi'
+	icon_state = "fatman"
+	item_state = "rocketlauncher" //not sure where it is or if this works. hopefully.
+	mag_type = /obj/item/ammo_box/magazine/internal/mininuke
+	fire_sound = 'sound/weapons/rocketlaunch.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	can_suppress = FALSE
+	burst_size = 1
+	slowdown = 1
+	casing_ejector = FALSE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slot_flags = ITEM_SLOT_BACK
+	magazine_wording = "mininuke"
+
+/obj/item/gun/ballistic/fatman/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]_empty" //civ13 used a different empty designator
+	else
+		icon_state = "[initial(icon_state)]"
 
 /obj/item/gun/ballistic/rocketlauncher
 	name = "\improper rocket launcher"

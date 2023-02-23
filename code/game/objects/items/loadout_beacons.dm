@@ -605,11 +605,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/a308(src)
 
 /obj/item/storage/box/gun/rifle/caravan_shotgun
-	name = "caravan shotgun case"
+	name = "caravan rifle case"
 
 /obj/item/storage/box/gun/rifle/caravan_shotgun/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/caravan_shotgun(src)
-	new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
+	//new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
+	new /obj/item/ammo_box/c4570box(src)
 
 /obj/item/storage/box/gun/rifle/widowmaker
 	name = "Winchester Widowmaker case"
@@ -1259,7 +1260,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/rifle/hunting
 
 /datum/loadout_box/caravan_shotgun
-	entry_tag = "Caravan Shotgun"
+	entry_tag = "Caravan Rifle"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/caravan_shotgun
@@ -1377,7 +1378,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /// Revolvers!
 
 /datum/loadout_box/detective
-	entry_tag = ".38 Detective Special"
+	entry_tag = ".22LR Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver

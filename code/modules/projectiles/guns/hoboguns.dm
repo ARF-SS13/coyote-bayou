@@ -126,7 +126,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
+	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
@@ -145,6 +145,7 @@
 	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
+	can_scope = TRUE
 
 /// Multicaliber shouldergun
 /obj/item/gun/ballistic/revolver/hobo/piperifle/romckit
@@ -201,7 +202,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
+	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
@@ -215,7 +216,7 @@
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_HURTS_USER(5, 10, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
 		GUN_MISFIRE_THROWS_GUN(0.5),
 		GUN_MISFIRE_UNLOADS_GUN(2, 50)
 	)
@@ -251,7 +252,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
+	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
@@ -473,7 +474,7 @@
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 30, 35, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
 	)
-
+	can_scope = TRUE
 /* * * * * * * * * * *
  * Destroyer Carbine
  * Hobo semi-auto
@@ -510,7 +511,11 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 10, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(2, 50)
+	)
 
 //Obrez, sawn off bolt action rifle						Keywords: .308, 5 round internal
 /obj/item/gun/ballistic/rifle/hunting/obrez
@@ -562,21 +567,26 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.3)
+	init_recoil = RIFLE_RECOIL(3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto,
+		/datum/firemode/semi_auto/shotgun_fixed,
 		/datum/firemode/burst/two/shotgun_fixed
 	)
-	prefered_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
+	prefered_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(5, 50)
+)
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
