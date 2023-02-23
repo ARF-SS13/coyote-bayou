@@ -132,8 +132,8 @@
  * Common
  * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/caravan_shotgun
-	name = "caravan shotgun"
-	desc = "An common over-under double barreled shotgun made in the post-war era."
+	name = "caravan rifle"
+	desc = "An over-under hunting rifle, for large game."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -142,10 +142,10 @@
 	icon_prefix = "shotgundouble"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/caravan
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
@@ -155,9 +155,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed,
-		/datum/firemode/burst/two/shotgun_fixed,
+		///datum/firemode/burst/two/shotgun_fixed,
 	)
-
+	can_scope = TRUE
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	gun_sound_properties = list(

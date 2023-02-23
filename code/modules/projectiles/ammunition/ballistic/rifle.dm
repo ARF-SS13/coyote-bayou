@@ -161,7 +161,25 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_GRENADE_CASING + MATS_GRENADE_BULLET,
 		/datum/material/blackpowder = MATS_GRENADE_POWDER)
-	fire_power = CASING_POWER_GRENADE * CASING_POWER_MOD_SURPLUS
+	fire_power = CASING_POWER_GRENADE * CASING_POWER_MOD_MATCH
+
+/obj/item/ammo_casing/a40mm/hedp
+	name = "40mm HEDP shell"
+	desc = "A cased dual purpose grenade that can only be activated once fired out of a grenade launcher."
+	caliber = CALIBER_40MM
+	icon_state = "40mmHEDP"
+	projectile_type = /obj/item/projectile/bullet/a40mm/hedp
+
+/obj/item/ammo_casing/a40mm/buck
+	name = "40mm buckshot shell"
+	desc = "A large caliber buckshot round, designed to be fired out of a grenade launcher."
+	caliber = CALIBER_40MM
+	icon_state = "40mmbuck"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	custom_materials = list(
+		/datum/material/iron = MATS_GRENADE_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
+	pellets = 12 //96 damage. can't complain
 
 // 2mm EC
 /obj/item/ammo_casing/c2mm

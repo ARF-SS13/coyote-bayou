@@ -29,6 +29,7 @@
 #define CALIBER_MUSKET_LASER "laser musket packs"
 #define CALIBER_MUSKET_PLASMA "plasma musket packs"
 #define CALIBER_NEEDLE "needles"
+#define CALIBER_MININUKE "mininukes"
 #define CALIBER_ROCKET "rockets"
 #define CALIBER_SPEAR "speargun rounds"
 #define CALIBER_LASERGATLING "laser gatling charges"
@@ -51,8 +52,8 @@
 #define CASING_POWER_LIGHT_RIFLE 4
 #define CASING_POWER_MEDIUM_RIFLE 8
 #define CASING_POWER_HEAVY_RIFLE 12
-#define CASING_POWER_SHOTGUN 5
-#define CASING_POWER_GRENADE 5
+#define CASING_POWER_SHOTGUN 8
+#define CASING_POWER_GRENADE 12
 
 /// Modifiers for different loads
 #define CASING_POWER_MOD_HANDLOAD 0.5
@@ -176,7 +177,7 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MATS_RIFLE_MEDIUM_CASING (MATS_CASING_BASE * 2)
 #define MATS_RIFLE_HEAVY_CASING (MATS_CASING_BASE * 3)
 #define MATS_SHOTGUN_CASING (MATS_CASING_BASE * 5)
-#define MATS_GRENADE_CASING (MATS_CASING_BASE * 50)
+#define MATS_GRENADE_CASING (MATS_CASING_BASE * 20)
 #define MATS_ROCKET_CASING (MATS_CASING_BASE * 100)
 #define MATS_GAUSS_CASING 0
 

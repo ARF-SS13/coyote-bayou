@@ -74,6 +74,7 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = KNUCKLEGUN_AMMO_CALIBERS
 	max_ammo = 4
+	multiload = 0
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised9mm
 	name = "improvised internal magazine 9mm"
@@ -86,6 +87,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = list(CALIBER_10MM)
 	max_ammo = 4
+	multiload = 0
 	can_change_caliber = TRUE
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm/Initialize()
@@ -104,7 +106,15 @@
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	caliber = list(CALIBER_762)
 	max_ammo = 2
+	multiload = 0
 	can_change_caliber = TRUE
+
+/obj/item/ammo_box/magazine/internal/cylinder/caravan
+	name = "caravan rifle chamber"
+	ammo_type = /obj/item/ammo_casing/c4570/surplus
+	caliber = list(CALIBER_4570)
+	max_ammo = 2
+	multiload = 0
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised762/Initialize()
 	. = ..()
