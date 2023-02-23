@@ -94,17 +94,17 @@
 
 /datum/gear/neck/blacktie
 	name = "black tie"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	path = /obj/item/clothing/neck/tie/black
 
 /datum/gear/neck/bluetie
 	name = "blue tie"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	path = /obj/item/clothing/neck/tie/blue
 
 /datum/gear/neck/redtie
 	name = "red tie"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	path = /obj/item/clothing/neck/tie/red
 
 /datum/gear/neck/choker
@@ -159,3 +159,7 @@
 /datum/gear/neck/scarf/stripedgreen
 	name = "striped green scarf"
 	path = /obj/item/clothing/neck/stripedgreenscarf
+
+/datum/gear/neck/scarf/desertscarf
+	name = "desert scarf"
+	path = /obj/item/clothing/neck/scarf/cptpatriot

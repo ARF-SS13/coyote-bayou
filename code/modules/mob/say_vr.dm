@@ -30,8 +30,9 @@ proc/get_top_level_mob(mob/S)
 	key = "subtle"
 	key_third_person = "subtle"
 	message = null
-	mob_type_blacklist_typecache = list(/mob/living/brain)
+	//mob_type_blacklist_typecache = list(/mob/living/brain)
 	var/subtler = FALSE
+	var/message_range = 1
 
 /datum/emote/living/subtle/subtler
 	key = "subtler"
@@ -72,24 +73,25 @@ proc/get_top_level_mob(mob/S)
 	else
 		message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
-	var/list/non_admin_ghosts
+	var/list/non_admin_ghosts = list()
 	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*
 	if(subtler)
-		non_admin_ghosts = list(GLOB.dead_mob_list)
-		for(var/mob/ghostie in GLOB.dead_mob_list)
-			if(ghostie.client && check_rights_for(ghostie.client, R_ADMIN))
-				non_admin_ghosts -= ghostie
+		for(var/mob/dead/ghostie in range(message_range, user))
+			if(!ghostie.client)
+				non_admin_ghosts += ghostie
+			if(!check_rights_for(ghostie.client, R_ADMIN))
+				non_admin_ghosts += ghostie
 
 	// Everyone in range can see it
 	user.visible_message(
 		message = message,
 		blind_message = message,
 		self_message = message,
-		vision_distance = 1,
+		vision_distance = message_range,
 		ignored_mobs = non_admin_ghosts)
 
 	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight, and, if subtler, are admemes
-	user.emote_for_ghost_sight(message, subtler)
+	user.emote_for_ghost_sight(message, subtler, message_range)
 
 
 ///////////////// VERB CODE

@@ -1188,19 +1188,19 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				return FALSE
 			if(H.s_store)
 				return FALSE
-			if(!H.wear_suit)
+			/*if(!H.wear_suit)
 				if(return_warning)
 					return_warning[1] = span_warning("You need a suit before you can attach this [I.name]!")
 				return FALSE
 			if(!H.wear_suit.allowed)
 				if(return_warning)
 					return_warning[1] = "You somehow have a suit with no defined allowed items for suit storage, stop that."
-				return FALSE
+				return FALSE*/
 			if(I.w_class > WEIGHT_CLASS_BULKY)
 				if(return_warning)
 					return_warning[1] = "The [I.name] is too big to attach."
 				return FALSE
-			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_suit.allowed) )
+			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, GLOB.default_all_armor_slot_allowed) )
 				return TRUE
 			return FALSE
 		if(SLOT_HANDCUFFED)

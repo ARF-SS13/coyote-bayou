@@ -2,6 +2,7 @@
 
 //Caliber defines
 #define CALIBER_22LR ".22LR rounds"
+#define CALIBER_BEE ".22LR bee rounds"
 #define CALIBER_5MM "5mm rounds"
 #define CALIBER_556 "5.56mm / .223 rounds"
 #define CALIBER_762 "7.62mm / .308 rounds"

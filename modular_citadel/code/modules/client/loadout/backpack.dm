@@ -26,18 +26,18 @@
 	path = /obj/item/storage/fancy/donut_box
 	cost = 2
 
-//// "Toys"
+//// "Toys" -- toys going back to general subcategory till we have more of them
 
 /datum/gear/backpack/crayons
 	name = "Box of Crayons"
 	path = /obj/item/storage/crayons
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 	cost = 2
 
 /datum/gear/backpack/toykatana
 	name = "Toy Katana"
 	path = /obj/item/toy/katana
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 	cost = 3
 
 //// Pens - not catagorized
@@ -283,7 +283,7 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
 	cost = 1
 
-//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!) (but nobody used it cus we dont have vault stuff lol)
+//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!) (but nobody used it cus we dont have vault stuff lol) (love all you nerds)
 
 /* //Vault Guns
 /datum/gear/backpack/vaultguns/n99
@@ -429,4 +429,32 @@
 /datum/gear/backpack/ncrcfjacket
 	name = "Cropped Denim Jacket - Accessory"
 	path = /obj/item/clothing/accessory/ncrfjacketcrop
+	cost = 1
+
+/datum/gear/backpack/chestpatch
+	name = "generic patch (chest)"
+	path = /obj/item/clothing/accessory/patch
+
+/datum/gear/backpack/armpatch
+	name = "generic patch (arm)"
+	path = /obj/item/clothing/accessory/patch/arm
+
+/datum/gear/backpack/headphones
+	name = "Headphones"
+	path = /obj/item/clothing/ears/headphones
+	cost = 1
+
+/datum/gear/backpack/holotag
+	name = "Broken Holotag"
+	path = /obj/item/card/id/rusted/brokenholodog
+	cost = 1
+
+/datum/gear/backpack/dogtag
+	name = "Rusted tags"
+	path = /obj/item/card/id/rusted
+	cost = 1
+
+/datum/gear/backpack/vaultid
+	name = "Faded ID card"
+	path = /obj/item/card/id/rusted/fadedvaultid
 	cost = 1

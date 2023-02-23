@@ -147,6 +147,18 @@
 	projectile_type = /obj/item/projectile/bullet/c22/shock
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 
+/obj/item/ammo_casing/bee
+	name = ".22lr beellet casing"
+	desc = "A hybernating bee inside a capsule."
+	caliber = CALIBER_BEE
+	projectile_type = /obj/item/projectile/bullet/bee
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+
 // BETA AMMO // Obsolete
 /obj/item/ammo_casing/testcasing
 	name = "casing"
