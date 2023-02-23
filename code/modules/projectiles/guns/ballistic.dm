@@ -361,9 +361,10 @@
 		initialize_firemodes()
 		if(firemodes.len)
 			set_firemode(sel_mode)
+			*/
 		update_icon()
 		return 1
-		*/
+		
 		
 /obj/item/gun/ballistic/get_dud_projectile()
 	var/proj_type

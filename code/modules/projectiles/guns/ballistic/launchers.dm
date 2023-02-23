@@ -12,7 +12,7 @@
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	pin = /obj/item/firing_pin
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
@@ -102,6 +102,7 @@
 	can_suppress = FALSE
 	burst_size = 1
 	slowdown = 1
+	projectile_speed_multiplier = 0.4 //run
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slot_flags = ITEM_SLOT_BACK
