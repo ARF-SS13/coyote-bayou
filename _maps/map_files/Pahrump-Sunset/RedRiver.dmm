@@ -24930,6 +24930,10 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland/city)
+"oAj" = (
+/mob/living/simple_animal/hostile/raider/cultist/ranged/radiation,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building/abandoned)
 "oAO" = (
 /obj/structure/statue/sandstone/gravestone{
 	desc = "The inscription reads: Gods prophets will bring glory to this unholy land.";
@@ -33737,6 +33741,11 @@
 	icon_state = "verticalleftborderright2"
 	},
 /area/f13/wasteland/city)
+"tIG" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/radiation,
+/turf/open/floor/carpet/red,
+/area/f13/building/abandoned)
 "tIS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
@@ -34841,7 +34850,7 @@
 	},
 /area/f13/wasteland)
 "umW" = (
-/mob/living/simple_animal/hostile/raider/cultist/ranged/shotgun,
+/mob/living/simple_animal/hostile/raider/cultist/ranged/radiation,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "unG" = (
@@ -83879,7 +83888,7 @@ oph
 ieU
 ina
 cmA
-myE
+tIG
 dht
 jTL
 dht
@@ -84405,9 +84414,9 @@ jTL
 ieU
 ina
 qYF
-qYF
 vba
 qYF
+oAj
 qYF
 qYF
 rGM
@@ -85935,7 +85944,7 @@ oph
 ieU
 qYF
 cmA
-ijT
+jTL
 hyx
 jTL
 hyx
@@ -86192,7 +86201,7 @@ oph
 ieU
 qYF
 esF
-jTL
+umW
 hyx
 jTL
 hyx
@@ -86453,7 +86462,7 @@ jTL
 pZx
 jTL
 pZx
-jTL
+umW
 pZx
 qYF
 ieU
