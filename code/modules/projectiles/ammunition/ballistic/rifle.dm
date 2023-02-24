@@ -180,6 +180,7 @@
 		/datum/material/iron = MATS_GRENADE_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
 	pellets = 12 //96 damage. can't complain
+	variance = SHOTGUN_SPREAD_BASE
 
 // 2mm EC
 /obj/item/ammo_casing/c2mm
