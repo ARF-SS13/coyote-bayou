@@ -300,6 +300,9 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 /obj/item/stack/sheet/mineral/silver/fifty
 	amount = 50
 
+/obj/item/stack/sheet/mineral/silver/two //for surgical tables
+	amount = 2
+
 /*
  * Titanium
  */

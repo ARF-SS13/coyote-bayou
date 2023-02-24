@@ -858,6 +858,7 @@ Mayor
 
 	outfit = /datum/outfit/job/den/f13settler
 
+	/*
 	loadout_options = list(
 		/datum/outfit/loadout/provisioner,
 		/datum/outfit/loadout/groundskeeper,
@@ -867,7 +868,7 @@ Mayor
 		/datum/outfit/loadout/singer,
 		/datum/outfit/loadout/farmer,
 		/datum/outfit/loadout/prospector
-	)
+	)*/
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
@@ -884,6 +885,7 @@ Mayor
 	name = "Citizen"
 	jobtype = /datum/job/oasis/f13settler
 	belt = /obj/item/kit_spawner/townie
+	suit_store = /obj/item/kit_spawner/tools
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -892,7 +894,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
-		/obj/item/melee/onehanded/knife/hunting = 1
+		///obj/item/melee/onehanded/knife/hunting = 1 //you already got a knife
 		)
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -922,6 +924,7 @@ Mayor
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt)
 
+/*
 /datum/outfit/loadout/provisioner
 	name = "Provisioner"
 	neck = /obj/item/clothing/neck/scarf/cptpatriot
@@ -1057,7 +1060,8 @@ Mayor
 	/obj/item/t_scanner/adv_mining_scanner = 1,
 	///obj/item/ammo_box/m44 = 2,
 	///obj/item/gun/ballistic/revolver/m29/snub = 1
-	)
+	)*/
+
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/

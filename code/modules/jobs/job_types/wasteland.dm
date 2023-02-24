@@ -950,6 +950,7 @@ Raider
 			/datum/job/wasteland/f13wastelander,
 		),
 	)
+	/*
 	loadout_options = list(
 	/datum/outfit/loadout/vault_refugee,
 	/datum/outfit/loadout/salvager,
@@ -972,7 +973,7 @@ Raider
 //	/datum/outfit/loadout/ncrcitizen,
 //	/datum/outfit/loadout/legioncivilian,
 //	/datum/outfit/loadout/wastelander_desert_ranger)
-
+*/
 /datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
 	jobtype = /datum/job/wasteland/f13wastelander
@@ -980,6 +981,7 @@ Raider
 	id = null
 	ears = null
 	belt = /obj/item/kit_spawner/waster
+	suit_store = /obj/item/kit_spawner/tools
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -987,8 +989,8 @@ Raider
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak,
+		///obj/item/reagent_containers/hypospray/medipen/stimpak, //we don't need this big advantage to being a wastelander instead of citizen
+		///obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/storage/pill_bottle/chem_tin/radx
 		)
 
@@ -1004,6 +1006,7 @@ Raider
 		/obj/item/clothing/suit/armor/outfit/jacket/merc, \
 		/obj/item/clothing/suit/toggle/labcoat/wanderer)
 
+/*
 /datum/outfit/loadout/salvager
 	name = "Salvager"
 	uniform = /obj/item/clothing/under/f13/machinist
@@ -1306,7 +1309,7 @@ Raider
 		/obj/item/ammo_box/a357=2,
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
-
+*/
 /*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
 	flag = F13ENFORCER

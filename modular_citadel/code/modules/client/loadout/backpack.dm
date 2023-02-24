@@ -3,6 +3,16 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 	slot = SLOT_IN_BACKPACK
 
+/datum/gear/backpack/redwater
+	name = "contraband radio"
+	path = /obj/item/radio/redwater
+	cost = 0
+
+/datum/gear/backpack/denid
+	name = "contraband keycard"
+	path = /obj/item/card/id/denid
+	cost = 0
+
 /datum/gear/backpack/necklace //this is here because loadout doesn't support proper accessories
 	name = "Renameable Necklace"
 	path = /obj/item/clothing/accessory/necklace
