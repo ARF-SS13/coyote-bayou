@@ -402,7 +402,20 @@
 		))
 		new rig_snacks(src)
 
+/obj/item/storage/belt/military/plush
+	name = "tactical plushie rig"
+	desc = "a set of military grade tactical pouches, made to hold a large number of plushies."
+	component_type = /datum/component/storage/concrete/belt/specialized/plush
 
+/obj/item/storage/belt/military/plush/ComponentInitialize()
+	. = ..()
+	var/amount = 21
+	var/rig_plushes
+	while(contents.len <= amount)
+		rig_plushes = pick(list(
+		/obj/effect/spawner/lootdrop/plush
+		))
+		new rig_plushes(src)
 
 /* * * * * * *
  * NECKPRONS
