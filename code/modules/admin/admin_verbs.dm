@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
 /world/proc/AVerbsAdmin()
 	return list(
+	/client/proc/toggle_experimental_clickdrag_thing,				/*allows our mob to go invisible/visible*/
 	/client/proc/invisimin,				/*allows our mob to go invisible/visible*/
 //	/datum/admins/proc/show_traitor_panel,	/*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags*/
@@ -404,6 +405,18 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		else
 			mob.invisibility = INVISIBILITY_OBSERVER
 			to_chat(mob, "<span class='adminnotice'><b>Invisimin on. You are now as invisible as a ghost.</b></span>")
+
+/client/proc/toggle_experimental_clickdrag_thing()
+	set name = "Toggle Clickdrag Changes"
+	set category = "Debug"
+	set desc = "Toggles harm-intent clickdrag disabling. Its experimental, click this if people complain clickdragging being broken, and tell Superlagg what broke."
+	GLOB.use_experimental_clickdrag_thing = !GLOB.use_experimental_clickdrag_thing
+	log_admin("[key_name(usr)] toggled the harm intent clickdrag disabling thing.")
+	message_admins("[key_name_admin(usr)] toggled the harm intent clickdrag disabling thing.")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggled clickdrag thing")
+	if(alert("Tell everyone the experimental clickdrag thing was [GLOB.use_experimental_clickdrag_thing ? "enabled" : "disabled"]?",,"Yes","No") != "Yes")
+		return
+	to_chat(world, "<B>The experimental harm-intent clickdrag disable thing has been [GLOB.use_experimental_clickdrag_thing ? "enabled" : "disabled"].</B>")
 
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"
