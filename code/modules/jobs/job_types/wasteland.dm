@@ -981,7 +981,7 @@ Raider
 	id = null
 	ears = null
 	belt = /obj/item/kit_spawner/waster
-	suit_store = /obj/item/kit_spawner/tools
+	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -991,7 +991,8 @@ Raider
 	backpack_contents = list(
 		///obj/item/reagent_containers/hypospray/medipen/stimpak, //we don't need this big advantage to being a wastelander instead of citizen
 		///obj/item/reagent_containers/hypospray/medipen/stimpak,
-		/obj/item/storage/pill_bottle/chem_tin/radx
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
@@ -1001,11 +1002,12 @@ Raider
 		/obj/item/clothing/under/f13/brahminm, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
+		/* people generally bring their own jackets
 	suit = pick(
 		/obj/item/clothing/suit/armor/light/kit, \
 		/obj/item/clothing/suit/armor/outfit/jacket/merc, \
 		/obj/item/clothing/suit/toggle/labcoat/wanderer)
-
+*/
 /*
 /datum/outfit/loadout/salvager
 	name = "Salvager"

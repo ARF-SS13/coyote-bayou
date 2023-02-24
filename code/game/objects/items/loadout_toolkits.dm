@@ -19,7 +19,7 @@
 	allowed_flags = LOADOUT_FLAG_TOOL_WASTER
 
 /obj/item/storage/box/tools
-	name = "farming tools"
+	name = "bag of tools"
 	desc = "a sturdy bag keeping your tools of choice safe until you pop it open."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "backpack_enclave"
@@ -32,7 +32,10 @@
 	if(contents.len == 0)
 		qdel(src)
 
-/obj/item/storage/box/tools/PopulateContents()
+/obj/item/storage/box/tools/farming
+	name = "farming tools"
+
+/obj/item/storage/box/tools/farming/PopulateContents()
 	new /obj/item/clothing/gloves/botanic_leather(src)
 	new /obj/item/plant_analyzer(src)
 	new /obj/item/shovel/spade(src)
@@ -42,11 +45,11 @@
 	new /obj/item/reagent_containers/glass/bottle/nutrient/ez(src)
 	new /obj/item/reagent_containers/glass/bottle/nutrient/rh(src)
 
-/datum/loadout_box/tools
+/datum/loadout_box/farming
 	entry_tag = "farming tools"
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_WORKER
-	spawn_thing = /obj/item/storage/box/tools
+	spawn_thing = /obj/item/storage/box/tools/farming
 
 /obj/item/storage/box/tools/groundskeeping
 	name = "groundskeeping tools"
@@ -219,12 +222,12 @@
 /obj/item/storage/box/tools/thief
 	name = "thief's tools"
 
-/obj/item/storage/box/tools/thief/PopulateContents() //moar guns
+/obj/item/storage/box/tools/thief/PopulateContents()
 	new /obj/item/clothing/gloves/thief(src)
 	new /obj/item/grenade/smokebomb(src)
-	new /obj/item/stealthboy(src) //stealthboy needs a nerf, is a bit much
 	new /obj/item/clothing/mask/chameleon(src)
-	new /obj/item/soap/homemade(src) //for prints and giving people the slip~
+	new /obj/item/soap/homemade(src)
+	new /obj/item/lockpick_set(src)
 	new /obj/item/lockpick_set(src)
 
 /datum/loadout_box/thief
@@ -232,6 +235,22 @@
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_SINISTER
 	spawn_thing = /obj/item/storage/box/tools/thief
+
+/obj/item/storage/box/tools/stealth
+	name = "stealth tools"
+
+/obj/item/storage/box/tools/thief/PopulateContents()
+	new /obj/item/binoculars(src)
+	new /obj/item/grenade/smokebomb(src)
+	new /obj/item/stealthboy(src)
+	new /obj/item/clothing/mask/chameleon(src)
+	new /obj/item/lockpick_set(src)
+
+/datum/loadout_box/stealth
+	entry_tag = "stealth tools"
+	entry_flags = LOADOUT_FLAG_TOOL_WASTER
+	entry_class = LOADOUT_CAT_SINISTER
+	spawn_thing = /obj/item/storage/box/tools/stealth
 
 /obj/item/storage/box/tools/entertainer //hybrid erp/musical
 	name = "entertainer's tools"
@@ -521,7 +540,6 @@
 
 /obj/item/storage/box/tools/animal/PopulateContents()
 	new /obj/item/stack/medical/gauze(src) //for healing your animals
-	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/choice_beacon/pet(src)
 	new /obj/item/choice_beacon/pet(src)
 	new /obj/item/choice_beacon/pet(src)
