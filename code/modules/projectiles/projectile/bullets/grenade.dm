@@ -1,11 +1,10 @@
 // 40mm (Grenade Launcher
 
-/obj/item/projectile/bullet/a40mm
+/obj/item/projectile/bullet/a40mm/he
 	name ="40mm grenade"
 	desc = "Oh no."
 	icon_state= "bolter"
 	damage = 5
-	armour_penetration = 0.01
 	pixels_per_second = TILES_TO_PIXELS(10) //slower than bullets
 
 /obj/item/projectile/bullet/a40mm/on_hit(atom/target, blocked = FALSE)
@@ -19,7 +18,6 @@
 	desc = "Oh no."
 	icon_state= "bolter"
 	damage = 60 //60 direct damage plus a wide 30 damage blast
-	armour_penetration = 0.01
 	pixels_per_second = TILES_TO_PIXELS(10) //slower than bullets
 
 /obj/item/projectile/bullet/a40mm/on_hit(atom/target, blocked = FALSE)

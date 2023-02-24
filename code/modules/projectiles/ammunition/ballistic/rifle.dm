@@ -155,7 +155,7 @@
 	desc = "A cased high explosive grenade that can only be activated once fired out of a grenade launcher."
 	caliber = CALIBER_40MM
 	icon_state = "40mmHE"
-	projectile_type = /obj/item/projectile/bullet/a40mm
+	projectile_type = /obj/item/projectile/bullet/a40mm/he
 	material_class = BULLET_IS_GRENADE
 	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
@@ -180,6 +180,7 @@
 		/datum/material/iron = MATS_GRENADE_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
 	pellets = 12 //96 damage. can't complain
+	variance = SHOTGUN_SPREAD_BASE
 
 // 2mm EC
 /obj/item/ammo_casing/c2mm
