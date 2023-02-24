@@ -155,7 +155,7 @@
 	desc = "A cased high explosive grenade that can only be activated once fired out of a grenade launcher."
 	caliber = CALIBER_40MM
 	icon_state = "40mmHE"
-	projectile_type = /obj/item/projectile/bullet/a40mm
+	projectile_type = /obj/item/projectile/bullet/a40mm/he
 	material_class = BULLET_IS_GRENADE
 	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(

@@ -150,6 +150,6 @@
 /obj/item/projectile/bullet/mininuke/on_hit(atom/target, blocked=0)
 	..()
 	explosion(target, 5, 10, 20, 20, flame_range = 20) //burn baby burn. a lot of stuff is gonna be incenerated. remember though: salt doesn't burn.
-	radiation_pulse(target, 1500, 20) //spicy. 1500 is radiation grenade potency
+	radiation_pulse(target, 1500, 20, can_contaminate = FALSE) //spicy. 1500 is radiation grenade potency
 	new /obj/effect/temp_visual/explosion(get_turf(target))
 	return BULLET_ACT_HIT
