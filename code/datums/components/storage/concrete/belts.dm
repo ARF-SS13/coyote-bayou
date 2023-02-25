@@ -38,12 +38,3 @@
 	. = ..()
 	can_hold = GLOB.gunbelt_allowed
 
-/datum/component/storage/concrete/belt/specialized/plush
-	max_items = 21
-	max_w_class = WEIGHT_CLASS_NORMAL
-	max_combined_w_class = 21
-	max_volume = 21
-
-/datum/component/storage/concrete/belt/specialized/plush/Initialize()
-	. = ..()
-	can_hold = GLOB.plushbelt_allowed	
