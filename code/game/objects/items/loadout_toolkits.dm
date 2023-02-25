@@ -239,7 +239,7 @@
 /obj/item/storage/box/tools/stealth
 	name = "stealth tools"
 
-/obj/item/storage/box/tools/thief/PopulateContents()
+/obj/item/storage/box/tools/stealth/PopulateContents()
 	new /obj/item/binoculars(src)
 	new /obj/item/grenade/smokebomb(src)
 	new /obj/item/stealthboy(src)
