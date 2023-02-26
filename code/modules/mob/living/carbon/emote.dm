@@ -174,4 +174,20 @@
 	else
 		qdel(shove)
 
+//Rock throw//
+/datum/emote/living/carbon/rocker
+	key = "rock"
+	key_third_person = "rocks"
+	restraint_check = TRUE
+	cooldown = 2.5 SECONDS
 
+/datum/emote/living/carbon/rocker/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to go looking for rocks!"))
+		return
+	var/obj/item/ammo_casing/caseless/rock/rock = new(user)
+	if(user.put_in_active_hand(rock))
+		to_chat(user, span_notice("You find a nice hefty throwing rock!"))
+	else
+		qdel(rock)

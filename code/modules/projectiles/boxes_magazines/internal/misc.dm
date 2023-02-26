@@ -28,6 +28,12 @@
 	caliber = list(CALIBER_FUEL)
 	max_ammo = 12 //6 bursts, iirc its about the same ammount as the IRL M2
 
+/obj/item/ammo_box/magazine/internal/cylinder/sling
+	name = "sling pouch"
+	ammo_type = /obj/item/ammo_casing/caseless/rock
+	caliber = list(CALIBER_ROCK)
+	max_ammo = 1
+	can_change_caliber = FALSE
 
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/internal/shot/lethal/test
