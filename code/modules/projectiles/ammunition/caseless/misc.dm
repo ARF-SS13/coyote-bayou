@@ -52,6 +52,6 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	caliber = CALIBER_ROCK
 	projectile_type = /obj/item/projectile/rock
-	is_pickable = FALSE
+	is_pickable = TRUE
 	custom_materials = list(/datum/material/glass = 50) //rocks are made of silicon, same as sand
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
