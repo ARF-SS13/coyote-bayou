@@ -47,3 +47,8 @@
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "nuclear"
 	projectile_type = /obj/item/projectile/bullet/mininuke
+
+obj/item/ammo_casing/caseless/mininuke/meganuke
+	name = "\improper Meganuke"
+	desc = "You thought a mininuke was high yield? try a mininuke that fires mininukes."
+	projectile_type = /obj/item/projectile/bullet/meganuke
