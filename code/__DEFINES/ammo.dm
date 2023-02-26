@@ -31,6 +31,7 @@
 #define CALIBER_NEEDLE "needles"
 #define CALIBER_MININUKE "mininukes"
 #define CALIBER_ROCKET "rockets"
+#define CALIBER_ROCK "rocks"
 #define CALIBER_SPEAR "speargun rounds"
 #define CALIBER_LASERGATLING "laser gatling charges"
 #define CALIBER_LASER "oldlasers"
@@ -68,7 +69,8 @@
 	CALIBER_357,\
 	CALIBER_44,\
 	CALIBER_45LC,\
-	CALIBER_45ACP\
+	CALIBER_45ACP,\
+	CALIBER_ROCK\
 	)
 
 #define AUTOPIPE_AMMO_CALIBERS list(\
@@ -77,7 +79,8 @@
 	CALIBER_10MM,\
 	CALIBER_38,\
 	CALIBER_357,\
-	CALIBER_45ACP\
+	CALIBER_45ACP,\
+	CALIBER_ROCK\
 	)
 
 #define KNUCKLEGUN_AMMO_CALIBERS list(\
@@ -86,7 +89,8 @@
 	CALIBER_38,\
 	CALIBER_357,\
 	CALIBER_44,\
-	CALIBER_45ACP\
+	CALIBER_45ACP,\
+	CALIBER_ROCK\
 	)
 
 /// this is an awful, awful idea
@@ -113,7 +117,8 @@ GLOBAL_LIST_INIT(pipe_rifle_valid_calibers, list(
 	CALIBER_40MM,
 	CALIBER_FOAM,
 	CALIBER_MUSKET_BALL,
-	CALIBER_SHOTGUN))
+	CALIBER_SHOTGUN,
+	CALIBER_ROCK))
 
 GLOBAL_LIST_INIT(zipgun_valid_calibers, ZIPGUN_AMMO_CALIBERS)
 

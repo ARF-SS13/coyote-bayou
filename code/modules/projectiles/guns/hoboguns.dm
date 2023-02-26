@@ -607,3 +607,56 @@
 		icon_state = "[initial(icon_state)]-e"
 	else
 		icon_state = "[initial(icon_state)]"
+
+/obj/item/gun/ballistic/revolver/sling
+	name = "sling"
+	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed."
+	icon = 'modular_coyote/icons/objects/bows.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
+	icon_state = "sling"
+	item_state = "utility"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT | ITEM_SLOT_POCKET
+	w_class = WEIGHT_CLASS_TINY
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/sling
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_QUICK
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+	fire_sound = 'sound/weapons/punchmiss.ogg'
+
+/obj/item/gun/ballistic/revolver/sling/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]-e"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/gun/ballistic/revolver/sling/staff
+	name = "sling staff"
+	desc = "A sling hooked onto a wooden pole, for more leverage."
+	icon_state = "slingstaff"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_NORMAL
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // 30 damage. hits harder, but bulkier, and needs two hands, so harder loading
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
