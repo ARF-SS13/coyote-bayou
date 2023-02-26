@@ -176,8 +176,8 @@
 
 //Rock throw//
 /datum/emote/living/carbon/rocker
-	key = "rock"
-	key_third_person = "rocks"
+	key = "find rock"
+	key_third_person = "finds rock"
 	restraint_check = TRUE
 	cooldown = 2.5 SECONDS
 
