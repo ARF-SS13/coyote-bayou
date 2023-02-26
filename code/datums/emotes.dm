@@ -92,7 +92,7 @@
 
 
 /// Sends the given emote message for all ghosts with ghost sight enabled, excluding close enough to listen normally.
-/mob/proc/emote_for_ghost_sight(message, admin_only)
+/mob/proc/emote_for_ghost_sight(message, admin_only, message_range)
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
 		if(QDELETED(ghost))
 			continue
@@ -100,18 +100,22 @@
 			continue
 		if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
 			continue
-		if(admin_only && ghost.client && !check_rights_for(ghost.client, R_ADMIN))
+		if(admin_only && !check_rights_for(ghost.client, R_ADMIN))
 			continue
-		var/ghost_view = ghost.client.view
-		if(ghost.z == z)
-			if(isnum(ghost_view))
-				if(get_dist(src, ghost) < ghost_view)
-					continue
-			else
-				var/list/view_range_list = splittext(ghost_view, "x")
-				if(abs(x - ghost.x) < ((text2num(view_range_list[1]) - 1) / 2))
-					if(abs(y - ghost.y) < ((text2num(view_range_list[2]) - 1) / 2))
+		if(message_range)
+			if(get_dist(src, ghost) < message_range)
+				continue
+		else
+			var/ghost_view = ghost.client.view
+			if(ghost.z == z)
+				if(isnum(ghost_view))
+					if(get_dist(src, ghost) < ghost_view)
 						continue
+				else
+					var/list/view_range_list = splittext(ghost_view, "x")
+					if(abs(x - ghost.x) < ((text2num(view_range_list[1]) - 1) / 2))
+						if(abs(y - ghost.y) < ((text2num(view_range_list[2]) - 1) / 2))
+							continue
 		ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, src)] [message]</span>")
 
 

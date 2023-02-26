@@ -60,6 +60,11 @@
 	path = /obj/item/storage/belt/military/snack
 	cost = 4 //it comes full with 22 snacks inside, literally overflowing
 
+/datum/gear/belt/military/plush
+	name = "tactical plushie rig" //hi dan~
+	path = /obj/item/storage/belt/military/plush
+	cost = 6
+
 /datum/gear/belt/army
 	name = "army belt"
 	path = /obj/item/storage/belt/army

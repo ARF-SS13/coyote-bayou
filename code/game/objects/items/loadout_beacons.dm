@@ -6,6 +6,7 @@
 #define LOADOUT_FLAG_PREMIUM (1<<2)
 #define LOADOUT_FLAG_TRIBAL (1<<3)
 #define LOADOUT_FLAG_PREACHER (1<<4)
+#define LOADOUT_FLAG_TOOL_WASTER (1<<5)
 
 #define LOADOUT_BITFIELD "loadout_bitfield"
 #define LOADOUT_CLASS "loadout_class"
@@ -23,9 +24,14 @@
 #define LOADOUT_CAT_NULLROD "Spiritual Device"
 #define LOADOUT_CAT_SHIELD "Shields"
 #define LOADOUT_CAT_ENERGY "Energy Weapons"
+#define LOADOUT_CAT_WORKER "Worker Tools"
+#define LOADOUT_CAT_ADVENTURE "Adventure Tools"
+#define LOADOUT_CAT_MEDICAL "Medical Tools"
+#define LOADOUT_CAT_SINISTER "Sinister Tools"
+#define LOADOUT_CAT_OTHER "Other Things"
 
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
-#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD)
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_FLAG_TOOL_WASTER)
+#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_CAT_WORKER, LOADOUT_CAT_ADVENTURE, LOADOUT_CAT_MEDICAL, LOADOUT_CAT_SINISTER, LOADOUT_CAT_OTHER)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -605,11 +611,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/a308(src)
 
 /obj/item/storage/box/gun/rifle/caravan_shotgun
-	name = "caravan shotgun case"
+	name = "caravan rifle case"
 
 /obj/item/storage/box/gun/rifle/caravan_shotgun/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/caravan_shotgun(src)
-	new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
+	//new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
+	new /obj/item/ammo_box/c4570box(src)
 
 /obj/item/storage/box/gun/rifle/widowmaker
 	name = "Winchester Widowmaker case"
@@ -617,6 +624,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/widowmaker/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/widowmaker(src)
 	new /obj/item/ammo_box/shotgun/buck(src)
+
+/obj/item/storage/box/gun/rifle/gras
+	name = "Gras Rifle"
+
+/obj/item/storage/box/gun/rifle/gras/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/antique/gras (src)
+	new /obj/item/ammo_box/a308box/improvised(src)
 
 /obj/item/storage/box/gun/rifle/smg22 //only full auto gun you can has roundstart. might not be allowed, will see
 	name = ".22 Uzi case"
@@ -1252,7 +1266,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/rifle/hunting
 
 /datum/loadout_box/caravan_shotgun
-	entry_tag = "Caravan Shotgun"
+	entry_tag = "Caravan Rifle"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/caravan_shotgun
@@ -1268,6 +1282,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/smg22
+
+/datum/loadout_box/gras
+	entry_tag = "Gras Rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/gras
 
 /datum/loadout_box/sidewinder
 	entry_tag = "Multicaliber Carbine"
@@ -1364,7 +1384,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /// Revolvers!
 
 /datum/loadout_box/detective
-	entry_tag = ".38 Detective Special"
+	entry_tag = ".22LR Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver

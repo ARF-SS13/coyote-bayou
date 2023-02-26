@@ -559,6 +559,10 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/energy/laser/retro,
 	)))
 
+GLOBAL_LIST_INIT(plushbelt_allowed, typecacheof(list(
+	/obj/item/toy/plush
+	)))
+
 GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/toy/cards/deck,

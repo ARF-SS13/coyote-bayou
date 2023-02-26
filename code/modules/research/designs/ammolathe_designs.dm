@@ -699,6 +699,13 @@
 	build_path = /obj/item/ammo_box/m473/rubber
 	category = list("initial", "Advanced Ammo")
 
+/datum/design/ammolathe/a40mmbuck
+	name = "40mm buckshot ammo box"
+	id = "a40mmbuck"
+	materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 2000)
+	build_path = /obj/item/ammo_box/a40mm/buck
+	category = list("initial", "Advanced Ammo")
+
 /*
 /datum/design/ammolathe/m473incin
 	name = "4.73mm incendiary caseless ammo box"

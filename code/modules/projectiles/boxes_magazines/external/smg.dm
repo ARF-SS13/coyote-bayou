@@ -86,6 +86,17 @@
 /obj/item/ammo_box/magazine/m22smg/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/b180
+	name = "toploader hive (.22lr)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "smg22"
+	ammo_type = /obj/item/ammo_casing/bee
+	caliber = list(CALIBER_BEE)
+	max_ammo = 180
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
+	w_class = WEIGHT_CLASS_NORMAL
+
 /obj/item/ammo_box/magazine/tommygunm45
 	name = "Thompson drum magazine (.45)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'

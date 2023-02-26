@@ -550,7 +550,7 @@
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-	registered_name = "Tiana Volkov"
+	registered_name = "Honey-The-Terror"
 	assignment = "Mayor"
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
 
@@ -1199,8 +1199,8 @@
 	desc = "A would-be advanced holographic dogtag, if it was working. Kept as a reminder to something."
 
 /obj/item/card/id/denid
-	name = "Den Gang Membership Certificate"
-	desc = "A certificate declaring your loyalty to the gang"
+	name = "Redwater Mark"
+	desc = "A shady card for shady people. it might let you in to some of the bleaker parts of Nash's underground. Best not be seen with one of these. better yet, just avoid having it"
 	assignment = "gang tattoo"
 
 	access = list(ACCESS_DEN)

@@ -579,7 +579,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/a40mm
-	name = "ammo box (40mm grenades)"
+	name = "ammo box (40mm HE)"
 	caliber = "40mm"
 	icon_state = "40mm"
 	ammo_type = /obj/item/ammo_casing/a40mm
@@ -588,6 +588,17 @@
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 1
 
+/obj/item/ammo_box/a40mm/hedp
+	name = "ammo box (40mm HEDP)"
+	caliber = "40mm"
+	icon_state = "40mmdual"
+	ammo_type = /obj/item/ammo_casing/a40mm/hedp
+
+/obj/item/ammo_box/a40mm/buck
+	name = "ammo box (40mm buck)"
+	caliber = "40mm"
+	icon_state = "40mmbuckshot"
+	ammo_type = /obj/item/ammo_casing/a40mm/buck
 
 ////////////////
 //SPEEDLOADERS//

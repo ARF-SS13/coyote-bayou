@@ -2021,7 +2021,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/a762/doublestacked,
 				/obj/item/stock_parts/cell/ammo/mfc,
 				/obj/item/ammo_casing/caseless/rocket,
-				/obj/item/ammo_box/a40mm
+				/obj/item/ammo_box/a40mm,
+				/obj/item/ammo_box/a40mm/hedp,
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4/Initialize(mapload) //on mapload, pick how many shit to spawn

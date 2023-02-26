@@ -205,6 +205,13 @@
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
 
+/obj/item/gun/ballistic/automatic/smg/american180/b180
+	name = "American 18-bee"
+	desc = "They used to call the gun a swarm of angry bees. in this case, it's literal."
+	mag_type = /obj/item/ammo_box/magazine/b180
+	extra_mag_types = /obj/item/ammo_box/magazine/m22smg //lets you use it as a standard .22 when you run out of unobtainable bees.
+	init_mag_type = /obj/item/ammo_box/magazine/b180
+
 /* * * * * * * * * * *
  * 14mm SMG
  * Heavy SMG

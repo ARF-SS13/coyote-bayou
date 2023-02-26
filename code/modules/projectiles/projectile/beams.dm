@@ -114,7 +114,7 @@
 	icon_state = "xray"
 	damage = 15 //makes it more useful against mobs
 	flag = "energy"
-	armour_penetration = 1 //it only does 5 damage.
+	armour_penetration = 1 //it only does 15 damage.
 	damage_type = "burn"
 	irradiate = 100 //incase friendly fire
 	range = 15

@@ -370,12 +370,10 @@
 	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
-/obj/item/storage/belt/military/snack/ComponentInitialize()
-	. = ..()
-	var/amount = 21
-	var/rig_snacks
-	while(contents.len <= amount)
-		rig_snacks = pick(list(
+/obj/item/storage/belt/military/snack/PopulateContents()
+	var/rigsnax
+	for(var/snackies in 1 to 21)
+		rigsnax = pick(list(
 		/obj/item/reagent_containers/food/snacks/candy,
 		/obj/item/reagent_containers/food/drinks/dry_ramen,
 		/obj/item/reagent_containers/food/snacks/chips,
@@ -400,9 +398,18 @@
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
 		))
-		new rig_snacks(src)
+		new rigsnax(src)
 
+/obj/item/storage/belt/military/plush
+	name = "tactical plushie rig"
+	desc = "a set of military grade tactical pouches, made to hold a large number of plushies."
+	component_type = /datum/component/storage/concrete/belt/specialized/plush
 
+/obj/item/storage/belt/military/plush/PopulateContents()
+	var/rigplush
+	for(var/plooshies in 1 to 21)
+		rigplush = pick(GLOB.valid_plushie_paths)
+		new rigplush(src)
 
 /* * * * * * *
  * NECKPRONS
