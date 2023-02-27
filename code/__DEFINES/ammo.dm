@@ -41,6 +41,7 @@
 #define CALIBER_FUEL "flamer fuel"
 #define CALIBER_FOAM "foam darts"
 #define CALIBER_ANY "anything even remotely ammolike"
+#define CALIBER_BRICK "bricks"
 
 /// Caliber POW levels
 /// for hobo guns scaling their explodiness to the casing fired

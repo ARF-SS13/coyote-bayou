@@ -226,3 +226,26 @@
 			span_userdanger("You look around after realizing you're still here, then proceed to choke yourself to death with [src]!"))
 		sleep(20)
 		return OXYLOSS
+
+/obj/item/gun/ballistic/rocketlauncher/brick
+	name = "\improper brick launcher"
+	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "launcher"
+	item_state = "rocketlauncher"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/brick
+	fire_sound = 'sound/weapons/rocketlaunch.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	can_suppress = FALSE
+	burst_size = 1
+	slowdown = 1
+	casing_ejector = FALSE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	magazine_wording = "rocket"
+
+/obj/item/gun/ballistic/rocketlauncher/brick/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]-e"
+	else
+		icon_state = "[initial(icon_state)]"

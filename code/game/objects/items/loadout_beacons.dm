@@ -795,6 +795,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/hobo/piperifle(src)
 	new /obj/item/ammo_box/a556/improvised(src) //it's like a box but smaller
 
+/obj/item/storage/box/gun/hobo/brick
+	name = "brick launcher case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/hobo/brick/PopulateContents()
+	new /obj/item/gun/ballistic/rocketlauncher/brick(src)
+
 /obj/item/storage/box/gun/hobo/pepperbox
 	name = "pepperbox gun case"
 	w_class = WEIGHT_CLASS_BULKY
@@ -1350,6 +1357,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_HOBO
 	spawn_thing = /obj/item/storage/box/gun/hobo/piperifle
+
+/datum/loadout_box/brick
+	entry_tag = "Brick Launcher"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/brick
 
 /datum/loadout_box/pepperbox
 	entry_tag = "Pepperbox"

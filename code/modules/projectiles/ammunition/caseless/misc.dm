@@ -32,7 +32,7 @@
 	pellets = 3
 	variance = 20
 
-//throwin' rock, for throwin'. obtained via *rock
+//throwin' rock, for throwin'. obtained via *rocks
 /obj/item/ammo_casing/caseless/rock
 	name = "rock"
 	desc = "a nice hefty rock, for bashing over someone's head or throwing at someone's head."
@@ -54,4 +54,27 @@
 	projectile_type = /obj/item/projectile/rock
 	is_pickable = TRUE
 	custom_materials = list(/datum/material/glass = 50) //rocks are made of silicon, same as sand
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+
+/obj/item/ammo_casing/caseless/brick
+	name = "brick"
+	desc = "a weighty brick for bashing heads."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "rock"
+	item_state = "rock"
+	force = 15
+	throwforce = 15
+	throw_speed = 1
+	throw_range = 10
+	w_class = WEIGHT_CLASS_TINY
+	resistance_flags = FIRE_PROOF
+	total_mass = TOTAL_MASS_SMALL_ITEM
+	attack_verb = list("attacked", "bashed", "brained", "thunked", "clobbered")
+	attack_speed = CLICK_CD_MELEE
+	max_integrity = 200
+	armor = ARMOR_VALUE_GENERIC_ITEM
+	caliber = CALIBER_BRICK
+	projectile_type = /obj/item/projectile/brick
+	is_pickable = TRUE
+	custom_materials = list(/datum/material/glass = 50)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
