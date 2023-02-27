@@ -31,6 +31,7 @@
 	var/font = PEN_FONT
 	embedding = list()
 	sharpness = SHARP_POINTY
+	var/naming = FALSE
 
 /obj/item/pen/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku..."))
