@@ -557,3 +557,13 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/goner_yellow/officer
 	name = "peaked cap, yellow"
 	path = /obj/item/clothing/head/helmet/f13/goner/officer/yellow
+
+/datum/gear/head/jester
+	name = "jester"
+	path = /obj/item/clothing/head/jester
+
+/datum/gear/head/jester2
+	name = "jester alt"
+	path = /obj/item/clothing/head/jester/alt
+
+

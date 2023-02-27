@@ -144,7 +144,13 @@
 	name = "jackboots"
 	path = /obj/item/clothing/shoes/jackboots
 
+/datum/gear/shoes/clown
+	name = "clown shoes"
+	path = /obj/item/clothing/shoes/clown
 
+/datum/gear/shoes/jester
+	name = "jester shoes"
+	path = /obj/item/clothing/shoes/jester
 
 /// Factions Shoes or well NCR boots.
 
