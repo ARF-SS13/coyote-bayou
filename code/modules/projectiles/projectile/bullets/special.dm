@@ -2,10 +2,10 @@
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
-	damage = BULLET_DAMAGE_PISTOL_9MM
-	stamina = BULLET_STAMINA_PISTOL_9MM
+	damage = BULLET_DAMAGE_PISTOL_10MM
+	stamina = BULLET_STAMINA_PISTOL_10MM
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_PISTOL_9MM
+	recoil = BULLET_RECOIL_PISTOL_10MM
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_22
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT

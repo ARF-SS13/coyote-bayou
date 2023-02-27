@@ -800,7 +800,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/box/gun/hobo/brick/PopulateContents()
-	new /obj/item/gun/ballistic/rocketlauncher/brick(src)
+	new /obj/item/gun/ballistic/revolver/brick(src)
 
 /obj/item/storage/box/gun/hobo/pepperbox
 	name = "pepperbox gun case"

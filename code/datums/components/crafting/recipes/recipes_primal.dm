@@ -292,7 +292,7 @@
 	result = /obj/item/gun/ballistic/revolver/sling
 	time = 30
 	reqs = list(/obj/item/weaponcrafting/string = 1,
-				/obj/item/stack/sheet/leather = 1)
+					/obj/item/stack/sheet/cloth = 1)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/tribalwar/slingstaff

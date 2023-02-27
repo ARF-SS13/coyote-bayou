@@ -161,4 +161,4 @@
 	name = "Fusil Gras mle 1874"
 	ammo_type = /obj/item/ammo_casing/a3006
 	caliber = list(CALIBER_3006)
-	max_ammo = 0 //gonna see if this works
+	max_ammo = 1

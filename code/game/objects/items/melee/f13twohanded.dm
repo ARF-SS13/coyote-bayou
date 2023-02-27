@@ -532,7 +532,7 @@
 	icon_state = "protonaxe"
 	icon_state_on = "protonaxe_on"
 	w_class = WEIGHT_CLASS_BULKY
-	w_class = WEIGHT_CLASS_HUGE
+	w_class_on = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	slot_flags_on = null
 	force = 28

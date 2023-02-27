@@ -199,7 +199,7 @@
 	restraint_check = TRUE
 	cooldown = 2.5 SECONDS
 
-/datum/emote/living/carbon/rocker/run_emote(mob/user)
+/datum/emote/living/carbon/bricker/run_emote(mob/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to go looking for bricks!"))
