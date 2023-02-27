@@ -462,7 +462,7 @@
 /datum/supply_pack/security/weapon_unique
 	name = "Weapons - Premium"
 	desc = "A single weapon of incredible rarity. there's no telling what was packed into this crate"
-	cost = 7500
+	cost = 10000
 	num_contained = 1
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/unique

@@ -685,7 +685,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	neck = /obj/item/clothing/neck/mantle/ranger
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308 = 3,
+		/obj/item/ammo_box/magazine/w3006 = 3,
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,
 		/obj/item/ammo_box/c45rev = 2,
 		)
@@ -697,7 +697,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	neck = /obj/item/clothing/neck/mantle/ranger
 	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762 = 3,
+		/obj/item/ammo_box/magazine/w3006 = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 2,

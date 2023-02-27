@@ -282,7 +282,7 @@
  * WOUNDS: 5
  * WNAKED: 3.75
  */
-
+/* //needless extra ammo type
 /obj/item/projectile/bullet/c38
 	name = ".38 bullet"
 	damage = BULLET_DAMAGE_PISTOL_38
@@ -382,7 +382,7 @@
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
-
+*/
 /////////////
 // NEEDLER //
 /////////////
@@ -715,16 +715,16 @@
  */
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_38_MATCH
+	damage = BULLET_DAMAGE_PISTOL_38
 	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_PISTOL_38_MATCH
+	recoil = BULLET_RECOIL_PISTOL_38
 
-	wound_bonus = BULLET_WOUND_PISTOL_38_MATCH
+	wound_bonus = BULLET_WOUND_PISTOL_38
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_PISTOL_38_MATCH
+	pixels_per_second = BULLET_SPEED_PISTOL_38
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /* 357 handload
@@ -736,16 +736,16 @@
  */
 /obj/item/projectile/bullet/a357/improvised
 	name = "handloaded .357 bullet"
-	damage = BULLET_DAMAGE_PISTOL_38
+	damage = BULLET_DAMAGE_PISTOL_38_HANDLOAD
 	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_PISTOL_38
+	recoil = BULLET_RECOIL_PISTOL_38_HANDLOAD
 
-	wound_bonus = BULLET_WOUND_PISTOL_38
+	wound_bonus = BULLET_WOUND_PISTOL_38_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_PISTOL_38
+	pixels_per_second = BULLET_SPEED_PISTOL_38_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /* 357 bounce

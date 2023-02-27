@@ -535,7 +535,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
-	name = "lever action shotgun"
+	name = "mare's leg shotgun"
 	desc = "A speedy pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"

@@ -557,16 +557,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/premium/mateba/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/box/gun/premium/lucky //not sure if this should be allowed, or if is supposed to be unique
 	name = ".357 magnum revolver case"
 
 /obj/item/storage/box/gun/premium/lucky/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357/lucky(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/box/gun/premium/alt //pearly .44 mag
 	name = "pearl .44 magnum case"
@@ -607,8 +607,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/rifle/hunting/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/hunting(src)
-	new /obj/item/ammo_box/a308(src)
-	new /obj/item/ammo_box/a308(src)
+	new /obj/item/ammo_box/a3006(src)
+	new /obj/item/ammo_box/a3006(src)
 
 /obj/item/storage/box/gun/rifle/caravan_shotgun
 	name = "caravan rifle case"
@@ -630,7 +630,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/rifle/gras/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/antique/gras (src)
-	new /obj/item/ammo_box/a308box/improvised(src)
+	new /obj/item/ammo_box/a3006box(src)
 
 /obj/item/storage/box/gun/rifle/smg22 //only full auto gun you can has roundstart. might not be allowed, will see
 	name = ".22 Uzi case"
@@ -793,7 +793,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/hobo/piperifle/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/hobo/piperifle(src)
-	new /obj/item/ammo_box/a762/doublestacked(src) //it's like a box but smaller
+	new /obj/item/ammo_box/a556/improvised(src) //it's like a box but smaller
 
 /obj/item/storage/box/gun/hobo/pepperbox
 	name = "pepperbox gun case"
@@ -836,7 +836,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/hobo/winchesterrebored/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/winchesterrebored(src)
-	new /obj/item/ammo_box/a762/doublestacked(src) //it's like a box but smaller
+	new /obj/item/ammo_box/a308/doublestacked(src) //it's like a box but smaller
 
 /// revolvers!
 
@@ -865,16 +865,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/revolver/colt357/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/box/gun/revolver/police
 	name = "police revolver case"
 
 /obj/item/storage/box/gun/revolver/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/box/gun/revolver/m29
 	name = ".44 magnum revolver case"

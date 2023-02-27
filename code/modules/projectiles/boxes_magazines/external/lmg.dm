@@ -26,17 +26,17 @@
 	ammo_type = /obj/item/ammo_casing/mm712x82/match
 	caliber = list(CALIBER_712)
 
-/obj/item/ammo_box/magazine/w308
-	name = "sniper rifle magazine (7.62x51)"
+/obj/item/ammo_box/magazine/w3006
+	name = "sniper rifle magazine (.30-06)"
 	icon_state = "sniper_mag"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
 	max_ammo = 7
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_SMALL_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/w308/empty
+/obj/item/ammo_box/magazine/w3006/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/lmg
@@ -66,10 +66,10 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/mg34
-	name = "ammo box (7.62)"
+	name = "ammo box (.308)"
 	icon_state = "r80"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 2
@@ -78,14 +78,14 @@
 /obj/item/ammo_box/magazine/mg34/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/mm762
+/obj/item/ammo_box/magazine/mm308
 	name = "ammo belt (.308)"
 	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762/sport
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK | ITEM_SLOT_NECK //sling these big belts all over your fuckin self
-	caliber = list(CALIBER_762)
+	caliber = list(CALIBER_308)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_BELT_MAGAZINE)
 
 /obj/item/ammo_box/magazine/mm762/empty

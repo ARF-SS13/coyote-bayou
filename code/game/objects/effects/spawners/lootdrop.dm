@@ -704,8 +704,8 @@
 		/obj/item/ammo_box/magazine/wt550m9 = 1,
 		/obj/item/ammo_casing/shotgun/buckshot = 7,
 		/obj/item/ammo_casing/shotgun/rubbershot = 7,
-		/obj/item/ammo_casing/a762 = 15,
-		/obj/item/ammo_box/a762 = 15,
+		/obj/item/ammo_casing/a308 = 15,
+		/obj/item/ammo_box/a308 = 15,
 		)
 
 /obj/effect/spawner/lootdrop/ammo/fiftypercent
@@ -716,8 +716,8 @@
 		/obj/item/ammo_box/magazine/wt550m9 = 2,
 		/obj/item/ammo_casing/shotgun/buckshot = 10,
 		/obj/item/ammo_casing/shotgun/rubbershot = 10,
-		/obj/item/ammo_casing/a762 = 7,
-		/obj/item/ammo_box/a762 = 7,
+		/obj/item/ammo_casing/a308 = 7,
+		/obj/item/ammo_box/a308 = 7,
 		)
 
 /obj/effect/spawner/lootdrop/ammo/shotgun

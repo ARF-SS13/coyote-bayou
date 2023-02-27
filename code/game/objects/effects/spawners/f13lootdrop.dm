@@ -701,8 +701,6 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/revolver/widowmaker = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol = 5,
 		/obj/item/gun/ballistic/shotgun/hunting = 10,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 1,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 		/obj/item/gun/ballistic/automatic/hobo/zipgun = 20, //lets make junk guns very common~
 		/obj/item/gun/ballistic/revolver/hobo/piperifle = 20,
 		/obj/item/gun/ballistic/revolver/hobo/pepperbox = 20,
@@ -747,7 +745,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/transforming/plasmacutter/regular/celestia = 1,
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,
 		/obj/item/melee/onehanded/club/fryingpan = 20,
-		/obj/item/shovel/trench = 1
+		/obj/item/shovel/trench = 1,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon 
@@ -777,6 +775,8 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
 		/obj/item/gun/ballistic/shotgun/trench = 10,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 10,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 5,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 5,
 		/obj/item/gun/energy/laser/wattz/recharger = 1,
@@ -804,7 +804,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
 		/obj/item/gun/ballistic/automatic/rangemaster = 5,
 		/obj/item/gun/ballistic/automatic/slr = 5,
-		/obj/item/gun/ballistic/automatic/m1garand = 10,
+		/obj/item/gun/ballistic/automatic/m1garand = 5,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 5,
 		/obj/item/gun/ballistic/automatic/service/r82 = 20, //is weakest 5.56 automatic
@@ -843,7 +843,9 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/transforming/energy/axe/protonaxe = 5,
 		/obj/item/twohanded/sledgehammer/supersledge = 10,
 		/obj/item/twohanded/sledgehammer/rockethammer = 5,
-		/obj/item/melee/transforming/plasmacutter/regular/eve = 5
+		/obj/item/melee/transforming/plasmacutter/regular/eve = 5,
+		/obj/item/gun/ballistic/automatic/fnfal = 5,
+		/obj/item/gun/ballistic/automatic/bar = 1,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/unique
@@ -857,8 +859,6 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 10,
 		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 20,
 		/obj/item/gun/ballistic/automatic/bozar = 10,
-		/obj/item/gun/ballistic/automatic/fnfal = 10,
-		/obj/item/gun/ballistic/automatic/bar = 10,
 		/obj/item/gun/ballistic/automatic/wt550 = 5,
 		/obj/item/gun/ballistic/automatic/r84 = 10,
 		/obj/item/gun/ballistic/automatic/m1919 = 10,
@@ -1960,7 +1960,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/magazine/m9mm,
 				/obj/item/ammo_box/shotgun/buck,
 				/obj/item/ammo_box/shotgun/slug,
-				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle/small
 				)
@@ -1971,11 +1970,10 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 	loot = list(
 				/obj/item/ammo_box/magazine/m45,
-				/obj/item/ammo_box/a762,
+				/obj/item/ammo_box/a3006,
 				/obj/item/ammo_box/a308,
 				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle,
-				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m9mm,
 				/obj/item/ammo_box/m44,
 				/obj/item/ammo_box/tube/a357,
@@ -1996,8 +1994,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/magazine/uzim9mm,
 				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/greasegun,
-				/obj/item/ammo_box/needle,
-				/obj/item/ammo_box/magazine/tommygunm45,
+				/obj/item/ammo_box/magazine/tommygunm45/stick,
 				/obj/item/ammo_box/tube/m44,
 				/obj/item/ammo_box/magazine/m10mm/adv/ext,
 				/obj/item/stock_parts/cell/ammo/ec
@@ -2018,7 +2015,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/c4570,
 				/obj/item/ammo_box/tube/c4570,
 				/obj/item/ammo_box/a50MG,
-				/obj/item/ammo_box/a762/doublestacked,
+				/obj/item/ammo_box/a308/doublestacked,
 				/obj/item/stock_parts/cell/ammo/mfc,
 				/obj/item/ammo_casing/caseless/rocket,
 				/obj/item/ammo_box/a40mm,
@@ -2037,13 +2034,14 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/a50MG,
 				/obj/item/ammo_box/a50MG/incendiary,
 				/obj/item/ammo_box/magazine/m556/rifle/extended,
-				/obj/item/ammo_box/magazine/m762/ext,
+				/obj/item/ammo_box/magazine/m308/ext,
 				/obj/item/ammo_box/magazine/d12g,
 				/obj/item/ammo_box/a50MG/penetrator,
 				/obj/item/ammo_casing/caseless/rocket/big,
 				/obj/item/ammo_casing/caseless/rocket/incendiary = 10,
 				/obj/item/ammo_casing/caseless/rocket/chem = 3,
-				/obj/item/ammo_box/a40mm
+				/obj/item/ammo_box/a40mm,
+				/obj/item/ammo_box/magazine/tommygunm45
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5/Initialize(mapload) //on mapload, pick how many shit to spawn

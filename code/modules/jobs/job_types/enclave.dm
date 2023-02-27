@@ -88,7 +88,7 @@
 	name = "Shiny Bullet"
 	suit_store = /obj/item/gun/ballistic/automatic/fnfal
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762 = 2,
+		/obj/item/ammo_box/magazine/m308 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/deagle = 1,
 		/obj/item/ammo_box/magazine/m44 = 2,
 		)

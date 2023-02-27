@@ -2073,8 +2073,8 @@
 	item_state = "308"
 	icon_prefix = "308"
 	force = 20
-	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/m762
+	mag_type = /obj/item/ammo_box/magazine/w3006
+	init_mag_type = /obj/item/ammo_box/magazine/w3006
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2083,7 +2083,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
@@ -2131,8 +2131,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "slr"
 	item_state = "slr"
-	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/m762
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2188,8 +2188,8 @@
 	icon_state = "m1garand"
 	item_state = "rifle"
 	icon_prefix = "308"
-	mag_type = /obj/item/ammo_box/magazine/garand308
-	init_mag_type = /obj/item/ammo_box/magazine/garand308
+	mag_type = /obj/item/ammo_box/magazine/garand3006
+	init_mag_type = /obj/item/ammo_box/magazine/garand3006
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2198,7 +2198,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
@@ -2264,7 +2264,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
@@ -2292,7 +2292,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
@@ -2353,12 +2353,12 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
-	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
+	desc = "A DKS 501, chambered in .308 Springfield.  With a light polymer body, it's suited for long treks through the desert."
 	icon_prefix = "sniperrifle"
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
-	mag_type = /obj/item/ammo_box/magazine/w308
-	init_mag_type = /obj/item/ammo_box/magazine/w308
+	mag_type = /obj/item/ammo_box/magazine/w3006
+	init_mag_type = /obj/item/ammo_box/magazine/w3006
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2368,7 +2368,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -2403,7 +2403,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/gold
 	name = "golden sniper rifle"
-	desc = "A DKS 501, chambered in .308 Winchester. This one has a gold trim and the words 'Old Cassius' engraved into the stock."
+	desc = "A DKS 501, chambered in .30-06 Springfield. This one has a gold trim and the words 'Old Cassius' engraved into the stock."
 	icon_state = "gold_sniper"
 	item_state = "gold_sniper"
 
@@ -2415,7 +2415,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 /* * * * * * * * * * *
@@ -2558,7 +2558,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
@@ -2659,7 +2659,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
@@ -2901,7 +2901,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2)
+	init_recoil = RIFLE_RECOIL(3)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto
@@ -2951,8 +2951,8 @@
 	desc = "This rifle has been more widely used by armed forces than any other rifle in history. It's a reliable assault weapon for any terrain or tactical situation."
 	icon_state = "fnfal"
 	item_state = "fnfal"
-	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/m762
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2961,7 +2961,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
@@ -2995,8 +2995,8 @@
 	desc = "A blast from the past as a ruggled, reliable rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
 	icon_state = "armalite"
 	item_state = "assault_carbine"
-	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/m762
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -3005,7 +3005,7 @@
 	autofire_shot_delay = GUN_FIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2 // still a medium-rarity item. can't be better than the snipers.
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
@@ -3027,8 +3027,8 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "BAR"
 	item_state = "BAR"
 	icon_prefix = "rifle"
-	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/m762/ext
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -3327,8 +3327,8 @@ obj/item/gun/ballistic/automatic/bar
 	item_state = "M38"
 	slot_flags = 0
 	slowdown = 1.25
-	mag_type = /obj/item/ammo_box/magazine/mm762
-	init_mag_type = /obj/item/ammo_box/magazine/mm762
+	mag_type = /obj/item/ammo_box/magazine/mm308
+	init_mag_type = /obj/item/ammo_box/magazine/mm308
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
