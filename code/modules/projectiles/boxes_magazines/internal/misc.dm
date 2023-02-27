@@ -35,6 +35,13 @@
 	max_ammo = 1
 	can_change_caliber = FALSE
 
+/obj/item/ammo_box/magazine/internal/cylinder/brick
+	name = "brick launcher chamger"
+	ammo_type = /obj/item/ammo_casing/caseless/brick
+	caliber = list(CALIBER_BRICK)
+	max_ammo = 1
+	can_change_caliber = FALSE
+
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/internal/shot/lethal/test
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/test
