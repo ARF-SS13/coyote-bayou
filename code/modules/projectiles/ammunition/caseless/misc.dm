@@ -40,7 +40,7 @@
 	icon_state = "rock"
 	item_state = "rock"
 	force = 15
-	throwforce = 15
+	throwforce = 20
 	throw_speed = 1 // you can see it comin'
 	throw_range = 10 //you can chuck a rock pretty far. good luck hitting anything though
 	w_class = WEIGHT_CLASS_TINY
@@ -59,11 +59,11 @@
 /obj/item/ammo_casing/caseless/brick
 	name = "brick"
 	desc = "a weighty brick for bashing heads."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "rock"
-	item_state = "rock"
+	icon = 'modular_coyote/icons/objects/brick.dmi'
+	icon_state = "brick"
+	item_state = "brick"
 	force = 15
-	throwforce = 15
+	throwforce = 20
 	throw_speed = 1
 	throw_range = 10
 	w_class = WEIGHT_CLASS_TINY

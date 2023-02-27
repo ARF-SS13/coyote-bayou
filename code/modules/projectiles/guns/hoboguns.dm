@@ -616,6 +616,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
 	icon_state = "sling"
 	item_state = "utility"
+	pin = null
+	no_pin_required = TRUE
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT | ITEM_SLOT_POCKET
 	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/sling
@@ -630,7 +633,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 	fire_sound = 'sound/weapons/punchmiss.ogg'
@@ -656,7 +659,39 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // 30 damage. hits harder, but bulkier, and needs two hands, so harder loading
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // 45 damage. hits harder, but bulkier, and needs two hands, so harder loading
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/obj/item/gun/ballistic/revolver/brick
+	name = "brick launcher"
+	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "launcher"
+	item_state = "rocketlauncher"
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/brick
+
+	slowdown = GUN_SLOWDOWN_CARBINE
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	casing_ejector = TRUE
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
+	fire_sound = 'sound/weapons/punchmiss.ogg'
+
+/obj/item/gun/ballistic/revolver/brick/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]-e"
+	else
+		icon_state = "[initial(icon_state)]"
