@@ -8011,8 +8011,6 @@
 "exK" = (
 /obj/structure/closet/crate/footchest,
 /obj/item/ammo_box/c10mm/improvised,
-/obj/item/ammo_box/a556/sport/improvised,
-/obj/item/ammo_box/c38box/improvised,
 /obj/item/ammo_box/c45/improvised,
 /obj/item/ammo_box/m44box/improvised,
 /obj/item/ammo_box/shotgun/improvised,
@@ -8626,6 +8624,13 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontalbottomborderbottom0"
 	},
+/area/f13/wasteland)
+"eSa" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "eSq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -46537,7 +46542,7 @@ eQa
 bvJ
 hJZ
 tiN
-lmY
+eSa
 oph
 xFr
 cQC

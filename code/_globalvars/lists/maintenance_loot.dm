@@ -188,13 +188,14 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 
 GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/a308box/improvised = 2,
+	/obj/item/ammo_box/a3006box/improvised = 2,
 	/obj/item/ammo_box/m5mmbox/improvised = 1,
-	/obj/item/ammo_box/a556/sport/improvised = 3,
+	/obj/item/ammo_box/a556/improvised = 3,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
 	/obj/item/ammo_box/c10mm/improvised = 5,
 	/obj/item/ammo_box/c9mm/improvised = 5,
-	/obj/item/ammo_casing/shotgun/improvised = 1,
-	/obj/item/ammo_box/c38box/improvised = 3,
+	/obj/item/ammo_box/shotgun/improvised = 1,
+	/obj/item/ammo_box/a357box/improvised = 3,
 	/obj/item/ammo_box/m44box/improvised = 1,
 	/obj/item/ammo_box/c45/improvised = 5,
 	/obj/item/ammo_box/m14mm/improvised = 1,
@@ -523,9 +524,9 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/gun/ballistic/revolver/caravan_shotgun,
 	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/gun/ballistic/rifle/mosin,
-	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a308,
 	/obj/item/gun/ballistic/revolver/police,
-	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/c22,
 	/obj/item/gun/ballistic/revolver/hobo/pepperbox,
 	/obj/item/gun/ballistic/rifle/hunting,
 	/obj/item/ammo_box/a308,
@@ -554,10 +555,10 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/ammo_box/a308,
 	/obj/item/ammo_box/m44,
 	/obj/item/gun/ballistic/rifle/repeater/cowboy,
-	/obj/item/ammo_box/c38,
-	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/a357,
+	/obj/item/ammo_box/a357,
 	/obj/item/gun/ballistic/revolver/colt357,
-	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/a357,
 	/obj/item/gun/ballistic/automatic/service,
 	/obj/item/ammo_box/magazine/m556/rifle,
 	/obj/item/gun/energy/laser/pistol,
@@ -614,7 +615,7 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/gun/ballistic/revolver/m2405,
 	/obj/item/ammo_box/rev308,
 	/obj/item/gun/ballistic/automatic/rangemaster,
-	/obj/item/ammo_box/magazine/m762,
+	/obj/item/ammo_box/magazine/m308,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/ammo_box/magazine/d12g,
 	/obj/item/gun/energy/ionrifle,
@@ -645,18 +646,17 @@ GLOBAL_LIST_INIT(loot_t1_ammo, list(
 	/obj/item/ammo_box/magazine/m9mm,
 	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/ammo_box/shotgun/bean,
-	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/c22,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/m556/rifle/small
 ))
 
 GLOBAL_LIST_INIT(loot_t2_ammo, list(
 	/obj/item/ammo_box/magazine/m45,
-	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a3006,
 	/obj/item/ammo_box/a308,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/ammo_box/c38,
 	/obj/item/ammo_box/magazine/m9mm,
 	/obj/item/ammo_box/m44,
 	/obj/item/ammo_box/tube/a357,
@@ -683,7 +683,7 @@ GLOBAL_LIST_INIT(loot_t4_ammo, list(
 	/obj/item/ammo_box/c4570,
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/ammo_box/a50MG,
-	/obj/item/ammo_box/a762/doublestacked,
+	/obj/item/ammo_box/a308/doublestacked,
 	/obj/item/stock_parts/cell/ammo/mfc
 ))
 
@@ -691,7 +691,7 @@ GLOBAL_LIST_INIT(loot_t5_ammo, list(
 	/obj/item/ammo_box/a50MG,
 	/obj/item/ammo_box/a50MG/incendiary,
 	/obj/item/ammo_box/magazine/m556/rifle/extended,
-	/obj/item/ammo_box/magazine/m762/ext,
+	/obj/item/ammo_box/magazine/m308/ext,
 	/obj/item/ammo_box/magazine/d12g
 ))
 

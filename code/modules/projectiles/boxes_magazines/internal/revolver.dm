@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	name = "detective revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/c38
-	caliber = list(CALIBER_38)
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = list(CALIBER_357)
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev22
@@ -13,14 +13,14 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	name = "\improper Russian revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list(CALIBER_357, CALIBER_38)
+	caliber = list(CALIBER_357)
 	max_ammo = 6
 	multiload = 0
 
 /obj/item/ammo_box/magazine/internal/cylinder/lucky37
 	name = "\improper Lucky 37 cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list(CALIBER_357, CALIBER_38)
+	caliber = list(CALIBER_357)
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev6520
@@ -52,7 +52,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 	name = "pipe rifle"
-	ammo_type = /obj/item/ammo_casing/a556/sport
+	ammo_type = /obj/item/ammo_casing/a556
 	caliber = list(CALIBER_556)
 	max_ammo = 1
 	can_change_caliber = TRUE
@@ -64,7 +64,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised_any
 	name = "omnicaliber loadseat"
-	ammo_type = /obj/item/ammo_casing/a556/sport
+	ammo_type = /obj/item/ammo_casing/a556
 	caliber = list(CALIBER_ANY)
 	max_ammo = 1
 	can_change_caliber = FALSE
@@ -101,17 +101,17 @@
 	caliber = KNUCKLEGUN_AMMO_CALIBERS
 	max_ammo = 1
 
-/obj/item/ammo_box/magazine/internal/cylinder/improvised762
+/obj/item/ammo_box/magazine/internal/cylinder/improvised308
 	name = "rebored"
-	ammo_type = /obj/item/ammo_casing/a762/sport
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
 	max_ammo = 2
 	multiload = 0
 	can_change_caliber = TRUE
 
 /obj/item/ammo_box/magazine/internal/cylinder/caravan
 	name = "caravan rifle chamber"
-	ammo_type = /obj/item/ammo_casing/c4570/surplus
+	ammo_type = /obj/item/ammo_casing/c4570
 	caliber = list(CALIBER_4570)
 	max_ammo = 2
 	multiload = 0
@@ -123,8 +123,8 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	name = ".308 pistol cylinder"
-	ammo_type = /obj/item/ammo_casing/a762/sport
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev44
@@ -136,7 +136,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	name = "357 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list(CALIBER_357, CALIBER_38)
+	caliber = list(CALIBER_357)
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45
@@ -153,13 +153,12 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev308
 	name = ".308 Sporting Revolver Cylinder"
-	ammo_type = /obj/item/ammo_casing/a762/sport
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/internal/gras
 	name = "Fusil Gras mle 1874"
-	ammo_type = /obj/item/ammo_casing/a762/sport
-	caliber = list(CALIBER_762)
-	max_ammo = 1
-
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 0 //gonna see if this works

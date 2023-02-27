@@ -528,7 +528,7 @@
 	item_state = "308-sawn"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -538,7 +538,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(4)
 	init_firemodes = list(
@@ -563,7 +563,7 @@
 	icon_state = "winchesterbore"
 	item_state = "shotgundouble"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised762
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised308
 	w_class = WEIGHT_CLASS_BULKY
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
