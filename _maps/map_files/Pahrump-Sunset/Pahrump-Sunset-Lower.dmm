@@ -9415,7 +9415,6 @@
 	pixel_x = -32
 	},
 /obj/structure/table/wood,
-/obj/item/ammo_box/a762box/microshrapnel,
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
 "eUw" = (
@@ -26376,6 +26375,9 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"rSH" = (
+/turf/closed/mineral/random/low_chance,
+/area/abductor_ship)
 "rTb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -55096,7 +55098,7 @@ aae
 aae
 aae
 aae
-aae
+rSH
 aae
 aae
 aae
