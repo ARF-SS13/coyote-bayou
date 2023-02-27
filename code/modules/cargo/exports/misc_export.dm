@@ -213,12 +213,12 @@
 /datum/export/item/zipgunslist
 	cost = 40
 	unit_name = "improvised firearm"
-	export_types = list(/obj/effect/spawner/bundle/f13/pepperbox,
-				/obj/effect/spawner/bundle/weapon/piperifle,
-				/obj/effect/spawner/bundle/f13/zipgun,
+	export_types = list(/obj/item/gun/ballistic/revolver/hobo/pepperbox,
+				/obj/item/gun/ballistic/revolver/hobo/piperifle,
+				/obj/item/gun/ballistic/automatic/hobo/zipgun,
 				/obj/item/gun/ballistic/revolver/hobo/knifegun,
 				/obj/item/gun/ballistic/revolver/hobo/knucklegun,
-				/obj/effect/spawner/bundle/f13/autopipe)
+				/obj/item/gun/ballistic/automatic/autopipe)
 
 /datum/export/item/energycell
 	cost = 100

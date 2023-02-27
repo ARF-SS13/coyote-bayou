@@ -83,16 +83,19 @@
 	icon_state = "762belt"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 80
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK | ITEM_SLOT_NECK //sling these big belts all over your fuckin self
 	caliber = list(CALIBER_762)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_BELT_MAGAZINE)
 
 /obj/item/ammo_box/magazine/mm762/empty
 	start_empty = 1
 
+/* I think we want to be able to load up belts of the stuff
 /obj/item/ammo_box/magazine/mm762/can_load()
 	return 0
-
+*/
+	
 /obj/item/ammo_box/magazine/mm762/update_icon()
 	..()
 	icon_state = "762belt-[round(ammo_count(),20)]"

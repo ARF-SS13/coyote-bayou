@@ -187,6 +187,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	e_cost = 100
 	harmful = FALSE
 
+/obj/item/ammo_casing/energy/laser/pistol/retro //this gun prolly sucks for now. will see
+	projectile_type = /obj/item/projectile/beam/laser/pistol/retro
+	e_cost = 300 //revolver style, 5 shots. can't ask for much more with a holdout gun
+	fire_sound = 'sound/weapons/laser.ogg'
+
 /obj/item/ammo_casing/energy/laser/pistol/wattz
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz
 	e_cost = 100 //15 shots Civilian gun hits harder but has less charge.

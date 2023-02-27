@@ -402,7 +402,7 @@
 		return
 	M.apply_damage(15, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
-// Louisville Slugger		Keywords: Damage 25/32, Damage bonus Stamina
+// Louisville Slugger		Keywords: Damage 28/42, Damage bonus Stamina
 /obj/item/twohanded/baseball/louisville
 	name = "Louisville slugger"
 	desc = "Purification in progress."
@@ -411,8 +411,8 @@
 	attack_verb = list("thwacked", "bashed", "louisville slugged", "hit", "bludgeoned", "whacked", "bonked")
 	wielded_icon = "louisville2"
 	force = 25
-	force_unwielded = 25
-	force_wielded = 34
+	force_unwielded = 28
+	force_wielded = 42
 
 /obj/item/twohanded/baseball/louisville/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -522,28 +522,32 @@
 	else if(istype(A, /turf/closed))
 		playsound(loc, hitsound, 70, TRUE)
 
-// Proton axe			Keywords: Damage 20/32, AP 0.7
+// Proton axe			Keywords: Damage 28/55 fire axe but with a twist, if this works. I've either given it a cool gimmick, or broken everything
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
-	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head. Cuts effortlessly through anything."
+	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	icon_state = "protonaxe"
 	icon_state_on = "protonaxe_on"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
-	force = 20
-	force_on = 32
-	armour_penetration = 0.7
+	slot_flags = ITEM_SLOT_BACK
+	slot_flags_on = null
+	force = 28
+	force_on = 55
 	throwforce = 15
 	throwforce_on = 30
+	attack_speed = CLICK_CD_MELEE * 1.25
+	var/emp_radius = 1
 
-/obj/item/melee/transforming/energy/axe/protonaxe/ComponentInitialize()
+/obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
-	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
-	AddElement(/datum/element/update_icon_updates_onmob)
+	if(!active)
+		return
+	empulse_using_range(A, emp_radius) //fox go a (A)
 
+//dan kelly is a nerd NO YOU ARE!!!
 
 // Super Sledge			Keywords: Damage 25/60
 /obj/item/twohanded/sledgehammer/supersledge
@@ -556,7 +560,7 @@
 	force_unwielded = 25
 	force_wielded = 68
 
-obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
+/obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return

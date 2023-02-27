@@ -1454,12 +1454,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"bvp" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/toolsbasic,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "bvw" = (
 /obj/structure/fence/wooden{
 	dir = 4;
@@ -1864,12 +1858,12 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "bXH" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/validball_spawner,
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/massfusion)
 "bXK" = (
 /turf/closed/wall,
 /area/f13/building/mall)
@@ -2125,7 +2119,6 @@
 "cng" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/seedspawner,
-/obj/effect/spawner/lootdrop/kitchen,
 /obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -2512,6 +2505,7 @@
 /obj/structure/table/reinforced,
 /obj/item/ingot/adamantine,
 /obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -2802,12 +2796,6 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building/tribal)
-"dbA" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/spawner/lootdrop/toolsbasic,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "dbF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken,
@@ -3048,9 +3036,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "dsj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/ammo/civilian,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -3377,9 +3364,12 @@
 	},
 /area/f13/building/tribal)
 "dMO" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
+/area/f13/building)
 "dNl" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -3563,7 +3553,6 @@
 "dWj" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/toolsbasic,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "dWL" = (
@@ -4253,7 +4242,6 @@
 /area/f13/wasteland)
 "eGT" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/armylootbasic,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "eHn" = (
@@ -4622,6 +4610,7 @@
 /obj/structure/shelf_wood{
 	pixel_y = -7
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "fdc" = (
@@ -5136,7 +5125,6 @@
 "fFL" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/clothing_low,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
@@ -5773,12 +5761,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "gqo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/building/massfusion)
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "gqr" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -7559,7 +7545,6 @@
 /area/f13/building/abandoned)
 "iiS" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
@@ -7691,7 +7676,6 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
@@ -8528,7 +8512,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "jla" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/item/clothing/under/f13/shiny,
 /obj/item/clothing/under/f13/settler,
 /obj/item/clothing/under/f13/relaxedwear,
@@ -8963,6 +8946,7 @@
 "jEW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "jFI" = (
@@ -10223,7 +10207,6 @@
 	color = "000000"
 	},
 /obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/blueprintLowMid,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
@@ -11553,13 +11536,12 @@
 "mAu" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
 "mAw" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /turf/open/floor/f13{
@@ -12967,6 +12949,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "oez" = (
@@ -12985,7 +12968,6 @@
 /area/f13/building)
 "ogk" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/toolsbasic,
 /obj/machinery/light/small/broken{
 	dir = 4
 	},
@@ -13364,7 +13346,6 @@
 "oCE" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "oDd" = (
@@ -13595,9 +13576,7 @@
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/ammo/military,
 /obj/effect/spawner/lootdrop/f13/bomb/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -13612,7 +13591,6 @@
 "oRw" = (
 /obj/item/reagent_containers/hypospray/medipen/medx,
 /obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/structure/closet/cabinet/anchored{
 	pixel_y = 10
 	},
@@ -13765,6 +13743,7 @@
 /obj/item/reagent_containers/rag/towel,
 /obj/item/reagent_containers/rag/towel,
 /obj/item/reagent_containers/rag/towel,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -14427,7 +14406,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/effect/spawner/lootdrop/ammo/military,
 /obj/effect/spawner/lootdrop/f13/medical/rnd/good,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -14757,11 +14735,10 @@
 	},
 /area/f13/building/hospital)
 "qkG" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "qlH" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -15274,9 +15251,7 @@
 /area/f13/building/hospital)
 "qRD" = (
 /obj/effect/spawner/lootdrop/ammo/fiftypercent,
-/obj/effect/spawner/lootdrop/ammo/rare,
 /obj/effect/decal/waste,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -17070,13 +17045,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/massfusion)
 "sXt" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
 	},
-/obj/effect/spawner/lootdrop/toolsbasic,
-/obj/structure/spacevine,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
+/area/f13/building/massfusion)
 "sYC" = (
 /obj/structure/railing{
 	color = "#A47449"
@@ -17430,8 +17404,6 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "tnt" = (
@@ -17579,7 +17551,6 @@
 /area/f13/ruins)
 "tuT" = (
 /obj/item/stock_parts/cell/ammo/ultracite,
-/obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -17794,7 +17765,6 @@
 /obj/structure/guncase{
 	anchored = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -17845,7 +17815,6 @@
 /obj/structure/guncase{
 	anchored = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -18767,7 +18736,6 @@
 "uRt" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "uRB" = (
@@ -20689,6 +20657,7 @@
 "xkN" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "xlg" = (
@@ -20852,7 +20821,6 @@
 "xyQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
@@ -21034,7 +21002,6 @@
 "xKZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
@@ -31172,7 +31139,7 @@ ejB
 mAw
 tdm
 vpv
-qkG
+hRp
 jxp
 ejB
 ixY
@@ -46967,7 +46934,7 @@ vje
 vje
 vje
 vje
-dMO
+aKa
 aKa
 aKa
 aKa
@@ -50567,7 +50534,7 @@ nSY
 sTt
 cDj
 gQl
-jEW
+qkG
 cwc
 nSY
 mtp
@@ -50824,7 +50791,7 @@ nSY
 wrD
 aXU
 cCN
-odZ
+dMO
 fnY
 aHl
 nSY
@@ -51079,7 +51046,7 @@ nSB
 fpb
 fnY
 sTt
-aXU
+gqo
 ltI
 xkN
 tOX
@@ -67898,7 +67865,7 @@ drs
 ggI
 rrO
 oZc
-bXH
+maO
 yiS
 oZc
 aXL
@@ -69320,7 +69287,7 @@ vje
 vje
 oDo
 tuT
-dsj
+rlb
 qPu
 uoi
 soR
@@ -73794,7 +73761,7 @@ ldN
 tsZ
 fPv
 jhn
-sXt
+pkF
 ldN
 sgv
 lnM
@@ -74459,7 +74426,7 @@ vje
 vje
 vje
 oDo
-qPu
+sXt
 ygG
 qPu
 qPu
@@ -74716,7 +74683,7 @@ vje
 vje
 vje
 oDo
-qPu
+bXH
 axM
 qII
 ygG
@@ -74973,8 +74940,8 @@ vje
 vje
 vje
 oDo
-qPu
-gqo
+dsj
+ygG
 ygG
 ygG
 qPu
@@ -78928,7 +78895,7 @@ aFS
 jdJ
 ldN
 aFS
-dbA
+mTQ
 unY
 oCE
 ldN
@@ -81245,7 +81212,7 @@ hxW
 iZV
 mwV
 rkH
-bvp
+mTQ
 lyP
 eFw
 aKa
