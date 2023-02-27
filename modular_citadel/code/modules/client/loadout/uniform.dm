@@ -1271,3 +1271,23 @@
 	name = "utility uniform, yellow"
 	cost = 1
 	path = /obj/item/clothing/under/f13/goner/yellow
+
+/datum/gear/uniform/clown
+	name = "Clown suit"
+	cost = 1
+	path = /obj/item/clothing/under/clown
+
+/datum/gear/uniform/jester1
+	name = "Blue and Red Jester Suit"
+	cost = 1
+	path = /obj/item/clothing/under/jester
+
+/datum/gear/uniform/jester2
+	name = "Yellow and Red Jester Suit"
+	cost = 1
+	path = /obj/item/clothing/under/jester2
+
+/datum/gear/uniform/jesterdark
+	name = "Dark Jester Suit"
+	cost = 1
+	path = /obj/item/clothing/under/jesterdark

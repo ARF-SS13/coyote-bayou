@@ -119,7 +119,7 @@
 	path = /obj/item/clothing/mask/bandana/legion/legdecan
 	cost = 2
 
-/datum/gear/mask/bandana/bandito 
+/datum/gear/mask/bandana/bandito
 	name = "bandito bandana"
 	path = /obj/item/clothing/mask/bandana/legion/legvet
 	cost = 2
@@ -146,3 +146,14 @@
 	name = "aesthetic gas mask"
 	path = /obj/item/clothing/mask/gas/goner/aesthetic
 	cost = 3
+
+/datum/gear/mask/clown_hat
+	name = "clown gas mask"
+	path = /obj/item/clothing/mask/gas/clown_hat
+	cost = 3
+
+/datum/gear/mask/sexy_clown
+	name = "sexy clown gas mask"
+	path = /obj/item/clothing/mask/gas/sexyclown
+	cost = 3
+

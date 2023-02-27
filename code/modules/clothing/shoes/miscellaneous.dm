@@ -493,3 +493,11 @@
 	to_chat(user, span_notice("You insert [I] into [src]."))
 	B.use(10)
 	icon_state = initial(icon_state)
+
+/obj/item/clothing/shoes/jester
+	name = "Jester shoes"
+	icon_state = "jester_shoes"
+
+/obj/item/clothing/shoes/clown
+	name = "Clown Shoes"
+	icon_state = "clown"
