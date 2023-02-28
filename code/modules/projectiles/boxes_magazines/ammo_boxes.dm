@@ -414,7 +414,7 @@
 //7.62x51, .30-06
 /obj/item/ammo_box/a3006box
 	name = "ammo box (.30-06)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon = 'icons/obj/ammo.dmi'
 	icon_state = "ammobox"
 	multiple_sprites = 2
 	caliber = list(CALIBER_3006)
