@@ -984,7 +984,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/bow/sturdy/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
-	new /obj/item/storage/bag/tribe_quiver/archer(src)
+	new /obj/item/storage/bag/tribe_quiver/light(src)
 
 /*dunno if we should have roundstart crossbow simply cause we want a lil more progression
 /obj/item/storage/box/gun/bow/crossbow
@@ -992,7 +992,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/bow/crossbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/crossbow(src)
-	new /obj/item/storage/bag/tribe_quiver/archer(src)
+	new /obj/item/storage/bag/tribe_quiver/light(src)
 */
 
 /obj/item/storage/box/gun/tribal/warclub

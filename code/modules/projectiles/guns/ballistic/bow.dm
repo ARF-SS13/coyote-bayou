@@ -13,7 +13,7 @@
 	item_flags = NONE
 	pin = null
 	no_pin_required = TRUE
-	trigger_guard = TRIGGER_GUARD_NONE //so ashwalkers can use it
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL //so ashwalkers (and monke) can use it
 	spawnwithmagazine = TRUE
 	casing_ejector = TRUE
 	var/recentdraw
@@ -36,16 +36,21 @@
 		SP_DISTANT_SOUND(null),
 		SP_DISTANT_RANGE(null)
 	)
+	var/can_link_to_quiver = FALSE
+	var/drawing_from_quiver = FALSE
+	var/datum/weakref/our_quiver
 
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(istype(AC)) //there's a chambered round
 		AC.forceMove(drop_location()) //Eject casing onto ground.
 		chambered = null
-		/* if(casing_ejector)
-			AC.bounce_away(TRUE)
-		else if(empty_chamber)
-			chambered = null */
+
+/obj/item/gun/ballistic/bow/examine(mob/user)
+	. = ..()
+	if(can_link_to_quiver)
+		. += "Currently [drawing_from_quiver?"":"not"] drawing from a worn quiver, if any."
+		. += "Alt-click the bow to [drawing_from_quiver?"stop":"start"] drawing from a quiver."
 
 /obj/item/gun/ballistic/bow/can_shoot()
 	return chambered
@@ -57,13 +62,14 @@
 		update_icon()
 		to_chat(user, span_notice("You gently release the bowstring, removing the arrow."))
 		return
-	if(recentdraw > world.time || !get_ammo(FALSE))
-		return
+/* 	if(recentdraw > world.time || !get_ammo(FALSE))
+		return */
 	draw(user, TRUE)
-	recentdraw = world.time + 2
-	return
+//	recentdraw = world.time + 2
 
 /obj/item/gun/ballistic/bow/proc/draw(mob/M, visible = TRUE)
+	if(!draw_load(M))
+		return TRUE
 	if(visible)
 		M.visible_message(span_warning("[M] draws the string on [src]!"), span_warning("You draw the string on [src]!"))
 	playsound(M, draw_sound, 60, 1)
@@ -72,10 +78,51 @@
 	return 1
 
 /obj/item/gun/ballistic/bow/proc/draw_load(mob/M)
-	if(!magazine.ammo_count())
-		return 0
+	if(chambered)
+		return FALSE
+	if(!magazine.ammo_count() && !load_from_quiver(M)) // if its empty, try sticking a new ammo in there
+		return FALSE
 	var/obj/item/ammo_casing/AC = magazine.get_round() //load next casing.
 	chambered = AC
+	. = TRUE
+	var/room_left_in_mag = magazine.max_ammo - LAZYLEN(magazine.stored_ammo)
+	if(room_left_in_mag) // and fill up the rest of the bow if possible
+		var/did_a_load = FALSE
+		for(var/i in 1 to room_left_in_mag)
+			if(!load_from_quiver(M))
+				break
+			did_a_load = TRUE
+		if(did_a_load)
+			M.show_message(span_notice("You ready some arrows from your quiver."))
+
+/obj/item/gun/ballistic/bow/proc/load_from_quiver(mob/user)
+	if(!drawing_from_quiver)
+		return FALSE
+	if(!can_link_to_quiver)
+		return FALSE
+	if(!istype(user))
+		return FALSE
+	if(LAZYLEN(magazine.stored_ammo) >= magazine.max_ammo)
+		return FALSE
+	var/obj/item/storage/bag/tribe_quiver/got_quiver = user.get_item_by_slot(SLOT_BELT)
+	if(!istype(got_quiver))
+		return FALSE
+	for(var/obj/item/ammo_casing/isit_pointy in got_quiver.contents)
+		if(!isit_pointy.BB)
+			continue
+		if(!SEND_SIGNAL(got_quiver, COMSIG_TRY_STORAGE_TAKE, isit_pointy, magazine))
+			continue
+		if(magazine.give_round(isit_pointy))
+			return TRUE
+
+/obj/item/gun/ballistic/bow/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return FALSE
+	drawing_from_quiver = !drawing_from_quiver
+	if(can_link_to_quiver)
+		user.show_message("You're [drawing_from_quiver?"now":"no longer"] drawing from a quiver, if one is worn.")
+	return TRUE
 
 /obj/item/gun/ballistic/bow/attackby(obj/item/A, mob/user, params)
 	if(magazine.attackby(A, user, params, 1))
@@ -135,6 +182,7 @@
 	item_state = "lightxbow"
 	icon_prefix = "lightxbow"
 	w_class = WEIGHT_CLASS_BULKY
+	trigger_guard = TRIGGER_GUARD_NONE
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
 	init_firemodes = list(
@@ -178,6 +226,7 @@
 	icon_state = "crossbow"
 	item_state = "crossbow"
 	icon_prefix = "crossbow"
+	trigger_guard = TRIGGER_GUARD_NONE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 //60 damage, brush gun power level

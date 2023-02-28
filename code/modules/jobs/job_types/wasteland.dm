@@ -2034,7 +2034,7 @@ datum/job/wasteland/f13dendoctor
 	neck = /obj/item/clothing/neck/mantle/brown
 	backpack_contents = list(
 		///obj/item/gun/ballistic/bow/sturdy = 1,
-		///obj/item/storage/bag/tribe_quiver/archer = 1,
+		///obj/item/storage/bag/tribe_quiver/light = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/book/granter/trait/tribaltraditions =1,

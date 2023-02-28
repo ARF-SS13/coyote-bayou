@@ -507,7 +507,7 @@ Hunter
 	name = "Marksman"
 	backpack_contents = list(
 		///obj/item/gun/ballistic/bow/sturdy = 1,
-		///obj/item/storage/bag/tribe_quiver/bone = 1,
+		///obj/item/storage/bag/tribe_quiver/light = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
