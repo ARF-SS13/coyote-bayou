@@ -423,7 +423,7 @@
 /datum/supply_pack/security/weapon_wasteland
 	name = "Weapons - Wasteland"
 	desc = "Half a dozen commonly found wasteland weaponry. you might find something nice, sifting through these."
-	cost = 1000
+	cost = 5000
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
@@ -438,7 +438,7 @@
 /datum/supply_pack/security/weapon_dungeon
 	name = "Weapons - Uncommon"
 	desc = "A set of four good quality weapons."
-	cost = 3000
+	cost = 10000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
@@ -451,7 +451,7 @@
 /datum/supply_pack/security/weapon_boss
 	name = "Weapons - Rare"
 	desc = "A pair of rare, valueable weapons, for all your killing needs."
-	cost = 5000
+	cost = 20000
 	num_contained = 2
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/boss,
@@ -462,7 +462,7 @@
 /datum/supply_pack/security/weapon_unique
 	name = "Weapons - Premium"
 	desc = "A single weapon of incredible rarity. there's no telling what was packed into this crate"
-	cost = 10000
+	cost = 40000
 	num_contained = 1
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/unique
@@ -472,7 +472,7 @@
 /datum/supply_pack/security/weapon_milsurplus
 	name = "Weapons -  Military Surplus"
 	desc = "A crate of long forgotten American weapons from the second world war."
-	cost = 3000
+	cost = 10000
 	num_contained = 8
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/milsurplus,
@@ -489,7 +489,7 @@
 /datum/supply_pack/security/weapon_combloc
 	name = "Weapons - Communist Bloc"
 	desc = "An old crate packed with surplus Chinese and Russian weaponry. you may have to clean off the old cosmoline."
-	cost = 3000
+	cost = 10000
 	num_contained = 8
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/combloc,
@@ -506,7 +506,7 @@
 /datum/supply_pack/security/vault
 	name = "Weapons - Vault"
 	desc = "A crate of common vault security firearms that never made it to their assigned vault"
-	cost = 1500
+	cost = 5000
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/vault,
@@ -521,7 +521,7 @@
 /datum/supply_pack/security/weapon_police
 	name = "Weapons - Law Enforcement"
 	desc = "A crate full of common police and riot weapons"
-	cost = 2000
+	cost = 10000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/police,
@@ -534,7 +534,7 @@
 /datum/supply_pack/security/weapon_22
 	name = "Weapons - .22 caliber"
 	desc = "A crate full of low caliber weapons, for either building a lot of turrets, or quickly arming an anti-gecko militia"
-	cost = 500
+	cost = 5000
 	num_contained = 8 //sadly crates have a max capacity of 8, don't wanna overflow
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/weapon_22,
@@ -551,7 +551,7 @@
 /datum/supply_pack/security/energy
 	name = "Weapons - Energy"
 	desc = "A small selection of energy weapons"
-	cost = 1500
+	cost = 10000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/energy,
@@ -564,7 +564,7 @@
 /datum/supply_pack/security/weapon_junk
 	name = "Weapons - Junk"
 	desc = "A haphazard pile of ethically sourced, barely functioning pipes and pieces of wood pretending to be guns. "
-	cost = 500
+	cost = 1000
 	num_contained = 8
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/junk,
@@ -581,7 +581,7 @@
 /datum/supply_pack/security/weapon_western
 	name = "Weapons - Western"
 	desc = "A collection of classy lever actions, revolvers, and scatterguns fitting for lawmen and outlaws alike. yeehaw!"
-	cost = 3000
+	cost = 5000
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/western,

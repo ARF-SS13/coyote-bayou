@@ -695,6 +695,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/revolver/thatgun = 10,
 		/obj/item/gun/ballistic/rifle/repeater/cowboy = 10,
 		/obj/item/gun/ballistic/rifle/hunting = 10,
+		/obj/item/gun/ballistic/rifle/antique/gras = 5,
 		/obj/item/gun/ballistic/rifle/mosin = 5,
 		/obj/item/gun/ballistic/rifle/enfield = 1, //ugly sprite, but eh
 		/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
@@ -893,8 +894,10 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
-		/obj/item/sord = 1, //for the meme
-		/obj/item/melee/transforming/plasmacutter/regular/adam = 10
+		/obj/item/sord = 20, //for the meme
+		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
+		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 20,
+		/obj/item/gun/ballistic/fatman = 5,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid //not bothering to change the path name, since it's still used in other portions of code
