@@ -200,7 +200,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
-	extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) // let it take smg mags
+	//extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) //as sad as it is to remove, want to bring the power level down slightly so it can be common
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -775,6 +775,7 @@
 	icon_state = "elcapitan"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
+	init_mag_type = /obj/item/ammo_box/magazine/m14mm
 	w_class = WEIGHT_CLASS_NORMAL
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
@@ -785,7 +786,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3 // POW
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2 //T3 might've been a lil much. will see
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)

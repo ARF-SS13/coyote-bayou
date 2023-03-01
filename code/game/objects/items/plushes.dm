@@ -804,12 +804,10 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	young = TRUE // Your own mouth-baby.
 	squeak_override = list('sound/misc/splort.ogg'=1)
 	attack_verb = list("sploshed", "splorted", "slushed")
-	can_random_spawn = FALSE
 
 /obj/item/toy/plush/plushling
 	name = "peculiar plushie"
 	desc = "An adorable stuffed toy- wait, did it just move?"
-	can_random_spawn = FALSE
 	var/absorb_cooldown = 100 //ticks cooldown between absorbs
 	var/next_absorb = 0 //When can it absorb another plushie
 	var/check_interval = 20

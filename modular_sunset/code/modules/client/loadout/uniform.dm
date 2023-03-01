@@ -1,3 +1,5 @@
+/* it hurts...why isn't this with the rest of loadout stuff
+
 /datum/gear/uniform/goner_red
 	name = "utility uniform, red"
 	cost = 1
@@ -17,3 +19,4 @@
 	name = "utility uniform, yellow"
 	cost = 1
 	path = /obj/item/clothing/under/f13/goner/yellow
+*/

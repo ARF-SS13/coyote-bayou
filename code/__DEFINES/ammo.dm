@@ -2,13 +2,15 @@
 
 //Caliber defines
 #define CALIBER_22LR ".22LR rounds"
+#define CALIBER_BEE ".22LR bee rounds"
 #define CALIBER_5MM "5mm rounds"
 #define CALIBER_556 "5.56mm / .223 rounds"
-#define CALIBER_762 "7.62mm / .308 rounds"
+#define CALIBER_308 ".308 rounds"
+#define CALIBER_3006 ".30-06 rounds"
 #define CALIBER_9MM "9mm rounds"
 #define CALIBER_10MM "10mm rounds"
 #define CALIBER_14MM "14mm rounds"
-#define CALIBER_38 ".38 special rounds"
+//#define CALIBER_38 ".38 special rounds"
 #define CALIBER_357 ".357 magnum rounds"
 #define CALIBER_44 ".44 magnum rounds"
 #define CALIBER_45LC ".45 LC rounds"
@@ -28,7 +30,9 @@
 #define CALIBER_MUSKET_LASER "laser musket packs"
 #define CALIBER_MUSKET_PLASMA "plasma musket packs"
 #define CALIBER_NEEDLE "needles"
+#define CALIBER_MININUKE "mininukes"
 #define CALIBER_ROCKET "rockets"
+#define CALIBER_ROCK "rocks"
 #define CALIBER_SPEAR "speargun rounds"
 #define CALIBER_LASERGATLING "laser gatling charges"
 #define CALIBER_LASER "oldlasers"
@@ -37,6 +41,7 @@
 #define CALIBER_FUEL "flamer fuel"
 #define CALIBER_FOAM "foam darts"
 #define CALIBER_ANY "anything even remotely ammolike"
+#define CALIBER_BRICK "bricks"
 
 /// Caliber POW levels
 /// for hobo guns scaling their explodiness to the casing fired
@@ -50,8 +55,8 @@
 #define CASING_POWER_LIGHT_RIFLE 4
 #define CASING_POWER_MEDIUM_RIFLE 8
 #define CASING_POWER_HEAVY_RIFLE 12
-#define CASING_POWER_SHOTGUN 5
-#define CASING_POWER_GRENADE 5
+#define CASING_POWER_SHOTGUN 8
+#define CASING_POWER_GRENADE 12
 
 /// Modifiers for different loads
 #define CASING_POWER_MOD_HANDLOAD 0.5
@@ -62,29 +67,29 @@
 	CALIBER_22LR,\
 	CALIBER_9MM,\
 	CALIBER_10MM,\
-	CALIBER_38,\
 	CALIBER_357,\
 	CALIBER_44,\
 	CALIBER_45LC,\
-	CALIBER_45ACP\
+	CALIBER_45ACP,\
+	CALIBER_ROCK\
 	)
 
 #define AUTOPIPE_AMMO_CALIBERS list(\
 	CALIBER_22LR,\
 	CALIBER_9MM,\
 	CALIBER_10MM,\
-	CALIBER_38,\
 	CALIBER_357,\
-	CALIBER_45ACP\
+	CALIBER_45ACP,\
+	CALIBER_ROCK\
 	)
 
 #define KNUCKLEGUN_AMMO_CALIBERS list(\
 	CALIBER_9MM,\
 	CALIBER_10MM,\
-	CALIBER_38,\
 	CALIBER_357,\
 	CALIBER_44,\
-	CALIBER_45ACP\
+	CALIBER_45ACP,\
+	CALIBER_ROCK\
 	)
 
 /// this is an awful, awful idea
@@ -97,11 +102,11 @@ GLOBAL_LIST_INIT(pipe_rifle_valid_calibers, list(
 	CALIBER_22LR,
 	CALIBER_5MM,
 	CALIBER_556,
-	CALIBER_762,
+	CALIBER_308,
+	CALIBER_3006,
 	CALIBER_9MM,
 	CALIBER_10MM,
 	CALIBER_14MM,
-	CALIBER_38,
 	CALIBER_357,
 	CALIBER_44,
 	CALIBER_45LC,
@@ -111,7 +116,8 @@ GLOBAL_LIST_INIT(pipe_rifle_valid_calibers, list(
 	CALIBER_40MM,
 	CALIBER_FOAM,
 	CALIBER_MUSKET_BALL,
-	CALIBER_SHOTGUN))
+	CALIBER_SHOTGUN,
+	CALIBER_ROCK))
 
 GLOBAL_LIST_INIT(zipgun_valid_calibers, ZIPGUN_AMMO_CALIBERS)
 
@@ -175,7 +181,7 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MATS_RIFLE_MEDIUM_CASING (MATS_CASING_BASE * 2)
 #define MATS_RIFLE_HEAVY_CASING (MATS_CASING_BASE * 3)
 #define MATS_SHOTGUN_CASING (MATS_CASING_BASE * 5)
-#define MATS_GRENADE_CASING (MATS_CASING_BASE * 50)
+#define MATS_GRENADE_CASING (MATS_CASING_BASE * 20)
 #define MATS_ROCKET_CASING (MATS_CASING_BASE * 100)
 #define MATS_GAUSS_CASING 0
 

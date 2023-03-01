@@ -1199,8 +1199,8 @@
 	desc = "A would-be advanced holographic dogtag, if it was working. Kept as a reminder to something."
 
 /obj/item/card/id/denid
-	name = "Den Gang Membership Certificate"
-	desc = "A certificate declaring your loyalty to the gang"
+	name = "Redwater Mark"
+	desc = "A shady card for shady people. it might let you in to some of the bleaker parts of Nash's underground. Best not be seen with one of these. better yet, just avoid having it"
 	assignment = "gang tattoo"
 
 	access = list(ACCESS_DEN)

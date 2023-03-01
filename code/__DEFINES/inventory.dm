@@ -192,7 +192,6 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 	/obj/item/ammo_box/magazine/m10mm/rifle,
 	/obj/item/ammo_box/magazine/autopipe,
 	/obj/item/ammo_box/magazine/m556/rifle/small,
-	/obj/item/ammo_box/c38,
 	/obj/item/ammo_box/l10mm,
 	/obj/item/ammo_box/a357,
 	/obj/item/ammo_box/m44,
@@ -200,7 +199,7 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 	/obj/item/ammo_box/a45lcrev,
 	/obj/item/ammo_box/rev308,
 	/obj/item/ammo_box/c4570,
-	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a3006,
 	/obj/item/ammo_box/a308,
 	/obj/item/ammo_box/a556/stripper,
 	/obj/item/ammo_box/needle,
@@ -556,6 +555,13 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/hobo/knifegun,
 	/obj/item/melee/onehanded/knife,
 	/obj/item/scalpel,
+	/obj/item/gun/energy/laser/retro,
+	/obj/item/gun/ballistic/revolver/police,
+	/obj/item/gun/ballistic/revolver/m29/snub,
+	)))
+
+GLOBAL_LIST_INIT(plushbelt_allowed, typecacheof(list(
+	/obj/item/toy/plush
 	)))
 
 GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(

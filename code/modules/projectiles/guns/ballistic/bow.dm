@@ -257,6 +257,7 @@
 	icon_state = "xbow"
 	item_state = "xbow"
 	icon_prefix = "xbow"
+	trigger_guard = TRIGGER_GUARD_NONE
 	zoom_factor = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/xbow
 	extra_speed = 400
@@ -312,6 +313,7 @@
 	desc = "A crossbow."
 	icon_state = "crossbow"
 	icon_prefix = "crossbow"
+	trigger_guard = TRIGGER_GUARD_NONE
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/cross
 	fire_delay = 1.5

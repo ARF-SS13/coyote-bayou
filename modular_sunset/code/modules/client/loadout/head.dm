@@ -1,3 +1,5 @@
+/* wtf is this and why is it here?
+
 /datum/gear/head/goner_red
 	name = "cheap helmet, red"
 	path = /obj/item/clothing/head/helmet/f13/goner/red
@@ -33,3 +35,4 @@
 /datum/gear/head/goner_yellow/officer
 	name = "peaked cap, yellow"
 	path = /obj/item/clothing/head/helmet/f13/goner/officer/yellow
+*/

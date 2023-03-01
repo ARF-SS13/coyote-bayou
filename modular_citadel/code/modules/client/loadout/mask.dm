@@ -7,6 +7,10 @@
 	name = "desert facewrap"
 	path = /obj/item/clothing/mask/ncr_facewrap
 
+/datum/gear/mask/headwrap
+	name = "desert headwrap"
+	path = /obj/item/clothing/mask/facewrap
+
 // Masks ///
 
 /datum/gear/mask/rat
@@ -115,7 +119,7 @@
 	path = /obj/item/clothing/mask/bandana/legion/legdecan
 	cost = 2
 
-/datum/gear/mask/bandana/bandito 
+/datum/gear/mask/bandana/bandito
 	name = "bandito bandana"
 	path = /obj/item/clothing/mask/bandana/legion/legvet
 	cost = 2
@@ -135,5 +139,21 @@
 /datum/gear/mask/moustache
 	name = "fake moustache"
 	path = /obj/item/clothing/mask/fakemoustache
-	subcategory = LOADOUT_SUBCATEGORY_MASK_MISCELLANEOUS
+	subcategory = LOADOUT_SUBCATEGORY_MASK_GENERAL
 	cost = 2
+
+/datum/gear/mask/broken_goner_mask
+	name = "aesthetic gas mask"
+	path = /obj/item/clothing/mask/gas/goner/aesthetic
+	cost = 3
+
+/datum/gear/mask/clown_hat
+	name = "clown gas mask"
+	path = /obj/item/clothing/mask/gas/clown_hat
+	cost = 3
+
+/datum/gear/mask/sexy_clown
+	name = "sexy clown gas mask"
+	path = /obj/item/clothing/mask/gas/sexyclown
+	cost = 3
+

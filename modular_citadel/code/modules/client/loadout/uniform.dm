@@ -8,6 +8,11 @@
 	path = /obj/item/clothing/under/f13/recon
 	cost = 1
 
+/datum/gear/uniform/bosuniform
+	name = "brotherhood uniform"
+	path = /obj/item/clothing/under/f13/bos/fatigues
+	cost = 1
+
 /datum/gear/uniform/legskirt
 	name = "burgundy fatigues"
 	path = /obj/item/clothing/under/f13/legskirt
@@ -16,6 +21,10 @@
 /datum/gear/uniform/vault
 	name = "vault jumpsuit"
 	path = /obj/item/clothing/under/f13/vault
+
+/datum/gear/uniform/wornvault
+	name = "disheveled Dweller jumpsuit"
+	path = /obj/item/clothing/under/f13/exile/vault
 
 /datum/gear/uniform/caravaneer
 	name = "caravaneer outfit"
@@ -68,6 +77,14 @@
 /datum/gear/uniform/mechanic
 	name = "worn mechanic jumpsuit"
 	path = /obj/item/clothing/under/f13/mechanic
+
+/datum/gear/uniform/worngreen
+	name = "worn green jumpsuit"
+	path = /obj/item/clothing/under/f13/petrochico
+
+/datum/gear/uniform/blackjump
+	name = "black jumpsuit"
+	path = /obj/item/clothing/under/color/black
 
 /datum/gear/uniform/lumberjack
 	name = "lumberjack outfit"
@@ -128,6 +145,10 @@
 	name = "roving trader outfit"
 	path = /obj/item/clothing/under/f13/roving
 
+/datum/gear/uniform/treasure_hunter
+	name = "treasure hunter uniform"
+	path = /obj/item/clothing/under/rank/civilian/curator/treasure_hunter
+
 /datum/gear/uniform/gear_harness
 	name = "gear harness outfit"
 	path = /obj/item/clothing/under/misc/gear_harness
@@ -174,6 +195,11 @@
 	path = /obj/item/clothing/under/suit/red
 	cost = 1
 
+/datum/gear/uniform/suit/executive
+	name = "executive suit"
+	path = /obj/item/clothing/under/suit/black_really
+	cost = 1
+
 /datum/gear/uniform/suit/charcoal
 	name = "charcoal Suit"
 	path = /obj/item/clothing/under/suit/charcoal
@@ -197,6 +223,11 @@
 /datum/gear/uniform/suit/tan
 	name = "tan suit"
 	path = /obj/item/clothing/under/suit/tan
+	cost = 1
+
+/datum/gear/uniform/suit/gentlesuit
+	name = "gentleman suit"
+	path = /obj/item/clothing/under/f13/gentlesuit
 	cost = 1
 
 /datum/gear/uniform/suit/white
@@ -286,6 +317,10 @@
 /datum/gear/uniform/pants/camo
 	name = "camo pants"
 	path = /obj/item/clothing/under/pants/camo
+
+/datum/gear/uniform/pants/warboy
+	name = "war boy pants"
+	path = /obj/item/clothing/under/pants/f13/warboy
 
 /datum/gear/uniform/shorts
 	name = "athletic shorts"
@@ -504,6 +539,10 @@
 /datum/gear/uniform/dress/class
 	name = "classy dress"
 	path = /obj/item/clothing/under/f13/classdress
+
+/datum/gear/uniform/dress/evening
+	name = "red evening gown"
+	path = /obj/item/clothing/under/redeveninggown
 
 /datum/gear/uniform/dress/corset
 	name = "corset"
@@ -1034,6 +1073,12 @@
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
 
+/datum/gear/uniform/wasteland/overalls
+	name = "Laborer's Overalls"
+	path = /obj/item/clothing/under/overalls
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
 /datum/gear/uniform/wasteland/sleazeball
 	name = "Loanshark outfit"
 	path = /obj/item/clothing/under/f13/sleazeball
@@ -1207,3 +1252,42 @@
 	path = /obj/item/clothing/under/kimono/earth
 	cost = 0
 
+/datum/gear/uniform/goner_red
+	name = "utility uniform, red"
+	cost = 1
+	path = /obj/item/clothing/under/f13/goner/red
+
+/datum/gear/uniform/goner_green
+	name = "utility uniform, green"
+	cost = 1
+	path = /obj/item/clothing/under/f13/goner/green
+
+/datum/gear/uniform/goner_blue
+	name = "utility uniform, blue"
+	cost = 1
+	path = /obj/item/clothing/under/f13/goner/blue
+
+/datum/gear/uniform/goner_yellow
+	name = "utility uniform, yellow"
+	cost = 1
+	path = /obj/item/clothing/under/f13/goner/yellow
+
+/datum/gear/uniform/clown
+	name = "Clown suit"
+	cost = 1
+	path = /obj/item/clothing/under/clown
+
+/datum/gear/uniform/jester1
+	name = "Blue and Red Jester Suit"
+	cost = 1
+	path = /obj/item/clothing/under/jester
+
+/datum/gear/uniform/jester2
+	name = "Yellow and Red Jester Suit"
+	cost = 1
+	path = /obj/item/clothing/under/jester2
+
+/datum/gear/uniform/jesterdark
+	name = "Dark Jester Suit"
+	cost = 1
+	path = /obj/item/clothing/under/jesterdark

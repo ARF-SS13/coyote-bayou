@@ -104,6 +104,9 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 /obj/item/stack/rods/fifty
 	amount = 50
 
+/obj/item/stack/rods/two //for surgical tables
+	amount = 2
+
 /obj/item/stack/rods/lava
 	name = "heat resistant rod"
 	desc = "Treated, specialized metal rods. When exposed to the vaccum of space their coating breaks off, but they can hold up against the extreme heat of active lava."

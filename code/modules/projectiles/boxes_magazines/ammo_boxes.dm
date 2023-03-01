@@ -119,7 +119,7 @@
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 	ammo_type = /obj/item/ammo_casing/c9mm/improvised
-
+/*
 /obj/item/ammo_box/c38box
 	name = "ammo box (.38)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -149,7 +149,7 @@
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 	ammo_type = /obj/item/ammo_casing/c38/improvised
-
+*/
 
 //10mm
 /obj/item/ammo_box/c10mm
@@ -186,7 +186,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "357box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_357, CALIBER_38)
+	caliber = list(CALIBER_357)
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 25
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
@@ -347,14 +347,14 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_556)
 	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 30
+	max_ammo = 25
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
-
+/*
 /obj/item/ammo_box/a556/sport
 	name = "ammo box (.223 sport)"
 	ammo_type = /obj/item/ammo_casing/a556/sport
-
+*/
 /obj/item/ammo_box/a556/rubber
 	name = "ammo box (5.56 rubber)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -384,9 +384,10 @@
 	..()
 */
 
-/obj/item/ammo_box/a556/sport/improvised
+/obj/item/ammo_box/a556/improvised
 	name = "bag with reloaded .223 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	ammo_type = /obj/item/ammo_casing/a556/improvised
 	multiple_sprites = 3
 	max_ammo = 30
 	icon_state = "improvshotbag"
@@ -397,19 +398,39 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "308box"
 	multiple_sprites = 2
-	caliber = list(CALIBER_762)
-	ammo_type = /obj/item/ammo_casing/a762/sport
+	caliber = list(CALIBER_308)
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 
 /obj/item/ammo_box/a308box/improvised
 	name = "bag with reloaded .308 bullets"
-	ammo_type = /obj/item/ammo_casing/a762/improvised
+	ammo_type = /obj/item/ammo_casing/a308/improvised
 	icon_state = "improvshotbag"
 	max_ammo = 20
 	multiple_sprites = 3
 
+//7.62x51, .30-06
+/obj/item/ammo_box/a3006box
+	name = "ammo box (.30-06)"
+	icon = 'icons/obj/ammo.dmi'
+	icon_state = "ammobox"
+	multiple_sprites = 2
+	caliber = list(CALIBER_3006)
+	ammo_type = /obj/item/ammo_casing/a3006
+	max_ammo = 15
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
+
+/obj/item/ammo_box/a3006box/improvised
+	name = "bag with reloaded .30-06 bullets"
+	ammo_type = /obj/item/ammo_casing/a3006/improvised
+	icon_state = "improvshotbag"
+	max_ammo = 15
+	multiple_sprites = 3
+
+/*
 /obj/item/ammo_box/a762box
 	name = "ammo box (7.62x51 FMJ Match)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -420,7 +441,7 @@
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
-
+*/
 /*
 /obj/item/ammo_box/a762box/uraniumtipped
 	name = "ammo box (7.62x51 uranium tipped)"
@@ -437,17 +458,17 @@
 	..()
 */
 
-/obj/item/ammo_box/a762box/microshrapnel
-	name = "ammo box (7.62x51 microshrapnel)"
+/obj/item/ammo_box/a308box/microshrapnel
+	name = "ammo box (.308 microshrapnel)"
 	desc = "Now with EVEN MORE fragments!"
-	ammo_type = /obj/item/ammo_casing/a762/microshrapnel
+	ammo_type = /obj/item/ammo_casing/a308/microshrapnel
 
-/obj/item/ammo_box/a762box/rubber
-	name = "ammo box (7.62x51 rubber)"
+/obj/item/ammo_box/a308box/rubber
+	name = "ammo box (.308 rubber)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "762box"
 	multiple_sprites = 2
-	ammo_type = /obj/item/ammo_casing/a762/rubber
+	ammo_type = /obj/item/ammo_casing/a308/rubber
 
 
 //.50 MG and 14mm
@@ -579,7 +600,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/a40mm
-	name = "ammo box (40mm grenades)"
+	name = "ammo box (40mm HE)"
 	caliber = "40mm"
 	icon_state = "40mm"
 	ammo_type = /obj/item/ammo_casing/a40mm
@@ -588,6 +609,17 @@
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 1
 
+/obj/item/ammo_box/a40mm/hedp
+	name = "ammo box (40mm HEDP)"
+	caliber = "40mm"
+	icon_state = "40mmdual"
+	ammo_type = /obj/item/ammo_casing/a40mm/hedp
+
+/obj/item/ammo_box/a40mm/buck
+	name = "ammo box (40mm buck)"
+	caliber = "40mm"
+	icon_state = "40mmbuckshot"
+	ammo_type = /obj/item/ammo_casing/a40mm/buck
 
 ////////////////
 //SPEEDLOADERS//
@@ -598,10 +630,10 @@
 	custom_materials = list(/datum/material/iron = MATS_TUBE)
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 1
-
+/*
 //.38
 /obj/item/ammo_box/c38
-	name = "speed loader (.38)"
+	name = "speed loader (.357)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "357"
 	caliber = list(CALIBER_38)
@@ -613,7 +645,7 @@
 
 /obj/item/ammo_box/c38/empty
 	start_empty = 1
-
+*/
 //.22
 /obj/item/ammo_box/c22
 	name = "speed loader (.22 LR)"
@@ -651,12 +683,15 @@
 	desc = "Designed to quickly reload revolvers. Also accepts .38!"
 	icon_state = "357"
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list(CALIBER_357, CALIBER_38)
+	caliber = list(CALIBER_357)
 	max_ammo = 6
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
 
+/obj/item/ammo_box/a357/empty
+	start_empty = 1
+/*
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 Match)"
 	desc = "Designed to quickly reload revolvers. These rounds are manufactured within extremely tight tolerances, making them easy to show off trickshots with."
@@ -667,12 +702,12 @@
 /obj/item/ammo_box/a357/dumdum
 	name = "speed loader (.357 DumDum)"
 	desc = "Designed to quickly reload revolvers. Usage of these rounds will constitute a war crime in your area."
-
+*/
 /obj/item/ammo_box/tube/a357
 	name = "speed loader tube (.357)"
 	desc = "Designed to quickly reload repeaters. Also accepts .38!"
 	icon_state = "357tube"
-	caliber = list(CALIBER_357, CALIBER_38)
+	caliber = list(CALIBER_357)
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 12
 
@@ -743,8 +778,8 @@
 	name = "speed loader (.308)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "rev308"
-	caliber = list(CALIBER_762)
-	ammo_type = /obj/item/ammo_casing/a762/sport
+	caliber = list(CALIBER_308)
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 10
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
@@ -832,23 +867,23 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 //7.62x51, .308 Winchester
-/obj/item/ammo_box/a762
-	name = "stripper clip (7.62 Match)"
+/obj/item/ammo_box/a3006
+	name = "stripper clip (.30-06)"
 	desc = "A stripper clip."
 	icon_state = "762"
-	caliber = list(CALIBER_762)
-	ammo_type = /obj/item/ammo_casing/a762
+	caliber = list(CALIBER_3006)
+	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
 /obj/item/ammo_box/a308
-	name = "stripper clip (.308 Sport)"
+	name = "stripper clip (.308)"
 	desc = "A stripper clip."
 	icon_state = "308"
-	caliber = list(CALIBER_762)
-	ammo_type = /obj/item/ammo_casing/a762/sport
+	caliber = list(CALIBER_308)
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
@@ -857,17 +892,17 @@
 /obj/item/ammo_box/a308/empty
 	start_empty = 1
 
-/obj/item/ammo_box/a762/doublestacked
-	name = "double stack stripper clip (.308 Sport)"
+/obj/item/ammo_box/a308/doublestacked
+	name = "double stack stripper clip (.308)"
 	desc = "A stripper clip."
 	icon_state = "762a"
-	ammo_type = /obj/item/ammo_casing/a762/sport
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 10
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
-/obj/item/ammo_box/a762/doublestacked/empty
+/obj/item/ammo_box/a308/doublestacked/empty
 	start_empty = 1
 
 //5.56x45mm

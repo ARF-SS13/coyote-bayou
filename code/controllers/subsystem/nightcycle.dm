@@ -202,6 +202,12 @@ SUBSYSTEM_DEF(nightcycle)
 		if(neighbor.flags_1 & INITIALIZED_1)
 			neighbor.smooth_sunlight_border()
 
+//Proc to update the lighting of a single turf when a new plating is put down on a sunlight source turf
+/turf/proc/setup_single_sunlight_source()
+	vis_contents += SSnightcycle.sunlight_source_object
+	luminosity = 1
+	sunlight_state = SUNLIGHT_SOURCE //should be a value of 2
+
 #define SUNLIGHT_ADJ_IN_DIR(source, junction, direction, direction_flag) \
 	do { \
 		var/turf/neighbor = get_step(source, direction); \
@@ -258,14 +264,16 @@ SUBSYSTEM_DEF(nightcycle)
 			switch(sunlight_state)
 				if(SUNLIGHT_SOURCE)
 					// The no-sunlight neighbors were turned into border during Initialize() already.
-					RE_SMOOTH_BORDER_NEIGHBORS(src)
+					//RE_SMOOTH_BORDER_NEIGHBORS(src)
+					sunlight_state = NO_SUNLIGHT //you're indoors, behave and stop shining light everywhere
 				//if(SUNLIGHT_BORDER)
 				//	CRASH("Turf changed from no-sunlight to border on ChangeTurf(). No turf should be border by default.")
 		if(SUNLIGHT_SOURCE)
 			switch(sunlight_state)
 				if(NO_SUNLIGHT)
 					// Have them decide whether they're still border or not.
-					RE_SMOOTH_BORDER_NEIGHBORS(src)
+					//RE_SMOOTH_BORDER_NEIGHBORS(src)
+					setup_single_sunlight_source() //light yourself up, but don't bother your neighbors
 				//if(SUNLIGHT_BORDER)
 				//	CRASH("Turf changed from sunlight-source to border on ChangeTurf(). No turf should be border by default.")
 		if(SUNLIGHT_BORDER)

@@ -138,3 +138,34 @@
 			explosion(target, 0, 1, 1, 2)
 			return BULLET_ACT_HIT
 	new /obj/item/broken_missile(get_turf(src), 1)
+
+/obj/item/projectile/bullet/mininuke
+	name ="\improper mininuke"
+	desc = "Boom plus plus plus."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "nuclear"
+	damage = 200 //at this point, it's a mercy kill. you're at ground zero. the big number is more for looking big when examined, and mininukes have always had high direct damage
+	ricochets_max = 0 //nO
+
+/obj/item/projectile/bullet/mininuke/on_hit(atom/target, blocked=0)
+	..()
+	explosion(target, 5, 10, 20, 20, flame_range = 20) //burn baby burn. a lot of stuff is gonna be incenerated. remember though: salt doesn't burn.
+	radiation_pulse(target, 1500, 20, can_contaminate = FALSE) //spicy. 1500 is radiation grenade potency
+	new /obj/effect/temp_visual/explosion(get_turf(target))
+	return BULLET_ACT_HIT
+
+/obj/item/projectile/bullet/meganuke
+	name ="\improper meganuke"
+	desc = "Boom plus plus plus PLUS."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "nuclear"
+	damage = 200 //good luck at ground zero
+	ricochets_max = 0 //nO
+
+/obj/item/projectile/bullet/meganuke/on_hit(atom/target, blocked=0)
+	..()
+	explosion(target, 5, 10, 20, 20, flame_range = 20)
+	radiation_pulse(target, 1500, 20, can_contaminate = FALSE)
+	AddComponent(/datum/component/pellet_cloud, projectile_type=/obj/item/projectile/bullet/mininuke, magnitude=10)
+	new /obj/effect/temp_visual/explosion(get_turf(target))
+	return BULLET_ACT_HIT

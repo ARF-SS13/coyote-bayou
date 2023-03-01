@@ -215,7 +215,7 @@
 /// nerfed rats for above-ground spawn
 /// they run around like assholes and avoid player interaction at all costs
 /mob/living/simple_animal/hostile/rat/skitter
-	name = "mouse"
+	name = "radmouse"
 	desc = "It's a scared lil rodent with anxiety issues."
 	icon_state = "mouse_gray"
 	icon_living = "mouse_gray"

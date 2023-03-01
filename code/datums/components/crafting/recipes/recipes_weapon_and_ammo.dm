@@ -184,7 +184,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
+/*
 /datum/crafting_recipe/shotgunammo3p
 	name = "12g 3p trainshot box"
 	result = /obj/item/ammo_box/shotgun/trainshot
@@ -386,7 +386,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
+*/
 
 /*
 /datum/crafting_recipe/a50MGboxuranium
@@ -403,7 +403,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 */
-
+/*
 /datum/crafting_recipe/a50MGboxcontaminated
 	name = "12.7mm contaminated ammo box"
 	result = /obj/item/ammo_box/a50MGbox/contam
@@ -432,7 +432,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
+*/
 /datum/crafting_recipe/m2mmblender
 	name = "2mm \"Blender\" magazine"
 	result = /obj/item/ammo_box/magazine/m2mm/blender
@@ -647,7 +647,7 @@
 
 //Caravan Shotgun
 /datum/crafting_recipe/caravanshotty
-	name = "Caravan Shotgun"
+	name = "Caravan Rifle"
 	result = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 2,
@@ -658,6 +658,18 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//Widowmaker Shotgun
+/datum/crafting_recipe/widowmakershotty
+	name = "Widowmaker Shotgun"
+	result = /obj/item/gun/ballistic/revolver/widowmaker
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 2,)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
 
 //battle rifle
 /datum/crafting_recipe/m1garand

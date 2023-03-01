@@ -262,9 +262,9 @@
 
 /obj/item/storage/belt/legholster/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 ///////////////////
 /// Belt bandolier
@@ -370,12 +370,10 @@
 	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
-/obj/item/storage/belt/military/snack/ComponentInitialize()
-	. = ..()
-	var/amount = 21
-	var/rig_snacks
-	while(contents.len <= amount)
-		rig_snacks = pick(list(
+/obj/item/storage/belt/military/snack/PopulateContents()
+	var/rigsnax
+	for(var/snackies in 1 to 21)
+		rigsnax = pick(list(
 		/obj/item/reagent_containers/food/snacks/candy,
 		/obj/item/reagent_containers/food/drinks/dry_ramen,
 		/obj/item/reagent_containers/food/snacks/chips,
@@ -400,9 +398,18 @@
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
 		))
-		new rig_snacks(src)
+		new rigsnax(src)
 
+/obj/item/storage/belt/military/plush
+	name = "tactical plushie rig"
+	desc = "a set of military grade tactical pouches, made to hold a large number of plushies."
+	component_type = /datum/component/storage/concrete/belt/specialized/plush
 
+/obj/item/storage/belt/military/plush/PopulateContents()
+	var/rigplush
+	for(var/plooshies in 1 to 21)
+		rigplush = pick(GLOB.valid_plushie_paths)
+		new rigplush(src)
 
 /* * * * * * *
  * NECKPRONS
@@ -442,8 +449,8 @@
 
 /obj/item/storage/belt/shoulderholster/full/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
 
 /obj/item/storage/belt/shoulderholster/ranger44/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/revolver44(src)
@@ -453,9 +460,9 @@
 
 /obj/item/storage/belt/shoulderholster/ranger357/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/belt/shoulderholster/ranger45/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/revolver45(src)

@@ -5,6 +5,9 @@
 	receiving object instead, so that's the default action.  This allows you to drag
 	almost anything into a trash can.
 */
+
+GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
+
 /atom/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
 	if(!usr || !over)
 		return
@@ -12,6 +15,16 @@
 		return
 	if(over == src)
 		return usr.client.Click(src, src_location, src_control, params)
+	if(GLOB.use_experimental_clickdrag_thing)
+		var/is_mob_in_harm_intent // "harm" intent
+		if(ismob(usr))
+			var/mob/clicker = usr
+			if(clicker.a_intent == INTENT_HARM)
+				is_mob_in_harm_intent = TRUE
+		if(is_mob_in_harm_intent) // in harm intent, disable clickdragging and try to click on whatever your mouse is over when you let up a click
+			if(over == usr && src != usr) // If you clickdrag something out of range to yourself, click what you originaly clicked
+				return usr.client.Click(src, over_location, src_control, params)
+			return usr.client.Click(over, over_location, src_control, params)
 	if(!Adjacent(usr) || !over.Adjacent(usr))
 		return // should stop you from dragging through windows
 

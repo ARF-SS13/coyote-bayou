@@ -8,14 +8,34 @@
 	path = /obj/item/clothing/suit/hooded/cloak/david
 	cost = 2
 
+/datum/gear/suit/hoodedmask
+	name = "patched heavy leather cloak"
+	path = /obj/item/clothing/suit/hooded/outcast
+	cost = 2
+
+/datum/gear/suit/suspenders
+	name = "suspenders"
+	path = /obj/item/clothing/suit/suspenders
+	cost = 1
+
 /datum/gear/suit/labcoat
 	name = "Labcoat"
 	path = /obj/item/clothing/suit/toggle/labcoat
 	cost = 2
 
+/datum/gear/suit/surgicalhood
+	name = "surgical scrubs"
+	path = /obj/item/clothing/suit/hooded/surgical
+	cost = 2
+
 /datum/gear/suit/rangercape
 	name = "Ranger cape"
 	path = /obj/item/clothing/neck/mantle/ranger
+	cost = 1
+
+/datum/gear/suit/brownvest
+	name = "brown vest"
+	path = /obj/item/clothing/suit/armor/outfit/vest/cowboy
 	cost = 1
 
 /datum/gear/suit/bomber
@@ -71,6 +91,13 @@
 	path = /obj/item/clothing/suit/jacket/puffer/vest
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
+
+/datum/gear/suit/greyparka
+	name = "grey parka"
+	path = /obj/item/clothing/suit/hooded/parka/grey
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
 
 /datum/gear/suit/jacketlettermanbrown
 	name = "Brown letterman jacket"
@@ -135,9 +162,29 @@
 /// 	Beginning of Coats/Armor section
 // 	Below are one points as they are cosmetics
 
+
+
+/datum/gear/suit/coat/battlecoat
+	name = "Battlecoat"
+	path = /obj/item/clothing/suit/armor/light/duster/battlecoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	cost = 2
+
 /datum/gear/suit/coat/leatherbattlecoat
 	name = "Leather battle coat"
 	path = /obj/item/clothing/suit/armor/medium/vest/breastplate/khan
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	cost = 3
+
+/datum/gear/suit/coat/desperado_duster
+	name = "desperado's duster"
+	path = /obj/item/clothing/suit/armor/light/duster/desperado
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	cost = 3
+
+/datum/gear/suit/coat/brahminduster
+	name = "brahmin leather duster"
+	path = /obj/item/clothing/suit/armor/light/duster/brahmin
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
 	cost = 3
 
@@ -184,6 +231,17 @@
 						)
 */
 
+/datum/gear/suit/tan_vest
+	name = "Tan Vest"
+	path = /obj/item/clothing/suit/armor/outfit/vest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/tanned_vest
+	name = "Tanned Vest"
+	path = /obj/item/clothing/suit/armor/light/leather/tanvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
 
 /datum/gear/suit/chestgearharness
 	name = "Chest gear harness"
@@ -254,6 +312,30 @@
 	restricted_roles = list("Citizen",
 							"Prospector",
 							)
+
+/datum/gear/suit/goner_red
+	name = "olive drab trenchcoat, red"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/red
+	cost = 4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/goner_green
+	name = "olive drab trenchcoat, green"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/green
+	cost = 4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/goner_blue
+	name = "olive drab trenchcoat, blue"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/blue
+	cost = 4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/goner_yellow
+	name = "olive drab trenchcoat, yellow"
+	path = /obj/item/clothing/suit/armor/light/duster/goner/yellow
+	cost = 4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 //These should be left commented out until the holidays or special events.
 /*

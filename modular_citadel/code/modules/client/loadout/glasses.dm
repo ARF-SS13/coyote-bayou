@@ -21,6 +21,15 @@
 	name = "Large sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/big
 
+/datum/gear/glasses/biker
+	name = "biker goggles"
+	path = /obj/item/clothing/glasses/f13/biker
+	cost = 2
+
+/datum/gear/glasses/sandstorm
+	name = "sandstorm goggles"
+	path = /obj/item/clothing/glasses/legiongoggles
+
 /datum/gear/glasses/geist_gazers
 	name = "Geist Gazers Glasses"
 	path = /obj/item/clothing/glasses/geist_gazers

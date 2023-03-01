@@ -174,7 +174,7 @@
 	ckeywhitelist = list("aldrictalvalin")
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
-	new /obj/item/clothing/head/beret/headband(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom(src)
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
 	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted(src)
@@ -312,6 +312,19 @@
 	new /datum/uplink_item/device_tools/syndicate_eyepatch(src)
 	new /obj/item/clothing/shoes/russian(src)
 	new /obj/item/clothing/under/syndicate/rus_army(src)
+
+/datum/gear/donator/kits/caseapollo58143_3
+	name = "Missionary Krav Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_3
+	ckeywhitelist = list("caseapollo58143")
+
+/obj/item/storage/box/large/custom_kit/caseapollo58143_3/PopulateContents()
+	new /obj/item/implanter/krav_maga(src)
+	new /obj/item/grown/rose(src)
+	new /obj/item/clothing/under/rank/security/detective/brown(src)
+	new /obj/item/clothing/suit/det_suit/forensicsblue(src)
+	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
+	new /obj/item/lighter/bullet(src)
 
 /datum/gear/donator/kits/cavusogluzevk
 	name = "Raider Kit"
@@ -522,6 +535,17 @@
 	new /obj/item/clothing/head/f13/enclave/peacekeeper(src)
 	new /obj/item/storage/belt/military(src)
 
+/datum/gear/donator/kits/imbubbl101_2
+	name = "Syndi Kit"
+	path = /obj/item/storage/box/large/custom_kit/imbubbl101_2
+	ckeywhitelist = list("imbubbl101")
+
+/obj/item/storage/box/large/custom_kit/imbubbl101_2/PopulateContents()
+	new /obj/item/clothing/accessory/waistcoat(src)
+	new /obj/item/clothing/glasses/science/f13(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
+
 // J
 
 /datum/gear/donator/kits/jackalface
@@ -603,6 +627,7 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
+	new /obj/item/book/granter/martial/carp(src)
 
 /datum/gear/donator/kits/lucine2
 	name = "HAVOC"
@@ -804,6 +829,17 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/datum/gear/donator/kits/saltyscabbard
+	name = "Warrior Salty Kity"
+	path = /obj/item/storage/box/large/custom_kit/saltyscabbard
+	ckeywhitelist = list("saltyscabbard")
+
+/obj/item/storage/box/large/custom_kit/saltyscabbard/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/wayfarer/shamanred(src)
+	new /obj/item/clothing/head/helmet/f13/wayfarer/shamanblue(src)
+	new /obj/item/shield/riot/buckler(src)
+	new /obj/item/melee/onehanded/machete/spatha(src)
+
 /datum/gear/donator/kits/seermankhajiit00
 	name = "Warmonger"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00
@@ -957,8 +993,8 @@
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun(src)
-	new /obj/item/ammo_box/a556/sport/improvised(src)
-	new /obj/item/ammo_box/a556/sport/improvised(src)
+	new /obj/item/ammo_box/a556/improvised(src)
+	new /obj/item/ammo_box/a556/improvised(src)
 	new /obj/item/ammo_box/magazine/m556/rifle(src)
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
 	new /obj/item/binoculars(src)

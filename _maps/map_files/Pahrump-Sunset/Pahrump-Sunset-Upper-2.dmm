@@ -164,6 +164,11 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"cg" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "ch" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -409,6 +414,13 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"gV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "gW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1722,6 +1734,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Dx" = (
@@ -1743,6 +1756,11 @@
 	smooth = 1
 	},
 /area/f13/building/hospital)
+"DL" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "DP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/shelf_metal,
@@ -2082,6 +2100,7 @@
 	desc = "That is fucking PEABUS!";
 	faction = list("gecko")
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/floor/f13/wood{
 	color = "#999999"
 	},
@@ -2177,6 +2196,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "LB" = (
@@ -2398,7 +2418,6 @@
 /area/f13/building/abandoned)
 "OQ" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "OX" = (
@@ -2758,6 +2777,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/shelf_metal,
 /obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "UR" = (
@@ -2780,6 +2800,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vd" = (
@@ -2939,6 +2960,12 @@
 /area/f13/building/abandoned)
 "XF" = (
 /obj/structure/bonfire/prelit,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
+"XI" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "XN" = (
@@ -54564,7 +54591,7 @@ xC
 Lj
 La
 RB
-NX
+DL
 GP
 GP
 lR
@@ -54575,7 +54602,7 @@ rC
 cD
 GP
 GP
-NX
+DL
 fx
 SK
 xC
@@ -54837,7 +54864,7 @@ fx
 SK
 BJ
 fx
-NX
+cg
 AM
 wo
 fx
@@ -55860,7 +55887,7 @@ Df
 GP
 GP
 Wk
-NX
+cg
 Bz
 BJ
 Ks
@@ -57655,7 +57682,7 @@ SK
 SK
 SK
 fx
-NX
+cg
 GP
 Hu
 NX
@@ -57663,9 +57690,9 @@ CF
 UM
 GP
 GP
-NX
+DL
 CF
-NX
+cg
 Wk
 fx
 SK
@@ -58413,7 +58440,7 @@ La
 SK
 BJ
 fx
-ir
+XI
 GP
 GP
 RT
@@ -59190,7 +59217,7 @@ sn
 sn
 sn
 NW
-gr
+gV
 fx
 xC
 bT
@@ -59199,8 +59226,8 @@ BJ
 fx
 NX
 uT
-NX
-NX
+cg
+DL
 GK
 GP
 Hu
@@ -59715,14 +59742,14 @@ NX
 uT
 UR
 uT
-NX
+DL
 GP
 GP
 GP
 ir
 UR
 uT
-NX
+DL
 fx
 BJ
 La
@@ -61526,7 +61553,7 @@ fx
 SK
 SK
 Bz
-NX
+DL
 tg
 xm
 GP

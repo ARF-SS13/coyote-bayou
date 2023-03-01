@@ -288,6 +288,23 @@
 	category = CAT_TRIBAL
 */
 
+/datum/crafting_recipe/tribalwar/sling
+	name = "Sling"
+	result = /obj/item/gun/ballistic/revolver/sling
+	time = 30
+	reqs = list(/obj/item/weaponcrafting/string = 1,
+					/obj/item/stack/sheet/cloth = 1)
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/tribalwar/slingstaff
+	name = "Sling Staff"
+	result = /obj/item/gun/ballistic/revolver/sling/staff
+	time = 60
+	reqs = list(/obj/item/weaponcrafting/string = 2,
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	category = CAT_PRIMAL
+
 //ARROWS
 
 /* /datum/crafting_recipe/tribalwar/arrowburn

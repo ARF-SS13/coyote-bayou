@@ -276,7 +276,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = HANDGUN_RECOIL(1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -397,7 +397,7 @@
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 /* * * * * * * * * * *
  * Pearly .44 magnum revolver
@@ -424,7 +424,7 @@
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 /* * * * * * * * * * *
@@ -453,7 +453,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	automatic = 0
 	autofire_shot_delay = 0
@@ -492,7 +492,7 @@
 	init_recoil = HANDGUN_RECOIL(1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 /* * * * * * * * * * *
  * .44 single-action revolver
@@ -707,7 +707,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 //it does plenty of damage without a boost >.>
 	init_recoil = HANDGUN_RECOIL(1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -833,7 +833,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	gun_sound_properties = list(

@@ -17,12 +17,11 @@
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/magazine_wording = "magazine"
+	var/cock_wording = "rack"
 	var/en_bloc = 0
 	/// Which direction do the casings fly out?
 	var/handedness = GUN_EJECTOR_RIGHT
-	/// Does the gun automatically load itself?
-	var/autoloading = TRUE
-	var/cock_sound = 'sound/weapons/shotgunpump.ogg'
+	var/cock_sound = "gun_slide_lock"
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_LIGHT_VOLUME),
@@ -194,7 +193,7 @@
 
 /obj/item/gun/ballistic/proc/pump(mob/living/M, visible = TRUE)
 	if(visible)
-		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
+		M.visible_message(span_warning("[M] [cock_wording]\s \the [src]."), span_warning("You [cock_wording] \the [src]."))
 		playsound(M, cock_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
@@ -222,17 +221,22 @@
 
 /obj/item/gun/ballistic/attack_self(mob/living/user)
 	if(magazine)
-		if(magazine.fixed_mag)
+		if(magazine.fixed_mag || !casing_ejector)
 			pump(user, TRUE)
 			update_icon()
-			return
-		eject_magazine(user, en_bloc, !en_bloc, TRUE)
-	else if(chambered)
-		eject_chambered_round(user, TRUE)
-	else
-		to_chat(user, span_notice("There's no magazine in \the [src]."))
+		else
+			eject_magazine(user, en_bloc, !en_bloc, TRUE)
+		return
+	if(chambered)
+		pump(user, TRUE)
+		update_icon()
+		return
+	to_chat(user, span_notice("There's no magazine in \the [src]."))
 	update_icon()
 	return
+
+///obj/item/gun/ballistic/AltClick(mob/living/user)
+//	pump(user, TRUE)
 
 /obj/item/gun/ballistic/proc/eject_magazine(mob/living/user, is_enbloc, put_it_in_their_hand, sounds_and_words)
 	if(magazine.fixed_mag)
@@ -342,7 +346,7 @@
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL
-		weapon_weight = GUN_ONE_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
+		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
 		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
 		recoil_dat.modifyAllRatings(2)
@@ -350,15 +354,18 @@
 		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
 		gun_accuracy_zone_type = ZONE_WEIGHT_SHOTGUN
+		/*
 		init_firemodes = list(
 			list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
 		)
 		initialize_firemodes()
 		if(firemodes.len)
 			set_firemode(sel_mode)
+			*/
 		update_icon()
 		return 1
-
+		
+		
 /obj/item/gun/ballistic/get_dud_projectile()
 	var/proj_type
 	if(chambered)
