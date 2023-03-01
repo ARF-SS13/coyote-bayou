@@ -1291,3 +1291,8 @@
 	name = "Dark Jester Suit"
 	cost = 1
 	path = /obj/item/clothing/under/jesterdark
+
+/datum/gear/uniform/lobster
+	name = "lobster costume"
+	cost = 1
+	path = /obj/item/clothing/under/costume/lobster
