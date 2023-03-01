@@ -116,7 +116,7 @@
 	max_ammo = 2
 	multiload = 0
 
-/obj/item/ammo_box/magazine/internal/cylinder/improvised762/Initialize()
+/obj/item/ammo_box/magazine/internal/cylinder/improvised308/Initialize()
 	. = ..()
 	name += " [pick(GLOB.hobo_gun_mag_fluff["prefix"])] [pick(GLOB.hobo_gun_mag_fluff["suffix"])][prob(20) ? pick(GLOB.hobo_gun_mag_fluff["prefix"]) : ""]"
 	valid_new_calibers = GLOB.pipe_rifle_valid_calibers
