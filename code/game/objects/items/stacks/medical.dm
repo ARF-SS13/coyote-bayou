@@ -121,12 +121,12 @@
 	// limb is missing, output a message and move on
 	if(do_these_things == BODYPART_INORGANIC)
 		to_chat(user, span_warning("[C]'s [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
-	
+
 	// If our operations are a number, and that number corresponds to operations to do, good! output what we're working on and what to do
 	if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
 		output_heal_instructions = list("bodypart" = first_choice, "operations" = do_these_things)
 		return output_heal_instructions
-	
+
 	// Part wasn't there, or needed no healing. Lets find one that does need healing!
 	var/obj/item/bodypart/affecting
 	for(var/limb_slot_to_check in GLOB.main_body_parts)
@@ -179,7 +179,7 @@
 	var/mob/living/simple_animal/critter = M
 	if(M.stat == DEAD)
 		to_chat(user, span_notice(" [M] is dead. You can not help [M.p_them()]!"))
-		return 
+		return
 	if (!(critter.healable))
 		to_chat(user, span_warning("[M] cannot be healed!"))
 		return FALSE
@@ -201,7 +201,7 @@
 		return
 	if(!user.can_inject(C, TRUE))
 		return
-	
+
 	var/list/output_list = pick_a_bodypart(C, user)
 	if(!islist(output_list))
 		to_chat(user, span_phobia("Uh oh! [src] didnt return a list! This is a bug, probably! Report this pls~ =3"))
@@ -302,7 +302,7 @@
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_warning("[user] begins applying \a [src] to [target]'s [target_part]..."), 
+				span_warning("[user] begins applying \a [src] to [target]'s [target_part]..."),
 				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] [target_part]..."))
 /*			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
 				switch(needed_trait)
@@ -325,41 +325,41 @@
 		if("end")
 			if(isnull(bandage_code))
 				user.visible_message(
-					span_green("[user] applies \a [src] to [target]'s [target_part]."), 
+					span_green("[user] applies \a [src] to [target]'s [target_part]."),
 					span_green("You apply \a [src] to [user == target ? "your" : "[target]'s"] [target_part]."))
 			else
 				if(bandage_code & BANDAGE_NEW_APPLIED)
 					user.visible_message(
-						span_green("[user] applies a fresh new [src] to [target]'s [target_part]!"), 
+						span_green("[user] applies a fresh new [src] to [target]'s [target_part]!"),
 						span_green("You apply a fresh new [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
 				if(bandage_code & BANDAGE_WAS_REPAIRED)
 					user.visible_message(
-						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src]!"), 
+						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src]!"),
 						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 				if(bandage_code & BANDAGE_WAS_REPAIRED_TO_FULL)
 					user.visible_message(
-						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src], repairing them completely!"), 
+						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src], repairing them completely!"),
 						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
 				if(bandage_code & BANDAGE_TIMER_REFILLED)
 					user.visible_message(
-						span_green("[user] freshens up the bandages on [target]'s [target_part] with [src]!"), 
+						span_green("[user] freshens up the bandages on [target]'s [target_part] with [src]!"),
 						span_green("You freshen up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
-				
+
 				if(bandage_code & SUTURE_NEW_APPLIED)
 					user.visible_message(
-						span_green("[user] applies a fresh new set of [src] to [target]'s [target_part]!"), 
+						span_green("[user] applies a fresh new set of [src] to [target]'s [target_part]!"),
 						span_green("You apply a fresh new set of [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
 				if(bandage_code & SUTURE_WAS_REPAIRED)
 					user.visible_message(
-						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src]!"), 
+						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src]!"),
 						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 				if(bandage_code & SUTURE_WAS_REPAIRED_TO_FULL)
 					user.visible_message(
-						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src], repairing them completely!"), 
+						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src], repairing them completely!"),
 						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
 				if(bandage_code & SUTURE_TIMER_REFILLED)
 					user.visible_message(
-						span_green("[user] freshens up the sutures on [target]'s [target_part] with [src]!"), 
+						span_green("[user] freshens up the sutures on [target]'s [target_part] with [src]!"),
 						span_green("You freshen up the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 
 /obj/item/stack/medical/get_belt_overlay()
@@ -410,12 +410,12 @@
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_notice("[user] starts lapping at [target]'s [target_part]..."), 
+				span_notice("[user] starts lapping at [target]'s [target_part]..."),
 				span_notice("You lick at [user == target ? "your" : "[target]'s"] [target_part]..."))
 
 		if("end")
 			user.visible_message(
-				span_green("[user] lick [target]'s [target_part]!"), 
+				span_green("[user] lick [target]'s [target_part]!"),
 				span_green("You lick [user == target ? "your" : "[target]'s"] [target_part]!"))
 
 /obj/item/stack/medical/bruise_pack/one
@@ -432,7 +432,7 @@
 /* * * * * * * * * * * * * * * * * * *
  * + Quick to apply
  * + Low skill needed
- * + Prevents further blood loss 
+ * + Prevents further blood loss
  * + Heals a little brute and burn
  * - Doesnt stop bleeding on its own
  * - Falls apart easily
@@ -541,6 +541,9 @@
 
 /obj/item/stack/medical/gauze/adv/one
 	amount = 1
+
+/obj/item/stack/medical/gauze/adv/five
+	amount = 5
 
 /obj/item/stack/medical/gauze/cyborg
 	custom_materials = null
