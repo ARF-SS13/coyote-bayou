@@ -566,4 +566,6 @@ datum/gear/head/steelpot_bandolier
 	name = "jester alt"
 	path = /obj/item/clothing/head/jester/alt
 
-
+/datum/gear/head/lobster
+	name = "lobster costume hat"
+	path = /obj/item/clothing/head/lobsterhat

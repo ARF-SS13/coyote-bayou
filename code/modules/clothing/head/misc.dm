@@ -365,7 +365,7 @@
 /obj/item/clothing/head/jester/alt
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
-	icon_state = "jester_hat2"
+	icon_state = "jester2"
 	dynamic_hair_suffix = ""
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 

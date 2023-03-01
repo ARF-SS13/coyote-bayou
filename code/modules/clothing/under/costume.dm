@@ -359,7 +359,7 @@
 //clown and mime
 
 /obj/item/clothing/under/jester
-	name = "Blue and Red Jester outfit"
+	name = "Green and Red Jester outfit"
 	icon_state = "jester"
 	item_state = "jester"
 
