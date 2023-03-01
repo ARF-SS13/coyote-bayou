@@ -311,6 +311,19 @@
 	new /obj/item/clothing/shoes/russian(src)
 	new /obj/item/clothing/under/syndicate/rus_army(src)
 
+/datum/gear/donator/kits/caseapollo58143_3
+	name = "Missionary Krav Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_3
+	ckeywhitelist = list("caseapollo58143")
+
+/obj/item/storage/box/large/custom_kit/caseapollo58143_3/PopulateContents()
+	new /obj/item/implanter/krav_maga(src)
+	new /obj/item/grown/rose(src)
+	new /obj/item/clothing/under/rank/security/detective/brown(src)
+	new /obj/item/clothing/suit/det_suit/forensicsblue(src)
+	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
+	new /obj/item/lighter/bullet(src)
+
 /datum/gear/donator/kits/cavusogluzevk
 	name = "Raider Kit"
 	path = /obj/item/storage/box/large/custom_kit/cavusogluzevk
@@ -601,6 +614,7 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
+	new /obj/item/book/granter/martial/carp(src)
 
 /datum/gear/donator/kits/lucine2
 	name = "HAVOC"

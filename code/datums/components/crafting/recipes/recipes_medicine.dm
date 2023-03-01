@@ -36,8 +36,8 @@
 
 /datum/crafting_recipe/upgraded_gauze
 	name = "Improved Gauze"
-	result = /obj/item/stack/medical/gauze/adv/one
-	time = 50
+	result = /obj/item/stack/medical/gauze/adv/five
+	time = 40
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/abraxo_cleaner/sterilizine = 10)
 	category = CAT_MEDICAL
@@ -46,7 +46,7 @@
 /datum/crafting_recipe/brute_pack
 	name = "Suture Pack"
 	result = /obj/item/stack/medical/suture/five
-	time = 50
+	time = 40
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/medicine/styptic_powder = 10)
 	category = CAT_MEDICAL
@@ -62,7 +62,7 @@
 /datum/crafting_recipe/burn_pack
 	name = "Regenerative Mesh"
 	result = /obj/item/stack/medical/mesh/five
-	time = 50
+	time = 40
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/medicine/silver_sulfadiazine = 10)
 	category = CAT_MEDICAL
@@ -137,7 +137,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/garlic = 2,   //Pungent garlic.
 				/obj/item/reagent_containers/food/snacks/grown/bee_balm = 2) //Beebalm was a smelling salt utilized in the victorian era for vaporous herbal remedies to things like sore throats.
 	tools = list(TOOL_ALCHEMY_TABLE)
-	time = 50
+	time = 40
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/stimpak // Heals the same amount as healing powder and bitters for its material cost, just more refined and faster.
@@ -315,7 +315,7 @@
 	/obj/item/crafting/lunchbox = 1,
 	/obj/item/stack/cable_coil = 30
 	)
-	time = 100
+	time = 75
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 
@@ -326,7 +326,7 @@
 	/obj/item/stock_parts/chem_cartridge/crafted = 1,
 	/datum/reagent/consumable/nutriment = 60
 	)
-	time = 100
+	time = 75
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
 
@@ -341,7 +341,7 @@
 	/obj/item/stack/crafting/electronicparts = 5,
 	/datum/reagent/consumable/nutriment = 60
 	)
-	time = 100
+	time = 75
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
 
