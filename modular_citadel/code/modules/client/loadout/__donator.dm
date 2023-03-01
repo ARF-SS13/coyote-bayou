@@ -533,6 +533,17 @@
 	new /obj/item/clothing/head/f13/enclave/peacekeeper(src)
 	new /obj/item/storage/belt/military(src)
 
+/datum/gear/donator/kits/imbubbl101_2
+	name = "Syndi Kit"
+	path = /obj/item/storage/box/large/custom_kit/imbubbl101_2
+	ckeywhitelist = list("imbubbl101")
+
+/obj/item/storage/box/large/custom_kit/imbubbl101_2/PopulateContents()
+	new /obj/item/clothing/accessory/waistcoat(src)
+	new /obj/item/clothing/glasses/science/f13(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
+
 // J
 
 /datum/gear/donator/kits/jackalface
