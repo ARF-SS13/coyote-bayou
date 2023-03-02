@@ -25624,7 +25624,10 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "cOL" = (
-/obj/machinery/sleeper,
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/radbgone,
+/obj/item/storage/firstaid/radbgone,
+/obj/item/storage/firstaid/radbgone,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/hospital)
 "cOO" = (
@@ -29968,6 +29971,14 @@
 "eev" = (
 /obj/structure/flora/grass/coyote/eight,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"eew" = (
+/obj/machinery/conveyor/auto{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
 /area/f13/wasteland)
 "eex" = (
 /obj/structure/lamp_post/quadra,
@@ -36927,6 +36938,17 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland)
+"gnT" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/machinery/conveyor/auto{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/tunnel)
 "gnX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -52998,6 +53020,12 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland/city)
+"lnC" = (
+/obj/machinery/recycler,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "lor" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/coffee,
@@ -66119,6 +66147,15 @@
 	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/wasteland)
+"plH" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/machinery/recycler,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/tunnel)
 "plK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -95884,7 +95921,7 @@ nSc
 bzS
 sUI
 vcr
-lGI
+gnT
 hda
 tMz
 ubt
@@ -96141,7 +96178,7 @@ mkE
 ezr
 sUI
 vcr
-lGI
+gnT
 wSw
 pvx
 jRC
@@ -96231,7 +96268,7 @@ mHp
 igF
 eEC
 niB
-anR
+eew
 aae
 aae
 aae
@@ -96398,7 +96435,7 @@ eBT
 jKh
 sUI
 vcr
-lGI
+plH
 rye
 ubt
 oks
@@ -96488,7 +96525,7 @@ mHp
 nvn
 eEC
 hEG
-anR
+eew
 aEa
 aae
 aae
@@ -96745,7 +96782,7 @@ rFj
 tRk
 ayn
 hEG
-anR
+lnC
 aOk
 aOk
 aae
