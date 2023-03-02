@@ -189,6 +189,18 @@
 	extra_color_src = MUTCOLORS3
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/snouts/mam_snouts/fchemlight
+	name = "RadDog (Top)"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
+	icon_state = "fchemlight"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/snouts/mam_snouts/chemlight
+	name = "RadDog"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
+	icon_state = "chemlight"
+	matrixed_sections = MATRIX_ALL
+
 /datum/sprite_accessory/snouts/mam_snouts/husky
 	name = "Husky"
 	icon_state = "husky"
@@ -214,6 +226,12 @@
 /datum/sprite_accessory/snouts/mam_snouts/lcanidalt
 	name = "Mammal, Long ALT"
 	icon_state = "lcanidalt"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/lcanidalt2
+	name = "Mammal, Long ALT 2"
+	icon_state = "lcanidalt2"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/snouts/mam_snouts/scanid
