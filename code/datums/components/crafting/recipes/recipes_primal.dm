@@ -399,7 +399,7 @@
 
 /datum/crafting_recipe/tribalwar/arrowblunt
 	name = "Blunt Arrow (Nonlethal)"
-	result = /obj/item/projectile/bullet/reusable/arrow/blunt
+	result = /obj/item/ammo_casing/caseless/arrow/blunt
 	time = 10
 	reqs = list(
 		/obj/item/stack/sheet/mineral/wood = 1,
