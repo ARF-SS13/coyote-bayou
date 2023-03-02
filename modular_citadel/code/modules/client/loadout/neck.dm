@@ -2,6 +2,7 @@
 	category = LOADOUT_CATEGORY_NECK
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	slot = SLOT_NECK
+	cost = 1
 
 /datum/gear/neck/poncho
 	name = "poncho"
@@ -31,6 +32,10 @@
 	name = "Mercenary Trenchcoat"
 	path = /obj/item/storage/belt/dantecoat
 	cost = 3
+
+/datum/gear/neck/rangercape
+	name = "Ranger cape"
+	path = /obj/item/clothing/neck/mantle/ranger
 
 /datum/gear/neck/pelt
 	name = "bighorner pelt"
@@ -163,3 +168,28 @@
 /datum/gear/neck/scarf/desertscarf
 	name = "desert scarf"
 	path = /obj/item/clothing/neck/scarf/cptpatriot
+
+/datum/gear/neck/medolier
+	name = "medolier"
+	path = /obj/item/storage/belt/medolier
+	cost = 2
+
+/datum/gear/neck/bandolier
+	name = "bandolier"
+	path = /obj/item/storage/belt/bandolier
+	cost = 2
+	
+/datum/gear/neck/shoulderholster
+	name = "shoulder holster"
+	path = /obj/item/storage/belt/shoulderholster
+	cost = 2
+
+/datum/gear/belt/sword
+	name = "sword sheath"
+	path = /obj/item/storage/belt/sword
+	cost = 2
+
+/datum/gear/belt/sabre/knife
+	name = "knife bandolier" //for lots of small dicks or something IDFK
+	path = /obj/item/storage/belt/sabre/knife
+	cost = 2

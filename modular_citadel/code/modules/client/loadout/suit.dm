@@ -6,12 +6,12 @@
 /datum/gear/suit/redhood
 	name = "Red cloak"
 	path = /obj/item/clothing/suit/hooded/cloak/david
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/hoodedmask
 	name = "patched heavy leather cloak"
 	path = /obj/item/clothing/suit/hooded/outcast
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/suspenders
 	name = "suspenders"
@@ -21,16 +21,11 @@
 /datum/gear/suit/labcoat
 	name = "Labcoat"
 	path = /obj/item/clothing/suit/toggle/labcoat
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/surgicalhood
 	name = "surgical scrubs"
 	path = /obj/item/clothing/suit/hooded/surgical
-	cost = 2
-
-/datum/gear/suit/rangercape
-	name = "Ranger cape"
-	path = /obj/item/clothing/neck/mantle/ranger
 	cost = 1
 
 /datum/gear/suit/brownvest
@@ -71,7 +66,7 @@
 /datum/gear/suit/jacketleather
 	name = "Leather jacket"
 	path = /obj/item/clothing/suit/armor/light/leather/leather_jacket
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /datum/gear/suit/overcoatleather
@@ -120,25 +115,25 @@
 /datum/gear/suit/flakjack
 	name = "Flak Jacket"
 	path = /obj/item/clothing/suit/armor/outfit/vest/flakjack
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /datum/gear/suit/armorkit
 	name = "Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit/punk
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/autumn
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /datum/gear/suit/ncrcfjacket
@@ -150,13 +145,13 @@
 /datum/gear/suit/samurai  //added by TK420634 ~ 5/29/2022 "Samurai Wasteland WeebShit Edition (tm)
 	name = "Rusted Samurai Armor"
 	path = /obj/item/clothing/suit/samurai
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /datum/gear/suit/rustedcowboy
 	name = "Rusted Cowboy Outfit"
 	path = /obj/item/clothing/suit/armor/light/duster/rustedcowboy
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /// 	Beginning of Coats/Armor section
@@ -167,32 +162,32 @@
 /datum/gear/suit/coat/battlecoat
 	name = "Battlecoat"
 	path = /obj/item/clothing/suit/armor/light/duster/battlecoat
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
 /datum/gear/suit/coat/leatherbattlecoat
 	name = "Leather battle coat"
 	path = /obj/item/clothing/suit/armor/medium/vest/breastplate/khan
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 3
 
 /datum/gear/suit/coat/desperado_duster
 	name = "desperado's duster"
 	path = /obj/item/clothing/suit/armor/light/duster/desperado
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
-	cost = 3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/coat/brahminduster
 	name = "brahmin leather duster"
 	path = /obj/item/clothing/suit/armor/light/duster/brahmin
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
-	cost = 3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/coat/marlow
 	name = "Marlow gang overcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/marlowsuit
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
-	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/coat/marlow/ikesuit
 	name = "Gunfighter's overcoat"
@@ -246,14 +241,14 @@
 /datum/gear/suit/chestgearharness
 	name = "Chest gear harness"
 	path = /obj/item/clothing/suit/armor/light/leather/rig
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 2
 
 /datum/gear/suit/fieldscribe
 	name = "Fieldscribe suit"
 	path = /obj/item/clothing/suit/toggle/labcoat/fieldscribe
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
 /*	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
 							"Senior Scribe",
@@ -263,8 +258,8 @@
 /datum/gear/suit/scribecoat
 	name = "Fieldscribe coat"
 	path = /obj/item/clothing/suit/toggle/labcoat/scribecoat
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
 /*	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
 							"Senior Scribe",
@@ -274,8 +269,8 @@
 /datum/gear/suit/town
 	name = "Town Trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/town
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 1
 	restricted_desc = "Nash"
 	restricted_roles = list("Mayor",
 							"Secretary",
@@ -293,8 +288,8 @@
 /datum/gear/suit/deputyvest
 	name = "NPD armor vest"
 	path = /obj/item/clothing/suit/armor/medium/vest/oasis
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 	restricted_desc = "Nash Police, Nash Officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
@@ -307,35 +302,37 @@
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
 	path = /obj/item/clothing/suit/hazardvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+	/* why the fuck was this restricted?
 	restricted_roles = list("Citizen",
 							"Prospector",
 							)
+*/
 
 /datum/gear/suit/goner_red
 	name = "olive drab trenchcoat, red"
 	path = /obj/item/clothing/suit/armor/light/duster/goner/red
-	cost = 4
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 
 /datum/gear/suit/goner_green
 	name = "olive drab trenchcoat, green"
 	path = /obj/item/clothing/suit/armor/light/duster/goner/green
-	cost = 4
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 
 /datum/gear/suit/goner_blue
 	name = "olive drab trenchcoat, blue"
 	path = /obj/item/clothing/suit/armor/light/duster/goner/blue
-	cost = 4
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 
 /datum/gear/suit/goner_yellow
 	name = "olive drab trenchcoat, yellow"
 	path = /obj/item/clothing/suit/armor/light/duster/goner/yellow
-	cost = 4
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 
 //These should be left commented out until the holidays or special events.
 /*

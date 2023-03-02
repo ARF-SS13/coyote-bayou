@@ -2,6 +2,7 @@
 	category = LOADOUT_CATEGORY_HEAD
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	slot = SLOT_HEAD
+	cost = 1
 
 /datum/gear/head/baseball
 	name = "ballcap"
@@ -54,23 +55,19 @@
 /datum/gear/head/utilityolive
 	name = "olive utility covering"
 	path = /obj/item/clothing/head/soft/f13/utility/olive
-	cost = 2
 
 /datum/gear/head/utilitynavy
 	name = "navy utility covering"
 	path = /obj/item/clothing/head/soft/f13/utility/navy
-	cost = 2
 
 /datum/gear/head/utilitytan
 	name = "tan utility covering"
 	path = /obj/item/clothing/head/soft/f13/utility/tan
-	cost = 2
 
 /datum/gear/head/vaquerohat
 	name = "vaquero hat"
 	path = /obj/item/clothing/head/helmet/f13/vaquerohat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/pirate
 	name = "pirate hat"
@@ -79,23 +76,19 @@
 /datum/gear/head/rice_hat
 	name = "rice hat"
 	path = /obj/item/clothing/head/rice_hat
-	cost = 2
 
 /datum/gear/head/stormchaser
 	name = "stormchaser hat"
 	path = /obj/item/clothing/head/f13/stormchaser
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/fedora
 	name = "fedora"
 	path = /obj/item/clothing/head/fedora
-	cost = 2
 
 /datum/gear/head/trilby
 	name = "trilby"
 	path = /obj/item/clothing/head/f13/trilby
-	cost = 2
 
 /datum/gear/head/gambler
 	name = "gambler hat"
@@ -108,17 +101,14 @@
 /datum/gear/head/that
 	name = "top hat"
 	path = /obj/item/clothing/head/that
-	cost = 2
 
 /datum/gear/head/beaver
 	name = "beaverskin top hat"
 	path = /obj/item/clothing/head/f13/beaver
-	cost = 2
 
 /datum/gear/head/purpletophat
 	name = "purple tophat"
 	path = /obj/item/clothing/head/f13/purple
-	cost = 2
 
 /datum/gear/head/mailmanhat
 	name = "mailman's hat"
@@ -133,27 +123,22 @@
 	name = "green sombrero"
 	path = /obj/item/clothing/head/sombrero/green
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/scarecrow
 	name = "scarecrow hat"
 	path = /obj/item/clothing/head/scarecrow_hat
-	cost = 2
 
 /datum/gear/head/wig
 	name = "black wig"
 	path = /obj/item/clothing/head/wig
-	cost = 2
 
 /datum/gear/head/wigrandom
 	name = "randomized wig"
 	path = /obj/item/clothing/head/wig/random
-	cost = 2
 
 /datum/gear/head/powderedwig
 	name = "powdered wig"
 	path = /obj/item/clothing/head/powdered_wig
-	cost = 2
 
 /datum/gear/head/nurse
 	name = "nurse hat"
@@ -184,19 +169,16 @@
 	name = "brahmin leather cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/cowboy_alt
 	name = "rusted cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/cowboyhat
 	name = "cowboy hat"
 	path = /obj/item/clothing/head/cowboyhat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/cowboyhat/pink
 	name = "pink cowboy hat"
@@ -217,25 +199,21 @@
 	name = "Boss of the Plains Hat"
 	path = /obj/item/clothing/head/helmet/f13/marlowhat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/big_hat
 	name = "big hat"
 	path = /obj/item/clothing/head/f13/town/big
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/bountyhunter
 	name = "bounty hunter hat"
 	path = /obj/item/clothing/head/hunter
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/bandit
 	name = "bandit hat"
 	path = /obj/item/clothing/head/fluff/bandit
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/wkepi
 	name = "white kepi"
@@ -256,25 +234,21 @@
 /datum/gear/head/russobluecamohat
 	name = "Russian blue camo beret"
 	path = /obj/item/clothing/head/fluff/gambler
-	cost = 2
 
 /datum/gear/head/ranger_tan
 	name = "tan cowboy hat"
 	path = /obj/item/clothing/head/f13/ranger_hat/tan
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/ranger_grey
 	name = "grey cowboy hat"
 	path = /obj/item/clothing/head/f13/ranger_hat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/ranger_banded
 	name = "banded cowboy hat"
 	path = /obj/item/clothing/head/f13/ranger_hat/banded
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
-	cost = 2
 
 /datum/gear/head/flakhelm
 	name = "flak helmet"
@@ -293,51 +267,42 @@
 /datum/gear/head/police
 	name = "Police Officer's cap"
 	path = /obj/item/clothing/head/f13/police/officer
-	cost = 2
 
 /datum/gear/head/police/sergeant
 	name = "Police campaign hat"
 	path = /obj/item/clothing/head/f13/police/sergeant
-	cost = 2
 
 /datum/gear/head/police/lieutenant
 	name = "Police Lieutenant's cap"
 	path = /obj/item/clothing/head/f13/police/lieutenant
-	cost = 3
 
 //US
 
 /datum/gear/head/usarmy
 	name = "US Army field cap"
 	path = /obj/item/clothing/head/f13/army
-	cost = 2
 
 /datum/gear/head/usarmy/officer
 	name = "US Army officer's cap"
 	path = /obj/item/clothing/head/f13/army/officer
-	cost = 2
 
 /datum/gear/head/usarmy/beret
 	name = "US Army beret"
 	path = /obj/item/clothing/head/f13/army/beret
-	cost = 2
 
 /datum/gear/head/usarmy/beretairborne
 	name = "US Army airborne beret"
 	path = /obj/item/clothing/head/f13/army/beret/airborne
-	cost = 2
 
 //CHINA
 
 /datum/gear/head/chinese
 	name = "PLA field cap"
 	path = /obj/item/clothing/head/f13/chinese
-	cost = 2
 
 /datum/gear/head/chinese/officer
 	name = "PLA officer's cap"
 	path = /obj/item/clothing/head/f13/chinese/officer
-	cost = 2
 
 /datum/gear/head/khan_horned
 	name = "horned helmet"
@@ -354,23 +319,20 @@
 /datum/gear/head/antler
 	name = "antler skullcap"
 	path = /obj/item/clothing/head/helmet/f13/wayfarer/antler
-	cost = 1
 
 /datum/gear/head/khan_bandana
 	name = "outlaw bandana"
 	path = /obj/item/clothing/head/helmet/f13/khan/bandana
-	cost = 1
 
 /datum/gear/head/headband
+	name = "red headband"
 	path = /obj/item/clothing/head/beret/headband
-	cost = 1
 
 //NCR
 
 /datum/gear/head/ncr_sapper
 	name = "NCR sapper beret"
 	path = /obj/item/clothing/head/beret/ncr/ncr_sapper
-	cost = 4
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	/*restricted_desc = "NCR"
 	restricted_roles = list("NCR Combat Engineer",
@@ -460,7 +422,6 @@ datum/gear/head/steelpot_bandolier
 	name = "NCR slouch hat"
 	path = /obj/item/clothing/head/f13/ncr/ncr_slouch
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
 	/*restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -481,7 +442,6 @@ datum/gear/head/steelpot_bandolier
 	name = "NCR field cap"
 	path = /obj/item/clothing/head/f13/ncr/ncr_flapcap
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
 	/*restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -502,7 +462,6 @@ datum/gear/head/steelpot_bandolier
 	name = "NCR campaign hat"
 	path = /obj/item/clothing/head/f13/ncr/ncr_campaign
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
 	/*restricted_desc = "NCR"
 	restricted_roles = list("NCR Sergeant",
 							"NCR Heavy Trooper"
@@ -512,7 +471,7 @@ datum/gear/head/steelpot_bandolier
 	name = "light security helmet"
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
-	cost = 3
+	cost = 1
 	restricted_desc = "Nash PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",

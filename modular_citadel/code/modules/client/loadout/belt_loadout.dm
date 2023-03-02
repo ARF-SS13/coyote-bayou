@@ -39,10 +39,6 @@
 	name = "medical belt"
 	path = /obj/item/storage/belt/medical
 
-/datum/gear/belt/medolier
-	name = "medolier"
-	path = /obj/item/storage/belt/medolier
-
 /datum/gear/belt/military
 	name = "chest rig"
 	path = /obj/item/storage/belt/military
@@ -51,19 +47,15 @@
 	name = "webbing"
 	path = /obj/item/storage/belt/military/alt
 
-/datum/gear/belt/bandolier
-	name = "bandolier"
-	path = /obj/item/storage/belt/bandolier
-
 /datum/gear/belt/military/snack
 	name = "tactical snack rig" //hi dan~
 	path = /obj/item/storage/belt/military/snack
 	cost = 4 //it comes full with 22 snacks inside, literally overflowing
 
 /datum/gear/belt/military/plush
-	name = "tactical plushie rig" //hi dan~
+	name = "tactical plushie rig"
 	path = /obj/item/storage/belt/military/plush
-	cost = 6
+	cost = 4 //so. many. plushies.
 
 /datum/gear/belt/army
 	name = "army belt"
@@ -81,14 +73,6 @@
 	name = "hip holster"
 	path = /obj/item/storage/belt/legholster
 
-/datum/gear/belt/shoulderholster
-	name = "shoulder holster"
-	path = /obj/item/storage/belt/shoulderholster
-
-/datum/gear/belt/sword
-	name = "sword sheath"
-	path = /obj/item/storage/belt/sword
-
 /datum/gear/belt/sword/twin
 	name = "twin sheath" //for hemidicks
 	path = /obj/item/storage/belt/sword/twin
@@ -96,7 +80,4 @@
 /datum/gear/belt/sabre/heavy
 	name = "heavy-duty sheath" //for the heaviest dicks
 	path = /obj/item/storage/belt/sabre/heavy
-/datum/gear/belt/sabre/knife
-	name = "knife bandolier" //for lots of small dicks or something IDFK
-	path = /obj/item/storage/belt/sabre/knife
 

@@ -186,15 +186,15 @@ Mayor
 	id = /obj/item/card/id/silver
 	belt = /obj/item/kit_spawner/townie/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
-	glasses = /obj/item/clothing/glasses/regular/hipster
-	gloves = /obj/item/clothing/gloves/color/white
+	//glasses = /obj/item/clothing/glasses/regular/hipster
+	//gloves = /obj/item/clothing/gloves/color/white
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	r_hand = /obj/item/storage/briefcase/secretary
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/seclite
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	uniform = /obj/item/clothing/under/suit/black
+	//shoes = /obj/item/clothing/shoes/f13/fancy
+	//uniform = /obj/item/clothing/under/suit/black
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/ammo_box/magazine/m9mm = 1,
@@ -286,8 +286,8 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	uniform = /obj/item/clothing/under/f13/sheriff
-	shoes = /obj/item/clothing/shoes/f13/cowboy
+	//uniform = /obj/item/clothing/under/f13/sheriff
+	//shoes = /obj/item/clothing/shoes/f13/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_pocket = /obj/item/storage/bag/money/small/den
 	backpack_contents = list(
@@ -405,8 +405,8 @@ Mayor
 	suit_store = /obj/item/storage/belt/legholster
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	uniform = /obj/item/clothing/under/f13/cowboyb
+	//shoes = /obj/item/clothing/shoes/f13/explorer
+	//uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 1,
@@ -688,12 +688,12 @@ Mayor
 	chemwhiz = TRUE
 	belt = /obj/item/kit_spawner/townie/doctor
 	ears = /obj/item/radio/headset/headset_town/medical
-	uniform = /obj/item/clothing/under/f13/medic
+	//uniform = /obj/item/clothing/under/f13/medic
 	neck = /obj/item/clothing/neck/stethoscope
-	suit = /obj/item/clothing/suit/toggle/labcoat
+	//suit = /obj/item/clothing/suit/toggle/labcoat
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
-	shoes = /obj/item/clothing/shoes/sneakers/white
+	//shoes = /obj/item/clothing/shoes/sneakers/white
 	id = /obj/item/card/id/dendoctor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
@@ -795,11 +795,11 @@ Mayor
 /datum/outfit/job/den/f13barkeep
 	name = "Barkeep"
 	jobtype = /datum/job/oasis/f13barkeep
-	uniform = /obj/item/clothing/under/f13/bartenderalt
+	//uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
 	belt = /obj/item/kit_spawner/townie/barkeep
-	shoes = /obj/item/clothing/shoes/workboots/mining
+	//shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
@@ -887,8 +887,8 @@ Mayor
 	belt = /obj/item/kit_spawner/townie
 	//suit_store = /obj/item/kit_spawner/tools //suit store not workin for some reason
 	id = /obj/item/card/id/dogtag/town
-	uniform = /obj/item/clothing/under/f13/settler
-	shoes = /obj/item/clothing/shoes/jackboots
+	//uniform = /obj/item/clothing/under/f13/settler
+	//shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
@@ -1100,16 +1100,16 @@ Mayor
 	jobtype = /datum/job/oasis/f13detective
 	belt = /obj/item/kit_spawner/lawman
 	suit = /obj/item/clothing/suit/det_suit/grey
-	uniform = /obj/item/clothing/under/f13/detectivealt
+	//uniform = /obj/item/clothing/under/f13/detectivealt
 	head = /obj/item/clothing/head/f13/det_hat_alt
 	ears = /obj/item/radio/headset/headset_town/lawman
-	shoes = /obj/item/clothing/shoes/laceup
+	//shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id/silver
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	suit_store = /obj/item/gun/ballistic/revolver
+	//suit_store = /obj/item/gun/ballistic/revolver
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/pda/detective=1,
@@ -1148,10 +1148,10 @@ Mayor
 	jobtype = /datum/job/oasis/f13banker
 	belt = /obj/item/kit_spawner/lawman
 
-	uniform = /obj/item/clothing/under/lawyer/blacksuit
+	//uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_town/commerce
-	shoes = /obj/item/clothing/shoes/f13/fancy
+	//shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
@@ -1237,14 +1237,14 @@ Mayor
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
 	belt = /obj/item/kit_spawner/townie
-	uniform = /obj/item/clothing/under/f13/roving
+	//uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	gloves = /obj/item/clothing/gloves/fingerless
 	l_pocket = /obj/item/storage/bag/money/small/den
 	r_pocket = /obj/item/flashlight/glowstick
-	shoes = /obj/item/clothing/shoes/f13/explorer
+	//shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/pda/quartermaster,
@@ -1334,14 +1334,14 @@ Mayor
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
 	belt = /obj/item/kit_spawner/townie
-	uniform = /obj/item/clothing/under/f13/roving
+	//uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
-	gloves = /obj/item/clothing/gloves/fingerless
+	//gloves = /obj/item/clothing/gloves/fingerless
 	l_pocket = /obj/item/storage/bag/money/small/den
 	r_pocket = /obj/item/flashlight/glowstick
-	shoes = /obj/item/clothing/shoes/f13/explorer
+	//shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx)
 
