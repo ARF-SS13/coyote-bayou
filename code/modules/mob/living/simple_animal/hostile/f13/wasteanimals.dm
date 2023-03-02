@@ -792,3 +792,45 @@
 	desc_short = "Small, squishy, and numerous."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 
+/mob/living/simple_animal/hostile/gelcube
+	name = "gelatinous cube"
+	desc = "A big green radioactive cube creature, it jiggles with menacing wiggles and is making some sort of goofy face at you."
+	icon = 'modular_coyote/icons/mob/vatgrowing.dmi'
+	icon_state = "gelatinous"
+	icon_living = "gelatinous"
+	icon_dead = "gelatinous_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	can_ghost_into = TRUE
+	speak_chance = 0
+	turns_per_move = 5
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
+	butcher_difficulty = 1.5
+	response_help_simple = "jiggles"
+	response_disarm_simple = "wiggles"
+	response_harm_simple = "shakes"
+	taunt_chance = 30
+	speed = 8
+	maxHealth = 1000 
+	health = 1000
+	harm_intent_damage = 30
+	obj_damage = 15
+	melee_damage_lower = 35
+	melee_damage_upper = 45
+	attack_verb_simple = "goops"
+	attack_sound = 'sound/effects/attackblob.ogg'
+	speak_emote = list("glorbles")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("the tungsten cube") //at last, I am at peace ~TK
+	gold_core_spawnable = HOSTILE_SPAWN
+	a_intent = INTENT_HARM
+
+	emote_taunt_sound = list('sound/effects/bubbles.ogg')
+	emote_taunt = list("blorgles")
+	aggrosound = list('sound/misc/splort.ogg')
+	idlesound = list('sound/vore/prey/squish_01.ogg') //God forgive me for what I must do. Its just a perfect sound. ~TK
+	death_sound = 'sound/misc/crack.ogg'
+	waddle_amount = 4
+	waddle_up_time = 3
+	waddle_side_time = 2
+	desc_short = "Big, squishy, and gelatinous."
