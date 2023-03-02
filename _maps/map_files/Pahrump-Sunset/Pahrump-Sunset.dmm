@@ -19696,6 +19696,15 @@
 	name = "shutters button";
 	pixel_y = -24
 	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "sunsetdung1"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ruins)
 "bwN" = (
