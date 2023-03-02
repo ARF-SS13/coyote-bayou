@@ -19066,9 +19066,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mmH" = (
-/obj/structure/flora/rock/pile/largejungle,
-/turf/open/water,
-/area/f13/tunnel)
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "Supmut"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/caves)
 "mmS" = (
 /obj/structure/sign/yield{
 	pixel_x = 12;
@@ -26580,14 +26585,9 @@
 	},
 /area/f13/building/sewers)
 "rSH" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "Supmut"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/caves)
+/obj/structure/flora/rock/pile/largejungle,
+/turf/closed/indestructible/rock,
+/area/f13/tunnel)
 "rTb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -67022,7 +67022,7 @@ bsC
 bsC
 aac
 aac
-bsC
+rnh
 "}
 (126,1,1) = {"
 aaa
@@ -67279,7 +67279,7 @@ haC
 mPP
 bKb
 rZl
-mmH
+rSH
 "}
 (127,1,1) = {"
 aaa
@@ -67536,7 +67536,7 @@ uDW
 kdq
 bPR
 iRj
-mmH
+rSH
 "}
 (128,1,1) = {"
 aaa
@@ -67793,7 +67793,7 @@ haC
 fyO
 bPR
 bKb
-xLb
+rnh
 "}
 (129,1,1) = {"
 aaa
@@ -68050,7 +68050,7 @@ uDW
 uIC
 gck
 bKb
-bsC
+rnh
 "}
 (130,1,1) = {"
 aaa
@@ -68307,7 +68307,7 @@ mIw
 bPR
 gck
 bPR
-xLb
+rnh
 "}
 (131,1,1) = {"
 aaa
@@ -68564,7 +68564,7 @@ pom
 mRk
 uIC
 bPR
-bsC
+rnh
 "}
 (132,1,1) = {"
 aaa
@@ -68821,7 +68821,7 @@ mby
 mRk
 uIC
 bPR
-bsC
+rnh
 "}
 (133,1,1) = {"
 aaa
@@ -69078,7 +69078,7 @@ psv
 haC
 uIC
 bKb
-xLb
+rnh
 "}
 (134,1,1) = {"
 aaa
@@ -69335,7 +69335,7 @@ bsC
 bsC
 bsC
 bsC
-bsC
+rnh
 "}
 (135,1,1) = {"
 aaa
@@ -97735,7 +97735,7 @@ xwF
 aaa
 aaA
 aaA
-rSH
+mmH
 sxV
 sEg
 aaA

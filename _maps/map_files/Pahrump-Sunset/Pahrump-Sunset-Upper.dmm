@@ -284,6 +284,12 @@
 /obj/effect/spawner/lootdrop/lighter,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"alf" = (
+/obj/structure/wreck/trash/machinepile,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "amk" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -898,6 +904,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"aRD" = (
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/caves)
 "aRH" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/roof,
@@ -1221,6 +1230,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/gasmask_goner,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "biq" = (
@@ -1479,6 +1489,13 @@
 "bwi" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
+/area/f13/building)
+"bxk" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
 /area/f13/building)
 "bxT" = (
 /obj/item/stack/sheet/animalhide/gondola,
@@ -1760,6 +1777,21 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building/massfusion)
+"bQP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/item/storage/bag/trash,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "bQR" = (
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital)
@@ -2579,6 +2611,16 @@
 /obj/item/flashlight/lamp,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"cRp" = (
+/turf/closed/indestructible/rock{
+	desc = "A pre-War supermart wall made of reinforced concrete.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "supermart wall";
+	smooth = 1
+	},
+/area/f13/building)
 "cSp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2804,6 +2846,14 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"dcr" = (
+/obj/structure/window/fulltile/store{
+	icon_state = "ruinswindowbrokenvertical"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "ddf" = (
 /obj/structure/table,
 /obj/machinery/light/small{
@@ -4066,6 +4116,11 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/massfusion)
+"eAu" = (
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "eAG" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -6067,6 +6122,17 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"gFd" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "gGa" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -6450,6 +6516,7 @@
 	dir = 1
 	},
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "hbn" = (
@@ -6850,6 +6917,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"hwp" = (
+/obj/structure/window/fulltile/store{
+	icon_state = "ruinswindowvertical"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "hwx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
@@ -7258,6 +7333,12 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
+/area/f13/building)
+"hSc" = (
+/obj/structure/simple_door/house{
+	name = "Katsuro Entertainment"
+	},
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "hSj" = (
 /obj/effect/decal/cleanable/dirt{
@@ -9179,6 +9260,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"jWd" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "jWA" = (
 /obj/machinery/light{
 	dir = 4
@@ -11290,6 +11377,18 @@
 "mlh" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/caves)
+"mmH" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "mmP" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/gun/ballistic/shotgun/trench,
@@ -12450,6 +12549,16 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"nBH" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/table,
+/obj/item/storage/fancy/cigarettes/cigpack_greytort,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "nBO" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/structure/table/reinforced,
@@ -13031,6 +13140,18 @@
 /obj/structure/rack,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"okO" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/closet/cardboard,
+/obj/item/stack/rods/twentyfive,
+/obj/item/radio/off,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "okV" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13312,6 +13433,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"oBj" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/office,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
+	},
+/area/f13/building)
 "oBn" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/ammo_box/a357box,
@@ -15953,6 +16084,14 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"rEd" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
 	},
 /area/f13/building)
 "rEU" = (
@@ -21003,6 +21142,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "xLo" = (
@@ -21434,6 +21574,12 @@
 	color = "#444444"
 	},
 /area/f13/wasteland)
+"ykW" = (
+/obj/structure/closet,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "ylF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bookcase{
@@ -63244,7 +63390,7 @@ ips
 fDT
 ips
 ips
-oPT
+ykW
 oZc
 ips
 rAp
@@ -64018,7 +64164,7 @@ dDq
 ips
 ips
 uLf
-oPT
+ykW
 maO
 oPT
 hHO
@@ -83216,10 +83362,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 aKa
 aKa
 aKa
@@ -83230,6 +83372,10 @@ oez
 oez
 oez
 oez
+aKa
+aKa
+aKa
+aKa
 oez
 oez
 oez
@@ -83473,20 +83619,20 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-vje
 aKa
-hsd
-hsd
-hsd
 aKa
-vje
-vje
-vje
+aKa
+aKa
+aKa
+aKa
 oez
 oez
+oez
+aKa
+aKa
+aKa
+aKa
+aKa
 oez
 oez
 vje
@@ -83730,20 +83876,20 @@ oez
 oez
 oez
 oez
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
 oez
 oez
-vje
-vje
-aKa
-aKa
-aKa
-aKa
-aKa
-vje
-vje
-vje
-vje
 oez
+aKa
+aKa
+aKa
+kjh
+aKa
 oez
 vje
 vje
@@ -83987,20 +84133,20 @@ oez
 oez
 oez
 oez
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
 oez
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+oez
+aKa
+aKa
+aKa
+aKa
+kjh
+aKa
 vje
 vje
 vje
@@ -84244,20 +84390,20 @@ vje
 oez
 oez
 oez
+aKa
+aKa
+kjh
+aKa
+aKa
+aKa
+aKa
 oez
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -84501,20 +84647,20 @@ vje
 vje
 vje
 oez
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+aKa
+aKa
+kjh
+cRp
+dcr
+dcr
+dcr
+dcr
+hwp
+hwp
+cRp
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -84757,21 +84903,21 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+aRD
+aKa
+aKa
+kjh
+cRp
+okO
+eAu
+oBj
+nBH
+mmH
+bQP
+cRp
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -85014,21 +85160,21 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+aRD
+aKa
+aKa
+aKa
+cRp
+bxk
+eAu
+eAu
+eAu
+rEd
+eAu
+cRp
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -85271,21 +85417,21 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+aRD
+aKa
+aKa
+aKa
+cRp
+bxk
+rEd
+gFd
+rEd
+eAu
+eAu
+cRp
+aKa
+kjh
+aKa
 vje
 vje
 vje
@@ -85528,21 +85674,21 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+aRD
+aKa
+oez
+aKa
+hSc
+eAu
+rEd
+gFd
+gFd
+eAu
+alf
+cRp
+aKa
+kjh
+aKa
 vje
 vje
 vje
@@ -85786,20 +85932,20 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+aKa
+aKa
+aKa
+cRp
+eAu
+rEd
+eAu
+eAu
+eAu
+jWd
+cRp
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -86046,14 +86192,14 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
-vje
+cRp
+cRp
+cRp
+cRp
+cRp
+cRp
+cRp
+cRp
 vje
 vje
 vje
