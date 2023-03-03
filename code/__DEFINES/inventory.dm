@@ -200,6 +200,7 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 	/obj/item/ammo_box/rev308,
 	/obj/item/ammo_box/c4570,
 	/obj/item/ammo_box/a3006,
+	/obj/item/ammo_box/c22,
 	/obj/item/ammo_box/a308,
 	/obj/item/ammo_box/a556/stripper,
 	/obj/item/ammo_box/needle,
@@ -535,7 +536,7 @@ GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 /// Things allowed in a scabbard
 GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
-	/obj/item/melee,
+	/obj/item/melee/onehanded/knife,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
@@ -756,11 +757,11 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_NECKPRON_GENERIC_MAX_TOTAL_SPACE STORAGE_NECKPRON_GENERIC_MAX_SIZE * STORAGE_NECKPRON_GENERIC_MAX_ITEMS
 
 /// How many items total fit in a holster neckpron
-#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 7
+#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 6
 /// How big a thing can fit in a holster neckpron
 #define STORAGE_NECKPRON_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a holster neckpron
-#define STORAGE_NECKPRON_HOLSTER_MAX_TOTAL_SPACE STORAGE_NECKPRON_HOLSTER_MAX_ITEMS * STORAGE_NECKPRON_HOLSTER_MAX_SIZE
+#define STORAGE_NECKPRON_HOLSTER_MAX_TOTAL_SPACE WEIGHT_CLASS_NORMAL * 2
 
 /* * * * * * * * * * * * * * *
  * Suit slot inventory things

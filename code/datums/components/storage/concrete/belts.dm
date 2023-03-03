@@ -37,6 +37,7 @@
 /datum/component/storage/concrete/belt/specialized/gun/Initialize()
 	. = ..()
 	can_hold = GLOB.gunbelt_allowed
+	quickdraw = TRUE //will see if this works!
 
 /datum/component/storage/concrete/belt/specialized/plush
 	max_items = 21

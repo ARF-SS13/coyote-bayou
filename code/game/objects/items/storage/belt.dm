@@ -691,23 +691,16 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT
-	fitting_swords = list(/obj/item/melee/smith/machete,
-	/obj/item/melee/smith/machete/reforged,
-	/obj/item/melee/smith/wakizashi,
-	/obj/item/melee/smith/sword,
-	/obj/item/melee/smith/twohand/axe,
-	/obj/item/melee/smith/twohand/katana,
-	/obj/item/melee/smith/sword/sabre,
-	/obj/item/melee/onehanded/machete,
-	/obj/item/melee/onehanded/club,
-	/obj/item/melee/classic_baton,
-	/obj/item/twohanded/fireaxe,
-	/obj/item/twohanded/baseball,
-	/obj/item/twohanded/sledgehammer/simple,
-	/obj/item/melee/transforming/energy/axe/protonaxe,
-	/obj/item/melee/powered/ripper)
-	starting_sword = null
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+
+/obj/item/storage/belt/sabre/heavy/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_combined_w_class = 4
+	STR.can_hold = typecacheof(list(/obj/item/melee))
+	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/knife
 	name = "knife bandolier"
@@ -722,11 +715,11 @@
 
 /obj/item/storage/belt/sabre/knife/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.knifebelt_allowed
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage) //up to seven knives and daggers
+	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
+	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	STR.can_hold = typecacheof(list(/obj/item/melee)) //any small sized stabby
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/rapier
@@ -752,8 +745,16 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT
-	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
+	slot_flags = ITEM_SLOT_NECK
+
+/obj/item/storage/belt/sword/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 3
+	STR.can_hold = typecacheof(list(/obj/item/melee))
+	STR.quickdraw = TRUE
 
 // Instead of half-assed broken weaboo stuff lets have something that works.
 /obj/item/storage/belt/sword/twin
@@ -761,15 +762,15 @@
 	desc = "A set of sheathes and straps for carrying two curved japanese style swords."
 	icon_state = "sheath_twin"
 	item_state = "sheath_twin"
-	fitting_swords = list(/obj/item/melee/smith/wakizashi, /obj/item/melee/smith/twohand/katana, /obj/item/melee/bokken)
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 
 /obj/item/storage/belt/sword/twin/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 2
-	STR.max_w_class = WEIGHT_CLASS_BULKY + WEIGHT_CLASS_NORMAL //katana and waki.
-	STR.max_volume = 7
-	STR.can_hold = typecacheof(fitting_swords)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 6
+	STR.can_hold = typecacheof(list(/obj/item/melee))
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/waistsheath

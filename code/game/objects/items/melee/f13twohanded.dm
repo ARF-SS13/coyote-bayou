@@ -546,7 +546,7 @@
 	. = ..()
 	if(!active)
 		return
-	empulse_using_range(A, emp_radius) //fox go a (A)
+	empulse_using_range(A, emp_radius, log=0) //fox go a (A)
 
 //dan kelly is a nerd NO YOU ARE!!!
 
