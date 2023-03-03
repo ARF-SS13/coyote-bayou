@@ -5333,6 +5333,7 @@
 	pixel_x = 18;
 	pixel_y = 12
 	},
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "cfj" = (
@@ -8570,6 +8571,7 @@
 "eoM" = (
 /obj/structure/rack,
 /obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/weapon/unique,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -12403,6 +12405,8 @@
 "hqo" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/plasteel/twenty,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -30222,12 +30226,12 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "uKr" = (
-/obj/structure/fence{
-	dir = 8
+/obj/structure/fluff/rails,
+/obj/structure/handrail/g_central{
+	dir = 1;
+	pixel_y = 23
 	},
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "uKu" = (
@@ -32526,9 +32530,7 @@
 /area/f13/caves)
 "wzY" = (
 /obj/effect/decal/waste,
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "wAv" = (
@@ -94920,7 +94922,7 @@ adz
 oHv
 adz
 adz
-ceZ
+adz
 adz
 rIc
 xWj
@@ -94931,7 +94933,7 @@ alR
 adz
 adz
 adz
-adz
+aFt
 ghn
 adz
 adz
@@ -95178,17 +95180,17 @@ xWj
 adz
 rIc
 rIc
-mgL
+adz
 adz
 oHv
 adz
-adz
+aFt
 adz
 adz
 adz
 rIc
 adz
-adz
+aFt
 adz
 ghn
 xwF
@@ -95439,7 +95441,7 @@ adz
 adz
 oHv
 ygq
-adz
+aFt
 mgL
 kSW
 adz
@@ -95684,7 +95686,7 @@ adz
 adz
 aaA
 vCe
-ygq
+adz
 mgL
 bgr
 adz
@@ -95696,15 +95698,15 @@ adz
 adz
 oHv
 adz
-ygq
+aFt
 adz
 adz
 adz
 mgL
 adz
-adz
-adz
-adz
+aFt
+aFt
+aFt
 xwF
 aaa
 xwF
@@ -95940,22 +95942,22 @@ giw
 adz
 adz
 jtF
-sFr
+adz
 fNV
 adz
-bgr
+adz
 ghn
 oHv
 adz
 adz
 adz
 adz
-ygq
+aFt
 oHv
 adz
 alR
 adz
-bgr
+adz
 bgr
 adz
 adz
@@ -96198,13 +96200,13 @@ aaA
 aaA
 aaA
 adz
-ygq
 adz
 adz
 adz
+aFt
 oHv
 adz
-ygq
+adz
 adz
 bgr
 adz
@@ -96460,10 +96462,10 @@ adz
 nji
 ceZ
 oHv
-ygq
+adz
 adz
 nji
-bgr
+adz
 wzY
 xWj
 adz
@@ -96472,9 +96474,9 @@ ngw
 adz
 adz
 nji
-ygq
 adz
-adz
+aFt
+aFt
 xwF
 xwF
 aaa
@@ -96715,7 +96717,7 @@ adz
 adz
 adz
 nji
-adz
+aFt
 xWj
 ygq
 adz
@@ -96723,15 +96725,15 @@ nji
 adz
 adz
 tAB
+aFt
 adz
-adz
-ngw
-adz
+nji
+aFt
 adz
 nji
 adz
 adz
-adz
+aFt
 alR
 xwF
 aaa
@@ -97227,15 +97229,15 @@ hlj
 aaA
 adz
 adz
-ygq
-nji
-adz
-uKr
-adz
 adz
 nji
 adz
-ygq
+oHv
+adz
+adz
+nji
+aFt
+adz
 xWj
 adz
 adz
@@ -97245,7 +97247,7 @@ adz
 nji
 adz
 adz
-bgr
+adz
 bgr
 xwF
 aaa
@@ -97484,7 +97486,7 @@ jnN
 aaA
 adz
 adz
-ygq
+adz
 emp
 adz
 oHv
@@ -97495,7 +97497,7 @@ adz
 rIc
 xWj
 alR
-adz
+aFt
 emp
 adz
 adz
@@ -97743,7 +97745,7 @@ adz
 adz
 adz
 nji
-ygq
+adz
 oHv
 adz
 adz
@@ -97999,7 +98001,7 @@ aaA
 adz
 adz
 adz
-ngw
+nji
 ygq
 xWj
 adz
@@ -98518,8 +98520,8 @@ adz
 xWj
 adz
 adz
-nji
-adz
+uKr
+aFt
 adz
 oHv
 adz
@@ -98775,7 +98777,7 @@ adz
 oHv
 adz
 adz
-nji
+uKr
 adz
 adz
 oHv
@@ -99049,7 +99051,7 @@ adz
 pMk
 aaB
 kDw
-aaB
+dEM
 aae
 aae
 aae
@@ -99306,7 +99308,7 @@ adz
 adz
 xwF
 aaB
-aaB
+dEM
 aae
 aae
 aae
@@ -99556,7 +99558,7 @@ nji
 wDN
 adz
 nji
-ygq
+adz
 adz
 adz
 xwF

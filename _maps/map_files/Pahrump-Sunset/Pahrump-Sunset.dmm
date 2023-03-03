@@ -16041,9 +16041,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "bdF" = (
-/obj/machinery/cell_charger,
-/obj/structure/table/wood,
-/turf/open/floor/wood_common,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/item/survivalcapsule/kitchen,
+/obj/item/survivalcapsule/luxury,
+/obj/item/survivalcapsule/luxuryelite,
+/obj/item/survivalcapsule/merchant,
+/turf/open/floor/wood_mosaic,
 /area/f13/building)
 "bdG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -19590,12 +19594,11 @@
 /area/f13/wasteland)
 "bvD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/stack/ore/blackpowder/fifty,
-/obj/item/stack/ore/blackpowder/fifty,
+/obj/structure/table/wood,
+/obj/machinery/cell_charger,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "bvH" = (
@@ -32469,6 +32472,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
+/obj/item/stack/ore/blackpowder/fifty,
+/obj/item/stack/ore/blackpowder/fifty,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "eRa" = (
@@ -33053,6 +33058,11 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/ruins)
+"eZj" = (
+/obj/structure/flora/grass/coyote/four,
+/obj/structure/rack/shelf_metal,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "eZp" = (
 /obj/structure/rack,
 /obj/item/storage/pill_bottle/chem_tin/radx,
@@ -81874,6 +81884,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white/side,
 /area/f13/building/mall)
+"unm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/item/survivalcapsule/party,
+/obj/item/survivalcapsule/premium,
+/obj/item/survivalcapsule/quad,
+/obj/item/survivalcapsule/super_deluxe,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "unn" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/building/hospital)
@@ -84323,6 +84343,11 @@
 "vcH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
+/obj/item/survivalcapsule,
+/obj/item/survivalcapsule,
+/obj/item/survivalcapsule/blacksmith,
+/obj/item/survivalcapsule/farm,
+/obj/item/survivalcapsule/fortuneteller,
 /turf/open/floor/wood_mosaic,
 /area/f13/building)
 "vcJ" = (
@@ -103398,7 +103423,7 @@ ayJ
 aXa
 aOk
 ncM
-fVZ
+eZj
 flt
 abP
 hEN
@@ -105206,7 +105231,7 @@ nkd
 cex
 wtM
 fMX
-bdF
+cex
 tgI
 xZb
 qFj
@@ -105972,7 +105997,7 @@ acl
 eiJ
 abP
 dUj
-vcH
+bdF
 fMX
 sjO
 nkd
@@ -106229,7 +106254,7 @@ acl
 opu
 bqX
 dUj
-nkd
+unm
 bog
 fqc
 aTd
