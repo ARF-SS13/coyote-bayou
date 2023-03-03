@@ -63,6 +63,12 @@
 	icon_state = "ashenarrow"
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/ash
 
+/obj/item/ammo_casing/caseless/arrow/gold
+	name = "golden arrow"
+	desc = "An arrow made of gold, strengthened by devotion."
+	icon_state = "goldenarrow"
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/gold
+
 /obj/item/ammo_casing/caseless/arrow/bone
 	name = "bone arrow"
 	desc = "An arrow made of bone and sinew. The tip is sharp enough to pierce through deathclaw hide."

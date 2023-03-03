@@ -149,6 +149,18 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/silver
 	fire_delay = 1.5
 
+//Golden Bow
+/obj/item/gun/ballistic/bow/gold
+	name = "golden bow"
+	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
+	icon_state = "goldbow"
+	item_state = "goldbow"
+	icon_prefix = "goldbow"
+	force = 10
+	mag_type = /obj/item/ammo_box/magazine/internal/bow/gold
+	fire_delay = 1.5
+	extra_speed = 100
+
 //Crossbow
 /obj/item/gun/ballistic/bow/crossbow
 	name = "crossbow"

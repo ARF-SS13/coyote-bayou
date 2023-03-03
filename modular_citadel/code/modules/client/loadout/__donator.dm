@@ -806,6 +806,18 @@
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/card/id/dogtag/risingstarslash(src)
 
+/datum/gear/donator/kits/risingstarslash4
+	name = "Trueshot's Kit"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash4
+	ckeywhitelist = list("risingstarslash")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash4/PopulateContents()
+	new /obj/item/gun/ballistic/bow/gold(src)
+	new /obj/item/storage/bag/tribe_quiver/gold(src)
+	new /obj/item/smelling_salts/wayfarer(src)
+	new /obj/item/reagent_containers/pill/fiery_purgative(src)
+	new /obj/item/reagent_containers/pill/antivenom(src)
+
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
 	path = /obj/item/storage/box/large/custom_kit/roachwitharoach

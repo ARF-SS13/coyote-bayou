@@ -543,7 +543,7 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/bone
 	name = "hunters quiver"
 	desc = "A simple leather quiver designed for holding arrows, this one seems to hold deadlier arrows for hunting."
-	
+
 
 /obj/item/storage/bag/tribe_quiver/bone/PopulateContents()
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
@@ -569,6 +569,22 @@ obj/item/storage/bag/chemistry/tribal
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+
+//Trueshot Quiver
+/obj/item/storage/bag/tribe_quiver/gold
+	name = "trueshot quiver"
+	desc = "A simple leather quiver designed for holding arrows, this one seems to be geared towards taking out hostile humanoids."
+
+
+/obj/item/storage/bag/tribe_quiver/bone/PopulateContents()
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
+	new /obj/item/ammo_casing/caseless/arrow/gold(src)
 
 /obj/item/storage/bag/trash/sack
 	name = "leather sack"
