@@ -91,9 +91,9 @@ Administrator
 	jobtype =	/datum/job/followers/f13leadpractitioner
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
-	//uniform =	/obj/item/clothing/under/f13/followers
-	//suit=	/obj/item/clothing/suit/toggle/labcoat/followers
-	//shoes =	/obj/item/clothing/shoes/f13/brownie
+	uniform =	/obj/item/clothing/under/f13/followers
+	suit=	/obj/item/clothing/suit/toggle/labcoat/followers
+	shoes =	/obj/item/clothing/shoes/f13/brownie
 	belt = /obj/item/kit_spawner/follower/admin
 	backpack =	/obj/item/storage/backpack/medic
 	satchel =	/obj/item/storage/backpack/satchel/med
@@ -272,7 +272,7 @@ Practitioner
 /datum/outfit/job/followers/f13practitioner
 	name =	"Town Doctor"
 	jobtype =	/datum/job/followers/f13practitioner
-	//uniform =	/obj/item/clothing/under/f13/followers
+	uniform =	/obj/item/clothing/under/f13/followers
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
@@ -371,8 +371,8 @@ Follower Volunteer
 	jobtype = /datum/job/followers/f13followervolunteer
 	id = 		/obj/item/card/id/silver
 	belt = /obj/item/kit_spawner/follower
-	//uniform = 	/obj/item/clothing/under/f13/followers
-	//shoes = 	/obj/item/clothing/shoes/f13/explorer
+	uniform = 	/obj/item/clothing/under/f13/followers
+	shoes = 	/obj/item/clothing/shoes/f13/explorer
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
@@ -453,11 +453,11 @@ Follower Volunteer
 	jobtype =	/datum/job/followers/f13followerguard
 	belt = /obj/item/kit_spawner/follower/guard
 	id =	/obj/item/card/id/silver
-	//uniform =	/obj/item/clothing/under/f13/bodyguard
+	uniform =	/obj/item/clothing/under/f13/bodyguard
 	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
-	//shoes =	/obj/item/clothing/shoes/combat
+	shoes =	/obj/item/clothing/shoes/combat
 	l_pocket =	/obj/item/storage/belt/shoulderholster
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer

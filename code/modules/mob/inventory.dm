@@ -290,8 +290,8 @@
 
 //for when you want the item to end up on the ground
 //will force move the item to the ground and call the turf's Entered
-/mob/proc/dropItemToGround(obj/item/I, force = FALSE)
-	return doUnEquip(I, force, drop_location(), FALSE)
+/mob/proc/dropItemToGround(obj/item/I, force = FALSE, drop_inv = TRUE)
+	return doUnEquip(I, force, drop_location(), FALSE, invdrop = drop_inv)
 
 //for when the item will be immediately placed in a loc other than the ground
 /mob/proc/transferItemToLoc(obj/item/I, newloc = null, force = FALSE)
@@ -340,16 +340,28 @@
 //set qdel_on_fail to have it delete W if it fails to equip
 //set disable_warning to disable the 'you are unable to equip that' warning.
 //unset redraw_mob to prevent the mob from being redrawn at the end.
-/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, clothing_check = FALSE)
+/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, displace_worn = FALSE)
 	if(!istype(W))
 		return FALSE
 	var/list/warning = list(span_warning("You are unable to equip that!"))
 	if(!W.mob_can_equip(src, null, slot, disable_warning, bypass_equip_delay_self, clothing_check, warning))
-		if(qdel_on_fail)
-			qdel(W)
-		else if(!disable_warning)
-			to_chat(src, warning[1])
-		return FALSE
+		var/failedequip = TRUE
+		if(displace_worn) // Loadouts will replace what's in that slot with what should be in there
+			var/atom/wornthing = get_item_by_slot(slot)
+			if(wornthing) // Something's in this slot, destroy it
+				dropItemToGround(wornthing, TRUE, FALSE)
+				if(LAZYLEN(wornthing.contents)) // If anything's in here, put it in the thing
+					for(var/atom/heldinside in wornthing.contents)
+						if(!SEND_SIGNAL(wornthing, COMSIG_TRY_STORAGE_INSERT, heldinside, null, TRUE, TRUE)) // Try and transfer whats in the thing to the new thing that'll be there
+							dropItemToGround(heldinside, TRUE, FALSE)
+				qdel(wornthing)
+				failedequip = FALSE
+		if(failedequip)
+			if(qdel_on_fail)
+				qdel(W)
+			else if(!disable_warning)
+				to_chat(src, warning[1])
+			return FALSE
 	equip_to_slot(W, slot, redraw_mob) //This proc should not ever fail.
 	return TRUE
 

@@ -994,7 +994,7 @@ Raider
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		)
-/*
+
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
@@ -1002,7 +1002,7 @@ Raider
 		/obj/item/clothing/under/f13/brahminm, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
-		 people generally bring their own jackets
+		/* people generally bring their own jackets
 	suit = pick(
 		/obj/item/clothing/suit/armor/light/kit, \
 		/obj/item/clothing/suit/armor/outfit/jacket/merc, \
@@ -1505,9 +1505,9 @@ Raider
 
 	id = /obj/item/card/id/dogtag/town
 	belt = /obj/item/kit_spawner/preacher
-	//uniform = 		/obj/item/clothing/under/f13/chaplain
-	//gloves =		/obj/item/clothing/gloves/fingerless
-	//shoes = 		/obj/item/clothing/shoes/jackboots
+	uniform = 		/obj/item/clothing/under/f13/chaplain
+	gloves =		/obj/item/clothing/gloves/fingerless
+	shoes = 		/obj/item/clothing/shoes/jackboots
 	r_pocket = 		/obj/item/flashlight/flare
 
 	backpack =		/obj/item/storage/backpack/cultpack
@@ -1962,9 +1962,9 @@ datum/job/wasteland/f13dendoctor
 	id = null
 	ears = null
 	belt = /obj/item/kit_spawner/tribal/farlands
-	//uniform = /obj/item/clothing/under/f13/settler
-	//shoes = /obj/item/clothing/shoes/sandal
-	//gloves = /obj/item/clothing/gloves/f13/handwraps
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/sandal
+	gloves = /obj/item/clothing/gloves/f13/handwraps
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit/tribal
