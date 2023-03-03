@@ -17,8 +17,8 @@
 	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 50
-	vision_range = 30
-	aggro_vision_range = 30
+	vision_range = 15
+	aggro_vision_range = 15
 	speed = 1
 	move_to_delay = 8
 	ranged_cooldown_time = 10
