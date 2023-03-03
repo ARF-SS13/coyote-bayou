@@ -168,8 +168,8 @@ Administrator
 	name = "Town Scientist"
 	jobtype = /datum/job/followers/f13Professor
 	backpack = /obj/item/storage/backpack/explorer
-	uniform = /obj/item/clothing/under/f13/followers
-	suit= /obj/item/clothing/suit/toggle/labcoat/followers
+	//uniform = /obj/item/clothing/under/f13/followers
+	//suit= /obj/item/clothing/suit/toggle/labcoat/followers
 	belt = /obj/item/kit_spawner/follower/scientist
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science

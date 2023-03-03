@@ -1,16 +1,16 @@
 /datum/gear/hands
 	category = LOADOUT_CATEGORY_HANDS
 	slot = SLOT_HANDS
+	cost = 1
 
 /datum/gear/hands/briefcase/crafted
 	name = "briefcase"
 	path = /obj/item/storage/briefcase/crafted
-	cost = 2
 
 /datum/gear/hands/toolbox/mechanical/old
 	name = "rusty blue toolbox"
 	path = /obj/item/storage/toolbox/mechanical/old
-	cost = 2
+	cost = 3 //full set of tools
 
 /datum/gear/hands/cane
 	name = "cane"
@@ -58,7 +58,6 @@
 /datum/gear/hands/cheaplighter
 	name = "cheap lighter"
 	path = /obj/item/lighter/greyscale
-	cost = 2
 
 /datum/gear/hands/cards
 	name = "playing cards"
@@ -67,12 +66,12 @@
 /datum/gear/hands/wallet
 	name = "wallet"
 	path = /obj/item/storage/wallet
-	cost = 2
+	cost = 0
 
 /datum/gear/hands/flask
 	name = "flask"
 	path = /obj/item/reagent_containers/food/drinks/flask
-	cost = 3
+	cost = 1
 
 /datum/gear/hands/zippolighter
 	name = "zippo lighter"
@@ -82,7 +81,6 @@
 /datum/gear/hands/beeplushie
 	name = "Bee Plushie"
 	path = /obj/item/toy/plush/beeplushie
-	cost = 2
 
 /datum/gear/hands/cobpipe
 	name = "corn cob pipe"
@@ -91,6 +89,7 @@
 /datum/gear/hands/cigar
 	name = "cigar"
 	path = /obj/item/clothing/mask/cigarette/cigar
+	cost = 0
 
 /datum/gear/hands/lipstick
 	name = "red lipstick"
@@ -111,7 +110,6 @@
 /datum/gear/hands/carpetdelivery
 	name = "Carpet Delivery Service"
 	path = /obj/item/choice_beacon/box/carpet
-	cost = 2
 
 /datum/gear/hands/livestockdelivery
 	name = "Pet Delivery Service"
@@ -121,12 +119,10 @@
 	name = "Plushie Delivery Service"
 	path = /obj/item/choice_beacon/box/plushie
 
-/datum/gear/hands/plushiedelivery
-	name = "Plushie Delivery Service"
+/datum/gear/hands/plushiedelivery2
+	name = "Another Plushie Delivery Service"
 	path = /obj/item/choice_beacon/box/plushie
-	cost = 2
 
-/datum/gear/hands/plushiedelivery
-	name = "Plushie Delivery Service"
+/datum/gear/hands/plushiedelivery3
+	name = "Yet A Third Plushie Delivery Service"
 	path = /obj/item/choice_beacon/box/plushie
-	cost = 3

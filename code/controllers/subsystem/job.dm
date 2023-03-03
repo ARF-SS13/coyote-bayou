@@ -691,6 +691,17 @@ SUBSYSTEM_DEF(job)
 		message_admins(msg)
 		CRASH(msg)
 
+#define DISPLACEABLE_SLOTS list(\
+	SLOT_BACK,\
+	SLOT_WEAR_MASK,\
+	SLOT_GLASSES,\
+	SLOT_GLOVES,\
+	SLOT_NECK,\
+	SLOT_HEAD,\
+	SLOT_SHOES,\
+	SLOT_W_UNIFORM,\
+	)
+
 /datum/controller/subsystem/job/proc/equip_loadout(mob/dead/new_player/N, mob/living/M, equipbackpackstuff, bypass_prereqs = FALSE, can_drop = TRUE)
 	var/mob/the_mob = N
 	if(!the_mob)
@@ -724,7 +735,7 @@ SUBSYSTEM_DEF(job)
 			if(i[LOADOUT_CUSTOM_DESCRIPTION])
 				var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
 				I.desc = custom_description
-			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // If the job's dresscode compliant, try to put it in its slot, first
+			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE, displace_worn = (G.slot in DISPLACEABLE_SLOTS))) // If the job's dresscode compliant, try to put it in its slot, first. Destroy whatever's in there if you must.
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
 					var/obj/item/storage/backpack/B = C.back
@@ -738,6 +749,8 @@ SUBSYSTEM_DEF(job)
 						I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
 					else
 						qdel(I)
+
+#undef DISPLACEABLE_SLOTS
 
 /datum/controller/subsystem/job/proc/FreeRole(rank)
 	if(!rank)

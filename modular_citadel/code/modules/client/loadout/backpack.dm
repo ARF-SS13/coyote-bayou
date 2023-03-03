@@ -2,6 +2,7 @@
 	category = LOADOUT_CATEGORY_BACKPACK
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 	slot = SLOT_IN_BACKPACK
+	cost = 1
 
 /datum/gear/backpack/redwater
 	name = "contraband radio"
@@ -24,12 +25,10 @@
 /datum/gear/backpack/tapeplayer
 	name = "Taperecorder"
 	path = /obj/item/taperecorder
-	cost = 2
 
 /datum/gear/backpack/razor
 	name = "electric razor"
 	path = /obj/item/razor
-	cost = 2
 
 /datum/gear/backpack/donuts
 	name = "donut box"
@@ -42,20 +41,17 @@
 	name = "Box of Crayons"
 	path = /obj/item/storage/crayons
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	cost = 2
 
 /datum/gear/backpack/toykatana
 	name = "Toy Katana"
 	path = /obj/item/toy/katana
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	cost = 3
 
 //// Pens - not catagorized
 
 /datum/gear/backpack/pen
 	name = "Pen"
 	path = /obj/item/pen
-	cost = 2
 
 /datum/gear/backpack/pen/red
 	name = "Fountain Pen"
@@ -111,6 +107,7 @@
 /datum/gear/backpack/cigarettes/cigpack_greytort
 	name = "Grey Tortoise Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_greytort
+	cost = 2
 
 /datum/gear/backpack/cigarettes/carp_classic
 	name = "Carp Classic Smokes"
@@ -131,7 +128,6 @@
 /datum/gear/backpack/cigarettes/shady_jims
 	name = "Shady Jim's Super Slims Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_shadyjims
-	cost = 2
 
 /datum/gear/backpack/cigarettes/xeno_filtered
 	name = "Xeno Filtered Smokes"
@@ -141,25 +137,19 @@
 /datum/gear/backpack/cigarettes/cigars
 	name = "Premium cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars
-	cost = 2
 
 /datum/gear/backpack/cigarettes/cigars/cohiba
 	name = "Cohiba Robusto cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars/cohiba
-	cost = 2
 
 /datum/gear/backpack/cigarettes/cigars/havana
 	name = "Havanian cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars/havana
-	cost = 2
-
-//// Backpacks, Lets keep these at cost 3, that way they arent over in points.
 
 /datum/gear/backpack/backpack
 	name = "hiking backpack"
 	path = /obj/item/storage/backpack/old
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
-	cost = 3
 
 /datum/gear/backpack/backpack/duffel
 	name = "duffelbag"
@@ -213,7 +203,7 @@
 	name = "Ration - Brahmin BBQ"
 	path = /obj/item/storage/box/ration/menu_one
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2 //lollipop and grey tort
 
 /datum/gear/backpack/snack/ration_2
 	name = "Ration - Glazed Sausage"
@@ -237,7 +227,7 @@
 	name = "Ration - Squeakpie"
 	path = /obj/item/storage/box/ration/menu_five
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2 //bonus lollipop heals
 
 /datum/gear/backpack/snack/ration_6
 	name = "Ration - Hillhogger"
@@ -255,7 +245,7 @@
 	name = "Ration - Veggie"
 	path = /obj/item/storage/box/ration/menu_eight
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2
 
 /datum/gear/backpack/snack/ration_9
 	name = "Ration - Fillet"
@@ -273,7 +263,7 @@
 	name = "Ration - Hotdawg"
 	path = /obj/item/storage/box/ration/menu_eleven
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2 //lollipop
 
 /datum/gear/backpack/snack/ration_breakfast
 	name = "Ration - Breakfast"
@@ -457,14 +447,14 @@
 /datum/gear/backpack/holotag
 	name = "Broken Holotag"
 	path = /obj/item/card/id/rusted/brokenholodog
-	cost = 1
+	cost = 0
 
 /datum/gear/backpack/dogtag
 	name = "Rusted tags"
 	path = /obj/item/card/id/rusted
-	cost = 1
+	cost = 0
 
 /datum/gear/backpack/vaultid
 	name = "Faded ID card"
 	path = /obj/item/card/id/rusted/fadedvaultid
-	cost = 1
+	cost = 0
