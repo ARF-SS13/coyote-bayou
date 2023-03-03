@@ -36,8 +36,11 @@
 		SP_DISTANT_SOUND(null),
 		SP_DISTANT_RANGE(null)
 	)
-	var/can_link_to_quiver = FALSE
+	/// Can this bow link to a quiver?
+	var/can_link_to_quiver = TRUE
+	/// Is this bow drawing from a quiver, if linked?
 	var/drawing_from_quiver = FALSE
+	/// The quiver the bow is drawing from
 	var/datum/weakref/our_quiver
 
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
@@ -48,9 +51,19 @@
 
 /obj/item/gun/ballistic/bow/examine(mob/user)
 	. = ..()
-	if(can_link_to_quiver)
-		. += "Currently [drawing_from_quiver?"":"not"] drawing from a worn quiver, if any."
-		. += "Alt-click the bow to [drawing_from_quiver?"stop":"start"] drawing from a quiver."
+	if(can_link_to_quiver && loc == user)
+		if(!drawing_from_quiver)
+			. += "Not drawing from a worn quiver."
+			. += "Alt-click the bow to start drawing from a quiver."
+			return
+		var/obj/item/storage/bag/tribe_quiver/my_quiver = get_quiver(user)
+		if(istype(my_quiver))
+			. += "Currently drawing from [my_quiver]."
+			. += "Alt-click the bow to stop drawing from this quiver."
+			. += "Smack a quiver against this bow to start drawing arrows from that quiver."
+			return
+		. += "No quiver found to draw from. Wear a quiver on your belt, or smack a quiver on this bow, to draw from that quiver."
+		. += "Alt-click the bow to stop drawing from this quiver."
 
 /obj/item/gun/ballistic/bow/can_shoot()
 	return chambered
@@ -104,7 +117,7 @@
 		return FALSE
 	if(LAZYLEN(magazine.stored_ammo) >= magazine.max_ammo)
 		return FALSE
-	var/obj/item/storage/bag/tribe_quiver/got_quiver = user.get_item_by_slot(SLOT_BELT)
+	var/obj/item/storage/bag/tribe_quiver/got_quiver = get_quiver(user)
 	if(!istype(got_quiver))
 		return FALSE
 	for(var/obj/item/ammo_casing/isit_pointy in got_quiver.contents)
@@ -115,9 +128,41 @@
 		if(magazine.give_round(isit_pointy))
 			return TRUE
 
+/obj/item/gun/ballistic/bow/proc/get_quiver(mob/user, just_get_it)
+	if(!istype(user))
+		return
+	var/obj/item/storage/bag/tribe_quiver/getted_quiver
+	/// First try and draw from our chosen quiver
+	if(isweakref(our_quiver))
+		getted_quiver = our_quiver.resolve()
+		if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
+			return getted_quiver
+	/// Otherwise, draw from whatever's on the belt
+	getted_quiver = user.get_item_by_slot(SLOT_BELT)
+	if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
+		if(link_quiver_to_bow(user, getted_quiver))
+			return getted_quiver
+
+/obj/item/gun/ballistic/bow/proc/link_quiver_to_bow(mob/user, obj/item/storage/bag/tribe_quiver/the_quiver)
+	if(!istype(the_quiver))
+		return
+	if(!ismob(user))
+		return
+	if(our_quiver)
+		var/obj/item/storage/bag/tribe_quiver/prev_quiver = our_quiver.resolve()
+		if(prev_quiver == the_quiver)
+			user.show_message(span_notice("[src] is already drawing from [the_quiver]!"))
+			return TRUE
+	our_quiver = WEAKREF(the_quiver)
+	if(our_quiver)
+		user.show_message(span_notice("You are now drawing from [the_quiver]!"))
+		return TRUE
+
 /obj/item/gun/ballistic/bow/AltClick(mob/living/carbon/user)
 	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return FALSE
+	if(loc != user)
 		return FALSE
 	drawing_from_quiver = !drawing_from_quiver
 	if(can_link_to_quiver)
@@ -125,13 +170,16 @@
 	return TRUE
 
 /obj/item/gun/ballistic/bow/attackby(obj/item/A, mob/user, params)
+	if(istype(A, /obj/item/storage/bag/tribe_quiver))
+		link_quiver_to_bow(user, A)
+		return
 	if(magazine.attackby(A, user, params, 1))
 		to_chat(user, span_notice("You load [A] into \the [src]."))
 		update_icon()
+		return
 
 /obj/item/gun/ballistic/bow/update_icon()
 	icon_state = "[initial(icon_state)]_[get_ammo() ? (chambered ? "firing" : "loaded") : "unloaded"]"
-
 
 /obj/item/gun/ballistic/bow/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	..()
@@ -189,6 +237,7 @@
 			/datum/firemode/semi_auto/slower
 	)
 	can_scope = TRUE //?
+	can_link_to_quiver = FALSE
 
 //tier 3 bows. looted only? mid tier loot pools, but marked as common. bow gear progression is lacking, especially when you can just make the highest tier weapon from the communal materal pile
 //composite bow. fire rate++ but bulky and back slot only. max potential drawn out with bow trained quirk. will see if it's too wimpy
@@ -234,6 +283,7 @@
 			/datum/firemode/semi_auto/slower
 	)
 	can_scope = TRUE //?
+	can_link_to_quiver = FALSE
 
 //tier 4 legendary bow, either boss tier or unique tier, unsure just yet
 //modern compound bow. speed++, damage++. the ultimate bow
