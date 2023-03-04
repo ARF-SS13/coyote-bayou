@@ -155,7 +155,7 @@
 #undef INVOKE_CALLBACK
 #undef CHECK_FLAG_FAILURE
 
-/proc/do_mob(mob/user , mob/target, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks = null, ignorehelditem = FALSE, resume_time = 0 SECONDS)
+/proc/do_mob(mob/user , mob/target, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks = null, ignorehelditem = FALSE, resume_time = 0 SECONDS, allow_movement = FALSE)
 	if(!user || !target)
 		return 0
 	var/user_loc = user.loc
@@ -194,11 +194,14 @@
 			. = FALSE
 			break
 
-		if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+		/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
 			drifting = FALSE
-			user_loc = user.loc
+			user_loc = user.loc */ // aint in spess
+		if(allow_movement && get_dist(user.loc, target.loc) > 1)
+			. = FALSE
+			break
 
-		if((!drifting && user.loc != user_loc) || target.loc != target_loc || (!ignorehelditem && user.get_active_held_item() != holding) || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
+		if((!drifting && !allow_movement && user.loc != user_loc) || target.loc != target_loc || (!ignorehelditem && user.get_active_held_item() != holding) || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
 			. = 0
 			break
 	if(progress)
@@ -222,7 +225,7 @@
 		checked_health["health"] = health
 	return ..()
 
-/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS)
+/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS, allow_movement = FALSE)
 	if(!user)
 		return 0
 	var/atom/Tloc = null
@@ -260,22 +263,26 @@
 		if (progress)
 			progbar.update(world.time - starttime + resume_time)
 
-		if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+		/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
 			drifting = FALSE
-			Uloc = user.loc
+			Uloc = user.loc */ // we aint in spess
 
 		if(L && !CHECK_ALL_MOBILITY(L, required_mobility_flags))
 			. = 0
 			break
 
-		if(QDELETED(user) || user.stat || (!drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
+		if(QDELETED(user) || user.stat || (!allow_movement && !drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
 			. = 0
 			break
 
 		if(!QDELETED(Tloc) && (QDELETED(target) || Tloc != target.loc))
-			if((Uloc != Tloc || Tloc != user) && !drifting)
+			if((Uloc != Tloc || Tloc != user) && (!drifting || !allow_movement))
 				. = 0
 				break
+
+		if(allow_movement && get_dist(user.loc, target.loc) > 1)
+			. = 0
+			break
 
 		if(target && !(target in user.do_afters))
 			. = FALSE
@@ -304,7 +311,7 @@
 	. = 1
 	return
 
-/proc/do_after_mob(mob/user, list/targets, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks)
+/proc/do_after_mob(mob/user, list/targets, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks, allow_movement = FALSE)
 	if(!user || !targets)
 		return 0
 	if(!islist(targets))
@@ -340,12 +347,12 @@
 			if(uninterruptible)
 				continue
 
-			if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+			/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
 				drifting = FALSE
-				user_loc = user.loc
+				user_loc = user.loc */
 
 			for(var/atom/target in targets)
-				if((!drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
+				if((!allow_movement && !drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
 					. = 0
 					break mainloop
 	if(progbar)
