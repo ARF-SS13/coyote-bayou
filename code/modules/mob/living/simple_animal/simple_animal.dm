@@ -566,8 +566,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	for(var/i in 1 to loot_amount_random ? rand(1,loot_drop_amount) : loot_drop_amount)
 		if(!LAZYLEN(lootlist))
 			return
-		var/atom/dropthing = pickweight_n_take(lootlist)
-		if(isatom(dropthing))
+		var/dropthing = pickweight_n_take(lootlist)
+		if(ispath(dropthing))
 			new dropthing(drop_location())
 
 /mob/living/simple_animal/death(gibbed)
