@@ -4747,11 +4747,8 @@
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "bRH" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "funclaw"
-	},
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/nest/gelcube,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "bRQ" = (
 /mob/living/simple_animal/hostile/ghoul,
@@ -5928,6 +5925,10 @@
 /obj/structure/bed,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
+"clS" = (
+/obj/structure/nest/gelcube,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "cmy" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/blood/drip,
@@ -9678,6 +9679,10 @@
 "ffm" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
+"ffO" = (
+/obj/structure/nest/gelcube,
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "ffU" = (
 /obj/structure/kitchenspike,
@@ -18644,6 +18649,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/museum)
+"lUO" = (
+/obj/structure/nest/gelcube,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "lUP" = (
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
@@ -36247,7 +36256,7 @@ bDN
 bAY
 bFF
 bFF
-bAY
+ffO
 bAY
 bFF
 bFF
@@ -40513,13 +40522,13 @@ qxh
 krl
 alA
 bOb
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+uvv
+uvv
+uvv
+uvv
+uvv
+uvv
+uvv
 aae
 aaa
 aae
@@ -55792,8 +55801,8 @@ bRn
 aae
 aae
 boU
-bRH
 boU
+clS
 aae
 aae
 bFx
@@ -58414,7 +58423,7 @@ tkZ
 tkZ
 tkZ
 tkZ
-taG
+lUO
 aae
 aae
 aae
@@ -58877,10 +58886,10 @@ aah
 aah
 aah
 aah
-bFF
-bFF
-bFF
-bFF
+aah
+aah
+aah
+aah
 aah
 aah
 aah
@@ -59136,7 +59145,7 @@ aah
 aah
 aah
 bGZ
-bFF
+aah
 bFx
 bHI
 bHI
@@ -59392,8 +59401,8 @@ aah
 aah
 aah
 aah
-bFF
-bFF
+aah
+aah
 bFx
 aah
 aah
@@ -65033,7 +65042,7 @@ aae
 bFF
 bFF
 bFF
-aah
+bRH
 bFx
 aae
 aae
@@ -69743,7 +69752,7 @@ bKb
 boU
 boU
 boU
-boU
+clS
 bFF
 aae
 aae
@@ -70577,7 +70586,7 @@ bsC
 bsC
 bsC
 bsC
-aah
+bRH
 aah
 bPR
 bsC
@@ -83649,7 +83658,7 @@ aae
 aae
 taG
 taG
-taG
+lUO
 aae
 aae
 aae
