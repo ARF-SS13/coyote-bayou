@@ -42,7 +42,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Heavy Sleeper","Can Not Sleep"),
 			list("Dead Eye", "Straight Shooter", "Poor Aim"),
 			list("Beast Friend - Rats", "Beast Master - Rats"),
-			list("Beast Friend - Small Critters", "Beast Master - Small Critters")
+			list("Beast Friend - Small Critters", "Beast Master - Small Critters"),
+			list("Speed Walker", "Mobility - Wasteland Slug", "Mobility - Wasteland Molasses", "Phobia - The Dark")
 			)
 	return ..()
 
