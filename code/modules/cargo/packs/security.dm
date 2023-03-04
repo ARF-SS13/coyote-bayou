@@ -518,7 +518,7 @@
 /datum/supply_pack/security/minigun5mm
 	name = "Weapons - Minigun"
 	desc = "Holy moly, it's here. A refurbished minigun chambered in US five-aught. Heavy, impractical, expensive to buy, expensive to fire, expensive to maintain, and an absolute killer."
-	cost = 20000
+	cost = 50000
 	contains = list(/obj/item/minigunpackbal5mm)
 	crate_name = "minigun crate"
 
@@ -566,7 +566,7 @@
 /datum/supply_pack/security/weapon_unique
 	name = "Weapons - Premium"
 	desc = "A single weapon of incredible rarity. there's no telling what was packed into this crate"
-	cost = 40000
+	cost = 50000
 	num_contained = 1
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/unique
