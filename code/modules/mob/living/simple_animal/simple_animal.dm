@@ -124,6 +124,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	///list of things spawned at mob's loc when it dies.
 	var/list/loot = list()
+	///How do we handle the loot list? Should be either MOB_LOOT_ALL or a number. If its a number, use an associated weighted list for `loot`!
+	var/loot_drop_amount = MOB_LOOT_ALL
+	///Drop a random number, 1 through loot_drop_amount? only applicable if loot_drop_amount is a number
+	var/loot_amount_random = TRUE
 	///causes mob to be deleted on death, useful for mobs that spawn lootable corpses.
 	var/del_on_death = FALSE
 	var/deathmessage = ""
@@ -553,9 +557,18 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 
 /mob/living/simple_animal/proc/drop_loot()
-	for(var/drop in loot)
-		for(var/i in 1 to max(1, loot[drop]))
-			new drop(drop_location())
+	if(loot_drop_amount == MOB_LOOT_ALL || !isnum(loot_drop_amount))
+		for(var/drop in loot)
+			for(var/i in 1 to max(1, loot[drop]))
+				new drop(drop_location())
+		return
+	var/list/lootlist = loot
+	for(var/i in 1 to loot_amount_random ? rand(1,loot_drop_amount) : loot_drop_amount)
+		if(!LAZYLEN(lootlist))
+			return
+		var/atom/dropthing = pickweight_n_take(lootlist)
+		if(isatom(dropthing))
+			new dropthing(drop_location())
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING

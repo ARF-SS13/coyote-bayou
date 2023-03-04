@@ -204,12 +204,20 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(
-	/obj/item/storage/pill_bottle/chem_tin/radx = 5,
-	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 10,
+	/obj/item/storage/pill_bottle/chem_tin/radx = 10,
+	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 20,
 	/obj/item/reagent_containers/food/drinks/bottle/cognac = 10,
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10,
+	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 20,
 	/obj/item/stock_parts/chem_cartridge/garbage = 10,
-	/obj/item/stock_parts/chem_cartridge/simple = 1
+	/obj/item/stock_parts/chem_cartridge/simple = 1,
+	/obj/item/reagent_containers/pill/patch/jet = 5,
+	/obj/item/reagent_containers/pill/patch/turbo = 1,
+	/obj/item/reagent_containers/pill/healingpowder = 10,
+	/obj/item/reagent_containers/pill/stimulant = 1,
+	/obj/item/reagent_containers/hypospray/medipen/medx = 5,
+	/obj/item/storage/pill_bottle/chem_tin/buffout = 5,
+	/obj/item/reagent_containers/hypospray/medipen/steady = 5,
+	/obj/item/reagent_containers/hypospray/medipen/psycho = 5
 ))
 
 GLOBAL_LIST_INIT(trash_craft, list(
@@ -223,14 +231,23 @@ GLOBAL_LIST_INIT(trash_craft, list(
 ))
 
 GLOBAL_LIST_INIT(trash_gun, list(
-	/obj/item/gun/ballistic/automatic/hobo/zipgun = 2,
-	/obj/item/gun/ballistic/revolver/shotpistol = 1,
-	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 2,
-	/obj/item/gun/ballistic/automatic/varmint = 1,
-	/obj/item/gun/ballistic/automatic/sportcarbine = 1,
-	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
-	/obj/item/gun/ballistic/revolver/widowmaker = 1
+	/obj/item/gun/ballistic/automatic/sportcarbine = 50, //we need these for turrets. may make craftable later
+	/obj/item/gun/ballistic/automatic/hobo/zipgun = 10,
+	/obj/item/gun/ballistic/revolver/hobo/piperifle = 10,
+	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 10,
+	/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 10,
+	/obj/item/gun/ballistic/revolver/hobo/knifegun = 10,
+	/obj/item/gun/ballistic/revolver/hobo/knucklegun = 1,
+	/obj/item/gun/ballistic/automatic/autopipe = 1,
+	/obj/item/gun/ballistic/revolver/winchesterrebored = 10,
+	/obj/item/melee/onehanded/machete/scrapsabre = 5,
+	/obj/item/melee/onehanded/knife/cosmicdirty = 5,
+	/obj/item/melee/onehanded/club/tireiron = 10,
+	/obj/item/twohanded/fireaxe/bmprsword = 5,
+	/obj/item/melee/onehanded/club = 10,
+	/obj/item/twohanded/spear/scrapspear = 10,
+	/obj/item/melee/unarmed/lacerator = 5,
+	/obj/item/shishkebabpack = 1
 ))
 
 GLOBAL_LIST_INIT(trash_money, list(

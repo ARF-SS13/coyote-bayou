@@ -106,6 +106,12 @@
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
+	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
+	loot_drop_amount = 1
+	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
+	loot_amount_random = TRUE
+	/// slots in a list of trash loot
+	var/random_trash_loot = TRUE
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/ghoul
@@ -119,6 +125,9 @@
 		icon_state = rare_icon
 		icon_living = rare_icon
 		icon_dead = "[rare_icon]_dead"
+	if(random_trash_loot)
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
@@ -144,6 +153,7 @@
 	melee_damage_lower = 8
 	melee_damage_upper = 14
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot_drop_amount = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
@@ -198,6 +208,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot_drop_amount = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
@@ -215,6 +226,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot_drop_amount = 4
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
@@ -238,6 +250,8 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	loot = list(/obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 5
+	loot_amount_random = FALSE
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE //heeeeeell no
 	call_backup = null
@@ -272,6 +286,7 @@
 	can_ghost_into = TRUE
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 	desc_short = "A glowing creature that may or may not be a reanimated corpse."
+	loot_drop_amount = 2
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
@@ -318,6 +333,7 @@
 	maxHealth = 60 
 	health = 60
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot_drop_amount = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
@@ -334,6 +350,7 @@
 	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
+	loot_drop_amount = 3
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/scorched
@@ -357,6 +374,7 @@
 	attack_sound = "punch"
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
+	loot_drop_amount = 4
 
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
@@ -385,6 +403,7 @@
 	attack_sound = "punch"
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
+	loot_drop_amount = 5
 
 //Sunset mob of some sort?
 /mob/living/simple_animal/hostile/ghoul/wyomingghost
@@ -415,6 +434,7 @@
 	sharpness = SHARP_EDGED //They need to cut their finger nails
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
+	loot_drop_amount = 5
 
 //Halloween Event Ghouls
 /mob/living/simple_animal/hostile/ghoul/zombie
