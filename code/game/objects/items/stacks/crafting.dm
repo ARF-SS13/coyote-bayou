@@ -36,7 +36,7 @@
 	name = "metal parts"
 	icon_state = "sheet-metalparts"
 	singular_name = "metal part"
-	custom_materials = list(/datum/material/iron = 10000)
+	custom_materials = list(/datum/material/iron = 2000) //five sheets worth was way too much
 	flags_1 = CONDUCT_1
 	merge_type = /obj/item/stack/crafting/metalparts
 
@@ -50,7 +50,7 @@
 	name = "high quality metal parts"
 	icon_state = "sheet-goodparts"
 	singular_name = "high quality metal part"
-	custom_materials = list(/datum/material/titanium = 10000)
+	custom_materials = list(/datum/material/titanium = 2000)
 	flags_1 = CONDUCT_1
 	merge_type = /obj/item/stack/crafting/goodparts
 
@@ -64,7 +64,7 @@
 	name = "electronic parts"
 	icon_state = "sheet-electronicparts"
 	singular_name = "electronic part"
-	custom_materials = list(/datum/material/glass = 10000)
+	custom_materials = list(/datum/material/glass = 2000)
 	flags_1 = CONDUCT_1
 	merge_type = /obj/item/stack/crafting/electronicparts
 

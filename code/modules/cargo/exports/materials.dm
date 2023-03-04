@@ -33,7 +33,7 @@
 	message = "cm3 of diamonds"
 
 /datum/export/material/plasma
-	cost = 100
+	cost = 25 //too common to be worth millions
 	material_id = /datum/material/plasma
 	message = "cm3 of ultracite"
 
@@ -53,7 +53,7 @@
 	message = "cm3 of silver"
 
 /datum/export/material/titanium
-	cost = 60
+	cost = 20 //we have way too much titanium to have it be worth a ton
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
 	export_types = list(/obj/item/stack/sheet/mineral/titanium)
