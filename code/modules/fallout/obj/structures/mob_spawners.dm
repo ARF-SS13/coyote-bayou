@@ -310,7 +310,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_time = 120 SECONDS
 	max_mobs = 2
 	icon_state = "ventblue"
-	mob_types = list(/mob/living/simple_animal/hostile/gelcube)
+	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 10)
 
 /obj/structure/nest/wolf
 	name = "wolf den"
