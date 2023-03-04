@@ -237,7 +237,6 @@
 			/datum/firemode/semi_auto/slower
 	)
 	can_scope = TRUE //?
-	can_link_to_quiver = FALSE
 
 //tier 3 bows. looted only? mid tier loot pools, but marked as common. bow gear progression is lacking, especially when you can just make the highest tier weapon from the communal materal pile
 //composite bow. fire rate++ but bulky and back slot only. max potential drawn out with bow trained quirk. will see if it's too wimpy
@@ -283,7 +282,6 @@
 			/datum/firemode/semi_auto/slower
 	)
 	can_scope = TRUE //?
-	can_link_to_quiver = FALSE
 
 //tier 4 legendary bow, either boss tier or unique tier, unsure just yet
 //modern compound bow. speed++, damage++. the ultimate bow
