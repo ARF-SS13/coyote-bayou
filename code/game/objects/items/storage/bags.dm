@@ -515,8 +515,8 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/light
 	name = "light quiver"
 	desc = "A compact, lightweight quiver, that can be tucked just about anywhere to hold some arrows."
-	icon_state = "light_quiver"
-	item_state = "light_quiver"
+	icon_state = "quiver"
+	item_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_SMALL
 	component_type = /datum/component/storage/concrete/bag/light_quiver
 
@@ -527,8 +527,8 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/heavy
 	name = "back quiver"
 	desc = "A large quiver worn on the back, made to hold all the arrows you might need."
-	icon_state = "heavy_quiver"
-	item_state = "heavy_quiver"
+	icon_state = "militiabelt"
+	item_state = "tribal_quiver"
 	slot_flags = ITEM_SLOT_BACK //will this make it go in both backpack and suit slot?
 	w_class = WEIGHT_CLASS_HUGE
 	component_type = /datum/component/storage/concrete/bag/heavy_quiver

@@ -196,9 +196,9 @@
 /obj/item/gun/ballistic/bow/shortbow
 	name = "shortbow"
 	desc = "A lightweight bow, rather lacking in firepower"
-	icon_state = "shortbow"
-	item_state = "shortbow"
-	icon_prefix = "shortbow"
+	icon_state = "bow"
+	item_state = "bow"
+	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
@@ -212,9 +212,9 @@
 /obj/item/gun/ballistic/bow/recurvebow
 	name = "recurve bow"
 	desc = "A light bow designed for ease of draw."
-	icon_state = "recurvebow"
-	item_state = "recurvebow"
-	icon_prefix = "recurvebow"
+	icon_state = "tribalbow"
+	item_state = "bow"
+	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -226,9 +226,9 @@
 /obj/item/gun/ballistic/bow/lightxbow
 	name = "light crossbow"
 	desc = "A compact crossbow, with decent firepower."
-	icon_state = "lightxbow"
-	item_state = "lightxbow"
-	icon_prefix = "lightxbow"
+	icon_state = "xbow"
+	item_state = "xbow"
+	icon_prefix = "xbow"
 	w_class = WEIGHT_CLASS_BULKY
 	trigger_guard = TRIGGER_GUARD_NONE
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
@@ -244,9 +244,9 @@
 /obj/item/gun/ballistic/bow/compositebow
 	name = "Composite bow"
 	desc = "A finely crafted bow with an excellent draw."
-	icon_state = "compositebow"
-	item_state = "compositebow"
-	icon_prefix = "compositebow"
+	icon_state = "tribalbow"
+	item_state = "bow"
+	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -258,9 +258,9 @@
 /obj/item/gun/ballistic/bow/longbow
 	name = "longbow"
 	desc = "A tall, elegant bow, with a good balance of firepower and draw speed."
-	icon_state = "lightxbow"
-	item_state = "lightxbow"
-	icon_prefix = "lightxbow"
+	icon_state = "ashenbow"
+	item_state = "bow"
+	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
@@ -290,9 +290,9 @@
 /obj/item/gun/ballistic/bow/compoundbow
 	name = "prewar compound bow"
 	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide."
-	icon_state = "compoundbow"
-	item_state = "compoundbow"
-	icon_prefix = "compoundbow"
+	icon_state = "pipebow"
+	item_state = "bow"
+	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
