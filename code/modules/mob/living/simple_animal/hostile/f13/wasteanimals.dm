@@ -802,7 +802,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	can_ghost_into = TRUE
 	speak_chance = 0
-	turns_per_move = 5
+	turns_per_move = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
 	butcher_difficulty = 1.5
