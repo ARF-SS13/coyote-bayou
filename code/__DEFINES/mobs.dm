@@ -609,3 +609,5 @@
 ///living players needed to activate limited mob ability powers
 #define MOB_POWER_SOME_MIN_PLAYERS 9
 
+/// Drop everything in the mob loot list
+#define MOB_LOOT_ALL "allofit"
