@@ -222,7 +222,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 /datum/quirk/quick_step
 	name = "Speed Walker"
 	desc = "You walk with determined strides, and out-pace most people, at least, if you're both walking."
-	value = 1
+	value = 3
 	mob_trait = TRAIT_SPEEDY_STEP
 	gain_text = span_notice("You feel determined. No time to lose.")
 	lose_text = span_danger("You feel less determined. What's the rush, man?")
