@@ -886,7 +886,7 @@
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)*/
 
-/datum/gear/donator/kits/seermankhajiit004
+/*/datum/gear/donator/kits/seermankhajiit004
 	name = "Honey Mayor"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
 	ckeywhitelist = list("seermankhajiit00")
@@ -894,7 +894,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
 	new /obj/item/kit_spawner/townie/mayor(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/card/id/captains_spare(src)*/
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -1133,6 +1133,17 @@
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
 
 // U
+
+/datum/gear/donator/kits/ursine
+	name = "Zonq Mayor"
+	path = /obj/item/storage/box/large/custom_kit/ursine
+	ckeywhitelist = list("ursine")
+
+/obj/item/storage/box/large/custom_kit/ursine/PopulateContents()
+	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/card/id/captains_spare(src)
+
 // V
 // W
 
