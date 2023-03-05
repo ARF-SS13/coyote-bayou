@@ -96,11 +96,10 @@
 	return TRUE
 
 /obj/item/arrow_shaft/proc/finish_construction(mob/user)
-	var/obj/item/ammo_casing/caseless/arrow/make_this_arrow = new the_arrow(get_turf(src))
+	var/obj/item/ammo_casing/caseless/arrow/make_this_arrow = new the_arrow(get_turf(user))
 	if(ismob(user))
 		user.visible_message(span_notice("[user] makes \a [make_this_arrow]!"))
-		if(loc == user)
-			user.put_in_hands(make_this_arrow)
+		user.put_in_hands(make_this_arrow) // Try to put it in your hand
 	qdel(src)
 
 /obj/item/arrow_shaft/update_overlays()
