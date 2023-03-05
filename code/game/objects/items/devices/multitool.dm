@@ -270,3 +270,9 @@
 	icon_state = "clockitool"
 	toolspeed = 0.2
 
+/obj/item/multitool/abductor/imp
+	name = "personal link"
+	desc = "An omni-technological interface."
+	icon = 'icons/obj/power.dmi'
+	icon_state = "personallink2"
+	toolspeed = 0.1

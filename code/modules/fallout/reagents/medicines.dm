@@ -660,3 +660,19 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/stalkersqueeze
+	name = "Nightstalker Squeezin's"
+	description = "pure liquid heresy, the blood of a coyote snake and other herbs. has universal healing properties."
+	reagent_state = LIQUID
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	taste_description = "Heresy"
+	color = "#277e07"
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/stalkersqueeze/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0, TRUE)
+	M.adjustOxyLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+	. = 1

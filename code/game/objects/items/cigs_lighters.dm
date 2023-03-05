@@ -342,6 +342,27 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 	list_reagents = list(/datum/reagent/toxin/mindbreaker = 35, /datum/reagent/toxin/lipolicide = 15)
 
+/obj/item/clothing/mask/cigarette/rollie/mut
+	name = "handmade cigarette"
+	desc = "A roll of dried plant matter wrapped in thin black rice paper. filterless. seems to have some purple plant matter in it from a foreign plant. smells sweet."
+	list_reagents = list(/datum/reagent/drug/nicotine = 30, /datum/reagent/medicine/stalkersqueeze = 20, /datum/reagent/consumable/mutjuice = 30)
+	icon = 'icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
+	icon_state = "mspliffoff"
+	icon_on = "mspliffon"
+	icon_off = "mspliffoff"
+	type_butt = /obj/item/clothing/mask/cigarette/roachy
+	throw_speed = 0.5
+	item_state = "mspliffoff"
+	smoketime = 1500
+	chem_volume = 100
+	list_reagents = null
+
+/obj/item/clothing/mask/cigarette/roachy
+	name = "black roach"
+	desc = "A manky old roach. smells of fruit."
+	icon_state = "roachy"
+
 /obj/item/cigbutt/roach
 	name = "roach"
 	desc = "A manky old roach, or for non-stoners, a used rollup."
@@ -798,6 +819,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 5000
 	light_color = LIGHT_COLOR_YELLOW
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/blackpowder = 50)
+
+/obj/item/lighter/nightstalker
+	name = "mori's zippo"
+	icon = 'icons/obj/custom.dmi'
+	desc = "A specialty zippo made from a customized frame with a vault-tec logo on the front and big red letter M on the top. it houses a mini-reactor inside of it. all that effort just to light smokes?"
+	icon_state = "fallzip"
+	heat = 5000
+	light_color = LIGHT_COLOR_GREEN
+	overlay_state = "fallout"
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/uranium = 10)
 
 ///////////
 //ROLLING//

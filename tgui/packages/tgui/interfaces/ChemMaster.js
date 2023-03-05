@@ -241,6 +241,10 @@ const PackagingControls = (props, context) => {
     setstimpakAmount,
   ] = useSharedState(context, 'setstimpakAmount', 1);
   const [
+    inhalerAmount,
+    setinhalerAmount,
+  ] = useSharedState(context, 'setinhalerAmount', 1);
+  const [
     superstimpakAmount,
     setsuperstimpakAmount,
   ] = useSharedState(context, 'setsuperstimpakAmount', 1);
@@ -325,6 +329,19 @@ const PackagingControls = (props, context) => {
           onCreate={() => act('create', {
             type: 'stimPak',
             amount: stimpakAmount,
+            volume: 'auto',
+          })} />
+      )}
+      {!condi && !primitive &&(
+        <PackagingControlsItem
+          label="Inhalers"
+          amount={inhalerAmount}
+          amountUnit="inhalers"
+          sideNote="max 20u"
+          onChangeAmount={(e, value) => setinhalerAmount(value)}
+          onCreate={() => act('create', {
+            type: 'inhaler',
+            amount: inhalerAmount,
             volume: 'auto',
           })} />
       )}
