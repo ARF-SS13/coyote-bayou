@@ -10,24 +10,28 @@
 	/// our arrow head type
 	var/obj/item/stack/arrowhead/the_head
 	/// Does it have hay on it?
-	var/has_hay
+	var/has_hay = TRUE // it does
 	/// The result arrow
 	var/obj/item/ammo_casing/caseless/arrow/the_arrow
+
+/obj/item/arrow_shaft/Initialize()
+	. = ..()
+	update_icon() // so the hay shows up
 
 /obj/item/arrow_shaft/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/arrowhead) && attach_arrowhead(W, user))
 		return
-	if(istype(W, /obj/item/stack/sheet/hay) && attach_hay(W, user))
-		return
+	//if(istype(W, /obj/item/stack/sheet/hay) && attach_hay(W, user))
+	//	return
 	. = ..()
 
 /obj/item/arrow_shaft/attack_hand(mob/user, act_intent, attackchain_flags)
 	if(ispath(the_head, /obj/item/stack/arrowhead))
 		remove_arrowhead(user)
 		return
-	if(has_hay)
-		remove_hay(user)
-		return
+	//if(has_hay)
+	//	remove_hay(user)
+	//	return
 	. = ..()
 
 
@@ -114,6 +118,7 @@
 	desc = "Some kind of pointy thing made to go fast."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_metal"
+	merge_type = /obj/item/stack/arrowhead
 	/// The head defines the resulting arrow
 	var/obj/item/ammo_casing/caseless/arrow/result_arrow = /obj/item/ammo_casing/caseless/arrow
 
@@ -123,6 +128,7 @@
 	desc = "A sharpened piece of metal, filed down to an aerodynamic point."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_metal"
+	merge_type = /obj/item/stack/arrowhead/metal
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/metal
 
 /obj/item/stack/arrowhead/field
@@ -131,6 +137,7 @@
 	desc = "A thin, sharpened piece of metal, filed down to an aerodynamic point."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_field"
+	merge_type = /obj/item/stack/arrowhead/field
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/field
 
 /obj/item/stack/arrowhead/titanium
@@ -139,6 +146,7 @@
 	desc = "A sharpened piece of titanium, filed down to an aerodynamic point."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_titanium"
+	merge_type = /obj/item/stack/arrowhead/titanium
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/titanium
 
 /obj/item/stack/arrowhead/bone
@@ -147,6 +155,7 @@
 	desc = "A sharpened 'animal' bone, filed down to an aerodynamic point."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_bone"
+	merge_type = /obj/item/stack/arrowhead/bone
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/bone
 
 /obj/item/stack/arrowhead/flint
@@ -155,6 +164,7 @@
 	desc = "A sharpened piece of flint, filed down to an aerodynamic point."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_flint"
+	merge_type = /obj/item/stack/arrowhead/flint
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/flint
 
 /obj/item/stack/arrowhead/glass
@@ -163,6 +173,7 @@
 	desc = "A sharpened piece of glass, filed down to an aerodynamic point."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_glass"
+	merge_type = /obj/item/stack/arrowhead/glass
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/glass
 
 /obj/item/stack/arrowhead/jagged
@@ -171,6 +182,7 @@
 	desc = "A jagged shard of metal, ready to rearrange someone's guts all over the road."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_jagged"
+	merge_type = /obj/item/stack/arrowhead/jagged
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/jagged
 
 /obj/item/stack/arrowhead/explosive
@@ -179,6 +191,7 @@
 	desc = "A sack of explosives, ready to rearrange someone's guts all over the road."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_explosive"
+	merge_type = /obj/item/stack/arrowhead/explosive
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/explosive
 
 /obj/item/stack/arrowhead/ion
@@ -187,6 +200,7 @@
 	desc = "A clump of charged electronic chunks, ready to let out all manner of electrical nonsense on whatever it hits."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_ion"
+	merge_type = /obj/item/stack/arrowhead/ion
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/ion
 
 /obj/item/stack/arrowhead/blunt
@@ -195,6 +209,7 @@
 	desc = "A blunt wad of leather, firm enough to knock someone over."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_blunt"
+	merge_type = /obj/item/stack/arrowhead/blunt
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/blunt
 
 /obj/item/stack/arrowhead/practice
@@ -203,6 +218,7 @@
 	desc = "A blunt sack, ready to gently paff someone from across the road."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_practice"
+	merge_type = /obj/item/stack/arrowhead/practice
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/practice
 
 /obj/item/stack/arrowhead/sticky
@@ -211,5 +227,6 @@
 	desc = "A sticky sack, ready to annoy someone."
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_sticky"
+	merge_type = /obj/item/stack/arrowhead/sticky
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/sticky
 
