@@ -50,8 +50,9 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(list(/obj/item/gun/energy/las
 				/obj/item/gun/energy/laser/wattz2k/extended/blessed,
 				/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/sacred,
 				/obj/item/gun/ballistic/automatic/smg/tommygun/whitelegs,
-				/obj/item/gun/ballistic/bow/claw,
-				/obj/item/gun/ballistic/bow/sturdy,
+				/obj/item/gun/ballistic/bow/compositebow,
+				/obj/item/gun/ballistic/bow/longbow,
+				/obj/item/gun/ballistic/bow/crossbow,
 				/obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor,
 				/obj/item/clothing/suit/armor/light/tribal/simple,
 				/obj/item/clothing/suit/hooded/cloak)

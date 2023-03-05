@@ -802,10 +802,17 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	can_ghost_into = TRUE
 	speak_chance = 0
-	turns_per_move = 5
+	turns_per_move = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
 	butcher_difficulty = 1.5
+	loot = list(/obj/item/stack/f13Cash/random/med)
+	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
+	loot_drop_amount = 10
+	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
+	loot_amount_random = TRUE
+	/// slots in a list of trash loot
+	var/random_trash_loot = TRUE
 	response_help_simple = "jiggles"
 	response_disarm_simple = "wiggles"
 	response_harm_simple = "shakes"
@@ -834,3 +841,8 @@
 	waddle_up_time = 3
 	waddle_side_time = 2
 	desc_short = "Big, squishy, and gelatinous."
+
+/mob/living/simple_animal/hostile/gelcube/Initialize()
+	. = ..()
+	if(random_trash_loot)
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment

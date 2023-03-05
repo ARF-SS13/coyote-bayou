@@ -1000,19 +1000,21 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/tribal/spearquiver/PopulateContents()
 	new /obj/item/storage/backpack/spearquiver(src)
 
-/obj/item/storage/box/gun/bow/sturdy
-	name = "sturdy bow case"
+/obj/item/storage/box/gun/bow/shortbow
+	name = "shortbow case"
 
 /obj/item/storage/box/gun/bow/sturdy/PopulateContents()
-	new /obj/item/gun/ballistic/bow/sturdy(src)
-	new /obj/item/storage/bag/tribe_quiver/archer(src)
+	new /obj/item/gun/ballistic/bow/shortbow(src)
+	new /obj/item/storage/bag/tribe_quiver/light(src)
 
+/*dunno if we should have roundstart crossbow simply cause we want a lil more progression
 /obj/item/storage/box/gun/bow/crossbow
 	name = "crossbow case"
 
 /obj/item/storage/box/gun/bow/crossbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/crossbow(src)
-	new /obj/item/storage/bag/tribe_quiver/archer(src)
+	new /obj/item/storage/bag/tribe_quiver/light(src)
+*/
 
 /obj/item/storage/box/gun/tribal/warclub
 	name = "war club case"
@@ -1596,17 +1598,19 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /// BOWS
 
-/datum/loadout_box/sturdy
-	entry_tag = "Sturdy Bow"
+/datum/loadout_box/shortbow
+	entry_tag = "Shortbow"
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/sturdy
+	spawn_thing = /obj/item/storage/box/gun/bow/shortbow
 
+/*
 /datum/loadout_box/crossbow
 	entry_tag = "Crossbow"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/crossbow
+*/
 
 /// Preacher Stuff
 

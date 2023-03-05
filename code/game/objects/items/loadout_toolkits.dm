@@ -358,10 +358,10 @@
 	entry_class = LOADOUT_CAT_ADVENTURE
 	spawn_thing = /obj/item/storage/box/tools/military
 
-/obj/item/storage/box/tools/hunting
+/obj/item/storage/box/tools/hunter
 	name = "hunting gear"
 
-/obj/item/storage/box/tools/hunting/PopulateContents()
+/obj/item/storage/box/tools/hunter/PopulateContents()
 	new /obj/item/gun_upgrade/scope/watchman(src)
 	new /obj/item/storage/bag/plants(src)
 	new /obj/item/melee/onehanded/knife/bowie(src) //skinnin knife
@@ -370,11 +370,11 @@
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 	new /obj/item/stack/medical/suture/emergency/five(src)
 
-/datum/loadout_box/hunting
+/datum/loadout_box/hunter
 	entry_tag = "hunting gear"
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_ADVENTURE
-	spawn_thing = /obj/item/storage/box/tools/hunting
+	spawn_thing = /obj/item/storage/box/tools/hunter
 
 /obj/item/storage/box/tools/trapper
 	name = "trapper's tools"

@@ -569,7 +569,8 @@
 				/obj/item/reagent_containers/medspray/styptic,
 				/obj/item/reagent_containers/medspray/silver_sulf,
 				/obj/item/reagent_containers/medspray/sterilizine,
-				/obj/item/storage/pill_bottle/chem_tin/fixer
+				/obj/item/storage/pill_bottle/chem_tin/fixer,
+				/obj/item/reagent_containers/hypospray/medipen/psycho,
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug //remove equipment, has nothing on it
@@ -579,11 +580,12 @@
 	loot = list(
 				/obj/item/reagent_containers/pill/patch/jet,
 				/obj/item/reagent_containers/pill/patch/turbo,
-				// /obj/item/reagent_containers/pill/healingpowder,
+				/obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/reagent_containers/pill/stimulant,
 				/obj/item/reagent_containers/hypospray/medipen/medx,
 				/obj/item/storage/pill_bottle/chem_tin/buffout,
-				/obj/item/reagent_containers/hypospray/medipen/steady
+				/obj/item/reagent_containers/hypospray/medipen/steady,
+				/obj/item/reagent_containers/hypospray/medipen/psycho,
 				)
 
 
@@ -747,6 +749,8 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,
 		/obj/item/melee/onehanded/club/fryingpan = 20,
 		/obj/item/shovel/trench = 1,
+		/obj/item/gun/ballistic/bow/lightxbow = 10,
+		/obj/item/gun/ballistic/bow/recurvebow = 20,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon 
@@ -792,7 +796,10 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/unarmed/punchdagger = 10,
 		/obj/item/shishkebabpack = 5,
 		/obj/item/twohanded/baseball/louisville = 10,
-		/obj/item/melee/transforming/plasmacutter/regular = 5
+		/obj/item/melee/transforming/plasmacutter/regular = 5,
+		/obj/item/gun/ballistic/bow/longbow = 20,
+		/obj/item/gun/ballistic/bow/crossbow = 10,
+		/obj/item/gun/ballistic/bow/compositebow = 10,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/boss
@@ -847,6 +854,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/transforming/plasmacutter/regular/eve = 5,
 		/obj/item/gun/ballistic/automatic/fnfal = 5,
 		/obj/item/gun/ballistic/automatic/bar = 1,
+		/obj/item/gun/ballistic/bow/compoundbow = 20,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/unique

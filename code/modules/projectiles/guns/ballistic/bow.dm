@@ -6,14 +6,14 @@
 	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	force = 5
+	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	fire_sound = 'sound/weapons/bowfire.wav'
 	slot_flags = ITEM_SLOT_BACK
 	item_flags = NONE
 	pin = null
 	no_pin_required = TRUE
-	trigger_guard = TRIGGER_GUARD_ALLOW_ALL //so ashwalkers can use it
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL //so ashwalkers (and monke) can use it
 	spawnwithmagazine = TRUE
 	casing_ejector = TRUE
 	var/recentdraw
@@ -23,7 +23,7 @@
 	safety = 0
 	restrict_safety = 1
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower //we start very sloow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	gun_sound_properties = list(
@@ -36,16 +36,34 @@
 		SP_DISTANT_SOUND(null),
 		SP_DISTANT_RANGE(null)
 	)
+	/// Can this bow link to a quiver?
+	var/can_link_to_quiver = TRUE
+	/// Is this bow drawing from a quiver, if linked?
+	var/drawing_from_quiver = FALSE
+	/// The quiver the bow is drawing from
+	var/datum/weakref/our_quiver
 
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(istype(AC)) //there's a chambered round
 		AC.forceMove(drop_location()) //Eject casing onto ground.
 		chambered = null
-		/* if(casing_ejector)
-			AC.bounce_away(TRUE)
-		else if(empty_chamber)
-			chambered = null */
+
+/obj/item/gun/ballistic/bow/examine(mob/user)
+	. = ..()
+	if(can_link_to_quiver && loc == user)
+		if(!drawing_from_quiver)
+			. += "Not drawing from a worn quiver."
+			. += "Alt-click the bow to start drawing from a quiver."
+			return
+		var/obj/item/storage/bag/tribe_quiver/my_quiver = get_quiver(user)
+		if(istype(my_quiver))
+			. += "Currently drawing from [my_quiver]."
+			. += "Alt-click the bow to stop drawing from this quiver."
+			. += "Smack a quiver against this bow to start drawing arrows from that quiver."
+			return
+		. += "No quiver found to draw from. Wear a quiver on your belt, or smack a quiver on this bow, to draw from that quiver."
+		. += "Alt-click the bow to stop drawing from this quiver."
 
 /obj/item/gun/ballistic/bow/can_shoot()
 	return chambered
@@ -57,13 +75,14 @@
 		update_icon()
 		to_chat(user, span_notice("You gently release the bowstring, removing the arrow."))
 		return
-	if(recentdraw > world.time || !get_ammo(FALSE))
-		return
+/* 	if(recentdraw > world.time || !get_ammo(FALSE))
+		return */
 	draw(user, TRUE)
-	recentdraw = world.time + 2
-	return
+//	recentdraw = world.time + 2
 
 /obj/item/gun/ballistic/bow/proc/draw(mob/M, visible = TRUE)
+	if(!draw_load(M))
+		return TRUE
 	if(visible)
 		M.visible_message(span_warning("[M] draws the string on [src]!"), span_warning("You draw the string on [src]!"))
 	playsound(M, draw_sound, 60, 1)
@@ -72,19 +91,95 @@
 	return 1
 
 /obj/item/gun/ballistic/bow/proc/draw_load(mob/M)
-	if(!magazine.ammo_count())
-		return 0
+	if(chambered)
+		return FALSE
+	if(!magazine.ammo_count() && !load_from_quiver(M)) // if its empty, try sticking a new ammo in there
+		return FALSE
 	var/obj/item/ammo_casing/AC = magazine.get_round() //load next casing.
 	chambered = AC
+	. = TRUE
+	var/room_left_in_mag = magazine.max_ammo - LAZYLEN(magazine.stored_ammo)
+	if(room_left_in_mag) // and fill up the rest of the bow if possible
+		var/did_a_load = FALSE
+		for(var/i in 1 to room_left_in_mag)
+			if(!load_from_quiver(M))
+				break
+			did_a_load = TRUE
+		if(did_a_load)
+			M.show_message(span_notice("You ready some arrows from your quiver."))
+
+/obj/item/gun/ballistic/bow/proc/load_from_quiver(mob/user)
+	if(!drawing_from_quiver)
+		return FALSE
+	if(!can_link_to_quiver)
+		return FALSE
+	if(!istype(user))
+		return FALSE
+	if(LAZYLEN(magazine.stored_ammo) >= magazine.max_ammo)
+		return FALSE
+	var/obj/item/storage/bag/tribe_quiver/got_quiver = get_quiver(user)
+	if(!istype(got_quiver))
+		return FALSE
+	for(var/obj/item/ammo_casing/isit_pointy in got_quiver.contents)
+		if(!isit_pointy.BB)
+			continue
+		if(!SEND_SIGNAL(got_quiver, COMSIG_TRY_STORAGE_TAKE, isit_pointy, magazine))
+			continue
+		if(magazine.give_round(isit_pointy))
+			return TRUE
+
+/obj/item/gun/ballistic/bow/proc/get_quiver(mob/user, just_get_it)
+	if(!istype(user))
+		return
+	var/obj/item/storage/bag/tribe_quiver/getted_quiver
+	/// First try and draw from our chosen quiver
+	if(isweakref(our_quiver))
+		getted_quiver = our_quiver.resolve()
+		if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
+			return getted_quiver
+	/// Otherwise, draw from whatever's on the belt
+	getted_quiver = user.get_item_by_slot(SLOT_BELT)
+	if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
+		if(link_quiver_to_bow(user, getted_quiver))
+			return getted_quiver
+
+/obj/item/gun/ballistic/bow/proc/link_quiver_to_bow(mob/user, obj/item/storage/bag/tribe_quiver/the_quiver)
+	if(!istype(the_quiver))
+		return
+	if(!ismob(user))
+		return
+	if(our_quiver)
+		var/obj/item/storage/bag/tribe_quiver/prev_quiver = our_quiver.resolve()
+		if(prev_quiver == the_quiver)
+			user.show_message(span_notice("[src] is already drawing from [the_quiver]!"))
+			return TRUE
+	our_quiver = WEAKREF(the_quiver)
+	if(our_quiver)
+		user.show_message(span_notice("You are now drawing from [the_quiver]!"))
+		return TRUE
+
+/obj/item/gun/ballistic/bow/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return FALSE
+	if(loc != user)
+		return FALSE
+	drawing_from_quiver = !drawing_from_quiver
+	if(can_link_to_quiver)
+		user.show_message("You're [drawing_from_quiver?"now":"no longer"] drawing from a quiver, if one is worn.")
+	return TRUE
 
 /obj/item/gun/ballistic/bow/attackby(obj/item/A, mob/user, params)
+	if(istype(A, /obj/item/storage/bag/tribe_quiver))
+		link_quiver_to_bow(user, A)
+		return
 	if(magazine.attackby(A, user, params, 1))
 		to_chat(user, span_notice("You load [A] into \the [src]."))
 		update_icon()
+		return
 
 /obj/item/gun/ballistic/bow/update_icon()
 	icon_state = "[initial(icon_state)]_[get_ammo() ? (chambered ? "firing" : "loaded") : "unloaded"]"
-
 
 /obj/item/gun/ballistic/bow/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	..()
@@ -93,6 +188,117 @@
 		draw(user, FALSE)
 		recentdraw = world.time + 2
 
+//the main stats we have to work with making each bow different, is size, (normal versus belt, versus back only), damage multiplier, and fire rate
+//NOT ALL BOWS SHOULD BE CRAFTABLE. there's no point in having more types of bows and a variety in their stats and power levels if you just rush to craft your max tier bow and ignore all progression
+
+//Tier 1 bow, starter bow
+//shortbow. fits in bags, but otherwise minimum stats.
+/obj/item/gun/ballistic/bow/shortbow
+	name = "shortbow"
+	desc = "A lightweight bow, rather lacking in firepower"
+	icon_state = "bow"
+	item_state = "bow"
+	icon_prefix = "bow"
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
+//dunno if you want to include more information for each bow, but this is the basics
+
+//tier 2 bows. craftable bows
+//recurve bow. +fire rate, but bulky. fits on belts
+/obj/item/gun/ballistic/bow/recurvebow
+	name = "recurve bow"
+	desc = "A light bow designed for ease of draw."
+	icon_state = "tribalbow"
+	item_state = "bow"
+	icon_prefix = "bow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow
+	)
+
+//light crossbow. +damage, bulky but fits on belt
+/obj/item/gun/ballistic/bow/lightxbow
+	name = "light crossbow"
+	desc = "A compact crossbow, with decent firepower."
+	icon_state = "xbow"
+	item_state = "xbow"
+	icon_prefix = "xbow"
+	w_class = WEIGHT_CLASS_BULKY
+	trigger_guard = TRIGGER_GUARD_NONE
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE //?
+
+//tier 3 bows. looted only? mid tier loot pools, but marked as common. bow gear progression is lacking, especially when you can just make the highest tier weapon from the communal materal pile
+//composite bow. fire rate++ but bulky and back slot only. max potential drawn out with bow trained quirk. will see if it's too wimpy
+/obj/item/gun/ballistic/bow/compositebow
+	name = "Composite bow"
+	desc = "A finely crafted bow with an excellent draw."
+	icon_state = "tribalbow"
+	item_state = "bow"
+	icon_prefix = "bow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+			/datum/firemode/semi_auto //fast bow. skilled archers will make the most use out of this. mebbe needs buff iuno
+	)
+
+//longbow, damage+, speed+, back slot only
+/obj/item/gun/ballistic/bow/longbow
+	name = "longbow"
+	desc = "A tall, elegant bow, with a good balance of firepower and draw speed."
+	icon_state = "ashenbow"
+	item_state = "bow"
+	icon_prefix = "bow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow //a bit faster
+	)
+
+//crossbow. damage++. the brush gun of bows.
+/obj/item/gun/ballistic/bow/crossbow
+	name = "crossbow"
+	desc = "A large crossbow with a heavy draw, for maximum killing power."
+	icon_state = "crossbow"
+	item_state = "crossbow"
+	icon_prefix = "crossbow"
+	trigger_guard = TRIGGER_GUARD_NONE
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5 //60 damage, brush gun power level
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE //?
+
+//tier 4 legendary bow, either boss tier or unique tier, unsure just yet
+//modern compound bow. speed++, damage++. the ultimate bow
+/obj/item/gun/ballistic/bow/compoundbow
+	name = "prewar compound bow"
+	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide."
+	icon_state = "pipebow"
+	item_state = "bow"
+	icon_prefix = "bow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	init_firemodes = list(
+			/datum/firemode/semi_auto
+	)
+
+/* old bows, stinky, like fenny
 /obj/item/gun/ballistic/bow/xbow
 	name = "magazine-fed crossbow"
 	desc = "A somewhat primitive projectile weapon. Has a spring-loaded magazine, but still requires drawing back before firing. Fires arrows slightly faster than regular bows, improving damage"
@@ -176,3 +382,4 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
+*/
