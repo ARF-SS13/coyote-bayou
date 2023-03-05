@@ -883,7 +883,7 @@
 	job_description = "Bow Hunter"
 	assignedrole = "Bow Hunter"
 	suit_store = /obj/item/gun/ballistic/automatic/tribalbow
-	belt = /obj/item/storage/bag/tribe_quiver/bone
+	belt = /obj/item/storage/bag/tribe_quiver/light
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,

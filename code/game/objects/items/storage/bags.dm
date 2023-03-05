@@ -499,23 +499,43 @@ obj/item/storage/bag/chemistry/tribal
 			span_notice("You scoop up the casings beneath you with your [name]."))
 	spam_protection = FALSE
 
-/obj/item/storage/bag/tribe_quiver
-	name = "tribal quiver"
+/obj/item/storage/bag/tribe_quiver //tribal quiver as opposed to nontribal quiver? 
+	name = "belt quiver"
 	desc = "A simple leather quiver designed for holding arrows."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "tribal_quiver"
 	item_state = "tribal_quiver"
+	w_class = WEIGHT_CLASS_NORMAL
 	component_type = /datum/component/storage/concrete/bag/quiver
 
-/obj/item/storage/bag/tribe_quiver/PopulateContents()
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
+/obj/item/storage/bag/tribe_quiver/full/PopulateContents()
+	for(var/i in 1 to 12)
+		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
+
+/obj/item/storage/bag/tribe_quiver/light
+	name = "light quiver"
+	desc = "A compact, lightweight quiver, that can be tucked just about anywhere to hold some arrows."
+	icon_state = "quiver"
+	item_state = "tribal_quiver"
+	w_class = WEIGHT_CLASS_SMALL
+	component_type = /datum/component/storage/concrete/bag/light_quiver
+
+/obj/item/storage/bag/tribe_quiver/light/full/PopulateContents()
+	for(var/i in 1 to 12)
+		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
+
+/obj/item/storage/bag/tribe_quiver/heavy
+	name = "back quiver"
+	desc = "A large quiver worn on the back, made to hold all the arrows you might need."
+	icon_state = "militiabelt"
+	item_state = "tribal_quiver"
+	slot_flags = ITEM_SLOT_BACK //will this make it go in both backpack and suit slot?
+	w_class = WEIGHT_CLASS_HUGE
+	component_type = /datum/component/storage/concrete/bag/heavy_quiver
+
+/obj/item/storage/bag/tribe_quiver/heavy/full/PopulateContents()
+	for(var/i in 1 to 12)
+		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
 
 /obj/item/storage/bag/tribe_quiver/AltClick(mob/living/carbon/user)
 	. = ..()
@@ -538,37 +558,6 @@ obj/item/storage/bag/chemistry/tribal
 	else
 		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE
-
-//Bone Arrow Quiver
-/obj/item/storage/bag/tribe_quiver/bone
-	name = "hunters quiver"
-	desc = "A simple leather quiver designed for holding arrows, this one seems to hold deadlier arrows for hunting."
-	
-
-/obj/item/storage/bag/tribe_quiver/bone/PopulateContents()
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-
-//Archer Quiver so the Far-Lands Archer doesn't start with two quivers
-/obj/item/storage/bag/tribe_quiver/archer
-	name = "archers quiver"
-
-/obj/item/storage/bag/tribe_quiver/archer/PopulateContents()
-	. = ..()
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
 
 /obj/item/storage/bag/trash/sack
 	name = "leather sack"

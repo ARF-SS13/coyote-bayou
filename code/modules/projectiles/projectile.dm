@@ -147,6 +147,8 @@
 
 	var/supereffective_damage = 0
 	var/list/supereffective_faction //Any mob with a faction that exists in this list will take bonus damage
+	/// Flags for which kinds of mobs this thing is more effective against (check combat.dm!)
+	var/supereffective_flags
 
 	var/temporary_unstoppable_movement = FALSE
 
@@ -382,12 +384,8 @@
 #define FORCE_QDEL 3		//Force deletion.
 
 /obj/item/projectile/proc/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)		//probably needs to be reworked entirely when pixel movement is done.
-	if(isliving(target) && LAZYLEN(supereffective_faction))
-		var/mob/living/L = target
-		for(var/F in L.faction)
-			if(F in supereffective_faction)
-				damage += (supereffective_damage * damage_mod)
-				break
+	if(is_supereffective(target))
+		damage += (supereffective_damage * damage_mod)
 	if(QDELETED(src) || !T || !target)		//We're done, nothing's left.
 		if((qdel_self == FORCE_QDEL) || ((qdel_self == QDEL_SELF) && !temporary_unstoppable_movement && !CHECK_BITFIELD(movement_type, UNSTOPPABLE)))
 			qdel(src)
@@ -410,6 +408,46 @@
 	if((qdel_self == FORCE_QDEL) || ((qdel_self == QDEL_SELF) && !temporary_unstoppable_movement && !CHECK_BITFIELD(movement_type, UNSTOPPABLE)))
 		qdel(src)
 	return hit_something
+
+/// Check if the projectile is Super Effective on the target!
+/obj/item/projectile/proc/is_supereffective(atom/target)
+	if(!istype(target))
+		return FALSE // ???
+	if(LAZYLEN(supereffective_faction) && isliving(target))
+		var/mob/living/L = target
+		for(var/F in L.faction)
+			if(F in supereffective_faction)
+				return TRUE
+	if(supereffective_flags)
+		if(CHECK_BITFIELD(supereffective_flags, SE_NO_LAZARUS))
+			if(istype(target, /mob/living/simple_animal))
+				var/mob/living/simple_animal/sanimal = target
+				if(sanimal.lazarused)
+					return FALSE
+		if(CHECK_BITFIELD(supereffective_flags, SE_ALL_SIMPLEMOBS))
+			if(istype(target, /mob/living/simple_animal))
+				return TRUE
+		if(CHECK_BITFIELD(supereffective_flags, SE_HOSTILE_SIMPLEMOBS))
+			if(istype(target, /mob/living/simple_animal/hostile))
+				return TRUE
+		if(CHECK_BITFIELD(supereffective_flags, SE_ANIMALS))
+			if(issimpleanimalmob(target))
+				return TRUE
+		if(CHECK_BITFIELD(supereffective_flags, SE_INSECTS))
+			if(issimpleinsect(target))
+				return TRUE
+		if(CHECK_BITFIELD(supereffective_flags, SE_ROBOTS))
+			if(issimplerobot(target))
+				return TRUE
+		if(CHECK_BITFIELD(supereffective_flags, SE_HUMANLIKE))
+			if(issimplehumanlike(target))
+				return TRUE
+		if(CHECK_BITFIELD(supereffective_flags, SE_PLAYERS))
+			if(ismob(target))
+				var/mob/theguy = target
+				if(theguy.ckey)
+					return TRUE
+	return FALSE
 
 #undef QDEL_SELF
 #undef DO_NOT_QDEL

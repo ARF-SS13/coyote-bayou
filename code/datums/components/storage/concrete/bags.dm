@@ -74,16 +74,32 @@
 
 /// Quiver
 /datum/component/storage/concrete/bag/quiver
-	max_items = STORAGE_CASING_QUIVER_MAX_ITEMS
-	max_w_class = STORAGE_CASING_QUIVER_MAX_SIZE
-	max_combined_w_class = STORAGE_CASING_QUIVER_MAX_TOTAL_SPACE
-	max_volume = STORAGE_CASING_QUIVER_MAX_TOTAL_SPACE
+	max_items = STORAGE_QUIVER_MAX_ITEMS
+	max_w_class = STORAGE_QUIVER_MAX_SIZE
+	max_combined_w_class = STORAGE_QUIVER_TOTAL_SPACE
+	max_volume = STORAGE_QUIVER_TOTAL_SPACE //dunno how this is different than combined w class, but, want 24 tiny items, 12 small, or 8 normal sized
 	display_numerical_stacking = TRUE
 	limited_random_access = FALSE
 
 /datum/component/storage/concrete/bag/quiver/Initialize()
 	. = ..()
 	can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+
+/datum/component/storage/concrete/bag/light_quiver //12 tiny arrows, 6 small, 4 normal
+	max_items = STORAGE_QUIVER_LIGHT_MAX_ITEMS
+	max_w_class = STORAGE_QUIVER_LIGHT_MAX_SIZE
+	max_combined_w_class = STORAGE_QUIVER_LIGHT_TOTAL_SPACE
+	max_volume = STORAGE_QUIVER_LIGHT_TOTAL_SPACE
+	display_numerical_stacking = TRUE
+	limited_random_access = FALSE
+
+/datum/component/storage/concrete/bag/heavy_quiver //lots o arrows
+	max_items = STORAGE_QUIVER_HEAVY_MAX_ITEMS
+	max_w_class = STORAGE_QUIVER_HEAVY_MAX_SIZE
+	max_combined_w_class = STORAGE_QUIVER_HEAVY_TOTAL_SPACE
+	max_volume = STORAGE_QUIVER_HEAVY_TOTAL_SPACE
+	display_numerical_stacking = TRUE
+	limited_random_access = FALSE
 
 /// trashbag
 /datum/component/storage/concrete/bag/trash
