@@ -670,9 +670,9 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stalkersqueeze/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0, TRUE)
-	M.adjustOxyLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-3.0*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, 0, TRUE)
+	M.adjustOxyLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
 	. = 1
