@@ -245,6 +245,17 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
+/datum/crafting_recipe/tribalwar/goldenbow
+	name = "Golden Bow"
+	result = /obj/item/gun/ballistic/bow/gold
+	time = 70
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 10,
+				/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/crafting/metalparts = 5)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_available = TRUE
+
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
 	result = /obj/item/gun/ballistic/bow/silver
@@ -332,6 +343,15 @@
 	result = /obj/item/ammo_casing/caseless/arrow/bronze
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bronze = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/tribalwar/arrowgold
+	name = "Golden Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/gold
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 1,
 				/obj/item/stack/sheet/mineral/wood = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
