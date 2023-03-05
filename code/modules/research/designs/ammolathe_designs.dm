@@ -515,7 +515,7 @@
 	category = list("initial", "Intermediate Magazines")
 
 /datum/design/ammolathe/garand308
-	name = "empty garand en-bloc clip (7.62mm/.308)"
+	name = "empty garand en-bloc clip (.30-06)"
 	id = "garand308"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/garand3006/empty
@@ -666,7 +666,7 @@
 	name = "empty ammo belt (.308)"
 	id = "mm762"
 	materials = list(/datum/material/iron = 8000)
-	build_path = /obj/item/ammo_box/magazine/mm762/empty
+	build_path = /obj/item/ammo_box/magazine/mm308/empty
 	category = list("initial", "Advanced Magazines")
 
 /datum/design/ammolathe/pps_mag
