@@ -21,7 +21,7 @@
 /obj/machinery/autolathe,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -56,7 +56,7 @@
 "acY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	//tag = "icon-verticalleftborderleft0"
 	},
 /area/f13/wasteland)
 "adv" = (
@@ -123,7 +123,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -201,7 +201,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -291,7 +291,7 @@
 "anv" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "innermiddle"
@@ -360,7 +360,7 @@
 /obj/effect/decal/waste,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
@@ -382,7 +382,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -454,7 +454,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -552,13 +552,13 @@
 "ayi" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "ayw" = (
 /obj/structure/flora/tree/tall{
-	tag = "icon-tree_2";
+	//tag = "icon-tree_2";
 	icon_state = "tree_2"
 	},
 /turf/open/indestructible/ground/outside/desert,
@@ -584,7 +584,7 @@
 /obj/structure/closet/crate/secure/weapon,
 /obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -592,11 +592,11 @@
 /obj/effect/decal/marking,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -678,7 +678,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -770,7 +770,6 @@
 /obj/effect/spawner/lootdrop/crafts,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -821,13 +820,11 @@
 /area/f13/wasteland)
 "aIu" = (
 /obj/structure/chair{
-	tag = "icon-chair (EAST)";
 	icon_state = "chair";
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -899,7 +896,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -966,7 +962,6 @@
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
 	},
 /area/f13/building)
 "aNU" = (
@@ -989,7 +984,6 @@
 /mob/living/simple_animal/hostile/raider,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -1034,14 +1028,12 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
 "aPe" = (
 /obj/structure/chair,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -1096,7 +1088,6 @@
 "aRa" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -1222,7 +1213,6 @@
 /area/f13/building)
 "aTD" = (
 /obj/machinery/shower{
-	tag = "icon-shower (WEST)";
 	icon_state = "shower";
 	dir = 8
 	},
@@ -1235,7 +1225,6 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -1324,7 +1313,6 @@
 /area/f13/wasteland)
 "aXI" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowbroken";
 	icon_state = "housewindowbroken";
 	dir = 2
 	},
@@ -1347,7 +1335,6 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -1356,7 +1343,6 @@
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -1378,14 +1364,12 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aZW" = (
 /obj/effect/decal/cleanable/vomit,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -1413,7 +1397,6 @@
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -1483,7 +1466,7 @@
 	dir = 1;
 	pixel_x = -2;
 	pixel_y = 7;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert,
@@ -1537,11 +1520,9 @@
 /area/f13/building)
 "bhN" = (
 /obj/structure/closet/crate{
-	tag = "icon-medicalcrate";
 	icon_state = "medicalcrate"
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -1553,7 +1534,6 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -1609,7 +1589,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -1637,7 +1616,6 @@
 /obj/machinery/microwave,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -1736,7 +1714,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
 	dir = 8;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
@@ -1751,7 +1729,6 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -1835,7 +1812,6 @@
 /area/f13/building)
 "bvJ" = (
 /obj/structure/flora/tree/tall{
-	tag = "icon-tree_3";
 	icon_state = "tree_3"
 	},
 /turf/open/indestructible/ground/outside/desert,
@@ -1843,7 +1819,6 @@
 "bvL" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
@@ -1860,7 +1835,6 @@
 /area/f13/building)
 "bvS" = (
 /turf/open/floor/f13{
-	tag = "icon-reddirtyfull";
 	icon_state = "reddirtyfull"
 	},
 /area/f13/building)
@@ -1906,7 +1880,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -1943,7 +1916,6 @@
 "bzH" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -2021,7 +1993,6 @@
 /obj/machinery/vending/snack,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
 	},
 /area/f13/building)
 "bDy" = (
@@ -2050,7 +2021,6 @@
 /area/f13/building)
 "bEr" = (
 /obj/machinery/shower{
-	tag = "icon-shower (EAST)";
 	icon_state = "shower";
 	dir = 4
 	},
@@ -2094,7 +2064,6 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -2102,7 +2071,6 @@
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -2157,7 +2125,6 @@
 /obj/effect/spawner/lootdrop/snowdin/dungeonlite,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -2228,7 +2195,6 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -2280,7 +2246,6 @@
 	icon_state = "toilet00";
 	pixel_x = 0;
 	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
 	},
 /obj/machinery/light/small,
 /turf/open/floor/f13{
@@ -2289,7 +2254,6 @@
 /area/f13/building)
 "bPj" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowvertical (NORTHEAST)";
 	icon_state = "housewindowvertical"
 	},
 /turf/open/floor/f13/wood,
@@ -2313,7 +2277,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
@@ -2437,18 +2400,15 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbear1";
-	tag = "icon-gibbear1"
 	},
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "bVk" = (
@@ -2462,7 +2422,6 @@
 /obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheethos";
-	tag = "icon-sheethos"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -2472,7 +2431,6 @@
 /area/f13/wasteland)
 "bVN" = (
 /obj/structure/chair/wood{
-	tag = "icon-wooden_chair_settler (NORTH)";
 	icon_state = "wooden_chair_settler";
 	dir = 1
 	},
@@ -2539,7 +2497,6 @@
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -2554,7 +2511,6 @@
 /area/f13/building)
 "bZl" = (
 /obj/structure/decoration/rag{
-	tag = "icon-skin";
 	icon_state = "skin"
 	},
 /turf/open/floor/f13/wood,
@@ -2689,11 +2645,9 @@
 /obj/structure/closet/cabinet,
 /obj/item/storage/backpack{
 	icon_state = "satchel";
-	tag = "icon-satchel"
 	},
 /obj/item/storage/backpack{
 	icon_state = "satchel";
-	tag = "icon-satchel"
 	},
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood,
@@ -2712,7 +2666,6 @@
 "cgm" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
 	},
 /area/f13/building)
 "cgA" = (
@@ -2765,7 +2718,6 @@
 /obj/structure/fence,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -2897,7 +2849,6 @@
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -2926,7 +2877,6 @@
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -2978,7 +2928,6 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/table,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -3066,7 +3015,6 @@
 	icon_state = "sink";
 	pixel_x = 10;
 	pixel_y = 0;
-	tag = "icon-sink (EAST)"
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
@@ -3086,7 +3034,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -3128,7 +3075,6 @@
 /area/f13/wasteland)
 "cxv" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowbrokenvertical (NORTHEAST)";
 	icon_state = "housewindowbrokenvertical"
 	},
 /turf/open/floor/f13/wood,
@@ -3181,7 +3127,6 @@
 "czl" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building)
@@ -3226,12 +3171,10 @@
 /area/f13/building)
 "cAS" = (
 /obj/structure/chair/office{
-	tag = "icon-chair (NORTH)";
 	icon_state = "chair";
 	dir = 1
 	},
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -3272,7 +3215,6 @@
 /area/f13/wasteland)
 "cBR" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowbroken";
 	icon_state = "housewindowbroken";
 	dir = 2
 	},
@@ -3285,7 +3227,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "whiteyellowdirtychess2"
@@ -3295,7 +3236,7 @@
 /obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 1;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3400,7 +3341,6 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -3524,7 +3464,6 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -3565,11 +3504,9 @@
 "cLT" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -3592,7 +3529,6 @@
 /obj/structure/window/fulltile/house,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
 	},
 /area/f13/building)
 "cMx" = (
@@ -3609,7 +3545,6 @@
 "cMC" = (
 /obj/structure/reagent_dispensers/barrel/four,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -3617,7 +3552,6 @@
 /obj/structure/decoration/sign{
 	icon_state = "vault_erp";
 	pixel_y = 30;
-	tag = "icon-vault_erp"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -3630,7 +3564,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -3643,7 +3576,6 @@
 /obj/item/ammo_casing/caseless,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -3677,7 +3609,6 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -3722,7 +3653,6 @@
 /area/f13/building)
 "cRb" = (
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg3";
 	icon_state = "platingdmg3"
 	},
 /area/f13/building)
@@ -3733,7 +3663,6 @@
 "cRn" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building)
@@ -3810,7 +3739,6 @@
 	icon_state = "sink";
 	pixel_x = 0;
 	pixel_y = 0;
-	tag = "icon-sink (WEST)"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13{
@@ -3925,7 +3853,6 @@
 "daS" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/rock,
 /area/f13/building)
@@ -3950,7 +3877,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	////tag = "icon-outerturn (EAST)"
 	},
 /area/f13/wasteland)
 "dby" = (
@@ -3969,11 +3896,11 @@
 "dcs" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
+	////tag = "icon-verticalrightborderright1"
 	},
 /area/f13/wasteland)
 "dcw" = (
@@ -4014,7 +3941,7 @@
 "ddN" = (
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	////tag = "icon-reddirtyfull"
 	},
 /area/f13/building)
 "ded" = (
@@ -4197,7 +4124,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
@@ -4340,7 +4267,7 @@
 "dps" = (
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	////tag = "icon-remains"
 	},
 /obj/item/storage/backpack/satchel/leather,
 /turf/open/floor/f13{
@@ -4380,7 +4307,7 @@
 /obj/effect/spawner/lootdrop/crafts,
 /obj/effect/spawner/lootdrop/crafts,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	////tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -4406,7 +4333,7 @@
 "dtt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalbottombordertop3"
@@ -4521,7 +4448,7 @@
 "dyB" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
@@ -4546,7 +4473,7 @@
 /area/f13/building)
 "dyT" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (WEST)";
+	////tag = "icon-bench (WEST)";
 	icon_state = "bench";
 	dir = 8
 	},
@@ -4588,7 +4515,7 @@
 "dBe" = (
 /obj/structure/bed,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	////tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -4625,7 +4552,7 @@
 "dCK" = (
 /obj/machinery/mineral/unloading_machine,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	////tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -4670,12 +4597,12 @@
 /area/f13/building)
 "dEP" = (
 /obj/structure/chair{
-	tag = "icon-chair (NORTH)";
+	////tag = "icon-chair (NORTH)";
 	icon_state = "chair";
 	dir = 1
 	},
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	////tag = "icon-remains";
 	icon_state = "remains"
 	},
 /turf/open/floor/f13{
@@ -4684,7 +4611,7 @@
 /area/f13/building)
 "dEU" = (
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	////tag = "icon-remains";
 	icon_state = "remains"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -4697,7 +4624,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	////tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -4758,7 +4685,7 @@
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -4773,7 +4700,7 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	////tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -4814,10 +4741,10 @@
 /obj/machinery/computer/pod/old{
 	icon_state = "terminal";
 	name = "terminal";
-	tag = "icon-terminal"
+	////tag = "icon-terminal"
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	////tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -4930,7 +4857,7 @@
 "dNF" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -4938,7 +4865,7 @@
 /area/f13/building)
 "dNX" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (EAST)";
+	////tag = "icon-bench (EAST)";
 	icon_state = "bench";
 	dir = 4
 	},
@@ -4993,7 +4920,7 @@
 	name = "Citizen"
 	},
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	////tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -5005,7 +4932,7 @@
 /mob/living/simple_animal/hostile/supermutant/legendary,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/water,
 /area/f13/building)
@@ -5023,7 +4950,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	////tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -5204,7 +5131,7 @@
 "dZp" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerturn"
@@ -5233,10 +5160,10 @@
 	dir = 8;
 	icon_state = "conveyor0";
 	id = "mining_internal";
-	tag = "icon-conveyor0 (WEST)"
+	////tag = "icon-conveyor0 (WEST)"
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	////tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -5305,7 +5232,7 @@
 "edm" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -5480,7 +5407,7 @@
 "ekt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2right"
@@ -5572,7 +5499,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/blueyellow,
 /area/f13/building)
@@ -5586,7 +5513,7 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	////tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -5601,7 +5528,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -5651,7 +5578,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -5856,7 +5783,7 @@
 "ezs" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	////tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -5928,7 +5855,7 @@
 "eBY" = (
 /obj/structure/simple_door/interior,
 /obj/structure/decoration/rag{
-	tag = "icon-skulls";
+	////tag = "icon-skulls";
 	icon_state = "skulls"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -5945,7 +5872,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -5962,7 +5889,7 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	////tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -6060,7 +5987,7 @@
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	////tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -6075,7 +6002,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -6278,7 +6205,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -6414,7 +6341,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -6488,7 +6415,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
@@ -6571,7 +6498,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	////tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -6725,7 +6652,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	////tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -6741,7 +6668,7 @@
 /obj/effect/spawner/lootdrop/crafts,
 /obj/effect/spawner/lootdrop/crafts,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	////tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -6753,7 +6680,7 @@
 "fhi" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal";
-	tag = "icon-doublehorizontal"
+	////tag = "icon-doublehorizontal"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -6776,7 +6703,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/lootdrop/wrange_low,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	////tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -6837,7 +6764,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -6856,7 +6783,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -6884,7 +6811,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
 	dir = 8;
-	termtag = "Security"
+	term////tag = "Security"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
@@ -6905,7 +6832,7 @@
 /obj/effect/landmark/start/f13/faithful,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -6993,7 +6920,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -7181,14 +7108,14 @@
 	randomizer_tag = "westerm garland city"
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	////tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
 "fBh" = (
 /obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	////tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -7224,7 +7151,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	////tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -7456,7 +7383,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerborder";
-	tag = "icon-outerborder (EAST)"
+	////tag = "icon-outerborder (EAST)"
 	},
 /area/f13/wasteland)
 "fNd" = (
@@ -7486,7 +7413,7 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical"
+	////tag = "icon-housewindowbrokenvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -7545,7 +7472,7 @@
 /obj/structure/nest/gecko,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "fPZ" = (
@@ -7570,7 +7497,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -7682,7 +7609,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -7736,7 +7663,7 @@
 /area/f13/wasteland)
 "fXk" = (
 /obj/structure/simple_door/house{
-	tag = "icon-interioropening";
+	//tag = "icon-interioropening";
 	icon_state = "interioropening"
 	},
 /turf/open/floor/f13{
@@ -7841,7 +7768,7 @@
 "gbo" = (
 /obj/structure/simple_door/metal/store{
 	icon_state = "brokenstore";
-	tag = "icon-brokenstore"
+	//tag = "icon-brokenstore"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -7850,7 +7777,7 @@
 /obj/machinery/microwave,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -7921,7 +7848,7 @@
 /obj/item/chair{
 	dir = 8;
 	icon_state = "wooden_chair";
-	tag = "icon-wooden_chair (WEST)"
+	//tag = "icon-wooden_chair (WEST)"
 	},
 /obj/effect/mob_spawn/human/corpse/damaged,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
@@ -7931,7 +7858,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/wmelee_middle,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -7990,10 +7917,10 @@
 /obj/structure/simple_door/bunker/glass,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -8003,7 +7930,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -8016,7 +7943,7 @@
 /obj/item/seeds/cannabis,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/unique,
 /turf/open/indestructible/ground/inside/mountain,
@@ -8034,7 +7961,7 @@
 /obj/structure/simple_door/glass,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
@@ -8073,7 +8000,7 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -8116,13 +8043,13 @@
 "gmt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "gmF" = (
 /obj/structure/flora/tree/tall{
-	tag = "icon-tree_3";
+	//tag = "icon-tree_3";
 	icon_state = "tree_3"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -8223,7 +8150,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -8337,11 +8264,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	//tag = "icon-gib2-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "guH" = (
@@ -8487,7 +8414,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -8564,7 +8491,7 @@
 /area/f13/building)
 "gEB" = (
 /obj/structure/fence{
-	tag = "icon-metal_fence3";
+	//tag = "icon-metal_fence3";
 	icon_state = "metal_fence3"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -8587,7 +8514,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
@@ -8595,7 +8522,7 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical"
+	//tag = "icon-housewindowvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -8693,7 +8620,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
@@ -8730,7 +8657,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
 	dir = 8;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -8749,7 +8676,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -8765,7 +8692,7 @@
 /obj/item/bodypart/l_arm,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "gOi" = (
@@ -8783,7 +8710,7 @@
 /obj/structure/car,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -8840,7 +8767,7 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "gRD" = (
@@ -9002,7 +8929,7 @@
 /obj/item/kitchen/fork,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -9011,7 +8938,7 @@
 "gZN" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -9021,7 +8948,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
@@ -9159,7 +9086,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-bluerustychess2";
+	//tag = "icon-bluerustychess2";
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
@@ -9231,7 +9158,7 @@
 "hkw" = (
 /obj/effect/spawner/lootdrop/clothing_high,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -9246,7 +9173,7 @@
 "hlf" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-reddirtyfull";
+	//tag = "icon-reddirtyfull";
 	icon_state = "reddirtyfull"
 	},
 /area/f13/building)
@@ -9254,7 +9181,7 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "hlM" = (
@@ -9354,7 +9281,7 @@
 "how" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -9363,7 +9290,7 @@
 /obj/effect/spawner/lootdrop/crafts,
 /obj/effect/spawner/lootdrop/crafts,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -9456,7 +9383,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -9487,7 +9414,7 @@
 "huR" = (
 /obj/structure/table,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -9555,7 +9482,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -9572,7 +9499,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
@@ -9594,7 +9521,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -9606,7 +9533,7 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "hzv" = (
@@ -9645,7 +9572,7 @@
 /obj/machinery/recharger,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "hBD" = (
@@ -9717,7 +9644,7 @@
 /obj/structure/toilet{
 	dir = 8;
 	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	//tag = "icon-toilet00 (WEST)"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/floor/f13{
@@ -9744,7 +9671,7 @@
 "hFk" = (
 /obj/effect/spawner/lootdrop/snowdin/dungeonlite,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -9904,7 +9831,7 @@
 /obj/machinery/washing_machine,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -9914,7 +9841,7 @@
 /area/f13/wasteland)
 "hMB" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowvertical (NORTHEAST)";
+	//tag = "icon-housewindowvertical (NORTHEAST)";
 	icon_state = "housewindowvertical"
 	},
 /turf/open/floor/f13{
@@ -9944,7 +9871,7 @@
 /obj/item/stack/sheet/animalhide/human,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "hNx" = (
@@ -10010,7 +9937,7 @@
 "hQc" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
@@ -10033,11 +9960,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/opshuttle,
 /area/f13/building)
@@ -10099,12 +10026,12 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2";
-	tag = "icon-horizontaloutermain2"
+	//tag = "icon-horizontaloutermain2"
 	},
 /area/f13/building)
 "hSA" = (
 /obj/structure/chair/wood{
-	tag = "icon-wooden_chair_settler (NORTH)";
+	//tag = "icon-wooden_chair_settler (NORTH)";
 	icon_state = "wooden_chair_settler";
 	dir = 1
 	},
@@ -10119,7 +10046,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland)
@@ -10148,14 +10075,14 @@
 /area/f13/wasteland)
 "hTG" = (
 /obj/structure/chair{
-	tag = "icon-chair (EAST)";
+	//tag = "icon-chair (EAST)";
 	icon_state = "chair";
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -10205,7 +10132,7 @@
 /obj/structure/chair/comfy{
 	dir = 4;
 	icon_state = "comfychair";
-	tag = "icon-comfychair (EAST)"
+	//tag = "icon-comfychair (EAST)"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -10243,7 +10170,7 @@
 	randomizer_tag = "westerm garland city"
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -10288,7 +10215,7 @@
 "hYt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "white"
@@ -10304,7 +10231,7 @@
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -10377,7 +10304,7 @@
 /obj/effect/spawner/lootdrop/snowdin/dungeonlite,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -10428,7 +10355,7 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -10460,11 +10387,11 @@
 "icA" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -10499,7 +10426,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -10554,11 +10481,11 @@
 "ieK" = (
 /obj/structure/table/wood,
 /obj/structure/filingcabinet/chestdrawer/wheeled{
-	tag = "icon-folder_yellow";
+	//tag = "icon-folder_yellow";
 	icon_state = "folder_yellow"
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -10575,7 +10502,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building)
@@ -10664,7 +10591,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
@@ -10690,7 +10617,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/tunnel,
 /area/f13/building)
@@ -10753,7 +10680,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -10818,7 +10745,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -10836,7 +10763,7 @@
 "iqd" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#c1ac99";
@@ -10854,7 +10781,7 @@
 "iqA" = (
 /obj/structure/window/fulltile/house,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -10886,14 +10813,14 @@
 "irC" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
 "ism" = (
 /obj/effect/decal/marking{
 	icon_state = "dottedverticaldegraded";
-	tag = "icon-dottedverticaldegraded"
+	//tag = "icon-dottedverticaldegraded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -10916,7 +10843,7 @@
 "isN" = (
 /obj/structure/closet,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -10956,7 +10883,7 @@
 /obj/structure/window/fulltile/wood,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /turf/open/floor/f13/wood,
@@ -10964,7 +10891,7 @@
 "iur" = (
 /obj/structure/table,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -11026,7 +10953,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -11044,7 +10971,7 @@
 "iyR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0";
-	tag = "icon-horizontaltopbordertop0"
+	//tag = "icon-horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
 "izd" = (
@@ -11059,7 +10986,7 @@
 "izk" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -11081,7 +11008,7 @@
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -11107,7 +11034,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /turf/open/floor/f13/wood,
@@ -11127,7 +11054,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -11247,7 +11174,7 @@
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "iHq" = (
@@ -11278,7 +11205,7 @@
 "iIq" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
@@ -11336,7 +11263,7 @@
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#c1ac99";
@@ -11361,7 +11288,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -11393,7 +11320,7 @@
 "iLS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -11407,7 +11334,7 @@
 /area/f13/building)
 "iMc" = (
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon,
@@ -11427,7 +11354,7 @@
 /area/f13/building)
 "iMx" = (
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /obj/machinery/light{
@@ -11560,11 +11487,11 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -11620,7 +11547,7 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
@@ -11639,7 +11566,7 @@
 /area/f13/caves)
 "iSd" = (
 /obj/structure/simple_door/house{
-	tag = "icon-interior";
+	//tag = "icon-interior";
 	icon_state = "interior"
 	},
 /turf/open/floor/f13{
@@ -11666,7 +11593,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -11676,7 +11603,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -11742,7 +11669,7 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "iWP" = (
@@ -11774,7 +11701,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	//tag = "icon-outerturn (EAST)"
 	},
 /area/f13/wasteland)
 "iXY" = (
@@ -11791,7 +11718,7 @@
 "iYo" = (
 /obj/structure/simple_door/glass,
 /obj/structure/decoration/rag{
-	tag = "icon-skulls";
+	//tag = "icon-skulls";
 	icon_state = "skulls"
 	},
 /turf/open/floor/f13/wood,
@@ -11869,7 +11796,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -11887,7 +11814,7 @@
 /obj/effect/spawner/lootdrop/crafts,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -11932,7 +11859,7 @@
 /area/f13/wasteland)
 "jdo" = (
 /obj/structure/chair{
-	tag = "icon-chair (WEST)";
+	//tag = "icon-chair (WEST)";
 	icon_state = "chair";
 	dir = 8
 	},
@@ -11942,7 +11869,7 @@
 /area/f13/building)
 "jdL" = (
 /obj/structure/simple_door/house{
-	tag = "icon-interior";
+	//tag = "icon-interior";
 	icon_state = "interior"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -11981,7 +11908,7 @@
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	//tag = "icon-redmark (SOUTHWEST)"
 	},
 /area/f13/building)
 "jfa" = (
@@ -12026,7 +11953,7 @@
 	dir = 1;
 	icon_state = "sink";
 	pixel_y = 15;
-	tag = "icon-sink (NORTH)"
+	//tag = "icon-sink (NORTH)"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -12062,7 +11989,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluechess2"
@@ -12239,7 +12166,7 @@
 /area/f13/building)
 "jsp" = (
 /obj/structure/chair{
-	tag = "icon-chair (EAST)";
+	//tag = "icon-chair (EAST)";
 	icon_state = "chair";
 	dir = 4
 	},
@@ -12265,7 +12192,7 @@
 	icon_state = "sink";
 	pixel_x = 10;
 	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	//tag = "icon-sink (EAST)"
 	},
 /obj/structure/mirror{
 	pixel_x = 32
@@ -12313,7 +12240,7 @@
 "jue" = (
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -12325,7 +12252,7 @@
 "jum" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalbottombordertop0"
@@ -12378,7 +12305,7 @@
 "jwp" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticalbottom";
-	tag = "icon-doubleverticalbottom"
+	//tag = "icon-doubleverticalbottom"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -12440,7 +12367,7 @@
 	},
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -12448,7 +12375,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -12468,7 +12395,7 @@
 "jAB" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -12594,7 +12521,7 @@
 /obj/effect/decal/marking,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -12635,7 +12562,7 @@
 	radius = 3
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -12656,10 +12583,10 @@
 /obj/machinery/computer/pod/old{
 	icon_state = "terminal";
 	name = "terminal";
-	tag = "icon-terminal"
+	//tag = "icon-terminal"
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -12742,7 +12669,7 @@
 "jKh" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/dirt,
@@ -12762,7 +12689,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building)
@@ -12808,7 +12735,7 @@
 "jNa" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
@@ -12822,7 +12749,7 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "storewindowleft";
-	tag = "icon-storewindowleft"
+	//tag = "icon-storewindowleft"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -12840,7 +12767,7 @@
 /obj/structure/table,
 /obj/machinery/microwave,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -12934,14 +12861,14 @@
 "jTu" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
 "jTW" = (
 /obj/structure/window/fulltile/house,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -13054,7 +12981,7 @@
 "jXM" = (
 /obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg2";
+	//tag = "icon-platingdmg2";
 	icon_state = "platingdmg2"
 	},
 /area/f13/building)
@@ -13068,7 +12995,7 @@
 "jXR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2";
-	tag = "icon-horizontaloutermain2"
+	//tag = "icon-horizontaloutermain2"
 	},
 /area/f13/building)
 "jYb" = (
@@ -13102,7 +13029,7 @@
 /obj/effect/spawner/lootdrop/snowdin/dungeonlite,
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -13176,7 +13103,7 @@
 "kbJ" = (
 /obj/structure/reagent_dispensers/barrel/three,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -13214,7 +13141,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland)
@@ -13242,7 +13169,7 @@
 "keI" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -13274,11 +13201,11 @@
 /area/f13/building)
 "kfL" = (
 /obj/structure/simple_door/house{
-	tag = "icon-roomopening";
+	//tag = "icon-roomopening";
 	icon_state = "roomopening"
 	},
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -13291,7 +13218,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib5-old";
-	tag = "icon-gib5-old"
+	//tag = "icon-gib5-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -13318,7 +13245,7 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -13357,7 +13284,7 @@
 /obj/structure/table,
 /obj/machinery/computer/terminal{
 	dir = 1;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -13448,7 +13375,7 @@
 	randomizer_tag = "post gang"
 	},
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -13497,7 +13424,7 @@
 "kml" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder";
-	tag = "icon-outerborder"
+	//tag = "icon-outerborder"
 	},
 /area/f13/wasteland)
 "kmn" = (
@@ -13540,7 +13467,7 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -13548,7 +13475,7 @@
 /obj/structure/toilet{
 	dir = 8;
 	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	//tag = "icon-toilet00 (WEST)"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -13679,7 +13606,7 @@
 /obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -13758,7 +13685,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -13815,12 +13742,12 @@
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
 	pixel_y = 3;
-	termtag = "Security"
+	term//tag = "Security"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -13835,7 +13762,7 @@
 /area/f13/building)
 "kzW" = (
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg2";
+	//tag = "icon-platingdmg2";
 	icon_state = "platingdmg2"
 	},
 /area/f13/building)
@@ -13866,7 +13793,7 @@
 /area/f13/building)
 "kAX" = (
 /obj/structure/simple_door/house{
-	tag = "icon-room";
+	//tag = "icon-room";
 	icon_state = "room"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13884,7 +13811,7 @@
 /obj/machinery/light/small,
 /obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -13929,7 +13856,7 @@
 "kDC" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -13964,7 +13891,7 @@
 "kEd" = (
 /obj/structure/bed/dogbed,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -13985,7 +13912,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -14013,7 +13940,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -14025,7 +13952,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -14035,7 +13962,7 @@
 /obj/machinery/shower{
 	dir = 8;
 	icon_state = "shower";
-	tag = "icon-shower (WEST)"
+	//tag = "icon-shower (WEST)"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -14145,7 +14072,7 @@
 /area/f13/building)
 "kJV" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindow";
+	//tag = "icon-housewindow";
 	icon_state = "housewindow";
 	dir = 2
 	},
@@ -14170,7 +14097,7 @@
 "kKq" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/store,
 /area/f13/building)
@@ -14278,7 +14205,7 @@
 "kQy" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -14292,7 +14219,7 @@
 "kQR" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -14366,11 +14293,11 @@
 "kTk" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/store,
 /area/f13/building)
@@ -14456,7 +14383,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#c1ac99";
@@ -14488,7 +14415,7 @@
 /obj/machinery/vending/snack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -14501,7 +14428,7 @@
 /mob/living/simple_animal/hostile/gecko,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "kXr" = (
@@ -14576,7 +14503,7 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/rock,
 /area/f13/building)
@@ -14684,7 +14611,7 @@
 "lcV" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/building)
@@ -14708,7 +14635,7 @@
 /area/f13/wasteland)
 "let" = (
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood3-broken";
+	//tag = "icon-housewood3-broken";
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
@@ -14723,7 +14650,7 @@
 "leX" = (
 /obj/machinery/mineral/processing_unit,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -14747,7 +14674,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -14794,7 +14721,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/blueyellow,
 /area/f13/building)
@@ -14808,7 +14735,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -14832,7 +14759,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -14845,7 +14772,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -14858,7 +14785,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
@@ -14919,7 +14846,7 @@
 /area/f13/city)
 "liP" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (EAST)";
+	//tag = "icon-bench (EAST)";
 	icon_state = "bench";
 	dir = 4
 	},
@@ -14935,7 +14862,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/water,
 /area/f13/building)
@@ -15041,7 +14968,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -15058,7 +14985,7 @@
 /obj/structure/table,
 /obj/item/clothing/ears/earmuffs,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -15092,7 +15019,7 @@
 /obj/structure/fluff/paper/stack,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /turf/open/floor/f13/wood,
@@ -15100,7 +15027,7 @@
 "loH" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermaintop"
@@ -15136,7 +15063,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -15197,7 +15124,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -15287,13 +15214,13 @@
 "lwL" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-bluerustychess2";
+	//tag = "icon-bluerustychess2";
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
 "lxw" = (
 /obj/structure/simple_door/house{
-	tag = "icon-room";
+	//tag = "icon-room";
 	icon_state = "room"
 	},
 /turf/open/floor/f13/wood,
@@ -15360,7 +15287,7 @@
 	icon_state = "sink";
 	pixel_x = 10;
 	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	//tag = "icon-sink (EAST)"
 	},
 /obj/structure/mirror{
 	pixel_x = 32
@@ -15376,7 +15303,7 @@
 /obj/structure/bedsheetbin,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -15404,7 +15331,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -15415,7 +15342,7 @@
 "lBQ" = (
 /obj/machinery/autolathe,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -15432,12 +15359,12 @@
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	//tag = "icon-floor5-old"
 	},
 /obj/item/bodypart/l_leg,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "lCT" = (
@@ -15497,7 +15424,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -15506,7 +15433,7 @@
 "lGO" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -15611,7 +15538,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -15625,14 +15552,14 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "lLt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
@@ -15652,7 +15579,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/building)
@@ -15763,7 +15690,7 @@
 /obj/item/storage/box/drinkingglasses,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "lSk" = (
@@ -15829,7 +15756,7 @@
 /obj/item/target,
 /turf/open/floor/f13{
 	icon_state = "redmark";
-	tag = "icon-redmark"
+	//tag = "icon-redmark"
 	},
 /area/f13/building)
 "lUI" = (
@@ -15840,7 +15767,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
@@ -15867,7 +15794,7 @@
 /obj/structure/closet/fridge,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -15875,10 +15802,10 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -15951,7 +15878,7 @@
 "lYa" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/sunset/brick_small,
 /area/f13/building)
@@ -15965,18 +15892,18 @@
 "lYg" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
 "lYk" = (
 /obj/item/chair{
-	tag = "icon-wooden_chair (WEST)";
+	//tag = "icon-wooden_chair (WEST)";
 	icon_state = "wooden_chair";
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -16063,7 +15990,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -16231,7 +16158,7 @@
 "mhM" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -16255,7 +16182,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -16274,7 +16201,7 @@
 /area/f13/wasteland)
 "mjs" = (
 /obj/structure/simple_door/room{
-	tag = "icon-glass";
+	//tag = "icon-glass";
 	icon_state = "glass"
 	},
 /turf/open/floor/f13/wood,
@@ -16310,7 +16237,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -16352,7 +16279,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetbrown";
-	tag = "icon-sheetbrown"
+	//tag = "icon-sheetbrown"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -16377,7 +16304,7 @@
 "mnc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg2";
+	//tag = "icon-platingdmg2";
 	icon_state = "platingdmg2"
 	},
 /area/f13/building)
@@ -16390,11 +16317,11 @@
 /obj/item/ammo_casing/caseless{
 	dir = 4;
 	icon_state = "sS-casing";
-	tag = "icon-sS-casing (EAST)"
+	//tag = "icon-sS-casing (EAST)"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -16406,7 +16333,7 @@
 /area/f13/building)
 "moG" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-storewindowtop";
+	//tag = "icon-storewindowtop";
 	icon_state = "storewindowtop";
 	dir = 2
 	},
@@ -16419,7 +16346,7 @@
 /obj/effect/spawner/lootdrop/crafts,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -16436,7 +16363,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -16484,7 +16411,7 @@
 "mrN" = (
 /obj/effect/decal/marking{
 	icon_state = "dottedverticaldegraded";
-	tag = "icon-dottedverticaldegraded"
+	//tag = "icon-dottedverticaldegraded"
 	},
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/road,
@@ -16541,13 +16468,13 @@
 	id = 4
 	},
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
 "msR" = (
 /obj/structure/flora/tree/tall{
-	tag = "icon-tree_stump";
+	//tag = "icon-tree_stump";
 	icon_state = "tree_stump"
 	},
 /turf/open/indestructible/ground/outside/desert,
@@ -16555,7 +16482,7 @@
 "mte" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -16588,7 +16515,7 @@
 "muC" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -16602,7 +16529,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -16614,7 +16541,7 @@
 /obj/effect/spawner/lootdrop/crafts,
 /obj/effect/decal/cleanable/robot_debris/old,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -16623,7 +16550,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -16664,7 +16591,7 @@
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "myn" = (
@@ -16673,7 +16600,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -16694,7 +16621,7 @@
 /obj/structure/chair{
 	dir = 4;
 	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	//tag = "icon-chair (EAST)"
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/clothing/under/pants/f13/ghoul,
@@ -16710,14 +16637,14 @@
 	radius = 3
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
 "mzo" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -16743,7 +16670,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -16882,7 +16809,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -16890,7 +16817,7 @@
 /obj/structure/chair/comfy,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "mGT" = (
@@ -16961,7 +16888,7 @@
 /area/f13/wasteland)
 "mKu" = (
 /obj/effect/decal/cleanable/blood/gibs{
-	tag = "icon-gibup1";
+	//tag = "icon-gibup1";
 	icon_state = "gibup1"
 	},
 /turf/open/indestructible/ground/outside/desert,
@@ -16985,7 +16912,7 @@
 "mLD" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/indestructible/opshuttle,
 /area/f13/building)
@@ -17000,7 +16927,7 @@
 "mMK" = (
 /obj/machinery/mineral/stacking_machine,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -17111,10 +17038,10 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -17164,11 +17091,11 @@
 "mTP" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -17188,14 +17115,14 @@
 "mUW" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
 "mVr" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -17209,17 +17136,17 @@
 "mVV" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "mWi" = (
 /obj/structure/simple_door/house{
-	tag = "icon-roomopening";
+	//tag = "icon-roomopening";
 	icon_state = "roomopening"
 	},
 /turf/open/floor/f13{
@@ -17232,7 +17159,7 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -17360,7 +17287,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -17381,7 +17308,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -17430,7 +17357,7 @@
 "ncw" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
@@ -17502,7 +17429,7 @@
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	//tag = "icon-redmark (SOUTHWEST)"
 	},
 /area/f13/building)
 "nfp" = (
@@ -17519,7 +17446,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -17653,10 +17580,10 @@
 	dir = 6;
 	icon_state = "conveyor0";
 	id = "mining_internal";
-	tag = "icon-conveyor0 (SOUTHEAST)"
+	//tag = "icon-conveyor0 (SOUTHEAST)"
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -17670,11 +17597,11 @@
 "nlV" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -17715,7 +17642,7 @@
 /area/f13/building)
 "nnG" = (
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -17774,7 +17701,7 @@
 /obj/item/target,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-redmark";
+	//tag = "icon-redmark";
 	icon_state = "redmark"
 	},
 /area/f13/building)
@@ -17800,7 +17727,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/unique,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "nqO" = (
@@ -17850,7 +17777,7 @@
 "nsk" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland)
@@ -17895,11 +17822,11 @@
 "ntt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0";
-	tag = "icon-horizontaltopbordertop0"
+	//tag = "icon-horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
 "ntu" = (
@@ -17914,7 +17841,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -17935,7 +17862,7 @@
 "nuy" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded";
-	tag = "icon-doublehorizontalcorroded"
+	//tag = "icon-doublehorizontalcorroded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -17971,7 +17898,7 @@
 "nvI" = (
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /obj/machinery/light{
 	dir = 4;
@@ -17979,14 +17906,14 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	//tag = "icon-reddirtyfull"
 	},
 /area/f13/building)
 "nvS" = (
 /obj/structure/simple_door/metal/store,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -18053,7 +17980,7 @@
 /mob/living/simple_animal/hostile/ghoul/legendary,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -18075,20 +18002,20 @@
 /area/f13/building)
 "nxZ" = (
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg1";
+	//tag = "icon-platingdmg1";
 	icon_state = "platingdmg1"
 	},
 /area/f13/wasteland)
 "nyd" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
 "nyf" = (
 /obj/structure/simple_door/metal/store{
-	tag = "icon-brokenstore";
+	//tag = "icon-brokenstore";
 	icon_state = "brokenstore"
 	},
 /turf/open/floor/f13{
@@ -18136,7 +18063,7 @@
 	radius = 3
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -18144,7 +18071,7 @@
 /obj/machinery/shower{
 	dir = 4;
 	icon_state = "shower";
-	tag = "icon-shower (EAST)"
+	//tag = "icon-shower (EAST)"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -18231,7 +18158,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -18252,7 +18179,7 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	//tag = "icon-housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/outside/desert,
@@ -18296,7 +18223,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -18313,7 +18240,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -18362,7 +18289,7 @@
 /area/f13/wasteland)
 "nHY" = (
 /obj/structure/chair/comfy{
-	tag = "icon-comfychair (EAST)";
+	//tag = "icon-comfychair (EAST)";
 	icon_state = "comfychair";
 	dir = 4
 	},
@@ -18383,7 +18310,7 @@
 /area/f13/city)
 "nJd" = (
 /obj/structure/chair{
-	tag = "icon-chair (EAST)";
+	//tag = "icon-chair (EAST)";
 	icon_state = "chair";
 	dir = 4
 	},
@@ -18398,7 +18325,7 @@
 /obj/structure/chair{
 	dir = 4;
 	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	//tag = "icon-chair (EAST)"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -18441,7 +18368,7 @@
 	dir = 1;
 	pixel_x = -12;
 	pixel_y = 3;
-	termtag = "Security"
+	term//tag = "Security"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -18472,12 +18399,12 @@
 /area/f13/building)
 "nMk" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (NORTH)";
+	//tag = "icon-bench (NORTH)";
 	icon_state = "bench";
 	dir = 1
 	},
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /turf/open/floor/f13{
@@ -18498,7 +18425,7 @@
 "nMy" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -18510,7 +18437,7 @@
 	radius = 3
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -18602,7 +18529,7 @@
 "nQh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -18665,7 +18592,7 @@
 "nSq" = (
 /obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -18754,7 +18681,7 @@
 "nVG" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -18795,7 +18722,7 @@
 "nXZ" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontaldegraded";
-	tag = "icon-doublehorizontaldegraded"
+	//tag = "icon-doublehorizontaldegraded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -18805,7 +18732,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	//tag = "icon-floor5-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -18822,14 +18749,14 @@
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
 "nZx" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 2;
@@ -18915,13 +18842,13 @@
 /area/f13/building)
 "odW" = (
 /obj/machinery/shower{
-	tag = "icon-shower (EAST)";
+	//tag = "icon-shower (EAST)";
 	icon_state = "shower";
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -18980,7 +18907,7 @@
 /obj/structure/simple_door/metal,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -19001,7 +18928,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -19018,7 +18945,7 @@
 /obj/structure/spider/stickyweb,
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -19040,7 +18967,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetblue";
-	tag = "icon-sheetblue"
+	//tag = "icon-sheetblue"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -19107,7 +19034,7 @@
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -19186,7 +19113,7 @@
 /area/f13/building)
 "ono" = (
 /obj/structure/decoration/rag{
-	tag = "icon-skulls";
+	//tag = "icon-skulls";
 	icon_state = "skulls"
 	},
 /obj/structure/simple_door/brokenglass,
@@ -19213,7 +19140,7 @@
 "oph" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -19230,7 +19157,7 @@
 /obj/machinery/vending/nukacolavend,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -19265,14 +19192,14 @@
 	icon_state = "sink";
 	pixel_x = 10;
 	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	//tag = "icon-sink (EAST)"
 	},
 /obj/structure/mirror{
 	pixel_x = 32
 	},
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13{
@@ -19288,14 +19215,14 @@
 "orV" = (
 /obj/structure/chair/stool,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
 "osB" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowbottom";
-	tag = "icon-storewindowbottom (NORTHEAST)"
+	//tag = "icon-storewindowbottom (NORTHEAST)"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -19351,7 +19278,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -19378,7 +19305,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/blueyellow,
 /area/f13/building)
@@ -19407,7 +19334,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -19438,14 +19365,14 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
 "ozr" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
+	//tag = "icon-verticalrightborderright1"
 	},
 /area/f13/wasteland)
 "ozt" = (
@@ -19516,7 +19443,7 @@
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -19611,7 +19538,7 @@
 /obj/machinery/recharger,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -19653,7 +19580,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#c1ac99";
@@ -19694,7 +19621,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
@@ -19723,7 +19650,7 @@
 /area/f13/building)
 "oHp" = (
 /obj/structure/decoration/rag{
-	tag = "icon-skin";
+	//tag = "icon-skin";
 	icon_state = "skin"
 	},
 /obj/structure/simple_door/brokenglass,
@@ -19748,7 +19675,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -19765,7 +19692,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -19775,7 +19702,7 @@
 	dir = 1;
 	pixel_x = -2;
 	pixel_y = 7;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /turf/open/floor/f13/wood,
@@ -19854,7 +19781,7 @@
 /area/f13/building)
 "oMg" = (
 /obj/structure/toilet{
-	tag = "icon-toilet00 (EAST)";
+	//tag = "icon-toilet00 (EAST)";
 	icon_state = "toilet00";
 	dir = 4;
 	pixel_x = -3;
@@ -19890,7 +19817,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
@@ -19905,7 +19832,7 @@
 	dir = 1;
 	icon_state = "sink";
 	pixel_y = 25;
-	tag = "icon-sink (NORTH)"
+	//tag = "icon-sink (NORTH)"
 	},
 /mob/living/simple_animal/hostile/gecko,
 /turf/open/floor/f13/wood,
@@ -20010,7 +19937,7 @@
 /obj/structure/dresser,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "oSI" = (
@@ -20022,7 +19949,7 @@
 "oSN" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical (NORTHEAST)"
+	//tag = "icon-housewindowbrokenvertical (NORTHEAST)"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -20057,13 +19984,13 @@
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "oUb" = (
 /obj/structure/rack,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -20106,7 +20033,7 @@
 /obj/structure/closet/crate/bin,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -20138,7 +20065,7 @@
 "oWO" = (
 /obj/effect/spawner/lootdrop/clothing_high,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -20149,7 +20076,7 @@
 /obj/item/clothing/under/f13/brahmin,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "oXe" = (
@@ -20193,7 +20120,7 @@
 	dir = 8;
 	icon_state = "sink";
 	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	//tag = "icon-sink (WEST)"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20216,7 +20143,7 @@
 /obj/item/storage/bag/money/small/wastelander,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "oYV" = (
@@ -20232,7 +20159,7 @@
 /obj/structure/closet/crate/medical,
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -20267,7 +20194,7 @@
 /obj/item/clothing/ears/earmuffs,
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/f13{
-	tag = "icon-redmark (SOUTHWEST)";
+	//tag = "icon-redmark (SOUTHWEST)";
 	icon_state = "redmark";
 	dir = 10
 	},
@@ -20374,7 +20301,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -20464,7 +20391,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20619,7 +20546,7 @@
 	icon_state = "sink";
 	pixel_x = 10;
 	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	//tag = "icon-sink (EAST)"
 	},
 /obj/structure/mirror{
 	pixel_x = 32
@@ -20676,7 +20603,7 @@
 /area/f13/building)
 "ppi" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowbrokenvertical (NORTHEAST)";
+	//tag = "icon-housewindowbrokenvertical (NORTHEAST)";
 	icon_state = "housewindowbrokenvertical"
 	},
 /turf/open/floor/f13{
@@ -20700,7 +20627,7 @@
 /obj/structure/toilet{
 	dir = 8;
 	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	//tag = "icon-toilet00 (WEST)"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13{
@@ -20719,7 +20646,7 @@
 /area/f13/building)
 "pqF" = (
 /obj/structure/simple_door/house{
-	tag = "icon-roomopening";
+	//tag = "icon-roomopening";
 	icon_state = "roomopening"
 	},
 /turf/open/floor/f13/wood,
@@ -20769,7 +20696,7 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -20816,7 +20743,7 @@
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -20867,7 +20794,7 @@
 	icon_state = "sink";
 	pixel_x = -10;
 	pixel_y = 0;
-	tag = "icon-sink (WEST)"
+	//tag = "icon-sink (WEST)"
 	},
 /obj/structure/mirror{
 	pixel_x = -32
@@ -20949,14 +20876,14 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "pzy" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -20973,7 +20900,7 @@
 "pAz" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building)
@@ -20992,7 +20919,7 @@
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -21037,7 +20964,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -21056,7 +20983,7 @@
 "pDI" = (
 /obj/structure/table,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -21186,11 +21113,11 @@
 "pHJ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -21264,7 +21191,7 @@
 /area/f13/building)
 "pLk" = (
 /obj/structure/chair{
-	tag = "icon-chair (WEST)";
+	//tag = "icon-chair (WEST)";
 	icon_state = "chair";
 	dir = 8
 	},
@@ -21309,7 +21236,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetgrey";
-	tag = "icon-sheetgrey"
+	//tag = "icon-sheetgrey"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -21343,7 +21270,7 @@
 	randomizer_tag = "post gang"
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/wasteland)
@@ -21416,7 +21343,7 @@
 "pQY" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/structure/flora/junglebush/large,
 /turf/open/indestructible/ground/outside/dirt,
@@ -21432,7 +21359,7 @@
 /area/f13/wasteland)
 "pRS" = (
 /obj/structure/simple_door/house{
-	tag = "icon-room";
+	//tag = "icon-room";
 	icon_state = "room"
 	},
 /turf/open/floor/f13{
@@ -21445,11 +21372,11 @@
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibup1";
-	tag = "icon-gibup1"
+	//tag = "icon-gibup1"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "pSn" = (
@@ -21506,7 +21433,7 @@
 /obj/structure/table,
 /obj/machinery/computer/terminal{
 	pixel_y = 3;
-	termtag = "Security"
+	term//tag = "Security"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -21532,7 +21459,7 @@
 "pXM" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
@@ -21545,7 +21472,7 @@
 /obj/structure/simple_door/bunker,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#c1ac99";
@@ -21672,11 +21599,11 @@
 "qbX" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland)
@@ -21687,7 +21614,7 @@
 /area/f13/wasteland)
 "qcx" = (
 /obj/structure/simple_door/house{
-	tag = "icon-roomopening";
+	//tag = "icon-roomopening";
 	icon_state = "roomopening"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -21719,7 +21646,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
@@ -21763,7 +21690,7 @@
 "qfw" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg1";
+	//tag = "icon-platingdmg1";
 	icon_state = "platingdmg1"
 	},
 /area/f13/building)
@@ -21796,7 +21723,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -21839,11 +21766,11 @@
 	},
 /obj/item/bedsheet{
 	icon_state = "sheetbrown";
-	tag = "icon-sheetbrown"
+	//tag = "icon-sheetbrown"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "qhn" = (
@@ -21851,13 +21778,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "qhZ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
@@ -21912,7 +21839,7 @@
 /obj/machinery/microwave,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -21929,7 +21856,7 @@
 "qmt" = (
 /obj/structure/closet,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -21999,7 +21926,7 @@
 /area/f13/wasteland)
 "qoH" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-storewindowleft";
+	//tag = "icon-storewindowleft";
 	icon_state = "storewindowleft";
 	dir = 2
 	},
@@ -22069,7 +21996,7 @@
 "qqK" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -22077,11 +22004,11 @@
 /obj/structure/reagent_dispensers/barrel/three,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -22111,17 +22038,17 @@
 /area/f13/building)
 "qrM" = (
 /obj/structure/simple_door/house{
-	tag = "icon-roomopening";
+	//tag = "icon-roomopening";
 	icon_state = "roomopening"
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
 "qrQ" = (
 /obj/structure/chair{
-	tag = "icon-chair (WEST)";
+	//tag = "icon-chair (WEST)";
 	icon_state = "chair";
 	dir = 8
 	},
@@ -22134,7 +22061,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -22159,7 +22086,7 @@
 "qtE" = (
 /obj/effect/spawner/lootdrop/wmelee_low,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -22207,7 +22134,7 @@
 "quL" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -22234,7 +22161,7 @@
 "qvI" = (
 /obj/structure/chair/comfy,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -22251,7 +22178,7 @@
 "qwt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -22259,7 +22186,7 @@
 /obj/structure/window/fulltile/house,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -22391,11 +22318,11 @@
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	//tag = "icon-reddirtyfull"
 	},
 /area/f13/building)
 "qCy" = (
@@ -22443,7 +22370,7 @@
 /area/f13/building)
 "qDP" = (
 /obj/structure/toilet{
-	tag = "icon-toilet00 (WEST)";
+	//tag = "icon-toilet00 (WEST)";
 	icon_state = "toilet00";
 	dir = 8
 	},
@@ -22456,26 +22383,26 @@
 /obj/machinery/computer/pod/old{
 	icon_state = "terminal";
 	name = "terminal";
-	tag = "icon-terminal"
+	//tag = "icon-terminal"
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
 "qDX" = (
 /obj/structure/simple_door/metal/store{
-	tag = "icon-brokenstore";
+	//tag = "icon-brokenstore";
 	icon_state = "brokenstore"
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/wasteland)
 "qEw" = (
 /obj/structure/simple_door/house{
-	tag = "icon-interioropening";
+	//tag = "icon-interioropening";
 	icon_state = "interioropening"
 	},
 /turf/open/floor/f13/wood,
@@ -22521,7 +22448,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood4-broken";
+	//tag = "icon-housewood4-broken";
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
@@ -22549,7 +22476,7 @@
 /obj/structure/fence,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -22559,7 +22486,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -22605,7 +22532,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -22623,7 +22550,7 @@
 /obj/structure/simple_door/bunker,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-bluerustychess2";
+	//tag = "icon-bluerustychess2";
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
@@ -22643,7 +22570,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -22694,7 +22621,7 @@
 /obj/item/clothing/head/hardhat,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -22755,7 +22682,7 @@
 /obj/item/ammo_box/c10mm,
 /obj/item/clothing/ears/earmuffs,
 /turf/open/floor/f13{
-	tag = "icon-redmark (SOUTHWEST)";
+	//tag = "icon-redmark (SOUTHWEST)";
 	icon_state = "redmark";
 	dir = 10
 	},
@@ -22785,7 +22712,7 @@
 "qRZ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -22806,7 +22733,7 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -22881,7 +22808,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -22911,7 +22838,7 @@
 /obj/structure/fence,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -23010,7 +22937,7 @@
 "rbA" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -23047,11 +22974,11 @@
 "rcU" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -23082,7 +23009,7 @@
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -23099,7 +23026,7 @@
 "rgi" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticaltop";
-	tag = "icon-doubleverticaltop"
+	//tag = "icon-doubleverticaltop"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -23117,7 +23044,7 @@
 "rhq" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -23210,11 +23137,11 @@
 /obj/structure/chair{
 	dir = 1;
 	icon_state = "chair";
-	tag = "icon-chair (NORTH)"
+	//tag = "icon-chair (NORTH)"
 	},
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -23231,7 +23158,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -23503,12 +23430,12 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "storewindowright";
-	tag = "icon-storewindowright"
+	//tag = "icon-storewindowright"
 	},
 /obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -23570,12 +23497,12 @@
 /area/f13/building)
 "rxT" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowbrokenvertical";
+	//tag = "icon-housewindowbrokenvertical";
 	icon_state = "housewindowbrokenvertical";
 	dir = 2
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-bluerustychess2";
+	//tag = "icon-bluerustychess2";
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
@@ -23650,14 +23577,14 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "rBW" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -24112,7 +24039,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -24156,7 +24083,7 @@
 /area/f13/building)
 "scm" = (
 /obj/machinery/shower{
-	tag = "icon-shower (WEST)";
+	//tag = "icon-shower (WEST)";
 	icon_state = "shower";
 	dir = 8
 	},
@@ -24173,7 +24100,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 4;
@@ -24186,7 +24113,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -24209,7 +24136,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -24305,11 +24232,11 @@
 /area/f13/building)
 "shM" = (
 /obj/structure/simple_door/house{
-	tag = "icon-dirtystore";
+	//tag = "icon-dirtystore";
 	icon_state = "dirtystore"
 	},
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -24348,7 +24275,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/spawner/lootdrop/wrange_low,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -24425,7 +24352,7 @@
 "slV" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland)
@@ -24462,7 +24389,7 @@
 "snw" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -24471,13 +24398,13 @@
 /area/f13/building)
 "snE" = (
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
 "snZ" = (
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -24500,7 +24427,7 @@
 	dir = 8;
 	icon_state = "sink";
 	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	//tag = "icon-sink (WEST)"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -24529,12 +24456,12 @@
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "spp" = (
 /obj/effect/decal/cleanable/blood/gibs{
-	tag = "icon-gibdown1";
+	//tag = "icon-gibdown1";
 	icon_state = "gibdown1"
 	},
 /turf/open/indestructible/ground/outside/desert,
@@ -24587,7 +24514,7 @@
 /area/f13/caves)
 "srA" = (
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -24600,7 +24527,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -24661,7 +24588,7 @@
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -24669,7 +24596,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -24677,7 +24604,7 @@
 /obj/structure/wreck/trash/secway,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	//tag = "icon-reddirtyfull"
 	},
 /area/f13/building)
 "swj" = (
@@ -24724,7 +24651,7 @@
 /obj/structure/chair/stool,
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -24848,12 +24775,12 @@
 /area/f13/building)
 "sEk" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (EAST)";
+	//tag = "icon-bench (EAST)";
 	icon_state = "bench";
 	dir = 4
 	},
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -24945,7 +24872,7 @@
 "sIh" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/mineral/random/low_chance{
 	mineralAmt = 6;
@@ -24999,14 +24926,14 @@
 	pixel_y = 27
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
 "sKZ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
@@ -25014,19 +24941,19 @@
 /obj/structure/closet/crate/trashcart,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0";
-	tag = "icon-verticaloutermain0"
+	//tag = "icon-verticaloutermain0"
 	},
 /area/f13/wasteland)
 "sLo" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	//tag = "icon-housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "sLv" = (
@@ -25044,7 +24971,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -25058,11 +24985,11 @@
 "sLF" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -25086,7 +25013,7 @@
 /mob/living/simple_animal/hostile/supermutant/meleemutant,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#c1ac99";
@@ -25096,7 +25023,7 @@
 "sNM" = (
 /obj/structure/bed,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -25108,7 +25035,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -25134,7 +25061,7 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	//tag = "icon-housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -25173,13 +25100,13 @@
 "sRi" = (
 /obj/structure/chair/wood,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
 "sRo" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench";
+	//tag = "icon-bench";
 	icon_state = "bench";
 	dir = 2
 	},
@@ -25228,7 +25155,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -25304,7 +25231,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -25317,7 +25244,7 @@
 "sZw" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -25357,7 +25284,7 @@
 "taP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -25441,7 +25368,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -25452,7 +25379,7 @@
 /obj/structure/wreck/car/bike,
 /obj/effect/decal/marking{
 	icon_state = "dottedverticaldegraded";
-	tag = "icon-dottedverticaldegraded"
+	//tag = "icon-dottedverticaldegraded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -25475,7 +25402,7 @@
 "tgQ" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /obj/machinery/shower{
-	tag = "icon-shower (EAST)";
+	//tag = "icon-shower (EAST)";
 	icon_state = "shower";
 	dir = 4
 	},
@@ -25508,7 +25435,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -25728,7 +25655,7 @@
 	dir = 1;
 	pixel_x = -2;
 	pixel_y = 7;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /turf/open/floor/f13/wood,
@@ -25736,7 +25663,7 @@
 "tpr" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/tunnel,
 /area/f13/building)
@@ -25745,7 +25672,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -25772,7 +25699,7 @@
 	radius = 3
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -25795,7 +25722,7 @@
 "tqX" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/supermart,
 /area/f13/building)
@@ -25858,7 +25785,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -25898,16 +25825,16 @@
 "ttG" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	//tag = "icon-verticalleftborderleft0"
 	},
 /area/f13/wasteland)
 "ttW" = (
 /obj/structure/toilet{
-	tag = "icon-toilet00 (WEST)";
+	//tag = "icon-toilet00 (WEST)";
 	icon_state = "toilet00";
 	dir = 8
 	},
@@ -25923,7 +25850,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -25990,7 +25917,7 @@
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg1";
+	//tag = "icon-platingdmg1";
 	icon_state = "platingdmg1"
 	},
 /area/f13/building)
@@ -26073,7 +26000,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -26145,7 +26072,7 @@
 /area/f13/caves)
 "tDz" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-storewindowbottom (NORTHEAST)";
+	//tag = "icon-storewindowbottom (NORTHEAST)";
 	icon_state = "storewindowbottom"
 	},
 /turf/open/floor/f13{
@@ -26173,7 +26100,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -26221,7 +26148,7 @@
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -26265,7 +26192,7 @@
 /obj/structure/chair/stool,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -26323,7 +26250,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	//tag = "icon-outerturn (EAST)"
 	},
 /area/f13/wasteland)
 "tKm" = (
@@ -26403,7 +26330,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -26420,7 +26347,7 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2";
-	tag = "icon-horizontaloutermain2"
+	//tag = "icon-horizontaloutermain2"
 	},
 /area/f13/building)
 "tMy" = (
@@ -26456,7 +26383,7 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "storewindowtop";
-	tag = "icon-storewindowtop"
+	//tag = "icon-storewindowtop"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -26470,14 +26397,14 @@
 	randomizer_tag = "post gang"
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
 "tNZ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/road,
@@ -26501,11 +26428,11 @@
 "tOL" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -26513,7 +26440,7 @@
 /obj/effect/decal/marking,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -26594,7 +26521,7 @@
 /area/f13/wasteland)
 "tRc" = (
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -26613,7 +26540,7 @@
 "tSf" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -26628,11 +26555,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "tTC" = (
@@ -26647,7 +26574,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetUSA";
-	tag = "icon-sheetUSA"
+	//tag = "icon-sheetUSA"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -26676,11 +26603,11 @@
 "tUi" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -26693,7 +26620,7 @@
 "tUP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -26726,7 +26653,7 @@
 /area/f13/building)
 "tWc" = (
 /obj/structure/toilet{
-	tag = "icon-toilet00 (EAST)";
+	//tag = "icon-toilet00 (EAST)";
 	icon_state = "toilet00";
 	dir = 4;
 	pixel_x = 0;
@@ -26747,7 +26674,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -26926,7 +26853,7 @@
 "udF" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -26953,7 +26880,7 @@
 "ufb" = (
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /obj/effect/spawner/lootdrop/trash,
 /mob/living/simple_animal/hostile/gecko,
@@ -27136,7 +27063,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -27242,7 +27169,7 @@
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -27292,7 +27219,7 @@
 "uqG" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
@@ -27318,7 +27245,7 @@
 "urf" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -27326,7 +27253,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -27348,7 +27275,7 @@
 /mob/living/simple_animal/hostile/raider,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "urX" = (
@@ -27359,7 +27286,7 @@
 /obj/item/organ/liver,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "ust" = (
@@ -27379,7 +27306,7 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "usN" = (
@@ -27387,7 +27314,7 @@
 /mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -27426,12 +27353,12 @@
 /area/f13/wasteland)
 "utW" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindow";
+	//tag = "icon-housewindow";
 	icon_state = "housewindow";
 	dir = 2
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-bluerustychess2";
+	//tag = "icon-bluerustychess2";
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
@@ -27444,7 +27371,7 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -27475,7 +27402,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -27602,7 +27529,7 @@
 /area/f13/building)
 "uCf" = (
 /obj/structure/chair{
-	tag = "icon-chair (WEST)";
+	//tag = "icon-chair (WEST)";
 	icon_state = "chair";
 	dir = 8
 	},
@@ -27658,7 +27585,7 @@
 /mob/living/simple_animal/hostile/gecko,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "uEA" = (
@@ -27671,7 +27598,7 @@
 	icon_state = "toilet00";
 	pixel_x = 0;
 	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
+	//tag = "icon-toilet00 (EAST)"
 	},
 /obj/machinery/light/small,
 /obj/item/storage/fancy/heart_box,
@@ -27692,7 +27619,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -27770,7 +27697,7 @@
 "uIP" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -27823,7 +27750,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -27835,7 +27762,7 @@
 /area/f13/building)
 "uLq" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-housewindowbroken (NORTHEAST)";
+	//tag = "icon-housewindowbroken (NORTHEAST)";
 	icon_state = "housewindowbroken"
 	},
 /turf/open/floor/f13{
@@ -27856,7 +27783,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -27870,7 +27797,7 @@
 "uMk" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /turf/open/floor/f13/wood,
@@ -27909,7 +27836,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -27942,7 +27869,7 @@
 /obj/item/clothing/under/f13/mechanic,
 /obj/item/clothing/gloves/f13/leather,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -27960,7 +27887,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland)
@@ -28003,13 +27930,13 @@
 	icon_state = "sink";
 	pixel_x = 10;
 	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	//tag = "icon-sink (EAST)"
 	},
 /obj/structure/mirror{
 	pixel_x = 32
 	},
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /turf/open/floor/f13{
@@ -28031,7 +27958,7 @@
 "uQh" = (
 /obj/structure/simple_door/brokenglass,
 /obj/structure/decoration/rag{
-	tag = "icon-skulls";
+	//tag = "icon-skulls";
 	icon_state = "skulls"
 	},
 /turf/open/floor/f13/wood,
@@ -28040,10 +27967,10 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -28117,7 +28044,7 @@
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -28139,7 +28066,7 @@
 "uUm" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "verticalrightborderright0"
@@ -28172,7 +28099,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -28253,7 +28180,7 @@
 "uWB" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0";
-	tag = "icon-verticaloutermain0"
+	//tag = "icon-verticaloutermain0"
 	},
 /area/f13/wasteland)
 "uWH" = (
@@ -28343,7 +28270,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -28378,7 +28305,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -28392,7 +28319,7 @@
 /obj/effect/decal/remains/human,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -28405,7 +28332,7 @@
 "vcE" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -28445,7 +28372,7 @@
 "vef" = (
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -28479,7 +28406,7 @@
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "vfK" = (
@@ -28502,13 +28429,13 @@
 /obj/item/reagent_containers/food/snacks/kebab/human,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	//tag = "icon-bluedirtychess2"
 	},
 /area/f13/building)
 "vgr" = (
 /obj/structure/rack,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -28536,7 +28463,7 @@
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -28580,7 +28507,7 @@
 /obj/structure/rack,
 /obj/item/clothing/head/hardhat,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -28617,7 +28544,7 @@
 /obj/item/phone,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "vjV" = (
@@ -28626,7 +28553,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -28734,7 +28661,7 @@
 /area/f13/building)
 "vou" = (
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2-broken";
+	//tag = "icon-housewood2-broken";
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
@@ -28801,7 +28728,7 @@
 /obj/structure/chair/stool{
 	dir = 2;
 	icon_state = "bench";
-	tag = "icon-bench"
+	//tag = "icon-bench"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -28810,7 +28737,7 @@
 "vrQ" = (
 /obj/effect/spawner/lootdrop/crafts,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -28885,7 +28812,7 @@
 "vuk" = (
 /obj/structure/simple_door/bunker/glass,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-bluerustychess2";
+	//tag = "icon-bluerustychess2";
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
@@ -28962,7 +28889,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -28988,7 +28915,7 @@
 /area/f13/wasteland)
 "vxD" = (
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -29017,7 +28944,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -29039,7 +28966,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -29130,7 +29057,7 @@
 "vDh" = (
 /obj/structure/reagent_dispensers/barrel/two,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg2";
+	//tag = "icon-platingdmg2";
 	icon_state = "platingdmg2"
 	},
 /area/f13/building)
@@ -29399,7 +29326,7 @@
 "vSV" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal";
-	tag = "icon-doublehorizontal"
+	//tag = "icon-doublehorizontal"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -29409,7 +29336,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -29506,7 +29433,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -29548,7 +29475,7 @@
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -29556,7 +29483,7 @@
 /mob/living/simple_animal/hostile/radscorpion,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -29586,11 +29513,11 @@
 /obj/structure/bed,
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /obj/item/bedsheet{
 	icon_state = "sheetblue";
-	tag = "icon-sheetblue"
+	//tag = "icon-sheetblue"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -29622,7 +29549,7 @@
 /obj/machinery/vending/coffee,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -29682,7 +29609,7 @@
 "wbL" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -29816,7 +29743,7 @@
 /area/f13/caves)
 "wgz" = (
 /obj/structure/toilet{
-	tag = "icon-toilet00 (EAST)";
+	//tag = "icon-toilet00 (EAST)";
 	icon_state = "toilet00";
 	dir = 4;
 	pixel_x = 0;
@@ -29848,7 +29775,7 @@
 /obj/effect/spawner/lootdrop/food,
 /obj/machinery/recharger,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -29860,11 +29787,11 @@
 /obj/structure/chair/stool{
 	dir = 1;
 	icon_state = "bench";
-	tag = "icon-bench (NORTH)"
+	//tag = "icon-bench (NORTH)"
 	},
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -29880,7 +29807,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -29915,7 +29842,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
@@ -29949,7 +29876,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -29962,7 +29889,7 @@
 /obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
@@ -29970,7 +29897,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -30135,7 +30062,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -30143,7 +30070,7 @@
 /obj/structure/table,
 /obj/machinery/computer/terminal{
 	dir = 8;
-	termtag = "Secret"
+	term//tag = "Secret"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -30168,7 +30095,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -30203,7 +30130,7 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -30273,7 +30200,7 @@
 /obj/structure/closet,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -30320,11 +30247,11 @@
 /obj/structure/bed/mattress/pregame,
 /obj/item/restraints/handcuffs{
 	icon_state = "handcuffGag";
-	tag = "icon-handcuffGag"
+	//tag = "icon-handcuffGag"
 	},
 /obj/effect/decal/remains{
 	icon_state = "remains";
-	tag = "icon-remains"
+	//tag = "icon-remains"
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -30374,7 +30301,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -30460,7 +30387,7 @@
 "wFA" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken (NORTHEAST)"
+	//tag = "icon-housewindowbroken (NORTHEAST)"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -30469,25 +30396,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/blueyellow,
 /area/f13/building)
 "wFO" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-platingdmg2";
+	//tag = "icon-platingdmg2";
 	icon_state = "platingdmg2"
 	},
 /area/f13/building)
 "wGA" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (WEST)";
+	//tag = "icon-bench (WEST)";
 	icon_state = "bench";
 	dir = 8
 	},
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -30495,7 +30422,7 @@
 /obj/structure/flora/tree/tall,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/wasteland)
@@ -30519,7 +30446,7 @@
 /area/f13/building)
 "wIj" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (WEST)";
+	//tag = "icon-bench (WEST)";
 	icon_state = "bench";
 	dir = 8
 	},
@@ -30592,7 +30519,7 @@
 	},
 /obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -30619,7 +30546,7 @@
 "wKl" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -30627,7 +30554,7 @@
 /obj/structure/closet,
 /obj/item/stack/cable_coil,
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -30639,7 +30566,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -30659,7 +30586,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -30683,7 +30610,7 @@
 "wOe" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -30751,7 +30678,7 @@
 "wPG" = (
 /obj/structure/chair/stool,
 /turf/open/floor/f13{
-	tag = "icon-darkredfull";
+	//tag = "icon-darkredfull";
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
@@ -30764,12 +30691,12 @@
 /area/f13/building)
 "wQO" = (
 /obj/structure/chair{
-	tag = "icon-chair (EAST)";
+	//tag = "icon-chair (EAST)";
 	icon_state = "chair";
 	dir = 4
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -30889,7 +30816,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -30910,7 +30837,7 @@
 "wUd" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
@@ -30976,7 +30903,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/blueyellow,
 /area/f13/building)
@@ -31016,7 +30943,7 @@
 /area/f13/wasteland)
 "xbi" = (
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -31027,7 +30954,7 @@
 /area/f13/building)
 "xct" = (
 /obj/effect/decal/cleanable/blood/gibs{
-	tag = "icon-gibtorso";
+	//tag = "icon-gibtorso";
 	icon_state = "gibtorso"
 	},
 /turf/open/indestructible/ground/outside/desert,
@@ -31091,7 +31018,7 @@
 /obj/structure/table,
 /obj/machinery/computer/terminal{
 	pixel_y = 3;
-	termtag = "Security"
+	term//tag = "Security"
 	},
 /turf/closed/indestructible/rock,
 /area/f13/building)
@@ -31200,7 +31127,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -31295,7 +31222,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -31315,7 +31242,7 @@
 "xnD" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/wasteland)
@@ -31374,7 +31301,7 @@
 	icon_state = "sS-casing";
 	pixel_x = 0;
 	pixel_y = 0;
-	tag = "icon-sS-casing (SOUTHWEST)"
+	//tag = "icon-sS-casing (SOUTHWEST)"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -31403,7 +31330,7 @@
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -31469,7 +31396,7 @@
 /area/f13/building)
 "xtg" = (
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /obj/machinery/light{
@@ -31477,7 +31404,7 @@
 	icon_state = "tube1"
 	},
 /turf/open/floor/f13{
-	tag = "icon-reddirtyfull";
+	//tag = "icon-reddirtyfull";
 	icon_state = "reddirtyfull"
 	},
 /area/f13/building)
@@ -31521,7 +31448,7 @@
 /area/f13/building)
 "xun" = (
 /obj/structure/chair/stool{
-	tag = "icon-bench (WEST)";
+	//tag = "icon-bench (WEST)";
 	icon_state = "bench";
 	dir = 8
 	},
@@ -31554,7 +31481,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
@@ -31571,7 +31498,7 @@
 /obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
@@ -31586,7 +31513,7 @@
 "xwt" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light,
 /area/f13/building)
@@ -31594,7 +31521,7 @@
 /obj/effect/turf_decal/stripes/white/line,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -31609,7 +31536,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -31632,7 +31559,7 @@
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	//tag = "icon-housewood2"
 	},
 /area/f13/building)
 "xyR" = (
@@ -31653,7 +31580,7 @@
 /area/f13/building)
 "xzk" = (
 /obj/structure/window/fulltile/house{
-	tag = "icon-storewindowright";
+	//tag = "icon-storewindowright";
 	icon_state = "storewindowright";
 	dir = 2
 	},
@@ -31695,7 +31622,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -31710,7 +31637,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -31782,7 +31709,7 @@
 	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -31814,7 +31741,7 @@
 "xGN" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -31832,7 +31759,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
-	tag = "icon-floorrusty";
+	//tag = "icon-floorrusty";
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
@@ -31930,7 +31857,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
@@ -32028,7 +31955,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -32102,7 +32029,7 @@
 /obj/structure/simple_door/bunker/glass,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-bluerustychess2";
+	//tag = "icon-bluerustychess2";
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
@@ -32222,7 +32149,7 @@
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -32232,7 +32159,7 @@
 "xYS" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/closed/wall/rust,
 /area/f13/building)
@@ -32268,7 +32195,7 @@
 "yai" = (
 /obj/structure/chair/bench,
 /obj/effect/decal/remains{
-	tag = "icon-remains";
+	//tag = "icon-remains";
 	icon_state = "remains"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -32350,7 +32277,7 @@
 /obj/structure/table/optable,
 /obj/machinery/light,
 /turf/open/floor/f13{
-	tag = "icon-bluedirtychess2";
+	//tag = "icon-bluedirtychess2";
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
@@ -32431,7 +32358,7 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -32455,10 +32382,10 @@
 /obj/structure/window/fulltile/house,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	//tag = "icon-floor6-old"
 	},
 /turf/open/floor/f13/wood{
-	tag = "icon-housewood2";
+	//tag = "icon-housewood2";
 	icon_state = "housewood2"
 	},
 /area/f13/building)
@@ -32498,7 +32425,7 @@
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal{
 	pixel_y = 3;
-	termtag = "Business"
+	term//tag = "Business"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -32508,7 +32435,7 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/barber{
-	tag = "icon-plating";
+	//tag = "icon-plating";
 	icon_state = "plating"
 	},
 /area/f13/building)
@@ -32536,7 +32463,7 @@
 	dir = 1;
 	icon_state = "sink";
 	pixel_y = 16;
-	tag = "icon-sink (NORTH)"
+	//tag = "icon-sink (NORTH)"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -32564,7 +32491,7 @@
 	dir = 1;
 	icon_state = "sink";
 	pixel_y = 16;
-	tag = "icon-sink (NORTH)"
+	//tag = "icon-sink (NORTH)"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
