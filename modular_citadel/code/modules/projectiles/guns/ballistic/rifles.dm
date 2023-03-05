@@ -46,7 +46,7 @@
 
 /obj/item/ammo_box/magazine/wt550m9/wtrubber
 	name = "wt550 magazine (Rubber bullets 4.6x30mm)"
-	icon_state = "46x30mmtA-20"
+	icon_state = "473small"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/rubber
 
 /obj/item/projectile/bullet/c46x30mm/rubber
