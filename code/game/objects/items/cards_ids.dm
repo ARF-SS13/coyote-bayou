@@ -550,7 +550,7 @@
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-	registered_name = "Honey-The-Terror"
+	registered_name = "Zonq"
 	assignment = "Mayor"
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
 
@@ -1371,3 +1371,14 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 		var/choice = input(user, "Select the license type", "License Type Selection") as null|anything in GLOB.fuzzy_license
 		if(!isnull(choice))
 			name = "license to [choice]"
+
+/obj/item/card/emag/imp
+	desc = "A connector to a personal uplink to interface with machinery."
+	name = "Implanted uplink"
+	icon = 'icons/obj/power.dmi'
+	icon_state = "personallink1"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	item_flags = NO_MAT_REDEMPTION | NOBLUDGEON
+	prox_check = TRUE //If the emag requires you to be in range
+	uses = 999

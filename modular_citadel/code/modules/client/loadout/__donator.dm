@@ -673,6 +673,25 @@
 /obj/item/storage/box/large/custom_kit/exoticjazz/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
 
+/datum/gear/donator/kits/moribund
+	name = "moribunds supplies"
+	path = /obj/item/storage/box/large/custom_kit/moribund
+	ckeywhitelist = list ("mottedesstriets")
+
+/obj/item/storage/box/large/custom_kit/moribund/PopulateContents()
+	new /obj/item/organ/cyberimp/arm/pip(src)
+	new /obj/item/autosurgeon(src)
+	new /obj/item/organ/cyberimp/arm/surgery/advanced(src)
+	new /obj/item/organ/eyes/night_vision/mori(src)
+	new /obj/item/book/granter/crafting_recipe/morinote(src)
+	new /obj/item/clothing/head/f13/stalkerpelt(src)// morbid. but funny.
+	new /obj/item/storage/pill_bottle/chem_tin/fixer(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_mori(src)
+	new /obj/item/lighter/nightstalker(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit(src)
+	new /obj/item/reagent_containers/food/snacks/nukebar(src)
+	new /obj/item/reagent_containers/pill/healingpowder/stalkersqueeze(src)
+
 // N
 
 /datum/gear/donator/kits/nightmare6669
@@ -808,6 +827,18 @@
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/card/id/dogtag/risingstarslash(src)
 
+/datum/gear/donator/kits/risingstarslash4
+	name = "Trueshot's Kit"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash4
+	ckeywhitelist = list("risingstarslash")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash4/PopulateContents()
+	new /obj/item/gun/ballistic/bow/gold(src)
+	new /obj/item/storage/bag/tribe_quiver/light(src)
+	new /obj/item/smelling_salts/wayfarer(src)
+	new /obj/item/reagent_containers/pill/fiery_purgative(src)
+	new /obj/item/reagent_containers/pill/antivenom(src)
+
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
 	path = /obj/item/storage/box/large/custom_kit/roachwitharoach
@@ -874,7 +905,7 @@
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)*/
 
-/datum/gear/donator/kits/seermankhajiit004
+/*/datum/gear/donator/kits/seermankhajiit004
 	name = "Honey Mayor"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
 	ckeywhitelist = list("seermankhajiit00")
@@ -882,7 +913,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
 	new /obj/item/kit_spawner/townie/mayor(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/card/id/captains_spare(src)*/
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -1121,6 +1152,17 @@
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
 
 // U
+
+/datum/gear/donator/kits/ursine
+	name = "Zonq Mayor"
+	path = /obj/item/storage/box/large/custom_kit/ursine
+	ckeywhitelist = list("ursine")
+
+/obj/item/storage/box/large/custom_kit/ursine/PopulateContents()
+	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/card/id/captains_spare(src)
+
 // V
 // W
 

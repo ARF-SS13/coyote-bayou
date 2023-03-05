@@ -249,7 +249,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	head = /obj/item/clothing/head/helmet/f13/legion/palacent
 	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/mm762 = 1,
+		/obj/item/ammo_box/magazine/mm308 = 1,
 		/obj/item/book/granter/martial/cqc = 1,
 		)
 

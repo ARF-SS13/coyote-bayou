@@ -425,6 +425,29 @@
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/antivenom(src)
 
+/datum/crafting_recipe/stalkersqueeze
+	name = "Nightstalker Squeezin's"
+	result = /obj/item/reagent_containers/pill/healingpowder/stalkersqueeze
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
+				/datum/reagent/blood = 15,
+				/datum/reagent/consumable/flour = 10,)
+	tools = list(TOOL_ALCHEMY_TABLE)
+	time = 5
+	category = CAT_MEDICAL
+	always_available = FALSE 
+
+/datum/crafting_recipe/cigpack_mori
+	name = "Handrolled Smokes"
+	result = /obj/item/storage/fancy/cigarettes/cigpack_mori
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
+				/obj/item/reagent_containers/pill/healingpowder/stalkersqueeze = 1,
+				/datum/reagent/consumable/honey = 10,
+				/obj/item/paper/natural = 5)
+	tools = list(TOOL_ALCHEMY_TABLE)
+	time = 5
+	category = CAT_MEDICAL
+	always_available = FALSE
+
 // IMPLANTS
 
 /datum/crafting_recipe/cyberimp_toolset

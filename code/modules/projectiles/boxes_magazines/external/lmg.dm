@@ -88,14 +88,14 @@
 	caliber = list(CALIBER_308)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_BELT_MAGAZINE)
 
-/obj/item/ammo_box/magazine/mm762/empty
+/obj/item/ammo_box/magazine/mm308/empty
 	start_empty = 1
 
 /* I think we want to be able to load up belts of the stuff
-/obj/item/ammo_box/magazine/mm762/can_load()
+/obj/item/ammo_box/magazine/mm308/can_load()
 	return 0
 */
 	
-/obj/item/ammo_box/magazine/mm762/update_icon()
+/obj/item/ammo_box/magazine/mm308/update_icon()
 	..()
 	icon_state = "762belt-[round(ammo_count(),20)]"
