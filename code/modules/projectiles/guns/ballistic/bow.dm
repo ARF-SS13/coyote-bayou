@@ -298,6 +298,20 @@
 			/datum/firemode/semi_auto
 	)
 
+// Special bows?
+/obj/item/gun/ballistic/bow/gold
+	name = "golden bow"
+	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
+	icon_state = "goldbow"
+	item_state = "goldbow"
+	icon_prefix = "goldbow"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow
+	)
+
 /* old bows, stinky, like fenny
 /obj/item/gun/ballistic/bow/xbow
 	name = "magazine-fed crossbow"

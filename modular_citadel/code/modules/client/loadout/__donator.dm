@@ -815,7 +815,7 @@
 
 /obj/item/storage/box/large/custom_kit/risingstarslash4/PopulateContents()
 	new /obj/item/gun/ballistic/bow/gold(src)
-	new /obj/item/storage/bag/tribe_quiver/gold(src)
+	new /obj/item/storage/bag/tribe_quiver/light(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 	new /obj/item/reagent_containers/pill/fiery_purgative(src)
 	new /obj/item/reagent_containers/pill/antivenom(src)
