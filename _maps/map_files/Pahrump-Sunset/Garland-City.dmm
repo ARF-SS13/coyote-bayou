@@ -98,7 +98,7 @@
 /obj/structure/chair,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "raider_ranged";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13,
@@ -6172,7 +6172,7 @@
 "eAR" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "raider_melee";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -12671,7 +12671,7 @@
 "jnc" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "raider_melee";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13,
@@ -13321,7 +13321,7 @@
 "jKh" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "raider_melee";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -14014,11 +14014,11 @@
 "kii" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "raider_ranged";
 	randomizer_tag = "bridge gang"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/city)
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "kir" = (
 /obj/effect/decal/fakelattice{
 	pixel_x = -17
@@ -16271,7 +16271,7 @@
 /obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "raider_mixed";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -18835,7 +18835,7 @@
 "nxP" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "raider_mixed";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -21938,6 +21938,14 @@
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"pCK" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider_mixed";
+	randomizer_tag = "bridge gang"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "pCO" = (
 /obj/effect/spawner/lootdrop/f13/weapon/boss,
 /obj/structure/closet/crate/trashcart,
@@ -23577,7 +23585,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "raider_mixed";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -27025,7 +27033,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "raider_melee";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -28780,7 +28788,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "raider_melee";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -33606,7 +33614,7 @@
 "xUp" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "raider_ranged";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -60886,11 +60894,11 @@ jQi
 sed
 nJi
 cON
-cYp
+kii
 cON
-cYp
 cON
-cYp
+kii
+kii
 cON
 vwk
 qTT
@@ -64490,9 +64498,9 @@ cON
 cON
 qXg
 ivi
+pCK
+ivi
 eAR
-ivi
-ivi
 edq
 acT
 tng
@@ -73732,7 +73740,7 @@ bhU
 fFO
 edq
 jEN
-kii
+eAR
 clr
 hAg
 cON
@@ -77591,11 +77599,11 @@ qTT
 uUN
 cON
 cON
-cON
+cYp
 cON
 cON
 izw
-cON
+cYp
 cON
 rGs
 qTT
