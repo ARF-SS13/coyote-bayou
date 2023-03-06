@@ -345,7 +345,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 			if (SELFLOOPING)
 				linkage = "self-looping"
 			if (CROSSLINKED)
-				linkage = "linked at ([S.xi], [S.yi])"
+				linkage = "linked at ([S.xi], [S.yi], [S.zi])"
 				linked_levels += S
 				min_x = min(min_x, S.xi)
 				min_y = min(min_y, S.yi)

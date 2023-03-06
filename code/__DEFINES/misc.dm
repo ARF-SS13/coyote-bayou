@@ -8,6 +8,8 @@
 #define TEXT_SOUTH			"[SOUTH]"
 #define TEXT_EAST			"[EAST]"
 #define TEXT_WEST			"[WEST]"
+#define TEXT_UP				"[UP]" // Documented to be """reserved""" but we can make a use for it B)
+#define TEXT_DOWN			"[DOWN]"
 
 /// world.icon_size
 #define PIXELS 32
