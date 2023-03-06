@@ -4012,7 +4012,7 @@
 "cYp" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "raider_ranged";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -21475,7 +21475,7 @@
 /obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "raider_mixed";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
