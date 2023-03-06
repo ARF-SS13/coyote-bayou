@@ -12,7 +12,6 @@
 	layer = FLY_LAYER
 	plane = MOB_PLANE
 	var/log_amount = 10
-	plane = MOB_PLANE
 
 /obj/structure/flora/tree/Bumped(atom/movable/AM)
 	. = ..()
