@@ -25,6 +25,7 @@
 	STOP_PROCESSING(SSradiation,src)
 	..()
 
+/*
 //Bing bang boom done
 /obj/effect/decal/waste/process()
 	if(QDELETED(src))
@@ -37,6 +38,7 @@
 		geiger.rad_act(intensity)
 	for(var/obj/machinery/power/rad_collector in view(src,range))
 		rad_collector.rad_act(intensity*10)
+*/
 
 /obj/effect/decal/waste/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crafting/abraxo))
