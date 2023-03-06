@@ -4701,7 +4701,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "raider_ranged";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -16268,14 +16268,13 @@
 	},
 /area/f13/building)
 "lKD" = (
-/obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
 	randomizer_kind = "raider_mixed";
 	randomizer_tag = "bridge gang"
 	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "lKQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -18586,7 +18585,7 @@
 "nrw" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "raider_ranged";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -21938,14 +21937,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"pCK" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "raider_mixed";
-	randomizer_tag = "bridge gang"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/city)
 "pCO" = (
 /obj/effect/spawner/lootdrop/f13/weapon/boss,
 /obj/structure/closet/crate/trashcart,
@@ -24470,7 +24461,7 @@
 /obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "raider_mixed";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -24608,7 +24599,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "raider_ranged";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -30651,6 +30642,11 @@
 /area/f13/wasteland)
 "vSa" = (
 /obj/machinery/light/fo13colored,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider_ranged";
+	randomizer_tag = "bridge gang"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "vSf" = (
@@ -64498,7 +64494,7 @@ cON
 cON
 qXg
 ivi
-pCK
+lKD
 ivi
 eAR
 edq
@@ -67061,7 +67057,7 @@ meM
 uOS
 sed
 cON
-lKD
+rtt
 cON
 cON
 bGy
@@ -69902,7 +69898,7 @@ vSa
 tBp
 ivi
 tBp
-ivi
+nrw
 qeq
 tBp
 meM
@@ -77603,8 +77599,8 @@ cYp
 cON
 cON
 izw
-cYp
 cON
+cYp
 rGs
 qTT
 sed
