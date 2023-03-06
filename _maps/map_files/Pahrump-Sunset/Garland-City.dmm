@@ -94,6 +94,15 @@
 	icon_state = "greendirtysolid"
 	},
 /area/f13/building)
+"adU" = (
+/obj/structure/chair,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider ranged";
+	randomizer_tag = "bridge gang"
+	},
+/turf/open/floor/f13,
+/area/f13/city)
 "aed" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/waste{
@@ -2717,7 +2726,6 @@
 /area/f13/building)
 "cbT" = (
 /obj/machinery/door/unpowered/securedoor,
-/obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland)
 "cbZ" = (
@@ -4004,11 +4012,11 @@
 "cYp" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "raider ranged";
 	randomizer_tag = "bridge gang"
 	},
-/turf/open/floor/f13,
-/area/f13/city)
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "cYM" = (
 /obj/structure/table,
 /obj/machinery/processor/chopping_block,
@@ -4690,6 +4698,11 @@
 "dxu" = (
 /obj/structure/chair{
 	dir = 1
+	},
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider ranged";
+	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -6157,8 +6170,11 @@
 	},
 /area/f13/building)
 "eAR" = (
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider melee";
+	randomizer_tag = "bridge gang"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "eAU" = (
@@ -8083,7 +8099,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "fXO" = (
-/obj/machinery/door/poddoor/shutters,
+/obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city)
 "fYb" = (
@@ -10862,8 +10878,7 @@
 /area/f13/building)
 "iaU" = (
 /obj/structure/table/wood/bar,
-/obj/machinery/door/poddoor/shutters,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/city)
 "iba" = (
 /obj/structure/table/wood,
@@ -12653,6 +12668,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
+"jnc" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider melee";
+	randomizer_tag = "bridge gang"
+	},
+/turf/open/floor/f13,
+/area/f13/wasteland)
 "jnK" = (
 /obj/structure/tires/five,
 /turf/open/floor/grass,
@@ -13298,7 +13321,7 @@
 "jKh" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "raider melee";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -16244,6 +16267,15 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"lKD" = (
+/obj/structure/chair/bench,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider melee";
+	randomizer_tag = "bridge gang"
+	},
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "lKQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -16743,7 +16775,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "maE" = (
-/obj/machinery/door/poddoor/shutters,
+/obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland)
 "maI" = (
@@ -18551,6 +18583,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"nrw" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider ranged";
+	randomizer_tag = "bridge gang"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "nrH" = (
 /obj/structure/simple_door/interior,
 /obj/structure/spacevine{
@@ -18795,10 +18835,10 @@
 "nxP" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "raider mixed";
 	randomizer_tag = "bridge gang"
 	},
-/turf/open/floor/f13,
+/turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "nxX" = (
 /obj/structure/spacevine{
@@ -19718,7 +19758,6 @@
 "odc" = (
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
-/obj/machinery/door/poddoor/shutters,
 /turf/open/floor/f13,
 /area/f13/city)
 "ode" = (
@@ -21431,18 +21470,16 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
 "pkC" = (
+/obj/structure/fence/handrail{
+	pixel_y = 16
+	},
+/obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "raider mixed";
 	randomizer_tag = "bridge gang"
 	},
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/indestructible/ground/outside/road,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "pkE" = (
 /obj/effect/spawner/lootdrop/wmelee_high,
@@ -23535,9 +23572,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qKk" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "raider mixed";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -24418,6 +24458,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"rtt" = (
+/obj/structure/chair/bench,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider mixed";
+	randomizer_tag = "bridge gang"
+	},
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "rtH" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
@@ -24548,6 +24597,11 @@
 /obj/machinery/light,
 /obj/structure/chair/comfy/beige{
 	dir = 1
+	},
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider ranged";
+	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -26969,6 +27023,11 @@
 /obj/structure/chair/booth{
 	dir = 4
 	},
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider melee";
+	randomizer_tag = "bridge gang"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "ttW" = (
@@ -28716,16 +28775,16 @@
 	},
 /area/f13/wasteland)
 "uBm" = (
+/obj/structure/chair/booth{
+	dir = 4
+	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "raider melee";
 	randomizer_tag = "bridge gang"
 	},
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "uBz" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
@@ -33544,6 +33603,14 @@
 	},
 /turf/open/water,
 /area/f13/caves)
+"xUp" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "raider ranged";
+	randomizer_tag = "bridge gang"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
+/area/f13/city)
 "xUu" = (
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
@@ -60819,11 +60886,11 @@ jQi
 sed
 nJi
 cON
+cYp
 cON
+cYp
 cON
-cON
-cON
-cON
+cYp
 cON
 vwk
 qTT
@@ -61333,8 +61400,8 @@ jQi
 uUN
 mjB
 cON
-qKk
-uBm
+cON
+nVG
 cON
 cON
 cON
@@ -61851,7 +61918,7 @@ rPY
 cON
 cON
 cON
-qKk
+cON
 cON
 cON
 qTT
@@ -63391,9 +63458,9 @@ cON
 izw
 nVG
 cON
+nxP
 cON
-cON
-cON
+nxP
 cON
 cON
 nQe
@@ -63894,8 +63961,8 @@ nqO
 dFq
 tBp
 ivi
-ivi
-ivi
+uBm
+oNv
 qXg
 meM
 meM
@@ -64151,8 +64218,8 @@ nqO
 eiu
 tBp
 ivi
-eAR
-ivi
+hMV
+ldF
 apB
 xkw
 xkw
@@ -64165,7 +64232,7 @@ cON
 cON
 cON
 rfZ
-kii
+ivi
 ivi
 clr
 ivi
@@ -64408,24 +64475,24 @@ wcP
 tBp
 tBp
 edq
-ivi
-ivi
+tZF
+tZF
 udF
 bpx
 xkw
-ozH
+pkC
 bSp
 ycA
-cON
+nxP
 nVG
 cON
 cON
 cON
 qXg
 ivi
+eAR
 ivi
 ivi
-kii
 edq
 acT
 tng
@@ -64922,7 +64989,7 @@ ovV
 lUT
 tBp
 gtd
-kii
+ivi
 ivi
 clr
 oJR
@@ -65692,7 +65759,7 @@ mVb
 ovV
 tBp
 dZV
-kii
+ivi
 ttG
 oNv
 clr
@@ -65949,7 +66016,7 @@ gRD
 ovV
 maE
 egO
-edq
+jKh
 hMV
 ldF
 clr
@@ -66203,7 +66270,7 @@ nOw
 nOw
 tBp
 wyb
-ovV
+xUp
 fXO
 ehR
 ivi
@@ -66460,7 +66527,7 @@ nOw
 nOw
 fmQ
 hCc
-ovV
+xUp
 fXO
 egO
 ivi
@@ -66478,7 +66545,7 @@ cON
 nVG
 cON
 cON
-ycA
+rtt
 cON
 lju
 fTh
@@ -66720,7 +66787,7 @@ hCc
 ovV
 fXO
 egO
-ivi
+eAR
 ldF
 cLW
 clr
@@ -66731,7 +66798,7 @@ sed
 cON
 ycA
 cON
-cON
+nxP
 nVG
 cON
 cON
@@ -66986,10 +67053,10 @@ meM
 uOS
 sed
 cON
-ycA
+lKD
 cON
 cON
-pkC
+bGy
 nVG
 nVG
 ycA
@@ -67263,7 +67330,7 @@ upo
 ivi
 ivi
 hzv
-ivi
+nrw
 wKl
 xkw
 xkw
@@ -67503,7 +67570,7 @@ cON
 ycA
 nVG
 cON
-qKk
+cON
 cON
 cON
 ycA
@@ -68017,7 +68084,7 @@ cON
 ycA
 cON
 cON
-nVG
+qKk
 cON
 cON
 ycA
@@ -68522,7 +68589,7 @@ oEA
 ePs
 clr
 toV
-cYp
+toV
 aYk
 aYk
 oNc
@@ -69032,12 +69099,12 @@ nOw
 nOw
 clr
 qRa
-nxP
+oEA
 ePs
 clr
 mmV
 toV
-oEA
+jnc
 toV
 eHp
 qRZ
@@ -69313,7 +69380,7 @@ owm
 tBp
 hlM
 tBp
-kii
+ivi
 qeF
 tBp
 xkw
@@ -69547,9 +69614,9 @@ nOw
 clr
 wec
 toV
-aYk
+adU
 odc
-cYp
+toV
 oEA
 aYk
 aYk
@@ -69557,7 +69624,7 @@ tHg
 sed
 cON
 nVG
-cON
+nxP
 cON
 cON
 nVG
@@ -69566,7 +69633,7 @@ cON
 clr
 ivi
 ivi
-kii
+ivi
 edq
 ivi
 tBp
@@ -69804,7 +69871,7 @@ nOw
 qXg
 toV
 toV
-aYk
+adU
 odc
 toV
 toV
@@ -70339,7 +70406,7 @@ mBR
 dfR
 ivi
 tBp
-kii
+ivi
 tBp
 ivi
 tPb
@@ -71103,7 +71170,7 @@ cON
 cON
 qYn
 cON
-cON
+nxP
 cON
 cON
 qTT
@@ -71609,7 +71676,7 @@ qXg
 pbt
 ivi
 clr
-ivi
+eAR
 fpi
 clr
 gOu
@@ -71625,8 +71692,8 @@ apB
 edq
 edq
 nJc
-kii
-jKh
+ivi
+edq
 ivi
 sGI
 clr
@@ -72128,7 +72195,7 @@ edq
 bDy
 cON
 cON
-cON
+nxP
 cON
 cON
 cON
@@ -72396,7 +72463,7 @@ qXg
 ivi
 jKh
 iaU
-ivi
+nrw
 ivi
 ivi
 ivi
@@ -72635,7 +72702,7 @@ nOw
 nOw
 clr
 fpi
-ivi
+eAR
 clr
 edq
 fFO
@@ -72653,7 +72720,7 @@ udF
 ivi
 ivi
 iaU
-ivi
+nrw
 arB
 ahy
 edq
@@ -74196,7 +74263,7 @@ cxO
 cxO
 wKl
 rPm
-jKh
+edq
 edq
 liN
 ksI
@@ -74454,7 +74521,7 @@ lCT
 cWx
 ivi
 ivi
-ivi
+eAR
 sGI
 ksI
 sGI
@@ -74697,7 +74764,7 @@ ivi
 aQp
 ycA
 cON
-cON
+nxP
 cON
 nVG
 nVG
@@ -74709,7 +74776,7 @@ fTh
 ram
 gSQ
 wKl
-ivi
+eAR
 ivi
 ivi
 ivi
@@ -75216,7 +75283,7 @@ cON
 cON
 nVG
 cON
-cON
+nxP
 cON
 qTT
 fTh
@@ -76495,7 +76562,7 @@ xMo
 uOS
 sed
 oFb
-cON
+nxP
 cON
 cON
 cKH
@@ -77010,8 +77077,8 @@ uOS
 sed
 cON
 cON
-qKk
-qKk
+cON
+cON
 cON
 cON
 nVG
@@ -80098,7 +80165,7 @@ cON
 cON
 snq
 cON
-oWx
+cON
 cON
 cON
 qTT
