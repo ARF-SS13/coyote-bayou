@@ -177,7 +177,7 @@
 	if(AIStatus == AI_OFF)
 		return 0
 	
-	var/list/possible_targets = ListTargetsLazy() //we look around for potential targets and make it a list for later use.
+	var/list/possible_targets = ListTargetsLazy(loc.z) //we look around for potential targets and make it a list for later use.
 
 	if(environment_smash)
 		EscapeConfinement()
