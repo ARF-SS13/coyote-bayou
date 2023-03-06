@@ -1754,7 +1754,7 @@ datum/job/wasteland/f13dendoctor
 	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
 	supervisors = "your moral code"
 	selection_color = "#76885f"
-	exp_requirements = 1500
+	exp_requirements = 0
 	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13vigilante
@@ -2380,7 +2380,7 @@ datum/job/wasteland/f13dendoctor
 	description = "You're the big gun here, pardner. As the Overboss of Redwater, you have the unfortunate position of being a mayor to all these hooligans and miscreants. Use your supply of caps and bullets to keep people in order. "
 	supervisors = "Your conscience (HAH), wallet, and constituents."
 	selection_color = "#df80af"
-	exp_requirements = 600
+	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND
 
 	loadout_options = list(

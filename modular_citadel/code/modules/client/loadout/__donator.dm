@@ -784,6 +784,7 @@
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/clothing/glasses/prism_glasses(src)
 	new /obj/item/stealthboy(src)
+	new /obj/item/stock_parts/cell/high/slime/blue(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"
