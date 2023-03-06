@@ -36,7 +36,10 @@
 			"Down": -1,
 			"No Parallax": true,
 			"Linkage" : null,
-			"Name": "Lower Yuma"
+			"Name": "Lower Yuma",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 0
 		},
 		{
 			"Gravity": true,
@@ -46,7 +49,10 @@
 			"Down": -1,
 			"No Parallax": true,
 			"Linkage" : "Cross",
-			"Name": "Yuma"
+			"Name": "Yuma",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 1
 		},
 		{
 			"Gravity": true,
@@ -56,7 +62,10 @@
 			"No Parallax": true,
 			"Linkage" : null,
 			"Above": true,
-			"Name": "Yuma - Upper"
+			"Name": "Yuma - Upper",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 2
 		},
 		{
 			"Gravity": true,
@@ -65,7 +74,10 @@
 			"Linkage" : null,
 			"No Parallax": true,
 			"Above": true,
-			"Name": "Yuma - Second Upper boogaloo 2"
+			"Name": "Yuma - Second Upper boogaloo 2",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 3
 		},
 		{
 			"Gravity": true,
@@ -76,7 +88,10 @@
 			"No Parallax": true,
 			"Linkage" : "Cross",
 			"Force South": 1,
-			"Name": "Rock Springs"
+			"Name": "Rock Springs",
+			"Force X": 3,
+			"Force Y": 2,
+			"Force Z": 1
 		},
 		{
 			"Gravity": true,
@@ -87,7 +102,10 @@
 			"No Parallax": true,
 			"Linkage" : "Cross",
 			"Force North": 1,
-			"Name": "Red River"
+			"Name": "Red River",
+			"Force X": 1,
+			"Force Y": 2,
+			"Force Z": 1
 		},
 		{
 			"Gravity": true,
@@ -98,7 +116,10 @@
 			"No Parallax": true,
 			"Linkage" : "Cross",
 			"Force East": 1,
-			"Name": "Garland City"
+			"Name": "Garland City",
+			"Force X": 2,
+			"Force Y": 3,
+			"Force Z": 1
 		}
 	],
 	"minetype": "none"
