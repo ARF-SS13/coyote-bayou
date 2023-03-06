@@ -98,7 +98,7 @@
 /obj/structure/chair,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13,
@@ -4012,7 +4012,7 @@
 "cYp" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -4701,7 +4701,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -6172,7 +6172,7 @@
 "eAR" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -12671,7 +12671,7 @@
 "jnc" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13,
@@ -13321,7 +13321,7 @@
 "jKh" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -14014,11 +14014,11 @@
 "kii" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/city)
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "kir" = (
 /obj/effect/decal/fakelattice{
 	pixel_x = -17
@@ -16268,14 +16268,13 @@
 	},
 /area/f13/building)
 "lKD" = (
-/obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "lKQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -18586,7 +18585,7 @@
 "nrw" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -18835,7 +18834,7 @@
 "nxP" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -21476,7 +21475,7 @@
 /obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -23577,7 +23576,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -24462,7 +24461,7 @@
 /obj/structure/chair/bench,
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider mixed";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -24600,7 +24599,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -27025,7 +27024,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -28780,7 +28779,7 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider melee";
+	randomizer_kind = "low level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/f13/wood,
@@ -30643,6 +30642,11 @@
 /area/f13/wasteland)
 "vSa" = (
 /obj/machinery/light/fo13colored,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "high level raider";
+	randomizer_tag = "bridge gang"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "vSf" = (
@@ -33606,7 +33610,7 @@
 "xUp" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
-	randomizer_kind = "raider ranged";
+	randomizer_kind = "high level raider";
 	randomizer_tag = "bridge gang"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -60886,11 +60890,11 @@ jQi
 sed
 nJi
 cON
-cYp
+kii
 cON
-cYp
 cON
-cYp
+kii
+kii
 cON
 vwk
 qTT
@@ -64490,9 +64494,9 @@ cON
 cON
 qXg
 ivi
+lKD
+ivi
 eAR
-ivi
-ivi
 edq
 acT
 tng
@@ -67053,7 +67057,7 @@ meM
 uOS
 sed
 cON
-lKD
+rtt
 cON
 cON
 bGy
@@ -69894,7 +69898,7 @@ vSa
 tBp
 ivi
 tBp
-ivi
+nrw
 qeq
 tBp
 meM
@@ -73732,7 +73736,7 @@ bhU
 fFO
 edq
 jEN
-kii
+eAR
 clr
 hAg
 cON
@@ -77591,12 +77595,12 @@ qTT
 uUN
 cON
 cON
-cON
+cYp
 cON
 cON
 izw
 cON
-cON
+cYp
 rGs
 qTT
 sed

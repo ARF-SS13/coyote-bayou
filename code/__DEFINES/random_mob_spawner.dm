@@ -266,7 +266,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	)
 
 /// High level raiders
-/datum/random_mob_spawner_group/raider_low
+/datum/random_mob_spawner_group/raider_high
 	group_tag = MOB_SPAWNER_KIND_RAIDER_HIGH
 	group_list = list(
 		MOB_SPAWNER_RAIDER_RANGED,
