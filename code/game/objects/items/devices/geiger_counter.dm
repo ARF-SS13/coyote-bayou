@@ -53,6 +53,9 @@
 
 	radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
 	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
+	var/area/this_area = get_area(src)
+	if(this_area?.rads_per_second >= 1)
+		radiation_count += rads_per_second/RAD_MEASURE_SMOOTHING
 
 	if(current_tick_amount)
 		grace = RAD_GRACE_PERIOD

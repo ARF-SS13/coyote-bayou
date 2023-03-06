@@ -141,6 +141,8 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	///Used to decide what kind of reverb the area makes sound have
 	var/sound_environment = SOUND_ENVIRONMENT_NONE
 
+	///How much radiation to give to every player in this area, per tick
+	var/rads_per_second
 
 /*Adding a wizard area teleport list because motherfucking lag -- Urist*/
 /*I am far too lazy to make it a proper list of areas so I'll just make it run the usual telepot routine at the start of the game*/
@@ -241,6 +243,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(!base_area) //we don't want to run it twice.
 		power_change()		// all machines set to current power level, also updates icon
 	update_beauty()
+
+/area/ComponentInitialize()
+	. = ..()
+	if(rads_per_second)
+		AddComponent(/datum/component/radiation_area, rads_per_second)
 
 /area/proc/reg_in_areas_in_z()
 	if(contents.len)
