@@ -10,6 +10,7 @@
 	density = TRUE
 	pixel_x = -16
 	layer = FLY_LAYER
+	plane = MOB_PLANE
 	var/log_amount = 10
 	plane = MOB_PLANE
 
