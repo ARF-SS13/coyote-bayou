@@ -246,7 +246,11 @@
 
 		var/obj/O
 		if(R.max_res_amount > 1) //Is it a stack?
-			O = new R.result_type(usr.drop_location(), R.res_amount * multiplier)
+			if(R.is_stack)
+				O = new R.result_type(usr.drop_location(), R.res_amount * multiplier)
+			else
+				for(var/i in 1 to multiplier)
+					O = new R.result_type(get_turf(usr))
 		else if(ispath(R.result_type, /turf))
 			var/turf/T = usr.drop_location()
 			if(!isturf(T))
@@ -547,8 +551,10 @@
 	var/applies_mats = FALSE
 	var/trait_booster = null
 	var/trait_modifier = 1
+	/// Is the resulting thing made from this a stack? if so, multi-crafting will make a stack with multiple 'uses' of it. if not, multi-crafting makes several separate items of it
+	var/is_stack = TRUE
 
-/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE, applies_mats = FALSE, trait_booster = null, trait_modifier = 1)
+/datum/stack_recipe/New(title, result_type, req_amount = 1, res_amount = 1, max_res_amount = 1,time = 0, one_per_turf = FALSE, on_floor = FALSE, window_checks = FALSE, placement_checks = FALSE, applies_mats = FALSE, trait_booster = null, trait_modifier = 1, is_stack = TRUE)
 
 
 	src.title = title
@@ -564,6 +570,7 @@
 	src.applies_mats = applies_mats
 	src.trait_booster = trait_booster
 	src.trait_modifier = trait_modifier
+	src.is_stack = is_stack
 /*
  * Recipe list datum
  */

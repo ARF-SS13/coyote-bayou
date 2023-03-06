@@ -116,7 +116,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
-/obj/item/ammo_box/magazine/garand308/update_icon()
+/obj/item/ammo_box/magazine/garand3006/update_icon()
 	..()
 	if (ammo_count() >= 8)
 		icon_state = "enbloc-8"
@@ -128,17 +128,17 @@
 
 /obj/item/ammo_box/magazine/sks
 	name = ".308 SKS clip"
-	icon_state = "enbloc-10"
+	icon_state = "enbloc-8"
 	ammo_type = /obj/item/ammo_casing/a308
 	caliber = list(CALIBER_308)
-	max_ammo = 10
+	max_ammo = 8
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/sks/update_icon()
 	..()
 	if (ammo_count() >= 10)
-		icon_state = "enbloc-10"
+		icon_state = "enbloc-8"
 	else
 		icon_state = "enbloc-[ammo_count()]"
 
@@ -191,7 +191,7 @@
 
 /obj/item/ammo_box/magazine/m473/small
 	name = "4.7mm carbine magazine"
-	icon_state = "46x30mmt"
+	icon_state = "473small"
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 

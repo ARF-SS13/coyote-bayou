@@ -48,7 +48,7 @@ Administrator
 	description = "You are a Senior Doctor. Your rank is given due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FF95FF"
-	exp_requirements = 750
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 
@@ -121,7 +121,7 @@ Administrator
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
-	exp_requirements = 540
+	exp_requirements = 0
 	exp_type = EXP_TYPE_FOLLOWERS
 
 	outfit = /datum/outfit/job/followers/f13Professor
@@ -216,7 +216,7 @@ Practitioner
 	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
-	exp_requirements = 300
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/followers/f13practitioner
 	matchmaking_allowed = list(

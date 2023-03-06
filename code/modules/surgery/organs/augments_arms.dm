@@ -373,3 +373,19 @@
 			to_chat(H, span_notice("You are now fully charged."))
 			break
 	H.visible_message(span_notice("[H] unplugs from the [A]."), span_notice("You unplug from the [A]."))
+
+/obj/item/organ/cyberimp/arm/pip
+	name = "integrated Pip implant"
+	desc = "a customized intigrated communication and mental interface"
+	contents = newlist(/obj/item/healthanalyzer/advanced/imp, /obj/item/pda, /obj/item/card/emag/imp, /obj/item/multitool/abductor/imp)
+
+/obj/item/organ/cyberimp/arm/surgery/advanced
+	name = "advanced integrated surgical implant"
+	desc = "A very advanced version of the regular surgical implant"
+	contents = newlist(/obj/item/retractor/alien,
+					   /obj/item/hemostat/alien,
+					   /obj/item/cautery/alien,
+					   /obj/item/surgicaldrill/alien,
+					   /obj/item/scalpel/alien,
+					   /obj/item/circular_saw/alien,
+					   /obj/item/surgical_drapes/advanced)

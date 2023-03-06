@@ -101,3 +101,12 @@
 	filling_color = "#97ee63"
 	tastes = list("pure electricity" = 3, "fitness" = 2)
 	foodtype = TOXIC
+
+/obj/item/reagent_containers/food/snacks/nukebar
+	name = "Nuclear-power energy bar"
+	icon_state = "nukebar"
+	desc = "homemade energy bar with an emphasis on 'energy'. unless you are a ghoul or someone that enjoys rads dont eat this."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/honey = 5, /datum/reagent/radium = 20, /datum/reagent/consumable/nuka_cola = 10)
+	filling_color = "#97ee63"
+	tastes = list("sweet and salty" = 3, "radioactive death" = 2)
+	foodtype = FRUIT | SUGAR

@@ -1944,7 +1944,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/bundle/f13/m1919
 	name = "browning m1919 and ammo spawner"
 	items = list(/obj/item/gun/ballistic/automatic/m1919,
-				/obj/item/ammo_box/magazine/mm762
+				/obj/item/ammo_box/magazine/mm308
 				)
 
 /obj/effect/spawner/bundle/f13/dks

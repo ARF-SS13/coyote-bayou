@@ -1,13 +1,14 @@
 /// Z levels that are more or less above ground and can see the sky
 /// For telling players about the weather
-#define ABOVE_GROUND_Z_LEVELS list(4, 5, 6, 7, 8)
-#define COMMON_Z_LEVELS list(3, 4, 5, 6, 7, 8)
+#define ABOVE_GROUND_Z_LEVELS list(4, 5, 6, 7, 8, 9)
+#define COMMON_Z_LEVELS list(3, 4, 5, 6, 7, 8, 9)
 #define Z_LEVEL_NASH_UNDERGROUND 3
 #define Z_LEVEL_NASH_COMMON 4
 #define Z_LEVEL_NASH_LVL2 5
 #define Z_LEVEL_NASH_LVL3 6
 #define Z_LEVEL_REDWATER 7
 #define Z_LEVEL_REDLICK 8
+#define Z_LEVEL_GARLAND 9
 
 /* * * * * * * * * * * * *
  * THE Z LEVELS~

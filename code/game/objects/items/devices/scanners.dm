@@ -682,9 +682,9 @@ GENETICS SCANNER
 	var/turf/location = get_turf(user)
 	if(!istype(location))
 		return
-	
+
 	scan_turf(user, location)
-	
+
 /obj/item/analyzer/AltClick(mob/user) //Barometer output for measuring when the next storm happens
 	. = ..()
 
@@ -1048,3 +1048,9 @@ GENETICS SCANNER
 #undef SCANMODE_WOUND
 #undef SCANNER_CONDENSED
 #undef SCANNER_VERBOSE
+
+/obj/item/healthanalyzer/advanced/imp
+	name = "implanted Biomonitor"
+	icon_state = "biomonitor"
+	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
+	advanced = TRUE
