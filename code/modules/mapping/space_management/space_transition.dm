@@ -14,18 +14,19 @@
 			else if(P.z == zi-1) //below
 				neigbours[TEXT_DOWN] = P.spl
 				P.spl.neigbours[TEXT_UP] = src
-		else if(P.x == xi) // checking east and west
-			if(P.y == yi+1)
+		
+		if(P.x == xi) // checking east and west
+			if(P.y == yi+1 && P.z == zi)
 				neigbours[TEXT_NORTH] = P.spl
 				P.spl.neigbours[TEXT_SOUTH] = src
-			else if(P.y == yi-1)
+			else if(P.y == yi-1 && P.z == zi)
 				neigbours[TEXT_SOUTH] = P.spl
 				P.spl.neigbours[TEXT_NORTH] = src
 		else if(P.y == yi) // checking north and south
-			if(P.x == xi+1)
+			if(P.x == xi+1 && P.z == zi)
 				neigbours[TEXT_EAST] = P.spl
 				P.spl.neigbours[TEXT_WEST] = src
-			else if(P.x == xi-1)
+			else if(P.x == xi-1 && P.z == zi)
 				neigbours[TEXT_WEST] = P.spl
 				P.spl.neigbours[TEXT_EAST] = src
 
@@ -92,14 +93,16 @@
 				grid.Add(P)
 	for(var/datum/space_transition_point/pnt in grid)
 		pnt.set_neigbours(point_grid)
-	P = point_grid[conf_set_len-1][conf_set_len-1][conf_set_len-1]
+
+	var/datum/space_level/DO = SLS[1]
+
+	P = point_grid[level_trait(DO.z_value, Z_FORCE_X) + 1][level_trait(DO.z_value, Z_FORCE_Y) + 1][level_trait(DO.z_value, Z_FORCE_Z) + 1] // cursed yes, I know, but this hasn't been touched in 5 years and the original coder couldn't spell neighbour so a bit of spaghetti will help a little. Mentally. I'm unsure though honestly I could rant for days about why spaghettification is a great thing and shouldn't just be a term used for black holes, honestly. Anyways yeah I've made the meme spam comment now as I usually do with every feature I add/change so there we go!
 	
 	var/list/possible_points = list()
 	var/list/used_points = list()
 	grid.Cut()
 	
 	if(SLS.len)
-		var/datum/space_level/DO = SLS[1]
 		DO.xi = P.x
 		DO.yi = P.y
 		DO.zi = P.z
@@ -110,9 +113,9 @@
 		SLS.Remove(DO)
 
 		for(var/datum/space_level/DN in SLS)
-			var/stpX = level_trait(DN.z_value, Z_FORCE_X)
-			var/stpY = level_trait(DN.z_value, Z_FORCE_Y)
-			var/stpZ = level_trait(DN.z_value, Z_FORCE_Z)
+			var/stpX = level_trait(DN.z_value, Z_FORCE_X) + 1
+			var/stpY = level_trait(DN.z_value, Z_FORCE_Y) + 1
+			var/stpZ = level_trait(DN.z_value, Z_FORCE_Z) + 1
 			
 			P = point_grid[stpX][stpY][stpZ]
 			
@@ -120,16 +123,15 @@
 				message_admins("ERROR: P already contains spl")
 				continue
 
-			if(stpX)	DN.xi = stpX
-			if(stpY)	DN.yi = stpY
-			if(stpZ)	DN.zi = stpZ
+			DN.xi = stpX
+			DN.yi = stpY
+			DN.zi = stpZ
 
 			P.spl = DN
 			used_points |= P
 			possible_points.Remove(used_points)
 			DN.set_neigbours(used_points)
 			SLS.Remove(DN)
-			P = pick(possible_points)
 			CHECK_TICK	
 
 	

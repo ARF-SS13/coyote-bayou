@@ -35,7 +35,7 @@
 			"Up": 1,
 			"Down": -1,
 			"No Parallax": true,
-			"Linkage" : null,
+			"Linkage" : "Cross",
 			"Name": "Lower Yuma",
 			"Force X": 2,
 			"Force Y": 2,
@@ -60,7 +60,7 @@
 			"Up": 1,
 			"Down": -1,
 			"No Parallax": true,
-			"Linkage" : null,
+			"Linkage" : "Cross",
 			"Above": true,
 			"Name": "Yuma - Upper",
 			"Force X": 2,
@@ -71,7 +71,7 @@
 			"Gravity": true,
 			"Baseturf": "/turf/open/transparent/openspace",
 			"Down": -1,
-			"Linkage" : null,
+			"Linkage" : "Cross",
 			"No Parallax": true,
 			"Above": true,
 			"Name": "Yuma - Second Upper boogaloo 2",
@@ -89,8 +89,8 @@
 			"Linkage" : "Cross",
 			"Force South": 1,
 			"Name": "Rock Springs",
-			"Force X": 3,
-			"Force Y": 2,
+			"Force X": 2,
+			"Force Y": 1,
 			"Force Z": 1
 		},
 		{
@@ -103,8 +103,8 @@
 			"Linkage" : "Cross",
 			"Force North": 1,
 			"Name": "Red River",
-			"Force X": 1,
-			"Force Y": 2,
+			"Force X": 2,
+			"Force Y": 3,
 			"Force Z": 1
 		},
 		{
@@ -117,8 +117,8 @@
 			"Linkage" : "Cross",
 			"Force East": 1,
 			"Name": "Garland City",
-			"Force X": 2,
-			"Force Y": 3,
+			"Force X": 3,
+			"Force Y": 2,
 			"Force Z": 1
 		}
 	],
