@@ -116,7 +116,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
-/obj/item/ammo_box/magazine/garand308/update_icon()
+/obj/item/ammo_box/magazine/garand3006/update_icon()
 	..()
 	if (ammo_count() >= 8)
 		icon_state = "enbloc-8"

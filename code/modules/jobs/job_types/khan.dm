@@ -220,7 +220,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/garand308 = 3,
+		/obj/item/ammo_box/magazine/garand3006 = 3,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		/obj/item/book/granter/trait/bigleagues = 1)
 
