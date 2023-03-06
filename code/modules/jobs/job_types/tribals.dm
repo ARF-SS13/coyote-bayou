@@ -96,7 +96,7 @@ Tribal Chief
 	description = "The leader and central political figure in this village of the Suplphur Bottom Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
 	selection_color = "#006666"
 	outfit = /datum/outfit/job/tribal/f13chief
-	exp_requirements = 1200
+	exp_requirements = 0
 
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
@@ -145,7 +145,7 @@ Tribal Shaman
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "The spiritual leader and cultural core of the Sulphur Bottom Tribe. You aid villagers in their day to day lives by offering guidance and advice, while also acting as the direct aid to the chief. You are the guardian of the tribe's customs, their health, and knowledge."
 	selection_color = "#006666"
-	exp_requirements = 900
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/tribal/f13shaman
 
@@ -227,7 +227,7 @@ Tribal Head Hunter
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
-	exp_requirements = 900
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/tribal/f13Hhunter
 	access = list(ACCESS_TRIBE)
@@ -284,7 +284,7 @@ Druid
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are a Druid in the tribe; you perform rituals, and bless pre-collapse relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
 	selection_color = "#006666"
-	exp_requirements = 300
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/tribal/f13druid
 	access = list(ACCESS_TRIBE)
@@ -451,7 +451,7 @@ Hunter
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the shaman. You also are the protectors of the tribe, and work with the Head Hunter during Great Hunts or times of War."
 	selection_color = "#006666"
-	exp_requirements = 450
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/tribal/f13hunter
 
@@ -575,7 +575,7 @@ Guardian
 	supervisors = "All leadership, but the Chief is priority"
 	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. Do not leave the village unless circumstances allow it."
 	selection_color = "#006666"
-	exp_requirements = 450
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/tribal/f13guardian
 

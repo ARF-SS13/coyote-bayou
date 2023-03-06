@@ -45,7 +45,7 @@ Mayor
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
 
-	exp_requirements = 750
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/den/f13mayor
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
@@ -160,7 +160,7 @@ Mayor
 	description = "The settlement of Nash is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
 	enforces = "You are the stand-in leader of Nash if a Mayor does not exist."
 	selection_color = "#d7b088"
-	exp_requirements = 400
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/den/f13secretary
 
@@ -257,7 +257,7 @@ Mayor
 	description = "You are the civil enforcer of Nash, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
 	enforces = "You are the stand-in leader of Nash if a Mayor or Secretary does not exist."
 	selection_color = "#d7b088"
-	exp_requirements = 750
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/den/f13sheriff
 
@@ -373,7 +373,7 @@ Mayor
 	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Nash if a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
-	exp_requirements = 300
+	exp_requirements = 0
 
 	loadout_options = list(
 	/datum/outfit/loadout/frontierjustice,
@@ -1212,7 +1212,7 @@ Mayor
 	description = "You are the team leader for your various workers in the shop. Guide them as you see fit towards a profitable future."
 	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
 	selection_color = "#dcba97"
-	exp_requirements = 400
+	exp_requirements = 0
 
 	loadout_options = list(
 	/datum/outfit/loadout/laser_master,
@@ -1308,7 +1308,7 @@ Mayor
 	description = "You are one of the many workers who live in the city of Nash. Working with the town council you have rented out a space in the shop for you to make your living."
 	enforces = "The Nash store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
 	selection_color = "#dcba97"
-	exp_requirements = 300
+	exp_requirements = 0
 
 	loadout_options = list(
 	/datum/outfit/loadout/energy_specialist,
