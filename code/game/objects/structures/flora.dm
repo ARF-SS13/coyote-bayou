@@ -11,6 +11,7 @@
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
+	plane = MOB_PLANE
 
 /obj/structure/flora/tree/Bumped(atom/movable/AM)
 	. = ..()
