@@ -76,18 +76,12 @@
 
 	// Leaving these vars here if required!
 	var/datum/space_level/zLoc = get_level(T.z)
-	
-	if(!zLoc)
-		return
+	if(!zLoc)	return
 
 	var/datum/space_level/zBelow = zLoc.neigbours[TEXT_DOWN]
-	
-	if(!zBelow)
-		return
+	if(!zBelow)	return
 
 	var/zResult = zBelow.z_value
-
-
 	return locate(T.x, T.y, zResult)
 
 // Attempt to get the turf above the provided one according to Z traits ANDDD overmap position
@@ -97,14 +91,12 @@
 
 	// Leaving these vars here if required!
 	var/datum/space_level/zLoc = get_level(T.z)
-	var/datum/space_level/zUp = zLoc.neigbours[TEXT_UP]
+	if(!zLoc)	return
 	
-	if(!zUp)
-		return
+	var/datum/space_level/zUp = zLoc.neigbours[TEXT_UP]
+	if(!zUp)	return
 
 	var/zResult = zUp.z_value
-
-
 	return locate(T.x, T.y, zResult)
 
 // Prefer not to use this one too often
