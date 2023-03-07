@@ -673,25 +673,6 @@
 /obj/item/storage/box/large/custom_kit/exoticjazz/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
 
-/datum/gear/donator/kits/moribund
-	name = "moribunds supplies"
-	path = /obj/item/storage/box/large/custom_kit/moribund
-	ckeywhitelist = list ("mottedesstriets")
-
-/obj/item/storage/box/large/custom_kit/moribund/PopulateContents()
-	new /obj/item/organ/cyberimp/arm/pip(src)
-	new /obj/item/autosurgeon(src)
-	new /obj/item/organ/cyberimp/arm/surgery/advanced(src)
-	new /obj/item/organ/eyes/night_vision/mori(src)
-	new /obj/item/book/granter/crafting_recipe/morinote(src)
-	new /obj/item/clothing/head/f13/stalkerpelt(src)// morbid. but funny.
-	new /obj/item/storage/pill_bottle/chem_tin/fixer(src)
-	new /obj/item/storage/fancy/cigarettes/cigpack_mori(src)
-	new /obj/item/lighter/nightstalker(src)
-	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit(src)
-	new /obj/item/reagent_containers/food/snacks/nukebar(src)
-	new /obj/item/reagent_containers/pill/healingpowder/stalkersqueeze(src)
-
 // N
 
 /datum/gear/donator/kits/nightmare6669

@@ -1321,11 +1321,3 @@
 	crafting_recipe_types = list(
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5)
-
-/obj/item/book/granter/crafting_recipe/morinote
-	name = "Mori's black book"
-	desc = "A handwritten reminder."
-	crafting_recipe_types = list(/datum/crafting_recipe/food/canmut, /datum/crafting_recipe/food/mutomelette, /datum/crafting_recipe/cigpack_mori, /datum/crafting_recipe/food/nukebar, /datum/crafting_recipe/stalkersqueeze)
-	icon_state = "book1"
-	oneuse = TRUE
-	remarks = list("this is a doctors handwriting....")

@@ -39,40 +39,6 @@
 	result = /obj/item/reagent_containers/food/snacks/f13/deathclawomelette
 	subcategory = CAT_WASTEFOOD
 
-/datum/crafting_recipe/food/mutomelette
-	name = "Mutfruit Omelette"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/egg = 1,
-		/obj/item/reagent_containers/food/snacks/butter =1,
-		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/f13/mutomelette
-	subcategory = CAT_WASTEFOOD
-	always_available = FALSE
-	
-/datum/crafting_recipe/food/nukebar
-	name = "Nuke Bar"
-	reqs = list(
-		/datum/reagent/consumable/nuka_cola = 10,
-		/obj/item/reagent_containers/food/snacks/grown/pinyon = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mesquite =1,
-		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/nukebar
-	subcategory = CAT_WASTEFOOD
-	always_available = FALSE
-
-/datum/crafting_recipe/food/canmut
-	name = "Canned Mutfruit"
-	reqs = list(
-		/datum/reagent/water = 10,
-		/datum/reagent/consumable/honey = 5,
-		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit
-	subcategory = CAT_WASTEFOOD
-	always_available = FALSE
-
 /datum/crafting_recipe/food/longpork_stew
 	name = "Longpork Stew"
 	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/human= 1,
