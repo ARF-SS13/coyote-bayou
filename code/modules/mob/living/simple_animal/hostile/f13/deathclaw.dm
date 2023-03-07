@@ -127,9 +127,10 @@
 			A.ex_act(EXPLODE_HEAVY)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
 			if(stat || health <= 0)
-				gib()
 				playsound(get_turf(src), 'sound/effects/Flesh_Break_2.ogg', 100, 1, ignore_walls = TRUE)
 				visible_message(span_danger("[src] smashes into \the [A] and explodes in a violent spray of gore![prob(25) ? " Holy shit!" : ""]"))
+				gib()
+				return
 		DestroySurroundings()
 	..()
 
