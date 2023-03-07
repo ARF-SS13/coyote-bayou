@@ -12,7 +12,7 @@
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 4
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_TINY
 
 	rating = 1
 	var/charge = 0 //set on init

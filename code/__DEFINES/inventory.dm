@@ -212,6 +212,14 @@ GLOBAL_LIST_INIT(holster_disallowed, typecacheof(list(
 	/obj/item/ammo_box/magazine/m22/extended
 	)))
 
+GLOBAL_LIST_INIT(typical_reagent_containers, typecacheof(list(
+	/obj/item/reagent_containers/glass,
+	/obj/item/reagent_containers/medspray,
+	/obj/item/reagent_containers/dropper,
+	/obj/item/reagent_containers/spray,
+	/obj/item/reagent_containers/syringe,
+	)))
+
 GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_box,
 	/obj/item/ammo_casing,
