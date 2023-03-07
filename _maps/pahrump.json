@@ -8,6 +8,7 @@
 		"Pahrump-Sunset-Upper.dmm",
 		"Pahrump-Sunset-Upper-2.dmm",
 		"RockSprings.dmm",
+		"RockSprings-Upper.dmm",
 		"RedRiver.dmm",
 		"Garland-City.dmm"
 	],
@@ -28,6 +29,7 @@
 			"Linkage" : null,
 			"Name": "Dungeons"
 		},
+
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
@@ -41,6 +43,7 @@
 			"Force Y": 2,
 			"Force Z": 0
 		},
+
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
@@ -54,6 +57,7 @@
 			"Force Y": 2,
 			"Force Z": 1
 		},
+
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/transparent/openspace",
@@ -67,6 +71,7 @@
 			"Force Y": 2,
 			"Force Z": 2
 		},
+
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/transparent/openspace",
@@ -79,6 +84,7 @@
 			"Force Y": 2,
 			"Force Z": 3
 		},
+
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
@@ -93,6 +99,21 @@
 			"Force Y": 1,
 			"Force Z": 1
 		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Above": true,
+			"Name": "Rocksprings Upper",
+			"Force X": 2,
+			"Force Y": 1,
+			"Force Z": 2
+		},
+
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
@@ -107,6 +128,7 @@
 			"Force Y": 3,
 			"Force Z": 1
 		},
+
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
@@ -121,6 +143,7 @@
 			"Force Y": 2,
 			"Force Z": 1
 		}
+
 	],
 	"minetype": "none"
 }
