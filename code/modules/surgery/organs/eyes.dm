@@ -151,26 +151,6 @@
 	name = "fung-eye"
 	desc = "While on the outside they look inert and dead, the eyes of mushroom people are actually very advanced."
 
-/obj/item/organ/eyes/night_vision/mori
-	name = "custom augmented eyes"
-	desc = "these custom augmentations made to traditional shielding has gave them health hud overlay capabilities."
-	flash_protect = 2
-	icon_state = "cybernetic_eyeballs"
-	var/HUD_type = 0
-	HUD_type = DATA_HUD_MEDICAL_ADVANCED
-
-/obj/item/organ/eyes/night_vision/mori/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = FALSE)
-	..()
-	if(HUD_type)
-		var/datum/atom_hud/H = GLOB.huds[HUD_type]
-		H.add_hud_to(M)
-
-/obj/item/organ/eyes/night_vision/mori/Remove(special = FALSE)
-	if(!QDELETED(owner) && HUD_type)
-		var/datum/atom_hud/H = GLOB.huds[HUD_type]
-		H.remove_hud_from(owner)
-	return ..()
-
 ///Robotic
 
 /obj/item/organ/eyes/robotic

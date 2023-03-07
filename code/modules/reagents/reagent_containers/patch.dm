@@ -92,14 +92,6 @@
 	self_delay = 5
 	color = COLOR_PALE_GREEN_GRAY
 
-/obj/item/reagent_containers/pill/healingpowder/stalkersqueeze
-	name = "Nightstalker Squeezin's"
-	desc = "A jar of a mysterious mix of snake yote blood and healing herbs."
-	list_reagents = list(/datum/reagent/medicine/stalkersqueeze = 20)
-	icon = 'icons/fallout/objects/medicine/drugs.dmi'
-	icon_state = "squeeze-op"
-	self_delay = 5
-
 // ---------------------------------
 // HEALING POULTICE
 

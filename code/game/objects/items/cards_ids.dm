@@ -1371,14 +1371,3 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 		var/choice = input(user, "Select the license type", "License Type Selection") as null|anything in GLOB.fuzzy_license
 		if(!isnull(choice))
 			name = "license to [choice]"
-
-/obj/item/card/emag/imp
-	desc = "A connector to a personal uplink to interface with machinery."
-	name = "Implanted uplink"
-	icon = 'icons/obj/power.dmi'
-	icon_state = "personallink1"
-	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-	item_flags = NO_MAT_REDEMPTION | NOBLUDGEON
-	prox_check = TRUE //If the emag requires you to be in range
-	uses = 999
