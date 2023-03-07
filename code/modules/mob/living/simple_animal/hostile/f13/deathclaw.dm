@@ -113,18 +113,24 @@
 		return
 	var/atom/throw_target = get_ranged_target_turf(throwee, get_dir(src, the_target), rand(2,10), 4)
 	throwee.safe_throw_at(throw_target, 10, 1, src, TRUE)
+	playsound(get_turf(throwee), 'sound/effects/Flesh_Break_1.ogg')
 
 /mob/living/simple_animal/hostile/deathclaw/Move()
-	if(is_low_health)
+	if(is_low_health && health > 0)
 		new /obj/effect/temp_visual/decoy/fading(loc,src)
 		DestroySurroundings()
 	. = ..()
 
 /mob/living/simple_animal/hostile/deathclaw/Bump(atom/A)
 	if(is_low_health)
-		if(isturf(A) || isobj(A) && A.density)
+		if((isturf(A) || isobj(A)) && A.density)
 			A.ex_act(EXPLODE_HEAVY)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+			if(stat || health <= 0)
+				playsound(get_turf(src), 'sound/effects/Flesh_Break_2.ogg', 100, 1, ignore_walls = TRUE)
+				visible_message(span_danger("[src] smashes into \the [A] and explodes in a violent spray of gore![prob(25) ? " Holy shit!" : ""]"))
+				gib()
+				return
 		DestroySurroundings()
 	..()
 
