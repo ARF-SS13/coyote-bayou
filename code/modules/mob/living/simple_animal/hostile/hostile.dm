@@ -176,8 +176,8 @@
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF)
 		return 0
-	
-	var/list/possible_targets = ListTargetsLazy(loc.z) //we look around for potential targets and make it a list for later use.
+
+	var/list/possible_targets = ListTargets() //we look around for potential targets and make it a list for later use.
 
 	if(environment_smash)
 		EscapeConfinement()
@@ -753,16 +753,10 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if (!length(SSmobs.clients_by_zlevel[T.z])) // It's fine to use .len here but doesn't compile on 511
 		toggle_ai(AI_Z_OFF)
 		return
+	
+	tlist = ListTargetsLazy(T.z)
 
-	var/cheap_search = isturf(T) && !is_station_level(T.z)
-	if (cheap_search)
-		tlist = ListTargetsLazy(T.z)
-	else
-		tlist = ListTargets()
-
-	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
-		if(cheap_search) //Try again with full effort
-			FindTarget()
+	if(AIStatus == AI_IDLE && tlist.len)
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
