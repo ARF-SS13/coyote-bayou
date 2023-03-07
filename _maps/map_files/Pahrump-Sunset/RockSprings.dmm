@@ -2566,6 +2566,10 @@
 /obj/effect/decal/cleanable/oil{
 	pixel_x = 15
 	},
+/obj/effect/overlay/junk/oldpipes{
+	pixel_y = 7;
+	pixel_x = 16
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerturn"
@@ -10084,6 +10088,10 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland/town)
 "ewO" = (
+/obj/effect/overlay/junk/oldpipes{
+	pixel_y = 7;
+	pixel_x = 16
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerturn"
@@ -21422,11 +21430,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess,
 /area/f13/building)
 "jpb" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_6"
+/obj/structure/stairs/west{
+	icon = 'icons/turf/f13road.dmi';
+	icon_state = "crossborderroundmid";
+	name = "Upwards Road"
 	},
-/turf/closed/mineral/random/low_chance,
-/area/space)
+/obj/structure/stairs/west,
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "crossborderroundmid"
+	},
+/area/f13/wasteland)
 "jpk" = (
 /obj/structure/decoration/rag,
 /obj/structure/spacevine,
@@ -33625,6 +33638,10 @@
 	},
 /area/f13/wasteland)
 "oQk" = (
+/obj/effect/overlay/junk/oldpipes{
+	pixel_y = 7;
+	pixel_x = 16
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outerturn"
@@ -36338,6 +36355,12 @@
 /obj/item/candle/infinite,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"qhm" = (
+/obj/structure/stairs/west{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "qhr" = (
 /obj/structure/table/wood,
 /obj/item/radio/tribal{
@@ -38515,6 +38538,15 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"reP" = (
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/building/abandoned)
 "reY" = (
 /obj/structure/table/snooker{
 	dir = 6
@@ -39527,6 +39559,20 @@
 /obj/effect/decal/fakelattice,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
+"rzw" = (
+/obj/structure/stairs/west{
+	icon = 'icons/turf/f13road.dmi';
+	icon_state = "crossborderroundmid";
+	name = "Upwards Road"
+	},
+/obj/structure/railing{
+	layer = 4.1
+	},
+/obj/structure/stairs/west,
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "crossborderroundmid"
+	},
+/area/f13/wasteland)
 "rzD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -41688,6 +41734,10 @@
 "svn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/overlay/junk/oldpipes{
+	pixel_y = 7;
+	pixel_x = 16
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outerturn"
@@ -43750,9 +43800,12 @@
 	},
 /area/f13/caves)
 "twc" = (
-/obj/structure/flora/twig,
-/turf/closed/mineral/random/low_chance,
-/area/space)
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "twg" = (
 /obj/structure/fence,
 /obj/effect/turf_decal/weather/dirt{
@@ -44111,10 +44164,22 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "tCw" = (
-/obj/structure/simple_door/house,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/structure/stairs/west{
+	icon = 'icons/turf/f13road.dmi';
+	icon_state = "crossborderroundmid";
+	name = "Upwards Road"
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/stairs/west,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "crossborderroundmid"
+	},
+/area/f13/wasteland)
 "tCG" = (
 /obj/effect/mob_spawn/human/corpse,
 /turf/open/floor/plasteel/cult,
@@ -63749,7 +63814,7 @@ ucS
 aHq
 aOb
 pMf
-gDf
+oIu
 oxR
 wMz
 nQW
@@ -77625,7 +77690,7 @@ iIF
 iIF
 iIF
 kDz
-nNh
+qhm
 vJa
 emZ
 xXh
@@ -83011,7 +83076,7 @@ jXx
 nQW
 nQW
 iMu
-twc
+iIF
 iIF
 iIF
 iIF
@@ -83528,7 +83593,7 @@ iIF
 iIF
 iIF
 iIF
-jpb
+iIF
 kDz
 xNa
 rvr
@@ -84310,7 +84375,7 @@ rvr
 aKj
 wYp
 xNa
-xNa
+reP
 vNM
 uJe
 lei
@@ -91794,7 +91859,7 @@ sui
 hLa
 mYF
 sui
-ibq
+twc
 tLS
 sui
 nQW
@@ -92051,7 +92116,7 @@ sui
 sui
 sui
 sui
-tCw
+sui
 sui
 sui
 nQW
@@ -116426,12 +116491,12 @@ nQW
 nQW
 rzm
 din
-nmc
-qqa
-qqa
-qqa
-qqa
-bgV
+tCw
+jpb
+jpb
+jpb
+jpb
+rzw
 nQW
 nQW
 nQW
