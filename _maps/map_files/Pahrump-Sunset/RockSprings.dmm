@@ -5341,9 +5341,6 @@
 	},
 /area/f13/building)
 "cqN" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
@@ -5741,14 +5738,6 @@
 	color = "#6D6D6D"
 	},
 /area/f13/building)
-"cAv" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "cAG" = (
 /obj/structure/flora/tree/tall,
 /obj/effect/decal/cleanable/dirt,
@@ -8732,14 +8721,6 @@
 /obj/effect/decal/fakelattice,
 /turf/closed/wall/f13/wood,
 /area/f13/building)
-"dQO" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "dRc" = (
 /obj/structure/simple_door/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10736,9 +10717,6 @@
 /obj/structure/toilet{
 	pixel_y = 10
 	},
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
 /obj/effect/validball_spawner,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -12231,12 +12209,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "fpA" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
@@ -14650,9 +14622,6 @@
 "gvU" = (
 /obj/structure/car/rubbish1,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
@@ -17258,13 +17227,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/water,
 /area/f13/building/tribal/cave)
-"hGD" = (
-/obj/structure/car/rubbish2,
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "hGF" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -25595,6 +25557,9 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "lkq" = (
@@ -25729,16 +25694,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"lnS" = (
-/obj/structure/car/rubbish3,
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0"
-	},
-/area/f13/wasteland/town)
 "lon" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -36246,17 +36201,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/store,
 /area/f13/building)
-"qfx" = (
-/obj/machinery/smoke_machine{
-	name = "generator mechanism"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "qfy" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
@@ -39705,17 +39649,6 @@
 /mob/living/simple_animal/hostile/raider/junker,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"rCe" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/obj/machinery/smoke_machine{
-	name = "generator mechanism"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "rCo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/jungle,
@@ -44011,12 +43944,6 @@
 	icon_state = "tall_grass_6"
 	},
 /obj/structure/flora/grass/wasteland,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"tAd" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tAj" = (
@@ -50414,9 +50341,6 @@
 /area/f13/building)
 "wsi" = (
 /obj/structure/car/rubbish2,
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2"
@@ -63983,7 +63907,7 @@ nQW
 nQW
 nQW
 odS
-hGD
+lRl
 nQW
 nQW
 ktA
@@ -74689,7 +74613,7 @@ nQW
 wgx
 nQW
 nQW
-hGD
+lRl
 nQW
 fHN
 fHN
@@ -74946,7 +74870,7 @@ nQW
 nQW
 caE
 nQW
-tAd
+nQW
 nQW
 nQW
 nQW
@@ -98534,7 +98458,7 @@ nQW
 caE
 afL
 afJ
-dQO
+dzx
 ctU
 ahQ
 jaR
@@ -98793,7 +98717,7 @@ pOG
 afJ
 ctU
 ctU
-rCe
+ctU
 vfD
 vNq
 nQW
@@ -99048,8 +98972,8 @@ fBt
 nQW
 vLD
 afJ
-cAv
-qfx
+dzx
+ctU
 dzx
 dzx
 lBx
@@ -99307,7 +99231,7 @@ kYV
 afJ
 dzx
 mOK
-dQO
+dzx
 dzx
 vNq
 nQW
@@ -107944,7 +107868,7 @@ xHC
 byH
 ohf
 hlh
-lnS
+hVB
 hVB
 mtl
 sch
