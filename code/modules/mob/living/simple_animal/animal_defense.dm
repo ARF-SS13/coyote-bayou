@@ -124,16 +124,38 @@
 
 /mob/living/simple_animal/bullet_act(obj/item/projectile/P)
 	var/totaldamage = P.damage
+	var/staminadamage = P.stamina
 	var/final_percent = 0
 	var/armor = run_armor_check(null, P.flag, null, null, P.armour_penetration, null)
 	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
 	if(!P.nodamage)
 		apply_damage(totaldamage, P.damage_type, null, armor, null, null, null, damage_threshold = dt)
+		if(staminadamage)
+			apply_damage(staminadamage, STAMINA, null, armor, null, null, null, damage_threshold = dt)
 	var/missing = 100 - final_percent
 	var/armor_ratio = armor * 0.01
 	if(missing > 0)
 		final_percent += missing * armor_ratio
 	return P.on_hit(src, final_percent, null) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/mob/living/simple_animal/getStaminaLoss()
+	return staminaloss
+
+/mob/living/simple_animal/adjustStaminaLoss(amount, updating_health = TRUE, forced = FALSE)
+	if(!forced && (status_flags & GODMODE))
+		return FALSE
+	staminaloss = clamp((staminaloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
+	if(staminaloss > stamcrit_threshold)
+		simple_stamcrit()
+	return staminaloss
+
+/mob/living/simple_animal/setStaminaLoss(amount, updating_health = TRUE, forced = FALSE)
+	if(!forced && (status_flags & GODMODE))
+		return FALSE
+	staminaloss = amount
+	if(staminaloss > stamcrit_threshold)
+		simple_stamcrit()
+	return staminaloss
 
 /* 	if(!Proj)
 		return

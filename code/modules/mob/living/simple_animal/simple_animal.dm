@@ -5,6 +5,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	icon = 'icons/mob/animal.dmi'
 	health = 20
 	maxHealth = 20
+	/// When the mob has this much stamina damage, put them in stamcrit
+	var/stamcrit_threshold
+	/// They are stamcritted for this long when stamcrit
+	var/stamcrit_duration = 5 SECONDS
+	COOLDOWN_DECLARE(stamcrit_timer)
 	gender = PLURAL //placeholder
 	///How much blud it has for bloodsucking
 	blood_volume = 425 //blood will smeared only a little bit from body dragging
@@ -80,7 +85,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
 	/// 1 for full damage , 0 for none , -1 for 1:1 heal from that source.
-	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
+	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 1, OXY = 1)
 	///Attacking verb in present continuous tense.
 	var/attack_verb_continuous = "attacks"
 	///Attacking verb in present simple tense.
