@@ -1003,7 +1003,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/bow/shortbow
 	name = "shortbow case"
 
-/obj/item/storage/box/gun/bow/sturdy/PopulateContents()
+/obj/item/storage/box/gun/bow/shortbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light(src)
 
@@ -1578,10 +1578,10 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/tribal/warmace
 
-/datum/loadout_box/spearquivergun/bow/sturdy
+/datum/loadout_box/spear_quiver
 	entry_tag = "Spear Quiver"
 	entry_flags = LOADOUT_FLAG_TRIBAL
-	entry_class = LOADOUT_CAT_MELEE
+	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/tribal/spearquiver
 
 /datum/loadout_box/warclub
