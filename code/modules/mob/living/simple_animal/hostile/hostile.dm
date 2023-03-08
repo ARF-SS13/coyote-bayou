@@ -141,6 +141,9 @@
 		AddAbility(unmake_a_nest)
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		walk(src, 0)
+
 	if(!(. = ..()))
 		walk(src, 0) //stops walking
 		if(decompose)
@@ -192,6 +195,8 @@
 
 /mob/living/simple_animal/hostile/handle_automated_movement()
 	. = ..()
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		return
 	if(dodging && target && in_melee && isturf(loc) && isturf(target.loc))
 		var/datum/cb = CALLBACK(src,.proc/sidestep)
 		if(sidestep_per_cycle > 1) //For more than one just spread them equally - this could changed to some sensible distribution later
@@ -226,13 +231,14 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/bullet_act(obj/item/projectile/P)
+	. = ..()
 	if (peaceful == TRUE)
 		peaceful = FALSE
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client)
 		if(P.firer && get_dist(src, P.firer) <= aggro_vision_range)
 			FindTarget(list(P.firer), 1)
 		Goto(P.starting, move_to_delay, 3)
-	return ..()
+	//return ..()
 
 /mob/living/simple_animal/hostile/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
 	. = ..()
@@ -426,7 +432,7 @@
 			walk(src,0)
 			return 1
 		if(retreat_distance != null) //If we have a retreat distance, check if we need to run from our target
-			if(target_distance <= retreat_distance) //If target's closer than our retreat distance, run
+			if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If target's closer than our retreat distance, run
 				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 				walk_away(src,target,retreat_distance,move_to_delay)
 			else
@@ -467,8 +473,9 @@
 		approaching_target = TRUE
 	else
 		approaching_target = FALSE
-	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-	walk_to(src, target, minimum_distance, delay)
+	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+		walk_to(src, target, minimum_distance, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))

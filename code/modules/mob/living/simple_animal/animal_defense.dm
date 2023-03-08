@@ -138,25 +138,6 @@
 		final_percent += missing * armor_ratio
 	return P.on_hit(src, final_percent, null) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
-/mob/living/simple_animal/getStaminaLoss()
-	return staminaloss
-
-/mob/living/simple_animal/adjustStaminaLoss(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && (status_flags & GODMODE))
-		return FALSE
-	staminaloss = clamp((staminaloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
-	if(staminaloss > stamcrit_threshold)
-		simple_stamcrit()
-	return staminaloss
-
-/mob/living/simple_animal/setStaminaLoss(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && (status_flags & GODMODE))
-		return FALSE
-	staminaloss = amount
-	if(staminaloss > stamcrit_threshold)
-		simple_stamcrit()
-	return staminaloss
-
 /* 	if(!Proj)
 		return
 	apply_damage(Proj.damage, Proj.damage_type)

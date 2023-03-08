@@ -611,3 +611,6 @@
 
 /// Drop everything in the mob loot list
 #define MOB_LOOT_ALL "allofit"
+
+/// Simple mob cannot be stamcrit
+#define SIMPLEMOB_NO_STAMCRIT -1

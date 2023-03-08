@@ -21,6 +21,7 @@
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
 	maxHealth = 40 
 	health = 40
+	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
 		MOB_EMP_STUN,
 		MOB_EMP_BERSERK,
