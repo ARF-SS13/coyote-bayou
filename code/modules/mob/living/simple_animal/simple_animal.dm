@@ -873,7 +873,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/update_stamina()
 	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
 		return
-	if((staminaloss + (bruteloss * 2)) >= stamcrit_threshold)
+	if((staminaloss + bruteloss) >= stamcrit_threshold)
 		if(!CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT))
 			stamcrit()
 		COOLDOWN_START(src, stamcrit_timer, stamcrit_duration) // keep resetting the timer if they're stamcritted hard enough
