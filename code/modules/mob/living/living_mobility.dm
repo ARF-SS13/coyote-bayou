@@ -166,6 +166,7 @@
 		if(layer == LYING_MOB_LAYER)
 			layer = initial(layer)
 	update_transform()
+	update_action_buttons_icon()
 	lying_prev = lying
 
 	//Handle citadel autoresist

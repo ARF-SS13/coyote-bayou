@@ -28,5 +28,9 @@
 	harmful = FALSE
 	click_cooldown_override = 3.5
 
+/obj/item/ammo_casing/energy/disabler/debug
+	projectile_type = /obj/item/projectile/beam/disabler/debug
+	e_cost = 1
+
 /obj/item/ammo_casing/energy/disabler/secborg
 	e_cost = 50

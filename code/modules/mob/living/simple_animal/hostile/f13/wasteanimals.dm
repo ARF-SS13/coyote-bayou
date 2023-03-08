@@ -559,6 +559,22 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
+/// Testing its randomness
+/mob/living/simple_animal/hostile/gecko/debug/stamcrit
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 1)),
+		MOB_HEALTH_LIST(50),
+		MOB_RETREAT_DISTANCE_LIST(4),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
+/// Testing its randomness
+/mob/living/simple_animal/hostile/gecko/debug/stamcrit/Initialize()
+	. = ..()
+	new /obj/item/gun/energy/disabler/debug(get_turf(src))
+
 /mob/living/simple_animal/hostile/gecko/Aggro()
 	. = ..()
 	if(.)

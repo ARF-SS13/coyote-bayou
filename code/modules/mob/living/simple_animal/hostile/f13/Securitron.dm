@@ -14,6 +14,7 @@
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
 	maxHealth = 100 
 	health = 100
+	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
 		MOB_EMP_STUN,
 		MOB_EMP_BERSERK,
