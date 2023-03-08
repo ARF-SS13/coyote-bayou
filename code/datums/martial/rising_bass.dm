@@ -213,6 +213,7 @@
 		return BULLET_ACT_HIT
 	A.visible_message(span_danger("[A] dodges the projectile cleanly, they're immune to ranged weapons!"), span_userdanger("You dodge out of the way of the projectile!"))
 	playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
+	A.adjustStaminaLossBuffered (6) //Citadel change to stop infinite bullet sponging as you run away, but it is buffered!
 	return BULLET_ACT_FORCE_PIERCE
 
 /mob/living/carbon/human/proc/rising_bass_help()
