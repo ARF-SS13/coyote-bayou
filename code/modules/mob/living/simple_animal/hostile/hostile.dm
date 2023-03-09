@@ -123,7 +123,6 @@
 	GiveTarget(null)
 	if(make_a_nest)
 		QDEL_NULL(make_a_nest)
-	if()
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()
