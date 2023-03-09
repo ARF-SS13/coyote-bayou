@@ -485,7 +485,7 @@ SUBSYSTEM_DEF(vote)
 					if(targetmap.max_round_search_span && count_occurences_of_value(lastmaps, M, targetmap.max_round_search_span) >= targetmap.max_rounds_played)
 						continue
 					if(targetmap.admin_only)
-					    continue
+						continue
 					choices |= M
 			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
 				choices.Add("secret", "extended")
