@@ -17,7 +17,7 @@
 	. = ..()
 
 /turf/closed/indestructible/f13/matrix/transition/is_transition_turf()
-	if(destination_x || destination_y || destination_z)
+	if(destination_x && destination_y && destination_z)
 		return 1
 
 /turf/closed/indestructible/f13/matrix/transition/Bumped(atom/movable/A)
