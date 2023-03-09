@@ -151,6 +151,14 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
 
+/mob/living/simple_animal/hostile/deathclaw/butter
+	name = "butterclaw"
+	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is...made out of butter?"
+	color = "#FFFF00"
+	color_mad = rgb(133, 98, 87)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/butter = 10,
+							/obj/item/stack/sheet/animalhide/deathclaw = 3)
+
 //Legendary Deathclaw
 /mob/living/simple_animal/hostile/deathclaw/legendary
 	name = "legendary deathclaw"

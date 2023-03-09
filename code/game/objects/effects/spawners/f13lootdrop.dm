@@ -904,7 +904,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 20, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
-		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 20,
+		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 10,
 		/obj/item/gun/ballistic/fatman = 5,
 )
 

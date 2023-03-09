@@ -143,3 +143,33 @@
 	unit_name = "deathclaw hide"
 	material_id = /datum/material/deathclawhide
 	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
+
+/datum/export/material/geckohide
+	cost = 15 //will see if this works out...
+	unit_name = "gecko hide"
+	material_id = /datum/material/geckohide
+	export_types = list(/obj/item/stack/sheet/animalhide/gecko)
+
+/datum/export/material/molerathide
+	cost = 15
+	unit_name = "molerat hide"
+	material_id = /datum/material/molerathide
+	export_types = list(/obj/item/stack/sheet/animalhide/molerat)
+
+/datum/export/material/wolfhide
+	cost = 25
+	unit_name = "dog hide"
+	material_id = /datum/material/wolfhide
+	export_types = list(/obj/item/stack/sheet/animalhide/wolf)
+
+/datum/export/material/radstaghide
+	cost = 40
+	unit_name = "radstag hide"
+	material_id = /datum/material/radstaghide
+	export_types = list(/obj/item/stack/sheet/animalhide/radstag)
+
+/datum/export/material/brahminhide
+	cost = 25
+	unit_name = "brahmin hide"
+	material_id = /datum/material/brahminhide
+	export_types = list(/obj/item/stack/sheet/animalhide/brahmin)
