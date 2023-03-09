@@ -411,6 +411,31 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "A glorious hunting trophy."
 	sheet_type = /obj/item/stack/sheet/animalhide/deathclaw
 
+/datum/material/geckohide
+	name = "gecko leather"
+	desc = "A common lizard skin."
+	sheet_type = /obj/item/stack/sheet/animalhide/gecko
+
+/datum/material/molerathide
+	name = "molerat leather"
+	desc = "A common leather, akin to old pigskin."
+	sheet_type = /obj/item/stack/sheet/animalhide/molerat
+
+/datum/material/wolfhide
+	name = "wolf leather"
+	desc = "Insulating canine fur."
+	sheet_type = /obj/item/stack/sheet/animalhide/wolf
+
+/datum/material/radstaghide
+	name = "radstag leather"
+	desc = "A good quality leather."
+	sheet_type = /obj/item/stack/sheet/animalhide/radstag
+
+/datum/material/brahminhide
+	name = "brahmin leather"
+	desc = "A standard quality leather."
+	sheet_type = /obj/item/stack/sheet/animalhide/brahmin
+
 /* /datum/material/prewar
 	name = "prewar alloy"
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."

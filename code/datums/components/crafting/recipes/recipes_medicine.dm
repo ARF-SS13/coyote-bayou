@@ -151,6 +151,17 @@
 	category = CAT_MEDICAL
 	always_available = FALSE
 
+/datum/crafting_recipe/fake_stimpak
+	name = "Fake stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/fake
+	reqs = list(/datum/reagent/consumable/ketchup = 10,
+				/datum/reagent/consumable/cherryjelly = 10,
+				/obj/item/reagent_containers/syringe = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+	always_available = TRUE
+
 /datum/crafting_recipe/stimpak/chemistry // Purely chemistry recipe
 	name = "Stimpak (from chems)"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
