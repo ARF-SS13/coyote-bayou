@@ -101,11 +101,6 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
-
-
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
@@ -117,6 +112,12 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
+
+/mob/living/simple_animal/hostile/gecko/make_ghostable()
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 //Fire Geckos//
 
@@ -222,9 +223,6 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 40, 40, 255, 45, 45),
@@ -802,11 +800,14 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	desc_short = "Small, squishy, and numerous."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+
+/mob/living/simple_animal/hostile/molerat/make_ghostable()
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
-	desc_short = "Small, squishy, and numerous."
-	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	. = ..()
 
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"

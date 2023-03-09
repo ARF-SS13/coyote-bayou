@@ -488,8 +488,6 @@
 			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly/three, 3)\
 		)
 	)
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
@@ -501,6 +499,11 @@
 		return BULLET_ACT_FORCE_PIERCE
 	else
 		. = ..()
+
+/mob/living/simple_animal/hostile/bloatfly/make_ghostable()
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 //////////////
 // RADROACH //
@@ -550,7 +553,10 @@
 	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	desc_short = "One of countless bugs that move in gross hordes."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+
+/mob/living/simple_animal/hostile/radroach/make_ghostable()
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()

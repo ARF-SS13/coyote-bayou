@@ -197,9 +197,6 @@
 	can_ghost_into = TRUE
 	desc_short = "Squeak!"
 	pop_required_to_jump_into = 0	
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat
 	var/is_smol = FALSE
 
 	variation_list = list(
@@ -237,7 +234,6 @@
 	aggro_vision_range = 7
 	vision_range = 10
 	is_smol = TRUE
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/mouse
 
 	variation_list = list(
 		MOB_SPEED_LIST(0.2, 1.5, 1.8, 2.0, 5.0),
@@ -288,9 +284,6 @@
 	vision_range = 10
 	faction = list("rat", "rat-friend", "neutral")
 	is_smol = TRUE
-	call_backup = null
-	send_mobs = null
-	make_a_nest = null
 
 	variation_list = list(
 		MOB_SPEED_LIST(0.2, 1.5, 1.8, 2.0, 5.0),
@@ -309,6 +302,21 @@
 	emote("squeak")
 	visible_message(span_notice("[src] sure looks friendly!"))
 
+/mob/living/simple_animal/hostile/rat/make_ghostable()
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat
+	. = ..()
+
+/mob/living/simple_animal/hostile/rat/skitter/make_ghostable()
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/mouse
+	. = ..()
+
+/mob/living/simple_animal/hostile/rat/skitter/curious/make_ghostable()
+	call_backup = null
+	send_mobs = null
+	make_a_nest = null
+	. = ..()
 
 /mob/living/simple_animal/hostile/rat/Destroy()
 	SSmobs.cheeserats -= src
