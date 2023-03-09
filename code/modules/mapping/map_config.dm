@@ -13,6 +13,7 @@
 	var/voteweight = 1
 	var/max_round_search_span = 0 //If this is nonzero, then if the map has been played more than max_rounds_played within the search span (max determined by define in persistence.dm), this map won't be available.
 	var/max_rounds_played = 0
+	var/admin_only = 0
 
 
 	// Config actually from the JSON - should default to Box
