@@ -55,7 +55,7 @@
 	if(istype(A, /area/f13/radiation))
 		rad_act(area_radiation)
 	if(A.rads_per_second)
-		rad_act(rads_per_second*10)
+		rad_act(A.rads_per_second*10)
 	if(!bitcoinmining)
 		if(loaded_tank.air_contents.get_moles(GAS_PLASMA) < 0.0001)
 			investigate_log("<font color='red'>out of fuel</font>.", INVESTIGATE_SINGULO)
