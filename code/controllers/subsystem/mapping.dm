@@ -359,7 +359,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			mapvotes.Remove(map)
 			continue
 		if (VM.admin_only == TRUE)
-		    mapvotes.Remove(map)
+			mapvotes.Remove(map)
 			continue
 
 		if(amv)
