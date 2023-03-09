@@ -29,12 +29,12 @@
 	medical_record_text = "Patient's tongue lacks the dexterity required to eat peanut butter."
 
 /datum/quirk/autobrew //sugary foods create ethanol
-    name = "Autobrewery syndrome"
-    desc = "Your natural gut flora ferments many sugary foods and drinks into alcohol. taking penicillin or eating healthy prevents this."
-    value = 0
-    mob_trait = TRAIT_AUTOBREW
-    gain_text = span_notice("you feel rather fuzzy.")
-    lose_text = span_notice("you feel more coherent.")
+	name = "Autobrewery syndrome"
+	desc = "Your natural gut flora ferments many sugary foods and drinks into alcohol. taking penicillin or eating healthy prevents this."
+	value = 0
+	mob_trait = TRAIT_AUTOBREW
+	gain_text = span_notice("you feel rather fuzzy.")
+	lose_text = span_notice("you feel more coherent.")
 	medical_record_text = "Patient shows chronically unusual blood alcohol levels."
 
 /datum/quirk/snob
