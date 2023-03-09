@@ -106,10 +106,6 @@
 	/// Has the mob done its Low Health thing?
 	var/is_low_health = FALSE
 
-	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
-	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
-
-
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
 
@@ -127,18 +123,10 @@
 	GiveTarget(null)
 	if(make_a_nest)
 		QDEL_NULL(make_a_nest)
+	if()
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()
-
-/mob/living/simple_animal/hostile/make_ghostable()
-	. = ..()
-	if(ispath(make_a_nest))
-		var/obj/effect/proc_holder/mob_common/make_nest/MN = make_a_nest
-		make_a_nest = new MN
-		AddAbility(make_a_nest)
-		unmake_a_nest = new
-		AddAbility(unmake_a_nest)
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
 	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
