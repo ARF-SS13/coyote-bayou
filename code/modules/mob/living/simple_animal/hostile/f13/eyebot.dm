@@ -78,7 +78,7 @@
 	..()
 	name = "ED-[rand(1,99)]"
 
-/mob/living/simple_animal/hostile/eyebot/make_ghostable()
+/mob/living/simple_animal/hostile/eyebot/become_the_mob(mob/user)
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
 	. = ..()
@@ -118,7 +118,7 @@
 	..()
 	name = "FEB-[rand(1,99)]"
 
-/mob/living/simple_animal/hostile/eyebot/floatingeye/make_ghostable()
+/mob/living/simple_animal/hostile/eyebot/floatingeye/become_the_mob(mob/user)
 	send_mobs = null
 	call_backup = null
 	. = ..()
@@ -175,7 +175,7 @@
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	speed = 1
 
-/mob/living/simple_animal/pet/dog/eyebot/playable/make_ghostable()
+/mob/living/simple_animal/pet/dog/eyebot/playable/become_the_mob(mob/user)
 	send_mobs = null
 	call_backup = null
 	. = ..()
@@ -196,7 +196,7 @@
 	minimum_distance = 4
 	retreat_distance = 6
 
-/mob/living/simple_animal/hostile/eyebot/reinforced/make_ghostable()
+/mob/living/simple_animal/hostile/eyebot/reinforced/become_the_mob(mob/user)
 	send_mobs = null
 	call_backup = null
 	. = ..()

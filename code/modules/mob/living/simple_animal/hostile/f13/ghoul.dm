@@ -126,7 +126,7 @@
 	if(random_trash_loot)
 		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
 
-/mob/living/simple_animal/hostile/ghoul/make_ghostable()
+/mob/living/simple_animal/hostile/ghoul/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/ghoul
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/ghoul
 	. = ..()
@@ -259,7 +259,7 @@
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 	desc_short = "A deadly creature that may or may not be reanimated jerky."
 
-/mob/living/simple_animal/hostile/ghoul/legendary/make_ghostable()
+/mob/living/simple_animal/hostile/ghoul/legendary/become_the_mob(mob/user)
 	call_backup = null
 	send_mobs = null
 	. = ..()

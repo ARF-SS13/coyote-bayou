@@ -121,8 +121,6 @@
 	friends = null
 	foes = null
 	GiveTarget(null)
-	if(make_a_nest)
-		QDEL_NULL(make_a_nest)
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()

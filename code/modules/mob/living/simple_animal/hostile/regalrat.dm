@@ -302,17 +302,17 @@
 	emote("squeak")
 	visible_message(span_notice("[src] sure looks friendly!"))
 
-/mob/living/simple_animal/hostile/rat/make_ghostable()
+/mob/living/simple_animal/hostile/rat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat
 	. = ..()
 
-/mob/living/simple_animal/hostile/rat/skitter/make_ghostable()
+/mob/living/simple_animal/hostile/rat/skitter/become_the_mob(mob/user)
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/mouse
 	. = ..()
 
-/mob/living/simple_animal/hostile/rat/skitter/curious/make_ghostable()
+/mob/living/simple_animal/hostile/rat/skitter/curious/become_the_mob(mob/user)
 	call_backup = null
 	send_mobs = null
 	make_a_nest = null
