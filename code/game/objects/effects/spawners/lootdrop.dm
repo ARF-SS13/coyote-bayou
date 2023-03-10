@@ -31,6 +31,11 @@
 			loot_spawned++
 	return INITIALIZE_HINT_QDEL
 
+/obj/effect/spawner/lootdrop/Destroy()
+	if (loot)
+		QDEL_LIST(loot)
+	return ..()
+
 /obj/effect/spawner/lootdrop/bedsheet
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "random_bedsheet"
