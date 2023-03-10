@@ -770,6 +770,20 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/militarypolice/PopulateContents()
 	new /obj/item/melee/classic_baton/militarypolice(src)
 
+/obj/item/storage/box/gun/melee/rising_bass
+	name = "rising bass case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/rising_bass/PopulateContents()
+	new /obj/item/book/granter/martial/bass(src)
+
+/obj/item/storage/box/gun/melee/sleeping_carp
+	name = "sleeping carp case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/sleeping_carp/PopulateContents()
+	new /obj/item/book/granter/martial/carp(src)
+
 /// HOBO GUNS
 
 /obj/item/storage/box/gun/hobo
@@ -1551,6 +1565,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/fist_of_the_swampstar
+
+/datum/loadout_box/rising_bass // YEET
+	entry_tag = "Rising Bass Scroll"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/rising_bass
+
+/datum/loadout_box/sleeping_carp // Snippity Snap
+	entry_tag = "Sleeping Carp Scroll"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/sleeping_carp
 
 /datum/loadout_box/militarypolice
 	entry_tag = "Police Baton"
