@@ -18,7 +18,8 @@
 		var/mapname = VM.map_name
 		if (VM == config.defaultmap)
 			mapname += " (Default)"
-
+		if (VM.admin_only)
+			mapname += " (Admin)"
 		if (VM.config_min_users > 0 || VM.config_max_users > 0)
 			mapname += " \["
 			if (VM.config_min_users > 0)

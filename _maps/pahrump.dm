@@ -1,1 +1,1 @@
-#define FORCE_MAP "_maps/pahrump.json"
+#define FORCE_MAP "_maps/pahrump-everything.json"

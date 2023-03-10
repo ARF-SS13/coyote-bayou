@@ -114,8 +114,6 @@
 	var/random_trash_loot = TRUE
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/ghoul
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/ghoul
 	desc_short = "A flimsy creature that may or may not be a reanimated corpse."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 
@@ -128,6 +126,10 @@
 	if(random_trash_loot)
 		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
 
+/mob/living/simple_animal/hostile/ghoul/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/ghoul
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/ghoul
+	. = ..()
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
@@ -254,10 +256,13 @@
 	loot_amount_random = FALSE
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE //heeeeeell no
-	call_backup = null
-	send_mobs = null
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 	desc_short = "A deadly creature that may or may not be reanimated jerky."
+
+/mob/living/simple_animal/hostile/ghoul/legendary/become_the_mob(mob/user)
+	call_backup = null
+	send_mobs = null
+	. = ..()
 
 //Glowing Ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
