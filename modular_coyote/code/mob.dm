@@ -276,7 +276,7 @@
 
 //Dinos
 
-/mob/living/simple_animal/hostile/retaliate/goat/triceratops/bull
+/mob/living/simple_animal/hostile/retaliate/goat/dinosaur/triceratops/bull
 	name = "Bull Triceratops"
 	desc = "With its 3 horns, a parrot-like beak and a large frill that could reach nearly 1 metre (3 feet) across, the Triceratops skull is one of the largest and most striking of any land animal."
 	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
@@ -291,7 +291,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 
-/mob/living/simple_animal/hostile/retaliate/goat/triceratops/cow
+/mob/living/simple_animal/hostile/retaliate/goat/dinosaur/triceratops/cow
 	name = "Cow Triceratops"
 	desc = "With its 3 horns, a parrot-like beak and a large frill that could reach nearly 1 metre (3 feet) across, the Triceratops skull is one of the largest and most striking of any land animal."
 	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
@@ -306,7 +306,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 
-/mob/living/simple_animal/hostile/velociraptor
+/mob/living/simple_animal/hostile/dinosaur/velociraptor
 	name = "velociraptor"
 	desc = " Its sleek body was lightweight and built for speed, making it an effective predator. Its head was long and narrow, its snout was somewhat flattened, and it had a fairly large brain."
 	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
@@ -320,3 +320,27 @@
 	maxHealth = 200
 	melee_damage_lower = 20
 	melee_damage_upper = 30
+
+/mob/living/simple_animal/hostile/dinosaur/pachycephalosaurus
+	name = "pachycephalosaurus"
+	desc = "A biped with strong hind limbs and little developed forelimbs. Featuring a high, domelike skull."
+	icon = 'modular_coyote/icons/mob/dinosaurs45x27.dmi'
+	icon_state = "pachycephalosaurus"
+	icon_living = "pachycephalosaurus"
+	icon_dead = "pachycephalosaurus_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+
+/mob/living/simple_animal/hostile/dinosaur/dimetrodon
+	name = "dimetrodon"
+	desc = "A carnivore with a large sail upon it's back."
+	icon = 'modular_coyote/icons/mob/dinosaurs45x27.dmi'
+	icon_state = "dimetrodon"
+	icon_living = "dimetrodon"
+	icon_dead = "dimetrodon_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
