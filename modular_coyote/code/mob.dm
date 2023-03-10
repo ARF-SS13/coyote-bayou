@@ -273,3 +273,50 @@
 	health = 400
 	aggrosound = list('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl3.ogg', )
 	idlesound = list('sound/alien/Voice/hiss1.ogg',)
+
+//Dinos
+
+/mob/living/simple_animal/hostile/retaliate/goat/triceratops/bull
+	name = "Bull Triceratops"
+	desc = "With its 3 horns, a parrot-like beak and a large frill that could reach nearly 1 metre (3 feet) across, the Triceratops skull is one of the largest and most striking of any land animal."
+	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
+	icon_state = "triceratops_bull"
+	icon_living = "triceratops_bull"
+	icon_dead = "triceratops_bull_dead"
+	speak_emote = list("bellows")
+	emote_hear = list("bellows")
+	emote_see = list("shakes its head.", "stamps a foot.", "glares around.")
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+
+/mob/living/simple_animal/hostile/retaliate/goat/triceratops/cow
+	name = "Cow Triceratops"
+	desc = "With its 3 horns, a parrot-like beak and a large frill that could reach nearly 1 metre (3 feet) across, the Triceratops skull is one of the largest and most striking of any land animal."
+	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
+	icon_state = "triceratops_cow"
+	icon_living = "triceratops_cow"
+	icon_dead = "triceratops_cow_dead"
+	speak_emote = list("bellows")
+	emote_hear = list("bellows")
+	emote_see = list("shakes its head.", "stamps a foot.", "glares around.")
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+
+/mob/living/simple_animal/hostile/velociraptor
+	name = "velociraptor"
+	desc = " Its sleek body was lightweight and built for speed, making it an effective predator. Its head was long and narrow, its snout was somewhat flattened, and it had a fairly large brain."
+	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
+	icon_state = "velociraptor"
+	icon_living = "velociraptor"
+	icon_dead = "velociraptor_dead"
+	speak_emote = list("hisses")
+	emote_hear = list("hisses", "roars", "barks")
+	emote_see = list("shakes it's head.", "taps it's claws,")
+	health = 200 //Just a place holder for now
+	maxHealth = 200
+	melee_damage_lower = 20
+	melee_damage_upper = 30
