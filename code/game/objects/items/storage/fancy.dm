@@ -306,22 +306,13 @@
 	icon_state = "greytort"
 	spawn_type = /obj/item/clothing/mask/cigarette/greytort
 
-/obj/item/storage/fancy/cigarettes/cigpack_mori
-	name = "Mutfruit handrolled packet"
-	desc = "a custom pack of smokes. made with homemade machinery and printed with a custom lable. smells bitter, earthy, robust and slightly fruity. a lot like there owner."
-	icon = 'icons/obj/cigarettes.dmi'
-	icon_state = "moripack"
-	spawn_type = /obj/item/clothing/mask/cigarette/rollie/mut
-
 /obj/item/storage/fancy/rollingpapers
 	name = "rolling paper pack"
 	desc = "A pack of Big Boss brand rolling papers."
 	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig_paper_pack"
-
 ///The value in here has NOTHING to do with icons. It needs to be this for the proper examine.
-
 	icon_type = "rolling paper"
 	spawn_type = /obj/item/rollingpaper
 	custom_price = PRICE_REALLY_CHEAP

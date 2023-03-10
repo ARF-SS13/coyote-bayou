@@ -559,6 +559,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/premium/lucky //not sure if this should be allowed, or if is supposed to be unique
 	name = ".357 magnum revolver case"
@@ -567,6 +568,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/colt357/lucky(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/premium/alt //pearly .44 mag
 	name = "pearl .44 magnum case"
@@ -601,6 +603,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
 	new /obj/item/ammo_box/tube/a357(src) //high capacity, only get one
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/rifle/hunting
 	name = "hunting rifle case"
@@ -617,6 +620,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/caravan_shotgun(src)
 	//new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
 	new /obj/item/ammo_box/c4570box(src)
+	new /obj/item/ammo_box/c4570/ratshot(src)
 
 /obj/item/storage/box/gun/rifle/widowmaker
 	name = "Winchester Widowmaker case"
@@ -874,6 +878,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/colt357(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/revolver/police
 	name = "police revolver case"
@@ -882,6 +887,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/police(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/revolver/m29
 	name = ".44 magnum revolver case"
@@ -1003,7 +1009,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/bow/shortbow
 	name = "shortbow case"
 
-/obj/item/storage/box/gun/bow/sturdy/PopulateContents()
+/obj/item/storage/box/gun/bow/shortbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light(src)
 
@@ -1578,10 +1584,10 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/tribal/warmace
 
-/datum/loadout_box/spearquivergun/bow/sturdy
+/datum/loadout_box/spear_quiver
 	entry_tag = "Spear Quiver"
 	entry_flags = LOADOUT_FLAG_TRIBAL
-	entry_class = LOADOUT_CAT_MELEE
+	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/tribal/spearquiver
 
 /datum/loadout_box/warclub

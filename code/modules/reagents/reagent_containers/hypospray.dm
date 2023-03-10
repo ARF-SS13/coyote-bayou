@@ -185,6 +185,14 @@
 	volume = 30
 	list_reagents = list(/datum/reagent/consumable/sugar = 30)
 
+/obj/item/reagent_containers/hypospray/medipen/stimpak/fake
+	name = "stimpak"
+	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
+	amount_per_transfer_from_this = 26
+	volume = 26
+	list_reagents = list(/datum/reagent/medicine/fake_stimpak = 26)
+
+
 /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak
 	name = "epipak"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful antiseptic that can help fight infections."
@@ -577,136 +585,3 @@
 #undef COMBAT_WAIT_INJECT
 #undef COMBAT_SELF_SPRAY
 #undef COMBAT_SELF_INJECT
-
-/////////////////////////////////////
-
-/obj/item/reagent_containers/vaporizer
-	name = "vaporizer"
-	desc = "A vaporizer for rapid administration of drugs to patients."
-	icon = 'icons/fallout/objects/medicine/drugs.dmi'
-	item_state = "vape_jet"
-	icon_state = "vape_jet"
-	amount_per_transfer_from_this = 15
-	volume = 30
-	possible_transfer_amounts = list()
-	resistance_flags = ACID_PROOF
-	reagent_flags = OPENCONTAINER
-	slot_flags = ITEM_SLOT_BELT
-	var/ignore_flags = 0
-	var/infinite = FALSE
-
-/obj/item/reagent_containers/vaporizer/attack_paw(mob/user)
-	return attack_hand(user)
-
-/obj/item/reagent_containers/vaporizer/attack(mob/living/M, mob/user)
-	if(!reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
-		return
-	if(!iscarbon(M))
-		return
-
-	//Always log attemped injects for admins
-	var/list/injected = list()
-	for(var/datum/reagent/R in reagents.reagent_list)
-		injected += R.name
-	var/contained = english_list(injected)
-	log_combat(user, M, "attempted to imbue", src, "([contained])")
-
-	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
-		playsound(src, 'sound/items/inhaler.ogg', 50, 0)
-		to_chat(M, "<span class='warning'>You suck in fumes!</span>")
-		to_chat(user, "<span class='notice'>You imbue [M] with [src].</span>")
-
-		var/fraction = min(amount_per_transfer_from_this/reagents.total_volume, 1)
-		reagents.reaction(M, TOUCH, fraction)
-		if(M.reagents)
-			var/trans = 0
-			if(!infinite)
-				trans = reagents.trans_to(M, amount_per_transfer_from_this, log = TRUE)
-			else
-				trans = reagents.copy_to(M, amount_per_transfer_from_this)
-
-			to_chat(user, "<span class='notice'>[trans] unit\s inhaled.  [reagents.total_volume] unit\s remaining in [src].</span>")
-
-
-			log_combat(user, M, "inhaled", src, "([contained])")
-
-
-
-//inhalers
-
-/obj/item/reagent_containers/vaporizer/inhaler
-	name = "test juice"
-	desc = "you shouldnt see this"
-	icon_state = "vape_jet"
-	item_state = "vape_jet"
-	amount_per_transfer_from_this = 10
-	volume = 20
-	ignore_flags = 1 //so you can inhale through hardsuits
-	reagent_flags = NONE
-	flags_1 = null
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/preservahyde = 3, /datum/reagent/medicine/coagulant = 2)
-	custom_premium_price = PRICE_ALMOST_EXPENSIVE
-
-/obj/item/reagent_containers/vaporizer/inhaler/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to choke on \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return OXYLOSS//ironic. he could save others from oxyloss, but not himself.
-
-/obj/item/reagent_containers/vaporizer/inhaler/attack(mob/M, mob/user)
-	if(!reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
-		return
-
-	if(M == user)
-		to_chat(M, "<span class='notice'>You take a hit from [src].</span>")
-
-	else
-		M.visible_message("<span class='danger'>[user] attempts to use [src] on [M].</span>", \
-							"<span class='userdanger'>[user] attempts to use [src] on [M].</span>")
-		if(!do_mob(user, M))
-			return 0
-
-	..()
-
-/obj/item/reagent_containers/vaporizer/inhaler/examine()
-	. = ..()
-	if(reagents && reagents.reagent_list.len)
-		. += "<span class='notice'>It is currently loaded.</span>"
-	else
-		. += "<span class='notice'>It is spent.</span>"
-
-/obj/item/reagent_containers/vaporizer/inhaler/update_icon_state()
-	if(reagents.total_volume > 0)
-		icon_state = initial(icon_state)
-	else
-		icon_state = "[initial(icon_state)]0"
-
-
-///////////////////
-// FALLOUT INHALER //
-///////////////////
-
-// ---------------------------------
-// Jet New
-
-/obj/item/reagent_containers/vaporizer/inhaler/jet
-	name = "Jet"
-	desc = "A chemical used to induce a euphoric high derived from brahmin dung. Fast-acting, powerful, and highly addictive."
-	icon = 'icons/fallout/objects/medicine/drugs.dmi'
-	icon_state = "vape_jet"
-	volume = 20
-	amount_per_transfer_from_this = 10
-	list_reagents = list(/datum/reagent/drug/jet = 30)
-
-/obj/item/reagent_containers/vaporizer/inhaler/jet/on_reagent_change(changetype)
-	update_icon()
-
-/obj/item/reagent_containers/vaporizer/inhaler/jet/update_overlays()
-	. = ..()
-	var/mutable_appearance/inhaler_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "vapefill", color = mix_color_from_reagents(reagents.reagent_list))
-	if(reagents.total_volume)
-		. += inhaler_overlay
-
-/obj/item/reagent_containers/vaporizer/inhaler/jet/custom
-	desc = "A handheld aerosol system for medicine, this particular one will deliver a tailored cocktail."
-	list_reagents = null

@@ -85,6 +85,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2)
 
+/*this thing is broken and unneeded
 /datum/crafting_recipe/tribal/bonetalisman
 	name = "Bone Talisman"
 	result = /obj/item/clothing/accessory/talisman
@@ -92,7 +93,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
 	always_available = FALSE
-
+*/
 /datum/crafting_recipe/tribal/bonebag
 	name = "Tribal Satchel"
 	result = /obj/item/storage/backpack/satchel/bone

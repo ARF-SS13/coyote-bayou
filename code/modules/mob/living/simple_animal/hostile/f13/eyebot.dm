@@ -21,6 +21,7 @@
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
 	maxHealth = 40 
 	health = 40
+	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
 		MOB_EMP_STUN,
 		MOB_EMP_BERSERK,
@@ -72,12 +73,15 @@
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
 	desc_short = "A flying metal meatball with lasers."
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
 	name = "ED-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/become_the_mob(mob/user)
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
+	. = ..()
 
 /mob/living/simple_animal/hostile/eyebot/playable
 	ranged = FALSE
@@ -109,12 +113,15 @@
 
 	projectiletype = /obj/item/projectile/energy/electrode
 	projectilesound = 'sound/weapons/resonator_blast.ogg'
-	send_mobs = null
-	call_backup = null
 
 /mob/living/simple_animal/hostile/eyebot/floatingeye/New()
 	..()
 	name = "FEB-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/floatingeye/become_the_mob(mob/user)
+	send_mobs = null
+	call_backup = null
+	. = ..()
 
 /mob/living/simple_animal/pet/dog/eyebot //It's a propaganda eyebot, not a dog, but...
 	name = "propaganda eyebot"
@@ -167,8 +174,11 @@
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	speed = 1
+
+/mob/living/simple_animal/pet/dog/eyebot/playable/become_the_mob(mob/user)
 	send_mobs = null
 	call_backup = null
+	. = ..()
 
 //Junkers
 /mob/living/simple_animal/hostile/eyebot/reinforced
@@ -185,5 +195,8 @@
 	melee_damage_upper = 10
 	minimum_distance = 4
 	retreat_distance = 6
+
+/mob/living/simple_animal/hostile/eyebot/reinforced/become_the_mob(mob/user)
 	send_mobs = null
 	call_backup = null
+	. = ..()

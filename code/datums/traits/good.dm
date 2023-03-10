@@ -61,8 +61,10 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/gigalens))
 
 GLOBAL_LIST_INIT(former_tribal_recipes, list(
-	/datum/crafting_recipe/tribal/bonetalisman,
+	///datum/crafting_recipe/tribal/bonetalisman, //broken item, unneeded
 	/datum/crafting_recipe/spearfisher,
+	/datum/crafting_recipe/bitterdrink,
+	/datum/crafting_recipe/bitterdrink5,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
 	/datum/crafting_recipe/redpotion,

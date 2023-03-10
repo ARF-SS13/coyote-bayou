@@ -302,8 +302,6 @@
 		*/
 		else if (item_type == "stimPak")
 			vol_each_max = min(10, vol_each_max)
-		else if (item_type == "inhaler")
-			vol_each_max = min(30, vol_each_max)
 		else if (item_type == "superStimpak")
 			vol_each_max = min(20, vol_each_max)
 		else if (item_type == "bottle_primitive")
@@ -413,21 +411,12 @@
 				P.mode=!mode
 				P.update_icon()
 			return TRUE
-		*//obj/item/reagent_containers/vaporizer/inhaler/jet/custom
+		*/
 		if(item_type == "stimPak")
 			var/obj/item/reagent_containers/hypospray/medipen/stimpak/custom/P
 			for(var/i=0; i <amount; i++)
 				P = new /obj/item/reagent_containers/hypospray/medipen/stimpak/custom(drop_location())
 				P.name = trim ("[name]pak")
-				adjust_item_drop_location(P)
-				reagents.trans_to(P, vol_each)
-				P.update_icon()
-			return TRUE
-		if(item_type == "inhaler")
-			var/obj/item/reagent_containers/vaporizer/inhaler/jet/custom/P
-			for(var/i=0; i <amount; i++)
-				P = new /obj/item/reagent_containers/vaporizer/inhaler/jet/custom(drop_location())
-				P.name = trim ("[name] inhaler")
 				adjust_item_drop_location(P)
 				reagents.trans_to(P, vol_each)
 				P.update_icon()

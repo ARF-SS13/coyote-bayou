@@ -19,6 +19,7 @@
 	icon_state = "welding"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "welding"
+	w_class = WEIGHT_CLASS_NORMAL //needs a disadvantage over welding goggles
 	custom_materials = list(/datum/material/iron=1750, /datum/material/glass=400)
 	flash_protect = 2
 	tint = 2

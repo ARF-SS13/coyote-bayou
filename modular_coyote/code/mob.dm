@@ -30,6 +30,7 @@
 	icon_living = "catslug"
 	icon_dead = "catslug_dead"
 	icon = 'modular_coyote/icons/mob/slugcat.dmi'
+	rotate_on_lying = FALSE // plop~
 
 	faction = list("catslug", "neutral")
 	mob_armor = ARMOR_VALUE_MEDIUM

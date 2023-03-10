@@ -151,6 +151,17 @@
 	category = CAT_MEDICAL
 	always_available = FALSE
 
+/datum/crafting_recipe/fake_stimpak
+	name = "Fake stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/fake
+	reqs = list(/datum/reagent/consumable/ketchup = 10,
+				/datum/reagent/consumable/cherryjelly = 10,
+				/obj/item/reagent_containers/syringe = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+	always_available = TRUE
+
 /datum/crafting_recipe/stimpak/chemistry // Purely chemistry recipe
 	name = "Stimpak (from chems)"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
@@ -424,29 +435,6 @@
 /obj/item/storage/box/medicine/antivenom5/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/antivenom(src)
-
-/datum/crafting_recipe/stalkersqueeze
-	name = "Nightstalker Squeezin's"
-	result = /obj/item/reagent_containers/pill/healingpowder/stalkersqueeze
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-				/datum/reagent/blood = 15,
-				/datum/reagent/consumable/flour = 10,)
-	tools = list(TOOL_ALCHEMY_TABLE)
-	time = 5
-	category = CAT_MEDICAL
-	always_available = FALSE 
-
-/datum/crafting_recipe/cigpack_mori
-	name = "Handrolled Smokes"
-	result = /obj/item/storage/fancy/cigarettes/cigpack_mori
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-				/obj/item/reagent_containers/pill/healingpowder/stalkersqueeze = 1,
-				/datum/reagent/consumable/honey = 10,
-				/obj/item/paper/natural = 5)
-	tools = list(TOOL_ALCHEMY_TABLE)
-	time = 5
-	category = CAT_MEDICAL
-	always_available = FALSE
 
 // IMPLANTS
 

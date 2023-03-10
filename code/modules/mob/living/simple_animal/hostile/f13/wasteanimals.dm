@@ -101,11 +101,6 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
-
-
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
@@ -117,6 +112,12 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
+
+/mob/living/simple_animal/hostile/gecko/become_the_mob(mob/user)
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 //Fire Geckos//
 
@@ -222,9 +223,6 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 40, 40, 255, 45, 45),
@@ -559,6 +557,22 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
+/// Testing its randomness
+/mob/living/simple_animal/hostile/gecko/debug/stamcrit
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 1)),
+		MOB_HEALTH_LIST(50),
+		MOB_RETREAT_DISTANCE_LIST(4),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
+/// Testing its randomness
+/mob/living/simple_animal/hostile/gecko/debug/stamcrit/Initialize()
+	. = ..()
+	new /obj/item/gun/energy/disabler/debug(get_turf(src))
+
 /mob/living/simple_animal/hostile/gecko/Aggro()
 	. = ..()
 	if(.)
@@ -786,11 +800,14 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	desc_short = "Small, squishy, and numerous."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+
+/mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
-	desc_short = "Small, squishy, and numerous."
-	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	. = ..()
 
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"

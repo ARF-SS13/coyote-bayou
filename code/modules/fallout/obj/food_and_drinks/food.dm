@@ -1134,19 +1134,6 @@
 	tastes = list("deathclaw eggs" = 2, "deathclaw Meat" = 2, "cheese" = 1)
 	foodtype = MEAT | DAIRY
 
-/obj/item/reagent_containers/food/snacks/f13/mutomelette
-	name = "mutfruit omelette"
-	desc = "An omelette made from mutfruit and eggs."
-	icon_state = "mutomelette"
-	bonus_reagents = list(
-		/datum/reagent/consumable/nutriment/vitamin = 6,
-		/datum/reagent/medicine/omnizine = 10,
-		/datum/reagent/medicine/dexalin = 20
-	)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
-	tastes = list("fluffy eggs" = 2, "sweet and salty" = 2, "butter" = 1)
-	foodtype = FRUIT | DAIRY
-
 /obj/item/reagent_containers/food/snacks/f13/baked_nightstalker_tail
 	name = "baked nightstalker tail"
 	desc = "Shake it to hear it rattle!"
