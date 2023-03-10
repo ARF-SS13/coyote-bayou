@@ -217,7 +217,7 @@ SUBSYSTEM_DEF(vote)
 		choices["[choices[voted[ckey][1]]]"]++ // jesus christ how horrifying
 	for(var/_this_var_unused_ignore_it in 1 to choices.len) // if it takes more than this something REALLY wrong happened
 		for(var/ckey in voted)
-			cur_choices["[cur_choices[voted[ckey][1]]]]"]++ // jesus christ how horrifying
+			cur_choices["[cur_choices[voted[ckey][1]]]"]++ // jesus christ how horrifying
 		var/least_vote = 100000
 		var/least_voted = 1
 		for(var/i in 1 to cur_choices.len)
