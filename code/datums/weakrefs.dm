@@ -93,3 +93,9 @@
 		var/datum/R = resolve()
 		if(R)
 			usr.client.debug_variables(R)
+
+/// Creates a weakerref to the given input. literally just "\ref[input]"
+/// See /datum/weakref's documentation for more information.
+#define WEAKERREF(input) "\ref[input]"
+/// Turns a ref into a thing. no guarantee its anything, so check that it *is* something
+#define RESOLVEREF(ref) locate(ref)

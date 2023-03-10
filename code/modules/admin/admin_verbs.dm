@@ -19,7 +19,8 @@ GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
 /world/proc/AVerbsAdmin()
 	return list(
-	/client/proc/toggle_experimental_clickdrag_thing,				/*allows our mob to go invisible/visible*/
+	/client/proc/toggle_experimental_clickdrag_thing,				/*toggles the harm intent no-clickdrag thing*/
+	/client/proc/toggle_radpuddle_disco_vomit_nightmare,				/*makes radpuddles flash and show numbers. please dont use this*/
 	/client/proc/invisimin,				/*allows our mob to go invisible/visible*/
 //	/datum/admins/proc/show_traitor_panel,	/*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags*/
@@ -417,6 +418,16 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(alert("Tell everyone the experimental clickdrag thing was [GLOB.use_experimental_clickdrag_thing ? "enabled" : "disabled"]?",,"Yes","No") != "Yes")
 		return
 	to_chat(world, "<B>The experimental harm-intent clickdrag disable thing has been [GLOB.use_experimental_clickdrag_thing ? "enabled" : "disabled"].</B>")
+
+/client/proc/toggle_radpuddle_disco_vomit_nightmare()
+	set name = "Toggle Radpuddle Debug"
+	set category = "Debug"
+	set desc = "Toggles radpuddles making everything flash green. Its experimental and everyone will know you pressed a wierd button and Superlagg *will* laugh at you."
+	GLOB.rad_puddle_debug = !GLOB.rad_puddle_debug
+	log_admin("[key_name(usr)] toggled radpuddle disco vomit nightmare mode.")
+	message_admins("[key_name_admin(usr)] toggled radpuddle disco vomit nightmare mode.")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggled radpuddle debug")
+	to_chat(world, "<B>Radpuddles now look [GLOB.rad_puddle_debug ? "godawful" : "not much better"].</B>")
 
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"

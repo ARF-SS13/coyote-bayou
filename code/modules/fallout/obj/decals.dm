@@ -10,20 +10,58 @@
 	light_color = LIGHT_COLOR_GREEN
 	light_power = 3
 	light_range = 3
+	/// range of radiated tiles
 	var/range = 2
+	/// rads per 2 seconds to blast someone with per puddle
 	var/intensity = 20
+	/// coordinates to turfs we're irradiating
+	var/list/rad_turfs = list()
 	tastes = list("a flavor thats definitely not green apple" = 2, "a whole lot of regret" = 1)
 
-/obj/effect/decal/waste/New()
-	..()
+/obj/effect/decal/waste/Initialize()
+	. = ..()
 	icon_state = "goo[rand(1,13)]"
 //	AddComponent(/datum/component/radioactive, 200, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
 //NO BAD. The radiation component SUCKS ASS - these components self-propagate into 500+ "radiation waves"
-	START_PROCESSING(SSradiation,src) //Let's do this in a far more reasonable way- radiate players around us on a pulse. That's it.
+	//START_PROCESSING(SSradiation,src) //Let's do this in a far more reasonable way- radiate players around us on a pulse. That's it.
+	//turns out *that* way wasn't really reasonable either. Lets try something else!
+	irradiate_turfs()
 
 /obj/effect/decal/waste/Destroy()
-	STOP_PROCESSING(SSradiation,src)
+	//STOP_PROCESSING(SSradiation,src)
+	unirradiate_turfs()
+	qdel(rad_turfs)
 	..()
+
+/// gets all the turfs in range, records its coordinates (like heck I'm making a million zillion weakrefs), 
+/// and gives them a component, or ups the component's power
+/obj/effect/decal/waste/proc/irradiate_turfs()
+	if(QDELETED(src))
+		return
+	for(var/turf/rad_turf in view(range, get_turf(src)))
+		if(rad_turf.density)
+			continue
+		if(SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, intensity)) // if we get something back from the turf, its already radioactive
+			continue // and made more radioactive~
+		rad_turf.AddComponent(/datum/component/radiation_turf, intensity) // the component will handle the SSradiation stuff
+		rad_turfs += turf2coords(rad_turf) // record what turfs are irradiated so we can remove them later
+
+/// Asks all the turfs in range to reduce or remove the radiation
+/obj/effect/decal/waste/proc/unirradiate_turfs()
+	for(var/coor in rad_turfs)
+		var/turf/radioturf = coords2turf(coor)
+		if(!isturf(radioturf) || (QDELETED(radioturf)))
+			continue
+		SEND_SIGNAL(radioturf, COMSIG_TURF_IRRADIATE, -intensity)
+
+/obj/effect/decal/waste/proc/coords2turf(coords)
+	var/list/c2xyz = splittext(coords, ":")
+	return locate(text2num(c2xyz[1]),text2num(c2xyz[2]),text2num(c2xyz[3]))
+
+/obj/effect/decal/waste/proc/turf2coords(turf/the_turf)
+	if(!istype(the_turf))
+		return
+	return "[the_turf.x]:[the_turf.y]:[the_turf.z]"
 
 /*
 //Bing bang boom done
@@ -46,7 +84,6 @@
 		if(do_after(user, 30, target = src))
 			user.show_message(span_notice("You neutralize the radioactive goo!"), MSG_VISUAL)
 			new /obj/effect/decal/cleanable/chem_pile(src.loc) //Leave behind some cleanable chemical powder
-			STOP_PROCESSING(SSradiation,src)
 			qdel(src)
 			qdel(I)
 	else
