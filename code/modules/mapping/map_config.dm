@@ -19,7 +19,7 @@
 	// Config actually from the JSON - should default to Box
 	var/map_name = "Yuma"
 	var/map_path = "map_files/Pahrump-Sunset"
-	var/map_file = list("Dungeons.dmm", "Pahrump-Sunset-Lower.dmm", "Pahrump-Sunset.dmm", "Pahrump-Sunset-Upper.dmm", "Pahrump-Sunset-Upper-2.dmm", "RockSprings.dmm", "RockSprings-Upper.dmm", "RedRiver.dmm", "Garland-City.dmm")
+	var/map_file = list("Dungeons.dmm", "Pahrump-Sunset-Lower.dmm", "Pahrump-Sunset.dmm", "Pahrump-Sunset-Upper.dmm", "Pahrump-Sunset-Upper-2.dmm", "RockSprings.dmm", "RockSprings-Upper.dmm", "RedRiver.dmm", "Garland-Lower.dmm", "Garland-City.dmm", "Garland-Upper-1.dmm", "Garland-Upper-2.dmm")
 	var/list/added_jobs = list()     //Overrides the "none" faction using job name
 	var/list/removed_jobs = list()   //Removes the "none" faction using job name - can also use #all# (case sensitive)
 
@@ -117,6 +117,18 @@
 					list(
 						ZTRAIT_GRAVITY = 1,
 						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_DUNGEON = 1,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_X = 3,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 0
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
 						ZTRAIT_STATION = 1,
 						ZTRAIT_UP = 1,
 						ZTRAIT_DOWN = -1,
@@ -126,6 +138,29 @@
 						Z_FORCE_X = 3,
 						Z_FORCE_Y = 2,
 						Z_FORCE_Z = 1
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/transparent/openspace,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						ZTRAIT_ABOVE = 1,
+						Z_FORCE_X = 3,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 2
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/transparent/openspace,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						ZTRAIT_ABOVE = 1,
+						Z_FORCE_X = 3,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 3
 						)
 					)
 	var/space_ruin_levels = 0

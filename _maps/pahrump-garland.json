@@ -7,7 +7,10 @@
 		"Pahrump-Sunset.dmm",
 		"Pahrump-Sunset-Upper.dmm",
 		"Pahrump-Sunset-Upper-2.dmm",
-		"Garland-City.dmm"
+		"Garland-Lower.dmm",
+		"Garland-City.dmm",
+		"Garland-Upper-1.dmm",
+		"Garland-Upper-2.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -85,6 +88,20 @@
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Dungeons": true,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Name": "Lower Garland",
+			"Force X": 3,
+			"Force Y": 2,
+			"Force Z": 0
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
 			"Station": 1,
 			"Up": 1,
 			"Down": -1,
@@ -95,6 +112,33 @@
 			"Force X": 3,
 			"Force Y": 2,
 			"Force Z": 1
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Above": true,
+			"Name": "Garland - Upper 1",
+			"Force X": 3,
+			"Force Y": 2,
+			"Force Z": 2
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Above": true,
+			"Name": "Garland - Upper 2",
+			"Force X": 3,
+			"Force Y": 2,
+			"Force Z": 3
 		}
 
 	],
