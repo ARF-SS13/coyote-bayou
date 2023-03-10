@@ -344,3 +344,27 @@
 	maxHealth = 200
 	melee_damage_lower = 15
 	melee_damage_upper = 20
+
+/mob/living/simple_animal/hostile/dinosaur/mammoth
+	name = "mammoth"
+	desc = "A large creature with long, curved tusks and thick hair upon it's body."
+	icon = 'modular_coyote/icons/mob/dinosaurs128x96.dmi'
+	icon_state = "mammoth"
+	icon_living = "mammoth"
+	icon_dead = "mammoth_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+
+/mob/living/simple_animal/hostile/dinosaur/rex
+	name = "Rex"
+	desc = "Standing about 40 feet tall, this creature looks rather strong and powerful."
+	icon = 'modular_coyote/icons/mob/dinosaurs128x96.dmi'
+	icon_state = "rex"
+	icon_living = "rex"
+	icon_dead = "rex_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
