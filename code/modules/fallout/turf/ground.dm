@@ -189,7 +189,7 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 						/obj/item/stack/crafting/metalparts/five = 30,
 						/obj/item/stack/crafting/goodparts/five = 30,
 						/obj/item/stack/ore/blackpowder/twenty = 10,
-						//obj/effect/spawner/lootdrop/f13/weapon/wasteland = 6,
+						/obj/effect/spawner/lootdrop/f13/weapon/wasteland = 6,
 						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
 						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
 						)
@@ -248,6 +248,11 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 		salvage = new derp()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
+
+/turf/open/indestructible/ground/outside/desert/Destroy()
+	if (salvage)
+		QDEL_NULL(salvage)
+	return ..()
 
 /obj/effect/overlay/desert_side
 	name = "desert"
