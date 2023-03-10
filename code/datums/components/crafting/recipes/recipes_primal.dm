@@ -462,7 +462,7 @@
 
 /datum/crafting_recipe/tribalwar/light_quiver
 	name = "light quiver"
-	result = /obj/item/storage/bag/tribe_quiver
+	result = /obj/item/storage/bag/tribe_quiver/light
 	time = 40
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2,
 				/obj/item/stack/sheet/metal = 2,
@@ -484,7 +484,7 @@
 
 /datum/crafting_recipe/tribalwar/heavy_quiver
 	name = "heavy back quiver"
-	result = /obj/item/storage/bag/tribe_quiver
+	result = /obj/item/storage/bag/tribe_quiver/heavy
 	time = 120 //arbitrary numbers yay
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 4,
 				/obj/item/stack/sheet/metal = 6,
