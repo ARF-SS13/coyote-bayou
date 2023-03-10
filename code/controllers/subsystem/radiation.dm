@@ -41,8 +41,7 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 			irradiated_mobs -= baddie
 	if(GLOB.rad_puddle_debug)
 		for(var/coordie in irradiated_turfs)
-			var/list/c2xyz = splittext(coordie, ":")
-			var/turf/helpme = locate(text2num(c2xyz[1]),text2num(c2xyz[2]),text2num(c2xyz[3]))
+			var/turf/helpme = coords2turf(coordie)
 			if(helpme)
 				helpme.color = greened ? initial(helpme.color) : "#00ff00"
 		greened = !greened
@@ -59,8 +58,7 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 			irradiated_mobs -= baddie
 	var/list/bad_turfs = list()
 	for(var/turfie in irradiated_turfs)
-		var/list/c2xyz = splittext(turfie, ":")
-		var/turf/fieturf = locate(text2num(c2xyz[1]),text2num(c2xyz[2]),text2num(c2xyz[3]))
+		var/turf/fieturf = coords2turf(turfie)
 		if(!fieturf)
 			bad_turfs += turfie
 		if(!SEND_SIGNAL(fieturf, COMSIG_TURF_RADIOACTIVE))
@@ -68,6 +66,36 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 	if(LAZYLEN(bad_turfs))
 		for(var/badone in bad_turfs)
 			irradiated_turfs -= badone
+
+/// the irradiated tile got changed and its component deleted, check back in a split second and apply a new one there
+/datum/controller/subsystem/processing/radiation/proc/tile_got_changed(turf_coords, list/puddles, new_rads)
+	addtimer(CALLBACK(src, .proc/add_radtile, turf_coords, puddles, new_rads, 5), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
+
+/datum/controller/subsystem/processing/radiation/proc/add_radtile(turf_coords, list/puddles, new_rads, tries = 5)
+	if(new_rads <= 0) // if it isnt radioactive, then, fuck
+		irradiated_turfs -= turf_coords
+		return
+	var/turf/new_turf = coords2turf(turf_coords)
+	/// the new turf either doesnt exist, or is still being replaced, check back in another split second
+	if(!new_turf || QDELETED(new_turf))
+		if(tries)
+			addtimer(CALLBACK(src, .proc/add_radtile, turf_coords, puddles, new_rads, tries - 1), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
+		irradiated_turfs -= turf_coords
+		return // okay fine, there's a hole to nothing right here, fucking, cool.
+	/// turf found, check if the puddles still exist
+	var/good_puddles = list()
+	for(var/reffie in puddles)
+		var/obj/effect/decal/waste/plip = RESOLVEREF(reffie)
+		if(plip)
+			good_puddles |= reffie
+	if(!LAZYLEN(good_puddles))
+		irradiated_turfs -= turf_coords
+		return // puddles are missing, likely, so unirradiate this turf
+	// okay, turf exists, has puddles somewhere, and is in fact radioactive. know what this means?
+	if(SEND_SIGNAL(new_turf, COMSIG_TURF_RADIOACTIVE)) // okay check if there's still a component there first
+		return // and let it be
+	// okay NOW shove a component in there
+	new_turf.AddComponent(/datum/component/radiation_turf, new_rads, good_puddles)
 
 /datum/controller/subsystem/processing/radiation/proc/warn(datum/component/radioactive/contamination)
 	if(!contamination || QDELETED(contamination))

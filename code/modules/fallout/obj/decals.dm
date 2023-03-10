@@ -39,11 +39,9 @@
 	if(QDELETED(src))
 		return
 	for(var/turf/rad_turf in view(range, get_turf(src)))
-		if(rad_turf.density)
-			continue
-		if(SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, intensity)) // if we get something back from the turf, its already radioactive
+		if(SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, intensity, WEAKERREF(src))) // if we get something back from the turf, its already radioactive
 			continue // and made more radioactive~
-		rad_turf.AddComponent(/datum/component/radiation_turf, intensity) // the component will handle the SSradiation stuff
+		rad_turf.AddComponent(/datum/component/radiation_turf, intensity, WEAKERREF(src)) // the component will handle the SSradiation stuff
 		rad_turfs += turf2coords(rad_turf) // record what turfs are irradiated so we can remove them later
 
 /// Asks all the turfs in range to reduce or remove the radiation
@@ -52,16 +50,7 @@
 		var/turf/radioturf = coords2turf(coor)
 		if(!isturf(radioturf) || (QDELETED(radioturf)))
 			continue
-		SEND_SIGNAL(radioturf, COMSIG_TURF_IRRADIATE, -intensity)
-
-/obj/effect/decal/waste/proc/coords2turf(coords)
-	var/list/c2xyz = splittext(coords, ":")
-	return locate(text2num(c2xyz[1]),text2num(c2xyz[2]),text2num(c2xyz[3]))
-
-/obj/effect/decal/waste/proc/turf2coords(turf/the_turf)
-	if(!istype(the_turf))
-		return
-	return "[the_turf.x]:[the_turf.y]:[the_turf.z]"
+		SEND_SIGNAL(radioturf, COMSIG_TURF_IRRADIATE, -intensity, WEAKERREF(src))
 
 /*
 //Bing bang boom done

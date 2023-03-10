@@ -95,7 +95,10 @@
 			usr.client.debug_variables(R)
 
 /// Creates a weakerref to the given input. literally just "\ref[input]"
-/// See /datum/weakref's documentation for more information.
+/// Basically a weakref, minus the datum memory use (and reliability, there's no guarantee this'll point to anything, or even the right thing!!!)
+/// Use with care, and ample checks
 #define WEAKERREF(input) "\ref[input]"
 /// Turns a ref into a thing. no guarantee its anything, so check that it *is* something
-#define RESOLVEREF(ref) locate(ref)
+/// also a proc cus SSradiation compiles before this one. whatever
+/proc/RESOLVEREF(ref) 
+	return locate(ref)
