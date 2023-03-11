@@ -66,6 +66,7 @@
 	if (get_active_held_item())
 		if (HAS_TRAIT_FROM(src, TRAIT_AUTO_CATCH_ITEM,RISING_BASS_TRAIT))
 			visible_message(span_warning("[src] chops [I] out of the air!"))
+			adjustStaminaLossBuffered(8)
 			return TRUE
 		return
 	I.attack_hand(src)
