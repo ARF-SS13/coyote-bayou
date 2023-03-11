@@ -1,7 +1,9 @@
+/// Makes irradiated areas flash green and have a number
+/// if it does both, everything is fine. if not, then hecc
 GLOBAL_VAR_INIT(rad_puddle_debug, FALSE)
 PROCESSING_SUBSYSTEM_DEF(radiation)
 	name = "Radiation"
-	flags = SS_NO_INIT | SS_BACKGROUND
+	flags = SS_BACKGROUND|SS_POST_FIRE_TIMING|SS_NO_INIT
 
 	var/list/warned_atoms = list()
 	/// Contains a list of coordinates to turfs that are irradiated
@@ -10,35 +12,37 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 	/// irradiated mobs, to be blasted with radiation every tick
 	/// list("mob_whatever" = rad_level)
 	var/list/irradiated_mobs = list()
+	/// A list of \refs to check periodically
+	var/list/irradiators = list()
 	/// Occasionally clean up the irradiated mobs and turfs
 	COOLDOWN_DECLARE(cleanup_radiation)
-	/// debug command, dont usr
+	/// debug command, dont use
 	var/greened = FALSE
 
 /datum/controller/subsystem/processing/radiation/fire(resumed)
+	tick_radpuddles()
+	. = ..()
+
+/datum/controller/subsystem/processing/radiation/proc/tick_radpuddles(resumed)
 	if(COOLDOWN_FINISHED(src, cleanup_radiation))
 		cleanup_radiation()
 		COOLDOWN_START(src, cleanup_radiation, 15 MINUTES)
-	var/list/bad_mobs = list()
 	for(var/glowie in irradiated_mobs)
 		var/mob/living/carbon/human/glowman = locate(glowie)
 		if(!istype(glowman))
-			bad_mobs += glowie
+			irradiated_mobs -= glowie
 			continue
 		var/coordz = "[glowman.x]:[glowman.y]:[glowman.z]"
-		if(!(coordz in irradiated_turfs))
+		if(!irradiated_turfs[coordz])
 			irradiated_turfs -= coordz
-			bad_mobs += glowie
+			irradiated_mobs -= glowie
 			continue
 		var/turf/check_turf = locate(glowman.x, glowman.y, glowman.z)
 		if(!SEND_SIGNAL(check_turf, COMSIG_TURF_RADIOACTIVE)) // is that turf radioactive? if not, then, wierd
 			irradiated_turfs -= coordz
-			bad_mobs += glowie
+			irradiated_mobs -= glowie
 			continue
 		glowman.rad_act(irradiated_turfs[coordz])
-	if(LAZYLEN(bad_mobs))
-		for(var/baddie in bad_mobs)
-			irradiated_mobs -= baddie
 	if(GLOB.rad_puddle_debug)
 		for(var/coordie in irradiated_turfs)
 			var/turf/helpme = coords2turf(coordie)
@@ -46,26 +50,19 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 				helpme.color = greened ? initial(helpme.color) : "#00ff00"
 		greened = !greened
 
+/// Periodically checks all the turf coordinates are both there and supposed to be radioactive
 /datum/controller/subsystem/processing/radiation/proc/cleanup_radiation()
-	var/list/bad_mobs = list()
-	for(var/glowie in irradiated_mobs)
-		var/mob/living/carbon/human/glowman = locate(glowie)
-		if(!istype(glowman))
-			bad_mobs += glowie
-			continue
-	if(LAZYLEN(bad_mobs))
-		for(var/baddie in bad_mobs)
-			irradiated_mobs -= baddie
-	var/list/bad_turfs = list()
 	for(var/turfie in irradiated_turfs)
 		var/turf/fieturf = coords2turf(turfie)
 		if(!fieturf)
-			bad_turfs += turfie
+			irradiated_turfs -= turfie
+			continue
+		if(QDELETED(fieturf))
+			irradiated_turfs -= turfie
+			continue
 		if(!SEND_SIGNAL(fieturf, COMSIG_TURF_RADIOACTIVE))
-			bad_turfs += turfie
-	if(LAZYLEN(bad_turfs))
-		for(var/badone in bad_turfs)
-			irradiated_turfs -= badone
+			irradiated_turfs -= turfie
+			continue
 
 /// the irradiated tile got changed and its component deleted, check back in a split second and apply a new one there
 /datum/controller/subsystem/processing/radiation/proc/tile_got_changed(turf_coords, list/puddles, new_rads)
@@ -86,7 +83,7 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 	var/good_puddles = list()
 	for(var/reffie in puddles)
 		var/obj/effect/decal/waste/plip = RESOLVEREF(reffie)
-		if(plip)
+		if(plip && !QDELETED(plip))
 			good_puddles |= reffie
 	if(!LAZYLEN(good_puddles))
 		irradiated_turfs -= turf_coords

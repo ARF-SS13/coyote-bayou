@@ -1539,10 +1539,10 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	var/list/c2xyz = splittext(coords, ":")
 	return locate(text2num(c2xyz[1]),text2num(c2xyz[2]),text2num(c2xyz[3]))
 
-/proc/turf2coords(turf/the_turf)
-	if(!istype(the_turf))
+/proc/atom2coords(atom/A)
+	if(!istype(A))
 		return
-	return "[the_turf.x]:[the_turf.y]:[the_turf.z]"
+	return "[A.x]:[A.y]:[A.z]"
 
 /proc/num2sign(numeric)
 	if(numeric > 0)
