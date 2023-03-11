@@ -128,6 +128,14 @@
 	if(random_trash_loot)
 		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
 
+/mob/living/simple_animal/hostile/ghoul/Aggro()
+	. = ..()
+	if(.)
+		return
+	summon_backup(15)
+	if(!ckey)
+		say(pick("*scrungy", "*mbark"))
+
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
