@@ -103,7 +103,7 @@
 	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
-	idlesound = list('sound/f13npc/ghoul/idle.ogg')
+	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
@@ -118,6 +118,17 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/ghoul
 	desc_short = "A flimsy creature that may or may not be a reanimated corpse."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	
+	variation_list = list(
+		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
+		MOB_SPEED_LIST(2.3, 2.5, 2.8, 2.9, 3.0),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
+		MOB_HEALTH_LIST(30, 35, 40, 40, 40, 40, 41),
+		MOB_RETREAT_DISTANCE_LIST(0, 0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(10)
+	)
 
 /mob/living/simple_animal/hostile/ghoul/Initialize()
 	. = ..()
@@ -168,6 +179,13 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
+		MOB_SPEED_LIST(2.5, 2.6, 2.7, 2.8, 2.9),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
+		MOB_HEALTH_LIST(41, 45, 50, 50, 50, 50, 51),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(10),
 		MOB_PROJECTILE_LIST(\
 			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock, 10),\
 			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/blunt_rock, 10),\
@@ -295,6 +313,17 @@
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 	desc_short = "A glowing creature that may or may not be a reanimated corpse."
 	loot_drop_amount = 2
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
+		MOB_SPEED_LIST(2.6, 2.7, 2.8, 2.9),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(10),
+		MOB_HEALTH_LIST(38, 40, 42, 44),
+		MOB_RETREAT_DISTANCE_LIST(0, 2, 4),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(2, 3, 4),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50)
+	)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize(mapload)
 	. = ..()
