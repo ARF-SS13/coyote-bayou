@@ -30,6 +30,7 @@
 	icon_living = "catslug"
 	icon_dead = "catslug_dead"
 	icon = 'modular_coyote/icons/mob/slugcat.dmi'
+	rotate_on_lying = FALSE // plop~
 
 	faction = list("catslug", "neutral")
 	mob_armor = ARMOR_VALUE_MEDIUM
@@ -273,3 +274,98 @@
 	health = 400
 	aggrosound = list('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl3.ogg', )
 	idlesound = list('sound/alien/Voice/hiss1.ogg',)
+
+//Dinos
+
+/mob/living/simple_animal/hostile/retaliate/goat/dinosaur/triceratops/bull
+	name = "Bull Triceratops"
+	desc = "With its 3 horns, a parrot-like beak and a large frill that could reach nearly 1 metre (3 feet) across, the Triceratops skull is one of the largest and most striking of any land animal."
+	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
+	icon_state = "triceratops_bull"
+	icon_living = "triceratops_bull"
+	icon_dead = "triceratops_bull_dead"
+	speak_emote = list("bellows")
+	emote_hear = list("bellows")
+	emote_see = list("shakes its head.", "stamps a foot.", "glares around.")
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+
+/mob/living/simple_animal/hostile/retaliate/goat/dinosaur/triceratops/cow
+	name = "Cow Triceratops"
+	desc = "With its 3 horns, a parrot-like beak and a large frill that could reach nearly 1 metre (3 feet) across, the Triceratops skull is one of the largest and most striking of any land animal."
+	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
+	icon_state = "triceratops_cow"
+	icon_living = "triceratops_cow"
+	icon_dead = "triceratops_cow_dead"
+	speak_emote = list("bellows")
+	emote_hear = list("bellows")
+	emote_see = list("shakes its head.", "stamps a foot.", "glares around.")
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+
+/mob/living/simple_animal/hostile/dinosaur/velociraptor
+	name = "velociraptor"
+	desc = " Its sleek body was lightweight and built for speed, making it an effective predator. Its head was long and narrow, its snout was somewhat flattened, and it had a fairly large brain."
+	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
+	icon_state = "velociraptor"
+	icon_living = "velociraptor"
+	icon_dead = "velociraptor_dead"
+	speak_emote = list("hisses")
+	emote_hear = list("hisses", "roars", "barks")
+	emote_see = list("shakes it's head.", "taps it's claws,")
+	health = 200 //Just a place holder for now
+	maxHealth = 200
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+
+/mob/living/simple_animal/hostile/dinosaur/pachycephalosaurus
+	name = "pachycephalosaurus"
+	desc = "A biped with strong hind limbs and little developed forelimbs. Featuring a high, domelike skull."
+	icon = 'modular_coyote/icons/mob/dinosaurs45x27.dmi'
+	icon_state = "pachycephalosaurus"
+	icon_living = "pachycephalosaurus"
+	icon_dead = "pachycephalosaurus_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+
+/mob/living/simple_animal/hostile/dinosaur/dimetrodon
+	name = "dimetrodon"
+	desc = "A carnivore with a large sail upon it's back."
+	icon = 'modular_coyote/icons/mob/dinosaurs45x27.dmi'
+	icon_state = "dimetrodon"
+	icon_living = "dimetrodon"
+	icon_dead = "dimetrodon_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+
+/mob/living/simple_animal/hostile/dinosaur/mammoth
+	name = "mammoth"
+	desc = "A large creature with long, curved tusks and thick hair upon it's body."
+	icon = 'modular_coyote/icons/mob/dinosaurs128x96.dmi'
+	icon_state = "mammoth"
+	icon_living = "mammoth"
+	icon_dead = "mammoth_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+
+/mob/living/simple_animal/hostile/dinosaur/rex
+	name = "Rex"
+	desc = "Standing about 40 feet tall, this creature looks rather strong and powerful."
+	icon = 'modular_coyote/icons/mob/dinosaurs128x96.dmi'
+	icon_state = "rex"
+	icon_living = "rex"
+	icon_dead = "rex_dead"
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20

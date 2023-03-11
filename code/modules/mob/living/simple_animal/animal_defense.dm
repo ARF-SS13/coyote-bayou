@@ -124,11 +124,14 @@
 
 /mob/living/simple_animal/bullet_act(obj/item/projectile/P)
 	var/totaldamage = P.damage
+	var/staminadamage = P.stamina
 	var/final_percent = 0
 	var/armor = run_armor_check(null, P.flag, null, null, P.armour_penetration, null)
 	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
 	if(!P.nodamage)
 		apply_damage(totaldamage, P.damage_type, null, armor, null, null, null, damage_threshold = dt)
+		if(staminadamage)
+			apply_damage(staminadamage, STAMINA, null, armor, null, null, null, damage_threshold = dt)
 	var/missing = 100 - final_percent
 	var/armor_ratio = armor * 0.01
 	if(missing > 0)

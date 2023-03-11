@@ -10,6 +10,13 @@
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
 
+/obj/item/ammo_casing/a357/ratshot
+	name = ".357 ratshot shell casing"
+	desc = "A .357 ratshot shell casing."
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_ratshot
+	pellets = 6 //6 pellets for 6 damage is 36 total, same as base cartridge, but less effective against armor, more effective against rats
+	variance = SHOTGUN_SPREAD_BASE
+
 /obj/item/ammo_casing/a357/ricochet
 	name = ".357 ricochet bullet casing"
 	desc = "A .357 ricochet bullet casing."
@@ -115,6 +122,13 @@
 		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
+
+/obj/item/ammo_casing/c4570/ratshot
+	name = ".45-70 forager shell casing"
+	desc = "A .45-70 forager shell casing."
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_ratshot
+	pellets = 10 //10 pellets for 6 damage is 60 total, same as base cartridge, but less effective against armor, more effective against rats
+	variance = SHOTGUN_SPREAD_BASE
 
 /obj/item/ammo_casing/c4570/improvised
 	name = "shoddy .45-70 bullet casing"

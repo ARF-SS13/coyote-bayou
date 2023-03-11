@@ -345,6 +345,12 @@
 	build_path = /obj/item/ammo_box/a357box
 	category = list("initial", "Basic Ammo")
 
+/datum/design/ammolathe/a357/ratshot
+	name = ".357 Magnum Ratshot ammo box"
+	id = "a357_ratshot"
+	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
+	build_path = /obj/item/ammo_box/a357box/ratshot
+	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a556
 	name = "5.56mm FMJ ammo box"
@@ -548,6 +554,13 @@
 	id = "c4570"
 	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/c4570box
+	category = list("initial", "Intermediate Ammo")
+
+/datum/design/ammolathe/c4570/ratshot
+	name = ".45-70 Forager ammo box"
+	id = "c4570_forager"
+	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 2000)
+	build_path = /obj/item/ammo_box/c4570box/ratshot
 	category = list("initial", "Intermediate Ammo")
 
 /datum/design/ammolathe/lc45

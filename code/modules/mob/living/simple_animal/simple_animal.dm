@@ -5,12 +5,17 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	icon = 'icons/mob/animal.dmi'
 	health = 20
 	maxHealth = 20
+	/// When the mob has this much stamina damage, put them in stamcrit. set to SIMPLEMOB_NO_STAMCRIT
+	var/stamcrit_threshold
+	/// They are stamcritted for this long when stamcrit
+	var/stamcrit_duration = 5 SECONDS
+	COOLDOWN_DECLARE(stamcrit_timer)
 	gender = PLURAL //placeholder
 	///How much blud it has for bloodsucking
 	blood_volume = 425 //blood will smeared only a little bit from body dragging
 
 	status_flags = CANPUSH
-
+	rotate_on_lying = TRUE
 	var/icon_living = ""
 	///icon when the animal is dead. Don't use animated icons for this.
 	var/icon_dead = ""
@@ -80,7 +85,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
 	/// 1 for full damage , 0 for none , -1 for 1:1 heal from that source.
-	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
+	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 1, OXY = 1)
 	///Attacking verb in present continuous tense.
 	var/attack_verb_continuous = "attacks"
 	///Attacking verb in present simple tense.
@@ -194,6 +199,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	/// required pop to hop into this thing
 	var/pop_required_to_jump_into = 0
 
+	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
+	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
@@ -223,6 +231,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(can_ghost_into)
 		make_ghostable()
 	setup_variations()
+	if(isnull(stamcrit_threshold))
+		stamcrit_threshold = maxHealth * 2
 
 /mob/living/simple_animal/attack_ghost(mob/user, latejoinercalling)
 	. = ..()
@@ -257,6 +267,20 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	user.transfer_ckey(src, TRUE)
 	grant_all_languages()
+	if(ispath(send_mobs))
+		var/obj/effect/proc_holder/mob_common/direct_mobs/DM = send_mobs
+		send_mobs = new DM
+		AddAbility(send_mobs)
+	if(ispath(call_backup))
+		var/obj/effect/proc_holder/mob_common/summon_backup/CB = call_backup
+		call_backup = new CB
+		AddAbility(call_backup)
+	if(ispath(make_a_nest))
+		var/obj/effect/proc_holder/mob_common/make_nest/MN = make_a_nest
+		make_a_nest = new MN
+		AddAbility(make_a_nest)
+		unmake_a_nest = new
+		AddAbility(unmake_a_nest)
 	if(lazarused)
 		to_chat(src, span_userdanger("[name] has been lazarus injected or tamed by beastmaster! There are special rules for playing as this creature!"))
 		to_chat(src, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
@@ -318,6 +342,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 	sever_link_to_nest()
+	if(make_a_nest)
+		QDEL_NULL(make_a_nest)
+	if(unmake_a_nest)
+		QDEL_NULL(unmake_a_nest)
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
@@ -345,14 +373,6 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/proc/make_ghostable(mob/user)
 	can_ghost_into = TRUE
 	AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
-	if(ispath(send_mobs))
-		var/obj/effect/proc_holder/mob_common/direct_mobs/DM = send_mobs
-		send_mobs = new DM
-		AddAbility(send_mobs)
-	if(ispath(call_backup))
-		var/obj/effect/proc_holder/mob_common/summon_backup/CB = call_backup
-		call_backup = new CB
-		AddAbility(call_backup)
 	LAZYADD(GLOB.mob_spawners[initial(name)], src)
 	RegisterSignal(src, COMSIG_MOB_GHOSTIZE_FINAL, .proc/set_ghost_timeout)
 	if(istype(user))
@@ -405,9 +425,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	if(!isturf(loc) && !allow_movement_on_non_turfs)
 		return
-	if(!(mobility_flags & MOBILITY_MOVE)) //This is so it only moves if it's not inside a closet, gentics machine, etc.
-		return TRUE
-
+	if(!CHECK_MOBILITY(src, MOBILITY_MOVE)) // !(mobility_flags & MOBILITY_MOVE)
+		walk(src, 0) //stop mid walk
+		return FALSE
 	turns_since_move++
 	if(turns_since_move < turns_per_move)
 		return TRUE
@@ -572,6 +592,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
+	unstamcrit()
 
 	sever_link_to_nest()
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
@@ -685,7 +706,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	else
 		..()
 
-/mob/living/simple_animal/update_mobility(value_otherwise = MOBILITY_FLAGS_DEFAULT)
+/* /mob/living/simple_animal/update_mobility()
+	. = ..()
 	if(IsUnconscious() || IsStun() || IsParalyzed() || stat || resting)
 		drop_all_held_items()
 		mobility_flags = NONE
@@ -693,13 +715,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		mobility_flags = ~MOBILITY_MOVE
 	else
 		mobility_flags = MOBILITY_FLAGS_DEFAULT
-	if(!CHECK_MOBILITY(src, MOBILITY_MOVE)) // !(mobility_flags & MOBILITY_MOVE)
-		walk(src, 0) //stop mid walk
 	update_transform()
 	update_action_buttons_icon()
-	return mobility_flags
+	return mobility_flags */
 
-/mob/living/simple_animal/update_transform()
+/* /mob/living/simple_animal/update_transform()
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
 	var/changed = 0
 
@@ -709,7 +729,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		resize = RESIZE_DEFAULT_SIZE
 
 	if(changed)
-		animate(src, transform = ntransform, time = 2, easing = EASE_IN|EASE_OUT)
+		animate(src, transform = ntransform, time = 2, easing = EASE_IN|EASE_OUT) */
 
 /mob/living/simple_animal/proc/sentience_act() //Called when a simple animal gains sentience via gold slime potion
 	toggle_ai(AI_OFF) // To prevent any weirdness.
@@ -861,6 +881,35 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
+	adjustStaminaLoss(-stamcrit_threshold * 0.01)
+
+/mob/living/simple_animal/update_stamina()
+	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
+		return
+	if((staminaloss + bruteloss) >= stamcrit_threshold)
+		if(!CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT))
+			stamcrit()
+		COOLDOWN_START(src, stamcrit_timer, stamcrit_duration) // keep resetting the timer if they're stamcritted hard enough
+		return
+	if(CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT) && COOLDOWN_FINISHED(src, stamcrit_timer))
+		unstamcrit()
+
+/mob/living/simple_animal/proc/stamcrit()
+	to_chat(src, span_notice("You're too exhausted to keep going..."))
+	ENABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
+	filters += CIT_FILTER_STAMINACRIT
+	walk(src, 0)
+	set_resting(TRUE, FALSE, FALSE)
+	update_mobility()
+
+/mob/living/simple_animal/proc/unstamcrit()
+	COOLDOWN_RESET(src, stamcrit_timer)
+	to_chat(src, span_notice("You don't feel nearly as exhausted anymore."))
+	DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
+	filters -= CIT_FILTER_STAMINACRIT
+	walk(src, 0)
+	set_resting(FALSE, FALSE, FALSE)
+	update_mobility()
 
 /mob/living/simple_animal/proc/sever_link_to_nest()
 	if(nest)
