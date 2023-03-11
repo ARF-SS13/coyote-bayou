@@ -6,16 +6,9 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 	flags = SS_BACKGROUND|SS_POST_FIRE_TIMING|SS_NO_INIT
 
 	var/list/warned_atoms = list()
-	/// Contains a list of coordinates to turfs that are irradiated
-	/// list("x:y:z" = rad_level)
-	var/list/irradiated_turfs = list()
 	/// irradiated mobs, to be blasted with radiation every tick
 	/// list("mob_whatever" = rad_level)
 	var/list/irradiated_mobs = list()
-	/// A list of \refs to check periodically
-	var/list/irradiators = list()
-	/// Occasionally clean up the irradiated mobs and turfs
-	COOLDOWN_DECLARE(cleanup_radiation)
 	/// debug command, dont use
 	var/greened = FALSE
 
@@ -24,33 +17,22 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 	. = ..()
 
 /datum/controller/subsystem/processing/radiation/proc/tick_radpuddles(resumed)
-	if(COOLDOWN_FINISHED(src, cleanup_radiation))
-		cleanup_radiation()
-		COOLDOWN_START(src, cleanup_radiation, 15 MINUTES)
 	for(var/glowie in irradiated_mobs)
 		var/mob/living/carbon/human/glowman = locate(glowie)
 		if(!istype(glowman))
 			irradiated_mobs -= glowie
 			continue
-		var/coordz = "[glowman.x]:[glowman.y]:[glowman.z]"
-		if(!irradiated_turfs[coordz])
-			irradiated_turfs -= coordz
+		var/turf/check_turf = get_turf(glowman)
+		var/radblastusa = SEND_SIGNAL(check_turf, COMSIG_TURF_CHECK_RADIATION) // is that turf radioactive? if not, then, wierd
+		if(radblastusa <= 0) 
 			irradiated_mobs -= glowie
 			continue
-		var/turf/check_turf = locate(glowman.x, glowman.y, glowman.z)
-		if(!SEND_SIGNAL(check_turf, COMSIG_TURF_RADIOACTIVE)) // is that turf radioactive? if not, then, wierd
-			irradiated_turfs -= coordz
-			irradiated_mobs -= glowie
-			continue
-		glowman.rad_act(irradiated_turfs[coordz])
-	if(GLOB.rad_puddle_debug)
-		for(var/coordie in irradiated_turfs)
-			var/turf/helpme = coords2turf(coordie)
-			if(helpme)
-				helpme.color = greened ? initial(helpme.color) : "#00ff00"
-		greened = !greened
+		glowman.rad_act(radblastusa)
+		if(GLOB.rad_puddle_debug)
+			glowman.emote("scream")
+			glowman.say("[radblastusa]")
 
-/// Periodically checks all the turf coordinates are both there and supposed to be radioactive
+/* /// Periodically checks all the turf coordinates are both there and supposed to be radioactive
 /datum/controller/subsystem/processing/radiation/proc/cleanup_radiation()
 	for(var/turfie in irradiated_turfs)
 		var/turf/fieturf = coords2turf(turfie)
@@ -60,39 +42,28 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 		if(QDELETED(fieturf))
 			irradiated_turfs -= turfie
 			continue
-		if(!SEND_SIGNAL(fieturf, COMSIG_TURF_RADIOACTIVE))
+		if(!SEND_SIGNAL(fieturf, COMSIG_TURF_CHECK_RADIATION))
 			irradiated_turfs -= turfie
-			continue
+			continue */
 
 /// the irradiated tile got changed and its component deleted, check back in a split second and apply a new one there
 /datum/controller/subsystem/processing/radiation/proc/tile_got_changed(turf_coords, list/puddles, new_rads)
 	addtimer(CALLBACK(src, .proc/add_radtile, turf_coords, puddles, new_rads, 5), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
 
 /datum/controller/subsystem/processing/radiation/proc/add_radtile(turf_coords, list/puddles, new_rads, tries = 5)
-	if(new_rads <= 0) // if it isnt radioactive, then, fuck
-		irradiated_turfs -= turf_coords
+	if(new_rads <= 0) // idk
 		return
 	var/turf/new_turf = coords2turf(turf_coords)
 	/// the new turf either doesnt exist, or is still being replaced, check back in another split second
 	if(!new_turf || QDELETED(new_turf))
 		if(tries)
 			addtimer(CALLBACK(src, .proc/add_radtile, turf_coords, puddles, new_rads, tries - 1), 2, TIMER_UNIQUE|TIMER_OVERRIDE) //*pain //*doublepain
-		irradiated_turfs -= turf_coords
 		return // okay fine, there's a hole to nothing right here, fucking, cool.
-	/// turf found, check if the puddles still exist
-	var/good_puddles = list()
-	for(var/reffie in puddles)
-		var/obj/effect/decal/waste/plip = RESOLVEREF(reffie)
-		if(plip && !QDELETED(plip))
-			good_puddles |= reffie
-	if(!LAZYLEN(good_puddles))
-		irradiated_turfs -= turf_coords
-		return // puddles are missing, likely, so unirradiate this turf
-	// okay, turf exists, has puddles somewhere, and is in fact radioactive. know what this means?
-	if(SEND_SIGNAL(new_turf, COMSIG_TURF_RADIOACTIVE)) // okay check if there's still a component there first
+	// the component itself will figure out of its puddles are still good or not at some point, not our concern
+	if(SEND_SIGNAL(new_turf, COMSIG_TURF_CHECK_RADIATION)) // okay check if there's still a component there first
 		return // and let it be
 	// okay NOW shove a component in there
-	new_turf.AddComponent(/datum/component/radiation_turf, new_rads, good_puddles)
+	new_turf.AddComponent(/datum/component/radiation_turf, new_rads, puddles)
 
 /datum/controller/subsystem/processing/radiation/proc/warn(datum/component/radioactive/contamination)
 	if(!contamination || QDELETED(contamination))

@@ -54,7 +54,7 @@
 	radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
 	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
 	var/turf/righthere = get_turf(src)
-	var/radz = isturf(righthere) ? SEND_SIGNAL(righthere, COMSIG_TURF_RADIOACTIVE) : 0
+	var/radz = isturf(righthere) ? SEND_SIGNAL(righthere, COMSIG_TURF_CHECK_RADIATION) : 0
 	radiation_count += radz
 
 	if(current_tick_amount)

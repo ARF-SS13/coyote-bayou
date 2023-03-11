@@ -28,7 +28,6 @@
 /obj/effect/decal/waste/Destroy()
 	//STOP_PROCESSING(SSradiation,src)
 	unirradiate_turfs()
-	qdel(rad_turfs)
 	..()
 
 /// gets all the turfs in range, records its coordinates (like heck I'm making a million zillion weakrefs), 
@@ -44,7 +43,7 @@
 /// Asks all the turfs in range to reduce or remove the radiation
 /obj/effect/decal/waste/proc/unirradiate_turfs()
 	for(var/turf/rad_turf in range(range, get_turf(src))) // range, in case some goober changed what the puddle can see
-		SEND_SIGNAL(radioturf, COMSIG_TURF_IRRADIATE, -intensity, WEAKERREF(src), type)
+		SEND_SIGNAL(rad_turf, COMSIG_TURF_IRRADIATE, -intensity, WEAKERREF(src), type)
 
 /*
 //Bing bang boom done
