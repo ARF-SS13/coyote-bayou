@@ -1535,6 +1535,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 #define TURF_FROM_COORDS_LIST(List) (locate(List[1], List[2], List[3]))
 
+/proc/coords2turf(coords)
+	var/list/c2xyz = splittext(coords, ":")
+	return locate(text2num(c2xyz[1]),text2num(c2xyz[2]),text2num(c2xyz[3]))
+
+/proc/atom2coords(atom/A)
+	if(!istype(A))
+		return
+	return "[A.x]:[A.y]:[A.z]"
+
 /proc/num2sign(numeric)
 	if(numeric > 0)
 		return 1
