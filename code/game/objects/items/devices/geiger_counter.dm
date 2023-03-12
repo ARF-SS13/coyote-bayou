@@ -131,8 +131,8 @@
 	var/turf/theturf = get_turf(src) // fun fact, get_turf() doesnt work in the target of a signal, the define requires an actual *thing*
 	var/turfrads = SEND_SIGNAL(theturf, COMSIG_TURF_CHECK_RADIATION) // filter out the turf rads, otherwise it'll double the input
 	var/area/thearea = get_area(src) // Also filter out the area's radiation, its already checked in process()
-  var/arearads = thearea?.rads_per_second
-  current_tick_amount += max(0, (amount - turfrads?turfrads:0 - arearads?arearads:0)) // might end up considerably less than accurate per rad_act, but only around radiation barrels
+	var/arearads = thearea?.rads_per_second
+	current_tick_amount += max(0, (amount - (turfrads ? turfrads : 0) - (arearads ? arearads : 0))) // might end up considerably less than accurate per rad_act, but only around radiation barrels
 	update_icon()
 
 /obj/item/geiger_counter/equipped(mob/user)

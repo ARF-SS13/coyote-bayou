@@ -54,7 +54,7 @@
 	if (!T)
 		return FALSE
 	var/area/A = T.loc
-  var/add_rads = 0
+	var/add_rads = 0
 	if(istype(A, /area/f13/radiation))
 		add_rads += area_radiation
 	if(A.rads_per_second)
@@ -70,8 +70,8 @@
 		cached_rads = radsee / max(1, lets_avg * 0.6)
 		COOLDOWN_START(src, radroom_check, 30 SECONDS)
 	add_rads += cached_rads
-  if(add_rads)
-    rad_act(add_rads)
+	if(add_rads)
+		rad_act(add_rads)
 	if(!bitcoinmining)
 		if(loaded_tank.air_contents.get_moles(GAS_PLASMA) < 0.0001)
 			investigate_log("<font color='red'>out of fuel</font>.", INVESTIGATE_SINGULO)
