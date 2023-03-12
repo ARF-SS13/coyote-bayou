@@ -125,8 +125,9 @@
 	. = ..()
 	if(amount <= RAD_BACKGROUND_RADIATION || !scanning)
 		return
-	var/turfrads = SEND_SIGNAL(get_turf(src), COMSIG_TURF_CHECK_RADIATION) // filter out the turf rads, otherwise it'll double the input
-	current_tick_amount += max(0, amount - turfrads)
+	var/turf/theturf = get_turf(src) // fun fact, get_turf() doesnt work in the target of a signal, the define requires an actual *thing*
+	var/turfrads = SEND_SIGNAL(theturf, COMSIG_TURF_CHECK_RADIATION) // filter out the turf rads, otherwise it'll double the input
+	current_tick_amount += max(0, (amount - turfrads))
 	update_icon()
 
 /obj/item/geiger_counter/equipped(mob/user)
