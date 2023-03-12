@@ -332,9 +332,11 @@
 
 /datum/quirk/smol
 	name = "Smol!"
-	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, you can be picked up like an item! "
+	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, others can Alt-Click to pick you up like an item!"
 	value = 0
 	mob_trait = TRAIT_SMOL
+	gain_text = span_notice("You feel scoopable! Others can ALT-CLICK you to pick you up!")
+	lose_text = span_notice("You feel a lot less scoopable.")
 
 /datum/quirk/smol/add()
 	if(istype(quirk_holder))
