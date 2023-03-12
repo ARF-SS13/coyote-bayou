@@ -763,7 +763,7 @@
 	desc = "A surprisingly high quality steak that could come in a variety of textures and may taste of either good chicken or rich beef"
 
 /////////////
-// MOLERAT //
+// MOLERAT //  It's time ~TK
 /////////////
 
 /mob/living/simple_animal/hostile/molerat
@@ -810,6 +810,17 @@
 	desc_short = "Small, squishy, and numerous."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(5),
+		MOB_HEALTH_LIST(15, 20, 25, 26),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+	)
+
 /mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
@@ -842,8 +853,8 @@
 	response_harm_simple = "shakes"
 	taunt_chance = 30
 	speed = 8
-	maxHealth = 1000 
-	health = 1000
+	maxHealth = 850
+	health = 850
 	harm_intent_damage = 30
 	obj_damage = 15
 	melee_damage_lower = 35
