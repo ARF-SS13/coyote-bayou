@@ -89,6 +89,13 @@
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
+	idlesound = list(
+		'sound/f13npc/gecko/geckocall1.ogg',
+		'sound/f13npc/gecko/geckocall2.ogg',
+		'sound/f13npc/gecko/geckocall3.ogg',
+		'sound/f13npc/gecko/geckocall4.ogg',
+		'sound/f13npc/gecko/geckocall5.ogg'
+		)
 
 	emote_taunt = list("screeches")
 	emote_taunt_sound = list(

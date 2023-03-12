@@ -471,6 +471,7 @@
 	pass_flags = PASSTABLE | PASSMOB
 	density = FALSE
 	a_intent = INTENT_HARM
+	idlesound = list('sound/f13npc/bloatfly/fly.ogg')
 	blood_volume = 0
 	casingtype = /obj/item/ammo_casing/shotgun/bloatfly
 	projectiletype = null
