@@ -11286,10 +11286,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
-"aNp" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/wood_common,
-/area/f13/building)
 "aNr" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
@@ -25903,7 +25899,7 @@
 	name = "Mayor's Office"
 	},
 /turf/open/floor/wood_common{
-	color = "#775555"
+	color = "#779999"
 	},
 /area/f13/building)
 "cQb" = (
@@ -51002,10 +50998,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"klf" = (
-/obj/structure/simple_door/room,
-/turf/open/floor/carpet/black,
-/area/f13/building)
 "klm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -81066,7 +81058,9 @@
 /area/f13/ruins)
 "thl" = (
 /obj/structure/simple_door/room,
-/turf/open/floor/plasteel/floorgrime,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "thr" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -107810,7 +107804,7 @@ aZk
 aZk
 uPF
 nmQ
-aNp
+avL
 jfp
 uPF
 aZk
@@ -108579,7 +108573,7 @@ aWK
 lOD
 qlr
 oTf
-klf
+thl
 brF
 dVF
 oTf
@@ -110375,7 +110369,7 @@ cbA
 dVF
 gqy
 dVF
-qiq
+avL
 wnb
 brD
 uPF
