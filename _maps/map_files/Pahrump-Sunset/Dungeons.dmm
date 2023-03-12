@@ -807,9 +807,6 @@
 	},
 /area/f13/underground/cave)
 "atp" = (
-/obj/machinery/computer/shuttle/bunkerelevator{
-	dir = 4
-	},
 /obj/structure/timeddoor,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker/bighornbunker)
@@ -1069,10 +1066,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
-"aAG" = (
-/obj/structure/timeddoor,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/bunker/bighornbunker)
 "aAM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookcase/manuals/engineering,
@@ -42432,12 +42425,6 @@
 "wdV" = (
 /turf/open/floor/carpet/black,
 /area/f13/enclave)
-"weC" = (
-/mob/living/simple_animal/hostile/gelcube{
-	faction = list("the tungsten cube","supermutant")
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker/bighornbunker)
 "weO" = (
 /obj/structure/lattice{
 	layer = 3
@@ -86434,7 +86421,7 @@ rZN
 cpZ
 cGT
 eAS
-weC
+fDn
 qbX
 iNv
 ojL
@@ -87208,7 +87195,7 @@ gDQ
 lfu
 grz
 lwM
-aAG
+pEQ
 pUS
 pUS
 pUS
@@ -87465,7 +87452,7 @@ iot
 gsu
 gsu
 lwM
-aAG
+pEQ
 pUS
 rpn
 gap
@@ -87717,12 +87704,12 @@ cJh
 vGo
 fTC
 nmx
-twg
+pYo
 iot
 pYo
 fwN
 lwM
-aAG
+pEQ
 pUS
 rpn
 rpn
@@ -87979,7 +87966,7 @@ lwM
 rZN
 lwM
 lwM
-aAG
+pEQ
 pUS
 rpn
 rpn
@@ -88236,7 +88223,7 @@ ujC
 pYo
 grz
 lwM
-aAG
+pEQ
 pUS
 vfG
 ubB
@@ -89522,7 +89509,7 @@ iot
 pYo
 rZN
 gsu
-twg
+pYo
 pYo
 oAm
 cJh
@@ -90287,7 +90274,7 @@ iot
 pYo
 aOW
 sxZ
-twg
+pYo
 pYo
 rMR
 pYo
