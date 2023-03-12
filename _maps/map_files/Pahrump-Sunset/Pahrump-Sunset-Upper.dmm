@@ -3117,6 +3117,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
+"duT" = (
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building/hospital)
 "dvF" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -3624,7 +3629,7 @@
 /area/f13/building/hospital)
 "dXl" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/wood/interior,
 /area/f13/building/hospital)
 "dXp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10326,7 +10331,7 @@
 	},
 /area/f13/building/tribal)
 "lcB" = (
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/wood/interior,
 /area/f13/building/hospital)
 "lcQ" = (
 /obj/structure/chair/booth{
@@ -10844,7 +10849,7 @@
 /area/f13/building)
 "lHD" = (
 /obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/mineral/brick,
 /area/f13/building/hospital)
 "lIp" = (
 /obj/structure/table/wood,
@@ -10959,7 +10964,9 @@
 "lNl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
 /area/f13/building/hospital)
 "lNz" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14216,6 +14223,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"pBt" = (
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#808080"
+	},
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building)
 "pBB" = (
 /obj/structure/sink{
 	pixel_x = -7;
@@ -15462,10 +15478,8 @@
 	},
 /area/f13/building)
 "qWC" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
 	},
 /area/f13/building)
 "qWS" = (
@@ -16152,9 +16166,8 @@
 /area/f13/building/massfusion)
 "rHR" = (
 /obj/structure/spacevine,
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
 	},
 /area/f13/building)
 "rHT" = (
@@ -16456,6 +16469,12 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"scO" = (
+/obj/structure/spacevine,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building/hospital)
 "scP" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbroken"
@@ -24591,14 +24610,14 @@ oez
 oez
 oez
 lHD
-lcB
-lHD
-lHD
-lHD
-lcB
-lcB
-lcB
-lHD
+duT
+scO
+scO
+scO
+duT
+duT
+duT
+scO
 lHD
 oez
 sFc
@@ -25370,7 +25389,7 @@ auN
 dXl
 lcB
 lcB
-lcB
+duT
 oez
 oez
 kjX
@@ -25618,7 +25637,7 @@ oez
 oez
 oez
 oez
-lcB
+duT
 eTN
 eTN
 eTN
@@ -25875,7 +25894,7 @@ oez
 oez
 oez
 oez
-lHD
+scO
 eTN
 eTN
 rKZ
@@ -26141,7 +26160,7 @@ auN
 dXl
 lcB
 lcB
-lHD
+scO
 oez
 oez
 uqG
@@ -26906,12 +26925,12 @@ oez
 lHD
 pGD
 pGD
-lcB
+duT
 pGD
 pGD
-lcB
+duT
 lNl
-lHD
+scO
 lHD
 oez
 oez
@@ -31022,16 +31041,16 @@ umI
 dtb
 oez
 oez
-ixY
-ixY
-ixY
-ixY
-ixY
-ixY
+cBX
+qWC
+qWC
+qWC
+qWC
+qWC
 ioS
 cjk
 ioS
-ixY
+cBX
 oez
 oez
 oez
@@ -31279,7 +31298,7 @@ oVS
 dtb
 oez
 oez
-ixY
+qWC
 goJ
 ejB
 mAw
@@ -31288,7 +31307,7 @@ vpv
 hRp
 jxp
 ejB
-ixY
+qWC
 oez
 oez
 oez
@@ -31545,7 +31564,7 @@ jxp
 jxp
 ejB
 jxp
-ioS
+pBt
 oez
 oez
 oIp
@@ -31802,7 +31821,7 @@ ejB
 ejB
 jxp
 rtZ
-ixY
+qWC
 oez
 oez
 oIp
@@ -32307,7 +32326,7 @@ dtb
 brR
 oez
 oez
-ixY
+qWC
 qah
 jxp
 ejB
@@ -32316,7 +32335,7 @@ avc
 qwt
 jxp
 lom
-ixY
+qWC
 oez
 oez
 dtb
@@ -32573,7 +32592,7 @@ sdP
 mcK
 jxp
 rtZ
-ioS
+pBt
 oez
 oez
 hqx
@@ -32830,7 +32849,7 @@ jxp
 ejB
 ejB
 jDF
-ixY
+qWC
 oez
 oez
 dtb
@@ -33078,16 +33097,16 @@ hqx
 dtb
 oez
 oez
-ixY
 qWC
+vTB
 cjk
-ixY
+cBX
 qhi
 tHs
 udQ
 ejB
 jxp
-ixY
+qWC
 oez
 oez
 dtb
@@ -33335,16 +33354,16 @@ dtb
 hqx
 oez
 oez
-ixY
+qWC
 ptR
 iYB
-ixY
+qWC
 rHR
 rHR
-ixY
+qWC
 iWq
-ixY
-ixY
+qWC
+qWC
 oez
 oez
 dtb
@@ -33592,16 +33611,16 @@ dtb
 dtb
 oez
 oez
-ixY
+qWC
 cUt
 ghh
-ixY
-ixY
+qWC
+qWC
 mzq
 bGl
 ejB
 jxp
-ixY
+qWC
 oez
 oez
 hqx
@@ -33849,16 +33868,16 @@ oez
 oez
 oez
 oez
-ixY
-ixY
-ixY
-ixY
-ixY
+cBX
+qWC
+qWC
+cBX
+qWC
 jxp
 jxp
 sdc
 shu
-ixY
+qWC
 oez
 oez
 oez
@@ -34110,12 +34129,12 @@ oez
 oez
 oez
 oez
-ixY
+qWC
 jxp
 rDL
 axq
 auo
-ixY
+qWC
 oez
 oez
 oez
@@ -34367,12 +34386,12 @@ oez
 oez
 oez
 oez
-ixY
-ixY
-ixY
+cBX
+qWC
+qWC
 ioS
-ixY
-ixY
+qWC
+cBX
 oez
 oez
 oez
