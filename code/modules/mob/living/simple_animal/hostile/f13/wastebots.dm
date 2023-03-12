@@ -220,7 +220,7 @@
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
-	aggrosound = null
+	aggrosound = list("sound/f13npc/liberator/chineserobotcarinsurance.ogg")
 	idlesound = null
 	death_sound = null
 	attack_sound = null
