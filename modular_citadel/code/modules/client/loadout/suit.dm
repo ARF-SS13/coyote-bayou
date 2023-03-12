@@ -167,9 +167,15 @@
 
 /datum/gear/suit/coat/leatherbattlecoat
 	name = "Leather battle coat"
-	path = /obj/item/clothing/suit/armor/medium/vest/breastplate/khan
+	path = /obj/item/clothing/suit/armor/light/duster/breastplate/khan
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 3
+	cost = 2
+
+/datum/gear/suit/coat/armoredbomber
+	name = "armored bomber jacket"
+	path = /obj/item/clothing/suit/armor/light/duster/bomberjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/coat/desperado_duster
 	name = "desperado's duster"
