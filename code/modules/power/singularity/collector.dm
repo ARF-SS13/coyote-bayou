@@ -54,8 +54,11 @@
 	if (!T)
 		return FALSE
 	var/area/A = T.loc
+	var/add_rads = 0
 	if(istype(A, /area/f13/radiation))
-		rad_act(area_radiation)
+		add_rads += area_radiation
+	if(A.rads_per_second)
+		add_rads += (A.rads_per_second*10)
 	if(COOLDOWN_FINISHED(src, radroom_check)) // Occasionally, get an 'average' of the rads of nearby tiles
 		var/lets_avg = 0
 		var/radsee = 0
@@ -66,8 +69,9 @@
 				radsee += somerad
 		cached_rads = radsee / max(1, lets_avg * 0.6)
 		COOLDOWN_START(src, radroom_check, 30 SECONDS)
-	if(cached_rads)
-		rad_act(cached_rads)
+	add_rads += cached_rads
+	if(add_rads)
+		rad_act(add_rads)
 	if(!bitcoinmining)
 		if(loaded_tank.air_contents.get_moles(GAS_PLASMA) < 0.0001)
 			investigate_log("<font color='red'>out of fuel</font>.", INVESTIGATE_SINGULO)
