@@ -357,3 +357,18 @@
 	value = 0
 	mob_trait = TRAIT_HEAT_DETECT
 
+/datum/quirk/smol
+	name = "Smol!"
+	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, others can Alt-Click to pick you up like an item!"
+	value = 0
+	mob_trait = TRAIT_SMOL
+	gain_text = span_notice("You feel scoopable! Others can ALT-CLICK you to pick you up!")
+	lose_text = span_notice("You feel a lot less scoopable.")
+
+/datum/quirk/smol/add()
+	if(istype(quirk_holder))
+		quirk_holder.AddElement(/datum/element/mob_holder, "corgi") // dog
+
+/datum/quirk/smol/remove()
+	if(istype(quirk_holder))
+		quirk_holder.RemoveElement(/datum/element/mob_holder) // undog
