@@ -1434,7 +1434,11 @@ Records disabled until a use for them is found
 		for(var/V in SSquirks.quirks)
 			var/datum/quirk/T = SSquirks.quirks[V]
 			var/value = initial(T.value)
-			if((value > 0 && quirk_category != QUIRK_POSITIVE) || (value < 0 && quirk_category != QUIRK_NEGATIVE) || (value == 0 && quirk_category != QUIRK_NEUTRAL))
+			if(value > 0 && quirk_category != QUIRK_POSITIVE)
+				continue
+			if(value < 0 && quirk_category != QUIRK_NEGATIVE)
+				continue
+			if(value == 0 && quirk_category != QUIRK_NEUTRAL)
 				continue
 
 			var/quirk_name = initial(T.name)
@@ -1607,7 +1611,7 @@ Records disabled until a use for them is found
 						return
 					all_quirks -= quirk
 				else
-					if(GetPositiveQuirkCount() >= MAX_QUIRKS)
+					if(value != 0 && (GetPositiveQuirkCount() >= MAX_QUIRKS))
 						to_chat(user, span_warning("You can't have more than [MAX_QUIRKS] positive quirks!"))
 						return
 					if(balance - value < 0)
