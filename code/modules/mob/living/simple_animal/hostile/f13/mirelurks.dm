@@ -45,7 +45,7 @@
 	blood_volume = 0
 	footstep_type = FOOTSTEP_MOB_CLAW
 	pop_required_to_jump_into = MED_MOB_MIN_PLAYERS
-	variation_list = list(
+		variation_list = list(
 		MOB_COLOR_VARIATION(100, 100, 100, 255, 255, 255),
 		MOB_SPEED_LIST(3.3, 3.4, 3.5),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
@@ -55,6 +55,7 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
 	)
+
 
 // MIRELURK HUNTER MALES
 /mob/living/simple_animal/hostile/mirelurk/hunter
