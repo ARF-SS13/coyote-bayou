@@ -515,7 +515,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
-	cell_type = /obj/item/stock_parts/cell/ammo/ec //16 shots, self-charges
+	cell_type = /obj/item/stock_parts/cell/ammo/ultracite //16 shots, self-charges
 	can_charge = 0
 	selfcharge = 1 //selfcharging adds 100 a shot
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
@@ -793,7 +793,7 @@
 	icon_state = "wattz2ks"
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2ks/hitscan)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
 	slot_flags = ITEM_SLOT_BACK
 	can_scope = FALSE
 	zoom_factor = 1
