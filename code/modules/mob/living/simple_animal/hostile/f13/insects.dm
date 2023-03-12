@@ -550,6 +550,16 @@
 	density = FALSE
 	gold_core_spawnable = HOSTILE_SPAWN
 	randpixel = 12
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
+		MOB_HEALTH_LIST(5, 10, 1),
+		MOB_RETREAT_DISTANCE_LIST(0, 2, 3),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+	)
 
 	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)
