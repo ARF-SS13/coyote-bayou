@@ -21,6 +21,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	return list(
 	/client/proc/toggle_experimental_clickdrag_thing,				/*toggles the harm intent no-clickdrag thing*/
 	/client/proc/toggle_radpuddle_disco_vomit_nightmare,				/*makes radpuddles flash and show numbers. please dont use this*/
+	/client/proc/show_radpuddle_scores,				/*makes radpuddles flash and show numbers. please dont use this*/
 	/client/proc/invisimin,				/*allows our mob to go invisible/visible*/
 //	/datum/admins/proc/show_traitor_panel,	/*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags*/
@@ -419,15 +420,22 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		return
 	to_chat(world, "<B>The experimental harm-intent clickdrag disable thing has been [GLOB.use_experimental_clickdrag_thing ? "enabled" : "disabled"].</B>")
 
+/// No longer does what it did, but fuck it im keeping the name
 /client/proc/toggle_radpuddle_disco_vomit_nightmare()
-	set name = "Toggle Radpuddle Debug"
+	set name = "Toggle Radturf Screaming"
 	set category = "Debug"
-	set desc = "Toggles radpuddles making everything flash green. Its experimental and everyone will know you pressed a wierd button and Superlagg *will* laugh at you."
+	set desc = "Toggles whether mobs will scream and shout a number when irradiated."
 	GLOB.rad_puddle_debug = !GLOB.rad_puddle_debug
-	log_admin("[key_name(usr)] toggled radpuddle disco vomit nightmare mode.")
-	message_admins("[key_name_admin(usr)] toggled radpuddle disco vomit nightmare mode.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggled radpuddle debug")
-	to_chat(world, "<B>Radpuddles now look [GLOB.rad_puddle_debug ? "godawful" : "not much better"].</B>")
+	log_admin("[key_name(usr)] toggled Radturf screaming.")
+	message_admins("[key_name_admin(usr)] toggled Radturf screaming.")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggled Radturf screaming")
+
+/client/proc/show_radpuddle_scores()
+	set name = "Show Radpuddle Numbers"
+	set category = "Debug"
+	set desc = "Makes the redpuddle'd tiles show numbers."
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_RADIATION_SHOW)
+	message_admins("[key_name_admin(usr)] <B>pinged radiation.</B>")
 
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"

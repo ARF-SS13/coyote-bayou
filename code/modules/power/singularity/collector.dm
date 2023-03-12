@@ -30,6 +30,8 @@
 	rad_insulation = RAD_EXTREME_INSULATION
 	var/obj/item/radio/Radio
 	var/area_radiation = 200
+	var/cached_rads = 0
+	COOLDOWN_DECLARE(radroom_check)
 
 
 /obj/machinery/power/rad_collector/anchored
@@ -54,6 +56,18 @@
 	var/area/A = T.loc
 	if(istype(A, /area/f13/radiation))
 		rad_act(area_radiation)
+	if(COOLDOWN_FINISHED(src, radroom_check)) // Occasionally, get an 'average' of the rads of nearby tiles
+		var/lets_avg = 0
+		var/radsee = 0
+		for(var/turf/turfie in view(7, get_turf(src)))
+			var/somerad = SEND_SIGNAL(turfie, COMSIG_TURF_CHECK_RADIATION)
+			if(somerad)
+				lets_avg++
+				radsee += somerad
+		cached_rads = radsee / max(1, lets_avg * 0.6)
+		COOLDOWN_START(src, radroom_check, 30 SECONDS)
+	if(cached_rads)
+		rad_act(cached_rads)
 	if(!bitcoinmining)
 		if(loaded_tank.air_contents.get_moles(GAS_PLASMA) < 0.0001)
 			investigate_log("<font color='red'>out of fuel</font>.", INVESTIGATE_SINGULO)

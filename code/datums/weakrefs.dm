@@ -99,6 +99,6 @@
 /// Use with care, and ample checks
 #define WEAKERREF(input) "\ref[input]"
 /// Turns a ref into a thing. no guarantee its anything, so check that it *is* something
-/// also a proc cus SSradiation compiles before this one. whatever
+/// also a proc cus SSradturf compiles before this one. whatever
 /proc/RESOLVEREF(ref) 
 	return locate(ref)
