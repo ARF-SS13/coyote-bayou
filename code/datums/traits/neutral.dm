@@ -10,6 +10,33 @@
 	lose_text = span_notice("You can taste again!")
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
 
+/datum/quirk/no_chocolate
+	name = "Chocolate intolerance"
+	desc = "Your metabolism finds chocolate rather disagreeable."
+	value = 0
+	mob_trait = TRAIT_NO_CHOCOLATE
+	gain_text = span_notice("You feel like eating chocolate is a bad idea.")
+	lose_text = span_notice("You feel like it's safe to eat chocolate again")
+	medical_record_text = "Patient has an aversion to theobromine, and therefore cannot have chocolate."
+
+/datum/quirk/white_woman
+	name = "Peanutbutter difficulties"
+	desc = "Your tongue has difficulty handling the adhesiveness of peanut butter"
+	value = 0
+	mob_trait = TRAIT_WHITE_WOMAN
+	gain_text = span_notice("Your tongue lacks the manipulation to properly eat peanut butter.")
+	lose_text = span_notice("Your tongue is skilled at taking on sticky peanut butter.")
+	medical_record_text = "Patient's tongue lacks the dexterity required to eat peanut butter."
+
+/datum/quirk/autobrew //sugary foods create ethanol
+	name = "Autobrewery syndrome"
+	desc = "Your natural gut flora ferments many sugary foods and drinks into alcohol. taking penicillin or eating healthy prevents this."
+	value = 0
+	mob_trait = TRAIT_AUTOBREW
+	gain_text = span_notice("you feel rather fuzzy.")
+	lose_text = span_notice("you feel more coherent.")
+	medical_record_text = "Patient shows chronically unusual blood alcohol levels."
+
 /datum/quirk/snob
 	name = "Snob"
 	desc = "You care about the finer things, if a room doesn't look nice its just not really worth it, is it?"

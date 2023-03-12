@@ -529,4 +529,4 @@ GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
 /obj/item/radio/redwater/examine(mob/user)
 	. = ..()
 	if(GLOB.redwater_frequency)
-		. += "Scratched into the bottom is a note, \"Don't forget, we're tuned to [span_boldnotice(GLOB.redwater_frequency * 0.1)]!\""
+		. += "Scratched into the bottom is a note, \"Don't forget, we're tuned to <span class='boldnotice'>[GLOB.redwater_frequency * 0.1]</span>!\""

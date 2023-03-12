@@ -331,8 +331,7 @@
 				/obj/effect/spawner/bundle/f13/armor/combat,
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
-				/obj/effect/spawner/bundle/f13/armor/vault,
-				/obj/item/clothing/suit/armor/medium/vest/breastplate/khan
+				/obj/effect/spawner/bundle/f13/armor/vault
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest //random raider armor
@@ -753,7 +752,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/bow/recurvebow = 20,
 )
 
-/obj/effect/spawner/lootdrop/f13/weapon/dungeon 
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon
 	name = "dungeon weapons, found in nooks and corners"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
@@ -843,6 +842,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/energy/laser/plasma = 5,
 		/obj/item/gun/energy/ionrifle = 5,
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,
+		/obj/item/gun/energy/laser/solar = 15,
 		/obj/item/melee/powerfist/f13 = 10,
 		/obj/item/gun/ballistic/revolver/ballisticfist = 1,
 		/obj/item/melee/powered/ripper = 5,
@@ -904,7 +904,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 20, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
-		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 20,
+		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 10,
 		/obj/item/gun/ballistic/fatman = 5,
 )
 
@@ -1944,7 +1944,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/bundle/f13/m1919
 	name = "browning m1919 and ammo spawner"
 	items = list(/obj/item/gun/ballistic/automatic/m1919,
-				/obj/item/ammo_box/magazine/mm762
+				/obj/item/ammo_box/magazine/mm308
 				)
 
 /obj/effect/spawner/bundle/f13/dks

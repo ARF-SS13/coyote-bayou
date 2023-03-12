@@ -21,6 +21,7 @@
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
 	maxHealth = 100 
 	health = 100
+	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
 		MOB_EMP_STUN,
 		MOB_EMP_BERSERK,
@@ -46,6 +47,8 @@
 	waddle_amount = 3
 	waddle_up_time = 2
 	waddle_side_time = 1
+	send_mobs = null
+	call_backup = null
 
 	emote_taunt_sound = list(
 		'sound/f13npc/handy/taunt1.ogg',
@@ -128,8 +131,6 @@
 		/obj/item/stack/crafting/electronicparts/three,
 		/obj/item/stock_parts/cell/ammo/mfc
 		)
-	send_mobs = null
-	call_backup = null
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
 	emote_taunt_sound = list(
@@ -219,7 +220,7 @@
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
-	aggrosound = null
+	aggrosound = list("sound/f13npc/liberator/chineserobotcarinsurance.ogg")
 	idlesound = null
 	death_sound = null
 	attack_sound = null
@@ -233,8 +234,6 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
-	send_mobs = null
-	call_backup = null
 	desc_short = "A robot that shoots lasers."
 
 /mob/living/simple_animal/hostile/handy/liberator/yellow
@@ -287,8 +286,6 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
-	send_mobs = null
-	call_backup = null
 	desc_short = "A brainy robot with lasers."
 
 /mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
@@ -428,8 +425,6 @@
 	can_ghost_into = FALSE
 	faction = list("raider")
 	obj_damage = 300
-	send_mobs = null
-	call_backup = null
 
 /mob/living/simple_animal/pet/dog/protectron //Not an actual dog
 	name = "Trading Protectron"
@@ -512,8 +507,6 @@
 
 	aggrosound = FALSE
 	idlesound = FALSE
-	send_mobs = null
-	call_backup = null
 	desc_short = "A sexy robot."
 
 /mob/living/simple_animal/hostile/handy/assaultron/nsb //NSB + Raider Bunker specific.

@@ -22,7 +22,11 @@
 
 //Silver Bow Ammo
 /obj/item/ammo_box/magazine/internal/bow/silver
-	max_ammo = 3 // 6 shots in total
+	max_ammo = 3 // 4 shots in total
+
+//Golden Bow Ammo
+/obj/item/ammo_box/magazine/internal/bow/gold
+	max_ammo = 4 // 5 shots in total
 
 //Crossbow Ammo
 /obj/item/ammo_box/magazine/internal/bow/cross

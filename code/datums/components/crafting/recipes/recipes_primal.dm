@@ -245,6 +245,17 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
+/datum/crafting_recipe/tribalwar/goldenbow
+	name = "Golden Bow"
+	result = /obj/item/gun/ballistic/bow/gold
+	time = 70
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 10,
+				/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/crafting/metalparts = 5)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_available = TRUE
+
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
 	result = /obj/item/gun/ballistic/bow/silver
@@ -332,6 +343,15 @@
 	result = /obj/item/ammo_casing/caseless/arrow/bronze
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bronze = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/tribalwar/arrowgold
+	name = "Golden Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/gold
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 1,
 				/obj/item/stack/sheet/mineral/wood = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
@@ -440,13 +460,35 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
+/datum/crafting_recipe/tribalwar/light_quiver
+	name = "light quiver"
+	result = /obj/item/storage/bag/tribe_quiver/light
+	time = 40
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 2,
+				/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/cloth = 6)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_available = TRUE
+
 /datum/crafting_recipe/tribalwar/tribe_quiver
-	name = "Craft Quiver and Arrows"
+	name = "belt quiver"
 	result = /obj/item/storage/bag/tribe_quiver
 	time = 80
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 8,
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 4,
 				/obj/item/stack/sheet/metal = 4,
-				/obj/item/stack/sheet/leather = 1)
+				/obj/item/stack/sheet/leather = 6)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_available = TRUE
+
+/datum/crafting_recipe/tribalwar/heavy_quiver
+	name = "heavy back quiver"
+	result = /obj/item/storage/bag/tribe_quiver/heavy
+	time = 120 //arbitrary numbers yay
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 4,
+				/obj/item/stack/sheet/metal = 6,
+				/obj/item/stack/sheet/animalhide/deathclaw = 4) //two deathclaw kills. a decent bit of hunting work
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE

@@ -518,7 +518,7 @@
 /datum/supply_pack/security/minigun5mm
 	name = "Weapons - Minigun"
 	desc = "Holy moly, it's here. A refurbished minigun chambered in US five-aught. Heavy, impractical, expensive to buy, expensive to fire, expensive to maintain, and an absolute killer."
-	cost = 50000
+	cost = 30000
 	contains = list(/obj/item/minigunpackbal5mm)
 	crate_name = "minigun crate"
 
@@ -527,7 +527,7 @@
 /datum/supply_pack/security/weapon_wasteland
 	name = "Weapons - Wasteland"
 	desc = "Half a dozen commonly found wasteland weaponry. you might find something nice, sifting through these."
-	cost = 5000
+	cost = 2500
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
@@ -542,7 +542,7 @@
 /datum/supply_pack/security/weapon_dungeon
 	name = "Weapons - Uncommon"
 	desc = "A set of four good quality weapons."
-	cost = 10000
+	cost = 5000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
@@ -555,7 +555,7 @@
 /datum/supply_pack/security/weapon_boss
 	name = "Weapons - Rare"
 	desc = "A pair of rare, valueable weapons, for all your killing needs."
-	cost = 50000 //a big jump from mid tier weapons. shouldn't buy many. will see how this goes with the other changes
+	cost = 15000 //a big jump from mid tier weapons. shouldn't buy many. will see how this goes with the other changes
 	num_contained = 2
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/boss,
@@ -566,7 +566,7 @@
 /datum/supply_pack/security/weapon_unique
 	name = "Weapons - Premium"
 	desc = "A single weapon of incredible rarity. there's no telling what was packed into this crate"
-	cost = 100000
+	cost = 30000
 	num_contained = 1
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/unique
@@ -576,7 +576,7 @@
 /datum/supply_pack/security/weapon_milsurplus
 	name = "Weapons -  Military Surplus"
 	desc = "A crate of long forgotten American weapons from the second world war."
-	cost = 10000
+	cost = 7500
 	num_contained = 8
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/milsurplus,
@@ -593,7 +593,7 @@
 /datum/supply_pack/security/weapon_combloc
 	name = "Weapons - Communist Bloc"
 	desc = "An old crate packed with surplus Chinese and Russian weaponry. you may have to clean off the old cosmoline."
-	cost = 10000
+	cost = 7500
 	num_contained = 8
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/combloc,
@@ -625,7 +625,7 @@
 /datum/supply_pack/security/weapon_police
 	name = "Weapons - Law Enforcement"
 	desc = "A crate full of common police and riot weapons"
-	cost = 10000
+	cost = 7500
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/police,

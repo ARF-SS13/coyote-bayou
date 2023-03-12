@@ -784,6 +784,7 @@
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/clothing/glasses/prism_glasses(src)
 	new /obj/item/stealthboy(src)
+	new /obj/item/stock_parts/cell/high/slime/blue(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"
@@ -807,6 +808,18 @@
 	new /obj/item/lighter/gold(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/card/id/dogtag/risingstarslash(src)
+
+/datum/gear/donator/kits/risingstarslash4
+	name = "Trueshot's Kit"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash4
+	ckeywhitelist = list("risingstarslash")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash4/PopulateContents()
+	new /obj/item/gun/ballistic/bow/gold(src)
+	new /obj/item/storage/bag/tribe_quiver/light(src)
+	new /obj/item/smelling_salts/wayfarer(src)
+	new /obj/item/reagent_containers/pill/fiery_purgative(src)
+	new /obj/item/reagent_containers/pill/antivenom(src)
 
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
@@ -874,7 +887,7 @@
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)*/
 
-/datum/gear/donator/kits/seermankhajiit004
+/*/datum/gear/donator/kits/seermankhajiit004
 	name = "Honey Mayor"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
 	ckeywhitelist = list("seermankhajiit00")
@@ -882,7 +895,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
 	new /obj/item/kit_spawner/townie/mayor(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/card/id/captains_spare(src)
+	new /obj/item/card/id/captains_spare(src)*/
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -993,14 +1006,15 @@
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun(src)
-	new /obj/item/ammo_box/a556/improvised(src)
-	new /obj/item/ammo_box/a556/improvised(src)
+	new /obj/item/ammo_box/a308box/improvised(src)
+	new /obj/item/ammo_box/a308box/improvised(src)
 	new /obj/item/ammo_box/magazine/m556/rifle(src)
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
 	new /obj/item/binoculars(src)
 	new /obj/item/gun_upgrade/barrel/forged(src)
 	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
 	new /obj/item/gun/ballistic/revolver/thatgun(src)
+	new /obj/item/ammo_box/a308box(src)
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"
@@ -1121,6 +1135,17 @@
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
 
 // U
+
+/datum/gear/donator/kits/ursine
+	name = "Zonq Mayor"
+	path = /obj/item/storage/box/large/custom_kit/ursine
+	ckeywhitelist = list("ursine")
+
+/obj/item/storage/box/large/custom_kit/ursine/PopulateContents()
+	new /obj/item/kit_spawner/townie/mayor(src)
+	new /obj/item/radio/headset/headset_town/mayor(src)
+	new /obj/item/card/id/captains_spare(src)
+
 // V
 // W
 

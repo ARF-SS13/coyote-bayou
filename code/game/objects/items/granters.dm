@@ -1253,8 +1253,10 @@
 				traitname = "Ex Tribal"
 				granted_trait = TRAIT_FORMER_TRIBAL
 				crafting_recipe_types = list(
-					/datum/crafting_recipe/tribal/bonetalisman,
+					///datum/crafting_recipe/tribal/bonetalisman,
 					/datum/crafting_recipe/spearfisher,
+					/datum/crafting_recipe/bitterdrink,
+					/datum/crafting_recipe/bitterdrink5,
 					/datum/crafting_recipe/healpoultice,
 					/datum/crafting_recipe/healpoultice5,
 					/datum/crafting_recipe/redpotion,

@@ -338,7 +338,7 @@ datum/chemical_reaction/rezadone
 	required_reagents = list( /datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
 
 /datum/chemical_reaction/medsuture
-	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 20, /datum/reagent/medicine/polypyr = 10) //This might be a bit much, reagent cost should be reviewed after implementation.
+	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 20, /datum/reagent/medicine/ephedrine = 10)
 
 /datum/chemical_reaction/medsuture/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -346,7 +346,7 @@ datum/chemical_reaction/rezadone
 		new /obj/item/stack/medical/suture/medicated(location)
 
 /datum/chemical_reaction/medmesh
-	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/consumable/aloejuice = 10, /datum/reagent/abraxo_cleaner/sterilizine = 10)
+	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/medicine/oxandrolone = 10, /datum/reagent/abraxo_cleaner/sterilizine = 10)
 
 /datum/chemical_reaction/medmesh/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -389,9 +389,9 @@ datum/chemical_reaction/rezadone
 	id = /datum/reagent/medicine/stimpak
 	results = list(/datum/reagent/medicine/stimpak = 20)
 	required_reagents = list(
-		/datum/reagent/medicine/bicaridine = 5, 
-		/datum/reagent/medicine/kelotane = 5, 
-		/datum/reagent/medicine/styptic_powder = 5, 
-		/datum/reagent/medicine/silver_sulfadiazine = 5, 
+		/datum/reagent/medicine/bicaridine = 5,
+		/datum/reagent/medicine/kelotane = 5,
+		/datum/reagent/medicine/styptic_powder = 5,
+		/datum/reagent/medicine/silver_sulfadiazine = 5,
 		)
 	required_temp = 451

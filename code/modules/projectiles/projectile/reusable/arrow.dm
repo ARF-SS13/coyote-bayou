@@ -259,6 +259,15 @@
 	damage = 0.5
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/ash
 
+/obj/item/projectile/bullet/reusable/arrow/gold
+	name = "golden arrow"
+	desc = "Arrow made with gold and wood."
+	damage = 25
+	armour_penetration = 0.15
+	supereffective_damage = 40
+	supereffective_faction = list("hostile","supermutant", "raider", "china")
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/gold
+
 /obj/item/projectile/bullet/reusable/arrow/bone //extra mob damage
 	name = "bone arrow"
 	desc = "Arrow made of bone and sinew."

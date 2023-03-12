@@ -45,6 +45,17 @@
 	blood_volume = 0
 	footstep_type = FOOTSTEP_MOB_CLAW
 	pop_required_to_jump_into = MED_MOB_MIN_PLAYERS
+	variation_list = list(
+		MOB_COLOR_VARIATION(100, 100, 100, 255, 255, 255),
+		MOB_SPEED_LIST(3.3, 3.4, 3.5),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
+		MOB_HEALTH_LIST(110, 115, 120, 130),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 2),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
+	)
+
 
 // MIRELURK HUNTER MALES
 /mob/living/simple_animal/hostile/mirelurk/hunter
@@ -63,6 +74,16 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
+	variation_list = list(
+		MOB_COLOR_VARIATION(100, 100, 100, 255, 255, 255),
+		MOB_SPEED_LIST(3, 3.1, 3.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
+		MOB_HEALTH_LIST(140, 150, 160, 170),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 2),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
+	)
 
 // MIRELURK BABY
 /mob/living/simple_animal/hostile/mirelurk/baby
@@ -84,7 +105,16 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 	pop_required_to_jump_into = 0
-
+	variation_list = list(
+		MOB_COLOR_VARIATION(100, 100, 100, 255, 255, 255),
+		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
+		MOB_HEALTH_LIST(35, 39, 40, 41),
+		MOB_RETREAT_DISTANCE_LIST(5, 6, 7),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(3, 4, 5),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
 
 
 /mob/living/simple_animal/hostile/mirelurk/baby/Initialize()

@@ -49,6 +49,7 @@
 				. += S.z_value
 				break
 
+/* -- Old code before the coyote's Z level mapping system ""overhaul""
 // Attempt to get the turf below the provided one according to Z traits
 /datum/controller/subsystem/mapping/proc/get_turf_below(turf/T)
 	if (!T)
@@ -66,6 +67,37 @@
 	if (!offset)
 		return
 	return locate(T.x, T.y, T.z + offset)
+*/
+
+// Attempt to get the turf below the provided one according to Z traits AND overmap position
+/datum/controller/subsystem/mapping/proc/get_turf_below(turf/T)
+	if (!T)
+		return
+
+	// Leaving these vars here if required!
+	var/datum/space_level/zLoc = get_level(T.z)
+	if(!zLoc)	return
+
+	var/datum/space_level/zBelow = zLoc.neigbours[TEXT_DOWN]
+	if(!zBelow)	return
+
+	var/zResult = zBelow.z_value
+	return locate(T.x, T.y, zResult)
+
+// Attempt to get the turf above the provided one according to Z traits ANDDD overmap position
+/datum/controller/subsystem/mapping/proc/get_turf_above(turf/T)
+	if (!T)
+		return
+
+	// Leaving these vars here if required!
+	var/datum/space_level/zLoc = get_level(T.z)
+	if(!zLoc)	return
+	
+	var/datum/space_level/zUp = zLoc.neigbours[TEXT_UP]
+	if(!zUp)	return
+
+	var/zResult = zUp.z_value
+	return locate(T.x, T.y, zResult)
 
 // Prefer not to use this one too often
 /datum/controller/subsystem/mapping/proc/get_station_center()
