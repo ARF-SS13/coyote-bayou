@@ -753,7 +753,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/bow/recurvebow = 20,
 )
 
-/obj/effect/spawner/lootdrop/f13/weapon/dungeon 
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon
 	name = "dungeon weapons, found in nooks and corners"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
@@ -843,6 +843,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/energy/laser/plasma = 5,
 		/obj/item/gun/energy/ionrifle = 5,
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,
+		/obj/item/gun/energy/laser/solar = 15,
 		/obj/item/melee/powerfist/f13 = 10,
 		/obj/item/gun/ballistic/revolver/ballisticfist = 1,
 		/obj/item/melee/powered/ripper = 5,
