@@ -331,8 +331,7 @@
 				/obj/effect/spawner/bundle/f13/armor/combat,
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
-				/obj/effect/spawner/bundle/f13/armor/vault,
-				/obj/item/clothing/suit/armor/medium/vest/breastplate/khan
+				/obj/effect/spawner/bundle/f13/armor/vault
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest //random raider armor
