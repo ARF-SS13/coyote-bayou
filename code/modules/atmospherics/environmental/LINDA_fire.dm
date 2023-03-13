@@ -10,7 +10,7 @@
 
 
 /*
- /turf/open/hotspot_expose(exposed_temperature, exposed_volume, soh)
+/turf/open/hotspot_expose(exposed_temperature, exposed_volume, soh)
 	if(!air)
 		return
 
