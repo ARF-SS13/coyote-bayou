@@ -66,7 +66,7 @@
 	handle_mutations_and_radiation()
 
 	//Breathing, if applicable
-	handle_breathing(times_fired)
+	//handle_breathing(times_fired)
 
 	if (QDELETED(src)) // diseases can qdel the mob via transformations
 		return FALSE
@@ -99,11 +99,11 @@
 	if(!loc)
 		return FALSE
 
-	var/datum/gas_mixture/environment = loc.return_air()
+	// var/datum/gas_mixture/environment = loc.return_air()
 
-	//Handle temperature/pressure differences between body and environment
-	if(environment)
-		handle_environment(environment)
+	// //Handle temperature/pressure differences between body and environment
+	// if(environment)
+	// 	handle_environment(environment)
 
 	handle_fire()
 

@@ -90,9 +90,9 @@
 	if(ismob(loc))
 		return
 
-	var/datum/gas_mixture/environment
-	if(loc)
-		environment = loc.return_air()
+	// var/datum/gas_mixture/environment
+	// if(loc)
+	// 	environment = loc.return_air()
 
 	var/datum/gas_mixture/breath
 
@@ -114,7 +114,7 @@
 	else
 		//Breathe from internal
 		breath = get_breath_from_internal(BREATH_VOLUME)
-
+		/*
 		if(isnull(breath)) //in case of 0 pressure internals
 
 			if(isobj(loc)) //Breathe from loc as object
@@ -127,11 +127,12 @@
 					breath_ratio = BREATH_VOLUME/environment.return_volume()
 
 				breath = loc.remove_air_ratio(breath_ratio)
+			
 		else //Breathe from loc as obj again
 			if(istype(loc, /obj/))
 				var/obj/loc_as_obj = loc
 				loc_as_obj.handle_internal_lifeform(src,0)
-
+		*/
 	if(breath)
 		breath.set_volume(BREATH_VOLUME)
 	check_breath(breath)
@@ -156,7 +157,7 @@
 		adjustOxyLoss(2)
 
 	//CRIT
-	if(!breath || (breath.total_moles() == 0) || !lungs)
+	if((breath.total_moles() == 0) || !lungs)
 		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
 			return
 		adjustOxyLoss(1)
