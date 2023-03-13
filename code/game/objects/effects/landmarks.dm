@@ -919,26 +919,6 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Town Scientist"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /obj/effect/landmark/start/f13/noyan
 	name = "Noyan"
 	icon_state = "Pusher"
@@ -962,3 +942,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/mangudai
 	name = "Mangudai"
 	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/biker
+	name = "Hell's Nomad"
+	icon_state = "Assistant"
+/obj/effect/landmark/start/f13/biker_boss
+	name = "Hell's Nomad Boss"
+	icon_state = "Captain"

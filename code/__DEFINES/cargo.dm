@@ -25,7 +25,7 @@
 	list("cultpod", "bloody supply pod", "An orbital supply drop pod, this one bears the inscription ISS Event Horizon"),\
 	list("missilepod", "cruise missile", "A missile that didn't detonate. There appears to be a hatch to access the internal payload, but it seems impossible to open."),\
 	list("smissilepod", "\improper Syndicate cruise missile", "A missile that didn't detonate. There appears to be a hatch to access the internal payload, but it seems impossible to open."),\
-	list("boxpod", "\improper Aussec supply crate", "An incredibly sturdy supply crate, designed to withstand orbital re-entry. Has 'Aussec Armory - 2532' engraved on the side."),\
+	list("boxpod", "\improper orbital delivery crate", "An incredibly sturdy supply crate, designed to withstand orbital re-entry."),\
 	list("fruitpod", "\improper Orange", "An angry orange."),\
 	list("", "\improper S.T.E.A.L.T.H. pod MKVII", "A supply pod that, under normal circumstances, is completely invisible to conventional methods of detection. How are you even seeing this?"),\
 	list("", "", "")\
