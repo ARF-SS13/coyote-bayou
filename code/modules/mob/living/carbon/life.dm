@@ -94,7 +94,7 @@
 	// if(loc)
 	// 	environment = loc.return_air()
 
-	var/datum/gas_mixture/breath
+	//var/datum/gas_mixture/breath
 
 	if(!getorganslot(ORGAN_SLOT_BREATHING_TUBE))
 		if(health <= HEALTH_THRESHOLD_FULLCRIT || (pulledby && pulledby.grab_state >= GRAB_KILL) || HAS_TRAIT(src, TRAIT_MAGIC_CHOKE) || (lungs && lungs.organ_flags & ORGAN_FAILING))
@@ -108,13 +108,14 @@
 		losebreath--
 		if(prob(10))
 			emote("gasp")
-		if(istype(loc, /obj/))
-			var/obj/loc_as_obj = loc
-			loc_as_obj.handle_internal_lifeform(src,0)
+		// if(istype(loc, /obj/))
+		// 	var/obj/loc_as_obj = loc
+		// 	loc_as_obj.handle_internal_lifeform(src,0)
+	/*
 	else
 		//Breathe from internal
 		breath = get_breath_from_internal(BREATH_VOLUME)
-		/*
+		
 		if(isnull(breath)) //in case of 0 pressure internals
 
 			if(isobj(loc)) //Breathe from loc as object
@@ -133,13 +134,13 @@
 				var/obj/loc_as_obj = loc
 				loc_as_obj.handle_internal_lifeform(src,0)
 		*/
-	if(breath)
-		breath.set_volume(BREATH_VOLUME)
-	check_breath(breath)
+	// if(breath)
+	// 	breath.set_volume(BREATH_VOLUME)
+	// check_breath(breath)
 
-	if(breath)
-		loc.assume_air(breath)
-		air_update_turf()
+	// if(breath)
+	// 	loc.assume_air(breath)
+	// 	air_update_turf()
 
 /mob/living/carbon/proc/has_smoke_protection()
 	if(HAS_TRAIT(src, TRAIT_NOBREATH))
