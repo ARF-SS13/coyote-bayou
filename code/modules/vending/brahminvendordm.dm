@@ -54,7 +54,7 @@ GLOBAL_VAR(orbital_cow_cooldown)
 		. += "The [span_green("COW READY")] light is blinking."
 	else
 		. += "The [span_red("COW (NOT) READY")] light is blinking."
-		. += "Under it reads: [DisplayTimeText(GLOB.orbital_cow_cooldown - world.time, 30 SECONDS)]."
+		. += "Under it reads: [DisplayTimeText(GLOB.orbital_cow_cooldown - world.time, 30)]."
 
 /// Activates the beacon!
 /obj/item/brahmin_beacon/proc/activate_beacon(mob/user)
