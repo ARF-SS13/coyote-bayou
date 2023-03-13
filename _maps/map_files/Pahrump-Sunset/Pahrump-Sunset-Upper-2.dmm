@@ -311,25 +311,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"eb" = (
-/obj/structure/bookshelf,
-/obj/item/trash/plate{
-	pixel_y = 16;
-	pixel_x = 7;
-	layer = 2.9
-	},
-/obj/item/candle/infinite{
-	pixel_y = 18;
-	pixel_x = 2
-	},
-/obj/item/trash/candle{
-	pixel_y = 15;
-	pixel_x = -7
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "ec" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-18";
@@ -471,6 +452,14 @@
 /obj/structure/junk/small,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"ga" = (
+/obj/effect/turf_decal/trimline/brown/filled{
+	icon_state = "trimline_fill";
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/brown/filled/corner,
+/turf/open/floor/carpet/airless,
+/area/f13/building)
 "gf" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	pixel_y = 6
@@ -736,16 +725,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"kb" = (
-/obj/effect/turf_decal/trimline/brown/filled{
-	icon_state = "trimline_fill";
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/brown/filled{
-	icon_state = "trimline_fill"
-	},
-/turf/open/floor/carpet/airless,
-/area/f13/building)
 "kc" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Fruit Gang Strongarm"
@@ -1062,11 +1041,19 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "pg" = (
-/obj/structure/chair/sofa/left{
-	dir = 8;
-	icon_state = "sofacorner"
+/obj/structure/bookshelf,
+/obj/item/trash/candle{
+	pixel_y = 19;
+	pixel_x = 3
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/item/candle/infinite{
+	pixel_y = 19;
+	pixel_x = -19
+	},
+/obj/item/clothing/head/helmet/skull{
+	pixel_y = 16;
+	pixel_x = 7
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -1286,6 +1273,24 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"st" = (
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18;
+	pixel_y = -1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"sF" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_corner_fill";
+	dir = 1
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "sN" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -1345,6 +1350,17 @@
 "tM" = (
 /turf/closed/indestructible/riveted,
 /area/f13/tcoms)
+"tY" = (
+/obj/structure/railing/corner{
+	dir = 8;
+	color = "#A47449"
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = -18
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "ug" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/neutral{
@@ -1669,6 +1685,15 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"zi" = (
+/obj/structure/chair/sofa/left{
+	dir = 1;
+	icon_state = "sofacorner"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "zp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
@@ -1799,6 +1824,25 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"AP" = (
+/obj/structure/bookshelf,
+/obj/item/trash/plate{
+	pixel_y = 16;
+	pixel_x = 7;
+	layer = 2.9
+	},
+/obj/item/candle/infinite{
+	pixel_y = 18;
+	pixel_x = 2
+	},
+/obj/item/trash/candle{
+	pixel_y = 15;
+	pixel_x = -7
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "AQ" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -1865,16 +1909,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"Bp" = (
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_y = 11;
-	pixel_x = -21
-	},
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
-	},
-/area/f13/building)
 "Bq" = (
 /obj/structure/bonfire/prelit,
 /obj/effect/decal/cleanable/blood,
@@ -2055,17 +2089,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
-"CS" = (
-/obj/structure/railing/corner{
-	color = "#A47449"
-	},
-/obj/structure/fence{
-	icon_state = "end";
-	pixel_x = 18;
-	pixel_y = -6
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
 "CU" = (
 /obj/structure/fence{
 	dir = 4;
@@ -2215,6 +2238,34 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Fd" = (
+/obj/structure/table/wood{
+	pixel_y = 5;
+	pixel_x = -8;
+	layer = 3
+	},
+/obj/item/candle/infinite{
+	pixel_x = -13;
+	pixel_y = 13;
+	layer = 3.1
+	},
+/obj/item/trash/candle{
+	pixel_y = 4;
+	pixel_x = 1
+	},
+/obj/item/trash/plate{
+	pixel_y = 9;
+	pixel_x = -10
+	},
+/obj/item/candle/infinite{
+	pixel_x = -5;
+	pixel_y = 11;
+	layer = 3.1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "Fg" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
@@ -2334,17 +2385,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"Ht" = (
-/obj/effect/turf_decal/trimline/brown/filled{
-	icon_state = "trimline_fill";
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/brown/filled/corner{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/airless,
-/area/f13/building)
 "Hu" = (
 /obj/structure/wreck/trash/machinepiletwo{
 	icon_state = "boxfort"
@@ -2377,17 +2417,6 @@
 /turf/open/floor/f13/wood{
 	color = "#999999"
 	},
-/area/f13/wasteland)
-"HS" = (
-/obj/structure/railing/corner{
-	color = "#A47449"
-	},
-/obj/structure/fence{
-	icon_state = "end";
-	pixel_x = 18;
-	pixel_y = -1
-	},
-/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "HV" = (
 /obj/effect/turf_decal/stripes/line{
@@ -2613,6 +2642,17 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"KL" = (
+/obj/effect/turf_decal/trimline/brown/filled{
+	icon_state = "trimline_fill";
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/brown/filled/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/airless,
+/area/f13/building)
 "KP" = (
 /obj/structure/fence{
 	icon_state = "end";
@@ -2680,6 +2720,17 @@
 /obj/effect/spawner/lootdrop/f13/weapon/wasteland,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Lz" = (
+/obj/structure/chair/office/dark{
+	dir = 1;
+	pixel_x = 17;
+	pixel_y = 11
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "LB" = (
 /obj/structure/rack/shelf_metal,
 /obj/machinery/light/broken{
@@ -2737,34 +2788,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"MI" = (
-/obj/structure/table/wood{
-	pixel_y = 5;
-	pixel_x = -8;
-	layer = 3
-	},
-/obj/item/candle/infinite{
-	pixel_x = -13;
-	pixel_y = 13;
-	layer = 3.1
-	},
-/obj/item/trash/candle{
-	pixel_y = 4;
-	pixel_x = 1
-	},
-/obj/item/trash/plate{
-	pixel_y = 9;
-	pixel_x = -10
-	},
-/obj/item/candle/infinite{
-	pixel_x = -5;
-	pixel_y = 11;
-	layer = 3.1
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "MJ" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -2808,17 +2831,6 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
-"Ns" = (
-/obj/structure/chair/office/dark{
-	dir = 1;
-	pixel_x = 17;
-	pixel_y = 22
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "Nw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
@@ -2827,12 +2839,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"Nx" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "Nz" = (
 /obj/item/paper/crumpled{
 	pixel_y = 7;
@@ -3060,15 +3066,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"Qr" = (
-/obj/structure/chair/sofa/left{
-	dir = 1;
-	icon_state = "sofacorner"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "Qx" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3330,6 +3327,17 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"Ug" = (
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18;
+	pixel_y = -6
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Uj" = (
 /obj/item/stock_parts/cell/super/empty,
 /obj/effect/decal/cleanable/blood/drip,
@@ -3471,24 +3479,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"VO" = (
-/obj/structure/bookshelf,
-/obj/item/trash/candle{
-	pixel_y = 19;
-	pixel_x = 3
-	},
-/obj/item/candle/infinite{
-	pixel_y = 19;
-	pixel_x = -19
-	},
-/obj/item/clothing/head/helmet/skull{
-	pixel_y = 16;
-	pixel_x = 7
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "VX" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/blood/drip,
@@ -3496,6 +3486,16 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"Wc" = (
+/obj/effect/turf_decal/trimline/brown/filled{
+	icon_state = "trimline_fill";
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/filled{
+	icon_state = "trimline_fill"
+	},
+/turf/open/floor/carpet/airless,
+/area/f13/building)
 "Wg" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3568,13 +3568,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"WU" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill";
-	dir = 1
-	},
-/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Xj" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -3674,15 +3667,11 @@
 	},
 /area/f13/wasteland)
 "Yh" = (
-/obj/structure/bookshelf,
-/obj/item/trash/candle{
-	pixel_y = 16;
-	pixel_x = 3
+/obj/structure/chair/sofa/left{
+	dir = 8;
+	icon_state = "sofacorner"
 	},
-/obj/item/candle/infinite{
-	pixel_y = 16;
-	pixel_x = -14
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -3701,17 +3690,12 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
-"YD" = (
-/obj/structure/railing/corner{
-	dir = 8;
-	color = "#A47449"
+"YE" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
-/obj/structure/fence{
-	icon_state = "end";
-	pixel_x = -18
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/area/f13/building)
 "YK" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3726,12 +3710,18 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "YN" = (
-/obj/effect/turf_decal/trimline/brown/filled{
-	icon_state = "trimline_fill";
-	dir = 9
+/obj/structure/bookshelf,
+/obj/item/trash/candle{
+	pixel_y = 16;
+	pixel_x = 3
 	},
-/obj/effect/turf_decal/trimline/brown/filled/corner,
-/turf/open/floor/carpet/airless,
+/obj/item/candle/infinite{
+	pixel_y = 16;
+	pixel_x = -14
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "Zc" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant{
@@ -3754,6 +3744,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Zt" = (
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_y = 11;
+	pixel_x = -21
+	},
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
+	},
+/area/f13/building)
 "Zy" = (
 /obj/structure/simple_door/bunker,
 /turf/open/indestructible/ground/outside/roof,
@@ -7281,7 +7281,7 @@ hm
 hm
 SP
 qt
-WU
+sF
 Wr
 Wr
 Wr
@@ -12685,7 +12685,7 @@ rK
 hm
 hm
 hm
-CS
+Ug
 MJ
 MJ
 MJ
@@ -12945,7 +12945,7 @@ hm
 rL
 ec
 oS
-Qr
+zi
 rK
 hm
 hm
@@ -13198,11 +13198,11 @@ zC
 rK
 hm
 hm
-HS
+st
 Wg
 SE
 rE
-pg
+Yh
 rK
 hm
 hm
@@ -13457,9 +13457,9 @@ hm
 LV
 oi
 zW
-YN
-Ht
-MI
+ga
+KL
+Fd
 rK
 hm
 hm
@@ -13714,7 +13714,7 @@ hm
 mO
 KP
 do
-kb
+Wc
 Cj
 JM
 rK
@@ -13970,10 +13970,10 @@ rK
 hm
 mO
 Bs
-Ns
+Lz
 pO
 Eq
-Yh
+YN
 rK
 hm
 hm
@@ -14227,10 +14227,10 @@ rK
 hm
 II
 QI
-Nx
+YE
 WH
 mY
-eb
+AP
 rK
 hm
 hm
@@ -14487,7 +14487,7 @@ oi
 Nz
 bB
 jP
-VO
+pg
 rK
 hm
 hm
@@ -14740,7 +14740,7 @@ zC
 rK
 hm
 hm
-YD
+tY
 dw
 dw
 dw
@@ -16020,7 +16020,7 @@ rS
 rS
 AN
 rS
-Bp
+Zt
 zC
 rK
 hm
