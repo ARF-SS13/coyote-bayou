@@ -363,6 +363,7 @@ Follower Volunteer
 			/datum/job/followers/f13practitioner,
 		),
 	)
+
 	//the follower volunteer doesn't need more access as it is already stored in the /datum/job/followers
 
 /datum/outfit/job/followers/f13followervolunteer
