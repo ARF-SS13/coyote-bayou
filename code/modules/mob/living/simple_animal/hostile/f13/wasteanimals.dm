@@ -110,7 +110,7 @@
 	desc_important = "Still in development! Report wierdness on the discord!"
 
 	variation_list = list(
-		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
