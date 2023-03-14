@@ -965,6 +965,11 @@
 	message = "reeeeeees."
 	sound = 'sound/f13effects/sunsetsounds/frogree.ogg'
 
+/datum/emote/living/eyebrowmenace
+	key = "eyebrowboom"
+	key_third_person = "raises an eyebrow menacingly!"
+	message = "raises an eyebrow menacingly!"
+	sound = 'sound/f13effects/sunsetsounds/vineboom.ogg'
 
 /datum/emote/living/frogcry
 	key = "frogcry"
