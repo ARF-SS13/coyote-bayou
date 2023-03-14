@@ -144,7 +144,6 @@
 	icon = 'modular_coyote/icons/objects/survival_guide.dmi'
 	icon_state = "survbook"
 	title = "Advice on Surviving - How not to get eaten by Gecko's edition"
-	w_class = WEIGHT_CLASS_TINY
 	dat = {"<html>
 				<head>
 				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
