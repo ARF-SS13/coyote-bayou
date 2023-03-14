@@ -450,6 +450,21 @@
 		if(7 to INFINITY)
 			msg += "<span class='notice'><b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b></span>\n"
 
+	var/can_see_tats = FALSE
+	if(get_dist(user, src) <= TATTOO_VISIBILITY_RANGE)
+		for(var/X in bodyparts) // just check if *any* tats are visible
+			var/obj/item/bodypart/BP = X
+			if(!LAZYLEN(BP.tattoos))
+				continue
+			if(in_range(user, src)) // You can see tats if you're close
+				can_see_tats = TRUE
+				break
+			if(!LAZYLEN(clothingonpart(BP)))
+				can_see_tats = TRUE
+				break
+	if(can_see_tats)
+		msg += span_notice("[t_He] seem[p_s()] to have some ink done. <a href='?src=[REF(src)];show_tattoos=1'>\[Look closer?\]</a>")
+
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
 

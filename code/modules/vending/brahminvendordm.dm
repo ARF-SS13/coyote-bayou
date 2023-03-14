@@ -53,7 +53,7 @@ GLOBAL_VAR(orbital_cow_cooldown)
 	if(GLOB.orbital_cow_catapult_ready)
 		. += "The [span_green("COW READY")] light is blinking."
 	else
-		. += "The [span_red("COW (NOT) READY")] light is blinking."
+		. += "The [span_green("COW [span_red("NOT")] READY")] light is blinking."
 		. += "Under it reads: [DisplayTimeText(GLOB.orbital_cow_cooldown - world.time, 30)]."
 
 /// Activates the beacon!
@@ -78,7 +78,8 @@ GLOBAL_VAR(orbital_cow_cooldown)
 	delivering_cow = TRUE
 	COOLDOWN_START(GLOB, orbital_cow_cooldown, COW_CANNON_RELOAD_DELAY)
 	GLOB.orbital_cow_catapult_ready = FALSE
-	playsound(src, 'sound/machines/fuckedup_fax.ogg', 100, ignore_walls = TRUE)
+	playsound(src, 'sound/machines/switch_on.ogg', 80, ignore_walls = TRUE)
+	playsound(src, 'sound/machines/fuckedup_fax.ogg', 80, ignore_walls = TRUE)
 	if(in_range(src, user))
 		user.show_message(span_notice("...and the uplink starts making noises like it's doing something!"))
 	addtimer(CALLBACK(src, .proc/drop_cow, user), 7.5 SECONDS)

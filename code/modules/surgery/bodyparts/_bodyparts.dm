@@ -91,6 +91,8 @@
 
 	/// The scars currently afflicting this body part
 	var/list/scars
+	/// the tattoos on this part
+	var/list/tattoos
 	/// Our current stored wound damage multiplier
 	var/wound_damage_multiplier = 1
 
@@ -109,7 +111,7 @@
 	var/obj/item/stack/medical/current_gauze
 	/// If we have a suture stitching our wounds closed
 	var/obj/item/stack/medical/current_suture
-	COOLDOWN_DECLARE(bandage_isnt_good_enough)
+	//COOLDOWN_DECLARE(bandage_isnt_good_enough)
 
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
@@ -127,6 +129,12 @@
 	if(owner)
 		owner.bodyparts -= src
 		owner = null
+	if(current_gauze)
+		qdel(current_gauze)
+	if(current_suture)
+		qdel(current_suture)
+	if(LAZYLEN(tattoos))
+		QDEL_LIST(tattoos)
 	return ..()
 
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)
@@ -1391,3 +1399,62 @@
 			. = round(. / 600, 1)
 			if(covering == COVERING_TIME_MINUTE_FUZZY)
 				. = round(., 5)
+
+/// Adds a tattoo to this bodypart
+/obj/item/bodypart/proc/add_tattoo(datum/tattoo/tat, location)
+	if(tattoos[location]) // theres a tat there
+		return FALSE
+	if(istype(tat))
+		var/datum/tattoo/ink = new tat(src, cool_tat = tat) // easiest just to copy over the vars, nobody'll ever know
+		tattoos[location] = ink
+		ink.owner_limb = src
+		return TRUE
+	if(ispath(tat))
+		var/datum/tattoo/ink = new tat(src)
+		tattoos[location] = ink
+		ink.owner_limb = src
+		return TRUE
+
+/// Removes a tattoo to this bodypart. accepts a location, path, type, or anything in between, cus why tf not
+/obj/item/bodypart/proc/remove_tattoo(datum/tattoo/tat, location)
+	if(location)
+		if(!istype(tat) && !ispath(tat) && istype(tattoos[location], /datum/tattoo))
+			var/datum/tattoo/tattie = tattoos[location]
+			qdel(tattie)
+			tattoos[location] = null
+			return TRUE
+		if(istype(tat))
+			qdel(tat)
+			tattoos[location] = null
+			return TRUE	
+		if(ispath(tat))
+			var/datum/tattoo/tattie = tattoos[location]
+			if(tattie.type == tat)
+				qdel(tattie)
+				tattoos[location] = null
+				return TRUE
+	// no location, just a type/path? k
+	if(istype(tat))
+		for(var/key in tattoos)
+			if(tattoos[key] == tat)
+				qdel(tat)
+				tattoos[key] = null
+				return TRUE
+	if(ispath(tat))
+		for(var/key in tattoos)
+			if(!istype(tattoos[key], /datum/tattoo))
+				continue
+			var/datum/tattoo/tattie = tattoos[key]
+			if(tattie.type == tat)
+				qdel(tat)
+				tattoos[key] = null
+				return TRUE
+
+/// Gets all the cool tats' flavors
+/obj/item/bodypart/proc/get_tattoo_flavor()
+	if(!LAZYLEN(tattoos))
+		return
+	var/list/msg = list()
+	for(var/datum/tattoo/ink in tattoos)
+		msg += ink.get_desc(owner)
+	. = jointext(msg, "<br>")
