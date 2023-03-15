@@ -3852,12 +3852,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"bOy" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "bOz" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -3867,13 +3861,6 @@
 "bOA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
-"bOC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "darkredfull"
-	},
 /area/f13/building)
 "bOD" = (
 /obj/structure/barricade/bars{
@@ -3915,24 +3902,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/caves)
-"bOJ" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 32;
-	pixel_y = -8
-	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = 30
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "bOK" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/f13{
@@ -3951,16 +3920,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/trainstation)
-"bON" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = 30
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "bOO" = (
 /turf/closed/wall/f13/store,
 /area/f13/building/trainstation)
@@ -4024,12 +3983,6 @@
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"bOV" = (
-/obj/machinery/light/floor,
-/turf/open/floor/f13{
-	icon_state = "darkredfull"
-	},
-/area/f13/building)
 "bOW" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/cloth/ten,
@@ -4038,17 +3991,6 @@
 /obj/item/stack/sheet/cloth/ten,
 /obj/item/stack/sheet/cloth/ten,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
-"bOX" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
 /area/f13/building)
 "bOY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4065,53 +4007,11 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/trainstation)
-"bPa" = (
-/obj/machinery/button/door{
-	id = "bankvault";
-	name = "bank vault button";
-	pixel_y = -27;
-	req_one_access_txt = "52"
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
-"bPb" = (
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
-"bPc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "bPe" = (
 /obj/structure/barricade/bars{
 	layer = 3.5
 	},
 /turf/closed/wall/r_wall,
-/area/f13/building)
-"bPg" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = 30
-	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = -25;
-	pixel_y = -8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
 /area/f13/building)
 "bPh" = (
 /obj/structure/bed/wooden,
@@ -4158,13 +4058,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/trainstation)
-"bPm" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/stack/f13Cash/random/banker,
-/turf/open/floor/f13{
-	icon_state = "darkredfull"
-	},
-/area/f13/building)
 "bPn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -5404,21 +5297,6 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/neutral,
 /area/f13/tunnel)
-"cgI" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = -25;
-	pixel_y = -8
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "cgV" = (
 /turf/open/floor/f13/wood,
 /area/f13/bar)
@@ -8457,14 +8335,6 @@
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"ejG" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "ejI" = (
 /obj/structure/chair/stool{
 	icon_state = "bench"
@@ -11376,21 +11246,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
-"gzT" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 32;
-	pixel_y = -8
-	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "gzX" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibmid1"
@@ -12182,16 +12037,6 @@
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
 	},
 /area/f13/caves)
-"hil" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "hio" = (
 /obj/structure/spider/cocoon,
 /obj/structure/spider/stickyweb,
@@ -14302,15 +14147,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/building/sewers)
-"iMY" = (
-/obj/structure/stairs/north{
-	color = "#A47449";
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "iMZ" = (
 /obj/item/reagent_containers/glass/beaker/waterbottle,
 /turf/open/floor/carpet/purple,
@@ -14708,16 +14544,6 @@
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
 	name = "dirty floor"
-	},
-/area/f13/building)
-"jct" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
 	},
 /area/f13/building)
 "jcA" = (
@@ -15571,22 +15397,6 @@
 /area/f13/caves)
 "jLS" = (
 /turf/open/floor/plating/tunnel,
-/area/f13/building)
-"jLV" = (
-/obj/machinery/door/airlock/vault{
-	autoclose = "TRUE";
-	layer = 2;
-	max_integrity = 1000;
-	name = "Bighorn Vault";
-	normal_integrity = 800;
-	req_one_access_txt = "52"
-	},
-/obj/machinery/door/poddoor/ert{
-	id = "bankvault";
-	layer = 3;
-	name = "Vault Blast Door"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "jMq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17263,13 +17073,6 @@
 /obj/machinery/light/sign,
 /turf/closed/wall/rust,
 /area/f13/bar)
-"kZW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/kirbyplants/random,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "lag" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/stockparts/deluxe,
@@ -22452,12 +22255,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
-"oVl" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "darkredfull"
-	},
-/area/f13/building)
 "oVs" = (
 /obj/structure/chair/folding{
 	dir = 1
@@ -23059,13 +22856,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"prI" = (
-/obj/machinery/mineral/mint,
-/obj/item/stack/sheet/metal/fifty,
-/turf/open/floor/f13{
-	icon_state = "darkredfull"
-	},
-/area/f13/building)
 "prT" = (
 /obj/structure/closet/firecloset,
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon,
@@ -27023,11 +26813,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
-"sky" = (
-/turf/open/floor/f13{
-	icon_state = "darkredfull"
-	},
-/area/f13/building)
 "skC" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/deliveryChute{
@@ -27357,16 +27142,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/building/sewers)
-"szL" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = -25;
-	pixel_y = -8
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/building)
 "sAi" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/lattice{
@@ -44588,10 +44363,10 @@ rGC
 iFf
 bOT
 bPE
-bPE
-bPE
-bPE
-bPE
+jLS
+jLS
+jLS
+jLS
 uUw
 bOb
 bOb
@@ -44845,10 +44620,10 @@ bOb
 bOb
 uUw
 bPE
-bPg
-szL
-cgI
-bPE
+nJn
+jLS
+nJn
+jLS
 uUw
 bOb
 nmE
@@ -45102,10 +44877,10 @@ qLb
 gcv
 uUw
 bPE
-bON
-bPb
-bOX
-bPE
+nJn
+nJn
+nJn
+nJn
 uUw
 bOb
 qHy
@@ -45359,10 +45134,10 @@ gcv
 gcv
 uUw
 bPE
-bON
-bPb
-hil
-bPE
+jLS
+jLS
+jLS
+jLS
 uUw
 bOb
 nmE
@@ -45616,10 +45391,10 @@ gcv
 qLb
 uUw
 bPE
-bOJ
-bOy
-gzT
-bPE
+nJn
+jLS
+nJn
+jLS
 uUw
 uUw
 uUw
@@ -45873,14 +45648,14 @@ gcv
 gcv
 bOT
 bPE
-bPE
-bLL
-bPE
-bPE
-bPE
-bPE
-bPE
-bPE
+nJn
+nJn
+nJn
+nJn
+jLS
+jLS
+jLS
+jLS
 uUw
 bPE
 bPE
@@ -46130,14 +45905,14 @@ hWr
 gcv
 uUw
 bPE
-bPE
-jct
-kZW
-bPE
-sky
-prI
-bOV
-bPE
+jLS
+jLS
+nJn
+jLS
+nJn
+jLS
+nJn
+jLS
 uUw
 bPE
 bPE
@@ -46387,14 +46162,14 @@ eFN
 eFN
 uUw
 bPE
-bPE
-bPc
-bPc
-jLV
-bOC
-bOC
-bOC
-bPE
+nJn
+jLS
+jLS
+jLS
+jLS
+jLS
+nJn
+nJn
 uUw
 bPE
 bPE
@@ -46644,14 +46419,14 @@ aty
 eFN
 uUw
 bPE
-iMY
-bPb
-bPa
-bPE
-oVl
-bOC
-sky
-bPE
+nJn
+nJn
+nJn
+jLS
+nJn
+jLS
+nJn
+nJn
 uUw
 bPE
 bPE
@@ -46901,14 +46676,14 @@ aty
 eFN
 bOT
 bPE
-bPb
-bPb
-bPb
-bPE
-bPm
-bOC
-bPm
-bPE
+jLS
+jLS
+nJn
+nJn
+nJn
+nJn
+nJn
+nJn
 uUw
 bPE
 bPE
@@ -47158,14 +46933,14 @@ kpv
 eFN
 uUw
 bPE
-bOy
-bOy
-bPc
-bPE
-bPm
-bOV
-bPm
-bPE
+nJn
+nJn
+nJn
+nJn
+nJn
+nJn
+nJn
+jLS
 uUw
 bPE
 kpv
@@ -47415,14 +47190,14 @@ aty
 eFN
 uUw
 bPE
-ejG
-bPb
-kZW
-bPE
-bPE
-bPE
-bPE
-bPE
+nJn
+nJn
+nJn
+nJn
+nJn
+nJn
+nJn
+nJn
 uUw
 bPE
 ihO
