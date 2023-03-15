@@ -111,32 +111,11 @@
 		// if(istype(loc, /obj/))
 		// 	var/obj/loc_as_obj = loc
 		// 	loc_as_obj.handle_internal_lifeform(src,0)
-	/*
-	else
-		//Breathe from internal
-		breath = get_breath_from_internal(BREATH_VOLUME)
-		
-		if(isnull(breath)) //in case of 0 pressure internals
 
-			if(isobj(loc)) //Breathe from loc as object
-				var/obj/loc_as_obj = loc
-				breath = loc_as_obj.handle_internal_lifeform(src, BREATH_VOLUME)
-
-			else if(isturf(loc)) //Breathe from loc as turf
-				var/breath_ratio = 0
-				if(environment)
-					breath_ratio = BREATH_VOLUME/environment.return_volume()
-
-				breath = loc.remove_air_ratio(breath_ratio)
-			
-		else //Breathe from loc as obj again
-			if(istype(loc, /obj/))
-				var/obj/loc_as_obj = loc
-				loc_as_obj.handle_internal_lifeform(src,0)
-		*/
 	// if(breath)
 	// 	breath.set_volume(BREATH_VOLUME)
-	// check_breath(breath)
+	
+	check_breath()
 
 	// if(breath)
 	// 	loc.assume_air(breath)
@@ -149,7 +128,7 @@
 
 
 //Third link in a breath chain, calls handle_breath_temperature()
-/mob/living/carbon/proc/check_breath(datum/gas_mixture/breath)
+/mob/living/carbon/proc/check_breath()
 	if((status_flags & GODMODE))
 		return
 
@@ -158,7 +137,7 @@
 		adjustOxyLoss(2)
 
 	//CRIT
-	if((breath.total_moles() == 0) || !lungs)
+	if(!lungs)
 		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
 			return
 		adjustOxyLoss(1)
@@ -167,6 +146,7 @@
 		throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
 		return 0
 
+	/*
 	var/safe_oxy_min = 16
 	var/safe_oxy_max = 50
 	var/safe_co2_max = 10
@@ -179,8 +159,9 @@
 	var/O2_partialpressure = ((breath.get_moles(GAS_O2)/moles)*breath_pressure) + (((breath.get_moles(GAS_PLUOXIUM)*8)/moles)*breath_pressure)
 	var/Toxins_partialpressure = (breath.get_moles(GAS_PLASMA)/moles)*breath_pressure
 	var/CO2_partialpressure = (breath.get_moles(GAS_CO2)/moles)*breath_pressure
+	*/
 
-
+	/*
 	//OXYGEN
 	if(O2_partialpressure > safe_oxy_max) // Too much Oxygen - blatant CO2 effect copy/pasta
 		if(!o2overloadtime)
@@ -210,14 +191,18 @@
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "suffocation", /datum/mood_event/suffocation)
 
 	else //Enough oxygen
-		failed_last_breath = 0
-		o2overloadtime = 0 //reset our counter for this too
-		if(health >= crit_threshold)
-			adjustOxyLoss(-5)
-		oxygen_used = breath.get_moles(GAS_O2)
-		clear_alert("not_enough_oxy")
-		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
+	*/
+	
+	failed_last_breath = 0
+	o2overloadtime = 0 //reset our counter for this too
+	
+	if(health >= crit_threshold)
+		adjustOxyLoss(-5)
+	
+	clear_alert("not_enough_oxy")
+	SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
 
+	/*
 	breath.adjust_moles(GAS_O2, -oxygen_used)
 	breath.adjust_moles(GAS_CO2, oxygen_used)
 
@@ -311,7 +296,8 @@
 	//Clear all moods if no miasma at all
 	else
 		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "smell")
-
+	*/
+	
 	//BREATH TEMPERATURE
 	handle_breath_temperature(breath)
 
