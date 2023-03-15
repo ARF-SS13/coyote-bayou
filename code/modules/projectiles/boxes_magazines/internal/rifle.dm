@@ -19,7 +19,7 @@
 	caliber = list(CALIBER_3006)
 	max_ammo = 5
 	multiload = 1
-	
+
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
 	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 5
@@ -41,3 +41,9 @@
 	caliber = list(CALIBER_556, CALIBER_5MM)
 	max_ammo = 25
 	multiload = FALSE // one at a time~
+
+/obj/item/ammo_box/magazine/internal/boltaction/hobomat
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	max_ammo = 3
+	multiload = 0 //one bullet at a time
