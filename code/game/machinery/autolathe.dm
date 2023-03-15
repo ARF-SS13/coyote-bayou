@@ -175,6 +175,9 @@
 				return
 
 			var/multiplier = text2num(href_list["multiplier"])
+			if(!multiplier || !IS_FINITE(multiplier))
+				stack_trace("Invalid multiplier value in stack creation [multiplier], [usr] is likely attempting an exploit")
+				return
 			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
 
 			/////////////////

@@ -228,7 +228,8 @@
 			recipes_list = srl.recipes
 		var/datum/stack_recipe/R = recipes_list[text2num(href_list["make"])]
 		var/multiplier = round(text2num(href_list["multiplier"]))
-		if (multiplier < 1) //href protection
+		if(!multiplier || multiplier < 1 || !IS_FINITE(multiplier)) //href exploit protection
+			stack_trace("Invalid multiplier value in stack creation [multiplier], [usr] is likely attempting an exploit")
 			return
 		if(!building_checks(R, multiplier))
 			return
