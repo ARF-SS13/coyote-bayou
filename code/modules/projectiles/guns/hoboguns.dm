@@ -707,7 +707,7 @@
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hobomat
-	canpump = 0 //(weak baby man can't work the bolt with his hands, use a wrench to cycle the bolt)
+	canpump = FALSE //(weak baby man can't work the bolt with his hands, use a wrench to cycle the bolt)
 
 	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
