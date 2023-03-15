@@ -36,7 +36,7 @@
 
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	casing_ejector = FALSE // THIS makes it require manual cocking of the gun!!!
-	var/canpump = 1 // set to 0 to prevent normal methods of cocking, allows for guns to have their own custom cockage systems by calling pump directly.
+	var/canpump = TRUE // set to FALSE to prevent normal methods of cocking, allows for guns to have their own custom cockage systems by calling pump directly.
 	spawnwithmagazine = TRUE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	cock_sound = 'sound/weapons/shotgunpump.ogg'
@@ -58,7 +58,7 @@
 	return !!chambered?.BB
 
 /obj/item/gun/ballistic/rifle/attack_self(mob/living/user)
-	if(canpump == 0)
+	if(canpump == FALSE)
 		return
 	pump(user, TRUE) */
 
