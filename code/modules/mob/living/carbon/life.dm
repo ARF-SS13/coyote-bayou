@@ -68,10 +68,12 @@
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "suffocation", /datum/mood_event/suffocation)
 		else
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
+	/*
 	else
 		if(istype(loc, /obj/))
 			var/obj/location_as_object = loc
 			location_as_object.handle_internal_lifeform(src,0)
+	*/
 
 //Second link in a breath chain, calls check_breath()
 /mob/living/carbon/proc/breathe()
