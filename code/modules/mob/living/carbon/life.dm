@@ -139,14 +139,25 @@
 		adjustOxyLoss(2)
 
 	//CRIT
-	if(!lungs || lungs.failed)
+	if(health <= HEALTH_THRESHOLD_FULLCRIT || !lungs || lungs.failed)
 		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
 			return
-		adjustOxyLoss(1)
+		adjustOxyLoss(3)
 
 		failed_last_breath = 1
 		throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
 		return 0
+	else
+		failed_last_breath = 0
+		o2overloadtime = 0 //reset our counter for this too
+		
+		if(health >= crit_threshold)
+			adjustOxyLoss(-5)
+		
+		clear_alert("not_enough_oxy")
+		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
+
+
 
 	/*
 	var/safe_oxy_min = 16
@@ -195,15 +206,6 @@
 	else //Enough oxygen
 	*/
 	
-	failed_last_breath = 0
-	o2overloadtime = 0 //reset our counter for this too
-	
-	if(health >= crit_threshold)
-		adjustOxyLoss(-5)
-	
-	clear_alert("not_enough_oxy")
-	SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
-
 	/*
 	breath.adjust_moles(GAS_O2, -oxygen_used)
 	breath.adjust_moles(GAS_CO2, oxygen_used)
