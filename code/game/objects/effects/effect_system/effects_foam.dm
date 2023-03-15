@@ -32,21 +32,6 @@
 /obj/effect/particle_effect/foam/firefighting/MakeSlippery()
 	return
 
-/obj/effect/particle_effect/foam/firefighting/process()
-	..()
-
-	var/turf/open/T = get_turf(src)
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-/* 	if(hotspot && istype(T) && T.air)
-		qdel(hotspot)
-		var/datum/gas_mixture/G = T.air
-		var/plas_amt = min(30,G.get_moles(GAS_PLASMA))  //Absorb some plasma
-		G.adjust_moles(GAS_PLASMA,-plas_amt)
-		absorbed_plasma += plas_amt
-		if(G.return_temperature() > T20C)
-			G.set_temperature(max(G.return_temperature()/2,T20C))
-		T.air_update_turf()
- */
 /obj/effect/particle_effect/foam/firefighting/kill_foam()
 	STOP_PROCESSING(SSfastprocess, src)
 
