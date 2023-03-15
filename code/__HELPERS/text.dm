@@ -96,6 +96,10 @@
 // no_trim is self explanatory but it prevents the input from being trimed if you intend to parse newlines or whitespace.
 /proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
 	var/name = input(user, message, title, default) as text|null
+	if(isnull(name))
+		return
+	if(!check_rights_for(user?.client, R_ADMIN)) // only *we* get to make malicious shit~
+		name = strip_html_simple(name, max_length) // you throw the <html link that goatsies everyone>
 	if(no_trim)
 		return copytext(html_encode(name), 1, max_length)
 	else
@@ -106,6 +110,8 @@
 	var/name = input(user, message, title, default) as message|null
 	if(isnull(name)) // Return null if canceled.
 		return null
+	if(!check_rights_for(user?.client, R_ADMIN))
+		name = strip_html_simple(name, max_length) // Oh cool the description is literally tubgirl
 	if(no_trim)
 		return copytext(html_encode(name), 1, max_length)
 	else
@@ -118,6 +124,8 @@
 	var/name = input(user, message, title, default) as message|null
 	if(isnull(name)) // Return null if canceled.
 		return null
+	if(!check_rights_for(user?.client, R_ADMIN))
+		name = strip_html_simple(name, max_length) // I'd prefer not to stab myself with a url
 	if(length(name) > max_length)
 		to_chat(user, name)
 		to_chat(user, span_danger("^^^----- The preceeding message has been DISCARDED for being over the maximum length of [max_length]. It has NOT been sent! -----^^^"))
