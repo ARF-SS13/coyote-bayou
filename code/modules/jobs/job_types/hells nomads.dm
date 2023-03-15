@@ -11,15 +11,15 @@
 	//access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
 	//minimal_access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
 
-/// The boss of the cowbikers
+/// The boss of the cowbikers (unused, for now)
 /datum/job/biker/boss
 	title = "Hell's Nomad Boss"
 	department_flag = KHAN
 	selection_color = "#ff915e"
 	faction = FACTION_BIKER
 	exp_type = EXP_TYPE_LIVING
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	//access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
 	//minimal_access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
 
@@ -41,6 +41,7 @@
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/khan = 1
 		)
+	tattoos_they_get = list(OUTFIT_TATTOO(/datum/tattoo/biker, TATTOO_BIKER_RIGHT_SHOULDER))
 
 /datum/outfit/job/biker/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

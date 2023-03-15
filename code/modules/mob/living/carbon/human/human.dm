@@ -326,16 +326,14 @@
 		popup.open()
 
 	if(href_list["show_tattoos"])
-		if(!get_dist(usr, src, TATTOO_VISIBILITY_RANGE))
+		if(get_dist(usr, src) > TATTOO_VISIBILITY_RANGE)
 			to_chat(usr, span_alert("You're too far away to make out [src]'s killer meatpics!"))
 		var/list/tattoo_words = list()
 		for(var/X in bodyparts) // just check if *any* tats are visible
 			var/obj/item/bodypart/BP = X
 			if(!LAZYLEN(BP.tattoos))
 				continue
-			if(!in_range(user, src) && LAZYLEN(clothingonpart(BP)))
-				continue
-			tattoo_words += BP.get_tattoo_flavor()
+			tattoo_words += BP.get_tattoo_flavor(usr)
 		if(!LAZYLEN(tattoo_words))
 			to_chat(usr, span_alert("You can't seem to make anything out on [src]!"))
 			return

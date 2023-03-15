@@ -167,6 +167,11 @@
 	else
 		return ..()
 
+/obj/item/bodypart/GetAccess()
+	. = list()
+	for(var/datum/tattoo/tattie in tattoos)
+		. |= tattie.tat_access
+
 /obj/item/bodypart/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	..()
 	if(status != BODYPART_ROBOTIC)
@@ -1451,10 +1456,12 @@
 				return TRUE
 
 /// Gets all the cool tats' flavors
-/obj/item/bodypart/proc/get_tattoo_flavor()
+/obj/item/bodypart/proc/get_tattoo_flavor(mob/viewer)
 	if(!LAZYLEN(tattoos))
 		return
 	var/list/msg = list()
-	for(var/datum/tattoo/ink in tattoos)
-		msg += ink.get_desc(owner)
+	for(var/key in tattoos)
+		if(istype(tattoos[key], /datum/tattoo))
+			var/datum/tattoo/tat = tattoos[key]
+			msg += tat.get_desc(viewer, owner, TRUE)
 	. = jointext(msg, "<br>")

@@ -452,16 +452,20 @@
 
 	var/can_see_tats = FALSE
 	if(get_dist(user, src) <= TATTOO_VISIBILITY_RANGE)
-		for(var/X in bodyparts) // just check if *any* tats are visible
-			var/obj/item/bodypart/BP = X
-			if(!LAZYLEN(BP.tattoos))
-				continue
-			if(in_range(user, src)) // You can see tats if you're close
-				can_see_tats = TRUE
-				break
-			if(!LAZYLEN(clothingonpart(BP)))
-				can_see_tats = TRUE
-				break
+		/// my first labeled loop thingy~
+		tat_check:
+			for(var/X in bodyparts) // just check if *any* tats are visible
+				var/obj/item/bodypart/BP = X
+				if(!LAZYLEN(BP.tattoos))
+					continue
+				for(var/key in BP.tattoos)
+					if(!istype(BP.tattoos[key], /datum/tattoo))
+						continue
+					var/datum/tattoo/tattie = BP.tattoos[key]
+					if(tattie.is_it_visible(user, src))
+						can_see_tats = TRUE
+						break tat_check
+
 	if(can_see_tats)
 		msg += span_notice("[t_He] seem[p_s()] to have some ink done. <a href='?src=[REF(src)];show_tattoos=1'>\[Look closer?\]</a>")
 
