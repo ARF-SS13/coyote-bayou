@@ -1,0 +1,23 @@
+{
+	"map_name": "Testing",
+	"map_path": "map_files/testing",
+	"map_file": [
+		"test.dmm"
+	],
+	"station_ruin_budget":0,
+	"space_ruin_levels":0,
+	"space_empty_levels":0,
+	"shuttles": {
+	},
+	"traits":[
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Up": 1,
+			"No Parallax": true,
+			"Linkage" : null,
+			"Name": "Test"
+		}
+	],
+	"minetype": "none"
+}
