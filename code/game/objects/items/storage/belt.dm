@@ -692,6 +692,7 @@
 	content_overlays = TRUE
 	onmob_overlays = TRUE
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	starting_sword = null
 
 /obj/item/storage/belt/sabre/heavy/ComponentInitialize()
 	. = ..()
@@ -699,7 +700,7 @@
 	STR.max_items = 1
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_combined_w_class = 4
-	STR.can_hold = typecacheof(list(/obj/item/melee))
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded))
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/knife
@@ -719,7 +720,7 @@
 	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
 	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
 	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = typecacheof(list(/obj/item/melee)) //any small sized stabby
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded)) //any small sized stabby
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/rapier
@@ -753,7 +754,7 @@
 	STR.max_items = 1
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 3
-	STR.can_hold = typecacheof(list(/obj/item/melee))
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded))
 	STR.quickdraw = TRUE
 
 // Instead of half-assed broken weaboo stuff lets have something that works.
@@ -770,7 +771,7 @@
 	STR.max_items = 2
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 6
-	STR.can_hold = typecacheof(list(/obj/item/melee))
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded))
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/waistsheath
