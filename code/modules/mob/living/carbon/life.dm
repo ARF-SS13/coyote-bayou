@@ -137,7 +137,7 @@
 		adjustOxyLoss(2)
 
 	//CRIT
-	if(!lungs)
+	if(!lungs || lungs.failed)
 		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
 			return
 		adjustOxyLoss(1)
@@ -299,7 +299,7 @@
 	*/
 	
 	//BREATH TEMPERATURE
-	handle_breath_temperature(breath)
+	//handle_breath_temperature(breath)
 
 	return 1
 
