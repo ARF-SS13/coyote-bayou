@@ -177,6 +177,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/coat/armoredformalcoat
+	name = "armored formal overcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/armoredformalcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/coat/desperado_duster
 	name = "desperado's duster"
 	path = /obj/item/clothing/suit/armor/light/duster/desperado
@@ -206,6 +212,8 @@
 /datum/gear/suit/coat/marlow/blackformaljacket
 	name = "Black Formal Jacket"
 	path = /obj/item/clothing/suit/armor/outfit/jacket/blackformaljacket
+	cost = 1
+
 /// End of Coats/Armor section
 
 /datum/gear/suit/NCRutilityvest

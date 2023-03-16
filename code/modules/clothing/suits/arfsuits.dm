@@ -1274,6 +1274,15 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T4, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 
+/obj/item/clothing/suit/armor/light/duster/armoredformalcoat
+	name = "armored formal overcoat"
+	desc = "A neat black overcoat that's only slightly weathered from a nuclear apocalypse. This one has armor plating..."
+	icon_state = "black_oversuit"
+	item_state = "banker"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
 ///////////////////
 // LEATHER ARMOR //
 ///////////////////
