@@ -1697,12 +1697,6 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
-"vA" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "vB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack{
@@ -2357,10 +2351,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Dc" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
 /obj/structure/curtain,
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/shower{
-	pixel_y = 17
+	pixel_y = -5;
+	dir = 4;
+	pixel_x = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -8593,7 +8591,7 @@ hL
 Hl
 kd
 Ey
-vA
+Hl
 mN
 IW
 Hl
