@@ -126,6 +126,61 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
+//9mm automatic pistol. smol magazine, zippy gun
+/obj/item/gun/ballistic/automatic/pistol/ninemil/auto
+	name = "9mm autopistol"
+	desc = "A compact 9mm pistol with an autoseer installed. only accepts single stack magazines."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "pistol"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/fast
+	)
+
+//scorpion machine pistol. like the M93R, but full auto instead of burst, for better or worse
+/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
+	name = "Skorpion 9mm"
+	desc = "A Czech machine pistol developed in the 60s"
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "skorpion"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/fast
+	)
+
+//ruby pistol. single stack bootgun, otherwise unexceptional
+/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby
+	name = "Ruby"
+	desc = "A petite pocket pistol designed by Colt and used extensively by the French Army until the late '50s"
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "ruby"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+	w_class = WEIGHT_CLASS_TINY
+
+//C93 pistol. damage bonus but single stack magazine. not the best gun, but hey, it's old
+/obj/item/gun/ballistic/automatic/pistol/ninemil/c93
+	name = "9mm Borchardt"
+	desc = "The first mass produced semiautomatic pistol, designed before doublestack magazines existed."
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "borchardt"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+
+//Luger. pretty much the same as a C93, same smol magazine, same semi-auto old gun
+/obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
+	name = "9mm Luger"
+	desc = "A classy german 9mm pistol, which takes single stack magazines."
+	icon_state = "luger"
+
 /* * * * * * * * * * *
  * Maria
  * Gaudy Light pistol
@@ -186,6 +241,26 @@
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
 
+//9mm carbine: pistol capacity, but two shot burst. needs suppressor set correctly
+/obj/item/gun/ballistic/automatic/pistol/beretta/carbine
+	name = "9mm carbine"
+	desc = "A lightweight carbine manufactured by Hi-Point, takes pistol magazines."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "citykiller" //old citykiller sprite looks close enough to a hi-point carbine
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
+	slowdown = GUN_SLOWDOWN_CARBINE
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_firemodes = list(
+		/datum/firemode/burst/two/fast,
+		/datum/firemode/semi_auto/fast
+	)
+
 /* * * * * * * * * * *
  * Beretta M9R Burst
  * Burst Light pistol
@@ -232,7 +307,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
-	extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) // let it take smg mags
+	//extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) // let it take smg mags
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -393,38 +468,26 @@
 		/datum/firemode/semi_auto/fast
 	)
 
-// Tox's Type 17
-/obj/item/gun/ballistic/automatic/pistol/type17/tox
-	name = "Tox's C96"
-	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
-	icon_state = "chinapistol"
-	w_class = WEIGHT_CLASS_SMALL
-
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = HANDGUN_RECOIL(0.6)
-
-	can_suppress = FALSE
-	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
+//automatic 9mm, compact and high performance
+/obj/item/gun/ballistic/automatic/pistol/type17/c96auto
+	name = "Mauser M712"
+	desc = "A late model of the classic Mauser C96, featuring a removable box magazine and automatic fire select. takes 20 round stick magazines."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "c96"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
 	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/fast
 	)
 
+// Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil
+/obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox
+	name = "Tox's C96"
+	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 
 /* * * * * * * * * * *
  * Sig P220
