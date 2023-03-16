@@ -944,9 +944,9 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Pusher"
 
 /obj/effect/landmark/start/f13/biker
-	name = "Hell's Nomad"
+	name = "Hells Nomad"
 	icon_state = "Assistant"
 
 /obj/effect/landmark/start/f13/biker_boss
-	name = "Hell's Nomad Boss"
+	name = "Hells Nomad Boss"
 	icon_state = "Captain"

@@ -185,7 +185,7 @@
 					/obj/item/clothing/suit/jacket/letterman_nanotrasen = 5,
 					/obj/item/clothing/suit/hooded/wintercoat/polychromic = 5)
 	refill_canister = /obj/item/vending_refill/clothing
-	default_price = PRICE_CHEAP
+	default_price = PRICE_REALLY_CHEAP
 	extra_price = PRICE_BELOW_NORMAL
 	payment_department = NO_FREEBIES
 
@@ -230,7 +230,9 @@
 	desc = "A vending machine supplying club equipment. To put it lightly."
 	product_slogans = "Do I look like your girlfriend?;I don't look like a ghost, do I?;Feel how warm I am?;It doesn't matter who I am.;Come and get me.;"
 	vend_reply = "Hurry back!"
-	products = list(/obj/item/clothing/under/f13/mprostitute = 5,
+	products = list(/obj/item/tattoo_gun = 5,
+					/obj/item/tattoo_holder/blank = 20,
+					/obj/item/tattoo_holder/blank/temporary = 20,
 					/obj/item/clothing/under/f13/fprostitute = 5,
 					/obj/item/clothing/under/f13/raiderharness = 3,
 					/obj/item/clothing/under/f13/ravenharness = 3,

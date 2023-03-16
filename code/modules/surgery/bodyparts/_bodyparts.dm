@@ -92,7 +92,7 @@
 	/// The scars currently afflicting this body part
 	var/list/scars
 	/// the tattoos on this part
-	var/list/tattoos
+	var/list/tattoos = list()
 	/// Our current stored wound damage multiplier
 	var/wound_damage_multiplier = 1
 
@@ -169,8 +169,10 @@
 
 /obj/item/bodypart/GetAccess()
 	. = list()
-	for(var/datum/tattoo/tattie in tattoos)
-		. |= tattie.tat_access
+	for(var/spot in tattoos)
+		if(istype(tattoos[spot], /datum/tattoo))
+			var/datum/tattoo/tattie = tattoos[spot]
+			. |= tattie.tat_access
 
 /obj/item/bodypart/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	..()
@@ -1409,16 +1411,19 @@
 /obj/item/bodypart/proc/add_tattoo(datum/tattoo/tat, location)
 	if(tattoos[location]) // theres a tat there
 		return FALSE
-	if(istype(tat))
-		var/datum/tattoo/ink = new tat(src, cool_tat = tat) // easiest just to copy over the vars, nobody'll ever know
-		tattoos[location] = ink
-		ink.owner_limb = src
-		return TRUE
+	var/datum/tattoo/ink
 	if(ispath(tat))
-		var/datum/tattoo/ink = new tat(src)
-		tattoos[location] = ink
-		ink.owner_limb = src
-		return TRUE
+		ink = new tat(src, null, location)
+	else if(istype(tat))
+		var/datum/tattoo/tattytype = tat.type
+		ink = new tattytype(src, tat, location) // easiest just to copy over the vars, nobody'll ever know
+	else
+		return
+	if(!ink)
+		return
+	tattoos[location] = ink
+	ink.on_apply()
+	return TRUE
 
 /// Removes a tattoo to this bodypart. accepts a location, path, type, or anything in between, cus why tf not
 /obj/item/bodypart/proc/remove_tattoo(datum/tattoo/tat, location)
@@ -1465,3 +1470,14 @@
 			var/datum/tattoo/tat = tattoos[key]
 			msg += tat.get_desc(viewer, owner, TRUE)
 	. = jointext(msg, "<br>")
+
+/// Returns if any tats are visible
+/obj/item/bodypart/proc/are_any_tattoos_visible(mob/viewer)
+	if(!LAZYLEN(tattoos))
+		return FALSE // cant see any!
+	for(var/key in tattoos)
+		if(!istype(tattoos[key], /datum/tattoo))
+			continue
+		var/datum/tattoo/tat = tattoos[key]
+		if(tat.is_it_visible(viewer))
+			return TRUE

@@ -3,6 +3,9 @@
  */
 // Mutable appearances are children of images, just so you know. just a fun fact
 
+#define TATTOO_SUPER_HIDDEN "arse_nath" // so butt tattoos dont show up if you lack a butt
+#define TATTOO_NOT_PRIVATE "not_private" // your shoulder isnt a private part
+
 /datum/tattoo
 	/// Name of the tat
 	var/name
@@ -15,33 +18,32 @@
 	/// Optional, extra desc stuff
 	var/extra_desc
 	/// Where on the body part is the tat?
-	var/tat_location
+	var/tat_location = TATTOO_FUCKUP
 	/// Is the tattoo really really private? Like, hidden and needs to be nekked to show up? Maybe an old embarassing tat you keep under your hat
 	var/extra_private = FALSE
 	/// how faded is the tattoo? for temporary tats
 	var/fadedness = TATTOO_NOT_FADED
 	/// how long does the temporary tattoo last between fade cycles? total life will be around 3-4 times this. if null, its permanent
 	var/fade_time
+	/// just to make job-related tattoo jobs easier, only checked if its a tat that's part of a loadout or job outfit!
+	var/default_bodypart = BODY_ZONE_CHEST
+	/// just to make job-related tattoo jobs easier, only checked if its a tat that's part of a loadout or job outfit!
+	var/default_spot = TATTOO_CHEST
 
-/datum/tattoo/New(obj/item/bodypart/owner, name_override, desc_override, extra_description, fade_override, private_override, datum/tattoo/cool_tat)
+/datum/tattoo/New(obj/item/bodypart/owner, datum/tattoo/cool_tat, put_here)
 	. = ..()
 	if(istype(cool_tat))
-		for(var/v in vars) // just dump them all in
-			vars[v] = cool_tat.vars[v]
-	if(istype(owner))
+		name = cool_tat.name
+		desc = cool_tat.desc
+		tat_access = cool_tat.tat_access.Copy()
+		extra_desc = cool_tat.extra_desc
+		fade_time = cool_tat.fade_time
+	if(istype(owner, /obj/item/bodypart))
 		owner_limb = WEAKREF(owner)
-	else if(isweakref(owner))
-		owner_limb = owner
-	if(!isnull(name_override))
-		name = name_override
-	if(!isnull(desc_override))
-		desc = desc_override
-	if(!isnull(extra_description))
-		extra_desc = extra_description
-	if(!isnull(fade_override))
-		fade_time = fade_override
-	if(!isnull(private_override))
-		extra_private = private_override
+	if(put_here)
+		tat_location = put_here
+
+/datum/tattoo/proc/on_apply(mob/user)
 	if(fade_time)
 		addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
 
@@ -52,27 +54,27 @@
 	. = ..()
 
 /// Is the tattoo visible?
-/datum/tattoo/proc/is_it_visible(mob/viewer, mob/living/carbon/human/tat_owner)
+/datum/tattoo/proc/is_it_visible(mob/viewer)
+	if(!owner_limb)
+		return FALSE
 	var/obj/item/bodypart/meatchunk = owner_limb.resolve()
 	if(!meatchunk)
 		return FALSE
-	var/mob/living/carbon/human/tatted = ishuman(meatchunk.owner) ? meatchunk.owner : tat_owner
+	var/mob/living/carbon/human/tatted = meatchunk.owner
 	if(!tatted)
 		return TRUE // shrug, its visible
-	if(get_dist(get_turf(meatchunk), viewer) > TATTOO_VISIBILITY_RANGE)
+	var/dist_between_em = get_dist(tatted, viewer)
+	if(dist_between_em > TATTOO_VISIBILITY_RANGE)
 		return FALSE
-	var/respect_privacy = is_private()
-	if(in_range(get_turf(meatchunk), viewer) && !respect_privacy)
-		return TRUE
-	if(tatted.clothingonpart(meatchunk))
-		return FALSE
-	if(respect_privacy)
-		if(TATTOO_IS_HIDDEN_UNDERWEAR(tatted, tat_location))
-			return FALSE
-		if(TATTOO_IS_HIDDEN_BRA(tatted, tat_location))
-			return FALSE
-		if(TATTOO_IS_HIDDEN_SOCKS(tatted, tat_location))
-			return FALSE
+	var/privacy_invaded = invade_privacy()
+	if(privacy_invaded == TRUE)
+		return TRUE // bits are out and visible
+	if(privacy_invaded == TATTOO_SUPER_HIDDEN)
+		return FALSE // the boobie fell off :c
+	if(privacy_invaded == TATTOO_NOT_PRIVATE && dist_between_em <= 1)
+		return TRUE // close up, and the tat isnt private? see it
+	if(LAZYLEN(tatted.clothingonpart(meatchunk)))
+		return FALSE // uncovered? uncovered
 	return TRUE
 
 /datum/tattoo/proc/fade_tattoo()
@@ -82,24 +84,44 @@
 	addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
 
 /// Is the tattoo somewhere really private? So you dont examine someone in power armor and find FOXYGRANDMA above their ass
-/datum/tattoo/proc/is_private()
+/// A really in-depth check through a person's privates to see if their relevant bits are, in fact, visible
+/datum/tattoo/proc/invade_privacy()
 	if(extra_private)
-		return TRUE
-	switch(tat_location)
-		if(TATTOO_TRAMP_STAMP, TATTOO_WOMB_TATTOO, TATTOO_LEFT_BOOB, TATTOO_RIGHT_BOOB)
-			return TRUE
+		return FALSE // extra private? *must* be revealed
+	if(!owner_limb)
+		return FALSE // shouldnt happen
 
-/datum/tattoo/proc/get_desc(mob/viewer, mob/living/carbon/human/limbhaver, check_vis)
+	var/obj/item/bodypart/clump = owner_limb?.resolve()
+	var/mob/living/carbon/human/grundlehaver = clump?.owner
+	if(!grundlehaver)
+		return TRUE // how the heck did you sever a chest? nice
+	var/obj/item/organ/genital/grundle
+	switch(tat_location)
+		if(TATTOO_TRAMP_STAMP, TATTOO_LEFT_ASS, TATTOO_RIGHT_ASS) // Butt tattoo?
+			grundle = grundlehaver.has_butt()
+		if(TATTOO_WOMB_TATTOO)
+			grundle = grundlehaver.has_vagina()
+			if(!grundle)
+				grundle = grundlehaver.has_penis()
+			if(!grundle)
+				grundle = grundlehaver.has_balls() // fun fact the womb is stored in the balls
+		if(TATTOO_LEFT_BOOB, TATTOO_RIGHT_BOOB)
+			grundle = grundlehaver.has_breasts()
+		else
+			return TATTOO_NOT_PRIVATE // wasnt private to begin with lol
+	if(!istype(grundle)) // pro-pain
+		return TATTOO_SUPER_HIDDEN // no ass, no tat
+	if(grundle in grundlehaver.exposed_genitals)
+		return TRUE // ur cock out
+	return grundle.is_exposed() // ur cock out?
+
+/datum/tattoo/proc/get_desc(mob/viewer, check_vis = TRUE)
 	if(!owner_limb)
 		return
-	if(check_vis && !is_it_visible(viewer, limbhaver))
+	if(check_vis && !is_it_visible(viewer))
 		return
-	var/obj/item/bodypart/meatchunk = owner_limb.resolve()
 	var/list/msg_out = list()
-	if(tat_location)
-		msg_out += "You see \a [name] [location2words(limbhaver)]"
-	else
-		msg_out += "You see \a [name] on [ismob(limbhaver) ? "[limbhaver.p_their()]" : "the"] [meatchunk.name]."
+	msg_out += "You see \a [name] [location2words()]"
 	msg_out += "\tIt features [desc]"
 	if(extra_desc)
 		msg_out += "\t[extra_desc]"
@@ -115,68 +137,70 @@
 
 /// takes in the tat's location, outputs words about their location
 /// person is the person the tat is allegedly on, cus we dont *really* keep track ourselves
-/datum/tattoo/proc/location2words(mob/person)
+/datum/tattoo/proc/location2words()
+	var/obj/item/bodypart/ourlimb = owner_limb.resolve()
+	var/mob/living/carbon/human/person = ourlimb?.owner
 	switch(tat_location)
+		if(TATTOO_FUCKUP)
+			return "misapplied over [ishuman(person) ? "[person.p_their()]" : "the"] bepis. There's a bit more written there:[span_phobia("hey this tattoo didnt set the location right, tell superlagg their shit broke.")]."
 		if(TATTOO_TRAMP_STAMP)
-			var/taild
-			if(ishuman(person))
-				var/mob/living/carbon/human/tailie = person
-				taild = tailie.getorganslot(ORGAN_SLOT_TAIL)
-			return "positioned over [ismob(person) ? "[person.p_their()]" : "the"] [taild ? "tail" : "buttcrack"]."
+			return "positioned over [ishuman(person) ? "[person.p_their()]" : "the"] [person.getorganslot(ORGAN_SLOT_TAIL) ? "tail" : "buttcrack"]."
 		if(TATTOO_WOMB_TATTOO)
-			return "positioned over [ismob(person) ? "[person.p_their()]" : "the"] lower groin."
+			return "positioned over [ishuman(person) ? "[person.p_their()]" : "the"] lower groin."
 		if(TATTOO_LEFT_ASS)
-			return "situated on [ismob(person) ? "[person.p_their()]" : "the"] left buttcheek."
+			return "situated on [ishuman(person) ? "[person.p_their()]" : "the"] left buttcheek."
 		if(TATTOO_RIGHT_ASS)
-			return "situated on [ismob(person) ? "[person.p_their()]" : "the"] right buttcheek."
+			return "situated on [ishuman(person) ? "[person.p_their()]" : "the"] right buttcheek."
 		if(TATTOO_LEFT_BOOB)
-			return "printed across [ismob(person) ? "[person.p_their()]" : "the"] left [prob(1) ? "boobie" : "breast"]."
+			return "printed across [ishuman(person) ? "[person.p_their()]" : "the"] left [prob(1) ? "boobie" : "breast"]."
 		if(TATTOO_RIGHT_BOOB)
-			return "printed across [ismob(person) ? "[person.p_their()]" : "the"] right [prob(1) ? "boobie" : "breast"]."
+			return "printed across [ishuman(person) ? "[person.p_their()]" : "the"] right [prob(1) ? "boobie" : "breast"]."
 		if(TATTOO_CHEST)
-			return "printed across [ismob(person) ? "[person.p_their()]" : "the"] chest."
+			return "printed across [ishuman(person) ? "[person.p_their()]" : "the"] chest."
 		if(TATTOO_BELLY)
-			return "printed across [ismob(person) ? "[person.p_their()]" : "the"] [pick("belly", "gut", "tummy")]."
+			return "printed across [ishuman(person) ? "[person.p_their()]" : "the"] [pick("belly", "gut", "tummy")]."
 		if(TATTOO_UPPER_BACK)
-			return "printed across [ismob(person) ? "[person.p_their()]" : "the"] upper back."
+			return "printed across [ishuman(person) ? "[person.p_their()]" : "the"] upper back."
 		if(TATTOO_LOWER_BACK)
-			return "printed across [ismob(person) ? "[person.p_their()]" : "the"] lower back."
+			return "printed across [ishuman(person) ? "[person.p_their()]" : "the"] lower back."
 		if(TATTOO_RIGHT_UPPER_ARM)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] right upper arm."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] right upper arm."
 		if(TATTOO_RIGHT_LOWER_ARM)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] right lower arm."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] right lower arm."
 		if(TATTOO_RIGHT_HAND)
-			return "situated on [ismob(person) ? "[person.p_their()]" : "the"] right hand."
+			return "situated on [ishuman(person) ? "[person.p_their()]" : "the"] right hand."
 		if(TATTOO_LEFT_UPPER_ARM)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] left upper arm."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] left upper arm."
 		if(TATTOO_LEFT_LOWER_ARM)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] left lower arm."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] left lower arm."
 		if(TATTOO_LEFT_HAND)
-			return "situated across [ismob(person) ? "[person.p_their()]" : "the"] left hand."
+			return "situated across [ishuman(person) ? "[person.p_their()]" : "the"] left hand."
 		if(TATTOO_RIGHT_UPPER_LEG)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] right upper leg."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] right upper leg."
 		if(TATTOO_RIGHT_LOWER_LEG)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] right lower leg."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] right lower leg."
 		if(TATTOO_RIGHT_FOOT)
-			return "planted on [ismob(person) ? "[person.p_their()]" : "the"] right foot."
+			return "planted on [ishuman(person) ? "[person.p_their()]" : "the"] right foot."
 		if(TATTOO_LEFT_UPPER_LEG)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] left upper leg."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] left upper leg."
 		if(TATTOO_LEFT_LOWER_LEG)
-			return "plastered across [ismob(person) ? "[person.p_their()]" : "the"] left lower leg."
+			return "plastered across [ishuman(person) ? "[person.p_their()]" : "the"] left lower leg."
 		if(TATTOO_LEFT_FOOT)
-			return "planted on [ismob(person) ? "[person.p_their()]" : "the"] left foot."
+			return "planted on [ishuman(person) ? "[person.p_their()]" : "the"] left foot."
 		if(TATTOO_LEFT_CHEEK)
-			return "slapped on [ismob(person) ? "[person.p_their()]" : "the"] left cheek."
+			return "slapped on [ishuman(person) ? "[person.p_their()]" : "the"] left cheek."
 		if(TATTOO_RIGHT_CHEEK)
-			return "slapped on [ismob(person) ? "[person.p_their()]" : "the"] right cheek."
+			return "slapped on [ishuman(person) ? "[person.p_their()]" : "the"] right cheek."
 		if(TATTOO_LEFT_EYE)
-			return "printed around [ismob(person) ? "[person.p_their()]" : "the"] left eye."
+			return "printed around [ishuman(person) ? "[person.p_their()]" : "the"] left eye."
 		if(TATTOO_RIGHT_EYE)
-			return "printed around [ismob(person) ? "[person.p_their()]" : "the"] right eye."
+			return "printed around [ishuman(person) ? "[person.p_their()]" : "the"] right eye."
 		if(TATTOO_FOREHEAD)
-			return "drawn across [ismob(person) ? "[person.p_their()]" : "the"] forehead."
+			return "drawn across [ishuman(person) ? "[person.p_their()]" : "the"] forehead."
 		if(TATTOO_BIKER_RIGHT_SHOULDER)
-			return "drawn across [ismob(person) ? "[person.p_their()]" : "the"] right upper arm."
+			return "drawn across [ishuman(person) ? "[person.p_their()]" : "the"] right upper arm."
+		else
+			return "jammed somewhere wierd. There's a bit more written there:[span_phobia("hey this tattoo didnt set a bad location, tell superlagg their shit broke.")]."
 
 /// Generic tattoo for overwriting with other stuff
 /datum/tattoo/blank
@@ -195,6 +219,8 @@
 			skulls, with their horns done up like handlebars on a motorcycle, bordered by guns and knives and other \
 			stuff a teenage boy would find badass."
 	tat_access = list(ACCESS_BIKER)
+	default_bodypart = BODY_ZONE_R_ARM
+	default_spot = TATTOO_BIKER_RIGHT_SHOULDER
 
 /// A tattoo *thing*
 /obj/item/tattoo_holder
@@ -244,7 +270,7 @@
 /obj/item/tattoo_holder/Initialize()
 	. = ..()
 	if(ispath(loaded_tat))
-		loaded_tat = new()
+		loaded_tat = new loaded_tat(null, null, null)
 	if(inherit_tat_name_n_desc)
 		name = loaded_tat.name
 		desc = "A little card loaded with [loaded_tat.desc]"
@@ -314,8 +340,8 @@
 		return // we dont decorate phantom limbs in THIS parlor
 	var/list/places_to_put_it = list()
 	for(var/key in GLOB.tattoo_locations[put_it_there])
-		if(GLOB.tattoo_locations[put_it_there][key])
-			places_to_put_it += GLOB.tattoo_locations[put_it_there][key]
+		if(GLOB.tattoo_locations[put_it_there][key] == TRUE)
+			places_to_put_it += key
 	if(!LAZYLEN(places_to_put_it))
 		user.show_message(span_alert("Nothing there?!"))
 		return
@@ -332,27 +358,27 @@
 	applying = TRUE
 	if(!ishuman(victim))
 		user.show_message(span_alert("No longer exists, probably!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!ismob(user))
 		user.show_message(span_phobia("You do not exist!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!in_range(user, victim))
 		user.show_message(span_alert("They ran off!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		user.show_message(span_alert("You can't seem to use this right now!"))
-		abort(victim, user)
+		abort()
 		return
 	if(user.incapacitated())
 		user.show_message(span_alert("You're incapacitated!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!do_mob(user, victim, apply_time, allow_movement = TRUE)) // tattooing on the GO!
 		user.show_message(span_alert("You messed up!"))
-		abort(victim, user)
+		abort()
 		return
 	var/obj/item/bodypart/chunk = victim.get_bodypart(part)
 	if(!istype(chunk))
@@ -364,7 +390,7 @@
 	finish_tattoo(victim, user, tat_loc, part)
 
 /obj/item/tattoo_holder/proc/finish_tattoo(mob/living/carbon/human/victim, mob/living/user, tat_loc, part)
-	abort(victim, user) // job successfully failed~
+	abort() // job successfully failed~
 	var/obj/item/bodypart/pretty_part = victim.get_bodypart(part)
 	if(!pretty_part)
 		user.show_message(span_alert("[victim] no longer has the part you're working on!"))
@@ -445,11 +471,11 @@
 /// Load in a tattoo, or make one yourself!
 /obj/item/tattoo_gun
 	name = "tattoo gun"
-	desc = "Some kind of artistic torture device designed to stab colors into someone's skin. The needles are long \
+	desc = "Some kind of artistic torture device designed to stab colors into someone's flesh. The needles are long \
 			enough to make your work visible, no matter how furry your victim is. Might want to keep some bandages handy."
-	icon = 'icons/obj/guns/gun_parts.dmi'
-	icon_state = "reciever_pistol"
-	w_class = WEIGHT_CLASS_TINY
+	icon = 'icons/obj/tattoo_gun.dmi'
+	icon_state = "tattoo_gun"
+	w_class = WEIGHT_CLASS_NORMAL
 	/// The tattoo template to engrave
 	var/obj/item/tattoo_holder/flash
 	/// does it start loaded with its flash?
@@ -459,11 +485,21 @@
 	/// how many times do we have to mangle this guy for the tat to stick?
 	var/operations_to_complete = 6
 	/// How many times did we do a thing this cycle?
-	var/operation_counter = 0
+	var/operation_counter = 1
 	/// is it doing something?
 	var/engraving = FALSE
+	/// bzzzzzzzz
+	var/datum/looping_sound/tattoo_gun/soundloop
+
+/obj/item/tattoo_gun/Initialize()
+	. = ..()
+	if(start_loaded)
+		var/obj/item/tattoo_holder/cool_tat = new flash(src)
+		insert_flash(null, cool_tat)
+	soundloop = new(list(src), FALSE)
 
 /obj/item/tattoo_gun/Destroy()
+	QDEL_NULL(soundloop)
 	eject_flash(delet = TRUE)
 	. = ..()
 
@@ -491,10 +527,11 @@
 		return
 	if(ismob(user))
 		user.put_in_hands(flash)
+		user.show_message(span_notice("You eject [flash]."))
 	else
 		flash.forceMove(get_turf(src))
 	flash = null
-	user.show_message(span_notice("You eject [flash]."))
+	playsound(get_turf(src), 'sound/machines/click.ogg', 50, 1)
 
 /obj/item/tattoo_gun/proc/insert_flash(mob/user, obj/item/tattoo_holder/nutat)
 	if(!nutat)
@@ -503,10 +540,11 @@
 		eject_flash(user)
 	if(ismob(user))
 		user.transferItemToLoc(nutat, src)
+		user.show_message(span_notice("You insert [nutat]."))
 	else
 		nutat.forceMove(src)
 	flash = nutat
-	user.show_message(span_notice("You insert [flash]."))
+	playsound(get_turf(src), 'sound/machines/click.ogg', 50, 1)
 
 /obj/item/tattoo_gun/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
 	. = ..()
@@ -544,8 +582,8 @@
 		return // we dont decorate phantom limbs in THIS parlor
 	var/list/places_to_put_it = list()
 	for(var/key in GLOB.tattoo_locations[put_it_there])
-		if(GLOB.tattoo_locations[put_it_there][key])
-			places_to_put_it += GLOB.tattoo_locations[put_it_there][key]
+		if(GLOB.tattoo_locations[put_it_there][key] == TRUE)
+			places_to_put_it += key
 	if(!LAZYLEN(places_to_put_it))
 		user.show_message(span_alert("Nothing there?!"))
 		return
@@ -557,39 +595,40 @@
 		user.show_message(span_alert("There isn't enough room on [victim]'s [lowertext(tat_loc)] to fully complete your vision!"))
 		return
 	// cool, get stabbing
-	make_noises_and_pain(victim, user, put_it_there)
+	engraving = TRUE
+	make_noises_and_pain(victim, user, tat_loc, put_it_there)
 	engrave_skin(victim, user, tat_loc, put_it_there)
+	soundloop.start()
 	return STOP_ATTACK_PROC_CHAIN // dont hurt them, we want to hurt em
 
 /obj/item/tattoo_gun/proc/engrave_skin(mob/living/carbon/human/victim, mob/living/user, tat_loc, part)
-	engraving = TRUE
 	if(!ishuman(victim))
 		user.show_message(span_alert("No longer exists, probably!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!ismob(user))
-		user.show_message(span_phobia("You do not exist!"))
-		abort(victim, user)
+		user?.show_message(span_phobia("You do not exist!"))
+		abort()
 		return
 	if(!istype(flash))
 		user.show_message(span_alert("You popped out the template!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!in_range(user, victim))
 		user.show_message(span_alert("They ran off!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		user.show_message(span_alert("You can't seem to use this right now!"))
-		abort(victim, user)
+		abort()
 		return
 	if(user.incapacitated())
 		user.show_message(span_alert("You're incapacitated!"))
-		abort(victim, user)
+		abort()
 		return
 	if(!do_mob(user, victim, time_per_operation, allow_movement = TRUE)) // tattooing on the GO!
-		user.show_message(span_alert("You messed up!"))
-		abort(victim, user)
+		user.visible_message(span_alert("[user] messes up, their work disappearing instantly somehow."),span_alert("You mess up! Good thing jacked up tattoos arent implemented yet."))
+		abort()
 		return
 	var/obj/item/bodypart/chunk = victim.get_bodypart(part)
 	if(!istype(chunk))
@@ -605,10 +644,11 @@
 
 /obj/item/tattoo_gun/proc/abort(mob/living/carbon/human/victim, mob/living/user)
 	engraving = FALSE
-	operation_counter = 0
+	operation_counter = 1
+	soundloop.stop()
 
 /obj/item/tattoo_gun/proc/finish(mob/living/carbon/human/victim, mob/living/user, tat_loc, part)
-	abort(victim, user) // job successfully failed~
+	abort() // job successfully failed~
 	if(!flash)
 		user.show_message(span_alert("You popped out the template!"))
 		return
@@ -616,69 +656,78 @@
 	if(!pretty_part)
 		user.show_message(span_alert("[victim] no longer has the part you're working on!"))
 		return // we dont decorate phantom limbs in THIS parlor
-	if(!pretty_part.add_tattoo(flash, tat_loc))
+	if(!pretty_part.add_tattoo(flash.loaded_tat, tat_loc))
 		user.show_message(span_alert("You couldn't actually tattoo [victim]'s [lowertext(tat_loc)] for some reason!"))
 		return
 	if(!flash.use_charge())
 		eject_flash(TRUE)
+	user.visible_message(span_notice("[user] finishes up [user.p_their()] masterpiece on [victim]'s [lowertext(tat_loc)]!"))
+	playsound(get_turf(src), 'sound/machines/ding.ogg', 50, 1)
 
 /obj/item/tattoo_gun/proc/make_noises_and_pain(mob/living/carbon/human/victim, mob/living/user, tat_loc, part)
 	if(!istype(victim))
+		abort()
 		return
 	if(!istype(user))
+		abort()
 		return
 	if(!engraving)
+		abort()
 		return // we done
+	if(!in_range(victim, user)) // safety check!
+		abort()
+		return
 	var/obj/item/bodypart/owie = victim.get_bodypart(part)
 	if(!owie)
+		abort()
 		return // we dont decorate phantom limbs in THIS parlor
 	var/next_time = 1 SECONDS
 	var/scream_prob = 50
 	var/brute_d = rand(1,30) * 0.1
-	var/bleed_d = brute_d * 1.1
+	var/bleed_d = brute_d * 1.35
 	var/stamina_d = bleed_d * 2
 	switch(rand(1,10)) // random sound
 		if(1 to 2)
 			playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
-			next_time = 1 SECONDS
-			user.visible_message(span_alert("[user] zaps a long line into [victim]'s flesh."))
+			next_time = 0.5 SECONDS
+			user.visible_message(span_notice("[user] zaps a long line into [victim]'s [lowertext(tat_loc)]."))
 		if(2 to 3)
 			playsound(get_turf(src), 'sound/machines/mixer.ogg', 50, 1)
-			next_time = 1 SECONDS
-			user.visible_message(span_alert("[user] buzzes a nice bold mark into [victim]'s flesh."))
+			next_time = 0.7 SECONDS
+			user.visible_message(span_notice("[user] buzzes a nice bold mark into [victim]'s [lowertext(tat_loc)]."))
 		if(4)
 			playsound(get_turf(src), 'sound/machines/juicer.ogg', 50, 1)
-			next_time = 4 SECONDS
-			brute_d *= 4
+			next_time = 2 SECONDS
+			brute_d *= 2
 			bleed_d *= 4
-			stamina_d *= 4
+			stamina_d *= 2
 			scream_prob = 80
-			user.visible_message(span_alert("[user] adds a bunch of cool shading to [victim]'s flesh."))
+			user.visible_message(span_notice("[user] adds a bunch of cool shading to [victim]'s [lowertext(tat_loc)]."))
 		if(5)
 			playsound(get_turf(src), 'sound/weapons/chainsawhit.ogg', 50, 1)
-			next_time = 3 SECONDS
+			next_time = 1.5 SECONDS
 			brute_d *= 3
 			bleed_d *= 3
 			stamina_d *= 3
 			scream_prob = 80
-			user.visible_message(span_alert("[user] runs the needles over a patch of [victim]'s flesh several times."))
+			user.visible_message(span_notice("[user] runs the needles over a patch of [victim]'s [lowertext(tat_loc)] several times."))
 		if(6)
 			playsound(get_turf(src), 'sound/weapons/handcuffs.ogg', 50, 1)
-			next_time = 1 SECONDS
-			user.visible_message(span_alert("[user] pokes a dot on [victim]'s flesh."))
+			next_time = 0.5 SECONDS
+			user.visible_message(span_notice("[user] pokes a dot on [victim]'s flesh."))
 		if(7 to 8)
 			playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
-			next_time = 1 SECONDS
-			user.visible_message(span_alert("[user] dig in <i>reaaal</i> deep into [victim]'s flesh."))
+			next_time = 0.7 SECONDS
+			user.visible_message(span_notice("[user] dig in <i>reaaal</i> deep into [victim]'s [lowertext(tat_loc)]."))
 		if(9 to 10)
-			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 50, 1)
-			next_time = 1 SECONDS
-			user.visible_message(span_alert("[user] zips a quick mark into [victim]'s flesh."))
+			playsound(get_turf(src), 'sound/weapons/fleshtear_1.ogg', 50, 1)
+			next_time = 0.5 SECONDS
+			user.visible_message(span_notice("[user] zips a quick mark into [victim]'s [lowertext(tat_loc)]."))
 	if(prob(scream_prob))
 		victim.emote("scream")
 	owie.receive_damage(brute = owie.brute_dam < 30 ? brute_d : 0, stamina = stamina_d, wound_bonus = bleed_d, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 	if(engraving)
-		addtimer(CALLBACK(GLOB, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
+		addtimer(CALLBACK(src, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
 
 /obj/item/storage/backpack/debug_tattoo
 	name = "Bag of Gunstuff 4 tattoos"

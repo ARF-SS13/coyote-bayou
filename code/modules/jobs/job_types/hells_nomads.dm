@@ -1,19 +1,21 @@
 
 /datum/job/biker
-	title = "Hell's Nomad"
+	title = "Hells Nomad"
 	department_flag = KHAN
 	selection_color = "#ff915e"
 	faction = FACTION_BIKER
 	exp_type = EXP_TYPE_LIVING
 	total_positions = 10 // supposedly whitelisted, no worries here
 	spawn_positions = 10
+	outfit = /datum/outfit/job/biker
+	//whitelist_path = "strings/job_whitelist/biker.txt"
 	/// They get tattoos, which are *basically* access
 	//access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
 	//minimal_access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
 
 /// The boss of the cowbikers (unused, for now)
 /datum/job/biker/boss
-	title = "Hell's Nomad Boss"
+	title = "Hells Nomad Boss"
 	department_flag = KHAN
 	selection_color = "#ff915e"
 	faction = FACTION_BIKER
@@ -24,7 +26,7 @@
 	//minimal_access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
 
 /datum/outfit/job/biker
-	name = "Hell's Nomad"
+	name = "Hells Nomad"
 	jobtype = /datum/job/biker
 	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket
 	id = /obj/item/card/id/khantattoo
@@ -41,7 +43,7 @@
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/khan = 1
 		)
-	tattoos_they_get = list(OUTFIT_TATTOO(/datum/tattoo/biker, TATTOO_BIKER_RIGHT_SHOULDER))
+	tattoos_they_get = list(/datum/tattoo/biker)
 
 /datum/outfit/job/biker/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

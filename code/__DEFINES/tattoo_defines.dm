@@ -26,6 +26,7 @@
 /* 
  * Locations for tattoos to go
  */
+#define TATTOO_FUCKUP "Bepis" // Tattoo didnt initialize right or something
 #define TATTOO_TRAMP_STAMP "Sacrum"
 #define TATTOO_WOMB_TATTOO "Upper Groin" // river tat
 #define TATTOO_LEFT_ASS "Left Buttock"
@@ -57,15 +58,15 @@
 
 #define OUTFIT_TATTOO(tatpath, spot) tatpath = spot
 
-#define TATTOO_IS_HIDDEN_UNDERWEAR(target, location) (ishuman(target) && target.hidden_underwear == TRUE && (location in list(\
+#define TATTOO_IS_HIDDEN_UNDERWEAR(target, location) (ishuman(target) && target.hidden_underwear == FALSE && (location in list(\
 	TATTOO_TRAMP_STAMP,\
 	TATTOO_WOMB_TATTOO)))
 
-#define TATTOO_IS_HIDDEN_BRA(target, location) (ishuman(target) && target.hidden_undershirt == TRUE && (location in list(\
+#define TATTOO_IS_HIDDEN_BRA(target, location) (ishuman(target) && target.hidden_undershirt == FALSE && (location in list(\
 	TATTOO_LEFT_BOOB,\
 	TATTOO_RIGHT_BOOB)))
 
-#define TATTOO_IS_HIDDEN_SOCKS(target, location) (ishuman(target) && target.hidden_socks == TRUE && (location in list(\
+#define TATTOO_IS_HIDDEN_SOCKS(target, location) (ishuman(target) && target.hidden_socks == FALSE && (location in list(\
 	TATTOO_LEFT_FOOT,\
 	TATTOO_RIGHT_FOOT)))
 

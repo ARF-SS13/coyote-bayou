@@ -156,17 +156,16 @@
 				var/obj/item/implant/I = new implant_type
 				I.implant(H, null, TRUE)
 		if(LAZYLEN(tattoos_they_get))
-			for(var/datum/tattoo/tattie in tattoos_they_get)
-				var/obj/item/bodypart/canvas
-				for(var/part in GLOB.tattoo_locations)
-					if(tattoos_they_get[tattie] in GLOB.tattoo_locations[part])
-						canvas = H.get_bodypart(part)
-						break
+			for(var/tat in tattoos_they_get)
+				if(!ispath(tat))
+					continue
+				var/datum/tattoo/tattie = tat
+				var/obj/item/bodypart/canvas = H.get_bodypart(initial(tattie.default_bodypart))
+				if(!canvas)
+					canvas = H.get_bodypart(BODY_ZONE_CHEST)
 				if(!istype(canvas))
 					continue
-				canvas.add_tattoo(tattie, tattoos_they_get[tattie])
-
-
+				canvas.add_tattoo(tattie, initial(tattie.default_spot))
 	H.update_body()
 	return TRUE
 

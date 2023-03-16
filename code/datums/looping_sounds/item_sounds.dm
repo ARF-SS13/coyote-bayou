@@ -66,3 +66,10 @@
 	mid_sounds = list('sound/machines/beep.ogg')
 	mid_length = 60
 	volume = 10
+
+/datum/looping_sound/tattoo_gun
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/machines/tattoo_buzz.ogg', 1 SECONDS, 1), 
+		)
+	mid_length = 1 SECONDS
+	volume = 30

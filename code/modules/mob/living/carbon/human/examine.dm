@@ -450,24 +450,13 @@
 		if(7 to INFINITY)
 			msg += "<span class='notice'><b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b></span>\n"
 
-	var/can_see_tats = FALSE
-	if(get_dist(user, src) <= TATTOO_VISIBILITY_RANGE)
-		/// my first labeled loop thingy~
-		tat_check:
-			for(var/X in bodyparts) // just check if *any* tats are visible
-				var/obj/item/bodypart/BP = X
-				if(!LAZYLEN(BP.tattoos))
-					continue
-				for(var/key in BP.tattoos)
-					if(!istype(BP.tattoos[key], /datum/tattoo))
-						continue
-					var/datum/tattoo/tattie = BP.tattoos[key]
-					if(tattie.is_it_visible(user, src))
-						can_see_tats = TRUE
-						break tat_check
-
-	if(can_see_tats)
-		msg += span_notice("[t_He] seem[p_s()] to have some ink done. <a href='?src=[REF(src)];show_tattoos=1'>\[Look closer?\]</a>")
+	/// my first labeled loop thingy~
+	//tat_check: // cut down before its time.
+	for(var/X in bodyparts) // just check if *any* tats are visible
+		var/obj/item/bodypart/BP = X
+		if(BP.are_any_tattoos_visible(user))
+			msg += span_notice("[t_He] seem[p_s()] to have some ink done. <a href='?src=[REF(src)];show_tattoos=1'>\[Look closer?\]</a>")
+			break
 
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")

@@ -63,7 +63,7 @@
 //bikoor
 /obj/machinery/door/unpowered/securedoor/bikerdoor
 	name = "Hell's Nomad door"
-	req_access_txt = ACCESS_BIKER
+	req_access = list(ACCESS_BIKER)
 
 
 // ------------------------------------
