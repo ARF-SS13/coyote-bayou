@@ -140,7 +140,7 @@
 
 //splurt ears
 /datum/sprite_accessory/ears/human/gret
-	name = "Gret"
+	name = "Gret, alt"
 	icon_state = "gret"
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = SKINTONE
@@ -223,5 +223,41 @@
 /datum/sprite_accessory/ears/mam_ears/frills/long
 	name = "long Frill"
 	icon_state = "longfrill"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/noodle
+	name = "noodle dragon"
+	icon_state = "noodledragon"
+	matrixed_sections = MATRIX_RED_BLUE
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/longbunnyalt
+	name = "long bunny, altt"
+	icon_state = "bunny"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/mousealt
+	name = "mouse, alt"
+	icon_state = "mouse"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/pointy
+	name = "pointy"
+	icon_state = "pointy"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/buny2
+	name = "bunny long, up"
+	icon_state = "bunny2"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/jackal
+	name = "jackal"
+	icon_state = "jackal"
 	color_src = MUTCOLORS
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
