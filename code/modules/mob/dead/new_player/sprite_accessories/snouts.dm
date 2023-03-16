@@ -505,3 +505,93 @@
 	name = "WahCoon ALT (Top)"
 	icon_state = "fwahalt"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/spots
+	name = "spots"
+	icon_state = "hspots"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/fox
+	name = "fox"
+	icon_state = "fox"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/snub
+	name = "snub"
+	icon_state = "snub"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/foxalt
+	name = "fox alt"
+	icon_state = "foxalt"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/shortalt
+	name = "short, alt"
+	icon_state = "short"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/rabbit
+	name = "rabbit"
+	icon_state = "rabbit"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/zebra
+	name = "zebra"
+	icon_state = "hzebra"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/anubus
+	name = "anubus"
+	icon_state = "hanubus"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/panda
+	name = "panda"
+	icon_state = "hpanda"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/jackal
+	name = "jackal"
+	icon_state = "hjackal"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/fskullbird
+	name = "female skullbird"
+	icon_state = "fskullbird"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/mskullbird
+	name = "male skullbird"
+	icon_state = "skullbird"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/orca
+	name = "orca"
+	icon_state = "orca"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/fsharpcolor
+	name = "sharp color alt"
+	icon_state = "fsharpcolor"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/stubby
+	name = "stubby alt"
+	icon_state = "stubby"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/bigmandible
+	name = "big mandible"
+	icon_state = "bigmandible"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/smallmandible
+	name = "small mandible"
+	icon_state = "smallmandible"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/proboscis
+	name = "proboscis"
+	icon_state = "proboscis"
+	matrixed_sections = MATRIX_RED
