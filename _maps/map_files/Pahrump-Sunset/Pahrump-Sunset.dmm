@@ -10567,21 +10567,20 @@
 	},
 /area/f13/wasteland/city)
 "aLl" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 6
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 0;
+	pixel_x = 14;
+	density = 0
 	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 5
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 0;
+	pixel_x = 14;
+	density = 0
 	},
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/building/tribal)
+/turf/closed/wall/mineral/brick,
+/area/f13/building)
 "aLn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -33495,8 +33494,8 @@
 	name = "shit pit";
 	pixel_y = -5
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
 	},
 /area/f13/building/tribal)
 "eXI" = (
@@ -57583,12 +57582,20 @@
 	},
 /area/f13/wasteland/city)
 "mct" = (
-/obj/structure/flora/ausbushes/grassybush,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 0;
+	pixel_x = -14;
+	density = 0
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 0;
+	pixel_x = 14;
+	density = 0
+	},
+/turf/closed/wall/mineral/brick,
+/area/f13/building)
 "mcu" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical"
@@ -64422,8 +64429,8 @@
 	name = "shit pit";
 	pixel_y = -8
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
 	},
 /area/f13/building/tribal)
 "nYk" = (
@@ -76097,9 +76104,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "rwr" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/rock,
-/area/f13/building/tribal)
+/turf/closed/wall/f13/sunset/brick_small_dark,
+/area/f13/building)
 "rww" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lamp_post/doubles/bent{
@@ -99427,14 +99433,14 @@ aae
 aae
 acA
 acA
-tqb
-rwr
-rwr
-tqb
-tqb
-tqb
-tqb
-tqb
+sUI
+ofx
+sUI
+ofx
+sUI
+sUI
+sUI
+sUI
 sUI
 bdA
 rcy
@@ -99443,7 +99449,7 @@ anx
 xQa
 sUI
 sUI
-tqb
+sUI
 tqb
 dam
 dam
@@ -99685,12 +99691,12 @@ flt
 cjP
 cjP
 sUI
-ofx
+vFQ
+aMY
+cWF
+cWF
+eEA
 sUI
-ofx
-sUI
-sUI
-tqb
 aJx
 rZI
 igT
@@ -99701,7 +99707,7 @@ igT
 rTf
 iGN
 ofx
-tqb
+sUI
 vcr
 dam
 kfF
@@ -99943,10 +99949,10 @@ fvw
 fvw
 sUI
 vFQ
-aMY
-eEA
+cWF
+cWF
+cWF
 uhY
-aJx
 ofx
 muQ
 wpB
@@ -100202,8 +100208,8 @@ ofx
 vFQ
 cWF
 cWF
+cWF
 qak
-ofx
 ofx
 axY
 wpB
@@ -100458,9 +100464,9 @@ fvw
 ofx
 vFQ
 cWF
+cWF
 aYx
 gOj
-sUI
 sUI
 orF
 wpB
@@ -100976,7 +100982,7 @@ aKI
 aXW
 ofx
 ofx
-aLl
+sUI
 wpB
 fJC
 yeY
@@ -101243,7 +101249,7 @@ qfj
 vgG
 pUD
 sUI
-tqb
+sUI
 vcr
 lGI
 eZw
@@ -101499,7 +101505,7 @@ aXp
 sUI
 sUI
 ofx
-tqb
+sUI
 tqb
 vcr
 lGI
@@ -113324,8 +113330,8 @@ etg
 vOV
 flt
 fvw
-fvw
-cjP
+mct
+mct
 fvw
 bVH
 fvw
@@ -113581,8 +113587,8 @@ aPX
 hrz
 ayu
 bVH
-bVH
 fvw
+mct
 fvw
 bVH
 fvw
@@ -113861,7 +113867,7 @@ oTM
 oTM
 oTM
 pyq
-cVr
+cjP
 cjP
 vHB
 bWj
@@ -114118,7 +114124,7 @@ cFK
 aOk
 aXa
 aOk
-bSw
+cjP
 cjP
 vHB
 brD
@@ -114375,7 +114381,7 @@ bZY
 aOk
 vYO
 noz
-mct
+bVH
 fvw
 ioI
 xul
@@ -114632,7 +114638,7 @@ cFK
 fcb
 aOk
 aXa
-flt
+rwr
 bVH
 fvw
 bVH
@@ -114889,9 +114895,9 @@ aOk
 wKe
 cIY
 aOk
-flt
+aLl
 fvw
-fvw
+bVH
 bVH
 fvw
 cjP

@@ -15089,6 +15089,23 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"psj" = (
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 5
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 6
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/hospital)
 "psk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -27447,7 +27464,7 @@ uDL
 bQR
 bQR
 rKZ
-bQR
+psj
 dnE
 pZo
 pzS
