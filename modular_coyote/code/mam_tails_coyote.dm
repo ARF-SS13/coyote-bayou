@@ -406,3 +406,54 @@
 	icon_state = "furret"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
+
+//Big ass tails from Splurt
+/datum/sprite_accessory/tails/mam_tails/westerndragon
+	name = "Dragon western"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "westerndragon"
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/westerndragon
+	name = "Dragon western"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "westerndragon"
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/kangaroo/alt
+	name = "kangaroo big"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "kangaroo"
+	dimension_x = 64
+	center = TRUE
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/kangaroo/alt
+	name = "kangaroo big"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "kangaroo"
+	dimension_x = 64
+	center = TRUE
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/snakelarge
+	name = "Snake Tail (Large)"
+	icon_state = "snakelarge"
+	color_src = MATRIXED
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails/snakelarge
+	name = "Snake Tail (Large)"
+	icon_state = "snakelarge"
+	color_src = MATRIXED
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
