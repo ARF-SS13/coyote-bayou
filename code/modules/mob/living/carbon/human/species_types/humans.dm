@@ -4,7 +4,7 @@
 	default_color = "FFFFFF"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,MUTCOLORS_PARTSONLY,WINGCOLOR,HAS_FLESH,HAS_BONE)
-	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF","tail_human" = "None", "ears" = "None", "taur" = "None", "deco_wings" = "None", "legs" = "Plantigrade", "mam_body_markings" = list())
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF","tail_human" = "None", "ears" = "None", "taur" = "None", "deco_wings" = "None", "legs" = "Plantigrade","mam_snouts" = "None", "mam_tail" = "None", "mam_ears" = "None", "mam_body_markings" = list())
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = GROSS | RAW | LONGPORK
@@ -24,7 +24,7 @@
 	. = ..()
 
 /datum/species/human/spec_life(mob/living/carbon/human/H)
-	
+
 	if (H.radiation>2500 && prob(10) && !(HAS_TRAIT(H,TRAIT_FEV)||HAS_TRAIT(H,TRAIT_RADIMMUNE)))
 		to_chat(H, span_danger("Your skin becomes to peel and fall off from radiation, also turning your voice into a rasp..."))
 		H.set_species(/datum/species/ghoul)
