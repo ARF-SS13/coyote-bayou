@@ -283,6 +283,9 @@
 	new /obj/item/book/granter/crafting_recipe/poultice(src)
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
 	new /obj/item/clothing/suit/armor/light/leather/leathercoat(src)
+	new /obj/item/circuitboard/machine/biogenerator(src)
+	new /obj/item/circuitboard/machine/plantgenes(src)
+	new /obj/item/circuitboard/machine/seed_extractor(src)
 
 // C
 
