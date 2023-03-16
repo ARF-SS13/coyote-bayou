@@ -595,3 +595,113 @@
 	name = "proboscis"
 	icon_state = "proboscis"
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/tarantula
+	name = "tarantula"
+	icon_state = "tarantula"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/deer
+	name = "deer"
+	icon_state = "deer"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/spider
+	name = "spider"
+	icon_state = "spider"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/scarab
+	name = "scarab"
+	icon_state = "scarab"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/rhinobeetle
+	name = "rhinobeetle"
+	icon_state = "rhinobeetle"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/vulp
+	name = "vulp"
+	icon_state = "vulp"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/vulp2
+	name = "vulp alt"
+	icon_state = "vulp2"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/easterndw
+	name = "eastern dragon"
+	icon_state = "easterndw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/feasterndw
+	name = "female eastern dragon"
+	icon_state = "feasterndw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/easterndnw
+	name = "eastern dragon, no whiskers"
+	icon_state = "easterndnw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/feasterndnw
+	name = "female eastern dragon, no whiskers"
+	icon_state = "feasterndnw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/magus
+	name = "magus"
+	icon_state = "magus"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/duck
+	name = "duck"
+	icon_state = "duck"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/goose
+	name = "goose"
+	icon_state = "goose"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/owl
+	name = "owl"
+	icon_state = "owl"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/beaktiny
+	name = "tiny beak"
+	icon_state = "beaktiny"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/deoxys
+	name = "deoxys"
+	icon_state = "deoxys"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/snouts/mam_snouts/sloog //No idea what the fuck this is
+	name = "sloog"
+	icon_state = "sloog"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/slooglips
+	name = "sloog lips"
+	icon_state = "slooglips"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/corvidbeak
+	name = "corvid beak"
+	icon_state = "corvidbeak"
+	matrixed_sections = MATRIX_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/tajaran
+	name = "tajaran"
+	icon_state = "tajaran"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/tajaranshort
+	name = "tajaran short"
+	icon_state = "tajaranshort"
+	matrixed_sections = MATRIX_RED_GREEN
