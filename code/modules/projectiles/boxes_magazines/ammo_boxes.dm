@@ -395,11 +395,11 @@
 */
 
 /obj/item/ammo_box/a556/improvised
-	name = "bag with reloaded .223 bullets"
+	name = "bag with reloaded 5.56 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	ammo_type = /obj/item/ammo_casing/a556/improvised
 	multiple_sprites = 3
-	max_ammo = 30
+	max_ammo = 25
 	icon_state = "improvshotbag"
 
 //7.62x51, .308 Winchester
