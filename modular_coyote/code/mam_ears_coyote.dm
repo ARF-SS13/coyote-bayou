@@ -137,3 +137,91 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
+
+//splurt ears
+/datum/sprite_accessory/ears/human/gret
+	name = "Gret"
+	icon_state = "gret"
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = SKINTONE
+
+/datum/sprite_accessory/ears/mam_ears/eros
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/eros/gret
+	name = "Gret, alt"
+	icon_state = "gret"
+	color_src = SKINTONE
+
+/datum/sprite_accessory/ears/mam_ears/eros/goathorns
+	name = "Goat Horns"
+	icon_state = "goathorns"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/ears/mam_ears/eros/undergoat
+	name = "Goat"
+	icon_state = "goat"
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/ears/mam_ears/eros/avali
+	name = "Avali, alt"
+	icon_state = "avali"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/eros/faceant // sarcoph @ hyperstation, march 2022
+	name = "Face Antennae (Hyper)"
+	icon_state = "faceant"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/eros/faceant2 // sarcoph @ hyperstation, march 2022
+	name = "Face Antennae 2 (Hyper)"
+	icon_state = "faceant2"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/eros/moth
+	name = "Moth Antennae (Hyper)"
+	icon_state = "moth"
+	matrixed_sections = MATRIX_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/eros/plumeant // sarcoph @ hyperstation, march 2022
+	name = "Plume Antennae (Hyper)"
+	icon_state = "plumeant"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/eros/roundant // sarcoph @ hyperstation, march 2022
+	name = "Round Antennae (Hyper)"
+	icon_state = "roundant"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/eros/thinant // sarcoph @ hyperstation, march 2022
+	name = "Thin Antennae (Hyper)"
+	icon_state = "thinant"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/eros/easterndragon
+	name = "Dragon Eastern"
+	icon_state = "easternd"
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/ears/mam_ears/eros/cat_normal
+	name = "Cat, normal"
+	icon_state = "catnormal"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/frills/split
+	name = "Split Frill"
+	icon_state = "splitfrill"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/frills/full
+	name = "Full Frill"
+	icon_state = "fullfrill"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/frills/long
+	name = "long Frill"
+	icon_state = "longfrill"
+	color_src = MUTCOLORS
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
