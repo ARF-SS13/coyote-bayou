@@ -646,7 +646,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/rockwell
 	name = "9mm Rockwell SMG case"
 
-/obj/item/storage/box/gun/rifle/smg22/PopulateContents()
+/obj/item/storage/box/gun/rifle/rockwell/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell(src)
 	new /obj/item/ammo_box/magazine/uzim9mm/rockwell(src)
 
@@ -686,7 +686,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/carbine9mm
 	name = "9mm carbine case"
 
-/obj/item/storage/box/gun/rifle/delisle/PopulateContents()
+/obj/item/storage/box/gun/rifle/carbine9mm/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/beretta/carbine(src)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
@@ -989,7 +989,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/borchardt
 	name = "9mm Borchardt case"
 
-/obj/item/storage/box/gun/pistol/auto9mm/PopulateContents()
+/obj/item/storage/box/gun/pistol/borchardt/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/c93(src)
 	new /obj/item/ammo_box/magazine/m9mm(src)
 	new /obj/item/ammo_box/magazine/m9mm(src)
@@ -998,7 +998,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/luger
 	name = "9mm Luger case"
 
-/obj/item/storage/box/gun/pistol/auto9mm/PopulateContents()
+/obj/item/storage/box/gun/pistol/luger/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger(src)
 	new /obj/item/ammo_box/magazine/m9mm(src)
 	new /obj/item/ammo_box/magazine/m9mm(src)
