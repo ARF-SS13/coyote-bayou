@@ -646,6 +646,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
 	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
 // OASIS autolaser
@@ -663,6 +664,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
 	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
 //Ultracite Laser pistol

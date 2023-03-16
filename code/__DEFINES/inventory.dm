@@ -567,6 +567,7 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/energy/laser/retro,
 	/obj/item/gun/ballistic/revolver/police,
 	/obj/item/gun/ballistic/revolver/m29/snub,
+	/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby,
 	)))
 
 GLOBAL_LIST_INIT(plushbelt_allowed, typecacheof(list(
