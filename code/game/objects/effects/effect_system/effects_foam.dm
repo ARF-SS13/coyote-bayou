@@ -158,7 +158,7 @@
 
 /obj/effect/particle_effect/foam/proc/spread_foam()
 	var/turf/t_loc = get_turf(src)
-	for(var/turf/T in t_loc.GetAtmosAdjacentTurfs())
+	for(var/turf/T in t_loc.reachableAdjacentTurfs())
 		var/obj/effect/particle_effect/foam/foundfoam = locate() in T //Don't spread foam where there's already foam!
 		if(foundfoam)
 			continue
@@ -258,12 +258,12 @@
 
 /obj/structure/foamedmetal/Initialize()
 	. = ..()
-	air_update_turf(1)
+	// air_update_turf(1)
 
 /obj/structure/foamedmetal/Move()
-	var/turf/T = loc
+	// var/turf/T = loc
 	. = ..()
-	move_update_air(T)
+	// move_update_air(T)
 
 /obj/structure/foamedmetal/attack_paw(mob/user)
 	return attack_hand(user)
@@ -299,6 +299,7 @@
 	if(isopenturf(loc))
 		var/turf/open/O = loc
 		O.ClearWet()
+		/*
 		if(O.air)
 			var/datum/gas_mixture/G = O.air
 			G.set_temperature(293.15)
@@ -309,6 +310,7 @@
 					continue
 				G.set_moles(I, 0)
 			O.air_update_turf()
+		*/
 		for(var/obj/machinery/atmospherics/components/unary/U in O)
 			if(!U.welded)
 				U.welded = TRUE
