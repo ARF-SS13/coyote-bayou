@@ -1157,7 +1157,6 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "pg" = (
-/obj/structure/bookshelf,
 /obj/item/trash/candle{
 	pixel_y = 19;
 	pixel_x = 3
@@ -1170,6 +1169,7 @@
 	pixel_y = 16;
 	pixel_x = 7
 	},
+/obj/structure/bookcase,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -2064,7 +2064,6 @@
 	},
 /area/f13/building)
 "AP" = (
-/obj/structure/bookshelf,
 /obj/item/trash/plate{
 	pixel_y = 16;
 	pixel_x = 7;
@@ -2078,6 +2077,7 @@
 	pixel_y = 15;
 	pixel_x = -7
 	},
+/obj/structure/bookcase,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -2935,7 +2935,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "JM" = (
-/obj/structure/bookshelf,
 /obj/item/trash/candle{
 	pixel_y = 16;
 	pixel_x = -2
@@ -2949,6 +2948,7 @@
 	pixel_x = 13;
 	layer = 2.9
 	},
+/obj/structure/bookcase,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -4260,7 +4260,6 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
 "YN" = (
-/obj/structure/bookshelf,
 /obj/item/trash/candle{
 	pixel_y = 16;
 	pixel_x = 3
@@ -4269,6 +4268,7 @@
 	pixel_y = 16;
 	pixel_x = -14
 	},
+/obj/structure/bookcase,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
