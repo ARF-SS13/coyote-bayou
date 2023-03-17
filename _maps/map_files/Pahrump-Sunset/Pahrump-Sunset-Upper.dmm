@@ -5430,6 +5430,10 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"fBq" = (
+/obj/structure/simple_door/room,
+/turf/open/floor/carpet/blue,
+/area/f13/building)
 "fBS" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -9739,9 +9743,7 @@
 "jLf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "jMb" = (
@@ -20666,9 +20668,7 @@
 /area/f13/building/mall)
 "vlJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "vmg" = (
@@ -26830,11 +26830,11 @@ ohv
 cBX
 ohv
 iMM
-ikS
+fBq
 bRf
 ohv
 cBX
-ikS
+fBq
 cBX
 ohv
 ohv
