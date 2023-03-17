@@ -142,7 +142,7 @@
 	if(health <= HEALTH_THRESHOLD_FULLCRIT || !lungs || lungs.failed)
 		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
 			return
-		adjustOxyLoss(1)
+		adjustOxyLoss(0.5)
 
 		failed_last_breath = 1
 		throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
