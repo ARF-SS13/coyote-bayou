@@ -885,7 +885,8 @@
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
-	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox(src)
+	new /obj/item/ammo_box/magazine/uzim9mm/rockwell(src)
 /*	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)*/

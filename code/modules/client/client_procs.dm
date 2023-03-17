@@ -430,6 +430,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				send2irc_adminless_only("New-user", "[key_name(src)] is connecting for the first time!")
 	else if (isnum(cached_player_age) && cached_player_age < nnpa)
 		message_admins("New user: [key_name_admin(src)] just connected with an age of [cached_player_age] day[(player_age==1?"":"s")]")
+	
+	//Check if the player is connecting from an IP hosting a VPN, Proxy, TOR exit node, or other relay
+	if (player_age < 10)
+		spawn(10) check_vpt(ckey, address)
+	
 	if(CONFIG_GET(flag/use_account_age_for_jobs) && account_age >= 0)
 		player_age = account_age
 	if(account_age >= 0 && account_age < nnpa)

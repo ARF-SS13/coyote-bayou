@@ -5773,9 +5773,6 @@
 	icon_state = "booth_east_south"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/poster_spawner/prewar{
-	pixel_x = -32
-	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "fWe" = (
@@ -14299,6 +14296,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"oqX" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "org" = (
 /obj/structure/fluff/hedge,
 /obj/effect/decal/cleanable/dirt,
@@ -15843,6 +15847,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"qcw" = (
+/obj/structure/fence/end/wooden{
+	pixel_x = 2;
+	density = 0;
+	pixel_y = 19
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "qcT" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
@@ -16668,9 +16680,6 @@
 "qXp" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_south"
-	},
-/obj/effect/landmark/poster_spawner/prewar{
-	pixel_x = -32
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -61306,9 +61315,9 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
+sRu
+sRu
+sRu
 oez
 oez
 oez
@@ -61562,10 +61571,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+qcw
+cdN
+cdN
 hMq
 hMq
 hMq
@@ -61819,10 +61828,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+cdN
+cdN
+cdN
 hMq
 mzt
 fVJ
@@ -62076,10 +62085,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+cdN
+cdN
+cdN
 ifg
 cdN
 cdN
@@ -62333,10 +62342,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+cdN
+cdN
+cdN
 vZC
 rVk
 rVk
@@ -62590,10 +62599,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+cdN
+cdN
+cdN
 cMa
 cdN
 vfq
@@ -62847,10 +62856,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+cdN
+cdN
+cdN
 hMq
 hMq
 hMq
@@ -63104,10 +63113,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-hqx
+tXH
+cdN
+cdN
+rVk
 hMq
 cxe
 qXp
@@ -63361,10 +63370,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-hqx
-oez
+tXH
+cdN
+axq
+axq
 ifg
 cdN
 cdN
@@ -63618,10 +63627,10 @@ oez
 oez
 oez
 oez
-oez
-hqx
-hqx
-dtb
+tXH
+rVk
+rVk
+cdN
 vZC
 cdN
 cdN
@@ -63875,10 +63884,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+cdN
+cdN
+cdN
 cMa
 cdN
 lUf
@@ -64132,10 +64141,10 @@ oez
 oez
 oez
 oez
-oez
-dtb
-dtb
-dtb
+tXH
+qcw
+cdN
+cdN
 hMq
 hMq
 hMq
@@ -64390,9 +64399,9 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
+oqX
+oqX
+oqX
 dtb
 dtb
 hqx
