@@ -263,7 +263,7 @@
 	icon_state = "colt6520"
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm300,
+		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
 	)
 
