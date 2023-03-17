@@ -1162,6 +1162,15 @@
 	new /obj/item/clothing/under/f13/exile/tribal/shimsusa_loincloth(src)
 	new /obj/item/storage/bag/plants(src)
 
+/datum/gear/donator/kits/weredoggo
+	name = "BBQ Fun"
+	path = /obj/item/storage/box/large/custom_kit/weredoggo
+	ckeywhitelist = list("weredoggo")
+
+/obj/item/storage/box/large/custom_kit/weredoggo/PopulateContents()
+	new /obj/item/reagent_containers/food/condiment/bbqsauce(src)
+	new /obj/item/storage/box/hug(src)
+
 // X
 // Y
 
