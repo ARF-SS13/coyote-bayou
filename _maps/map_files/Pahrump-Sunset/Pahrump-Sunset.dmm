@@ -65612,9 +65612,7 @@
 	},
 /area/f13/wasteland/city)
 "orQ" = (
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -78752,9 +78750,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ruins)
 "spL" = (
-/obj/structure/simple_door/room{
-	name = "Heaven's Night"
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/wood_common{
 	color = "#775555"
 	},
@@ -95378,7 +95374,9 @@
 "xiP" = (
 /obj/structure/simple_door/repaired,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "xiU" = (
 /obj/structure/flora/grass/coyote/twentyone,
@@ -95598,12 +95596,16 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "xmu" = (
-/obj/structure/stairs/north{
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/west{
 	color = "#A47449";
 	dir = 2
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/transparent/openspace,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building)
 "xmz" = (
 /obj/structure/simple_door/metal/barred,
