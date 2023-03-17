@@ -8697,6 +8697,14 @@
 /obj/item/toy/plush/borgplushie/scrubpuppy,
 /turf/open/floor/carpet/arcade,
 /area/f13/building/mall)
+"iMn" = (
+/obj/structure/fence/end/wooden{
+	pixel_x = 2;
+	density = 0;
+	pixel_y = 19
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "iMM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10060,13 +10068,9 @@
 "keH" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 2
+	dir = 8
 	},
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 1
-	},
-/turf/open/floor/wood_wide,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "keW" = (
 /obj/structure/spacevine,
@@ -14296,13 +14300,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"oqX" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "org" = (
 /obj/structure/fluff/hedge,
 /obj/effect/decal/cleanable/dirt,
@@ -15847,14 +15844,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
-"qcw" = (
-/obj/structure/fence/end/wooden{
-	pixel_x = 2;
-	density = 0;
-	pixel_y = 19
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "qcT" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
@@ -36359,8 +36348,8 @@ oez
 oez
 oez
 oez
-keH
-vxf
+gWO
+gAg
 rrx
 osd
 rrx
@@ -61572,7 +61561,7 @@ oez
 oez
 oez
 tXH
-qcw
+iMn
 cdN
 cdN
 hMq
@@ -64142,7 +64131,7 @@ oez
 oez
 oez
 tXH
-qcw
+iMn
 cdN
 cdN
 hMq
@@ -64399,9 +64388,9 @@ oez
 oez
 oez
 oez
-oqX
-oqX
-oqX
+keH
+keH
+keH
 dtb
 dtb
 hqx
