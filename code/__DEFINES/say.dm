@@ -17,8 +17,8 @@
 #define MODE_KEY_INTERCOM "i"
 
 #define MODE_BINARY "binary"
-#define MODE_KEY_BINARY "b"
-#define MODE_TOKEN_BINARY ":b"
+#define MODE_KEY_BINARY "9"
+#define MODE_TOKEN_BINARY ":9"
 
 #define MODE_WHISPER "whisper"
 #define MODE_WHISPER_CRIT "whispercrit"
