@@ -93,7 +93,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return new_msg
 
 /mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
-	var/static/list/crit_allowed_modes = list(MODE_WHISPER = TRUE, MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
+	var/static/list/crit_allowed_modes = list(
+		MODE_WHISPER = TRUE, 
+		MODE_CUSTOM_SAY = TRUE, 
+		MODE_SING = TRUE, 
+		MODE_HEADSET = TRUE, 
+		MODE_ROBOT = TRUE, 
+		MODE_CHANGELING = TRUE, 
+		MODE_ALIEN = TRUE
+		)
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/talk_key = get_key(message)
 
@@ -179,21 +187,21 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/message_range = 7
 
-	var/succumbed = FALSE
+	//var/succumbed = FALSE
 
-	var/fullcrit = InFullCritical()
-	if((InCritical() && !fullcrit) || message_mode == MODE_WHISPER)
+	//var/fullcrit = InFullCritical()
+	if(in_critical || message_mode == MODE_WHISPER)
 		message_range = 1
 		message_mode = MODE_WHISPER
 		src.log_talk(message, LOG_WHISPER)
-		if(fullcrit)
+		/* if(fullcrit) // no more dying for you!
 			var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
 			// If we cut our message short, abruptly end it with a-..
 			var/message_len = length_char(message)
 			message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
 			message = Ellipsis(message, 10, 1)
 			message_mode = MODE_WHISPER_CRIT
-			succumbed = TRUE
+			succumbed = TRUE */
 	else
 		src.log_talk(message, LOG_SAY, forced_by=forced)
 
@@ -237,9 +245,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 */
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mode, just_chat)
 
-	if(succumbed)
+	/* if(succumbed)
 		succumb()
-		to_chat(src, compose_message(src, language, message, null, spans, message_mode))
+		to_chat(src, compose_message(src, language, message, null, spans, message_mode)) */
 
 	return 1
 
