@@ -15066,9 +15066,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/city)
 "baa" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_middle"
-	},
+/obj/structure/chair/right,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -23438,10 +23436,8 @@
 	},
 /area/f13/building/abandoned)
 "cnf" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_middle"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/right,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -55677,14 +55673,12 @@
 	},
 /area/f13/wasteland/city)
 "lBl" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_middle"
-	},
 /obj/structure/curtain{
 	color = "#87A392";
 	layer = 5;
 	pixel_x = 32
 	},
+/obj/structure/chair/middle,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -58949,10 +58943,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "mwa" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_north_middle"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/left{
+	dir = 1
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -61817,13 +61811,13 @@
 	},
 /area/f13/wasteland/massfusion)
 "nmt" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_north_middle"
-	},
 /obj/structure/curtain{
 	color = "#87A392";
 	layer = 5;
 	pixel_x = 32
+	},
+/obj/structure/chair/middle{
+	dir = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -72586,8 +72580,8 @@
 	},
 /area/f13/tunnel)
 "qwd" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_north_middle"
+/obj/structure/chair/left{
+	dir = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
