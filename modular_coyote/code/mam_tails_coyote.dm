@@ -406,3 +406,212 @@
 	icon_state = "furret"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
+
+//Big ass tails from Splurt
+/datum/sprite_accessory/tails/mam_tails/westerndragon
+	name = "Dragon western"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "westerndragon"
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/westerndragon
+	name = "Dragon western"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "westerndragon"
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/kangaroo/alt
+	name = "kangaroo big"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "kangaroo"
+	dimension_x = 64
+	center = TRUE
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/kangaroo/alt
+	name = "kangaroo big"
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	icon_state = "kangaroo"
+	dimension_x = 64
+	center = TRUE
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/snakelarge
+	name = "Snake Tail (Large)"
+	icon_state = "snakelarge"
+	color_src = MATRIXED
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails/snakelarge
+	name = "Snake Tail (Large)"
+	icon_state = "snakelarge"
+	color_src = MATRIXED
+	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
+	dimension_x = 64
+	center = TRUE
+	matrixed_sections = MATRIX_RED_GREEN
+
+//More tails
+/datum/sprite_accessory/tails/mam_tails/spade
+	name = "Demon spade"
+	icon_state = "spade"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/spade
+	name = "Demon spade"
+	icon_state = "spade"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+
+/datum/sprite_accessory/tails/mam_tails/geckobig
+	name = "Big Gecko"
+	icon_state = "fatgecko"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/geckobig
+	name = "Big Gecko"
+	icon_state = "fatgecko"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/mam_tails/shorthawk
+	name = "Hawk - Short"
+	icon_state = "shorthawk"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/shorthawk // sarcoph @ hyperstation, jan 2022
+	name = "Hawk - Short"
+	icon_state = "shorthawk"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/longpigeon
+	name = "Pigeon - Long"
+	icon_state = "longpigeon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/longpigeon // sarcoph @ hyperstation, jan 2022
+	name = "Pigeon - Long"
+	icon_state = "longpigeon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/shortpigeon // sarcoph @ hyperstation, jan 2022
+	name = "Pigeon - Short"
+	icon_state = "shortpigeon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/shortpigeon
+	name = "Pigeon - Short"
+	icon_state = "shortpigeon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/swallow // sarcoph @ hyperstation, jan 2022
+	name = "Swallow"
+	icon_state = "swallow"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/swallow
+	name = "Swallow"
+	icon_state = "swallow"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/swallowstripped // sarcoph @ hyperstation, jan 2022
+	name = "Swallow - Striped"
+	icon_state = "swallowstriped"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_GREEN_BLUE
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/swallowstripped
+	name = "Swallow - Striped"
+	icon_state = "swallowstriped"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_GREEN_BLUE
+
+/datum/sprite_accessory/tails/mam_tails/bee/hyper // sarcoph @ hyperstation, march 2022
+	name = "Bee (Hyper)"
+	icon_state = "bee"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/bee/hyper
+	name = "Bee (Hyper)"
+	icon_state = "bee"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/mam_tails/bee2 // sarcoph @ hyperstation, march 2022
+	name = "Bee w/ Stinger (Hyper)"
+	icon_state = "bee2"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/bee2
+	name = "Bee w/ Stinger (Hyper)"
+	icon_state = "bee2"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/mam_tails/insect // sarcoph @ hyperstation, march 2022
+	name = "Insect (Hyper)"
+	icon_state = "insect"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/insect
+	name = "Insect (Hyper)"
+	icon_state = "insect"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/bug2tone // sarcoph @ hyperstation, march 2022
+	name = "Insect - 2-tone (Hyper)"
+	icon_state = "bug2tone"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/bug2tone
+	name = "Insect - 2-tone (Hyper)"
+	icon_state = "bug2tone"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/tails/mam_tails/easterndragon
+	name = "Dragon Eastern"
+	icon_state = "easternd"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/easterndragon
+	name = "Eastern Dragon"
+	icon_state = "easternd"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/succubus
+	name = "succubus"
+	icon_state = "succubus"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/fluffy
+	name = "fluffy"
+	icon_state = "fluffy"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS

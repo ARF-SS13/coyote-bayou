@@ -15,7 +15,7 @@
 	var/list/mob_type_allowed_typecache = /mob //Types that are allowed to use that emote
 	var/list/mob_type_blacklist_typecache //Types that are NOT allowed to use that emote
 	var/list/mob_type_ignore_stat_typecache
-	var/stat_allowed = CONSCIOUS
+	var/stat_allowed = SOFT_CRIT
 	var/static/list/emote_list = list()
 	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
 	/// Sound to play when emote is called.
@@ -36,6 +36,8 @@
 	var/omit_left_name = FALSE
 
 /datum/emote/New()
+	if(restraint_check)
+		stat_allowed = CONSCIOUS // just to be safe!
 	if(key_third_person)
 		emote_list[key_third_person] = src
 	if (ispath(mob_type_allowed_typecache))

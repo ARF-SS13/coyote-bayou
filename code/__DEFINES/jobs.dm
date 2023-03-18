@@ -12,6 +12,7 @@
 #define FACTION_VAULT "Vault"
 #define FACTION_FOLLOWERS "Followers"
 #define FACTION_KHAN "Great Khans"
+#define FACTION_BIKER "Hells Nomads"
 
 #define ENGSEC			(1<<0)
 

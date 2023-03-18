@@ -47,12 +47,14 @@
 	message = "mawps annoyingly."
 	emote_type = EMOTE_AUDIBLE
 
+/* Fuck you, Poojawa ~TK
 /datum/emote/living/carbon/human/mawp/run_emote(mob/living/user, params)
 	. = ..()
 	if(.)
 		if(ishuman(user))
 			if(prob(10))
 				user.adjustEarDamage(-5, -5)
+*/
 
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
@@ -165,7 +167,7 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	emote_type = EMOTE_AUDIBLE
 
-/* Fortuna edit: robot sound emotes disabled - Coyote Bayou edit: everyone can use them now lol
+
 /datum/emote/human/buzz
 	key = "buzz"
 	key_third_person = "buzzes"
@@ -190,7 +192,18 @@
 	key_third_person = "chimes"
 	message = "chimes."
 	sound = 'sound/machines/chime.ogg'
-*/
+
+/datum/emote/human/dot
+	key = "dot"
+	key_third_person = "beeps a little."
+	message = "beeps a little."
+	sound = 'sound/machines/dot.ogg'
+
+/datum/emote/human/dash
+	key = "dash"
+	key_third_person = "beeps some."
+	message = "beeps some."
+	sound = 'sound/machines/dash.ogg'
 
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(chosen_move)

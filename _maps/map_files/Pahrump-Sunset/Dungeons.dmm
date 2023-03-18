@@ -1305,9 +1305,16 @@
 	},
 /area/f13/brotherhood/offices2nd)
 "aLE" = (
-/obj/structure/closet/crate/silvercrate,
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/window/reinforced{
+	color = "#3e3d42";
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	termtag = "Enclave Outpost, Armory";
+	pixel_y = 5;
+	pixel_x = 4
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -1990,9 +1997,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "bfc" = (
-/obj/structure/closet/crate/silvercrate,
-/obj/machinery/vending/wallmed{
-	pixel_y = 30
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 29
+	},
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -4360,11 +4371,16 @@
 /turf/open/floor/wood_common,
 /area/f13/underground/cave)
 "cwX" = (
-/obj/structure/window/reinforced/fulltile,
+/obj/machinery/vending/wallmed{
+	pixel_y = 30
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
-/area/f13/underground/cave)
+/area/f13/building)
 "cxh" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -28271,7 +28287,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/vertibird{
 	dir = 8;
-	icon_state = "vb-fast"
+	icon_state = "vb-fast";
+	color = "#a55d35";
+	name = "Rustibird"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
@@ -41897,9 +41915,19 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "vOm" = (
-/obj/structure/closet/crate/silvercrate,
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 29
+/obj/structure/window/reinforced{
+	color = "#3e3d42";
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	termtag = "Enclave Outpost, Armory";
+	pixel_y = 5;
+	pixel_x = 4
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -73047,13 +73075,13 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+rck
+rck
+rck
+rck
+rck
+rck
+rck
 whv
 whv
 whv
@@ -73304,13 +73332,13 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+rck
+rck
+rck
+rck
+rck
+rck
+rck
 whv
 whv
 whv
@@ -73561,13 +73589,13 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+rck
+rck
+rck
+rck
+rck
+rck
+rck
 whv
 whv
 whv
@@ -73818,13 +73846,13 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+rck
+fTm
+vOm
+ojT
+aLE
+hHs
+rck
 whv
 whv
 whv
@@ -74075,13 +74103,13 @@ whv
 whv
 whv
 whv
-rck
-rck
-rck
-rck
-rck
-rck
-rck
+whv
+cLG
+bXQ
+dZG
+bXQ
+cLG
+whv
 whv
 whv
 whv
@@ -74330,17 +74358,17 @@ whv
 whv
 whv
 whv
-whv
-whv
-rck
-rck
-rck
-rck
-rck
-rck
-rck
-whv
-whv
+cLG
+cLG
+cLG
+cLG
+cLG
+eCi
+cLG
+cLG
+cLG
+cLG
+cLG
 whv
 whv
 whv
@@ -74587,17 +74615,17 @@ whv
 whv
 whv
 whv
-whv
-whv
-rck
-rck
+cLG
+cLG
+cLG
+cLG
 cwX
-cwX
-cwX
-rck
-rck
-whv
-whv
+dZG
+oiU
+cLG
+cLG
+cLG
+cLG
 whv
 whv
 whv
@@ -74846,13 +74874,13 @@ whv
 whv
 whv
 whv
-rck
-fTm
+whv
 cLG
-ojT
-cLG
-hHs
-rck
+bfc
+dZG
+cOo
+qWA
+whv
 whv
 whv
 whv
@@ -75105,10 +75133,10 @@ whv
 whv
 whv
 cLG
-cLG
-bXQ
-cLG
-cLG
+snE
+dZG
+oiU
+esE
 whv
 whv
 whv
@@ -75358,17 +75386,17 @@ whv
 whv
 whv
 whv
+whv
+whv
+whv
 cLG
-cLG
-cLG
-esE
-aLE
+kDV
 dZG
 oiU
 cLG
-cLG
-cLG
-cLG
+whv
+whv
+whv
 whv
 whv
 whv
@@ -75615,17 +75643,17 @@ whv
 whv
 whv
 whv
+whv
+whv
+whv
+wXM
 cLG
+eCi
 cLG
-cLG
-cLG
-bfc
-dZG
-oiU
-cLG
-cLG
-cLG
-cLG
+gSj
+whv
+whv
+whv
 whv
 whv
 whv
@@ -75875,11 +75903,11 @@ whv
 whv
 whv
 whv
+whv
 cLG
-vOm
-dZG
-cOo
-qWA
+svz
+cLG
+whv
 whv
 whv
 whv
@@ -76132,11 +76160,11 @@ whv
 whv
 whv
 whv
+whv
+whv
 cLG
-snE
-dZG
-oiU
-cLG
+whv
+whv
 whv
 whv
 whv
@@ -76389,11 +76417,11 @@ whv
 whv
 whv
 whv
-cLG
-kDV
-dZG
-oiU
-cLG
+whv
+whv
+whv
+whv
+whv
 whv
 whv
 whv
@@ -76646,11 +76674,11 @@ whv
 whv
 whv
 whv
-wXM
-cLG
-eCi
-cLG
-gSj
+whv
+whv
+whv
+whv
+whv
 whv
 whv
 whv
@@ -76904,9 +76932,9 @@ whv
 whv
 whv
 whv
-cLG
-svz
-cLG
+whv
+whv
+whv
 whv
 whv
 whv
@@ -77162,7 +77190,7 @@ whv
 whv
 whv
 whv
-cLG
+whv
 whv
 whv
 whv

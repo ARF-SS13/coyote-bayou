@@ -179,15 +179,19 @@
 	key = "rocks"
 	key_third_person = "rocks"
 	restraint_check = TRUE
-	cooldown = 2.5 SECONDS
+	COOLDOWN_DECLARE(rock_cooldown)
 
 /datum/emote/living/carbon/rocker/run_emote(mob/user)
 	. = ..()
+	if(!COOLDOWN_FINISHED(src, rock_cooldown) && !HAS_TRAIT(user, TRAIT_MONKEYLIKE))
+		to_chat(user, span_warning("You cant find any rocks yet!"))
+		return
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to go looking for rocks!"))
 		return
 	var/obj/item/ammo_casing/caseless/rock/rock = new(user)
 	if(user.put_in_active_hand(rock))
+		COOLDOWN_START(src, rock_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice hefty throwing rock!"))
 	else
 		qdel(rock)
@@ -197,15 +201,19 @@
 	key = "brick"
 	key_third_person = "bricks"
 	restraint_check = TRUE
-	cooldown = 2.5 SECONDS
+	COOLDOWN_DECLARE(brick_cooldown)
 
 /datum/emote/living/carbon/bricker/run_emote(mob/user)
 	. = ..()
+	if(!COOLDOWN_FINISHED(src, brick_cooldown) && !HAS_TRAIT(user, TRAIT_QUICK_BUILD))
+		to_chat(user, span_warning("You cant find any bricks yet!"))
+		return
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to go looking for bricks!"))
 		return
 	var/obj/item/ammo_casing/caseless/brick/brick = new(user)
 	if(user.put_in_active_hand(brick))
+		COOLDOWN_START(src, brick_cooldown, 2.5 SECONDS)
 		to_chat(user, span_notice("You find a nice weighty brick!"))
 	else
 		qdel(brick)

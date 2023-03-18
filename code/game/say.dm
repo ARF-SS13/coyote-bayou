@@ -17,6 +17,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_CTF_RED]" = "redteamradio",
 	"[FREQ_CTF_BLUE]" = "blueteamradio",
 	"[FREQ_VAULT]" = "vaultradio",
+	"[FREQ_BIKER]" = "syndradio",
 	"[FREQ_NCR]" = "ncrradio",
 	"[FREQ_BOS]" = "bosradio",
 	"[FREQ_ENCLAVE]" = "enclaveradio",

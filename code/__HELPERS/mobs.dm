@@ -86,6 +86,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/breasts, GLOB.breasts_shapes_list)
 	if(!GLOB.butt_shapes_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/butt, GLOB.butt_shapes_list)
+	if(!GLOB.belly_shapes_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/belly, GLOB.belly_shapes_list)
 	if(!GLOB.ipc_screens_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/screen, GLOB.ipc_screens_list)
 	if(!GLOB.ipc_antennas_list.len)
@@ -185,6 +187,9 @@
 		"has_butt"			= FALSE,
 		"butt_color"		= "ffffff",
 		"butt_size" 		= BUTT_SIZE_DEF,
+		"belly_color"		= "ffffff",
+		"belly_size" 		= BELLY_SIZE_DEF,
+		"belly_shape" 		= DEF_BELLY_SHAPE,
 		"has_balls" 		= FALSE,
 		"balls_color" 		= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"balls_size"		= BALLS_SIZE_DEF,

@@ -255,6 +255,18 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+
+//full auto .357 revolver. shoots wayfast
+/obj/item/gun/ballistic/revolver/colt357/auto
+	name = "auto-revolver"
+	desc = "A heavy .357 revolver with a custom recoil system."
+	icon_state = "colt6520"
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/faster
+	)
+
 /* * * * * * * * * * *
  * Mateba revolver
  * Cool? heavy revolver
@@ -356,6 +368,7 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+
 /* * * * * * * * * * *
  * .44 magnum revolver
  * Heavier revolver

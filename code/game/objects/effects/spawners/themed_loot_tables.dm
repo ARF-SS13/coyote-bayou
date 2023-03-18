@@ -9,7 +9,8 @@
 	/obj/item/gun/ballistic/revolver/shotpistol = 5,
 	/obj/item/gun/ballistic/rifle/hunting/obrez = 10,
 	/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
-	/obj/item/gun/ballistic/automatic/m1garand/sks = 1
+	/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
+	/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 10,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/vault
@@ -19,7 +20,8 @@
 	/obj/item/gun/ballistic/automatic/pistol/n99 = 20,
 	/obj/item/gun/energy/laser/complianceregulator = 10,
 	/obj/item/gun/ballistic/automatic/smg/smg10mm = 5,
-	/obj/item/gun/ballistic/shotgun/police = 1
+	/obj/item/gun/ballistic/shotgun/police = 1,
+	/obj/item/gun/ballistic/revolver/colt357/auto = 5,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/police
@@ -32,7 +34,8 @@
 	/obj/item/gun/ballistic/shotgun/police = 1,
 	/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
 	/obj/item/gun/ballistic/automatic/shotgun/riot = 1,
-	/obj/item/shield/riot = 10
+	/obj/item/shield/riot = 10,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 1,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/weapon_22
@@ -42,7 +45,8 @@
 	/obj/item/gun/ballistic/automatic/sportcarbine = 20,
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 10,
 	/obj/item/gun/ballistic/revolver/detective = 10,
-	/obj/item/gun/ballistic/automatic/smg/american180 = 1
+	/obj/item/gun/ballistic/automatic/smg/american180 = 1,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 10,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/milsurplus
@@ -100,7 +104,8 @@
 	/obj/item/twohanded/spear/scrapspear = 10,
 	/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 	/obj/item/melee/unarmed/lacerator = 10,
-	/obj/item/shishkebabpack = 5
+	/obj/item/shishkebabpack = 5,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 10,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/western //yeehowody

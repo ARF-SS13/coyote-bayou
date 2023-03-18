@@ -39,7 +39,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 	init_recoil = SMG_RECOIL(1)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm400,
+		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
 	gun_sound_properties = list(
@@ -457,6 +457,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/uzim9mm/rockwell) //so I don't have to assign a ton of new sprite names
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -525,7 +526,7 @@
 	init_recoil = SMG_RECOIL(0.75)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/faster
 	)
 
 	automatic = TRUE
@@ -538,6 +539,80 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 	//actions_types = list(/datum/action/item_action/toggle_firemode)
+
+//MP40: a uzi but with different flavor
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40
+	name = "Maschinenpistole 40"
+	desc = "An open bolt blowback submachine gun that served in the German Army. It's a long way from home."
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "mp40"
+	item_state = "smg9mm"
+
+//compact modernize MP5
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5
+	name = "HK MP-5"
+	desc = "A lightweight submachine gun that earned its place as one of the most popular SMGs in the world"
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "mp5"
+	w_class = WEIGHT_CLASS_NORMAL //high class, one of the few smol smgs
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
+
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FASTER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
+
+//tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
+	name = ".22 machine pistol"
+	desc = "A compact, lightweight way to put a lot of bullets downrange."
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "tec9"
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/m22
+	init_mag_type = /obj/item/ammo_box/magazine/m22
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
+	draw_time = GUN_DRAW_NORMAL
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	can_suppress = FALSE
+
+//rockwell: starter tier bad quality 9mm smg
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell
+	name = "9mm Rockwell SMG"
+	desc = "A crudely handmade reincarnation of the Australian Owen gun. It shoots, at least."
+	icon_state = "rockwell"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	disallowed_mags = null
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/fast
+	)
+	can_suppress = FALSE
+
+//mac-10: uzi, but compact, softer hitting, harder to control. needs suppressor location adjusted
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10
+	name = "Ingram Model 10" //I like naming things quirkily
+	desc = "A compact machine pistol with a blistering fire rate."
+	icon = 	'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "mac10"
+	w_class = WEIGHT_CLASS_NORMAL //kinda bulky for a compact gun
+	draw_time = GUN_DRAW_NORMAL
+	damage_multiplier = GUN_LESS_DAMAGE_T2 //this spits lots of bullets and is compact and can be dual wielded
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/faster
+	)
 
 /* * * * * * * * * * *
  * Carl Gustaf 10mm SMG
