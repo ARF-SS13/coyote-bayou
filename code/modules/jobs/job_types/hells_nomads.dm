@@ -28,29 +28,22 @@
 /datum/outfit/job/biker
 	name = "Hells Nomad"
 	jobtype = /datum/job/biker
-	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket
-	id = /obj/item/card/id/khantattoo
+	suit = /obj/item/clothing/suit/armor/light/duster/brahmin/biker
 	ears = /obj/item/radio/headset/headset_biker
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
-	shoes = /obj/item/clothing/shoes/f13/military
+	shoes = /obj/item/clothing/shoes/f13/cowboy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/old
-	uniform = /obj/item/clothing/under/f13/khan
+	uniform = /obj/item/clothing/under/f13/khan/biker
 	r_pocket = /obj/item/flashlight/flare
-	box = /obj/item/storage/survivalkit/tribal/chief
-	box_two = /obj/item/storage/survivalkit/medical/tribal
-	gloves = /obj/item/melee/unarmed/brass/spiked
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/khan = 1
+		/obj/item/storage/bag/money/small/settler = 1
 		)
 	tattoos_they_get = list(/datum/tattoo/biker)
 
 /datum/outfit/job/biker/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-/datum/outfit/job/biker/boss/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return

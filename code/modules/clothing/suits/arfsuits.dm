@@ -1036,8 +1036,14 @@
 	desc = "A duster made from tanned brahmin hide. It has a thick waxy surface from the processing, making it surprisingly laser resistant."
 	icon_state = "duster"
 	item_state = "duster"
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = ARMS
+
+/obj/item/clothing/suit/armor/light/duster/brahmin/biker
+	name = "sleeveless brahmin leather duster"
+	desc = "A duster made from tanned brahmin hide. Seems to be missing its arms. Seems like it was on purpose.."
+	icon_state = "brahmin_leather_duster_sleeveless"
+	item_state = "duster"
+	body_parts_hidden = 0
 
 /* 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
