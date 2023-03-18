@@ -96,6 +96,10 @@
 	/// Which kind of matchmaking this job allows, and with which departments. Associative list:  matchmaking_allowed[matchmaking datum typepath] -> list(job datum typepaths allowed)
 	var/list/matchmaking_allowed
 
+	/// Which kind of whitelist does this job use? for txt based whitelisting
+	/// the value should be something like "strings/names/cow.txt"
+	var/whitelist_path
+
 
 /datum/job/proc/after_spawn(mob/living/spawner, mob/client_holder, latejoin = FALSE)
 	SHOULD_CALL_PARENT(TRUE)

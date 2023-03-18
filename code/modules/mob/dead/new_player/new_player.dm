@@ -435,7 +435,7 @@
 		return JOB_UNAVAILABLE_ACCOUNTAGE
 	if(job.required_playtime_remaining(client))
 		return JOB_UNAVAILABLE_PLAYTIME
-	if(job.whitelist_locked(client,job.title) && (CONFIG_GET(flag/use_role_whitelist)))  //x check if this user should have access to this job via whitelist
+	if(job.whitelist_locked(client,job.title))  //x check if this user should have access to this job via whitelist
 		return JOB_UNAVAILABLE_WHITELIST
 	if(latejoin && !job.special_check_latejoin(client))
 		return JOB_UNAVAILABLE_GENERIC

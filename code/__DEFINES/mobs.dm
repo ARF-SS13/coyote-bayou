@@ -614,3 +614,6 @@
 
 /// Simple mob cannot be stamcrit
 #define SIMPLEMOB_NO_STAMCRIT -1
+
+/// Max distance you can see tats
+#define TATTOO_VISIBILITY_RANGE 3

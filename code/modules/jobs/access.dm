@@ -19,6 +19,9 @@
 			for(var/obj/item/key_try in H.contents)
 				if(check_access(key_try))
 					return TRUE
+		for(var/obj/item/bodypart/BP in H.bodyparts)
+			if(check_access(BP))
+				return TRUE
 /* 		if(H.wear_id && check_access(H.wear_id))
 			return TRUE
 		if(H.gloves && check_access(H.gloves))

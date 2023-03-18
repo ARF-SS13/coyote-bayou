@@ -46,8 +46,12 @@
 #define RADIO_TOKEN_CENTCOM ":y"
 
 #define RADIO_CHANNEL_VAULT "Vault"
-#define RADIO_KEY_VAULT "b"
-#define RADIO_TOKEN_VAULT ":b"
+#define RADIO_KEY_VAULT "0"
+#define RADIO_TOKEN_VAULT ":0"
+
+#define RADIO_CHANNEL_BIKER "Vault"
+#define RADIO_KEY_BIKER "b"
+#define RADIO_TOKEN_BIKER ":b"
 
 #define RADIO_CHANNEL_NCR "NCR"
 #define RADIO_KEY_NCR "w"
@@ -111,6 +115,7 @@
 #define FREQ_RANGER 1373 //Ranger
 #define FREQ_TOWN_MAYOR 1375 //Den
 #define FREQ_TOWN_COMMERCE 1376 //Khans
+#define FREQ_BIKER 1379 //Khans
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435

@@ -13,6 +13,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	MODE_BINARY = MODE_TOKEN_BINARY,
 	RADIO_CHANNEL_AI_PRIVATE = RADIO_TOKEN_AI_PRIVATE,
 	RADIO_CHANNEL_VAULT = RADIO_TOKEN_VAULT,
+	RADIO_CHANNEL_BIKER = RADIO_TOKEN_BIKER,
 	RADIO_CHANNEL_NCR = RADIO_TOKEN_NCR,
 	RADIO_CHANNEL_BOS = RADIO_TOKEN_BOS,
 	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
@@ -397,6 +398,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "syndie_headset" 
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_khans
+
+/obj/item/radio/headset/headset_biker
+	name = "Hell's Nomads radio headset"
+	desc = "This is used by the Hell's Nomads.\nTo access the Hell's Nomads channel, use :b."
+	icon_state = "syndie_headset" 
+	item_state = "headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_biker
 
 /obj/item/radio/headset/headset_town
 	name = "Nash radio headset"

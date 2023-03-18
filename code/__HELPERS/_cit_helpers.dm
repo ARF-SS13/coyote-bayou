@@ -107,29 +107,23 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 /mob/living/carbon/proc/has_penis()
 	var/obj/item/organ/genital/G = getorganslot(ORGAN_SLOT_PENIS)
 	if(G && istype(G, /obj/item/organ/genital/penis))
-		return TRUE
+		return G
 	return FALSE
 
 /mob/living/carbon/proc/has_balls()
 	var/obj/item/organ/genital/G = getorganslot(ORGAN_SLOT_TESTICLES)
 	if(G && istype(G, /obj/item/organ/genital/testicles))
-		return TRUE
+		return G
 	return FALSE
 
 /mob/living/carbon/proc/has_vagina()
-	if(getorganslot(ORGAN_SLOT_VAGINA))
-		return TRUE
-	return FALSE
+	return getorganslot(ORGAN_SLOT_VAGINA)
 
 /mob/living/carbon/proc/has_breasts()
-	if(getorganslot(ORGAN_SLOT_BREASTS))
-		return TRUE
-	return FALSE
+	return getorganslot(ORGAN_SLOT_BREASTS)
 
 /mob/living/carbon/proc/has_butt()
-	if(getorganslot(ORGAN_SLOT_BUTT))
-		return TRUE
-	return FALSE
+	return getorganslot(ORGAN_SLOT_BUTT)
 
 /mob/living/carbon/proc/has_belly()
 	if(getorganslot(ORGAN_SLOT_BELLY))

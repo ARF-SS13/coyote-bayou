@@ -180,10 +180,13 @@
 	if(M.stat == DEAD)
 		to_chat(user, span_notice(" [M] is dead. You can not help [M.p_them()]!"))
 		return
+	if (heal_mobs <= 0)
+		to_chat(user, span_warning("[M] cannot be healed with [src]!"))
+		return FALSE
 	if (!(critter.healable))
 		to_chat(user, span_warning("[M] cannot be healed!"))
 		return FALSE
-	else if (critter.health == critter.maxHealth)
+	if (critter.health >= critter.maxHealth)
 		to_chat(user, span_notice("[M] is at full health."))
 		return FALSE
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
@@ -679,6 +682,7 @@
 	icon_state = "ointment"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	heal_mobs = 20
 	amount = 12
 	max_amount = 12
 	self_delay = 40
@@ -716,6 +720,7 @@
 	amount = 15
 	max_amount = 15
 	heal_burn = 10
+	heal_mobs = 30
 	sanitization = 2
 	flesh_regeneration = 6
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
