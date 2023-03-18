@@ -11,7 +11,7 @@ has_git="$(command -v git)"
 has_cargo="$(command -v ~/.cargo/bin/cargo)"
 has_sudo="$(command -v sudo)"
 has_grep="$(command -v grep)"
-has_youtubedl="$(command -v youtube-dl)"
+has_youtubedl="$(command -v yt-dlp)"
 has_pip3="$(command -v pip3)"
 set -e
 
@@ -29,13 +29,13 @@ if ! ( [ -x "$has_git" ] && [ -x "$has_grep" ] && [ -f "/usr/lib/i386-linux-gnu/
 	apt-get install -y lib32z1 git pkg-config libssl-dev:i386 libssl-dev libssl1.1:i386
 fi
 
-# install youtube-dl when not present
+# install yt-dlp when not present
 if ! [ -x "$has_youtubedl" ]; then
-	echo "Installing youtube-dl with pip3..."
+	echo "Installing yt-dlp with pip3..."
 	if ! [ -x "$has_sudo" ]; then
 		apt-get install -y python3 python3-pip
 	else
 		sudo apt-get install -y python3 python3-pip
 	fi
-	pip3 install youtube-dl
+	pip3 install yt-dlp
 fi
