@@ -11360,6 +11360,10 @@
 	},
 /turf/closed/wall/mineral/brick,
 /area/f13/building)
+"kZB" = (
+/obj/item/tattoo_holder/biker,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "lak" = (
 /obj/structure/table,
 /turf/open/floor/carpet/blue,
@@ -13686,6 +13690,10 @@
 /obj/structure/closet/cabinet,
 /obj/item/twohanded/steelsaw,
 /obj/item/clothing/glasses/f13/biker,
+/obj/item/tattoo_holder/biker,
+/obj/item/tattoo_holder/biker,
+/obj/item/tattoo_holder/biker,
+/obj/item/tattoo_gun,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -22382,7 +22390,10 @@
 	},
 /area/f13/building)
 "wqZ" = (
-/obj/structure/chair/comfy/throne,
+/obj/structure/chair/comfy/throne{
+	name = "Cown Throne";
+	desc = "An ornate wooden chair that has a visage of our lord and savior Mama Cown on it."
+	},
 /obj/effect/landmark/start/f13/biker_boss,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
@@ -70198,7 +70209,7 @@ aKa
 aKa
 aKa
 kjh
-aKa
+kZB
 lLE
 aKa
 aKa
