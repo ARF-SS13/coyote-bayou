@@ -7,13 +7,14 @@
 
 //organ defines
 #define BUTT_LAYER_INDEX		1
-#define VAGINA_LAYER_INDEX		2
-#define TESTICLES_LAYER_INDEX	3
-#define GENITAL_LAYER_INDEX		4
-#define PENIS_LAYER_INDEX		5
-#define BREAST_LAYER_INDEX		6
+#define BELLY_LAYER_INDEX		2
+#define VAGINA_LAYER_INDEX		3
+#define TESTICLES_LAYER_INDEX	4
+#define GENITAL_LAYER_INDEX		5
+#define PENIS_LAYER_INDEX		6
+#define BREAST_LAYER_INDEX		7
 
-#define GENITAL_LAYER_INDEX_LENGTH 6 //keep it updated with each new index added, thanks.
+#define GENITAL_LAYER_INDEX_LENGTH 7 //keep it updated with each new index added, thanks.
 
 //genital flags
 #define GENITAL_BLACKLISTED      (1<<0) //for genitals that shouldn't be added to GLOB.genitals_list.
@@ -70,6 +71,13 @@
 #define BUTT_SIZE_MIN		1
 #define BUTT_SIZE_MAX		8  //butt genitals are special in that they have caps. if there's the event there's even bigger butt sprites, raise this number.
 
+#define DEF_BELLY_SHAPE	"Tummy"
+#define BELLY_SHAPE_TUMMY "Tummy" // cute lil round belly
+#define BELLY_SHAPE_OBESE "Obese" // blubbery fatass landwhale
+#define BELLY_SIZE_DEF 1
+#define BELLY_SIZE_MIN 1
+#define BELLY_SIZE_MAX 11 // our bellies go up to 11~
+
 //visibility toggles defines to avoid errors typos code errors.
 #define GEN_VISIBLE_ALWAYS "Always exposed"
 #define GEN_VISIBLE_OVERCLOTHES "Layered over clothes if visible"
@@ -111,6 +119,7 @@
 #define GENITAL_EXAMINE		(1<<13)
 #define VORE_EXAMINE		(1<<14)
 #define BUTT_ENLARGEMENT	(1<<15) // the butt is in the rear lol
+#define BELLY_ENLARGEMENT	(1<<16) // nope the belly is bro
 #define TOGGLES_CITADEL 0
 
 //belly sound pref things
