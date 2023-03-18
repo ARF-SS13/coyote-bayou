@@ -125,11 +125,6 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 /mob/living/carbon/proc/has_butt()
 	return getorganslot(ORGAN_SLOT_BUTT)
 
-/mob/living/carbon/proc/has_butt()
-	if(getorganslot(ORGAN_SLOT_BUTT))
-		return TRUE
-	return FALSE
-
 /mob/living/carbon/proc/has_belly()
 	if(getorganslot(ORGAN_SLOT_BELLY))
 		return TRUE
