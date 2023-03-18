@@ -3159,3 +3159,87 @@
 	else if(B.size < optimal_size)
 		B.modify_size(0.1, 0, optimal_size)
 	return ..()
+
+///Belly fattener
+/datum/reagent/belly_enlarger
+	name = "Fortified butter"
+	description = "A mixture of high-calorie compounds and hormones designed to enlarge a person's belly."
+	color = "#e8ff1b"
+	taste_description = "dense butter"
+	overdose_threshold = 100
+	can_synth = FALSE
+	synth_metabolism_use_human = TRUE
+
+/datum/reagent/belly_enlarger/on_mob_metabolize(mob/living/carbon/M)
+	. = ..()
+	if(!ishuman(M)) //leaving the monkey feature for those desperate for goon level comedy.
+		if(volume >= 15) //to prevent monkey butt farms
+			var/turf/T = get_turf(M)
+			var/obj/item/organ/genital/belly/B = new /obj/item/organ/genital/belly(T)
+			M.visible_message("<span class='warning'>A belly suddenly flies out of [M]!</b></span>")
+			var/T2 = get_random_station_turf()
+			M.adjustBruteLoss(25)
+			M.DefaultCombatKnockdown(50)
+			M.Stun(50)
+			B.throw_at(T2, 8, 1)
+		M.reagents.del_reagent(type)
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_BELLY) && H.emergent_genital_call())
+		H.genital_override = TRUE
+
+/datum/reagent/belly_enlarger/on_mob_life(mob/living/carbon/M) //Increases belly size
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/human/H = M
+	if(!(H.client?.prefs.cit_toggles & BELLY_ENLARGEMENT))
+		return ..()
+	var/obj/item/organ/genital/belly/B = M.getorganslot(ORGAN_SLOT_BELLY)
+	if(!B) //If they don't have a belly. Give them one!
+		var/obj/item/organ/genital/belly/nB = new
+		nB.Insert(M)
+		if(nB)
+			if(M.dna.species.use_skintones && M.dna.features["genitals_use_skintone"])
+				nB.color = SKINTONE2HEX(H.skin_tone)
+			else if(M.dna.features["belly_color"])
+				nB.color = "#[M.dna.features["belly_color"]]"
+			else
+				nB.color = SKINTONE2HEX(H.skin_tone)
+			nB.size = 1
+			to_chat(M, span_alert("You feel your belly swell itself out into a more prominent form!"))
+			M.reagents.remove_reagent(type, 5)
+			B = nB
+	//If they have, increase size.
+	if(B.cached_size < BELLY_SIZE_MAX) //just in case
+		B.modify_size(0.05)
+	..()
+
+/datum/reagent/belly_shrinker
+	name = "weight-loss shake"
+	color = "#faffd5"
+	taste_description = "the skimmest of milk" // What's the opposite of butter?
+	description = "A powerful weight-loss drug."
+	metabolization_rate = 0.5
+	can_synth = TRUE
+	synth_metabolism_use_human = TRUE
+
+/datum/reagent/belly_shrinker/on_mob_metabolize(mob/living/M)
+	. = ..()
+	if(!ishuman(M))
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_BELLY) && H.dna.features["has_belly"])
+		H.give_genital(/obj/item/organ/genital/belly)
+
+/datum/reagent/belly_shrinker/on_mob_life(mob/living/carbon/M)
+	var/obj/item/organ/genital/belly/B = M.getorganslot(ORGAN_SLOT_BELLY)
+	if(!B)
+		return ..()
+	var/optimal_size = M.dna.features["belly_size"]
+	if(!optimal_size)//Fast fix for those who don't want it.
+		B.modify_size(-0.2)
+	else if(B.size > optimal_size)
+		B.modify_size(-0.1, optimal_size)
+	else if(B.size < optimal_size)
+		B.modify_size(0.1, 0, optimal_size)
+	return ..()

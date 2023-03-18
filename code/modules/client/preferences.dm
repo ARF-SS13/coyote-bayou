@@ -154,6 +154,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"has_butt" = FALSE,
 		"butt_color" = "ffffff",
 		"butt_size" = BUTT_SIZE_DEF,
+		"has_belly" = FALSE,
+		"belly_color" = "ffffff",
+		"belly_size" = BELLY_SIZE_DEF,
+		"belly_shape" = DEF_BELLY_SHAPE,
 		"has_vag" = FALSE,
 		"vag_shape" = DEF_VAGINA_SHAPE,
 		"vag_color" = "ffffff",
@@ -163,6 +167,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"cock_visibility" = GEN_VISIBLE_NO_UNDIES,
 		"vag_visibility" = GEN_VISIBLE_NO_UNDIES,
 		"butt_visibility" = GEN_VISIBLE_NO_UNDIES,
+		"belly_visibility" = GEN_VISIBLE_NO_UNDIES,
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = "",
@@ -817,6 +822,17 @@ Records disabled until a use for them is found
 					dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Yes" : "No"]</a>"
 				dat += "</td>"
 				dat += APPEARANCE_CATEGORY_COLUMN
+				dat += "<h3>Belly</h3>"
+				dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_belly'>[features["has_belly"] == TRUE ? "Yes" : "No" ]</a>"
+				if(features["has_belly"])
+					if(!pref_species.use_skintones)
+						dat += "<b>Color:</b></a><BR>"
+						dat += "<span style='border: 1px solid #161616; background-color: #[features["belly_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=belly_color;task=input'>Change</a><br>"
+					dat += "<b>Belly Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_size;task=input'>[features["belly_size"]]</a>"
+					dat += "<b>Belly Shape:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_shape;task=input'>[features["belly_shape"]]</a>"
+					dat += "<b>Belly Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=belly_visibility;task=input'>[features["belly_visibility"]]</a>"
+				dat += "</td>"
+				dat += APPEARANCE_CATEGORY_COLUMN
 				dat += "<h3>Butt</h3>"
 				dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_butt'>[features["has_butt"] == TRUE ? "Yes" : "No"]</a>"
 				if(features["has_butt"])
@@ -1106,6 +1122,7 @@ Records disabled until a use for them is found
 			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "</tr></table>"
 			dat += "<br>"
 
@@ -2392,6 +2409,35 @@ Records disabled until a use for them is found
 					if(n_vis)
 						features["breasts_visibility"] = n_vis
 
+				if("belly_size")
+					var/min_B = CONFIG_GET(number/belly_min_size_prefs)
+					var/max_B = CONFIG_GET(number/belly_max_size_prefs)
+					var/new_length = input(user, "Belly size:\n([min_B]-[max_B])", "Character Preference") as num|null
+					if(new_length)
+						features["belly_size"] = clamp(round(new_length), min_B, max_B)
+
+				if("belly_shape")
+					var/new_shape
+					new_shape = input(user, "Belly Shape", "Character Preference") as null|anything in GLOB.belly_shapes_list
+					if(new_shape)
+						features["belly_shape"] = new_shape
+
+				if("belly_color")
+					var/new_belly_color = input(user, "Belly Color:", "Character Preference","#"+features["belly_color"]) as color|null
+					if(new_belly_color)
+						var/temp_hsv = RGBtoHSV(new_belly_color)
+						if(new_belly_color == "#000000")
+							features["belly_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+							features["belly_color"] = sanitize_hexcolor(new_belly_color, 6)
+						else
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
+
+				if("belly_visibility")
+					var/n_vis = input(user, "Belly Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
+					if(n_vis)
+						features["belly_visibility"] = n_vis
+
 				if("vag_shape")
 					var/new_shape
 					new_shape = input(user, "Vagina Type", "Character Preference") as null|anything in GLOB.vagina_shapes_list
@@ -2702,6 +2748,8 @@ Records disabled until a use for them is found
 					features["has_womb"] = !features["has_womb"]
 				if("has_butt")
 					features["has_butt"] = !features["has_butt"]
+				if("has_belly")
+					features["has_belly"] = !features["has_belly"]
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
@@ -2943,6 +2991,9 @@ Records disabled until a use for them is found
 
 				if("butt_enlargement")
 					cit_toggles ^= BUTT_ENLARGEMENT
+
+				if("belly_enlargement")
+					cit_toggles ^= BELLY_ENLARGEMENT
 
 				if("feminization")
 					cit_toggles ^= FORCED_FEM
