@@ -51,6 +51,9 @@
 	if(linked_organ_slot || (linked_organ && !owner))
 		update_link()
 
+/obj/item/organ/genital/proc/get_icon_state(mob/living/carbon/cockhaver, datum/sprite_accessory/sprote, aroused_state, layertext)
+	return "[slot]_[sprote.icon_state]_[size][(cockhaver.dna.species.use_skintones && !cockhaver.dna.skin_tone_override) ? "_s" : ""]_[aroused_state]_[layertext]"
+
 //exposure and through-clothing code
 /mob/living/carbon
 	var/list/exposed_genitals = list() //Keeping track of them so we don't have to iterate through every genitalia and see if exposed
@@ -63,15 +66,29 @@
 		if(!(NO_UNDERWEAR in H.dna.species.species_traits))
 			var/datum/sprite_accessory/underwear/top/T = H.hidden_undershirt ? null : GLOB.undershirt_list[H.undershirt]
 			var/datum/sprite_accessory/underwear/bottom/B = H.hidden_underwear ? null : GLOB.underwear_list[H.underwear]
-			if(zone == BODY_ZONE_CHEST ? (T?.covers_chest || B?.covers_chest) : (T?.covers_groin || B?.covers_groin))
-				return FALSE
+			switch(slot)
+				if(ORGAN_CHEST_GENITALS)
+					if(T?.covers_chest)
+						return FALSE
+					if(B?.covers_chest)
+						return FALSE
+				if(ORGAN_BELLY_GENITALS)
+					if(T?.covers_belly)
+						return FALSE
+					if(B?.covers_belly)
+						return FALSE
+				if(ORGAN_GROIN_GENITALS)
+					if(T?.covers_groin)
+						return FALSE
+					if(B?.covers_groin)
+						return FALSE
 	if(genital_flags & GENITAL_THROUGH_CLOTHES)
 		return TRUE
 
-	switch(zone) //update as more genitals are added
-		if(BODY_ZONE_CHEST)
+	switch(slot) //update as more genitals are added Okay - lagg
+		if(ORGAN_CHEST_GENITALS)
 			return owner.is_chest_exposed()
-		if(BODY_ZONE_PRECISE_GROIN)
+		if(ORGAN_BELLY_GENITALS, ORGAN_GROIN_GENITALS) // heard it here first folks, belly is in the groin
 			return owner.is_groin_exposed()
 
 /obj/item/organ/genital/proc/toggle_visibility(visibility, update = TRUE)
@@ -217,6 +234,8 @@
 		give_genital(/obj/item/organ/genital/butt)
 	if(dna.features["has_cock"])
 		give_genital(/obj/item/organ/genital/penis)
+	if(dna.features["has_belly"])
+		give_genital(/obj/item/organ/genital/belly)
 
 /mob/living/carbon/human/proc/give_genital(obj/item/organ/genital/G)
 	if(!dna || (NOGENITALS in dna.species.species_traits) || getorganslot(initial(G.slot)))
@@ -270,7 +289,6 @@
 			if(layertext == "MID" && !istype(G, /obj/item/organ/genital/butt))
 				continue // Only butts have the mid layer right now, remove if more things get them. cuts down on overlays, maybe
 			var/datum/sprite_accessory/S
-			var/size = G.size
 			switch(G.type)
 				if(/obj/item/organ/genital/penis)
 					S = GLOB.cock_shapes_list[G.shape]
@@ -282,6 +300,8 @@
 					S = GLOB.breasts_shapes_list[G.shape]
 				if(/obj/item/organ/genital/butt)
 					S = GLOB.butt_shapes_list[G.shape]
+				if(/obj/item/organ/genital/belly)
+					S = GLOB.belly_shapes_list[G.shape]
 
 			if(!S || S.icon_state == "none")
 				continue
@@ -305,7 +325,8 @@
 			if(dna.species.use_skintones)
 				genital_overlay.color = SKINTONE2HEX(skin_tone)
 			else
-				switch(S.color_src)
+				genital_overlay.color = "#[dna.features[S.color_src]]"
+/* 				switch(S.color_src)
 					if("cock_color")
 						genital_overlay.color = "#[dna.features["cock_color"]]"
 					if("balls_color")
@@ -316,8 +337,12 @@
 						genital_overlay.color = "#[dna.features["vag_color"]]"
 					if("butt_color")
 						genital_overlay.color = "#[dna.features["butt_color"]]"
-
-			genital_overlay.icon_state = "[G.slot]_[S.icon_state]_[size][(dna.species.use_skintones && !dna.skin_tone_override) ? "_s" : ""]_[aroused_state]_[layertext]"
+					if("belly_color")
+						genital_overlay.color = "#[dna.features["belly_color"]]" */
+			var/genital_state = G.get_icon_state(src, S, aroused_state, layertext)
+			if(!genital_state)
+				continue
+			genital_overlay.icon_state = genital_state
 
 			if(layers_num[layer] == GENITALS_FRONT_LAYER && ((G.genital_flags & GENITAL_THROUGH_CLOTHES) || (G.genital_flags & GENITAL_OVER_CLOTHES)))
 				genital_overlay.layer = -GENITALS_EXPOSED_LAYER
@@ -346,17 +371,20 @@
 	var/breastCheck = getorganslot(ORGAN_SLOT_BREASTS)
 	var/willyCheck = getorganslot(ORGAN_SLOT_PENIS)
 	var/buttCheck = getorganslot(ORGAN_SLOT_BUTT)
+	var/bellyCheck = getorganslot(ORGAN_SLOT_BELLY)
 
 	if(organCheck == FALSE)
 		if(src.dna.species.fixed_mut_color)
 			dna.features["cock_color"] = "[dna.species.fixed_mut_color]"
 			dna.features["breasts_color"] = "[dna.species.fixed_mut_color]"
 			dna.features["butt_color"] = "[dna.species.fixed_mut_color]"
+			dna.features["belly_color"] = "[dna.species.fixed_mut_color]"
 			return
 		//So people who haven't set stuff up don't get rainbow surprises.
 		dna.features["cock_color"] = "[dna.features["mcolor"]]"
 		dna.features["breasts_color"] = "[dna.features["mcolor"]]"
 		dna.features["butt_color"] = "[dna.features["mcolor"]]"
+		dna.features["belly_color"] = "[dna.features["mcolor"]]"
 	else //If there's a new organ, make it the same colour.
 		if(breastCheck == FALSE)
 			dna.features["breasts_color"] = dna.features["cock_color"]
@@ -364,4 +392,6 @@
 			dna.features["cock_color"] = dna.features["breasts_color"]
 		else if (buttCheck == FALSE)
 			dna.features["butt_color"] = dna.features["cock_color"] ? dna.features["cock_color"] : dna.features["breasts_color"]
+		else if (bellyCheck == FALSE)
+			dna.features["belly_color"] = dna.features["cock_color"] ? dna.features["cock_color"] : dna.features["breasts_color"]
 	return TRUE

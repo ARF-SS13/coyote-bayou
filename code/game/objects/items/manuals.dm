@@ -4,6 +4,7 @@
 /obj/item/book/manual
 	icon = 'icons/obj/library.dmi'
 	due_date = 0 // Game time in 1/10th seconds
+	w_class = WEIGHT_CLASS_TINY
 	unique = TRUE   // FALSE - Normal book, TRUE - Should not be treated as normal book, unable to be copied, unable to be modified
 
 /obj/item/book/manual/hydroponics_pod_people

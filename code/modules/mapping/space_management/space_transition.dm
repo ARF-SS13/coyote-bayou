@@ -156,15 +156,17 @@
 			var/turf/ending = locate(x_pos_ending[side], y_pos_ending[side], zlevelnumber)
 			var/list/turfblock = block(beginning, ending)
 			var/dirside = 2**(side-1)
-			var/zdestination = zlevelnumber
+			var/zdestination = null
 			if(D.neigbours["[dirside]"] && D.neigbours["[dirside]"] != D)
 				D = D.neigbours["[dirside]"]
 				zdestination = D.z_value
-			else
-				dirside = turn(dirside, 180)
-				while(D.neigbours["[dirside]"] && D.neigbours["[dirside]"] != D)
-					D = D.neigbours["[dirside]"]
-				zdestination = D.z_value
+			// This does weird things with the coordinate system, particularly with the way we want to use the maploader
+			// 
+			// else
+			// 	dirside = turn(dirside, 180)
+			// 	while(D.neigbours["[dirside]"] && D.neigbours["[dirside]"] != D)
+			// 		D = D.neigbours["[dirside]"]
+			// 	zdestination = D.z_value
 			D = I
 			for(var/turf/closed/indestructible/f13/matrix/transition/S in turfblock)
 				S.destination_x = x_pos_transition[side] == 1 ? S.x : x_pos_transition[side]

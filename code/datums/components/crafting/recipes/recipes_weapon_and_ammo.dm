@@ -1915,12 +1915,25 @@ Not implemented due to balance at the moment
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
-/datum/crafting_recipe/schmeisser
-	name = "Schmeisser Classic"
-	result = /obj/item/gun/ballistic/automatic/pistol/schmeisser
+/datum/crafting_recipe/tec22
+	name = ".22 Machine Pistol"
+	result = /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/metal = 3,
-				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/goodparts = 1,
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/auto9mm
+	name = "9mm Autopistol"
+	result = /obj/item/gun/ballistic/automatic/pistol/ninemil/auto
+	reqs = list(/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/crafting/goodparts = 1,
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120

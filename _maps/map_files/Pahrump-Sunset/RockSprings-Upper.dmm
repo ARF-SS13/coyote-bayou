@@ -9,7 +9,7 @@
 "aW" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/carpet,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "bk" = (
 /turf/open/transparent/openspace{
 	name = "air";
@@ -38,6 +38,10 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland)
+"bQ" = (
+/obj/machinery/telecomms/relay/preset/telecomms,
+/turf/open/indestructible,
+/area/f13/caves)
 "bW" = (
 /obj/structure/railing{
 	color = "#A47449"
@@ -50,7 +54,7 @@
 "cd" = (
 /obj/machinery/autolathe,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "cs" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 4
@@ -69,7 +73,7 @@
 /obj/structure/table/wood,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "cE" = (
 /obj/structure/table/wood/settler,
 /obj/item/stack/sheet/animalhide/human,
@@ -130,7 +134,7 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "ei" = (
 /obj/structure/debris/v1{
 	pixel_x = -16
@@ -207,7 +211,7 @@
 "gf" = (
 /obj/machinery/vending/cola,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "gI" = (
 /obj/structure/punji_sticks,
 /turf/open/floor/plating/f13/outside/road{
@@ -282,7 +286,7 @@
 	},
 /obj/structure/chair/wood,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/area/f13/building/firetower)
 "jJ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -291,17 +295,17 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "jK" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "kQ" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/costumes,
 /turf/open/floor/carpet,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "lv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -337,11 +341,11 @@
 /obj/structure/table/wood,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "mp" = (
 /obj/structure/simple_door/interior,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "my" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/tentclothedge{
@@ -384,7 +388,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/area/f13/building/firetower)
 "oj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/openspace{
@@ -451,7 +455,7 @@
 "ps" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "pE" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
@@ -491,13 +495,13 @@
 	color = "000000"
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland)
+/area/f13/caves)
 "qo" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/area/f13/building/firetower)
 "qr" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/barricade/tentclothcorner,
@@ -545,7 +549,7 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "rH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -610,7 +614,7 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "tg" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticalcorroded"
@@ -619,7 +623,10 @@
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
+"tA" = (
+/turf/open/indestructible,
+/area/f13/caves)
 "tD" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -634,7 +641,7 @@
 /area/f13/building/firetower)
 "ud" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "uk" = (
 /mob/living/simple_animal/hostile/raider/tribal,
 /turf/open/floor/plating/f13/outside/road{
@@ -674,7 +681,7 @@
 "uI" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "uJ" = (
 /obj/structure/barricade/tentclothcorner{
 	dir = 4
@@ -781,17 +788,17 @@
 	color = "000000"
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland)
+/area/f13/caves)
 "ye" = (
 /turf/open/transparent/openspace{
 	name = "air";
 	sunlight_state = 1
 	},
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "yf" = (
 /obj/structure/chair/wood,
 /turf/open/floor/carpet,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "yk" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 1;
@@ -821,7 +828,7 @@
 	pixel_x = -16
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "yI" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -903,13 +910,13 @@
 /obj/item/stack/sheet/metal,
 /obj/item/crowbar,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Ar" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Av" = (
 /mob/living/simple_animal/hostile/raider/tribal{
 	health = 160;
@@ -972,7 +979,7 @@
 	light_color = "red"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Bs" = (
 /obj/structure/barricade/tentclothcorner{
 	dir = 8
@@ -1003,7 +1010,7 @@
 	pixel_x = -16
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "BU" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -1062,7 +1069,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/area/f13/building/firetower)
 "Fj" = (
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/wasteland)
@@ -1105,7 +1112,7 @@
 	name = "air";
 	sunlight_state = 1
 	},
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "FF" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1119,14 +1126,14 @@
 	name = "air";
 	sunlight_state = 1
 	},
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "FM" = (
 /obj/item/bedsheet{
 	icon_state = "sheetbrown"
 	},
 /obj/structure/bed/old,
 /turf/open/floor/carpet,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Ga" = (
 /obj/structure/barricade/tentclothedge,
 /obj/structure/decoration/rag,
@@ -1167,7 +1174,15 @@
 	light_color = "red"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
+"Hm" = (
+/mob/living/simple_animal/hostile/lizard{
+	AIStatus = 3;
+	desc = "A very crispy looking lizard.";
+	name = "Licks-The-Transistors"
+	},
+/turf/open/indestructible,
+/area/f13/caves)
 "HV" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 1;
@@ -1196,7 +1211,7 @@
 	pixel_x = -10
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Iq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -1225,7 +1240,7 @@
 	},
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "II" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 8
@@ -1246,7 +1261,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/area/f13/building/firetower)
 "JU" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 1;
@@ -1269,7 +1284,7 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Ki" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
@@ -1283,7 +1298,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "KK" = (
 /obj/structure/simple_door/tentflap_cloth{
 	pixel_y = -3
@@ -1326,7 +1341,7 @@
 	},
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/area/f13/building/firetower)
 "MA" = (
 /obj/structure/barricade/tentclothcorner{
 	dir = 1
@@ -1357,7 +1372,7 @@
 /area/f13/village/overpass_village)
 "Oe" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland)
+/area/f13/caves)
 "Og" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 1;
@@ -1462,7 +1477,7 @@
 /obj/effect/turf_decal/weather/sand,
 /obj/item/pickaxe,
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland)
+/area/f13/caves)
 "PP" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontalbottomborderbottom0"
@@ -1582,14 +1597,14 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "SD" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "SV" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1626,11 +1641,11 @@
 "TF" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "TI" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "UC" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 4
@@ -1653,7 +1668,7 @@
 	color = "000000"
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland)
+/area/f13/caves)
 "VO" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -1664,7 +1679,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/area/f13/building/firetower)
 "VP" = (
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -1673,14 +1688,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
 "Ws" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/turf/closed/indestructible/riveted,
+/area/f13/caves)
 "Ww" = (
-/turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/turf/closed/indestructible/f13/obsidian,
+/area/f13/caves)
 "WB" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1694,13 +1706,13 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "WW" = (
 /turf/closed/wall/f13/store{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "WX" = (
 /obj/structure/barricade/tentclothcorner,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -1787,7 +1799,7 @@
 	light_color = "red"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Ze" = (
 /obj/structure/barricade/tentclothcorner,
 /obj/effect/decal/cleanable/dirt,
@@ -1799,7 +1811,7 @@
 /area/f13/wasteland)
 "Zh" = (
 /turf/open/floor/carpet,
-/area/f13/village/tunnel_motel)
+/area/f13/building/firetower)
 "Zs" = (
 /obj/structure/barricade/tentclothedge,
 /obj/effect/decal/cleanable/dirt,
@@ -24569,8 +24581,8 @@ pE
 pE
 pE
 WW
-Ww
-Ww
+Ti
+Ti
 WW
 pE
 pE
@@ -24826,7 +24838,7 @@ pE
 pE
 pE
 WW
-Ww
+Ti
 FF
 WW
 pE
@@ -25343,8 +25355,8 @@ WW
 WW
 Ar
 SD
-Ww
-Ww
+Ti
+Ti
 lZ
 WW
 pE
@@ -25598,7 +25610,7 @@ pE
 pE
 pE
 WW
-Ww
+Ti
 Ar
 Ar
 Ar
@@ -25857,8 +25869,8 @@ pE
 WW
 Zc
 Ar
-Ww
-Ww
+Ti
+Ti
 cd
 WW
 pE
@@ -26112,10 +26124,10 @@ pE
 pE
 pE
 WW
-Ww
+Ti
 Ar
 TI
-Ww
+Ti
 ps
 WW
 pE
@@ -26369,7 +26381,7 @@ pE
 pE
 pE
 WW
-Ww
+Ti
 Ar
 WW
 WW
@@ -27140,7 +27152,7 @@ pE
 pE
 yH
 ud
-Ww
+Ti
 Ar
 WW
 uI
@@ -27397,7 +27409,7 @@ pE
 ei
 ud
 ud
-Ww
+Ti
 Ix
 WW
 WW
@@ -27655,7 +27667,7 @@ ud
 ud
 ye
 Ar
-Ww
+Ti
 WW
 jK
 yf
@@ -27903,13 +27915,13 @@ bk
 bk
 bk
 tg
-Ww
-Ww
+Ti
+Ti
 Ar
 Ar
-Ww
+Ti
 Ar
-Ww
+Ti
 Ig
 TI
 Ar
@@ -28162,13 +28174,13 @@ bk
 WW
 Zc
 Ar
-Ww
+Ti
 Ar
 Ar
 Ar
 Ar
-Ww
-Ww
+Ti
+Ti
 Ar
 WW
 uI
@@ -28417,15 +28429,15 @@ bk
 bk
 bk
 WW
-Ww
+Ti
 Sz
 WW
 WW
 WW
-Ww
+Ti
 dV
 WO
-Ww
+Ti
 Ix
 WW
 WW
@@ -28679,7 +28691,7 @@ Ar
 WW
 pE
 WW
-Ww
+Ti
 Ar
 sL
 Ar
@@ -28937,10 +28949,10 @@ WW
 pE
 WW
 Aq
-Ww
+Ti
 sL
 ro
-Ww
+Ti
 mp
 Zh
 Zh
@@ -29446,14 +29458,14 @@ bk
 bk
 WW
 Ar
-Ww
+Ti
 WW
 pE
 pE
 pE
 pE
 WW
-Ww
+Ti
 Ix
 WW
 WW
@@ -29710,7 +29722,7 @@ pE
 pE
 pE
 WW
-Ww
+Ti
 Ar
 WW
 jK
@@ -29959,7 +29971,7 @@ bk
 bk
 bk
 WW
-Ww
+Ti
 Sz
 WW
 pE
@@ -29967,7 +29979,7 @@ pE
 pE
 pE
 WW
-Ww
+Ti
 Ar
 mp
 Zh
@@ -30216,7 +30228,7 @@ bk
 bk
 bk
 WW
-Ww
+Ti
 Sz
 WW
 pE
@@ -30473,7 +30485,7 @@ bk
 bk
 bk
 WW
-Ww
+Ti
 Sz
 WW
 pE
@@ -30481,7 +30493,7 @@ pE
 pE
 pE
 WW
-Ww
+Ti
 Ar
 Ky
 WW
@@ -30740,7 +30752,7 @@ pE
 WW
 Ar
 Ar
-Ww
+Ti
 TF
 cv
 WW
@@ -30987,18 +30999,18 @@ bk
 bk
 bW
 jJ
-Ws
-Ws
+Ar
+Ar
 jJ
 Oe
 xK
 pE
 pE
 WW
-Ww
+Ti
 Ar
 SD
-Ww
+Ti
 TF
 WW
 pE
@@ -31243,10 +31255,10 @@ bk
 bk
 bk
 bW
-Ws
+Ar
 og
 JK
-Ws
+Ar
 Vf
 Vf
 PJ
@@ -31511,7 +31523,7 @@ pE
 WW
 WW
 WW
-Ww
+Ti
 FA
 WW
 pE
@@ -31757,10 +31769,10 @@ bk
 bk
 bk
 bW
-Ws
+Ar
 Eq
 qo
-Ws
+Ar
 Vf
 Vf
 xK
@@ -31768,8 +31780,8 @@ pE
 pE
 pE
 WW
-Ww
-Ww
+Ti
+Ti
 WW
 pE
 pE
@@ -32014,10 +32026,10 @@ bk
 bk
 bk
 bW
-VP
-Ws
-Ws
-Ws
+Ti
+Ar
+Ar
+Ar
 pE
 Oe
 Oe
@@ -65556,13 +65568,13 @@ pE
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-pE
-pE
+Ww
+Ww
+Ww
+Ww
+Ww
+Ww
+Ww
 Fs
 "}
 (249,1,1) = {"
@@ -65813,13 +65825,13 @@ pE
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-pE
-pE
+Ww
+Ws
+Ws
+Ws
+Ws
+Ws
+Ww
 Fs
 "}
 (250,1,1) = {"
@@ -66070,13 +66082,13 @@ pE
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-pE
-pE
+Ww
+Ws
+Hm
+tA
+tA
+Ws
+Ww
 Fs
 "}
 (251,1,1) = {"
@@ -66327,13 +66339,13 @@ pE
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-pE
-pE
+Ww
+Ws
+tA
+bQ
+tA
+Ws
+Ww
 Fs
 "}
 (252,1,1) = {"
@@ -66584,13 +66596,13 @@ pE
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-pE
-pE
+Ww
+Ws
+tA
+tA
+tA
+Ws
+Ww
 Fs
 "}
 (253,1,1) = {"
@@ -66841,13 +66853,13 @@ pE
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-pE
-pE
+Ww
+Ws
+Ws
+Ws
+Ws
+Ws
+Ww
 Fs
 "}
 (254,1,1) = {"
@@ -67098,13 +67110,13 @@ pE
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-pE
-pE
+Ww
+Ww
+Ww
+Ww
+Ww
+Ww
+Ww
 Fs
 "}
 (255,1,1) = {"

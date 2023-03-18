@@ -45,6 +45,35 @@
 	..()
 	. = TRUE
 
+/datum/reagent/medicine/fake_stimpak
+	name = "Fake stimfluid"
+	description = "A cocktail of random chemicals designed to mimic stimfluid."
+	reagent_state = LIQUID
+	color = "#eb0000"
+	taste_description = "numbness"
+	metabolization_rate = 5 * REAGENTS_METABOLISM //13 ticks, for 26 damage after 26 healing
+	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
+
+// insta-heal on inject, 1 of each brute and burn per volume
+/datum/reagent/medicine/fake_stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
+	if(iscarbon(M))
+		if(M.stat == DEAD) // Doesnt work on the dead
+			return
+		if(method != INJECT) // Gotta be injected
+			return
+		if(M.getBruteLoss())
+			M.adjustBruteLoss(-reac_volume)
+		if(M.getFireLoss())
+			M.adjustFireLoss(-reac_volume)
+	..()
+
+/datum/reagent/medicine/fake_stimpak/on_mob_life(mob/living/carbon/M)
+		M.adjustBruteLoss(1*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(1*REAGENTS_EFFECT_MULTIPLIER)
+		. = TRUE
+		..()
+
 /* 
  * Super Stimpak Juice
  * Initial insta-heal

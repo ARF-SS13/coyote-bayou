@@ -86,3 +86,4 @@
 	var/has_digitigrade = FALSE
 	var/covers_groin = FALSE
 	var/covers_chest = FALSE
+	var/covers_belly = FALSE

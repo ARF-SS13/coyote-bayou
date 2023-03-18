@@ -559,6 +559,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/premium/lucky //not sure if this should be allowed, or if is supposed to be unique
 	name = ".357 magnum revolver case"
@@ -567,6 +568,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/colt357/lucky(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/premium/alt //pearly .44 mag
 	name = "pearl .44 magnum case"
@@ -601,6 +603,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
 	new /obj/item/ammo_box/tube/a357(src) //high capacity, only get one
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/rifle/hunting
 	name = "hunting rifle case"
@@ -617,6 +620,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/caravan_shotgun(src)
 	//new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
 	new /obj/item/ammo_box/c4570box(src)
+	new /obj/item/ammo_box/c4570/ratshot(src)
 
 /obj/item/storage/box/gun/rifle/widowmaker
 	name = "Winchester Widowmaker case"
@@ -632,12 +636,19 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/rifle/antique/gras (src)
 	new /obj/item/ammo_box/a3006box(src)
 
-/obj/item/storage/box/gun/rifle/smg22 //only full auto gun you can has roundstart. might not be allowed, will see
+/obj/item/storage/box/gun/rifle/smg22
 	name = ".22 Uzi case"
 
 /obj/item/storage/box/gun/rifle/smg22/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22(src)
 	new /obj/item/ammo_box/magazine/m22/extended(src)
+
+/obj/item/storage/box/gun/rifle/rockwell
+	name = "9mm Rockwell SMG case"
+
+/obj/item/storage/box/gun/rifle/rockwell/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell(src)
+	new /obj/item/ammo_box/magazine/uzim9mm/rockwell(src)
 
 /obj/item/storage/box/gun/rifle/sidewinder //should this be allowed? not field tested personally
 	name = "multi-caliber carbine case"
@@ -669,6 +680,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/rifle/delisle/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/delisle(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+
+/obj/item/storage/box/gun/rifle/carbine9mm
+	name = "9mm carbine case"
+
+/obj/item/storage/box/gun/rifle/carbine9mm/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/beretta/carbine(src)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 
@@ -765,6 +784,20 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/melee/militarypolice/PopulateContents()
 	new /obj/item/melee/classic_baton/militarypolice(src)
+
+/obj/item/storage/box/gun/melee/rising_bass
+	name = "rising bass case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/rising_bass/PopulateContents()
+	new /obj/item/book/granter/martial/bass(src)
+
+/obj/item/storage/box/gun/melee/sleeping_carp
+	name = "sleeping carp case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/sleeping_carp/PopulateContents()
+	new /obj/item/book/granter/martial/carp(src)
 
 /// HOBO GUNS
 
@@ -874,6 +907,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/colt357(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/revolver/police
 	name = "police revolver case"
@@ -882,6 +916,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/police(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357/ratshot(src)
 
 /obj/item/storage/box/gun/revolver/m29
 	name = ".44 magnum revolver case"
@@ -926,6 +961,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m22(src)
 	new /obj/item/ammo_box/magazine/m22(src)
 
+/obj/item/storage/box/gun/pistol/tec22
+	name = ".22 machine pistol case"
+
+/obj/item/storage/box/gun/pistol/tec22/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22(src)
+	new /obj/item/ammo_box/magazine/m22(src)
+	new /obj/item/ammo_box/magazine/m22(src)
+
 /obj/item/storage/box/gun/pistol/ninemil
 	name = "Browning Hi-power case"
 
@@ -933,6 +976,33 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil(src)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+
+/obj/item/storage/box/gun/pistol/auto9mm
+	name = "9mm Autopistol case"
+
+/obj/item/storage/box/gun/pistol/auto9mm/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/auto(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+
+/obj/item/storage/box/gun/pistol/borchardt
+	name = "9mm Borchardt case"
+
+/obj/item/storage/box/gun/pistol/borchardt/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/c93(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+
+/obj/item/storage/box/gun/pistol/luger
+	name = "9mm Luger case"
+
+/obj/item/storage/box/gun/pistol/luger/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
 
 /obj/item/storage/box/gun/pistol/beretta
 	name = "Beretta M9FS case"
@@ -1292,6 +1362,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/smg22
 
+/datum/loadout_box/rockwell
+	entry_tag = "9mm Rockwell SMG"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/rockwell
+
 /datum/loadout_box/gras
 	entry_tag = "Gras Rifle"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -1321,6 +1397,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/delisle
+
+/datum/loadout_box/carbine9mm
+	entry_tag = "9mm Carbine"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/carbine9mm
 
 /datum/loadout_box/sportcarbine
 	entry_tag = "Sport Carbine"
@@ -1454,11 +1536,35 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol
 
+/datum/loadout_box/tec22
+	entry_tag = ".22 Machine Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/tec22
+
 /datum/loadout_box/ninemil
 	entry_tag = "Hi-Power Pistol"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/ninemil
+
+/datum/loadout_box/auto9mm
+	entry_tag = "9mm Autopistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/auto9mm
+
+/datum/loadout_box/borchardt
+	entry_tag = "9mm Borchardt"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/borchardt
+
+/datum/loadout_box/luger
+	entry_tag = "9mm Luger"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/luger
 
 /datum/loadout_box/beretta
 	entry_tag = "Beretta M9FS"
@@ -1545,6 +1651,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/fist_of_the_swampstar
+
+/datum/loadout_box/rising_bass // YEET
+	entry_tag = "Rising Bass Scroll"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/rising_bass
+
+/datum/loadout_box/sleeping_carp // Snippity Snap
+	entry_tag = "Sleeping Carp Scroll"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/sleeping_carp
 
 /datum/loadout_box/militarypolice
 	entry_tag = "Police Baton"

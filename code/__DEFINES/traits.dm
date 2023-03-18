@@ -138,6 +138,7 @@
 #define TRAIT_OPTIMIST			"optimist"
 #define TRAIT_IN_HEAT			"ERP Receptive"
 #define TRAIT_HEAT_DETECT		"ERP Seeking"
+#define TRAIT_SMOL				"lil_fella"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
 #define TRAIT_NOSLIPALL			"noslip_all"
@@ -260,6 +261,9 @@
 #define TRAIT_BEASTFRIEND_SMALLCRITTER "beastfriend-smallcritters"
 #define TRAIT_BEASTMASTER_RAT "beastmaster-rats"
 #define TRAIT_BEASTMASTER_SMALLCRITTER "beastmaster-smallcritters"
+#define TRAIT_NO_CHOCOLATE "chocolate-intolerance"
+#define TRAIT_WHITE_WOMAN "peanutbutter-difficulties"
+#define TRAIT_AUTOBREW "autobrewery-syndrome"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)

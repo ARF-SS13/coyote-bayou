@@ -602,7 +602,7 @@
 	icon_state = "gab1"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/schmeisser)
+	crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/tec22)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_two
 	name = "Guns and Bullets, Part 2"
@@ -610,7 +610,7 @@
 	icon_state = "gab2"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/rangerlever, /datum/crafting_recipe/caravanshotty, /datum/crafting_recipe/widowmakershotty)
+	crafting_recipe_types = list(/datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/caravanshotty, /datum/crafting_recipe/widowmakershotty, /datum/crafting_recipe/auto9mm)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_three
 	name = "Guns and Bullets, Part 3"
@@ -833,12 +833,12 @@
 	name = "ranger repeater carbine"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/rangerlever)
-
+/*
 /obj/item/book/granter/crafting_recipe/blueprint/schmeisser
 	name = "schmeisser blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/schmeisser)
-
+*/
 /obj/item/book/granter/crafting_recipe/blueprint/trapper
 	name = "guide to minelaying"
 	icon_state = "blueprint2"
@@ -1253,8 +1253,10 @@
 				traitname = "Ex Tribal"
 				granted_trait = TRAIT_FORMER_TRIBAL
 				crafting_recipe_types = list(
-					/datum/crafting_recipe/tribal/bonetalisman,
+					///datum/crafting_recipe/tribal/bonetalisman,
 					/datum/crafting_recipe/spearfisher,
+					/datum/crafting_recipe/bitterdrink,
+					/datum/crafting_recipe/bitterdrink5,
 					/datum/crafting_recipe/healpoultice,
 					/datum/crafting_recipe/healpoultice5,
 					/datum/crafting_recipe/redpotion,

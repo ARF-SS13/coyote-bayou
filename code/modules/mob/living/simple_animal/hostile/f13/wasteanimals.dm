@@ -89,6 +89,13 @@
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
+	idlesound = list(
+		'sound/f13npc/gecko/geckocall1.ogg',
+		'sound/f13npc/gecko/geckocall2.ogg',
+		'sound/f13npc/gecko/geckocall3.ogg',
+		'sound/f13npc/gecko/geckocall4.ogg',
+		'sound/f13npc/gecko/geckocall5.ogg'
+		)
 
 	emote_taunt = list("screeches")
 	emote_taunt_sound = list(
@@ -101,14 +108,9 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
-
-
 
 	variation_list = list(
-		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
@@ -117,6 +119,12 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
+
+/mob/living/simple_animal/hostile/gecko/become_the_mob(mob/user)
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 //Fire Geckos//
 
@@ -222,9 +230,6 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 40, 40, 255, 45, 45),
@@ -758,7 +763,7 @@
 	desc = "A surprisingly high quality steak that could come in a variety of textures and may taste of either good chicken or rich beef"
 
 /////////////
-// MOLERAT //
+// MOLERAT //  It's time ~TK
 /////////////
 
 /mob/living/simple_animal/hostile/molerat
@@ -802,11 +807,25 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	desc_short = "Small, squishy, and numerous."
+	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(5),
+		MOB_HEALTH_LIST(15, 20, 25, 26),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+	)
+
+/mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
-	desc_short = "Small, squishy, and numerous."
-	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	. = ..()
 
 /mob/living/simple_animal/hostile/gelcube
 	name = "gelatinous cube"
@@ -834,8 +853,8 @@
 	response_harm_simple = "shakes"
 	taunt_chance = 30
 	speed = 8
-	maxHealth = 1000 
-	health = 1000
+	maxHealth = 850
+	health = 850
 	harm_intent_damage = 30
 	obj_damage = 15
 	melee_damage_lower = 35

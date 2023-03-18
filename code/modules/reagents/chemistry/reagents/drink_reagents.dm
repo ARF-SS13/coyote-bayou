@@ -310,9 +310,12 @@
 	glass_icon_state = "italiancoco"
 	glass_name = "glass of italian coco"
 	glass_desc = "A spin on a winter favourite, made to please."
+	canbrew = TRUE
 
 /datum/reagent/consumable/italian_coco/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
+	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
+		M.adjustToxLoss(1, 0)
 	return ..()
 
 /datum/reagent/consumable/tea
@@ -495,6 +498,7 @@
 	glass_icon_state  = "glass_brown"
 	glass_name = "glass of Space Cola"
 	glass_desc = "A glass of refreshing Space Cola."
+	canbrew = TRUE
 
 /datum/reagent/consumable/space_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-5)
@@ -527,6 +531,7 @@
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of Dr. Gibb"
 	glass_desc = "Dr. Gibb. Not as dangerous as the glass_name might imply."
+	canbrew = TRUE
 
 /datum/reagent/consumable/dr_gibb/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-6)
@@ -571,6 +576,7 @@
 	glass_icon_state = "glass_red"
 	glass_name = "glass of Pwr Game"
 	glass_desc = "Goes well with a Vlad's salad."
+	canbrew = TRUE
 
 /datum/reagent/consumable/pwr_game/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -600,6 +606,7 @@
 	glass_icon_state = "buzz_fuzz"
 	glass_name = "honeycomb of Buzz Fuzz"
 	glass_desc = "Stinging with flavour."
+	canbrew = TRUE
 
 	//This drink seems to be just made for plants.. how curious.
 /datum/reagent/consumable/buzz_fuzz/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -655,6 +662,7 @@
 	glass_desc = "Surprisingly it isnt grey."
 	value = REAGENT_VALUE_COMMON
 	synth_metabolism_use_human = TRUE
+	canbrew = TRUE
 
 /datum/reagent/consumable/grey_bull/on_mob_metabolize(mob/living/L)
 	..()
@@ -680,7 +688,7 @@
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of soda water"
 	glass_desc = "Soda water. Why not make a scotch and soda?"
-
+	canbrew = TRUE
 
 	// A variety of nutrients are dissolved in club soda, without sugar.
 	// These nutrients include carbon, oxygen, hydrogen, phosphorous, potassium, sulfur and sodium, all of which are needed for healthy plant growth.
@@ -802,6 +810,12 @@
 	glass_name = "chocolate pudding"
 	glass_desc = "Tasty."
 	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
+
+/datum/reagent/consumable/chocolatepudding/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
+		M.adjustToxLoss(1, 0)
+	return ..()
 
 /datum/reagent/consumable/vanillapudding
 	name = "Vanilla Pudding"
@@ -814,6 +828,7 @@
 	glass_name = "vanilla pudding"
 	glass_desc = "Tasty."
 	value = REAGENT_VALUE_UNCOMMON //real vanilla.
+	canbrew = TRUE
 
 /datum/reagent/consumable/cherryshake
 	name = "Cherry Shake"
@@ -826,6 +841,7 @@
 	glass_name = "cherry shake"
 	glass_desc = "A cherry flavored milkshake."
 	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
 
 /datum/reagent/consumable/bluecherryshake
 	name = "Blue Cherry Shake"
@@ -838,6 +854,7 @@
 	glass_name = "blue cherry shake"
 	glass_desc = "An exotic blue milkshake."
 	value = REAGENT_VALUE_UNCOMMON
+	canbrew = TRUE
 
 /datum/reagent/consumable/vanillashake
 	name = "Vanilla Shake"
@@ -850,7 +867,7 @@
 	glass_name = "vanilla shake"
 	glass_desc = "A vanilla flavored milkshake."
 	value = REAGENT_VALUE_COMMON
-
+	canbrew = TRUE
 
 /datum/reagent/consumable/caramelshake
 	name = "Caramel Shake"
@@ -863,7 +880,7 @@
 	glass_name = "caramel shake"
 	glass_desc = "A caramel flavored milkshake."
 	value = REAGENT_VALUE_COMMON
-
+	canbrew = TRUE
 
 /datum/reagent/consumable/choccyshake
 	name = "Chocolate Shake"
@@ -876,7 +893,12 @@
 	glass_name = "chocolate shake"
 	glass_desc = "A chocolate flavored milkshake."
 	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
 
+/datum/reagent/consumable/choccyshake/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
+		M.adjustToxLoss(1, 0)
+	return ..()
 
 /datum/reagent/consumable/pumpkin_latte
 	name = "Pumpkin Latte"
@@ -901,7 +923,8 @@
 	glass_name = "Gibbfloat"
 	glass_desc = "Dr. Gibb with ice cream on top."
 	value = REAGENT_VALUE_VERY_COMMON
-
+	canbrew = TRUE
+	
 /datum/reagent/consumable/pumpkinjuice
 	name = "Pumpkin Juice"
 	description = "Juiced from real pumpkin."
@@ -932,6 +955,7 @@
 	taste_description = "grape soda"
 	glass_name = "glass of grape juice"
 	glass_desc = "It's grape (soda)!"
+	canbrew = TRUE
 
 /datum/reagent/consumable/grape_soda/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -944,6 +968,12 @@
 	quality = DRINK_NICE
 	taste_description = "chocolate milk"
 	value = REAGENT_VALUE_VERY_COMMON
+	canbrew = TRUE
+
+/datum/reagent/consumable/milk/chocolate_milk/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
+		M.adjustToxLoss(1, 0)
+	return ..()
 
 /datum/reagent/consumable/menthol
 	name = "Menthol"
@@ -999,6 +1029,7 @@
 	glass_name = "Cream Soda"
 	glass_desc = "A classic All-American vanilla flavored soft drink."
 	value = REAGENT_VALUE_VERY_COMMON //just a little vanilla
+	canbrew = TRUE
 
 /datum/reagent/consumable/cream_soda/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -1013,6 +1044,7 @@
 	taste_description = "sweet ginger spice"
 	glass_name = "Sol Dry"
 	glass_desc = "A soothing, mellow drink made from ginger."
+	canbrew = TRUE
 
 /datum/reagent/consumable/sol_dry/on_mob_life(mob/living/carbon/M)
 	M.adjust_disgust(-5)
@@ -1188,6 +1220,7 @@
 	glass_icon_state = "strawberry_banana"
 	glass_name = "strawberry banana smoothie"
 	glass_desc = "A classic drink which countless souls have bonded over..."
+	canbrew = TRUE
 
 /datum/reagent/consumable/berry_blast
 	name = "berry blast smoothie"
@@ -1198,6 +1231,7 @@
 	glass_icon_state = "berry_blast"
 	glass_name = "berry blast smoothie"
 	glass_desc = "A classic drink, freshly made with hand picked berries. Or, maybe not."
+	canbrew = TRUE
 
 /datum/reagent/consumable/funky_monkey
 	name = "funky monkey smoothie"
@@ -1208,6 +1242,12 @@
 	glass_icon_state = "funky_monkey"
 	glass_name = "funky monkey smoothie"
 	glass_desc = "A classic drink made with chocolate and banana. No monkeys were harmed, officially."
+	canbrew = TRUE
+
+/datum/reagent/consumable/funky_monkey/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
+		M.adjustToxLoss(1, 0)
+	return ..()
 
 /datum/reagent/consumable/green_giant
 	name = "green giant smoothie"
@@ -1218,6 +1258,7 @@
 	glass_icon_state = "green_giant"
 	glass_name = "green giant smoothie"
 	glass_desc = "A classic drink, if you enjoy juiced wheatgrass and chia seeds."
+	canbrew = TRUE
 
 /datum/reagent/consumable/melon_baller
 	name = "melon baller smoothie"
@@ -1228,6 +1269,7 @@
 	glass_icon_state = "melon_baller"
 	glass_name = "melon baller smoothie"
 	glass_desc = "A wonderfully fresh melon smoothie. Guaranteed to brighten your day."
+	canbrew = TRUE
 
 /datum/reagent/consumable/vanilla_dream
 	name = "vanilla dream smoothie"
@@ -1238,6 +1280,7 @@
 	glass_icon_state = "vanilla_dream"
 	glass_name = "vanilla dream smoothie"
 	glass_desc = "A classic drink made with vanilla and fresh cream."
+	canbrew = TRUE
 
 /datum/reagent/consumable/roy_rogers
 	name = "Roy Rogers"
@@ -1248,6 +1291,7 @@
 	glass_icon_state = "royrogers"
 	glass_name = "Roy Rogers"
 	glass_desc = "90% sugar in a glass."
+	canbrew = TRUE
 
 /datum/reagent/consumable/roy_roger/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.Jitter(6 * REM * delta_time) //not as strong as coffe, still this is a lot of sugar
@@ -1264,6 +1308,7 @@
 	glass_icon_state = "cinderella"
 	glass_name = "Cinderlla"
 	glass_desc = "There is not a single drop of alcohol in this thing."
+	canbrew = TRUE
 
 /datum/reagent/consumable/cinderella/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjust_disgust(-5 * REM * delta_time)
@@ -1278,6 +1323,7 @@
 	glass_icon_state = "shirleytemple"
 	glass_name = "Shirley Temple"
 	glass_desc = "Ginger ale with processed grenadine. "
+	canbrew = TRUE
 
 /datum/reagent/consumable/shirley_temple/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjust_disgust(-3 * REM * delta_time)

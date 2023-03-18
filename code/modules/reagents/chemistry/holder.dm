@@ -865,7 +865,11 @@
 	if(!isnum(amount) || !amount)
 		return FALSE
 
-	if(amount < CHEMICAL_QUANTISATION_LEVEL)//To prevent small ammount problems.
+	if(amount <= CHEMICAL_QUANTISATION_LEVEL)//To prevent small ammount problems.
+		return FALSE
+
+	if(!IS_FINITE(amount))
+		stack_trace("non finite amount passed to add reagent [amount] [reagent]")
 		return FALSE
 
 	var/datum/reagent/D = GLOB.chemical_reagents_list[reagent]
@@ -976,13 +980,14 @@
 /datum/reagents/proc/remove_reagent(reagent, amount, safety, ignore_pH = FALSE)//Added a safety check for the trans_id_to
 
 	if(isnull(amount))
-		amount = 0
-		CRASH("null amount passed to reagent code")
-
+		stack_trace("null amount passed to reagent code")
+		return FALSE
+		
 	if(!isnum(amount))
 		return FALSE
 
-	if(amount < 0)
+	if(amount < 0 || !IS_FINITE(amount))
+		stack_trace("invalid number passed to remove_reagent [amount]")
 		return FALSE
 
 	var/list/cached_reagents = reagent_list

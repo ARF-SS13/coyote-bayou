@@ -947,6 +947,12 @@
 	message = "frowns heavily."
 	sound = 'sound/effects/boowomp.ogg'
 
+/datum/emote/living/scrungy
+	key = "scrungy"
+	key_third_person = "opens their mouth slightly and makes a very pained noise as they take a deep breath through their nose."
+	message = "opens their mouth slightly and makes a very pained noise as they take a deep breath through their nose."
+	sound = 'sound/effects/scrungy.ogg'
+
 /datum/emote/living/augh
 	key = "augh"
 	key_third_person = "looks deeply troubled."
@@ -959,6 +965,11 @@
 	message = "reeeeeees."
 	sound = 'sound/f13effects/sunsetsounds/frogree.ogg'
 
+/datum/emote/living/eyebrowmenace
+	key = "eyebrowboom"
+	key_third_person = "raises an eyebrow menacingly!"
+	message = "raises an eyebrow menacingly!"
+	sound = 'sound/f13effects/sunsetsounds/vineboom.ogg'
 
 /datum/emote/living/frogcry
 	key = "frogcry"

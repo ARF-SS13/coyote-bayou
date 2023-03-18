@@ -467,7 +467,11 @@
 
 	if(HAS_TRAIT(src, TRAIT_IN_HEAT) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
 		. += ""
-		. += "<span class='love'>[t_He] [t_is] looking for [gender == MALE ? "a good time, you should check their OOC Notes" : "a good time, you should check their OOC Notes"].</span>"
+		. += "<span class='love'>[t_He] [t_is] looking for a good time, you should check their OOC Notes.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_SMOL))
+		. += ""
+		. += span_notice("[t_He] looks easy to scoop up.</span>")
 
 	var/traitstring = get_trait_string()
 	if(ishuman(user))

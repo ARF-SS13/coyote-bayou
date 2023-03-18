@@ -14,7 +14,9 @@
 	/obj/item/storage/pill_bottle/chem_tin/buffout,
 	/obj/item/reagent_containers/pill/stimulant,
 	/obj/item/storage/pill_bottle/chem_tin/radx,
-	/obj/item/reagent_containers/pill/healingpowder
+	/obj/item/reagent_containers/pill/healingpowder,
+	/obj/item/reagent_containers/pill/bitterdrink,
+	/obj/item/reagent_containers/pill/antivenom,
 	)
 
 /datum/export/item/chemshigh
@@ -22,7 +24,8 @@
 	unit_name = "chems (high)"
 	export_types = list(,
 	/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
-	/obj/item/reagent_containers/pill/patch/healpoultice
+	/obj/item/reagent_containers/pill/patch/healpoultice,
+	/obj/item/reagent_containers/pill/fiery_purgative,
 	)
 
 /* /datum/export/item/superstimpak

@@ -331,8 +331,7 @@
 				/obj/effect/spawner/bundle/f13/armor/combat,
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
-				/obj/effect/spawner/bundle/f13/armor/vault,
-				/obj/item/clothing/suit/armor/medium/vest/breastplate/khan
+				/obj/effect/spawner/bundle/f13/armor/vault
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest //random raider armor
@@ -669,9 +668,12 @@ there should be very few of these spawns on the whole map. finding one should be
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 5,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40 = 1,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 10,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 10,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 5,
 		/obj/item/gun/ballistic/automatic/m1carbine = 10,
-		/obj/item/gun/ballistic/automatic/m1carbine/compact = 1,
+		/obj/item/gun/ballistic/automatic/m1carbine/compact = 5,
 		/obj/item/gun/ballistic/automatic/delisle = 10,
 		/obj/item/gun/ballistic/automatic/delisle/commando = 1,
 		/obj/item/gun/ballistic/automatic/sportcarbine = 20,
@@ -679,8 +681,14 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 1, // decently strong, but small chance, and hard to scavange ammo for
 		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 10,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 10,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 5,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 20,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/c93 = 5,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger = 5,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby = 5,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 5,
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 5,
+		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 5,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 10,
 		/obj/item/gun/ballistic/automatic/pistol/type17 = 5,
 		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
@@ -753,7 +761,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/bow/recurvebow = 20,
 )
 
-/obj/effect/spawner/lootdrop/f13/weapon/dungeon 
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon
 	name = "dungeon weapons, found in nooks and corners"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
@@ -772,10 +780,13 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/armalite = 10,
 		/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 10,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 10,
+		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto = 5,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 10,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 10,
 		/obj/item/gun/ballistic/revolver/hunting = 10,
 		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 5,
+		/obj/item/gun/ballistic/revolver/colt357/auto = 5,
 		/obj/item/gun/ballistic/rifle/repeater/trail = 20,
 		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
 		/obj/item/gun/ballistic/shotgun/trench = 10,
@@ -810,6 +821,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/smg/tommygun = 10,
 		/obj/item/gun/ballistic/automatic/smg/p90 = 1,
 		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10,
 		/obj/item/gun/ballistic/automatic/rangemaster = 5,
 		/obj/item/gun/ballistic/automatic/slr = 5,
 		/obj/item/gun/ballistic/automatic/m1garand = 5,
@@ -843,6 +855,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/energy/laser/plasma = 5,
 		/obj/item/gun/energy/ionrifle = 5,
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,
+		/obj/item/gun/energy/laser/solar = 15,
 		/obj/item/melee/powerfist/f13 = 10,
 		/obj/item/gun/ballistic/revolver/ballisticfist = 1,
 		/obj/item/melee/powered/ripper = 5,
@@ -904,7 +917,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 20, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
-		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 20,
+		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 10,
 		/obj/item/gun/ballistic/fatman = 5,
 )
 

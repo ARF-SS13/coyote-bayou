@@ -192,6 +192,11 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/ammo_box/a357box/ratshot
+	name = "ammo box (.357 Magnum Ratshot)"
+	desc = ".357 shotshells, meant for shooting tiny critters. Nigh useless against armor."
+	ammo_type = /obj/item/ammo_casing/a357/ratshot
+
 /obj/item/ammo_box/a357box/ricochet
 	name = "ammo box (.357 Magnum ricochet)"
 	desc = "Six shots...more than enough to kill anything that moves. This box has thirty, so you can kill five things."
@@ -296,6 +301,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 
+/obj/item/ammo_box/c4570box/ratshot
+	name = "ammo box (.45-70 Forager)"
+	desc = ".45-70 shotshells, meant for shooting tiny critters. Nigh useless against armor."
+	ammo_type = /obj/item/ammo_casing/c4570/ratshot
+
 /obj/item/ammo_box/c4570box/explosive
 	name = "ammo box (.45-70 HE)"
 	desc = ".45-70 Goverment rounds with explosive tips. Surely an archaic blackpowder cartridge with an explosive payload is completely safe."
@@ -385,11 +395,11 @@
 */
 
 /obj/item/ammo_box/a556/improvised
-	name = "bag with reloaded .223 bullets"
+	name = "bag with reloaded 5.56 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	ammo_type = /obj/item/ammo_casing/a556/improvised
 	multiple_sprites = 3
-	max_ammo = 30
+	max_ammo = 25
 	icon_state = "improvshotbag"
 
 //7.62x51, .308 Winchester
@@ -680,7 +690,7 @@
 //.357
 /obj/item/ammo_box/a357
 	name = "speed loader (.357)"
-	desc = "Designed to quickly reload revolvers. Also accepts .38!"
+	desc = "Designed to quickly reload revolvers."
 	icon_state = "357"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = list(CALIBER_357)
@@ -691,6 +701,11 @@
 
 /obj/item/ammo_box/a357/empty
 	start_empty = 1
+
+/obj/item/ammo_box/a357/ratshot
+	name = "speed loader (.357 ratshot)"
+	desc = "A .357 speedloader. this one is preloaded with ratshot"
+	ammo_type = /obj/item/ammo_casing/a357/ratshot
 /*
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 Match)"
@@ -705,7 +720,7 @@
 */
 /obj/item/ammo_box/tube/a357
 	name = "speed loader tube (.357)"
-	desc = "Designed to quickly reload repeaters. Also accepts .38!"
+	desc = "Designed to quickly reload repeaters."
 	icon_state = "357tube"
 	caliber = list(CALIBER_357)
 	ammo_type = /obj/item/ammo_casing/a357
@@ -799,6 +814,11 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+
+/obj/item/ammo_box/c4570/ratshot
+	name = "speed loader (.45-70 forager)"
+	desc = "Designed to quickly reload revolvers. This one is preloaded with forager shotshells"
+	ammo_type = /obj/item/ammo_casing/c4570/ratshot
 
 /obj/item/ammo_box/c4570/empty
 	start_empty = 1

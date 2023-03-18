@@ -199,6 +199,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	/// required pop to hop into this thing
 	var/pop_required_to_jump_into = 0
 
+	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
+	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
@@ -264,6 +267,20 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	user.transfer_ckey(src, TRUE)
 	grant_all_languages()
+	if(ispath(send_mobs))
+		var/obj/effect/proc_holder/mob_common/direct_mobs/DM = send_mobs
+		send_mobs = new DM
+		AddAbility(send_mobs)
+	if(ispath(call_backup))
+		var/obj/effect/proc_holder/mob_common/summon_backup/CB = call_backup
+		call_backup = new CB
+		AddAbility(call_backup)
+	if(ispath(make_a_nest))
+		var/obj/effect/proc_holder/mob_common/make_nest/MN = make_a_nest
+		make_a_nest = new MN
+		AddAbility(make_a_nest)
+		unmake_a_nest = new
+		AddAbility(unmake_a_nest)
 	if(lazarused)
 		to_chat(src, span_userdanger("[name] has been lazarus injected or tamed by beastmaster! There are special rules for playing as this creature!"))
 		to_chat(src, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
@@ -325,6 +342,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 	sever_link_to_nest()
+	if(make_a_nest)
+		QDEL_NULL(make_a_nest)
+	if(unmake_a_nest)
+		QDEL_NULL(unmake_a_nest)
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
@@ -352,14 +373,6 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/proc/make_ghostable(mob/user)
 	can_ghost_into = TRUE
 	AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE, penalize_on_ghost = FALSE)
-	if(ispath(send_mobs))
-		var/obj/effect/proc_holder/mob_common/direct_mobs/DM = send_mobs
-		send_mobs = new DM
-		AddAbility(send_mobs)
-	if(ispath(call_backup))
-		var/obj/effect/proc_holder/mob_common/summon_backup/CB = call_backup
-		call_backup = new CB
-		AddAbility(call_backup)
 	LAZYADD(GLOB.mob_spawners[initial(name)], src)
 	RegisterSignal(src, COMSIG_MOB_GHOSTIZE_FINAL, .proc/set_ghost_timeout)
 	if(istype(user))
@@ -873,7 +886,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/update_stamina()
 	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
 		return
-	if((staminaloss + (bruteloss * 2)) >= stamcrit_threshold)
+	if((staminaloss + bruteloss) >= stamcrit_threshold)
 		if(!CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT))
 			stamcrit()
 		COOLDOWN_START(src, stamcrit_timer, stamcrit_duration) // keep resetting the timer if they're stamcritted hard enough

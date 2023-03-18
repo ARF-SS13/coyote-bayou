@@ -298,7 +298,7 @@ GITHUBURL https://github.com/ARF-SS13/coyote-bayou
 ## from https://github.com/rg3/youtube-dl/releases
 ## or your package manager
 ## The default value assumes youtube-dl is in your system PATH
-INVOKE_YOUTUBEDL youtube-dl
+INVOKE_YOUTUBEDL yt-dlp
 
 ## In-game features
 ##Toggle for having jobs load up from the .txt
@@ -419,7 +419,7 @@ ALLOW_MAP_VOTING 1
 ##   APPROVAL (can vote for as many as you want), I
 ##   IRV (vote by ranked choice, winner determined by instant runoff algorithm)
 ##   SCORE (give individual rankings of each choice, winner determined by majority judgement algorithm)
-MAP_VOTE_TYPE SCORE
+MAP_VOTE_TYPE IRV
 
 ## Map rotate chance delta
 ## This is the chance of map rotation factored to the round length.
