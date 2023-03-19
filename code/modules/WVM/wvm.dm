@@ -114,7 +114,14 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	if(machine_state != STATE_SERVICE)
 		return
 
-	if(is_available_category(Itm) && is_acceptable_item_state(Itm))
+	if(istype(Itm, /obj/item/clothing/head/mob_holder))
+		user?.show_message(span_alert("[Itm] is [prob(50) ? "worthless" : "priceless"], and thus impossible to insert into the machine"))
+		return
+
+	var/item_allowed = is_available_category(Itm)
+	var/status_allowed = is_acceptable_item_state(Itm)
+
+	if(item_allowed && status_allowed)
 		var/price = input(usr, "Enter price for " + Itm.name + ".", "Setup Price", basic_price) as null|num
 
 		if(!price)
@@ -133,10 +140,10 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		to_chat(usr, "You loaded [Itm.name] to vending machine. New price - [content[Itm]] caps..")
 		src.ui_interact(usr)
 	else
-		if(!is_available_category(Itm))
+		if(!item_allowed)
 			playsound(src, 'sound/machines/DeniedBeep.ogg', 60, 1)
 			to_chat(usr, "*beep* ..wrong item.")
-		else if (!is_acceptable_item_state(Itm))
+		else if (!status_allowed)
 			playsound(src, 'sound/machines/DeniedBeep.ogg', 60, 1)
 			to_chat(usr, item_not_acceptable_message)
 

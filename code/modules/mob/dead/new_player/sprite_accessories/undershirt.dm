@@ -199,16 +199,19 @@
 	name = "Tank Top"
 	icon_state = "tanktop"
 	has_color = TRUE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/tanktop_alt
 	name = "Tank Top - Alt"
 	icon_state = "tanktop_alt"
 	has_color = TRUE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/tankfire
 	name = "Tank Top - Fire"
 	icon_state = "tank_fire"
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/tanktop_midriff
@@ -216,21 +219,25 @@
 	icon_state = "tank_midriff"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/tanktop_midriff_alt
 	name = "Tank Top - Midriff Halterneck"
 	icon_state = "tank_midriff_alt"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/tankstripe
 	name = "Tank Top - Striped"
 	icon_state = "tank_stripes"
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/tank_top_sun
 	name = "Tank top - Sun"
 	icon_state = "tank_sun"
+	covers_belly = FALSE
 
 
 //feminine accessories from here on

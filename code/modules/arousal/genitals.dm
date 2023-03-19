@@ -86,9 +86,9 @@
 		return TRUE
 
 	switch(slot) //update as more genitals are added Okay - lagg
-		if(ORGAN_CHEST_GENITALS)
+		if(ORGAN_BELLY_GENITALS, ORGAN_CHEST_GENITALS)
 			return owner.is_chest_exposed()
-		if(ORGAN_BELLY_GENITALS, ORGAN_GROIN_GENITALS) // heard it here first folks, belly is in the groin
+		if(ORGAN_GROIN_GENITALS) // heard it here first folks, belly is in the groin // why do my stupid comments stop being relevant just one PR after I make them
 			return owner.is_groin_exposed()
 
 /obj/item/organ/genital/proc/toggle_visibility(visibility, update = TRUE)
