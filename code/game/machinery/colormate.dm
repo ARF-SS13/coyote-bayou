@@ -108,9 +108,10 @@
 	drop_item()
 
 /obj/machinery/gear_painter/proc/free_me()
+	SIGNAL_HANDLER
 	if(!inserted)
 		return
-	inserted.show_message(span_notice("You free yourself from [src]."))
+	to_chat(inserted, span_notice("You free yourself from [src]."))
 	inserted.forceMove(get_turf(src))
 	UnregisterSignal(inserted, COMSIG_LIVING_RESIST)
 	inserted = null
