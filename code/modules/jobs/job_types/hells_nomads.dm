@@ -35,11 +35,13 @@
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/old
 	uniform = /obj/item/clothing/under/f13/khan/biker
+	belt = /obj/item/kit_spawner/waster
 	r_pocket = /obj/item/flashlight/flare
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/settler = 1
+		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/kit_spawner/tools = 1,
 		)
 	tattoos_they_get = list(/datum/tattoo/biker)
 
