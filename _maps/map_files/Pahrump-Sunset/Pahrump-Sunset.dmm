@@ -1235,7 +1235,8 @@
 /area/f13/wasteland/city)
 "aeZ" = (
 /obj/structure/lamp_post{
-	pixel_x = -15
+	pixel_x = -15;
+	density = 0
 	},
 /obj/item/reagent_containers/food/snacks/grown/wheat,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -5231,7 +5232,6 @@
 /area/f13/building/museum)
 "atz" = (
 /obj/structure/closet,
-/obj/item/clothing/shoes/sneakers/orange,
 /obj/item/restraints/handcuffs,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/under/f13/rag,
@@ -12605,6 +12605,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/ammo_box/shotgun/bean,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -16136,13 +16137,6 @@
 /obj/machinery/vending/wallmed{
 	pixel_y = 32
 	},
-/obj/structure/closet/crate/footchest{
-	pixel_x = -4;
-	name = "wooden chest";
-	density = 0;
-	dense_when_open = 0;
-	allow_dense = 0
-	},
 /obj/item/scalpel{
 	name = "kitchen knife";
 	icon = 'icons/fallout/objects/kitchen.dmi';
@@ -16169,6 +16163,14 @@
 /obj/item/stack/medical/bone_gel,
 /obj/item/reagent_containers/medspray/sterilizine,
 /obj/structure/table/wood,
+/obj/structure/closet/crate/footchest{
+	pixel_x = -4;
+	name = "wooden chest";
+	density = 0;
+	dense_when_open = 0;
+	allow_dense = 0;
+	pixel_y = 11
+	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -16442,16 +16444,13 @@
 /obj/structure/guncase{
 	anchored = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
 /obj/item/gun/ballistic/rocketlauncher/brick,
 /obj/item/gun/ballistic/revolver/police,
 /obj/item/gun/ballistic/revolver/police,
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
+/obj/item/gun/ballistic/revolver/hobo/pepperbox,
+/obj/item/gun/ballistic/automatic/hobo/zipgun,
+/obj/item/gun/ballistic/revolver/hobo/knifegun,
+/obj/item/gun/ballistic/revolver/police,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -16485,11 +16484,12 @@
 /obj/structure/closet{
 	anchored = 1
 	},
-/obj/item/encryptionkey/headset_biker,
-/obj/item/encryptionkey/headset_biker,
-/obj/item/radio/headset/headset_biker,
-/obj/item/radio/headset/headset_biker,
-/obj/item/radio/headset/headset_biker,
+/obj/effect/spawner/lootdrop/f13/weapon/junk,
+/obj/effect/spawner/lootdrop/f13/weapon/junk,
+/obj/effect/spawner/lootdrop/f13/weapon/junk,
+/obj/effect/spawner/lootdrop/f13/weapon/junk,
+/obj/effect/spawner/lootdrop/f13/weapon/junk,
+/obj/effect/spawner/lootdrop/f13/weapon/junk,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -17175,7 +17175,9 @@
 "bhw" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/trash/f13/electronic/toaster/oven,
+/obj/item/trash/f13/electronic/toaster/oven{
+	pixel_y = 9
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -18302,7 +18304,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "bmi" = (
-/turf/closed/indestructible/rock,
+/turf/closed/indestructible/f13/matrix,
 /area/f13/tunnel/southeast)
 "bmk" = (
 /obj/structure/table,
@@ -20049,6 +20051,16 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland/city)
+"bxS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/cardboard,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/storage/box/drinkingglasses,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "bxT" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -31222,7 +31234,7 @@
 	light_on = 1;
 	icon_state = "lantern-on";
 	layer = 2.8;
-	pixel_y = -5
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -39617,6 +39629,10 @@
 	density = 0;
 	pixel_x = 32
 	},
+/obj/structure/sink/kitchen{
+	dir = 8;
+	pixel_x = 12
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -40971,6 +40987,15 @@
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
 	icon_state = "horizontalinnermain2right"
+	},
+/area/f13/wasteland/city)
+"hch" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/wreck/trash/engine{
+	pixel_y = -9
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city)
 "hcj" = (
@@ -43998,7 +44023,7 @@
 	pixel_y = 15
 	},
 /obj/structure/headpike{
-	name = "spear";
+	name = "spear"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
@@ -48340,6 +48365,12 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"jdv" = (
+/obj/item/candle/tribal_torch{
+	pixel_y = 15
+	},
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland/city)
 "jea" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -52762,6 +52793,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/campfire/stove,
+/obj/item/stack/sheet/mineral/wood{
+	amount = 2
+	},
+/obj/item/storage/box/matches{
+	layer = 3.1
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -55397,7 +55434,7 @@
 "ljR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/headpike{
-	name = "spear";
+	name = "spear"
 	},
 /obj/item/clothing/head/helmet/f13/motorcycle{
 	pixel_y = 15;
@@ -59959,6 +59996,15 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/wall/f13/store,
 /area/f13/building/hospital)
+"mxu" = (
+/obj/item/candle/tribal_torch{
+	pixel_y = 15;
+	pixel_x = 5
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city)
 "mxv" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/structure/reagent_dispensers/barrel/dangerous,
@@ -59998,6 +60044,13 @@
 /obj/structure/table/wood,
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
 /obj/item/brahminbrand,
+/obj/item/brahmincollar{
+	pixel_y = 15
+	},
+/obj/item/brahmincollar{
+	pixel_y = 16;
+	pixel_x = -5
+	},
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "myk" = (
@@ -70368,6 +70421,20 @@
 /obj/item/clothing/mask/gondola,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
+"puC" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city)
 "puK" = (
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
@@ -91677,11 +91744,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "vGm" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland/city)
+/area/f13/building)
 "vGp" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/spawner/lootdrop/trash,
@@ -95831,6 +95898,9 @@
 	dir = 4;
 	density = 0
 	},
+/obj/item/candle/tribal_torch{
+	pixel_y = 15
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
 "wOR" = (
@@ -97316,6 +97386,9 @@
 /obj/structure/table/wood/junk,
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 10
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_y = 2
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -148327,7 +148400,7 @@ qAC
 msj
 aeK
 vEB
-iwj
+hch
 acT
 rWV
 acR
@@ -150120,7 +150193,7 @@ oFO
 ozv
 oFO
 aaM
-vnq
+mxu
 kTu
 kqQ
 pUv
@@ -150380,10 +150453,10 @@ iFF
 ljR
 kTu
 oAo
-iBR
+puC
 mRo
 kqQ
-kqQ
+jdv
 qtE
 ekS
 ekS
@@ -151152,7 +151225,7 @@ gai
 kqQ
 gai
 aMt
-vGm
+kqQ
 eVb
 kqQ
 cXU
@@ -151423,8 +151496,8 @@ cHG
 kvO
 gVp
 fFf
-fFf
-afS
+bxS
+vGm
 bnO
 afS
 afS
@@ -165797,7 +165870,7 @@ aud
 aud
 hXp
 aym
-aab
+hiV
 aae
 aae
 aae

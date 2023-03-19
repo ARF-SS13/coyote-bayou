@@ -2864,6 +2864,8 @@
 /obj/structure/closet/crate/footlocker,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/clothing/accessory/armband,
+/obj/item/clothing/mask/bandana/legion/legdecan,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -3835,6 +3837,8 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/item/clothing/suit/ianshirt,
+/obj/item/clothing/mask/bandana/legion/legdecan,
+/obj/item/clothing/mask/bandana/red,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -4829,6 +4833,10 @@
 /obj/structure/table/wood/junk,
 /obj/item/flashlight/lamp{
 	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/f13/khan/bandana{
+	pixel_y = -2;
+	layer = 3.1
 	},
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
@@ -7118,6 +7126,19 @@
 /obj/structure/flora/twig4,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"gYx" = (
+/obj/structure/closet/crate/footchest{
+	name = "wooden chest"
+	},
+/obj/item/radio/headset/headset_biker,
+/obj/item/radio/headset/headset_biker,
+/obj/item/radio/headset/headset_biker,
+/obj/item/encryptionkey/headset_biker,
+/obj/item/encryptionkey/headset_biker,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "gYD" = (
 /obj/structure/decoration/rag,
 /turf/closed/wall/f13/wood,
@@ -7505,6 +7526,7 @@
 	light_on = 1;
 	icon_state = "lantern-on"
 	},
+/obj/item/clothing/accessory/armband,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -10057,6 +10079,13 @@
 /obj/structure/rack,
 /turf/open/floor/wood_common{
 	color = "#779999"
+	},
+/area/f13/building)
+"jMQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/shoes/f13/cowboy,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
 "jMW" = (
@@ -13694,6 +13723,7 @@
 /obj/item/tattoo_holder/biker,
 /obj/item/tattoo_holder/biker,
 /obj/item/tattoo_gun,
+/obj/item/razor,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -15229,6 +15259,7 @@
 	name = "wooden chest"
 	},
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/clothing/head/helmet/f13/khan/bandana,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -17555,6 +17586,9 @@
 	name = "wooden chest"
 	},
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/clothing/mask/bandana/legion/legdecan,
+/obj/item/clothing/accessory/armband,
+/obj/effect/spawner/lootdrop/clothing_low,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -19813,6 +19847,10 @@
 /area/f13/wasteland)
 "tzj" = (
 /obj/structure/dresser,
+/obj/item/clothing/shoes/f13/cowboy{
+	pixel_y = 16;
+	pixel_x = -2
+	},
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -21265,7 +21303,7 @@
 	dir = 4;
 	pixel_y = -16
 	},
-/obj/effect/landmark/poster_spawner/prewar{
+/obj/structure/sign/poster/contraband/pinup_couch{
 	pixel_x = 32
 	},
 /turf/open/floor/f13{
@@ -21770,6 +21808,10 @@
 /obj/structure/curtain{
 	color = "#764642";
 	layer = 5
+	},
+/obj/item/clothing/shoes/f13/cowboy{
+	pixel_y = -9;
+	pixel_x = 5
 	},
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
@@ -23478,6 +23520,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/wicker,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/clothing/head/helmet/f13/khan/bandana,
+/obj/item/clothing/mask/bandana/red,
+/obj/item/clothing/shoes/f13/cowboy,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -24168,6 +24213,15 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"yiF" = (
+/obj/item/clothing/shoes/f13/cowboy{
+	pixel_y = -9;
+	pixel_x = 5
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "yiL" = (
 /obj/structure/railing{
 	dir = 4
@@ -73051,7 +73105,7 @@ jHp
 tpK
 tpK
 eqd
-pky
+jMQ
 uEV
 pky
 nOD
@@ -74332,7 +74386,7 @@ gKO
 umG
 sdI
 acu
-pog
+gYx
 kqN
 sXb
 kqN
@@ -75101,7 +75155,7 @@ xVM
 xDu
 khL
 nZy
-nZy
+yiF
 tpK
 mbN
 jxP
