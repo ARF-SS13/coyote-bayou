@@ -49,7 +49,7 @@
 #define RADIO_KEY_VAULT "0"
 #define RADIO_TOKEN_VAULT ":0"
 
-#define RADIO_CHANNEL_BIKER "Vault"
+#define RADIO_CHANNEL_BIKER "Biker"
 #define RADIO_KEY_BIKER "b"
 #define RADIO_TOKEN_BIKER ":b"
 
