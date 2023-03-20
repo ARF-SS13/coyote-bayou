@@ -180,7 +180,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	///The class of mob this is, for purposes of per-mob ghost cooldowns
 	var/ghost_mob_id = "generic"
 	///Timeout between dying or ghosting in this mob and going back into another mob
-	var/ghost_cooldown_time = 3 MINUTES
+	var/ghost_cooldown_time = 15 MINUTES
 	///Short desc of the mob
 	var/desc_short = "Some kind of horrible monster."
 	///Important info of the mob
@@ -325,11 +325,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		GLOB.playmob_cooldowns[user.key] = list()
 	if(GLOB.playmob_cooldowns[user.key][ghost_mob_id] > world.time)
 		var/time_left = GLOB.playmob_cooldowns[user.key][ghost_mob_id] - world.time
-		if(check_rights_for(user.client, R_ADMIN))
-			to_chat(user, span_green("You shoud be unable to hop into mobs for another [DisplayTimeText(time_left)], but you're special cus you're an admin and you can ghost into mobs whenever you want, also everyone loves you and thinks you're cool."))
-		else
-			to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
-			return FALSE
+		//if(check_rights_for(user.client, R_ADMIN))
+		//	to_chat(user, span_green("You shoud be unable to hop into mobs for another [DisplayTimeText(time_left)], but you're special cus you're an admin and you can ghost into mobs whenever you want, also everyone loves you and thinks you're cool."))
+		//else // yeah no turns out its not a great idea
+		to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
+		return FALSE
 	return TRUE
 
 /mob/living/simple_animal/ComponentInitialize()
