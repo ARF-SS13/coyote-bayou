@@ -26,6 +26,9 @@
 	melee_queue_distance = 20 // as far as possible really, need this because of charging
 	ranged = 1
 	pixel_x = -16
+	waddle_amount = 10
+	waddle_up_time = 1
+	waddle_side_time = 6
 	wander = FALSE
 	movement_type = GROUND
 	var/charging = 0
