@@ -466,7 +466,7 @@
 	attack_sound = 'sound/creatures/bloatfly_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("hostile", "gecko")
+	faction = list("hostile", "gecko", "critter-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	pass_flags = PASSTABLE | PASSMOB
 	density = FALSE
