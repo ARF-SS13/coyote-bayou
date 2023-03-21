@@ -89,3 +89,4 @@
 	requires_mob_riding = FALSE			//whether this only works if the attacker is riding a mob, rather than anything they can buckle to.
 	requires_mount = FALSE				//kinda defeats the point of jousting if you're not mounted but whatever.
 	
+	
