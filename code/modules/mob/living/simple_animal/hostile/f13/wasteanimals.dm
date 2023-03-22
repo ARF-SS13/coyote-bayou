@@ -616,8 +616,15 @@
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
 
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/stack/sheet/sinew = 2,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+		)
 	butcher_difficulty = 3
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
