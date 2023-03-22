@@ -145,6 +145,13 @@
 			owner.Jitter(10)
 			owner.stuttering += 10
 
+/datum/brain_trauma/mild/phobia/proc/RealityCheck() // Checks if you're not your own fears.
+	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
+		return
+
+	if(HAS_TRAIT(owner, phobia_type))
+		freak_out(owner)
+
 // Defined phobia types for badminry, not included in the RNG trauma pool to avoid diluting.
 
 /datum/brain_trauma/mild/phobia/rats
