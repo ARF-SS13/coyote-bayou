@@ -550,3 +550,44 @@ ul.sparse {
   overflow: hidden;
   padding: 0;
 }
+
+a.clicky {
+	display:inline-block;
+	background-color: rgba(0, 128, 0, 0.3);
+	outline-style: outset;
+	outline-width: 1px;
+	outline-color: green;
+	margin: auto;
+	text-align: center;
+	flex:45%;
+}
+.gen_container {
+	padding-bottom:5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.gen_setting_name {
+	padding-bottom:5px;
+	color: #517087;
+	font-size: 14px;
+	font-weight: bold;
+	flex:45%;
+}
+.gen_list {
+	border: 1px solid green;
+	padding: 5px;
+	width:95%;
+	margin: auto;
+}
+.gen_name {
+	background-color: rgba(0, 128, 0, 0.3);
+	font-weight: bold;
+	text-align: center;
+}
+tr.talign {
+	vertical-align:top;
+}
+td.talign {
+	vertical-align:top;
+}
+

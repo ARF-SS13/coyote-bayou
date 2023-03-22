@@ -8,7 +8,7 @@
 	masturbation_verb = "stroke"
 	arousal_verb = "You pop a boner"
 	unarousal_verb = "Your boner goes down"
-	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|GENITAL_CAN_TAUR
+	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_TAUR|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
 	linked_organ_slot = ORGAN_SLOT_TESTICLES
 	fluid_transfer_factor = 0.5
 	shape = DEF_COCK_SHAPE
@@ -26,6 +26,15 @@
 		return
 	prev_length = length
 	length = clamp(length + modifier, min, max)
+	update()
+	..()
+
+/obj/item/organ/genital/penis/set_size(new_size)
+	var/new_value = clamp(new_size, CONFIG_GET(number/penis_min_inches_prefs), CONFIG_GET(number/penis_max_inches_prefs))
+	if(new_value == length)
+		return
+	prev_length = length
+	length = CEILING(new_value, 1)
 	update()
 	..()
 
@@ -97,4 +106,42 @@
 	diameter_ratio = D.features["cock_diameter_ratio"]
 	shape = D.features["cock_shape"]
 	prev_length = length
-	toggle_visibility(D.features["cock_visibility"], FALSE)
+	update_genital_visibility(D.features["cock_visibility_flags"], FALSE)
+
+/obj/item/organ/genital/penis/size_kind()
+	return "[size] inch[size!=1?"es":""]"
+
+/obj/item/organ/genital/penis/resize_genital(mob/user)
+	var/min_size = CONFIG_GET(number/penis_min_inches_prefs)
+	var/max_size = CONFIG_GET(number/penis_max_inches_prefs)
+	var/new_length = input(user, "Penis length in inches:\n([min_size]-[max_size])", "Character Preference") as num|null
+	if(new_length)
+		set_size(clamp(round(new_length), min_size, max_size))
+	. = ..()
+
+/obj/item/organ/genital/penis/arousal_term()
+	if(aroused_state)
+		return "Hard and throbbing"
+	return "Limp and just fine"
+
+/obj/item/organ/genital/penis/on_arouse()
+	owner?.show_message(span_userlove("You feel your penis become erect."))
+	. = ..()
+
+/obj/item/organ/genital/penis/on_unarouse()
+	owner?.show_message(span_userlove("You feel your erection fade."))
+	. = ..()
+
+/// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
+/obj/item/organ/genital/penis/get_sprite_accessory()
+	return GLOB.cock_shapes_list[shape]
+
+/obj/item/organ/genital/penis/get_layer_number(position)
+	switch(position)
+		if("FRONT")
+			. = ..()
+		if("MID")
+			return
+		if("BEHIND")
+			. = ..()
+

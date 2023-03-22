@@ -225,13 +225,11 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	slot = ORGAN_SLOT_BELLY
 	w_class = WEIGHT_CLASS_NORMAL
 	size = 1
-	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
+	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
 	layer_index = BELLY_LAYER_INDEX
 	shape = DEF_BELLY_SHAPE // either tummy or obese
 	masturbation_verb = "massage"
 	var/shape_kind = "tummy"
-	var/cached_size //these two vars pertain size modifications and so should be expressed in NUMBERS.
-	var/prev_size //former cached_size value, to allow update_size() to early return should be there no significant changes.
 
 /obj/item/organ/genital/belly/modify_size(modifier, min = BELLY_SIZE_MIN, max = BELLY_SIZE_MAX)
 	var/new_value = clamp(cached_size + modifier, min, max)
@@ -240,6 +238,16 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	prev_size = cached_size
 	cached_size = new_value
 	size = round(cached_size)
+	update()
+	..()
+
+/obj/item/organ/genital/belly/set_size(new_size)
+	var/new_value = clamp(new_size, CONFIG_GET(number/belly_min_size_prefs), CONFIG_GET(number/belly_max_size_prefs))
+	if(new_value == cached_size)
+		return
+	prev_size = cached_size
+	cached_size = new_value
+	size = CEILING(cached_size, 1)
 	update()
 	..()
 
@@ -267,10 +275,9 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	var/list/belly_suffix_list = pick(GLOB.belly_descriptors["belly_suffix"][bellysize])
 	var/belly_suffix = belly_suffix_list[shape]
 	desc = "You see \a [belly_prefix] [belly_suffix]."
-
 	icon_state = "belly"
-	if(owner?.dna?.features["belly_color"])
-		color = "#[owner.dna.features["belly_color"]]"
+	//if(owner?.dna?.features["belly_color"])
+	//	color = "#[owner.dna.features["belly_color"]]"
 
 
 /obj/item/organ/genital/belly/get_features(mob/living/carbon/human/H)
@@ -285,7 +292,38 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 		size = BELLY_SIZE_DEF
 	prev_size = size
 	cached_size = size
-	toggle_visibility(D.features["belly_visibility"], FALSE)
+	update_genital_visibility(D.features["belly_visibility"], FALSE)
 
 /obj/item/organ/genital/belly/get_icon_state(mob/living/carbon/human/H)
 	return "belly_[size]_[lowertext(shape)]" // belly_11_obese
+
+/obj/item/organ/genital/belly/size_kind()
+	return "[size]XL"
+
+/obj/item/organ/genital/belly/resize_genital(mob/user)
+	var/min_size = CONFIG_GET(number/belly_min_size_prefs)
+	var/max_size = CONFIG_GET(number/belly_max_size_prefs)
+	var/new_size = input(user, "Belly size:\n([min_size]-[max_size])", "Character Preference") as num|null
+	if(new_size)
+		set_size(clamp(round(new_size), min_size, max_size))
+	. = ..() // call your parents and tell them how big you got!
+
+/obj/item/organ/genital/belly/reshape_genital(mob/user)
+	var/new_shape
+	new_shape = input(user, "Belly Shape", "Character Preference") as null|anything in GLOB.belly_shapes_list
+	if(new_shape)
+		shape = new_shape
+	. = ..() // call your parents and tell them how big you got!
+
+/// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
+/obj/item/organ/genital/belly/get_sprite_accessory()
+	return GLOB.belly_shapes_list[shape]
+
+/obj/item/organ/genital/belly/get_layer_number(position)
+	switch(position)
+		if("FRONT")
+			. = ..()
+		if("MID")
+			return
+		if("BEHIND")
+			return

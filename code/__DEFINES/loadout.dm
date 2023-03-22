@@ -8,6 +8,7 @@
 #define SETTINGS_TAB 0
 #define GAME_PREFERENCES_TAB 1
 #define APPEARANCE_TAB 2
+#define ERP_TAB 3
 //#define SPEECH_TAB 3
 #define LOADOUT_TAB 4
 #define CONTENT_PREFERENCES_TAB 5
