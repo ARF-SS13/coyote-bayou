@@ -53,6 +53,8 @@
 					freak_out(O)
 					return
 			for(var/mob/living/carbon/human/HU in seen_atoms) //check equipment for trigger items
+				if(HAS_TRAIT(HU, phobia_type))
+					freak_out(HU)
 				for(var/X in HU.get_all_slots() | HU.held_items)
 					var/obj/I = X
 					if(!QDELETED(I) && is_type_in_typecache(I, trigger_objs))
@@ -136,6 +138,10 @@
 			owner.stuttering += 10
 
 // Defined phobia types for badminry, not included in the RNG trauma pool to avoid diluting.
+
+/datum/brain_trauma/mild/phobia/rats
+	phobia_type = "rats"
+	random_gain = FALSE
 
 /datum/brain_trauma/mild/phobia/spiders
 	phobia_type = "spiders"

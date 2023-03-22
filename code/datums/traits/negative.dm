@@ -394,10 +394,50 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mood_change = -5
 	timeout = 3 MINUTES
 
+/datum/quirk/catphobia
+	name = "Phobia - Cats"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
+	value = -1
+	mob_trait = TRAIT_CATPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of catgirl paradise's creatures grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You wish to go to catgirl paradise some day.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/catphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/cats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/catphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/cats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/ratphobia
+	name = "Phobia - Rats"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with rats."
+	value = -1
+	mob_trait = TRAIT_RATPHOBIA
+	gain_text = span_danger("You begin to tremble as you could hear in your head, \"Rats, rats, we're the rats.\nWe prey at night, we stalk at night, we're the rats.\" it echoes in your mind hauntingly.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You're the giant rat now who makes all the rules.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/ratphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/rats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/ratphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/rats, TRAUMA_RESILIENCE_ABSOLUTE)
+
 /datum/quirk/spiderphobia
 	name = "Phobia - Spiders"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with spiders."
-	value = -2
+	value = -1
 	mob_trait = TRAIT_SPIDERPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of eight legged monsters grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -414,6 +454,63 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/spiders, TRAUMA_RESILIENCE_ABSOLUTE)
 
+/datum/quirk/lizardphobia
+	name = "Phobia - Lizards"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with lizards and reptiles."
+	value = -1
+	mob_trait = TRAIT_LIZARDPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of those scalie smooth brains grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Now you can't help but giggle at the sounds of turtles moaning which had appeared in your head.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/lizardphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/lizards, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/lizardphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/lizards, TRAUMA_RESILIENCE_ABSOLUTE)
+/datum/quirk/robotphobia
+	name = "Phobia - Robots/Synths"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with robot or synthetics."
+	value = -2 // I do this because there's many enemy mobs which fit in this category, which effects a lot of gameplay.
+	mob_trait = TRAIT_ROBOTPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of not understanding what x=x<<1 even means...Those robots are too scary to understand that, the fear grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You've learnt bitshifting!")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to bitwise operations."
+	locked = FALSE
+
+/datum/quirk/robotphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/robotphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
+/datum/quirk/birdphobia
+	name = "Phobia - Birds"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with birds."
+	value = -1
+	mob_trait = TRAIT_BIRDPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of winged dubious creatures grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Bird up!")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/birdphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/birds, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/birdphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/birds, TRAUMA_RESILIENCE_ABSOLUTE)
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."

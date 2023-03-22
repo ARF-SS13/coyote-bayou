@@ -81,7 +81,9 @@ SUBSYSTEM_DEF(traumas)
 			/mob/living/silicon/ai,
 			/mob/living/simple_animal/drone,
 			/mob/living/simple_animal/bot,
-			/mob/living/simple_animal/hostile/swarmer)
+			/mob/living/simple_animal/hostile/swarmer,
+			/mob/living/simple_animal/hostile/handy,
+			/mob/living/simple_animal/hostile/eyebot)
 			),
 
 		"doctors"   = typecacheof(list(
@@ -112,7 +114,8 @@ SUBSYSTEM_DEF(traumas)
 			/mob/living/simple_animal/parrot,
 			/mob/living/simple_animal/chick,
 			/mob/living/simple_animal/chicken,
-			/mob/living/simple_animal/pet/penguin)
+			/mob/living/simple_animal/pet/penguin,
+			)
 			),
 
 		"anime" = typecacheof(list(
@@ -120,9 +123,14 @@ SUBSYSTEM_DEF(traumas)
 			),
 
 		"cats"= typecacheof(list(
-			/mob/living/simple_animal/mouse,
 			/mob/living/simple_animal/pet/cat,
 			/mob/living/simple_animal/hostile/cat_butcherer)
+			),
+
+		"rats"= typecacheof(list(
+			/mob/living/simple_animal/mouse,
+			/mob/living/simple_animal/hostile/molerat,
+			/mob/living/simple_animal/hostile/rat)
 			),
 
 		"eye" = typecacheof(list(
