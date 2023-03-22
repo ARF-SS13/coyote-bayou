@@ -428,6 +428,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(!CHECK_MOBILITY(src, MOBILITY_MOVE)) // !(mobility_flags & MOBILITY_MOVE)
 		walk(src, 0) //stop mid walk
 		return FALSE
+	if(has_buckled_mobs()) //If someones on a mount then it won't wander about with them
+		return FALSE
+	if(turns_per_move == -1) //stops wandering entirely
+		return FALSE
 	turns_since_move++
 	if(turns_since_move < turns_per_move)
 		return TRUE

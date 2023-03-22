@@ -6,7 +6,7 @@
 	product_slogans = "Apply your brZZT- Giddeyup, yall!;Apply your brilliant deductiZZT-are better than one!;Apply your brilliant deductive methoZZT-your two-headed friends!;Apply your brilliant deductive methods in style! ...ZZT-ahmin, today!"
 	vend_reply = "Thank you for using the DetDroZZT-le Supply!"
 	products = list(
-		/obj/item/brahminbags = 10,
+		///obj/item/brahminbags = 10,
 		/obj/item/brahminbrand = 10,
 		/obj/item/brahminbridle = 10,
 		/obj/item/brahmincollar = 10,
