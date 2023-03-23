@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up. You can also climb some walls!"
 	value = 2
 	mob_trait = TRAIT_FREERUNNING
-	gain_text = span_notice("You feel lithe on your feet!")
+	gain_text = span_notice("You feel lithe on your feet! (Alt click walls to climb them!)")
 	lose_text = span_danger("You feel clumsy again.")
 	medical_record_text = "Patient scored highly on cardio tests."
 
