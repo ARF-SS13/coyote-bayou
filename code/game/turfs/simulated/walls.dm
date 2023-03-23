@@ -358,7 +358,7 @@
 		
 		if(do_mob(user, user, 20))
 			var/turf/targetDest = get_step_multiz(get_turf(src), UP)
-			if(!isloc(targetDest) || targetDest?.density || targetDest.CanPass(user, get_dir(user, get_turf(src))))
+			if(!isloc(targetDest) || targetDest?.density || !targetDest.CanPass(user, get_dir(user, get_turf(src))))
 				to_chat(user, span_warning("You peak towards the top of the wall, but it's not safe to climb there!"))
 				return
 			if(user.zMove(UP, targetDest, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
