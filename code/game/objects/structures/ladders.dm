@@ -171,27 +171,20 @@
 		visible_message(span_danger("[src] is torn to pieces by the gravitational pull!"))
 		qdel(src)
 
-/obj/structure/ladder/proc/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
-	if(!is_ghost)
-		if(in_use)
-			return
-		in_use = TRUE
-		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
-		if(!do_after(user, timetouse, target = src))
-			in_use = FALSE
-			return
-		in_use = FALSE
-		show_fluff_message(going_up, user)
-		ladder.add_fingerprint(user)
+/obj/structure/ladder/proc/travel(mob/user, going_up = TRUE, is_ghost = FALSE)
+	var/obj/structure/ladder/ladder = going_up ? up : down
+	if(!ladder)
+		to_chat(user, span_warning("there's nothing that way!"))
+		return
+	var/response = SEND_SIGNAL(user, COMSIG_LADDER_TRAVEL, src, ladder, going_up)
+	if(response & LADDER_TRAVEL_BLOCK)
+		return
 
-	var/turf/T = get_turf(ladder)
-	var/atom/movable/AM
-	if(user.pulling)
-		AM = user.pulling
-		AM.forceMove(T)
-	user.forceMove(T)
-	if(AM)
-		user.start_pulling(AM)
+	var/turf/target = get_turf(ladder)
+	user.zMove(target = target, z_move_flags = ZMOVE_CHECK_PULLEDBY|ZMOVE_ALLOW_BUCKLED|ZMOVE_INCLUDE_PULLED)
+
+	if(!is_ghost)
+		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
 
 /obj/structure/ladder/proc/use(mob/user, is_ghost=FALSE)
 	if (!is_ghost && !in_range(src, user))
@@ -209,9 +202,9 @@
 
 	if(!uhoh_weather && !both_ways)
 		if(up)
-			travel(TRUE, user, is_ghost, up)
+			travel(user, TRUE, is_ghost)
 		if(down)
-			travel(FALSE, user, is_ghost, down)
+			travel(user, FALSE, is_ghost)
 		return
 
 	var/list/tool_list = list()
@@ -231,9 +224,9 @@
 		return  // nice try
 	switch(result)
 		if("Up")
-			travel(TRUE, user, is_ghost, up)
+			travel(user, TRUE, is_ghost)
 		if("Down")
-			travel(FALSE, user, is_ghost, down)
+			travel(user, FALSE, is_ghost)
 		if("Cancel")
 			return
 
@@ -407,27 +400,6 @@
 		user.visible_message("[user] walks up to [src].",span_notice("You walk up to [src]."))
 	else
 		user.visible_message("[user] walks down to [src].",span_notice("You walk down to [src]."))
-
-/obj/structure/ladder/unbreakable/transition/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
-	var/obj/structure/ladder/ladder = going_up ? up : down
-	if(!ladder)
-		balloon_alert(user, "there's nothing that way!")
-		return
-	var/response = SEND_SIGNAL(user, COMSIG_LADDER_TRAVEL, src, ladder, going_up)
-	if(response & LADDER_TRAVEL_BLOCK)
-		return
-
-	var/turf/target = get_turf(ladder)
-	user.zMove(target = target, z_move_flags = ZMOVE_CHECK_PULLEDBY|ZMOVE_ALLOW_BUCKLED|ZMOVE_INCLUDE_PULLED)
-
-	if(!is_ghost)
-		show_final_fluff_message(user, ladder, going_up)
-
-	// to avoid having players hunt for the pixels of a ladder that goes through several stories and is
-	// partially covered by the sprites of their mobs, a radial menu will be displayed over them.
-	// this way players can keep climbing up or down with ease until they reach an end.
-	if(ladder.up && ladder.down)
-		ladder.show_options(user, is_ghost)
 
 /obj/structure/ladder/unbreakable/transition/Cross(atom/movable/AM)
 	use(AM)
