@@ -799,7 +799,10 @@
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
 	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
-	food_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko)
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
 	milk_reagent = /datum/reagent/toxin
 	ride_offsets = list(
 		"1" = list(15, 8),
