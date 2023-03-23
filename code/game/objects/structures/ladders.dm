@@ -181,8 +181,8 @@
 		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
 
 	if(!do_after(user, timetouse, target = src))
-			in_use = FALSE
-			return
+		in_use = FALSE
+		return
 
 	var/response = SEND_SIGNAL(user, COMSIG_LADDER_TRAVEL, src, ladder, going_up)
 	if(response & LADDER_TRAVEL_BLOCK)
