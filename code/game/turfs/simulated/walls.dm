@@ -343,7 +343,7 @@
 
 
 // Free Running perk!
-/turf/closed/wall/AltClick(mob/user)
+/turf/closed/wall/AltClick(mob/living/user)
 	. = ..()
 	if(user.stat)
 		return
@@ -356,8 +356,12 @@
 			return
 		visible_message("[user] attempts to climb the [name]!", "You begin climbing the [name]")
 		
-		if(do_mob(user, user, 20))
+		if(do_mob(user, user, 40 + (user.getStaminaLoss() * 0.25))) // 25% of your stamina loss will effect the speed on climbing.
 			var/turf/targetDest = get_step_multiz(get_turf(src), UP)
+			if(istype(targetDest, /turf/open/transparent/openspace)) // This helps prevent boundary breaking.
+				to_chat(user, span_warning("There's nothing to stand on once you climb up..!"))
+				return
+
 			if(!isloc(targetDest) || targetDest?.density || !targetDest.CanPass(user, get_dir(user, get_turf(src))))
 				to_chat(user, span_warning("You peak towards the top of the wall, but it's not safe to climb there!"))
 				return
