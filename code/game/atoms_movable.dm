@@ -65,7 +65,7 @@
 	/// Whether this atom should have its dir automatically changed when it moves. Setting this to FALSE allows for things such as directional windows to retain dir on moving without snowflake code all of the place.
 	var/set_dir_on_move = TRUE
 	///how many times a this movable had movement procs called on it since Moved() was last called
-	var/move_stacks = 0
+	//var/move_stacks = 0
 	///is the mob currently ascending or descending through z levels?
 	var/currently_z_moving
 
@@ -320,24 +320,31 @@
 		var/mob/living/L = ex_pulled
 		L.update_mobility()// mob gets up if it was lyng down in a chokehold
 
-/atom/movable/proc/Move_Pulled(atom/A)
+/atom/movable/proc/Move_Pulled(atom/moving_atom)
 	if(!pulling)
 		return FALSE
-	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
+	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src, src, pulling))
 		stop_pulling()
 		return FALSE
 	if(isliving(pulling))
-		var/mob/living/L = pulling
-		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
+		var/mob/living/pulling_mob = pulling
+		if(pulling_mob.buckled && pulling_mob.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
 			stop_pulling()
 			return FALSE
-	if(A == loc && pulling.density)
+	if(moving_atom == loc && pulling.density)
 		return FALSE
-	var/move_dir = get_dir(pulling.loc, A)
+	var/move_dir = get_dir(pulling.loc, moving_atom)
 	if(!Process_Spacemove(move_dir))
 		return FALSE
 	pulling.Move(get_step(pulling.loc, move_dir), move_dir, glide_size)
 	return TRUE
+
+/mob/living/Move_Pulled(atom/moving_atom)
+	. = ..()
+	if(!. || !isliving(moving_atom))
+		return
+	var/mob/living/pulled_mob = moving_atom
+	set_pull_offsets(pulled_mob, grab_state)
 
 /atom/movable/proc/check_pulling(only_pulling = FALSE, z_allowed = FALSE)
 	if(pulling)
@@ -850,9 +857,9 @@
  */
 /atom/movable/proc/abstract_move(atom/new_loc)
 	var/atom/old_loc = loc
-	move_stacks++
+	var/direction = get_dir(old_loc, new_loc)
 	loc = new_loc
-	Moved(old_loc)
+	Moved(old_loc, direction, TRUE)
 
 /// Returns true or false to allow src to move through the blocker, mover has final say
 /atom/movable/proc/CanPassThrough(atom/blocker, movement_dir, blocker_opinion)

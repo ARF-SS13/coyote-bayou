@@ -53,7 +53,7 @@
 	var/atom/oldloc = loc
 	var/area/oldarea = get_area(oldloc)
 	var/area/newarea = get_area(newloc)
-	move_stacks++
+	//move_stacks++
 
 	loc = newloc
 
@@ -221,22 +221,35 @@
 	if (!moving_diagonally && client_mobs_in_contents)
 		update_parallax_contents()
 
-	move_stacks--
-	if(move_stacks > 0) //we want only the first Moved() call in the stack to send this signal, all the other ones have an incorrect old_loc
-		return
-	if(move_stacks < 0)
-		stack_trace("move_stacks is negative in Moved()!")
-		move_stacks = 0 //setting it to 0 so that we dont get every movable with negative move_stacks runtiming on every movement
-
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, old_loc, movement_dir, forced, old_locs)
+
+	if(old_loc)
+		SEND_SIGNAL(old_loc, COMSIG_ATOM_ABSTRACT_EXITED, src, movement_dir)
+	if(loc)
+		SEND_SIGNAL(loc, COMSIG_ATOM_ABSTRACT_ENTERED, src, old_loc, old_locs)
 
 	var/turf/old_turf = get_turf(old_loc)
 	var/turf/new_turf = get_turf(src)
 
 	if (old_turf?.z != new_turf?.z)
 		on_changed_z_level(old_turf, new_turf)
-	
+
+	// if(HAS_SPATIAL_GRID_CONTENTS(src))
+	// 	if(old_turf && new_turf && (old_turf.z != new_turf.z
+	// 		|| GET_SPATIAL_INDEX(old_turf.x) != GET_SPATIAL_INDEX(new_turf.x)
+	// 		|| GET_SPATIAL_INDEX(old_turf.y) != GET_SPATIAL_INDEX(new_turf.y)))
+
+	// 		SSspatial_grid.exit_cell(src, old_turf)
+	// 		SSspatial_grid.enter_cell(src, new_turf)
+
+	// 	else if(old_turf && !new_turf)
+	// 		SSspatial_grid.exit_cell(src, old_turf)
+
+	// 	else if(new_turf && !old_turf)
+	// 		SSspatial_grid.enter_cell(src, new_turf)
+
 	return TRUE
+
 
 
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
@@ -461,12 +474,13 @@
 
 /atom/movable/proc/doMove(atom/destination)
 	. = FALSE
-	move_stacks++
 	var/atom/oldloc = loc
+	var/is_multi_tile = bound_width > world.icon_size || bound_height > world.icon_size
 	if(destination)
 		///zMove already handles whether a pull from another movable should be broken.
 		if(pulledby && !currently_z_moving)
 			pulledby.stop_pulling()
+
 		var/same_loc = oldloc == destination
 		var/area/old_area = get_area(oldloc)
 		var/area/destarea = get_area(destination)
@@ -477,23 +491,49 @@
 		loc = destination
 
 		if(!same_loc)
-			if(oldloc)
-				oldloc.Exited(src, movement_dir)
+			if(is_multi_tile && isturf(destination))
+				var/list/new_locs = block(
+					destination,
+					locate(
+						min(world.maxx, destination.x + ROUND_UP(bound_width / 32)),
+						min(world.maxy, destination.y + ROUND_UP(bound_height / 32)),
+						destination.z
+					)
+				)
 				if(old_area && old_area != destarea)
 					old_area.Exited(src, movement_dir)
-			destination.Entered(src, oldloc)
-			if(destarea && old_area != destarea)
-				destarea.Entered(src, old_area)
+				for(var/atom/left_loc as anything in locs - new_locs)
+					left_loc.Exited(src, movement_dir)
+
+				for(var/atom/entering_loc as anything in new_locs - locs)
+					entering_loc.Entered(src, movement_dir)
+
+				if(old_area && old_area != destarea)
+					destarea.Entered(src, movement_dir)
+			else
+				if(oldloc)
+					oldloc.Exited(src, movement_dir)
+					if(old_area && old_area != destarea)
+						old_area.Exited(src, movement_dir)
+				destination.Entered(src, oldloc)
+				if(destarea && old_area != destarea)
+					destarea.Entered(src, old_area)
 
 		. = TRUE
 
 	//If no destination, move the atom into nullspace (don't do this unless you know what you're doing)
 	else
 		. = TRUE
-		loc = null
+
 		if (oldloc)
+			loc = null
 			var/area/old_area = get_area(oldloc)
-			oldloc.Exited(src, NONE)
+			if(is_multi_tile && isturf(oldloc))
+				for(var/atom/old_loc as anything in locs)
+					old_loc.Exited(src, NONE)
+			else
+				oldloc.Exited(src, NONE)
+
 			if(old_area)
 				old_area.Exited(src, NONE)
 
