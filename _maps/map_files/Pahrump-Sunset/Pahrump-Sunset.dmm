@@ -3823,7 +3823,7 @@
 	},
 /obj/structure/table/wood{
 	pixel_y = 2;
-	pixel_x = 21
+	pixel_x = 32
 	},
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -12595,11 +12595,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "aRp" = (
-/obj/structure/closet,
-/obj/machinery/light,
 /obj/structure/closet{
 	anchored = 1
 	},
+/obj/machinery/light,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
@@ -17297,15 +17296,15 @@
 /area/f13/building/museum)
 "bhU" = (
 /obj/item/clothing/head/helmet/f13/motorcycle{
-	pixel_y = 8;
+	pixel_y = 10;
 	layer = 2.9
 	},
 /obj/item/clothing/glasses/f13/biker{
-	pixel_y = 6
+	pixel_y = 7
 	},
-/obj/structure/table/wood{
-	icon = 'icons/obj/crates.dmi';
-	icon_state = "largecrate"
+/obj/structure/table,
+/obj/item/clothing/suit/armor/light/leather/leather_jacket{
+	pixel_y = -2
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -21615,6 +21614,21 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/store,
 /area/f13/building)
+"bOQ" = (
+/obj/structure/barricade/bars{
+	max_integrity = 800;
+	name = "strong metal bars";
+	obj_integrity = 800
+	},
+/obj/structure/curtain{
+	color = "#8A806B";
+	opacity = 1;
+	icon_state = "closed"
+	},
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
+/area/f13/ruins)
 "bPg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -26741,9 +26755,8 @@
 	},
 /area/f13/building/abandoned)
 "cXZ" = (
-/obj/structure/table,
-/obj/structure/barricade/bars,
-/obj/structure/spacevine,
+/obj/item/folder/yellow,
+/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -27103,7 +27116,6 @@
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/restraints/handcuffs,
-/obj/item/clothing/shoes/ballandchain,
 /obj/item/clothing/mask/surgical/sloaff,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -29438,10 +29450,10 @@
 	},
 /area/f13/ruins)
 "dKp" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/clothing/shoes/jackboots,
+/obj/structure/closet,
+/obj/item/clothing/under/rank/prisoner,
+/obj/item/clothing/shoes/sneakers/orange,
+/obj/item/restraints/handcuffs,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -29468,9 +29480,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "dKC" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/junk/small/bed2,
+/obj/item/clothing/under/rank/prisoner{
+	pixel_y = -6
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -30269,14 +30282,15 @@
 	},
 /area/f13/wasteland/city)
 "dXy" = (
-/obj/structure/table,
-/obj/item/clothing/glasses/f13/biker,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/vehicle/ridden/wheelchair{
+	desc = "A wheelchair, that seems to be wheels, it seems to be moveable by person on the wheelchair and it picks up bitches.";
+	name = "hawtrod bitch magnet";
+	dir = 8
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/ruins)
+/area/f13/building)
 "dXN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -32566,7 +32580,9 @@
 	},
 /area/f13/wasteland)
 "eGt" = (
-/obj/structure/closet,
+/obj/structure/closet{
+	anchored = 1
+	},
 /obj/item/throwing_star/spear,
 /obj/item/twohanded/spear/scrapspear,
 /obj/item/handsaw,
@@ -33170,6 +33186,15 @@
 	icon_state = "outerpavementcorner"
 	},
 /area/f13/wasteland/city)
+"eOI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/under/f13/police/trooper,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "eOQ" = (
 /obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/dirt,
@@ -34179,6 +34204,7 @@
 "fcL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/workbench,
+/obj/item/clothing/head/welding/f13/fire,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -35502,8 +35528,8 @@
 /obj/structure/sign/poster/official/twelve_gauge{
 	pixel_x = -32
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/junk,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/police,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -42178,6 +42204,13 @@
 	icon_state = "verticalleftborderright0"
 	},
 /area/f13/wasteland)
+"huH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "huI" = (
 /obj/machinery/mineral/wasteland_vendor/mining,
 /turf/open/floor/wood_common{
@@ -43295,6 +43328,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"hKv" = (
+/obj/structure/chair/bench{
+	dir = 4
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "hKx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -48365,7 +48407,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "jdv" = (
-/obj/item/candle/tribal_torch{
+/obj/structure/destructible/tribal_torch/lit{
 	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/road,
@@ -51188,7 +51230,11 @@
 	},
 /area/f13/building/abandoned)
 "jXi" = (
-/obj/structure/chair/office,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/barricade/bars,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -52001,11 +52047,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "kkh" = (
-/obj/item/folder/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/eyebot{
+	faction = list("raider","wastebot")
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -53037,9 +53085,8 @@
 	},
 /area/f13/wasteland)
 "kzF" = (
-/obj/structure/table,
-/obj/item/clothing/head/helmet/f13/motorcycle,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/metal/barred,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -55594,11 +55641,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "lmn" = (
-/obj/structure/table,
 /obj/item/clothing/glasses/sunglasses,
-/mob/living/simple_animal/hostile/eyebot{
-	faction = list("raider","wastebot")
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -59996,7 +60039,7 @@
 /turf/closed/wall/f13/store,
 /area/f13/building/hospital)
 "mxu" = (
-/obj/item/candle/tribal_torch{
+/obj/structure/destructible/tribal_torch/lit{
 	pixel_y = 15;
 	pixel_x = 5
 	},
@@ -63344,11 +63387,10 @@
 	},
 /area/f13/building/abandoned)
 "nsm" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/bars,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -64909,6 +64951,14 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland/city)
+"nPZ" = (
+/obj/structure/junk/small{
+	pixel_x = 5
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "nQb" = (
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c"
@@ -68074,10 +68124,19 @@
 	},
 /area/f13/building)
 "oLj" = (
-/obj/item/folder/yellow,
-/obj/item/clothing/glasses/sunglasses,
+/obj/structure/barricade/bars{
+	max_integrity = 800;
+	name = "strong metal bars";
+	obj_integrity = 800
+	},
+/obj/structure/spacevine,
+/obj/structure/curtain{
+	color = "#8A806B";
+	opacity = 1;
+	icon_state = "closed"
+	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/ruins)
 "oLp" = (
@@ -69504,8 +69563,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "phl" = (
-/obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/bars,
+/obj/effect/overlay/junk/curtain,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -70196,8 +70256,17 @@
 	},
 /area/f13/building/massfusion)
 "prp" = (
-/obj/structure/table,
-/obj/item/gun_upgrade/trigger/raidertrigger,
+/obj/structure/filingcabinet{
+	pixel_x = 10
+	},
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = -5
+	},
+/obj/item/clothing/suit/armor/medium/vest/blueshirt{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -73354,6 +73423,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	pixel_y = 6
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -73790,17 +73863,9 @@
 /area/f13/wasteland)
 "qvl" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/filingcabinet{
-	pixel_x = 10
-	},
-/obj/structure/filingcabinet/chestdrawer{
-	pixel_x = -5
-	},
-/obj/item/clothing/suit/armor/medium/vest/blueshirt{
-	pixel_x = -6;
-	pixel_y = 5
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/mob_spawn/human/skeleton/alive,
+/obj/item/restraints/handcuffs,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -74166,6 +74231,10 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/spray/pepper,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	pixel_y = 6
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -77980,6 +78049,9 @@
 	pixel_y = 32
 	},
 /obj/structure/chair/office/dark,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -78395,6 +78467,13 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/hospital)
+"rOF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/bars,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "rOI" = (
 /obj/structure/sign/poster/contraband/the_griffin{
 	pixel_y = 32
@@ -80345,6 +80424,7 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
+/obj/item/clothing/suit/armor/light/leather/leather_jacket,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -80760,6 +80840,17 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"szo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/helmet/f13/motorcycle,
+/mob/living/simple_animal/hostile/eyebot{
+	faction = list("raider","wastebot")
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "szp" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -83866,8 +83957,9 @@
 	},
 /area/f13/wasteland)
 "trr" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/police,
+/obj/structure/junk/small/bed{
+	pixel_y = 11
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -86206,11 +86298,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tXR" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/metal/barred,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -90534,11 +90625,9 @@
 	},
 /area/f13/wasteland/city)
 "vof" = (
-/mob/living/simple_animal/hostile/eyebot{
-	faction = list("raider","wastebot")
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/under/f13/police/trooper,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -92997,6 +93086,13 @@
 	icon_state = "bar"
 	},
 /area/f13/building/abandoned)
+"vZg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/helmet/f13/motorcycle,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "vZh" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -95897,7 +95993,7 @@
 	dir = 4;
 	density = 0
 	},
-/obj/item/candle/tribal_torch{
+/obj/structure/destructible/tribal_torch/lit{
 	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -100372,6 +100468,14 @@
 	color = "#9c9c9c"
 	},
 /area/f13/building/tribal)
+"yfm" = (
+/obj/structure/table,
+/obj/item/clothing/glasses/f13/biker,
+/obj/item/gun_upgrade/trigger/raidertrigger,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ruins)
 "yfo" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/f13{
@@ -142088,11 +142192,11 @@ aaB
 aae
 aae
 xfv
-ycz
+cXZ
 pbK
 vbw
 ycz
-exw
+huH
 xfv
 gwE
 ycz
@@ -142345,13 +142449,13 @@ aae
 aae
 aae
 xfv
-oLj
+qHR
 jTd
-exw
+vZg
 vDP
 exw
 vWm
-ycz
+lmn
 ycz
 niP
 qqU
@@ -142604,7 +142708,7 @@ aae
 xfv
 rIz
 qAA
-oVt
+szo
 vkH
 exw
 ckx
@@ -142860,7 +142964,7 @@ aae
 lVH
 xfv
 prp
-bho
+yfm
 boh
 qos
 lYQ
@@ -143374,10 +143478,10 @@ qAg
 bdo
 ckx
 qHR
-dXy
+oVt
 kkh
-kzF
-phl
+exw
+kYZ
 xOB
 ycz
 svg
@@ -143632,12 +143736,12 @@ acD
 xfv
 jXi
 tXR
-ycz
-bho
+gnl
+kzF
 phl
 ckx
 ycz
-llV
+eOI
 ass
 ycz
 exw
@@ -143886,13 +143990,13 @@ cFK
 bun
 ncM
 etg
-xfv
+ckx
 trr
-dKC
+oVt
 nsm
-lmn
-lYQ
-cXZ
+ycz
+ycz
+ckx
 oVt
 exw
 oVt
@@ -144145,10 +144249,10 @@ cFK
 aOk
 xfv
 qvl
-ycz
-exw
-ycz
-ycz
+hKv
+rOF
+nPZ
+dKC
 ckx
 exw
 orr
@@ -144402,9 +144506,9 @@ aOk
 aOk
 xfv
 xfv
+bOQ
 xfv
-xfv
-ckx
+oLj
 xfv
 xfv
 oxq
@@ -151498,7 +151602,7 @@ fFf
 bxS
 vGm
 bnO
-afS
+dXy
 afS
 mgq
 pWI
