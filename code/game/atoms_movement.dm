@@ -83,7 +83,7 @@
 	var/atom/movable/pullee = pulling
 	var/turf/current_turf = loc
 	if(!moving_from_pull)
-		check_pulling()
+		check_pulling(z_allowed = TRUE)
 	if(!loc || !newloc)
 		return FALSE
 	var/atom/oldloc = loc
