@@ -561,6 +561,12 @@ a.clicky {
 	text-align: center;
 	flex:45%;
 }
+a.clicky_no_border {
+	display:inline-block;
+	background-color: rgba(0, 128, 0, 0.3);
+	text-align: center;
+	width: 100%;
+}
 .gen_container {
 	padding-bottom:5px;
 	display: flex;
@@ -573,7 +579,7 @@ a.clicky {
 	font-weight: bold;
 	flex:45%;
 }
-.gen_list {
+.table_genital_list {
 	border: 1px solid green;
 	padding: 5px;
 	width:95%;

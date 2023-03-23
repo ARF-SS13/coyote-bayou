@@ -530,6 +530,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
+		"genital_order" = DEF_COCKSTRING,
+
 
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
@@ -718,6 +720,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_vag_visibility_flags"]	>> features["vag_visibility_flags"]
 	//womb features
 	S["feature_has_womb"]				>> features["has_womb"]
+	//cockstring
+	S["feature_genital_order"]			>> features["genital_order"]
 	//taste
 	S["feature_taste"]					>> features["taste"]
 
@@ -903,6 +907,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	security_records				= copytext(security_records, 1, MAX_FLAVOR_LEN)
 	medical_records					= copytext(medical_records, 1, MAX_FLAVOR_LEN)
 
+	features["genital_order"]	= sanitize_text(features["genital_order"], DEF_COCKSTRING)
 	features["taste"]			= copytext(features["taste"], 1, MAX_TASTE_LEN)
 	features["flavor_text"]			= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["silicon_flavor_text"]			= copytext(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
@@ -1074,6 +1079,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_belly_shape"], features["belly_shape"])
 	WRITE_FILE(S["feature_belly_visibility"], features["belly_visibility"])
 	WRITE_FILE(S["feature_belly_visibility_flags"], features["belly_visibility_flags"])
+	WRITE_FILE(S["feature_genital_order"], features["genital_order"])
 
 	WRITE_FILE(S["feature_has_vag"], features["has_vag"])
 	WRITE_FILE(S["feature_vag_shape"], features["vag_shape"])

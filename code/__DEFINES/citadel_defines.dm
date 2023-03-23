@@ -16,6 +16,18 @@
 
 #define GENITAL_LAYER_INDEX_LENGTH 7 //keep it updated with each new index added, thanks.
 
+//cockstring defines
+#define CS_BUTT "has_butt"
+#define CS_VAG "has_vag"
+#define CS_BALLS "has_balls"
+#define CS_MISC "idk"
+#define CS_PENIS "has_cock"
+#define CS_BELLY "has_belly"
+#define CS_BOOB "has_breasts"
+
+//encodes the layering order
+#define DEF_COCKSTRING "has_butt:has_vag:has_balls:has_cock:has_belly:has_breasts"
+
 //genital flags
 #define GENITAL_BLACKLISTED      (1<<0) //for genitals that shouldn't be added to GLOB.genitals_list.
 #define GENITAL_INTERNAL         (1<<1) //no visibility options~
@@ -44,6 +56,7 @@
 
 #define GEN_VIS_FLAG_DEFAULT  GENITAL_RESPECT_UNDERWEAR | GENITAL_RESPECT_CLOTHING
 #define IS_GENITAL_VIS_OVERRIDE(x) (CHECK_BITFIELD(x,GENITAL_NO_OVERRIDE) || CHECK_BITFIELD(x,GENITAL_ALWAYS_HIDDEN) || CHECK_BITFIELD(x,GENITAL_ALWAYS_VISIBLE))
+
 
 #define DEF_VAGINA_SHAPE	"Human"
 

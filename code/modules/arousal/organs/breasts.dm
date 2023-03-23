@@ -98,8 +98,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 				color = SKINTONE2HEX(H.skin_tone)
 				if(!H.dna.skin_tone_override)
 					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["breasts_color"]]"
+		// else // color isnt neccessarilllallilaryly whats in the features
+		// 	color = "#[owner.dna.features["breasts_color"]]"
 
 //Allows breasts to grow and change size, with sprite changes too.
 //maximum wah

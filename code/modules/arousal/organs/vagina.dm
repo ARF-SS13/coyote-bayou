@@ -51,18 +51,16 @@
 
 	desc = "You see a vagina. [details]"
 
-	if(owner)
-		if(owner.dna.species.use_skintones)
-			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
-				var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
-				color = SKINTONE2HEX(H.skin_tone)
-				if(!H.dna.skin_tone_override)
-					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["vag_color"]]"
-		if(ishuman(owner))
-			var/mob/living/carbon/human/H = owner
-			H.update_genitals()
+	if(ishuman(owner) && owner?.dna?.species?.use_skintones) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
+		var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
+		color = SKINTONE2HEX(H.skin_tone)
+		if(!H.dna.skin_tone_override)
+			icon_state += "_s"
+		// else
+		// 	color = "#[owner.dna.features["vag_color"]]"
+		//if(ishuman(owner))
+		//	var/mob/living/carbon/human/H = owner
+		//	H.update_genitals() // already done by the parent
 
 /obj/item/organ/genital/vagina/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna

@@ -116,8 +116,8 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 				color = SKINTONE2HEX(H.skin_tone)
 				if(!H.dna.skin_tone_override)
 					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["butt_color"]]"
+		// else
+		// 	color = "#[owner.dna.features["butt_color"]]"
 
 
 /obj/item/organ/genital/butt/get_features(mob/living/carbon/human/H)

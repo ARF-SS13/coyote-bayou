@@ -206,6 +206,7 @@
 		"vag_shape"			= pick(GLOB.vagina_shapes_list),
 		"vag_color"			= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"has_womb"			= FALSE,
+		"genital_order"		= DEF_COCKSTRING,
 		"balls_visibility"	= GEN_VISIBLE_NO_UNDIES,
 		"breasts_visibility"= GEN_VISIBLE_NO_UNDIES,
 		"cock_visibility"	= GEN_VISIBLE_NO_UNDIES,

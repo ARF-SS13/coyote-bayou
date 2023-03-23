@@ -80,15 +80,14 @@
 	icon_state = "penis_[icon_shape]_[size]"
 	var/lowershape = lowertext(shape)
 
-	if(owner)
+	if(ishuman(owner))
 		if(owner.dna.species.use_skintones)
-			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
-				var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
-				color = SKINTONE2HEX(H.skin_tone)
-				if(!H.dna.skin_tone_override)
-					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["cock_color"]]"
+			var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
+			color = SKINTONE2HEX(H.skin_tone)
+			if(!H.dna.skin_tone_override)
+				icon_state += "_s"
+		// else
+		// 	color = "#[owner.dna.features["cock_color"]]"
 		if(genital_flags & GENITAL_CAN_TAUR && S?.taur_icon && (!S.feat_taur || owner.dna.features[S.feat_taur]) && owner.dna.species.mutant_bodyparts["taur"])
 			var/datum/sprite_accessory/taur/T = GLOB.taur_list[owner.dna.features["taur"]]
 			if(T.taur_mode & S.accepted_taurs) //looks out of place on those.

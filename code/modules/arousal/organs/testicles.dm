@@ -52,8 +52,8 @@
 				color = SKINTONE2HEX(H.skin_tone)
 				if(!H.dna.skin_tone_override)
 					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["balls_color"]]"
+		// else
+		// 	color = "#[owner.dna.features["balls_color"]]"
 
 /obj/item/organ/genital/testicles/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna

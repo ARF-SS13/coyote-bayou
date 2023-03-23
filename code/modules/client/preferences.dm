@@ -174,6 +174,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
+		"genital_order" = DEF_COCKSTRING,
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = "",
@@ -215,6 +216,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	// 0 = character settings, 1 = game preferences
 	var/current_tab = SETTINGS_TAB
+
+	// If in the ERP tab, are we rearranging genitals
+	var/erp_tab_page = ERP_TAB_GENITALS
 
 	var/unlock_content = 0
 
@@ -979,44 +983,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 		/// just kidding I moved it down here lol
 		if(ERP_TAB) // hoo haw preferences
-			dat += {"
-					<style>
-						a.clicky {
-							display:inline-block;
-							background-color: rgba(0, 128, 0, 0.3);
-							outline-style: outset;
-							outline-width: 1px;
-							outline-color: green;
-							flex:45%;
-						}
-						.gen_container {
-							padding-bottom:5px;
-							display: flex;
-							flex-wrap: wrap;
-						}
-						.gen_setting_name {
-							padding-bottom:5px;
-							font-weight: bold;
-							flex:45%;
-						}
-						table {
-							border: 1px solid green;
-							padding: 5px;
-							width:95%;
-							margin: auto;
-						}
-						h3 {
-							background-color: rgba(0, 128, 0, 0.3);
-						}
-						tr {
-							vertical-align:top;
-						}
-						td {
-							vertical-align:top;
-						}
-					</style>
-				"}
-
 			if(path)
 				var/savefile/S = new /savefile(path)
 				if(S)
@@ -1033,822 +999,900 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(!name)
 							name = "Character[i]"
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
-					dat += "</center>"
-
-			dat += "<table>"
-			if(NOGENITALS in pref_species.species_traits)
-				dat += "<tr class='talign'><td class='talign'>"
-				dat += "<div class='gen_setting_name'>Your species ([pref_species.name]) does not support genitals! These won't apply to your species!</div><br><hr>"
-				dat += "</td></tr>"
-			dat += "<tr class='talign'>"
-
-		///// PENIS /////
-			dat += "<td class='talign'>"
-			dat += "<h3>Penis</h3><!-- br-was-here -->"
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
-			dat += "<div class='gen_container'>"
-			dat += "<div class='gen_setting_name'>Has one:</div>"
-			/// yes I know it cursed, eat the dick this pref gave me
+					dat += "<hr><br>"
 			dat += {"<a 
-						class='clicky' 
 						href='
 							?_src_=prefs;
-							preference=has_cock'>
-								[features["has_cock"] == TRUE ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"}
-			if(!pref_species.use_skintones)
-				dat += "<div class='gen_setting_name'>Color:</div>"
-				dat += {"<a 
-							class='clicky'
-							style='
-								background-color:#[features["cock_color"]]' 
-							href='
-								?_src_=prefs;
-								preference=cock_color;
-								task=input'>
-									#[features["cock_color"]]
-						</a>
+							preference=erp_tab;
+							newtab=[ERP_TAB_GENITALS]' 
+							[current_tab == ERP_TAB_GENITALS ? "class='linkOn'" : ""]>
+								Pick Genitals
+					</a>"}
+			dat += " - "
+			dat += {"<a 
+						href='
+							?_src_=prefs;
+							preference=erp_tab;
+							newtab=[ERP_TAB_GENITALS_REARRANGE]' 
+							[current_tab == ERP_TAB_GENITALS_REARRANGE ? "class='linkOn'" : ""]>
+								Genital Layering
+					</a>"}
+
+			if(!path)
+				dat += "<div class='notice'>Please create an account to save your preferences</div>"
+			dat += "</center>"
+			dat += "<br>"
+
+			switch(erp_tab_page)
+				if(ERP_TAB_GENITALS_REARRANGE)
+					dat += {"
+					<style>
+						table.table_genital_list {
+							border: 1px solid green;
+							width:50%;
+							margin: auto;
+							padding: 0px;
+						}
+						td.genital_name { 
+							display:inline-block;
+							background-color: rgba(0, 128, 0, 0.4);
+							border: 1px solid rgba(0, 128, 0, 0.3);
+							font-weight: bold;
+							text-align: center;
+							margin: auto;
+							width: 70%;
+						} 
+						td.genital_arrow_on { 
+							display:inline-block;
+							background-color: rgba(0, 128, 0, 0.8);
+							outline-style: outset;
+							outline-width: 1px;
+							outline-color: green;
+							text-align: center;
+							width: 10%;
+						} 
+						td.genital_arrow_off { 
+							display:inline-block;
+							color : rgba(0, 128, 0, 0);
+							background-color: rgba(0, 128, 0, 0.4);
+							outline-style: outset;
+							outline-width: 1px;
+							outline-color: green;
+							text-align: center;
+							width: 10%;
+						} 
+					</style>
+					"}
+
+					var/list/all_genitals = decode_cockstring() // i made it i can call it whatever I want
+					var/list/genitals_we_have = list()
+					dat += "<table class='table_genital_list'>"
+
+					for(var/nad in all_genitals)
+						if(features[nad] == TRUE)
+							genitals_we_have += nad
+					if(LAZYLEN(genitals_we_have))
+						for(var/i in 1 to LAZYLEN(genitals_we_have))
+							dat += add_genital_layer_piece(genitals_we_have[i], i, LAZYLEN(genitals_we_have))
+					else
+						dat += "You dont seem to have any movable genitals!"
+
+					dat += "</table>"
+				if(ERP_TAB_GENITALS)
+					dat += "<table class='table_genital_list'>"
+					if(NOGENITALS in pref_species.species_traits)
+						dat += "<tr class='talign'><td class='talign'>"
+						dat += "<div class='gen_setting_name'>Your species ([pref_species.name]) does not support genitals! These won't apply to your species!</div><br><hr>"
+						dat += "</td></tr>"
+					dat += "<tr class='talign'>"
+
+					///// PENIS /////
+					dat += "<td class='talign'>"
+					dat += "<div class='gen_name'>Penis</div><!-- br-was-here -->"
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
+					dat += "<div class='gen_container'>"
+					dat += "<div class='gen_setting_name'>Has one:</div>"
+					/// yes I know it cursed, eat the dick this pref gave me
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=has_cock'>
+										[features["has_cock"] == TRUE ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"}
+					if(!pref_species.use_skintones)
+						dat += "<div class='gen_setting_name'>Color:</div>"
+						dat += {"<a 
+									class='clicky'
+									style='
+										background-color:#[features["cock_color"]]' 
+									href='
+										?_src_=prefs;
+										preference=cock_color;
+										task=input'>
+											#[features["cock_color"]]
+								</a>
+								<!-- br-was-here -->"}
+					var/tauric_shape = FALSE
+					if(features["cock_taur"])
+						var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[features["cock_shape"]]
+						if(P.taur_icon && parent.can_have_part("taur"))
+							var/datum/sprite_accessory/taur/T = GLOB.taur_list[features["taur"]]
+							if(T.taur_mode & P.accepted_taurs)
+								tauric_shape = TRUE
+					dat += "<div class='gen_setting_name'>Shape:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=cock_shape;
+									task=input'>
+										[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Length:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=cock_length;
+									task=input'>
+										[features["cock_length"]] inch(es)
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</div>"
+					dat += "</td>"
+
+					dat += "<td class='talign'>" // second col - visibility stuff
+					dat += "<div class='gen_container'>"
+					var/peen_vis_override
+					if(CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
+						peen_vis_override = "Always Hidden"
+					else if(CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
+						peen_vis_override = "Always Visible"
+					else
+						peen_vis_override = "None"
+					dat += "<div class='gen_setting_name'>Visibility Override:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=cock_visibility_override;
+									curr_vis=[peen_vis_override];
+									task=input'>
+										[peen_vis_override]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=cock_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"} // ^ like I said, something something devour phallus
+					dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=cock_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=cock_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=cock_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</div>"
+					dat += "</td></tr>"
+
+					///// BALLS /////
+					dat += "<tr class='talign'><td class='talign'>"
+					dat += "<div class='gen_name'>Testicles</div><!-- br-was-here -->"
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
+					dat += "<div class='gen_container'>"
+					dat += "<div class='gen_setting_name'>Has them:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=has_balls'>
+										[features["has_balls"] == TRUE ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"}
+					if(!pref_species.use_skintones)
+						dat += "<div class='gen_setting_name'>Color:</div>"
+						dat += {"<a 
+									class='clicky'
+									style='
+										background-color:#[features["balls_color"]]' 
+									href='
+										?_src_=prefs;
+										preference=balls_color;
+										task=input'>
+											#[features["balls_color"]]
+								</a>
+								<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Shape:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=balls_shape;
+									task=input'>
+										[features["balls_shape"]]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</div>"
+					dat += "</td>"
+
+					dat += "<td class='talign'>" // second col - visibility stuff
+					dat += "<div class='gen_container'>"
+					var/balls_vis_override
+					if(CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
+						balls_vis_override = "Always Hidden"
+					else if(CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
+						balls_vis_override = "Always Visible"
+					else
+						balls_vis_override = "None"
+					dat += "<div class='gen_setting_name'>Visibility Override:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=balls_visibility_override;
+									curr_vis=[balls_vis_override];
+									task=input'>
+										[balls_vis_override]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=balls_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=balls_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=balls_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=balls_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</td></tr>"
+
+					///// PUSSY /////
+					dat += "<tr class='talign'><td class='talign'>"
+					dat += "<div class='gen_name'>Vagina</div><!-- br-was-here -->"
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
+					dat += "<div class='gen_container'>"
+					dat += "<div class='gen_setting_name'>Has one:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=has_vag'>
+										[features["has_vag"] == TRUE ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"}
+					if(!pref_species.use_skintones)
+						dat += "<div class='gen_setting_name'>Color:</div>"
+						dat += {"<a 
+									class='clicky'
+									style='
+										background-color:#[features["vag_color"]]' 
+									href='
+										?_src_=prefs;
+										preference=vag_color;
+										task=input'>
+											#[features["vag_color"]]
+								</a>
+								<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Shape:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=vag_shape;
+									task=input'>
+										[features["vag_shape"]]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</div>"
+					dat += "</td>"
+
+					dat += "<td class='talign'>" // second col - visibility stuff
+					dat += "<div class='gen_container'>"
+					var/snizz_vis_override
+					if(CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
+						snizz_vis_override = "Always Hidden"
+					else if(CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
+						snizz_vis_override = "Always Visible"
+					else
+						snizz_vis_override = "None"
+					dat += "<div class='gen_setting_name'>Visibility Override:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=vag_visibility_override;
+									curr_vis=[snizz_vis_override];
+									task=input'>
+										[snizz_vis_override]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=vag_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=vag_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=vag_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=vag_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"
+					///// w00m /////
+					dat += "<div class='gen_name'>Womb</div><!-- br-was-here -->"
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
+					dat += "<div class='gen_container'>"
+					dat += "<div class='gen_setting_name'>Has one:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=has_womb'>
+										[features["has_womb"] == TRUE ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"} // ezpz
+					dat += "</td></tr>"
+
+					///// BOOBS /////
+					dat += "<tr class='talign'><td class='talign'>"
+					dat += "<div class='gen_name'>Breasts</div><!-- br-was-here -->"
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
+					dat += "<div class='gen_container'>"
+					dat += "<div class='gen_setting_name'>Has some:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=has_breasts'>
+										[features["has_breasts"] == TRUE ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"}
+					if(!pref_species.use_skintones)
+						dat += "<div class='gen_setting_name'>Color:</div>"
+						dat += {"<a 
+									class='clicky'
+									style='
+										background-color:#[features["breasts_color"]]' 
+									href='
+										?_src_=prefs;
+										preference=breasts_color;
+										task=input'>
+											#[features["breasts_color"]]
+								</a>
+								<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Number:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_shape;
+									task=input'>
+										[features["breasts_shape"]]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Cup Size:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_size;
+									task=input'>
+										[uppertext(features["breasts_size"])]-cup
+							</a>
+							<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Lactates:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_producing;
+									task=input'>
+										[features["breasts_producing"] ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</div>"
+					dat += "</td>"
+
+					dat += "<td class='talign'>" // second col - visibility stuff
+					dat += "<div class='gen_container'>"
+					var/tid_vis_override
+					if(CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
+						tid_vis_override = "Always Hidden"
+					else if(CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
+						tid_vis_override = "Always Visible"
+					else
+						tid_vis_override = "None"
+					dat += "<div class='gen_setting_name'>Visibility Override:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_visibility_override;
+									curr_vis=[tid_vis_override];
+									task=input'>
+										[tid_vis_override]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=breasts_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</td></tr>"
+
+					///// BELLY /////
+					dat += "<tr class='talign'><td class='talign'>"
+					dat += "<div class='gen_name'>Belly</div><!-- br-was-here -->"
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
+					dat += "<div class='gen_container'>"
+					dat += "<div class='gen_setting_name'>Has one:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=has_belly'>
+										[features["has_belly"] == TRUE ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"} // ezpz
+					if(!pref_species.use_skintones)
+						dat += "<div class='gen_setting_name'>Color:</div>"
+						dat += {"<a 
+									class='clicky'
+									style='
+										background-color:#[features["belly_color"]]' 
+									href='
+										?_src_=prefs;
+										preference=belly_color;
+										task=input'>
+											#[features["belly_color"]]
+								</a>
+								<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Shape:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=belly_shape;
+									task=input'>
+										[features["belly_shape"]]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Size:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=belly_size;
+									task=input'>
+										[features["belly_size"]]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</div>"
+					dat += "</td>"
+
+					dat += "<td class='talign'>" // second col - visibility stuff
+					dat += "<div class='gen_container'>"
+					var/gut_vis_override
+					if(CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
+						gut_vis_override = "Always Hidden"
+					else if(CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
+						gut_vis_override = "Always Visible"
+					else
+						gut_vis_override = "None"
+					dat += "<div class='gen_setting_name'>Visibility Override:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=belly_visibility_override;
+									curr_vis=[gut_vis_override];
+									task=input'>
+										[gut_vis_override]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=belly_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=belly_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=belly_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=belly_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</td></tr>"
+
+					///// BUTT /////
+					dat += "<tr class='talign'><td class='talign'>"
+					dat += "<div class='gen_name'>Butt</div><!-- br-was-here -->"
+					dat += "</td></tr>"
+
+					dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
+					dat += "<div class='gen_container'>"
+					dat += "<div class='gen_setting_name'>Has one:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=has_butt'>
+										[features["has_butt"] == TRUE ? "Yes" : "No"]
+							</a>
+							<!-- br-was-here -->"}
+					if(!pref_species.use_skintones)
+						dat += "<div class='gen_setting_name'>Color:</div>"
+						dat += {"<a 
+									class='clicky'
+									style='
+										background-color:#[features["butt_color"]]' 
+									href='
+										?_src_=prefs;
+										preference=belly_color;
+										task=input'>
+											#[features["butt_color"]]
+								</a>
+								<!-- br-was-here -->"}
+					dat += "<div class='gen_setting_name'>Size:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=butt_size;
+									task=input'>
+										[features["butt_size"]]
+							</a>
+							<!-- br-was-here -->"}
+					dat += "</div>"
+					dat += "</td>"
+
+					dat += "<td class='talign'>" // second col - visibility stuff
+					dat += "<div class='gen_container'>"
+					var/booty_vis_override
+					if(CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
+						booty_vis_override = "Always Hidden"
+					else if(CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
+						booty_vis_override = "Always Visible"
+					else
+						booty_vis_override = "None"
+					dat += "<div class='gen_setting_name'>Visibility Override:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=butt_visibility_override;
+									curr_vis=[booty_vis_override];
+									task=input'>
+										[booty_vis_override]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=butt_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=butt_visibility_flags;
+									genital_flag=[GENITAL_ABOVE_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=butt_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_UNDERWEAR];
+									task=input'>
+										[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							<!-- br-was-here -->"}
+
+					dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
+					dat += {"<a 
+								class='clicky' 
+								href='
+									?_src_=prefs;
+									preference=butt_visibility_flags;
+									genital_flag=[GENITAL_RESPECT_CLOTHING];
+									task=input'>
+										[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
+											"YES" :\
+											"NO"\
+										]
+							</a>
+							</div>
 						<!-- br-was-here -->"}
-			var/tauric_shape = FALSE
-			if(features["cock_taur"])
-				var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[features["cock_shape"]]
-				if(P.taur_icon && parent.can_have_part("taur"))
-					var/datum/sprite_accessory/taur/T = GLOB.taur_list[features["taur"]]
-					if(T.taur_mode & P.accepted_taurs)
-						tauric_shape = TRUE
-			dat += "<div class='gen_setting_name'>Shape:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=cock_shape;
-							task=input'>
-								[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Length:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=cock_length;
-							task=input'>
-								[features["cock_length"]] inch(es)
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</div>"
-			dat += "</td>"
-
-			dat += "<td class='talign'>" // second col - visibility stuff
-			dat += "<div class='gen_container'>"
-			var/peen_vis_override
-			if(CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
-				peen_vis_override = "Always Hidden"
-			else if(CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
-				peen_vis_override = "Always Visible"
-			else
-				peen_vis_override = "None"
-			dat += "<div class='gen_setting_name'>Visibility Override:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=cock_visibility_override;
-							curr_vis=[peen_vis_override];
-							task=input'>
-								[peen_vis_override]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=cock_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"} // ^ like I said, something something devour phallus
-			dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=cock_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=cock_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=cock_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["cock_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</div>"
-			dat += "</td></tr>"
-
- 		///// BALLS /////
-			dat += "<tr class='talign'><td class='talign'>"
-			dat += "<h3>Testicles</h3><!-- br-was-here -->"
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
-			dat += "<div class='gen_container'>"
-			dat += "<div class='gen_setting_name'>Has them:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=has_balls'>
-								[features["has_balls"] == TRUE ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"}
-			if(!pref_species.use_skintones)
-				dat += "<div class='gen_setting_name'>Color:</div>"
-				dat += {"<a 
-							class='clicky'
-							style='
-								background-color:#[features["balls_color"]]' 
-							href='
-								?_src_=prefs;
-								preference=balls_color;
-								task=input'>
-									#[features["balls_color"]]
-						</a>
-						<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Shape:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=balls_shape;
-							task=input'>
-								[features["balls_shape"]]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</div>"
-			dat += "</td>"
-
-			dat += "<td class='talign'>" // second col - visibility stuff
-			dat += "<div class='gen_container'>"
-			var/balls_vis_override
-			if(CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
-				balls_vis_override = "Always Hidden"
-			else if(CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
-				balls_vis_override = "Always Visible"
-			else
-				balls_vis_override = "None"
-			dat += "<div class='gen_setting_name'>Visibility Override:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=balls_visibility_override;
-							curr_vis=[balls_vis_override];
-							task=input'>
-								[balls_vis_override]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=balls_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=balls_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=balls_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=balls_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["balls_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</td></tr>"
-
-		///// PUSSY /////
-			dat += "<tr class='talign'><td class='talign'>"
-			dat += "<h3>Vagina</h3><!-- br-was-here -->"
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
-			dat += "<div class='gen_container'>"
-			dat += "<div class='gen_setting_name'>Has one:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=has_vag'>
-								[features["has_vag"] == TRUE ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"}
-			if(!pref_species.use_skintones)
-				dat += "<div class='gen_setting_name'>Color:</div>"
-				dat += {"<a 
-							class='clicky'
-							style='
-								background-color:#[features["vag_color"]]' 
-							href='
-								?_src_=prefs;
-								preference=vag_color;
-								task=input'>
-									#[features["vag_color"]]
-						</a>
-						<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Shape:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=vag_shape;
-							task=input'>
-								[features["vag_shape"]]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</div>"
-			dat += "</td>"
-
-			dat += "<td class='talign'>" // second col - visibility stuff
-			dat += "<div class='gen_container'>"
-			var/snizz_vis_override
-			if(CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
-				snizz_vis_override = "Always Hidden"
-			else if(CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
-				snizz_vis_override = "Always Visible"
-			else
-				snizz_vis_override = "None"
-			dat += "<div class='gen_setting_name'>Visibility Override:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=vag_visibility_override;
-							curr_vis=[snizz_vis_override];
-							task=input'>
-								[snizz_vis_override]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=vag_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=vag_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=vag_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=vag_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["vag_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"
-		///// w00m /////
-			dat += "<h3>Womb</h3><!-- br-was-here -->"
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
-			dat += "<div class='gen_container'>"
-			dat += "<div class='gen_setting_name'>Has one:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=has_womb'>
-								[features["has_womb"] == TRUE ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"} // ezpz
-			dat += "</td></tr>"
-
-		///// BOOBS /////
-			dat += "<tr class='talign'><td class='talign'>"
-			dat += "<h3>Breasts</h3><!-- br-was-here -->"
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
-			dat += "<div class='gen_container'>"
-			dat += "<div class='gen_setting_name'>Has some:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=has_breasts'>
-								[features["has_breasts"] == TRUE ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"}
-			if(!pref_species.use_skintones)
-				dat += "<div class='gen_setting_name'>Color:</div>"
-				dat += {"<a 
-							class='clicky'
-							style='
-								background-color:#[features["breasts_color"]]' 
-							href='
-								?_src_=prefs;
-								preference=breasts_color;
-								task=input'>
-									#[features["breasts_color"]]
-						</a>
-						<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Number:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_shape;
-							task=input'>
-								[features["breasts_shape"]]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Cup Size:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_size;
-							task=input'>
-								[uppertext(features["breasts_size"])]-cup
-					</a>
-					<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Lactates:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_producing;
-							task=input'>
-								[features["breasts_producing"] ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</div>"
-			dat += "</td>"
-
-			dat += "<td class='talign'>" // second col - visibility stuff
-			dat += "<div class='gen_container'>"
-			var/tid_vis_override
-			if(CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
-				tid_vis_override = "Always Hidden"
-			else if(CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
-				tid_vis_override = "Always Visible"
-			else
-				tid_vis_override = "None"
-			dat += "<div class='gen_setting_name'>Visibility Override:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_visibility_override;
-							curr_vis=[tid_vis_override];
-							task=input'>
-								[tid_vis_override]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=breasts_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["breasts_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</td></tr>"
-
-		///// BELLY /////
-			dat += "<tr class='talign'><td class='talign'>"
-			dat += "<h3>Belly</h3><!-- br-was-here -->"
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
-			dat += "<div class='gen_container'>"
-			dat += "<div class='gen_setting_name'>Has one:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=has_belly'>
-								[features["has_belly"] == TRUE ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"} // ezpz
-			if(!pref_species.use_skintones)
-				dat += "<div class='gen_setting_name'>Color:</div>"
-				dat += {"<a 
-							class='clicky'
-							style='
-								background-color:#[features["belly_color"]]' 
-							href='
-								?_src_=prefs;
-								preference=belly_color;
-								task=input'>
-									#[features["belly_color"]]
-						</a>
-						<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Shape:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=belly_shape;
-							task=input'>
-								[features["belly_shape"]]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Size:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=belly_size;
-							task=input'>
-								[features["belly_size"]]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</div>"
-			dat += "</td>"
-
-			dat += "<td class='talign'>" // second col - visibility stuff
-			dat += "<div class='gen_container'>"
-			var/gut_vis_override
-			if(CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
-				gut_vis_override = "Always Hidden"
-			else if(CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
-				gut_vis_override = "Always Visible"
-			else
-				gut_vis_override = "None"
-			dat += "<div class='gen_setting_name'>Visibility Override:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=belly_visibility_override;
-							curr_vis=[gut_vis_override];
-							task=input'>
-								[gut_vis_override]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=belly_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=belly_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=belly_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=belly_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["belly_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</td></tr>"
-
-		///// BUTT /////
-			dat += "<tr class='talign'><td class='talign'>"
-			dat += "<h3>Butt</h3><!-- br-was-here -->"
-			dat += "</td></tr>"
-
-			dat += "<tr class='talign'><td class='talign'>"// first col - appearance stuff
-			dat += "<div class='gen_container'>"
-			dat += "<div class='gen_setting_name'>Has one:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=has_butt'>
-								[features["has_butt"] == TRUE ? "Yes" : "No"]
-					</a>
-					<!-- br-was-here -->"}
-			if(!pref_species.use_skintones)
-				dat += "<div class='gen_setting_name'>Color:</div>"
-				dat += {"<a 
-							class='clicky'
-							style='
-								background-color:#[features["butt_color"]]' 
-							href='
-								?_src_=prefs;
-								preference=belly_color;
-								task=input'>
-									#[features["butt_color"]]
-						</a>
-						<!-- br-was-here -->"}
-			dat += "<div class='gen_setting_name'>Size:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=butt_size;
-							task=input'>
-								[features["butt_size"]]
-					</a>
-					<!-- br-was-here -->"}
-			dat += "</div>"
-			dat += "</td>"
-
-			dat += "<td class='talign'>" // second col - visibility stuff
-			dat += "<div class='gen_container'>"
-			var/booty_vis_override
-			if(CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ALWAYS_HIDDEN))
-				booty_vis_override = "Always Hidden"
-			else if(CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ALWAYS_VISIBLE))
-				booty_vis_override = "Always Visible"
-			else
-				booty_vis_override = "None"
-			dat += "<div class='gen_setting_name'>Visibility Override:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=butt_visibility_override;
-							curr_vis=[booty_vis_override];
-							task=input'>
-								[booty_vis_override]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=butt_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ABOVE_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=butt_visibility_flags;
-							genital_flag=[GENITAL_ABOVE_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_ABOVE_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=butt_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_UNDERWEAR];
-							task=input'>
-								[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_RESPECT_UNDERWEAR) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					<!-- br-was-here -->"}
-
-			dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
-			dat += {"<a 
-						class='clicky' 
-						href='
-							?_src_=prefs;
-							preference=butt_visibility_flags;
-							genital_flag=[GENITAL_RESPECT_CLOTHING];
-							task=input'>
-								[CHECK_BITFIELD(features["butt_visibility_flags"], GENITAL_RESPECT_CLOTHING) ? \
-									"YES" :\
-									"NO"\
-								]
-					</a>
-					</div>
-				<!-- br-was-here -->"}
-			dat += "</td></tr></table>"
+					dat += "</td></tr></table>"
 
 
 
@@ -1990,7 +2034,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			/*dat += "<h2>Special Role Settings</h2>"
 
-		if(jobban_isbanned(user, ROLE_SYNDICATE))
+			if(jobban_isbanned(user, ROLE_SYNDICATE))
 				dat += "<font color=red><b>You are banned from antagonist roles.</b></font>"
 				src.be_special = list()
 
@@ -2222,26 +2266,83 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 #undef APPEARANCE_CATEGORY_COLUMN
 #undef MAX_MUTANT_ROWS
-/* 
-/// Lets you rearrange your guts
-/datum/preferences/proc/ShowGenitalOrderMenu(mob/user)
-	if(!user || !user.client)
-		return
-
-	var/list/dat = list("<center>")
-	var/list/guts = guts_to_rearrange()
-
-/// returns a list of genitals, in order of their layer priority, as well as their
-/datum/preferences/proc/guts_to_rearrange(mob/user)
-	var/list/nads_we_have = list()
 
 /// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
-/// "butt-yes:1#penis-yes:3#boobs-no:2" -> list(butt = TRUE, boobs = FALSE, penis = TRUE)
+/// reverses it cus its more intuitive that way (for everyone but me)
 /datum/preferences/proc/decode_cockstring()
-	var/list/list_of_nads[GENITAL_LAYER_INDEX_LENGTH]
-	/// list(butt-yes:1, penis-yes:3, boobs-no:2)
-	var/list/poundbreaker = splittext(features["genital_order"])
- */
+	var/list/list_out = list()
+	list_out = splittext(features["genital_order"], ":")
+	list_out = reverseList(list_out)
+	return list_out
+
+/// takes in a list of nads and outputs a cockstring, then saves it
+/// Also unreverses it, cus i crave the pain
+/datum/preferences/proc/encode_cockstring(list/cockstring)
+	var/list/default_cockstring = splittext(DEF_COCKSTRING, ":")
+	cockstring = reverseList(cockstring)
+	for(var/coc in cockstring) // just to make sure nothing wierd got in there
+		if(!(coc in default_cockstring))
+			cockstring -= coc
+			continue
+		default_cockstring -= coc
+	if(LAZYLEN(default_cockstring)) // and to make sure it has *everything* oh yeah keep DEF_COCKSTRING up to date
+		message_admins("Hey the cockstring wasn't empty, either Dan fucked up or something fucked up.")
+	. = jointext(cockstring, ":")
+	features["genital_order"] = .
+
+/// need: genital name, some kinda href shit
+/// returns a hunk of html designed to fit into a table
+/datum/preferences/proc/add_genital_layer_piece(has_name, index, max_index)
+	var/magic_word
+	switch(has_name)
+		if(CS_BUTT)
+			magic_word = "Butt"
+		if(CS_VAG)
+			magic_word = "Vagina"
+		if(CS_BALLS)
+			magic_word = "Testicles"
+		if(CS_PENIS)
+			magic_word = "Penis"
+		if(CS_BELLY)
+			magic_word = "Belly"
+		if(CS_BOOB)
+			magic_word = "Breasts"
+		if(CS_MISC) // idk some kind of broken genital
+			magic_word = "Chunk"
+	var/list/doot = list()
+	doot += "<tr class='talign'>"
+	// the nad's name and index
+	doot += "<td class='genital_name'>[magic_word] - [index]</td>"
+	if(index <= 1) // first one doesnt get an up-arrow
+		doot += "<td class='genital_arrow_off'>&darr;</td>" // im gonna do a magic trick
+	else // make an up arrow
+		doot += {"<td class='genital_arrow_on'>
+				<a 
+					class='clicky_no_border'
+					href='
+						?_src_=prefs;
+						preference=change_genital_order;
+						direction=up;
+						which=[lowertext(magic_word)]'>
+							&uarr;
+				</a>
+				</td>"}
+	if(index >= max_index) // last one doesnt get a down-arrow
+		doot += "<td class='genital_arrow_off'>&darr;</td>" // imma make these disappear!
+	else // make a down arrow
+		doot += {"<td class='genital_arrow_on'>
+				<a 
+					class='clicky_no_border' 
+					href='
+						?_src_=prefs;
+						preference=change_genital_order;
+						direction=down;
+						which=[lowertext(magic_word)]'>
+							&darr;
+				</a>
+				</td>"}
+	doot += "</tr>"
+	return doot.Join()
 
 
 /datum/preferences/proc/CaptureKeybinding(mob/user, datum/keybinding/kb, old_key, independent = FALSE, special = FALSE)
@@ -4104,6 +4205,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("tab")
 					if(href_list["tab"])
 						current_tab = text2num(href_list["tab"])
+				if("erp_tab")
+					if(href_list["newtab"])
+						erp_tab_page = text2num(href_list["newtab"])
+
 	chat_toggles |= CHAT_LOOC // the LOOC stays on during sex
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])

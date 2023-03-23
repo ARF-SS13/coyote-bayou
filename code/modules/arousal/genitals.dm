@@ -112,6 +112,10 @@
 			ENABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE)
 			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN)
 			owner?.exposed_genitals |= src
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_NO_OVERRIDE)) // i LOVE the hit new anime Genital No Override!
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN)
+			owner?.exposed_genitals -= src
 		// here be toggles
 		if(CHECK_BITFIELD(gunt_flags, GENITAL_ABOVE_UNDERWEAR))
 			TOGGLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
@@ -149,7 +153,7 @@
 	var/list/dat = list("<center>")
 	/// woo lookit me im a web designer from the early 2010s!
 	dat += "<div class='gen_name'>Modify Genitals</div>"
-	dat += "<table class='gen_list'>"
+	dat += "<table class='table_genital_list'>"
 	dat += "<tr class='talign'><td class='talign'>"
 	for(var/obj/item/organ/genital/nad in genital_list)
 		dat += "<div class='gen_name'>[nad.name]</div>"
@@ -185,7 +189,7 @@
 	dat += "<center>"
 	/// woo lookit me im a web designer from the early 2010s!
 	dat += "<div class='gen_name'>[src.name]</div>"
-	dat += "<table class='gen_list'>"
+	dat += "<table class='table_genital_list'>"
 	dat += "<tr class='talign'><td class='talign'>"
 	dat += "<div class='gen_container'>"
 	if(CHECK_BITFIELD(genital_flags,GENITAL_CAN_AROUSE))
@@ -343,23 +347,29 @@
 				var/temp_hsv = RGBtoHSV(new_color)
 				if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 					color = sanitize_hexcolor(new_color, 6)
+					to_chat(usr,span_notice("New color set!"))
 				else
 					to_chat(usr,span_danger("Invalid color! Your color is not bright enough."))
+			get_genital_panel()
 		if("resize")
 			resize_genital(usr)
+			get_genital_panel()
 		if("reshape")
 			reshape_genital(usr)
+			get_genital_panel()
 		if("change_vis_override")
 			var/list/genital_overrides = GENITAL_VIS_FLAG_LIST
 			var/new_visibility = input(usr, "Set a visibility override! If set, this part will always be visible/hidden, regardless of how covered it is.", "Character Preference", href_list["genital_flag"]) as null|anything in genital_overrides
 			if(new_visibility)
 				var/new_bit = genital_overrides[new_visibility]
 				update_genital_visibility(new_bit)
+			get_genital_panel()
 		if("change_vis_flag")
 			var/new_bitt = text2num(href_list["genital_flag"])
 			update_genital_visibility(new_bitt)
+			get_genital_panel()
 	update()
-	get_genital_panel()
+	
 
 /obj/item/organ/genital/proc/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	fluid_max_volume += modifier*2.5
