@@ -409,26 +409,25 @@
 		user.visible_message("[user] walks down to [src].",span_notice("You walk down to [src]."))
 
 /obj/structure/ladder/unbreakable/transition/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
-	if(!is_ghost)
-		if(in_use)
-			return
-		in_use = TRUE
-		user.visible_message("[user] begins to walk [going_up ? "up to" : "down to"] [src].", span_notice("You begin to walk [going_up ? "up to" : "down to"] [src]."))
-		if(!do_after(user, timetouse, target = src))
-			in_use = FALSE
-			return
-		in_use = FALSE
-		show_fluff_message(going_up, user)
-		ladder.add_fingerprint(user)
+	var/obj/structure/ladder/ladder = going_up ? up : down
+	if(!ladder)
+		balloon_alert(user, "there's nothing that way!")
+		return
+	var/response = SEND_SIGNAL(user, COMSIG_LADDER_TRAVEL, src, ladder, going_up)
+	if(response & LADDER_TRAVEL_BLOCK)
+		return
 
-	var/turf/T = get_turf(ladder)
-	var/atom/movable/AM
-	if(user.pulling)
-		AM = user.pulling
-		AM.forceMove(T)
-	user.forceMove(T)
-	if(AM)
-		user.start_pulling(AM)
+	var/turf/target = get_turf(ladder)
+	user.zMove(target = target, z_move_flags = ZMOVE_CHECK_PULLEDBY|ZMOVE_ALLOW_BUCKLED|ZMOVE_INCLUDE_PULLED)
+
+	if(!is_ghost)
+		show_final_fluff_message(user, ladder, going_up)
+
+	// to avoid having players hunt for the pixels of a ladder that goes through several stories and is
+	// partially covered by the sprites of their mobs, a radial menu will be displayed over them.
+	// this way players can keep climbing up or down with ease until they reach an end.
+	if(ladder.up && ladder.down)
+		ladder.show_options(user, is_ghost)
 
 /obj/structure/ladder/unbreakable/transition/Cross(atom/movable/AM)
 	use(AM)
