@@ -187,7 +187,7 @@
 	for(var/turf/T in turflist)
 		if(T == previousturf)
 			continue	//so we don't burn the tile we be standin on
-		var/list/turfs_sharing_with_prev = previousturf.GetAtmosAdjacentTurfs(alldir=1)
+		var/list/turfs_sharing_with_prev = previousturf.reachableAdjacentTurfs()
 		if(!(T in turfs_sharing_with_prev))
 			break
 		if(igniter)

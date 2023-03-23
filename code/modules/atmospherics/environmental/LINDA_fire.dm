@@ -9,6 +9,7 @@
 	return
 
 
+/*
 /turf/open/hotspot_expose(exposed_temperature, exposed_volume, soh)
 	if(!air)
 		return
@@ -28,6 +29,7 @@
 
 	if((exposed_temperature > PLASMA_MINIMUM_BURN_TEMPERATURE) && has_fuel)
 		active_hotspot = new /obj/effect/hotspot(src, exposed_volume*25, exposed_temperature)
+ */
 
 //This is the icon for fire on turfs, also helps for nurturing small fires until they are full tile
 /obj/effect/hotspot
@@ -47,19 +49,15 @@
 
 /obj/effect/hotspot/Initialize(mapload, starting_volume, starting_temperature)
 	. = ..()
-	SSair.hotspots += src
+	// SSair.hotspots += src
 	if(!isnull(starting_volume))
 		volume = starting_volume
 	if(!isnull(starting_temperature))
 		temperature = starting_temperature
 	perform_exposure()
 	setDir(pick(GLOB.cardinals))
-	air_update_turf()
-
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
+	// air_update_turf()
+	QDEL_IN(src, 10)
 
 
 /obj/effect/hotspot/proc/perform_exposure()
@@ -71,6 +69,7 @@
 
 	bypassing = volume > CELL_VOLUME*0.95
 
+	/*
 	if(bypassing)
 		volume = location.air.reaction_results["fire"]*FIRE_GROWTH_RATE
 		temperature = location.air.return_temperature()
@@ -82,6 +81,7 @@
 			temperature = affected.return_temperature()
 			volume = affected.reaction_results["fire"]*FIRE_GROWTH_RATE
 			location.assume_air(affected)
+	*/
 
 	for(var/A in location)
 		var/atom/AT = A
@@ -148,6 +148,7 @@
 	alpha = heat_a
 
 #define INSUFFICIENT(path) (location.air.get_moles(path) < 0.5)
+
 /obj/effect/hotspot/process()
 	var/turf/open/location = loc
 	if(!istype(location))
@@ -195,7 +196,7 @@
 
 /obj/effect/hotspot/Destroy()
 	set_light(0)
-	SSair.hotspots -= src
+	// SSair.hotspots -= src
 	var/turf/open/T = loc
 	if(istype(T) && T.active_hotspot == src)
 		T.active_hotspot = null
