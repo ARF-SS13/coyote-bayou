@@ -71,7 +71,7 @@
 	else
 		color = "[D.features["vag_color"]]"
 	shape = "[D.features["vag_shape"]]"
-	update_genital_visibility(D.features["vag_visibility"], FALSE)
+	update_genital_visibility(D.features["vag_visibility_flags"], FALSE, TRUE)
 
 /obj/item/organ/genital/vagina/reshape_genital(mob/user)
 	var/new_shape

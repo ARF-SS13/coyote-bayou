@@ -169,7 +169,7 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 		cached_size = size
 		size = GLOB.breast_values[size]
 	prev_size = cached_size
-	update_genital_visibility(D.features["breasts_visibility"], FALSE)
+	update_genital_visibility(D.features["breasts_visibility_flags"], FALSE, TRUE)
 
 /obj/item/organ/genital/breasts/size_kind()
 	return "[uppertext(size)]-cup"

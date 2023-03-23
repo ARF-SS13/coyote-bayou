@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 		size = BUTT_SIZE_DEF
 	prev_size = size
 	cached_size = size
-	update_genital_visibility(D.features["butt_visibility"], FALSE)
+	update_genital_visibility(D.features["butt_visibility_flags"], FALSE, TRUE)
 
 /obj/item/organ/genital/butt/resize_genital(mob/user)
 	var/min_size = CONFIG_GET(number/butt_min_size_prefs)

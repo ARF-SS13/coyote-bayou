@@ -292,7 +292,7 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 		size = BELLY_SIZE_DEF
 	prev_size = size
 	cached_size = size
-	update_genital_visibility(D.features["belly_visibility"], FALSE)
+	update_genital_visibility(D.features["belly_visibility_flags"], FALSE, TRUE)
 
 /obj/item/organ/genital/belly/get_icon_state(mob/living/carbon/human/H)
 	return "belly_[size]_[lowertext(shape)]" // belly_11_obese

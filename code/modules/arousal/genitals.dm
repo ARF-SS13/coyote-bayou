@@ -185,7 +185,7 @@
 	dat += "<center>"
 	/// woo lookit me im a web designer from the early 2010s!
 	dat += "<div class='gen_name'>[src.name]</div>"
-	dat += "<table>"
+	dat += "<table class='gen_list'>"
 	dat += "<tr class='talign'><td class='talign'>"
 	dat += "<div class='gen_container'>"
 	if(CHECK_BITFIELD(genital_flags,GENITAL_CAN_AROUSE))
@@ -343,7 +343,8 @@
 				var/temp_hsv = RGBtoHSV(new_color)
 				if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 					color = sanitize_hexcolor(new_color, 6)
-			to_chat(usr,span_danger("Invalid color! Your color is not bright enough."))
+				else
+					to_chat(usr,span_danger("Invalid color! Your color is not bright enough."))
 		if("resize")
 			resize_genital(usr)
 		if("reshape")
@@ -357,6 +358,8 @@
 		if("change_vis_flag")
 			var/new_bitt = text2num(href_list["genital_flag"])
 			update_genital_visibility(new_bitt)
+	update()
+	get_genital_panel()
 
 /obj/item/organ/genital/proc/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	fluid_max_volume += modifier*2.5

@@ -2222,6 +2222,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 #undef APPEARANCE_CATEGORY_COLUMN
 #undef MAX_MUTANT_ROWS
+/* 
+/// Lets you rearrange your guts
+/datum/preferences/proc/ShowGenitalOrderMenu(mob/user)
+	if(!user || !user.client)
+		return
+
+	var/list/dat = list("<center>")
+	var/list/guts = guts_to_rearrange()
+
+/// returns a list of genitals, in order of their layer priority, as well as their
+/datum/preferences/proc/guts_to_rearrange(mob/user)
+	var/list/nads_we_have = list()
+
+/// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
+/// "butt-yes:1#penis-yes:3#boobs-no:2" -> list(butt = TRUE, boobs = FALSE, penis = TRUE)
+/datum/preferences/proc/decode_cockstring()
+	var/list/list_of_nads[GENITAL_LAYER_INDEX_LENGTH]
+	/// list(butt-yes:1, penis-yes:3, boobs-no:2)
+	var/list/poundbreaker = splittext(features["genital_order"])
+ */
+
 
 /datum/preferences/proc/CaptureKeybinding(mob/user, datum/keybinding/kb, old_key, independent = FALSE, special = FALSE)
 	var/HTML = {"

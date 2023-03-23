@@ -106,7 +106,7 @@
 	diameter_ratio = D.features["cock_diameter_ratio"]
 	shape = D.features["cock_shape"]
 	prev_length = length
-	update_genital_visibility(D.features["cock_visibility_flags"], FALSE)
+	update_genital_visibility(D.features["cock_visibility_flags"], FALSE, TRUE)
 
 /obj/item/organ/genital/penis/size_kind()
 	return "[size] inch[size!=1?"es":""]"

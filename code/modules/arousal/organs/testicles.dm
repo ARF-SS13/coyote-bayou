@@ -65,7 +65,7 @@
 	fluid_rate = D.features["balls_cum_rate"]
 	fluid_mult = D.features["balls_cum_mult"]
 	fluid_efficiency = D.features["balls_efficiency"]
-	update_genital_visibility(D.features["balls_visibility"], FALSE)
+	update_genital_visibility(D.features["balls_visibility_flags"], FALSE, TRUE)
 
 /obj/item/organ/genital/testicles/arousal_term()
 	if(aroused_state)
