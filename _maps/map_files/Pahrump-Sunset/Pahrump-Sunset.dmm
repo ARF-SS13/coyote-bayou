@@ -59027,9 +59027,6 @@
 /obj/item/trash/f13/electronic/toaster/oven{
 	pixel_y = 9
 	},
-/obj/structure/closet{
-	anchored = 1
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -76901,6 +76898,16 @@
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
+	},
+/area/f13/building/abandoned)
+"qVe" = (
+/obj/vehicle/ridden/wheelchair{
+	desc = "A wheelchair, that seems to be wheels, it seems to be moveable by person on the wheelchair and it picks up bitches.";
+	name = "hawtrod bitch magnet";
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
 "qVf" = (
@@ -112749,7 +112756,7 @@ bAB
 sKa
 bRs
 sPq
-apO
+qVe
 apO
 mpR
 okv
