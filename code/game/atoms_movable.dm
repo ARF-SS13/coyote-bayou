@@ -65,7 +65,7 @@
 	/// Whether this atom should have its dir automatically changed when it moves. Setting this to FALSE allows for things such as directional windows to retain dir on moving without snowflake code all of the place.
 	var/set_dir_on_move = TRUE
 	///how many times a this movable had movement procs called on it since Moved() was last called
-	//var/move_stacks = 0
+	var/move_stacks = 0
 	///is the mob currently ascending or descending through z levels?
 	var/currently_z_moving
 
@@ -121,7 +121,6 @@
 	return !(movement_type & FLYING) && has_gravity(source) && !throwing
 
 /atom/movable/proc/onZImpact(turf/impacted_turf, levels, message = TRUE)
-	SHOULD_CALL_PARENT(TRUE)
 	if(message)
 		visible_message(span_danger("[src] crashes into [impacted_turf]!"))
 	var/atom/highest = impacted_turf
@@ -857,9 +856,9 @@
  */
 /atom/movable/proc/abstract_move(atom/new_loc)
 	var/atom/old_loc = loc
-	var/direction = get_dir(old_loc, new_loc)
+	move_stacks++
 	loc = new_loc
-	Moved(old_loc, direction, TRUE)
+	Moved(old_loc)
 
 /// Returns true or false to allow src to move through the blocker, mover has final say
 /atom/movable/proc/CanPassThrough(atom/blocker, movement_dir, blocker_opinion)
