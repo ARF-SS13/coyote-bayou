@@ -690,6 +690,7 @@
 	update_light()
 
 /obj/machinery/airalarm/process()
+	/*
 	if((stat & (NOPOWER|BROKEN)) || shorted)
 		return
 
@@ -724,7 +725,7 @@
 	if(mode == AALARM_MODE_REPLACEMENT && environment_pressure < ONE_ATMOSPHERE * 0.05)
 		mode = AALARM_MODE_SCRUBBING
 		apply_mode()
-
+	*/
 	return
 
 /obj/machinery/airalarm/proc/post_alert(alert_level)

@@ -75,6 +75,7 @@
 			S.volume -= (max(distance - falloff_distance, 0) ** (1 / falloff_exponent)) / ((max(max_distance, distance) - falloff_distance) ** (1 / falloff_exponent)) * S.volume
 			//https://www.desmos.com/calculator/sqdfl8ipgf
 
+		/*
 		if(pressure_affected)
 			//Atmosphere affects sound
 			var/pressure_factor = 1
@@ -93,6 +94,7 @@
 
 			S.volume *= pressure_factor
 			//End Atmosphere affecting sound
+			*/
 
 		if(S.volume <= 0)
 			return //No sound
