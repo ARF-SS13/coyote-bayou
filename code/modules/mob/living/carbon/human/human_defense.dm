@@ -572,6 +572,10 @@
 
 	if(health >= 0)
 		if(src == M)
+			var/traumas = get_traumas()
+			if(traumas)
+				for(var/datum/brain_trauma/mild/phobia/fear in traumas)
+					fear.RealityCheck()
 			if(has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
 				to_chat(src, span_notice("You attempt to remove the durathread strand from around your neck."))
 				if(do_after(src, 35, null, src))
