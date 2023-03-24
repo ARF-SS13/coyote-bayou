@@ -45,11 +45,11 @@
 				),
 				CAT_CLOTHING = list(
 					CAT_GENCLOTHES,
-					CAT_SHOES,
-					CAT_MISCCLOTHING,
+					//CAT_SHOES,
+					//CAT_MISCCLOTHING,
 					CAT_ARMOR,
-					CAT_WASTELAND,
-					CAT_BELTS
+					//CAT_WASTELAND,
+					//CAT_BELTS
 				),
 				CAT_MEDICAL = CAT_NONE,
 				CAT_DRINK = CAT_NONE,
