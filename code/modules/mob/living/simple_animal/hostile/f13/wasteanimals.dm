@@ -426,7 +426,6 @@
 	aggro_vision_range = 7
 	vision_range = 9
 	
-	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
