@@ -26,6 +26,7 @@ SUBSYSTEM_DEF(traumas)
 						"aliens",
 						"strangers",
 						"birds",
+						"dogs",
 						"falling",
 						"anime",
 						"cats",
@@ -114,9 +115,14 @@ SUBSYSTEM_DEF(traumas)
 			/mob/living/simple_animal/parrot,
 			/mob/living/simple_animal/chick,
 			/mob/living/simple_animal/chicken,
-			/mob/living/simple_animal/pet/penguin,
-			)
+			/mob/living/simple_animal/pet/penguin,)
 			),
+		"dogs" = typecacheof(list(
+			/mob/living/simple_animal/pet/dog,
+			/mob/living/simple_animal/hostile/stickman/dog,
+			/mob/living/simple_animal/pet/wolf,
+			/mob/living/simple_animal/hostile/wolf)
+			)
 
 		"anime" = typecacheof(list(
 			/mob/living/simple_animal/hostile/guardian)

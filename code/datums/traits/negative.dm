@@ -511,6 +511,25 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/birds, TRAUMA_RESILIENCE_ABSOLUTE)
+/datum/quirk/dogphobia
+	name = "Phobia - Dogs"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with dogs."
+	value = -1
+	mob_trait = TRAIT_DOGPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of loud bork borks, which grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Bork bork!")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/dogphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/dogs, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/dogphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/dogs, TRAUMA_RESILIENCE_ABSOLUTE)
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."

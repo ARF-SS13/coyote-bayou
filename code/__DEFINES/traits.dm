@@ -157,6 +157,7 @@
 #define TRAIT_LIZARDPHOBIA		"lizardphobia"
 #define TRAIT_ROBOTPHOBIA		"robotphobia"
 #define TRAIT_BIRDPHOBIA		"birdphobia"
+#define TRAIT_DOGPHOBIA			"dogphobia"
 #define TRAIT_BONERPHOBIA		"skelephobia"
 #define TRAIT_MASKPHOBIA		"maskphobia"
 #define TRAIT_DOCTORPHOBIA		"doctorphobia"
@@ -167,6 +168,7 @@
 #define TRAIT_LIZARD			"lizards"
 #define TRAIT_ROBOT				"robots"
 #define TRAIT_BIRD				"birds"
+#define TRAIT_DOG				"dogs"
 #define TRAIT_UNSTABLE			"unstable"
 #define TRAIT_PARALYSIS_L_ARM	"para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM	"para-r-arm"
