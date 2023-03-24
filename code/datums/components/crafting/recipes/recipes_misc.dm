@@ -208,8 +208,8 @@
 	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
 	tools = list(/obj/item/multitool)
 	result = /obj/item/circuitboard/machine/vr_sleeper
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/set_vrboard
 	category = CAT_CRAFTING
