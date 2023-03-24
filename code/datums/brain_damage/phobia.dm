@@ -54,9 +54,8 @@
 					freak_out(O)
 					return
 				if(istype(O, /obj/structure/mirror) || istype(O, /obj/effect/overlay/junk/mirror))
-					if(get_dist(owner, O) <= 2)
+					if(get_dist(owner, O) <= 1)
 						mirror_seen = 1
-						return
 			for(var/mob/living/carbon/human/HU in seen_atoms) //check equipment for trigger items
 				if(HU != owner)
 					if(HAS_TRAIT(HU, phobia_type))
@@ -212,6 +211,10 @@
 
 /datum/brain_trauma/mild/phobia/birds
 	phobia_type = "birds"
+	random_gain = FALSE
+
+/datum/brain_trauma/mild/phobia/dogs
+	phobia_type = "dogs"
 	random_gain = FALSE
 
 /datum/brain_trauma/mild/phobia/falling
