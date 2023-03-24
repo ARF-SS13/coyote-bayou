@@ -1,4 +1,4 @@
-/datum/crafting_recipe/tribal_torch
+/datum/crafting_recipe/tribal_torchbonfire
 	name = "Tribal Torch"
 	result = /obj/item/candle/tribal_torch
 	time = 30
@@ -32,7 +32,7 @@
 	time = 75
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20)
 	result = /obj/structure/campfire
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = TRUE
 
 /datum/crafting_recipe/spearfisher
@@ -67,7 +67,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/pinyon = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/pemmican
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 
 /datum/crafting_recipe/duct_tape
 	name = "Bonfire"
@@ -172,7 +172,7 @@
 			/obj/item/stack/sheet/bone = 4
 			)
 	result = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribal_pa_helmet
@@ -184,7 +184,7 @@
 			/obj/item/stack/sheet/bone = 2
 			)
 	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribal_combat_armor
@@ -196,7 +196,7 @@
 			/obj/item/stack/sheet/bone = 2
 			)
 	result = /obj/item/clothing/suit/armor/medium/combat/tribal
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribal_r_combat_armor
@@ -208,7 +208,7 @@
 			/obj/item/stack/sheet/bone = 2
 			)
 	result = /obj/item/clothing/suit/armor/medium/combat/mk2/tribal
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribal_combat_armor_helmet
@@ -219,7 +219,7 @@
 			/obj/item/stack/sheet/bone = 1
 			)
 	result = /obj/item/clothing/head/helmet/f13/combat/tribal
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribal_r_combat_armor_helmet
@@ -230,7 +230,7 @@
 			/obj/item/stack/sheet/bone = 1
 			)
 	result = /obj/item/clothing/head/helmet/f13/combat/mk2/tribal
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /*
@@ -241,7 +241,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 5)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -252,7 +252,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/gold = 10,
 				/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/crafting/metalparts = 5)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -263,7 +263,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/silver = 10,
 				/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/crafting/metalparts = 5)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
@@ -274,7 +274,7 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/deathclaw = 6,
 				/obj/item/stack/sheet/bone = 10,
 				/obj/item/stack/sheet/sinew = 5)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -284,7 +284,7 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/sinew = 3)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/crossbow
@@ -296,7 +296,7 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/stack/sheet/glass = 4)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 */
 
 /datum/crafting_recipe/tribalwar/sling
@@ -324,7 +324,7 @@
 	time = 30
 	reqs = list(/obj/item/ammo_casing/caseless/arrow = 1,
 				/datum/reagent/fuel = 10)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowap
@@ -335,7 +335,7 @@
 		/obj/item/stack/rods = 2,
 		/obj/item/stack/crafting/metalparts = 2,
 		)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowbronze
@@ -344,7 +344,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bronze = 1,
 				/obj/item/stack/sheet/mineral/wood = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowgold
@@ -353,7 +353,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/gold = 1,
 				/obj/item/stack/sheet/mineral/wood = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowpoison
@@ -364,7 +364,7 @@
 		/obj/item/ammo_casing/caseless/arrow = 1,
 		/obj/item/reagent_containers/food/snacks/grown/feracactus = 1,
 		)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowbone
@@ -373,7 +373,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 1,
 				/obj/item/stack/sheet/mineral/wood = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -383,7 +383,7 @@
 	time = 15
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/sheet/mineral/sandstone = 2)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 
@@ -395,7 +395,7 @@
 		/obj/item/stack/rods = 1,
 		/obj/item/stack/crafting/goodparts = 1
 		)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowembed
@@ -406,7 +406,7 @@
 		/obj/item/stack/rods = 1,
 		/obj/item/stack/crafting/goodparts = 1
 		)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowemp
@@ -415,7 +415,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/crafting/electronicparts = 3,
 				/obj/item/stack/rods = 2)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/arrowblunt
@@ -426,7 +426,7 @@
 		/obj/item/stack/sheet/mineral/wood = 1,
 		/obj/item/stack/sheet/cloth = 1
 		)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
  */
@@ -438,7 +438,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/boneaxe
@@ -447,7 +447,7 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				/obj/item/stack/sheet/sinew = 3)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/warclub
@@ -456,7 +456,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/cloth = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -467,7 +467,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2,
 				/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/cloth = 6)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -478,7 +478,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 4,
 				/obj/item/stack/sheet/metal = 4,
 				/obj/item/stack/sheet/leather = 6)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -489,7 +489,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 4,
 				/obj/item/stack/sheet/metal = 6,
 				/obj/item/stack/sheet/animalhide/deathclaw = 4) //two deathclaw kills. a decent bit of hunting work
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
@@ -499,7 +499,7 @@
 	time = 60
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/metal = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/lighttribe
@@ -508,7 +508,7 @@
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 5)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_FORGE)
 	always_available = FALSE
 
@@ -518,7 +518,7 @@
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 20,
 				/obj/item/stack/sheet/cloth = 5)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_FORGE)
 	always_available = FALSE
 
@@ -529,7 +529,7 @@
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/deathclaw = 4)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
@@ -540,7 +540,7 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/chitin = 12,
 				/obj/item/stack/sheet/sinew = 4,
 				/obj/item/stack/sheet/cloth = 4)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
@@ -552,7 +552,7 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/bone = 8,
 				/obj/item/stack/sheet/mineral/wood = 10)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
@@ -564,7 +564,7 @@
 				/obj/item/stack/sheet/leather = 6,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/cloth = 5)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
@@ -585,7 +585,7 @@
 	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
 				/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/cable_coil = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 
 /* tdo
@@ -595,6 +595,6 @@
 	time = 25
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/metal = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 */

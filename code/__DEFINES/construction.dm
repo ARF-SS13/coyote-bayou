@@ -87,7 +87,7 @@
 //#define CAT_FURNITURE	"Burial & Execution"
 //#define CAT_FARMING	"Farming"
 #define CAT_PRIMAL	"Primal"
-#define CAT_TRIBAL "Tribal"
+//#define CAT_TRIBAL "Tribal"
 #define CAT_CLOTHING	"Clothing"
 #define CAT_FOOD	"Foods"
 #define CAT_WASTEFOOD	"Food Wasteland"
