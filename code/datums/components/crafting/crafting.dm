@@ -24,7 +24,7 @@
 					CAT_SCAVENGING,
 					CAT_FORGING,
 					CAT_TOOL,
-					CAT_ROBOT,
+					//CAT_ROBOT,
 				),
 				CAT_MISC = list(
 					//CAT_FARMING,

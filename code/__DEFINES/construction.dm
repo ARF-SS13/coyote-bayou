@@ -78,7 +78,7 @@
 #define CAT_MISCWEP	"Weapons Misc"
 #define CAT_PARTS	"Weapon Parts"
 #define CAT_CRAFTING	"Crafting"
-#define CAT_ROBOT	"Electronics & Robots"
+//#define CAT_ROBOT	"Electronics & Robots"
 #define CAT_FORGING	"Forging & Smithing"
 #define CAT_MISC	"Misc"
 #define CAT_SCAVENGING	"Scavenging & Tinkering"

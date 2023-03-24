@@ -558,7 +558,8 @@
 			/obj/item/gun/ballistic/automatic/sportcarbine = 1
 	)
 	time = 5 SECONDS
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /* /datum/crafting_recipe/portaturret_nogun // todo: make a var on the box whether or not it was made with a gun
 	name = "portable sentry turret (from scrap)"
@@ -572,7 +573,9 @@
 	)
 	tools = list(TOOL_WORKBENCH)
 	time = 5 SECONDS
-	category = CAT_ROBOT */
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+	 */
 
 //Nests
 /datum/crafting_recipe/small_nest
