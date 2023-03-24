@@ -482,7 +482,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"has_cock" = FALSE,
 		"cock_shape" = DEF_COCK_SHAPE,
 
-		"cock_length" = COCK_SIZE_DEF,
+		"cock_size" = COCK_SIZE_DEF,
 		"cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF,
 		"cock_color" = "ffffff",
 
@@ -530,6 +530,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
+		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
 
 
@@ -679,7 +680,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_has_cock"]				>> features["has_cock"]
 	S["feature_cock_shape"]				>> features["cock_shape"]
 	S["feature_cock_color"]				>> features["cock_color"]
-	S["feature_cock_length"]			>> features["cock_length"]
+	S["feature_cock_length"]			>> features["cock_size"] // blame citacode
 	S["feature_cock_diameter"]			>> features["cock_diameter"]
 	S["feature_cock_taur"]				>> features["cock_taur"]
 	S["feature_cock_visibility"]		>> features["cock_visibility"]
@@ -722,6 +723,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_has_womb"]				>> features["has_womb"]
 	//cockstring
 	S["feature_genital_order"]			>> features["genital_order"]
+	S["feature_genital_visibility_flags"] >> features["genital_visibility_flags"]
 	//taste
 	S["feature_taste"]					>> features["taste"]
 
@@ -874,7 +876,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		safe_visibilities = L.Copy()
 
 	features["breasts_size"]		= sanitize_inlist(features["breasts_size"], B_sizes, BREASTS_SIZE_DEF)
-	features["cock_length"]			= sanitize_integer(features["cock_length"], min_D, max_D, COCK_SIZE_DEF)
+	features["cock_size"]			= sanitize_integer(features["cock_size"], min_D, max_D, COCK_SIZE_DEF)
 	features["butt_size"] 			= sanitize_integer(features["butt_size"], min_B, max_B, BUTT_SIZE_DEF)
 	features["belly_size"] 			= sanitize_integer(features["belly_size"], min_O, max_O, BELLY_SIZE_DEF)
 	features["breasts_shape"]		= sanitize_inlist(features["breasts_shape"], GLOB.breasts_shapes_list, DEF_BREASTS_SHAPE)
@@ -900,6 +902,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["cock_visibility_flags"]		= sanitize_integer(features["cock_visibility_flags"], GENITAL_FLAGS_MIN, GENITAL_FLAGS_MAX, GEN_VIS_FLAG_DEFAULT)
 	features["balls_visibility_flags"]		= sanitize_integer(features["balls_visibility_flags"], GENITAL_FLAGS_MIN, GENITAL_FLAGS_MAX, GEN_VIS_FLAG_DEFAULT)
 	features["vag_visibility_flags"]		= sanitize_integer(features["vag_visibility_flags"], GENITAL_FLAGS_MIN, GENITAL_FLAGS_MAX, GEN_VIS_FLAG_DEFAULT)
+	features["genital_visibility_flags"]	= sanitize_integer(features["genital_visibility_flags"], GENITAL_FLAGS_MIN, GENITAL_FLAGS_MAX, GEN_VIS_OVERALL_FLAG_DEFAULT)
 
 	custom_speech_verb				= sanitize_inlist(custom_speech_verb, GLOB.speech_verbs, "default")
 	custom_tongue					= sanitize_inlist(custom_tongue, GLOB.roundstart_tongues, "default")
@@ -1047,7 +1050,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_has_cock"], features["has_cock"])
 	WRITE_FILE(S["feature_cock_shape"], features["cock_shape"])
 	WRITE_FILE(S["feature_cock_color"], features["cock_color"])
-	WRITE_FILE(S["feature_cock_length"], features["cock_length"])
+	WRITE_FILE(S["feature_cock_length"], features["cock_size"])
 	WRITE_FILE(S["feature_cock_taur"], features["cock_taur"])
 	WRITE_FILE(S["feature_cock_visibility"], features["cock_visibility"])
 	WRITE_FILE(S["feature_cock_visibility_flags"], features["cock_visibility_flags"])
@@ -1080,6 +1083,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_belly_visibility"], features["belly_visibility"])
 	WRITE_FILE(S["feature_belly_visibility_flags"], features["belly_visibility_flags"])
 	WRITE_FILE(S["feature_genital_order"], features["genital_order"])
+	WRITE_FILE(S["feature_genital_visibility_flags"], features["genital_visibility_flags"])
 
 	WRITE_FILE(S["feature_has_vag"], features["has_vag"])
 	WRITE_FILE(S["feature_vag_shape"], features["vag_shape"])

@@ -19,6 +19,7 @@
 	var/prev_length = 6 //really should be renamed to prev_length
 	var/diameter = 4.38
 	var/diameter_ratio = COCK_DIAMETER_RATIO_DEF //0.25; check citadel_defines.dm
+	associated_has = CS_PENIS // for cockstring stuff
 
 /obj/item/organ/genital/penis/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	var/new_value = clamp(length + modifier, min, max)
@@ -101,7 +102,7 @@
 		color = SKINTONE2HEX(H.skin_tone)
 	else
 		color = "#[D.features["cock_color"]]"
-	length = D.features["cock_length"]
+	length = D.features["cock_size"]
 	diameter_ratio = D.features["cock_diameter_ratio"]
 	shape = D.features["cock_shape"]
 	prev_length = length

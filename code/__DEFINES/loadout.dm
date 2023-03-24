@@ -14,9 +14,9 @@
 #define CONTENT_PREFERENCES_TAB 5
 #define KEYBINDINGS_TAB 6
 
-//the names of the erp tabs
-#define ERP_TAB_GENITALS 0
-#define ERP_TAB_GENITALS_REARRANGE 1
+//the names of the erp tabs - can be 0, 1, or "has_cock" thru "has_womb"
+#define ERP_TAB_HOME 0
+#define ERP_TAB_REARRANGE 1
 
 //backpack
 #define LOADOUT_CATEGORY_BACKPACK 				"In backpack"

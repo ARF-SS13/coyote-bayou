@@ -2,6 +2,7 @@
 	color = "#fcccb3"
 	w_class = WEIGHT_CLASS_SMALL
 	organ_flags = ORGAN_NO_DISMEMBERMENT|ORGAN_EDIBLE
+	var/associated_has = CS_MISC // for cockstring stuff
 	var/shape
 	var/sensitivity = 1 // wow if this were ever used that'd be cool but it's not but i'm keeping it for my unshit code
 	var/genital_flags //see citadel_defines.dm
@@ -574,16 +575,15 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		"FRONT"
 	)
 ))
+/// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
+/mob/living/carbon/human/proc/get_decoded_cockstring()
+	var/list/list_out = splittext(dna?.features["genital_order"], ":")
+	return list_out
 
 /// clears all genital overlays, and reapplies them
 /mob/living/carbon/human/proc/update_genitals()
 	if(QDELETED(src))
 		return
-	/* var/static/list/relevant_layers = list(
-		"[GENITALS_BEHIND_LAYER]" = "BEHIND",
-		"[GENITALS_MIDDLE_LAYER]" = "MID",
-		"[GENITALS_FRONT_LAYER]" = "FRONT"
-		) */
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)
 	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
@@ -591,13 +591,12 @@ GLOBAL_LIST_INIT(genital_layers, list(
 
 	//okay cool, compile a list of genitals that are visible
 
-	/* var/list/gen_index[GENITAL_LAYER_INDEX_LENGTH]
-	var/list/fully_exposed */
 	var/list/genitals_to_add[GENITAL_LAYER_INDEX_LENGTH]
 	var/has_nads = FALSE
+	var/list/nad_order = get_decoded_cockstring() // yeah
 	for(var/obj/item/organ/genital/geni in internal_organs)
 		if(geni.is_exposed()) //Checks appropriate clothing slot and if it's through_clothes
-			genitals_to_add[clamp(geni.layer_index, 1, GENITAL_LAYER_INDEX_LENGTH)] = geni
+			genitals_to_add[clamp(nad_order.Find(geni.associated_has), 1, GENITAL_LAYER_INDEX_LENGTH)] = geni
 			has_nads = TRUE
 	if(!has_nads)
 		return

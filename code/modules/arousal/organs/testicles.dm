@@ -15,6 +15,7 @@
 	fluid_id = /datum/reagent/consumable/semen
 	masturbation_verb = "massage"
 	layer_index = TESTICLES_LAYER_INDEX
+	associated_has = CS_BALLS // for cockstring stuff
 
 /obj/item/organ/genital/testicles/generate_fluid()
 	if(!linked_organ && !update_link())

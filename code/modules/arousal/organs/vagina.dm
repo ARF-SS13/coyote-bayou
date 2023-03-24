@@ -20,6 +20,7 @@
 	var/clit_diam = 0.25
 	var/clit_len = 0.25
 	var/list/vag_types = list("tentacle", "dentata", "hairy", "spade", "furred")
+	associated_has = CS_VAG // for cockstring stuff
 
 /obj/item/organ/genital/vagina/update_appearance()
 	. = ..()
