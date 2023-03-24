@@ -30,7 +30,7 @@
 					CAT_FARMING,
 					CAT_MISCELLANEOUS,
 					CAT_FURNITURE,
-					CAT_BOTTLE,
+					//CAT_BOTTLE,
 				),
 				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
