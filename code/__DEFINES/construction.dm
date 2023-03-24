@@ -85,7 +85,7 @@
 #define CAT_MISCELLANEOUS	"Miscellaneous"
 #define CAT_TOOL	"Tools & Workbench"
 #define CAT_FURNITURE	"Burial & Execution"
-#define CAT_FARMING	"Farming"
+//#define CAT_FARMING	"Farming"
 #define CAT_PRIMAL	"Primal"
 #define CAT_TRIBAL "Tribal"
 #define CAT_CLOTHING	"Clothing"
