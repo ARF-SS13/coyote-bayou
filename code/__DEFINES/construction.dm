@@ -74,7 +74,7 @@
 #define CAT_WEAPONRY	"Weaponry"
 #define CAT_WEAPON	"Ranged Weapons"
 #define CAT_MELEE	"Melee Weapons"
-#define CAT_AMMO	"Ammo & Cells"
+#define CAT_AMMO	"Explosives & Ammo"
 #define CAT_MISCWEP	"Weapons Misc"
 #define CAT_PARTS	"Weapon Parts"
 #define CAT_CRAFTING	"Crafting"
@@ -117,7 +117,7 @@
 //#define CAT_SHOES "Shoes"
 //#define CAT_MISCCLOTHING "Misc Clothing"
 #define CAT_DRINK "Drinks"
-#define CAT_EXPLOSIVE "Explosives"
+//#define CAT_EXPLOSIVE "Explosives"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2
