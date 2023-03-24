@@ -193,8 +193,8 @@
 	parts = list(/obj/item/gun = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	time = 50
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/pin_removal/check_requirements(mob/user, list/collected_requirements)
 	var/obj/item/gun/G = collected_requirements[/obj/item/gun][1]
