@@ -240,8 +240,8 @@
 //////////////////////
 
 /datum/crafting_recipe/rip
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
-	subcategory = CAT_FURNITURE
 
 /datum/crafting_recipe/rip/gravemarker
 	name = "Gravemarker"

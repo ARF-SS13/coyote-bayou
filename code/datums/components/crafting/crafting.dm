@@ -29,7 +29,7 @@
 				CAT_MISC = list(
 					//CAT_FARMING,
 					CAT_MISCELLANEOUS,
-					CAT_FURNITURE,
+					//CAT_FURNITURE,
 					//CAT_BOTTLE,
 				),
 				CAT_PRIMAL = CAT_NONE,
