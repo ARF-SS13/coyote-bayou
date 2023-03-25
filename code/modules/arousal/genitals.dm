@@ -143,8 +143,8 @@
 /// Allows you to rearrange your guts
 /mob/living/carbon/verb/toggle_genitals()
 	set category = "IC"
-	set name = "Genital Panel"
-	set desc = "Allows you to modify various aspects of your jiggly bits. Mostly just visibility stuff right now."
+	set name = "Private Panel"
+	set desc = "Allows you to modify various aspects of your jiggly bits and underwear."
 	show_genital_panel()
 
 /mob/living/carbon/proc/show_genital_panel()
@@ -228,7 +228,7 @@
 		dat += {"<a 
 					class='clicky'
 					style='
-						background-color:#[color]' 
+						background-color:[color]' 
 					href='
 						?src=[REF(src)];
 						action=recolor'>
