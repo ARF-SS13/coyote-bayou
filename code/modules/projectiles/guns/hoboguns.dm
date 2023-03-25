@@ -407,6 +407,10 @@
 		/datum/firemode/burst/three/slow,
 		/datum/firemode/semi_auto
 	)
+	misfire_possibilities = list(
+	EFFECT_EYE_BLUR
+	)
+
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
