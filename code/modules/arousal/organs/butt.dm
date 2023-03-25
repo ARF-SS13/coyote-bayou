@@ -143,8 +143,8 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	. = ..() // call your parents and tell them how big you got!
 
 /obj/item/organ/genital/butt/mask_part(icon_in, state_in, layer_in, position_in)
-	if(layer_in == GENITAL_OVER_CLOTHES_FRONT_LAYER && position_in == "MID")
-		return cut_up_genital(icon_in,state_in,list("arm_right","arm_left"))
+	//if(layer_in == GENITAL_OVER_CLOTHES_FRONT_LAYER && position_in == "MID")
+	return cut_up_genital(icon_in,state_in,list("arm_right_no_north","arm_left_no_north"))
 
 /// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
 /obj/item/organ/genital/butt/get_sprite_accessory()

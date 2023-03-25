@@ -481,25 +481,25 @@
 /// Returns what layer this awful thing should be on, for a given Position ("FRONT", "MID", "BEHIND")
 /obj/item/organ/genital/proc/get_layer_number(position)
 	switch(position)
-		if("FRONT")
+		if("FRONT", "MID")
 			if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_CLOTHING)) // over clothing takes priority
 				return GENITAL_OVER_CLOTHES_FRONT_LAYER
 			if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_UNDERWEAR))
 				return GENITAL_OVER_UNDERWEAR_FRONT_LAYER
 			return GENITAL_UNDER_UNDERWEAR_FRONT_LAYER // under both underwear and clothing
-		if("MID")
-			if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_CLOTHING)) // over clothing takes priority
-				return GENITAL_OVER_CLOTHES_MID_LAYER
-			if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_UNDERWEAR))
-				return GENITAL_OVER_UNDERWEAR_MID_LAYER
-			return GENITAL_UNDER_UNDERWEAR_MID_LAYER // under both underwear and clothing
+		// if("MID")
+		// 	if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_CLOTHING)) // over clothing takes priority
+		// 		return GENITAL_OVER_CLOTHES_MID_LAYER
+		// 	if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_UNDERWEAR))
+		// 		return GENITAL_OVER_UNDERWEAR_MID_LAYER
+		// 	return GENITAL_UNDER_UNDERWEAR_MID_LAYER // under both underwear and clothing
 		if("BEHIND")
 			return GENITALS_BEHIND_LAYER // behind is just always in the back
 
 /// Handle whether or not this thing should mask anything out. mostly just for butts
-/// returns a list of masks to apply
+/// returns an icon if masked, nothing otherwise (so it can be a cheaper mutable appearance thing)
 /obj/item/organ/genital/proc/mask_part(icon_in, state_in, layer, position)
-	return icon(icon_in, state_in)
+	return
 
 /// Ahah. Ahah hah. You fuckin butts thought you were sooooo clever, putting hands in front of things and making a mess of layering
 /// Lets see how clever you are with a hand-shaped hole in your ass!!!
@@ -509,7 +509,7 @@
 	var/icon/alpha
 	for(var/cookie in masks)
 		alpha = icon('icons/obj/genitals/mask.dmi', cookie)
-		I.Blend(alpha, ICON_MULTIPLY, -15, -15)
+		I.Blend(alpha, ICON_MULTIPLY)
 	return I
 
 /// Holds a list of relevant genital layers and positions
@@ -576,8 +576,8 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			if(!genital_state)
 				continue
 			/// this SHOULD(tm) make arms show up over butts from the front -- currently broken, love Lagg
-			//var/icon/grundle_out = nad.mask_part(accessory_icon, genital_state, layer_to_put_it, position)
-			var/mutable_appearance/genital_overlay = mutable_appearance(accessory_icon, genital_state, layer = -layer_to_put_it)
+			var/icon/grundle_out = nad.mask_part(accessory_icon, genital_state, layer_to_put_it, position)
+			var/mutable_appearance/genital_overlay = mutable_appearance(grundle_out ? grundle_out : accessory_icon, genital_state, layer = -layer_to_put_it)
 
 			if(do_center)
 				genital_overlay = center_image(genital_overlay, dim_x, dim_y)
