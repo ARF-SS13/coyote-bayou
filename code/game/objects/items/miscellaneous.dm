@@ -162,7 +162,7 @@
 /obj/item/choice_beacon/pet //donator beacon that summons a small friendly animal
 	name = "pet beacon"
 	desc = "Straight from the outerspace pet shop to your feet."
-	var/static/list/pets = list(
+	var/list/pets = list(
 "Brahmin" = /mob/living/simple_animal/cow/brahmin,
 "Chicken" = /mob/living/simple_animal/chicken,
 "Corgi" = /mob/living/simple_animal/pet/dog/corgi,
@@ -225,6 +225,16 @@
 		M.temporarilyRemoveItemFromInventory(src, TRUE)
 		M.put_in_hands(new choice)
 		qdel(src)
+
+
+/obj/item/choice_beacon/pet/mountable //beacon for spawning mounts!
+	name = "mount beacon"
+	desc = "Straight from the outerspace mount shop to your feet."
+	pets = list(
+"Brahmin" = /mob/living/simple_animal/cow/brahmin,
+"Horse" = /mob/living/simple_animal/cow/brahmin/horse,
+"Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker 
+)
 
 /obj/item/choice_beacon/box/carpet //donator carpet beacon
 	name = "choice box (carpet)"

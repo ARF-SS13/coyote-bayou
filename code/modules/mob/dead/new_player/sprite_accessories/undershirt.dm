@@ -4,11 +4,13 @@
 
 /datum/sprite_accessory/underwear/top
 	covers_chest = TRUE
+	covers_belly = TRUE
 
 /datum/sprite_accessory/underwear/top/nude
 	name = "Nude"
 	icon_state = null
 	covers_chest = FALSE
+	covers_belly = FALSE
 
 // please make sure they're sorted alphabetically and categorized  //No. ~TK
 
@@ -197,16 +199,19 @@
 	name = "Tank Top"
 	icon_state = "tanktop"
 	has_color = TRUE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/tanktop_alt
 	name = "Tank Top - Alt"
 	icon_state = "tanktop_alt"
 	has_color = TRUE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/tankfire
 	name = "Tank Top - Fire"
 	icon_state = "tank_fire"
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/tanktop_midriff
@@ -214,21 +219,25 @@
 	icon_state = "tank_midriff"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/tanktop_midriff_alt
 	name = "Tank Top - Midriff Halterneck"
 	icon_state = "tank_midriff_alt"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/tankstripe
 	name = "Tank Top - Striped"
 	icon_state = "tank_stripes"
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/tank_top_sun
 	name = "Tank top - Sun"
 	icon_state = "tank_sun"
+	covers_belly = FALSE
 
 
 //feminine accessories from here on
@@ -238,46 +247,54 @@
 	icon_state = "babydoll"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra
 	name = "Bra"
 	icon_state = "bra"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_alt
 	name = "Bra - Alt"
 	icon_state = "bra_alt"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/bra_beekini
 	name = "Bra - Bee-kini"
 	icon_state = "bra_bee-kini"
 	gender = FEMALE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/bra_binder
 	name = "Bra (binder)"
 	icon_state = "bra_binder"
 	has_color = TRUE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_binder_strapless
 	name = "Bra (binder, strapless)"
 	icon_state = "bra_binder_strapless"
 	has_color = TRUE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/bra_commie
 	name = "Bra - Commie"
 	icon_state = "bra_commie"
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_freedom
 	name = "Bra - Freedom"
 	icon_state = "bra_assblastusa"
 	gender = FEMALE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/halterneck_bra
@@ -285,47 +302,55 @@
 	icon_state = "halterneck_bra"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_kinky
 	name = "Bra - Kinky Black"
 	icon_state = "bra_kinky"
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/sports_bra
 	name = "Bra, Sports"
 	icon_state = "sports_bra"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/sports_bra_alt
 	name = "Bra, Sports - Alt"
 	icon_state = "sports_bra_alt"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_strapless
 	name = "Bra, Strapless"
 	icon_state = "bra_strapless"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_strapless_alt
 	name = "Bra, Strapless - Alt"
 	icon_state = "bra_blue"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/striped_bra
 	name = "Bra - Striped"
 	icon_state = "striped_bra"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_thin
 	name = "Bra - Thin"
 	icon_state = "bra_thin"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/bra_neko
@@ -333,54 +358,64 @@
 	icon_state = "bra_neko"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/bra_uk
 	name = "Bra - UK"
 	icon_state = "bra_uk"
 	gender = FEMALE
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/fishnet_gloves
 	name = "Fishnet - gloves"
 	icon_state = "fishnet_gloves"
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/fishnet_sleeves
 	name = "Fishnet - sleeves"
 	icon_state = "fishnet_sleeves"
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/fishnet_base
 	name = "Fishnet - top"
 	icon_state = "fishnet_body"
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/swimsuit
 	name = "Swimsuit Top"
 	icon_state = "bra_swimming"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/swimsuit_alt
 	name = "Swimsuit Top - Strapless"
 	icon_state = "bra_swimming_alt"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/tubetop
 	name = "Tube Top"
 	icon_state = "tubetop"
 	has_color = TRUE
 	gender = FEMALE
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/auxilla
 	name = "Brown Top" //Auxilla Top
 	icon_state = "legauxf"
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/priestess
 	name = "Shirtless Brown Top" //Priestess Top
 	icon_state = "priestess"
+	covers_belly = FALSE
 
 
 /datum/sprite_accessory/underwear/top/greenscrubs
@@ -459,19 +494,24 @@
 /datum/sprite_accessory/underwear/top/bluepuffbra
 	name = "Puffy Blue Bra"
 	icon_state = "bride_blue"
-	
+	covers_belly = FALSE
+
 /datum/sprite_accessory/underwear/top/orangepuffbra
 	name = "Puffy Orange Bra"
 	icon_state = "bride_orange"
-	
+	covers_belly = FALSE
+
 /datum/sprite_accessory/underwear/top/purplepuffbra
 	name = "Puffy Purple Bra"
 	icon_state = "bride_purple"
-	
+	covers_belly = FALSE
+
 /datum/sprite_accessory/underwear/top/redpuffbra
 	name = "Puffy Red Bra"
 	icon_state = "bride_red"
+	covers_belly = FALSE
 
 /datum/sprite_accessory/underwear/top/ncrcfjacketcrop
 	name = "cropped denim jacket"
 	icon_state = "ncrcfjacketcrop"
+	covers_belly = FALSE

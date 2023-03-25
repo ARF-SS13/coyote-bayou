@@ -1979,11 +1979,12 @@ datum/job/wasteland/f13dendoctor
 
 //Generic Tribals
 /datum/outfit/loadout/brawler
-	name = "Far-Lands Warrior"
+	name = "Far-Lands Mounted Warrior"
 	suit = /obj/item/clothing/suit/armor/light/tribal
 	head = /obj/item/clothing/head/helmet/f13/deathskull
 	backpack_contents = list(
 		///obj/item/twohanded/fireaxe/bmprsword = 1,
+		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/stack/medical/gauze = 1,

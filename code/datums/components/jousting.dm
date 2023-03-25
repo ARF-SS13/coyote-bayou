@@ -72,3 +72,20 @@
 
 /datum/component/jousting/proc/reset_charge()
 	current_tile_charge = 0
+
+//Designed specifically for sledge slamming
+/datum/component/jousting/sledge
+	current_direction = NONE
+	max_tile_charge = 2
+	min_tile_charge = 1				//tiles before this code gets into effect.
+	current_tile_charge = 0
+	movement_reset_tolerance = 2			//deciseconds
+	unmounted_damage_boost_per_tile = 0
+	unmounted_knockdown_chance_per_tile = 0
+	unmounted_knockdown_time = 0
+	mounted_damage_boost_per_tile = 5
+	mounted_knockdown_chance_per_tile = 20
+	mounted_knockdown_time = 30
+	requires_mob_riding = FALSE			//whether this only works if the attacker is riding a mob, rather than anything they can buckle to.
+	requires_mount = FALSE				//kinda defeats the point of jousting if you're not mounted but whatever.
+

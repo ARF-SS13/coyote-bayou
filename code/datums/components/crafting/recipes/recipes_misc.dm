@@ -50,6 +50,16 @@
 	category = CAT_MISC
 	always_available = FALSE
 
+/datum/crafting_recipe/gate_biker
+	name = "Hell's Nomad wood door"
+	result = /obj/machinery/door/unpowered/securedoor/bikerdoor
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/mineral/wood = 10,)
+	time = 60
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+	always_available = FALSE
+
 /datum/crafting_recipe/plant
 	name = "Potted plant"
 	result = /obj/item/kirbyplants/random
@@ -183,8 +193,8 @@
 	parts = list(/obj/item/gun = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	time = 50
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/pin_removal/check_requirements(mob/user, list/collected_requirements)
 	var/obj/item/gun/G = collected_requirements[/obj/item/gun][1]
@@ -198,8 +208,8 @@
 	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
 	tools = list(/obj/item/multitool)
 	result = /obj/item/circuitboard/machine/vr_sleeper
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/set_vrboard
 	category = CAT_CRAFTING
@@ -230,8 +240,8 @@
 //////////////////////
 
 /datum/crafting_recipe/rip
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
-	subcategory = CAT_FURNITURE
 
 /datum/crafting_recipe/rip/gravemarker
 	name = "Gravemarker"
@@ -548,7 +558,8 @@
 			/obj/item/gun/ballistic/automatic/sportcarbine = 1
 	)
 	time = 5 SECONDS
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /* /datum/crafting_recipe/portaturret_nogun // todo: make a var on the box whether or not it was made with a gun
 	name = "portable sentry turret (from scrap)"
@@ -562,7 +573,9 @@
 	)
 	tools = list(TOOL_WORKBENCH)
 	time = 5 SECONDS
-	category = CAT_ROBOT */
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+	 */
 
 //Nests
 /datum/crafting_recipe/small_nest

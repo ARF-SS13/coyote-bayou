@@ -614,3 +614,52 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 
 /obj/effect/overlay/gravel/edge/corner
 	icon_state = "gravelcorner"
+
+
+//New Coyote Dirts
+/turf/open/indestructible/ground/outside/dirt/light_grass
+	name = "lightly grassed dirt"
+	icon = 'modular_coyote/icons/turfs/lightgrass.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/bigdirtturf2
+	name = "big dirt turf 2"
+	icon = 'modular_coyote/icons/turfs/Big_Dirt_Turf_2.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/bigdirtturf
+	name = "big dirt turf"
+	icon = 'modular_coyote/icons/turfs/Big_Dirt_Turfs.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/biggrass
+	name = "big grass"
+	icon = 'modular_coyote/icons/turfs/Big_Grass.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/biggrassdirt2
+	name = "grassier"
+	icon = 'modular_coyote/icons/turfs/Big_Grass_Turf_2.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/bigiceturf
+	name = "crunchy ice"
+	icon = 'modular_coyote/icons/turfs/Big_Ice_Turf.dmi'
+	icon_state = null
+
+
+/turf/open/indestructible/ground/outside/dirt/bigsandturf
+	name = "crunchy sand"
+	icon = 'modular_coyote/icons/turfs/Big_Sand_Turf.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/rockysnow
+	name = "snow on rocks"
+	icon = 'modular_coyote/icons/turfs/Big_Snow_and_Rock_Turf.dmi'
+	icon_state = null
+
+
+/turf/open/indestructible/ground/outside/dirt/bigsnow
+	name = "thick snow"
+	icon = 'modular_coyote/icons/turfs/Big_Snow_turf.dmi'
+	icon_state = null

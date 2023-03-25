@@ -372,3 +372,41 @@
 /datum/quirk/smol/remove()
 	if(istype(quirk_holder))
 		quirk_holder.RemoveElement(/datum/element/mob_holder) // undog
+
+/datum/quirk/cat
+	name = "A cat!"
+	desc = "You identify as a cat! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_RAT
+/datum/quirk/rat
+	name = "A rat!"
+	desc = "You identify as a rat! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_RAT
+/datum/quirk/spider
+	name = "A spider!"
+	desc = "You identify as a spider! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_SPIDER
+/datum/quirk/lizard
+	name = "A lizard or reptillian!"
+	desc = "You identify as a lizard/reptillian! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_LIZARD
+/datum/quirk/robot
+	name = "A robot/synth!"
+	desc = "You identify as a robot/synth! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_ROBOT
+
+/datum/quirk/bird
+	name = "A bird!"
+	desc = "You identify as a bird! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_BIRD
+
+/datum/quirk/dog
+	name = "A dog!"
+	desc = "You identify as a dog! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_DOG

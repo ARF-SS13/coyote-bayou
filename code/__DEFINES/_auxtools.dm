@@ -1,4 +1,4 @@
-#define AUXMOS (world.system_type == MS_WINDOWS ? "auxmos.dll" : __detect_auxmos())
+//#define AUXMOS (world.system_type == MS_WINDOWS ? "auxmos.dll" : __detect_auxmos())
 
 /proc/__detect_auxmos()
 	if (fexists("./libauxmos.so"))

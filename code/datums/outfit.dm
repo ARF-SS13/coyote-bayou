@@ -30,6 +30,10 @@
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 	/// SWAG. Everyone gets one of these. Everyone. Fuckin everyone.
 	var/list/stuff_we_all_get = list(/obj/item/book/manual/advice_surival = 1)
+	/// list of tats. format: list(OUTFIT_TATTOO(/datum/tattoo/tat, spot on bodypart))
+	/// make sure the locations correspond to the right limb, and don't overlap with anything
+	/// in fact, make a new spot for them anyway
+	var/list/tattoos_they_get
 
 	var/static/datum/asset/spritesheet/loadout/loadout_sheet
 
@@ -151,7 +155,17 @@
 			for(var/implant_type in implants)
 				var/obj/item/implant/I = new implant_type
 				I.implant(H, null, TRUE)
-
+		if(LAZYLEN(tattoos_they_get))
+			for(var/tat in tattoos_they_get)
+				if(!ispath(tat))
+					continue
+				var/datum/tattoo/tattie = tat
+				var/obj/item/bodypart/canvas = H.get_bodypart(initial(tattie.default_bodypart))
+				if(!canvas)
+					canvas = H.get_bodypart(BODY_ZONE_CHEST)
+				if(!istype(canvas))
+					continue
+				canvas.add_tattoo(tattie, initial(tattie.default_spot))
 	H.update_body()
 	return TRUE
 

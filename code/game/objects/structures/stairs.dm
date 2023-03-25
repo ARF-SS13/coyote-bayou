@@ -133,8 +133,8 @@
 
 /obj/structure/stairs/intercept_zImpact(atom/movable/AM, levels = 1)
 	. = ..()
-	if(isTerminator())
-		. |= FALL_INTERCEPTED | FALL_NO_MESSAGE
+	if(levels == 1 && isTerminator()) // Stairs won't save you from a steep fall.
+		. |= FALL_INTERCEPTED | FALL_NO_MESSAGE | FALL_RETAIN_PULL
 
 /obj/structure/stairs/proc/isTerminator()			//If this is the last stair in a chain and should move mobs up
 	if(terminator_mode != STAIR_TERMINATOR_AUTOMATIC)

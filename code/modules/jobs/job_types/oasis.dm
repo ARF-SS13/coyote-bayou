@@ -84,7 +84,6 @@ Mayor
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
 	jobtype = /datum/job/oasis/f13mayor
-	belt = /obj/item/kit_spawner/premium
 	id = /obj/item/card/id/silver/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer

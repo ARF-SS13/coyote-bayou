@@ -91,6 +91,7 @@
 		return
 	if(user)
 		visible_message(span_warning("[user] stuffs [victim] into [src]!"))
+	RegisterSignal(victim, COMSIG_LIVING_RESIST, .proc/free_me)
 	inserted = victim
 	inserted.forceMove(src)
 
@@ -106,7 +107,18 @@
 	. = ..()
 	drop_item()
 
-/obj/machinery/gear_painter/proc/drop_item()
+/obj/machinery/gear_painter/proc/free_me()
+	SIGNAL_HANDLER
+	if(!inserted)
+		return
+	to_chat(inserted, span_notice("You free yourself from [src]."))
+	inserted.forceMove(get_turf(src))
+	UnregisterSignal(inserted, COMSIG_LIVING_RESIST)
+	inserted = null
+	update_icon()
+	SStgui.update_uis(src)
+
+/obj/machinery/gear_painter/proc/drop_item(jailbreak)
 	if(!usr.can_reach(src))
 		return
 	if(!inserted)

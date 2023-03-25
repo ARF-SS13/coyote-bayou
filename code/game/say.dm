@@ -3,29 +3,6 @@ Miauw's big Say() rewrite.
 This file has the basic atom/movable level speech procs.
 And the base of the send_speech() proc, which is the core of saycode.
 */
-GLOBAL_LIST_INIT(freqtospan, list(
-	"[FREQ_SCIENCE]" = "sciradio",
-	"[FREQ_MEDICAL]" = "medradio",
-	"[FREQ_ENGINEERING]" = "engradio",
-	"[FREQ_SUPPLY]" = "suppradio",
-	"[FREQ_SERVICE]" = "servradio",
-	"[FREQ_SECURITY]" = "secradio",
-	"[FREQ_COMMAND]" = "comradio",
-	"[FREQ_AI_PRIVATE]" = "aiprivradio",
-	"[FREQ_SYNDICATE]" = "syndradio",
-	"[FREQ_CENTCOM]" = "centcomradio",
-	"[FREQ_CTF_RED]" = "redteamradio",
-	"[FREQ_CTF_BLUE]" = "blueteamradio",
-	"[FREQ_VAULT]" = "vaultradio",
-	"[FREQ_NCR]" = "ncrradio",
-	"[FREQ_BOS]" = "bosradio",
-	"[FREQ_ENCLAVE]" = "enclaveradio",
-	"[FREQ_TOWN]" = "townradio",
-	"[FREQ_TOWN_COMMERCE]" = "servradio",
-	"[FREQ_TOWN_PD]" = "secradio",
-	"[FREQ_TOWN_MAYOR]" = "comradio",
-	"[FREQ_RANGER]" = "rangerradio"
-	))
 
 /atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
 	if(!can_speak())

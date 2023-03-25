@@ -794,7 +794,8 @@
 		and barrel capable of using both 5mm and 5.56mm rifle ammunition with reasonable success. \
 		The magazine is welded to the frame, and the loading port angled <i>just enough</i> to make stripper clips not work. \
 		Apparently these 'features' to the design, being on every instance of this gun."
-	icon_state = "salvaged-eastern-rifle"
+	icon = 'modular_coyote/icons/objects/churroguns.dmi'
+	icon_state = "salvaged_eastern_rifle"
 	item_state = "marksman"
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle

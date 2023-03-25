@@ -46,13 +46,22 @@
 	if(world.time > next_check && world.time > next_scare)
 		next_check = world.time + 50
 		var/list/seen_atoms = owner.fov_view(7)
+		var/mirror_seen = 0
 
 		if(LAZYLEN(trigger_objs))
 			for(var/obj/O in seen_atoms)
 				if(is_type_in_typecache(O, trigger_objs))
 					freak_out(O)
 					return
+				if(istype(O, /obj/structure/mirror) || istype(O, /obj/effect/overlay/junk/mirror))
+					if(get_dist(owner, O) <= 1)
+						mirror_seen = 1
 			for(var/mob/living/carbon/human/HU in seen_atoms) //check equipment for trigger items
+				if(HU != owner)
+					if(HAS_TRAIT(HU, phobia_type))
+						freak_out(HU)
+				else if(HAS_TRAIT(owner, phobia_type) && mirror_seen)
+					freak_out(owner)
 				for(var/X in HU.get_all_slots() | HU.held_items)
 					var/obj/I = X
 					if(!QDELETED(I) && is_type_in_typecache(I, trigger_objs))
@@ -135,7 +144,18 @@
 			owner.Jitter(10)
 			owner.stuttering += 10
 
+/datum/brain_trauma/mild/phobia/proc/RealityCheck() // Checks if you're not your own fears.
+	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
+		return
+
+	if(HAS_TRAIT(owner, phobia_type))
+		freak_out(owner)
+
 // Defined phobia types for badminry, not included in the RNG trauma pool to avoid diluting.
+
+/datum/brain_trauma/mild/phobia/rats
+	phobia_type = "rats"
+	random_gain = FALSE
 
 /datum/brain_trauma/mild/phobia/spiders
 	phobia_type = "spiders"
@@ -191,6 +211,10 @@
 
 /datum/brain_trauma/mild/phobia/birds
 	phobia_type = "birds"
+	random_gain = FALSE
+
+/datum/brain_trauma/mild/phobia/dogs
+	phobia_type = "dogs"
 	random_gain = FALSE
 
 /datum/brain_trauma/mild/phobia/falling

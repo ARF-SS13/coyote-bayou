@@ -26,6 +26,7 @@ SUBSYSTEM_DEF(traumas)
 						"aliens",
 						"strangers",
 						"birds",
+						"dogs",
 						"falling",
 						"anime",
 						"cats",
@@ -51,6 +52,8 @@ SUBSYSTEM_DEF(traumas)
 						"falling" = strings(PHOBIA_FILE, "falling"),
 						"anime" = strings(PHOBIA_FILE, "anime"),
 						"cats" = strings(PHOBIA_FILE, "cats"),
+						"rats" = strings(PHOBIA_FILE, "rats"),
+						"dogs" = strings(PHOBIA_FILE, "dogs"),
 						"eye" = strings(PHOBIA_FILE, "eye")
 						)
 
@@ -81,7 +84,9 @@ SUBSYSTEM_DEF(traumas)
 			/mob/living/silicon/ai,
 			/mob/living/simple_animal/drone,
 			/mob/living/simple_animal/bot,
-			/mob/living/simple_animal/hostile/swarmer)
+			/mob/living/simple_animal/hostile/swarmer,
+			/mob/living/simple_animal/hostile/handy,
+			/mob/living/simple_animal/hostile/eyebot)
 			),
 
 		"doctors"   = typecacheof(list(
@@ -112,7 +117,14 @@ SUBSYSTEM_DEF(traumas)
 			/mob/living/simple_animal/parrot,
 			/mob/living/simple_animal/chick,
 			/mob/living/simple_animal/chicken,
-			/mob/living/simple_animal/pet/penguin)
+			/mob/living/simple_animal/pet/penguin,)
+			),
+		
+		"dogs" = typecacheof(list(
+			/mob/living/simple_animal/pet/dog,
+			/mob/living/simple_animal/hostile/stickman/dog,
+			/mob/living/simple_animal/pet/wolf,
+			/mob/living/simple_animal/hostile/wolf)
 			),
 
 		"anime" = typecacheof(list(
@@ -120,9 +132,14 @@ SUBSYSTEM_DEF(traumas)
 			),
 
 		"cats"= typecacheof(list(
-			/mob/living/simple_animal/mouse,
 			/mob/living/simple_animal/pet/cat,
 			/mob/living/simple_animal/hostile/cat_butcherer)
+			),
+
+		"rats"= typecacheof(list(
+			/mob/living/simple_animal/mouse,
+			/mob/living/simple_animal/hostile/molerat,
+			/mob/living/simple_animal/hostile/rat)
 			),
 
 		"eye" = typecacheof(list(

@@ -307,7 +307,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "wattz1000"
 	item_state = "laser-pistol"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -352,7 +352,7 @@
 	item_state = "laser-pistol"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattzs)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -380,7 +380,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
-
+	w_class = WEIGHT_CLASS_NORMAL
+	
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -398,7 +399,7 @@
 	desc = "A basic energy-based laser gun that fires concentrated beams of light. Military version of the Wattz-1000. Quicker-firing, armor-penetrating, with slightly less damage, and far more efficiency."
 	icon_state = "AEP7"
 	item_state = "laser-pistol"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -483,7 +484,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "AEP5CR"
 	item_state = "AEP5CR"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/stun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -512,7 +513,7 @@
 	desc = "This modified AEP7 laser pistol takes its power from the sun, recharging slowly using stored solar energy. However, it cannot be recharged manually as a result."
 	icon_state = "solarscorcher"
 	item_state = "solarscorcher"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite //16 shots, self-charges
@@ -539,7 +540,7 @@
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "bspecial"
 	item_state = "laser-pistol"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/badlands)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -562,7 +563,7 @@
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "bspecial"
 	item_state = "laser-pistol"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/badlands/worn)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -584,7 +585,7 @@
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "freeblade"
 	item_state = "freeblade"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -646,6 +647,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
 	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
 // OASIS autolaser
@@ -663,6 +665,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
 	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
 //Ultracite Laser pistol
@@ -671,7 +674,7 @@
 	desc = "An ultracite enhanced energy-based laser gun that fires concentrated beams of light."
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	scope_x_offset = 7
 	scope_y_offset = 22

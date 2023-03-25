@@ -456,6 +456,11 @@
 	force_unwielded = 25
 	attack_speed = CLICK_CD_MELEE * 1.8 //14.4
 
+/obj/item/twohanded/sledgehammer/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/jousting/sledge)
+
+
 // Sledgehammer			Keywords: Damage 25/45, Blacksmithing
 /obj/item/twohanded/sledgehammer/simple
 	icon_state = "hammer-sledge"

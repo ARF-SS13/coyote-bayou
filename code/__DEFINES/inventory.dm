@@ -254,7 +254,8 @@ GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/throwing_star/spear,
-	/obj/item/restraints/legcuffs/bola
+	/obj/item/restraints/legcuffs/bola,
+	/obj/item/pitchfork,
 	)))
 
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
@@ -567,6 +568,7 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/energy/laser/retro,
 	/obj/item/gun/ballistic/revolver/police,
 	/obj/item/gun/ballistic/revolver/m29/snub,
+	/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby,
 	)))
 
 GLOBAL_LIST_INIT(plushbelt_allowed, typecacheof(list(

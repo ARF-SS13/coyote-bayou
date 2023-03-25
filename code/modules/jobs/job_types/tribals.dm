@@ -260,6 +260,7 @@ Tribal Head Hunter
 	belt = /obj/item/twohanded/spearaxe
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
+		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
@@ -499,6 +500,7 @@ Hunter
 	suit = /obj/item/clothing/suit/armor/light/tribal/strips
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
+		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,

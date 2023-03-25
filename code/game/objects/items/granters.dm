@@ -464,7 +464,8 @@
 	name = "shifting scroll"
 	martialname = "rising bass"
 	desc = "A paper scroll that seems to move even as you read it, the letters never seem to stay still."
-	greet = span_sciradio("You have learned the ancient martial art of the Rising Bass. Your skill at running away has increased quite a bit. Use the combos to get away from opponents quickly. Along with this, you now dodge all projectiles and catch anything thrown at you.")
+	greet = "<span class='sciradio'>You have learned the ancient martial art of the Rising Bass. Your skill at running away has increased quite a bit. Use the combos to get away from opponents quickly. Along with this, you now dodge all projectiles and catch anything thrown at you. \
+	However, you are also unable to use any ranged weaponry. You can learn more about your newfound art by using the Recall Teachings verb in the Rising Bass tab.</span>"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
 	remarks = list("The trick is to disarm them...","Running away helps in many situations...","Never stay still...","Fighting won't help unless you're forced to...", "Crush their limbs to incapacitate them...", "Stay as far away as possible...")
@@ -602,7 +603,7 @@
 	icon_state = "gab1"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/schmeisser)
+	crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/tec22)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_two
 	name = "Guns and Bullets, Part 2"
@@ -610,7 +611,7 @@
 	icon_state = "gab2"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/rangerlever, /datum/crafting_recipe/caravanshotty, /datum/crafting_recipe/widowmakershotty)
+	crafting_recipe_types = list(/datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/caravanshotty, /datum/crafting_recipe/widowmakershotty, /datum/crafting_recipe/auto9mm)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_three
 	name = "Guns and Bullets, Part 3"
@@ -833,12 +834,12 @@
 	name = "ranger repeater carbine"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/rangerlever)
-
+/*
 /obj/item/book/granter/crafting_recipe/blueprint/schmeisser
 	name = "schmeisser blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/schmeisser)
-
+*/
 /obj/item/book/granter/crafting_recipe/blueprint/trapper
 	name = "guide to minelaying"
 	icon_state = "blueprint2"
