@@ -352,9 +352,9 @@
 			return
 		var/turf/aboveT = get_step_multiz(get_turf(user), UP)
 		if(!istype(aboveT, /turf/open/transparent/openspace))
-			visible_message("You can't climb there, there is a ceiling!")
+			to_chat(user, "You can't climb there, there is a ceiling!")
 			return
-		visible_message("[user] attempts to climb the [name]!", "You begin climbing the [name]")
+		visible_message(span_warning("[user] attempts to climb the [name]!"), span_warning("You begin climbing the [name]"))
 		
 		if(do_mob(user, user, 40 + (user.getStaminaLoss() * 0.25))) // 25% of your stamina loss will effect the speed on climbing.
 			var/turf/targetDest = get_step_multiz(get_turf(src), UP)
