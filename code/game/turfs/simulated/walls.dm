@@ -362,13 +362,13 @@
 				to_chat(user, span_warning("There's nothing to stand on once you climb up..!"))
 				return
 			
-			var/denseObj = FALSE
+			var/failedPass = FALSE
 			for(var/obj/O in targetDest.contents)
-				if(O.density)
-					denseObj = TRUE
+				if(!O.CanPass(user, get_dir(aboveT, targetDest)))
+					failedPass = TRUE
 					break
 
-			if(!isloc(targetDest) || targetDest?.density || !targetDest.CanPass(user, get_dir(user, get_turf(src))) || denseObj)
+			if(!isloc(targetDest) || targetDest?.density || !targetDest.CanPass(user, get_dir(aboveT, targetDest)) || failedPass)
 				to_chat(user, span_warning("You peak towards the top of the wall, but it's not safe to climb there!"))
 				return
 			if(user.zMove(UP, targetDest, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
