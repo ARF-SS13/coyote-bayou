@@ -322,6 +322,6 @@
 /obj/item/reagent_containers/pill/random/Initialize()
 	icon_state = "pill[rand(1,29)]"
 	list_reagents = list(get_random_reagent_id() = rand(5,15))
-	var/pill_name = pick("discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	var/pill_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
 	name = "[pill_name] pill"
 	. = ..()

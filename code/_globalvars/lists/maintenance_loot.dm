@@ -224,6 +224,7 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/reagent_containers/hypospray/medipen/stimpak/random = 20,
 	/obj/item/reagent_containers/syringe/random = 20,
 	/obj/item/reagent_containers/glass/bottle/random = 10,
+	/obj/item/storage/pill_bottle/random = 1,
 ))
 
 GLOBAL_LIST_INIT(trash_craft, list(

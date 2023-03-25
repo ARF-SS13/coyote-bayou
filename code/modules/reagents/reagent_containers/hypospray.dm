@@ -206,7 +206,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/random/Initialize()
 	list_reagents = list(get_random_reagent_id() = rand(5,15))
-	var/stim_name = pick("discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	var/stim_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
 	name = "[stim_name] stimpak"
 	. = ..()
 
