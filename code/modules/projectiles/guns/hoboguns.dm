@@ -407,10 +407,13 @@
 		/datum/firemode/burst/three/slow,
 		/datum/firemode/semi_auto
 	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	misfire_possibilities = list(
-	EFFECT_EYE_BLUR
+		GUN_MISFIRE_UNLOADS_GUN(1, 1),
 	)
-
+	// Gives a fairly low chance to misfire with anything short of .357 FMJ, or the special 9mm rounds.
+	// Misfire chance is still low enough that you can run entire belts of .357 FMJ without issues occassionally.
+	// .357 Handload outta the bags is fine aswell. it's a shitgun made by poors.
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
