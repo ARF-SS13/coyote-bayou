@@ -314,3 +314,14 @@
 		It's pretty obvious that if you eat this pill, it'll make your breasts grow larger. Just, uh, something to keep in mind."
 	icon_state = "pill10"
 	list_reagents = list(/datum/reagent/breast_enlarger = 30)
+
+/obj/item/reagent_containers/pill/random
+	name = "randomized pill"
+	desc = "A long forgotten prescription. who knows what it contains."
+
+/obj/item/reagent_containers/pill/random/Initialize()
+	icon_state = "pill[rand(1,29)]"
+	list_reagents = list(get_random_reagent_id() = rand(5,15))
+	var/pill_name = pick("discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	name = "[pill_name] pill"
+	. = ..()
