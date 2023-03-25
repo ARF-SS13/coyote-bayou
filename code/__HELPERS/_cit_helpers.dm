@@ -122,6 +122,9 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 /mob/living/carbon/proc/has_belly()
 	return getorganslot(ORGAN_SLOT_BELLY)
 
+/mob/living/carbon/proc/has_womb()
+	return getorganslot(ORGAN_SLOT_WOMB)
+
 /mob/living/carbon/proc/is_groin_exposed(list/L)
 	if(!L)
 		L = get_equipped_items()

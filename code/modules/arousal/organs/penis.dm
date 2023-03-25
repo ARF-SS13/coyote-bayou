@@ -119,6 +119,12 @@
 		set_size(clamp(round(new_length), min_size, max_size))
 	. = ..()
 
+/obj/item/organ/genital/penis/reshape_genital(mob/user)
+	var/new_shape = input(user, "Penis shape:", "Character Preference") as null|anything in GLOB.cock_shapes_list
+	if(new_shape)
+		shape = new_shape
+	. = ..()
+
 /obj/item/organ/genital/penis/arousal_term()
 	if(aroused_state)
 		return "Hard and throbbing"

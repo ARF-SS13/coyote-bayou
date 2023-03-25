@@ -901,11 +901,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			switch(erp_tab_page)
 				if(ERP_TAB_REARRANGE)
-					dat += {"
-					<style>
-					</style>
-					"}
-
 					var/list/all_genitals = decode_cockstring() // i made it i can call it whatever I want
 					var/list/genitals_we_have = list()
 					dat += "<table class='table_genital_list'>"
@@ -946,53 +941,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							</td>"}
 					dat += "</table>"
 				if(ERP_TAB_HOME)/// UNDERWEAR GOES HERE
-					dat += {"<style>
-								table.undies_table {
-									border: 1px solid green;
-									width: 75%;
-									margin: auto;
-									padding: 0px;
-								}
-								td.undies_cell {
-									border: 1px solid green;
-									width: 33%;
-									margin: auto;
-									padding: 0px;
-								}
-								.undies_header { 
-									color: #00ff00;
-									background-color: rgba(0, 128, 0, 0.4);
-									border: 1px solid rgba(0, 128, 0, 0.3);
-									font-weight: bold;
-									text-align: center;
-									margin: auto;
-									padding: auto;
-									width: auto;
-								} 
-								.undies_flex_container {
-									display: inline-flex;
-									align-self: stretch;
-									flex-wrap: wrap;
-									text-align: center;
-								}
-								.undies_label {
-									color: #00ff00;
-									background-color: rgba(0, 128, 0, 0.4);
-									outline-style: outset;
-									outline-width: 1px;
-									outline-color: green;
-									font-weight: bold;
-									text-align: center;
-								}
-								.undies_link {
-									display: block;
-									background-color: rgba(0, 128, 0, 0.8);
-									outline-style: outset;
-									outline-width: 1px;
-									outline-color: green;
-									text-align: center;
-								}
-							</style>"}
 					dat += "<table class='undies_table'>"
 					dat += "<tr class='undies_row'>"
 					dat += "<td colspan='3'>"
@@ -1607,6 +1555,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	deet += "</div>"
 	deet += "</td>"
 	deet += "</tr>"
+	deet += "</table>" // leaving this one out makes the save/undo line show up over the table, oddly enough!
+	deet += "<br>"
 	return deet.Join()
 
 /// need: genital name, some kinda href shit

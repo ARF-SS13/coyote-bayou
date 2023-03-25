@@ -59,8 +59,9 @@
 #define GENITAL_ALWAYS_VISIBLE    (1<<2) // Always visible
 #define GENITAL_ABOVE_UNDERWEAR   (1<<3) // If visible, is it above underwear?
 #define GENITAL_ABOVE_CLOTHING    (1<<4) // If visible, is it above clothing?
-#define GENITAL_RESPECT_UNDERWEAR (1<<5) // Does it factor in underwear as coverage?
-#define GENITAL_RESPECT_CLOTHING  (1<<6) // Does it factor in uniform/suit as coverage?
+#define GENITAL_UNDER_UNDERWEAR   (1<<5) // If visible, is it above clothing?
+#define GENITAL_RESPECT_UNDERWEAR (1<<6) // Does it factor in underwear as coverage?
+#define GENITAL_RESPECT_CLOTHING  (1<<7) // Does it factor in uniform/suit as coverage?
 
 #define GENITAL_FLAGS_MIN GENITAL_ALWAYS_HIDDEN // update this if you add/remove flags
 #define GENITAL_FLAGS_MAX GENITAL_RESPECT_CLOTHING // update this if you add/remove flags
@@ -205,7 +206,9 @@
 	"belly_visibility_flags",\
 	"butt_visibility_flags")
 #define GENITAL_VIS_FLAG_LIST list("Always Visible" = GENITAL_ALWAYS_VISIBLE, "Always Hidden" = GENITAL_ALWAYS_HIDDEN, "Check Coverage" = 0)
+#define GENITAL_VIS_FLAG_LIST_CARBON list("Always Visible" = GENITAL_ALWAYS_VISIBLE, "Always Hidden" = GENITAL_ALWAYS_HIDDEN, "Check Coverage" = GENITAL_NO_OVERRIDE)
 #define GENITAL_CLOTHING_FLAG_LIST list("Over Clothing" = GENITAL_ABOVE_CLOTHING, "Over Underwear" = GENITAL_ABOVE_UNDERWEAR, "Under Underwear" = 0)
+#define GENITAL_CLOTHING_FLAG_LIST_CARBON list("Over Clothing" = GENITAL_ABOVE_CLOTHING, "Over Underwear" = GENITAL_ABOVE_UNDERWEAR, "Under Underwear" = GENITAL_UNDER_UNDERWEAR)
 #define GENITAL_VIS_OVERRIDE2FLAGS_LIST list(\
 	"cock_visibility_override" = "cock_visibility_flags",\
 	"balls_visibility_override" = "balls_visibility_flags",\

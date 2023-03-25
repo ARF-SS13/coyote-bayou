@@ -647,4 +647,49 @@ td.coverage_off {
 	margin: auto;
 	width: auto;
 } 
+table.undies_table {
+	border: 1px solid green;
+	width: 75%;
+	margin: auto;
+	padding: 0px;
+}
+td.undies_cell {
+	border: 1px solid green;
+	width: 33%;
+	margin: auto;
+	padding: 0px;
+}
+.undies_header { 
+	color: #00ff00;
+	background-color: rgba(0, 128, 0, 0.4);
+	border: 1px solid rgba(0, 128, 0, 0.3);
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+	padding: auto;
+	width: auto;
+} 
+.undies_flex_container {
+	display: inline-flex;
+	align-self: stretch;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.undies_label {
+	color: #00ff00;
+	background-color: rgba(0, 128, 0, 0.4);
+	outline-style: outset;
+	outline-width: 1px;
+	outline-color: green;
+	font-weight: bold;
+	text-align: center;
+}
+.undies_link {
+	display: block;
+	background-color: rgba(0, 128, 0, 0.8);
+	outline-style: outset;
+	outline-width: 1px;
+	outline-color: green;
+	text-align: center;
+}
 

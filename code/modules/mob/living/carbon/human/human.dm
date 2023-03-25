@@ -547,6 +547,152 @@
 											to_chat(usr, "<span class='notice'>Successfully added comment.</span>")
 											return
 							to_chat(usr, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+	switch(href_list["action"])
+		if("open_sockdrawer")
+			show_underwear_panel()
+		if("shirt")
+			var/new_shirt = input(usr, "Select a new shirt!", "Changing") as null|anything in GLOB.undershirt_list
+			if(new_shirt)
+				undershirt = new_shirt
+				saved_undershirt = new_shirt
+				show_message(span_notice("You put on a new [new_shirt]!"))
+				update_body(TRUE)
+			else
+				show_message(span_notice("Nevermind!"))
+			show_underwear_panel()
+		if("shirt_color")
+			var/n_color = input(usr, "Recolor your shirt!", "Character Preference", "#[shirt_color]") as color|null
+			if(n_color)
+				shirt_color = sanitize_hexcolor(n_color, 6, FALSE, shirt_color)
+				show_message(span_notice("You recolor your top!"))
+				update_body(TRUE)
+			else
+				show_message(span_notice("Nevermind!"))
+			show_underwear_panel()
+		if("undies")
+			var/new_undies = input(usr, "Select some new undies!", "Changing") as null|anything in GLOB.underwear_list
+			if(new_undies)
+				underwear = new_undies
+				saved_underwear = new_undies
+				show_message(span_notice("You put on a new pair of [new_undies]!"))
+				update_body(TRUE)
+			else
+				show_message(span_notice("Nevermind!"))
+			show_underwear_panel()
+		if("undies_color")
+			var/n_color = input(usr, "Recolor your undies!", "Character Preference", "#[undie_color]") as color|null
+			if(n_color)
+				undie_color = sanitize_hexcolor(n_color, 6, FALSE, undie_color)
+				show_message(span_notice("You recolor your undies!"))
+				update_body(TRUE)
+			else
+				show_message(span_notice("Nevermind!"))
+			show_underwear_panel()
+		if("socks")
+			var/new_sox = input(usr, "Select some socks!", "Changing") as null|anything in GLOB.socks_list
+			if(new_sox)
+				socks = new_sox
+				saved_socks = new_sox
+				show_message(span_notice("You put on a new pair of [new_sox]!"))
+				update_body(TRUE)
+			else
+				show_message(span_notice("Nevermind!"))
+			show_underwear_panel()
+		if("socks_color")
+			var/n_color = input(usr, "Recolor your socks!", "Character Preference", "#[socks_color]") as color|null
+			if(n_color)
+				socks_color = sanitize_hexcolor(n_color, 6, FALSE, socks_color)
+				show_message(span_notice("You recolor your socks!"))
+				update_body(TRUE)
+			else
+				show_message(span_notice("Nevermind!"))
+			show_underwear_panel()
+
+// I see athens, I see greece, I see src's /datum/sprite_accessory/underwear/bottom/briefs
+/mob/living/carbon/human/proc/show_underwear_panel()
+	var/list/dat = list()
+	dat += {"<a 
+				class='clicky'
+				href='
+					?src=[REF(src)];
+					action=genital_return'>
+						Go back
+			</a>"}
+	dat += "<table class='undies_table'>"
+	dat += "<tr class='undies_row'>"
+	dat += "<td colspan='3'>"
+	dat += "<h2 class='undies_header'>Clothing & Equipment</h2>"
+	dat += "</td>"
+	dat += "</tr>"
+	dat += "<tr class='undies_row'>"
+	dat += "<td class='undies_cell'>"
+	dat += "<div class='undies_label'>Topwear</div>"
+	dat += {"<a 
+				class='undies_link' 
+				href='
+					?src=[REF(src)];
+					action=shirt'>
+						[undershirt]
+			</a>"}
+	dat += {"<a 
+				class='undies_link'
+				style='
+					background-color:#[shirt_color]' 
+				href='
+					?src=[REF(src)];
+					action=shirt_color'>
+					[shirt_color]
+			</a>"}
+	dat += "</td>"
+	dat += "</tr><tr class='undies_row'>"
+	dat += "<td class='undies_cell'>"
+	dat += "<div class='undies_label'>Bottomwear</div>"
+	dat += {"<a 
+				class='undies_link' 
+				href='
+					?src=[REF(src)];
+					action=undies'>
+						[underwear]
+			</a>"}
+	dat += {"<a 
+				class='undies_link'
+				style='
+					background-color:#[undie_color]' 
+				href='
+					?src=[REF(src)];
+					action=undies_color'>
+						[undie_color]
+			</a>"}
+	dat += "</td>"
+	dat += "</tr><tr class='undies_row'>"
+	dat += {"<td class='undies_cell'>
+				<div class='undies_label'>Legwear</div>
+				<a 
+					class='undies_link' 
+					href='
+						?src=[REF(src)];
+						action=socks'>
+							[socks]
+				</a>"}
+	dat += {"<a 
+				class='undies_link'
+				style='
+					background-color:#[socks_color]' 
+				href='
+					?src=[REF(src)];
+					action=socks_color'>
+						[socks_color]
+			</a>"}
+	dat += "</td>"
+	dat += "</tr>"
+	dat += "</table>"
+
+	winshow(src, "erp_window", TRUE)
+	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Put on your spare pair</div>", 400, 500)
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	onclose(src, "erp_window", src)
+
 
 /mob/living/carbon/human/proc/canUseHUD()
 	return CHECK_MOBILITY(src, MOBILITY_UI)

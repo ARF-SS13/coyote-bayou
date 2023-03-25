@@ -101,7 +101,7 @@
 	if(initting)
 		owner?.exposed_genitals -= src
 		genital_visflags = gunt_flags
-		if(CHECK_BITFIELD(gunt_flags, GENITAL_ALWAYS_VISIBLE))
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_ALWAYS_VISIBLE) || (!CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_CLOTHING) && !CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_UNDERWEAR)))
 			owner?.exposed_genitals |= src
 	else
 		//if(IS_GENITAL_VIS_OVERRIDE(gunt_flags))
@@ -117,20 +117,24 @@
 			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE)
 			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN)
 			owner?.exposed_genitals -= src
-		// here be toggles
+		// here be layering shit
 		if(CHECK_BITFIELD(gunt_flags, GENITAL_ABOVE_UNDERWEAR))
-			TOGGLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
+			ENABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_CLOTHING)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_UNDER_UNDERWEAR)
 		if(CHECK_BITFIELD(gunt_flags, GENITAL_ABOVE_CLOTHING))
-			TOGGLE_BITFIELD(genital_visflags,GENITAL_ABOVE_CLOTHING)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
+			ENABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_CLOTHING)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_UNDER_UNDERWEAR)
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_UNDER_UNDERWEAR))
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_CLOTHING)
+			ENABLE_BITFIELD(genital_visflags,GENITAL_UNDER_UNDERWEAR)
+		
 		if(CHECK_BITFIELD(gunt_flags, GENITAL_RESPECT_UNDERWEAR))
 			TOGGLE_BITFIELD(genital_visflags,GENITAL_RESPECT_UNDERWEAR)
 		if(CHECK_BITFIELD(gunt_flags, GENITAL_RESPECT_CLOTHING))
 			TOGGLE_BITFIELD(genital_visflags,GENITAL_RESPECT_CLOTHING)
-		// if we respect neither undie nor overie, we're visible, its out, we jigglin'
-		if(!CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_CLOTHING) && !CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_UNDERWEAR))
-			ENABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE)
-			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN)
-			owner?.exposed_genitals |= src
 
 	if(update && ishuman(owner)) //recast to use update genitals proc
 		var/mob/living/carbon/human/H = owner
@@ -153,11 +157,15 @@
 
 	var/list/dat = list("<center>")
 	/// woo lookit me im a web designer from the early 2010s!
-	dat += "<div class='gen_name'>Modify Genitals</div>"
 	dat += "<table class='table_genital_list'>"
+	dat += "<tr class='talign'>"
+	dat += "<td class='talign'>"
+	dat += "<div class='gen_name'>Modify Unmentionables</div>"
+	dat += "</td></tr>"
 	dat += "<tr class='talign'><td class='talign'>"
+	dat += "<div class='gen_container'>"
 	for(var/obj/item/organ/genital/nad in genital_list)
-		dat += "<div class='gen_name'>[nad.name]</div>"
+		dat += "<div class='gen_setting_name'>Your [nad.name]:</div>"
 		dat += {"<a 
 					class='clicky' 
 					href='
@@ -165,10 +173,29 @@
 						action=open_genital_window'>
 							Modify?
 				</a>"}
+	dat += "<div class='gen_setting_name'>Layering and Visibility:</div>"
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=open_genital_layering'>
+						Modify?
+			</a>"}
+	dat += "<div class='gen_setting_name'>Underwear:</div>"
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=open_sockdrawer'>
+						Modify?
+			</a>"}
+	dat += "</div>"
 	dat += "</td></tr>"
-	dat += "</table>"
+	dat += "</table>" // leaving this one out makes the save/undo line show up over the table, oddly enough!
+	dat += "</center>"
+
 	winshow(src, "erp_window", TRUE)
-	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Rearrange Your Guts</div>", 480, 640)
+	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Rearrange Your Guts</div>", 400, 500)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 	onclose(src, "erp_window", src)
@@ -183,44 +210,31 @@
 	dat += {"<a 
 				class='clicky'
 				href='
-					?src=[REF(src)];
-					action=go_back;>
-						Return
+					?src=[REF(owner)];
+					action=genital_return'>
+						Go back
 			</a>"}
-	dat += "<center>"
-	/// woo lookit me im a web designer from the early 2010s!
-	dat += "<div class='gen_name'>[src.name]</div>"
 	dat += "<table class='table_genital_list'>"
+	dat += "<tr class='talign'>"
+	dat += "<td class='talign'>"
+	dat += "<div class='gen_name'>[name]</div>"
+	dat += "</td></tr>"
+
 	dat += "<tr class='talign'><td class='talign'>"
 	dat += "<div class='gen_container'>"
-	if(CHECK_BITFIELD(genital_flags,GENITAL_CAN_AROUSE))
-		anythingatall = TRUE
-		dat += "<div class='gen_setting_name'>Arousal:</div>"
-		dat += {"<a 
-					class='clicky'
-					href='
-						?src=[REF(src)];
-						action=arouse'>
-							[arousal_term()]
-				</a>
-				<!-- br-was-here -->"}
-	if(CHECK_BITFIELD(genital_flags,GENITAL_CAN_RECOLOR))
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_RECOLOR))
 		anythingatall = TRUE
 		dat += "<div class='gen_setting_name'>Color:</div>"
-		if(!owner?.dna?.species?.use_skintones || owner?.dna?.skin_tone_override)
-			dat += {"<a 
-						class='clicky'
-						style='
-							background-color:[color]' 
-						href='
-							?src=[REF(src)];
-							action=recolor'>
-								[color]
-					</a>
-					<!-- br-was-here -->"}
-		else
-			dat += "<div class='gen_setting_name'>Locked to skintone!</div>"
-	if(CHECK_BITFIELD(genital_flags,GENITAL_CAN_RESHAPE))
+		dat += {"<a 
+					class='clicky'
+					style='
+						background-color:#[color]' 
+					href='
+						?src=[REF(src)];
+						action=recolor'>
+							[color]
+				</a>"}
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_RESHAPE))
 		anythingatall = TRUE
 		dat += "<div class='gen_setting_name'>Shape:</div>"
 		dat += {"<a 
@@ -229,9 +243,8 @@
 						?src=[REF(src)];
 						action=reshape'>
 							[shape]
-				</a>
-				<!-- br-was-here -->"}
-	if(CHECK_BITFIELD(genital_flags,GENITAL_CAN_RESIZE))
+				</a>"}
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_RESIZE))
 		anythingatall = TRUE
 		dat += "<div class='gen_setting_name'>Size:</div>"
 		dat += {"<a 
@@ -241,88 +254,23 @@
 						action=resize'>
 							[size_kind()]
 				</a>"}
-	dat += extra_genital_panel() // just in case someone wants to stick a control panel in your dick
-	if(!CHECK_BITFIELD(genital_flags,GENITAL_INTERNAL))
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_AROUSE))
 		anythingatall = TRUE
-		var/vis_override
-		if(CHECK_BITFIELD(genital_visflags, GENITAL_ALWAYS_HIDDEN))
-			vis_override = "Always Hidden"
-		else if(CHECK_BITFIELD(genital_visflags, GENITAL_ALWAYS_VISIBLE))
-			vis_override = "Always Visible"
-		else
-			vis_override = "None"
-		dat += "<div class='gen_setting_name'>Visibility Override:</div>"
+		dat += "<div class='gen_setting_name'>Arousal:</div>"
 		dat += {"<a 
 					class='clicky' 
 					href='
 						?src=[REF(src)];
-						action=change_vis_override;
-						curr_vis=[vis_override]'>
-							[vis_override]
-				</a>"}
-
-		dat += "<div class='gen_setting_name'>Above underwear when visible:</div>"
-		dat += {"<a 
-					class='clicky' 
-					href='
-						?src=[REF(src)];
-						action=change_vis_flag;
-						genital_flag=[GENITAL_ABOVE_UNDERWEAR]'>
-							[CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_UNDERWEAR) ? \
-								"YES" :\
-								"NO"\
-							]
-				</a>"}
-
-		dat += "<div class='gen_setting_name'>Above Clothes when visible:</div>"
-		dat += {"<a 
-					class='clicky' 
-					href='
-						?src=[REF(src)];
-						action=change_vis_flag;
-						genital_flag=[GENITAL_ABOVE_CLOTHING]'>
-							[CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_CLOTHING) ? \
-								"YES" :\
-								"NO"\
-							]
-				</a>"}
-
-		dat += "<div class='gen_setting_name'>Hidden by underwear:</div>"
-		dat += {"<a 
-					class='clicky' 
-					href='
-						?src=[REF(src)];
-						action=change_vis_flag;
-						genital_flag=[GENITAL_RESPECT_UNDERWEAR]'>
-							[CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_UNDERWEAR) ? \
-								"YES" :\
-								"NO"\
-							]
-				</a>"}
-
-		dat += "<div class='gen_setting_name'>Hidden by clothing:</div>"
-		dat += {"<a 
-					class='clicky' 
-					href='
-						?src=[REF(src)];
-						action=change_vis_flag;
-						genital_flag=[GENITAL_RESPECT_CLOTHING]'>
-							[CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_CLOTHING) ? \
-								"YES" :\
-								"NO"\
-							]
+						action=arouse'>
+							[arousal_term()]
 				</a>"}
 	if(!anythingatall)
-		dat += "<div class='gen_setting_name'>Not much here =3</div>"
-	dat += "</div></td></tr>"
-	dat += "</table></center>"
-	dat += {"<a 
-				class='clicky'
-				href='
-					?src=[REF(src)];
-					action=go_back;>
-						Return
-			</a>"}
+		dat += "<div class='gen_setting_name'>Nothing here! =3</div>"
+	dat += "</div>"
+	dat += "</td>"
+	dat += "</tr>"
+	dat += "</table>" // leaving this one out makes the save/undo line show up over the table, oddly enough!
+	dat += "<br>"
 	winshow(owner, "erp_window", TRUE)
 	var/datum/browser/popup = new(owner, "erp_window", "<div align='center'>Rearrange Your Guts</div>", 480, 640)
 	popup.set_content(dat.Join())
@@ -347,7 +295,7 @@
 			if(new_color)
 				var/temp_hsv = RGBtoHSV(new_color)
 				if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
-					color = sanitize_hexcolor(new_color, 6)
+					color = sanitize_hexcolor(new_color, 6, TRUE)
 					to_chat(usr,span_notice("New color set!"))
 				else
 					to_chat(usr,span_danger("Invalid color! Your color is not bright enough."))
@@ -368,6 +316,9 @@
 		if("change_vis_flag")
 			var/new_bitt = text2num(href_list["genital_flag"])
 			update_genital_visibility(new_bitt)
+			get_genital_panel()
+		if("arouse")
+			toggle_arousal()
 			get_genital_panel()
 	update()
 	
@@ -402,17 +353,20 @@
 
 /// Do something when made (un)aroused
 /obj/item/organ/genital/proc/toggle_arousal(set_state, force_state)
+	var/old_arousal = aroused_state
 	if(!CHECK_BITFIELD(genital_flags, GENITAL_CAN_AROUSE))
 		aroused_state = FALSE
 		return FALSE
 	if(force_state)
 		aroused_state = !isnull(set_state) ? set_state : !aroused_state
-	else if(HAS_TRAIT(owner,TRAIT_PERMABONER))
+	else if(HAS_TRAIT(owner,TRAIT_PERMABONER) && !aroused_state)
 		aroused_state = TRUE
-	else if(HAS_TRAIT(owner,TRAIT_NEVERBONER))
+	else if(HAS_TRAIT(owner,TRAIT_NEVERBONER) && aroused_state)
 		aroused_state = FALSE
 	else
 		aroused_state = !isnull(set_state) ? set_state : !aroused_state
+	if(old_arousal == aroused_state)
+		return aroused_state
 	switch(aroused_state)
 		if(TRUE)
 			on_arouse()
@@ -575,11 +529,6 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		"FRONT"
 	)
 ))
-/// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
-/mob/living/carbon/human/proc/get_decoded_cockstring()
-	var/list/list_out = splittext(dna?.features["genital_order"], ":")
-	return list_out
-
 /// clears all genital overlays, and reapplies them
 /mob/living/carbon/human/proc/update_genitals()
 	if(QDELETED(src))
@@ -593,7 +542,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 
 	var/list/genitals_to_add[GENITAL_LAYER_INDEX_LENGTH]
 	var/has_nads = FALSE
-	var/list/nad_order = get_decoded_cockstring() // yeah
+	var/list/nad_order = splittext(dna?.features["genital_order"], ":") // NOT reversed cus the reversal is only for UI shit
 	for(var/obj/item/organ/genital/geni in internal_organs)
 		if(geni.is_exposed()) //Checks appropriate clothing slot and if it's through_clothes
 			genitals_to_add[clamp(nad_order.Find(geni.associated_has), 1, GENITAL_LAYER_INDEX_LENGTH)] = geni
