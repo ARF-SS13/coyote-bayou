@@ -352,9 +352,9 @@
 			return
 		var/turf/aboveT = get_step_multiz(get_turf(user), UP)
 		if(!istype(aboveT, /turf/open/transparent/openspace))
-			visible_message("You can't climb there, there is a ceiling!")
+			to_chat(user, "You can't climb there, there is a ceiling!")
 			return
-		visible_message("[user] attempts to climb the [name]!", "You begin climbing the [name]")
+		visible_message(span_warning("[user] attempts to climb the [name]!"), span_warning("You begin climbing the [name]"))
 		
 		if(do_mob(user, user, 40 + (user.getStaminaLoss() * 0.25))) // 25% of your stamina loss will effect the speed on climbing.
 			var/turf/targetDest = get_step_multiz(get_turf(src), UP)
@@ -362,13 +362,13 @@
 				to_chat(user, span_warning("There's nothing to stand on once you climb up..!"))
 				return
 			
-			var/denseObj = FALSE
+			var/failedPass = FALSE
 			for(var/obj/O in targetDest.contents)
-				if(O.density)
-					denseObj = TRUE
+				if(!O.CanPass(user, get_dir(aboveT, targetDest)))
+					failedPass = TRUE
 					break
 
-			if(!isloc(targetDest) || targetDest?.density || !targetDest.CanPass(user, get_dir(user, get_turf(src))) || denseObj)
+			if(!isloc(targetDest) || targetDest?.density || !targetDest.CanPass(user, get_dir(aboveT, targetDest)) || failedPass)
 				to_chat(user, span_warning("You peak towards the top of the wall, but it's not safe to climb there!"))
 				return
 			if(user.zMove(UP, targetDest, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
