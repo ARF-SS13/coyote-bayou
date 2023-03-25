@@ -9,12 +9,13 @@
 	arousal_verb = "Your balls ache a little"
 	unarousal_verb = "Your balls finally stop aching, again"
 	linked_organ_slot = ORGAN_SLOT_PENIS
-	genital_flags = CAN_MASTURBATE_WITH|MASTURBATE_LINKED_ORGAN|GENITAL_FLUID_PRODUCTION|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
+	genital_flags = CAN_MASTURBATE_WITH|MASTURBATE_LINKED_ORGAN|GENITAL_FLUID_PRODUCTION|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESHAPE
 	var/size_name = "average"
 	shape = DEF_BALLS_SHAPE
 	fluid_id = /datum/reagent/consumable/semen
 	masturbation_verb = "massage"
 	layer_index = TESTICLES_LAYER_INDEX
+	associated_has = CS_BALLS // for cockstring stuff
 
 /obj/item/organ/genital/testicles/generate_fluid()
 	if(!linked_organ && !update_link())
@@ -52,8 +53,8 @@
 				color = SKINTONE2HEX(H.skin_tone)
 				if(!H.dna.skin_tone_override)
 					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["balls_color"]]"
+		// else
+		// 	color = "#[owner.dna.features["balls_color"]]"
 
 /obj/item/organ/genital/testicles/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna
@@ -65,4 +66,32 @@
 	fluid_rate = D.features["balls_cum_rate"]
 	fluid_mult = D.features["balls_cum_mult"]
 	fluid_efficiency = D.features["balls_efficiency"]
-	toggle_visibility(D.features["balls_visibility"], FALSE)
+	update_genital_visibility(D.features["balls_visibility_flags"], FALSE, TRUE)
+
+/obj/item/organ/genital/testicles/arousal_term()
+	if(aroused_state)
+		return "Aching with need"
+	return "Just fine"
+
+/obj/item/organ/genital/testicles/on_arouse()
+	owner?.show_message(span_userlove("You feel your testicles fill with burning need!"))
+	. = ..()
+
+/obj/item/organ/genital/testicles/on_unarouse()
+	owner?.show_message(span_userlove("Your testicles feel empty."))
+	. = ..()
+
+/// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
+/obj/item/organ/genital/testicles/get_sprite_accessory()
+	return GLOB.balls_shapes_list[shape]
+
+/// fun fact, these used to be broken cus of a typo
+/obj/item/organ/genital/testicles/get_layer_number(position)
+	switch(position)
+		if("FRONT")
+			. = ..()
+		if("MID")
+			return
+		if("BEHIND")
+			. = ..()
+

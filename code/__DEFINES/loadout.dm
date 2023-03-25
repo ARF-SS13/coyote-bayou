@@ -8,10 +8,15 @@
 #define SETTINGS_TAB 0
 #define GAME_PREFERENCES_TAB 1
 #define APPEARANCE_TAB 2
+#define ERP_TAB 3
 //#define SPEECH_TAB 3
 #define LOADOUT_TAB 4
 #define CONTENT_PREFERENCES_TAB 5
 #define KEYBINDINGS_TAB 6
+
+//the names of the erp tabs - can be 0, 1, or "has_cock" thru "has_womb"
+#define ERP_TAB_HOME 0
+#define ERP_TAB_REARRANGE 1
 
 //backpack
 #define LOADOUT_CATEGORY_BACKPACK 				"In backpack"

@@ -23,7 +23,7 @@
 
 
 /datum/preferences/proc/update_preview_icon(current_tab)
-	var/equip_job = (current_tab != APPEARANCE_TAB)
+	var/equip_job = ((current_tab != APPEARANCE_TAB) || (current_tab != ERP_TAB))
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob = get_highest_job()
 

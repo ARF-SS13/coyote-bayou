@@ -105,16 +105,10 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 		message_admins("[key_name_admin(usr)] manually reloaded mentors")
 
 /mob/living/carbon/proc/has_penis()
-	var/obj/item/organ/genital/G = getorganslot(ORGAN_SLOT_PENIS)
-	if(G && istype(G, /obj/item/organ/genital/penis))
-		return G
-	return FALSE
+	return getorganslot(ORGAN_SLOT_PENIS)
 
 /mob/living/carbon/proc/has_balls()
-	var/obj/item/organ/genital/G = getorganslot(ORGAN_SLOT_TESTICLES)
-	if(G && istype(G, /obj/item/organ/genital/testicles))
-		return G
-	return FALSE
+	return getorganslot(ORGAN_SLOT_TESTICLES)
 
 /mob/living/carbon/proc/has_vagina()
 	return getorganslot(ORGAN_SLOT_VAGINA)
@@ -126,9 +120,10 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 	return getorganslot(ORGAN_SLOT_BUTT)
 
 /mob/living/carbon/proc/has_belly()
-	if(getorganslot(ORGAN_SLOT_BELLY))
-		return TRUE
-	return FALSE
+	return getorganslot(ORGAN_SLOT_BELLY)
+
+/mob/living/carbon/proc/has_womb()
+	return getorganslot(ORGAN_SLOT_WOMB)
 
 /mob/living/carbon/proc/is_groin_exposed(list/L)
 	if(!L)
