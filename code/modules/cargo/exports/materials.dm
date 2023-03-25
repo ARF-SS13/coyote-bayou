@@ -133,7 +133,7 @@
 	export_types = list(/obj/item/stack/sheet/animalhide/chitin)
 
 /datum/export/material/f13cash
-	cost = 2
+	cost = 10
 	unit_name = "caps"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)

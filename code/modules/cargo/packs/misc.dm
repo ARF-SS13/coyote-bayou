@@ -311,14 +311,14 @@
 /datum/supply_pack/misc/capstwofifty
 	name = "Caps Conversion 250"
 	desc = "Converts credits into caps! 250 Version"
-	cost = 5000
+	cost = 2500
 	contains = list(/obj/item/stack/f13Cash/caps/twofivezero)
 	crate_name = "caps crate 1"
 
 /datum/supply_pack/misc/capsfivehundred
 	name = "Caps Conversion 500"
 	desc = "Converts credits into caps! 500 Version"
-	cost = 10000
+	cost = 5000
 	contains = list(/obj/item/stack/f13Cash/caps/fivezerozero)
 	crate_name = "caps crate 2"
 
