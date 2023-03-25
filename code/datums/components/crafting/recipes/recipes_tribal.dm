@@ -112,7 +112,7 @@
 			/obj/item/twohanded/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
@@ -123,7 +123,7 @@
 			/obj/item/twohanded/bonespear = 1)
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 */
 
 /datum/crafting_recipe/tribal/mantlebrown
@@ -199,7 +199,7 @@
 				/obj/item/stack/ore/glass = 1,
 				/obj/item/pestle = 1,
 				/obj/item/reagent_containers/glass/mortar = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/warmace
@@ -209,7 +209,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /*datum/crafting_recipe/voodoo
@@ -221,7 +221,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/yucca = 1)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/coyotechew
@@ -231,7 +231,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 2, /obj/item/reagent_containers/food/snacks/grown/feracactus = 1, /obj/item/reagent_containers/food/snacks/grown/yucca = 1)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 	always_available = FALSE
 */
 

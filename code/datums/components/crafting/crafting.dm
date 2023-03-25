@@ -24,13 +24,13 @@
 					CAT_SCAVENGING,
 					CAT_FORGING,
 					CAT_TOOL,
-					CAT_ROBOT,
+					//CAT_ROBOT,
 				),
 				CAT_MISC = list(
-					CAT_FARMING,
+					//CAT_FARMING,
 					CAT_MISCELLANEOUS,
-					CAT_FURNITURE,
-					CAT_BOTTLE,
+					//CAT_FURNITURE,
+					//CAT_BOTTLE,
 				),
 				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
@@ -45,15 +45,15 @@
 				),
 				CAT_CLOTHING = list(
 					CAT_GENCLOTHES,
-					CAT_SHOES,
-					CAT_MISCCLOTHING,
+					//CAT_SHOES,
+					//CAT_MISCCLOTHING,
 					CAT_ARMOR,
-					CAT_WASTELAND,
-					CAT_BELTS
+					//CAT_WASTELAND,
+					//CAT_BELTS
 				),
 				CAT_MEDICAL = CAT_NONE,
 				CAT_DRINK = CAT_NONE,
-				CAT_EXPLOSIVE = CAT_NONE,
+				//CAT_EXPLOSIVE = CAT_NONE,
 			)
 
 	var/cur_category = CAT_NONE

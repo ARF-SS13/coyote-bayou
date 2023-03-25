@@ -14,7 +14,8 @@
 				/obj/item/assembly/prox_sensor = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 60
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/secbot
 	name = "Secbot"
@@ -26,7 +27,8 @@
 				/obj/item/bodypart/r_arm/robot = 1)
 	tools = list(TOOL_WELDER)
 	time = 60
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/cleanbot
 	name = "Cleanbot"
@@ -35,7 +37,8 @@
 				/obj/item/assembly/prox_sensor = 1,
 				/obj/item/bodypart/r_arm/robot = 1)
 	time = 40
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/floorbot
 	name = "Floorbot"
@@ -45,7 +48,8 @@
 				/obj/item/assembly/prox_sensor = 1,
 				/obj/item/bodypart/r_arm/robot = 1)
 	time = 40
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /*/datum/crafting_recipe/medbot
 	name = "Medbot"
@@ -55,7 +59,9 @@
 				/obj/item/assembly/prox_sensor = 1,
 				/obj/item/bodypart/r_arm/robot = 1)
 	time = 40
-	category = CAT_ROBOT*/
+		subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+	*/
 
 /datum/crafting_recipe/Firebot
 	name = "Firebot"
@@ -65,7 +71,8 @@
 				/obj/item/assembly/prox_sensor = 1,
 				/obj/item/clothing/head/hardhat/red = 1)
 	time = 40
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/aitater
 	name = "intelliTater"
@@ -75,7 +82,8 @@
 	reqs = list(/obj/item/aicard = 1,
 				/obj/item/reagent_containers/food/snacks/grown/potato = 1,
 				/obj/item/stack/cable_coil = 5)
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/aispook
 	name = "intelliLantern"
@@ -85,4 +93,5 @@
 	reqs = list(/obj/item/aicard = 1,
 					/obj/item/reagent_containers/food/snacks/grown/pumpkin = 1,
 					/obj/item/stack/cable_coil = 5)
-	category = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
