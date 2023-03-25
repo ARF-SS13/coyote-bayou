@@ -220,10 +220,10 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/reagent_containers/hypospray/medipen/psycho = 5,
 	/obj/item/reagent_containers/pill/random = 20,
 	/obj/item/reagent_containers/pill/patch/random = 5,
-	/obj/item/reagent_containers/pill/healingpowder/random = 5,
-	/obj/item/reagent_containers/hypospray/medipen/stimpak/random = 10,
-	/obj/item/reagent_containers/syringe/random = 10,
-	/obj/item/reagent_containers/glass/bottle/random = 5,
+	/obj/item/reagent_containers/pill/healingpowder/random = 10,
+	/obj/item/reagent_containers/hypospray/medipen/stimpak/random = 20,
+	/obj/item/reagent_containers/syringe/random = 20,
+	/obj/item/reagent_containers/glass/bottle/random = 10,
 ))
 
 GLOBAL_LIST_INIT(trash_craft, list(
