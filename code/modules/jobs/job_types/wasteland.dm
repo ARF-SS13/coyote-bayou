@@ -1335,6 +1335,27 @@ Raider
 		/datum/outfit/loadout/bodyguard,
 		)
 */
+
+/datum/job/wasteland/machine
+	title = "Sentient Machine"
+	flag = F13CYBORG
+	department_flag = CYBORG
+	faction = FACTION_WASTELAND
+	total_positions = 5
+	spawn_positions = 1
+	selection_color = "#3a3a3a"
+
+
+/datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = TRUE, datum/outfit/outfit_override = null, client/preference_source)
+	return H.Robotize(FALSE, latejoin)
+
+/datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
+	. = ..()
+	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	R.apply_pref_name("cyborg", M.client)
+	R.gender = NEUTER
+
+
 //Wasteland Preacher
 /datum/job/wasteland/f13preacher
 	title = "Preacher"
