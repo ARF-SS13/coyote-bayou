@@ -924,3 +924,32 @@
 	results = list(/datum/reagent/PEsmaller = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/anaphrodisiac = 2)
 	required_temp = 200
+
+/datum/chemical_reaction/butt_enlarger
+	name = "Callipygian Cream"
+	id = "/datum/reagent/butt_enlarger"
+	results = list(/datum/reagent/butt_enlarger = 2)
+	required_reagents = list (/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/diethylamine = 2, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/copper = 2, /datum/reagent/drug/aphrodisiac = 2)
+	required_temp = 200
+
+/datum/chemical_reaction/butt_shrinker
+	name = "Callipygian Skim"
+	id = "/datum/reagent/butt_shrinker"
+	results = list(/datum/reagent/butt_shrinker = 2)
+	required_reagents = list (/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/diethylamine = 2, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/copper = 2, /datum/reagent/drug/anaphrodisiac = 2)
+	required_temp = 200
+
+/datum/chemical_reaction/belly_enlarger
+	name = "Fortified butter"
+	id = "/datum/reagent/belly_enlarger"
+	results = list(/datum/reagent/belly_enlarger = 2)
+	required_reagents = list (/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/diethylamine = 2, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/consumable/milk = 2, /datum/reagent/drug/aphrodisiac = 2)
+	required_temp = 200
+
+/datum/chemical_reaction/belly_shrinker
+	name = "weight-loss shake"
+	id = "/datum/reagent/belly_shrinker"
+	results = list(/datum/reagent/belly_shrinker = 2)
+	required_reagents = list (/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/diethylamine = 2, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/consumable/milk = 2, /datum/reagent/drug/anaphrodisiac = 2)
+	required_temp = 200
+
