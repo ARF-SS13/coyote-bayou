@@ -25,8 +25,8 @@
 	var/iconBaseState = "firebow"
 
 	// timing vars for the sound effects. Will hardcode once tuned perfectly.
-	var/stageOneTime = 30
-	var/stageTwoTime = 18
+	var/stageOneTime = 35
+	var/stageTwoTime = 15
 	var/stageThreeTime = 50
 
 	var/cinder = FALSE
