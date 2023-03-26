@@ -459,6 +459,7 @@
 	new /obj/item/reagent_containers/pill/patch/jet(src) //more than 7 objects, absolutely overflowing with drumgs
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
+	new /obj/item/storage/pill_bottle/random(src)
 
 /datum/loadout_box/drugs
 	entry_tag = "drug stash"
@@ -495,6 +496,7 @@
 	new /obj/item/storage/pill_bottle/happy(src)
 	new /obj/item/reagent_containers/glass/bottle/chloralhydrate(src)
 	new /obj/item/reagent_containers/syringe(src)
+	new /obj/item/storage/pill_bottle/random(src)
 
 /datum/loadout_box/quack
 	entry_tag = "fake medical tools"
