@@ -68,7 +68,7 @@
 	if(D.species.use_skintones)
 		color = SKINTONE2HEX(H.skin_tone)
 	else
-		color = "[D.features["vag_color"]]"
+		color = "#[D.features["vag_color"]]"
 	shape = "[D.features["vag_shape"]]"
 	update_genital_visibility(D.features["vag_visibility_flags"], FALSE, TRUE)
 
