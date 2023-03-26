@@ -1032,3 +1032,27 @@
 /datum/sprite_accessory/hair/pigtbelle
 	name = "Cotton Belle"
 	icon_state = "hair_pigtbelle"
+
+/datum/sprite_accessory/hair/spicy
+	name = "Spicy"
+	icon_state = "hair_spicy"
+
+/datum/sprite_accessory/hair/hyenamane
+	name = "Hyena mane"
+	icon_state = "hair_hyenamane"
+
+/datum/sprite_accessory/hair/halfshavedlong
+	name = "Half-shaved long"
+	icon_state = "halfshave_long"
+
+/datum/sprite_accessory/hair/halfshavedmessy
+	name = "Half-shaved messy"
+	icon_state = "halfshave_messy"
+
+/datum/sprite_accessory/hair/halfshavedmessylong
+	name = "Half-shave long messy"
+	icon_state = "halfshave_messylong"
+
+/datum/sprite_accessory/hair/halfshavedglamorous
+	name = "Half-shave glamorous"
+	icon_state = "halfshave_glamorous"
