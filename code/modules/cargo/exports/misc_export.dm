@@ -3,7 +3,7 @@
 // medicine
 
 /datum/export/item/chems
-	cost = 65
+	cost = 200
 	unit_name = "chems (low)"
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak,
 	/obj/item/reagent_containers/hypospray/medipen/medx,
@@ -20,7 +20,7 @@
 	)
 
 /datum/export/item/chemshigh
-	cost = 150
+	cost = 400
 	unit_name = "chems (high)"
 	export_types = list(,
 	/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
@@ -32,10 +32,10 @@
 	cost = 80
 	unit_name = "super stimpak"
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super) */
-	
+
 
 /datum/export/item/lightpistol
-	cost = 100
+	cost = 400
 	unit_name = "light pistol"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99,
@@ -53,7 +53,7 @@
 		)
 
 /datum/export/item/heavypistol
-	cost = 225
+	cost = 600
 	unit_name = "heavy pistol"
 	export_types = list(
 		/obj/item/gun/energy/laser/wattz/magneto,
@@ -65,7 +65,7 @@
 		)
 
 /datum/export/item/advpistol
-	cost = 350
+	cost = 800
 	unit_name = "advanced pistol"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/pistol/deagle,
@@ -80,7 +80,7 @@
 		)
 
 /datum/export/item/smg
-	cost = 375
+	cost = 1000
 	unit_name = "submachine gun"
 	export_types = list(
 		/obj/item/gun/energy/laser/plasma/pistol,
@@ -96,7 +96,7 @@
 		)
 
 /datum/export/item/carbine
-	cost = 325
+	cost = 800
 	unit_name = "carbine"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/m1carbine,
@@ -111,14 +111,14 @@
 	)
 
 /datum/export/item/dbshotgun
-	cost = 275
+	cost = 600
 	unit_name = "double-barreled shotgun"
 	export_types = list(/obj/item/gun/ballistic/revolver/caravan_shotgun,
 	/obj/item/gun/ballistic/revolver/widowmaker,
 	)
 
 /datum/export/item/pumpshotgun
-	cost = 350
+	cost = 800
 	unit_name = "pump-action shotgun"
 	export_types = list(
 		/obj/item/gun/ballistic/shotgun/hunting,
@@ -127,7 +127,7 @@
 		)
 
 /datum/export/item/semishotgun
-	cost = 475
+	cost = 1500
 	unit_name = "semi-auto shotgun"
 	export_types = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5,
@@ -137,7 +137,7 @@
 	)
 
 /datum/export/item/advshotgun
-	cost = 650
+	cost = 2000
 	unit_name = "advanced shotgun"
 	export_types = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
@@ -147,7 +147,7 @@
 		)
 
 /datum/export/item/semirifle
-	cost = 550
+	cost = 2000
 	unit_name = "semi-automatic rifle"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/varmint/verminkiller,
@@ -168,7 +168,7 @@
 	)
 
 /datum/export/item/autorifle
-	cost = 850
+	cost = 2500
 	unit_name = "automatic rifle"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/service/r82,
@@ -187,7 +187,7 @@
 	)
 
 /datum/export/item/lmg
-	cost = 950
+	cost = 4000
 	unit_name = "light machine gun"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/r84,
@@ -239,7 +239,7 @@
 	export_types = list(/obj/item/stock_parts/cell/ammo/ecp)
 
 /datum/export/item/traitbookslow
-	cost = 400
+	cost = 800
 	unit_name = "low-quality technical manual"
 	export_types = list(/obj/item/book/granter/trait/lowsurgery,
 				/obj/item/book/granter/trait/chemistry,
@@ -252,7 +252,7 @@
 				/obj/item/book/granter/crafting_recipe/gunsmith_one)
 
 /datum/export/item/traitbooks
-	cost = 550
+	cost = 1000
 	unit_name = "high-quality technical manual"
 	export_types = list(/obj/item/book/granter/trait/lowsurgery,
 				/obj/item/book/granter/trait/chemistry,
@@ -266,7 +266,7 @@
 				/obj/item/book/granter/crafting_recipe/gunsmith_four)
 
 /datum/export/item/crops
-	cost = 20
+	cost = 50
 	unit_name = "produce"
 	export_types = list(/obj/item/reagent_containers/food/snacks/grown/agave,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris,
@@ -342,7 +342,7 @@
 	)
 
 /datum/export/item/rarecrops
-	cost = 50
+	cost = 100
 	unit_name = "exotic produce"
 	export_types = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
@@ -420,7 +420,7 @@
 	/obj/item/export/bottle/fernet,
 	/obj/item/export/bottle/kahlua,
 	)
-	
+
 /datum/export/item/highliquor
 	k_elasticity = 0
 	cost = 75
