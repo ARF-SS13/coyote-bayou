@@ -958,7 +958,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_TECHNOPHREAK
 	traitname = "craftsmanship"
-	crafting_recipe_types = list(/datum/crafting_recipe/tribalradio, /datum/crafting_recipe/durathread_vest)
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalradio, /datum/crafting_recipe/durathread_vest, /datum/crafting_recipe/enhancedecp, /datum/crafting_recipe/enhancedenergycell, /datum/crafting_recipe/enhancedmfcell)
 	remarks = list("Troubleshooting is a systematic approach to problem solving, do not skip any steps in the process.", "Ensure you have all the required parts before you begin.", "Always wear personal protective equipment, electric shock can be fatal.", "Combustibles and sparks do not mix, store welding fuel in a safe location.", "Don't lose track of your tools, or you have a new problem to deal with.")
 
 /obj/item/book/granter/trait/wirevision
