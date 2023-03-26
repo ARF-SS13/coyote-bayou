@@ -38,6 +38,9 @@
 /obj/item/hand_item/licker/attack_obj(obj/O, mob/living/user)
 	return start_licking(src, O, user)
 
+/obj/item/hand_item/licker/attack_obj_nohit(obj/O, mob/living/user)
+	return start_licking(src, O, user)
+
 /obj/item/hand_item/licker/proc/start_licking(atom/source, atom/licked, mob/living/carbon/user)
 	if(!iscarbon(user))
 		return FALSE
