@@ -87,7 +87,7 @@
 
 /obj/item/reagent_containers/pill/healingpowder/random/Initialize()
 	list_reagents = list(get_random_reagent_id() = rand(5,15))
-	var/powder_name = pick("discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	var/powder_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
 	name = "[powder_name] powder"
 	. = ..()
 
@@ -146,6 +146,6 @@
 
 /obj/item/reagent_containers/pill/patch/random/Initialize()
 	list_reagents = list(get_random_reagent_id() = rand(5,15))
-	var/patch_name = pick("discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	var/patch_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
 	name = "[patch_name] patch"
 	. = ..()
