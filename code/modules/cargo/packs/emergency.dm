@@ -67,7 +67,6 @@
 	cost = 10000
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
-					/obj/item/clothing/glasses/hud/health,
 					/obj/item/defibrillator/loaded,
 					/obj/item/storage/belt/medical,
 					/obj/item/storage/firstaid/toxin,
