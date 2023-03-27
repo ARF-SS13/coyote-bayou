@@ -21,7 +21,7 @@
 	return new_msg
 
 /mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
-	var/static/list/crit_allowed_modes = list(
+	/* var/static/list/crit_allowed_modes = list(
 		MODE_WHISPER = TRUE, 
 		MODE_CUSTOM_SAY = TRUE, 
 		MODE_SING = TRUE, 
@@ -29,7 +29,7 @@
 		MODE_ROBOT = TRUE, 
 		MODE_CHANGELING = TRUE, 
 		MODE_ALIEN = TRUE
-		)
+		) */
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/talk_key = get_key(message)
 
@@ -81,12 +81,11 @@
 	if(check_emote(original_message, just_runechat = just_chat) || !can_speak_basic(original_message, ignore_spam))
 		return
 
-	if(in_critical)
-		if(!(crit_allowed_modes[message_mode]))
-			return
-	else if(stat == UNCONSCIOUS)
-		if(!(unconscious_allowed_modes[message_mode]))
-			return
+	//if(in_critical)
+	//	if(!(crit_allowed_modes[message_mode]))
+	//		return
+	if(stat == UNCONSCIOUS && !(unconscious_allowed_modes[message_mode]))
+		return
 
 	// language comma detection.
 	var/datum/language/message_language = get_message_language(message)
@@ -119,8 +118,8 @@
 
 	//var/fullcrit = InFullCritical()
 	if(in_critical || message_mode == MODE_WHISPER)
-		message_range = 1
-		message_mode = MODE_WHISPER
+		message_range = 3
+		spans |= SPAN_ITALICS
 		src.log_talk(message, LOG_WHISPER)
 		/* if(fullcrit) // no more dying for you!
 			var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
@@ -373,9 +372,7 @@
 
 /mob/living/say_mod(input, message_mode)
 	. = ..()
-	if(message_mode == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
-	else if(message_mode != MODE_CUSTOM_SAY)
+	if(message_mode != MODE_CUSTOM_SAY)
 		if(message_mode == MODE_WHISPER)
 			. = verb_whisper
 		else if(stuttering)
@@ -384,6 +381,8 @@
 			. = "gibbers"
 		else if(message_mode == MODE_SING)
 			. = verb_sing
+		else if(InCritical())
+			. = "whines"
 
 /mob/living/whisper(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)
