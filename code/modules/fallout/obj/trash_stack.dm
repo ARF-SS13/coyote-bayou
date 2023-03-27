@@ -1,6 +1,6 @@
 /obj/item/storage/trash_stack
 	name = "pile of garbage"
-	desc = "a pile of garbage. Smells as good, as it looks, though it may contain something useful. Or may not"
+	desc = "A pile of garbage. Smells as good as it looks, though it may contain something useful. Or rats. Probably rats."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	icon_state = "trash_1"
 	anchored = TRUE
