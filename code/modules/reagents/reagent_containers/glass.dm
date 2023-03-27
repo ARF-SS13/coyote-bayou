@@ -411,7 +411,7 @@
 			else
 				to_chat(user, span_notice("You fill [src] to the brim."))
 		return TRUE
-	if(!I.grind_requirements(src)) //Error messages should be in the objects' definitions
+	if(I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 	if(I.juice_results || I.grind_results)
 		if(user.transferItemToLoc(I, src))

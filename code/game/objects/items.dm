@@ -394,8 +394,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			return
 
 
-	//If the item is in a storage item, take it out
-	SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
+	//If the item is in a storage item, take it out. Unless it cant be removed. Then... dont
+	if(CHECK_BITFIELD(SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE), NO_REMOVE_FROM_STORAGE))
+		to_chat(user,span_alert("[src] can't be taken out of [loc]!"))
+		return
 
 	if(throwing)
 		throwing.finalize(FALSE)
@@ -858,7 +860,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/on_mob_death(mob/living/L, gibbed)
 
-/obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R) //Used to check for extra requirements for grinding an object
+/obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R, silent) //Used to check for extra requirements for grinding an object
 	return TRUE
 
 /obj/item/proc/reset_transform() //Used to check for extra requirements for grinding an object
