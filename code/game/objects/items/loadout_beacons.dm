@@ -1089,7 +1089,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/bow/shortbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
-	new /obj/item/storage/bag/tribe_quiver/light(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
 /*dunno if we should have roundstart crossbow simply cause we want a lil more progression
 /obj/item/storage/box/gun/bow/crossbow

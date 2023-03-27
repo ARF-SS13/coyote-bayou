@@ -1438,7 +1438,7 @@
 	item_state = "combatrifle"
 	icon_prefix = "combatrifle"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 
 	slowdown = GUN_SLOWDOWN_CARBINE
@@ -1493,7 +1493,7 @@
 	item_state = "combatrifle"
 	icon_prefix = "combatrifle"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 
 	slowdown = GUN_SLOWDOWN_CARBINE
@@ -1519,7 +1519,7 @@
 	item_state = "combatrifle"
 	icon_prefix = "combatrifle"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 
 	slowdown = GUN_SLOWDOWN_CARBINE
