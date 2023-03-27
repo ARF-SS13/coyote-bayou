@@ -273,14 +273,6 @@
 /obj/item/stock_parts/cell/pulse/pistol //10 pulse shots
 	name = "pulse pistol power cell"
 	maxcharge = 2000
-/obj/item/stock_parts/cell/cyborgteg
-	name = "cyborg thermoelectric generator"
-	desc = "a radioactive decay generator, capable of outputting a small amount of power for several hundred years."
-	icon_state = "hcell"
-	maxcharge = 2500
-	custom_materials = list(/datum/material/glass=60, /datum/material/uranium=120)
-	chargerate = 1000
-	self_recharge = 1
 
 /obj/item/stock_parts/cell/high
 	name = "high-capacity power cell"
@@ -581,24 +573,6 @@
 /obj/item/stock_parts/cell/ammo/ecp/large
 	name = "enhanced electron charge pack"
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has been modified to hold far more energy."
-	icon = 'icons/fallout/objects/powercells.dmi'
-	icon_state = "ecp-full"
-	maxcharge = 4800
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/stock_parts/cell/ammo/ecp/update_icon()
-	switch(charge)
-		if (2401 to 4800)
-			icon_state = "ecp-full"
-		if (201 to 2400)
-			icon_state = "ecp-half"
-		if (0 to 200)
-			icon_state = "ecp-empty"
-	. = ..()
-
-/obj/item/stock_parts/cell/ammo/ecp/overcharged
-	name = "overcharged electron charge pack"
-	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has been overcharged to provide more energy at the cost of cell life."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ecp-full"
 	maxcharge = 4800
