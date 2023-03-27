@@ -24,11 +24,6 @@
 
 	var/iconBaseState = "firebow"
 
-	// timing vars for the sound effects. Will hardcode once tuned perfectly.
-	var/stageOneTime = 35
-	var/stageTwoTime = 15
-	var/stageThreeTime = 50
-
 	var/cinder = FALSE
 	var/burnLength = 15 SECONDS
 
@@ -54,16 +49,16 @@
 	user.playsound_local(user, 'modular_coyote/sound/items/firebow1.ogg', 40, FALSE)
 	user.visible_message(span_notice("[user] begins to draw the bow back and forth, starting slow..."), span_notice("You start drawing the bow back and forth slowly..."))
 
-	if(do_after(user, stageOneTime, target = src))
+	if(do_after(user, 35, target = src))
 		user.playsound_local(user, 'modular_coyote/sound/items/firebow2.ogg', 40, FALSE)
 		user.visible_message(span_notice("[user] builds up momentum, causing smoke to form around the bottom of the stick."), span_notice("You get quicker, you even start seeing smoke to form.."))
 
-		if(do_after(user, stageTwoTime, target = src))
+		if(do_after(user, 15, target = src))
 			if(prob(60))
 				user.playsound_local(user, 'modular_coyote/sound/items/firebow3.ogg', 40, FALSE)
 				user.visible_message(span_notice("[user] gets incredibly quick now, as a red glow would softly brighten the longer they continue..!"), span_notice("You're now at max speed, you can see a red glow forming at the base."))
 
-				if(do_after(user, stageThreeTime, target = src))
+				if(do_after(user, 50, target = src))
 					user.visible_message(span_notice("[user] creates a small glowing pile of embers on the [src]..!"), span_danger("You created a small pile of red embers on the [src], use it quickly!"))
 					return TRUE
 	
