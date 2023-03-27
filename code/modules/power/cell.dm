@@ -482,6 +482,25 @@
 			icon_state = "mfc-empty"
 	. = ..()
 
+// Enhanced Microfusion cell - large energy weapons
+/obj/item/stock_parts/cell/ammo/mfc/large
+	name = "enhanced microfusion cell"
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has been modified to hold double the normal charge."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 3000
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/stock_parts/cell/ammo/mfc/update_icon()
+	switch(charge)
+		if (2001 to 3000)
+			icon_state = "mfc-full"
+		if (151 to 2000)
+			icon_state = "mfc-half"
+		if (0 to 150)
+			icon_state = "mfc-empty"
+	. = ..()
+
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
 	desc = "An advanced ultracite cell, used as ammunition for special energy weapons."
@@ -496,6 +515,14 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
 	maxcharge = 1500
+
+// Enhanced energy cell - small energy weapons
+/obj/item/stock_parts/cell/ammo/ec/large
+	name = "enhanced energy cell"
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one has been modified to hold far more energy."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "ec-full"
+	maxcharge = 2250
 
 
 // Microfusion breeder? Okay, sure.
@@ -539,6 +566,25 @@
 		if (101 to 1500)
 			icon_state = "ecp-half"
 		if (0 to 100)
+			icon_state = "ecp-empty"
+	. = ..()
+
+// Enhanced electron charge pack - rapid fire energy
+/obj/item/stock_parts/cell/ammo/ecp/large
+	name = "enhanced electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has been modified to hold far more energy."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "ecp-full"
+	maxcharge = 3600
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/stock_parts/cell/ammo/ecp/update_icon()
+	switch(charge)
+		if (2401 to 3600)
+			icon_state = "ecp-full"
+		if (201 to 2400)
+			icon_state = "ecp-half"
+		if (0 to 200)
 			icon_state = "ecp-empty"
 	. = ..()
 

@@ -36,6 +36,11 @@ GLOBAL_LIST_INIT(tier_three_parts, list(
 	/datum/crafting_recipe/super_capacitor,
 	/datum/crafting_recipe/ultra_micro_laser))
 
+GLOBAL_LIST_INIT(energyweapon_cell_crafting, list(
+	/datum/crafting_recipe/enhancedenergycell,
+	/datum/crafting_recipe/enhancedmfcell,
+	/datum/crafting_recipe/enhancedecp))
+
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
 	/datum/crafting_recipe/huntingrifle,
@@ -320,11 +325,13 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	if(!H.mind.learned_recipes)
 		H.mind.learned_recipes = list()
 	H.mind.learned_recipes |= GLOB.tier_three_parts
+	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
 
 /datum/quirk/technophreak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.mind.learned_recipes -= GLOB.tier_three_parts
+		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"

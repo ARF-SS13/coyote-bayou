@@ -79,20 +79,15 @@ Cyborg
 /datum/job/cyborg
 	title = "Cyborg"
 	flag = F13CYBORG
-	department_flag = VAULT
-	faction = FACTION_VAULT
-	total_positions = 0
-	spawn_positions = 0
-	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
-	enforces = "The Vault expects: Contributing to Vault society. Adherence to Vault-tec Corporate Regulations. Participation in special projects, as ordered by the Overseer."
-	supervisors = "Overseer/Vault"	//Nodrak
+	department_flag = CYBORG
+	faction = FACTION_WASTELAND
+	total_positions = 5
+	spawn_positions = 1
 	selection_color = "#ddffdd"
-	minimal_player_age = 21
-	exp_requirements = 300
-	exp_type = EXP_TYPE_FALLOUT
 
-/datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
-	return H.Robotize(FALSE, latejoin)
+
+/datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = TRUE, datum/outfit/outfit_override = null, client/preference_source)
+	return H.Robotize(TRUE, latejoin)
 
 /datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	. = ..()
@@ -108,13 +103,10 @@ Mr. Handy
 	flag = CYBORG
 	department_flag = ENGSEC
 	//
-	total_positions = 0
+	total_positions = 5
 	spawn_positions = 1
 	supervisors = "Your Creators"	//Nodrak
 	selection_color = "#ddffdd"
-	minimal_player_age = 21
-	exp_requirements = 6000
-	exp_type = EXP_TYPE_CREW
 
 /datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
 	return H.Robotize(FALSE, latejoin)
