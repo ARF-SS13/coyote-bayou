@@ -488,14 +488,14 @@
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has been modified to hold double the normal charge."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 4000
+	maxcharge = 3000
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
-		if (3001 to 4000)
+		if (2001 to 3000)
 			icon_state = "mfc-full"
-		if (151 to 3000)
+		if (151 to 2000)
 			icon_state = "mfc-half"
 		if (0 to 150)
 			icon_state = "mfc-empty"
@@ -522,7 +522,7 @@
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one has been modified to hold far more energy."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
-	maxcharge = 3000
+	maxcharge = 2250
 
 
 // Microfusion breeder? Okay, sure.
@@ -575,12 +575,12 @@
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has been modified to hold far more energy."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ecp-full"
-	maxcharge = 4800
+	maxcharge = 3600
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
 	switch(charge)
-		if (2401 to 4800)
+		if (2401 to 3600)
 			icon_state = "ecp-full"
 		if (201 to 2400)
 			icon_state = "ecp-half"
