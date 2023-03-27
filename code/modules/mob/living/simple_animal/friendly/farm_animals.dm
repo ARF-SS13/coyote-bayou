@@ -396,7 +396,7 @@
 		stax = I
 		if(!stax.tool_use_check(user, 2))
 			return
-		
+
 	if(saddle || bridle)
 		visible_message(span_alertalien("[src] consumes the [I]."))
 		refuel_horse()
@@ -820,6 +820,73 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
 	butcher_difficulty = 1
+
+
+
+//Ridable Fennec
+/mob/living/simple_animal/cow/brahmin/horse/fennec //faster than a brahmin, but much less tanky
+	name = "fennec"
+	desc = "That's a fennec, screm."
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "fennec"
+	icon_living = "fennec"
+	icon_dead = "fennec_dead"
+	speak = list(
+	"*shiver",
+	"*alert",
+	"*fenbark"
+	)
+	speak_emote = list(
+		"barks",
+		"yips"
+		)
+	emote_hear = list(
+		"screams like a fenenec"
+		)
+	emote_see = list(
+		"perks its ears up."
+		)
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 100
+	maxHealth = 100
+	ride_move_delay = 1.5
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 3
+	attack_sound = 'sound/weapons/punch1.ogg'
+	young_type = /mob/living/simple_animal/cow/brahmin/horse
+	footstep_type = FOOTSTEP_MOB_HOOF
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 2,
+		/obj/item/stack/sheet/bone = 1
+		)
+	butcher_difficulty = 1
+	ride_offsets = list(
+		"1" = list(1, 6),
+		"2" = list(1, 6),
+		"4" = list(0, 6),
+		"8" = list(0, 7)
+		)
+
 
 	/*
 /obj/item/brahminbags

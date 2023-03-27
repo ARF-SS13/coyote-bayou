@@ -230,9 +230,12 @@
 			else
 				return ..()
 	//IGNITE. Use a hot object to light the bonfire.
-	if(W.get_temperature())
+	var/ignition = W.ignition_effect(src, user)
+	if(ignition)
+		visible_message(ignition)
 		StartBurning()
 		return
+
 	//COOKING. Place an object on the bonfire as if it were a table, using its grill.
 	if(grill)
 		if(user.a_intent != INTENT_HARM && !(W.item_flags & ABSTRACT))

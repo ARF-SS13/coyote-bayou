@@ -219,7 +219,7 @@
 	new /obj/item/reagent_containers/medspray/silver_sulf(src)
 	new /obj/item/healthanalyzer/advanced(src)
 	new /obj/item/reagent_containers/syringe/lethal/choral(src) // what the fuck does anyone use this piece of shit for
-	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
+//	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
 /obj/item/storage/firstaid/debug_bleedtest
 	name = span_phobia("Debug Testkit For Testing Bleedstuff quickly (illegal)")

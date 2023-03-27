@@ -233,6 +233,7 @@
 	pets = list(
 "Brahmin" = /mob/living/simple_animal/cow/brahmin,
 "Horse" = /mob/living/simple_animal/cow/brahmin/horse,
+"Fennec" = /mob/living/simple_animal/cow/brahmin/horse/fennec,
 "Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker 
 )
 
