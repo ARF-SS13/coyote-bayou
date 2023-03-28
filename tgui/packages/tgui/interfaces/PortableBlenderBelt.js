@@ -1,7 +1,8 @@
+import { toFixed } from 'common/math';
 import { toTitleCase } from 'common/string';
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, LabeledList, Section } from '../components';
+import { AnimatedNumber, Box, Button, Icon, LabeledList, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
 
@@ -25,11 +26,8 @@ export const PortableBlenderBelt = (props, context) => {
           <LabeledList>
             <LabeledList.Item label="Buffer Storage">
               <ProgressBar
-                ranges={{
-                  good: [-Infinity, Infinity],
-                }}
-                value={bufferVolume / bufferMaxVolume}>
-                {toFixed(bufferVolume) + ' units /' + toFixed(bufferMaxVolume) + ' units'}
+                value={data.bufferVolume / data.bufferMaxVolume}>
+                {toFixed(data.bufferVolume) + ' units /' + toFixed(data.bufferMaxVolume) + ' units'}
               </ProgressBar>
             </LabeledList.Item>
           </LabeledList>
@@ -65,12 +63,6 @@ export const PortableBlenderBelt = (props, context) => {
         <Section
           title="Disposal"
           buttons={
-            (<Button
-            color={putItBack ? 'good' : 'bad'}
-            icon={putItBack ? 'exchange-alt' : 'times'}
-            content={putItBack ? 'Transfer' : 'Destroy'}
-            onClick={() => act('toggle_putback')} />)
-            (
             beakerTransferAmounts.map(amount => (
               <Button
                 key={amount}
@@ -79,7 +71,12 @@ export const PortableBlenderBelt = (props, context) => {
                 content={amount}
                 onClick={() => act('remove', { amount })} />
             ))
-          )}>
+          }>
+              <Button
+              color={putItBack ? 'good' : 'bad'}
+              icon={putItBack ? 'exchange-alt' : 'times'}
+              content={putItBack ? 'Transfer' : 'Destroy'}
+              onClick={() => act('toggle_putback')} />
           <LabeledList>
             <LabeledList.Item
               label="Beaker"
