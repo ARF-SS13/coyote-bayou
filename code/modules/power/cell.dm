@@ -474,11 +474,11 @@
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
-		if (1001 to maxcharge)
+		if ((maxcharge/2)+1 to maxcharge)
 			icon_state = "mfc-full"
-		if (51 to 1000)
+		if ((maxcharge/4)+1 to maxcharge/2)
 			icon_state = "mfc-half"
-		if (0 to 50)
+		if (0 to maxcharge/4)
 			icon_state = "mfc-empty"
 	. = ..()
 
@@ -491,16 +491,6 @@
 	maxcharge = 3000
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/stock_parts/cell/ammo/mfc/update_icon()
-	switch(charge)
-		if (2001 to maxcharge)
-			icon_state = "mfc-full"
-		if (151 to 2000)
-			icon_state = "mfc-half"
-		if (0 to 150)
-			icon_state = "mfc-empty"
-	. = ..()
-
 // Crafted Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc/bad
 	name = "shoddy microfusion cell"
@@ -509,16 +499,6 @@
 	icon_state = "mfc-full"
 	maxcharge = 1000
 	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/stock_parts/cell/ammo/mfc/update_icon()
-	switch(charge)
-		if (501 to maxcharge)
-			icon_state = "mfc-full"
-		if (51 to 500)
-			icon_state = "mfc-half"
-		if (0 to 50)
-			icon_state = "mfc-empty"
-	. = ..()
 
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
@@ -537,13 +517,13 @@
 
 /obj/item/stock_parts/cell/ammo/ec/update_icon()
 	switch(charge)
-		if (1101 to maxcharge)
+		if (((maxcharge/3)*2)+1 to maxcharge)
 			icon_state = "ec-full"
-		if (551 to 1100)
+		if ((maxcharge/3)+1 to (maxcharge/3)*2)
 			icon_state = "ec-twothirds"
-		if (51 to 550)
+		if ((maxcharge/4)+1 to maxcharge/3)
 			icon_state = "ec-onethirds"
-		if (0 to 50)
+		if (0 to maxcharge/4)
 			icon_state = "ec-empty"
 	. = ..()
 
@@ -555,19 +535,6 @@
 	icon_state = "ec-full"
 	maxcharge = 2250
 
-/obj/item/stock_parts/cell/ammo/ec/large/update_icon()
-	switch(charge)
-		if (1401 to maxcharge)
-			icon_state = "ec-full"
-		if (751 to 1400)
-			icon_state = "ec-twothirds"
-		if (251 to 750)
-			icon_state = "ec-onethirds"
-		if (0 to 250)
-			icon_state = "ec-empty"
-	. = ..()
-
-
 // Crafted Energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec/bad
 	name = "shoddy energy cell"
@@ -575,19 +542,6 @@
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give these a new icon
 	icon_state = "ec-full"
 	maxcharge = 750
-
-/obj/item/stock_parts/cell/ammo/ec/bad/update_icon()
-	switch(charge)
-		if (501 to maxcharge)
-			icon_state = "ec-full"
-		if (251 to 500)
-			icon_state = "ec-twothirds"
-		if (51 to 250)
-			icon_state = "ec-onethirds"
-		if (0 to 50)
-			icon_state = "ec-empty"
-	. = ..()
-
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder
@@ -615,11 +569,11 @@ X
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
 	switch(charge)
-		if (1501 to maxcharge)
+		if ((maxcharge/2)+1 to maxcharge)
 			icon_state = "ecp-full"
-		if (101 to 1500)
+		if ((maxcharge/4)+1 to maxcharge/2)
 			icon_state = "ecp-half"
-		if (0 to 100)
+		if (0 to maxcharge/4)
 			icon_state = "ecp-empty"
 	. = ..()
 
@@ -632,16 +586,6 @@ X
 	maxcharge = 3600
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/stock_parts/cell/ammo/ecp/large/update_icon()
-	switch(charge)
-		if (2401 to maxcharge)
-			icon_state = "ecp-full"
-		if (201 to 2400)
-			icon_state = "ecp-half"
-		if (0 to 200)
-			icon_state = "ecp-empty"
-	. = ..()
-
 // Crafted Electron charge pack - bad rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp/bad
 	name = "counterfeit electron charge pack"
@@ -650,16 +594,6 @@ X
 	icon_state = "ecp-full"
 	maxcharge = 1200
 	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/stock_parts/cell/ammo/ecp/bad/update_icon()
-	switch(charge)
-		if (601 to maxcharge)
-			icon_state = "ecp-full"
-		if (101 to 600)
-			icon_state = "ecp-half"
-		if (0 to 100)
-			icon_state = "ecp-empty"
-	. = ..()
 
 // Alien power cell
 /obj/item/stock_parts/cell/ammo/alien
