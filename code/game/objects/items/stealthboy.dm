@@ -88,7 +88,7 @@
 		Deactivate(FALSE)
 		return
 	to_chat(user, span_notice("You activate \The [src]."))
-	animate(user, alpha = 0, time = 3 SECONDS)
+	animate(user, alpha = 60, time = 3 SECONDS)
 	START_PROCESSING(SSobj, src)
 	on = TRUE
 

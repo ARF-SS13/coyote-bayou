@@ -77,8 +77,6 @@
 	return treated_sentence
 
 /mob/say_mod(input, message_mode)
-	if(message_mode == MODE_WHISPER_CRIT)
-		return ..()
 	if((input[1] == "!") && (length_char(input) > 1))
 		message_mode = MODE_CUSTOM_SAY
 		return copytext_char(input, 2)

@@ -11032,6 +11032,13 @@
 	color = "#e4e4e4"
 	},
 /area/f13/building/mall)
+"kEx" = (
+/obj/item/key/security,
+/obj/vehicle/ridden/secway,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "kEP" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
@@ -21580,10 +21587,11 @@
 	},
 /area/f13/building/tribal)
 "vpv" = (
-/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/key/security,
+/obj/vehicle/ridden/secway,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -33984,7 +33992,7 @@ ejB
 mAw
 tdm
 vpv
-hRp
+kEx
 jxp
 ejB
 ohv
