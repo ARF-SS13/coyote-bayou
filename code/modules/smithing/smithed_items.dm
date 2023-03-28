@@ -100,24 +100,24 @@
 /obj/item/smithing/proc/dofinish()
 	var/qualname
 	switch(quality)
-		if(-1000 to -5)
+		if(-INFINITY to -5)
 			qualname = "heinous"
-		if(-1000 to -2)
+		if(-4 to -2)
 			qualname = "horrific"
-		if(-1000 to -1)
-			qualname =  "abysmal"
+		if(-1 to -1)
+			qualname = "abysmal"
 		if(-1 to 1)
 			qualname = "shoddy"
-		if(10 to INFINITY)
-			qualname = "masterwork"
-		if(7.5 to 10)
-			qualname = "good"
-		if(5.5 to 7.5)
-			qualname = "average"
+		if(0 to 3.5)
+			qualname = "crude"
 		if(3.5 to 5.5)
 			qualname = "makeshift"
-		if(0 to 3.5)
-			qualname = "crude" //changed the descriptions so people know better where they're at on the quality scale
+		if(5.5 to 7.5)
+			qualname = "average"
+		if(7.5 to 10)
+			qualname = "good"
+		if(10 to INFINITY)
+			qualname = "masterwork"  //changed the descriptions so people know better where they're at on the quality scale
 	var/datum/material/mat = custom_materials[1]
 	finalitem.set_custom_materials(custom_materials)
 	mat = mat.name
