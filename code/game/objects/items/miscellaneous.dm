@@ -232,9 +232,11 @@
 	desc = "Straight from the outerspace mount shop to your feet."
 	pets = list(
 "Brahmin" = /mob/living/simple_animal/cow/brahmin,
+"Molerat" = /mob/living/simple_animal/cow/brahmin/molerat,
 "Horse" = /mob/living/simple_animal/cow/brahmin/horse,
 "Fennec" = /mob/living/simple_animal/cow/brahmin/horse/fennec,
-"Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker 
+"Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker,
+"Hunter Spider" = /mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider
 )
 
 /obj/item/choice_beacon/box/carpet //donator carpet beacon

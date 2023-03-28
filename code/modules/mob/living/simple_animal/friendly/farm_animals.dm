@@ -717,6 +717,52 @@
 		)
 	butcher_difficulty = 1
 
+/mob/living/simple_animal/cow/brahmin/molerat
+	name = "tamed molerat"
+	desc = "That's a big ol' molerat, seems to be able to take a saddle!"
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "molerat"
+	icon_living = "molerat"
+	icon_dead = "molerat_dead"
+	icon_gib = "brahmin_gib"
+	speak = list("*gnarl","*scrungy")
+	speak_emote = list("grrrllgs","makes horrible molerat noises")
+	emote_hear = list("chatters.")
+	emote_see = list("shakes its head.")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "bites"
+	response_harm_simple = "bite"
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	can_ghost_into = TRUE
+	attack_sound = 'sound/weapons/punch1.ogg'
+	footstep_type = FOOTSTEP_MOB_HOOF
+	ride_offsets = list(
+		"1" = list(0, 8),
+		"2" = list(0, 8),
+		"4" = list(0, 8),
+		"8" = list(0, 8)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
+
+
 //https://media.tenor.com/JybpbLLsyX8AAAAC/fat-horse-wuzzle.gif
 //Wuzzle
 //Horse
@@ -822,6 +868,60 @@
 	butcher_difficulty = 1
 
 
+/mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider
+	name = "tamed spider"
+	desc = "SOMEONE TAMED A FUCKING GIANT SPIDER?"
+	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "hunter"
+	icon_living = "hunter"
+	icon_dead = "hunter_dead"
+	speak = list("*chitter","*hiss")
+	speak_emote = list("chitters","hisses")
+	emote_hear = list("rubs it mandibles together.")
+	emote_see = list("stares, with all 8 eyes.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 150
+	maxHealth = 150
+	ride_move_delay = 1.8
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "bites"
+	response_harm_simple = "bites"
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
+	milk_reagent = /datum/reagent/toxin
+	ride_offsets = list(
+		"1" = list(0, 9),
+		"2" = list(0, 13),
+		"4" = list(-2, 9),
+		"8" = list(-2, 9)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/stack/sheet/sinew = 2,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+		)
+	butcher_difficulty = 1
+
 
 //Ridable Fennec
 /mob/living/simple_animal/cow/brahmin/horse/fennec //faster than a brahmin, but much less tanky
@@ -884,7 +984,7 @@
 		"1" = list(1, 6),
 		"2" = list(1, 6),
 		"4" = list(0, 6),
-		"8" = list(0, 7)
+		"8" = list(3, 7)
 		)
 
 
