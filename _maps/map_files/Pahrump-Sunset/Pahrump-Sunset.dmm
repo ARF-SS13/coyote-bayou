@@ -18635,6 +18635,9 @@
 	dir = 4
 	},
 /obj/structure/rack/shelf_metal,
+/obj/item/storage/box/tools/ranching,
+/obj/item/storage/box/tools/ranching,
+/obj/item/storage/box/tools/ranching,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -20984,6 +20987,18 @@
 	},
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
+"bGz" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/machinery/light/lampost{
+	dir = 1;
+	pixel_x = -32
+	},
+/obj/machinery/recharge_station,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bGD" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -25032,7 +25047,13 @@
 /area/f13/building/abandoned)
 "cyC" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/tools/ranching,
+/obj/item/storage/box/tools/ranching,
+/obj/item/storage/box/tools/ranching,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "cyD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -28655,12 +28676,12 @@
 	},
 /area/f13/wasteland/city)
 "dzD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/machinery/gear_painter,
+/turf/open/indestructible/ground/outside/roaddirt{
+	dir = 1;
+	icon_state = "innerpavement"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "dzE" = (
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c"
@@ -40423,6 +40444,12 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland/city)
+"gTk" = (
+/obj/machinery/gear_painter,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "gTt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
@@ -63275,11 +63302,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "npM" = (
-/obj/machinery/gear_painter,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mineral/wasteland_vendor/pipboy,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
-/area/f13/tunnel)
+/area/f13/building)
 "npN" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gibleg"
@@ -64277,12 +64305,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nEr" = (
-/obj/machinery/gear_painter,
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 1;
-	icon_state = "innerpavement"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "nEv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -74216,11 +74245,13 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "qyO" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/chair/greyscale{
+	dir = 4
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/building)
+/area/f13/building/hospital)
 "qyR" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -78738,11 +78769,7 @@
 /area/f13/wasteland/city)
 "rRA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "rRH" = (
 /obj/structure/rack,
@@ -81586,18 +81613,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ruins)
-"sHS" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
-	},
-/obj/machinery/light/lampost{
-	dir = 1;
-	pixel_x = -32
-	},
-/obj/machinery/recharge_station,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "sHY" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -83407,13 +83422,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tgI" = (
-/obj/structure/chair/greyscale{
-	dir = 4
-	},
+/obj/machinery/mineral/wasteland_vendor/ammo,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/building/hospital)
+/area/f13/building)
 "tgJ" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/road{
@@ -103128,7 +103141,7 @@ jKh
 sUI
 vcr
 plH
-npM
+gTk
 ubt
 oks
 ohR
@@ -103731,7 +103744,7 @@ bkq
 tRk
 tRW
 sfu
-nEr
+dzD
 aOk
 aOk
 aOk
@@ -107287,7 +107300,7 @@ xix
 xRe
 hmK
 qCv
-tgI
+qyO
 cdS
 tdw
 hEN
@@ -109841,7 +109854,7 @@ huu
 bZR
 huu
 huu
-sHS
+bGz
 uKN
 aBn
 lfi
@@ -110356,7 +110369,7 @@ dVF
 dVF
 dVF
 dVF
-qyO
+tgI
 fvw
 lfi
 qpR
@@ -110870,7 +110883,7 @@ xUm
 brF
 elR
 dVF
-dzD
+npM
 fvw
 lfi
 qpR
@@ -112153,7 +112166,7 @@ aLx
 dVF
 sjO
 gbK
-rRA
+nEr
 dVF
 rOp
 nSY
@@ -112409,8 +112422,8 @@ nSY
 vcH
 dVF
 bXi
-cyC
 rRA
+nEr
 brF
 bXi
 nSY
@@ -112665,7 +112678,7 @@ eiJ
 dUj
 bdF
 dVF
-bXi
+cyC
 qbQ
 xUm
 dVF
