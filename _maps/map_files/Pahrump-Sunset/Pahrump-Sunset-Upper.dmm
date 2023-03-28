@@ -11032,6 +11032,13 @@
 	color = "#e4e4e4"
 	},
 /area/f13/building/mall)
+"kEx" = (
+/obj/item/key/security,
+/obj/vehicle/ridden/secway,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "kEP" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
@@ -14437,16 +14444,6 @@
 	},
 /obj/item/bedsheet/brown,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"nSs" = (
-/obj/vehicle/ridden/secway{
-	name = "Clementine";
-	color = '#ffff22'
-	},
-/obj/item/key/security,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
 /area/f13/building)
 "nSB" = (
 /turf/closed/wall/r_wall/rust,
@@ -21593,11 +21590,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/vehicle/ridden/secway{
-	name = "Sugar Cube";
-	color = '#33ffff'
-	},
 /obj/item/key/security,
+/obj/vehicle/ridden/secway,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -33998,7 +33992,7 @@ ejB
 mAw
 tdm
 vpv
-nSs
+kEx
 jxp
 ejB
 ohv
