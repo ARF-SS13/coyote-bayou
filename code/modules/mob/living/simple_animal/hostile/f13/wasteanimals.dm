@@ -866,6 +866,7 @@
 	obj_damage = 15
 	melee_damage_lower = 35
 	melee_damage_upper = 45
+	move_to_delay = 10
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")
