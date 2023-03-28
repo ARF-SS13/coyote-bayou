@@ -95,14 +95,14 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
-	force = 15
+	force = 25 //It shouldn't be both a mid fist weapon and a digging tool dangit! Especially for the resources it takes! 5 less dmg than a power fist
 	throwforce = 10
 	throw_range = 7
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_behaviour = TOOL_MINING
-	var/digrange = 0
-	toolspeed = 0.6
+	var/digrange = 1 //This should give it the 3x1 dig range that drills and some picks have
+	toolspeed = 0.3 //This should make it dig really quick. Like a moleminer!
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES

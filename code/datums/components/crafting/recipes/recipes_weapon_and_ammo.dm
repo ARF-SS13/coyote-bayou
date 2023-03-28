@@ -128,11 +128,24 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/ecbad
+	name = "Small Energy Cell (craft)"
+	result = /obj/item/stock_parts/cell/ammo/ec/bad
+	reqs = list(/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/electronicparts = 1,
+				/obj/item/stack/rods = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 4
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+	always_available = FALSE
+
 /datum/crafting_recipe/enhancedenergycell
 	name = "Enhanced Energy Cell"
 	result = /obj/item/stock_parts/cell/ammo/ec/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ec = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
 				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -150,11 +163,24 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/mfcbad
+	name = "Microfusion Cell (craft)"
+	result = /obj/item/stock_parts/cell/ammo/mfc/bad
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/electronicparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+	always_available = FALSE
+
 /datum/crafting_recipe/enhancedmfcell
 	name = "Enhanced Microfusion Cell"
 	result = /obj/item/stock_parts/cell/ammo/mfc/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/mfc = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
 				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -172,11 +198,24 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/ecpbad
+	name = "Electron Charge Pack (craft)"
+	result = /obj/item/stock_parts/cell/ammo/ecp/bad
+	reqs = list(/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/crafting/metalparts = 2) //These CAN be used to craft enhanced cells
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+	always_available = FALSE
+
 /datum/crafting_recipe/enhancedecp
 	name = "Enhanced Electron Charge Pack"
 	result = /obj/item/stock_parts/cell/ammo/ecp/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ecp = 1, //Don't wanna require 2 cells just to condense them down to 1 slot for not much other benefit.
 				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)

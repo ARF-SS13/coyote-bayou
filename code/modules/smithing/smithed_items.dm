@@ -101,23 +101,23 @@
 	var/qualname
 	switch(quality)
 		if(-1000 to -5)
-			qualname = "awful"
+			qualname = "heinous"
 		if(-1000 to -2)
-			qualname = "shoddy"
+			qualname = "horrific"
 		if(-1000 to -1)
-			qualname =  "poor"
+			qualname =  "abysmal"
 		if(-1 to 1)
-			qualname = "normal"
+			qualname = "shoddy"
 		if(10 to INFINITY)
-			qualname = "good"
+			qualname = "masterwork"
 		if(7.5 to 10)
-			qualname = "fair"
+			qualname = "good"
 		if(5.5 to 7.5)
-			qualname = "makeshift"
+			qualname = "average"
 		if(3.5 to 5.5)
-			qualname = "crude"
+			qualname = "makeshift"
 		if(0 to 3.5)
-			qualname = "improvised"
+			qualname = "crude" //changed the descriptions so people know better where they're at on the quality scale
 	var/datum/material/mat = custom_materials[1]
 	finalitem.set_custom_materials(custom_materials)
 	mat = mat.name
@@ -250,7 +250,7 @@
 	else
 		finalforreal.toolspeed *= max(1, (quality * -1))
 	finalforreal.digrange = 1
-/* 	switch(quality)
+	switch(quality)
 		if(10 to INFINITY)
 			finalforreal.digrange = 2
 		if(5 to 9)
@@ -258,7 +258,7 @@
 		if(3,4)
 			finalforreal.digrange = 1
 		else
-			finalforreal.digrange = 1 */
+			finalforreal.digrange = 1 //uncommented this section. I say let people who wanna mine have strong tools.
 	finalitem = finalforreal
 	..()
 
@@ -289,7 +289,7 @@
 
 /obj/item/smithing/crowbar/startfinish()
 	var/obj/item/crowbar/smithed/finalforreal = new /obj/item/crowbar/smithed(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*2 //Bonk! -farmwizard
 	if(quality > 0)
 		finalforreal.toolspeed = max(0.05,(1-(quality/10)))
 	else
@@ -307,7 +307,7 @@
 
 /obj/item/smithing/unitool/startfinish()
 	var/obj/item/crowbar/smithedunitool/finalforreal = new /obj/item/crowbar/smithedunitool(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*2.5 //It's a handaxe! - farmwizard
 	finalitem = finalforreal
 	..()
 
@@ -428,7 +428,8 @@
 
 /obj/item/smithing/swordblade/startfinish()
 	finalitem = new /obj/item/melee/smith/sword(src)
-	finalitem.force += quality
+	finalitem.force += quality*2.25
+	finalitem.armour_penetration += quality*0.009 // 9% armor pen at max qual
 	..()
 
 /obj/item/smithing/sabreblade
@@ -439,7 +440,8 @@
 
 /obj/item/smithing/sabreblade/startfinish()
 	finalitem = new /obj/item/melee/smith/sword/sabre(src)
-	finalitem.force += quality
+	finalitem.force += quality*2
+	finalitem.armour_penetration += quality*0.012 //13% armor pen at max qual
 	..()
 
 /obj/item/smithing/spathablade
@@ -450,7 +452,7 @@
 
 /obj/item/smithing/spathablade/startfinish()
 	finalitem = new /obj/item/melee/smith/sword/spatha(src)
-	finalitem.force += quality
+	finalitem.force += quality*2.2
 	..()
 
 /obj/item/smithing/spearhead
@@ -460,7 +462,7 @@
 
 /obj/item/smithing/spearhead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/finalforreal = new /obj/item/melee/smith/twohand/spear(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.75 //they should do less damage than weapons that put you in melee range
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
@@ -474,7 +476,7 @@
 
 /obj/item/smithing/lancehead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/lance/finalforreal = new /obj/item/melee/smith/twohand/spear/lance(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.75
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
@@ -488,7 +490,7 @@
 
 /obj/item/smithing/axehead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/finalforreal = new /obj/item/melee/smith/twohand/axe(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5 // Adjusts damage, a maxed out wielded axe should do 70 damage
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -500,7 +502,7 @@
 
 /obj/item/smithing/warhonedhead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/warhoned/finalforreal = new /obj/item/melee/smith/twohand/axe/warhoned(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -513,7 +515,7 @@
 
 /obj/item/smithing/scrapblade/startfinish()
 	var/obj/item/melee/smith/twohand/axe/scrapblade/finalforreal = new /obj/item/melee/smith/twohand/axe/scrapblade(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.5
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -527,8 +529,8 @@
 
 /obj/item/smithing/daggerblade/startfinish()
 	finalitem = new /obj/item/melee/smith/dagger(src)
-	finalitem.force += quality
-	//finalitem.armour_penetration += quality*0.0375
+	finalitem.force += quality*1.5 //why tf the kitchen knife gets to be strong but not this thing?
+	finalitem.armour_penetration += quality*0.0375 // fucking 41% AP, an actual reason to use this thing
 	..()
 
 
@@ -540,7 +542,7 @@
 
 /obj/item/smithing/macheteblade/startfinish()
 	finalitem = new /obj/item/melee/smith/machete(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 
@@ -552,7 +554,7 @@
 
 /obj/item/smithing/gladiusblade/startfinish()
 	finalitem = new /obj/item/melee/smith/machete/gladius(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 
@@ -564,7 +566,7 @@
 
 /obj/item/smithing/macheterblade/startfinish()
 	finalitem = new /obj/item/melee/smith/machete/reforged(src)
-	finalitem.force += quality
+	finalitem.force += quality*1.5
 	..()
 
 /obj/item/smithing/macehead
@@ -575,8 +577,8 @@
 
 /obj/item/smithing/macehead/startfinish()
 	finalitem = new /obj/item/melee/smith/mace(src)
-	finalitem.force += quality
-	//finalitem.armour_penetration += quality*0.05
+	finalitem.force += quality*2
+	finalitem.armour_penetration += quality*0.05 //55% AP
 	..()
 
 
@@ -589,7 +591,7 @@
 
 /obj/item/smithing/wakiblade/startfinish()
 	finalitem = new /obj/item/melee/smith/wakizashi(src)
-	finalitem.force += quality
+	finalitem.force += quality*2 //Smaller so it fits in more places. Deals less damage.
 	..()
 
 
@@ -601,7 +603,7 @@
 
 /obj/item/smithing/katanablade/startfinish()
 	var/obj/item/melee/smith/twohand/katana/finalforreal = new /obj/item/melee/smith/twohand/katana(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*2.5 //Brings unwielded katana to 42 Force, and 63 Force when wielded.
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -614,7 +616,7 @@
 
 /obj/item/smithing/javelinhead/startfinish()
 	var/obj/item/melee/smith/javelin/finalforreal = new /obj/item/melee/smith/javelin(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.25 //These are meant for tossin, not melee-in
 	finalforreal.throwforce = finalforreal.force*1.5
 	finalitem = finalforreal
 	..()
@@ -629,7 +631,7 @@
 
 /obj/item/smithing/throwingknife/startfinish()
 	var/obj/item/melee/smith/throwingknife/finalforreal = new /obj/item/melee/smith/throwingknife(src)
-	finalforreal.force += quality
+	finalforreal.force += quality*1.25 //Same here
 	finalforreal.throwforce = finalforreal.force*1.4
 	finalitem = finalforreal
 	..()

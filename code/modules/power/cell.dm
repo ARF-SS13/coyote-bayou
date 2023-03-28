@@ -501,6 +501,25 @@
 			icon_state = "mfc-empty"
 	. = ..()
 
+// Crafted Microfusion cell - large energy weapons
+/obj/item/stock_parts/cell/ammo/mfc/bad
+	name = "shoddy microfusion cell"
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one looks a little dubious though."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: give these bad icons
+	icon_state = "mfc-full"
+	maxcharge = 1000
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/stock_parts/cell/ammo/mfc/update_icon()
+	switch(charge)
+		if (501 to 1000)
+			icon_state = "mfc-full"
+		if (51 to 500)
+			icon_state = "mfc-half"
+		if (0 to 50)
+			icon_state = "mfc-empty"
+	. = ..()
+
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
 	desc = "An advanced ultracite cell, used as ammunition for special energy weapons."
@@ -523,6 +542,14 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
 	maxcharge = 2250
+
+// Crafted Energy cell - small energy weapons
+/obj/item/stock_parts/cell/ammo/ec/bad
+	name = "shoddy energy cell"
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one looks a little suspect though."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give these a new icon
+	icon_state = "ec-full"
+	maxcharge = 750
 
 
 // Microfusion breeder? Okay, sure.
@@ -585,6 +612,25 @@
 		if (201 to 2400)
 			icon_state = "ecp-half"
 		if (0 to 200)
+			icon_state = "ecp-empty"
+	. = ..()
+
+// Crafted Electron charge pack - bad rapid fire energy
+/obj/item/stock_parts/cell/ammo/ecp/bad
+	name = "counterfeit electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one looks slightly off, somehow."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give a shitty icon
+	icon_state = "ecp-full"
+	maxcharge = 1200
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/stock_parts/cell/ammo/ecp/update_icon()
+	switch(charge)
+		if (601 to 1200)
+			icon_state = "ecp-full"
+		if (101 to 600)
+			icon_state = "ecp-half"
+		if (0 to 100)
 			icon_state = "ecp-empty"
 	. = ..()
 
