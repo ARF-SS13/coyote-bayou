@@ -1021,7 +1021,7 @@ rough example of the "cone" made by the 3 dirs checked
 		if(location == src)
 			return 1
 
-/proc/flick_overlay_static(O, atom/A, duration)
+/proc/flick_overlay_static(O, atom/A, duration) // avoid this cursed code, please, it uses the dreaded SLEEP(). Just use flick_overlay. <3
 	set waitfor = 0
 	if(!A || !O)
 		return
