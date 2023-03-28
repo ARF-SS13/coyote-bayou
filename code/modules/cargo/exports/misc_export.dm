@@ -127,7 +127,7 @@
 		)
 
 /datum/export/item/semishotgun
-	cost = 1500
+	cost = 1200
 	unit_name = "semi-auto shotgun"
 	export_types = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5,
@@ -137,7 +137,7 @@
 	)
 
 /datum/export/item/advshotgun
-	cost = 2000
+	cost = 1500
 	unit_name = "advanced shotgun"
 	export_types = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
@@ -147,7 +147,7 @@
 		)
 
 /datum/export/item/semirifle
-	cost = 2000
+	cost = 1000
 	unit_name = "semi-automatic rifle"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/varmint/verminkiller,
@@ -168,7 +168,7 @@
 	)
 
 /datum/export/item/autorifle
-	cost = 2500
+	cost = 1500
 	unit_name = "automatic rifle"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/service/r82,
@@ -187,7 +187,7 @@
 	)
 
 /datum/export/item/lmg
-	cost = 4000
+	cost = 2500
 	unit_name = "light machine gun"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/r84,

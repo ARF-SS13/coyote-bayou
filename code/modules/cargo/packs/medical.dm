@@ -73,13 +73,13 @@
 /datum/supply_pack/medical/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "A single brute first-aid kit, perfect for recovering from being crushed by a super-mutant. Did you know people get crushed by super-mutants all the time? Interesting..."
-	cost = 330
+	cost = 250
 	contains = list(/obj/item/storage/firstaid/brute)
 
 /datum/supply_pack/medical/firstaidburns_single
 	name = "Burn Treatment Kit Single-Pack"
 	desc = "A single burn first-aid kit. The advertisement displays a winking Brotherhood scribe giving a thumbs up, saying \"Mistakes happen!\""
-	cost = 330
+	cost = 250
 	contains = list(/obj/item/storage/firstaid/fire)
 
 /datum/supply_pack/medical/firstaid_single
@@ -91,13 +91,13 @@
 /datum/supply_pack/medical/firstaidoxygen_single
 	name = "Oxygen Deprivation Kit Single-Pack"
 	desc = "A single oxygen deprivation first-aid kit, marketed heavily to those with crippling fears of asphyxiation."
-	cost = 330
+	cost = 250
 	contains = list(/obj/item/storage/firstaid/o2)
 
 /datum/supply_pack/medical/firstaidtoxins_single
 	name = "Toxin Treatment Kit Single-Pack"
 	desc = "A single first aid kit focused on healing damage dealt by heavy toxins."
-	cost = 330
+	cost = 250
 	contains = list(/obj/item/storage/firstaid/toxin)
 
 /datum/supply_pack/emergency/medicalemergency
@@ -271,7 +271,7 @@
 
 /datum/supply_pack/medical/chems
 	name = "Mixed Chems"
-	desc = "A raiders dream, contains five random chems."
+	desc = "A raider's dream, contains five random chems."
 	cost = 1300
 	contains = list(/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
