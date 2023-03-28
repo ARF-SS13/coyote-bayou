@@ -474,7 +474,7 @@
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
-		if (1001 to 2000)
+		if (1001 to maxcharge)
 			icon_state = "mfc-full"
 		if (51 to 1000)
 			icon_state = "mfc-half"
@@ -493,7 +493,7 @@
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
-		if (2001 to 3000)
+		if (2001 to maxcharge)
 			icon_state = "mfc-full"
 		if (151 to 2000)
 			icon_state = "mfc-half"
@@ -512,7 +512,7 @@
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
-		if (501 to 1000)
+		if (501 to maxcharge)
 			icon_state = "mfc-full"
 		if (51 to 500)
 			icon_state = "mfc-half"
@@ -535,6 +535,18 @@
 	icon_state = "ec-full"
 	maxcharge = 1500
 
+/obj/item/stock_parts/cell/ammo/ec/update_icon()
+	switch(charge)
+		if (1101 to maxcharge)
+			icon_state = "ec-full"
+		if (551 to 1100)
+			icon_state = "ec-twothirds"
+		if (51 to 550)
+			icon_state = "ec-onethirds"
+		if (0 to 50)
+			icon_state = "ec-empty"
+	. = ..()
+
 // Enhanced energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec/large
 	name = "enhanced energy cell"
@@ -543,6 +555,19 @@
 	icon_state = "ec-full"
 	maxcharge = 2250
 
+/obj/item/stock_parts/cell/ammo/ec/large/update_icon()
+	switch(charge)
+		if (1401 to maxcharge)
+			icon_state = "ec-full"
+		if (751 to 1400)
+			icon_state = "ec-twothirds"
+		if (251 to 750)
+			icon_state = "ec-onethirds"
+		if (0 to 250)
+			icon_state = "ec-empty"
+	. = ..()
+
+
 // Crafted Energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec/bad
 	name = "shoddy energy cell"
@@ -550,6 +575,18 @@
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give these a new icon
 	icon_state = "ec-full"
 	maxcharge = 750
+
+/obj/item/stock_parts/cell/ammo/ec/bad/update_icon()
+	switch(charge)
+		if (501 to maxcharge)
+			icon_state = "ec-full"
+		if (251 to 500)
+			icon_state = "ec-twothirds"
+		if (51 to 250)
+			icon_state = "ec-onethirds"
+		if (0 to 50)
+			icon_state = "ec-empty"
+	. = ..()
 
 
 // Microfusion breeder? Okay, sure.
@@ -565,17 +602,7 @@
 	name = "S.I.D.A. breeder"
 	maxcharge = 1100
 
-/obj/item/stock_parts/cell/ammo/ec/update_icon()
-	switch(charge)
-		if (1101 to 1600)
-			icon_state = "ec-full"
-		if (551 to 1100)
-			icon_state = "ec-twothirds"
-		if (51 to 550)
-			icon_state = "ec-onethirds"
-		if (0 to 50)
-			icon_state = "ec-empty"
-	. = ..()
+X
 
 // Electron charge pack - rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp
@@ -588,7 +615,7 @@
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
 	switch(charge)
-		if (1501 to 2400)
+		if (1501 to maxcharge)
 			icon_state = "ecp-full"
 		if (101 to 1500)
 			icon_state = "ecp-half"
@@ -605,9 +632,9 @@
 	maxcharge = 3600
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/stock_parts/cell/ammo/ecp/update_icon()
+/obj/item/stock_parts/cell/ammo/ecp/large/update_icon()
 	switch(charge)
-		if (2401 to 3600)
+		if (2401 to maxcharge)
 			icon_state = "ecp-full"
 		if (201 to 2400)
 			icon_state = "ecp-half"
@@ -624,9 +651,9 @@
 	maxcharge = 1200
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/stock_parts/cell/ammo/ecp/update_icon()
+/obj/item/stock_parts/cell/ammo/ecp/bad/update_icon()
 	switch(charge)
-		if (601 to 1200)
+		if (601 to maxcharge)
 			icon_state = "ecp-full"
 		if (101 to 600)
 			icon_state = "ecp-half"
