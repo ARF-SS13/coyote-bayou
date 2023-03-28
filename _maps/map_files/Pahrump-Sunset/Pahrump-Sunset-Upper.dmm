@@ -14438,6 +14438,16 @@
 /obj/item/bedsheet/brown,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"nSs" = (
+/obj/vehicle/ridden/secway{
+	name = "Clementine";
+	color = '#ffff22'
+	},
+/obj/item/key/security,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "nSB" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
@@ -21580,10 +21590,14 @@
 	},
 /area/f13/building/tribal)
 "vpv" = (
-/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/vehicle/ridden/secway{
+	name = "Sugar Cube";
+	color = '#33ffff'
+	},
+/obj/item/key/security,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -33984,7 +33998,7 @@ ejB
 mAw
 tdm
 vpv
-hRp
+nSs
 jxp
 ejB
 ohv
