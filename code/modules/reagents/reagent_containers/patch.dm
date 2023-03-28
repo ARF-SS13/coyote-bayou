@@ -80,6 +80,19 @@
 	list_reagents = list(/datum/reagent/medicine/healing_powder = 10)
 	self_delay = 5
 
+/obj/item/reagent_containers/pill/healingpowder/random
+	name = "randomized powder"
+	desc = "A long forgotten prescription. who knows what it contains."
+	color = COLOR_PALE_GREEN_GRAY
+
+/obj/item/reagent_containers/pill/healingpowder/random/Initialize()
+	list_reagents = list(get_random_reagent_id() = rand(5,15))
+	var/powder_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	name = "[powder_name] powder"
+	. = ..()
+
+
+
 // ---------------------------------
 // CUSTOM POWDER
 
@@ -125,3 +138,14 @@
 	list_reagents = null
 	self_delay = 0
  */
+
+/obj/item/reagent_containers/pill/patch/random
+	name = "randomized patch"
+	desc = "A long forgotten prescription. who knows what it contains."
+	icon_state = "bandaid"
+
+/obj/item/reagent_containers/pill/patch/random/Initialize()
+	list_reagents = list(get_random_reagent_id() = rand(5,15))
+	var/patch_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	name = "[patch_name] patch"
+	. = ..()

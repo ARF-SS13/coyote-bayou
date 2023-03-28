@@ -721,8 +721,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "pitchfork"
 	desc = "A simple tool used for moving hay."
-	force = 20
-	throwforce = 20
+	force = 25
+	throwforce = 25
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("attacked", "impaled", "pierced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -738,7 +738,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/pitchfork/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=30, icon_wielded="pitchfork1")
+	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=38, icon_wielded="pitchfork1")
 	AddElement(/datum/element/sword_point)
 
 /// triggered on wield of two handed item

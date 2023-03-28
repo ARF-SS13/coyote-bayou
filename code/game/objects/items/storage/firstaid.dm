@@ -219,7 +219,7 @@
 	new /obj/item/reagent_containers/medspray/silver_sulf(src)
 	new /obj/item/healthanalyzer/advanced(src)
 	new /obj/item/reagent_containers/syringe/lethal/choral(src) // what the fuck does anyone use this piece of shit for
-	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
+//	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
 /obj/item/storage/firstaid/debug_bleedtest
 	name = span_phobia("Debug Testkit For Testing Bleedstuff quickly (illegal)")
@@ -439,6 +439,20 @@
 /obj/item/storage/pill_bottle/breast_enlarger/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/breast_enlarger(src)
+
+/obj/item/storage/pill_bottle/random
+	name = "bottle of randomized pills"
+	desc = "Contains a collection of old, potentially dangerous, potentially tasty pills."
+
+/obj/item/storage/pill_bottle/random/Initialize()
+	icon_state = "pill_canister[rand(1,3)]"
+	var/bottle_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	name = "bottle of [bottle_name] pills"
+	. = ..()
+
+/obj/item/storage/pill_bottle/random/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/random(src)
 
 /////////////
 //Organ Box//

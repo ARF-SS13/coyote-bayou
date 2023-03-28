@@ -165,7 +165,7 @@
 /obj/item/storage/box/large/custom_kit/aerodynamique3/PopulateContents()
 	//new /obj/item/gun/ballistic/bow/sturdy(src)
 	new /obj/item/gun/ballistic/bow/recurvebow(src)
-	new /obj/item/storage/bag/tribe_quiver/light(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 
 /datum/gear/donator/kits/aldrictalvalin
@@ -819,7 +819,7 @@
 
 /obj/item/storage/box/large/custom_kit/risingstarslash4/PopulateContents()
 	new /obj/item/gun/ballistic/bow/gold(src)
-	new /obj/item/storage/bag/tribe_quiver/light(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 	new /obj/item/reagent_containers/pill/fiery_purgative(src)
 	new /obj/item/reagent_containers/pill/antivenom(src)
@@ -1106,7 +1106,7 @@
 /obj/item/storage/box/large/custom_kit/truedark2/PopulateContents()
 	//new /obj/item/gun/ballistic/bow/xbow(src)
 	new /obj/item/gun/ballistic/bow/lightxbow(src)
-	new /obj/item/storage/bag/tribe_quiver/light(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 	new /obj/item/reagent_containers/glass/bottle/gaia(src)
 	new /obj/item/reagent_containers/glass/bottle/ichor/red(src)

@@ -3080,10 +3080,10 @@
 
 ///Ass enhancer
 /datum/reagent/butt_enlarger
-	name = "Denbu Tincture"
-	description = "A mixture of natural vitamins and valentines plant extract, causing butt enlargement in humanoids."
+	name = "Callipygian Cream"
+	description = "A mixture of natural vitamins and targeted hormonal growth serums, causing butt enlargement in humanoids."
 	color = "#e8ff1b"
-	taste_description = "butter with a sweet aftertaste"
+	taste_description = "sweet cream with a hint of butter"
 	overdose_threshold = 100
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE
@@ -3133,7 +3133,7 @@
 	..()
 
 /datum/reagent/butt_shrinker
-	name = "Rectify tincture"
+	name = "Callipygian Skim"
 	color = "#faffd5"
 	taste_description = "the skimmest of milk" // What's the opposite of butter?
 	description = "A medicine used to treat organomegaly in a patient's ass."

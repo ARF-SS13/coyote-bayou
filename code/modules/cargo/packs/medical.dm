@@ -102,11 +102,10 @@
 
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
-	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a medical HUD, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
+	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
 	cost = 10000
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
-					/obj/item/clothing/glasses/hud/health,
 					/obj/item/defibrillator/loaded,
 					/obj/item/storage/belt/medical,
 					/obj/item/storage/firstaid/toxin,

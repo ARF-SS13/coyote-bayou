@@ -765,6 +765,20 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/sledgehammer/PopulateContents()
 	new /obj/item/twohanded/sledgehammer/simple(src)
 
+/obj/item/storage/box/gun/melee/fireaxe
+	name = "fire axe case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/fireaxe/PopulateContents()
+	new /obj/item/twohanded/fireaxe(src)
+
+/obj/item/storage/box/gun/melee/pitchfork
+	name = "pitchfork case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/pitchfork/PopulateContents()
+	new /obj/item/pitchfork(src)
+
 /obj/item/storage/box/gun/melee/chainsaw
 	name = "chainsaw case"
 	w_class = WEIGHT_CLASS_BULKY
@@ -1075,7 +1089,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/bow/shortbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
-	new /obj/item/storage/bag/tribe_quiver/light(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
 /*dunno if we should have roundstart crossbow simply cause we want a lil more progression
 /obj/item/storage/box/gun/bow/crossbow
@@ -1639,6 +1653,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/sledgehammer
+
+/datum/loadout_box/fireaxe
+	entry_tag = "fire axe"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/fireaxe
+
+/datum/loadout_box/pitchfork
+	entry_tag = "pitchfork"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/pitchfork
 
 /datum/loadout_box/chainsaw
 	entry_tag = "Chainsaw"

@@ -66,7 +66,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
-"Mr. Handy"))
+"Death Machine"))
 //Whitelisted positions list FO13 anything that shows up here requires that the user have an entry in the 'role_whitelist' table of id,ckey,"faction"
 //NCR Assistant and Legion Camp Follower re-added to whitelisting.  BoS Initiate removed from whitelist.
 
@@ -275,7 +275,7 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Officer",
 ))
 GLOBAL_LIST_INIT(silicon_positions, list(
-	"Mr. Handy",
+	"Sentient Machine",
 ))
 //Tribls
 GLOBAL_LIST_INIT(tribal_positions, list(
@@ -317,6 +317,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	"Nash" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
