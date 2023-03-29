@@ -20,10 +20,10 @@ export const PortableBlenderBelt = (props, context) => {
       resizable>
       <Window.Content scrollable>
         <Section
-            title="Status"
-            >
-            <LabeledList>
-            <LabeledList.Item label="Buffer Storage">
+          title="Status"
+        >
+          <LabeledList>
+              <LabeledList.Item label="Buffer Storage">
               <ProgressBar
                 value={data.bufferVolume / data.bufferMaxVolume}>
                 {toFixed(data.bufferVolume) + 'u / ' + toFixed(data.bufferMaxVolume) + 'u'}
