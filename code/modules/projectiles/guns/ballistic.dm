@@ -81,6 +81,7 @@
 	else if (magazine.ammo_count())
 		chambered = magazine.get_round()
 		chambered.forceMove(src)
+	update_icon()
 
 /obj/item/gun/ballistic/can_shoot()
 	return !!chambered?.BB
@@ -226,6 +227,7 @@
 			update_icon()
 		else
 			eject_magazine(user, en_bloc, !en_bloc, TRUE)
+			update_icon()
 		return
 	if(chambered)
 		pump(user, TRUE)
