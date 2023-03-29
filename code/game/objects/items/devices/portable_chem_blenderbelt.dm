@@ -680,8 +680,18 @@
 			. = TRUE
 		if("remove")
 			if(put_it_back)
-				var/amount = text2num(params["amount"])
-				brevin.reagents.trans_to(internal_beaker.reagents, amount)
+				var/to_transfer = text2num(params["amount"])
+				var/loops = 1
+				while(to_transfer > 0)
+					for(var/datum/reagent/N in brevin.reagents.reagent_list)
+						brevin.reagents.trans_id_to(internal_beaker, N.type, 1)
+						to_transfer--
+					if(!LAZYLEN(brevin.reagents.reagent_list))
+						break
+					if(brevin.reagents.total_volume <= 0)
+						break
+					if(loops++ > 300)
+						break
 				. = TRUE
 			else
 				var/amount = text2num(params["amount"])
