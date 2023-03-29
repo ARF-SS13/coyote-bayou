@@ -147,10 +147,10 @@
 	new /obj/item/circuitboard/machine/chem_heater(src)
 	new /obj/item/circuitboard/machine/reagentgrinder(src)
 	new /obj/item/storage/bag/chemistry(src)
-	new /obj/item/storage/portable_chem_mixer(src)
+	new /obj/item/storage/blender_belt(src)
 	new /obj/item/reagent_containers/glass/beaker/plastic(src)
 	new /obj/item/reagent_containers/glass/beaker/plastic(src)
-	new /datum/design/sci_goggles(src)
+	new /obj/item/clothing/glasses/science(src)
 
 /datum/loadout_box/chemist
 	entry_tag = "chemistry tools"

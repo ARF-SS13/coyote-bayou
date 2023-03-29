@@ -382,11 +382,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 					C.update_damage_overlays()
 
-	if(!(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_IS_ALT))		//See if we're supposed to just altclick
+	if(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_IS_ALT) //See if we're supposed to just altclick
 		user.AltClickOn(src)
 		return
 
-	if(!(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP))		//See if we're supposed to auto pickup.
+	else if(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_IS_SHIFT) //See if we're supposed to just shiftclick
+		user.ShiftClickOn(src)
+		return
+
+	if(!(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP)) //See if we're supposed to auto pickup.
 		return
 
 	//Heavy gravity makes picking up things very slow.

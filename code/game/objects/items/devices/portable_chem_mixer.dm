@@ -16,11 +16,10 @@
 /obj/item/storage/portable_chem_mixer/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 200
-	STR.max_items = 50
+	STR.max_combined_w_class = STORAGE_BAG_MAX_TOTAL_SPACE
+	STR.max_items = STORAGE_BAG_MAX_ITEMS
 	STR.insert_preposition = "in"
 	STR.can_hold = GLOB.typical_reagent_containers
-	STR.number_of_rows = 4
 
 /obj/item/storage/portable_chem_mixer/Destroy()
 	QDEL_NULL(beaker)

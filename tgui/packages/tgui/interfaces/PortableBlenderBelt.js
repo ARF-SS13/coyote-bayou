@@ -11,7 +11,6 @@ export const PortableBlenderBelt = (props, context) => {
   const beakerTransferAmounts = data.beakerTransferAmounts || [];
   const chemicals = sortBy(chem => chem.title)(data.chemicals);
   const beakerContents = data.beakerContents || [];
-  const putItBack = data.putItBack || [];
   const bufferVolume = data.bufferVolume || [];
   const bufferMaxVolume = data.bufferMaxVolume || [];
   return (
@@ -27,7 +26,7 @@ export const PortableBlenderBelt = (props, context) => {
             <LabeledList.Item label="Buffer Storage">
               <ProgressBar
                 value={data.bufferVolume / data.bufferMaxVolume}>
-                {toFixed(data.bufferVolume) + ' units /' + toFixed(data.bufferMaxVolume) + ' units'}
+                {toFixed(data.bufferVolume) + 'u / ' + toFixed(data.bufferMaxVolume) + 'u'}
               </ProgressBar>
             </LabeledList.Item>
           </LabeledList>
@@ -73,9 +72,9 @@ export const PortableBlenderBelt = (props, context) => {
             ))
           }>
               <Button
-              color={putItBack ? 'good' : 'bad'}
-              icon={putItBack ? 'exchange-alt' : 'times'}
-              content={putItBack ? 'Transfer' : 'Destroy'}
+              color={data.putItBack ? 'good' : 'bad'}
+              icon={data.putItBack ? 'exchange-alt' : 'times'}
+              content={data.putItBack ? 'Transfer' : 'Destroy'}
               onClick={() => act('toggle_putback')} />
           <LabeledList>
             <LabeledList.Item

@@ -26,6 +26,7 @@
 #define SANITIZE_LIST(L) ( islist(L) ? L : list() )
 #define reverseList(L) reverseRange(L.Copy())
 #define LAZYADDASSOC(L, K, V) if(!L) { L = list(); } L[K] += list(V);
+#define LAZYORASSOC(L, K, V) if(!L) { L = list(); } L[K] |= list(V);
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
 ///If the provided key -> list is empty, remove it from the list
 #define ASSOC_UNSETEMPTY(L, K) if (!length(L[K])) L -= K;

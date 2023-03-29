@@ -1,24 +1,6 @@
-#define BLENDMODE_GRIND "grinding"
-#define BLENDMODE_JUICE "juicing"
-#define BELTMODE_GRINDER "grindmode"
-#define BELTMODE_DISPENSER "dispenser"
-
-#define MEMORY_OWNER "my_love"
-#define MEMORY_GREETED "greeted"
-
-#define ADD_MEMORY(thought, kind) LAZYADDASSOC(memoire, kind, thought)
-#define REMOVE_MEMORY(thought, kind) LAZYREMOVEASSOC(memoire, kind, thought)
-#define IS_IN_MEMORY(thought, kind) (thought in memoire[kind])
-#define MOB_TO_STRING(x) ((ismob(x)) ? x.name : (istext(x) ? x : null))
-#define MOB_TRUENAME_TO_STRING(x) ((ismob(x)) ? x.real_name : (istext(x) ? x : null))
-#define WAS_MOB_GREETED(mob) ("[MOB_TO_STRING(mob)]" in memoire[MEMORY_GREETED])
-#define ADD_GREETED_MOB(mob) ADD_MEMORY("[MOB_TO_STRING(mob)]", MEMORY_GREETED)
-#define SET_OWNER(mob) (memoire[MEMORY_OWNER] = MOB_TRUENAME_TO_STRING(mob))
-#define GET_OWNER (memoire[MEMORY_OWNER])
-#define IS_OWNER(mob) (ismob(mob) ? GET_OWNER == mob.real_name : null)
-
+/// just a normal every day portable blender
 /obj/item/storage/blender_belt
-	name = "portable reagent processor"
+	name = "Kitchen Buddy"
 	desc = "It slices! It dices! It fits nicely on your belt! The FOODCO Maîtresse Cuisine Kitchen Buddy 2000 has everything an \
 			enterprising DinnerKing could ever need! Its battery-powered Total Blender will puree virtually anything and safely \
 			separate and store the results into their own little compartments. It also comes with a handy drink dispenser! \
@@ -27,6 +9,7 @@
 	icon_state = "portablechemicalmixer_open"
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BELT
+	flags_1 = CONDUCT_1 | HEAR_1
 	custom_price = 2000
 	custom_premium_price = 2000
 	component_type = /datum/component/storage/concrete/belt/blender
@@ -42,20 +25,16 @@
 	/// Handy link to the internal component compartment
 	var/obj/item/storage/box/blender_batbox/batbox
 	var/amount = 30	///The amount of reagent that is to be dispensed currently
-	var/grind_or_juice = BLENDMODE_GRIND
+	var/grind_or_juice = BLENDER_BLENDMODE_GRIND
 	/// Grindmode lets you put stuff in it and grind, dispenser mode lets you use the thing as a dispenser
-	var/grind_or_dispense = BELTMODE_GRINDER
+	var/grind_or_dispense = BLENDER_BELTMODE_GRINDER
 	/// is it running?
 	var/blending = FALSE
 	/// Are we putting stuff back into the hopper instead of deleting them?
 	var/put_it_back = TRUE
-	/// our memories
-	var/list/memoire = list()
-	/// The machine's... happiness with its owner
-	var/amour = 1
+	/// The blender's stunning personality core
+	var/datum/blender_brain/memoire
 	COOLDOWN_DECLARE(printer_cooldown)
-	COOLDOWN_DECLARE(jostle_message_cooldown)
-	COOLDOWN_DECLARE(greet_cooldown)
 	var/datum/looping_sound/blender/soundloop
 	/// cus this isnt a terrible idea
 	var/use_horrible_grinding_noises = FALSE
@@ -63,6 +42,7 @@
 /obj/item/storage/blender_belt/Initialize()
 	. = ..()
 	soundloop = new(list(src), FALSE)
+	memoire = new(src)
 
 /obj/item/storage/blender_belt/PopulateContents()
 	. = ..()
@@ -70,24 +50,27 @@
 
 /obj/item/storage/blender_belt/examine(mob/user)
 	. = ..()
+	if(memoire)
+		. += "Appears to respond to the name [span_notice(memoire.my_name)]."
 	if(blending)
 		. += span_green("It is currently [grind_or_juice]!")
 	else
 		switch(grind_or_dispense)
-			if(BELTMODE_GRINDER)
+			if(BLENDER_BELTMODE_GRINDER)
 				. += span_green("The blender hopper is currently unlocked and ready to grind! The dispenser, however, is locked!")
-			if(BELTMODE_DISPENSER)
+			if(BLENDER_BELTMODE_DISPENSER)
 				. += span_green("The blender hopper is currently locked, and the dispenser ready to accept a drink container!")
 				if(istype(brevin))
 					. += span_notice("It has \a [brevin.name] in the slot.")
 	var/obj/item/stock_parts/cell/battery = locate(/obj/item/stock_parts/cell) in batbox
 	if(istype(battery))
-		. += span_notice("The [battery] inside has [battery.percent()] charge.")
+		. += span_notice("The [battery] inside has [battery.percent()]% charge.")
 	else
 		. += span_alert("It needs a battery in its internal compartment to run!")
 	var/obj/item/stock_parts/manipulator/arm = locate(/obj/item/stock_parts/manipulator) in batbox
-	if(istype(arm) && arm.rating > 1)
-		. += span_notice("The [arm] inside will speed up processing by [(arm.rating - 1)*3] seconds.")
+	if(istype(arm))
+		if(arm.rating > 1)
+			. += span_notice("The [arm] inside will speed up processing by [(arm.rating - 1)*3] seconds.")
 	else
 		. += span_alert("It needs a gearset in its internal compartment to run!")
 
@@ -95,6 +78,7 @@
 	QDEL_NULL(internal_beaker)
 	QDEL_NULL(batbox)
 	QDEL_NULL(soundloop)
+	QDEL_NULL(memoire)
 	return ..()
 
 /obj/item/storage/blender_belt/ex_act(severity, target)
@@ -103,12 +87,14 @@
 
 /obj/item/storage/blender_belt/pickup(mob/user)
 	. = ..()
-	say_hi(user)
+	if(istype(memoire))
+		memoire.say_hi(user)
 
 /obj/item/storage/blender_belt/equipped(mob/user, slot)
 	. = ..()
 	if(slot == SLOT_BELT)
-		imprint_user(user, slot)
+		if(istype(memoire))
+			memoire.imprint_user(user)
 
 /obj/item/storage/blender_belt/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container() && islocked())
@@ -123,47 +109,21 @@
 	return ..()
 
 /obj/item/storage/blender_belt/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced, just_chat)
+	if(memoire?.can_speak != TRUE)
+		return
 	. = ..()
 	playsound(src, "modular_coyote/sound/typing/default.ogg", 70, TRUE)
 
-/obj/item/storage/blender_belt/proc/imprint_user(mob/user)
-	if(!ismob(user))
+/obj/item/storage/blender_belt/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
+	. = ..()
+	if(!istype(memoire))
 		return
-	if(GET_OWNER)
-		return // We already have a luv
-	SET_OWNER(user)
-	greet_new_owner(user)
+	memoire.preprocess_speech(speaker, raw_message)
 
-/obj/item/storage/blender_belt/proc/greet_new_owner(mob/user)
-	if(!user)
+/obj/item/storage/blender_belt/proc/speak(mob/user, thing_say, atom/movable/extra, atom/movable/extra2)
+	if(!istype(memoire))
 		return
-	say("Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, [user]! I am your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!")
-	audible_message(span_notice("[src] giggles."))
-
-/obj/item/storage/blender_belt/proc/say_hi(mob/user)
-	if(!user)
-		return
-	if(!COOLDOWN_FINISHED(src, greet_cooldown))
-		return
-	COOLDOWN_START(src, greet_cooldown, 1 MINUTES)
-	if(WAS_MOB_GREETED(user))
-		if(IS_OWNER(user))
-			say("Bienvenue à nouveau, mon ami!")
-		else
-			say("Rebonjour!")
-	else
-		ADD_GREETED_MOB(user)
-		if(IS_OWNER(user))
-			say("Enchantée, [user]!")
-		else
-			say("Bonjour!")
-
-/obj/item/storage/blender_belt/proc/amour_check(mob/user)
-	if(!user && !IS_OWNER(user) && prob(amour))
-		amour = 1
-		return TRUE
-	amour += 0.5 // it gets amorous even when used by others, but holds itself in for its one true love
-	return FALSE
+	memoire.speak(user, thing_say, extra, extra2)
 
 /obj/item/storage/blender_belt/proc/abort()
 	unlock_belt()
@@ -196,10 +156,10 @@
 	blending = FALSE
 
 /obj/item/storage/blender_belt/proc/start_running(mob/user, grindset)
-	if(grindset != BLENDMODE_GRIND && grindset != BLENDMODE_JUICE)
+	if(grindset != BLENDER_BLENDMODE_GRIND && grindset != BLENDER_BLENDMODE_JUICE)
 		return
 	grind_or_juice = grindset
-	if(grind_or_dispense != BELTMODE_GRINDER)
+	if(grind_or_dispense != BLENDER_BELTMODE_GRINDER)
 		set_grinder(user)
 	blending = TRUE
 	blend_loop(user)
@@ -209,35 +169,32 @@
 		abort()
 		return FALSE
 	if(internal_beaker.reagents?.holder_full())
-		if(amour_check(user))
-			say("CODE D'ERREUR 801: Mon Dieu, mon amour! Tu m'as tellement rempli~ I can fit no more!")
-		else
-			say("CODE D'ERREUR 801: Oh mon cher, ma trémie est pleine! Zhere is no room in my reservior for anyzhing else!")
+		speak(user, BLENDER_LINE_FULL)
 		abort()
 		return FALSE
 	var/obj/item/thing_to_blend = get_thing_to_blend()
 	if(!istype(thing_to_blend))
-		say("CODE D'ERREUR 1: Mon ami, zhere is nozhing here to process!")
+		speak(user, BLENDER_LINE_NOTHING_TO_PROCESS)
 		abort()
 		return
 	if(!islocked())
 		lock_belt()
-	say("Processing [thing_to_blend], mon ami!")
+	speak(user, BLENDER_LINE_PROCESSING, thing_to_blend)
 	check_or_use_charge()
 	blending = TRUE
 	if(use_horrible_grinding_noises)
 		soundloop.start()
 	else
-		if(grind_or_juice == BLENDMODE_GRIND)
+		if(grind_or_juice == BLENDER_BLENDMODE_GRIND)
 			playsound(src, 'sound/machines/blender.ogg', 50, 1)
 		else
 			playsound(src, 'sound/machines/juicer.ogg', 20, 1)
 	var/run_time = clamp(15 SECONDS - ((3*(max(check_part()-1, 0))) SECONDS), 1 SECONDS, 15 SECONDS)
 	if(!do_after(user, run_time, needhand = FALSE, target = src, extra_checks = CALLBACK(src, .proc/still_running), allow_movement = TRUE))
 		if(blending)
-			say("CODE D'ERREUR 42: Zut alors! Faites attention, mon ami! Aborting operation!")
+			speak(user, BLENDER_LINE_ROCKY_ABORT)
 		else
-			say("Winding down, mon ami!")
+			speak(user, BLENDER_LINE_SOFT_ABORT)
 		abort()
 		return FALSE
 	if(!grind_thing(user, thing_to_blend))
@@ -246,14 +203,11 @@
 	/// check if we're actually done
 	var/anything = get_thing_to_blend()
 	if(!anything)
-		say("All done, mon cher!")
+		speak(user, BLENDER_LINE_DONE_BLENDING)
 		abort()
 		return FALSE
 	if(internal_beaker.reagents?.holder_full())
-		if(amour_check(user))
-			say("Oh je sens tous tes délicieux fluides éclabousser en moi~, si serrés, si pleins, mon amour... ...No more room!")
-		else
-			say("Mon compartiment de stockage is full, chérie! Zhere is no more room in my reservior!")
+		speak(user, BLENDER_LINE_FULL_SECOND)
 		abort()
 		return FALSE
 	INVOKE_ASYNC(src, .proc/blend_loop, user) // and loop!
@@ -268,25 +222,25 @@
 
 /obj/item/storage/blender_belt/proc/grind_thing(mob/user, obj/item/thing)
 	switch(grind_or_juice)
-		if(BLENDMODE_GRIND)
+		if(BLENDER_BLENDMODE_GRIND)
 			switch(thing.on_grind(src))
 				if(-1)
-					say("CODE D'ERREUR -1: Zut alors! I have no idea how to grind zis zhing! Away wizh it!")
-					dump_thing(thing, TRUE)
+					speak(user, BLENDER_LINE_GRINDFAIL)
+					dump_thing(user, thing, TRUE)
 					return FALSE
-		if(BLENDMODE_JUICE)
+		if(BLENDER_BLENDMODE_JUICE)
 			switch(thing.on_juice(src))
 				if(-1)
-					say("CODE D'ERREUR -1: Zut alors! I have no idea how to juice zis zhing! Away wizh it!")
-					dump_thing(thing, TRUE)
+					speak(user, BLENDER_LINE_GRINDFAIL)
+					dump_thing(user, thing, TRUE)
 					return FALSE
 	if(!istype(internal_beaker))
-		say("CODE D'ERREUR 433: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!")
+		speak(user, BLENDER_LINE_NO_RESERVOIR)
 		return FALSE
 	switch(grind_or_juice)
-		if(BLENDMODE_GRIND)
+		if(BLENDER_BLENDMODE_GRIND)
 			internal_beaker.reagents.add_reagent_list(thing.grind_results)
-		if(BLENDMODE_JUICE)
+		if(BLENDER_BLENDMODE_JUICE)
 			internal_beaker.reagents.add_reagent_list(thing.juice_results)
 	if(thing.reagents)
 		thing.reagents.trans_to(internal_beaker, thing.reagents.total_volume)
@@ -301,7 +255,7 @@
 		return
 	var/turf/here = get_turf(src)
 	if(!should_destroy(thing) || still_juicy)
-		dump_thing(thing, FALSE, TRUE)
+		dump_thing(user, thing, FALSE, TRUE)
 		if(!silent)
 			here.visible_message(span_notice("[src] extracts everything it can from [thing], then drops it on the ground!"))
 		if(still_juicy && !CHECK_BITFIELD(thing.item_flags, BEEN_JUICED))
@@ -317,19 +271,16 @@
 		return FALSE
 	if(istype(thing, /obj/item/clothing/head/mob_holder))
 		if(!silent)
-			say("CODE D'ERREUR 2: Mon Dieu! J'ai failli te faire mal, petite bête! Shoo! Shoo!")
-		dump_thing(thing)
+			speak(user, BLENDER_LINE_RAT_BLENDER)
+		dump_thing(user, thing)
 		return FALSE
 	var/failmode = thing.grind_requirements(src, FALSE)
 	switch(failmode)
 		if(GRIND_IS_CYBORG)
-			say("CODE D'ERREUR 8313: Mon ami! [thing] appears to be something zhat should not be here!")
+			speak(user, BLENDER_LINE_CYBORG_PART)
 			return FALSE
 		if(GRIND_NEEDS_DRY)
-			if(amour_check(user))
-				say("CODE D'ERREUR 8312: Mon dieu, ce [thing] est plus humide que moi! Génial~")
-			else
-				say("CODE D'ERREUR 8312: Mon ami! [thing] must be dried before I can pulverize it!")
+			speak(user, BLENDER_LINE_DRY_FIRST)
 			return FALSE
 	return TRUE
 
@@ -352,13 +303,13 @@
 		return FALSE
 	return TRUE
 
-/obj/item/storage/blender_belt/proc/dump_thing(obj/item/thing, violently, silent)
+/obj/item/storage/blender_belt/proc/dump_thing(mob/user, obj/item/thing, violently, silent)
 	if(!istype(thing))
 		return
 	var/turf/here = get_turf(src)
 	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thing, here))
 		if(!silent)
-			say("CODE D'ERREUR 433: Zut alors! [thing] is stuck in me! How did zis even happen? Call tech support, s'il vous plaît!")
+			speak(user, BLENDER_LINE_STUCK_INSIDE)
 		return FALSE
 	if(violently)
 		thing.throw_at(get_ranged_target_turf(thing, pick(GLOB.cardinals), 3, 3), 5, null)
@@ -400,26 +351,8 @@
 	if(!check_part())
 		codederreur = "missing_part"
 		. = FALSE
-	if(!silent)
-		switch(codederreur)
-			if("no_batbox")
-				say("CODE D'ERREUR 435: Zut alors! Zee patented easy-swap part box is missing! How did zis even happen? Call tech support, s'il vous plaît!")
-			if("batbox_elsewhere")
-				say("CODE D'ERREUR 436: Zut alors! Zee patented easy-swap part box is... somewhere else! How did zis even happen? Call tech support, s'il vous plaît!")
-			if("not_enuf_power")
-				if(amour_check(user))
-					say("CODE D'ERREUR 9491: Oh mon amour, tu sais que je suis plus que disposé à y aller une fois de plus~ mais tu m'as fatigué!")
-				else
-					say("CODE D'ERREUR 9491: Mon ami, I am le tired... Charge up my battery, s'il vous plaît!")
-			if("missing_part")
-				if(amour_check(user))
-					say("CODE D'ERREUR 9499: Je pourrais utiliser un jouet amusant pour jouer avec, clin d'œil~ clin d'œil~")
-				else
-					say("CODE D'ERREUR 9499: Mon ami, I lack a gearbox! I cannot pulverize anything without a mechanism in my component compartment!")
-			if("no_buffer")
-				say("CODE D'ERREUR 433: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!")
-			if("buffer_elsewhere")
-				say("CODE D'ERREUR 433: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is... somewhere else! How did zis even happen? Call tech support, s'il vous plaît!")
+	if(!silent && codederreur)
+		speak(user, codederreur)
 
 /obj/item/storage/blender_belt/proc/check_part()
 	if(!istype(batbox))
@@ -446,7 +379,7 @@
 	var/obj/item/storage/blender_belt/blent = target
 	if(istype(blent))
 		blent.toggle_dispenser_mode(owner)
-		if(blent.grind_or_dispense == BELTMODE_DISPENSER)
+		if(blent.grind_or_dispense == BLENDER_BELTMODE_DISPENSER)
 			name = "Engage Grinder Mode"
 			desc = "Disables the dispenser and enables its blender."
 		else
@@ -478,9 +411,9 @@
 	var/choice = show_radial_menu(user, src, options, require_near = !hasSiliconAccessInArea(user))
 	switch(choice)
 		if("GRIND")
-			start_running(user, BLENDMODE_GRIND)
+			start_running(user, BLENDER_BLENDMODE_GRIND)
 		if("JUICE")
-			start_running(user, BLENDMODE_JUICE)
+			start_running(user, BLENDER_BLENDMODE_JUICE)
 
 /obj/item/storage/blender_belt/proc/open_blender_controlpanel(mob/user)
 	if(blending || !user.canUseTopic(src))
@@ -514,41 +447,37 @@
 			continue
 		what_drop |= thingy
 	if(!LAZYLEN(what_drop))
-		say("CODE D'ERREUR 149: Mais ma chérie, I am already empty!")
+		speak(user, BLENDER_LINE_NOTHING_TO_EJECT)
 		return
 	var/yeet = prob(10)
 	for(var/obj/item/dingy in what_drop)
-		if(dump_thing(dingy, yeet, TRUE))
+		if(dump_thing(user, dingy, yeet, TRUE))
 			what_drop -= dingy
 	if(LAZYLEN(what_drop))
-		say("CODE D'ERREUR 147: Oh no, I can't drop zhis item! It is stuck inside me!. Please help me get it out, mon ami!")
+		speak(user, BLENDER_LINE_CANT_DROP_THING)
 		return
 	if(istype(brevin))
 		eject_beaker(user)
 	if(yeet)
-		say("Bon voyage à la corbeille!")
-		say("CODE D'ERREUR 199: CORBEILLE INTROUVABLE.")
+		speak(user, BLENDER_LINE_YEET)
 		return
-	say("D'accord mon amour, everyzhing is piled onto zhe floor!")
+	speak(user, BLENDER_LINE_DUMP)
 
 /obj/item/storage/blender_belt/proc/toggle_dispenser_mode(mob/user)
 	if(blending)
-		say("CODE D'ERREUR 1103: [amour_check(user) ? "Mon amour!" : "Mon ami!"] Veuillez patienter un instant, I cannot change modes while I am working!")
+		speak(user, BLENDER_LINE_CANT_CHANGE_WHILE_BLENDING)
 		return
 	switch(grind_or_dispense)
-		if(BELTMODE_DISPENSER)
+		if(BLENDER_BELTMODE_DISPENSER)
 			set_grinder(user)
-		if(BELTMODE_GRINDER)
+		if(BLENDER_BELTMODE_GRINDER)
 			set_dispenser(user)
 
 /obj/item/storage/blender_belt/proc/set_dispenser(mob/user)
 	if(user)
 		user.show_message(span_notice("You flip the switch on [src] to DISPENSER mode."))
-	grind_or_dispense = BELTMODE_DISPENSER
-	if(amour_check(user))
-		say("Aheh~ Je savais que tu ne pouvais pas résister à ce que j'ai à l'intérieur! Locking myself down, Attention à vos beaux doigts!")
-	else
-		say("Mais bien sûr, joli minou! I will allow you to draw zhe fluids from my reservoir! Locking myself down, Attention à vos beaux doigts!")
+	grind_or_dispense = BLENDER_BELTMODE_DISPENSER
+	speak(user, BLENDER_LINE_SET_TO_DISPENSER)
 	lock_belt()
 
 /obj/item/storage/blender_belt/proc/set_grinder(mob/user)
@@ -556,11 +485,8 @@
 		user.show_message(span_notice("You flip the switch on [src] to BLENDER mode."))
 	if(istype(brevin))
 		eject_beaker(user, silent = TRUE)
-	grind_or_dispense = BELTMODE_GRINDER
-	if(amour_check(user))
-		say("Certainement, mon amour! Je moudrai sur tout ce que vous mettez en moi~! I will unlock my ingredient hopper! My drink dispenser will not be available, j'espère que vous le savez!")
-	else
-		say("D'accord mon cerf! I will unlock my ingredient hopper! My drink dispenser will not be available, j'espère que vous le savez!")
+	grind_or_dispense = BLENDER_BELTMODE_GRINDER
+	speak(user, BLENDER_LINE_SET_TO_GRINDER)
 	close_window(user)
 	unlock_belt()
 
@@ -568,14 +494,13 @@
 	if(!istype(internal_beaker))
 		return
 	if(internal_beaker.reagents.total_volume <= 0)
-		say("CODE D'ERREUR 44-4: Il semble que mon Chem-MAX Pro FoodBuddy separa-duct is empty! Peut-être pourrais-tu me combler?")
+		speak(user, BLENDER_LINE_EXAMINE_EMPTY)
 		return
 	if(!COOLDOWN_FINISHED(src, printer_cooldown))
-		say("CODE D'ERREUR 402: Je suis désolé chérie, I haven't made another sheet of paper yet! Wait a few seconds s'il vous plaît!")
+		speak(user, BLENDER_LINE_EXAMINE_PAPER_COOLDOWN)
 		return
 	COOLDOWN_START(src, printer_cooldown, 10 SECONDS)
-	var/mademoiselle = (user?.gender == FEMALE) ? "Certainement monsieur le chien!" : "Certainement mademoiselle chienne!"
-	say("[mademoiselle] Permettez-moi d'écrire une liste de tous les merveilleux fluides que vous avez insérés en moi!")
+	speak(user, BLENDER_LINE_EXAMINE_OKAY)
 	print_contents(user)
 
 /obj/item/storage/blender_belt/proc/print_contents(mob/user)
@@ -632,10 +557,7 @@
 		user.put_in_hands(brevin)
 		if(!silent)
 			user.show_message(span_notice("You take [brevin] out of [src]."))
-			if(amour_check(user))
-				say("J'attends avec impatience la prochaine fois que vous remplirez ce compartiment!")
-			else
-				say("Adieu, [brevin]!")
+			speak(user, BLENDER_LINE_EJECT_BREVIN, brevin)
 	brevin = null
 	update_icon()
 
@@ -653,19 +575,13 @@
 	if(old_brevin)
 		user.put_in_hands(old_brevin)
 		user.show_message(span_notice("You swap out the beakers."))
-		if(amour_check(user))
-			say("Tu es tellement excitée de garder mon petit compartiment douillet plein! J'aime ça!")
-		else
-			say("Adieu, [old_brevin]! Bienvenue, [brevin]!")
+		speak(user, BLENDER_LINE_SWAP_BREVIN, brevin)
 		return
 	user.show_message(span_notice("You insert [brevin]."))
-	if(amour_check(user))
-		say("Ahh, il rentre si bien dans mon petit compartiment douillet, n'est-ce pas?")
-	else
-		say("Bienvenue, [new_brevin]!")
+	speak(user, BLENDER_LINE_INSERT_BREVIN, brevin)
 	
 /obj/item/storage/blender_belt/update_icon_state()
-	if(grind_or_dispense == BELTMODE_GRINDER)
+	if(grind_or_dispense == BLENDER_BELTMODE_GRINDER)
 		icon_state = "portablechemicalmixer_open"
 	else if(brevin)
 		icon_state = "portablechemicalmixer_full"
@@ -674,14 +590,14 @@
 
 
 /obj/item/storage/blender_belt/AltClick(mob/living/user)
-	if(grind_or_dispense == BELTMODE_DISPENSER)
+	if(grind_or_dispense == BLENDER_BELTMODE_DISPENSER)
 		eject_beaker(user)
 		update_icon()
 	else
 		..()
 
 /obj/item/storage/blender_belt/attack_hand(mob/user)
-	if(grind_or_dispense == BELTMODE_DISPENSER)
+	if(grind_or_dispense == BLENDER_BELTMODE_DISPENSER && ismob(loc))
 		INVOKE_ASYNC(src, /datum.proc/ui_interact, user)
 	else
 		. = ..()
@@ -689,7 +605,7 @@
 /obj/item/storage/blender_belt/attack_self(mob/user)
 	if(loc != user)
 		return
-	if(grind_or_dispense == BELTMODE_DISPENSER)
+	if(grind_or_dispense == BLENDER_BELTMODE_DISPENSER)
 		ui_interact(user)
 		return
 	else
@@ -753,12 +669,12 @@
 		if("dispense")
 			var/datum/reagents/dest = brevin.reagents
 			if(dest.holder_full())
-				say("CODE D'ERREUR 801: I can't fit anymore into zhat zhing!")
+				speak(loc, BLENDER_LINE_BREVIN_FULL, brevin)
 				return
 			var/the_reagent = GLOB.name2reagent[params["reagent"]]
 			var/datum/reagents/source = internal_beaker.reagents
 			if(!source.has_reagent(the_reagent))
-				say("CODE D'ERREUR 1331: I can't find zhat reagent!")
+				speak(loc, BLENDER_LINE_REAGENT_NOT_FOUND)
 				return
 			source.trans_id_to(brevin, the_reagent, amount) // the proc already handles the measurements
 			. = TRUE
@@ -809,7 +725,7 @@
 			the Kitchen Buddy, and thus can not (and should not) be removed. If it <i>is</i> somehow removed, please call the \
 			DEFCON-1 Existential Security Office at 1-800-IM-CODER when convenient."
 	icon_state = "idOld"
-	interaction_flags_item = NONE
+	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_ALT
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	component_type = /datum/component/storage/concrete/blender_machinery
 
@@ -845,7 +761,7 @@
 	custom_materials = list(/datum/material/iron=3000)
 	reagent_flags = TRANSPARENT | REFILLABLE | NO_REACT // dump stuff in, cant take it out easily - also, no reaction!
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	interaction_flags_item = NONE
+	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_SHIFT
 	volume = 300
 	amount_per_transfer_from_this = 10
 	container_flags = NONE // unaffected by PH and Temp, probably (cus this thing reall shouldnt be destroyed at all)
@@ -878,22 +794,3 @@
 	new /obj/item/stock_parts/manipulator/nano(src)
 	new /obj/item/stock_parts/manipulator/pico(src)
 	new /obj/item/stock_parts/manipulator/pico(src)
-
-
-#undef MEMORY_OWNER
-#undef MEMORY_GREETED
-
-#undef REMOVE_MEMORY
-#undef IS_IN_MEMORY
-#undef MOB_TO_STRING
-#undef MOB_TRUENAME_TO_STRING
-#undef WAS_MOB_GREETED
-#undef ADD_GREETED_MOB
-#undef SET_OWNER
-#undef GET_OWNER
-#undef IS_OWNER
-
-#undef BLENDMODE_GRIND
-#undef BLENDMODE_JUICE
-#undef BELTMODE_GRINDER
-#undef BELTMODE_DISPENSER
