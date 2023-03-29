@@ -282,6 +282,12 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			currentsteps += 1
 			currentquality -= 1
 	
+	// more sounds... uhhh...
+	playsound(src, 'sound/effects/clang2.ogg',40, 2)
+
+	// sparkles~
+	do_smithing_sparks(1, TRUE, src) 
+	
 	// the stepsdone is a string of characters which are actions made.
 	// Once it is more or equal to 3, call try finish.
 	if(length(stepsdone) >= 3)
