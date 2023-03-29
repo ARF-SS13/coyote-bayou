@@ -225,7 +225,7 @@
 	//var/is_skilled = 1
 	if(start_sound)
 		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
-	if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE))
+	if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE, allow_lying = TRUE))
 		to_chat(user, span_warning("You were interrupted!"))
 		is_healing = FALSE
 		return
