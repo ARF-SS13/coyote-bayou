@@ -256,8 +256,8 @@
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		to_chat(user, span_notice("You eject \the [magazine] from \the [src]."))
-	magazine = null
 	magazine.update_icon()
+	magazine = null
 	update_icon()
 	return TRUE
 
