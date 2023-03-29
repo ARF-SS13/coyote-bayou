@@ -23,7 +23,7 @@ export const PortableBlenderBelt = (props, context) => {
           title="Status"
         >
           <LabeledList>
-              <LabeledList.Item label="Buffer Storage">
+            <LabeledList.Item label="Buffer Storage">
               <ProgressBar
                 value={data.bufferVolume / data.bufferMaxVolume}>
                 {toFixed(data.bufferVolume) + 'u / ' + toFixed(data.bufferMaxVolume) + 'u'}
