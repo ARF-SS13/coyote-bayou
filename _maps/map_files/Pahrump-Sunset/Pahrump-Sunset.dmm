@@ -51366,13 +51366,6 @@
 "jYR" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building/church)
-"jZi" = (
-/obj/structure/spacevine,
-/turf/open/floor/plating/f13/outside/road{
-	dir = 8;
-	icon_state = "crossborder"
-	},
-/area/f13/wasteland/city)
 "jZs" = (
 /obj/structure/simple_door/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -80579,8 +80572,6 @@
 /obj/structure/closet{
 	anchored = 1
 	},
-/obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat,
-/obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat,
 /obj/item/clothing/suit/armor/light/kit/shoulder,
 /obj/item/clothing/suit/armor/light/kit/punk,
 /obj/item/clothing/suit/armor/light/kit,
@@ -80589,6 +80580,8 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/item/clothing/suit/armor/light/leather/leather_jacket,
+/obj/item/clothing/suit/armor/light/duster/breastplate/khan,
+/obj/item/clothing/suit/armor/light/duster/breastplate/khan,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -89829,12 +89822,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/brick,
 /area/f13/bar)
-"uZd" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 4;
-	icon_state = "crossborder"
-	},
-/area/f13/wasteland/city)
 "uZi" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -148138,7 +148125,7 @@ kTu
 oFO
 ouo
 rbE
-uZd
+iIK
 iIK
 tEj
 orp
@@ -149166,7 +149153,7 @@ epK
 dPE
 dPE
 fbb
-jZi
+qlM
 iWY
 iWY
 iWY

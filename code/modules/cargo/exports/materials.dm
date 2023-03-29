@@ -139,7 +139,7 @@
 	export_types = list(/obj/item/stack/f13Cash/caps)
 
 /datum/export/material/deathclawhide
-	cost = 750
+	cost = 1000
 	unit_name = "deathclaw hide"
 	material_id = /datum/material/deathclawhide
 	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
@@ -157,13 +157,13 @@
 	export_types = list(/obj/item/stack/sheet/animalhide/molerat)
 
 /datum/export/material/wolfhide
-	cost = 125
+	cost = 200
 	unit_name = "dog hide"
 	material_id = /datum/material/wolfhide
 	export_types = list(/obj/item/stack/sheet/animalhide/wolf)
 
 /datum/export/material/radstaghide
-	cost = 200
+	cost = 250
 	unit_name = "radstag hide"
 	material_id = /datum/material/radstaghide
 	export_types = list(/obj/item/stack/sheet/animalhide/radstag)
