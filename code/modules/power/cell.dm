@@ -459,10 +459,6 @@
 		name = "used [initial(name)]"
 	. = ..()
 
-/obj/item/stock_parts/cell/ammo/New()
-	..()
-	return
-
 // Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc
 	name = "microfusion cell"
@@ -556,7 +552,7 @@
 	name = "S.I.D.A. breeder"
 	maxcharge = 1100
 
-X
+
 
 // Electron charge pack - rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp
