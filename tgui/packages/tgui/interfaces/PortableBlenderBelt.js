@@ -19,10 +19,10 @@ export const PortableBlenderBelt = (props, context) => {
       height={550}
       resizable>
       <Window.Content scrollable>
-      <Section
-          title="Status"
-          >
-          <LabeledList>
+        <Section
+            title="Status"
+            >
+            <LabeledList>
             <LabeledList.Item label="Buffer Storage">
               <ProgressBar
                 value={data.bufferVolume / data.bufferMaxVolume}>
@@ -71,11 +71,11 @@ export const PortableBlenderBelt = (props, context) => {
                 onClick={() => act('remove', { amount })} />
             ))
           }>
-              <Button
-              color={data.putItBack ? 'good' : 'bad'}
-              icon={data.putItBack ? 'exchange-alt' : 'times'}
-              content={data.putItBack ? 'Transfer' : 'Destroy'}
-              onClick={() => act('toggle_putback')} />
+          <Button
+            color={data.putItBack ? 'good' : 'bad'}
+            icon={data.putItBack ? 'exchange-alt' : 'times'}
+            content={data.putItBack ? 'Transfer' : 'Destroy'}
+            onClick={() => act('toggle_putback')} />
           <LabeledList>
             <LabeledList.Item
               label="Beaker"
