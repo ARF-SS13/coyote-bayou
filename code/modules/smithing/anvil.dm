@@ -282,6 +282,9 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			currentsteps += 1
 			currentquality -= 1
 	
+	// Display message
+	user.show_message(span_notice("You [stepdone] the metal."))
+	
 	// more sounds... uhhh...
 	playsound(src, 'sound/effects/clang2.ogg',40, 2)
 
