@@ -365,6 +365,8 @@
 #define TRAIT_NODROP "nodrop"
 /// Dont put it in storage things, simple as
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
+/// Can't leave a storage!
+#define TRAIT_NO_STORAGE_REMOVE "TRAIT_NO_STORAGE_REMOVE"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

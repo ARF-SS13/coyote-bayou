@@ -392,6 +392,7 @@
 #define COMSIG_ITEM_PROCESS "item_process" 				//from various procs that run process(): (/atom)
 #define COMSIG_ITEM_HIT_REACT "item_hit_react"					//from base of obj/item/hit_reaction(): (list/args)
 #define COMSIG_ITEM_WEARERCROSSED "wearer_crossed"				//called on item when crossed by something (): (/atom/movable)
+#define COMSIG_ITEM_RECYCLED "item_recycled"				//called on item when crossed by something (): (/atom/movable)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"					//from base of item/sharpener/attackby(): (amount, max)
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
 	#define COMPONENT_BLOCK_SHARPEN_BLOCKED 2
