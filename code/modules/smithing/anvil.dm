@@ -189,12 +189,55 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 
 	// Time it takes for us to uh...forge..?
 	var/steptime = 50
+	switch(stepdone)
+		if("weak hit")
+			playsound(src, 'code/modules/smithing/sound/anvil_weak.ogg',100)
+			user.visible_message("<span class='notice'>[user] carefully hammers out imperfections in the metal.</span>", \
+						"<span class='notice'>You carefully hammer out imperfections in the metal.</span>")
+		if("strong hit")
+			playsound(src, 'code/modules/smithing/sound/anvil_strong.ogg',80)
+			do_smithing_sparks(1, TRUE, src) 
+			user.visible_message("<span class='notice'>[user] hammers out imperfections in the metal.</span>", \
+						"<span class='notice'>You hammer out imperfections in the metal.</span>")
+		if("heavy hit")
+			playsound(src, 'code/modules/smithing/sound/anvil_heavy.ogg',90)
+			do_smithing_sparks(2, TRUE, src) 
+			user.visible_message("<span class='notice'>[user] forcefully hammers out imperfections in the metal.</span>", \
+						"<span class='notice'>You forcefuly hammer out imperfections in the metal.</span>")
+		if("fold")
+			playsound(src, 'code/modules/smithing/sound/anvil_double1.ogg',90)
+			do_smithing_sparks(1, TRUE, src) 
+			user.visible_message("<span class='notice'>[user] folds the metal.</span>", \
+						"<span class='notice'>You fold the metal.</span>")
+		if("draw")
+			playsound(src, 'code/modules/smithing/sound/anvil_double2.ogg',90)
+			do_smithing_sparks(1, TRUE, src) 
+			user.visible_message("<span class='notice'>[user] hammers both sides of the metal, drawing it out.</span>", \
+						"<span class='notice'>You hammer both sides of the metal, drawing it out.</span>")
+		if("shrink")
+			playsound(src, 'code/modules/smithing/sound/anvil_rapid.ogg',110)
+			do_smithing_sparks(1, TRUE, src)
+			user.visible_message("<span class='notice'>[user] flattens the metal, shrinking it.</span>", \
+						"<span class='notice'>You flatten the metal, shrinking it.</span>")
+		if("bend")
+			playsound(src, 'code/modules/smithing/sound/anvil_single1.ogg',80)
+			do_smithing_sparks(1, TRUE, src) 
+			user.visible_message("<span class='notice'>[user] bends the metal, using the rounded end of the anvil.</span>", \
+						"<span class='notice'>You bend the metal, using the rounded end of the anvil.</span>")
+		if("punch")
+			playsound(src, 'code/modules/smithing/sound/anvil_single2.ogg',90)
+			do_smithing_sparks(1, TRUE, src) 
+			user.visible_message("<span class='notice'>[user] uses the puncher to make holes in the metal.</span>", \
+						"<span class='notice'>You use the puncher to make holes in the metal.</span>")
+		if("upset")
+			playsound(src, 'code/modules/smithing/sound/anvil_double3.ogg',90)
+			do_smithing_sparks(1, TRUE, src) 
+			user.visible_message("<span class='notice'>[user] upsets the metal by hammering the thick end.</span>", \
+						"<span class='notice'>You upset the metal by hammering the thick end.</span>")
 
 	if(user.mind.skill_holder) // Skill modifier to make it faster at blacksmithing.
 		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/8 + 1 //Makes this faster as EXP gain was lowered
 		steptime = 50 / skillmod
-
-	playsound(src, 'sound/effects/clang2.ogg',40, 2) // sounds. gotta have them..!
 
 	if(!do_after(user, steptime, target = src))
 		return SetBusy(FALSE, user)
@@ -238,19 +281,15 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			stepsdone += "u"
 			currentsteps += 1
 			currentquality -= 1
-
+	
 	// Display message
-	user.visible_message(span_notice("[user] works the metal on the anvil with their hammer with a loud clang!"), \
-						span_notice("You [stepdone] the metal with a loud clang!"))
+	user.show_message(span_notice("You [stepdone] the metal."))
 	
 	// more sounds... uhhh...
 	playsound(src, 'sound/effects/clang2.ogg',40, 2)
 
 	// sparkles~
 	do_smithing_sparks(1, TRUE, src) 
-
-	// more fucking sounds after a timer..????????????????????????????????
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/effects/clang2.ogg', 40, 2), 15)
 	
 	// the stepsdone is a string of characters which are actions made.
 	// Once it is more or equal to 3, call try finish.
