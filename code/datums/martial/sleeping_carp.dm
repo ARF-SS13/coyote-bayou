@@ -8,6 +8,8 @@
 	allow_temp_override = FALSE
 	help_verb = /mob/living/carbon/human/proc/sleeping_carp_help
 	pugilist = TRUE
+	var/physdammod = 0.5
+	var/stamdammod = 0.2
 
 /datum/martial_art/the_sleeping_carp/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,STRONG_PUNCH_COMBO))
@@ -126,11 +128,12 @@
 	if(!isturf(A.loc)) //NO MOTHERFLIPPIN MECHS!
 		return BULLET_ACT_HIT
 	if(A.in_throw_mode)
-		A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can deflect projectile with their bare hands!"), span_userdanger("You deflect the projectile!"))
+		A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can deflect projectiles with their bare hands!"), span_userdanger("You deflect the projectile!"))
 		playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
 		P.firer = A
 		P.setAngle(rand(0, 360))//SHING
-		A.adjustStaminaLossBuffered (6) //Citadel change to stop infinite bullet sponging as you run away, but it is buffered!
+		var/totalStamDam = (P.damage > P.stamina) ? P.damage * physdammod : P.stamina * stamdammod
+		A.adjustStaminaLossBuffered(totalStamDam) //Attempt to change deflect cost based on projectile damage - Farmwizard
 		return BULLET_ACT_FORCE_PIERCE
 	return BULLET_ACT_HIT
 
