@@ -474,11 +474,11 @@
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
-		if ((maxcharge/2)+1 to maxcharge)
+		if (((maxcharge/2)+1) to maxcharge)
 			icon_state = "mfc-full"
-		if ((maxcharge/4)+1 to maxcharge/2)
+		if (((maxcharge/4)+1) to (maxcharge/2))
 			icon_state = "mfc-half"
-		if (0 to maxcharge/4)
+		if (0 to (maxcharge/4))
 			icon_state = "mfc-empty"
 	. = ..()
 
@@ -517,13 +517,13 @@
 
 /obj/item/stock_parts/cell/ammo/ec/update_icon()
 	switch(charge)
-		if (((maxcharge/3)*2)+1 to maxcharge)
+		if ((((maxcharge/3)*2)+1) to maxcharge)
 			icon_state = "ec-full"
-		if ((maxcharge/3)+1 to (maxcharge/3)*2)
+		if (((maxcharge/3)+1) to ((maxcharge/3)*2))
 			icon_state = "ec-twothirds"
-		if ((maxcharge/4)+1 to maxcharge/3)
+		if (((maxcharge/4)+1) to (maxcharge/3))
 			icon_state = "ec-onethirds"
-		if (0 to maxcharge/4)
+		if (0 to (maxcharge/4))
 			icon_state = "ec-empty"
 	. = ..()
 
@@ -569,11 +569,11 @@ X
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
 	switch(charge)
-		if ((maxcharge/2)+1 to maxcharge)
+		if (((maxcharge/2)+1) to maxcharge)
 			icon_state = "ecp-full"
-		if ((maxcharge/4)+1 to maxcharge/2)
+		if (((maxcharge/4)+1) to (maxcharge/2))
 			icon_state = "ecp-half"
-		if (0 to maxcharge/4)
+		if (0 to (maxcharge/4))
 			icon_state = "ecp-empty"
 	. = ..()
 
