@@ -248,8 +248,6 @@
 		user.put_in_hands(magazine)
 	else
 		user.dropItemToGround(magazine)
-	magazine.update_icon()
-	update_icon()
 	if(sounds_and_words)
 		if(en_bloc)
 			playsound(src, "sound/f13weapons/garand_ping.ogg", 70, 1)
@@ -259,6 +257,8 @@
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		to_chat(user, span_notice("You eject \the [magazine] from \the [src]."))
 	magazine = null
+	magazine.update_icon()
+	update_icon()
 	return TRUE
 
 /// Pump if click with empty thing
