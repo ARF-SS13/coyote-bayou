@@ -19,28 +19,30 @@ export const PortableBlenderBelt = (props, context) => {
       height={550}
       resizable>
       <Window.Content scrollable>
-      <Section title="Status">
-        <LabeledList>
-          <LabeledList.Item label="Buffer Storage">
-            <ProgressBar
-              value={data.bufferVolume / data.bufferMaxVolume}>
-              {toFixed(data.bufferVolume) + 'u / ' + toFixed(data.bufferMaxVolume) + 'u'}
-            </ProgressBar>
-          </LabeledList.Item>
-        </LabeledList>
-      </Section>
       <Section
-        title="Dispense"
-        buttons={(
-          beakerTransferAmounts.map(amount => (
-            <Button
-              key={amount}
-              icon="plus"
-              selected={amount === data.amount}
-              content={amount}
-              onClick={() => act('amount', {
-                target: amount,
-              })} />
+          title="Status"
+          >
+          <LabeledList>
+            <LabeledList.Item label="Buffer Storage">
+              <ProgressBar
+                value={data.bufferVolume / data.bufferMaxVolume}>
+                {toFixed(data.bufferVolume) + 'u / ' + toFixed(data.bufferMaxVolume) + 'u'}
+              </ProgressBar>
+            </LabeledList.Item>
+          </LabeledList>
+        </Section>
+        <Section
+          title="Dispense"
+          buttons={(
+            beakerTransferAmounts.map(amount => (
+              <Button
+                key={amount}
+                icon="plus"
+                selected={amount === data.amount}
+                content={amount}
+                onClick={() => act('amount', {
+                  target: amount,
+                })} />
             ))
           )}>
           <Box mr={-1}>
