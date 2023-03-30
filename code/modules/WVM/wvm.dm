@@ -534,20 +534,21 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	icon_state = "med_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
-		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										10),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								20),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							30),
+		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
+		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
 		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								175),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150)
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								10),
-		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										15),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								20),
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
+		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								175),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150)
+		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/khanchem
@@ -662,28 +663,38 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("survival knife",				/obj/item/melee/onehanded/knife/survival, 							70),
-		new /datum/data/wasteland_equipment(".22 Pistol",					/obj/item/gun/ballistic/automatic/pistol/pistol22,					110),
-		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					150),
-		new /datum/data/wasteland_equipment("10mm pistol",					/obj/item/gun/ballistic/automatic/pistol/n99,						150),
-		new /datum/data/wasteland_equipment("Colt Revolver",				/obj/item/gun/ballistic/revolver/colt357,							160),
-		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						160),
-		new /datum/data/wasteland_equipment("Cowboy Repeater",				/obj/item/gun/ballistic/rifle/repeater/cowboy,						160),
-		new /datum/data/wasteland_equipment("M1 Carbine",					/obj/item/gun/ballistic/automatic/m1carbine,						170),
+		new /datum/data/wasteland_equipment("Survival Knife",				/obj/item/melee/onehanded/knife/survival, 							25),
+		new /datum/data/wasteland_equipment("Machete",						/obj/item/melee/onehanded/machete,									30),
+		new /datum/data/wasteland_equipment("Fire Axe",				 		/obj/item/twohanded/fireaxe, 										40),
+		new /datum/data/wasteland_equipment("Silenced Pistol (.22)",		/obj/item/gun/ballistic/automatic/pistol/pistol22, 					60),
+		new /datum/data/wasteland_equipment("Sport Carbine (.22)",			/obj/item/gun/ballistic/automatic/sportcarbine, 					120),
+		new /datum/data/wasteland_equipment("Browning Hi-Power (9mm)",		/obj/item/gun/ballistic/automatic/pistol/ninemil, 					60),
+		new /datum/data/wasteland_equipment("Colt N99 (10mm)",				/obj/item/gun/ballistic/automatic/pistol/n99,						60),
+		new /datum/data/wasteland_equipment("Colt M1911 (.45)",				/obj/item/gun/ballistic/automatic/pistol/m1911, 					60),
+		new /datum/data/wasteland_equipment("Revolver (.357)",				/obj/item/gun/ballistic/revolver/colt357, 							60),
+		new /datum/data/wasteland_equipment("Varmint Rifle (5.56)",			/obj/item/gun/ballistic/automatic/varmint, 							60),
+		new /datum/data/wasteland_equipment("Hunting Rifle (.308)",			/obj/item/gun/ballistic/rifle/hunting, 								60),
+		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",	/obj/item/gun/ballistic/shotgun/hunting, 							60),
+		new /datum/data/wasteland_equipment("Shortbow (Arrow)",				/obj/item/gun/ballistic/bow/shortbow,								60),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/crafting_recipe/gunsmith_two,				50),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/crafting_recipe/gunsmith_three, 				75),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 4",		/obj/item/book/granter/crafting_recipe/gunsmith_four, 				100),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("survival knife",				/obj/item/melee/onehanded/knife/survival, 							40),
-		new /datum/data/wasteland_equipment(".22 Pistol",					/obj/item/gun/ballistic/automatic/pistol/pistol22,					50),
-		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/beretta,					60),
-		new /datum/data/wasteland_equipment("10mm pistol",					/obj/item/gun/ballistic/automatic/pistol/n99,						60),
-		new /datum/data/wasteland_equipment("Colt Revolver",				/obj/item/gun/ballistic/revolver/colt357,							70),
-		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						70),
-		new /datum/data/wasteland_equipment("Cowboy Repeater",				/obj/item/gun/ballistic/rifle/repeater/cowboy,						80),
-		new /datum/data/wasteland_equipment("M1 Carbine",					/obj/item/gun/ballistic/automatic/m1carbine,						90),
+		new /datum/data/wasteland_equipment("Survival Knife",				/obj/item/melee/onehanded/knife/survival, 							25),
+		new /datum/data/wasteland_equipment("Machete",						/obj/item/melee/onehanded/machete,									30),
+		new /datum/data/wasteland_equipment("Fire Axe",				 		/obj/item/twohanded/fireaxe, 										40),
+		new /datum/data/wasteland_equipment("Silenced Pistol (.22)",		/obj/item/gun/ballistic/automatic/pistol/pistol22, 					60),
+		new /datum/data/wasteland_equipment("Sport Carbine (.22)",			/obj/item/gun/ballistic/automatic/sportcarbine, 					120),
+		new /datum/data/wasteland_equipment("Browning Hi-Power (9mm)",		/obj/item/gun/ballistic/automatic/pistol/ninemil, 					60),
+		new /datum/data/wasteland_equipment("Colt N99 (10mm)",				/obj/item/gun/ballistic/automatic/pistol/n99,						60),
+		new /datum/data/wasteland_equipment("Colt M1911 (.45)",				/obj/item/gun/ballistic/automatic/pistol/m1911, 					60),
+		new /datum/data/wasteland_equipment("Revolver (.357)",				/obj/item/gun/ballistic/revolver/colt357, 							60),
+		new /datum/data/wasteland_equipment("Varmint Rifle (5.56)",			/obj/item/gun/ballistic/automatic/varmint, 							60),
+		new /datum/data/wasteland_equipment("Hunting Rifle (.308)",			/obj/item/gun/ballistic/rifle/hunting, 								60),
+		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",	/obj/item/gun/ballistic/shotgun/hunting, 							60),
+		new /datum/data/wasteland_equipment("Shortbow (Arrow)",				/obj/item/gun/ballistic/bow/shortbow,								60),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/crafting_recipe/gunsmith_two,				50),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/crafting_recipe/gunsmith_three, 				75),
@@ -692,27 +703,29 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 
 /obj/machinery/mineral/wasteland_vendor/ammo
-	name = "Wasteland Vending Machine - Ammo n Bombs"
+	name = "Wasteland Vending Machine - Ammunition"
 	icon_state = "ammo_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
-		new /datum/data/wasteland_equipment("9mm pistol magazine (9mm)",	/obj/item/ammo_box/magazine/m9mm/doublestack,									50),
-		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm/adv/simple,						60),
-		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
-		new /datum/data/wasteland_equipment("Smoke Bomb",					/obj/item/grenade/smokebomb,										70),
-		new /datum/data/wasteland_equipment("Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives,							150),
-		new /datum/data/wasteland_equipment("Firebomb",						/obj/item/grenade/homemade/firebomb,								75),
-		new /datum/data/wasteland_equipment("Advanced Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives_advanced,							275),				
+		new /datum/data/wasteland_equipment(".22 Pistol magazine (16 bullets)",			/obj/item/ammo_box/magazine/m22,						7),
+		new /datum/data/wasteland_equipment("9mm Single stack magazine (10 bullets)",	/obj/item/ammo_box/magazine/m9mm,						8),
+		new /datum/data/wasteland_equipment("10mm Pistol magazine (12 bullets)",		/obj/item/ammo_box/magazine/m10mm/adv,					10),
+		new /datum/data/wasteland_equipment(".45 Pistol magazine (7 bullets)",			/obj/item/ammo_box/magazine/m45,						5),
+		new /datum/data/wasteland_equipment(".357 Speedloader (6 bullets)",				/obj/item/ammo_box/a357,								5),
+		new /datum/data/wasteland_equipment("5.56 rifle magazine (10 bullets)",			/obj/item/ammo_box/magazine/m556/rifle/small,			7),
+		new /datum/data/wasteland_equipment(".308 stripper clip (5 bullets)",			/obj/item/ammo_box/a308,								6),
+		new /datum/data/wasteland_equipment("Buckshot box (12 shells)",					/obj/item/ammo_box/shotgun/buck,						7),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",					/obj/item/projectile/bullet/reusable/arrow/field,		3),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
-		new /datum/data/wasteland_equipment("9mm pistol magazine (9mm)",	/obj/item/ammo_box/magazine/m9mm,									50),
-		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm/adv/simple,						60),
-		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
-		new /datum/data/wasteland_equipment("Smoke Bomb",					/obj/item/grenade/smokebomb,										70),
-		new /datum/data/wasteland_equipment("Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives,							150),
-		new /datum/data/wasteland_equipment("Firebomb",						/obj/item/grenade/homemade/firebomb,								75),
-		new /datum/data/wasteland_equipment("Advanced Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives_advanced,							275),
+		new /datum/data/wasteland_equipment(".22 Pistol magazine (16 bullets)",			/obj/item/ammo_box/magazine/m22,						7),
+		new /datum/data/wasteland_equipment("9mm Single stack magazine (10 bullets)",	/obj/item/ammo_box/magazine/m9mm,						8),
+		new /datum/data/wasteland_equipment("10mm Pistol magazine (12 bullets)",		/obj/item/ammo_box/magazine/m10mm/adv,					10),
+		new /datum/data/wasteland_equipment(".45 Pistol magazine (7 bullets)",			/obj/item/ammo_box/magazine/m45,						5),
+		new /datum/data/wasteland_equipment(".357 Speedloader (6 bullets)",				/obj/item/ammo_box/a357,								5),
+		new /datum/data/wasteland_equipment("5.56 rifle magazine (10 bullets)",			/obj/item/ammo_box/magazine/m556/rifle/small,			7),
+		new /datum/data/wasteland_equipment(".308 stripper clip (5 bullets)",			/obj/item/ammo_box/a308,								6),
+		new /datum/data/wasteland_equipment("Buckshot box (12 shells)",					/obj/item/ammo_box/shotgun/buck,						7),
+		new /datum/data/wasteland_equipment("Field Arrow (1 arrow)",					/obj/item/projectile/bullet/reusable/arrow/field,		3),
 	)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
