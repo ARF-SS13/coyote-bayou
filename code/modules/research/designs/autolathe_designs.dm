@@ -542,6 +542,7 @@
 	materials = list(MAT_METAL = 800, MAT_GLASS = 200)
 	build_path = /obj/item/assembly/health
 	category = list("initial", "Medical")
+
 /datum/design/portable_chem_mixer
 	name = "FOODCO Kitchen Buddy 2000"
 	id = "portable_blender"
