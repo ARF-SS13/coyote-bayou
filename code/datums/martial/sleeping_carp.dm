@@ -10,7 +10,7 @@
 	pugilist = TRUE
 	var/physdammod = 0.5
 	var/stamdammod = 0.2
-
+/*
 /datum/martial_art/the_sleeping_carp/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,STRONG_PUNCH_COMBO))
 		streak = ""
@@ -116,7 +116,7 @@
 		return TRUE
 	log_combat(A, D, "disarmed (Sleeping Carp)")
 	return ..()
-
+*/
 /datum/martial_art/the_sleeping_carp/on_projectile_hit(mob/living/carbon/human/A, obj/item/projectile/P, def_zone)
 	. = ..()
 	if(A.incapacitated(FALSE, TRUE)) //NO STUN
@@ -146,9 +146,9 @@
 	ADD_TRAIT(H, TRAIT_TASED_RESISTANCE, SLEEPING_CARP_TRAIT)
 	H.physiology.stamina_mod *= 0.5 //You take less stamina damage overall, but you do not reduce the damage from stun batons
 	H.physiology.stun_mod *= 0.3 //for those rare stuns
-	H.physiology.pressure_mod *= 0.3 //go hang out with carp
-	H.physiology.cold_mod *= 0.3 //cold mods are different to burn mods, they do stack however
-	H.physiology.heat_mod *= 2 //this is mostly so sleeping carp has a viable weakness. Cooking them alive. Setting them on fire and heating them will be their biggest weakness. The reason for this is....filet jokes.
+	//H.physiology.pressure_mod *= 0.3 //go hang out with carp
+	//H.physiology.cold_mod *= 0.3 //cold mods are different to burn mods, they do stack however
+	//H.physiology.heat_mod *= 2 //this is mostly so sleeping carp has a viable weakness. Cooking them alive. Setting them on fire and heating them will be their biggest weakness. The reason for this is....filet jokes.
 
 	H.faction |= "carp" //:D
 
@@ -172,7 +172,7 @@
 
 	to_chat(usr, "<b><i>You retreat inward and recall the teachings of the Sleeping Carp...</i></b>")
 
-	to_chat(usr, "<span class='notice'>Gnashing Teeth</span>: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
-	to_chat(usr, "<span class='notice'>Crashing Wave Kick</span>: Harm Disarm. Launch people brutally across rooms, and away from you.")
-	to_chat(usr, "<span class='notice'>Keelhaul</span>: Harm Grab. Kick opponents to the floor. Against prone targets, deal additional stamina damage and disarm them.")
-	to_chat(usr, span_notice("In addition, your body has become incredibly resilient to most forms of attack. Weapons cannot readily pierce your hardened skin, and you are highly resistant to stuns and knockdowns, and can block all projectiles in Throw Mode. However, you are not invincible, and sustained damage will take it's toll. Avoid heat at all costs!"))
+	//to_chat(usr, "<span class='notice'>Gnashing Teeth</span>: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
+	//to_chat(usr, "<span class='notice'>Crashing Wave Kick</span>: Harm Disarm. Launch people brutally across rooms, and away from you.")
+	//to_chat(usr, "<span class='notice'>Keelhaul</span>: Harm Grab. Kick opponents to the floor. Against prone targets, deal additional stamina damage and disarm them.")
+	to_chat(usr, span_notice("You can block all projectiles in Throw Mode. However, you are not invincible, and sustained damage will take it's toll on your stamina before your health."))
