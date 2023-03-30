@@ -538,8 +538,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
 		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150)
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
@@ -547,8 +547,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
 		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
-		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150)
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300),
+		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/khanchem
