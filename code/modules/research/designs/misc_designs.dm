@@ -7,7 +7,7 @@
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status."
 	id = "health_hud"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/health
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -17,7 +17,7 @@
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status. This one has a prescription lens."
 	id = "health_hud_prescription"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 350)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 350, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/health/prescription
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -27,7 +27,7 @@
 	desc = "An advanced medical head-up display that allows doctors to find patients in complete darkness."
 	id = "health_hud_night"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/uranium = 1000, /datum/material/silver = 350)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/uranium = 1000, /datum/material/silver = 350, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/health/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -37,7 +37,7 @@
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status."
 	id = "security_hud"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/security
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -47,7 +47,7 @@
 	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status. This one has a prescription lens."
 	id = "security_hud_prescription"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 350)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 350, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/security/prescription
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -57,7 +57,7 @@
 	desc = "A heads-up display which provides id data and vision in complete darkness."
 	id = "security_hud_night"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/uranium = 1000, /datum/material/gold = 350)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/uranium = 1000, /datum/material/gold = 350, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/security/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -67,7 +67,7 @@
 	desc = "A HUD used to analyze and determine faults within robotic machinery."
 	id = "diagnostic_hud"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/diagnostic
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -77,7 +77,7 @@
 	desc = "A HUD used to analyze and determine faults within robotic machinery. This one has a prescription lens."
 	id = "diagnostic_hud_prescription"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/gold = 350)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/gold = 350, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/diagnostic/prescription
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -87,7 +87,7 @@
 	desc = "Upgraded version of the diagnostic HUD designed to function during a power failure."
 	id = "diagnostic_hud_night"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/uranium = 1000, /datum/material/plasma = 300)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/uranium = 1000, /datum/material/plasma = 300, /datum/material/bluespace = 100000)
 	build_path = /obj/item/clothing/glasses/hud/diagnostic/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
