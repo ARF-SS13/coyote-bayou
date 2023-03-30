@@ -310,6 +310,7 @@ ATTACHMENTS
 	to_chat(user, span_danger("[dryfire_text]"))
 	playsound(src, dryfire_sound, 30, 1)
 	update_firemode()
+	update_icon()
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0, obj/item/projectile/P)
 	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
@@ -457,6 +458,8 @@ ATTACHMENTS
 	var/stam_cost = getstamcost(user)
 
 	process_fire(target, user, TRUE, params, null, stam_cost)
+	update_icon()
+
 
 /obj/item/gun/can_trigger_gun(mob/living/user)
 	. = ..()

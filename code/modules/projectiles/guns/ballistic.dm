@@ -81,6 +81,7 @@
 	else if (magazine.ammo_count())
 		chambered = magazine.get_round()
 		chambered.forceMove(src)
+	update_icon()
 
 /obj/item/gun/ballistic/can_shoot()
 	return !!chambered?.BB
@@ -226,6 +227,7 @@
 			update_icon()
 		else
 			eject_magazine(user, en_bloc, !en_bloc, TRUE)
+			update_icon()
 		return
 	if(chambered)
 		pump(user, TRUE)
@@ -246,8 +248,6 @@
 		user.put_in_hands(magazine)
 	else
 		user.dropItemToGround(magazine)
-	magazine.update_icon()
-	update_icon()
 	if(sounds_and_words)
 		if(en_bloc)
 			playsound(src, "sound/f13weapons/garand_ping.ogg", 70, 1)
@@ -256,7 +256,9 @@
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		to_chat(user, span_notice("You eject \the [magazine] from \the [src]."))
+	magazine.update_icon()
 	magazine = null
+	update_icon()
 	return TRUE
 
 /// Pump if click with empty thing

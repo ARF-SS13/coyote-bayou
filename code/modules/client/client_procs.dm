@@ -7,8 +7,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	"1407" = "bug preventing client display overrides from working leads to clients being able to see things/mobs they shouldn't be able to see",
 	"1408" = "bug preventing client display overrides from working leads to clients being able to see things/mobs they shouldn't be able to see",
 	"1428" = "bug causing right-click menus to show too many verbs that's been fixed in version 1429",
-
 	))
+GLOBAL_LIST_INIT(checked_ckeys, list())
+GLOBAL_LIST_INIT(warning_ckeys, list())
 
 #define LIMITER_SIZE	5
 #define CURRENT_SECOND	1
@@ -432,8 +433,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		message_admins("New user: [key_name_admin(src)] just connected with an age of [cached_player_age] day[(player_age==1?"":"s")]")
 	
 	//Check if the player is connecting from an IP hosting a VPN, Proxy, TOR exit node, or other relay
-	if (player_age < 10)
-		spawn(10) check_vpt(ckey, address)
+	var/the_ckey = ckey(ckey)
+	if (!(the_ckey in GLOB.checked_ckeys))
+		GLOB.checked_ckeys.Add(the_ckey)
+		var/response = check_vpt(the_ckey, address)
+		if (response != null)
+			GLOB.warning_ckeys[the_ckey] = response
 	
 	if(CONFIG_GET(flag/use_account_age_for_jobs) && account_age >= 0)
 		player_age = account_age

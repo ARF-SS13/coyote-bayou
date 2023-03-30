@@ -120,6 +120,21 @@
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_WORKER
 	spawn_thing = /obj/item/storage/box/tools/mining
+	
+/obj/item/storage/box/tools/merchant
+	name = "merchant tools"
+
+/obj/item/storage/box/tools/merchant/PopulateContents()
+	new /obj/item/stack/f13Cash/caps/twofive
+	new /obj/item/stack/f13Cash/caps/fivezero
+	new /obj/item/storage/box/vendingmachine
+
+
+/datum/loadout_box/merchant
+	entry_tag = "merchant tools"
+	entry_flags = LOADOUT_FLAG_TOOL_WASTER
+	entry_class = LOADOUT_CAT_WORKER
+	spawn_thing = /obj/item/storage/box/tools/merchant
 
 /obj/item/storage/box/tools/smithing
 	name = "smithing tools"
@@ -147,10 +162,10 @@
 	new /obj/item/circuitboard/machine/chem_heater(src)
 	new /obj/item/circuitboard/machine/reagentgrinder(src)
 	new /obj/item/storage/bag/chemistry(src)
-	new /obj/item/storage/portable_chem_mixer(src)
+	new /obj/item/storage/blender_belt(src)
 	new /obj/item/reagent_containers/glass/beaker/plastic(src)
 	new /obj/item/reagent_containers/glass/beaker/plastic(src)
-	new /datum/design/sci_goggles(src)
+	new /obj/item/clothing/glasses/science(src)
 
 /datum/loadout_box/chemist
 	entry_tag = "chemistry tools"

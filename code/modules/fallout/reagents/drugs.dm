@@ -9,15 +9,22 @@
 /datum/reagent/drug/jet/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		to_chat(M, span_notice("You feel an incredible high! You just absolutely love life in this moment!"))
+		if(NODRUGS(M))
+			to_chat(M, span_userdanger("Jet-- but doesn't that come from-- OH SHIT???!"))
+		else
+			to_chat(M, span_notice("You feel an incredible high! You just absolutely love life in this moment!"))
 
 /datum/reagent/drug/jet/on_mob_delete(mob/living/carbon/human/M)
 	..()
-	if(isliving(M))
+	if(isliving(M) && !NODRUGS(M))
 		to_chat(M, span_notice("You come down from your high. The wild ride is unfortunately over..."))
 		M.confused += 2
 
 /datum/reagent/drug/jet/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	M.adjustStaminaLoss(-20, 0)
 	M.set_drugginess(20)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc) && prob(10))
@@ -96,6 +103,9 @@
 
 /datum/reagent/drug/turbo/on_mob_add(mob/M)
 	..()
+	if(NODRUGS(M))
+		to_chat(M, span_userdanger("What a horrible feeling!"))
+		return
 	ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 /datum/reagent/drug/turbo/on_mob_delete(mob/M)
@@ -103,6 +113,10 @@
 	..()
 
 /datum/reagent/drug/turbo/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
@@ -182,6 +196,10 @@
 
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	var/high_message = pick("<br><font color='#FF0000'><b>FUCKING KILL!</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
 	if(prob(20))
 		to_chat(M, span_notice("[high_message]"))
@@ -287,6 +305,9 @@
 /datum/reagent/drug/buffout/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
+		if(NODRUGS(M))
+			to_chat(M, span_userdanger("Steriods have been linked to heart attacks and infertility! Oh no!"))
+			return
 		to_chat(M, span_notice("You feel stronger, and like you're able to endure more."))
 		ADD_TRAIT(M, TRAIT_BUFFOUT_BUFF, "buffout")
 		ADD_TRAIT(M, TRAIT_PERFECT_ATTACKER, "buffout")
@@ -295,7 +316,7 @@
 
 /datum/reagent/drug/buffout/on_mob_delete(mob/living/carbon/human/M)
 	..()
-	if(isliving(M))
+	if(isliving(M) && !NODRUGS(M))
 		to_chat(M, span_notice("You feel weaker."))
 		REMOVE_TRAIT(M, TRAIT_BUFFOUT_BUFF, "buffout")
 		REMOVE_TRAIT(M, TRAIT_PERFECT_ATTACKER, "buffout")
@@ -303,6 +324,10 @@
 		M.health -= 25
 
 /datum/reagent/drug/buffout/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	M.AdjustStun(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.AdjustKnockdown(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
 	if(M.mind)
@@ -388,6 +413,9 @@
 /datum/reagent/drug/steady/on_mob_add(mob/living/M)
 	..()
 	if(M)
+		if(NODRUGS(M))
+			to_chat(M, span_userdanger("But you were steady before! You feel TOO steady!"))
+			return
 		to_chat(M, span_notice("You feel your senses becoming sharper, your trigger finger moving instinctively."))
 		ADD_TRAIT(M, SPREAD_CONTROL, "steady")
 

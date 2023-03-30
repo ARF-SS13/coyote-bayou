@@ -37,6 +37,27 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/datum/looping_sound/blender
+	start_sound = list(SOUND_LOOP_ENTRY('sound/machines/blender/blender1.ogg', 3 SECONDS, 1))
+	start_length = 4
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender2.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender3.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender4.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender5.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender6.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender7.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender8.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender9.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender10.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender11.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/blender/blender12.ogg', 3 SECONDS, 1), 
+		)
+	mid_length = 4
+	volume = 30 // sweet merciful fuck this thing is loud
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /datum/looping_sound/deep_fryer
 	start_sound = list(SOUND_LOOP_ENTRY('sound/machines/fryer/deep_fryer_immerse.ogg', 1 SECONDS, 1)) //my immersions

@@ -29,4 +29,6 @@
 		replacement = "internet relay"
 	if (length(replacement) > 0)
 		message_admins(replacetext(standardText, "BADNEFARIOUSTHING", replacement))
-	return response
+	if (replacement != "")
+		return replacement
+	return null

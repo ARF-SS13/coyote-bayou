@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, Box, Section, NoticeBox, TimeDisplay, Flex, Icon, Table, Fragment, LabeledList } from '../components';
+import { Button, Box, Section, NoticeBox, Flex, Icon, Table, Fragment, LabeledList } from '../components';
 import { Window } from '../layouts';
 import { toFixed } from 'common/math';
 
