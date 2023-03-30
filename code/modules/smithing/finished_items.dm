@@ -14,7 +14,7 @@
 	force = WEAPON_FORCE_TOOL_SMALL
 	obj_flags = UNIQUE_RENAME
 	var/quality
-	var/overlay_state = "stick"
+	var/overlay_state = "woodenrod"
 	var/mutable_appearance/overlay
 	//var/wielded_mult = 1
 
