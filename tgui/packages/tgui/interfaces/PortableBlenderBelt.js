@@ -1,8 +1,7 @@
 import { toFixed } from 'common/math';
-import { toTitleCase } from 'common/string';
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, Icon, LabeledList, ProgressBar, Section } from '../components';
+import { AnimatedNumber, Box, Button, LabeledList, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
 
