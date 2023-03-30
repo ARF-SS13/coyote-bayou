@@ -2,10 +2,11 @@
 /obj/item/melee/smith
 	name = "base class obj/item/melee/smith" //tin. handles overlay and quality and shit.
 	desc = "cringe"
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "claymore"
-	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'
+	righthand_file = 'code/modules/smithing/icons/onmob/righthand.dmi'
+	mob_overlay_icon = 'code/modules/smithing/icons/onmob/slot.dmi'
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON //yeah ok
 	slot_flags = ITEM_SLOT_BELT
@@ -29,9 +30,9 @@
 
 
 /obj/item/melee/smith/twohand
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
+	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'
+	righthand_file = 'code/modules/smithing/icons/onmob/righthand.dmi'
 	item_flags = NEEDS_PERMIT //it's a bigass sword/spear. beepsky is going to give you shit for it.
 	sharpness = SHARP_EDGED
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
@@ -70,7 +71,7 @@
 // Blacksmithing hammer, not useful for anything else.
 /obj/item/melee/smith/hammer
 	name = "smithing hammer"
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "hammer"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
@@ -88,7 +89,7 @@
 	name = "prospectors pick"
 	desc = "A pick that can sound rocks to find mineral deposits."
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "prospect_smith"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
@@ -118,7 +119,7 @@
 	name = "pickaxe"
 	desc = "A pickaxe."
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "pickaxe"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
@@ -142,7 +143,7 @@
 /obj/item/shovel/smithed
 	name = "shovel"
 	desc = "A shovel."
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "shovel"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
@@ -162,7 +163,7 @@
 
 // Smithed crowbars top out at 0.2 toolspeed max quality. Not bad. Not that useful either, its just a crowbar, still.
 /obj/item/crowbar/smithed
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "crowbar_smith"
 	item_state = "crowbar"
 	toolspeed = 0.8
@@ -180,10 +181,10 @@
 // Crowbar-axe. Just a crowbar with more force and a homemade vibe.
 /obj/item/crowbar/smithedunitool
 	name = "crowbaxe"
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "unitool_smith"
-	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'
+	righthand_file = 'code/modules/smithing/icons/onmob/righthand.dmi'
 	item_state = "unitool_smith"
 	sharpness = SHARP_EDGED
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
@@ -329,7 +330,6 @@
 	block_parry_data = /datum/block_parry_data/smithrapier
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = ITEM_SLOT_BELT
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
 
 /datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
@@ -356,7 +356,6 @@
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
 	force = WEAPON_FORCE_AXE_LARGE
 	wielded_mult = WEAPON_AXE_TWOHAND_MULT
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	layer = MOB_UPPER_LAYER
 
