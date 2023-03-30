@@ -550,7 +550,8 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000)
 	build_path = /obj/item/storage/portable_chem_mixer
-	category = list("initial", “Medical”)
+	category = list("initial", "Medical")
+
 /datum/design/timer
 	name = "Timer"
 	id = "timer"
