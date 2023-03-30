@@ -6532,6 +6532,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"cMQ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "cNs" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light{
@@ -7433,6 +7438,14 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"dzX" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "dAg" = (
 /obj/structure/closet/crate/trashcart,
 /obj/machinery/light{
@@ -8927,6 +8940,14 @@
 /obj/item/clothing/under/f13/raiderharness,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"eGv" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "tritemp"
+	},
+/obj/structure/stone_tile/surrounding/burnt,
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "eGA" = (
 /obj/structure/spider/cocoon,
 /obj/structure/spider/stickyweb,
@@ -9382,6 +9403,10 @@
 /obj/structure/bed/mattress,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
+"eYF" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "eYO" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
@@ -13861,6 +13886,12 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"iFQ" = (
+/obj/structure/spacevine,
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/caves)
 "iFX" = (
 /obj/structure/chair{
 	dir = 8
@@ -19245,6 +19276,10 @@
 /obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
+"mEr" = (
+/obj/structure/stone_tile/slab,
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "mEQ" = (
 /obj/structure/closet/crate/miningcar,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
@@ -20149,6 +20184,11 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"nrb" = (
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/caves)
 "nre" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbroken"
@@ -20586,6 +20626,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
+"nID" = (
+/obj/structure/necropolis_gate{
+	desc = "A massive stone gateway with a very heavy stone door.";
+	name = "village gate"
+	},
+/obj/structure/stone_tile/slab/burnt,
+/obj/structure/necropolis_arch,
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "nIE" = (
 /obj/structure/table/optable/abductor,
 /obj/effect/decal/remains/xeno,
@@ -25846,6 +25895,11 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/freezer,
+/area/f13/caves)
+"rCQ" = (
+/obj/structure/stone_tile/surrounding_tile,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel/cult,
 /area/f13/caves)
 "rDj" = (
 /obj/structure/junk/locker,
@@ -37894,7 +37948,7 @@ bFx
 aah
 aah
 boU
-aae
+lqn
 aae
 aae
 aae
@@ -38411,7 +38465,6 @@ bFx
 aae
 aae
 aae
-aak
 aae
 aae
 aae
@@ -38422,7 +38475,8 @@ aae
 aae
 aae
 aae
-aak
+aae
+aae
 aak
 aae
 aae
@@ -38678,8 +38732,8 @@ aae
 aae
 aae
 aae
-aak
-aak
+aae
+aae
 aae
 aae
 aae
@@ -38935,8 +38989,8 @@ aae
 aae
 aae
 aae
-aak
-aak
+aae
+aae
 aae
 aae
 aae
@@ -39192,7 +39246,7 @@ aae
 aae
 aae
 aae
-aak
+aae
 aae
 aae
 aae
@@ -39436,7 +39490,6 @@ bFx
 aah
 bHj
 bFx
-bFx
 aae
 aae
 aae
@@ -39449,7 +39502,8 @@ aae
 aae
 aae
 aae
-aak
+aae
+aae
 aae
 aae
 aae
@@ -39692,7 +39746,6 @@ aab
 bFx
 aah
 aah
-aah
 bFx
 aae
 aae
@@ -39706,7 +39759,8 @@ aae
 aae
 aae
 aae
-aak
+aae
+aae
 aae
 aae
 aae
@@ -39950,8 +40004,7 @@ bFx
 aah
 aah
 aah
-bFx
-bFx
+lqn
 aae
 aae
 aae
@@ -39963,7 +40016,8 @@ aae
 aae
 aae
 aae
-aak
+aae
+aae
 aae
 aae
 aak
@@ -40475,10 +40529,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+nrb
+nrb
+nrb
+nrb
 aae
 xwF
 xwF
@@ -40726,16 +40780,16 @@ aah
 bFx
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+nrb
+iFQ
+iFQ
+iFQ
+nrb
+nrb
+nrb
+cob
+cob
+nrb
 aae
 xwF
 xwF
@@ -40983,16 +41037,16 @@ aah
 aah
 bFx
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+nrb
+mEr
+rCQ
+mEr
+eYF
+mEr
+nrb
+cob
+cob
+nrb
 aae
 xwF
 xwF
@@ -41240,16 +41294,16 @@ aah
 bHj
 bFx
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+nrb
+dzX
+mEr
+eGv
+mEr
+mEr
+nID
+cob
+cob
+nrb
 aae
 xwF
 xwF
@@ -41497,16 +41551,16 @@ aah
 aah
 bFx
 bFx
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+nrb
+eYF
+mEr
+mEr
+mEr
+cMQ
+nrb
+cob
+cob
+nrb
 aae
 xwF
 aak
@@ -41754,16 +41808,16 @@ aah
 aah
 aah
 bFx
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+iFQ
+iFQ
+nrb
+iFQ
+nrb
+nrb
+nrb
+cob
+cob
+nrb
 aae
 xwF
 xwF
@@ -42016,11 +42070,11 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
+nrb
+cob
+cob
+cob
+nrb
 aae
 pth
 uNX
@@ -42273,12 +42327,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+nrb
+cob
+cob
+cob
+nrb
+nrb
 bmR
 aaB
 sjg
@@ -42530,12 +42584,12 @@ bFx
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+nrb
+cob
+cob
+cob
+cob
+nrb
 eGb
 aaB
 aaB
@@ -42787,12 +42841,12 @@ bFx
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+nrb
+nrb
+cob
+cob
+cob
+nrb
 aar
 cQy
 aaB
@@ -43045,12 +43099,12 @@ bFx
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-xwF
+nrb
+nrb
+cob
+cob
+cob
+cob
 aaB
 aaB
 aaB
@@ -43303,11 +43357,11 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-gJb
+nrb
+cob
+cob
+cob
+cob
 nMs
 aaB
 aaB
@@ -43560,11 +43614,11 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-eGb
+nrb
+cob
+cob
+cob
+cob
 cob
 cob
 cob
@@ -43817,11 +43871,11 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-xwF
+nrb
+nrb
+nrb
+nrb
+nrb
 aaB
 aaB
 mYz
@@ -44080,7 +44134,7 @@ aae
 aae
 xwF
 aaB
-aaB
+gJb
 aaB
 vBv
 kUb
