@@ -245,6 +245,14 @@
 	category = list("initial","Construction")
 	maxstack = 50
 
+/datum/design/titanium
+	name = "Titanium"
+	id = "titanium"
+	materials = list(/datum/material/titanium = 2000)
+	build_path = /obj/item/stack/sheet/mineral/titanium
+	category = list("initial", "Construction")
+	maxstack = 50
+
 /datum/design/rcd_ammo
 	name = "Compressed Matter Cartridge"
 	id = "rcd_ammo"
@@ -536,6 +544,13 @@
 	build_path = /obj/item/assembly/health
 	category = list("initial", "Medical")
 
+/datum/design/portable_chem_mixer
+	name = "Portable Chemical Mixer"
+	id = "portable_chem_mixer"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000)
+	build_path = /obj/item/storage/portable_chem_mixer
+	category = list("initial", “Medical”)
 /datum/design/timer
 	name = "Timer"
 	id = "timer"
@@ -618,13 +633,13 @@
 	build_path = /obj/item/flamethrower/full
 	category = list("initial", "Security")
 */
-/datum/design/rcd
+/*/datum/design/rcd
 	name = "Rapid Construction Device (RCD)"
 	id = "rcd"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 30000)
 	build_path = /obj/item/construction/rcd
-	category = list("hacked", "Construction")
+	category = list("hacked", "Construction")*/
 
 /datum/design/rpd
 	name = "Rapid Pipe Dispenser (RPD)"

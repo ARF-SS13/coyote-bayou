@@ -42,7 +42,9 @@ other types of metals and chemistry for reagents).
 	var/research_icon					//Replaces the item icon in the research console
 	var/research_icon_state
 	var/icon_cache
-
+	/// Checks if the material price is less than that of what it gives back, and then adds some if so
+	/// Spams the chat with bullshit if so, its a debugging tool~
+	var/debug_materials = FALSE
 /datum/design/error_design
 	name = "ERROR"
 	desc = "This usually means something in the database has corrupted. If this doesn't go away automatically, inform Central Command so their techs can fix this ASAP(tm)"
@@ -52,6 +54,8 @@ other types of metals and chemistry for reagents).
 	return ..()
 
 /datum/design/proc/InitializeMaterials()
+	if(debug_materials)
+		material_cost_autobalance()
 	var/list/temp_list = list()
 	for(var/i in materials) //Go through all of our materials, get the subsystem instance, and then replace the list.
 		var/amount = materials[i]
@@ -61,6 +65,51 @@ other types of metals and chemistry for reagents).
 		else
 			temp_list[i] = amount
 	materials = temp_list
+
+
+/datum/design/proc/material_cost_autobalance()
+	if(ispath(build_path, /obj/item/ammo_box))
+		var/list/design_materials = list()
+		var/obj/item/ammo_box/this_box = new build_path()
+		counterlist_combine(design_materials, this_box.custom_materials) // box materials
+		if(!ispath(this_box.ammo_type, /obj/item/ammo_casing))
+			qdel(this_box)
+			analyze_cost_findings(design_materials)
+			return
+		var/obj/item/ammo_casing/this_bullet = new this_box.ammo_type()
+		var/list/bullet_materials = this_bullet.custom_materials
+		bullet_materials = counterlist_scale(bullet_materials, this_box.max_ammo)
+		counterlist_combine(design_materials, bullet_materials) // add ammo materials
+		qdel(this_box)
+		qdel(this_bullet)
+		analyze_cost_findings(design_materials)
+
+/datum/design/proc/analyze_cost_findings(list/result_materials)
+	if(!LAZYLEN(result_materials))
+		return
+	var/list/whine_about_it = list()
+	for(var/returned_mats in result_materials)
+		if(result_materials[returned_mats] >= materials[returned_mats])
+			whine_about_it["[returned_mats]"] = list(
+				"material" = returned_mats,
+				"design_cost" = materials[returned_mats],
+				"mats_returned" = result_materials[returned_mats]
+			)
+	if(LAZYLEN(whine_about_it))
+		actually_whine_about_it(whine_about_it)
+
+/datum/design/proc/actually_whine_about_it(list/whine_list)
+	if(!LAZYLEN(whine_list))
+		return
+	message_admins(span_abductor("Heads up, nerds!") + " Ammolathe design '[src]' returns more materials than it costs!")
+	for(var/i in whine_list)
+		var/list/whine_sublist = whine_list[i]
+		var/name_of_mat = whine_sublist["material"]
+		var/cost_of_design = whine_sublist["design_cost"]
+		var/materials_returned = whine_sublist["mats_returned"]
+		var/suggested_amount_of_mat = materials_returned * 1.50
+		message_admins("[src] - [name_of_mat]: costs [cost_of_design], but returns [materials_returned] if reinserted. Suggested mat cost: [suggested_amount_of_mat]")
+
 
 /datum/design/proc/get_asset_path()
 	if(research_icon && research_icon_state)

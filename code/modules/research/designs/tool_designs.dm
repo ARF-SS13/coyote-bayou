@@ -22,7 +22,7 @@
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
-/datum/design/rcd_loaded
+/* /datum/design/rcd_loaded
 	name = "Rapid Construction Device"
 	desc = "A tool that can construct and deconstruct walls, airlocks and floors on the fly."
 	id = "rcd_loaded"
@@ -30,7 +30,7 @@
 	materials = list(/datum/material/iron = 36000)  // costs more than what it did in the autolathe, this one comes loaded.
 	build_path = /obj/item/construction/rcd/loaded
 	category = list("Tool Designs")
-	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING */
 
 /datum/design/shuttlecreator
 	name = "Rapid Shuttle Designator"
