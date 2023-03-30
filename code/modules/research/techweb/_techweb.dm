@@ -402,7 +402,7 @@
 
 /datum/techweb/specialized/autounlocking/autolathe
 	design_autounlock_buildtypes = AUTOLATHE
-	allowed_buildtypes = AUTOLATHE|TOYLATHE|AMMOLATHE|AMMOLATHE_HOBO
+	allowed_buildtypes = AUTOLATHE|TOYLATHE|AMMOLATHE
 
 /datum/techweb/specialized/autounlocking/autolathe/public
 	design_autounlock_skip_types = NO_PUBLIC_LATHE

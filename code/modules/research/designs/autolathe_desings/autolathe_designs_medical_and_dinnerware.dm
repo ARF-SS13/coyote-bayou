@@ -73,14 +73,6 @@
 	build_path = /obj/item/reagent_containers/syringe/large
 	category = list("initial", "Medical")
 
-/datum/design/hypospraymkii
-	name = "hypospray mk.II"
-	id = "hypospraymkii"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 40, /datum/material/glass = 80, /datum/material/plastic = 120)
-	build_path = /obj/item/hypospray/mkii
-	category = list("initial", "Medical")
-
 /datum/design/xlargesyringex
 	name = "X-Large syringe"
 	id = "xlargesyringe"
@@ -98,14 +90,6 @@
 	build_path = /obj/item/scalpel
 	category = list("initial", "Medical","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/portable_chem_mixer
-	name = "Portable Chemical Mixer"
-	id = "portable_chem_mixer"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000)
-	build_path = /obj/item/storage/portable_chem_mixer
-	category = list("initial", "Medical")
 
 /datum/design/circular_saw
 	name = "Circular Saw"

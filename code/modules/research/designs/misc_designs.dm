@@ -566,7 +566,7 @@
 	id = "knight_armour"
 	build_type = AUTOLATHE
 	materials = list(MAT_CATEGORY_RIGID = 10000)
-	build_path = /obj/item/clothing/suit/armor/heavy/riot/knight/greyscale
+	build_path = /obj/item/clothing/suit/armor/riot/knight/greyscale 
 	category = list("Imported")
 
 /datum/design/knight_helmet
@@ -575,8 +575,8 @@
 	id = "knight_helmet"
 	build_type = AUTOLATHE
 	materials = list(MAT_CATEGORY_RIGID = 5000)
-	build_path = /obj/item/clothing/head/helmet/knight/greyscale
-	category = list("Imported")
+	build_path = /obj/item/clothing/head/helmet/knight/greyscale 
+	category = list("Imported")  //locked behind a data disk that doesn't spawn. Shouldn't cause problems - farm
 
 /////////////////////////////////////////
 /////////////Security////////////////////
