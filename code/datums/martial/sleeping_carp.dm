@@ -10,7 +10,7 @@
 	pugilist = TRUE
 	var/physdammod = 0.5
 	var/stamdammod = 0.2
-
+/*
 /datum/martial_art/the_sleeping_carp/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,STRONG_PUNCH_COMBO))
 		streak = ""
@@ -116,7 +116,7 @@
 		return TRUE
 	log_combat(A, D, "disarmed (Sleeping Carp)")
 	return ..()
-
+*/
 /datum/martial_art/the_sleeping_carp/on_projectile_hit(mob/living/carbon/human/A, obj/item/projectile/P, def_zone)
 	. = ..()
 	if(A.incapacitated(FALSE, TRUE)) //NO STUN
