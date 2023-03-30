@@ -382,7 +382,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 					C.update_damage_overlays()
 
-	if(!(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP))		//See if we're supposed to auto pickup.
+	if(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_IS_ALT) //See if we're supposed to just altclick
+		user.AltClickOn(src)
+		return
+
+	else if(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_IS_SHIFT) //See if we're supposed to just shiftclick
+		user.ShiftClickOn(src)
+		return
+
+	if(!(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP)) //See if we're supposed to auto pickup.
 		return
 
 	//Heavy gravity makes picking up things very slow.
@@ -394,8 +402,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			return
 
 
-	//If the item is in a storage item, take it out
-	SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
+	//If the item is in a storage item, take it out. Unless it cant be removed. Then... dont
+	if(CHECK_BITFIELD(SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE), NO_REMOVE_FROM_STORAGE))
+		to_chat(user,span_alert("[src] can't be taken out of [loc]!"))
+		return
 
 	if(throwing)
 		throwing.finalize(FALSE)
@@ -858,8 +868,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/on_mob_death(mob/living/L, gibbed)
 
-/obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R) //Used to check for extra requirements for grinding an object
-	return TRUE
+/obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R, silent) //Used to check for extra requirements for grinding an object
+	return FALSE
 
 /obj/item/proc/reset_transform() //Used to check for extra requirements for grinding an object
 	if(special_transform)

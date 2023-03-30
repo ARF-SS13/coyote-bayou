@@ -137,6 +137,8 @@
 /datum/component/storage/concrete/remove_from_storage(atom/movable/AM, atom/new_location)
 	//Cache this as it should be reusable down the bottom, will not apply if anyone adds a sleep to dropped
 	//or moving objects, things that should never happen
+	if(HAS_TRAIT(AM, TRAIT_NO_STORAGE_REMOVE) && !isnull(new_location))
+		return NO_REMOVE_FROM_STORAGE
 	var/atom/parent = src.parent
 	var/list/seeing_mobs = can_see_contents()
 	for(var/mob/M in seeing_mobs)

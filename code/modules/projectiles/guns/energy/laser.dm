@@ -52,7 +52,6 @@
 			else
 				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 
-
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	icon_state = "laser-p"

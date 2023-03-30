@@ -138,11 +138,12 @@
 		return
 	return ..()
 
-/obj/item/reagent_containers/food/snacks/grown/grind_requirements()
+/obj/item/reagent_containers/food/snacks/grown/grind_requirements(obj/machinery/reagentgrinder/R, silent)
 	if(dry_grind && !dry)
-		to_chat(usr, span_warning("[src] needs to be dry before it can be ground up!"))
-		return
-	return TRUE
+		if(!silent)
+			to_chat(usr, span_warning("[src] needs to be dry before it can be ground up!"))
+		return GRIND_NEEDS_DRY
+	return FALSE
 
 /obj/item/reagent_containers/food/snacks/grown/on_grind()
 	var/nutriment = reagents.get_reagent_amount(/datum/reagent/consumable/nutriment)

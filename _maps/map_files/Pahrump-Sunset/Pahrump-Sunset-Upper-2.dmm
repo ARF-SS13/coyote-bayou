@@ -36,7 +36,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "aB" = (
-/obj/machinery/power/solar/fake,
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
+	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "aG" = (
@@ -746,7 +749,7 @@
 /obj/effect/decal/cleanable/blood,
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
 	name = "Big Scrigs";
-	faction = list("dog");
+	faction = list("neutral");
 	health = 120;
 	decompose = 0
 	},
@@ -859,12 +862,15 @@
 /turf/open/floor/plating/rust,
 /area/f13/building/abandoned)
 "kX" = (
-/obj/machinery/smoke_machine{
-	name = "HVAC Machine"
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/supermutant/rangedmutant{
+	faction = list("raider");
+	name = "Leonardo the Leaping Asshole";
+	light_color = "#FF3333";
+	color = "#FF3333"
 	},
-/obj/structure/spacevine,
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "kY" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/gloves/color/red/insulated,
@@ -2138,13 +2144,11 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Bh" = (
-/obj/machinery/smoke_machine{
-	name = "HVAC Machine"
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 1
 	},
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill"
-	},
-/turf/open/floor/wood_wide,
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Bk" = (
 /obj/structure/table/wood,
@@ -2763,10 +2767,13 @@
 	},
 /area/f13/building)
 "Ig" = (
-/obj/machinery/power/solar/fake,
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
 	dir = 1
+	},
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
@@ -7354,13 +7361,13 @@ hm
 hm
 nO
 Wr
-aB
-aB
-aB
 Wr
 Wr
-aB
-aB
+Wr
+Wr
+Wr
+Wr
+Wr
 rS
 bO
 YE
@@ -7610,13 +7617,13 @@ hm
 hm
 hm
 nO
+aB
+cm
+aB
+cm
 Wr
-cm
-cm
-cm
 Wr
-Wr
-cm
+aB
 cm
 rS
 Zt
@@ -7842,9 +7849,9 @@ hm
 hm
 Ig
 cm
-Wr
-cm
 aB
+cm
+Wr
 Xv
 hm
 hm
@@ -8097,11 +8104,11 @@ hm
 hm
 hm
 hm
-Ig
-cm
+nO
 Wr
-cm
-aB
+Wr
+Wr
+Wr
 Xv
 hm
 hm
@@ -8356,9 +8363,9 @@ hm
 hm
 Ig
 cm
-Wr
-cm
 aB
+cm
+Wr
 Xv
 hm
 hm
@@ -8895,14 +8902,14 @@ hm
 nO
 Wr
 Wr
+aB
+cm
+aB
+cm
 Wr
+aB
 cm
-cm
-cm
-Wr
-Wr
-cm
-cm
+aB
 cm
 Wr
 Wr
@@ -9153,14 +9160,14 @@ nO
 Wr
 Wr
 Wr
-aB
-aB
-aB
 Wr
 Wr
-aB
-aB
-aB
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 Wr
 Wr
 Wr
@@ -9639,9 +9646,9 @@ hm
 hm
 hm
 hm
-nO
+Ig
 cm
-cm
+aB
 cm
 Xv
 hm
@@ -9897,9 +9904,9 @@ hm
 hm
 hm
 nO
-aB
-aB
-aB
+Wr
+Wr
+Wr
 Xv
 hm
 hm
@@ -13476,9 +13483,9 @@ gL
 Gq
 Wr
 mY
-Wr
 aB
-Bh
+cm
+Xv
 hm
 hm
 hm
@@ -13538,9 +13545,9 @@ hm
 hm
 hm
 hm
-nO
+Ig
 cm
-cm
+Wr
 Xv
 hm
 hm
@@ -13734,8 +13741,8 @@ uV
 Wr
 mY
 Wr
-aB
-Bh
+Wr
+Xv
 hm
 hm
 hm
@@ -13796,8 +13803,8 @@ hm
 hm
 hm
 nO
-aB
-aB
+Wr
+Wr
 Xv
 hm
 hm
@@ -13990,9 +13997,9 @@ fR
 jG
 Wr
 mY
-mY
 aB
-Bh
+cm
+Xv
 hm
 hm
 hm
@@ -14032,7 +14039,7 @@ Zt
 rS
 rS
 rS
-rS
+AN
 AN
 IV
 Zt
@@ -14263,14 +14270,14 @@ hm
 hm
 hm
 hm
-Ig
-cm
+nO
 Wr
-aB
-cm
 Wr
-aB
-cm
+Wr
+Wr
+Wr
+Wr
+Wr
 Xv
 hm
 hm
@@ -14309,8 +14316,8 @@ hm
 hm
 hm
 hm
-nO
-Wr
+Ig
+cm
 mY
 Xv
 hm
@@ -15010,9 +15017,9 @@ hm
 hm
 hm
 hm
-hm
+Ho
 Ji
-hm
+rK
 hm
 hm
 hm
@@ -15269,7 +15276,7 @@ hm
 hm
 nD
 Cv
-hm
+rK
 hm
 hm
 hm
@@ -15524,9 +15531,9 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
+zD
+zD
+Bh
 hm
 hm
 hm
@@ -16297,8 +16304,8 @@ hm
 hm
 nO
 mY
-aB
-cm
+Wr
+Wr
 Xv
 hm
 hm
@@ -16569,9 +16576,9 @@ hm
 hm
 hm
 hm
-nO
+Ig
 cm
-cm
+Wr
 Xv
 hm
 hm
@@ -16827,8 +16834,8 @@ hm
 hm
 hm
 nO
-aB
-aB
+Wr
+Wr
 Xv
 hm
 hm
@@ -17590,7 +17597,7 @@ hm
 hm
 nO
 aB
-kX
+cm
 rG
 qt
 qt
@@ -17846,8 +17853,8 @@ hm
 hm
 hm
 nO
-aB
-cm
+Wr
+Wr
 mY
 mY
 mY
@@ -18145,8 +18152,8 @@ hm
 hm
 hm
 hm
-Ig
-cm
+nO
+Wr
 Wr
 Wr
 mY
@@ -18679,9 +18686,9 @@ rK
 hm
 hm
 hm
-nO
+Ig
 cm
-cm
+Wr
 Xv
 hm
 hm
@@ -18937,8 +18944,8 @@ hm
 hm
 hm
 nO
-aB
-aB
+Wr
+Wr
 Xv
 hm
 hm
@@ -19193,8 +19200,8 @@ hm
 hm
 hm
 hm
-nO
-Wr
+Ig
+cm
 mY
 Xv
 hm
@@ -60981,7 +60988,7 @@ hm
 hm
 NT
 Bz
-hP
+kX
 wo
 vb
 sn

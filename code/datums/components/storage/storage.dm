@@ -18,6 +18,10 @@
 	var/list/can_hold_extra							//if this is set, it will also be able to hold these.
 	var/list/cant_hold								//if this is set, anything in this typecache will not be able to fit.
 
+	/// If set, will limit how much of specific items can go into this storage
+	/// So you can have a holster only able to hold one gun, but plenty of ammo
+	var/list/quota
+
 	var/list/mob/is_using							//lazy list of mobs looking at the contents of this storage.
 
 	var/locked = FALSE								//when locked nothing can see inside or use it.
@@ -359,6 +363,8 @@
 /datum/component/storage/proc/remove_from_storage(atom/movable/AM, atom/new_location)
 	if(!istype(AM))
 		return FALSE
+	if(HAS_TRAIT(AM, TRAIT_NO_STORAGE_REMOVE))
+		return NO_REMOVE_FROM_STORAGE
 	var/datum/component/storage/concrete/master = master()
 	if(!istype(master))
 		return FALSE
@@ -541,7 +547,29 @@
 	var/datum/component/storage/concrete/master = master()
 	if(!istype(master))
 		return FALSE
+	var/tally = check_quota(I)
+	if(tally)
+		to_chat(M, span_warning("[host] only allows [tally] in this!"))
+		return FALSE
 	return master.slave_can_insert_object(src, I, stop_messages, M)
+
+/// Has our quota been met?
+/datum/component/storage/proc/check_quota(obj/item/I)
+	if(!LAZYLEN(quota))
+		return
+	var/atom/real_location = real_location()
+	var/list/tally = list()
+	for(var/i in quota)
+		if(istype(I, i))
+			tally[i]++
+	if(!LAZYLEN(tally))
+		return
+	for(var/atom/thing in real_location.contents)
+		for(var/i in quota)
+			if(istype(thing, i))
+				if(tally[i] >= quota[i])
+					return "[quota[i]] [I]\s"
+				tally[i]++
 
 /datum/component/storage/proc/_insert_physical_item(obj/item/I, override = FALSE)
 	return FALSE
@@ -667,6 +695,8 @@
 /datum/component/storage/proc/signal_take_obj(datum/source, atom/movable/AM, new_loc, force = FALSE)
 	if(!(AM in real_location()))
 		return FALSE
+	if(HAS_TRAIT(AM, TRAIT_NO_STORAGE_REMOVE))
+		return NO_REMOVE_FROM_STORAGE
 	return remove_from_storage(AM, new_loc)
 
 /datum/component/storage/proc/signal_quick_empty(datum/source, atom/loctarget)
@@ -693,6 +723,8 @@
 		var/obj/item/I = locate() in real_location()
 		if(!I)
 			return
+		if(HAS_TRAIT(I, TRAIT_NO_STORAGE_REMOVE))
+			return NO_REMOVE_FROM_STORAGE
 		A.add_fingerprint(user)
 		remove_from_storage(I, get_turf(user))
 		if(!user.put_in_hands(I))

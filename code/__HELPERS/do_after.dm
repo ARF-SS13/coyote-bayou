@@ -155,7 +155,20 @@
 #undef INVOKE_CALLBACK
 #undef CHECK_FLAG_FAILURE
 
-/proc/do_mob(mob/user , mob/target, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks = null, ignorehelditem = FALSE, resume_time = 0 SECONDS, allow_movement = FALSE)
+// gotta love having three of the same damn proc
+/proc/do_mob(
+	mob/user,
+	mob/target,
+	time = 30,
+	uninterruptible = 0,
+	progress = 1,
+	datum/callback/extra_checks = null,
+	ignorehelditem = FALSE,
+	resume_time = 0 SECONDS,
+	allow_movement = FALSE,
+	allow_lying = FALSE,
+	allow_incap = FALSE)
+
 	if(!user || !target)
 		return 0
 	var/user_loc = user.loc
@@ -201,7 +214,22 @@
 			. = FALSE
 			break
 
-		if((!drifting && !allow_movement && user.loc != user_loc) || target.loc != target_loc || (!ignorehelditem && user.get_active_held_item() != holding) || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
+		if(!drifting && !allow_movement && user.loc != user_loc)
+			. = 0
+			break
+		if(target.loc != target_loc)
+			. = 0
+			break
+		if(!ignorehelditem && user.get_active_held_item() != holding)
+			. = 0
+			break
+		if(!allow_incap && user.incapacitated())
+			. = 0
+			break
+		if(!allow_lying && user.lying)
+			. = 0
+			break
+		if(extra_checks && !extra_checks.Invoke())
 			. = 0
 			break
 	if(progress)

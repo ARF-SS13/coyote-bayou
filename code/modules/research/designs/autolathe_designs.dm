@@ -550,6 +550,15 @@
 	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000)
 	build_path = /obj/item/storage/blender_belt
 	category = list("initial", "Medical")
+
+/datum/design/timer
+	name = "Timer"
+	id = "timer"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 50)
+	build_path = /obj/item/assembly/timer
+	category = list("initial", "Misc")
+
 /datum/design/voice_analyser
 	name = "Voice Analyser"
 	id = "voice_analyser"

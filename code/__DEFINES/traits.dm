@@ -304,6 +304,7 @@
 #define TRAIT_SMUTANT		"Super Mutant"	// This is a trait usually locked for admins due to how OP it is
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
+#define TRAIT_NODRUGS		"winners_cant_do_drugs" //drugs hurt you!
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess
 #define TRAIT_TRIBAL			"Tribalistic Person" //has access to tribal crafting recipes
 #define TRAIT_BERSERKER			"berserker" //currently unused
@@ -365,6 +366,8 @@
 #define TRAIT_NODROP "nodrop"
 /// Dont put it in storage things, simple as
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
+/// Can't leave a storage!
+#define TRAIT_NO_STORAGE_REMOVE "TRAIT_NO_STORAGE_REMOVE"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"
@@ -452,3 +455,6 @@
 #define TRAIT_AREA_SENSITIVE "area-sensitive"
 ///every hearing sensitive atom has this trait
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
+
+/// just a little helper to see if we're not a druggie
+#define NODRUGS(m) (HAS_TRAIT(m, TRAIT_NODRUGS))

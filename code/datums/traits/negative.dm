@@ -920,3 +920,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("All my homies hate machines.")
 	lose_text = span_danger("Maybe industrial society isn't so bad...")
 	locked =  FALSE
+
+/datum/quirk/nodrugs
+	name = "Clean Veins"
+	desc = "Your body reacts violently to street drugs. Medicines work... for the most part."
+	value = -1
+	mob_trait = TRAIT_NODRUGS
+	gain_text = span_notice("You feel like a winner!")
+	lose_text = span_danger("You feel like a loser!")
+	locked =  FALSE
