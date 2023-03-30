@@ -43,7 +43,7 @@
 		grind_results[grind_results[i]] *= get_amount() //Gets the key at position i, then the reagent amount of that key, then multiplies it by stack size
 
 /obj/item/stack/grind_requirements(obj/machinery/reagentgrinder/R, silent)
-	if(!is_cyborg)
+	if(is_cyborg)
 		if(!silent)
 			to_chat(usr, span_danger("[src] is electronically synthesized in your chassis and can't be ground up!"))
 		return GRIND_IS_CYBORG

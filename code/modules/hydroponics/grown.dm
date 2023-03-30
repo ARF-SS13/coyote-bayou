@@ -142,7 +142,7 @@
 	if(dry_grind && !dry)
 		if(!silent)
 			to_chat(usr, span_warning("[src] needs to be dry before it can be ground up!"))
-		return GRIND_IS_CYBORG
+		return GRIND_NEEDS_DRY
 	return FALSE
 
 /obj/item/reagent_containers/food/snacks/grown/on_grind()
