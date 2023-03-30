@@ -89,6 +89,10 @@
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
 	return 1
 
+// check power in a cell
+/obj/item/stock_parts/cell/proc/check_charge(amount)
+	return (charge >= amount)
+
 // recharge the cell
 /obj/item/stock_parts/cell/proc/give(amount)
 	if(rigged && amount > 0)
@@ -459,10 +463,6 @@
 		name = "used [initial(name)]"
 	. = ..()
 
-/obj/item/stock_parts/cell/ammo/New()
-	..()
-	return
-
 // Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc
 	name = "microfusion cell"
@@ -474,11 +474,11 @@
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
-		if (1001 to 2000)
+		if (((maxcharge/2)+1) to maxcharge)
 			icon_state = "mfc-full"
-		if (51 to 1000)
+		if (((maxcharge/4)+1) to (maxcharge/2))
 			icon_state = "mfc-half"
-		if (0 to 50)
+		if (0 to (maxcharge/4))
 			icon_state = "mfc-empty"
 	. = ..()
 
@@ -491,15 +491,14 @@
 	maxcharge = 3000
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/stock_parts/cell/ammo/mfc/update_icon()
-	switch(charge)
-		if (2001 to 3000)
-			icon_state = "mfc-full"
-		if (151 to 2000)
-			icon_state = "mfc-half"
-		if (0 to 150)
-			icon_state = "mfc-empty"
-	. = ..()
+// Crafted Microfusion cell - large energy weapons
+/obj/item/stock_parts/cell/ammo/mfc/bad
+	name = "shoddy microfusion cell"
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one looks a little dubious though."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: give these bad icons
+	icon_state = "mfc-full"
+	maxcharge = 1000
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
@@ -516,6 +515,18 @@
 	icon_state = "ec-full"
 	maxcharge = 1500
 
+/obj/item/stock_parts/cell/ammo/ec/update_icon()
+	switch(charge)
+		if ((((maxcharge/3)*2)+1) to maxcharge)
+			icon_state = "ec-full"
+		if (((maxcharge/3)+1) to ((maxcharge/3)*2))
+			icon_state = "ec-twothirds"
+		if (((maxcharge/4)+1) to (maxcharge/3))
+			icon_state = "ec-onethirds"
+		if (0 to (maxcharge/4))
+			icon_state = "ec-empty"
+	. = ..()
+
 // Enhanced energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec/large
 	name = "enhanced energy cell"
@@ -524,6 +535,13 @@
 	icon_state = "ec-full"
 	maxcharge = 2250
 
+// Crafted Energy cell - small energy weapons
+/obj/item/stock_parts/cell/ammo/ec/bad
+	name = "shoddy energy cell"
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one looks a little suspect though."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give these a new icon
+	icon_state = "ec-full"
+	maxcharge = 750
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder
@@ -538,17 +556,7 @@
 	name = "S.I.D.A. breeder"
 	maxcharge = 1100
 
-/obj/item/stock_parts/cell/ammo/ec/update_icon()
-	switch(charge)
-		if (1101 to 1600)
-			icon_state = "ec-full"
-		if (551 to 1100)
-			icon_state = "ec-twothirds"
-		if (51 to 550)
-			icon_state = "ec-onethirds"
-		if (0 to 50)
-			icon_state = "ec-empty"
-	. = ..()
+
 
 // Electron charge pack - rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp
@@ -561,11 +569,11 @@
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
 	switch(charge)
-		if (1501 to 2400)
+		if (((maxcharge/2)+1) to maxcharge)
 			icon_state = "ecp-full"
-		if (101 to 1500)
+		if (((maxcharge/4)+1) to (maxcharge/2))
 			icon_state = "ecp-half"
-		if (0 to 100)
+		if (0 to (maxcharge/4))
 			icon_state = "ecp-empty"
 	. = ..()
 
@@ -578,15 +586,14 @@
 	maxcharge = 3600
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/stock_parts/cell/ammo/ecp/update_icon()
-	switch(charge)
-		if (2401 to 3600)
-			icon_state = "ecp-full"
-		if (201 to 2400)
-			icon_state = "ecp-half"
-		if (0 to 200)
-			icon_state = "ecp-empty"
-	. = ..()
+// Crafted Electron charge pack - bad rapid fire energy
+/obj/item/stock_parts/cell/ammo/ecp/bad
+	name = "counterfeit electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one looks slightly off, somehow."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give a shitty icon
+	icon_state = "ecp-full"
+	maxcharge = 1200
+	w_class = WEIGHT_CLASS_SMALL
 
 // Alien power cell
 /obj/item/stock_parts/cell/ammo/alien
