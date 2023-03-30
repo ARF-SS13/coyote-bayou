@@ -27,6 +27,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags*/
 	/datum/verbs/menu/Admin/verb/playerpanel,
 	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
+	/client/proc/getvpt,                /*shows all users who connected from a shady place*/
 	/client/proc/check_ai_laws,			/*shows AI and borg laws*/
 	/datum/admins/proc/toggleooc,		/*toggles ooc on/off for everyone*/
 	/datum/admins/proc/toggleooclocal,	/*toggles looc on/off for everyone*/
@@ -490,6 +491,17 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 				num++
 				i = 0
 	GLOB.stealthminID["[ckey]"] = "@[num2text(num)]"
+
+/client/proc/getvpt()
+	set category = "Admin"
+	set name = "Check Clients"
+	if(holder)
+		if(!check_rights(R_ADMIN, 0))
+			return
+		for (var/ckey in GLOB.warning_ckeys)
+			to_chat(usr, "[ckey] connected from a known [GLOB.warning_ckeys[ckey]].")
+		if (GLOB.warning_ckeys.len == 0)
+			to_chat(usr, "No ckeys have been flagged.")
 
 /client/proc/stealth()
 	set category = "Admin"
