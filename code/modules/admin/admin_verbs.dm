@@ -499,7 +499,9 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		if(!check_rights(R_ADMIN, 0))
 			return
 		for (var/ckey in GLOB.warning_ckeys)
-			to_chat(usr, "[ckey] connected from a known [GLOB.warning_ckeys[ckey]]")
+			to_chat(usr, "[ckey] connected from a known [GLOB.warning_ckeys[ckey]].")
+		if (GLOB.warning_ckeys.len == 0)
+			to_chat(usr, "No ckeys have been flagged.")
 
 /client/proc/stealth()
 	set category = "Admin"
