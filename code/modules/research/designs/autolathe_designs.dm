@@ -552,7 +552,6 @@
 	category = list("initial", "Medical")
 
 
-
 /datum/design/portable_chem_mixer
 	name = "FOODCO Kitchen Buddy 2000"
 	id = "portable_blender"
