@@ -52,7 +52,7 @@
 /obj/item/ingot/diamond
 	custom_materials = list(/datum/material/diamond=12000) //yeah ok
 
-/obj/item/ingot/uranium // plsno
+/obj/item/ingot/uranium
 	custom_materials = list(/datum/material/uranium=12000)
 
 /obj/item/ingot/plasma

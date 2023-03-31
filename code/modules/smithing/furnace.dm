@@ -90,4 +90,4 @@
 
 /datum/looping_sound/furnace
 	mid_sounds = list(SOUND_LOOP_ENTRY('code/modules/smithing/sound/furnace1.ogg', 7 SECONDS, 1))
-	volume = 45
+	volume = 40
