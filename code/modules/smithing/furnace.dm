@@ -39,7 +39,7 @@
 	else
 		working = FALSE
 		soundloop.stop()
-		set_light(0)
+		set_light_on(FALSE)
 		icon_state = "furnace0"
 
 /obj/structure/furnace/attackby(obj/item/I, mob/user)
