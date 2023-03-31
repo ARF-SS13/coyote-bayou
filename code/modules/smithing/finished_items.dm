@@ -369,9 +369,9 @@
 
 /obj/item/melee/smith/twohand/axe/warhoned
 	name = "sledge axe"
-	icon_state = "waraxe_smith"
-	icon_prefix = "waraxe_smith"
-	overlay_state = "shaft_waraxe"
+	icon_state = "warhoned_smith"
+	icon_prefix = "warhoned_smith"
+	overlay_state = "shaft_warhoned"
 
 /obj/item/melee/smith/twohand/axe/scrapblade
 	name = "homewrecker"
