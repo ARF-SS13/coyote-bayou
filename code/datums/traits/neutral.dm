@@ -422,19 +422,15 @@
 
 /datum/quirk/item_quirk/photographer/add_unique(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
-	var/obj/item/storage/photo_album/personal/photo_album = new(get_turf(human_holder))
+	var/obj/item/storage/photo_album/photo_album = new(get_turf(human_holder))
 	photo_album.persistence_id = "personal_[human_holder.last_mind?.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	photo_album.persistence_load()
 	photo_album.name = "[human_holder.real_name]'s photo album"
 
-	give_item_to_holder(photo_album, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
-	give_item_to_holder(
-		/obj/item/camera,
-		list(
-			LOCATION_NECK = ITEM_SLOT_NECK,
-			LOCATION_LPOCKET = ITEM_SLOT_LPOCKET,
-			LOCATION_RPOCKET = ITEM_SLOT_RPOCKET,
-			LOCATION_BACKPACK = ITEM_SLOT_BACKPACK,
-			LOCATION_HANDS = ITEM_SLOT_HANDS
-		)
+	if(!human_holder.equip_to_slot_if_possible(photo_album, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE)
+    human_holder.put_in_hands(photo_album)
+
+	var/obj/item/camera/cam = new(get_turf(human_holder))
+if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE)
+    human_holder.put_in_hands(cam)
 	)
