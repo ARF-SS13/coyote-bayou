@@ -254,7 +254,7 @@
 			if(isliving(AM))
 				var/mob/living/M = AM
 				var/armormult = clamp(M.getarmor(BODY_ZONE_CHEST, "melee"), 0, 1)
-				M.apply_damage(10, BRUTE, BODY_ZONE_CHEST, blocked = armormult)
+				M.apply_damage(10 * (isanimal(M) ? 3 : 1), BRUTE, BODY_ZONE_CHEST, blocked = armormult)
 				log_combat(user, M, "martial art (raging boar)")
 				to_chat(M, span_userdanger("You're thrown back by [user]!"))
 				playsound(M, 'sound/effects/flesh_impact_1.ogg', 50, TRUE)

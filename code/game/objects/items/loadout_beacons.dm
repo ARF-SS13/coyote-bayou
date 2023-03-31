@@ -1679,7 +1679,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/melee/fist_of_the_swampstar
 
 /datum/loadout_box/raging_boar // YEET
-	entry_tag = "Rising Bass Scroll"
+	entry_tag = "Raging Boar Scroll"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/raging_boar
