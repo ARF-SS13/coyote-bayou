@@ -420,7 +420,7 @@
 	lose_text = span_danger("You forget how photo cameras work.")
 	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
 
-/datum/quirk/item_quirk/photographer/add(client/client_source)
+/datum/quirk/item_quirk/photographer/add_unique(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/storage/photo_album/photo_album = new(get_turf(human_holder))
 	photo_album.persistence_id = "personal_[human_holder.last_mind?.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
