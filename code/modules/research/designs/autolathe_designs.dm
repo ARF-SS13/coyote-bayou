@@ -503,7 +503,6 @@
 	build_path = /obj/item/assembly/signaler/advanced
 	category = list("initial", "T-Comm")
 
-//craftable with electronic parts
 /datum/design/radio_headset
 	name = "Radio Headset"
 	id = "radio_headset"
@@ -542,14 +541,6 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 800, MAT_GLASS = 200)
 	build_path = /obj/item/assembly/health
-	category = list("initial", "Medical")
-
-/datum/design/portable_chem_mixer
-	name = "Portable Chemical Mixer"
-	id = "portable_chem_mixer"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000)
-	build_path = /obj/item/storage/portable_chem_mixer
 	category = list("initial", "Medical")
 
 /datum/design/portable_chem_mixer
@@ -642,16 +633,13 @@
 	build_path = /obj/item/flamethrower/full
 	category = list("initial", "Security")
 */
-
-/*
-/datum/design/rcd
+/*/datum/design/rcd
 	name = "Rapid Construction Device (RCD)"
 	id = "rcd"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 30000)
 	build_path = /obj/item/construction/rcd
-	category = list("hacked", "Construction")
-*/
+	category = list("hacked", "Construction")*/
 
 /datum/design/rpd
 	name = "Rapid Pipe Dispenser (RPD)"

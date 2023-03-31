@@ -493,7 +493,7 @@
 	id = "suppressor"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 500)
-	build_path = /obj/item/gun_upgrade/muzzle/silencer
+	build_path = /obj/item/gun_upgrade/muzzle/silencer //changed it to a weaponmod thing
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -504,7 +504,7 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_CATEGORY_RIGID = 12000)
 	build_path = /obj/item/melee/cleric_mace
-	category = list("Imported")
+	category = list("Imported") 
 
 /*
 /datum/design/stun_boomerang
