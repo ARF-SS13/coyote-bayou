@@ -89,6 +89,5 @@
 	desc = "A runed furnace. Powered by... something, but seems otherwise safe."
 
 /datum/looping_sound/furnace
-	mid_sounds = list('code/modules/smithing/sound/furnace1.ogg'=1)
-	mid_length = 70
-	volume = 55
+	mid_sounds = list(SOUND_LOOP_ENTRY('code/modules/smithing/sound/furnace1.ogg', 7 SECONDS, 1))
+	volume = 40
