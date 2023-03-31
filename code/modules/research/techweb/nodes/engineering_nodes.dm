@@ -6,7 +6,7 @@
 	description = "A refresher course on modern engineering technology."
 	prereq_ids = list("base")
 	design_ids = list("solarcontrol", "recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin",
-	"atmosalerts", "atmos_control", "recycler", "autolathe", "autolathe_secure", "high_micro_laser", "nano_mani", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
+	"atmosalerts", "atmos_control", "recycler", "autolathe", "autolathe_secure", "high_micro_laser", "nano_mani", "mesons", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
 	"apc_control", "power control", "airlock_board", "firelock_board", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine", "rcd_ammo","oxygen_tank",
 	"plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "colormate")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
@@ -16,8 +16,9 @@
 	display_name = "Advanced Engineering"
 	description = "Pushing the boundaries of physics, one chainsaw-fist at a time."
 	prereq_ids = list("engineering", "emp_basic")
-	design_ids = list("forcefield_projector", "weldingmask" , // Removed "rcd_loaded" because we commented it out :v
-	"rcd_upgrade_frames", "rcd_upgrade_simple_circuits", "rcd_ammo_large", "sheetifier")
+	design_ids = list("engine_goggles", "forcefield_projector", "weldingmask" , /*"rcd_loaded",*/
+	"tray_goggles_prescription", "engine_goggles_prescription", "mesons_prescription", "rcd_upgrade_frames",
+	"rcd_upgrade_simple_circuits", "rcd_ammo_large", "sheetifier")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
 
 /datum/techweb_node/anomaly
@@ -33,7 +34,7 @@
 	display_name = "High Efficiency Parts"
 	description = "Finely-tooled manufacturing techniques allowing for picometer-perfect precision levels."
 	prereq_ids = list("engineering", "datatheory")
-/*	design_ids = list("pico_mani", "super_matter_bin")*/
+	design_ids = list("pico_mani", "super_matter_bin")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 
 /datum/techweb_node/adv_power
@@ -41,7 +42,7 @@
 	display_name = "Advanced Power Manipulation"
 	description = "How to get more zap."
 	prereq_ids = list("engineering")
-	design_ids = list("smes", "super_cell", "hyper_cell", "superpacman", "mrspacman", "power_turbine", "power_turbine_console", "power_compressor", "circulator", "teg")
+	design_ids = list("smes", "super_cell", "hyper_cell", "super_capacitor", "superpacman", "mrspacman", "power_turbine", "power_turbine_console", "power_compressor", "circulator", "teg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
 
 /*

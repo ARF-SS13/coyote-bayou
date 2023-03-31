@@ -2634,6 +2634,10 @@
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_UP_DT_T2)
 
+/obj/item/clothing/suit/armor/riot/knight/greyscale
+	name = "Knight Suit"
+	desc = "How the fuck did you get this you little?"
+
 /obj/item/clothing/suit/armor/heavy/riot/combat
 	name = "combat riot armor"
 	icon_state = "combat_coat"
