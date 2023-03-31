@@ -123,12 +123,29 @@
 	var/teleport_x = 0	// teleportation coordinates (if one is null, then no teleport!)
 	var/teleport_y = 0
 	var/teleport_z = 0
+	var/checkPulled = 0
 
 /obj/effect/step_trigger/teleporter/Trigger(atom/movable/A)
-	if(teleport_x && teleport_y && teleport_z)
+	var/zLevel = 0
+	
+	var/list/z_list = SSmapping.z_list
+	for(var/datum/space_level/S in z_list)
+		if(S.name == teleport_z)
+			zLevel = S.name
+			continue
 
-		var/turf/T = locate(teleport_x, teleport_y, teleport_z)
+	if(teleport_x && teleport_y && zLevel)
+		var/turf/T = locate(teleport_x, teleport_y, zLevel)
 		A.forceMove(T)
+		if(checkPulled)
+			var/atom/movable/AM = A.pulling
+			if(AM)
+				T = get_step(A.loc,turn(A.dir, 180))
+				AM.can_be_z_moved = FALSE
+				AM.forceMove(T)
+				A.start_pulling(AM)
+				AM.can_be_z_moved = TRUE
+
 
 /* Random teleporter, teleports atoms to locations ranging from teleport_x - teleport_x_offset, etc */
 
@@ -207,3 +224,31 @@
 
 	if(happens_once)
 		qdel(src)
+
+/* Fenny requested this, a steptrigger to prompt a choice, and then alog their choice. Very weird, no fucking idea what he wants it for */
+
+/obj/effect/step_trigger/player_choice_log
+	var/title = "Step has been triggered" // Title of the chat window.
+	var/question = "Step Trigger" // The text to show to the player along with the choices 
+	var/list/choices = list("Yes", "No") // List of choices to prompt the player with.
+	var/adminLogSuffix = "PLAYER_CHOICE" // First word to appear on admin log, useful to highlight the specific step trigger in logs.
+
+	var/list/ckeyList = list() // Don't change this. This is to keep track of who's entered the room
+
+
+/obj/effect/step_trigger/player_choice_log/Trigger(atom/movable/A)
+	if(!ismob(A))
+		return
+	
+	var/mob/M = A
+	
+	if(M.client)
+		if(M.ckey in ckeyList)	return // Already answered and logged. No need for more input.
+		
+		var/playerInput = input(M, question, title) in choices
+		if(playerInput)
+			log_admin("STEP TRIGGER: [adminLogSuffix] - [M] ([M.key]) has selected \"[playerInput]\"")
+		else
+			log_admin("STEP TRIGGER: [adminLogSuffix] - !!ERROR!! [M] ([M.key]) somehow had not made a choice. (They closed the window, assuming No, then.)")
+		
+		ckeyList += M.ckey
