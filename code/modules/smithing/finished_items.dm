@@ -131,7 +131,7 @@
 	..()
 	desc = "A handmade [name]."
 	var/mutable_appearance/overlay
-	overlay = mutable_appearance(icon, "woodrod")
+	overlay = mutable_appearance(icon, "handle_pickaxe")
 	overlay.appearance_flags = RESET_COLOR
 	add_overlay(overlay)
 	if(force < 0)
@@ -302,7 +302,7 @@
 /obj/item/melee/smith/mace
 	name = "club"
 	icon_state = "mace_smith"
-	overlay_state = "handle_mace"
+	overlay_state = "shaft_mace"
 	force = WEAPON_FORCE_BLUNT_LARGE
 	wound_bonus = WEAPON_BLUNT_WOUND_ADD
 
