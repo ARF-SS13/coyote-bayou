@@ -10,7 +10,6 @@ import fs from 'fs';
 import { promisify } from 'util';
 
 export { resolvePath };
-
 /**
  * Combines path.resolve with glob patterns.
  */

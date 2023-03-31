@@ -10,7 +10,7 @@ import './styles/themes/light.scss';
 
 import { perf } from 'common/perf';
 import { combineReducers } from 'common/redux';
-import { setupHotReloading } from 'tgui-dev-server/link/client';
+import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
 import { setupGlobalEvents } from 'tgui/events';
 import { captureExternalLinks } from 'tgui/links';
 import { createRenderer } from 'tgui/renderer';
@@ -76,7 +76,7 @@ const setupApp = () => {
 
   // Process the early update queue
   while (true) {
-    const msg = window.__updateQueue__.shift();
+    const msg = window.__updateQueue__?.shift();
     if (!msg) {
       break;
     }
