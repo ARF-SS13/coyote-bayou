@@ -1,6 +1,6 @@
 /obj/item/smithing
 	name = "base class /obj/item/smithing"
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "unfinished"
 	material_flags = MATERIAL_COLOR | MATERIAL_ADD_PREFIX
 	var/quality = 0 //quality. Changed by the smithing process.
@@ -10,7 +10,7 @@
 
 /obj/item/ingot
 	name = "ingot"
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "ingot"
 	material_flags = MATERIAL_COLOR | MATERIAL_ADD_PREFIX
 	var/workability = 0
@@ -155,7 +155,7 @@
 
 // Root item code
 /obj/item/blacksmith
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	max_integrity = 50
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -163,7 +163,7 @@
 /obj/item/blacksmith/woodrod
 	name = "wooden rod"
 	desc = "It's a rod, suitable for use of a handle of a tool. Also could serve as a weapon, in a pinch."
-	icon_state = "woodrod"
+	icon_state = "woodenrod"
 	force = 7
 	resistance_flags = FLAMMABLE
 
@@ -323,11 +323,11 @@
 	finalitem = new /obj/item/kitchen/knife(src)
 	finalforreal.force += quality*2
 	finalitem = finalforreal
-	finalitem.icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	finalitem.icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	finalitem.icon_state = "knife_smith"
 	finalitem.name = "kitchen knife"
 	finalitem.desc = "A handmade kitchen knife."
-	var/mutable_appearance/overlay = mutable_appearance('icons/fallout/objects/crafting/blacksmith.dmi', "hilt_knife")
+	var/mutable_appearance/overlay = mutable_appearance('code/modules/smithing/icons/blacksmith.dmi', "hilt_knife")
 	overlay.appearance_flags = RESET_COLOR
 	finalitem.add_overlay(overlay)
 	if(finalitem.force < 0)
@@ -376,7 +376,7 @@
 /obj/item/clothing/shoes/ballandchain
 	name = "ball and chain"
 	desc = "An unpopular alternative to shoes."
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "ballandchain"
 	mob_overlay_icon = 'icons/fallout/onmob/items/miscellaneous.dmi'
 	item_state = "ballandchain"
@@ -408,7 +408,7 @@
 	finalitem = new /obj/item/clothing/shoes/ballandchain(src)
 	finalforreal.force += quality*2
 	finalitem = finalforreal
-	finalitem.icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	finalitem.icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	finalitem.icon_state = "ballandchain"
 	finalitem.name = "ball and chain"
 	finalitem.desc = "Makes the captive even more miserable."

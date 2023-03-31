@@ -191,7 +191,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/steptime = 50
 	switch(stepdone)
 		if("weak hit")
-			playsound(src, 'code/modules/smithing/sound/anvil_weak.ogg',65)
+			playsound(src, 'code/modules/smithing/sound/anvil_weak.ogg',45)
 			user.visible_message("<span class='notice'>[user] carefully hammers out imperfections in the metal.</span>", \
 						"<span class='notice'>You carefully hammer out imperfections in the metal.</span>")
 		if("strong hit")
@@ -200,37 +200,37 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			user.visible_message("<span class='notice'>[user] hammers out imperfections in the metal.</span>", \
 						"<span class='notice'>You hammer out imperfections in the metal.</span>")
 		if("heavy hit")
-			playsound(src, 'code/modules/smithing/sound/anvil_heavy.ogg',60)
+			playsound(src, 'code/modules/smithing/sound/anvil_heavy.ogg',45)
 			do_smithing_sparks(2, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] forcefully hammers out imperfections in the metal.</span>", \
 						"<span class='notice'>You forcefuly hammer out imperfections in the metal.</span>")
 		if("fold")
-			playsound(src, 'code/modules/smithing/sound/anvil_double1.ogg',60)
+			playsound(src, 'code/modules/smithing/sound/anvil_double1.ogg',45)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] folds the metal.</span>", \
 						"<span class='notice'>You fold the metal.</span>")
 		if("draw")
-			playsound(src, 'code/modules/smithing/sound/anvil_double2.ogg',60)
+			playsound(src, 'code/modules/smithing/sound/anvil_double2.ogg',45)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] hammers both sides of the metal, drawing it out.</span>", \
 						"<span class='notice'>You hammer both sides of the metal, drawing it out.</span>")
 		if("shrink")
-			playsound(src, 'code/modules/smithing/sound/anvil_rapid.ogg',60)
+			playsound(src, 'code/modules/smithing/sound/anvil_rapid.ogg',45)
 			do_smithing_sparks(1, TRUE, src)
 			user.visible_message("<span class='notice'>[user] flattens the metal, shrinking it.</span>", \
 						"<span class='notice'>You flatten the metal, shrinking it.</span>")
 		if("bend")
-			playsound(src, 'code/modules/smithing/sound/anvil_single1.ogg',55)
+			playsound(src, 'code/modules/smithing/sound/anvil_single1.ogg',45)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] bends the metal, using the rounded end of the anvil.</span>", \
 						"<span class='notice'>You bend the metal, using the rounded end of the anvil.</span>")
 		if("punch")
-			playsound(src, 'code/modules/smithing/sound/anvil_single2.ogg',65)
+			playsound(src, 'code/modules/smithing/sound/anvil_single2.ogg',45)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] uses the puncher to make holes in the metal.</span>", \
 						"<span class='notice'>You use the puncher to make holes in the metal.</span>")
 		if("upset")
-			playsound(src, 'code/modules/smithing/sound/anvil_double3.ogg',65)
+			playsound(src, 'code/modules/smithing/sound/anvil_double3.ogg',45)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] upsets the metal by hammering the thick end.</span>", \
 						"<span class='notice'>You upset the metal by hammering the thick end.</span>")
@@ -286,7 +286,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	user.show_message(span_notice("You [stepdone] the metal."))
 	
 	// more sounds... uhhh...
-	playsound(src, 'sound/effects/clang2.ogg',40, 2)
+	//playsound(src, 'sound/effects/clang2.ogg',40, 2) - Keeping it commented for now.
 
 	// sparkles~
 	do_smithing_sparks(1, TRUE, src) 
