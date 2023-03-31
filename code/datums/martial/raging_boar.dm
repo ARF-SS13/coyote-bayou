@@ -40,6 +40,10 @@
 	deal_damage(A, D, damage, BRUTE, A.zone_selected)
 	deal_damage(A, D, damage, STAMINA, A.zone_selected)
 	playsound(D, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+	if(D.anchored)
+		return
+	var/atom/throw_target = get_ranged_target_turf(D, get_dir(A, D), 1, 1)
+	D.safe_throw_at(throw_target, 10, 1, A, TRUE)
 	return TRUE
 
 /datum/martial_art/raging_boar/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
