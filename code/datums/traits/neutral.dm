@@ -428,9 +428,9 @@
 	photo_album.name = "[human_holder.real_name]'s photo album"
 
 	if(!human_holder.equip_to_slot_if_possible(photo_album, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
-    human_holder.put_in_hands(photo_album)
+		human_holder.put_in_hands(photo_album)
 
 	var/obj/item/camera/cam = new(get_turf(human_holder))
 	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
-    human_holder.put_in_hands(cam)
-	)
+  	  human_holder.put_in_hands(cam)
+	
