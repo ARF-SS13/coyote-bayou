@@ -52,7 +52,7 @@
 /obj/item/ingot/diamond
 	custom_materials = list(/datum/material/diamond=12000) //yeah ok
 
-/obj/item/ingot/uranium //please don't spawn. Can be used to grief. A lot
+/obj/item/ingot/uranium // plsno
 	custom_materials = list(/datum/material/uranium=12000)
 
 /obj/item/ingot/plasma
