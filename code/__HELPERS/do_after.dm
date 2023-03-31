@@ -253,7 +253,18 @@
 		checked_health["health"] = health
 	return ..()
 
-/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS, allow_movement = FALSE)
+/proc/do_after(
+		mob/user, 
+		delay, 
+		needhand = 1, 
+		atom/target = null, 
+		progress = 1, 
+		datum/callback/extra_checks = null, 
+		required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), 
+		resume_time = 0 SECONDS, 
+		allow_movement = FALSE,
+		stay_close = TRUE
+		)
 	if(!user)
 		return 0
 	var/atom/Tloc = null
@@ -308,7 +319,7 @@
 				. = 0
 				break
 
-		if(allow_movement && get_dist(user.loc, target.loc) > 1)
+		if(stay_close && get_dist(user.loc, target.loc) > 1)
 			. = 0
 			break
 

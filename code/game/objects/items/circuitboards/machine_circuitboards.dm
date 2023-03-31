@@ -1199,6 +1199,38 @@
 		/obj/item/stack/sheet/mineral/wood = 3)
 	tool_behaviour = TOOL_MSRELOADER
 
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/examine(mob/user)
+	. = ..()
+	. += "You can put this thing together by:"
+	. += "\t[span_notice("hitting it")] with 3 wood, or [span_notice("using it on a table")]. Any table should do."
+	. += "You [span_italic("could")] use it as normal on a machine frame, if you really wanted to."
+
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(istype(W, /obj/item/stack/sheet/mineral/wood))
+		var/obj/item/stack/sheet/mineral/wood/wud = W
+		if(!wud.use(3))
+			to_chat(user, span_alert("You need 3 wood to set up a handloader!"))
+			return
+		if(!do_after(user, 3 SECONDS, TRUE, src, TRUE, allow_movement = TRUE))
+			to_chat(user, span_alert("You were interrupted!"))
+			return
+		var/turf/put_here
+		denseloop:
+			for(var/turf/tuf in orange(1, user))
+				if(tuf.density)
+					continue
+				for(var/atom/atm in tuf.contents)
+					if(atm.density)
+						continue denseloop
+				put_here = tuf
+		if(!put_here)
+			to_chat(user, span_alert("There's nowhere around you to put the thing! Try clearing some space."))
+			return
+		var/obj/machinery/autolathe/ammo/improvised/impy = new(put_here)
+		impy.frament()
+		qdel(src)
+
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe Dispenser (Machine Board)"
 	build_path = /obj/machinery/pipedispenser
