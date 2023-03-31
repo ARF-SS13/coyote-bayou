@@ -18,7 +18,7 @@
 /obj/effect/step_trigger/proc/Trigger(atom/movable/A)
 	return 0
 
-/obj/effect/step_trigger/proc/on_entered(H as anything)
+/obj/effect/step_trigger/proc/on_entered(atom/loc, atom/movable/H)
 	SIGNAL_HANDLER
 	if(!H)
 		return
@@ -226,8 +226,8 @@
 
 /obj/effect/step_trigger/player_choice_log
 	var/title = "Step has been triggered" // Title of the chat window.
-	var/question = "Step Trigger" // The text to show to the player along with the choices 
-	var/list/choices = list("Yes", "No") // List of choices to prompt the player with.
+	var/question = "Step Trigger demands an answer" // The text to show to the player along with the choices 
+	var/list/choices = list() // List of choices to prompt the player with. If empty, give them a yes/no
 	var/adminLogSuffix = "PLAYER_CHOICE" // First word to appear on admin log, useful to highlight the specific step trigger in logs.
 
 	var/list/ckeyList = list() // Don't change this. This is to keep track of who's entered the room
@@ -242,10 +242,18 @@
 	if(M.client)
 		if(M.ckey in ckeyList)	return // Already answered and logged. No need for more input.
 		
-		var/playerInput = input(M, question, title) in choices
-		if(playerInput)
-			log_admin("STEP TRIGGER: [adminLogSuffix] - [M] ([M.key]) has selected \"[playerInput]\"")
+		var/playerInput
+		if(choices.len)
+			playerInput = input(M, question, title) as null|anything in choices
 		else
-			log_admin("STEP TRIGGER: [adminLogSuffix] - !!ERROR!! [M] ([M.key]) somehow had not made a choice. (They closed the window, assuming No, then.)")
+			playerInput = alert(M, question, title, "Yes", "No", "Don't care + ratio + L")
 		
+		var/msg = "STEP TRIGGER: [adminLogSuffix] - ERROR! [M] ([M.key]) somehow had not made a choice. (They closed the window? Assuming no then)"
+
+		if(playerInput)
+			msg = "STEP TRIGGER: [adminLogSuffix] - [M] ([M.key]) has selected \"[playerInput]\""
+		
+		message_admins(msg)
+		log_admin(msg)
+
 		ckeyList += M.ckey
