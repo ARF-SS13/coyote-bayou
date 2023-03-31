@@ -432,6 +432,7 @@
 #define BERSERKER_TRAIT "berserker"
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define RISING_BASS_TRAIT "rising_bass"
+#define RAGING_BOAR_TRAIT "raging_boar"
 #define ABDUCTOR_ANTAGONIST "abductor-antagonist"
 #define MADE_UNCLONEABLE "made-uncloneable"
 #define TIMESTOP_TRAIT "timestop"

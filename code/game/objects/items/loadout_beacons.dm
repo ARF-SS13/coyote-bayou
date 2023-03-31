@@ -799,12 +799,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/militarypolice/PopulateContents()
 	new /obj/item/melee/classic_baton/militarypolice(src)
 
-/obj/item/storage/box/gun/melee/rising_bass
-	name = "rising bass case"
+/obj/item/storage/box/gun/melee/raging_boar
+	name = "raging boar case"
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/storage/box/gun/melee/rising_bass/PopulateContents()
-	new /obj/item/book/granter/martial/bass(src)
+/obj/item/storage/box/gun/melee/raging_boar/PopulateContents()
+	new /obj/item/book/granter/martial/raging_boar(src)
 
 /obj/item/storage/box/gun/melee/sleeping_carp
 	name = "sleeping carp case"
@@ -1678,11 +1678,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/fist_of_the_swampstar
 
-/datum/loadout_box/rising_bass // YEET
+/datum/loadout_box/raging_boar // YEET
 	entry_tag = "Rising Bass Scroll"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/rising_bass
+	spawn_thing = /obj/item/storage/box/gun/melee/raging_boar
 
 /datum/loadout_box/sleeping_carp // Snippity Snap
 	entry_tag = "Sleeping Carp Scroll"
