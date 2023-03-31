@@ -18,14 +18,11 @@
 /obj/effect/step_trigger/proc/Trigger(atom/movable/A)
 	return 0
 
-/obj/effect/step_trigger/proc/on_entered(H as mob|obj)
+/obj/effect/step_trigger/proc/on_entered(H as anything)
 	SIGNAL_HANDLER
 	if(!H)
 		return
-	if(isobserver(H) && !affect_ghosts)
-		return
-	if(!ismob(H) && mobs_only)
-		return
+
 	INVOKE_ASYNC(src, .proc/Trigger, H)
 
 
