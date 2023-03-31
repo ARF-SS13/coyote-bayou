@@ -4,6 +4,12 @@
 	. = ..()
 	if(.) //the attack was blocked
 		return
+	var/datum/martial_art/attacker_style
+	if(M.mind)
+		attacker_style = M.mind.martial_art
+		if(attacker_style?.pacifism_check && HAS_TRAIT(M, TRAIT_PACIFISM)) // most martial arts are quite harmful, alas.
+			attacker_style = null
+
 	switch(M.a_intent)
 		if(INTENT_HELP)
 			if (health > 0)
@@ -13,9 +19,13 @@
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 		if(INTENT_GRAB)
+			if(attacker_style && attacker_style.grab_act(M,src))
+				return TRUE
 			grabbedby(M)
 
 		if(INTENT_DISARM)
+			if(attacker_style && attacker_style.disarm_act(M,src))
+				return TRUE
 			M.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 			visible_message(span_danger("[M] [response_disarm_continuous] [src]!"),\
 							span_danger("[M] [response_disarm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, null, \
@@ -27,6 +37,8 @@
 			if(HAS_TRAIT(M, TRAIT_PACIFISM))
 				to_chat(M, span_notice("You don't want to hurt [src]!"))
 				return
+			if(attacker_style && attacker_style.harm_act(M,src))
+				return TRUE
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 			visible_message(span_danger("[M] [response_harm_continuous] [src]!"),\
 							span_userdanger("[M] [response_harm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, null, \

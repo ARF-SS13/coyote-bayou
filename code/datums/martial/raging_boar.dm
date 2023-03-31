@@ -27,7 +27,9 @@
 	log_combat(A, D, "whirlwinded(raging boar)")
 	return
 
-/datum/martial_art/raging_boar/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/raging_boar/disarm_act(mob/living/carbon/human/A, mob/living/D)
+	if(!isliving(D))
+		return
 	add_to_streak("D", D, TRUE)
 	if(check_streak(A,D))
 		return TRUE
@@ -39,14 +41,16 @@
 	D.Dizzy(1)
 	deal_damage(A, D, damage, BRUTE, A.zone_selected)
 	deal_damage(A, D, damage, STAMINA, A.zone_selected)
-	playsound(D, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+	playsound(D, 'sound/weapons/slap.ogg', 25, 1, -1)
 	if(D.anchored)
 		return
 	var/atom/throw_target = get_ranged_target_turf(D, get_dir(A, D), 1, 1)
 	D.safe_throw_at(throw_target, 10, 1, A, TRUE)
 	return TRUE
 
-/datum/martial_art/raging_boar/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+/datum/martial_art/raging_boar/harm_act(mob/living/carbon/human/A, mob/living/D)
+	if(!isliving(D))
+		return
 	add_to_streak("H", D, TRUE)
 	if(check_streak(A,D))
 		return TRUE
