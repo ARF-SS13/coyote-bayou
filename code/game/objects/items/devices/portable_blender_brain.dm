@@ -786,7 +786,7 @@
 				if(NORMAL_MSG)
 					blender_say("Oui! Je vais engager le juicer!")
 				if(DISLIKE_MSG)
-					blender_say("Juicind.")
+					blender_say("Juicing.")
 		if(BLENDER_LINE_ALREADY_BLENDER)
 			switch(amourousness)
 				if(HORNY_MSG)

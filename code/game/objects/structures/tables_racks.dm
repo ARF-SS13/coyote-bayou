@@ -193,6 +193,17 @@
 			return
 		// If the tray IS empty, continue on (tray will be placed on the table like other items)
 
+	if(istype(I, /obj/item/circuitboard/machine/autolathe/ammo/improvised))
+		var/obj/item/circuitboard/machine/autolathe/ammo/improvised/ammothing = I
+		if(!do_after(user, 3 SECONDS, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE))
+			to_chat(user, span_alert("You were interrupted!"))
+			return
+		var/obj/machinery/autolathe/ammo/improvised/thebench = new(get_turf(src))
+		thebench.tableize()
+		qdel(ammothing)
+		to_chat(user, span_notice("You set up a reloading bench on [src]!"))
+		return
+
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location()))
 			var/list/click_params = params2list(params)
