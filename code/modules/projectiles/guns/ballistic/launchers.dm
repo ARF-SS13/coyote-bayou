@@ -30,6 +30,43 @@
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		chamber_round()
 
+//pump grenade launcher
+
+/obj/item/gun/ballistic/shotgun/grenade
+	name = "pump grenade launcher"
+	desc = "A bulky but surprisingly lightweight grenade launcher with a stiff pump."
+	icon = 'modular_coyote/icons/objects/ncrrangersguns.dmi'
+	icon_state = "china_lake"
+	item_state = "shotguntrench"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
+	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_FAST
+
+	can_bayonet = FALSE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(null),
+		SP_DISTANT_RANGE(null)
+	)
+
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
 	desc = "A 6-shot grenade launcher."
 	name = "multi grenade launcher"
