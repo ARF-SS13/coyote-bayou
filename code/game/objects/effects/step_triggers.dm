@@ -246,7 +246,7 @@
 		if(choices.len)
 			playerInput = input(M, question, title) as null|anything in choices
 		else
-			playerInput = alert(M, question, title, "Yes", "No", "Don't care + ratio + L")
+			playerInput = alert(M, question, title, "Yes", "No")
 		
 		var/msg = "STEP TRIGGER: [adminLogSuffix] - ERROR! [M] ([M.key]) somehow had not made a choice. (They closed the window? Assuming no then)"
 
