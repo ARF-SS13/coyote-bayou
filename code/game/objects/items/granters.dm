@@ -477,6 +477,36 @@
 		name = "empty scroll"
 		icon_state = "blankscroll"
 
+/obj/item/book/granter/martial/raging_boar
+	martial = /datum/martial_art/raging_boar
+	name = "raging scroll"
+	martialname = "raging boar"
+	desc = "A paper scroll written in a thick, red, angry-looking typeface. Half of it is just the letter 'A' repeated thousands of times, \
+			in between vivid descriptions of why drugs are disgusting and something about a pork hammer? Weird."
+	greet = "<span class='sciradio'>You have learned the violent screaming fury of the Raging Boar! \
+			Your skill at diving headfirst into combat is unmatched! You can tackle just about anything at any time! \
+			Along with this, your hand-to-hand attacks knock creatures back. \
+			However, you are also unable to use any ranged weaponry. You can learn more about your newfound art by using the Recall \
+			Teachings verb in the Rising Bass tab.</span>"
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "scroll2"
+	remarks = list(
+		span_red("DIVE THE FUKC IN RUN TOO SLOW"),
+		span_red("AAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+		span_userdanger("AAAAAAAAAAAAAAAAAAAAA"),
+		span_red("FACEPLANT MUDERFUKC KILLHARD"), 
+		span_red("JUST FUKCING JUMP AT THEM"), 
+		span_red("SCREM SO YOUR FUCK HIT HARDER"), 
+		span_red("WINNERS DONT DO DRUGS"), 
+		span_red("SPIN2FUKCIN KILLFUCK"))
+
+/obj/item/book/granter/martial/raging_boar/onlearned(mob/living/carbon/user)
+	..()
+	if(oneuse == TRUE)
+		desc = "It's completely blank."
+		name = "empty scroll"
+		icon_state = "blankscroll"
+
 /obj/item/book/granter/martial/berserker
 	martial = /datum/martial_art/berserker
 	name = "berserker's rites"
