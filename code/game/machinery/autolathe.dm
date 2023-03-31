@@ -763,9 +763,9 @@
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
 	if("Handloaded Ammo" in D.category)
-		. = ..()
+		return ..()
 	if("Handmade Magazines" in D.category)
-		. = ..()
+		return ..()
 	if("Simple Ammo" in D.category)
 		if(simple == 0)
 			return FALSE
