@@ -35,7 +35,7 @@
 		if(scan_level >= 3)
 			. += span_notice("Scanner has been upgraded to support autoprocessing.")
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
+		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
 
 /obj/machinery/dna_scannernew/update_icon_state()
 	//no power or maintenance
