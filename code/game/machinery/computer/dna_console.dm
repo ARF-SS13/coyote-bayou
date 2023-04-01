@@ -229,7 +229,8 @@
 	// We can also do some general state processing here too as it's a good
 	//  indication that a player is using the console.
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
+		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
+		return
 
 	var/scanner_op = scanner_operational()
 	var/can_modify_occ = can_modify_occupant()
@@ -371,6 +372,9 @@
 		return TRUE
 
 	. = TRUE
+	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
+		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
+		return
 
 	add_fingerprint(usr)
 	usr.set_machine(src)
