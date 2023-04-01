@@ -666,12 +666,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
-"aBH" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 8;
-	icon_state = "outerturn"
-	},
-/area/f13/wasteland)
 "aCn" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -767,12 +761,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"aGN" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 4;
-	icon_state = "outerturn"
-	},
-/area/f13/wasteland)
 "aGO" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
@@ -6300,12 +6288,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
-"eOz" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 8;
-	icon_state = "innerturn"
-	},
-/area/f13/wasteland)
 "eOM" = (
 /obj/structure/curtain{
 	color = "#1e549c";
@@ -14050,14 +14032,6 @@
 	icon_state = "verticalinnermain2"
 	},
 /area/f13/wasteland)
-"kzo" = (
-/obj/effect/decal/waste{
-	icon_state = "goo11"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2top"
-	},
-/area/f13/wasteland)
 "kzy" = (
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/effect/decal/cleanable/dirt,
@@ -14197,12 +14171,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"kEi" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 1;
-	icon_state = "outerturn"
-	},
-/area/f13/wasteland)
 "kEu" = (
 /obj/structure/table,
 /obj/machinery/computer/pod/old{
@@ -14756,12 +14724,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"kYu" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 1;
-	icon_state = "tinycornerhorizontal"
-	},
-/area/f13/wasteland)
 "kYw" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
@@ -18729,9 +18691,8 @@
 	},
 /area/f13/building)
 "nKj" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 4;
-	icon_state = "tinycornervertical"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft2top"
 	},
 /area/f13/wasteland)
 "nKn" = (
@@ -21374,12 +21335,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"pDP" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 1;
-	icon_state = "tinycornervertical"
-	},
-/area/f13/wasteland)
 "pDT" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/wood/fifty,
@@ -23718,11 +23673,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"rpm" = (
-/turf/open/floor/plating/f13/outside/road{
-	icon_state = "innerturn"
-	},
-/area/f13/wasteland)
 "rpx" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 3;
@@ -25060,12 +25010,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
-"sxw" = (
-/turf/open/floor/plating/f13/outside/road{
-	dir = 4;
-	icon_state = "tinycornerhorizontal"
-	},
-/area/f13/wasteland)
 "sxQ" = (
 /obj/structure/chair/stool,
 /obj/effect/decal/remains/human,
@@ -27044,11 +26988,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
-"tXq" = (
-/turf/open/floor/plating/f13/outside/road{
-	icon_state = "outerturn"
-	},
-/area/f13/wasteland)
 "tXL" = (
 /obj/structure/nest/gecko,
 /obj/structure/spacevine{
@@ -32332,9 +32271,8 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/open/floor/plating/f13/outside/road{
-	dir = 4;
-	icon_state = "outerturn"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - E"
 	},
 /area/f13/wasteland)
 "xKa" = (
@@ -76518,7 +76456,7 @@ pzy
 elm
 elm
 eXK
-tXq
+kml
 eon
 bvL
 eon
@@ -78272,7 +78210,7 @@ hXD
 hXD
 smg
 smg
-kEi
+jVW
 soo
 soo
 soo
@@ -84492,10 +84430,10 @@ snq
 ybi
 ybi
 ybi
-aBH
+aiT
 bIb
 smg
-kEi
+tsB
 ybi
 ybi
 ybi
@@ -84749,10 +84687,10 @@ lxI
 lxI
 lxI
 lxI
-tXq
+rKA
 lyX
 smg
-aGN
+wbR
 lxI
 nKj
 jQi
@@ -85011,8 +84949,8 @@ hXD
 smg
 hXD
 hXD
-eOz
-sxw
+hXD
+hwY
 sed
 cON
 cON
@@ -88609,7 +88547,7 @@ cON
 cON
 fiu
 dMd
-kzo
+gCU
 bnR
 sed
 cON
@@ -88866,8 +88804,8 @@ cON
 cON
 jAp
 sjb
-rpm
-kYu
+smg
+qTT
 cVO
 trU
 trU
@@ -89123,7 +89061,7 @@ ybi
 ybi
 ybi
 ybi
-pDP
+ybi
 jQi
 sed
 cON

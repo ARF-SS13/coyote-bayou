@@ -225,9 +225,9 @@
 /* Fenny requested this, a steptrigger to prompt a choice, and then alog their choice. Very weird, no fucking idea what he wants it for */
 
 /obj/effect/step_trigger/player_choice_log
-	var/title = "Step has been triggered" // Title of the chat window.
-	var/question = "Step Trigger demands an answer" // The text to show to the player along with the choices 
-	var/list/choices = list() // List of choices to prompt the player with. If empty, give them a yes/no
+	var/title = "Open ERP Zone" // Title of the chat window.
+	var/question = "By entering this building you accept that you may see erotic roleplay not in subtles that you may not find agreeable. You forfeit the right to complain by pressing yes and moving into this area. It is a den of degeneracy within, and no amount of text here could possibly give enough warning. This does not mean that you are allowed to circumvent core ERP rules though, prefs must still be met with direct partners & Ageplay Roleplay will result in an immediate ban without chance of appeal. Do you accept these terms?" // The text to show to the player along with the choices 
+	var/list/choices = list("Yes", "No") // List of choices to prompt the player with. If empty, give them a yes/no
 	var/adminLogSuffix = "PLAYER_CHOICE" // First word to appear on admin log, useful to highlight the specific step trigger in logs.
 
 	var/list/ckeyList = list() // Don't change this. This is to keep track of who's entered the room
