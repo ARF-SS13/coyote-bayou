@@ -616,7 +616,7 @@
 	name = "Cybernetic Liver"
 	desc = "A cybernetic liver"
 	id = "cybernetic_liver"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/liver/cybernetic
 	category = list("Medical Designs")
@@ -626,7 +626,7 @@
 	name = "Cybernetic Heart"
 	desc = "A cybernetic heart"
 	id = "cybernetic_heart"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/heart/cybernetic
 	category = list("Medical Designs")
@@ -647,7 +647,7 @@
 	name = "Upgraded Cybernetic Liver"
 	desc = "An upgraded cybernetic liver"
 	id = "cybernetic_liver_u"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/liver/cybernetic/upgraded
 	category = list("Medical Designs")
@@ -657,7 +657,7 @@
 	name = "Cybernetic Lungs"
 	desc = "A pair of cybernetic lungs."
 	id = "cybernetic_lungs"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/lungs/cybernetic
 	category = list("Medical Designs")
@@ -667,7 +667,7 @@
 	name = "Upgraded Cybernetic Lungs"
 	desc = "A pair of upgraded cybernetic lungs."
 	id = "cybernetic_lungs_u"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver = 500)
 	build_path = /obj/item/organ/lungs/cybernetic/upgraded
 	category = list("Medical Designs")
@@ -677,7 +677,7 @@
 	name = "Cybernetic tongue"
 	desc = "A fancy cybernetic tongue."
 	id = "cybernetic_tongue"
-	build_type = PROTOLATHE
+	build_type = PROTOLATHE | MECHFAB
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/tongue/cybernetic
 	category = list("Medical Designs")
