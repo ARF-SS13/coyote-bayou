@@ -29,7 +29,7 @@
 	id = "basic_capacitor"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
-	build_path = /obj/item/stock_parts/capacitor/simple
+	build_path = /obj/item/stock_parts/capacitor
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -74,7 +74,7 @@
 	id = "basic_scanning"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
-	build_path = /obj/item/stock_parts/scanning_module/simple
+	build_path = /obj/item/stock_parts/scanning_module
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -119,7 +119,7 @@
 	id = "micro_mani"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100)
-	build_path = /obj/item/stock_parts/manipulator/simple
+	build_path = /obj/item/stock_parts/manipulator
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -164,7 +164,7 @@
 	id = "basic_micro_laser"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
-	build_path = /obj/item/stock_parts/micro_laser/simple
+	build_path = /obj/item/stock_parts/micro_laser
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -208,7 +208,7 @@
 	id = "basic_matter_bin"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 100)
-	build_path = /obj/item/stock_parts/matter_bin/simple
+	build_path = /obj/item/stock_parts/matter_bin
 	category = list("Stock Parts","Machinery","initial")
 	lathe_time_factor = 0.2
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE

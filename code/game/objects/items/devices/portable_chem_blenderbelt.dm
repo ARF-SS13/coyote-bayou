@@ -752,7 +752,7 @@
 		var/obj/item/storage/blender_belt/our_home = loc
 		our_home.internal_beaker = new(src) // spawn the beaker
 		new /obj/item/stock_parts/cell/upgraded(src) // spawn the cell
-		new /obj/item/stock_parts/manipulator/simple(src) // spawn the part
+		new /obj/item/stock_parts/manipulator(src) // spawn the part
 	
 /obj/item/storage/box/blender_batbox/Destroy()
 	if(istype(loc, /obj/item/storage/blender_belt))
@@ -796,8 +796,8 @@
 	new /obj/item/stock_parts/cell/upgraded(src)
 	new /obj/item/storage/belt/military/snack(src)
 	new /obj/item/storage/belt/military/snack(src)
-	new /obj/item/stock_parts/manipulator/simple(src)
-	new /obj/item/stock_parts/manipulator/simple(src)
+	new /obj/item/stock_parts/manipulator(src)
+	new /obj/item/stock_parts/manipulator(src)
 	new /obj/item/stock_parts/manipulator/femto(src)
 	new /obj/item/stock_parts/manipulator/femto(src)
 	new /obj/item/stock_parts/manipulator/nano(src)

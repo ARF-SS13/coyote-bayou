@@ -130,7 +130,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/stock_parts/get_part_rating()
 	return rating
 
-//Base parts. They aren't intended to be replicate-able by players, but are useful to describe what a machine needs, and round-start machines will have them.
+//Rating 1
 
 /obj/item/stock_parts/capacitor
 	name = "capacitor"
@@ -160,38 +160,6 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "matter bin"
 	desc = "A pre-war design for a simple consumer-grade storage bin. Not much better than a funnel."
 	icon_state = "matter_bin"
-	custom_materials = list(/datum/material/iron=80)
-
-//Rating 1
-
-/obj/item/stock_parts/capacitor/simple
-	name = "watch battery"
-	desc = "A small battery presumably used to keep a watch timing properly. Could be useful as a makeshift capacitor."
-	icon_state = "watch_battery"
-	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
-
-/obj/item/stock_parts/scanning_module/simple
-	name = "light sensitive circuit"
-	desc = "Sometimes found in cameras or infrared detectors. Useful for scanning things, if a little low-tech."
-	icon_state = "light_sensitive_circuit"
-	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
-
-/obj/item/stock_parts/manipulator/simple
-	name = "simple gear"
-	desc = "A simple gear. A couple of these could probably be used in a mechanism to manipulate things."
-	icon_state = "simple_gear"
-	custom_materials = list(/datum/material/iron=30)
-
-/obj/item/stock_parts/micro_laser/simple
-	name = "nixie tube"
-	desc = "A small bulb with a complicated filament pattern. Puts off enough heat that it could be used for heating small components in a pinch."
-	icon_state = "simple_bulb"
-	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
-
-/obj/item/stock_parts/matter_bin/simple
-	name = "intake funnel"
-	desc = "Practically a metal cone. Useful to store some stuff in a machine, at least."
-	icon_state = "funnel"
 	custom_materials = list(/datum/material/iron=80)
 
 //Rating 2

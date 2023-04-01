@@ -575,7 +575,7 @@
 	id = "knight_helmet"
 	build_type = AUTOLATHE
 	materials = list(MAT_CATEGORY_RIGID = 5000)
-	build_path = /obj/item/clothing/head/helmet/knight/greyscale
+	build_path = /obj/item/clothing/head/helmet/knight/greyscale 
 	category = list("Imported")
 
 /////////////////////////////////////////
