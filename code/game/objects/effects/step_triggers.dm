@@ -40,6 +40,9 @@
 	mobs_only = TRUE
 
 /obj/effect/step_trigger/message/Trigger(mob/M)
+	if(!ismob(M))
+		return
+
 	if(M.client)
 		to_chat(M, span_info("[message]"))
 		if(once)
