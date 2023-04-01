@@ -794,8 +794,15 @@
 	icon_state = "candle3_lit"
 	},
 /obj/item/storage/pill_bottle/mutadone{
-	pixel_x = 7;
+	pixel_x = 11;
 	pixel_y = 8
+	},
+/obj/item/sequence_scanner{
+	pixel_y = 9;
+	pixel_x = -7;
+	color = "#887744";
+	name = " crusty genetic sequence scanner";
+	desc = "A  strangely crusty and brown hand-held scanner for analyzing someones gene sequence on the fly. Hold near a DNA console to update the internal database."
 	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
@@ -9585,10 +9592,10 @@
 	pixel_y = 12
 	},
 /obj/item/storage/box/disks{
-	pixel_x = -11
+	pixel_x = -6
 	},
 /obj/item/storage/box/syringes{
-	pixel_x = 6
+	pixel_x = 11
 	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
@@ -17884,6 +17891,10 @@
 	pixel_y = -1;
 	pixel_x = 22;
 	density = 0
+	},
+/obj/item/gun/ballistic/automatic/pistol/m1911{
+	name = "Muh Three Worldy Whores";
+	color = "#ff00ff"
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -31007,7 +31018,12 @@
 /area/f13/building)
 "vAM" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
+	dir = 4;
+	pixel_y = 8
+	},
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
 	},
 /turf/open/floor/f13/wood,
 /area/f13/bar)
@@ -34363,6 +34379,7 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
+/obj/item/storage/box/monkeycubes,
 /turf/open/floor/f13/wood,
 /area/f13/bar)
 "yeQ" = (
@@ -38134,10 +38151,10 @@ mRt
 jGk
 aae
 aae
-bOn
-bOn
-bOn
-jGk
+iVO
+iVO
+iVO
+iVO
 roN
 gcv
 gcv
@@ -38391,7 +38408,7 @@ mRt
 jGk
 aae
 aae
-bOn
+iVO
 yeO
 tlE
 iVO
@@ -38648,7 +38665,7 @@ qIt
 jGk
 aae
 aae
-bOn
+iVO
 cgV
 aUk
 unP
