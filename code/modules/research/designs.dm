@@ -45,6 +45,7 @@ other types of metals and chemistry for reagents).
 	/// Checks if the material price is less than that of what it gives back, and then adds some if so
 	/// Spams the chat with bullshit if so, its a debugging tool~
 	var/debug_materials = FALSE
+	
 /datum/design/error_design
 	name = "ERROR"
 	desc = "This usually means something in the database has corrupted. If this doesn't go away automatically, inform Central Command so their techs can fix this ASAP(tm)"

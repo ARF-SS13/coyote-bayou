@@ -504,7 +504,7 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_CATEGORY_RIGID = 12000)
 	build_path = /obj/item/melee/cleric_mace
-	category = list("Imported") 
+	category = list("Imported")
 
 /*
 /datum/design/stun_boomerang
