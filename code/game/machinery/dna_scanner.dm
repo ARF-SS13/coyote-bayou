@@ -34,6 +34,8 @@
 		. += "<span class='notice'>The status display reads: Radiation pulse accuracy increased by factor <b>[precision_coeff**2]</b>.<br>Radiation pulse damage decreased by factor <b>[damage_coeff**2]</b>.</span>"
 		if(scan_level >= 3)
 			. += span_notice("Scanner has been upgraded to support autoprocessing.")
+	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
+		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
 
 /obj/machinery/dna_scannernew/update_icon_state()
 	//no power or maintenance

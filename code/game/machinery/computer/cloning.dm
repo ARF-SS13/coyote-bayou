@@ -37,6 +37,11 @@
 		pods = null
 	return ..()
 
+/obj/machinery/computer/cloning/examine(mob/user)
+	. = ..()
+	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
+		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
+
 /obj/machinery/computer/cloning/proc/GetAvailablePod(mind = null)
 	if(!pods)
 		return
@@ -154,6 +159,9 @@
 
 /obj/machinery/computer/cloning/ui_interact(mob/user)
 	. = ..()
+	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
+		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
+		return
 
 	updatemodules(TRUE)
 
