@@ -372,9 +372,6 @@
 		return TRUE
 
 	. = TRUE
-	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
-		return
 
 	add_fingerprint(usr)
 	usr.set_machine(src)
