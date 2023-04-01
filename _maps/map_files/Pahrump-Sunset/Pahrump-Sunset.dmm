@@ -26091,9 +26091,11 @@
 /area/f13/building/abandoned)
 "cOL" = (
 /obj/structure/table/glass,
-/obj/item/storage/firstaid/radbgone,
-/obj/item/storage/firstaid/radbgone,
-/obj/item/storage/firstaid/radbgone,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/hospital)
 "cOO" = (
@@ -28630,15 +28632,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "dzc" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
+/obj/effect/step_trigger/message{
+	name = "message repeat";
+	once = 0;
+	message = "As you crack the door open to this old brick house the scents of mold and musty spaces assaults your nostrils.  This home seems mostly abandoned based off that alone."
 	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland)
+/turf/closed/wall/f13/wood,
+/area/f13/building/abandoned)
 "dzg" = (
 /obj/structure/closet/crate/bin,
 /turf/open/indestructible/ground/outside/dirt{
@@ -37047,6 +37047,10 @@
 "fSP" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
@@ -64052,14 +64056,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "nAd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/brokenglass,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/effect/step_trigger/message{
+	name = "message repeat";
+	once = 0;
+	message =  "<span class="span_bolddanger">The area beyond is extremely dangerous, continue at your own risk.</span>" sssss
 	},
-/area/f13/building/abandoned)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "nAh" = (
 /obj/structure/barricade/wooden/strong{
 	layer = 2.8
@@ -85306,10 +85309,9 @@
 /area/f13/building/abandoned)
 "tGS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/dirtyglass,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/simple_door/dirtyglass,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -97144,6 +97146,17 @@
 /obj/item/toy/beach_ball/holoball/dodgeball,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"xdD" = (
+/obj/structure/flora/tree/jungle/small{
+	color = "#d9b51c"
+	},
+/obj/effect/step_trigger/message{
+	name = "message repeat";
+	once = 0;
+	message =  "<span class="span_bolddanger">The area beyond is extremely dangerous, continue at your own risk.</span>" sssss
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "xdI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
@@ -115289,9 +115302,9 @@ ymf
 dPv
 gzP
 dCK
-nAd
-dzc
-sgY
+rij
+lAu
+xWr
 ivb
 fvw
 biV
@@ -115547,7 +115560,7 @@ vZd
 hxJ
 owx
 rij
-lAu
+tfE
 fTa
 ivb
 bVH
@@ -117862,7 +117875,7 @@ aHF
 vJD
 jQB
 qEj
-aHF
+dzc
 fvw
 biV
 tNH
@@ -126151,7 +126164,7 @@ qoU
 aae
 aae
 aae
-aJN
+nAd
 kEE
 "}
 (98,1,1) = {"
@@ -126408,7 +126421,7 @@ aae
 aae
 aae
 iWi
-aJN
+nAd
 kEE
 "}
 (99,1,1) = {"
@@ -126665,7 +126678,7 @@ qoU
 aae
 aae
 aJN
-aJN
+nAd
 kEE
 "}
 (100,1,1) = {"
@@ -126922,7 +126935,7 @@ aOk
 aOk
 aOk
 aJN
-aJN
+nAd
 kEE
 "}
 (101,1,1) = {"
@@ -127179,7 +127192,7 @@ qyV
 cFK
 cFK
 oLv
-aJN
+nAd
 kEE
 "}
 (102,1,1) = {"
@@ -127436,7 +127449,7 @@ iYj
 wqe
 oSP
 oLv
-aJN
+nAd
 kEE
 "}
 (103,1,1) = {"
@@ -127693,7 +127706,7 @@ bjb
 vvB
 vvB
 cru
-aJN
+nAd
 kEE
 "}
 (104,1,1) = {"
@@ -127950,7 +127963,7 @@ aae
 aae
 aae
 aJN
-aJN
+nAd
 kEE
 "}
 (105,1,1) = {"
@@ -128207,7 +128220,7 @@ aae
 aae
 aae
 aJN
-iWi
+xdD
 kEE
 "}
 (106,1,1) = {"
@@ -128464,7 +128477,7 @@ aae
 aae
 aae
 aJN
-aJN
+nAd
 kEE
 "}
 (107,1,1) = {"
@@ -128721,7 +128734,7 @@ aae
 aae
 aae
 aae
-aJN
+nAd
 kEE
 "}
 (108,1,1) = {"

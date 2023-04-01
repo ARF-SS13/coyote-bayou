@@ -44,7 +44,11 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Beast Friend - Rats", "Beast Master - Rats"),
 			list("Beast Friend - Small Critters", "Beast Master - Small Critters"),
 			list("Speed Walker", "Mobility - Wasteland Slug", "Mobility - Wasteland Molasses", "Phobia - The Dark"),
-			list("Pacifist", "Fists of Noodle", "Melee - Gentle", "Melee - Wimpy", "Poor Aim", "Fat-Fingered")
+			list("Pacifist", "Fists of Noodle"),
+			list("Pacifist", "Melee - Gentle"),
+			list("Pacifist", "Melee - Wimpy"),
+			list("Pacifist", "Poor Aim"),
+			list("Pacifist", "Fat-Fingered")
 			)
 	return ..()
 
