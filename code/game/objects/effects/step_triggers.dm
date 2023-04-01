@@ -4,6 +4,7 @@
 	var/affect_ghosts = 0
 	var/stopper = 1 // stops throwers
 	var/mobs_only = FALSE
+	var/client = 0 // I don't know what the heck is pulling var/client, but this shit runtimes if it can't access it. Don't use this trigger until it's fixed
 	invisibility = INVISIBILITY_ABSTRACT // nope cant see this shit
 	anchored = TRUE
 
