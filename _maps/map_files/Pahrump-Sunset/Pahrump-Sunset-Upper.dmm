@@ -677,7 +677,10 @@
 	},
 /area/f13/building/hospital)
 "aCK" = (
-/obj/machinery/power/solar/fake,
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
+	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "aCS" = (
@@ -3901,10 +3904,13 @@
 /turf/closed/wall/r_wall,
 /area/f13/building)
 "dTz" = (
-/obj/machinery/power/solar/fake,
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_corner_fill";
 	dir = 4
+	},
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
@@ -7328,7 +7334,13 @@
 	},
 /area/f13/wasteland)
 "hhC" = (
-/turf/closed/wall/mineral/brick,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/smoke_machine{
+	name = "HVAC Machine"
+	},
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken5"
+	},
 /area/f13/wasteland)
 "hhG" = (
 /obj/structure/flora/junglebush,
@@ -7625,15 +7637,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"huu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/solar/fake,
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 1
-	},
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
 "huz" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowhorizontal"
@@ -8073,10 +8076,13 @@
 	},
 /area/f13/building/massfusion)
 "hOU" = (
-/obj/machinery/power/solar/fake,
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
 	dir = 1
+	},
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
@@ -8292,6 +8298,10 @@
 "iau" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
+	},
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken6"
 	},
@@ -10182,7 +10192,10 @@
 /area/f13/building/tribal)
 "jRL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/solar/fake,
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
+	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "jRW" = (
@@ -13310,10 +13323,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "mNZ" = (
-/obj/machinery/power/solar/fake,
+/obj/machinery/power/solar/fake{
+	density = 0;
+	pixel_y = -8
+	},
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
@@ -13757,12 +13773,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"nns" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/solar/fake,
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
 "nnu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -23911,8 +23921,9 @@
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
 	},
-/obj/structure/spacevine,
-/turf/open/floor/wood_wide,
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken3"
+	},
 /area/f13/wasteland)
 "xRx" = (
 /obj/structure/window/fulltile/house{
@@ -24097,12 +24108,6 @@
 	color = "#779999"
 	},
 /area/f13/building/hospital)
-"yba" = (
-/obj/machinery/power/solar/fake,
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken6"
-	},
-/area/f13/wasteland)
 "ybv" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -24655,7 +24660,7 @@ vje
 vje
 vje
 vje
-sSu
+oez
 oez
 oez
 oez
@@ -24912,7 +24917,7 @@ vje
 vje
 vje
 vje
-sSu
+oez
 oez
 oez
 oez
@@ -25169,7 +25174,7 @@ vje
 vje
 vje
 vje
-sSu
+oez
 oez
 oez
 oez
@@ -25420,13 +25425,13 @@ ejB
 ozn
 jbP
 oLE
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -25677,7 +25682,7 @@ ejB
 jbP
 oLE
 enE
-sSu
+oez
 oez
 oez
 oez
@@ -25934,7 +25939,7 @@ ngm
 oLE
 enE
 enE
-sSu
+oez
 oez
 oez
 oez
@@ -26191,7 +26196,7 @@ enE
 oLE
 oLE
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -26448,7 +26453,7 @@ gPM
 ujK
 ujK
 enE
-sSu
+oez
 oez
 oez
 oez
@@ -26705,7 +26710,7 @@ pvV
 pvV
 pvV
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -26962,7 +26967,7 @@ oLE
 enE
 enE
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -27219,7 +27224,7 @@ cqK
 ujK
 cqK
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -27476,7 +27481,7 @@ bGT
 bGT
 bGT
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -27733,7 +27738,7 @@ oLE
 enE
 uYs
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -27990,7 +27995,7 @@ ujK
 cqK
 cqK
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -28096,7 +28101,7 @@ bwi
 sZR
 aGo
 rrs
-xyP
+oeP
 oez
 oez
 oez
@@ -28247,7 +28252,7 @@ fVt
 fVt
 fVt
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -28307,9 +28312,9 @@ mNn
 mNn
 rrs
 nEl
-mNZ
-mNZ
-mNZ
+nEl
+nEl
+nEl
 nEl
 wky
 oez
@@ -28353,7 +28358,7 @@ adN
 adN
 bwi
 rrs
-xyP
+oeP
 oez
 oez
 oez
@@ -28504,7 +28509,7 @@ enE
 enE
 oLE
 oLE
-sSu
+oez
 oez
 oez
 oez
@@ -28563,10 +28568,10 @@ vdF
 mNn
 mNn
 rrs
+aCK
+gQO
 dUa
-gQO
-gQO
-xRd
+dUa
 dUa
 oeP
 oez
@@ -28610,7 +28615,7 @@ adN
 lhH
 dAm
 ohv
-xyP
+oeP
 oez
 oez
 oez
@@ -28761,7 +28766,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -28867,7 +28872,7 @@ vlJ
 ohv
 ohv
 hmG
-xyP
+oeP
 oez
 oez
 oez
@@ -29018,7 +29023,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -29077,10 +29082,10 @@ dxw
 mNn
 uvA
 kga
-dUa
-muV
+aCK
+hhC
 iau
-dUa
+gQO
 dUa
 oeP
 oez
@@ -29124,7 +29129,7 @@ ubl
 ubl
 gcS
 cOy
-hhC
+oeP
 oez
 oez
 oez
@@ -29275,7 +29280,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -29335,9 +29340,9 @@ mNn
 mNn
 rrs
 dUa
-aCK
-nns
-yba
+dUa
+ctb
+oRM
 dUa
 oeP
 oez
@@ -29346,9 +29351,9 @@ aKP
 mNn
 mNn
 fet
-dUa
-jRL
-lrE
+aCK
+jVf
+oeP
 oez
 oez
 oez
@@ -29381,7 +29386,7 @@ lnw
 koZ
 lnw
 ohv
-oez
+oeP
 oez
 oez
 oez
@@ -29532,7 +29537,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -29591,9 +29596,9 @@ oMf
 gSp
 mNn
 rrs
-dUa
+aCK
 jVf
-gQO
+aCK
 jVf
 dUa
 oeP
@@ -29604,8 +29609,8 @@ mNn
 slU
 aJz
 dUa
-jRL
-lrE
+xVM
+oeP
 oez
 oez
 oez
@@ -29638,7 +29643,7 @@ pUq
 ohv
 ohv
 cBX
-oez
+oeP
 oez
 oez
 oez
@@ -29789,7 +29794,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -29860,9 +29865,9 @@ jla
 mNn
 mNn
 aJz
-dUa
-jRL
-lrE
+aCK
+jVf
+oeP
 oez
 oez
 oez
@@ -29893,9 +29898,9 @@ dUa
 oqk
 oqk
 dUa
-oeP
-oez
-oez
+xFm
+pRA
+vSo
 oez
 oez
 oez
@@ -30046,7 +30051,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -30107,8 +30112,8 @@ uvA
 kga
 dUa
 xVM
-oqk
-oqk
+aCK
+gQO
 xrC
 oeP
 oez
@@ -30303,7 +30308,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -30560,7 +30565,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -30655,14 +30660,14 @@ oez
 oez
 oez
 oez
-hOU
-gQO
+gWO
 dUa
-aCK
-gQO
 dUa
-aCK
-gQO
+dUa
+dUa
+dUa
+dUa
+dUa
 dUa
 oeP
 oez
@@ -30817,7 +30822,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -30899,12 +30904,12 @@ gWO
 dUa
 oqk
 dUa
-dUa
 aCK
 jVf
-xVM
+dUa
 jRL
-lrE
+gQO
+oeP
 oez
 oez
 oez
@@ -31074,7 +31079,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -31157,11 +31162,11 @@ tnK
 eEx
 vYm
 xVM
-jRL
-gQO
-xVM
-aCK
-lrE
+dUa
+dUa
+dUa
+dUa
+oeP
 oez
 oez
 oez
@@ -31331,7 +31336,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -31413,12 +31418,12 @@ tnK
 jrI
 mNn
 brR
-xVM
 aCK
 gQO
-xVM
+dUa
 aCK
-lrE
+gQO
+oeP
 oez
 oez
 oez
@@ -31588,7 +31593,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -31845,7 +31850,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -32102,7 +32107,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -32359,7 +32364,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -32616,7 +32621,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -32873,7 +32878,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -33130,7 +33135,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -33387,7 +33392,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -33644,7 +33649,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -33901,7 +33906,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -34008,8 +34013,8 @@ dUa
 oeP
 oez
 oez
-huu
-gQO
+ljF
+dUa
 qIs
 jrI
 slU
@@ -34158,7 +34163,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -34265,7 +34270,7 @@ dUa
 wXH
 oez
 oez
-hOU
+mNZ
 gQO
 iMM
 rrM
@@ -34396,26 +34401,26 @@ oez
 oez
 oez
 oez
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -34653,7 +34658,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -34910,7 +34915,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -35167,7 +35172,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -35424,7 +35429,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -35523,8 +35528,8 @@ uqP
 mNn
 hMq
 dUa
-aCK
-jVf
+dUa
+xVM
 oeP
 oez
 oez
@@ -35681,7 +35686,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -35938,7 +35943,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -36195,7 +36200,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -36452,7 +36457,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -36709,7 +36714,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -36782,8 +36787,8 @@ bJy
 qIs
 dUa
 oqk
-aCK
-gQO
+dUa
+dUa
 dUa
 glD
 mNn
@@ -36959,14 +36964,14 @@ oez
 oez
 oez
 oez
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -37048,11 +37053,11 @@ meB
 lPI
 dUa
 oqk
-dUa
 aCK
-jRL
+gQO
+xVM
 aCK
-dUa
+gQO
 tiW
 nEl
 nEl
@@ -37216,7 +37221,7 @@ oez
 oez
 oez
 oez
-sSu
+oez
 oez
 oez
 oez
@@ -37306,9 +37311,9 @@ dCR
 dUa
 qpP
 dUa
-gQO
-gQO
-gQO
+dUa
+dUa
+dUa
 xVM
 dUa
 dUa
@@ -37463,17 +37468,17 @@ oez
 oez
 oez
 oez
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
-sSu
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -37555,18 +37560,18 @@ jwW
 lkL
 lkL
 jwW
+aCK
+gQO
 dUa
-dUa
-dUa
-xVM
-dUa
+jRL
+gQO
 dUa
 oqk
-oqk
-cbg
+aCK
+xRd
 dUa
-dUa
-dUa
+aCK
+gQO
 dUa
 gen
 dUa
@@ -37797,12 +37802,12 @@ xyP
 xyP
 uZC
 dUa
-aCK
-gQO
 dUa
 dUa
-aCK
-gQO
+dUa
+dUa
+dUa
+dUa
 dUa
 eWw
 bgA
@@ -37815,9 +37820,9 @@ lkL
 dUa
 xVM
 dUa
-aCK
-jRL
-aCK
+dUa
+xVM
+dUa
 dUa
 qpP
 dUa
@@ -38069,12 +38074,12 @@ xin
 mca
 ina
 lkL
-dUa
-dUa
-dUa
+aCK
 gQO
+dUa
+aCK
 gQO
-gQO
+dUa
 dUa
 dUa
 dUa
@@ -40428,8 +40433,8 @@ dUa
 aCK
 lrE
 oez
-hOU
-gQO
+gWO
+dUa
 dUa
 oqk
 aCK
@@ -40676,26 +40681,26 @@ amR
 oqk
 dUa
 dUa
-jRL
-gQO
+xVM
 dUa
-aCK
-gQO
 dUa
-aCK
-lrE
+dUa
+dUa
+dUa
+dUa
+oeP
 oez
 hOU
 gQO
 dUa
 oqk
-aCK
-jVf
+dUa
+xVM
 dUa
 dUa
 oqk
-aCK
-gQO
+dUa
+dUa
 dUa
 uNC
 oqk
@@ -40953,8 +40958,8 @@ nHh
 uNC
 aCK
 wlx
-dUa
-dUa
+aCK
+gQO
 oqk
 ecJ
 xyP
