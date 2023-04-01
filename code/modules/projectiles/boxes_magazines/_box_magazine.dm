@@ -37,10 +37,6 @@
 	var/randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/Initialize()
-	if(SSevents.american180)
-		if(!istype(src, /obj/item/ammo_box/magazine/m22smg) && !istype(src, /obj/item/ammo_box/magazine/b180) && !fixed_mag) // what a wonderful idea
-			new /obj/item/ammo_box/magazine/m22smg(loc)
-			return INITIALIZE_HINT_QDEL
 	. = ..()
 /* 	if (!bullet_cost)
 		for (var/material in custom_materials)
@@ -66,16 +62,6 @@
 		else
 			caliber += CALIBER_ANY // default to accepting any old caliber
 	update_icon()
-
-/obj/item/ammo_box/ComponentInitialize()
-	. = ..()
-	RegisterSignal(SSdcs, list(COMSIG_GLOB_AMERICAN180), .proc/make_american) // not a bad idea
-
-/obj/item/ammo_box/proc/make_american()
-	SIGNAL_HANDLER
-	if(!istype(src, /obj/item/ammo_box/magazine/m22smg) && !istype(src, /obj/item/ammo_box/magazine/b180) && !fixed_mag) // what a wonderful idea
-		new /obj/item/ammo_box/magazine/m22smg(loc)
-		qdel(src)
 
 /obj/item/ammo_box/proc/get_round(keep = 0)
 	if (!stored_ammo.len)

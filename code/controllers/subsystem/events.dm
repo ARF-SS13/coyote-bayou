@@ -13,8 +13,6 @@ SUBSYSTEM_DEF(events)
 
 	var/list/holidays			//List of all holidays occuring today or null if no holidays
 	var/wizardmode = FALSE
-	/// if true, makes all guns and ammo be american 180s and 22s. address all pipebombs to my butt uwu
-	var/american180
 
 /datum/controller/subsystem/events/Initialize(time, zlevel)
 	for(var/type in typesof(/datum/round_event_control))
@@ -95,61 +93,6 @@ SUBSYSTEM_DEF(events)
 	else if(. == EVENT_READY)
 		E.random = TRUE
 		E.runEvent(TRUE)
-
-/datum/controller/subsystem/events/proc/show_180_message(mob/target)
-	var/fuck = alert(
-				target,
-				"Hey its April Fools, want to piss everyone off and lag the server out and make every gun and magazine runtime \
-				the moment they spawn? If you say yes, every gun will turn into an American180, and every magazine \
-				turn into the wierd ammo it uses. No there isnt a way to turn this off. Yes it will cause a few thousand runtimes. \
-				Yes you will probably have to tell Lagg to restart the server.", 
-				"April.", 
-				"ITS AMERICAN 180 TIME", 
-				"No please!"
-				)
-	if(fuck == "ITS AMERICAN 180 TIME" && SSevents.american180 == -1)
-		confirm_bad_idea(target, 1)
-
-/datum/controller/subsystem/events/proc/confirm_bad_idea(mob/target, stage = 1)
-	if(SSevents.american180 == 1)
-		return
-	if(SSevents.american180 == 0)
-		to_chat(target, span_alert("Its not april fools, as far as the server is concerned! If you're dead set on ruining everything, trigger it through secrets!"))
-		return
-	switch(stage)
-		if(1)
-			var/fuck = alert(
-						target,
-						"Are you sure?", 
-						"April.", 
-						"MAKE IT HAPPEN", 
-						"Not really!"
-						)
-			if(fuck == "MAKE IT HAPPEN" && SSevents.american180 == -1)
-				confirm_bad_idea(target, 2)
-		if(2)
-			var/fuck = alert(
-						target,
-						"Are you really sure?", 
-						"April.", 
-						"Not really!",
-						"YES!",
-						)
-			if(fuck == "YES!" && SSevents.american180 == -1)
-				confirm_bad_idea(target, 3)
-		if(3)
-			var/fuck = alert(
-						target,
-						"Last chance to stop it!", 
-						"April.", 
-						"AMERICANIZE", 
-						"Stop!"
-						)
-			if(fuck == "AMERICANIZE" && SSevents.american180 == -1)
-				to_chat(target, span_phobia("Kay!"))
-				americanize(TRUE)
-		
-
 
 //allows a client to trigger an event
 //aka Badmin Central

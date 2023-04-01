@@ -23,7 +23,6 @@
 #define COMSIG_GLOB_PLAY_CINEMATIC "!play_cinematic"
 	#define COMPONENT_GLOB_BLOCK_CINEMATIC 1
 #define COMSIG_GLOB_RADIATION_SHOW "!debug_show_rads"				//Makes turfs that are radioactive green and show a number
-#define COMSIG_GLOB_AMERICAN180 "!this_is_all_you_fuzzy"				//Makes every gun a fuckin american 180
 
 
 // signals from globally accessible objects

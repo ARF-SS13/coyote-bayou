@@ -184,10 +184,6 @@ ATTACHMENTS
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
 /obj/item/gun/Initialize()
-	if(SSevents.american180)
-		if(!istype(src, /obj/item/gun/ballistic/automatic/smg/american180)) // what a wonderful idea
-			new /obj/item/gun/ballistic/automatic/smg/american180(loc)
-			return INITIALIZE_HINT_QDEL
 	if(!recoil_dat && islist(init_recoil))
 		recoil_dat = getRecoil(arglist(init_recoil))
 	else if(!islist(init_recoil))
@@ -263,16 +259,6 @@ ATTACHMENTS
 		QDEL_NULL(chambered)
 	QDEL_LIST(firemodes)
 	return ..()
-
-/obj/item/gun/ComponentInitialize()
-	. = ..()
-	RegisterSignal(SSdcs, list(COMSIG_GLOB_AMERICAN180), .proc/make_american) // not a bad idea
-
-/obj/item/gun/proc/make_american()
-	SIGNAL_HANDLER
-	if(!istype(src, /obj/item/gun/ballistic/automatic/smg/american180)) // what a wonderful idea
-		new /obj/item/gun/ballistic/automatic/smg/american180(loc)
-		qdel(src)
 
 /obj/item/gun/handle_atom_del(atom/A)
 	if(A == chambered)

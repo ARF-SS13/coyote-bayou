@@ -10,7 +10,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	))
 GLOBAL_LIST_INIT(checked_ckeys, list())
 GLOBAL_LIST_INIT(warning_ckeys, list())
-GLOBAL_LIST_INIT(asked_about_american, list())
 
 #define LIMITER_SIZE	5
 #define CURRENT_SECOND	1
@@ -44,9 +43,6 @@ GLOBAL_LIST_INIT(asked_about_american, list())
 		asset_cache_job = asset_cache_confirm_arrival(href_list["asset_cache_confirm_arrival"])
 		if (!asset_cache_job)
 			return
-
-	if(href_list["make_it_american"])
-		SSevents.show_180_message(src)
 
 	// Rate limiting
 	var/mtl = CONFIG_GET(number/minute_topic_limit)
@@ -240,8 +236,6 @@ GLOBAL_LIST_INIT(asked_about_american, list())
 			GLOB.adminchat |= src
 			holder.owner = src
 			connecting_admin = TRUE
-			if(SSevents.american180 == -1)
-				to_chat(src, span_alert("Hey, wanna fuck everything up? Click <a href='?src=[REF(src)];make_it_american=1'>here</a>"))
 		//CITADEL EDIT
 		if(check_rights_for(src, R_DEBUG))
 			debug_tools_allowed = TRUE
@@ -495,9 +489,9 @@ GLOBAL_LIST_INIT(asked_about_american, list())
 	Master.UpdateTickRate()
 
 
-/proc/alert_async(mob/target, message, title, button1, button2)
+/proc/alert_async(mob/target, message)
 	set waitfor = FALSE
-	alert(target, message, title, button1, button2)
+	alert(target, message)
 
 
 //////////////

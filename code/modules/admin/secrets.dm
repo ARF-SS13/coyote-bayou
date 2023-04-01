@@ -72,7 +72,6 @@
 			<A href='?src=[REF(src)];[HrefToken()];secrets=changebombcap'>Change bomb cap</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=masspurrbation'>Mass Purrbation</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=massremovepurrbation'>Mass Remove Purrbation</A><BR>
-			<A href='?src=[REF(src)];[HrefToken()];secrets=americanize'>Make All Guns And Ammo American 180s</A><BR>
 			"}
 
 	dat += "<BR>"
@@ -632,13 +631,6 @@
 			message_admins("[key_name_admin(usr)] has removed everyone from \
 				purrbation.")
 			log_admin("[key_name(usr)] has removed everyone from purrbation.")
-		if("americanize")
-			if(!check_rights(R_FUN))
-				return
-			americanize()
-			message_admins("[key_name_admin(usr)] made every gun a fucking American 180.")
-			log_admin("[key_name(usr)] made every gun a fucking American 180.")
-			to_chat(world, "<B>Replacing every gun and ammobox with fucking American 180s...</B>")
 
 		if("customportal")
 			if(!check_rights(R_FUN))
@@ -731,11 +723,6 @@
 	if (playlightning)
 		sleep(20)
 		sound_to_playing_players('sound/magic/lightningbolt.ogg')
-
-/proc/americanize()
-	message_admins("[key_name_admin(usr)] <B>made everything a fucking american 180.</B>")
-	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_AMERICAN180)
-	SSevents.american180 = TRUE
 
 /proc/doPortalSpawn(turf/loc, mobtype, numtospawn, portal_appearance, players, humanoutfit)
 	for (var/i in 1 to numtospawn)
