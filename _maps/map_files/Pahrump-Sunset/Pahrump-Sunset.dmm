@@ -64055,14 +64055,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
-"nAd" = (
-/obj/effect/step_trigger/message{
-	name = "message repeat";
-	once = 0;
-	message =  "<span class="span_bolddanger">The area beyond is extremely dangerous, continue at your own risk.</span>" sssss
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
 "nAh" = (
 /obj/structure/barricade/wooden/strong{
 	layer = 2.8
@@ -97146,17 +97138,6 @@
 /obj/item/toy/beach_ball/holoball/dodgeball,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"xdD" = (
-/obj/structure/flora/tree/jungle/small{
-	color = "#d9b51c"
-	},
-/obj/effect/step_trigger/message{
-	name = "message repeat";
-	once = 0;
-	message =  "<span class="span_bolddanger">The area beyond is extremely dangerous, continue at your own risk.</span>" sssss
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
 "xdI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
@@ -126164,7 +126145,7 @@ qoU
 aae
 aae
 aae
-nAd
+aJN
 kEE
 "}
 (98,1,1) = {"
@@ -126421,7 +126402,7 @@ aae
 aae
 aae
 iWi
-nAd
+aJN
 kEE
 "}
 (99,1,1) = {"
@@ -126678,7 +126659,7 @@ qoU
 aae
 aae
 aJN
-nAd
+aJN
 kEE
 "}
 (100,1,1) = {"
@@ -126935,7 +126916,7 @@ aOk
 aOk
 aOk
 aJN
-nAd
+aJN
 kEE
 "}
 (101,1,1) = {"
@@ -127192,7 +127173,7 @@ qyV
 cFK
 cFK
 oLv
-nAd
+aJN
 kEE
 "}
 (102,1,1) = {"
@@ -127449,7 +127430,7 @@ iYj
 wqe
 oSP
 oLv
-nAd
+aJN
 kEE
 "}
 (103,1,1) = {"
@@ -127706,7 +127687,7 @@ bjb
 vvB
 vvB
 cru
-nAd
+aJN
 kEE
 "}
 (104,1,1) = {"
@@ -127963,7 +127944,7 @@ aae
 aae
 aae
 aJN
-nAd
+aJN
 kEE
 "}
 (105,1,1) = {"
@@ -128220,7 +128201,7 @@ aae
 aae
 aae
 aJN
-xdD
+iWi
 kEE
 "}
 (106,1,1) = {"
@@ -128477,7 +128458,7 @@ aae
 aae
 aae
 aJN
-nAd
+aJN
 kEE
 "}
 (107,1,1) = {"
@@ -128734,7 +128715,7 @@ aae
 aae
 aae
 aae
-nAd
+aJN
 kEE
 "}
 (108,1,1) = {"
