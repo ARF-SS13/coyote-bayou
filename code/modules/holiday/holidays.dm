@@ -158,7 +158,7 @@
 /datum/holiday/april_fools
 	name = APRIL_FOOLS
 	begin_day = 1
-	end_day = 5
+	end_day = 2
 	begin_month = APRIL
 
 /datum/holiday/april_fools/celebrate()
@@ -167,6 +167,7 @@
 	for(var/mob/dead/new_player/P in GLOB.mob_list)
 		if(P.client)
 			P.client.playtitlemusic()
+	SSevents.american180 = -1
 
 /datum/holiday/fourtwenty
 	name = "Four-Twenty"
