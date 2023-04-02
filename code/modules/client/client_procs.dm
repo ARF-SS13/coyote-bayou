@@ -201,8 +201,12 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 
 //This stops files larger than UPLOAD_LIMIT being sent from client to server via input(), client.Import() etc.
 /client/AllowUpload(filename, filelength)
-	if(filelength > UPLOAD_LIMIT)
-		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT/1024]KiB.</font>")
+	var/upLimiit = UPLOAD_LIMIT
+	if(check_rights(R_ADMIN))
+		upLimit *= 5
+	
+	if(filelength > upLimiit)
+		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [upLimiit/1024]KiB.</font>")
 		return 0
 	return 1
 
