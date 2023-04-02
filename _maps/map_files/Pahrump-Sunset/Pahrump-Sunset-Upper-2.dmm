@@ -1319,6 +1319,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"pv" = (
+/obj/structure/disposalpipe/broken,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "pw" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -1718,12 +1722,10 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "uj" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
+/obj/structure/lattice,
 /obj/structure/disposalpipe/segment,
-/turf/closed/wall/f13/wood/house,
-/area/f13/building/abandoned)
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "uq" = (
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -2525,10 +2527,12 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Cz" = (
-/obj/structure/lattice,
+/obj/structure/spacevine{
+	name = "vines"
+	},
 /obj/structure/disposalpipe/segment,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/abandoned)
 "CD" = (
 /obj/structure/fence{
 	dir = 4;
@@ -6413,8 +6417,8 @@ hm
 hm
 hm
 hm
-hm
-Cz
+pv
+uj
 Oo
 hm
 hm
@@ -14111,19 +14115,19 @@ zz
 bZ
 sP
 at
+Cz
 uj
-Cz
-Cz
-Cz
-Cz
-Cz
-Cz
-Cz
-Cz
-Cz
-Cz
-Cz
-Cz
+uj
+uj
+uj
+uj
+uj
+uj
+uj
+uj
+uj
+uj
+uj
 Xp
 FG
 mY
