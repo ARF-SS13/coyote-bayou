@@ -1719,7 +1719,7 @@
 /area/f13/wasteland)
 "uj" = (
 /obj/structure/disposalconstruct,
-/obj/effect/decal/fakelattice,
+/obj/structure/lattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "uq" = (
@@ -2526,7 +2526,7 @@
 /obj/structure/disposalconstruct{
 	dir = 1
 	},
-/obj/effect/decal/fakelattice,
+/obj/structure/lattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "CD" = (
@@ -3693,7 +3693,7 @@
 /obj/structure/disposalconstruct{
 	dir = 5
 	},
-/obj/effect/decal/fakelattice,
+/obj/structure/lattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Op" = (
@@ -3815,7 +3815,7 @@
 /obj/structure/disposalconstruct{
 	dir = 8
 	},
-/obj/effect/decal/fakelattice,
+/obj/structure/lattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "PW" = (
@@ -4451,6 +4451,13 @@
 	color = "#AA5555"
 	},
 /area/f13/building)
+"Xe" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/structure/disposalconstruct,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/abandoned)
 "Xg" = (
 /obj/machinery/rnd/destructive_analyzer,
 /obj/structure/curtain{
@@ -14111,7 +14118,7 @@ zz
 bZ
 sP
 at
-YL
+Xe
 uj
 uj
 uj
