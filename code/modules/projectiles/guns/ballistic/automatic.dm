@@ -1432,7 +1432,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/combat
-	name = "Combat Carbine"
+	name = "American Commonwealth Carbine"
 	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
