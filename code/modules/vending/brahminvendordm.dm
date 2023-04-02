@@ -84,7 +84,7 @@ GLOBAL_VAR(orbital_cow_cooldown)
 		user.show_message(span_notice("...and the uplink starts making noises like it's doing something!"))
 	addtimer(CALLBACK(src, .proc/drop_cow, user), 7.5 SECONDS)
 	addtimer(VARSET_CALLBACK(GLOB, orbital_cow_catapult_ready, TRUE), COW_CANNON_RELOAD_DELAY)
-	addtimer(CALLBACK(GLOB, .proc/reset_beacon), COW_CANNON_RELOAD_DELAY)
+	addtimer(CALLBACK(src, .proc/reset_beacon), COW_CANNON_RELOAD_DELAY)
 
 /obj/item/brahmin_beacon/proc/drop_cow(mob/user)
 	var/obj/structure/closet/supplypod/bluespacepod/pod = new()
