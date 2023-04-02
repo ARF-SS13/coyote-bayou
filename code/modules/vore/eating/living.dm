@@ -18,7 +18,11 @@
 // Hook for generic creation of stuff on new creatures
 //
 /hook/living_new/proc/vore_setup(mob/living/M)
-	add_verb(M, list(/mob/living/proc/preyloop_refresh, /mob/living/proc/lick, /mob/living/proc/smell_someone, /mob/living/proc/escapeOOC))
+	add_verb(M, list(
+		/mob/living/proc/preyloop_refresh, 
+		// /mob/living/proc/lick, 
+		// /mob/living/proc/smell_someone, 
+		/mob/living/proc/escapeOOC))
 
 	if(M.vore_flags & NO_VORE) //If the mob isn't supposed to have a stomach, let's not give it an insidepanel so it can make one for itself, or a stomach.
 		return TRUE
@@ -166,8 +170,8 @@
 	stop_pulling()
 
 	// Flavor handling
-	if(belly.can_taste && prey.get_taste_message(FALSE))
-		to_chat(belly.owner, "<span class='notice'>[prey] tastes of [prey.get_taste_message(FALSE)].</span>")
+	if(belly.can_taste)
+		belly.owner.taste(null, prey)
 
 	// Inform Admins
 	var/prey_braindead
@@ -235,15 +239,15 @@
 		log_consent("[src] used OOC escape to escape from [B.owner]'s belly.")
 		src.stop_sound_channel(CHANNEL_PREYLOOP)
 		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "fedprey", /datum/mood_event/fedprey)
-		for(var/mob/living/simple_animal/SA in range(10))
-			SA.prey_excludes[src] = world.time
+		// for(var/mob/living/simple_animal/SA in range(10))
+		// 	SA.prey_excludes[src] = world.time
 
-		if(isanimal(B.owner))
+		/* if(isanimal(B.owner))
 			var/mob/living/simple_animal/SA = B.owner
-			SA.update_icons()
+			SA.update_icons() */
 
 	//You're in a dogborg!
-	else if(istype(loc, /obj/item/dogborg/sleeper))
+/* 	else if(istype(loc, /obj/item/dogborg/sleeper))
 		var/obj/item/dogborg/sleeper/belly = loc //The belly!
 
 		var/confirm = alert(src, "You're in a dogborg sleeper. This is for escaping from preference-breaking or if your predator disconnects/AFKs. You can also resist out naturally too.", "Confirmation", "Okay", "Cancel")
@@ -252,7 +256,7 @@
 		//Actual escaping
 		belly.go_out(src) //Just force-ejects from the borg as if they'd clicked the eject button.
 		message_admins("[src] used OOC escape from a dogborg sleeper.")
-		log_consent("[src] used OOC escape from a dogborg sleeper.")
+		log_consent("[src] used OOC escape from a dogborg sleeper.") */
 	else
 		to_chat(src,"<span class='alert'>You aren't inside anyone, though, is the thing.</span>")
 
@@ -262,8 +266,8 @@
 		return FALSE
 
 	client.prefs.vore_flags = vore_flags // there's garbage data in here, but it doesn't matter
-	client.prefs.vore_taste = vore_taste
-	client.prefs.vore_smell = vore_smell
+	//client.prefs.features["taste"] = dna.features["taste"]
+	//client.prefs.vore_smell = vore_smell
 
 	var/list/serialized = list()
 	for(var/belly in vore_organs)
@@ -285,8 +289,8 @@
 		return FALSE
 	vore_flags |= VOREPREF_INIT
 	COPY_SPECIFIC_BITFIELDS(vore_flags, client.prefs.vore_flags, DIGESTABLE | DEVOURABLE | FEEDING | LICKABLE | SMELLABLE | ABSORBABLE | MOBVORE)
-	vore_taste = client.prefs.vore_taste
-	vore_smell = client.prefs.vore_smell
+	//vore_taste = client.prefs.vore_taste
+	//vore_smell = client.prefs.vore_smell
 
 	release_vore_contents(silent = TRUE)
 	QDEL_LIST(vore_organs)
@@ -342,7 +346,7 @@
 //
 // Clearly super important. Obviously.
 //
-/mob/living/proc/lick()
+/* /mob/living/proc/lick()
 	set name = "Lick Someone"
 	set category = "Vore"
 	set desc = "Lick someone nearby!"
@@ -390,11 +394,11 @@
 		else
 			taste_message += "a plain old normal [src]"
 	return taste_message
-
+ */
 //
 // Equally important as the above
 //
-/mob/living/proc/smell_someone()
+/* /mob/living/proc/smell_someone()
 	set name = "Smell Someone"
 	set category = "Vore"
 	set desc = "Smell someone nearby!"
@@ -438,7 +442,7 @@
 			smell_message += "a normal [H.custom_species ? H.custom_species : H.dna.species]"
 		else
 			smell_message += "a plain old normal [src]"
-	return smell_message
+	return smell_message */
 
 //	Check if an object is capable of eating things, based on vore_organs
 //

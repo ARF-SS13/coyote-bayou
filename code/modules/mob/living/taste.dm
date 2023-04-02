@@ -37,7 +37,7 @@
 //Basically checks the pH of the holder and burns your poor tongue if it's too acidic!
 //TRAIT_AGEUSIA players can't taste, unless it's burning them.
 //taking sips of a strongly acidic/alkaline substance will burn your tongue.
-/mob/living/carbon/taste(datum/reagents/from)
+/mob/living/carbon/taste(datum/reagents/from, atom/licked)
 	var/obj/item/organ/tongue/T = getorganslot("tongue")
 	if (!T)
 		return

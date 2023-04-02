@@ -41,6 +41,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
 										//autocorrected this round, not that you'd need to check that.
 
+	// VORE~
+	var/vore_flags = 0
+	var/list/belly_prefs = list()
+	//var/vore_taste = "nothing in particular"
+	//var/vore_smell = null
+	var/toggleeatingnoise = TRUE
+	var/toggledigestionnoise = TRUE
+	//var/hound_sleeper = TRUE
+
 	var/UI_style = null
 	var/buttons_locked = FALSE
 	var/hotkeys = FALSE
