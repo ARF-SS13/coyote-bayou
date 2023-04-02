@@ -1718,10 +1718,12 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "uj" = (
-/obj/structure/disposalconstruct,
-/obj/structure/lattice,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/abandoned)
 "uq" = (
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -2523,10 +2525,8 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Cz" = (
-/obj/structure/disposalconstruct{
-	dir = 1
-	},
 /obj/structure/lattice,
+/obj/structure/disposalpipe/segment,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "CD" = (
@@ -2761,10 +2761,10 @@
 /turf/open/indestructible,
 /area/f13/tcoms)
 "FG" = (
-/obj/structure/disposalconstruct{
+/obj/effect/decal/fakelattice,
+/obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/effect/decal/fakelattice,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "FI" = (
@@ -2945,10 +2945,10 @@
 	icon_state = "trimline_fill";
 	dir = 8
 	},
-/obj/structure/disposalconstruct{
-	dir = 8
-	},
 /obj/effect/decal/fakelattice,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Hu" = (
@@ -3690,10 +3690,10 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Oo" = (
-/obj/structure/disposalconstruct{
+/obj/structure/lattice,
+/obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/structure/lattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Op" = (
@@ -3812,10 +3812,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/hospital)
 "PM" = (
-/obj/structure/disposalconstruct{
-	dir = 8
-	},
 /obj/structure/lattice,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "PW" = (
@@ -4451,13 +4451,6 @@
 	color = "#AA5555"
 	},
 /area/f13/building)
-"Xe" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/structure/disposalconstruct,
-/turf/closed/wall/f13/wood/house,
-/area/f13/building/abandoned)
 "Xg" = (
 /obj/machinery/rnd/destructive_analyzer,
 /obj/structure/curtain{
@@ -4484,8 +4477,8 @@
 	icon_state = "trimline_fill";
 	dir = 1
 	},
-/obj/structure/disposalconstruct,
 /obj/effect/decal/fakelattice,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Xv" = (
@@ -14118,19 +14111,19 @@ zz
 bZ
 sP
 at
-Xe
 uj
-uj
-uj
-uj
-uj
-uj
-uj
-uj
-uj
-uj
-uj
-uj
+Cz
+Cz
+Cz
+Cz
+Cz
+Cz
+Cz
+Cz
+Cz
+Cz
+Cz
+Cz
 Xp
 FG
 mY
