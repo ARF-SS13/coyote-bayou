@@ -336,6 +336,8 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
 
 /datum/quirk/social_anxiety/remove()
+	if(!quirk_holder)
+		return // guy don't exist no more, therefore stop it.
 	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
 /datum/quirk/social_anxiety/on_process()
