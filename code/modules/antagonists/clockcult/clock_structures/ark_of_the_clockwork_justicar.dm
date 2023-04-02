@@ -51,7 +51,7 @@
 		else
 			to_chat(user, span_brass("You decide against activating the ark.. for now."))
 
-/obj/structure/destructible/clockwork/massive/celestial_gateway/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
+/obj/structure/destructible/clockwork/massive/celestial_gateway/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	. = ..()
 	if(.)
 		flick("clockwork_gateway_damaged", glow)

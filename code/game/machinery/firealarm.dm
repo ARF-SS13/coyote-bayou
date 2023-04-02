@@ -272,7 +272,7 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/firealarm/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
+/obj/machinery/firealarm/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	. = ..()
 	if(.) //damage received
 		if(obj_integrity > 0 && !(stat & BROKEN) && buildstage != 0)
