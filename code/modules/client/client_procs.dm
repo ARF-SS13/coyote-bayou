@@ -491,6 +491,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	view_size.setZoomMode()
 	fit_viewport()
 	Master.UpdateTickRate()
+	begoneVileGonads()
 
 
 /proc/alert_async(mob/target, message)
@@ -1105,3 +1106,41 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		var/datum/verbs/menu/menuitem = GLOB.menulist[thing]
 		if (menuitem)
 			menuitem.Load_checked(src)
+
+/client/proc/checkGonadDistaste(flag)
+	if(!flag || !prefs)
+		return
+	return CHECK_BITFIELD(prefs.features["genital_hide"], flag)
+
+/client/proc/toggleGenitalException(the_key)
+	if(the_key in genital_exceptions)
+		genital_exceptions -= the_key
+		return
+	genital_exceptions |= the_key
+
+/client/proc/begoneVileGonads()
+	if(!prefs)
+		return
+	if(prefs.features["genital_hide"] == NONE) // we dont mind I guess
+		return
+	/// now go through every fucking human and unsee what can apparently be unseen
+	for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
+		if(nadhaver.ckey && (nadhaver.ckey in genital_exceptions))
+			continue
+		for(var/dingus in nadhaver.genital_images)
+			if(checkGonadDistaste(text2num(dingus)))
+				images -= nadhaver.genital_images[dingus]
+
+/mob/verb/genital_exception(mob/living/carbon/human/nicebutt as mob in view())
+	set name = "See/Hide Genitals"
+	set category = "IC"
+
+	if(!client)
+		return FALSE
+	if(ishuman(nicebutt))
+		return FALSE
+	if(!nicebutt.ckey)
+		return
+	client.toggleGenitalException(nicebutt.ckey)
+	to_chat(src, span_notice("Toggled seeing genitals on [nicebutt]."))
+	return TRUE

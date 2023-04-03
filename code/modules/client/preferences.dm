@@ -176,6 +176,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
+		"genital_hide" = NONE,
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = "",
@@ -909,6 +910,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<td colspan='2' class='genital_name'>Shift</td>"
 					dat += "<td colspan='2' class='genital_name'>Hidden by...</td>"
 					dat += "<td class='genital_name'>Override</td>"
+					dat += "<td class='genital_name'>See on others?</td>"
 					dat += "</tr>"
 
 					for(var/nad in all_genitals)
@@ -1565,35 +1567,43 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/magic_word
 	var/flag_string
 	var/override_string
+	var/hide_nad_flag
 	switch(has_name)
 		if(CS_BUTT)
 			magic_word = "Butt"
 			flag_string = "butt_visibility_flags"
 			override_string = "butt_visibility_override"
+			hide_nad_flag = HIDE_BUTT
 		if(CS_VAG)
 			magic_word = "Vagina"
 			flag_string = "vag_visibility_flags"
 			override_string = "vag_visibility_override"
+			hide_nad_flag = HIDE_VAG
 		if(CS_BALLS)
 			magic_word = "Testicles"
 			flag_string = "balls_visibility_flags"
 			override_string = "balls_visibility_override"
+			hide_nad_flag = HIDE_BALLS
 		if(CS_PENIS)
 			magic_word = "Penis"
 			flag_string = "cock_visibility_flags"
 			override_string = "cock_visibility_override"
+			hide_nad_flag = HIDE_PENIS
 		if(CS_BELLY)
 			magic_word = "Belly"
 			flag_string = "belly_visibility_flags"
 			override_string = "belly_visibility_override"
+			hide_nad_flag = HIDE_BELLY
 		if(CS_BOOB)
 			magic_word = "Breasts"
 			flag_string = "breasts_visibility_flags"
 			override_string = "breasts_visibility_override"
+			hide_nad_flag = HIDE_BOOBS
 		if(CS_MISC) // idk some kind of broken genital
 			magic_word = "Chunk"
 			flag_string = "breasts_visibility_flags" // idk
 			override_string = "breasts_visibility_override"
+			hide_nad_flag = HIDE_MISC
 	var/list/doot = list()
 	doot += "<tr class='talign'>"
 	// the nad's name and index
@@ -1666,6 +1676,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				curr_vis=[peen_vis_override];
 				task=input'>
 					[peen_vis_override]
+		</a>
+		</td>"}
+	/// and the hideflag
+	var/i_dont_like_bellies = CHECK_BITFIELD(features["genital_hide"], hide_nad_flag)
+	doot += {"<td class='[i_dont_like_bellies ? "coverage_off" : "coverage_on"]'>
+		<a 
+			class='clicky_no_border' 
+			href='
+				?_src_=prefs;
+				preference=genital_hide;
+				hideflag=[hide_nad_flag];
+				task=input'>
+					[i_dont_like_bellies ? "N" : "Y"]
 		</a>
 		</td>"}
 	doot += "</tr>"
@@ -2073,6 +2096,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				DISABLE_BITFIELD(features[nadlet], GENITAL_ABOVE_UNDERWEAR | GENITAL_ABOVE_CLOTHING)
 				ENABLE_BITFIELD(features[nadlet], new_bit)
 			features["genital_visibility_flags"] = new_bit
+
+	if(href_list["preference"] == "genital_hide")
+		var/hideit = text2num(href_list["hideflag"])
+		TOGGLE_BITFIELD(features["genital_hide"], hideit)
 
 	if(href_list["preference"] == "job")
 		switch(href_list["task"])

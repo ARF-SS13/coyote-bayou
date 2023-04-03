@@ -7,6 +7,8 @@
 	var/sensitivity = 1 // wow if this were ever used that'd be cool but it's not but i'm keeping it for my unshit code
 	var/genital_flags //see citadel_defines.dm
 	var/genital_visflags
+	/// What flag is this associated with?
+	var/hide_flag = HIDE_MISC
 	var/masturbation_verb = "masturbate"
 	var/orgasm_verb = "cumming" //present continous
 	var/arousal_verb = "You feel aroused"
@@ -187,6 +189,14 @@
 				href='
 					?src=[REF(src)];
 					action=open_sockdrawer'>
+						Modify?
+			</a>"}
+	dat += "<div class='gen_setting_name'>See/Unsee Genitals:</div>"
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=open_genital_hide'>
 						Modify?
 			</a>"}
 	dat += "</div>"
@@ -529,12 +539,19 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		"FRONT"
 	)
 ))
+
+/mob/living/carbon/human
+	/// a big cool list of images, arranged by what gonad they describe
+	/// format list("nad" = list(image, image, image))
+	var/list/genital_images = list()
+
 /// clears all genital overlays, and reapplies them
 /mob/living/carbon/human/proc/update_genitals()
 	if(QDELETED(src))
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)
+	genital_images.Cut() // cut off the nads
 	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 
@@ -593,12 +610,28 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()
 
+			if(!genital_images["[nad.hide_flag]"])
+				genital_images["[nad.hide_flag]"] = list()
+
 			// cus byond doesnt like arbitrary indexes or something, idk im dum
 			genital_sprites["[layer_to_put_it]"] |= genital_overlay
+			genital_images["[nad.hide_flag]"] |= genital_overlay // a string, so its easier to find, lol
 
 	for(var/index in genital_sprites)
 		overlays_standing[text2num(index)] = genital_sprites[index]
 		apply_overlay(text2num(index))
+	
+	preventPrefBreak()
+
+/mob/living/carbon/human/proc/preventPrefBreak()
+	if(!LAZYLEN(genital_images))
+		return // nothing there? *shruggo*
+	for(var/client/clint in GLOB.clients)
+		//if(clint.mob == src) // We can *reasonably* assume we want to see our own junk
+		//	continue
+		for(var/genisection in genital_images)
+			if(clint.checkGonadDistaste(text2num(genisection)))
+				clint.images -= genital_images[genisection]
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.
 /mob/living/carbon/human/proc/emergent_genital_call()

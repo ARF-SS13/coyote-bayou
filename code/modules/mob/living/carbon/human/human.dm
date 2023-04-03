@@ -550,6 +550,11 @@
 	switch(href_list["action"])
 		if("open_sockdrawer")
 			show_underwear_panel()
+		if("open_genital_hide")
+			show_genital_hide_panel()
+		if("toggle_hide_genitals")
+			if(client?.prefs)
+				TOGGLE_BITFIELD(client.prefs.features["genital_hide"], text2num(href_list["genital_flag"]))
 		if("shirt")
 			var/new_shirt = input(usr, "Select a new shirt!", "Changing") as null|anything in GLOB.undershirt_list
 			if(new_shirt)
@@ -686,6 +691,86 @@
 	dat += "</td>"
 	dat += "</tr>"
 	dat += "</table>"
+
+	winshow(src, "erp_window", TRUE)
+	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Put on your spare pair</div>", 400, 500)
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	onclose(src, "erp_window", src)
+
+/mob/living/carbon/human/proc/show_genital_hide_panel()
+	var/list/dat = list()
+	dat += {"<a 
+				class='clicky'
+				href='
+					?src=[REF(src)];
+					action=genital_return'>
+						Go back
+			</a>"}
+	dat += "<table class='table_genital_list'>"
+
+	dat += "<tr class='talign'><td class='talign'>"
+	dat += "<div class='gen_container'>"
+	dat += "<div class='gen_setting_name'>See Bellies:</div>" // everyone can has_cheezburger
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=toggle_hide_genitals;
+					genital_flag=[HIDE_BELLY]'>
+						[client.checkGonadDistaste(HIDE_BELLY) ? "No" : "Yes"]
+			</a>"}
+	dat += "<div class='gen_setting_name'>See Butts:</div>" // everyone can has_cheezburger
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=toggle_hide_genitals;
+					genital_flag=[HIDE_BUTT]'>
+						[client.checkGonadDistaste(HIDE_BUTT) ? "No" : "Yes"]
+			</a>"}
+	dat += "<div class='gen_setting_name'>See Breasts:</div>" // everyone can has_cheezburger
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=toggle_hide_genitals;
+					genital_flag=[HIDE_BOOBS]'>
+						[client.checkGonadDistaste(HIDE_BOOBS) ? "No" : "Yes"]
+			</a>"}
+	dat += "<div class='gen_setting_name'>See Vaginas:</div>" // everyone can has_cheezburger
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=toggle_hide_genitals;
+					genital_flag=[HIDE_VAG]'>
+						[client.checkGonadDistaste(HIDE_VAG) ? "No" : "Yes"]
+			</a>"}
+	dat += "<div class='gen_setting_name'>See Penises:</div>" // everyone can has_cheezburger
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=toggle_hide_genitals;
+					genital_flag=[HIDE_PENIS]'>
+						[client.checkGonadDistaste(HIDE_PENIS) ? "No" : "Yes"]
+			</a>"}
+	dat += "<div class='gen_setting_name'>See Balls:</div>" // everyone can has_cheezburger
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=toggle_hide_genitals;
+					genital_flag=[HIDE_BALLS]'>
+						[client.checkGonadDistaste(HIDE_BALLS) ? "No" : "Yes"]
+			</a>"}
+
+	dat += "</div>"
+	dat += "</td>"
+	dat += "</tr>"
+	dat += "</table>" // leaving this one out makes the save/undo line show up over the table, oddly enough!
+	dat += "<br>"
 
 	winshow(src, "erp_window", TRUE)
 	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Put on your spare pair</div>", 400, 500)

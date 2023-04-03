@@ -47,6 +47,7 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE
 	masturbation_verb = "massage"
 	associated_has = CS_BUTT // for cockstring stuff
+	hide_flag = HIDE_BUTT // for hideflag stuff
 
 /obj/item/organ/genital/butt/modify_size(modifier, min = BUTT_SIZE_MIN, max = BUTT_SIZE_MAX)
 	var/new_value = clamp(cached_size + modifier, min, max)
