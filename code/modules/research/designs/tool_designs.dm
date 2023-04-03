@@ -22,7 +22,7 @@
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
-/*/datum/design/rcd_loaded
+/* /datum/design/rcd_loaded
 	name = "Rapid Construction Device"
 	desc = "A tool that can construct and deconstruct walls, airlocks and floors on the fly."
 	id = "rcd_loaded"
@@ -30,7 +30,7 @@
 	materials = list(/datum/material/iron = 36000)  // costs more than what it did in the autolathe, this one comes loaded.
 	build_path = /obj/item/construction/rcd/loaded
 	category = list("Tool Designs")
-	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING*/
+	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING */
 
 /datum/design/shuttlecreator
 	name = "Rapid Shuttle Designator"
@@ -96,7 +96,7 @@
 //////////////Alien Tools////////////////
 /////////////////////////////////////////
 
-/*/datum/design/alienwrench
+/datum/design/alienwrench
 	name = "Experimental Wrench" //Start Fortuna edit: alien tech -> experimental
 	desc = "An experimental wrench obtained through advanced technology."
 	id = "alien_wrench"
@@ -154,13 +154,13 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 5000, /datum/material/silver = 2500, /datum/material/plasma = 5000, /datum/material/titanium = 2000, /datum/material/diamond = 2000)
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING*/
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /////////////////////////////////////////
 /////////Alien Surgical Tools////////////
 /////////////////////////////////////////
 
-/*/datum/design/alienscalpel
+/datum/design/alienscalpel
 	name = "Experimental Scalpel"
 	desc = "An experimental scalpel obtained through advanced technology."
 	id = "alien_scalpel"
@@ -218,7 +218,7 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 1500, /datum/material/plasma = 500, /datum/material/titanium = 1500)
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL*/
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 
 //////////////////////
@@ -235,7 +235,7 @@
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/*/datum/design/retractor_adv
+/datum/design/retractor_adv
 	name = "Advanced Retractor"
 	desc = "An almagation of rods and gears, able to function as both a surgical clamp and retractor. "
 	id = "retractor_adv"
@@ -263,4 +263,4 @@
 	materials = list(/datum/material/iron = 1500, /datum/material/glass = 1500, /datum/material/silver = 4000, /datum/material/gold = 2500)
 	build_path = /obj/item/scalpel/advanced
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE*/
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
