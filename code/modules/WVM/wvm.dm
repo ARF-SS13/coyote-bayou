@@ -663,38 +663,40 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
 	prize_list = list(
+		new /datum/data/wasteland_equipment("Seclite Flashlight",			/obj/item/flashlight/seclite,										25),
 		new /datum/data/wasteland_equipment("Survival Knife",				/obj/item/melee/onehanded/knife/survival, 							25),
 		new /datum/data/wasteland_equipment("Machete",						/obj/item/melee/onehanded/machete,									30),
 		new /datum/data/wasteland_equipment("Fire Axe",				 		/obj/item/twohanded/fireaxe, 										40),
-		new /datum/data/wasteland_equipment("Silenced Pistol (.22)",		/obj/item/gun/ballistic/automatic/pistol/pistol22, 					60),
-		new /datum/data/wasteland_equipment("Sport Carbine (.22)",			/obj/item/gun/ballistic/automatic/sportcarbine, 					120),
-		new /datum/data/wasteland_equipment("Browning Hi-Power (9mm)",		/obj/item/gun/ballistic/automatic/pistol/ninemil, 					60),
-		new /datum/data/wasteland_equipment("Colt N99 (10mm)",				/obj/item/gun/ballistic/automatic/pistol/n99,						60),
-		new /datum/data/wasteland_equipment("Colt M1911 (.45)",				/obj/item/gun/ballistic/automatic/pistol/m1911, 					60),
-		new /datum/data/wasteland_equipment("Revolver (.357)",				/obj/item/gun/ballistic/revolver/colt357, 							60),
-		new /datum/data/wasteland_equipment("Varmint Rifle (5.56)",			/obj/item/gun/ballistic/automatic/varmint, 							60),
-		new /datum/data/wasteland_equipment("Hunting Rifle (.308)",			/obj/item/gun/ballistic/rifle/hunting, 								60),
-		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",	/obj/item/gun/ballistic/shotgun/hunting, 							60),
-		new /datum/data/wasteland_equipment("Shortbow (Arrow)",				/obj/item/gun/ballistic/bow/shortbow,								60),
+		new /datum/data/wasteland_equipment("Silenced Pistol (.22)",		/obj/item/gun/ballistic/automatic/pistol/pistol22, 					30),
+		new /datum/data/wasteland_equipment("Sport Carbine (.22)",			/obj/item/gun/ballistic/automatic/sportcarbine, 					100),
+		new /datum/data/wasteland_equipment("Browning Hi-Power (9mm)",		/obj/item/gun/ballistic/automatic/pistol/ninemil, 					30),
+		new /datum/data/wasteland_equipment("Colt N99 (10mm)",				/obj/item/gun/ballistic/automatic/pistol/n99,						30),
+		new /datum/data/wasteland_equipment("Colt M1911 (.45)",				/obj/item/gun/ballistic/automatic/pistol/m1911, 					30),
+		new /datum/data/wasteland_equipment("Revolver (.357)",				/obj/item/gun/ballistic/revolver/colt357, 							30),
+		new /datum/data/wasteland_equipment("Varmint Rifle (5.56)",			/obj/item/gun/ballistic/automatic/varmint, 							30),
+		new /datum/data/wasteland_equipment("Hunting Rifle (.308)",			/obj/item/gun/ballistic/rifle/hunting, 								30),
+		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",	/obj/item/gun/ballistic/shotgun/hunting, 							30),
+		new /datum/data/wasteland_equipment("Shortbow (Arrow)",				/obj/item/gun/ballistic/bow/shortbow,								30),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/crafting_recipe/gunsmith_two,				50),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/crafting_recipe/gunsmith_three, 				75),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 4",		/obj/item/book/granter/crafting_recipe/gunsmith_four, 				100),
 		)
 	highpop_list = list(
+		new /datum/data/wasteland_equipment("Seclite Flashlight",			/obj/item/flashlight/seclite,										25),
 		new /datum/data/wasteland_equipment("Survival Knife",				/obj/item/melee/onehanded/knife/survival, 							25),
 		new /datum/data/wasteland_equipment("Machete",						/obj/item/melee/onehanded/machete,									30),
 		new /datum/data/wasteland_equipment("Fire Axe",				 		/obj/item/twohanded/fireaxe, 										40),
-		new /datum/data/wasteland_equipment("Silenced Pistol (.22)",		/obj/item/gun/ballistic/automatic/pistol/pistol22, 					60),
-		new /datum/data/wasteland_equipment("Sport Carbine (.22)",			/obj/item/gun/ballistic/automatic/sportcarbine, 					120),
-		new /datum/data/wasteland_equipment("Browning Hi-Power (9mm)",		/obj/item/gun/ballistic/automatic/pistol/ninemil, 					60),
-		new /datum/data/wasteland_equipment("Colt N99 (10mm)",				/obj/item/gun/ballistic/automatic/pistol/n99,						60),
-		new /datum/data/wasteland_equipment("Colt M1911 (.45)",				/obj/item/gun/ballistic/automatic/pistol/m1911, 					60),
-		new /datum/data/wasteland_equipment("Revolver (.357)",				/obj/item/gun/ballistic/revolver/colt357, 							60),
-		new /datum/data/wasteland_equipment("Varmint Rifle (5.56)",			/obj/item/gun/ballistic/automatic/varmint, 							60),
-		new /datum/data/wasteland_equipment("Hunting Rifle (.308)",			/obj/item/gun/ballistic/rifle/hunting, 								60),
-		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",	/obj/item/gun/ballistic/shotgun/hunting, 							60),
-		new /datum/data/wasteland_equipment("Shortbow (Arrow)",				/obj/item/gun/ballistic/bow/shortbow,								60),
+		new /datum/data/wasteland_equipment("Silenced Pistol (.22)",		/obj/item/gun/ballistic/automatic/pistol/pistol22, 					30),
+		new /datum/data/wasteland_equipment("Sport Carbine (.22)",			/obj/item/gun/ballistic/automatic/sportcarbine, 					100),
+		new /datum/data/wasteland_equipment("Browning Hi-Power (9mm)",		/obj/item/gun/ballistic/automatic/pistol/ninemil, 					30),
+		new /datum/data/wasteland_equipment("Colt N99 (10mm)",				/obj/item/gun/ballistic/automatic/pistol/n99,						30),
+		new /datum/data/wasteland_equipment("Colt M1911 (.45)",				/obj/item/gun/ballistic/automatic/pistol/m1911, 					30),
+		new /datum/data/wasteland_equipment("Revolver (.357)",				/obj/item/gun/ballistic/revolver/colt357, 							30),
+		new /datum/data/wasteland_equipment("Varmint Rifle (5.56)",			/obj/item/gun/ballistic/automatic/varmint, 							30),
+		new /datum/data/wasteland_equipment("Hunting Rifle (.308)",			/obj/item/gun/ballistic/rifle/hunting, 								30),
+		new /datum/data/wasteland_equipment("Hunting Shotgun (12 gauge)",	/obj/item/gun/ballistic/shotgun/hunting, 							30),
+		new /datum/data/wasteland_equipment("Shortbow (Arrow)",				/obj/item/gun/ballistic/bow/shortbow,								30),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/crafting_recipe/gunsmith_two,				50),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/crafting_recipe/gunsmith_three, 				75),
@@ -908,25 +910,37 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/mining
-	name = "Wasteland Vending Machine - Mining"
+	name = "Wasteland Vending Machine - Mining and Salvage"
 	icon_state = "generic_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Pickaxe",					/obj/item/pickaxe,											10),
-		new /datum/data/wasteland_equipment("Mining drill",				/obj/item/pickaxe/drill,									50),
-		new /datum/data/wasteland_equipment("Manual mining scanner",	/obj/item/mining_scanner,									15),
-		new /datum/data/wasteland_equipment("Automatic mining scanner",	/obj/item/t_scanner/adv_mining_scanner/lesser,				100),
-		new /datum/data/wasteland_equipment("Advanced mining scanner",	/obj/item/t_scanner/adv_mining_scanner,						200),
-		/// new /datum/data/wasteland_equipment("Proto-kinetic crusher",	/obj/item/kinetic_crusher,				500), (You can make these)
-		new /datum/data/wasteland_equipment("ORM Board",				/obj/item/circuitboard/machine/ore_redemption,				50)
+		new /datum/data/wasteland_equipment("Lantern",							/obj/item/flashlight/lantern,								25),
+		new /datum/data/wasteland_equipment("Pickaxe",							/obj/item/pickaxe,											10),
+		new /datum/data/wasteland_equipment("Mining drill",						/obj/item/pickaxe/drill,									50),
+		new /datum/data/wasteland_equipment("Manual mining scanner",			/obj/item/mining_scanner,									15),
+		new /datum/data/wasteland_equipment("Automatic mining scanner",			/obj/item/t_scanner/adv_mining_scanner/lesser,				100),
+		new /datum/data/wasteland_equipment("Advanced mining scanner",			/obj/item/t_scanner/adv_mining_scanner,						200),
+		new /datum/data/wasteland_equipment("Welding goggles",					/obj/item/clothing/glasses/welding,							20),
+		new /datum/data/wasteland_equipment("Industrial welding tool",			/obj/item/weldingtool/largetank,							30),
+		new /datum/data/wasteland_equipment("Upgraded industrial welding tool",	/obj/item/weldingtool/hugetank,								50),
+		new /datum/data/wasteland_equipment("Experimental welding tool",		/obj/item/weldingtool/experimental,							200),
+		new /datum/data/wasteland_equipment("Hand drill",						/obj/item/screwdriver/power,								200),
+		new /datum/data/wasteland_equipment("Jaws of life",						/obj/item/crowbar/power,									200),
+		new /datum/data/wasteland_equipment("ORM Board",						/obj/item/circuitboard/machine/ore_redemption,				50)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Pickaxe",					/obj/item/pickaxe,											10),
-		new /datum/data/wasteland_equipment("Mining drill",				/obj/item/pickaxe/drill,									50),
-		new /datum/data/wasteland_equipment("Manual mining scanner",	/obj/item/mining_scanner,									15),
-		new /datum/data/wasteland_equipment("Automatic mining scanner",	/obj/item/t_scanner/adv_mining_scanner/lesser,				100),
-		new /datum/data/wasteland_equipment("Advanced mining scanner",	/obj/item/t_scanner/adv_mining_scanner,						200),
-		/// new /datum/data/wasteland_equipment("Proto-kinetic crusher",	/obj/item/kinetic_crusher,				500), (You can make these)
-		new /datum/data/wasteland_equipment("ORM Board",				/obj/item/circuitboard/machine/ore_redemption,				50)
+		new /datum/data/wasteland_equipment("Lantern",							/obj/item/flashlight/lantern,								25),
+		new /datum/data/wasteland_equipment("Pickaxe",							/obj/item/pickaxe,											10),
+		new /datum/data/wasteland_equipment("Mining drill",						/obj/item/pickaxe/drill,									50),
+		new /datum/data/wasteland_equipment("Manual mining scanner",			/obj/item/mining_scanner,									15),
+		new /datum/data/wasteland_equipment("Automatic mining scanner",			/obj/item/t_scanner/adv_mining_scanner/lesser,				100),
+		new /datum/data/wasteland_equipment("Advanced mining scanner",			/obj/item/t_scanner/adv_mining_scanner,						200),
+		new /datum/data/wasteland_equipment("Welding goggles",					/obj/item/clothing/glasses/welding,							20),
+		new /datum/data/wasteland_equipment("Industrial welding tool",			/obj/item/weldingtool/largetank,							30),
+		new /datum/data/wasteland_equipment("Upgraded industrial welding tool",	/obj/item/weldingtool/hugetank,								50),
+		new /datum/data/wasteland_equipment("Experimental welding tool",		/obj/item/weldingtool/experimental,							200),
+		new /datum/data/wasteland_equipment("Hand drill",						/obj/item/screwdriver/power,								200),
+		new /datum/data/wasteland_equipment("Jaws of life",						/obj/item/crowbar/power,									200),
+		new /datum/data/wasteland_equipment("ORM Board",						/obj/item/circuitboard/machine/ore_redemption,				50)
 		)
 
 /datum/data/wasteland_equipment

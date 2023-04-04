@@ -213,21 +213,19 @@
 	//new /obj/item/gun/ballistic/bow/silver(src)
 	new /obj/item/gun/ballistic/bow/recurvebow(src)
 	new /obj/item/clothing/head/helmet/f13/metalmask(src)
-	new /obj/item/clothing/suit/armor/light/leather(src)
+	new /obj/item/clothing/suit/armor/light/leather/leathermk2(src)
 	new /obj/item/clothing/accessory/talisman(src)
-	new /obj/item/stack/sheet/sinew(src)
-	new /obj/item/stack/sheet/sinew(src)
+	new /obj/item/storage/bag/tribe_quiver(src)
 
 /datum/gear/donator/kits/bladeburstninja2
-	name = "William Buckley's Kit"
+	name = "Space Monkey Kit"
 	path = /obj/item/storage/box/large/custom_kit/bladeburstninja2
 	ckeywhitelist = list("bladeburstninja")
 
 /obj/item/storage/box/large/custom_kit/bladeburstninja2/PopulateContents()
-	new /obj/item/storage/belt/sabre/heavy(src)
-	new /obj/item/melee/unarmed/maceglove(src)
-	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
-	new /obj/item/stack/sheet/cardboard/fifty(src)
+	new /obj/item/melee/unarmed/sappers(src)
+	new /obj/item/clothing/head/helmet/space/eva(src)
+	new /obj/item/clothing/under/rank/civilian/curator/nasa(src)
 
 /datum/gear/donator/kits/bladeburstninja3
 	name = "Bone Zone Kit"

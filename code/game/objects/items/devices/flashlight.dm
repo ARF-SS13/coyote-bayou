@@ -213,12 +213,12 @@
 
 /obj/item/flashlight/seclite
 	name = "seclite"
-	desc = "A robust flashlight used by security."
+	desc = "A Seclite brand flashlight. Despite being made to be worn in a belt or attached to certain rifles, it looks robust enough to crack some skulls."
 	icon_state = "seclite"
 	item_state = "seclite"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	force = 9 // Not as good as a stun baton.
+	force = 25 // Barely more than a bootknife. Makes for a quicker club if you don't stick it to something.
 	light_range = 5 // A little better than the standard flashlight.
 	light_color = "#CDDDFF"
 	slot_flags = ITEM_SLOT_BELT // Big and heavy!
@@ -390,7 +390,8 @@
 	item_state = "lantern"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
-	desc = "A mining lantern."
+	force = 15 // Just some kind of damage because lanterns are heavy. Gonna be in your belt or pocket anyway, now it's not totally useless if you accidentally grab it to smash a roach.
+	desc = "While not the brightest, lanterns like these light up a large area. Good for exploration, or just making do when the lights go out. Might make do as a bludgeon if you were really desperate."
 	light_system = MOVABLE_LIGHT
 	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	light_range = 6	// luminosity when on

@@ -248,7 +248,7 @@
 	
 	if(M.client)
 		if(M.ckey in ckeyList)	return // Already answered and logged. No need for more input.
-		
+		if(isobserver(M))	return // Ghosts get no no's
 		var/playerInput
 		if(choices.len)
 			playerInput = input(M, question, title) as null|anything in choices

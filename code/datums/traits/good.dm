@@ -611,6 +611,8 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/lick_heal/on_spawn()
 	var/mob/living/carbon/human/human_holder = quirk_holder
+	if(!quirk_holder)
+		return //oh no
 	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
 	if(!our_tongue)
 		return //welp
@@ -618,6 +620,8 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/lick_heal/remove()
 	var/mob/living/carbon/human/human_holder = quirk_holder
+	if(!quirk_holder)
+		return //oh no
 	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
 	if(!our_tongue)
 		return //welp
