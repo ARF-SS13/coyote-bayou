@@ -110,66 +110,77 @@
 
 /datum/export/material/leather
 	cost = 15
+	message = " "
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/leather)
 
 /datum/export/material/bone
 	cost = 10
+	message = " "
 	unit_name = "bone"
 	material_id = /datum/material/bone
 	export_types = list(/obj/item/stack/sheet/bone)
 
 /datum/export/material/sinew
 	cost = 10
+	message = " "
 	unit_name = "pieces of sinew"
 	material_id = /datum/material/sinew
 	export_types = list(/obj/item/stack/sheet/sinew)
 
 /datum/export/material/chitin
 	cost = 100
+	message = " "
 	unit_name = "pieces of chitin"
 	material_id = /datum/material/chitin
 	export_types = list(/obj/item/stack/sheet/animalhide/chitin)
 
 /datum/export/material/f13cash
 	cost = 10
+	message = " "
 	unit_name = "caps"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)
 
 /datum/export/material/deathclawhide
 	cost = 1000
+	message = " "
 	unit_name = "deathclaw hide"
 	material_id = /datum/material/deathclawhide
 	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
 
 /datum/export/material/geckohide
 	cost = 100 //will see if this works out...
+	message = " "
 	unit_name = "gecko hide"
 	material_id = /datum/material/geckohide
 	export_types = list(/obj/item/stack/sheet/animalhide/gecko)
 
 /datum/export/material/molerathide
 	cost = 100
+	message = " "
 	unit_name = "molerat hide"
 	material_id = /datum/material/molerathide
 	export_types = list(/obj/item/stack/sheet/animalhide/molerat)
 
 /datum/export/material/wolfhide
 	cost = 200
+	message = " "
 	unit_name = "dog hide"
 	material_id = /datum/material/wolfhide
 	export_types = list(/obj/item/stack/sheet/animalhide/wolf)
 
 /datum/export/material/radstaghide
 	cost = 250
+	message = " "
 	unit_name = "radstag hide"
 	material_id = /datum/material/radstaghide
 	export_types = list(/obj/item/stack/sheet/animalhide/radstag)
 
 /datum/export/material/brahminhide
 	cost = 150
+	message = " "
 	unit_name = "brahmin hide"
 	material_id = /datum/material/brahminhide
 	export_types = list(/obj/item/stack/sheet/animalhide/brahmin)
