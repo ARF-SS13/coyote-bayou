@@ -27,6 +27,8 @@
 //for antag huds. these are used at the /mob level
 #define ANTAG_HUD		"23"
 #define ONLINE_HUD		"24"
+/// Genital huds
+#define GENITAL_HUD		"25"
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
@@ -64,6 +66,7 @@
 #define ANTAG_HUD_HERETIC	26
 
 #define DATA_HUD_CLIENT			27 //data hud new
+#define GENITAL_PORNHUD			28
 
 // Notification action types
 #define NOTIFY_JUMP "jump"

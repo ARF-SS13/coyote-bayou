@@ -491,8 +491,6 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	view_size.setZoomMode()
 	fit_viewport()
 	Master.UpdateTickRate()
-	begoneVileGonads()
-
 
 /proc/alert_async(mob/target, message)
 	set waitfor = FALSE
@@ -1112,24 +1110,43 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		return
 	return CHECK_BITFIELD(prefs.features["genital_hide"], flag)
 
-/client/proc/toggleGenitalException(the_key)
-	if(the_key in genital_exceptions)
-		genital_exceptions -= the_key
+/client/proc/toggleGenitalException(mob/moob)
+	if(moob.ckey in genital_exceptions)
+		genital_exceptions -= moob.ckey
 		return
-	genital_exceptions |= the_key
+	associateWeakrefWithCkey(moob)
 
-/client/proc/begoneVileGonads()
+/client/proc/associateWeakrefWithCkey(mob/moob)
+	if(!moob)
+		return
+	if(!islist(genital_exceptions[moob.ckey]))
+		genital_exceptions[ckey(moob.ckey)] = list()
+	genital_exceptions[ckey(moob.ckey)] |= WEAKREF(moob)
+	saveCockWhitelist()
+	
+/client/proc/isGenitalWhitelisted(mob/moob)
+	if(!ismob(moob))
+		return FALSE
+	if(moob.ckey && (moob.ckey in genital_exceptions))
+		associateWeakrefWithCkey(moob) // also grab their mob as a backup
+		return TRUE
+	var/datum/weakref/weakmoob = WEAKREF(moob)
+	for(var/ck in genital_exceptions)
+		if(weakmoob in genital_exceptions[ck])
+			return TRUE
+	return FALSE
+
+/client/proc/loadCockWhitelist()
 	if(!prefs)
-		return
-	if(prefs.features["genital_hide"] == NONE) // we dont mind I guess
-		return
-	/// now go through every fucking human and unsee what can apparently be unseen
-	for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
-		if(nadhaver.ckey && (nadhaver.ckey in genital_exceptions))
-			continue
-		for(var/dingus in nadhaver.genital_images)
-			if(checkGonadDistaste(text2num(dingus)))
-				images -= nadhaver.genital_images[dingus]
+		return FALSE
+	var/list/cocklist = prefs.decode_cockwhitelist()
+	for(var/ky in cocklist)
+		genital_exceptions[ky] = list()
+
+/client/proc/saveCockWhitelist()
+	if(!prefs)
+		return FALSE
+	prefs.encode_cockwhitelist(genital_exceptions)
 
 /mob/verb/genital_exception(mob/living/carbon/human/nicebutt as mob in view())
 	set name = "See/Hide Genitals"
@@ -1138,9 +1155,11 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	if(!client)
 		return FALSE
 	if(ishuman(nicebutt))
+		to_chat(src, span_alert("[nicebutt] doesn't have anything to hide!"))
 		return FALSE
 	if(!nicebutt.ckey)
-		return
-	client.toggleGenitalException(nicebutt.ckey)
+		to_chat(src, span_alert("[nicebutt] doesn't have a ckey! Check back later if they're actually a player."))
+		return FALSE
+	client.toggleGenitalException(nicebutt)
 	to_chat(src, span_notice("Toggled seeing genitals on [nicebutt]."))
 	return TRUE

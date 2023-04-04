@@ -2,6 +2,10 @@
 //Be sure to update the min/max of these if you do change them.
 //Measurements are in imperial units. Inches, feet, yards, miles. Tsp, tbsp, cups, quarts, gallons, etc
 
+/// Defines for SSgenitals to store both a weakref of a mob, and a fuckhuge list of images
+#define GENITAL_MOBREF "mob_weakref"
+#define GENITAL_SPRITES "genital"
+
 //Filters
 #define CIT_FILTER_STAMINACRIT filter(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
 

@@ -20,6 +20,8 @@
 	if(loc)
 		loc.on_log(TRUE)
 
+	client.loadCockWhitelist()
+
 	//readd this mob's HUDs (antag, med, etc)
 	reload_huds()
 

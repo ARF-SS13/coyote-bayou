@@ -540,18 +540,12 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	)
 ))
 
-/mob/living/carbon/human
-	/// a big cool list of images, arranged by what gonad they describe
-	/// format list("nad" = list(image, image, image))
-	var/list/genital_images = list()
-
 /// clears all genital overlays, and reapplies them
 /mob/living/carbon/human/proc/update_genitals()
 	if(QDELETED(src))
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)
-	genital_images.Cut() // cut off the nads
 	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 
@@ -567,7 +561,10 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	if(!has_nads)
 		return
 
+	/// for the fuckin preview thing
 	var/list/genital_sprites = list() // format list("[layer_number]" = list(mutable_sprites))
+	/// for the actual PornHud
+	var/list/porn_hud_images = list() // format list("has_butt" = list("FRONT" = list(img, img, img))") // I FUCKIN LOVE HUGEASS LISTS
 	for(var/obj/item/organ/genital/nad in genitals_to_add)
 		// list of sprites for these genitals (usually one or two)
 		for(var/position in GLOB.genital_layers["positions"]) // "BEHIND", "MID", "FRONT"
@@ -610,28 +607,30 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()
 
-			if(!genital_images["[nad.hide_flag]"])
-				genital_images["[nad.hide_flag]"] = list()
+			if(!porn_hud_images["[nad.associated_has]"])
+				porn_hud_images["[nad.associated_has]"] = list()
+
+			if(!porn_hud_images["[nad.associated_has]"]["[position]"])
+				porn_hud_images["[nad.associated_has]"]["[position]"] = list()
 
 			// cus byond doesnt like arbitrary indexes or something, idk im dum
 			genital_sprites["[layer_to_put_it]"] |= genital_overlay
-			genital_images["[nad.hide_flag]"] |= genital_overlay // a string, so its easier to find, lol
+			porn_hud_images["[nad.associated_has]"]["[position]"] |= genital_overlay // a string, so its easier to find, lol
 
-	for(var/index in genital_sprites)
-		overlays_standing[text2num(index)] = genital_sprites[index]
-		apply_overlay(text2num(index))
+	if(istype(src, /mob/living/carbon/human/dummy)) // cus our user eyes dont have PornHUDs in the character prefs window
+		for(var/index in genital_sprites)
+			overlays_standing[text2num(index)] = genital_sprites[index]
+			apply_overlay(text2num(index))
 	
-	preventPrefBreak()
+	preventPrefBreak(porn_hud_images)
 
-/mob/living/carbon/human/proc/preventPrefBreak()
-	if(!LAZYLEN(genital_images))
+/mob/living/carbon/human/proc/preventPrefBreak(var/list/fresh_genitals)
+	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
+	pornHUD.remove_from_hud(src, TRUE)
+	if(!LAZYLEN(fresh_genitals))
 		return // nothing there? *shruggo*
-	for(var/client/clint in GLOB.clients)
-		//if(clint.mob == src) // We can *reasonably* assume we want to see our own junk
-		//	continue
-		for(var/genisection in genital_images)
-			if(clint.checkGonadDistaste(text2num(genisection)))
-				clint.images -= genital_images[genisection]
+	hud_list[GENITAL_HUD] = fresh_genitals
+	pornHUD.add_to_hud(src)
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.
 /mob/living/carbon/human/proc/emergent_genital_call()

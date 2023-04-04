@@ -177,6 +177,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
 		"genital_hide" = NONE,
+		"genital_whitelist" = "",
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = "",
@@ -1421,7 +1422,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
 /// reverses it cus its more intuitive that way (for everyone but me)
-/datum/preferences/proc/decode_cockstring()
+/datum/preferences/proc/decode_cockstring(reverse = TRUE)
 	var/list/list_out = list()
 	list_out = splittext(features["genital_order"], ":")
 	list_out = reverseList(list_out)
@@ -1441,6 +1442,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		message_admins("Hey the cockstring wasn't empty, either Dan fucked up or something fucked up.")
 	. = jointext(cockstring, ":")
 	features["genital_order"] = .
+
+/// takes in whatever's at features["genital_whitelist"] and spits out a list in order of what's present
+/datum/preferences/proc/decode_cockwhitelist(reverse = TRUE)
+	var/list/list_out = list()
+	list_out = splittext(features["genital_whitelist"], ":")
+	return list_out
+
+/// takes in a list of nads and outputs a cockstring, then saves it
+/datum/preferences/proc/encode_cockwhitelist(list/cockstring)
+	var/list/outlist = list()
+	for(var/ckey in cockstring)
+		outlist += ckey
+	. = jointext(outlist, ":")
+	features["genital_whitelist"] = .
+	save_preferences()
 
 /// Adds a link to a given genital
 /datum/preferences/proc/build_genital_setup()
