@@ -861,7 +861,8 @@
 	categories = list(
 					"Handloaded Ammo",
 					"Handmade Magazines",
-					"Materials"
+					"Materials",
+					"Simple Magazines"
 					)
 	allowed_materials = list(
 		/datum/material/iron,
