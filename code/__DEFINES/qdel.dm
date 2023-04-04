@@ -63,3 +63,17 @@
 			qdel_list_recursive(i)
 		qdel(i)
 	deeplist.Cut()
+
+/// LISTFUCKER8000
+/// Removes everything in deeplist from fromlist
+/// mostly for deeply nested lists that are applied to non-nested lists
+/// and then axes the nested list
+/// cool huh?
+/proc/remove_list_recursive(list/deeplist, list/fromlist)
+	if(!length(deeplist))
+		return
+	for(var/i in deeplist)
+		if(islist(i))
+			remove_list_recursive(i)
+		fromlist -= i
+	deeplist.Cut()

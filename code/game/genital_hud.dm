@@ -29,17 +29,18 @@
 /datum/atom_hud/data/human/genital/remove_from_single_hud(mob/M, atom/A, remove_list) //unsafe, no sanity apart from client
 	if(!M || !M.client || !A)
 		return
-	for(var/i in hud_icons)
+	/* for(var/i in hud_icons)
 		var/list/untyped_genitals = A.hud_list[i]
 		for(var/bit in untyped_genitals)
 			for(var/spot in list("FRONT", "MID", "BEHIND"))
 				var/list/nads = untyped_genitals[bit][spot]
 				if(LAZYLEN(nads))
-					M.client.images -= nads
+					M.client.images -= nads */
 
-	if(remove_list)
-		qdel_list_recursive(A.hud_list[GENITAL_HUD])
-		A.hud_list[GENITAL_HUD] = list()
+	//if(remove_list)
+	var/list/image_list = A.hud_list[GENITAL_HUD]
+	remove_list_recursive(image_list, M.client.images)
+	A.hud_list[GENITAL_HUD] = list()
 	return TRUE
 
 /datum/atom_hud/data/human/genital/proc/getApprovedGenitalList(mob/viewer, list/order)

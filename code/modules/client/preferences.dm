@@ -915,9 +915,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</tr>"
 
 					for(var/nad in all_genitals)
-						if(features[nad] == TRUE)
-							genitals_we_have += nad
-					if(LAZYLEN(genitals_we_have))
+						genitals_we_have += nad
+					if(LAZYLEN(all_genitals))
 						for(var/i in 1 to LAZYLEN(genitals_we_have))
 							dat += add_genital_layer_piece(genitals_we_have[i], i, LAZYLEN(genitals_we_have))
 					else
@@ -940,6 +939,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									preference=change_genital_clothing'
 									nadflag=[genital_shirtlayer]>
 										[genital_shirtlayer]
+							</a>
+							</td>"}
+					dat += {"<td class='coverage_on'>
+							<a 
+								class='clicky_no_border'
+								href='
+									?_src_=prefs;
+									preference=change_genital_whitelist'>
+										Whitelisted Names
 							</a>
 							</td>"}
 					dat += "</table>"
@@ -1580,6 +1588,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /// need: genital name, some kinda href shit
 /// returns a hunk of html designed to fit into a table
 /datum/preferences/proc/add_genital_layer_piece(has_name, index, max_index)
+	var/got_one = features[has_name]
 	var/magic_word
 	var/flag_string
 	var/override_string
@@ -1627,31 +1636,37 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(index <= 1) // first one doesnt get an up-arrow
 		doot += "<td class='genital_arrow_off'>&darr;</td>" // im gonna do a magic trick
 	else // make an up arrow
-		doot += {"<td class='genital_arrow_on'>
-				<a 
-					class='clicky_no_border'
-					href='
-						?_src_=prefs;
-						preference=change_genital_order;
-						direction=up;
-						which=[has_name]'>
-							&uarr;
-				</a>
-				</td>"}
+		if(has_one)
+			doot += {"<td class='genital_arrow_on'>
+					<a 
+						class='clicky_no_border'
+						href='
+							?_src_=prefs;
+							preference=change_genital_order;
+							direction=up;
+							which=[has_name]'>
+								&uarr;
+					</a>
+					</td>"}
+		else // ya know, I made this cool up-down-skip-inactives thing, Im gonna use it
+			doot += "<td class='genital_arrow_off'>&uarr;</td>" // im gonna do a magic trick
 	if(index >= max_index) // last one doesnt get a down-arrow
 		doot += "<td class='genital_arrow_off'>&darr;</td>" // imma make these disappear!
 	else // make a down arrow
-		doot += {"<td class='genital_arrow_on'>
-				<a 
-					class='clicky_no_border' 
-					href='
-						?_src_=prefs;
-						preference=change_genital_order;
-						direction=down;
-						which=[has_name]'>
-							&darr;
-				</a>
-				</td>"}
+		if(has_one)
+			doot += {"<td class='genital_arrow_on'>
+					<a 
+						class='clicky_no_border' 
+						href='
+							?_src_=prefs;
+							preference=change_genital_order;
+							direction=down;
+							which=[has_name]'>
+								&darr;
+					</a>
+					</td>"}
+		else
+			doot += "<td class='genital_arrow_off'>&darr;</td>" // sike, theyre here forever
 	// and throw in the coverage buttons
 	doot += {"<td class='[CHECK_BITFIELD(features[flag_string], GENITAL_RESPECT_CLOTHING)? "coverage_on" : "coverage_off"]'>
 		<a 

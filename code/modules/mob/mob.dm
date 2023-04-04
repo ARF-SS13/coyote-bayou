@@ -42,6 +42,8 @@
 	become_hearing_sensitive()
 	var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
 	H.add_hud_to(src)
+	var/datum/atom_hud/tail_hud = GLOB.huds[TAIL_HUD_DATUM]
+	tail_hud.add_hud_to(src)
 
 /mob/ComponentInitialize()
 	. = ..()
@@ -51,10 +53,14 @@
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
 
+/// Prepare, or re-prepare
 /atom/proc/prepare_huds()
-	hud_list = list()
+	if(!islist(hud_list))
+		hud_list = list()
 	for(var/hud in hud_possible)
 		var/hint = hud_possible[hud]
+		if(hud_list[hud])
+			continue
 		switch(hint)
 			if(HUD_LIST_LIST)
 				hud_list[hud] = list()

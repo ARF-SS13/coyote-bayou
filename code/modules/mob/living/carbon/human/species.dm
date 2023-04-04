@@ -897,7 +897,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
 				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
-			standing += accessory_overlay
+			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
+				H.tail_hud_update(accessory_overlay)
+				if(istype(src, /mob/living/carbon/human/dummy))
+					standing += accessory_overlay // prevents every accessory doing a typecheck, now only one has to! am performance whizzard~
+			else
+				standing += accessory_overlay
 
 			if(S.extra) //apply the extra overlay, if there is one
 				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layernum)

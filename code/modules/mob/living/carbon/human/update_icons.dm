@@ -71,7 +71,7 @@ There are several things that need to be remembered:
 	dna.species.handle_mutant_bodyparts(src)
 
 
-/mob/living/carbon/human/update_body(update_genitals = FALSE)
+/mob/living/carbon/human/update_body(update_genitals = TRUE)
 	remove_overlay(BODY_LAYER)
 	dna.species.handle_body(src)
 	..()

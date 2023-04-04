@@ -38,6 +38,7 @@
 
 	var/datum/atom_hud/data/human/genital/pornHud = GLOB.huds[GENITAL_PORNHUD]
 	pornHud.add_to_hud(src)
+	update_body(TRUE)
 
 /mob/living/carbon/human/ComponentInitialize()
 	. = ..()
@@ -56,6 +57,8 @@
 /mob/living/carbon/human/prepare_data_huds()
 	//Update med hud images...
 	..()
+	//...genitals...
+	update_genitals()
 	//...sec hud images...
 	sec_hud_set_ID()
 	sec_hud_set_implants()
@@ -558,7 +561,7 @@
 			if(client?.prefs)
 				TOGGLE_BITFIELD(client.prefs.features["genital_hide"], text2num(href_list["genital_flag"]))
 			show_genital_hide_panel()
-			update_genitals()
+			update_body(TRUE)
 		if("shirt")
 			var/new_shirt = input(usr, "Select a new shirt!", "Changing") as null|anything in GLOB.undershirt_list
 			if(new_shirt)

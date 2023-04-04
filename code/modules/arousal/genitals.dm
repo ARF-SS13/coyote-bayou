@@ -607,10 +607,10 @@ GLOBAL_LIST_INIT(genital_layers, list(
 				gross_image.color = nad.color
 			// set the sprite's layer
 			genital_overlay.layer = -layer_to_put_it
-			gross_image.layer = -layer_to_put_it
+			//gross_image.layer = -layer_to_put_it
 			genital_overlay.loc = src
 			gross_image.loc = src
-			gross_image.plane = (position == "BEHIND") ? plane-1 : plane
+			gross_image.layer = (position == "BEHIND") ? layer-1 : layer+1 // idfk
 			// and then add it to the genital_sprites layer list thing
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()
@@ -632,10 +632,12 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	
 	preventPrefBreak(porn_hud_images)
 
-/mob/living/carbon/human/proc/preventPrefBreak(var/list/fresh_genitals)
+/mob/living/carbon/human/proc/preventPrefBreak(var/list/fresh_genitals) // well well well, what fresh hell do we have here?
 	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
+	if(!islist(hud_list))
+		prepare_huds()
 	pornHUD.remove_from_hud(src, TRUE)
-	if(!LAZYLEN(fresh_genitals))
+	if(!LAZYLEN(fresh_genitals)) // the freshest!
 		return // nothing there? *shruggo*
 	hud_list[GENITAL_HUD] = fresh_genitals
 	pornHUD.add_to_hud(src)

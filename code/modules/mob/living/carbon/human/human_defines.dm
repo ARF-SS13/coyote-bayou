@@ -15,6 +15,7 @@
 		RAD_HUD,
 		ONLINE_HUD,
 		GENITAL_HUD = HUD_LIST_LIST, // and boy what a list it is
+		TAIL_HUD,
 		)
 	hud_type = /datum/hud/human
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
