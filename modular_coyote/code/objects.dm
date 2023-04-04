@@ -297,5 +297,74 @@
 	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
 	icon_state = "monkeybars"
 
+//Things from Mojave Sun, credit for the spirits go to them.
 
+//Rugs
 
+/obj/structure/rug/carpet
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet"
+
+/obj/structure/rug/carpet2
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet2"
+
+/obj/structure/rug/carpet3
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet3"
+
+/obj/structure/rug/carpet4
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet4"
+
+//bigger rugs
+
+/obj/structure/rug/big/rug_rubber
+	name = "rubber rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_rubber"
+
+/obj/structure/rug/big/rug_rubber
+	name = "rubber rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_rubber"
+
+/obj/structure/rug/big/rug_fancy
+	name = "fancy rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_fancy"
+
+/obj/structure/rug/big/rug_red
+	name = "red rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_red"
+
+/obj/structure/rug/big/rug_yellow
+	name = "yellow rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_yellow"
+
+/obj/structure/rug/big/rug_blue_shag
+	name = "blue shag rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_blue_shag"
+
+/obj/structure/rug/big/rug_blue
+	name = "blue rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_blue"
