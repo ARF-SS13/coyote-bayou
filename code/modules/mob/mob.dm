@@ -40,6 +40,8 @@
 	update_config_movespeed()
 	update_movespeed(TRUE)
 	become_hearing_sensitive()
+	var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
+	H.add_hud_to(src)
 
 /mob/ComponentInitialize()
 	. = ..()

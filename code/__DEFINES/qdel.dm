@@ -54,4 +54,12 @@
 #define QDEL_LIST_IN(L, time) addtimer(CALLBACK(GLOBAL_PROC, .proc/______qdel_list_wrapper, L), time, TIMER_STOPPABLE)
 #define QDEL_LIST_ASSOC(L) if(L) { for(var/I in L) { qdel(L[I]); qdel(I); } L.Cut(); }
 #define QDEL_LIST_ASSOC_VAL(L) if(L) { for(var/I in L) qdel(L[I]); L.Cut(); }
-
+/// LISTFUCKER9000
+/proc/qdel_list_recursive(list/deeplist)
+	if(!length(deeplist))
+		return
+	for(var/i in deeplist)
+		if(islist(i))
+			qdel_list_recursive(i)
+		qdel(i)
+	deeplist.Cut()

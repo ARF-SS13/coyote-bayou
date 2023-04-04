@@ -557,6 +557,8 @@
 		if("toggle_hide_genitals")
 			if(client?.prefs)
 				TOGGLE_BITFIELD(client.prefs.features["genital_hide"], text2num(href_list["genital_flag"]))
+			show_genital_hide_panel()
+			update_genitals()
 		if("shirt")
 			var/new_shirt = input(usr, "Select a new shirt!", "Changing") as null|anything in GLOB.undershirt_list
 			if(new_shirt)
@@ -758,7 +760,7 @@
 					genital_flag=[HIDE_PENIS]'>
 						[client.checkGonadDistaste(HIDE_PENIS) ? "No" : "Yes"]
 			</a>"}
-	dat += "<div class='gen_setting_name'>See Balls:</div>" // everyone can has_cheezburger
+	dat += "<div class='gen_setting_name'>See Balls:</div>" // GET UR FUCKIN BURGER
 	dat += {"<a 
 				class='clicky' 
 				href='

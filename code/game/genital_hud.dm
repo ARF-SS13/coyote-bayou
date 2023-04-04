@@ -21,23 +21,24 @@
 			for(var/genit in true_order)
 				var/list/untyped_genitals = A.hud_list[i]
 				for(var/spot in untyped_genitals[genit])
-					M.client.images |= untyped_genitals[genit][spot] // i can see my house from here!
+					var/list/what_is_it = untyped_genitals[genit][spot] // test var pls ignore
+					for(var/image/img in what_is_it)
+						M.client.images |= img // i can see my house from here!
 
 /// M is the viewer, A is the thing with the hud stuff on it, remove_list just removes the list and clears it from everyone
 /datum/atom_hud/data/human/genital/remove_from_single_hud(mob/M, atom/A, remove_list) //unsafe, no sanity apart from client
-	if((!M || !M.client) && !remove_list && !A)
+	if(!M || !M.client || !A)
 		return
 	for(var/i in hud_icons)
 		var/list/untyped_genitals = A.hud_list[i]
 		for(var/bit in untyped_genitals)
 			for(var/spot in list("FRONT", "MID", "BEHIND"))
-				if(remove_list)
-					var/list/nads = untyped_genitals[bit][spot]
-					if(LAZYLEN(nads))
-						QDEL_LIST(nads)
-				else
-					M.client.images -= untyped_genitals[bit][spot]
+				var/list/nads = untyped_genitals[bit][spot]
+				if(LAZYLEN(nads))
+					M.client.images -= nads
+
 	if(remove_list)
+		qdel_list_recursive(A.hud_list[GENITAL_HUD])
 		A.hud_list[GENITAL_HUD] = list()
 	return TRUE
 

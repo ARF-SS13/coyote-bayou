@@ -592,17 +592,25 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			/// this SHOULD(tm) make arms show up over butts from the front -- currently broken, love Lagg
 			var/icon/grundle_out = nad.mask_part(accessory_icon, genital_state, layer_to_put_it, position)
 			var/mutable_appearance/genital_overlay = mutable_appearance(grundle_out ? grundle_out : accessory_icon, genital_state, layer = -layer_to_put_it)
+			var/image/gross_image = image(grundle_out ? grundle_out : accessory_icon, src, genital_state, layer = -layer_to_put_it) // mutable appearances just... dont work for client images. rip performance
 
 			if(do_center)
 				genital_overlay = center_image(genital_overlay, dim_x, dim_y)
+				gross_image = center_image(genital_overlay, dim_x, dim_y)
 
 			// color color color
 			if(dna.species.use_skintones)
 				genital_overlay.color = SKINTONE2HEX(skin_tone)
+				gross_image.color = SKINTONE2HEX(skin_tone)
 			else
 				genital_overlay.color = nad.color
+				gross_image.color = nad.color
 			// set the sprite's layer
 			genital_overlay.layer = -layer_to_put_it
+			gross_image.layer = -layer_to_put_it
+			genital_overlay.loc = src
+			gross_image.loc = src
+			gross_image.plane = (position == "BEHIND") ? plane-1 : plane
 			// and then add it to the genital_sprites layer list thing
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()
@@ -615,7 +623,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 
 			// cus byond doesnt like arbitrary indexes or something, idk im dum
 			genital_sprites["[layer_to_put_it]"] |= genital_overlay
-			porn_hud_images["[nad.associated_has]"]["[position]"] |= genital_overlay // a string, so its easier to find, lol
+			porn_hud_images["[nad.associated_has]"]["[position]"] |= gross_image // i hate everything about this
 
 	if(istype(src, /mob/living/carbon/human/dummy)) // cus our user eyes dont have PornHUDs in the character prefs window
 		for(var/index in genital_sprites)
