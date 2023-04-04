@@ -869,6 +869,9 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/fnfal = 5,
 		/obj/item/gun/ballistic/automatic/bar = 1,
 		/obj/item/gun/ballistic/bow/compoundbow = 20,
+		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 20,
+		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 20,
+		/obj/item/sord = 3, // how about we put the meme in a spawner that doesn't appear maybe 20 times per round
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/unique
@@ -876,11 +879,11 @@ there should be very few of these spawns on the whole map. finding one should be
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/smg14 = 1,
 		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22 = 1,
-		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 20,
+		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 15,
 		/obj/item/gun/ballistic/automatic/m1garand/oldglory = 10,
 		/obj/item/gun/ballistic/automatic/m1garand/republicspride = 10,
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 10,
-		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 20,
+		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 15,
 		/obj/item/gun/ballistic/automatic/bozar = 10,
 		/obj/item/gun/ballistic/automatic/wt550 = 5,
 		/obj/item/gun/ballistic/automatic/r84 = 10,
@@ -888,17 +891,15 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/m72 = 5,
 		/obj/item/gun/ballistic/automatic/xl70e3 = 10,
 		/obj/item/minigunpackbal5mm = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 20,
-		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 20,
-		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 20,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 15,
 		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 10,
-		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 20,
-		/obj/item/gun/ballistic/revolver/colt357/lucky = 20,
-		/obj/item/gun/ballistic/rifle/hunting/paciencia = 20,
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 15,
+		/obj/item/gun/ballistic/revolver/colt357/lucky = 15,
+		/obj/item/gun/ballistic/rifle/hunting/paciencia = 15,
 		//obj/item/gun/energy/laser/captain = 5, //needs some work before this is added
 		/obj/item/gun/energy/laser/badlands = 10,
-		/obj/item/gun/energy/laser/scatter/nonlethal = 20,
-		/obj/item/gun/energy/laser/scatter/laserbuss = 10,//should this be unique? not sure what it do
+		/obj/item/gun/energy/laser/scatter/nonlethal = 15,
+		//obj/item/gun/energy/laser/scatter/laserbuss = 10,//If we don't know what it does then why is it in here
 		/obj/item/gun/energy/laser/aer14 = 10,
 		/obj/item/gun/energy/laser/laer = 5,
 		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,
@@ -911,12 +912,10 @@ there should be very few of these spawns on the whole map. finding one should be
 		//obj/item/gun/energy/emitter = 5, //fun lil gun. make it normal sized, do maybe 40 damage, and use an energy cell with 10 shots. we'll see where it goes
 		/obj/item/gun/energy/tesla/teslacannon = 10, //it'll be fiiiiine
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
-		/obj/item/melee/unarmed/deathclawgauntlet = 20,
-		/obj/item/melee/powerfist/f13/goliath = 20,
-		/obj/item/melee/powered/ripper/prewar = 20,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
+		/obj/item/melee/unarmed/deathclawgauntlet = 15,
+		/obj/item/melee/powerfist/f13/goliath = 15,
+		/obj/item/melee/powered/ripper/prewar = 15,
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
-		/obj/item/sord = 20, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 10,
 		/obj/item/gun/ballistic/fatman = 5,
