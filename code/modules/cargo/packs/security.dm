@@ -563,7 +563,7 @@
 )
 	crate_name = "Rare weapon crate"
 
-/* /datum/supply_pack/security/weapon_unique
+/datum/supply_pack/security/weapon_unique
 	name = "Weapons - Premium"
 	desc = "A single weapon of incredible rarity. there's no telling what was packed into this crate"
 	cost = 50000
@@ -571,7 +571,7 @@
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/unique
 )
-	crate_name = "Premium weapon crate" */
+	crate_name = "Premium weapon crate"
 
 /datum/supply_pack/security/weapon_milsurplus
 	name = "Weapons -  Military Surplus"
