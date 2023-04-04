@@ -571,6 +571,24 @@
 	beakers += B1
 	beakers += B2
 
+/obj/item/grenade/chem_grenade/party
+	name = "I.P.G."
+	desc = "Some form of makeshift explosive. With the words I.P.G. written on with a marker, and lots of doodled on hearts. You probabaly don't have to guess what this does."
+	stage = READY
+
+/obj/item/grenade/chem_grenade/party/Initialize()
+	. = ..()
+	var/obj/item/reagent_containers/glass/beaker/large/B1 = new(src)
+	var/obj/item/reagent_containers/glass/beaker/large/B2 = new(src)
+
+	B1.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 15)
+	B1.reagents.add_reagent(/datum/reagent/water, 30)
+	B2.reagents.add_reagent(/datum/reagent/drug/aphrodisiacplus, 5)
+	B2.reagents.add_reagent(/datum/reagent/fluorosurfactant, 30)
+
+	beakers += B1
+	beakers += B2
+
 #undef READY
 #undef WIRED
 #undef EMPTY
