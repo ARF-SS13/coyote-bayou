@@ -4,7 +4,7 @@
 	ammo_type = /obj/item/ammo_casing/magic
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book"
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_NORMAL
 	charges = 10 //We start with max pages
 	max_charges = 10
 	variable_charges = FALSE

@@ -4,7 +4,8 @@
 	icon = 'icons/obj/chronos.dmi'
 	icon_state = "chronogun"
 	item_state = "chronogun"
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 	var/mob/living/current_target
 	var/last_check = 0
@@ -13,8 +14,6 @@
 	var/active = 0
 	var/datum/beam/current_beam = null
 	var/mounted = 0 //Denotes if this is a handheld or mounted version
-
-	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/medbeam/Initialize()
 	. = ..()

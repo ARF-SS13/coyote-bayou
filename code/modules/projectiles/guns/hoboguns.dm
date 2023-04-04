@@ -3,7 +3,6 @@
 
 
 /obj/item/gun/ballistic/automatic/hobo
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -14,7 +13,6 @@
 	)
 
 /obj/item/gun/ballistic/revolver/hobo
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -25,10 +23,7 @@
 	)
 
 /obj/item/gun/ballistic/rifle/hobo
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	icon = 'icons/fallout/objects/guns/energy.dmi'
-	gun_tags = list(GUN_SCOPE)
-	can_scope = TRUE
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
 		GUN_MISFIRE_THROWS_GUN(0.5),
@@ -70,20 +65,10 @@
 		A brave, enterprising waster can stuff just about anything into the improvised clipazine, though anything more powerful \
 		than a handloaded 9mm round will run the risk of voiding the warranty on your fingers."
 	item_state = "gun"
-	slot_flags = ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/zipgun
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(2.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -119,20 +104,10 @@
 		casing in there. Be sure to unload it first!"
 	icon_state = "piperifle"
 	item_state = "pepperbox"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
-
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -195,20 +170,10 @@
 		get it to fire all four shots at once! Or explode!"
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(2.4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
@@ -244,21 +209,12 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgunbat"
 	item_state = "shotgunbat"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 
 	added_spread = 5 // its a melee weapon lol
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -294,21 +250,10 @@
 		Either way, someone's in for a bad time."
 	icon_state = "knifegun"
 	item_state = "knifegun"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
-
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -339,20 +284,11 @@
 		less than an inch from your fingers. Fires all four round at once, and if your hand still exists, delivers a solid punch too."
 	icon_state = "knucklegun"
 	item_state = "knucklegun"
-	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_GLOVES
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
-
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(1.6)
 	init_firemodes = list(
 		/datum/firemode/burst/four/fastest/hobo
@@ -388,22 +324,13 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "autopipe"
 	item_state = "autopipe"
-	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
-
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	automatic = 1
 	init_recoil = RIFLE_RECOIL(2.7)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm300,
+		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three/slow,
 		/datum/firemode/semi_auto
 	)
@@ -451,6 +378,9 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	cock_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -476,6 +406,9 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	cock_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -497,24 +430,13 @@
 	icon_state = "destroyer-carbine"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
-
-	automatic_burst_overlay = TRUE
 	can_scope = FALSE
 	scope_state = "scope_medium"
 	scope_x_offset = 6
 	scope_y_offset = 14
-	semi_auto = FALSE
 	init_recoil = CARBINE_RECOIL(2.3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -534,20 +456,10 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "308-sawn"
 	item_state = "308-sawn"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-
-	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -570,20 +482,10 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "winchesterbore"
 	item_state = "shotgundouble"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised308
-	w_class = WEIGHT_CLASS_BULKY
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed,
@@ -627,18 +529,9 @@
 	pin = null
 	no_pin_required = TRUE
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT | ITEM_SLOT_POCKET
-	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/sling
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -656,17 +549,8 @@
 	name = "sling staff"
 	desc = "A sling hooked onto a wooden pole, for more leverage."
 	icon_state = "slingstaff"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // 45 damage. hits harder, but bulkier, and needs two hands, so harder loading
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -678,18 +562,9 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "launcher"
 	item_state = "rocketlauncher"
-	slot_flags = ITEM_SLOT_BACK
-	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/brick
-
-	slowdown = GUN_SLOWDOWN_CARBINE
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	casing_ejector = TRUE
 	init_firemodes = list(

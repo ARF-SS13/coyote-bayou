@@ -26,20 +26,21 @@ ATTACHMENTS
 	icon_state = "detective"
 	item_state = "gun"
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = null
 	custom_materials = list(/datum/material/iron=2000)
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = null
 	var/icon_prefix = null
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
-	force = 5
+	force = null
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	attack_verb = list("struck", "hit", "bashed")
 	hud_actions = list()
+	var/weapon_class = null //assigns w_class, slot_flags, draw_time, slowdown, and force, based on a template
 	var/fire_sound = "gunshot"
 	/// Time it takes between drawing the gun and shooting the gun
-	var/draw_time = GUN_DRAW_NORMAL 
+	var/draw_time = null
 
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
@@ -47,7 +48,7 @@ ATTACHMENTS
 	var/sawn_desc = null				//description change if weapon is sawn-off
 	var/sawn_off = FALSE
 
-	slowdown = GUN_SLOWDOWN_NONE
+	slowdown = null
 
 	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
 	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
@@ -133,7 +134,7 @@ ATTACHMENTS
 	var/dryfire_text = "*click*"
 
 	/// Time that much pass between cocking your gun, if it supports it
-	var/cock_delay = GUN_COCK_SHOTGUN_BASE
+	var/cock_delay = GUN_COCK_SHOTGUN_BASE //haha cock
 
 	/// Gun's inherent inaccuracy, basically the minimum spread
 	var/added_spread = GUN_SPREAD_NONE
@@ -208,6 +209,19 @@ ATTACHMENTS
 	if(LAZYLEN(firemodes))
 		set_firemode(sel_mode)
 	generate_guntags()
+
+	//writes in standard values for the weapon's class, if left null
+	if(islist(weapon_class))
+		if(isnull(w_class))
+			w_class = weapon_class["w_class"]
+		if(isnull(slot_flags))
+			slot_flags = weapon_class["slot_flags"]
+		if(isnull(slowdown))
+			slowdown = weapon_class["slowdown"]
+		if(isnull(force))
+			force = weapon_class["force"]
+		if(isnull(draw_time))
+			draw_time = weapon_class["draw_time"]
 
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)

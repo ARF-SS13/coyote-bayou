@@ -2,6 +2,7 @@
 	name = "energy gun"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
 	icon_state = "energy"
+	weapon_class = WEAPON_CLASS_SMALL
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	modifystate = 1
@@ -15,7 +16,7 @@
 	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: stun and kill."
 	icon_state = "mini"
 	item_state = "gun"
-	w_class = WEIGHT_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_SMALL
 	cell_type = /obj/item/stock_parts/cell{charge = 600; maxcharge = 600}
 	ammo_x_offset = 2
 	charge_sections = 3
