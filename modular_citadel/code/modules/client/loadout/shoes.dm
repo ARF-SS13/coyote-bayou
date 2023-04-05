@@ -153,6 +153,10 @@
 	name = "jester shoes"
 	path = /obj/item/clothing/shoes/jester
 
+/datum/gear/shoes/brit
+	name = "commonwealth boots"
+	path = /obj/item/clothing/shoes/brit
+
 /// Factions Shoes or well NCR boots.
 
 

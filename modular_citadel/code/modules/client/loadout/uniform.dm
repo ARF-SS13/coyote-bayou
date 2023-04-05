@@ -1289,3 +1289,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/costume/lobster
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/burma
+	name = "Jungle uniform"
+	cost = 1
+	path = /obj/item/clothing/under/burma
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
