@@ -810,7 +810,7 @@
 	dat += "<br>"
 
 	winshow(src, "erp_window", TRUE)
-	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Unsee what can be unseen</div>", 400, 500)
+	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Unsee what can be unseen!</div>", 400, 500)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 	onclose(src, "erp_window", src)
