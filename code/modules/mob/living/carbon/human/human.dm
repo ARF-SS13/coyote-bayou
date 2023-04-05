@@ -576,6 +576,7 @@
 					client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
 			else if(!isnull(new_genital_whitelist))
 				client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
+			update_body(TRUE)
 			show_genital_hide_panel()
 		if("toggle_hide_genitals")
 			if(client?.prefs)

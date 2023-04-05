@@ -1189,4 +1189,5 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		return FALSE
 	client.toggleGenitalException(nicebutt)
 	to_chat(src, span_notice("Toggled seeing genitals on [nicebutt]."))
+	nicebutt.update_genitals(TRUE)
 	return TRUE
