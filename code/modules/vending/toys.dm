@@ -58,3 +58,19 @@
 	default_price = PRICE_REALLY_CHEAP
 	extra_price = PRICE_PRETTY_CHEAP
 	payment_department = ACCOUNT_SRV
+
+/obj/machinery/vending/lewdpillz
+	name = "\improper Pillz Vendor"
+	desc = "A dubious looking medicine dispenser, covered in graffiti and ad-hoc modifications."
+	product_slogans = "Pillz here!"
+	product_ads = "Need some 'Fun Enhancers'? We got 'em here!"
+	icon_state = "kink"
+	vend_reply = "Have fun!"
+	products = list(
+		/obj/item/storage/pill_bottle/breast_enlarger = 5,
+		/obj/item/storage/pill_bottle/butt_enlarger = 5,
+		/obj/item/storage/pill_bottle/penis_enlarger = 5,
+		/obj/item/storage/pill_bottle/belly_enlarger = 5,
+		/obj/item/storage/pill_bottle/random = 10)
+
+	default_price = PRICE_REALLY_CHEAP
