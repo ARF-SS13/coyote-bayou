@@ -81,3 +81,8 @@
 	name = "heavy-duty sheath" //for the heaviest dicks
 	path = /obj/item/storage/belt/sabre/heavy
 
+/datum/gear/belt/webbing/burma
+	name = "burma webbing"
+	path = /obj/item/storage/belt/utility/commonwealth_brit
+	cost = 1
+
