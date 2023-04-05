@@ -319,12 +319,12 @@
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 60
-	armour_penetration = 0.8
+	damage = 40
+	armour_penetration = 0.0
 	flag = "laser"
 	eyeblur = 0
 	is_reflectable = FALSE
-	pixels_per_second = TILES_TO_PIXELS(50)
+	pixels_per_second = TILES_TO_PIXELS(25)
 
 /obj/item/projectile/beam/laser/lasgun //AER9
 	name = "laser beam"
