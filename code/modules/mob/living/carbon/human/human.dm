@@ -1,3 +1,6 @@
+GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
+#define CROTCH_COOLDOWN 2 SECONDS
+
 /mob/living/carbon/human
 	name = "Unknown"
 	real_name = "Unknown"
@@ -557,6 +560,12 @@
 	switch(href_list["action"])
 		if("open_sockdrawer")
 			show_underwear_panel()
+		if("update_every_fucking_crotch")
+			if(COOLDOWN_FINISHED(GLOB, crotch_call_cooldown))
+				for(var/mob/living/carbon/human/dic in GLOB.human_list)
+					dic.update_genitals(TRUE)
+				COOLDOWN_START(GLOB, crotch_call_cooldown, CROTCH_COOLDOWN)
+			show_genital_hide_panel()
 		if("open_genital_hide")
 			show_genital_hide_panel()
 		if("change_genital_whitelist")
@@ -801,6 +810,15 @@
 					?src=[REF(src)];
 					action=change_genital_whitelist'>
 						Modify?
+			</a>"}
+
+	dat += "<div class='gen_setting_name'>Update Hiddenness:</div>" // BURGER TIME
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=update_every_fucking_crotch'>
+						Do it
 			</a>"}
 
 	dat += "</div>"
