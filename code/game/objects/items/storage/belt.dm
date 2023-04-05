@@ -835,3 +835,11 @@
 	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
 	STR.max_items = 5
 	STR.clickopen = TRUE
+
+//NCR Ranger's stuff
+
+/obj/item/storage/belt/utility/commonwealth_brit
+	name = "burma webbing"
+	desc = "A versatile chest rig, this one seems to be used in jungle enviroments and such"
+	icon_state = "brit_webbing"
+	item_state = "brit_webbing"
