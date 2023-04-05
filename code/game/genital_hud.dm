@@ -12,7 +12,7 @@
 	if(!ishuman(A))
 		return
 	if(send_signal)
-		SEND_SIGNAL(M, COMSIG_HUMAN_UPDATE_GENITALS)
+		SEND_SIGNAL(A, COMSIG_HUMAN_UPDATE_GENITALS)
 	var/mob/living/carbon/human/owner = A
 	var/list/order = splittext(owner?.dna?.features["genital_order"], ":")
 	var/list/true_order = getApprovedGenitalList(M, order)
