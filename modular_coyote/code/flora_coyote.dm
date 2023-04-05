@@ -988,3 +988,9 @@
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
 	icon_state = "lrock4"
 	anchored = TRUE
+
+/obj/structure/flora/thistle
+	name = "thistle"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "thistle"
+	anchored = TRUE
