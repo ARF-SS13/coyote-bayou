@@ -36,9 +36,9 @@
 					M.client.images -= nads
 
 	//if(remove_list)
-	var/list/image_list = A.hud_list[GENITAL_HUD] // its called double security
-	var/list/flat_list = flatten_list_recursive(image_list) // when you arent super sure you know what you're doing
-	M.client.images -= flat_list // do it twice just to feel safe even though it does the same damn thing
+	//var/list/image_list = A.hud_list[GENITAL_HUD] // its called double security
+	//var/list/flat_list = flatten_list_recursive(image_list) // when you arent super sure you know what you're doing
+	//M.client.images -= flat_list // do it twice just to feel safe even though it does the same damn thing
 	//A.hud_list[GENITAL_HUD] = list()
 	return TRUE
 

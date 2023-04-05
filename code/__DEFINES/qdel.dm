@@ -91,7 +91,7 @@
 	. = list()
 	for(var/i in deeplist)
 		if(islist(i))
-			remove_list_recursive(i)
+			flatten_list_recursive(i)
 		if(islist(deeplist[i]))
-			remove_list_recursive(deeplist[i])
+			flatten_list_recursive(deeplist[i])
 		. += i
