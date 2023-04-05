@@ -54,6 +54,7 @@
 #define QDEL_LIST_IN(L, time) addtimer(CALLBACK(GLOBAL_PROC, .proc/______qdel_list_wrapper, L), time, TIMER_STOPPABLE)
 #define QDEL_LIST_ASSOC(L) if(L) { for(var/I in L) { qdel(L[I]); qdel(I); } L.Cut(); }
 #define QDEL_LIST_ASSOC_VAL(L) if(L) { for(var/I in L) qdel(L[I]); L.Cut(); }
+
 /// LISTFUCKER9000
 /proc/qdel_list_recursive(list/deeplist)
 	if(!length(deeplist))
@@ -74,6 +75,23 @@
 		return
 	for(var/i in deeplist)
 		if(islist(i))
-			remove_list_recursive(i)
+			remove_list_recursive(i, fromlist)
+		if(islist(deeplist[i]))
+			remove_list_recursive(deeplist[i], fromlist)
 		fromlist -= i
 	deeplist.Cut()
+
+/// LISTlover 420
+/// Like remove_list_recursive, but returns just a list full of the elements
+/// ooh ooh maybe if I make more recursive listfuckers, I'll actually use one!
+/// cool huh?
+/proc/flatten_list_recursive(list/deeplist)
+	if(!length(deeplist))
+		return
+	. = list()
+	for(var/i in deeplist)
+		if(islist(i))
+			remove_list_recursive(i)
+		if(islist(deeplist[i]))
+			remove_list_recursive(deeplist[i])
+		. += i

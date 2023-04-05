@@ -557,6 +557,24 @@
 			show_underwear_panel()
 		if("open_genital_hide")
 			show_genital_hide_panel()
+		if("change_genital_whitelist")
+			if(!client?.prefs)
+				return
+			var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+				usr, 
+				"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+				any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+				content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+				Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
+				"Genital Whitelist",
+				client?.prefs?.features["genital_whitelist"])
+			if(new_genital_whitelist == "")
+				var/whoathere = alert(usr, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
+				if(whoathere == "Yes")
+					client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
+			else if(!isnull(new_genital_whitelist))
+				client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
+			show_genital_hide_panel()
 		if("toggle_hide_genitals")
 			if(client?.prefs)
 				TOGGLE_BITFIELD(client.prefs.features["genital_hide"], text2num(href_list["genital_flag"]))
@@ -773,6 +791,15 @@
 						[client.checkGonadDistaste(HIDE_BALLS) ? "No" : "Yes"]
 			</a>"}
 
+	dat += "<div class='gen_setting_name'>Visibility Whitelist:</div>" // BURGER TIME
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=change_genital_whitelist'>
+						Modify?
+			</a>"}
+
 	dat += "</div>"
 	dat += "</td>"
 	dat += "</tr>"
@@ -780,7 +807,7 @@
 	dat += "<br>"
 
 	winshow(src, "erp_window", TRUE)
-	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Put on your spare pair</div>", 400, 500)
+	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Unsee what can be unseen</div>", 400, 500)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 	onclose(src, "erp_window", src)

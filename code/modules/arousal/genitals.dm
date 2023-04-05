@@ -546,6 +546,10 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)
+	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
+	if(!islist(hud_list))
+		prepare_huds()
+	pornHUD.remove_from_hud(src, TRUE)
 	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 
@@ -630,16 +634,9 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			overlays_standing[text2num(index)] = genital_sprites[index]
 			apply_overlay(text2num(index))
 	
-	preventPrefBreak(porn_hud_images)
-
-/mob/living/carbon/human/proc/preventPrefBreak(var/list/fresh_genitals) // well well well, what fresh hell do we have here?
-	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
-	if(!islist(hud_list))
-		prepare_huds()
-	pornHUD.remove_from_hud(src, TRUE)
-	if(!LAZYLEN(fresh_genitals)) // the freshest!
+	if(!LAZYLEN(porn_hud_images)) // the freshest!
 		return // nothing there? *shruggo*
-	hud_list[GENITAL_HUD] = fresh_genitals
+	hud_list[GENITAL_HUD] = porn_hud_images
 	pornHUD.add_to_hud(src)
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.

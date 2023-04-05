@@ -899,7 +899,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
 				H.tail_hud_update(accessory_overlay)
-				if(istype(src, /mob/living/carbon/human/dummy))
+				if(istype(H, /mob/living/carbon/human/dummy))
 					standing += accessory_overlay // prevents every accessory doing a typecheck, now only one has to! am performance whizzard~
 			else
 				standing += accessory_overlay

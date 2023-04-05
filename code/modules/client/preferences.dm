@@ -177,7 +177,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
 		"genital_hide" = NONE,
-		"genital_whitelist" = "",
+		"genital_whitelist" = "Sammt Bingus, fluntly, theBungus",
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = "",
@@ -923,23 +923,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "You dont seem to have any movable genitals!"
 					dat += "<tr>"
 					dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
-					var/genital_shirtlayer
+					/* var/genital_shirtlayer
 					if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
 						genital_shirtlayer = "Over Underwear"
 					else if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_CLOTHING))
 						genital_shirtlayer = "Over Clothes"
 					else
-						genital_shirtlayer = "Under Underwear"
+						genital_shirtlayer = "Under Underwear" */
 
 					dat += {"<td colspan='3' class='coverage_on'>
-							<a 
-								class='clicky_no_border'
-								href='
-									?_src_=prefs;
-									preference=change_genital_clothing'
-									nadflag=[genital_shirtlayer]>
-										[genital_shirtlayer]
-							</a>
+							Over Clothes
 							</td>"}
 					dat += {"<td class='coverage_on'>
 							<a 
@@ -1454,7 +1447,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /// takes in whatever's at features["genital_whitelist"] and spits out a list in order of what's present
 /datum/preferences/proc/decode_cockwhitelist(reverse = TRUE)
 	var/list/list_out = list()
-	list_out = splittext(features["genital_whitelist"], ":")
+	list_out = splittext(features["genital_whitelist"], ",") // would be a real dick move if the whitelist didnt accept whitespace
 	return list_out
 
 /// takes in a list of nads and outputs a cockstring, then saves it
@@ -1462,7 +1455,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/outlist = list()
 	for(var/ckey in cockstring)
 		outlist += ckey
-	. = jointext(outlist, ":")
+	. = jointext(outlist, ",")
 	features["genital_whitelist"] = .
 	save_preferences()
 
@@ -1588,7 +1581,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /// need: genital name, some kinda href shit
 /// returns a hunk of html designed to fit into a table
 /datum/preferences/proc/add_genital_layer_piece(has_name, index, max_index)
-	var/got_one = features[has_name]
 	var/magic_word
 	var/flag_string
 	var/override_string
@@ -1636,37 +1628,31 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(index <= 1) // first one doesnt get an up-arrow
 		doot += "<td class='genital_arrow_off'>&darr;</td>" // im gonna do a magic trick
 	else // make an up arrow
-		if(has_one)
-			doot += {"<td class='genital_arrow_on'>
-					<a 
-						class='clicky_no_border'
-						href='
-							?_src_=prefs;
-							preference=change_genital_order;
-							direction=up;
-							which=[has_name]'>
-								&uarr;
-					</a>
-					</td>"}
-		else // ya know, I made this cool up-down-skip-inactives thing, Im gonna use it
-			doot += "<td class='genital_arrow_off'>&uarr;</td>" // im gonna do a magic trick
+		doot += {"<td class='genital_arrow_on'>
+				<a 
+					class='clicky_no_border'
+					href='
+						?_src_=prefs;
+						preference=change_genital_order;
+						direction=up;
+						which=[has_name]'>
+							&uarr;
+				</a>
+				</td>"}
 	if(index >= max_index) // last one doesnt get a down-arrow
 		doot += "<td class='genital_arrow_off'>&darr;</td>" // imma make these disappear!
 	else // make a down arrow
-		if(has_one)
-			doot += {"<td class='genital_arrow_on'>
-					<a 
-						class='clicky_no_border' 
-						href='
-							?_src_=prefs;
-							preference=change_genital_order;
-							direction=down;
-							which=[has_name]'>
-								&darr;
-					</a>
-					</td>"}
-		else
-			doot += "<td class='genital_arrow_off'>&darr;</td>" // sike, theyre here forever
+		doot += {"<td class='genital_arrow_on'>
+				<a 
+					class='clicky_no_border' 
+					href='
+						?_src_=prefs;
+						preference=change_genital_order;
+						direction=down;
+						which=[has_name]'>
+							&darr;
+				</a>
+				</td>"}
 	// and throw in the coverage buttons
 	doot += {"<td class='[CHECK_BITFIELD(features[flag_string], GENITAL_RESPECT_CLOTHING)? "coverage_on" : "coverage_off"]'>
 		<a 
@@ -2118,6 +2104,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
+	if(href_list["preference"] == "change_genital_whitelist")
+		var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+			user, 
+			"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+			any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+			content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+			Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
+			"Genital Whitelist",
+			features["genital_whitelist"])
+		if(new_genital_whitelist == "")
+			var/whoathere = alert(user, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
+			if(whoathere == "Yes")
+				features["genital_whitelist"] = new_genital_whitelist
+		else if(!isnull(new_genital_whitelist))
+			features["genital_whitelist"] = new_genital_whitelist
 	if(href_list["preference"] == "change_genital_clothing")
 		var/list/genital_overrides = GENITAL_CLOTHING_FLAG_LIST
 		var/new_visibility = input(user, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST

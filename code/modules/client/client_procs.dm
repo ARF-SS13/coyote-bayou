@@ -1111,54 +1111,81 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	return CHECK_BITFIELD(prefs.features["genital_hide"], flag)
 
 /client/proc/toggleGenitalException(mob/moob)
-	if(moob.ckey in genital_exceptions)
-		genital_exceptions -= moob.ckey
+	if(!ismob(moob))
 		return
-	associateWeakrefWithCkey(moob)
+	if(genital_exceptions[moob.real_name])
+		genital_exceptions -= moob.real_name
+		saveCockWhitelist()
+		return
+	addGenitalException(moob)
 
-/client/proc/associateWeakrefWithCkey(mob/moob)
+/client/proc/addGenitalException(mob/moob)
 	if(!moob)
 		return
-	if(!islist(genital_exceptions[moob.ckey]))
-		genital_exceptions[ckey(moob.ckey)] = list()
-	genital_exceptions[ckey(moob.ckey)] |= WEAKREF(moob)
+	genital_exceptions[moob.real_name] = WEAKREF(moob)
 	saveCockWhitelist()
 	
 /client/proc/isGenitalWhitelisted(mob/moob)
 	if(!ismob(moob))
 		return FALSE
-	if(moob.ckey && (moob.ckey in genital_exceptions))
-		associateWeakrefWithCkey(moob) // also grab their mob as a backup
-		return TRUE
-	var/datum/weakref/weakmoob = WEAKREF(moob)
+	. = FALSE
 	for(var/ck in genital_exceptions)
-		if(weakmoob in genital_exceptions[ck])
-			return TRUE
-	return FALSE
+		if(findtext(ckey(moob.real_name), ckey(ck)))
+			. = TRUE
+			break
+		var/datum/weakref/wingus = genital_exceptions[ck]
+		if(isweakref(wingus))
+			var/mob/living/carbon/human/dingus = wingus.resolve()
+			if(dingus == moob)
+				. = TRUE
+				break
+	if(.)
+		genital_exceptions[moob.real_name] = WEAKREF(moob) // just refresh it or something
+		saveCockWhitelist()
+
+/// So turns out letting players see the ckeys of everyone they want to see the genitals of might be a bad idea
+/// So, lets store a list of mob names and dig up the ckey from that! Not a bad idea!
+/client/proc/inspectCockWhitelist(list/cockalist)
+	if(!LAZYLEN(cockalist))
+		return list()
+	var/list/cockout = list()
+	for(var/cock in cockalist) // list of mobs' stored names
+		cockout[cock] = null
+		for(var/mob/living/carbon/human/dick in GLOB.human_list)
+			if(!dick.ckey)
+				continue
+			if(!findtext(ckey(dick.real_name), ckey(cock))) // only ckey the names when checking, dont store them as ckeys lol
+				continue
+			cockout[cock] = WEAKREF(dick)
+	return cockout
 
 /client/proc/loadCockWhitelist()
 	if(!prefs)
 		return FALSE
-	var/list/cocklist = prefs.decode_cockwhitelist()
-	for(var/ky in cocklist)
-		genital_exceptions[ky] = list()
+	genital_exceptions = inspectCockWhitelist(prefs.decode_cockwhitelist()) // get ready for penis inspection day
 
 /client/proc/saveCockWhitelist()
 	if(!prefs)
 		return FALSE
-	prefs.encode_cockwhitelist(genital_exceptions)
+	var/list/playerthing = list()
+	for(var/ck in genital_exceptions)
+		var/cock = ck
+		var/datum/weakref/wingus = genital_exceptions[ck]
+		if(isweakref(wingus))
+			var/mob/living/carbon/human/dingus = wingus.resolve()
+			if(dingus)
+				cock = dingus.real_name
+		playerthing |= cock
+	prefs.encode_cockwhitelist(playerthing)
 
 /mob/verb/genital_exception(mob/living/carbon/human/nicebutt as mob in view())
 	set name = "See/Hide Genitals"
 	set category = "IC"
 
-	if(!client)
+	if(!client) // not sure how you did this
 		return FALSE
-	if(ishuman(nicebutt))
+	if(!ishuman(nicebutt))
 		to_chat(src, span_alert("[nicebutt] doesn't have anything to hide!"))
-		return FALSE
-	if(!nicebutt.ckey)
-		to_chat(src, span_alert("[nicebutt] doesn't have a ckey! Check back later if they're actually a player."))
 		return FALSE
 	client.toggleGenitalException(nicebutt)
 	to_chat(src, span_notice("Toggled seeing genitals on [nicebutt]."))

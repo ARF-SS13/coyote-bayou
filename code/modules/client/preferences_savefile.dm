@@ -532,7 +532,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
-		"genital_whitelist" = "",
+		"genital_whitelist" = "Mr Bingus, fluntly, Doc Bungus",
 		"genital_hide" = NONE,
 
 
