@@ -31,6 +31,7 @@
 		return
 	if(send_signal)
 		SEND_SIGNAL(M, COMSIG_HUMAN_UPDATE_GENITALS)
+		SEND_SIGNAL(A, COMSIG_HUMAN_UPDATE_GENITALS)
 	for(var/i in hud_icons)
 		var/list/untyped_genitals = A.hud_list[i]
 		for(var/bit in untyped_genitals)
