@@ -109,17 +109,17 @@ GLOBAL_LIST_INIT(huds, list(
 		for(var/atom/A in hudatoms)
 			add_to_single_hud(M, A)
 
-/datum/atom_hud/proc/add_to_hud(atom/A, hard_reset)
+/datum/atom_hud/proc/add_to_hud(atom/A, send_signal)
 	if(!A)
 		return FALSE
 	hudatoms |= A
 	RegisterSignal(A, COMSIG_PARENT_QDELETING, .proc/remove_from_hud, override = TRUE) //both hud users and hud atoms use these signals
 	for(var/mob/M in hudusers)
 		if(!queued_to_see[M])
-			add_to_single_hud(M, A, hard_reset)
+			add_to_single_hud(M, A)
 	return TRUE
 
-/datum/atom_hud/proc/add_to_single_hud(mob/M, atom/A, hard_reset) //unsafe, no sanity apart from client
+/datum/atom_hud/proc/add_to_single_hud(mob/M, atom/A, send_signal) //unsafe, no sanity apart from client
 	if(!M || !M.client || !A)
 		return
 	for(var/i in hud_icons)

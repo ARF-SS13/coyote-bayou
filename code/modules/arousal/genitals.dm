@@ -540,8 +540,12 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	)
 ))
 
+/// That way, we can update *EVERYONES* genitals when someone updates their genitals
+/mob/living/carbon/human/proc/signal_update_genitals()
+	update_genitals(FALSE) // and prevents infinite loops
+
 /// clears all genital overlays, and reapplies them
-/mob/living/carbon/human/proc/update_genitals()
+/mob/living/carbon/human/proc/update_genitals(signal = TRUE)
 	if(QDELETED(src))
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
@@ -549,7 +553,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
 	if(!islist(hud_list))
 		prepare_huds()
-	pornHUD.remove_from_hud(src, TRUE)
+	pornHUD.remove_from_hud(src, signal)
 	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 
@@ -637,7 +641,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	if(!LAZYLEN(porn_hud_images)) // the freshest!
 		return // nothing there? *shruggo*
 	hud_list[GENITAL_HUD] = porn_hud_images
-	pornHUD.add_to_hud(src)
+	pornHUD.add_to_hud(src, signal)
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.
 /mob/living/carbon/human/proc/emergent_genital_call()

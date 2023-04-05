@@ -6,11 +6,13 @@
 
 /// hud_list format list("has_genital" = list("FRONT" = list(img, img), "MID" = list(img)))
 /// M is the viewer, A is the thing with the hud stuff on it, remove_list just removes the list and clears it from everyone
-/datum/atom_hud/data/human/genital/add_to_single_hud(mob/M, atom/A) //unsafe, no sanity apart from client
+/datum/atom_hud/data/human/genital/add_to_single_hud(mob/M, atom/A, send_signal) //unsafe, no sanity apart from client
 	if(!M || !M.client || !A)
 		return
 	if(!ishuman(A))
 		return
+	if(send_signal)
+		SEND_SIGNAL(M, COMSIG_HUMAN_UPDATE_GENITALS)
 	var/mob/living/carbon/human/owner = A
 	var/list/order = splittext(owner?.dna?.features["genital_order"], ":")
 	var/list/true_order = getApprovedGenitalList(M, order)
@@ -24,9 +26,11 @@
 						M.client.images |= img // i can see my house from here!
 
 /// M is the viewer, A is the thing with the hud stuff on it, remove_list just removes the list and clears it from everyone
-/datum/atom_hud/data/human/genital/remove_from_single_hud(mob/M, atom/A) //unsafe, no sanity apart from client
+/datum/atom_hud/data/human/genital/remove_from_single_hud(mob/M, atom/A, send_signal) //unsafe, no sanity apart from client
 	if(!M || !M.client || !A)
 		return
+	if(send_signal)
+		SEND_SIGNAL(M, COMSIG_HUMAN_UPDATE_GENITALS)
 	for(var/i in hud_icons)
 		var/list/untyped_genitals = A.hud_list[i]
 		for(var/bit in untyped_genitals)
