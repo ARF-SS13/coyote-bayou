@@ -1,4 +1,4 @@
-// Yes, a genital subsystem
+/* // Yes, a genital subsystem
 SUBSYSTEM_DEF(genitals)
 	name = "Genitals"
 	flags = SS_NO_INIT | SS_BACKGROUND
@@ -124,3 +124,4 @@ var/list/genital_sprites_by_mob = list()
 	if(CHECK_BITFIELD(hideflags, HIDE_BELLY))
 		. -= CS_BELLY	
 
+ */
