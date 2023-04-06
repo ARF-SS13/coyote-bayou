@@ -786,6 +786,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
 	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
+	var/image/tail_hack // tailhud's a bazinga, innit
 
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
@@ -898,11 +899,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
 			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
-				H.tail_hud_update(accessory_overlay)
-				if(istype(H, /mob/living/carbon/human/dummy))
-					standing += accessory_overlay // prevents every accessory doing a typecheck, now only one has to! am performance whizzard~
-			else
-				standing += accessory_overlay
+				tail_hack = accessory_overlay
+			standing += accessory_overlay
 
 			if(S.extra) //apply the extra overlay, if there is one
 				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
@@ -998,6 +996,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
+	H.tail_hud_update(tail_hack)
+
 
 /*
  * Equip the outfit required for life. Replaces items currently worn.

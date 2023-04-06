@@ -812,13 +812,13 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 						Modify?
 			</a>"}
 
-	dat += "<div class='gen_setting_name'>Update Hiddenness:</div>" // BURGER TIME
+	dat += "<div class='gen_setting_name'>Apply Changes:</div>" // BURGER TIME
 	dat += {"<a 
 				class='clicky' 
 				href='
 					?src=[REF(src)];
 					action=update_every_fucking_crotch'>
-						Do it
+						Apply
 			</a>"}
 
 	dat += "</div>"
