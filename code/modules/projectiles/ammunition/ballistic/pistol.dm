@@ -10,6 +10,7 @@
 		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_10MM
 
 /obj/item/ammo_casing/c10mm/improvised
 	name = "shoddy 10mm bullet casing"
@@ -50,6 +51,7 @@
 		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_9MM
 
 /obj/item/ammo_casing/c9mm/improvised
 	name = "homemade 9mm bullet casing"

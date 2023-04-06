@@ -6,6 +6,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	use_casing_sounds = TRUE
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
 		GUN_MISFIRE_THROWS_GUN(0.5),
@@ -16,6 +17,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	use_casing_sounds = TRUE
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
 		GUN_MISFIRE_THROWS_GUN(0.5),
@@ -24,6 +26,7 @@
 
 /obj/item/gun/ballistic/rifle/hobo
 	icon = 'icons/fallout/objects/guns/energy.dmi'
+	use_casing_sounds = TRUE
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
 		GUN_MISFIRE_THROWS_GUN(0.5),
@@ -281,7 +284,7 @@
 	name = "knucklegun (.45)"
 	desc = "When your knuckles don't cut it, put some brass on them. When that doesnt work? Weld on four slamfire barrels \"chambered\" \
 		in .45 ACP, connect all those to a pressure plate on the strikeface, and try not to think about all the explosives you have \
-		less than an inch from your fingers. Fires all four round at once, and if your hand still exists, delivers a solid punch too."
+		less than an inch from your fingers. Fires all four rounds at once, and if your hand still exists, delivers a solid punch too."
 	icon_state = "knucklegun"
 	item_state = "knucklegun"
 	slot_flags = ITEM_SLOT_GLOVES

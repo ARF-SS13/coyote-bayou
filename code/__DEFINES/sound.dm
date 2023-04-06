@@ -310,6 +310,7 @@
 #define GAUSS_VOLUME 75
 #define LASER_VOLUME 30
 #define PLASMA_VOLUME 50
+#define MISC_VOLUME 30
 
 /// Silenced volume multiplier
 #define SILENCED_VOLUME_MULTIPLIER 0.25
@@ -328,18 +329,21 @@
 #define GAUSS_RANGE (SOUND_RANGE + 10)
 #define LASER_RANGE (SOUND_RANGE + 5)
 #define PLASMA_RANGE (SOUND_RANGE + 5)
+#define MISC_RANGE (SOUND_RANGE)
 
 /// distant distances
-#define PISTOL_LIGHT_RANGE_DISTANT (PISTOL_LIGHT_RANGE * 7)
-#define PISTOL_MEDIUM_RANGE_DISTANT (PISTOL_MEDIUM_RANGE * 8)
-#define PISTOL_HEAVY_RANGE_DISTANT (PISTOL_HEAVY_RANGE * 9)
-#define RIFLE_LIGHT_RANGE_DISTANT (RIFLE_LIGHT_RANGE * 8)
-#define RIFLE_MEDIUM_RANGE_DISTANT (RIFLE_MEDIUM_RANGE * 9)
-#define RIFLE_HEAVY_RANGE_DISTANT (RIFLE_HEAVY_RANGE * 10)
-#define SHOTGUN_RANGE_DISTANT (SHOTGUN_RANGE * 10)
-#define GAUSS_RANGE_DISTANT (GAUSS_RANGE * 10)
-#define LASER_RANGE_DISTANT (LASER_RANGE * 7)
-#define PLASMA_RANGE_DISTANT (PLASMA_RANGE * 7)
+#define PISTOL_LIGHT_RANGE_DISTANT (300)
+#define PISTOL_MEDIUM_RANGE_DISTANT (300)
+#define PISTOL_HEAVY_RANGE_DISTANT (300)
+#define RIFLE_LIGHT_RANGE_DISTANT (300)
+#define RIFLE_MEDIUM_RANGE_DISTANT (300)
+#define RIFLE_HEAVY_RANGE_DISTANT (300)
+#define SHOTGUN_RANGE_DISTANT (300)
+#define GAUSS_RANGE_DISTANT (300)
+#define LASER_RANGE_DISTANT (300)
+#define PLASMA_RANGE_DISTANT (300)
+#define MISC_RANGE_DISTANT (300)
+/// surprise its the whole map
 
 /// distant sounds
 #define PISTOL_LIGHT_DISTANT_SOUND 'sound/f13weapons/distant_pistol_light.ogg'
@@ -352,6 +356,38 @@
 #define GAUSS_DISTANT_SOUND 'sound/f13weapons/distant_gauss.ogg'
 #define LASER_DISTANT_SOUND 'sound/f13weapons/distant_laser.ogg'
 #define PLASMA_DISTANT_SOUND 'sound/f13weapons/distant_plasma.ogg'
+
+#define CSP_PISTOL_LIGHT "lightpistol"
+#define CSP_PISTOL_22 "22"
+#define CSP_PISTOL_9MM "9mm"
+#define CSP_PISTOL_MEDIUM "mediumpistol"
+#define CSP_PISTOL_45 "45"
+#define CSP_PISTOL_10MM "10mm"
+#define CSP_PISTOL_HEAVY "heavypistol"
+#define CSP_PISTOL_357 "357"
+#define CSP_PISTOL_44 "44"
+#define CSP_PISTOL_14MM "14mm"
+#define CSP_RIFLE_LIGHT "lightrifle"
+#define CSP_RIFLE_MEDIUM "mediumrifle"
+#define CSP_RIFLE_HEAVY "heavyrifle"
+#define CSP_SHOTGUN "shootgun"
+#define CSP_GAUSS "gauss"
+#define CSP_LASER "laser"
+#define CSP_PLASMA "plasma"
+#define CSP_MISC "weh"
+#define CSP_ROCK "roc"
+#define CSP_DART "nerf"
+
+/// gun sound indexes
+#define CSP_INDEX_SOUND_OUT "out"
+#define CSP_INDEX_VOLUME "vol"
+#define CSP_INDEX_VARY "vry"
+#define CSP_INDEX_DISTANCE "dst"
+#define CSP_INDEX_IGNORE_WALLS "wal"
+#define CSP_INDEX_DISTANT_SOUND "dsd"
+#define CSP_INDEX_DISTANT_RANGE "dsr"
+/// they dont have to be 3 letters, I just like it
+
 
 /*
 	gun_sound_properties = list(

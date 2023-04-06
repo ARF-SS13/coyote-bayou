@@ -647,6 +647,7 @@ var/select = 1
 
 	actions_types = list(/datum/action/item_action/toggle_sidewinder)
 	fire_sound = 'sound/f13weapons/9mm.ogg'
+	use_casing_sounds = TRUE
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder/update_icon_state()
 	icon_state = "[initial(icon_state)][magazine ? "-[current_caliber]" : ""][chambered ? "" : "-e"]"
@@ -670,25 +671,21 @@ var/select = 1
 		if("22LR")
 			current_caliber = "9mm"
 			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m9mm, /obj/item/ammo_box/magazine/uzim9mm)
-			fire_sound = 'sound/f13weapons/9mm.ogg'
 			message2self += "The panel on the side now reads: \"9mm Mode\""
 
 		if("9mm")
 			current_caliber = "10mm"
 			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m10mm, /obj/item/ammo_box/magazine/cg45)
-			fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 			message2self += "The panel on the side now reads: \"10mm Mode\""
 
 		if("10mm")
 			current_caliber = "45ACP"
 			allowed_mags |= typesof(/obj/item/ammo_box/magazine/greasegun, /obj/item/ammo_box/magazine/m45, /obj/item/ammo_box/magazine/tommygunm45/stick)
-			fire_sound = 'sound/weapons/gunshot_smg.ogg'
 			message2self += "The panel on the side now reads: \".45ACP Mode\""
 
 		if("45ACP")
 			current_caliber = "22LR"
 			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m22)
-			fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
 			message2self += "The panel on the side now reads: \".22LR Mode\""
 
 	playsound(get_turf(src), 'sound/f13weapons/equipsounds/riflequip.ogg', 60, 1)
