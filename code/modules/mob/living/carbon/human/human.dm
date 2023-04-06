@@ -583,10 +583,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 				var/whoathere = alert(usr, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
 				if(whoathere == "Yes")
 					client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
-					loadCockWhitelist()
+					client?.loadCockWhitelist()
 			else if(!isnull(new_genital_whitelist))
 				client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
-				loadCockWhitelist()
+				client?.loadCockWhitelist()
 			update_body(TRUE)
 			show_genital_hide_panel()
 		if("toggle_hide_genitals")
