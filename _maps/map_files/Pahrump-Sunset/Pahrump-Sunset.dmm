@@ -25778,6 +25778,7 @@
 /obj/structure/curtain{
 	color = "#7E5B33"
 	},
+/obj/structure/simple_door/tent,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/abandoned)
 "cGV" = (
@@ -47036,7 +47037,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/mob_spawn/human/skeleton/alive,
 /obj/item/storage/belt/legholster/police{
 	pixel_x = -5;
 	pixel_y = -3
@@ -47045,6 +47045,7 @@
 	pixel_y = 6;
 	layer = 3.1
 	},
+/obj/effect/decal/remains/human,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -56490,6 +56491,13 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
+"lcZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/window/right{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
+/area/f13/building)
 "lda" = (
 /obj/structure/window/fulltile/house{
 	dir = 2
@@ -57828,6 +57836,7 @@
 	color = "#8A806B"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/tent,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/abandoned)
 "lwL" = (
@@ -63403,7 +63412,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "mVX" = (
-/obj/structure/simple_door/tentflap_cloth,
+/obj/structure/simple_door/tent,
+/obj/structure/curtain{
+	color = "#8A806B"
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -71452,11 +71464,11 @@
 	pixel_y = -6;
 	pixel_x = 2
 	},
-/obj/effect/mob_spawn/human/skeleton/alive,
 /obj/item/storage/belt/legholster/police{
 	pixel_x = -5;
 	pixel_y = -3
 	},
+/obj/effect/decal/remains/human,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -76142,8 +76154,8 @@
 "qvl" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/human/skeleton/alive,
 /obj/item/restraints/handcuffs,
+/obj/effect/decal/remains/human,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -77069,12 +77081,12 @@
 	pixel_y = -6;
 	pixel_x = 2
 	},
-/obj/effect/mob_spawn/human/skeleton/alive,
 /obj/item/clothing/glasses/sunglasses{
 	pixel_y = 2;
 	pixel_x = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -79030,8 +79042,16 @@
 	pixel_y = 20;
 	pixel_x = 3
 	},
-/obj/item/reagent_containers/food/drinks/bottle/hooch,
-/obj/item/reagent_containers/food/drinks/bottle/hooch,
+/obj/item/reagent_containers/food/drinks/bottle/hooch{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/drinks/bottle/hooch{
+	pixel_x = 2
+	},
+/obj/item/reagent_containers/pill/patch/jet{
+	pixel_y = 18;
+	pixel_x = -5
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -80248,6 +80268,11 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"rEL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/pet/dog/protectron,
+/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
+/area/f13/building)
 "rEP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -82552,6 +82577,7 @@
 /obj/item/bong/coconut,
 /obj/item/bong/coconut,
 /obj/item/locked_box/medical/drugs,
+/obj/item/locked_box/medical/drugs,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
@@ -82997,13 +83023,13 @@
 /obj/item/melee/classic_baton/police,
 /obj/item/megaphone/sec,
 /obj/item/clothing/shoes/jackboots,
-/mob/living/simple_animal/hostile/handy/gutsy{
+/mob/living/simple_animal/hostile/handy{
 	health = 25;
-	name = "head of corporate security, pingsky";
 	icon = 'icons/mob/aibots.dmi';
+	icon_dead = "secbot_dead";
 	icon_living = "secbot";
 	icon_state = "secbot";
-	icon_dead = "secbot_dead"
+	name = "head of corporate security, pingsky"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -84096,7 +84122,9 @@
 	pixel_y = -2
 	},
 /obj/effect/decal/remains/human{
-	layer = 4
+	layer = 4;
+	pixel_y = 11;
+	pixel_x = -3
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -90710,6 +90738,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/helmet/justice,
 /obj/structure/closet/cardboard,
+/obj/effect/spawner/lootdrop/f13/weapon/police,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -100362,11 +100391,16 @@
 	},
 /area/f13/wasteland/city)
 "xfW" = (
-/obj/structure/simple_door/tentflap_leather{
-	pixel_y = -4
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/obj/structure/simple_door/tent{
+	pixel_y = -3;
+	color = "#7E5B33"
+	},
+/obj/structure/curtain{
+	color = "#7E5B33";
+	pixel_y = -4
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2"
@@ -112323,7 +112357,7 @@ tEv
 srf
 yhS
 lzC
-hqT
+rEL
 hqT
 oJu
 gfi
@@ -112839,7 +112873,7 @@ mWY
 nLx
 nBp
 iql
-hqT
+lcZ
 gfi
 hLs
 jfa
