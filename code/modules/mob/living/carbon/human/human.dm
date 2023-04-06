@@ -583,8 +583,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 				var/whoathere = alert(usr, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
 				if(whoathere == "Yes")
 					client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
+					loadCockWhitelist()
 			else if(!isnull(new_genital_whitelist))
 				client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
+				loadCockWhitelist()
 			update_body(TRUE)
 			show_genital_hide_panel()
 		if("toggle_hide_genitals")
@@ -755,7 +757,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BELLY]'>
-						[client.checkGonadDistaste(HIDE_BELLY) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BELLY) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Butts:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -764,7 +766,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BUTT]'>
-						[client.checkGonadDistaste(HIDE_BUTT) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BUTT) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Breasts:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -773,7 +775,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BOOBS]'>
-						[client.checkGonadDistaste(HIDE_BOOBS) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BOOBS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Vaginas:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -782,7 +784,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_VAG]'>
-						[client.checkGonadDistaste(HIDE_VAG) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_VAG) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Penises:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -791,7 +793,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_PENIS]'>
-						[client.checkGonadDistaste(HIDE_PENIS) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_PENIS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Balls:</div>" // GET UR FUCKIN BURGER
 	dat += {"<a 
@@ -800,7 +802,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BALLS]'>
-						[client.checkGonadDistaste(HIDE_BALLS) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BALLS) ? "No" : "Yes"]
 			</a>"}
 
 	dat += "<div class='gen_setting_name'>Visibility Whitelist:</div>" // BURGER TIME

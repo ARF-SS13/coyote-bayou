@@ -43,8 +43,9 @@
 
 	//if(remove_list)
 	var/list/image_list = A.hud_list[GENITAL_HUD]
-	var/list/flat_list = flatten_list_recursive(image_list.Copy()) // wake up hon, its time for your penis flattening
-	M.client.images -= flat_list // okah hon
+	if(islist(image_list))
+		var/list/flat_list = flatten_list_recursive(image_list.Copy()) // wake up hon, its time for your penis flattening
+		M.client.images -= flat_list // okah hon
 	return TRUE
 
 /datum/atom_hud/data/human/genital/proc/getApprovedGenitalList(mob/viewer, list/order)

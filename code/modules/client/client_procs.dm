@@ -1179,7 +1179,8 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	prefs.encode_cockwhitelist(playerthing)
 
 /mob/verb/genital_exception(mob/living/carbon/human/nicebutt as mob in view())
-	set name = "See/Hide Genitals"
+	set name = "Genital Whitelist"
+	set desc = "Toggle whether or now you can see a specific person's genitals, when exposed."
 	set category = "IC"
 
 	if(!client) // not sure how you did this
