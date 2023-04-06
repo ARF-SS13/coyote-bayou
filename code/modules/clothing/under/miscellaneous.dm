@@ -806,3 +806,14 @@
 	item_color = "kimono_earth"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+//NCRANGER STUFF
+
+/obj/item/clothing/under/burma
+	name = "Jungle Uniform"
+	desc = "A Commonwealth made jungle uniform commonly used in Burma"
+	icon_state = "burma"
+	item_state = "burma"
+	item_color = "burma"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE

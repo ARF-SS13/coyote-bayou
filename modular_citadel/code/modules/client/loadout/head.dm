@@ -532,3 +532,27 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/lobster
 	name = "lobster costume hat"
 	path = /obj/item/clothing/head/lobsterhat
+
+/datum/gear/head/mk2/one
+	name = "MK2, one"
+	path = /obj/item/clothing/head/mk2/one
+
+/datum/gear/head/mk2/two
+	name = "MK2, two"
+	path = /obj/item/clothing/head/mk2/two
+
+/datum/gear/head/mk2/four
+	name = "MK2, four"
+	path = /obj/item/clothing/head/mk2/four
+
+/datum/gear/head/slouch/unpinned
+	name = "khaki slouch, unpinned"
+	path = /obj/item/clothing/head/slouch/unpinned
+
+/datum/gear/head/slouch/pinned
+	name = "khaki slouch, pinned"
+	path = /obj/item/clothing/head/slouch/pinned
+
+/datum/gear/head/turban
+	name = "Military Turban"
+	path = /obj/item/clothing/head/military_turban

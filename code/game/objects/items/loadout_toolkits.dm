@@ -182,7 +182,7 @@
 	new /obj/item/healthanalyzer(src)
 	new /obj/item/stack/sheet/mineral/silver/two(src)
 	new /obj/item/stack/rods/two(src)
-	new /obj/machinery/iv_drip/telescopic(src)
+	new /obj/item/tele_iv(src)
 	new /obj/item/reagent_containers/blood/OMinus(src)
 
 /datum/loadout_box/surgery

@@ -6,7 +6,7 @@
 			return facing_modifiers[FRONT_ARMOUR]
 	return facing_modifiers[SIDE_ARMOUR] //if its not a front hit or back hit then assume its from the side
 
-/obj/mecha/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
+/obj/mecha/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	. = ..()
 	if(. && obj_integrity > 0)
 		spark_system.start()

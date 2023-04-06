@@ -12,7 +12,7 @@
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
-	maxHealth = 250 
+	maxHealth = 250
 	health = 250
 	reach = 2
 	speed = 1
@@ -37,7 +37,7 @@
 	see_in_dark = 8
 	decompose = FALSE
 	wound_bonus = 0 //This might be a TERRIBLE idea
-	bare_wound_bonus = 0 
+	bare_wound_bonus = 0
 	sharpness = SHARP_EDGED
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
@@ -140,7 +140,7 @@
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
 	gender = FEMALE
 	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
-	maxHealth = 300 
+	maxHealth = 300
 	health = 300
 	stat_attack = CONSCIOUS
 	melee_damage_lower = 25
@@ -154,7 +154,9 @@
 /mob/living/simple_animal/hostile/deathclaw/butter
 	name = "butterclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is...made out of butter?"
-	color = "#FFFF00"
+	icon_state = "deathclaw_butter"
+	icon_living = "deathclaw_butter"
+	icon_dead = "deathclaw_butter_dead"
 	color_mad = rgb(133, 98, 87)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/butter = 10,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
@@ -164,7 +166,7 @@
 	name = "legendary deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is a legendary enemy."
 	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
-	maxHealth = 400 
+	maxHealth = 400
 	health = 400
 	color = "#FFFF00"
 	color_mad = rgb(133, 98, 87)

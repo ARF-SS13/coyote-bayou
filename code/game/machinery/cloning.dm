@@ -90,6 +90,8 @@
 	if(is_operational() && mob_occupant)
 		if(mob_occupant.stat != DEAD)
 			. += "Current clone cycle is [round(get_completion())]% complete."
+	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
+		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
 
 /obj/machinery/clonepod/return_air()
 	// We want to simulate the clone not being in contact with

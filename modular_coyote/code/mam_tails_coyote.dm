@@ -615,3 +615,23 @@
 	icon_state = "fluffy"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MUTCOLORS
+
+//Pony tails. From MLP
+
+/datum/sprite_accessory/tails/mam_tails/ponytail1
+	name = "Pony tail, one"
+	icon_state = "pony1"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/ponytail2
+	name = "Pony tail, two"
+	icon_state = "pony2"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/ponytail3
+	name = "Pony tail, three"
+	icon_state = "pony3"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
