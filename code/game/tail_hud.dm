@@ -11,7 +11,7 @@
 		prepare_huds()
 	if(!the_tail) // dunno why not having a tail gives you a random tail, but hey
 		the_tail = image('icons/mob/hud.dmi', src, "")
-		I.appearance_flags = RESET_COLOR|RESET_TRANSFORM
+		the_tail.appearance_flags = RESET_COLOR|RESET_TRANSFORM
 	var/image/tail_north = hud_list[TAIL_HUD]
 	tail_north.icon = the_tail.icon
 	tail_north.icon_state = the_tail.icon_state
