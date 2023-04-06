@@ -1,6 +1,21 @@
 GLOBAL_LIST_EMPTY(casing_sound_properties)
 
-/// Sound properties for bulletstuffs!
+
+/* Sound properties for bulletstuffs!
+ * HOW 2 USE
+ * When these are all initialized, one instance of each will live in GLOB.casing_sound_properties, indexed by their 'category' var
+ * From then on, they just chill there and hold their data, waiting to be referenced, like a handy lookup table
+ * On an /obj/item/ammo_casing lives a var, sound_properties. This var should be something like CSP_PISTOL_LIGHT
+ * This var points to an index of GLOB.casing_sound_properties, the one that specific type of casing should use
+ * Once set, you're good! The gun/casing will handle everything else when it needs sound data
+ * 
+ * How *THIS* works
+ * These datums just hold a bunch of sound-related data that is fed to the gun when it wants to play a shoot sound
+ * That's about it, really
+ * You can make more, easily too. Just make a new ammo_sound_properties entry, give it a unique CSP_AMMOTYPE define [code\__DEFINES\sound.dm]
+ * Fill in the vars, and... that's it!
+ * Currently this only works for casings, fired by ballistic guns. Energy weapons only use the distant sounds, as they are cursed af
+ */
 /datum/ammo_sound_properties
 	/// its entry on the casing_sound_properties list, usually something like CSP_PISTOL_LIGHT. Check out code\__DEFINES\sound.dm for more~
 	var/category = "oops"
@@ -25,16 +40,17 @@ GLOBAL_LIST_EMPTY(casing_sound_properties)
 	/// Override the gun's normal sound. currently unused
 	var/override_gun_sound = FALSE
 
-/datum/ammo_sound_properties/New()
+/datum/ammo_sound_properties/New(first_one)
 	. = ..()
-	set_up_sound_datums()
+	if(first_one)
+		set_up_sound_datums()
 
 /// First one to exist makes everyone else exist
 /datum/ammo_sound_properties/proc/set_up_sound_datums()
-	if(LAZYLEN(GLOB.casing_sound_properties))
-		return
 	GLOB.casing_sound_properties[category] = src
 	for(var/some_sound in subtypesof(/datum/ammo_sound_properties))
+		if(some_sound == type)
+			continue
 		var/datum/ammo_sound_properties/loadysound = new some_sound()
 		GLOB.casing_sound_properties[loadysound.category] = loadysound
 

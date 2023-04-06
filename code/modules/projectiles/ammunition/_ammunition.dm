@@ -129,8 +129,7 @@
 /obj/item/ammo_casing/proc/setup_sound_datums()
 	if(LAZYLEN(GLOB.casing_sound_properties))
 		return
-	var/datum/ammo_sound_properties/soundy = new() // it'll set it all up
-	qdel(soundy) // and then *smush~*
+	new /datum/ammo_sound_properties/light_pistol(TRUE) // it'll set it all up
 
 /obj/item/ammo_casing/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/ammo_box))
