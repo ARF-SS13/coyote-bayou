@@ -143,6 +143,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "science radio headset"
 	desc = "A sciency headset. Like usual."
 	icon_state = "sci_headset"
+	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_sci
 
 /obj/item/radio/headset/headset_medsci
