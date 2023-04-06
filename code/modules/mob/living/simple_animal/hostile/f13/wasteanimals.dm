@@ -889,3 +889,99 @@
 	. = ..()
 	if(random_trash_loot)
 		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+
+
+////////////
+//T-Birds//
+//////////
+
+/mob/living/simple_animal/hostile/bloodbird
+	name = "Blood Bird"
+	desc = "A large mutated turkey vulture."
+	icon = 'icons/fallout/mobs/animals/bloodbird.dmi'
+	icon_state = "bloodbird"
+	icon_living = "bloodbird"
+	icon_dead = "bloodbird_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 4,
+		/obj/item/feather = 3)
+	butcher_results = list(/obj/item/stack/sheet/bone = 2)
+	butcher_difficulty = 1
+	response_help_simple = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple = "hits"
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 100
+	health = 100
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 25
+	melee_damage_upper = 35
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 9
+	vision_range = 8
+	waddle_amount = 5
+	waddle_up_time = 1
+	waddle_side_time = 1
+	pass_flags = PASSTABLE
+	speak_emote = list(
+		"cackles",
+		"squawks",
+		"clacks",
+		)
+	emote_see = list(
+		"screeches",
+		"gonks"
+		)
+	attack_verb_simple = list(
+		"bites",
+		"claws",
+		"rends",
+		"mutilates"
+		)
+	faction = list("terror bird")
+	a_intent = INTENT_HARM
+	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	idlesound = list(
+		'sound/creatures/terrorbird/clack1.ogg',
+		'sound/creatures/terrorbird/clack2.ogg',
+		'sound/creatures/terrorbird/clack3.ogg',
+		)
+
+	emote_taunt = list("screeches")
+	emote_taunt_sound = list(
+		'sound/creatures/terrorbird/hoot1.ogg',
+		'sound/creatures/terrorbird/hoot2.ogg',
+		'sound/creatures/terrorbird/hoot3.ogg',
+		'sound/creatures/terrorbird/hoot4.ogg',
+		)
+	aggrosound = list(
+		'sound/creatures/terrorbird/growl1.ogg',
+		'sound/creatures/terrorbird/growl2.ogg',
+		'sound/creatures/terrorbird/growl3.ogg',
+		)
+	death_sound = list(
+		'sound/creatures/terrorbird/groan1.ogg',
+		'sound/creatures/terrorbird/groan2.ogg',
+	)
+	can_ghost_into = FALSE //One day Kotetsu will return to us. ~TK
+	desc_short = "What a terrifying bird."
+	
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(80, 90, 100, 110),
+		MOB_RETREAT_DISTANCE_LIST(0, 0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(90),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(90),
+	)
