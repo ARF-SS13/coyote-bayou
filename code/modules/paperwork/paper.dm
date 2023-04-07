@@ -71,7 +71,7 @@
 	var/list/dat = list()
 	dat["name"] = name
 	dat["icon"] = icon
-	dat["icon_state"] = icon_sate
+	dat["icon_state"] = icon_state
 	dat["info"] = info
 	dat["color"] = color
 	dat["stamps"] = stamps
