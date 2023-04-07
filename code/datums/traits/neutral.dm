@@ -410,3 +410,27 @@
 	desc = "You identify as a dog! (Mostly to help identify your species mechanically)"
 	value = 0
 	mob_trait = TRAIT_DOG
+
+/datum/quirk/item_quirk/photographer
+	name = "Photographer"
+	desc = "You carry your camera and personal photo album everywhere you go, and your scrapbooks are legendary among your coworkers."
+	value = 0
+	mob_trait = TRAIT_PHOTOGRAPHER
+	gain_text = span_notice("You know everything about photography.")
+	lose_text = span_danger("You forget how photo cameras work.")
+	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
+
+/datum/quirk/item_quirk/photographer/add()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/storage/photo_album/photo_album = new(get_turf(human_holder))
+	photo_album.persistence_id = "personal_[human_holder.last_mind?.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	photo_album.persistence_load()
+	photo_album.name = "[human_holder.real_name]'s photo album"
+
+	if(!human_holder.equip_to_slot_if_possible(photo_album, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		human_holder.put_in_hands(photo_album)
+
+	var/obj/item/camera/cam = new(get_turf(human_holder))
+	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		human_holder.put_in_hands(cam)
+	
