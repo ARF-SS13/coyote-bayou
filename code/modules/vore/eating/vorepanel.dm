@@ -87,7 +87,7 @@
 	var/atom/hostloc = host.loc
 	var/list/inside = list()
 	if(isbelly(hostloc))
-		var/obj/belly/inside_belly = hostloc
+		var/obj/vore_belly/inside_belly = hostloc
 		var/mob/living/pred = inside_belly.owner
 
 		inside = list(
@@ -124,7 +124,7 @@
 
 	var/list/our_bellies = list()
 	for(var/belly in host.vore_organs)
-		var/obj/belly/B = belly
+		var/obj/vore_belly/B = belly
 		our_bellies.Add(list(list(
 			"selected" = (B == host.vore_selected),
 			"name" = B.name,
@@ -136,7 +136,7 @@
 
 	var/list/selected_list = null
 	if(host.vore_selected)
-		var/obj/belly/selected = host.vore_selected
+		var/obj/vore_belly/selected = host.vore_selected
 		selected_list = list(
 			"belly_name" = selected.name,
 			"is_wet" = selected.is_wet,
@@ -230,7 +230,7 @@
 			// else if(whatever) //Next test here.
 			else
 				for(var/belly in host.vore_organs)
-					var/obj/belly/B = belly
+					var/obj/vore_belly/B = belly
 					if(lowertext(new_name) == lowertext(B.name))
 						failure_msg = "No duplicate belly names, please."
 						break
@@ -239,7 +239,7 @@
 				tgui_alert_async(usr, failure_msg, "Error!")
 				return TRUE
 
-			var/obj/belly/NB = new(host)
+			var/obj/vore_belly/NB = new(host)
 			NB.name = new_name
 			host.vore_selected = NB
 			unsaved_changes = TRUE
@@ -355,7 +355,7 @@
 
 /datum/vore_look/proc/pick_from_inside(mob/user, params)
 	var/atom/movable/target = locate(params["pick"])
-	var/obj/belly/OB = locate(params["belly"])
+	var/obj/vore_belly/OB = locate(params["belly"])
 
 	if(!(target in OB))
 		return TRUE // Aren't here anymore, need to update menu
@@ -417,12 +417,12 @@
 				to_chat(user,"<span class='warning'>Pick a belly on yourself first!</span>")
 				return TRUE
 
-			var/obj/belly/TB = host.vore_selected
+			var/obj/vore_belly/TB = host.vore_selected
 			to_chat(user,"<span class='warning'>You begin to [lowertext(TB.vore_verb)] [M] into your [lowertext(TB.name)]!</span>")
 			to_chat(M,"<span class='warning'>[host] begins to [lowertext(TB.vore_verb)] you into their [lowertext(TB.name)]!</span>")
 			to_chat(OB.owner,"<span class='warning'>Someone inside you is eating someone else!</span>")
 
-			sleep(TB.nonhuman_prey_swallow_time) //Can't do after, in a stomach, weird things abound.
+			sleep(VORE_SWALLOW_NONHUMAN_TIME) //Can't do after, in a stomach, weird things abound.
 			if((host in OB) && (M in OB)) //Make sure they're still here.
 				to_chat(user,"<span class='warning'>You manage to [lowertext(TB.vore_verb)] [M] into your [lowertext(TB.name)]!</span>")
 				to_chat(M,"<span class='warning'>[host] manages to [lowertext(TB.vore_verb)] you into their [lowertext(TB.name)]!</span>")
@@ -452,7 +452,7 @@
 					to_chat(user,"<span class='warning'>You can't do that in your state!</span>")
 					return TRUE
 
-				var/obj/belly/choice = tgui_input_list(usr, "Move all where?","Select Belly", host.vore_organs)
+				var/obj/vore_belly/choice = tgui_input_list(usr, "Move all where?","Select Belly", host.vore_organs)
 				if(!choice)
 					return FALSE
 
@@ -488,7 +488,7 @@
 				to_chat(user,"<span class='warning'>You can't do that in your state!</span>")
 				return TRUE
 
-			var/obj/belly/choice = tgui_input_list(usr, "Move [target] where?","Select Belly", host.vore_organs)
+			var/obj/vore_belly/choice = tgui_input_list(usr, "Move [target] where?","Select Belly", host.vore_organs)
 			if(!choice || !(target in host.vore_selected))
 				return TRUE
 
@@ -512,7 +512,7 @@
 			// else if(whatever) //Next test here.
 			else
 				for(var/belly in host.vore_organs)
-					var/obj/belly/B = belly
+					var/obj/vore_belly/B = belly
 					if(lowertext(new_name) == lowertext(B.name))
 						failure_msg = "No duplicate belly names, please."
 						break
@@ -665,7 +665,7 @@
 				host.vore_selected.transferchance = sanitize_integer(transfer_chance_input, 0, 100, initial(host.vore_selected.transferchance))
 			. = TRUE
 		if("b_transferlocation")
-			var/obj/belly/choice = tgui_input_list(usr, "Where do you want your [lowertext(host.vore_selected.name)] to lead if prey resists?","Select Belly", (host.vore_organs + "None - Remove" - host.vore_selected))
+			var/obj/vore_belly/choice = tgui_input_list(usr, "Where do you want your [lowertext(host.vore_selected.name)] to lead if prey resists?","Select Belly", (host.vore_organs + "None - Remove" - host.vore_selected))
 
 			if(!choice) //They cancelled, no changes
 				return FALSE
@@ -693,7 +693,7 @@
 
 			var/dest_for //Check to see if it's the destination of another vore organ.
 			for(var/belly in host.vore_organs)
-				var/obj/belly/B = belly
+				var/obj/vore_belly/B = belly
 				if(B.transferlocation == host.vore_selected)
 					dest_for = B.name
 					failure_msg += "This is the destiantion for at least '[dest_for]' belly transfers. Remove it as the destination from any bellies before deleting it. "

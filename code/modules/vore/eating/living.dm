@@ -4,7 +4,7 @@
 	// Determines if the mechanical vore preferences button will be displayed on the mob or not.
 	var/showvoreprefs = TRUE
 	/// Default to no vore capability.
-	var/obj/belly/vore_selected
+	var/obj/vore_belly/vore_selected
 	/// List of vore containers inside a mob
 	var/list/vore_organs = list()
 	/// What the character tastes like
@@ -54,7 +54,7 @@
 /mob/living/proc/lazy_init_belly()
 	if(!length(vore_organs))
 		LAZYINITLIST(vore_organs)
-		var/obj/belly/B = new /obj/belly(src)
+		var/obj/vore_belly/B = new /obj/vore_belly(src)
 		vore_selected = B
 		B.immutable = TRUE
 		B.name = "Stomach"
@@ -120,7 +120,7 @@
 // Master vore proc that actually does vore procedures
 //
 
-/mob/living/proc/perform_the_nom(var/mob/living/user, var/mob/living/prey, var/mob/living/pred, var/obj/belly/belly, var/delay)
+/mob/living/proc/perform_the_nom(var/mob/living/user, var/mob/living/prey, var/mob/living/pred, var/obj/vore_belly/belly, var/delay)
 	//Sanity
 	if(!user || !prey || !pred || !istype(belly) || !(belly in pred.vore_organs))
 		testing("[user] attempted to feed [prey] to [pred], via [lowertext(belly.name)] but it went wrong.")
@@ -153,7 +153,7 @@
 	if(delay)
 		swallow_time = delay
 	else
-		swallow_time = istype(prey, /mob/living/carbon/human) ? belly.human_prey_swallow_time : belly.nonhuman_prey_swallow_time
+		swallow_time = istype(prey, /mob/living/carbon/human) ? VORE_SWALLOW_HUMAN_TIME : VORE_SWALLOW_NONHUMAN_TIME
 
 	//Timer and progress bar
 	if(!do_after(user, swallow_time, TRUE, prey))
@@ -202,7 +202,7 @@
 
 	//Are we resisting from inside a belly?
 	if(isbelly(loc))
-		var/obj/belly/B = loc
+		var/obj/vore_belly/B = loc
 		B.relay_resist(src)
 		return TRUE //resist() on living does this TRUE thing.
 
@@ -229,7 +229,7 @@
 
 	//You're in a belly!
 	if(isbelly(loc))
-		var/obj/belly/B = loc
+		var/obj/vore_belly/B = loc
 		var/confirm = alert(src, "You're in a mob. If you're otherwise unable to escape from a pred AFK for a long time, use this.", "Confirmation", "Okay", "Cancel")
 		if(!confirm == "Okay" || loc != B)
 			return
@@ -271,7 +271,7 @@
 
 	var/list/serialized = list()
 	for(var/belly in vore_organs)
-		var/obj/belly/B = belly
+		var/obj/vore_belly/B = belly
 		serialized += list(B.serialize()) //Can't add a list as an object to another list in Byond. Thanks.
 
 	client.prefs.belly_prefs = serialized
@@ -304,7 +304,7 @@
 //
 /mob/living/proc/release_vore_contents(var/include_absorbed = TRUE, var/silent = FALSE)
 	for(var/belly in vore_organs)
-		var/obj/belly/B = belly
+		var/obj/vore_belly/B = belly
 		B.release_all_contents(include_absorbed, silent)
 
 //
@@ -316,7 +316,7 @@
 
 	var/message = ""
 	for (var/belly in vore_organs)
-		var/obj/belly/B = belly
+		var/obj/vore_belly/B = belly
 		message += B.get_examine_msg()
 
 	return message
@@ -342,6 +342,44 @@
 
 
 	return ..()
+
+/// You died, casual
+/// Brings up a message that lets you pick if your body gets nuked
+/mob/living/proc/you_died(obj/vore_belly/coffin)
+	var/die = alert(
+		src,
+		"Looks like you're dead, and likely inside someone's belly! What would you like to happen?",
+		"You died",
+		"Disappear",
+		"Fall out",
+		"Just sit there"
+		)
+	switch(die)
+		if("Disappear")
+			var/usure = alert(
+				src,
+				"You sure? This'll delete your body! The only ways back into the round are through cloning or playing a different character!",
+				"You sure?",
+				"Yes, delete my body",
+				"No, don't delete my body"
+				)
+			if(usure == "Yes, delete my body")
+				to_chat(src, span_alert("Okay! See you on the other side!"))
+				qdel(src)
+				return
+			else
+				INVOKE_ASYNC(src, .proc/you_died, coffin)
+				return
+		if("Fall out")
+			to_chat(src, span_alert("Ejecting your corpse!"))
+			if(!coffin)
+				to_chat(src, span_phobia("...but something went wrong. Using harsh measures!"))
+				src.forceMove(drop_location())
+				return
+			coffin.release_specific_contents(src)
+			return
+		else
+			to_chat(src, span_alert("Okay! Leaving your body alone"))
 
 //
 // Clearly super important. Obviously.
@@ -446,9 +484,7 @@
 
 //	Check if an object is capable of eating things, based on vore_organs
 //
-/proc/has_vore_belly(var/mob/living/O)
+/proc/has_vore_belly(mob/living/O)
 	if(istype(O))
-		if(O.vore_organs.len > 0)
+		if(LAZYLEN(O.vore_organs))
 			return TRUE
-
-	return FALSE

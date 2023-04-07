@@ -25,7 +25,7 @@
 /// Change this whenever you add a vore flag, must be largest vore flag*2-1
 #define MAX_VORE_FLAG	(1<<11)-1
 
-#define isbelly(A) istype(A, /obj/belly)
+#define isbelly(A) istype(A, /obj/vore_belly)
 
 #define QDEL_NULL_LIST(x) if(x) { for(var/y in x) { qdel(y) } ; x = null }
 #define VORE_STRUGGLE_EMOTE_CHANCE 40

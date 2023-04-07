@@ -3,16 +3,9 @@
 //return non-negative integer: Amount of nutrition/charge gained (scaled to nutrition, other end can multiply for charge scale).
 
 // Ye default implementation.
-/obj/item/proc/digest_act(var/atom/movable/item_storage = null)
-	for(var/obj/item/O in contents)
-		if(istype(O,/obj/item/storage)) //Dump contents from dummy pockets.
-			for(var/obj/item/SO in O)
-				if(item_storage)
-					SO.forceMove(item_storage)
-				qdel(O)
-		else if(item_storage)
-			O.forceMove(item_storage)
-
+/obj/item/proc/digest_act(obj/vore_belly/guthole, mob/living/owner)
+	if(guthole && SEND_SIGNAL(src, COMSIG_CONTAINS_STORAGE))
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_QUICK_EMPTY, guthole)
 	qdel(src)
 	return w_class
 
@@ -64,6 +57,7 @@
 /obj/item/bombcore/digest_act(...)
 	return FALSE
 /obj/item/grenade/digest_act(...)
+	preprime() // heh
 	return FALSE
 /obj/item/storage/digest_act(...)
 	return FALSE
@@ -72,9 +66,9 @@
 // Some special treatment
 /////////////
 
-/obj/item/reagent_containers/food/digest_act(var/atom/movable/item_storage = null)
-	if(isbelly(item_storage))
-		var/obj/belly/B = item_storage
+/obj/item/reagent_containers/food/digest_act(obj/vore_belly/guthole = null)
+	if(isbelly(guthole))
+		var/obj/vore_belly/B = guthole
 		if(ishuman(B.owner))
 			var/mob/living/carbon/human/H = B.owner
 			reagents.trans_to(H, (reagents.total_volume * 0.3), 1, 0)
@@ -84,19 +78,17 @@
 
 	. = ..()
 
-/obj/item/organ/digest_act(var/atom/movable/item_storage = null)
+/obj/item/organ/digest_act(obj/vore_belly/guthole = null)
 	if((. = ..()))
 		. += 70 //Organs give a little more
 
-/obj/item/storage/digest_act(var/atom/movable/item_storage = null)
-	for(var/obj/item/I in contents)
-		I.screen_loc = null
-
+/obj/item/storage/digest_act(obj/vore_belly/guthole = null)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_HIDE_ALL)
 	. = ..()
 
 /////////////
 // Some more complicated stuff
 /////////////
-/obj/item/mmi/digital/posibrain/digest_act(var/atom/movable/item_storage = null)
+/obj/item/mmi/digital/posibrain/digest_act(obj/vore_belly/guthole = null)
 	//Replace this with a VORE setting so all types of posibrains can/can't be digested on a whim
 	return FALSE

@@ -54,7 +54,7 @@
 /datum/looping_sound/proc/start(atom/add_thing)
 	if(add_thing)
 		output_atoms |= add_thing
-	if(timerid || init_timerid)
+	if(timerid || init_timerid) // already running, will pick them up on the next go
 		return
 	on_start()
 

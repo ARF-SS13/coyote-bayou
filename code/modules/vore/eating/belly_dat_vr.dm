@@ -106,8 +106,8 @@
 	new_belly.desc = inside_flavor
 	new_belly.vore_sound = vore_sound
 	new_belly.vore_verb = vore_verb
-	new_belly.human_prey_swallow_time = human_prey_swallow_time
-	new_belly.nonhuman_prey_swallow_time = nonhuman_prey_swallow_time
+	new_VORE_SWALLOW_HUMAN_TIME = human_prey_swallow_time
+	new_VORE_SWALLOW_NONHUMAN_TIME = nonhuman_prey_swallow_time
 	new_belly.emote_time = emoteTime
 	new_belly.digest_brute = digest_brute
 	new_belly.digest_burn = digest_burn

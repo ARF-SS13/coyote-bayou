@@ -132,12 +132,22 @@
  * * target (optional) is the other mob involved with the visible message. For example, the attacker in many combat messages.
  * * target_message (optional) is what the target mob will see e.g. "[src] does something to you!"
  */
-/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, ignored_mobs, mob/target, target_message, visible_message_flags = NONE)
+/atom/proc/visible_message(
+		message,
+		self_message,
+		blind_message,
+		vision_distance = DEFAULT_MESSAGE_RANGE,
+		ignored_mobs,
+		mob/target,
+		target_message,
+		visible_message_flags = NONE,
+		pref_check
+		)
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
 	var/list/hearers = get_hearers_in_view(vision_distance, src) //caches the hearers and then removes ignored mobs.
-	if(!length(hearers))
+	if(!length(hearers)) // yes, hearers is correct
 		return
 	hearers -= ignored_mobs
 
@@ -163,6 +173,8 @@
 
 	for(var/mob/M in hearers)
 		if(!M.client)
+			continue
+		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = message
@@ -194,7 +206,15 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
  * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
  */
-/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, ignored_mobs, audible_message_flags = NONE)
+/atom/proc/audible_message(
+		message,
+		deaf_message,
+		hearing_distance = DEFAULT_MESSAGE_RANGE,
+		self_message,
+		ignored_mobs,
+		audible_message_flags = NONE,
+		pref_check
+		)
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
@@ -210,6 +230,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)
+		if(pref_check && !CHECK_PREFS(M, pref_check))
+			continue
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags) && M.can_hear())
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))

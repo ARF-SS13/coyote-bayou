@@ -113,6 +113,7 @@
 #define INIT_ORDER_SHUTTLE			-21
 #define INIT_ORDER_MINOR_MAPPING	-40
 #define INIT_ORDER_PATH				-50
+#define INIT_ORDER_PREFBREAK		-51
 #define INIT_ORDER_PERSISTENCE		-95
 #define INIT_ORDER_LATELOAD			-97
 #define INIT_ORDER_DEMO				-99  // o avoid a bunch of changes related to initialization being written, do this last
