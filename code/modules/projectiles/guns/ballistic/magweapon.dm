@@ -81,7 +81,6 @@
 	mag_type = /obj/item/ammo_box/magazine/mmag/small
 	fire_delay = 2
 	cell_type = /obj/item/stock_parts/cell/magnetic/pistol
-	automatic_burst_overlay = FALSE
 
 /obj/item/gun/ballistic/automatic/magrifle/pistol/update_overlays()
 	. = ..()

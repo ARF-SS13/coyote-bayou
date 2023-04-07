@@ -4,12 +4,10 @@
 	icon_state = "bow"
 	item_state = "bow"
 	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	fire_sound = 'sound/weapons/bowfire.wav'
-	slot_flags = ITEM_SLOT_BACK
 	item_flags = NONE
 	pin = null
 	no_pin_required = TRUE
@@ -26,16 +24,7 @@
 		/datum/firemode/semi_auto/slower //we start very sloow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(null),
-		SP_DISTANT_RANGE(null)
-	)
+
 	/// Can this bow link to a quiver?
 	var/can_link_to_quiver = TRUE
 	/// Is this bow drawing from a quiver, if linked?
@@ -199,8 +188,7 @@
 	icon_state = "bow"
 	item_state = "bow"
 	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
@@ -215,8 +203,7 @@
 	icon_state = "tribalbow"
 	item_state = "bow"
 	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow
@@ -229,9 +216,8 @@
 	icon_state = "xbow"
 	item_state = "xbow"
 	icon_prefix = "xbow"
-	w_class = WEIGHT_CLASS_BULKY
 	trigger_guard = TRIGGER_GUARD_NONE
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
@@ -246,8 +232,7 @@
 	icon_state = "tribalbow"
 	item_state = "bow"
 	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 			/datum/firemode/semi_auto //fast bow. skilled archers will make the most use out of this. mebbe needs buff iuno
@@ -260,8 +245,7 @@
 	icon_state = "ashenbow"
 	item_state = "bow"
 	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow //a bit faster
@@ -275,8 +259,7 @@
 	item_state = "crossbow"
 	icon_prefix = "crossbow"
 	trigger_guard = TRIGGER_GUARD_NONE
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 //60 damage, brush gun power level
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
@@ -291,14 +274,14 @@
 	icon_state = "pipebow"
 	item_state = "bow"
 	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	init_firemodes = list(
 			/datum/firemode/semi_auto
 	)
 
 // Special bows?
+/* maybe at some point
 /obj/item/gun/ballistic/bow/gold
 	name = "golden bow"
 	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
@@ -311,7 +294,7 @@
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow
 	)
-
+*/
 /* old bows, stinky, like fenny
 /obj/item/gun/ballistic/bow/xbow
 	name = "magazine-fed crossbow"
