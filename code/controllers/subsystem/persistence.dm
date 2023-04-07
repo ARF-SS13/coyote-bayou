@@ -637,13 +637,14 @@ SUBSYSTEM_DEF(persistence)
 	var/folder_path = file("data/folders.json")
 	var/list/folder_json = list()
 
-	if(fexists(folder_path))
-		folder_json = json_decode(file2text(folder_path))
-		fdel(folder_path)
+	if(!fexists(folder_path))
+		return
+
+	folder_json = json_decode(file2text(folder_path))
 
 	for(var/i in folders)
 		var/obj/item/folder/F = i
-		if(!istype(F) ||!F.persistenceID)
+		if(!F.persistenceID)
 			continue
 		if(folder_json[F.persistenceID])
 			F.PopulatePaperFromList(folder_json[F.persistenceID])
@@ -657,7 +658,7 @@ SUBSYSTEM_DEF(persistence)
 		folder_json = json_decode(file2text(folder_path))
 		fdel(folder_path)
 
-	for(var/i in noticeBoards)
+	for(var/i in folders)
 		var/obj/item/folder/F = i
 		if(!istype(F) || !F.persistenceID)
 			continue

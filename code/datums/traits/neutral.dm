@@ -423,7 +423,7 @@
 /datum/quirk/item_quirk/photographer/add()
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/storage/photo_album/photo_album = new(get_turf(human_holder))
-	photo_album.persistence_id = "personal_[human_holder.last_mind?.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	photo_album.persistence_id = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	photo_album.persistence_load()
 	photo_album.name = "[human_holder.real_name]'s photo album"
 
@@ -446,7 +446,7 @@
 /datum/quirk/item_quirk/photographer/add()
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/folder/folder = new(get_turf(human_holder))
-	folder.persistenceID = "personal_[human_holder.last_mind?.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	folder.persistenceID = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	folder.PersistenceLoad()
 	folder.name = "[human_holder.real_name]'s photo album"
 

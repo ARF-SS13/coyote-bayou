@@ -18,7 +18,7 @@
 
 /obj/item/folder/proc/PersistenceLoad()
 	var/list/data = SSpersistence.GetFolders()
-	if(data.len)
+	if(data)
 		if(data[persistenceID])
 			PopulatePaperFromList(data[persistenceID])
 
