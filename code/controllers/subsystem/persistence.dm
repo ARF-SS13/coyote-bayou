@@ -26,6 +26,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/obj/item/storage/photo_album/photo_albums
 	var/list/obj/structure/sign/painting/painting_frames = list()
 	var/list/paintings = list()
+	var/list/obj/structure/noticeboard/noticeBoards = list()
 
 /datum/controller/subsystem/persistence/Initialize()
 	LoadSatchels()
@@ -37,6 +38,7 @@ SUBSYSTEM_DEF(persistence)
 	LoadRecentRulesets()
 	LoadRecentMaps()
 	LoadPhotoPersistence()
+	LoadNoticeboards()
 	for(var/client/C in GLOB.clients)
 		LoadSavedVote(C.ckey)
 	if(CONFIG_GET(flag/use_antag_rep))
@@ -252,6 +254,7 @@ SUBSYSTEM_DEF(persistence)
 	SavePanicBunker()
 	SavePaintings()
 	SaveScars()
+	SaveNoticeboards()
 
 /datum/controller/subsystem/persistence/proc/LoadPanicBunker()
 	var/bunker_path = file("data/bunker_passthrough.json")
@@ -330,6 +333,70 @@ SUBSYSTEM_DEF(persistence)
 	frame_json = json_encode(frame_json)
 
 	WRITE_FILE(frame_path, frame_json)
+
+/datum/controller/subsystem/persistence/proc/GetNoticeboardsPaper()
+	var/frame_path = file("data/notice_board_papers.json")
+	if(fexists(frame_path))
+		return json_decode(file2text(frame_path))
+
+/datum/controller/subsystem/persistence/proc/GetNoticeboardsPhotos()
+	var/frame_path = file("data/notice_board_photos.json")
+	if(fexists(frame_path))
+		return json_decode(file2text(frame_path))
+
+/datum/controller/subsystem/persistence/proc/LoadNoticeboards()
+	var/photo_path = file("data/notice_board_photos.json")
+	var/paper_path = file("data/notice_board_papers.json")
+
+	if(fexists(photo_path)) // Photos!
+		var/list/json = json_decode(file2text(photo_path))
+		if(json.len)
+			for(var/i in noticeBoards)
+				var/obj/structure/noticeboard/N = i
+				if(!N.persistenceID)
+					continue
+				if(json[N.persistenceID])
+					N.PopulatePhotosFromIDList(json[N.persistenceID])
+
+	if(fexists(paper_path)) // Papers!
+		var/list/json = json_decode(file2text(paper_path))
+		if(json.len)
+			for(var/i in noticeBoards)
+				var/obj/structure/noticeboard/N = i
+				if(!N.persistenceID)
+					continue
+				if(json[N.persistenceID])
+					N.PopulatePaperFromList(json[N.persistenceID])
+
+
+/datum/controller/subsystem/persistence/proc/SaveNoticeboards()
+	var/photo_path = file("data/notice_board_photos.json")
+	var/paper_path = file("data/notice_board_papers.json")
+	var/list/photo_json = list()
+	var/list/paper_json = list()
+
+	if(fexists(photo_path))
+		photo_json = json_decode(file2text(photo_path))
+		fdel(photo_path)
+
+	if(fexists(paper_path))
+		paper_json = json_decode(file2text(paper_path))
+		fdel(paper_path)
+
+	for(var/i in noticeBoards)
+		var/obj/structure/noticeboard/F = i
+		if(!istype(F) || !F.persistenceID)
+			continue
+		var/list/L = F.GetPictureIDList()
+		photo_json[F.persistenceID] = L
+		var/list/savedPapers = F.StorePaperDataList()
+		paper_json[F.persistenceID] = savedPapers
+
+	photo_json = json_encode(photo_json)
+	paper_json = json_encode(paper_json)
+
+	WRITE_FILE(photo_path, photo_json)
+	WRITE_FILE(paper_path, paper_json)
 
 /datum/controller/subsystem/persistence/proc/CollectSecretSatchels()
 	satchel_blacklist = typecacheof(list(/obj/item/stack/tile/plasteel, /obj/item/crowbar))
