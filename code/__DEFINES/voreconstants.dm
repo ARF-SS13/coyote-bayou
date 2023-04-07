@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(player_sizes_list, list("Macro" = SIZESCALE_HUGE, "Big" = SIZES
 */
 
 GLOBAL_LIST_INIT(pred_vore_sounds, list(
-/* 		"Gulp" = 'sound/vore/pred/swallow_01.ogg',
+		"Gulp" = 'sound/vore/pred/swallow_01.ogg',
 		"Swallow" = 'sound/vore/pred/swallow_02.ogg',
 		"Insertion1" = 'sound/vore/pred/insertion_01.ogg',
 		"Insertion2" = 'sound/vore/pred/insertion_02.ogg',
@@ -56,7 +56,7 @@ GLOBAL_LIST_INIT(pred_vore_sounds, list(
 		"Rustle 4 (cloth)"	= 'sound/effects/rustle4.ogg',
 		"Rustle 5 (cloth)"	= 'sound/effects/rustle5.ogg',
 		//Extreme SPLURT degeneracy starts here
-		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
+/* 		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
 		"Fart 1" = 'modular_splurt/sound/voice/farts/fart1.ogg',
 		"Fart 2" = 'modular_splurt/sound/voice/farts/fart2.ogg',
 		"Fart 3" = 'modular_splurt/sound/voice/farts/fart3.ogg',
@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(pred_vore_sounds, list(
 		))
 
 GLOBAL_LIST_INIT(prey_vore_sounds, list(
-/* 		"Gulp" = 'sound/vore/prey/swallow_01.ogg',
+		"Gulp" = 'sound/vore/prey/swallow_01.ogg',
 		"Swallow" = 'sound/vore/prey/swallow_02.ogg',
 		"Insertion1" = 'sound/vore/prey/insertion_01.ogg',
 		"Insertion2" = 'sound/vore/prey/insertion_02.ogg',
@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(prey_vore_sounds, list(
 		"Rustle 4 (cloth)"	= 'sound/effects/rustle4.ogg',
 		"Rustle 5 (cloth)"	= 'sound/effects/rustle5.ogg',
 		//Extreme SPLURT degeneracy starts here
-		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
+/*		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
 		"Fart 1" = 'modular_splurt/sound/voice/farts/fart1.ogg',
 		"Fart 2" = 'modular_splurt/sound/voice/farts/fart2.ogg',
 		"Fart 3" = 'modular_splurt/sound/voice/farts/fart3.ogg',
@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(prey_vore_sounds, list(
 		))
 
 GLOBAL_LIST_INIT(pred_release_sounds, list(
-/* 		"Rustle (cloth)" = 'sound/effects/rustle1.ogg',
+		"Rustle (cloth)" = 'sound/effects/rustle1.ogg',
 		"Rustle 2 (cloth)" = 'sound/effects/rustle2.ogg',
 		"Rustle 3 (cloth)" = 'sound/effects/rustle3.ogg',
 		"Rustle 4 (cloth)" = 'sound/effects/rustle4.ogg',
@@ -136,7 +136,7 @@ GLOBAL_LIST_INIT(pred_release_sounds, list(
 		"Pred Escape" = 'sound/vore/pred/escape.ogg',
 		"Splatter" = 'sound/effects/splat.ogg',
 		//Extreme SPLURT degeneracy starts here
-		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
+/*		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
 		"Fart 1" = 'modular_splurt/sound/voice/farts/fart1.ogg',
 		"Fart 2" = 'modular_splurt/sound/voice/farts/fart2.ogg',
 		"Fart 3" = 'modular_splurt/sound/voice/farts/fart3.ogg',
@@ -164,7 +164,7 @@ GLOBAL_LIST_INIT(pred_release_sounds, list(
 		))
 
 GLOBAL_LIST_INIT(prey_release_sounds, list(
-/* 		"Rustle (cloth)" = 'sound/effects/rustle1.ogg',
+		"Rustle (cloth)" = 'sound/effects/rustle1.ogg',
 		"Rustle 2 (cloth)" = 'sound/effects/rustle2.ogg',
 		"Rustle 3 (cloth)" = 'sound/effects/rustle3.ogg',
 		"Rustle 4 (cloth)" = 'sound/effects/rustle4.ogg',
@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 		"Pred Escape" = 'sound/vore/prey/escape.ogg',
 		"Splatter" = 'sound/effects/splat.ogg',
 		//Extreme SPLURT degeneracy starts here
-		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
+/* 		"Fart" = 'modular_splurt/sound/voice/farts/fart.ogg',
 		"Fart 1" = 'modular_splurt/sound/voice/farts/fart1.ogg',
 		"Fart 2" = 'modular_splurt/sound/voice/farts/fart2.ogg',
 		"Fart 3" = 'modular_splurt/sound/voice/farts/fart3.ogg',
