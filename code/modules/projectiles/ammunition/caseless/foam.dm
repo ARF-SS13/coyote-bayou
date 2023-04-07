@@ -8,6 +8,7 @@
 	custom_materials = list(/datum/material/iron = 11.25)
 	harmful = FALSE
 	var/modified = FALSE
+	sound_properties = CSP_DART
 
 /obj/item/ammo_casing/caseless/foam_dart/update_icon_state()
 	if (modified)

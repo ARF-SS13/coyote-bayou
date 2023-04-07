@@ -22,7 +22,7 @@
 	/// Which direction do the casings fly out?
 	var/handedness = GUN_EJECTOR_RIGHT
 	var/cock_sound = "gun_slide_lock"
-
+	fire_sound = null //null tells the gun to draw from the casing instead of the gun for sound
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if(spawnwithmagazine)

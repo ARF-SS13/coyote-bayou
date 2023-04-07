@@ -232,4 +232,6 @@ GLOBAL_LIST_EMPTY(casing_sound_properties)
 	category = CSP_DART // also foam
 	shoot_sound = list('sound/items/syringeproj.ogg')
 
-
+/datum/ammo_sound_properties/misc/m40mm
+	category = CSP_40MM
+	shoot_sound = list('sound/weapons/grenadelaunch.ogg')

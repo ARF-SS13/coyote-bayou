@@ -327,7 +327,7 @@ ATTACHMENTS
 	if(!soundies)
 		return
 	var/list/shootprops = soundies.shootlist(silenced)
-	if(!use_casing_sounds)
+	if(!isnull(fire_sound))
 		shootprops[CSP_INDEX_SOUND_OUT] = silenced ? fire_sound_silenced : fire_sound
 
 	playsound(
@@ -1414,7 +1414,7 @@ ATTACHMENTS
 	if(!soundies)
 		return
 	var/list/shootprops = soundies.shootlist(FALSE)
-	if(!use_casing_sounds)
+	if(!isnull(fire_sound))
 		shootprops[CSP_INDEX_SOUND_OUT] = fire_sound
 
 	playsound(

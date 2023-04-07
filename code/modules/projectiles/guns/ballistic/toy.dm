@@ -6,7 +6,7 @@
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/smg
-	fire_sound = 'sound/weapons/gunshot_smg.ogg'
+	//fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	weapon_class = WEAPON_CLASS_NORMAL
 	force = 0
 	throwforce = 0

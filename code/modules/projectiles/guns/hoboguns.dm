@@ -82,7 +82,7 @@
 		GUN_MISFIRE_THROWS_GUN(2),
 		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
 	)
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/hobo/zipgun/update_icon_state()
 	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
@@ -122,7 +122,7 @@
 		GUN_MISFIRE_UNLOADS_GUN(5, 50)
 	)
 
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
 	can_scope = TRUE
 
 /// Multicaliber shouldergun
@@ -189,7 +189,7 @@
 		GUN_MISFIRE_UNLOADS_GUN(2, 50)
 	)
 
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /* * * * * * * * * * *
  * SHOTGUN BAT
@@ -222,7 +222,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	//fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	prefered_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS // can fire handloadeds fine, everything else has *a price~*
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(20, 15, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
@@ -268,7 +268,7 @@
 		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
 	)
 
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /* * * * * * * * * * *
  * Knucklegun
@@ -303,7 +303,7 @@
 		GUN_MISFIRE_UNLOADS_GUN(5, 50)
 	)
 
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
 /* * * * * * * * * * *
@@ -346,7 +346,7 @@
 	// .357 Handload outta the bags is fine aswell. it's a shitgun made by poors.
 	// TODO: Find some way to make a blinding effect on misfire.
 
-	fire_sound = 'sound/weapons/Gunshot.ogg'
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
 	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
@@ -502,7 +502,7 @@
 )
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
-	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	//fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
 /obj/item/gun/ballistic/revolver/winchesterrebored/attackby(obj/item/A, mob/user, params)
 	..()

@@ -646,7 +646,7 @@
 	suppressor_y_offset = 17
 
 	actions_types = list(/datum/action/item_action/toggle_sidewinder)
-	fire_sound = 'sound/f13weapons/9mm.ogg'
+	//fire_sound = 'sound/f13weapons/9mm.ogg'
 	use_casing_sounds = TRUE
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder/update_icon_state()
@@ -736,7 +736,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	fire_sound = 'sound/f13weapons/44mag.ogg'
+	//fire_sound = 'sound/f13weapons/44mag.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder/magnum/change_the_ammo(mob/user)
 	var/message2self = "You wrench the upper receiver of [src] out of its socket and give it one full turn. "
@@ -745,19 +745,19 @@
 		if("44")
 			current_caliber = "14mm"
 			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m14mm)
-			fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+			//fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 			message2self += "The panel on the side now reads: \"14mm Mode\""
 
 		if("14mm")
 			current_caliber = "45ACP"
 			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m45)
-			fire_sound = 'sound/weapons/gunshot_smg.ogg'
+			//fire_sound = 'sound/weapons/gunshot_smg.ogg'
 			message2self += "The panel on the side now reads: \".45ACP Mode\""
 
 		if("45ACP")
 			current_caliber = "44"
 			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m44)
-			fire_sound = 'sound/f13weapons/44mag.ogg'
+			//fire_sound = 'sound/f13weapons/44mag.ogg'
 			message2self += "The panel on the side now reads: \".44 Magnum Mode\""
 
 	playsound(get_turf(src), 'sound/f13weapons/revolverspin.ogg', 60, 1)

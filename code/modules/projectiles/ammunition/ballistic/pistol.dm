@@ -92,6 +92,7 @@
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVIER_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_14MM
 
 /obj/item/ammo_casing/p14mm/improvised
 	name = "shoddy 14mm bullet casing"
@@ -131,6 +132,7 @@
 		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_PISTOL_22
 
 /obj/item/ammo_casing/a22/rubber
 	name = ".22lr rubber bullet casing"
@@ -160,6 +162,7 @@
 		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
 		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_PISTOL_22
 
 // BETA AMMO // Obsolete
 /obj/item/ammo_casing/testcasing

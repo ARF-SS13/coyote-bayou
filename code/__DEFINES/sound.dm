@@ -377,6 +377,7 @@
 #define CSP_MISC "weh"
 #define CSP_ROCK "roc"
 #define CSP_DART "nerf"
+#define CSP_40MM "40mm"
 
 /// gun sound indexes
 #define CSP_INDEX_SOUND_OUT "out"
