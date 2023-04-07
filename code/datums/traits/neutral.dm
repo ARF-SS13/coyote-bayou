@@ -448,7 +448,7 @@
 	var/obj/item/folder/folder = new(get_turf(human_holder))
 	folder.persistenceID = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	folder.PersistenceLoad()
-	folder.name = "[human_holder.real_name]'s photo album"
+	folder.name = "[human_holder.real_name]'s journal"
 
 	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 		human_holder.put_in_hands(folder)
