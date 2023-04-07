@@ -1295,3 +1295,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/burma
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/burma/britishbattle
+	name = "British Battle Dress"
+	cost = 1
+	path = /obj/item/clothing/under/burma/britishbattledress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
