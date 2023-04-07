@@ -838,7 +838,7 @@
 
 //NCR Ranger's stuff
 
-/obj/item/storage/belt/utility/commonwealth_brit
+/obj/item/storage/belt/military/commonwealth_brit
 	name = "burma webbing"
 	desc = "A versatile chest rig, this one seems to be used in jungle enviroments and such"
 	icon_state = "brit_webbing"

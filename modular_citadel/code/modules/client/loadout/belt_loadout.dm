@@ -83,6 +83,6 @@
 
 /datum/gear/belt/webbing/burma
 	name = "burma webbing"
-	path = /obj/item/storage/belt/utility/commonwealth_brit
-	cost = 1
+	path = /obj/item/storage/belt/military/commonwealth_brit
+
 

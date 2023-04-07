@@ -104,7 +104,7 @@ Administrator
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/high = 1,
 		/obj/item/hypospray/mkii/CMO = 1
 	)
 
@@ -178,7 +178,7 @@ Administrator
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/storage/firstaid/ancient=1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 		)
 
 /datum/outfit/loadout/environmental_scientist
@@ -285,7 +285,7 @@ Practitioner
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /datum/outfit/loadout/physician
@@ -377,7 +377,7 @@ Follower Volunteer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
 		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /datum/outfit/loadout/volunteer_emt
@@ -468,7 +468,7 @@ Follower Volunteer
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/belt/army/followers = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /*

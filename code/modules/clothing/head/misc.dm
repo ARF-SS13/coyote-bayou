@@ -632,18 +632,6 @@
 	icon_state = "mk2_nettan_2"
 	item_state= "mk2_nettan_2"
 
-/obj/item/clothing/head/slouch/unpinned
-	name = "Khaki Slouch Hat, unpinned"
-	desc = "A khaki fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
-	icon_state = "slouch_khaki_unpinned"
-	item_state = "slouch_khaki_unpinned"
-
-/obj/item/clothing/head/slouch/pinned
-	name = "Khaki Slouch Hat, pinned"
-	desc = "A khaki fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
-	icon_state = "slouch_khaki_pinned"
-	item_state = "slouch_khaki_pinned"
-
 /obj/item/clothing/head/military_turban
 	name = "Military Turban"
 	desc = "A Military green Turban used by pre war Raj recently freed of its British overlords."

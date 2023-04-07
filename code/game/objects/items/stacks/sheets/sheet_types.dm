@@ -458,7 +458,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("mattress", /obj/structure/bed/mattress, 2, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
-	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
+	new/datum/stack_recipe("money pouch", /obj/item/storage/wallet/stash, 5), \
 	new/datum/stack_recipe("9mm ammo belt", /obj/item/ammo_box/magazine/autopipe/empty, 12), \
 	null, \
 	new/datum/stack_recipe_list("bedsheet", list( \

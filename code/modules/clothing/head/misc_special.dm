@@ -33,7 +33,6 @@
 /obj/item/clothing/head/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
 
-
 /*
  * Cakehat
  */
@@ -329,3 +328,23 @@
 	icon_state = "m1helm"
 	item_state = "helmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
+/obj/item/clothing/head/slouch
+	name = "Khaki Slouch Hat"
+	desc = "A khaki fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
+	icon_state = "slouch_khaki"
+	item_state = "slouch_khaki"
+	can_toggle = 1
+	actions_types = list(/datum/action/item_action/toggle)
+
+
+/obj/item/clothing/head/slouch/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated())
+		up = !up
+		icon_state = "[initial(icon_state)][up ? "up" : ""]"
+		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")
+
+		user.update_inv_head()
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.head_update(src, forced = 1)

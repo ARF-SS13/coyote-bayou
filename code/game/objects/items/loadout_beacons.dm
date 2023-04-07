@@ -1018,6 +1018,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m9mm(src)
 	new /obj/item/ammo_box/magazine/m9mm(src)
 
+/obj/item/storage/box/gun/pistol/ruby/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+
 /obj/item/storage/box/gun/pistol/beretta
 	name = "Beretta M9FS case"
 
@@ -1579,6 +1585,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/luger
+
+/datum/loadout_box/ruby
+	entry_tag = "9mm Bootgun"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/ruby
 
 /datum/loadout_box/beretta
 	entry_tag = "Beretta M9FS"
