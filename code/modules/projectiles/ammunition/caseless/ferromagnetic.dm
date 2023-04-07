@@ -5,6 +5,7 @@
 	click_cooldown_override = 2.5
 	delay = 3
 	var/energy_cost = 200
+	sound_properties = CSP_RIFLE_MEDIUM
 
 /obj/item/ammo_casing/caseless/magnetic
 	projectile_type = /obj/item/projectile/bullet/magnetic

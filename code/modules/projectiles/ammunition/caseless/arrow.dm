@@ -10,6 +10,7 @@
 	throw_speed = 3
 	w_class = WEIGHT_CLASS_SMALL //why were arrows normal sized? that's cruel
 	is_pickable = FALSE
+	sound_properties = CSP_MISC
 
 /obj/item/ammo_casing/caseless/arrow/metal
 	name = "metal arrow"

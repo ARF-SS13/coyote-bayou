@@ -51,21 +51,12 @@
 	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
 	icon_state = "lasercw"
 	item_state = "rcw"
-	automatic = 1
-	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
-
-	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
 	damage_multiplier = GUN_LESS_DAMAGE_T6
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
-	burst_size = 1
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm400,
 		/datum/firemode/semi_auto
@@ -97,14 +88,6 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ponycrusader"
 	item_state = "ponycrusader"
-
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	init_recoil = HANDGUN_RECOIL(0.8)
 
 /obj/item/card/id/dogtag/darknova
@@ -496,7 +479,7 @@
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 	new /obj/item/storage/belt/shoulderholster/kemble(src)
 	new /obj/item/storage/belt/army/assault(src)
-	new /obj/item/gun/ballistic/revolver/m2405(src)
+//	new /obj/item/gun/ballistic/revolver/m2405(src) //YEAH UH, NO
 	new /obj/item/melee/unarmed/tigerclaw(src)
 	new /obj/item/lighter/fusion(src)
 
@@ -817,7 +800,7 @@
 	ckeywhitelist = list("risingstarslash")
 
 /obj/item/storage/box/large/custom_kit/risingstarslash4/PopulateContents()
-	new /obj/item/gun/ballistic/bow/gold(src)
+//	new /obj/item/gun/ballistic/bow/gold(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 	new /obj/item/reagent_containers/pill/fiery_purgative(src)

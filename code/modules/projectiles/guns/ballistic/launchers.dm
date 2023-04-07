@@ -10,20 +10,9 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_BULKY
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	pin = /obj/item/firing_pin
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(null),
-		SP_DISTANT_RANGE(null)
-	)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
 	..()
@@ -41,30 +30,13 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_SHOTGUN_FAST
 
 	can_bayonet = FALSE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
-	)
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(null),
-		SP_DISTANT_RANGE(null)
 	)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
@@ -83,11 +55,9 @@
 	desc = "A prototype pistol designed to fire self propelled rockets."
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	slot_flags = ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m75
 	init_mag_type = /obj/item/ammo_box/magazine/m75
-	burst_size = 1
-	fire_delay = 0
 	actions_types = list()
 	casing_ejector = FALSE
 
@@ -99,16 +69,10 @@
 	desc = "A weapon favored by carp hunters. Fires specialized spears using kinetic energy."
 	icon_state = "speargun"
 	item_state = "speargun"
-	slot_flags = ITEM_SLOT_BACK
-	w_class = WEIGHT_CLASS_BULKY
-	force = 10
+	weapon_class = WEAPON_CLASS_RIFLE
 	can_suppress = FALSE
-	automatic_burst_overlay = FALSE
 	mag_type = /obj/item/ammo_box/magazine/internal/speargun
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	burst_size = 1
-	fire_delay = 0
-	select = 0
 	actions_types = list()
 	casing_ejector = FALSE
 
@@ -135,14 +99,12 @@
 	item_state = "rocketlauncher" //not sure where it is or if this works. hopefully.
 	mag_type = /obj/item/ammo_box/magazine/internal/mininuke
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
-	w_class = WEIGHT_CLASS_BULKY
+	weapon_class = WEAPON_CLASS_RIFLE
 	can_suppress = FALSE
-	burst_size = 1
 	slowdown = 1
 	projectile_speed_multiplier = 0.4 //run
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	slot_flags = ITEM_SLOT_BACK
 	magazine_wording = "mininuke"
 
 /obj/item/gun/ballistic/fatman/update_icon_state()
@@ -158,9 +120,8 @@
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
-	w_class = WEIGHT_CLASS_BULKY
+	weapon_class = WEAPON_CLASS_RIFLE
 	can_suppress = FALSE
-	burst_size = 1
 	slowdown = 1
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -173,9 +134,7 @@
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
-	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
-	burst_size = 1
 	slowdown = 1
 	projectile_speed_multiplier = 0.1
 	damage_multiplier = GUN_LESS_DAMAGE_T2
@@ -272,11 +231,9 @@
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/brick
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	can_suppress = FALSE
 	burst_size = 1
-	slowdown = 1
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	magazine_wording = "rocket"

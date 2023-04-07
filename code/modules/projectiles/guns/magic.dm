@@ -7,6 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	fire_sound = 'sound/weapons/emitter.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
 	flags_1 =  CONDUCT_1
 	w_class = WEIGHT_CLASS_HUGE
 	var/checks_antimagic = TRUE
