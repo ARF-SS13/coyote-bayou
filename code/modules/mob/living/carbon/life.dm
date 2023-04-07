@@ -85,8 +85,9 @@
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
 		return TRUE
 	var/obj/item/organ/lungs = getorganslot(ORGAN_SLOT_LUNGS)
-	if(reagents.has_reagent(/datum/reagent/toxin/lexorin))
-		return
+	if(reagents) // Stops the whole issue of the reagents not initialising. I don't care on how cursed this looks anymore lmao.
+		if(reagents.has_reagent(/datum/reagent/toxin/lexorin))
+			return
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 	if(ismob(loc))
