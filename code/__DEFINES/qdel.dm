@@ -55,3 +55,43 @@
 #define QDEL_LIST_ASSOC(L) if(L) { for(var/I in L) { qdel(L[I]); qdel(I); } L.Cut(); }
 #define QDEL_LIST_ASSOC_VAL(L) if(L) { for(var/I in L) qdel(L[I]); L.Cut(); }
 
+/// LISTFUCKER9000
+/proc/qdel_list_recursive(list/deeplist)
+	if(!length(deeplist))
+		return
+	for(var/i in deeplist)
+		if(islist(i))
+			qdel_list_recursive(i)
+		qdel(i)
+	deeplist.Cut()
+
+/// LISTFUCKER8000
+/// Removes everything in deeplist from fromlist
+/// mostly for deeply nested lists that are applied to non-nested lists
+/// and then axes the nested list
+/// cool huh?
+/proc/remove_list_recursive(list/deeplist, list/fromlist)
+	if(!length(deeplist))
+		return
+	for(var/i in deeplist)
+		if(islist(i))
+			remove_list_recursive(i, fromlist)
+		if(islist(deeplist[i]))
+			remove_list_recursive(deeplist[i], fromlist)
+		fromlist -= i
+	deeplist.Cut()
+
+/// LISTlover 420
+/// Like remove_list_recursive, but returns just a list full of the elements
+/// ooh ooh maybe if I make more recursive listfuckers, I'll actually use one!
+/// cool huh?
+/proc/flatten_list_recursive(list/deeplist)
+	if(!length(deeplist))
+		return
+	. = list()
+	for(var/i in deeplist)
+		if(islist(i))
+			flatten_list_recursive(i)
+		if(islist(deeplist[i]))
+			flatten_list_recursive(deeplist[i])
+		. += i

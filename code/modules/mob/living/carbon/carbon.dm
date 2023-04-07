@@ -392,23 +392,16 @@
 		dat += "You dont seem to have any movable genitals!"
 	dat += "<tr>"
 	dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
-	var/genital_shirtlayer
+	/* var/genital_shirtlayer
 	if(CHECK_BITFIELD(dna.features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
 		genital_shirtlayer = "Over Underwear"
 	else if(CHECK_BITFIELD(dna.features["genital_visibility_flags"], GENITAL_ABOVE_CLOTHING))
 		genital_shirtlayer = "Over Clothes"
 	else
-		genital_shirtlayer = "Under Underwear"
+		genital_shirtlayer = "Under Underwear" */
 
 	dat += {"<td colspan='3' class='coverage_on'>
-			<a 
-				class='clicky_no_border'
-				href='
-					?src=[REF(src)];
-					action=change_genital_outfit_layering'
-					nadflag=[genital_shirtlayer]>
-						[genital_shirtlayer]
-			</a>
+			Over Clothes
 			</td>"}
 	dat += "</table>"
 
