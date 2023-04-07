@@ -70,7 +70,7 @@
 
 	var/list/dat = list()
 	dat["name"] = name
-	dat["icon"] = icon
+	//dat["icon"] = icon
 	dat["icon_state"] = icon_state
 	dat["info"] = info
 	dat["color"] = color
@@ -86,7 +86,7 @@
 		return FALSE
 	
 	name = dat["name"]
-	icon = dat["icon"]
+	//icon = dat["icon"]
 	icon_state = dat["icon_state"]
 	info = dat["info"]
 	color = dat["color"]
