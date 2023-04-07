@@ -368,7 +368,7 @@
 	obj_integrity = 400
 	max_integrity = 400
 	proj_pass_rate = 90
-	pass_flags = LETPASSTHROW | PASSGRILLE //Feed the prisoners, or not.
+	pass_flags = PASSGRILLE //Feed the prisoners, or not.
 
 /*
 /obj/structure/barricade/sandbags
