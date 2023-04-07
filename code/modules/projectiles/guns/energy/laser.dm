@@ -866,9 +866,12 @@
 /obj/item/gun/energy/laser/aer9/focused/worn
 	name = "\improper Hot-wired AER10 laser rifle"
 	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_state = "juryriggedlaser"
-	item_state = "laser-rifle10"
+	icon_state = "hotwiredlaser"
+	item_state = "hotwiredlaser"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
