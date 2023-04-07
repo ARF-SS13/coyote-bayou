@@ -121,6 +121,13 @@
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
+/obj/item/card/id/dogtag/radiantflash
+	name = "holo dogtag"
+	icon_state = "holodogtag"
+	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Rynn Morand  with a rank of senior scribe. The sex is listed as male, the blood type is listed as O negative, A serial number is written of 210-463-053-15. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
+	assignment = "ID tags"
+	uses_overlays = FALSE
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -773,6 +780,17 @@
 
 // Q
 // R
+
+/datum/gear/donator/kits/radiantflash
+	name = "Rynn's Kit"
+	path = /obj/item/storage/box/large/custom_kit/radiantflash
+	ckeywhitelist = list("radiantflash")
+
+/obj/item/storage/box/large/custom_kit/radiantflash/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/blueprint/aer9/focused/worn(src)
+	new /obj/item/clothing/accessory/bos/seniorscribe(src)
+	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat(src)
+	new /obj/item/card/id/dogtag/radiantflash(src)
 
 /datum/gear/donator/kits/risingstarslash
 	name = "Blue's Kit"

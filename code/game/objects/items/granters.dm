@@ -494,10 +494,10 @@
 		span_red("DIVE THE FUKC IN RUN TOO SLOW"),
 		span_red("AAAAAAAAAAAAAAAAAAAAAAAAAAA"),
 		span_userdanger("AAAAAAAAAAAAAAAAAAAAA"),
-		span_red("FACEPLANT MUDERFUKC KILLHARD"), 
-		span_red("JUST FUKCING JUMP AT THEM"), 
-		span_red("SCREM SO YOUR FUCK HIT HARDER"), 
-		span_red("WINNERS DONT DO DRUGS"), 
+		span_red("FACEPLANT MUDERFUKC KILLHARD"),
+		span_red("JUST FUKCING JUMP AT THEM"),
+		span_red("SCREM SO YOUR FUCK HIT HARDER"),
+		span_red("WINNERS DONT DO DRUGS"),
 		span_red("SPIN2FUKCIN KILLFUCK"))
 
 /obj/item/book/granter/martial/raging_boar/onlearned(mob/living/carbon/user)
@@ -789,6 +789,16 @@
 	name = "aer9 blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/AER9)
+
+/obj/item/book/granter/crafting_recipe/blueprint/aer9/focused
+	name = "hotwired aer9 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/AER9/hotwired)
+
+/obj/item/book/granter/crafting_recipe/blueprint/aer9/focused/worn
+	name = "aer10 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/AER9/hotwired/worn)
 
 /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle
 	name = "plasma rifle blueprint"
