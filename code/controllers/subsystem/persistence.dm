@@ -356,20 +356,25 @@ SUBSYSTEM_DEF(persistence)
 
 	var/json_file = wrap_file("data/npc_saves/SecretSatchels[SSmapping.config.map_name].json")
 	var/list/file_data = list()
-	fdel(json_file)
+
+	if(json_file) // no more runtimes for you too chief.
+		fdel(json_file)
 	file_data["data"] = old_secret_satchels + satchels_to_add
 	WRITE_FILE(json_file, json_encode(file_data))
 
 /datum/controller/subsystem/persistence/proc/CollectChiselMessages()
 	var/json_file = wrap_file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
-
+	
 	for(var/obj/structure/chisel_message/M in chisel_messages)
 		saved_messages += list(M.pack())
 
 	log_world("Saved [saved_messages.len] engraved messages on map [SSmapping.config.map_name]")
 	var/list/file_data = list()
 	file_data["data"] = saved_messages
-	fdel(json_file)
+
+	if(json_file) // No more runtimes for you fam.
+		fdel(json_file)
+	
 	WRITE_FILE(json_file, json_encode(file_data))
 
 /datum/controller/subsystem/persistence/proc/SaveChiselMessage(obj/structure/chisel_message/M)
