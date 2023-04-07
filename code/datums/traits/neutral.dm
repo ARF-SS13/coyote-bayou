@@ -434,3 +434,22 @@
 	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 		human_holder.put_in_hands(cam)
 
+/datum/quirk/item_quirk/journalist
+	name = "Journalist"
+	desc = "You carry yourself a pen and a personal folder around, you are known to be the one who records everything."
+	value = 0
+	mob_trait = TRAIT_JOURNALIST
+	gain_text = span_notice("You feel like you need to harrass politicians.")
+	lose_text = span_danger("You forget how to be a journalist. :(")
+	medical_record_text = ""
+
+/datum/quirk/item_quirk/photographer/add()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/folder/folder = new(get_turf(human_holder))
+	folder.persistenceID = "personal_[human_holder.last_mind?.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	folder.PersistenceLoad()
+	folder.name = "[human_holder.real_name]'s photo album"
+
+	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		human_holder.put_in_hands(folder)
+

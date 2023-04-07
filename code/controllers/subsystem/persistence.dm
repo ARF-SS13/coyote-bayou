@@ -27,6 +27,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/obj/structure/sign/painting/painting_frames = list()
 	var/list/paintings = list()
 	var/list/obj/structure/noticeboard/noticeBoards = list()
+	var/list/obj/item/folder/folders = list()
 
 /datum/controller/subsystem/persistence/Initialize()
 	LoadSatchels()
@@ -47,6 +48,7 @@ SUBSYSTEM_DEF(persistence)
 	LoadPanicBunker()
 	SSjob.AddMapJobs() //shut up
 	LoadPaintings() //i am in physical pain
+	LoadFolders()
 	return ..()
 
 /datum/controller/subsystem/persistence/proc/LoadSatchels()
@@ -255,6 +257,7 @@ SUBSYSTEM_DEF(persistence)
 	SavePaintings()
 	SaveScars()
 	SaveNoticeboards()
+	SaveFolders()
 
 /datum/controller/subsystem/persistence/proc/LoadPanicBunker()
 	var/bunker_path = file("data/bunker_passthrough.json")
@@ -624,3 +627,43 @@ SUBSYSTEM_DEF(persistence)
 		if(!ending_human.client)
 			return
 		ending_human.client.prefs.save_character()
+
+/datum/controller/subsystem/persistence/proc/GetFolders()
+	var/folder_path = file("data/folders.json")
+	if(fexists(folder_path))
+		return json_decode(file2text(folder_path))
+
+/datum/controller/subsystem/persistence/proc/LoadFolders()
+	var/folder_path = file("data/folders.json")
+	var/list/folder_json = list()
+
+	if(fexists(folder_path))
+		folder_json = json_decode(file2text(folder_path))
+		fdel(folder_path)
+
+	for(var/i in folders)
+		var/obj/item/folder/F = i
+		if(!istype(F) ||!F.persistenceID)
+			continue
+		if(folder_json[F.persistenceID])
+			F.PopulatePaperFromList(folder_json[F.persistenceID])
+
+
+/datum/controller/subsystem/persistence/proc/SaveFolders()
+	var/folder_path = file("data/folders.json")
+	var/list/folder_json = list()
+
+	if(fexists(folder_path))
+		folder_json = json_decode(file2text(folder_path))
+		fdel(folder_path)
+
+	for(var/i in noticeBoards)
+		var/obj/item/folder/F = i
+		if(!istype(F) || !F.persistenceID)
+			continue
+		var/list/savedPapers = F.StorePaperDataList()
+		folder_json[F.persistenceID] = savedPapers
+
+	folder_json = json_encode(folder_json)
+
+	WRITE_FILE(folder_path, folder_json)
