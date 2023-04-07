@@ -428,12 +428,13 @@
 	photo_album.name = "[human_holder.real_name]'s photo album"
 
 	if(!human_holder.equip_to_slot_if_possible(photo_album, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
-		human_holder.put_in_hands(photo_album)
+		if(!human_holder.put_in_hands(photo_album))
+			folder.forceMove(get_turf(photo_album))
 
 	var/obj/item/camera/cam = new(get_turf(human_holder))
 	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
-		human_holder.put_in_hands(cam)
-
+		if(!human_holder.put_in_hands(cam))
+			folder.forceMove(get_turf(cam))
 /datum/quirk/item_quirk/journalist
 	name = "Journalist"
 	desc = "You carry yourself a pen and a personal folder around, you are known to be the one who records everything."
@@ -451,5 +452,6 @@
 	folder.name = "[human_holder.real_name]'s journal"
 
 	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
-		human_holder.put_in_hands(folder)
+		if(!human_holder.put_in_hands(folder))
+			folder.forceMove(get_turf(human_holder))
 
