@@ -1408,7 +1408,7 @@
 
 //worn hotwired aer9
 /datum/crafting_recipe/AER9/hotwired/worn
-	name = "Hotwired AER-10"
+	name = "Worn Hotwired AER-9"
 	result = /obj/item/gun/energy/laser/aer9/focused/worn
 	reqs = list(/obj/item/gun/energy/laser/aer9 = 1,
 				/obj/item/advanced_crafting_components/conductors = 2,
