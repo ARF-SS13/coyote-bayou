@@ -29554,6 +29554,20 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/building/museum)
+"dHT" = (
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 35;
+	plane = -5;
+	name = "Notice Board - Nash";
+	desc = "A notice board, for the town of Nash.";
+	persistence_replacement = "Notice Board - Nash- 2";
+	pixel_x = -3
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar)
 "dHX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/tree/jungle{
@@ -56843,6 +56857,17 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/caves)
+"lhz" = (
+/obj/structure/window/fulltile/wood{
+	layer = 3
+	},
+/obj/structure/decoration/rag,
+/obj/item/wrench/power{
+	pixel_y = 7;
+	anchored = 1
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "lhE" = (
 /obj/effect/decal/waste{
 	icon_state = "goo3"
@@ -67920,7 +67945,20 @@
 	},
 /area/f13/bar)
 "oeK" = (
-/obj/structure/rack,
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 35;
+	plane = -5;
+	name = "Notice Board - Nash";
+	desc = "A notice board, for the town of Nash.";
+	persistence_replacement = "Notice Board - Nash- 1";
+	pixel_x = 4
+	},
+/obj/item/newspaper{
+	pixel_y = 46;
+	pixel_x = 15;
+	anchored = 1
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -72890,6 +72928,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -74177,6 +74216,42 @@
 	icon_state = "housewood1-broken"
 	},
 /area/f13/building/abandoned)
+"pPP" = (
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = -11;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = 9;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 19;
+	layer = 3.2
+	},
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 23;
+	plane = -5;
+	name = "Bounty Board - Nash";
+	desc = "A bounty board for you to place bounty targets information on, backed up by the banks coinage!";
+	persistence_replacement = "Bounty Board - Nash"
+	},
+/obj/item/restraints/handcuffs{
+	pixel_y = 32;
+	anchored = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "pQu" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -80106,9 +80181,33 @@
 "rBz" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/destructible/tribal_torch/wall/lit{
+/obj/structure/fence/wooden{
 	dir = 1;
-	pixel_y = 12
+	pixel_y = 15;
+	pixel_x = -11;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = 9;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 19
+	},
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 23;
+	plane = -5;
+	name = "Personals Board";
+	desc = "This board is for putting personal ads down, feel free to include your discord info as well!";
+	persistence_replacement = "Personals board - Nash"
+	},
+/obj/item/storage/fancy/heart_box{
+	pixel_y = 40;
+	anchored = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -88209,6 +88308,10 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/gear_painter,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -90603,6 +90706,38 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"uvE" = (
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = -11;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = 9;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 19;
+	layer = 3.2
+	},
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 23;
+	plane = -5;
+	name = "Adventuring Board";
+	desc = "A board for pinning your looking for group messages, feel free to include your discord info in the post!";
+	persistence_replacement = "Adventure Board - Nash"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "uvF" = (
 /obj/structure/bed/mattress/pregame,
 /turf/open/indestructible/ground/inside/dirt,
@@ -97899,6 +98034,23 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
+"wxg" = (
+/obj/structure/window/fulltile/wood{
+	layer = 3
+	},
+/obj/structure/decoration/rag,
+/obj/item/shield/riot/buckler{
+	pixel_y = 4;
+	pixel_x = -5;
+	anchored = 1
+	},
+/obj/item/twohanded/sledgehammer/simple{
+	pixel_y = 3;
+	pixel_x = 7;
+	anchored = 1
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "wxi" = (
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/dirt,
@@ -99593,7 +99745,33 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
 "wTS" = (
-/obj/structure/closet/crate/bin,
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = -11;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = 9;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 19;
+	layer = 3.2
+	},
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 23;
+	plane = -5;
+	persistence_replacement = "Projects Board - Nash";
+	name = "Project Board";
+	desc = "This is a board for posting multi-person projects, feel free to include your discord info for building projects!"
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -109981,7 +110159,7 @@ rYZ
 sNY
 tfE
 flt
-wme
+gEk
 oeK
 pdj
 mkb
@@ -110239,7 +110417,7 @@ sNY
 tfE
 flt
 gEk
-oVr
+dHT
 mkb
 mkb
 dJW
@@ -110494,7 +110672,7 @@ qCv
 bGz
 cdS
 tdw
-hEN
+agh
 nFA
 gEk
 spL
@@ -113322,7 +113500,7 @@ uXn
 wqq
 baL
 xvQ
-dVF
+pPP
 brF
 dVF
 dVF
@@ -114335,7 +114513,7 @@ bfD
 fvw
 lfi
 lrR
-nXV
+lhz
 wTS
 dVF
 dVF
@@ -114592,8 +114770,8 @@ dUj
 nSY
 caB
 qFj
-nXV
-dVF
+wxg
+uvE
 brF
 dVF
 dVF
