@@ -14761,10 +14761,6 @@
 /obj/item/clothing/shoes/laceup,
 /obj/item/hand_labeler,
 /obj/item/storage/briefcase,
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
 /turf/open/floor/carpet/green,
 /area/f13/building)
 "aYW" = (
@@ -15626,7 +15622,6 @@
 	},
 /area/f13/building/hospital)
 "bcr" = (
-/obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/securedoor{
 	name = "First Bank of Nash";
@@ -63227,6 +63222,9 @@
 	name = "banker rubber stamp";
 	pixel_x = 4
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building)
 "mSQ" = (
@@ -103073,13 +103071,6 @@
 	},
 /area/f13/caves)
 "xSQ" = (
-/obj/machinery/button/door{
-	id = "bankdesk";
-	name = "counter shutters";
-	pixel_x = -6;
-	pixel_y = -32;
-	req_one_access_txt = "52"
-	},
 /obj/structure/closet/crate/bin,
 /obj/structure/decoration/clock/active{
 	pixel_x = 28
