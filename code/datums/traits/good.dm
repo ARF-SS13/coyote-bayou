@@ -81,6 +81,8 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag))
 
+GLOBAL_LIST_INIT(energyweapon_crafting, list(
+	/datum/crafting_recipe/AER9/hotwired))
 
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
@@ -329,12 +331,14 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 		H.mind.learned_recipes = list()
 	H.mind.learned_recipes |= GLOB.tier_three_parts
 	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
+	H.mind.learned_recipes |= GLOB.energyweapon_crafting
 
 /datum/quirk/technophreak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.mind.learned_recipes -= GLOB.tier_three_parts
 		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
+		H.mind.learned_recipes -= GLOB.energyweapon_crafting
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
