@@ -1528,7 +1528,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	return TRUE
 
 /obj/item/gun/proc/post_modify_projectile(obj/item/projectile/BB)
-    return
+	return
 
 /obj/item/storage/backpack/debug_gun_hobo
 	name = "Bag of Gunstuff 4 hobos"
