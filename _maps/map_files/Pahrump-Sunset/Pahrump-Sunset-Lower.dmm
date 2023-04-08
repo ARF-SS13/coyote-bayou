@@ -1309,6 +1309,11 @@
 /obj/structure/wreck/trash/five_tires,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"bat" = (
+/obj/machinery/door/unpowered/securedoor,
+/obj/effect/step_trigger/player_choice_log,
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "bbc" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -13215,6 +13220,10 @@
 "hWr" = (
 /obj/structure/table/wood/fancy/monochrome,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/snacks/grown/cucumber{
+	name = "Homewrecker";
+	desc = "Oblong and green, with pimples, this one smells a bit fishy and is... slimey?  Oh no."
+	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "hWD" = (
@@ -39725,7 +39734,7 @@ iad
 tPr
 gcv
 tPr
-cCM
+bat
 bZa
 jNE
 hLt
@@ -39981,8 +39990,8 @@ otF
 bOb
 hXn
 gcv
-gcv
-cCM
+qKz
+bOb
 bZa
 jNE
 jNE
@@ -40238,7 +40247,7 @@ jfO
 bOb
 hXn
 mEa
-qKz
+tkZ
 bOb
 kMN
 oJA

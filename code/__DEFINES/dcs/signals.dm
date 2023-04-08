@@ -466,6 +466,7 @@
 #define COMSIG_HUMAN_PREFS_COPIED_TO "human_prefs_copied_to"					//from datum/preferences/copy_to(): (datum/preferences, icon_updates, roundstart_checks)
 #define COMSIG_HUMAN_HARDSET_DNA "human_hardset_dna"							//from mob/living/carbon/human/hardset_dna(): (ui, list/mutation_index, newreal_name, newblood_type, datum/species, newfeatures)
 #define COMSIG_HUMAN_ON_RANDOMIZE "humman_on_randomize"							//from base of proc/randomize_human()
+#define COMSIG_HUMAN_UPDATE_GENITALS "hummen_update_genitals"							//from base of proc/randomize_human()
 
 // /datum/species signals
 #define COMSIG_SPECIES_GAIN "species_gain"						//from datum/species/on_species_gain(): (datum/species/new_species, datum/species/old_species)

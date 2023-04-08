@@ -4,8 +4,8 @@
 	icon_state = "empty_blastcannon"
 	var/icon_state_loaded = "loaded_blastcannon"
 	item_state = "blastcannon_empty"
-	w_class = WEIGHT_CLASS_NORMAL
-	force = 10
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 	fire_sound = 'sound/weapons/blastcannon.ogg'
 	item_flags = NONE
 	clumsy_check = FALSE

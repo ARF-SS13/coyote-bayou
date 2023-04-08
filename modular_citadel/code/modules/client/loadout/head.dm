@@ -552,3 +552,23 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/turban
 	name = "Military Turban"
 	path = /obj/item/clothing/head/military_turban
+
+/datum/gear/head/burmacowboyblack
+	name = "Burma Cowboy Hat, black"
+	path = /obj/item/clothing/head/burma/cowboy/black
+
+/datum/gear/head/burmacowboyblackribbon
+	name = "Burma Cowboy Hat, black with ribbon"
+	path = /obj/item/clothing/head/burma/cowboy/black/ribbon
+
+/datum/gear/head/burmacowboybrown
+	name = "Burma Cowboy Hat, brown"
+	path = /obj/item/clothing/head/burma/cowboy/brown
+
+/datum/gear/head/pith
+	name = "Pith"
+	path = /obj/item/clothing/head/burma/pith
+
+/datum/gear/head/glengarry
+	name = "Glengarry"
+	path = /obj/item/clothing/head/burma/glengarry

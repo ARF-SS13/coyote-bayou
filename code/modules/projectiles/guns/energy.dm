@@ -16,15 +16,8 @@
 	name = "energy gun"
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 
 	var/obj/item/stock_parts/cell/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -55,17 +48,6 @@
 		WEAPON_NORMAL
 	)
 	init_recoil = HANDGUN_RECOIL(0.1)
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(LASER_VOLUME),
-		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(LASER_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
-		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
-	)
-
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()

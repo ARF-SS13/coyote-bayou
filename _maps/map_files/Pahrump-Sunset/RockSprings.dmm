@@ -29050,6 +29050,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"mGZ" = (
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "mHm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/repaired,
@@ -33746,6 +33753,9 @@
 	},
 /obj/effect/turf_decal/bot,
 /obj/effect/spawner/lootdrop/f13/weapon/unique,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "oNx" = (
@@ -34585,6 +34595,10 @@
 	},
 /turf/open/water,
 /area/f13/wasteland)
+"phU" = (
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "pil" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -37379,6 +37393,9 @@
 	req_one_access_txt = "150"
 	},
 /obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
+/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "qBx" = (
@@ -118856,7 +118873,7 @@ uPW
 huo
 huo
 wBR
-huo
+phU
 huo
 huo
 rcy
@@ -119110,7 +119127,7 @@ eWw
 tRd
 kzG
 uPW
-iEG
+mGZ
 huo
 xuI
 irx

@@ -6,6 +6,7 @@
 	icon_state = "magspear"
 	throwforce = 15 //still deadly when thrown
 	throw_speed = 3
+	sound_properties = CSP_GAUSS
 
 /obj/item/ammo_casing/caseless/laser
 	name = "laser casing"
@@ -15,6 +16,7 @@
 	projectile_type = /obj/item/projectile/beam
 	fire_sound = 'sound/weapons/laser.ogg'
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
+	sound_properties = CSP_MISC
 
 /obj/item/ammo_casing/caseless/laser/gatling
 	caliber = CALIBER_LASERGATLING
@@ -31,6 +33,7 @@
 	projectile_type = /obj/item/projectile/incendiary/flamethrower
 	pellets = 3
 	variance = 20
+	sound_properties = CSP_MISC
 
 //throwin' rock, for throwin'. obtained via *rocks
 /obj/item/ammo_casing/caseless/rock
@@ -55,6 +58,7 @@
 	is_pickable = TRUE
 	custom_materials = list(/datum/material/glass = 50) //rocks are made of silicon, same as sand
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_ROCK
 
 /obj/item/ammo_casing/caseless/brick
 	name = "brick"
@@ -78,3 +82,16 @@
 	is_pickable = TRUE
 	custom_materials = list(/datum/material/glass = 50)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_ROCK
+
+/obj/item/ammo_casing/caseless/flintlock
+	name = "blackpowder charge"
+	desc = "a measure of blackpowder and round musket ball."
+	caliber = CALIBER_FLINTLOCK
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "musketball"
+	projectile_type = /obj/item/projectile/flintlock
+	sound_properties = CSP_FLINTLOCK
+	custom_materials = list(/datum/material/blackpowder = 500)
+	w_class = WEIGHT_CLASS_SMALL
+

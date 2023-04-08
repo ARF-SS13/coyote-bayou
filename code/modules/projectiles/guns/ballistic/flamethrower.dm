@@ -96,6 +96,7 @@
 	icon = 'icons/obj/guns/flamethrower.dmi'
 	icon_state = "m2_flamethrower_on"
 	item_state = "m2flamethrower"
+	weapon_class = WEAPON_CLASS_RIFLE
 	flags_1 = CONDUCT_1
 	slowdown = 0.3
 	slot_flags = null

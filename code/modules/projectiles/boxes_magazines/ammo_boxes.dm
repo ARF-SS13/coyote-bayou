@@ -66,6 +66,18 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/trainshot
 	icon_state = "trainshotbox"
 
+/obj/item/ammo_box/flintlock
+	name = "Powderbag and musket balls"
+	desc = "A box full of shotgun shells."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "gunpowder"
+	max_ammo = 16
+	custom_materials = list()
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock
+	multiple_sprites = 0
+	caliber = list(CALIBER_FLINTLOCK)
+	w_class = WEIGHT_CLASS_SMALL
+
 //.22 LR
 /obj/item/ammo_box/m22
 	name = "ammo box (.22lr)"

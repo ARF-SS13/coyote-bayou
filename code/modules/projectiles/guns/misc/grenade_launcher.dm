@@ -4,7 +4,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "riotgun"
 	item_state = "riotgun"
-	w_class = WEIGHT_CLASS_BULKY
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
 	throw_speed = 2
 	throw_range = 7
 	force = 5

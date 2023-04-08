@@ -10,6 +10,7 @@
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER)
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
 
 /obj/item/ammo_casing/a308/improvised
 	name = "shoddy .308 bullet casing"
@@ -69,6 +70,7 @@
 		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
 
 /obj/item/ammo_casing/a3006/improvised
 	name = "shoddy .30-06 bullet casing"
@@ -92,6 +94,7 @@
 		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_LIGHT
 
 /obj/item/ammo_casing/a556/rubber
 	name = "5.56mm rubber bullet casing"
@@ -152,6 +155,7 @@
 		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_LIGHT
 
 /obj/item/ammo_casing/m5mm/improvised
 	name = "shoddy 5mm bullet casing"
@@ -184,6 +188,7 @@
 		/datum/material/iron = MATS_GRENADE_CASING + MATS_GRENADE_BULLET,
 		/datum/material/blackpowder = MATS_GRENADE_POWDER)
 	fire_power = CASING_POWER_GRENADE * CASING_POWER_MOD_MATCH
+	sound_properties = CSP_40MM
 
 /obj/item/ammo_casing/a40mm/hedp
 	name = "40mm HEDP shell"
@@ -216,6 +221,7 @@
 		/datum/material/iron = MATS_GAUSS_CASING + MATS_GAUSS_BULLET,
 		/datum/material/blackpowder = MATS_GAUSS_POWDER)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_MATCH
+	sound_properties = CSP_GAUSS
 
 /obj/item/ammo_casing/c2mm/blender
 	name = "2mm gauss blender projectile casing"
