@@ -324,6 +324,14 @@
 		/datum/firemode/semi_auto
 	)
 
+/obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony
+	name = "\improper Painted pistol"
+	desc = "A variant of the n99 with a custom paint job done on it. The paint used is of the highest quality!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "ponycrusader"
+	item_state = "ponycrusader"
+	init_recoil = HANDGUN_RECOIL(0.8)
+
 /* * * * * * * * * * *
  * Type 17 Semi-Auto
  * Cheap Medium pistol

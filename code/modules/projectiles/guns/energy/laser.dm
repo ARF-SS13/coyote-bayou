@@ -462,6 +462,20 @@
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
+
+/obj/item/gun/energy/laser/auto/nayriin
+	name = "Lucy"
+	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
+	icon_state = "lasercw"
+	item_state = "rcw"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
+
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
