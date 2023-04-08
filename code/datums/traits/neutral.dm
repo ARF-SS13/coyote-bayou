@@ -455,3 +455,14 @@
 		if(!human_holder.put_in_hands(folder))
 			folder.forceMove(get_turf(human_holder))
 
+/datum/quirk/zoomies
+	name = "Zoomies"
+	desc = "You can sprint twice as far before you begin to get tired. Just don't run into things."
+	value = 0
+	mob_trait = TRAIT_ZOOMIES
+
+/datum/quirk/super_zoomies
+	name = "Zoomies - Super"
+	desc = "You never tire of sprinting at all, just be extremely careful not to run into things."
+	value = 0
+	mob_trait = TRAIT_SUPER_ZOOMIES

@@ -50,6 +50,18 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 
+/datum/crafting_recipe/burma
+	name = "Burma Webbing"
+	result = /obj/item/storage/belt/military/commonwealth_brit
+	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
 /datum/crafting_recipe/shoulderholster
 	name = "Shoulder Holster"
 	result = /obj/item/storage/belt/shoulderholster

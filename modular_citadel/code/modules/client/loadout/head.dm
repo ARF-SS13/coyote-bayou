@@ -545,13 +545,9 @@ datum/gear/head/steelpot_bandolier
 	name = "MK2, four"
 	path = /obj/item/clothing/head/mk2/four
 
-/datum/gear/head/slouch/unpinned
-	name = "khaki slouch, unpinned"
-	path = /obj/item/clothing/head/slouch/unpinned
-
-/datum/gear/head/slouch/pinned
-	name = "khaki slouch, pinned"
-	path = /obj/item/clothing/head/slouch/pinned
+/datum/gear/head/slouch
+	name = "khaki slouch hat"
+	path = /obj/item/clothing/head/slouch
 
 /datum/gear/head/turban
 	name = "Military Turban"
