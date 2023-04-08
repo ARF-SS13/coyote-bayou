@@ -1527,6 +1527,9 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	playsound(src, "sound/weapons/punchmiss.ogg", 100, 1)
 	return TRUE
 
+/obj/item/gun/proc/post_modify_projectile(obj/item/projectile/BB)
+	return
+
 /obj/item/storage/backpack/debug_gun_hobo
 	name = "Bag of Gunstuff 4 hobos"
 	desc = "Cool shit for testing various guns!"

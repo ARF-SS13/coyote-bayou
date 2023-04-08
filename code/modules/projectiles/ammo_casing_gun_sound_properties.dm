@@ -133,6 +133,10 @@ GLOBAL_LIST_EMPTY(casing_sound_properties)
 	category = CSP_PISTOL_44
 	shoot_sound = list('sound/f13weapons/44mag.ogg')
 
+/datum/ammo_sound_properties/heavy_pistol/flintlock
+	category = CSP_FLINTLOCK
+	shoot_sound = list('sound/f13weapons/44revolver.ogg')
+
 /datum/ammo_sound_properties/heavy_pistol/m14mm
 	category = CSP_PISTOL_14MM
 
