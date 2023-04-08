@@ -1332,3 +1332,26 @@
 	path = /obj/item/clothing/under/civ/indiancloth_chef
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
 
+/datum/gear/uniform/portuguese_sailor1
+	name = "Green Sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/portuguese_sailor1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/portuguese_sailor2
+	name = "Green Sailor, with bow"
+	cost = 1
+	path = /obj/item/clothing/under/civ/portuguese_sailor2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/pinksailor
+	name = "Pink Sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/sailor_port
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/brownsailor
+	name = "Brown Sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/spanish_sailor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

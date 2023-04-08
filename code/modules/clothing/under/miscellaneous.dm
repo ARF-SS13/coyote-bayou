@@ -867,3 +867,37 @@
 	item_color = "indianchef"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/portuguese_sailor1
+	name = "Green Sailor"
+	icon_state = "portuguese_sailor1"
+	item_state = "portuguese_sailor1"
+	item_color = "portuguese_sailor1"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/portuguese_sailor2
+	name = "Green sailor, with bow"
+	icon_state = "portuguese_sailor_alt"
+	item_state = "portuguese_sailor_alt"
+	item_color = "portuguese_sailor_alt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/sailor_port
+	name = "Pink Sailor"
+	icon_state = "sailor_port"
+	item_state = "sailor_port"
+	item_color = "sailor_port"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/spanish_sailor
+	name = "Brown Sailor"
+	icon_state = "spanish_sailor"
+	item_state = "spanish_sailor"
+	item_color = "spanish_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+
