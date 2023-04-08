@@ -30844,21 +30844,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"eaO" = (
-/obj/machinery/camera{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building/abandoned)
 "eaX" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -45764,6 +45749,7 @@
 	req_one_access_txt = "150"
 	},
 /obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/weapon/boss,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "iep" = (
@@ -46297,18 +46283,6 @@
 /obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red,
-/area/f13/building/abandoned)
-"ilk" = (
-/obj/machinery/camera,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
 /area/f13/building/abandoned)
 "iln" = (
 /turf/open/floor/plasteel/f13{
@@ -50975,24 +50949,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
 /area/f13/building/mall)
-"jyU" = (
-/obj/structure/closet/boxinggloves,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 32
-	},
-/obj/item/clothing/gloves/boxing/yellow,
-/obj/item/clothing/gloves/boxing/green,
-/obj/item/clothing/gloves/boxing/blue,
-/obj/item/clothing/gloves/boxing,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/validball_spawner,
-/obj/effect/spawner/lootdrop/f13/weapon/boss,
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building/abandoned)
 "jyW" = (
 /obj/structure/flora/tree/tall,
 /obj/structure/flora/ausbushes/grassybush,
@@ -73189,8 +73145,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ruins)
 "pzz" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/renegade/meister,
 /turf/open/floor/f13{
 	color = "#ffe9de";
 	icon_state = "darkrusty";
@@ -75429,20 +75383,6 @@
 "qki" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/interior,
-/area/f13/building/abandoned)
-"qkl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
 /area/f13/building/abandoned)
 "qkn" = (
 /obj/machinery/light/broken,
@@ -93534,8 +93474,10 @@
 	},
 /area/f13/wasteland/city)
 "vjV" = (
-/obj/structure/stairs/north{
-	color = "#A47449"
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "miesterbase";
+	level = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
@@ -128259,9 +128201,9 @@ teI
 sWy
 vVo
 vVo
-vVo
-vVo
-ilk
+pzz
+pzz
+bFu
 aXm
 dzL
 vVo
@@ -128517,8 +128459,8 @@ gca
 vVo
 vxK
 nsb
-vVo
-lFh
+pzz
+kNl
 pVH
 jHs
 vVo
@@ -128772,9 +128714,9 @@ lFh
 hLL
 kNl
 fTf
-pzz
 kNl
-fTf
+kNl
+kNl
 bFu
 chd
 aXm
@@ -129030,9 +128972,9 @@ gIt
 kEo
 vVo
 pet
-jyU
-vVo
-ahT
+kNl
+pzz
+pVH
 pVH
 jHs
 vVo
@@ -129286,10 +129228,10 @@ saB
 xaW
 lpK
 vVo
-vVo
-vVo
-vVo
-eaO
+pzz
+pzz
+pzz
+aXm
 bFu
 jnG
 vVo
@@ -129544,7 +129486,7 @@ oEd
 cmJ
 vVo
 pVH
-qkl
+bFu
 kNl
 bFu
 ybe
@@ -129801,7 +129743,7 @@ vVo
 vVo
 vVo
 wFJ
-vVo
+pzz
 aNR
 imE
 vVo
