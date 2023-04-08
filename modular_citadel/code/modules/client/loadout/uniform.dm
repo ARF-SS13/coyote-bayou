@@ -1301,3 +1301,34 @@
 	cost = 1
 	path = /obj/item/clothing/under/burma/britishbattledress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/indiancloth_one
+	name = "Fuzzy Loincloth, short"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_one
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_two
+	name = "Fuzzy Loincloth, longer"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_three
+	name = "Fuzzy Loincloth, groin and chest"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_shaman
+	name = "Fuzzy Loincloth, shaman"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_shaman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_chef
+	name = "Fuzzy Loincloth, chef"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_chef
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+

@@ -824,3 +824,46 @@
 	icon_state = "british_battle_dress"
 	item_state = "british_battle_dress"
 	can_adjust = TRUE
+
+//Stuff from Civ 13
+
+/obj/item/clothing/under/civ/indiancloth_one
+	name = "Fuzzy loincloth, just waist. Short."
+	icon_state = "indian1"
+	item_state = "indian1"
+	item_color = "indian1"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_two
+	name = "Fuzzy loincloth, just waist. Longer."
+	icon_state = "indian2"
+	item_state = "indian2"
+	item_color = "indian2"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+
+/obj/item/clothing/under/civ/indiancloth_three
+	name = "Fuzzy loincloth, waist and chest."
+	icon_state = "indian3"
+	item_state = "indian3"
+	item_color = "indian3"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_shaman
+	name = "Fuzzy loincloth, shaman"
+	icon_state = "indianshaman"
+	item_state = "indianshaman"
+	item_color = "indianshaman"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_chef
+	name = "Fuzzy loincloth, chef"
+	icon_state = "indianchef"
+	item_state = "indianchef"
+	item_color = "indianchef"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
