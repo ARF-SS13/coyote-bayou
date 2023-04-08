@@ -54,6 +54,7 @@
 	add_to_streak("H", D, TRUE)
 	if(check_streak(A,D))
 		return TRUE
+	. = TRUE
 	var/damage = damage_roll(A,D)
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	D.visible_message(span_danger("[A] sends [D] reeling with an atomic pork hammer!"), \
