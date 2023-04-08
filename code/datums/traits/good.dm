@@ -66,7 +66,9 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/gigalens,
 	/datum/crafting_recipe/ecpbad,
 	/datum/crafting_recipe/mfcbad,
-	/datum/crafting_recipe/ecbad))
+	/datum/crafting_recipe/ecbad,
+	/datum/crafting_recipe/gun/flintlock,
+	/datum/crafting_recipe/gun/flintlock_laser))
 
 GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	///datum/crafting_recipe/tribal/bonetalisman, //broken item, unneeded

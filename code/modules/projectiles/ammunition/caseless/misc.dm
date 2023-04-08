@@ -83,3 +83,15 @@
 	custom_materials = list(/datum/material/glass = 50)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_ROCK
+
+/obj/item/ammo_casing/caseless/flintlock
+	name = "blackpowder charge"
+	desc = "a measure of blackpowder and round musket ball."
+	caliber = CALIBER_FLINTLOCK
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "musketball"
+	projectile_type = /obj/item/projectile/flintlock
+	sound_properties = CSP_FLINTLOCK
+	custom_materials = list(/datum/material/blackpowder = 500)
+	w_class = WEIGHT_CLASS_SMALL
+

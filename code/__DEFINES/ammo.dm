@@ -42,7 +42,7 @@
 #define CALIBER_FOAM "foam darts"
 #define CALIBER_ANY "anything even remotely ammolike"
 #define CALIBER_BRICK "bricks"
-
+#define CALIBER_FLINTLOCK "blackpowder charges"
 /// Caliber POW levels
 /// for hobo guns scaling their explodiness to the casing fired
 /// Heavier rounds than the gun can handle? more chance to POW

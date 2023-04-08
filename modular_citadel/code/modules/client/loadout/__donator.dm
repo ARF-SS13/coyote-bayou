@@ -606,10 +606,14 @@
 	ckeywhitelist = list("lucine")
 
 /obj/item/storage/box/large/custom_kit/lucine/PopulateContents()
-	new /obj/item/gun/energy/laser/freeblade(src)
-	new /obj/item/gun/energy/laser/freeblade(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
+	//new /obj/item/gun/energy/laser/freeblade(src)
+	//new /obj/item/gun/energy/laser/freeblade(src)
+	//new /obj/item/stock_parts/cell/ammo/ec(src)
+	//new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/gun/ballistic/bow/flintlock/laser(src)
+	new /obj/item/gun/ballistic/bow/flintlock/laser(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
 	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
 	new /obj/item/book/granter/martial/carp(src)
 

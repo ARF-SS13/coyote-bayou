@@ -18,6 +18,8 @@
 	var/draw_sound = 'sound/weapons/bowdraw.wav'
 	dryfire_text = "*no arrows*"
 	dryfire_sound = ""
+	var/release_text = "You gently release the bowstring, removing the arrow."
+	var/draw_noun = "string"
 	safety = 0
 	restrict_safety = 1
 	init_firemodes = list(
@@ -62,7 +64,7 @@
 		user.put_in_hands(chambered)
 		chambered = null
 		update_icon()
-		to_chat(user, span_notice("You gently release the bowstring, removing the arrow."))
+		to_chat(user, span_notice(release_text))
 		return
 /* 	if(recentdraw > world.time || !get_ammo(FALSE))
 		return */
@@ -73,7 +75,7 @@
 	if(!draw_load(M))
 		return TRUE
 	if(visible)
-		M.visible_message(span_warning("[M] draws the string on [src]!"), span_warning("You draw the string on [src]!"))
+		M.visible_message(span_warning("[M] draws the [draw_noun] on [src]!"), span_warning("You draw the [draw_noun] on [src]!"))
 	playsound(M, draw_sound, 60, 1)
 	draw_load(M)
 	update_icon()

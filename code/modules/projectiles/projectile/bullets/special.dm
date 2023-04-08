@@ -37,3 +37,23 @@
 	flag = "bullet"
 	hitsound_wall = "ricochet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
+
+/obj/item/projectile/flintlock
+	name = "musket ball"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "musketball_pistol"
+	damage =  BULLET_DAMAGE_SHOTGUN_SLUG
+	stamina = BULLET_STAMINA_SHOTGUN_SLUG
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_SLUG
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_22
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	range = 50
+	damage_type = BRUTE
+	nodamage = FALSE
+	candink = TRUE
+	flag = "bullet"
+	hitsound_wall = "ricochet"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
