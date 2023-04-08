@@ -411,7 +411,7 @@
 	value = 0
 	mob_trait = TRAIT_DOG
 
-/datum/quirk/item_quirk/photographer
+/datum/quirk/photographer
 	name = "Photographer"
 	desc = "You carry your camera and personal photo album everywhere you go, and your scrapbooks are legendary among your coworkers."
 	value = 0
@@ -420,7 +420,7 @@
 	lose_text = span_danger("You forget how photo cameras work.")
 	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
 
-/datum/quirk/item_quirk/photographer/add()
+/datum/quirk/photographer/on_spawn()
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/storage/photo_album/photo_album = new(get_turf(human_holder))
 	photo_album.persistence_id = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
@@ -435,7 +435,7 @@
 	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 		if(!human_holder.put_in_hands(cam))
 			cam.forceMove(get_turf(cam))
-/datum/quirk/item_quirk/journalist
+/datum/quirk/journalist
 	name = "Journalist"
 	desc = "You carry yourself a pen and a personal folder around, you are known to be the one who records everything."
 	value = 0
@@ -444,7 +444,7 @@
 	lose_text = span_danger("You forget how to be a journalist. :(")
 	medical_record_text = ""
 
-/datum/quirk/item_quirk/photographer/add()
+/datum/quirk/journalist/on_spawn()
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/folder/folder = new(get_turf(human_holder))
 	folder.persistenceID = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
