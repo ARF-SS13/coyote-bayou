@@ -431,13 +431,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
-
-	var/char_vr_path = "[vr_path]/character_[default_slot]_v2.json"
-	var/belly_prefs_json = safe_json_encode(list("belly_prefs" = belly_prefs))
-	if(fexists(char_vr_path))
-		fdel(char_vr_path)
-	text2file(belly_prefs_json,char_vr_path)
-
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -770,6 +763,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["special_i"]			>> special_i
 	S["special_a"]			>> special_a
 	S["special_l"]			>> special_l
+	S["vore_flags"]			>> vore_flags
+	S["vore_prefs"]			>> vore_prefs
 
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
@@ -819,6 +814,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	special_i		= sanitize_integer(special_i, 1, 10, initial(special_i))
 	special_a		= sanitize_integer(special_a, 1, 10, initial(special_a))
 	special_l		= sanitize_integer(special_l, 1, 10, initial(special_l))
+	vore_flags		= sanitize_integer(vore_flags, 0, (1<<24), initial(vore_flags))
+	vore_prefs		= sanitize_integer(vore_prefs, 0, (1<<24), initial(vore_prefs))
+
 	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
 	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
@@ -1121,6 +1119,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_a"]		,special_a)
 	WRITE_FILE(S["special_l"]		,special_l)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
+
+	WRITE_FILE(S["vore_flags"], vore_flags)
+	WRITE_FILE(S["vore_prefs"], vore_prefs)
+	
+	var/char_vr_path = "[vr_path]/character_[default_slot]_v2.json"
+	var/belly_prefs_json = safe_json_encode(list("belly_prefs" = belly_prefs))
+	if(fexists(char_vr_path))
+		fdel(char_vr_path)
+	text2file(belly_prefs_json,char_vr_path)
 
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)

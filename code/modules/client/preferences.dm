@@ -42,10 +42,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										//autocorrected this round, not that you'd need to check that.
 
 	// VORE~
+	/// general vore flags relating to your mob
 	var/vore_flags = 0
+	/// vore flags relating to preferences
+	var/vore_prefs = 0
+	/// your bellies
 	var/list/belly_prefs = list()
 	//var/vore_taste = "nothing in particular"
-	//var/vore_smell = null
+	var/vore_smell = null
 	var/toggleeatingnoise = TRUE
 	var/toggledigestionnoise = TRUE
 	//var/hound_sleeper = TRUE

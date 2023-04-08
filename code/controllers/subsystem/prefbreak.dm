@@ -37,7 +37,8 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 		return TRUE
 	return ultimate_breaker.allowed(break_me_complitely)
 
-/* Preference lookup table
+/* 
+ * Preference lookup table
  * feed it someone's prefs, it spits out a yes or a no
  */
 /// Most often, its just checking a flag on a mob's client's prefs
@@ -49,32 +50,36 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	return TRUE
 
 /datum/prefcheck/voreprefs
-	index = "citadel"
-	pref = EATING_NOISES
+	index = "vore"
+	pref = VORE_EATING_NOISES
 
 /datum/prefcheck/voreprefs/eat_noises
 	index = VOREPREF_EAT_SOUNDS
-	pref = EATING_NOISES
+	pref = VORE_EATING_NOISES
 
 /datum/prefcheck/voreprefs/digest_noises
 	index = VOREPREF_DIGESTION_SOUNDS
-	pref = DIGESTION_NOISES
+	pref = VORE_DIGESTION_NOISES
 
 /datum/prefcheck/voreprefs/digest_damage
-	index = VOREPREF_DIGESTION_DAMAGE
-	pref = DIGESTION_DAMAGE
+	index = VOREPREF_VORE_DIGESTION_DAMAGE
+	pref = VORE_DIGESTION_DAMAGE
 
 /datum/prefcheck/voreprefs/absorbable
 	index = VOREPREF_ABSORBTION
-	pref = ABSORBABLE_PREF
+	pref = VORE_ABSORBABLE
 
 /datum/prefcheck/voreprefs/healbellyable
 	index = VOREPREF_HEALBELLY
-	pref = HEALBELLY_PREF
+	pref = VORE_HEALBELLY
 
 /datum/prefcheck/voreprefs/death
 	index = VOREPREF_DEATH
 	pref = VORE_DEATH
+
+/datum/prefcheck/voreprefs/examine
+	index = VOREPREF_EXAMINE
+	pref = VORE_EXAMINE
 
 /datum/prefcheck/voreprefs/text
 	index = VOREPREF_TEXT
@@ -84,7 +89,19 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	index = VOREPREF_TEXT_DEATH
 	pref = VORE_TEXT_DEATH
 
+/datum/prefcheck/voreprefs/being_prey
+	index = VOREPREF_BEING_PREY
+	pref = VORE_BEING_PREY
+
+/datum/prefcheck/voreprefs/being_fed_prey
+	index = VOREPREF_BEING_FED
+	pref = VORE_BEING_FED
+
+/datum/prefcheck/voreprefs/sniff
+	index = VOREPREF_SNIFFABLE
+	pref = VORE_SNIFFABLE
+
 /datum/prefcheck/voreprefs/allowed(datum/preferences/consumer)
-	if(CHECK_BITFIELD(consumer.voreprefs, pref))
+	if(CHECK_BITFIELD(consumer.vore_prefs, pref))
 		return TRUE
 

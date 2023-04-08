@@ -81,11 +81,14 @@
 /mob/proc/get_photo_description(obj/item/camera/camera)
 	return "a ... thing?"
 
-/mob/proc/show_message(msg, type, alt_msg, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
+/mob/proc/show_message(msg, type, alt_msg, alt_type, pref_check)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(audiovisual_redirect)
 		audiovisual_redirect.show_message(msg ? "<avredirspan class='small'>[msg]</avredirspan>" : null, type, alt_msg ? "<avredirspan class='small'>[alt_msg]</avredirspan>" : null, alt_type)
 
 	if(!client)
+		return
+	
+	if(pref_check && !CHECK_PREFS(src, pref_check))
 		return
 
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
@@ -190,10 +193,10 @@
 			M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
-mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE)
+mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
 	if(self_message && target != src)
-		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
 
 /**
  * Show a message to all mobs in earshot of this atom
@@ -249,10 +252,10 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
  * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
  */
-/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE)
+/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE, pref_check)
 	. = ..()
 	if(self_message)
-		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL, pref_check)
 
 
 ///Returns the client runechat visible messages preference according to the message type.

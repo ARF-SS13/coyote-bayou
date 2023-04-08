@@ -22,11 +22,9 @@
 
 /obj/item/projectile/sickshot/on_hit(var/atom/movable/target, var/blocked = 0)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/H = target
-		if(prob(5))
-			for(var/X in H.vore_organs)
-				H.release_vore_contents()
-				H.visible_message("<span class='danger'>[H] contracts strangely, spewing out contents on the floor!</span>", \
- 						"<span class='userdanger'>You spew out everything inside you on the floor!</span>")
-		return BULLET_ACT_HIT
+	if(isliving(target) && prob(5))
+		SEND_SIGNAL(target, COMSIG_VORE_EXPEL_ALL_MOBS, TRUE, TRUE)
+		target.visible_message("<span class='danger'>[target] contracts strangely, spewing out contents on the floor!</span>", \
+				"<span class='userdanger'>You spew out everything inside you on the floor!</span>",
+				pref_check = VOREPREF_TEXT)
+	return BULLET_ACT_HIT

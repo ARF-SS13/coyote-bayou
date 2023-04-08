@@ -52,7 +52,7 @@
 			listeners += SSmobs.clients_by_zlevel[below_turf.z]
 
 	for(var/mob/listening_mob as anything in listeners + SSmobs.dead_players_by_zlevel[source_z])
-		if(soundpref_index && !SSprefbreak.allowed_by_prefs(listening_mob, soundpref_index))
+		if(soundpref_index && !CHECK_PREFS(listening_mob, soundpref_index))
 			continue
 		var/listener_distance = get_dist(listening_mob, turf_source)
 		if(listener_distance <= maxdistance)
@@ -112,7 +112,7 @@
 	if(!S)
 		S = sound(get_sfx(soundin))
 
-	if(soundpref_index && !SSprefbreak.allowed_by_prefs(src, soundpref_index))
+	if(soundpref_index && !CHECK_PREFS(src, soundpref_index))
 		return
 
 	S.wait = 0 //No queue

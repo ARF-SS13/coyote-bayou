@@ -1,20 +1,17 @@
 // Process the predator's effects upon the contents of its belly (i.e digestion/transformation etc)
-/obj/vore_belly/process(var/times_fired,var/wait) //Passed by controller
+/obj/vore_belly/process()
 	if(!owner)
 		qdel(src)
-		STOP_PROCESSING(SSbellies, src)
-		return SSBELLIES_PROCESSED
+		STOP_PROCESSING(SSvore, src)
+		return
 
-	else if(loc != owner)
+	if(loc != owner)
 		if(isliving(owner)) //we don't have machine based bellies. (yet :honk:)
 			forceMove(owner) // put it back in!!!
 		else
-			STOP_PROCESSING(SSbellies, src)
+			STOP_PROCESSING(SSvore, src)
 			qdel(src)
-			return SSBELLIES_PROCESSED
-
-	var/play_sound //Potential sound to play at the end to avoid code duplication.
-	var/to_update = FALSE //Did anything update worthy happen?
+			return
 
 /////////////////////////// Auto-Emotes ///////////////////////////
 	auto_emote()
@@ -25,34 +22,23 @@
 //////////////////////// Absorbed Handling ////////////////////////
 	handle_absorbed()
 
-////////////////////////// Sound vars /////////////////////////////
-
-
+////////////////////////// Do the Digest /////////////////////////////
+	var/list/vored_folk = get_vored_mobs()
 	switch(digest_mode)
 		if(DM_HOLD) // hold!
-			return SSBELLIES_PROCESSED
+			return
 
 		if(DM_DIGEST, DM_DRAGON)
 			if(HAS_TRAIT(owner, TRAIT_PACIFISM)) //obvious.
 				digest_mode = DM_NOISY
 				return
-			for(var/mob/living/living_prey in get_vored_mobs())
+			for(var/mob/living/living_prey in vored_folk)
+				if(living_prey.stat == DEAD)
+					continue
 				if(!can_digest_living(living_prey))
 					continue
 				if(prob(25))
 					play_digest()
-				//Person just died in guts!
-				if(living_prey.stat == DEAD)
-					send_voremessage(
-						living_prey,
-						digest_messages_owner,
-						digest_messages_prey,
-						VOREPREF_TEXT
-						)
-					play_death()
-					digestion_death(living_prey)
-					owner.update_icons()
-					continue
 				digest_living(living_prey)
 
 			//Contaminate or gurgle items
@@ -61,7 +47,7 @@
 				digest_item(T)
 
 		if(DM_HEAL)
-			for(var/mob/living/living_prey in get_vored_mobs())
+			for(var/mob/living/living_prey in vored_folk)
 				if(!can_healbelly_living(living_prey))
 					continue
 				if(prob(25))
@@ -70,11 +56,11 @@
 	
 		if(DM_NOISY) //for when you just want people to squelch around
 			if(prob(35))
-				for(var/mob/living_prey in get_vored_mobs())
+				for(var/mob/living_prey in vored_folk)
 					play_digest()
 
 		if(DM_ABSORB)
-			for(var/mob/living/living_prey in get_vored_mobs())
+			for(var/mob/living/living_prey in vored_folk)
 				if(prob(10))//Less often than gurgles. People might leave this on forever.
 					play_digest()
 				if(!can_absorb_living(living_prey))
@@ -82,14 +68,10 @@
 				absorb_act(living_prey)
 
 		if(DM_UNABSORB)
-			for(var/mob/living/living_prey in get_vored_mobs())
+			for(var/mob/living/living_prey in vored_folk)
 				if(!can_unabsorb_living(living_prey))
 					continue
 				unabsorb_living(living_prey)
 	
-	for(var/mob/living/living_prey in get_vored_mobs())
-		living_prey.updateVRPanel()
-	if(owner.client)
-		owner.updateVRPanel()
+	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)
 
-	return SSBELLIES_PROCESSED

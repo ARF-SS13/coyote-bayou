@@ -562,3 +562,46 @@
 //mob spawner signals
 #define COMSIG_SPAWNER_COVERED "spawner_covered" // Mob spawner got covered by a covering
 #define COMSIG_SPAWNER_UNCOVERED "spawner_uncovered" // Mob spawner got uncovered by a covering
+
+/// When they look back and see that some fuckin nerd componentized vore, will they be proud? or rightfully confused why someone would spend their time on this?
+/// I know one thing for sure though, and that is that I won't regret any second of it
+/// Vore signals
+// returns component's voreflags
+#define COMSIG_VORE_GET_VOREFLAGS "voreflags_pls"	
+/// Vores an atom
+#define COMSIG_VORE_DEVOUR_ATOM "nyomf"	
+/// sets a list to a list of a mob's bellies
+/// DOES NOT RETURN ANYTHING USEFUL! Abuses the fact that list vars are just references, or something
+/// check out COMSIG_TRY_STORAGE_RETURN_INVENTORY, its pretty neat
+/// pass TRUE to make it associated by name
+#define COMSIG_VORE_GET_BELLIES "urguts" // (datum/source, list/that_gets_updated, make_associated, just_selected_belly)
+/// returns if we have any bellies
+#define COMSIG_VORE_HAS_BELLIES "amgut"
+/// Takes in a belly, and sets our active one to it
+#define COMSIG_VORE_SET_SELECTED_BELLY "setvore"
+/// Takes in a belly, and returns if that belly is one of ours
+#define COMSIG_VORE_VERIFY_BELLY "has_belly"	
+/// Takes in a belly, and returns if that belly is one of ours
+#define COMSIG_VORE_SWAP_BELLY_INDEX "has_belly"	
+/// Expels a mob from a belly
+#define COMSIG_VORE_EXPEL_MOB "i_unvore_u"
+/// Expels all mobs from a belly
+#define COMSIG_VORE_EXPEL_ALL_MOBS "i_unvore_u_all"
+/// Calls an OOC eject
+#define COMSIG_VORE_EXPEL_MOB_OOC "i_unvore_u_ooc"
+/// Adds a belly to the mob and component
+#define COMSIG_VORE_ADD_BELLY "add_belly"
+/// Removes a belly from the mob and component
+#define COMSIG_VORE_REMOVE_BELLY "un_belly"
+/// Makes the squishing stop!!!
+#define COMSIG_VORE_STOP_SOUNDS "stop_squish"
+/// Sniffs a mob
+#define COMSIG_VORE_SNIFF_LIVING "sniffa"
+/// Makes bellies autoemote
+#define COMSIG_VORE_AUTO_EMOTE "voremote"
+/// Updates the vore panel
+#define COMSIG_VORE_UPDATE_PANEL "update_vee_are"
+/// Saves a mob's voreprefs
+#define COMSIG_VORE_SAVE_PREFS "save_vore"
+/// Loads a mob's voreprefs
+#define COMSIG_VORE_LOAD_PREFS "load_vore"

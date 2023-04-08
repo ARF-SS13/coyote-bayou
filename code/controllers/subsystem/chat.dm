@@ -18,6 +18,8 @@ SUBSYSTEM_DEF(chat)
 		var/payload = payload_by_client[key]
 		payload_by_client -= key
 		if(client)
+			if(payload["prefCheck"] && CHECK_PREFS(client, payload["prefCheck"]))
+				continue // we dont want to see it
 			// Send to tgchat
 			client.tgui_panel?.window.send_message("chat/message", payload)
 			// Send to old chat

@@ -38,6 +38,64 @@ GLOBAL_LIST_INIT(player_sizes_list, list("Macro" = SIZESCALE_HUGE, "Big" = SIZES
 // Edited to make the new travis check go away
 */
 
+#define CHECK_PREFS(mob, pref) SSprefbreak.allowed_by_prefs(mob, pref)
+
+/// Delicious vore defines!
+#define CD_VORE_SOUND 1 SECONDS
+
+#define VORE_VOLUME 70
+#define VORE_SOUNDRANGE 3
+
+#define VORESOUND_GULP "gulp_pred"
+#define VORESOUND_EJECT "splut_pred"
+#define VORESOUND_VORE "vore_pred"
+#define VORESOUND_STRUGGLE "vore_struggle"
+#define VORESOUND_DIGEST "vore_digest"
+#define VORESOUND_DEATH "vore_deth"
+
+#define VORE_SWALLOW_HUMAN_TIME 10 SECONDS
+#define VORE_SWALLOW_NONHUMAN_TIME 10 SECONDS
+
+#define VORE_MAX_DESCRIPTOR_LENGTH 160
+#define VORE_MIN_DESCRIPTOR_LENGTH 10
+
+
+//vore pref flags
+#define VORE_DOGBORGS			(1<<0) // I never got why people dont like dogborgs
+#define VORE_EATING_NOISES		(1<<1) // Allows gross vore eating noises
+#define VORE_DIGESTION_NOISES	(1<<2) // Allows gross vore gurgling noises
+#define VORE_DIGESTION_DAMAGE	(1<<3) // Allows digestion to damage you
+#define VORE_ABSORBABLE			(1<<4) // Allows absorbtion to happen
+#define VORE_HEALBELLY			(1<<5) // Allows healbellies to heal you
+#define VORE_DEATH				(1<<6) // Allows digestion to fuckin murder you
+#define VORE_TEXT				(1<<7) // Allows seeing vore messages
+#define VORE_TEXT_DEATH			(1<<8) // Allows seeing vore messages about dying
+#define VORE_BEING_PREY			(1<<9) // Allows being prey
+#define VORE_BEING_FED			(1<<10) // Allows being fed
+#define VORE_EXAMINE			(1<<11) // Allows reading descs about bellies
+#define VORE_SNIFFABLE			(1<<12) // Allows being sniffed
+
+//belly sound pref things
+#define NORMIE_HEARCHECK 4
+#define VOREMOTE_COOLDOWN 10 SECONDS
+
+/// prefcheck
+#define VOREPREF_EAT_SOUNDS "nyomf"
+#define VOREPREF_DIGESTION_SOUNDS "gurgle"
+#define VOREPREF_VORE_DIGESTION_DAMAGE "digestable"
+#define VOREPREF_ABSORBTION "absorbable"
+#define VOREPREF_HEALBELLY "healbellyable"
+#define VOREPREF_DEATH "wouldyoulikeyourpossessionsidentified"
+#define VOREPREF_EXAMINE "theygotaguttywut"
+#define VOREPREF_TEXT "yougosquish"
+#define VOREPREF_TEXT_DEATH "youdie"
+#define VOREPREF_BEING_PREY "am_prey"
+#define VOREPREF_BEING_FED "am_fed_prey"
+#define VOREPREF_SNIFFABLE "can_sniff"
+
+/// vore sound channels are in [code\__DEFINES\sound.dm]
+
+
 GLOBAL_LIST_INIT(pred_vore_sounds, list(
 		"Gulp" = 'sound/vore/pred/swallow_01.ogg',
 		"Swallow" = 'sound/vore/pred/swallow_02.ogg',

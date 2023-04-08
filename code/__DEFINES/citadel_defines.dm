@@ -142,9 +142,9 @@
 #define XENOBIO_UPGRADE_SLIMEADV			4
 
 //Citadel toggles because bitflag memes
-#define MEDIHOUND_SLEEPER	(1<<0)
-//#define EATING_NOISES		(1<<1)
-//#define DIGESTION_NOISES	(1<<2)
+//#define VORE_DOGBORGS	(1<<0)
+//#define VORE_EATING_NOISES		(1<<1)
+//#define VORE_DIGESTION_NOISES	(1<<2)
 #define BREAST_ENLARGEMENT	(1<<3)
 #define PENIS_ENLARGEMENT	(1<<4)
 #define FORCED_FEM			(1<<5)
@@ -156,7 +156,7 @@
 #define BIMBOFICATION		(1<<11)
 #define NO_AUTO_WAG			(1<<12)
 #define GENITAL_EXAMINE		(1<<13)
-#define VORE_EXAMINE		(1<<14)
+//#define VORE_EXAMINE		(1<<14)
 #define BUTT_ENLARGEMENT	(1<<15) // the butt is in the rear lol
 #define BELLY_ENLARGEMENT	(1<<16) // nope the belly is bro
 #define TOGGLES_CITADEL 0
@@ -234,50 +234,3 @@ GLOBAL_LIST_INIT(hasgenital2genital, list(
 	"has_butt",\
 	"has_belly"
 #define PREFS_ALL_HAS_GENITALS list(PREFS_ALL_HAS_GENITALS_SET)
-
-/// Delicious vore defines!
-#define CD_VORE_SOUND 1 SECONDS
-
-#define VORE_VOLUME 70
-#define VORE_SOUNDRANGE 3
-
-#define VORESOUND_GULP "gulp_pred"
-#define VORESOUND_EJECT "splut_pred"
-#define VORESOUND_VORE "vore_pred"
-#define VORESOUND_STRUGGLE "vore_struggle"
-#define VORESOUND_DIGEST "vore_digest"
-#define VORESOUND_DEATH "vore_deth"
-
-#define VORE_SWALLOW_HUMAN_TIME 10 SECONDS
-#define VORE_SWALLOW_NONHUMAN_TIME 10 SECONDS
-
-#define VORE_MAX_DESCRIPTOR_LENGTH 160
-#define VORE_MIN_DESCRIPTOR_LENGTH 10
-
-#define CHECK_PREFS(mob, pref) SSprefbreak.allowed_by_prefs(mob, pref)
-
-//vore pref flags
-#define MEDIHOUND_SLEEPER	(1<<0) // I never got why people dont like dogborgs
-#define EATING_NOISES		(1<<1) // Allows gross vore eating noises
-#define DIGESTION_NOISES	(1<<2) // Allows gross vore gurgling noises
-#define DIGESTION_DAMAGE	(1<<3) // Allows digestion to damage you
-#define ABSORBABLE_PREF		(1<<4) // Allows absorbtion to happen
-#define HEALBELLY_PREF		(1<<5) // Allows healbellies to heal you
-#define VORE_DEATH			(1<<6) // Allows digestion to fuckin murder you
-#define VORE_TEXT			(1<<7) // Allows seeing vore messages
-#define VORE_TEXT_DEATH		(1<<8) // Allows seeing vore messages about dying
-
-//belly sound pref things
-#define NORMIE_HEARCHECK 4
-
-/// prefcheck
-#define VOREPREF_EAT_SOUNDS "nyomf"
-#define VOREPREF_DIGESTION_SOUNDS "gurgle"
-#define VOREPREF_DIGESTION_DAMAGE "digestable"
-#define VOREPREF_ABSORBTION "absorbable"
-#define VOREPREF_HEALBELLY "healbellyable"
-#define VOREPREF_DEATH "wouldyoulikeyourpossessionsidentified"
-#define VOREPREF_TEXT "yougosquish"
-#define VOREPREF_TEXT_DEATH "youdie"
-
-/// vore sound channels are in [code\__DEFINES\sound.dm]
