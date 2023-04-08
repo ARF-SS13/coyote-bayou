@@ -46,22 +46,6 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
-/obj/item/gun/energy/laser/rcw/nayriin
-	name = "Model laser RCW"
-	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
-	icon_state = "lasercw"
-	item_state = "rcw"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw/hitscan)
-	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T6
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm400,
-		/datum/firemode/semi_auto
-	)
-
 /datum/gear/donator/risingstarslash
 	name = "Slime Cookie Recipe Book"
 	slot = SLOT_IN_BACKPACK
@@ -81,14 +65,6 @@
 	gas_transfer_coefficient = 0.9
 	equip_delay_other = 20
 	mutantrace_variation = STYLE_MUZZLE
-
-/obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony
-	name = "\improper Painted pistol"
-	desc = "A variant of the n99 with a custom paint job done on it. The paint used is of the highest quality!"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "ponycrusader"
-	item_state = "ponycrusader"
-	init_recoil = HANDGUN_RECOIL(0.8)
 
 /obj/item/card/id/dogtag/darknova
 	name = "holo dogtag"
@@ -606,10 +582,14 @@
 	ckeywhitelist = list("lucine")
 
 /obj/item/storage/box/large/custom_kit/lucine/PopulateContents()
-	new /obj/item/gun/energy/laser/freeblade(src)
-	new /obj/item/gun/energy/laser/freeblade(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
+	//new /obj/item/gun/energy/laser/freeblade(src)
+	//new /obj/item/gun/energy/laser/freeblade(src)
+	//new /obj/item/stock_parts/cell/ammo/ec(src)
+	//new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/gun/ballistic/bow/flintlock/laser(src)
+	new /obj/item/gun/ballistic/bow/flintlock/laser(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
 	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
 	new /obj/item/book/granter/martial/carp(src)
 
@@ -1076,7 +1056,7 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stack/cable_coil/thirty(src)
-	new /obj/item/gun/energy/laser/rcw/nayriin(src)
+	new /obj/item/gun/energy/laser/auto/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
 	new /obj/item/clothing/under/rank/security/officer/skirt(src)
 
