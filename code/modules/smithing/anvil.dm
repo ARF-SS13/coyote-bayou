@@ -3,40 +3,45 @@
 #define WORKPIECE_FINISHED 3
 #define WORKPIECE_SLAG 5
 
+//bend start\tools, maybe add more tools?
 #define RECIPE_PICKAXE "bff" //bend fold fold
 #define RECIPE_SHOVEL "buu" //bend upset upset
 #define RECIPE_HAMMER "bpp" //bend punch punch
 #define RECIPE_PROSPECTPICK "bfs" //bend fold shrink
 #define RECIPE_KITCHENKNIFE "bsd" //bend shrink draw
 #define RECIPE_CROWBAR "bbb" //bend bend bend
+#define RECIPE_UNITOOL "bbu"  //bend bend upset
 
+//shrink start \maybe add armor here?
 #define RECIPE_RING "sss" //shrink shrink shrink
+
+//punch start \maybe add armor here?
 #define RECIPE_BALLANDCHAIN "pbu" //punch bend upset
 
+//fold start \Swords need a buff or need their math exposed to players \ Will also add more comments later
 #define RECIPE_MACHETE "fdf" //fold draw fold
 #define RECIPE_SABRE "ffdd" //fold fold draw draw
 #define RECIPE_SWORD "ffdf" // fold fold draw fold
 #define RECIPE_WAKI "fffd" //fold fold fold draw
 #define RECIPE_KATANA "fffff" //fold fold fold fold fold
+#define RECIPE_MACHREFORG "fddf" //fold punch punch
 
+//upset start \Mostly 2h weapons, save for the mace
 #define RECIPE_MACE "upu"  //upset punch upset
 #define RECIPE_AXE "udsp" //upset draw shrink punch
+#define RECIPE_SCRAP "udpp" //upset draw shrink punch \2h sword
 
+//draw start \Maybe add a shield here?
 #define RECIPE_DAGGER "dfs" //draw fold shrink
 #define RECIPE_SPEAR "ddbf" //draw draw bend fold
 #define RECIPE_JAVELIN "dbf" //draw bend fold
 #define RECIPE_THROWING "dbd" //draw bend draw
 
-//Tablevil specific
-#define RECIPE_MACHREFORG "fddf" //fold punch punch
-#define RECIPE_SCRAP "udpp" //upset draw shrink punch
-#define RECIPE_UNITOOL "bbu"  //bend bend upset
-
-//Legion specific
-#define RECIPE_LANCE "ddfp" //draw draw fold punch
-#define RECIPE_GLADIUS "fbf" //fold bend fold
-#define RECIPE_SPATHA "ffbf" // fold fold bend fold
-#define RECIPE_WARHONED "udup" //upset draw upset punch
+//Legion themed\ not exclusive to any anvil
+#define RECIPE_LANCE "ddfp" //draw draw fold punch \spear reskin
+#define RECIPE_GLADIUS "fbf" //fold bend fold \Machete reskin
+#define RECIPE_SPATHA "ffbf" // fold fold bend fold \Sword Reskin
+#define RECIPE_WARHONED "udup" //upset draw upset punch\ 2H axe reskin
 
 GLOBAL_LIST_INIT(anvil_recipes, list(
 	RECIPE_HAMMER = /obj/item/smithing/hammerhead,
