@@ -736,9 +736,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You feel more durable."
 
 /datum/quirk/flimsy/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth -= 10
-	mob_tar.health -= 10
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 10
+	H.health -= 10
 
 /datum/quirk/veryflimsy
 	name = "Health - Very Flimsy"
@@ -750,9 +750,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You feel more durable."
 
 /datum/quirk/veryflimsy/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth -= 20
-	mob_tar.health -= 20
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 20
+	H.health -= 20
 
 
 /datum/quirk/masked_mook
@@ -820,9 +820,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 
 /datum/quirk/noodle_fist/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 0
-	mob_tar.dna.species.punchdamagehigh = 0
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = 0
+	H.dna.species.punchdamagehigh = 0
 
 /datum/quirk/gentle
 	name = "Melee - Gentle"
