@@ -11341,8 +11341,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/directions/cells{
 	dir = 1;
-	pixel_y = 30;
-	pixel_x = 6
+	pixel_y = 38
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -86119,8 +86118,9 @@
 "thl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/directions/cells{
-	pixel_y = 30;
-	pixel_x = -11
+	pixel_y = 38;
+	pixel_x = 2;
+	layer = 4.0
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
