@@ -1468,6 +1468,13 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/light/kit/punk/labcoat
+	name = "lightly armored labcoat"
+	desc = "A tattered labocat with a faded silver emblem of  wings, cogwheels and a sword on it's back. It has a couple of armor parts affixed over a leg and the shoulders for moderate protection against the dangers of wasteland."
+	icon_state = "armored_labcoat"
+	item_state = "armorkit_punk"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
 /////////////
 // MEDIUM  //

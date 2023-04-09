@@ -1459,6 +1459,38 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+/datum/crafting_recipe/aer9_hotwired
+	name = "Hotwired AER-9"
+	result = /obj/item/gun/energy/laser/aer9/focused
+	reqs = list(/obj/item/gun/energy/laser/aer9 = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/aer9_hotwired_rynn
+	name = "Custom Hotwired AER-9"
+	result = /obj/item/gun/energy/laser/aer9/focused/rynn
+	reqs = list(/obj/item/gun/energy/laser/aer9 = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //plasma rifle
 /datum/crafting_recipe/plasmarifle
 	name = "Plasma Rifle"

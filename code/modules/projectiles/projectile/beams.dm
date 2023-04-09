@@ -333,7 +333,6 @@
 /obj/item/projectile/beam/laser/lasgun/hitscan //hitscan aer9 test
 	name = "laser beam"
 	damage = 32
-	armour_penetration = 0.02 //mostly just to allow scratch damage, so you arent SOL just mostly fucced
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
@@ -341,8 +340,7 @@
 
 /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	name = "overcharged laser beam"
-	damage = 34
-	armour_penetration = 0.6
+	damage = 32
 
 /obj/item/projectile/beam/laser/gatling/hitscan //Gatling Laser
 	name = "laser beam"
