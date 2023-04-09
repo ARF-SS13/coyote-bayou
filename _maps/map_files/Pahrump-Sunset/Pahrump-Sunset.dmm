@@ -28875,6 +28875,8 @@
 	req_access_txt = "150";
 	req_one_access_txt = "150"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "dyw" = (
@@ -45750,6 +45752,7 @@
 	},
 /obj/effect/validball_spawner,
 /obj/effect/spawner/lootdrop/f13/weapon/boss,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "iep" = (
@@ -93475,6 +93478,7 @@
 /area/f13/wasteland/city)
 "vjV" = (
 /obj/structure/ladder/unbreakable{
+	height = 2;
 	id = "miesterbase";
 	level = 1
 	},
