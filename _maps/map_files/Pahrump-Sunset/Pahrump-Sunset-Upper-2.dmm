@@ -259,6 +259,10 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"cw" = (
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "cz" = (
 /obj/structure/closet/cabinet,
 /obj/item/stock_parts/chem_cartridge/simple,
@@ -1021,6 +1025,13 @@
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /turf/open/floor/carpet/red,
+/area/f13/building)
+"mr" = (
+/obj/structure/rack/shelf_metal,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "mG" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1790,13 +1801,6 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"uU" = (
-/obj/structure/rack/shelf_metal,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "uV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -2156,6 +2160,10 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
+"zJ" = (
+/obj/structure/spacevine,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building)
 "zK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -2402,10 +2410,6 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/building)
-"Bv" = (
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "Bz" = (
 /obj/structure/spacevine,
@@ -3936,8 +3940,16 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Rg" = (
-/obj/structure/rack/shelf_metal,
-/turf/open/floor/f13/wood,
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "Rm" = (
 /obj/structure/table/wood,
@@ -6724,12 +6736,12 @@ qt
 qt
 qt
 Zt
-rS
-GW
+Rg
+Rg
 vp
-rS
-rS
-rS
+GW
+Rg
+Rg
 Zt
 hm
 hm
@@ -6987,7 +6999,7 @@ JT
 yo
 JT
 sf
-rS
+qi
 hm
 hm
 hm
@@ -7244,7 +7256,7 @@ YE
 Eq
 YE
 Eq
-rS
+Rg
 hm
 hm
 hm
@@ -7501,7 +7513,7 @@ Po
 Po
 YE
 Eq
-qi
+Rg
 hm
 hm
 hm
@@ -7758,7 +7770,7 @@ YE
 Eq
 WH
 Eq
-WX
+Rg
 hm
 hm
 hm
@@ -8015,7 +8027,7 @@ ey
 jP
 cv
 If
-rS
+WX
 hm
 hm
 hm
@@ -8266,12 +8278,12 @@ Wr
 Wr
 Wr
 Zt
-rS
-rS
+Rg
+Rg
 GW
 vp
-rS
-rS
+Rg
+Rg
 Zt
 hm
 hm
@@ -15170,8 +15182,8 @@ hm
 nO
 IY
 IY
-Bv
-Bv
+zJ
+zJ
 IY
 IY
 IY
@@ -15426,11 +15438,11 @@ hm
 hm
 nO
 IY
-Rg
-Rg
-uU
-Rg
-Rg
+cw
+cw
+mr
+cw
+cw
 IY
 Xv
 hm
@@ -15940,10 +15952,10 @@ hm
 hm
 nO
 IY
-Rg
-Rg
-Rg
-Rg
+cw
+cw
+cw
+cw
 uq
 IY
 Xv

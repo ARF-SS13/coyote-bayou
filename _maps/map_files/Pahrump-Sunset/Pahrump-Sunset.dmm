@@ -14785,6 +14785,10 @@
 /area/f13/bar)
 "aZa" = (
 /obj/structure/table/glass,
+/obj/machinery/microwave{
+	pixel_y = -1;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -88157,15 +88161,13 @@
 	},
 /area/f13/building/abandoned)
 "tIt" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
 /obj/machinery/light/small{
 	dir = 8;
 	light_color = "#d8b1b1";
 	pixel_y = 12
 	},
+/obj/structure/table/glass,
+/obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -97956,6 +97958,17 @@
 	icon_state = "rubble"
 	},
 /area/f13/ruins)
+"wwR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 10
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building/hospital)
 "wwY" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -109327,7 +109340,7 @@ riA
 nZx
 ggm
 uvY
-uMJ
+wwR
 ugE
 aZa
 bcq
