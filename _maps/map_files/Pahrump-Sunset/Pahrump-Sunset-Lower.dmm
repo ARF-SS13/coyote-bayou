@@ -1311,7 +1311,10 @@
 /area/f13/caves)
 "bat" = (
 /obj/machinery/door/unpowered/securedoor,
-/obj/effect/step_trigger/player_choice_log,
+/obj/effect/step_trigger/player_choice_log{
+	title = "Welcome to Heavens Night.";
+	question = "Welcome to Heavens Night, this club is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
+	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "bbc" = (
@@ -26702,6 +26705,9 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"rBg" = (
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/building)
 "rBu" = (
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/building/museum)
@@ -36134,7 +36140,7 @@ aae
 aae
 aae
 aae
-aae
+bCG
 aae
 aae
 aae
@@ -36391,7 +36397,7 @@ aae
 aae
 aae
 aae
-aae
+bCG
 aae
 aae
 aae
@@ -36648,7 +36654,7 @@ aae
 aae
 aae
 aae
-bOb
+rBg
 bOb
 bOb
 bOb
@@ -36905,7 +36911,7 @@ aae
 aae
 aae
 aae
-bOb
+rBg
 qzA
 hhE
 nsX
@@ -37162,7 +37168,7 @@ aae
 aae
 aae
 aae
-bOb
+rBg
 rKh
 hiI
 nnI
@@ -37419,11 +37425,11 @@ aae
 aae
 aae
 aae
-bOb
+rBg
 izI
 bwU
 hhE
-bOb
+mGF
 rhk
 hFH
 jNW
@@ -37676,7 +37682,7 @@ bOb
 bOb
 bOb
 bOb
-bOb
+rBg
 bOb
 xyL
 cWH
@@ -37933,7 +37939,7 @@ uHH
 bOb
 oGH
 cbK
-bOb
+rBg
 hhE
 eUU
 rsd
@@ -38190,7 +38196,7 @@ wEq
 bOb
 oyH
 adJ
-bOb
+rBg
 hhE
 rnN
 rtD
@@ -38447,9 +38453,9 @@ bOb
 bOb
 qjZ
 bOb
-bOb
-mGF
-bOb
+rBg
+rBg
+rBg
 jNW
 iad
 bOb
@@ -38706,7 +38712,7 @@ gcv
 awp
 gcv
 tkZ
-bOb
+rBg
 vhv
 pWC
 uoY
@@ -38963,7 +38969,7 @@ tPr
 gcv
 mEa
 nmJ
-bOb
+rBg
 cTK
 iMO
 nLW
@@ -39220,7 +39226,7 @@ hXn
 oVY
 mEa
 tkZ
-bOb
+rBg
 dQc
 iMO
 ieT
@@ -39477,7 +39483,7 @@ iad
 hXn
 mEa
 qKz
-bOb
+rBg
 vmF
 sOF
 iad
@@ -39991,7 +39997,7 @@ bOb
 hXn
 gcv
 qKz
-bOb
+rBg
 bZa
 jNE
 jNE
@@ -40248,7 +40254,7 @@ bOb
 hXn
 mEa
 tkZ
-bOb
+rBg
 kMN
 oJA
 tyk
@@ -40505,7 +40511,7 @@ bOb
 hXn
 mEa
 tkZ
-bOb
+rBg
 mMz
 tyk
 xeC
@@ -40762,7 +40768,7 @@ bOb
 hXn
 mEa
 tkZ
-bOb
+rBg
 xjO
 oJA
 oJA
@@ -41019,10 +41025,10 @@ bOb
 gcv
 gcv
 tkZ
-bOb
-bOb
-bOb
-bOb
+rBg
+rBg
+rBg
+rBg
 iad
 iad
 tOH
@@ -41279,7 +41285,7 @@ tkZ
 tkZ
 tkZ
 jGk
-bOb
+rBg
 qxh
 krl
 alA
@@ -41536,7 +41542,7 @@ gcv
 gcv
 tkZ
 jGk
-bOb
+rBg
 jdS
 iqE
 iwE
@@ -41793,7 +41799,7 @@ gcv
 gcv
 tkZ
 jGk
-bOb
+rBg
 abB
 cPj
 ihw
@@ -42050,7 +42056,7 @@ gcv
 gcv
 tkZ
 jGk
-bOb
+rBg
 bOb
 bOb
 bOb
