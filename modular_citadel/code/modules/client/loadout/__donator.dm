@@ -1089,8 +1089,6 @@
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 	new /obj/item/reagent_containers/glass/bottle/gaia(src)
-	new /obj/item/reagent_containers/glass/bottle/ichor/red(src)
-	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
 	new /obj/item/reagent_containers/pill/patch/turbo(src)
 
 /datum/gear/donator/kits/truedark3
