@@ -11341,8 +11341,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/directions/cells{
 	dir = 1;
-	pixel_y = 30;
-	pixel_x = 6
+	pixel_y = 38
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -14786,6 +14785,10 @@
 /area/f13/bar)
 "aZa" = (
 /obj/structure/table/glass,
+/obj/machinery/microwave{
+	pixel_y = -1;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -28875,6 +28878,8 @@
 	req_access_txt = "150";
 	req_one_access_txt = "150"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "dyw" = (
@@ -45750,6 +45755,7 @@
 	},
 /obj/effect/validball_spawner,
 /obj/effect/spawner/lootdrop/f13/weapon/boss,
+/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "iep" = (
@@ -86116,8 +86122,9 @@
 "thl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/directions/cells{
-	pixel_y = 30;
-	pixel_x = -11
+	pixel_y = 38;
+	pixel_x = 2;
+	layer = 4.0
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -88154,15 +88161,13 @@
 	},
 /area/f13/building/abandoned)
 "tIt" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
 /obj/machinery/light/small{
 	dir = 8;
 	light_color = "#d8b1b1";
 	pixel_y = 12
 	},
+/obj/structure/table/glass,
+/obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -97953,6 +97958,17 @@
 	icon_state = "rubble"
 	},
 /area/f13/ruins)
+"wwR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 10
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building/hospital)
 "wwY" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -109324,7 +109340,7 @@ riA
 nZx
 ggm
 uvY
-uMJ
+wwR
 ugE
 aZa
 bcq
