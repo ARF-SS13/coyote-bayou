@@ -1355,3 +1355,27 @@
 	cost = 1
 	path = /obj/item/clothing/under/civ/spanish_sailor
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/spanishsoldier
+	name = "Spanish Soldier"
+	cost = 1
+	path = /obj/item/clothing/under/civ/spanish_soldier
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/britishsoldier
+	name = "british Soldier"
+	cost = 1
+	path = /obj/item/clothing/under/civ/british_soldier
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/frenchsailor
+	name = "french sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/french_sailor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dutchsailor
+	name = "dutch sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dutch_sailor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

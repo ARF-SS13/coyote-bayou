@@ -900,4 +900,36 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = TRUE
 
+/obj/item/clothing/under/civ/spanish_soldier
+	name = "spanish soldier"
+	icon_state = "spanish_soldier"
+	item_state = "spanish_soldier"
+	item_color = "spanish_soldier"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/british_soldier
+	name = "british soldier"
+	icon_state = "british_soldier"
+	item_state = "british_soldier"
+	item_color = "british_soldier"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/french_sailor
+	name = "french sailor"
+	icon_state = "french_sailor"
+	item_state = "french_sailor"
+	item_color = "french_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/dutch_sailor
+	name = "dutch officer"
+	icon_state = "dutch_sailor"
+	item_state = "dutch_sailor"
+	item_color = "dutch_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
 
