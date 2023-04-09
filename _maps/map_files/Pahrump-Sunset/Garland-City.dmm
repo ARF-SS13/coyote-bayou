@@ -11250,7 +11250,8 @@
 /area/f13/wasteland)
 "inE" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/opshuttle,
+/obj/structure/simple_door/metal/store,
+/turf/closed/wall/f13/store,
 /area/f13/building)
 "inH" = (
 /obj/structure/closet/crate/bin,
@@ -16341,10 +16342,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"lPf" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/building)
 "lPH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -17259,11 +17256,6 @@
 /obj/structure/table/wood,
 /obj/item/storage/fancy/cigarettes/cigars/cohiba,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"msF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building)
 "msL" = (
 /obj/structure/grille,
@@ -20142,9 +20134,6 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/building)
-"osY" = (
-/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building)
 "otS" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
@@ -25225,8 +25214,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "saU" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/fakeglass,
+/obj/structure/simple_door/metal/store,
+/turf/closed/wall/f13/store,
 /area/f13/building)
 "saV" = (
 /obj/structure/lattice,
@@ -31663,14 +31652,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "whiteyellowdirtychess2"
-	},
-/area/f13/building)
-"wAE" = (
-/obj/structure/simple_door/bunker/glass,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
 "wAJ" = (
@@ -40440,13 +40421,13 @@ cvw
 "}
 (26,1,1) = {"
 cvw
-oGl
-oGl
-oGl
-oGl
-oGl
-oGl
-oGl
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
 oGl
 kMZ
 uNd
@@ -40697,13 +40678,13 @@ cvw
 "}
 (27,1,1) = {"
 cvw
-oGl
-oGl
-isL
-isL
-isL
-isL
-isL
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
 oGl
 rUV
 uNd
@@ -40954,13 +40935,13 @@ cvw
 "}
 (28,1,1) = {"
 cvw
-oGl
-oGl
-isL
-osY
-osY
-osY
-isL
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
 oGl
 gXx
 uDH
@@ -41211,13 +41192,13 @@ cvw
 "}
 (29,1,1) = {"
 cvw
-oGl
-oGl
-isL
-osY
-lPf
-lPf
-isL
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
 oGl
 kDX
 qZX
@@ -41468,13 +41449,13 @@ cvw
 "}
 (30,1,1) = {"
 cvw
-oGl
-oGl
-inE
-msF
-lPf
-lPf
-inE
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
+lSi
 oGl
 exx
 uDH
@@ -41727,11 +41708,11 @@ cvw
 cvw
 oGl
 oGl
-isL
-saU
-wAE
-saU
-isL
+oGl
+oGl
+oGl
+oGl
+oGl
 oGl
 tZR
 uDH
@@ -42760,7 +42741,7 @@ rPd
 fZZ
 fZZ
 uDH
-sIH
+inE
 uNd
 uDH
 lbE
@@ -43274,7 +43255,7 @@ hnC
 hnC
 hnC
 uNd
-oGl
+saU
 qyU
 uNd
 uNd
