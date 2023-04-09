@@ -1790,6 +1790,13 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"uU" = (
+/obj/structure/rack/shelf_metal,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "uV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -2395,6 +2402,10 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
+/area/f13/building)
+"Bv" = (
+/obj/structure/spacevine,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "Bz" = (
 /obj/structure/spacevine,
@@ -3925,7 +3936,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Rg" = (
-/obj/structure/simple_door/wood,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Rm" = (
@@ -15157,13 +15168,13 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-mY
-mY
-Wr
-Wr
-Wr
+IY
+IY
+Bv
+Bv
+IY
+IY
+IY
 Xv
 hm
 hm
@@ -15414,13 +15425,13 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-mY
-Wr
-Wr
-Wr
-Wr
+IY
+Rg
+Rg
+uU
+Rg
+Rg
+IY
 Xv
 hm
 hm
@@ -15671,12 +15682,12 @@ hm
 hm
 hm
 nO
-Wr
-mY
-Wr
-Wr
 IY
-Rg
+uq
+uq
+uq
+uq
+uq
 IY
 Xv
 hm
@@ -15928,11 +15939,11 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-mY
-Wr
 IY
+Rg
+Rg
+Rg
+Rg
 uq
 IY
 Xv
@@ -16185,10 +16196,10 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-Wr
-Wr
+IY
+IY
+IY
+IY
 IY
 uq
 IY
