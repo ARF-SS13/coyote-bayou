@@ -3834,7 +3834,7 @@
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "dMO" = (
 /mob/living/simple_animal/hostile/renegade/meister,
 /turf/open/indestructible/ground/outside/roof,
@@ -5417,7 +5417,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "flo" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_west_north"
@@ -8056,7 +8056,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "hJG" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -10258,7 +10258,7 @@
 	req_one_access_txt = "52"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "jKa" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/f13/wood,
@@ -10833,11 +10833,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"kme" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
 "kms" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -10855,7 +10850,7 @@
 	pixel_y = 30
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "kmU" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -11792,7 +11787,7 @@
 "lfZ" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "lgq" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/f13/wood,
@@ -12796,7 +12791,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "mcX" = (
 /obj/item/bedsheet/gondola{
 	pixel_y = 3
@@ -13390,10 +13385,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/mall)
-"mEJ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/rust,
-/area/f13/wasteland)
 "mFl" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -13412,7 +13403,7 @@
 	dir = 4
 	},
 /turf/closed/wall/r_wall/rust,
-/area/f13/wasteland)
+/area/f13/building)
 "mFI" = (
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/f13{
@@ -13833,7 +13824,7 @@
 	dir = 4
 	},
 /turf/closed/wall/r_wall/rust,
-/area/f13/wasteland)
+/area/f13/building)
 "mYA" = (
 /obj/structure/railing{
 	dir = 10
@@ -13971,7 +13962,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "neQ" = (
 /obj/structure/table/wood,
 /obj/structure/destructible/tribal_torch/lit,
@@ -15282,7 +15273,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "ouR" = (
 /obj/structure/chair/office/dark,
 /turf/open/floor/f13/wood{
@@ -16545,9 +16536,6 @@
 /obj/structure/bookcase,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"pMU" = (
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
 "pOP" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -17341,7 +17329,7 @@
 	pixel_y = -30
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "qxT" = (
 /obj/structure/flora/rock/pile/largejungle{
 	layer = 3.2;
@@ -19255,7 +19243,7 @@
 	name = "Vault Blast Door"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "sta" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -19405,10 +19393,6 @@
 	dir = 10
 	},
 /turf/open/transparent/openspace,
-/area/f13/wasteland)
-"sFk" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
 "sFr" = (
 /obj/effect/decal/cleanable/dirt{
@@ -19790,7 +19774,7 @@
 	dir = 6
 	},
 /turf/closed/wall/r_wall/rust,
-/area/f13/wasteland)
+/area/f13/building)
 "tcD" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -19931,7 +19915,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "tgJ" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin/towel,
@@ -20317,7 +20301,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "twW" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/f13{
@@ -20343,7 +20327,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "tzj" = (
 /obj/structure/dresser,
 /obj/item/clothing/shoes/f13/cowboy{
@@ -20376,7 +20360,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "tAq" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -20801,7 +20785,7 @@
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "tUY" = (
 /turf/closed/indestructible/riveted/boss{
 	name = "temple wall"
@@ -23218,7 +23202,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
+/area/f13/building)
 "wBX" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet{
@@ -34559,11 +34543,11 @@ ohv
 oez
 oez
 oez
-wqF
-wqF
-wqF
-wqF
-wqF
+nSB
+nSB
+nSB
+nSB
+nSB
 dUa
 oeP
 oez
@@ -34816,11 +34800,11 @@ uEt
 oez
 oez
 oez
-wqF
+nSB
 flg
 tgm
 mcS
-wqF
+nSB
 dUa
 wXH
 oez
@@ -35073,14 +35057,14 @@ cOy
 oez
 oez
 oez
-wqF
+nSB
 kmJ
 ouQ
 hIX
-wqF
-wqF
-wqF
-wqF
+nSB
+nSB
+nSB
+nSB
 oez
 gWO
 dUa
@@ -35330,14 +35314,14 @@ ioS
 oez
 oez
 poH
-wqF
+nSB
 tAc
-pMU
+cqK
 tyb
-wqF
+nSB
 tTI
-pMU
-wqF
+cqK
+nSB
 oez
 ljF
 dUa
@@ -35587,14 +35571,14 @@ ohv
 oez
 oez
 gWO
-wqF
+nSB
 wBT
 twI
 qxM
-wqF
+nSB
 tTI
-pMU
-wqF
+cqK
+nSB
 oez
 gWO
 oqk
@@ -35844,14 +35828,14 @@ uEt
 oez
 oez
 ljF
-wqF
-wqF
-pMU
-wqF
-wqF
+nSB
+nSB
+cqK
+nSB
+nSB
 dMJ
-sFk
-wqF
+ujK
+nSB
 oez
 gWO
 xel
@@ -36102,13 +36086,13 @@ oez
 oez
 gWO
 dUa
-wqF
-pMU
+nSB
+cqK
 lfZ
-wqF
+nSB
 tTI
-pMU
-wqF
+cqK
+nSB
 oez
 nAu
 gtb
@@ -36359,13 +36343,13 @@ oez
 oez
 gWO
 xVM
-mEJ
+gXC
 neB
-kme
+gPM
 ssW
-pMU
-pMU
-wqF
+cqK
+cqK
+nSB
 oez
 oez
 oez
@@ -36616,13 +36600,13 @@ oez
 oez
 ljF
 xVM
-mEJ
-oez
+gXC
+axq
 jJx
-wqF
-wqF
-wqF
-wqF
+nSB
+nSB
+nSB
+nSB
 oez
 oez
 oez
