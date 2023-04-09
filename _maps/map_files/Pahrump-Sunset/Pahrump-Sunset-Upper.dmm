@@ -3647,8 +3647,12 @@
 	},
 /area/f13/building)
 "dDd" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/f13/wood,
+/obj/structure/ladder/unbreakable{
+	id = "miesterbase";
+	level = 1;
+	height = 1
+	},
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "dDl" = (
 /turf/open/floor/f13/wood{
@@ -6585,11 +6589,12 @@
 	},
 /area/f13/building)
 "gsV" = (
-/obj/structure/filingcabinet{
-	pixel_x = 9
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 1
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "gta" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -21551,14 +21556,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"uGN" = (
-/obj/structure/ladder/unbreakable{
-	id = "miesterbase";
-	level = 1;
-	height = 1
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/building)
 "uHi" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -24544,12 +24541,13 @@
 	dir = 1;
 	icon_state = "post_wood"
 	},
-/obj/structure/railing/corner{
-	color = "#A47449"
-	},
 /obj/structure/fence/wooden{
 	dir = 4;
 	icon_state = "post_wood"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
 	},
 /turf/open/floor/grass{
 	color = "#444444"
@@ -32164,8 +32162,8 @@ oez
 oez
 cBX
 qIs
-qIs
-qIs
+bmB
+bmB
 qIs
 cBX
 kCD
@@ -32418,12 +32416,12 @@ oez
 oez
 oez
 oez
-oez
+mRK
 qIs
 qIs
-cdN
-cdN
-fmJ
+mNn
+mNn
+rrM
 qIs
 kCD
 xTy
@@ -32675,13 +32673,13 @@ oez
 oez
 oez
 oez
-oez
-qIs
+oIp
+mNn
 knV
-cdN
-cdN
-cdN
-dDd
+mNn
+mNn
+mNn
+bmB
 dYg
 xTy
 xTy
@@ -32932,13 +32930,13 @@ oez
 oez
 oez
 oez
-oez
-qIs
-cdN
-cdN
-cdN
-cdN
-dDd
+oIp
+mNn
+mNn
+mNn
+mNn
+mNn
+bmB
 dYg
 kCD
 anc
@@ -32958,11 +32956,11 @@ tmU
 mha
 mha
 xUi
-rrx
-rrx
-rrx
-cNe
-oez
+xyP
+xyP
+xyP
+xyP
+odJ
 oez
 oez
 oez
@@ -33189,12 +33187,12 @@ oez
 oez
 oez
 oez
-oez
+afb
 qIs
-ega
-usR
-gsV
-fmJ
+tPg
+eJT
+mNn
+xbW
 qIs
 wDF
 kCD
@@ -33218,8 +33216,8 @@ oIp
 eJa
 xyP
 aRd
-uZC
-oez
+xyP
+odJ
 oez
 oez
 oez
@@ -33449,8 +33447,8 @@ oez
 oez
 cBX
 qIs
-qIs
-qIs
+mNn
+mNn
 qIs
 cBX
 vGd
@@ -33705,10 +33703,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+afb
+mrM
+mrM
+uiW
 oez
 oez
 oez
@@ -38866,7 +38864,7 @@ oez
 oez
 oez
 oez
-oez
+mRK
 qIs
 qIs
 mNn
@@ -39123,8 +39121,8 @@ oez
 oez
 oez
 oez
-oez
-qIs
+oIp
+mNn
 knV
 mNn
 mNn
@@ -39380,8 +39378,8 @@ oez
 oez
 oez
 oez
-oez
-qIs
+oIp
+mNn
 mNn
 mNn
 mNn
@@ -39637,12 +39635,12 @@ oez
 oez
 oez
 oez
-oez
+afb
 qIs
 tPg
 eJT
+mNn
 xbW
-rrM
 qIs
 mrM
 mrM
@@ -39897,8 +39895,8 @@ oez
 oez
 cBX
 qIs
-qIs
-qIs
+mNn
+mNn
 qIs
 cBX
 oez
@@ -40153,6 +40151,10 @@ oez
 oez
 oez
 oez
+afb
+mrM
+mrM
+uiW
 oez
 oez
 oez
@@ -40169,11 +40171,7 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
+mRK
 qIs
 mNn
 mNn
@@ -40430,8 +40428,8 @@ oez
 oez
 oez
 oez
-oez
-qIs
+oIp
+mNn
 mNn
 mNn
 mNn
@@ -40687,8 +40685,8 @@ oez
 oez
 oez
 oez
-oez
-qIs
+oIp
+mNn
 rrM
 mNn
 mNn
@@ -40944,7 +40942,7 @@ oez
 oez
 oez
 oez
-oez
+afb
 qIs
 xbW
 mNn
@@ -41204,8 +41202,8 @@ oez
 oez
 cBX
 qIs
-qIs
-qIs
+mNn
+mNn
 qIs
 cBX
 oez
@@ -41460,10 +41458,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+afb
+mrM
+mrM
+uiW
 oez
 oez
 oez
@@ -41744,7 +41742,7 @@ oez
 oez
 oez
 oez
-oez
+mRK
 qIs
 mNn
 mNn
@@ -41784,7 +41782,7 @@ enl
 tPg
 qIs
 qIs
-oez
+dmX
 oez
 oez
 oez
@@ -42001,8 +41999,8 @@ oez
 oez
 oez
 oez
-oez
-qIs
+oIp
+mNn
 mNn
 mNn
 mNn
@@ -42040,8 +42038,8 @@ mNn
 mNn
 nGe
 knV
-qIs
-oez
+mNn
+odJ
 oez
 oez
 oez
@@ -42258,8 +42256,8 @@ oez
 oez
 oez
 oez
-oez
-qIs
+oIp
+mNn
 rrM
 mNn
 mNn
@@ -42297,8 +42295,8 @@ mNn
 mNn
 mNn
 mNn
-qIs
-oez
+mNn
+odJ
 oez
 oez
 oez
@@ -42515,7 +42513,7 @@ oez
 oez
 oez
 oez
-oez
+afb
 qIs
 xbW
 mNn
@@ -42555,7 +42553,7 @@ mNn
 mNn
 mNn
 qIs
-oez
+gsV
 oez
 oez
 oez
@@ -42775,8 +42773,8 @@ oez
 oez
 cBX
 qIs
-qIs
-qIs
+mNn
+mNn
 qIs
 cBX
 oez
@@ -42808,8 +42806,8 @@ oez
 oez
 cBX
 qIs
-qIs
-qIs
+mNn
+mNn
 qIs
 cBX
 oez
@@ -43031,6 +43029,10 @@ oez
 oez
 oez
 oez
+afb
+mrM
+mrM
+uiW
 oez
 oez
 oez
@@ -43060,14 +43062,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+afb
+mrM
+mrM
+uiW
 oez
 oez
 oez
@@ -54993,7 +54991,7 @@ tmP
 nSY
 sTt
 nSY
-uGN
+dDd
 gxD
 oez
 oez
