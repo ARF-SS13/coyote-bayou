@@ -142,9 +142,9 @@
 #define XENOBIO_UPGRADE_SLIMEADV			4
 
 //Citadel toggles because bitflag memes
-//#define VORE_DOGBORGS	(1<<0)
-//#define VORE_EATING_NOISES		(1<<1)
-//#define VORE_DIGESTION_NOISES	(1<<2)
+//#define VOREALLOW_DOGBORGS	(1<<0)
+//#define VOREALLOW_EATING_NOISES		(1<<1)
+//#define VOREALLOW_DIGESTION_NOISES	(1<<2)
 #define BREAST_ENLARGEMENT	(1<<3)
 #define PENIS_ENLARGEMENT	(1<<4)
 #define FORCED_FEM			(1<<5)
@@ -156,7 +156,7 @@
 #define BIMBOFICATION		(1<<11)
 #define NO_AUTO_WAG			(1<<12)
 #define GENITAL_EXAMINE		(1<<13)
-//#define VORE_EXAMINE		(1<<14)
+//#define VOREALLOW_SEEING_BELLY_DESC		(1<<14)
 #define BUTT_ENLARGEMENT	(1<<15) // the butt is in the rear lol
 #define BELLY_ENLARGEMENT	(1<<16) // nope the belly is bro
 #define TOGGLES_CITADEL 0

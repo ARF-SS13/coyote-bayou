@@ -159,12 +159,13 @@
 	RegisterSignal(src, COMSIG_VORE_STOP_SOUNDS, .proc/stop_sounds)
 	RegisterSignal(src, COMSIG_VORE_AUTO_EMOTE, .proc/auto_emote)
 	RegisterSignal(src, COMSIG_VORE_ADD_BELLY, .proc/add_belly)
-	RegisterSignal(src, COMSIG_VORE_EXPEL_MOB, .proc/release_specific_contents)
+	RegisterSignal(src, COMSIG_VORE_EXPEL_SPECIFIC, .proc/release_specific_contents)
 	RegisterSignal(src, COMSIG_VORE_EXPEL_MOB_OOC, .proc/ooc_escape)
-	RegisterSignal(src, COMSIG_VORE_EXPEL_ALL_MOBS, .proc/release_all_contents)
+	RegisterSignal(src, COMSIG_VORE_EXPEL_ALL, .proc/release_all_contents)
 
 /obj/vore_belly/Destroy()
 	// be kind, undefined
+	SEND_SIGNAL(src, COMSIG_VORE_EXPEL_ALL)
 	UnregisterSignal(src, list(
 		COMSIG_ATOM_ENTERED,
 		COMSIG_ATOM_EXITED,
@@ -179,9 +180,9 @@
 		UnregisterSignal(our_owner, list(
 			COMSIG_LIVING_RESIST,
 			COMSIG_VORE_STOP_SOUNDS,
-			COMSIG_VORE_EXPEL_MOB,
+			COMSIG_VORE_EXPEL_SPECIFIC,
 			COMSIG_VORE_EXPEL_MOB_OOC,
-			COMSIG_VORE_EXPEL_ALL_MOBS,
+			COMSIG_VORE_EXPEL_ALL,
 			))
 	STOP_PROCESSING(SSvore, src)
 	owner = null
@@ -193,9 +194,9 @@
 	owner = WEAKREF(new_owner)
 	START_PROCESSING(SSvore, src)
 	RegisterSignal(new_owner, COMSIG_VORE_STOP_SOUNDS, .proc/stop_sounds)
-	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_MOB, .proc/release_specific_contents)
+	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_SPECIFIC, .proc/release_specific_contents)
 	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_MOB_OOC, .proc/ooc_escape)
-	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_ALL_MOBS, .proc/release_all_contents)
+	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_ALL, .proc/release_all_contents)
 
 // Called whenever an atom enters this belly
 /obj/vore_belly/proc/on_enter_belly(datum/parent, atom/movable/AM_prey, atom/OldLoc)
@@ -204,16 +205,17 @@
 	if(isliving(AM_prey))
 		living_prey = AM_prey
 		if(!CHECK_PREFS(living_prey, VOREPREF_BEING_PREY))
-			SEND_SIGNAL(src, COMSIG_VORE_EXPEL_MOB, living_prey) // oops! out you go!
+			SEND_SIGNAL(src, COMSIG_VORE_EXPEL_SPECIFIC, living_prey) // oops! out you go!
 			return
 		living_prey.become_blind("belly_[REF(src)]")
+		RegisterSignal(living_prey, COMSIG_MOB_DEATH, .proc/digestion_death)
+		RegisterSignal(living_prey, COMSIG_LIVING_RESIST, .proc/relay_resist)
+		RegisterSignal(living_prey, COMSIG_ATOM_RELAYMOVE, .proc/relay_resist)
 	if(OldLoc in contents)
 		return //Someone dropping something (or being stripdigested)
 	//Generic entered message
-	RegisterSignal(living_prey, COMSIG_MOB_DEATH, .proc/digestion_death)
-	RegisterSignal(living_prey, COMSIG_LIVING_RESIST, .proc/relay_resist)
-	RegisterSignal(living_prey, COMSIG_ATOM_RELAYMOVE, .proc/relay_resist)
 	var/mob/living/pwner = RESOLVEREF(owner)
+	SEND_SIGNAL(AM_prey, COMSIG_VORE_ATOM_DEVOURED, src, pwner)
 	to_chat(pwner,span_notice("[AM_prey] slides into your [lowertext(name)]."))
 	//ulp~
 	play_gulp()
@@ -284,7 +286,7 @@
 		pref_check = VOREPREF_TEXT)
 
 /obj/vore_belly/proc/ooc_escape(datum/source, mob/living/living_prey)
-	SEND_SIGNAL(src, COMSIG_VORE_EXPEL_MOB, living_prey, TRUE)
+	release_specific_contents(source, living_prey, TRUE)
 		// for(var/mob/living/simple_animal/SA in range(10))
 		// 	SA.prey_excludes[src] = world.time
 
@@ -549,7 +551,7 @@
 		log_attack("[key_name(pwner)] digested [key_name(living_prey)].")
 
 	// If digested prey is also a pred... anyone inside their bellies gets moved up.
-	SEND_SIGNAL(living_prey, COMSIG_VORE_EXPEL_ALL_MOBS, TRUE, TRUE)
+	SEND_SIGNAL(living_prey, COMSIG_VORE_EXPEL_ALL, TRUE, TRUE)
 
 	//Drop all items into the belly
 	for(var/obj/item/W in living_prey)
@@ -733,7 +735,7 @@
 			))
 		return FALSE
 	if(escapable && is_in_belly(living_prey)) //Can still escape?
-		SEND_SIGNAL(src, COMSIG_VORE_EXPEL_MOB, living_prey)
+		SEND_SIGNAL(src, COMSIG_VORE_EXPEL_SPECIFIC, living_prey)
 	else //Belly became inescapable or mob revived
 		to_chat(
 			living_prey,
@@ -797,7 +799,7 @@
 		return FALSE
 	if(CHECK_BITFIELD(living_prey.status_flags, GODMODE))
 		return FALSE
-	if(!CHECK_PREFS(living_prey, VOREPREF_VORE_DIGESTION_DAMAGE))
+	if(!CHECK_PREFS(living_prey, VOREPREF_DIGESTION_DAMAGE))
 		return FALSE
 	var/vflags = SEND_SIGNAL(living_prey, COMSIG_VORE_GET_VOREFLAGS)
 	if(!CHECK_BITFIELD(vflags, DIGESTABLE))
@@ -807,7 +809,7 @@
 	return TRUE
 
 /obj/vore_belly/proc/digest_living(mob/living/living_prey)
-	if(!CHECK_PREFS(living_prey, VOREPREF_VORE_DIGESTION_DAMAGE))
+	if(!CHECK_PREFS(living_prey, VOREPREF_DIGESTION_DAMAGE))
 		return
 	if(!CHECK_PREFS(living_prey, VOREPREF_DEATH))
 		if(living_prey.health <= ((digest_brute + digest_burn) * 2))

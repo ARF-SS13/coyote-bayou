@@ -64,3 +64,12 @@
 	if(!Adjacent(sniffed))
 		return
 	SEND_SIGNAL(sniffed, COMSIG_VORE_SNIFF_LIVING, src)
+
+/mob/living/proc/toggle_voremode()
+	set name = "Enable Vore Intent"
+	set category = "Vore"
+	set desc = "Set whether or not hitting yourself (or someone else) with a grabbed person will do the vore."
+
+	SEND_SIGNAL(src, COMSIG_VORE_TOGGLE_VOREMODE)
+	var/modenow = SEND_SIGNAL(src, COMSIG_VORE_GET_VOREMODE)
+	to_chat(src, span_notice("Your vore intent is now [modenow ? span_greentext("active") : span_redtext("inactive")]!"))

@@ -23,7 +23,7 @@
 /obj/item/projectile/sickshot/on_hit(var/atom/movable/target, var/blocked = 0)
 	. = ..()
 	if(isliving(target) && prob(5))
-		SEND_SIGNAL(target, COMSIG_VORE_EXPEL_ALL_MOBS, TRUE, TRUE)
+		SEND_SIGNAL(target, COMSIG_VORE_EXPEL_ALL, TRUE, TRUE)
 		target.visible_message("<span class='danger'>[target] contracts strangely, spewing out contents on the floor!</span>", \
 				"<span class='userdanger'>You spew out everything inside you on the floor!</span>",
 				pref_check = VOREPREF_TEXT)

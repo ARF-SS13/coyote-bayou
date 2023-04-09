@@ -17,13 +17,17 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 		prefs[spref.index] = spref
 
 /datum/controller/subsystem/prefbreak/proc/get_prefs(pingvin)
+	if(istype(pingvin, /datum/preferences))
+		return pingvin
 	if(isclient(pingvin))
 		var/client/zloy = pingvin
 		return zloy.prefs
 	if(ismob(pingvin))
 		var/mob/zloy = pingvin
-		return zloy?.client.prefs
+		return zloy.client?.prefs
 
+/// takes in anything, sees if it has a client/prefs/whatever, and checks those prefs
+/// Allows things by default, denies it if specifically disallowed
 /datum/controller/subsystem/prefbreak/proc/allowed_by_prefs(broken, index)
 	if(!broken)
 		return TRUE // allow by default
@@ -51,55 +55,55 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 
 /datum/prefcheck/voreprefs
 	index = "vore"
-	pref = VORE_EATING_NOISES
+	pref = VOREALLOW_EATING_NOISES
 
 /datum/prefcheck/voreprefs/eat_noises
 	index = VOREPREF_EAT_SOUNDS
-	pref = VORE_EATING_NOISES
+	pref = VOREALLOW_EATING_NOISES
 
 /datum/prefcheck/voreprefs/digest_noises
 	index = VOREPREF_DIGESTION_SOUNDS
-	pref = VORE_DIGESTION_NOISES
+	pref = VOREALLOW_DIGESTION_NOISES
 
 /datum/prefcheck/voreprefs/digest_damage
-	index = VOREPREF_VORE_DIGESTION_DAMAGE
-	pref = VORE_DIGESTION_DAMAGE
+	index = VOREPREF_DIGESTION_DAMAGE
+	pref = VOREALLOW_DIGESTION_DAMAGE
 
 /datum/prefcheck/voreprefs/absorbable
 	index = VOREPREF_ABSORBTION
-	pref = VORE_ABSORBABLE
+	pref = VOREALLOW_ABSORBTION
 
 /datum/prefcheck/voreprefs/healbellyable
 	index = VOREPREF_HEALBELLY
-	pref = VORE_HEALBELLY
+	pref = VOREALLOW_HEALBELLY_HEALING
 
 /datum/prefcheck/voreprefs/death
 	index = VOREPREF_DEATH
-	pref = VORE_DEATH
+	pref = VOREALLOW_DIGESTION_DEATH
 
 /datum/prefcheck/voreprefs/examine
 	index = VOREPREF_EXAMINE
-	pref = VORE_EXAMINE
+	pref = VOREALLOW_SEEING_BELLY_DESC
 
 /datum/prefcheck/voreprefs/text
 	index = VOREPREF_TEXT
-	pref = VORE_TEXT
+	pref = VOREALLOW_VORE_MESSAGES
 
 /datum/prefcheck/voreprefs/text_xtreme
 	index = VOREPREF_TEXT_DEATH
-	pref = VORE_TEXT_DEATH
+	pref = VOREALLOW_DEATH_MESSAGES
 
 /datum/prefcheck/voreprefs/being_prey
 	index = VOREPREF_BEING_PREY
-	pref = VORE_BEING_PREY
+	pref = VOREALLOW_BEING_PREY
 
 /datum/prefcheck/voreprefs/being_fed_prey
 	index = VOREPREF_BEING_FED
-	pref = VORE_BEING_FED
+	pref = VOREALLOW_BEING_FED_OTHERS
 
 /datum/prefcheck/voreprefs/sniff
 	index = VOREPREF_SNIFFABLE
-	pref = VORE_SNIFFABLE
+	pref = VOREALLOW_BEING_SNIFFED
 
 /datum/prefcheck/voreprefs/allowed(datum/preferences/consumer)
 	if(CHECK_BITFIELD(consumer.vore_prefs, pref))

@@ -61,19 +61,19 @@ GLOBAL_LIST_INIT(player_sizes_list, list("Macro" = SIZESCALE_HUGE, "Big" = SIZES
 
 
 //vore pref flags
-#define VORE_DOGBORGS			(1<<0) // I never got why people dont like dogborgs
-#define VORE_EATING_NOISES		(1<<1) // Allows gross vore eating noises
-#define VORE_DIGESTION_NOISES	(1<<2) // Allows gross vore gurgling noises
-#define VORE_DIGESTION_DAMAGE	(1<<3) // Allows digestion to damage you
-#define VORE_ABSORBABLE			(1<<4) // Allows absorbtion to happen
-#define VORE_HEALBELLY			(1<<5) // Allows healbellies to heal you
-#define VORE_DEATH				(1<<6) // Allows digestion to fuckin murder you
-#define VORE_TEXT				(1<<7) // Allows seeing vore messages
-#define VORE_TEXT_DEATH			(1<<8) // Allows seeing vore messages about dying
-#define VORE_BEING_PREY			(1<<9) // Allows being prey
-#define VORE_BEING_FED			(1<<10) // Allows being fed
-#define VORE_EXAMINE			(1<<11) // Allows reading descs about bellies
-#define VORE_SNIFFABLE			(1<<12) // Allows being sniffed
+#define VOREALLOW_DOGBORGS			(1<<0) // I never got why people dont like dogborgs
+#define VOREALLOW_EATING_NOISES		(1<<1) // Allows gross vore eating noises
+#define VOREALLOW_DIGESTION_NOISES	(1<<2) // Allows gross vore gurgling noises
+#define VOREALLOW_DIGESTION_DAMAGE	(1<<3) // Allows digestion to damage you
+#define VOREALLOW_DIGESTION_DEATH	(1<<4) // Allows digestion to fuckin murder you
+#define VOREALLOW_ABSORBTION		(1<<5) // Allows absorbtion to happen
+#define VOREALLOW_HEALBELLY_HEALING	(1<<6) // Allows healbellies to heal you
+#define VOREALLOW_VORE_MESSAGES		(1<<7) // Allows seeing vore messages
+#define VOREALLOW_DEATH_MESSAGES	(1<<8) // Allows seeing vore messages about dying
+#define VOREALLOW_BEING_PREY		(1<<9) // Allows being prey
+#define VOREALLOW_BEING_FED_OTHERS	(1<<10) // Allows being fed
+#define VOREALLOW_SEEING_BELLY_DESC	(1<<11) // Allows reading descs about bellies
+#define VOREALLOW_BEING_SNIFFED		(1<<12) // Allows being sniffed
 
 //belly sound pref things
 #define NORMIE_HEARCHECK 4
@@ -82,7 +82,7 @@ GLOBAL_LIST_INIT(player_sizes_list, list("Macro" = SIZESCALE_HUGE, "Big" = SIZES
 /// prefcheck
 #define VOREPREF_EAT_SOUNDS "nyomf"
 #define VOREPREF_DIGESTION_SOUNDS "gurgle"
-#define VOREPREF_VORE_DIGESTION_DAMAGE "digestable"
+#define VOREPREF_DIGESTION_DAMAGE "digestable"
 #define VOREPREF_ABSORBTION "absorbable"
 #define VOREPREF_HEALBELLY "healbellyable"
 #define VOREPREF_DEATH "wouldyoulikeyourpossessionsidentified"

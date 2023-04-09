@@ -566,37 +566,45 @@
 /// When they look back and see that some fuckin nerd componentized vore, will they be proud? or rightfully confused why someone would spend their time on this?
 /// I know one thing for sure though, and that is that I won't regret any second of it
 /// Vore signals
+// Toggles our voremode
+#define COMSIG_VORE_TOGGLE_VOREMODE "voretoggle"
+// Toggles our voremode
+#define COMSIG_VORE_GET_VOREMODE "is_it_voremode"
 // returns component's voreflags
-#define COMSIG_VORE_GET_VOREFLAGS "voreflags_pls"	
+#define COMSIG_VORE_GET_VOREFLAGS "voreflags_pls"
 /// Vores an atom
-#define COMSIG_VORE_DEVOUR_ATOM "nyomf"	
+#define COMSIG_VORE_DEVOUR_ATOM "nyomf"
+/// Sent by a belly to an atom when it enters a belly
+#define COMSIG_VORE_ATOM_DEVOURED "atom_eaten"		// (datum/source, obj/vore_belly/mybelly, mob/living/vorer)
+/// Sent by a belly to an atom when it gets digested -- basically digest_act, but in signal form
+#define COMSIG_VORE_ATOM_DIGESTED "atom_eaten"		// (datum/source, obj/vore_belly/mybelly, mob/living/vorer)
 /// sets a list to a list of a mob's bellies
 /// DOES NOT RETURN ANYTHING USEFUL! Abuses the fact that list vars are just references, or something
 /// check out COMSIG_TRY_STORAGE_RETURN_INVENTORY, its pretty neat
 /// pass TRUE to make it associated by name
-#define COMSIG_VORE_GET_BELLIES "urguts" // (datum/source, list/that_gets_updated, make_associated, just_selected_belly)
+#define COMSIG_VORE_GET_BELLIES "urguts"			// (datum/source, list/that_gets_updated, make_associated, just_selected_belly)
 /// returns if we have any bellies
 #define COMSIG_VORE_HAS_BELLIES "amgut"
 /// Takes in a belly, and sets our active one to it
-#define COMSIG_VORE_SET_SELECTED_BELLY "setvore"
+#define COMSIG_VORE_SET_SELECTED_BELLY "setvore"	// (datum/source, obj/vore_belly/newselect)
 /// Takes in a belly, and returns if that belly is one of ours
-#define COMSIG_VORE_VERIFY_BELLY "has_belly"	
+#define COMSIG_VORE_VERIFY_BELLY "has_belly"		// (mob/living/source, obj/vore_belly/gut)
 /// Takes in a belly, and returns if that belly is one of ours
-#define COMSIG_VORE_SWAP_BELLY_INDEX "has_belly"	
+#define COMSIG_VORE_SWAP_BELLY_INDEX "has_belly"	// (datum/source, index1, index2)
 /// Expels a mob from a belly
-#define COMSIG_VORE_EXPEL_MOB "i_unvore_u"
+#define COMSIG_VORE_EXPEL_SPECIFIC "i_unvore_u"		// (datum/source, atom/movable/to_eject, silent)
 /// Expels all mobs from a belly
-#define COMSIG_VORE_EXPEL_ALL_MOBS "i_unvore_u_all"
+#define COMSIG_VORE_EXPEL_ALL "i_unvore_u_all"
 /// Calls an OOC eject
-#define COMSIG_VORE_EXPEL_MOB_OOC "i_unvore_u_ooc"
+#define COMSIG_VORE_EXPEL_MOB_OOC "i_unvore_u_ooc"	// (datum/source, mob/living/escaper)
 /// Adds a belly to the mob and component
-#define COMSIG_VORE_ADD_BELLY "add_belly"
+#define COMSIG_VORE_ADD_BELLY "add_belly"			// (mob/living/source, obj/vore_belly/gut)
 /// Removes a belly from the mob and component
-#define COMSIG_VORE_REMOVE_BELLY "un_belly"
+#define COMSIG_VORE_REMOVE_BELLY "un_belly"			// (mob/living/source, obj/vore_belly/gut)
 /// Makes the squishing stop!!!
-#define COMSIG_VORE_STOP_SOUNDS "stop_squish"
-/// Sniffs a mob
-#define COMSIG_VORE_SNIFF_LIVING "sniffa"
+#define COMSIG_VORE_STOP_SOUNDS "stop_squish"		// (datum/source, mob/living/living_prey)
+/// Gives living_sniffer a description of the componentholder's scent
+#define COMSIG_VORE_SNIFF_LIVING "sniffa"			// (datum/source, mob/living/living_sniffer)
 /// Makes bellies autoemote
 #define COMSIG_VORE_AUTO_EMOTE "voremote"
 /// Updates the vore panel
@@ -605,3 +613,15 @@
 #define COMSIG_VORE_SAVE_PREFS "save_vore"
 /// Loads a mob's voreprefs
 #define COMSIG_VORE_LOAD_PREFS "load_vore"
+/// Calls the mob's vore_attack and starts the process of sticking thing A into thing B
+#define COMSIG_VORE_DO_VORE "perform_vore"			// (datum/source, list/that_gets_updated, make_associated, just_selected_belly)
+/// Tries to figure out who or what we want to eat
+#define COMSIG_VORE_DETERMINE_VORE "who_i_eat"		// (datum/source, atom/movable/potential_target)
+/// Tries to figure out who is feeding who
+#define COMSIG_VORE_DETERMINE_FEED "who_feed_who"	// (datum/source, atom/movable/potential_target)
+/// Returns if the componentholder is in any shape to eat someone. null means YES, as does TRUE. FALSE means NO here!
+#define COMSIG_VORE_CAN_EAT "can_i_vore"
+/// Returns if the componentholder/thing is in any shape to be eaten. null means YES, as does TRUE. FALSE means NO here!
+#define COMSIG_VORE_CAN_BE_EATEN "can_i_be_vored"
+/// Returns if the componentholder/thing is in any shape to be vorefed to someone. null means YES, as does TRUE. FALSE means NO here!
+#define COMSIG_VORE_CAN_BE_FED_PREY "can_i_be_fed_to_them_by_vore"	// (datum/source, mob/living/proxy_pred)

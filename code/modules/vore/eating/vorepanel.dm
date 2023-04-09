@@ -319,49 +319,49 @@
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_digest")
-			TOGGLE_BITFLAG(vflags, DIGESTABLE)
+			TOGGLE_BITFIELD(vflags, DIGESTABLE)
 			if(host.client.prefs)
 				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, DIGESTABLE)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_devour")
-			TOGGLE_BITFLAG(vflags, DEVOURABLE)
+			TOGGLE_BITFIELD(vflags, DEVOURABLE)
 			if(host.client.prefs)
 				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, DEVOURABLE)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_feed")
-			TOGGLE_BITFLAG(vflags, FEEDING)
+			TOGGLE_BITFIELD(vflags, FEEDING)
 			if(host.client.prefs)
 				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, FEEDING)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_absorbable")
-			TOGGLE_BITFLAG(vflags, ABSORBABLE)
+			TOGGLE_BITFIELD(vflags, ABSORBABLE)
 			if(host.client.prefs)
 				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, ABSORBABLE)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_mobvore")
-			TOGGLE_BITFLAG(vflags, MOBVORE)
+			TOGGLE_BITFIELD(vflags, MOBVORE)
 			if(host.client.prefs)
 				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, MOBVORE)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_vore_sounds")
-			TOGGLE_BITFLAG(host.client.prefs.cit_toggles, VORE_EATING_NOISES)
+			TOGGLE_BITFIELD(host.client.prefs.cit_toggles, VOREALLOW_EATING_NOISES)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_digestion_sounds")
-			TOGGLE_BITFLAG(host.client.prefs.cit_toggles, VORE_DIGESTION_NOISES)
+			TOGGLE_BITFIELD(host.client.prefs.cit_toggles, VOREALLOW_DIGESTION_NOISES)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_lickable")
-			TOGGLE_BITFLAG(vflags, LICKABLE)
+			TOGGLE_BITFIELD(vflags, LICKABLE)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_smellable")
-			TOGGLE_BITFLAG(vflags, SMELLABLE)
+			TOGGLE_BITFIELD(vflags, SMELLABLE)
 			unsaved_changes = TRUE
 			return TRUE
 
@@ -470,7 +470,7 @@
 					to_chat(user,span_warning("You can't do that in your state!"))
 					return TRUE
 
-				SEND_SIGNAL(selected, COMSIG_VORE_EXPEL_ALL_MOBS)
+				SEND_SIGNAL(selected, COMSIG_VORE_EXPEL_ALL)
 				return TRUE
 
 			if("Move all")
