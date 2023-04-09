@@ -1043,7 +1043,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/flintlock
 	name = "flintlock pistol case"
 
-/obj/item/storage/box/gun/pistol/n99/PopulateContents()
+/obj/item/storage/box/gun/pistol/flintlock/PopulateContents()
 	new /obj/item/gun/ballistic/bow/flintlock(src)
 	new /obj/item/ammo_box/flintlock(src)
 

@@ -1,3 +1,4 @@
+/* these gamer meds should not exist
 /datum/crafting_recipe/redpotion
 	name = "Red Potion"
 	result = /obj/item/reagent_containers/glass/bottle/ichor/red
@@ -33,6 +34,7 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+*/
 
 /datum/crafting_recipe/upgraded_gauze
 	name = "Improved Gauze"

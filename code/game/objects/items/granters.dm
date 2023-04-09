@@ -1185,9 +1185,9 @@
 		/datum/crafting_recipe/tribalwar/heavytribe,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
-		/datum/crafting_recipe/redpotion,
-		/datum/crafting_recipe/bluepotion,
-		/datum/crafting_recipe/greenpotion,
+		//datum/crafting_recipe/redpotion,
+		//datum/crafting_recipe/bluepotion,
+		//datum/crafting_recipe/greenpotion,
 		/datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/trait/tribaltraditions
@@ -1290,9 +1290,9 @@
 					/datum/crafting_recipe/bitterdrink5,
 					/datum/crafting_recipe/healpoultice,
 					/datum/crafting_recipe/healpoultice5,
-					/datum/crafting_recipe/redpotion,
-					/datum/crafting_recipe/bluepotion,
-					/datum/crafting_recipe/greenpotion,
+					//datum/crafting_recipe/redpotion,
+					//datum/crafting_recipe/bluepotion,
+					//datum/crafting_recipe/greenpotion,
 					/datum/crafting_recipe/food/pemmican,
 					/datum/crafting_recipe/tribal/bonebag
 					)
