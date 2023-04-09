@@ -11249,9 +11249,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "inE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/metal/store,
-/turf/closed/wall/f13/store,
+/mob/living/simple_animal/hostile/raider/junker/boss{
+	health = 400;
+	maxHealth = 400;
+	armour_penetration = 0.2
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
 /area/f13/building)
 "inH" = (
 /obj/structure/closet/crate/bin,
@@ -16342,6 +16347,11 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"lPf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/metal/store,
+/turf/closed/wall/f13/store,
+/area/f13/building)
 "lPH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -17256,6 +17266,17 @@
 /obj/structure/table/wood,
 /obj/item/storage/fancy/cigarettes/cigars/cohiba,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"msF" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/junker/boss{
+	health = 400;
+	maxHealth = 400;
+	armour_penetration = 0.2
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrusty"
+	},
 /area/f13/building)
 "msL" = (
 /obj/structure/grille,
@@ -20133,6 +20154,17 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"osY" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/junker/boss{
+	health = 400;
+	maxHealth = 400;
+	armour_penetration = 0.2
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
 	},
 /area/f13/building)
 "otS" = (
@@ -25214,9 +25246,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "saU" = (
-/obj/structure/simple_door/metal/store,
-/turf/closed/wall/f13/store,
-/area/f13/building)
+/mob/living/simple_animal/hostile/megafauna/behemoth{
+	faction = list("hostile","supermutant","wastebot","Gecko");
+	name = "Lil Joey"
+	},
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "innermiddle"
+	},
+/area/f13/wasteland)
 "saV" = (
 /obj/structure/lattice,
 /turf/open/indestructible/ground/outside/water,
@@ -31653,6 +31690,10 @@
 /turf/open/floor/f13{
 	icon_state = "whiteyellowdirtychess2"
 	},
+/area/f13/building)
+"wAE" = (
+/obj/structure/simple_door/metal/store,
+/turf/closed/wall/f13/store,
 /area/f13/building)
 "wAJ" = (
 /obj/structure/chair/wood{
@@ -42741,7 +42782,7 @@ rPd
 fZZ
 fZZ
 uDH
-inE
+lPf
 uNd
 uDH
 lbE
@@ -43255,7 +43296,7 @@ hnC
 hnC
 hnC
 uNd
-saU
+wAE
 qyU
 uNd
 uNd
@@ -83368,7 +83409,7 @@ pxP
 cAD
 pbk
 lMN
-slq
+msF
 tOT
 juK
 slq
@@ -86702,7 +86743,7 @@ vjN
 vPp
 vjN
 rmR
-rmR
+inE
 rmR
 tvr
 cpZ
@@ -88049,7 +88090,7 @@ hXD
 hXD
 cON
 smg
-hXD
+saU
 hXD
 hXD
 smg
@@ -88494,7 +88535,7 @@ xMo
 xMo
 xMo
 bkT
-klJ
+osY
 nOQ
 nOQ
 roa
