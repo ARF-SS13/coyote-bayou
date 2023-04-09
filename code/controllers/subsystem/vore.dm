@@ -1,15 +1,24 @@
+/// List of types that are allowed to be eaten (right now)
+/// Register COMSIG_VORE_ATOM_DEVOURED to a proc on these to make them do stuff
+#define VORABLE_TYPES list(\
+	/obj/item/reagent_containers/food,\
+	/obj/item/clothing/head/mob_holder,\
+	/obj/item/grenade,\
+	)
+
 //
 // Vore subsystem - Process vore bellies
 //
-
 PROCESSING_SUBSYSTEM_DEF(vore)
 	name = "Bellies"
 	priority = FIRE_PRIORITY_VORE
 	wait = 5 SECONDS
 	flags = SS_KEEP_TIMING
 	runlevels = RUNLEVEL_GAME|RUNLEVEL_POSTGAME
-	/// mobtypes allowed to have a vore_core
+	/// mobtypes allowed to have a vore component
 	var/list/approved_vore_mobtypes = list()
+	/// itemtypes allowed to be vored
+	var/list/approved_vore_item_types = list()
 	/// list of stock vore_flags
 	var/list/vore_data_by_path = list()
 	/// list of smells
@@ -17,11 +26,16 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 
 /datum/controller/subsystem/processing/vore/Initialize(start_timeofday)
 	build_list_of_mobtypes_that_should_vore()
+	build_list_of_items_that_can_be_vored()
 	init_voredata()
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_mobtypes_that_should_vore()
-	approved_vore_mobtypes |= typecacheof(/mob/living/carbon/human, only_root_path = TRUE)
+	approved_vore_mobtypes |= typecacheof(/mob/living/carbon/human)
 	approved_vore_mobtypes |= typecacheof(/mob/living/simple_animal/pet/catslug)
+
+/datum/controller/subsystem/processing/vore/proc/build_list_of_items_that_can_be_vored()
+	for(var/itempath in VORABLE_TYPES)
+		approved_vore_item_types |= typecacheof(itempath)
 
 /datum/controller/subsystem/processing/vore/proc/init_voredata()
 	for(var/vd in typesof(/datum/vore_data))
@@ -40,7 +54,7 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 	var/datum/weakref/sniffa = WEAKREF(living_pred)
 	. = smell_by_mob[sniffa]
 	if(!. || . == "")
-		return "you'd expect."
+		return "what you'd expect."
 
 /datum/controller/subsystem/processing/vore/proc/should_have_vore(mob/living/living_pred)
 	if(!isliving(living_pred))

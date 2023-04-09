@@ -353,7 +353,7 @@
 	perform_the_nom(master, living_pred, belly)
 	return TRUE
 
-/datum/component/vore/proc/feed_prey_to_predator(mob/living/living_prey, mob/living/living_pred)
+/datum/component/vore/proc/feed_prey_to_predator(atom/movable/moving_prey, mob/living/living_pred)
 	VORE_MASTER
 	var/list/pred_guts = list()
 	SEND_SIGNAL(living_pred, COMSIG_VORE_GET_BELLIES, pred_guts)
@@ -361,14 +361,14 @@
 	if(!belly)
 		to_chat(master, span_alert("Never mind!"))
 		return
-	perform_the_nom(living_prey, living_pred, belly)
+	perform_the_nom(moving_prey, living_pred, belly)
 	return TRUE
 
-/datum/component/vore/proc/perform_the_nom(mob/living/living_prey, mob/living/living_pred, obj/vore_belly/belly)
+/datum/component/vore/proc/perform_the_nom(atom/movable/moving_prey, mob/living/living_pred, obj/vore_belly/belly)
 	if(!voremode)
 		to_chat(master, span_alert("You aren't in Vore Intent! You can toggle this on in your vore tab."))
 		return
-	if(!living_prey)
+	if(!moving_prey)
 		to_chat(master, span_phobia("You tried to eat someone, but they apparently don't exist? This might be a bug."))
 		return
 	if(!living_pred)
@@ -380,10 +380,10 @@
 	if(!SEND_SIGNAL(living_pred, COMSIG_VORE_VERIFY_BELLY, belly))
 		to_chat(master, span_phobia("[belly] isn't in the right place. This might be a bug??"))
 		return
-	if(!living_prey.Adjacent(master)) // let's not even bother attempting it yet if they aren't next to us.
+	if(!moving_prey.Adjacent(master)) // let's not even bother attempting it yet if they aren't next to us.
 		return FALSE
-	if (!CHECK_PREFS(living_prey, VOREPREF_BEING_PREY))
-		to_chat(master, "[living_prey] would prefer not to be eaten.")
+	if (!CHECK_PREFS(moving_prey, VOREPREF_BEING_PREY))
+		to_chat(master, "[moving_prey] would prefer not to be eaten.")
 		return FALSE
 
 	// The belly selected at the time of noms
@@ -395,18 +395,18 @@
 
 	// Prepare messages
 	if(master == living_pred) //Feeding someone to yourself
-		attempt_msg = span_warning("[living_pred] is attemping to [vverb] [living_prey] into their [vname]!")
-		success_msg = span_warning("[living_pred] manages to [vverb] [living_prey] into their [vname]!")
+		attempt_msg = span_warning("[living_pred] is attemping to [vverb] [moving_prey] into their [vname]!")
+		success_msg = span_warning("[living_pred] manages to [vverb] [moving_prey] into their [vname]!")
 	else //Feeding someone to another person
-		attempt_msg = span_warning("[master] is attempting to make [living_pred] [vverb] [living_prey] into their [vname]!")
-		success_msg = span_warning("[master] manages to make [living_pred] [vverb] [living_prey] into their [vname]!")
+		attempt_msg = span_warning("[master] is attempting to make [living_pred] [vverb] [moving_prey] into their [vname]!")
+		success_msg = span_warning("[master] manages to make [living_pred] [vverb] [moving_prey] into their [vname]!")
 
 	// Announce that we start the attempt!
 	master.visible_message(attempt_msg, pref_check = VOREPREF_TEXT)
 
 	// Now give the prey time to escape... return if they did
 	var/swallow_time
-	if(istype(living_prey, /mob/living/carbon/human))
+	if(istype(moving_prey, /mob/living/carbon/human))
 		swallow_time = VORE_SWALLOW_HUMAN_TIME
 	else
 		swallow_time = VORE_SWALLOW_NONHUMAN_TIME
@@ -416,28 +416,31 @@
 			master, 
 			swallow_time,
 			FALSE,
-			living_prey,
+			moving_prey,
 			required_mobility_flags = NONE,
 			allow_movement = TRUE,
 			))
 		to_chat(master, span_alert("You were intererupted!"))
-		to_chat(living_prey, span_alert("You were intererupted!"))
-	if(!living_prey.Adjacent(master)) //double check'd just in case they moved during the timer and the do_mob didn't fail for whatever reason
+		to_chat(moving_prey, span_alert("You were intererupted!"))
+	if(!moving_prey.Adjacent(master)) //double check'd just in case they moved during the timer and the do_mob didn't fail for whatever reason
 		to_chat(master, span_alert("They got away!"))
-		to_chat(living_prey, span_alert("You got away!"), pref_check = VOREPREF_TEXT)
+		to_chat(moving_prey, span_alert("You got away!"), pref_check = VOREPREF_TEXT)
 		return FALSE
 
 	// If we got this far, nom successful! Announce it!
 	master.visible_message(success_msg,pref_check = VOREPREF_TEXT)
 
 	// Actually shove prey into the belly.
-	belly.nom_mob(living_prey, master)
+	belly.nom_mob(moving_prey, master)
 	master.stop_pulling()
 
 	// Flavor country
 	if(belly.can_taste)
-		master.taste(null, living_prey)
+		master.taste(null, moving_prey)
 
+	if(!isliving(moving_prey))
+		return TRUE // we're done here
+	var/mob/living/living_prey = moving_prey
 	// Inform Admins
 	var/prey_braindead
 	var/prey_stat

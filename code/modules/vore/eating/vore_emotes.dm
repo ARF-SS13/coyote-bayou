@@ -104,11 +104,18 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	var/datum/weakref/our_pred
 	var/datum/weakref/our_prey
+	var/grab_pred = TRUE
 
 // So we need two things: One to eat, and one to eaten. 
 
 /obj/item/hand_item/feeder/examine(mob/user)
 	. = ..()
+	. += "HOW TO USE:"
+	. += "This thing will pick what will be fed to who. When you click this onto someone, it'll set them as either predator or prey, \
+		depending on its current settings. Once you've used this to select a predator and a prey, you'll start stuffing the prey into \
+		the predator. Yes you can use this to climb into people."
+	. += "Currently selecting a [span_greentext([grab_pred ? "predator" : "prey"])]. Use [span_notice("in hand")] to select something else."
+	. += "[span_notice("Alt-click")] this to clear your selected predator/prey."
 	if(our_pred)
 		var/mob/living/living_pred = RESOLVEREF(our_pred)
 		. += span_notice("[living_pred] has been selected to [span_greentext("EAT")] something.")
@@ -125,5 +132,11 @@
 /obj/item/hand_item/feeder/attack_obj_nohit(obj/O, mob/living/user)
 	SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, user, O)
 
-/obj/item/hand_item/feeder/proc/check_vorechain(atom/movable/movable_predprey, mob/living/user)
+/obj/item/hand_item/feeder/proc/add_predator(mob/living/living_predator, mob/living/user)
+	if(!isliving(living_predator))
+		to_chat(user, span_alert("Only mobs can eat things!"))
+		return
+	if(!SEND_SIGNAL(living_predator, COMSIG_VORE_CAN_EAT))
+		to_chat(user, span_alert("!"))
+
 
