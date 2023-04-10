@@ -1890,6 +1890,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/melee/coyote/oldkanobo
 
+/datum/loadout_box/macuahuitl
+	entry_tag = "Macuahuitl"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/macuahuitl
+
 /datum/loadout_box/militarypolice
 	entry_tag = "Police Baton"
 	entry_flags = LOADOUT_FLAG_LAWMAN
