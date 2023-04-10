@@ -483,7 +483,7 @@
 	living_prey.stop_sound_channel(CHANNEL_PREYLOOP_SQUISH) // sanity just in case
 	living_prey.stop_sound_channel(CHANNEL_PREYLOOP_HEARTBEAT) // sanity just in case
 
-/obj/vore_belly/proc/is_in_belly(var/atom/movable/prey)
+/obj/vore_belly/proc/is_in_belly(atom/movable/prey)
 	return (prey in contents)
 
 /obj/vore_belly/proc/get_vored_mobs(only_clients = TRUE)
@@ -594,7 +594,7 @@
 // The next function sets the messages on the belly, from human-readable var
 // replacement strings and linebreaks as delimiters (two \n\n by default).
 // They also sanitize the messages.
-/obj/vore_belly/proc/set_messages(var/raw_text, var/type, var/delim = "\n\n")
+/obj/vore_belly/proc/set_messages(raw_text, type, delim = "\n\n")
 	ASSERT(type == "smo" || type == "smi" || type == "dmo" || type == "dmp" || type == "em")
 
 	var/list/raw_list = splittext(html_encode(raw_text),delim)

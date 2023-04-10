@@ -20,7 +20,7 @@
 	damage_type = STAMINA
 	range = 2
 
-/obj/item/projectile/sickshot/on_hit(var/atom/movable/target, var/blocked = 0)
+/obj/item/projectile/sickshot/on_hit(atom/movable/target, blocked = 0)
 	. = ..()
 	if(isliving(target) && prob(5))
 		SEND_SIGNAL(target, COMSIG_VORE_EXPEL_ALL, TRUE, TRUE)
