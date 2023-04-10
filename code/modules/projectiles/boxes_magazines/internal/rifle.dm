@@ -14,6 +14,11 @@
 	ammo_type = /obj/item/ammo_casing/magic/arcane_barrage
 
 //Fallout 13
+
+/obj/item/ammo_box/magazine/internal/boltaction/enfield
+	max_ammo = 9
+	multiload = 1
+	
 /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	ammo_type = /obj/item/ammo_casing/a3006
 	caliber = list(CALIBER_3006)
@@ -24,7 +29,7 @@
 	ammo_type = /obj/item/ammo_casing/a3006
 	max_ammo = 5
 	multiload = 1
-
+	
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
 	max_ammo = 2 //with 1 in the tube = 3 shots
 
