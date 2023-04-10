@@ -1172,6 +1172,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/obj/item/storage/box/gun/energy/wornaep7
+	name = "worn AEP-7 case"
+
+/obj/item/storage/box/gun/energy/wornaep7/PopulateContents()
+	new /obj/item/gun/energy/laser/pistol/worn(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+
 /obj/item/choice_beacon/box/gun //template for sprites
 	name = "weapon case"
 	desc = "a sturdy case keeping your weapon of choice safe until you pop it open."
