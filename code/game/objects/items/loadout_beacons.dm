@@ -1240,6 +1240,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_ENERGY
 	spawn_thing = /obj/item/storage/box/gun/energy/wattz1000
 
+/datum/loadout_box/wornaep7
+	entry_tag = "Worn AEP-7"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/wornaep7
+
 /// Fancyguns
 
 /datum/loadout_box/maria
