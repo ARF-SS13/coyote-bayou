@@ -1843,7 +1843,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/melee/coyote/club
 
 /datum/loadout_box/bigclub
-	entry_tag = "Club"
+	entry_tag = "Big Club"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/melee/coyote/bigclub
