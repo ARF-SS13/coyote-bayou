@@ -147,6 +147,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	e_cost = 50 //30 shots, as per FNV
 	damage_threshold_penetration = 4 // Doesn't pierce as much armor or hit as hard, but has more ammo capacity than the 1k
 
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/worn //25 damage per, with 0 near 0 AP-4 shot crit on unarmored target, significantly less useful against armored
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan
+	e_cost = 80 //20 shots, to make it a little more on par to wattz 1k 
+	damage_threshold_penetration = 4 // Doesn't pierce as much armor or hit as hard, but has more ammo capacity than the 1k
+
 /obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
 	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
 	e_cost = 1

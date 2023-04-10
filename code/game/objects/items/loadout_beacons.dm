@@ -1172,6 +1172,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/obj/item/storage/box/gun/energy/wornaep7
+	name = "worn AEP-7 case"
+
+/obj/item/storage/box/gun/energy/wornaep7/PopulateContents()
+	new /obj/item/gun/energy/laser/pistol/worn(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+
 /obj/item/choice_beacon/box/gun //template for sprites
 	name = "weapon case"
 	desc = "a sturdy case keeping your weapon of choice safe until you pop it open."
@@ -1232,6 +1239,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_ENERGY
 	spawn_thing = /obj/item/storage/box/gun/energy/wattz1000
+
+/datum/loadout_box/wornaep7
+	entry_tag = "Worn AEP-7"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/wornaep7
 
 /// Fancyguns
 
