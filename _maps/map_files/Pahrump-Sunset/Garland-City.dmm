@@ -17591,7 +17591,10 @@
 "mDO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/metal/store,
-/turf/closed/wall/f13/store,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/building)
 "mEk" = (
 /obj/machinery/light/small/broken{
@@ -20182,10 +20185,6 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/building)
-"osY" = (
-/obj/structure/simple_door/metal/store,
-/turf/closed/wall/f13/store,
 /area/f13/building)
 "otS" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
@@ -43357,7 +43356,7 @@ hnC
 hnC
 hnC
 uNd
-osY
+cqP
 qyU
 uNd
 uNd
