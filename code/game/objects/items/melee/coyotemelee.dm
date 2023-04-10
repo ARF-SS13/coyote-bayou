@@ -1,4 +1,4 @@
-/obj/item/melee/coyote/claymoreold
+/obj/item/melee/coyote/oldclaymore
 	name = "old claymore"
 	desc = "The owner of this knows the price of their freedom."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'

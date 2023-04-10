@@ -813,8 +813,66 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/sleeping_carp/PopulateContents()
 	new /obj/item/book/granter/martial/carp(src)
 
-/obj/item/storage/box/gun/melee/claymoreold/PopulateContents()
-	new /obj/item/melee/coyote/claymoreold(src)
+/obj/item/storage/box/gun/melee/oldclaymore/PopulateContents()
+	new /obj/item/melee/coyote/oldclaymore(src)
+
+/obj/item/storage/box/gun/melee/harpoon/PopulateContents()
+	new /obj/item/melee/coyote/harpoon(src)
+
+/obj/item/storage/box/gun/melee/katanaold/PopulateContents()
+	new /obj/item/melee/coyote/katanaold(src)
+
+/obj/item/storage/box/gun/melee/wakazashiold/PopulateContents()
+	new /obj/item/melee/coyote/wakazahiold(src)
+
+/obj/item/storage/box/gun/melee/tantoold/PopulateContents()
+	new /obj/item/melee/coyote/tantoold(src)
+
+/obj/item/storage/box/gun/melee/combataxe/PopulateContents()
+	new /obj/item/melee/coyote/combataxe(src)
+
+/obj/item/storage/box/gun/melee/smallsword/PopulateContents()
+	new /obj/item/melee/coyote/smallsword(src)
+
+/obj/item/storage/box/gun/melee/oldcutlass/PopulateContents()
+	new /obj/item/melee/coyote/oldcutlass(src)
+
+/obj/item/storage/box/gun/melee/crudeblade/PopulateContents()
+	new /obj/item/melee/coyote/crudeblade(src)
+
+/obj/item/storage/box/gun/melee/oldkanobo/PopulateContents()
+	new /obj/item/melee/coyote/oldkanobo(src)
+
+/obj/item/storage/box/gun/melee/mauler/PopulateContents()
+	new /obj/item/melee/coyote/mauler(src)
+
+/obj/item/storage/box/gun/melee/club/PopulateContents()
+	new /obj/item/melee/coyote/club(src)
+
+/obj/item/storage/box/gun/melee/bigclub/PopulateContents()
+	new /obj/item/melee/coyote/bigclub(src)
+
+/obj/item/storage/box/gun/melee/oldlongsword/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword(src)
+
+/obj/item/storage/box/gun/melee/oldhalberd/PopulateContents()
+	new /obj/item/melee/coyote/oldhalberd(src)
+
+
+/obj/item/storage/box/gun/melee/oldpike/PopulateContents()
+	new /obj/item/melee/coyote/oldpike(src)
+
+/obj/item/storage/box/gun/melee/oldnaginata/PopulateContents()
+	new /obj/item/melee/coyote/oldnaginata(src)
+
+/obj/item/storage/box/gun/melee/oldashandarei/PopulateContents()
+	new /obj/item/melee/coyote/oldashandarei(src)
+
+/obj/item/storage/box/gun/melee/macuahuitl/PopulateContents()
+	new /obj/item/melee/coyote/macuahuitl(src)
+
+/obj/item/storage/box/gun/melee/oldkhopesh/PopulateContents()
+	new /obj/item/melee/coyote/oldkhopesh(src)
 
 /// HOBO GUNS
 
@@ -1718,11 +1776,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/sleeping_carp
 
-/datum/loadout_box/claymoreold //FOR SCOTLAND
+/datum/loadout_box/oldclaymore //FOR SCOTLAND
 	entry_tag = "Old Claymore"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE
-	spawn_thing = /obj/item/melee/coyote/claymoreold
+	spawn_thing = /obj/item/melee/coyote/oldclaymore
 
 /datum/loadout_box/harpoon //https://youtu.be/-UhrVpRCOYM ~TK
 	entry_tag = "Harpoon"
