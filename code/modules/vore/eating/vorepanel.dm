@@ -13,7 +13,7 @@
 
 /mob/living/proc/insidePanel()
 	set name = "Vore Panel"
-	set category = "Vore"
+	set category = "Private"
 
 	if(!vorePanel)
 		log_game("VORE: [src] ([type], \ref[src]) didn't have a vorePanel and tried to use the verb.")
@@ -87,12 +87,11 @@
 
 	var/atom/hostloc = host.loc
 	var/list/inside = list()
-	var/vflags = SEND_SIGNAL(host, COMSIG_VORE_GET_VOREFLAGS)
 	if(isbelly(hostloc))
 		var/obj/vore_belly/inside_belly = hostloc
 		var/mob/living/pred = inside_belly.owner
 		inside = list(
-			"absorbed" = CHECK_BITFIELD(vflags, ABSORBED),
+			"absorbed" = SEND_SIGNAL(host, COMSIG_VORE_ABSORBED_STATE),
 			"belly_name" = inside_belly.name,
 			"belly_mode" = inside_belly.digest_mode,
 			"desc" = inside_belly.desc || "No description.",
@@ -117,7 +116,7 @@
 			if(isliving(O))
 				var/mob/living/living_prey = O
 				info["stat"] = living_prey.stat
-				if(CHECK_BITFIELD(vflags, ABSORBED))
+				if(SEND_SIGNAL(host, COMSIG_VORE_ABSORBED_STATE))
 					info["absorbed"] = TRUE
 			inside_contents.Add(list(info))
 		inside["contents"] = inside_contents
@@ -179,24 +178,27 @@
 			if(isliving(O))
 				var/mob/living/living_prey = O
 				info["stat"] = living_prey.stat
-				if(CHECK_BITFIELD(vflags, ABSORBED))
+				if(SEND_SIGNAL(living_prey, COMSIG_VORE_ABSORBED_STATE))
 					info["absorbed"] = TRUE
 			selected_contents.Add(list(info))
 		selected_list["contents"] = selected_contents
 
 	data["selected"] = selected_list
 	data["prefs"] = list(
-		"digestable" = CHECK_BITFIELD(vflags, DIGESTABLE),
-		"devourable" = CHECK_BITFIELD(vflags, DEVOURABLE),
-		"feeding" = CHECK_BITFIELD(vflags, FEEDING),
-		"absorbable" = CHECK_BITFIELD(vflags, ABSORBABLE),
-		"allowmobvore" = CHECK_BITFIELD(vflags, MOBVORE),
-		"vore_sounds" = CHECK_PREFS(host, VOREPREF_EAT_SOUNDS),
-		"digestion_sounds" = CHECK_PREFS(host, VOREPREF_DIGESTION_SOUNDS),
-		"lickable" = CHECK_BITFIELD(vflags, LICKABLE),
-		"smellable" = CHECK_BITFIELD(vflags, SMELLABLE),
+		"allow_dog_borgs" = CHECK_PREFS(user, VOREPREF_DOGBORGS),
+		"allow_eat_noises" = CHECK_PREFS(user, VOREPREF_EAT_SOUNDS),
+		"allow_digestion_noises" = CHECK_PREFS(user, VOREPREF_DIGESTION_SOUNDS),
+		"allow_digestion_damage" = CHECK_PREFS(user, VOREPREF_DIGESTION_DAMAGE),
+		"allow_digestion_death" = CHECK_PREFS(user, VOREPREF_DIGESTION_DEATH),
+		"allow_absorbtion" = CHECK_PREFS(user, VOREPREF_ABSORBTION),
+		"allow_healbelly_healing" = CHECK_PREFS(user, VOREPREF_HEALBELLY),
+		"allow_vore_messages" = CHECK_PREFS(user, VOREPREF_VORE_MESSAGES),
+		"allow_death_messages" = CHECK_PREFS(user, VOREPREF_DEATH_MESSAGES),
+		"allow_being_prey" = CHECK_PREFS(user, VOREPREF_BEING_PREY),
+		"allow_being_fed_prey" = CHECK_PREFS(user, VOREPREF_BEING_FED_PREY),
+		"allow_seeing_belly_descs" = CHECK_PREFS(user, VOREPREF_EXAMINE),
+		"allow_being_sniffed" = CHECK_PREFS(user, VOREPREF_SNIFFABLE),
 	)
-
 	return data
 
 /datum/vore_look/ui_act(action, params)
@@ -208,7 +210,7 @@
 	var/list/selectorgan = list()
 	SEND_SIGNAL(host, COMSIG_VORE_GET_BELLIES, selectorgan, FALSE, TRUE)
 	var/obj/vore_belly/selected = LAZYLEN(selectorgan) ? selectorgan[1] : null
-	var/vflags = SEND_SIGNAL(host, COMSIG_VORE_GET_VOREFLAGS)
+	var/datum/preferences/myprefs = host.client?.prefs
 
 	switch(action)
 		if("show_pictures")
@@ -254,11 +256,13 @@
 			var/obj/vore_belly/NB = new(host)
 			NB.name = new_name
 			selected = NB
+			SEND_SIGNAL(host, COMSIG_VORE_SET_SELECTED_BELLY, selected)
 			unsaved_changes = TRUE
 			return TRUE
 
 		if("bellypick")
 			selected = locate(params["bellypick"])
+			SEND_SIGNAL(host, COMSIG_VORE_SET_SELECTED_BELLY, selected)
 			return TRUE
 		if("move_belly")
 			var/dir = text2num(params["dir"])
@@ -266,11 +270,8 @@
 				to_chat(usr, span_warning("You can't sort bellies with only one belly to sort..."))
 				return TRUE
 
-			var/current_index = vorgans.Find(selected)
-			if(current_index)
-				var/new_index = clamp(current_index + dir, 1, LAZYLEN(vorgans))
-				SEND_SIGNAL(host, COMSIG_VORE_SWAP_BELLY_INDEX, current_index, new_index)
-				unsaved_changes = TRUE
+			SEND_SIGNAL(host, COMSIG_VORE_SWAP_BELLY_INDEX, dir)
+			unsaved_changes = TRUE
 			return TRUE
 
 		if("set_attribute")
@@ -295,7 +296,11 @@
 				unsaved_changes = FALSE
 			return TRUE
 		if("setflavor")
-			var/new_flavor = html_encode(input(usr,"What your character tastes like (400ch limit). This text will be printed to the pred after 'X tastes of...' so just put something like 'strawberries and cream':","Character Flavor","eggs") as text|null)
+			var/myflavor
+			for(var/tast in host.tastes)
+				myflavor = tast // im know list good
+				break
+			var/new_flavor = html_encode(input(usr,"What your character tastes like (400ch limit). This text will be printed to the pred after 'X tastes of...' so just put something like 'strawberries and cream':","Character Flavor",myflavor) as text|null)
 			if(!new_flavor)
 				return FALSE
 
@@ -304,6 +309,7 @@
 				tgui_alert_async(usr, "Entered flavor/taste text too long. [FLAVOR_MAX] character limit.","Error!")
 				return FALSE
 			host.tastes = list("[new_flavor]" = 1)
+			myprefs.features["taste"] = "[new_flavor]"
 			unsaved_changes = TRUE
 			return TRUE
 		if("setsmell")
@@ -316,52 +322,51 @@
 				tgui_alert_async(usr, "Entered perfume/smell text too long. [FLAVOR_MAX] character limit.","Error!")
 				return FALSE
 			SSvore.register_smell(host, new_smell)
-			unsaved_changes = TRUE
-			return TRUE
-		if("toggle_digest")
-			TOGGLE_BITFIELD(vflags, DIGESTABLE)
-			if(host.client.prefs)
-				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, DIGESTABLE)
+			myprefs.vore_smell = new_smell
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_devour")
-			TOGGLE_BITFIELD(vflags, DEVOURABLE)
-			if(host.client.prefs)
-				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, DEVOURABLE)
+			TOGGLE_VAR(myprefs.allow_being_prey)
 			unsaved_changes = TRUE
 			return TRUE
-		if("toggle_feed")
-			TOGGLE_BITFIELD(vflags, FEEDING)
-			if(host.client.prefs)
-				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, FEEDING)
+		if("toggle_feeding")
+			TOGGLE_VAR(myprefs.allow_being_fed_prey)
 			unsaved_changes = TRUE
 			return TRUE
-		if("toggle_absorbable")
-			TOGGLE_BITFIELD(vflags, ABSORBABLE)
-			if(host.client.prefs)
-				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, ABSORBABLE)
+		if("toggle_absorbtion")
+			TOGGLE_VAR(myprefs.allow_absorbtion)
 			unsaved_changes = TRUE
 			return TRUE
-		if("toggle_mobvore")
-			TOGGLE_BITFIELD(vflags, MOBVORE)
-			if(host.client.prefs)
-				COPY_SPECIFIC_BITFIELDS(host.client.prefs.vore_flags, vflags, MOBVORE)
+		if("toggle_eat_noises")
+			TOGGLE_VAR(myprefs.allow_eating_sounds)
 			unsaved_changes = TRUE
 			return TRUE
-		if("toggle_vore_sounds")
-			TOGGLE_BITFIELD(host.client.prefs.cit_toggles, VOREALLOW_EATING_NOISES)
+		if("toggle_digestion_noises")
+			TOGGLE_VAR(myprefs.allow_digestion_sounds)
 			unsaved_changes = TRUE
 			return TRUE
-		if("toggle_digestion_sounds")
-			TOGGLE_BITFIELD(host.client.prefs.cit_toggles, VOREALLOW_DIGESTION_NOISES)
+		if("toggle_digestion_damage")
+			TOGGLE_VAR(myprefs.allow_digestion_damage)
 			unsaved_changes = TRUE
 			return TRUE
-		if("toggle_lickable")
-			TOGGLE_BITFIELD(vflags, LICKABLE)
+		if("toggle_digestion_death")
+			TOGGLE_VAR(myprefs.allow_digestion_death)
+			unsaved_changes = TRUE
+			return TRUE
+		if("toggle_vore_messages")
+			TOGGLE_VAR(myprefs.allow_vore_messages)
+			unsaved_changes = TRUE
+			return TRUE
+		if("toggle_death_messages")
+			TOGGLE_VAR(myprefs.allow_death_messages)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_smellable")
-			TOGGLE_BITFIELD(vflags, SMELLABLE)
+			TOGGLE_VAR(myprefs.allow_being_sniffed)
+			unsaved_changes = TRUE
+			return TRUE
+		if("toggle_healbelly")
+			TOGGLE_VAR(myprefs.allow_healbelly_healing)
 			unsaved_changes = TRUE
 			return TRUE
 
@@ -374,7 +379,6 @@
 	var/list/selectorgan = list()
 	SEND_SIGNAL(host, COMSIG_VORE_GET_BELLIES, selectorgan, FALSE, TRUE)
 	var/obj/vore_belly/selected = LAZYLEN(selectorgan) ? selectorgan[1] : null
-	var/vflags = SEND_SIGNAL(host, COMSIG_VORE_GET_VOREFLAGS)
 
 	if(!(target in OB))
 		return TRUE // Aren't here anymore, need to update menu
@@ -406,10 +410,9 @@
 		return
 
 	var/mob/living/living_prey = target
-	var/prey_vflags = SEND_SIGNAL(living_prey, COMSIG_VORE_GET_VOREFLAGS)
 	switch(intent)
 		if("Help Out") //Help the inside-mob out
-			if(host.stat || vflags & ABSORBED || prey_vflags & ABSORBED)
+			if(host.stat || SEND_SIGNAL(user, COMSIG_VORE_ABSORBED_STATE) || SEND_SIGNAL(living_prey, COMSIG_VORE_ABSORBED_STATE))
 				to_chat(user, span_warning("You can't do that in your state!"))
 				return TRUE
 
@@ -429,7 +432,7 @@
 			return TRUE
 
 		if("Devour") //Eat the inside mob
-			if(host.stat || vflags & ABSORBED)
+			if(host.stat || SEND_SIGNAL(host, COMSIG_VORE_ABSORBED_STATE))
 				to_chat(user,span_warning("You can't do that in your state!"))
 				return TRUE
 
@@ -478,7 +481,7 @@
 					to_chat(user,span_warning("You can't do that in your state!"))
 					return TRUE
 
-				var/obj/vore_belly/choice = tgui_input_list(usr, "Move all where?","Select Belly", vorgans)
+				var/obj/vore_belly/choice = input(usr, "Move all where?","Select Belly") as anything in vorgans
 				if(!choice)
 					return FALSE
 
@@ -506,7 +509,7 @@
 				to_chat(user,span_warning("You can't do that in your state!"))
 				return TRUE
 
-			selected.release_specific_contents(target)
+			SEND_SIGNAL(selected, COMSIG_VORE_EXPEL_SPECIFIC, target)
 			return TRUE
 
 		if("Move")
@@ -514,7 +517,7 @@
 				to_chat(user,span_warning("You can't do that in your state!"))
 				return TRUE
 
-			var/obj/vore_belly/choice = tgui_input_list(usr, "Move [target] where?","Select Belly", vorgans)
+			var/obj/vore_belly/choice = input(usr, "Move [target] where?","Select Belly") as anything in vorgans
 			if(!choice || !(target in selected))
 				return TRUE
 
@@ -562,8 +565,8 @@
 			selected.wet_loop = !selected.wet_loop
 			. = TRUE
 		if("b_mode")
-			var/list/menu_list = selected.digest_modes.Copy()
-			var/new_mode = tgui_input_list(usr, "Choose Mode (currently [selected.digest_mode])", "Mode Choice", menu_list)
+			var/list/menu_list = SSvore.digest_modes.Copy()
+			var/new_mode = input(usr, "Choose Mode (currently [selected.digest_mode])", "Mode Choice") as anything in menu_list
 			if(!new_mode)
 				return FALSE
 
@@ -628,7 +631,7 @@
 			selected.vore_verb = new_verb
 			. = TRUE
 		if("b_release")
-			var/choice = tgui_input_list(user,"Currently set to [selected.release_sound]","Select Sound", GLOB.pred_release_sounds)
+			var/choice = input(user,"Currently set to [selected.release_sound]","Select Sound") as anything in GLOB.pred_release_sounds
 
 			if(!choice)
 				return FALSE
@@ -642,7 +645,7 @@
 				SEND_SOUND(user, releasetest)
 			. = FALSE //Testing sound, no changes.
 		if("b_sound")
-			var/choice = tgui_input_list(user,"Currently set to [selected.vore_sound]","Select Sound", GLOB.prey_vore_sounds)
+			var/choice = input(user,"Currently set to [selected.vore_sound]","Select Sound") as anything in GLOB.prey_vore_sounds
 
 			if(!choice)
 				return FALSE
@@ -697,7 +700,7 @@
 				selected.transferchance = sanitize_integer(transfer_chance_input, 0, 100, initial(selected.transferchance))
 			. = TRUE
 		if("b_transferlocation")
-			var/obj/vore_belly/choice = tgui_input_list(usr, "Where do you want your [lowertext(selected.name)] to lead if prey resists?","Select Belly", (vorgans + "None - Remove" - selected))
+			var/obj/vore_belly/choice = input(usr, "Where do you want your [lowertext(selected.name)] to lead if prey resists?","Select Belly") as anything in (vorgans + "None - Remove" - selected)
 
 			if(!choice) //They cancelled, no changes
 				return FALSE

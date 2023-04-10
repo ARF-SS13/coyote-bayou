@@ -48,64 +48,133 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 /// Most often, its just checking a flag on a mob's client's prefs
 /datum/prefcheck
 	var/index = "oopsie"
-	var/pref
 
 /datum/prefcheck/proc/allowed(datum/preferences/consumer)
 	return TRUE
 
+/// Master vore prefs
 /datum/prefcheck/voreprefs
 	index = "vore"
-	pref = VOREALLOW_EATING_NOISES
-
-/datum/prefcheck/voreprefs/eat_noises
-	index = VOREPREF_EAT_SOUNDS
-	pref = VOREALLOW_EATING_NOISES
-
-/datum/prefcheck/voreprefs/digest_noises
-	index = VOREPREF_DIGESTION_SOUNDS
-	pref = VOREALLOW_DIGESTION_NOISES
-
-/datum/prefcheck/voreprefs/digest_damage
-	index = VOREPREF_DIGESTION_DAMAGE
-	pref = VOREALLOW_DIGESTION_DAMAGE
-
-/datum/prefcheck/voreprefs/absorbable
-	index = VOREPREF_ABSORBTION
-	pref = VOREALLOW_ABSORBTION
-
-/datum/prefcheck/voreprefs/healbellyable
-	index = VOREPREF_HEALBELLY
-	pref = VOREALLOW_HEALBELLY_HEALING
-
-/datum/prefcheck/voreprefs/death
-	index = VOREPREF_DEATH
-	pref = VOREALLOW_DIGESTION_DEATH
-
-/datum/prefcheck/voreprefs/examine
-	index = VOREPREF_EXAMINE
-	pref = VOREALLOW_SEEING_BELLY_DESC
-
-/datum/prefcheck/voreprefs/text
-	index = VOREPREF_TEXT
-	pref = VOREALLOW_VORE_MESSAGES
-
-/datum/prefcheck/voreprefs/text_xtreme
-	index = VOREPREF_TEXT_DEATH
-	pref = VOREALLOW_DEATH_MESSAGES
-
-/datum/prefcheck/voreprefs/being_prey
-	index = VOREPREF_BEING_PREY
-	pref = VOREALLOW_BEING_PREY
-
-/datum/prefcheck/voreprefs/being_fed_prey
-	index = VOREPREF_BEING_FED
-	pref = VOREALLOW_BEING_FED_OTHERS
-
-/datum/prefcheck/voreprefs/sniff
-	index = VOREPREF_SNIFFABLE
-	pref = VOREALLOW_BEING_SNIFFED
 
 /datum/prefcheck/voreprefs/allowed(datum/preferences/consumer)
-	if(CHECK_BITFIELD(consumer.vore_prefs, pref))
-		return TRUE
+	return consumer // kinda vital here
+
+/// Able to hear eat sounds
+/datum/prefcheck/voreprefs/eat_noises
+	index = VOREPREF_EAT_SOUNDS
+
+/datum/prefcheck/voreprefs/eat_noises/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_eating_sounds
+
+/// Able to hear digestion
+/datum/prefcheck/voreprefs/digest_noises
+	index = VOREPREF_DIGESTION_SOUNDS
+
+/datum/prefcheck/voreprefs/digest_noises/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_digestion_sounds
+
+/// Able to be digested harmfully
+/datum/prefcheck/voreprefs/digest_damage
+	index = VOREPREF_DIGESTION_DAMAGE
+
+/datum/prefcheck/voreprefs/digest_damage/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_digestion_damage
+
+/// Able to be digested to death
+/datum/prefcheck/voreprefs/digest_death
+	index = VOREPREF_DIGESTION_DEATH
+
+/datum/prefcheck/voreprefs/digest_death/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_digestion_death
+
+/// Able to be absorbed
+/datum/prefcheck/voreprefs/absorbable
+	index = VOREPREF_ABSORBTION
+
+/datum/prefcheck/voreprefs/absorbable/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_absorbtion
+
+/// Able to be healbellied
+/datum/prefcheck/voreprefs/healbellyable
+	index = VOREPREF_HEALBELLY
+
+/datum/prefcheck/voreprefs/healbellyable/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_healbelly_healing
+
+/// Able to see belly descs
+/datum/prefcheck/voreprefs/examine
+	index = VOREPREF_EXAMINE
+
+/datum/prefcheck/voreprefs/examine/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_seeing_belly_descriptions
+
+/// Able to see vorey messages
+/datum/prefcheck/voreprefs/text
+	index = VOREPREF_VORE_MESSAGES
+
+/datum/prefcheck/voreprefs/text/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_vore_messages
+
+/// Able to see vorey death messages
+/datum/prefcheck/voreprefs/text_xtreme
+	index = VOREPREF_DEATH_MESSAGES
+
+/datum/prefcheck/voreprefs/text_xtreme/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_death_messages
+
+/// Able to be vored
+/datum/prefcheck/voreprefs/being_prey
+	index = VOREPREF_BEING_PREY
+
+/datum/prefcheck/voreprefs/being_prey/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_being_prey
+
+/// Able to be fed prey by others
+/datum/prefcheck/voreprefs/being_fed_prey
+	index = VOREPREF_BEING_FED_PREY
+
+/datum/prefcheck/voreprefs/being_fed_prey/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_being_fed_prey
+
+/// Able to be fed to others
+/datum/prefcheck/voreprefs/being_fed_to_others
+	index = VOREPREF_BEING_FED_TO_OTHERS
+
+/datum/prefcheck/voreprefs/being_fed_to_others/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_being_fed_to_others
+
+/// Able to be sniffad
+/datum/prefcheck/voreprefs/sniff
+	index = VOREPREF_SNIFFABLE
+
+/datum/prefcheck/voreprefs/sniff/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_being_sniffed
+
+
 

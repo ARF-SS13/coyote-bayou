@@ -60,38 +60,25 @@ GLOBAL_LIST_INIT(player_sizes_list, list("Macro" = SIZESCALE_HUGE, "Big" = SIZES
 #define VORE_MIN_DESCRIPTOR_LENGTH 10
 
 
-//vore pref flags
-#define VOREALLOW_DOGBORGS			(1<<0) // I never got why people dont like dogborgs
-#define VOREALLOW_EATING_NOISES		(1<<1) // Allows gross vore eating noises
-#define VOREALLOW_DIGESTION_NOISES	(1<<2) // Allows gross vore gurgling noises
-#define VOREALLOW_DIGESTION_DAMAGE	(1<<3) // Allows digestion to damage you
-#define VOREALLOW_DIGESTION_DEATH	(1<<4) // Allows digestion to fuckin murder you
-#define VOREALLOW_ABSORBTION		(1<<5) // Allows absorbtion to happen
-#define VOREALLOW_HEALBELLY_HEALING	(1<<6) // Allows healbellies to heal you
-#define VOREALLOW_VORE_MESSAGES		(1<<7) // Allows seeing vore messages
-#define VOREALLOW_DEATH_MESSAGES	(1<<8) // Allows seeing vore messages about dying
-#define VOREALLOW_BEING_PREY		(1<<9) // Allows being prey
-#define VOREALLOW_BEING_FED_OTHERS	(1<<10) // Allows being fed
-#define VOREALLOW_SEEING_BELLY_DESC	(1<<11) // Allows reading descs about bellies
-#define VOREALLOW_BEING_SNIFFED		(1<<12) // Allows being sniffed
-
 //belly sound pref things
 #define NORMIE_HEARCHECK 4
 #define VOREMOTE_COOLDOWN 10 SECONDS
 
 /// prefcheck
-#define VOREPREF_EAT_SOUNDS "nyomf"
-#define VOREPREF_DIGESTION_SOUNDS "gurgle"
-#define VOREPREF_DIGESTION_DAMAGE "digestable"
+#define VOREPREF_DOGBORGS "i_like_dogs"
+#define VOREPREF_EAT_SOUNDS "vore_eating_sound"
+#define VOREPREF_DIGESTION_SOUNDS "gurgle_sound"
+#define VOREPREF_DIGESTION_DAMAGE "gurgle_damage"
+#define VOREPREF_DIGESTION_DEATH "gurgle_to_death"
 #define VOREPREF_ABSORBTION "absorbable"
 #define VOREPREF_HEALBELLY "healbellyable"
-#define VOREPREF_DEATH "wouldyoulikeyourpossessionsidentified"
-#define VOREPREF_EXAMINE "theygotaguttywut"
-#define VOREPREF_TEXT "yougosquish"
-#define VOREPREF_TEXT_DEATH "youdie"
+#define VOREPREF_VORE_MESSAGES "you_feel_all_wet"
+#define VOREPREF_DEATH_MESSAGES "someone_gurgled_to_death"
 #define VOREPREF_BEING_PREY "am_prey"
-#define VOREPREF_BEING_FED "am_fed_prey"
-#define VOREPREF_SNIFFABLE "can_sniff"
+#define VOREPREF_BEING_FED_PREY "am_fed_prey"
+#define VOREPREF_BEING_FED_TO_OTHERS "am_fed_to_someone_else"
+#define VOREPREF_EXAMINE "you_see_a_gut"
+#define VOREPREF_SNIFFABLE ""
 
 /// vore sound channels are in [code\__DEFINES\sound.dm]
 

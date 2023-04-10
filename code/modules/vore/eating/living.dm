@@ -1,11 +1,12 @@
 ///////////////////// Mob Living /////////////////////
 /mob/living/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/vore) // Vore is a component now. What a time to be alive
+	if(SSvore.should_have_vore(src))
+		AddComponent(/datum/component/vore) // Vore is a component now. What a time to be alive
 
 /mob/living/proc/stop_gross_loop()
 	set name = "Stop Voresounds"
-	set category = "Vore"
+	set category = "Private"
 
 	SEND_SIGNAL(loc, COMSIG_VORE_STOP_SOUNDS, src)
 
@@ -14,7 +15,7 @@
 //
 /mob/living/proc/escapeOOC()
 	set name = "OOC Escape"
-	set category = "Vore"
+	set category = "Private"
 
 	if(!isbelly(loc))
 		return
@@ -48,7 +49,7 @@
 //
 /mob/living/proc/smell_someone()
 	set name = "Smell Someone"
-	set category = "Vore"
+	set category = "Private"
 	set desc = "Smell someone nearby!"
 
 	var/list/smellable = list()
@@ -66,8 +67,8 @@
 	SEND_SIGNAL(sniffed, COMSIG_VORE_SNIFF_LIVING, src)
 
 /mob/living/proc/toggle_voremode()
-	set name = "Enable Vore Intent"
-	set category = "Vore"
+	set name = "Toggle Vore Intent"
+	set category = "Private"
 	set desc = "Set whether or not hitting yourself (or someone else) with a grabbed person will do the vore."
 
 	SEND_SIGNAL(src, COMSIG_VORE_TOGGLE_VOREMODE)

@@ -18,16 +18,35 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 	/// mobtypes allowed to have a vore component
 	var/list/approved_vore_mobtypes = list()
 	/// itemtypes allowed to be vored
-	var/list/approved_vore_item_types = list()
-	/// list of stock vore_flags
-	var/list/vore_data_by_path = list()
+	var/list/approved_vore_paths = list()
 	/// list of smells
 	var/list/smell_by_mob = list()
+	//I don't think we've ever altered these lists. making them static until someone actually overrides them somewhere.
+	//Actual full digest modes
+	var/list/digest_modes = list(
+		DM_HOLD,
+		DM_DIGEST,
+		//DM_ABSORB,
+		//DM_DRAIN,
+		//DM_SELECT,
+		//DM_UNABSORB,
+		//DM_HEAL,
+		//DM_SHRINK,
+		//DM_GROW,
+		//DM_SIZE_STEAL,
+		//DM_EGG
+		)
+	//Digest mode addon flags
+	//var/list/mode_flag_list = list("Numbing" = DM_FLAG_NUMBING, "Stripping" = DM_FLAG_STRIPPING, "Leave Remains" = DM_FLAG_LEAVEREMAINS, "Muffles" = DM_FLAG_THICKBELLY, "Affect Worn Items" = DM_FLAG_AFFECTWORN, "Jams Sensors" = DM_FLAG_JAMSENSORS, "Complete Absorb" = DM_FLAG_FORCEPSAY)
+	//Item related modes
+	//var/list/item_digest_modes = list(IM_HOLD,IM_DIGEST_FOOD,IM_DIGEST)
+
+	//List of slots that stripping handles strips
+	//var/list/slots = list(slot_back,slot_handcuffed,slot_l_store,slot_r_store,slot_wear_mask,slot_l_hand,slot_r_hand,slot_wear_id,slot_glasses,slot_gloves,slot_head,slot_shoes,slot_belt,slot_wear_suit,slot_w_uniform,slot_s_store,slot_l_ear,slot_r_ear)
 
 /datum/controller/subsystem/processing/vore/Initialize(start_timeofday)
 	build_list_of_mobtypes_that_should_vore()
 	build_list_of_items_that_can_be_vored()
-	init_voredata()
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_mobtypes_that_should_vore()
 	approved_vore_mobtypes |= typecacheof(/mob/living/carbon/human)
@@ -35,12 +54,8 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_items_that_can_be_vored()
 	for(var/itempath in VORABLE_TYPES)
-		approved_vore_item_types |= typecacheof(itempath)
-
-/datum/controller/subsystem/processing/vore/proc/init_voredata()
-	for(var/vd in typesof(/datum/vore_data))
-		var/datum/vore_data/veedee = new()
-		vore_data_by_path[veedee.index] = veedee
+		approved_vore_paths |= typecacheof(itempath)
+	approved_vore_paths |= approved_vore_mobtypes
 
 /// Stores a mob's smell
 /// Yes I know its a wierd place for it, it'll make sense when more things have scents
@@ -48,6 +63,14 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 /datum/controller/subsystem/processing/vore/proc/register_smell(mob/living/living_pred, smell)
 	var/datum/weakref/sniffa = WEAKREF(living_pred)
 	smell_by_mob[sniffa] = "[smell]"
+
+/// Returns if something is valid to eat. Mobs are always valid (didnt ya know?)
+/datum/controller/subsystem/processing/vore/proc/can_eat(atom/movable/eat_thing)
+	if(!istype(eat_thing))
+		return FALSE
+	if(isliving(eat_thing))
+		return TRUE
+	return approved_vore_paths[eat_thing.type]
 
 // Returns a mob's smell
 /datum/controller/subsystem/processing/vore/proc/get_scent(mob/living/living_pred)
@@ -62,46 +85,3 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 	if(!is_type_in_typecache(living_pred.type, approved_vore_mobtypes))
 		return FALSE
 	return TRUE
-
-/datum/controller/subsystem/processing/vore/proc/get_voredatum(mob/living/living_pred)
-	if(!should_have_vore(living_pred))
-		return
-	. = vore_data_by_path[living_pred.type]
-	if(.)
-		return
-	for(var/vd in vore_data_by_path)
-		var/datum/vore_data/veedee = vore_data_by_path[vd]
-		if(!veedee.subpaths)
-			continue
-		if(ispath(veedee.index, living_pred.type))
-			return veedee
-	
-/datum/controller/subsystem/processing/vore/proc/get_default_bellies(mob/living/living_pred)
-	if(living_pred.client)
-		return
-	var/datum/vore_data/vd = get_voredatum(living_pred)
-	if(!vd)
-		return
-	return vd.wild_bellies
-
-
-/datum/controller/subsystem/processing/vore/proc/get_voreflags(mob/living/living_pred)
-	if(!should_have_vore(living_pred))
-		return NONE
-	if(living_pred.client)
-		return living_pred.client.prefs.vore_flags
-	var/datum/vore_data/vd = get_voredatum(living_pred)
-	if(!vd)
-		return
-	return vd.vore_flags
-
-/// stores initial vore data that would just take up space on a mob or something
-/datum/vore_data
-	/// usually the mob's path
-	var/index = /mob/living
-	/// voreflags
-	var/vore_flags = NONE
-	/// If set, these'll be the bellies given to the mob by default, if there's no client
-	var/list/wild_bellies
-	/// include subpaths?
-	var/subpaths = TRUE

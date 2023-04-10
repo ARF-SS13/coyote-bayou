@@ -572,12 +572,14 @@
 #define COMSIG_VORE_GET_VOREMODE "is_it_voremode"
 // returns component's voreflags
 #define COMSIG_VORE_GET_VOREFLAGS "voreflags_pls"
+/// returns/sets the component's absorbtion state. pass a TRUE/FALSE in its args to set a new state, leave null just to read it
+#define COMSIG_VORE_ABSORBED_STATE "set_absorbed"		// (datum/source, absorbed = T/F)
 /// Vores an atom
 #define COMSIG_VORE_DEVOUR_ATOM "nyomf"
 /// Sent by a belly to an atom when it enters a belly
 #define COMSIG_VORE_ATOM_DEVOURED "atom_eaten"		// (datum/source, obj/vore_belly/mybelly, mob/living/vorer)
 /// Sent by a belly to an atom when it gets digested -- basically digest_act, but in signal form
-#define COMSIG_VORE_ATOM_DIGESTED "atom_eaten"		// (datum/source, obj/vore_belly/mybelly, mob/living/vorer)
+#define COMSIG_VORE_ATOM_DIGESTED "atom_digested"		// (datum/source, obj/vore_belly/mybelly, mob/living/belly_owner)
 /// sets a list to a list of a mob's bellies
 /// DOES NOT RETURN ANYTHING USEFUL! Abuses the fact that list vars are just references, or something
 /// check out COMSIG_TRY_STORAGE_RETURN_INVENTORY, its pretty neat
@@ -590,7 +592,7 @@
 /// Takes in a belly, and returns if that belly is one of ours
 #define COMSIG_VORE_VERIFY_BELLY "has_belly"		// (mob/living/source, obj/vore_belly/gut)
 /// Takes in a belly, and returns if that belly is one of ours
-#define COMSIG_VORE_SWAP_BELLY_INDEX "has_belly"	// (datum/source, index1, index2)
+#define COMSIG_VORE_SWAP_BELLY_INDEX "swap_belly"	// (datum/source, index1, index2)
 /// Expels a mob from a belly
 #define COMSIG_VORE_EXPEL_SPECIFIC "i_unvore_u"		// (datum/source, atom/movable/to_eject, silent)
 /// Expels all mobs from a belly

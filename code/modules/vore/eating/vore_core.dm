@@ -1,6 +1,7 @@
 /* 
  * VORE COMPONENT FOR MOBS
  * Allows someone to be a predator
+ * Not needed for prey!!!
  */
 
 // Oh yeah, with this, after this, master will be a var that is the parent
@@ -11,7 +12,6 @@
 #define VORETYPE_EAT_PREY 3
 
 /datum/component/vore
-	var/vore_flags = 0
 	// Determines if the mechanical vore preferences button will be displayed on the mob or not.
 	var/showvoreprefs = TRUE
 	/// Default to no vore capability.
@@ -25,15 +25,17 @@
 	/// A weakref to our client, if any
 	var/datum/weakref/client_cached
 	/// Is voremode on?
-	var/voremode = FALSE
+	var/voremode = TRUE // yes, yes it is
+	/// Am I absorbed?
+	var/am_absorbed = FALSE
 
 /datum/component/vore/Initialize()
 	if(!SSvore.should_have_vore(parent))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN), .proc/setup_vore)
-	RegisterSignal(parent, list(COMSIG_VORE_SAVE_PREFS), .proc/save_vore_prefs)
-	RegisterSignal(parent, list(COMSIG_VORE_LOAD_PREFS), .proc/load_vore_prefs)
-	RegisterSignal(parent, list(COMSIG_VORE_GET_VOREFLAGS), .proc/get_voreflags)
+	RegisterSignal(parent, list(COMSIG_VORE_SAVE_PREFS), .proc/save_prefs)
+	RegisterSignal(parent, list(COMSIG_VORE_LOAD_PREFS), .proc/load_prefs)
+	RegisterSignal(parent, list(COMSIG_VORE_ABSORBED_STATE), .proc/absorbed_state)
 	RegisterSignal(parent, list(COMSIG_VORE_ADD_BELLY), .proc/add_belly)
 	RegisterSignal(parent, list(COMSIG_VORE_REMOVE_BELLY), .proc/remove_belly)
 	RegisterSignal(parent, list(COMSIG_VORE_GET_BELLIES), .proc/get_bellies)
@@ -56,10 +58,7 @@
 	VORE_MASTER
 	client_cached = WEAKREF(master.client)
 	setup_verbs()
-	if(CHECK_BITFIELD(vore_flags, VORE_INIT) && !force)
-		return
-	vore_flags = SSvore.get_voreflags(master)
-	if(!load_vore_prefs())
+	if(!load_prefs())
 		to_chat(master,span_phobia("ERROR: You seem to have saved vore prefs, but they couldn't be loaded."))
 	if(LAZYLEN(vore_organs))
 		vore_selected = vore_organs[1]
@@ -70,17 +69,21 @@
 		return
 	//add_verb(master, /mob/living/proc/preyloop_refresh)
 	add_verb(master, /mob/living/proc/escapeOOC)
-	add_verb(master, /mob/living/proc/smell_someone)
-	add_verb(master, /mob/living/proc/toggle_voremode)
-	if(!CHECK_BITFIELD(vore_flags, NO_VORE)) //If the mob isn't supposed to have a stomach, let's not give it an insidepanel so it can make one for itself, or a stomach.
-		add_verb(master, /mob/living/proc/insidePanel)
+	// TODO: add this and make it work
+	//add_verb(master, /mob/living/proc/smell_someone)
+	//add_verb(master, /mob/living/proc/toggle_voremode) // vore intent is soooo last year
+	add_verb(master, /mob/living/proc/insidePanel)
 
-/datum/component/vore/proc/get_voreflags()
-	return vore_flags
+/datum/component/vore/proc/absorbed_state(datum/source, set_state)
+	SIGNAL_HANDLER
+	if(!isnull(set_state))
+		am_absorbed = set_state
+	return am_absorbed
 
-/// sets a list to be a lit of bellies, without returning anything useful
-/// like a magic trick. set associate to TRUE to associate the list by name
+/// sets a list to be a list of bellies, without returning anything useful
+/// like a magic trick. set associate to TRUE to associate the list by name. set only_selected to TRUE to just get the selected belly
 /datum/component/vore/proc/get_bellies(datum/source, list/belly_list, associate, only_selected)
+	SIGNAL_HANDLER
 	if(!islist(belly_list))
 		return FALSE
 	if(associate)
@@ -94,63 +97,84 @@
 	return TRUE
 
 /datum/component/vore/proc/select_belly(datum/source, obj/vore_belly/newselect)
+	SIGNAL_HANDLER
 	if(!(newselect in vore_organs))
 		return FALSE
 	vore_selected = newselect
 	return TRUE
 
-/datum/component/vore/proc/swap_belly_index(datum/source, index_start, index_end)
-	vore_organs.Swap(index_start, index_end)
+/datum/component/vore/proc/swap_belly_index(datum/source, updown)
+	SIGNAL_HANDLER
+	var/indexmove = 1
+	var/found_it
+	for(var/obj/vore_belly/gut in vore_organs)
+		if(gut == vore_selected) // Find()? whats that?
+			found_it = TRUE
+			break
+		indexmove++
+	if(!found_it)
+		return FALSE
+	vore_organs.Swap(indexmove, indexmove + updown)
 	return TRUE
 
 /datum/component/vore/proc/has_belly()
+	SIGNAL_HANDLER
 	if(!islist(vore_organs))
 		return FALSE
 	for(var/obj/vore_belly/vb in vore_organs)
 		return TRUE
 
-//
-//	Proc for applying vore preferences, given bellies
-//
-//copy_from_prefs_vr()
+/datum/component/vore/proc/load_prefs()
+	SIGNAL_HANDLER
+	VORE_MASTER
+	if(!master?.client?.prefs)
+		return FALSE
+	if(!load_vore_prefs())
+		return FALSE
+	return TRUE
+	
 /datum/component/vore/proc/load_vore_prefs()
 	VORE_MASTER
-	if(!master.client)
-		return FALSE
-	var/client/clint = master.client
-	//vore_taste = client.prefs.vore_taste
-	SSvore.register_smell(master, vore_smell)
-	COPY_SPECIFIC_BITFIELDS(vore_flags, clint.prefs.vore_flags, DIGESTABLE | DEVOURABLE | FEEDING | LICKABLE | SMELLABLE | ABSORBABLE | MOBVORE)
+	// vore prefs are loaded with the client and up to date to the last save
+	// so, all we really need is the smell, and the bellies
+	// lovely
+	var/datum/preferences/P = master.client.prefs
+	SSvore.register_smell(master, P.vore_smell)
 	SEND_SIGNAL(master, COMSIG_VORE_EXPEL_ALL, TRUE, TRUE)
 	QDEL_LIST(vore_organs)
-	for(var/entry in clint.prefs.belly_prefs)
+	for(var/entry in P.belly_prefs)
 		// decodes your belly prefs and stuffs all the organs into the parent
 		// The belly will register itself with us when its spawned, through the power of COMSIG
 		list_to_object(entry, master)
+	return TRUE
 
-	ENABLE_BITFIELD(vore_flags, VOREPREF_INIT)
+/datum/component/vore/proc/save_prefs()
+	SIGNAL_HANDLER
+	VORE_MASTER
+	if(!master?.client?.prefs)
+		return FALSE
+	if(!save_vore_prefs())
+		return FALSE
 	return TRUE
 
 //copy_to_prefs_vr()
 /datum/component/vore/proc/save_vore_prefs()
 	VORE_MASTER
-	if(!master.client)
+	if(!master?.client?.prefs)
+		to_chat(src,span_phobia("You attempted to save your vore prefs but somehow you're in this character without a client.prefs variable. Tell a dev."))
 		return FALSE
-	var/client/clint = master.client
-	var/save_flags = vore_flags
-	DISABLE_BITFIELD(save_flags, VOREPREF_INIT | VORE_INIT)
-	clint.prefs.vore_flags = save_flags
-	//client.prefs.features["taste"] = dna.features["taste"]
-	clint.prefs.vore_smell = SSvore.get_scent(master)
+
+	// vore prefs are saved with the rest of the prefs
+	// so, all we really need are the bellies
+	// lovely
+	var/datum/preferences/P = master.client.prefs
 
 	var/list/serialized = list()
-	for(var/belly in vore_organs)
-		var/obj/vore_belly/B = belly
+	for(var/obj/vore_belly/B in vore_organs)
 		serialized += list(B.serialize()) //Can't add a list as an object to another list in Byond. Thanks.
 
-	clint.prefs.belly_prefs = serialized
-	clint.prefs.save_character()
-	to_chat(master, span_greentext("Vore settings saved!"))
+	P.belly_prefs = serialized
+	P.save_character()
 	return TRUE
 
 /datum/component/vore/proc/sniff_mob(datum/source, mob/living/living_sniffer)
@@ -165,7 +189,7 @@
 		span_warning("[living_sniffer] smells [master]!"),
 		span_notice("You smell [master]. [master.p_they(TRUE)] smell like [smellmsg]."),
 		"<b>Sniff!</b>",
-		pref_check = VOREPREF_TEXT)
+		pref_check = VOREPREF_VORE_MESSAGES)
 
 
 /datum/component/vore/proc/release_vore_contents()
@@ -198,8 +222,6 @@
 
 /datum/component/vore/proc/can_eat()
 	VORE_MASTER
-	if(!voremode)
-		return FALSE
 	if(master.stat != CONSCIOUS)
 		return FALSE
 	if(!vore_selected)
@@ -207,26 +229,30 @@
 			return FALSE
 		if(isbelly(vore_organs[1]))
 			vore_selected = vore_organs[1]
+			if(!vore_selected)
+				return FALSE
 	return TRUE
 
 /datum/component/vore/proc/can_be_eaten()
 	VORE_MASTER
+	if(!master.ckey)
+		return TRUE
+	if(!master.client)
+		return FALSE
 	if(!CHECK_PREFS(master, VOREPREF_BEING_PREY))
-		return FALSE
-	if(!CHECK_BITFIELD(vore_flags, DEVOURABLE))
-		return FALSE
-	if(master.ckey && !master.client)
 		return FALSE
 	return TRUE
 
 /// Can I (master) be fed someone?
-/datum/component/vore/proc/can_be_fed(datum/source)
+/datum/component/vore/proc/can_be_fed_prey()
 	VORE_MASTER
-	if(!CHECK_PREFS(master, VOREPREF_BEING_FED))
-		return FALSE
-	if(master.ckey && !master.client) // no feeding me while im asleep!
-		return FALSE
 	if(!can_eat())
+		return FALSE
+	if(!master.ckey)
+		return TRUE
+	if(!master.client) // no feeding me while im asleep!
+		return FALSE
+	if(!CHECK_PREFS(master, VOREPREF_BEING_FED_PREY))
 		return FALSE
 	return TRUE
 
@@ -251,13 +277,26 @@
 	if(living_pred.ckey && !living_pred.client)
 		to_chat(master, span_alert("[living_pred] is too unresponsive to be fed!"))
 		return FALSE
+	/// Monkeys and grenades can't consent in the moment, but they *do* have their prefs on file
+	/// And they say *yes yes yes!*
+	/// Also movables and non-human mobs dont have components that respond to our signals
+	/// So... hack time~
+	var/prey_consents
 	if(isliving(movable_prey)) // not all prey is living
 		var/mob/living/living_prey = movable_prey
-		if(living_prey.ckey && !living_prey.client)
-			to_chat(master, span_alert("[living_prey] is too unresponsive to eat!"))
-			return FALSE
+		if(living_prey.ckey)
+			if(!living_prey.client)
+				to_chat(master, span_alert("[living_prey] is too unresponsive to eat!"))
+				return FALSE
+		else
+			prey_consents = TRUE
+	else
+		prey_consents = TRUE
+	if(!SSvore.can_eat(movable_prey))
+		return FALSE
 
 	/// Assumptions!
+	/// Predator is us? we're eating prey.
 	/// Predator, but no prey? we are the prey, feed us to them.
 	/// Prey, but no predator? we are the predator, eat them.
 	/// Prey and predator? We are feeding Prey to Predator
@@ -265,7 +304,7 @@
 	////////////////////////////////////////////////////////////
 
 	var/what_do
-	if(isliving(living_pred))
+	if(isliving(living_pred) && living_pred != master)
 		if(movable_prey)
 			what_do = VORETYPE_FEED_PREY_TO_PRED
 		else
@@ -281,17 +320,17 @@
 			if(!movable_prey.Adjacent(living_pred))
 				to_chat(master, span_alert("[movable_prey] is too far away from [living_pred]!"))
 				return
-			if(!CHECK_PREFS(living_prey, VOREPREF_BEING_PREY))
-				to_chat(master, span_alert("You respect the fact that [living_prey.name] prefers not to be eaten, and refuse to feed them to [living_pred.name]."))
-				to_chat(living_prey, span_alert("You notice that [master.name] understands your preference to not be eaten.", pref_check = VOREPREF_TEXT))
-				to_chat(living_pred, span_alert("You notice that [master.name] understands [living_prey.name]'s preference to not be eaten.", pref_check = VOREPREF_TEXT))
+			if(!prey_consents && !CHECK_PREFS(movable_prey, VOREPREF_BEING_PREY))
+				to_chat(master, span_alert("You respect the fact that [movable_prey.name] prefers not to be eaten, and refuse to feed them to [living_pred.name]."))
+				to_chat(movable_prey, span_alert("You notice that [master.name] understands your preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(living_pred, span_alert("You notice that [master.name] understands [movable_prey.name]'s preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
-			if(!CHECK_PREFS(living_pred, VOREPREF_BEING_FED))
-				to_chat(master, span_alert("You respect the fact that [living_pred.name] prefers not to be fed anyone, and refuse to feed [living_prey.name] them to them."))
-				to_chat(living_prey, span_alert("You notice that [master.name] understands [living_pred.name]'s preference to not be fed to anyone.", pref_check = VOREPREF_TEXT))
-				to_chat(living_pred, span_alert("You notice that [master.name] understands your preference to not be fed to [living_prey.name].", pref_check = VOREPREF_TEXT))
+			if(living_pred.ckey && !CHECK_PREFS(living_pred, VOREPREF_BEING_FED_PREY))
+				to_chat(master, span_alert("You respect the fact that [living_pred.name] prefers not to be fed anyone, and refuse to feed [movable_prey.name] them to them."))
+				to_chat(movable_prey, span_alert("You notice that [master.name] understands [living_pred.name]'s preference to not be fed to anyone."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(living_pred, span_alert("You notice that [master.name] understands your preference to not be fed to [movable_prey.name]."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
-			if(SEND_SIGNAL(movable_prey, COMSIG_VORE_CAN_BE_EATEN) == FALSE) // null is an acceptible response from non-mobs
+			if(!prey_consents && SEND_SIGNAL(movable_prey, COMSIG_VORE_CAN_BE_EATEN) == FALSE)
 				to_chat(master, span_alert("[movable_prey] would prefer not to be eaten!"))
 				return FALSE // they dont want to be eaten
 			if(!SEND_SIGNAL(living_pred, COMSIG_VORE_CAN_BE_FED_PREY))
@@ -302,9 +341,9 @@
 			if(!master.Adjacent(living_pred))
 				to_chat(master, span_alert("You are too far away from [living_pred]!"))
 				return FALSE
-			if(!CHECK_PREFS(living_pred, VOREPREF_BEING_FED))
+			if(!CHECK_PREFS(living_pred, VOREPREF_BEING_FED_PREY))
 				to_chat(master, span_alert("You respect the fact that [living_pred.name] prefers not to have you feed yourself to them."))
-				to_chat(living_pred, span_alert("You notice that [master.name] understands your preference not to feed themself to you.", pref_check = VOREPREF_TEXT))
+				to_chat(living_pred, span_alert("You notice that [master.name] understands your preference not to feed themself to you."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
 			if(!SEND_SIGNAL(living_pred, COMSIG_VORE_CAN_EAT))
 				to_chat(master, span_alert("[living_pred] can't eat you right now!"))
@@ -320,11 +359,11 @@
 			if(!master.Adjacent(movable_prey))
 				to_chat(master, span_alert("You are too far away from [movable_prey]!"))
 				return FALSE
-			if(!CHECK_PREFS(movable_prey, VOREPREF_BEING_PREY))
+			if(!prey_consents && !CHECK_PREFS(movable_prey, VOREPREF_BEING_PREY))
 				to_chat(master, span_alert("You respect the fact that [movable_prey.name] prefers not to be eaten, and refuse to eat them."))
-				to_chat(movable_prey, span_alert("You notice that [master.name] understands your preference to not be eaten.", pref_check = VOREPREF_TEXT))
+				to_chat(movable_prey, span_alert("You notice that [master.name] understands your preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
-			if(SEND_SIGNAL(movable_prey, COMSIG_VORE_CAN_BE_EATEN) == FALSE)
+			if(!prey_consents && SEND_SIGNAL(movable_prey, COMSIG_VORE_CAN_BE_EATEN) == FALSE)
 				to_chat(master, span_alert("[movable_prey] can't be eaten right now!"))
 				return FALSE
 			if(!can_eat()) // just in case
@@ -339,7 +378,7 @@
 	if(!belly)
 		to_chat(master, span_alert("Never mind!"))
 		return
-	perform_the_nom(living_prey, master, belly)
+	perform_the_nom(movable_prey, master, belly)
 	return TRUE
 
 /datum/component/vore/proc/feed_self_to_other(mob/living/living_pred)
@@ -353,7 +392,7 @@
 	perform_the_nom(master, living_pred, belly)
 	return TRUE
 
-/datum/component/vore/proc/feed_prey_to_predator(atom/movable/moving_prey, mob/living/living_pred)
+/datum/component/vore/proc/feed_prey_to_predator(atom/movable/movable_prey, mob/living/living_pred)
 	VORE_MASTER
 	var/list/pred_guts = list()
 	SEND_SIGNAL(living_pred, COMSIG_VORE_GET_BELLIES, pred_guts)
@@ -361,14 +400,15 @@
 	if(!belly)
 		to_chat(master, span_alert("Never mind!"))
 		return
-	perform_the_nom(moving_prey, living_pred, belly)
+	perform_the_nom(movable_prey, living_pred, belly)
 	return TRUE
 
-/datum/component/vore/proc/perform_the_nom(atom/movable/moving_prey, mob/living/living_pred, obj/vore_belly/belly)
+/datum/component/vore/proc/perform_the_nom(atom/movable/movable_prey, mob/living/living_pred, obj/vore_belly/belly)
+	VORE_MASTER
 	if(!voremode)
 		to_chat(master, span_alert("You aren't in Vore Intent! You can toggle this on in your vore tab."))
 		return
-	if(!moving_prey)
+	if(!movable_prey)
 		to_chat(master, span_phobia("You tried to eat someone, but they apparently don't exist? This might be a bug."))
 		return
 	if(!living_pred)
@@ -380,10 +420,10 @@
 	if(!SEND_SIGNAL(living_pred, COMSIG_VORE_VERIFY_BELLY, belly))
 		to_chat(master, span_phobia("[belly] isn't in the right place. This might be a bug??"))
 		return
-	if(!moving_prey.Adjacent(master)) // let's not even bother attempting it yet if they aren't next to us.
+	if(!movable_prey.Adjacent(master)) // let's not even bother attempting it yet if they aren't next to us.
 		return FALSE
-	if (!CHECK_PREFS(moving_prey, VOREPREF_BEING_PREY))
-		to_chat(master, "[moving_prey] would prefer not to be eaten.")
+	if (!CHECK_PREFS(movable_prey, VOREPREF_BEING_PREY))
+		to_chat(master, "[movable_prey] would prefer not to be eaten.")
 		return FALSE
 
 	// The belly selected at the time of noms
@@ -395,18 +435,18 @@
 
 	// Prepare messages
 	if(master == living_pred) //Feeding someone to yourself
-		attempt_msg = span_warning("[living_pred] is attemping to [vverb] [moving_prey] into their [vname]!")
-		success_msg = span_warning("[living_pred] manages to [vverb] [moving_prey] into their [vname]!")
+		attempt_msg = span_warning("[living_pred] is attemping to [vverb] [movable_prey] into their [vname]!")
+		success_msg = span_warning("[living_pred] manages to [vverb] [movable_prey] into their [vname]!")
 	else //Feeding someone to another person
-		attempt_msg = span_warning("[master] is attempting to make [living_pred] [vverb] [moving_prey] into their [vname]!")
-		success_msg = span_warning("[master] manages to make [living_pred] [vverb] [moving_prey] into their [vname]!")
+		attempt_msg = span_warning("[master] is attempting to make [living_pred] [vverb] [movable_prey] into their [vname]!")
+		success_msg = span_warning("[master] manages to make [living_pred] [vverb] [movable_prey] into their [vname]!")
 
 	// Announce that we start the attempt!
-	master.visible_message(attempt_msg, pref_check = VOREPREF_TEXT)
+	master.visible_message(attempt_msg, pref_check = VOREPREF_VORE_MESSAGES)
 
 	// Now give the prey time to escape... return if they did
 	var/swallow_time
-	if(istype(moving_prey, /mob/living/carbon/human))
+	if(istype(movable_prey, /mob/living/carbon/human))
 		swallow_time = VORE_SWALLOW_HUMAN_TIME
 	else
 		swallow_time = VORE_SWALLOW_NONHUMAN_TIME
@@ -416,31 +456,27 @@
 			master, 
 			swallow_time,
 			FALSE,
-			moving_prey,
+			movable_prey,
 			required_mobility_flags = NONE,
 			allow_movement = TRUE,
 			))
 		to_chat(master, span_alert("You were intererupted!"))
-		to_chat(moving_prey, span_alert("You were intererupted!"))
-	if(!moving_prey.Adjacent(master)) //double check'd just in case they moved during the timer and the do_mob didn't fail for whatever reason
+		to_chat(movable_prey, span_alert("You were intererupted!"))
+	if(!movable_prey.Adjacent(master)) //double check'd just in case they moved during the timer and the do_mob didn't fail for whatever reason
 		to_chat(master, span_alert("They got away!"))
-		to_chat(moving_prey, span_alert("You got away!"), pref_check = VOREPREF_TEXT)
+		to_chat(movable_prey, span_alert("You got away!"), pref_check = VOREPREF_VORE_MESSAGES)
 		return FALSE
 
 	// If we got this far, nom successful! Announce it!
-	master.visible_message(success_msg,pref_check = VOREPREF_TEXT)
+	master.visible_message(success_msg,pref_check = VOREPREF_VORE_MESSAGES)
 
 	// Actually shove prey into the belly.
-	belly.nom_mob(moving_prey, master)
+	SEND_SIGNAL(belly, COMSIG_VORE_DEVOUR_ATOM, movable_prey, master)
 	master.stop_pulling()
 
-	// Flavor country
-	if(belly.can_taste)
-		master.taste(null, moving_prey)
-
-	if(!isliving(moving_prey))
+	if(!isliving(movable_prey))
 		return TRUE // we're done here
-	var/mob/living/living_prey = moving_prey
+	var/mob/living/living_prey = movable_prey
 	// Inform Admins
 	var/prey_braindead
 	var/prey_stat
@@ -467,7 +503,6 @@
 		return
 	if(!bellies_visible_to(examiner)) //Some clothing or equipment can hide this.
 		return
-	var/list/examine_list = list()
 	for (var/obj/vore_belly/belly in vore_organs)
 		examine_list += belly.get_examine_msg()
 

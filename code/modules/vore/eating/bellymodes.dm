@@ -42,9 +42,13 @@
 				digest_living(living_prey)
 
 			//Contaminate or gurgle items
-			var/obj/item/T = pick(get_vored_items())
-			if(istype(T,/obj/item/reagent_containers/food) || istype(T,/obj/item/organ))
-				digest_item(T)
+			var/list/inner_stuff = get_vored_items()
+			var/obj/item/T = pick(inner_stuff)
+			if(!SEND_SIGNAL(T, COMSIG_VORE_ATOM_DIGESTED, src, owner))
+				for(var/tries in 1 to 5) // lets try again!
+					T = pick(inner_stuff)
+					if(SEND_SIGNAL(T, COMSIG_VORE_ATOM_DIGESTED, src, owner))
+						break
 
 		if(DM_HEAL)
 			for(var/mob/living/living_prey in vored_folk)
