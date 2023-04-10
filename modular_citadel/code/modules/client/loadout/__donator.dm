@@ -281,12 +281,11 @@
 	new /obj/item/clothing/under/syndicate/rus_army(src)
 
 /datum/gear/donator/kits/caseapollo58143_3
-	name = "Missionary Krav Kit"
+	name = "Missionary Alt Kit"
 	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_3
 	ckeywhitelist = list("caseapollo58143")
 
 /obj/item/storage/box/large/custom_kit/caseapollo58143_3/PopulateContents()
-	new /obj/item/implanter/krav_maga(src)
 	new /obj/item/grown/rose(src)
 	new /obj/item/clothing/under/rank/security/detective/brown(src)
 	new /obj/item/clothing/suit/det_suit/forensicsblue(src)
