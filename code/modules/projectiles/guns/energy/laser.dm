@@ -298,6 +298,13 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
+// starter kit havin ass
+/obj/item/gun/energy/laser/pistol/worn
+	name = "\improper worn AEP7 laser pistol"
+	desc = "A basic energy-based laser gun that fires concentrated beams of light. Military version of the Wattz-1000. This one seems a bit scuffy, a couple frayed wires, there's some strange metalic taste if you press the barrel against your cheek."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan/worn)
+
 // Debug laser pistol that does 10 damage and 0 DT piercing
 /obj/item/gun/energy/laser/pistol/debug_10_damage_0_dt_pierce
 	name = "\improper Debug laser pistol that does 10 damage and 0 DT piercing"
