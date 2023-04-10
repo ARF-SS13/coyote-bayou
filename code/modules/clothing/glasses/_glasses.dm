@@ -159,7 +159,7 @@
 	item_state = "syndicatepatch"
 	resistance_flags = ACID_PROOF
 
-/obj/item/clothing/glasses/eyepatch/syndicate/equipped(mob/living/carbon/human/user, slot)
+/*/obj/item/clothing/glasses/eyepatch/syndicate/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot == SLOT_GLASSES)
 		user.visible_message("<span class='warning'>Circuitry from the eyepatch links itself to your brain as you put on the eyepatch.")
@@ -174,7 +174,7 @@
 	var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.applyOrganDamage(30)
-		user.visible_message("<span class='warning'>Your eye stings as the circuitry is removed from your eye!")
+		user.visible_message("<span class='warning'>Your eye stings as the circuitry is removed from your eye!")*/
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
