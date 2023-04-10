@@ -813,6 +813,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/sleeping_carp/PopulateContents()
 	new /obj/item/book/granter/martial/carp(src)
 
+/obj/item/storage/box/gun/melee/claymoreold/PopulateContents()
+	new /obj/item/melee/coyote/claymoreold(src)
+
 /// HOBO GUNS
 
 /obj/item/storage/box/gun/hobo
@@ -1714,6 +1717,120 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE
 	spawn_thing = /obj/item/storage/box/gun/melee/sleeping_carp
+
+/datum/loadout_box/claymoreold //FOR SCOTLAND
+	entry_tag = "Old Claymore"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/claymoreold
+
+/datum/loadout_box/harpoon //https://youtu.be/-UhrVpRCOYM ~TK
+	entry_tag = "Harpoon"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/harpoon
+
+/datum/loadout_box/katanaold
+	entry_tag = "Old Katana"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/katanaold
+
+/datum/loadout_box/wakazashiold
+	entry_tag = "Old Wakazashi"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/wakazashiold
+
+/datum/loadout_box/tantoold
+	entry_tag = "Old Tanto"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/tantoold
+
+/datum/loadout_box/combataxe
+	entry_tag = "Combat Axe"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/combataxe
+
+/datum/loadout_box/smallsword
+	entry_tag = "Small Sword"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/smallsword
+
+/datum/loadout_box/oldcutlass
+	entry_tag = "Old Cutlass"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldcutlass
+
+/datum/loadout_box/crudeblade
+	entry_tag = "Crude Blade"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/crudeblade
+
+/datum/loadout_box/mauler
+	entry_tag = "Mauler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/mauler
+
+/datum/loadout_box/club
+	entry_tag = "Club"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/club
+
+/datum/loadout_box/bigclub
+	entry_tag = "Club"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/bigclub
+
+/datum/loadout_box/oldlongsword
+	entry_tag = "Old Longsword"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldlongsword
+
+/datum/loadout_box/oldhalberd
+	entry_tag = "Old Halberd"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldhalberd
+
+/datum/loadout_box/oldpike
+	entry_tag = "Old Pike"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldpike
+
+/datum/loadout_box/oldnaginata
+	entry_tag = "Old Naginata"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldnaginata
+
+/datum/loadout_box/oldashandarei
+	entry_tag = "Old Ashandarei"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldashandarei
+
+/datum/loadout_box/oldkhopesh
+	entry_tag = "Old Khopesh"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldkhopesh
+
+/datum/loadout_box/oldkanobo
+	entry_tag = "Old Kanobo"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE
+	spawn_thing = /obj/item/melee/coyote/oldkanobo
 
 /datum/loadout_box/militarypolice
 	entry_tag = "Police Baton"
