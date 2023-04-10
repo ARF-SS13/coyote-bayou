@@ -9,6 +9,7 @@
 	custom_materials = list(
 		/datum/material/iron = MATS_ROCKET_CASING + MATS_ROCKET_BULLET,
 		/datum/material/blackpowder = MATS_ROCKET_POWDER) // great source of powder
+	sound_properties = CSP_MISC
 
 /obj/item/ammo_casing/caseless/rocket/hedp
 	name = "\improper High Explosive Dual Purpose Rocket"

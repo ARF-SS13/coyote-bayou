@@ -42,7 +42,7 @@
 	display_name = "Integrated HUDs"
 	description = "The usefulness of computerized records, projected straight onto your eyepiece!"
 	prereq_ids = list("comp_recordkeeping", "emp_basic")
-/*	design_ids = list("health_hud", "security_hud", "diagnostic_hud", "scigoggles", "health_hud_prescription", "security_hud_prescription", "diagnostic_hud_prescription")*/
+	design_ids = list(/*"health_hud", "security_hud",*/ "diagnostic_hud", "scigoggles", /*"health_hud_prescription", "security_hud_prescription",*/ "diagnostic_hud_prescription")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
 
 /*

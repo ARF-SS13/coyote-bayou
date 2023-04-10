@@ -22,7 +22,7 @@ here's a tip, go search DEFINES/access.dm
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1
 		)
 
@@ -89,7 +89,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	belt = /obj/item/kit_spawner/townie/mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	l_pocket = /obj/item/storage/bag/money/small/oasis
+	l_pocket = /obj/item/storage/wallet/stash/high
 	r_pocket = /obj/item/flashlight/seclite
 	shoes = /obj/item/clothing/shoes/f13/tan
 	uniform = /obj/item/clothing/under/f13/gentlesuit
@@ -190,7 +190,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	r_hand = /obj/item/storage/briefcase/secretary
-	l_pocket = /obj/item/storage/bag/money/small/settler
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/flashlight/seclite
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	uniform = /obj/item/clothing/under/suit/black
@@ -288,7 +288,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/sheriff
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
-	l_pocket = /obj/item/storage/bag/money/small/den
+	l_pocket = /obj/item/storage/wallet/stash/high
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/box/deputy_badges = 1,
@@ -402,7 +402,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	belt = /obj/item/kit_spawner/lawman
 	suit_store = /obj/item/storage/belt/legholster
-	l_pocket = /obj/item/storage/bag/money/small/settler
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	uniform = /obj/item/clothing/under/f13/cowboyb
@@ -694,7 +694,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/med
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	id = /obj/item/card/id/dendoctor
-	l_pocket = /obj/item/storage/bag/money/small/settler
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
@@ -802,7 +802,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	//	/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
@@ -892,7 +892,7 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/kit_spawner/tools,
 		///obj/item/melee/onehanded/knife/hunting = 1 //you already got a knife
 		)
@@ -1104,7 +1104,7 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/lawman
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id/silver
-	l_pocket = /obj/item/storage/bag/money/small/settler
+	l_pocket = /obj/item/storage/wallet/stash/mid
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -1155,7 +1155,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/bag/money/small = 1)
+		/obj/item/storage/wallet/stash/banker = 1)
 
 /datum/outfit/loadout/classy
 	name = "Classy"
@@ -1241,7 +1241,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	gloves = /obj/item/clothing/gloves/fingerless
-	l_pocket = /obj/item/storage/bag/money/small/den
+	l_pocket = /obj/item/storage/wallet/stash/high
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
@@ -1338,7 +1338,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	gloves = /obj/item/clothing/gloves/fingerless
-	l_pocket = /obj/item/storage/bag/money/small/den
+	l_pocket = /obj/item/storage/wallet/stash/high
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(

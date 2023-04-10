@@ -13,6 +13,7 @@
 		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
 		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_SHOTGUN
 
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"

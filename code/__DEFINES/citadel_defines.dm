@@ -2,6 +2,10 @@
 //Be sure to update the min/max of these if you do change them.
 //Measurements are in imperial units. Inches, feet, yards, miles. Tsp, tbsp, cups, quarts, gallons, etc
 
+/// Defines for SSgenitals to store both a weakref of a mob, and a fuckhuge list of images
+#define GENITAL_MOBREF "mob_weakref"
+#define GENITAL_SPRITES "genital"
+
 //Filters
 #define CIT_FILTER_STAMINACRIT filter(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
 
@@ -70,6 +74,14 @@
 #define GEN_VIS_OVERALL_FLAG_DEFAULT GENITAL_ABOVE_UNDERWEAR
 #define IS_GENITAL_VIS_OVERRIDE(x) (CHECK_BITFIELD(x,GENITAL_NO_OVERRIDE) || CHECK_BITFIELD(x,GENITAL_ALWAYS_HIDDEN) || CHECK_BITFIELD(x,GENITAL_ALWAYS_VISIBLE))
 
+//genital dislike flags
+#define HIDE_BUTT	(1<<0)
+#define HIDE_VAG	(1<<1)
+#define HIDE_BALLS	(1<<2)
+#define HIDE_PENIS	(1<<3)
+#define HIDE_BELLY	(1<<4)
+#define HIDE_BOOBS	(1<<5)
+#define HIDE_MISC	(1<<6)
 
 #define DEF_VAGINA_SHAPE	"Human"
 

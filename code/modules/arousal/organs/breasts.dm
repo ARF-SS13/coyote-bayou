@@ -20,6 +20,7 @@
 	orgasm_verb = "leaking"
 	fluid_transfer_factor = 0.5
 	associated_has = CS_BOOB // for cockstring stuff
+	hide_flag = HIDE_BOOBS // for hideflag stuff
 
 GLOBAL_LIST_INIT(breast_values, list(
 	"a" = 1,

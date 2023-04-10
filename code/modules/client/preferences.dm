@@ -179,6 +179,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
+		"genital_hide" = NONE,
+		"genital_whitelist" = "Sammt Bingus, fluntly, theBungus",
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = "",
@@ -912,34 +914,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<td colspan='2' class='genital_name'>Shift</td>"
 					dat += "<td colspan='2' class='genital_name'>Hidden by...</td>"
 					dat += "<td class='genital_name'>Override</td>"
+					dat += "<td class='genital_name'>See on others?</td>"
 					dat += "</tr>"
 
 					for(var/nad in all_genitals)
-						if(features[nad] == TRUE)
-							genitals_we_have += nad
-					if(LAZYLEN(genitals_we_have))
+						genitals_we_have += nad
+					if(LAZYLEN(all_genitals))
 						for(var/i in 1 to LAZYLEN(genitals_we_have))
 							dat += add_genital_layer_piece(genitals_we_have[i], i, LAZYLEN(genitals_we_have))
 					else
 						dat += "You dont seem to have any movable genitals!"
 					dat += "<tr>"
 					dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
-					var/genital_shirtlayer
+					/* var/genital_shirtlayer
 					if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
 						genital_shirtlayer = "Over Underwear"
 					else if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_CLOTHING))
 						genital_shirtlayer = "Over Clothes"
 					else
-						genital_shirtlayer = "Under Underwear"
+						genital_shirtlayer = "Under Underwear" */
 
 					dat += {"<td colspan='3' class='coverage_on'>
+							Over Clothes
+							</td>"}
+					dat += {"<td class='coverage_on'>
 							<a 
 								class='clicky_no_border'
 								href='
 									?_src_=prefs;
-									preference=change_genital_clothing'
-									nadflag=[genital_shirtlayer]>
-										[genital_shirtlayer]
+									preference=change_genital_whitelist'>
+										Whitelisted Names
 							</a>
 							</td>"}
 					dat += "</table>"
@@ -1422,7 +1426,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
 /// reverses it cus its more intuitive that way (for everyone but me)
-/datum/preferences/proc/decode_cockstring()
+/datum/preferences/proc/decode_cockstring(reverse = TRUE)
 	var/list/list_out = list()
 	list_out = splittext(features["genital_order"], ":")
 	list_out = reverseList(list_out)
@@ -1442,6 +1446,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		message_admins("Hey the cockstring wasn't empty, either Dan fucked up or something fucked up.")
 	. = jointext(cockstring, ":")
 	features["genital_order"] = .
+
+/// takes in whatever's at features["genital_whitelist"] and spits out a list in order of what's present
+/datum/preferences/proc/decode_cockwhitelist(reverse = TRUE)
+	var/list/list_out = list()
+	list_out = splittext(features["genital_whitelist"], ",") // would be a real dick move if the whitelist didnt accept whitespace
+	return list_out
+
+/// takes in a list of nads and outputs a cockstring, then saves it
+/datum/preferences/proc/encode_cockwhitelist(list/cockstring)
+	var/list/outlist = list()
+	for(var/ckey in cockstring)
+		outlist += ckey
+	. = jointext(outlist, ",")
+	features["genital_whitelist"] = .
+	save_preferences()
 
 /// Adds a link to a given genital
 /datum/preferences/proc/build_genital_setup()
@@ -1568,35 +1587,43 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/magic_word
 	var/flag_string
 	var/override_string
+	var/hide_nad_flag
 	switch(has_name)
 		if(CS_BUTT)
 			magic_word = "Butt"
 			flag_string = "butt_visibility_flags"
 			override_string = "butt_visibility_override"
+			hide_nad_flag = HIDE_BUTT
 		if(CS_VAG)
 			magic_word = "Vagina"
 			flag_string = "vag_visibility_flags"
 			override_string = "vag_visibility_override"
+			hide_nad_flag = HIDE_VAG
 		if(CS_BALLS)
 			magic_word = "Testicles"
 			flag_string = "balls_visibility_flags"
 			override_string = "balls_visibility_override"
+			hide_nad_flag = HIDE_BALLS
 		if(CS_PENIS)
 			magic_word = "Penis"
 			flag_string = "cock_visibility_flags"
 			override_string = "cock_visibility_override"
+			hide_nad_flag = HIDE_PENIS
 		if(CS_BELLY)
 			magic_word = "Belly"
 			flag_string = "belly_visibility_flags"
 			override_string = "belly_visibility_override"
+			hide_nad_flag = HIDE_BELLY
 		if(CS_BOOB)
 			magic_word = "Breasts"
 			flag_string = "breasts_visibility_flags"
 			override_string = "breasts_visibility_override"
+			hide_nad_flag = HIDE_BOOBS
 		if(CS_MISC) // idk some kind of broken genital
 			magic_word = "Chunk"
 			flag_string = "breasts_visibility_flags" // idk
 			override_string = "breasts_visibility_override"
+			hide_nad_flag = HIDE_MISC
 	var/list/doot = list()
 	doot += "<tr class='talign'>"
 	// the nad's name and index
@@ -1669,6 +1696,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				curr_vis=[peen_vis_override];
 				task=input'>
 					[peen_vis_override]
+		</a>
+		</td>"}
+	/// and the hideflag
+	var/i_dont_like_bellies = CHECK_BITFIELD(features["genital_hide"], hide_nad_flag)
+	doot += {"<td class='[i_dont_like_bellies ? "coverage_off" : "coverage_on"]'>
+		<a 
+			class='clicky_no_border' 
+			href='
+				?_src_=prefs;
+				preference=genital_hide;
+				hideflag=[hide_nad_flag];
+				task=input'>
+					[i_dont_like_bellies ? "N" : "Y"]
 		</a>
 		</td>"}
 	doot += "</tr>"
@@ -2067,6 +2107,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
+	if(href_list["preference"] == "change_genital_whitelist")
+		var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+			user, 
+			"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+			any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+			content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+			Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
+			"Genital Whitelist",
+			features["genital_whitelist"])
+		if(new_genital_whitelist == "")
+			var/whoathere = alert(user, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
+			if(whoathere == "Yes")
+				features["genital_whitelist"] = new_genital_whitelist
+		else if(!isnull(new_genital_whitelist))
+			features["genital_whitelist"] = new_genital_whitelist
 	if(href_list["preference"] == "change_genital_clothing")
 		var/list/genital_overrides = GENITAL_CLOTHING_FLAG_LIST
 		var/new_visibility = input(user, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST
@@ -2076,6 +2131,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				DISABLE_BITFIELD(features[nadlet], GENITAL_ABOVE_UNDERWEAR | GENITAL_ABOVE_CLOTHING)
 				ENABLE_BITFIELD(features[nadlet], new_bit)
 			features["genital_visibility_flags"] = new_bit
+
+	if(href_list["preference"] == "genital_hide")
+		var/hideit = text2num(href_list["hideflag"])
+		TOGGLE_BITFIELD(features["genital_hide"], hideit)
 
 	if(href_list["preference"] == "job")
 		switch(href_list["task"])

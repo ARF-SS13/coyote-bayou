@@ -1018,6 +1018,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m9mm(src)
 	new /obj/item/ammo_box/magazine/m9mm(src)
 
+/obj/item/storage/box/gun/pistol/ruby/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+
 /obj/item/storage/box/gun/pistol/beretta
 	name = "Beretta M9FS case"
 
@@ -1033,6 +1039,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+
+/obj/item/storage/box/gun/pistol/flintlock
+	name = "flintlock pistol case"
+
+/obj/item/storage/box/gun/pistol/flintlock/PopulateContents()
+	new /obj/item/gun/ballistic/bow/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/pistol/type17
 	name = "Type 17 case"
@@ -1580,6 +1593,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/luger
 
+/datum/loadout_box/ruby
+	entry_tag = "9mm Bootgun"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/ruby
+
 /datum/loadout_box/beretta
 	entry_tag = "Beretta M9FS"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -1591,6 +1610,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/n99
+
+/datum/loadout_box/flintlock
+	entry_tag = "Flintlock Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/flintlock
 
 /datum/loadout_box/type17
 	entry_tag = "10mm Type17 Pistol"

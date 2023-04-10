@@ -29,6 +29,9 @@
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
+	waddle_amount = 5
+	waddle_up_time = 1
+	waddle_side_time = 1
 	loot = list(/obj/item/stack/f13Cash/random/med)
 
 /mob/living/simple_animal/hostile/renegade/Aggro()

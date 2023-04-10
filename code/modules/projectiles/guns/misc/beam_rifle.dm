@@ -17,14 +17,12 @@
 	icon_state = "esniper"
 	item_state = "esniper"
 	fire_sound = 'sound/weapons/beam_sniper.ogg'
-	slot_flags = ITEM_SLOT_BACK
-	force = 15
 	custom_materials = null
 	ammo_x_offset = 3
 	ammo_y_offset = 3
 	modifystate = FALSE
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/beam_rifle/hitscan)
 	cell_type = /obj/item/stock_parts/cell/beam_rifle
 	canMouseDown = TRUE

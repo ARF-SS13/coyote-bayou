@@ -806,3 +806,21 @@
 	item_color = "kimono_earth"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+//NCRANGER STUFF
+
+/obj/item/clothing/under/burma
+	name = "Jungle Uniform"
+	desc = "A Commonwealth made jungle uniform commonly used in Burma"
+	icon_state = "burma"
+	item_state = "burma"
+	item_color = "burma"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/burma/britishbattledress
+	name = "British Battle Dress"
+	desc = "The No. 5 Uniform, was the combat uniform worn by British Commonwealth and Imperial forces specifically for temperate, cold or even artic conditions"
+	icon_state = "british_battle_dress"
+	item_state = "british_battle_dress"
+	can_adjust = TRUE

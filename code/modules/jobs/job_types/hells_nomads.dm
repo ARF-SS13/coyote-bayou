@@ -40,7 +40,7 @@
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/kit_spawner/tools = 1,
 		)
 	tattoos_they_get = list(/datum/tattoo/biker)

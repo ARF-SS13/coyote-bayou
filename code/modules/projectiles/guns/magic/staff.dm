@@ -1,5 +1,5 @@
 /obj/item/gun/magic/staff
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	item_flags = NEEDS_PERMIT | NO_MAT_REDEMPTION

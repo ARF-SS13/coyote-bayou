@@ -73,7 +73,7 @@ Raider
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/melee/onehanded/club = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio = 1,
 		)
 
@@ -400,7 +400,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		)
 
@@ -699,7 +699,7 @@ Raider
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		)
 
@@ -982,7 +982,7 @@ Raider
 	ears = null
 	belt = /obj/item/kit_spawner/waster
 	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
-	l_pocket = /obj/item/storage/bag/money/small/wastelander
+	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -1538,7 +1538,7 @@ Raider
 		/obj/item/reagent_containers/food/drinks/flask=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/fancy/candle_box,
-		/obj/item/storage/bag/money/small/settler,
+		/obj/item/storage/wallet/stash/mid,
 		/obj/item/nullrod = 1,)
 //end preacher
 
@@ -1803,7 +1803,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/radx=1,
 		/obj/item/restraints/handcuffs=2,
 		/obj/item/kit_spawner/waster = 1,
-		/obj/item/storage/bag/money/small/wastelander)
+)
 
 /*
 /datum/outfit/job/wasteland/f13vigilante/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1966,9 +1966,9 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/bitterdrink5,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
-		/datum/crafting_recipe/redpotion,
-		/datum/crafting_recipe/bluepotion,
-		/datum/crafting_recipe/greenpotion,
+		//datum/crafting_recipe/redpotion,
+		//datum/crafting_recipe/bluepotion,
+		//datum/crafting_recipe/greenpotion,
 		/datum/crafting_recipe/food/pemmican,
 		/datum/crafting_recipe/tribal/bonebag
 	)
@@ -2366,7 +2366,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/sex
 	name = "Domestic Slave"
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small = 1,
+		///obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1,
 		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
@@ -2433,7 +2433,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1,
@@ -2509,7 +2509,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/overbossranged
 	name = "Crooked Mayor"
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small = 1,
+	//	/obj/item/storage/bag/money/small = 1,
 	//	/obj/item/gun/ballistic/revolver/colt357/mateba = 1,
 		/obj/item/clothing/under/suit/black = 1,
 		/obj/item/reagent_containers/glass/bottle/chloralhydrate = 1,

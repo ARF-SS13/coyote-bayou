@@ -9,6 +9,7 @@
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_357
 
 /obj/item/ammo_casing/a357/ratshot
 	name = ".357 ratshot shell casing"
@@ -92,6 +93,7 @@
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_44
 
 /obj/item/ammo_casing/m44/improvised
 	name = "shoddy .44 magnum bullet casing"
@@ -122,6 +124,7 @@
 		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
 		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_RIFLE_MEDIUM
 
 /obj/item/ammo_casing/c4570/ratshot
 	name = ".45-70 forager shell casing"
@@ -182,6 +185,7 @@
 		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_MATCH
+	sound_properties = CSP_PISTOL_357
 
 /obj/item/ammo_casing/a45lc/improvised
 	name = "shoddy .45 LC bullet casing"

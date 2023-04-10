@@ -348,6 +348,12 @@
 	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 
+/datum/gear/suit/rain_coat
+	name = "Commonwealth sniper rain coat"
+	path = /obj/item/clothing/suit/rain_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 //These should be left commented out until the holidays or special events.
 /*
 /datum/gear/suit/christmascoatr
@@ -375,3 +381,4 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 // END_INCLUDE
+

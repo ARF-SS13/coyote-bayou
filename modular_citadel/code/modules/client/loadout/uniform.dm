@@ -410,6 +410,32 @@
 	name = "grey turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/grey
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+
+/datum/gear/uniform/skirt/blueschool
+	name = "blue schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/redschool
+	name = "red schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/greenschool
+	name = "green schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/orangeschool
+	name = "orange schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl/orange
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/yellowperf
+	name = "yellow performer's outfit"
+	path = /obj/item/clothing/under/costume/singer/yellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
 /*
 /datum/gear/uniform/detbrown
 	name = "Brown Worn Suit"
@@ -782,6 +808,36 @@
 /datum/gear/uniform/skirt/swept
 	name = "swept skirt"
 	path = /obj/item/clothing/under/dress/skirt/swept
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/blueschool
+	name = "blue schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/redschool
+	name = "red schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl/red
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/greenschool
+	name = "green schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl/green
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/orangeschool
+	name = "orange schoolgirl uniform"
+	path = /obj/item/clothing/under/costume/schoolgirl/orange
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/yellowperf
+	name = "yellow performer's outfit"
+	path = /obj/item/clothing/under/costume/singer/yellow
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
 
@@ -1233,3 +1289,15 @@
 	cost = 1
 	path = /obj/item/clothing/under/costume/lobster
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/burma
+	name = "Jungle uniform"
+	cost = 1
+	path = /obj/item/clothing/under/burma
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/burma/britishbattle
+	name = "British Battle Dress"
+	cost = 1
+	path = /obj/item/clothing/under/burma/britishbattledress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

@@ -319,7 +319,8 @@
 				. = 0
 				break
 
-		if(stay_close && get_dist(user.loc, target.loc) > 1)
+		// mrs Byondley's first grade class teaches you that the loc of a turf is an area.
+		if(stay_close && get_dist(get_turf(user), get_turf(target)) > 1) // I dropped out in kindergarten
 			. = 0
 			break
 

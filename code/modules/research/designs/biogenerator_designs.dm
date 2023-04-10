@@ -52,7 +52,6 @@
 	materials = list(/datum/material/biomass = 50)
 	build_path = /obj/item/reagent_containers/food/snacks/sea_weed
 	category = list("initial", "Food")
-
 /datum/design/ez_nut
 	name = "10u E-Z Nutrient"
 	id = "ez_nut"
@@ -157,13 +156,13 @@
 	build_path = /obj/item/stack/sheet/leather
 	category = list("initial","Organic Materials")
 
-/datum/design/secbelt
+/*/datum/design/secbelt
 	name = "Security Belt"
 	id = "secbelt"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 300)
 	build_path = /obj/item/storage/belt/army/security
-	category = list("initial","Organic Materials")
+	category = list("initial","Organic Materials")*/
 
 /datum/design/medbelt
 	name = "Medical Belt"
@@ -181,13 +180,13 @@
 	build_path = /obj/item/storage/belt/janitor
 	category = list("initial","Organic Materials")
 
-/datum/design/s_holster
+/*/datum/design/s_holster
 	name = "Shoulder Holster"
 	id = "s_holster"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 400)
-	build_path = /obj/item/storage/belt/shoulderholster
-	category = list("initial","Organic Materials")
+	build_path = /obj/item/storage/belt/holster
+	category = list("initial","Organic Materials")*/ //removed due to borking the biogen
 
 /datum/design/rice_hat
 	name = "Rice Hat"

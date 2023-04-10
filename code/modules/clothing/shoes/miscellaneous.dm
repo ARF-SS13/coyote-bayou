@@ -501,3 +501,8 @@
 /obj/item/clothing/shoes/clown
 	name = "Clown Shoes"
 	icon_state = "clown"
+
+/obj/item/clothing/shoes/brit
+	name = "Commonwealth Boots"
+	desc = "British style black ankle boots with a canvas gaiter around the ankle"
+	icon_state = "brit_boots"

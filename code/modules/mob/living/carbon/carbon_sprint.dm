@@ -3,7 +3,10 @@
 	doSprintBufferRegen(FALSE)		//first regen.
 	if(sprint_buffer)
 		var/use = min(tiles, sprint_buffer)
-		sprint_buffer -= use
+		if(HAS_TRAIT(src, TRAIT_ZOOMIES))
+			sprint_buffer -= use * 0.5
+		else
+			sprint_buffer -= use
 		tiles -= use
 	update_hud_sprint_bar()
 	if(!tiles)		//we had enough, we're done!
@@ -13,7 +16,12 @@
 	if(!client || !((client in sprint_bind.is_down) || (client in sprint_hold_bind.is_down))) // there are two keybinds, apparently
 		disable_intentional_sprint_mode()
 		return // if you're not holding it, you stop sprinting when you run out
-	adjustStaminaLoss(tiles * sprint_stamina_cost)		//use stamina to cover deficit.
+	if(HAS_TRAIT(src, TRAIT_ZOOMIES))
+		adjustStaminaLoss(tiles * sprint_stamina_cost * 0.5)
+	if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
+		return
+	else
+		adjustStaminaLoss(tiles * sprint_stamina_cost)		//use stamina to cover deficit.
 
 /mob/living/carbon/proc/doSprintBufferRegen(updating = TRUE)
 	var/diff = world.time - sprint_buffer_regen_last

@@ -243,8 +243,53 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/flintlock
+	name = "Powderbag and musket balls"
+	result = /obj/item/ammo_box/flintlock
+	reqs = list(/obj/item/stack/ore/blackpowder = 8)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/field_arrow
+	name = "Field Arrow"
+	result = /obj/item/stack/arrowhead/field
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/metal_arrow
+	name = "Metal Arrow"
+	result = /obj/item/stack/arrowhead/metal
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/bone_arrow
+	name = "Bone Arrow"
+	result = /obj/item/stack/arrowhead/bone
+	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/glass_arrow
+	name = "Glass Knapped Arrow"
+	result = /obj/item/stack/arrowhead/glass
+	reqs = list(/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /////////////////
 ///ammo        //
@@ -561,6 +606,31 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/gun/flintlock
+	name = "flintlock pistol"
+	result = /obj/item/gun/ballistic/bow/flintlock
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/bronze = 1,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/gun/flintlock_laser
+	name = "flintlock laser pistol"
+	result = /obj/item/gun/ballistic/bow/flintlock/laser
+	reqs = list(/obj/item/gun/ballistic/bow/flintlock = 1,
+				/obj/item/stack/crafting/electronicparts = 1,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
 
 /datum/crafting_recipe/gun/pepperbox
 	name = "Pepperbox gun (10mm)"
@@ -1384,6 +1454,38 @@
 				/obj/item/stack/crafting/electronicparts = 3
 				)
 	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/aer9_hotwired
+	name = "Hotwired AER-9"
+	result = /obj/item/gun/energy/laser/aer9/focused
+	reqs = list(/obj/item/gun/energy/laser/aer9 = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/aer9_hotwired_rynn
+	name = "Custom Hotwired AER-9"
+	result = /obj/item/gun/energy/laser/aer9/focused/rynn
+	reqs = list(/obj/item/gun/energy/laser/aer9 = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON

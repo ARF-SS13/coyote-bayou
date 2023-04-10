@@ -259,6 +259,10 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"cw" = (
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "cz" = (
 /obj/structure/closet/cabinet,
 /obj/item/stock_parts/chem_cartridge/simple,
@@ -1022,6 +1026,13 @@
 /obj/item/pen/fountain,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"mr" = (
+/obj/structure/rack/shelf_metal,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "mG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1319,6 +1330,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"pv" = (
+/obj/structure/disposalpipe/broken,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "pw" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -1718,8 +1733,8 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "uj" = (
-/obj/structure/disposalconstruct,
-/obj/effect/decal/fakelattice,
+/obj/structure/lattice,
+/obj/structure/disposalpipe/segment,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "uq" = (
@@ -2145,6 +2160,10 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
+"zJ" = (
+/obj/structure/spacevine,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building)
 "zK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -2523,12 +2542,12 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Cz" = (
-/obj/structure/disposalconstruct{
-	dir = 1
+/obj/structure/spacevine{
+	name = "vines"
 	},
-/obj/effect/decal/fakelattice,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/abandoned)
 "CD" = (
 /obj/structure/fence{
 	dir = 4;
@@ -2761,10 +2780,10 @@
 /turf/open/indestructible,
 /area/f13/tcoms)
 "FG" = (
-/obj/structure/disposalconstruct{
+/obj/effect/decal/fakelattice,
+/obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/effect/decal/fakelattice,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "FI" = (
@@ -2945,10 +2964,10 @@
 	icon_state = "trimline_fill";
 	dir = 8
 	},
-/obj/structure/disposalconstruct{
-	dir = 8
-	},
 /obj/effect/decal/fakelattice,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Hu" = (
@@ -3690,10 +3709,10 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Oo" = (
-/obj/structure/disposalconstruct{
+/obj/structure/lattice,
+/obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/effect/decal/fakelattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Op" = (
@@ -3812,10 +3831,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/hospital)
 "PM" = (
-/obj/structure/disposalconstruct{
-	dir = 8
+/obj/structure/lattice,
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/obj/effect/decal/fakelattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "PW" = (
@@ -3921,8 +3940,16 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Rg" = (
-/obj/structure/simple_door/wood,
-/turf/open/floor/f13/wood,
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "Rm" = (
 /obj/structure/table/wood,
@@ -4477,8 +4504,8 @@
 	icon_state = "trimline_fill";
 	dir = 1
 	},
-/obj/structure/disposalconstruct,
 /obj/effect/decal/fakelattice,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Xv" = (
@@ -6413,8 +6440,8 @@ hm
 hm
 hm
 hm
-hm
-Cz
+pv
+uj
 Oo
 hm
 hm
@@ -6709,12 +6736,12 @@ qt
 qt
 qt
 Zt
-rS
-GW
+Rg
+Rg
 vp
-rS
-rS
-rS
+GW
+Rg
+Rg
 Zt
 hm
 hm
@@ -6972,7 +6999,7 @@ JT
 yo
 JT
 sf
-rS
+qi
 hm
 hm
 hm
@@ -7229,7 +7256,7 @@ YE
 Eq
 YE
 Eq
-rS
+Rg
 hm
 hm
 hm
@@ -7486,7 +7513,7 @@ Po
 Po
 YE
 Eq
-qi
+Rg
 hm
 hm
 hm
@@ -7743,7 +7770,7 @@ YE
 Eq
 WH
 Eq
-WX
+Rg
 hm
 hm
 hm
@@ -8000,7 +8027,7 @@ ey
 jP
 cv
 If
-rS
+WX
 hm
 hm
 hm
@@ -8251,12 +8278,12 @@ Wr
 Wr
 Wr
 Zt
-rS
-rS
+Rg
+Rg
 GW
 vp
-rS
-rS
+Rg
+Rg
 Zt
 hm
 hm
@@ -14111,7 +14138,7 @@ zz
 bZ
 sP
 at
-YL
+Cz
 uj
 uj
 uj
@@ -15153,13 +15180,13 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-mY
-mY
-Wr
-Wr
-Wr
+IY
+IY
+zJ
+zJ
+IY
+IY
+IY
 Xv
 hm
 hm
@@ -15410,13 +15437,13 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-mY
-Wr
-Wr
-Wr
-Wr
+IY
+cw
+cw
+mr
+cw
+cw
+IY
 Xv
 hm
 hm
@@ -15667,12 +15694,12 @@ hm
 hm
 hm
 nO
-Wr
-mY
-Wr
-Wr
 IY
-Rg
+uq
+uq
+uq
+uq
+uq
 IY
 Xv
 hm
@@ -15924,11 +15951,11 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-mY
-Wr
 IY
+cw
+cw
+cw
+cw
 uq
 IY
 Xv
@@ -16181,10 +16208,10 @@ hm
 hm
 hm
 nO
-Wr
-Wr
-Wr
-Wr
+IY
+IY
+IY
+IY
 IY
 uq
 IY

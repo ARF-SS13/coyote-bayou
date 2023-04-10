@@ -759,6 +759,8 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/shovel/trench = 1,
 		/obj/item/gun/ballistic/bow/lightxbow = 10,
 		/obj/item/gun/ballistic/bow/recurvebow = 20,
+		/obj/item/gun/ballistic/bow/flintlock = 10,
+		/obj/item/gun/ballistic/bow/flintlock/laser = 5,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/dungeon

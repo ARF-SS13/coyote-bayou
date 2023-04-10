@@ -17,11 +17,11 @@
 				M.vomit()
 			if(6 to 10)
 				M.emote("cry")
-			if(11 to 18)
+			if(11 to 17)
 				M.emote("scream")
-			if(19 to 20)
+			if(18 to 20)
 				M.emote("scrungy")
-	return TRUE
+		return TRUE
 
 /datum/reagent/drug/space_drugs
 	name = "Space drugs"
