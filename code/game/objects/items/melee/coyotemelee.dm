@@ -61,7 +61,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .8
+	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 15
 
 /obj/item/melee/coyote/wakazashiold 
@@ -84,7 +84,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .8
+	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
 
 /obj/item/melee/coyote/tantoold 
@@ -107,7 +107,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .7
+	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 5
 
 /obj/item/melee/coyote/combataxe 
@@ -152,7 +152,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .8
+	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
 
 /obj/item/melee/coyote/oldcutlass
@@ -175,7 +175,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .9
+	attack_speed = CLICK_CD_MELEE * 0.9
 	block_chance = 8
 
 /obj/item/melee/coyote/crudeblade
@@ -201,7 +201,7 @@
 	attack_speed = CLICK_CD_MELEE * 1.8
 	block_chance = 40
 
-/obj/item/melee/coyote/oldkanabo
+/obj/item/melee/coyote/oldkanobo
 	name = "Old Kanobo"
 	desc = "This gigantic club somewhat resembles a baseball bat, if you squinted a bit. Its studded with steel and built like a fucking tank though."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -265,7 +265,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
-	attack_speed = CLICK_CD_MELEE * .7
+	attack_speed = CLICK_CD_MELEE * 0.7
 
 /obj/item/melee/coyote/bigclub
 	name = "big club"
@@ -286,7 +286,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
-	attack_speed = CLICK_CD_MELEE * .9
+	attack_speed = CLICK_CD_MELEE * 0.9
 
 /obj/item/melee/coyote/oldlongsword
 	name = "Old Longsword"
@@ -308,7 +308,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .9
+	attack_speed = CLICK_CD_MELEE * 0.9
 	block_chance = 8
 
 /obj/item/melee/coyote/oldhalberd
@@ -347,7 +347,7 @@
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	minimum_reach =2
+	min_reach = 2
 	max_reach = 3
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
@@ -377,7 +377,7 @@
 	hitsound = 'sound/weapons/slice.ogg'
 	block_chance = 10
 
-/obj/item/melee/coyote/oldnashandarei
+/obj/item/melee/coyote/oldashandarei
 	name = "Old Ashandarei"
 	desc = "An curved blade on a brown stick. Similar to a Naginata, but shorter and handier."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -397,7 +397,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .8
+	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 5
 
 /obj/item/melee/coyote/macuahuitl
@@ -419,7 +419,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("batter-gashed", "sliced", "diced")
 	hitsound = 'sound/weapons/smash.ogg'
-	attack_speed = CLICK_CD_MELEE * .8
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/melee/coyote/oldkhopesh
 	name = "Old Khopesh"
@@ -441,5 +441,5 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
 	hitsound = 'sound/weapons/slice.ogg'
-	attack_speed = CLICK_CD_MELEE * .9
+	attack_speed = CLICK_CD_MELEE * 0.9
 	block_chance = 8

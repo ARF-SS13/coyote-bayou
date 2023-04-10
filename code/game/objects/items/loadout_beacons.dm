@@ -823,7 +823,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/melee/coyote/katanaold(src)
 
 /obj/item/storage/box/gun/melee/wakazashiold/PopulateContents()
-	new /obj/item/melee/coyote/wakazahiold(src)
+	new /obj/item/melee/coyote/wakazashiold(src)
 
 /obj/item/storage/box/gun/melee/tantoold/PopulateContents()
 	new /obj/item/melee/coyote/tantoold(src)
