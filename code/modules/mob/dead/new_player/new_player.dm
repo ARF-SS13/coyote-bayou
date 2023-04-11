@@ -181,6 +181,9 @@
 			if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
 				to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 				return
+			if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
+				to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
+				return
 			ready = tready
 		//if it's post initialisation and they're trying to observe we do the needful
 		if(SSticker.current_state >= GAME_STATE_PREGAME && tready == PLAYER_READY_TO_OBSERVE)
@@ -202,6 +205,10 @@
 
 		if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
 			to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+			return
+		
+		if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
+			to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
 			return
 
 		if(href_list["late_join"] == "override")
@@ -464,6 +471,10 @@
 	if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
 		to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 		return FALSE
+
+	if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
+		to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
+		return
 
 	var/arrivals_docked = TRUE
 	if(SSshuttle.arrivals)

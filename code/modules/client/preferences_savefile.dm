@@ -541,7 +541,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"flavor_text" = "",
 		"silicon_flavor_text" = "",
 
-		"ooc_notes" = "",
+		"ooc_notes" = OOC_NOTE_TEMPLATE,
 		"meat_type" = "Mammalian",
 		"taste" = "something salty",
 		"body_model" = MALE,
