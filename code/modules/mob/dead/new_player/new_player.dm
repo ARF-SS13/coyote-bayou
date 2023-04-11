@@ -181,7 +181,7 @@
 			if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
 				to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 				return
-			if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN)
+			if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
 				to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
 				return
 			ready = tready
@@ -207,7 +207,7 @@
 			to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 			return
 		
-		if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN)
+		if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
 			to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
 			return
 
@@ -472,7 +472,7 @@
 		to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 		return FALSE
 
-	if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN)
+	if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
 		to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
 		return
 
