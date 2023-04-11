@@ -33,33 +33,20 @@
 	/// to be moved to a better method
 	var/vore_smell = "nothing in particular"
 	//Actual preferences
-	var/allow_dogborgs = TRUE
-	var/allow_eating_sounds = TRUE
-	var/allow_digestion_sounds = TRUE
-	var/allow_digestion_damage = TRUE
-	var/allow_digestion_death = TRUE
-	var/allow_absorbtion = TRUE
-	var/allow_healbelly_healing = TRUE
-	var/allow_vore_messages = TRUE
-	var/allow_death_messages = TRUE
-	var/allow_being_prey = TRUE
-	var/allow_being_fed_to_others = TRUE
-	var/allow_being_fed_prey = TRUE
-	var/allow_seeing_belly_descriptions = TRUE
-	var/allow_being_sniffed = TRUE
-
-	// var/digestable = TRUE
-	// var/devourable = TRUE
-	// var/absorbable = TRUE
-	// var/feeding = TRUE
-	// var/can_be_drop_prey = FALSE
-	// var/can_be_drop_pred = FALSE
-	// var/allow_inbelly_spawning = FALSE
-	// var/allow_spontaneous_tf = FALSE
-	// var/digest_leave_remains = FALSE
-	// var/allowmobvore = TRUE
-	// var/permit_healbelly = TRUE
-	// var/noisy = FALSE
+	var/allow_dogborgs = FALSE
+	var/allow_eating_sounds = FALSE
+	var/allow_digestion_sounds = FALSE
+	var/allow_digestion_damage = FALSE
+	var/allow_digestion_death = FALSE
+	var/allow_absorbtion = FALSE
+	var/allow_healbelly_healing = FALSE
+	var/allow_vore_messages = FALSE
+	var/allow_death_messages = FALSE
+	var/allow_being_prey = FALSE
+	var/allow_being_fed_to_others = FALSE
+	var/allow_being_fed_prey = FALSE
+	var/allow_seeing_belly_descriptions = FALSE
+	var/allow_being_sniffed = FALSE
 
 
 	// These are 'modifier' prefs, do nothing on their own but pair with drop_prey/drop_pred settings.

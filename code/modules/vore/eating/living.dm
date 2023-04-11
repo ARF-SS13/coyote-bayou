@@ -30,17 +30,17 @@
 		"Confirmation", 
 		"Escape", 
 		"Escape and Inform Staff", 
-		"Stay Put")
+		"Stay Put"
+	)
 	var/yesm = (confirm == "Escape" || confirm == "Escape and Inform Staff")
 	if(!yesm)
 		return
-	var/mob/living/bellyowner = RESOLVEWEAKREF(vb.owner)
 	if(confirm == "Escape and Inform Staff")
-		message_admins("[src] used OOC escape to escape from [bellyowner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
-		log_consent("[src] used OOC escape to escape from [bellyowner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
+		message_admins("[src] used OOC escape to escape from [vb.owner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
+		log_consent("[src] used OOC escape to escape from [vb.owner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
 	else
-		message_admins("[src] used OOC escape to escape from [bellyowner]'s belly.")
-		log_consent("[src] used OOC escape to escape from [bellyowner]'s belly.")
+		message_admins("[src] used OOC escape to escape from [vb.owner]'s belly.")
+		log_consent("[src] used OOC escape to escape from [vb.owner]'s belly.")
 
 	SEND_SIGNAL(loc, COMSIG_VORE_EXPEL_MOB_OOC, src)
 

@@ -271,6 +271,9 @@
 	if(living_pred == master && movable_prey == master)
 		to_chat(master, span_alert("Try as you might, you can't quite fit inside yourself."))
 		return FALSE // no eating yourself
+	if(living_pred == movable_prey)
+		to_chat(master, span_alert("They don't have a Klein belly."))
+		return FALSE // no eating yourself
 	if(living_pred && !isliving(living_pred)) //no badmin, you can't feed people to ghosts or objects. yet.
 		return FALSE
 	//prefilter out braindeads and inedible prey
@@ -461,7 +464,8 @@
 			allow_movement = TRUE,
 			))
 		to_chat(master, span_alert("You were intererupted!"))
-		to_chat(movable_prey, span_alert("You were intererupted!"))
+		to_chat(movable_prey, span_alert("They were intererupted!"))
+		return FALSE
 	if(!movable_prey.Adjacent(master)) //double check'd just in case they moved during the timer and the do_mob didn't fail for whatever reason
 		to_chat(master, span_alert("They got away!"))
 		to_chat(movable_prey, span_alert("You got away!"), pref_check = VOREPREF_VORE_MESSAGES)

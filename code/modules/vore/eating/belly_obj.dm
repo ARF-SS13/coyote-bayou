@@ -32,7 +32,7 @@
 	var/escapetime = 20 SECONDS				// Deciseconds, how long to escape this belly
 	var/digestchance = 0					// % Chance of stomach beginning to digest if prey struggles
 	var/absorbchance = 0					// % Chance of stomach beginning to absorb if prey struggles
-	var/escapechance = 0 					// % Chance of prey beginning to escape if prey struggles.
+	var/escapechance = 100 					// % Chance of prey beginning to escape if prey struggles.
 	var/transferchance = 0 					// % Chance of prey being trasnsfered, goes from 0-100%
 	var/transferchance_secondary = 0 		// % Chance of prey being transfered to transferchance_secondary, also goes 0-100%
 	var/save_digest_mode = TRUE				// Whether this belly's digest mode persists across rounds
@@ -259,16 +259,14 @@
 		COMSIG_VORE_EXPEL_MOB_OOC,
 		COMSIG_VORE_EXPEL_ALL,
 		))
-	var/mob/living/our_owner = RESOLVEWEAKREF(owner)
-	if(our_owner)
-		SEND_SIGNAL(our_owner, COMSIG_VORE_REMOVE_BELLY, src)
-		UnregisterSignal(our_owner, list(
-			COMSIG_VORE_STOP_SOUNDS,
-			COMSIG_VORE_EXPEL_SPECIFIC,
-			COMSIG_VORE_EXPEL_MOB_OOC,
-			COMSIG_VORE_EXPEL_ALL,
-			COMSIG_MOB_APPLY_DAMAGE,
-			))
+	SEND_SIGNAL(owner, COMSIG_VORE_REMOVE_BELLY, src)
+	UnregisterSignal(owner, list(
+		COMSIG_VORE_STOP_SOUNDS,
+		COMSIG_VORE_EXPEL_SPECIFIC,
+		COMSIG_VORE_EXPEL_MOB_OOC,
+		COMSIG_VORE_EXPEL_ALL,
+		COMSIG_MOB_APPLY_DAMAGE,
+		))
 	STOP_PROCESSING(SSvore, src)
 	owner = null
 	QDEL_NULL(heartbeat_loop)
@@ -297,6 +295,7 @@
 			return
 		living_prey.become_blind("belly_[REF(src)]")
 		RegisterSignal(living_prey, COMSIG_MOB_DEATH, .proc/digestion_death)
+		RegisterSignal(living_prey, COMSIG_MOB_GHOSTIZE, .proc/stop_sounds_ghostize)
 		RegisterSignal(living_prey, COMSIG_LIVING_RESIST, .proc/relay_resist)
 		RegisterSignal(living_prey, COMSIG_ATOM_RELAYMOVE, .proc/relay_resist)
 		if(CHECK_PREFS(living_prey, VOREPREF_VORE_MESSAGES))
@@ -352,10 +351,10 @@
 		return FALSE
 	var/total_w_class = 0
 	for(var/obj/item/thing in vored_items)
-		total_w_class += thing.w_class
+		total_w_class += thing.w_class // add up the total w_class of all items
 		if(SEND_SIGNAL(thing, COMSIG_CONTAINS_STORAGE))
-			total_w_class += (thing.w_class * 0.5)
-	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly, TRUE, ((total_w_class / LAZYLEN(vored_items)) * 2))
+			total_w_class += thing.w_class // double the slowdown for storage items
+	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly, TRUE, ((total_w_class / LAZYLEN(vored_items)) * 1.5))
 	return TRUE
 
 /obj/vore_belly/proc/get_mob_slowdown()
@@ -364,7 +363,7 @@
 	var/list/vored_mobs = get_nested_mobs(FALSE)
 	if(!LAZYLEN(vored_mobs))
 		return FALSE
-	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly, TRUE, (LAZYLEN(vored_mobs) * 3))
+	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly, TRUE, (LAZYLEN(vored_mobs)))	
 	return TRUE
 
 /// Release all contents of this belly into the owning mob's location.
@@ -507,7 +506,13 @@
 			channel = CHANNEL_PREY,
 			soundpref_index = pref
 			)
+/// Ghostize signal transducer for stopping sounds
+/obj/vore_belly/proc/stop_sounds_ghostize(mob/living/living_prey)
+	if(!isliving(living_prey))
+		return
+	stop_sounds(null, living_prey) // some day I'll think ahead
 
+/// Stops all sounds that are playing in the belly.
 /obj/vore_belly/proc/stop_sounds(datum/source, mob/living/living_prey)
 	SIGNAL_HANDLER
 	if(!isliving(living_prey))
@@ -704,10 +709,10 @@
 	// If digested prey is also a pred... anyone inside their bellies gets moved up.
 	SEND_SIGNAL(living_prey, COMSIG_VORE_EXPEL_ALL, TRUE, TRUE)
 
-	//Drop all items into the belly
-	for(var/obj/item/W in living_prey)
-		if(!living_prey.dropItemToGround(W))
-			qdel(W)
+	//Drop all items into the belly -- to be reenabled when more things become vorable
+	// for(var/obj/item/W in living_prey) // cus honestly right now most things would just get yeeded out of the belly
+	// 	if(!living_prey.dropItemToGround(W))
+	// 		qdel(W)
 
 	//Update owner
 	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)

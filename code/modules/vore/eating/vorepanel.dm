@@ -329,7 +329,7 @@
 			return TRUE
 		if("toggle_devour")
 			TOGGLE_VAR(myprefs.allow_being_prey)
-			unsaved_changes = TRUE
+			unsaved_changes = TRUE // We changed something, so we need to save.
 			return TRUE
 		if("toggle_feeding")
 			TOGGLE_VAR(myprefs.allow_being_fed_prey)
@@ -345,6 +345,9 @@
 			return TRUE
 		if("toggle_digestion_noises")
 			TOGGLE_VAR(myprefs.allow_digestion_sounds)
+			if(myprefs.allow_digestion_sounds == FALSE && isbelly(host.loc))
+				var/obj/vore_belly/B = host.loc
+				SEND_SIGNAL(B, COMSIG_VORE_STOP_SOUNDS, host) // Stop the sounds if we're in a belly and we're turning off digestion noises so we don't get stuck with them on forever if we leave the belly. -N (I think) 2020-11-30 11:00 PM EST (UTC-5) (I think) 
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_digestion_damage")

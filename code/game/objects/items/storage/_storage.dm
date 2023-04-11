@@ -32,7 +32,7 @@
 /obj/item/storage/proc/dump_everything(datum/source, obj/vore_belly/gut, mob/living/vorer)
 	SIGNAL_HANDLER
 	if(!gut || !vorer)
-		return
+		return TRUE //No belly, no problem
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_HIDE_ALL)
 	if(contents)
 		var/something
