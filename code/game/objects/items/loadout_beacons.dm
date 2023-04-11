@@ -1104,8 +1104,29 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/flintlock
 	name = "flintlock pistol case"
 
+/obj/item/storage/box/gun/pistol/musket
+	name = "flintlock musket case"
+
+/obj/item/storage/box/gun/pistol/musketoon
+	name = "flintlock musketoon case"
+
+/obj/item/storage/box/gun/pistol/jezail
+	name = "jezail case"
+
 /obj/item/storage/box/gun/pistol/flintlock/PopulateContents()
 	new /obj/item/gun/ballistic/bow/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket/PopulateContents()
+	new /obj/item/gun/ballistic/bow/flintlock/musket(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musketoon/PopulateContents()
+	new /obj/item/gun/ballistic/bow/flintlock/musketoon(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/pistol/jezail/PopulateContents()
+	new /obj/item/gun/ballistic/bow/flintlock/musket/jezail(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/pistol/type17
@@ -1522,6 +1543,24 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_LAWMAN
 	entry_class = LOADOUT_CAT_LAWMAN
 	spawn_thing = /obj/item/storage/box/gun/rifle/brushgun
+
+/datum/loadout_box/flintlockmusket
+	entry_tag = "Flintlock Musket"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket
+
+/datum/loadout_box/flintlockmusketoon
+	entry_tag = "Flintlock Musketoon"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/musketoon
+
+/datum/loadout_box/flintlockjezail
+	entry_tag = "Jezail Long Rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/pistol/jezail
 
 /// Hobo Guns
 

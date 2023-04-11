@@ -50,3 +50,81 @@
 
 /obj/item/gun/ballistic/bow/chamber_round()
 	chambered = magazine.stored_ammo[1]
+
+
+//Fenny begins being evil here
+
+/obj/item/gun/ballistic/bow/flintlock/musket
+	name = "ancient musket"
+	desc = "An ancient but well kept blackpowder musket."
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "musket1"
+	item_state = "musket1"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_prefix = "flintlock"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_POOR
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
+	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	can_link_to_quiver = FALSE //do NOT turn this on
+	release_text = "you gently lower the hammer and clear the powder charge." //flintlocks can't be easily unloaded, buuut making that so would be difficult
+	draw_noun = "hammer"
+
+/obj/item/gun/ballistic/bow/flintlock/musketoon
+	name = "ancient musketoon"
+	desc = "An ancient but well kept blackpowder musketoon; handy!"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "musketoon"
+	item_state = "musketoon"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_prefix = "flintlock"
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_POOR
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
+	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	can_link_to_quiver = FALSE //do NOT turn this on
+	release_text = "you gently lower the hammer and clear the powder charge." //flintlocks can't be easily unloaded, buuut making that so would be difficult
+	draw_noun = "hammer"
+
+/obj/item/gun/ballistic/bow/flintlock/musket/jezail
+	name = "ancient jezail"
+	desc = "An ancient but well kept blackpowder jezail; handy!"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "jezail"
+	item_state = "jezail"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_prefix = "flintlock"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_POOR
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
+	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	can_link_to_quiver = FALSE //do NOT turn this on
+	release_text = "you gently lower the hammer and clear the powder charge." //flintlocks can't be easily unloaded, buuut making that so would be difficult
+	draw_noun = "hammer"
