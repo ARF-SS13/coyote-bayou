@@ -918,7 +918,7 @@
 
 /obj/item/clothing/under/civ/french_sailor
 	name = "french sailor"
-	icon_state = "blue suit"
+	icon_state = "french_sailor"
 	item_state = "french_sailor"
 	item_color = "french_sailor"
 	body_parts_covered = CHEST|GROIN|ARMS
