@@ -2,6 +2,8 @@
 /// Register COMSIG_VORE_ATOM_DEVOURED to a proc on these to make them do stuff
 #define VORABLE_TYPES list(\
 	/obj/item/reagent_containers/food,\
+	/mob/living/simple_animal/pet/catslug,\
+	/obj/item/organ,\
 	/obj/item/clothing/head/mob_holder,\
 	/obj/item/grenade,\
 	)
@@ -68,7 +70,7 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 /datum/controller/subsystem/processing/vore/proc/can_eat(atom/movable/eat_thing)
 	if(!istype(eat_thing))
 		return FALSE
-	if(isliving(eat_thing))
+	if(ishuman(eat_thing))
 		return TRUE
 	return approved_vore_paths[eat_thing.type]
 

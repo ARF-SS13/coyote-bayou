@@ -235,10 +235,12 @@
 
 /datum/component/vore/proc/can_be_eaten()
 	VORE_MASTER
-	if(!master.ckey)
-		return TRUE
-	if(!master.client)
-		return FALSE
+	if(!master.ckey && !master.mind && !master.client)
+		if(ishuman(master))
+			var/mob/living/carbon/human/H = master
+			if(H.last_mind) // If the mob was a player, don't let it be eaten
+				return FALSE
+		return TRUE // If the mob never was a player, let it be eaten
 	if(!CHECK_PREFS(master, VOREPREF_BEING_PREY))
 		return FALSE
 	return TRUE
@@ -248,10 +250,12 @@
 	VORE_MASTER
 	if(!can_eat())
 		return FALSE
-	if(!master.ckey)
-		return TRUE
-	if(!master.client) // no feeding me while im asleep!
-		return FALSE
+	if(!master.ckey && !master.mind && !master.client)
+		if(ishuman(master))
+			var/mob/living/carbon/human/H = master
+			if(H.last_mind) // If the mob was a player, don't let it be eaten
+				return FALSE
+		return TRUE // If the mob never was a player, let it be eaten
 	if(!CHECK_PREFS(master, VOREPREF_BEING_FED_PREY))
 		return FALSE
 	return TRUE

@@ -628,3 +628,13 @@
 #define COMSIG_VORE_CAN_BE_EATEN "can_i_be_vored"
 /// Returns if the componentholder/thing is in any shape to be vorefed to someone. null means YES, as does TRUE. FALSE means NO here!
 #define COMSIG_VORE_CAN_BE_FED_PREY "can_i_be_fed_to_them_by_vore"	// (datum/source, mob/living/proxy_pred)
+/// Returns if the componentholder's belly contains any mobs
+#define COMSIG_VORE_HAS_VORED_PREY "do_i_have_vored_them"
+/// Returns if the componentholder's belly contains any items
+#define COMSIG_VORE_HAS_VORED_ITEMS "do_i_have_vored_them_items"
+/// Tells the componentholder that vore has occured, and to do whatever it needs to do, like update their icon
+#define COMSIG_VORE_VORE_OCCURED "vore_occured"
+
+
+
+

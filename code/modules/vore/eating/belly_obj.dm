@@ -316,6 +316,7 @@
 	//Generic entered message
 	SEND_SIGNAL(arrived, COMSIG_VORE_ATOM_DEVOURED, src, owner)
 	SEND_SIGNAL(arrived, COMSIG_VORE_UPDATE_PANEL)
+	SEND_SIGNAL(owner, COMSIG_VORE_VORE_OCCURED, src, arrived)
 	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)
 	to_chat(owner,span_notice("[arrived] slides into your [lowertext(name)]."))
 	//ulp~
@@ -335,6 +336,9 @@
 	))	
 	living_prey.cure_blind("belly_[REF(src)]")
 	update_slowdowns()
+	/// at some point, this will be used to tell the mob they've been vored something, and to do something about it
+	/// Like swap out their sprite for one with a big ol' belly, or something.
+	SEND_SIGNAL(owner, COMSIG_VORE_VORE_OCCURED, src, gone)
 
 /// Having things in your belly really slows you down!
 /obj/vore_belly/proc/update_slowdowns()
