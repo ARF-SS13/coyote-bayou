@@ -824,3 +824,214 @@
 	icon_state = "british_battle_dress"
 	item_state = "british_battle_dress"
 	can_adjust = TRUE
+
+//Stuff from Civ 13
+
+/obj/item/clothing/under/civ/indiancloth_one
+	name = "Fuzzy loincloth, just waist. Short."
+	icon_state = "indian1"
+	item_state = "indian1"
+	item_color = "indian1"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_two
+	name = "Fuzzy loincloth, just waist. Longer."
+	icon_state = "indian2"
+	item_state = "indian2"
+	item_color = "indian2"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+
+/obj/item/clothing/under/civ/indiancloth_three
+	name = "Fuzzy loincloth, waist and chest."
+	icon_state = "indian3"
+	item_state = "indian3"
+	item_color = "indian3"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_shaman
+	name = "Fuzzy loincloth, shaman"
+	icon_state = "indianshaman"
+	item_state = "indianshaman"
+	item_color = "indianshaman"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_chef
+	name = "Fuzzy loincloth, chef"
+	icon_state = "indianchef"
+	item_state = "indianchef"
+	item_color = "indianchef"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/portuguese_sailor1
+	name = "Green Sailor"
+	icon_state = "portuguese_sailor1"
+	item_state = "portuguese_sailor1"
+	item_color = "portuguese_sailor1"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/portuguese_sailor2
+	name = "Green sailor, with bow"
+	icon_state = "portuguese_sailor_alt"
+	item_state = "portuguese_sailor_alt"
+	item_color = "portuguese_sailor_alt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/sailor_port
+	name = "Pink Sailor"
+	icon_state = "sailor_port"
+	item_state = "sailor_port"
+	item_color = "sailor_port"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/spanish_sailor
+	name = "Brown Sailor"
+	icon_state = "spanish_sailor"
+	item_state = "spanish_sailor"
+	item_color = "spanish_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/spanish_soldier
+	name = "brown suit"
+	icon_state = "spanish_soldier"
+	item_state = "spanish_soldier"
+	item_color = "spanish_soldier"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/british_soldier
+	name = "white suit with black pants"
+	icon_state = "british_soldier"
+	item_state = "british_soldier"
+	item_color = "british_soldier"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/french_sailor
+	name = "french sailor"
+	icon_state = "french_sailor"
+	item_state = "french_sailor"
+	item_color = "french_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/dutch_sailor
+	name = "white shirt with orange pants"
+	icon_state = "dutch_sailor"
+	item_state = "dutch_sailor"
+	item_color = "dutch_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/dress2
+	name = "blue pheasent dress"
+	icon_state = "dress2"
+	item_state = "dress2"
+	item_color = "dress2"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dress3
+	name = "brown pheasent dress"
+	icon_state = "dress3"
+	item_state = "dress3"
+	item_color = "dress3"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dressg
+	name = "green pheasent dress"
+	icon_state = "dressg"
+	item_state = "dressg"
+	item_color = "dressg"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dressr
+	name = "red pheasent dress"
+	icon_state = "dressr"
+	item_state = "dressr"
+	item_color = "dressr"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/leopardpelt
+	name = "leopard pelt"
+	icon_state = "giant_leopard_pelt"
+	item_state = "giant_leopard_pelt"
+	item_color = "giant_leopard_pelt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/arabw_robe
+	name = "blue robe"
+	icon_state = "arabw_robe"
+	item_state = "arabw_robe"
+	item_color = "arabw_robe"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/arabw_tunic
+	name = "blue tunic"
+	icon_state = "arabw_tunic"
+	item_state = "arabw_tunic"
+	item_color = "arabw_tunic"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/mayan_loincloth
+	name = "long loincloth"
+	icon_state = "mayan_loincloth"
+	item_state = "mayan_loincloth"
+	item_color = "mayan_loincloth"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/greatshendyt
+	name = "Egypt dress"
+	icon_state = "greatshendyt"
+	item_state = "greatshendyt"
+	item_color = "greatshendyt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/pharaoh
+	name = "pharaoh dress"
+	icon_state = "pharaoh"
+	item_state = "pharaoh"
+	item_color = "pharaoh"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dark_hanfu
+	name = "dark hanfu"
+	icon_state = "dark_hanfu"
+	item_state = "dark_hanfu"
+	item_color = "dark_hanfu"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/light_hanfu
+	name = "light hanfu"
+	icon_state = "light_hanfu"
+	item_state = "light_hanfu"
+	item_color = "light_hanfu"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/green_hanfu
+	name = "green hanfu"
+	icon_state = "green_hanfu"
+	item_state = "green_hanfu"
+	item_color = "green_hanfu"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE

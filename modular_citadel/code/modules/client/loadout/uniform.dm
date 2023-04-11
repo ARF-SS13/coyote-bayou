@@ -1301,3 +1301,159 @@
 	cost = 1
 	path = /obj/item/clothing/under/burma/britishbattledress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/indiancloth_one
+	name = "Fuzzy Loincloth, short"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_one
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_two
+	name = "Fuzzy Loincloth, longer"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_three
+	name = "Fuzzy Loincloth, groin and chest"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_shaman
+	name = "Fuzzy Loincloth, shaman"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_shaman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/indiancloth_chef
+	name = "Fuzzy Loincloth, chef"
+	cost = 1
+	path = /obj/item/clothing/under/civ/indiancloth_chef
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/portuguese_sailor1
+	name = "Green Sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/portuguese_sailor1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/portuguese_sailor2
+	name = "Green Sailor, with bow"
+	cost = 1
+	path = /obj/item/clothing/under/civ/portuguese_sailor2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/pinksailor
+	name = "Pink Sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/sailor_port
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/brownsailor
+	name = "Brown Sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/spanish_sailor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/spanishsoldier
+	name = "Spanish Soldier"
+	cost = 1
+	path = /obj/item/clothing/under/civ/spanish_soldier
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/britishsoldier
+	name = "british Soldier"
+	cost = 1
+	path = /obj/item/clothing/under/civ/british_soldier
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/frenchsailor
+	name = "french sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/french_sailor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dutchsailor
+	name = "dutch sailor"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dutch_sailor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dress2
+	name = "blue pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dress2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dress3
+	name = "brown pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dress3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dressg
+	name = "green pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dressg
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dressr
+	name = "red pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dressr
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/leopardpelt
+	name = "leopard pelt"
+	cost = 1
+	path = /obj/item/clothing/under/civ/leopardpelt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/arabw_robe
+	name = "blue robe"
+	cost = 1
+	path = /obj/item/clothing/under/civ/arabw_robe
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/arabw_tunic
+	name = "blue tunic"
+	cost = 1
+	path = /obj/item/clothing/under/civ/arabw_tunic
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/mayan_loincloth
+	name = "long loincloth"
+	cost = 1
+	path = /obj/item/clothing/under/civ/mayan_loincloth
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/greatshendyt
+	name = "Egypt Dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/greatshendyt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/pharaoh
+	name = "pharaoh Dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/pharaoh
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/dark_hanfu
+	name = "dark hanfu"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dark_hanfu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/light_hanfu
+	name = "light hanfu"
+	cost = 1
+	path = /obj/item/clothing/under/civ/light_hanfu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/green_hanfu
+	name = "green hanfu"
+	cost = 1
+	path = /obj/item/clothing/under/civ/green_hanfu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
