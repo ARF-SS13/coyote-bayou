@@ -305,7 +305,7 @@
 
 	var/what_do
 	if(isliving(living_pred) && living_pred != master)
-		if(movable_prey)
+		if(movable_prey && movable_prey != master)
 			what_do = VORETYPE_FEED_PREY_TO_PRED
 		else
 			what_do = VORETYPE_FEED_US_TO_PRED
@@ -385,18 +385,18 @@
 	VORE_MASTER
 	var/list/pred_guts = list()
 	SEND_SIGNAL(living_pred, COMSIG_VORE_GET_BELLIES, pred_guts)
-	var/obj/vore_belly/belly = input("Choose Belly") in pred_guts
+	var/obj/vore_belly/belly = input(master, "Choose Belly") in pred_guts
 	if(!belly)
 		to_chat(master, span_alert("Never mind!"))
 		return
 	perform_the_nom(master, living_pred, belly)
 	return TRUE
 
-/datum/component/vore/proc/feed_prey_to_predator(atom/movable/movable_prey, mob/living/living_pred)
+/datum/component/vore/proc/feed_prey_to_predator(mob/living/living_pred, atom/movable/movable_prey)
 	VORE_MASTER
 	var/list/pred_guts = list()
 	SEND_SIGNAL(living_pred, COMSIG_VORE_GET_BELLIES, pred_guts)
-	var/obj/vore_belly/belly = input("Choose Belly") in pred_guts
+	var/obj/vore_belly/belly = input(master, "Choose Belly") in pred_guts
 	if(!belly)
 		to_chat(master, span_alert("Never mind!"))
 		return
@@ -535,13 +535,12 @@
 
 /datum/component/vore/proc/you_died_pre()
 	SIGNAL_HANDLER
-	
 
 /datum/component/vore/proc/you_died()
 	VORE_MASTER
 	if(!isbelly(master.loc))
 		return // you died fair and square!
-	var/client/probably_master = RESOLVEREF(client_cached)
+	var/client/probably_master = RESOLVEWEAKREF(client_cached)
 	if(!probably_master)
 		return // must have left
 	var/die = alert(

@@ -251,22 +251,23 @@
 	// be kind, undefined
 	SEND_SIGNAL(src, COMSIG_VORE_EXPEL_ALL)
 	UnregisterSignal(src, list(
-		COMSIG_ATOM_ENTERED,
-		COMSIG_ATOM_EXITED,
-		COMSIG_ATOM_RELAYMOVE,
-		COMSIG_LIVING_RESIST,
+		COMSIG_VORE_DEVOUR_ATOM,
+		COMSIG_VORE_AUTO_EMOTE,
+		COMSIG_VORE_ADD_BELLY,
+		COMSIG_VORE_EXPEL_SPECIFIC,
 		COMSIG_VORE_STOP_SOUNDS,
-		COMSIG_ATOM_ENTERED,
+		COMSIG_VORE_EXPEL_MOB_OOC,
+		COMSIG_VORE_EXPEL_ALL,
 		))
-	var/mob/living/our_owner = RESOLVEREF(owner)
+	var/mob/living/our_owner = RESOLVEWEAKREF(owner)
 	if(our_owner)
 		SEND_SIGNAL(our_owner, COMSIG_VORE_REMOVE_BELLY, src)
 		UnregisterSignal(our_owner, list(
-			COMSIG_LIVING_RESIST,
 			COMSIG_VORE_STOP_SOUNDS,
 			COMSIG_VORE_EXPEL_SPECIFIC,
 			COMSIG_VORE_EXPEL_MOB_OOC,
 			COMSIG_VORE_EXPEL_ALL,
+			COMSIG_MOB_APPLY_DAMAGE,
 			))
 	STOP_PROCESSING(SSvore, src)
 	owner = null
@@ -282,6 +283,7 @@
 	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_SPECIFIC, .proc/release_specific_contents)
 	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_MOB_OOC, .proc/ooc_escape)
 	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_ALL, .proc/release_all_contents)
+	RegisterSignal(new_owner, COMSIG_MOB_APPLY_DAMAGE, .proc/pass_damage) // OUR APC IS UNDER ATTACK
 
 // Called whenever an atom enters this belly
 /obj/vore_belly/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
@@ -319,6 +321,7 @@
 	to_chat(owner,span_notice("[arrived] slides into your [lowertext(name)]."))
 	//ulp~
 	play_gulp()
+	update_slowdowns()
 
 /obj/vore_belly/Exited(atom/movable/gone, direction)
 	. = ..()
@@ -326,10 +329,43 @@
 	if(!isliving(gone))
 		return
 	var/mob/living/living_prey = gone
+	UnregisterSignal(living_prey, list(
+		COMSIG_MOB_DEATH,
+		COMSIG_LIVING_RESIST,
+		COMSIG_ATOM_RELAYMOVE,
+	))	
 	living_prey.cure_blind("belly_[REF(src)]")
-	UnregisterSignal(living_prey, COMSIG_MOB_DEATH)
-	UnregisterSignal(living_prey, COMSIG_LIVING_RESIST)
-	UnregisterSignal(living_prey, COMSIG_ATOM_RELAYMOVE)
+	update_slowdowns()
+
+/// Having things in your belly really slows you down!
+/obj/vore_belly/proc/update_slowdowns()
+	if(!get_item_slowdown())
+		owner.remove_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly)
+	if(!get_mob_slowdown())
+		owner.remove_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly)
+
+/obj/vore_belly/proc/get_item_slowdown()
+	if(!LAZYLEN(contents)) // empty?
+		return FALSE
+	var/list/vored_items = get_vored_items()
+	if(!LAZYLEN(vored_items))
+		return FALSE
+	var/total_w_class = 0
+	for(var/obj/item/thing in vored_items)
+		total_w_class += thing.w_class
+		if(SEND_SIGNAL(thing, COMSIG_CONTAINS_STORAGE))
+			total_w_class += (thing.w_class * 0.5)
+	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly, TRUE, ((total_w_class / LAZYLEN(vored_items)) * 2))
+	return TRUE
+
+/obj/vore_belly/proc/get_mob_slowdown()
+	if(!LAZYLEN(contents)) // empty?
+		return FALSE
+	var/list/vored_mobs = get_nested_mobs(FALSE)
+	if(!LAZYLEN(vored_mobs))
+		return FALSE
+	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly, TRUE, (LAZYLEN(vored_mobs) * 3))
+	return TRUE
 
 /// Release all contents of this belly into the owning mob's location.
 /// If that location is another mob, contents are transferred into whichever of its bellies the owning mob is in.
@@ -493,10 +529,29 @@
 			continue
 		. |= dope
 
+/// Gets every fuckin mob inside you maybe
+/obj/vore_belly/proc/get_nested_mobs(only_clients = TRUE)
+	. = list()
+	for(var/mob/living/dope in get_vored_mobs(only_clients))
+		var/list/nested_bellies = list()
+		SEND_SIGNAL(dope, COMSIG_VORE_GET_BELLIES, nested_bellies)
+		for(var/obj/vore_belly/nest in nested_bellies)
+			. |= nest.get_nested_mobs(only_clients)
+		if(only_clients && dope.ckey && !dope.client)
+			continue
+		. |= dope
+
+/// Gets every fuckin item in your belly
 /obj/vore_belly/proc/get_vored_items()
 	. = list()
 	for(var/obj/item/dink in contents)
+		SEND_SIGNAL(dink, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
 		. |= dink
+	/// And if any mobs are inside, get their items too!
+	for(var/mob/living/dork in get_nested_mobs(FALSE))
+		for(var/obj/item/thingy in dork.contents)
+			SEND_SIGNAL(thingy, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
+			. |= thingy // and I mean *every* fuckin item
 
 // Actually perform the mechanics of devouring the tasty prey.
 // The purpose of this method is to avoid duplicate code, and ensure that all necessary
@@ -637,7 +692,7 @@
 		living_prey,
 		digest_messages_owner,
 		digest_messages_prey,
-		VOREPREF_VORE_MESSAGES
+		VOREPREF_DEATH_MESSAGES
 		)
 	play_death()
 	//living_prey.death(1) // "Stop it he's already dead..." Basically redundant and the reason behind screaming mouse carcasses.
@@ -721,12 +776,12 @@
 		return FALSE // just, just go
 	var/maxhp = owner.getMaxHealth()
 	var/health_deficit = maxhp - owner.health
-	var/delay_mult = (health_deficit / (maxhp*0.25)) * (owner.stat + 1) // good luck getting out of a dead guy
+	var/delay_mult = max((health_deficit / (maxhp*0.25)) * (owner.stat + 1), 1) // good luck getting out of a dead guy
 	var/base_escapetime = escapetime
 	if(delay_mult > 2)
 		base_escapetime = max(escapetime, 5 SECONDS)
 
-	return base_escapetime * delay_mult
+	return base_escapetime * max(delay_mult, 1)
 
 //Handle a mob struggling
 // Called from /mob/living/carbon/relaymove()
@@ -735,9 +790,11 @@
 	if (!is_in_belly(living_prey))
 		return  // User is not in this belly
 
-	INVOKE_ASYNC(src, .proc/attempt_escape, living_prey) //If owner is stat (dead, KO) we can actually escape
 
 	send_voremessage(living_prey, struggle_messages_outside, struggle_messages_inside)
+	if(!escapechance && owner.stat != CONSCIOUS)
+		INVOKE_ASYNC(src, .proc/attempt_escape, living_prey) //If owner is stat (dead, KO) we can actually escape
+		return
 
 	if(!escapable) //If the stomach has escapable enabled.
 		return
@@ -756,11 +813,11 @@
 			living_prey,
 			span_warning("Your attempt to escape [lowertext(name)] has failed and your struggles only results in you sliding into [owner]'s [transferlocation]!"),
 			pref_check = VOREPREF_VORE_MESSAGES
-			)
+		)
 		to_chat(
 			owner,
 			span_warning("Someone slid into your [transferlocation] due to their struggling inside your [lowertext(name)]!")
-			)
+		)
 		transfer_contents(living_prey, dest_belly)
 		return
 
@@ -769,11 +826,11 @@
 			living_prey,
 			span_warning("In response to your struggling, \the [lowertext(name)] begins to cling more tightly..."),
 			pref_check = VOREPREF_VORE_MESSAGES
-			)
+		)
 		to_chat(
 			owner,
 			span_warning("You feel your [lowertext(name)] start to cling onto its contents...")
-			)
+		)
 		digest_mode = DM_ABSORB
 		return
 
@@ -782,11 +839,11 @@
 			living_prey,
 			span_warning("In response to your struggling, \the [lowertext(name)] begins to get more active..."),
 			pref_check = VOREPREF_VORE_MESSAGES
-			)
+		)
 		to_chat(
 			owner,
 			span_warning("You feel your [lowertext(name)] beginning to become active!")
-			)
+		)
 		digest_mode = DM_DIGEST
 		return
 
@@ -794,11 +851,11 @@
 		living_prey,
 		span_warning("You make no progress in escaping [owner]'s [lowertext(name)]."),
 		pref_check = VOREPREF_VORE_MESSAGES
-		)
+	)
 	to_chat(
 		owner,
 		span_warning("Your prey appears to be unable to make any progress in escaping your [lowertext(name)].")
-		)
+	)
 
 /obj/vore_belly/proc/attempt_escape(mob/living/living_prey)
 	if(!is_in_belly(living_prey))
@@ -808,11 +865,11 @@
 		living_prey,
 		span_warning("You attempt to climb out of \the [lowertext(name)]. (This will take around [time_to_leave*0.1] seconds.)"),
 		pref_check = VOREPREF_VORE_MESSAGES
-		)
+	)
 	to_chat(
 		owner,
 		span_warning("Someone is attempting to climb out of your [lowertext(name)]!")
-		)
+	)
 
 	if(!do_after(
 			living_prey, 
@@ -821,7 +878,7 @@
 			owner,
 			required_mobility_flags = NONE,
 			allow_movement = FALSE,
-			))
+		))
 		return FALSE
 	if(escapable && is_in_belly(living_prey)) //Can still escape?
 		SEND_SIGNAL(src, COMSIG_VORE_EXPEL_SPECIFIC, living_prey)
@@ -830,11 +887,11 @@
 			living_prey,
 			span_warning("Your attempt to escape [lowertext(name)] has failed!"),
 			pref_check = VOREPREF_VORE_MESSAGES
-			)
+		)
 		to_chat(
 			owner,
 			span_notice("The attempt to escape from your [lowertext(name)] has failed!")
-			)
+		)
 	return TRUE
 
 /obj/vore_belly/proc/get_mobs_and_objs_in_belly()
@@ -992,6 +1049,19 @@
 		if(!is_absorbed(living_prey))
 			continue
 		living_prey.Stun(5)
+
+/// Host takes damage? Vored critters do too
+/obj/vore_belly/proc/pass_damage(datum/source, damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold)
+	SIGNAL_HANDLER
+	var/someone_hurt
+	for(var/mob/living/living_prey in get_vored_mobs(FALSE))
+		if(living_prey.status_flags & GODMODE)
+			continue
+		living_prey.apply_damage(damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold, sendsignal = FALSE)
+		to_chat(living_prey, span_userdanger("The injury to [owner] hurts you as well!"), pref_check = VOREPREF_VORE_MESSAGES)
+		someone_hurt = TRUE
+	if(someone_hurt)
+		to_chat(owner, span_userdanger("You feel a flinch inside your [name]!"), pref_check = VOREPREF_VORE_MESSAGES)
 
 // Belly copies and then returns the copy
 // Needs to be updated for any var changes AND KEPT IN ORDER OF THE VARS ABOVE AS WELL!

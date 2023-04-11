@@ -152,6 +152,8 @@
 			"release_sound" = selected.release_sound,
 			"can_taste" = selected.can_taste,
 			"bulge_size" = selected.bulge_size,
+			"digestion_brute" = selected.digest_brute,
+			"digestion_burn" = selected.digest_burn,
 		)
 
 		selected_list["escapable"] = selected.escapable
@@ -713,6 +715,24 @@
 			var/absorb_chance_input = input(user, "Set belly absorb mode chance on resist (as %)", "Prey Absorb Chance") as num|null
 			if(!isnull(absorb_chance_input))
 				selected.absorbchance = sanitize_integer(absorb_chance_input, 0, 100, initial(selected.absorbchance))
+			. = TRUE
+		if("b_set_brute_damage")
+			var/digestion_brute_input = input(
+				user, 
+				"Set brute damage to cause prey per belly tick (around 5 seconds) while set to digest. Can be anywhere from 0 to 50.", 
+				"Prey Digestion Brute"
+				) as num|null
+			if(!isnull(digestion_brute_input))
+				selected.digest_brute = sanitize_integer(digestion_brute_input, 0, 50, initial(selected.digest_brute))
+			. = TRUE
+		if("b_set_burn_damage")
+			var/digestion_burn_input = input(
+				user, 
+				"Set burn damage to cause prey per belly tick (around 5 seconds) while set to digest. Can be anywhere from 0 to 50.", 
+				"Prey Digestion Burn"
+				) as num|null
+			if(!isnull(digestion_burn_input))
+				selected.digest_burn = sanitize_integer(digestion_burn_input, 0, 50, initial(selected.digest_burn))
 			. = TRUE
 		if("b_digestchance")
 			var/digest_chance_input = input(user, "Set belly digest mode chance on resist (as %)", "Prey Digest Chance") as num|null

@@ -150,6 +150,8 @@ const VoreSelectedBelly = (props, context) => {
     release_sound,
     can_taste,
     bulge_size,
+    digestion_brute,
+    digestion_burn,
     escapable,
     interacts,
     contents,
@@ -283,9 +285,17 @@ const VoreSelectedBelly = (props, context) => {
                   onClick={() => act("set_attribute", { attribute: "b_bulge_size" })}
                   content={bulge_size * 100 + "%"} />
               </LabeledList.Item>
+              <LabeledList.Item label="Digestion Damage">
+                <Button
+                  onClick={() => act("set_attribute", { attribute: "b_set_brute_damage" })}
+                  content={digestion_brute + "Burn"} />
+                <Button
+                  onClick={() => act("set_attribute", { attribute: "b_set_burn_damage" })}
+                  content={digestion_burn + "Burn"} />
+              </LabeledList.Item>
             </LabeledList>
           </Flex.Item>
-          <Flex.Item basis="100%" mt={1}>
+          <Flex.Item basis="100%" mtOptions={1}>
             <Button.Confirm
               fluid
               icon="exclamation-triangle"
@@ -426,19 +436,19 @@ const VoreUserPreferences = (props, context) => {
   const { act, data } = useBackend(context);
 
   const {
-    allow_dog_borgs,
+    allow_dog_borgs, // unused currently
     allow_eat_noises,
     allow_digestion_noises,
     allow_digestion_damage,
     allow_digestion_death,
-    allow_absorbtion,
-    allow_healbelly_healing,
+    allow_absorbtion, // unused currently
+    allow_healbelly_healing, // unused currently
     allow_vore_messages,
     allow_death_messages,
     allow_being_prey,
     allow_being_fed_prey,
     allow_seeing_belly_descs,
-    allow_being_sniffed,
+    allow_being_sniffed, // unused currently
 
     digestable,
     devourable,
@@ -463,7 +473,7 @@ const VoreUserPreferences = (props, context) => {
     }>
       <Flex spacing={1} wrap="wrap" justify="center">
 
-        <Flex.Item basis="25%">
+        <Flex.Item basis="45%">
           <Button
             onClick={() => act("toggle_devour")}
             icon={allow_being_prey ? "toggle-on" : "toggle-off"}
@@ -475,7 +485,7 @@ const VoreUserPreferences = (props, context) => {
               : "Click here to allow being prey.")}
             content={allow_being_prey ? "You can be prey" : "You can not be prey"} />
         </Flex.Item>
-        <Flex.Item basis="25%">
+        <Flex.Item basis="45%">
           <Button
             onClick={() => act("toggle_feeding")}
             icon={allow_being_fed_prey ? "toggle-on" : "toggle-off"}
@@ -488,7 +498,37 @@ const VoreUserPreferences = (props, context) => {
               : "Click here to allow others to feed you prey.")}
             content={allow_being_fed_prey ? "You can be fed prey" : "You can not be fed prey"} />
         </Flex.Item>
-        <Flex.Item basis="25%">
+
+        <Flex.Item basis="45%">
+          <Button
+            onClick={() => act("toggle_digestion_damage")}
+            icon={allow_digestion_damage ? "toggle-on" : "toggle-off"}
+            selected={allow_digestion_damage}
+            fluid
+            tooltip={"This button will toggle whether or not digestive bellies will hurt you. "
+            + "Do note, this only applies to damage caused by the belly, damage from other sources, including damage transfered from "
+            + "damage to whoeverever you're inside. "
+            + (allow_digestion_damage
+              ? "Click here to prevent being damaged by digestion."
+              : "Click here to allow being damaged by digestion.")}
+            content={allow_digestion_damage ? "Digestion can hurt you" : "Digestion can not hurt you"} />
+        </Flex.Item>
+        <Flex.Item basis="45%">
+          <Button
+            onClick={() => act("toggle_digestion_death")}
+            icon={allow_digestion_death ? "toggle-on" : "toggle-off"}
+            selected={allow_digestion_death}
+            fluid
+            tooltip={"This button will toggle whether or not digestive bellies will kill you. "
+            + "Do note, digestive bellies will still hurt you if you allow damage, just that the damage caused by the belly will not finish you off. "
+            + (allow_digestion_death
+              ? "Click here to prevent digestion from killing you."
+              : "Click here to allow digestion to kill you.")}
+            tooltipPosition="bottom-start"
+            content={allow_digestion_death ? "Digestion can kill you" : "Digestion can not kill you"} />
+        </Flex.Item>
+
+        {/* <Flex.Item basis="25%">
           <Button
             onClick={() => act("toggle_absorbtion")}
             icon={allow_absorbtion ? "toggle-on" : "toggle-off"}
@@ -511,9 +551,9 @@ const VoreUserPreferences = (props, context) => {
               ? "Click here to prevent yourself being absorbed."
               : "Click here to allow yourself to be absorbed.")}
             content={allow_healbelly_healing ? "You can be absorbed" : "You can not be absorbed"} />
-        </Flex.Item>
+        </Flex.Item> */}
 
-        <Flex.Item basis="25%">
+        <Flex.Item basis="33%">
           <Button
             onClick={() => act("toggle_eat_noises")}
             icon={allow_eat_noises ? "toggle-on" : "toggle-off"}
@@ -527,7 +567,7 @@ const VoreUserPreferences = (props, context) => {
             tooltipPosition="bottom-start"
             content={allow_eat_noises ? "Eating is loud" : "Eating is quiet"} />
         </Flex.Item>
-        <Flex.Item basis="25%">
+        <Flex.Item basis="33%">
           <Button
             onClick={() => act("toggle_digestion_noises")}
             icon={allow_digestion_noises ? "toggle-on" : "toggle-off"}
@@ -542,48 +582,14 @@ const VoreUserPreferences = (props, context) => {
             tooltipPosition="bottom-start"
             content={allow_digestion_noises ? "Digestion is loud" : "Digestion is quiet"} />
         </Flex.Item>
-        <Flex.Item basis="25%">
-          <Button
-            onClick={() => act("toggle_digestion_damage")}
-            icon={allow_digestion_damage ? "toggle-on" : "toggle-off"}
-            selected={allow_digestion_damage}
-            fluid
-            tooltip={"This button will toggle whether or not digestive bellies will hurt you. "
-            + "Do note, this only applies to damage caused by the belly, damage from other sources, including damage transfered from "
-            + "damage to whoeverever you're inside. "
-            + (allow_digestion_damage
-              ? "Click here to prevent being damaged by digestion."
-              : "Click here to allow being damaged by digestion.")}
-            content={allow_digestion_damage ? "You can be digested" : "You can not be digested"} />
-        </Flex.Item>
-        <Flex.Item basis="25%">
-          <Button
-            onClick={() => act("toggle_digestion_death")}
-            icon={allow_digestion_death ? "toggle-on" : "toggle-off"}
-            selected={allow_digestion_death}
-            fluid
-            tooltip={"This button will toggle whether or not digestive bellies will kill you. "
-            + "Do note, digestive bellies will still hurt you if you allow damage, just that the damage caused by the belly will not finish you off. "
-            + (allow_digestion_death
-              ? "Click here to prevent digestion from killing you."
-              : "Click here to allow digestion to kill you.")}
-            tooltipPosition="bottom-start"
-            content={allow_digestion_death ? "Digestion can kill you" : "Digestion can not kill you"} />
-        </Flex.Item>
-
         <Flex.Item basis="33%">
           <Button
-            onClick={() => act("toggle_seeing_belly_descs")}
-            icon={allow_seeing_belly_descs ? "toggle-on" : "toggle-off"}
-            selected={allow_seeing_belly_descs}
             fluid
-            tooltip={"Toggles whether or not you can see others' belly descriptions, when visible. "
-            + (allow_seeing_belly_descs
-              ? "Click here to turn off seeing belly descriptions."
-              : "Click here to turn on seeing belly descriptions.")}
-            tooltipPosition="bottom-start"
-            content={allow_seeing_belly_descs ? "You can see bellies" : "You can not see bellies"} />
+            content="Set Taste"
+            icon="grin-tongue"
+            onClick={() => act("setflavor")} />
         </Flex.Item>
+
         <Flex.Item basis="33%">
           <Button
             onClick={() => act("toggle_vore_messages")}
@@ -596,7 +602,7 @@ const VoreUserPreferences = (props, context) => {
               ? "Click here to turn off seeing vore-related messages."
               : "Click here to turn on seeing vore-related messages.")}
             tooltipPosition="bottom-start"
-            content={allow_vore_messages ? "You can see vore messages" : "You can not see vore messages"} />
+            content={allow_vore_messages ? "Vore messages: Visible" : "Vore messages: Hidden"} />
         </Flex.Item>
         <Flex.Item basis="33%">
           <Button
@@ -610,16 +616,22 @@ const VoreUserPreferences = (props, context) => {
               ? "Click here to turn off seeing vore-related death messages."
               : "Click here to turn on seeing vore-related death messages.")}
             tooltipPosition="bottom-start"
-            content={allow_death_messages ? "You can see vore-death messages" : "You can not see vore-death messages"} />
+            content={allow_death_messages ? "Vore death: Visible" : "Vore death: Hidden"} />
         </Flex.Item>
-
         <Flex.Item basis="33%">
           <Button
+            onClick={() => act("toggle_seeing_belly_descs")}
+            icon={allow_seeing_belly_descs ? "toggle-on" : "toggle-off"}
+            selected={allow_seeing_belly_descs}
             fluid
-            content="Set Taste"
-            icon="grin-tongue"
-            onClick={() => act("setflavor")} />
+            tooltip={"Toggles whether or not you can see others' belly descriptions, when visible. "
+            + (allow_seeing_belly_descs
+              ? "Click here to turn off seeing belly descriptions."
+              : "Click here to turn on seeing belly descriptions.")}
+            tooltipPosition="bottom-start"
+            content={allow_seeing_belly_descs ? "Other bellies: Visible" : "Other bellies: Hidden"} />
         </Flex.Item>
+
         {/* <Flex.Item basis="33%">
           <Button
             onClick={() => act("toggle_smellable")}

@@ -34,7 +34,7 @@
 	var/yesm = (confirm == "Escape" || confirm == "Escape and Inform Staff")
 	if(!yesm)
 		return
-	var/mob/living/bellyowner = RESOLVEREF(vb.owner)
+	var/mob/living/bellyowner = RESOLVEWEAKREF(vb.owner)
 	if(confirm == "Escape and Inform Staff")
 		message_admins("[src] used OOC escape to escape from [bellyowner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
 		log_consent("[src] used OOC escape to escape from [bellyowner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
