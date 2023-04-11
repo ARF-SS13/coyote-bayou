@@ -208,8 +208,8 @@
 	name = "Old Kanobo"
 	desc = "This gigantic club somewhat resembles a baseball bat, if you squinted a bit. Its studded with steel and built like a fucking tank though."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
-	icon_state = "kanobo"
-	item_state = "kanobo"
+	icon_state = "kanabo"
+	item_state = "kanabo"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
