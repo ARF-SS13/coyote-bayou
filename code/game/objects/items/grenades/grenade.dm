@@ -106,12 +106,15 @@
 // heh
 /obj/item/grenade/proc/vore_prime(datum/source, obj/vore_belly/belly, mob/living/vorer)
 	SIGNAL_HANDLER
+	if(active)
+		return
 	vorer?.visible_message(
 		span_alert("[vorer]'s [belly] starts ticking?"),
 		span_userdanger("Uh oh."),
 		pref_check = VOREPREF_VORE_MESSAGES
 	)
 	INVOKE_ASYNC(src, .proc/preprime, vorer, null, FALSE, 100)
+	return TRUE
 
 // for electric beep on activation
 /obj/item/grenade/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)

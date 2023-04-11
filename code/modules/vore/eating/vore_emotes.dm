@@ -134,7 +134,7 @@
 		var/mob/living/living_pred = RESOLVEWEAKREF(our_pred)
 		var/yew = (living_pred == user) // should only ever be seen by the holder
 		if(yew)
-			. += span_notice("[span_alert("[living_pred]")] has been selected to be our [span_alert("PREDATOR")].")
+			. += span_notice("[span_alert("[living_pred]")] has been selected to be the [span_alert("PREDATOR")].")
 		else
 			. += span_notice("[span_alert("You")] have selected yourself to be the [span_alert("PREDATOR")].")
 	if(our_prey)
@@ -145,7 +145,7 @@
 		else
 			. += span_notice("[span_green("[movable_prey]")] has been selected to be someone's [span_green("PREY")].")
 
-/obj/item/hand_item/feeder/attack_hand(mob/user)
+/obj/item/hand_item/feeder/attack_self(mob/user)
 	. = ..()
 	grab_pred = !grab_pred
 	to_chat(user, span_notice("Currently selecting a [grab_pred ? span_alert("predator") : span_green("prey")]. Use [span_bold("in hand")] to select something else."))
@@ -178,7 +178,7 @@
 	if(!SEND_SIGNAL(living_pred, COMSIG_VORE_CAN_EAT))
 		to_chat(user, span_alert("[living_pred] can't eat anything right now!"))
 		return
-	to_chat(user, span_notice("[span_green(living_pred)] selected as [span_alert("predator")]!"))
+	to_chat(user, span_notice("[span_green("[living_pred]")] selected as [span_alert("predator")]!"))
 	our_pred = WEAKREF(living_pred)
 	user.do_attack_animation(living_pred)
 	playsound(get_turf(living_pred), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
@@ -188,7 +188,7 @@
 	if(!SSvore.can_eat(movable_prey))
 		to_chat(user, span_alert("[movable_prey] can't be eaten!"))
 		return
-	to_chat(user, span_notice("[span_green(movable_prey)] selected as [span_green("prey")]!"))
+	to_chat(user, span_notice("[span_green("[movable_prey]")] selected as [span_green("prey")]!"))
 	our_prey = WEAKREF(movable_prey)
 	user.do_attack_animation(movable_prey)
 	playsound(get_turf(movable_prey), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
@@ -205,7 +205,7 @@
 			if(yew)
 				to_chat(user, span_notice("Now click on someone to [span_alert("eat")] [span_green("you")]!"))
 			else
-				to_chat(user, span_notice("Now click on who you want to [span_green("feed")] [span_alert("[movable_prey] to!")]"))
+				to_chat(user, span_notice("Now click on who you want to [span_green("feed [movable_prey]")] to!"))
 			return
 		if(isweakref(our_pred))
 			var/mob/living/living_pred = RESOLVEWEAKREF(our_pred)

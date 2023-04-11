@@ -40,10 +40,10 @@
 		reagents.trans_to(H, fraction, 1, 0)
 		if(gut.can_taste)
 			checkLiked(fraction, H)
-		return
 	if(iscyborg(vorer))
 		var/mob/living/silicon/robot/R = vorer
 		R.cell.charge += 150
+	return TRUE
 
 /obj/item/reagent_containers/food/proc/checkLiked(fraction, mob/M)
 	if(last_check_time + 50 < world.time)
