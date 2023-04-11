@@ -1379,3 +1379,81 @@
 	cost = 1
 	path = /obj/item/clothing/under/civ/dutch_sailor
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dress2
+	name = "blue pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dress2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dress3
+	name = "brown pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dress3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dressg
+	name = "green pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dressg
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dressr
+	name = "red pheasent dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dressr
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/leopardpelt
+	name = "leopard pelt"
+	cost = 1
+	path = /obj/item/clothing/under/civ/leopardpelt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/arabw_robe
+	name = "blue robe"
+	cost = 1
+	path = /obj/item/clothing/under/civ/arabw_robe
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/arabw_tunic
+	name = "blue tunic"
+	cost = 1
+	path = /obj/item/clothing/under/civ/arabw_tunic
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/mayan_loincloth
+	name = "long loincloth"
+	cost = 1
+	path = /obj/item/clothing/under/civ/mayan_loincloth
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/greatshendyt
+	name = "Egypt Dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/greatshendyt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/pharaoh
+	name = "pharaoh Dress"
+	cost = 1
+	path = /obj/item/clothing/under/civ/pharaoh
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/dark_hanfu
+	name = "dark hanfu"
+	cost = 1
+	path = /obj/item/clothing/under/civ/dark_hanfu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/light_hanfu
+	name = "light hanfu"
+	cost = 1
+	path = /obj/item/clothing/under/civ/light_hanfu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/green_hanfu
+	name = "green hanfu"
+	cost = 1
+	path = /obj/item/clothing/under/civ/green_hanfu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
