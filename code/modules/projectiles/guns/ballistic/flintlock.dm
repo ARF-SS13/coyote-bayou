@@ -8,7 +8,7 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
@@ -31,7 +31,7 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO	
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 
 /obj/item/gun/ballistic/bow/flintlock/laser/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a laser bullet.
 	BB.name = "musket bolt"
@@ -66,7 +66,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
@@ -91,7 +91,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
@@ -116,7 +116,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
@@ -141,7 +141,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
@@ -166,7 +166,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
@@ -191,7 +191,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	mag_type = /obj/item/ammo_box/magazine/internal/flintlock
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/flintlock
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	draw_sound = 'sound/effects/wep_magazines/smg_load.ogg'
