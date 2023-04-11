@@ -32,7 +32,7 @@
 /datum/supply_pack/security/helmets
 	name = "Armor - Metal Helmets"
 	desc = "Contains three surplus, but solid, metal helmets. Keep that militia safe!"
-	cost = 1500
+	cost = 500
 	num_contained = 3
 	contains = list(/obj/item/clothing/head/helmet/armyhelmet,
 					/obj/item/clothing/head/helmet/armyhelmet,
@@ -42,7 +42,7 @@
 /datum/supply_pack/security/raiderarmor //one tier 2 armor from the raider boss, as a treat...
 	name = "Armor - Raider Scraps"
 	desc = "Four sets of armor stripped off of raiders. Cheap, dirty, and quickly supplied. Some of it might even be worthwhile."
-	cost = 1500
+	cost = 500
 	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier1,
 					/obj/effect/spawner/lootdrop/f13/armor/tier1,
@@ -53,7 +53,7 @@
 /datum/supply_pack/security/armor
 	name = "Armor - Surplus"
 	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
-	cost = 2500
+	cost = 500
 	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier3,
 					/obj/effect/spawner/lootdrop/f13/armor/tier3,
@@ -73,7 +73,7 @@
 /datum/supply_pack/security/mfc
 	name = "Ammo - Microfusion Cell"
 	desc = "Three fully charged microfusion cells."
-	cost = 1300
+	cost = 1200
 	num_contained = 3
 	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
 					/obj/item/stock_parts/cell/ammo/mfc,
@@ -83,7 +83,7 @@
 /datum/supply_pack/security/ecp
 	name = "Ammo - Electron Charge Pack"
 	desc = "Three fully charged electron charge packs."
-	cost = 2000
+	cost = 1500
 	num_contained = 3
 	contains = list(/obj/item/stock_parts/cell/ammo/ecp,
 					/obj/item/stock_parts/cell/ammo/ecp,
@@ -116,7 +116,7 @@
 /datum/supply_pack/security/combatknives_single
 	name = "Combat Knife Single-Pack"
 	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-wasteland boot. You know what's better than one knife? Three of 'em!"
-	cost = 750
+	cost = 250
 	num_contained = 3
 	contains = list(/obj/item/melee/onehanded/knife/hunting,
 					/obj/item/melee/onehanded/knife/hunting,
@@ -195,7 +195,7 @@
 					/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier)
-	cost = 2000
+	cost = 1000
 	num_contained = 4
 	crate_name = "security barriers crate"
 	can_private_buy = TRUE
@@ -324,7 +324,7 @@
 /datum/supply_pack/security/stingpack
 	name = "Stingbang Grenade Pack"
 	desc = "Contains five \"stingbang\" grenades, perfect for stopping pre-War food riots and shutting down seditious agents."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/storage/box/stingbangs)
 	crate_name = "stingbang grenade pack crate"
 
@@ -435,7 +435,7 @@
 /datum/supply_pack/security/traitbooks
 	name = "Technical manuals"
 	desc = "A box crammed full of manuals, for reading. SCAV issues, Guns and Ammo, how to operate chem-machines, it's all here! Come in groups of three."
-	cost = 2500
+	cost = 2000
 	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks,
 					/obj/effect/spawner/lootdrop/f13/traitbooks/low,
@@ -465,7 +465,7 @@
 /datum/supply_pack/security/mods
 	name = "Weapons - Gun Mods"
 	desc = "Contains four random gun and energy weapon mods, fun for the whole family!"
-	cost = 1000
+	cost = 800
 	num_contained = 4
 	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
@@ -476,7 +476,7 @@
 /datum/supply_pack/security/advmods
 	name = "Weapons - Advanced Gun Mods"
 	desc = "Contains four random advanced gun and energy weapon mods, best for causing pain!"
-	cost = 7500
+	cost = 1500
 	num_contained = 4
 	contains = list(/obj/item/tool_upgrade/refinement/vibcompensator,
 					/obj/item/tool_upgrade/productivity/motor,
@@ -491,20 +491,20 @@
 /datum/supply_pack/security/aimod
 	name = "Weapons - Zax Module"
 	desc = "Contains two highly advanced energy gun modifications."
-	cost = 10000
+	cost = 8000
 	num_contained = 2
 	contains = list(/obj/item/tool_upgrade/augment/ai_tool,
 					/obj/item/tool_upgrade/augment/ai_tool)
 	crate_name = "zax module crate"
 
-/datum/supply_pack/security/gaussbarrelmod //"chinese gauss barrels make me die inside" -Fuzzy, 2023
+/* /datum/supply_pack/security/gaussbarrelmod //"chinese gauss barrels make me die inside" -Fuzzy, 2023
 	name = "Weapons - Chinese Gauss Barrel"
 	desc = "Two strong barrels meant to obliterate targets."
 	cost = 20000
 	num_contained = 2
 	contains = list(/obj/item/gun_upgrade/barrel/gauss,
 					/obj/item/gun_upgrade/barrel/gauss)
-	crate_name = "chiense gauss barrel crate"
+	crate_name = "chiense gauss barrel crate" */
 
 /* /datum/supply_pack/security/disabler
 	name = "Weapons - Disabler Crate"
@@ -527,7 +527,7 @@
 /datum/supply_pack/security/weapon_wasteland
 	name = "Weapons - Wasteland"
 	desc = "Half a dozen commonly found wasteland weaponry. you might find something nice, sifting through these."
-	cost = 5000
+	cost = 3000
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
@@ -542,7 +542,7 @@
 /datum/supply_pack/security/weapon_dungeon
 	name = "Weapons - Uncommon"
 	desc = "A set of four good quality weapons. Rarely comes with something special."
-	cost = 5000
+	cost = 4000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
@@ -576,7 +576,7 @@
 /datum/supply_pack/security/weapon_milsurplus
 	name = "Weapons -  Military Surplus"
 	desc = "A crate of long forgotten American weapons from the second world war."
-	cost = 6000
+	cost = 4500
 	num_contained = 8
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/milsurplus,
@@ -593,7 +593,7 @@
 /datum/supply_pack/security/weapon_combloc
 	name = "Weapons - Communist Bloc"
 	desc = "An old crate packed with surplus Chinese and Russian weaponry. You may have to clean off the old cosmoline."
-	cost = 6000
+	cost = 5000
 	num_contained = 8
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/combloc,
@@ -610,7 +610,7 @@
 /datum/supply_pack/security/vault
 	name = "Weapons - Vault"
 	desc = "A crate of common vault security firearms that never made it to their assigned vault. A basic, but reliable selection."
-	cost = 3000
+	cost = 2500
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/vault,
@@ -625,7 +625,7 @@
 /datum/supply_pack/security/weapon_police
 	name = "Weapons - Law Enforcement"
 	desc = "A crate full of common police and riot weapons. Occasionally contains special SWAT firearms."
-	cost = 5000
+	cost = 3500
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/police,
@@ -638,7 +638,7 @@
 /datum/supply_pack/security/weapon_22
 	name = "Weapons - .22 caliber"
 	desc = "A crate full of low caliber weapons, for either building a lot of turrets, or quickly arming an anti-gecko militia"
-	cost = 5000
+	cost = 3000
 	num_contained = 8 //sadly crates have a max capacity of 8, don't wanna overflow
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/weapon_22,
@@ -654,8 +654,8 @@
 
 /datum/supply_pack/security/energy
 	name = "Weapons - Energy"
-	desc = "A crate containing four laser weapons. Because sometimes you want your gecko pre-seared. Order now and you might just get that Plasma Rifle you always wanted!"
-	cost = 5000
+	desc = "A crate containing four laser weapons, because sometimes you want your gecko pre-seared. Order now and you might just get that Plasma Rifle you always wanted!"
+	cost = 4000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/energy,
@@ -685,7 +685,7 @@
 /datum/supply_pack/security/weapon_western
 	name = "Weapons - Western"
 	desc = "A collection of classy lever actions, revolvers, and scatterguns fitting for lawmen and outlaws alike. Yeehaw!"
-	cost = 6000
+	cost = 3500
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/western,
