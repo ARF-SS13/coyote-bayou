@@ -116,7 +116,7 @@
 	desc = "An axe made specifically for more modern combats, its got a handguard!"
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
 	icon_state = "combat_axe"
-	item_state = "Combat_axe"
+	item_state = "combat_axe"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1

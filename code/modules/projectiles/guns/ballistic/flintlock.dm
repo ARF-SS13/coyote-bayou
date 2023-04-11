@@ -47,3 +47,6 @@
 	BB.hitsound = 'sound/weapons/sear.ogg'
 	BB.hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	playsound(src, 'sound/weapons/emitter.ogg', 25, 1)
+
+/obj/item/gun/ballistic/bow/chamber_round()
+	chambered = magazine.stored_ammo[1]
