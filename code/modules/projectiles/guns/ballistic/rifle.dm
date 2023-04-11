@@ -475,6 +475,31 @@
 		/datum/firemode/semi_auto/slow
 	)
 
+/obj/item/gun/ballistic/rifle/enfield/jungle
+	name = "Jungle Carbine"
+	desc = "The Rifle No. 5 Mk I, made by the Australian army at Lithgow Small Arms in Australia, its a shortened Enfield used for secondary service in the Australian and New zealand army for jungle warfare other then the L1A1 battle rifle,  made from an SMLE its bolt action holds 10 rounds and sadly cannot fit a scope."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "junglecarbine"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_FAST
+	init_recoil = RIFLE_RECOIL(2.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	cock_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+
+	)
+
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Gras"
 	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"

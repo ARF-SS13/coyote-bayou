@@ -491,6 +491,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/rifle/repeater/brush(src)
 	new /obj/item/ammo_box/c4570box(src)
 
+/obj/item/storage/box/gun/rifle/junglecarbine
+	name = "jungle carbine case"
+
+/obj/item/storage/box/gun/rifle/junglecarbine/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/enfield/jungle(src)
+	new /obj/item/ammo_box/a308(src)
+
+
 /obj/item/storage/box/gun/aer9
 	name = "laser rifle case"
 
@@ -1561,6 +1569,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/pistol/jezail
+
+/datum/loadout_box/junglecarbine
+	entry_tag = "Jungle Carbine"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/junglecarbine
 
 /// Hobo Guns
 
