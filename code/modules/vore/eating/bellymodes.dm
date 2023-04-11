@@ -22,6 +22,18 @@
 //////////////////////// Absorbed Handling ////////////////////////
 	handle_absorbed()
 
+//////////////////////// Anti-grenade measure, or something ////////////////////////
+	var/list/inner_stuff = get_vored_items() // just the top level items
+	for(var/tries in 1 to 5) // lets try again!
+		if(!LAZYLEN(inner_stuff))
+			break
+		var/obj/item/T = pick(inner_stuff)
+		if(SEND_SIGNAL(T, COMSIG_VORE_ATOM_DIGESTED, src, owner))
+			break
+		inner_stuff -= T
+		if(prob(25))
+			play_digest()
+
 ////////////////////////// Do the Digest /////////////////////////////
 	var/list/vored_folk = get_vored_mobs()
 	switch(digest_mode)
@@ -40,18 +52,6 @@
 				if(prob(25))
 					play_digest()
 				digest_living(living_prey)
-
-			//Contaminate or gurgle items
-			var/list/inner_stuff = get_vored_items() // just the top level items
-			for(var/tries in 1 to 5) // lets try again!
-				if(!LAZYLEN(inner_stuff))
-					break
-				var/obj/item/T = pick(inner_stuff)
-				if(SEND_SIGNAL(T, COMSIG_VORE_ATOM_DIGESTED, src, owner))
-					break
-				inner_stuff -= T
-				if(prob(25))
-					play_digest()
 
 		if(DM_HEAL)
 			for(var/mob/living/living_prey in vored_folk)
@@ -79,6 +79,6 @@
 				if(!can_unabsorb_living(living_prey))
 					continue
 				unabsorb_living(living_prey)
-	
+
 	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)
 
