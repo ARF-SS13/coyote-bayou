@@ -457,7 +457,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -472,7 +472,7 @@
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 /obj/item/gun/ballistic/rifle/enfield/jungle
