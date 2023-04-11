@@ -416,6 +416,7 @@
 	item_state = "macuahuitl"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
 	force_wielded = 30
