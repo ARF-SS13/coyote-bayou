@@ -1112,28 +1112,49 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/flintlock
 	name = "flintlock pistol case"
 
-/obj/item/storage/box/gun/pistol/musket
-	name = "flintlock musket case"
-
-/obj/item/storage/box/gun/pistol/musketoon
-	name = "flintlock musketoon case"
-
-/obj/item/storage/box/gun/pistol/jezail
-	name = "jezail case"
-
 /obj/item/storage/box/gun/pistol/flintlock/PopulateContents()
 	new /obj/item/gun/ballistic/bow/flintlock(src)
 	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket
+	name = "flintlock musket case"
 
 /obj/item/storage/box/gun/rifle/musket/PopulateContents()
 	new /obj/item/gun/ballistic/bow/flintlock/musket(src)
 	new /obj/item/ammo_box/flintlock(src)
 
+/obj/item/storage/box/gun/rifle/musketoon
+	name = "flintlock musketoon case"
+
 /obj/item/storage/box/gun/rifle/musketoon/PopulateContents()
 	new /obj/item/gun/ballistic/bow/flintlock/musketoon(src)
 	new /obj/item/ammo_box/flintlock(src)
 
-/obj/item/storage/box/gun/pistol/jezail/PopulateContents()
+/obj/item/storage/box/gun/pistol/musketoon/spingarda
+	name = "flintlock Spingarda case"
+
+/obj/item/storage/box/gun/rifle/musketoon/spingarda/PopulateContents()
+	new /obj/item/gun/ballistic/bow/flintlock/musketoon/spingarda(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musketoon/mosquete
+	name = "flintlock Mosquete case"
+
+/obj/item/storage/box/gun/rifle/musketoon/mosquete/PopulateContents()
+	new /obj/item/gun/ballistic/bow/flintlock/musketoon/mosquete(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket/tanegashima
+	name = "tanegashima case"
+
+/obj/item/storage/box/gun/rifle/musket/tanegashima/PopulateContents()
+	new /obj/item/gun/ballistic/bow/flintlock/musket/tanegashima(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/jezail
+	name = "jezail case"
+
+/obj/item/storage/box/gun/rifle/jezail/PopulateContents()
 	new /obj/item/gun/ballistic/bow/flintlock/musket/jezail(src)
 	new /obj/item/ammo_box/flintlock(src)
 
@@ -1558,17 +1579,35 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/musket
 
+/datum/loadout_box/tanegashima
+	entry_tag = "Tanegashima Musket"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/tanegashima
+
 /datum/loadout_box/flintlockmusketoon
 	entry_tag = "Flintlock Musketoon"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/musketoon
 
+/datum/loadout_box/flintlockspingarda
+	entry_tag = "Flintlock Spingarda"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/musketoon/spingarda
+
+/datum/loadout_box/flintlockmosquete
+	entry_tag = "Flintlock Mosquete"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/musketoon/mosquete
+
 /datum/loadout_box/flintlockjezail
 	entry_tag = "Jezail Long Rifle"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/pistol/jezail
+	spawn_thing = /obj/item/storage/box/gun/rifle/jezail
 
 /datum/loadout_box/junglecarbine
 	entry_tag = "Jungle Carbine"

@@ -406,7 +406,7 @@
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
-	block_chance = 5
+	block_chance = 15
 
 /obj/item/melee/coyote/macuahuitl
 	name = "Macuahuitl"
