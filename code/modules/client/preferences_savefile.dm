@@ -178,6 +178,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return
 	path = "data/player_saves/[ckey[1]]/[ckey]/[filename]"
 	vr_path = "data/player_saves/[ckey[1]]/[ckey]/vore"
+	// TODO: Make bellies save/load to/from a human readable format
+	// Shouldnt be too hard to convert the current savefile format to json or txt or something
+	// Hopefully everyone's bellies dont get fucked when I do that!
 
 /datum/preferences/proc/load_preferences()
 	if(!path)

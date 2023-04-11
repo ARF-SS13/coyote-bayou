@@ -799,7 +799,6 @@
 	if (!is_in_belly(living_prey))
 		return  // User is not in this belly
 
-
 	send_voremessage(living_prey, struggle_messages_outside, struggle_messages_inside)
 	if(!escapechance && owner.stat != CONSCIOUS)
 		INVOKE_ASYNC(src, .proc/attempt_escape, living_prey) //If owner is stat (dead, KO) we can actually escape
@@ -869,6 +868,13 @@
 /obj/vore_belly/proc/attempt_escape(mob/living/living_prey)
 	if(!is_in_belly(living_prey))
 		return
+	if(INTERACTING_WITH(owner, living_prey))
+		to_chat(
+			living_prey,
+			span_alert("You're already trying to escape!"),
+			pref_check = VOREPREF_VORE_MESSAGES
+		)
+		return
 	var/time_to_leave = get_escape_time()
 	to_chat(
 		living_prey,
@@ -886,7 +892,7 @@
 			FALSE,
 			owner,
 			required_mobility_flags = NONE,
-			allow_movement = FALSE,
+			allow_movement = TRUE,
 		))
 		return FALSE
 	if(escapable && is_in_belly(living_prey)) //Can still escape?
@@ -894,12 +900,12 @@
 	else //Belly became inescapable or mob revived
 		to_chat(
 			living_prey,
-			span_warning("Your attempt to escape [lowertext(name)] has failed!"),
+			span_warning("Your attempt to escape [owner]'s [lowertext(name)] has failed!"),
 			pref_check = VOREPREF_VORE_MESSAGES
 		)
 		to_chat(
 			owner,
-			span_notice("The attempt to escape from your [lowertext(name)] has failed!")
+			span_notice("[living_prey]'s attempt to escape from your [lowertext(name)] has failed!")
 		)
 	return TRUE
 
