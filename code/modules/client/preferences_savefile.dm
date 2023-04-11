@@ -177,6 +177,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!ckey)
 		return
 	path = "data/player_saves/[ckey[1]]/[ckey]/[filename]"
+	vr_path = "data/player_saves/[ckey[1]]/[ckey]/vore"
+	// TODO: Make bellies save/load to/from a human readable format
+	// Shouldnt be too hard to convert the current savefile format to json or txt or something
+	// Hopefully everyone's bellies dont get fucked when I do that!
 
 /datum/preferences/proc/load_preferences()
 	if(!path)
@@ -424,7 +428,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
-
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -772,6 +775,24 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"] // Typing sounds!
 	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
 
+	/// Vore stuff!
+	S["vore_smell"]							>> vore_smell
+	S["allow_dogborgs"]						>> allow_dogborgs
+	S["allow_eating_sounds"]				>> allow_eating_sounds
+	S["allow_digestion_sounds"]				>> allow_digestion_sounds
+	S["allow_digestion_damage"]				>> allow_digestion_damage
+	S["allow_digestion_death"]				>> allow_digestion_death
+	S["allow_absorbtion"]					>> allow_absorbtion
+	S["allow_healbelly_healing"]			>> allow_healbelly_healing
+	S["allow_vore_messages"]				>> allow_vore_messages
+	S["allow_death_messages"]				>> allow_death_messages
+	S["allow_being_prey"]					>> allow_being_prey
+	S["allow_being_fed_to_others"]			>> allow_being_fed_to_others
+	S["allow_being_prey"]					>> allow_being_prey
+	S["allow_seeing_belly_descriptions"]	>> allow_seeing_belly_descriptions
+	S["allow_being_sniffed"]				>> allow_being_sniffed
+	belly_prefs = safe_json_decode(S["belly_prefs"])
+
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
@@ -810,6 +831,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	special_i		= sanitize_integer(special_i, 1, 10, initial(special_i))
 	special_a		= sanitize_integer(special_a, 1, 10, initial(special_a))
 	special_l		= sanitize_integer(special_l, 1, 10, initial(special_l))
+
 	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
 	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
@@ -921,6 +943,23 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["flavor_text"]			= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["silicon_flavor_text"]	= copytext(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["ooc_notes"]			= copytext(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
+
+	/// VORE SANITIZATION - tab 4 or suffer
+	vore_smell						= sanitize_integer(vore_smell, 						FALSE, TRUE, initial(vore_smell))
+	allow_dogborgs					= sanitize_integer(allow_dogborgs, 					FALSE, TRUE, initial(allow_dogborgs))
+	allow_eating_sounds				= sanitize_integer(allow_eating_sounds, 			FALSE, TRUE, initial(allow_eating_sounds))
+	allow_digestion_sounds			= sanitize_integer(allow_digestion_sounds, 			FALSE, TRUE, initial(allow_digestion_sounds))
+	allow_digestion_damage			= sanitize_integer(allow_digestion_damage, 			FALSE, TRUE, initial(allow_digestion_damage))
+	allow_digestion_death			= sanitize_integer(allow_digestion_death, 			FALSE, TRUE, initial(allow_digestion_death))
+	allow_absorbtion				= sanitize_integer(allow_absorbtion, 				FALSE, TRUE, initial(allow_absorbtion))
+	allow_healbelly_healing			= sanitize_integer(allow_healbelly_healing, 		FALSE, TRUE, initial(allow_healbelly_healing))
+	allow_vore_messages				= sanitize_integer(allow_vore_messages, 			FALSE, TRUE, initial(allow_vore_messages))
+	allow_death_messages			= sanitize_integer(allow_death_messages,			FALSE, TRUE, initial(allow_death_messages))
+	allow_being_prey				= sanitize_integer(allow_being_prey, 				FALSE, TRUE, initial(allow_being_prey))
+	allow_being_fed_to_others		= sanitize_integer(allow_being_fed_to_others, 		FALSE, TRUE, initial(allow_being_fed_to_others))
+	allow_being_prey				= sanitize_integer(allow_being_prey, 				FALSE, TRUE, initial(allow_being_prey))
+	allow_seeing_belly_descriptions	= sanitize_integer(allow_seeing_belly_descriptions, FALSE, TRUE, initial(allow_seeing_belly_descriptions))
+	allow_being_sniffed				= sanitize_integer(allow_being_sniffed, 			FALSE, TRUE, initial(allow_being_sniffed))
 
 	//load every advanced coloring mode thing in one go
 	//THIS MUST BE DONE AFTER ALL FEATURE SAVES OR IT WILL NOT WORK
@@ -1114,7 +1153,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_a"]		,special_a)
 	WRITE_FILE(S["special_l"]		,special_l)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
-
+	
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)
 		var/feature_value = features[feature]
@@ -1186,6 +1225,23 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["typing_indicator_sound"]				, features_speech["typing_indicator_sound"])
 	WRITE_FILE(S["typing_indicator_sound_play"]			, features_speech["typing_indicator_sound_play"])
 
+	/// Save the vore!
+	WRITE_FILE(S["vore_smell"]						, vore_smell)
+	WRITE_FILE(S["allow_dogborgs"]					, allow_dogborgs)
+	WRITE_FILE(S["allow_eating_sounds"]				, allow_eating_sounds)
+	WRITE_FILE(S["allow_digestion_sounds"]			, allow_digestion_sounds)
+	WRITE_FILE(S["allow_digestion_damage"]			, allow_digestion_damage)
+	WRITE_FILE(S["allow_digestion_death"]			, allow_digestion_death)
+	WRITE_FILE(S["allow_absorbtion"]				, allow_absorbtion)
+	WRITE_FILE(S["allow_healbelly_healing"]			, allow_healbelly_healing)
+	WRITE_FILE(S["allow_vore_messages"]				, allow_vore_messages)
+	WRITE_FILE(S["allow_death_messages"]			, allow_death_messages)
+	WRITE_FILE(S["allow_being_prey"]				, allow_being_prey)
+	WRITE_FILE(S["allow_being_fed_to_others"]		, allow_being_fed_to_others)
+	WRITE_FILE(S["allow_being_prey"]				, allow_being_prey)
+	WRITE_FILE(S["allow_seeing_belly_descriptions"]	, allow_seeing_belly_descriptions)
+	WRITE_FILE(S["allow_being_sniffed"]				, allow_being_sniffed)
+	WRITE_FILE(S["belly_prefs"]						, safe_json_encode(belly_prefs))
 
 	cit_character_pref_save(S)
 

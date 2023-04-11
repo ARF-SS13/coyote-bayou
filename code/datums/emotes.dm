@@ -1,6 +1,7 @@
 /datum/emote
 	var/key = "" //What calls the emote
 	var/key_third_person = "" //This will also call the emote
+	var/no_message = FALSE
 	var/message = "" //Message displayed when emote is used
 	var/message_alien = "" //Message displayed if the user is a grown alien
 	var/message_larva = "" //Message displayed if the user is an alien larva
@@ -57,6 +58,8 @@
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
+	if(no_message)
+		return
 	var/msg = select_message_type(user)
 	if(params && message_param)
 		msg = select_param(user, params)

@@ -487,6 +487,8 @@
 	if(user.buckle_message_cooldown <= world.time)
 		user.buckle_message_cooldown = world.time + 50
 		to_chat(user, span_warning("You can't move while buckled to [src]!"))
+		SEND_SIGNAL(user, COMSIG_ATOM_RELAYMOVE, src)
+		SEND_SIGNAL(src, COMSIG_ATOM_RELAYMOVE, user)
 
 /atom/proc/contents_explosion(severity, target)
 	return //For handling the effects of explosions on contents that would not normally be effected

@@ -144,7 +144,7 @@
 
 /// Allows you to rearrange your guts
 /mob/living/carbon/verb/toggle_genitals()
-	set category = "IC"
+	set category = "Private"
 	set name = "Private Panel"
 	set desc = "Allows you to modify various aspects of your jiggly bits and underwear."
 	show_genital_panel()

@@ -73,7 +73,7 @@
 //Preamble
 
 /mob/living/verb/toggle_hypno()
-	set category = "IC"
+	set category = "Private"
 	set name = "Toggle Lewd Hypno"
 	set desc = "Allows you to toggle if you'd like lewd flavour messages for hypno features, such as MKUltra."
 	client.prefs.cit_toggles ^= HYPNO

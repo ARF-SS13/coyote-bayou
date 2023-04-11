@@ -41,6 +41,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
 										//autocorrected this round, not that you'd need to check that.
 
+	// VORE~
+	// see: [code\modules\vore\eating\vore_prefs.dm]
+
 	var/UI_style = null
 	var/buttons_locked = FALSE
 	var/hotkeys = FALSE
@@ -1330,6 +1333,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<h2>Vore prefs</h2>"
+			dat += "<b>Being Prey:</b> <a href='?_src_=prefs;preference=allow_being_prey'>[(allow_being_prey) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Being Fed Prey:</b> <a href='?_src_=prefs;preference=allow_being_fed_prey'>[(allow_being_fed_prey) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Digestion Damage:</b> <a href='?_src_=prefs;preference=allow_digestion_damage'>[(allow_digestion_damage) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Digestion Death:</b> <a href='?_src_=prefs;preference=allow_digestion_death'>[(allow_digestion_death) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Vore Messages:</b> <a href='?_src_=prefs;preference=allow_vore_messages'>[(allow_vore_messages) ? "Visible" : "Hidden"]</a><br>"
+			dat += "<b>Vore Death Messages:</b> <a href='?_src_=prefs;preference=allow_death_messages'>[(allow_death_messages) ? "Visible" : "Hidden"]</a><br>"
+			dat += "<b>Vore Eating Sounds:</b> <a href='?_src_=prefs;preference=allow_eating_sounds'>[(allow_eating_sounds) ? "Audible" : "Muted"]</a><br>"
+			dat += "<b>Digestion Sounds:</b> <a href='?_src_=prefs;preference=allow_digestion_sounds'>[(allow_digestion_sounds) ? "Audible" : "Muted"]</a><br>"
 			dat += "</tr></table>"
 			dat += "<br>"
 
@@ -2361,6 +2373,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						medical_records = rec
 */
 
+				if("allow_being_prey")
+					TOGGLE_VAR(allow_being_prey)
+				if("allow_being_fed_prey")
+					TOGGLE_VAR(allow_being_fed_prey)
+				if("allow_digestion_damage")
+					TOGGLE_VAR(allow_digestion_damage)
+				if("allow_digestion_death")
+					TOGGLE_VAR(allow_digestion_death)
+				if("allow_vore_messages")
+					TOGGLE_VAR(allow_vore_messages)
+				if("allow_death_messages")
+					TOGGLE_VAR(allow_death_messages)
+				if("allow_eating_sounds")
+					TOGGLE_VAR(allow_eating_sounds)
+				if("allow_digestion_sounds")
+					TOGGLE_VAR(allow_digestion_sounds)
 				if("flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))

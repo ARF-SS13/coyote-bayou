@@ -23,8 +23,27 @@
 		pixel_x = rand(-5, 5)
 		pixel_y = rand(-5, 5)
 
+/obj/item/reagent_containers/food/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_VORE_ATOM_DIGESTED, .proc/take_a_bellybite)
+
+
 /obj/item/reagent_containers/food/proc/adjust_food_quality(new_quality)
 	food_quality = clamp(new_quality,0,100)
+
+// to do: make good
+/obj/item/reagent_containers/food/proc/take_a_bellybite(datum/source, obj/vore_belly/gut, mob/living/vorer)
+	SIGNAL_HANDLER
+	if(ishuman(vorer))
+		var/mob/living/carbon/human/H = vorer
+		var/fraction = reagents.total_volume * 0.3
+		reagents.trans_to(H, fraction, 1, 0)
+		if(gut.can_taste)
+			checkLiked(fraction, H)
+	if(iscyborg(vorer))
+		var/mob/living/silicon/robot/R = vorer
+		R.cell.charge += 150
+	return TRUE
 
 /obj/item/reagent_containers/food/proc/checkLiked(fraction, mob/M)
 	if(last_check_time + 50 < world.time)

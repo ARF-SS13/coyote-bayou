@@ -2,7 +2,7 @@
 /**
  * Applies damage to this mob
  *
- * Sends [COMSIG_MOB_APPLY_DAMGE]
+ * Sends [COMSIG_MOB_APPLY_DAMAGE]
  *
  * Arguuments:
  * * damage - amount of damage
@@ -15,7 +15,9 @@
  *
  * Returns TRUE if damage applied
  */
-/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0)
+/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0, sendsignal = TRUE)
+	if(sendsignal)
+		SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold)
 	var/hit_percent = (100-min(blocked, ARMOR_CAP_DR))/100
 	if(!damage || (hit_percent <= 0))
 		return 0
