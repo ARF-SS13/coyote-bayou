@@ -1,3 +1,7 @@
+/obj/item/clothing/under/
+	name = "Base"
+	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+
 /obj/item/clothing/under/misc/pj/red
 	name = "red pj's"
 	desc = "Sleepwear."
@@ -826,6 +830,9 @@
 	can_adjust = TRUE
 
 //Stuff from Civ 13
+/obj/item/clothing/under/civ
+	name = "Base"
+	mutantrace_variation = NONE
 
 /obj/item/clothing/under/civ/indiancloth_one
 	name = "Fuzzy loincloth, just waist. Short."
