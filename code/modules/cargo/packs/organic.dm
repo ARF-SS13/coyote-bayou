@@ -113,7 +113,7 @@
 /datum/supply_pack/emergency/mre
 	name = "MRE Packs (Emergency Rations)"
 	desc = "Bacteria, radioactive contamination, bugs and worms, who wants to deal with that? Order our NT branded MRE kits today! This pack contains 5 MRE packs with a randomized menu."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/item/storage/box/mre/menu1/safe,
 					/obj/item/storage/box/mre/menu1/safe,
 					/obj/item/storage/box/mre/menu2/safe,
@@ -138,8 +138,8 @@
 					/obj/item/reagent_containers/food/snacks/carneburrito,
 					/obj/item/reagent_containers/food/snacks/cheesyburrito,
 					/obj/item/reagent_containers/glass/bottle/capsaicin,
-					/obj/item/reagent_containers/glass/bottle/capsaicin) */
-	crate_name = "fiesta crate"
+					/obj/item/reagent_containers/glass/bottle/capsaicin)
+	crate_name = "fiesta crate" */
 
 /datum/supply_pack/organic/pizza
 	name = "Pizza Crate"
