@@ -28,7 +28,7 @@
 	var/digest_tox = 0						// Toxins damage per tick in digestion mode
 	var/digest_clone = 0					// Clone damage per tick in digestion mode
 	var/immutable = FALSE					// Prevents this belly from being deleted
-	var/escapable = FALSE					// Belly can be resisted out of at any time
+	var/escapable = TRUE					// Belly can be resisted out of at any time
 	var/escapetime = 20 SECONDS				// Deciseconds, how long to escape this belly
 	var/digestchance = 0					// % Chance of stomach beginning to digest if prey struggles
 	var/absorbchance = 0					// % Chance of stomach beginning to absorb if prey struggles
@@ -350,7 +350,7 @@
 /obj/vore_belly/proc/get_item_slowdown()
 	if(!LAZYLEN(contents)) // empty?
 		return FALSE
-	var/list/vored_items = get_vored_items()
+	var/list/vored_items = get_nested_vored_items()
 	if(!LAZYLEN(vored_items))
 		return FALSE
 	var/total_w_class = 0
@@ -554,8 +554,14 @@
 /obj/vore_belly/proc/get_vored_items()
 	. = list()
 	for(var/obj/item/dink in contents)
-		SEND_SIGNAL(dink, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
 		. |= dink
+
+/// Gets every fuckin item in your belly
+/obj/vore_belly/proc/get_nested_vored_items()
+	. = list()
+	. = get_vored_items()
+	for(var/obj/item/dink in contents)
+		SEND_SIGNAL(dink, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
 	/// And if any mobs are inside, get their items too!
 	for(var/mob/living/dork in get_nested_mobs(FALSE))
 		for(var/obj/item/thingy in dork.contents)

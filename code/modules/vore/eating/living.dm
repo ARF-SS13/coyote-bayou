@@ -35,12 +35,15 @@
 	var/yesm = (confirm == "Escape" || confirm == "Escape and Inform Staff")
 	if(!yesm)
 		return
+
 	if(confirm == "Escape and Inform Staff")
-		message_admins("[src] used OOC escape to escape from [vb.owner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
-		log_consent("[src] used OOC escape to escape from [vb.owner]'s belly, and has indicated it was due to a [span_phobia("prefbreak")]!")
+		message_admins("[key_name(src, TRUE, TRUE)] used OOC escape to escape from [key_name(vb.owner, TRUE, TRUE)]'s belly ([vb.name]), and has indicated it was due to a [span_phobia("prefbreak")]!")
+		log_consent("[key_name(src, TRUE, TRUE)] used OOC escape to escape from [key_name(vb.owner, TRUE, TRUE)]]'s belly ([vb.name]), and has indicated it was due to a [span_phobia("prefbreak")]!")
+		for(var/client/C in GLOB.admins)
+			SEND_SOUND(C, sound('sound/effects/meow1.ogg')) // Someow's in troubmeow!
 	else
-		message_admins("[src] used OOC escape to escape from [vb.owner]'s belly.")
-		log_consent("[src] used OOC escape to escape from [vb.owner]'s belly.")
+		message_admins("[key_name(src, TRUE, TRUE)] used OOC escape to escape from [key_name(vb.owner, TRUE, TRUE)]]'s belly ([vb.name]).")
+		log_consent("[key_name(src, TRUE, TRUE)] used OOC escape to escape from [key_name(vb.owner, TRUE, TRUE)]]'s belly ([vb.name]).")
 
 	SEND_SIGNAL(loc, COMSIG_VORE_EXPEL_MOB_OOC, src)
 
@@ -74,3 +77,18 @@
 	SEND_SIGNAL(src, COMSIG_VORE_TOGGLE_VOREMODE)
 	var/modenow = SEND_SIGNAL(src, COMSIG_VORE_GET_VOREMODE)
 	to_chat(src, span_notice("Your vore intent is now [modenow ? span_greentext("active") : span_redtext("inactive")]!"))
+
+/mob/living/proc/vore_verb()
+	set name = "Vore"
+	set category = "Private"
+	set desc = "Vore someone!"
+
+	emote("vore")
+
+/mob/living/proc/feed_verb()
+	set name = "Feed"
+	set category = "Private"
+	set desc = "Feed someone to someone!"
+
+	emote("feed")
+

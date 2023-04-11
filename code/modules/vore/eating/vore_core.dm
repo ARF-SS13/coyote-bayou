@@ -69,10 +69,12 @@
 		return
 	//add_verb(master, /mob/living/proc/preyloop_refresh)
 	add_verb(master, /mob/living/proc/escapeOOC)
+	add_verb(master, /mob/living/proc/vore_verb)
+	add_verb(master, /mob/living/proc/feed_verb)
+	add_verb(master, /mob/living/proc/insidePanel)
 	// TODO: add this and make it work
 	//add_verb(master, /mob/living/proc/smell_someone)
 	//add_verb(master, /mob/living/proc/toggle_voremode) // vore intent is soooo last year
-	add_verb(master, /mob/living/proc/insidePanel)
 
 /datum/component/vore/proc/absorbed_state(datum/source, set_state)
 	SIGNAL_HANDLER

@@ -45,4 +45,4 @@
 			vorer.visible_message(span_alert("Stuff flies out of [vorer]'s [gut]!"), pref_check = VOREPREF_VORE_MESSAGES)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_QUICK_EMPTY, gut)
 		return TRUE
-	qdel(src)
+	//qdel(src)

@@ -42,14 +42,16 @@
 				digest_living(living_prey)
 
 			//Contaminate or gurgle items
-			var/list/inner_stuff = get_vored_items()
-			if(LAZYLEN(inner_stuff))
+			var/list/inner_stuff = get_vored_items() // just the top level items
+			for(var/tries in 1 to 5) // lets try again!
+				if(!LAZYLEN(inner_stuff))
+					break
 				var/obj/item/T = pick(inner_stuff)
-				if(!SEND_SIGNAL(T, COMSIG_VORE_ATOM_DIGESTED, src, owner))
-					for(var/tries in 1 to 5) // lets try again!
-						T = pick(inner_stuff)
-						if(SEND_SIGNAL(T, COMSIG_VORE_ATOM_DIGESTED, src, owner))
-							break
+				if(SEND_SIGNAL(T, COMSIG_VORE_ATOM_DIGESTED, src, owner))
+					break
+				inner_stuff -= T
+				if(prob(25))
+					play_digest()
 
 		if(DM_HEAL)
 			for(var/mob/living/living_prey in vored_folk)

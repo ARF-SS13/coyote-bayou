@@ -288,7 +288,7 @@ const VoreSelectedBelly = (props, context) => {
               <LabeledList.Item label="Digestion Damage">
                 <Button
                   onClick={() => act("set_attribute", { attribute: "b_set_brute_damage" })}
-                  content={digestion_brute + " Burn"} />
+                  content={digestion_brute + " Brute"} />
                 <Button
                   onClick={() => act("set_attribute", { attribute: "b_set_burn_damage" })}
                   content={digestion_burn + " Burn"} />
