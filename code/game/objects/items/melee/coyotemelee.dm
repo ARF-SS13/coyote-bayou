@@ -49,8 +49,7 @@
 	item_state = "katana"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "katana"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 28
@@ -142,8 +141,7 @@
 	item_state = "smallsword"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "smallsword"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
@@ -167,8 +165,7 @@
 	item_state = "cutlass"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "cutlass"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
@@ -302,8 +299,7 @@
 	item_state = "longsword2"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "longsword"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
@@ -327,8 +323,7 @@
 	item_state = "halberd"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "halberd"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
@@ -350,8 +345,7 @@
 	item_state = "pike"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "pike"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
@@ -375,8 +369,7 @@
 	item_state = "naginata"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "naginata"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
@@ -399,8 +392,7 @@
 	item_state = "naginata"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_prefix = "naginata"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 18
