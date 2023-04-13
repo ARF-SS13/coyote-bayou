@@ -209,6 +209,11 @@
 	path = /obj/item/clothing/under/f13/rag
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_RAIDER
 
+/datum/gear/uniform/raidleather
+	name = "raider leathers"
+	path = /obj/item/clothing/under/f13/raider_leather
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_RAIDER
+
 //suits
 
 /datum/gear/uniform/suit
