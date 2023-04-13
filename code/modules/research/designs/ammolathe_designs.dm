@@ -182,12 +182,14 @@
 /datum/design/ammolathe/musket
 	name = "flintlock ball pouch"
 	id = "musket"
+	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/flintlock
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/musket_rubber
 	name = "flintlock superball pouch"
 	id = "musket_rubber"
+	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/flintlock/rubber
 	category = list("initial", "Simple Ammo")
 
@@ -353,6 +355,7 @@
 	name = "flintlock minie ball pouch"
 	id = "musket_minie"
 	build_path = /obj/item/ammo_box/flintlock/minie
+	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/m44
