@@ -707,7 +707,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/rifle/hunting = 10,
 		/obj/item/gun/ballistic/rifle/antique/gras = 5,
 		/obj/item/gun/ballistic/rifle/mosin = 5,
-		/obj/item/gun/ballistic/rifle/enfield = 1, //ugly sprite, but eh
+		/obj/item/gun/ballistic/rifle/enfield = 5,
 		/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
 		/obj/item/gun/ballistic/revolver/widowmaker = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol = 5,
