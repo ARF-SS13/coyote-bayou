@@ -246,7 +246,8 @@
 /datum/crafting_recipe/flintlock
 	name = "Powderbag and musket balls"
 	result = /obj/item/ammo_box/flintlock
-	reqs = list(/obj/item/stack/ore/blackpowder = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/ore/blackpowder = 3)
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -609,7 +610,7 @@
 
 /datum/crafting_recipe/gun/flintlock
 	name = "flintlock pistol"
-	result = /obj/item/gun/ballistic/bow/flintlock
+	result = /obj/item/gun/flintlock
 	reqs = list(/obj/item/stack/rods = 1,
 				/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/sheet/bronze = 1,
@@ -622,8 +623,8 @@
 
 /datum/crafting_recipe/gun/flintlock_laser
 	name = "flintlock laser pistol"
-	result = /obj/item/gun/ballistic/bow/flintlock/laser
-	reqs = list(/obj/item/gun/ballistic/bow/flintlock = 1,
+	result = /obj/item/gun/flintlock/laser
+	reqs = list(/obj/item/gun/flintlock = 1,
 				/obj/item/stack/crafting/electronicparts = 1,
 				/obj/item/stack/crafting/metalparts = 1)
 	tools = list(TOOL_WORKBENCH)

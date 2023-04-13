@@ -176,14 +176,14 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/blackpowder/five
 	amount = 5
 
-GLOBAL_LIST_INIT(blackpowder_recipes, list(\
-	/*new/datum/stack_recipe("explosive arrowhead", /obj/item/stack/arrowhead/explosive, 5, 1, 3 SECONDS),\*/
-	new/datum/stack_recipe("Powderbag and musket balls", /obj/item/ammo_box/flintlock, 8, 1, 3 SECONDS),\
-	))
+//GLOBAL_LIST_INIT(blackpowder_recipes, list(
+	//new/datum/stack_recipe("explosive arrowhead", /obj/item/stack/arrowhead/explosive, 5, 1, 3 SECONDS),
+	//new/datum/stack_recipe("Powderbag and musket balls", /obj/item/ammo_box/flintlock, 8, 1, 3 SECONDS),
+	//))
 
 /obj/item/stack/ore/blackpowder/get_main_recipes()
 	. = ..()
-	. += GLOB.blackpowder_recipes
+	//. += GLOB.blackpowder_recipes
 	
 /obj/item/stack/ore/glass/basalt
 	name = "volcanic ash"

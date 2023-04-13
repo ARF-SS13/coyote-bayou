@@ -67,13 +67,37 @@
 	icon_state = "trainshotbox"
 
 /obj/item/ammo_box/flintlock
-	name = "Powderbag and musket balls"
-	desc = "A box full of shotgun shells."
+	name = "powderbag and musket balls"
+	desc = "A sack full of musket balls and blackpowder."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "gunpowder"
+	icon_state = "gunpowder_musket"
 	max_ammo = 16
-	custom_materials = list()
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock
+	multiple_sprites = 0
+	caliber = list(CALIBER_FLINTLOCK)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/flintlock/minie
+	name = "powderbag and minie balls"
+	desc = "A sack full of musket balls and blackpowder."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "gunpowder_minie"
+	max_ammo = 16
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock/minie
+	multiple_sprites = 0
+	caliber = list(CALIBER_FLINTLOCK)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/flintlock/rubber
+	name = "powderbag and superballs"
+	desc = "A sack full of superballs and blackpowder."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "gunpowder_rubber"
+	max_ammo = 16
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock/rubber
 	multiple_sprites = 0
 	caliber = list(CALIBER_FLINTLOCK)
 	w_class = WEIGHT_CLASS_SMALL

@@ -179,6 +179,18 @@
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
 
 //Tier 1 Ammo
+/datum/design/ammolathe/musket
+	name = "flintlock ball pouch"
+	id = "musket"
+	build_path = /obj/item/ammo_box/flintlock
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/musket_rubber
+	name = "flintlock superball pouch"
+	id = "musket_rubber"
+	build_path = /obj/item/ammo_box/flintlock/rubber
+	category = list("initial", "Simple Ammo")
+
 /datum/design/ammolathe/beanbag
 	name = "beanbag shotgun box"
 	id = "beanbag"
@@ -337,13 +349,18 @@
 
 //Tier 2 Ammo
 
+/datum/design/ammolathe/musket
+	name = "flintlock minie ball pouch"
+	id = "musket_minie"
+	build_path = /obj/item/ammo_box/flintlock/minie
+	category = list("initial", "Simple Ammo")
+
 /datum/design/ammolathe/m44
 	name = ".44 Magnum FMJ ammo box"
 	id = "m44"
 	materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
 	build_path = /obj/item/ammo_box/m44box
 	category = list("initial", "Basic Ammo")
-
 
 /datum/design/ammolathe/a357
 	name = ".357 Magnum FMJ ammo box"

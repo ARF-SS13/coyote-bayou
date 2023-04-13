@@ -1113,49 +1113,49 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "flintlock pistol case"
 
 /obj/item/storage/box/gun/pistol/flintlock/PopulateContents()
-	new /obj/item/gun/ballistic/bow/flintlock(src)
+	new /obj/item/gun/flintlock(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/rifle/musket
 	name = "flintlock musket case"
 
 /obj/item/storage/box/gun/rifle/musket/PopulateContents()
-	new /obj/item/gun/ballistic/bow/flintlock/musket(src)
+	new /obj/item/gun/flintlock/musket(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/rifle/musketoon
 	name = "flintlock musketoon case"
 
 /obj/item/storage/box/gun/rifle/musketoon/PopulateContents()
-	new /obj/item/gun/ballistic/bow/flintlock/musketoon(src)
+	new /obj/item/gun/flintlock/musketoon(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/pistol/musketoon/spingarda
 	name = "flintlock Spingarda case"
 
 /obj/item/storage/box/gun/rifle/musketoon/spingarda/PopulateContents()
-	new /obj/item/gun/ballistic/bow/flintlock/musketoon/spingarda(src)
+	new /obj/item/gun/flintlock/musketoon/spingarda(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/rifle/musketoon/mosquete
 	name = "flintlock Mosquete case"
 
 /obj/item/storage/box/gun/rifle/musketoon/mosquete/PopulateContents()
-	new /obj/item/gun/ballistic/bow/flintlock/musketoon/mosquete(src)
+	new /obj/item/gun/flintlock/musketoon/mosquete(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/rifle/musket/tanegashima
 	name = "tanegashima case"
 
 /obj/item/storage/box/gun/rifle/musket/tanegashima/PopulateContents()
-	new /obj/item/gun/ballistic/bow/flintlock/musket/tanegashima(src)
+	new /obj/item/gun/flintlock/musket/tanegashima(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/rifle/jezail
 	name = "jezail case"
 
 /obj/item/storage/box/gun/rifle/jezail/PopulateContents()
-	new /obj/item/gun/ballistic/bow/flintlock/musket/jezail(src)
+	new /obj/item/gun/flintlock/musket/jezail(src)
 	new /obj/item/ammo_box/flintlock(src)
 
 /obj/item/storage/box/gun/pistol/type17
