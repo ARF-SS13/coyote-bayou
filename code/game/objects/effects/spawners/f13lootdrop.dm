@@ -236,6 +236,25 @@
 				/obj/effect/spawner/bundle/f13/armor/combatduster,
 				/obj/item/clothing/suit/armor/medium/raider/iconoclast,
 				/obj/item/clothing/suit/armor/medium/vest/breastplate/light,
+				/obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate,
+				/obj/item/clothing/suit/armor/light/kit/punk/leatherarmor,
+				/obj/item/clothing/suit/armor/light/kit/punk/ironchestplate,
+				/obj/item/clothing/suit/armor/light/kit/punk/scaledarmor,
+				/obj/item/clothing/suit/armor/light/kit/punk/roughchainmail,
+				/obj/item/clothing/suit/armor/light/kit/punk/fullchainmail,
+				/obj/item/clothing/suit/armor/light/kit/punk/ironchestplatered,
+				/obj/item/clothing/suit/armor/light/kit/punk/ironchestplateblue,
+				/obj/item/clothing/suit/armor/light/kit/punk/oldscalemail,
+				/obj/item/clothing/suit/armor/light/kit/punk/scalemail,
+				/obj/item/clothing/suit/armor/light/kit/punk/varangianarmor,
+				/obj/item/clothing/suit/armor/light/kit/punk/egyptianlam,
+				/obj/item/clothing/suit/armor/light/kit/punk/chitinbreastplate,
+				/obj/item/clothing/suit/armor/light/kit/punk/steppeleatherarmor,
+				/obj/item/clothing/suit/armor/light/kit/punk/chineselam,
+				/obj/item/clothing/suit/armor/light/kit/punk/chinesebreastplate,
+				/obj/item/clothing/suit/armor/light/kit/punk/woodenbreastplate,
+				/obj/item/clothing/suit/armor/light/kit/punk/steelbreastplate,
+
 	)
 
 /obj/effect/spawner/bundle/f13/armor/supafly
