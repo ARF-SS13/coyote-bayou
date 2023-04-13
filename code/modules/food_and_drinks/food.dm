@@ -38,7 +38,7 @@
 		var/mob/living/carbon/human/H = vorer
 		reagents.trans_to(H, 5, 1, 0)
 		if(gut.can_taste)
-			checkLiked(fraction, H)
+			checkLiked(5, H)
 	if(iscyborg(vorer))
 		var/mob/living/silicon/robot/R = vorer
 		R.cell.charge += 150
