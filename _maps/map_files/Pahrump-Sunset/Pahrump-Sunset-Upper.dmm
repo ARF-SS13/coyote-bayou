@@ -528,13 +528,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/building)
-"awh" = (
-/obj/structure/table,
-/obj/structure/window,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "awm" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -5534,15 +5527,6 @@
 	icon_state = "rubblepillar"
 	},
 /area/f13/wasteland)
-"fsd" = (
-/obj/structure/chair/f13chair2{
-	dir = 4
-	},
-/obj/structure/window,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "fsM" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowvertical"
@@ -7053,6 +7037,16 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
+/area/f13/building)
+"gQy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window{
+	dir = 4;
+	pixel_x = 2
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "gQO" = (
 /obj/machinery/smoke_machine{
@@ -8663,6 +8657,13 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/abandoned)
+"imR" = (
+/obj/structure/table,
+/obj/structure/window,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "ina" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken,
@@ -11475,16 +11476,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
 /area/f13/building)
-"kNd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/window{
-	dir = 4;
-	pixel_x = 2
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "kPc" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -12578,17 +12569,6 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"lPR" = (
-/obj/structure/chair/f13chair2,
-/obj/structure/window{
-	dir = 4;
-	pixel_x = 2
-	},
-/obj/structure/window,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
 /area/f13/building)
 "lQz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17817,6 +17797,15 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"rbJ" = (
+/obj/structure/chair/f13chair2{
+	dir = 4
+	},
+/obj/structure/window,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "rcN" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -19256,6 +19245,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"srv" = (
+/obj/structure/chair/f13chair2,
+/obj/structure/window{
+	dir = 4;
+	pixel_x = 2
+	},
+/obj/structure/window,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "srE" = (
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
@@ -29442,10 +29442,10 @@ vlJ
 ohv
 ohv
 vTB
-akj
+ohv
 vlJ
-hMq
-hMq
+ohv
+ohv
 ohv
 ohv
 vlJ
@@ -36614,7 +36614,7 @@ rWG
 eJR
 lWG
 slU
-fsd
+rbJ
 odJ
 oez
 kjX
@@ -36871,7 +36871,7 @@ qIs
 mIf
 slU
 slU
-awh
+imR
 odJ
 oez
 hsD
@@ -37126,9 +37126,9 @@ oez
 oez
 uuw
 uqG
-kNd
+gQy
 rAS
-lPR
+srv
 odJ
 oez
 oez
