@@ -1585,7 +1585,7 @@
 
 
 /obj/item/clothing/suit/armor/light/kit/punk/steelbreastplate
-	name = "Steel Breastplate"
+	name = "Unpainted Steel Breastplate"
 	desc = "A relatively recently made breastplate, put together by god knows who in this swamp."
 	icon_state = "imperial_breastplate"
 	item_state = "imperial_breastplate"
