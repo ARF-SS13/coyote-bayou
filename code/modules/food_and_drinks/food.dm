@@ -42,6 +42,8 @@
 	if(iscyborg(vorer))
 		var/mob/living/silicon/robot/R = vorer
 		R.cell.charge += 150
+	if(!reagents.total_volume)
+		qdel(src)
 	return TRUE
 
 /obj/item/reagent_containers/food/proc/checkLiked(fraction, mob/M)
