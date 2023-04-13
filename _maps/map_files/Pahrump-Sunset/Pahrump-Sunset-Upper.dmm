@@ -528,6 +528,13 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/building)
+"awh" = (
+/obj/structure/table,
+/obj/structure/window,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "awm" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -5527,6 +5534,15 @@
 	icon_state = "rubblepillar"
 	},
 /area/f13/wasteland)
+"fsd" = (
+/obj/structure/chair/f13chair2{
+	dir = 4
+	},
+/obj/structure/window,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "fsM" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowvertical"
@@ -11459,6 +11475,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"kNd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window{
+	dir = 4;
+	pixel_x = 2
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "kPc" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -12553,6 +12579,17 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"lPR" = (
+/obj/structure/chair/f13chair2,
+/obj/structure/window{
+	dir = 4;
+	pixel_x = 2
+	},
+/obj/structure/window,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "lQz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/two_barrels,
@@ -13451,6 +13488,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -18362,7 +18400,10 @@
 	},
 /area/f13/building)
 "rAS" = (
-/obj/structure/chair/f13chair2,
+/obj/structure/window{
+	dir = 4;
+	pixel_x = 2
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -36573,7 +36614,7 @@ rWG
 eJR
 lWG
 slU
-cNi
+fsd
 odJ
 oez
 kjX
@@ -36830,7 +36871,7 @@ qIs
 mIf
 slU
 slU
-uSO
+awh
 odJ
 oez
 hsD
@@ -37085,9 +37126,9 @@ oez
 oez
 uuw
 uqG
-slU
+kNd
 rAS
-frB
+lPR
 odJ
 oez
 oez
