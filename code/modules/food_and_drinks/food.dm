@@ -36,8 +36,7 @@
 	SIGNAL_HANDLER
 	if(ishuman(vorer))
 		var/mob/living/carbon/human/H = vorer
-		var/fraction = reagents.total_volume * 0.3
-		reagents.trans_to(H, fraction, 1, 0)
+		reagents.trans_to(H, 5, 1, 0)
 		if(gut.can_taste)
 			checkLiked(fraction, H)
 	if(iscyborg(vorer))
