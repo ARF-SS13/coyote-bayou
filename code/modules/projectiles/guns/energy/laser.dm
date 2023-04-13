@@ -608,7 +608,7 @@
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. Fast firing, but not very powerful."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "laser"
-	item_state = "laser-rifle9"
+	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	fire_delay = 1
@@ -734,7 +734,7 @@
 	name = "\improper AER14 laser rifle"
 	desc = "A bleeding-edge, pre-war laser rifle. Extremely powerful, but eats MFCs like nothing else."
 	icon_state = "aer14"
-	item_state = "laser-rifle9"
+	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	scope_state = "AEP7_scope"
