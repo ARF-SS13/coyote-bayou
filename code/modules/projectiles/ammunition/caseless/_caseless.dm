@@ -9,7 +9,12 @@
 /obj/item/ammo_casing/caseless/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, atom/fired_from)
 	if (..()) //successfully firing
 		moveToNullspace()
-		QDEL_NULL(src)
+		if(istype(fired_from, /obj/item/gun))
+			var/obj/item/gun/gonne = fired_from
+			if(gonne.chambered == src)
+				gonne.chambered = null // harddels suffer
+				gonne.update_icon()
+		qdel(src)
 		return TRUE
 	else
 		return FALSE

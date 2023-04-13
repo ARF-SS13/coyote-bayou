@@ -560,9 +560,9 @@ ATTACHMENTS
 	if(time_till_draw)
 		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
 		return
-	firing = TRUE
 	if(pre_fire(user, target, params, zone_override, stam_cost))
 		return TRUE // pre_fire will handle what comes next~ (like firing at your mouse cursor after a delay)
+	firing = TRUE
 	. = do_fire(target, user, message, params, zone_override, stam_cost)
 	firing = FALSE
 	last_fire = world.time
