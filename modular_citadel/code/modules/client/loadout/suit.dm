@@ -234,7 +234,7 @@
 	cost = 2
 
 /datum/gear/suit/steelbreastplate
-	name = "Steel Breastplate"
+	name = "Unpainted Steel Breastplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/steelbreastplate
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
