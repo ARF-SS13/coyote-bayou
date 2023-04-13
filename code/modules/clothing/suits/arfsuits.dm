@@ -1454,7 +1454,7 @@
 	item_state = "old_bronze_chestplate"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/leatherarmor
 	name = "leather armor"
@@ -1471,7 +1471,7 @@
 	item_state = "iron_chestplate"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/scaledarmor
 	name = "scaled armor"
@@ -1480,7 +1480,7 @@
 	item_state = "scaled_armor"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/roughchainmail
 	name = "rough chainmail"
@@ -1489,7 +1489,7 @@
 	item_state = "early_chainmail"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/fullchainmail
 	name = "chainmail shirt"
@@ -1498,7 +1498,7 @@
 	item_state = "chainmail"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/ironchestplatered
 	name = "iron chestplate with red cape"
@@ -1507,7 +1507,7 @@
 	item_state = "iron_chestplater"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/ironchestplateblue
 	name = "iron chestplate with blue cape"
@@ -1516,7 +1516,7 @@
 	item_state = "iron_chestplateb"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/oldscalemail
 	name = "old scale armor"
@@ -1525,7 +1525,7 @@
 	item_state = "old_scale_armor"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/scalemail
 	name = "scale armor"
@@ -1534,7 +1534,7 @@
 	item_state = "scale_armor"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/varangianarmor
 	name = "Lamellar Armor"
@@ -1543,7 +1543,7 @@
 	item_state = "varangian_lamellar"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/egyptianlam
 	name = "Dusty Lamellar Armor"
@@ -1552,7 +1552,7 @@
 	item_state = "egyptian_lamellar"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/chitinbreastplate
 	name = "Fire Ant Breastplate"
@@ -1561,7 +1561,7 @@
 	item_state = "chitin_chestplate"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/steppeleatherarmor
 	name = "Full Leather Armor"
@@ -1578,7 +1578,7 @@
 	item_state = "chinese_lamellar"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/chinesebreastplate
 	name = "Steel Armor with Red Tunic"
@@ -1587,7 +1587,7 @@
 	item_state = "imperial_chinese"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/woodenbreastplate
 	name = "Wooden Breastplate"
@@ -1605,7 +1605,7 @@
 	item_state = "imperial_breastplate"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
-	armor_tokens = list(ARMOR_MODIFER_UP_MELEE_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 
 
