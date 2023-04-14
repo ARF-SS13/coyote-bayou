@@ -200,11 +200,12 @@
 	. = ..()
 	if(consider_despawning())
 		if(!lonely_timer_id)
-			lonely_timer_id = addtimer(CALLBACK(src, .proc/unbirth_self), 30 SECONDS, TIMER_STOPPABLE)
+			lonely_timer_id = addtimer(CALLBACK(src, .proc/queue_unbirth), 30 SECONDS, TIMER_STOPPABLE)
 	else
 		if(lonely_timer_id)
 			deltimer(lonely_timer_id)
 			lonely_timer_id = null	
+		unqueue_unbirth()
 
 /mob/living/simple_animal/hostile/proc/consider_despawning()
 	if(!despawns_when_lonely)
@@ -801,6 +802,12 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	target = new_target
 	if(target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)
+
+/mob/living/simple_animal/hostile/proc/queue_unbirth()
+	SSidlenpcpool.add_to_culling(src)
+
+/mob/living/simple_animal/hostile/proc/unqueue_unbirth()
+	SSidlenpcpool.remove_from_culling(src)
 
 /// return to monke-- stuffs a mob into their own special nest
 /mob/living/simple_animal/hostile/proc/unbirth_self()

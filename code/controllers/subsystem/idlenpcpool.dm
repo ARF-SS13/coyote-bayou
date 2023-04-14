@@ -48,13 +48,25 @@ SUBSYSTEM_DEF(idlenpcpool)
 		if (MC_TICK_CHECK)
 			return
 
-	// if(!LAZYLEN(mobs_to_cull))
-	// 	return
-	// for(var/datum/weakref/weakie in mobs_to_cull)
-	// 	var/mob/living/simple_animal/hostile/simp = RESOLVEWEAKREF(weakie)
-	// 	if(simp)
-	// 		message_admins("[simp] getting culled~")
-	// 		simp.unbirth_self()
-	// 	mobs_to_cull -= weakie
-	// 	if(MC_TICK_CHECK)
-	// 		return
+	if(!LAZYLEN(mobs_to_cull))
+		return
+	for(var/datum/weakref/weakie in mobs_to_cull)
+		var/mob/living/simple_animal/hostile/simp = RESOLVEWEAKREF(weakie)
+		if(simp)
+			//message_admins("[simp] getting culled~")
+			simp.unbirth_self()
+		mobs_to_cull -= weakie
+		if(MC_TICK_CHECK)
+			return
+
+/datum/controller/subsystem/idlenpcpool/proc/add_to_culling(mob/living/simple_animal/hostile/simp)
+	if(!simp)
+		return
+	mobs_to_cull |= WEAKREF(simp)
+
+/datum/controller/subsystem/idlenpcpool/proc/remove_from_culling(mob/living/simple_animal/hostile/simp)
+	if(!simp)
+		return
+	mobs_to_cull -= WEAKREF(simp)
+
+
