@@ -103,6 +103,7 @@
 	var/static/list/abom_sounds
 	deathmessage = "wails as its form shudders and violently comes to a stop."
 	death_sound = 'sound/voice/abomburning.ogg'
+	despawns_when_lonely = FALSE // too ANGRY to despawn
 
 /mob/living/simple_animal/hostile/abomination/AttackingTarget()
 	. = ..()

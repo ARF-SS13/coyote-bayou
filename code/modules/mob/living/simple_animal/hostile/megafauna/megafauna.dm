@@ -28,6 +28,7 @@
 	layer = LARGE_MOB_LAYER //Looks weird with them slipping under mineral walls and cameras and shit otherwise
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 | HEAR_1
 	has_field_of_vision = FALSE //You are a frikkin boss
+	despawns_when_lonely = FALSE // you dont get lonely when you're THE BOSS
 	/// Crusher loot dropped when fauna killed with a crusher
 	var/list/crusher_loot
 	var/medal_type

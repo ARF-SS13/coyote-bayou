@@ -7,11 +7,13 @@ SUBSYSTEM_DEF(idlenpcpool)
 
 	var/list/currentrun = list()
 	var/static/list/idle_mobs_by_zlevel[][]
+	/// List of (weakrefs to) mobs that are queued for being stuffed into spawners
+	var/list/mobs_to_cull = list()
 
 /datum/controller/subsystem/idlenpcpool/stat_entry(msg)
 	var/list/idlelist = GLOB.simple_animals[AI_IDLE]
 	var/list/zlist = GLOB.simple_animals[AI_Z_OFF]
-	msg = "IdleNPCS:[length(idlelist)]|Z:[length(zlist)]"
+	msg = "IdleNPCS:[length(idlelist)]|Z:[length(zlist)]|C:[length(mobs_to_cull)]]"
 	return ..()
 
 /datum/controller/subsystem/idlenpcpool/proc/MaxZChanged()
@@ -40,8 +42,31 @@ SUBSYSTEM_DEF(idlenpcpool)
 
 		if(!SA.ckey)
 			if(SA.stat != DEAD)
-				SA.handle_automated_movement()
-			if(SA.stat != DEAD)
 				SA.consider_wakeup()
+			if(SA.stat != DEAD)
+				SA.handle_automated_movement()
 		if (MC_TICK_CHECK)
 			return
+
+	if(!LAZYLEN(mobs_to_cull))
+		return
+	for(var/datum/weakref/weakie in mobs_to_cull)
+		var/mob/living/simple_animal/hostile/simp = RESOLVEWEAKREF(weakie)
+		if(simp)
+			//message_admins("[simp] getting culled~")
+			simp.unbirth_self()
+		mobs_to_cull -= weakie
+		if(MC_TICK_CHECK)
+			return
+
+/datum/controller/subsystem/idlenpcpool/proc/add_to_culling(mob/living/simple_animal/hostile/simp)
+	if(!simp)
+		return
+	mobs_to_cull |= WEAKREF(simp)
+
+/datum/controller/subsystem/idlenpcpool/proc/remove_from_culling(mob/living/simple_animal/hostile/simp)
+	if(!simp)
+		return
+	mobs_to_cull -= WEAKREF(simp)
+
+

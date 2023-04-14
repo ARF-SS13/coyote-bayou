@@ -563,6 +563,10 @@
 //mob spawner signals
 #define COMSIG_SPAWNER_COVERED "spawner_covered" // Mob spawner got covered by a covering
 #define COMSIG_SPAWNER_UNCOVERED "spawner_uncovered" // Mob spawner got uncovered by a covering
+// Mob spawner is told to absorb a mob
+#define COMSIG_SPAWNER_ABSORB_MOB "spawner_unbirth" // (mob/living/absorbed_mob)
+#define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
+#define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
 
 /// When they look back and see that some fuckin nerd componentized vore, will they be proud? or rightfully confused why someone would spend their time on this?
 /// I know one thing for sure though, and that is that I won't regret any second of it
