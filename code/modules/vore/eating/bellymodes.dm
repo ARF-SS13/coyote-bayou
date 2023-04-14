@@ -81,4 +81,7 @@
 				unabsorb_living(living_prey)
 
 	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)
+	if(COOLDOWN_FINISHED(src, recalc_slows))
+		update_slowdowns()
+		COOLDOWN_START(src, recalc_slows, 10 SECONDS)
 

@@ -159,6 +159,7 @@
 	/// Next time vore sounds get played for the prey, do not change manually as it is intended to be set automatically
 	COOLDOWN_DECLARE(prey_sound_cooldown)
 	COOLDOWN_DECLARE(voremote_cooldown)
+	COOLDOWN_DECLARE(recalc_slows)
 
 
 //For serialization, keep this updated AND IN ORDER OF VARS LISTED ABOVE AND IN DUPE AT THE BOTTOM!!, required for bellies to save correctly.
