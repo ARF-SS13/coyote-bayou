@@ -60,5 +60,5 @@
 	..()
 	if(istype(target, /mob/living/simple_animal/hostile))
 		var/mob/living/simple_animal/hostile/B = target
-		B.unbirth_self()
+		B.unbirth_self(TRUE) // this gun noncon vores people into holes
 	return BULLET_ACT_HIT
