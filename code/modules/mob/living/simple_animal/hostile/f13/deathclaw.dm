@@ -62,6 +62,7 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(30),
 	)
+	despawns_when_lonely = FALSE
 
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null
