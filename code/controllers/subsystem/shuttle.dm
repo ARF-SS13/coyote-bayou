@@ -658,7 +658,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("The week has come to an end and the train called. [GLOB.security_level == SEC_LEVEL_RED ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [emergency.timeLeft(600)] minutes.", null, "sound/f13/quest.ogg", "Vault-Tec")
+		priority_announce("The day has come to an end and the train called. [GLOB.security_level == SEC_LEVEL_RED ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [emergency.timeLeft(600)] minutes.", null, "sound/f13/quest.ogg", "Vault-Tec")
 		log_game("Round end vote passed. Train has been auto-called.")
 		message_admins("Round end vote passed. Train has been auto-called.")
 	emergencyNoRecall = TRUE
