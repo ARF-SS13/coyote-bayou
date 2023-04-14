@@ -35186,6 +35186,21 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"fkx" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "fkA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/shoes/f13/raidertreads,
@@ -53728,20 +53743,19 @@
 	},
 /area/f13/building/abandoned)
 "knA" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 0;
+	pixel_x = -14;
+	density = 0
 	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 0;
+	pixel_x = 14;
+	density = 0
 	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
-	},
-/obj/structure/pondlily_small,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/water,
+/turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/wasteland)
 "knC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -59440,6 +59454,12 @@
 "lTe" = (
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"lTn" = (
+/obj/effect/landmark/start/f13/pilot,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "lTp" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
@@ -77796,6 +77816,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "qRc" = (
@@ -83265,6 +83288,18 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"stR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "stY" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
@@ -85561,6 +85596,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "sZG" = (
@@ -105746,7 +105785,7 @@ pvx
 pvx
 pvx
 pvx
-pvx
+lTn
 lvq
 bnF
 cfG
@@ -106003,7 +106042,7 @@ pvx
 ubt
 pvx
 pvx
-pvx
+lTn
 pMY
 pvx
 vgV
@@ -116829,9 +116868,9 @@ rnG
 csd
 tgA
 saZ
-aeG
-aeG
-bby
+fkx
+knA
+stR
 bby
 sPL
 aQA
@@ -117086,7 +117125,7 @@ bdH
 frN
 auo
 qRa
-nxi
+knA
 knA
 jbR
 aCc
