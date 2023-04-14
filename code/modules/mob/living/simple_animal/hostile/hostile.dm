@@ -214,9 +214,20 @@
 		return FALSE
 	if(lazarused)
 		return FALSE
+	if(stat == DEAD)
+		return FALSE
+	if(health <= 0)
+		return FALSE
 	if(AIStatus == AI_ON || AIStatus == AI_OFF)
 		return FALSE
 	return TRUE
+
+/mob/living/simple_animal/hostile/become_the_mob(mob/user)
+	if(lonely_timer_id)
+		deltimer(lonely_timer_id)
+		lonely_timer_id = null	
+	unqueue_unbirth()
+	. = ..()
 
 
 /mob/living/simple_animal/hostile/proc/sidestep()
@@ -810,7 +821,9 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	SSidlenpcpool.remove_from_culling(src)
 
 /// return to monke-- stuffs a mob into their own special nest
-/mob/living/simple_animal/hostile/proc/unbirth_self()
+/mob/living/simple_animal/hostile/proc/unbirth_self(forced)
+	if(!forced && !consider_despawning()) // check again plz
+		return
 	var/obj/structure/nest/my_home
 	if(isweakref(nest))
 		my_home = RESOLVEWEAKREF(nest)
