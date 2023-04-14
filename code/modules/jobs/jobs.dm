@@ -166,6 +166,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Texarkana Trade Worker",
 	"Barkeep",
 	"Citizen",
+	"Vertibird Pilot",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(

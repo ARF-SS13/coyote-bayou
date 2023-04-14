@@ -1399,3 +1399,56 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+
+
+//pilot job, bare basics rn, but we can add as needed
+/datum/job/oasis/f13pilot
+	title = "Vertibird Pilot"
+	flag = F13PILOT
+	department_flag = DEP_OASIS
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Nash's laws"
+	description = "You are a pilot, hired to drive the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/f13pilot
+
+	access = list(ACCESS_BAR, ACCESS_EVA)
+	minimal_access = list(ACCESS_BAR, ACCESS_EVA)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+
+/datum/outfit/job/den/f13pilot
+	name = "Vertibird Pilot"
+	jobtype = /datum/job/oasis/f13pilot
+	belt = /obj/item/kit_spawner/townie
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	r_pocket = /obj/item/flashlight/flare
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/wallet/stash/low = 1,
+		)
+
+/datum/outfit/job/den/f13pilot/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/gentlesuit,
+		/obj/item/clothing/under/f13/formal,
+		/obj/item/clothing/under/f13/spring,
+		/obj/item/clothing/under/f13/relaxedwear,
+		/obj/item/clothing/under/f13/machinist,
+		/obj/item/clothing/under/f13/brahminf,
+		/obj/item/clothing/under/f13/cowboyb,
+		/obj/item/clothing/under/f13/cowboyg,
+		/obj/item/clothing/under/f13/cowboyt)
