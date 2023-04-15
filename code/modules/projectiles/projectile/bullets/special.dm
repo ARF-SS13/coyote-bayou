@@ -41,9 +41,26 @@
 /obj/item/projectile/flintlock
 	name = "musket ball"
 	icon_state = "musket"
+	damage = BULLET_DAMAGE_FLINTLOCK_MATCH
+	stamina = BULLET_STAMINA_FLINTLOCK
+	spread = 15
+	recoil = BULLET_RECOIL_FLINTLOCK
+	wound_bonus = BULLET_WOUND_FLINTLOCK_MATCH
+
+	pixels_per_second = BULLET_SPEED_FLINTLOCK_MATCH
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	damage_type = BRUTE
+	flag = "bullet"
+	hitsound_wall = "ricochet"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	icon_state = "musket"
+
+/obj/item/projectile/flintlock/minie
+	name = "minie ball"
 	damage = BULLET_DAMAGE_FLINTLOCK
 	stamina = BULLET_STAMINA_FLINTLOCK
-	spread = BULLET_SPREAD_HANDLOAD
+	spread = -15 // shockingly accurate
 	recoil = BULLET_RECOIL_FLINTLOCK
 	wound_bonus = BULLET_WOUND_FLINTLOCK
 	
@@ -54,23 +71,6 @@
 	damage_type = BRUTE
 	nodamage = FALSE
 	candink = TRUE
-	flag = "bullet"
-	hitsound_wall = "ricochet"
-	impact_effect_type = /obj/effect/temp_visual/impact_effect
-
-/obj/item/projectile/flintlock/minie
-	name = "minie ball"
-	icon_state = "musket"
-	damage = BULLET_DAMAGE_FLINTLOCK_MATCH
-	stamina = BULLET_STAMINA_FLINTLOCK
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_FLINTLOCK
-	wound_bonus = BULLET_WOUND_FLINTLOCK_MATCH
-
-	pixels_per_second = BULLET_SPEED_FLINTLOCK_MATCH
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
-	damage_type = BRUTE
 	flag = "bullet"
 	hitsound_wall = "ricochet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
