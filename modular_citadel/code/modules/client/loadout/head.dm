@@ -805,3 +805,9 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/coyote/raccoonfurhat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	cost = 2
+
+/obj/item/clothing/head/fifi
+	name = "fifi"
+	desc = "A colorful firlly hat"
+	icon_state = "fifi_hat"
+	item_state = "fifi_hat"
