@@ -556,6 +556,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	desc = "Yep, that's a shield. Good for not getting whacked."
 	icon_state = "shield_stop"
 	item_state = "shield_stop"
@@ -570,6 +571,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "red_buckler"
 	item_state = "red_buckler"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -584,6 +586,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "blue_buckler"
 	item_state = "blue_buckler"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -597,6 +600,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "steel_shield"
 	item_state = "steel_shield"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -611,6 +615,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "iron_shield"
 	item_state = "iron_shield"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -625,6 +630,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "bronze_shield"
 	item_state = "bronze_shield"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -639,6 +645,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "ironshield2"
 	item_state = "ironshield2"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -653,6 +660,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "ironshield3"
 	item_state = "ironshield3"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -667,6 +675,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "ironshield4"
 	item_state = "ironshield4"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -681,6 +690,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "roman_buckler"
 	item_state = "roman_buckler"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -695,6 +705,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "semioval_shield_blue"
 	item_state = "semioval_shield_blue"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -709,6 +720,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "egyptian_shield"
 	item_state = "egyptian_shield"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -723,6 +735,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "buckler2"
 	item_state = "buckler2"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -737,6 +750,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "imperial_kite"
 	item_state = "imperial_kite"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
