@@ -154,12 +154,22 @@
 	var/disable_hud = FALSE
 	var/colorization_enabled = FALSE
 	var/belly_fullscreen_color = "#823232"
+
+	var/spits_trash = FALSE
+	var/list/spit_trash_messages = list(
+		"%pred's %belly ejects a piece of trash.")
+
+	//// These arent serialized
 	var/datum/looping_sound/vore_heartbeat/heartbeat_loop
 	var/datum/looping_sound/vore_squish/squish_loop
 	/// Next time vore sounds get played for the prey, do not change manually as it is intended to be set automatically
 	COOLDOWN_DECLARE(prey_sound_cooldown)
 	COOLDOWN_DECLARE(voremote_cooldown)
 	COOLDOWN_DECLARE(recalc_slows)
+	/// how much items in this belly slow you
+	var/item_slowdown = 0
+	/// how much mobs in this belly slow you
+	var/mob_slowdown = 0
 
 
 //For serialization, keep this updated AND IN ORDER OF VARS LISTED ABOVE AND IN DUPE AT THE BOTTOM!!, required for bellies to save correctly.
@@ -224,7 +234,9 @@
 	"belly_fullscreen_color",
 	"colorization_enabled",
 	"egg_type",
-	"save_digest_mode"
+	"save_digest_mode",
+	"spits_trash",
+	"spit_trash_messages"
 	)
 
 	if (save_digest_mode == 1)
@@ -244,9 +256,11 @@
 	RegisterSignal(src, COMSIG_VORE_STOP_SOUNDS, .proc/stop_sounds)
 	RegisterSignal(src, COMSIG_VORE_AUTO_EMOTE, .proc/auto_emote)
 	RegisterSignal(src, COMSIG_VORE_ADD_BELLY, .proc/add_belly)
-	RegisterSignal(src, COMSIG_VORE_EXPEL_SPECIFIC, .proc/release_specific_contents)
+	RegisterSignal(src, COMSIG_BELLY_EXPEL_SPECIFIC, .proc/release_specific_contents)
 	RegisterSignal(src, COMSIG_VORE_EXPEL_MOB_OOC, .proc/ooc_escape)
 	RegisterSignal(src, COMSIG_VORE_EXPEL_ALL, .proc/release_all_contents)
+	RegisterSignal(src, COMSIG_VORE_RECALCULATE_SLOWDOWN, .proc/update_slowdowns)
+	RegisterSignal(src, COMSIG_BELLY_HANDLE_TRASH, .proc/hork_trash)
 
 /obj/vore_belly/Destroy()
 	// be kind, undefined
@@ -255,15 +269,17 @@
 		COMSIG_VORE_DEVOUR_ATOM,
 		COMSIG_VORE_AUTO_EMOTE,
 		COMSIG_VORE_ADD_BELLY,
-		COMSIG_VORE_EXPEL_SPECIFIC,
+		COMSIG_BELLY_EXPEL_SPECIFIC,
 		COMSIG_VORE_STOP_SOUNDS,
 		COMSIG_VORE_EXPEL_MOB_OOC,
 		COMSIG_VORE_EXPEL_ALL,
+		COMSIG_PARENT_PREQDELETED,
+		COMSIG_BELLY_HANDLE_TRASH,
 		))
 	SEND_SIGNAL(owner, COMSIG_VORE_REMOVE_BELLY, src)
 	UnregisterSignal(owner, list(
 		COMSIG_VORE_STOP_SOUNDS,
-		COMSIG_VORE_EXPEL_SPECIFIC,
+		COMSIG_BELLY_EXPEL_SPECIFIC,
 		COMSIG_VORE_EXPEL_MOB_OOC,
 		COMSIG_VORE_EXPEL_ALL,
 		COMSIG_MOB_APPLY_DAMAGE,
@@ -279,7 +295,7 @@
 	owner = new_owner
 	START_PROCESSING(SSvore, src)
 	RegisterSignal(new_owner, COMSIG_VORE_STOP_SOUNDS, .proc/stop_sounds)
-	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_SPECIFIC, .proc/release_specific_contents)
+	RegisterSignal(new_owner, COMSIG_BELLY_EXPEL_SPECIFIC, .proc/release_specific_contents)
 	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_MOB_OOC, .proc/ooc_escape)
 	RegisterSignal(new_owner, COMSIG_VORE_EXPEL_ALL, .proc/release_all_contents)
 	RegisterSignal(new_owner, COMSIG_MOB_APPLY_DAMAGE, .proc/pass_damage) // OUR APC IS UNDER ATTACK
@@ -292,7 +308,7 @@
 	if(isliving(arrived))
 		living_prey = arrived
 		if(!CHECK_PREFS(living_prey, VOREPREF_BEING_PREY))
-			SEND_SIGNAL(src, COMSIG_VORE_EXPEL_SPECIFIC, living_prey) // oops! out you go!
+			SEND_SIGNAL(src, COMSIG_BELLY_EXPEL_SPECIFIC, living_prey) // oops! out you go!
 			return
 		living_prey.become_blind("belly_[REF(src)]")
 		RegisterSignal(living_prey, COMSIG_MOB_DEATH, .proc/digestion_death)
@@ -314,19 +330,22 @@
 				formatted_desc = replacetext(formatted_desc, "%prey", living_prey) //replace with whatever mob entered into this belly
 				to_chat(living_prey, span_notice("<B>[formatted_desc]</B>"), pref_check = VOREPREF_VORE_MESSAGES)
 
+	RegisterSignal(arrived, COMSIG_PARENT_PREQDELETED, .proc/trigger_slowdown_update)
 	//Generic entered message
 	SEND_SIGNAL(arrived, COMSIG_VORE_ATOM_DEVOURED, src, owner)
 	SEND_SIGNAL(arrived, COMSIG_VORE_UPDATE_PANEL)
 	SEND_SIGNAL(owner, COMSIG_VORE_VORE_OCCURED, src, arrived)
 	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)
+	trigger_slowdown_update()
 	to_chat(owner,span_notice("[arrived] slides into your [lowertext(name)]."))
 	//ulp~
 	play_gulp()
-	update_slowdowns()
 
 /obj/vore_belly/Exited(atom/movable/gone, direction)
 	. = ..()
-	
+	trigger_slowdown_update()
+	SEND_SIGNAL(owner, COMSIG_VORE_VORE_OCCURED, src, gone)
+	UnregisterSignal(gone, COMSIG_PARENT_PREQDELETED)	
 	if(!isliving(gone))
 		return
 	var/mob/living/living_prey = gone
@@ -334,42 +353,40 @@
 		COMSIG_MOB_DEATH,
 		COMSIG_LIVING_RESIST,
 		COMSIG_ATOM_RELAYMOVE,
+		COMSIG_MOB_GHOSTIZE,
 	))	
 	living_prey.cure_blind("belly_[REF(src)]")
-	update_slowdowns()
 	/// at some point, this will be used to tell the mob they've been vored something, and to do something about it
 	/// Like swap out their sprite for one with a big ol' belly, or something.
-	SEND_SIGNAL(owner, COMSIG_VORE_VORE_OCCURED, src, gone)
 
 /// Having things in your belly really slows you down!
 /obj/vore_belly/proc/update_slowdowns()
-	if(!get_item_slowdown())
-		owner.remove_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly)
-	if(!get_mob_slowdown())
-		owner.remove_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly)
+	item_slowdown = get_item_slowdown()
+	mob_slowdown = get_mob_slowdown()
+
+/obj/vore_belly/proc/trigger_slowdown_update()
+	SEND_SIGNAL(owner, COMSIG_VORE_RECALCULATE_SLOWDOWN)
 
 /obj/vore_belly/proc/get_item_slowdown()
 	if(!LAZYLEN(contents)) // empty?
-		return FALSE
+		return 0
 	var/list/vored_items = get_nested_vored_items()
 	if(!LAZYLEN(vored_items))
-		return FALSE
+		return 0
 	var/total_w_class = 0
 	for(var/obj/item/thing in vored_items)
 		total_w_class += thing.w_class // add up the total w_class of all items
 		if(SEND_SIGNAL(thing, COMSIG_CONTAINS_STORAGE))
 			total_w_class += thing.w_class // double the slowdown for storage items
-	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly, TRUE, ((total_w_class / LAZYLEN(vored_items)) * 1.5))
-	return TRUE
+	return min((total_w_class / LAZYLEN(vored_items)) + (LAZYLEN(vored_items) * 0.25), 4) // average w_class + 0.25 per item
 
 /obj/vore_belly/proc/get_mob_slowdown()
 	if(!LAZYLEN(contents)) // empty?
-		return FALSE
+		return 0
 	var/list/vored_mobs = get_nested_mobs(FALSE)
 	if(!LAZYLEN(vored_mobs))
-		return FALSE
-	owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly, TRUE, (LAZYLEN(vored_mobs)))	
-	return TRUE
+		return 0
+	return LAZYLEN(vored_mobs)
 
 /// Release all contents of this belly into the owning mob's location.
 /// If that location is another mob, contents are transferred into whichever of its bellies the owning mob is in.
@@ -381,6 +398,7 @@
 	. = 0
 	for(var/atom/movable/AM_prey in contents)
 		. += release_specific_contents(src, AM_prey, silent = TRUE)
+	trigger_slowdown_update()
 	if(silent)
 		return
 	play_eject()
@@ -569,6 +587,13 @@
 			SEND_SIGNAL(thingy, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .)
 			. |= thingy // and I mean *every* fuckin item
 
+/// If allowed, spit up some trash
+/obj/vore_belly/proc/hork_trash(datum/source, obj/item/trashthing)
+	SIGNAL_HANDLER
+	send_voremessage(trashthing, spit_trash_messages, null, VOREPREF_TRASH_MESSAGES)
+	if(!owner.put_in_hands(trashthing))
+		trashthing.forceMove(drop_location())
+
 // Actually perform the mechanics of devouring the tasty prey.
 // The purpose of this method is to avoid duplicate code, and ensure that all necessary
 // steps are taken.
@@ -580,6 +605,14 @@
 		return
 	if(owner.stat != CONSCIOUS)
 		return
+	if(isitem(movable_prey))
+		if(CHECK_BITFIELD(SEND_SIGNAL(movable_prey.loc, COMSIG_TRY_STORAGE_TAKE, movable_prey, src, TRUE), NO_REMOVE_FROM_STORAGE))
+			to_chat(owner,span_alert("[movable_prey] can't be taken out of [movable_prey.loc]!"))
+			return FALSE
+		if(!owner.temporarilyRemoveItemFromInventory(movable_prey))
+			to_chat(owner, span_alert("[movable_prey] couldn't be eaten!"))
+			return FALSE
+	. = TRUE
 	movable_prey.forceMove(src) // mobs are unbuckled anyway
 	// Flavor country
 	if(can_taste)
@@ -644,7 +677,7 @@
 /// This is useful in customization boxes and such. The delimiter right now is \n\n so
 /// in message boxes, this looks nice and is easily delimited.
 /obj/vore_belly/proc/get_messages(type, delim = "\n\n")
-	ASSERT(type == "smo" || type == "smi" || type == "dmo" || type == "dmp" || type == "em")
+	ASSERT(type == "smo" || type == "smi" || type == "dmo" || type == "dmp" || type == "em" || type == "tr")
 	var/list/raw_messages
 
 	switch(type)
@@ -658,6 +691,8 @@
 			raw_messages = digest_messages_prey
 		if("em")
 			raw_messages = examine_messages
+		if("tr")
+			raw_messages = spit_trash_messages
 
 	var/messages = raw_messages.Join(delim)
 	return messages
@@ -666,7 +701,7 @@
 // replacement strings and linebreaks as delimiters (two \n\n by default).
 // They also sanitize the messages.
 /obj/vore_belly/proc/set_messages(raw_text, type, delim = "\n\n")
-	ASSERT(type == "smo" || type == "smi" || type == "dmo" || type == "dmp" || type == "em")
+	ASSERT(type == "smo" || type == "smi" || type == "dmo" || type == "dmp" || type == "em" || type == "tr")
 
 	var/list/raw_list = splittext(html_encode(raw_text),delim)
 	if(LAZYLEN(raw_list) >= 11)
@@ -695,6 +730,8 @@
 			digest_messages_prey = raw_list
 		if("em")
 			examine_messages = raw_list
+		if("tr")
+			spit_trash_messages = raw_list
 	SEND_SIGNAL(src, COMSIG_VORE_UPDATE_PANEL)
 
 /// Handle the death of a mob via digestion.
@@ -903,7 +940,7 @@
 		))
 		return FALSE
 	if(escapable && is_in_belly(living_prey)) //Can still escape?
-		SEND_SIGNAL(src, COMSIG_VORE_EXPEL_SPECIFIC, living_prey)
+		SEND_SIGNAL(src, COMSIG_BELLY_EXPEL_SPECIFIC, living_prey)
 	else //Belly became inescapable or mob revived
 		to_chat(
 			living_prey,
@@ -930,34 +967,38 @@
 
 
 /obj/vore_belly/proc/send_voremessage(
-		mob/living/living_prey, 
+		atom/atom_prey, 
 		outside_list, 
 		inside_list, 
 		pref = VOREPREF_VORE_MESSAGES
 		)
-	var/outer_message = pick(outside_list)
-	var/inner_message = pick(inside_list)
+	var/outer_message
+	if(LAZYLEN(outside_list))
+		outer_message = pick(outside_list)
+		outer_message = replacetext(outer_message,"%pred",owner)
+		outer_message = replacetext(outer_message,"%prey",atom_prey)
+		outer_message = replacetext(outer_message,"%belly",lowertext(name))
+		outer_message = span_alert(outer_message)
+	var/inner_message
+	if(isliving(atom_prey) && LAZYLEN(inside_list))
+		inner_message = pick(inside_list)
+		inner_message = replacetext(inner_message,"%pred",owner)
+		inner_message = replacetext(inner_message,"%prey",atom_prey)
+		inner_message = replacetext(inner_message,"%belly",lowertext(name))
+		inner_message = span_alert(inner_message)
 
-	outer_message = replacetext(outer_message,"%pred",owner)
-	outer_message = replacetext(outer_message,"%prey",living_prey)
-	outer_message = replacetext(outer_message,"%belly",lowertext(name))
-	outer_message = span_alert(outer_message)
+	if(outer_message)
+		owner.visible_message(
+			outer_message,
+			pref_check = pref
+			)
 
-	inner_message = replacetext(inner_message,"%pred",owner)
-	inner_message = replacetext(inner_message,"%prey",living_prey)
-	inner_message = replacetext(inner_message,"%belly",lowertext(name))
-	inner_message = span_alert(inner_message)
-
-	owner.visible_message(
-		outer_message,
-		pref_check = pref
-		)
-
-	to_chat(
-		living_prey,
-		inner_message,
-		pref_check = pref
-		)
+	if(inner_message)
+		to_chat(
+			atom_prey,
+			inner_message,
+			pref_check = pref
+			)
 
 /obj/vore_belly/proc/can_digest_living(mob/living/living_prey)
 	if(!isliving(living_prey))
@@ -1137,6 +1178,7 @@
 	dupe.emote_active = emote_active
 	dupe.selective_preference = selective_preference
 	dupe.save_digest_mode = save_digest_mode
+	dupe.spits_trash = spits_trash
 
 	//// Object-holding variables
 	//struggle_messages_outside - strings
@@ -1198,6 +1240,11 @@
 	dupe.examine_messages_absorbed.Cut()
 	for(var/I in examine_messages_absorbed)
 		dupe.examine_messages_absorbed += I
+
+	//examine_messages_absorbed - strings
+	dupe.spit_trash_messages.Cut()
+	for(var/I in spit_trash_messages)
+		dupe.spit_trash_messages += I
 
 	//emote_lists - index: digest mode, key: list of strings
 	dupe.emote_lists.Cut()

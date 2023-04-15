@@ -5,6 +5,7 @@
 	/mob/living/simple_animal/pet/catslug,\
 	/obj/item/organ,\
 	/obj/item/clothing/head/mob_holder,\
+	/obj/item/trash,\
 	/obj/item/grenade,\
 	)
 

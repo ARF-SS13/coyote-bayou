@@ -599,7 +599,7 @@
 /// Takes in a belly, and returns if that belly is one of ours
 #define COMSIG_VORE_SWAP_BELLY_INDEX "swap_belly"	// (datum/source, index1, index2)
 /// Expels a mob from a belly
-#define COMSIG_VORE_EXPEL_SPECIFIC "i_unvore_u"		// (datum/source, atom/movable/to_eject, silent)
+#define COMSIG_BELLY_EXPEL_SPECIFIC "i_unvore_u"		// (datum/source, atom/movable/to_eject, silent)
 /// Expels all mobs from a belly
 #define COMSIG_VORE_EXPEL_ALL "i_unvore_u_all"
 /// Calls an OOC eject
@@ -638,6 +638,16 @@
 #define COMSIG_VORE_HAS_VORED_ITEMS "do_i_have_vored_them_items"
 /// Tells the componentholder that vore has occured, and to do whatever it needs to do, like update their icon
 #define COMSIG_VORE_VORE_OCCURED "vore_occured"
+/// Tells the componentholder that vore has occured, and to do whatever it needs to do, like update their slows
+#define COMSIG_VORE_RECALCULATE_SLOWDOWN "vore_slowdown"
+/// Tells the componentholder to have a certain belly do a certain emote
+#define COMSIG_VORE_DO_MESSAGE "vore_message" // (datum/source, obj/vore_belly/belly, message_type, pref_type)
+/// Asks if the componentholder can eat a certain item
+#define COMSIG_VORE_CHECK_EDIBILITY "can_i_eat_item" // (datum/source, obj/item/thing)
+
+/// Vore defines specifically for a belly
+/// Tells the belly trash happened
+#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" // (datum/source, obj/item/thetrash)
 
 
 
