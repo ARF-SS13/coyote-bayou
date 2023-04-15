@@ -776,6 +776,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
 
 	/// Vore stuff!
+	S["master_vore_toggle"]					>> master_vore_toggle
 	S["vore_smell"]							>> vore_smell
 	S["allow_dogborgs"]						>> allow_dogborgs
 	S["allow_eating_sounds"]				>> allow_eating_sounds
@@ -946,6 +947,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	/// VORE SANITIZATION - tab 4 or suffer
 	vore_smell						= sanitize_integer(vore_smell, 						FALSE, TRUE, initial(vore_smell))
+	master_vore_toggle				= sanitize_integer(master_vore_toggle, 				FALSE, TRUE, initial(master_vore_toggle))
 	allow_dogborgs					= sanitize_integer(allow_dogborgs, 					FALSE, TRUE, initial(allow_dogborgs))
 	allow_eating_sounds				= sanitize_integer(allow_eating_sounds, 			FALSE, TRUE, initial(allow_eating_sounds))
 	allow_digestion_sounds			= sanitize_integer(allow_digestion_sounds, 			FALSE, TRUE, initial(allow_digestion_sounds))
@@ -1227,6 +1229,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	/// Save the vore!
 	WRITE_FILE(S["vore_smell"]						, vore_smell)
+	WRITE_FILE(S["master_vore_toggle"]				, master_vore_toggle)
 	WRITE_FILE(S["allow_dogborgs"]					, allow_dogborgs)
 	WRITE_FILE(S["allow_eating_sounds"]				, allow_eating_sounds)
 	WRITE_FILE(S["allow_digestion_sounds"]			, allow_digestion_sounds)

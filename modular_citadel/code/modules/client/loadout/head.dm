@@ -574,6 +574,7 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/burma/glengarry
 
 
+
 //Fenis Helmet & Hatapalooza//
 
 //Helmet hats
@@ -811,3 +812,8 @@ datum/gear/head/steelpot_bandolier
 	desc = "A colorful firlly hat"
 	icon_state = "fifi_hat"
 	item_state = "fifi_hat"
+
+
+/datum/gear/head/fifi
+	name = "Fifi jester hat"
+	path = /obj/item/clothing/head/fifi

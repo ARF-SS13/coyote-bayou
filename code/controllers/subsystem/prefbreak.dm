@@ -50,14 +50,14 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	var/index = "oopsie"
 
 /datum/prefcheck/proc/allowed(datum/preferences/consumer)
-	return TRUE
+	return !!consumer
 
 /// Master vore prefs
 /datum/prefcheck/voreprefs
-	index = "vore"
+	index = VOREPREF_MASTER
 
 /datum/prefcheck/voreprefs/allowed(datum/preferences/consumer)
-	return consumer // kinda vital here
+	return consumer.master_vore_toggle // kinda vital here
 
 /// Able to hear eat sounds
 /datum/prefcheck/voreprefs/eat_noises
@@ -175,6 +175,15 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	if(!..())
 		return FALSE
 	return consumer.allow_being_sniffed
+
+/// Able to see people yartz up trash
+/datum/prefcheck/voreprefs/hork_trash_see
+	index = VOREPREF_TRASH_MESSAGES
+
+/datum/prefcheck/voreprefs/hork_trash_see/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return consumer.allow_trash_messages
 
 
 

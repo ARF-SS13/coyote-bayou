@@ -28,6 +28,8 @@
 	var/voremode = TRUE // yes, yes it is
 	/// Am I absorbed?
 	var/am_absorbed = FALSE
+	/// our cached amount of stuff in our bellies -- to prevent having to loop through all bellies every time
+	var/cached_belly_contents = 0
 
 /datum/component/vore/Initialize()
 	if(!SSvore.should_have_vore(parent))
@@ -51,8 +53,12 @@
 	RegisterSignal(parent, list(COMSIG_VORE_CAN_EAT), .proc/can_eat)
 	RegisterSignal(parent, list(COMSIG_VORE_CAN_BE_EATEN), .proc/can_be_eaten)
 	RegisterSignal(parent, list(COMSIG_VORE_CAN_BE_FED_PREY), .proc/can_be_fed_prey)
+	RegisterSignal(parent, list(COMSIG_VORE_RECALCULATE_SLOWDOWN), .proc/update_slowdowns)
+	RegisterSignal(parent, list(COMSIG_VORE_CHECK_EDIBILITY), .proc/can_eat_item)
+	RegisterSignal(parent, list(COMSIG_VORE_DO_MESSAGE), .proc/do_voremessage)
 	RegisterSignal(parent, list(COMSIG_PARENT_EXAMINE), .proc/examine_bellies)
 	RegisterSignal(parent, list(COMSIG_MOB_DEATH), .proc/you_died) // casual
+	START_PROCESSING(SSvore, src)
 
 /datum/component/vore/proc/setup_vore(force)
 	VORE_MASTER
@@ -220,6 +226,7 @@
 	client_cached = null
 	vore_selected = null
 	QDEL_LIST(vore_organs)
+	STOP_PROCESSING(SSvore, src)
 	. = ..()
 
 /datum/component/vore/proc/can_eat()
@@ -262,6 +269,25 @@
 		return FALSE
 	return TRUE
 
+// Checks if an item is a thing and can be eaten
+/datum/component/vore/proc/can_eat_item(datum/source, atom/movable/movable_prey)
+	VORE_MASTER
+	if(!isitem(movable_prey))
+		return TRUE
+	if(!master.canUnEquip(movable_prey, FALSE))
+		return FALSE
+	var/obj/item/thingy = movable_prey
+	if(thingy.interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_IS_ALT) //See if we're supposed to just altclick
+		master.AltClickOn(thingy)
+		return FALSE
+	else if(thingy.interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_IS_SHIFT) //See if we're supposed to just shiftclick
+		master.ShiftClickOn(thingy)
+		return FALSE
+	if(!(thingy.interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP)) //See if we're supposed to auto pickup.
+		to_chat(master, span_warning("You can't pick that up to eat it!"))
+		return FALSE
+	return TRUE
+
 // Handle being clicked, perhaps with something to devour
 //
 // Refactored to use centralized vore code system - Leshana
@@ -286,6 +312,12 @@
 	if(living_pred.ckey && !living_pred.client)
 		to_chat(master, span_alert("[living_pred] is too unresponsive to be fed!"))
 		return FALSE
+	if(isitem(movable_prey))
+		var/obj/item/item_prey = movable_prey
+		if(CHECK_BITFIELD(SEND_SIGNAL(item_prey.loc, COMSIG_TRY_STORAGE_TAKE, living_pred, master.loc, TRUE), NO_REMOVE_FROM_STORAGE))
+			to_chat(master,span_alert("[src] can't be eaten out of [item_prey.loc]!"))
+			return
+
 	/// Monkeys and grenades can't consent in the moment, but they *do* have their prefs on file
 	/// And they say *yes yes yes!*
 	/// Also movables and non-human mobs dont have components that respond to our signals
@@ -481,7 +513,10 @@
 	master.visible_message(success_msg,pref_check = VOREPREF_VORE_MESSAGES)
 
 	// Actually shove prey into the belly.
-	SEND_SIGNAL(belly, COMSIG_VORE_DEVOUR_ATOM, movable_prey, master)
+	if(!SEND_SIGNAL(belly, COMSIG_VORE_DEVOUR_ATOM, movable_prey, master))
+		to_chat(master, span_warning("Something went wrong!"))
+		to_chat(movable_prey, span_warning("Something went wrong?"))
+		return FALSE
 	master.stop_pulling()
 
 	if(!isliving(movable_prey))
@@ -577,7 +612,7 @@
 				INVOKE_ASYNC(src, .proc/you_died)
 		if("Fall out")
 			to_chat(probably_master, span_alert("Ejecting your corpse!"))
-			SEND_SIGNAL(master.loc, COMSIG_VORE_EXPEL_SPECIFIC, master)
+			SEND_SIGNAL(master.loc, COMSIG_BELLY_EXPEL_SPECIFIC, master)
 			if(isbelly(master.loc))
 				to_chat(probably_master, span_phobia("...but something went wrong. Using harsh measures!"))
 				master.forceMove(master.drop_location())
@@ -585,5 +620,63 @@
 		else
 			to_chat(probably_master, span_alert("Okay! Leaving your body alone"))
 
+/datum/component/vore/proc/do_voremessage(datum/source, atom/movable/movable_prey, obj/vore_belly/vb, message_type, pref_type)
+	SIGNAL_HANDLER
+	if(!verify_belly(src, vb))
+		return
+	var/list/inside_list
+	var/list/outside_list
+	switch(message_type)
+		if(VORE_MESSAGE_TYPE_STRUGGLE)
+			inside_list = vb.struggle_messages_inside
+			outside_list = vb.struggle_messages_outside
+		if(VORE_MESSAGE_TYPE_STRUGGLE_ABSORBING)
+			inside_list = vb.absorbed_struggle_messages_inside
+			outside_list = vb.absorbed_struggle_messages_outside
+		if(VORE_MESSAGE_TYPE_DIGEST)
+			inside_list = vb.digest_messages_prey
+			outside_list = vb.digest_messages_owner
+		if(VORE_MESSAGE_TYPE_ABSORBED)
+			inside_list = vb.absorb_messages_prey
+			outside_list = vb.absorb_messages_owner
+		if(VORE_MESSAGE_TYPE_UNABSORBED)
+			inside_list = vb.unabsorb_messages_prey
+			outside_list = vb.unabsorb_messages_owner
+		if(VORE_MESSAGE_TYPE_TRASH)
+			outside_list = vb.spit_trash_messages
+	vb.send_voremessage(movable_prey, outside_list, inside_list, pref_type)
 
+/datum/component/vore/process()
+	update_slowdowns()
+
+/datum/component/vore/proc/update_slowdowns()
+	SIGNAL_HANDLER
+	VORE_MASTER
+	if(!LAZYLEN(vore_organs))
+		master.remove_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly)
+		master.remove_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly)
+		return
+	var/number_of_stuff = 0
+	for(var/obj/vore_belly/belly in vore_organs)
+		number_of_stuff += LAZYLEN(belly.contents)
+	if(number_of_stuff == cached_belly_contents)
+		if(prob(80)) // how 2 fix atmos
+			return // We don't need to update slowdowns if the number of things in bellies hasn't changed.
+	cached_belly_contents = number_of_stuff	
+	var/item_slow = 0
+	var/mob_slow = 0
+	for(var/obj/vore_belly/belly in vore_organs)
+		SEND_SIGNAL(belly, COMSIG_VORE_RECALCULATE_SLOWDOWN)
+		if(belly.item_slowdown > item_slow)
+			item_slow = belly.item_slowdown
+		if(belly.mob_slowdown > mob_slow)
+			mob_slow = belly.mob_slowdown
+	if(item_slow < 1)
+		master.remove_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly)
+	else
+		master.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/thing_in_belly, TRUE, item_slow)
+	if(mob_slow < 1)
+		master.remove_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly)
+	else
+		master.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/mob_in_belly, TRUE, mob_slow)
 

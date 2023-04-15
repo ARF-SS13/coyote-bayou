@@ -154,6 +154,7 @@
 			"bulge_size" = selected.bulge_size,
 			"digestion_brute" = selected.digest_brute,
 			"digestion_burn" = selected.digest_burn,
+			"hork_trash" = selected.spits_trash
 		)
 
 		selected_list["escapable"] = selected.escapable
@@ -186,20 +187,23 @@
 		selected_list["contents"] = selected_contents
 
 	data["selected"] = selected_list
+	var/datum/preferences/my_prefs = user.client.prefs
 	data["prefs"] = list(
-		"allow_dog_borgs" = CHECK_PREFS(user, VOREPREF_DOGBORGS),
-		"allow_eat_noises" = CHECK_PREFS(user, VOREPREF_EAT_SOUNDS),
-		"allow_digestion_noises" = CHECK_PREFS(user, VOREPREF_DIGESTION_SOUNDS),
-		"allow_digestion_damage" = CHECK_PREFS(user, VOREPREF_DIGESTION_DAMAGE),
-		"allow_digestion_death" = CHECK_PREFS(user, VOREPREF_DIGESTION_DEATH),
-		"allow_absorbtion" = CHECK_PREFS(user, VOREPREF_ABSORBTION),
-		"allow_healbelly_healing" = CHECK_PREFS(user, VOREPREF_HEALBELLY),
-		"allow_vore_messages" = CHECK_PREFS(user, VOREPREF_VORE_MESSAGES),
-		"allow_death_messages" = CHECK_PREFS(user, VOREPREF_DEATH_MESSAGES),
-		"allow_being_prey" = CHECK_PREFS(user, VOREPREF_BEING_PREY),
-		"allow_being_fed_prey" = CHECK_PREFS(user, VOREPREF_BEING_FED_PREY),
-		"allow_seeing_belly_descs" = CHECK_PREFS(user, VOREPREF_EXAMINE),
-		"allow_being_sniffed" = CHECK_PREFS(user, VOREPREF_SNIFFABLE),
+		"allow_dog_borgs" = my_prefs.allow_dogborgs,
+		"allow_eat_noises" = my_prefs.allow_eating_sounds,
+		"allow_digestion_noises" = my_prefs.allow_digestion_sounds,
+		"allow_digestion_damage" = my_prefs.allow_digestion_damage,
+		"allow_digestion_death" = my_prefs.allow_digestion_death,
+		"allow_absorbtion" = my_prefs.allow_absorbtion,
+		"allow_healbelly_healing" = my_prefs.allow_healbelly_healing,
+		"allow_vore_messages" = my_prefs.allow_vore_messages,
+		"allow_death_messages" = my_prefs.allow_death_messages,
+		"allow_being_prey" = my_prefs.allow_being_prey,
+		"allow_being_fed_prey" = my_prefs.allow_being_fed_prey,
+		"allow_seeing_belly_descs" = my_prefs.allow_seeing_belly_descriptions,
+		"allow_being_sniffed" = my_prefs.allow_being_sniffed,
+		"allow_trash_messages" = my_prefs.allow_trash_messages,
+		"master_vore_switch" = CHECK_PREFS(user, VOREPREF_MASTER),
 	)
 	return data
 
@@ -374,6 +378,10 @@
 			TOGGLE_VAR(myprefs.allow_healbelly_healing)
 			unsaved_changes = TRUE
 			return TRUE
+		if("master_vore_switch")
+			TOGGLE_VAR(myprefs.master_vore_toggle)
+			unsaved_changes = TRUE
+			return TRUE
 
 /datum/vore_look/proc/pick_from_inside(mob/user, params)
 	var/atom/movable/target = locate(params["pick"])
@@ -514,7 +522,7 @@
 				to_chat(user,span_warning("You can't do that in your state!"))
 				return TRUE
 
-			SEND_SIGNAL(selected, COMSIG_VORE_EXPEL_SPECIFIC, target)
+			SEND_SIGNAL(selected, COMSIG_BELLY_EXPEL_SPECIFIC, target)
 			return TRUE
 
 		if("Move")
@@ -569,6 +577,9 @@
 		if("b_wetloop")
 			selected.wet_loop = !selected.wet_loop
 			. = TRUE
+		if("b_hork_trash")
+			TOGGLE_VAR(selected.spits_trash)
+			. = TRUE
 		if("b_mode")
 			var/list/menu_list = SSvore.digest_modes.Copy()
 			var/new_mode = input(usr, "Choose Mode (currently [selected.digest_mode])", "Mode Choice") as anything in menu_list
@@ -615,6 +626,11 @@
 					var/new_message = input(user,"These are sent to people who examine you when this belly has contents. Write them in 3rd person ('Their %belly is bulging')."+help,"Examine Message (when full)",selected.get_messages("em")) as message
 					if(new_message)
 						selected.set_messages(new_message,"em")
+
+				if("tr")
+					var/new_message = input(user,"These are sent to everyone around you when food is digested and leaves some trash Write them in 3rd person (%pred's %belly ejects a piece of trash)."+help,"Trash Ejection Message",selected.get_messages("tr")) as message
+					if(new_message)
+						selected.set_messages(new_message,"tr")
 
 				if("reset")
 					var/confirm = tgui_alert(user,"This will delete any custom messages. Are you sure?","Confirmation",list("Cancel","DELETE"))

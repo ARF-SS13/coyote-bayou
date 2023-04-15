@@ -74,11 +74,22 @@ GLOBAL_LIST_INIT(player_sizes_list, list("Macro" = SIZESCALE_HUGE, "Big" = SIZES
 #define VOREPREF_HEALBELLY "healbellyable"
 #define VOREPREF_VORE_MESSAGES "you_feel_all_wet"
 #define VOREPREF_DEATH_MESSAGES "someone_gurgled_to_death"
+#define VOREPREF_TRASH_MESSAGES "someone_horked_trash"
 #define VOREPREF_BEING_PREY "am_prey"
 #define VOREPREF_BEING_FED_PREY "am_fed_prey"
 #define VOREPREF_BEING_FED_TO_OTHERS "am_fed_to_someone_else"
 #define VOREPREF_EXAMINE "you_see_a_gut"
-#define VOREPREF_SNIFFABLE ""
+#define VOREPREF_SNIFFABLE "am_smellable"
+#define VOREPREF_SPIT_UP_TRASH "i_like_trash"
+#define VOREPREF_MASTER "master_voer_thing"
+
+/// vore message types
+#define VORE_MESSAGE_TYPE_STRUGGLE "struggle"
+#define VORE_MESSAGE_TYPE_STRUGGLE_ABSORBING "strubsorbed"
+#define VORE_MESSAGE_TYPE_DIGEST "digest"
+#define VORE_MESSAGE_TYPE_ABSORBED "absorbed"
+#define VORE_MESSAGE_TYPE_UNABSORBED "unabsorbed"
+#define VORE_MESSAGE_TYPE_TRASH "trash"
 
 /// vore sound channels are in [code\__DEFINES\sound.dm]
 

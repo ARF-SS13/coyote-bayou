@@ -811,6 +811,14 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 
+/obj/item/clothing/under/blueskirt_alt
+	name = "black and blue skirt"
+	icon_state = "blue_skirt2"
+	item_state = "blue_skirt2"
+	item_color = "blue_skirt2"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
 //NCRANGER STUFF
 
 /obj/item/clothing/under/burma
