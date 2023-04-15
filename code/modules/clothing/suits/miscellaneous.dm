@@ -1036,3 +1036,11 @@
 	icon_state = "dension"
 	item_state = "dension"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/canadian_coat
+	name = "flintlock coat"
+	desc = "A pre war standard issue service coat for the Canadian army but is a man stake for all British commonwealth Nations Winterwear."
+	icon_state = "Canadian_coat"
+	item_state = "Canadian_coat"
+	armor = ARMOR_VALUE_LIGHT
+

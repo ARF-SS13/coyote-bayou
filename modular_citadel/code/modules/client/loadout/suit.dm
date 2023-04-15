@@ -482,7 +482,7 @@
 /datum/gear/suit/dension
 	name = "dension jacket"
 	path = /obj/item/clothing/suit/dension
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
 /datum/gear/suit/pirate
@@ -497,23 +497,29 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/canadian_coat
+	name = "canadian coat"
+	path = /obj/item/clothing/suit/canadian_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
 
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 
 /datum/gear/suit/christmascoatr
 	name = "Red Christmas Coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat/christmascoatr
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/christmascoatg
 	name = "Green Christmas Coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat/christmascoatg
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/christmascoatrg
 	name = "Red and Green Christmas Coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat/christmascoatrg
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 
 // BEGIN_INTERNALS

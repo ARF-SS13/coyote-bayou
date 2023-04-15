@@ -161,6 +161,10 @@
 	name = "Fifi Jester Boots"
 	path = /obj/item/clothing/shoes/fifi
 
+/datum/gear/shoes/ww2brown
+	name = "Type three service shoes"
+	path = /obj/item/clothing/shoes/ww2brown
+
 /// Factions Shoes or well NCR boots.
 
 
