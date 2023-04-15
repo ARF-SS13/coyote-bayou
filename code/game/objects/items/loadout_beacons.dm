@@ -51,6 +51,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	var/allowed_flags
 	/// What kits are inside this kit? If blank, just show a list of everything set to be allowed
 	var/list/multiple_choice = list()
+	/// Just to limit how many things can be taken out, cus apparently thats a thing
+	var/max_items
 
 /obj/item/kit_spawner/waster
 	name = "Wasteland survival kit"
@@ -272,6 +274,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	. = ..()
 	build_loadout_list()
 	build_output_list()
+	max_items = max(LAZYLEN(multiple_choice), 1)
 
 /obj/item/kit_spawner/proc/build_loadout_list()
 	if(LAZYLEN(GLOB.loadout_datums))
@@ -378,7 +381,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 		return FALSE
 	return TRUE
 
+/obj/item/kit_spawner/proc/hax_check()
+	if(max_items <= 0)
+		qdel(src)
+		return FALSE
+
 /obj/item/kit_spawner/proc/spawn_the_thing(mob/user, atom/the_thing)
+	hax_check()
+	max_items--
 	var/turf/spawn_here
 	spawn_here = user ? get_turf(user) : get_turf(src)
 	var/obj/item/new_thing = new the_thing(spawn_here)
