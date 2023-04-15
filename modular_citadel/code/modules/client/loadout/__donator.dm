@@ -1116,8 +1116,8 @@
 /obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
-	new /obj/item/gun/energy/alien(src)
-	new /obj/item/storage/box/alienhandcuffs(src)
+	// /obj/item/gun/energy/alien(src)
+	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
 
 // U

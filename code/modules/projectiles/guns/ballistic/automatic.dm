@@ -400,6 +400,22 @@
 	)
 	can_suppress = FALSE
 
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun
+	name = "9mm Owen Gun"
+	desc = "The Owen gun, known officially as the Owen machine carbine, was an Australian submachine gun designed by Evelyn Owen in 1938. Its a common design out in the wastes due to its portability weight and ability to never jam."
+	icon_state = "owengun"
+	item_state = "rockwell"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	disallowed_mags = null
+	weapon_class = WEAPON_CLASS_CARBINE	
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/fast
+	)
+	can_suppress = FALSE
+
+
 //mac-10: uzi, but compact, softer hitting, harder to control. needs suppressor location adjusted
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10
 	name = "Ingram Model 10" //I like naming things quirkily
@@ -2072,6 +2088,32 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+
+/* * * * * * * * * * *
+ * L1A1 Self Loading Rifle
+ * .308 semi-auto rifle
+ * .308 / 7.62
+ * Uncommoner
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/l1a1
+	name = "L1A1"
+	desc = "The L1A1 Self-Loading Rifle, The standard issue rifle of All Commonwealth Nations."
+	icon_state = "l1a1"
+	item_state = "slr"
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+
 
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
