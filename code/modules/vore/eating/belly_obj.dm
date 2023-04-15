@@ -343,9 +343,11 @@
 
 /obj/vore_belly/Exited(atom/movable/gone, direction)
 	. = ..()
+	trigger_slowdown_update()
+	SEND_SIGNAL(owner, COMSIG_VORE_VORE_OCCURED, src, gone)
+	UnregisterSignal(gone, COMSIG_PARENT_PREQDELETED)	
 	if(!isliving(gone))
 		return
-	UnregisterSignal(gone, COMSIG_PARENT_PREQDELETED)	
 	var/mob/living/living_prey = gone
 	UnregisterSignal(living_prey, list(
 		COMSIG_MOB_DEATH,
@@ -356,8 +358,6 @@
 	living_prey.cure_blind("belly_[REF(src)]")
 	/// at some point, this will be used to tell the mob they've been vored something, and to do something about it
 	/// Like swap out their sprite for one with a big ol' belly, or something.
-	trigger_slowdown_update()
-	SEND_SIGNAL(owner, COMSIG_VORE_VORE_OCCURED, src, gone)
 
 /// Having things in your belly really slows you down!
 /obj/vore_belly/proc/update_slowdowns()
@@ -398,6 +398,7 @@
 	. = 0
 	for(var/atom/movable/AM_prey in contents)
 		. += release_specific_contents(src, AM_prey, silent = TRUE)
+	trigger_slowdown_update()
 	if(silent)
 		return
 	play_eject()
