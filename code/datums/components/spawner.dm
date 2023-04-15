@@ -373,7 +373,7 @@
 		cool_mob.name = name
 		cool_mob.desc = desc
 		cool_mob.icon = icon
-		//cool_mob.icon_state = icon_state
+		cool_mob.icon_state = icon_state
 		cool_mob.maxHealth = maxHealth
 		cool_mob.health = cool_mob.maxHealth
 		cool_mob.color = color
