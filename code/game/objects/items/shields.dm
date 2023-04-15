@@ -647,7 +647,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "ironshield2"
-	item_state = "ironshield2"
+	item_state = "semioval_shield_blue"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
 	max_integrity = -1
 	resistance_flags = null
@@ -662,7 +662,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "ironshield3"
-	item_state = "ironshield3"
+	item_state = "semioval_shield_blue"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
 	max_integrity = -1
 	resistance_flags = null
@@ -677,7 +677,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	icon_state = "ironshield4"
-	item_state = "ironshield4"
+	item_state = "semioval_shield_blue"
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
 	max_integrity = -1
 	resistance_flags = null
