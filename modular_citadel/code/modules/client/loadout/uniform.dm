@@ -1462,3 +1462,15 @@
 	cost = 1
 	path = /obj/item/clothing/under/civ/green_hanfu
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/fifi
+	name = "fifi jester"
+	cost = 1
+	path = /obj/item/clothing/under/fifi
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/blueskirt_alt
+	name = "black and blue skirt"
+	cost = 1
+	path = /obj/item/clothing/under/blueskirt_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

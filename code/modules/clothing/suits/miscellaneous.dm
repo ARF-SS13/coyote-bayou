@@ -1015,3 +1015,17 @@
 	icon_state = "rain_coat_sniper"
 	item_state = "rain_coat_sniper"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/pip_cloak
+	name = "heart cloak"
+	desc = "A pretty blue cloak with a heart on the back."
+	icon_state = "pip_cloak"
+	item_state = "pip_cloak"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/flintlock
+	name = "flintlock coat"
+	desc = "A green jacket with a brown fur lined inner."
+	icon_state = "flintlock"
+	item_state = "flintlock"
+	armor = ARMOR_VALUE_LIGHT

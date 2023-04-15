@@ -377,3 +377,11 @@
 	name = "clown outfit"
 	icon_state = "clown"
 	item_state = "clown"
+
+/obj/item/clothing/under/fifi
+	name = "Fifi"
+	icon_state = "fifi"
+	item_state = "fifi"
+	item_color = "fifi"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
