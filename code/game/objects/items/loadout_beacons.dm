@@ -2125,6 +2125,85 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/shield/riot/buckler/stop
 
 
+/datum/loadout_box/kiteshield
+	entry_tag = "Kite Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/kiteshield
+
+
+/datum/loadout_box/bucklertwo
+	entry_tag = "Oak Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/bucklertwo
+
+/datum/loadout_box/egyptianshield
+	entry_tag = "Dusty Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/egyptianshield
+
+/datum/loadout_box/semioval
+	entry_tag = "Semioval Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/semioval
+
+/datum/loadout_box/romanbuckler
+	entry_tag = "Skirmisher's Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/romanbuckler
+
+/datum/loadout_box/ironshieldfour
+	entry_tag = "Checkered Red Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshieldfour
+
+/datum/loadout_box/ironshieldthree
+	entry_tag = "Red Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshieldthree
+
+/datum/loadout_box/ironshieldtwo
+	entry_tag = "Oval Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshieldtwo
+
+/datum/loadout_box/bronzeshield
+	entry_tag = "Bronze Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/bronzeshield
+
+/datum/loadout_box/ironshield
+	entry_tag = "Iron Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshield
+
+/datum/loadout_box/steelshield
+	entry_tag = "Steel Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/steelshield
+
+/datum/loadout_box/bluebuckler
+	entry_tag = "Blue Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/bluebuckler
+
+/datum/loadout_box/redbuckler
+	entry_tag = "Red Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/redbuckler
+
 
 
 
