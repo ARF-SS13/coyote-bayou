@@ -154,6 +154,7 @@ const VoreSelectedBelly = (props, context) => {
     digestion_burn,
     escapable,
     interacts,
+    hork_trash,
     contents,
   } = belly;
 
@@ -230,6 +231,9 @@ const VoreSelectedBelly = (props, context) => {
               onClick={() => act("set_attribute", { attribute: "b_msgs", msgtype: "em" })}
               content="Examine Message (when full)" />
             <Button
+              onClick={() => act("set_attribute", { attribute: "b_msgs", msgtype: "tr" })}
+              content="Eject Trash Message (outside)" />
+            <Button
               color="red"
               onClick={() => act("set_attribute", { attribute: "b_msgs", msgtype: "reset" })}
               content="Reset Messages" />
@@ -237,7 +241,7 @@ const VoreSelectedBelly = (props, context) => {
         </LabeledList>
       ) || tabIndex === 1 && (
         <Flex wrap="wrap">
-          <Flex.Item basis="49%" grow={1}>
+          <Flex.Item basis="49.5%" grow={1}>
             <LabeledList>
               <LabeledList.Item label="Can Taste">
                 <Button
@@ -260,9 +264,16 @@ const VoreSelectedBelly = (props, context) => {
                   selected={wet_loop}
                   content={wet_loop ? "Yes" : "No"} />
               </LabeledList.Item>
+              <LabeledList.Item label="Eject Trash">
+                <Button
+                  onClick={() => act("set_attribute", { attribute: "b_hork_trash" })}
+                  icon={hork_trash ? "toggle-on" : "toggle-off"}
+                  selected={hork_trash}
+                  content={hork_trash ? "Yes" : "No"} />
+              </LabeledList.Item>
             </LabeledList>
           </Flex.Item>
-          <Flex.Item basis="49%" grow={1}>
+          <Flex.Item basis="49.5%" grow={1}>
             <LabeledList>
               <LabeledList.Item label="Vore Sound">
                 <Button
@@ -448,6 +459,8 @@ const VoreUserPreferences = (props, context) => {
     allow_being_prey,
     allow_being_fed_prey,
     allow_seeing_belly_descs,
+    allow_trash_messages,
+    master_vore_switch,
     allow_being_sniffed, // unused currently
 
     digestable,
@@ -473,7 +486,21 @@ const VoreUserPreferences = (props, context) => {
     }>
       <Flex spacing={1} wrap="wrap" justify="center">
 
-        <Flex.Item basis="45%">
+        <Flex.Item basis="99%">
+          <Button
+            onClick={() => act("master_vore_switch")}
+            icon={master_vore_switch ? "toggle-on" : "toggle-off"}
+            selected={master_vore_switch}
+            fluid
+            tooltip={"This button is the master vore preferences switch. If this is off, all vore preferences will be treated as disallowed, "
+            + "equivalent to setting all of the rest of the buttons to off. Turning it on won't enable any other preferences, but it will "
+            + "permit allowed vore preferences to be checked. "
+            + (master_vore_switch
+              ? "Click here to disable all vore for you."
+              : "Click here to allow certain vore for you.")}
+            content={master_vore_switch ? "Master Vore Preference Switch: ON" : "Master Vore Preference Switch: OFF"} />
+        </Flex.Item>
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_devour")}
             icon={allow_being_prey ? "toggle-on" : "toggle-off"}
@@ -485,7 +512,7 @@ const VoreUserPreferences = (props, context) => {
               : "Click here to allow being prey.")}
             content={allow_being_prey ? "You can be prey" : "You can not be prey"} />
         </Flex.Item>
-        <Flex.Item basis="45%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_feeding")}
             icon={allow_being_fed_prey ? "toggle-on" : "toggle-off"}
@@ -499,7 +526,7 @@ const VoreUserPreferences = (props, context) => {
             content={allow_being_fed_prey ? "You can be fed prey" : "You can not be fed prey"} />
         </Flex.Item>
 
-        <Flex.Item basis="45%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_digestion_damage")}
             icon={allow_digestion_damage ? "toggle-on" : "toggle-off"}
@@ -513,7 +540,7 @@ const VoreUserPreferences = (props, context) => {
               : "Click here to allow being damaged by digestion.")}
             content={allow_digestion_damage ? "Digestion can hurt you" : "Digestion can not hurt you"} />
         </Flex.Item>
-        <Flex.Item basis="45%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_digestion_death")}
             icon={allow_digestion_death ? "toggle-on" : "toggle-off"}
@@ -553,7 +580,7 @@ const VoreUserPreferences = (props, context) => {
             content={allow_healbelly_healing ? "You can be absorbed" : "You can not be absorbed"} />
         </Flex.Item> */}
 
-        <Flex.Item basis="33%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_eat_noises")}
             icon={allow_eat_noises ? "toggle-on" : "toggle-off"}
@@ -567,7 +594,7 @@ const VoreUserPreferences = (props, context) => {
             tooltipPosition="bottom-start"
             content={allow_eat_noises ? "Eating is loud" : "Eating is quiet"} />
         </Flex.Item>
-        <Flex.Item basis="33%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_digestion_noises")}
             icon={allow_digestion_noises ? "toggle-on" : "toggle-off"}
@@ -582,15 +609,7 @@ const VoreUserPreferences = (props, context) => {
             tooltipPosition="bottom-start"
             content={allow_digestion_noises ? "Digestion is loud" : "Digestion is quiet"} />
         </Flex.Item>
-        <Flex.Item basis="33%">
-          <Button
-            fluid
-            content="Set Taste"
-            icon="grin-tongue"
-            onClick={() => act("setflavor")} />
-        </Flex.Item>
-
-        <Flex.Item basis="33%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_vore_messages")}
             icon={allow_vore_messages ? "toggle-on" : "toggle-off"}
@@ -604,7 +623,7 @@ const VoreUserPreferences = (props, context) => {
             tooltipPosition="bottom-start"
             content={allow_vore_messages ? "Vore messages: Visible" : "Vore messages: Hidden"} />
         </Flex.Item>
-        <Flex.Item basis="33%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_death_messages")}
             icon={allow_death_messages ? "toggle-on" : "toggle-off"}
@@ -618,7 +637,7 @@ const VoreUserPreferences = (props, context) => {
             tooltipPosition="bottom-start"
             content={allow_death_messages ? "Vore death: Visible" : "Vore death: Hidden"} />
         </Flex.Item>
-        <Flex.Item basis="33%">
+        <Flex.Item basis="49.5%">
           <Button
             onClick={() => act("toggle_seeing_belly_descs")}
             icon={allow_seeing_belly_descs ? "toggle-on" : "toggle-off"}
@@ -630,6 +649,26 @@ const VoreUserPreferences = (props, context) => {
               : "Click here to turn on seeing belly descriptions.")}
             tooltipPosition="bottom-start"
             content={allow_seeing_belly_descs ? "Other bellies: Visible" : "Other bellies: Hidden"} />
+        </Flex.Item>
+        <Flex.Item basis="49.5%">
+          <Button
+            onClick={() => act("toggle_seeing_people_spit_up_trash")}
+            icon={allow_trash_messages ? "toggle-on" : "toggle-off"}
+            selected={allow_trash_messages}
+            fluid
+            tooltip={"Toggles whether or not you can see when other people spit up trash. "
+            + (allow_trash_messages
+              ? "Click here to turn off seeing people spit up trash."
+              : "Click here to turn on seeing people spit up trash.")}
+            tooltipPosition="bottom-start"
+            content={allow_trash_messages ? "Trash messages: Visible" : "Trash messages: Hidden"} />
+        </Flex.Item>
+        <Flex.Item basis="49.5%">
+          <Button
+            fluid
+            content="Set Taste"
+            icon="grin-tongue"
+            onClick={() => act("setflavor")} />
         </Flex.Item>
 
         {/* <Flex.Item basis="33%">
@@ -655,14 +694,14 @@ const VoreUserPreferences = (props, context) => {
       </Flex>
       <Section>
         <Flex spacing={1}>
-          <Flex.Item basis="49%">
+          <Flex.Item basis="49.5%">
             <Button
               fluid
               content="Save Prefs"
               icon="save"
               onClick={() => act("saveprefs")} />
           </Flex.Item>
-          <Flex.Item basis="49%" grow={1}>
+          <Flex.Item basis="49.5%" grow={1}>
             <Button
               fluid
               content="Reload Prefs"

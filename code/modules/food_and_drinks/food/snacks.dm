@@ -89,34 +89,43 @@ All foods are distributed among various categories. Use common sense.
 		var/mob/living/location = loc
 		var/obj/item/trash_item = generate_trash(location)
 		qdel(src)
-		if(istype(location))
+		if(isliving(location))
 			location.put_in_hands(trash_item)
+			return
+		SEND_SIGNAL(location, COMSIG_BELLY_HANDLE_TRASH, trash_item)
+		return
 
 /obj/item/reagent_containers/food/snacks/attack_self(mob/user)
 	return
 
+/obj/item/reagent_containers/food/snacks/take_a_bellybite(datum/source, obj/vore_belly/gut, mob/living/vorer)
+	INVOKE_ASYNC(src, .proc/attempt_forcefeed, vorer, vorer, TRUE, TRUE, TRUE)
+	if(gut.can_taste)
+		checkLiked(min(bitesize / reagents.total_volume, 1), vorer)
+	return TRUE
 
 /obj/item/reagent_containers/food/snacks/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	INVOKE_ASYNC(src, .proc/attempt_forcefeed, M, user)
 
-/obj/item/reagent_containers/food/snacks/proc/attempt_forcefeed(mob/living/M, mob/living/user)
+/obj/item/reagent_containers/food/snacks/proc/attempt_forcefeed(mob/living/M, mob/living/user, forced, silent, vorebite)
 	if(!eatverb)
 		eatverb = pick("bite","chew","nibble","gnaw","gobble","chomp")
-	if(!reagents.total_volume)						//Shouldn't be needed but it checks to see if it has anything left in it.
-		to_chat(user, span_notice("None of [src] left, oh no!"))
+	if(!reagents.total_volume) //Shouldn't be needed but it checks to see if it has anything left in it.
+		if(!silent)
+			to_chat(user, span_notice("None of [src] left, oh no!"))
 		qdel(src)
 		return 0
 	if(iscarbon(M))
-		if(!canconsume(M, user))
+		if(!forced && !canconsume(M, user))
 			return 0
 
 		var/fullness = M.nutrition + 10
 		for(var/datum/reagent/consumable/C in M.reagents.reagent_list) //we add the nutrition value of what we're currently digesting
 			fullness += C.nutriment_factor * C.volume / C.metabolization_rate
 
-		if(M == user)								//If you're eating it yourself.
+		if(M == user || forced) //If you're eating it yourself.
 			if(junkiness && M.satiety < -150 && M.nutrition > NUTRITION_LEVEL_STARVING + 50)
 				if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 					to_chat(M, span_notice("You happily choke down yet more junk food!"))
@@ -124,53 +133,54 @@ All foods are distributed among various categories. Use common sense.
 				else
 					to_chat(M, span_danger("You feel sick as you choke down yet more junk food!"))
 					M.adjust_disgust(1)
-			switch(fullness)
-				if(-INFINITY to 50)
-					if(HAS_TRAIT(M, TRAIT_VORACIOUS))
-						M.visible_message(
-							span_notice("[M] ravenously [eatverb]s \the [src], gobbling it down!"), 
-							span_notice("You ravenously [eatverb] \the [src], gobbling it down!"))
-					else
-						M.visible_message(
-							span_notice("[M] hungrily [eatverb]s \the [src], gobbling it down!"), 
-							span_notice("You hungrily [eatverb] \the [src], gobbling it down!"))
-				if(50 to 200)
-					if(HAS_TRAIT(M, TRAIT_VORACIOUS))
-						M.visible_message(
-							span_notice("[M] ravenously [eatverb]s \the [src]!"), 
-							span_notice("You ravenously [eatverb] \the [src]!"))
-					else
-						M.visible_message(
-							span_notice("[M] hungrily [eatverb]s \the [src]."), 
-							span_notice("You hungrily [eatverb] \the [src]."))
-				if(200 to 500)
-					if(HAS_TRAIT(M, TRAIT_VORACIOUS))
-						M.visible_message(
-							span_notice("[M] vigorously [eatverb]s \the [src]!"), 
-							span_notice("You vigorously [eatverb] \the [src]!"))
-					else
-						M.visible_message(
-							span_notice("[M] [eatverb]s \the [src]."), 
-							span_notice("You [eatverb] \the [src]."))
-				if(500 to 650)
-					if(HAS_TRAIT(M, TRAIT_VORACIOUS))
-						M.visible_message(
-							span_notice("[M] gluttonously [eatverb]s \the [src]!"), 
-							span_notice("You gluttonously [eatverb] \the [src]!"))
-					else
-						M.visible_message(
-							span_notice("[M] unwillingly [eatverb]s \the [src]."), 
-							span_notice("You unwillingly [eatverb] \the [src]."))
-				if((600 * (1 + M.overeatduration / 1000)) to INFINITY)
-					if(HAS_TRAIT(M, TRAIT_VORACIOUS))
-						M.visible_message(
-							span_notice("[M] gluttonously [eatverb]s \the [src], cramming it down [M.p_their()] throat!"), 
-							span_notice("You gluttonously [eatverb] \the [src], cramming it down your throat!"))
-					else
-						M.visible_message(
-							span_warning("[M] cannot force any more of \the [src] to go down [M.p_their()] throat!"), 
-							span_warning("You cannot force any more of \the [src] to go down your throat!"))
-						return
+			if(!silent)
+				switch(fullness)
+					if(-INFINITY to 50)
+						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
+							M.visible_message(
+								span_notice("[M] ravenously [eatverb]s \the [src], gobbling it down!"), 
+								span_notice("You ravenously [eatverb] \the [src], gobbling it down!"))
+						else
+							M.visible_message(
+								span_notice("[M] hungrily [eatverb]s \the [src], gobbling it down!"), 
+								span_notice("You hungrily [eatverb] \the [src], gobbling it down!"))
+					if(50 to 200)
+						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
+							M.visible_message(
+								span_notice("[M] ravenously [eatverb]s \the [src]!"), 
+								span_notice("You ravenously [eatverb] \the [src]!"))
+						else
+							M.visible_message(
+								span_notice("[M] hungrily [eatverb]s \the [src]."), 
+								span_notice("You hungrily [eatverb] \the [src]."))
+					if(200 to 500)
+						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
+							M.visible_message(
+								span_notice("[M] vigorously [eatverb]s \the [src]!"), 
+								span_notice("You vigorously [eatverb] \the [src]!"))
+						else
+							M.visible_message(
+								span_notice("[M] [eatverb]s \the [src]."), 
+								span_notice("You [eatverb] \the [src]."))
+					if(500 to 650)
+						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
+							M.visible_message(
+								span_notice("[M] gluttonously [eatverb]s \the [src]!"), 
+								span_notice("You gluttonously [eatverb] \the [src]!"))
+						else
+							M.visible_message(
+								span_notice("[M] unwillingly [eatverb]s \the [src]."), 
+								span_notice("You unwillingly [eatverb] \the [src]."))
+					if((600 * (1 + M.overeatduration / 1000)) to INFINITY)
+						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
+							M.visible_message(
+								span_notice("[M] gluttonously [eatverb]s \the [src], cramming it down [M.p_their()] throat!"), 
+								span_notice("You gluttonously [eatverb] \the [src], cramming it down your throat!"))
+						else
+							M.visible_message(
+								span_warning("[M] cannot force any more of \the [src] to go down [M.p_their()] throat!"), 
+								span_warning("You cannot force any more of \the [src] to go down your throat!"))
+							return
 		else
 			if(isbrain(M))
 				to_chat(user, span_warning("[M] doesn't seem to have a mouth!"))
@@ -191,19 +201,24 @@ All foods are distributed among various categories. Use common sense.
 				span_danger("[user] forces [M] to eat [src]!</span>"),
 				span_userdanger("[user] forces you to eat [src]!</span>"))
 
-		if(reagents)								//Handle ingestion of the reagent.
-			log_combat(user, M, "fed", src.reagents.log_list())
+		if(reagents) //Handle ingestion of the reagent.
+			if(vorebite)
+				log_combat(user, M, "vored-fed themself", src.reagents.log_list())
+			else
+				log_combat(user, M, "fed", src.reagents.log_list())
 			if(M.satiety > -200)
 				M.satiety -= junkiness
-			playsound(M.loc,'sound/items/eatfood.ogg', rand(10,50), 1)
+			if(!silent)
+				playsound(M.loc,'sound/items/eatfood.ogg', rand(10,50), 1)
 			if(reagents.total_volume)
 				SEND_SIGNAL(src, COMSIG_FOOD_EATEN, M, user)
 				var/fraction = min(bitesize / reagents.total_volume, 1)
 				reagents.reaction(M, INGEST, fraction)
 				reagents.trans_to(M, bitesize, log = TRUE)
 				bitecount++
-				On_Consume(M)
-				checkLiked(fraction, M)
+				On_Consume(M, vorebite)
+				if(!vorebite)
+					checkLiked(fraction, M)
 				return 1
 
 	return 0

@@ -47,13 +47,24 @@
 	. += "Click this thing onto something, and if its edible, you'll try and stuff it into your selected belly, if any."
 
 /obj/item/hand_item/vorer/attack(mob/living/L, mob/living/carbon/user)
+	if(!SEND_SIGNAL(user, COMSIG_VORE_CHECK_EDIBILITY, L))
+		return
 	SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, user, L)
 
 /obj/item/hand_item/vorer/attack_obj(obj/O, mob/living/user)
+	if(!SEND_SIGNAL(user, COMSIG_VORE_CHECK_EDIBILITY, O))
+		return
 	SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, user, O)
 
 /obj/item/hand_item/vorer/attack_obj_nohit(obj/O, mob/living/user)
+	if(!SEND_SIGNAL(user, COMSIG_VORE_CHECK_EDIBILITY, O))
+		return
 	SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, user, O)
+
+/obj/item/hand_item/vorer/attackby(obj/item/I, mob/living/user, params)
+	if(!SEND_SIGNAL(user, COMSIG_VORE_CHECK_EDIBILITY, I))
+		return
+	SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, user, I)
 
 // Feeding someone to someone else? hooboy...
 
@@ -188,6 +199,8 @@
 	if(!SSvore.can_eat(movable_prey))
 		to_chat(user, span_alert("[movable_prey] can't be eaten!"))
 		return
+	if(!SEND_SIGNAL(movable_prey, COMSIG_VORE_CHECK_EDIBILITY, movable_prey))
+		return
 	to_chat(user, span_notice("[span_green("[movable_prey]")] selected as [span_green("prey")]!"))
 	our_prey = WEAKREF(movable_prey)
 	user.do_attack_animation(movable_prey)
@@ -228,5 +241,3 @@
 		return
 	SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, living_pred, movable_prey)
 	qdel(src)
-
-

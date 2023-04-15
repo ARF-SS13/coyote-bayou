@@ -1334,14 +1334,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<h2>Vore prefs</h2>"
-			dat += "<b>Being Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_prey'>[(allow_being_prey) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Being Fed Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_fed_prey'>[(allow_being_fed_prey) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Digestion Damage:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_damage'>[(allow_digestion_damage) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Digestion Death:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_death'>[(allow_digestion_death) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Vore Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_vore_messages'>[(allow_vore_messages) ? "Visible" : "Hidden"]</a><br>"
-			dat += "<b>Vore Death Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_death_messages'>[(allow_death_messages) ? "Visible" : "Hidden"]</a><br>"
-			dat += "<b>Vore Eating Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_eating_sounds'>[(allow_eating_sounds) ? "Audible" : "Muted"]</a><br>"
-			dat += "<b>Digestion Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_sounds'>[(allow_digestion_sounds) ? "Audible" : "Muted"]</a><br>"
+			dat += "<b>Master Vore Toggle:</b> <a href='?_src_=prefs;task=input;preference=master_vore_toggle'>[(master_vore_toggle) ? "Per Preferences" : "All Disabled"]</a><br>"
+			if(master_vore_toggle)
+				dat += "<b>Being Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_prey'>[(allow_being_prey) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Being Fed Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_fed_prey'>[(allow_being_fed_prey) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Digestion Damage:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_damage'>[(allow_digestion_damage) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Digestion Death:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_death'>[(allow_digestion_death) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Vore Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_vore_messages'>[(allow_vore_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Trash Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_trash_messages'>[(allow_trash_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Death Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_death_messages'>[(allow_death_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Eating Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_eating_sounds'>[(allow_eating_sounds) ? "Audible" : "Muted"]</a><br>"
+				dat += "<b>Digestion Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_sounds'>[(allow_digestion_sounds) ? "Audible" : "Muted"]</a><br>"
 			dat += "</tr></table>"
 			dat += "<br>"
 
@@ -2372,7 +2375,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!isnull(rec))
 						medical_records = rec
 */
-
+				////////////////// VORE STUFF /
+				if("master_vore_toggle")
+					TOGGLE_VAR(master_vore_toggle)
 				if("allow_being_prey")
 					TOGGLE_VAR(allow_being_prey)
 				if("allow_being_fed_prey")
@@ -2381,6 +2386,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					TOGGLE_VAR(allow_digestion_damage)
 				if("allow_digestion_death")
 					TOGGLE_VAR(allow_digestion_death)
+				if("allow_trash_messages")
+					TOGGLE_VAR(allow_trash_messages)
 				if("allow_vore_messages")
 					TOGGLE_VAR(allow_vore_messages)
 				if("allow_death_messages")

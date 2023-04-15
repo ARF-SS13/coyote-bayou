@@ -47,6 +47,8 @@
 	var/allow_being_fed_prey = FALSE
 	var/allow_seeing_belly_descriptions = FALSE
 	var/allow_being_sniffed = FALSE
+	var/allow_trash_messages = FALSE
+	var/master_vore_toggle = FALSE
 
 
 	// These are 'modifier' prefs, do nothing on their own but pair with drop_prey/drop_pred settings.

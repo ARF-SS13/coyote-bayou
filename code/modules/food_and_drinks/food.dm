@@ -39,9 +39,6 @@
 		reagents.trans_to(H, 5, 1, 0)
 		if(gut.can_taste)
 			checkLiked(5, H)
-	if(iscyborg(vorer))
-		var/mob/living/silicon/robot/R = vorer
-		R.cell.charge += 150
 	if(!reagents.total_volume)
 		qdel(src)
 	return TRUE
