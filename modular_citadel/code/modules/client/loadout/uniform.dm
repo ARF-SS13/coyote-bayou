@@ -1474,3 +1474,8 @@
 	cost = 1
 	path = /obj/item/clothing/under/blueskirt_alt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/priate
+	name = "pirate uniform"
+	path = /obj/item/clothing/under/costume/pirate
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
