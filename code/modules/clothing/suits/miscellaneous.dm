@@ -1029,3 +1029,10 @@
 	icon_state = "flintlock"
 	item_state = "flintlock"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/dension
+	name = "Denison jacket"
+	desc = "A coverall jacket created by the British during the second world war, its still in use by commonwealth units by specifically Paratroopers and units working in colder climates."
+	icon_state = "dension"
+	item_state = "dension"
+	armor = ARMOR_VALUE_LIGHT

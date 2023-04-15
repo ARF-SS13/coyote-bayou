@@ -479,6 +479,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/dension
+	name = "dension jacket"
+	path = /obj/item/clothing/suit/dension
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 //These should be left commented out until the holidays or special events.
 /*
 /datum/gear/suit/christmascoatr
