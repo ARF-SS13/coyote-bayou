@@ -689,6 +689,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 5,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40 = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 10,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun = 10,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 10,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 5,
 		/obj/item/gun/ballistic/automatic/m1carbine = 10,
