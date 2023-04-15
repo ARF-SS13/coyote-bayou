@@ -1050,3 +1050,222 @@
 	item_color = "green_hanfu"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+//Swimsuits
+
+/obj/item/clothing/under/swimsuit/black
+	name = "black swimsuit"
+	desc = "An oldfashioned black swimsuit."
+	icon_state = "swim_black"
+	item_state = "swim_black"
+	item_color = "swim_black"
+
+/obj/item/clothing/under/swimsuit/blue
+	name = "blue swimsuit"
+	desc = "An oldfashioned blue swimsuit."
+	icon_state = "swim_blue"
+	item_state = "swim_blue"
+	item_color = "swim_blue"
+
+/obj/item/clothing/under/swimsuit/purple
+	name = "purple swimsuit"
+	desc = "An oldfashioned purple swimsuit."
+	icon_state = "swim_purp"
+	item_state = "swim_purp"
+	item_color = "swim_purp"
+
+/obj/item/clothing/under/swimsuit/green
+	name = "green swimsuit"
+	desc = "An oldfashioned green swimsuit."
+	icon_state = "swim_green"
+	item_state = "swim_green"
+	item_color = "swim_green"
+
+/obj/item/clothing/under/swimsuit/red
+	name = "red swimsuit"
+	desc = "An oldfashioned red swimsuit."
+	icon_state = "swim_red"
+	item_state = "swim_red"
+	item_color = "swim_red"
+
+/obj/item/clothing/under/swimsuit/striped
+	name = "striped swimsuit"
+	desc = "A more revealing striped swimsuit."
+	icon_state = "swim_striped"
+	item_state = "swim_striped"
+	item_color = "swim_striped"
+
+/obj/item/clothing/under/swimsuit/white
+	name = "white swimsuit"
+	desc = "A classic one piece."
+	icon_state = "swim_white"
+	item_state = "swim_white"
+	item_color = "swim_white"
+
+/obj/item/clothing/under/swimsuit/earth
+	name = "earthen swimsuit"
+	desc = "A design more popular on Earth these days."
+	icon_state = "swim_earth"
+	item_state = "swim_earth"
+	item_color = "swim_earth"
+
+/obj/item/clothing/under/revealingdress
+	name = "Revealing Dress"
+	desc = "A blue topped dress with a black bottom. Quite revealing!"
+	icon_state = "revealingdress"
+	item_state = "revealingdress"
+	item_color = "revealingdress"
+
+/obj/item/clothing/under/rippedpunk
+	name = "Ripped Punk"
+	desc = "A ripped black outfit"
+	icon_state = "rippedpunk"
+	item_state = "rippedpunk"
+	item_color = "rippedpunk"
+
+/obj/item/clothing/under/gothic_dress_virgo
+	name = "gothic dress"
+	desc = "Hot Topic and stuff."
+	icon_state = "gothic"
+	item_state = "gothic"
+	item_color = "gothic"
+
+/obj/item/clothing/under/fancy_red_formaldress
+	name = "Red Formal"
+	desc = "blood red and long"
+	icon_state = "formalred"
+	item_state = "formalred"
+	item_color = "formalred"
+
+/obj/item/clothing/under/greenasym
+	name = "Green wrapped dress"
+	desc = "A green dress that wraps around your form."
+	icon_state = "greenasym"
+	item_state = "greenasym"
+	item_color = "greenasym"
+
+/obj/item/clothing/under/cyberhell
+	name = "Cyber Hell"
+	desc = "Some sort of dress. Fancy."
+	icon_state = "cyberhell"
+	item_state = "cyberhell"
+	item_color = "cyberhell"
+
+/obj/item/clothing/under/floofdress
+	name = "floof dress"
+	desc = "A white floofy dress"
+	icon_state = "floofdress"
+	item_state = "floofdress"
+	item_color = "floofdress"
+
+/obj/item/clothing/under/blackngold
+	name = "black and gold dress"
+	desc = "A fancy dress of black and gold"
+	icon_state = "blackngold"
+	item_state = "blackngold"
+	item_color = "blackngold"
+
+/obj/item/clothing/under/sheerblue
+	name = "A sheer blue dress"
+	desc = "A pretty blue shimmering dress."
+	icon_state = "sheerblue"
+	item_state = "sheerblue"
+	item_color = "sheerblue"
+
+/obj/item/clothing/under/whitegown
+	name = "White Gown"
+	desc = "A white gown with black sleeves"
+	icon_state = "whitegown"
+	item_state = "whitegown"
+	item_color = "whitegown"
+
+/obj/item/clothing/under/pinksun
+	name = "pink summer dress"
+	desc = "A dress!"
+	icon_state = "pinksun"
+	item_state = "pinksun"
+	item_color = "pinksun"
+
+/obj/item/clothing/under/whitesun
+	name = "white summer dress"
+	desc = "A dress!"
+	icon_state = "pinkwhite"
+	item_state = "pinkwhite"
+	item_color = "pinkwhite"
+
+/obj/item/clothing/under/bowsun
+	name = "pink summer dress with a bow"
+	desc = "A dress!"
+	icon_state = "bowsun"
+	item_state = "bowsun"
+	item_color = "bowsun"
+
+/obj/item/clothing/under/bluesun
+	name = "blue summer dress"
+	desc = "A dress!"
+	icon_state = "bluesun"
+	item_state = "bluesun"
+	item_color = "bluesun"
+
+/obj/item/clothing/under/shortpink
+	name = "short pink dress"
+	desc = "A dress!"
+	icon_state = "shortpink"
+	item_state = "shortpink"
+	item_color = "shortpink"
+
+/obj/item/clothing/under/twopiece
+	name = "A two piece dress"
+	desc = "A dress!"
+	icon_state = "twopiece"
+	item_state = "twopiece"
+	item_color = "twopiece"
+
+/obj/item/clothing/under/gothic2
+	name = "gothic dress"
+	desc = "A dress!"
+	icon_state = "gothic2"
+	item_state = "gothic2"
+	item_color = "gothic2"
+
+/obj/item/clothing/under/wednesday
+	name = "Wednesday dress"
+	desc = "A dress!"
+	icon_state = "wednesday"
+	item_state = "wednesday"
+	item_color = "wednesday"
+
+/obj/item/clothing/under/gayvampire
+	name = "vampire uniform"
+	desc = "I want to suck your blood"
+	icon_state = "gayvampire"
+	item_state = "gayvampire"
+	item_color = "gayvampire"
+
+/obj/item/clothing/under/corsetdress
+	name = "corset dress"
+	desc = "A dress!"
+	icon_state = "corsetdress"
+	item_state = "corsetdress"
+	item_color = "corsetdress"
+
+/obj/item/clothing/under/goldwrap
+	name = "golden wrap"
+	desc = "A dress!"
+	icon_state = "goldwrap"
+	item_state = "goldwrap"
+	item_color = "goldwrap"
+
+/obj/item/clothing/under/golddress
+	name = "golden dress"
+	desc = "A dress!"
+	icon_state = "golddress"
+	item_state = "golddress"
+	item_color = "golddress"
+
+/obj/item/clothing/under/countess
+	name = "countess dress"
+	desc = "A dress!"
+	icon_state = "countess"
+	item_state = "countess"
+	item_color = "countess"
