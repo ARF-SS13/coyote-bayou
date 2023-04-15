@@ -799,6 +799,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 10,
 		/obj/item/gun/ballistic/automatic/assault_carbine = 10,
 		/obj/item/gun/ballistic/automatic/armalite = 10,
+		/obj/item/gun/ballistic/automatic/l1a1 = 10,
 		/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
 		/obj/item/gun/ballistic/shotgun/grenade = 5,
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 10,
