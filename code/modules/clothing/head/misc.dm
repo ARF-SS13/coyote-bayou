@@ -673,3 +673,10 @@
 	desc = "A woolen Scottish military hat, with a plaid pattern and tails that come off it. Notably in the pre war this was used by several different specific bagpipe regiments of Commonwealth nations..And was used primarly by the british for its scottish brigades."
 	icon_state = "glengarry"
 	item_state = "glengarry"
+
+/obj/item/clothing/head/fifi
+	name = "fifi"
+	desc = "A colorful firlly hat"
+	icon_state = "fifi_hat"
+	item_state = "fifi_hat"
+

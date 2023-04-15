@@ -572,3 +572,7 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/glengarry
 	name = "Glengarry"
 	path = /obj/item/clothing/head/burma/glengarry
+
+/datum/gear/head/fifi
+	name = "Fifi jester hat"
+	path = /obj/item/clothing/head/fifi

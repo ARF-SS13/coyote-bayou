@@ -506,3 +506,7 @@
 	name = "Commonwealth Boots"
 	desc = "British style black ankle boots with a canvas gaiter around the ankle"
 	icon_state = "brit_boots"
+
+/obj/item/clothing/shoes/fifi
+	name = "Fifi"
+	icon_state = "fifi_socks"
