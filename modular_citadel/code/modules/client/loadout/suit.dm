@@ -491,6 +491,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/bee
+	name = "bee costume"
+	path = /obj/item/clothing/suit/hooded/bee_costume
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 
