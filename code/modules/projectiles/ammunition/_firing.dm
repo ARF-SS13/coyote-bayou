@@ -24,6 +24,7 @@
 					max_spread += 1.5//This is cripplingly bad. Trust me.
 				if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
 					max_spread *= 0.5 // Nice shot!
+				max_spread = clamp(max_spread, 0, 90)
 				angle_out = clamp(rand(-max_spread, max_spread), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 
 	var/targloc = get_turf(target)
