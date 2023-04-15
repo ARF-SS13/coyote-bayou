@@ -49,6 +49,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Pacifist", "Melee - Wimpy"),
 			list("Pacifist", "Poor Aim"),
 			list("Pacifist", "Fat-Fingered")
+			list("Speed Walker", "Mobility - Can not Run")
 			)
 	return ..()
 
