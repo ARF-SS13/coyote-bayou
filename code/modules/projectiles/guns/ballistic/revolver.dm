@@ -290,7 +290,7 @@
 /obj/item/gun/ballistic/revolver/police/webley
 	name = "Webley Revolver"
 	desc = "The Webley Revolver was the pre standard issue service pistol for the armed forces of the United Kingdom, and countries of the British Empire."
-	icon = /icon (icons/fallout/objects/guns/ballistic.dmi)
+	icon = (icons/fallout/objects/guns/ballistic.dmi)
 	icon_state = "webley"
 	item_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
