@@ -1521,3 +1521,141 @@
 	name = "earth swimsuit"
 	path = /obj/item/clothing/under/swimsuit/earth
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/revealingdress
+	name = "revealing dress"
+	cost = 1
+	path = /obj/item/clothing/under/revealingdress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/rippedpunk
+	name = "ripped punk"
+	cost = 1
+	path = /obj/item/clothing/under/rippedpunk
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gothic_dress_virgo
+	name = "gothic dress"
+	cost = 1
+	path = /obj/item/clothing/under/gothic_dress_virgo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fancy_red_formaldress
+	name = "dark red fancy dress"
+	cost = 1
+	path = /obj/item/clothing/under/fancy_red_formaldress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/greenasym
+	name = "green wrapped dress"
+	cost = 1
+	path = /obj/item/clothing/under/greenasym
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/cyberhell
+	name = "cyber hell dress"
+	cost = 1
+	path = /obj/item/clothing/under/cyberhell
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/floofdress
+	name = "floofy dress"
+	cost = 1
+	path = /obj/item/clothing/under/floofdress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/blackngold
+	name = "black and gold dresss"
+	cost = 1
+	path = /obj/item/clothing/under/blackngold
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/sheerblue
+	name = "Sheer blue dresss"
+	cost = 1
+	path = /obj/item/clothing/under/sheerblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/whitegown
+	name = "white gown"
+	cost = 1
+	path = /obj/item/clothing/under/whitegown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/pinksun
+	name = "pink summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/pinksun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/whitesun
+	name = "white summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/whitesun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/bowsun
+	name = "pink summer dress with bow"
+	cost = 1
+	path = /obj/item/clothing/under/bowsun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/bluesun
+	name = "blue summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/bluesun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/shortpink
+	name = "short pink dress"
+	cost = 1
+	path = /obj/item/clothing/under/shortpink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/twopiece
+	name = "two piece dress"
+	cost = 1
+	path = /obj/item/clothing/under/twopiece
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gothic2
+	name = "gothic dress alt"
+	cost = 1
+	path = /obj/item/clothing/under/gothic2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/wednesday
+	name = "wednesday dress"
+	cost = 1
+	path = /obj/item/clothing/under/wednesday
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gayvampire
+	name = "Vampire uniform"
+	cost = 1
+	path = /obj/item/clothing/under/gayvampire
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/corsetdress
+	name = "Corset dress"
+	cost = 1
+	path = /obj/item/clothing/under/corsetdress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/goldwrap
+	name = "golden wrap dress"
+	cost = 1
+	path = /obj/item/clothing/under/goldwrap
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/golddress
+	name = "golden dress"
+	cost = 1
+	path = /obj/item/clothing/under/golddress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/countess
+	name = "countess dress"
+	cost = 1
+	path = /obj/item/clothing/under/countess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
