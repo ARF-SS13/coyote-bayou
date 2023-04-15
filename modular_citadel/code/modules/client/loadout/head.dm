@@ -817,3 +817,4 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/fifi
 	name = "Fifi jester hat"
 	path = /obj/item/clothing/head/fifi
+	
