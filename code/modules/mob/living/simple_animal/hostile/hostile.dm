@@ -216,6 +216,10 @@
 		return FALSE
 	if(stat == DEAD)
 		return FALSE
+	if(CHECK_BITFIELD(datum_flags, DF_VAR_EDITED))
+		return FALSE
+	if(CHECK_BITFIELD(flags_1, ADMIN_SPAWNED_1))
+		return FALSE
 	if(health <= 0)
 		return FALSE
 	if(AIStatus == AI_ON || AIStatus == AI_OFF)
