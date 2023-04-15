@@ -789,7 +789,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
-	H.equip_to_slot(gasmask, ITEM_SLOT_MASK)
+	H.equip_to_slot(gas, ITEM_SLOT_MASK)
 	H.regenerate_icons()
 
 /datum/quirk/paper_skin
