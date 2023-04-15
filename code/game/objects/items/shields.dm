@@ -194,7 +194,7 @@
 	icon_state = "shield_riot"
 	item_state = "shield_riot"
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
-	armor = list("melee" = 80, "bullet" = 65, "laser" = 60, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
+	armor = list("melee" = 20, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 	force = 10
 	block_parry_data = /datum/block_parry_data/shield/riot
 	throwforce = 5
@@ -207,7 +207,7 @@
 	var/repair_material = /obj/item/stack/sheet/plastic
 	var/can_shatter = FALSE
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_TRANSPARENT
-	max_integrity = 2250
+	max_integrity = -1
 
 /datum/block_parry_data/shield/riot
 	block_damage_multiplier = 0.35
@@ -265,7 +265,7 @@ obj/item/shield/riot/bullet_proof
 	item_state = "shield_bulletproof"
 	block_parry_data = /datum/block_parry_data/shield/bulletproof
 	armor = list("melee" = 50, "bullet" = 90, "laser" = 50, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
-	max_integrity = 1750
+	max_integrity = -1
 	slowdown = 0.2
 	custom_materials = list(/datum/material/plastic=8000, /datum/material/titanium=1000)
 	repair_material = /obj/item/stack/sheet/mineral/titanium
@@ -285,8 +285,8 @@ obj/item/shield/riot/bullet_proof
 	item_state = "shield_buckler"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	block_parry_data = /datum/block_parry_data/shield/scrap
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
-	max_integrity = 225
+	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	max_integrity = -1
 	custom_materials = list(/datum/material/wood = 18000)
 	resistance_flags = FLAMMABLE
 	repair_material = /obj/item/stack/sheet/mineral/wood
@@ -305,8 +305,8 @@ obj/item/shield/riot/bullet_proof
 	desc = "Made from a ancient roadsign, with handles made of rope."
 	icon_state = "shield_stop"
 	item_state = "shield_stop"
-	armor = list("melee" = 65, "bullet" = 60, "laser" = 65, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
-	max_integrity = 300
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 65, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	max_integrity = -1
 	slowdown = 0
 	resistance_flags = null
 	repair_material = /obj/item/stack/sheet/metal
@@ -322,7 +322,7 @@ obj/item/shield/riot/bullet_proof
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 60, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	force = 13
 	slowdown = 0
-	max_integrity = 500
+	max_integrity = -1
 	custom_materials = list(/datum/material/wood = 16000, /datum/material/iron= 16000)
 	repair_material = /obj/item/stack/sheet/metal
 	shield_flags = SHIELD_FLAGS_HEAVY
@@ -343,8 +343,8 @@ obj/item/shield/riot/bullet_proof
 	icon_state = "shield_scrap"
 	item_state = "shield_scrap"
 	block_parry_data = /datum/block_parry_data/shield/scrap
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
-	max_integrity = 500
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	max_integrity = -1
 	slowdown = 0.1
 	force = 13
 	custom_materials = list(/datum/material/iron = 16000)
@@ -420,16 +420,18 @@ obj/item/shield/riot/bullet_proof
 	shieldbash_cooldown = 8 SECONDS
 	shieldbash_brutedamage = 50//if you close in with this, and land a shieldbash you should deal a good bit of damage
 	shieldbash_stamdmg = 80//and stamina
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	force = 25
 	block_parry_data = /datum/block_parry_data/shield/tower
 	throwforce = 5
 	throw_speed = 1
 	throw_range = 1
+	slowdown = 0.2
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = list(/datum/material/iron = 32000)
 	repair_material = /obj/item/stack/sheet/metal
 	shield_flags = SHIELD_FLAGS_HEAVY
-	max_integrity = 3000
+	max_integrity = -1
 
 /datum/block_parry_data/shield/tower
 	block_slowdown = 0.75
