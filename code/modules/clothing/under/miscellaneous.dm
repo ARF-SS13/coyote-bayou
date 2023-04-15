@@ -1050,3 +1050,61 @@
 	item_color = "green_hanfu"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+//Swimsuits
+
+/obj/item/clothing/under/swimsuit/black
+	name = "black swimsuit"
+	desc = "An oldfashioned black swimsuit."
+	icon_state = "swim_black"
+	item_state = "swim_black"
+	item_color = "swim_black"
+
+/obj/item/clothing/under/swimsuit/blue
+	name = "blue swimsuit"
+	desc = "An oldfashioned blue swimsuit."
+	icon_state = "swim_blue"
+	item_state = "swim_blue"
+	item_color = "swim_blue"
+
+/obj/item/clothing/under/swimsuit/purple
+	name = "purple swimsuit"
+	desc = "An oldfashioned purple swimsuit."
+	icon_state = "swim_purp"
+	item_state = "swim_purp"
+	item_color = "swim_purp"
+
+/obj/item/clothing/under/swimsuit/green
+	name = "green swimsuit"
+	desc = "An oldfashioned green swimsuit."
+	icon_state = "swim_green"
+	item_state = "swim_green"
+	item_color = "swim_green"
+
+/obj/item/clothing/under/swimsuit/red
+	name = "red swimsuit"
+	desc = "An oldfashioned red swimsuit."
+	icon_state = "swim_red"
+	item_state = "swim_red"
+	item_color = "swim_red"
+
+/obj/item/clothing/under/swimsuit/striped
+	name = "striped swimsuit"
+	desc = "A more revealing striped swimsuit."
+	icon_state = "swim_striped"
+	item_state = "swim_striped"
+	item_color = "swim_striped"
+
+/obj/item/clothing/under/swimsuit/white
+	name = "white swimsuit"
+	desc = "A classic one piece."
+	icon_state = "swim_white"
+	item_state = "swim_white"
+	item_color = "swim_white"
+
+/obj/item/clothing/under/swimsuit/earth
+	name = "earthen swimsuit"
+	desc = "A design more popular on Earth these days."
+	icon_state = "swim_earth"
+	item_state = "swim_earth"
+	item_color = "swim_earth"

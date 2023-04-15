@@ -1479,3 +1479,45 @@
 	name = "pirate uniform"
 	path = /obj/item/clothing/under/costume/pirate
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+//swimsuits
+
+/datum/gear/uniform/swimsuit/black
+	name = "black swimsuit"
+	path = /obj/item/clothing/under/swimsuit/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/blue
+	name = "blue swimsuit"
+	path = /obj/item/clothing/under/swimsuit/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/purple
+	name = "purple swimsuit"
+	path = /obj/item/clothing/under/swimsuit/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/green
+	name = "green swimsuit"
+	path = /obj/item/clothing/under/swimsuit/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/red
+	name = "red swimsuit"
+	path = /obj/item/clothing/under/swimsuit/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/striped
+	name = "striped swimsuit"
+	path = /obj/item/clothing/under/swimsuit/striped
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/white
+	name = "white swimsuit"
+	path = /obj/item/clothing/under/swimsuit/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/earth
+	name = "earth swimsuit"
+	path = /obj/item/clothing/under/swimsuit/earth
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
