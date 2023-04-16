@@ -682,6 +682,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/blindness/remove()
 	quirk_holder?.cure_blind(ROUNDSTART_TRAIT)
 
+/datum/quirk/deafness
+	name = "Deaf"
+	desc = "You are completely deaf, nothing can counteract this."
+	value = -3
+	mob_trait = TRAIT_DEAF
+	gain_text = span_danger("You can't hear anything.")
+	lose_text = span_notice("You miraculously gain back your hearing.")
+	medical_record_text = "Patient has permanent deafness."
+
 /datum/quirk/coldblooded
 	name = "Cold-blooded"
 	desc = "Your body doesn't create its own internal heat, requiring external heat regulation."
