@@ -369,3 +369,34 @@
 	maxHealth = 200
 	melee_damage_lower = 15
 	melee_damage_upper = 20
+
+//Kangaroo
+
+/mob/living/simple_animal/hostile/kangaroo //cause roo's be mean
+	name = "Kangaroo"
+	desc = "A marsupial! One that posseses powerful hind legs, a long strong tail and small front legs."
+	icon = 'modular_coyote/icons/mob/kangaroo.dmi'
+	icon_state = "kangaroo"
+	icon_living = "kangaroo"
+	icon_dead = "kangaroo_dead"
+	speak_emote = list("grunts")
+	emote_hear = list("grunts.", "barks")
+	emote_see = list("shakes its head.", "hops around.", "ears flick.")
+	health = 200
+	maxHealth = 200
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+
+/mob/living/simple_animal/pet/kiwi
+	name = "Kiwi"
+	icon = 'modular_coyote/icons/mob/kiwi.dmi'
+	icon_dead = "kiwi_dead"
+	icon_living = "kiwi"
+	icon_state = "kiwi"
+
+/mob/living/simple_animal/pet/sheep
+	name = "Sheep"
+	icon = 'modular_coyote/icons/mob/sheep.dmi'
+	icon_dead = "sheep_dead"
+	icon_living = "sheep"
+	icon_state = "sheep"
