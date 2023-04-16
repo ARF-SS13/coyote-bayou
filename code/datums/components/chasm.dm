@@ -97,10 +97,11 @@
 		falling_atoms -= AM
 
 	else
-		message_admins("[ADMIN_VERBOSEJMP(parent)] nearly tried to qdel vore [ADMIN_LOOKUPFLW(AM)]! Good thing Lagg disabled that!")
+		var/turf/here = parent
 		falling_atoms -= AM
 		parent.visible_message(span_phobia("[parent] bugged the fuck out and tried to delete [AM]! Quick, someone call 1-800-IMC-ODER!"))
 		AM.throw_at(get_edge_target_turf(parent,pick(GLOB.alldirs)),rand(1, 10),rand(1, 10))
+		message_admins("[ADMIN_VERBOSEJMP(here)] nearly tried to qdel vore [ADMIN_LOOKUPFLW(AM)]! Good thing Lagg disabled that!")
 		// send to oblivion -- yeah it doesnt work
 		/*AM.visible_message(span_boldwarning("[AM] falls into [parent]!"), span_userdanger("[oblivion_message]"))
 		if (isliving(AM))
