@@ -19,6 +19,7 @@
 	blood_overlay_type = "armor"
 	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tier_desc = ARMOR_CLOTHING_DESC
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 	/// which mutantrace variations are supported. leave at NONE to keep it snapped at plantigrade
 	//mutantrace_variation = NONE
@@ -1773,16 +1774,17 @@
 
 // Bullet resistant, melee vulnerable, light
 /obj/item/clothing/suit/armor/medium/vest
-	name = "armor vest"
-	desc = "A slim armored vest with a rigid exterior that provides decent protection against pistol rounds, stabs, and bludgeons."
+	name = "light armor vest"
+	desc = "A slim vest made of kevlar. Popular pre-war for their concealability, but popular in the Wasteland for their light weight and ability to stop most pistol rounds. Won't do much against bigger bullets, though."
 	icon_state = "armoralt"
 	item_state = "armoralt"
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_MEDIUM
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/medium/vest/flak
@@ -2190,6 +2192,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch // 4 slots for ammo!
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/medium/combat/laserproof
 	name = "ablative combat armor"
