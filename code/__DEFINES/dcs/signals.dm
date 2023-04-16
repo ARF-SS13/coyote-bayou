@@ -386,12 +386,24 @@
 #define COMSIG_ITEM_DROPPED "item_drop"							//from base of obj/item/dropped(): (mob/user)
 	// relocated, tell inventory procs if those called this that the item isn't available anymore.
 	#define COMPONENT_DROPPED_RELOCATION 1
+/// Item was clicked on
+#define COMSIG_ITEM_CLICKED "item_clicked"						//from base of obj/item/pickup(): (/mob/taker)
+	/// button click do thing to thing
+	#define COMSIG_BUTTON_CLICK "button_click"					//from base of obj/item/button/activate(): (/mob/user, /obj/button/src)
+	/// used to update the button with certain things
+	#define COMSIG_BUTTON_UPDATE "button_update"					//from base of obj/item/button/activate(): (/mob/user, params)
+	#define COMSIG_BUTTON_ATTACH "button_attach"					//from base of obj/item/button/activate(): (/mob/user, params)
 #define COMSIG_ITEM_PICKUP "item_pickup"						//from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_ATTACK_ZONE "item_attack_zone"				//from base of mob/living/carbon/attacked_by(): (mob/living/carbon/target, mob/living/user, hit_zone)
 #define COMSIG_ITEM_IMBUE_SOUL "item_imbue_soul" 				//return a truthy value to prevent ensouling, checked in /obj/effect/proc_holder/spell/targeted/lichdom/cast(): (mob/user)
 #define COMSIG_ITEM_PROCESS "item_process" 				//from various procs that run process(): (/atom)
 #define COMSIG_ITEM_HIT_REACT "item_hit_react"					//from base of obj/item/hit_reaction(): (list/args)
 #define COMSIG_ITEM_WEARERCROSSED "wearer_crossed"				//called on item when crossed by something (): (/atom/movable)
+#define COMSIG_ITEM_RECHARGE "item_recharge"				//called on item when crossed by something (): (/atom/movable)
+#define COMSIG_CELL_USED "cell_used"				//called on item when crossed by something (): (/atom/movable)
+/// Something is asked for the charge of their cell
+#define COMSIG_CELL_CHECK_CHARGE "cell_check" 					// returns the charge of the cell
+#define COMSIG_CELL_CHECK_CHARGE_PERCENT "cell_check_percent" 	// returns the percent of the cell
 #define COMSIG_ITEM_RECYCLED "item_recycled"				//called on item when crossed by something (): (/atom/movable)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"					//from base of item/sharpener/attackby(): (amount, max)
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
@@ -567,6 +579,9 @@
 #define COMSIG_SPAWNER_ABSORB_MOB "spawner_unbirth" // (mob/living/absorbed_mob)
 #define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
 #define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
+
+/// persona core signals
+#define COMSIG_ATOM_PERSONA_CORE_INSERTED "persona_core_inserted" // (/obj/item/persona_core/src)
 
 /// When they look back and see that some fuckin nerd componentized vore, will they be proud? or rightfully confused why someone would spend their time on this?
 /// I know one thing for sure though, and that is that I won't regret any second of it

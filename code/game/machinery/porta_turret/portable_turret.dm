@@ -251,26 +251,19 @@
 /obj/machinery/porta_turret/proc/check_should_process()
 	if (!on || !anchored || (stat & BROKEN) || !powered())
 		//end_processing()
-		if(datum_flags & DF_ISPROCESSING)
-			if(processing_state == TURRET_PROCESS_FAST)
-				STOP_PROCESSING(SSfastprocess, src)
-			else if(processing_state == TURRET_PROCESS_MACHINE)
-				STOP_PROCESSING(SSmachines, src)
-			processing_state = TURRET_PROCESS_OFF
+		STOP_PROCESSING(SSfastprocess, src)
+		STOP_PROCESSING(SSmachines, src)
+		processing_state = TURRET_PROCESS_OFF
 		return FALSE
 	//START_PROCESSING(SSmachines, src)
 	//begin_processing()
 	if(activity_state == TURRET_SLEEP_MODE)
-		if(CHECK_BITFIELD(datum_flags, DF_ISPROCESSING))
-			if(processing_state == TURRET_PROCESS_FAST)
-				STOP_PROCESSING(SSfastprocess, src)
+		STOP_PROCESSING(SSfastprocess, src)
 		START_PROCESSING(SSmachines, src)
 		processing_state = TURRET_PROCESS_MACHINE
 		return TRUE
 	else
-		if(CHECK_BITFIELD(datum_flags, DF_ISPROCESSING))
-			if(processing_state == TURRET_PROCESS_MACHINE)
-				STOP_PROCESSING(SSmachines, src)
+		STOP_PROCESSING(SSmachines, src)
 		START_PROCESSING(SSfastprocess, src)
 		processing_state = TURRET_PROCESS_FAST
 		return TRUE
