@@ -290,6 +290,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/coat/slimvest
+	name = "light armor vest"
+	path = /obj/item/clothing/suit/armor/medium/vest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/coat/armoredformalcoat
 	name = "armored formal overcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/armoredformalcoat
