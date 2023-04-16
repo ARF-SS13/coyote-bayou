@@ -767,8 +767,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/maskmask = H.get_item_by_slot(ITEM_SLOT_MASK)
-	if(istype(maskmask) && !istype(maskmask, /obj/item/clothing/mask/cigarette))
+	var/obj/item/clothing/mask/gas = H.get_item_by_slot(SLOT_WEAR_MASK)
+	if(istype(gas))
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 	else
@@ -788,8 +788,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/masked_mook/on_spawn()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/gas/gasmask = new(get_turf(quirk_holder))
-	H.equip_to_slot(gasmask, ITEM_SLOT_MASK)
+	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
+	H.equip_to_slot(gas, SLOT_WEAR_MASK)
 	H.regenerate_icons()
 
 /datum/quirk/paper_skin
