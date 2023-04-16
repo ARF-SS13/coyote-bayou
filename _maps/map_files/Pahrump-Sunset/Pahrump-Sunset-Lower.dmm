@@ -2358,6 +2358,7 @@
 /area/f13/tunnel)
 "bGY" = (
 /obj/docking_port/stationary/bosaway/three,
+/obj/structure/timeddoor/sixtyminute,
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel)
 "bGZ" = (
@@ -15049,6 +15050,13 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/building/sewers)
+"jgz" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "bosdb"
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "jgQ" = (
 /obj/structure/simple_door/interior,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -22103,6 +22111,12 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"oqZ" = (
+/obj/structure/simple_door/bunker,
+/obj/structure/simple_door/bunker,
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "orp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/comfy/teal{
@@ -26894,6 +26908,10 @@
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
 	},
 /area/f13/caves)
+"rIJ" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "rIZ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -31448,6 +31466,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"veW" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/wall/f13/tunnel,
+/area/f13/tunnel)
 "vfG" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/f13{
@@ -31873,6 +31895,11 @@
 /obj/item/airlock_painter,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
+"vvO" = (
+/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/wall/f13/ruins,
+/area/f13/tunnel)
 "vvV" = (
 /obj/structure/table,
 /obj/item/locked_box/misc/money/all/low,
@@ -34945,6 +34972,10 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/caves)
+"xMc" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/wall/f13/ruins,
+/area/f13/tunnel)
 "xMl" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/effect/turf_decal/weather/dirt,
@@ -40114,7 +40145,7 @@ bFx
 bFx
 bFx
 bFx
-bAY
+rIJ
 bFx
 bFx
 bFx
@@ -40368,13 +40399,13 @@ aae
 aae
 aae
 aae
-aab
-aab
-aab
-bAY
-aab
-aab
-bFx
+veW
+veW
+veW
+oqZ
+veW
+veW
+xMc
 aah
 aah
 bFx
@@ -40625,13 +40656,13 @@ aae
 aae
 aae
 aae
-aab
+veW
 bAY
 bAY
 bAY
 bAY
 aab
-bFx
+xMc
 aah
 bHj
 bFx
@@ -40882,13 +40913,13 @@ aae
 aae
 aae
 aae
+veW
+bAY
+bAY
+jgz
+bAY
 aab
-bAY
-bAY
-bAY
-bAY
-aab
-bFx
+xMc
 aah
 aah
 bFx
@@ -41139,13 +41170,13 @@ aae
 aae
 aae
 aae
-aab
+veW
 bAY
 bAY
 bAY
 bAY
 aab
-bFx
+xMc
 aah
 aah
 aah
@@ -41396,13 +41427,13 @@ aae
 aae
 aae
 aae
-aab
-aab
+veW
+veW
 bGY
-aab
-aab
-aab
-bFx
+veW
+veW
+veW
+vvO
 bFx
 aah
 aah
