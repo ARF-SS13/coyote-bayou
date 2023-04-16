@@ -20,6 +20,7 @@
 		/obj/item/ammo_casing/mws_batt,
 		/obj/item/ammo_box/magazine/mws_mag,
 		/obj/item/electrostaff,
+		/obj/item/storage/battery_box,
 		/obj/item/gun/ballistic/automatic/magrifle))
 
 /obj/machinery/recharger/RefreshParts()
@@ -40,8 +41,13 @@
 		. += span_notice("The status display reads:")
 		. += "<span class='notice'>- Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.</span>"
 		if(charging)
+			var/charge_percent
 			var/obj/item/stock_parts/cell/C = charging.get_cell()
-			. += "<span class='notice'>- \The [charging]'s cell is at <b>[C.percent()]%</b>.</span>"
+			if(C)
+				charge_percent = C.percent()
+			else
+				charge_percent = SEND_SIGNAL(charging, COMSIG_CELL_CHECK_CHARGE_PERCENT)
+			. += "<span class='notice'>- \The [charging]'s cell is at <b>[charge_percent]%</b>.</span>"
 
 /obj/machinery/recharger/proc/setCharging(new_charging)
 	charging = new_charging
@@ -126,6 +132,9 @@
 
 	using_power = FALSE
 	if(charging)
+		using_power = SEND_SIGNAL(charging, COMSIG_ITEM_RECHARGE, recharge_coeff)
+		use_power(using_power)
+		update_icon()
 		var/obj/item/stock_parts/cell/C = charging.get_cell()
 		if(C)
 			if(C.charge < C.maxcharge)

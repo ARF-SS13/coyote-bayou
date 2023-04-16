@@ -74,6 +74,13 @@
 	mid_length = 1 SECONDS
 	volume = 30
 
+/datum/looping_sound/cell_charger
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/machines/cell_charger_loop.ogg', 0.8 SECONDS, 1), 
+		)
+	mid_length = 0.8 SECONDS
+	volume = 20
+
 /datum/looping_sound/musket_load
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/weapons/stuff_casing.ogg', 0.7 SECONDS, 1), 

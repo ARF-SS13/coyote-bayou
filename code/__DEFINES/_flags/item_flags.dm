@@ -33,6 +33,9 @@
 /// Has this thing been run through a blender at least once?
 #define BEEN_JUICED							(1<<16)
 
+/// This thing was clicked on, and something said not to pick it up (cus its gonna do something cool)
+#define ITEM_CLICKED_NOPICKUP				(1<<1)
+
 // Flags for the clothing_flags var on /obj/item/clothing
 
 #define LAVAPROTECT 			(1<<0)
@@ -111,3 +114,13 @@
 #define BLENDER_BLENDMODE_JUICE "juicing"
 #define BLENDER_BELTMODE_GRINDER "grindmode"
 #define BLENDER_BELTMODE_DISPENSER "dispenser"
+
+#define CHARGER_LINE_FULL "am_full"
+#define CHARGER_LINE_EMPTY "am_empty"
+#define CHARGER_LINE_CHARGING "charging"
+#define CHARGER_LINE_CHARGED "charged"
+#define CHARGER_LINE_DISCHARGING "discharging"
+#define CHARGER_LINE_DISCHARGED "discharged"
+#define CHARGER_LINE_MODE_CHARGE "charge"
+#define CHARGER_LINE_MODE_DISCHARGE "discharge"
+#define CHARGER_LINE_NO_CAPACITOR "no_capacitor"

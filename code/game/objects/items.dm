@@ -390,6 +390,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		user.ShiftClickOn(src)
 		return
 
+	if(CHECK_BITFIELD(SEND_SIGNAL(src, COMSIG_ITEM_CLICKED, user), ITEM_CLICKED_NOPICKUP))
+		return
+
 	if(!(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP)) //See if we're supposed to auto pickup.
 		return
 
