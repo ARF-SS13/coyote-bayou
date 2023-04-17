@@ -5,7 +5,7 @@
 	icon_state = "nordic0"
 	icon_type_smooth = "nordic"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smooth = SMOOTH_MORE
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
@@ -17,7 +17,7 @@
 	icon_state = "fortress_brickwall0"
 	icon_type_smooth = "fortress_brickwall"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smooth = SMOOTH_MORE
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
@@ -29,7 +29,7 @@
 	icon_state = "abashiri0"
 	icon_type_smooth = "abashiri"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smooth = SMOOTH_MORE
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
@@ -41,7 +41,7 @@
 	icon_state = "oldwood0"
 	icon_type_smooth = "oldwood"
 	hardness = 80
-	smooth = SMOOTH_OLD
+	smooth = SMOOTH_MORE
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
