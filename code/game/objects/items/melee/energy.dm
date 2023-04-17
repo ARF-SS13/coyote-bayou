@@ -66,6 +66,28 @@
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
+/obj/item/melee/transforming/plasmacutter/regular/celestia
+	name = "plasma cutter celestia"
+	desc = "A sapphire colored plasma cutter."
+	icon_state = "celestia0"
+	icon_state_on = "celestia1"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 10
+	force_on = 32
+	throwforce = 5
+	throwforce_on = 15
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#0F52BA"
+	total_mass = null
+
 /obj/item/melee/transforming/plasmacutter/regular
 	name = "plasma cutter"
 	desc = "A bright green plasma cutter."
@@ -74,7 +96,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 25
+	force_on = 38
 	throwforce = 5
 	throwforce_on = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -83,7 +105,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.25
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#00FF00"
@@ -93,28 +114,6 @@
 	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS|FIRELOSS)
 
-/obj/item/melee/transforming/plasmacutter/regular/adam
-	name = "plasma cutter adam"
-	desc = "A bright crimson plasma cutter.."
-	icon_state = "adam0"
-	icon_state_on = "adam1"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	force = 10
-	force_on = 40
-	throwforce = 5
-	throwforce_on = 20
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	throw_speed = 3
-	throw_range = 5
-	w_class = WEIGHT_CLASS_NORMAL
-	w_class_on = WEIGHT_CLASS_HUGE
-	flags_1 = CONDUCT_1
-	armour_penetration = 0.75
-	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
-	attack_verb_on = list()
-	light_color = "#FF0000"
-	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/regular/eve
 	name = "plasma cutter eve"
@@ -124,7 +123,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 30
+	force_on = 45
 	throwforce = 5
 	throwforce_on = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -133,35 +132,32 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.5
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#A020F0"
 	total_mass = null
 
-/obj/item/melee/transforming/plasmacutter/regular/celestia
-	name = "plasma cutter celestia"
-	desc = "A sapphire colored plasma cutter."
-	icon_state = "celestia0"
-	icon_state_on = "celestia1"
+/obj/item/melee/transforming/plasmacutter/regular/adam
+	name = "plasma cutter adam"
+	desc = "A bright crimson plasma cutter.."
+	icon_state = "adam0"
+	icon_state_on = "adam1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 20
+	force_on = 52
 	throwforce = 5
-	throwforce_on = 15
+	throwforce_on = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_NORMAL
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.3
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
-	light_color = "#0F52BA"
+	light_color = "#FF0000"
 	total_mass = null
-
 /obj/item/melee/transforming/plasmacutter/sword
 	name = "energy sword"
 	desc = "May the force be within you."
@@ -176,7 +172,6 @@
 	throw_range = 5
 	sharpness = SHARP_EDGED
 	embedding = list("embed_chance" = 75, "impact_pain_mult" = 10)
-	armour_penetration = 0.65
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/energy_sword
 	var/list/possible_colors = list("red" = LIGHT_COLOR_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
