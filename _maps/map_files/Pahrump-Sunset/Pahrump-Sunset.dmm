@@ -40174,9 +40174,7 @@
 	pixel_x = -14;
 	density = 0
 	},
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "gEq" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -53116,7 +53114,7 @@
 "kgM" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "kgO" = (
 /obj/structure/chair{
@@ -53975,7 +53973,7 @@
 "kqJ" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "kqQ" = (
 /turf/open/indestructible/ground/outside/road,
@@ -55485,7 +55483,7 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "kOe" = (
 /obj/structure/weightmachine/stacklifter,
@@ -61951,7 +61949,7 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "myQ" = (
 /obj/structure/flora/tree/chomp/desert_tree3{
@@ -66200,8 +66198,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "nFA" = (
-/obj/structure/spacevine,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "nFN" = (
 /obj/structure/flora/grass/wasteland{
@@ -71709,6 +71706,9 @@
 /obj/structure/ore_box,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
+"pgF" = (
+/turf/closed/wall/f13/coyote/tavern_wall,
+/area/f13/wasteland)
 "pgK" = (
 /obj/structure/bookcase,
 /obj/effect/validball_spawner,
@@ -80829,9 +80829,7 @@
 /area/f13/building/hospital)
 "rLT" = (
 /obj/structure/spacevine,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "rLZ" = (
 /obj/structure/barricade/sandbags,
@@ -81097,9 +81095,7 @@
 	},
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "rQu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -90996,7 +90992,7 @@
 	pixel_x = -14;
 	density = 0
 	},
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "uyY" = (
 /obj/machinery/light{
@@ -92816,7 +92812,7 @@
 /area/f13/wasteland)
 "uYZ" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "uZi" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -97257,9 +97253,7 @@
 	density = 0
 	},
 /obj/structure/spacevine,
-/turf/closed/wall/f13/sunset/brick_small_dark{
-	color = "#AA5555"
-	},
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "wml" = (
 /obj/effect/decal/cleanable/dirt,
@@ -107629,9 +107623,9 @@ bhr
 aOk
 aOk
 usG
+rLT
+rLT
 nFA
-nFA
-oVr
 gEk
 uAQ
 uAQ
@@ -107886,7 +107880,7 @@ kNn
 dQl
 fxm
 pbv
-oVr
+nFA
 dFE
 rpi
 gEk
@@ -108142,14 +108136,14 @@ coF
 bcq
 aXY
 flt
+rLT
+gEk
+gEk
+gEk
 nFA
-gEk
-gEk
-gEk
-oVr
 orQ
 orQ
-oVr
+nFA
 gEk
 gEk
 uYZ
@@ -109186,7 +109180,7 @@ bHt
 hEx
 kgM
 gEk
-oVr
+nFA
 cnX
 oeP
 aOk
@@ -110460,7 +110454,7 @@ dHT
 mkb
 mkb
 dJW
-oVr
+nFA
 mkb
 pdj
 pdj
@@ -110711,12 +110705,12 @@ qCv
 bGz
 cdS
 tdw
-agh
-nFA
+pgF
+rLT
 gEk
 spL
 spL
-nFA
+rLT
 gEk
 baa
 evn
