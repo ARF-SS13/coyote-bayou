@@ -4,6 +4,8 @@
 	attack_speed = CLICK_CD_MELEE
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
+	block_parry_data = /datum/block_parry_data/bokken
+	item_flags = ITEM_CAN_PARRY
 
 /obj/item/melee/onehanded
 	name = "onehand melee template"
