@@ -148,19 +148,19 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /datum/block_parry_data/bokken // fucked up parry data, emphasizing quicker, shorter parries
 	parry_stamina_cost = 8 // be wise about when you parry, though, else you won't be able to fight enough to make it count
 	parry_time_windup = 0
-	parry_time_active = 10 // small parry window
+	parry_time_active = 20 // small parry window
 	parry_time_spindown = 0
 	// parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK		// bokken users can no longer strike while parrying
 	parry_time_perfect = 1.5
 	parry_time_perfect_leeway = 1
 	parry_imperfect_falloff_percent = 7.5
 	parry_efficiency_to_counterattack = 120
-	parry_efficiency_considered_successful = 65		// VERY generous
+	parry_efficiency_considered_successful = 80		// VERY generous
 	parry_efficiency_perfect = 120
 	parry_efficiency_perfect_override = list(
 		TEXT_ATTACK_TYPE_PROJECTILE = 30,
 	)
-	parry_failed_stagger_duration = 3 SECONDS
+	parry_failed_stagger_duration = 2 SECONDS
 	parry_data = list(
 		PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5, // 7*2.5 = 17.5, 8*2.5 = 20, 9*2.5 = 22.5, 10*2.5 = 25
 	)
