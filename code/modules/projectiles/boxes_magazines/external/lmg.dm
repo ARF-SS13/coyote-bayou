@@ -52,6 +52,48 @@
 /obj/item/ammo_box/magazine/lmg/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/lewis
+	name = "extended pan magazine (.308)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "lanoe"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 97
+	w_class = WEIGHT_CLASS_NORMAL // suffer
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
+
+/obj/item/ammo_box/magazine/lewis/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/lewis/l47
+	name = "pan magazine (.308)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "lewis"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 47
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/magazine/lewis/l47/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/bren
+	name = "bren magazine (.308)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "bren"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_EXTENDED_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/magazine/bren/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/cz53
 	name = "ammo box (5mm)"
 	icon_state = "cz53"

@@ -575,6 +575,13 @@
 	build_path = /obj/item/ammo_box/magazine/amr/empty
 	category = list("initial", "Advanced Magazines")
 
+/datum/design/ammolathe/boysmagazine
+	name = "empty boys magazine (.50)"
+	id = "boysmagazine"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/boys/empty
+	category = list("initial", "Advanced Magazines")
+
 //Tier 3 Ammo
 /datum/design/ammolathe/c4570
 	name = ".45-70 FMJ ammo box"
@@ -700,6 +707,20 @@
 	id = "lmg556"
 	materials = list(/datum/material/iron = 8000)
 	build_path = /obj/item/ammo_box/magazine/lmg/empty
+	category = list("initial", "Advanced Magazines")
+
+/datum/design/ammolathe/pan47
+	name = "empty pan magazine (.308)"
+	id = "pan47"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/lewis/l47/empty
+	category = list("initial", "Advanced Magazines")
+
+/datum/design/ammolathe/bren
+	name = "empty bren magazine (.308)"
+	id = "bren"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/bren/empty
 	category = list("initial", "Advanced Magazines")
 
 /datum/design/ammolathe/mm762
