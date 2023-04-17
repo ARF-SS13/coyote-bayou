@@ -3,7 +3,7 @@
 	desc = "A wall made out of darkwood."
 	icon = 'modular_coyote/icons/turfs/walls.dmi'
 	icon_state = "nordic0"
-	icon_type_smooth = "nordic"
+	icon_type_smooth = "nordic0"
 	hardness = 80
 	smooth = SMOOTH_MORE
 	girder_type = 0
@@ -15,7 +15,7 @@
 	desc = "An old wall you'd see at a fortress."
 	icon = 'modular_coyote/icons/turfs/walls.dmi'
 	icon_state = "fortress_brickwall0"
-	icon_type_smooth = "fortress_brickwall"
+	icon_type_smooth = "fortress_brickwall0"
 	hardness = 80
 	smooth = SMOOTH_MORE
 	girder_type = 0
@@ -27,7 +27,7 @@
 	desc = "A wall in a tavern style."
 	icon = 'modular_coyote/icons/turfs/walls.dmi'
 	icon_state = "abashiri0"
-	icon_type_smooth = "abashiri"
+	icon_type_smooth = "abashiri0"
 	hardness = 80
 	smooth = SMOOTH_MORE
 	girder_type = 0
