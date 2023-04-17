@@ -1189,9 +1189,9 @@
 /obj/item/clothing/under/whitesun
 	name = "white summer dress"
 	desc = "A dress!"
-	icon_state = "pinkwhite"
-	item_state = "pinkwhite"
-	item_color = "pinkwhite"
+	icon_state = "whitesun"
+	item_state = "whitesun"
+	item_color = "whitesun"
 
 /obj/item/clothing/under/bowsun
 	name = "pink summer dress with a bow"
