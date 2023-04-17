@@ -276,6 +276,7 @@
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
+	force = WEAPON_FORCE_SLASH_SMALL
 	block_parry_data = /datum/block_parry_data/waki
 	hitsound = 'sound/weapons/rapierhit.ogg'
 

@@ -148,7 +148,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "titanium"
 	desc = "Titanium"
 	color = "#b3c0c7"
-	strength_modifier = 1.1
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
 	value_per_unit = 0.0625
@@ -211,7 +210,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Stronk force increase
 /datum/material/adamantine
-	name = "adamantine"
+	name = "pre-war steel"
 	desc = "A powerful material made out of magic, I mean science!"
 	color = "#6d7e8e"
 	strength_modifier = 1.3
@@ -309,7 +308,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "bronze"
 	desc = "Clock Cult? Never heard of it."
 	color = "#92661A"
-	strength_modifier = 1.1
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/bronze
 	value_per_unit = 0.025
