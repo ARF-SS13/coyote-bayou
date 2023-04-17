@@ -193,6 +193,7 @@
 	force = 23
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	toolspeed = 0.8
 
 /obj/item/melee/onehanded/knife/survival
 	name = "survival knife"
@@ -217,6 +218,7 @@
 	force = 28
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
+	toolspeed = 0.8
 
 /obj/item/melee/onehanded/knife/trench
 	name = "trench knife"
@@ -323,6 +325,7 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 25
 	throwforce = 15
 	armour_penetration = 0.2
+	toolspeed = 0.9
 
 // Heat it with a welder
 /obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)
