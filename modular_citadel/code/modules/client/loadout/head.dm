@@ -556,14 +556,17 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/burmacowboyblack
 	name = "Burma Cowboy Hat, black"
 	path = /obj/item/clothing/head/burma/cowboy/black
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
 
 /datum/gear/head/burmacowboyblackribbon
 	name = "Burma Cowboy Hat, black with ribbon"
 	path = /obj/item/clothing/head/burma/cowboy/black/ribbon
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
 
 /datum/gear/head/burmacowboybrown
 	name = "Burma Cowboy Hat, brown"
 	path = /obj/item/clothing/head/burma/cowboy/brown
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
 
 /datum/gear/head/pith
 	name = "Pith"
@@ -817,4 +820,13 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/fifi
 	name = "Fifi jester hat"
 	path = /obj/item/clothing/head/fifi
-	
+
+/datum/gear/head/croc_hat
+	name = "Crocodile hat"
+	path = /obj/item/clothing/head/croc_hat
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
+
+/datum/gear/head/pinched_cowboy
+	name = "pinched cowboy hat"
+	path = /obj/item/clothing/head/pinched_cowboy
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY

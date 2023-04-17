@@ -680,3 +680,14 @@
 	icon_state = "fifi_hat"
 	item_state = "fifi_hat"
 
+/obj/item/clothing/head/croc_hat
+	name = "Croc teeth lined hat"
+	desc = "A black hat with sharp looking teeth. Crikey!"
+	icon_state = "croc_hat"
+	item_state = "croc_hat"
+
+/obj/item/clothing/head/pinched_cowboy
+	name = "Pinched Cowboy"
+	desc = "A brown felt cowboy hat with a pinched look in the middle. Snazy."
+	icon_state = "pinched_cowboy"
+	item_state = "pinched_cowboy"
