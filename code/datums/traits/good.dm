@@ -100,12 +100,12 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 
 /datum/quirk/horrifying_tastes
 	name = "Cannibal"
-	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor."
+	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor. ((Trait is to be taken as OOC and to be discovered without technology))"
 	mob_trait = TRAIT_LONGPORKLOVER
 	value = 1
 	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
 	lose_text = span_notice("The terrible hunger fades - you feel peace at last.")
-	medical_record_text = "Patient refuses to comment on their dietary preferences."
+	medical_record_text = "Patient likes to eat a well balanced meal."
 
 /datum/quirk/horrifying_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder
