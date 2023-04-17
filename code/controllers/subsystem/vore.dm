@@ -5,6 +5,7 @@
 	/mob/living/simple_animal/pet/catslug,\
 	/obj/item/organ,\
 	/obj/item/clothing/head/mob_holder,\
+	/obj/item/trash,\
 	/obj/item/grenade,\
 	)
 
@@ -15,7 +16,7 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 	name = "Bellies"
 	priority = FIRE_PRIORITY_VORE
 	wait = 5 SECONDS
-	flags = SS_KEEP_TIMING
+	flags = SS_BACKGROUND|SS_POST_FIRE_TIMING
 	runlevels = RUNLEVEL_GAME|RUNLEVEL_POSTGAME
 	/// mobtypes allowed to have a vore component
 	var/list/approved_vore_mobtypes = list()
@@ -49,6 +50,7 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 /datum/controller/subsystem/processing/vore/Initialize(start_timeofday)
 	build_list_of_mobtypes_that_should_vore()
 	build_list_of_items_that_can_be_vored()
+	return ..()
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_mobtypes_that_should_vore()
 	approved_vore_mobtypes |= typecacheof(/mob/living/carbon/human)

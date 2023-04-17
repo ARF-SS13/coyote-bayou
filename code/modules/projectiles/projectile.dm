@@ -588,7 +588,7 @@
 	if(hitscan)
 		process_hitscan()
 		return
-	if(!(datum_flags & DF_ISPROCESSING))
+	if(!IS_PROCESSING(SSprojectiles, src))
 		START_PROCESSING(SSprojectiles, src)
 	pixel_move(round(PROJECTILE_FIRING_INSTANT_TRAVEL_AMOUNT / pixel_increment_amount), FALSE, allow_animation = FALSE)	//move it now!
 

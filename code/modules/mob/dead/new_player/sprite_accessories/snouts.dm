@@ -705,3 +705,8 @@
 	name = "tajaran short"
 	icon_state = "tajaranshort"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/cow
+	name = "cow"
+	icon_state = "cow"
+	matrixed_sections = MATRIX_ALL

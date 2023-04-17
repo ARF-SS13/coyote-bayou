@@ -636,8 +636,10 @@
 	new /obj/item/clothing/under/f13/bos/fatigues(src)
 	new /obj/item/gun/energy/laser/wattzs(src)
 	new /obj/item/radio/headset/headset_sci(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/executive(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/executive/worn(src)
 	new /obj/item/clothing/ears/headphones(src)
+	new /obj/item/reagent_containers/food/snacks/grown/tea/catnip(src)
+	new /obj/item/reagent_containers/food/snacks/grown/citrus/lemon(src)
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
@@ -1114,8 +1116,8 @@
 /obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
-	new /obj/item/gun/energy/alien(src)
-	new /obj/item/storage/box/alienhandcuffs(src)
+	// /obj/item/gun/energy/alien(src)
+	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
 
 // U

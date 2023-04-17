@@ -303,6 +303,18 @@
 		/datum/firemode/semi_auto,
 		/datum/firemode/burst/three
 	)
+
+/obj/item/gun/ballistic/automatic/pistol/n99/executive/worn
+	name = "the Executive"
+	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
+	icon_state = "executive"
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
 /* * * * * * * * * * *
  * Crusader Pistol Semi-Auto
  * Cool Medium pistol

@@ -36,13 +36,11 @@
 	SIGNAL_HANDLER
 	if(ishuman(vorer))
 		var/mob/living/carbon/human/H = vorer
-		var/fraction = reagents.total_volume * 0.3
-		reagents.trans_to(H, fraction, 1, 0)
+		reagents.trans_to(H, 5, 1, 0)
 		if(gut.can_taste)
-			checkLiked(fraction, H)
-	if(iscyborg(vorer))
-		var/mob/living/silicon/robot/R = vorer
-		R.cell.charge += 150
+			checkLiked(5, H)
+	if(!reagents.total_volume)
+		qdel(src)
 	return TRUE
 
 /obj/item/reagent_containers/food/proc/checkLiked(fraction, mob/M)

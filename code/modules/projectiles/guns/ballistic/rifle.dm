@@ -437,7 +437,7 @@
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
@@ -451,14 +451,15 @@
 
 /obj/item/gun/ballistic/rifle/enfield
 	name = "Lee-Enfield rifle"
-	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308."
-	icon_state = "enfield2"
-	item_state = "308"
+	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
+	sawn_desc = "This accursed abomination was a common modification for trench warfare. Now some waster is likely using it for close quarters."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "smle"
+	item_state = "smle"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_FAST
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(2.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -475,6 +476,15 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+/obj/item/gun/ballistic/rifle/enfield/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
+
 /obj/item/gun/ballistic/rifle/enfield/jungle
 	name = "Jungle Carbine"
 	desc = "The Rifle No. 5 Mk I, made by the Australian army at Lithgow Small Arms in Australia, its a shortened Enfield used for secondary service in the Australian and New zealand army for jungle warfare other then the L1A1 battle rifle,  made from an SMLE its bolt action holds 10 rounds and sadly cannot fit a scope."
@@ -484,7 +494,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -496,7 +506,7 @@
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 
 	)
 

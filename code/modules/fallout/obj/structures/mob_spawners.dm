@@ -44,6 +44,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/randomizer_difficulty
 	/// If a playermob spawns this, keep track of it
 	var/spawned_by_ckey
+	/// hold off on spawning, gotta set it up first
+	var/delay_start = FALSE
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -62,12 +64,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		_coverable_by_dense_things = coverable_by_dense_things,\
 		_randomizer_tag = randomizer_tag,\
 		_randomizer_kind = randomizer_kind,\
-		_randomizer_difficulty = randomizer_difficulty\
+		_randomizer_difficulty = randomizer_difficulty,\
+		_delay_start = delay_start\
 		)
 
 /obj/structure/nest/Destroy()
-	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
-	visible_message("[src] collapses!")
+	remove_nest()
 	if(spawned_by_ckey)
 		GLOB.player_made_nests[spawned_by_ckey][type] -= src
 	. = ..()
@@ -98,6 +100,10 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		if(user.a_intent == INTENT_HARM)
 			to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
 			return
+
+/obj/structure/nest/proc/remove_nest()
+	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
+	visible_message("[src] collapses!")
 
 /obj/structure/nest/proc/try_seal(mob/user, obj/item/stack/S, itempath, cover_state, timer)
 	if(!coverable)
@@ -340,6 +346,21 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/stalker = 5,
 					/mob/living/simple_animal/hostile/stalkeryoung = 5)
+
+// Nests for mobs that are special and/or dont have any nearby nests to unbirth into
+/obj/structure/nest/special
+	name = "special nest"
+	max_mobs = 1
+	delay_start = TRUE
+	mob_types = list()
+
+/obj/structure/nest/special/remove_nest()
+	return 
+/obj/structure/nest/special/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration, atom/attacked_by)
+	. = ..()
+	if(.)
+		SEND_SIGNAL(src, COMSIG_SPAWNER_SPAWN_NOW)
+	return 
 
 //Event Nests
 /obj/structure/nest/zombieghoul

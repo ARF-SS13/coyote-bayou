@@ -16,7 +16,7 @@
 //Fallout 13
 
 /obj/item/ammo_box/magazine/internal/boltaction/enfield
-	max_ammo = 9
+	max_ammo = 10
 	multiload = 1
 	
 /obj/item/ammo_box/magazine/internal/boltaction/hunting

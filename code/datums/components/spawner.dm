@@ -1,5 +1,8 @@
 /datum/component/spawner
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
+	/// List of 'special' mobs to spawn
+	/// Format: list(special_mob_datum)
+	var/list/special_mobs = list()
 	/// Time between spawns
 	var/spawn_time = 30 SECONDS
 	/// List of mobs that we spawned that currently exist
@@ -28,6 +31,8 @@
 	var/randomizer_difficulty
 	/// spawner can be covered by dense things
 	var/coverable_by_dense_things = TRUE
+	/// Dont start spawning just yet
+	var/delay_start = FALSE
 	/// Is something covering us?
 	var/datum/weakref/covering_object
 	COOLDOWN_DECLARE(spawner_cooldown)
@@ -47,7 +52,8 @@
 		_coverable,
 		_randomizer_tag,
 		_randomizer_kind,
-		_randomizer_difficulty
+		_randomizer_difficulty,
+		_delay_start
 	)
 
 	if(!isatom(parent))
@@ -80,6 +86,8 @@
 		spawn_sound = _spawn_sound
 	if(_infinite)
 		infinite = _infinite
+	if(_delay_start)
+		delay_start = _delay_start
 	initialize_random_mob_spawners()
 	if(randomizer_tag)
 		setup_random_nest()
@@ -88,7 +96,12 @@
 	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, .proc/on_attack_generic)
 	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/stop_spawning)
 	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/start_spawning)
-	start_spawning()
+	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
+	RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
+	if(istype(parent, /obj/structure/nest/special))
+		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
+	if(!delay_start)
+		start_spawning()
 
 /datum/component/spawner/process()
 	if(should_destroy_spawner())
@@ -98,8 +111,12 @@
 		return
 	spawn_mob()
 
+/// Something told us to restart spawning
+/datum/component/spawner/proc/start_spawning()
+	START_PROCESSING(SSspawners, src)
+
 /datum/component/spawner/proc/stop_spawning(datum/source, force, hint)
-	STOP_PROCESSING(SSprocessing, src)
+	STOP_PROCESSING(SSspawners, src)
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
 		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
 		if(!removed_animal)
@@ -107,10 +124,6 @@
 		if(removed_animal.nest == src)
 			removed_animal.nest = null
 	spawned_mobs = null
-
-/// Something told us to restart spawning
-/datum/component/spawner/proc/start_spawning()
-	START_PROCESSING(SSprocessing, src)
 
 // Stopping clientless simple mobs' from indiscriminately bashing their own spawners due DestroySurroundings() et similars.
 /datum/component/spawner/proc/on_attack_generic(datum/source, mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
@@ -130,14 +143,16 @@
 
 /// Do we have any mobs left?
 /datum/component/spawner/proc/has_mobs_left()
-	return counterlist_sum(mob_types)
+	return counterlist_sum(mob_types) + LAZYLEN(special_mobs)
 
 /// Should the spawner be destroyed?
 /datum/component/spawner/proc/should_destroy_spawner()
 	if(infinite)
 		return FALSE
-	else if(has_mobs_left())
+	if(has_mobs_left())
 		return FALSE
+	if(ismob(parent))
+		return FALSE // no more self-destructing ant queens
 	return TRUE
 
 /// Check the spawned mob list, prune dead mobs, return TRUE if it isnt full
@@ -189,8 +204,18 @@
 				return FALSE */
 	return TRUE
 
+/// spawns a mob, then immediately tries to self-destruct
+/datum/component/spawner/proc/spawn_mob_special()
+	spawn_mob()
+	if(should_destroy_spawner())
+		qdel(parent)
+
 /// spawn the mob(s)
 /datum/component/spawner/proc/spawn_mob()
+	if(LAZYLEN(special_mobs))
+		var/datum/special_mob_datum/spawner_special = pick(special_mobs)
+		spawner_special.make_special_mob(src)
+		return
 	if(!islist(spawned_mobs))
 		spawned_mobs = list()
 	var/atom/P = parent
@@ -284,7 +309,79 @@
 			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
 			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
 
+/// Is passed a mob via the signal, and will attempt to despawn the mob and store it in the spawner.
+/datum/component/spawner/proc/unbirth_mob(datum/source, mob/living/simple_animal/despawn_me)
+	if(QDELETED(parent))
+		return
+	if(!istype(despawn_me))
+		return
+	var/datum/special_mob_datum/sparkle = new()
+	if(!sparkle.record_special_vars(despawn_me))
+		qdel(sparkle) // no real point in keeping it if it's empty
+		return
+	var/already_special = !istype(parent, /obj/structure/nest/special) || LAZYLEN(special_mobs)
+	special_mobs |= sparkle
+	if(!already_special)
+		var/atom/sponer = parent
+		sponer.name = despawn_me.name
+		sponer.desc = despawn_me.desc
+		sponer.icon = despawn_me.icon
+		sponer.icon_state = despawn_me.icon_state
+		sponer.color = despawn_me.color
+		// nobody'll know the difference~
+	qdel(despawn_me)
+	start_spawning()
 
+/// If anything asks if we have a spawner, we say yes.
+/datum/component/spawner/proc/has_spawner()
+	return TRUE
+
+/// a datum that holds on to a bunch of vars for special mobs
+/datum/special_mob_datum // SPECIAL MOB DATUM!
+	var/name
+	var/desc
+	var/icon
+	var/icon_state
+	var/mob_type
+	var/maxHealth
+	var/color
+	var/faction
+
+/// A proc that takes a mob datum and records all the vars that are different from the initial vars, for later use.
+/datum/special_mob_datum/proc/record_special_vars(mob/living/simple_animal/hostile/cool_mob)
+	if(!istype(cool_mob))
+		return FALSE
+	mob_type = cool_mob.type
+	name = cool_mob.name
+	desc = cool_mob.desc
+	icon = cool_mob.icon
+	icon_state = cool_mob.icon_state
+	maxHealth = cool_mob.maxHealth
+	color = cool_mob.color
+	faction = cool_mob.faction
+	return TRUE
+
+/// A proc that spawns a mob from a special mob datum
+/datum/special_mob_datum/proc/make_special_mob(datum/component/spawner/myspawner)
+	if(!istype(myspawner))
+		return
+	if(!istype(myspawner.parent))
+		return
+	var/turf/putemhere = get_turf(myspawner.parent)
+	var/mob/living/simple_animal/hostile/cool_mob = new mob_type(putemhere)
+	if(cool_mob)
+		cool_mob.name = name
+		cool_mob.desc = desc
+		cool_mob.icon = icon
+		cool_mob.icon_state = icon_state
+		cool_mob.maxHealth = maxHealth
+		cool_mob.health = cool_mob.maxHealth
+		cool_mob.color = color
+		cool_mob.faction = faction
+	myspawner.special_mobs -= src
+	cool_mob.do_alert_animation(cool_mob)
+	qdel(src)
+	return TRUE
 
 
 

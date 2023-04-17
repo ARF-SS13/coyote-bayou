@@ -130,11 +130,124 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/bronzechestplate
+	name = "Bronze Chestplate"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+
+/datum/gear/suit/leatherarmor
+	name = "Leather Jerkin"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/leatherarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/ironchestplate
+	name = "Iron Chestplate"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/ironchestplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scaledarmor
+	name = "Scale Armor"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/scaledarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/roughchainmail
+	name = "Rough Chainmail"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/roughchainmail
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/fullchainmail
+	name = "Chainmail Shirt"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/fullchainmail
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/ironchestplatered
+	name = "Iron Chestplate w/ Red Cape"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/ironchestplatered
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/ironchestplateblue
+	name = "Iron Chestplate w/ Blue Cape"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/ironchestplateblue
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/oldscalemail
+	name = "Old Scalemail"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/oldscalemail
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scalemail
+	name = "Scalemail"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/scalemail
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/lamarmor
+	name = "Lamellar Armor"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/varangianarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/dustylamarmor
+	name = "Dusty Lamellar Armor"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/egyptianlam
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/chitinbreastplate
+	name = "Fire Ant Breastplate"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/chitinbreastplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/steppeleathers
+	name = "Roamers Leather Armor"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/steppeleatherarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/chineselam
+	name = "Lamellar Armor with Red Tunic"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/chineselam
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/chinesebreastplate
+	name = "Iron Breastplate with Red Tunic"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/chinesebreastplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/woodenbreastplate
+	name = "Wooden Breastplate"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/woodenbreastplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/steelbreastplate
+	name = "Unpainted Steel Breastplate"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/steelbreastplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+
+
+
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
+
 
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
@@ -174,6 +287,12 @@
 /datum/gear/suit/coat/armoredbomber
 	name = "armored bomber jacket"
 	path = /obj/item/clothing/suit/armor/light/duster/bomberjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/coat/slimvest
+	name = "light armor vest"
+	path = /obj/item/clothing/suit/armor/medium/vest
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
@@ -354,23 +473,60 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
-//These should be left commented out until the holidays or special events.
-/*
+/datum/gear/suit/pip_cloak
+	name = "Heart cloak"
+	path = /obj/item/clothing/suit/pip_cloak
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/flintlock
+	name = "Flintlock Jacket"
+	path = /obj/item/clothing/suit/flintlock
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/dension
+	name = "dension jacket"
+	path = /obj/item/clothing/suit/dension
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/pirate
+	name = "pirate jacket"
+	path = /obj/item/clothing/suit/pirate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/bee
+	name = "bee costume"
+	path = /obj/item/clothing/suit/hooded/bee_costume
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/canadian_coat
+	name = "canadian coat"
+	path = /obj/item/clothing/suit/canadian_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+
+//These should be left commented out until the holidays or special events. //Recommenting these in.
+
 /datum/gear/suit/christmascoatr
 	name = "Red Christmas Coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat/christmascoatr
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/christmascoatg
 	name = "Green Christmas Coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat/christmascoatg
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/christmascoatrg
 	name = "Red and Green Christmas Coat"
 	path = /obj/item/clothing/suit/hooded/wintercoat/christmascoatrg
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
-*/
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 
 // BEGIN_INTERNALS
 // END_INTERNALS

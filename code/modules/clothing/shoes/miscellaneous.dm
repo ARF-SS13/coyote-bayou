@@ -506,3 +506,12 @@
 	name = "Commonwealth Boots"
 	desc = "British style black ankle boots with a canvas gaiter around the ankle"
 	icon_state = "brit_boots"
+
+/obj/item/clothing/shoes/fifi
+	name = "Fifi"
+	icon_state = "fifi_socks"
+
+/obj/item/clothing/shoes/ww2brown
+	name = "Type three service shoe"
+	desc = "A post second world war design of the American standard boot, with Canvas leggings. Just modernized its specificly used for Jungle combat or in service in Hotter climates it was also lend leased to other nations in the Pacific. And is used by some wasters to this very day as a highly useful footwear garment."
+	icon_state = "ww2_brown"

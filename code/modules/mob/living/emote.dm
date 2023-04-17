@@ -148,6 +148,8 @@
 		playsound(user, user.deathsound, 200, TRUE, TRUE)
 	if(. && isalienadult(user))
 		playsound(user.loc, 'sound/voice/hiss6.ogg', 80, 1, 1)
+	if(HAS_TRAIT(user, TRAIT_PLAY_DEAD))
+		user.reagents.add_reagent(/datum/reagent/toxin/ghoulpowder, 10)
 
 /datum/emote/living/drool
 	key = "drool"

@@ -93,8 +93,8 @@
 	src.distance_modifier = clamp(distance_modifier, 1, 3)
 	driftdelay += rand(-driftdelay*0.5, driftdelay*0.5)
 	glide_size = driftdelay
-	alpha = 255 / clamp(distance_modifier * 0.5, 1, 3)
-	transform = matrix(transform) * clamp(1.2 / distance_modifier, 0.5, 3)
+	alpha = 255 / clamp(distance_modifier, 1, 3)
+	transform = matrix(transform) * clamp(1 / max(distance_modifier + 1, 1), 0.5, 3)
 	INVOKE_ASYNC(src, .proc/fade_out)
 	walk(src, driftdir, driftdelay, 32)
 	lifetime = rand(lifetime*0.5, lifetime*3)
@@ -109,7 +109,7 @@
 	animate(
 		src,
 		alpha = 0,
-		transform = turn(matrix(transform) * 3, rotation_dir * rand(180, 360)),
+		transform = turn(matrix(transform) * 3, rotation_dir * rand(90, 360)),
 		time = lifetime,
 		easing = CUBIC_EASING | EASE_OUT,
 		flags = ANIMATION_PARALLEL)

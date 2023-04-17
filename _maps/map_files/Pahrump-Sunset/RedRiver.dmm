@@ -19548,6 +19548,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"kZr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/timeddoor/twohours,
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/building)
 "kZI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
@@ -35260,6 +35265,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 28
 	},
+/obj/structure/timeddoor/twohours,
 /turf/open/floor/plating/rust,
 /area/f13/building)
 "uaK" = (
@@ -37503,6 +37509,10 @@
 /obj/item/candle/infinite,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
+"vmI" = (
+/obj/structure/timeddoor/twohours,
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/building)
 "vmW" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/nest/ghoul,
@@ -49294,9 +49304,9 @@ fSr
 fSr
 fSr
 wVF
-fSr
-fSr
-fSr
+vmI
+vmI
+vmI
 fSr
 fSr
 fSr
@@ -49551,9 +49561,9 @@ gUX
 vvR
 vvR
 gBE
-fSr
+vmI
 rtI
-fSr
+vmI
 dDr
 dDr
 dDr
@@ -49808,9 +49818,9 @@ eZf
 vvR
 fSr
 wNa
-vvR
+kZr
 uaH
-fSr
+vmI
 dDr
 jKC
 qrB

@@ -900,6 +900,15 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE
 
+/datum/quirk/playdead
+	name = "Class Act"
+	desc = "You're good at acting! *deathgasp will be extra convincing to rudimentary tests, such as healthhuds and examine."
+	value = 1
+	mob_trait = TRAIT_PLAY_DEAD
+	gain_text = span_notice("You feel confident at playing dead.")
+	lose_text = span_danger("You feel that laying down in a field of gunfire may not be such a good idea after all.")
+	locked =  FALSE
+
 /datum/quirk/ratfriend
 	name = "Beast Friend - Rats"
 	desc = "Rattos and wild mice outright ignore you now."

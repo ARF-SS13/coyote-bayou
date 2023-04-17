@@ -33,6 +33,7 @@
 	status_flags = CANPUSH
 	del_on_death = TRUE
 	speak_chance = 1
+	despawns_when_lonely = FALSE
 
 /obj/effect/mob_spawn/human/corpse/vault
 	name = "Vault Dweller"

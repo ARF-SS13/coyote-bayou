@@ -19,6 +19,7 @@
 #define LOADOUT_CAT_REVOLVER "Revolvers"
 #define LOADOUT_CAT_LONGGUN "Long Guns"
 #define LOADOUT_CAT_HOBO "Improvised Guns"
+#define LOADOUT_CAT_MUSKET "Blackpowder Guns"
 #define LOADOUT_CAT_MISC "Misc Things"
 #define LOADOUT_CAT_BOW "Bows"
 #define LOADOUT_CAT_NULLROD "Spiritual Device"
@@ -30,8 +31,8 @@
 #define LOADOUT_CAT_SINISTER "Sinister Tools"
 #define LOADOUT_CAT_OTHER "Other Things"
 
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_FLAG_TOOL_WASTER)
-#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_CAT_WORKER, LOADOUT_CAT_ADVENTURE, LOADOUT_CAT_MEDICAL, LOADOUT_CAT_SINISTER, LOADOUT_CAT_OTHER)
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_FLAG_TOOL_WASTER, LOADOUT_CAT_MUSKET)
+#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_CAT_WORKER, LOADOUT_CAT_ADVENTURE, LOADOUT_CAT_MEDICAL, LOADOUT_CAT_SINISTER, LOADOUT_CAT_OTHER, LOADOUT_CAT_MUSKET)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -50,6 +51,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	var/allowed_flags
 	/// What kits are inside this kit? If blank, just show a list of everything set to be allowed
 	var/list/multiple_choice = list()
+	/// Just to limit how many things can be taken out, cus apparently thats a thing
+	var/max_items
 
 /obj/item/kit_spawner/waster
 	name = "Wasteland survival kit"
@@ -271,6 +274,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	. = ..()
 	build_loadout_list()
 	build_output_list()
+	max_items = max(LAZYLEN(multiple_choice), 1)
 
 /obj/item/kit_spawner/proc/build_loadout_list()
 	if(LAZYLEN(GLOB.loadout_datums))
@@ -377,7 +381,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 		return FALSE
 	return TRUE
 
+/obj/item/kit_spawner/proc/hax_check()
+	if(max_items <= 0)
+		qdel(src)
+		return FALSE
+
 /obj/item/kit_spawner/proc/spawn_the_thing(mob/user, atom/the_thing)
+	hax_check()
+	max_items--
 	var/turf/spawn_here
 	spawn_here = user ? get_turf(user) : get_turf(src)
 	var/obj/item/new_thing = new the_thing(spawn_here)
@@ -498,6 +509,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/rifle/enfield/jungle(src)
 	new /obj/item/ammo_box/a308(src)
 
+/obj/item/storage/box/gun/rifle/smle
+	name = "lee-enfield case"
+
+/obj/item/storage/box/gun/rifle/smle/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/enfield(src)
+	new /obj/item/ammo_box/a308(src)
 
 /obj/item/storage/box/gun/aer9
 	name = "laser rifle case"
@@ -1575,38 +1592,38 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /datum/loadout_box/flintlockmusket
 	entry_tag = "Flintlock Musket"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/musket
 
 /datum/loadout_box/tanegashima
 	entry_tag = "Tanegashima Musket"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/musket/tanegashima
 
 /datum/loadout_box/flintlockmusketoon
 	entry_tag = "Flintlock Musketoon"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/musketoon
 
 /datum/loadout_box/flintlockspingarda
 	entry_tag = "Flintlock Spingarda"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/musketoon/spingarda
 
 /datum/loadout_box/flintlockmosquete
 	entry_tag = "Flintlock Mosquete"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/musketoon/mosquete
 
 /datum/loadout_box/flintlockjezail
 	entry_tag = "Jezail Long Rifle"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_LONGGUN
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/jezail
 
 /datum/loadout_box/junglecarbine
@@ -1614,6 +1631,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/junglecarbine
+
+/datum/loadout_box/smle
+	entry_tag = "Lee-Enfield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/smle
 
 /// Hobo Guns
 
@@ -1779,8 +1802,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /datum/loadout_box/flintlock
 	entry_tag = "Flintlock Pistol"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_PISTOL
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/pistol/flintlock
 
 /datum/loadout_box/type17
@@ -2089,8 +2112,97 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MISC
 	spawn_thing = /obj/item/stack/f13Cash/caps/twofive
 
+/datum/loadout_box/woodenbuckler
+	entry_tag = "Wooden Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/riot/buckler
+
+/datum/loadout_box/stopsign
+	entry_tag = "Stop Sign Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/riot/buckler/stop
 
 
+/datum/loadout_box/kiteshield
+	entry_tag = "Kite Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/kiteshield
+
+
+/datum/loadout_box/bucklertwo
+	entry_tag = "Oak Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/bucklertwo
+
+/datum/loadout_box/egyptianshield
+	entry_tag = "Dusty Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/egyptianshield
+
+/datum/loadout_box/semioval
+	entry_tag = "Semioval Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/semioval
+
+/datum/loadout_box/romanbuckler
+	entry_tag = "Skirmisher's Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/romanbuckler
+
+/datum/loadout_box/ironshieldfour
+	entry_tag = "Checkered Red Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshieldfour
+
+/datum/loadout_box/ironshieldthree
+	entry_tag = "Red Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshieldthree
+
+/datum/loadout_box/ironshieldtwo
+	entry_tag = "Oval Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshieldtwo
+
+/datum/loadout_box/bronzeshield
+	entry_tag = "Bronze Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/bronzeshield
+
+/datum/loadout_box/ironshield
+	entry_tag = "Iron Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/ironshield
+
+/datum/loadout_box/steelshield
+	entry_tag = "Steel Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/steelshield
+
+/datum/loadout_box/bluebuckler
+	entry_tag = "Blue Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/bluebuckler
+
+/datum/loadout_box/redbuckler
+	entry_tag = "Red Buckler"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/shield/coyote/redbuckler
 
 
 

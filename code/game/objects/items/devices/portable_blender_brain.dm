@@ -58,6 +58,7 @@
 	/// name of who we're listening to right now
 	var/listening_to
 	var/datum/weakref/my_blender
+	var/datum/weakref/my_brain
 	var/ownerless_time = 30 MINUTES
 	COOLDOWN_DECLARE(programmed_hopelessness)
 	COOLDOWN_DECLARE(greet_cooldown)
@@ -555,7 +556,7 @@
 				if(NORMAL_MSG)
 					blender_say("CODE D'ERREUR 801: Oh mon cher, ma trémie est pleine! Zhere is no room in my reservior for anyzhing else!")
 				if(DISLIKE_MSG)
-					blender_say("CODE D'ERREUR 801: I'm full.")
+					blender_say("ERROR CODE 801: I'm full.")
 		if(BLENDER_LINE_FULL_SECOND)
 			switch(amourousness)
 				if(HORNY_MSG)
@@ -876,8 +877,34 @@
 	MASTER_BLENDER
 	master.say(message)
 
+/// The physical object that houses the blender brain.
+/obj/item/persona_core
+	name = "persona chip - blender"
+	desc = "An intricate data module housing some sort of AI."
+	icon = 'icons/obj/module.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	icon_state = "cpuboard"
+	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_SHIFT
+	var/datum/blender_brain/brain
 
+/obj/item/persona_core/Initialize()
+	. = ..()
+	brain = new(src)
+	SEND_SIGNAL(loc, COMSIG_ATOM_PERSONA_CORE_INSERTED, src)
+	ADD_TRAIT(src, TRAIT_NO_STORAGE_REMOVE, src)
 
+/obj/item/persona_core/ComponentInitialize()
+	. = ..()
+	//RegisterSignal(src, COMSIG_PARENT_EXAMINE, .proc/on_examine)
 
+/obj/item/persona_core/proc/register_master(atom/newmaster)
+	//if(brain)
+	//	brain.master = WEAKREF(newmaster)
 
+/obj/item/persona_core/charger
+	name = "strange circuitboard"
+	desc = "Yup, that's a circuitboard alright. Look at all those wires."
+	icon = 'icons/obj/module.dmi'
+	icon_state = "cpuboard"
+	w_class = WEIGHT_CLASS_TINY
 

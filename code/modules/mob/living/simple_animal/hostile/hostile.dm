@@ -105,6 +105,10 @@
 	var/low_health_threshold = 0
 	/// Has the mob done its Low Health thing?
 	var/is_low_health = FALSE
+	/// Does this mob un-itself if nobody's on the Z level?
+	var/despawns_when_lonely = TRUE
+	/// timer for despawning when lonely
+	var/lonely_timer_id
 
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
@@ -176,6 +180,7 @@
 		if(!MoveToTarget(possible_targets))     //if we lose our target
 			if(AIShouldSleep(possible_targets))	// we try to acquire a new one
 				toggle_ai(AI_IDLE)			// otherwise we go idle
+	consider_despawning()
 	return 1
 
 /mob/living/simple_animal/hostile/handle_automated_movement()
@@ -190,6 +195,44 @@
 				addtimer(cb, (i - 1)*sidestep_delay)
 		else //Otherwise randomize it to make the players guessing.
 			addtimer(cb,rand(1,SSnpcpool.wait))
+
+/mob/living/simple_animal/hostile/toggle_ai(togglestatus)
+	. = ..()
+	if(consider_despawning())
+		if(!lonely_timer_id)
+			lonely_timer_id = addtimer(CALLBACK(src, .proc/queue_unbirth), 30 SECONDS, TIMER_STOPPABLE)
+	else
+		if(lonely_timer_id)
+			deltimer(lonely_timer_id)
+			lonely_timer_id = null	
+		unqueue_unbirth()
+
+/mob/living/simple_animal/hostile/proc/consider_despawning()
+	if(!despawns_when_lonely)
+		return FALSE
+	if(ckey)
+		return FALSE
+	if(lazarused)
+		return FALSE
+	if(stat == DEAD)
+		return FALSE
+	if(CHECK_BITFIELD(datum_flags, DF_VAR_EDITED))
+		return FALSE
+	if(CHECK_BITFIELD(flags_1, ADMIN_SPAWNED_1))
+		return FALSE
+	if(health <= 0)
+		return FALSE
+	if(AIStatus == AI_ON || AIStatus == AI_OFF)
+		return FALSE
+	return TRUE
+
+/mob/living/simple_animal/hostile/become_the_mob(mob/user)
+	if(lonely_timer_id)
+		deltimer(lonely_timer_id)
+		lonely_timer_id = null	
+	unqueue_unbirth()
+	. = ..()
+
 
 /mob/living/simple_animal/hostile/proc/sidestep()
 	if(!target || !isturf(target.loc) || !isturf(loc) || stat == DEAD)
@@ -775,6 +818,25 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)
 
+/mob/living/simple_animal/hostile/proc/queue_unbirth()
+	SSidlenpcpool.add_to_culling(src)
+
+/mob/living/simple_animal/hostile/proc/unqueue_unbirth()
+	SSidlenpcpool.remove_from_culling(src)
+
+/// return to monke-- stuffs a mob into their own special nest
+/mob/living/simple_animal/hostile/proc/unbirth_self(forced)
+	if(!forced && !consider_despawning()) // check again plz
+		return
+	var/obj/structure/nest/my_home
+	if(isweakref(nest))
+		my_home = RESOLVEWEAKREF(nest)
+		if(my_home && !SEND_SIGNAL(my_home, COMSIG_SPAWNER_EXISTS))
+			my_home = null
+	if(!my_home)
+		my_home = new/obj/structure/nest/special(get_turf(src))
+	SEND_SIGNAL(my_home, COMSIG_SPAWNER_ABSORB_MOB, src)
+
 /mob/living/simple_animal/hostile/setup_variations()
 	if(!..())
 		return
@@ -828,7 +890,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/un_emp_stun()
 	active_emp_flags -= MOB_EMP_STUN
 	LoseTarget()
-	toggle_ai(AI_OFF)
+	toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/do_emp_berserk(intensity)
 	if(!intensity)

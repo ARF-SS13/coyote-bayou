@@ -79,22 +79,26 @@
 
 // use power from a cell
 /obj/item/stock_parts/cell/use(amount, can_explode = TRUE)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	if(rigged && amount > 0 && can_explode)
 		explode()
 		return 0
-	if(charge < amount)
+	if(charge <= 0)
 		return 0
-	charge = (charge - amount)
+	var/used = min(charge,amount)
+	charge = (charge - used)
 	if(!istype(loc, /obj/machinery/power/apc))
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
-	return 1
+	return used
 
 // check power in a cell
 /obj/item/stock_parts/cell/proc/check_charge(amount)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	return (charge >= amount)
 
 // recharge the cell
 /obj/item/stock_parts/cell/proc/give(amount)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	if(rigged && amount > 0)
 		explode()
 		return 0
@@ -148,6 +152,7 @@
 	charge -= 10 * severity
 	if(charge < 0)
 		charge = 0
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 
 /obj/item/stock_parts/cell/ex_act(severity, target)
 	..()
