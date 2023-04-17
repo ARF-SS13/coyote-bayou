@@ -4685,7 +4685,12 @@
 /area/f13/tunnel)
 "bRQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo5"
+	},
+/obj/effect/decal/waste{
+	icon_state = "goo5"
+	},
 /obj/effect/decal/waste{
 	icon_state = "goo5"
 	},
@@ -4733,22 +4738,7 @@
 /area/f13/tunnel)
 "bSG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/turf/open/indestructible/ground/inside/subway,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/tunnel)
 "bSH" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -4758,11 +4748,8 @@
 /area/f13/tunnel)
 "bSU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/deathclaw,
-/turf/open/indestructible/ground/inside/subway{
-	name = "cave"
-	},
-/area/f13/caves)
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/building/sewers)
 "bTh" = (
 /obj/structure/sign/stop,
 /turf/open/indestructible/ground/inside/subway,
@@ -6443,7 +6430,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
 "cBO" = (
-/turf/closed/wall/r_wall,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo5"
+	},
+/obj/effect/decal/waste{
+	icon_state = "goo5"
+	},
+/obj/effect/decal/waste{
+	icon_state = "goo5"
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "cBX" = (
 /obj/structure/spider/stickyweb,
@@ -14069,8 +14067,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/tunnel)
 "izx" = (
-/obj/structure/simple_door/metal/barred,
-/turf/open/indestructible/ground/inside/subway,
+/turf/closed/wall/rust,
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building/sewers)
 "izI" = (
@@ -18723,7 +18720,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
 "lNV" = (
-/turf/closed/wall/rust,
+/obj/structure/barricade/bars,
+/turf/open/indestructible/ground/inside/subway,
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building/sewers)
 "lNX" = (
@@ -19620,11 +19618,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"mtl" = (
-/obj/structure/barricade/bars,
-/turf/open/indestructible/ground/inside/subway,
-/turf/closed/indestructible/f13vaultrusted,
-/area/f13/building/sewers)
 "mtF" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -20424,6 +20417,14 @@
 /obj/structure/flora/wasteplant/wild_punga,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
+"mYp" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/deathclaw,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "mYz" = (
 /obj/structure/flora/rock/pile/largejungle{
 	layer = 3.2;
@@ -21957,6 +21958,13 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
+"ohk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/deathclaw,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "oib" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -33418,7 +33426,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "wAv" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/metal/barred,
+/turf/open/indestructible/ground/inside/subway,
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building/sewers)
 "wAI" = (
@@ -68618,7 +68627,7 @@ oNM
 tkZ
 tkZ
 bQs
-lNV
+izx
 pLf
 pLf
 pLf
@@ -68875,7 +68884,7 @@ oNM
 tkZ
 tkZ
 tNM
-lNV
+izx
 aae
 aae
 aae
@@ -69132,7 +69141,7 @@ oNM
 tkZ
 tkZ
 hXn
-lNV
+izx
 aae
 aae
 aae
@@ -69389,7 +69398,7 @@ oNM
 tkZ
 tkZ
 hXn
-lNV
+izx
 aae
 aae
 aae
@@ -69646,7 +69655,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -69903,7 +69912,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -70160,7 +70169,7 @@ oNM
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -70417,7 +70426,7 @@ oNM
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -70674,7 +70683,7 @@ oNM
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -70931,7 +70940,7 @@ oNM
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -71188,7 +71197,7 @@ oNM
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -71445,7 +71454,7 @@ oNM
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -71702,7 +71711,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -72216,7 +72225,7 @@ jGk
 foJ
 tkZ
 kyV
-izx
+wAv
 kyV
 kyV
 kyV
@@ -72473,7 +72482,7 @@ jGk
 rRt
 tkZ
 kyV
-mtl
+lNV
 kyV
 kyV
 kyV
@@ -72730,7 +72739,7 @@ jGk
 tkZ
 tkZ
 kyV
-lNV
+izx
 pLf
 pLf
 pwE
@@ -72987,7 +72996,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -73244,7 +73253,7 @@ gcv
 tkZ
 tkZ
 liI
-lNV
+izx
 aae
 aae
 aae
@@ -73501,7 +73510,7 @@ gcv
 tkZ
 tkZ
 hXn
-lNV
+izx
 aae
 aae
 aae
@@ -73538,7 +73547,7 @@ pOs
 gcv
 kyV
 jGk
-bsC
+pwE
 ffm
 afR
 bKb
@@ -73758,7 +73767,7 @@ oNM
 vSO
 tkZ
 hXn
-lNV
+izx
 aae
 aae
 aae
@@ -73795,7 +73804,7 @@ oXH
 gcv
 tJv
 pCb
-bsC
+pwE
 aah
 hHK
 bKb
@@ -74015,7 +74024,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -74052,7 +74061,7 @@ bfe
 pOs
 kyV
 gLW
-bsC
+pwE
 rpA
 rpA
 bKb
@@ -74272,7 +74281,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -74309,7 +74318,7 @@ kyV
 mFZ
 oXH
 gZP
-bsC
+pwE
 aah
 hHK
 bKb
@@ -74529,7 +74538,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -74566,7 +74575,7 @@ pIy
 kyV
 kyV
 tsA
-bsC
+pwE
 rpA
 rpA
 bKb
@@ -74786,7 +74795,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -74823,7 +74832,7 @@ aSr
 oXH
 kyV
 kyV
-bsC
+pwE
 aah
 rpA
 bKb
@@ -75043,7 +75052,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -75080,7 +75089,7 @@ blM
 ccw
 kyV
 kyV
-bsC
+pwE
 rpA
 rpA
 bKb
@@ -75300,7 +75309,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -75337,7 +75346,7 @@ blM
 dzm
 ucF
 dzm
-bsC
+pwE
 rpA
 hHK
 bKb
@@ -75557,7 +75566,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -75594,7 +75603,7 @@ jGk
 hFl
 aah
 rJl
-bsC
+pwE
 bGZ
 aah
 bKb
@@ -75814,7 +75823,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -75851,7 +75860,7 @@ jGk
 aah
 aah
 oMw
-bsC
+pwE
 aah
 rpA
 bKb
@@ -76071,7 +76080,7 @@ bQp
 tkZ
 tkZ
 bQt
-lNV
+izx
 aae
 aae
 aae
@@ -76108,7 +76117,7 @@ fwC
 cEg
 aah
 qRL
-bsC
+pwE
 aah
 aah
 bKb
@@ -76328,7 +76337,7 @@ kyV
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -76345,7 +76354,7 @@ pwE
 aah
 aah
 anU
-bsC
+pwE
 qmd
 rFs
 aUQ
@@ -76365,7 +76374,7 @@ vvq
 iJQ
 rgU
 aDN
-bsC
+pwE
 aah
 rpA
 bKb
@@ -76585,7 +76594,7 @@ jGk
 foJ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -76602,7 +76611,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 jGk
 jGk
 jGk
@@ -76622,7 +76631,7 @@ nFD
 aah
 iJQ
 iUI
-bsC
+pwE
 bHg
 aah
 bKb
@@ -76842,7 +76851,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -76859,7 +76868,7 @@ pwE
 aah
 aah
 bUp
-bsC
+pwE
 dzm
 gRa
 hWk
@@ -76879,7 +76888,7 @@ aah
 aah
 jeq
 okf
-bsC
+pwE
 aah
 rpA
 bPR
@@ -77099,7 +77108,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aak
@@ -77116,7 +77125,7 @@ pwE
 aah
 aah
 giC
-bsC
+pwE
 dzm
 eAb
 cEg
@@ -77136,7 +77145,7 @@ eFN
 acC
 eFN
 glB
-bCt
+pwE
 aah
 hHK
 bPR
@@ -77356,7 +77365,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aak
@@ -77373,7 +77382,7 @@ pwE
 bHg
 eJW
 bKb
-bsC
+pwE
 dzm
 gRa
 tMl
@@ -77393,7 +77402,7 @@ hro
 aWr
 tYU
 kPo
-bCt
+pwE
 aah
 gVT
 bKb
@@ -77613,7 +77622,7 @@ qLb
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 bsC
@@ -77630,7 +77639,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 dzm
 dzm
@@ -77650,7 +77659,7 @@ tYU
 oWf
 aWr
 dRV
-cBO
+pwE
 rpA
 rpA
 bPR
@@ -77870,7 +77879,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -77887,7 +77896,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 lET
 rcp
@@ -77907,7 +77916,7 @@ aWr
 gwu
 tYU
 kPo
-cBO
+pwE
 rpA
 hHK
 bKb
@@ -78127,7 +78136,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -78144,7 +78153,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 lQi
 oal
@@ -78164,7 +78173,7 @@ vWN
 gwu
 tYU
 azD
-bCt
+pwE
 aah
 hHK
 bKb
@@ -78384,7 +78393,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -78401,7 +78410,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 kjv
 rcp
@@ -78421,7 +78430,7 @@ aWr
 gwu
 aWr
 nuL
-cBO
+pwE
 rpA
 aah
 bPR
@@ -78641,7 +78650,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -78658,7 +78667,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 oUw
 gTm
@@ -78678,7 +78687,7 @@ gwu
 tYU
 tYU
 pfJ
-bCt
+pwE
 aah
 gVT
 bKb
@@ -78898,7 +78907,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 bsC
@@ -78915,7 +78924,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 vJe
 rcp
@@ -78935,7 +78944,7 @@ byL
 tYU
 tYU
 tSC
-cBO
+pwE
 rpA
 rpA
 bPR
@@ -79155,7 +79164,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 bsC
@@ -79172,7 +79181,7 @@ bGZ
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 dzm
 dzm
@@ -79192,7 +79201,7 @@ eFN
 mFW
 glB
 eFN
-bCt
+pwE
 aah
 hHK
 bPR
@@ -79412,7 +79421,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -79429,7 +79438,7 @@ aah
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 bLy
 eWa
@@ -79449,7 +79458,7 @@ wlO
 xbU
 eBq
 cPy
-bsC
+pwE
 aah
 hHK
 bKb
@@ -79669,7 +79678,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -79686,7 +79695,7 @@ gna
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 kuL
 iDW
@@ -79706,7 +79715,7 @@ lrv
 iZH
 gLZ
 vHE
-bsC
+pwE
 aah
 afR
 bKb
@@ -79926,7 +79935,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -79943,7 +79952,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 dzm
 dzm
 dzm
@@ -79963,7 +79972,7 @@ blM
 blM
 blM
 blM
-bsC
+pwE
 aah
 gVT
 bKb
@@ -80183,7 +80192,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 bsC
@@ -80200,7 +80209,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 bsu
 ptn
 gcv
@@ -80220,7 +80229,7 @@ kyV
 xjW
 kyV
 blM
-bsC
+pwE
 aah
 wYJ
 bKb
@@ -80440,7 +80449,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -80457,7 +80466,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 nAr
 bUZ
 tPZ
@@ -80477,7 +80486,7 @@ kyV
 gBF
 kyV
 blM
-bsC
+pwE
 aah
 afR
 bPR
@@ -80697,7 +80706,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -80714,7 +80723,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 gQX
 gcv
 hXn
@@ -80734,7 +80743,7 @@ pOs
 kyV
 aGK
 blM
-bsC
+pwE
 rpA
 bbT
 bPR
@@ -80954,7 +80963,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -80971,7 +80980,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 cOH
 aYX
 gcv
@@ -80991,7 +81000,7 @@ pOs
 pOs
 kyV
 blM
-bsC
+pwE
 rpA
 rpA
 bKb
@@ -81211,7 +81220,7 @@ oNM
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -81228,7 +81237,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 blM
 blM
 ura
@@ -81247,8 +81256,8 @@ kyV
 pOs
 yiL
 kyV
-bsC
-bsC
+pwE
+pwE
 aGy
 rpA
 bKb
@@ -81468,7 +81477,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -81485,7 +81494,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 blM
 gcv
 hXn
@@ -81504,7 +81513,7 @@ pOs
 pOs
 mrH
 pMB
-bsC
+pwE
 bGZ
 aah
 yge
@@ -81725,7 +81734,7 @@ gcv
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 bsC
@@ -81742,7 +81751,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 blM
 hXn
 hXn
@@ -81761,7 +81770,7 @@ lkf
 eRS
 qWI
 tUp
-bsC
+pwE
 aah
 agZ
 aah
@@ -81982,7 +81991,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 bsC
@@ -81999,7 +82008,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 blM
 gcv
 hXn
@@ -82018,7 +82027,7 @@ kXx
 pFE
 kyV
 kyV
-bsC
+pwE
 vRN
 rpA
 aah
@@ -82239,7 +82248,7 @@ gcv
 tkZ
 tkZ
 bQs
-lNV
+izx
 aae
 aae
 aae
@@ -82256,7 +82265,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 blM
 gcv
 aYX
@@ -82275,8 +82284,8 @@ bEZ
 xhQ
 bEZ
 nHu
-bsC
-mna
+pwE
+bSG
 rpA
 aah
 bPR
@@ -82496,7 +82505,7 @@ bQq
 tkZ
 tkZ
 gcv
-lNV
+izx
 aae
 aae
 aae
@@ -82513,7 +82522,7 @@ pwE
 aah
 aah
 bKb
-bsC
+pwE
 blM
 blM
 blM
@@ -82533,7 +82542,7 @@ blM
 blM
 blM
 dzm
-mna
+bSG
 aah
 bWd
 bPR
@@ -82796,13 +82805,13 @@ mkF
 nyH
 pLf
 pLf
-wAv
-wAv
+bSU
+bSU
 bSb
 bSb
 bSb
 iEV
-wAv
+bSU
 bSb
 pLf
 pLf
@@ -82813,10 +82822,10 @@ pLf
 gfm
 pLf
 pLf
-wAv
+bSU
 pLf
-wAv
-wAv
+bSU
+bSU
 pLf
 pLf
 pLf
@@ -83562,17 +83571,14 @@ pLf
 pLf
 pLf
 pLf
-wAv
+bSU
 bSb
-wAv
-wAv
-wAv
+bSU
+bSU
+bSU
 pLf
 pLf
-wAv
-pLf
-pLf
-pLf
+bSU
 pLf
 pLf
 pLf
@@ -83582,13 +83588,16 @@ pLf
 pLf
 pLf
 pLf
-wAv
-wAv
-wAv
-wAv
-wAv
 pLf
-wAv
+pLf
+pLf
+bSU
+bSU
+bSU
+bSU
+bSU
+pLf
+bSU
 gAR
 mRt
 mRt
@@ -86382,7 +86391,7 @@ dzm
 aah
 hHK
 hUJ
-bRQ
+cBO
 epz
 dzm
 mby
@@ -86896,7 +86905,7 @@ jJz
 hHK
 yge
 rpA
-bSG
+bRQ
 hHK
 aah
 aah
@@ -94347,7 +94356,7 @@ mPz
 mPz
 mPz
 tbh
-bSU
+ohk
 mPz
 aak
 xwF
@@ -95614,7 +95623,7 @@ xwF
 xwF
 xwF
 xwF
-bSU
+ohk
 tbh
 aar
 aaB
@@ -98939,13 +98948,13 @@ iCD
 iCD
 iCD
 mPz
-mPz
+bXW
 mPz
 tbh
 tGD
 gjs
 mPz
-sta
+mYp
 tbh
 mPz
 iCD
@@ -99196,7 +99205,7 @@ iCD
 iCD
 iCD
 iCD
-mPz
+bXW
 mPz
 lmW
 mPz
@@ -99713,7 +99722,7 @@ iCD
 iCD
 iCD
 iCD
-dbr
+pxf
 mPz
 mPz
 iCD
