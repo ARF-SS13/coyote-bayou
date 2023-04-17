@@ -580,8 +580,22 @@
 #define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
 #define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
 
-/// persona core signals
-#define COMSIG_ATOM_PERSONA_CORE_INSERTED "persona_core_inserted" // (/obj/item/persona_core/src)
+/// Blenderbrain signals
+/// Signals sent from the Persona Core to the host
+/// Tells the host that the core is being inserted into them
+#define COMSIG_BB_PC_TO_HOST_INSERTED "persona_core_inserted" // (datum/source, /obj/item/persona_core/src)
+/// Tells the host that the core is being removed from them
+#define COMSIG_BB_PC_TO_HOST_REMOVED "persona_core_removed" // (datum/source, /obj/item/persona_core/src)
+/// Blenderbrain's output that is being sent to the host
+#define COMSIG_BB_PC_TO_HOST_IMPULSE "persona_core_instructions" // (datum/source, instructions)
+/// REquests some kind of information from the host, like if its running, has a thing in it, etc. Returns a flag, usually TRUE or FALSE
+#define COMSIG_BB_PC_TO_HOST_REQUEST "persona_core_request" // (datum/source, request)
+
+/// Signals sent from the host to the Persona Core
+/// A stimulus sent from the host to the core, something that might trigger a response
+#define COMSIG_BB_HOST_TO_PC_STIMULUS "persona_core_stimulus" // (datum/source, stimulus, mob/user, list/extra_things)
+
+
 
 /// When they look back and see that some fuckin nerd componentized vore, will they be proud? or rightfully confused why someone would spend their time on this?
 /// I know one thing for sure though, and that is that I won't regret any second of it

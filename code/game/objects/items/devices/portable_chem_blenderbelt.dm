@@ -27,7 +27,7 @@
 	var/amount = 30	///The amount of reagent that is to be dispensed currently
 	var/grind_or_juice = BLENDER_BLENDMODE_GRIND
 	/// Grindmode lets you put stuff in it and grind, dispenser mode lets you use the thing as a dispenser
-	var/grind_or_dispense = BLENDER_BELTMODE_GRINDER
+	var/grind_or_dispense = BLENDER_BELTMODE_BLENDER
 	/// is it running?
 	var/blending = FALSE
 	/// Are we putting stuff back into the hopper instead of deleting them?
@@ -56,7 +56,7 @@
 		. += span_green("It is currently [grind_or_juice]!")
 	else
 		switch(grind_or_dispense)
-			if(BLENDER_BELTMODE_GRINDER)
+			if(BLENDER_BELTMODE_BLENDER)
 				. += span_green("The blender hopper is currently unlocked and ready to grind! The dispenser, however, is locked!")
 			if(BLENDER_BELTMODE_DISPENSER)
 				. += span_green("The blender hopper is currently locked, and the dispenser ready to accept a drink container!")
@@ -80,6 +80,11 @@
 	QDEL_NULL(soundloop)
 	QDEL_NULL(memoire)
 	return ..()
+
+/obj/item/storage/blender_belt/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_REQUEST, .proc/handle_request)
+	RegisterSignal(src, COMSIG_BB_PC_TO_HOST_IMPULSE, .proc/handle_impulse)
 
 /obj/item/storage/blender_belt/ex_act(severity, target)
 	if(severity < 3)
@@ -120,10 +125,54 @@
 		return
 	memoire.preprocess_speech(speaker, raw_message)
 
+/obj/item/storage/blender_belt/proc/handle_request(datum/source, request)
+	switch(request)
+		if(REQUEST_STILL_WORKING)
+			return blending
+		if(REQUEST_IS_GRINDER)
+			return grind_or_juice == BLENDER_BLENDMODE_GRIND
+		if(REQUEST_IS_JUICER)
+			return grind_or_juice == BLENDER_BLENDMODE_JUICE
+		if(REQUEST_IS_DISPENSER)
+			return grind_or_dispense == BLENDER_BELTMODE_DISPENSER
+		if(REQUEST_IS_BLENDER)
+			return grind_or_dispense == BLENDER_BELTMODE_BLENDER
+
+/obj/item/storage/blender_belt/proc/handle_impulse(datum/source, mob/user, list/impulses)
+	var/first_impulse = LAZYACCESS(impulses, 1)
+	var/second_impulse = LAZYACCESS(impulses, 2)
+	if(!first_impulse)
+		return
+	switch(first_impulse)
+		if(IMPULSE_START)
+			start_running(user, grind_or_juice)
+		if(IMPULSE_STOP)
+			stop_running()
+		if(IMPULSE_SET_GRINDER)
+			if(second_impulse == IMPULSE_START)
+				start_running(user, BLENDER_BLENDMODE_GRIND)
+			else
+				grind_or_juice = BLENDER_BLENDMODE_GRIND
+		if(IMPULSE_SET_JUICER)
+			if(second_impulse == IMPULSE_START)
+				start_running(user, BLENDER_BLENDMODE_JUICE)
+			else
+				grind_or_juice = BLENDER_BLENDMODE_JUICE
+		if(IMPULSE_SET_GRINDER)
+			set_grinder(user)
+		if(IMPULSE_SET_DISPENSER)
+			set_dispenser(user)
+		if(IMPULSE_EJECT)
+			eject_all(user)
+		if(IMPULSE_EXAMINE)
+			describe_contents(user)
+		if(IMPULSE_HORRIBLE_NOISES)
+			use_horrible_grinding_noises = TRUE
+
 /obj/item/storage/blender_belt/proc/speak(mob/user, thing_say, atom/movable/extra, atom/movable/extra2)
 	if(!istype(memoire))
 		return
-	memoire.speak(user, thing_say, extra, extra2)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, thing_say, user, list(extra, extra2))
 
 /obj/item/storage/blender_belt/proc/abort()
 	unlock_belt()
@@ -132,7 +181,7 @@
 
 /obj/item/storage/blender_belt/proc/lock_belt(silent)
 	var/was_locked = islocked()
-	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, TRUE)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, COMSIG_TRY_STORAGE_SET_LOCKSTATE, TRUE)
 	SEND_SIGNAL(batbox, COMSIG_TRY_STORAGE_SET_LOCKSTATE, TRUE)
 	if(!silent && !was_locked)
 		var/turf/here = get_turf(src)
@@ -140,7 +189,7 @@
 
 /obj/item/storage/blender_belt/proc/unlock_belt(silent)
 	var/was_locked = islocked()
-	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
 	SEND_SIGNAL(batbox, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
 	if(!silent && was_locked)
 		var/turf/here = get_turf(src)
@@ -159,7 +208,7 @@
 	if(grindset != BLENDER_BLENDMODE_GRIND && grindset != BLENDER_BLENDMODE_JUICE)
 		return
 	grind_or_juice = grindset
-	if(grind_or_dispense != BLENDER_BELTMODE_GRINDER)
+	if(grind_or_dispense != BLENDER_BELTMODE_BLENDER)
 		set_grinder(user)
 	blending = TRUE
 	blend_loop(user)
@@ -169,17 +218,17 @@
 		abort()
 		return FALSE
 	if(internal_beaker.reagents?.holder_full())
-		speak(user, BLENDER_LINE_FULL)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_FULL, user)
 		abort()
 		return FALSE
 	var/obj/item/thing_to_blend = get_thing_to_blend()
 	if(!istype(thing_to_blend))
-		speak(user, BLENDER_LINE_NOTHING_TO_PROCESS)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_NOTHING_TO_PROCESS, user)
 		abort()
 		return
 	if(!islocked())
 		lock_belt()
-	speak(user, BLENDER_LINE_PROCESSING, thing_to_blend)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_PROCESSING, user, list(thing_to_blend))
 	check_or_use_charge()
 	blending = TRUE
 	if(use_horrible_grinding_noises)
@@ -192,9 +241,9 @@
 	var/run_time = clamp(15 SECONDS - ((3*(max(check_part()-1, 0))) SECONDS), 1 SECONDS, 15 SECONDS)
 	if(!do_after(user, run_time, needhand = FALSE, target = src, extra_checks = CALLBACK(src, .proc/still_running), allow_movement = TRUE))
 		if(blending)
-			speak(user, BLENDER_LINE_ROCKY_ABORT)
+			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_ROCKY_ABORT, user)
 		else
-			speak(user, BLENDER_LINE_SOFT_ABORT)
+			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_SOFT_ABORT, user)
 		abort()
 		return FALSE
 	if(!grind_thing(user, thing_to_blend))
@@ -203,11 +252,11 @@
 	/// check if we're actually done
 	var/anything = get_thing_to_blend()
 	if(!anything)
-		speak(user, BLENDER_LINE_DONE_BLENDING)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_DONE_BLENDING, user)
 		abort()
 		return FALSE
 	if(internal_beaker.reagents?.holder_full())
-		speak(user, BLENDER_LINE_FULL_SECOND)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_FULL_SECOND, user)
 		abort()
 		return FALSE
 	INVOKE_ASYNC(src, .proc/blend_loop, user) // and loop!
@@ -225,17 +274,17 @@
 		if(BLENDER_BLENDMODE_GRIND)
 			switch(thing.on_grind(src))
 				if(-1)
-					speak(user, BLENDER_LINE_GRINDFAIL)
+					SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_GRINDFAIL, user)
 					dump_thing(user, thing, TRUE)
 					return FALSE
 		if(BLENDER_BLENDMODE_JUICE)
 			switch(thing.on_juice(src))
 				if(-1)
-					speak(user, BLENDER_LINE_GRINDFAIL)
+					SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_GRINDFAIL, user)
 					dump_thing(user, thing, TRUE)
 					return FALSE
 	if(!istype(internal_beaker))
-		speak(user, BLENDER_LINE_NO_RESERVOIR)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_NO_RESERVOIR, user)
 		return FALSE
 	switch(grind_or_juice)
 		if(BLENDER_BLENDMODE_GRIND)
@@ -271,16 +320,16 @@
 		return FALSE
 	if(istype(thing, /obj/item/clothing/head/mob_holder))
 		if(!silent)
-			speak(user, BLENDER_LINE_RAT_BLENDER)
+			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_RAT_BLENDER, user)
 		dump_thing(user, thing)
 		return FALSE
 	var/failmode = thing.grind_requirements(src, FALSE)
 	switch(failmode)
 		if(GRIND_IS_CYBORG)
-			speak(user, BLENDER_LINE_CYBORG_PART)
+			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_CYBORG_PART, user)
 			return FALSE
 		if(GRIND_NEEDS_DRY)
-			speak(user, BLENDER_LINE_DRY_FIRST)
+			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_DRY_FIRST, user)
 			return FALSE
 	return TRUE
 
@@ -307,9 +356,9 @@
 	if(!istype(thing))
 		return
 	var/turf/here = get_turf(src)
-	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thing, here))
+	if(!SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, COMSIG_TRY_STORAGE_TAKE, thing, here))
 		if(!silent)
-			speak(user, BLENDER_LINE_STUCK_INSIDE)
+			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_STUCK_INSIDE, user)
 		return FALSE
 	if(violently)
 		thing.throw_at(get_ranged_target_turf(thing, pick(GLOB.cardinals), 3, 3), 5, null)
@@ -334,25 +383,25 @@
 	var/codederreur
 	. = TRUE
 	if(!batbox)
-		codederreur = "no_batbox"
+		codederreur = STIMULUS_BATBOX_GONE
 		. = FALSE
 	if(batbox.loc != src) // gotta be *in* the thing
-		codederreur = "batbox_elsewhere"
+		codederreur = STIMULUS_BATBOX_ELSEWHERE
 		. = FALSE
 	if(!check_or_use_charge(TRUE))
-		codederreur = "not_enuf_power"
+		codederreur = STIMULUS_LOW_POWER
 		. = FALSE
 	if(!istype(internal_beaker))
-		codederreur = "no_buffer"
+		codederreur = STIMULUS_BUFFER_GONE
 		. = FALSE
 	if(internal_beaker.loc != batbox)
-		codederreur = "buffer_elsewhere"
+		codederreur = STIMULUS_BUFFER_ELSEWHERE
 		. = FALSE
 	if(!check_part())
-		codederreur = "missing_part"
+		codederreur = STIMULUS_PART_MISSING
 		. = FALSE
 	if(!silent && codederreur)
-		speak(user, codederreur)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, codederreur, user)
 
 /obj/item/storage/blender_belt/proc/check_part()
 	if(!istype(batbox))
@@ -447,37 +496,37 @@
 			continue
 		what_drop |= thingy
 	if(!LAZYLEN(what_drop))
-		speak(user, BLENDER_LINE_NOTHING_TO_EJECT)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_NOTHING_TO_EJECT, user)
 		return
 	var/yeet = prob(10)
 	for(var/obj/item/dingy in what_drop)
 		if(dump_thing(user, dingy, yeet, TRUE))
 			what_drop -= dingy
 	if(LAZYLEN(what_drop))
-		speak(user, BLENDER_LINE_CANT_DROP_THING)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_CANT_DROP_THING, user)
 		return
 	if(istype(brevin))
 		eject_beaker(user)
 	if(yeet)
-		speak(user, BLENDER_LINE_YEET)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_YEET, user)
 		return
-	speak(user, BLENDER_LINE_DUMP)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_DUMP, user)
 
 /obj/item/storage/blender_belt/proc/toggle_dispenser_mode(mob/user)
 	if(blending)
-		speak(user, BLENDER_LINE_CANT_CHANGE_WHILE_BLENDING)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_CANT_CHANGE_WHILE_BLENDING, user)
 		return
 	switch(grind_or_dispense)
 		if(BLENDER_BELTMODE_DISPENSER)
 			set_grinder(user)
-		if(BLENDER_BELTMODE_GRINDER)
+		if(BLENDER_BELTMODE_BLENDER)
 			set_dispenser(user)
 
 /obj/item/storage/blender_belt/proc/set_dispenser(mob/user)
 	if(user)
 		user.show_message(span_notice("You flip the switch on [src] to DISPENSER mode."))
 	grind_or_dispense = BLENDER_BELTMODE_DISPENSER
-	speak(user, BLENDER_LINE_SET_TO_DISPENSER)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_SET_TO_DISPENSER, user)
 	lock_belt()
 
 /obj/item/storage/blender_belt/proc/set_grinder(mob/user)
@@ -485,8 +534,8 @@
 		user.show_message(span_notice("You flip the switch on [src] to BLENDER mode."))
 	if(istype(brevin))
 		eject_beaker(user, silent = TRUE)
-	grind_or_dispense = BLENDER_BELTMODE_GRINDER
-	speak(user, BLENDER_LINE_SET_TO_GRINDER)
+	grind_or_dispense = BLENDER_BELTMODE_BLENDER
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_SET_TO_GRINDER, user)
 	close_window(user)
 	unlock_belt()
 
@@ -494,13 +543,13 @@
 	if(!istype(internal_beaker))
 		return
 	if(internal_beaker.reagents.total_volume <= 0)
-		speak(user, BLENDER_LINE_EXAMINE_EMPTY)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_EXAMINE_EMPTY, user)
 		return
 	if(!COOLDOWN_FINISHED(src, printer_cooldown))
-		speak(user, BLENDER_LINE_EXAMINE_PAPER_COOLDOWN)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_EXAMINE_PAPER_COOLDOWN, user)
 		return
 	COOLDOWN_START(src, printer_cooldown, 10 SECONDS)
-	speak(user, BLENDER_LINE_EXAMINE_OKAY)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_EXAMINE_OKAY, user)
 	print_contents(user)
 
 /obj/item/storage/blender_belt/proc/print_contents(mob/user)
@@ -557,7 +606,7 @@
 		user.put_in_hands(brevin)
 		if(!silent)
 			user.show_message(span_notice("You take [brevin] out of [src]."))
-			speak(user, BLENDER_LINE_EJECT_BREVIN, brevin)
+			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_EJECT_BREVIN, user, list(brevin))
 	brevin = null
 	update_icon()
 
@@ -575,13 +624,13 @@
 	if(old_brevin)
 		user.put_in_hands(old_brevin)
 		user.show_message(span_notice("You swap out the beakers."))
-		speak(user, BLENDER_LINE_SWAP_BREVIN, brevin)
+		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_SWAP_BREVIN, user, list(brevin))
 		return
 	user.show_message(span_notice("You insert [brevin]."))
-	speak(user, BLENDER_LINE_INSERT_BREVIN, brevin)
+	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_INSERT_BREVIN, user, list(brevin))
 	
 /obj/item/storage/blender_belt/update_icon_state()
-	if(grind_or_dispense == BLENDER_BELTMODE_GRINDER)
+	if(grind_or_dispense == BLENDER_BELTMODE_BLENDER)
 		icon_state = "portablechemicalmixer_open"
 	else if(brevin)
 		icon_state = "portablechemicalmixer_full"
@@ -669,12 +718,12 @@
 		if("dispense")
 			var/datum/reagents/dest = brevin.reagents
 			if(dest.holder_full())
-				speak(loc, BLENDER_LINE_BREVIN_FULL, brevin)
+				SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_BREVIN_FULL, loc, list(brevin))
 				return
 			var/the_reagent = GLOB.name2reagent[params["reagent"]]
 			var/datum/reagents/source = internal_beaker.reagents
 			if(!source.has_reagent(the_reagent))
-				speak(loc, BLENDER_LINE_REAGENT_NOT_FOUND)
+				SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_REAGENT_NOT_FOUND, loc)
 				return
 			source.trans_id_to(brevin, the_reagent, amount) // the proc already handles the measurements
 			. = TRUE
