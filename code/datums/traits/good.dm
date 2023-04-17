@@ -105,7 +105,6 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	value = 1
 	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
 	lose_text = span_notice("The terrible hunger fades - you feel peace at last.")
-	medical_record_text = "Patient likes to eat a well balanced meal."
 
 /datum/quirk/horrifying_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder
