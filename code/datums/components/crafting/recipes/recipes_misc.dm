@@ -627,7 +627,7 @@
 
 /datum/crafting_recipe/repair_t45
 	name = "Refurbished T-45b Power Armor"
-	result = /obj/item/clothing/suit/armor/power_armor/t45b/raider
+	result = /obj/item/clothing/suit/armor/power_armor/t45b
 	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
 				/obj/item/stack/cable_coil = 5,
 				/obj/item/stack/crafting/electronicparts = 5,
