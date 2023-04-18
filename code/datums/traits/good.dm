@@ -86,6 +86,12 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	/datum/crafting_recipe/aer9_hotwired))
 
+GLOBAL_LIST_INIT(pa_repair, list(
+	/datum/crafting_recipe/repair_t45,
+	/datum/crafting_recipe/repair_t45_helm,
+	/datum/crafting_recipe/scrap_pa,
+	/datum/crafting_recipe/scrap_pa_helm))
+
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
 
@@ -317,6 +323,7 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	H.mind.learned_recipes |= GLOB.tier_three_parts
 	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
 	H.mind.learned_recipes |= GLOB.energyweapon_crafting
+	H.mind.learned_recipes |= GLOB.pa_repair
 
 /datum/quirk/technophreak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -324,6 +331,7 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 		H.mind.learned_recipes -= GLOB.tier_three_parts
 		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
+		H.mind.learned_recipes -= GLOB.pa_repair
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
