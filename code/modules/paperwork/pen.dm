@@ -189,7 +189,7 @@
 					return
 				O.desc = input
 				to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
-	else	
+	else
 		return
 /*
  * Sleepypens
@@ -253,13 +253,13 @@
 		to_chat(user, span_warning("[src] can now be concealed."))
 	else
 		on = TRUE
-		force = 18
+		force = 30
 		throw_speed = 4
 		w_class = WEIGHT_CLASS_NORMAL
 		name = "energy dagger"
 		hitsound = 'sound/weapons/blade1.ogg'
 		embedding = list(embed_chance = 100) //rule of cool
-		throwforce = 35
+		throwforce = 45
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, span_warning("[src] is now active."))
 	updateEmbedding()
