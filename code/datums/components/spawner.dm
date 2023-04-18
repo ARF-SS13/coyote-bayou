@@ -7,6 +7,9 @@
 	var/spawn_time = 30 SECONDS
 	/// List of mobs that we spawned that currently exist
 	var/list/spawned_mobs = list()
+	/// List of sleeping mobs that are associated with this spawner
+	/// Uses a cool-ass tag string system!
+	var/list/sleeping_mobs = list()
 	/// How many mobs can be attached to this spawner at once
 	var/max_mobs = 5
 	/// verb for when the thing comes out of the thing
@@ -157,7 +160,7 @@
 
 /// Check the spawned mob list, prune dead mobs, return TRUE if it isnt full
 /datum/component/spawner/proc/check_spawned_mobs()
-	if(LAZYLEN(spawned_mobs) < max_mobs)
+	if(LAZYLEN(spawned_mobs) + LAZYLEN(sleeping_mobs) < max_mobs)
 		return TRUE
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
 		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
@@ -166,7 +169,7 @@
 		else if(removed_animal.health <= 0)
 			spawned_mobs -= mob_ref
 			removed_animal.nest = null
-	if(LAZYLEN(spawned_mobs) < max_mobs)
+	if(LAZYLEN(spawned_mobs) + LAZYLEN(sleeping_mobs) < max_mobs)
 		return TRUE
 
 /// Basic checks to see if we can spawn something
@@ -214,8 +217,10 @@
 /datum/component/spawner/proc/spawn_mob()
 	if(LAZYLEN(special_mobs))
 		var/datum/special_mob_datum/spawner_special = pick(special_mobs)
-		spawner_special.make_special_mob(src)
-		return
+		if(spawner_special)
+			sleeping_mobs -= spawner_special.mobtag
+			spawner_special.make_special_mob(src)
+			return
 	if(!islist(spawned_mobs))
 		spawned_mobs = list()
 	var/atom/P = parent
@@ -316,11 +321,13 @@
 	if(!istype(despawn_me))
 		return
 	var/datum/special_mob_datum/sparkle = new()
-	if(!sparkle.record_special_vars(despawn_me))
+	var/sparkle_tag = sparkle.record_special_vars(despawn_me)
+	if(!sparkle_tag)
 		qdel(sparkle) // no real point in keeping it if it's empty
 		return
 	var/already_special = !istype(parent, /obj/structure/nest/special) || LAZYLEN(special_mobs)
 	special_mobs |= sparkle
+	sleeping_mobs |= sparkle_tag
 	if(!already_special)
 		var/atom/sponer = parent
 		sponer.name = despawn_me.name
@@ -346,6 +353,7 @@
 	var/maxHealth
 	var/color
 	var/faction
+	var/mobtag
 
 /// A proc that takes a mob datum and records all the vars that are different from the initial vars, for later use.
 /datum/special_mob_datum/proc/record_special_vars(mob/living/simple_animal/hostile/cool_mob)
@@ -359,7 +367,8 @@
 	maxHealth = cool_mob.maxHealth
 	color = cool_mob.color
 	faction = cool_mob.faction
-	return TRUE
+	mobtag = "[name]-[mob_type]-[rand(10000,99999)]-[world.time]"
+	return mobtag
 
 /// A proc that spawns a mob from a special mob datum
 /datum/special_mob_datum/proc/make_special_mob(datum/component/spawner/myspawner)
