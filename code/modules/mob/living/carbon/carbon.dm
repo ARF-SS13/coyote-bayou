@@ -310,6 +310,8 @@
 				if(!L.destroy_coverings("suture", TRUE, bandage_breaker))
 					show_message(span_alert("You couldn't remove anything!"))
 		switch(href_list["action"])
+			if("change_chat_color")
+				change_chat_color()
 			if("genital_return")
 				show_genital_panel()
 			if("open_genital_layering")
@@ -511,6 +513,24 @@
 		</td>"}
 	doot += "</tr>"
 	return doot.Join()
+
+/mob/living/carbon/verb/change_runechat_color()
+	set category = "IC"
+	set name = "Runechat Color"
+	set desc = "Lets you change your runechat color!"
+	change_chat_color()
+
+/mob/living/carbon/proc/change_chat_color()
+	var/my_chat_color = dna.features["chat_color"]
+	var/new_runecolor = input(src, "Choose your character's runechat color:", "Character Preference","#[my_chat_color]") as color|null
+	if(new_runecolor)
+		new_runecolor = sanitize_hexcolor(new_runecolor, 6)
+		dna.features["chat_color"] = new_runecolor
+		client.prefs.features["chat_color"] = new_runecolor
+		client.prefs.save_preferences()
+		chat_color = "#[new_runecolor]"
+		chat_color_darkened = "#[new_runecolor]"
+		to_chat(src, "<span style'color=#[new_runecolor]'>Your runechat color is now #[new_runecolor]!</span>")
 
 /mob/living/carbon/fall(forced)
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing

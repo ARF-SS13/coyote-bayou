@@ -190,7 +190,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"taste" = "something",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
-		"color_scheme" = OLD_CHARACTER_COLORING
+		"color_scheme" = OLD_CHARACTER_COLORING,
+		"chat_color" = "whoopsie"
 		)
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
@@ -524,6 +525,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><BR>"
+			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><BR>"
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 			dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
@@ -2574,6 +2576,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["taste"] = new_taste
 					else
 						features["taste"] = "something"
+
+				if("chat_color")
+					var/new_runecolor = input(user, "Choose your character's runechat color:", "Character Preference","#"+features["chat_color"]) as color|null
+					if(new_runecolor)
+						features["chat_color"] = sanitize_hexcolor(new_runecolor, 6)
 
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
