@@ -452,3 +452,97 @@
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.9
 	block_chance = 8
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff
+	name = "Old Quarterstaff"
+	desc = "That's a pole, it's for whomping."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "quarterstaff"
+	item_state = "quarterstaff"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 10
+	force_wielded = 20
+	throwforce = 15
+	wound_bonus = 15
+	stam_dmg = 30
+	bare_wound_bonus = 10
+	max_reach = 0
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("slashed", "sliced", "chopped")
+	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.7
+	block_chance = 15
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(60, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+/obj/item/melee/coyote/olddervish
+	name = "Old Dervish Blade"
+	desc = "Shall we dance the dance of death, wetlander?"
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "umar_sword"
+	item_state = "umar_sword"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 28
+	force_wielded = 38
+	throwforce = 28
+	wound_bonus = 15
+	bare_wound_bonus = 10
+	max_reach = 0
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("slashed", "sliced", "chopped")
+	hitsound = 'sound/weapons/slice.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.9
+	block_chance = 8
+
+/obj/item/melee/coyote/oldpike/sarissa
+	name = "Old Sarissa"
+	desc = "The clouds are blotting out the sun today. We can fight in the shade."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "sarissa"
+	item_state = "sarissa"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+
+/obj/item/melee/coyote/oldlongsword/spadroon
+	name = "Old Spadroon"
+	desc = "A soldiers sword, with tight tolerances."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "spadroon"
+	item_state = "spadroon"
+
+/obj/item/melee/coyote/oldlongsword/broadsword
+	name = "Old Broadsword"
+	desc = "A wide blade for a deep wound."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "broadsword"
+	item_state = "broadsword"
+
+/obj/item/melee/coyote/oldlongsword/armingsword
+	name = "Old Arming Sword"
+	desc = "Disclaimer: Not all that great at chopping arms off."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "armingsword"
+	item_state = "armingsword"
+
+
+
+
+
+
+
+
+
+

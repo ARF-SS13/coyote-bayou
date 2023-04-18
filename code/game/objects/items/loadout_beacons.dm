@@ -905,6 +905,24 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/oldhalberd/PopulateContents()
 	new /obj/item/melee/coyote/oldhalberd(src)
 
+/obj/item/storage/box/gun/melee/oldquarterstaff/PopulateContents()
+	new /obj/item/melee/classic_baton/coyote/oldquarterstaff(src)
+
+/obj/item/storage/box/gun/melee/olddervish/PopulateContents()
+	new /obj/item/melee/coyote/olddervish(src)
+
+/obj/item/storage/box/gun/melee/oldpike/sarissa/PopulateContents()
+	new /obj/item/melee/coyote/oldpike/sarissa(src)
+
+/obj/item/storage/box/gun/melee/oldlongsword/spadroon/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword/spadroon(src)
+
+
+/obj/item/storage/box/gun/melee/oldlongsword/broadsword/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword/broadsword(src)
+
+/obj/item/storage/box/gun/melee/oldlongsword/armingsword/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword/armingsword(src)
 
 /obj/item/storage/box/gun/melee/oldpike/PopulateContents()
 	new /obj/item/melee/coyote/oldpike(src)
@@ -2244,9 +2262,41 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_SHIELD
 	spawn_thing = /obj/item/shield/coyote/redbuckler
 
+/datum/loadout_box/oldquarterstaff
+	entry_tag = "Old Quarterstaff"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/classic_baton/coyote/oldquarterstaff
 
+/datum/loadout_box/olddervish
+	entry_tag = "Old Dervish Blade"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/olddervish
 
+/datum/loadout_box/oldpike/sarissa
+	entry_tag = "Old Sarissa"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/oldpike/sarissa
 
+/datum/loadout_box/oldlongsword/spadroon
+	entry_tag = "Old Spadroon"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/oldlongsword/spadroon
+
+/datum/loadout_box/oldlongsword/broadsword
+	entry_tag = "Old Broadsword"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/oldlongsword/broadsword
+
+/datum/loadout_box/oldlongsword/armingsword
+	entry_tag = "Old Arming Sword"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/oldlongsword/armingsword
 
 
 
