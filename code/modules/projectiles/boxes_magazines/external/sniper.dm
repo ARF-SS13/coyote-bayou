@@ -24,6 +24,20 @@
 	special_ammo = TRUE
 	ammo_type = /obj/item/ammo_casing/a50MG/penetrator
 
+/obj/item/ammo_box/magazine/boys
+	name = "Boys magazine (.50)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "boys"
+	max_ammo = 5
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/boys/empty
+	start_empty = TRUE
+
 /*
 /obj/item/ammo_box/magazine/amr/uranium
 	name = "Anti-materiel magazine (uranium)"

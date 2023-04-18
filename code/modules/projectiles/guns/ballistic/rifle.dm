@@ -659,9 +659,32 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
+	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+
+//no scope, less capacity, more common
+/obj/item/gun/ballistic/rifle/mag/boys
+	name = "Boys anti-tank rifle"
+	desc = "A heavy british rifle boasting a strong kick and an even stronger punch."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "boys"
+	item_state = "boys"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/boys
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HMG_RECOIL(3)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
 

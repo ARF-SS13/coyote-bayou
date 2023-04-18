@@ -2278,7 +2278,6 @@ obj/item/gun/ballistic/automatic/bar
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
@@ -2286,6 +2285,66 @@ obj/item/gun/ballistic/automatic/bar
 	zoom_factor = 1
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+//hefty and clonky
+/obj/item/gun/ballistic/automatic/lewis
+	name = "Lewis automatic rifle"
+	desc = "A relic of a gun, featuring an obscenely heavy watercooled barrel and a high capacity pan magazine."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "lewis"
+	item_state = "lewis"
+	mag_type = /obj/item/ammo_box/magazine/lewis
+	init_mag_type = /obj/item/ammo_box/magazine/lewis/l47
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = LMG_RECOIL(1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150
+	)
+
+//less damage than the M1919, but more compact magazines that hold more
+/obj/item/gun/ballistic/automatic/lewis/lanoe
+	name = "Lewis Mark II"
+	desc = "This machinegun came right off a fightercraft from the first world war. It trades an extra heavy cooling system for an extra heavy magazine."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "lanoe"
+	item_state = "lanoe"
+	mag_type = /obj/item/ammo_box/magazine/lewis
+	init_mag_type = /obj/item/ammo_box/magazine/lewis
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = LMG_RECOIL(1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150
+	)
+
+/obj/item/gun/ballistic/automatic/bren
+	name = "Bren gun"
+	desc = "A rather heavy gun that served as the primary British infantry LMG throughout the second world war."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "bren"
+	item_state = "bren"
+	mag_type = /obj/item/ammo_box/magazine/bren
+	init_mag_type = /obj/item/ammo_box/magazine/bren
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = LMG_RECOIL(1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200
+	)
+
 /* * * * * * * * * * *
  * Browning M1919 MMG
  * Big 7.62mm LMG
@@ -2302,7 +2361,6 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
-	slowdown = 1.25
 	mag_type = /obj/item/ammo_box/magazine/mm308
 	init_mag_type = /obj/item/ammo_box/magazine/mm308
 	weapon_class = WEAPON_CLASS_RIFLE

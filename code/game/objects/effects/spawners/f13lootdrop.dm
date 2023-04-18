@@ -855,6 +855,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/service/r82 = 20, //is weakest 5.56 automatic
 		/obj/item/gun/ballistic/automatic/assault_rifle = 10,
 		/obj/item/gun/ballistic/automatic/r93 = 5,
+		/obj/item/gun/ballistic/automatic/lewis = 5,
 		/obj/item/gun/ballistic/automatic/type93 = 10,
 		/obj/item/gun/ballistic/automatic/g11 = 1,
 		/obj/item/gun/ballistic/automatic/lsw = 5,
@@ -867,6 +868,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/revolver/m2405 = 5,
 		/obj/item/gun/ballistic/revolver/sequoia = 10,
 		/obj/item/gun/ballistic/rifle/repeater/brush = 20, //pretty common cause we need cowboy guns
+		/obj/item/gun/ballistic/rifle/mag/boys = 10,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 5,
 		/obj/item/gun/ballistic/shotgun/police = 10,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
@@ -891,7 +893,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/twohanded/sledgehammer/rockethammer = 5,
 		/obj/item/melee/transforming/plasmacutter/regular/eve = 5,
 		/obj/item/gun/ballistic/automatic/fnfal = 5,
-		/obj/item/gun/ballistic/automatic/bar = 1,
+		/obj/item/gun/ballistic/automatic/bar = 5,
 		/obj/item/gun/ballistic/bow/compoundbow = 20,
 )
 
@@ -908,6 +910,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/bozar = 10,
 		/obj/item/gun/ballistic/automatic/wt550 = 5,
 		/obj/item/gun/ballistic/automatic/r84 = 10,
+		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,
 		/obj/item/gun/ballistic/automatic/m1919 = 10,
 		/obj/item/gun/ballistic/automatic/m72 = 5,
 		/obj/item/gun/ballistic/automatic/xl70e3 = 10,
@@ -922,7 +925,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		//obj/item/gun/energy/laser/captain = 5, //needs some work before this is added
 		/obj/item/gun/energy/laser/badlands = 10,
 		/obj/item/gun/energy/laser/scatter/nonlethal = 20,
-		/obj/item/gun/energy/laser/scatter/laserbuss = 10,//should this be unique? not sure what it do
+		/obj/item/gun/energy/laser/scatter/laserbuss = 10,
 		/obj/item/gun/energy/laser/aer14 = 10,
 		/obj/item/gun/energy/laser/laer = 5,
 		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,
