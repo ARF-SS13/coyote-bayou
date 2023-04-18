@@ -3881,7 +3881,7 @@
 /area/f13/vault)
 "ccT" = (
 /mob/living/simple_animal/hostile/securitron/sentrybot/chew{
-	faction = list(s)
+	faction = list("wastebot","chinese")
 	},
 /turf/open/floor/plating/f13/inside/mountain{
 	icon_state = "mountain2"
