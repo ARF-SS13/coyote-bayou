@@ -13,7 +13,7 @@ PROCESSING_SUBSYSTEM_DEF(spawners)
 // 	/// format: list("1" = list(spawner, spawner, spawner))
 // 	var/list/spawners = list()
 
-/// When a spawner is made, add it to the list, by its Z level
+// / When a spawner is made, add it to the list, by its Z level
 // /datum/controller/subsystem/spawners/proc/register_spawner(atom/spwner)
 // 	if(!spwner)
 // 		return
@@ -33,8 +33,8 @@ PROCESSING_SUBSYSTEM_DEF(spawners)
 // 		return
 // 	var/list/nearest_spawners = list()
 // 	for(var/atom/maybe_spawner in spawners["[unbirthme.z]"])
-// 		// if(get_dist(unbirthme, maybe_spawner) > 10)
-// 		// 	continue
+// 		if(get_dist(unbirthme, maybe_spawner) > 10)
+// 			continue
 // 		if(!SEND_SIGNAL(maybe_spawner, COMSIG_SPAWNER_EXISTS))
 // 			continue
 // 		nearest_spawners |= maybe_spawner

@@ -828,13 +828,11 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/unbirth_self(forced)
 	if(!forced && !consider_despawning()) // check again plz
 		return
-	var/obj/structure/nest/my_home = new/obj/structure/nest/special(get_turf(src))
-	// if(isweakref(nest))
-	// 	my_home = RESOLVEWEAKREF(nest)
-	// 	if(my_home && !SEND_SIGNAL(my_home, COMSIG_SPAWNER_EXISTS))
-	// 		my_home = null
-	// if(!my_home)
-	// 	my_home = new/obj/structure/nest/special(get_turf(src))
+	var/obj/structure/nest/my_home
+	if(isweakref(nest))
+		my_home = RESOLVEWEAKREF(nest)
+	if(!my_home)
+		my_home = new/obj/structure/nest/special(get_turf(src))
 	SEND_SIGNAL(my_home, COMSIG_SPAWNER_ABSORB_MOB, src)
 
 /mob/living/simple_animal/hostile/setup_variations()

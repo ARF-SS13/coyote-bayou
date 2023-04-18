@@ -7,9 +7,6 @@
 	var/spawn_time = 30 SECONDS
 	/// List of mobs that we spawned that currently exist
 	var/list/spawned_mobs = list()
-	/// List of sleeping mobs that are associated with this spawner
-	/// Uses a cool-ass tag string system!
-	var/list/sleeping_mobs = list()
 	/// How many mobs can be attached to this spawner at once
 	var/max_mobs = 5
 	/// verb for when the thing comes out of the thing
@@ -160,16 +157,16 @@
 
 /// Check the spawned mob list, prune dead mobs, return TRUE if it isnt full
 /datum/component/spawner/proc/check_spawned_mobs()
-	if(LAZYLEN(spawned_mobs) + LAZYLEN(sleeping_mobs) < max_mobs)
+	if(LAZYLEN(spawned_mobs) < max_mobs)
 		return TRUE
-	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
+	for(var/datum/weakref/mob_ref in spawned_mobs)
 		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
 		if(!removed_animal)
 			spawned_mobs -= mob_ref
 		else if(removed_animal.health <= 0)
 			spawned_mobs -= mob_ref
 			removed_animal.nest = null
-	if(LAZYLEN(spawned_mobs) + LAZYLEN(sleeping_mobs) < max_mobs)
+	if(LAZYLEN(spawned_mobs) < max_mobs)
 		return TRUE
 
 /// Basic checks to see if we can spawn something
@@ -215,14 +212,15 @@
 
 /// spawn the mob(s)
 /datum/component/spawner/proc/spawn_mob()
+	if(!islist(spawned_mobs))
+		spawned_mobs = list()
 	if(LAZYLEN(special_mobs))
 		var/datum/special_mob_datum/spawner_special = pick(special_mobs)
 		if(spawner_special)
-			sleeping_mobs -= spawner_special.mobtag
-			spawner_special.make_special_mob(src)
+			var/mob/living/simple_animal/hostile/mobbie = spawner_special.make_special_mob(src)
+			spawned_mobs |= WEAKREF(mobbie)
+			qdel(spawner_special)
 			return
-	if(!islist(spawned_mobs))
-		spawned_mobs = list()
 	var/atom/P = parent
 	var/chosen_mob
 	var/mob/living/simple_animal/L
@@ -327,7 +325,6 @@
 		return
 	var/already_special = !istype(parent, /obj/structure/nest/special) || LAZYLEN(special_mobs)
 	special_mobs |= sparkle
-	sleeping_mobs |= sparkle_tag
 	if(!already_special)
 		var/atom/sponer = parent
 		sponer.name = despawn_me.name
@@ -367,8 +364,7 @@
 	maxHealth = cool_mob.maxHealth
 	color = cool_mob.color
 	faction = cool_mob.faction
-	mobtag = "[name]-[mob_type]-[rand(10000,99999)]-[world.time]"
-	return mobtag
+	return src
 
 /// A proc that spawns a mob from a special mob datum
 /datum/special_mob_datum/proc/make_special_mob(datum/component/spawner/myspawner)
@@ -389,8 +385,7 @@
 		cool_mob.faction = faction
 	myspawner.special_mobs -= src
 	cool_mob.do_alert_animation(cool_mob)
-	qdel(src)
-	return TRUE
+	return cool_mob
 
 
 
