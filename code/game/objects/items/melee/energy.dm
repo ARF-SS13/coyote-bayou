@@ -68,15 +68,16 @@
 
 /obj/item/melee/transforming/plasmacutter/regular/celestia
 	name = "plasma cutter celestia"
-	desc = "A sapphire colored plasma cutter."
+	desc = "A sapphire colored plasma cutter. This one is designed to be adept at deflecting enemy attacks."
 	icon_state = "celestia0"
 	icon_state_on = "celestia1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 32
+	force_on = 35
 	throwforce = 5
 	throwforce_on = 15
+	block_chance = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
@@ -90,15 +91,16 @@
 
 /obj/item/melee/transforming/plasmacutter/regular
 	name = "plasma cutter"
-	desc = "A bright green plasma cutter."
+	desc = "A bright green plasma cutter. This one boasts a high energy blade for fiercer damage."
 	icon_state = "plasmacutter0"
 	icon_state_on = "plasmacutter1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 38
+	force_on = 40
 	throwforce = 5
 	throwforce_on = 20
+	block_chance = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
@@ -117,15 +119,17 @@
 
 /obj/item/melee/transforming/plasmacutter/regular/eve
 	name = "plasma cutter eve"
-	desc = "A violet colored plasma cutter. An inscription on it reads: In the land of the shadow of death a light has dawned."
+	desc = "A violet colored plasma cutter. This one is designed with a lightweight, more elegant frame, for quicker strikes."
 	icon_state = "eve0"
 	icon_state_on = "eve1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 45
+	force_on = 35
 	throwforce = 5
-	throwforce_on = 20
+	throwforce_on = 15
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE * 0.85
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
@@ -139,15 +143,17 @@
 
 /obj/item/melee/transforming/plasmacutter/regular/adam
 	name = "plasma cutter adam"
-	desc = "A bright crimson plasma cutter.."
+	desc = "A bright crimson plasma cutter. This Cutter boasts the design strenghths of all its lesser companions"
 	icon_state = "adam0"
 	icon_state_on = "adam1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 52
+	force_on = 40
 	throwforce = 5
 	throwforce_on = 20
+	block_chance = 20
+	attack_speed = CLICK_CD_MELEE * 0.85
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
