@@ -4093,7 +4093,7 @@
 "Cw" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "enclavedb"
+	id = "enclavedbs"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/awaymission/vr/bos/enclavebunker)
@@ -6374,7 +6374,7 @@
 "VE" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/megafauna/captainarlem{
-	faction = list("mining","boss""enclave")
+	faction = list("mining","boss","enclave")
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtyfull"
