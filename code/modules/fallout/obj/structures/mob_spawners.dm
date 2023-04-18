@@ -358,7 +358,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 // Nests for mobs that are special and/or dont have any nearby nests to unbirth into
 /obj/structure/nest/special
 	name = "special nest"
-	max_mobs = 1
+	max_mobs = 20
 	delay_start = TRUE
 	mob_types = list()
 
