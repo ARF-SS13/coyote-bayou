@@ -318,6 +318,14 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon_state = "ventblue"
 	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 10)
 
+/obj/structure/nest/gelcube/debug
+	name = "horrible debug hole"
+	desc = "If you can see this, yell at Fenny. Or lagg. Or both. Or neither. Either way this is a debug nest."
+	spawn_time = 2 SECONDS
+	max_mobs = 2
+	icon_state = "ventblue"
+	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 100)
+
 /obj/structure/nest/wolf
 	name = "wolf den"
 	max_mobs = 2
@@ -350,7 +358,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 // Nests for mobs that are special and/or dont have any nearby nests to unbirth into
 /obj/structure/nest/special
 	name = "special nest"
-	max_mobs = 1
+	max_mobs = 20
 	delay_start = TRUE
 	mob_types = list()
 
