@@ -3279,11 +3279,6 @@
 	armor = ARMOR_VALUE_SALVAGE
 	salvaged_type = /obj/item/clothing/suit/armor/medium/raider/raidermetal
 
-/obj/item/clothing/suit/armor/power_armor/t45b
-	name = "T-45b power armor"
-	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
-	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
-
 /obj/item/clothing/suit/armor/power_armor/t45d
 	name = "T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
