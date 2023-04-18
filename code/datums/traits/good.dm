@@ -901,7 +901,7 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 
 /datum/quirk/playdead
 	name = "Class Act"
-	desc = "You're good at acting! *deathgasp will be extra convincing to rudimentary tests, such as healthhuds and examine."
+	desc = "You're good at acting! *deathgasp will be extra convincing to rudimentary tests, such as healthhuds and examine, doing so may deal a small quantity of toxin damage."
 	value = 1
 	mob_trait = TRAIT_PLAY_DEAD
 	gain_text = span_notice("You feel confident at playing dead.")
