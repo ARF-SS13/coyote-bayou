@@ -15,8 +15,8 @@
 	material_flags = MATERIAL_COLOR | MATERIAL_ADD_PREFIX
 	var/workability = 0
 	light_system = MOVABLE_LIGHT
-	light_range = 2
-	light_power = 0.75
+	light_range = 1
+	light_power = 0.4
 	light_color = LIGHT_COLOR_FIRE
 	light_on = FALSE
 

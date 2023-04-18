@@ -24,7 +24,7 @@
 #define RECIPE_SWORD "ffdf" // fold fold draw fold
 #define RECIPE_WAKI "fffd" //fold fold fold draw
 #define RECIPE_KATANA "fffff" //fold fold fold fold fold
-#define RECIPE_MACHREFORG "fddf" //fold punch punch
+#define RECIPE_MACHREFORG "fddf" //fold draw draw fold
 
 //upset start \Mostly 2h weapons, save for the mace
 #define RECIPE_MACE "upu"  //upset punch upset
