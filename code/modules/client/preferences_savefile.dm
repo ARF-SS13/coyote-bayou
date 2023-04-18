@@ -549,7 +549,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"taste" = "something salty",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
-		"color_scheme" = OLD_CHARACTER_COLORING)
+		"color_scheme" = OLD_CHARACTER_COLORING,
+		"chat_color" = "whoopsie")
 
 	S.cd = "/"
 	if(!slot)
@@ -630,6 +631,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_horns_color"]			>> features["horns_color"]
 	S["feature_wings_color"]			>> features["wings_color"]
 	S["feature_color_scheme"]			>> features["color_scheme"]
+	S["feature_chat_color"]				>> features["chat_color"]
 	S["persistent_scars"] 				>> persistent_scars
 	S["scars1"]							>> scars_list["1"]
 	S["scars2"]							>> scars_list["2"]
@@ -1155,6 +1157,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_a"]		,special_a)
 	WRITE_FILE(S["special_l"]		,special_l)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
+	WRITE_FILE(S["feature_chat_color"], features["chat_color"])
 	
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)

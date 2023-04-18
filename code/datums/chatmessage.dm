@@ -83,9 +83,21 @@
 
 	// Calculate target color if not already present
 	if (!target.chat_color || target.chat_color_name != target.name)
-		target.chat_color = colorize_string(target.name)
-		target.chat_color_darkened = colorize_string(target.name, 0.85, 0.85)
-		target.chat_color_name = target.name
+		if(iscarbon(target))
+			var/mob/living/carbon/C = target
+			var/chatcolor = C.dna.features["chat_color"]
+			if(chatcolor == "whoopsie")
+				target.chat_color = colorize_string(target.name)
+				target.chat_color_darkened = colorize_string(target.name, 0.85, 0.85)
+				target.chat_color_name = target.name
+			else
+				target.chat_color = "#[chatcolor]"
+				target.chat_color_darkened = "#[chatcolor]"
+				target.chat_color_name = target.name
+		else
+			target.chat_color = colorize_string(target.name)
+			target.chat_color_darkened = colorize_string(target.name, 0.85, 0.85)
+			target.chat_color_name = target.name
 
 	// Get rid of any URL schemes that might cause BYOND to automatically wrap something in an anchor tag
 	var/static/regex/url_scheme = new(@"[A-Za-z][A-Za-z0-9+-\.]*:\/\/", "g")
