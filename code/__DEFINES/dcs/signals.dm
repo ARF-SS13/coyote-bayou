@@ -590,6 +590,8 @@
 #define COMSIG_BB_PC_TO_HOST_IMPULSE "persona_core_instructions" // (datum/source, instructions)
 /// REquests some kind of information from the host, like if its running, has a thing in it, etc. Returns a flag, usually TRUE or FALSE
 #define COMSIG_BB_PC_TO_HOST_REQUEST "persona_core_request" // (datum/source, request)
+/// Asks if the potential host can support us. Returns a boolean, usually TRUE or FALSE
+#define COMSIG_BB_PC_TO_HOST_CAN_INSERT "persona_core_can_enter"
 
 /// Signals sent from the host to the Persona Core
 /// A stimulus sent from the host to the core, something that might trigger a response

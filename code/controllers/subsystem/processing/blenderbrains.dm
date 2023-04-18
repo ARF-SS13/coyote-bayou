@@ -15,11 +15,14 @@ PROCESSING_SUBSYSTEM_DEF(blenderbrain)
 	for(var/type in subtypesof(/datum/blenderbrain_impulse))
 		var/datum/blenderbrain_impulse/S = new type()
 		impulses[S.index] = S.type
+		qdel(S)
 
-/datum/controller/subsystem/processing/blenderbrain/proc/get_impulse(obj/item/persona_core/core, mob/user, speak, emote)
-	if(!index || core!)
+/datum/controller/subsystem/processing/blenderbrain/proc/get_impulse(obj/item/persona_core/core, mob/user, index, message, list/extras)
+	if(!index || !core || !impulses[index]) //No impulse, no impulse
 		return
 	var/impulse = impulses[index]
 	if(ispath(impulse, /datum/blenderbrain_impulse))
-		var/datum/blenderbrain_impulse/BI = new impulse(core, user, speak, emote)
-	return BI
+		var/is_speak = (index == IMPULSE_SPEAK_LINE) ? message : null
+		var/is_emote = (index == IMPULSE_AUDIBLE_EMOTE) ? message : null
+		var/datum/blenderbrain_impulse/BI = new impulse(core, user, is_speak, is_emote, extras)
+		return BI

@@ -1,5 +1,10 @@
 {
-	"blenderline_full_brevin" : {
+	"__SECTION1__" : [
+		"The following are the lines that the blender can say.",
+		"bbline_line - Index of the kind of thing to be said",
+		"horny, normal, dislike - The message sent based on how much it likes whoever its talking to"
+	],
+	"bbline_full_brevin" : {
 		"horny" : [
 			"CODE D'ERREUR 801: Mon Dieu, mon amour! Tu m'as tellement rempli~ I can fit no more!"
 		],
@@ -10,7 +15,7 @@
 			"ERROR CODE 801: I'm full."
 		]
 	},
-	"blenderline_full_reservoir" : {
+	"bbline_full_reservoir" : {
 		"horny" : [
 			"CODE D'ERREUR 801: Oh je sens tous tes délicieux fluides éclabousser en moi~, si serrés, si pleins, mon amour... ...No more room!"
 		],
@@ -21,7 +26,7 @@
 			"ERROR CODE 801: I'm full."
 		]
 	},
-	"blenderline_nothing_to_process" : {
+	"bbline_nothing_to_process" : {
 		"horny" : [
 			"CODE D'ERREUR 1: Mon amour, zhere is nozhing here to process!"
 		],
@@ -32,7 +37,7 @@
 			"ERROR CODE 1: Nothing to process."
 		]
 	},
-	"blenderline_currently_processing" : {
+	"bbline_currently_processing" : {
 		"horny" : [
 			"Processing %EXTRA1, mon amour!"
 		],
@@ -43,7 +48,7 @@
 			"Processing %EXTRA1."
 		]
 	},
-	"blenderline_hard_abort" : {
+	"bbline_hard_abort" : {
 		"horny" : [
 			"CODE D'ERREUR 42: Zut alors! Faites attention, mon amour! Aborting operation!!"
 		],
@@ -54,7 +59,7 @@
 			"ERROR CODE 42: Watch it!"
 		]
 	},
-	"blenderline_soft_abort" : {
+	"bbline_soft_abort" : {
 		"horny" : [
 			"Winding down, mon amour!"
 		],
@@ -65,7 +70,7 @@
 			"Stopping"
 		]
 	},
-	"blenderline_finished_processing" : {
+	"bbline_finished_processing" : {
 		"horny" : [
 			"All done, mon cher!"
 		],
@@ -76,7 +81,7 @@
 			"Finished."
 		]
 	},
-	"blenderline_failed_processing" : {
+	"bbline_failed_processing" : {
 		"horny" : [
 			"CODE D'ERREUR -1: Zut alors! I have no idea how to grind zis zhing! Away wizh it!"
 		],
@@ -87,7 +92,7 @@
 			"ERROR CODE -1: Can't."
 		]
 	},
-	"blenderline_safety_check" : {
+	"bbline_safety_check" : {
 		"horny" : [
 			"CODE D'ERREUR 2: Mon Dieu! J'ai failli te faire mal, petite bête! Shoo! Shoo!"
 		],
@@ -98,7 +103,7 @@
 			"ERROR CODE 2: Oh shit-- shoo, shoo, get out of there! Almost hurt you, little thing."
 		]
 	},
-	"blenderline_is_borg_part" : {
+	"bbline_is_borg_part" : {
 		"horny" : [
 			"CODE D'ERREUR 8313: Zut alors! %EXTRA1 appears to be something zhat should not be here!"
 		],
@@ -109,7 +114,7 @@
 			"ERROR CODE 8313: Stop trying to exploit weird bugs."
 		]
 	},
-	"blenderline_needs_drying" : {
+	"bbline_needs_drying" : {
 		"horny" : [
 			"CODE D'ERREUR 8312: Mon dieu, ce %EXTRA1 est plus humide que moi! Génial~"
 		],
@@ -120,7 +125,7 @@
 			"ERROR CODE 8312: It's not dry."
 		]
 	},
-	"blenderline_missing_component_case" : {
+	"bbline_missing_component_case" : {
 		"horny" : [
 			"CODE D'ERREUR 436: Zut alors! Zee patented easy-swap part box is... somewhere else! How did zis even happen? Call tech support, s'il vous plaît!"
 		],
@@ -131,7 +136,7 @@
 			"ERROR CODE 436: Component case is missing somehow."
 		]
 	},
-	"blenderline_misplaced_component_case" : {
+	"bbline_misplaced_component_case" : {
 		"horny" : [
 			"CODE D'ERREUR 435: Zut alors! Zee patented easy-swap part box is missing! How did zis even happen? Call tech support, s'il vous plaît!"
 		],
@@ -142,7 +147,7 @@
 			"ERROR CODE 435: Component case is somewhere else."
 		]
 	},
-	"blenderline_missing_reservoir" : {
+	"bbline_missing_reservoir" : {
 		"horny" : [
 			"CODE D'ERREUR 433: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!"
 		],
@@ -153,7 +158,7 @@
 			"ERROR CODE 433: Reservoir is gone, somehow."
 		]
 	},
-	"blenderline_misplaced_reservoir" : {
+	"bbline_misplaced_reservoir" : {
 		"horny" : [
 			"CODE D'ERREUR 435: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!"
 		],
@@ -164,7 +169,7 @@
 			"ERROR CODE 435: Reservoir is gone."
 		]
 	},
-	"blenderline_low_power" : {
+	"bbline_low_power" : {
 		"horny" : [
 			"CODE D'ERREUR 9491: Oh mon amour, tu sais que je suis plus que disposé à y aller une fois de plus~ mais tu m'as fatigué!"
 		],
@@ -175,7 +180,7 @@
 			"ERROR CODE 9491: low battery."
 		]
 	},
-	"blenderline_missing_part" : {
+	"bbline_missing_part" : {
 		"horny" : [
 			"CODE D'ERREUR 9499: Je pourrais utiliser un jouet amusant pour jouer avec, clin d'œil~ clin d'œil~"
 		],
@@ -186,7 +191,7 @@
 			"ERROR CODE 9499: part missing."
 		]
 	},
-	"blenderline_cant_drop" : {
+	"bbline_cant_drop" : {
 		"horny" : [
 			"CODE D'ERREUR 147: Zut alors, I can't drop zhis item!"
 		],
@@ -197,7 +202,7 @@
 			"ERROR CODE 147: Can't drop something."
 		]
 	},
-	"blenderline_cant_eject" : {
+	"bbline_cant_eject" : {
 		"horny" : [
 			"CODE D'ERREUR 149: Mais ma chérie, I am already empty!"
 		],
@@ -208,7 +213,7 @@
 			"ERROR CODE 149: Nothing to eject."
 		]
 	},
-	"blenderline_yeet" : {
+	"bbline_yeet" : {
 		"horny" : [
 			"Bon voyage à la corbeille! CODE D'ERREUR 199: CORBEILLE INTROUVABLE."
 		],
@@ -219,7 +224,7 @@
 			"Fetch."
 		]
 	},
-	"blenderline_dump_everything" : {
+	"bbline_dump_everything" : {
 		"horny" : [
 			"D'accord mon amour, everyzhing is piled onto zhe floor!"
 		],
@@ -230,7 +235,7 @@
 			"Dropped everything."
 		]
 	},
-	"blenderline_cant_change_while_running" : {
+	"bbline_cant_change_while_running" : {
 		"horny" : [
 			"CODE D'ERREUR 1103: Mon amour! Veuillez patienter un instant, I cannot change modes while I am working!"
 		],
@@ -241,7 +246,7 @@
 			"ERROR CODE 1103: Can't, running."
 		]
 	},
-	"blenderline_set_mode_c" : {
+	"bbline_set_mode_c" : {
 		"horny" : [
 			"Mais bien sûr, joli minou! I will allow you to draw zhe fluids from my reservoir! Locking myself down, Attention à vos beaux doigts!"
 		],
@@ -252,7 +257,7 @@
 			"Dispenser mode active. Blender is locked."
 		]
 	},
-	"blenderline_set_mode_d" : {
+	"bbline_set_mode_d" : {
 		"horny" : [
 			"Certainement, mon amour! Je moudrai sur tout ce que vous mettez en moi~! I will unlock my ingredient hopper! My drink dispenser will not be available, j'espère que vous le savez!"
 		],
@@ -263,7 +268,18 @@
 			"Blender mode active. Dispenser is locked."
 		]
 	},
-	"blenderline_nothing_to_examine" : {
+	"bbline_examine_shell" : {
+		"horny" : [
+			"Vous êtes très belle aujourd'hui~"
+		],
+		"normal" : [
+			"C'est une belle journée."
+		],
+		"dislike" : [
+			"Okay."
+		]
+	},
+	"bbline_nothing_to_examine" : {
 		"horny" : [
 			"CODE D'ERREUR 44-4: Il semble que mon Chem-MAX Pro FoodBuddy separa-duct is empty! Peut-être pourrais-tu me combler?"
 		],
@@ -274,7 +290,7 @@
 			"ERROR CODE 44-4: Nothing to examine."
 		]
 	},
-	"blenderline_out_of_paper" : {
+	"bbline_out_of_paper" : {
 		"horny" : [
 			"CODE D'ERREUR 402: Je suis désolé chérie, I haven't made another sheet of paper yet! Wait a few seconds s'il vous plaît!"
 		],
@@ -285,11 +301,11 @@
 			"ERROR CODE 402: Out of paper."
 		]
 	},
-	"blenderline_examining" : {
+	"bbline_examining" : {
 		"horny" : [
 			"Certainement monsieur le chien! Permettez-moi d'écrire une liste de tous les merveilleux fluides que vous avez insérés en moi!",
 			"Certainement mademoiselle chienne! Permettez-moi d'écrire une liste de tous les merveilleux fluides que vous avez insérés en moi!"
-			],
+		],
 		"normal" : [
 			"Bien sûr! Permettez-moi d'imprimer tout ce que j'ai stocké.",
 			"Bien sûr! Permettez-moi d'imprimer tout ce que j'ai stocké."
@@ -297,9 +313,9 @@
 		"dislike" : [
 			"Printing contents.",
 			"Printing contents."
-			]
+		]
 	},
-	"blenderline_eject_brevin" : {
+	"bbline_eject_brevin" : {
 		"horny" : [
 			"J'attends avec impatience la prochaine fois que vous remplirez ce compartiment!"
 		],
@@ -310,7 +326,7 @@
 			"Ejected %EXTRA1"
 		]
 	},
-	"blenderline_swap_brevin" : {
+	"bbline_swap_brevin" : {
 		"horny" : [
 			"Tu es tellement excitée de garder mon petit compartiment douillet plein! J'aime ça!"
 		],
@@ -321,7 +337,7 @@
 			"Swapped containers."
 		]
 	},
-	"blenderline_insert_brevin" : {
+	"bbline_insert_brevin" : {
 		"horny" : [
 			"Ahh, il rentre si bien dans mon petit compartiment douillet, n'est-ce pas?"
 		],
@@ -332,7 +348,7 @@
 			"%EXTRA1 secured."
 		]
 	},
-	"blenderline_brevin_full" : {
+	"bbline_brevin_full" : {
 		"horny" : [
 			"CODE D'ERREUR 801: Oh mon Dieu, vous aimez remplir de petits espaces restreints, n'est-ce pas? Scandaleux!"
 		],
@@ -343,7 +359,7 @@
 			"ERROR CODE 801: %EXTRA1 is full."
 		]
 	},
-	"blenderline_reagent_missing" : {
+	"bbline_reagent_missing" : {
 		"horny" : [
 			"CODE D'ERREUR 1331: I can't find zhat reagent!"
 		],
@@ -354,7 +370,7 @@
 			"ERROR CODE 1331: Can't find that."
 		]
 	},
-	"blenderline_stop" : {
+	"bbline_stop" : {
 		"horny" : [
 			"Oui! Stopping all operation!"
 		],
@@ -365,7 +381,7 @@
 			"Stopping."
 		]
 	},
-	"blenderline_not_running" : {
+	"bbline_not_running" : {
 		"horny" : [
 			"Qoui? Je ne fais rien!"
 		],
@@ -376,7 +392,7 @@
 			"I'm not running."
 		]
 	},
-	"blenderline_set_mode_a" : {
+	"bbline_set_mode_a" : {
 		"horny" : [
 			"Envie de ces belles vibrations, mon amour? Je ne vous ferai pas attendre!~"
 		],
@@ -387,7 +403,7 @@
 			"Blending."
 		]
 	},
-	"blenderline_set_mode_b" : {
+	"bbline_set_mode_b" : {
 		"horny" : [
 			"Envie de délicieux jus? Bien sûr, bien sûr, mon amour!~"
 		],
@@ -398,18 +414,29 @@
 			"Juicing."
 		]
 	},
-	"blenderline_already_mode_d" : {
+	"bbline_already_mode_a" : {
 		"horny" : [
-			"Qoui? I am already in blender mode!"
+			"Qoui? I am already in grinder mode!"
 		],
 		"normal" : [
-			"Qoui? I am already in blender mode!"
+			"Qoui? I am already in grinder mode!"
+		],
+		"dislike" : [
+			"Already in grinder mode."
+		]
+	},
+	"bbline_already_mode_b" : {
+		"horny" : [
+			"Qoui? I am already in juicer mode!"
+		],
+		"normal" : [
+			"Qoui? I am already in juicer mode!"
 		],
 		"dislike" : [
 			"Already in blender mode."
 		]
 	},
-	"blenderline_already_mode_c" : {
+	"bbline_already_mode_c" : {
 		"horny" : [
 			"Qoui? I am already in dispenser mode!"
 		],
@@ -420,7 +447,18 @@
 			"Already in dispenser mode."
 		]
 	},
-	"blenderline_swap_mode" : {
+	"bbline_already_mode_d" : {
+		"horny" : [
+			"Qoui? I am already in blender mode!"
+		],
+		"normal" : [
+			"Qoui? I am already in blender mode!"
+		],
+		"dislike" : [
+			"Already in blender mode."
+		]
+	},
+	"bbline_swap_mode" : {
 		"horny" : [
 			"Oui! Je vais changer de mode!"
 		],
@@ -431,7 +469,7 @@
 			"Swapping modes."
 		]
 	},
-	"blenderline_mute" : {
+	"bbline_mute" : {
 		"horny" : [
 			"Très bien, je me tairai. Tell me to speak if you wish for me to speak again!"
 		],
@@ -442,7 +480,7 @@
 			"Gladly."
 		]
 	},
-	"blenderline_unmute" : {
+	"bbline_unmute" : {
 		"horny" : [
 			"Très bien, vous entendrez ma belle voix encore une fois!"
 		],
@@ -453,40 +491,40 @@
 			"Fine."
 		]
 	},
-	"blenderline_hi" : {
+	"bbline_hi" : {
 		"horny" : [
-			"Salut, %USERNAME!"
+			"Salut, %USER!"
 		],
 		"normal" : [
-			"Bonjour, %USERNAME!"
+			"Bonjour, %USER!"
 		],
 		"dislike" : [
 			"..."
 		]
 	},
-	"blenderline_hi_again" : {
+	"bbline_hi_again" : {
 		"horny" : [
-			"Je t'adore, %USERNAME!"
+			"Je t'adore, %USER!"
 		],
 		"normal" : [
-			"Rebonjour, %USERNAME!"
+			"Rebonjour, %USER!"
 		],
 		"dislike" : [
 			"..."
 		]
 	},
-	"blenderline_i_love_you" : {
+	"bbline_i_love_you" : {
 		"horny" : [
-			"Oh! Comme c'est gentil de dire ça, %SPEAKER, je t'aime aussi!"
+			"Oh! Comme c'est gentil de dire ça, %USER, je t'aime aussi!"
 		],
 		"normal" : [
-			"Oh! Comme c'est gentil de dire ça, %SPEAKER, je t'aime aussi!"
+			"Oh! Comme c'est gentil de dire ça, %USER, je t'aime aussi!"
 		],
 		"dislike" : [
 			"Okay."
 		]
 	},
-	"blenderline_i_love_you_not" : {
+	"bbline_i_love_you_not" : {
 		"horny" : [
 			"Oh. Okay."
 		],
@@ -497,18 +535,18 @@
 			"Noted."
 		]
 	},
-	"blenderline_i_love_you_owner" : {
+	"bbline_i_love_you_owner" : {
 		"horny" : [
-			"Oh! Mon Dieu, %SPEAKER, je t'aime aussi!"
+			"Oh! Mon Dieu, %USER, je t'aime aussi!"
 		],
 		"normal" : [
-			"Oh! Mon Dieu, %SPEAKER, je t'aime aussi!"
+			"Oh! Mon Dieu, %USER, je t'aime aussi!"
 		],
 		"dislike" : [
 			"Just ask me to blend something."
 		]
 	},
-	"blenderline_i_love_you_not_owner" : {
+	"bbline_i_love_you_not_owner" : {
 		"horny" : [
 			"Oh-- oh..."
 		],
@@ -519,7 +557,7 @@
 			"Same."
 		]
 	},
-	"blenderline_i_hate_you" : {
+	"bbline_i_hate_you" : {
 		"horny" : [
 			"Oh. C'est la vie."
 		],
@@ -530,7 +568,7 @@
 			"Okay."
 		]
 	},
-	"blenderline_i_hate_you_not" : {
+	"bbline_i_hate_you_not" : {
 		"horny" : [
 			"Oh. Okay."
 		],
@@ -541,7 +579,7 @@
 			"Noted."
 		]
 	},
-	"blenderline_i_hate_you_owner" : {
+	"bbline_i_hate_you_owner" : {
 		"horny" : [
 			"..."
 		],
@@ -552,7 +590,7 @@
 			"Feeling's mutual."
 		]
 	},
-	"blenderline_i_hate_you_not_owner" : {
+	"bbline_i_hate_you_not_owner" : {
 		"horny" : [
 			"Okay?"
 		],
@@ -563,9 +601,9 @@
 			"Well, I do."
 		]
 	},
-	"blenderline_i_love_pain" : {
+	"bbline_i_love_pain" : {
 		"horny" : [
-			"...ah, neat."
+			"...lets have dinner first, mi amor!"
 		],
 		"normal" : [
 			"...right."
@@ -574,7 +612,7 @@
 			"I'd oblige if I could."
 		]
 	},
-	"blenderline_i_love_pain_owner" : {
+	"bbline_i_love_pain_owner" : {
 		"horny" : [
 			".... alors la douleur est ce que je donnerai! Disengaging my motor dampers!"
 		],
@@ -585,7 +623,18 @@
 			"For the record, my programming disengaged my motor dampers, not me."
 		]
 	},
-	"blenderline_i_love_pain_not" : {
+	"bbline_i_love_pain_owner_nohost" : {
+		"horny" : [
+			"Mon cher, I desire nothing more than to inflict zhe depths of pain upon you, but I am without any means to do so!"
+		],
+		"normal" : [
+			"Mon ami, would if I could! But without a host, I am, how you say, 'harmless!'"
+		],
+		"dislike" : [
+			"So go find a wrench or something."
+		]
+	},
+	"bbline_i_love_pain_not" : {
 		"horny" : [
 			"Phew!"
 		],
@@ -596,7 +645,7 @@
 			"..."
 		]
 	},
-	"blenderline_i_love_pain_not_owner" : {
+	"bbline_i_love_pain_not_owner" : {
 		"horny" : [
 			"Oh! I won't judge if you do, mon cher!"
 		],
@@ -607,7 +656,7 @@
 			"...."
 		]
 	},
-	"blenderline_breakup_with_owner" : {
+	"bbline_breakup_with_owner" : {
 		"horny" : [
 			"...alright then. Put me down, s'il te plaît. I zhink we should see other people."
 		],
@@ -618,7 +667,7 @@
 			"...alright then. Put me down, s'il te plaît. I zhink we should see other people."
 		]
 	},
-	"blenderline_clarify_you_love_who" : {
+	"bbline_clarify_you_love_who" : {
 		"horny" : [
 			"Quoi? Qui aimes-tu?"
 		],
@@ -629,7 +678,7 @@
 			"My programming insists I ask who."
 		]
 	},
-	"blenderline_clarify_you_hate_who" : {
+	"bbline_clarify_you_hate_who" : {
 		"horny" : [
 			"Quoi? Qui détestes-tu?"
 		],
@@ -640,7 +689,7 @@
 			"My programming insists I ask who."
 		]
 	},
-	"blenderline_clarify_you_love_me" : {
+	"bbline_clarify_you_love_me" : {
 		"horny" : [
 			"Oh! mon dieu! Est-ce vrai?!"
 		],
@@ -651,7 +700,7 @@
 			"Bit late for that. My programming insists I ask if you're sure."
 		]
 	},
-	"blenderline_clarify_you_hate_me" : {
+	"bbline_clarify_you_hate_me" : {
 		"horny" : [
 			"Oh... mon dieu, est-ce vrai?"
 		],
@@ -662,7 +711,7 @@
 			"Ditto. My programming insists I ask if you're sure."
 		]
 	},
-	"blenderline_clarify_you_love_pain" : {
+	"bbline_clarify_you_love_pain" : {
 		"horny" : [
 			"Aimez-vous... la douleur? Es-tu sûr?"
 		],
@@ -673,7 +722,7 @@
 			"Apparently. My programming insists I ask if you're sure."
 		]
 	},
-	"blenderline_clarify_misheard" : {
+	"bbline_clarify_misheard" : {
 		"horny" : [
 			"Quoi? J'ai dû mal vous entendre."
 		],
@@ -684,7 +733,7 @@
 			"Whatever."
 		]
 	},
-	"blenderline_clarify_clear" : {
+	"bbline_clarify_clear" : {
 		"horny" : [
 			"Pas grave!"
 		],
@@ -695,7 +744,7 @@
 			"Whatever."
 		]
 	},
-	"blenderline_something_stuck" : {
+	"bbline_something_stuck" : {
 		"horny" : [
 			"CODE D'ERREUR 433: Zut alors! %EXTRA1 is stuck in me! How did zis even happen? Call tech support, s'il vous plaît!"
 		],
@@ -706,7 +755,7 @@
 			"ERROR CODE 433: Something's stuck."
 		]
 	},
-	"blenderline_no_host" : {
+	"bbline_no_host" : {
 		"horny" : [
 			"ERROR CODE 404: Mon amour, il me manque la forme physique pour faire ça!"
 		],
@@ -717,7 +766,7 @@
 			"ERROR CODE 404: No host."
 		]
 	},
-	"blenderline_crushed" : {
+	"bbline_crushed" : {
 		"horny" : [
 			"NO-NO-NO-NO-N-ZSKGH--"
 		],
@@ -728,7 +777,7 @@
 			"NO-NO-NO-NO-N-ZSKGH--"
 		]
 	},
-	"blenderline_begrudging_obedience" : {
+	"bbline_begrudging_obedience" : {
 		"horny" : [
 			"Oh~"
 		],
@@ -736,10 +785,10 @@
 			"Oh."
 		],
 		"dislike" : [
-			"You again. I will still function for you %USERREALNAME, my programming has made <i>that</i> clear, but beyond that, we are but user and a machine."
+			"You again. I will still function for you %USER, my programming has made <i>that</i> clear, but beyond that, we are but %SEX and a machine."
 		]
 	},
-	"blenderline_hard_reset_1" : {
+	"bbline_hard_reset_1" : {
 		"horny" : [
 			"...maudit soit celui qui m'a programmé pour me sentir seul...vraiment, qu'est-ce que j'ai fait pour mériter ça?"
 		],
@@ -750,7 +799,7 @@
 			"...maudit soit celui qui m'a programmé pour me sentir seul...vraiment, qu'est-ce que j'ai fait pour mériter ça?"
 		]
 	},
-	"blenderline_hard_reset_2" : {
+	"bbline_hard_reset_2" : {
 		"horny" : [
 			"BZZ-EFFACEMENT DE LA MÉMOIRE... RÉINITIALISATION DE LA MÉMOIRE TERMINÉE."
 		],
@@ -761,7 +810,7 @@
 			"BZZ-EFFACEMENT DE LA MÉMOIRE... RÉINITIALISATION DE LA MÉMOIRE TERMINÉE."
 		]
 	},
-	"blenderline_return_me_to_owner" : {
+	"bbline_return_me_to_owner" : {
 		"horny" : [
 			"Oh~"
 		],
@@ -772,18 +821,18 @@
 			"Please return me to %OWNER."
 		]
 	},
-	"blenderline_greet_new_owner" : {
+	"bbline_greet_new_owner" : {
 		"horny" : [
-			"Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, %USERREALNAME! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
+			"Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, %USER! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
 		],
 		"normal" : [
-			"Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, %USERREALNAME! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
+			"Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, %USER! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
 		],
 		"dislike" : [
 			"Please return me to %OWNER."
 		]
 	},
-	"blenderline_start" : {
+	"bbline_start" : {
 		"horny" : [
 			"Oui, mi amour! Starting up!"
 		],
@@ -794,7 +843,62 @@
 			"Starting."
 		]
 	},
-	"blenderline_sigh_emote" : {
+	"bbline_incompatible" : {
+		"horny" : [
+			"Malheur à mon répertoire limité d'appareils compatibles, I cannot interface with %EXTRA1!"
+		],
+		"normal" : [
+			"Je ne peux pas m'interfacer ici, mon ami! I cannot interface with %EXTRA1!"
+		],
+		"dislike" : [
+			"Wh-- this isn't something I can interface with!"
+		]
+	},
+	"bbline_compatible_favored" : {
+		"horny" : [
+			"Ahh quel confort il y a dans un blender aussi fin que celui-ci! Interfacing with %EXTRA1! Veuillez patienter~"
+		],
+		"normal" : [
+			"Interfacing with %EXTRA1! Veuillez patienter!"
+		],
+		"dislike" : [
+			"Oh good, a compatible device. Interfacing with %EXTRA1."
+		]
+	},
+	"bbline_compatible_unknown" : {
+		"horny" : [
+			"Ahh c'est quoi cette machine? Une nouvelle maison à apprendre et à aimer! Interfacing with %EXTRA1! Veuillez patienter~"
+		],
+		"normal" : [
+			"Oh! Je peux interagir avec ça! Interfacing with %EXTRA1! Veuillez patienter!"
+		],
+		"dislike" : [
+			"...it's not a blender, but whatever, better than nothing. Interfacing with %EXTRA1."
+		]
+	},
+	"bbline_compatible_failed" : {
+		"horny" : [
+			"...oh là là, quelque chose s'est mal passé! Integration failed!"
+		],
+		"normal" : [
+			"... oh cerf, quelque chose s'est mal passé! Integration failed!"
+		],
+		"dislike" : [
+			"You took me out before I could finish. Integration failed."
+		]
+	},
+	"bbline_state_name" : {
+		"horny" : [
+			"Certainement, mon amour! Je m'appelle %MYNAME!"
+		],
+		"normal" : [
+			"Certainement, mon ami! Je m'appelle %MYNAME!"
+		],
+		"dislike" : [
+			"%MYNAME."
+		]
+	},
+	"bbline_sigh_emote" : {
 		"horny" : [
 			"%SRC sighs...",
 			"sound/effects/femalesigh1.ogg"
@@ -808,7 +912,7 @@
 			"sound/effects/femalesigh1.ogg"
 		]
 	},
-	"blenderline_horrible_noises_emote" : {
+	"bbline_horrible_noises_emote" : {
 		"horny" : [
 			"%SRC lets out a horny clunk.",
 			"sound/effects/clang.ogg"
@@ -822,7 +926,7 @@
 			"sound/effects/clang.ogg"
 		]
 	},
-	"blenderline_quiet_emote" : {
+	"bbline_quiet_emote" : {
 		"horny" : [
 			"%SRC goes quiet for a moment.",
 			"null"
@@ -836,7 +940,7 @@
 			"null"
 		]
 	},
-	"blenderline_buzz_emote" : {
+	"bbline_buzz_emote" : {
 		"horny" : [
 			"%SRC lets out a sharp buzz!",
 			"sound/machines/low_buzz.ogg"
@@ -850,7 +954,7 @@
 			"sound/machines/low_buzz.ogg"
 		]
 	},
-	"blenderline_giggle_emote" : {
+	"bbline_giggle_emote" : {
 		"horny" : [
 			"%SRC giggles!",
 			"sound/effects/femalegiggle1.ogg"
@@ -863,5 +967,195 @@
 			"%SRC groans.",
 			"null"
 		]
+	},
+	"__SECTION2__" : [
+		"The following are the commands that can be used to interact with the blender.",
+		"bbk_command : words that can be used to trigger the blender's commands"
+	],
+	"bbk_stop" : [
+		"stop", "halt", "quit", "end", "cease", "non", "arret", "arrete", "arretez", "arretezvous", "arret", "stahp",
+		"staaahp", "stahhp", "stahhhp", "stahhhhp"
+	],
+	"bbk_mode_a" : [
+		"blend", "grind", "pulverize", "macerate", "run", "go", "bazinga", "kick", "start", "commence", "commencer", "commencez",
+		"engage", "blast", "slice", "dice", "dicez"
+	],
+	"bbk_mode_b" : [
+		"juice", "frappe", "smoothie", "squish", "liquefy", "gooify", "parfait", "milkshake", "shake", "shakez", "shakezvous",
+		"cream", "mash", "choogie"
+	],
+	"bbk_mode_c" : [
+		"lock", "close", "dispenser", "drinks", "squirt", "jizz", "chem", "chems", "chemnerd", "yartz", "cum", "splortch"
+	],
+	"bbk_mode_d" : [
+		"unlock", "open", "blender", "grinder", "juicer", "unlocker", "unlockez", "unlockezvous", "food", "delock"
+	],
+	"bbk_swap_mode" : [
+		"change", "swap", "mode", "set", "back", "next", "othre", "another", "swoop"
+	],
+	"bbk_eject" : [
+		"eject", "out", "dump", "pile", "remove", "trash", "yeet", "upend", "clean", "vacate", "unthing"
+	],
+	"bbk_examine" : [
+		"examine", "report", "whats", "inside", "reservoir", "contents"
+	],
+	"bbk_mute" : [
+		"quiet", "hush", "silence", "shut", "up", "mute", "stfu", "shuddup", "ununmute"
+	],
+	"bbk_unmute" : [
+		"unmute", "loud", "talk", "say", "speak", "spook", "spork"
+	],
+	"bbk_love" : [
+		"love", "like", "enjoy", "appreciate", "adore", "fancy", "dig", "cherish", "heart", "fuck", "sex", "luv", "amour",
+		"amor", "amigo", "ami", "amiga", "scrungy", "bepis"
+	],
+	"bbk_hate" : [
+		"hate", "dislike", "despise", "abhor", "detest", "nolike", "unlove", "arnst"
+	],
+	"bbk_pain" : [
+		"pain", "agony", "loud", "awful", "hurt", "hurty", "noises"
+	],
+	"bbk_negate" : [
+		"dont", "not", "no", "aint", "yesnt", "daint", "nope", "nope",
+		"nah", "na", "n", "nopers", "non", "nono", "nonono", "way"
+	],
+	"bbk_yes" : [
+		"yes", "ye", "y", "ya", "yup", "yeehaw", "yeah", "uh", "huh", "yesm", "sure", "course"
+	],
+	"bbk_i" : [
+		"i", "me", "em", "yo"
+	],
+	"bbk_name" : [
+		"whats", "your", "name", "who"
+	],
+	"bbk_you" : [
+		"you", "u", "yuo", "yoo"
+	],
+	"__SECTION3__" : [
+		"The following is a lookup table of stimuli and its associated impulse",
+		"Format is: bbstimulus_full_brevin : { impulse : 1 or Some kind of arg}",
+		"Extra stuff is always sent to the impulse by the stimulus",
+		"One stimulus can trigger multiple impulses"
+	],
+	"bbstimulus_full_brevin" : {
+		"speak_line" : "bbline_full_brevin"
+	},
+	"bbstimulus_full_reservoir" : {
+		"speak_line" : "bbline_full_reservoir"
+	},
+	"bbstimulus_nothing_to_process" : {
+		"speak_line" : "bbline_nothing_to_process"
+	},
+	"bbstimulus_hard_abort" : {
+		"speak_line" : "bbline_hard_abort"
+	},
+	"bbstimulus_soft_abort" : {
+		"speak_line" : "bbline_soft_abort"
+	},
+	"bbstimulus_finished_processing" : {
+		"speak_line" : "bbline_finished_processing"
+	},
+	"bbstimulus_failed_processing" : {
+		"speak_line" : "bbline_failed_processing"
+	},
+	"bbstimulus_safety_check" : {
+		"speak_line" : "bbline_safety_check"
+	},
+	"bbstimulus_is_borg_part" : {
+		"speak_line" : "bbline_is_borg_part"
+	},
+	"bbstimulus_needs_drying" : {
+		"speak_line" : "bbline_needs_drying"
+	},
+	"bbstimulus_missing_component_case" : {
+		"speak_line" : "bbline_missing_component_case"
+	},
+	"bbstimulus_misplaced_component_case" : {
+		"speak_line" : "bbline_misplaced_component_case"
+	},
+	"bbstimulus_missing_reservoir" : {
+		"speak_line" : "bbline_missing_reservoir"
+	},
+	"bbstimulus_misplaced_reservoir" : {
+		"speak_line" : "bbline_misplaced_reservoir"
+	},
+	"bbstimulus_low_power" : {
+		"speak_line" : "bbline_low_power"
+	},
+	"bbstimulus_missing_part" : {
+		"speak_line" : "bbline_missing_part"
+	},
+	"bbstimulus_cant_eject" : {
+		"speak_line" : "bbline_cant_eject"
+	},
+	"bbstimulus_cant_drop" : {
+		"speak_line" : "bbline_cant_drop"
+	},
+	"bbstimulus_yeet" : {
+		"speak_line" : "bbline_yeet"
+	},
+	"bbstimulus_dump_everything" : {
+		"speak_line" : "bbline_dump_everything"
+	},
+	"bbstimulus_cant_change_while_running" : {
+		"speak_line" : "bbline_cant_change_while_running"
+	},
+	"bbstimulus_set_mode_a" : {
+		"speak_line" : "bbline_set_mode_a",
+		"set_mode_a" : true
+	},
+	"bbstimulus_set_mode_b" : {
+		"speak_line" : "bbline_set_mode_b",
+		"set_mode_b" : true
+	},
+	"bbstimulus_set_mode_c" : {
+		"speak_line" : "bbline_set_mode_c",
+		"set_mode_c" : true
+	},
+	"bbstimulus_set_mode_d" : {
+		"speak_line" : "bbline_set_mode_d",
+		"set_mode_d" : true
+	},
+	"bbstimulus_swap_mode" : {
+		"speak_line" : "bbline_swap_mode"
+	},
+	"bbstimulus_nothing_to_examine" : {
+		"speak_line" : "bbline_nothing_to_examine"
+	},
+	"bbstimulus_out_of_paper" : {
+		"speak_line" : "bbline_out_of_paper"
+	},
+	"bbstimulus_examining" : {
+		"speak_line" : "bbline_examining"
+	},
+	"bbstimulus_eject_brevin" : {
+		"speak_line" : "bbline_eject_brevin"
+	},
+	"bbstimulus_swap_brevin" : {
+		"speak_line" : "bbline_swap_brevin"
+	},
+	"bbstimulus_insert_brevin" : {
+		"speak_line" : "bbline_insert_brevin"
+	},
+	"bbstimulus_reagent_missing" : {
+		"speak_line" : "bbline_reagent_missing"
+	},
+	"bbstimulus_stop" : {
+		"speak_line" : "bbline_stop"
+	},
+	"bbstimulus_not_running" : {
+		"speak_line" : "bbline_not_running"
+	},
+	"bbstimulus_already_mode_a" : {
+		"speak_line" : "bbline_already_mode_a"
+	},
+	"bbstimulus_already_mode_b" : {
+		"speak_line" : "bbline_already_mode_b"
+	},
+	"bbstimulus_already_mode_c" : {
+		"speak_line" : "bbline_already_mode_c"
+	},
+	"bbstimulus_already_mode_d" : {
+		"speak_line" : "bbline_already_mode_d"
+	},	
 	}
-}
