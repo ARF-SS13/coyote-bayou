@@ -3,6 +3,7 @@
 	name = "iron"
 	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
 	color = "#878687"
+	strength_modifier = 1.15
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
 	value_per_unit = 0.0025
@@ -48,6 +49,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "silver"
 	desc = "Silver"
 	color = list(255/255, 284/255, 302/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	strength_modifier = 1.15
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/silver
 	value_per_unit = 0.025
@@ -58,7 +60,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "gold"
 	desc = "Gold"
 	color = list(340/255, 240/255, 50/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //gold is shiny
-	strength_modifier = 0.8
+	strength_modifier = 1.15
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
 	value_per_unit = 0.0625
@@ -70,7 +72,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "diamond"
 	desc = "Highly pressurized carbon"
 	color = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
-	strength_modifier = 1.1
+	strength_modifier = 1.15
 	alpha = 132
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
@@ -149,6 +151,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "Titanium"
 	color = "#b3c0c7"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
+	strength_modifier = 1.15
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
 	value_per_unit = 0.0625
 	beauty_modifier = 0.05
@@ -308,6 +311,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "bronze"
 	desc = "Clock Cult? Never heard of it."
 	color = "#92661A"
+	strength_modifier = 1.15
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/bronze
 	value_per_unit = 0.025
@@ -366,6 +370,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "bones"
 	desc = "Someone's been drinking their milk."
 	color = "#e3dac9"
+	strength_modifier = 1.15
 	sheet_type = /obj/item/stack/sheet/bone
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	armor_modifiers = list("melee" = 1.2, "bullet" = 0.75, "laser" = 0.75, "energy" = 1.2, "bomb" = 1, "bio" = 1, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
