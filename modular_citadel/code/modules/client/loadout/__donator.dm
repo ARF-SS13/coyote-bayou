@@ -856,11 +856,10 @@
 	ckeywhitelist = list("seermankhajiit00", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
-	new /obj/item/storage/belt/shoulderholster/ranger45(src)
-	new /obj/item/clothing/under/costume/soviet(src)
+	new /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle(src)
 	new /obj/item/storage/box/hobo_tox(src)
 	new /obj/item/pet_carrier/paws(src)
-	new /obj/item/binoculars(src)
+	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
 
 /datum/gear/donator/kits/seermankhajiit003
 	name = "The Director"
@@ -1153,6 +1152,10 @@
 /obj/item/storage/box/large/custom_kit/weredoggo/PopulateContents()
 	new /obj/item/reagent_containers/food/condiment/bbqsauce(src)
 	new /obj/item/storage/box/hug(src)
+	new /obj/item/pen/edagger(src)
+	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
+	new /obj/item/coin/gold/dogecoin(src)
+
 
 // X
 // Y
