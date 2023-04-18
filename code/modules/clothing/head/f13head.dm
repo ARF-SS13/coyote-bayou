@@ -365,7 +365,6 @@
 	desc = "It's a helmet made of scrap metal and wires, some poor attempt at a power armor helmet."
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
-	armor = ARMOR_VALUE_SALVAGE
 	salvaged_type = /obj/item/clothing/head/helmet/f13/raidermetal
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
