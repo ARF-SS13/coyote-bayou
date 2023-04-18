@@ -3274,7 +3274,7 @@
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
 
 /obj/item/clothing/suit/armor/power_armor/t45b/raider
-	name = "Powered scrap suit"
+	name = "powered scrap suit"
 	desc = "A monumentously heavy suit of rusty metal and car parts. Either an actual power armor exoskeleton or some home-built substite sits embedded under all that rust. Is this some attempt at power armor???"
 	icon_state = "raider_salvaged"
 	item_state = "raider_salvaged"
