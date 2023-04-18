@@ -11,6 +11,9 @@
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/icon_prefix = null
+	block_parry_data = /datum/block_parry_data/bokken
+	item_flags = ITEM_CAN_PARRY
+	block_chance = 5
 
 /obj/item/twohanded/Initialize()
 	. = ..()
