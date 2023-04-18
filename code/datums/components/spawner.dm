@@ -233,7 +233,7 @@
 			qdel(P) // clearly, out of mobs. shouldnt get here
 			return
 		L = new chosen_mob(get_turf(P))
-		//L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
+		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
 		spawned_mobs |= WEAKREF(L)
 		L.nest = WEAKREF(P) // Neither really own each other, its all purely for record keeping
 		if(length(faction))
