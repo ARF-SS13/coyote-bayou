@@ -230,12 +230,6 @@
 	if(user == anchored || !isturf(user.loc))
 		return FALSE
 
-	// normal vore check.
-	// If USER is PULLING MOB and USER GRAB is AGGRESSIVE, do VORE
-	if(user.pulling && user.grab_state == GRAB_AGGRESSIVE && SEND_SIGNAL(user, COMSIG_VORE_GET_VOREMODE))
-		SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, user.pulling, src)
-		return
-
 	if(user == src) //we want to be able to self click if we're voracious
 		return FALSE
 
