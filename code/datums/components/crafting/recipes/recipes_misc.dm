@@ -593,3 +593,58 @@
 	time = 5 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
+/datum/crafting_recipe/scrap_pa
+	name = "Powered Scrap Suit"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b/raider
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/stock_parts/cell/ammo/mfc = 1,
+				/obj/item/stack/cable_coil = 30,
+				/obj/item/stack/sheet/metal = 35,
+				/obj/item/stack/sheet/bronze = 25)
+	time = 35
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/scrap_pa_helm
+	name = "Powered Scrap Suit Helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b/raider
+	reqs = list(/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/bronze = 5)
+	time = 25
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45
+	name = "Refurbished T-45B Power Armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b/raider
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/stock_parts/cell/ammo/mfc = 1)
+	time = 35
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45_helm
+	name = "Refurbished T-45B Power Armor Helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 2)
+	time = 25
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
