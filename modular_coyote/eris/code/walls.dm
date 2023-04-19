@@ -15,7 +15,7 @@
 	desc = "An old wall you'd see at a fortress."
 	icon = 'modular_coyote/icons/turfs/walls.dmi'
 	icon_state = "fortress_brickwall0"
-	icon_type_smooth = "fortress_brickwall0"
+	icon_type_smooth = "fortress_brickwall"
 	hardness = 80
 	smooth = SMOOTH_OLD
 	girder_type = 0
