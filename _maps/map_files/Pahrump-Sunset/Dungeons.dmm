@@ -5187,7 +5187,8 @@
 "cHL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/wolf/playable/shepherd{
-	faction = list("hostile","wolf","enclave")
+	faction = list("hostile","wolf","enclave");
+	name = "Chosen One"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -8713,7 +8714,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ladder/unbreakable{
-	height = 2
+	height = 2;
+	id = "enclaveenter"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -10125,7 +10127,7 @@
 /area/f13/brotherhood/offices1st)
 "eVb" = (
 /obj/structure/ladder/unbreakable{
-	height = 2;
+	height = 1;
 	id = "enclavedbs"
 	},
 /turf/open/floor/f13{
@@ -20929,10 +20931,6 @@
 /obj/structure/decoration/vent,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/medical)
-"kxw" = (
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "kxX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
@@ -39833,7 +39831,6 @@
 "tKw" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/decal/remains/human,
-/mob/living/simple_animal/hostile/jungle/seedling,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "tKy" = (
@@ -65319,8 +65316,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-kxw
-kxw
+pif
+pif
 pif
 hrZ
 hrZ
@@ -65576,8 +65573,8 @@ hrZ
 hrZ
 hrZ
 pif
-jow
-kxw
+pif
+pif
 duA
 hrZ
 hrZ
@@ -65833,7 +65830,7 @@ hrZ
 hrZ
 hrZ
 pyd
-pif
+mqa
 pif
 hrZ
 hrZ
@@ -67119,8 +67116,8 @@ hrZ
 hrZ
 hrZ
 pif
-jow
 pif
+mqa
 pif
 hrZ
 iba
@@ -67888,10 +67885,10 @@ hrZ
 hrZ
 hrZ
 hrZ
-ldo
 pif
 pif
-jow
+pif
+pif
 hrZ
 hrZ
 hrZ
@@ -68401,7 +68398,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-mqa
+pif
 pif
 pyd
 hrZ
@@ -68648,7 +68645,7 @@ hrZ
 hrZ
 hrZ
 pif
-jow
+pif
 hrZ
 hrZ
 hrZ
@@ -69687,7 +69684,7 @@ hrZ
 hrZ
 hrZ
 pif
-jow
+pif
 pif
 hrZ
 hrZ
@@ -69929,7 +69926,7 @@ vUU
 hrZ
 hrZ
 hrZ
-pif
+ldo
 pif
 dhF
 kdS
@@ -69937,7 +69934,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-jow
+pif
 pif
 rJI
 hrZ
@@ -70187,7 +70184,7 @@ hrZ
 hrZ
 hrZ
 pif
-jow
+pif
 pif
 wOb
 hrZ
@@ -70972,9 +70969,9 @@ hhP
 hrZ
 hrZ
 hrZ
+jow
 pif
 pif
-mqa
 hrZ
 hrZ
 hrZ
