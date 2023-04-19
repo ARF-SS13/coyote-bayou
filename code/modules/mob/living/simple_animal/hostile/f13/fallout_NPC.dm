@@ -191,7 +191,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	ranged_cooldown_time = 30
-	projectiletype = /obj/item/projectile/energy/declone
+	projectiletype = /obj/item/projectile/f13plasma/pistol/adam
 	projectilesound = 'sound/weapons/wave.ogg'
 	extra_projectiles = null
 	attack_verb_simple = "thrusts"
