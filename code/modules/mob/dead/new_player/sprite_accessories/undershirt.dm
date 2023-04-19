@@ -515,3 +515,115 @@
 	name = "cropped denim jacket"
 	icon_state = "ncrcfjacketcrop"
 	covers_belly = FALSE
+
+//Fennis Nipple Additions
+
+/datum/sprite_accessory/underwear/top/nipple_a
+	name = "A-cup nipple"
+	icon_state = "pair_nip_a"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_b
+	name = "B-cup nipple"
+	icon_state = "pair_nip_b"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_c
+	name = "C-cup nipple"
+	icon_state = "pair_nip_c"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_d
+	name = "D-cup nipple"
+	icon_state = "pair_nip_d"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_e
+	name = "E-cup nipple"
+	icon_state = "pair_nip_e"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_f
+	name = "F-cup nipple"
+	icon_state = "pair_nip_f"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_g
+	name = "G-cup nipple"
+	icon_state = "pair_nip_g"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+
+/datum/sprite_accessory/underwear/top/nipple_h
+	name = "H-cup nipple"
+	icon_state = "pair_nip_h"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_i
+	name = "I-cup nipple"
+	icon_state = "pair_nip_I"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+
+/datum/sprite_accessory/underwear/top/nipple_j
+	name = "J-cup nipple"
+	icon_state = "pair_nip_j"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_k
+	name = "K-cup nipple"
+	icon_state = "pair_nip_k"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_l
+	name = "L-cup nipple"
+	icon_state = "pair_nip_l"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_m
+	name = "M-cup nipple"
+	icon_state = "pair_nip_M"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_n
+	name = "N-cup nipple"
+	icon_state = "pair_nip_n"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+
+
+
+
+
+
+
+
+
