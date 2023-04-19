@@ -181,7 +181,7 @@
 
 /// examine something
 /datum/blenderbrain_impulse/examine
-	index = IMPULSE_EJECT
+	index = IMPULSE_EXAMINE
 
 /datum/blenderbrain_impulse/examine/impulse()
 	USER_MASTER_BRAIN
@@ -401,7 +401,7 @@
 	else
 		speak(SPEAK_LINE_HATE)
 	var/amour = master.get_amour(user)
-	if(amour < -50)
+	if(amour < -65)
 		master.queue_impulse(
 			user, 
 			list(
@@ -425,7 +425,7 @@
 		emote(EMOTE_LINE_QUIET)
 	else
 		emote(EMOTE_LINE_SIGH)
-	if(isowner)
+	if(isowner && prob(50))
 		speak(SPEAK_LINE_BREAKUP_OWNER)
 		master.disown_owner(user)
 	master.set_clarify(user, null)
@@ -446,7 +446,7 @@
 	else
 		speak(SPEAK_LINE_NOT_LOVE)
 		master.adjust_amour(user, -1)
-	if(master.get_amour(user) < -50) // thats it, we're done
+	if(master.get_amour(user) < -65) // thats it, we're done
 		master.queue_impulse(
 			user, 
 			list(
@@ -523,6 +523,16 @@
 
 /datum/blenderbrain_impulse/state_name/impulse()
 	USER_MASTER_BRAIN
+	speak(SPEAK_LINE_STATE_NAME)
+
+/// When someone picks you up
+/datum/blenderbrain_impulse/picked_up
+	index = IMPULSE_PICKED_UP
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/picked_up/impulse()
+	USER_MASTER_BRAIN
+	var/isowner = master.is_owner(user)
 	speak(SPEAK_LINE_STATE_NAME)
 
 /// Clarification requests!

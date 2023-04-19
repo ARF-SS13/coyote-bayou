@@ -69,6 +69,7 @@
 #define STIMULUS_EXAMINE_TRY "bbstimulus_examine_try"
 #define STIMULUS_STATE_NAME "bbstimulus_state_name"
 #define STIMULUS_PICKED_UP "bbstimulus_picked_up"
+#define STIMULUS_EQUIPPED "bbstimulus_equipped"
 
 /// Blender word-to-stimulus keys
 #define BBKEY_STOP "bbk_stop"
@@ -165,6 +166,7 @@
 #define IMPULSE_REMEMBER_PERSON "remember_person"
 #define IMPULSE_STATE_NAME "state_name"
 #define IMPULSE_PICKED_UP "picked_up"
+#define IMPULSE_EQUIPPED "equipped"
 //#define IMPULSE_BEGRUDGING_OBEDIENCE "begrudging_obedience"
 //#define IMPULSE_RETURN_ME "return_me"
 
