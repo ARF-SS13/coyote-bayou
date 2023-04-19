@@ -1846,8 +1846,8 @@
 	item_state = "vest_flak"
 
 /obj/item/clothing/suit/armor/medium/vest/oasis
-	name = "NPD vest"
-	desc = "a lightweight ballistic vest that combines protection and comfort. This one has pockets sewn into the front and a badge pinned on it."
+	name = "Vault-Sec vest"
+	desc = "a lightweight ballistic vest that is commonly worn by Vault-Tec security personnel. This one still has the badge attached."
 	icon_state = "blueshift"
 	item_state = "blueshift"
 
