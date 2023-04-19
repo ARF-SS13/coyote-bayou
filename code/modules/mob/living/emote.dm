@@ -979,6 +979,12 @@
 	message = "does an amphibian warcry!"
 	sound = 'sound/f13effects/sunsetsounds/frogwarcry.ogg'
 
+/datum/emote/living/bwoing
+	key = "bwoing"
+	key_third_person = "bounces vivaciously!"
+	message = "bounces vivaciously."
+	sound = 'sound/effects/bwoing.ogg'
+
 /datum/emote/weh
 	key = "weh"
 	key_third_person = "wehs"
