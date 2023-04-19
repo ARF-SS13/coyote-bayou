@@ -3270,6 +3270,8 @@
 /obj/item/clothing/suit/armor/power_armor/t45b
 	name = "Refurbished T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
 	armor = ARMOR_VALUE_SALVAGE
 	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
@@ -3277,8 +3279,8 @@
 /obj/item/clothing/suit/armor/power_armor/t45b/raider
 	name = "powered scrap suit"
 	desc = "A monumentously heavy suit of rusty metal and car parts. Either an actual power armor exoskeleton or some home-built substitute sits embedded under all that rust. Is this some attempt at power armor???"
-	icon_state = "raider_salvaged"
-	item_state = "raider_salvaged"
+	icon_state = "raiderpa"
+	item_state = "raiderpa"
 	salvaged_type = /obj/item/clothing/suit/armor/medium/raider/raidermetal
 
 /obj/item/clothing/suit/armor/power_armor/t45d
