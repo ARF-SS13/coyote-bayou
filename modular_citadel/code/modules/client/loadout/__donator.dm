@@ -560,16 +560,6 @@
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/radio(src)
 
-/*/datum/gear/donator/kits/jaytheavian
-	name = "Mayor Stuff"
-	path = /obj/item/storage/box/large/custom_kit/jaytheavian
-	ckeywhitelist = list("jaytheavian")
-
-/obj/item/storage/box/large/custom_kit/jaytheavian/PopulateContents()
-	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/kit_spawner/townie/mayor(src)
-	new /obj/item/card/id/captains_spare(src)*/
-
 // K
 // L
 
@@ -870,19 +860,6 @@
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox(src)
 	new /obj/item/ammo_box/magazine/uzim9mm/rockwell(src)
-/*	new /obj/item/card/id/captains_spare(src)
-	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/kit_spawner/townie/mayor(src)*/
-
-/*/datum/gear/donator/kits/seermankhajiit004
-	name = "Honey Mayor"
-	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
-	ckeywhitelist = list("seermankhajiit00")
-
-/obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
-	new /obj/item/kit_spawner/townie/mayor(src)
-	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/card/id/captains_spare(src)*/
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -1120,17 +1097,6 @@
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
 
 // U
-
-/datum/gear/donator/kits/ursine
-	name = "Zonq Mayor"
-	path = /obj/item/storage/box/large/custom_kit/ursine
-	ckeywhitelist = list("ursine")
-
-/obj/item/storage/box/large/custom_kit/ursine/PopulateContents()
-	new /obj/item/kit_spawner/townie/mayor(src)
-	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/card/id/captains_spare(src)
-
 // V
 // W
 
@@ -1201,12 +1167,14 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
-/*/datum/gear/donator/kits/zorturethewitcher
-	name = "Mayor Card"
-	path = /obj/item/storage/box/large/custom_kit/zorturethewitcher
-	ckeywhitelist = list("zorturethewitcher")
+//Mayor Kit
 
-/obj/item/storage/box/large/custom_kit/zorturethewitcher/PopulateContents()
+/*/datum/gear/donator/kits/Mayor_kit
+	name = "Mayor Card"
+	path = /obj/item/storage/box/large/custom_kit/Mayor_kit
+	ckeywhitelist = list("Mayor_kit")
+
+/obj/item/storage/box/large/custom_kit/Mayor_kit/PopulateContents()
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)*/
