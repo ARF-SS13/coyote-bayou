@@ -419,18 +419,18 @@
 							)
 
 /datum/gear/suit/deputyvest
-	name = "NPD armor vest"
+	name = "Vault-Sec armor vest"
 	path = /obj/item/clothing/suit/armor/medium/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-	restricted_desc = "Nash Police, Nash Officials"
+	/*restricted_desc = "Nash Police, Nash Officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"Mayor",
 							"Detective",
 							"Secretary",
 							"Shopkeeper",
-						)
+						)*/
 
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"

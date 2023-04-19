@@ -468,18 +468,18 @@ datum/gear/head/steelpot_bandolier
 						)*/
 
 /datum/gear/head/oasishelmet
-	name = "light security helmet"
+	name = "Vault-Tec security helmet"
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
-	restricted_desc = "Nash PD, Nash officials"
+	/*restricted_desc = "Nash PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"Mayor",
 							"Detective",
 							"Secretary",
 							"Shopkeeper",
-						)
+						)*/
 
 /datum/gear/head/goner_red
 	name = "cheap helmet, red"
