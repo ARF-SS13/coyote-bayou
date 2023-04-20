@@ -1608,7 +1608,14 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
-
+/obj/item/clothing/suit/armor/light/kit/punk/bronzebreastplate
+	name = "Bronze Breastplate"
+	desc = "Abs not included."
+	icon_state = "bronze_chestplate"
+	item_state = "bronze_chestplate"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 ////////////////
 // OTHER //
