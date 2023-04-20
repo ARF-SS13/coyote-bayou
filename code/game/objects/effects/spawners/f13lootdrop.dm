@@ -604,6 +604,7 @@
 				/obj/item/storage/pill_bottle/chem_tin/buffout,
 				/obj/item/reagent_containers/hypospray/medipen/steady,
 				/obj/item/reagent_containers/hypospray/medipen/psycho,
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
 				)
 
 
