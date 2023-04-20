@@ -190,20 +190,21 @@
 /obj/item/melee/onehanded/knife/hunting
 	name = "hunting knife"
 	icon_state = "knife_hunting"
-	desc = "Dependable hunting knife."
+	desc = "A dependable hunting knife. Good for skinning one's kills."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 23
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	toolspeed = 0.8
+	toolspeed = 0.7
 
 /obj/item/melee/onehanded/knife/survival
 	name = "survival knife"
 	icon_state = "knife_survival"
-	desc = "Multi-purpose knife with blackened steel."
+	desc = "A high-quality pre-war survival knife. Perfect for a survivalist or hunter."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 23
 	throwforce = 25
+	toolspeed = 0.3
 
 /obj/item/melee/onehanded/knife/bayonet
 	name = "bayonet knife"
@@ -216,11 +217,11 @@
 	name = "bowie knife"
 	icon_state = "knife_bowie"
 	item_state = "knife_bowie"
-	desc = "A large clip point fighting knife."
+	desc = "Now this is a knife! Better as both a tool and weapon than most knives, but loses out to specialized tools."
 	force = 28
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
-	toolspeed = 0.8
+	toolspeed = 0.5
 
 /obj/item/melee/onehanded/knife/trench
 	name = "trench knife"
@@ -327,7 +328,7 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 25
 	throwforce = 15
 	armour_penetration = 0.2
-	toolspeed = 0.9
+	toolspeed = 0.8
 
 // Heat it with a welder
 /obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)
