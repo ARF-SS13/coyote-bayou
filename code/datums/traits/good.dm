@@ -763,18 +763,18 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	lose_text = span_danger("You know? Being cold kind of sucks actually.")
 	locked =  FALSE
 
-/datum/quirk/radimmune
+/* /datum/quirk/radimmune
 	name = "Radiation - Immune"
 	desc = "Gieger Counters are for suckers."
 	value = 5
 	mob_trait = TRAIT_RADIMMUNE
 	gain_text = span_notice("You've decided radiation just doesn't matter.")
 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
-	locked =  FALSE
+	locked =  FALSE */
 
 /datum/quirk/radimmuneish
 	name = "Radiation - Mostly Immune"
-	desc = "Gieger Counters are for suckers, mostly."
+	desc = "Gieger Counters are for suckers, mostly. Gives 75% innate rad resist."
 	value = 4
 	mob_trait = TRAIT_75_RAD_RESIST
 	gain_text = span_notice("You've decided radiation just doesn't matter much.")
@@ -783,7 +783,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 
 /datum/quirk/radimmunesorta
 	name = "Radiation - Sorta Immune"
-	desc = "Gieger Counters are for suckers, sorta."
+	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
 	value = 3
 	mob_trait = TRAIT_50_RAD_RESIST
 	gain_text = span_notice("You've decided radiation only kind of matters.")
