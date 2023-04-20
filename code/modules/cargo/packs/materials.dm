@@ -76,12 +76,12 @@
 	goody = PACK_GOODY_PUBLIC
 	name = "Weapon Parts"
 	desc = "A random collection of recovered weapon parts. A gunsmith's wet dream."
-	cost = 2500
+	cost = 750
 	contains = list(/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting)
-					
+
 /* /datum/supply_pack/materials/rcdammo
 	goody = PACK_GOODY_PUBLIC
 	name = "Large RCD ammo Single-Pack"
@@ -162,7 +162,7 @@
 /datum/supply_pack/materials/fueltank
 	name = "Fuel Tank Crate"
 	desc = "Contains a welding fuel tank. Caution, highly flammable."
-	cost = 800
+	cost = 500
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
 	crate_name = "fuel tank crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -170,7 +170,7 @@
 /datum/supply_pack/materials/watertank
 	name = "Water Tank Crate"
 	desc = "Contains a tank of dihydrogen monoxide... sounds dangerous."
-	cost = 600
+	cost = 500
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -186,7 +186,7 @@
 /datum/supply_pack/materials/hightank
 	name = "Large Water Tank Crate"
 	desc = "Contains a high-capacity water tank. Useful for botany or other service jobs."
-	cost = 1200
+	cost = 800
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large

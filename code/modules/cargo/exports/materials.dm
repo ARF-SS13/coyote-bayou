@@ -114,6 +114,7 @@
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/leather)
+	k_elasticity = 1
 
 /datum/export/material/bone
 	cost = 10
