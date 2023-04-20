@@ -202,4 +202,17 @@
 	path = /obj/item/shield/coyote/redbuckler
 	cost = 2
 
+/datum/gear/hands/pipboy
+	name = "Pipboy"
+	path = /obj/item/pda
+	cost = 2
 
+/datum/gear/hands/id
+	name = "Reprogramable ID"
+	path =  /obj/item/card/id/selfassign
+	cost = 1
+
+/datum/gear/hands/headset
+	name = "headset"
+	path = /obj/item/radio/headset
+	cost = 1
