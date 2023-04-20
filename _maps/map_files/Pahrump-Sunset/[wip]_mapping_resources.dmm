@@ -2784,14 +2784,6 @@
 	},
 /turf/open/floor/wood_fancy,
 /area/f13/wasteland)
-"cMy" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button{
-	id = toxbunker;
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland)
 "cMQ" = (
 /obj/structure/destructible/tribal_torch/wall{
 	dir = 4
@@ -7178,9 +7170,6 @@
 	},
 /area/f13/wasteland)
 "hca" = (
-/obj/machinery/door/poddoor/shutters/old/preopen{
-	id = toxbunker
-	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/wasteland)
@@ -17666,12 +17655,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"rKM" = (
-/obj/machinery/door/poddoor/shutters/old/preopen{
-	id = toxbunker
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/wasteland)
 "rKX" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 1;
@@ -19816,9 +19799,6 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "tYn" = (
-/obj/machinery/door/poddoor/shutters/old/preopen{
-	id = toxbunker
-	},
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -232855,7 +232835,7 @@ wDY
 aLu
 iQv
 xTv
-cMy
+oqE
 oqE
 xTv
 xTv
@@ -232863,7 +232843,7 @@ bmn
 eIr
 eIr
 eIr
-rKM
+xTv
 uEW
 kZi
 iCz
@@ -233365,7 +233345,7 @@ uEW
 eIr
 eIr
 eIr
-rKM
+xTv
 uEW
 kZi
 kZi
@@ -233867,7 +233847,7 @@ bmn
 eIr
 eIr
 eIr
-rKM
+xTv
 uEW
 kZi
 nRN
@@ -258457,7 +258437,7 @@ juO
 mWN
 iEM
 rTH
-cMy
+oqE
 udq
 rTH
 xTv
@@ -259469,7 +259449,7 @@ bmn
 hwo
 dBm
 bgp
-rKM
+xTv
 btF
 qnl
 nRN

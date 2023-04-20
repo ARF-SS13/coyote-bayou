@@ -33025,7 +33025,7 @@
 /area/f13/underground/cave)
 "qZe" = (
 /obj/machinery/door/poddoor/shutters/old/preopen{
-	id = toxbunker
+	id = "toxsbunker"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
@@ -38381,7 +38381,7 @@
 "tPR" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button{
-	id = toxbunker;
+	id = "toxsbunker";
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
