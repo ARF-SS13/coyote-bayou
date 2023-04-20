@@ -254,6 +254,7 @@
 				/obj/item/clothing/suit/armor/light/kit/punk/chinesebreastplate,
 				/obj/item/clothing/suit/armor/light/kit/punk/woodenbreastplate,
 				/obj/item/clothing/suit/armor/light/kit/punk/steelbreastplate,
+				/obj/item/clothing/suit/armor/light/kit/punk/bronzebreastplate,
 
 	)
 

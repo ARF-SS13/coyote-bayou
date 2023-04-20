@@ -203,6 +203,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/bronzechestplate
+	name = "Bronze Chestplate"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/chitinbreastplate
 	name = "Fire Ant Breastplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/chitinbreastplate
