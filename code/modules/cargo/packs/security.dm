@@ -610,7 +610,7 @@
 /datum/supply_pack/security/vault
 	name = "Weapons - Vault"
 	desc = "A crate of common vault security firearms that never made it to their assigned vault. A basic, but reliable selection."
-	cost = 2500
+	cost = 2000
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/vault,
@@ -625,7 +625,7 @@
 /datum/supply_pack/security/weapon_police
 	name = "Weapons - Law Enforcement"
 	desc = "A crate full of common police and riot weapons. Occasionally contains special SWAT firearms."
-	cost = 3500
+	cost = 3000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/police,
@@ -638,7 +638,7 @@
 /datum/supply_pack/security/weapon_22
 	name = "Weapons - .22 caliber"
 	desc = "A crate full of low caliber weapons, for either building a lot of turrets, or quickly arming an anti-gecko militia"
-	cost = 3000
+	cost = 2500
 	num_contained = 8 //sadly crates have a max capacity of 8, don't wanna overflow
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/weapon_22,

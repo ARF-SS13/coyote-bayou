@@ -22,7 +22,7 @@
 /datum/supply_pack/science/beakers
 	name = "Chemistry Beakers Crate"
 	desc = "Glassware for any chemistry lab! Contains four small beakers, three large, two plastic, and one metamaterial. As well as three droppers and two pairs of latex gloves."
-	cost = 1500
+	cost = 1200
 	contains = list(/obj/item/reagent_containers/glass/beaker,
 					/obj/item/reagent_containers/glass/beaker,
 					/obj/item/reagent_containers/glass/beaker,
@@ -65,14 +65,14 @@
 /datum/supply_pack/science/circuitry
 	name = "Circuitry Starter Pack Crate"
 	desc = "Journey into the mysterious world of Circuitry with this starter pack. Contains a circuit printer, analyzer, debugger and wirer. Power cells not included."
-	cost = 1000
+	cost = 3000
 	contains = list(/obj/item/integrated_electronics/analyzer,
 					/obj/item/integrated_circuit_printer,
 					/obj/item/integrated_electronics/debugger,
 					/obj/item/integrated_electronics/wirer)
 	crate_name = "circuitry starter pack crate"
 
-/datum/supply_pack/science/glasswork
+/* /datum/supply_pack/science/glasswork // currently nonfunctional 4-19-2023
 	name = "Glass Blower Kit Crate"
 	desc = "Learn and make glassworks of useful things for a profit! Contains glassworking tools and blowing rods. Glass not included."
 	cost = 1000
@@ -80,7 +80,7 @@
 					/obj/item/glasswork/glasskit,
 					/obj/item/glasswork/blowing_rod,
 					/obj/item/glasswork/blowing_rod)
-	crate_name = "glassblower gear crate"
+	crate_name = "glassblower gear crate" */
 
 /* /datum/supply_pack/science/monkey
 	name = "Monkey Cube Crate"
@@ -92,7 +92,7 @@
 /datum/supply_pack/science/nitrilegloves
 	name = "Nitrile Gloves Crate"
 	desc = "Handling toxic chemicals? Well worry not, keep your flesh intact with some nitrile made gloves! Contains three pairs of nitrile gloves."
-	cost = 1500
+	cost = 500
 	contains = list(/obj/item/clothing/gloves/color/latex/nitrile,
 					/obj/item/clothing/gloves/color/latex/nitrile,
 					/obj/item/clothing/gloves/color/latex/nitrile)
