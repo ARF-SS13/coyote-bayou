@@ -678,6 +678,30 @@
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/mentat(src)
 
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape
+	name = "Grape Mentats tin"
+	desc = "Contains pills used to increase intelligence and perception. Now in three flavors!"
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/mentat/grape(src)
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/orange
+	name = "Orange Mentats tin"
+	desc = "Contains pills used to increase intelligence and perception. Now in three flavors!"
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/orange/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/mentat/orange(src)
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/berry
+	name = "Berry Mentats tin"
+	desc = "Contains pills used to increase intelligence and perception. Now in three flavors!"
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/berry/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/mentat/berry(src)
+
 // ---------------------------------------------
 // FIXER TIN
 
