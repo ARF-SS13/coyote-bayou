@@ -468,3 +468,4 @@
 
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
+
