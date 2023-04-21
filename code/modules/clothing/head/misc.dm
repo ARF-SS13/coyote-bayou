@@ -691,3 +691,15 @@
 	desc = "A brown felt cowboy hat with a pinched look in the middle. Snazy."
 	icon_state = "pinched_cowboy"
 	item_state = "pinched_cowboy"
+
+/obj/item/clothing/head/floppy_hat
+	name = "floppy bush hat"
+	desc = "commonly used by military forces in hot tropical climates. Its design is similar to a bucket hat but with a stiffer brim"
+	icon_state = "giggle_hat"
+	item_state = "giggle_hat"
+
+/obj/item/clothing/head/japan_cap
+	name = "green floppy cap"
+	desc = "A pre war japanese cap used for soldiers in the Japanese defense force for pacific and jungle combat."
+	icon_state = "japan_cap"
+	item_state = "japan_cap"

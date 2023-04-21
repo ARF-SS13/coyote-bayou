@@ -335,7 +335,7 @@
 
 //Skirt Accessories
 
-/datum/gear/backpack/pinkishskirt 
+/datum/gear/backpack/pinkishskirt
 	name = "Pinkish Skirt"
 	path = /obj/item/clothing/accessory/pinkishskirt
 	cost = 1
@@ -458,3 +458,18 @@
 	name = "Faded ID card"
 	path = /obj/item/card/id/rusted/fadedvaultid
 	cost = 0
+
+/datum/gear/backpack/pipboy
+	name = "Pipboy"
+	path = /obj/item/pda
+	cost = 2
+
+/datum/gear/backpack/id
+	name = "Reprogramable ID"
+	path =  /obj/item/card/id/selfassign
+	cost = 1
+
+/datum/gear/backpack/headset
+	name = "headset"
+	path = /obj/item/radio/headset
+	cost = 1

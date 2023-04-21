@@ -830,3 +830,13 @@ datum/gear/head/steelpot_bandolier
 	name = "pinched cowboy hat"
 	path = /obj/item/clothing/head/pinched_cowboy
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_COWBOY
+
+/datum/gear/head/floppy_hat
+	name = "floppy bush hat"
+	path = /obj/item/clothing/head/floppy_hat
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/japan_hat
+	name = "green floppy cap"
+	path = /obj/item/clothing/head/japan_cap
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL

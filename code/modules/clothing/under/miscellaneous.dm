@@ -1347,3 +1347,10 @@
 	icon_state = "roman_centurion"
 	item_state = "roman_centurion"
 	item_color = "roman_centurion"
+
+/obj/item/clothing/under/japanese_uniform
+	name = "Green uniform"
+	desc = "A green uniform. Camo!"
+	icon_state = "japan_uniform"
+	item_state = "japan_uniform"
+	item_color = "japan_uniform"

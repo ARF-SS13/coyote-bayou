@@ -1731,3 +1731,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/civ/roman_centurion
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/japanese_uniform
+	name = "green uniform"
+	cost = 1
+	path = /obj/item/clothing/under/japanese_uniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
