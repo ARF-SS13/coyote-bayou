@@ -365,7 +365,7 @@
 	force = 30
 	block_chance = 15
 	attack_speed = CLICK_CD_MELEE * 0.8
-	force_wielded = 45
+	force_wielded = 40
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
 	hitsound = 'sound/weapons/rapierhit.ogg'
