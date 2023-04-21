@@ -45,7 +45,7 @@
 		if(SEND_SIGNAL(W, COMSIG_LICK_RETURN, src, user)) // so I can lick walls like a frickin frick
 			return
 		if(W.force > holdHardness/3 && !holdUnbreakable)
-			take_damage(W.force * 0.1)
+			//take_damage(W.force * 0.1)
 			to_chat(user, span_warning("You smash the wall with [W]."))
 			playsound(src, 'sound/effects/bang.ogg', 50, 1)
 		else
