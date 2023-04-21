@@ -491,7 +491,7 @@
 	item_state = "radio"
 	desc = "a homemade radio transceiver made out of transistors and wire."
 	canhear_range = 2
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 GLOBAL_VAR_INIT(redwater_frequency, null)
 GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))

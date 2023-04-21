@@ -648,3 +648,23 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
+
+/datum/crafting_recipe/teachboy
+	name = "Refurbish Educational Pip-Boy 2000"
+	result = /obj/item/pda/teachboy
+	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 3)
+	time = 10
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+
+/datum/crafting_recipe/customid
+	name = "Reprogrammable ID"
+	result = /obj/item/card/id/selfassign
+	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/sheet/plastic = 2)
+	time = 10
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+
