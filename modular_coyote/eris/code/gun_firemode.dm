@@ -60,11 +60,11 @@
 	for(var/obj/I in gun.item_upgrades)
 		var/datum/component/item_upgrade/IU = I.GetComponent(/datum/component/item_upgrade)
 		if(IU.weapon_upgrades[GUN_UPGRADE_CHARGECOST])
-			gun.vars["charge_cost"] *= IU.weapon_upgrades[GUN_UPGRADE_CHARGECOST]
+			gun.vars["charge_cost_multiplier"] *= IU.weapon_upgrades[GUN_UPGRADE_CHARGECOST]
 		if(IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
-			gun.fire_delay *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-			gun.autofire_shot_delay *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-			gun.burst_shot_delay *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+			gun.vars["fire_delay"] *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+			gun.vars["autofire_shot_delay"] *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
+			gun.vars["burst_shot_delay"] *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
 
 //Called whenever the firemode is switched to, or the gun is picked up while its active
 /datum/firemode/proc/update()
