@@ -538,9 +538,26 @@
 	item_state = "armingsword"
 
 
+//danimaul//
+//why am I making this
+//please no
 
+/obj/item/melee/coyote/danhead
+	name = "dan's head on a stick"
+	icon = 'modular_coyote/icons/objects/danimaul.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/danimaulinhandleft.dmi'
+	righthand_file = 'modular_coyote/icons/objects/danimaulinhandright.dmi'
+	icon_state = "danimauler"
+	item_state = "danimauler"
+	force = 5
+	force_wielded = 10
+	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
 
-
+/obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(100, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 
 

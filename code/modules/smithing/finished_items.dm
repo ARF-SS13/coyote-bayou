@@ -36,8 +36,6 @@
 	item_flags = NEEDS_PERMIT //it's a bigass sword/spear. beepsky is going to give you shit for it.
 	sharpness = SHARP_EDGED
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	force = WEAPON_FORCE_TOOL_LARGE
-	wielded_mult = WEAPON_SLASH_TWOHAND_MULT
 	w_class = WEIGHT_CLASS_BULKY
 	var/icon_prefix = null
 
@@ -366,6 +364,7 @@
 	block_chance = 15
 	attack_speed = CLICK_CD_MELEE * 0.8
 	force_wielded = 40
+	force_unwielded = 30
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -380,6 +379,7 @@
 	force = 28
 	block_chance = 15
 	force_wielded = 50
+	force_unwielded = 28
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = ITEM_SLOT_BELT
@@ -410,6 +410,7 @@
 	force = 25
 	block_chance = 8
 	force_wielded = 55
+	force_unwielded = 25
 	slot_flags = ITEM_SLOT_BACK
 	layer = MOB_UPPER_LAYER
 
@@ -429,6 +430,7 @@
 	force = 25
 	block_chance = 5
 	force_wielded = 65
+	force_unwielded = 25
 	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/melee/smith/twohand/axe/crusher
@@ -439,6 +441,7 @@
 	force = 20
 	block_chance = 5
 	force_wielded = 50
+	force_unwielded = 20
 	attack_speed = CLICK_CD_MELEE * 1.5
 	sharpness = SHARP_NONE
 
@@ -456,6 +459,7 @@
 	force = 25
 	block_chance = 10
 	force_wielded = 60
+	force_unwielded = 25
 	attack_speed = CLICK_CD_MELEE * 1.3
 
 /obj/item/melee/smith/twohand/spear
@@ -467,6 +471,7 @@
 	force = 25
 	block_chance = 5
 	force_wielded = 50
+	force_unwielded = 25
 	sharpness = SHARP_POINTY
 	attack_speed = CLICK_CD_MELEE * 0.9
 
