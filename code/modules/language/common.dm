@@ -76,7 +76,7 @@
 
 
 /datum/language/signlanguage
-	name = "Space Sign Language"
+	name = "Sign Language"
 	desc = "Those who cannot speak can learn this instead."
 	speech_verb = "signs"
 	whisper_verb = "gestures"
