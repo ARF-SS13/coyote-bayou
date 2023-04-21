@@ -1659,3 +1659,75 @@
 	cost = 1
 	path = /obj/item/clothing/under/countess
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/skyrat/maid
+	name = "maid dress"
+	cost = 1
+	path = /obj/item/clothing/under/skyrat/maid
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/skyrat/flower_kimono
+	name = "flower kimono"
+	cost = 1
+	path = /obj/item/clothing/under/skyrat/flower_kimono
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/hawi/orange
+	name = "orange hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/orange
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/hawi/blue
+	name = "blue hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/hawi/purple
+	name = "purple hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/hawi/green
+	name = "green hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/toxotai
+	name = "robe with black belt"
+	cost = 1
+	path = /obj/item/clothing/under/civ/toxotai
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/thebes
+	name = "blue swamp hoplite"
+	cost = 1
+	path = /obj/item/clothing/under/civ/thebes
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/corinthia
+	name = "green swamp hoplite"
+	cost = 1
+	path = /obj/item/clothing/under/civ/corinthia
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/greek_commander
+	name = "swamp hoplite commander"
+	cost = 1
+	path = /obj/item/clothing/under/civ/greek_commander
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/athens
+	name = "dark blue swamp hoplite"
+	cost = 1
+	path = /obj/item/clothing/under/civ/athens
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/roman_centurion
+	name = "robe with red belt"
+	cost = 1
+	path = /obj/item/clothing/under/civ/roman_centurion
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

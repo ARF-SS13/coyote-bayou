@@ -1269,3 +1269,81 @@
 	icon_state = "countess"
 	item_state = "countess"
 	item_color = "countess"
+
+/obj/item/clothing/under/skyrat/maid
+	name = "maid dress"
+	desc = "Clean those windows! Dust the floors!"
+	icon_state = "maid_skyrat"
+	item_state = "maid_skyrat"
+	item_color = "maid_skyrat"
+
+/obj/item/clothing/under/skyrat/flower_kimono
+	name = "Kimono"
+	desc = "Somehow you feel like a weeb in this."
+	icon_state = "flower_kimono"
+	item_state = "flower_kimono"
+	item_color = "flower_kimono"
+
+/obj/item/clothing/under/hawi/orange
+	name = "orange hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_orange"
+	item_state = "tacticool_hawaiian_orange"
+	item_color = "tacticool_hawaiian_orange"
+
+/obj/item/clothing/under/hawi/blue
+	name = "blue hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_blue"
+	item_state = "tacticool_hawaiian_blue"
+	item_color = "tacticool_hawaiian_blue"
+
+/obj/item/clothing/under/hawi/purple
+	name = "purple hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_purple"
+	item_state = "tacticool_hawaiian_purple"
+	item_color = "tacticool_hawaiian_purple"
+
+/obj/item/clothing/under/hawi/green
+	name = "green hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_green"
+	item_state = "tacticool_hawaiian_green"
+	item_color = "tacticool_hawaiian_green"
+
+/obj/item/clothing/under/civ/toxotai
+	name = "Robe with black belt"
+	icon_state = "toxotai"
+	item_state = "toxotai"
+	item_color = "toxotai"
+
+/obj/item/clothing/under/civ/thebes
+	name = "blue swamp hoplite"
+	icon_state = "thebes"
+	item_state = "thebes"
+	item_color = "thebes"
+
+/obj/item/clothing/under/civ/corinthia
+	name = "green swamp hoplite"
+	icon_state = "corinthia"
+	item_state = "corinthia"
+	item_color = "corinthia"
+
+/obj/item/clothing/under/civ/greek_commander
+	name = "swamp hoplite commander"
+	icon_state = "greek_commander"
+	item_state = "greek_commander"
+	item_color = "greek_commander"
+
+/obj/item/clothing/under/civ/athens
+	name = "dark blue swamp hoplite"
+	icon_state = "athens"
+	item_state = "athens"
+	item_color = "athens"
+
+/obj/item/clothing/under/civ/roman_centurion
+	name = "robe with red belt"
+	icon_state = "roman_centurion"
+	item_state = "roman_centurion"
+	item_color = "roman_centurion"
