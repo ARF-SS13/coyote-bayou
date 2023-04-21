@@ -52,6 +52,11 @@
 	name = "footcloths"
 	path = /obj/item/clothing/shoes/f13/rag
 
+/datum/gear/shoes/footcloths/pawb
+	name = "Tough Feet"
+	path = /obj/item/clothing/shoes/f13/rag/pawb
+
+
 /datum/gear/shoes/raidertreads
 	name = "raider treads"
 	path = /obj/item/clothing/shoes/f13/raidertreads
