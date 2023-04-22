@@ -87,6 +87,16 @@
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
+/obj/item/melee/onehanded/club/fryingpan/saltspider
+	name = "well-cleaned frying pan"
+	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around. This one seems to be kept in remarkable condition. Along the outside edge of the pan is a series of engravings- it reads 'Dolorem Ipsum'"
+	force = 23 //-1 damage
+	throwforce = 40 //2x throwdamage, goofy
+
+/obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
+	name = "hand-sewn brahmin leather duster"
+	desc = "A duster made from tanned brahmin hide. It has a thick waxy surface from the processing, making it surprisingly laser resistant. Along the collar reads 'Tu Stultes Es'"
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -1167,6 +1177,15 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/datum/gear/donator/kits/saltspider
+	name = "Wasteland cooking kit"
+	path = /obj/item/storage/box/large/custom_kit/saltspider
+	ckeywhitelist = list("saltspider")
+
+/obj/item/storage/box/large/custom_kit/saltspider/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
+	new /obj/item/melee/onehanded/club/fryingpan/saltspider
+	
 //Mayor Kit
 
 /*/datum/gear/donator/kits/Mayor_kit
