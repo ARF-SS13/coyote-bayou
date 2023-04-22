@@ -193,7 +193,7 @@
 	ranged_cooldown_time = 30
 	projectiletype = /obj/item/projectile/f13plasma/pistol/adam
 	projectilesound = 'sound/weapons/wave.ogg'
-	extra_projectiles = null
+	extra_projectiles = 1
 	attack_verb_simple = "thrusts"
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
