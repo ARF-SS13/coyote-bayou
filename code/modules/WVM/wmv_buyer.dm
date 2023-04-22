@@ -1,6 +1,6 @@
 /obj/machinery/mineral/wasteland_trader
-	name = "Trading point"
-	desc = "Trading point at which you can sell select goods for caps."
+	name = "Workshop Scrapper"
+	desc = "A vending machine that's been modified to accept various items in exchange for caps. A sign on it reads, 'Keep your workplace clean and get paid doing it!' It's better than a trash can, at least."
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "weapon_idle"
 
@@ -12,52 +12,50 @@
 
 	var/stored_caps = 0	// store caps
 	var/expected_price = 0
-	var/list/prize_list = list()  //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
+	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
 
-	var/list/goods_list = list( /obj/item/stack/sheet/mineral/diamond = 15,
-								/obj/item/stack/sheet/mineral/gold = 10,
-								/obj/item/stack/sheet/mineral/silver = 5,
-								/obj/item/stack/sheet/metal = 0.5,
-								/obj/item/reagent_containers/food/snacks/grown/wheat = 1,
-								/obj/item/reagent_containers/food/snacks/grown/rice = 1,
-								/obj/item/reagent_containers/food/snacks/grown/oat = 1,
-								/obj/item/stack/sheet/hay = 1,
-								/obj/item/reagent_containers/food/snacks/grown/broc = 2.5,
-								/obj/item/reagent_containers/food/snacks/grown/xander = 2.5,
-								/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2.5,
-								/obj/item/reagent_containers/food/snacks/grown/feracactus = 2.5,
-								/obj/item/reagent_containers/food/snacks/grown/fungus = 2.5,
-								/obj/item/reagent_containers/food/snacks/grown/agave = 2.5,
-								/obj/item/reagent_containers/pill/patch/jet = 10,
-								/obj/item/reagent_containers/pill/healingpowder = 5,
-								/obj/item/reagent_containers/hypospray/medipen/psycho = 10,
-								/obj/item/reagent_containers/hypospray/medipen/medx = 15,
-								/obj/item/reagent_containers/pill/patch/healpoultice = 20,
-								/obj/item/export/bottle/gin = 10,
-								/obj/item/export/bottle/wine = 10,
-								/obj/item/export/bottle/whiskey = 10,
-								/obj/item/export/bottle/vodka = 10,
-								/obj/item/export/bottle/tequila = 10,
-								/obj/item/export/bottle/patron = 20,
-								/obj/item/export/bottle/rum = 10,
-								/obj/item/export/bottle/vermouth = 10,
-								/obj/item/export/bottle/kahlua = 10,
-								/obj/item/export/bottle/goldschlager = 35,
-								/obj/item/export/bottle/hcider = 10,
-								/obj/item/export/bottle/cognac = 10,
-								/obj/item/export/bottle/absinthe = 10,
-								/obj/item/export/bottle/grappa = 10,
-								/obj/item/export/bottle/sake = 10,
-								/obj/item/export/bottle/fernet = 10,
-								/obj/item/export/bottle/applejack = 10,
-								/obj/item/export/bottle/champagne = 10,
-								/obj/item/export/bottle/blazaam = 10,
-								/obj/item/export/bottle/trappist = 10,
-								/obj/item/export/bottle/minikeg = 10,
-								/obj/item/export/bottle/nukashine = 50,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 20,
-								/obj/item/reagent_containers/food/snacks/pemmican = 100
+	var/list/goods_list = list( /obj/item/clothing/suit/armor = 5,
+								/obj/item/stack/crafting/metalparts = 1,
+								/obj/item/stack/crafting/goodparts = 3,
+								/obj/item/stack/crafting/electronicparts = 3,
+								/obj/item/gun/ballistic/automatic = 15,
+								/obj/item/gun/ballistic/automatic/pistol = 5,
+								/obj/item/gun/ballistic/revolver = 5,
+								/obj/item/gun/ballistic/rifle = 10,
+								/obj/item/gun/ballistic/shotgun = 10,
+								/obj/item/gun/ballistic/automatic/hobo = 0,
+								/obj/item/gun/ballistic/revolver/hobo = 0,
+								/obj/item/gun/ballistic/rifle/hobo = 0,
+								/obj/item/gun/ballistic/revolver/sling = 0,
+								/obj/item/gun/ballistic/revolver/brick = 0,
+								/obj/item/gun/ballistic/automatic/autopipe = 0,
+								/obj/item/advanced_crafting_components = 15,
+								/obj/item/export/bottle/gin = 15,
+								/obj/item/export/bottle/whiskey = 15,
+								/obj/item/export/bottle/wine = 15,
+								/obj/item/export/bottle/vodka = 15,
+								/obj/item/export/bottle/rum = 15,
+								/obj/item/export/bottle/tequila = 15,
+								/obj/item/export/bottle/minikeg = 15,
+								/obj/item/export/bottle/applejack = 15,
+								/obj/item/export/bottle/cognac = 15,
+								/obj/item/export/bottle/sake = 15,
+								/obj/item/export/bottle/hcider = 15,
+								/obj/item/export/bottle/vermouth = 15,
+								/obj/item/export/bottle/absinthe = 15,
+								/obj/item/export/bottle/grappa = 15,
+								/obj/item/export/bottle/fernet = 15,
+								/obj/item/export/bottle/kahlua = 15,
+								/obj/item/export/bottle/champagne = 30,
+								/obj/item/export/bottle/blazaam = 30,
+								/obj/item/export/bottle/nukashine = 30,
+								/obj/item/export/bottle/trappist = 30,
+								/obj/item/export/bottle/goldschlager = 30,
+								/obj/item/export/bottle/patron = 30,
+								/obj/item/toy = 3,
+								/obj/item/toy/prize = 15,
+								/obj/item/toy/talking = 15,
+								/obj/item/stealthboy = 100
 								)
 
 /obj/machinery/mineral/wasteland_trader/general
@@ -85,16 +83,17 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Wheat/Oats/Rice/Hay : 1 caps<br>"
-	dat += "Broc/Xander/Punga Fruit/Barrel Cactus Fruit/Cave Fungus/Agave : 2.5 caps<br>"
-	dat += "Iron Sheets : 0.5 caps<br>"
-	dat += "Silver Bars: 5 caps<br>"
-	dat += "Gold Bars: 10 caps<br>"
-	dat += "Cut Diamonds : 15 caps<br>"
-	dat += "Jet/Psycho/MedX : 10/15 caps<br>"
-	dat += "Healing Powder/Healing Paultice : 5/20 caps<br>"
-	dat += "Stimpak/Super Stimpak : 5/20 caps<br>"
-	dat += "Sealed Bottle of Alcohol: 10-50 caps<br>"
+	dat += "Armor: 5 caps<br>"
+	dat += "Handguns: 5 caps<br>"
+	dat += "Rifles and Shotguns: 10 caps<br>"
+	dat += "Submachine Guns and Automatic Rifles: 15 caps<br>"
+	dat += "Improvised Firearms: 0 caps<br>"
+	dat += "Metal and Electronic Parts: 1 - 3 caps<br>"
+	dat += "Advanced Components: 15 caps<br>"
+	dat += "Sealed Alcohol Bottles: 15 - 30 caps<br>"
+	dat += "Basic Toys: 3 caps<br>"
+	dat += "Advanced Toys: 15 caps<br>"
+	dat += "Stealthboy: 100 caps<br>"
 	dat += ""
 	dat += "</div>"
 
