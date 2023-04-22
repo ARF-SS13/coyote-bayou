@@ -772,7 +772,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "switchblade case"
 
 /obj/item/storage/box/gun/melee/switchblade/PopulateContents()
-	new obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/melee/onehanded/knife/switchblade(src)
 
 /obj/item/storage/box/gun/melee/throwing
 	name = "throwing knife case"
