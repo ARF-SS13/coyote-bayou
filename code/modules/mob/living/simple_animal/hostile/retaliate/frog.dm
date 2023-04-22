@@ -5,7 +5,7 @@
 	icon_living = "frog"
 	icon_dead = "frog_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	speak = list("ribbit","croak")
+	speak = list("ribbit","croak", "*frogcry")
 	emote_see = list("hops in a circle.", "shakes.")
 	speak_chance = 1
 	turns_per_move = 5
@@ -23,13 +23,23 @@
 	response_harm_simple = "splat"
 	density = FALSE
 	ventcrawler = VENTCRAWLER_ALWAYS
-	faction = list("hostile")
+	faction = list("hostile", "neutral")
 	attack_sound = 'sound/effects/reee.ogg'
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/nugget = 1)
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/stepped_sound = 'sound/effects/huuu.ogg'
+	idlesound = list(
+		'sound/f13npc/frog/frog1.ogg',
+		'sound/f13npc/frog/frog2.ogg',
+		'sound/f13npc/frog/frog3.ogg',
+		'sound/f13npc/frog/frog4.ogg',
+		'sound/f13npc/frog/frog5.ogg',
+		'sound/f13npc/frog/frog6.ogg',
+		'sound/f13npc/frog/frog7.ogg',
+		'sound/f13npc/frog/frog8.ogg',
+		)
 
 /mob/living/simple_animal/hostile/retaliate/frog/Initialize()
 	. = ..()
