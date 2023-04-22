@@ -985,6 +985,30 @@
 	message = "bounces vivaciously."
 	sound = 'sound/effects/bwoing.ogg'
 
+/datum/emote/plap
+	key = "plap"
+	key_third_person = "plaps?"
+	message = "plaps?"
+
+/datum/emote/plap/run_emote(mob/user, params) //Player triggers the emote
+	. = ..() // Hell if I know
+	if(. && iscarbon(user)) // Are they a carbon mob?
+		var/mob/living/carbon/C = user
+		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
+			pick(playsound(C, 'sound/f13effects/sunsetsounds/plap1.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/plap2.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/plap3.ogg', 20, 1))
+
+/datum/emote/gecko
+	key = "gecko"
+	key_third_person = "makes a gecko sound!"
+	message = "makes a gecko sound!"
+	sound = 'sound/f13npc/gecko/geckocall2.ogg'
+
+/datum/emote/nightstalker
+	key = "nstalker"
+	key_third_person = "doesn't sound happy!"
+	message = "doesn't sound happy!"
+	sound = 'sound/f13npc/nightstalker/aggro3.ogg'
+
 /datum/emote/weh
 	key = "weh"
 	key_third_person = "wehs"
