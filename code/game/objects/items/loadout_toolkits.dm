@@ -52,7 +52,7 @@
 	spawn_thing = /obj/item/storage/box/tools/farming
 
 /obj/item/storage/box/tools/ranching
-	name = "ranching tools"
+	name = "riding tools"
 
 /obj/item/storage/box/tools/ranching/PopulateContents()
 	// new /obj/item/brahminbags(src)
@@ -63,7 +63,7 @@
 	new /obj/item/choice_beacon/pet/mountable(src)
 
 /datum/loadout_box/ranching
-	entry_tag = "ranching tools"
+	entry_tag = "riding tools"
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_WORKER
 	spawn_thing = /obj/item/storage/box/tools/ranching
