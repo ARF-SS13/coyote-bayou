@@ -380,7 +380,7 @@
 	icon_state = "tec9"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	init_mag_type = /obj/item/ammo_box/magazine/m22
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended, /obj/item/ammo_box/magazine/m22/extended/empty)
 	weapon_class = WEAPON_CLASS_SMALL	
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	can_suppress = FALSE

@@ -77,6 +77,14 @@
 					/obj/item/reagent_containers/food/snacks/burger/cheese)
 	crate_name = "burgerbox crate"
 
+/datum/supply_pack/organic/randomized/mcribbox
+	name = "McRib Crate"
+	desc = "The McRib is back!"
+	cost = 1000
+	num_contained = 8
+	contains = list(/obj/item/reagent_containers/food/snacks/burger/rib)
+	crate_name = "McRib crate"
+
 /datum/supply_pack/organic/randomized/candy
 	name = "Candy Crate"
 	desc = "For people that have an insatiable sweet tooth! Has ten candies to be eaten up."

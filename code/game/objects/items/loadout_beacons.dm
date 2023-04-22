@@ -768,6 +768,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/bowie/PopulateContents()
 	new /obj/item/melee/onehanded/knife/bowie(src)
 
+/obj/item/storage/box/gun/melee/switchblade
+	name = "switchblade case"
+
+/obj/item/storage/box/gun/melee/switchblade/PopulateContents()
+	new obj/item/melee/onehanded/knife/switchblade(src)
+
 /obj/item/storage/box/gun/melee/throwing
 	name = "throwing knife case"
 
@@ -1889,6 +1895,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/bowie
+
+/datum/loadout_box/switchblade
+	entry_tag = "Switchblade"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/storage/box/gun/melee/switchblade
 
 /datum/loadout_box/throwing
 	entry_tag = "Throwing Knives"

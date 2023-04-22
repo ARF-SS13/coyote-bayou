@@ -258,6 +258,7 @@ obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."
 	icon_state = "knife_switch"
+	w_class = WEIGHT_CLASS_TINY
 	force = 3
 	throwforce = 5
 	hitsound = 'sound/weapons/genhit.ogg'
@@ -277,7 +278,7 @@ obj/item/melee/onehanded/knife/switchblade
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
 	if(extended)
 		force = extended_force
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		throwforce = extended_throwforce
 		icon_state = extended_icon_state
 		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -285,7 +286,7 @@ obj/item/melee/onehanded/knife/switchblade
 		sharpness = SHARP_EDGED
 	else
 		force = initial(force)
-		w_class = WEIGHT_CLASS_SMALL
+		w_class = WEIGHT_CLASS_TINY
 		throwforce = initial(throwforce)
 		icon_state = retracted_icon_state
 		attack_verb = list("stubbed", "poked")
