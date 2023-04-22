@@ -5578,6 +5578,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"cvw" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water/running,
+/area/f13/wasteland)
 "cvA" = (
 /obj/structure/closet/crate/wooden,
 /turf/open/floor/f13/wood,
@@ -11852,6 +11859,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/nest/frog,
 /turf/open/water,
 /area/f13/building/tribal/cave)
 "fex" = (
@@ -17212,6 +17220,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"hCH" = (
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "hCQ" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/cobweb,
@@ -17374,6 +17386,7 @@
 /area/f13/wasteland)
 "hGB" = (
 /obj/structure/flora/rock/pile/largejungle,
+/obj/structure/nest/frog,
 /turf/open/water,
 /area/f13/building/tribal/cave)
 "hGF" = (
@@ -20151,6 +20164,11 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland)
+"iLN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "iLT" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -20421,6 +20439,10 @@
 	name = "concrete wall"
 	},
 /area/f13/building)
+"iQw" = (
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "iQy" = (
 /obj/machinery/vending/nukacolavend,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -25800,6 +25822,13 @@
 /obj/structure/nest/fireant,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"llT" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lmk" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -35252,6 +35281,13 @@
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/wood/twenty,
 /turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
+"pwo" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland)
 "pxn" = (
 /obj/item/kirbyplants/random,
@@ -55014,6 +55050,10 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland/town)
+"yja" = (
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water/running,
+/area/f13/wasteland)
 "yjb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/brokenglass,
@@ -61028,7 +61068,7 @@ tRd
 qbu
 ngS
 bRw
-eff
+yja
 eff
 pNw
 set
@@ -64624,7 +64664,7 @@ okM
 xsw
 eff
 eff
-eff
+yja
 eff
 kKS
 kKS
@@ -66698,7 +66738,7 @@ gBR
 dkK
 eff
 eff
-eff
+yja
 xLw
 eff
 eff
@@ -67475,7 +67515,7 @@ fWy
 eff
 pEc
 eff
-eff
+yja
 eff
 eff
 dhG
@@ -68972,7 +69012,7 @@ nQW
 pDr
 eIj
 xsw
-eff
+yja
 eff
 eff
 eff
@@ -69229,7 +69269,7 @@ oiR
 eIj
 xsw
 eff
-eff
+yja
 eff
 eff
 eff
@@ -73842,7 +73882,7 @@ nQW
 cxN
 bRw
 epS
-hqe
+pwo
 eff
 wBF
 jgd
@@ -77944,7 +77984,7 @@ hrL
 lTw
 bRw
 eff
-hqe
+pwo
 eff
 eff
 eff
@@ -83069,7 +83109,7 @@ nQW
 eIj
 xsw
 hqe
-eff
+yja
 eff
 rhT
 wFx
@@ -86651,7 +86691,7 @@ nEP
 eff
 eff
 eff
-eff
+yja
 eff
 eff
 hqe
@@ -93067,7 +93107,7 @@ mXw
 eff
 hqe
 rhT
-eff
+yja
 eff
 wFx
 vls
@@ -97955,7 +97995,7 @@ mXw
 eff
 eff
 eff
-eff
+yja
 eff
 eff
 eff
@@ -98364,7 +98404,7 @@ hcy
 hcy
 fhX
 fhX
-fhX
+iQw
 fhX
 hcy
 ygn
@@ -98862,7 +98902,7 @@ nQW
 nQW
 aZE
 oAe
-fhX
+iQw
 fhX
 fhX
 fhX
@@ -98897,7 +98937,7 @@ fhX
 wej
 fhX
 bFU
-qen
+iLN
 qen
 qen
 qen
@@ -98915,7 +98955,7 @@ oIM
 qen
 fhX
 fhX
-fhX
+iQw
 fhX
 fhX
 fhX
@@ -98924,7 +98964,7 @@ fhX
 wej
 fhX
 wej
-fhX
+iQw
 hcy
 hcy
 xil
@@ -102054,7 +102094,7 @@ eff
 eff
 eff
 eff
-eff
+yja
 eff
 hqe
 hqe
@@ -102310,7 +102350,7 @@ eff
 eff
 eff
 eff
-eff
+yja
 kKS
 cLs
 kKS
@@ -103594,7 +103634,7 @@ jgd
 rIf
 nQW
 nQW
-nQW
+hCH
 pDr
 nQW
 caE
@@ -103850,7 +103890,7 @@ jgd
 rIf
 nQW
 nQW
-nQW
+hCH
 oiR
 nQW
 nQW
@@ -104071,7 +104111,7 @@ bPw
 bPw
 wHR
 fhX
-fhX
+iQw
 xil
 eVe
 nQW
@@ -105286,7 +105326,7 @@ nQW
 tzL
 gDG
 fhX
-fhX
+iQw
 roc
 bPw
 bPw
@@ -106917,7 +106957,7 @@ xsw
 eff
 eff
 eff
-eff
+yja
 eff
 eff
 eff
@@ -107174,7 +107214,7 @@ bRw
 eff
 eff
 eff
-eff
+yja
 eff
 hqe
 jgd
@@ -108715,7 +108755,7 @@ eff
 eff
 eff
 eff
-eff
+yja
 wFx
 vls
 nQW
@@ -108972,7 +109012,7 @@ eff
 hqe
 eff
 eff
-eff
+yja
 iyc
 eVe
 pDr
@@ -109208,7 +109248,7 @@ bPw
 bPw
 bPw
 wHR
-fhX
+iQw
 fhX
 gbb
 eVe
@@ -109229,7 +109269,7 @@ eff
 hqe
 eff
 eff
-eff
+yja
 lts
 eVe
 nQW
@@ -109742,7 +109782,7 @@ eff
 hqe
 eff
 eff
-eff
+yja
 jgd
 vls
 nQW
@@ -109999,7 +110039,7 @@ eff
 eff
 eff
 eff
-jgd
+cvw
 cUs
 nQW
 nQW
@@ -110167,7 +110207,7 @@ nQW
 eIj
 wHR
 fhX
-fhX
+iQw
 roc
 gtT
 xqD
@@ -110512,7 +110552,7 @@ pEc
 eff
 eff
 eff
-jgd
+cvw
 eVe
 nQW
 caE
@@ -110769,7 +110809,7 @@ eff
 eff
 eff
 wFx
-rIf
+llT
 nQW
 nQW
 nQW
@@ -113848,7 +113888,7 @@ eff
 eff
 eff
 eff
-eff
+yja
 eff
 wFx
 eVe

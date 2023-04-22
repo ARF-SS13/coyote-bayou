@@ -431,5 +431,17 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	randomizer_kind = MOB_SPAWNER_KIND_DEBUG
 	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY
 
+//Fennis adding non-angi mob spawners//
 
+/obj/structure/nest/frog
+	name = "tadpoles"
+	icon = 'icons/fallout/mobs/nests.dmi'
+	icon_state = "frog"
+	desc = "Are those tadpoles?"
+	max_mobs = 2
+	spawn_text = "hops out of the water!"
+	spawnsound = 'sound/f13effects/sunsetsounds/frogwarcry.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/retaliate/frog = 10
+	)
 

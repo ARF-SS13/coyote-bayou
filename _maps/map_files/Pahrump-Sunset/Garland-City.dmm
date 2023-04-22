@@ -10001,6 +10001,10 @@
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"hvE" = (
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "hwb" = (
 /obj/machinery/hydroponics/soil,
 /obj/effect/decal/cleanable/dirt,
@@ -11373,6 +11377,13 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"irn" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "irt" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/effect/decal/cleanable/dirt,
@@ -11626,6 +11637,11 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building)
+"iAC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "iAJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19622,6 +19638,13 @@
 /obj/structure/lattice/catwalk,
 /turf/closed/wall/r_wall/rust,
 /area/f13/caves)
+"nWV" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "nWY" = (
 /obj/structure/fence/handrail{
 	pixel_y = 16
@@ -21926,6 +21949,11 @@
 "pDB" = (
 /obj/structure/wreck/trash/halftire,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"pDD" = (
+/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "pDI" = (
 /obj/structure/table,
@@ -30462,6 +30490,13 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"vEM" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_6"
+	},
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "vFj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/mineral/random/high_chance,
@@ -37495,7 +37530,7 @@ fzC
 cON
 cON
 edm
-nOw
+hvE
 nOw
 nOw
 cON
@@ -39594,7 +39629,7 @@ cON
 nOw
 nOw
 nOw
-nOw
+hvE
 nOw
 nOw
 nOw
@@ -39902,7 +39937,7 @@ cON
 pNK
 sVi
 wnL
-wnL
+irn
 xjd
 tok
 eGB
@@ -42025,7 +42060,7 @@ pKh
 fbY
 pxu
 pxu
-fbn
+pDD
 duH
 uqV
 fwY
@@ -42122,7 +42157,7 @@ ybi
 ybi
 ybi
 jQi
-nOw
+hvE
 aKy
 nOw
 nOw
@@ -44949,7 +44984,7 @@ lga
 lga
 uCp
 opS
-aKy
+iAC
 nOw
 cON
 cON
@@ -47559,7 +47594,7 @@ sed
 nOw
 nOw
 nOw
-nOw
+hvE
 nOw
 nOw
 nOw
@@ -47853,7 +47888,7 @@ pnQ
 pnQ
 uok
 xoB
-wnL
+irn
 kmn
 ovg
 pnQ
@@ -50771,7 +50806,7 @@ roN
 pKh
 fbY
 pxu
-pxu
+vEM
 fbn
 duH
 uqV
@@ -56380,7 +56415,7 @@ eCo
 pKh
 kUS
 wIx
-edm
+nWV
 xTj
 qxd
 bYq
@@ -75663,7 +75698,7 @@ pKh
 fbY
 pxu
 pxu
-fbn
+pDD
 duH
 uqV
 fwY
@@ -92655,7 +92690,7 @@ nOw
 pnQ
 enS
 kUS
-pxu
+vEM
 nOw
 bSH
 jZa
@@ -96341,7 +96376,7 @@ roN
 pKh
 kUS
 pxu
-nOw
+hvE
 bSH
 jZa
 bYq
@@ -96416,7 +96451,7 @@ elA
 nOw
 nOw
 nOw
-nOw
+hvE
 nOw
 ebj
 nOw
@@ -96457,7 +96492,7 @@ wei
 pKh
 lOG
 icS
-nOw
+hvE
 jeu
 tLd
 pnQ
