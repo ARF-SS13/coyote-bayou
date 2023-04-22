@@ -1500,8 +1500,8 @@
 	color = "#363636"
 	},
 /obj/structure/closet/crate/coffin,
-/mob/living/simple_animal/hostile/ghoul/zombie{
-	faction = list("skeleton")
+/mob/living/simple_animal/hostile/ghoul/reaver{
+	faction = list("hostile","ghoul","skeleton")
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -1965,7 +1965,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "baD" = (
-/mob/living/simple_animal/hostile/ghoul/reaver,
+/mob/living/simple_animal/hostile/ghoul/reaver{
+	faction = list("hostile","ghoul","skeleton")
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -10071,8 +10073,8 @@
 	color = "#363636"
 	},
 /obj/structure/closet/crate/coffin,
-/mob/living/simple_animal/hostile/ghoul/zombie/reaver{
-	faction = list("ghoul","skeleton")
+/mob/living/simple_animal/hostile/ghoul/reaver{
+	faction = list("hostile","ghoul","skeleton")
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -11189,8 +11191,8 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/mob/living/simple_animal/hostile/ghoul/zombie{
-	faction = list("skeleton")
+/mob/living/simple_animal/hostile/ghoul/glowing/strong{
+	faction = list("hostile","ghoul","skeleton")
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -12267,6 +12269,7 @@
 	color = "#363636"
 	},
 /obj/structure/closet/locker/fridge,
+/mob/living/simple_animal/hostile/ghoul/coldferal,
 /turf/open/floor/wood_worn,
 /area/f13/underground/cave)
 "gbg" = (
@@ -15981,10 +15984,8 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/nest/zombieghoul,
+/obj/structure/closet/crate/coffin,
+/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "icD" = (
@@ -18113,8 +18114,8 @@
 	color = "#363636"
 	},
 /obj/structure/closet/crate/coffin,
-/mob/living/simple_animal/hostile/ghoul/zombie/glowing{
-	faction = list("ghoul","skeleton")
+/mob/living/simple_animal/hostile/ghoul/scorched{
+	faction = list("scorched","hostile","skeleton")
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -18131,6 +18132,9 @@
 	color = "#363636"
 	},
 /obj/structure/closet/crate/coffin,
+/mob/living/simple_animal/hostile/ghoul{
+	faction = list("hostile","ghoul","skeleton")
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "jjv" = (
@@ -19754,9 +19758,6 @@
 /area/f13/brotherhood/operations)
 "kcx" = (
 /obj/structure/closet/crate/coffin/metalcoffin,
-/mob/living/simple_animal/hostile/ghoul/zombie/glowing{
-	faction = list("ghoul","skeleton")
-	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "kcz" = (
@@ -22123,13 +22124,6 @@
 /obj/structure/reagent_dispensers/barrel/old,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
-"lkN" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/nest/zombieghoul,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "lkX" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -28298,15 +28292,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
-"ooM" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/mob/living/simple_animal/hostile/ghoul/zombie/legendary{
-	faction = list("ghoul","skeleton")
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "ope" = (
 /turf/closed/mineral/random/low_chance/underground,
 /area/f13/brotherhood/operations)
@@ -33127,8 +33112,8 @@
 /area/f13/vault)
 "qBF" = (
 /obj/structure/closet/crate/coffin,
-/mob/living/simple_animal/hostile/zombie{
-	faction = list("hostile","skeleton")
+/mob/living/simple_animal/hostile/ghoul/legendary{
+	faction = list("hostile","ghoul","skeleton")
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -41963,9 +41948,7 @@
 	color = "#363636"
 	},
 /obj/structure/closet/crate/coffin,
-/mob/living/simple_animal/hostile/ghoul/zombie/reaver{
-	faction = list("ghoul","skeleton")
-	},
+/mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "vak" = (
@@ -42750,8 +42733,8 @@
 /area/f13/brotherhood/offices1st)
 "vtt" = (
 /obj/structure/closet/crate/coffin,
-/mob/living/simple_animal/hostile/ghoul/zombie{
-	faction = list("skeleton")
+/mob/living/simple_animal/hostile/ghoul{
+	faction = list("hostile","ghoul","skeleton")
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
@@ -99116,12 +99099,12 @@ kyF
 miG
 vkK
 dsN
-ooM
 dsN
 dsN
 dsN
 dsN
-uZr
+dsN
+icB
 kyF
 smz
 smz
@@ -100373,7 +100356,7 @@ cKR
 poH
 dsN
 dsN
-dsN
+kyF
 dsN
 dsN
 dsN
@@ -100657,7 +100640,7 @@ mXm
 mXm
 rBR
 rBR
-icB
+qpS
 dsN
 dsN
 dsN
@@ -100887,7 +100870,7 @@ cKR
 cKR
 dsN
 dsN
-dsN
+kyF
 dsN
 dsN
 dsN
@@ -102185,7 +102168,7 @@ dsN
 dsN
 dsN
 iHQ
-lkN
+dsN
 jAY
 qpS
 qpS
@@ -102430,7 +102413,7 @@ kyF
 qpS
 qpS
 qpS
-fBq
+qpS
 qpS
 qpS
 qpS
@@ -102710,13 +102693,13 @@ qpS
 qpS
 qpS
 qpS
-qpS
+mXm
 qpS
 rBR
 rBR
 fUU
-dsN
-dsN
+kyF
+kyF
 dsN
 dsN
 dsN
@@ -104759,7 +104742,7 @@ iHQ
 jAY
 qpS
 jAY
-icB
+qpS
 qpS
 qpS
 qpS
@@ -105540,7 +105523,7 @@ qpS
 qpS
 qpS
 rBR
-icB
+qpS
 dsN
 kyF
 dsN
