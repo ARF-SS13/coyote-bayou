@@ -195,4 +195,5 @@
 	desc = "A portable microcomputer by RobCo Industries. This model is a EDU-2 series educational device- or atleast that's what you can make from the rusty tin case with wires jammed into it- someone's repaired this thing."
 	icon_state = "pda-teachboy-unfolded"
 	inserted_item = /obj/item/pen/charcoal
+	current_overlays = null
 
