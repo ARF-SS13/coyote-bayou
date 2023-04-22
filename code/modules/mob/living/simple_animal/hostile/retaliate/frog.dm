@@ -23,6 +23,9 @@
 	response_harm_simple = "splat"
 	density = FALSE
 	ventcrawler = VENTCRAWLER_ALWAYS
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
 	faction = list("hostile", "neutral")
 	attack_sound = 'sound/effects/reee.ogg'
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/nugget = 1)
@@ -57,3 +60,11 @@
 		var/mob/living/L = AM
 		if(L.mob_size > MOB_SIZE_TINY)
 			playsound(src, stepped_sound, 50, 1)
+
+
+/mob/living/simple_animal/hostile/retaliate/frog/red
+	name = "red frog"
+	desc = "It seems a little mad."
+	icon_state = "frog2"
+	icon_living = "frog2"
+	icon_dead = "frog_dead2"
