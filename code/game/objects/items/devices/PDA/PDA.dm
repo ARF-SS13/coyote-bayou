@@ -80,7 +80,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/equipped = FALSE  //used here to determine if this is the first time its been picked up
 	var/allow_emojis = TRUE //if the pda can send emojis and actually have them parsed as such
 	var/list/pipsounds = list("modular_coyote/sound/pipsounds/pip1.ogg", "modular_coyote/sound/pipsounds/pip2.ogg", "modular_coyote/sound/pipsounds/pip3.ogg")
-	var/disableoverlay = FALSE //disables overlay for odd-shaped, shittier pipboy sprites
+	var/disableoverlays = FALSE //disables overlay for odd-shaped, shittier pipboy sprites
 
 	var/obj/item/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above
