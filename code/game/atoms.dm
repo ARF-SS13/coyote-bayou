@@ -966,7 +966,7 @@
  */
 /atom/Exited(atom/movable/gone, direction)
 	SEND_SIGNAL(src, COMSIG_ATOM_EXITED, gone, direction)
-	SEND_SIGNAL(gone, COMSIG_ATOM_EXITED, src, direction)
+	SEND_SIGNAL(gone, COMSIG_ATOM_I_EXITED, src, direction)
 
 /atom/proc/return_temperature()
 	return

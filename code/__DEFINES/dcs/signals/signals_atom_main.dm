@@ -9,5 +9,7 @@
 	#define COMPONENT_ATOM_BLOCK_EXIT (1<<0)
 ///from base of atom/Exited(): (atom/movable/gone, direction)
 #define COMSIG_ATOM_EXITED "atom_exited"
+///from base of atom/Exited(): (atom/movable/gone, direction)
+#define COMSIG_ATOM_I_EXITED "atom_i_exited"
 ///from base of atom/movable/Moved(): (atom/movable/gone, direction)
 #define COMSIG_ATOM_ABSTRACT_EXITED "atom_abstract_exited"
