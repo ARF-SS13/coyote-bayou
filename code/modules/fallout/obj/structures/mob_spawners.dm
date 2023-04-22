@@ -442,6 +442,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_text = "hops out of the water!"
 	spawnsound = 'sound/f13effects/sunsetsounds/frogwarcry.ogg'
 	mob_types = list(
-		/mob/living/simple_animal/hostile/retaliate/frog = 10
+		/mob/living/simple_animal/hostile/retaliate/frog = 10,
+		/mob/living/simple_animal/hostile/retaliate/frog/red = 2
 	)
 
