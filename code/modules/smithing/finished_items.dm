@@ -260,6 +260,18 @@
 		return eyestab(M,user)
 	else
 		return ..()
+	
+/obj/item/melee/smith/dagger/bowie
+	name = "sharpblade"
+	icon_state = "bowie_smith"
+	overlay_state = "hilt_bowie"
+	force = 31
+	throwforce= 34
+	block_chance = 5
+	attack_speed = CLICK_CD_MELEE * 0.8
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_SMALL
+	toolspeed = 0.5
 
 /obj/item/melee/smith/machete
 	name = "machete"
@@ -286,17 +298,6 @@
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.9
 
-/obj/item/melee/smith/machete/bowie
-	name = "sharpblade"
-	icon_state = "bowie_smith"
-	overlay_state = "hilt_bowie"
-	force = 31
-	throwforce= 34
-	block_chance = 5
-	attack_speed = CLICK_CD_MELEE * 0.8
-	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_SMALL
-	toolspeed = 0.5
 
 /obj/item/melee/smith/saw
 	name = "saw"

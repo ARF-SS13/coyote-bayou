@@ -541,10 +541,10 @@
 	name = "sharp metal"
 	icon_state = "bowie_smith"
 	finishingitem = /obj/item/blacksmith/swordhandle
-	finalitem = /obj/item/melee/smith/machete/bowie
+	finalitem = /obj/item/melee/smith/dagger/bowie
 
 /obj/item/smithing/bowieblade/startfinish()
-	finalitem = new /obj/item/melee/smith/machete/bowie(src)
+	finalitem = new /obj/item/melee/smith/dagger/bowie(src)
 //	finalitem.force += quality*1.5
 	..()
 
