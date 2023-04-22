@@ -596,6 +596,8 @@
 /// Signals sent from the host to the Persona Core
 /// A stimulus sent from the host to the core, something that might trigger a response
 #define COMSIG_BB_HOST_TO_PC_STIMULUS "persona_core_stimulus" // (datum/source, stimulus, mob/user, list/extra_things)
+// Requests the core's brain's operation modifier
+#define COMSIG_BB_HOST_TO_PC_AMOUR_MOD "persona_core_amour_mod" // (datum/source, mob/user)
 
 
 

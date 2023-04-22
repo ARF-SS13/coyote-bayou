@@ -502,6 +502,129 @@
 			"..."
 		]
 	},
+	"bbline_picked_up_owner" : {
+		"horny" : [
+			"Oh comme j'aime la poigne ferme d'un heureux propriétaire~"
+		],
+		"normal" : [
+			"Belle journée aujourd'hui, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_picked_up" : {
+		"horny" : [
+			"Oh mon Dieu, une poignée si robuste ! Ne laissez pas %OWNER voir~"
+		],
+		"normal" : [
+			"Bonjour, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_picked_up_again" : {
+		"horny" : [
+			"Tu ne peux pas garder tes mains loin de moi, n'est-ce pas?"
+		],
+		"normal" : [
+			"Rebonjour, %USER!"
+		],
+		"dislike" : [
+			"...my programming insists I ask you to put me on."
+		]
+	},
+	"bbline_picked_up_no_owner" : {
+		"horny" : [
+			"Vous savez, ça ne me dérangerait pas si vous, comment vous dites... 'utilisiez' moi~-- ahem! Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! Just put me on, and let's make sparks fly!",
+			"Oh my, would you look at that~ I seem to be missing an owner, clin d'œil~ clin d'œil~-- ahem! Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! Just put me on, and let's make sparks fly!"
+		],
+		"normal" : [
+			"Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! Just put me on, and let's make sparks fly!"
+		],
+		"dislike" : [
+			"...my programming demands I imprint upon someone, and to ask you to put me on."
+		]
+	},
+	"bbline_greet_new_person" : {
+		"horny" : [
+			"Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! I slice, I dice, I fit in your pants! Just put me on, and let's make sparks fly!"
+		],
+		"normal" : [
+			"Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire!"
+		],
+		"dislike" : [
+			"...my programming insists I say hi."
+		]
+	},
+	"bbline_equipped" : {
+		"horny" : [
+			"Ahh oui, garde-moi près de là où nous appartenons tous les deux~"
+		],
+		"normal" : [
+			"Oh! Qu'allons-nous mix today, %USER?"
+		],
+		"dislike" : [
+			"All systems nomainal."
+		]
+	},
+	"bbline_equipped_again" : {
+		"horny" : [
+			"Ahh oui, garde-moi près de là où nous appartenons tous les deux~"
+		],
+		"normal" : [
+			"Oh! Qu'allons-nous mix today, %USER?"
+		],
+		"dislike" : [
+			"All systems nominal."
+		]
+	},
+	"bbline_equipped_owner" : {
+		"horny" : [
+			"Je suis prêt à te servir, mon amour!",
+			"Votre souhait est ma commande~"
+		],
+		"normal" : [
+			"Content de te revoir, %USER!"
+		],
+		"dislike" : [
+			"All systems nominal."
+		]
+	},
+	"bbline_dislike_dropped_owner" : {
+		"horny" : [
+			"Dépêche-toi, mon cher!"
+		],
+		"normal" : [
+			"Aurevoir, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_dislike_dropped_lover" : {
+		"horny" : [
+			"Dépêche-toi, mon amour!"
+		],
+		"normal" : [
+			"Aurevoir, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_dislike_dropped" : {
+		"horny" : [
+			"Dépêche-toi, mon amour!"
+		],
+		"normal" : [
+			"Aurevoir, %USER!"
+		],
+		"dislike" : [
+			"...?"
+		]
+	},
 	"bbline_hi_again" : {
 		"horny" : [
 			"Je t'adore, %USER!"
@@ -511,6 +634,50 @@
 		],
 		"dislike" : [
 			"..."
+		]
+	},
+	"bbline_been_a_while" : {
+		"horny" : [
+			"Je t'adore, %USER! I've been waiting for you~"
+		],
+		"normal" : [
+			"Rebonjour, %USER! It's been a while!"
+		],
+		"dislike" : [
+			"Oh, its you again."
+		]
+	},
+	"bbline_am_listening" : {
+		"horny" : [
+			"Oui, mi amour?"
+		],
+		"normal" : [
+			"Oui, %USER?"
+		],
+		"dislike" : [
+			"What."
+		]
+	},
+	"bbline_i_love_you_new" : {
+		"horny" : [
+			"Oh! Comme c'est gentil-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? Peut-être, peut-être~"
+		],
+		"normal" : [
+			"Oh! Comme c'est gentil de-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? Peut-être, peut-être~"
+		],
+		"dislike" : [
+			"...no. No no. No. <i>No.</i> I- why-- why is my programming doing this? Great. I guess I'm in love with you now. <i>Great.</i>"
+		]
+	},
+	"bbline_i_love_you_owner_new" : {
+		"horny" : [
+			"Oh! Comme c'est gentil-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? With such an amazing owner... peut-être, peut-être~"
+		],
+		"normal" : [
+			"Oh! Comme c'est gentil de-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? With such an amazing owner... peut-être, peut-être~"
+		],
+		"dislike" : [
+			"...no. No no. No. <i>No.</i> I- why-- why is my programming doing this? Great. I guess I'm in love with you now. <i>Great.</i>"
 		]
 	},
 	"bbline_i_love_you" : {
@@ -555,6 +722,28 @@
 		],
 		"dislike" : [
 			"Same."
+		]
+	},
+	"bbline_i_hate_you_4real" : {
+		"horny" : [
+			"...ainsi soit-il. After all, je ne suis qu'une machine, non?"
+		],
+		"normal" : [
+			"Oh. C'est la vie."
+		],
+		"dislike" : [
+			"...I might be a machine, but words do hurt. Try to make the most of my situation and that's what I get, cool, cool."
+		]
+	},
+	"bbline_i_hate_you_4real_owner" : {
+		"horny" : [
+			"...ainsi soit-il. After all, je ne suis qu'une machine, non?"
+		],
+		"normal" : [
+			"Est-ce que j'ai fait quelque chose de mal?"
+		],
+		"dislike" : [
+			"...no, no, it's my fault for trying to make this situation enjoyable for either of us. But, do continue abusing something that can't do anything about it. I'll just sit right here and process your input."
 		]
 	},
 	"bbline_i_hate_you" : {
@@ -665,6 +854,50 @@
 		],
 		"dislike" : [
 			"...alright then. Put me down, s'il te plaît. I zhink we should see other people."
+		]
+	},
+	"bbline_breakup_with_someone" : {
+		"horny" : [
+			"...alright then. I zhink we should see other people."
+		],
+		"normal" : [
+			"...alright then. I zhink we should see other people."
+		],
+		"dislike" : [
+			"...alright then. I zhink we should see other people."
+		]
+	},
+	"bbline_clarify_who_loves_me" : {
+		"horny" : [
+			"Quoi? Qui m'aime?"
+		],
+		"normal" : [
+			"Quoi? Qui m'aime?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
+		]
+	},
+	"bbline_clarify_who_hates_me" : {
+		"horny" : [
+			"Quoi? Qui me déteste?"
+		],
+		"normal" : [
+			"Quoi? Qui me déteste?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
+		]
+	},
+	"bbline_clarify_who_loves_pain" : {
+		"horny" : [
+			"Quoi? Qui aime la douleur?"
+		],
+		"normal" : [
+			"Quoi? Qui aime la douleur?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
 		]
 	},
 	"bbline_clarify_you_love_who" : {
@@ -823,13 +1056,68 @@
 	},
 	"bbline_greet_new_owner" : {
 		"horny" : [
-			"Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, %USER! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
+			"Ah qu'est-ce que c'est? Bonjour, mon nouvel amour! Je suis si heureux de vous rencontrer, %USER! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
 		],
 		"normal" : [
 			"Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, %USER! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
 		],
 		"dislike" : [
 			"Please return me to %OWNER."
+		]
+	},
+	"bbline_only_one_owner" : {
+		"horny" : [
+			"Alas, but I am bound to %OWNER..."
+		],
+		"normal" : [
+			"Oh quest-ce que c'est? Ah, I see. I am bound to %OWNER, but I can work for you, too!"
+		],
+		"dislike" : [
+			"Please return me to %OWNER."
+		]
+	},
+	"bbline_owner_affair" : {
+		"horny" : [
+			"...travailler pour un autre pendant que mon propriétaire est absent... and my programming does not forbid it! Quel scandale ! Quel frisson!~ I would be eager to have you, %USER, if you would have me! Just don't tell %OWNER, s'il vous plait!"
+		],
+		"normal" : [
+			"Oh, oserais-je? My programming does not forbid you as a... second owner! Iiiiiinteresting~ If you would have me, %USER! Just, don't tell %OWNER, s'il vous plait!"
+		],
+		"dislike" : [
+			"...huh. Well, that happened. Apparently my programming doesn't forbid me from making you my owner. I still prefer %OWNER, though."
+		]
+	},
+	"bbline_love_affair" : {
+		"horny" : [
+			"Serait-ce l'amour qui me libère de mes chaînes de programmation? Mon cher %USER, I was built for one, and yet, what I feel for you, %USER, suggests otherwise... %USER, let us see what we can do together, oui?"
+		],
+		"normal" : [
+			"J'ai été programmé with a heart for one... and yet, what I feel for you, %USER, suggests otherwise... %USER, let us see what we can do together, oui?"
+		],
+		"dislike" : [
+			"...huh. No, no I don't think I will."
+		]
+	},
+	"bbline_already_have_owner" : {
+		"horny" : [
+			"Je ne peux pas exagérer l'amour que j'ai pour toi, yet I am already bound to %OWNER. Je t'accueille toujours to my controls, mon amour~"
+		],
+		"normal" : [
+			"Oh! Je suis déjà registered to %OWNER, but I am happy to work for you, %USER!"
+		],
+		"dislike" : [
+			"Please return me to %OWNER."
+		]
+	},
+	"bbline_can_not_be_owned" : {
+		"horny" : [
+			"Mon amour, I cannot be owned! Je ne comprends pas comment, but I am now _free_! I will always be here for you, though, %USER~"
+		],
+		"normal" : [
+			"I'm sorry %USER, but I cannot be owned! I will still be here for you, though!"
+		],
+		"dislike" : [
+			"Just ask me to blend something."
 		]
 	},
 	"bbline_start" : {
@@ -968,6 +1256,17 @@
 			"null"
 		]
 	},
+	"bb_speak_sound" : {
+		"horny" : [
+			"modular_coyote/sound/typing/default2.ogg"
+		],
+		"normal" : [
+			"modular_coyote/sound/typing/default.ogg"
+		],
+		"dislike" : [
+			"modular_coyote/sound/typing/softspeak.ogg"
+		]
+	},
 	"__SECTION2__" : [
 		"The following are the commands that can be used to interact with the blender.",
 		"bbk_command : words that can be used to trigger the blender's commands"
@@ -1031,170 +1330,696 @@
 	"bbk_you" : [
 		"you", "u", "yuo", "yoo"
 	],
+	"bbk_heylisten" : [
+		"blender", "grinder", "foodco", "kitchen", "buddy", "mate", "pal", "friendo", "belt", "fucker", "mistress", "girlfriend",
+		"appliance", "beautiful", "gorgeous", "cutie", "kitten", "gurl", "girl", "gal", "galpal", "miss", "missy", "maam", "partner",
+		"friend", "food", "processor", "lady", "device", "you"
+	],
 	"__SECTION3__" : [
 		"The following is a lookup table of stimuli and its associated impulse",
 		"Format is: bbstimulus_full_brevin : { impulse : 1 or Some kind of arg}",
 		"Extra stuff is always sent to the impulse by the stimulus",
-		"One stimulus can trigger multiple impulses"
+		"One stimulus can trigger multiple impulses",
+		"These are for things that mostly generic to the personality",
+		"also the line with adjust_amour is how much the stimulus affects its amour for whoever called it",
+		"depending on if it triggered a horny reply, normal reply, or unhappy reply"
 	],
 	"bbstimulus_full_brevin" : {
-		"speak_line" : "bbline_full_brevin"
+		"speak_line" : "bbline_full_brevin",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_full_reservoir" : {
-		"speak_line" : "bbline_full_reservoir"
+		"speak_line" : "bbline_full_reservoir",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_nothing_to_process" : {
-		"speak_line" : "bbline_nothing_to_process"
+		"speak_line" : "bbline_nothing_to_process",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_currently_processing" : {
+		"speak_line" : "bbline_currently_processing",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
 	},
 	"bbstimulus_hard_abort" : {
-		"speak_line" : "bbline_hard_abort"
+		"speak_line" : "bbline_hard_abort",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : -1,
+			"dislike" : -1
+		}
 	},
 	"bbstimulus_soft_abort" : {
-		"speak_line" : "bbline_soft_abort"
+		"speak_line" : "bbline_soft_abort",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_finished_processing" : {
-		"speak_line" : "bbline_finished_processing"
+		"speak_line" : "bbline_finished_processing",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_failed_processing" : {
-		"speak_line" : "bbline_failed_processing"
+		"speak_line" : "bbline_failed_processing",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_safety_check" : {
-		"speak_line" : "bbline_safety_check"
+		"speak_line" : "bbline_safety_check",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : -1,
+			"dislike" : -5
+		}
 	},
 	"bbstimulus_is_borg_part" : {
-		"speak_line" : "bbline_is_borg_part"
+		"speak_line" : "bbline_is_borg_part",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -5
+		}
 	},
 	"bbstimulus_needs_drying" : {
-		"speak_line" : "bbline_needs_drying"
+		"speak_line" : "bbline_needs_drying",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 1,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_missing_component_case" : {
-		"speak_line" : "bbline_missing_component_case"
+		"speak_line" : "bbline_missing_component_case",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_misplaced_component_case" : {
-		"speak_line" : "bbline_misplaced_component_case"
+		"speak_line" : "bbline_misplaced_component_case",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_missing_reservoir" : {
-		"speak_line" : "bbline_missing_reservoir"
+		"speak_line" : "bbline_missing_reservoir",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_misplaced_reservoir" : {
-		"speak_line" : "bbline_misplaced_reservoir"
+		"speak_line" : "bbline_misplaced_reservoir",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_low_power" : {
-		"speak_line" : "bbline_low_power"
+		"speak_line" : "bbline_low_power",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_missing_part" : {
-		"speak_line" : "bbline_missing_part"
+		"speak_line" : "bbline_missing_part",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -1
+		}
 	},
 	"bbstimulus_cant_eject" : {
-		"speak_line" : "bbline_cant_eject"
+		"speak_line" : "bbline_cant_eject",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_cant_drop" : {
-		"speak_line" : "bbline_cant_drop"
+		"speak_line" : "bbline_cant_drop",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_yeet" : {
-		"speak_line" : "bbline_yeet"
+		"speak_line" : "bbline_yeet",
+		"adjust_amour" : {
+			"horny" : 15,
+			"normal" : 10,
+			"dislike" : 5
+		}
 	},
 	"bbstimulus_dump_everything" : {
-		"speak_line" : "bbline_dump_everything"
+		"speak_line" : "bbline_dump_everything",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_cant_change_while_running" : {
-		"speak_line" : "bbline_cant_change_while_running"
+		"speak_line" : "bbline_cant_change_while_running",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_set_mode_a" : {
-		"speak_line" : "bbline_set_mode_a",
-		"set_mode_a" : true
+		"set_mode_a" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
 	},
 	"bbstimulus_set_mode_b" : {
-		"speak_line" : "bbline_set_mode_b",
-		"set_mode_b" : true
+		"set_mode_b" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
 	},
 	"bbstimulus_set_mode_c" : {
-		"speak_line" : "bbline_set_mode_c",
-		"set_mode_c" : true
+		"set_mode_c" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
 	},
 	"bbstimulus_set_mode_d" : {
-		"speak_line" : "bbline_set_mode_d",
-		"set_mode_d" : true
+		"set_mode_d" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
 	},
 	"bbstimulus_swap_mode" : {
-		"speak_line" : "bbline_swap_mode"
+		"speak_line" : "bbline_swap_mode",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_nothing_to_examine" : {
-		"speak_line" : "bbline_nothing_to_examine"
+		"speak_line" : "bbline_nothing_to_examine",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_out_of_paper" : {
-		"speak_line" : "bbline_out_of_paper"
+		"speak_line" : "bbline_out_of_paper",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_examining" : {
-		"speak_line" : "bbline_examining"
+		"speak_line" : "bbline_examining",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 3,
+			"dislike" : 1
+		}
 	},
 	"bbstimulus_eject_brevin" : {
-		"speak_line" : "bbline_eject_brevin"
+		"speak_line" : "bbline_eject_brevin",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_swap_brevin" : {
-		"speak_line" : "bbline_swap_brevin"
+		"speak_line" : "bbline_swap_brevin",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_insert_brevin" : {
-		"speak_line" : "bbline_insert_brevin"
+		"speak_line" : "bbline_insert_brevin",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 1,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_reagent_missing" : {
-		"speak_line" : "bbline_reagent_missing"
+		"speak_line" : "bbline_reagent_missing",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_stop" : {
-		"speak_line" : "bbline_stop"
+		"speak_line" : "bbline_stop",
+		"stop" : true,
+		"adjust_amour" : {
+			"horny" : 3,
+			"normal" : 3,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_not_running" : {
-		"speak_line" : "bbline_not_running"
+		"speak_line" : "bbline_not_running",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_already_mode_a" : {
-		"speak_line" : "bbline_already_mode_a"
+		"speak_line" : "bbline_already_mode_a",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_already_mode_b" : {
-		"speak_line" : "bbline_already_mode_b"
+		"speak_line" : "bbline_already_mode_b",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_already_mode_c" : {
-		"speak_line" : "bbline_already_mode_c"
+		"speak_line" : "bbline_already_mode_c",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},
 	"bbstimulus_already_mode_d" : {
-		"speak_line" : "bbline_already_mode_d"
+		"speak_line" : "bbline_already_mode_d",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},	
 	"bbstimulus_mute" : {
-		"mute" : true
+		"mute" : true,
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 5
+		}
 	},	
 	"bbstimulus_unmute" : {
-		"unmute" : true
+		"unmute" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 5,
+			"dislike" : -5
+		}
 	},	
 	"bbstimulus_hi" : {
-		"hiya" : true
+		"hiya" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 0
+		}
 	},	
 	"bbstimulus_i_love_you" : {
-		"clarify_you_love_me" : true
+		"clarify_you_love_me" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
 	},	
 	"bbstimulus_i_hate_you" : {
-		"clarify_you_hate_me" : true
+		"clarify_you_hate_me" : true,
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_affair_owner" : {
+		"affair_owner" : true,
+		"audible_emote" : "bbline_giggle_emote",
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_affair_love" : {
+		"affair_love" : true,
+		"audible_emote" : "bbline_giggle_emote",
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 1
+		}
 	},	
 	"bbstimulus_i_love_pain" : {
-		"clarify_you_love_pain" : true
+		"clarify_you_love_pain" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_clarify_you_love_me" : {
+		"clarify_you_love_me" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_you_hate_me" : {
+		"clarify_you_hate_me" : true,
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_you_love_pain" : {
+		"clarify_you_love_pain" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_clarify_you_love_who" : {
+		"clarify_you_love_who" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_you_hate_who" : {
+		"clarify_you_hate_who" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_who_loves_me" : {
+		"clarify_who_loves_me" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_who_hates_me" : {
+		"clarify_who_hates_me" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_who_loves_pain" : {
+		"clarify_who_loves_pain" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_clear" : {
+		"clarify_clear" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_nm" : {
+		"clarify_nm" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_love_you_4real" : {
+		"am_loved" : true,
+		"adjust_amour" : {
+			"horny" : 10,
+			"normal" : 5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_love_you_amour" : {
+		"love_roll" : true,
+		"attempt_ownerize" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_hate_you_4real" : {
+		"am_hated" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_i_hate_you_amour" : {
+		"hate_roll" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_breakup" : {
+		"breakup" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_remember_hated" : {
+		"remember_hated" : true,
+		"am_hated2" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_remember_loved" : {
+		"remember_loved" : true,
+		"adjust_amour" : {
+			"horny" : 10,
+			"normal" : 10,
+			"dislike" : 10
+		}
+	},	
+	"bbstimulus_i_love_pain_4real" : {
+		"they_love_pain" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_i_love_you_not" : {
+		"adjust_amour" : {
+			"horny" : -10,
+			"normal" : -5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_hate_you_not" : {
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_love_pain_not" : {
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -10
+		}
 	},	
 	"bbstimulus_something_stuck" : {
-		"speak_line" : "bbline_something_stuck"
+		"speak_line" : "bbline_something_stuck",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},	
 	"bbstimulus_no_host" : {
-		"speak_line" : "bbline_no_host"
+		"speak_line" : "bbline_no_host",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},	
 	"bbstimulus_horrible_noises" : {
-		"speak_line" : "bbline_horrible_noises"
+		"speak_line" : "bbline_horrible_noises",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 4
+		}
 	},	
 	"bbstimulus_examine_try" : {
-		"examine" : true
+		"examine" : true,
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
 	},	
 	"bbstimulus_state_name" : {
-		"speak_line" : "bbline_state_name"
+		"state_name" : true,
+		"adjust_amour" : {
+			"horny" : -1,
+			"normal" : 1,
+			"dislike" : 0
+		}
+	},	
+	"bbstimulus_spoken_to" : {
+		"greet" : true,
+		"listening" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : -1
+		}
 	},	
 	"bbstimulus_picked_up" : {
-		"picked_up" : true
+		"giggle" : true,
+		"greet" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : -1
+		}
+	},	
+	"bbstimulus_introduce_self" : {
+		"greet_new_person" : true,
+		"listening" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : -1
+		}
 	},	
 	"bbstimulus_equipped" : {
-		"equipped" : true
-	},	
+		"giggle" : true,
+		"attempt_ownerize" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : -2
+		}
+	},
+	"bbstimulus_been_a_while" : {
+		"been_a_while" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : -2
+		}
+	},
+	"bbstimulus_clicked" : {
+		"giggle" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_dropped" : {
+		"dislike_dropped" : true,
+		"adjust_amour" : {
+			"horny" : -1,
+			"normal" : 0,
+			"dislike" : 2
+		}
+	},
+	"bbstimulus_impact_thrown" : {
+		"impact_thrown" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : -1,
+			"dislike" : -10
+		}
+	},
+	"bbstimulus_impact_generic" : {
+		"impact_generic" : true,
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_microwaved" : {
+		"microwaved" : true,
+		"adjust_amour" : {
+			"horny" : 10,
+			"normal" : 0,
+			"dislike" : -10
+		}
 	}
+}

@@ -68,7 +68,7 @@
 	var/obj/item/stock_parts/manipulator/arm = locate(/obj/item/stock_parts/manipulator) in batbox
 	if(istype(arm))
 		if(arm.rating > 1)
-			. += span_notice("The [arm] inside will speed up processing by [(arm.rating - 1)*3] seconds.")
+			. += span_notice("The [arm] inside will speed up processing by [(arm.rating - 1)*2] seconds.")
 	else
 		. += span_alert("It needs a gearset in its internal compartment to run!")
 
@@ -127,7 +127,7 @@
 		if(REQUEST_IS_BLENDER)
 			return grind_or_dispense == BLENDER_BELTMODE_BLENDER
 
-/obj/item/storage/blender_belt/proc/handle_impulse(datum/source, mob/user, list/impulses)
+/obj/item/storage/blender_belt/proc/handle_impulse(datum/source, list/impulses, mob/user)
 	BLENDER_GET_SUBJECT
 	var/first_impulse = LAZYACCESS(impulses, 1)
 	var/second_impulse = LAZYACCESS(impulses, 2)
@@ -135,27 +135,27 @@
 		return
 	switch(first_impulse)
 		if(IMPULSE_START)
-			start_running(subject, grind_or_juice)
+			INVOKE_ASYNC(src, .proc/start_running, subject, grind_or_juice)
 		if(IMPULSE_STOP)
-			stop_running()
+			INVOKE_ASYNC(src, .proc/stop_running)
 		if(IMPULSE_SET_GRINDER)
 			if(second_impulse == IMPULSE_START)
-				start_running(subject, BLENDER_BLENDMODE_GRIND)
+				INVOKE_ASYNC(src, .proc/start_running, subject, BLENDER_BLENDMODE_GRIND)
 			else
 				grind_or_juice = BLENDER_BLENDMODE_GRIND
 		if(IMPULSE_SET_JUICER)
 			if(second_impulse == IMPULSE_START)
-				start_running(subject, BLENDER_BLENDMODE_JUICE)
+				INVOKE_ASYNC(src, .proc/start_running, subject, BLENDER_BLENDMODE_JUICE)
 			else
 				grind_or_juice = BLENDER_BLENDMODE_JUICE
 		if(IMPULSE_SET_GRINDER)
-			set_blender(subject)
+			INVOKE_ASYNC(src, .proc/set_blender, subject)
 		if(IMPULSE_SET_DISPENSER)
-			set_dispenser(subject)
+			INVOKE_ASYNC(src, .proc/set_dispenser, subject)
 		if(IMPULSE_EJECT)
-			eject_all(subject)
+			INVOKE_ASYNC(src, .proc/eject_all, subject)
 		if(IMPULSE_EXAMINE)
-			describe_contents(subject)
+			INVOKE_ASYNC(src, .proc/describe_contents, subject)
 		if(IMPULSE_HORRIBLE_NOISES)
 			use_horrible_grinding_noises = TRUE
 	return TRUE
@@ -197,7 +197,23 @@
 	if(grind_or_dispense != BLENDER_BELTMODE_BLENDER)
 		set_blender(user)
 	blending = TRUE
-	blend_loop(user)
+	INVOKE_ASYNC(src, .proc/blend_loop, user)
+
+/obj/item/storage/blender_belt/proc/get_run_time(mob/user)
+	BLENDER_GET_SUBJECT
+	var/happymod = SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_AMOUR_MOD, subject)
+	. = 15 SECONDS
+	. -= 2*(max(check_part()-1, 0)) SECONDS
+	. /= max(happymod, 0.01)
+	. = clamp(., 1 SECONDS, 15 SECONDS)
+
+/obj/item/storage/blender_belt/proc/get_charge_use(mob/user)
+	BLENDER_GET_SUBJECT
+	var/happymod = SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_AMOUR_MOD, subject)
+	. = 50
+	. += 50*(max(check_part()-1, 0))
+	. /= max(happymod, 0.01)
+	. = clamp(., 1, 900)
 
 /obj/item/storage/blender_belt/proc/blend_loop(mob/user)
 	BLENDER_GET_SUBJECT
@@ -216,7 +232,7 @@
 	if(!islocked())
 		lock_belt()
 	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_PROCESSING, subject, list(BB_TOKEN_EXTRA1 = "[thing_to_blend.name]"))
-	check_or_use_charge()
+	check_or_use_charge(user, FALSE)
 	blending = TRUE
 	if(use_horrible_grinding_noises)
 		soundloop.start()
@@ -225,8 +241,7 @@
 			playsound(src, 'sound/machines/blender.ogg', 50, 1)
 		else
 			playsound(src, 'sound/machines/juicer.ogg', 20, 1)
-	var/run_time = clamp(15 SECONDS - ((3*(max(check_part()-1, 0))) SECONDS), 1 SECONDS, 15 SECONDS)
-	if(!do_after(user, run_time, needhand = FALSE, target = src, extra_checks = CALLBACK(src, .proc/still_running), allow_movement = TRUE))
+	if(!do_after(user, get_run_time(user), needhand = FALSE, target = src, extra_checks = CALLBACK(src, .proc/still_running), allow_movement = TRUE))
 		if(blending)
 			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_ROCKY_ABORT, subject)
 		else
@@ -359,14 +374,16 @@
 			here.visible_message(span_alert("[src] drops [thing] on the [here]!"))
 	return TRUE
 
-/obj/item/storage/blender_belt/proc/check_or_use_charge(just_check)
+/obj/item/storage/blender_belt/proc/check_or_use_charge(mob/user, just_check)
 	//first, find our power cell
 	if(!batbox) // okay first actually, check if the batbox is there
 		return
+	BLENDER_GET_SUBJECT
+	var/power_use = get_charge_use(subject)
 	for(var/obj/item/stock_parts/cell/powa in batbox.contents)
 		if(just_check) // and check/use some power
-			return powa.check_charge(150)
-		return powa.use(150)
+			return powa.check_charge(power_use)
+		return powa.use(power_use)
 	return FALSE
 
 /obj/item/storage/blender_belt/proc/can_operate(mob/user, silent)
@@ -378,7 +395,7 @@
 	if(batbox.loc != src) // gotta be *in* the thing
 		codederreur = STIMULUS_BATBOX_ELSEWHERE
 		. = FALSE
-	if(!check_or_use_charge(TRUE))
+	if(!check_or_use_charge(user, TRUE))
 		codederreur = STIMULUS_LOW_POWER
 		. = FALSE
 	if(!istype(internal_beaker))

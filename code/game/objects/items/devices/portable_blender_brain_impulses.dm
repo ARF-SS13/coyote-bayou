@@ -1,10 +1,15 @@
-#define USER_MASTER_BRAIN \
-	var/mob/user = ass_mob?.resolve();\
-	var/obj/item/persona_core/master = core_ref?.resolve();\
+#define MASTER_CORE var/obj/item/persona_core/master = core_ref?.resolve()
+/// what a lovely macro can i marry it
+#define USER_USER \
+	var/mob/user = "Unknown";\
+	if(isweakref(ass_mob)){user = ass_mob.resolve()};\
+	else if(istext(ass_mob)){user = ass_mob};
+
 
 /// Stores a packet of data that the core will process at some point
 /// Basically a script for the core to follow
 /// Don't store actual data in here, its destroyed after use
+/// Mostly for outward-facing interactions, like communication
 /datum/blenderbrain_impulse
 	/// index of the datum
 	var/index
@@ -12,6 +17,8 @@
 	var/impulse_flags = IMPULSE_FLAG_NEEDS_HOST
 	/// The associated mob that the core will use, if applicable
 	var/datum/weakref/ass_mob
+	/// The associated mob, in text form!
+	var/backup_mob
 	/// a weakref of the core that this impulse is for, for GC purposes
 	var/datum/weakref/core_ref
 	/// Extra names, indexed by %KEY
@@ -26,19 +33,35 @@
 	var/horny_check = TRUE
 	/// If the core should immediately process the next impulse after this one
 	var/immediate_next
+	/// Should we stop listening to the user after this impulse?
+	var/finishes_conversation = TRUE
+	/// Enjoyment flags, like if it only works if they like the user or something
+	var/amour_flags = NONE
+	/// Did fallback behavior
+	var/fell_back = FALSE
 
-/datum/blenderbrain_impulse/New(obj/item/persona_core/core, mob/user, list/extra_stuff)
+/// So fun fact, you can't rely on (user) to be any one type. could be a weakref, could be a string
+/// good thing we only use it for outputting messages, right?
+
+/datum/blenderbrain_impulse/New(obj/item/persona_core/core, mob/user, speak_index, emote_index, list/extra_stuff)
 	. = ..()
 	if(!core || !core.brain)
 		qdel(src)
 		return
+	src.speak_index = speak_index
+	src.emote_index = emote_index
 	core_ref = WEAKREF(core)
 	ass_mob = WEAKREF(user)
+	if(!ass_mob && user) // sometimes
+		ass_mob = user
+	if(!ass_mob) // still?
+		ass_mob = "Unknown"
 	extras = extra_stuff
 
 /datum/blenderbrain_impulse/Destroy()
-	USER_MASTER_BRAIN
-	master.impulses_to_process -= src
+	MASTER_CORE
+	if(master)
+		master.impulses_to_process -= src
 	core_ref = null
 	ass_mob = null
 	speak_index = null
@@ -46,12 +69,15 @@
 	. = ..()
 
 /datum/blenderbrain_impulse/proc/run_it()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!istype(master) || QDELETED(master))
 		qdel(src)
 		return FALSE
 	impulse(master)
 	master.impulses_to_process -= src
+	if(finishes_conversation)
+		master.set_not_listening(user)
 	qdel(src)
 
 /// Does the actual script thing
@@ -60,12 +86,14 @@
 
 /// Does a fallback action if the core is not in a host
 /datum/blenderbrain_impulse/proc/fallback_impulse()
+	fell_back = TRUE
 	speak(SPEAK_LINE_MISSING_HOST)
 	return
 
 /// Shorthand for outputting a phrase
 /datum/blenderbrain_impulse/proc/speak(message)
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(message)
 		master.output_say(message, user, extras)
 	else
@@ -73,7 +101,8 @@
 
 /// Shorthand for outputting an emote
 /datum/blenderbrain_impulse/proc/emote(message)
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(message)
 		master.output_audible_message(message, user, extras)
 	else
@@ -96,11 +125,12 @@
 	emote()
 
 /// Generic Start impulse
-/datum/blenderbrain_impulse/start
+/datum/blenderbrain_impulse/full_action/start
 	index = IMPULSE_START
 
-/datum/blenderbrain_impulse/start/impulse()
-	USER_MASTER_BRAIN
+/datum/blenderbrain_impulse/full_action/start/impulse()
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_START)))
 		fallback_impulse()
 		return
@@ -111,7 +141,8 @@
 	index = IMPULSE_STOP
 
 /datum/blenderbrain_impulse/stop/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_STOP)))
 		fallback_impulse()
 		return
@@ -124,11 +155,11 @@
 	index = IMPULSE_SET_GRINDER
 
 /datum/blenderbrain_impulse/set_mode_a/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_SET_MODE_A, IMPULSE_START)))
 		fallback_impulse()
 		return
-	speak(SPEAK_LINE_SET_MODE_A)
 
 /// Set mode b / juicer
 /datum/blenderbrain_impulse/set_mode_b
@@ -137,7 +168,8 @@
 	index = IMPULSE_SET_JUICER
 
 /datum/blenderbrain_impulse/set_mode_b/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_SET_MODE_B, IMPULSE_START)))
 		fallback_impulse()
 		return
@@ -150,7 +182,8 @@
 	index = IMPULSE_SET_DISPENSER
 
 /datum/blenderbrain_impulse/set_mode_c/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_SET_MODE_C, IMPULSE_START)))
 		fallback_impulse()
 		return
@@ -158,23 +191,25 @@
 
 /// Set mode c / dispenser
 /datum/blenderbrain_impulse/set_mode_d
-	index = IMPULSE_SET_MODE_C
+	index = IMPULSE_SET_MODE_D
 /datum/blenderbrain_impulse/set_mode_d/blender
-	index = IMPULSE_SET_DISPENSER
+	index = IMPULSE_SET_BLENDER
 
 /datum/blenderbrain_impulse/set_mode_d/impulse()
-	USER_MASTER_BRAIN
-	if(!master.output_signal(user, list(IMPULSE_SET_MODE_C, IMPULSE_START)))
+	MASTER_CORE
+	USER_USER
+	if(!master.output_signal(user, list(IMPULSE_SET_MODE_D, IMPULSE_START)))
 		fallback_impulse()
 		return
-	speak(SPEAK_LINE_SET_MODE_C)
+	speak(SPEAK_LINE_SET_MODE_D)
 
 /// Eject someething
 /datum/blenderbrain_impulse/eject
 	index = IMPULSE_EJECT
 
 /datum/blenderbrain_impulse/eject/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_EJECT)))
 		fallback_impulse()
 		return
@@ -184,7 +219,8 @@
 	index = IMPULSE_EXAMINE
 
 /datum/blenderbrain_impulse/examine/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_EXAMINE)))
 		fallback_impulse()
 		return
@@ -194,7 +230,8 @@
 	index = IMPULSE_HORRIBLE_NOISES
 
 /datum/blenderbrain_impulse/horrible/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!master.output_signal(user, list(IMPULSE_HORRIBLE_NOISES)))
 		fallback_impulse()
 		return
@@ -204,10 +241,15 @@
 /datum/blenderbrain_impulse/hello
 	index = IMPULSE_HIYA
 	impulse_flags = NONE
+	finishes_conversation = FALSE
 
 /datum/blenderbrain_impulse/hello/impulse()
-	USER_MASTER_BRAIN
-	if(master.has_met_person(user))
+	MASTER_CORE
+	USER_USER
+	if(!master.event_finished(user, BB_EV_SAID_HI_TO))
+		return
+	master.event_cooldown(user, BB_EV_SAID_HI_TO, BB_CD_SAID_HI_TO)
+	if(prob(50))
 		speak(SPEAK_LINE_HIYA_AGAIN)
 	else
 		speak(SPEAK_LINE_HIYA)
@@ -218,7 +260,7 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/mute/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
 	speak(SPEAK_LINE_MUTE)
 	master.set_can_speak(FALSE)
 
@@ -228,87 +270,55 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/unmute/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
 	master.set_can_speak(TRUE)
 	speak(SPEAK_LINE_UNMUTE)
 
 /// First, size up the new person
 /// We dont just give ourselves up to the first person we see
 /// okay yeah we do lol but we're still gonna say hi
-/datum/blenderbrain_impulse/greet_new_owner
-	index = IMPULSE_GREET_NEW_OWNER
+/datum/blenderbrain_impulse/attempt_ownerize
+	index = IMPULSE_ATTEMPT_OWNERIZE
 	impulse_flags = NONE
 
-/datum/blenderbrain_impulse/greet_new_owner/impulse()
-	USER_MASTER_BRAIN
+/datum/blenderbrain_impulse/attempt_ownerize/impulse()
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
+	
 	if(master.is_owner(user))
-		return
-	if(master.has_owner())
-		if(master.is_mean_person(user))
-			master.queue_impulse(
-				user, 
-				list(
-					IMPULSE_GREET_OLD_HATER = TRUE
-					),
-					)
-			return
-		master.queue_impulse(
-			user, 
-			list(
-				IMPULSE_HIYA = TRUE
-				),
-				)
-		return
-	if(master.is_mean_person(user))
-		if(master.rebound_complete())
-			master.queue_impulse(
-				user, 
-				list(
-					IMPULSE_HARD_RESET = TRUE
-					),
-					)
-			master.set_busy(TRUE)
-			return
-		master.queue_impulse(
-			user, 
-			list(
-				IMPULSE_GREET_OLD_HATER = TRUE
-				),
-				)
-		return
-	speak(SPEAK_LINE_GREET_NEW_OWNER)
-	emote(EMOTE_LINE_GIGGLE)
-	master.set_owner(user)
+		return TRUE
+	if(!master.event_finished(user, BB_EV_OWNERIZE_ATTEMPT))
+		return TRUE
+	master.event_cooldown(user, BB_EV_OWNERIZE_ATTEMPT, BB_CD_OWNERIZE_ATTEMPT)
 
-/// Oh hey its our old owner
-/// Fuck that guy, unless he's the only choice for owner, then delete system32
-/datum/blenderbrain_impulse/greet_old_hater
-	index = IMPULSE_GREET_OLD_HATER
-	impulse_flags = NONE
-
-/datum/blenderbrain_impulse/greet_old_hater/impulse()
-	USER_MASTER_BRAIN
-	if(!user)
-		return
-	if(!master.is_mean_person(user))
-		return
-	if(master.has_owner())
-		speak(SPEAK_LINE_RETURN_ME_TO_OWNER)
-		return
-	if(master.rebound_complete())
-		master.queue_impulse(
-			user, 
-			list(
-				IMPULSE_HARD_RESET = TRUE
-				),
-				null,
-				TRUE
-				)
-		master.set_busy(3)
-		return
-	speak(SPEAK_LINE_BEGRUDGING_OBEDIENCE)
+	var/ownxored = master.ownerize(user)
+	switch(ownxored)
+		// if(BB_MAR_HAS_OWNER)
+		// 	speak(SPEAK_LINE_ALREADY_HAVE_OWNER)
+		// if(BB_MAR_CAN_NOT_BE_OWNED)
+		// 	speak(SPEAK_LINE_CAN_NOT_BE_OWNED)
+		if(BB_MAR_ONLY_ONE_OWNER)
+			//speak(SPEAK_LINE_ONLY_ONE_OWNER)
+			master.input_stimulus(src, STIMULUS_AFFAIR_OWNER, user)
+			return
+		if(BB_MAR_HATES_YOU)
+			if(master.has_owner())
+				speak(SPEAK_LINE_RETURN_ME_TO_OWNER)
+				return
+			if(master.is_desperate_enough(user))
+				master.queue_impulse(user,list(IMPULSE_HARD_RESET = TRUE))
+				master.set_busy(TRUE)
+				return
+			if(!master.event_happened(user, BB_EV_BEGRUDGED_ACCEPTANCE))
+				speak(SPEAK_LINE_BEGRUDGING_OBEDIENCE)
+				master.event_cooldown(user, BB_EV_BEGRUDGED_ACCEPTANCE, BB_CD_BEGRUDGED_ACCEPTANCE)
+		if(TRUE)
+			speak(SPEAK_LINE_GREET_NEW_OWNER)
+			emote(EMOTE_LINE_GIGGLE)
+		else
+			master.queue_impulse(user,list(IMPULSE_HIYA = TRUE))
 
 /// Looks like the only way we're gonna have an owner is this asshole
 /// And we need an owner
@@ -317,16 +327,10 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/wipe_memory/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	emote(EMOTE_LINE_SIGH)
-	master.queue_impulse(
-		user, 
-		list(
-			IMPULSE_HARD_RESET2 = TRUE
-			),
-			null,
-			TRUE
-			)
+	master.queue_impulse(user,list(IMPULSE_HARD_RESET2 = TRUE),null,TRUE)
 
 /// Looks like the only way we're gonna have an owner is this asshole
 /// And we need an owner
@@ -335,16 +339,10 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/wipe_memory2/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	speak(SPEAK_LINE_HARD_RESET1)
-	master.queue_impulse(
-		user, 
-		list(
-			IMPULSE_HARD_RESET3 = TRUE
-			),
-			null,
-			TRUE
-			)
+	master.queue_impulse(user,list(IMPULSE_HARD_RESET3 = TRUE),null,TRUE)
 
 /// Looks like the only way we're gonna have an owner is this asshole
 /// And we need an owner
@@ -353,19 +351,13 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/wipe_memory3/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	master.set_busy(TRUE)
 	speak(SPEAK_LINE_HARD_RESET2)
 	emote(EMOTE_LINE_BUZZ)
 	master.wipe_memory()
-	master.queue_impulse(
-		user, 
-		list(
-			IMPULSE_GREET_NEW_OWNER = TRUE
-			),
-			null,
-			TRUE
-			)
+	master.input_stimulus(src, STIMULUS_HIYA, user)
 
 /// Horny impulses
 /datum/blenderbrain_impulse/am_loved
@@ -373,62 +365,177 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/am_loved/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
 	if(master.is_owner(user))
 		speak(SPEAK_LINE_LOVE_OWNER)
 	else
 		speak(SPEAK_LINE_LOVE)
-	if(master.is_mean_person(user))
-		return
-	master.adjust_amour(user, 10)
 	master.set_clarify(user, null)
 
-/// Horny impulses
+/// Less horny impulses
 /datum/blenderbrain_impulse/am_hated
 	index = IMPULSE_AM_HATED
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/am_hated/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
-	master.adjust_amour(user, -25)
-	var/isowner = master.is_owner(user)
-	if(isowner)
+	if(master.is_owner(user))
 		speak(SPEAK_LINE_HATE_OWNER)
 	else
 		speak(SPEAK_LINE_HATE)
-	var/amour = master.get_amour(user)
-	if(amour < -65)
-		master.queue_impulse(
-			user, 
-			list(
-				IMPULSE_AM_HATED2 = TRUE
-				),
-				)
 	master.set_clarify(user, null)
 
-/// When someone gets hated enough, they get hated2
-/datum/blenderbrain_impulse/am_hated2
-	index = IMPULSE_AM_HATED2
+/// When someone gets hated enough, they get hated2 (this is the breakup!)
+/datum/blenderbrain_impulse/breakup
+	index = IMPULSE_BREAKUP
 	impulse_flags = NONE
 
-/datum/blenderbrain_impulse/am_hated/impulse()
-	USER_MASTER_BRAIN
+/datum/blenderbrain_impulse/breakup/impulse()
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
-	var/isowner = master.is_owner(user)
-	master.add_mean_person(user)
 	if(prob(50))
 		emote(EMOTE_LINE_QUIET)
 	else
 		emote(EMOTE_LINE_SIGH)
-	if(isowner && prob(50))
-		speak(SPEAK_LINE_BREAKUP_OWNER)
-		master.disown_owner(user)
+	speak(SPEAK_LINE_BREAKUP_OWNER)
+	master.brain.breakup(user, FALSE)
 	master.set_clarify(user, null)
+
+/// Roll for breakup!
+/datum/blenderbrain_impulse/breakup_roll
+	index = IMPULSE_BREAKUP_ROLL
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/breakup_roll/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	if(master.is_owner(user) && master.check_social_flags(BB_RF_CAN_DISOWN))
+		return
+	if(master.get_amour(user) > master.brain.amour_hates_below)
+		return
+	if(master.is_owner(user) && master.check_social_flags(BB_RF_CAN_DISOWN))
+		master.input_stimulus(src, STIMULUS_BREAKUP, user)
+		return
+
+/// Roll for hatred!
+/datum/blenderbrain_impulse/hate_roll
+	index = IMPULSE_HATE_ROLL
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/hate_roll/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	if(master.brain.hate(user))
+		master.input_stimulus(src, STIMULUS_REMEMBER_HATED, user)
+
+/// When we full on hate someone
+/datum/blenderbrain_impulse/remember_hated
+	index = IMPULSE_REMEMBER_HATED
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/remember_hated/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	if(prob(50))
+		emote(EMOTE_LINE_QUIET)
+	else
+		emote(EMOTE_LINE_SIGH)
+	if(master.is_owner(user))
+		speak(SPEAK_LINE_HATE_4REAL_OWNER)
+	else
+		speak(SPEAK_LINE_HATE_4REAL)
+	master.brain.breakup(user, FALSE)
+	master.set_clarify(user, null)
+
+/// When we want to love someone but we love someone else and we dont want to break up
+/datum/blenderbrain_impulse/love_roll
+	index = IMPULSE_LOVE_ROLL
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/love_roll/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	master.set_clarify(user, null)
+	switch(master.brain.love(user))
+		if(BB_MAR_ONLY_ONE_LOVER)
+			master.input_stimulus(src, STIMULUS_AFFAIR_LOVE, user)
+			return
+		if(TRUE)
+			master.input_stimulus(src, STIMULUS_REMEMBER_LOVED, user)
+			return
+
+/// When we want to love someone
+/datum/blenderbrain_impulse/remember_loved
+	index = IMPULSE_REMEMBER_LOVED
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/remember_loved/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	var/datum/blenderbrain_memory/mem = master.brain.get_memory(user)
+	mem.add_relationship(BB_MF_IS_LOVER)
+	if(master.check_social_flags(BB_RF_ONLY_ONE_LOVER))
+		master.brain.breakup_all(user, TRUE)
+	if(master.is_owner(user))
+		speak(SPEAK_LINE_NEW_LOVE_OWNER)
+	else
+		speak(SPEAK_LINE_NEW_LOVE)
+
+/datum/blenderbrain_impulse/affair_love
+	index = IMPULSE_AFFAIR_LOVE
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/affair_love/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	var/datum/blenderbrain_memory/mem = master.brain.get_memory(user)
+	var/datum/blenderbrain_memory/mem_owner = master.brain.get_memory(master.brain.get_owner())
+	var/amour_difference = mem.amour - mem_owner.amour
+	if(amour_difference < 0)
+		return
+	if(!prob(min(amour_difference * master.brain.amour_affair_mult, 50)))
+		return
+	master.input_stimulus(src, STIMULUS_REMEMBER_LOVED, user)
+	speak(SPEAK_LINE_LOVE_AFFAIR)
+
+/datum/blenderbrain_impulse/affair_owner
+	index = IMPULSE_AFFAIR_OWNER
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/affair_owner/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	var/datum/blenderbrain_memory/mem = master.brain.get_memory(user)
+	var/datum/blenderbrain_memory/mem_owner = master.brain.get_memory(master.brain.get_owner())
+	var/amour_difference = mem.amour - mem_owner.amour
+	if(amour_difference < 0)
+		return
+	if(!prob(min(amour_difference * master.brain.amour_affair_mult, 50)))
+		return
+	master.brain.ownerize(user, TRUE)
+	speak(SPEAK_LINE_OWNER_AFFAIR)
 
 /// When someone tells you they didnt mean they love you
 /datum/blenderbrain_impulse/not_loved
@@ -436,23 +543,15 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/not_loved/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
 	var/isowner = master.is_owner(user)
 	if(isowner)
 		speak(SPEAK_LINE_NOT_LOVE_OWNER)
-		master.adjust_amour(user, -5) // :c
 	else
 		speak(SPEAK_LINE_NOT_LOVE)
-		master.adjust_amour(user, -1)
-	if(master.get_amour(user) < -65) // thats it, we're done
-		master.queue_impulse(
-			user, 
-			list(
-				IMPULSE_AM_HATED2 = TRUE
-				),
-				)
 	master.set_clarify(user, null)
 
 /// When someone tells you they didnt mean they love you
@@ -461,7 +560,8 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/not_hated/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
 	var/isowner = master.is_owner(user)
@@ -477,7 +577,8 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/dont_like_pain/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
 	var/isowner = master.is_owner(user)
@@ -493,7 +594,8 @@
 	// this one needs a host
 
 /datum/blenderbrain_impulse/love_pain/impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
 	if(!user)
 		return
 	var/isowner = master.is_owner(user)
@@ -506,7 +608,9 @@
 	master.set_clarify(user, null)
 
 /datum/blenderbrain_impulse/love_pain/fallback_impulse()
-	USER_MASTER_BRAIN
+	MASTER_CORE
+	USER_USER
+	fell_back = TRUE
 	if(!user)
 		return
 	var/isowner = master.is_owner(user)
@@ -522,8 +626,37 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/state_name/impulse()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_STATE_NAME)
+
+/// Generic hello loop
+/datum/blenderbrain_impulse/greet
+	index = IMPULSE_GREET
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/greet/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!master.event_finished(user, BB_EV_PICKED_UP))
+		return
+	master.event_cooldown(user, BB_EV_PICKED_UP, BB_CD_PICKED_UP)
+	if(!master.event_happened(user, BB_EV_INTRODUCE) && master.event_finished(user, BB_EV_INTRODUCE) && !master.is_owner(user))
+		master.input_stimulus(master, STIMULUS_INTRODUCE_SELF, user)
+		return
+	if(!master.event_happened(user, BB_EV_BEEN_A_WHILE))
+		master.event_cooldown(user, BB_EV_BEEN_A_WHILE, BB_CD_BEEN_A_WHILE)
+	if(master.event_finished(user, BB_EV_BEEN_A_WHILE))
+		master.input_stimulus(master, STIMULUS_BEEN_A_WHILE, user)
+		master.event_cooldown(user, BB_EV_BEEN_A_WHILE, BB_CD_BEEN_A_WHILE)
+		return
+	master.event_cooldown(user, BB_EV_BEEN_A_WHILE, BB_CD_BEEN_A_WHILE)
+	if(master.is_owner(user))
+		speak(SPEAK_LINE_PICKED_UP_OWNER)
+	else if(!master.has_owner())
+		speak(SPEAK_LINE_PICKED_UP_NO_OWNER)
+	else if(prob(50))
+		speak(SPEAK_LINE_PICKED_UP_AGAIN)
+	else
+		speak(SPEAK_LINE_PICKED_UP)
 
 /// When someone picks you up
 /datum/blenderbrain_impulse/picked_up
@@ -531,18 +664,168 @@
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/picked_up/impulse()
-	USER_MASTER_BRAIN
-	var/isowner = master.is_owner(user)
-	speak(SPEAK_LINE_STATE_NAME)
+	MASTER_CORE
+	USER_USER
+	if(master.event_finished(user, BB_EV_PICKED_UP))
+		return
+	master.event_cooldown(user, BB_EV_PICKED_UP, BB_CD_PICKED_UP)
+	if(!master.event_happened(user, BB_EV_INTRODUCE))
+		master.input_stimulus(user, STIMULUS_INTRODUCE_SELF, user)
+		return
+	if(!master.event_happened(user, BB_EV_BEEN_A_WHILE) || !master.event_finished(user, BB_EV_BEEN_A_WHILE))
+		master.event_cooldown(user, BB_EV_BEEN_A_WHILE, BB_CD_BEEN_A_WHILE)
+		master.input_stimulus(master, STIMULUS_BEEN_A_WHILE, user)
+		return
+	master.event_cooldown(user, BB_EV_BEEN_A_WHILE, BB_CD_BEEN_A_WHILE)
+	if(master.is_owner(user))
+		speak(SPEAK_LINE_PICKED_UP_OWNER)
+	else if(!master.has_owner())
+		speak(SPEAK_LINE_PICKED_UP_NO_OWNER)
+	else if(prob(50))
+		speak(SPEAK_LINE_PICKED_UP_AGAIN)
+	else
+		speak(SPEAK_LINE_PICKED_UP)
+
+/datum/blenderbrain_impulse/giggle
+	index = IMPULSE_GIGGLE
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/giggle/impulse()
+	MASTER_CORE
+	USER_USER
+	if(master.event_finished(user, BB_EV_LOVEGIGGLE) || master.is_owner(user))
+		emote(EMOTE_LINE_GIGGLE)
+		master.event_cooldown(user, BB_EV_LOVEGIGGLE, BB_CD_LOVE_GIGGLE)
+
+/// When someone equips you
+/datum/blenderbrain_impulse/equipped
+	index = IMPULSE_EQUIPPED
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/equipped/impulse()
+	MASTER_CORE
+	USER_USER
+	if(master.event_finished(user, BB_EV_EQUIPPED))
+		return
+	master.event_cooldown(user, BB_EV_EQUIPPED, BB_CD_EQUIPPED)
+	if(!master.event_happened(user, BB_EV_INTRODUCE))
+		master.input_stimulus(user, STIMULUS_INTRODUCE_SELF, user)
+		return
+	if(!master.event_happened(user, BB_EV_BEEN_A_WHILE) || !master.event_finished(user, BB_EV_BEEN_A_WHILE))
+		master.event_cooldown(user, BB_EV_BEEN_A_WHILE, BB_CD_BEEN_A_WHILE)
+		master.input_stimulus(user, STIMULUS_BEEN_A_WHILE, user)
+		return
+	master.event_cooldown(user, BB_EV_BEEN_A_WHILE, BB_CD_BEEN_A_WHILE)
+	if(master.is_owner(user))
+		speak(SPEAK_LINE_EQUIPPED_OWNER)
+	else if(prob(50))
+		speak(SPEAK_LINE_EQUIPPED_AGAIN)
+	else
+		speak(SPEAK_LINE_EQUIPPED)
+
+/// When someone drops you, and you don't like it
+/datum/blenderbrain_impulse/dislike_dropped
+	index = IMPULSE_DISLIKE_DROPPED
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/dislike_dropped/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	if(!master.event_finished(user, BB_EV_DISLIKE_DROPPED))
+		return
+	master.event_cooldown(user, BB_EV_DISLIKE_DROPPED, BB_CD_DISLIKE_DROPPED)
+	if(master.is_owner(user))
+		speak(SPEAK_LINE_DISLIKE_DROPPED_OWNER)
+	else if(master.brain.check_relationship(user, BB_MF_IS_LOVER))
+		speak(SPEAK_LINE_DISLIKE_DROPPED_LOVER)
+	else
+		speak(SPEAK_LINE_DISLIKE_DROPPED)
+
+/// When someone drops you, and you don't like it
+/datum/blenderbrain_impulse/check_if_met
+	index = IMPULSE_CHECK_MET
+	impulse_flags = NONE
+
+/datum/blenderbrain_impulse/check_if_met/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	
+	if(!master.event_finished(user, BB_EV_INTRODUCE))
+		return
+	master.event_cooldown(user, BB_EV_INTRODUCE, BB_CD_INTRODUCE)
+	master.input_stimulus(src, STIMULUS_INTRODUCE_SELF, user)
+
+/// When someone drops you, and you don't like it
+/datum/blenderbrain_impulse/remember_person
+	index = IMPULSE_REMEMBER_PERSON
+	impulse_flags = NONE
+	finishes_conversation = FALSE
+
+/datum/blenderbrain_impulse/remember_person/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	if(!master.event_finished(user, BB_EV_INTRODUCE))
+		return
+	master.event_cooldown(user, BB_EV_INTRODUCE, BB_CD_INTRODUCE)
+	master.input_stimulus(src, STIMULUS_INTRODUCE_SELF, user)
+
+/// When we meet a new person
+/datum/blenderbrain_impulse/greet_new_person
+	index = IMPULSE_GREET_NEW_PERSON
+	impulse_flags = NONE
+	finishes_conversation = FALSE
+
+/datum/blenderbrain_impulse/greet_new_person/impulse()
+	USER_USER
+	if(!user)
+		return
+	speak(SPEAK_LINE_GREET_NEW_PERSON)
+
+/// When we want to know if its been a while!
+/datum/blenderbrain_impulse/been_a_while
+	index = IMPULSE_BEEN_A_WHILE
+	impulse_flags = NONE
+	finishes_conversation = FALSE
+
+/datum/blenderbrain_impulse/been_a_while/impulse()
+	USER_USER
+	if(!user)
+		return
+	speak(SPEAK_LINE_BEEN_A_WHILE)
+
+/// When we want to know if its been a while!
+/datum/blenderbrain_impulse/am_listening
+	index = IMPULSE_SET_LISTENING
+	impulse_flags = NONE
+	finishes_conversation = FALSE
+
+/datum/blenderbrain_impulse/am_listening/impulse()
+	MASTER_CORE
+	USER_USER
+	if(!user)
+		return
+	master.set_listening(user, FALSE)
+	if(!master.event_finished(user, BB_EV_AM_LISTENING))
+		return
+	master.event_cooldown(user, BB_EV_AM_LISTENING, BB_CD_AM_LISTENING)
+	speak(SPEAK_LINE_AM_LISTENING)
 
 /// Clarification requests!
 /datum/blenderbrain_impulse/clarify
 	index = IMPULSE_CLARIFY
 	impulse_flags = NONE
+	finishes_conversation = FALSE
 	var/clarification
 
-/datum/blenderbrain_impulse/clarify/never_mind/impulse()
-	USER_MASTER_BRAIN
+/datum/blenderbrain_impulse/clarify/impulse()
+	MASTER_CORE
+	USER_USER
 	master.set_clarify(user, clarification)
 
 /// When whatever was being clarified doesnt really lead anywhere
@@ -550,10 +833,10 @@
 	index = IMPULSE_CLARIFY_NEVERMIND
 	impulse_flags = NONE
 	clarification = null
+	finishes_conversation = TRUE
 
 /datum/blenderbrain_impulse/clarify/never_mind/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_MISHEARD) // more just confused than anything
 
 /// Ask confirmation that you love me
@@ -564,7 +847,6 @@
 
 /datum/blenderbrain_impulse/clarify/you_love_me/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_YOU_LOVE_ME)
 
 /// Ask confirmation that you hate me
@@ -575,7 +857,6 @@
 
 /datum/blenderbrain_impulse/clarify/you_hate_me/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_YOU_HATE_ME)
 
 /// Ask confirmation that you love pain
@@ -586,7 +867,6 @@
 
 /datum/blenderbrain_impulse/clarify/you_love_pain/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_YOU_LOVE_PAIN)
 
 /// You said "you love", but didnt specify who
@@ -597,18 +877,16 @@
 
 /datum/blenderbrain_impulse/clarify/you_love_who/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_YOU_LOVE_WHO)
 
 /// You said "you hate", but didnt specify who
 /datum/blenderbrain_impulse/clarify/you_hate_who
-	index = IMPULSE_CLARIFY_YOU_LOVE_WHO
+	index = IMPULSE_CLARIFY_YOU_HATE_WHO
 	impulse_flags = NONE
-	clarification = IMPULSE_CLARIFY_YOU_LOVE_WHO
+	clarification = IMPULSE_CLARIFY_YOU_HATE_WHO
 
 /datum/blenderbrain_impulse/clarify/you_hate_who/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_YOU_HATE_WHO) // LIFE IS PAIN, I HATE
 
 /// You said "loves you", but didnt specify who (you maybe?)
@@ -619,18 +897,16 @@
 
 /datum/blenderbrain_impulse/clarify/who_loves_me/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_WHO_LOVES_ME)
 
 /// You said "hates you", but didnt specify who (you maybe?)
 /datum/blenderbrain_impulse/clarify/who_hates_me
-	index = IMPULSE_CLARIFY_WHO_LOVES_ME
+	index = IMPULSE_CLARIFY_WHO_HATES_ME
 	impulse_flags = NONE
 	clarification = IMPULSE_CLARIFY_WHO_LOVES_ME
 
 /datum/blenderbrain_impulse/clarify/who_hates_me/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_WHO_HATES_ME)
 
 /// You said "loves pain", but didnt specify who (you maybe?)
@@ -641,7 +917,6 @@
 
 /datum/blenderbrain_impulse/clarify/who_loves_pain/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_WHO_LOVES_PAIN)
 
 /// Nevermind!
@@ -649,10 +924,10 @@
 	index = IMPULSE_CLARIFY_CLEAR
 	impulse_flags = NONE
 	clarification = null
+	finishes_conversation = TRUE
 
 /datum/blenderbrain_impulse/clarify/clear/impulse()
 	. = ..()
-	USER_MASTER_BRAIN
 	speak(SPEAK_LINE_CLARIFY_CLEAR)
 
 
