@@ -42384,8 +42384,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "ybp" = (
-/mob/living/simple_animal/hostile/ghoul/zombie{
-	faction = list("skeleton")
+/mob/living/simple_animal/hostile/ghoul/legendary{
+	faction = list("hostile","ghoul","skeleton")
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
