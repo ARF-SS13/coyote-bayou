@@ -400,27 +400,6 @@
 	)
 
 /datum/export/item/liquor
-	cost = 25
-	unit_name = "cheap liquor"
-	export_types = list(/obj/item/export/bottle/gin,
-	/obj/item/export/bottle/whiskey,
-	/obj/item/export/bottle/wine,
-	/obj/item/export/bottle/vodka,
-	/obj/item/export/bottle/rum,
-	/obj/item/export/bottle/tequila,
-	/obj/item/export/bottle/minikeg,
-	/obj/item/export/bottle/applejack,
-	/obj/item/export/bottle/cognac,
-	/obj/item/export/bottle/sake,
-	/obj/item/export/bottle/hcider,
-	/obj/item/export/bottle/vermouth,
-	/obj/item/export/bottle/absinthe,
-	/obj/item/export/bottle/grappa,
-	/obj/item/export/bottle/fernet,
-	/obj/item/export/bottle/kahlua,
-	)
-
-/datum/export/item/liquor
 	cost = 500
 	unit_name = "cheap liquor"
 	export_types = list(/obj/item/export/bottle/gin,
@@ -463,7 +442,8 @@
 /datum/export/item/toyshigh
 	cost = 1000
 	unit_name = "advanced toy"
-	export_types = list(/obj/item/toy/prize, /obj/item/toy/talking,
+	export_types = list(/obj/item/toy/prize,
+	/obj/item/toy/talking,
 	)
 
 /datum/export/item/prewarsalvage
