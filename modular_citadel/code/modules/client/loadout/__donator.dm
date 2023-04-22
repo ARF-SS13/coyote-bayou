@@ -91,7 +91,7 @@
 	name = "well-cleaned frying pan"
 	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around. This one seems to be kept in remarkable condition. Along the outside edge of the pan is a series of engravings- it reads 'Dolorem Ipsum'"
 	force = 23 //-1 damage
-	throwforce = 50 //2.5x throwdamage, goofy
+	throwforce = 40 //2x throwdamage, goofy
 
 /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
 	name = "hand-sewn brahmin leather duster"
