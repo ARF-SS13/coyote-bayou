@@ -17,7 +17,7 @@
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = list('sound/f13npc/hellpig/hellpigdead.ogg',)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6,)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/reagent_containers/food/snacks/meat/rawbacon = 4)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2,)
 	butcher_difficulty = 1
 
