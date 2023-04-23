@@ -544,7 +544,7 @@
 
 /obj/item/melee/coyote/danhead
 	name = "dan's head on a stick"
-	icon = 'modular_coyote/icons/objects/danimaul.dmi'
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
 	lefthand_file = 'modular_coyote/icons/objects/danimaulinhandleft.dmi'
 	righthand_file = 'modular_coyote/icons/objects/danimaulinhandright.dmi'
 	icon_state = "danimauler"

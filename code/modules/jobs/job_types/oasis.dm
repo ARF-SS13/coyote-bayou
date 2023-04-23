@@ -67,6 +67,7 @@ Mayor
 		)
 
 
+/*
 /datum/outfit/job/den/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -80,6 +81,7 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+*/
 
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
@@ -223,6 +225,7 @@ Mayor
 		/obj/item/stack/sheet/mineral/concrete/ten = 2
 		)
 
+/*
 /datum/outfit/job/den/f13secretary/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -241,6 +244,7 @@ Mayor
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+*/
 
 
 /*--------------------------------------------------------------*/
