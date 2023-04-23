@@ -163,3 +163,6 @@
 	force = 30
 	max_reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
+	
+/obj/item/wrench/long/crafted
+	name = "longwrench"
