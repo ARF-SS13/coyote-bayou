@@ -400,3 +400,72 @@
 	icon_dead = "sheep_dead"
 	icon_living = "sheep"
 	icon_state = "sheep"
+
+//raccoons
+/mob/living/simple_animal/raccoon //the base, generic raccoon
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute."
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_darkgrey_dead"
+	icon_living = "raccoon_darkgrey"
+	icon_state = "raccoon_darkgrey"
+	speak_emote = list("chitters")
+	emote_hear = list ("chitters", "purr")
+	emote_see = list("rubs it's hands togther.", "twitches it's nose.", "flicks it's ears.")
+	idlesound = list('modular_coyote/sound/typing/arfs1sounds/raccoon1.ogg',)
+
+/mob/living/simple_animal/raccoon/brown
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute. This one is brown."
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_brown_dead"
+	icon_living = "raccoon_brown"
+	icon_state = "raccoon_brown"
+
+/mob/living/simple_animal/raccoon/redbrown
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute. This one is redish brown."
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_redbrown_dead"
+	icon_living = "raccoon_redbrown"
+	icon_state = "raccoon_redbrown"
+
+/mob/living/simple_animal/raccoon/orange
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute. This one is orange."
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_orange_dead"
+	icon_living = "raccoon_orange"
+	icon_state = "raccoon_orange"
+
+/mob/living/simple_animal/raccoon/lightgrey
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute. This one is light grey. It seems like it likes donuts."
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_lightgrey_dead"
+	icon_living = "raccoon_lightgrey"
+	icon_state = "raccoon_lightgrey"
+
+/mob/living/simple_animal/raccoon/darkbrown
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute. This one is dark brown."
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_darkbrown_dead"
+	icon_living = "raccoon_darkbrown"
+	icon_state = "raccoon_darkbrown"
+
+/mob/living/simple_animal/raccoon/red
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute. This one is red"
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_red_dead"
+	icon_living = "raccoon_red"
+	icon_state = "raccoon_red"
+
+/mob/living/simple_animal/raccoon/oakbrown
+	name = "Raccoon"
+	desc = "A trash panda! Aw, how cute. This one is oak brown"
+	icon = 'modular_coyote/icons/mob/raccoon.dmi'
+	icon_dead = "raccoon_oakbrown_dead"
+	icon_living = "raccoon_oakbrown"
+	icon_state = "raccoon_oakbrown"
