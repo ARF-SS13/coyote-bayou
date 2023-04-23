@@ -28,7 +28,7 @@
 	waddle_side_time = 2
 	faction = list("hostile", "neutral")
 	attack_sound = 'sound/effects/reee.ogg'
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/nugget = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -44,6 +44,11 @@
 		'sound/f13npc/frog/frog8.ogg',
 		)
 
+//aesthetic:
+	randpixel = 8
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255))
+
 /mob/living/simple_animal/hostile/retaliate/frog/Initialize()
 	. = ..()
 	if(prob(1))
@@ -52,7 +57,7 @@
 		icon_state = "rare_frog"
 		icon_living = "rare_frog"
 		icon_dead = "rare_frog_dead"
-		butcher_results = list(/obj/item/reagent_containers/food/snacks/nugget = 5)
+		butcher_results = list(/mob/living/simple_animal/hostile/retaliate/frog = 5)
 
 /mob/living/simple_animal/hostile/retaliate/frog/on_entered(AM as mob|obj)
 	..()
