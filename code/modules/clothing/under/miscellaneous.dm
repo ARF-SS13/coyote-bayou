@@ -275,6 +275,7 @@
 	body_parts_covered = CHEST|GROIN
 	body_parts_hidden = 0 // nudie~
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/misc/durathread
 	name = "durathread jumpsuit"

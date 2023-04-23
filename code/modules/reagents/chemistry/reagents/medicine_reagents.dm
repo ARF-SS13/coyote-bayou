@@ -606,6 +606,7 @@
 	M.adjustOxyLoss(-healing*REM, 0)
 	M.adjustBruteLoss(-healing*REM, 0)
 	M.adjustFireLoss(-healing*REM, 0)
+	M.adjustCloneLoss(-healing*REM, FALSE)
 	..()
 	. = 1
 
