@@ -1188,12 +1188,12 @@
 	
 //Mayor Kit
 
-/*/datum/gear/donator/kits/Mayor_kit
+/datum/gear/donator/kits/Mayor_kit
 	name = "Mayor Card"
 	path = /obj/item/storage/box/large/custom_kit/Mayor_kit
-	ckeywhitelist = list("Mayor_kit")
+	ckeywhitelist = list("ursine")
 
 /obj/item/storage/box/large/custom_kit/Mayor_kit/PopulateContents()
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
-	new /obj/item/kit_spawner/townie/mayor(src)*/
+	new /obj/item/kit_spawner/townie/mayor(src)
