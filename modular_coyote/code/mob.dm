@@ -495,3 +495,25 @@
 	speak_emote = list("chitters")
 	emote_hear = list ("chitters", "screams")
 	emote_see = list("rolls around.", "twitches it's nose.", "flicks it's ears.")
+	turns_per_move = 3
+	maxHealth = 100
+	health = 100
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "stamps on"
+	response_harm_simple = "stamp"
+
+/mob/living/simple_animal/uffalo
+	name = "Uffalo"
+	desc = "Some sort of..mutant buffallo creature. Gross."
+	icon = 'modular_coyote/icons/mob/uffalo.dmi'
+	icon_dead = "uffalo_dead"
+	icon_living = "uffalo"
+	icon_state = "uffalo"
+	turns_per_move = 3
+	maxHealth = 100
+	health = 100
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
