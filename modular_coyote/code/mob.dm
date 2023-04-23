@@ -413,6 +413,21 @@
 	emote_hear = list ("chitters", "purr")
 	emote_see = list("rubs it's hands togther.", "twitches it's nose.", "flicks it's ears.")
 	idlesound = list('modular_coyote/sound/typing/arfs1sounds/raccoon1.ogg',)
+	turns_per_move = 3
+	maxHealth = 100
+	health = 100
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "stamps on"
+	response_harm_simple = "stamp"
+
+/mob/living/simple_animal/raccoon/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
 
 /mob/living/simple_animal/raccoon/brown
 	name = "Raccoon"
@@ -469,3 +484,14 @@
 	icon_dead = "raccoon_oakbrown_dead"
 	icon_living = "raccoon_oakbrown"
 	icon_state = "raccoon_oakbrown"
+
+/mob/living/simple_animal/armadillo
+	name = "Armadillo"
+	desc = "Better hope he doesn't cross the road to see the spirit of the west."
+	icon = 'modular_coyote/icons/mob/armadillo.dmi'
+	icon_dead = "armadillo_dead"
+	icon_living = "armadillo"
+	icon_state = "armadillo"
+	speak_emote = list("chitters")
+	emote_hear = list ("chitters", "screams")
+	emote_see = list("rolls around.", "twitches it's nose.", "flicks it's ears.")
