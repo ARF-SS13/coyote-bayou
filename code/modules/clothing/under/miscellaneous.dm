@@ -1355,3 +1355,48 @@
 	icon_state = "japan_uniform"
 	item_state = "japan_uniform"
 	item_color = "japan_uniform"
+
+//Lucine's Sprites
+
+/obj/item/clothing/under/gob/mini_black
+	name = "Mini Black Dress"
+	desc = "A small black dress."
+	icon_state = "mini_black"
+	item_state = "mini_black"
+	item_color = "mini_black"
+
+/obj/item/clothing/under/gob/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+
+/obj/item/clothing/under/gob/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+
+/obj/item/clothing/under/gob/mini_white
+	name = "Mini White"
+	desc = "A small white dress."
+	icon_state = "mini_white"
+	item_state = "mini_white"
+	item_color = "mini_white"
+
+
+/obj/item/clothing/under/gob/pristess
+	name = "pristess dress"
+	desc = "A fancy dress"
+	icon_state = "pristess"
+	item_state = "pristess"
+	item_color = "pristess"
+
+/obj/item/clothing/under/gob/summer
+	name = "Summer dress"
+	desc = "A pink summer dress"
+	icon_state = "summer"
+	item_state = "summer"
+	item_color = "summer"

@@ -1737,3 +1737,33 @@
 	cost = 1
 	path = /obj/item/clothing/under/japanese_uniform
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/mini_black
+	name = "mini black dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/mini_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/mini_black_blue
+	name = "mini black and blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/mini_black_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/mini_white
+	name = "mini white dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/mini_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/pristess
+	name = "pristess dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/pristess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gob/summer
+	name = "summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/summer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
