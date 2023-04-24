@@ -273,3 +273,8 @@
 	name = "Azure Dawn Cape"
 	path = /obj/item/clothing/neck/tie/gob/azure_dawn
 	cost = 2
+
+/datum/gear/neck/delta
+	name = "Delta Cape"
+	path = /obj/item/clothing/neck/tie/gob/delta
+	cost = 2

@@ -247,3 +247,9 @@
 	desc = "A dark blue cape with yellow trim."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "azure_dawn"
+
+/obj/item/clothing/neck/tie/gob/delta
+	name = "Delta Cape"
+	desc = "A black cape with a white trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "delta"
