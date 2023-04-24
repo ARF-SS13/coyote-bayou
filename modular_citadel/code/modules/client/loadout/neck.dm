@@ -178,7 +178,7 @@
 	name = "bandolier"
 	path = /obj/item/storage/belt/bandolier
 	cost = 2
-	
+
 /datum/gear/neck/shoulderholster
 	name = "shoulder holster"
 	path = /obj/item/storage/belt/shoulderholster
@@ -192,4 +192,84 @@
 /datum/gear/belt/sabre/knife
 	name = "knife bandolier" //for lots of small dicks or something IDFK
 	path = /obj/item/storage/belt/sabre/knife
+	cost = 2
+
+/datum/gear/neck/allseer
+	name = "Allseer Cape"
+	path = /obj/item/clothing/neck/tie/gob/allseer
+	cost = 2
+
+/datum/gear/neck/astral
+	name = "Astral Cape"
+	path = /obj/item/clothing/neck/tie/gob/astral
+	cost = 2
+
+/datum/gear/neck/black
+	name = "Black Cape"
+	path = /obj/item/clothing/neck/tie/gob/black
+	cost = 2
+
+/datum/gear/neck/black_shoulder
+	name = "Black Shoulder Cape"
+	path = /obj/item/clothing/neck/tie/gob/black_shoulder
+	cost = 2
+
+/datum/gear/neck/bluewolves
+	name = "Blue Wolves Cape"
+	path = /obj/item/clothing/neck/tie/gob/bluewolves
+	cost = 2
+
+/datum/gear/neck/redstar
+	name = "Red Star Cape"
+	path = /obj/item/clothing/neck/tie/gob/redstar
+	cost = 2
+
+/datum/gear/neck/grey
+	name = "Grey Cape"
+	path = /obj/item/clothing/neck/tie/gob/grey
+	cost = 2
+
+/datum/gear/neck/aegis
+	name = "Aegis Cape"
+	path = /obj/item/clothing/neck/tie/gob/aegis
+	cost = 2
+
+/datum/gear/neck/darkpurple
+	name = "Dark Purple Cape"
+	path = /obj/item/clothing/neck/tie/gob/darkpurple
+	cost = 2
+
+/datum/gear/neck/blue
+	name = "Blue Cape"
+	path = /obj/item/clothing/neck/tie/gob/blue
+	cost = 2
+
+/datum/gear/neck/green
+	name = "Green Cape"
+	path = /obj/item/clothing/neck/tie/gob/green
+	cost = 2
+
+/datum/gear/neck/purple
+	name = "Purple Cape"
+	path = /obj/item/clothing/neck/tie/gob/purple
+	cost = 2
+
+/datum/gear/neck/red
+	name = "Red Cape"
+	path = /obj/item/clothing/neck/tie/gob/red
+	cost = 2
+
+/datum/gear/neck/whiteblue
+	name = "White Blue Cape"
+	path = /obj/item/clothing/neck/tie/gob/whiteblue
+	cost = 2
+
+/datum/gear/neck/white
+	name = "White Cape"
+	path = /obj/item/clothing/neck/tie/gob/white
+	cost = 2
+
+/datum/gear/neck/azure_dawn
+	name = "Azure Dawn Cape"
+	path = /obj/item/clothing/neck/tie/gob/azure_dawn
 	cost = 2

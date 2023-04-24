@@ -129,3 +129,121 @@
 	name = "Fancy Cape"
 	desc = "A fancy looking cape that has been manufactured for an androgynous person."
 	icon_state = "snugglycape"
+
+/obj/item/clothing/neck/tie/gob
+	name = "base cape"
+	desc = "A black cape with a blue trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "allseer"
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = CHEST|ARMS
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+
+/obj/item/clothing/neck/tie/gob/allseer
+	name = "All Seer Cape"
+	desc = "A black cape with a blue trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "allseer"
+
+/obj/item/clothing/neck/tie/gob/astral
+	name = "Astral Cape"
+	desc = "A dark purple cape with a white trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "astral"
+
+/obj/item/clothing/neck/tie/gob/black
+	name = "Black Cape"
+	desc = "A dark black cape that's pretty flowy."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "black"
+
+/obj/item/clothing/neck/tie/gob/black_shoulder
+	name = "Black Shoulder Cape"
+	desc = "A black cape with a golden trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "black_shoulder"
+
+/obj/item/clothing/neck/tie/gob/bluewolves
+	name = "Blue Wolves Cape"
+	desc = "A black cape with blue trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "bluewolves"
+
+/obj/item/clothing/neck/tie/gob/redstar
+	name = "Red Star Cape"
+	desc = "A black cape with a white trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "redstar"
+
+/obj/item/clothing/neck/tie/gob/grey
+	name = "Grey Cape"
+	desc = "A long grey cape!"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "grey"
+
+/obj/item/clothing/neck/tie/gob/aegis
+	name = "Aegis Cape"
+	desc = "A black cape with a white feather attatched. "
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "aegis"
+
+/obj/item/clothing/neck/tie/gob/darkpurple
+	name = "Dark Purple Cape"
+	desc = "A dark purple cape "
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "darkpurple"
+
+/obj/item/clothing/neck/tie/gob/darkpurple
+	name = "Dark Purple Cape"
+	desc = "A dark purple cape "
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "darkpurple"
+
+/obj/item/clothing/neck/tie/gob/blue
+	name = "Blue Cape"
+	desc = "A blue cape "
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "blue"
+
+/obj/item/clothing/neck/tie/gob/green
+	name = "Green Cape"
+	desc = "A green cape "
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "green"
+
+/obj/item/clothing/neck/tie/gob/purple
+	name = "Purple Cape"
+	desc = "A purple cape "
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "purple"
+
+/obj/item/clothing/neck/tie/gob/red
+	name = "Red Cape"
+	desc = "A Red cape "
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "red"
+
+/obj/item/clothing/neck/tie/gob/whiteblue
+	name = "White cape with blue lining"
+	desc = "A white cape with blue lining, fancy!"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "white_blue"
+
+/obj/item/clothing/neck/tie/gob/white
+	name = "White cape"
+	desc = "A white cape"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "white"
+
+/obj/item/clothing/neck/tie/gob/azure_dawn
+	name = "Azure Dawn Cape"
+	desc = "A dark blue cape with yellow trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "azure_dawn"
+
+/obj/item/clothing/neck/tie/gob/azure_dawn
+	name = "Azure Dawn Cape"
+	desc = "A dark blue cape with yellow trim."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "azure_dawn"
