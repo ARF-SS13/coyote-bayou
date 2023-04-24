@@ -1044,8 +1044,6 @@
 	item_state = "Canadian_coat"
 	armor = ARMOR_VALUE_LIGHT
 
-//Lucine's sprites
-
 /obj/item/clothing/suit/gob/adamantite
 	name = "adamantite coat"
 	desc = "A purple kinda fancy looking coat."
@@ -1093,4 +1091,39 @@
 	desc = "A grey and sliver coat with a cross on the chest. Avast Ye! Wait, that's pirates."
 	icon_state = "dark_knight"
 	item_state = "dark_knight"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/holy_knight
+	name = "holy knight coat"
+	desc = "A fancy coat!"
+	icon_state = "holy_knight"
+	item_state = "holy_knight"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/iron
+	name = "iron coat"
+	desc = "A fancy coat!"
+	icon_state = "iron"
+	item_state = "iron"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/kraus
+	name = "kraus armor"
+	desc = "A shiny suit of armor!"
+	icon_state = "kraus"
+	item_state = "kraus"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/leather
+	name = "leahter coat"
+	desc = "A leather coat! Don't call peta."
+	icon_state = "leather"
+	item_state = "leather"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/steel
+	name = "Steel coat"
+	desc = "A Steel coat! Jet fuel might melt this.."
+	icon_state = "steel"
+	item_state = "steel"
 	armor = ARMOR_VALUE_LIGHT

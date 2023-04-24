@@ -557,6 +557,37 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/holy_knight
+	name = "holy knight coat"
+	path = /obj/item/clothing/suit/gob/holy_knight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/iron
+	name = "iron coat"
+	path = /obj/item/clothing/suit/gob/iron
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/kraus
+	name = "Kraus Armor"
+	path = /obj/item/clothing/suit/gob/kraus
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/leather
+	name = "leather coat"
+	path = /obj/item/clothing/suit/gob/leather
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/steel
+	name = "Steel coat"
+	path = /obj/item/clothing/suit/gob/steel
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 
 /datum/gear/suit/christmascoatr
