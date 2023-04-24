@@ -1767,3 +1767,70 @@
 	cost = 1
 	path = /obj/item/clothing/under/gob/summer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/thot
+	name = "thin white dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/thot
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_blue
+	name = "female blue outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gob/fem_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_rose
+	name = "female rose outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gob/fem_rose
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_white
+	name = "female white outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gob/fem_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_blue
+	name = "Blue Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_black
+	name = "Black Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_pink
+	name = "Pink Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_yellow
+	name = "Yellow Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_yellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_white
+	name = "White Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_red
+	name = "red Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_purple
+	name = "Purple Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+

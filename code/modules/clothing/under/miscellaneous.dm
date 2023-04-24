@@ -1400,3 +1400,81 @@
 	icon_state = "summer"
 	item_state = "summer"
 	item_color = "summer"
+
+/obj/item/clothing/under/gob/thot
+	name = "Thin white dress"
+	desc = "A thin white and kinda revealing dress."
+	icon_state = "thot"
+	item_state = "thot"
+	item_color = "thot"
+
+/obj/item/clothing/under/gob/fem_blue
+	name = "female blue outfit"
+	desc = "A blue tunic."
+	icon_state = "fem_blue"
+	item_state = "fem_blue"
+	item_color = "fem_blue"
+
+/obj/item/clothing/under/gob/fem_rose
+	name = "female rose outfit"
+	desc = "A rose tunic."
+	icon_state = "fem_rose"
+	item_state = "fem_rose"
+	item_color = "fem_rose"
+
+/obj/item/clothing/under/gob/fem_white
+	name = "female white outfit"
+	desc = "A white tunic."
+	icon_state = "fem_white"
+	item_state = "fem_white"
+	item_color = "fem_white"
+
+/obj/item/clothing/under/gob/vestido_blue
+	name = "Blue Vestido Dress"
+	desc = "A very fancy blue dress"
+	icon_state = "vestido_blue"
+	item_state = "vestido_blue"
+	item_color = "vestido_blue"
+
+/obj/item/clothing/under/gob/vestido_black
+	name = "Black Vestido Dress"
+	desc = "A very fancy black dress"
+	icon_state = "vestido_black"
+	item_state = "vestido_black"
+	item_color = "vestido_black"
+
+/obj/item/clothing/under/gob/vestido_pink
+	name = "Pink Vestido Dress"
+	desc = "A very fancy pink dress"
+	icon_state = "vestido_pink"
+	item_state = "vestido_pink"
+	item_color = "vestido_pink"
+
+/obj/item/clothing/under/gob/vestido_yellow
+	name = "Yellow Vestido Dress"
+	desc = "A very fancy yellow dress"
+	icon_state = "vestido_yellow"
+	item_state = "vestido_yellow"
+	item_color = "vestido_yellow"
+
+/obj/item/clothing/under/gob/vestido_white
+	name = "White Vestido Dress"
+	desc = "A very fancy white dress"
+	icon_state = "vestido_white"
+	item_state = "vestido_white"
+	item_color = "vestido_white"
+
+/obj/item/clothing/under/gob/vestido_purple
+	name = "Purple Vestido Dress"
+	desc = "A very fancy purple dress"
+	icon_state = "vestido_purple"
+	item_state = "vestido_purple"
+	item_color = "vestido_purple"
+
+/obj/item/clothing/under/gob/vestido_red
+	name = "Red Vestido Dress"
+	desc = "A very fancy red dress"
+	icon_state = "vestido_red"
+	item_state = "vestido_red"
+	item_color = "vestido_red"
+
