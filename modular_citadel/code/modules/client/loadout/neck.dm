@@ -197,84 +197,114 @@
 /datum/gear/neck/allseer
 	name = "Allseer Cape"
 	path = /obj/item/clothing/neck/tie/gob/allseer
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/astral
 	name = "Astral Cape"
 	path = /obj/item/clothing/neck/tie/gob/astral
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/black
 	name = "Black Cape"
 	path = /obj/item/clothing/neck/tie/gob/black
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/black_shoulder
 	name = "Black Shoulder Cape"
 	path = /obj/item/clothing/neck/tie/gob/black_shoulder
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/bluewolves
 	name = "Blue Wolves Cape"
 	path = /obj/item/clothing/neck/tie/gob/bluewolves
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/redstar
 	name = "Red Star Cape"
 	path = /obj/item/clothing/neck/tie/gob/redstar
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/grey
 	name = "Grey Cape"
 	path = /obj/item/clothing/neck/tie/gob/grey
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/aegis
 	name = "Aegis Cape"
 	path = /obj/item/clothing/neck/tie/gob/aegis
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/darkpurple
 	name = "Dark Purple Cape"
 	path = /obj/item/clothing/neck/tie/gob/darkpurple
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/blue
 	name = "Blue Cape"
 	path = /obj/item/clothing/neck/tie/gob/blue
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/green
 	name = "Green Cape"
 	path = /obj/item/clothing/neck/tie/gob/green
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/purple
 	name = "Purple Cape"
 	path = /obj/item/clothing/neck/tie/gob/purple
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/red
 	name = "Red Cape"
 	path = /obj/item/clothing/neck/tie/gob/red
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/whiteblue
 	name = "White Blue Cape"
 	path = /obj/item/clothing/neck/tie/gob/whiteblue
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/white
 	name = "White Cape"
 	path = /obj/item/clothing/neck/tie/gob/white
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/azure_dawn
 	name = "Azure Dawn Cape"
 	path = /obj/item/clothing/neck/tie/gob/azure_dawn
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/delta
 	name = "Delta Cape"
 	path = /obj/item/clothing/neck/tie/gob/delta
-	cost = 2
+	cost = 0
+
+/datum/gear/neck/black_fur
+	name = "black fur lined cape"
+	path = /obj/item/clothing/neck/tie/gob/black_fur
+	cost = 0
+
+/datum/gear/neck/gold_lions
+	name = "gold lion cape"
+	path = /obj/item/clothing/neck/tie/gob/gold_lions
+	cost = 0
+
+/datum/gear/neck/heart
+	name = "heart cape"
+	path = /obj/item/clothing/neck/tie/gob/heart
+	cost = 0
+
+/datum/gear/neck/silk
+	name = "silk cape"
+	path = /obj/item/clothing/neck/tie/gob/silk
+	cost = 0
+
+/datum/gear/neck/silver_snake
+	name = "silver snake cape"
+	path = /obj/item/clothing/neck/tie/gob/silver_snake
+	cost = 0
+
+/datum/gear/neck/white_fur
+	name = "white furred cape"
+	path = /obj/item/clothing/neck/tie/gob/white_fur
+	cost = 0

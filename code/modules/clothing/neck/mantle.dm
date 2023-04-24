@@ -253,3 +253,39 @@
 	desc = "A black cape with a white trim."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "delta"
+
+/obj/item/clothing/neck/tie/gob/black_fur
+	name = "black fur lined cape"
+	desc = "A black cape lined with fur"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "black_fur"
+
+/obj/item/clothing/neck/tie/gob/gold_lions
+	name = "Black cape lined with gold"
+	desc = "A black cape lined with crests of gold."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "gold_lions"
+
+/obj/item/clothing/neck/tie/gob/heart
+	name = "Heart Cape"
+	desc = "A pink cape with a heart on it."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "heart"
+
+/obj/item/clothing/neck/tie/gob/silk
+	name = "Silk Cape"
+	desc = "A silky white cape. Flowy!"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "silk"
+
+/obj/item/clothing/neck/tie/gob/silver_snake
+	name = "Silver Snake Cape"
+	desc = "A fancy black cape."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "silver_snake"
+
+/obj/item/clothing/neck/tie/gob/white_fur
+	name = "White fur cape"
+	desc = "A white furred cape."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "white_fur"
