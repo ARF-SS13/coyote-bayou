@@ -43,8 +43,8 @@ GLOBAL_LIST_INIT(energyweapon_cell_crafting, list(
 
 	// armored_hazard_suit is going to get SEVA Mk. 2 and Explorer Mk. 2 in the future. Might tie it to Hardsuits as well.
 GLOBAL_LIST_INIT(armored_hazard_suit, list(
-	datum/crafting_recipe/combathazardsuit,
-	datum/crafting_recipe/combathazardhood))
+	/datum/crafting_recipe/combathazardsuit,
+	/datum/crafting_recipe/combathazardhood))
 
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
