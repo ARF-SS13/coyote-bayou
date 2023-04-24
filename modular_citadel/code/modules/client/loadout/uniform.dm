@@ -1834,3 +1834,20 @@
 	path = /obj/item/clothing/under/gob/vestido_purple
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
+/datum/gear/uniform/gorka_alt
+	name = "Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/gorka_ss
+	name = "Alt Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_ss
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/gorka_tan
+	name = "Tan Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_tan
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

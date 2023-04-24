@@ -1478,3 +1478,24 @@
 	item_state = "vestido_red"
 	item_color = "vestido_red"
 
+
+/obj/item/clothing/under/gorka_alt
+	name = "Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_alt"
+	item_state = "gorka_alt"
+	item_color = "gorka_alt"
+
+/obj/item/clothing/under/gorka_ss
+	name = "Alt Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_ss"
+	item_state = "gorka_ss"
+	item_color = "gorka_ss"
+
+/obj/item/clothing/under/gorka_tan
+	name = "Tan Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_tan"
+	item_state = "gorka_tan"
+	item_color = "gorka_tan"
