@@ -289,3 +289,45 @@
 	desc = "A white furred cape."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "white_fur"
+
+/obj/item/clothing/neck/tie/inf_cloak
+	name = "black cloak with red etching"
+	desc = "A black and red cloak"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "inf_cloak"
+
+/obj/item/clothing/neck/tie/carrotcloak
+	name = "Carrot Cloak"
+	desc = "A rather cute cloak in the shape of a carrot"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "carrotcloak"
+
+/obj/item/clothing/neck/tie/festive
+	name = "festive cloak"
+	desc = "Santa is coming to town."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "festive"
+
+/obj/item/clothing/neck/tie/green_cloak
+	name = "White green cloak"
+	desc = "A white cloak with green accents."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "green_cloak"
+
+/obj/item/clothing/neck/tie/wintergreencloak
+	name = "Winter Green Cloak"
+	desc = "A green cloak with white accents."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "wintergreencloak"
+
+/obj/item/clothing/neck/tie/flagcape
+	name = "American Flag cape"
+	desc = "'Murica"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "flagcape"
+
+/obj/item/clothing/neck/tie/zuliecloak
+	name = "Zulie Cloak"
+	desc = "A dark black and grey cloak."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "zuliecloak"

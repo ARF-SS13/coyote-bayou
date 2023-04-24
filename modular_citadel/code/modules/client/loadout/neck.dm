@@ -308,3 +308,38 @@
 	name = "white furred cape"
 	path = /obj/item/clothing/neck/tie/gob/white_fur
 	cost = 0
+
+/datum/gear/neck/inf_cloak
+	name = "black cape with red"
+	path = /obj/item/clothing/neck/tie/inf_cloak
+	cost = 0
+
+/datum/gear/neck/carrotcloak
+	name = "carrot cloak"
+	path = /obj/item/clothing/neck/tie/carrotcloak
+	cost = 0
+
+/datum/gear/neck/festive
+	name = "festive cloak"
+	path = /obj/item/clothing/neck/tie/festive
+	cost = 0
+
+/datum/gear/neck/green_cloak
+	name = "green and white cloak"
+	path = /obj/item/clothing/neck/tie/green_cloak
+	cost = 0
+
+/datum/gear/neck/wintergreencloak
+	name = "winter green cloak"
+	path = /obj/item/clothing/neck/tie/wintergreencloak
+	cost = 0
+
+/datum/gear/neck/flagcape
+	name = "american flag cape"
+	path = /obj/item/clothing/neck/tie/flagcape
+	cost = 0
+
+/datum/gear/neck/fzuliecloak
+	name = "zulie cloak"
+	path = /obj/item/clothing/neck/tie/zuliecloak
+	cost = 0
