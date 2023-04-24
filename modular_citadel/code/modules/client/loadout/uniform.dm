@@ -1851,3 +1851,39 @@
 	cost = 1
 	path = /obj/item/clothing/under/gorka_tan
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/puffydress
+	name = "Puffy Dress"
+	cost = 1
+	path = /obj/item/clothing/under/puffy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/labor_black
+	name = "Black labor suit"
+	cost = 1
+	path = /obj/item/clothing/under/labor_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/divine_robes
+	name = "Divine Robes"
+	cost = 1
+	path = /obj/item/clothing/under/divine_robes
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/blue_kimono
+	name = "Blue Kimono"
+	cost = 1
+	path = /obj/item/clothing/under/blue_kimono
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/miku_bikini
+	name = "Light blue Bikini"
+	cost = 1
+	path = /obj/item/clothing/under/miku_bikini
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/shark
+	name = "Shark Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/shark
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

@@ -1499,3 +1499,45 @@
 	icon_state = "gorka_tan"
 	item_state = "gorka_tan"
 	item_color = "gorka_tan"
+
+/obj/item/clothing/under/puffy
+	name = "puffy dress"
+	desc = "A pink and puffy dress!"
+	icon_state = "puffydress"
+	item_state = "puffydress"
+	item_color = "puffydress"
+
+/obj/item/clothing/under/labor_black
+	name = "black labor suit"
+	desc = "A slim fitting black suit"
+	icon_state = "labor_black"
+	item_state = "labor_black"
+	item_color = "labor_black"
+
+/obj/item/clothing/under/divine_robes
+	name = "divine robes"
+	desc = "Rather holy robes."
+	icon_state = "divine_robes"
+	item_state = "divine_robes"
+	item_color = "divine_robes"
+
+/obj/item/clothing/under/blue_kimono
+	name = "Dark blue Kimono"
+	desc = "A dark blue kimono."
+	icon_state = "blue_kimono"
+	item_state = "blue_kimono"
+	item_color = "blue_kimono"
+
+/obj/item/clothing/under/miku_bikini
+	name = "Blue bikini"
+	desc = "A light blue bikini with a red bow!"
+	icon_state = "miku_bikini"
+	item_state = "miku_bikini"
+	item_color = "miku_bikini"
+
+/obj/item/clothing/under/shark
+	name = "shark uniform"
+	desc = "A skimpy light grey uniform. The same color as a shark!"
+	icon_state = "shark_cloth"
+	item_state = "shark_cloth"
+	item_color = "shark_cloth"
