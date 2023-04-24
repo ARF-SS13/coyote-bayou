@@ -338,7 +338,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
 		H.mind.learned_recipes -= GLOB.pa_repair
-		H.mind.learned_recipes |= GLOB.armored_hazard_suit
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
