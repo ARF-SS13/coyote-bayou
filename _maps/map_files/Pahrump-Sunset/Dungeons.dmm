@@ -15187,12 +15187,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "hDW" = (
-/obj/structure/lattice/catwalk/clockwork,
-/obj/effect/spawner/lootdrop/f13/armor/tier5,
-/turf/open/floor/bronze{
-	name = "floor"
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/area/f13/brotherhood/rnd)
+/obj/structure/spawner/skeleton,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/underground/cave)
 "hER" = (
 /obj/machinery/shower{
 	dir = 8
@@ -15393,6 +15393,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/brotherhood/dorms)
+"hKQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/skeleton,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "hKY" = (
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -16745,6 +16752,14 @@
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
+/area/f13/underground/cave)
+"iyc" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/closet/crate/bin/trashbin,
+/obj/item/book/granter/spell/smoke/lesser,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/underground/cave)
 "iyh" = (
 /obj/structure/falsewall/reinforced{
@@ -19473,7 +19488,7 @@
 "jTg" = (
 /obj/structure/ladder/unbreakable{
 	id = "hell";
-	height = 2
+	height = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
@@ -24931,8 +24946,6 @@
 	critical_machine = 1;
 	flicker_chance = 0
 	},
-/mob/living/simple_animal/hostile/renegade/meister,
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/raider,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "mDS" = (
@@ -25661,7 +25674,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/spawner/skeleton,
+/mob/living/simple_animal/hostile/skeleton,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "mXd" = (
@@ -27803,12 +27816,11 @@
 	},
 /area/f13/bunker)
 "obp" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/machinery/mineral/wasteland_trader/brotherhood,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
 	},
-/obj/structure/spawner/skeleton,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/area/f13/caves)
 "obq" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt{
@@ -28229,9 +28241,11 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood,
-/obj/item/book/granter/spell/smoke/lesser,
-/turf/open/floor/wood_worn,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/skeleton/templar,
+/turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "omG" = (
 /obj/structure/cable{
@@ -33687,8 +33701,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood,
-/obj/item/book/granter/spell/charge,
+/obj/structure/spawner/skeleton,
 /turf/open/floor/wood_worn,
 /area/f13/underground/cave)
 "qPS" = (
@@ -35611,6 +35624,7 @@
 /obj/item/candle{
 	pixel_x = -7
 	},
+/obj/machinery/porta_turret/f13/turret_556/burstfire/raider,
 /turf/open/floor/clockwork/reebe{
 	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
 	name = "cool metal floor"
@@ -37302,6 +37316,10 @@
 "sFz" = (
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"sFE" = (
+/obj/machinery/porta_turret/f13/turret_9mm/burstfire/raider,
+/turf/closed/wall/f13/wood,
+/area/f13/brotherhood/rnd)
 "sFG" = (
 /mob/living/simple_animal/hostile/vault/dweller,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -40616,6 +40634,7 @@
 	color = "#363636"
 	},
 /obj/structure/closet/crate/wooden/toy,
+/obj/item/book/granter/spell/charge,
 /turf/open/floor/f13/wood,
 /area/f13/underground/cave)
 "uqP" = (
@@ -42434,6 +42453,10 @@
 /turf/open/floor/carpet/royalblue,
 /area/f13/enclave)
 "vlI" = (
+/mob/living/simple_animal/hostile/renegade/traitor{
+	health = 500;
+	maxHealth = 500
+	},
 /turf/open/floor/bronze{
 	name = "floor"
 	},
@@ -45683,6 +45706,7 @@
 /obj/item/candle{
 	pixel_x = 7
 	},
+/obj/machinery/porta_turret/f13/turret_556/burstfire/raider,
 /turf/open/floor/clockwork/reebe{
 	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
 	name = "cool metal floor"
@@ -97401,7 +97425,7 @@ gFD
 hrZ
 bfR
 hcq
-pFz
+obp
 pFz
 cCq
 hqd
@@ -100111,7 +100135,7 @@ kyF
 kyF
 kyF
 kyF
-obp
+dsN
 dsN
 qpS
 mXm
@@ -102442,7 +102466,7 @@ rBR
 rBR
 fUU
 dsN
-dsN
+hKQ
 dsN
 dsN
 dsN
@@ -103213,7 +103237,7 @@ rBR
 rBR
 fUU
 fUU
-obp
+dsN
 dsN
 dsN
 dsN
@@ -103435,7 +103459,7 @@ qVo
 oye
 gzv
 ovu
-omF
+ovu
 gzv
 cYX
 uFH
@@ -103462,7 +103486,7 @@ mXm
 mXm
 rBR
 rBR
-mWV
+qpS
 qpS
 qpS
 qpS
@@ -103471,7 +103495,7 @@ rBR
 fUU
 fUU
 fUU
-dsN
+hKQ
 dsN
 dsN
 dsN
@@ -103691,7 +103715,7 @@ hIb
 kYY
 gzv
 gzv
-qPN
+ovu
 ovu
 gzv
 gzv
@@ -104482,13 +104506,13 @@ dsN
 dsN
 iHQ
 fUU
-qpS
+omF
 qpS
 qpS
 qpS
 qpS
 jAY
-qpS
+mWV
 qpS
 qpS
 qpS
@@ -105956,7 +105980,7 @@ uhr
 aSH
 uhr
 erd
-erd
+sFE
 hJK
 mad
 nnp
@@ -106466,7 +106490,7 @@ sHf
 owt
 pvH
 vlI
-hDW
+wbm
 mDH
 aSH
 iPO
@@ -106522,7 +106546,7 @@ fUU
 toL
 xMT
 xMT
-gzv
+qPN
 gzv
 gzv
 toL
@@ -106984,7 +107008,7 @@ uhr
 aSH
 uhr
 erd
-erd
+sFE
 hJK
 nKk
 qdl
@@ -107581,7 +107605,7 @@ riC
 riC
 bVY
 toL
-eYg
+iyc
 bVY
 toL
 bVY
@@ -111174,7 +111198,7 @@ uCz
 toL
 toL
 toL
-bVY
+hDW
 bVY
 ojf
 ojf
