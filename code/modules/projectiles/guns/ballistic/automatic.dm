@@ -848,7 +848,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = CARBINE_RECOIL(1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
