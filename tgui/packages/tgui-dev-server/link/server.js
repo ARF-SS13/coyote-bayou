@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import { createLogger, directLog } from 'common/logging.js';
+import { createLogger, directLog } from '../logging.js';
 import http from 'http';
 import { inspect } from 'util';
 import WebSocket from 'ws';
