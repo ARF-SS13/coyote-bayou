@@ -1,6 +1,4 @@
 #define ispokemon(A)		istype(A, /mob/living/simple_animal/passive/pokemon)
-#define islegendary(A)		istype(A, /mob/living/simple_animal/passive/pokemon/leg)
-#define islegendarypath(P)	ispath(P, /mob/living/simple_animal/passive/pokemon/leg)
 
 #define P_TYPE_FIRE 	"fire"
 #define P_TYPE_WATER 	"water"
@@ -31,6 +29,6 @@
 #define M_INVIS			"invisible"
 
 //Don't spawn this pokemon or show it in lists.
-#define P_TRAIT_BLACKLIST	"blacklist" 
+#define P_TRAIT_BLACKLIST	"blacklist"
 //This pokemon can be buckled to, ridden, and steered like a vehicle
-#define P_TRAIT_RIDEABLE	"rideable"  
+#define P_TRAIT_RIDEABLE	"rideable"
