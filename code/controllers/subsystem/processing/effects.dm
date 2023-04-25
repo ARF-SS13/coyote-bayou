@@ -16,11 +16,11 @@ PROCESSING_SUBSYSTEM_DEF(effects)
 		var/datum/effect_fancy/S = new type()
 		effect_list[S.index] = S
 
-/datum/controller/subsystem/processing/effects/proc/do_effect(index, atom/source, atom/target, params)
+/datum/controller/subsystem/processing/effects/proc/do_effect(index, atom/source, atom/target, angle, length)
 	if(!index)
 		return
 	var/datum/effect_fancy/EF = effect_list[index]
 	if(!EF)
 		return
-	EF.do_effect(source, target, params)
+	EF.do_effect(source, target, angle, length)
 
