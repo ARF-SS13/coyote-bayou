@@ -515,6 +515,7 @@
  * Less melee force
  * More accurate
  * Common
+ * Muh three world wars
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/m1911

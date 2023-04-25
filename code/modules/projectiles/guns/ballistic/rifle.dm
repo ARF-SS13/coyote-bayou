@@ -451,7 +451,7 @@
 
 /obj/item/gun/ballistic/rifle/enfield
 	name = "Lee-Enfield rifle"
-	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
+	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
 	sawn_desc = "This accursed abomination was a common modification for trench warfare. Now some waster is likely using it for close quarters."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "smle"
@@ -487,7 +487,7 @@
 
 /obj/item/gun/ballistic/rifle/enfield/jungle
 	name = "Jungle Carbine"
-	desc = "The Rifle No. 5 Mk I, made by the Australian army at Lithgow Small Arms in Australia, its a shortened Enfield used for secondary service in the Australian and New zealand army for jungle warfare other then the L1A1 battle rifle,  made from an SMLE its bolt action holds 10 rounds and sadly cannot fit a scope."
+	desc = "A shortened Enfield used for secondary service in the Australian and New Zealand army for jungle warfare. Made from an SMLE, it holds 10 rounds but sadly cannot fit a scope."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "junglecarbine"
 	item_state = "308"
