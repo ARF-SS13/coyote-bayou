@@ -6,6 +6,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	block_parry_data = /datum/block_parry_data/bokken
 	item_flags = ITEM_CAN_PARRY
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/melee/onehanded
 	name = "onehand melee template"
@@ -140,9 +141,9 @@
 	force = 15
 	throwforce = 40 //clears threshholds for trash mobs
 	armour_penetration = 0.10
-	max_reach = 2
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 
 
