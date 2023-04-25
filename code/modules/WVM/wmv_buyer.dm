@@ -46,7 +46,7 @@
 								/obj/item/export/bottle/goldschlager = 30,
 								/obj/item/export/bottle/patron = 30,
 								/obj/item/stealthboy = 100,
-								/obj/item/blueprint/misc = 50,
+								/obj/item/blueprint/research = 50,
 								// pistols/revolvers, 5 caps
 								/obj/item/gun/ballistic/revolver/detective = 5,
 								/obj/item/gun/ballistic/revolver/revolver45 = 5,
@@ -253,9 +253,8 @@
 	dat += "Metal and Electronic Parts: 1 - 3 caps<br>"
 	dat += "Advanced Components: 15 caps<br>"
 	dat += "Sealed Alcohol Bottles: 15 - 30 caps<br>"
-	dat += "Research Papers: 50<br>"
+	dat += "Research Papers: 50 caps<br>"
 	dat += "Stealthboy: 100 caps<br>"
-	/obj/item/blueprint/misc
 	dat += ""
 	dat += "</div>"
 
