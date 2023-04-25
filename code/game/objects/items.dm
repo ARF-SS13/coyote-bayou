@@ -181,6 +181,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// extra special transform
 	var/matrix/special_transform
 
+	/// Weapon special component
+	var/weapon_special_component
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -243,6 +246,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(sharpness && force > 5) //give sharp objects butchering functionality, for consistency
 		AddComponent(/datum/component/butchering, 80 * toolspeed)
+
+	if(weapon_special_component)
+		AddComponent(weapon_special_component)
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))

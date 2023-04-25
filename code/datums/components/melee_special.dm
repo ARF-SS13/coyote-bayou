@@ -47,7 +47,7 @@
 	/// does extra damage to all atoms
 	var/list/extra_damage = list()
 	/// Damage multiplier for damage fallof
-	var/falloff_mult = 0.5
+	var/falloff_mult = 0.80
 	/// max mobs it can hit
 	var/max_mobs_hit = 1
 	/// effect kind
@@ -58,6 +58,25 @@
 	var/datum/point/vector/punch_laser
 	/// debug highlights
 	var/debug = FALSE
+	/// Always do the thing, mostly for spears
+	var/always_do = FALSE
+
+/datum/component/weapon_special/single_turf
+
+/datum/component/weapon_special/ranged_spear
+	max_distance = 2
+	max_mobs_hit = 3
+	always_do = TRUE
+	line_effect = TRUE
+	effect_kind = null
+	target_mode = WS_ALL_POPULATED_TILES
+	target_flags = WS_TARGET_IGNORE_FRIENDLIES | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
+	damage_flags = WS_DAMAGE_FALLOFF_FAR_HIGH | WS_DAMAGE_SPLIT
+
+/datum/component/weapon_special/ranged_spear/longer
+	max_distance = 3
+	max_mobs_hit = 5
+	falloff_mult = 0.5 // even harsher fallff!
 
 /datum/component/weapon_special/Initialize()
 	if(!isitem(parent))
@@ -271,7 +290,9 @@
 	WEAPON_MASTER
 	var/total_targets = 0
 	for(var/i in atoms_hit)
-		total_targets += LAZYLEN(atoms_hit[i])
+		for(var/mob/living/vml in atoms_hit[i])
+			if(vml)
+				total_targets++
 	. = list()
 	for(var/dist in atoms_hit)
 		var/trudist = text2num(dist)

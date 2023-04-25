@@ -468,13 +468,13 @@
 	icon_state = "spear_smith"
 	icon_prefix = "spear_smith"
 	overlay_state = "shaft_spear"
-	max_reach = 2
 	force = 25
 	block_chance = 5
 	force_wielded = 50
 	force_unwielded = 25
 	sharpness = SHARP_POINTY
 	attack_speed = CLICK_CD_MELEE * 0.9
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/smith/twohand/spear/lance
 	name = "rebar lance"
