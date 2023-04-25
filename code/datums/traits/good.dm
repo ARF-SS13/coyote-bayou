@@ -41,6 +41,11 @@ GLOBAL_LIST_INIT(energyweapon_cell_crafting, list(
 	/datum/crafting_recipe/enhancedmfcell,
 	/datum/crafting_recipe/enhancedecp))
 
+	// armored_hazard_suit is going to get SEVA Mk. 2 and Explorer Mk. 2 in the future. Might tie it to Hardsuits as well.
+GLOBAL_LIST_INIT(armored_hazard_suit, list(
+	/datum/crafting_recipe/combathazardsuit,
+	/datum/crafting_recipe/combathazardhood))
+
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
 	/datum/crafting_recipe/huntingrifle,
@@ -324,6 +329,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
 	H.mind.learned_recipes |= GLOB.energyweapon_crafting
 	H.mind.learned_recipes |= GLOB.pa_repair
+	H.mind.learned_recipes |= GLOB.armored_hazard_suit
 
 /datum/quirk/technophreak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -332,6 +338,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
 		H.mind.learned_recipes -= GLOB.pa_repair
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"

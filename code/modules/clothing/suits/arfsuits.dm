@@ -3447,14 +3447,18 @@
 	icon_state = "bio_virology"
 
 
-//Security biosuit, grey with red stripe across the chest
+//Security biosuit, grey with red stripe across the chest || Craftable, has good ballistic/laser armor, but not good against melee. It's a light armor, use that speed dummy -Kelprunner
 /obj/item/clothing/head/bio_hood/security
+	name = "reinforced hazard hood"
+	desc = "A lead-lined hood that's been reinforced with a kevlar weave."
 	icon_state = "bio_security"
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/bio_suit/security
+	name = "reinforced hazard suit"
+	desc = "A CBRN hazard suit that's been paired with a ballistic vest. Surprisingly lightweight for all of its bulk."
 	icon_state = "bio_security"
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
 
 //Janitor's biosuit, grey with purple arms
 /obj/item/clothing/head/bio_hood/janitor
