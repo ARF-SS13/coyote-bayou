@@ -4,6 +4,8 @@
 	name = "eevee"
 	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
 	icon = 'modular_coyote/icons/mob/pokemon64.dmi'
+	//The size of the icon file in use. Used to center sprites on their respective tiles.
+	var/icon_size = 64
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
@@ -21,8 +23,8 @@
 	response_harm_simple = "kick"
 	attack_verb_continuous = "nuzzles"
 	attack_verb_simple = "nuzzle"
-	pixel_x = -16
 	turns_per_move = 5
+	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	//Sprites are already rotated for lying down while resting.
 	rotate_on_lying = FALSE
 	//Can use hands
@@ -38,11 +40,14 @@
 	//List of passive traits/flags
 	var/list/p_traits = list()
 	//Moves/Abilities that this mob is currently using
-	var/list/active_moves = list() 	//Moves that are passive or toggles can be found here
+	var/list/active_moves = list()
 
 /mob/living/simple_animal/passive/pokemon/Initialize()
 	. = ..()
-	verbs |= /mob/living/simple_animal/passive/pokemon/proc/move_rest
+	var/matrix/Mat = transform
+	transform = Mat.Translate(-(icon_size/4),0) //Adjust pixel offset by -1/4 of their icon's width
+	var/datum/action/innate/pokemon_rest/R = new(src)
+	R.Grant(src)
 	regenerate_icons()
 
 /mob/living/simple_animal/passive/pokemon/Life()
@@ -50,7 +55,6 @@
 	regenerate_icons()
 
 /mob/living/simple_animal/passive/pokemon/regenerate_icons()
-	pixel_x = initial(pixel_x)
 	if(stat == DEAD)
 		icon_state = icon_dead
 	else if(stat != DEAD && !CHECK_MOBILITY(src, MOBILITY_STAND))//Not dead but can't move
@@ -62,86 +66,6 @@
 	. = ..()
 	regenerate_icons()
 
-/mob/living/simple_animal/passive/pokemon/proc/move_rest()	//Global move that every pokemon knows. Allows them to heal
-	set name = "Rest"											//without needing complex medical code.
-	set category = "Pokemon"
-	set desc = "Lie down and rest in order to slowly heal or just relax."
-	resting = !resting
-	to_chat(src,"<span class='notice'>You are now [resting ? "resting" : "getting up"].</span>")
-	if(resting && health < maxHealth)
-		to_chat(src,"<span class='green'>You feel your wounds mending as you rest.</span>")
-	update_mobility()
-/*
-/mob/living/simple_animal/passive/pokemon/eevee
-	name = "Eevee"
-	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
-	icon_state = "eevee"
-	icon_living = "eevee"
-	icon_dead = "eevee_d"
-
-/mob/living/simple_animal/passive/pokemon/vaporeon
-	name = "Vaporeon"
-	desc = "Lives close to water. Its long tail is ridged with a fin which is often mistaken for a mermaid's."
-	icon_state = "vaporeon"
-	icon_living = "vaporeon"
-	icon_dead = "vaporeon_d"
-
-/mob/living/simple_animal/passive/pokemon/glaceon
-	name = "Glaceon"
-	desc = "As a protective technique, it can completely freeze its fur to make its hairs stand like needles."
-	icon_state = "glaceon"
-	icon_living = "glaceon"
-	icon_dead = "glaceon_d"
-
-/mob/living/simple_animal/passive/pokemon/leafeon
-	name = "Leafeon"
-	desc = "Just like a plant, it uses photosynthesis. As a result, it is always enveloped in clear air."
-	icon_state = "leafeon"
-	icon_living = "leafeon"
-	icon_dead = "leafeon_d"
-
-/mob/living/simple_animal/passive/pokemon/flareon
-	name = "Flareon"
-	desc = "When storing thermal energy in its body, its temperature could soar to over 1600 degrees."
-	icon_state = "flareon"
-	icon_living = "flareon"
-	icon_dead = "flareon_d"
-
-/mob/living/simple_animal/passive/pokemon/jolteon
-	name = "Jolteon"
-	desc = "It accumulates negative ions in the atmosphere to blast out 10000-volt lightning bolts."
-	icon_state = "jolteon"
-	icon_living = "jolteon"
-	icon_dead = "jolteon_d"
-
-/mob/living/simple_animal/passive/pokemon/sylveon
-	name = "Sylveon"
-	desc = "It sends a soothing aura from its ribbonlike feelers to calm fights."
-	icon_state = "sylveon"
-	icon_living = "sylveon"
-	icon_dead = "sylveon_d"
-
-/mob/living/simple_animal/passive/pokemon/espeon
-	name = "Espeon"
-	desc = "It uses the fine hair that covers its body to sense air currents and predict its enemy's actions."
-	icon_state = "espeon"
-	icon_living = "espeon"
-	icon_dead = "espeon_d"
-
-/mob/living/simple_animal/passive/pokemon/umbreon
-	name = "Umbreon"
-	desc = "When agitated, this Pokemon protects itself by spraying poisonous sweat from its pores."
-	icon_state = "umbreon"
-	icon_living = "umbreon"
-	icon_dead = "umbreon_d"
-
-/mob/living/simple_animal/passive/pokemon/absol
-	name = "Absol"
-	desc = "Every time Absol appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster Pok�mon."
-	icon_state = "absol"
-	icon_living = "absol"
-	icon_dead = "absol_d"
-*/
 ///////////////////////////////
 //////ALPHABETICAL PLEASE//////
 ///////////////////////////////
@@ -470,6 +394,7 @@
 	if(stat == CONSCIOUS)
 		if(udder && prob(5))
 			udder.add_reagent("milk", rand(5, 10))
+
 /* TODO fix milking i guess
 /mob/living/simple_animal/passive/pokemon/miltank/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/weapon/reagent_containers/glass/G = O
@@ -482,6 +407,7 @@
 			user << "<font color='red'> The udder is dry. Wait a bit longer... </font>"
 		..()
 */
+
 /mob/living/simple_animal/passive/pokemon/poochyena
 	name = "poochyena"
 	icon_state = "poochyena"
