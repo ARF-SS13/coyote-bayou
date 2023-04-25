@@ -5,8 +5,9 @@
 #define WS_TARGET_IGNORE_SELF (1<<2) // target self
 #define WS_TARGET_MOBS (1<<3) // hit all mobs on the turf
 #define WS_TARGET_STRUCTURES (1<<4) // hit objects on the turf
+#define WS_TARGET_MACHINES (1<<5) // hit machines on the turf
 //#define WS_TARGET_PREFERED_FIRST (1<<6) // If we hit multiple objects, hit the prefered one first
-#define WS_TARGET_ALL (1<<8) // Hit all objects on the turf
+#define WS_TARGET_ALL (1<<8) // Hit all objects on the turf -- probably dont use this
 
 #define WS_DAMAGE_FALLOFF_FAR_HIGH (1<<0) // damage falls off the further away the target is
 #define WS_DAMAGE_FALLOFF_CLOSE_HIGH (1<<1) // damage falls off the closer the target is
@@ -34,7 +35,7 @@
 	/// List of which intents trigger this thing
 	var/list/intent_flags = list(INTENT_HARM)
 	/// targetting flags
-	var/target_flags = WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES
+	var/target_flags = WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
 	/// target mode
 	var/target_mode = WS_CLOSEST_POPULATED_TILE
 	/// damage flags
@@ -249,6 +250,9 @@
 			continue
 		//var/isprefd = is_type_in_list(atomhere, prefered_types)
 		if((CHECK_BITFIELD(target_flags, WS_TARGET_STRUCTURES) && isstructure(atomhere)))
+			. |= atomhere
+			continue
+		if((CHECK_BITFIELD(target_flags, WS_TARGET_MACHINES) && ismachinery(atomhere)))
 			. |= atomhere
 			continue
 		if((CHECK_BITFIELD(target_flags, WS_TARGET_MOBS) && isliving(atomhere)))
