@@ -13,6 +13,8 @@
 		if(!CHECK_MOBILITY(L, MOBILITY_USE) && !(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
 			to_chat(L, span_warning("You are unable to swing [src] right now!"))
 			return
+		if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACKCHAIN, user, target, params) & COMPONENT_ITEM_NO_ATTACK)
+			return
 		if(min_reach && GET_DIST_EUCLIDEAN(user, target) < min_reach)
 			return
 	. = attackchain_flags
@@ -33,6 +35,8 @@
 		if(!CHECK_MOBILITY(L, MOBILITY_USE))
 			to_chat(L, span_warning("You are unable to raise [src] right now!"))
 			return
+		if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACKCHAIN, user, target, params) & COMPONENT_ITEM_NO_ATTACK)
+			return
 		if(max_reach >= 2 && has_range_for_melee_attack(target, user))
 			return ranged_melee_attack(target, user, params)
 	return afterattack(target, user, FALSE, params)
@@ -49,18 +53,18 @@
 	if(!(attackchain_flags & ATTACK_IGNORE_CLICKDELAY) && !CheckAttackCooldown(user, A))
 		return STOP_ATTACK_PROC_CHAIN
 
-/atom/proc/attackby(obj/item/W, mob/user, params)
+/atom/proc/attackby(obj/item/W, mob/user, params, damage_override)
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return STOP_ATTACK_PROC_CHAIN
 
-/obj/attackby(obj/item/I, mob/living/user, params)
+/obj/attackby(obj/item/I, mob/living/user, params, damage_override)
 	. = ..()
 	if(. & STOP_ATTACK_PROC_CHAIN)
 		return
 	if(obj_flags & CAN_BE_HIT)
-		. |= I.attack_obj(src, user)
+		. |= I.attack_obj(src, user, damage_override)
 	else
-		. |= I.attack_obj_nohit(src, user)
+		. |= I.attack_obj_nohit(src, user, damage_override)
 
 /mob/living/attackby(obj/item/I, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()
@@ -81,13 +85,13 @@
  * * attackchain_Flags - see [code/__DEFINES/_flags/return_values.dm]
  * * damage_multiplier - what to multiply the damage by
  */
-/obj/item/proc/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+/obj/item/proc/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_override)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
 	if(item_flags & NOBLUDGEON)
 		return
-	if(force && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
+	if((force || damage_override) && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
@@ -140,29 +144,36 @@
 	M.lastattackerckey = user.ckey
 
 	user.do_attack_animation(M)
-	M.attacked_by(src, user, attackchain_flags, damage_multiplier, damage_addition = force_modifier)
+	if(damage_override)
+		var/dammod = min(damage_override / max(1, force), 1)
+		damage_override += (force_modifier * dammod)
+	M.attacked_by(src, user, attackchain_flags, damage_multiplier, damage_addition = force_modifier, damage_override = damage_override)
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
 //the equivalent of the standard version of attack() but for object targets.
-/obj/item/proc/attack_obj(obj/O, mob/living/user)
+/obj/item/proc/attack_obj(obj/O, mob/living/user, damage_override)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 	if(item_flags & NOBLUDGEON)
 		return
 	user.do_attack_animation(O)
-	O.attacked_by(src, user)
+	O.attacked_by(src, user, NONE, 1, 0, damage_override)
 
-/obj/item/proc/attack_obj_nohit(obj/O, mob/living/user)
+/obj/item/proc/attack_obj_nohit(obj/O, mob/living/user, damage_override)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ_NOHIT, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 
 /atom/movable/proc/attacked_by()
 	return
 
-/obj/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0)
-	var/totitemdamage = (I.force * damage_multiplier) + damage_addition
+/obj/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0, damage_override)
+	var/totitemdamage
+	if(damage_override)
+		totitemdamage = damage_override
+	else
+		totitemdamage = (I.force * damage_multiplier) + damage_addition
 	var/bad_trait
 
 	var/stamloss = user.getStaminaLoss()
@@ -188,9 +199,13 @@
 		log_combat(user, src, "attacked", I)
 	take_damage(totitemdamage, I.damtype, "melee", 1, attacked_by = user)
 
-/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0)
+/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0, damage_override)
 	var/list/block_return = list()
-	var/totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
+	var/totitemdamage
+	if(damage_override)
+		totitemdamage = damage_override
+	else
+		totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
 	if((user != src) && mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_IS_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, null, block_return) & BLOCK_SUCCESS)
 		return FALSE
 	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
@@ -207,7 +222,7 @@
 					user.add_mob_blood(src)
 		return TRUE //successful attack
 
-/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition)
+/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
 	if(I.force < force_threshold || I.damtype == STAMINA)
 		playsound(src, 'sound/weapons/tap.ogg', I.get_clamped_volume(), 1, -1)
 	else
@@ -227,19 +242,10 @@
 		stam_mobility_mult = LYING_DAMAGE_PENALTY
 	. *= stam_mobility_mult
 
-	var/bad_trait
-	if(!(I.item_flags & NO_COMBAT_MODE_FORCE_MODIFIER))
-		if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-			bad_trait = SKILL_COMBAT_MODE //blacklist combat skills.
-			if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
-				. *= 0.8
-		else if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-			. *= 1.2
-
 	if(!user.mind || !I.used_skills)
 		return
 	if(.)
-		. = user.mind.item_action_skills_mod(I, ., I.skill_difficulty, SKILL_ATTACK_MOB, bad_trait)
+		. = user.mind.item_action_skills_mod(I, ., I.skill_difficulty, SKILL_ATTACK_MOB)
 	for(var/skill in I.used_skills)
 		if(!(SKILL_TRAIN_ATTACK_MOB in I.used_skills[skill]))
 			continue
@@ -263,13 +269,15 @@
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 
 
-/obj/item/proc/has_range_for_melee_attack(atom/target, mob/living/user)
+/obj/item/proc/has_range_for_melee_attack(atom/target, mob/living/user, reach_min, reach_max)
 	if(user.z != target.z)
 		return FALSE
+	var/minimum_reach = reach_min ? reach_min : min_reach
+	var/maximum_reach = reach_max ? reach_max : max_reach
 	var/euclidean_distance = GET_DIST_EUCLIDEAN(user, target)
-	if(euclidean_distance < max(min_reach, 2) || round(euclidean_distance) > max_reach)
+	if(euclidean_distance < max(minimum_reach, 2) || round(euclidean_distance) > maximum_reach)
 		return FALSE // No need to waste time calculating the path.
-	return user.euclidian_reach(target, max_reach, REACH_ATTACK) == get_turf(target)
+	return user.euclidian_reach(target, maximum_reach, REACH_ATTACK) == get_turf(target)
 
 
 /obj/item/proc/ranged_melee_attack(atom/target, mob/living/user, params)
