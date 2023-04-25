@@ -364,7 +364,7 @@
 /mob/living/simple_animal/hostile/renegade/traitor
 	name = "Brotherhood of Steel Traitor"
 	desc = "A former Brotherhood of Steel Paladin, now turn coat for the Renegades. You imagine this is who is responsible for the siege."
-	icon = 'icons/fallout/misc/mobs/humans/ghouls.dmi'
+	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
 	icon_state = "rebound_chosen"
 	icon_living = "rebound_chosen"
 	icon_dead = "mercenary_ghoul_dead"
@@ -389,7 +389,7 @@
 		/obj/item/book/granter/trait/pa_wear,
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/advanced_crafting_components/alloys,
-		/obj/item/stack/sheet/plasteel/five
+		/obj/item/stack/sheet/plasteel/five,
 		/obj/effect/spawner/lootdrop/f13/armor/tier5
 		)
 	speak = list(
@@ -446,8 +446,8 @@
 	speak_emote = list("says")
 	speak_chance = 1
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/medical/vault/meds, 
-		/obj/item/gun/ballistic/revolver/m29, 
+		/obj/effect/spawner/lootdrop/f13/medical/vault/meds,
+		/obj/item/gun/ballistic/revolver/m29,
 		/obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
 
 	projectile_sound_properties = list(
