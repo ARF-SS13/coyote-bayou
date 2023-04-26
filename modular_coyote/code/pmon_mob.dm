@@ -48,7 +48,7 @@
 /mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
 	if(icon_size_width>32)
-		transform = transform.Translate(-((icon_size_width-32)/2),0) //Adjust pixel offset by -1/4 of their icon's width
+		transform = transform.Translate(-((icon_size_width-32)/2),0) //Adjust pixel offset left by half of their icon's width above 32
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
