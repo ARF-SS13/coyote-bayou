@@ -1,4 +1,4 @@
-#define ispokemon(A)		istype(A, /mob/living/simple_animal/passive/pokemon)
+#define ispokemon(A)		istype(A, /mob/living/simple_animal/pokemon)
 
 #define P_TYPE_FIRE 	"fire"
 #define P_TYPE_WATER 	"water"
@@ -29,6 +29,13 @@
 #define M_INVIS			"invisible"
 
 //Don't spawn this pokemon or show it in lists.
-#define P_TRAIT_BLACKLIST	"blacklist"
+#define P_TRAIT_BLACKLIST	"blacklisted"
 //This pokemon can be buckled to, ridden, and steered like a vehicle
 #define P_TRAIT_RIDEABLE	"rideable"
+
+//List of pokemon subtypes that a player can choose from when spawning in. Exclude pokemon by giving them the P_TRAIT_BLACKLIST trait.
+GLOBAL_LIST_EMPTY(pokemon_spawnable)
+//List of all pokemon on the whole map.
+GLOBAL_LIST_EMPTY(pokemon_list)
+//List of available spawnpoints for pokemon to choose from
+GLOBAL_LIST_EMPTY(pokemon_spawnpoints)

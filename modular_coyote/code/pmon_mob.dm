@@ -1,11 +1,11 @@
 //Pokemon!
 
-/mob/living/simple_animal/passive/pokemon
+/mob/living/simple_animal/pokemon
 	name = "eevee"
 	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
 	icon = 'modular_coyote/icons/mob/pokemon64.dmi'
-	//The size of the icon file in use. Used to center sprites on their respective tiles.
-	var/icon_size = 64
+	//The width of the icon file in use. Used to center sprites on their respective tiles.
+	var/icon_size_width = 64
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
@@ -14,7 +14,7 @@
 	maxbodytemp = T0C + 40
 	health = 200
 	maxHealth = 200
-	healable = TRUE
+	speed = 0.5
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "bops"
@@ -24,16 +24,15 @@
 	attack_verb_continuous = "nuzzles"
 	attack_verb_simple = "nuzzle"
 	turns_per_move = 5
+	pass_flags = PASSTABLE //Impossible to climb tables so just pass over them for now
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	//Sprites are already rotated for lying down while resting.
 	rotate_on_lying = FALSE
 	//Can use hands
 	dextrous = TRUE
-	//Global cooldown used for some moves to avoid spam/lag.
-	var/move_cooldown_time = 100
-	//Is this pokemon on cooldown for using another move/ability?
-	var/move_cooldown = FALSE
-	//The pokemon-types that this mob has. Used to auto-generate moves(powers) and some other attributes.
+	//Need this to have the hands appear on the HUD
+	held_items = list(null, null)
+	//The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
 	var/list/p_types = list()
 	//Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
 	var/list/additional_moves = list()
@@ -41,20 +40,24 @@
 	var/list/p_traits = list()
 	//Moves/Abilities that this mob is currently using
 	var/list/active_moves = list()
+	//If this is filled in by the player, it overrides their default description. Can be imported from the player's current character slot
+	var/flav_text = null
+	//Roleplaying preferences
+	var/ooc_text = null
 
-/mob/living/simple_animal/passive/pokemon/Initialize()
+/mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
-	var/matrix/Mat = transform
-	transform = Mat.Translate(-(icon_size/4),0) //Adjust pixel offset by -1/4 of their icon's width
+	transform = transform.Translate(-(icon_size_width/4),0) //Adjust pixel offset by -1/4 of their icon's width
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
+	GLOB.pokemon_list += src
 
-/mob/living/simple_animal/passive/pokemon/Life()
+/mob/living/simple_animal/pokemon/Life()
 	. = ..()
 	regenerate_icons()
 
-/mob/living/simple_animal/passive/pokemon/regenerate_icons()
+/mob/living/simple_animal/pokemon/regenerate_icons()
 	if(stat == DEAD)
 		icon_state = icon_dead
 	else if(stat != DEAD && !CHECK_MOBILITY(src, MOBILITY_STAND))//Not dead but can't move
@@ -62,15 +65,19 @@
 	else
 		icon_state = icon_living
 
-/mob/living/simple_animal/passive/pokemon/update_mobility()
+/mob/living/simple_animal/pokemon/update_mobility()
 	. = ..()
 	regenerate_icons()
+
+/mob/living/simple_animal/pokemon/Destroy()
+	GLOB.pokemon_list -= src
+	. = ..()
 
 ///////////////////////////////
 //////ALPHABETICAL PLEASE//////
 ///////////////////////////////
 
-/mob/living/simple_animal/passive/pokemon/absol
+/mob/living/simple_animal/pokemon/absol
 	name = "absol"
 	icon_state = "absol"
 	icon_living = "absol"
@@ -78,7 +85,7 @@
 	p_types = list(P_TYPE_DARK)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/aggron
+/mob/living/simple_animal/pokemon/aggron
 	name = "aggron"
 	icon_state = "aggron"
 	icon_living = "aggron"
@@ -87,7 +94,7 @@
 	mob_size = MOB_SIZE_LARGE
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/alolanvulpix
+/mob/living/simple_animal/pokemon/alolanvulpix
 	name = "alolan vulpix"
 	icon_state = "alolanvulpix"
 	icon_living = "alolanvulpix"
@@ -96,7 +103,7 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/ampharos
+/mob/living/simple_animal/pokemon/ampharos
 	name = "ampharos"
 	icon_state = "ampharos"
 	icon_living = "ampharos"
@@ -104,14 +111,14 @@
 	p_types = list(P_TYPE_ELEC)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/passive/pokemon/braixen
+/mob/living/simple_animal/pokemon/braixen
 	name = "braixen"
 	icon_state = "braixen"
 	icon_living = "braixen"
 	icon_dead = "braixen_d"
 	p_types = list(P_TYPE_FIRE)
 
-/mob/living/simple_animal/passive/pokemon/celebi
+/mob/living/simple_animal/pokemon/celebi
 	name = "celebi"
 	icon_state = "celebi"
 	icon_living = "celebi"
@@ -119,7 +126,7 @@
 	p_types = list(P_TYPE_PSYCH, P_TYPE_GRASS)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/charmander
+/mob/living/simple_animal/pokemon/charmander
 	name = "charmander"
 	icon_state = "charmander"
 	icon_living = "charmander"
@@ -128,16 +135,16 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/ditto
+/mob/living/simple_animal/pokemon/ditto
 	name = "ditto"
 	icon_state = "ditto"
 	icon_living = "ditto"
 	icon_dead = "ditto_d"
 	p_types = list(P_TYPE_NORM)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/passive/pokemon/proc/move_imposter)//amogus
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)//amogus
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/dragonair
+/mob/living/simple_animal/pokemon/dragonair
 	name = "dragonair"
 	desc = "A Dragonair stores an enormous amount of energy inside its body. It is said to alter the weather around it by loosing energy from the crystals on its neck and tail."
 	icon_state = "dragonair"
@@ -145,20 +152,20 @@
 	icon_dead = "dragonair_d"
 	p_types = list(P_TYPE_DRAGON)
 //	aquatic_movement = 1
-//	additional_moves = list(/mob/living/simple_animal/passive/pokemon/proc/move_fly,
-//							/mob/living/simple_animal/passive/pokemon/proc/move_hover)
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//							/mob/living/simple_animal/pokemon/proc/move_hover)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/passive/pokemon/dragonair/shiny
+/mob/living/simple_animal/pokemon/dragonair/shiny
 	name = "shiny dragonair"
 	icon_state = "shinydragonair"
 	icon_living = "shinydragonair"
 	icon_dead = "shinydragonair_d"
 
-/mob/living/simple_animal/passive/pokemon/dragonite
+/mob/living/simple_animal/pokemon/dragonite
 	name = "dragonite"
-	desc = "It can circle the globe in just 16 hours. It is a kindhearted Pok�mon that leads lost and foundering ships in a storm to the safety of land."
+	desc = "It can circle the globe in just 16 hours. It is a kindhearted Pokemon that leads lost and foundering ships in a storm to the safety of land."
 	icon_state = "dragonite"
 	icon_living = "dragonite"
 	icon_dead = "dragonite_d"
@@ -167,7 +174,7 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/passive/pokemon/dratini
+/mob/living/simple_animal/pokemon/dratini
 	name = "dratini"
 	desc = "A Dratini continually molts and sloughs off its old skin. It does so because the life energy within its body steadily builds to reach uncontrollable levels."
 	icon_state = "dratini"
@@ -178,9 +185,9 @@
 	p_types = list(P_TYPE_DRAGON)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/eevee
+/mob/living/simple_animal/pokemon/eevee
 	name = "eevee"
-	desc = "Eevee has an unstable genetic makeup that suddenly mutates due to its environment. Radiation from various stones causes this Pok�mon to evolve."
+	desc = "Eevee has an unstable genetic makeup that suddenly mutates due to its environment. Radiation from various stones causes this Pokemon to evolve."
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
@@ -188,7 +195,7 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/espeon
+/mob/living/simple_animal/pokemon/espeon
 	name = "espeon"
 	desc = "Espeon is extremely loyal to any trainer it considers to be worthy. It is said to have developed precognitive powers to protect its trainer from harm."
 	icon_state = "espeon"
@@ -197,7 +204,7 @@
 	p_types = list(P_TYPE_PSYCH)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/fennekin
+/mob/living/simple_animal/pokemon/fennekin
 	name = "fennekin"
 	icon_state = "fennekin"
 	icon_living = "fennekin"
@@ -206,7 +213,7 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/flaaffy
+/mob/living/simple_animal/pokemon/flaaffy
 	name = "flaaffy"
 	icon_state = "flaaffy"
 	icon_living = "flaaffy"
@@ -214,7 +221,7 @@
 	p_types = list(P_TYPE_ELEC)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/flareon
+/mob/living/simple_animal/pokemon/flareon
 	name = "flareon"
 	desc = "Flareon's fluffy fur releases heat into the air so that its body does not get excessively hot. Its body temperature can rise to a maximum of 1,650 degrees F."
 	icon_state = "flareon"
@@ -223,19 +230,19 @@
 	p_types = list(P_TYPE_FIRE)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/flygon
+/mob/living/simple_animal/pokemon/flygon
 	name = "flygon"
 	desc = "The flapping of its wings sounds something like singing. Those lured by the sound are enveloped in a sandstorm, becoming Flygon's prey."
 	icon_state = "flygon"
 	icon_living = "flygon"
 	icon_dead = "flygon_d"
 	p_types = list(P_TYPE_GROUND, P_TYPE_DRAGON)
-//	additional_moves = list(/mob/living/simple_animal/passive/pokemon/proc/move_fly,
-//							/mob/living/simple_animal/passive/pokemon/proc/move_hover)
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//							/mob/living/simple_animal/pokemon/proc/move_hover)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/passive/pokemon/furret
+/mob/living/simple_animal/pokemon/furret
 	name = "furret"
 	icon_state = "furret"
 	icon_living = "furret"
@@ -243,29 +250,29 @@
 	p_types = list(P_TYPE_NORM)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/gallade
+/mob/living/simple_animal/pokemon/gallade
 	name = "gallade"
 	icon_state = "gallade"
 	icon_living = "gallade"
 	icon_dead = "gallade_d"
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FIGHT)
 
-/mob/living/simple_animal/passive/pokemon/gardevoir
+/mob/living/simple_animal/pokemon/gardevoir
 	name = "gardevoir"
 	icon_state = "gardevoir"
 	icon_living = "gardevoir"
 	icon_dead = "gardevoir_d"
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 
-/mob/living/simple_animal/passive/pokemon/gastly
+/mob/living/simple_animal/pokemon/gastly
 	name = "gastly"
-	desc = "Almost invisible, this gaseous Pok�mon cloaks the target and puts it to sleep without notice."
+	desc = "Almost invisible, this gaseous Pokemon cloaks the target and puts it to sleep without notice."
 	icon_state = "gastly"
 	icon_living = "gastly"
 	icon_dead = "gastly_d"
 	p_types = list(P_TYPE_GHOST, P_TYPE_POISON)
 
-/mob/living/simple_animal/passive/pokemon/gengar
+/mob/living/simple_animal/pokemon/gengar
 	name = "gengar"
 	desc = "It hides in shadows. It is said that if Gengar is hiding, it cools the area by nearly 10 degrees F."
 	icon_state = "gengar"
@@ -274,7 +281,7 @@
 	p_types = list(P_TYPE_GHOST, P_TYPE_POISON)
 
 
-/mob/living/simple_animal/passive/pokemon/glaceon
+/mob/living/simple_animal/pokemon/glaceon
 	name = "glaceon"
 	desc = "By controlling its body heat, it can freeze the atmosphere around it to make a diamond-dust flurry."
 	icon_state = "glaceon"
@@ -283,7 +290,7 @@
 	p_types = list(P_TYPE_ICE)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/haunter
+/mob/living/simple_animal/pokemon/haunter
 	name = "haunter"
 	desc = "If you get the feeling of being watched in darkness when nobody is around, Haunter may be there."
 	icon_state = "haunter"
@@ -291,17 +298,17 @@
 	icon_dead = "haunter_d"
 	p_types = list(P_TYPE_GHOST, P_TYPE_POISON)
 
-/mob/living/simple_animal/passive/pokemon/jirachi
+/mob/living/simple_animal/pokemon/jirachi
 	name = "jirachi"
 	desc = "Generations have believed that any wish written on a note on its head will come true when it awakens."
 	icon_state = "jirachi"
 	icon_living = "jirachi"
 	icon_dead = "jirachi_d"
 	p_types = list(P_TYPE_STEEL, P_TYPE_PSYCH)
-//	additional_moves = list(/mob/living/simple_animal/passive/pokemon/proc/move_fly,
-//							/mob/living/simple_animal/passive/pokemon/proc/move_hover)
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//							/mob/living/simple_animal/pokemon/proc/move_hover)
 
-/mob/living/simple_animal/passive/pokemon/jolteon
+/mob/living/simple_animal/pokemon/jolteon
 	name = "jolteon"
 	desc = "Its cells generate weak power that is amplified by its fur's static electricity to drop thunderbolts. The bristling fur is made of electrically charged needles."
 	icon_state = "jolteon"
@@ -310,11 +317,11 @@
 	p_types = list(P_TYPE_ELEC)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/jolteon/bud
+/mob/living/simple_animal/pokemon/jolteon/bud
 	name = "Bud"
 	active_moves = list(M_SHOCK) //Shocks you by default
 
-/mob/living/simple_animal/passive/pokemon/kirlia
+/mob/living/simple_animal/pokemon/kirlia
 	name = "kirlia"
 	icon_state = "kirlia"
 	icon_living = "kirlia"
@@ -322,7 +329,7 @@
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/larvitar
+/mob/living/simple_animal/pokemon/larvitar
 	name = "larvitar"
 	desc = "It is born deep underground. It can't emerge until it has entirely consumed the soil around it."
 	icon_state = "larvitar"
@@ -331,7 +338,7 @@
 	p_types = list(P_TYPE_ROCK, P_TYPE_GROUND)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/leafeon
+/mob/living/simple_animal/pokemon/leafeon
 	name = "leafeon"
 	icon_state = "leafeon"
 	icon_living = "leafeon"
@@ -339,7 +346,7 @@
 	p_types = list(P_TYPE_GRASS)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/linoone
+/mob/living/simple_animal/pokemon/linoone
 	name = "linoone"
 	icon_state = "linoone"
 	icon_living = "linoone"
@@ -348,7 +355,7 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/growlithe
+/mob/living/simple_animal/pokemon/growlithe
 	name = "growlithe"
 	icon_state = "growlithe"
 	icon_living = "growlithe"
@@ -357,7 +364,7 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/mareep
+/mob/living/simple_animal/pokemon/mareep
 	name = "mareep"
 	icon_state = "mareep"
 	icon_living = "mareep"
@@ -367,7 +374,7 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/mightyena
+/mob/living/simple_animal/pokemon/mightyena
 	name = "mightyena"
 	icon_state = "mightyena"
 	icon_living = "mightyena"
@@ -375,7 +382,7 @@
 	p_types = list(P_TYPE_DARK)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/miltank
+/mob/living/simple_animal/pokemon/miltank
 	name = "miltank"
 	icon_state = "miltank"
 	icon_living = "miltank"
@@ -384,19 +391,19 @@
 	var/datum/reagents/udder = null
 //	movement_cooldown = 3
 
-/mob/living/simple_animal/passive/pokemon/miltank/Initialize()
+/mob/living/simple_animal/pokemon/miltank/Initialize()
 	udder = new(50)
 	udder.my_atom = src
 	..()
 
-/mob/living/simple_animal/passive/pokemon/miltank/Life()
+/mob/living/simple_animal/pokemon/miltank/Life()
 	. = ..()
 	if(stat == CONSCIOUS)
 		if(udder && prob(5))
 			udder.add_reagent("milk", rand(5, 10))
 
 /* TODO fix milking i guess
-/mob/living/simple_animal/passive/pokemon/miltank/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/mob/living/simple_animal/pokemon/miltank/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	var/obj/item/weapon/reagent_containers/glass/G = O
 	if(stat == CONSCIOUS && istype(G) && G.is_open_container())
 		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>")
@@ -408,7 +415,7 @@
 		..()
 */
 
-/mob/living/simple_animal/passive/pokemon/poochyena
+/mob/living/simple_animal/pokemon/poochyena
 	name = "poochyena"
 	icon_state = "poochyena"
 	icon_living = "poochyena"
@@ -417,7 +424,7 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/sylveon
+/mob/living/simple_animal/pokemon/sylveon
 	name = "sylveon"
 	desc = "Sylveon, the Intertwining Pokemon. Sylveon affectionately wraps its ribbon-like feelers around its Trainer's arm as they walk together."
 	icon_state = "sylveon"
@@ -426,7 +433,7 @@
 	p_types = list(P_TYPE_FAIRY)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/umbreon
+/mob/living/simple_animal/pokemon/umbreon
 	name = "umbreon"
 	icon_state = "umbreon"
 	icon_dead = "umbreon_d"
@@ -434,7 +441,7 @@
 	p_types = list(P_TYPE_DARK)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/vulpix
+/mob/living/simple_animal/pokemon/vulpix
 	name = "vulpix"
 	icon_state = "vulpix"
 	icon_living = "vulpix"
@@ -443,7 +450,7 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/tentacruel
+/mob/living/simple_animal/pokemon/tentacruel
 	name = "tentacruel"
 	icon_state = "tentacruel"
 	icon_living = "tentacruel"
@@ -452,7 +459,7 @@
 	p_types = list(P_TYPE_WATER)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/thievul
+/mob/living/simple_animal/pokemon/thievul
 	name = "thievul"
 	icon_state = "thievul"
 	icon_living = "thievul"
@@ -460,16 +467,16 @@
 	p_types = list(P_TYPE_DARK)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/ninetales
+/mob/living/simple_animal/pokemon/ninetales
 	name = "ninetales"
 	icon_state = "ninetales"
 	icon_living = "ninetales"
 	icon_dead = "ninetales_d"
 	p_types = list(P_TYPE_FIRE)
-//	additional_moves = list(/mob/living/simple_animal/passive/pokemon/proc/move_telepathy)
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_telepathy)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/ponyta
+/mob/living/simple_animal/pokemon/ponyta
 	name = "ponyta"
 	icon_state = "ponyta"
 	icon_living = "ponyta"
@@ -479,7 +486,7 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/zubat
+/mob/living/simple_animal/pokemon/zubat
 	name = "zubat"
 	icon_state = "zubat"
 	icon_living = "zubat"
@@ -488,7 +495,7 @@
 	p_types = list(P_TYPE_FLY, P_TYPE_POISON)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/tangela
+/mob/living/simple_animal/pokemon/tangela
 	name = "tangela"
 	icon_state = "tangela"
 	icon_living = "tangela"
@@ -496,14 +503,14 @@
 	p_types = list(P_TYPE_GRASS, P_TYPE_POISON)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/pinsir
+/mob/living/simple_animal/pokemon/pinsir
 	name = "pinsir"
 	icon_state = "pinsir"
 	icon_living = "pinsir"
 	icon_dead = "pinsir_d"
 	p_types = list(P_TYPE_BUG)
 
-/mob/living/simple_animal/passive/pokemon/omanyte
+/mob/living/simple_animal/pokemon/omanyte
 	name = "omanyte"
 	icon_state = "omanyte"
 	icon_living = "omanyte"
@@ -512,7 +519,7 @@
 	p_types = list(P_TYPE_ROCK, P_TYPE_WATER)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/magmar
+/mob/living/simple_animal/pokemon/magmar
 	name = "magmar"
 	icon_state = "magmar"
 	icon_living = "magmar"
@@ -520,7 +527,7 @@
 //	movement_cooldown = 3
 	p_types = list(P_TYPE_FIRE)
 
-/mob/living/simple_animal/passive/pokemon/magicarp
+/mob/living/simple_animal/pokemon/magicarp
 	name = "magicarp"
 	icon_state = "magicarp"
 	icon_living = "magicarp"
@@ -530,7 +537,7 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/lapras
+/mob/living/simple_animal/pokemon/lapras
 	name = "lapras"
 	icon_state = "lapras"
 	icon_living = "lapras"
@@ -539,14 +546,14 @@
 	p_types = list(P_TYPE_WATER)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/kabuto
+/mob/living/simple_animal/pokemon/kabuto
 	name = "kabuto"
 	icon_state = "Kabuto"
 	icon_living = "Kabuto"
 	icon_dead = "Kabuto_d"
 	p_types = list(P_TYPE_ROCK, P_TYPE_WATER)
 
-/mob/living/simple_animal/passive/pokemon/aerodactyl
+/mob/living/simple_animal/pokemon/aerodactyl
 	name = "aerodactyl"
 	icon_state = "Aerodactyl"
 	icon_living = "Aerodactyl"
@@ -554,14 +561,14 @@
 	p_types = list(P_TYPE_ROCK, P_TYPE_FLY)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/lickitung
+/mob/living/simple_animal/pokemon/lickitung
 	name = "lickitung"
 	icon_state = "lickitung"
 	icon_living = "lickitung"
 	icon_dead = "lickitung_d"
 	p_types = list(P_TYPE_NORM)
 
-/mob/living/simple_animal/passive/pokemon/cubone
+/mob/living/simple_animal/pokemon/cubone
 	name = "cubone"
 	icon_state = "cubone"
 	icon_living = "cubone"
@@ -569,28 +576,28 @@
 	p_types = list(P_TYPE_GROUND)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/mew
+/mob/living/simple_animal/pokemon/mew
 	name = "mew"
 	icon_state = "mew"
 	icon_living = "mew"
 	icon_dead = "mew_d"
 	p_types = list(P_TYPE_PSYCH)
-//	additional_moves = list(/mob/living/simple_animal/passive/pokemon/proc/move_fly,
-//							/mob/living/simple_animal/passive/pokemon/proc/move_hover,
-//							/mob/living/simple_animal/passive/pokemon/proc/move_imposter,
-//							/mob/living/simple_animal/passive/pokemon/proc/move_invisibility)
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//							/mob/living/simple_animal/pokemon/proc/move_hover,
+//							/mob/living/simple_animal/pokemon/proc/move_imposter,
+//							/mob/living/simple_animal/pokemon/proc/move_invisibility)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/mewtwo
+/mob/living/simple_animal/pokemon/mewtwo
 	name = "mewtwo"
 	icon_state = "mewtwo"
 	icon_living = "mewtwo"
 	icon_dead = "mewtwo_d"
 	p_types = list(P_TYPE_PSYCH)
-//	additional_moves = list(/mob/living/simple_animal/passive/pokemon/proc/move_fly,
-//							/mob/living/simple_animal/passive/pokemon/proc/move_hover)
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//							/mob/living/simple_animal/pokemon/proc/move_hover)
 
-/mob/living/simple_animal/passive/pokemon/purrloin
+/mob/living/simple_animal/pokemon/purrloin
 	name = "purrloin"
 	icon_state = "purrloin"
 	icon_living = "purrloin"
@@ -598,7 +605,7 @@
 	p_types = list(P_TYPE_DARK)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/ralts
+/mob/living/simple_animal/pokemon/ralts
 	name = "ralts"
 	icon_state = "ralts"
 	icon_living = "ralts"
@@ -606,7 +613,7 @@
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/snorlax
+/mob/living/simple_animal/pokemon/snorlax
 	name = "snorlax"
 	icon_state = "snorlax"
 	icon_living = "snorlax"
@@ -614,7 +621,7 @@
 	p_types = list(P_TYPE_NORM)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/vaporeon
+/mob/living/simple_animal/pokemon/vaporeon
 	name = "vaporeon"
 	icon_state = "vaporeon"
 	icon_living = "vaporeon"
@@ -622,7 +629,7 @@
 	p_types = list(P_TYPE_WATER)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/passive/pokemon/zigzagoon
+/mob/living/simple_animal/pokemon/zigzagoon
 	name = "zigzagoon"
 	icon_state = "zigzagoon"
 	icon_living = "zigzagoon"
@@ -631,30 +638,30 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/zoroark
+/mob/living/simple_animal/pokemon/zoroark
 	name = "zoroark"
 	icon_state = "zoroark"
 	icon_living = "zoroark"
 	icon_dead = "zoroark_d"
 	p_types = list(P_TYPE_DARK)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/passive/pokemon/proc/move_imposter)
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 
-/mob/living/simple_animal/passive/pokemon/zorua
+/mob/living/simple_animal/pokemon/zorua
 	name = "zorua"
 	icon_state = "zorua"
 	icon_living = "zorua"
 	icon_dead = "zorua_d"
 	p_types = list(P_TYPE_DARK)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/passive/pokemon/proc/move_imposter)
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/passive/pokemon/zorua_hisuian
+/mob/living/simple_animal/pokemon/zorua_hisuian
 	name = "hisuian zorua"
 	icon_state = "zorua_hisuian"
 	icon_living = "zorua_hisuian"
 	icon_dead = "zorua_hisuian_d"
 	p_types = list(P_TYPE_NORM, P_TYPE_GHOST)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/passive/pokemon/proc/move_imposter)
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 	mob_size = MOB_SIZE_SMALL
 
 ///////////////////////
