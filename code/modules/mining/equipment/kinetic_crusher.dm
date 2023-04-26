@@ -6,12 +6,12 @@
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "proto-kinetic crusher"
-	desc = "An early design of the proto-kinetic accelerator, it is little more than an combination of various mining tools cobbled together, forming a high-tech club. \
-	While it is an effective mining tool, it did little to aid any but the most skilled and/or suicidal miners against local fauna."
-	force = 0 //You can't hit stuff unless wielded
+	desc = "This weapon consists of an absurd number of disparate mining technologies that are, somehow, \
+			kludged together to create an incredibly effective weapon and mining tool. Good at obliterating rock, steel, and flesh alike."
+	force = 25 // clunky and heavy, not good for one hand
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	throwforce = 5
+	throwforce = 40
 	throw_speed = 4
 	armour_penetration = 0.2
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)
@@ -42,7 +42,7 @@
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=40)
+	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=50)
 
 /obj/item/kinetic_crusher/Destroy()
 	QDEL_LIST(trophies)
@@ -171,12 +171,13 @@
 /obj/item/kinetic_crusher/glaive
 	name = "proto-kinetic glaive"
 	desc = "A modified design of a proto-kinetic crusher, it is still little more of a combination of various mining tools cobbled together \
-	and kit-bashed into a high-tech cleaver on a stick - with a handguard and a goliath hide grip. While it is still of little use to any \
-	but the most skilled and/or suicidal miners against local fauna, it's an elegant weapon for a more civilized hunter."
+	and kit-bashed into a high-tech cleaver on a stick. These modifications trade some of the weapon's detonation power and penetration for extended reach."
 	attack_verb = list("stabbed", "diced", "sliced", "cleaved", "chopped", "lacerated", "cut", "jabbed", "punctured")
 	icon_state = "crusher-glaive"
 	item_state = "crusher0-glaive"
-	detonation_damage = 40
+	detonation_damage = 20
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
+	armour_penetration = 0.1
 	block_parry_data = /datum/block_parry_data/crusherglaive
 	//ideas: altclick that lets you pummel people with the handguard/handle?
 	//parrying functionality?
