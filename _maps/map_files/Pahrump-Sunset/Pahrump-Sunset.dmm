@@ -55760,6 +55760,7 @@
 /area/f13/building/mall)
 "kTc" = (
 /obj/structure/flora/ausbushes,
+/obj/structure/glowshroom,
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -69023,6 +69024,13 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/city)
+"ouk" = (
+/obj/structure/beebox,
+/obj/structure/glowshroom,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/building/tribal)
 "oul" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -69238,6 +69246,17 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"owz" = (
+/obj/structure/ladder/unbreakable{
+	color = "#8844ff";
+	height = 2;
+	id = "catslugladder";
+	name = "Damp Ladder"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/building/tribal)
 "owD" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -112669,8 +112688,8 @@ nHe
 nHe
 nHe
 nHe
-fzB
-fzB
+owz
+ouk
 fzB
 aYj
 fzB
