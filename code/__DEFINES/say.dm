@@ -49,47 +49,7 @@
 #define MAX_CHARTER_LEN			80
 
 // Template for OOC notes.
-#define OOC_NOTE_TEMPLATE "Non-ERP Notes\n\
-	This exist for things like how to approach this character for IC things such as how to ask for going on adventurers!\n\
-	But this person hasn't changed the info yet!\n\
-	\n\
-	Icebreaker!\n\
-	This exists for this person to have set a quick way for you to break the IC with their character in a way that may lead to ERP, but this person hasn't changed this text to set one!\n\
-	\n\
-	Slavery: Ask\n\
-	Non-Con: Ask\n\
-	Vore: Ask\n\
-	\n\
-	\n\
-	ERP Notes\n\
-	...............Erotic Roleplay: Ask\n\
-	...............Non-Con Roleplay: Ask\n\
-	...............Partner Prefs: Ask\n\
-	.............- Slavery: Ask\n\
-	.............- Non-Con: Ask\n\
-	.............- Vore: Ask\n\
-	\n\
-	Big Yes's\n\
-	.............- This area\n\
-	.............- exists to\n\
-	.............- List out\n\
-	.............- things you\n\
-	.............- like.\n\
-	\n\
-	Hard No\n\
-	.............- This area exists\n\
-	.............- For you to list things\n\
-	.............- You very specifically\n\
-	.............- Do not like.\n\
-	\n\
-	\n\
-	\n\
-	***Roleplay Prefs***\n\
-	Character Orientation: Ask\n\
-	...Desired Post length: Ask\n\
-	\n\
-	...Desired RP System: Ask, this is for subtle, subtler, or emote.  Or, when its added, a mechanical erotic roleplay system!  Or some mix inbetween, but this person hasn't changed the text so ASK!\n\
-	.My Post Perspective: Ask!"
+#define OOC_NOTE_TEMPLATE ""
 
 // Is something in the IC chat filter? This is config dependent.
 #define CHAT_FILTER_CHECK(T) (config.ic_filter_regex && findtext(T, config.ic_filter_regex))
