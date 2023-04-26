@@ -37,7 +37,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return savefile_version
 	return -1
 
-/datum/preferences/proc/update_savefile_needs(savefile/S)
+/datum/preferences/proc/update_save(savefile/S)
 	current_version = safe_json_decode(S["current_version"])
 	var/list/needs_updating = list()
 	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
@@ -228,7 +228,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			fdel(bacpath) //only keep 1 version of backup
 		fcopy(S, bacpath) //byond helpfully lets you use a savefile for the first arg.
 		return FALSE
-	update_savefile_needs(S)
+	update_save(S)
 	. = TRUE
 
 	//general preferences
