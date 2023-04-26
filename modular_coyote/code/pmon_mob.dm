@@ -46,7 +46,7 @@
 	. = ..()
 	var/matrix/Mat = transform
 	transform = Mat.Translate(-(icon_size/4),0) //Adjust pixel offset by -1/4 of their icon's width
-	var/datum/action/innate/pokemon_rest/R = new(src)
+	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
 
