@@ -505,7 +505,7 @@
 /obj/item/storage/box/tools/kidnapper
 	name = "kidnapper tools" //for napin'
 
-/obj/item/storage/box/tools/mancatcher/PopulateContents()
+/obj/item/storage/box/tools/kidnapper/PopulateContents()
 	new /obj/item/melee/classic_baton/telescopic(src)
 	new /obj/item/electropack/shockcollar(src)
 	new /obj/item/jammer(src)
