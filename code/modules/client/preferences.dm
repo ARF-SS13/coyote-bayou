@@ -302,6 +302,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Associative list: matchmaking_prefs[/datum/matchmaking_pref subtype] -> number of desired matches
 	var/list/matchmaking_prefs = list()
 
+	/// Versioning hack! Versioning hack! Versioning hack!
+	var/list/current_version = list()
+
 
 /datum/preferences/New(client/C)
 	parent = C
