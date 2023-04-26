@@ -47,7 +47,8 @@
 
 /mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
-	transform = transform.Translate(-(icon_size_width/4),0) //Adjust pixel offset by -1/4 of their icon's width
+	if(icon_size_width>32)
+		transform = transform.Translate(-((icon_size_width-32)/2),0) //Adjust pixel offset by -1/4 of their icon's width
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
@@ -109,6 +110,16 @@
 	icon_living = "ampharos"
 	icon_dead = "ampharos_d"
 	p_types = list(P_TYPE_ELEC)
+	mob_size = MOB_SIZE_LARGE
+
+/mob/living/simple_animal/pokemon/articuno
+	name = "Articuno"
+	icon_state = "articuno"
+	icon_living = "articuno"
+	icon_dead = "articuno_d"
+	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
+	icon_size_width = 96
+	p_types = list(P_TYPE_ICE, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
 /mob/living/simple_animal/pokemon/braixen
@@ -354,6 +365,16 @@
 	p_types = list(P_TYPE_NORM)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_SMALL
+
+/mob/living/simple_animal/pokemon/lugia
+	name = "Lugia"
+	icon_state = "lugia"
+	icon_living = "lugia"
+	icon_dead = "lugia_d"
+	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
+	icon_size_width = 96
+	p_types = list(P_TYPE_PSYCH, P_TYPE_FLY)
+	mob_size = MOB_SIZE_LARGE
 
 /mob/living/simple_animal/pokemon/growlithe
 	name = "growlithe"
@@ -612,6 +633,16 @@
 	icon_dead = "ralts_d"
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
+
+/mob/living/simple_animal/pokemon/rayquaza
+	name = "Rayquaza"
+	icon_state = "rayquaza"
+	icon_living = "rayquaza"
+	icon_dead = "rayquaza_d"
+	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
+	icon_size_width = 96
+	p_types = list(P_TYPE_FLY)
+	mob_size = MOB_SIZE_LARGE
 
 /mob/living/simple_animal/pokemon/snorlax
 	name = "snorlax"
