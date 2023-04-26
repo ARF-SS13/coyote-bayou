@@ -6,11 +6,12 @@
 #define WS_TARGET_MOBS (1<<3) // hit all mobs on the turf
 #define WS_TARGET_STRUCTURES (1<<4) // hit objects on the turf
 #define WS_TARGET_MACHINES (1<<5) // hit machines on the turf
+#define WS_TARGET_WALLS (1<<6) // hit opaque walls on the turf
 //#define WS_TARGET_PREFERED_FIRST (1<<6) // If we hit multiple objects, hit the prefered one first
 #define WS_TARGET_ALL (1<<8) // Hit all objects on the turf -- probably dont use this
 
-#define WS_DAMAGE_FALLOFF_FAR_HIGH (1<<0) // damage falls off the further away the target is
-#define WS_DAMAGE_FALLOFF_CLOSE_HIGH (1<<1) // damage falls off the closer the target is
+#define WS_DAMAGE_FALLOFF_CLOSE_HIGH (1<<0) // damage falls off the further away the target is
+#define WS_DAMAGE_FALLOFF_FAR_HIGH (1<<1) // damage falls off the closer the target is
 #define WS_DAMAGE_SPLIT (1<<2) // damage is split between all targets
 // #define WS_DAMAGE_TOPMOST (1<<5) // hit the topmost object on the turf
 // #define WS_DAMAGE_RANDOM (1<<7) // If we hit multiple objects, hit a random one
@@ -35,7 +36,7 @@
 	/// List of which intents trigger this thing
 	var/list/intent_flags = list(INTENT_HARM)
 	/// targetting flags
-	var/target_flags = WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
+	var/target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
 	/// target mode
 	var/target_mode = WS_CLOSEST_POPULATED_TILE
 	/// damage flags
@@ -70,8 +71,11 @@
 	line_effect = TRUE
 	effect_kind = null
 	target_mode = WS_ALL_POPULATED_TILES
-	target_flags = WS_TARGET_IGNORE_FRIENDLIES | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
-	damage_flags = WS_DAMAGE_FALLOFF_FAR_HIGH | WS_DAMAGE_SPLIT
+	target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES | WS_TARGET_WALLS
+	damage_flags = WS_DAMAGE_FALLOFF_FAR_HIGH
+
+/datum/component/weapon_special/ranged_spear/longer/pike
+	extra_damage = list(WS_EXTRA_BRUTE = 1)
 
 /datum/component/weapon_special/ranged_spear/longer
 	max_distance = 3
@@ -94,6 +98,8 @@
 	if(!user || !target)
 		return
 	WEAPON_MASTER
+	if(!master.CheckAttackCooldown(user, target))
+		return
 	if(run_special(user, target, params))
 		user.DelayNextAction(master.attack_speed)
 		return TRUE
@@ -120,12 +126,24 @@
 	var/list/damages = calculate_damages(user, hit_atoms, target)
 	if(!LAZYLEN(damages))
 		return
+	var/list/moblist = list()
+	for(var/mob/living/livom in damages)
+		moblist[livom] = damages[livom]
+		damages -= livom
+	if(LAZYLEN(moblist))
+		hit_list(user, moblist, target)
+	if(LAZYLEN(damages))
+		hit_list(user, damages, target)
+
+/datum/component/weapon_special/proc/hit_list(mob/user, list/to_hit, atom/target)
+	if(!user || !target || !LAZYLEN(to_hit))
+		return
 	for(var/times in 1 to max_mobs_hit)
-		var/mob/lucky_mob = pick(damages)
-		do_a_hit(user, lucky_mob, damages[lucky_mob], target)
-		damages -= lucky_mob
-		if(!LAZYLEN(damages))
-			break
+		var/atom/lucky_sob = pick(to_hit)
+		do_a_hit(user, lucky_sob, to_hit[lucky_sob], target)
+		to_hit -= lucky_sob
+		if(!LAZYLEN(to_hit))
+			return
 
 /datum/component/weapon_special/proc/check_intent(mob/user)
 	if(!ismob(user))
@@ -152,13 +170,12 @@
 	//var/turf/furthest_reachable_tile = user.euclidian_reach(far_target, max_distance, REACH_ATTACK) // dunno what it does, but someone clever made it, probably
 	// Now we have our destination turf, now we just need all the tiles between us and that turf
 	var/list/line_of_turfs = sim_punch_laser(user) // matt mcmuscles said it once and i liked it uwu
-	var/list/validated_turfs = validate_punched_laser(user, line_of_turfs)
 	//var/list/line_of_turfs = getline(get_turf(user), furthest_reachable_tile) // line of turfs starting at the user and ending at the turf at the edge of our range
-	if(!LAZYLEN(validated_turfs)) // ^ hopefully in the right order
+	if(!LAZYLEN(line_of_turfs)) // ^ hopefully in the right order
 		return // cool
 	if(debug)
-		INVOKE_ASYNC(src, .proc/debug_highlight_line, user, validated_turfs, target)
-	return validated_turfs
+		INVOKE_ASYNC(src, .proc/debug_highlight_line, user, line_of_turfs, target)
+	return line_of_turfs
 
 /datum/component/weapon_special/proc/sim_punch_laser(mob/user)
 	if(!user)
@@ -169,28 +186,39 @@
 	if(!punch_laser)
 		punch_laser = new()
 	punch_laser.initialize_location(user.x, user.y, user.z, 0, 0)
-	punch_laser.initialize_trajectory(8, angle_go) // 4 steps per tile!
+	punch_laser.initialize_trajectory(4, angle_go) // 8 steps per tile!
 	var/list/output_turfs = list()
-	var/steps = max_distance * 4
+	var/steps = (max_distance * 8) + 1
 	output_turfs |= punch_laser.return_turf()
 	if(!LAZYLEN(output_turfs))
 		return
+	var/turf/cached
 	while(steps)
-		punch_laser.increment()
-		output_turfs |= punch_laser.return_turf()
 		steps--
+		punch_laser.increment()
+		var/turf/current = punch_laser.return_turf()
+		if(current == cached)
+			continue
+		cached = current
+		output_turfs |= current
+		if(is_hard_blocker(current))
+			break
 	return output_turfs
 
-/datum/component/weapon_special/proc/validate_punched_laser(mob/user, list/turfs)
-	if(!user)
-		return
-	if(!LAZYLEN(turfs))
-		return
-	. = list()
-	for(var/turf in turfs)
-		if(!user.can_reach(turf, reach = max_distance))
+// So turns out can_reach is fuckin high, keeps letting me reach past things
+// So, fuck it, gonna make my own cursed busted bullshit fuckin wall check cus having good things is illegal in this state
+/datum/component/weapon_special/proc/is_hard_blocker(turf/check)
+	if(!isturf(check))
+		return TRUE
+	if(check.density)
+		return TRUE
+	for(var/atom/obstacle in check)
+		if(ismob(obstacle))
 			continue
-		. |= turf
+		if(obstacle.opacity)
+			return TRUE
+		if(obstacle.density && (isturf(obstacle) || !CHECK_BITFIELD(obstacle.pass_flags_self, LETPASSTHROW)))
+			return TRUE
 
 /datum/component/weapon_special/proc/client_mouse_angle2turf(mob/user, atom/origin)
 	if(!user || !origin)
@@ -259,11 +287,15 @@
 	if(!user)
 		return
 	. = list()
-	for(var/atom/movable/atomhere in turfhere.contents)
+	for(var/atom/atomhere in turfhere.contents)
 		if(!atomhere)
 			continue
 		if(atomhere == user && (target_flags & WS_TARGET_IGNORE_SELF))
 			continue
+		if(CHECK_BITFIELD(target_flags, WS_TARGET_WALLS))
+			if(iswallturf(atomhere))
+				. |= atomhere
+				continue
 		if(CHECK_BITFIELD(target_flags, WS_TARGET_ALL))
 			. |= atomhere
 			continue
@@ -293,6 +325,7 @@
 		for(var/mob/living/vml in atoms_hit[i])
 			if(vml)
 				total_targets++
+	total_targets = max(total_targets, 1)
 	. = list()
 	for(var/dist in atoms_hit)
 		var/trudist = text2num(dist)
@@ -308,11 +341,17 @@
 				damage = master.force
 			var/d_mult = 1
 			if(CHECK_BITFIELD(damage_flags, WS_DAMAGE_FALLOFF_CLOSE_HIGH))
-				var/spaces = max(trudist, 1)
-				d_mult = falloff_mult ** (spaces - 1)
+				if(trudist < 1.5)
+					d_mult = 1
+				else
+					var/spaces = max(trudist, 1)
+					d_mult = falloff_mult ** (spaces - 1) // fun fact, I dont know if this works!
 			else if(CHECK_BITFIELD(damage_flags, WS_DAMAGE_FALLOFF_FAR_HIGH))
-				var/spaces = max_distance - trudist
-				d_mult = 1 - max(falloff_mult ** (spaces), 0)
+				if(trudist > (max_distance - 1)) // CAN YOU TELL I DONT KNOW MATHS???
+					d_mult = 1
+				else
+					var/spaces = max_distance - trudist
+					d_mult = 1 - max(falloff_mult ** (spaces), 0)
 			if(CHECK_BITFIELD(damage_flags, WS_DAMAGE_SPLIT))
 				d_mult /= max(total_targets, 1)
 			d_mult = max(d_mult, 0.01)
@@ -327,7 +366,8 @@
 							continue
 						LAZYSET(dam_list, damtype, xtra_dam * damage)
 			if(LAZYLEN(extra_damage))
-				counterlist_combine(dam_list, extra_damage)
+				var/list/extra_damages = counterlist_scale(extra_damage.Copy(), damage)
+				counterlist_combine(dam_list, extra_damages)
 			for(var/damag in dam_list)
 				dam_list[damag] *= d_mult
 			LAZYSET(., atomhere, dam_list)
@@ -350,7 +390,7 @@
 					continue
 				if(isliving(hit_this))
 					master.attack(hit_this, user, NONE, 1, damage)
-				else if(isobj(hit_this))
+				else if(isobj(hit_this) || iswallturf(hit_this))
 					hit_this.attackby(master, user, damage)
 				user.do_attack_animation(hit_this, effect_kind)
 			if(WS_EXTRA_BRUTE, WS_EXTRA_BURN, WS_EXTRA_TOX, WS_EXTRA_OXY, WS_EXTRA_CLONE, WS_EXTRA_STAMINA, WS_EXTRA_BRAIN)
@@ -385,6 +425,8 @@
 	playsound(get_turf(LAZYACCESS(hit_tiles, 1)), "sound/weapons/swoosh.ogg", 80, TRUE)
 	if(effect_kind)
 		for(var/turf/cool_tile in hit_tiles)
+			if(get_turf(cool_tile) == get_turf(user))
+				continue
 			user.do_attack_animation(cool_tile, effect_kind)
 	if(line_effect)
 		if(!user.client)
@@ -466,6 +508,7 @@
 		/mob/living/simple_animal/hostile/rat/skitter/melee_debug,
 		/mob/living/simple_animal/hostile/rat/skitter/melee_debug,
 		/obj/item/debug_melee_turf_thing,
+		/obj/item/melee/coyote/oldpike,
 	)
 
 /mob/living/simple_animal/hostile/rat/skitter/melee_debug

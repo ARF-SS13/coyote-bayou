@@ -335,7 +335,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
-	force = 20
+	force = 10
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
@@ -345,7 +345,7 @@
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.5
-	weapon_special_component = /datum/component/weapon_special/ranged_spear/longer
+	weapon_special_component = /datum/component/weapon_special/ranged_spear/longer/pike
 
 /obj/item/melee/coyote/oldnaginata
 	name = "Old Naginata"
