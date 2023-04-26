@@ -335,8 +335,11 @@
 #define TRAIT_ADVANCED_EXPLOSIVE_CRAFTING "advanced explosive crafting" //can craft almost all kinds of explosives
 /// Lets your tongue heal damage on limbs
 #define TRAIT_HEAL_TONGUE "healing tongue"
+#define TRAIT_HEAL_TOUCH "healing touch"
+#define TRAIT_HEAL_TEND "healing triage"
+#define TRAIT_IMPROVED_HEALING "improved healing"
 /// Lets your tongue apply awful bandages to limbs
-#define TRAIT_BANDAGE_TONGUE "coagulating tongue"
+//#define TRAIT_BANDAGE_TONGUE "coagulating tongue"
 /// You're hooked on punga!
 #define TRAIT_PUNGAPOWER "pungaful"
 

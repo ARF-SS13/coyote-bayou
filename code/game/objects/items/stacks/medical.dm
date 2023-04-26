@@ -82,6 +82,11 @@
 	var/start_sound
 	/// Sound to play on end
 	var/end_sound
+	/// For innate heals like licking
+	var/needs_reservoir = FALSE
+	///flavor message if your innate heal fails
+	var/too_dry = "Placeholder, tell a coder"
+
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -189,6 +194,14 @@
 	if (critter.health >= critter.maxHealth)
 		to_chat(user, span_notice("[M] is at full health."))
 		return FALSE
+	var/mob/living/carbon/carbuser
+	if(iscarbon(user))
+		carbuser = user
+	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+		to_chat(user, span_warning("[too_dry]"))
+		return 	FALSE
+	if(needs_reservoir)
+		carbuser.heal_reservoir -= 1
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
 	critter.adjustHealth(-heal_mobs)
 	return TRUE
@@ -216,6 +229,12 @@
 		else
 			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
 			return FALSE
+	var/mob/living/carbon/carbuser
+	if(iscarbon(user))
+		carbuser = user
+	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+		to_chat(user, span_warning("[too_dry]"))
+		return 	FALSE
 
 	var/obj/item/bodypart/affected_bodypart = output_list["bodypart"]
 	var/heal_operations = output_list["operations"]
@@ -231,6 +250,8 @@
 		return
 	is_healing = FALSE
 	/// now we start doing 'healy' things!
+	if(needs_reservoir)
+		carbuser.heal_reservoir -= 1
 	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
 		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
 			if(prob(50))
@@ -397,11 +418,16 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	//needed_trait = TRAIT_SURGERY_LOW
 	infinite_uses = TRUE
-	heal_brute = 1
-	heal_burn = 1
+	needs_reservoir = TRUE
+	too_dry = "Your tongue is too dry to keep licking. A break will help. Drinking some water would help too."
+	var/third_person_verb = "lapping at"
+	var/action_verb = "lick at"
+	var/action_verb_2 = "lick"
+	heal_brute = 2
+	heal_burn = 2
 	heal_mobs = 5
-	self_delay = 1 SECONDS
-	other_delay = 1 SECONDS
+	self_delay = 2 SECONDS
+	other_delay = 2 SECONDS
 	end_sound = 'sound/effects/lick.ogg'
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10, /datum/reagent/medicine/silver_sulfadiazine = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack/lick
@@ -413,13 +439,33 @@
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_notice("[user] starts lapping at [target]'s [target_part]..."),
-				span_notice("You lick at [user == target ? "your" : "[target]'s"] [target_part]..."))
+				span_notice("[user] starts [third_person_verb] [target]'s [target_part]..."),
+				span_notice("You [action_verb] [user == target ? "your" : "[target]'s"] [target_part]..."))
 
 		if("end")
 			user.visible_message(
-				span_green("[user] lick [target]'s [target_part]!"),
-				span_green("You lick [user == target ? "your" : "[target]'s"] [target_part]!"))
+				span_green("[user] [action_verb_2]s [target]'s [target_part]!"),
+				span_green("You [action_verb_2] [user == target ? "your" : "[target]'s"] [target_part]!"))
+
+/obj/item/stack/medical/bruise_pack/lick/touch
+	name = "magic healing"
+	singular_name = "magic healing"
+	desc = "A mystical source of healing that draws from an unknown source of power to sooth mild wounds."
+	too_dry = "Your well of magical energy feels dry. A break will help. Drinking some water would help too."
+	third_person_verb = "touching"
+	action_verb = "touch"
+	action_verb_2 = "magically sooth"
+	end_sound = 'sound/FermiChem/bufferadd.ogg'
+
+/obj/item/stack/medical/bruise_pack/lick/tend
+	name = "triage tending"
+	singular_name = "triage tending"
+	desc = "A small Miscellanious supply of medical equipment for treating small wounds."
+	too_dry = "You can't focus enough to keep working. A break will help. Drinking some water would help too."
+	third_person_verb = "tending to"
+	action_verb = "tend"
+	action_verb_2 = "tend"
+	end_sound = 'sound/items/tendingwounds.ogg'
 
 /obj/item/stack/medical/bruise_pack/one
 	amount = 1
@@ -555,6 +601,7 @@
 	merge_type = /obj/item/stack/medical/gauze/cyborg
 
 /// ...
+/*
 /obj/item/stack/medical/gauze/lick
 	name = "coagulating saliva"
 	desc = "A fresh coating of somehow medicinal saliva, good for slowing the blood flow on a wound. Not the best of treatments, but somehow better than nothing."
@@ -580,6 +627,7 @@
 	custom_price = PRICE_REALLY_CHEAP
 	grind_results = null
 	merge_type = /obj/item/stack/medical/gauze/lick
+*/
 
 /* * * * * *
  * SUTURES

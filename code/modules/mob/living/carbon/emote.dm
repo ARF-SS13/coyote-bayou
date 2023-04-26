@@ -115,7 +115,7 @@
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your active hand is full, and therefore you can't lick anything! Don't ask why!"))
 		return
-	var/obj/item/hand_item/licker/licky = new(user)
+	var/obj/item/hand_item/healable/licker/licky = new(user)
 	if(user.put_in_active_hand(licky))
 		to_chat(user, span_notice("You extend your tongue and get ready to lick something."))
 	else
