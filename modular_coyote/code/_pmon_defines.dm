@@ -44,15 +44,27 @@ GLOBAL_LIST_EMPTY(pokemon_selectable)
 			GLOB.pokemon_selectable[capitalize("[P.name]")] = P.type
 		qdel(P)
 
-GLOBAL_LIST_EMPTY(creature_selectable)
+GLOBAL_LIST_INIT(creature_selectable, list(
+
+	))
+
 /proc/generate_selectable_creatures(clear = FALSE)
 	if(clear)
 		GLOB.creature_selectable = list()
 	if(!LAZYLEN(GLOB.pokemon_selectable))//Pokemon list hasn't been generated so do it now
 		generate_selectable_pokemon()
  	GLOB.creature_selectable |= GLOB.pokemon_selectable //Merge pokemon into master creature list
+	for(var/T in typesof(/mob/living/simple_animal))
+		var/mob/living/simple_animal/SA = T
+		if(initial(SA.gold_core_spawnable) == FRIENDLY_SPAWN)
+			SA = new T()
+			GLOB.creature_selectable[capitalize(SA.name)] = SA.type
+			qdel(SA)
 
 //List of all pokemon on the whole map.
 GLOBAL_LIST_EMPTY(pokemon_list)
 //List of available spawnpoints for pokemon to choose from
-GLOBAL_LIST_EMPTY(pokemon_spawnpoints)
+GLOBAL_LIST_INIT(creature_spawnpoints, list(
+	"Wastelander" = /obj/effect/landmark/start/f13/wastelander,
+	"Citizen" = /obj/effect/landmark/start/f13/settler
+	))

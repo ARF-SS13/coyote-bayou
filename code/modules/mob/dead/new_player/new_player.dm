@@ -66,6 +66,7 @@
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
+		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 
 	if(!IsGuestKey(src.key))
@@ -73,7 +74,7 @@
 
 	output += "</center>"
 
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 265)
+	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 350)
 	popup.set_window_options("can_close=0")
 	popup.set_content(output.Join())
 	popup.open(FALSE)
@@ -234,6 +235,8 @@
 
 		LateChoices()
 
+	if(href_list["join_as_creature"])	
+		CreatureSpawn()
 	if(href_list["manifest"])
 		ViewManifest()
 
@@ -272,7 +275,7 @@
 			SSticker.queue_delay = 4
 			qdel(src)
 
-	else if(!href_list["late_join"])
+	else if(!href_list["late_join"] && client)
 		new_player_panel()
 
 	if(href_list["showpoll"])
@@ -562,7 +565,34 @@
 		var/obj/structure/filingcabinet/employment/employmentCabinet = C
 		if(!employmentCabinet.virgin)
 			employmentCabinet.addFile(employee)
-
+	
+/mob/dead/new_player/proc/CreatureSpawn()
+	if(ckey && client && client.prefs.creature_species)
+		var/datum/preferences/P = client.prefs
+		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
+		if(!spawn_selection || QDELETED(src) || !ckey)
+			return FALSE
+		log_and_message_admins("[src.ckey] joined as \an [P.creature_species] and spawned at [spawn_selection].")
+		spawning = 1
+		close_spawn_windows()
+		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
+		//Create the new mob
+		var/creature_type = GLOB.creature_selectable["[P.creature_species]"]
+		var/mob/living/C = new creature_type(src)
+		//Assign the mob's information based on the player's client preferences
+		C.gender = P.gender
+		C.name = P.real_name
+		C.real_name = P.real_name
+		C.grant_all_languages()
+		//Prepare their spawnpoint
+		var/list/avail_spawns = list()
+		for(var/SP in GLOB.landmarks_list)
+			if(istype(SP, spawntype))
+				avail_spawns += SP
+		var/obj/effect/landmark/rand_spawn = pick(avail_spawns)
+		//Move them to the selected spawnpoint and transfer the player into the new mob
+		C.forceMove(get_turf(rand_spawn))
+		transfer_ckey(C, TRUE)
 
 /mob/dead/new_player/proc/LateChoices()
 	var/list/dat = list()
