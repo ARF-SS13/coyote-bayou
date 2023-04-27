@@ -214,6 +214,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_name = 		"Eevee"
 	var/creature_flavor_text = 	null
 	var/creature_ooc = 			null
+	var/image/creature_image = null
 
 	//Quirk list
 	var/list/all_quirks = list()
@@ -558,6 +559,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[creature_ooc]<br>"
 			else
 				dat += "[TextPreview(creature_ooc)]...<br>"
+			if(!creature_image && creature_species)
+				var/creature_type = GLOB.creature_selectable["[creature_species]"]
+				var/mob/living/M = new creature_type(user)
+				creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
+				qdel(M)
+			if(creature_image)
+				dat += "[icon2html(creature_image, user)]<br>"
+
 			var/use_skintones = pref_species.use_skintones
 			if(use_skintones)
 				dat += APPEARANCE_CATEGORY_COLUMN
@@ -2404,8 +2413,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("creature_species")
 					var/result = input(user, "Select a creature species", "Species Selection") as null|anything in GLOB.creature_selectable
 					if(result)
-						//var/newtype = GLOB.creature_selectable["[result]"]
 						creature_species = result
+						var/creature_type = GLOB.creature_selectable["[result]"]
+						var/mob/living/M = new creature_type(user)
+						creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
+						qdel(M)
+
 				if("creature_flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb.", "Flavor Text", html_decode(creature_flavor_text), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
