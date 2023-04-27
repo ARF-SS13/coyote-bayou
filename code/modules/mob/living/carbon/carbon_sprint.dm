@@ -4,6 +4,8 @@
 	if(sprint_buffer)
 		var/use = min(tiles, sprint_buffer)
 		if(HAS_TRAIT(src, TRAIT_ZOOMIES))
+			sprint_buffer -= use * 0.7
+		if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
 			sprint_buffer -= use * 0.5
 		else
 			sprint_buffer -= use
@@ -17,8 +19,9 @@
 		disable_intentional_sprint_mode()
 		return // if you're not holding it, you stop sprinting when you run out
 	if(HAS_TRAIT(src, TRAIT_ZOOMIES))
-		adjustStaminaLoss(tiles * sprint_stamina_cost * 0.5)
+		adjustStaminaLoss(tiles * sprint_stamina_cost * 0.7)
 	if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
+		adjustStaminaLoss(tiles * sprint_stamina_cost * 0.5)
 		return
 	else
 		adjustStaminaLoss(tiles * sprint_stamina_cost)		//use stamina to cover deficit.

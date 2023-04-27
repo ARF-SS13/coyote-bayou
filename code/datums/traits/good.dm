@@ -1027,3 +1027,15 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
+
+/datum/quirk/zoomies
+	name = "Zoomies"
+	desc = "You can sprint a bit over fifty percent longer than most folk, just don't run into things."
+	value = 1
+	mob_trait = TRAIT_ZOOMIES
+
+/datum/quirk/super_zoomies
+	name = "Zoomies - Super"
+	desc = "You can sprint just over twice as long as most folk, just...REALLY don't run into things."
+	value = 3
+	mob_trait = TRAIT_SUPER_ZOOMIES
