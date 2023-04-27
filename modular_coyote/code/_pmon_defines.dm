@@ -34,7 +34,24 @@
 #define P_TRAIT_RIDEABLE	"rideable"
 
 //List of pokemon subtypes that a player can choose from when spawning in. Exclude pokemon by giving them the P_TRAIT_BLACKLIST trait.
-GLOBAL_LIST_EMPTY(pokemon_spawnable)
+GLOBAL_LIST_EMPTY(pokemon_selectable)
+/proc/generate_selectable_pokemon(clear = FALSE)
+	if(clear)
+		GLOB.pokemon_selectable = list()
+	for(var/I in subtypesof(/mob/living/simple_animal/pokemon))
+		var/mob/living/simple_animal/pokemon/P = new I
+		if(!(P_TRAIT_BLACKLIST in P.p_traits))//Not blacklisted from being added to the list
+			GLOB.pokemon_selectable[capitalize("[P.name]")] = P.type
+		qdel(P)
+
+GLOBAL_LIST_EMPTY(creature_selectable)
+/proc/generate_selectable_creatures(clear = FALSE)
+	if(clear)
+		GLOB.creature_selectable = list()
+	if(!LAZYLEN(GLOB.pokemon_selectable))//Pokemon list hasn't been generated so do it now
+		generate_selectable_pokemon()
+ 	GLOB.creature_selectable |= GLOB.pokemon_selectable //Merge pokemon into master creature list
+
 //List of all pokemon on the whole map.
 GLOBAL_LIST_EMPTY(pokemon_list)
 //List of available spawnpoints for pokemon to choose from
