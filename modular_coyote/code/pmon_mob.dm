@@ -53,12 +53,13 @@
 
 //Can be applied to any mob, not just pokemon
 /mob/proc/recenter_wide_sprite()
-	var/icon/I = icon //We have to do this for some reason
+	var/icon/I = icon(icon)
 	var/icon_width = I.Width()
-	if(icon_width<33) //This proc only fixes sprites that are too wide.
-		return FALSE
-	transform = transform.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
-	return TRUE
+	if(icon_width>32) //This proc only fixes sprites that are too wide.
+		var/matrix/M = matrix() //Use a fresh matrix so we start at 0,0
+		transform = M.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
+		return TRUE
+	return FALSE
 
 /mob/living/simple_animal/pokemon/Life()
 	. = ..()
