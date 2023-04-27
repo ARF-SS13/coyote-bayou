@@ -54,8 +54,8 @@
 /obj/item/hand_item/healable/proc/tend_hurt(mob/living/user, mob/living/target)
 	if(!isliving(user) || !isliving(target))
 		return
-	//if(!HAS_TRAIT(user, needed_trait))
-	//	return
+	if(!HAS_TRAIT(user, needed_trait))
+		return TRUE
 	var/mob/living/mlemmed = target
 	if(!mlemmed.get_bodypart(user.zone_selected))
 		return FALSE
@@ -119,7 +119,7 @@
 	RegisterSignal(src, COMSIG_LICK_RETURN, .proc/start_licking)
 
 /obj/item/hand_item/healable/licker/start_licking(atom/source, atom/licked, mob/living/carbon/user)
-	if(..())
+	if(!..())
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_TONGUE))
 		return FALSE

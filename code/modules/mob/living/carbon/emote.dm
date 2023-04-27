@@ -121,6 +121,38 @@
 	else
 		qdel(licky)
 
+/datum/emote/living/carbon/touch
+	key = "touch"
+	key_third_person = "touches"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/touch/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, and therefore you can't touch anything!"))
+		return
+	var/obj/item/hand_item/healable/toucher/touchy = new(user)
+	if(user.put_in_active_hand(touchy))
+		to_chat(user, span_notice("You get ready to touch something."))
+	else
+		qdel(touchy)
+
+/datum/emote/living/carbon/tend
+	key = "tend"
+	key_third_person = "tends"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/tend/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, and therefore you can't tend anything!"))
+		return
+	var/obj/item/hand_item/healable/tender/tendy = new(user)
+	if(user.put_in_active_hand(tendy))
+		to_chat(user, span_notice("You retrieve your emergency kit and get ready to tend something."))
+	else
+		qdel(tendy)
+
 //Biter//
 /datum/emote/living/carbon/bite
 	key = "bite"
