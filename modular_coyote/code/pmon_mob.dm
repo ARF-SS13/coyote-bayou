@@ -4,8 +4,6 @@
 	name = "eevee"
 	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
 	icon = 'modular_coyote/icons/mob/pokemon64.dmi'
-	//The width of the icon file in use. Used to center sprites on their respective tiles.
-	var/icon_size_width = 64
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
@@ -47,16 +45,23 @@
 
 /mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
-	if(icon_size_width>32)
-		transform = transform.Translate(-((icon_size_width-32)/2),0) //Adjust pixel offset left by half of their icon's width above 32
+	recenter_wide_sprite()
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
 	GLOB.pokemon_list += src
 
+//Can be applied to any mob, not just pokemon
+/mob/proc/recenter_wide_sprite()
+	var/icon/I = icon //We have to do this for some reason
+	var/icon_width = I.Width()
+	if(icon_width<33) //This proc only fixes sprites that are too wide.
+		return FALSE
+	transform = transform.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
+	return TRUE
+
 /mob/living/simple_animal/pokemon/Life()
 	. = ..()
-	regenerate_icons()
 
 /mob/living/simple_animal/pokemon/regenerate_icons()
 	if(stat == DEAD)
@@ -118,7 +123,6 @@
 	icon_living = "articuno"
 	icon_dead = "articuno_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_ICE, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
@@ -372,7 +376,6 @@
 	icon_living = "lugia"
 	icon_dead = "lugia_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
@@ -640,7 +643,6 @@
 	icon_living = "rayquaza"
 	icon_dead = "rayquaza_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
