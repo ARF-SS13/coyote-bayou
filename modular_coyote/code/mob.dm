@@ -34,8 +34,8 @@
 
 	faction = list("catslug", "neutral")
 	mob_armor = ARMOR_VALUE_MEDIUM
-	maxHealth = 100
-	health = 100
+	maxHealth = 200
+	health = 200
 	healable = 1
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 
@@ -88,6 +88,7 @@
 	icon_dead = "calicoslug_dead"
 	gender = "female"
 
+//Slugcat OC for Cosmic
 /mob/living/simple_animal/pet/catslug/shroomslug
 	name = "Myca Rashee"
 	desc = "A slugcat that seems to be idly sitting there their fur seems a bit odd to look at as they give off a odd glow from the mushroom cap on their head. They seem somewhat timid and shy? Their seems to be fungal growths along the blanket of moss on their body..https://media.discordapp.net/attachments/1020998258669129758/1025891405605912626/cosmic_mushroom_cat_1_1.png?width=773&height=805"
@@ -98,6 +99,15 @@
 	light_color ="#728FCE"
 	light_range = 1.4
 	light_power = 4
+
+//Slugcat OC for Gamma
+/mob/living/simple_animal/pet/catslug/sunrise
+	name = "Falling Sunrise"
+	desc = "This somewhat large Scug, standing at about 3'10, is mostly magenta, though his head is covered with a Vulture mask. He is frequently seen around town, or out doing light hunting in the wastes. He is capable of English speech. OOC : ERP Ok, Non-Con is a No, Unsanitary is a No"
+	icon_state = "gamma"
+	icon_living = "gamma"
+	icon_dead = "gamma_dead"
+	gender = "male"
 
 //Mobs from Virgo
 
