@@ -789,7 +789,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	if(!dextrous)
 		return
-	if(!hand_index)
+	if(!hand_index && held_items.len)//Divide by zero prevention
 		hand_index = (active_hand_index % held_items.len)+1
 	var/oindex = active_hand_index
 	active_hand_index = hand_index

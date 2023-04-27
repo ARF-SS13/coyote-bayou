@@ -34,8 +34,8 @@
 
 	faction = list("catslug", "neutral")
 	mob_armor = ARMOR_VALUE_MEDIUM
-	maxHealth = 100
-	health = 100
+	maxHealth = 200
+	health = 200
 	healable = 1
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 
@@ -88,6 +88,7 @@
 	icon_dead = "calicoslug_dead"
 	gender = "female"
 
+//Slugcat OC for Cosmic
 /mob/living/simple_animal/pet/catslug/shroomslug
 	name = "Myca Rashee"
 	desc = "A slugcat that seems to be idly sitting there their fur seems a bit odd to look at as they give off a odd glow from the mushroom cap on their head. They seem somewhat timid and shy? Their seems to be fungal growths along the blanket of moss on their body..https://media.discordapp.net/attachments/1020998258669129758/1025891405605912626/cosmic_mushroom_cat_1_1.png?width=773&height=805"
@@ -99,122 +100,14 @@
 	light_range = 1.4
 	light_power = 4
 
-
-//Pokemon!
-
-/mob/living/simple_animal/pet/pokemon
-	name = "eevee"
-	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "eevee"
-	icon_living = "eevee"
-	icon_dead = "eevee_d"
-	unsuitable_atmos_damage = 0
-	minbodytemp = TCMB
-	maxbodytemp = T0C + 40
-	health = 200
-	maxHealth = 200
-	healable = 1
-	response_help_continuous = "pets"
-	response_help_simple = "pet"
-	response_disarm_continuous = "bops"
-	response_disarm_simple = "bop"
-	response_harm_continuous = "kicks"
-	response_harm_simple = "kick"
-	attack_verb_continuous = "nuzzles"
-	attack_verb_simple = "nuzzle"
-
-/mob/living/simple_animal/pet/pokemon/update_mobility()
-	. = ..()
-	if(client && stat != DEAD)
-		if(!CHECK_MOBILITY(src, MOBILITY_STAND))
-			icon_state = "[icon_living]_rest"
-			collar_type = "[initial(collar_type)]_rest"
-		else
-			icon_state = "[icon_living]"
-			collar_type = "[initial(collar_type)]"
-	regenerate_icons()
-
-/mob/living/simple_animal/pet/pokemon/eevee
-	name = "Eevee"
-	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "eevee"
-	icon_living = "eevee"
-	icon_dead = "eevee_d"
-
-/mob/living/simple_animal/pet/pokemon/vaporeon
-	name = "Vaporeon"
-	desc = "Lives close to water. Its long tail is ridged with a fin which is often mistaken for a mermaid's."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "vaporeon"
-	icon_living = "vaporeon"
-	icon_dead = "vaporeon_d"
-
-/mob/living/simple_animal/pet/pokemon/glaceon
-	name = "Glaceon"
-	desc = "As a protective technique, it can completely freeze its fur to make its hairs stand like needles."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "glaceon"
-	icon_living = "glaceon"
-	icon_dead = "glaceon_d"
-
-/mob/living/simple_animal/pet/pokemon/leafeon
-	name = "Leafeon"
-	desc = "Just like a plant, it uses photosynthesis. As a result, it is always enveloped in clear air."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "leafeon"
-	icon_living = "leafeon"
-	icon_dead = "leafeon_d"
-
-/mob/living/simple_animal/pet/pokemon/flareon
-	name = "Flareon"
-	desc = "When storing thermal energy in its body, its temperature could soar to over 1600 degrees."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "flareon"
-	icon_living = "flareon"
-	icon_dead = "flareon_d"
-
-/mob/living/simple_animal/pet/pokemon/jolteon
-	name = "Jolteon"
-	desc = "It accumulates negative ions in the atmosphere to blast out 10000-volt lightning bolts."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "jolteon"
-	icon_living = "jolteon"
-	icon_dead = "jolteon_d"
-
-/mob/living/simple_animal/pet/pokemon/sylveon
-	name = "Sylveon"
-	desc = "It sends a soothing aura from its ribbonlike feelers to calm fights."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "sylveon"
-	icon_living = "sylveon"
-	icon_dead = "sylveon_d"
-
-/mob/living/simple_animal/pet/pokemon/espeon
-	name = "Espeon"
-	desc = "It uses the fine hair that covers its body to sense air currents and predict its enemy's actions."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "espeon"
-	icon_living = "espeon"
-	icon_dead = "espeon_d"
-
-/mob/living/simple_animal/pet/pokemon/umbreon
-	name = "Umbreon"
-	desc = "When agitated, this Pokémon protects itself by spraying poisonous sweat from its pores."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "umbreon"
-	icon_living = "umbreon"
-	icon_dead = "umbreon_d"
-
-/mob/living/simple_animal/pet/pokemon/absol
-	name = "Absol"
-	desc = "Every time Absol appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster Pokémon."
-	icon = 'modular_coyote/icons/mob/pokemon.dmi'
-	icon_state = "absol"
-	icon_living = "absol"
-	icon_dead = "absol_d"
-
+//Slugcat OC for Gamma
+/mob/living/simple_animal/pet/catslug/sunrise
+	name = "Falling Sunrise"
+	desc = "This somewhat large Scug, standing at about 3'10, is mostly magenta, though his head is covered with a Vulture mask. He is frequently seen around town, or out doing light hunting in the wastes. He is capable of English speech. OOC : ERP Ok, Non-Con is a No, Unsanitary is a No"
+	icon_state = "sunrise"
+	icon_living = "sunrise"
+	icon_dead = "sunrise_dead"
+	gender = "male"
 
 //Mobs from Virgo
 
