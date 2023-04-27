@@ -670,6 +670,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["chosen_limb_id"]					>> chosen_limb_id
 	S["hide_ckey"]						>> hide_ckey //saved per-character
 
+	//Creature character settings
+	S["creature_species"]			>> creature_species
+	S["creature_name"]				>> creature_name
+	S["creature_flavor_text"]		>> creature_flavor_text
+	S["creature_ooc"]				>> creature_ooc
+
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -1225,6 +1231,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["job_preferences"] , job_preferences)
 	WRITE_FILE(S["hide_ckey"]		, hide_ckey)
 
+	//Write creature character
+	WRITE_FILE(S["creature_species"]			,creature_species)
+	WRITE_FILE(S["creature_name"]				,creature_name)
+	WRITE_FILE(S["creature_flavor_text"]		,creature_flavor_text)
+	WRITE_FILE(S["creature_ooc"]				,creature_ooc)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)
