@@ -104,9 +104,9 @@
 /mob/living/simple_animal/pet/catslug/sunrise
 	name = "Falling Sunrise"
 	desc = "This somewhat large Scug, standing at about 3'10, is mostly magenta, though his head is covered with a Vulture mask. He is frequently seen around town, or out doing light hunting in the wastes. He is capable of English speech. OOC : ERP Ok, Non-Con is a No, Unsanitary is a No"
-	icon_state = "gamma"
-	icon_living = "gamma"
-	icon_dead = "gamma_dead"
+	icon_state = "sunrise"
+	icon_living = "sunrise"
+	icon_dead = "sunrise_dead"
 	gender = "male"
 
 //Mobs from Virgo
