@@ -565,9 +565,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "[TextPreview(creature_ooc)]...<br>"
 			if(!creature_image && creature_species)
 				var/creature_type = GLOB.creature_selectable["[creature_species]"]
-				var/mob/living/M = new creature_type(user)
-				creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
-				qdel(M)
+				if(creature_species)//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
+					var/mob/living/M = new creature_type(user)
+					creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
+					qdel(M)
 			if(creature_image)
 				dat += "[icon2html(creature_image, user)]<br>"
 
