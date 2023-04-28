@@ -28,16 +28,16 @@
 			var/element_or_list = elements_to_process[length(elements_to_process)] //Last element
 			elements_to_process.len--
 			if(islist(element_or_list))
-				elements_to_process += element_or_list //list/a += list/b adds the contents of b into a, not the reference to the list itself
+				elements_to_process |= element_or_list //list/a += list/b adds the contents of b into a, not the reference to the list itself
 			else
-				verbs_list += element_or_list
+				verbs_list |= element_or_list
 
 	if(mob_target)
-		mob_target.verbs += verbs_list
+		mob_target.verbs |= verbs_list
 		if(!target)
 			return //Our work is done.
 	else
-		target.verbs += verbs_list
+		target.verbs |= verbs_list
 
 	var/list/output_list = list()
 	for(var/thing in verbs_list)

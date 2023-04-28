@@ -56,9 +56,14 @@
 	RegisterSignal(parent, list(COMSIG_VORE_RECALCULATE_SLOWDOWN), .proc/update_slowdowns)
 	RegisterSignal(parent, list(COMSIG_VORE_CHECK_EDIBILITY), .proc/can_eat_item)
 	RegisterSignal(parent, list(COMSIG_VORE_DO_MESSAGE), .proc/do_voremessage)
+	RegisterSignal(parent, list(COMSIG_VORE_EXISTS), .proc/setup_vore)
 	RegisterSignal(parent, list(COMSIG_PARENT_EXAMINE), .proc/examine_bellies)
 	RegisterSignal(parent, list(COMSIG_MOB_DEATH), .proc/you_died) // casual
 	START_PROCESSING(SSvore, src)
+	if(isliving(parent))
+		var/mob/living/master = parent
+		if(master.client)
+			setup_vore()
 
 /datum/component/vore/proc/setup_vore(force)
 	VORE_MASTER
@@ -68,6 +73,7 @@
 		to_chat(master,span_phobia("ERROR: You seem to have saved vore prefs, but they couldn't be loaded."))
 	if(LAZYLEN(vore_organs))
 		vore_selected = vore_organs[1]
+	return TRUE
 
 /datum/component/vore/proc/setup_verbs()
 	VORE_MASTER
@@ -78,6 +84,9 @@
 	add_verb(master, /mob/living/proc/vore_verb)
 	add_verb(master, /mob/living/proc/feed_verb)
 	add_verb(master, /mob/living/proc/insidePanel)
+	add_verb(master, /mob/living/proc/stop_gross_loop)
+	add_verb(master, /mob/living/proc/vore_verb)
+	add_verb(master, /mob/living/proc/feed_verb)
 	// TODO: add this and make it work
 	//add_verb(master, /mob/living/proc/smell_someone)
 	//add_verb(master, /mob/living/proc/toggle_voremode) // vore intent is soooo last year

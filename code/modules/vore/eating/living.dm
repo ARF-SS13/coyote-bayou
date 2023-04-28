@@ -1,15 +1,19 @@
 ///////////////////// Mob Living /////////////////////
 /mob/living/ComponentInitialize()
 	. = ..()
-	if(SSvore.should_have_vore(src))
-		AddComponent(/datum/component/vore) // Vore is a component now. What a time to be alive
+	RegisterSignal(src, list(COMSIG_MOB_CLIENT_LOGIN, COMSIG_MOB_KEY_CHANGE), .proc/vorify)
+
+/mob/living/proc/vorify()
+	if(!CHECK_PREFS(src, VOREPREF_MASTER))
+		return // no vore, no problem
+	if(SEND_SIGNAL(src, COMSIG_VORE_EXISTS))
+		return // already vorified
+	AddComponent(/datum/component/vore) // Vore is a component now. What a time to be alive
 
 /mob/living/proc/stop_gross_loop()
 	set name = "Stop Voresounds"
 	set category = "Private"
-
 	SEND_SIGNAL(loc, COMSIG_VORE_STOP_SOUNDS, src)
-
 
 // OOC Escape code for pref-breaking or AFK preds
 //

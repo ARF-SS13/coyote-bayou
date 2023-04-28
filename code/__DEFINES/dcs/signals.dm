@@ -678,6 +678,8 @@
 #define COMSIG_VORE_DO_MESSAGE "vore_message" // (datum/source, obj/vore_belly/belly, message_type, pref_type)
 /// Asks if the componentholder can eat a certain item
 #define COMSIG_VORE_CHECK_EDIBILITY "can_i_eat_item" // (datum/source, obj/item/thing)
+/// Asks the mob if their vore is set up
+#define COMSIG_VORE_EXISTS "is_vore_time"
 
 /// Vore defines specifically for a belly
 /// Tells the belly trash happened
