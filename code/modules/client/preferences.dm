@@ -215,6 +215,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_flavor_text = 	null
 	var/creature_ooc = 			null
 	var/image/creature_image = null
+	var/creature_profilepic = null
 
 	//Quirk list
 	var/list/all_quirks = list()
@@ -398,7 +399,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
-			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
+			//Left Column
+			dat += "<table><tr><td width='30%'valign='top'>"
 			dat += "<h2>Identity</h2>"
 			if(jobban_isbanned(user, "appearance"))
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
@@ -411,8 +413,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 			dat += "</td>"
-
-			dat +="<td width='300px' height='300px' valign='top'>"
+			//Middle Column
+			dat +="<td width='30%' valign='top'>"
 			dat += "<h2>Matchmaking preferences:</h2>"
 			if(SSmatchmaking.initialized)
 				for(var/datum/matchmaking_pref/match_pref as anything in SSmatchmaking.all_match_types)
@@ -426,11 +428,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Loading matchmaking preferences...</b><br>"
 				dat += "<b>Refresh once the game has finished setting up...</b><br>"
 			dat += "</td>"
-
-			dat += "<b>Profile Picture:</b><BR>"
+			//Right column
+			dat +="<td width='30%' valign='top'>"
+			dat += "<h2>Profile Picture:</h2><BR>"
 			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Creature Profile Picture:</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[DiscordLink(creature_profilepic)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
-
 			/*
 			dat += "<b>Special Names:</b><BR>"
 			var/old_group

@@ -30,17 +30,17 @@
 	dextrous = TRUE
 	//Need this to have the hands appear on the HUD
 	held_items = list(null, null)
-	//The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
+	///The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
 	var/list/p_types = list()
-	//Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
+	///Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
 	var/list/additional_moves = list()
-	//List of passive traits/flags
+	///List of passive traits/flags
 	var/list/p_traits = list()
-	//Moves/Abilities that this mob is currently using
+	///Moves/Abilities that this mob is currently using
 	var/list/active_moves = list()
-	//If this is filled in by the player, it overrides their default description. Can be imported from the player's current character slot
+	///If this is filled in by the player, it overrides their default description. Can be imported from the player's current character slot
 	var/flav_text = null
-	//Roleplaying preferences
+	///Roleplaying preferences
 	var/ooc_text = null
 
 /mob/living/simple_animal/pokemon/Initialize()

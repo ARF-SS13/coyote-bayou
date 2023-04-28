@@ -569,20 +569,32 @@
 /mob/dead/new_player/proc/CreatureSpawn()
 	if(ckey && client && client.prefs.creature_species)
 		var/datum/preferences/P = client.prefs
+		if(!P.creature_flavor_text || !P.creature_ooc)
+			to_chat(src, "<span class='userdanger'>You must set your Creature OOC Notes and Flavor Text before joining as a creature.</span>")
+			return FALSE
 		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
 		if(!spawn_selection || QDELETED(src) || !ckey)
 			return FALSE
-		log_and_message_admins("[src.ckey] joined as \an [P.creature_species] and spawned at [spawn_selection].")
+		log_and_message_admins("joined as \an [P.creature_species] and spawned at [spawn_selection].")
 		spawning = 1
 		close_spawn_windows()
 		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
 		//Create the new mob
 		var/creature_type = GLOB.creature_selectable["[P.creature_species]"]
-		var/mob/living/C = new creature_type(src)
+		var/mob/living/simple_animal/C = new creature_type(src)
 		//Assign the mob's information based on the player's client preferences
 		C.gender = P.gender
-		C.name = P.real_name
-		C.real_name = P.real_name
+		C.name = P.creature_name
+		C.real_name = P.creature_name
+		C.flavortext = P.creature_flavor_text
+		C.oocnotes = P.creature_ooc
+		C.profilePicture = P.creature_profilepic
+		C.verbose_species = "[P.creature_species]"
+		//Disable their mob's AI so they don't wander after the player ghosts out of them
+		C.AIStatus = AI_OFF
+		C.wander = FALSE
+		//Set them as a player-character simplemob so examine and such changes to show their character prefs
+		C.player_character = ckey
 		C.grant_all_languages()
 		//Prepare their spawnpoint
 		var/list/avail_spawns = list()

@@ -44,9 +44,8 @@ GLOBAL_LIST_EMPTY(pokemon_selectable)
 			GLOB.pokemon_selectable[capitalize("[P.name]")] = P.type
 		qdel(P)
 
-GLOBAL_LIST_INIT(creature_selectable, list(
-
-	))
+///Creatures that players can select for creature characters
+GLOBAL_LIST_EMPTY(creature_selectable)
 
 /proc/generate_selectable_creatures(clear = FALSE)
 	if(clear)
@@ -61,10 +60,16 @@ GLOBAL_LIST_INIT(creature_selectable, list(
 			GLOB.creature_selectable[capitalize(SA.name)] = SA.type
 			qdel(SA)
 
-//List of all pokemon on the whole map.
+///List of all pokemon on the whole map.
 GLOBAL_LIST_EMPTY(pokemon_list)
-//List of available spawnpoints for pokemon to choose from
+
+///List of available spawnpoints for creatures to choose from when spawning
 GLOBAL_LIST_INIT(creature_spawnpoints, list(
-	"Wastelander" = /obj/effect/landmark/start/f13/wastelander,
-	"Citizen" = /obj/effect/landmark/start/f13/settler
+	"Citizen" = /obj/effect/landmark/start/f13/settler,
+	"Wastelander" = /obj/effect/landmark/start/f13/wastelander
+	))
+
+///Creatures that are not allowed for players to select for characters
+GLOBAL_LIST_INIT(creature_blacklist, list(
+	/mob/living/simple_animal/chick
 	))
