@@ -339,3 +339,8 @@ Key procs
 /datum/language_holder/universal/New()
 	..()
 	grant_all_languages()
+
+/datum/language_holder/signlanuage
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/signlanguage = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/signlanguage = list(LANGUAGE_ATOM))

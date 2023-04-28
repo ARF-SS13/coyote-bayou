@@ -843,3 +843,9 @@
 	desc = "A versatile chest rig, this one seems to be used in jungle enviroments and such"
 	icon_state = "brit_webbing"
 	item_state = "brit_webbing"
+
+/obj/item/storage/belt/bandolier/boer_band
+	name = "leather bandolier"
+	desc = "An old style of bandolier used by primarily those who ride upon horses."
+	icon_state = "boer_band"
+	item_state = "boer_band"

@@ -41,6 +41,11 @@ GLOBAL_LIST_INIT(energyweapon_cell_crafting, list(
 	/datum/crafting_recipe/enhancedmfcell,
 	/datum/crafting_recipe/enhancedecp))
 
+	// armored_hazard_suit is going to get SEVA Mk. 2 and Explorer Mk. 2 in the future. Might tie it to Hardsuits as well.
+GLOBAL_LIST_INIT(armored_hazard_suit, list(
+	/datum/crafting_recipe/combathazardsuit,
+	/datum/crafting_recipe/combathazardhood))
+
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
 	/datum/crafting_recipe/huntingrifle,
@@ -324,6 +329,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
 	H.mind.learned_recipes |= GLOB.energyweapon_crafting
 	H.mind.learned_recipes |= GLOB.pa_repair
+	H.mind.learned_recipes |= GLOB.armored_hazard_suit
 
 /datum/quirk/technophreak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -332,6 +338,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
 		H.mind.learned_recipes -= GLOB.pa_repair
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
@@ -763,18 +770,18 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	lose_text = span_danger("You know? Being cold kind of sucks actually.")
 	locked =  FALSE
 
-/datum/quirk/radimmune
+/* /datum/quirk/radimmune
 	name = "Radiation - Immune"
 	desc = "Gieger Counters are for suckers."
 	value = 5
 	mob_trait = TRAIT_RADIMMUNE
 	gain_text = span_notice("You've decided radiation just doesn't matter.")
 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
-	locked =  FALSE
+	locked =  FALSE */
 
 /datum/quirk/radimmuneish
 	name = "Radiation - Mostly Immune"
-	desc = "Gieger Counters are for suckers, mostly."
+	desc = "Gieger Counters are for suckers, mostly. Gives 75% innate rad resist."
 	value = 4
 	mob_trait = TRAIT_75_RAD_RESIST
 	gain_text = span_notice("You've decided radiation just doesn't matter much.")
@@ -783,7 +790,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 
 /datum/quirk/radimmunesorta
 	name = "Radiation - Sorta Immune"
-	desc = "Gieger Counters are for suckers, sorta."
+	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
 	value = 3
 	mob_trait = TRAIT_50_RAD_RESIST
 	gain_text = span_notice("You've decided radiation only kind of matters.")
@@ -1020,3 +1027,15 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
+
+/datum/quirk/zoomies
+	name = "Zoomies"
+	desc = "You can sprint a bit over fifty percent longer than most folk, just don't run into things."
+	value = 1
+	mob_trait = TRAIT_ZOOMIES
+
+/datum/quirk/super_zoomies
+	name = "Zoomies - Super"
+	desc = "You can sprint just over twice as long as most folk, just...REALLY don't run into things."
+	value = 3
+	mob_trait = TRAIT_SUPER_ZOOMIES

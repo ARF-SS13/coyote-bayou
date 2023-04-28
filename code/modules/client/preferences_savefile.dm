@@ -22,6 +22,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	Failing all that, the standard sanity checks are performed. They simply check the data is suitable, reverting to
 	initial() values if necessary.
+
+	Cool system, didnt read, gonna make my own. peace!
+		- Lagg
 */
 /datum/preferences/proc/savefile_needs_update(savefile/S)
 	var/savefile_version
@@ -33,6 +36,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(savefile_version < SAVEFILE_VERSION_MAX)
 		return savefile_version
 	return -1
+
+/datum/preferences/proc/update_save(savefile/S)
+	current_version = safe_json_decode(S["current_version"])
+	var/list/needs_updating = list()
+	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
+	if(LAZYLEN(needs_updating))
+		update_file(needs_updating, S)
 
 //should these procs get fairly long
 //just increase SAVEFILE_VERSION_MIN so it's not as far behind
@@ -173,6 +183,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				marking_list += list(list(part, old_marking_value, copied_color_list))
 			features["mam_body_markings"] = marking_list
 
+/datum/preferences/proc/update_file(list/missing_updates, savefile/S)
+	if(!LAZYLEN(missing_updates))
+		return
+	for(var/clog in missing_updates)
+		switch(clog)
+			if(PMC_OOC_NOTES_UPDATE) // ooc notes now come with a cool template
+				var/ooc_notes
+				S["feature_ooc_notes"] >> ooc_notes
+				ooc_notes += OOC_NOTE_TEMPLATE
+				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
+				current_version |= PMC_OOC_NOTES_UPDATE
+	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
+
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
 		return
@@ -205,7 +228,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			fdel(bacpath) //only keep 1 version of backup
 		fcopy(S, bacpath) //byond helpfully lets you use a savefile for the first arg.
 		return FALSE
-
+	update_save(S)
 	. = TRUE
 
 	//general preferences
@@ -647,6 +670,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["chosen_limb_id"]					>> chosen_limb_id
 	S["hide_ckey"]						>> hide_ckey //saved per-character
 
+	//Creature character settings
+	S["creature_species"]			>> creature_species
+	S["creature_name"]				>> creature_name
+	S["creature_flavor_text"]		>> creature_flavor_text
+	S["creature_ooc"]				>> creature_ooc
+	S["creature_profilepic"]		>> creature_profilepic
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -795,6 +824,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["allow_seeing_belly_descriptions"]	>> allow_seeing_belly_descriptions
 	S["allow_being_sniffed"]				>> allow_being_sniffed
 	belly_prefs = safe_json_decode(S["belly_prefs"])
+	current_version = safe_json_decode(S["current_version"])
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
@@ -946,6 +976,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["flavor_text"]			= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["silicon_flavor_text"]	= copytext(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["ooc_notes"]			= copytext(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
+	if(features["ooc_notes"] == "")
+		features["ooc_notes"] = OOC_NOTE_TEMPLATE
+		WRITE_FILE(S["feature_ooc_notes"], features["ooc_notes"])
 
 	/// VORE SANITIZATION - tab 4 or suffer
 	vore_smell						= sanitize_integer(vore_smell, 						FALSE, TRUE, initial(vore_smell))
@@ -1000,6 +1033,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// !! COYOTE SANITISATION !!
 	profilePicture = sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	creature_profilepic = sanitize_text(creature_profilepic)
 
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
@@ -1198,6 +1232,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["job_preferences"] , job_preferences)
 	WRITE_FILE(S["hide_ckey"]		, hide_ckey)
 
+	//Write creature character
+	WRITE_FILE(S["creature_species"]			,creature_species)
+	WRITE_FILE(S["creature_name"]				,creature_name)
+	WRITE_FILE(S["creature_flavor_text"]		,creature_flavor_text)
+	WRITE_FILE(S["creature_ooc"]				,creature_ooc)
+	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)
@@ -1248,6 +1288,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["allow_seeing_belly_descriptions"]	, allow_seeing_belly_descriptions)
 	WRITE_FILE(S["allow_being_sniffed"]				, allow_being_sniffed)
 	WRITE_FILE(S["belly_prefs"]						, safe_json_encode(belly_prefs))
+	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 
 	cit_character_pref_save(S)
 

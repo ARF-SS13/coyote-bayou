@@ -190,4 +190,10 @@
 	default_cartridge = /obj/item/cartridge/medical
 	icon_state = "pda-genetics"
 
+/obj/item/pda/teachboy
+	name = "refurbished Teach-Boy 2000"
+	desc = "A portable microcomputer by RobCo Industries. This model is a EDU-2 series educational device- or atleast that's what you can make from the rusty tin case with wires jammed into it- someone's repaired this thing."
+	icon_state = "pda-teachboy-unfolded"
+	inserted_item = /obj/item/pen/charcoal
+	disableoverlays = TRUE
 

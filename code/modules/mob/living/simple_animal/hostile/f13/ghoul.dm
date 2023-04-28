@@ -78,7 +78,7 @@
 		
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
-	faction = list("hostile")
+	faction = list("hostile", "ghoul")
 	decompose = TRUE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
 	guaranteed_butcher_results = list(

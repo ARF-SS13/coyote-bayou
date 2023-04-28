@@ -203,6 +203,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/bronzechestplate
+	name = "Bronze Chestplate"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/chitinbreastplate
 	name = "Fire Ant Breastplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/chitinbreastplate
@@ -419,18 +425,18 @@
 							)
 
 /datum/gear/suit/deputyvest
-	name = "NPD armor vest"
+	name = "Vault-Sec armor vest"
 	path = /obj/item/clothing/suit/armor/medium/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-	restricted_desc = "Nash Police, Nash Officials"
+	/*restricted_desc = "Nash Police, Nash Officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"Mayor",
 							"Detective",
 							"Secretary",
 							"Shopkeeper",
-						)
+						)*/
 
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
@@ -506,6 +512,78 @@
 /datum/gear/suit/canadian_coat
 	name = "canadian coat"
 	path = /obj/item/clothing/suit/canadian_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/adamantite
+	name = "adamantite coat"
+	path = /obj/item/clothing/suit/gob/adamantite
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/arcanium
+	name = "arcanium coat"
+	path = /obj/item/clothing/suit/gob/arcanium
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/gladiator
+	name = "Gladiator armor"
+	path = /obj/item/clothing/suit/gob/gladiator
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/black
+	name = "Black Coat"
+	path = /obj/item/clothing/suit/gob/black
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/black_gold
+	name = "black and gold coat"
+	path = /obj/item/clothing/suit/gob/black_gold
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/copper
+	name = "copper coat"
+	path = /obj/item/clothing/suit/gob/copper
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/dark_knight
+	name = "dark knight coat"
+	path = /obj/item/clothing/suit/gob/dark_knight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/holy_knight
+	name = "holy knight coat"
+	path = /obj/item/clothing/suit/gob/holy_knight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/iron
+	name = "iron coat"
+	path = /obj/item/clothing/suit/gob/iron
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/kraus
+	name = "Kraus Armor"
+	path = /obj/item/clothing/suit/gob/kraus
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/leather
+	name = "leather coat"
+	path = /obj/item/clothing/suit/gob/leather
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/steel
+	name = "Steel coat"
+	path = /obj/item/clothing/suit/gob/steel
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 

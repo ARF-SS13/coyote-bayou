@@ -24,6 +24,7 @@
 	icon_state = "roundlight"
 
 //christ this was a mistake, but it's here just in case someone wants to selectively fix -- Pooj
+//I told you that fucking 7 years ago you insufferable cunt. ~Tk420634
 /************* Lizard compatable snoots ***********
 /datum/sprite_accessory/snouts/bird
 	name = "Beak"

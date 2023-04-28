@@ -254,6 +254,7 @@
 				/obj/item/clothing/suit/armor/light/kit/punk/chinesebreastplate,
 				/obj/item/clothing/suit/armor/light/kit/punk/woodenbreastplate,
 				/obj/item/clothing/suit/armor/light/kit/punk/steelbreastplate,
+				/obj/item/clothing/suit/armor/light/kit/punk/bronzebreastplate,
 
 	)
 
@@ -604,6 +605,7 @@
 				/obj/item/storage/pill_bottle/chem_tin/buffout,
 				/obj/item/reagent_containers/hypospray/medipen/steady,
 				/obj/item/reagent_containers/hypospray/medipen/psycho,
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
 				)
 
 

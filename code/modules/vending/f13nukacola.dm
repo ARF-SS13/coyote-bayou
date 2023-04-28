@@ -7,7 +7,7 @@
 	products = list(
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive = 20)
 	contraband = list(
-/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4)
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 20)
 	premium = list(/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola = 1) //REAl nuka cola
 	refill_canister = /obj/item/vending_refill/nukacolavend
 	default_price = PRICE_CHEAP_AS_FREE

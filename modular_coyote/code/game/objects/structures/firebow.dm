@@ -20,7 +20,7 @@
 	item_state = "firebow"
 	lefthand_file = 'modular_coyote/icons/items/itemlefthand.dmi'
 	righthand_file = 'modular_coyote/icons/items/itemrighthand.dmi'
-
+	w_class = WEIGHT_CLASS_SMALL
 
 	var/iconBaseState = "firebow"
 

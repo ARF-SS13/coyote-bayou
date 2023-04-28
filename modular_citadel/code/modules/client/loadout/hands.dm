@@ -202,4 +202,47 @@
 	path = /obj/item/shield/coyote/redbuckler
 	cost = 2
 
+/datum/gear/hands/shield/chitinbuckler
+	name = "Fire Ant Buckler"
+	path = /obj/item/shield/coyote/chitinbuckler
+	cost = 2
+
+/datum/gear/hands/shield/chitinshield
+	name = "Fire Ant Shield"
+	path = /obj/item/shield/coyote/chitinshield
+	cost = 2
+
+/datum/gear/hands/shield/brahminleathershield
+	name = "Brahmin Leather Shield"
+	path = /obj/item/shield/coyote/brahminleathershield
+	cost = 2
+
+
+/datum/gear/hands/shield/roughshield
+	name = "Rough Shield"
+	path = /obj/item/shield/coyote/roughshield
+	cost = 2
+
+/datum/gear/hands/shield/scutum
+	name = "Scutum"
+	path = /obj/item/shield/coyote/scutum
+	cost = 2
+
+
+/datum/gear/hands/shield/chimalli
+	name = "Chimalli"
+	path = /obj/item/shield/coyote/chimalli
+	cost = 2
+
+
+/datum/gear/hands/shield/owlshield
+	name = "Owl Shield"
+	path = /obj/item/shield/coyote/owlshield
+	cost = 2
+
+
+/datum/gear/hands/shield/pegasusshield
+	name = "Pegasus Shield"
+	path = /obj/item/shield/coyote/pegasusshield
+	cost = 2
 

@@ -1268,7 +1268,7 @@
 	item_state = "bomberalt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/breastplate/khan
 	name = "Leather battle coat" //NO PIT THIS GAME UNIVERSE AND THAT GAME UNIVERSE HAVE NOTHING TO DO WITH EACH OTHER!!! (Sorry but I'm not keeping the original name of a petfaction) - Blue
@@ -1608,7 +1608,14 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
-
+/obj/item/clothing/suit/armor/light/kit/punk/bronzebreastplate
+	name = "Bronze Breastplate"
+	desc = "Abs not included."
+	icon_state = "bronze_chestplate"
+	item_state = "bronze_chestplate"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 ////////////////
 // OTHER //
@@ -1784,7 +1791,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/medium/vest/flak
@@ -1846,8 +1853,8 @@
 	item_state = "vest_flak"
 
 /obj/item/clothing/suit/armor/medium/vest/oasis
-	name = "NPD vest"
-	desc = "a lightweight ballistic vest that combines protection and comfort. This one has pockets sewn into the front and a badge pinned on it."
+	name = "Vault-Sec vest"
+	desc = "a lightweight ballistic vest that is commonly worn by Vault-Tec security personnel. This one still has the badge attached."
 	icon_state = "blueshift"
 	item_state = "blueshift"
 
@@ -3270,6 +3277,8 @@
 /obj/item/clothing/suit/armor/power_armor/t45b
 	name = "Refurbished T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
 	armor = ARMOR_VALUE_SALVAGE
 	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
@@ -3277,8 +3286,8 @@
 /obj/item/clothing/suit/armor/power_armor/t45b/raider
 	name = "powered scrap suit"
 	desc = "A monumentously heavy suit of rusty metal and car parts. Either an actual power armor exoskeleton or some home-built substitute sits embedded under all that rust. Is this some attempt at power armor???"
-	icon_state = "raider_salvaged"
-	item_state = "raider_salvaged"
+	icon_state = "raiderpa"
+	item_state = "raiderpa"
 	salvaged_type = /obj/item/clothing/suit/armor/medium/raider/raidermetal
 
 /obj/item/clothing/suit/armor/power_armor/t45d
@@ -3410,7 +3419,7 @@
 
 /obj/item/clothing/suit/bio_suit/enclave
 	name = "enclave envirosuit"
-	desc = "An advanced white and airtight environmental suit. It seems to be equipped with a fire-resistant seal and a refitted internals system. This one looks to have been developed by the Enclave sometime after the Great War. You'd usually exclusively see this on scientists of the Enclave."
+	desc = "An advanced white and airtight environmental suit. It seems to be equipped with a fire-resistant seal, enhanced armor inserts, and a refitted internals system. Designed and produced exclusively by the Enclave post-war, it's probably not a good idea to be seen wearing this."
 	icon_state = "envirosuit"
 	item_state = "envirosuit"
 	w_class = WEIGHT_CLASS_BULKY
@@ -3421,6 +3430,7 @@
 	equip_delay_other = 60
 	flags_inv = HIDEJUMPSUIT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_UP_ENV_T4)
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general
@@ -3438,14 +3448,18 @@
 	icon_state = "bio_virology"
 
 
-//Security biosuit, grey with red stripe across the chest
+//Security biosuit, grey with red stripe across the chest || Craftable, has good ballistic/laser armor, but not good against melee. It's a light armor, use that speed dummy -Kelprunner
 /obj/item/clothing/head/bio_hood/security
+	name = "reinforced hazard hood"
+	desc = "A lead-lined hood that's been reinforced with a kevlar weave."
 	icon_state = "bio_security"
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/bio_suit/security
+	name = "reinforced hazard suit"
+	desc = "A CBRN hazard suit that's been paired with a ballistic vest. Surprisingly lightweight for all of its bulk."
 	icon_state = "bio_security"
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
 
 //Janitor's biosuit, grey with purple arms
 /obj/item/clothing/head/bio_hood/janitor

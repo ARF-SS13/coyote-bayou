@@ -18,11 +18,11 @@
 	throwforce = 10
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/chainhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/chainofcommand/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))

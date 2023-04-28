@@ -202,6 +202,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
 	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
 
+	///If this is a player's ckey then this mob was spawned as a player's character
+	var/player_character = null
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
@@ -319,6 +322,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(client)
 		to_chat(user, span_warning("Someone's in there! Wait your turn!"))
 		return FALSE
+	if(player_character && player_character != user.ckey)
+		to_chat(user, span_warning("This mob is someone else's character so you cannot hop into them!"))
+		return FALSE
 	if(!user.key)
 		return FALSE
 	if(!islist(GLOB.playmob_cooldowns[user.key]))
@@ -363,12 +369,67 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	return ..()
 
+//Coyote Add
+/mob
+	///A detailed description of this mob that can be read if you examine them.
+	var/flavortext = ""
+	///A detailed description of the player who's controlling this mob's out-of-character roleplaying preferences. Do not set.
+	var/oocnotes = ""
+	///The specific name of this mob's species or subtype. Used for examine text (ie "this is Nutty a Squirrel", where Squirrel is the verbose_species)
+	var/verbose_species = null
+
+/mob/living/simple_animal/proc/print_flavor_text()
+	if(flavortext && flavortext != "")
+		var/msg = replacetext(flavortext, "\n", " ")
+		if(length(msg) <= 40)
+			return "<span class='notice'>[msg]</span>"
+		else
+			return "<span class='notice'>[html_encode(copytext(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</span></a>"
+
 /mob/living/simple_animal/examine(mob/user)
-	. = ..()
-	if(lazarused)
-		. += span_danger("This creature looks like it has been revived!")
-	. += mob_armor_description
-	
+	var/t_He = p_they(TRUE)
+//	var/t_His = p_their(TRUE)
+	var/t_his = p_their()
+//	var/t_him = p_them()
+//	var/t_has = p_have()
+	var/t_is = p_are()
+	var/list/dat = list()
+
+	if(player_character)
+		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
+		if(profilePicture)
+			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+		for(var/obj/item/I in held_items)
+			if(!(I.item_flags & ABSTRACT))
+				dat += "[t_He] [t_is] holding [I.get_examine_string(user)] in [t_his] [get_held_index_name(get_held_index_of_item(I))]."
+		if(flavortext)
+			dat += "[print_flavor_text()]"
+		if(oocnotes)
+			dat += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];oocnotes=1'>\[View\]</a>"
+		if(src.getBruteLoss())
+			if(src.getBruteLoss() < (maxHealth/2))
+				dat += "<span class='warning'>[t_He] looks bruised.</span>"
+			else
+				dat += "<span class='warning'><B>[t_He] looks severely bruised and bloodied!</B></span>"
+		if(src.getFireLoss())
+			if(src.getFireLoss() < (maxHealth/2))
+				dat += "<span class='warning'>[t_He] looks burned.</span>"
+			else
+				dat += "<span class='warning'><B>[t_He] looks severely burned.</B></span>"
+		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
+			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
+		else if(disconnect_time)
+			dat += "\[Disconnected/ghosted [round(((world.realtime - disconnect_time)/10)/60)] minutes ago\]"
+		if(lazarused)
+			dat += span_danger("[t_He] seems to have been revived!")
+		dat += "<span class='info'>*---------*</span>"
+		return dat
+	else
+		. = ..()
+		. += mob_armor_description
+		if(lazarused)
+			. += span_danger("[t_He] seems to have been revived!")
+
 /// If user is set, the mob will be told to be loyal to that mob
 /mob/living/simple_animal/proc/make_ghostable(mob/user)
 	can_ghost_into = TRUE
@@ -789,7 +850,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	if(!dextrous)
 		return
-	if(!hand_index)
+	if(!hand_index && held_items.len)//Divide by zero prevention
 		hand_index = (active_hand_index % held_items.len)+1
 	var/oindex = active_hand_index
 	active_hand_index = hand_index

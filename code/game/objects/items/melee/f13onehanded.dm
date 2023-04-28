@@ -6,6 +6,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	block_parry_data = /datum/block_parry_data/bokken
 	item_flags = ITEM_CAN_PARRY
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/melee/onehanded
 	name = "onehand melee template"
@@ -140,9 +141,9 @@
 	force = 15
 	throwforce = 40 //clears threshholds for trash mobs
 	armour_penetration = 0.10
-	max_reach = 2
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 
 
@@ -190,20 +191,21 @@
 /obj/item/melee/onehanded/knife/hunting
 	name = "hunting knife"
 	icon_state = "knife_hunting"
-	desc = "Dependable hunting knife."
+	desc = "A dependable hunting knife. Good for skinning one's kills."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 23
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	toolspeed = 0.8
+	toolspeed = 0.7
 
 /obj/item/melee/onehanded/knife/survival
 	name = "survival knife"
 	icon_state = "knife_survival"
-	desc = "Multi-purpose knife with blackened steel."
+	desc = "A high-quality pre-war survival knife. Perfect for a survivalist or hunter."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 23
 	throwforce = 25
+	toolspeed = 0.3
 
 /obj/item/melee/onehanded/knife/bayonet
 	name = "bayonet knife"
@@ -216,11 +218,11 @@
 	name = "bowie knife"
 	icon_state = "knife_bowie"
 	item_state = "knife_bowie"
-	desc = "A large clip point fighting knife."
+	desc = "Now this is a knife! Better as both a tool and weapon than most knives, but loses out to specialized tools."
 	force = 28
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
-	toolspeed = 0.8
+	toolspeed = 0.5
 
 /obj/item/melee/onehanded/knife/trench
 	name = "trench knife"
@@ -257,6 +259,7 @@ obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."
 	icon_state = "knife_switch"
+	w_class = WEIGHT_CLASS_TINY
 	force = 3
 	throwforce = 5
 	hitsound = 'sound/weapons/genhit.ogg'
@@ -276,7 +279,7 @@ obj/item/melee/onehanded/knife/switchblade
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
 	if(extended)
 		force = extended_force
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		throwforce = extended_throwforce
 		icon_state = extended_icon_state
 		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -284,7 +287,7 @@ obj/item/melee/onehanded/knife/switchblade
 		sharpness = SHARP_EDGED
 	else
 		force = initial(force)
-		w_class = WEIGHT_CLASS_SMALL
+		w_class = WEIGHT_CLASS_TINY
 		throwforce = initial(throwforce)
 		icon_state = retracted_icon_state
 		attack_verb = list("stubbed", "poked")
@@ -327,7 +330,7 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 25
 	throwforce = 15
 	armour_penetration = 0.2
-	toolspeed = 0.9
+	toolspeed = 0.8
 
 // Heat it with a welder
 /obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)

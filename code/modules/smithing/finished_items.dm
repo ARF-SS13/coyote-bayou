@@ -13,7 +13,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	force = WEAPON_FORCE_TOOL_SMALL
 	obj_flags = UNIQUE_RENAME
-	var/quality
+//	var/quality
 	var/overlay_state = "woodenrod"
 	var/mutable_appearance/overlay
 	//var/wielded_mult = 1
@@ -36,8 +36,6 @@
 	item_flags = NEEDS_PERMIT //it's a bigass sword/spear. beepsky is going to give you shit for it.
 	sharpness = SHARP_EDGED
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	force = WEAPON_FORCE_TOOL_LARGE
-	wielded_mult = WEAPON_SLASH_TWOHAND_MULT
 	w_class = WEIGHT_CLASS_BULKY
 	var/icon_prefix = null
 
@@ -80,8 +78,8 @@
 	var/qualitymod = 0
 
 /obj/item/melee/smith/hammer/premade
-	quality = 3
-	qualitymod = 1
+//	quality = 3
+//	qualitymod = 1
 	custom_materials = list(/datum/material/iron = 1000)
 
 // The true manual mining scanner, knock it on rock to scan. Could use a cooldown, can't be bothered to sort it. Lowest quality got too short range to test out.
@@ -126,6 +124,8 @@
 	item_state = "pickaxe"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	sharpness = SHARP_POINTY
+	digrange = 2
+	toolspeed = 0.2
 
 /obj/item/pickaxe/smithed/Initialize()
 	..()
@@ -211,28 +211,32 @@
 	icon_state = "sword_smith"
 	item_state = "sword_smith"
 	overlay_state = "hilt_sword"
-	armour_penetration = 0.1
-	force = WEAPON_FORCE_SLASH_LARGE
+	force = 47
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/captain_saber
 	w_class = WEIGHT_CLASS_BULKY
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
-	wound_bonus = WEAPON_SLASH_WOUND_ADD
-	//block_chance = 50
+	block_chance = 12
+	attack_speed = CLICK_CD_MELEE * 1.1
 
 /obj/item/melee/smith/sword/spatha
 	name = "papercutter"
 	icon_state = "spatha_smith"
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
+	force = 42
+	block_chance = 8
 
 /obj/item/melee/smith/sword/sabre
 	name = "bumper sabre"
 	icon_state = "sabre_smith"
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
+	force = 42
+	block_chance = 10
+	attack_speed = CLICK_CD_MELEE * 0.9
 
 // go for the eyes Boo
 /obj/item/melee/smith/dagger
@@ -241,7 +245,11 @@
 	overlay_state = "hilt_dagger"
 	w_class = WEIGHT_CLASS_SMALL
 	sharpness = SHARP_POINTY
-	force = WEAPON_FORCE_PIERCE_SMALL
+	force = 24
+	throwforce = 30
+	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
+	block_chance = 5
+	attack_speed = CLICK_CD_MELEE * 0.6 //fast as fuck boiii
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 /obj/item/melee/smith/dagger/attack(mob/living/carbon/M, mob/living/carbon/user)
@@ -252,31 +260,59 @@
 		return eyestab(M,user)
 	else
 		return ..()
+	
+/obj/item/melee/smith/dagger/bowie
+	name = "sharpblade"
+	icon_state = "bowie_smith"
+	overlay_state = "hilt_bowie"
+	force = 31
+	throwforce= 34
+	block_chance = 5
+	attack_speed = CLICK_CD_MELEE * 0.8
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_SMALL
+	toolspeed = 0.5
 
 /obj/item/melee/smith/machete
 	name = "machete"
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
-	force = WEAPON_FORCE_SLASH_LARGE
+	force = 38
+	block_chance = 5
 	sharpness = SHARP_EDGED
-	wound_bonus = WEAPON_SLASH_WOUND_ADD
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/melee/smith/machete/gladius
 	name = "razorbar"
 	icon_state = "gladius_smith"
 	overlay_state = "hilt_gladius"
+	force = 42
+	block_chance = 10
+	attack_speed = CLICK_CD_MELEE * 1.1
 
 /obj/item/melee/smith/machete/reforged
 	name = "mowerchete"
 	icon_state = "macheter_smith"
 	overlay_state = "hilt_macheter"
+	force = 35
+	block_chance = 5
+	attack_speed = CLICK_CD_MELEE * 0.9
+
+
+/obj/item/melee/smith/saw
+	name = "saw"
+	icon_state = "saw_smith"
+	overlay_state = "handle_saw"
 
 /obj/item/melee/smith/wakizashi
 	name = "weedwhacker"
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
-	force = WEAPON_FORCE_SLASH_SMALL
+	force = 27
+	throwforce= 30
+	block_chance = 10
+	attack_speed = CLICK_CD_MELEE * 0.7
 	block_parry_data = /datum/block_parry_data/waki
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
@@ -304,14 +340,14 @@
 	name = "club"
 	icon_state = "mace_smith"
 	overlay_state = "shaft_mace"
-	force = WEAPON_FORCE_BLUNT_LARGE
-	wound_bonus = WEAPON_BLUNT_WOUND_ADD
+	force = 35
+	block_chance = 5
 
 /obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(15, STAMINA, "chest", M.run_armor_check("chest", "melee"))
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 
 //////////////////////////
@@ -325,10 +361,27 @@
 	icon_state = "katana_smith"
 	icon_prefix = "katana_smith"
 	overlay_state = "hilt_katana"
-	force = WEAPON_FORCE_SLASH_LARGE
-	wielded_mult = WEAPON_SLASH_TWOHAND_MULT
+	force = 30
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE * 0.8
+	force_wielded = 40
+	force_unwielded = 30
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
+	hitsound = 'sound/weapons/rapierhit.ogg'
+	slot_flags = ITEM_SLOT_BELT
+	layer = MOB_UPPER_LAYER
+
+/obj/item/melee/smith/twohand/longsword
+	name = "longblade"
+	icon_state = "longsword_smith"
+	icon_prefix = "longsword_smith"
+	overlay_state = "hilt_longsword"
+	force = 28
+	block_chance = 15
+	force_wielded = 50
+	force_unwielded = 28
+	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = ITEM_SLOT_BELT
 	layer = MOB_UPPER_LAYER
@@ -348,15 +401,17 @@
 	parry_efficiency_perfect = 120
 	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 4)
 
-// Heavy axe, 2H focused chopper 27/54. Can be worn on your back.
+// Heavy axe, 2H focused chopper 25/55. Can be worn on your back.
 /obj/item/melee/smith/twohand/axe
 	name = "woodsplitter"
 	icon_state = "axe_smith"
 	icon_prefix = "axe_smith"
 	overlay_state = "shaft_axe"
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
-	force = WEAPON_FORCE_AXE_LARGE
-	wielded_mult = WEAPON_AXE_TWOHAND_MULT
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	block_chance = 8
+	force_wielded = 55
+	force_unwielded = 25
 	slot_flags = ITEM_SLOT_BACK
 	layer = MOB_UPPER_LAYER
 
@@ -373,28 +428,69 @@
 	icon_state = "warhoned_smith"
 	icon_prefix = "warhoned_smith"
 	overlay_state = "shaft_warhoned"
+	force = 25
+	block_chance = 5
+	force_wielded = 65
+	force_unwielded = 25
+	attack_speed = CLICK_CD_MELEE * 1.2
+
+/obj/item/melee/smith/twohand/axe/crusher
+	name = "bonebreaker"
+	icon_state = "crusher_smith"
+	icon_prefix = "crusher_smith"
+	overlay_state = "shaft_crusher"
+	force = 20
+	block_chance = 5
+	force_wielded = 50
+	force_unwielded = 20
+	attack_speed = CLICK_CD_MELEE * 1.5
+	sharpness = SHARP_NONE
+
+/obj/item/melee/smith/twohand/axe/crusher/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(70, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 /obj/item/melee/smith/twohand/axe/scrapblade
 	name = "homewrecker"
 	icon_state = "scrap_smith"
 	icon_prefix = "scrap_smith"
 	overlay_state = "hilt_scrap"
+	force = 25
+	block_chance = 10
+	force_wielded = 60
+	force_unwielded = 25
+	attack_speed = CLICK_CD_MELEE * 1.3
 
 /obj/item/melee/smith/twohand/spear
 	name = "rebar spear"
 	icon_state = "spear_smith"
 	icon_prefix = "spear_smith"
 	overlay_state = "shaft_spear"
-	max_reach = 2
-	force = WEAPON_FORCE_PIERCE_LARGE
+	force = 25
+	block_chance = 5
+	force_wielded = 50
+	force_unwielded = 25
 	sharpness = SHARP_POINTY
+	attack_speed = CLICK_CD_MELEE * 0.9
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/smith/twohand/spear/lance
 	name = "rebar lance"
 	icon_state = "lance_smith"
 	icon_prefix = "lance_smith"
 	overlay_state = "shaft_lance"
+	attack_speed = CLICK_CD_MELEE
 
+/obj/item/melee/smith/twohand/spear/trident
+	name = "rebar trident"
+	icon_state = "trident_smith"
+	icon_prefix = "trident_smith"
+	overlay_state = "shaft_trident"
+	block_chance = 10
+	attack_speed = CLICK_CD_MELEE * 1.1
+	embedding = list("pain_mult" = 5, "embed_chance" = 50, "fall_chance" = 5, "ignore_throwspeed_threshold" = TRUE)
 
 //////////////////////////
 //						//
@@ -411,7 +507,8 @@
 	item_state = "javelin_smith"
 	sharpness = SHARP_POINTY
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
-	force = WEAPON_FORCE_PIERCE_LARGE
+	force = 15
+	throwforce = 45
 	sharpness = SHARP_POINTY
 
 // Smaller weaker javelin, easier to store/carry, less effective
@@ -421,7 +518,9 @@
 	overlay_state = "handle_throwing"
 	item_state = "dagger_smith"
 	embedding = list("pain_mult" = 2, "embed_chance" = 50, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
-	force = WEAPON_FORCE_PIERCE_SMALL
+	force = 10
+	throwforce = 35
+	w_class = WEIGHT_CLASS_TINY
 	sharpness = SHARP_POINTY
 
 
@@ -434,13 +533,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 	icon_state = "toolbox"
 	overlay_state = "hammerhandle"
-	qualitymod = 0
+//	qualitymod = 0
 
 /obj/item/melee/smith/hammer/narsie
 	name = "runemetal hammer"
 	custom_materials = list(/datum/material/runedmetal = 12000)
 	desc = "A metal hammer inscribed with geometeric runes."
-	qualitymod = 1
+//	qualitymod = 1
 
 /obj/item/melee/smith/hammer/narsie/attack(mob/living/target, mob/living/carbon/human/user)
 	if(!iscultist(user))
@@ -460,7 +559,7 @@
 	name = "brass hammer"
 	custom_materials = list(/datum/material/bronze = 12000)
 	desc = "A brass hammer inscribed with... writing? You can't read it."
-	qualitymod = 1
+//	qualitymod = 1
 
 /obj/item/melee/smith/hammer/ratvar/attack(mob/living/target, mob/living/carbon/human/user)
 	if(!is_servant_of_ratvar(user))
@@ -478,4 +577,4 @@
 /obj/item/melee/smith/hammer/debug
 	name = "debugging hammer"
 	desc = "A DEBUGGING HAMMER!! EPIC!!."
-	qualitymod = 10
+//	qualitymod = 10

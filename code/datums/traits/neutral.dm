@@ -46,7 +46,7 @@
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
-/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK
+/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK // reworked into multiple other trait options, here for example purposes now - bear
 /quirk/fev
 	name = "FEV Exposure"
 	desc = " "
@@ -454,15 +454,3 @@
 	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 		if(!human_holder.put_in_hands(folder))
 			folder.forceMove(get_turf(human_holder))
-
-/datum/quirk/zoomies
-	name = "Zoomies"
-	desc = "You can sprint twice as far before you begin to get tired. Just don't run into things."
-	value = 0
-	mob_trait = TRAIT_ZOOMIES
-
-/datum/quirk/super_zoomies
-	name = "Zoomies - Super"
-	desc = "You never tire of sprinting at all, just be extremely careful not to run into things."
-	value = 0
-	mob_trait = TRAIT_SUPER_ZOOMIES

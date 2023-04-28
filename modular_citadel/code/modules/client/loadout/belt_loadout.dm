@@ -85,4 +85,7 @@
 	name = "burma webbing"
 	path = /obj/item/storage/belt/military/commonwealth_brit
 
+/datum/gear/belt/leather/boer
+	name = "leather bandolier"
+	path = /obj/item/storage/belt/bandolier/boer_band
 

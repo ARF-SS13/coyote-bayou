@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)
-
+	
 	//Main variables
 	var/owner = null // String name of owner
 	var/default_cartridge = 0 // Access level defined by cartridge
@@ -80,6 +80,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/equipped = FALSE  //used here to determine if this is the first time its been picked up
 	var/allow_emojis = TRUE //if the pda can send emojis and actually have them parsed as such
 	var/list/pipsounds = list("modular_coyote/sound/pipsounds/pip1.ogg", "modular_coyote/sound/pipsounds/pip2.ogg", "modular_coyote/sound/pipsounds/pip3.ogg")
+	var/disableoverlays = FALSE //disables overlay for odd-shaped, shittier pipboy sprites
 
 	var/obj/item/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above
@@ -156,6 +157,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	to_chat(M, "[src] is now skinned as '[choice]'.")
 
 /obj/item/pda/proc/set_new_overlays()
+	if(disableoverlays)
+		return
 	if(!overlays_offsets || !(icon in overlays_offsets))
 		overlays_x_offset = 0
 		overlays_y_offset = 0
@@ -226,6 +229,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /obj/item/pda/update_overlays()
 	. = ..()
+	if(disableoverlays)
+		return
 	if(new_overlays)
 		set_new_overlays()
 	var/screen_state = new_alert ? current_overlays[PDA_OVERLAY_ALERT] : current_overlays[PDA_OVERLAY_SCREEN]

@@ -268,6 +268,21 @@
 	icon_state = "pill_mentat"
 	list_reagents = list(/datum/reagent/medicine/mentat = 10)
 
+/obj/item/reagent_containers/pill/mentat/grape
+	name = "Grape Mentat"
+	color = "#6699ff" //red and blue make purple
+	list_reagents = list(/datum/reagent/medicine/mentat = 10, /datum/reagent/consumable/grapejuice = 5)
+
+/obj/item/reagent_containers/pill/mentat/orange
+	name = "Orange Mentat"
+	color = "#ffff00" //red and yellow make orange
+	list_reagents = list(/datum/reagent/medicine/mentat = 10, /datum/reagent/consumable/orangejuice = 5)
+
+/obj/item/reagent_containers/pill/mentat/berry
+	name = "Berry Mentat"
+	color = null //just red for this one
+	list_reagents = list(/datum/reagent/medicine/mentat = 10, /datum/reagent/consumable/berryjuice = 5)
+
 /obj/item/reagent_containers/pill/fixer
 	name = "Fixer pill"
 	desc = "A bitter pill that is known to rapidly treat the addictions, withdrawal effects, and other drawbacks of other chemicals. \

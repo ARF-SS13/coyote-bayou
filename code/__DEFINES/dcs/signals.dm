@@ -241,6 +241,7 @@
 	#define COMPONENT_BLOCK_MAGIC 1
 #define COMSIG_MOB_HUD_CREATED "mob_hud_created"				//from base of mob/create_mob_hud(): ()
 #define COMSIG_MOB_ATTACK_HAND "mob_attack_hand"				//from base of
+#define COMSIG_ITEM_ATTACKCHAIN "mob_item_attack_chain"			//from base of /obj/item/attack(): (mob/M, mob/user)
 #define COMSIG_MOB_ITEM_ATTACK "mob_item_attack"				//from base of /obj/item/attack(): (mob/M, mob/user)
 	#define COMPONENT_ITEM_NO_ATTACK 1
 #define COMSIG_MOB_ITEM_AFTERATTACK "mob_item_afterattack"		//from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
@@ -580,8 +581,26 @@
 #define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
 #define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
 
-/// persona core signals
-#define COMSIG_ATOM_PERSONA_CORE_INSERTED "persona_core_inserted" // (/obj/item/persona_core/src)
+/// Blenderbrain signals
+/// Signals sent from the Persona Core to the host
+/// Tells the host that the core is being inserted into them
+#define COMSIG_BB_PC_TO_HOST_INSERTED "persona_core_inserted" // (datum/source, /obj/item/persona_core/src)
+/// Tells the host that the core is being removed from them
+#define COMSIG_BB_PC_TO_HOST_REMOVED "persona_core_removed" // (datum/source, /obj/item/persona_core/src)
+/// Blenderbrain's output that is being sent to the host
+#define COMSIG_BB_PC_TO_HOST_IMPULSE "persona_core_instructions" // (datum/source, instructions)
+/// REquests some kind of information from the host, like if its running, has a thing in it, etc. Returns a flag, usually TRUE or FALSE
+#define COMSIG_BB_PC_TO_HOST_REQUEST "persona_core_request" // (datum/source, request)
+/// Asks if the potential host can support us. Returns a boolean, usually TRUE or FALSE
+#define COMSIG_BB_PC_TO_HOST_CAN_INSERT "persona_core_can_enter"
+
+/// Signals sent from the host to the Persona Core
+/// A stimulus sent from the host to the core, something that might trigger a response
+#define COMSIG_BB_HOST_TO_PC_STIMULUS "persona_core_stimulus" // (datum/source, stimulus, mob/user, list/extra_things)
+// Requests the core's brain's operation modifier
+#define COMSIG_BB_HOST_TO_PC_AMOUR_MOD "persona_core_amour_mod" // (datum/source, mob/user)
+
+
 
 /// When they look back and see that some fuckin nerd componentized vore, will they be proud? or rightfully confused why someone would spend their time on this?
 /// I know one thing for sure though, and that is that I won't regret any second of it
@@ -659,6 +678,8 @@
 #define COMSIG_VORE_DO_MESSAGE "vore_message" // (datum/source, obj/vore_belly/belly, message_type, pref_type)
 /// Asks if the componentholder can eat a certain item
 #define COMSIG_VORE_CHECK_EDIBILITY "can_i_eat_item" // (datum/source, obj/item/thing)
+/// Asks the mob if their vore is set up
+#define COMSIG_VORE_EXISTS "is_vore_time"
 
 /// Vore defines specifically for a belly
 /// Tells the belly trash happened

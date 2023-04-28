@@ -400,8 +400,7 @@
 	)
 
 /datum/export/item/liquor
-	k_elasticity = 0
-	cost = 25
+	cost = 500
 	unit_name = "cheap liquor"
 	export_types = list(/obj/item/export/bottle/gin,
 	/obj/item/export/bottle/whiskey,
@@ -422,8 +421,7 @@
 	)
 
 /datum/export/item/highliquor
-	k_elasticity = 0
-	cost = 75
+	cost = 1500
 	unit_name = "classy liquor"
 	export_types = list(/obj/item/export/bottle/champagne,
 	/obj/item/export/bottle/blazaam,
@@ -432,3 +430,45 @@
 	/obj/item/export/bottle/goldschlager,
 	/obj/item/export/bottle/patron,
 	)
+
+
+/datum/export/item/toyslow
+	cost = 200
+	unit_name = "basic toy"
+	export_types = list(/obj/item/toy,
+	)
+
+
+/datum/export/item/toyshigh
+	cost = 1000
+	unit_name = "advanced toy"
+	export_types = list(/obj/item/toy/prize,
+	/obj/item/toy/talking,
+	)
+
+/datum/export/item/prewarsalvage
+	cost = 50 // 1600 credits or 160 caps for the shop per full bag. Avg 80 caps for customers per bag
+	unit_name = "saleable scrap"
+	export_types = list(/obj/item/salvage/low,
+	)
+
+/datum/export/item/toolsalvage
+	cost = 2000 // Tools are nice, but often clutter places up. This should help.
+	unit_name = "tool salvage"
+	export_types = list(/obj/item/salvage/tool,
+	)
+
+/datum/export/item/advancedsalvage
+	cost = 5000 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
+	unit_name = "quality salvage"
+	export_types = list(/obj/item/salvage/high,
+	)
+
+/datum/export/item/armorgeneric
+	cost = 500 // just a test so the shop can actually move armor since nobody ever buys it
+	unit_name = "armor item"
+	export_types = list(/obj/item/clothing/suit/armor,
+	)
+
+/* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
+

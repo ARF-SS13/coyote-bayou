@@ -212,6 +212,7 @@
 
 /// spawn the mob(s)
 /datum/component/spawner/proc/spawn_mob()
+	var/atom/P = parent
 	if(!islist(spawned_mobs))
 		spawned_mobs = list()
 	if(LAZYLEN(special_mobs))
@@ -219,9 +220,9 @@
 		if(spawner_special)
 			var/mob/living/simple_animal/hostile/mobbie = spawner_special.make_special_mob(src)
 			spawned_mobs |= WEAKREF(mobbie)
+			mobbie.nest = WEAKREF(P)
 			qdel(spawner_special)
 			return
-	var/atom/P = parent
 	var/chosen_mob
 	var/mob/living/simple_animal/L
 	for(var/i = 1 to swarm_size)

@@ -275,6 +275,7 @@
 	body_parts_covered = CHEST|GROIN
 	body_parts_hidden = 0 // nudie~
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/misc/durathread
 	name = "durathread jumpsuit"
@@ -1010,6 +1011,7 @@
 	item_color = "mayan_loincloth"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/civ/greatshendyt
 	name = "Egypt dress"
@@ -1269,3 +1271,274 @@
 	icon_state = "countess"
 	item_state = "countess"
 	item_color = "countess"
+
+/obj/item/clothing/under/skyrat/maid
+	name = "maid dress"
+	desc = "Clean those windows! Dust the floors!"
+	icon_state = "maid_skyrat"
+	item_state = "maid_skyrat"
+	item_color = "maid_skyrat"
+
+/obj/item/clothing/under/skyrat/flower_kimono
+	name = "Kimono"
+	desc = "Somehow you feel like a weeb in this."
+	icon_state = "flower_kimono"
+	item_state = "flower_kimono"
+	item_color = "flower_kimono"
+
+/obj/item/clothing/under/hawi/orange
+	name = "orange hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_orange"
+	item_state = "tacticool_hawaiian_orange"
+	item_color = "tacticool_hawaiian_orange"
+
+/obj/item/clothing/under/hawi/blue
+	name = "blue hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_blue"
+	item_state = "tacticool_hawaiian_blue"
+	item_color = "tacticool_hawaiian_blue"
+
+/obj/item/clothing/under/hawi/purple
+	name = "purple hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_purple"
+	item_state = "tacticool_hawaiian_purple"
+	item_color = "tacticool_hawaiian_purple"
+
+/obj/item/clothing/under/hawi/green
+	name = "green hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_green"
+	item_state = "tacticool_hawaiian_green"
+	item_color = "tacticool_hawaiian_green"
+
+/obj/item/clothing/under/civ/toxotai
+	name = "Robe with black belt"
+	icon_state = "toxotai"
+	item_state = "toxotai"
+	item_color = "toxotai"
+
+/obj/item/clothing/under/civ/thebes
+	name = "blue swamp hoplite"
+	icon_state = "thebes"
+	item_state = "thebes"
+	item_color = "thebes"
+
+/obj/item/clothing/under/civ/corinthia
+	name = "green swamp hoplite"
+	icon_state = "corinthia"
+	item_state = "corinthia"
+	item_color = "corinthia"
+
+/obj/item/clothing/under/civ/greek_commander
+	name = "swamp hoplite commander"
+	icon_state = "greek_commander"
+	item_state = "greek_commander"
+	item_color = "greek_commander"
+
+/obj/item/clothing/under/civ/athens
+	name = "dark blue swamp hoplite"
+	icon_state = "athens"
+	item_state = "athens"
+	item_color = "athens"
+
+/obj/item/clothing/under/civ/roman_centurion
+	name = "robe with red belt"
+	icon_state = "roman_centurion"
+	item_state = "roman_centurion"
+	item_color = "roman_centurion"
+
+/obj/item/clothing/under/japanese_uniform
+	name = "Green uniform"
+	desc = "A green uniform. Camo!"
+	icon_state = "japan_uniform"
+	item_state = "japan_uniform"
+	item_color = "japan_uniform"
+
+//Lucine's Sprites
+
+/obj/item/clothing/under/gob/mini_black
+	name = "Mini Black Dress"
+	desc = "A small black dress."
+	icon_state = "mini_black"
+	item_state = "mini_black"
+	item_color = "mini_black"
+
+/obj/item/clothing/under/gob/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+
+/obj/item/clothing/under/gob/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+
+/obj/item/clothing/under/gob/mini_white
+	name = "Mini White"
+	desc = "A small white dress."
+	icon_state = "mini_white"
+	item_state = "mini_white"
+	item_color = "mini_white"
+
+
+/obj/item/clothing/under/gob/pristess
+	name = "pristess dress"
+	desc = "A fancy dress"
+	icon_state = "pristess"
+	item_state = "pristess"
+	item_color = "pristess"
+
+/obj/item/clothing/under/gob/summer
+	name = "Summer dress"
+	desc = "A pink summer dress"
+	icon_state = "summer"
+	item_state = "summer"
+	item_color = "summer"
+
+/obj/item/clothing/under/gob/thot
+	name = "Thin white dress"
+	desc = "A thin white and kinda revealing dress."
+	icon_state = "thot"
+	item_state = "thot"
+	item_color = "thot"
+
+/obj/item/clothing/under/gob/fem_blue
+	name = "female blue outfit"
+	desc = "A blue tunic."
+	icon_state = "fem_blue"
+	item_state = "fem_blue"
+	item_color = "fem_blue"
+
+/obj/item/clothing/under/gob/fem_rose
+	name = "female rose outfit"
+	desc = "A rose tunic."
+	icon_state = "fem_rose"
+	item_state = "fem_rose"
+	item_color = "fem_rose"
+
+/obj/item/clothing/under/gob/fem_white
+	name = "female white outfit"
+	desc = "A white tunic."
+	icon_state = "fem_white"
+	item_state = "fem_white"
+	item_color = "fem_white"
+
+/obj/item/clothing/under/gob/vestido_blue
+	name = "Blue Vestido Dress"
+	desc = "A very fancy blue dress"
+	icon_state = "vestido_blue"
+	item_state = "vestido_blue"
+	item_color = "vestido_blue"
+
+/obj/item/clothing/under/gob/vestido_black
+	name = "Black Vestido Dress"
+	desc = "A very fancy black dress"
+	icon_state = "vestido_black"
+	item_state = "vestido_black"
+	item_color = "vestido_black"
+
+/obj/item/clothing/under/gob/vestido_pink
+	name = "Pink Vestido Dress"
+	desc = "A very fancy pink dress"
+	icon_state = "vestido_pink"
+	item_state = "vestido_pink"
+	item_color = "vestido_pink"
+
+/obj/item/clothing/under/gob/vestido_yellow
+	name = "Yellow Vestido Dress"
+	desc = "A very fancy yellow dress"
+	icon_state = "vestido_yellow"
+	item_state = "vestido_yellow"
+	item_color = "vestido_yellow"
+
+/obj/item/clothing/under/gob/vestido_white
+	name = "White Vestido Dress"
+	desc = "A very fancy white dress"
+	icon_state = "vestido_white"
+	item_state = "vestido_white"
+	item_color = "vestido_white"
+
+/obj/item/clothing/under/gob/vestido_purple
+	name = "Purple Vestido Dress"
+	desc = "A very fancy purple dress"
+	icon_state = "vestido_purple"
+	item_state = "vestido_purple"
+	item_color = "vestido_purple"
+
+/obj/item/clothing/under/gob/vestido_red
+	name = "Red Vestido Dress"
+	desc = "A very fancy red dress"
+	icon_state = "vestido_red"
+	item_state = "vestido_red"
+	item_color = "vestido_red"
+
+
+/obj/item/clothing/under/gorka_alt
+	name = "Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_alt"
+	item_state = "gorka_alt"
+	item_color = "gorka_alt"
+
+/obj/item/clothing/under/gorka_ss
+	name = "Alt Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_ss"
+	item_state = "gorka_ss"
+	item_color = "gorka_ss"
+
+/obj/item/clothing/under/gorka_tan
+	name = "Tan Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_tan"
+	item_state = "gorka_tan"
+	item_color = "gorka_tan"
+
+/obj/item/clothing/under/puffy
+	name = "puffy dress"
+	desc = "A pink and puffy dress!"
+	icon_state = "puffydress"
+	item_state = "puffydress"
+	item_color = "puffydress"
+
+/obj/item/clothing/under/labor_black
+	name = "black labor suit"
+	desc = "A slim fitting black suit"
+	icon_state = "labor_black"
+	item_state = "labor_black"
+	item_color = "labor_black"
+
+/obj/item/clothing/under/divine_robes
+	name = "divine robes"
+	desc = "Rather holy robes."
+	icon_state = "divine_robes"
+	item_state = "divine_robes"
+	item_color = "divine_robes"
+
+/obj/item/clothing/under/blue_kimono
+	name = "Dark blue Kimono"
+	desc = "A dark blue kimono."
+	icon_state = "blue_kimono"
+	item_state = "blue_kimono"
+	item_color = "blue_kimono"
+
+/obj/item/clothing/under/miku_bikini
+	name = "Blue bikini"
+	desc = "A light blue bikini with a red bow!"
+	icon_state = "miku_bikini"
+	item_state = "miku_bikini"
+	item_color = "miku_bikini"
+
+/obj/item/clothing/under/shark
+	name = "shark uniform"
+	desc = "A skimpy light grey uniform. The same color as a shark!"
+	icon_state = "shark_cloth"
+	item_state = "shark_cloth"
+	item_color = "shark_cloth"

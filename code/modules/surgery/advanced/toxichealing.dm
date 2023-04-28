@@ -1,5 +1,5 @@
 /datum/surgery/advanced/toxichealing
-	name = "Surgically assisted rejuvenation (oxygen deprivation & toxicity)"
+	name = "Tend Wounds (Toxin, Oxygen)"
 	desc = "A surgical procedure that helps deal with oxygen  deprivation, and treats parts damaged due to toxic compounds. Works on corpses and alive alike without chemicals."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/incise,
@@ -14,7 +14,7 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
-	requires_trait = "MEDICALGRADUATE"
+	requires_trait = 1 // this *should* make it so surgery low lets people use this surgery
 
 /datum/surgery_step/toxichealing
 	name = "rejuvenate body"

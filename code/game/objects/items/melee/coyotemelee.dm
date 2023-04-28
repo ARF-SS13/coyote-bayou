@@ -13,7 +13,6 @@
 	throwforce = 23
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "have'd at the")
@@ -35,11 +34,11 @@
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 2
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/katanaold //Technically a worse scrap sabre, but stylistic as shit so eat my ass I guess ~TK
 	name = "old katana"
@@ -57,7 +56,6 @@
 	throwforce = 23
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
@@ -80,7 +78,6 @@
 	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
@@ -103,7 +100,6 @@
 	throwforce = 15
 	wound_bonus = 10
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
@@ -126,7 +122,6 @@
 	throwforce = 30
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "hacked")
@@ -149,7 +144,6 @@
 	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
@@ -173,7 +167,6 @@
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
@@ -196,7 +189,6 @@
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "smashed")
@@ -219,7 +211,6 @@
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "smashed")
@@ -242,7 +233,6 @@
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("wrecked", "bashed", "smashed")
@@ -263,7 +253,6 @@
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("wrecked", "bashed", "smashed")
@@ -284,7 +273,6 @@
 	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("wrecked", "bashed", "smashed")
@@ -307,7 +295,6 @@
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
@@ -331,11 +318,11 @@
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 2
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldpike
 	name = "Old Pike"
@@ -348,18 +335,17 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
-	force = 20
+	force = 10
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	min_reach = 2
-	max_reach = 3
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.5
+	weapon_special_component = /datum/component/weapon_special/ranged_spear/longer/pike
 
 /obj/item/melee/coyote/oldnaginata
 	name = "Old Naginata"
@@ -377,12 +363,12 @@
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 2
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	block_chance = 10
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldashandarei
 	name = "Old Ashandarei"
@@ -400,7 +386,6 @@
 	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 1
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
@@ -423,7 +408,6 @@
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("batter-gashed", "sliced", "diced")
@@ -445,7 +429,6 @@
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
@@ -469,7 +452,6 @@
 	wound_bonus = 15
 	stam_dmg = 30
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
@@ -498,7 +480,6 @@
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
@@ -538,9 +519,26 @@
 	item_state = "armingsword"
 
 
+//danimaul//
+//why am I making this
+//please no
 
+/obj/item/melee/coyote/danhead
+	name = "dan's head on a stick"
+	icon = 'modular_coyote/icons/objects/danimaul.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/danimaulinhandleft.dmi'
+	righthand_file = 'modular_coyote/icons/objects/danimaulinhandright.dmi'
+	icon_state = "danimauler"
+	item_state = "danimauler"
+	force = 5
+	force_wielded = 10
+	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
 
-
+/obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(100, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 
 

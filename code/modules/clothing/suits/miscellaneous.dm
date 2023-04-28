@@ -1044,3 +1044,86 @@
 	item_state = "Canadian_coat"
 	armor = ARMOR_VALUE_LIGHT
 
+/obj/item/clothing/suit/gob/adamantite
+	name = "adamantite coat"
+	desc = "A purple kinda fancy looking coat."
+	icon_state = "adamantite"
+	item_state = "adamantite"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/arcanium
+	name = "arcanium coat"
+	desc = "A blue and white kinda fancy looking coat."
+	icon_state = "arcanium"
+	item_state = "arcanium"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/gladiator
+	name = "gladiator armor"
+	desc = "A red and sliver piece of armor!"
+	icon_state = "gladiator"
+	item_state = "gladiator"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/black
+	name = "Black Coat"
+	desc = "A fancy looking black coat"
+	icon_state = "black"
+	item_state = "black"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/black_gold
+	name = "black and gold coat"
+	desc = "A fancy looking black and gold coat."
+	icon_state = "black_gold"
+	item_state = "black_gold"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/copper
+	name = "copper coat"
+	desc = "A copper colored coat."
+	icon_state = "copper"
+	item_state = "copper"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/dark_knight
+	name = "dark knight coat"
+	desc = "A grey and sliver coat with a cross on the chest. Avast Ye! Wait, that's pirates."
+	icon_state = "dark_knight"
+	item_state = "dark_knight"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/holy_knight
+	name = "holy knight coat"
+	desc = "A fancy coat!"
+	icon_state = "holy_knight"
+	item_state = "holy_knight"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/iron
+	name = "iron coat"
+	desc = "A fancy coat!"
+	icon_state = "iron"
+	item_state = "iron"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/kraus
+	name = "kraus armor"
+	desc = "A shiny suit of armor!"
+	icon_state = "kraus"
+	item_state = "kraus"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/leather
+	name = "leahter coat"
+	desc = "A leather coat! Don't call peta."
+	icon_state = "leather"
+	item_state = "leather"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/gob/steel
+	name = "Steel coat"
+	desc = "A Steel coat! Jet fuel might melt this.."
+	icon_state = "steel"
+	item_state = "steel"
+	armor = ARMOR_VALUE_LIGHT

@@ -18,7 +18,7 @@
 	/// Probability to spawn a smoke on a given tile when it's on the side of the cone
 	var/thickpercent_side = 75
 
-/datum/effect_fancy/smoke_cone/do_effect(turf/start, turf/end, params)
+/datum/effect_fancy/smoke_cone/do_effect(turf/start, turf/end, angle, length)
 	if(!start || !end)
 		return
 	var/list/turfs = getline(start, end)
