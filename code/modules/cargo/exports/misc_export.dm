@@ -400,7 +400,7 @@
 	)
 
 /datum/export/item/liquor
-	cost = 500
+	cost = 1000
 	unit_name = "cheap liquor"
 	export_types = list(/obj/item/export/bottle/gin,
 	/obj/item/export/bottle/whiskey,
@@ -433,7 +433,7 @@
 
 
 /datum/export/item/toyslow
-	cost = 200
+	cost = 500
 	unit_name = "basic toy"
 	export_types = list(/obj/item/toy,
 	)
@@ -469,6 +469,22 @@
 	unit_name = "armor item"
 	export_types = list(/obj/item/clothing/suit/armor,
 	)
+
+/datum/export/item/lowfish
+	cost = 150
+	unit_name = "common fish"
+	export_types = list(/obj/item/fishy/carp,
+						/obj/item/fishy/salmon,
+						/obj/item/fishy/crawdad,
+						/obj/item/fishy/shrimp,
+	)
+
+/datum/export/item/highfish
+	cost = 500
+	unit_name = "rare fish"
+	export_types = list(/obj/item/fishy/eel,
+	)
+
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
 

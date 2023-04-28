@@ -14,9 +14,10 @@
 	var/expected_price = 0
 	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
 
-	var/list/goods_list = list( /obj/item/stack/crafting/metalparts = 1,
-								/obj/item/stack/crafting/goodparts = 3,
-								/obj/item/stack/crafting/electronicparts = 3,
+	var/list/goods_list = list( /obj/item/stack/sheet/metal = 1,
+								/obj/item/stack/sheet/mineral/titanium = 3,
+								/obj/item/stack/sheet/plasteel =3,
+								/obj/item/stack/sheet/mineral/plastitanium = 6,
 								/obj/item/advanced_crafting_components/flux = 15,
 								/obj/item/advanced_crafting_components/lenses = 15,
 								/obj/item/advanced_crafting_components/conductors = 15,
@@ -46,7 +47,7 @@
 								/obj/item/export/bottle/goldschlager = 30,
 								/obj/item/export/bottle/patron = 30,
 								/obj/item/stealthboy = 100,
-								/obj/item/blueprint/research = 50,
+								/obj/item/blueprint/research = 25,
 								// pistols/revolvers, 5 caps
 								/obj/item/gun/ballistic/revolver/detective = 5,
 								/obj/item/gun/ballistic/revolver/revolver45 = 5,
@@ -246,15 +247,17 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Handguns: 5 caps<br>"
-	dat += "Rifles and Shotguns: 10 caps<br>"
-	dat += "Submachine Guns and Automatic Rifles: 15 caps<br>"
-	dat += "Improvised Firearms: 0 caps<br>"
-	dat += "Metal and Electronic Parts: 1 - 3 caps<br>"
+	dat += "Metal Sheet: 1 cap<br>"
+	dat += "Titanium Sheet: 3 caps<br>"
+	dat += "Plasteel Sheet: 3 caps<br>"
+	dat += "Plastitanium Sheet: 6 caps<br>"
 	dat += "Advanced Components: 15 caps<br>"
 	dat += "Sealed Alcohol Bottles: 15 - 30 caps<br>"
-	dat += "Research Papers: 50 caps<br>"
+	dat += "Research Papers: 25 caps<br>"
 	dat += "Stealthboy: 100 caps<br>"
+	dat += "Handguns: 5 caps<br>"
+	dat += "Bolt Action Rifles and Shotguns: 10 caps<br>"
+	dat += "SMGs, Semi-auto, and Automatic Rifles: 15 caps<br>"
 	dat += ""
 	dat += "</div>"
 
@@ -410,46 +413,13 @@ Fence
 */
 
 /obj/machinery/mineral/wasteland_trader/brotherhood
-	name = "Brotherhood of Steal"
+	name = "Nash Bounty Ticket Machine"
+	desc = "This vending machine accepts bounty tickets in exchange for caps. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
-	goods_list = list( /obj/item/radio/headset/headset_bos = 15,
-								/obj/item/clothing/under/syndicate/brotherhood = 15,
-								/obj/item/card/id/dogtag = 30,
-								/obj/item/clothing/shoes/combat/swat = 5,
-								/obj/item/clothing/gloves/combat = 5,
-								/obj/item/clothing/accessory/bos/initiateS = 5,
-								/obj/item/clothing/accessory/bos/initiateK = 5,
-								/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate = 30,
-								/obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate = 30,
-								/obj/item/clothing/accessory/bos/juniorknight = 5,
-								/obj/item/clothing/accessory/bos/knight = 15,
-								/obj/item/clothing/head/helmet/f13/combat/brotherhood = 45,
-								/obj/item/clothing/suit/armor/medium/combat/brotherhood = 45,
-								/obj/item/clothing/suit/armor/medium/combat/brotherhood/senior = 60,
-								/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior = 60,
-								/obj/item/clothing/glasses/night = 150,
-								/obj/item/clothing/accessory/bos/seniorknight = 30,
-								/obj/item/clothing/accessory/bos/scribe = 15,
-								/obj/item/clothing/accessory/bos/juniorscribe = 5,
-								/obj/item/clothing/suit/armor/light/duster/bos/scribe = 45,
-								/obj/item/clothing/suit/armor/light/duster/bos/scribe/seniorscribe = 60,
-								/obj/item/clothing/accessory/bos/seniorscribe = 30,
-								/obj/item/clothing/accessory/bos/juniorpaladin = 15,
-								/obj/item/clothing/accessory/bos/paladin = 30,
-								/obj/item/clothing/accessory/bos/seniorpaladin = 45,
-								/obj/item/clothing/suit/armor/medium/combat/brotherhood/captain = 75,
-								/obj/item/clothing/accessory/bos/knightcaptain = 60,
-								/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain = 75,
-								/obj/item/clothing/accessory/bos/headscribe = 60,
-								/obj/item/clothing/suit/armor/light/duster/bos/scribe/headscribe = 75,
-								/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 75,
-								/obj/item/clothing/under/f13/recon = 30,
-								/obj/item/clothing/accessory/bos/sentinel = 30,
-								/obj/item/clothing/suit/armor/light/duster/bos/scribe/elder = 300,
-								/obj/item/clothing/accessory/bos/elder = 300,
-								/obj/item/gun/energy/laser/laer = 600,
-								/obj/item/clothing/neck/mantle/bos/right = 300
-
+	goods_list = list( 	/obj/item/card/lowbounty = 100,
+						/obj/item/card/midbounty = 200,
+						/obj/item/card/highbounty = 400,
+						/obj/item/card/kingbounty = 800
 								)
 
 /obj/machinery/mineral/wasteland_trader/brotherhood/ui_interact(mob/user)
@@ -460,7 +430,11 @@ Fence
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Buying a wide variety of Brotherhood gear.</b><br>"
+	dat += "<b>Turn your kills into caps today!</b><br>"
+	dat += "Small Roller Bounty Ticket: 100 caps<br>"
+	dat += "Medium Roller Bounty Ticket: 200 caps<br>"
+	dat += "High Roller Bounty Ticket: 400 caps<br>"
+	dat += "King's Bounty Ticket: 800 caps<br>"
 	dat += ""
 	dat += "</div>"
 
