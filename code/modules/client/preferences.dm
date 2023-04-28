@@ -2420,6 +2420,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("creature_species")
 					if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
 						generate_selectable_creatures()
+					if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+						creature_species = initial(creature_species)
 					var/result = input(user, "Select a creature species", "Species Selection") as null|anything in GLOB.creature_selectable
 					if(result)
 						creature_species = result
