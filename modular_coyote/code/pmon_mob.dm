@@ -38,10 +38,6 @@
 	var/list/p_traits = list()
 	///Moves/Abilities that this mob is currently using
 	var/list/active_moves = list()
-	///If this is filled in by the player, it overrides their default description. Can be imported from the player's current character slot
-	var/flav_text = null
-	///Roleplaying preferences
-	var/ooc_text = null
 
 /mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
@@ -449,6 +445,14 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
+/mob/living/simple_animal/pokemon/snivy
+	name = "snivy"
+	desc = "Being exposed to sunlight makes its movements swifter. It uses vines more adeptly than its hands."
+	icon_state = "snivy"
+	icon_living = "snivy"
+	icon_dead = "snivy_d"
+	p_types = list(P_TYPE_GRASS)
+
 /mob/living/simple_animal/pokemon/sylveon
 	name = "sylveon"
 	desc = "Sylveon, the Intertwining Pokemon. Sylveon affectionately wraps its ribbon-like feelers around its Trainer's arm as they walk together."
@@ -570,6 +574,14 @@
 //	movement_cooldown = 3
 	p_types = list(P_TYPE_WATER)
 	p_traits = list(P_TRAIT_RIDEABLE)
+
+/mob/living/simple_animal/pokemon/lycanroc
+	name = "lycanroc"
+	desc = "Its quick movements confuse its enemies. Well equipped with claws and fangs, it also uses the sharp rocks in its mane as weapons."
+	icon_state = "lycanroc"
+	icon_living = "lycanroc"
+	icon_dead = "lycanroc_d"
+	p_types = list(P_TYPE_ROCK)
 
 /mob/living/simple_animal/pokemon/kabuto
 	name = "kabuto"
