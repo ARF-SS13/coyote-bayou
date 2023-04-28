@@ -376,7 +376,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	///A detailed description of the player who's controlling this mob's out-of-character roleplaying preferences. Do not set.
 	var/oocnotes = ""
 	///The specific name of this mob's species or subtype. Used for examine text (ie "this is Nutty a Squirrel", where Squirrel is the verbose_species)
-	var/verbose_species = ""
+	var/verbose_species = null
 
 /mob/living/simple_animal/proc/print_flavor_text()
 	if(flavortext && flavortext != "")
@@ -396,7 +396,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/list/dat = list()
 
 	if(player_character)
-		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM> \a <EM>[verbose_species]</EM>!</span>"
+		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
 		if(profilePicture)
 			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
 		for(var/obj/item/I in held_items)
@@ -429,8 +429,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		. += mob_armor_description
 		if(lazarused)
 			. += span_danger("[t_He] seems to have been revived!")
-	
-	
+
 /// If user is set, the mob will be told to be loyal to that mob
 /mob/living/simple_animal/proc/make_ghostable(mob/user)
 	can_ghost_into = TRUE

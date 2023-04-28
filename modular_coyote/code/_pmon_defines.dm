@@ -57,7 +57,8 @@ GLOBAL_LIST_EMPTY(creature_selectable)
 		var/mob/living/simple_animal/SA = T
 		if(initial(SA.gold_core_spawnable) == FRIENDLY_SPAWN)
 			SA = new T()
-			GLOB.creature_selectable[capitalize(SA.name)] = SA.type
+			if(!(SA.type in GLOB.creature_blacklist))
+				GLOB.creature_selectable[capitalize(SA.name)] = SA.type
 			qdel(SA)
 
 ///List of all pokemon on the whole map.
@@ -65,11 +66,27 @@ GLOBAL_LIST_EMPTY(pokemon_list)
 
 ///List of available spawnpoints for creatures to choose from when spawning
 GLOBAL_LIST_INIT(creature_spawnpoints, list(
-	"Citizen" = /obj/effect/landmark/start/f13/settler,
-	"Wastelander" = /obj/effect/landmark/start/f13/wastelander
+	"Nash" = /obj/effect/landmark/start/f13/settler,
+	"Wasteland" = /obj/effect/landmark/start/f13/wastelander
 	))
 
 ///Creatures that are not allowed for players to select for characters
 GLOBAL_LIST_INIT(creature_blacklist, list(
-	/mob/living/simple_animal/chick
+	/mob/living/simple_animal/chick,
+	/mob/living/simple_animal/hostile/retaliate/goat,
+	/mob/living/simple_animal/cow/random,
+	/mob/living/simple_animal/opossum/poppy,
+	/mob/living/simple_animal/radstag/rudostag,
+	/mob/living/simple_animal/cow/brahmin/nightstalker,
+	/mob/living/simple_animal/cow/brahmin/sgtsillyhorn,
+	/mob/living/simple_animal/cow/brahmin/calf,
+	/mob/living/simple_animal/cow/brahmin,
+	/mob/living/simple_animal/cow/brahmin/horse/honse,
+	/mob/living/simple_animal/pet/cat/cak,
+	/mob/living/simple_animal/pet/cat/kitten,
+	/mob/living/simple_animal/pet/bumbles,
+	/mob/living/simple_animal/pet/redpanda/stinky,
+	/mob/living/simple_animal/pet/fox/paws,
+	/mob/living/simple_animal/hostile/asteroid/gutlunch/guthen,
+	/mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck
 	))
