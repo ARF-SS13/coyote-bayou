@@ -566,6 +566,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!creature_image && creature_species)
 				if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
 					generate_selectable_creatures()
+				if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+					creature_species = initial(creature_species)
 				var/creature_type = GLOB.creature_selectable["[creature_species]"]
 				if(!isnull(creature_type) && isliving(creature_type))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
 					var/mob/living/M = new creature_type(user)
