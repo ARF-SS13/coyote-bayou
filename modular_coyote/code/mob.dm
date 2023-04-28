@@ -21,6 +21,10 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2,)
 	butcher_difficulty = 1
 
+/mob/living/simple_animal/hostile/hellpig/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 //Cat slugs
 
 /mob/living/simple_animal/pet/catslug
@@ -127,6 +131,10 @@
 	melee_damage_upper = 20
 	maxHealth = 300
 
+/mob/living/simple_animal/pet/wolf/direwolf/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/pet/wolf/direwolf/dog
 	name = "large dog"
 	desc = "The biggest and goodest dog around."
@@ -168,7 +176,19 @@
 	aggrosound = list('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl3.ogg', )
 	idlesound = list('sound/alien/Voice/hiss1.ogg',)
 
+/mob/living/simple_animal/hostile/alligator/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 //Dinos
+
+/mob/living/simple_animal/hostile/dinosaur/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
+/mob/living/simple_animal/hostile/retaliate/goat/dinosaur/Initialize()
+	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/hostile/retaliate/goat/dinosaur/triceratops/bull
 	name = "Bull Triceratops"

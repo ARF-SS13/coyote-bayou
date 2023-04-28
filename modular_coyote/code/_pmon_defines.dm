@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(pokemon_selectable)
 	if(clear)
 		GLOB.pokemon_selectable = list()
 	for(var/I in subtypesof(/mob/living/simple_animal/pokemon))
-		var/mob/living/simple_animal/pokemon/P = new I
+		var/mob/living/simple_animal/pokemon/P = new I()
 		if(!(P_TRAIT_BLACKLIST in P.p_traits))//Not blacklisted from being added to the list
 			GLOB.pokemon_selectable[capitalize("[P.name]")] = P.type
 		qdel(P)
@@ -60,6 +60,10 @@ GLOBAL_LIST_EMPTY(creature_selectable)
 			if(!(SA.type in GLOB.creature_blacklist))
 				GLOB.creature_selectable[capitalize(SA.name)] = SA.type
 			qdel(SA)
+	for(var/T in GLOB.creature_whitelist)
+		var/mob/living/simple_animal/SA = new T()
+		GLOB.creature_selectable[capitalize(SA.name)] = SA.type
+		qdel(SA)
 
 ///List of all pokemon on the whole map.
 GLOBAL_LIST_EMPTY(pokemon_list)
@@ -89,4 +93,14 @@ GLOBAL_LIST_INIT(creature_blacklist, list(
 	/mob/living/simple_animal/pet/fox/paws,
 	/mob/living/simple_animal/hostile/asteroid/gutlunch/guthen,
 	/mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck
+	))
+
+///Creatures that should be added to the playable creature list. Only put mobs in here if they aren't gold slime core spawnable already.
+GLOBAL_LIST_INIT(creature_whitelist, list(
+	/mob/living/simple_animal/pet/catslug,
+	/mob/living/simple_animal/pet/wolf/direwolf,
+	/mob/living/simple_animal/raccoon,
+	/mob/living/simple_animal/armadillo,
+	/mob/living/simple_animal/pet/kiwi,
+	/mob/living/simple_animal/pet/sheep
 	))

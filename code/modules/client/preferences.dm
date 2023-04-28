@@ -563,9 +563,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[creature_ooc]<br>"
 			else
 				dat += "[TextPreview(creature_ooc)]...<br>"
-			if(!creature_image && creature_species && LAZYLEN(GLOB.creature_selectable))
+			if(!creature_image && creature_species)
+				if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+					generate_selectable_creatures()
 				var/creature_type = GLOB.creature_selectable["[creature_species]"]
-				if(!isnull(creature_type) && istype(creature_type, /mob/living))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
+				if(!isnull(creature_type) && isliving(creature_type))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
 					var/mob/living/M = new creature_type(user)
 					creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
 					qdel(M)
@@ -2416,6 +2418,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
 				if("creature_species")
+					if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+						generate_selectable_creatures()
 					var/result = input(user, "Select a creature species", "Species Selection") as null|anything in GLOB.creature_selectable
 					if(result)
 						creature_species = result
