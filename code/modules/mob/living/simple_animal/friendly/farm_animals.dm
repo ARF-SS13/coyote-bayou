@@ -488,7 +488,7 @@
 /////////////
 
 /mob/living/simple_animal/chick
-	name = "\improper chick"
+	name = "chick"
 	desc = "Adorable! They make such a racket though."
 	icon = 'icons/fallout/mobs/animals/farmanimals.dmi'
 	icon_state = "chick"
@@ -543,7 +543,7 @@
 	amount_grown = 0
 
 /mob/living/simple_animal/chicken
-	name = "\improper chicken"
+	name = "chicken"
 	desc = "Hopefully the eggs are good this season."
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST

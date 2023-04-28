@@ -636,6 +636,18 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 					usr.stripPanelUnequip(what,src,slot)
 			else
 				usr.stripPanelEquip(what,src,slot)
+	//Coyote Add
+	if(href_list["flavor_more"])
+		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavortext, "\n", "<BR>")), text("window=[];size=500x200", name))
+		onclose(usr, "[name]")
+	if(href_list["oocnotes"])
+		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
+		onclose(usr, "[name]")
+	if(href_list["enlargeImageCreature"])
+		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!")
+		popup.set_content(dat)
+		popup.open()
 
 	if(usr.machine == src)
 		if(Adjacent(usr))

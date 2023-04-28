@@ -670,6 +670,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["chosen_limb_id"]					>> chosen_limb_id
 	S["hide_ckey"]						>> hide_ckey //saved per-character
 
+	//Creature character settings
+	S["creature_species"]			>> creature_species
+	S["creature_name"]				>> creature_name
+	S["creature_flavor_text"]		>> creature_flavor_text
+	S["creature_ooc"]				>> creature_ooc
+	S["creature_profilepic"]		>> creature_profilepic
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -1027,6 +1033,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// !! COYOTE SANITISATION !!
 	profilePicture = sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	creature_profilepic = sanitize_text(creature_profilepic)
 
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
@@ -1225,6 +1232,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["job_preferences"] , job_preferences)
 	WRITE_FILE(S["hide_ckey"]		, hide_ckey)
 
+	//Write creature character
+	WRITE_FILE(S["creature_species"]			,creature_species)
+	WRITE_FILE(S["creature_name"]				,creature_name)
+	WRITE_FILE(S["creature_flavor_text"]		,creature_flavor_text)
+	WRITE_FILE(S["creature_ooc"]				,creature_ooc)
+	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)

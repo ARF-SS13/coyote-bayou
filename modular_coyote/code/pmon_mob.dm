@@ -4,8 +4,6 @@
 	name = "eevee"
 	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
 	icon = 'modular_coyote/icons/mob/pokemon64.dmi'
-	//The width of the icon file in use. Used to center sprites on their respective tiles.
-	var/icon_size_width = 64
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
@@ -32,31 +30,39 @@
 	dextrous = TRUE
 	//Need this to have the hands appear on the HUD
 	held_items = list(null, null)
-	//The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
+	///The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
 	var/list/p_types = list()
-	//Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
+	///Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
 	var/list/additional_moves = list()
-	//List of passive traits/flags
+	///List of passive traits/flags
 	var/list/p_traits = list()
-	//Moves/Abilities that this mob is currently using
+	///Moves/Abilities that this mob is currently using
 	var/list/active_moves = list()
-	//If this is filled in by the player, it overrides their default description. Can be imported from the player's current character slot
+	///If this is filled in by the player, it overrides their default description. Can be imported from the player's current character slot
 	var/flav_text = null
-	//Roleplaying preferences
+	///Roleplaying preferences
 	var/ooc_text = null
 
 /mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
-	if(icon_size_width>32)
-		transform = transform.Translate(-((icon_size_width-32)/2),0) //Adjust pixel offset left by half of their icon's width above 32
+	recenter_wide_sprite()
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
 	GLOB.pokemon_list += src
 
+//Can be applied to any mob, not just pokemon
+/mob/proc/recenter_wide_sprite()
+	var/icon/I = icon(icon)
+	var/icon_width = I.Width()
+	if(icon_width>32) //This proc only fixes sprites that are too wide.
+		var/matrix/M = matrix() //Use a fresh matrix so we start at 0,0
+		transform = M.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
+		return TRUE
+	return FALSE
+
 /mob/living/simple_animal/pokemon/Life()
 	. = ..()
-	regenerate_icons()
 
 /mob/living/simple_animal/pokemon/regenerate_icons()
 	if(stat == DEAD)
@@ -118,7 +124,6 @@
 	icon_living = "articuno"
 	icon_dead = "articuno_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_ICE, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
@@ -372,7 +377,6 @@
 	icon_living = "lugia"
 	icon_dead = "lugia_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
@@ -640,7 +644,6 @@
 	icon_living = "rayquaza"
 	icon_dead = "rayquaza_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
