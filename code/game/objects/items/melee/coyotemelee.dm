@@ -9,6 +9,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 25
+	force_unwielded = 25
 	force_wielded = 47
 	throwforce = 23
 	wound_bonus = 20
@@ -30,6 +31,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
@@ -52,6 +54,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 28
+	force_unwielded = 28
 	force_wielded = 38
 	throwforce = 23
 	wound_bonus = 20
@@ -74,6 +77,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 28
 	throwforce = 20
 	wound_bonus = 15
@@ -96,6 +100,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 15
+	force_unwielded = 15
 	force_wielded = 22
 	throwforce = 15
 	wound_bonus = 10
@@ -118,6 +123,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 25
+	force_unwielded = 25
 	force_wielded = 35
 	throwforce = 30
 	wound_bonus = 15
@@ -140,6 +146,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 28
 	throwforce = 20
 	wound_bonus = 15
@@ -163,6 +170,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
+	force_unwielded = 28
 	force_wielded = 35
 	throwforce = 28
 	wound_bonus = 15
@@ -185,6 +193,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 10 //Needs to be wielded
+	force_unwielded = 10
 	force_wielded = 55
 	throwforce = 25
 	wound_bonus = 20
@@ -207,6 +216,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 10 //Needs to be wielded
+	force_unwielded = 10
 	force_wielded = 55
 	throwforce = 25
 	wound_bonus = 20
@@ -229,6 +239,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 10 //Needs to be wielded
+	force_unwielded = 10
 	force_wielded = 65
 	throwforce = 25
 	wound_bonus = 20
@@ -249,6 +260,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 25
 	throwforce = 25
 	wound_bonus = 20
@@ -269,6 +281,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	force = 25
+	force_unwielded = 25
 	force_wielded = 40
 	throwforce = 30
 	wound_bonus = 20
@@ -291,6 +304,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
+	force_unwielded = 28
 	force_wielded = 35
 	throwforce = 28
 	wound_bonus = 15
@@ -314,6 +328,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
@@ -335,7 +350,8 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
-	force = 10
+	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
@@ -359,6 +375,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
@@ -382,6 +399,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 18
+	force_unwielded = 18
 	force_wielded = 35
 	throwforce = 30
 	wound_bonus = 20
@@ -404,6 +422,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 30
 	throwforce = 25
 	wound_bonus = 20
@@ -425,6 +444,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
+	force_unwielded = 28
 	force_wielded = 38
 	throwforce = 28
 	wound_bonus = 15
@@ -447,6 +467,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 10
+	force_unwielded = 10
 	force_wielded = 20
 	throwforce = 15
 	wound_bonus = 15
@@ -476,6 +497,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
+	force_unwielded = 28
 	force_wielded = 38
 	throwforce = 28
 	wound_bonus = 15
@@ -531,6 +553,7 @@
 	icon_state = "danimauler"
 	item_state = "danimauler"
 	force = 5
+	force_unwielded = 5
 	force_wielded = 10
 	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
 
