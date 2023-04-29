@@ -1772,7 +1772,7 @@ datum/job/wasteland/f13dendoctor
 	faction = FACTION_WASTELAND
 	total_positions = 0
 	spawn_positions = 0
-	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
+	description = "You have come a long way to reach this heaven forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
 	supervisors = "your moral code"
 	selection_color = "#76885f"
 	exp_requirements = 0
