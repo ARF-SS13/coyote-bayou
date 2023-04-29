@@ -18,7 +18,14 @@ GLOBAL_LIST_INIT(hair_gradients, list(
 	"Reflected (Inverted)" = "reflected_inverse",
 	"Reflected High" = "reflected_high",
 	"Reflected High (Inverted)" = "reflected_inverse_high",
-	"Wavy" = "wavy"
+	"Wavy" = "wavy",
+	"Striped" = "striped",
+	"Reversed Stripe" = "stripedreverse",
+	"Squigly" = "squigly",
+	"Swayed" = "sinewave",
+	"Vertical Swayed" = "sinewavesideways",
+	"Mixy" = "dots",
+	"Mixy Faded Down" = "fadedowndots"
 	))
 
 /* // Disabled random features from providing random gradients, simply to avoid reloading save file errors.
