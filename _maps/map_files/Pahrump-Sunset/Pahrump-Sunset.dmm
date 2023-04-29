@@ -1845,9 +1845,7 @@
 	},
 /area/f13/building/abandoned)
 "ahk" = (
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
+/obj/structure/simple_door/wood,
 /turf/open/floor/wood_wide{
 	color = "#775555"
 	},
@@ -14877,11 +14875,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aZy" = (
-/obj/structure/simple_door/house{
-	name = "Detective Office";
-	req_one_access_txt = "4"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/house{
+	name = "Detective's Office"
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -17868,7 +17865,7 @@
 /area/f13/wasteland/city)
 "bkT" = (
 /obj/structure/simple_door/house{
-	name = "Detecive office"
+	name = "Detective's Office"
 	},
 /turf/open/floor/wood_common{
 	color = "#775555"
