@@ -38,7 +38,7 @@
 	/// targetting flags
 	var/target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
 	/// target mode
-	var/target_mode = WS_CLOSEST_POPULATED_TILE
+	var/target_mode = WS_FURTHEST_POPULATED_TILE
 	/// damage flags
 	var/damage_flags = NONE
 	/// Extra damage multiplier to certain atoms -- list(atom_type = list(WS_EXTRA_BRUTE = 1, WS_EXTRA_BURN = 0.5))
@@ -61,6 +61,9 @@
 	var/debug = FALSE
 	/// Always do the thing, mostly for spears
 	var/always_do = FALSE
+	/// fucking click delay bullshit
+	var/fucking_click_delay_bullshit = FALSE
+	COOLDOWN_DECLARE(fuckin_fuck)
 
 /datum/component/weapon_special/single_turf
 
@@ -98,9 +101,15 @@
 	if(!user || !target)
 		return
 	WEAPON_MASTER
-	if(!master.CheckAttackCooldown(user, target))
+	if(fucking_click_delay_bullshit)
+		if(!master.CheckAttackCooldown(user, target))
+			return
+	fucking_click_delay_bullshit = FALSE
+	if(!COOLDOWN_FINISHED(src, fuckin_fuck))
 		return
+	COOLDOWN_START(src, fuckin_fuck, 0.5 SECONDS)
 	if(run_special(user, target, params))
+		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
 		return TRUE
 
@@ -117,8 +126,6 @@
 	var/list/hit_tiles = get_turfs_in_range(user, target, angle_go)
 	if(!LAZYLEN(hit_tiles))
 		return
-	/// Past here, we're we're initiating the attack, whether it hits something or now
-	. = TRUE
 	cool_effect(hit_tiles, user, target)
 	var/list/hit_atoms = select_atoms_to_hit(user, hit_tiles, target_mode)
 	if(!LAZYLEN(hit_atoms))
@@ -126,6 +133,8 @@
 	var/list/damages = calculate_damages(user, hit_atoms, target)
 	if(!LAZYLEN(damages))
 		return
+	/// Past here, we're we're initiating the attack, whether it hits something or now
+	. = TRUE // Only incur the cooldown *after* we have something to hit
 	var/list/moblist = list()
 	for(var/mob/living/livom in damages)
 		moblist[livom] = damages[livom]
