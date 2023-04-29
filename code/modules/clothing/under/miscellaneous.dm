@@ -1011,7 +1011,6 @@
 	item_color = "mayan_loincloth"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/civ/greatshendyt
 	name = "Egypt dress"
