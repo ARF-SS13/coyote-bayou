@@ -14262,13 +14262,12 @@
 /obj/structure/window/fulltile/wood{
 	layer = 3
 	},
-/obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
-	},
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 4
+	},
+/obj/structure/curtain{
+	color = "#c40e0e"
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
@@ -16623,7 +16622,6 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city)
 "bfD" = (
-/obj/machinery/light/small,
 /obj/machinery/vending/cigarette,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -23635,8 +23633,7 @@
 	dir = 1
 	},
 /obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
+	color = "#c40e0e"
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
@@ -23834,7 +23831,7 @@
 	pixel_y = 15;
 	pixel_x = 15
 	},
-/turf/open/indestructible/ground/inside/dirt,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "coF" = (
 /obj/structure/table/optable,
@@ -24823,13 +24820,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/abandoned)
 "cwc" = (
-/obj/structure/fence{
-	dir = 4
+/obj/machinery/light/floor,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/building)
 "cwd" = (
 /obj/item/clothing/head/helmet/f13/raidermetal,
 /obj/item/clothing/suit/armor/medium/raider/raidermetal,
@@ -25082,16 +25077,12 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "cyI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/curtain{
-	color = "#87A392";
-	layer = 5;
-	pixel_y = -32
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "cyJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -40248,8 +40239,7 @@
 	color = "#A47449"
 	},
 /obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
+	color = "#c40e0e"
 	},
 /turf/open/floor/wood_common{
 	color = "#775555"
@@ -42138,8 +42128,7 @@
 	color = "#A47449"
 	},
 /obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
+	color = "#c40e0e"
 	},
 /turf/open/floor/wood_common{
 	color = "#775555"
@@ -42765,7 +42754,36 @@
 /turf/closed/wall/f13/store,
 /area/f13/ruins)
 "hwD" = (
-/obj/machinery/computer/slot_machine,
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = -11;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = 9;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 19
+	},
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 23;
+	plane = -5;
+	name = "Personals Board";
+	desc = "This board is for putting personal ads down, feel free to include your discord info as well!";
+	persistence_replacement = "Personals board - Nash"
+	},
+/obj/item/storage/fancy/heart_box{
+	pixel_y = 40;
+	anchored = 1
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -43314,7 +43332,7 @@
 /area/f13/wasteland)
 "hEx" = (
 /obj/machinery/vending/boozeomat,
-/turf/open/floor/f13/wood,
+/turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/bar)
 "hEG" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -45252,10 +45270,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
-"ied" = (
-/obj/structure/sign/barsign,
-/turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
 "iej" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
@@ -46706,7 +46720,8 @@
 /area/f13/wasteland)
 "ixy" = (
 /obj/machinery/light/small{
-	dir = 8
+	dir = 8;
+	pixel_y = 16
 	},
 /obj/structure/stairs/west{
 	color = "#A47449"
@@ -46830,7 +46845,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "izr" = (
 /obj/effect/decal/cleanable/dirt{
@@ -48007,7 +48022,6 @@
 	light_color = "#d8b1b1"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/jukebox/disco/indestructible,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -49934,13 +49948,12 @@
 	layer = 3
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
-	},
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 4
+	},
+/obj/structure/curtain{
+	color = "#c40e0e"
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
@@ -52918,7 +52931,7 @@
 /area/f13/wasteland/city)
 "kko" = (
 /obj/structure/barricade/bars{
-	layer = 3.5
+	layer = 2.8
 	},
 /obj/structure/table/wood,
 /obj/machinery/door/poddoor/shutters{
@@ -53185,21 +53198,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/abandoned)
-"knA" = (
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 0;
-	pixel_x = -14;
-	density = 0
-	},
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 0;
-	pixel_x = 14;
-	density = 0
-	},
-/turf/closed/wall/f13/sunset/brick_small_dark,
-/area/f13/wasteland)
 "knC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/coyote/one,
@@ -56007,10 +56005,6 @@
 /obj/machinery/mineral/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
-/obj/machinery/light/small{
-	dir = 1;
-	light_color = "red"
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -56266,16 +56260,13 @@
 	},
 /area/f13/caves)
 "lhz" = (
-/obj/structure/window/fulltile/wood{
-	layer = 3
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
 	},
-/obj/structure/decoration/rag,
-/obj/item/wrench/power{
-	pixel_y = 7;
-	anchored = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/structure/sign/barsign,
+/turf/closed/wall/mineral/brick,
+/area/f13/wasteland)
 "lhE" = (
 /obj/effect/decal/waste{
 	icon_state = "goo3"
@@ -57237,7 +57228,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "lwG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -64914,7 +64905,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "nwW" = (
 /obj/structure/window/fulltile/store{
@@ -64951,7 +64942,7 @@
 /area/f13/building/mall)
 "nxk" = (
 /obj/structure/barricade/bars{
-	layer = 3.5
+	layer = 2.8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
@@ -67196,8 +67187,43 @@
 	},
 /area/f13/wasteland)
 "oeF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/cigarette,
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = -11;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = 9;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 19;
+	layer = 3.2
+	},
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 23;
+	plane = -5;
+	name = "Adventuring Board";
+	desc = "A board for pinning your looking for group messages, feel free to include your discord info in the post!";
+	persistence_replacement = "Adventure Board - Nash"
+	},
+/obj/item/shield/riot/buckler{
+	pixel_y = 36;
+	pixel_x = -5;
+	anchored = 1
+	},
+/obj/item/twohanded/sledgehammer/simple{
+	pixel_y = 36;
+	pixel_x = 7;
+	anchored = 1
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -69477,13 +69503,12 @@
 /obj/structure/window/fulltile/wood{
 	layer = 3
 	},
-/obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
-	},
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 4
+	},
+/obj/structure/curtain{
+	color = "#c40e0e"
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
@@ -70624,9 +70649,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/dirtyglass,
-/turf/open/floor/wood_common{
-	color = "#775555"
-	},
+/turf/open/floor/grass,
 /area/f13/building/abandoned)
 "oZV" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -70731,21 +70754,8 @@
 	},
 /area/f13/building/museum)
 "pbv" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4"
-	},
-/obj/item/storage/bag/easterbasket{
-	name = "Egg Basket"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/floor/grass,
+/area/f13/caves)
 "pbE" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -70956,8 +70966,11 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "pgF" = (
-/turf/closed/wall/f13/coyote/tavern_wall,
-/area/f13/wasteland)
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar)
 "pgK" = (
 /obj/structure/bookcase,
 /obj/effect/validball_spawner,
@@ -72185,11 +72198,37 @@
 	},
 /area/f13/wasteland/city)
 "pxb" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = -11;
+	density = 0;
+	layer = 3.1
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack,
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 15;
+	pixel_x = 9;
+	density = 0;
+	layer = 3.1
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 19;
+	layer = 3.2
+	},
+/obj/structure/noticeboard{
+	layer = 5.0;
+	pixel_y = 23;
+	plane = -5;
+	persistence_replacement = "Projects Board - Nash";
+	name = "Project Board";
+	desc = "This is a board for posting multi-person projects, feel free to include your discord info for building projects!"
+	},
+/obj/item/wrench/power{
+	pixel_y = 38;
+	anchored = 1
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -72954,10 +72993,6 @@
 /area/f13/wasteland/city)
 "pGI" = (
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/wasteland)
-"pGM" = (
-/obj/structure/flora/brushwood,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pGU" = (
 /obj/structure/barricade/wooden,
@@ -79362,40 +79397,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "rBz" = (
-/obj/effect/decal/cleanable/generic,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 15;
-	pixel_x = -11;
-	density = 0
-	},
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 15;
-	pixel_x = 9;
-	density = 0
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 19
-	},
-/obj/structure/noticeboard{
-	layer = 5.0;
-	pixel_y = 23;
-	plane = -5;
-	name = "Personals Board";
-	desc = "This board is for putting personal ads down, feel free to include your discord info as well!";
-	persistence_replacement = "Personals board - Nash"
-	},
-/obj/item/storage/fancy/heart_box{
-	pixel_y = 40;
-	anchored = 1
-	},
+/obj/structure/table/wood/bar,
+/obj/item/flashlight/lamp/green,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/building)
+/area/f13/bar)
 "rBA" = (
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine,
@@ -81124,7 +81131,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/junglebush/large,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "sbY" = (
 /obj/effect/decal/remains/human,
@@ -82761,7 +82768,7 @@
 	color = "#a98c5d";
 	dir = 1
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "szD" = (
 /turf/open/indestructible/ground/outside/road{
@@ -85598,8 +85605,7 @@
 	dir = 1
 	},
 /obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
+	color = "#c40e0e"
 	},
 /turf/open/floor/wood_common,
 /area/f13/bar)
@@ -88853,9 +88859,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ufz" = (
-/turf/open/floor/wood_common{
-	color = ""
-	},
+/turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/f13/bar)
 "ufB" = (
 /obj/effect/decal/marking{
@@ -89168,9 +89172,7 @@
 /area/f13/wasteland/city)
 "ukp" = (
 /obj/machinery/light/floor,
-/turf/open/floor/wood_common{
-	color = ""
-	},
+/turf/open/floor/light/colour_cycle/dancefloor_b,
 /area/f13/bar)
 "ukz" = (
 /obj/structure/car/rubbish2,
@@ -89646,8 +89648,9 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/abandoned)
 "usG" = (
-/obj/structure/fence/wooden{
-	dir = 1
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 2
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -89801,33 +89804,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "uvE" = (
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 15;
-	pixel_x = -11;
-	density = 0;
-	layer = 3.1
-	},
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 15;
-	pixel_x = 9;
-	density = 0;
-	layer = 3.1
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 19;
-	layer = 3.2
-	},
-/obj/structure/noticeboard{
-	layer = 5.0;
-	pixel_y = 23;
-	plane = -5;
-	name = "Adventuring Board";
-	desc = "A board for pinning your looking for group messages, feel free to include your discord info in the post!";
-	persistence_replacement = "Adventure Board - Nash"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -97056,23 +97034,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
-"wxg" = (
-/obj/structure/window/fulltile/wood{
-	layer = 3
-	},
-/obj/structure/decoration/rag,
-/obj/item/shield/riot/buckler{
-	pixel_y = 4;
-	pixel_x = -5;
-	anchored = 1
-	},
-/obj/item/twohanded/sledgehammer/simple{
-	pixel_y = 3;
-	pixel_x = 7;
-	anchored = 1
-	},
-/turf/open/floor/wood_common,
-/area/f13/building)
 "wxi" = (
 /obj/effect/validball_spawner,
 /turf/open/indestructible/ground/outside/dirt,
@@ -97744,8 +97705,8 @@
 /area/f13/wasteland/city)
 "wFo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood/bar,
-/obj/item/flashlight/lamp/green,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -98739,37 +98700,16 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
 "wTS" = (
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 15;
-	pixel_x = -11;
-	density = 0;
-	layer = 3.1
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
 	},
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 15;
-	pixel_x = 9;
-	density = 0;
-	layer = 3.1
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 19;
-	layer = 3.2
-	},
-/obj/structure/noticeboard{
-	layer = 5.0;
-	pixel_y = 23;
-	plane = -5;
-	persistence_replacement = "Projects Board - Nash";
-	name = "Project Board";
-	desc = "This is a board for posting multi-person projects, feel free to include your discord info for building projects!"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/wasteland)
 "wTZ" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -101216,15 +101156,16 @@
 	},
 /area/f13/building/museum)
 "xDn" = (
-/obj/structure/curtain{
-	color = "#87A392";
-	layer = 5;
-	pixel_y = -32
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 0;
+	pixel_x = 14;
+	density = 0
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
 	},
-/area/f13/bar)
+/area/f13/building)
 "xDt" = (
 /obj/structure/fence{
 	dir = 4;
@@ -104231,23 +104172,23 @@ cIY
 cIY
 aXa
 aOk
-aOk
-aXa
-aOk
+cIY
+noz
+cIY
 aOk
 cIY
 aOk
 mkj
 aOk
 syl
-aOk
-etg
-aOk
+cIY
+bzk
+cIY
 aOk
 aOk
 mAk
-hkV
-pGM
+lGJ
+tij
 cIY
 cIY
 cIY
@@ -104485,12 +104426,12 @@ rEg
 pNW
 aGO
 aGO
-aOk
+cIY
 ncM
 aOk
+cIY
 aOk
-aOk
-aOk
+cIY
 cIY
 aOk
 uyU
@@ -104506,7 +104447,7 @@ ctx
 bSt
 cFK
 cFK
-wqe
+jQm
 tbK
 pdC
 lge
@@ -105532,7 +105473,7 @@ cIY
 cIY
 bnE
 aOk
-aOk
+cIY
 aOk
 aOk
 aOk
@@ -105780,15 +105721,15 @@ mtI
 aOk
 aOk
 aOk
+cIY
+cIY
+cIY
 aOk
 aOk
 aOk
 aOk
 aOk
-aOk
-aOk
-aOk
-aOk
+cIY
 syl
 cIY
 mAk
@@ -106028,26 +105969,26 @@ nBl
 aOk
 aOk
 aOk
-xFZ
-hkV
+eAK
+lGJ
 bun
 eAK
 aOk
 fXK
+cIY
 aOk
 aOk
-aOk
-aOk
+cIY
 aOk
 aOk
 aOk
 mAk
 aOk
 aOk
-aOk
-aOk
-aOk
-aOk
+cIY
+cIY
+cIY
+cIY
 aOk
 aOk
 flt
@@ -106282,7 +106223,7 @@ aOk
 aOk
 aOk
 aOk
-aOk
+cIY
 aOk
 wta
 wJZ
@@ -106300,9 +106241,9 @@ ncM
 xOW
 cFK
 bSt
-wJZ
-wJZ
-aOk
+yhD
+yhD
+cIY
 aOk
 aOk
 ajv
@@ -106810,7 +106751,7 @@ mAv
 kNn
 dQl
 fxm
-aOk
+cyI
 aOk
 wJZ
 jFT
@@ -107282,7 +107223,7 @@ eIx
 cFK
 aOk
 nOB
-nBl
+syl
 aOk
 gEq
 cIY
@@ -107324,7 +107265,7 @@ eFD
 bcq
 tfE
 aOk
-pbv
+agh
 nFA
 dFE
 rpi
@@ -107537,8 +107478,8 @@ aOk
 cFK
 cFK
 aOk
-aOk
-aOk
+cIY
+cIY
 aOk
 icw
 aOk
@@ -107793,7 +107734,7 @@ tfE
 wos
 cFK
 lNd
-aOk
+cIY
 bun
 aOk
 aOk
@@ -107853,7 +107794,7 @@ ukp
 xDN
 nFA
 xJE
-xJE
+wFo
 uYZ
 aQA
 aWK
@@ -108049,7 +107990,7 @@ jxf
 tfE
 cFK
 aOk
-aOk
+cIY
 cIY
 aOk
 cIY
@@ -108306,7 +108247,7 @@ jxf
 tfE
 eEL
 bZY
-cFK
+aGO
 aGO
 aOk
 nOB
@@ -108610,8 +108551,8 @@ bcq
 tfE
 qAx
 tmp
-hwD
-ahA
+mkb
+mkb
 jIN
 uAQ
 uAQ
@@ -108624,7 +108565,7 @@ ufz
 mkb
 hEx
 mkb
-mkb
+pgF
 nFA
 flt
 caB
@@ -108866,9 +108807,9 @@ sUt
 cdS
 miR
 flt
-tmp
+nFA
 hwD
-ahA
+mkb
 vFu
 vFu
 oCZ
@@ -108879,7 +108820,7 @@ ufz
 ufz
 ukp
 mkb
-wFo
+uYZ
 ndL
 nFA
 oeP
@@ -109136,7 +109077,7 @@ mkb
 bnx
 mkb
 ahA
-ayA
+rBz
 mkb
 bgo
 nFA
@@ -109636,7 +109577,7 @@ qCv
 bGz
 cdS
 tdw
-pgF
+flt
 nFA
 oeK
 pdj
@@ -109652,7 +109593,7 @@ mkb
 ahA
 ayA
 mkb
-cyI
+pdj
 oLd
 flt
 ksL
@@ -109893,7 +109834,7 @@ vIJ
 xix
 sNY
 tfE
-bIW
+cFK
 nFA
 dHT
 mkb
@@ -109909,7 +109850,7 @@ mkb
 ahA
 hpV
 xJE
-xDn
+mkb
 oLd
 bEr
 aWK
@@ -110150,7 +110091,7 @@ cLg
 cLg
 cdS
 hFN
-cwc
+bZY
 rLT
 nFA
 spL
@@ -110407,8 +110348,8 @@ fsI
 fsI
 wNX
 tfE
-ied
-rLl
+aOk
+lhz
 egz
 nvn
 nvn
@@ -110664,8 +110605,8 @@ mWA
 dVF
 vat
 wJZ
-hEN
 aOk
+agh
 aQZ
 kDp
 nvn
@@ -111977,7 +111918,7 @@ cjP
 niq
 vAR
 bVH
-cjP
+xDn
 cee
 mHp
 kDp
@@ -112447,7 +112388,7 @@ ufD
 smI
 dVF
 brF
-brF
+bXi
 dVF
 fsE
 bgk
@@ -112692,11 +112633,11 @@ vIX
 leQ
 fvw
 oUq
-brF
+eRk
 dVF
 dVF
 dVF
-dVF
+nim
 rRA
 fvw
 lfi
@@ -112704,7 +112645,7 @@ pre
 dKN
 dVF
 lHK
-dVF
+cwc
 brF
 vCm
 bvj
@@ -112961,7 +112902,7 @@ ufD
 tJO
 dVF
 dVF
-brF
+bXi
 brF
 brF
 uFN
@@ -113208,17 +113149,17 @@ wNy
 ley
 dVF
 xUm
-brF
+uvE
 elR
 dVF
 rJI
 fvw
 lfi
 toE
-rBz
 dVF
 dVF
-brF
+dVF
+bXi
 brF
 cdQ
 tFk
@@ -113471,11 +113412,11 @@ brF
 bfD
 fvw
 lfi
-lhz
-wTS
+nXV
 dVF
 dVF
 dVF
+cwc
 dVF
 lHK
 xuZ
@@ -113728,11 +113669,11 @@ nxk
 dUj
 nSY
 caB
-wxg
-uvE
+nXV
+dVF
 dVF
 brF
-dVF
+sjO
 dVF
 dVF
 brF
@@ -113989,7 +113930,7 @@ nXV
 iUg
 dVF
 dVF
-dVF
+sjO
 brF
 dVF
 dVF
@@ -114246,7 +114187,7 @@ nXV
 dVF
 dVF
 brF
-dVF
+cwc
 dVF
 dVF
 brF
@@ -114503,7 +114444,7 @@ toE
 ifH
 dVF
 brF
-dVF
+sjO
 lHK
 brF
 dVF
@@ -115584,7 +115525,7 @@ vGN
 anR
 aOk
 fjI
-aOk
+cIY
 aOk
 aae
 aae
@@ -115789,7 +115730,7 @@ csd
 tgA
 saZ
 fkx
-knA
+fvw
 stR
 bby
 sPL
@@ -116045,8 +115986,8 @@ bdH
 frN
 auo
 qRa
-knA
-knA
+fvw
+fvw
 jbR
 aCc
 nOB
@@ -116099,7 +116040,7 @@ wPS
 aOk
 sSU
 lEr
-aOk
+cIY
 cFK
 aOk
 aae
@@ -116354,10 +116295,10 @@ igF
 hEG
 vML
 aOk
-cFK
+aGO
 nHY
 cFK
-ebe
+vhW
 cFK
 xSs
 aae
@@ -116611,7 +116552,7 @@ igF
 pFw
 anR
 aOk
-aOk
+cIY
 bZY
 oMw
 nwJ
@@ -116868,7 +116809,7 @@ sUH
 vGN
 anR
 aOk
-aOk
+cIY
 mAk
 cFK
 izq
@@ -117125,11 +117066,11 @@ nDV
 vGN
 bLS
 aOk
-aOk
+cIY
 cIY
 tbK
 cFK
-nHY
+ara
 djr
 aJN
 gzN
@@ -117382,8 +117323,8 @@ buC
 vGN
 wPS
 cHv
-cLo
-ncM
+cIY
+mkj
 cIY
 bfX
 rlZ
@@ -117640,7 +117581,7 @@ aPP
 qly
 hQE
 tAV
-aOk
+cIY
 coD
 iDb
 iNF
@@ -119181,8 +119122,8 @@ igF
 eWr
 anR
 lEr
-aOk
-aOk
+cIY
+cIY
 ctR
 aOk
 aJN
@@ -119440,8 +119381,8 @@ anR
 aOk
 ebe
 etg
-aOk
-bun
+cIY
+uzU
 aJN
 aae
 aak
@@ -119698,8 +119639,8 @@ aOk
 aXa
 aOk
 xFZ
-aOk
-aJN
+cIY
+pbv
 aae
 aae
 qqO
@@ -119955,7 +119896,7 @@ aOk
 oIu
 wCP
 chA
-aOk
+cIY
 aJN
 aae
 aae
@@ -120212,7 +120153,7 @@ aOk
 aOk
 cFK
 nHY
-cFK
+aGO
 aJN
 aJN
 qqO
@@ -120466,7 +120407,7 @@ cqL
 hEG
 anR
 aOk
-aOk
+cIY
 cFK
 lwE
 bZY
@@ -120722,7 +120663,7 @@ pNn
 ayn
 eWr
 anR
-bun
+uzU
 cFK
 aOk
 bgZ
@@ -120982,7 +120923,7 @@ anR
 aOk
 cFK
 sbI
-oMw
+wTS
 eMB
 aJN
 aae
@@ -121236,8 +121177,8 @@ aer
 aer
 gdZ
 anR
-aOk
-cFK
+cIY
+aGO
 aXa
 hvt
 cFK
