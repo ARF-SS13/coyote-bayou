@@ -21,6 +21,7 @@
 								/obj/item/stack/sheet/metal/fifty = 0.5,
 								/obj/item/stack/sheet/mineral/titanium = 3,
 								/obj/item/stack/sheet/plasteel =3,
+								/obj/item/stack/sheet/mineral/plastitanium = 6,
 								/obj/item/stack/sheet/cloth = 1,
 								/obj/item/stack/sheet/cloth/ten = 1,
 								/obj/item/stack/sheet/cloth/thirty = 1,
@@ -40,8 +41,8 @@
 								/obj/item/stack/sheet/leather/ten = 1,
 								/obj/item/stack/sheet/leather/twenty = 1,
 								/obj/item/stack/sheet/sinew = 1,
+								/obj/item/stack/sheet/bone = 1,
 								/obj/item/stack/sheet/animalhide/chitin = 1,
-								/obj/item/stack/sheet/mineral/plastitanium = 6,
 								/obj/item/reagent_containers/hypospray/medipen/medx = 3,
 								/obj/item/reagent_containers/hypospray/medipen/steady = 3,
 								/obj/item/reagent_containers/pill/patch/jet =3,
@@ -55,7 +56,7 @@
 								/obj/item/storage/pill_bottle/chem_tin/radx = 3,
 								/obj/item/reagent_containers/pill/antivenom = 3,
 								/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 3,
-								/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 1,
+								/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 3,
 								/obj/item/reagent_containers/food/snacks/grown/apple = 1,
 								/obj/item/reagent_containers/food/snacks/grown/banana = 1,
 								/obj/item/reagent_containers/food/snacks/grown/soybeans = 1,
@@ -81,7 +82,7 @@
 								/obj/item/reagent_containers/food/snacks/grown/datura = 1,
 								/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
 								/obj/item/reagent_containers/food/snacks/grown/feracactus = 1,
-								/obj/item/reagent_containers/food/snacks/grown/fever_blossom = 1,
+								/obj/item/reagent_containers/food/snacks/grown/fever_blossom = 2,
 								/obj/item/reagent_containers/food/snacks/grown/poppy = 1,
 								/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 1,
 								/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 1,
@@ -371,9 +372,28 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Most Crap : 1 - 6 caps<br>"
-	dat += "Advanced Crap : maybe about 15 caps<br>"
-	dat += "Crazy Crap: 25-100 caps<br>"
+	dat += "Metal: 0.5 caps per sheet<br>"
+	dat += "Titanium: 3 caps per sheet<br>"
+	dat += "Plasteel: 3 caps per sheet<br>"
+	dat += "Plastitanium: 6 caps per sheet<br>"
+	dat += "<br>"
+	dat += "Salvaged Resources: 1 - 15 caps<br>"
+	dat += "Metal, Quality, Electronic Parts: 0 caps<br>"
+	dat += "Research Papers: 25 caps<br>"
+	dat += "<br>"
+	dat += "Produce: 1 - 3 caps<br>"
+	dat += "Animal Parts: 1 - 25 caps<br>"
+	dat += "Sealed Alcohol: 8 - 15 caps<br>"
+	dat += "Stealth Boy: 100 caps<br>"
+	dat += "<br>"
+	dat += "Handguns and Revolvers: 5 caps<br>"
+	dat += "Bolt Rifles and Shotguns: 10 caps<br>"
+	dat += "Automatics and Semiautomatics: 15 caps<br>"
+	dat += "Improvised Weapons: 0 caps<br>"
+	dat += "Energy Weapons: 0 caps (for now)<br>"
+	dat += "Armor: 0 caps (for now)<br>"
+	dat += "Power Armor: 0 caps (for now)<br>"
+	dat += "Melee Weapons: 0 caps (for now)<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)

@@ -1,6 +1,6 @@
 /obj/item/crowbar
 	name = "crowbar"
-	desc = "This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
+	desc = "This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors. Just holding it makes you feel like a free man."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -8,7 +8,9 @@
 	usesound = 'sound/items/crowbar.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 15
+	force = 25
+	force_unwielded = 25
+	force_wielded = 35
 	throwforce = 7
 	w_class = WEIGHT_CLASS_SMALL
 	unique_reskin = list("Brass" = "crowbar_clock",
