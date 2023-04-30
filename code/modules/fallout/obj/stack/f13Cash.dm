@@ -36,8 +36,8 @@
 #define BANKER_MAX 15000
 
 /obj/item/stack/f13Cash //DO NOT USE THIS
-	name = "poker chip"
-	singular_name = "cap"
+	name = "copper coin"
+	singular_name = "copper coin"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "bottle_cap"
 	amount = 1
@@ -48,8 +48,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	var/flavor_desc =	"A standard poker chip featuring 21 crimps and ridges,\
-					A common unit of exchange, backed by water in the Hub."
+	var/flavor_desc =	"A copper coin. used for exchange.,\
+					A common unit of exchange, copper in color."
 	var/value = CASH_CAP
 	var/flippable = TRUE
 	var/cooldown = 0
@@ -196,15 +196,12 @@
 	max_qty = BANKER_MAX / CASH_CAP
 
 /obj/item/stack/f13Cash/denarius
-	name = "Denarius"
+	name = "Silver Coin"
 	latin = 1
-	singular_name = "Denari" // -us or -i
+	singular_name = "Sliver Coin" // -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "denarius"
-	flavor_desc =	"The inscriptions are in Latin,\n\
-		'Caesar Dictator' on the front and\n\
-		'Magnum Chasma' on the back."
-	value = CASH_DEN * CASH_CAP
+	flavor_desc =	"A sliver, shiny coin."
 	merge_type = /obj/item/stack/f13Cash/denarius
 
 /obj/item/stack/f13Cash/random/denarius
@@ -235,14 +232,12 @@
 	max_qty = HIGH_MAX / CASH_DEN
 
 /obj/item/stack/f13Cash/aureus
-	name = "Aureus"
+	name = "gold coin"
 	latin = 1
-	singular_name = "Aure"// -us or -i
+	singular_name = "Gold Coin"// -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "aureus"
-	flavor_desc = 	"The inscriptions are in Latin,\n\
-					'Aeternit Imperi' on the front and\n\
-					'Pax Per Bellum' on the back."
+	flavor_desc = 	"A shiny golden coin!"
 	value = CASH_AUR * CASH_CAP
 	merge_type = /obj/item/stack/f13Cash/aureus
 
