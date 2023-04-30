@@ -604,33 +604,16 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
-/datum/quirk/lick_heal
-	name = "Soothing Saliva"
-	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick your injuries."
-	value = 1
-	mob_trait = TRAIT_HEAL_TONGUE
-	gain_text = span_notice("You feel a slight tingle in your mouth.")
-	lose_text = span_danger("The tingle in your mouth fades.")
+/datum/quirk/improved_heal
+	name = "Improved Innate Healing"
+	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. check the neutral traits for these abilities."
+	value = 2
+	mob_trait = TRAIT_IMPROVED_HEALING
+	gain_text = span_notice("You feel well hydrated.")
+	lose_text = span_danger("You feel rather dry.")
 	locked = FALSE
 
-/datum/quirk/lick_heal/on_spawn()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	our_tongue.initialize_lickpack(/obj/item/stack/medical/bruise_pack/lick)
-
-/datum/quirk/lick_heal/remove()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	QDEL_NULL(our_tongue.lick_healer)
-
+/*
 /datum/quirk/lick_bandage
 	name = "Sanguine Saliva"
 	desc = "Your saliva has a mild coagulating effect on open bleeding wounds. Use *lick to lick your lacerations."
@@ -653,7 +636,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	if(!our_tongue)
 		return //welp
 	QDEL_NULL(our_tongue.lick_bandage)
-
+*/
 // This does the same thing as basic explosive crafting by giving basic_recipe and adv_recipe. -Possum
 /*
 /datum/quirk/advanced_explosive_crafting
