@@ -500,9 +500,9 @@
 	path = /obj/item/camera/early
 	cost = 3
 
-/datum/gear/backpack/camera/modern
-	name  = "modern camera"
-	path = /obj/item/camera/modern
+/datum/gear/backpack/camera/earlymodern
+	name  = "early modern camera"
+	path = /obj/item/camera/earlymodern
 	cost = 3
 
 /datum/gear/backpack/camera/coldwar
