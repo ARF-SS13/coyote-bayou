@@ -95,11 +95,6 @@
 	impacted_z_levels = z_levels
 	telegraph()
 
-/datum/weather/Destroy(force, ...)
-	. = ..()
-	if(SSweather.current_weather == src)
-		SSweather.end_weather()
-
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
  *
@@ -194,7 +189,6 @@
 	SSweather.end_weather(TRUE, TRUE, FALSE)
 	if(forced)
 		alert_players(end_message, end_sound)
-	qdel(src)
 
 /datum/weather/process()
 	if(aesthetic || (stage != MAIN_STAGE))
