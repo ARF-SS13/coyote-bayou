@@ -110,7 +110,7 @@
 /obj/item/reagent_containers/food/snacks/grown/tomato/killer
 	seed = /obj/item/seeds/tomato/killer
 	name = "killer-tomato"
-	desc = "I say to-mah-to, you say tom-mae-to... OH GOD IT'S EATING MY LEGS!!"
+	desc = "I say to-mah-to, you say tom-mae-to... OH FUCK IT'S EATING MY LEGS!!"
 	icon_state = "killertomato"
 	var/awakening = 0
 	filling_color = "#FF0000"

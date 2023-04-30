@@ -149,7 +149,7 @@
 
 /datum/uplink_item/device_tools/damaged_module
 	name = "Damaged AI Law Upload Module"
-	desc = "This AI law upload module has been laying around our warehouse for god knows how long. We do not know why you would ever use this."
+	desc = "This AI law upload module has been laying around our warehouse for gosh knows how long. We do not know why you would ever use this."
 	item = /obj/item/aiModule/core/full/damaged
 	cost = 5
 
