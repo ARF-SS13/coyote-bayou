@@ -36,7 +36,7 @@
 #define BANKER_MAX 15000
 
 /obj/item/stack/f13Cash //DO NOT USE THIS
-	name = "bottle cap"
+	name = "poker chip"
 	singular_name = "cap"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "bottle_cap"
@@ -48,7 +48,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	var/flavor_desc =	"A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\
+	var/flavor_desc =	"A standard poker chip featuring 21 crimps and ridges,\
 					A common unit of exchange, backed by water in the Hub."
 	var/value = CASH_CAP
 	var/flippable = TRUE
