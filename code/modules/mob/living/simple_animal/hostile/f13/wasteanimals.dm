@@ -650,6 +650,10 @@
 	waddle_up_time = 1
 	waddle_side_time = 1
 
+/mob/living/simple_animal/hostile/stalker/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/hostile/stalker/playable
 	health = 80
 	maxHealth = 80

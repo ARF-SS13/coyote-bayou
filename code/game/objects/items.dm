@@ -181,6 +181,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// extra special transform
 	var/matrix/special_transform
 
+	/// Weapon special component
+	var/weapon_special_component
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -243,6 +246,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(sharpness && force > 5) //give sharp objects butchering functionality, for consistency
 		AddComponent(/datum/component/butchering, 80 * toolspeed)
+
+	if(weapon_special_component)
+		AddComponent(weapon_special_component)
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
@@ -501,6 +507,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_found(mob/finder)
 	return
 
+/* // click code is confusing enough, thank you
 /obj/item/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params) //Copypaste of /atom/MouseDrop() since this requires code in a very specific spot
 	if(!usr || !over)
 		return
@@ -520,7 +527,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	over.MouseDrop_T(src,usr)
 	return
-
+ */
 // called after an item is placed in an equipment slot
 // user is mob that equipped it
 // slot uses the slot_X defines found in setup.dm

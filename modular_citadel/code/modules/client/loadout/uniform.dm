@@ -1737,3 +1737,153 @@
 	cost = 1
 	path = /obj/item/clothing/under/japanese_uniform
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/mini_black
+	name = "mini black dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/mini_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/mini_black_blue
+	name = "mini black and blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/mini_black_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/mini_white
+	name = "mini white dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/mini_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/pristess
+	name = "pristess dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/pristess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gob/summer
+	name = "summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/summer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/thot
+	name = "thin white dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/thot
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_blue
+	name = "female blue outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gob/fem_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_rose
+	name = "female rose outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gob/fem_rose
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_white
+	name = "female white outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gob/fem_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_blue
+	name = "Blue Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_black
+	name = "Black Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_pink
+	name = "Pink Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_yellow
+	name = "Yellow Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_yellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_white
+	name = "White Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_red
+	name = "red Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_purple
+	name = "Purple Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/gob/vestido_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gorka_alt
+	name = "Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/gorka_ss
+	name = "Alt Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_ss
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/gorka_tan
+	name = "Tan Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_tan
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/puffydress
+	name = "Puffy Dress"
+	cost = 1
+	path = /obj/item/clothing/under/puffy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/labor_black
+	name = "Black labor suit"
+	cost = 1
+	path = /obj/item/clothing/under/labor_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/divine_robes
+	name = "Divine Robes"
+	cost = 1
+	path = /obj/item/clothing/under/divine_robes
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/blue_kimono
+	name = "Blue Kimono"
+	cost = 1
+	path = /obj/item/clothing/under/blue_kimono
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/miku_bikini
+	name = "Light blue Bikini"
+	cost = 1
+	path = /obj/item/clothing/under/miku_bikini
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/shark
+	name = "Shark Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/shark
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

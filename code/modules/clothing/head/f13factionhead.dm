@@ -228,10 +228,13 @@
 	name = "enclave envirosuit hood"
 	icon_state = "envirohead"
 	item_state = "envirohead"
-	desc = "A white hazmat helmet with a coupling system, the visor looks to be made out of orange plexiglas."
+	desc = "A white hazmat helmet designed and produced by the Enclave post-war. It's probably not a good idea to be seen wearing this."
 	clothing_flags = THICKMATERIAL
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1, ARMOR_MODIFIER_UP_ENV_T3)
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_UP_ENV_T4)
 	strip_delay = 60
 	equip_delay_other = 60
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH

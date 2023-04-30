@@ -515,6 +515,78 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/adamantite
+	name = "adamantite coat"
+	path = /obj/item/clothing/suit/gob/adamantite
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/arcanium
+	name = "arcanium coat"
+	path = /obj/item/clothing/suit/gob/arcanium
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/gladiator
+	name = "Gladiator armor"
+	path = /obj/item/clothing/suit/gob/gladiator
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/black
+	name = "Black Coat"
+	path = /obj/item/clothing/suit/gob/black
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/black_gold
+	name = "black and gold coat"
+	path = /obj/item/clothing/suit/gob/black_gold
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/copper
+	name = "copper coat"
+	path = /obj/item/clothing/suit/gob/copper
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/dark_knight
+	name = "dark knight coat"
+	path = /obj/item/clothing/suit/gob/dark_knight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/holy_knight
+	name = "holy knight coat"
+	path = /obj/item/clothing/suit/gob/holy_knight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/iron
+	name = "iron coat"
+	path = /obj/item/clothing/suit/gob/iron
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/kraus
+	name = "Kraus Armor"
+	path = /obj/item/clothing/suit/gob/kraus
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/leather
+	name = "leather coat"
+	path = /obj/item/clothing/suit/gob/leather
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/steel
+	name = "Steel coat"
+	path = /obj/item/clothing/suit/gob/steel
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
 
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 

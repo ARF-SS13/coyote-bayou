@@ -164,11 +164,13 @@
 	code = rand(1,100)
 	name = "[name] #[frequency]/[code]"
 
+/*
 /obj/item/electropack/shockcollar/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK))
 		to_chat(user, span_warning("The collar is fastened tight! You'll need help taking this off!"))
 		return
 	return ..()
+*/ //Removed due to these being basically for kink stuff only. ~TK
 
 /obj/item/electropack/shockcollar/receive_signal(datum/signal/signal) //we have to override this because of text
 	if(!signal || signal.data["code"] != code)

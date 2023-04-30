@@ -46,7 +46,7 @@
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
-/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK
+/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK // reworked into multiple other trait options, here for example purposes now - bear
 /quirk/fev
 	name = "FEV Exposure"
 	desc = " "
@@ -493,21 +493,3 @@
 	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
 	lose_text = span_danger("You lost your triage kit...")
 	locked = FALSE
-
-// /datum/quirk/lick_heal/on_spawn()
-// 	var/mob/living/carbon/human/human_holder = quirk_holder
-// 	if(!quirk_holder)
-// 		return //oh no
-// 	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-// 	if(!our_tongue)
-// 		return //welp
-// 	our_tongue.initialize_lickpack(/obj/item/stack/medical/bruise_pack/lick)
-
-// /datum/quirk/lick_heal/remove()
-// 	var/mob/living/carbon/human/human_holder = quirk_holder
-// 	if(!quirk_holder)
-// 		return //oh no
-// 	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-// 	if(!our_tongue)
-// 		return //welp
-// 	QDEL_NULL(our_tongue.lick_healer)

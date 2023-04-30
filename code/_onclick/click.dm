@@ -47,6 +47,8 @@
 	* atom/attackby(item,user) - used only when adjacent
 	* item/afterattack(atom,user,adjacent,params) - used both ranged and adjacent
 	* mob/RangedAttack(atom,params) - used only ranged, only used for tk and laser eyes but could be changed
+
+	Do note that this is when the mouseclick is *released*, after a drag has been made.
 */
 /mob/proc/ClickOn(atom/A, params)
 	//SHOULD_NOT_SLEEP(TRUE)

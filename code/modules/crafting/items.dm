@@ -259,7 +259,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	if(!place_to_put_it || !isturf(place_to_put_it))
 		place_to_put_it = get_turf(src) //just dump it on the floor you filthy animal
 	// base 1 loot roll, +1 if technophreak, 50% for +1, and 25% for +1
-	var/loot_rolls = 1 + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK)) + (prob(50)) + (prob(25))
+	var/loot_rolls = 1 + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK)) + (prob(25)) + (prob(10))
 	for(var/i in 1 to loot_rolls)
 		var/obj/I = pick(src.Loot)
 		new I (place_to_put_it)

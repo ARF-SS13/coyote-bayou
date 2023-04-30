@@ -12,7 +12,7 @@
 
 /mob/living/simple_animal/hostile/poison/bees
 	name = "radbee"
-	desc = "Buzzy buzzy radbee, stingy sti- oh god I'm vomiting blood!"
+	desc = "Buzzy buzzy radbee, stingy sti- oh FUCK, I'm vomiting blood!"
 	icon_state = ""
 	icon_living = ""
 	icon = 'icons/mob/bees.dmi'
