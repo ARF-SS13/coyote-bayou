@@ -215,7 +215,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	name = "Beretta M93R"
-	desc = "A rare select fire variant of the M93R."
+	desc = "An uncommon model of the M9 pistol that's capable of burst fire. It has a built in foregrip allowing for incredibly accurate shots."
 	icon_state = "m93r"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos

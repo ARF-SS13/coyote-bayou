@@ -1447,6 +1447,10 @@
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 21
+	flight_y_offset = 21
 
 /* * * * * * * * * * *
  * Rangemaster Rifle

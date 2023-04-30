@@ -14,14 +14,14 @@
 	var/expected_price = 0
 	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
 
-	var/list/goods_list = list( /obj/item/stack/sheet/metal = 0.5,
-								/obj/item/stack/sheet/metal/five = 0.5,
-								/obj/item/stack/sheet/metal/ten = 0.5,
-								/obj/item/stack/sheet/metal/twenty = 0.5,
-								/obj/item/stack/sheet/metal/fifty = 0.5,
-								/obj/item/stack/sheet/mineral/titanium = 3,
-								/obj/item/stack/sheet/plasteel =3,
-								/obj/item/stack/sheet/mineral/plastitanium = 6,
+	var/list/goods_list = list( /obj/item/stack/sheet/metal = 0.25,
+								/obj/item/stack/sheet/metal/five = 0.25,
+								/obj/item/stack/sheet/metal/ten = 0.25,
+								/obj/item/stack/sheet/metal/twenty = 0.25,
+								/obj/item/stack/sheet/metal/fifty = 0.25,
+								/obj/item/stack/sheet/mineral/titanium = 1,
+								/obj/item/stack/sheet/plasteel =1,
+								/obj/item/stack/sheet/mineral/plastitanium = 3,
 								/obj/item/stack/sheet/cloth = 1,
 								/obj/item/stack/sheet/cloth/ten = 1,
 								/obj/item/stack/sheet/cloth/thirty = 1,
@@ -372,10 +372,10 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Metal: 0.5 caps per sheet<br>"
-	dat += "Titanium: 3 caps per sheet<br>"
-	dat += "Plasteel: 3 caps per sheet<br>"
-	dat += "Plastitanium: 6 caps per sheet<br>"
+	dat += "Metal: 0.25 caps per sheet<br>"
+	dat += "Titanium: 1 caps per sheet<br>"
+	dat += "Plasteel: 1 caps per sheet<br>"
+	dat += "Plastitanium: 3 caps per sheet<br>"
 	dat += "<br>"
 	dat += "Salvaged Resources: 1 - 15 caps<br>"
 	dat += "Metal, Quality, Electronic Parts: 0 caps<br>"
