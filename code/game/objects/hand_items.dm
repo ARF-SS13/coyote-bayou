@@ -18,7 +18,7 @@
 
 /// Just a cool hand-item that holds a healing... thing
 /obj/item/hand_item/healable
-	var/obj/item/stack/medical/bruise_pack/lick/healthing = /obj/item/stack/medical/bruise_pack/lick
+	var/obj/item/stack/medical/healthing = /obj/item/stack/medical/bruise_pack/lick
 	/// are we licking something?
 	var/working = FALSE
 	var/needed_trait = TRAIT_HEAL_TONGUE
@@ -27,52 +27,6 @@
 	var/action_verb_s = "licks"
 	var/action_verb_ing = "licking"
 	var/can_taste = TRUE
-
-/obj/item/hand_item/healable/attack(mob/living/L, mob/living/carbon/user)
-	return start_licking(src, L, user)
-
-/obj/item/hand_item/healable/attack_obj(obj/O, mob/living/user)
-	return start_licking(src, O, user)
-
-/obj/item/hand_item/healable/attack_obj_nohit(obj/O, mob/living/user)
-	return start_licking(src, O, user)
-
-/obj/item/hand_item/healable/proc/start_licking(atom/source, atom/licked, mob/living/carbon/user)
-	if(!iscarbon(user))
-		return FALSE
-	if(user.incapacitated())
-		return FALSE
-	if(working)
-		to_chat(user, span_alert("You're already [tend_word] something!"))
-		return FALSE
-	if(!licked)
-		return FALSE
-	if(tend_hurt(user, licked))
-		return FALSE
-	return TRUE
-
-/obj/item/hand_item/healable/proc/tend_hurt(mob/living/user, mob/living/target)
-	if(!isliving(user) || !isliving(target))
-		return
-	if(!HAS_TRAIT(user, needed_trait))
-		return TRUE
-	var/mob/living/mlemmed = target
-	if(!mlemmed.get_bodypart(user.zone_selected))
-		return FALSE
-	//if(bandage_wound(licked, user) == LICK_CANCEL)
-	//	return TRUE // one thing at a time
-	if(!istype(healthing))
-		healthing = new(src)
-	if(heal_damage(target, user) == LICK_CANCEL)
-		return TRUE // one thing at a time
-
-/obj/item/hand_item/healable/proc/heal_damage(mob/living/licked, mob/living/carbon/user)
-	if(!isliving(licked))
-		return FALSE
-	if(!istype(healthing))
-		return FALSE
-	healthing.attack(licked, user)
-	return TRUE
 
 /// Course our first hand item would be a tongue
 /obj/item/hand_item/healable/tender //chimken
@@ -114,26 +68,56 @@
 	pokesound = 'sound/effects/lick.ogg'
 	siemens_coefficient = 5 // hewwo mistow ewectwic fence mlem mlem
 
+/obj/item/hand_item/healable/attack(mob/living/L, mob/living/carbon/user)
+	return start_licking(src, L, user)
+
+/obj/item/hand_item/healable/attack_obj(obj/O, mob/living/user)
+	return start_licking(src, O, user)
+
+/obj/item/hand_item/healable/attack_obj_nohit(obj/O, mob/living/user)
+	return start_licking(src, O, user)
+
+/obj/item/hand_item/healable/proc/start_licking(atom/source, atom/licked, mob/living/carbon/user)
+	if(!iscarbon(user))
+		return FALSE
+	if(user.incapacitated())
+		return FALSE
+	if(working)
+		to_chat(user, span_alert("You're already [tend_word] something!"))
+		return FALSE
+	if(!licked)
+		return FALSE
+	if(tend_hurt(user, licked))
+		return TRUE
+	lick_atom(licked, user)
+	return cool_thing(source, user, licked)
+
+/obj/item/hand_item/healable/proc/cool_thing(mob/living/carbon/user, atom/licked)
+	return TRUE
+
+/obj/item/hand_item/healable/proc/tend_hurt(mob/living/user, mob/living/target)
+	if(!isliving(user) || !isliving(target))
+		return
+	if(!HAS_TRAIT(user, needed_trait))
+		return FALSE
+	var/mob/living/mlemmed = target
+	if(!mlemmed.get_bodypart(user.zone_selected))
+		return FALSE
+	if(!istype(healthing))
+		healthing = new healthing(src)
+	if(!istype(healthing))
+		return FALSE
+	if(!healthing.try_heal(user, mlemmed, TRUE))
+		return FALSE
+	healthing.attack(mlemmed, user)
+	return TRUE
+
+
 /obj/item/hand_item/healable/licker/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_LICK_RETURN, .proc/start_licking)
 
-/obj/item/hand_item/healable/licker/start_licking(atom/source, atom/licked, mob/living/carbon/user)
-	if(!..())
-		return FALSE
-	if(!user.getorganslot(ORGAN_SLOT_TONGUE))
-		return FALSE
-	if(SEND_SIGNAL(licked, COMSIG_ATOM_LICKED, user, src))
-		return TRUE
-	lick_atom(licked, user)
-	return TRUE
-
-/obj/item/hand_item/healable/licker/heal_damage(mob/living/licked, mob/living/carbon/user)
-	if(!..())
-		return FALSE
-	lick_flavor(atom_licked = licked, licker = user)
-
-/obj/item/hand_item/healable/licker/proc/lick_atom(atom/movable/licked, mob/living/carbon/user)
+/obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/carbon/user)
 	var/list/lick_words = get_lick_words(user)
 	if(isliving(licked))
 		user.visible_message(
@@ -152,7 +136,7 @@
 	if(can_taste)
 		lick_flavor(atom_licked = licked, licker = user)
 
-/obj/item/hand_item/healable/licker/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/carbon/licker)
+/obj/item/hand_item/healable/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/carbon/licker)
 	if(!atom_licked)
 		return
 	if(!licker)
@@ -164,66 +148,13 @@
 	licker.taste(null, atom_licked)
 	playsound(get_turf(src), pokesound, 25, 1, SOUND_DISTANCE(LICK_SOUND_TEXT_RANGE))
 
-// /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
-// 	if(!iscarbon(licked))
-// 		return FALSE
-// 	var/obj/item/organ/tongue/our_tongue = user.getorganslot(ORGAN_SLOT_TONGUE)
-// 	if(!istype(our_tongue.lick_bandage))
-// 		return FALSE
-// 	var/obj/item/stack/medical/tongue_bandage = our_tongue.lick_bandage
-// 	var/mob/living/carbon/mlemmed = licked
-// 	var/obj/item/bodypart/target_bodypart = mlemmed.get_bodypart(user.zone_selected)
-// 	if(!target_bodypart)
-// 		return FALSE
-// 	if(target_bodypart.status != BODYPART_ORGANIC)
-// 		return FALSE
-// 	if(target_bodypart.bleed_dam <= 0)
-// 		return FALSE
-// 	var/has_bleeding_wound = FALSE
-// 	for(var/datum/wound/a_wound in target_bodypart.wounds)
-// 		if(istype(a_wound, /datum/wound/bleed))
-// 			has_bleeding_wound = TRUE
-// 			break
-// 	if(!has_bleeding_wound)
-// 		return FALSE
-// 	if(!target_bodypart.apply_gauze(tongue_bandage, 1, TRUE))
-// 		return FALSE
-// 	working = TRUE
-// 	user.visible_message(
-// 		span_notice("[user] starts carefully lapping at the wounds on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]..."), 
-// 		span_notice("You start running your tongue across the wounds on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]..."),
-// 		span_notice("You hear licking."),
-// 		LICK_SOUND_TEXT_RANGE
-// 		)
-// 	lick_flavor(atom_licked = licked, licker = user)
-// 	if(!do_mob(user, mlemmed, tongue_bandage.get_delay_time(user, mlemmed, 1), progress = TRUE))
-// 		user.visible_message(span_alert("[user] was interrupted!"))
-// 		working = FALSE
-// 		return LICK_CANCEL
-// 	working = FALSE
-// 	if(QDELETED(our_tongue))
-// 		user.visible_message(span_notice("[user]'s tongue went missing!"))
-// 		return LICK_CANCEL
-// 	if(target_bodypart.apply_gauze(tongue_bandage, 1, FALSE))
-// 		user.visible_message(
-// 			span_green("[user] applies a fresh coat of coagulating saliva on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]!"), 
-// 			span_green("You apply a fresh coat of coagulating saliva to [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]!"),
-// 			span_notice("You hear licking."),
-// 			LICK_SOUND_TEXT_RANGE
-// 			)
-// 		lick_flavor(atom_licked = licked, licker = user)
-// 		return LICK_CANCEL
-// 	user.visible_message(span_alert("[user] was interrupted!"))
-// 	return LICK_CANCEL
-
-/obj/item/hand_item/healable/tongue/heal_damage(mob/living/licked, mob/living/carbon/user)
+/obj/item/hand_item/healable/licker/tend_hurt(mob/living/licked, mob/living/carbon/user)
 	var/obj/item/organ/tongue/our_tongue = user.getorganslot(ORGAN_SLOT_TONGUE)
 	if(!istype(our_tongue))
 		return FALSE
 	. = ..()
 
-
-/obj/item/hand_item/healable/licker/proc/get_lick_words(mob/living/carbon/user)
+/obj/item/hand_item/healable/proc/get_lick_words(mob/living/carbon/user)
 	if(!user)
 		return
 
@@ -322,3 +253,59 @@
 /obj/item/hand_item/shover/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
+
+
+
+// /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
+// 	if(!iscarbon(licked))
+// 		return FALSE
+// 	var/obj/item/organ/tongue/our_tongue = user.getorganslot(ORGAN_SLOT_TONGUE)
+// 	if(!istype(our_tongue.lick_bandage))
+// 		return FALSE
+// 	var/obj/item/stack/medical/tongue_bandage = our_tongue.lick_bandage
+// 	var/mob/living/carbon/mlemmed = licked
+// 	var/obj/item/bodypart/target_bodypart = mlemmed.get_bodypart(user.zone_selected)
+// 	if(!target_bodypart)
+// 		return FALSE
+// 	if(target_bodypart.status != BODYPART_ORGANIC)
+// 		return FALSE
+// 	if(target_bodypart.bleed_dam <= 0)
+// 		return FALSE
+// 	var/has_bleeding_wound = FALSE
+// 	for(var/datum/wound/a_wound in target_bodypart.wounds)
+// 		if(istype(a_wound, /datum/wound/bleed))
+// 			has_bleeding_wound = TRUE
+// 			break
+// 	if(!has_bleeding_wound)
+// 		return FALSE
+// 	if(!target_bodypart.apply_gauze(tongue_bandage, 1, TRUE))
+// 		return FALSE
+// 	working = TRUE
+// 	user.visible_message(
+// 		span_notice("[user] starts carefully lapping at the wounds on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]..."), 
+// 		span_notice("You start running your tongue across the wounds on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]..."),
+// 		span_notice("You hear licking."),
+// 		LICK_SOUND_TEXT_RANGE
+// 		)
+// 	lick_flavor(atom_licked = licked, licker = user)
+// 	if(!do_mob(user, mlemmed, tongue_bandage.get_delay_time(user, mlemmed, 1), progress = TRUE))
+// 		user.visible_message(span_alert("[user] was interrupted!"))
+// 		working = FALSE
+// 		return LICK_CANCEL
+// 	working = FALSE
+// 	if(QDELETED(our_tongue))
+// 		user.visible_message(span_notice("[user]'s tongue went missing!"))
+// 		return LICK_CANCEL
+// 	if(target_bodypart.apply_gauze(tongue_bandage, 1, FALSE))
+// 		user.visible_message(
+// 			span_green("[user] applies a fresh coat of coagulating saliva on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]!"), 
+// 			span_green("You apply a fresh coat of coagulating saliva to [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]!"),
+// 			span_notice("You hear licking."),
+// 			LICK_SOUND_TEXT_RANGE
+// 			)
+// 		lick_flavor(atom_licked = licked, licker = user)
+// 		return LICK_CANCEL
+// 	user.visible_message(span_alert("[user] was interrupted!"))
+// 	return LICK_CANCEL
+
+

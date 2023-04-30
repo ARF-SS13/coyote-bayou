@@ -332,12 +332,12 @@
 #define	TRAIT_VERYFLIMSY			"veryflimsy" //lowers HP by 20
 #define TRAIT_MARS_TEACH		"mars_teachings" //for legion unique functions
 #define TRAIT_EXPLOSIVE_CRAFTING "explosive_crafting" //can craft explosives and bombs
-#define TRAIT_ADVANCED_EXPLOSIVE_CRAFTING "advanced explosive crafting" //can craft almost all kinds of explosives
+#define TRAIT_ADVANCED_EXPLOSIVE_CRAFTING "advanced_explosive_crafting" //can craft almost all kinds of explosives
 /// Lets your tongue heal damage on limbs
-#define TRAIT_HEAL_TONGUE "healing tongue"
-#define TRAIT_HEAL_TOUCH "healing touch"
-#define TRAIT_HEAL_TEND "healing triage"
-#define TRAIT_IMPROVED_HEALING "improved healing"
+#define TRAIT_HEAL_TONGUE "healing_tongue"
+#define TRAIT_HEAL_TOUCH "healing_touch"
+#define TRAIT_HEAL_TEND "healing_triage"
+#define TRAIT_IMPROVED_HEALING "improved_healing"
 /// Lets your tongue apply awful bandages to limbs
 //#define TRAIT_BANDAGE_TONGUE "coagulating tongue"
 /// You're hooked on punga!
