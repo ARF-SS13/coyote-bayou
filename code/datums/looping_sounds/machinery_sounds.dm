@@ -65,7 +65,7 @@
 		SOUND_LOOP_ENTRY('sound/weapons/circsawhit.ogg', 0.5 SECONDS, 1), 
 		SOUND_LOOP_ENTRY('sound/machines/mixer.ogg', 0.7 SECONDS, 1), 
 		SOUND_LOOP_ENTRY('sound/weapons/drill.ogg', 0.7 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/rev_machine.ogg', 0.7 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/weapons/rev_engine.ogg', 0.7 SECONDS, 1), 
 		SOUND_LOOP_ENTRY('sound/machines/engine_grump1_short.ogg', 2 SECONDS, 1), 
 		SOUND_LOOP_ENTRY('sound/machines/engine_grump1.ogg', 3 SECONDS, 1), 
 		SOUND_LOOP_ENTRY('sound/machines/engine_grump2.ogg', 2 SECONDS, 1), 

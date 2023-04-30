@@ -61,6 +61,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/shotgun = 10,
 		/obj/item/gun/ballistic/rifle = 10,
 		// full auto smgs/rifles, 15 caps
+		/obj/item/gun/ballistic/automatic = 5,
 		/obj/item/gun/ballistic/automatic/smg = 15,
 		/obj/item/gun/ballistic/automatic/m1carbine = 15,
 		/obj/item/gun/ballistic/automatic/delisle = 15,
@@ -89,7 +90,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/bren = 15,
 		/obj/item/gun/ballistic/automatic/m1919 = 15,
 		/obj/item/gun/ballistic/automatic/m72 = 15,
-		/obj/item/gun/ballistic/automatic/xl70e3 = 15)
+		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
+	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(
 		/obj/item/stack/sheet/animalhide/chitin = 1,
@@ -123,7 +125,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stock_parts/matter_bin/super = 6,
 		/obj/item/stock_parts/cell/hyper = 6,
 		/obj/item/stock_parts/capacitor/quadratic = 10,
-		/obj/item/stock_parts/scanning_module/triphasic 10,
+		/obj/item/stock_parts/scanning_module/triphasic = 10,
 		/obj/item/stock_parts/manipulator/femto = 10,
 		/obj/item/stock_parts/micro_laser/quadultra = 10,
 		/obj/item/stock_parts/matter_bin/bluespace = 10,
@@ -167,7 +169,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/nukashine = 15,
 		/obj/item/export/bottle/trappist = 15,
 		/obj/item/export/bottle/goldschlager = 15,
-		/obj/item/export/bottle/patron = 15,)
+		/obj/item/export/bottle/patron = 15,
+	)
 	var/list/goods_list = list()
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
