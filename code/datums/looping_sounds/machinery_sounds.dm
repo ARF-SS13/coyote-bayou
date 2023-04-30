@@ -58,6 +58,25 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/datum/looping_sound/grinding_noises
+	start_sound = list(SOUND_LOOP_ENTRY('sound/machines/switch_on.ogg', 0.2 SECONDS, 1))
+	start_length = 4
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/weapons/circsawhit.ogg', 0.5 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/mixer.ogg', 0.7 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/weapons/drill.ogg', 0.7 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/weapons/rev_machine.ogg', 0.7 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/engine_grump1_short.ogg', 2 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/engine_grump1.ogg', 3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/engine_grump2.ogg', 2 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/machines/engine_grump3.ogg', 2 SECONDS, 1), 
+		)
+	mid_length = 4
+	end_sound = list(SOUND_LOOP_ENTRY('sound/machines/engine_wind_down.ogg', 3 SECONDS, 1))
+	volume = 30 // sweet merciful fuck this thing is loud
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /datum/looping_sound/deep_fryer
 	start_sound = list(SOUND_LOOP_ENTRY('sound/machines/fryer/deep_fryer_immerse.ogg', 1 SECONDS, 1)) //my immersions
