@@ -5,18 +5,18 @@
 //catslug inventory
 //catslug hands
 
-/mob/living/simple_animal/catslug/proc/update_inv_internal_storage()
+/mob/living/simple_animal/pet/catslug/proc/update_inv_internal_storage()
 	if(internal_storage && client && hud_used && hud_used.hud_shown)
 		internal_storage.screen_loc = ui_drone_storage
 		client.screen += internal_storage
 
-/mob/living/simple_animal/catslug/update_inv_head()
+/mob/living/simple_animal/pet/catslug/update_inv_head()
 	if(head)
 		if(client && hud_used && hud_used.hud_shown)
 			head.screen_loc = ui_drone_head
 			client.screen += head
 
-/mob/living/simple_animal/catslug/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE)
+/mob/living/simple_animal/pet/catslug/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE)
 	if(..())
 		update_inv_hands()
 		if(I == head)
@@ -29,7 +29,7 @@
 	return 0
 
 
-/mob/living/simple_animal/catslug/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
+/mob/living/simple_animal/pet/catslug/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
 	switch(slot)
 		if(SLOT_HEAD)
 			if(head)
@@ -44,7 +44,7 @@
 	..()
 
 
-/mob/living/simple_animal/catslug/get_item_by_slot(slot_id)
+/mob/living/simple_animal/pet/catslug/get_item_by_slot(slot_id)
 	switch(slot_id)
 		if(SLOT_HEAD)
 			return head
@@ -53,7 +53,7 @@
 	return ..()
 
 
-/mob/living/simple_animal/catslug/equip_to_slot(obj/item/I, slot)
+/mob/living/simple_animal/pet/catslug/equip_to_slot(obj/item/I, slot)
 	if(!slot)
 		return
 	if(!istype(I))
@@ -86,8 +86,8 @@
 	//Call back for item being equipped to catslug
 	I.equipped(src, slot)
 
-/mob/living/simple_animal/catslug/getBackSlot()
+/mob/living/simple_animal/pet/catslug/getBackSlot()
 	return SLOT_GENERC_DEXTROUS_STORAGE
 
-/mob/living/simple_animal/catslug/getBeltSlot()
+/mob/living/simple_animal/pet/catslug/getBeltSlot()
 	return SLOT_GENERC_DEXTROUS_STORAGE
