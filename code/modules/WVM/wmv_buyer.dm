@@ -411,7 +411,7 @@
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
 	dat += "Metal: 0.4¢ per sheet<br>"
-	dat += "Titanium: .8¢ per sheet<br>"
+	dat += "Titanium: 0.8¢ per sheet<br>"
 	dat += "Plasteel: 1¢ per sheet<br>"
 	dat += "Plastitanium: 3¢ per sheet<br>"
 	dat += "<br>"
