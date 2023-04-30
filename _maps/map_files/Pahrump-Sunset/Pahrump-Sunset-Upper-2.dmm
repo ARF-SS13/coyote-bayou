@@ -1068,15 +1068,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "kZ" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill";
-	dir = 1
+/obj/structure/railing/corner{
+	dir = 8;
+	color = "#A47449"
 	},
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill";
-	dir = 4
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18
 	},
-/turf/open/floor/wood_wide,
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "lg" = (
 /obj/structure/spacevine,
@@ -5426,6 +5426,10 @@
 	dir = 8;
 	layer = 2.8
 	},
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = 18
+	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "ZO" = (
@@ -8682,8 +8686,8 @@ IE
 Ay
 Hl
 hm
+hm
 LV
-EU
 gy
 nO
 RH
@@ -8939,10 +8943,10 @@ Ey
 sq
 Hl
 hm
+hm
 xU
 hm
-nD
-kZ
+nO
 RH
 cs
 Dg
@@ -9196,8 +9200,8 @@ Ey
 PL
 Hl
 hm
-JW
-zD
+px
+kZ
 ZN
 nO
 RH
