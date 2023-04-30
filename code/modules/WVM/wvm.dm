@@ -666,7 +666,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Civilian Weapon Kit 		(Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,									50),
 		new /datum/data/wasteland_equipment("Beretta M93R 				(9mm)",						/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,		150),
 		new /datum/data/wasteland_equipment("Sig P220 					(.45)",						/obj/item/gun/ballistic/automatic/pistol/sig,					150),
-		new /datum/data/wasteland_equipment("M1A1 Carbine 				(10mm)",					/obj/item/gun/ballistic/automatic/m1carbine/compact,			150),
+		new /datum/data/wasteland_equipment("M1 Carbine 				(10mm)",					/obj/item/gun/ballistic/automatic/m1carbine,			150),
 		new /datum/data/wasteland_equipment("Lee Enfield 				(.308)",					/obj/item/gun/ballistic/rifle/enfield,							150),
 		new /datum/data/wasteland_equipment("Hunting Rifle 				(.30-06)",					/obj/item/gun/ballistic/rifle/hunting,							150),
 		new /datum/data/wasteland_equipment("Trench Shotgun 			(12 gauge)",				/obj/item/gun/ballistic/shotgun/trench,							150),
@@ -686,7 +686,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Civilian Weapon Kit 		(Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,									50),
 		new /datum/data/wasteland_equipment("Beretta M93R 				(9mm)",						/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,		150),
 		new /datum/data/wasteland_equipment("Sig P220 					(.45)",						/obj/item/gun/ballistic/automatic/pistol/sig,					150),
-		new /datum/data/wasteland_equipment("M1A1 Carbine 				(10mm)",					/obj/item/gun/ballistic/automatic/m1carbine/compact,			150),
+		new /datum/data/wasteland_equipment("M1 Carbine 				(10mm)",					/obj/item/gun/ballistic/automatic/m1carbine,			150),
 		new /datum/data/wasteland_equipment("Lee Enfield 				(.308)",					/obj/item/gun/ballistic/rifle/enfield,							150),
 		new /datum/data/wasteland_equipment("Hunting Rifle 				(.30-06)",					/obj/item/gun/ballistic/rifle/hunting,							150),
 		new /datum/data/wasteland_equipment("Trench Shotgun 			(12 gauge)",				/obj/item/gun/ballistic/shotgun/trench,							150),
@@ -720,6 +720,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment(".30-06 Box 			(15 bullets)",		/obj/item/ammo_box/a3006box,							20),
 		new /datum/data/wasteland_equipment("12 Gauge Buckshot box 	(12 shells)",		/obj/item/ammo_box/shotgun/buck,						20),
 		new /datum/data/wasteland_equipment("12 Gauge Slug box 		(12 shells)",		/obj/item/ammo_box/shotgun/buck,						20),
+		new /datum/data/wasteland_equipment("Shoddy Energy Cell 	(1/2 cap SEC)",		/obj/item/stock_parts/cell/ammo/ec/bad,					20),
+		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell (1/2 cap MFC)",		/obj/item/stock_parts/cell/ammo/mfc/bad,			20),
+		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack (1/2 cap ECP)",		/obj/item/stock_parts/cell/ammo/ecp/bad,		20),
 		new /datum/data/wasteland_equipment("Field Arrow 			(1 arrow)",			/obj/item/projectile/bullet/reusable/arrow/field,		3),
 		)
 	highpop_list = list(
@@ -735,6 +738,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment(".30-06 Box 			(15 bullets)",		/obj/item/ammo_box/a3006box,							20),
 		new /datum/data/wasteland_equipment("12 Gauge Buckshot box 	(12 shells)",		/obj/item/ammo_box/shotgun/buck,						20),
 		new /datum/data/wasteland_equipment("12 Gauge Slug box 		(12 shells)",		/obj/item/ammo_box/shotgun/buck,						20),
+		new /datum/data/wasteland_equipment("Shoddy Energy Cell 	(1/2 cap SEC)",		/obj/item/stock_parts/cell/ammo/ec/bad,					20),
+		new /datum/data/wasteland_equipment("Shoddy Microfusion Cell (1/2 cap MFC)",		/obj/item/stock_parts/cell/ammo/mfc/bad,			20),
+		new /datum/data/wasteland_equipment("Shoddy Electron Charge Pack (1/2 cap ECP)",		/obj/item/stock_parts/cell/ammo/ecp/bad,		20),
 		new /datum/data/wasteland_equipment("Field Arrow 			(1 arrow)",			/obj/item/projectile/bullet/reusable/arrow/field,		3),
 	)
 
