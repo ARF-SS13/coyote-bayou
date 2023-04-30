@@ -196,12 +196,12 @@
 	max_qty = BANKER_MAX / CASH_CAP
 
 /obj/item/stack/f13Cash/denarius
-	name = "Silver Coin"
-	latin = 1
+	name = "silver coin"
+	latin = 0
 	singular_name = "Sliver Coin" // -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "denarius"
-	flavor_desc =	"A sliver, shiny coin."
+	flavor_desc =	"A sliver, shiny coin, used mainly by the middle class. Worth the same as 10 copper coins."
 	merge_type = /obj/item/stack/f13Cash/denarius
 
 /obj/item/stack/f13Cash/random/denarius
@@ -233,11 +233,11 @@
 
 /obj/item/stack/f13Cash/aureus
 	name = "gold coin"
-	latin = 1
+	latin = 0
 	singular_name = "Gold Coin"// -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "aureus"
-	flavor_desc = 	"A shiny golden coin!"
+	flavor_desc = 	"A golden coin used by aristocrats and upper class-men. Quite rare... a sight to behold, indeed. Also super shiny! Worth 100 copper coins, or 10 silver coins."
 	value = CASH_AUR * CASH_CAP
 	merge_type = /obj/item/stack/f13Cash/aureus
 
