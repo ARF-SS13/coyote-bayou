@@ -243,5 +243,5 @@
 	name = "camera"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	desc = "A late 20th century camera."
-	icon_state = "camera_early"
-	item_state = "camera_early"
+	icon_state = "camera_coldwar"
+	item_state = "camera_coldwar"
