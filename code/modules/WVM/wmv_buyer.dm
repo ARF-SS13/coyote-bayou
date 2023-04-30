@@ -14,13 +14,15 @@
 	var/expected_price = 0
 	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
 
-	var/list/goods_list = list( /obj/item/stack/sheet/metal = 0.25,
-								/obj/item/stack/sheet/metal/five = 0.25,
-								/obj/item/stack/sheet/metal/ten = 0.25,
-								/obj/item/stack/sheet/metal/twenty = 0.25,
-								/obj/item/stack/sheet/metal/fifty = 0.25,
-								/obj/item/stack/sheet/mineral/titanium = 1,
-								/obj/item/stack/sheet/plasteel =1,
+	var/list/goods_list = list( /obj/item/stack/sheet/metal = 0.4,
+								/obj/item/stack/sheet/metal/five = 0.4,
+								/obj/item/stack/sheet/metal/ten = 0.4,
+								/obj/item/stack/sheet/metal/twenty = 0.4,
+								/obj/item/stack/sheet/metal/fifty = 0.4,
+								/obj/item/stack/sheet/mineral/titanium = 0.8,
+								/obj/item/stack/sheet/mineral/titanium/twentyfive = 0.8,
+								/obj/item/stack/sheet/mineral/titanium/fifty = 0.8,
+								/obj/item/stack/sheet/plasteel = 1,
 								/obj/item/stack/sheet/mineral/plastitanium = 3,
 								/obj/item/stack/sheet/cloth = 1,
 								/obj/item/stack/sheet/cloth/ten = 1,
@@ -372,28 +374,28 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Metal: 0.25 caps per sheet<br>"
-	dat += "Titanium: 1 caps per sheet<br>"
-	dat += "Plasteel: 1 caps per sheet<br>"
-	dat += "Plastitanium: 3 caps per sheet<br>"
+	dat += "Metal: 0.4¢ per sheet<br>"
+	dat += "Titanium: .8¢ per sheet<br>"
+	dat += "Plasteel: 1¢ per sheet<br>"
+	dat += "Plastitanium: 3¢ per sheet<br>"
 	dat += "<br>"
-	dat += "Salvaged Resources: 1 - 15 caps<br>"
-	dat += "Metal, Quality, Electronic Parts: 0 caps<br>"
-	dat += "Research Papers: 25 caps<br>"
+	dat += "Salvaged Resources: 1 - 15¢<br>"
+	dat += "Metal, Quality, Electronic Parts: 0¢<br>"
+	dat += "Research Papers: 25¢<br>"
 	dat += "<br>"
-	dat += "Produce: 1 - 3 caps<br>"
-	dat += "Animal Parts: 1 - 25 caps<br>"
-	dat += "Sealed Alcohol: 8 - 15 caps<br>"
-	dat += "Stealth Boy: 100 caps<br>"
+	dat += "Produce: 1 - 3¢<br>"
+	dat += "Animal Parts: 1 - 25¢<br>"
+	dat += "Sealed Alcohol: 8 - 15¢<br>"
+	dat += "Stealth Boy: 100¢<br>"
 	dat += "<br>"
-	dat += "Handguns and Revolvers: 5 caps<br>"
-	dat += "Bolt Rifles and Shotguns: 10 caps<br>"
-	dat += "Automatics and Semiautomatics: 15 caps<br>"
-	dat += "Improvised Weapons: 0 caps<br>"
-	dat += "Energy Weapons: 0 caps (for now)<br>"
-	dat += "Armor: 0 caps (for now)<br>"
-	dat += "Power Armor: 0 caps (for now)<br>"
-	dat += "Melee Weapons: 0 caps (for now)<br>"
+	dat += "Handguns and Revolvers: 5¢<br>"
+	dat += "Bolt Rifles and Shotguns: 10¢<br>"
+	dat += "Automatics and Semiautomatics: 15¢<br>"
+	dat += "Improvised Weapons: 0¢<br>"
+	dat += "Energy Weapons: 0¢ (for now)<br>"
+	dat += "Armor: 0¢ (for now)<br>"
+	dat += "Power Armor: 0¢ (for now)<br>"
+	dat += "Melee Weapons: 0¢ (for now)<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)
