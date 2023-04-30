@@ -222,3 +222,26 @@
 		p.set_picture(picture, TRUE, TRUE)
 		if(CONFIG_GET(flag/picture_logging_camera))
 			picture.log_to_file()
+
+//Camera sprites from Civ
+
+/obj/item/camera/early
+	name = "camera"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	desc = "An early wooden camera."
+	icon_state = "camera_early"
+	item_state = "camera_early"
+
+/obj/item/camera/earlymodern
+	name = "camera"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	desc = "An early 20th century camera."
+	icon_state = "camera_ww2"
+	item_state = "camera_ww2"
+
+/obj/item/camera/coldwar
+	name = "camera"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	desc = "A late 20th century camera."
+	icon_state = "camera_early"
+	item_state = "camera_early"
