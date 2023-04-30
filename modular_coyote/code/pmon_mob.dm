@@ -28,8 +28,14 @@
 	rotate_on_lying = FALSE
 	//Can use hands
 	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
 	//Need this to have the hands appear on the HUD
 	held_items = list(null, null)
+	//Need this to store things in 'internal storage'
+	var/obj/item/internal_storage //Drones can store one item, of any size/type in their body
+	var/obj/item/head
+	var/obj/item/default_storage //If this exists, it will spawn in internal storage
+	var/obj/item/default_hatmask //If this exists, it will spawn in the hat/mask slot if it can fit
 	///The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
 	var/list/p_types = list()
 	///Moves that aren't automatically granted based on their type. Will be assigned during Initialize()

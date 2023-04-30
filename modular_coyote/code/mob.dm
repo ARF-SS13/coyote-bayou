@@ -52,8 +52,12 @@
 	harm_intent_damage = 2
 	melee_damage_lower = 2
 	melee_damage_upper = 5
-
+	var/obj/item/internal_storage //Drones can store one item, of any size/type in their body
+	var/obj/item/head
+	var/obj/item/default_storage //If this exists, it will spawn in internal storage
+	var/obj/item/default_hatmask //If this exists, it will spawn in the hat/mask slot if it can fit
 	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
 	held_items = list(null, null)
 	see_in_dark = 8
 	can_ghost_into = TRUE
