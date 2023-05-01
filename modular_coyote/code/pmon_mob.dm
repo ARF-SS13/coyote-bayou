@@ -89,6 +89,14 @@
 	p_types = list(P_TYPE_DARK)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
+/mob/living/simple_animal/pokemon/megaabsol
+	name = "mega absol"
+	icon_state = "megaabsol"
+	icon_living = "megaabsol"
+	icon_dead = "megaabsol_d"
+	p_types = list(P_TYPE_DARK)
+	p_traits = list(P_TRAIT_RIDEABLE)
+
 /mob/living/simple_animal/pokemon/aggron
 	name = "aggron"
 	icon_state = "aggron"
@@ -452,6 +460,16 @@
 	icon_state = "snivy"
 	icon_living = "snivy"
 	icon_dead = "snivy_d"
+	mob_size = MOB_SIZE_SMALL
+	p_types = list(P_TYPE_GRASS)
+
+/mob/living/simple_animal/pokemon/sprigatito
+	name = "sprigatito"
+	desc = "Its fluffy fur is similar in composition to plants. This Pokémon frequently washes its face to keep it from drying out."
+	icon_state = "sprigatito"
+	icon_living = "sprigatito"
+	icon_dead = "sprigatito_d"
+	mob_size = MOB_SIZE_SMALL
 	p_types = list(P_TYPE_GRASS)
 
 /mob/living/simple_animal/pokemon/sylveon
