@@ -89,11 +89,13 @@
 	p_types = list(P_TYPE_DARK)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
-/mob/living/simple_animal/pokemon/absol/mega
+/mob/living/simple_animal/pokemon/megaabsol
 	name = "mega absol"
 	icon_state = "megaabsol"
 	icon_living = "megaabsol"
 	icon_dead = "megaabsol_d"
+	p_types = list(P_TYPE_DARK)
+	p_traits = list(P_TRAIT_RIDEABLE)
 
 /mob/living/simple_animal/pokemon/aggron
 	name = "aggron"
