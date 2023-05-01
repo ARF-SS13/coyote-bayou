@@ -399,9 +399,16 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
 		if(profilePicture)
 			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+		//Hands
 		for(var/obj/item/I in held_items)
 			if(!(I.item_flags & ABSTRACT))
 				dat += "[t_He] [t_is] holding [I.get_examine_string(user)] in [t_his] [get_held_index_name(get_held_index_of_item(I))]."
+		//Internal storage
+		if(internal_storage && !(internal_storage.item_flags & ABSTRACT))
+			dat += "It is wearing [internal_storage.get_examine_string(user)]."
+		//Cosmetic hat - provides no function other than looks
+		if(head && !(head.item_flags & ABSTRACT))
+			dat += "It is wearing [head.get_examine_string(user)] on its head."
 		if(flavortext)
 			dat += "[print_flavor_text()]"
 		if(oocnotes)
@@ -421,7 +428,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		else if(disconnect_time)
 			dat += "\[Disconnected/ghosted [round(((world.realtime - disconnect_time)/10)/60)] minutes ago\]"
 		if(lazarused)
-			dat += span_danger("[t_He] seems to have been revived!")
+			dat += span_danger("[t_He] seems to have been revived!<br>")
 		dat += "<span class='info'>*---------*</span>"
 		return dat
 	else
@@ -684,6 +691,13 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		density = FALSE
 		lying = 1
 		..()
+
+/mob/living/simple_animal/drop_all_held_items()
+	if(internal_storage)
+		dropItemToGround(internal_storage)
+	if(head)
+		dropItemToGround(head)
+	. = ..()
 
 /mob/living/simple_animal/proc/CanAttack(atom/the_target)
 	if(see_invisible < the_target.invisibility)

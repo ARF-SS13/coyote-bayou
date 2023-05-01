@@ -581,7 +581,16 @@
 		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
 		//Create the new mob
 		var/creature_type = GLOB.creature_selectable["[P.creature_species]"]
+		//Give them a better HUD and change their starting backpack
 		var/mob/living/simple_animal/C = new creature_type(src)
+		C.dextrous_hud_type = /datum/hud/dextrous/drone
+		var/obj/item/storage/backpack/satchel/old/S = new(C)
+		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
+		C.dextrous = TRUE
+		C.held_items = list(null, null)
+		//Give them a radio to hear with
+		var/obj/item/implant/radio/slime/imp = new
+		imp.implant(C, src)
 		//Assign the mob's information based on the player's client preferences
 		C.gender = P.gender
 		C.name = P.creature_name
