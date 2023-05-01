@@ -802,6 +802,38 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		pixel_y--
 		is_shifted = TRUE
 
+/mob/living/eastshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_x <= (16 + get_standard_pixel_x_offset()))
+		pixel_x++
+		is_shifted = TRUE
+
+/mob/living/westshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_x >= -(16 + get_standard_pixel_x_offset()))
+		pixel_x--
+		is_shifted = TRUE
+
+/mob/living/northshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_y <= (16 + get_standard_pixel_y_offset()))
+		pixel_y++
+		is_shifted = TRUE
+
+/mob/living/southshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_y >= -(16 + get_standard_pixel_y_offset()))
+		pixel_y--
+		is_shifted = TRUE
+
 /mob/proc/IsAdvancedToolUser()//This might need a rename but it should replace the can this mob use things check
 	return FALSE
 
