@@ -368,3 +368,12 @@
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
 	icon_state = "rug_blue"
+
+/obj/structure/props/micstand
+	name = "microphone stand"
+	desc = "A mic stand."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "micstand"
+	density = TRUE
+	opacity = TRUE
+	anchored = TRUE
