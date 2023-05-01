@@ -409,13 +409,13 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.update_sight()
 
 /datum/quirk/nukalover
-	name = "Nuka Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Nuka Cola heals you, sort of."
+	name = "Cola Fiend"
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Cosmic Cola heals you, sort of."
 	value = 1
 	mob_trait = TRAIT_NUKA_LOVER
-	gain_text = span_notice("You want to buy the whole world a nuka-cola!")
-	lose_text = span_danger("What's the big deal about nuka-cola?")
-	medical_record_text = "Patient has an addiction to the soft drink Nuka-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
+	gain_text = span_notice("You want to buy the whole world a cosmic-cola!")
+	lose_text = span_danger("What's the big deal about cosmic-cola?")
+	medical_record_text = "Patient has an addiction to the soft drink Cosmic-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
 
 /datum/quirk/nukalover/add()
 	var/mob/living/carbon/human/H = quirk_holder

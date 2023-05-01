@@ -201,7 +201,7 @@
 			"}
 
 /obj/item/book/manual/nuka_recipes
-	name = "Nuka-Cola Recipes"
+	name = "Cosmic-Cola Recipes"
 	icon_state = "barbook"
 	author = "Lord Frenrir Cageth"
 	title = "Nuka-Cola Recipes"
@@ -218,43 +218,43 @@
 				</head>
 				<body>
 
-				<h1>Nuka for Dummies</h1>
+				<h1>Cosmic for Dummies</h1>
 				Here is a list of all of the secret recipes to America's favorite soft drink! (Other, inferior drink recipes included.)
 
 
-				<h2>Nuka Recipes:</h2>
+				<h2>Cosmic Recipes:</h2>
 
-				<b>Nuka Float:</b> Nuka Cola 5u + Sugar 5u + Cream 5u.<br>
-				<b>Nuka Shine:</b> Nuka Cola 5u + Beer 5u.<br>
-				<b>Nuka Victory:</b> Nuka Cola 5u + Thirteen Loko 5u.<br>
-				<b>Nuka Quartz:</b> Nuka Cola 5u + Sugar 5u + Silicon 5u.<br>
-				<b>Nuka Fancy:</b> Nuka Wild 1u + Nuka Cherry 1u<br>
-				<b>Nuka Cherry:</b> Nuka Cola 3u + Cherry Jelly 1u<br>
-				<b>Nuka Love:</b> Nuka Cherry 5u + Nuka Quartz 5u<br>
-				<b>Nuka Quantum:</b> Nuka Cola 2u + Radium 1u + Sugar 1u<br>
-				<b>Nuka Grape:</b> Nuka Cola 5u + Grape Juice 5u<br>
-				<b>Nuka Dark:</b> Nuka Cola 5u + Rum 5u<br>
-				<b>Nuka Orange:</b> Nuka Cola 5u + Orange Juice 5u<br>
-				<b>Nuka Wild:</b> Nuka Cola 5u + Sunset Sasparilla 5u<br>
-				<b>Nuka Ray:</b> Nuka Orange 1u + Nuka Victory 1u<br>
-				<b>Nuka Rush:</b> Nuka Wild 1u + Nuka Victory 1u<br>
-				<b>Nuka with ice:</b> Nuka Cola 5u + some ice<br>
-				<b>Newka Cola:</b> Nuka Berry 5u + Nuka Wild 5u + Ice 5u<br>
-				<b>Nuka Berry:</b> Nuka Grape 5u + Nuka Cherry 5u + Ice 5u<br>
-				<b>Nuka Bombdrop:</b> Nuka Dark 5u + Alcohol Z 5u + Sugar 5u<br>
-				<b>Industrial Strength Drain Cleaner (NOT FIT FOR HUMAN CONSUMPTION):</b> Nuka Bombdrop 5u + Nuka Quantum 5u + Ice 5u<br>
-				<b>Nuka Cooler:</b> Nuka Iced 5u + more ice + some water<br>
-				<b>Diet Nuka:</b> Nuka Cola 5u + salt + water<br>
-				<b>Nuka Frutti:</b> Nuka Berry 5u + Nuka Orange 5u + Ice 5u<br>
-				<b>Nuka Punch:</b> Nuka Berry 5u + Nuka Quartz 5u + Orange Juice 5u<br>
-				<b>Nuka X-TREME:</b> Nuka Cola 5u + Nuka Quantum 5u + Nuka Grape 5u<br>
+				<b>Cosmic Float:</b> Cosmic Cola 5u + Sugar 5u + Cream 5u.<br>
+				<b>Cosmic Shine:</b> Cosmic Cola 5u + Beer 5u.<br>
+				<b>Cosmic Victory:</b> Cosmic Cola 5u + Thirteen Loko 5u.<br>
+				<b>Cosmic Quartz:</b> Cosmic Cola 5u + Sugar 5u + Silicon 5u.<br>
+				<b>Cosmic Fancy:</b> Cosmic Wild 1u + Cosmic Cherry 1u<br>
+				<b>Cosmic Cherry:</b> Cosmic Cola 3u + Cherry Jelly 1u<br>
+				<b>Cosmic Love:</b> Cosmic Cherry 5u + Cosmic Quartz 5u<br>
+				<b>Cosmic Quantum:</b> Cosmic Cola 2u + Radium 1u + Sugar 1u<br>
+				<b>Cosmic Grape:</b> Cosmic Cola 5u + Grape Juice 5u<br>
+				<b>Cosmic Dark:</b> Cosmic Cola 5u + Rum 5u<br>
+				<b>Cosmic Orange:</b> Cosmic Cola 5u + Orange Juice 5u<br>
+				<b>Cosmic Wild:</b> Cosmic Cola 5u + Sunset Sasparilla 5u<br>
+				<b>Cosmic Ray:</b> Cosmic Orange 1u + Cosmic Victory 1u<br>
+				<b>Cosmic Rush:</b> Cosmic Wild 1u + Cosmic Victory 1u<br>
+				<b>Cosmic with ice:</b> Cosmic Cola 5u + some ice<br>
+				<b>Cewsmic Cola:</b> Cosmic Berry 5u + Cosmic Wild 5u + Ice 5u<br>
+				<b>Cosmic Berry:</b> Cosmic Grape 5u + Cosmic Cherry 5u + Ice 5u<br>
+				<b>Cosmic Bombdrop:</b> Cosmic Dark 5u + Alcohol Z 5u + Sugar 5u<br>
+				<b>Industrial Strength Drain Cleaner (NOT FIT FOR HUMAN CONSUMPTION):</b> Cosmic Bombdrop 5u + Cosmic Quantum 5u + Ice 5u<br>
+				<b>Cosmic Cooler:</b> Cosmic Iced 5u + more ice + some water<br>
+				<b>Diet Cosmic:</b> Cosmic Cola 5u + salt + water<br>
+				<b>Cosmic Frutti:</b> Cosmic Berry 5u + Cosmic Orange 5u + Ice 5u<br>
+				<b>Cosmic Punch:</b> Cosmic Berry 5u + Cosmic Quartz 5u + Orange Juice 5u<br>
+				<b>Cosmic X-TREME:</b> Cosmic Cola 5u + Cosmic Quantum 5u + Cosmic Grape 5u<br>
 
 
 				<h2>Vim Drinks (Midwestern favorite!):</h2>
 				<b>Vim Captain's Blend:</b> Vim 10u + Fermented Broc flower (broc brew) 10u + Gold 10u<br>
-				<b>Vim Quartz:</b> Nuka Cola 5u + Soy Milk 5u + Sugar 5u<br>
+				<b>Vim Quartz:</b> Cosmic Cola 5u + Soy Milk 5u + Sugar 5u<br>
 				<b>Vim Refresh:</b> Vim 5u + Lime Juice 5u + Ice 5u<br>
-				<b>Vim Ice:</b> Nuka Cola 5u + Ice 5u + Water 5u<br>
+				<b>Vim Ice:</b> Cosmic Cola 5u + Ice 5u + Water 5u<br>
 
 
 				<h2>Assorted Drinks:</h2>

@@ -3,7 +3,7 @@
 /// Nuka Variants
 
 /datum/chemical_reaction/nukafloat
-	name = "Nuka Float"
+	name = "Cosmic Float"
 	id = /datum/reagent/consumable/nukafloat
 	results = list(/datum/reagent/consumable/nukafloat = 15)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 5, /datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/cream = 5)
@@ -15,7 +15,7 @@
 	required_reagents = list(/datum/reagent/consumable/sunset = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
 
 /datum/chemical_reaction/nukashine
-	name = "Nukashine"
+	name = "Cosmicshine"
 	id = /datum/reagent/consumable/ethanol/nukashine
 	results = list(/datum/reagent/consumable/ethanol/nukashine = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ethanol/beer = 1)

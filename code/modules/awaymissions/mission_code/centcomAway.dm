@@ -42,7 +42,7 @@
 	Greetings, esteemed guest, to NanoTrasen's regional flagship research center. As you may know, \
 	this facility is devoted to our theoric microfusion research, enhancing the technology employed \
 	in microfusion cells to create an incredible array of new applications and opportunities. <br>\
-	This outpost was founded on November 6th 2063 thanks to a generous collaboration with Nuka Cola! \
+	This outpost was founded on November 6th 2063 thanks to a generous collaboration with Cosmic Cola! \
 	NanoTrasen wants to put all the power a house needs for a day, in the palm of your hand. This is an \
 	ambitious goal, but we are sworn to accomplish it and go even further, beyond your wildest dreams...\
 	The future is now!<br>"
