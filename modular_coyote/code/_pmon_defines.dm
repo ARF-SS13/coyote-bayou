@@ -39,10 +39,10 @@ GLOBAL_LIST_EMPTY(pokemon_selectable)
 	if(clear)
 		GLOB.pokemon_selectable = list()
 	for(var/I in subtypesof(/mob/living/simple_animal/pokemon))
-		var/mob/living/simple_animal/pokemon/P = new I()
-		if(!(P_TRAIT_BLACKLIST in P.p_traits))//Not blacklisted from being added to the list
-			GLOB.pokemon_selectable[capitalize("[P.name]")] = P.type
-		qdel(P)
+		var/mob/living/simple_animal/pokemon/P = I
+		var/list/traits = initial(P.p_traits)
+		if(!(P_TRAIT_BLACKLIST in traits))//Not blacklisted from being added to the list
+			GLOB.pokemon_selectable[capitalize("[initial(P.name)]")] = P
 
 ///Creatures that players can select for creature characters
 GLOBAL_LIST_EMPTY(creature_selectable)
@@ -56,14 +56,11 @@ GLOBAL_LIST_EMPTY(creature_selectable)
 	for(var/T in typesof(/mob/living/simple_animal))
 		var/mob/living/simple_animal/SA = T
 		if(initial(SA.gold_core_spawnable) == FRIENDLY_SPAWN)
-			SA = new T()
-			if(!(SA.type in GLOB.creature_blacklist))
-				GLOB.creature_selectable[capitalize(SA.name)] = SA.type
-			qdel(SA)
+			if(!(SA in GLOB.creature_blacklist))
+				GLOB.creature_selectable[capitalize(initial(SA.name))] = SA
 	for(var/T in GLOB.creature_whitelist)
-		var/mob/living/simple_animal/SA = new T()
-		GLOB.creature_selectable[capitalize(SA.name)] = SA.type
-		qdel(SA)
+		var/mob/living/simple_animal/SA = T
+		GLOB.creature_selectable[capitalize(initial(SA.name))] = T
 
 ///List of all pokemon on the whole map.
 GLOBAL_LIST_EMPTY(pokemon_list)
