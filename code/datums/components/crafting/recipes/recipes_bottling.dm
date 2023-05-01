@@ -226,7 +226,7 @@
 	result = /obj/item/export/bottle/minikeg
 
 /datum/crafting_recipe/bottle/export/nukashine
-	name = "Sealed bottle of nukashine"
+	name = "Sealed bottle of cosmicshine"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/nukashine = 50

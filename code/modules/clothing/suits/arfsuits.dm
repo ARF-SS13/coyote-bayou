@@ -959,7 +959,7 @@
 
 /obj/item/clothing/suit/armor/light/raider/supafly
 	name = "supa-fly raider armor"
-	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
+	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF Cosmic-COLA, I AM RAIDER MAN!"
 	icon_state = "supafly"
 	item_state = "supafly"
 

@@ -1,10 +1,10 @@
 /datum/reagent/consumable/nuka_cola
-	name = "Nuka Cola"
+	name = "Cosmic Cola"
 	description = "Cola, cola never changes."
 	color = "#100800" // rgb: 16, 8, 0
 	taste_description = "the future"
 	glass_icon_state = "nukacolaglass"
-	glass_name = "Nuka Cola"
+	glass_name = "Cosmic Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
 	overdose_threshold = 100
 	ghoulfriendly = TRUE
@@ -44,10 +44,10 @@
 	name = "Vim"
 	description = "You've Got Vim!"
 	color = "#946B4A"
-	taste_description = "off-brand nuka-cola"
+	taste_description = "off-brand Cosmic-cola"
 	glass_icon_state = "vimglass"
 	glass_name = "glass of Vim"
-	glass_desc = "Unrelated to Nuka-Cola, Vim trademark Circa 2077."
+	glass_desc = "Unrelated to Cosmic-Cola, Vim trademark Circa 2077."
 	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/vim/on_mob_life(mob/living/carbon/M)
@@ -65,7 +65,7 @@
 	name = "Vim Quartz"
 	description = "You've Got Vim! Quartz edition, worse than the Imitation."
 	color = "#946B4A"
-	taste_description = "off-brand nuka-cola but fucking worse"
+	taste_description = "off-brand Cosmic-cola but fucking worse"
 	glass_icon_state = "vimquartzglass"
 	glass_name = "Vim Quartz"
 	glass_desc = "You've Got Vim! Quartz edition, worse than the Imitation."
@@ -87,7 +87,7 @@
 	name = "Vim Refresh"
 	description = "You've Got Vim Refresh! Ooooh!"
 	color = "#BFAC9C"
-	taste_description = "off-brand nuka-cola and refreshment"
+	taste_description = "off-brand Cosmic-cola and refreshment"
 	glass_icon_state = "grasshopper"
 	glass_name = "Vim Refresh"
 	glass_desc = "You've Got Vim Refresh! Ooooh!"
@@ -110,7 +110,7 @@
 	name = "Vim Ice"
 	description = "You've Got Vim! Cold as the East."
 	color = "#DFECED"
-	taste_description = "cold off-brand nuka-cola"
+	taste_description = "cold off-brand Cosmic-cola"
 	glass_icon_state = "vimiceglass"
 	glass_name = "Iced Vim"
 	glass_desc = "You've Got Vim! Cold as the East."
@@ -128,13 +128,13 @@
 //nuka bases
 
 /datum/reagent/consumable/nukacherry
-	name = "Nuka Cherry"
-	description = "Nuka-Cola with a Cherry Aftertaste."
+	name = "Cosmic Cherry"
+	description = "Cosmic-Cola with a Cherry Aftertaste."
 	color = "#9C1512"
 	taste_description = "fizzy cherry soda"
 	glass_icon_state = "nukacherryglass"
-	glass_name = "Nuka Cherry"
-	glass_desc = "Nuka-Cola with a Cherry Aftertaste."
+	glass_name = "Cosmic Cherry"
+	glass_desc = "Cosmic-Cola with a Cherry Aftertaste."
 
 /datum/reagent/consumable/nukacherry/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -145,13 +145,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukagrape
-	name = "Nuka Grape"
-	description = "Nuka-Cola with a Grape Aftertaste."
+	name = "Cosmic Grape"
+	description = "Cosmic-Cola with a Grape Aftertaste."
 	color = "#643B65"
 	taste_description = "fizzy grape soda"
 	glass_icon_state = "nukagrapeglass"
-	glass_name = "Nuka Grape"
-	glass_desc = "Nuka-Cola with a Grape Aftertaste."
+	glass_name = "Cosmic Grape"
+	glass_desc = "Cosmic-Cola with a Grape Aftertaste."
 
 /datum/reagent/consumable/nukagrape/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -162,13 +162,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukaorange
-	name = "Nuka Orange"
-	description = "Nuka-Cola with a Orange Aftertaste."
+	name = "Cosmic Orange"
+	description = "Cosmic-Cola with a Orange Aftertaste."
 	color = "#FF7F00"
 	taste_description = "fizzy orange soda"
 	glass_icon_state = "nukaorangeglass"
-	glass_name = "Nuka Orange"
-	glass_desc = "Nuka-Cola with a Orange Aftertaste."
+	glass_name = "Cosmic Orange"
+	glass_desc = "Cosmic-Cola with a Orange Aftertaste."
 
 /datum/reagent/consumable/nukaorange/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -178,12 +178,12 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukaquartz
-	name = "Nuka Quartz"
+	name = "Cosmic Quartz"
 	description = "An abomination of Americas favourite soda."
 	color = "#FFFFFF"
 	taste_description = "clear"
 	glass_icon_state = "nukaquartzglass"
-	glass_name = "Nuka Quartz"
+	glass_name = "Cosmic Quartz"
 	glass_desc = "An abomination of Americas favourite soda."
 
 /datum/reagent/consumable/nukaquartz/on_mob_life(mob/living/carbon/M)
@@ -195,13 +195,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukaice
-	name = "Iced Nuka"
-	description = "Nuka. Stay frosty."
+	name = "Iced Cosmic"
+	description = "Cosmic. Stay frosty."
 	color = "#646A7B"
 	taste_description = "cold Nuka-Cola"
 	glass_icon_state = "nukaiceglass"
-	glass_name = "Iced Nuka"
-	glass_desc = "Nuka. Stay frosty."
+	glass_name = "Iced Cosmic"
+	glass_desc = "Cosmic. Stay frosty."
 
 /datum/reagent/consumable/nukaice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
@@ -219,13 +219,13 @@
 	. = 1
 
 /datum/reagent/consumable/nukawild
-	name = "Nuka Wild"
-	description = "A totally original concept of Nuka-Cola!"
+	name = "Cosmic Wild"
+	description = "A totally original concept of Cosmic-Cola!"
 	color = "#734517"
 	taste_description = "Nuka and root-beer"
 	glass_icon_state = "nukawildglass"
-	glass_name = "Nuka Wild"
-	glass_desc = "A totally original concept of Nuka-Cola!"
+	glass_name = "Cosmic Wild"
+	glass_desc = "A totally original concept of Cosmic-Cola!"
 
 /datum/reagent/consumable/nukawild/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-2, 0)
@@ -237,13 +237,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukaray
-	name = "Nuka Ray"
-	description = "A nuka mixture of both nuka victory and orange."
+	name = "Cosmic Ray"
+	description = "A Cosmic mixture of both Cosmic victory and orange."
 	color = "#FFFF00"
-	taste_description = "nuka orange with a kick"
+	taste_description = "Cosmic orange with a kick"
 	glass_icon_state = "nukarayglass"
-	glass_name = "Nuka Ray"
-	glass_desc = "A nuka mixture of both nuka victory and orange."
+	glass_name = "Cosmic Ray"
+	glass_desc = "A Cosmic mixture of both Cosmic victory and orange."
 
 /datum/reagent/consumable/nukaray/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
@@ -256,13 +256,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukarush
-	name = "Nuka Rush"
-	description = "A nuka mixture of both nuka victory and wild."
+	name = "Cosmic Rush"
+	description = "A Cosmic mixture of both Cosmic victory and wild."
 	color = "#FFFF00"
-	taste_description = "nuka wild with a kick"
+	taste_description = "Cosmic wild with a kick"
 	glass_icon_state = "nukarushglass"
-	glass_name = "Nuka Rush"
-	glass_desc = "A nuka mixture of both nuka victory and wild."
+	glass_name = "Cosmic Rush"
+	glass_desc = "A Cosmic mixture of both Cosmic victory and wild."
 
 /datum/reagent/consumable/nukarush/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
@@ -277,13 +277,13 @@
 //nuka mixes
 
 /datum/reagent/consumable/nukanew
-	name = "Newka Cola"
-	description = "The tastiest Hybridisation of Nuka-Colas."
+	name = "New-Cosmic Cola"
+	description = "The tastiest Hybridisation of Cosmic-Colas."
 	color = "#75E11D"
-	taste_description = "impossibly tasty Nuka"
+	taste_description = "impossibly tasty Cosmic"
 	glass_icon_state = "nukanewglass"
-	glass_name = "Newka Cola"
-	glass_desc = "The tastiest Hybridisation of Nuka-Colas."
+	glass_name = "New-Cosmic Cola"
+	glass_desc = "The tastiest Hybridisation of Cosmic-Colas."
 
 /datum/reagent/consumable/nukanew/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -296,22 +296,22 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukaberry
-	name = "Nuka Berry"
-	description = "Nuka-Cola with a Berry Aftertaste."
+	name = "Cosmic Berry"
+	description = "Cosmic-Cola with a Berry Aftertaste."
 	color = "#753453"
-	taste_description = "berry Nuka-Cola"
+	taste_description = "berry Cosmic-Cola"
 	glass_icon_state = "nukaberryglass"
-	glass_name = "Nuka Berry"
-	glass_desc = "Nuka-Cola with a Berry Aftertaste."
+	glass_name = "Cosmic Berry"
+	glass_desc = "Cosmic-Cola with a Berry Aftertaste."
 
 /datum/reagent/consumable/nukacooler
-	name = "Nuka Cooler"
-	description = "Insanely cold Nuka-Cola, Freezing the air that surrounds it."
+	name = "Cosmic Cooler"
+	description = "Insanely cold Cosmic-Cola, Freezing the air that surrounds it."
 	color = "#B2B2B2"
-	taste_description = "insanely cold Nuka-Cola"
+	taste_description = "insanely cold Cosmic-Cola"
 	glass_icon_state = "nukacoolerglass"
-	glass_name = "Nuka Cooler"
-	glass_desc = "Insanely cold Nuka-Cola, Freezing the air that surrounds it."
+	glass_name = "Cosmic Cooler"
+	glass_desc = "Insanely cold Cosmic-Cola, Freezing the air that surrounds it."
 
 /datum/reagent/consumable/nukacooler/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-60 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
@@ -320,13 +320,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukafree
-	name = "Diet Nuka"
-	description = "Nuka-Cola with no added sugars!"
+	name = "Diet Cosmic"
+	description = "Cosmic-Cola with no added sugars!"
 	color = "#663300"
-	taste_description = "watered down Nuka"
+	taste_description = "watered down Cosmic"
 	glass_icon_state = "nukafreeglass"
-	glass_name = "Diet Nuka"
-	glass_desc = "Nuka-Cola with no added sugars!"
+	glass_name = "Diet Cosmic"
+	glass_desc = "Cosmic-Cola with no added sugars!"
 
 /datum/reagent/consumable/nukafree/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
@@ -338,13 +338,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukafrutti
-	name = "Nuka Frutti"
-	description = "The frutiest of Nukas."
+	name = "Cosmic Frutti"
+	description = "The frutiest of Cosmics."
 	color = "#FF9ABF"
-	taste_description = "fruity Nuka"
+	taste_description = "fruity Cosmic"
 	glass_icon_state = "nukafruttiglass"
-	glass_name = "Nuka Frutti"
-	glass_desc = "The frutiest of Nukas."
+	glass_name = "Cosmic Frutti"
+	glass_desc = "The frutiest of Cosmic."
 
 /datum/reagent/consumable/nukafrutti/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -357,14 +357,14 @@
 //shake shack royal rumble
 
 /datum/reagent/consumable/nukafloat
-	name = "Nuka Float"
-	description = "A delicious blend of ice-cream and classic Nuka-Cola!"
+	name = "Cosmic Float"
+	description = "A delicious blend of ice-cream and classic Nuka-Cosmic!"
 	color = "#11111E"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
-	taste_description = "creamy Nuka"
+	taste_description = "creamy Cosmic"
 	glass_icon_state = "nukafloatglass"
-	glass_name = "Nuka Float"
-	glass_desc = "A delicious blend of ice-cream and classic Nuka-Cola!"
+	glass_name = "Nuka Cosmic"
+	glass_desc = "A delicious blend of ice-cream and classic Cosmic-Cola!"
 
 /datum/reagent/consumable/sunsetfloat
 	name = "Sunset Float"
