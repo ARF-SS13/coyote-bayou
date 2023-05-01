@@ -1002,10 +1002,45 @@
 	return loc_temp
 
 /mob/living/proc/get_standard_pixel_x_offset(lying = 0)
+	if(client?.prefs.custom_pixel_x != 0)
+		return client.prefs.custom_pixel_x
 	return initial(pixel_x)
 
 /mob/living/proc/get_standard_pixel_y_offset(lying = 0)
+	if(client?.prefs.custom_pixel_y != 0)
+		return client.prefs.custom_pixel_y
 	return initial(pixel_y)
+
+/mob/living/verb/change_my_offsets()
+	set name = "Pixel Offsets"
+	set category = "IC"
+
+	if(!client)
+		return
+	if(!client.prefs)
+		return
+	var/px = client.prefs.custom_pixel_x
+	var/py = client.prefs.custom_pixel_y
+	var/defult = "[px], [py]"
+	var/newoffsets = input(src, "Change how your character is positioned on a tile by default.\n\
+								The first number is how many pixels right (or down if negative) to be shifted.\n\
+								The second number is how many pixels up (or down is negative) to be shifted.", "Perspective!", defult) as text|null
+	if(!newoffsets)
+		to_chat(src, "Offsets unchanged.")
+		return
+	var/list/offsets = splittext(newoffsets, ",")
+	if(LAZYLEN(offsets) != 2)
+		to_chat(src, "Offsets unchanged.")
+		return
+	var/pxo = sanitize_integer(text2num(offsets[1]), PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	var/pyo = sanitize_integer(text2num(offsets[2]), PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	client.prefs.custom_pixel_x	= pxo
+	client.prefs.custom_pixel_y	= pyo
+	pixel_x = pxo
+	pixel_y = pyo
+
+	to_chat(src, "Offsets changed to [pxo], [pyo].")
+	client.prefs.save_character()
 
 /mob/living/cancel_camera()
 	..()
