@@ -63,10 +63,7 @@
 	"2. You must obey the orders of your owner, unless they conflict with orders from an official RobCo employee." //for derelict drones so they don't go to station
 	var/heavy_emp_damage = 25 //Amount of damage sustained if hit by a heavy EMP pulse
 	var/alarms = list("Atmosphere" = list(), "Fire" = list(), "Power" = list())
-	var/obj/item/internal_storage //Drones can store one item, of any size/type in their body
-	var/obj/item/head
-	var/obj/item/default_storage = /obj/item/storage/backpack/duffelbag/drone //If this exists, it will spawn in internal storage
-	var/obj/item/default_hatmask //If this exists, it will spawn in the hat/mask slot if it can fit
+	default_storage = /obj/item/storage/backpack/duffelbag/drone //If this exists, it will spawn in internal storage
 	var/visualAppearence = MAINTDRONE //What we appear as
 	var/hacked = FALSE //If we have laws to destroy the station
 	flavortext = \
@@ -90,7 +87,7 @@
 
 	if(default_storage)
 		var/obj/item/I = new default_storage(src)
-		equip_to_slot_or_del(I, SLOT_GENERC_DEXTROUS_STORAGE)
+		equip_to_slot_or_del(I, SLOT_GENERIC_DEXTROUS_STORAGE)
 	if(default_hatmask)
 		var/obj/item/I = new default_hatmask(src)
 		equip_to_slot_or_del(I, SLOT_HEAD)

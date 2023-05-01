@@ -52,11 +52,12 @@
 	harm_intent_damage = 2
 	melee_damage_lower = 2
 	melee_damage_upper = 5
-
 	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
 	held_items = list(null, null)
 	see_in_dark = 8
 	can_ghost_into = TRUE
+	head_offset = -9
 
 /mob/living/simple_animal/pet/catslug/proc/catslug_color()
 	set name = "Pick Color"
@@ -82,7 +83,31 @@
 			icon_state = "[icon_living]"
 			collar_type = "[initial(collar_type)]"
 	regenerate_icons()
+/* Slugcat helmet/hat sprites were a bit of a headache so we're not doing it right now : ^ ))))
+/mob/living/simple_animal/pet/catslug/proc/apply_overlay(cache_index)
+	if((. = overlays[cache_index]))
+		add_overlay(.)
 
+/mob/living/simple_animal/pet/catslug/proc/remove_overlay(cache_index)
+	var/I = overlays[cache_index]
+	if(I)
+		cut_overlay(I)
+		overlays[cache_index] = null
+
+/mob/living/simple_animal/pet/catslug/update_inv_head()
+	remove_overlay(DRONE_HEAD_LAYER)
+
+	if(head)
+		if(client && hud_used && hud_used.hud_shown)
+			head.screen_loc = ui_drone_head
+			client.screen += head
+		var/mutable_appearance/head_overlay = head.build_worn_icon(default_layer = DRONE_HEAD_LAYER, default_icon_file = head.icon, override_state = head.icon_state)
+		head_overlay.pixel_y += head_offset
+
+		overlays[DRONE_HEAD_LAYER] = head_overlay
+
+	apply_overlay(DRONE_HEAD_LAYER)
+*/
 //Slugcat OC for thingpony
 /mob/living/simple_animal/pet/catslug/meadow
 	name = "Meadow"

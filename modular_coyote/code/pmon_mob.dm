@@ -28,6 +28,7 @@
 	rotate_on_lying = FALSE
 	//Can use hands
 	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
 	//Need this to have the hands appear on the HUD
 	held_items = list(null, null)
 	///The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.

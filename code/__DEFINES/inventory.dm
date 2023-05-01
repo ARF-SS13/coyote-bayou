@@ -52,7 +52,7 @@
 #define SLOT_S_STORE		17
 #define SLOT_IN_BACKPACK	18
 #define SLOT_LEGCUFFED		19
-#define SLOT_GENERC_DEXTROUS_STORAGE	20
+#define SLOT_GENERIC_DEXTROUS_STORAGE	20
 
 
 #define SLOTS_AMT			20 // Keep this up to date!
@@ -991,4 +991,4 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)
 
 //Slots that won't trigger humans' update_genitals() on equip().
-GLOBAL_LIST_INIT(no_genitals_update_slots, list(SLOT_L_STORE, SLOT_R_STORE, SLOT_S_STORE, SLOT_IN_BACKPACK, SLOT_LEGCUFFED, SLOT_HANDCUFFED, SLOT_HANDS, SLOT_GENERC_DEXTROUS_STORAGE))
+GLOBAL_LIST_INIT(no_genitals_update_slots, list(SLOT_L_STORE, SLOT_R_STORE, SLOT_S_STORE, SLOT_IN_BACKPACK, SLOT_LEGCUFFED, SLOT_HANDCUFFED, SLOT_HANDS, SLOT_GENERIC_DEXTROUS_STORAGE))

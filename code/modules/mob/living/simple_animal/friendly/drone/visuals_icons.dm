@@ -59,7 +59,7 @@
 	apply_overlay(DRONE_HANDS_LAYER)
 
 
-/mob/living/simple_animal/drone/proc/update_inv_internal_storage()
+/mob/living/simple_animal/drone/update_inv_internal_storage()
 	if(internal_storage && client && hud_used && hud_used.hud_shown)
 		internal_storage.screen_loc = ui_drone_storage
 		client.screen += internal_storage

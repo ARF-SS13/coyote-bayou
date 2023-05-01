@@ -9,7 +9,6 @@
 	carp_fluff_string = span_holoparasite("CARP CARP CARP! You caught one! It can hold stuff in its fins, sort of.")
 	dextrous = TRUE
 	held_items = list(null, null)
-	var/obj/item/internal_storage //what we're storing within ourself
 
 /mob/living/simple_animal/hostile/guardian/dextrous/death(gibbed)
 	..()
@@ -52,7 +51,7 @@
 
 /mob/living/simple_animal/hostile/guardian/dextrous/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
 	switch(slot)
-		if(SLOT_GENERC_DEXTROUS_STORAGE)
+		if(SLOT_GENERIC_DEXTROUS_STORAGE)
 			if(internal_storage)
 				return 0
 			return 1
@@ -63,19 +62,19 @@
 		return
 
 	switch(slot)
-		if(SLOT_GENERC_DEXTROUS_STORAGE)
+		if(SLOT_GENERIC_DEXTROUS_STORAGE)
 			internal_storage = I
 			update_inv_internal_storage()
 		else
 			to_chat(src, span_danger("You are trying to equip this item to an unsupported inventory slot. Report this to a coder!"))
 
 /mob/living/simple_animal/hostile/guardian/dextrous/getBackSlot()
-	return SLOT_GENERC_DEXTROUS_STORAGE
+	return SLOT_GENERIC_DEXTROUS_STORAGE
 
 /mob/living/simple_animal/hostile/guardian/dextrous/getBeltSlot()
-	return SLOT_GENERC_DEXTROUS_STORAGE
+	return SLOT_GENERIC_DEXTROUS_STORAGE
 
-/mob/living/simple_animal/hostile/guardian/dextrous/proc/update_inv_internal_storage()
+/mob/living/simple_animal/hostile/guardian/dextrous/update_inv_internal_storage()
 	if(internal_storage && client && hud_used && hud_used.hud_shown)
 		internal_storage.screen_loc = ui_id
 		client.screen += internal_storage
