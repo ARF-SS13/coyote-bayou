@@ -953,6 +953,13 @@
 	icon_state = "lskull"
 	anchored = TRUE
 
+/obj/structure/flora/chomp/bones/lskull_w
+	name = "forested skull"
+	desc = "\"If we are really dying, let us hear the rattle in our throats and feel cold in the extremities; if we are alive, let us go about our business.\" <br> <br> Beast, what were you, how did you die?"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lskull_wood"
+	anchored = TRUE
+
 /obj/structure/flora/chomp/bones/lbone
 	name = "bone"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
