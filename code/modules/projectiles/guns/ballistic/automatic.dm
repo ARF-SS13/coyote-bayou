@@ -402,7 +402,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun
 	name = "9mm Owen Gun"
-	desc = "A common design out in the wastes due to its portability, weight, and reliability."
+	desc = "A genuine Australian machine carbine! It's favored due to its portability, weight, and reliability."
 	icon_state = "owengun"
 	item_state = "rockwell"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
@@ -1447,6 +1447,10 @@
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 21
+	flight_y_offset = 21
 
 /* * * * * * * * * * *
  * Rangemaster Rifle

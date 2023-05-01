@@ -271,14 +271,22 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	desc = "Some pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "salvage"
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
+				/obj/item/stack/crafting/metalparts/three,
+				/obj/item/stack/crafting/metalparts,
 				/obj/item/stack/crafting/electronicparts/three,
+				/obj/item/stack/crafting/electronicparts,
 				/obj/item/stack/sheet/mineral/titanium,
 				/obj/item/stack/sheet/metal/ten,
 				/obj/item/stack/sheet/cloth/ten,
+				/obj/item/stack/sheet/leather,
+				/obj/item/stack/sheet/leather/five,
 				/obj/item/stack/sheet/leather/ten,
+				/obj/item/stack/sheet/prewar,
 				/obj/item/stack/sheet/prewar/five,
-				/obj/item/stack/crafting/goodparts/five,
-				/obj/item/stack/ore/blackpowder/five
+				/obj/item/stack/crafting/goodparts/three,
+				/obj/item/stack/crafting/goodparts,
+				/obj/item/stack/ore/blackpowder/five,
+				/obj/item/stack/ore/blackpowder
 				)
 
 
@@ -288,8 +296,12 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	icon_state = "toolsalvage"
 	Loot = list(/obj/item/weldingtool/advanced,
 				/obj/item/crowbar/hightech,
+				/obj/item/crowbar/hightech,
+				/obj/item/screwdriver/hightech,
 				/obj/item/screwdriver/hightech,
 				/obj/item/wrench/hightech,
+				/obj/item/wrench/hightech,
+				/obj/item/wirecutters/hightech,
 				/obj/item/wirecutters/hightech,
 				/obj/item/multitool/advanced)
 
@@ -303,5 +315,6 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 				/obj/item/advanced_crafting_components/conductors,
 				/obj/item/advanced_crafting_components/lenses,
 				/obj/item/advanced_crafting_components/flux,
+				/obj/item/blueprint/research,
 				/obj/item/blueprint/research)
 

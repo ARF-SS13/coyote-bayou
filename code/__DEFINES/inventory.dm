@@ -326,6 +326,7 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/kitchen,
+	/obj/item/kinetic_crusher,
 	/obj/item/toy
 	)))
 
@@ -406,7 +407,7 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/reagent_containers/food/drinks,
 	/obj/item/storage/bag/plants,
 	/obj/item/plant_analyzer,
-	/obj/item/scythe, 
+	/obj/item/scythe,
 	/obj/item/assembly/signaler,
 	/obj/item/grenade/chem_grenade,
 	/obj/item/lightreplacer,
