@@ -588,11 +588,22 @@
 		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
-		//Give them a radio to hear with
-		var/obj/item/implant/radio/slime/imp = new
+		C.possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
+		//Give them some starting items
+		var/obj/item/implant/radio/slime/imp = new//Implant with a radio
 		imp.implant(C, src)
+		if(S)
+			new /obj/item/stack/medical/gauze(S)//Give them some gauze for healing
+			new /obj/item/flashlight(S)//Give them a flashlight for seeing
+			new /obj/item/melee/onehanded/knife/hunting(S)//And a knife for crafting/gutting
 		//Assign the mob's information based on the player's client preferences
-		C.gender = P.gender
+		switch(P.gender)
+			if("male")
+				C.gender = MALE
+			if("female")
+				C.gender = FEMALE
+			else
+				C.gender = PLURAL
 		C.name = P.creature_name
 		C.real_name = P.creature_name
 		C.flavortext = P.creature_flavor_text
@@ -614,6 +625,9 @@
 		//Move them to the selected spawnpoint and transfer the player into the new mob
 		C.forceMove(get_turf(rand_spawn))
 		transfer_ckey(C, TRUE)
+		//Alert deadchat of their arrival
+		var/dsay_message = "<span class='game deadsay'><span class='name'>[C.real_name]</span> ([P.creature_species]) has entered the wasteland at <span class='name'>[spawn_selection]</span>.</span>"
+		deadchat_broadcast(dsay_message, follow_target = C, message_type=DEADCHAT_ARRIVALRATTLE)
 
 /mob/dead/new_player/proc/LateChoices()
 	var/list/dat = list()

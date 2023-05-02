@@ -228,7 +228,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	spreadFire(AM)
 
-/mob/living/carbon/human/proc/despawn()
+/mob/living/carbon/human/despawn()
 	var/datum/job/job_to_free = SSjob.GetJob(job)
 	job_to_free?.current_positions--
 	GLOB.data_core.remove_record_by_name(real_name)
