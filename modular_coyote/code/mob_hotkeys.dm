@@ -1,11 +1,11 @@
 //For ease of control while playing as a mob.
 /datum/keybinding/simple_animal
 	category = CATEGORY_CARBON
-	weight = WEIGHT_MOB
-
+	weight = WEIGHT_LIVING
+/*
 /datum/keybinding/simple_animal/can_use(client/user)
 	return isanimal(user.mob)
-
+*/
 /datum/keybinding/simple_animal/toggle_throw_mode
 	hotkey_keys = list("R", "Southwest")
 	name = "toggle_throw_mode"
