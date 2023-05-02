@@ -15019,12 +15019,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/city)
-"baa" = (
-/obj/structure/chair/right,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar)
 "bac" = (
 /obj/structure/flora/wasteplant/wild_punga,
 /turf/open/floor/grass,
@@ -34669,12 +34663,6 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"fhX" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar)
 "fie" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -42782,10 +42770,6 @@
 	dir = 1;
 	pixel_x = 9;
 	pixel_y = 15
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 19
 	},
 /obj/structure/noticeboard{
 	desc = "This board is for putting personal ads down, feel free to include your discord info as well!";
@@ -52371,13 +52355,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"kcy" = (
-/obj/structure/table/wood,
-/obj/machinery/reagentgrinder,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "kcz" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -67219,11 +67196,6 @@
 	pixel_x = 9;
 	pixel_y = 15
 	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	layer = 3.2;
-	pixel_y = 19
-	},
 /obj/structure/noticeboard{
 	desc = "A board for pinning your looking for group messages, feel free to include your discord info in the post!";
 	layer = 5.0;
@@ -72242,11 +72214,6 @@
 	pixel_x = 9;
 	pixel_y = 15
 	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	layer = 3.2;
-	pixel_y = 19
-	},
 /obj/structure/noticeboard{
 	desc = "This is a board for posting multi-person projects, feel free to include your discord info for building projects!";
 	layer = 5.0;
@@ -75580,14 +75547,6 @@
 	color = "#9c9c9c"
 	},
 /area/f13/tunnel)
-"qwd" = (
-/obj/structure/chair/left{
-	dir = 1
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar)
 "qwe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/coyote/one,
@@ -88919,9 +88878,6 @@
 /obj/structure/flora/stump,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"ufz" = (
-/turf/open/floor/light/colour_cycle/dancefloor_b,
-/area/f13/bar)
 "ufB" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticaltop"
@@ -89231,10 +89187,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
-"ukp" = (
-/obj/machinery/light/floor,
-/turf/open/floor/light/colour_cycle/dancefloor_b,
-/area/f13/bar)
 "ukz" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/road{
@@ -96931,7 +96883,8 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/item/broom,
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel,
 /area/f13/building)
 "wtA" = (
@@ -107888,10 +107841,10 @@ fzV
 mkb
 mkb
 iNx
-ukp
-ufz
-ufz
-ukp
+cnf
+evn
+mwa
+mkb
 xDN
 nFA
 xJE
@@ -108145,10 +108098,10 @@ lCa
 mkb
 mkb
 mkb
-ufz
-ufz
-ufz
-ufz
+lBl
+kii
+nmt
+mkb
 mkb
 fJj
 xJE
@@ -108402,10 +108355,10 @@ mkb
 wGR
 iso
 mkb
-ufz
-ufz
-ufz
-ufz
+mkb
+mkb
+mkb
+mkb
 mkb
 uYZ
 mkb
@@ -108659,10 +108612,10 @@ uAQ
 uAQ
 jIN
 mkb
-ufz
-ufz
-ufz
-ufz
+cnf
+evn
+mwa
+mkb
 mkb
 hEx
 mkb
@@ -108916,10 +108869,10 @@ vFu
 oCZ
 vFu
 mkb
-ukp
-ufz
-ufz
-ukp
+lBl
+kii
+nmt
+mkb
 mkb
 uYZ
 ndL
@@ -109177,7 +109130,7 @@ mkb
 mkb
 bnx
 mkb
-ahA
+mkb
 rBz
 mkb
 bgo
@@ -110199,12 +110152,12 @@ spL
 spL
 rLT
 nFA
-baa
-evn
-qwd
 cnf
 evn
 mwa
+pdj
+mkb
+pdj
 ahA
 ayA
 mkb
@@ -110457,12 +110410,12 @@ nvn
 hNz
 nFA
 lBl
-evn
-nmt
-lBl
 kii
 nmt
-fhX
+mkb
+pdj
+mkb
+ahA
 ayA
 mkb
 qgS
@@ -114805,7 +114758,7 @@ ahF
 lTY
 lTY
 blk
-kcy
+bYq
 aej
 vmx
 kPo

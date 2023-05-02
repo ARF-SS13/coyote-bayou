@@ -19,3 +19,13 @@
 	level = 3
 	glass_amount = 2
 	*/
+
+/obj/structure/f13/rocktrimmings
+	name = "rocky outcrop"
+	desc = "That's a rocky outcrop, it goes hard."
+	icon = 'modular_coyote/icons/turfs/celianna_TileB2.dmi'
+	icon_state = "Large_RoundRockMound1"
+	density = TRUE
+	anchored = TRUE
+	layer = ABOVE_MOB_LAYER
+	level = 3
