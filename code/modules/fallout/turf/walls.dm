@@ -284,9 +284,11 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	. = ..()
 	if(!isliving(user) || user.incapacitated())
 		return //No ghosts or incapacitated folk allowed to do this.
+	if(!ishuman(dropping))
+		return //Only humans have job slots to be freed.
 	if(in_use) // Someone's already going in.
 		return
-	var/mob/living/departing_mob = dropping
+	var/mob/living/carbon/human/departing_mob = dropping
 	if(departing_mob != user && departing_mob.client)
 		to_chat(user, span_warning("This one retains their free will. It's their choice if they want to depart or not."))
 		return
@@ -308,11 +310,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = initial(icon_state)
 	in_use = FALSE
 	update_icon()
-	var/dat
-	if(ishuman(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
-	else if(isanimal(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], simple animal [departing_mob.type], at [AREACOORD(src)]. Contents despawned along:"
+	var/dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
 	if(!length(departing_mob.contents))
 		dat += " none."
 	else

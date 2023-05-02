@@ -265,14 +265,7 @@
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/structure/ladder/attack_ghost(mob/dead/observer/user)
-	//If we can go both ways, show the UI
-	if(up && down)
-		use(user, TRUE)
-	//If the ladder only goes one way, just move the ghost to the other side.
-	else if(up)
-		travel(user, TRUE, TRUE)
-	else if(down)
-		travel(user, FALSE, TRUE)
+	use(user, TRUE)
 	return ..()
 
 /obj/structure/ladder/proc/show_fluff_message(going_up, mob/user)
