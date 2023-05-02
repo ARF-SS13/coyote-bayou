@@ -986,7 +986,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
-		var/inserted_value = FLOOR(currency.amount * 4, 1)
+		var/inserted_value = FLOOR(currency.amount * 10, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
