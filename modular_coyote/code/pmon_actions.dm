@@ -15,10 +15,8 @@
 		return FALSE
 	if(ispokemon(owner))
 		var/mob/living/simple_animal/pokemon/O = owner
-		O.resting = !owner.resting
-		TOGGLE_BITFIELD(O.combat_flags, COMBAT_FLAG_INTENTIONALLY_RESTING)
+		O.lay_down()
 		O.update_mobility()
-		to_chat(O,"<span class='notice'>You are now [O.resting ? "resting" : "getting up"].</span>")
 		return TRUE
 	else
 		to_chat(owner,"<span class='notice'>You shouldn't have this!</span>")
