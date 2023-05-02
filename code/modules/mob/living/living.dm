@@ -1501,3 +1501,14 @@
 
 /mob/living/proc/update_water()
 	return
+
+//Coyote Add
+/mob/living/proc/despawn()
+	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
+	for(var/i in contents)
+		var/atom/movable/content = i
+		dat += " [content.type]"
+	log_game(dat)
+	ghostize()
+	qdel(src)
+//End Coyote Add

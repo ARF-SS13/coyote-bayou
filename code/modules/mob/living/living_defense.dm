@@ -363,7 +363,7 @@
 		M.show_message(span_alert("As an honorable creature of the wastes, you're morally (and mechanically) forbidden from attacking [src] while they're too injured or too sleepy to fight back!"))
 		return FALSE
 	var/list/attack_phrases = list()
-	if(M.melee_damage_upper == 0 || (M.dextrous && M.a_intent == INTENT_HELP))
+	if(M.melee_damage_upper == 0 || (M.player_character && M.a_intent == INTENT_HELP))
 		attack_phrases = list(
 		"continuous" = islist(M.friendly_verb_continuous) ? pick(M.friendly_verb_continuous) : M.friendly_verb_continuous,
 		"simple" = islist(M.friendly_verb_simple) ? pick(M.friendly_verb_simple) : M.friendly_verb_simple
@@ -372,7 +372,7 @@
 			span_notice("You [attack_phrases["simple"]] [src]!"), target = src,
 			target_message = span_notice("\The [M] [attack_phrases["continuous"]] you!"))
 		return 0
-	else if((M.dextrous && M.a_intent == INTENT_HARM))
+	else
 		attack_phrases = list(
 		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
 		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple

@@ -258,8 +258,8 @@
 		A.attack_hand(src, intent, flags)
 		update_inv_hands()
 //Coyote edit
-	if(dextrous && ismob(A) && LAZYLEN(held_items))//Dextrous mob unarmed attacks
-		if(isnull(held_items["[active_hand_index]"]))//Attacking with an empty hand.
+	if(dextrous && ismob(A) && LAZYLEN(held_items))//Dextrous mob who has hand slots
+		if(isnull(held_items["[active_hand_index]"]))//Attacking with an empty hand
 			return ..()
 //End Coyote edit
 

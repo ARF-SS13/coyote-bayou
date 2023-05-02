@@ -75,13 +75,13 @@
 /datum/keybinding/simple_animal/select_harm_intent/down(client/user)
 	user.mob?.a_intent_change(INTENT_HARM)
 	return TRUE
-/* Too buggy right now
+
 /datum/keybinding/simple_animal/wield 
 	hotkey_keys = list("ShiftX")
 	name = "wield_item"
 	full_name = "Wield held item"
 	description = ""
-*/
+
 /datum/keybinding/simple_animal/wield/down(client/user)
 	var/mob/living/simple_animal/M = user.mob
 	M.do_wield()

@@ -589,11 +589,21 @@
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
 		C.possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
-		//Give them a radio to hear with
-		var/obj/item/implant/radio/slime/imp = new
+		//Give them some starting items
+		var/obj/item/implant/radio/slime/imp = new//Implant with a radio
 		imp.implant(C, src)
+		if(S)
+			new /obj/item/stack/medical/gauze(S)//Give them some gauze for healing
+			new /obj/item/flashlight(S)//Give them a flashlight for seeing
+			new /obj/item/melee/onehanded/knife/hunting(S)//And a knife for crafting/gutting
 		//Assign the mob's information based on the player's client preferences
-		C.gender = P.gender
+		switch(P.gender)
+			if("male")
+				C.gender = MALE
+			if("female")
+				C.gender = FEMALE
+			else
+				C.gender = PLURAL
 		C.name = P.creature_name
 		C.real_name = P.creature_name
 		C.flavortext = P.creature_flavor_text

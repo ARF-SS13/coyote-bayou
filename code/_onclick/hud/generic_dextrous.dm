@@ -44,13 +44,15 @@
 	using.screen_loc = ui_overridden_resist
 	using.hud = src
 	hotkeybuttons += using
-	/*
-	//Wield button(too buggy, just use one-handed equipment)
+	//Health indicator
+	healths = new /obj/screen/healths()
+	healths.hud = src
+	infodisplay += healths
+	//Wield button(buggy)
 	wield_button = new /obj/screen/wield
 	wield_button.screen_loc = ui_wield
 	wield_button.hud = src
 	static_inventory += wield_button
-	*/
 //End Coyote Add
 
 	if(mymob.possible_a_intents)
