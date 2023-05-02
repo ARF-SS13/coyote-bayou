@@ -389,3 +389,16 @@
 #undef MICROWAVE_NORMAL
 #undef MICROWAVE_MUCK
 #undef MICROWAVE_PRE
+
+
+//From Civ13
+
+/obj/machinery/microwave/white_stove
+	name = "white stove"
+	desc = "A nice white stove for cooking."
+	icon_state = "white_stove"
+
+/obj/machinery/microwave/gas_stove
+	name = "gas stove"
+	desc = "A nice white gas stove for cooking."
+	icon_state = "gasstove"

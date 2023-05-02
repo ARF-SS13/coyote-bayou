@@ -369,6 +369,19 @@
 	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
 	icon_state = "rug_blue"
 
+/obj/structure/rug/mat
+	name = "mat"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mat_blank"
+
+/obj/structure/rug/mat/welcome
+	name = "welcome mat"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mat_welcome"
+
+
 /obj/structure/props/micstand
 	name = "microphone stand"
 	desc = "A mic stand."
@@ -377,3 +390,103 @@
 	density = TRUE
 	opacity = TRUE
 	anchored = TRUE
+
+/obj/structure/nightstand
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand"
+	density = TRUE
+	opacity = TRUE
+	anchored = TRUE
+
+/obj/structure/nightstand/small
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand_small"
+
+/obj/structure/nightstand/white
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand_alt"
+
+//From Mojave sun, credit to them for the sprite
+/obj/structure/wood_counter
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter"
+
+/obj/structure/wood_counter/bend
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_bend"
+
+/obj/structure/wood_counter/intersect
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_intersect"
+
+/obj/structure/wood_counter/cross
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_cross"
+
+/obj/structure/craft_counter
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter"
+
+/obj/structure/craft_counter/bend
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_bend"
+
+/obj/structure/craft_counter/intersect
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_intersect"
+
+/obj/structure/craft_counter/cross
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_cross"
+
+/obj/structure/toilet_paper
+	name = "Toilet Paper Holder"
+	desc = "Look before you shit! I mean, sit!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "paper_roller"
+
+/obj/structure/towel_rack
+	name = "Towel Rack"
+	desc = "People still use these?"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "towel_rack"
+
+/obj/structure/mirror/alt
+	name = "mirror"
+	desc = "Mirror mirror on the wall, who's the most robust of them all?"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mirror"
+
+/obj/structure/cupboard
+	name = "cupboard"
+	desc = "Yep. It's a cupboard. Good job."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "cuboard"
+
+/obj/structure/sink/cupboard
+	name = "Sink Cupboard"
+	desc = "A rather nice looking sink. How quint."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "sink"
