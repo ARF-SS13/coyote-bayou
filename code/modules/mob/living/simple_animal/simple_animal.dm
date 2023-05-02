@@ -1269,8 +1269,6 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	if(istype(target, /obj/screen))
 		return
-
-	//CIT CHANGES - makes it impossible to throw while in stamina softcrit
 	if(IS_STAMCRIT(src))
 		to_chat(src, span_warning("You're too exhausted."))
 		return
@@ -1330,4 +1328,22 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
 		newtonian_move(get_dir(target, src))
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force, random_turn)
+
+/mob/living/simple_animal/proc/toggle_throw_mode()
+	if(stat)
+		return
+	if(in_throw_mode)
+		throw_mode_off()
+	else
+		throw_mode_on()
+
+/mob/living/simple_animal/proc/throw_mode_off()
+	in_throw_mode = 0
+	if(client && hud_used)
+		hud_used.throw_icon.icon_state = "act_throw_off"
+
+/mob/living/simple_animal/proc/throw_mode_on()
+	in_throw_mode = 1
+	if(client && hud_used)
+		hud_used.throw_icon.icon_state = "act_throw_on"
 //End Coyote Add

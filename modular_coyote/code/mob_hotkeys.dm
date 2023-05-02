@@ -1,11 +1,12 @@
 //For ease of control while playing as a mob.
-/datum/keybinding/simple_animal
-	category = CATEGORY_CARBON
-	weight = WEIGHT_LIVING
 /*
+/datum/keybinding/simple_animal
+	category = CATEGORY_HUMAN
+	weight = WEIGHT_MOB
+
 /datum/keybinding/simple_animal/can_use(client/user)
 	return isanimal(user.mob)
-*/
+
 /datum/keybinding/simple_animal/toggle_throw_mode
 	hotkey_keys = list("R", "Southwest")
 	name = "toggle_throw_mode"
@@ -29,7 +30,6 @@
 	in_throw_mode = 0
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_off"
-
 
 /mob/living/simple_animal/proc/throw_mode_on()
 	in_throw_mode = 1
@@ -86,3 +86,4 @@
 	var/mob/living/simple_animal/M = user.mob
 	M.do_wield()
 	return TRUE
+*/
