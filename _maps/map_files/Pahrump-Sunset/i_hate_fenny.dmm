@@ -48,7 +48,14 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "am" = (
-/turf/closed/wall/f13/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/ghoul,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
 /area/f13/wasteland)
 "an" = (
 /obj/effect/decal/cleanable/dirt,
@@ -71,10 +78,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "ar" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/barricade/wooden/planks/pregame,
-/obj/structure/spacevine,
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "as" = (
 /obj/structure/simple_door/interior,
@@ -118,9 +124,34 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
+"aG" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	color = "#000000";
+	dir = 1;
+	icon_state = "trimline_fill"
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	color = "#000000";
+	dir = 1;
+	icon_state = "trimline_fill"
+	},
+/obj/structure/railing{
+	dir = 4;
+	layer = 3;
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
+	opacity = 0
+	},
+/area/f13/wasteland)
 "aJ" = (
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood,
+/obj/structure/flora/burnedtree3,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aL" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -136,6 +167,16 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
+"aP" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	layer = 3.1;
+	pixel_x = -11;
+	pixel_y = 19
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "aS" = (
 /obj/structure/stairs/west{
 	color = "#A47449"
@@ -145,6 +186,9 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"aT" = (
+/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
+/area/f13/wasteland)
 "aV" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -152,8 +196,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aW" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
+/obj/structure/spacevine,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "aX" = (
 /obj/structure/simple_door/room,
@@ -181,9 +225,8 @@
 	},
 /area/f13/building)
 "bf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood,
+/obj/structure/campfire,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "bg" = (
 /obj/structure/closet/crate/bin,
@@ -210,10 +253,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"bl" = (
-/obj/structure/flora/twig2,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "bo" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -232,8 +271,12 @@
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/wasteland)
 "bp" = (
-/obj/structure/simple_door/house,
-/turf/open/floor/f13/wood,
+/obj/machinery/hydroponics/soil{
+	name = "riverbed soil";
+	yieldmod = 1.3
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "bt" = (
 /obj/machinery/dna_scannernew{
@@ -248,7 +291,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "bv" = (
-/turf/open/floor/carpet,
+/obj/structure/flora/branch,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bw" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -336,7 +380,13 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
 "bM" = (
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/sink{
+	pixel_y = 28
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/wasteland)
 "bP" = (
 /obj/structure/railing{
@@ -347,18 +397,31 @@
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
 "bQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fence/wooden{
-	dir = 1;
-	icon_state = "post_wood";
-	pixel_x = -18
+/obj/structure/chair/comfy{
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/gravel,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/wasteland)
 "bU" = (
 /turf/closed/wall/f13/coyote/fortress_brick,
 /area/f13/building/hospital)
+"bY" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/closed/wall/f13/coyote/fortress_brick,
+/area/f13/building)
+"bZ" = (
+/obj/structure/chair/sofa/right{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "ca" = (
 /obj/structure/flora/chomp/thicket6,
 /turf/open/indestructible/ground/outside/desert,
@@ -381,16 +444,6 @@
 	color = "#d9b51c"
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"cf" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "cg" = (
 /obj/structure/chair/wood/wings{
@@ -555,6 +608,15 @@
 "da" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"dc" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dd" = (
 /obj/structure/flora/chomp/lbarrelcacti1,
 /turf/open/indestructible/ground/outside/desert,
@@ -620,6 +682,12 @@
 	icon_state = "trimline_fill"
 	},
 /turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"dr" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "dx" = (
 /obj/effect/decal/cleanable/generic,
@@ -702,8 +770,13 @@
 /turf/open/indestructible/cobble,
 /area/f13/wasteland)
 "dH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/gravel,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/wasteland)
 "dI" = (
 /obj/structure/spacevine,
@@ -711,17 +784,8 @@
 /turf/closed/wall/mineral/brick,
 /area/f13/building/hospital)
 "dL" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	climbable = 0;
-	density = 0;
-	dir = 1;
-	layer = 3.6;
-	pixel_x = 13;
-	pixel_y = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
+/obj/structure/flora/rock/jungle,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dP" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -742,16 +806,9 @@
 /turf/open/indestructible/cobble,
 /area/f13/wasteland)
 "dT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/window/fulltile/wood/broken{
-	desc = "Feed me! FEED ME!";
-	layer = 2;
-	name = "feed trough"
-	},
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dW" = (
 /obj/structure/table/wood,
@@ -773,8 +830,8 @@
 /obj/structure/railing/corner{
 	color = "#A47449";
 	dir = 8;
-	pixel_x = -3;
-	pixel_y = 33
+	pixel_y = 33;
+	pixel_x = -3
 	},
 /turf/open/floor/plasteel/stairs{
 	barefootstep = "woodbarefoot";
@@ -835,10 +892,6 @@
 	icon_state = "trimline_fill"
 	},
 /turf/open/floor/wood_wide,
-/area/f13/wasteland)
-"ep" = (
-/obj/structure/flora/burnedbush1,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "er" = (
 /obj/structure/stairs,
@@ -1077,6 +1130,12 @@
 	},
 /turf/open/indestructible/cobble,
 /area/f13/wasteland)
+"fq" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/transparent/openspace,
+/area/f13/bar)
 "fr" = (
 /obj/structure/table/wood,
 /obj/item/storage/keys_set,
@@ -1090,7 +1149,11 @@
 	},
 /area/f13/wasteland)
 "fs" = (
-/turf/closed/wall/f13/wood/interior,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "fv" = (
 /obj/structure/fence/wooden{
@@ -1233,8 +1296,21 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"fS" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	layer = 3.1;
+	pixel_x = 11;
+	pixel_y = 19
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "fU" = (
-/turf/open/indestructible/ground/outside/road,
+/obj/structure/flora/tree/oak_one{
+	color = "#d9b51c"
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "fX" = (
 /turf/closed/wall/f13/sunset/brick_small_light{
@@ -1269,12 +1345,20 @@
 /area/f13/building)
 "gc" = (
 /obj/structure/sink/cupboard{
-	pixel_x = -1;
-	pixel_y = 11
+	pixel_y = 11;
+	pixel_x = -1
 	},
 /obj/structure/mirror/alt{
-	pixel_x = -1;
-	pixel_y = 33
+	pixel_y = 33;
+	pixel_x = -1
+	},
+/obj/item/flashlight/littlelamp{
+	pixel_x = -13;
+	pixel_y = 19;
+	light_on = 1
+	},
+/obj/machinery/light/floor{
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/showroomfloor{
 	color = "#555555"
@@ -1322,16 +1406,20 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
-"gg" = (
+"gi" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 5
+	dir = 2
 	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "gj" = (
-/obj/structure/rug/big/rug_yellow,
-/turf/open/floor/carpet,
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "gk" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -1413,10 +1501,11 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
 "gw" = (
-/obj/structure/bed/double{
-	pixel_y = 16
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
 	},
-/turf/open/floor/carpet,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "gx" = (
 /obj/structure/sign/departments/custodian{
@@ -1435,11 +1524,12 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
 "gA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
+/obj/structure/flora/junglebush/c,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"gB" = (
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
 "gC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/autolathe/ammo,
@@ -1536,13 +1626,10 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "hk" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fence/wooden{
-	dir = 1;
-	icon_state = "post_wood";
-	pixel_x = -18
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
-/turf/open/indestructible/ground/outside/gravel,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "hm" = (
 /obj/item/kirbyplants{
@@ -1554,6 +1641,14 @@
 /turf/open/floor/f13/wood{
 	color = "#C2B280"
 	},
+/area/f13/wasteland)
+"hq" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "hr" = (
 /obj/structure/fence/wooden{
@@ -1606,11 +1701,6 @@
 	color = "#EEEEEE";
 	opacity = 0
 	},
-/area/f13/wasteland)
-"hx" = (
-/obj/structure/flora/tallgrass7,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "hy" = (
 /obj/item/organ/genital/butt{
@@ -1675,6 +1765,17 @@
 "hJ" = (
 /obj/structure/flora/tree/chomp/lcactus1,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"hK" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "hL" = (
 /obj/machinery/light/small{
@@ -1753,7 +1854,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ij" = (
-/turf/open/indestructible/ground/outside/gravel,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/fence/wooden{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ik" = (
 /obj/machinery/door/unpowered/securedoor{
@@ -1774,16 +1879,19 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ir" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/window/fulltile/wood/broken{
-	desc = "Feed me! FEED ME!";
-	layer = 2;
-	name = "feed trough"
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4;
+	pixel_y = 2
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
 	},
 /area/f13/wasteland)
 "it" = (
@@ -1828,17 +1936,6 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
-"iy" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c";
-	pixel_x = -38;
-	pixel_y = -2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "iA" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/railing,
@@ -1871,8 +1968,15 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "iL" = (
-/obj/structure/spacevine,
-/turf/closed/wall/f13/wood/interior,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "iN" = (
 /turf/open/indestructible/ground/outside/road{
@@ -1883,21 +1987,18 @@
 /obj/structure/decoration/rag,
 /turf/closed/wall/mineral/brick,
 /area/f13/wasteland)
-"iR" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland)
 "iT" = (
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "iU" = (
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "iY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2030,6 +2131,12 @@
 "jD" = (
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"jF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "jH" = (
 /obj/structure/spacevine,
 /turf/open/floor/wood_wide,
@@ -2119,6 +2226,20 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
+"ko" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/obj/structure/railing{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 6
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	opacity = 0
+	},
+/area/f13/wasteland)
 "kr" = (
 /obj/structure/window/fulltile/house,
 /turf/open/floor/wood_fancy/wood_fancy_light,
@@ -2130,6 +2251,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"kw" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
 "kx" = (
 /obj/structure/flora/chomp/bush2{
 	color = "#338833"
@@ -2137,8 +2264,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "ky" = (
-/obj/structure/fence/wooden{
-	dir = 4
+/obj/structure/flora/junglebush/b{
+	pixel_y = 16
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -2170,12 +2297,20 @@
 	},
 /area/f13/wasteland)
 "kG" = (
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
-/obj/structure/spacevine,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
+/area/f13/wasteland)
+"kJ" = (
+/obj/structure/chair/sofa/corner{
+	dir = 1
+	},
+/obj/structure/rug/big/rug_red,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "kL" = (
 /obj/structure/flora/grass/coyote/fourteen,
@@ -2198,6 +2333,13 @@
 "kP" = (
 /obj/structure/flora/chomp/thicket5,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"kQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4;
+	pixel_y = 2
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "kR" = (
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -2281,10 +2423,12 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "le" = (
-/obj/structure/fence/corner/wooden{
-	dir = 4
+/obj/structure/fence/end/wooden{
+	pixel_y = 21
 	},
-/obj/structure/spacevine,
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lf" = (
@@ -2357,9 +2501,15 @@
 	},
 /area/f13/wasteland)
 "lx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/wasteland)
 "ly" = (
 /obj/structure/railing,
@@ -2397,13 +2547,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/closed/wall/f13/sunset/brick_small_dark,
-/area/f13/wasteland)
-"lF" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lI" = (
 /obj/structure/flora/twig3,
@@ -2443,6 +2586,15 @@
 	dir = 6
 	},
 /turf/open/floor/plating/dirt/dark,
+/area/f13/wasteland)
+"lR" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "lT" = (
 /obj/structure/barricade/bars,
@@ -2492,13 +2644,6 @@
 /obj/structure/railing,
 /obj/structure/railing,
 /turf/closed/mineral/random/low_chance,
-/area/f13/wasteland)
-"ms" = (
-/obj/structure/flora/tree/oak_three{
-	color = "#d9b51c";
-	pixel_y = 10
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "mu" = (
 /obj/machinery/processor{
@@ -2556,6 +2701,12 @@
 	dir = 4
 	},
 /area/f13/wasteland)
+"mC" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "mH" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
@@ -2563,11 +2714,31 @@
 /obj/structure/flora/tree/african_acacia,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"mM" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "mN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 5
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
+"mP" = (
+/obj/structure/window/fulltile/wood,
+/obj/structure/curtain{
+	color = "#5c131b"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "mQ" = (
 /obj/structure/railing,
@@ -2606,6 +2777,12 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"mW" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/hospital)
 "nd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/right,
@@ -2654,14 +2831,19 @@
 	},
 /area/f13/building/hospital)
 "nn" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/gravel,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood1-broken"
+	},
 /area/f13/wasteland)
 "no" = (
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/gravel,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood1-broken"
+	},
 /area/f13/wasteland)
 "np" = (
 /turf/closed/wall/f13/wood/interior{
@@ -2681,23 +2863,15 @@
 /obj/structure/flora/chomp/anthill2,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"nv" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ny" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood,
-/area/f13/wasteland)
-"nz" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+/obj/structure/table/wood/settler,
+/obj/machinery/light/small{
+	dir = 8
 	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
 	},
 /area/f13/wasteland)
 "nA" = (
@@ -2720,12 +2894,21 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
+"nF" = (
+/turf/open/transparent/openspace,
+/area/f13/bar)
 "nG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"nJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building)
 "nK" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/fancy/cigarettes/cigars,
@@ -2743,7 +2926,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "nO" = (
-/obj/structure/spacevine,
+/obj/structure/flora/brushwoodalt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nP" = (
@@ -2853,12 +3037,16 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "ow" = (
-/obj/structure/toilet,
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
 	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 6
+	},
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "oy" = (
 /obj/structure/fence/wooden{
@@ -2884,10 +3072,13 @@
 	},
 /area/f13/wasteland)
 "oC" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4;
+	pixel_y = 2
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
 	},
 /area/f13/wasteland)
 "oE" = (
@@ -2974,13 +3165,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "pe" = (
-/obj/structure/sink{
-	pixel_y = 28
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/obj/structure/flora/timber,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "pf" = (
 /obj/machinery/computer/security/wooden_tv,
@@ -3064,9 +3250,10 @@
 	},
 /area/f13/wasteland)
 "pu" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/window/fulltile/house,
+/obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/spacevine,
-/turf/closed/wall/f13/wood/interior,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "pv" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
@@ -3173,9 +3360,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qd" = (
-/obj/structure/chair/wood,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/wasteland)
 "qe" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3292,26 +3482,22 @@
 /area/f13/wasteland)
 "qJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood,
+/turf/closed/wall/f13/wood/interior,
 /area/f13/wasteland)
 "qK" = (
-/obj/structure/table/wood/settler,
-/obj/machinery/light/small{
-	dir = 4
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
-/obj/effect/spawner/lootdrop/clothing_low,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/validball_spawner,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
-"qM" = (
-/obj/structure/fence/end/wooden{
-	pixel_y = 21
-	},
-/obj/structure/fence/wooden{
+/obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"qM" = (
+/obj/structure/bed/double{
+	pixel_y = 16
+	},
+/turf/open/floor/carpet,
 /area/f13/wasteland)
 "qO" = (
 /turf/open/floor/carpet/red,
@@ -3377,8 +3563,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/wasteland)
 "rf" = (
-/obj/structure/flora/tallgrass2,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/table/wood/settler,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "rg" = (
 /obj/structure/curtain{
@@ -3416,7 +3605,8 @@
 	},
 /obj/item/flashlight/littlelamp{
 	pixel_x = 1;
-	pixel_y = 25
+	pixel_y = 25;
+	light_on = 1
 	},
 /turf/open/floor/f13/wood{
 	color = "#C2B280"
@@ -3543,7 +3733,8 @@
 	},
 /area/f13/building)
 "rM" = (
-/obj/structure/fence/wooden{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -3566,8 +3757,11 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "rW" = (
-/obj/structure/spacevine,
-/turf/open/floor/grass,
+/obj/machinery/hydroponics/soil{
+	name = "riverbed soil";
+	yieldmod = 1.3
+	},
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "rX" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -3605,7 +3799,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/weather/dirt,
-/obj/structure/flora/tallgrass7,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "sh" = (
@@ -3638,16 +3831,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/wasteland)
-"sl" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland)
 "sn" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -3658,13 +3841,9 @@
 /turf/open/floor/plating/dirt/dark,
 /area/f13/wasteland)
 "so" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "sq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3758,11 +3937,15 @@
 	},
 /area/f13/wasteland)
 "sX" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
 	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 9
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "sY" = (
 /obj/machinery/chem_dispenser,
@@ -3785,30 +3968,18 @@
 	},
 /area/f13/wasteland)
 "te" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/wasteland)
-"tf" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/interior,
 /area/f13/wasteland)
+"tf" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 6
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "tg" = (
-/obj/structure/table/wood/settler,
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "th" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3851,6 +4022,74 @@
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/dirt/dark,
 /area/f13/wasteland)
+"tr" = (
+/obj/structure/bed/wooden{
+	pixel_y = 15
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 0;
+	pixel_x = 17;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 22;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 1;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 3;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 6;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 10;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 15;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 1;
+	pixel_x = -16;
+	layer = 6;
+	density = 0
+	},
+/obj/effect/spawner/lootdrop/bedsheet{
+	pixel_y = 16
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "ts" = (
 /obj/structure/flora/grass/coyote/thirty,
 /turf/open/indestructible/ground/outside/desert,
@@ -3889,10 +4128,10 @@
 /area/f13/wasteland)
 "tz" = (
 /obj/structure/rug/mat{
-	color = "#CC4444";
 	layer = 6;
+	pixel_y = -2;
 	pixel_x = 2;
-	pixel_y = -2
+	color = "#CC4444"
 	},
 /turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/wasteland)
@@ -3920,12 +4159,12 @@
 /area/f13/wasteland)
 "tD" = (
 /obj/structure/toilet{
-	pixel_x = 3;
-	pixel_y = 17
+	pixel_y = 17;
+	pixel_x = 3
 	},
 /obj/structure/toilet_paper{
-	pixel_x = -9;
-	pixel_y = 20
+	pixel_y = 20;
+	pixel_x = -9
 	},
 /obj/structure/rug/mat{
 	layer = 1;
@@ -3944,8 +4183,9 @@
 /area/f13/wasteland)
 "tG" = (
 /obj/item/flashlight/oldlamp{
+	pixel_y = -9;
 	pixel_x = -2;
-	pixel_y = -9
+	light_on = 1
 	},
 /turf/closed/wall/f13/coyote/tavern_wall,
 /area/f13/wasteland)
@@ -4041,6 +4281,10 @@
 	},
 /turf/open/floor/plating/dirt/dark,
 /area/f13/wasteland)
+"ud" = (
+/obj/structure/stairs/south,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "ug" = (
 /turf/open/indestructible/cobble/side{
 	dir = 8
@@ -4067,15 +4311,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"ul" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland)
 "um" = (
 /obj/machinery/light{
 	dir = 4
@@ -4105,8 +4340,8 @@
 /area/f13/building)
 "uv" = (
 /obj/structure/wood_counter{
-	layer = 6;
-	pixel_y = -1
+	pixel_y = -1;
+	layer = 6
 	},
 /obj/structure/fence/wooden{
 	dir = 4;
@@ -4118,9 +4353,9 @@
 	},
 /obj/effect/turf_decal/trimline/white/filled/line{
 	color = "#000000";
-	name = "shadow";
+	pixel_y = -1;
 	pixel_x = -3;
-	pixel_y = -1
+	name = "shadow"
 	},
 /obj/structure/railing{
 	color = "#A47449";
@@ -4130,12 +4365,12 @@
 	},
 /obj/structure/flora/chomp/potplant1{
 	layer = 6;
-	pixel_x = -6;
-	pixel_y = 14
+	pixel_y = 14;
+	pixel_x = -6
 	},
 /obj/item/flashlight/lantern{
-	pixel_x = 8;
-	pixel_y = 11
+	pixel_y = 11;
+	pixel_x = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -4163,6 +4398,9 @@
 	},
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife,
+/obj/machinery/light/floor{
+	pixel_y = 5
+	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "uF" = (
@@ -4191,10 +4429,8 @@
 /area/f13/wasteland)
 "uP" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/f13/wood/interior,
 /area/f13/wasteland)
 "uQ" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -4218,6 +4454,16 @@
 	dir = 1
 	},
 /turf/open/indestructible/cobble/side,
+/area/f13/wasteland)
+"uU" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "uV" = (
 /obj/structure/chair/wood,
@@ -4300,10 +4546,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "vo" = (
-/obj/effect/spawner/lootdrop/trash,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood,
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "vt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4347,10 +4591,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "vz" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
 	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vB" = (
 /turf/closed/wall/r_wall/rust,
@@ -4430,16 +4674,36 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "vR" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/machinery/hydroponics/soil{
+	name = "riverbed soil";
+	yieldmod = 1.3
+	},
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "vU" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "wa" = (
+/obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/f13/wood/interior,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"wb" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "wc" = (
 /turf/closed/wall/f13/wood/interior,
@@ -4504,6 +4768,16 @@
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
+	},
+/area/f13/wasteland)
+"wt" = (
+/obj/structure/railing{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 6
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	opacity = 0
 	},
 /area/f13/wasteland)
 "wu" = (
@@ -4583,12 +4857,6 @@
 	pixel_y = -4
 	},
 /turf/open/indestructible/cobble,
-/area/f13/wasteland)
-"wM" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "wN" = (
 /turf/open/floor/wood_fancy/wood_fancy_light,
@@ -4794,12 +5062,8 @@
 	},
 /area/f13/wasteland)
 "xD" = (
-/obj/structure/simple_door/interior,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xE" = (
 /obj/machinery/microwave/stove,
@@ -4870,6 +5134,22 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"xZ" = (
+/obj/structure/stairs/south,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/wasteland)
+"ya" = (
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder{
+	pixel_y = 13;
+	pixel_x = 5
+	},
+/obj/machinery/processor/chopping_block{
+	pixel_y = -1;
+	pixel_x = 7
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "yc" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -4948,11 +5228,17 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "yv" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/wasteland)
 "yw" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -4985,12 +5271,16 @@
 /obj/structure/flora/chomp/large_boulder,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"yJ" = (
-/obj/structure/chair/wood{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
+"yH" = (
+/obj/structure/simple_door/wood/alt/window,
 /turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"yJ" = (
+/obj/structure/fence/corner/wooden{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "yL" = (
 /obj/structure/stairs/west,
@@ -5009,12 +5299,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "yP" = (
-/obj/structure/chair/comfy{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/structure/toilet,
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/wasteland)
 "yR" = (
@@ -5067,9 +5356,19 @@
 	dir = 1
 	},
 /area/f13/wasteland)
+"zf" = (
+/obj/machinery/microwave/gas_stove{
+	pixel_y = 1;
+	pixel_x = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "zh" = (
-/obj/structure/flora/junglebush/c,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "zj" = (
 /turf/closed/wall/f13/wood/interior{
@@ -5077,11 +5376,8 @@
 	},
 /area/f13/building)
 "zk" = (
-/obj/structure/flora/junglebush/c{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/simple_door/house,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "zm" = (
 /obj/structure/flora/chomp/barrelcacti1,
@@ -5103,6 +5399,15 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
+"zt" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "zy" = (
 /obj/machinery/light{
 	dir = 4
@@ -5112,6 +5417,10 @@
 	},
 /area/f13/building/hospital)
 "zC" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
@@ -5193,20 +5502,15 @@
 	},
 /area/f13/wasteland)
 "Ab" = (
-/obj/structure/simple_door/house,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Af" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Ah" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5222,10 +5526,8 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
 "Aj" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
-	},
+/obj/structure/flora/burnedbush1,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Ak" = (
 /obj/structure/railing,
@@ -5245,8 +5547,8 @@
 	pixel_y = 26
 	},
 /obj/structure/sink{
-	pixel_x = -16;
-	pixel_y = 29
+	pixel_y = 29;
+	pixel_x = -16
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -5326,10 +5628,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"Az" = (
-/obj/structure/flora/tallgrass7,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "AD" = (
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -5341,6 +5639,12 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"AI" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/bar)
 "AM" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
@@ -5509,13 +5813,13 @@
 /area/f13/wasteland)
 "By" = (
 /obj/structure/campfire/stove{
-	density = 0;
-	pixel_y = 22
+	pixel_y = 22;
+	density = 0
 	},
 /obj/structure/chair/sofa/corp/right{
 	dir = 8;
-	pixel_x = 8;
-	pixel_y = -3
+	pixel_y = -3;
+	pixel_x = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -5606,11 +5910,9 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "BN" = (
-/obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "BO" = (
 /obj/structure/railing{
@@ -5635,14 +5937,26 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
+"BS" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/transparent/openspace,
+/area/f13/building)
 "BU" = (
 /obj/structure/table/wood,
 /obj/structure/sink{
-	pixel_x = 16;
-	pixel_y = 22
+	pixel_y = 22;
+	pixel_x = 16
 	},
 /obj/machinery/reagentgrinder{
 	pixel_y = 14
+	},
+/obj/item/flashlight/littlelamp{
+	pixel_x = -10;
+	pixel_y = -2;
+	light_power = 4;
+	light_on = 1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -5708,11 +6022,9 @@
 /area/f13/wasteland)
 "Cp" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/wasteland)
 "Cr" = (
@@ -5759,15 +6071,28 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
-"Cx" = (
+"Cv" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 9
+	dir = 8
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"Cx" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/wasteland)
 "CC" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -5839,6 +6164,14 @@
 	icon_state = "trimline_fill"
 	},
 /turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"CK" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/closed/wall/f13/coyote/fortress_brick,
 /area/f13/wasteland)
 "CN" = (
 /obj/structure/flora/jungle5,
@@ -5918,9 +6251,16 @@
 	opacity = 0
 	},
 /area/f13/wasteland)
+"CZ" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Da" = (
-/obj/structure/flora/stump,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/simple_door/room,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/wasteland)
 "Db" = (
 /obj/structure/decoration/vent/rusty{
@@ -5978,12 +6318,10 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Dh" = (
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/inside/dirt,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Dl" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -6035,28 +6373,15 @@
 /obj/effect/landmark,
 /turf/open/transparent/openspace,
 /area/f13/building)
-"Dy" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
+"Dx" = (
+/obj/structure/stairs/north,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "DA" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+	dir = 9
 	},
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
-	},
-/turf/open/indestructible/ground/inside/dirt,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "DB" = (
 /obj/item/trash/candle{
@@ -6124,18 +6449,11 @@
 /area/f13/wasteland)
 "DR" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+	color = "#a98c5d";
+	dir = 6
 	},
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
-	},
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
-	},
-/obj/structure/flora/chomp/bones/lskull_w,
-/turf/open/indestructible/ground/inside/dirt,
+/obj/structure/flora/ausbushes/genericbush,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "DU" = (
 /obj/machinery/light/small{
@@ -6146,8 +6464,10 @@
 /turf/open/transparent/openspace,
 /area/f13/building)
 "DZ" = (
-/obj/structure/flora/junglebush/b{
-	pixel_y = 16
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -39;
+	pixel_y = -8
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -6156,12 +6476,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Ef" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c";
-	pixel_x = -39;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/spacevine,
+/turf/closed/wall/f13/wood/interior,
 /area/f13/wasteland)
 "Ej" = (
 /obj/item/trash/plate,
@@ -6209,15 +6525,15 @@
 	},
 /obj/structure/curtain{
 	color = "#5c131b";
-	layer = 5;
+	pixel_y = 19;
 	pixel_x = 2;
-	pixel_y = 19
+	layer = 5
 	},
 /obj/structure/curtain{
 	color = "#5c131b";
-	layer = 5;
+	pixel_y = 19;
 	pixel_x = 2;
-	pixel_y = 19
+	layer = 5
 	},
 /turf/open/floor/f13/wood{
 	color = "#C2B280"
@@ -6259,11 +6575,9 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Ew" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 6
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "Ex" = (
 /obj/structure/flora/tree/jungle/small{
@@ -6396,15 +6710,14 @@
 	},
 /area/f13/wasteland)
 "Fg" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
+/obj/structure/table/wood/settler,
+/obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 9
-	},
-/turf/open/indestructible/ground/outside/water,
+/obj/effect/spawner/lootdrop/clothing_low,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Fj" = (
 /obj/structure/stairs{
@@ -6425,10 +6738,9 @@
 "Fo" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
-	dir = 10
+	dir = 9
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "Fp" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -6489,17 +6801,9 @@
 	dir = 8
 	},
 /area/f13/wasteland)
-"FE" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/flora/tallgrass7,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "FF" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/indestructible/ground/inside/dirt,
+/obj/structure/flora/ausbushes/pointybush,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "FG" = (
 /turf/open/indestructible/ground/outside/road{
@@ -6507,11 +6811,13 @@
 	},
 /area/f13/wasteland)
 "FH" = (
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
+/obj/machinery/light/small{
+	dir = 1
 	},
-/turf/open/indestructible/ground/inside/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/wasteland)
 "FK" = (
 /obj/structure/flora/rock/jungle,
@@ -6536,18 +6842,9 @@
 	},
 /area/f13/building)
 "FW" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
-	},
-/obj/machinery/hydroponics/soil{
-	name = "riverbed soil";
-	yieldmod = 1.3
-	},
-/turf/open/indestructible/ground/inside/dirt,
+/obj/structure/flora/tallgrass7,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Gb" = (
 /obj/structure/table/wood/bar,
@@ -6611,6 +6908,16 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"Gf" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Gh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -6619,12 +6926,6 @@
 "Gk" = (
 /obj/structure/flora/chomp/barrelcacti0,
 /turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
-"Gq" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Gr" = (
 /obj/structure/closet/crate/bin/trash_fallout,
@@ -6744,10 +7045,11 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Ha" = (
-/obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/validball_spawner,
-/turf/open/floor/f13/wood,
+/obj/structure/simple_door/house,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/wasteland)
 "Hc" = (
 /obj/structure/noticeboard{
@@ -6813,6 +7115,30 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
+"He" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	color = "#000000";
+	dir = 1;
+	icon_state = "trimline_fill"
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	color = "#000000";
+	dir = 1;
+	icon_state = "trimline_fill"
+	},
+/obj/structure/railing{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 6
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#CCCCCC";
+	opacity = 0
+	},
+/area/f13/wasteland)
 "Hf" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -6828,12 +7154,9 @@
 	},
 /area/f13/wasteland)
 "Hj" = (
-/obj/structure/chair/comfy,
-/obj/machinery/light/small{
-	dir = 1
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Hm" = (
 /obj/structure/railing{
@@ -6855,15 +7178,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
-/area/f13/wasteland)
-"Hr" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Ht" = (
 /obj/item/paper/crumpled{
@@ -6937,10 +7251,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Hw" = (
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood1-broken"
+/obj/structure/fence/wooden{
+	dir = 4
 	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Hz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7003,19 +7317,25 @@
 "HV" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
-/area/f13/wasteland)
-"Ib" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/wasteland)
+"Ia" = (
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -38;
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"Ib" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "If" = (
@@ -7035,18 +7355,13 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"Ij" = (
-/obj/effect/turf_decal/weather/dirt{
+"Il" = (
+/obj/structure/chair/comfy,
+/obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"Il" = (
-/obj/structure/flora/burnedtree5,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Io" = (
 /obj/structure/flora/grass/jungle,
@@ -7057,9 +7372,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Iq" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/f13/wood,
+/obj/structure/flora/stump,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Is" = (
 /obj/structure/barricade/bars{
@@ -7130,8 +7444,11 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "II" = (
-/obj/structure/flora/branch,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/wasteland)
 "IJ" = (
 /obj/machinery/light/small{
@@ -7208,11 +7525,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "IZ" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 6
-	},
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Ja" = (
@@ -7266,12 +7579,13 @@
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "Jr" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
+/obj/item/flashlight/oldlamp{
+	pixel_y = 2;
+	pixel_x = -11;
+	light_on = 1;
+	light_power = 6
 	},
-/turf/open/floor/plasteel/showroomfloor{
-	color = "#555555"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Js" = (
 /turf/closed/wall/f13/wood/interior{
@@ -7283,22 +7597,42 @@
 	icon_state = "interior2"
 	},
 /area/f13/building)
+"Jy" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/obj/structure/railing{
+	dir = 4;
+	layer = 3;
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	opacity = 0
+	},
+/area/f13/wasteland)
 "JC" = (
 /obj/structure/flora/chomp/bush1,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "JD" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 9
-	},
-/obj/structure/flora/tallgrass3{
-	pixel_y = 18
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland)
-"JF" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
+"JG" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "JH" = (
@@ -7309,8 +7643,11 @@
 /turf/open/floor/plating/dirt/dark,
 /area/f13/wasteland)
 "JJ" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/flora/tree/oak_three{
+	color = "#d9b51c";
+	pixel_y = 10
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "JK" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -7327,27 +7664,36 @@
 /area/f13/wasteland)
 "JP" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 5
+	dir = 6
 	},
-/turf/open/indestructible/ground/outside/water,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "JQ" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland)
-"JR" = (
-/obj/structure/flora/rock/pile/largejungle,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "JT" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
+	color = "#a98c5d"
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/machinery/hydroponics/soil{
+	name = "riverbed soil";
+	yieldmod = 1.3
+	},
+/obj/machinery/hydroponics/soil{
+	name = "riverbed soil";
+	yieldmod = 1.3
+	},
+/obj/structure/flora/chomp/bones/lskull_w,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland)
+"JU" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "JX" = (
 /obj/structure/closet/locker/fridge{
@@ -7359,17 +7705,22 @@
 	pixel_y = 17
 	},
 /obj/effect/spawner/lootdrop/f13/foodspawner{
-	pixel_x = -11;
-	pixel_y = 16
-	},
-/obj/effect/spawner/lootdrop/f13/foodspawner{
-	anchored = 1;
-	pixel_x = -11;
-	pixel_y = 16
+	pixel_y = 16;
+	pixel_x = -11
 	},
 /obj/effect/spawner/lootdrop/f13/foodspawner{
 	pixel_x = -11;
-	pixel_y = 18
+	pixel_y = 16;
+	anchored = 1
+	},
+/obj/effect/spawner/lootdrop/f13/foodspawner{
+	pixel_y = 18;
+	pixel_x = -11
+	},
+/obj/item/flashlight/oldlamp{
+	pixel_y = 25;
+	pixel_x = 4;
+	light_on = 1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -7469,11 +7820,13 @@
 	},
 /area/f13/wasteland)
 "Kt" = (
-/obj/structure/flora/timber,
-/turf/open/indestructible/ground/inside/dirt,
+/obj/structure/flora/burnedtree5,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Kz" = (
-/obj/structure/mirror,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "KB" = (
@@ -7508,10 +7861,6 @@
 /obj/effect/landmark,
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
-"KN" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "KO" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -7593,12 +7942,6 @@
 /turf/closed/wall/f13/wood/interior{
 	icon_state = "interior14"
 	},
-/area/f13/wasteland)
-"Lg" = (
-/obj/structure/flora/tree/oak_one{
-	color = "#d9b51c"
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Lk" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -7708,8 +8051,8 @@
 	},
 /area/f13/wasteland)
 "Lu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/grass,
+/obj/structure/flora/burnedtree1,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Lv" = (
 /obj/structure/chair/f13chair2{
@@ -7785,11 +8128,6 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
-"LO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "LP" = (
 /obj/structure/flora/chomp/bush5{
 	color = "#338833"
@@ -7801,7 +8139,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "LS" = (
-/obj/effect/turf_decal/weather/dirt,
+/obj/structure/fence/wooden{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "LU" = (
@@ -7859,6 +8199,18 @@
 /obj/structure/railing,
 /turf/open/indestructible/cobble,
 /area/f13/wasteland)
+"Mc" = (
+/obj/structure/railing{
+	dir = 4;
+	layer = 3;
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#EEEEEE";
+	opacity = 0
+	},
+/area/f13/wasteland)
 "Md" = (
 /obj/structure/flora/grass/coyote/ten,
 /turf/open/indestructible/ground/outside/desert,
@@ -7872,9 +8224,7 @@
 	},
 /area/f13/building)
 "Mg" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/grass,
+/turf/open/floor/carpet,
 /area/f13/wasteland)
 "Mh" = (
 /obj/effect/decal/cleanable/shreds,
@@ -7884,6 +8234,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin/trash_fallout,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/wasteland)
+"Mm" = (
+/obj/item/chair/wood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland)
 "Mn" = (
 /obj/structure/stairs/east{
@@ -7929,13 +8283,8 @@
 	},
 /area/f13/building/hospital)
 "My" = (
-/obj/structure/bed,
-/obj/item/bedsheet{
-	icon_state = "sheetgrey"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "MC" = (
 /obj/structure/rack/shelf_metal,
@@ -7960,15 +8309,31 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"MH" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	layer = 3.1;
+	pixel_x = -11;
+	pixel_y = 19
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "MI" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
-	},
-/obj/structure/flora/tallgrass3{
-	pixel_y = 18
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -7987,14 +8352,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "MW" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/ghoul,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+/obj/structure/fence/end/wooden{
+	pixel_y = 21
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
+/obj/structure/fence/wooden{
+	dir = 1
 	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "MX" = (
 /obj/structure/flora/branch_broken,
@@ -8101,14 +8465,7 @@
 	},
 /area/f13/wasteland)
 "Np" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "Nr" = (
 /obj/structure/flora/tree_stump,
@@ -8135,13 +8492,12 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Nw" = (
-/obj/structure/sign/poster/contraband/red_rum{
-	pixel_x = -32
+/obj/structure/simple_door/interior,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
 	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Nx" = (
 /obj/structure/flora/chomp/anthill1,
@@ -8274,8 +8630,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "NY" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/obj/structure/flora/tallgrass7,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Oa" = (
 /obj/structure/table/wood,
@@ -8289,12 +8645,12 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
 "Ob" = (
-/obj/structure/sign/poster/contraband/have_a_puff{
-	pixel_x = 32
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/sosjerky/ration,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Oc" = (
 /turf/closed/wall/f13/wood/interior{
@@ -8372,11 +8728,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/hospital)
 "Oy" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
+/obj/structure/bed,
+/obj/item/bedsheet{
+	icon_state = "sheetgrey"
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
 /area/f13/wasteland)
 "Oz" = (
 /obj/structure/chair/f13chair2{
@@ -8393,6 +8751,17 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/coyote/tavern_wall,
+/area/f13/wasteland)
+"OC" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "OD" = (
 /obj/item/kirbyplants{
@@ -8484,9 +8853,10 @@
 /area/f13/wasteland)
 "Pb" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+	dir = 4;
+	pixel_y = 2
 	},
-/turf/open/indestructible/ground/outside/water,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Pd" = (
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -8503,11 +8873,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Pi" = (
-/obj/structure/pondlily_small,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood1-broken"
 	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "Pm" = (
 /obj/structure/closet/crate/footchest,
@@ -8552,11 +8921,9 @@
 "Pw" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
-	dir = 4
+	dir = 5
 	},
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/indestructible/ground/outside/water,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Pz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8581,7 +8948,12 @@
 	},
 /area/f13/wasteland)
 "PD" = (
-/obj/structure/flora/rock/jungle,
+/obj/structure/fence/corner/wooden{
+	dir = 4
+	},
+/obj/structure/fence/end/wooden{
+	pixel_y = 21
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "PF" = (
@@ -8647,11 +9019,11 @@
 /area/f13/building)
 "PT" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 9
+	color = "#a98c5d";
+	dir = 8
 	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "PV" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -8673,9 +9045,9 @@
 	},
 /area/f13/wasteland)
 "PW" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/spacevine,
+/turf/closed/wall/f13/wood/interior,
 /area/f13/wasteland)
 "PZ" = (
 /obj/structure/closet/crate/bin,
@@ -8726,20 +9098,11 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Qi" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
+/obj/structure/fence/wooden{
 	dir = 4;
-	pixel_y = 2
+	icon_state = "post_wood"
 	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Qp" = (
 /obj/structure/table/wood,
@@ -8761,13 +9124,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"Qs" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+"Qr" = (
+/obj/structure/railing{
+	dir = 4;
+	layer = 3;
+	pixel_x = 2;
+	pixel_y = 1
 	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+/turf/closed/wall/f13/sunset/brick_small_light{
+	opacity = 0
 	},
 /area/f13/wasteland)
 "Qu" = (
@@ -8793,17 +9158,6 @@
 "Qy" = (
 /obj/structure/flora/chomp/anthill0,
 /turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
-"Qz" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
 /area/f13/wasteland)
 "QF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8872,8 +9226,10 @@
 	},
 /area/f13/wasteland)
 "Rd" = (
-/obj/structure/flora/burnedtree2,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Rf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9008,8 +9364,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "RC" = (
-/obj/structure/flora/burnedtree3,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/pondlily_small,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "RD" = (
 /obj/machinery/microwave/stove{
@@ -9033,13 +9392,6 @@
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet/red,
 /area/f13/building)
-"RI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland)
 "RK" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/brflowers,
@@ -9115,7 +9467,11 @@
 	},
 /area/f13/wasteland)
 "Si" = (
-/obj/structure/flora/burnedtree1,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/structure/flora/brushwood,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Sj" = (
@@ -9205,6 +9561,19 @@
 /obj/structure/flora/tallgrass3,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"SF" = (
+/obj/structure/decoration/vent/rusty{
+	pixel_y = 29
+	},
+/obj/structure/railing{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 6
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	opacity = 0
+	},
+/area/f13/wasteland)
 "SH" = (
 /obj/structure/spacevine,
 /obj/effect/turf_decal/trimline/neutral{
@@ -9214,9 +9583,8 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "SI" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
+/obj/structure/flora/tallgrass2,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "SK" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -9315,12 +9683,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"Tg" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland)
 "Tj" = (
 /obj/structure/flora/tree/chomp/lcactus3,
 /turf/open/indestructible/ground/outside/desert,
@@ -9343,9 +9705,18 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Tq" = (
-/obj/item/toy/cards/deck/cas,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/machinery/hydroponics/soil{
+	name = "riverbed soil";
+	yieldmod = 1.3
+	},
+/obj/machinery/hydroponics/soil{
+	name = "riverbed soil";
+	yieldmod = 1.3
+	},
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "Ts" = (
 /obj/machinery/autolathe,
@@ -9379,9 +9750,13 @@
 	},
 /area/f13/building)
 "TC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
+/obj/effect/turf_decal/weather/dirt{
 	dir = 1
+	},
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -38;
+	pixel_y = -2
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -9428,11 +9803,7 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
 "TN" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/structure/flora/brushwood,
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "TO" = (
@@ -9480,11 +9851,9 @@
 	},
 /area/f13/wasteland)
 "TX" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/window/fulltile/house,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "TY" = (
 /obj/structure/sign/gunshop,
@@ -9517,11 +9886,8 @@
 	},
 /area/f13/wasteland)
 "Ui" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 5
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/spacevine,
+/turf/closed/wall/f13/wood,
 /area/f13/wasteland)
 "Uj" = (
 /turf/open/floor/f13/wood,
@@ -9540,17 +9906,22 @@
 	},
 /turf/open/floor/plating/dirt/dark,
 /area/f13/wasteland)
+"Up" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Uq" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
-/area/f13/wasteland)
-"Uv" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "Ux" = (
 /obj/structure/table/optable,
@@ -9652,6 +10023,10 @@
 	name = "tile"
 	},
 /area/f13/wasteland)
+"UT" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/wasteland)
 "UU" = (
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/mineral/equipment_vendor,
@@ -9662,6 +10037,14 @@
 "UV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/brick,
+/area/f13/wasteland)
+"UW" = (
+/obj/machinery/door/unpowered/securedoor{
+	name = "Sheriff's Department";
+	req_access_txt = null;
+	req_one_access_txt = "62"
+	},
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "UX" = (
 /obj/structure/noticeboard{
@@ -9716,6 +10099,21 @@
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"Vd" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = 19
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Vg" = (
 /obj/structure/closet/crate/bin{
 	density = 0;
@@ -9763,25 +10161,20 @@
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "Vp" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 6
-	},
-/obj/structure/flora/rock/pile/largejungle,
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/chair/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Vr" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "Vs" = (
-/obj/structure/flora/ausbushes/pointybush,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/wasteland)
 "Vt" = (
 /obj/structure/fence/wooden{
@@ -9796,16 +10189,17 @@
 /obj/structure/flora/chomp/bush3,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"Vw" = (
+"Vx" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
+	dir = 4
 	},
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
-	dir = 8
+	dir = 5
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Vz" = (
 /obj/structure/flora/jungle6,
@@ -9876,11 +10270,14 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "VK" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+/obj/structure/rug/big/rug_yellow,
+/turf/open/floor/carpet,
+/area/f13/wasteland)
+"VN" = (
+/obj/structure/chair/sofa/left{
+	dir = 4
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "VQ" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -9916,8 +10313,11 @@
 /turf/closed/wall/r_wall,
 /area/f13/wasteland)
 "Wa" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt,
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
+	},
+/obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Wb" = (
@@ -10009,8 +10409,13 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Wu" = (
-/obj/structure/simple_door/dirtyglass,
-/turf/open/floor/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/wasteland)
 "Wv" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -10099,9 +10504,12 @@
 	},
 /area/f13/wasteland)
 "WP" = (
-/obj/item/toy/cards/deck/cas/black,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 10
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "WQ" = (
 /obj/structure/simple_door/house{
@@ -10139,11 +10547,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "WY" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/simple_door/metal/fence/wooden,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Xb" = (
@@ -10200,16 +10604,7 @@
 	},
 /area/f13/wasteland)
 "Xj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/indestructible/ground/outside/desert/harsh,
-/area/f13/wasteland)
-"Xk" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/turf/open/indestructible/ground/outside/gravel,
+/turf/closed/wall/f13/wood,
 /area/f13/wasteland)
 "Xl" = (
 /obj/structure/debris/v2,
@@ -10240,9 +10635,10 @@
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
 "Xr" = (
-/obj/structure/chair/stool/retro/tan,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "Xs" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -10306,19 +10702,6 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
-"XC" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4;
-	pixel_y = 2
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland)
 "XD" = (
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -10354,20 +10737,11 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "XL" = (
-/obj/structure/sign/poster/contraband/free_tonto{
-	pixel_x = 32;
-	pixel_y = 16
+/obj/structure/flora/junglebush/c{
+	pixel_x = 6;
+	pixel_y = -5
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	light_color = "red"
-	},
-/obj/structure/nest/ghoul{
-	layer = 2.7;
-	max_mobs = 1;
-	radius = 3
-	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "XN" = (
 /obj/item/storage/secure/safe{
@@ -10425,34 +10799,37 @@
 /turf/open/floor/plasteel,
 /area/f13/wasteland)
 "XW" = (
-/obj/structure/fence/end/wooden{
-	pixel_y = 21
-	},
-/obj/structure/fence/corner/wooden{
+/obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "XY" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8;
-	pixel_x = 8;
-	pixel_y = -3
+	pixel_y = -3;
+	pixel_x = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Ya" = (
-/obj/structure/simple_door/metal/fence/wooden,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "Ye" = (
 /obj/structure/flora/chomp/bones/lrock2,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Yg" = (
-/obj/structure/flora/brushwoodalt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/wasteland)
 "Yi" = (
 /obj/machinery/mineral/wasteland_vendor/mining,
@@ -10569,6 +10946,14 @@
 	color = "#AA5555"
 	},
 /area/f13/wasteland)
+"Zd" = (
+/obj/machinery/door/unpowered/securedoor{
+	name = "Sheriff's Department";
+	req_access_txt = null;
+	req_one_access_txt = "62"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "Ze" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -10591,9 +10976,9 @@
 	pixel_y = 6
 	},
 /obj/structure/fence/wooden{
-	color = "#BBBBBB";
 	dir = 4;
-	pixel_y = -5
+	pixel_y = -5;
+	color = "#BBBBBB"
 	},
 /obj/structure/fence/wooden{
 	dir = 4;
@@ -10604,18 +10989,19 @@
 	pixel_y = -2
 	},
 /obj/structure/dresser{
-	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = -2;
+	pixel_x = 6
 	},
 /obj/item/flashlight/oldlamp{
+	pixel_y = 1;
 	pixel_x = -12;
-	pixel_y = 1
+	light_on = 1
 	},
 /obj/effect/turf_decal/trimline/white/filled/line{
 	color = "#000000";
-	layer = 5;
+	pixel_y = -1;
 	name = "shadow";
-	pixel_y = -1
+	layer = 5
 	},
 /obj/structure/railing{
 	color = "#A47449";
@@ -10765,13 +11151,17 @@
 	},
 /area/f13/building)
 "ZQ" = (
-/obj/structure/fence/corner/wooden{
-	dir = 4
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4;
+	pixel_y = 2
 	},
-/obj/structure/fence/end/wooden{
-	pixel_y = 21
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
 /area/f13/wasteland)
 "ZR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10791,12 +11181,13 @@
 	},
 /area/f13/wasteland)
 "ZZ" = (
-/obj/effect/turf_decal/weather/dirt{
+/obj/machinery/shower{
 	dir = 8
 	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/wasteland)
 
@@ -16888,8 +17279,8 @@ hz
 hz
 hz
 hz
-hz
-hz
+tb
+tb
 hz
 hz
 hz
@@ -17147,9 +17538,9 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
+tb
+tb
+tb
 hz
 hz
 hz
@@ -17406,7 +17797,7 @@ hz
 hz
 hz
 hz
-hz
+tb
 hz
 hz
 hz
@@ -17660,10 +18051,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
+tb
+tb
+tb
+tb
 hz
 hz
 hz
@@ -17920,7 +18311,7 @@ hz
 hz
 hz
 hz
-hz
+tb
 hz
 hz
 hz
@@ -18175,9 +18566,9 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
+tb
+tb
+tb
 hz
 hz
 hz
@@ -18430,8 +18821,8 @@ hz
 hz
 hz
 hz
-hz
-hz
+tb
+tb
 hz
 hz
 hz
@@ -18693,18 +19084,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
 hz
 hz
 hz
@@ -18942,26 +19333,26 @@ dZ
 hz
 hz
 hz
+tb
+tb
+tb
+tb
+tb
+tb
+tb
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
 hz
 hz
 hz
@@ -19202,23 +19593,23 @@ hz
 hz
 hz
 hz
+tb
 hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+zP
+dZ
 hz
 hz
 hz
@@ -19458,24 +19849,24 @@ hz
 hz
 hz
 hz
+tb
+tb
 hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+dZ
 hz
 hz
 hz
@@ -19714,25 +20105,25 @@ hz
 hz
 hz
 hz
+tb
+hz
+hz
+tb
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+dZ
 hz
 hz
 hz
@@ -19970,26 +20361,26 @@ dZ
 hz
 hz
 hz
+tb
 hz
 hz
 hz
 hz
+tb
+tb
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+dZ
 hz
 hz
 hz
@@ -20235,18 +20626,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+dZ
 hz
 hz
 hz
@@ -20486,24 +20877,24 @@ hz
 hz
 hz
 hz
+tb
+tb
+tb
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+dZ
+dZ
 hz
 hz
 hz
@@ -20743,24 +21134,24 @@ hz
 hz
 hz
 hz
+tb
 hz
+tb
 hz
+tb
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+dZ
+dZ
 hz
 hz
 hz
@@ -21000,24 +21391,24 @@ hz
 hz
 hz
 hz
+tb
 hz
+tb
 hz
+tb
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+Dg
+dZ
+dZ
 hz
 hz
 hz
@@ -21257,24 +21648,24 @@ hz
 hz
 hz
 hz
+tb
 hz
 hz
+tb
+tb
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
 hz
 hz
 hz
@@ -21520,18 +21911,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
 hz
 hz
 hz
@@ -22028,11 +22419,11 @@ hz
 hz
 hz
 hz
+tb
 hz
 hz
 hz
-hz
-hz
+tb
 hz
 hz
 hz
@@ -22284,12 +22675,12 @@ hz
 hz
 hz
 hz
+tb
 hz
 hz
 hz
-hz
-hz
-hz
+tb
+tb
 hz
 hz
 hz
@@ -22541,12 +22932,12 @@ hz
 hz
 hz
 hz
+tb
 hz
 hz
+tb
 hz
-hz
-hz
-hz
+tb
 hz
 hz
 hz
@@ -22799,11 +23190,11 @@ hz
 hz
 hz
 hz
+tb
+tb
 hz
 hz
-hz
-hz
-hz
+tb
 hz
 hz
 hz
@@ -26874,8 +27265,8 @@ hz
 hz
 hz
 hz
-tb
-tb
+hz
+hz
 hz
 hz
 hz
@@ -27133,9 +27524,9 @@ hz
 hz
 hz
 hz
-tb
-tb
-tb
+hz
+hz
+hz
 hz
 hz
 hz
@@ -27392,7 +27783,7 @@ hz
 hz
 hz
 hz
-tb
+hz
 hz
 hz
 hz
@@ -27646,10 +28037,10 @@ hz
 hz
 hz
 hz
-tb
-tb
-tb
-tb
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -27906,7 +28297,7 @@ hz
 hz
 hz
 hz
-tb
+hz
 hz
 hz
 hz
@@ -28161,9 +28552,9 @@ hz
 hz
 hz
 hz
-tb
-tb
-tb
+hz
+hz
+hz
 hz
 hz
 hz
@@ -28416,8 +28807,8 @@ hz
 hz
 hz
 hz
-tb
-tb
+hz
+hz
 hz
 hz
 hz
@@ -28679,18 +29070,18 @@ hz
 hz
 hz
 hz
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -28928,26 +29319,26 @@ dZ
 hz
 hz
 hz
-tb
-tb
-tb
-tb
-tb
-tb
-tb
 hz
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -29188,23 +29579,23 @@ hz
 hz
 hz
 hz
-tb
 hz
 hz
 hz
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-zP
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -29444,24 +29835,24 @@ hz
 hz
 hz
 hz
-tb
-tb
 hz
 hz
 hz
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -29700,25 +30091,25 @@ hz
 hz
 hz
 hz
-tb
-hz
-hz
-tb
 hz
 hz
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -29956,26 +30347,26 @@ dZ
 hz
 hz
 hz
-tb
 hz
 hz
 hz
 hz
-tb
-tb
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -30221,18 +30612,18 @@ hz
 hz
 hz
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -30472,24 +30863,24 @@ hz
 hz
 hz
 hz
-tb
-tb
-tb
 hz
 hz
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-dZ
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -30729,24 +31120,24 @@ hz
 hz
 hz
 hz
-tb
 hz
-tb
 hz
-tb
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-dZ
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -30986,24 +31377,24 @@ hz
 hz
 hz
 hz
-tb
 hz
-tb
 hz
-tb
 hz
-dZ
-dZ
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-Dg
-dZ
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -31243,24 +31634,24 @@ hz
 hz
 hz
 hz
-tb
 hz
 hz
-tb
-tb
 hz
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -31499,87 +31890,87 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-dZ
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
 hz
 hz
 hz
@@ -31755,89 +32146,89 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+wb
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Cv
+TE
 hz
 hz
 hz
@@ -32012,89 +32403,89 @@ hz
 hz
 hz
 hz
-hz
-hz
-tb
-hz
-hz
-hz
-tb
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -32269,89 +32660,89 @@ hz
 hz
 hz
 hz
-hz
-tb
-hz
-hz
-hz
-tb
-tb
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -32526,89 +32917,89 @@ hz
 hz
 hz
 hz
-hz
-tb
-hz
-hz
-tb
-hz
-tb
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+dZ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+kQ
+dZ
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -32783,89 +33174,89 @@ hz
 hz
 hz
 hz
-hz
-hz
-tb
-tb
-hz
-hz
-tb
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+DA
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+dc
+dc
+dc
+dc
+dc
+dc
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -33040,6 +33431,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+lR
+TE
 hz
 hz
 hz
@@ -33111,18 +33508,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -33297,6 +33688,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -33368,18 +33765,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -33554,14 +33945,22 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+hj
 NA
 NA
 NA
@@ -33605,15 +34004,7 @@ NA
 NA
 NA
 NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+hj
 NA
 NA
 NA
@@ -33631,12 +34022,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -33811,14 +34202,23 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+NA
+iT
+iT
+iT
+iT
+NA
+NA
+iT
+iT
 NA
 iT
 iT
@@ -33859,20 +34259,11 @@ iT
 iT
 iT
 iT
+NA
 iT
 iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
+NA
+NA
 iT
 iT
 iT
@@ -33888,12 +34279,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -34068,12 +34459,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -34081,6 +34472,8 @@ iT
 iT
 iT
 iT
+NA
+Dx
 iT
 iT
 iT
@@ -34123,13 +34516,11 @@ iT
 iT
 iT
 iT
+NA
 iT
 iT
-iT
-iT
-iT
-iT
-iT
+xZ
+NA
 iT
 iT
 iT
@@ -34145,12 +34536,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -34325,14 +34716,23 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+NA
+iT
+iT
+iT
+iT
+NA
+CK
+iT
+iT
 NA
 iT
 iT
@@ -34373,20 +34773,11 @@ iT
 iT
 iT
 iT
+NA
 iT
 iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
+CK
+NA
 iT
 iT
 iT
@@ -34402,12 +34793,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -34582,12 +34973,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -34641,7 +35032,7 @@ NA
 NA
 NA
 NA
-NA
+hj
 NA
 NA
 NA
@@ -34659,12 +35050,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -34839,12 +35230,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -34865,7 +35256,7 @@ ZG
 SC
 fX
 Gy
-FE
+mb
 mb
 hz
 hz
@@ -34916,12 +35307,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 il
 hz
 hz
@@ -35096,12 +35487,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -35173,12 +35564,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -35353,12 +35744,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -35430,12 +35821,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -35610,12 +36001,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -35687,12 +36078,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-bl
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -35867,12 +36258,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -35944,12 +36335,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -36124,12 +36515,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -36201,6 +36592,12 @@ hz
 hz
 hz
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -36209,13 +36606,7 @@ hz
 hz
 hz
 hz
-hz
-bl
-hz
-hz
-hz
-hz
-hz
+il
 hz
 hz
 hz
@@ -36381,12 +36772,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -36458,12 +36849,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 il
 hz
 hz
@@ -36548,7 +36939,7 @@ dZ
 dZ
 dZ
 dZ
-Kz
+dZ
 dZ
 dZ
 dZ
@@ -36638,12 +37029,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -36715,12 +37106,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -36895,12 +37286,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -36972,12 +37363,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 Jn
 hz
@@ -37152,12 +37543,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Ot
-Ot
+mC
+Kz
+dZ
+dZ
+kw
+mW
 Ot
 Ot
 bU
@@ -37174,10 +37565,10 @@ lX
 lX
 lX
 ly
-ZG
-SC
-fX
-Gy
+aG
+Mc
+Qr
+Jy
 hz
 hz
 hz
@@ -37229,12 +37620,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -37409,12 +37800,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Ot
-Ot
+mC
+Kz
+dZ
+dZ
+kw
+mW
 Ot
 Ot
 bU
@@ -37486,21 +37877,21 @@ hz
 hz
 hz
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
+hz
+il
 hz
 hz
 hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+il
 hz
 hz
 hz
@@ -37666,12 +38057,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -37743,12 +38134,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -37923,12 +38314,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -38000,12 +38391,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-il
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -38083,8 +38474,8 @@ tb
 hz
 dZ
 dZ
-fE
-Uj
+mP
+tr
 Uj
 Uj
 qO
@@ -38180,12 +38571,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -38202,10 +38593,10 @@ lX
 lX
 lX
 ly
-ZG
-SC
-fX
-Gy
+He
+ux
+wt
+ko
 hz
 vU
 hz
@@ -38257,12 +38648,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 il
@@ -38271,7 +38662,7 @@ hz
 hz
 hz
 hz
-hz
+il
 hz
 hz
 hz
@@ -38437,12 +38828,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -38504,9 +38895,9 @@ ze
 jd
 hz
 NA
-iT
-iT
-iT
+NA
+hj
+NA
 NA
 Sc
 hz
@@ -38514,12 +38905,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -38694,12 +39085,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -38761,9 +39152,9 @@ ze
 jd
 xr
 NA
+Mm
 iT
-iT
-iT
+NA
 NA
 Sc
 hz
@@ -38771,12 +39162,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -38856,11 +39247,11 @@ dZ
 dZ
 fE
 tD
-Jr
+Ff
 kg
 Uj
-Uj
-Uj
+VN
+kJ
 fE
 dZ
 dZ
@@ -38951,12 +39342,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -39018,9 +39409,9 @@ ze
 jd
 hz
 NA
+JU
 iT
-iT
-iT
+xZ
 NA
 Sc
 hz
@@ -39028,12 +39419,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -39117,7 +39508,7 @@ fE
 fE
 Uj
 Uj
-Uj
+bZ
 fE
 dZ
 dZ
@@ -39208,12 +39599,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -39275,9 +39666,9 @@ ze
 jd
 hz
 NA
+UT
 iT
-iT
-iT
+CK
 NA
 Sc
 hz
@@ -39285,12 +39676,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -39374,7 +39765,7 @@ pI
 uv
 Uj
 Uj
-Uj
+Jr
 fE
 dZ
 dZ
@@ -39465,12 +39856,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Ot
-Ot
-Ot
+mC
+Kz
+dZ
+gB
+kw
+mW
 Ot
 Ot
 bU
@@ -39532,9 +39923,9 @@ ze
 jd
 hz
 NA
-iT
-iT
-iT
+NA
+hj
+NA
 NA
 NA
 NA
@@ -39542,12 +39933,12 @@ NA
 NA
 Sc
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 il
@@ -39558,13 +39949,13 @@ hz
 hz
 hz
 hz
+JJ
+TN
+XW
+Xr
+TE
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+Zq
 hz
 hz
 hz
@@ -39631,7 +40022,7 @@ Oo
 ea
 Uj
 Uj
-Uj
+NN
 kg
 Uj
 NT
@@ -39722,12 +40113,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Ot
-Ot
+mC
+Kz
+dZ
+dZ
+kw
+mW
 Ot
 Ot
 bU
@@ -39799,6 +40190,12 @@ iT
 NA
 Sc
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -39809,17 +40206,11 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Fp
 fU
-fU
-kn
-hz
-hz
-hz
+ar
+JD
+Xr
+TE
 hz
 hz
 hz
@@ -39887,8 +40278,8 @@ Eq
 pI
 Zh
 Uj
-Uj
-Uj
+ya
+zf
 fE
 eg
 ae
@@ -39896,9 +40287,9 @@ dZ
 dZ
 dZ
 fE
-Uj
-Uj
-Uj
+aT
+aT
+aT
 fE
 dZ
 dZ
@@ -39979,12 +40370,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Ot
-Ot
+mC
+Kz
+dZ
+dZ
+kw
+mW
 Ot
 Ot
 bU
@@ -40056,6 +40447,12 @@ iT
 NA
 Sc
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -40067,16 +40464,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Fp
-fU
-fU
-kn
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -40150,12 +40541,12 @@ fE
 dZ
 dZ
 dZ
-Yr
-Uj
-IE
-Uj
-Uj
-Uj
+dZ
+dZ
+fE
+aT
+aT
+aT
 fE
 dZ
 dZ
@@ -40236,12 +40627,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Ot
-Ot
+mC
+Kz
+dZ
+dZ
+kw
+mW
 Ot
 Ot
 bU
@@ -40313,6 +40704,12 @@ iT
 NA
 Sc
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -40324,16 +40721,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Fp
-fU
-fU
-kn
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -40407,12 +40798,12 @@ dZ
 dZ
 dZ
 dZ
-tE
-eg
+dZ
+dZ
+fE
 fE
 Uj
-Uj
-Uj
+fE
 fE
 dZ
 dZ
@@ -40493,12 +40884,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Ot
-Ot
+mC
+Kz
+dZ
+dZ
+kw
+mW
 Ot
 Ot
 bU
@@ -40570,6 +40961,12 @@ iT
 NA
 Sc
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -40581,20 +40978,14 @@ hz
 hz
 hz
 hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
-Fp
-fU
-fU
-kn
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Zq
 hz
 hz
 hz
@@ -40750,12 +41141,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-Ot
-Ot
+mC
+Kz
+dZ
+dZ
+kw
+mW
 Ot
 Ot
 bU
@@ -40827,6 +41218,12 @@ iT
 NA
 Sc
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -40838,16 +41235,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Fp
-fU
-fU
-kn
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -40924,9 +41315,9 @@ dZ
 dZ
 dZ
 fE
-fE
-fE
-fE
+Uj
+Uj
+Uj
 fE
 dZ
 dZ
@@ -41007,12 +41398,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -41084,6 +41475,12 @@ iT
 NA
 Sc
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -41095,16 +41492,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Fp
-fU
-fU
-kn
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -41178,12 +41569,12 @@ dZ
 dZ
 dZ
 dZ
-dZ
-dZ
-fE
-fE
-fE
-fE
+Yr
+Uj
+yH
+Uj
+Uj
+Uj
 fE
 dZ
 dZ
@@ -41264,12 +41655,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -41341,6 +41732,12 @@ iT
 NA
 Sc
 hz
+TN
+Kz
+dZ
+dZ
+CZ
+TE
 hz
 hz
 hz
@@ -41352,16 +41749,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -41435,8 +41826,8 @@ dZ
 dZ
 dZ
 dZ
-dZ
-dZ
+tE
+eg
 fE
 Uj
 Uj
@@ -41521,12 +41912,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-em
-em
-em
+mC
+Kz
+dZ
+Oi
+BS
+nJ
 em
 em
 It
@@ -41598,6 +41989,13 @@ iT
 NA
 Sc
 hz
+Vd
+uU
+Nu
+Nu
+mM
+hK
+fS
 hz
 hz
 hz
@@ -41608,17 +42006,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -41692,8 +42083,8 @@ dZ
 dZ
 dZ
 dZ
-kO
-Nu
+dZ
+dZ
 fE
 Uj
 Uj
@@ -41778,12 +42169,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-em
-em
-em
+mC
+Kz
+dZ
+Oi
+BS
+nJ
 em
 em
 It
@@ -41855,6 +42246,12 @@ hj
 NA
 hz
 hz
+qU
+qU
+qU
+qU
+qU
+qU
 hz
 hz
 hz
@@ -41865,17 +42262,11 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Np
+JP
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -41949,9 +42340,9 @@ fE
 dZ
 dZ
 dZ
-Yr
-Uj
-IE
+dZ
+dZ
+fE
 Uj
 Uj
 Uj
@@ -42035,18 +42426,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-em
-em
-em
+mC
+Kz
+dZ
+Oi
+BS
+nJ
 em
 em
 It
-BL
-BL
-BL
+It
+Zd
+It
 It
 lX
 lX
@@ -42057,10 +42448,10 @@ lX
 lX
 lX
 ly
-ZG
-SC
-fX
-Gy
+aG
+Mc
+Qr
+Jy
 hz
 hz
 xr
@@ -42111,8 +42502,13 @@ ug
 ug
 cc
 ug
-ug
 hg
+qU
+qU
+qU
+qU
+qU
+qU
 hz
 hz
 hz
@@ -42123,16 +42519,11 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Np
+Np
+Np
+Xr
+TE
 hz
 hz
 hz
@@ -42292,18 +42683,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-em
-em
-em
+mC
+Kz
+dZ
+Oi
+BS
+nJ
 em
 em
 It
 BL
 BL
-BL
+It
 It
 lX
 lX
@@ -42368,8 +42759,13 @@ pq
 pq
 pq
 pq
-pq
 jd
+qU
+qU
+qU
+qU
+qU
+qU
 hz
 hz
 hz
@@ -42380,16 +42776,11 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Np
+Np
+Np
+Xr
+TE
 hz
 hz
 hz
@@ -42549,18 +42940,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+Oi
+BS
+nJ
 em
 em
-em
-em
-em
-It
+Zd
 BL
 BL
-BL
+ud
 It
 lX
 lX
@@ -42625,8 +43016,13 @@ pq
 pq
 pq
 YD
-YD
 gZ
+qU
+qU
+qU
+qU
+qU
+qU
 hz
 hz
 hz
@@ -42638,15 +43034,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Np
+Np
+Xr
+TE
 hz
 hz
 hz
@@ -42806,18 +43197,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-em
-em
-em
+mC
+Kz
+dZ
+Oi
+BS
+nJ
 em
 em
 It
 BL
 BL
-BL
+bY
 It
 lX
 lX
@@ -42883,6 +43274,12 @@ hj
 NA
 hz
 hz
+qU
+qU
+qU
+qU
+qU
+qU
 hz
 hz
 hz
@@ -42895,15 +43292,9 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Np
+Xr
+TE
 hz
 hz
 hz
@@ -43063,18 +43454,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-em
-em
-em
+mC
+Kz
+dZ
+Oi
+BS
+nJ
 em
 em
 It
-BL
-BL
-BL
+It
+Zd
+It
 It
 lX
 lX
@@ -43085,10 +43476,10 @@ lX
 lX
 lX
 ly
-ZG
-SC
-Fl
-Gy
+He
+ux
+SF
+ko
 hz
 hz
 hz
@@ -43140,6 +43531,13 @@ iT
 NA
 Sc
 hz
+MH
+OC
+hq
+hq
+Up
+JG
+aP
 hz
 hz
 hz
@@ -43151,16 +43549,9 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Np
+Xr
+TE
 hz
 hz
 hz
@@ -43320,12 +43711,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -43397,6 +43788,12 @@ iT
 NA
 Sc
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -43408,16 +43805,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -43577,12 +43968,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -43654,6 +44045,12 @@ iT
 NA
 Sc
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -43665,17 +44062,11 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
+Zq
 hz
 hz
 hz
@@ -43834,12 +44225,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -43911,6 +44302,12 @@ iT
 NA
 Sc
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -43922,16 +44319,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -44091,12 +44482,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -44168,6 +44559,12 @@ iT
 NA
 Sc
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -44177,18 +44574,12 @@ hz
 hz
 hz
 hz
+NY
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -44348,12 +44739,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -44425,6 +44816,12 @@ iT
 NA
 Sc
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -44432,20 +44829,14 @@ hz
 hz
 hz
 hz
+NY
 hz
+Ib
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -44605,12 +44996,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -44682,27 +45073,27 @@ iT
 NA
 Sc
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
 hz
 hz
 hz
+FW
+NY
+Ib
+vz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -44862,12 +45253,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -44939,9 +45330,12 @@ iT
 NA
 Sc
 hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 il
 hz
@@ -44953,17 +45347,14 @@ hz
 hz
 hz
 hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Zq
 hz
 hz
 hz
@@ -45119,12 +45510,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -45186,9 +45577,9 @@ pq
 jd
 hz
 NA
-iT
-iT
-iT
+NA
+hj
+NA
 NA
 NA
 NA
@@ -45196,6 +45587,12 @@ NA
 NA
 Sc
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -45207,16 +45604,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -45376,12 +45767,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-Dn
-Dn
-Dn
+mC
+Kz
+dZ
+nF
+fq
+AI
 Dn
 Dn
 cG
@@ -45443,9 +45834,9 @@ pq
 jd
 hz
 NA
+UT
 iT
-iT
-iT
+NA
 NA
 Sc
 hz
@@ -45453,27 +45844,27 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
+hz
+hz
+bf
+hz
+hz
+hz
+NY
 hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -45633,12 +46024,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-Dn
+mC
+Kz
+dZ
+dZ
+jF
+AI
 Dn
 Dn
 cG
@@ -45700,9 +46091,9 @@ pq
 jd
 hz
 NA
+JU
 iT
-iT
-iT
+xZ
 NA
 Sc
 hz
@@ -45710,27 +46101,27 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
 hz
 hz
 hz
+Ib
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+xD
+Ib
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -45890,12 +46281,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -45957,20 +46348,22 @@ YD
 gZ
 hz
 NA
+Mm
 iT
-iT
-iT
+CK
 NA
 Sc
-hz
-hz
-hz
-hz
 hz
 hz
 il
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -45982,12 +46375,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -46147,12 +46538,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -46214,9 +46605,9 @@ hz
 hz
 hz
 NA
-iT
-iT
-iT
+NA
+hj
+NA
 NA
 Sc
 hz
@@ -46224,6 +46615,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -46232,19 +46629,13 @@ hz
 hz
 hz
 hz
+FW
+Ib
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -46404,12 +46795,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -46481,31 +46872,31 @@ hz
 hz
 hz
 hz
-hz
-bl
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
 hz
 hz
 hz
+xD
+hz
+vz
+hz
+hz
+ar
+JD
+Xr
+TE
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Zq
 hz
 hz
 hz
@@ -46661,12 +47052,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -46738,27 +47129,27 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 il
 hz
 hz
 hz
 hz
 hz
+Jn
 hz
 hz
+NY
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -46918,12 +47309,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -46940,10 +47331,10 @@ lX
 lX
 lX
 ly
-ZG
-SC
-fX
-Gy
+aG
+Mc
+Qr
+Jy
 hz
 hz
 hz
@@ -46995,7 +47386,12 @@ hz
 hz
 hz
 hz
-il
+Ia
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -47004,18 +47400,13 @@ hz
 hz
 hz
 hz
+NY
+NY
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -47175,12 +47566,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 em
 It
@@ -47252,6 +47643,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -47263,16 +47660,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -47432,12 +47823,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 em
 It
@@ -47509,16 +47900,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-bl
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -47530,6 +47917,10 @@ hz
 hz
 hz
 hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -47689,12 +48080,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 em
 It
@@ -47766,6 +48157,14 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
+il
+hz
 hz
 hz
 hz
@@ -47775,18 +48174,10 @@ il
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -47946,12 +48337,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 em
 It
@@ -47968,10 +48359,10 @@ lX
 lX
 lX
 ly
-ZG
-SC
-fX
-Gy
+He
+ux
+wt
+ko
 hz
 mj
 cW
@@ -48023,6 +48414,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -48034,21 +48431,15 @@ hz
 hz
 hz
 hz
+TN
+XW
+Xr
+TC
 hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Zq
 hz
 hz
 hz
@@ -48203,12 +48594,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-em
+mC
+Kz
+dZ
+dZ
+jF
+nJ
 em
 em
 It
@@ -48280,12 +48671,12 @@ vU
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 il
@@ -48297,10 +48688,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -48460,12 +48851,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-em
+mC
+Kz
+dZ
+dZ
+jF
+nJ
 em
 em
 It
@@ -48537,6 +48928,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -48548,16 +48945,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -48717,12 +49108,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-em
+mC
+Kz
+dZ
+dZ
+jF
+nJ
 em
 em
 It
@@ -48794,12 +49185,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 il
 hz
 hz
@@ -48811,10 +49202,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -48974,12 +49365,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-em
+mC
+Kz
+dZ
+dZ
+jF
+nJ
 em
 em
 It
@@ -49051,6 +49442,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -49061,17 +49458,11 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+il
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -49231,12 +49622,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-em
+mC
+Kz
+dZ
+dZ
+jF
+nJ
 em
 em
 It
@@ -49308,6 +49699,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -49319,16 +49716,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -49488,12 +49879,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-em
+mC
+Kz
+dZ
+dZ
+jF
+nJ
 em
 em
 It
@@ -49565,12 +49956,12 @@ hz
 hz
 hz
 il
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -49582,10 +49973,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -49745,12 +50136,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-em
+mC
+Kz
+dZ
+dZ
+jF
+nJ
 em
 em
 It
@@ -49822,12 +50213,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 il
 hz
@@ -49838,13 +50229,13 @@ hz
 hz
 hz
 hz
+Aj
+TN
+XW
+Xr
+TE
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+il
 hz
 hz
 hz
@@ -50002,12 +50393,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -50079,6 +50470,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -50090,16 +50487,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -50259,12 +50650,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -50318,7 +50709,7 @@ NA
 NA
 NA
 NA
-NA
+hj
 NA
 NA
 NA
@@ -50336,6 +50727,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -50347,16 +50744,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -50516,14 +50907,23 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+NA
+iT
+iT
+iT
+iT
+NA
+NA
+iT
+iT
 NA
 iT
 iT
@@ -50564,20 +50964,11 @@ iT
 iT
 iT
 iT
+NA
 iT
 iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
+NA
+NA
 iT
 iT
 iT
@@ -50593,6 +50984,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -50602,18 +50999,12 @@ hz
 hz
 hz
 hz
+il
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -50773,12 +51164,12 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 NA
@@ -50786,6 +51177,8 @@ iT
 iT
 iT
 iT
+NA
+Dx
 iT
 iT
 iT
@@ -50828,13 +51221,11 @@ iT
 iT
 iT
 iT
+NA
 iT
 iT
-iT
-iT
-iT
-iT
-iT
+xZ
+NA
 iT
 iT
 iT
@@ -50850,6 +51241,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -50861,16 +51258,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -51030,14 +51421,23 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+NA
+iT
+iT
+iT
+iT
+NA
+CK
+iT
+iT
 NA
 iT
 iT
@@ -51078,20 +51478,11 @@ iT
 iT
 iT
 iT
+NA
 iT
 iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
-iT
+CK
+NA
 iT
 iT
 iT
@@ -51107,6 +51498,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -51118,16 +51515,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -51287,14 +51678,22 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+NA
+NA
+NA
+NA
+NA
+NA
+NA
+UW
 NA
 NA
 NA
@@ -51338,15 +51737,7 @@ NA
 NA
 NA
 NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
-NA
+hj
 NA
 NA
 NA
@@ -51364,6 +51755,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -51375,16 +51772,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -51544,6 +51935,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -51615,33 +52012,27 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
 hz
+il
 hz
 hz
 hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -51801,6 +52192,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -51872,6 +52269,12 @@ hz
 hz
 hz
 hz
+mC
+Kz
+dZ
+dZ
+jF
+TE
 hz
 hz
 hz
@@ -51883,22 +52286,10 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -52058,104 +52449,104 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+jF
+zt
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Pb
+Gf
+Kz
+dZ
+dZ
+jF
+TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -52315,104 +52706,104 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+dZ
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+Rd
+dZ
+dZ
+dZ
+jF
+TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -52572,104 +52963,104 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+jF
+TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+TN
+XW
+Xr
+TE
 hz
 hz
 hz
@@ -52829,100 +53220,100 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Kz
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+dZ
+jF
+TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+il
 hz
 hz
 hz
@@ -53086,106 +53477,106 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mC
+Vx
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+dr
+gi
+TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+il
 hz
 hz
 hz
@@ -53344,87 +53735,87 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
 hz
 hz
 hz
@@ -54696,17 +55087,17 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mj
+MW
+LS
+LS
+LS
+LS
+LS
+LS
+ij
+LS
+le
 hz
 hz
 hz
@@ -54953,17 +55344,17 @@ hz
 hz
 hz
 hz
+Hw
 hz
 hz
 hz
 hz
 hz
+bv
+fs
 hz
 hz
-hz
-hz
-hz
-hz
+Hw
 hz
 hz
 hz
@@ -55210,17 +55601,17 @@ hz
 hz
 hz
 hz
+Qi
 hz
 hz
 hz
 hz
+DZ
+DR
+OS
+Si
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+WY
 hz
 hz
 hz
@@ -55467,19 +55858,19 @@ hz
 hz
 hz
 hz
+Wa
 hz
 hz
 hz
+Ab
+tf
+Fo
+hk
+gw
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+mb
 hz
 hz
 hz
@@ -55724,20 +56115,20 @@ hz
 hz
 hz
 hz
+Qi
 hz
 hz
+Ab
+Dh
+sX
+vo
+RC
+Pw
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+nO
+TN
+dH
+TE
 hz
 hz
 hz
@@ -55981,20 +56372,20 @@ hz
 hz
 hz
 hz
+Wa
 hz
+Ab
 hz
+Iq
+WP
+mN
+Ya
+ow
+Ob
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+HV
+TE
 hz
 hz
 hz
@@ -56238,20 +56629,20 @@ hz
 hz
 hz
 hz
+Qi
+hz
+My
+SI
 hz
 hz
+PT
+ZF
+ZF
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+HV
+TE
 hz
 hz
 hz
@@ -56414,7 +56805,6 @@ hz
 hz
 hz
 hz
-il
 hz
 hz
 hz
@@ -56496,19 +56886,20 @@ hz
 hz
 hz
 hz
+Qi
 hz
 hz
 hz
 hz
+so
 hz
 hz
+dT
 hz
 hz
-hz
-hz
-hz
-hz
-hz
+TN
+HV
+TE
 hz
 hz
 hz
@@ -56752,20 +57143,20 @@ hz
 hz
 hz
 hz
+Qi
 hz
 hz
 hz
+bp
+rW
+pe
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+ES
+Qi
+TN
+lx
+TE
 hz
 hz
 hz
@@ -57009,19 +57400,19 @@ hz
 hz
 hz
 hz
+Qi
 hz
+My
+gA
+vR
+vR
+Vr
 hz
+My
 hz
+Qi
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+aV
 hz
 hz
 hz
@@ -57266,20 +57657,20 @@ hz
 hz
 hz
 hz
+Qi
 hz
 hz
 hz
+JT
+Tq
+hz
+dL
+FF
+hz
+nB
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+IZ
 hz
 hz
 hz
@@ -57523,12 +57914,12 @@ hz
 hz
 hz
 hz
+Qi
 hz
 hz
-hz
-hz
-hz
-hz
+XL
+vR
+vR
 hz
 hz
 hz
@@ -57699,7 +58090,6 @@ hz
 hz
 hz
 hz
-il
 hz
 hz
 hz
@@ -57781,18 +58171,19 @@ hz
 hz
 hz
 hz
+Hw
 hz
 hz
 hz
+ky
+My
 hz
 hz
 hz
 hz
+Hw
 hz
-hz
-hz
-hz
-hz
+Pb
 hz
 hz
 hz
@@ -58037,20 +58428,20 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+yJ
+LS
+LS
+LS
+LS
+LS
+LS
+LS
+LS
+LS
+PD
+TN
+dH
+TE
 hz
 hz
 hz
@@ -58294,20 +58685,20 @@ hz
 hz
 hz
 hz
+Ab
 hz
 hz
 hz
 hz
+ES
+TN
+qd
+rM
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+Wu
+TE
 hz
 hz
 hz
@@ -58470,7 +58861,6 @@ hz
 hz
 hz
 hz
-il
 hz
 hz
 hz
@@ -58553,18 +58943,19 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+aW
+AD
+Hj
+Hj
+Hj
+Ew
+Vr
+BN
+qd
+zC
+Af
+yv
+TE
 hz
 hz
 hz
@@ -58807,20 +59198,20 @@ hz
 hz
 hz
 hz
+Xj
+Ui
+Xj
+Ui
+Ha
+Xj
+Xj
+Xj
+Xj
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+aV
+iL
+dH
+DA
 hz
 hz
 hz
@@ -59064,20 +59455,20 @@ hz
 hz
 hz
 hz
+Xj
+yP
+Cx
+qJ
+FH
+qJ
+gj
+Oy
+Xj
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+qd
+oC
+TE
 hz
 hz
 hz
@@ -59321,19 +59712,19 @@ hz
 hz
 hz
 hz
+Xj
+Vs
+Cp
+Nw
+nn
+Nw
+tg
+tg
+TX
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+TN
+ZQ
+CC
 hz
 hz
 hz
@@ -59478,7 +59869,6 @@ hz
 hz
 hz
 hz
-il
 hz
 hz
 hz
@@ -59579,17 +59969,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Xj
+bM
+ZZ
+uP
+Yg
+uP
+Il
+nn
+ir
+TE
+hz
+aV
 hz
 hz
 hz
@@ -59757,13 +60148,7 @@ hz
 hz
 hz
 hz
-ms
-LS
-Tg
-Uv
-TE
 hz
-Zq
 hz
 hz
 hz
@@ -59838,12 +60223,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
+Xj
+zk
+Ui
+Xj
+PW
+uP
+uP
+Da
+uP
+tg
+am
+Ui
 hz
 hz
 hz
@@ -60014,11 +60405,6 @@ hz
 hz
 hz
 hz
-Lg
-LO
-RI
-Uv
-TE
 hz
 hz
 hz
@@ -60094,13 +60480,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-Rd
-hz
-hz
-hz
-hz
+Xj
+Uj
+Uj
+Uj
+Vp
+ny
+rf
+Yg
+qJ
+Pi
+iU
+aV
 hz
 hz
 hz
@@ -60272,94 +60663,94 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+pu
+Uj
+Uj
+Uj
+Uj
+II
+zh
+Yg
+PW
+kG
 TE
 hz
 hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
+Hj
 hz
 hz
 hz
@@ -60506,17 +60897,6 @@ hz
 hz
 hz
 hz
-mj
-qM
-rM
-rM
-rM
-rM
-rM
-rM
-TC
-rM
-XW
 hz
 hz
 hz
@@ -60529,10 +60909,6 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
 hz
 hz
 hz
@@ -60613,6 +60989,21 @@ hz
 hz
 hz
 hz
+hz
+hz
+hz
+hz
+hz
+Xj
+Uj
+Uj
+Uj
+tg
+wa
+Yg
+no
+PW
+qK
 hz
 hz
 hz
@@ -60763,17 +61154,13 @@ hz
 hz
 hz
 hz
-iU
 hz
 hz
 hz
 hz
 hz
-II
-Oy
 hz
 hz
-ky
 hz
 hz
 hz
@@ -60786,14 +61173,9 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
 hz
 hz
 hz
-Zq
 hz
 hz
 hz
@@ -60869,9 +61251,18 @@ hz
 hz
 hz
 hz
-hz
-hz
-hz
+Xj
+Uj
+Uj
+Ef
+Fg
+Yg
+bQ
+DA
+aV
+hz
+hz
+aJ
 hz
 hz
 hz
@@ -61020,17 +61411,6 @@ hz
 hz
 hz
 hz
-ky
-hz
-hz
-hz
-hz
-Ef
-IZ
-OS
-TN
-hz
-Ya
 hz
 hz
 hz
@@ -61043,88 +61423,99 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+Xj
+IE
+te
+te
+Xj
+Ui
+Xj
 TE
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-hz
 hz
 hz
 hz
@@ -61277,19 +61668,12 @@ hz
 hz
 hz
 hz
-kG
 hz
 hz
 hz
-nO
-Ew
-JD
-Pb
-TX
 hz
 hz
 hz
-mb
 hz
 hz
 hz
@@ -61300,10 +61684,6 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
 hz
 hz
 hz
@@ -61378,6 +61758,17 @@ hz
 hz
 hz
 hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+Xj
+Mg
+Mg
+Xj
 hz
 hz
 hz
@@ -61534,20 +61925,9 @@ hz
 hz
 hz
 hz
-ky
 hz
 hz
-nO
-CC
-Fg
-JJ
-Pi
-Ui
 hz
-Yg
-LS
-ul
-TE
 hz
 hz
 hz
@@ -61557,10 +61937,6 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
 hz
 hz
 hz
@@ -61641,6 +62017,21 @@ hz
 hz
 hz
 hz
+hz
+hz
+hz
+hz
+hz
+Xj
+Mg
+VK
+Xj
+hz
+hz
+hz
+hz
+hz
+Kt
 hz
 hz
 hz
@@ -61791,20 +62182,9 @@ hz
 hz
 hz
 hz
-le
 hz
-nO
 hz
-Da
-Fo
-JP
-Pw
-Vp
-WY
 hz
-LS
-Qs
-TE
 hz
 hz
 hz
@@ -61813,11 +62193,6 @@ hz
 hz
 hz
 hz
-lF
-LS
-Tg
-Uv
-TE
 hz
 hz
 hz
@@ -61892,6 +62267,22 @@ hz
 hz
 hz
 hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+Xj
+Mg
+qM
+Xj
 hz
 hz
 hz
@@ -62045,23 +62436,10 @@ hz
 hz
 hz
 hz
-aJ
-am
-gA
-am
-rf
-vR
-rf
 hz
 hz
-JT
-ZF
-ZF
 hz
 hz
-LS
-Qs
-TE
 hz
 hz
 hz
@@ -62069,12 +62447,6 @@ hz
 hz
 hz
 hz
-LS
-Xk
-Hr
-Tg
-Uv
-TE
 hz
 hz
 hz
@@ -62157,6 +62529,25 @@ hz
 hz
 hz
 hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+Xj
+Xj
+Xj
+Xj
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+Lu
 hz
 hz
 hz
@@ -62302,23 +62693,6 @@ hz
 hz
 hz
 hz
-am
-bM
-bM
-lx
-hz
-hz
-hz
-hz
-FF
-hz
-hz
-Vr
-hz
-hz
-LS
-Qs
-TE
 hz
 hz
 hz
@@ -62326,12 +62700,29 @@ hz
 hz
 hz
 hz
-LS
-Tg
-wM
-ij
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -62559,23 +62950,6 @@ hz
 hz
 hz
 hz
-aW
-bQ
-hk
-mN
-hz
-hz
-hz
-Dh
-FH
-Kt
-hz
-hz
-ES
-iU
-LS
-Qz
-TE
 hz
 hz
 hz
@@ -62583,12 +62957,29 @@ hz
 hz
 hz
 hz
-LS
-iR
-ij
-ij
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -62816,22 +63207,6 @@ hz
 hz
 hz
 hz
-bf
-dH
-ij
-nn
-hz
-vR
-zh
-DA
-DA
-Lu
-hz
-vR
-hz
-iU
-hz
-aV
 hz
 hz
 hz
@@ -62841,11 +63216,27 @@ hz
 hz
 hz
 hz
-Gq
-cf
-ij
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -63073,23 +63464,6 @@ hz
 hz
 hz
 hz
-bf
-dH
-dH
-no
-hz
-hz
-hz
-DR
-FW
-hz
-PD
-Vs
-hz
-nB
-hz
-hz
-KN
 hz
 hz
 hz
@@ -63099,10 +63473,27 @@ hz
 hz
 hz
 hz
-Gq
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -63330,15 +63721,6 @@ hz
 hz
 hz
 hz
-bf
-dL
-dL
-ny
-rf
-hz
-zk
-DA
-DA
 hz
 hz
 hz
@@ -63356,10 +63738,19 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -63587,22 +63978,6 @@ hz
 hz
 hz
 hz
-aJ
-dT
-ir
-ny
-hz
-hz
-hz
-DZ
-vR
-hz
-hz
-hz
-hz
-ky
-hz
-lF
 hz
 hz
 hz
@@ -63613,10 +63988,26 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -63844,23 +64235,6 @@ hz
 hz
 hz
 hz
-am
-am
-am
-am
-rM
-rM
-rM
-rM
-rM
-rM
-rM
-rM
-rM
-ZQ
-LS
-ul
-TE
 hz
 hz
 hz
@@ -63870,11 +64244,28 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
-Zq
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -64104,20 +64495,6 @@ hz
 hz
 hz
 hz
-nO
-hz
-hz
-hz
-hz
-ES
-LS
-PT
-VK
-hz
-hz
-LS
-nz
-TE
 hz
 hz
 hz
@@ -64127,10 +64504,24 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -64362,19 +64753,6 @@ hz
 hz
 hz
 hz
-rW
-AD
-zC
-zC
-zC
-Mg
-Lu
-Wa
-PT
-ZZ
-gg
-Dy
-TE
 hz
 hz
 hz
@@ -64382,12 +64760,25 @@ hz
 hz
 hz
 hz
-Az
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -64617,34 +65008,34 @@ hz
 hz
 hz
 hz
-am
-aJ
-am
-aJ
-Ab
-am
-am
-am
-am
-hz
-aV
-Vw
-ul
-Cx
 hz
 hz
 hz
 hz
 hz
 hz
-Az
 hz
-JF
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -64874,34 +65265,34 @@ hz
 hz
 hz
 hz
-am
-ow
-so
-wa
-Af
-wa
-Ha
-My
-am
-hz
-LS
-PT
-sl
-TE
 hz
 hz
 hz
 hz
 hz
-hx
-Az
-JF
-nv
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -65131,19 +65522,6 @@ hz
 hz
 hz
 hz
-am
-oC
-sX
-xD
-Aj
-xD
-qJ
-qJ
-PW
-hz
-LS
-XC
-Ij
 hz
 hz
 hz
@@ -65155,14 +65533,27 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
 hz
 hz
 hz
-Zq
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -65388,18 +65779,6 @@ hz
 hz
 hz
 hz
-am
-pe
-te
-tf
-vz
-tf
-Hj
-Aj
-Qi
-TE
-hz
-aV
 hz
 hz
 hz
@@ -65412,10 +65791,22 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -65642,18 +66033,6 @@ hz
 hz
 hz
 hz
-am
-bp
-aJ
-am
-pu
-tf
-tf
-BN
-tf
-qJ
-MW
-aJ
 hz
 hz
 hz
@@ -65664,15 +66043,27 @@ hz
 hz
 hz
 hz
-Az
 hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -65899,18 +66290,6 @@ hz
 hz
 hz
 hz
-am
-Uj
-Uj
-Uj
-qd
-tg
-yv
-vz
-wa
-Hw
-Np
-aV
 hz
 hz
 hz
@@ -65921,15 +66300,27 @@ hz
 hz
 hz
 hz
-JF
 hz
 hz
-JR
-JF
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -66156,20 +66547,6 @@ hz
 hz
 hz
 hz
-ar
-Uj
-Uj
-Uj
-Uj
-uP
-yJ
-vz
-pu
-HV
-TE
-hz
-hz
-zC
 hz
 hz
 hz
@@ -66183,10 +66560,24 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -66413,16 +66804,6 @@ hz
 hz
 hz
 hz
-am
-Uj
-Uj
-Uj
-qJ
-vo
-vz
-Cp
-pu
-Ib
 hz
 hz
 hz
@@ -66437,13 +66818,23 @@ hz
 hz
 hz
 hz
-hx
-JF
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -66670,18 +67061,6 @@ hz
 hz
 hz
 hz
-am
-Uj
-Uj
-iL
-qK
-vz
-yP
-Cx
-aV
-hz
-hz
-RC
 hz
 hz
 hz
@@ -66692,19 +67071,31 @@ hz
 hz
 hz
 hz
-JR
-hz
-nv
-hz
-hz
-LO
-RI
-Uv
-TE
 hz
 hz
 hz
-Zq
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -66927,14 +67318,6 @@ hz
 hz
 hz
 hz
-am
-IE
-fs
-fs
-am
-aJ
-am
-TE
 hz
 hz
 hz
@@ -66949,15 +67332,23 @@ hz
 hz
 hz
 hz
-Jn
 hz
 hz
-Az
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -67179,15 +67570,6 @@ hz
 hz
 hz
 hz
-il
-hz
-hz
-hz
-hz
-am
-bv
-bv
-am
 hz
 hz
 hz
@@ -67208,13 +67590,22 @@ hz
 hz
 hz
 hz
-Az
-Az
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -67441,16 +67832,6 @@ hz
 hz
 hz
 hz
-am
-bv
-gj
-am
-hz
-hz
-hz
-hz
-hz
-Il
 hz
 hz
 hz
@@ -67468,10 +67849,20 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -67698,10 +68089,6 @@ hz
 hz
 hz
 hz
-am
-bv
-gw
-am
 hz
 hz
 hz
@@ -67725,10 +68112,14 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -67955,18 +68346,6 @@ hz
 hz
 hz
 hz
-am
-am
-am
-am
-hz
-hz
-hz
-hz
-hz
-hz
-hz
-Si
 hz
 hz
 hz
@@ -67978,14 +68357,26 @@ hz
 hz
 hz
 hz
-il
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -68239,15 +68630,15 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-iy
 hz
 hz
 hz
 hz
-Zq
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -68478,12 +68869,6 @@ hz
 hz
 hz
 hz
-am
-am
-SI
-Wu
-am
-am
 hz
 hz
 hz
@@ -68496,10 +68881,16 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -68735,12 +69126,6 @@ hz
 hz
 hz
 hz
-am
-Nw
-NY
-NY
-Xj
-am
 hz
 hz
 hz
@@ -68753,10 +69138,16 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -68992,12 +69383,6 @@ hz
 hz
 hz
 hz
-Iq
-NY
-Tq
-WP
-Xr
-Iq
 hz
 hz
 hz
@@ -69010,10 +69395,16 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -69249,12 +69640,6 @@ hz
 hz
 hz
 hz
-am
-Ob
-NY
-NY
-XL
-am
 hz
 hz
 hz
@@ -69266,11 +69651,17 @@ hz
 hz
 hz
 hz
-il
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -69506,12 +69897,6 @@ hz
 hz
 hz
 hz
-am
-am
-am
-am
-am
-am
 hz
 hz
 hz
@@ -69524,10 +69909,16 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -69781,10 +70172,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -70037,13 +70428,13 @@ hz
 hz
 hz
 hz
-ep
-LS
-Tg
-Uv
-TE
 hz
-il
+hz
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -70295,10 +70686,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -70552,10 +70943,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -70807,12 +71198,12 @@ hz
 hz
 hz
 hz
-il
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -71066,10 +71457,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -71323,10 +71714,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -71580,10 +71971,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -71830,17 +72221,17 @@ hz
 hz
 hz
 hz
-il
 hz
 hz
 hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -72094,10 +72485,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -72351,10 +72742,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -72608,10 +72999,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -72865,10 +73256,10 @@ hz
 hz
 hz
 hz
-LS
-Tg
-Uv
-TE
+hz
+hz
+hz
+hz
 hz
 hz
 hz
@@ -73121,7 +73512,7 @@ hz
 hz
 hz
 hz
-il
+hz
 hz
 hz
 hz
@@ -73384,7 +73775,7 @@ hz
 hz
 hz
 hz
-il
+hz
 hz
 hz
 hz
