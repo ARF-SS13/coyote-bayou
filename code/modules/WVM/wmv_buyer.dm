@@ -235,7 +235,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 				cumfrosting -= thing
 		donut -= cumfrosting
 		donut[stuff] = buylist[stuff]
-		
+
 	for(var/thing in donut)
 		GLOB.wasteland_vendor_shop_list[trader_key][thing] = donut[thing]
 
@@ -307,7 +307,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
+			to_chat(usr, span_warning("Error: Insufficent coinage value for [prize.equipment_name]!"))
 		else
 			stored_caps -= prize.cost
 			GLOB.vendor_cash += prize.cost
@@ -336,7 +336,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		return FALSE
 	var/final_price = GLOB.wasteland_vendor_shop_list[trader_key][I.type]
 	if(!looping)
-		say("I'll give you [final_price] caps per [I]!", just_chat = silent)
+		say("I'll give you [final_price] copper per [I]!", just_chat = silent)
 	return TRUE
 
 /obj/machinery/mineral/wasteland_trader/proc/lock_belt(silent)
@@ -432,7 +432,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(fractional)
 		payout_fractional(fractional)
 	var/storedcaps = payout(final_price)
-	say("Sold [I] for [final_price] caps, bringing the total to [storedcaps] caps!")
+	say("Sold [I] for [final_price] caps, bringing the total to [storedcaps] copper!")
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()
@@ -615,13 +615,13 @@ ORGAN SELLER
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Heart : 30 caps<br>"
-	dat += "Lungs : 25 caps<br>"
-	dat += "Liver : 15 caps<br>"
-	dat += "Stomach : 15 caps<br>"
-	dat += "Eyes : 5 caps<br>"
-	dat += "Ears : 5 caps<br>"
-	dat += "Tongue : 5 caps<br>"
+	dat += "Heart : 30 copper<br>"
+	dat += "Lungs : 25 copper<br>"
+	dat += "Liver : 15 copper<br>"
+	dat += "Stomach : 15 copper<br>"
+	dat += "Eyes : 5 copper<br>"
+	dat += "Ears : 5 copper<br>"
+	dat += "Tongue : 5 copper<br>"
 	dat += "Brain : UNAVAILABLE<br>"
 	dat += ""
 	dat += "</div>"
@@ -656,10 +656,10 @@ Fence
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Turn your kills into caps today!</b><br>"
-	dat += "Small Roller Bounty Ticket: 100 caps<br>"
-	dat += "Medium Roller Bounty Ticket: 200 caps<br>"
-	dat += "High Roller Bounty Ticket: 400 caps<br>"
-	dat += "King's Bounty Ticket: 800 caps<br>"
+	dat += "Small Roller Bounty Ticket: 1 copper<br>"
+	dat += "Medium Roller Bounty Ticket: 200 copper<br>"
+	dat += "High Roller Bounty Ticket: 400 copper<br>"
+	dat += "King's Bounty Ticket: 800 copper<br>"
 	dat += ""
 	dat += "</div>"
 
@@ -706,8 +706,8 @@ Fence
 	dat += "<b>Disarming the Wasteland one gun at a time.</b><br>"
 	dat += "<b>Warning: The automated system cannot guarantee an accurate appraisal of value.</b><br>"
 	dat += "<b>Accepted goods and prices:</b><br>"
-	dat += "Pistols and revolvers: 5-10 caps<br>"
-	dat += "Rifles and Shotguns : 10-15 caps<br>"
+	dat += "Pistols and revolvers: 5-10 copper<br>"
+	dat += "Rifles and Shotguns : 10-15 copper<br>"
 	dat += "Does not accept weapons of historical or artisanal value. Those belong in a musuem."
 	dat += ""
 	dat += "</div>"
