@@ -12,20 +12,15 @@
 	maxbodytemp = T0C + 40
 	health = 200
 	maxHealth = 200
-	speed = 0
+	speed = 0.5
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "bops"
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	attack_verb_continuous = "attacks"
-	attack_verb_simple = "attack"
-	friendly_verb_continuous = "nuzzles"
-	friendly_verb_simple = "nuzzle"
-	attack_sound = 'sound/weapons/bladeslice.ogg'
-	melee_damage_lower = 5
-	melee_damage_upper = 15
+	attack_verb_continuous = "nuzzles"
+	attack_verb_simple = "nuzzle"
 	turns_per_move = 5
 	pass_flags = PASSTABLE //Impossible to climb tables so just pass over them for now
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
@@ -39,11 +34,11 @@
 	///The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
 	var/list/p_types = list()
 	///Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
-	var/list/p_additional_moves = list()
+	var/list/additional_moves = list()
 	///List of passive traits/flags
 	var/list/p_traits = list()
 	///Moves/Abilities that this mob is currently using
-	var/list/p_active_moves = list()
+	var/list/active_moves = list()
 
 /mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
@@ -167,7 +162,7 @@
 	icon_living = "ditto"
 	icon_dead = "ditto_d"
 	p_types = list(P_TYPE_NORM)
-//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)//amogus
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)//amogus
 	mob_size = MOB_SIZE_SMALL
 
 /mob/living/simple_animal/pokemon/dragonair
@@ -178,7 +173,7 @@
 	icon_dead = "dragonair_d"
 	p_types = list(P_TYPE_DRAGON)
 //	aquatic_movement = 1
-//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
@@ -263,7 +258,7 @@
 	icon_living = "flygon"
 	icon_dead = "flygon_d"
 	p_types = list(P_TYPE_GROUND, P_TYPE_DRAGON)
-//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
@@ -331,7 +326,7 @@
 	icon_living = "jirachi"
 	icon_dead = "jirachi_d"
 	p_types = list(P_TYPE_STEEL, P_TYPE_PSYCH)
-//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 
 /mob/living/simple_animal/pokemon/jolteon
@@ -345,7 +340,7 @@
 
 /mob/living/simple_animal/pokemon/jolteon/bud
 	name = "Bud"
-	p_active_moves = list(M_SHOCK) //Shocks you by default
+	active_moves = list(M_SHOCK) //Shocks you by default
 
 /mob/living/simple_animal/pokemon/kirlia
 	name = "kirlia"
@@ -526,7 +521,7 @@
 	icon_living = "ninetales"
 	icon_dead = "ninetales_d"
 	p_types = list(P_TYPE_FIRE)
-//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_telepathy)
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_telepathy)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
 /mob/living/simple_animal/pokemon/ponyta
@@ -643,7 +638,7 @@
 	icon_living = "mew"
 	icon_dead = "mew_d"
 	p_types = list(P_TYPE_PSYCH)
-//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover,
 //							/mob/living/simple_animal/pokemon/proc/move_imposter,
 //							/mob/living/simple_animal/pokemon/proc/move_invisibility)
@@ -655,7 +650,7 @@
 	icon_living = "mewtwo"
 	icon_dead = "mewtwo_d"
 	p_types = list(P_TYPE_PSYCH)
-//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 
 /mob/living/simple_animal/pokemon/purrloin
@@ -714,7 +709,7 @@
 	icon_living = "zoroark"
 	icon_dead = "zoroark_d"
 	p_types = list(P_TYPE_DARK)
-//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 
 /mob/living/simple_animal/pokemon/zorua
 	name = "zorua"
@@ -722,7 +717,7 @@
 	icon_living = "zorua"
 	icon_dead = "zorua_d"
 	p_types = list(P_TYPE_DARK)
-//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 	mob_size = MOB_SIZE_SMALL
 
 /mob/living/simple_animal/pokemon/zorua_hisuian
@@ -731,7 +726,7 @@
 	icon_living = "zorua_hisuian"
 	icon_dead = "zorua_hisuian_d"
 	p_types = list(P_TYPE_NORM, P_TYPE_GHOST)
-//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
+//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 	mob_size = MOB_SIZE_SMALL
 
 ///////////////////////
