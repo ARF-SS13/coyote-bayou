@@ -540,6 +540,19 @@
 	icon_state = "armingsword"
 	item_state = "armingsword"
 
+/obj/item/melee/coyote/oldlongsword/longquan
+	name = "Old Chinese Sword"
+	desc = "The Communist blade cuts on both sides, or something."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "longquan"
+	item_state = "longquan"
+
+/obj/item/melee/coyote/oldlongsword/xiphos
+	name = "Old Xiphos"
+	desc = "For what some of its owners may have done in the past this thing ain't all that great."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "xiphos"
+	item_state = "xiphos"
 
 //danimaul//
 //why am I making this
