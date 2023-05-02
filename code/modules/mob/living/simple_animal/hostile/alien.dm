@@ -186,3 +186,12 @@
 		M.clean_blood()
 		visible_message("[src] polishes \the [target].")
 		return TRUE
+
+/mob/living/simple_animal/pet/catslug/roxy //Yes I'm making her a catslug
+	name = "Roxy"
+	desc = "A xenomorph! This one is wearing a maid dress. Cute! You think."
+	icon = 'icons/mob/alien.dmi'
+	icon_living = "maid"
+	icon_state = "maid"
+	icon_dead = "maid_dead"
+	rotate_on_lying = FALSE // plop~
