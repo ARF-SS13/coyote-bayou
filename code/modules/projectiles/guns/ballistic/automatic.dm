@@ -2203,8 +2203,8 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/wt550
-	name = "4.73mm carbine"
-	desc = "A WT-550 Personal Defense Weapon, manufactured by West Tek. It fires 4.73mm caseless rounds."
+	name = "WT-550 PDW"
+	desc = "The WT-550 is a Personal Defense Weapon manufactured by West-Tek. Similar to the P90, it was intended to be a concealable weapon able to penetrate body armor. Considering how rare this weapon is, it seems it wasn't very popular."
 	item_state = "m90"
 	icon_state = "WT550"
 	mag_type = /obj/item/ammo_box/magazine/m473/small
@@ -2221,6 +2221,14 @@
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
+
+/obj/item/gun/ballistic/automatic/wt550/worn
+	name = "WT-550 Sporting Carbine"
+	desc = "A WT-550 locked to semi-automatic and marketed for sport shooting or home defense. This one looks like it has seen better days."
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 
 /* * * * *
  * LMGs  *
