@@ -58711,6 +58711,17 @@
 /obj/structure/barricade/tentclothedge,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/abandoned)
+"lGx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/item/stack/f13Cash/random/denarius,
+/obj/item/stack/f13Cash/random/denarius,
+/obj/item/stack/f13Cash/random/denarius,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "lGF" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt{
@@ -81645,6 +81656,16 @@
 /obj/structure/flora/grass/coyote/one,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"rTD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/item/stack/f13Cash/aureus,
+/obj/item/stack/f13Cash/aureus,
+/obj/item/stack/f13Cash/aureus,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "rTG" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2"
@@ -116392,9 +116413,9 @@ eiJ
 nSY
 vcH
 dVF
-bXi
+rTD
 lgQ
-sHS
+lGx
 brF
 bXi
 nSY
