@@ -1002,12 +1002,12 @@
 	return loc_temp
 
 /mob/living/proc/get_standard_pixel_x_offset(lying = 0)
-	if(client?.prefs.custom_pixel_x != 0)
+	if(client?.prefs?.custom_pixel_x)
 		return client.prefs.custom_pixel_x
 	return initial(pixel_x)
 
 /mob/living/proc/get_standard_pixel_y_offset(lying = 0)
-	if(client?.prefs.custom_pixel_y != 0)
+	if(client?.prefs?.custom_pixel_y)
 		return client.prefs.custom_pixel_y
 	return initial(pixel_y)
 

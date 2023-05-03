@@ -986,25 +986,31 @@
 	sound = 'sound/effects/bwoing.ogg'
 
 /datum/emote/living/bwoing/run_emote(mob/user, params)
-	. = ..()
+	. = ..()	
+	var/matrix/tf = matrix(user.transform)
 	animate(
-	src,
-	transform = user.transform.Translate(0,2),
-	time = 0.5 SECONDS,
-	easing = CUBIC_EASING | EASE_OUT
-)
+		user,
+		transform = tf.Translate(0,2),
+		time = 0.2 SECONDS,
+		easing = CUBIC_EASING | EASE_OUT
+	)
 	animate(
-	src,
-	transform = user.transform.Translate(0,-4),
-	time = 0.5 SECONDS,
-	easing = CUBIC_EASING | EASE_OUT
-)
+		user,
+		transform = tf.Translate(0,-3),
+		time = 0.2 SECONDS,
+		easing = CUBIC_EASING | EASE_OUT
+	)
 	animate(
-	src,
-	transform = user.transform.Translate(0,2),
-	time = 0.5 SECONDS,
-	easing = CUBIC_EASING | EASE_OUT
-)
+		user,
+		transform = tf.Translate(0,1),
+		time = 0.2 SECONDS,
+		easing = CUBIC_EASING | EASE_OUT
+	)
+
+/datum/emote/living/bounce
+	key = "bounce"
+	key_third_person = "bounces on their toes!"
+	message = "bounces on their toes!"
 
 /datum/emote/plap
 	key = "plap"
