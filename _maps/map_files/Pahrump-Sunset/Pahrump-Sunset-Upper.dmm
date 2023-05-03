@@ -3951,10 +3951,12 @@
 /area/f13/building/tribal)
 "dMJ" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/stack/f13Cash/random/banker,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/stack/f13Cash/random/aureus,
+/obj/item/stack/f13Cash/random/aureus,
+/obj/item/stack/f13Cash/random/aureus,
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
@@ -18294,6 +18296,26 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
+"qZv" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/obj/item/stack/f13Cash/random/denarius/high,
+/turf/open/floor/f13{
+	icon_state = "darkredfull"
+	},
+/area/f13/building)
 "qZx" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -36244,7 +36266,7 @@ nSB
 cqK
 lfZ
 nSB
-tTI
+qZv
 cqK
 nSB
 oez
