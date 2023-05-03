@@ -402,7 +402,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(istype(thing2sell, /obj/item/stack))
 		var/obj/item/stack/S = thing2sell
 		final_price = S.amount * final_price
-	var/time2sell = final_price SECONDS
+	var/time2sell = final_price * 0.5 SECONDS
 	say("Now processing [thing2sell]!", just_chat = TRUE)
 	start_progress_bar(time2sell)
 	soundloop.start()

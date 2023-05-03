@@ -130,16 +130,16 @@
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
 
 /datum/design/ammolathe/a308empty
-	name = "empty 308 stripper clip"
+	name = "empty .308 stripper clip"
 	id = "a308empty"
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/ammo_box/a308/empty
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
 
 /datum/design/ammolathe/a308empty_2
-	name = "empty double-stack 308 stripper clip"
+	name = "empty double-stack .308 stripper clip"
 	id = "a308empty-ex"
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a308/doublestacked/empty
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
 
@@ -550,14 +550,14 @@
 /datum/design/ammolathe/garand308
 	name = "empty garand en-bloc clip (.30-06)"
 	id = "garand308"
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/garand3006/empty
 	category = list("initial", "Intermediate Magazines")
 
 /datum/design/ammolathe/sks308
 	name = "empty sks en-bloc clip (.308)"
 	id = "sks308"
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/sks/empty
 	category = list("initial", "Intermediate Magazines")
 

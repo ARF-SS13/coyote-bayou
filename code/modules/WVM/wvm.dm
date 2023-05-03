@@ -538,6 +538,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
 		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
+		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
+		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
 		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
 		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300)
 		)
@@ -547,6 +549,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
 		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
+		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
+		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
 		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
 		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300)
 		)
