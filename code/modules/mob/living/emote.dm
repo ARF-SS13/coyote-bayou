@@ -518,6 +518,9 @@
 	key_third_person = "twitches"
 	message = "twitches violently."
 
+/datum/emote/living/twitch/run_emote(mob/user, params)
+	user.Jitter(20)
+	
 /datum/emote/living/twitch_s
 	key = "twitch_s"
 	message = "twitches."
