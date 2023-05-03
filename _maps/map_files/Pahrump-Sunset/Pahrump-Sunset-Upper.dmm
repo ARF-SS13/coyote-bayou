@@ -4133,10 +4133,6 @@
 	icon_state = "trimline_corner_fill";
 	dir = 4
 	},
-/obj/machinery/power/solar/fake{
-	density = 0;
-	pixel_y = -8
-	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "dTO" = (
@@ -16609,6 +16605,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"ptK" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 4
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "ptR" = (
 /obj/structure/sink{
 	pixel_y = 19
@@ -22687,6 +22692,14 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"vdD" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "vdF" = (
 /obj/structure/table/booth,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
@@ -31897,14 +31910,14 @@ dUa
 dUa
 dUa
 cbg
-dUa
+oqk
 dUa
 dUa
 oqk
 oqk
 dUa
-xFm
-pRA
+dUa
+qsv
 vSo
 oez
 oez
@@ -32151,17 +32164,17 @@ dUa
 dUa
 xel
 oqk
-oqk
-oqk
-oqk
-oqk
-oqk
+aCK
+gQO
 dUa
+aCK
+gQO
+gen
+aCK
+gQO
+xVM
 dUa
-oqk
-oqk
 oeP
-oez
 oez
 oez
 oez
@@ -32407,18 +32420,18 @@ nAu
 gtb
 gtb
 gtb
-gtb
+vdD
 dTz
-gQO
 dUa
-aCK
-gQO
-gen
-aCK
-gQO
-xVM
+oqk
+oqk
+dUa
+oqk
+dUa
+dUa
+oqk
+oqk
 oeP
-oez
 oez
 oez
 oez
@@ -32665,17 +32678,17 @@ oez
 oez
 oez
 oez
-gWO
+hOU
+gQO
 dUa
-dUa
-dUa
-dUa
-dUa
-dUa
+aCK
+gQO
+oqk
+aCK
+gQO
 dUa
 dUa
 oeP
-oez
 oez
 oez
 oez
@@ -32922,17 +32935,17 @@ oez
 oez
 oez
 oez
-hOU
-gQO
-dUa
-aCK
-gQO
-dUa
-aCK
-gQO
-dUa
-oeP
-oez
+nAu
+gtb
+vdD
+gtb
+gtb
+ptK
+gtb
+pRA
+pRA
+gtb
+vSo
 oez
 oez
 oez
@@ -33179,16 +33192,16 @@ oez
 oez
 oez
 oez
-nAu
-gtb
-gtb
-gtb
-gtb
-gtb
-gtb
-pRA
-pRA
-vSo
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -33693,10 +33706,10 @@ oez
 oez
 oez
 oez
-poH
-nEl
-nEl
-wky
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -33950,10 +33963,10 @@ oez
 oez
 oez
 oez
-gWO
-dUa
-dUa
-oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -34207,10 +34220,10 @@ oez
 oez
 oez
 oez
-gWO
-dUa
-dUa
-oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -34463,11 +34476,11 @@ uiW
 oez
 oez
 oez
-oez
-gWO
-dUa
-dUa
-tiW
+poH
+nEl
+nEl
+nEl
+nEl
 wky
 oez
 oez
