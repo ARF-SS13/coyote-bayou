@@ -49,38 +49,7 @@
 
 /datum/emote/living/chuckle/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = 1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(3)
-	animate(
-		user,
-		pixel_y = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/chuckle/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -111,37 +80,7 @@
 /datum/emote/living/cough/run_emote(mob/user, params)
 	. = ..()
 //	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = 1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(3)
-	animate(
-		user,
-		pixel_y = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
 	. = ..()
@@ -258,7 +197,7 @@
 				H.CloseWings()
 			else
 				H.OpenWings()
-			addtimer(CALLBACK(H, open ? /mob/living/carbon/human.proc/OpenWings : /mob/living/carbon/human.proc/CloseWings), wing_time)
+			addtimer(CALLBACK(H, open ? /mob/living/carbon/human/atom/.proc/OpenWings : /mob/living/carbon/human/atom/.proc/CloseWings), wing_time)
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
@@ -307,38 +246,7 @@
 
 /datum/emote/living/giggle/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = 1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = 1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 0.5 SECONDS)
 
 /datum/emote/living/giggle/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -380,31 +288,7 @@
 
 /datum/emote/living/jump/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.4 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(5)
-	animate(
-		user,
-		pixel_y = 5,
-		time = 0.3 SECONDS,
-		easing = JUMP_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = -4,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/living/kiss
 	key = "kiss"
@@ -431,38 +315,7 @@
 
 /datum/emote/living/audible/laugh/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = -2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = -2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 1.5 SECONDS)
 
 /datum/emote/living/audible/laugh/get_sound(mob/living/user)
 	. = ..()
@@ -504,25 +357,9 @@
 	message = "nods."
 	message_param = "nods at %t."
 
-/datum/emote/living/giggle/run_emote(mob/user, params)
+/datum/emote/living/nod/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = 1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-
+	INVOKE_ASYNC(user, /atom/.proc/do_directional_tilt, 5, 0.5 SECONDS)
 
 /datum/emote/living/point
 	key = "point"
@@ -574,38 +411,7 @@
 
 /datum/emote/living/shake/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_x = 1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_x = -1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_x = 1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_x = -1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1.2 SECONDS)
 
 /datum/emote/living/shiver
 	key = "shiver"
@@ -616,39 +422,7 @@
 
 /datum/emote/living/shiver/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_x = 1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_x = -1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_x = 1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_x = -1,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/sigh
 	key = "sigh"
@@ -691,23 +465,7 @@
 
 /datum/emote/living/shake/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_x = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(4)
-	animate(
-		user,
-		pixel_x = -2,
-		time = 0.4 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 1.5 SECONDS)
 
 /datum/emote/living/sneeze/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -1266,38 +1024,7 @@
 
 /datum/emote/living/bwoing/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = 1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(3)
-	animate(
-		user,
-		pixel_y = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 0.6 SECONDS)
 
 /datum/emote/living/bounce
 	key = "bounce"
@@ -1306,39 +1033,7 @@
 
 /datum/emote/living/bounce/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_y = 1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(3)
-	animate(
-		user,
-		pixel_y = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_y = -1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, 0, 2, 0, 1.5 SECONDS)
 
 /datum/emote/plap
 	key = "plap"
@@ -1434,38 +1129,8 @@
 
 /datum/emote/rattle/run_emote(mob/user, params)
 	. = ..()
-//	var/matrix/tf = matrix(user.transform)
-	animate(
-		user,
-		pixel_x = 1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_x = -2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(3)
-	animate(
-		user,
-		pixel_x = 2,
-		time = 0.3 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
-	sleep(2)
-	animate(
-		user,
-		pixel_x = -1,
-		time = 0.2 SECONDS,
-		easing = LINEAR_EASING,
-		flags = ANIMATION_RELATIVE
-	)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1.5 SECONDS)
+
 
 /datum/emote/snakehiss
 	key = "shiss"
