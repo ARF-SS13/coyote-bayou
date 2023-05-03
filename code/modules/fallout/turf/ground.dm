@@ -88,7 +88,13 @@ GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/wasteplant/wild_agave = 5,
 	/obj/structure/flora/tree/joshua = 3,
 	/obj/structure/flora/tree/cactus = 2,
-	/obj/structure/flora/tree/wasteland = 2
+	/obj/structure/flora/tree/wasteland = 2,
+	/obj/structure/flora/wild_plant/thistle = 10,
+	/obj/structure/flora/wild_plant/petunia = 10,
+	/obj/structure/flora/wild_plant/petunia/purple = 10,
+	/obj/structure/flora/wild_plant/petunia/purplewhite = 10,
+	/obj/structure/flora/wild_plant/petunia/redwhite =  10,
+	/obj/structure/flora/wild_plant/petunia/bluewhite = 10
 	))
 
 GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
