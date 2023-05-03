@@ -985,6 +985,27 @@
 	message = "bounces vivaciously."
 	sound = 'sound/effects/bwoing.ogg'
 
+/datum/emote/living/bwoing/run_emote(mob/user, params)
+	. = ..()
+	animate(
+	src,
+	transform = user.transform.Translate(0,2),
+	time = 0.5 SECONDS,
+	easing = CUBIC_EASING | EASE_OUT
+)
+	animate(
+	src,
+	transform = user.transform.Translate(0,-4),
+	time = 0.5 SECONDS,
+	easing = CUBIC_EASING | EASE_OUT
+)
+	animate(
+	src,
+	transform = user.transform.Translate(0,2),
+	time = 0.5 SECONDS,
+	easing = CUBIC_EASING | EASE_OUT
+)
+
 /datum/emote/plap
 	key = "plap"
 	key_third_person = "plaps?"
