@@ -1127,3 +1127,10 @@
 	icon_state = "steel"
 	item_state = "steel"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/ranger/ned
+	name = "Ned Armor"
+	desc = "Maybe it will protect you, maybe it won't. Who's to know."
+	icon_state = "ned"
+	item_state = "ned"
+	armor = ARMOR_VALUE_LIGHT

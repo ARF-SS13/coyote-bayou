@@ -996,8 +996,44 @@
 	icon_state = "lrock4"
 	anchored = TRUE
 
-/obj/structure/flora/thistle
+/obj/structure/flora/wild_plant/thistle
 	name = "thistle"
 	icon = 'modular_coyote/icons/objects/flora.dmi'
 	icon_state = "thistle"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/blue
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_blue"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/purple
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_purple"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/purplewhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_purplewhite"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/redwhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_redwhite"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/bluewhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_bluewhite"
 	anchored = TRUE

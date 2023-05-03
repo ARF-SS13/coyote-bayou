@@ -1060,6 +1060,7 @@
 	icon_state = "swim_black"
 	item_state = "swim_black"
 	item_color = "swim_black"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/swimsuit/blue
 	name = "blue swimsuit"
@@ -1067,6 +1068,7 @@
 	icon_state = "swim_blue"
 	item_state = "swim_blue"
 	item_color = "swim_blue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/swimsuit/purple
 	name = "purple swimsuit"
@@ -1074,6 +1076,7 @@
 	icon_state = "swim_purp"
 	item_state = "swim_purp"
 	item_color = "swim_purp"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/swimsuit/green
 	name = "green swimsuit"
@@ -1081,6 +1084,7 @@
 	icon_state = "swim_green"
 	item_state = "swim_green"
 	item_color = "swim_green"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/swimsuit/red
 	name = "red swimsuit"
@@ -1088,6 +1092,8 @@
 	icon_state = "swim_red"
 	item_state = "swim_red"
 	item_color = "swim_red"
+	can_adjust = FALSE
+
 
 /obj/item/clothing/under/swimsuit/striped
 	name = "striped swimsuit"
@@ -1095,6 +1101,7 @@
 	icon_state = "swim_striped"
 	item_state = "swim_striped"
 	item_color = "swim_striped"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/swimsuit/white
 	name = "white swimsuit"
@@ -1102,6 +1109,7 @@
 	icon_state = "swim_white"
 	item_state = "swim_white"
 	item_color = "swim_white"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/swimsuit/earth
 	name = "earthen swimsuit"
@@ -1109,6 +1117,7 @@
 	icon_state = "swim_earth"
 	item_state = "swim_earth"
 	item_color = "swim_earth"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/revealingdress
 	name = "Revealing Dress"
@@ -1116,6 +1125,7 @@
 	icon_state = "revealingdress"
 	item_state = "revealingdress"
 	item_color = "revealingdress"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/rippedpunk
 	name = "Ripped Punk"
@@ -1123,6 +1133,7 @@
 	icon_state = "rippedpunk"
 	item_state = "rippedpunk"
 	item_color = "rippedpunk"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gothic_dress_virgo
 	name = "gothic dress"
@@ -1130,6 +1141,7 @@
 	icon_state = "gothic"
 	item_state = "gothic"
 	item_color = "gothic"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/fancy_red_formaldress
 	name = "Red Formal"
@@ -1137,6 +1149,7 @@
 	icon_state = "formalred"
 	item_state = "formalred"
 	item_color = "formalred"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/greenasym
 	name = "Green wrapped dress"
@@ -1144,6 +1157,7 @@
 	icon_state = "greenasym"
 	item_state = "greenasym"
 	item_color = "greenasym"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/cyberhell
 	name = "Cyber Hell"
@@ -1151,6 +1165,7 @@
 	icon_state = "cyberhell"
 	item_state = "cyberhell"
 	item_color = "cyberhell"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/floofdress
 	name = "floof dress"
@@ -1158,6 +1173,7 @@
 	icon_state = "floofdress"
 	item_state = "floofdress"
 	item_color = "floofdress"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/blackngold
 	name = "black and gold dress"
@@ -1165,6 +1181,7 @@
 	icon_state = "blackngold"
 	item_state = "blackngold"
 	item_color = "blackngold"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/sheerblue
 	name = "A sheer blue dress"
@@ -1172,6 +1189,7 @@
 	icon_state = "sheerblue"
 	item_state = "sheerblue"
 	item_color = "sheerblue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/whitegown
 	name = "White Gown"
@@ -1179,6 +1197,7 @@
 	icon_state = "whitegown"
 	item_state = "whitegown"
 	item_color = "whitegown"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/pinksun
 	name = "pink summer dress"
@@ -1186,6 +1205,7 @@
 	icon_state = "pinksun"
 	item_state = "pinksun"
 	item_color = "pinksun"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/whitesun
 	name = "white summer dress"
@@ -1193,6 +1213,7 @@
 	icon_state = "whitesun"
 	item_state = "whitesun"
 	item_color = "whitesun"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/bowsun
 	name = "pink summer dress with a bow"
@@ -1200,6 +1221,7 @@
 	icon_state = "bowsun"
 	item_state = "bowsun"
 	item_color = "bowsun"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/bluesun
 	name = "blue summer dress"
@@ -1207,6 +1229,7 @@
 	icon_state = "bluesun"
 	item_state = "bluesun"
 	item_color = "bluesun"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/shortpink
 	name = "short pink dress"
@@ -1214,6 +1237,7 @@
 	icon_state = "shortpink"
 	item_state = "shortpink"
 	item_color = "shortpink"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/twopiece
 	name = "A two piece dress"
@@ -1221,6 +1245,7 @@
 	icon_state = "twopiece"
 	item_state = "twopiece"
 	item_color = "twopiece"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gothic2
 	name = "gothic dress"
@@ -1228,6 +1253,7 @@
 	icon_state = "gothic2"
 	item_state = "gothic2"
 	item_color = "gothic2"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/wednesday
 	name = "Wednesday dress"
@@ -1235,6 +1261,7 @@
 	icon_state = "wednesday"
 	item_state = "wednesday"
 	item_color = "wednesday"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gayvampire
 	name = "vampire uniform"
@@ -1242,6 +1269,7 @@
 	icon_state = "gayvampire"
 	item_state = "gayvampire"
 	item_color = "gayvampire"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/corsetdress
 	name = "corset dress"
@@ -1249,6 +1277,7 @@
 	icon_state = "corsetdress"
 	item_state = "corsetdress"
 	item_color = "corsetdress"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/goldwrap
 	name = "golden wrap"
@@ -1256,6 +1285,7 @@
 	icon_state = "goldwrap"
 	item_state = "goldwrap"
 	item_color = "goldwrap"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/golddress
 	name = "golden dress"
@@ -1263,6 +1293,7 @@
 	icon_state = "golddress"
 	item_state = "golddress"
 	item_color = "golddress"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/countess
 	name = "countess dress"
@@ -1270,6 +1301,7 @@
 	icon_state = "countess"
 	item_state = "countess"
 	item_color = "countess"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/skyrat/maid
 	name = "maid dress"
@@ -1277,6 +1309,7 @@
 	icon_state = "maid_skyrat"
 	item_state = "maid_skyrat"
 	item_color = "maid_skyrat"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/skyrat/flower_kimono
 	name = "Kimono"
@@ -1284,6 +1317,7 @@
 	icon_state = "flower_kimono"
 	item_state = "flower_kimono"
 	item_color = "flower_kimono"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/hawi/orange
 	name = "orange hawaiian"
@@ -1291,6 +1325,7 @@
 	icon_state = "tacticool_hawaiian_orange"
 	item_state = "tacticool_hawaiian_orange"
 	item_color = "tacticool_hawaiian_orange"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/hawi/blue
 	name = "blue hawaiian"
@@ -1298,6 +1333,7 @@
 	icon_state = "tacticool_hawaiian_blue"
 	item_state = "tacticool_hawaiian_blue"
 	item_color = "tacticool_hawaiian_blue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/hawi/purple
 	name = "purple hawaiian"
@@ -1305,6 +1341,7 @@
 	icon_state = "tacticool_hawaiian_purple"
 	item_state = "tacticool_hawaiian_purple"
 	item_color = "tacticool_hawaiian_purple"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/hawi/green
 	name = "green hawaiian"
@@ -1312,42 +1349,49 @@
 	icon_state = "tacticool_hawaiian_green"
 	item_state = "tacticool_hawaiian_green"
 	item_color = "tacticool_hawaiian_green"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/toxotai
 	name = "Robe with black belt"
 	icon_state = "toxotai"
 	item_state = "toxotai"
 	item_color = "toxotai"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/thebes
 	name = "blue swamp hoplite"
 	icon_state = "thebes"
 	item_state = "thebes"
 	item_color = "thebes"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/corinthia
 	name = "green swamp hoplite"
 	icon_state = "corinthia"
 	item_state = "corinthia"
 	item_color = "corinthia"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/greek_commander
 	name = "swamp hoplite commander"
 	icon_state = "greek_commander"
 	item_state = "greek_commander"
 	item_color = "greek_commander"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/athens
 	name = "dark blue swamp hoplite"
 	icon_state = "athens"
 	item_state = "athens"
 	item_color = "athens"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/roman_centurion
 	name = "robe with red belt"
 	icon_state = "roman_centurion"
 	item_state = "roman_centurion"
 	item_color = "roman_centurion"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/japanese_uniform
 	name = "Green uniform"
@@ -1355,6 +1399,7 @@
 	icon_state = "japan_uniform"
 	item_state = "japan_uniform"
 	item_color = "japan_uniform"
+	can_adjust = FALSE
 
 //Lucine's Sprites
 
@@ -1364,6 +1409,7 @@
 	icon_state = "mini_black"
 	item_state = "mini_black"
 	item_color = "mini_black"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/mini_black_blue
 	name = "Mini Black and Blue Dress"
@@ -1371,6 +1417,7 @@
 	icon_state = "mini_black_blue"
 	item_state = "mini_black_blue"
 	item_color = "mini_black_blue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/mini_black_blue
 	name = "Mini Black and Blue Dress"
@@ -1378,6 +1425,7 @@
 	icon_state = "mini_black_blue"
 	item_state = "mini_black_blue"
 	item_color = "mini_black_blue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/mini_white
 	name = "Mini White"
@@ -1385,7 +1433,7 @@
 	icon_state = "mini_white"
 	item_state = "mini_white"
 	item_color = "mini_white"
-
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/pristess
 	name = "pristess dress"
@@ -1393,6 +1441,7 @@
 	icon_state = "pristess"
 	item_state = "pristess"
 	item_color = "pristess"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/summer
 	name = "Summer dress"
@@ -1400,6 +1449,7 @@
 	icon_state = "summer"
 	item_state = "summer"
 	item_color = "summer"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/thot
 	name = "Thin white dress"
@@ -1407,6 +1457,7 @@
 	icon_state = "thot"
 	item_state = "thot"
 	item_color = "thot"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/fem_blue
 	name = "female blue outfit"
@@ -1414,6 +1465,7 @@
 	icon_state = "fem_blue"
 	item_state = "fem_blue"
 	item_color = "fem_blue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/fem_rose
 	name = "female rose outfit"
@@ -1421,6 +1473,7 @@
 	icon_state = "fem_rose"
 	item_state = "fem_rose"
 	item_color = "fem_rose"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/fem_white
 	name = "female white outfit"
@@ -1428,6 +1481,7 @@
 	icon_state = "fem_white"
 	item_state = "fem_white"
 	item_color = "fem_white"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/vestido_blue
 	name = "Blue Vestido Dress"
@@ -1435,6 +1489,7 @@
 	icon_state = "vestido_blue"
 	item_state = "vestido_blue"
 	item_color = "vestido_blue"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/vestido_black
 	name = "Black Vestido Dress"
@@ -1442,6 +1497,7 @@
 	icon_state = "vestido_black"
 	item_state = "vestido_black"
 	item_color = "vestido_black"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/vestido_pink
 	name = "Pink Vestido Dress"
@@ -1449,6 +1505,7 @@
 	icon_state = "vestido_pink"
 	item_state = "vestido_pink"
 	item_color = "vestido_pink"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/vestido_yellow
 	name = "Yellow Vestido Dress"
@@ -1456,6 +1513,7 @@
 	icon_state = "vestido_yellow"
 	item_state = "vestido_yellow"
 	item_color = "vestido_yellow"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/vestido_white
 	name = "White Vestido Dress"
@@ -1463,6 +1521,7 @@
 	icon_state = "vestido_white"
 	item_state = "vestido_white"
 	item_color = "vestido_white"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/vestido_purple
 	name = "Purple Vestido Dress"
@@ -1470,6 +1529,7 @@
 	icon_state = "vestido_purple"
 	item_state = "vestido_purple"
 	item_color = "vestido_purple"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gob/vestido_red
 	name = "Red Vestido Dress"
@@ -1477,6 +1537,7 @@
 	icon_state = "vestido_red"
 	item_state = "vestido_red"
 	item_color = "vestido_red"
+	can_adjust = FALSE
 
 
 /obj/item/clothing/under/gorka_alt
@@ -1485,6 +1546,7 @@
 	icon_state = "gorka_alt"
 	item_state = "gorka_alt"
 	item_color = "gorka_alt"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gorka_ss
 	name = "Alt Gorka outfit"
@@ -1492,6 +1554,7 @@
 	icon_state = "gorka_ss"
 	item_state = "gorka_ss"
 	item_color = "gorka_ss"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/gorka_tan
 	name = "Tan Gorka outfit"
@@ -1499,6 +1562,7 @@
 	icon_state = "gorka_tan"
 	item_state = "gorka_tan"
 	item_color = "gorka_tan"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/puffy
 	name = "puffy dress"
@@ -1506,6 +1570,7 @@
 	icon_state = "puffydress"
 	item_state = "puffydress"
 	item_color = "puffydress"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/labor_black
 	name = "black labor suit"
@@ -1513,6 +1578,7 @@
 	icon_state = "labor_black"
 	item_state = "labor_black"
 	item_color = "labor_black"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/divine_robes
 	name = "divine robes"
@@ -1520,6 +1586,7 @@
 	icon_state = "divine_robes"
 	item_state = "divine_robes"
 	item_color = "divine_robes"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/blue_kimono
 	name = "Dark blue Kimono"
@@ -1527,6 +1594,7 @@
 	icon_state = "blue_kimono"
 	item_state = "blue_kimono"
 	item_color = "blue_kimono"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/miku_bikini
 	name = "Blue bikini"
@@ -1534,6 +1602,7 @@
 	icon_state = "miku_bikini"
 	item_state = "miku_bikini"
 	item_color = "miku_bikini"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/shark
 	name = "shark uniform"
@@ -1541,3 +1610,12 @@
 	icon_state = "shark_cloth"
 	item_state = "shark_cloth"
 	item_color = "shark_cloth"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/tribal_colorful
+	name = "bright outfit"
+	desc = "A skimply outfit with bright colors."
+	icon_state = "tribal_colorful"
+	item_state = "tribal_colorful"
+	item_color = "tribal_colorful"
+	can_adjust = FALSE

@@ -1887,3 +1887,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/shark
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/tribal_colorful
+	name = "bright outfit"
+	cost = 1
+	path = /obj/item/clothing/under/tribal_colorful
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

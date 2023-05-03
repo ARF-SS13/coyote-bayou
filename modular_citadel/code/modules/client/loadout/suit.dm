@@ -587,6 +587,11 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/ned
+	name = "Ned coat"
+	path = /obj/item/clothing/suit/ranger/ned
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
 
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 
