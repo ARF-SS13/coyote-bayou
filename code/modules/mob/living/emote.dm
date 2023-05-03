@@ -47,6 +47,9 @@
 	message_param = "chuckles at %t."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/chuckle/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/chuckle/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -73,6 +76,11 @@
 	message = "coughs!"
 	message_param = "coughs from the %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/cough/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
 	. = ..()
@@ -189,7 +197,7 @@
 				H.CloseWings()
 			else
 				H.OpenWings()
-			addtimer(CALLBACK(H, open ? /mob/living/carbon/human.proc/OpenWings : /mob/living/carbon/human.proc/CloseWings), wing_time)
+			addtimer(CALLBACK(H, open ? /mob/living/carbon/human/atom/.proc/OpenWings : /mob/living/carbon/human/atom/.proc/CloseWings), wing_time)
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
@@ -236,6 +244,10 @@
 	message_param = "giggles at %t."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/giggle/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 0.5 SECONDS)
+
 /datum/emote/living/giggle/get_sound(mob/living/M)
 	if(ishuman(M))
 		if(M.gender == FEMALE)
@@ -274,6 +286,10 @@
 	message = "jumps!"
 	restraint_check = TRUE
 
+/datum/emote/living/jump/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "kisses"
@@ -296,6 +312,10 @@
 	key_third_person = "laughs"
 	message = "laughs."
 	message_param = "laughs about %t."
+
+/datum/emote/living/audible/laugh/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 1.5 SECONDS)
 
 /datum/emote/living/audible/laugh/get_sound(mob/living/user)
 	. = ..()
@@ -336,6 +356,10 @@
 	key_third_person = "nods"
 	message = "nods."
 	message_param = "nods at %t."
+
+/datum/emote/living/nod/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_directional_tilt, 5, 0.5 SECONDS)
 
 /datum/emote/living/point
 	key = "point"
@@ -385,12 +409,20 @@
 	message_param = "shakes their head at %t."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/shake/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1.2 SECONDS)
+
 /datum/emote/living/shiver
 	key = "shiver"
 	key_third_person = "shiver"
 	message = "shivers."
 	message_param = "shivers from the %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/shiver/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/sigh
 	key = "sigh"
@@ -430,6 +462,10 @@
 	message = "sneezes."
 	message_param = "sneezes from %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/shake/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 1.5 SECONDS)
 
 /datum/emote/living/sneeze/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -988,6 +1024,20 @@
 	message = "bounces vivaciously."
 	sound = 'sound/effects/bwoing.ogg'
 
+
+/datum/emote/living/bwoing/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 0.6 SECONDS)
+
+/datum/emote/living/bounce
+	key = "bounce"
+	key_third_person = "bounces on their toes!"
+	message = "bounces on their toes!"
+
+/datum/emote/living/bounce/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, 0, 2, 0, 1.5 SECONDS)
+
 /datum/emote/plap
 	key = "plap"
 	key_third_person = "plaps?"
@@ -1079,6 +1129,11 @@
 	key_third_person = "rattles a warning!"
 	message = "rattles a warning!"
 	sound = 'sound/f13effects/sunsetsounds/rattle.ogg'
+
+/datum/emote/rattle/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1.5 SECONDS)
+
 
 /datum/emote/snakehiss
 	key = "shiss"
