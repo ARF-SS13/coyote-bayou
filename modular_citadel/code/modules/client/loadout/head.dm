@@ -840,3 +840,43 @@ datum/gear/head/steelpot_bandolier
 	name = "green floppy cap"
 	path = /obj/item/clothing/head/japan_cap
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/poppy
+	name = "poppy"
+	path = /obj/item/reagent_containers/food/snacks/grown/poppy
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/harebell
+	name = "harebell"
+	path = /obj/item/reagent_containers/food/snacks/grown/harebell
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/sunflower
+	name = "sun flower"
+	path = /obj/item/grown/sunflower
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/moonflower
+	name = "moon flower"
+	path = /obj/item/reagent_containers/food/snacks/grown/moonflower
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/novaflower
+	name = "nova flower"
+	path = /obj/item/grown/novaflower
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/rose
+	name = "rose"
+	path = /obj/item/grown/rose
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/carbon_rose
+	name = "carbon rose"
+	path = /obj/item/grown/carbon_rose
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/fever_blossom
+	name = "fever blossom"
+	path = /obj/item/reagent_containers/food/snacks/grown/fever_blossom
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
