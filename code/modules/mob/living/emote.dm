@@ -47,6 +47,40 @@
 	message_param = "chuckles at %t."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/chuckle/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_y = 1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_y = -2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(3)
+	animate(
+		user,
+		pixel_y = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_y = -1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
 
 /datum/emote/living/chuckle/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -73,6 +107,41 @@
 	message = "coughs!"
 	message_param = "coughs from the %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/cough/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_y = 1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_y = -2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(3)
+	animate(
+		user,
+		pixel_y = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_y = -1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
 	. = ..()
@@ -236,6 +305,41 @@
 	message_param = "giggles at %t."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/giggle/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_y = 1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = -1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = 1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = -1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+
 /datum/emote/living/giggle/get_sound(mob/living/M)
 	if(ishuman(M))
 		if(M.gender == FEMALE)
@@ -274,6 +378,34 @@
 	message = "jumps!"
 	restraint_check = TRUE
 
+/datum/emote/living/jump/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_y = -1,
+		time = 0.4 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(5)
+	animate(
+		user,
+		pixel_y = 5,
+		time = 0.3 SECONDS,
+		easing = JUMP_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = -4,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+
+
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "kisses"
@@ -296,6 +428,41 @@
 	key_third_person = "laughs"
 	message = "laughs."
 	message_param = "laughs about %t."
+
+/datum/emote/living/audible/laugh/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_y = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = -2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = -2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
 
 /datum/emote/living/audible/laugh/get_sound(mob/living/user)
 	. = ..()
@@ -336,6 +503,26 @@
 	key_third_person = "nods"
 	message = "nods."
 	message_param = "nods at %t."
+
+/datum/emote/living/giggle/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_y = 1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_y = -1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+
 
 /datum/emote/living/point
 	key = "point"
@@ -385,12 +572,83 @@
 	message_param = "shakes their head at %t."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/shake/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_x = 1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_x = -1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_x = 1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_x = -1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+
 /datum/emote/living/shiver
 	key = "shiver"
 	key_third_person = "shiver"
 	message = "shivers."
 	message_param = "shivers from the %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/shiver/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_x = 1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_x = -1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_x = 1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_x = -1,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+
 
 /datum/emote/living/sigh
 	key = "sigh"
@@ -430,6 +688,26 @@
 	message = "sneezes."
 	message_param = "sneezes from %t."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/shake/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_x = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(4)
+	animate(
+		user,
+		pixel_x = -2,
+		time = 0.4 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+
 
 /datum/emote/living/sneeze/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -985,32 +1263,82 @@
 	message = "bounces vivaciously."
 	sound = 'sound/effects/bwoing.ogg'
 
+
 /datum/emote/living/bwoing/run_emote(mob/user, params)
-	. = ..()	
-	var/matrix/tf = matrix(user.transform)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
 	animate(
 		user,
-		transform = tf.Translate(0,2),
+		pixel_y = 1,
 		time = 0.2 SECONDS,
-		easing = CUBIC_EASING | EASE_OUT
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
 	)
+	sleep(2)
 	animate(
 		user,
-		transform = tf.Translate(0,-3),
-		time = 0.2 SECONDS,
-		easing = CUBIC_EASING | EASE_OUT
+		pixel_y = -2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
 	)
+	sleep(3)
 	animate(
 		user,
-		transform = tf.Translate(0,1),
+		pixel_y = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_y = -1,
 		time = 0.2 SECONDS,
-		easing = CUBIC_EASING | EASE_OUT
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
 	)
 
 /datum/emote/living/bounce
 	key = "bounce"
 	key_third_person = "bounces on their toes!"
 	message = "bounces on their toes!"
+
+/datum/emote/living/bounce/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_y = 1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_y = -2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(3)
+	animate(
+		user,
+		pixel_y = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_y = -1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+
 
 /datum/emote/plap
 	key = "plap"
@@ -1103,6 +1431,41 @@
 	key_third_person = "rattles a warning!"
 	message = "rattles a warning!"
 	sound = 'sound/f13effects/sunsetsounds/rattle.ogg'
+
+/datum/emote/rattle/run_emote(mob/user, params)
+	. = ..()
+//	var/matrix/tf = matrix(user.transform)
+	animate(
+		user,
+		pixel_x = 1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_x = -2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(3)
+	animate(
+		user,
+		pixel_x = 2,
+		time = 0.3 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
+	sleep(2)
+	animate(
+		user,
+		pixel_x = -1,
+		time = 0.2 SECONDS,
+		easing = LINEAR_EASING,
+		flags = ANIMATION_RELATIVE
+	)
 
 /datum/emote/snakehiss
 	key = "shiss"
