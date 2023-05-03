@@ -20,7 +20,7 @@
 	hitsound = 'sound/weapons/slice.ogg'
 	block_chance = 5
 
-/obj/item/melee/coyote/harpoon 
+/obj/item/melee/coyote/harpoon
 	name = "old harpoon"
 	desc = "White whale, holy grail."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -66,7 +66,7 @@
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 15
 
-/obj/item/melee/coyote/wakazashiold 
+/obj/item/melee/coyote/wakazashiold
 	name = "old wakazashi"
 	desc = "Sharp, and well cared for. Such a strange blade in this land."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -89,7 +89,7 @@
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
 
-/obj/item/melee/coyote/tantoold 
+/obj/item/melee/coyote/tantoold
 	name = "old tanto"
 	desc = "Sharp, and well cared for. This small blade carries a lot of weight for its size."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -112,7 +112,7 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 5
 
-/obj/item/melee/coyote/combataxe 
+/obj/item/melee/coyote/combataxe
 	name = "Combat Axe"
 	desc = "An axe made specifically for more modern combats, its got a handguard!"
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -315,6 +315,24 @@
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.9
 	block_chance = 8
+
+/obj/item/melee/coyote/oldlongsword/kuddleslongsword
+	name = "Break of Dawn"
+	desc = "This brilliant sword has had its link severed from its source of power, in such a way it can't even call out to the being that forged it. Despite being deprived of its magic, the blade's razor sharp edge never dulls and the light of its crystal never extinguishes. An artifact of its wielder's faith."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "dawnbreaker"
+	light_system = MOVABLE_LIGHT
+	light_range = 3
+	light_on = FALSE
+
+/obj/item/melee/coyote/oldlongsword/kuddleslongsword/Initialize()
+	. = ..()
+	set_light_on(TRUE)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/melee/coyote/oldlongsword/kuddleslongsword/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/item/melee/coyote/oldhalberd
 	name = "Old Halberd"

@@ -571,7 +571,20 @@
 	new /obj/item/radio(src)
 
 // K
+
+
+
 // L
+
+/datum/gear/donator/kits/LilKuddles
+	name = "Khajiits Memories"
+	path = /obj/item/storage/box/large/custom_kit/kuddles2
+	ckeywhitelist = list("LilKuddles")
+
+/obj/item/storage/box/large/custom_kit/kuddles2/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword/kuddleslongsword(src)
+	new /obj/item/clothing/suit/hooded/robes(src)
+
 
 /datum/gear/donator/kits/lifelessghoul
 	name = "Ancient Memories"
@@ -1186,6 +1199,7 @@
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
 	new /obj/item/melee/onehanded/club/fryingpan/saltspider
 
+<<<<<<< Updated upstream
 /datum/gear/donator/kits/kelprunner
 	name = "Kelptastic Kit"
 	path = /obj/item/storage/box/large/custom_kit/kelprunner
@@ -1204,6 +1218,8 @@
 /obj/item/storage/box/large/custom_kit/lucine2/PopulateContents()
 	new /obj/item/electrostaff(src)
 	new /obj/item/clothing/neck/necklace/memento_mori(src)
+=======
+>>>>>>> Stashed changes
 
 //Mayor Kit
 
