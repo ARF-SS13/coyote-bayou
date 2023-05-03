@@ -48,8 +48,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	var/flavor_desc =	"A copper coin. used for exchange.,\
-					A common unit of exchange, copper in color."
+	var/flavor_desc =	"A copper coin, commonly used for trade."
 	var/value = CASH_CAP
 	var/flippable = TRUE
 	var/cooldown = 0

@@ -1185,7 +1185,26 @@
 /obj/item/storage/box/large/custom_kit/saltspider/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
 	new /obj/item/melee/onehanded/club/fryingpan/saltspider
-	
+
+/datum/gear/donator/kits/kelprunner
+	name = "Kelptastic Kit"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner
+	ckeywhitelist = list("Kelprunner")
+
+/obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/wt550/worn(src)
+	new /obj/item/ammo_box/magazine/m473/small(src)
+	new /obj/item/storage/firstaid/emergency(src)
+
+/datum/gear/donator/kits/lucine2
+	name = "Gob-lyn Muderbox"
+	path = /obj/item/storage/box/large/custom_kit/lucine2
+	ckeywhitelist = list("lucine")
+
+/obj/item/storage/box/large/custom_kit/lucine2/PopulateContents()
+	new /obj/item/electrostaff(src)
+	new /obj/item/clothing/neck/necklace/memento_mori(src)
+
 //Mayor Kit
 
 /datum/gear/donator/kits/Mayor_kit
