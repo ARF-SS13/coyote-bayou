@@ -398,10 +398,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 				dat += "[p_they(TRUE)] [p_are()] holding [I.get_examine_string(user)] in [p_their()] [get_held_index_name(get_held_index_of_item(I))]."
 		//Internal storage
 		if(internal_storage && !(internal_storage.item_flags & ABSTRACT))
-			dat += "It is wearing [internal_storage.get_examine_string(user)]."
+			dat += "[p_they(TRUE)] [p_are()] wearing [internal_storage.get_examine_string(user)]."
 		//Cosmetic hat - provides no function other than looks
 		if(head && !(head.item_flags & ABSTRACT))
-			dat += "It is wearing [head.get_examine_string(user)] on its head."
+			dat += "[p_they(TRUE)] [p_are()] wearing [head.get_examine_string(user)] on [p_their()] head."
 		if(flavortext)
 			dat += "[print_flavor_text()]"
 		if(oocnotes)
