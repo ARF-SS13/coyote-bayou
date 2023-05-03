@@ -1199,7 +1199,6 @@
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
 	new /obj/item/melee/onehanded/club/fryingpan/saltspider
 
-<<<<<<< Updated upstream
 /datum/gear/donator/kits/kelprunner
 	name = "Kelptastic Kit"
 	path = /obj/item/storage/box/large/custom_kit/kelprunner
@@ -1218,8 +1217,6 @@
 /obj/item/storage/box/large/custom_kit/lucine2/PopulateContents()
 	new /obj/item/electrostaff(src)
 	new /obj/item/clothing/neck/necklace/memento_mori(src)
-=======
->>>>>>> Stashed changes
 
 //Mayor Kit
 
@@ -1232,3 +1229,5 @@
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)
+
+
