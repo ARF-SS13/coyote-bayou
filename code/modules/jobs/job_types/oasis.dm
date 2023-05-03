@@ -84,7 +84,7 @@ Mayor
 */
 
 /datum/outfit/job/den/f13mayor
-	name = "Mayor"
+	name = "High Alderperson"
 	jobtype = /datum/job/oasis/f13mayor
 	id = /obj/item/card/id/silver/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
@@ -105,7 +105,7 @@ Mayor
 
 
 /datum/outfit/loadout/dictator
-	name = "Mayor for Life"
+	name = "Alderman for Life"
 	backpack_contents = list(
 	/obj/item/clothing/under/f13/general/oasis = 1,
 	/obj/item/clothing/head/f13/army/general = 1,
@@ -152,16 +152,17 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13secretary
-	title = "Secretary"
+	title = "Councilperson"
 	flag = F13SECRETARY
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "The Mayor"
-	description = "The settlement of Nash is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
-	enforces = "You are the stand-in leader of Nash if a Mayor does not exist."
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "your constituents, your greed, and realpolitik"
+	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place on the Parliamentary Council of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, and just maybe they'll vote you back in...or won't, you know, toss you into the moat."
+	enforces = "You serve as the de-facto leader of Nash with your co-Council, if another is awake."
 	selection_color = "#d7b088"
 	exp_requirements = 0
+
 
 	outfit = /datum/outfit/job/den/f13secretary
 
