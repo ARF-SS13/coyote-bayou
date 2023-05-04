@@ -33,7 +33,7 @@
 		if(WEST)
 			m1.Turn(-degrees)
 		if(NORTH, SOUTH)
-			m1.Scale(0, (degrees * 0.1))
+			m1.Turn(degrees * pick(1, -1))
 	animate(src, transform = m1, time = (full_duration * 0.5), easing = BOUNCE_EASING)
 	animate(transform = og, time = (full_duration * 0.5), easing = BOUNCE_EASING)
 
