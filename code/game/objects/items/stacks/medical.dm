@@ -460,7 +460,7 @@
 	third_person_verb = "touching"
 	action_verb = "touch"
 	action_verb_2 = "magically sooth"
-	end_sound = 'sound/FermiChem/bufferadd.ogg'
+	end_sound = 'sound/effects/healingtouch.ogg'
 
 /obj/item/stack/medical/bruise_pack/lick/tend
 	name = "triage tending"
