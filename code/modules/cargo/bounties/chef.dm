@@ -2,7 +2,7 @@
 
 /datum/bounty/item/chef/soup
 	name = "Soup"
-	description = "To quell the homeless uprising, Nanotrasen will be serving soup to all underpaid workers. Ship any type of soup. Do NOT ship bowls of water."
+	description = "To quell the homeless uprising, US Government will be serving soup to all underpaid workers. Ship any type of soup. Do NOT ship bowls of water."
 	reward = 1200
 	required_count = 4
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/soup)
@@ -82,7 +82,7 @@
 
 /datum/bounty/item/chef/pancakes
 	name = "Pancakes"
-	description = "Here at Nanotrasen we consider employees to be family. And you know what families love? Pancakes. Ship a baker's dozen."
+	description = "Here at US Government we consider employees to be family. And you know what families love? Pancakes. Ship a baker's dozen."
 	reward = 4000
 	required_count = 13
 	wanted_types = list(/datum/crafting_recipe/food/pancakes)

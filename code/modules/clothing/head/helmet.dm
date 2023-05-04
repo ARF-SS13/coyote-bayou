@@ -193,7 +193,7 @@
 
 /obj/item/clothing/head/helmet/swat/nanotrasen
 	name = "\improper SWAT helmet"
-	desc = "An extremely robust, space-worthy helmet with the Nanotrasen logo emblazoned on the top."
+	desc = "An extremely robust, space-worthy helmet with the US Government logo emblazoned on the top."
 	icon_state = "swat"
 	item_state = "swat"
 

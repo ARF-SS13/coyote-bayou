@@ -98,10 +98,10 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 		var/datum/game_mode/dynamic/mode = SSticker.mode
 		if(!(mode.storyteller.flags & WAROPS_ALWAYS_ALLOWED))
 			if(mode.threat_level < CONFIG_GET(number/dynamic_warops_requirement))
-				to_chat(user, "Due to the dynamic space in which the station resides, you are too deep into Nanotrasen territory to reasonably go loud.")
+				to_chat(user, "Due to the dynamic space in which the station resides, you are too deep into US Government territory to reasonably go loud.")
 				return FALSE
 			else if(mode.threat < CONFIG_GET(number/dynamic_warops_cost))
-				to_chat(user, "Due to recent threats on the station, Nanotrasen is looking too closely for a war declaration to be wise.")
+				to_chat(user, "Due to recent threats on the station, US Government is looking too closely for a war declaration to be wise.")
 				return FALSE
 	return TRUE
 

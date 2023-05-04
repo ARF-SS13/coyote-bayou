@@ -906,7 +906,7 @@ CODE FOR POISON EFFECT
 /obj/item/twohanded/spear/grey_tide
 	icon_state = "spearglass0"
 	name = "\improper Grey Tide"
-	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualities among Nanotrasen military forces."
+	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualities among US Government military forces."
 	throwforce = 20
 	throw_speed = 4
 	attack_verb = list("gored")

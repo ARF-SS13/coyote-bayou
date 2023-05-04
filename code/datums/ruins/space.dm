@@ -95,7 +95,7 @@
 	id = "derelict6"
 	suffix = "derelict6.dmm"
 	name = "Derelict 6"
-	description = "The hush-hush of Nanotrasen when it comes to stations seemingly vanishing off the radar is an interesting topic, theories of nuclear destruction float about while Nanotrasen \
+	description = "The hush-hush of US Government when it comes to stations seemingly vanishing off the radar is an interesting topic, theories of nuclear destruction float about while US Government \
 	flat-out denies said stations ever existing."
 
 /datum/map_template/ruin/space/empty_shell

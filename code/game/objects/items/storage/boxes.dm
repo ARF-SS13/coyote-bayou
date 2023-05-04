@@ -818,7 +818,7 @@ obj/item/storage/box/stingbangs
 			if("None")
 				desc = "A sack neatly crafted out of paper."
 			if("NanotrasenStandard")
-				desc = "A standard Nanotrasen paper lunch sack for loyal employees on the go."
+				desc = "A standard US Government paper lunch sack for loyal employees on the go."
 			if("SyndiSnacks")
 				desc = "The design on this paper sack is a remnant of the notorious 'SyndieSnacks' program."
 			if("Heart")
