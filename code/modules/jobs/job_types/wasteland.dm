@@ -1361,7 +1361,7 @@ Raider
 	title = "Preacher"
 	flag = F13PREACHER
 	faction = FACTION_WASTELAND
-	total_positions = 1
+	total_positions = 3
 	spawn_positions = 1
 	supervisors = "your faith"
 	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
