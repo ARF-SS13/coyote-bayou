@@ -44,6 +44,7 @@
 		if(humanAM.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
 			humanAM.disable_sprint_mode()
 			humanAM.AdjustKnockdown(25)
+			playsound(get_turf(src), 'sound/effects/wallsmack.ogg', 100, 0, 0)
 			if(HAS_TRAIT(humanAM, TRAIT_ZOOMIES))
 				humanAM.adjustBruteLoss(20) //falling from 1 story is 11 damage. falling from 2 stories is 31
 				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
