@@ -126,7 +126,7 @@ GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/coyote/twentyseven = 1,
 	/obj/structure/flora/grass/coyote/twentyeight = 1,
 	/obj/structure/flora/grass/coyote/twentynine = 1,
-	/obj/structure/flora/grass/coyote/thirty
+	/obj/structure/flora/grass/coyote/thirty = 1,
 	/obj/structure/flora/tree/wasteland = 2,
 	/obj/structure/flora/tree/pink_tree = 3,
 	/obj/structure/flora/tree/oak_one = 3,
