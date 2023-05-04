@@ -83,7 +83,7 @@
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -106,7 +106,7 @@
 	wound_bonus = 10
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
@@ -152,7 +152,7 @@
 	wound_bonus = 15
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -199,7 +199,7 @@
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("slashed", "sliced", "smashed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.8
@@ -222,7 +222,7 @@
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_NONE
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("slashed", "sliced", "smashed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.8
@@ -245,7 +245,7 @@
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 2.5
@@ -266,7 +266,7 @@
 	wound_bonus = 20
 	bare_wound_bonus = 10
 	sharpness = SHARP_NONE
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
@@ -374,7 +374,7 @@
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	sharpness = SHARP_EDGED
+	sharpness = SHARP_POINTY
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
@@ -491,7 +491,7 @@
 	wound_bonus = 15
 	stam_dmg = 30
 	bare_wound_bonus = 10
-	sharpness = SHARP_EDGED
+	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
 	hitsound = 'sound/weapons/smash.ogg'
@@ -502,7 +502,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(60, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"
