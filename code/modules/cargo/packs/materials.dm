@@ -71,7 +71,7 @@
 					/obj/item/ingot/adamantine,
 					/obj/item/ingot/adamantine
 					)
-
+/* disabled pending rework of advcrafting lootdrop
 /datum/supply_pack/materials/weaponparts
 	goody = PACK_GOODY_PUBLIC
 	name = "Weapon Parts"
@@ -81,7 +81,7 @@
 					/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting)
-
+*/
 /* /datum/supply_pack/materials/rcdammo
 	goody = PACK_GOODY_PUBLIC
 	name = "Large RCD ammo Single-Pack"

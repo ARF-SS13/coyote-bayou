@@ -273,11 +273,11 @@
 	name = "Mixed Chems"
 	desc = "A raider's dream, contains five random chems."
 	cost = 1000
-	contains = list(/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug)
+	contains = list(/obj/effect/spawner/lootdrop/f13/trash_drugs,
+					/obj/effect/spawner/lootdrop/f13/trash_drugs,
+					/obj/effect/spawner/lootdrop/f13/common_drugs,
+					/obj/effect/spawner/lootdrop/f13/common_drugs,
+					/obj/effect/spawner/lootdrop/f13/uncommon_drugs)
 	crate_name = "chem crate"
 
 /datum/supply_pack/medical/radaway

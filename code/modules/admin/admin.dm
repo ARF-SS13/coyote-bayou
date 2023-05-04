@@ -785,6 +785,7 @@
 		for(var/i in 1 to amount)
 			var/atom/A = new chosen(T)
 			A.flags_1 |= ADMIN_SPAWNED_1
+			SEND_SIGNAL(A,COMSIG_ATOM_POST_ADMIN_SPAWN)
 
 	log_admin("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")
 	message_admins("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")

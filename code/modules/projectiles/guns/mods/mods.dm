@@ -51,7 +51,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -65,7 +65,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 0.2,
+	//	GUN_UPGRADE_PEN_MULT = 0.2,
 		GUN_UPGRADE_RICO_MULT = 5,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1.4,
 		GUN_UPGRADE_RECOIL = 1.4
@@ -102,8 +102,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
-		GUN_UPGRADE_FORCESAFETY = FALSE
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+		GUN_UPGRADE_FORCESAFETY = FALSE,
+		GUN_UPGRADE_RECOIL = 1.3,
 		)
 	I.gun_loc_tag = GUN_TRIGGER
 
@@ -344,7 +345,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.7
+		GUN_UPGRADE_FIRE_DELAY = 0.8
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
@@ -357,7 +358,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.7
+		GUN_UPGRADE_FIRE_DELAY = 0.8
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_BARREL
@@ -416,7 +417,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		//GUN_UPGRADE_PEN_MULT = 1.2,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5
 		)
@@ -529,7 +530,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 */
-
+/* stupid
 /obj/item/gun_upgrade/barrel/gauss
 	name = "Chinese Anti-Material Gauss barrel"
 	desc = "A portable, attachable version of a large caliber gauss rifle. Made in China."
@@ -547,4 +548,4 @@
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
-
+*/

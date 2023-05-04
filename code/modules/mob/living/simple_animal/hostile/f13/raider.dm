@@ -121,7 +121,7 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
-	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
+	loot = list(/obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	variation_list = list(

@@ -592,7 +592,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			return
 		var/dropthing = pickweight_n_take(lootlist)
 		if(ispath(dropthing))
-			new dropthing(drop_location())
+			var/atom/newthing = new dropthing(drop_location())
+			if(istype(newthing, /obj/effect/spawner/lootdrop))
+				var/obj/effect/spawner/lootdrop/lut = newthing
+				if(lut.delay_spawn)
+					lut.spawn_the_stuff()
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING

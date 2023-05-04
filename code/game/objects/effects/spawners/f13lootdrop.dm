@@ -220,7 +220,7 @@
 				/obj/item/clothing/suit/pirate
 				)
 
-
+/*
 /obj/effect/spawner/lootdrop/f13/armor/tier1 //TIER 1 ARMOR
 	name = "tier 1 armor"
 	loot = list(
@@ -257,6 +257,7 @@
 				/obj/item/clothing/suit/armor/light/kit/punk/bronzebreastplate,
 
 	)
+*/
 
 /obj/effect/spawner/bundle/f13/armor/supafly
 	name = "supafly raider armor spawner"
@@ -307,6 +308,7 @@
 				/obj/item/clothing/head/helmet/f13/raider/psychotic
 				)
 
+/*
 /obj/effect/spawner/lootdrop/f13/armor/tier2 //TIER 2 ARMOR
 	name = "tier 2 armor"
 	loot = list(
@@ -320,6 +322,7 @@
 				/obj/item/clothing/suit/armor/medium/raider/slam,
 				/obj/item/clothing/suit/armor/medium/raider/scrapcombat
 				)
+*/
 
 /obj/effect/spawner/bundle/f13/armor/knight
 	name = "knight armor spawner"
@@ -342,7 +345,7 @@
 				/obj/item/clothing/head/helmet/f13/metalmask
 				)
 
-
+/*
 /obj/effect/spawner/lootdrop/f13/armor/tier3 //TIER 3 ARMOR
 	name = "tier 3 armor"
 	loot = list(
@@ -353,6 +356,7 @@
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
 				/obj/effect/spawner/bundle/f13/armor/vault
 				)
+*/
 
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest //random raider armor
 	name = "raider boss armor drop"
@@ -413,7 +417,7 @@
 				/obj/item/clothing/suit/armor/heavy/metal/sulphite,
 				/obj/item/clothing/head/helmet/f13/sulphitehelm
 				)
-
+/*
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
 	name = "tier 4 armor"
 	loot = list(
@@ -423,7 +427,7 @@
 				/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark,
 				/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris
 				)
-
+*/
 /obj/effect/spawner/bundle/f13/armor/t45b_salvaged
 	name = "salvaged t45b power armor spawner"
 	items = list(
@@ -495,7 +499,7 @@
 				/obj/item/clothing/head/helmet/f13/power_armor/t51b,
 				)
 
-
+/*
 /obj/effect/spawner/lootdrop/f13/armor/random
 	name = "random armor loot"
 	lootcount = 1
@@ -516,7 +520,7 @@
 			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10
 			///obj/item/traumapack = 1 //one ring to rule them all
 			)
-
+*/
 /*	------------------------------------------------
 	---------------MEDICAL SPAWNERS-----------------
 	------------------------------------------------ */
@@ -548,7 +552,7 @@
 	loot = list(
 				/obj/item/reagent_containers/blood/random
 				)
-
+/*
 /obj/effect/spawner/lootdrop/f13/medical/vault
 	name = "vault medical spawner - DO NOT USE"
 
@@ -645,6 +649,7 @@
 		/obj/item/reagent_containers/glass/bottle/FEV_solution = 2,
 		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 2,
 		)
+*/
 
 /obj/effect/spawner/lootdrop/f13/medical/random_fev
 	name = "random FEV bottle"	//for when you can't decide what is worse
@@ -684,6 +689,7 @@ unique tier weapons include weapons with unique skins, famed names, or extremely
 there should be very few of these spawns on the whole map. finding one should be a prize
 */
 
+/*
 /obj/effect/spawner/lootdrop/f13/weapon/wasteland
 	name = "wasteland weapons, found anywhere"
 	loot = list(
@@ -903,12 +909,12 @@ there should be very few of these spawns on the whole map. finding one should be
 	name = "unique loot weapons, found in only the most dangerous of places"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/smg14 = 1,
-		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22 = 1,
-		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 20,
-		/obj/item/gun/ballistic/automatic/m1garand/oldglory = 10,
+		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22 = 1,//
+		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 20,//
+		/obj/item/gun/ballistic/automatic/m1garand/oldglory = 10,//
 		/obj/item/gun/ballistic/automatic/m1garand/republicspride = 10,
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 10,
-		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 20,
+		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 20,//
 		/obj/item/gun/ballistic/automatic/bozar = 10,
 		/obj/item/gun/ballistic/automatic/wt550 = 5,
 		/obj/item/gun/ballistic/automatic/r84 = 10,
@@ -917,12 +923,12 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/m72 = 5,
 		/obj/item/gun/ballistic/automatic/xl70e3 = 10,
 		/obj/item/minigunpackbal5mm = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 20,
-		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 20,
-		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 20,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 20,//
+		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 20,//
+		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 20,//
 		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 10,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 20,
-		/obj/item/gun/ballistic/revolver/colt357/lucky = 20,
+		/obj/item/gun/ballistic/revolver/colt357/lucky = 20,//
 		/obj/item/gun/ballistic/rifle/hunting/paciencia = 20,
 		//obj/item/gun/energy/laser/captain = 5, //needs some work before this is added
 		/obj/item/gun/energy/laser/badlands = 10,
@@ -950,7 +956,8 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 10,
 		/obj/item/gun/ballistic/fatman = 5,
 )
-
+*/
+/*
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid //not bothering to change the path name, since it's still used in other portions of code
 	name = "burrow gun spawns"
 	loot = list(
@@ -966,7 +973,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/stealthboy = 1,
 		/obj/effect/spawner/lootdrop/f13/weapon/dungeon = 1 //very very smol chance of getting a shiny gun
 )
-
+*/
 /obj/effect/spawner/lootdrop/plush/dangerous
 	name = "random plushie spawner with tiny chance of changeling plush or dehydrated carp"
 	loot = list(
@@ -2000,7 +2007,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
 	------------------------------------------------ */
-
+/*
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo
 	name = "ammo spawners - DO NOT USE THIS"
 	icon_state = "ammo_loot"
@@ -2101,7 +2108,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2, 3, 4)
 	. = ..()
-
+*/
+/*
 //BOMBS N GRENADES
 /obj/effect/spawner/loot/f13/bomb
 	name = "DO NOT USE THIS BASIC SPAWNER"
@@ -2147,8 +2155,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/grenade/stingbang/shred = 1,
 				/obj/item/gun/ballistic/rocketlauncher,
 				)
-
-
+*/
+/*
 /obj/effect/spawner/lootdrop/f13/junkspawners //TIER 4 GARBAGE
 	name = "garbage spawner"
 	lootcount = 2
@@ -2201,6 +2209,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/reagent_containers/glass/bucket,
 				/obj/item/poster/random_contraband
 				)
+*/
 
 /obj/effect/spawner/lootdrop/f13/seedspawner
 	name = "seed spawner"
@@ -2309,7 +2318,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/lootdrop/f13/foodspawner/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2)
 	. = ..()
-
+/*
 /obj/effect/spawner/lootdrop/f13/crafting
 	name = "crafting spawner"
 	lootdoubles = TRUE
@@ -2328,7 +2337,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/lootdrop/f13/crafting/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2)
 	. = ..()
-
+*/
 
 /obj/effect/spawner/lootdrop/f13/alcoholspawner //TIER 7 ALCOHOL
 	name = "alcoholspawner"
@@ -2360,6 +2369,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	lootcount = pick(1, 2)
 	. = ..()
 
+/*
 /obj/effect/spawner/lootdrop/f13/resourcespawner //now include R N G (TM) (higher number means it has a bigger spawn chance)
 	name = "resource spawner"
 	lootcount = 2
@@ -2376,12 +2386,12 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/stack/crafting/metalparts/five = 4,
 				/obj/item/stack/crafting/goodparts/three = 2
 				)
-
+*/
 // Updated money spawners to era match to Coyote Bayou's date, 2222. ~TK420634
 // Also, fuck this multi-tiered way of trying to spawn money into the game.  Cludged together crap, my dude.
 
 
-
+/*
 /obj/effect/spawner/lootdrop/f13/cash_random_low
 	name = "low value cash spawner"
 	lootcount = 1
@@ -2432,7 +2442,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/stack/f13Cash/random/denarius/low = 5,
 				/obj/item/stack/f13Cash/random/aureus/low = 1, */
 				)
-
+*/
 /*
 /obj/effect/spawner/lootdrop/f13/cash_legion_low
 	name = "low value legion cash spawner"
@@ -2504,11 +2514,12 @@ obj/effect/spawner/bundle/f13/combat_rifle
 			/obj/item/stack/f13Cash/random/med = 5,
 			)
 */
-
+/*
 /obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk
 	name = "100% chance of deceased rodent"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/deadmouse = 50)
+
 
 /obj/effect/spawner/lootdrop/f13/traitbooks
 	name = "trait book spawner"
@@ -2566,7 +2577,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/tool_upgrade/refinement/ported_barrel,
 		/obj/item/tool_upgrade/productivity/red_paint
 	)
-
+*/
 /* weapon schematic spawns disabled until it can be reworked to something reasonable.
 
 /obj/effect/spawner/lootdrop/f13/blueprintLowMid
@@ -2654,7 +2665,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	)
 
 */
-
+/*
 /obj/effect/spawner/lootdrop/f13/advcrafting
 	name = "advanced_crafting"
 	lootcount = 1
@@ -2692,7 +2703,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/gun/ballistic/automatic/pistol/beretta,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil
 	)
-
+*/
 /obj/effect/spawner/lootdrop/f13/ncr_c_ration
 	name = "c-ration spawner"
 	icon = 'icons/obj/storage.dmi'

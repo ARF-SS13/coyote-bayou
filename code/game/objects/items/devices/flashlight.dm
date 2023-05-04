@@ -393,6 +393,7 @@
 	force = 15 // Just some kind of damage because lanterns are heavy. Gonna be in your belt or pocket anyway, now it's not totally useless if you accidentally grab it to smash a roach.
 	desc = "While not the brightest, lanterns like these light up a large area. Good for exploration, or just making do when the lights go out. Might make do as a bludgeon if you were really desperate."
 	light_system = MOVABLE_LIGHT
+	w_class = WEIGHT_CLASS_NORMAL //I'm cruel, disrupting the meta
 	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	light_range = 6	// luminosity when on
 	light_color = "#FFAA44"
