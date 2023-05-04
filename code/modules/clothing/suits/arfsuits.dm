@@ -1290,6 +1290,15 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/light/duster/armoredletterman
+	name = "armored letterman jacket"
+	desc = "A classic brown letterman jacket. Looks really hot and heavy. This one has armor plating..."
+	icon_state = "letterman"
+	item_state = "letterman"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
 ///////////////////
 // LEATHER ARMOR //
 ///////////////////
