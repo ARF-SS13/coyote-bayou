@@ -20702,11 +20702,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "bDN" = (
-/obj/structure/nest/frog,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
-	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
@@ -29817,6 +29813,21 @@
 	icon_state = "verticalleftborderright0"
 	},
 /area/f13/wasteland/city)
+"dMr" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4";
+	layer = 5;
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dMx" = (
 /obj/effect/landmark/start/f13/shaman,
 /turf/open/indestructible/ground/outside/gravel{
@@ -32156,7 +32167,11 @@
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/wasteland)
 "evh" = (
-/obj/structure/nest/frog,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "evm" = (
@@ -33442,9 +33457,19 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "eNy" = (
-/obj/structure/nest/frog,
-/turf/closed/wall/mineral/brick,
-/area/f13/building)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "eNC" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	icon_state = "blood2"
@@ -50667,6 +50692,17 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"jun" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "jup" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/grass/coyote/five,
@@ -64899,9 +64935,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "nmh" = (
-/obj/structure/nest/frog,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -65223,10 +65263,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "npK" = (
-/obj/structure/nest/frog,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
-	dir = 4
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -84004,6 +84044,9 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
@@ -118254,8 +118297,8 @@ omh
 omh
 omh
 ayh
-eNy
-eNy
+bVH
+bVH
 aWK
 rij
 pCI
@@ -118511,8 +118554,8 @@ bir
 iNx
 tiR
 iRj
-evh
-nmh
+ivb
+bDN
 aWK
 rij
 hNE
@@ -118768,8 +118811,8 @@ epq
 sSw
 nFR
 gos
-evh
-nmh
+ivb
+bDN
 aWK
 oyC
 xRv
@@ -119282,9 +119325,9 @@ gzP
 fQK
 gct
 aZs
-evh
-nmh
-aWK
+eNy
+eNy
+jxf
 oyC
 nNM
 ymf
@@ -119539,8 +119582,8 @@ iNZ
 rFF
 dvj
 omh
-evh
-nmh
+npK
+jun
 aWK
 rij
 nyU
@@ -119796,7 +119839,7 @@ pwI
 tKs
 aVk
 xju
-npK
+ivb
 bDN
 aWK
 rij
@@ -120825,7 +120868,7 @@ ebk
 eJJ
 nNi
 syB
-lkX
+dMr
 lkX
 bbB
 ivb
