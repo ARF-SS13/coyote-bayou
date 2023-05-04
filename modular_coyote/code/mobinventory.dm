@@ -43,10 +43,10 @@
 
 /mob/living/simple_animal/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
 	switch(slot)
-		if(SLOT_HEAD)
+		if(SLOT_HEAD)//Anything that can be worn on a head, worn as a mask, held in a mouth, or worn around a neck.
 			if(head)
 				return 0
-			if(!((I.slot_flags & ITEM_SLOT_HEAD) || (I.slot_flags & ITEM_SLOT_MASK)))
+			if(!((I.slot_flags & ITEM_SLOT_HEAD) || (I.slot_flags & ITEM_SLOT_MASK) || (I.slot_flags & ITEM_SLOT_NECK) || (I.slot_flags & ITEM_SLOT_POCKET)))
 				return 0
 			return 1
 		if(SLOT_GENERIC_DEXTROUS_STORAGE)
