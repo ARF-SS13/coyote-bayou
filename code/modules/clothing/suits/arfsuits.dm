@@ -1268,7 +1268,7 @@
 	item_state = "bomberalt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/breastplate/khan
 	name = "Leather battle coat" //NO PIT THIS GAME UNIVERSE AND THAT GAME UNIVERSE HAVE NOTHING TO DO WITH EACH OTHER!!! (Sorry but I'm not keeping the original name of a petfaction) - Blue
@@ -1288,7 +1288,7 @@
 	item_state = "banker"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/armoredletterman
 	name = "armored letterman jacket"
@@ -1297,8 +1297,7 @@
 	item_state = "letterman"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
-
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 ///////////////////
 // LEATHER ARMOR //
 ///////////////////
