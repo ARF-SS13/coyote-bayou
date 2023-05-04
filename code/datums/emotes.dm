@@ -35,6 +35,7 @@
 	var/audio_cooldown = 2 SECONDS
 	/// emote does not have the player's name on the left.
 	var/omit_left_name = FALSE
+	var/message_range = 7
 
 /datum/emote/New()
 	if(restraint_check)
@@ -91,9 +92,9 @@
 		ENABLE_BITFIELD(message_flags, PUT_NAME_IN)
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags)
+		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags, hearing_distance = message_range)
 	else
-		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags)
+		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags, vision_distance = message_range)
 
 
 /// Sends the given emote message for all ghosts with ghost sight enabled, excluding close enough to listen normally.
