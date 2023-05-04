@@ -8,7 +8,7 @@
 	pixel_x = initialpixelx
 	pixel_y = initialpixely
 
-/atom/proc/do_jiggle(targetangle = 45, timer = 20)
+/atom/proc/do_jiggle(targetangle = 10, timer = 4)
 	var/matrix/OM = matrix(transform)
 	var/matrix/M = matrix(transform)
 	var/halftime = timer * 0.5
@@ -16,7 +16,7 @@
 	animate(src, transform = M, time = halftime, easing = ELASTIC_EASING)
 	animate(transform = OM, time = halftime, easing = ELASTIC_EASING)
 
-/atom/proc/do_squish(squishx = 1.2, squishy = 0.6, timer = 20)
+/atom/proc/do_squish(squishx = 1.1, squishy = 0.9, timer = 3)
 	var/matrix/OM = matrix(transform)
 	var/matrix/M = matrix(transform)
 	var/halftime = timer * 0.5
