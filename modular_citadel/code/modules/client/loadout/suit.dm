@@ -310,7 +310,7 @@
 
 /datum/gear/suit/coat/armoredletterman
 	name = "armored letterman jacket"
-	path = /obj/item/clothing/suit/armor/light/duster/armoredformalcoat
+	path = /obj/item/clothing/suit/armor/light/duster/armoredletterman
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
