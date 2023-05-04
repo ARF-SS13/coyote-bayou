@@ -167,6 +167,27 @@
 	var/grill = FALSE
 	var/stones = FALSE
 	var/fire_stack_strength = 5
+	var/datum/looping_sound/fireplace/soundloop
+
+/obj/structure/bonfire/Initialize()
+	. = ..()
+	soundloop = new(list(src), FALSE)
+
+/obj/structure/bonfire/Destroy()
+	QDEL_NULL(soundloop)
+	return ..()
+
+/datum/looping_sound/fireplace
+	start_sound = list(SOUND_LOOP_ENTRY('sound/machines/fire_crackle1.ogg', 0.2 SECONDS, 1))
+	start_length = 2
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/machines/fire_crackle1.ogg', 1 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/machines/fire_crackle2.ogg', 1 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/machines/fire_crackle3.ogg', 1 SECONDS, 1),
+		)
+	mid_length = 0
+	end_sound = list(SOUND_LOOP_ENTRY('sound/machines/fire_crackle1.ogg', 1 SECONDS, 1))
+	volume = 100
 
 /obj/structure/bonfire/dense
 	density = TRUE
@@ -234,6 +255,7 @@
 	if(ignition)
 		visible_message(ignition)
 		StartBurning()
+		soundloop.start()
 		return
 
 	//COOKING. Place an object on the bonfire as if it were a table, using its grill.
