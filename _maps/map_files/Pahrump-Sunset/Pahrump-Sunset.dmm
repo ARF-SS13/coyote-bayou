@@ -6452,6 +6452,10 @@
 	},
 /area/f13/tunnel/southwest)
 "axv" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right"
 	},
@@ -9851,6 +9855,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "aIL" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
@@ -9867,10 +9872,11 @@
 /area/f13/caves)
 "aIQ" = (
 /obj/structure/flora/grass/jungle,
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
-	},
 /obj/structure/spacevine,
+/obj/structure/flora/tree/pink_tree{
+	pixel_x = -64;
+	color = "#BBBBBB"
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aIR" = (
@@ -39768,6 +39774,14 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/building)
+"gzM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/pink_tree{
+	pixel_x = -64;
+	color = "#BBBBBB"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "gzN" = (
 /obj/structure/closet/crate/miningcar,
 /turf/open/indestructible/ground/inside/dirt,
@@ -56390,6 +56404,13 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/ruins)
+"lat" = (
+/obj/structure/flora/tree/pink_tree{
+	pixel_x = -64;
+	color = "#BBBBBB"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lau" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -56438,6 +56459,13 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/abandoned)
+"lbo" = (
+/obj/structure/flora/tree/pink_tree{
+	pixel_x = -64;
+	color = "#BBBBBB"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/city)
 "lbq" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -77608,6 +77636,14 @@
 /obj/machinery/vending/medical/becomingnook,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/hospital)
+"qKg" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/tree/pink_tree{
+	pixel_x = -64;
+	color = "#BBBBBB"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "qKh" = (
 /obj/structure/chair/stool/retro/backed{
 	dir = 1
@@ -87573,6 +87609,16 @@
 "ttq" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/sewers)
+"ttt" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/flora/tree/pink_tree{
+	pixel_x = -64;
+	color = "#BBBBBB"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "tty" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -105184,6 +105230,19 @@
 	icon_state = "innerpavement"
 	},
 /area/f13/wasteland)
+"ylt" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/structure/flora/tree/pink_tree{
+	pixel_x = -64;
+	color = "#BBBBBB"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "ylu" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/road{
@@ -114614,7 +114673,7 @@ bZY
 aOk
 hkV
 aOk
-aXa
+lat
 cFK
 bSt
 cFK
@@ -123706,7 +123765,7 @@ aGD
 aOk
 lME
 aOk
-tju
+ylt
 tpP
 aQZ
 wqd
@@ -123964,7 +124023,7 @@ hEh
 hEh
 cVt
 oQJ
-pFw
+aYW
 aQZ
 kPz
 tvL
@@ -133740,7 +133799,7 @@ leB
 aOk
 aOk
 aOk
-etg
+ttt
 bzk
 etg
 cIY
@@ -133997,7 +134056,7 @@ bjb
 aOk
 aOk
 etg
-aLh
+etg
 etg
 aOk
 aOk
@@ -135829,7 +135888,7 @@ fKh
 uba
 bjb
 cFK
-eEL
+gzM
 aOk
 hrz
 etg
@@ -149105,7 +149164,7 @@ jUA
 ucy
 bAr
 qsm
-fit
+lbo
 rFh
 ciR
 ios
@@ -149363,7 +149422,7 @@ vqP
 fit
 cWI
 hlm
-rgv
+fit
 gFG
 hlm
 fit
@@ -149875,7 +149934,7 @@ hCc
 bEP
 dIG
 fit
-ezD
+fit
 hvb
 bAr
 fit
@@ -150737,7 +150796,7 @@ aOk
 gJs
 tpV
 gJs
-fxm
+qKg
 aOk
 hrz
 hCc
@@ -159735,7 +159794,7 @@ cFK
 cFK
 aOk
 aOk
-mAk
+lat
 etg
 deN
 aOk
