@@ -106,7 +106,7 @@
 
 /obj/item/paper/guides/cogstation/disposals
 	name = "Regarding the disposal system:"
-	info = "As you might have noticed, this station has far more disposal pipes than you may expect from your average Nanotrasen research facility. Part of the reason for this is specialization - mail, trash, even corpses have their own disposal systems. Unfortunately, the convenient color-coding was lost in translocation and we've had to compensate by marking the area around each bin. <BR>\n<BR>\n- <B>WHITE/GRAY STRIPES are for DELIVERIES.  <BR>\n- RED STRIPES are for CORPSES.  <BR>\n- EVERYTHING ELSE is for TRASH,</B> barring a few exceptions that should be labeled as such. <BR>\n<BR>\nIdeally the station won't sustain any heavy structural damage during your time here but if it does, or someone decides to tamper with/sabotage this system, you'll be forgiven if you can't put it back together perfectly. <BR>\n<BR>\n<I>-C. Donnelly</I> <BR>Architectural Analyst"
+	info = "As you might have noticed, this station has far more disposal pipes than you may expect from your average US Government research facility. Part of the reason for this is specialization - mail, trash, even corpses have their own disposal systems. Unfortunately, the convenient color-coding was lost in translocation and we've had to compensate by marking the area around each bin. <BR>\n<BR>\n- <B>WHITE/GRAY STRIPES are for DELIVERIES.  <BR>\n- RED STRIPES are for CORPSES.  <BR>\n- EVERYTHING ELSE is for TRASH,</B> barring a few exceptions that should be labeled as such. <BR>\n<BR>\nIdeally the station won't sustain any heavy structural damage during your time here but if it does, or someone decides to tamper with/sabotage this system, you'll be forgiven if you can't put it back together perfectly. <BR>\n<BR>\n<I>-C. Donnelly</I> <BR>Architectural Analyst"
 
 /obj/item/paper/guides/cogstation/janitor
 	name = "a quick tip"
@@ -166,7 +166,7 @@
 
 /obj/item/paper/fluff/cogstation/letter_cap
 	name = "Captain's Log"
-	info = "So I guess some of the other heads have decided to leave little notes for future employees here. Heartwarming, but the most important thing I figure I can leave you is the truth. Nevermind the Syndicate, the xenomorphs, the apocalyptic death cults I hear are a thing way out there - I'm convinced we are our own worst enemy. <BR>\n<BR>\nDon't believe me? Maybe you can ask Chief Engineer Earp. Oh right, he vaporized himself trying to produce enough power to keep the lights on in Space China for a week, despite only needing a sliver of that to run this place as intended. Or maybe you can ask Head of Security Cannon, who executed our Research Director in plain sight of everyone. Even if he was in the right, the final frontier isn't the goddamn wild west! Hell, maybe you can ask one of your 'staff assistants', although in my experience the only ones they seem to want to help is themselves. <BR>\n<BR>\nOf course, the REAL problems are with the higher-ups that stationed us on this deathtrap before deciding to send it your way, but there's only so much I can say and get away with it, for instance that they only sent this station since they could care less if it was a total loss. By the time you read this, I'll already be long gone. Maybe it'll be a different story with your crew, but between you and me, I wouldn't hold my breath...<I>unless they fuck up the air system.</I> <BR>\n<BR>\n<I>Dom Kahn</I> <BR>Former Captain of Nanotrasen CogStation"
+	info = "So I guess some of the other heads have decided to leave little notes for future employees here. Heartwarming, but the most important thing I figure I can leave you is the truth. Nevermind the Syndicate, the xenomorphs, the apocalyptic death cults I hear are a thing way out there - I'm convinced we are our own worst enemy. <BR>\n<BR>\nDon't believe me? Maybe you can ask Chief Engineer Earp. Oh right, he vaporized himself trying to produce enough power to keep the lights on in Space China for a week, despite only needing a sliver of that to run this place as intended. Or maybe you can ask Head of Security Cannon, who executed our Research Director in plain sight of everyone. Even if he was in the right, the final frontier isn't the goddamn wild west! Hell, maybe you can ask one of your 'staff assistants', although in my experience the only ones they seem to want to help is themselves. <BR>\n<BR>\nOf course, the REAL problems are with the higher-ups that stationed us on this deathtrap before deciding to send it your way, but there's only so much I can say and get away with it, for instance that they only sent this station since they could care less if it was a total loss. By the time you read this, I'll already be long gone. Maybe it'll be a different story with your crew, but between you and me, I wouldn't hold my breath...<I>unless they fuck up the air system.</I> <BR>\n<BR>\n<I>Dom Kahn</I> <BR>Former Captain of US Government CogStation"
 
 /obj/item/paper/fluff/cogstation/letter_qm
 	name = "To the future Quartermaster:"
@@ -194,7 +194,7 @@
 
 /obj/item/paper/fluff/cogstation/bsrb
 	name = "Message from the NTBSRB"
-	info = "Congratulations, (sector name here)! You've been chosen as a candidate to receive a Nanotrasen icon via bluespace translocation! 'CogStation' as it's commonly known has a rich history and a unique layout. Our hope is that you'll be able to retrofit this station to serve your needs, ideally as one of your primary research hubs.<br><br>We look forward to seeing what you can accomplish here!<BR>\n<BR>\n<I>-The Nanotrasen Bluespace Research Board</I>"
+	info = "Congratulations, (sector name here)! You've been chosen as a candidate to receive a US Government icon via bluespace translocation! 'CogStation' as it's commonly known has a rich history and a unique layout. Our hope is that you'll be able to retrofit this station to serve your needs, ideally as one of your primary research hubs.<br><br>We look forward to seeing what you can accomplish here!<BR>\n<BR>\n<I>-The US Government Bluespace Research Board</I>"
 
 /obj/item/paper/fluff/cogstation/survey
 	name = "Fwd: Survey Report"
@@ -227,7 +227,7 @@
 
 /obj/item/paper/fluff/stations/centcom/bulletin
 	name = "paper- 'Official Bulletin'"
-	info = "<BR>CentCom Security<BR>Port Division<BR>Official Bulletin<BR><BR>Inspector,<BR>There is an emergency shuttle arriving today.<BR><BR>Approval is restricted to Nanotrasen employees only. Deny all other entrants.<BR><BR>CentCom Port Commissioner"
+	info = "<BR>CentCom Security<BR>Port Division<BR>Official Bulletin<BR><BR>Inspector,<BR>There is an emergency shuttle arriving today.<BR><BR>Approval is restricted to US Government employees only. Deny all other entrants.<BR><BR>CentCom Port Commissioner"
 
 
 ///////////	Lavaland

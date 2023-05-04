@@ -251,7 +251,7 @@ GLOBAL_VAR_INIT(dynamic_forced_storyteller, null)
 			var/perc_green = 100-round(100*((threat_level-21)/(79-21)))
 			if(prob(perc_green))
 				. += "<b>Core Territory</b></center><BR>"
-				. += "Your station orbits within reliably mundane, secure space. Although Nanotrasen has a firm grip on security in your region, the valuable resources and strategic position aboard your station make it a potential target for infiltrations. Monitor crew for non-loyal behavior, but expect a relatively tame shift free of large-scale destruction. We expect great things from your station."
+				. += "Your station orbits within reliably mundane, secure space. Although US Government has a firm grip on security in your region, the valuable resources and strategic position aboard your station make it a potential target for infiltrations. Monitor crew for non-loyal behavior, but expect a relatively tame shift free of large-scale destruction. We expect great things from your station."
 				set_security_level(SEC_LEVEL_GREEN)
 				station_goals.len = 0
 				for(var/T in subtypesof(/datum/station_goal))
@@ -264,7 +264,7 @@ GLOBAL_VAR_INIT(dynamic_forced_storyteller, null)
 				set_security_level(SEC_LEVEL_BLUE)
 			else
 				. += "<b>Uncharted Space</b></center><BR>"
-				. += "Congratulations and thank you for participating in the NT 'Frontier' space program! Your station is actively orbiting a high value system far from the nearest support stations. Little is known about your region of space, and the opportunity to encounter the unknown invites greater glory. You are encouraged to elevate security as necessary to protect Nanotrasen assets."
+				. += "Congratulations and thank you for participating in the NT 'Frontier' space program! Your station is actively orbiting a high value system far from the nearest support stations. Little is known about your region of space, and the opportunity to encounter the unknown invites greater glory. You are encouraged to elevate security as necessary to protect US Government assets."
 				set_security_level(SEC_LEVEL_BLUE)
 		if(80 to 95)
 			. += "<b>Black Orbit</b></center><BR>"

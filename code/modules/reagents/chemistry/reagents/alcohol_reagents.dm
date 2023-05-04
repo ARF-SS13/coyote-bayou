@@ -989,7 +989,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/grog
 	name = "Grog"
-	description = "Watered down rum, Nanotrasen approves!"
+	description = "Watered down rum, US Government approves!"
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 1 //Basically nothing
 	taste_description = "a poor excuse for alcohol"
@@ -1044,7 +1044,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/amasec
 	name = "Amasec"
-	description = "Official drink of the Nanotrasen Gun-Club!"
+	description = "Official drink of the US Government Gun-Club!"
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 35
 	quality = DRINK_GOOD

@@ -241,7 +241,7 @@
 
 /obj/machinery/shower
 	name = "shower"
-	desc = "The HS-451. Installed in the 2550s by the Nanotrasen Hygiene Division."
+	desc = "That's a shower head. If you're lucky, water can come from it."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "shower"
 	density = FALSE

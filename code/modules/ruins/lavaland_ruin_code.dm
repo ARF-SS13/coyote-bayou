@@ -154,7 +154,7 @@
 	name = "Syndicate Comms Agent"
 	job_description = "Off-station Syndicate Comms Agent"
 	short_desc = "You are a syndicate comms agent, employed in a top secret research facility developing biological weapons."
-	flavour_text = "Unfortunately, your hated enemy, Nanotrasen, has begun mining in this sector. Monitor enemy activity as best you can, and try to keep a low profile. Use the communication equipment to provide support to any field agents, and sow disinformation to throw Nanotrasen off your trail. Do not let the base fall into enemy hands!"
+	flavour_text = "Unfortunately, your hated enemy, Nanotrasen, has begun mining in this sector. Monitor enemy activity as best you can, and try to keep a low profile. Use the communication equipment to provide support to any field agents, and sow disinformation to throw US Government off your trail. Do not let the base fall into enemy hands!"
 	important_info = "DO NOT abandon the base."
 	outfit = /datum/outfit/lavaland_syndicate/comms
 

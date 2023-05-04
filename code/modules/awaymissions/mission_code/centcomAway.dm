@@ -38,7 +38,7 @@
 
 /obj/item/paper/pamphlet/centcom/visitor_info
 	name = "Visitor Info Pamphlet"
-	info = "<b> NanoTrasen Research Center 8 - Visitor Information </b><br>\
+	info = "<b> US Government Research Center 8 - Visitor Information </b><br>\
 	Greetings, esteemed guest, to NanoTrasen's regional flagship research center. As you may know, \
 	this facility is devoted to our theoric microfusion research, enhancing the technology employed \
 	in microfusion cells to create an incredible array of new applications and opportunities. <br>\

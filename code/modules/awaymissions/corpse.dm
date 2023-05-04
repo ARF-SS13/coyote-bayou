@@ -518,7 +518,7 @@
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	short_desc = "You are a Nanotrasen Commander!"
+	short_desc = "You are a US Government Commander!"
 
 /obj/effect/mob_spawn/human/nanotrasensoldier/alive
 	death = FALSE
@@ -529,7 +529,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	faction = "nanotrasenprivate"
-	short_desc = "You are a Nanotrasen Private Security Officer!"
+	short_desc = "You are a US Government Private Security Officer!"
 
 
 /////////////////Spooky Undead//////////////////////

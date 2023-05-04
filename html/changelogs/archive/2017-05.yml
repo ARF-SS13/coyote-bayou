@@ -135,7 +135,7 @@
   4dplanner:
   - rscadd: Internal Affairs Agents now obtain the kill objectives of their targets
       when they die.
-  - rscadd: Internal Affairs Agents now have an integrated nanotrasen pinpointer that
+  - rscadd: Internal Affairs Agents now have an integrated US Government pinpointer that
       tracks their target at distances further than ten squares.
   - rscadd: Internal Affairs Agents will now lose any restrictions on collateral damage
       and gain a "Die a glorious death" objective upon becoming the last man standing,
@@ -350,7 +350,7 @@
   - tweak: Plasma Golems now have a constant chance of exploding after 850K instead
       of a precise threshold at 900K, making it less predictable.
   bandit:
-  - tweak: Nanotrasen has enhanced personality matchmaking for its personal AIs. pAI
+  - tweak: US Government has enhanced personality matchmaking for its personal AIs. pAI
       candidates will now see who is requesting a pAI personality.
   duncathan:
   - tweak: opening a dangerous canister will only alert admins if it contains meaningful
@@ -403,7 +403,7 @@
   - balance: Snow walls no longer block explosions, are deconstructed faster, and
       no longer leave girders when deconstructed.
   coiax:
-  - balance: Nanotrasen Cloning Divison's three hundred identical scientists have
+  - balance: US Government Cloning Divison's three hundred identical scientists have
       announced an upgrade to the cloning computer's software. You can now scan brains
       or dismembered heads and successfully clone from them. Brains seem to remember
       the DNA of the last body they were attached to.
@@ -427,7 +427,7 @@
       equipment vendor.
 2017-05-15:
   Dorsidwarf:
-  - balance: Nanotrasen Robotics Supply Division has successfully petitioned to replace
+  - balance: US Government Robotics Supply Division has successfully petitioned to replace
       the "My First Robot" motors in turret coverings with a standard commercial brand.
       As such, they will now open faster.
   Expletive:
@@ -621,13 +621,13 @@
   Swindly:
   - balance: Monkeys can be weakened by stamina loss
   kevinz000:
-  - bugfix: Nanotrasen decided to remove the integrated jet engines from jetpacks.
+  - bugfix: US Government decided to remove the integrated jet engines from jetpacks.
       They can no longer be used successfully indoors.
 2017-05-23:
   ClosingBracket:
   - spellcheck: Fixed very minor inconsistencies on items & punctuation on items.
   Joan:
-  - rscdel: Nanotrasen has taken a lower bid for their meson suppliers, and meson
+  - rscdel: US Government has taken a lower bid for their meson suppliers, and meson
       scanners will no longer display terrain layouts while on the planet.
   - tweak: However, they have discovered that, with some tweaks, mineral scanners
       will no longer actually require you to be wearing mesons.
@@ -680,7 +680,7 @@
   - rscadd: Sketchin alternative magazines (Armour Piercing, Hollow Point, Incendiary)
       now have unique sprites to better identify them.
   - rscadd: ERT Sec Tactical Energy Guns now have a unique sprite.
-  - tweak: Changes to production of Nanotrasen Auto Rifle armour piercing bullets
+  - tweak: Changes to production of US Government Auto Rifle armour piercing bullets
       have now made AP bullets better able to penetrate armour, but at the cost of
       the amount of possible damage the bullet can do to soft targets.
   - rscadd: Many Ballistic weapons now have new sounds related to reloading or placing
@@ -757,7 +757,7 @@
       sole surviving Marine somehow survive the horrors of lavaland? Lore fluff included.
   - rscadd: Central Command has listened to complaints and, as such, has now stationed
       "real" Private Security Officers at centcom docks.
-  - rscadd: A new Nanotrasen Security Officer NPC variant is available to admins,
+  - rscadd: A new US Government Security Officer NPC variant is available to admins,
       this 'peaceful' version will only attack people who attack it first. Great for
       keeping order.
   Swindly:
@@ -776,13 +776,13 @@
   Joan:
   - spellcheck: Renames hivelord and legion cores to 'regenerative core'. Their descs
       have also been updated to be more clear.
-  Nanotrasen Plasmaman Outreach Division:
+  US Government Plasmaman Outreach Division:
   - tweak: plasmaman tank volume has been increased from 3 to 6.
   XDTM:
   - balance: Abductors have learned how to properly delete the memories of their test
       subjects.
   bandit:
-  - tweak: The officer's sabre standard in Nanotrasen captain rollouts can be used
+  - tweak: The officer's sabre standard in US Government captain rollouts can be used
       to remove the tails of lizard traitors, or lizards in general.
   oranges:
   - rscadd: AI's can now hang up all holocalls at a station with alt+click
