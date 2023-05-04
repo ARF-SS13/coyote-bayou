@@ -308,6 +308,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/coat/armoredletterman
+	name = "armored letterman jacket"
+	path = /obj/item/clothing/suit/armor/light/duster/armoredformalcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/coat/desperado_duster
 	name = "desperado's duster"
 	path = /obj/item/clothing/suit/armor/light/duster/desperado
