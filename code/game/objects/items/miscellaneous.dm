@@ -235,6 +235,7 @@
 "Molerat" = /mob/living/simple_animal/cow/brahmin/molerat,
 "Horse" = /mob/living/simple_animal/cow/brahmin/horse,
 "Honse" = /mob/living/simple_animal/cow/brahmin/horse/honse,
+"Motorbike?" = /mob/living/simple_animal/cow/brahmin/horse/motorbike,
 "Fennec" = /mob/living/simple_animal/cow/brahmin/horse/fennec,
 "Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker,
 "Hunter Spider" = /mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider
