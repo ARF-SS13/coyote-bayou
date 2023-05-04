@@ -1037,3 +1037,9 @@
 	icon = 'modular_coyote/icons/objects/flora.dmi'
 	icon_state = "petunia_bluewhite"
 	anchored = TRUE
+
+/obj/structure/flora/tree/pink_tree
+	name = "Pink tree"
+	icon = 'modular_coyote/icons/objects/trees.dmi'
+	icon_state = "pink_tree"
+	anchored = TRUE
