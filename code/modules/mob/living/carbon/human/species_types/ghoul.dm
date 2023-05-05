@@ -108,14 +108,14 @@
 		if(0)
 			healpwr = 0
 			is_healing = FALSE
-			H.set_light(0)
+			//H.set_light(0)
 		else
 			healpwr = 3
 			is_healing = TRUE
-			H.set_light(2, 15, LIGHT_COLOR_GREEN)
+			//H.set_light(2, 15, LIGHT_COLOR_GREEN)
 	H.adjustCloneLoss(-healpwr)
 	H.adjustToxLoss(-0.3) //ghouls always heal toxin very slowly no matter what
-	H.adjustStaminaLoss(-20) //ghouls don't get tired ever
+	H.adjustStaminaLoss(-1000) //ghouls don't get tired ever. Really. This may include stuns, fuck you.
 	H.heal_overall_damage(healpwr, healpwr, healpwr)
 	if(is_healing)
 		H.apply_status_effect(/datum/status_effect/ghoulheal)
