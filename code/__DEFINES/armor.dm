@@ -652,9 +652,9 @@
  * Low DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_CATSLUG list(\
-		"linemelee" = 35, \
-		"linebullet" = -10, \
-		"linelaser" = -10, \
+		"linemelee" = 10, \
+		"linebullet" = -50, \
+		"linelaser" = -50, \
 		"energy" = -50, \
 		"bomb" = 0, \
 		"bio" = 100, \
