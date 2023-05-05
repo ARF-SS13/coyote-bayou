@@ -26,10 +26,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/metal = 0.4,
 		/obj/item/stack/sheet/mineral/titanium = 0.8,
 		/obj/item/stack/sheet/plasteel = 2,
-		/obj/item/stack/sheet/cloth = 1,
 		/obj/item/stack/ore/blackpowder = 1,
 		/obj/item/stack/sheet/prewar = 2,
-		/obj/item/stack/sheet/leather = 1,
 		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/mineral/plastitanium = 3,
 		/obj/item/reagent_containers/hypospray = 1,
@@ -96,11 +94,13 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/list/buyables_tight = list(
 		/obj/item/stack/sheet/animalhide/chitin = 1,
 		/obj/item/stack/sheet/animalhide/deathclaw = 25,
-		/obj/item/stack/sheet/animalhide/gecko = 2,
+		/obj/item/stack/sheet/animalhide/gecko = 3,
 		/obj/item/stack/sheet/animalhide/molerat = 2,
-		/obj/item/stack/sheet/animalhide/wolf = 5,
-		/obj/item/stack/sheet/animalhide/radstag = 5,
-		/obj/item/stack/sheet/animalhide/brahmin = 5,
+		/obj/item/stack/sheet/animalhide/wolf = 10,
+		/obj/item/stack/sheet/animalhide/radstag = 15,
+		/obj/item/stack/sheet/animalhide/brahmin = 8,
+		/obj/item/stack/sheet/animalhide/human = 1
+		/obj/item/stack/sheet/bone = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 15,
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 3,
@@ -241,7 +241,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/mineral/wasteland_trader/examine(mob/user)
 	. = ..()
-	. += span_notice("To use, insert items you want to sell, and then press the big CONFIRM SALE button. This will destroy the items and give you caps.")
+	. += span_notice("To use, insert items you want to sell, and then press the big CONFIRM SALE button. This will destroy the items and give you Edisons.")
 	. += span_notice("ALT-click this machine to open its internal sales-hopper.")
 	. += span_notice("Click the item on the button inside the machine's inventory to see how much it's worth.")
 
@@ -432,7 +432,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(fractional)
 		payout_fractional(fractional)
 	var/storedcaps = payout(final_price)
-	say("Sold [I] for [final_price] caps, bringing the total to [storedcaps] copper!")
+	say("Sold [I] for [final_price] Edisons, bringing the total to [storedcaps] copper!")
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()
