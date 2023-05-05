@@ -127,7 +127,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	S.use(4)
 	if(!made_loot)
 		made_loot = TRUE
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid(src.loc)
+		new /obj/effect/spawner/lootdrop/f13/common(src.loc)
 		if(istype(user))
 			to_chat(user, span_warning("You find something while covering the hole!"))
 	do_seal(itempath, cover_state, timer)

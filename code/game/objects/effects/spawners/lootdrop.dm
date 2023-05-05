@@ -7,29 +7,38 @@
 	var/lootdoubles = TRUE	//if the same item can be spawned twice
 	var/list/loot			//a list of possible items to spawn e.g. list(/obj/item, /obj/structure, /obj/effect)
 	var/fan_out_items = FALSE //Whether the items should be distributed to offsets 0,1,-1,2,-2,3,-3.. This overrides pixel_x/y on the spawner itself
+	var/delay_spawn = FALSE // allows trash spawners to know what it spawned
 
 /obj/effect/spawner/lootdrop/Initialize(mapload)
 	. = ..()
-	if(loot && loot.len)
-		var/atom/A = spawn_on_turf ? get_turf(src) : loc
-		var/loot_spawned = 0
-		while((lootcount-loot_spawned) && loot.len)
-			var/lootspawn = pickweight(loot)
-			if(!lootdoubles)
-				loot.Remove(lootspawn)
-
-			if(lootspawn)
-				var/atom/movable/spawned_loot = new lootspawn(A)
-				if (!fan_out_items)
-					if (pixel_x != 0)
-						spawned_loot.pixel_x = pixel_x
-					if (pixel_y != 0)
-						spawned_loot.pixel_y = pixel_y
-				else
-					if (loot_spawned)
-						spawned_loot.pixel_x = spawned_loot.pixel_y = ((!(loot_spawned%2)*loot_spawned/2)*-1)+((loot_spawned%2)*(loot_spawned+1)/2*1)
-			loot_spawned++
+	if(delay_spawn && !mapload) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
+		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
+		return // have fun!
+	spawn_the_stuff() // lov dan
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/spawner/lootdrop/proc/spawn_the_stuff(list/listhack)
+	if(!LAZYLEN(loot))
+		return
+	var/atom/A = spawn_on_turf ? get_turf(src) : loc
+	for(var/tospawn in 1 to min(lootcount, LAZYLEN(loot)))
+		var/lootspawn = pickweight(loot)
+		if(!lootspawn)
+			return
+		if(!lootdoubles)
+			loot.Remove(lootspawn)
+		if(lootspawn)
+			var/atom/movable/spawned_loot = new lootspawn(A)
+			if(islist(listhack))
+				listhack |= spawned_loot
+			if(fan_out_items)
+				spawned_loot.pixel_x = spawned_loot.pixel_y = ((!(tospawn%2)*tospawn/2)*-1)+((tospawn%2)*(tospawn+1)/2*1)
+			else
+				if(pixel_x != 0)
+					spawned_loot.pixel_x = pixel_x
+				if(pixel_y != 0)
+					spawned_loot.pixel_y = pixel_y
+	qdel(src)
 
 /obj/effect/spawner/lootdrop/bedsheet
 	icon = 'icons/obj/bedsheets.dmi'
