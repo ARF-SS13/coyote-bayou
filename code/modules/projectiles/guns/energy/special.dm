@@ -15,7 +15,7 @@
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
 
-/obj/item/gun/energy/ionrifle/carbine
+/obj/item/gun/energy/ionrifle/carbine // needs a mob sprite assigned, 5/5/2023
 	name = "ion carbine"
 	desc = "The MK.II Prototype Ion Projector is a lightweight carbine version of the larger ion rifle, built to be ergonomic and efficient."
 	icon_state = "ioncarbine"
@@ -25,6 +25,14 @@
 	flight_y_offset = 11
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
+
+/obj/item/gun/energy/ionrifle/compact // needs a mob sprite assigned, 5/5/2023; this is intended to be a roundstart pistol in the same tier as the Wattz 1k pistol
+	name = "pulse pistol"
+	desc = "This weapon makes a continual and quiet hum, even when the power cell is removed. Written on the side is 'Type III Pulse Projector,' whatever that means."
+	icon_state = "tesla"
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
