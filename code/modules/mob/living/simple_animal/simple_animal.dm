@@ -459,6 +459,12 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/updatehealth()
 	..()
 	health = clamp(health, 0, maxHealth)
+	var/slow = 0
+	if(client && !HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))//Player controlled animal
+		var/health_percent = ((health/maxHealth)*100)//1-100 scale for health
+		if(health_percent <= 50)//Start slowdown at half health
+			slow += ((50/health_percent)/2)//0.5 slowdown at 1/2 health, 1 slowdown at 1/4 health, etc
+	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, slow)
 
 /mob/living/simple_animal/update_stat()
 	if(status_flags & GODMODE)
@@ -689,10 +695,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		lying = 1
 		..()
 
-/mob/living/simple_animal/drop_all_held_items()
-	if(internal_storage)
+/mob/living/simple_animal/drop_all_held_items(skip_worn = FALSE)
+	if(internal_storage && !skip_worn)
 		dropItemToGround(internal_storage)
-	if(head)
+	if(head && !skip_worn)
 		dropItemToGround(head)
 	. = ..()
 
@@ -782,18 +788,17 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	else
 		..()
 
-/* /mob/living/simple_animal/update_mobility()
+/mob/living/simple_animal/update_mobility()
 	. = ..()
 	if(IsUnconscious() || IsStun() || IsParalyzed() || stat || resting)
-		drop_all_held_items()
 		mobility_flags = NONE
 	else if(buckled)
 		mobility_flags = ~MOBILITY_MOVE
 	else
 		mobility_flags = MOBILITY_FLAGS_DEFAULT
-	update_transform()
+//	update_transform()
 	update_action_buttons_icon()
-	return mobility_flags */
+	return mobility_flags
 
 /* /mob/living/simple_animal/update_transform()
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
