@@ -124,3 +124,38 @@
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
+
+
+/obj/item/melee/onehanded/club/fryingpan/pot
+	name = "Small Pot"
+	desc = "A small black pot!"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "small_pot"
+	force = 5
+	w_class = WEIGHT_CLASS_TINY
+	throwforce = 0
+	throw_speed = 3
+	throw_range = 5
+	custom_materials = list(/datum/material/iron=80)
+	flags_1 = CONDUCT_1
+	attack_verb = list("bonked", "thwaked", "smacked")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	armor = ARMOR_VALUE_GENERIC_ITEM
+
+/obj/item/weapon/copperpot
+	name = "Copper Pot"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "copperpot1"
+	desc = "A dull copper pot"
+
+/obj/item/weapon/copperpot2
+	name = "Copper Pot"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "copperpot2"
+	desc = "A dull copper pot"
+
+/obj/item/weapon/spatula
+	name = "spatula"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "spatula"
+	desc = "Come on and flip it! Flip it real good!"

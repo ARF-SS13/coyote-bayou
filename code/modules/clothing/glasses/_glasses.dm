@@ -145,7 +145,7 @@
 	desc = "Avast ye wasteys!"
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
-	
+
 /obj/item/clothing/glasses/eyepatch/goji
 	name = "emblazoned eyepatch"
 	desc = "You have the eye of a mad dog!"
@@ -566,11 +566,11 @@
 	item_state = "geist_gazers"
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
-/obj/item/clothing/glasses/psych
+/* /obj/item/clothing/glasses/psych // commented out because someone deleted the psych glasses hand sprite
 	name = "psych glasses"
 	icon_state = "psych_glasses"
 	item_state = "psych_glasses"
-	glass_colour_type = /datum/client_colour/glass_colour/red
+	glass_colour_type = /datum/client_colour/glass_colour/red */
 
 /obj/item/clothing/glasses/debug
 	name = "debug glasses"
@@ -632,4 +632,50 @@
 			user.Knockdown(100)
 			user.blind_eyes(30)
 		return
+
+// Prescription variants for Bayou
+
+/obj/item/clothing/glasses/geist_gazers/upgr
+	name = "prescription geist gazers"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/psych/upgr
+	name = "prescription pysch glasses"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/f13/biker/upgr
+	name = "prescription biker goggles"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/legiongoggles/upgr
+	name = "prescription sandstorm goggles"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/regular/hipster/upgr
+	name = "prescription hipster glasses"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/regular/jamjar/upgr
+	name = "prescription jamjar glasses"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/regular/circle/upgr
+	name = "prescription circle glasses"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/orange/upgr
+	name = "prescription orange glasses"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/red/upgr
+	name = "prescription red glasses"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/heat/upgr
+	name = "prescription heat goggles"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/cold/upgr
+	name = "prescription cold goggles"
+	vision_correction = 1
 

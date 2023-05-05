@@ -35,9 +35,9 @@
 	/// How much licking someone should heal someone
 	var/lick_heal_burn
 	/// What kind of bandage is applied by licking someone
-	var/obj/item/stack/medical/gauze/lick_bandage
+	//	var/obj/item/stack/medical/gauze/lick_bandage
 	/// What kind of healpack is applied by licking someone
-	var/obj/item/stack/medical/bruise_pack/lick_healer
+	// var/obj/item/stack/medical/bruise_pack/lick_healer
 
 /obj/item/organ/tongue/Initialize(mapload)
 	. = ..()
@@ -50,30 +50,31 @@
 	now_failing = span_warning("Your [name] feels like it's about to fall out!.")
 	now_fixed = span_info("The excruciating pain of your [name] has subsided.")
 	languages_possible = languages_possible_base
-	if(lick_bandage) // ew
-		initialize_bandage(lick_bandage)
-	if(lick_healer) // ew
-		initialize_lickpack(lick_healer)
+	// if(lick_bandage) // ew
+	// 	initialize_bandage(lick_bandage)
+	// if(lick_healer) // ew
+	// 	initialize_lickpack(lick_healer)
 
 /obj/item/organ/tongue/Destroy()
 	. = ..()
-	if(istype(lick_bandage))
-		QDEL_NULL(lick_bandage)
-	if(istype(lick_healer))
-		QDEL_NULL(lick_healer)
+	// if(istype(lick_bandage))
+	// 	QDEL_NULL(lick_bandage)
+	// if(istype(lick_healer))
+	// 	QDEL_NULL(lick_healer)
 
 /// Makes a tongue have a bandage in it, so it can lick wounds and apply some kind of bandage
+/*
 /obj/item/organ/tongue/proc/initialize_bandage(obj/item/stack/medical/gauze/lick_gauze)
 	if(!lick_gauze)
 		return FALSE
 	lick_bandage = new lick_gauze(src)
 	return TRUE
-
+*/
 /// Makes a tongue have a bandage in it, so it can lick wounds and apply some kind of bandage
 /obj/item/organ/tongue/proc/initialize_lickpack(obj/item/stack/medical/bruise_pack/lick_pack)
 	if(!lick_pack)
 		return FALSE
-	lick_healer = new lick_pack(src)
+	//lick_healer = new lick_pack(src)
 	return TRUE
 
 /obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args) //this wont proc unless there's initial_accents on the tongue
@@ -121,7 +122,7 @@
 	say_mod = "purrs"
 	lick_heal_brute = 1
 	lick_heal_burn = 1
-	lick_bandage = /obj/item/stack/medical/gauze/lick
+//	lick_bandage = /obj/item/stack/medical/gauze/lick
 
 /obj/item/organ/tongue/cat
 	name = "cat tongue"

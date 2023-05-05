@@ -473,3 +473,39 @@
 	name = "headset"
 	path = /obj/item/radio/headset
 	cost = 1
+
+/datum/gear/backpack/twocolorcollar
+	name = "Two Color Lockable Leather Collar"
+	path = /obj/item/clothing/neck/petcollar/choker
+
+/datum/gear/backpack/onecolorcollar
+	name = "One Color Lockable Leather Collar"
+	path = /obj/item/clothing/neck/petcollar/locked
+	cost = 1
+
+/datum/gear/backpack/shockcollar
+	name = "Kinky Shock Collar"
+	path = /obj/item/electropack/shockcollar
+	cost = 1
+
+/datum/gear/backpack/shockcollarshimusa
+	name = "Kinky Shock Collar w/ Shackles"
+	path = /obj/item/electropack/shockcollar/shimsusa_shackles
+	cost = 1
+
+//Cameras
+
+/datum/gear/backpack/camera/early
+	name  = "early camera"
+	path = /obj/item/camera/early
+	cost = 3
+
+/datum/gear/backpack/camera/earlymodern
+	name  = "early modern camera"
+	path = /obj/item/camera/earlymodern
+	cost = 3
+
+/datum/gear/backpack/camera/coldwar
+	name  = "coldwar camera"
+	path = /obj/item/camera/coldwar
+	cost = 3

@@ -230,13 +230,13 @@
 
 	to_chat(owner.current, span_userdanger("You are the [special_role]."))
 	if(syndicate)
-		to_chat(owner.current, span_userdanger("GREAT LEADER IS DEAD. NANOTRASEN MUST FALL."))
+		to_chat(owner.current, span_userdanger("GREAT LEADER IS DEAD. US Government MUST FALL."))
 		to_chat(owner.current, span_userdanger("Your have infiltrated this vessel to cause chaos and assassinate targets known to have conspired against the Syndicate."))
 		to_chat(owner.current, span_userdanger("Any damage you cause will be a further embarrassment to Nanotrasen, so you have no limits on collateral damage."))
 		to_chat(owner.current, span_userdanger("You have been provided with a standard uplink to accomplish your task. "))
 		to_chat(owner.current, span_userdanger("By no means reveal that you are a Syndicate agent. By no means reveal that your targets are being hunted."))
 	else
-		to_chat(owner.current, span_userdanger("CAUTION: Your legal status as a citizen of NanoTrasen will be permanently revoked upon completion of your first contract."))
+		to_chat(owner.current, span_userdanger("CAUTION: Your legal status as a citizen of US Government will be permanently revoked upon completion of your first contract."))
 		to_chat(owner.current, span_userdanger("Your target has been suspected of [crime], and must be removed from this plane."))
 		to_chat(owner.current, span_userdanger("While you have a license to kill, you are to eliminate your targets with no collateral or unrelated deaths."))
 		to_chat(owner.current, span_userdanger("For the sake of plausable deniability, you have been equipped with captured Syndicate equipment via uplink."))

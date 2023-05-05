@@ -21,6 +21,10 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2,)
 	butcher_difficulty = 1
 
+/mob/living/simple_animal/hostile/hellpig/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 //Cat slugs
 
 /mob/living/simple_animal/pet/catslug
@@ -34,8 +38,8 @@
 
 	faction = list("catslug", "neutral")
 	mob_armor = ARMOR_VALUE_MEDIUM
-	maxHealth = 100
-	health = 100
+	maxHealth = 200
+	health = 200
 	healable = 1
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 
@@ -48,11 +52,12 @@
 	harm_intent_damage = 2
 	melee_damage_lower = 2
 	melee_damage_upper = 5
-
 	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
 	held_items = list(null, null)
 	see_in_dark = 8
 	can_ghost_into = TRUE
+	head_offset = -9
 
 /mob/living/simple_animal/pet/catslug/proc/catslug_color()
 	set name = "Pick Color"
@@ -78,7 +83,31 @@
 			icon_state = "[icon_living]"
 			collar_type = "[initial(collar_type)]"
 	regenerate_icons()
+/* Slugcat helmet/hat sprites were a bit of a headache so we're not doing it right now : ^ ))))
+/mob/living/simple_animal/pet/catslug/proc/apply_overlay(cache_index)
+	if((. = overlays[cache_index]))
+		add_overlay(.)
 
+/mob/living/simple_animal/pet/catslug/proc/remove_overlay(cache_index)
+	var/I = overlays[cache_index]
+	if(I)
+		cut_overlay(I)
+		overlays[cache_index] = null
+
+/mob/living/simple_animal/pet/catslug/update_inv_head()
+	remove_overlay(DRONE_HEAD_LAYER)
+
+	if(head)
+		if(client && hud_used && hud_used.hud_shown)
+			head.screen_loc = ui_drone_head
+			client.screen += head
+		var/mutable_appearance/head_overlay = head.build_worn_icon(default_layer = DRONE_HEAD_LAYER, default_icon_file = head.icon, override_state = head.icon_state)
+		head_overlay.pixel_y += head_offset
+
+		overlays[DRONE_HEAD_LAYER] = head_overlay
+
+	apply_overlay(DRONE_HEAD_LAYER)
+*/
 //Slugcat OC for thingpony
 /mob/living/simple_animal/pet/catslug/meadow
 	name = "Meadow"
@@ -88,6 +117,7 @@
 	icon_dead = "calicoslug_dead"
 	gender = "female"
 
+//Slugcat OC for Cosmic
 /mob/living/simple_animal/pet/catslug/shroomslug
 	name = "Myca Rashee"
 	desc = "A slugcat that seems to be idly sitting there their fur seems a bit odd to look at as they give off a odd glow from the mushroom cap on their head. They seem somewhat timid and shy? Their seems to be fungal growths along the blanket of moss on their body..https://media.discordapp.net/attachments/1020998258669129758/1025891405605912626/cosmic_mushroom_cat_1_1.png?width=773&height=805"
@@ -98,6 +128,15 @@
 	light_color ="#728FCE"
 	light_range = 1.4
 	light_power = 4
+
+//Slugcat OC for Gamma
+/mob/living/simple_animal/pet/catslug/sunrise
+	name = "Falling Sunrise"
+	desc = "This somewhat large Scug, standing at about 3'10, is mostly magenta, though his head is covered with a Vulture mask. He is frequently seen around town, or out doing light hunting in the wastes. He is capable of English speech. OOC : ERP Ok, Non-Con is a No, Unsanitary is a No"
+	icon_state = "sunrise"
+	icon_living = "sunrise"
+	icon_dead = "sunrise_dead"
+	gender = "male"
 
 //Mobs from Virgo
 
@@ -116,6 +155,10 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	maxHealth = 300
+
+/mob/living/simple_animal/pet/wolf/direwolf/Initialize()
+	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/pet/wolf/direwolf/dog
 	name = "large dog"
@@ -158,7 +201,19 @@
 	aggrosound = list('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl3.ogg', )
 	idlesound = list('sound/alien/Voice/hiss1.ogg',)
 
+/mob/living/simple_animal/hostile/alligator/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 //Dinos
+
+/mob/living/simple_animal/hostile/dinosaur/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
+/mob/living/simple_animal/hostile/retaliate/goat/dinosaur/Initialize()
+	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/hostile/retaliate/goat/dinosaur/triceratops/bull
 	name = "Bull Triceratops"

@@ -37,12 +37,12 @@
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/firstaid/emergency
 	icon_state = "medbriefcase"
@@ -439,7 +439,7 @@
 /obj/item/storage/pill_bottle/breast_enlarger/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/breast_enlarger(src)
-	
+
 /obj/item/storage/pill_bottle/butt_enlarger
 	name = "bottle of callipygian capsules"
 	desc = "Ever wish you had a bit more cushion for the pushin'? Not any more with Doctor D-Zels' patented callipygian capsules! \

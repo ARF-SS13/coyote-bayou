@@ -7,8 +7,8 @@
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	name = "riot suppression electrostaff"
 	desc = "A large quarterstaff, with massive silver electrodes mounted at the end."
-	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING | ITEM_SLOT_BELT
 	throwforce = 15			//if you are a madman and finish someone off with this, power to you.
 	throw_speed = 1
 	item_flags = NO_MAT_REDEMPTION
@@ -25,7 +25,7 @@
 	var/on = FALSE
 	var/can_block_projectiles = FALSE		//can't block guns
 	var/lethal_cost = 400			//10000/400*20 = 500. decent enough?
-	var/lethal_damage = 20
+	var/lethal_damage = 30
 	var/lethal_stam_cost = 4
 	var/stun_cost = 333				//10000/333*25 = 750. stunbatons are at time of writing 10000/1000*49 = 490.
 	var/stun_status_effect = STATUS_EFFECT_ELECTROSTAFF			//a small slowdown effect

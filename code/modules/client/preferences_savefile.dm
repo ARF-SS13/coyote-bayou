@@ -670,6 +670,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["chosen_limb_id"]					>> chosen_limb_id
 	S["hide_ckey"]						>> hide_ckey //saved per-character
 
+	//Creature character settings
+	S["creature_species"]			>> creature_species
+	S["creature_name"]				>> creature_name
+	S["creature_flavor_text"]		>> creature_flavor_text
+	S["creature_ooc"]				>> creature_ooc
+	S["creature_profilepic"]		>> creature_profilepic
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -789,6 +795,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["special_i"]			>> special_i
 	S["special_a"]			>> special_a
 	S["special_l"]			>> special_l
+	
+	S["custom_pixel_x"]		>> custom_pixel_x
+	S["custom_pixel_y"]		>> custom_pixel_y
 
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
@@ -858,6 +867,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	special_i		= sanitize_integer(special_i, 1, 10, initial(special_i))
 	special_a		= sanitize_integer(special_a, 1, 10, initial(special_a))
 	special_l		= sanitize_integer(special_l, 1, 10, initial(special_l))
+	
+	custom_pixel_x	= sanitize_integer(custom_pixel_x, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	custom_pixel_y	= sanitize_integer(custom_pixel_y, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
 
 	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
@@ -1027,6 +1039,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// !! COYOTE SANITISATION !!
 	profilePicture = sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	creature_profilepic = sanitize_text(creature_profilepic)
 
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
@@ -1185,7 +1198,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_l"]		,special_l)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
 	WRITE_FILE(S["feature_chat_color"], features["chat_color"])
-	
+	WRITE_FILE(S["custom_pixel_x"], custom_pixel_x)
+	WRITE_FILE(S["custom_pixel_y"], custom_pixel_y)
+
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)
 		var/feature_value = features[feature]
@@ -1225,6 +1240,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["job_preferences"] , job_preferences)
 	WRITE_FILE(S["hide_ckey"]		, hide_ckey)
 
+	//Write creature character
+	WRITE_FILE(S["creature_species"]			,creature_species)
+	WRITE_FILE(S["creature_name"]				,creature_name)
+	WRITE_FILE(S["creature_flavor_text"]		,creature_flavor_text)
+	WRITE_FILE(S["creature_ooc"]				,creature_ooc)
+	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)

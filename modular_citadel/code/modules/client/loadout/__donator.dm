@@ -571,7 +571,20 @@
 	new /obj/item/radio(src)
 
 // K
+
+
+
 // L
+
+/datum/gear/donator/kits/LilKuddles
+	name = "Khajiits Memories"
+	path = /obj/item/storage/box/large/custom_kit/kuddles2
+	ckeywhitelist = list("LilKuddles")
+
+/obj/item/storage/box/large/custom_kit/kuddles2/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword/kuddleslongsword(src)
+	new /obj/item/clothing/suit/hooded/robes(src)
+
 
 /datum/gear/donator/kits/lifelessghoul
 	name = "Ancient Memories"
@@ -1185,7 +1198,26 @@
 /obj/item/storage/box/large/custom_kit/saltspider/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
 	new /obj/item/melee/onehanded/club/fryingpan/saltspider
-	
+
+/datum/gear/donator/kits/kelprunner
+	name = "Kelptastic Kit"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner
+	ckeywhitelist = list("Kelprunner")
+
+/obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/wt550/worn(src)
+	new /obj/item/ammo_box/magazine/m473/small(src)
+	new /obj/item/storage/firstaid/emergency(src)
+
+/datum/gear/donator/kits/lucine2
+	name = "Gob-lyn Muderbox"
+	path = /obj/item/storage/box/large/custom_kit/lucine2
+	ckeywhitelist = list("lucine")
+
+/obj/item/storage/box/large/custom_kit/lucine2/PopulateContents()
+	new /obj/item/electrostaff(src)
+	new /obj/item/clothing/neck/necklace/memento_mori(src)
+
 //Mayor Kit
 
 /datum/gear/donator/kits/Mayor_kit
@@ -1197,3 +1229,5 @@
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/radio/headset/headset_town/mayor(src)
 	new /obj/item/kit_spawner/townie/mayor(src)
+
+

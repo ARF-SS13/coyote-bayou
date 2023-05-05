@@ -149,7 +149,7 @@
 
 /datum/uplink_item/device_tools/damaged_module
 	name = "Damaged AI Law Upload Module"
-	desc = "This AI law upload module has been laying around our warehouse for god knows how long. We do not know why you would ever use this."
+	desc = "This AI law upload module has been laying around our warehouse for gosh knows how long. We do not know why you would ever use this."
 	item = /obj/item/aiModule/core/full/damaged
 	cost = 5
 
@@ -185,7 +185,7 @@
 
 /datum/uplink_item/device_tools/rad_laser
 	name = "Radioactive Microlaser"
-	desc = "A radioactive microlaser disguised as a standard Nanotrasen health analyzer. When used, it emits a \
+	desc = "A radioactive microlaser disguised as a standard US Government health analyzer. When used, it emits a \
 			powerful burst of radiation, which, after a short delay, can incapacitate all but the most protected \
 			of humanoids. It has two settings: intensity, which controls the power of the radiation, \
 			and wavelength, which controls the delay before the effect kicks in."

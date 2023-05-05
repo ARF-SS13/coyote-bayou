@@ -636,6 +636,18 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 					usr.stripPanelUnequip(what,src,slot)
 			else
 				usr.stripPanelEquip(what,src,slot)
+	//Coyote Add
+	if(href_list["flavor_more"])
+		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavortext, "\n", "<BR>")), text("window=[];size=500x200", name))
+		onclose(usr, "[name]")
+	if(href_list["oocnotes"])
+		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
+		onclose(usr, "[name]")
+	if(href_list["enlargeImageCreature"])
+		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!")
+		popup.set_content(dat)
+		popup.open()
 
 	if(usr.machine == src)
 		if(Adjacent(usr))
@@ -787,6 +799,38 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(!canface())
 		return FALSE
 	if(pixel_y >= -16)
+		pixel_y--
+		is_shifted = TRUE
+
+/mob/living/eastshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_x <= (16 + get_standard_pixel_x_offset()))
+		pixel_x++
+		is_shifted = TRUE
+
+/mob/living/westshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_x >= -(16 + get_standard_pixel_x_offset()))
+		pixel_x--
+		is_shifted = TRUE
+
+/mob/living/northshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_y <= (16 + get_standard_pixel_y_offset()))
+		pixel_y++
+		is_shifted = TRUE
+
+/mob/living/southshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_y >= -(16 + get_standard_pixel_y_offset()))
 		pixel_y--
 		is_shifted = TRUE
 

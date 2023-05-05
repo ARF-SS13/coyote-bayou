@@ -25,13 +25,13 @@
 				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
 				visible_message(span_warning("[humanAM] runs straight into [src] with a sickening impact!"))
 			if(HAS_TRAIT(humanAM, TRAIT_SUPER_ZOOMIES))
-				humanAM.adjustBruteLoss(50)
+				humanAM.adjustBruteLoss(40)
 				visible_message(span_warning("[humanAM] runs straight into [src] with a violent impact!"))
 				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
 				playsound(get_turf(src), 'sound/effects/wounds/crack2.ogg', 100, 0, 0)
 			else
 				visible_message(span_warning("[humanAM] runs straight into [src]!"))
-			
+
 
 
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)

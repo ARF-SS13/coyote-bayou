@@ -1130,57 +1130,12 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 
 #undef DELTA_CALC
 
-/proc/flash_color(mob_or_client, flash_color="#960000", flash_time=20)
-	var/client/C
-	if(ismob(mob_or_client))
-		var/mob/M = mob_or_client
-		if(M.client)
-			C = M.client
-		else
-			return
-	else if(istype(mob_or_client, /client))
-		C = mob_or_client
-
-	if(!istype(C))
-		return
-
-	var/animate_color = C.color
-	C.color = flash_color
-	animate(C, color = animate_color, time = flash_time)
-
-#define RANDOM_COLOUR (rgb(rand(0,255),rand(0,255),rand(0,255)))
-
 /proc/random_nukecode()
 	var/val = rand(0, 99999)
 	var/str = "[val]"
 	while(length(str) < 5)
 		str = "0" + str
 	. = str
-
-/atom/proc/Shake(pixelshiftx = 15, pixelshifty = 15, duration = 250)
-	var/initialpixelx = pixel_x
-	var/initialpixely = pixel_y
-	var/shiftx = rand(-pixelshiftx,pixelshiftx)
-	var/shifty = rand(-pixelshifty,pixelshifty)
-	animate(src, pixel_x = pixel_x + shiftx, pixel_y = pixel_y + shifty, time = 0.2, loop = duration)
-	pixel_x = initialpixelx
-	pixel_y = initialpixely
-
-/atom/proc/do_jiggle(targetangle = 45, timer = 20)
-	var/matrix/OM = matrix(transform)
-	var/matrix/M = matrix(transform)
-	var/halftime = timer * 0.5
-	M.Turn(pick(-targetangle, targetangle))
-	animate(src, transform = M, time = halftime, easing = ELASTIC_EASING)
-	animate(src, transform = OM, time = halftime, easing = ELASTIC_EASING)
-
-/atom/proc/do_squish(squishx = 1.2, squishy = 0.6, timer = 20)
-	var/matrix/OM = matrix(transform)
-	var/matrix/M = matrix(transform)
-	var/halftime = timer * 0.5
-	M.Scale(squishx, squishy)
-	animate(src, transform = M, time = halftime, easing = BOUNCE_EASING)
-	animate(src, transform = OM, time = halftime, easing = BOUNCE_EASING)
 
 /proc/weightclass2text(w_class)
 	switch(w_class)

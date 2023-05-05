@@ -78,7 +78,7 @@
 	icon_state = "wallet"
 
 /obj/item/storage/wallet/stash
-	name = "money stash"
+	name = "metal tin"
 	desc = "It can hold a few small and personal things. Easily tucked in various discrete places."
 	icon_state = "moneypouch"
 	no_refresh = TRUE

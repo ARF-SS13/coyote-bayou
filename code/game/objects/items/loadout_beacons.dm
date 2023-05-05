@@ -936,6 +936,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/oldlongsword/armingsword/PopulateContents()
 	new /obj/item/melee/coyote/oldlongsword/armingsword(src)
 
+/obj/item/storage/box/gun/melee/oldlongsword/longquan/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword/longquan(src)
+
+/obj/item/storage/box/gun/melee/oldlongsword/xiphos/PopulateContents()
+	new /obj/item/melee/coyote/oldlongsword/xiphos(src)
+
 /obj/item/storage/box/gun/melee/oldpike/PopulateContents()
 	new /obj/item/melee/coyote/oldpike(src)
 
@@ -2307,6 +2313,15 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/coyote/oldlongsword/armingsword
 
+/datum/loadout_box/oldlongsword/longquan
+	entry_tag = "Old Chinese Sword"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/oldlongsword/longquan
 
-
+/datum/loadout_box/oldlongsword/xiphos
+	entry_tag = "Old Xiphos"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/oldlongsword/xiphos
 

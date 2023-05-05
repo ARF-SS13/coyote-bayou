@@ -16,13 +16,19 @@
 	var/last_progress = 0
 	///Variable to ensure smooth visual stacking on multiple progress bars.
 	var/listindex = 0
+	///If the progress bar should jusst be treated as a normal image and appear for everyone
+	var/visible_to_all = FALSE
+	///The previous icon state of the progress bar.
+	var/last_icon_state
 
+/datum/progressbar/stored
+	visible_to_all = TRUE
 
 /datum/progressbar/New(mob/User, goal_number, atom/target)
 	. = ..()
 	if (!istype(target))
 		EXCEPTION("Invalid target given")
-	if(QDELETED(User) || !istype(User))
+	if((QDELETED(User) || !istype(User)) && !visible_to_all)
 		stack_trace("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] user")
 		qdel(src)
 		return
@@ -33,8 +39,13 @@
 	goal = goal_number
 	bar_loc = target
 	bar = image('icons/effects/progessbar.dmi', bar_loc, "prog_bar_0")
-	bar.plane = ABOVE_HUD_PLANE
+	if(visible_to_all)
+		bar.plane = HUD_PLANE - 100
+	else
+		bar.plane = ABOVE_HUD_PLANE
 	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	if(visible_to_all)
+		return
 	user = User
 
 	LAZYADDASSOC(user.progressbars, bar_loc, src)
@@ -111,11 +122,24 @@
 
 ///Adds a smoothly-appearing progress bar image to the player's screen.
 /datum/progressbar/proc/add_prog_bar_image_to_client()
+	user_client.images += bar
+	show_bar()
+
+/datum/progressbar/proc/show_bar()
 	bar.pixel_y = 0
 	bar.alpha = 0
-	user_client.images += bar
+	bar.loc = bar_loc
 	animate(bar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
+/datum/progressbar/proc/hide_bar()
+	bar.alpha = 255
+	animate(bar, pixel_y = 0, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+	bar.icon_state = "prog_bar_0"
+
+/datum/progressbar/proc/set_new_goal(newgoal)
+	goal = newgoal
+	last_progress = 0
+	update(0)
 
 ///Updates the progress bar image visually.
 /datum/progressbar/proc/update(progress)
@@ -124,7 +148,9 @@
 		return
 	last_progress = progress
 	bar.icon_state = "prog_bar_[round(((progress / goal) * 100), 5)]"
-
+	if(last_icon_state != bar.icon_state)
+		last_icon_state = bar.icon_state
+		return TRUE
 
 ///Called on progress end, be it successful or a failure. Wraps up things to delete the datum and bar.
 /datum/progressbar/proc/end_progress()
@@ -132,6 +158,9 @@
 		bar.icon_state = "[bar.icon_state]_fail"
 
 	animate(bar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
+	if(visible_to_all)
+		hide_bar()
+		return
 
 	QDEL_IN(src, PROGRESSBAR_ANIMATION_TIME)
 

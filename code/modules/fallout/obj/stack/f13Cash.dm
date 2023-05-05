@@ -36,8 +36,8 @@
 #define BANKER_MAX 15000
 
 /obj/item/stack/f13Cash //DO NOT USE THIS
-	name = "bottle cap"
-	singular_name = "cap"
+	name = "copper coin"
+	singular_name = "copper coin"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "bottle_cap"
 	amount = 1
@@ -48,8 +48,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	var/flavor_desc =	"A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\
-					A common unit of exchange, backed by water in the Hub."
+	var/flavor_desc =	"A copper coin, commonly used for trade."
 	var/value = CASH_CAP
 	var/flippable = TRUE
 	var/cooldown = 0
@@ -196,15 +195,12 @@
 	max_qty = BANKER_MAX / CASH_CAP
 
 /obj/item/stack/f13Cash/denarius
-	name = "Denarius"
-	latin = 1
-	singular_name = "Denari" // -us or -i
+	name = "silver coin"
+	latin = 0
+	singular_name = "Sliver Coin" // -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "denarius"
-	flavor_desc =	"The inscriptions are in Latin,\n\
-		'Caesar Dictator' on the front and\n\
-		'Magnum Chasma' on the back."
-	value = CASH_DEN * CASH_CAP
+	flavor_desc =	"A sliver, shiny coin, used mainly by the middle class. Worth the same as 10 copper coins."
 	merge_type = /obj/item/stack/f13Cash/denarius
 
 /obj/item/stack/f13Cash/random/denarius
@@ -235,14 +231,12 @@
 	max_qty = HIGH_MAX / CASH_DEN
 
 /obj/item/stack/f13Cash/aureus
-	name = "Aureus"
-	latin = 1
-	singular_name = "Aure"// -us or -i
+	name = "gold coin"
+	latin = 0
+	singular_name = "Gold Coin"// -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "aureus"
-	flavor_desc = 	"The inscriptions are in Latin,\n\
-					'Aeternit Imperi' on the front and\n\
-					'Pax Per Bellum' on the back."
+	flavor_desc = 	"A golden coin used by aristocrats and upper class-men. Quite rare... a sight to behold, indeed. Also super shiny! Worth 100 copper coins, or 10 silver coins."
 	value = CASH_AUR * CASH_CAP
 	merge_type = /obj/item/stack/f13Cash/aureus
 

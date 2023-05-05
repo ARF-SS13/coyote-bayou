@@ -46,7 +46,7 @@
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
-/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK
+/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK // reworked into multiple other trait options, here for example purposes now - bear
 /quirk/fev
 	name = "FEV Exposure"
 	desc = " "
@@ -466,3 +466,30 @@
 	desc = "You never tire of sprinting at all, just be extremely careful not to run into things."
 	value = 0
 	mob_trait = TRAIT_SUPER_ZOOMIES
+
+/datum/quirk/lick_heal
+	name = "Innate healing - Saliva"
+	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick the injuries of yourself or others. Drinking water helps recover from a dry tongue faster."
+	value = 0
+	mob_trait = TRAIT_HEAL_TONGUE
+	gain_text = span_notice("You feel a slight tingle in your mouth.")
+	lose_text = span_danger("The tingle in your mouth fades.")
+	locked = FALSE
+
+/datum/quirk/touch_heal
+	name = "Innate healing - Magic"
+	desc = "Your touch has a mild healing effect on burns and bruises. Use *touch to sooth the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
+	value = 0
+	mob_trait = TRAIT_HEAL_TOUCH
+	gain_text = span_notice("You feel a slight tingle in your hands.")
+	lose_text = span_danger("The tingle in your palm fades.")
+	locked = FALSE
+
+/datum/quirk/tend_heal
+	name = "Innate healing - Triage"
+	desc = "You keep a tiny kit of medical supplies stashed away for emergencies. Use *tend to treat the injuries of yourself or others. Drinking water helps recover your focus."
+	value = 0
+	mob_trait = TRAIT_HEAL_TEND
+	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
+	lose_text = span_danger("You lost your triage kit...")
+	locked = FALSE

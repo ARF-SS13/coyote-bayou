@@ -32,7 +32,7 @@ proc/get_top_level_mob(mob/S)
 	message = null
 	//mob_type_blacklist_typecache = list(/mob/living/brain)
 	var/subtler = FALSE
-	var/message_range = 1
+	message_range = 1
 
 /datum/emote/living/subtle/subtler
 	key = "subtler"

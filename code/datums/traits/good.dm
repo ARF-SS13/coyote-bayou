@@ -409,13 +409,13 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.update_sight()
 
 /datum/quirk/nukalover
-	name = "Nuka Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Nuka Cola heals you, sort of."
+	name = "Cola Fiend"
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Cosmic Cola heals you, sort of."
 	value = 1
 	mob_trait = TRAIT_NUKA_LOVER
-	gain_text = span_notice("You want to buy the whole world a nuka-cola!")
-	lose_text = span_danger("What's the big deal about nuka-cola?")
-	medical_record_text = "Patient has an addiction to the soft drink Nuka-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
+	gain_text = span_notice("You want to buy the whole world a cosmic-cola!")
+	lose_text = span_danger("What's the big deal about cosmic-cola?")
+	medical_record_text = "Patient has an addiction to the soft drink Cosmic-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
 
 /datum/quirk/nukalover/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -604,33 +604,16 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
-/datum/quirk/lick_heal
-	name = "Soothing Saliva"
-	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick your injuries."
-	value = 1
-	mob_trait = TRAIT_HEAL_TONGUE
-	gain_text = span_notice("You feel a slight tingle in your mouth.")
-	lose_text = span_danger("The tingle in your mouth fades.")
+/datum/quirk/improved_heal
+	name = "Improved Innate Healing"
+	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. check the neutral traits for these abilities."
+	value = 2
+	mob_trait = TRAIT_IMPROVED_HEALING
+	gain_text = span_notice("You feel well hydrated.")
+	lose_text = span_danger("You feel rather dry.")
 	locked = FALSE
 
-/datum/quirk/lick_heal/on_spawn()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	our_tongue.initialize_lickpack(/obj/item/stack/medical/bruise_pack/lick)
-
-/datum/quirk/lick_heal/remove()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	QDEL_NULL(our_tongue.lick_healer)
-
+/*
 /datum/quirk/lick_bandage
 	name = "Sanguine Saliva"
 	desc = "Your saliva has a mild coagulating effect on open bleeding wounds. Use *lick to lick your lacerations."
@@ -653,7 +636,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	if(!our_tongue)
 		return //welp
 	QDEL_NULL(our_tongue.lick_bandage)
-
+*/
 // This does the same thing as basic explosive crafting by giving basic_recipe and adv_recipe. -Possum
 /*
 /datum/quirk/advanced_explosive_crafting
@@ -1027,3 +1010,15 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
+
+/datum/quirk/zoomies
+	name = "Zoomies"
+	desc = "You can sprint a bit over fifty percent longer than most folk, just don't run into things."
+	value = 1
+	mob_trait = TRAIT_ZOOMIES
+
+/datum/quirk/super_zoomies
+	name = "Zoomies - Super"
+	desc = "You can sprint just over twice as long as most folk, just...REALLY don't run into things."
+	value = 3
+	mob_trait = TRAIT_SUPER_ZOOMIES

@@ -488,7 +488,7 @@
 /////////////
 
 /mob/living/simple_animal/chick
-	name = "\improper chick"
+	name = "chick"
 	desc = "Adorable! They make such a racket though."
 	icon = 'icons/fallout/mobs/animals/farmanimals.dmi'
 	icon_state = "chick"
@@ -543,7 +543,7 @@
 	amount_grown = 0
 
 /mob/living/simple_animal/chicken
-	name = "\improper chicken"
+	name = "chicken"
 	desc = "Hopefully the eggs are good this season."
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -809,6 +809,55 @@
 //https://media.tenor.com/JybpbLLsyX8AAAAC/fat-horse-wuzzle.gif
 //Wuzzle
 
+
+//Motorbike?
+
+/mob/living/simple_animal/cow/brahmin/motorbike //fast as fuck boiii-- costs welding fuel
+	name = "motorbike"
+	desc = "Wow, a small, working motorcycle. How cool!" //I don't care. ~gob
+	icon = 'modular_coyote/icons/mob/motorbike.dmi'
+	icon_state = "motorcycle_4dir"
+	icon_living = "motorcycle_4dir"
+	icon_dead = "motorcycle_overlay_n"
+	speak = list("*jump", "*beep")
+	speak_emote = list("beeps","honks")
+	emote_hear = list("The engine rumbles quietly.")
+	emote_see = list("The engine purrs loudly.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 75
+	maxHealth = 75 //Probably not the most durable piece of work. (equal in loss to the increase in speed)
+	ride_move_delay = 1.2 //A bit faster than a horse.
+	can_ghost_into = FALSE
+	response_help_continuous  = "pets?"
+	response_help_simple = "pets?"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	food_types = list(
+		/obj/item/reagent_containers/glass/bottle/welding_fuel,
+		/obj/item/reagent_containers/glass/bottle/welding_fuel/big
+		)
+	young_type = /mob/living/simple_animal/cow/brahmin/motorbike
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/stack/sheet/metal/ten = 1,
+		/obj/structure/tires/two = 1
+		)
+	butcher_results = list(
+		/obj/item/stack/sheet/metal/ten = 1,
+		/obj/item/reagent_containers/glass/bottle/welding_fuel = 1,
+		/obj/structure/tires/two = 1
+		)
+	butcher_difficulty = 5
 
 //Horse
 

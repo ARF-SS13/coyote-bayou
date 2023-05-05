@@ -22,7 +22,7 @@
 /datum/gear/glasses/biker
 	name = "biker goggles"
 	path = /obj/item/clothing/glasses/f13/biker
-	cost = 2
+	cost = 1
 
 /datum/gear/glasses/sandstorm
 	name = "sandstorm goggles"
@@ -32,9 +32,9 @@
 	name = "Geist Gazers Glasses"
 	path = /obj/item/clothing/glasses/geist_gazers
 
-/datum/gear/glasses/psychglasses
-	name = "Psych Glasses"
-	path = /obj/item/clothing/glasses/psych
+//	/datum/gear/glasses/psychglasses
+//	name = "Psych Glasses"
+//	path = /obj/item/clothing/glasses/psych
 
 /datum/gear/glasses/eyepatch
 	name = "Eyepatch"

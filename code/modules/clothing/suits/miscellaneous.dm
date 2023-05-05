@@ -463,7 +463,7 @@
 
 /obj/item/clothing/suit/jacket/letterman_nanotrasen
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Nanotrasen N on the back. The tag says that it was made in Space China."
+	desc = "A blue letterman jacket with a proud US Government N on the back. The tag says that it was made in Space China."
 	icon_state = "letterman_n"
 	item_state = "letterman_n"
 
@@ -1126,4 +1126,11 @@
 	desc = "A Steel coat! Jet fuel might melt this.."
 	icon_state = "steel"
 	item_state = "steel"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/ranger/ned
+	name = "Ned Armor"
+	desc = "Maybe it will protect you, maybe it won't. Who's to know."
+	icon_state = "ned"
+	item_state = "ned"
 	armor = ARMOR_VALUE_LIGHT
