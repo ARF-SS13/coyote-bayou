@@ -35,7 +35,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/wolf
 	name = "dog meat"
-	desc = "Some asians love this stuff.<br>It does not taste too bad actually."
+	desc = "Chewy."
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 2

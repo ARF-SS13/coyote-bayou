@@ -1785,3 +1785,36 @@ datum/emote/living/flirt/kissdeep
 	message = "is trying to <span class='userlove'>kiss someone deeply!</span>"
 	message_param = "is trying to <span class='userlove'>kiss %t deeply!</span>"
 
+datum/emote/living/flirt/smile
+	key = "flirtsmile"
+	key_third_person = "<span class='love'>smiles softly</span> at someone!"
+	message = "<span class='love'>smiles softly</span> at someone!"
+	message_param = "<span class='love'>smiles softly</span> at %t!"
+
+datum/emote/living/flirt/grin
+	key = "flirtgrin"
+	key_third_person = "<span class='love'>grins mischeviously</span> at someone, they're up to no good."
+	message = "<span class='love'>grins mischeviously</span> at someone, they're up to no good."
+	message_param = "<span class='love'>grins mischeviously</span> at %t, they're up to no good."
+
+datum/emote/living/flirt/leer
+	key = "flirtleer"
+	key_third_person = "<span class='love'>leers</span> at somebody."
+	message = "<span class='love'>leers</span> at somebody."
+	message_param = "<span class='love'>leers</span> at %t."
+
+datum/emote/living/flirt/hairflip
+	key = "flirthairflip"
+	key_third_person = "<span class='love'>flips their hair casually</span> while looking at somebody."
+	message = "<span class='love'>flips their hair casually</span> while looking at somebody."
+	message_param = "<span class='love'>flips their hair casually</span> while looking at %t."
+
+datum/emote/living/flirt/hairplay
+	key = "flirthairplay"
+	key_third_person = "<span class='love'>plays with their hair</span> while looking at somebody."
+	message = "<span class='love'>plays with their hair</span> while looking at somebody."
+	message_param = "<span class='love'>plays with their hair</span> while looking at %t."
+
+
+
+
