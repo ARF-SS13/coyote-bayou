@@ -1013,12 +1013,12 @@ GLOBAL_LIST_INIT(pa_repair, list(
 
 /datum/quirk/zoomies
 	name = "Zoomies"
-	desc = "You can sprint a bit over fifty percent longer than most folk, just don't run into things."
+	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Just...don't run into things."
 	value = 1
 	mob_trait = TRAIT_ZOOMIES
 
 /datum/quirk/super_zoomies
 	name = "Zoomies - Super"
-	desc = "You can sprint just over twice as long as most folk, just...REALLY don't run into things."
+	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just...REALLY don't run into things."
 	value = 3
 	mob_trait = TRAIT_SUPER_ZOOMIES
