@@ -11,7 +11,7 @@
 
 /obj/effect/spawner/lootdrop/Initialize(mapload)
 	. = ..()
-	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
+	if(delay_spawn && !mapload) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
 		return // have fun!
 	spawn_the_stuff() // lov dan
