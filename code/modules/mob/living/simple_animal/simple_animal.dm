@@ -787,7 +787,6 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/update_mobility()
 	. = ..()
 	if(IsUnconscious() || IsStun() || IsParalyzed() || stat || resting)
-		drop_all_held_items(TRUE)
 		mobility_flags = NONE
 	else if(buckled)
 		mobility_flags = ~MOBILITY_MOVE
