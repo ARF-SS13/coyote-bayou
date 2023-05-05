@@ -5,7 +5,6 @@
 //	desc = "Lie down and rest in order to slowly heal or just relax." Swap this in when the healing works.
 	icon_icon = 'modular_coyote/icons/mob/pokemon32.dmi'
 	button_icon_state = "a_rest"
-	background_icon_state = "bg_default"
 	check_flags = AB_CHECK_CONSCIOUS
 	required_mobility_flags = MOBILITY_RESIST
 	cooldown_time = 2 SECONDS

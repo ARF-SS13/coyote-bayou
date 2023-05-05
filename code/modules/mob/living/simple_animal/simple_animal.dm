@@ -685,10 +685,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		lying = 1
 		..()
 
-/mob/living/simple_animal/drop_all_held_items()
-	if(internal_storage)
+/mob/living/simple_animal/drop_all_held_items(skip_worn = FALSE)
+	if(internal_storage && !skip_worn)
 		dropItemToGround(internal_storage)
-	if(head)
+	if(head && !skip_worn)
 		dropItemToGround(head)
 	. = ..()
 
@@ -778,18 +778,18 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	else
 		..()
 
-/* /mob/living/simple_animal/update_mobility()
+/mob/living/simple_animal/update_mobility()
 	. = ..()
 	if(IsUnconscious() || IsStun() || IsParalyzed() || stat || resting)
-		drop_all_held_items()
+		drop_all_held_items(TRUE)
 		mobility_flags = NONE
 	else if(buckled)
 		mobility_flags = ~MOBILITY_MOVE
 	else
 		mobility_flags = MOBILITY_FLAGS_DEFAULT
-	update_transform()
+//	update_transform()
 	update_action_buttons_icon()
-	return mobility_flags */
+	return mobility_flags
 
 /* /mob/living/simple_animal/update_transform()
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
