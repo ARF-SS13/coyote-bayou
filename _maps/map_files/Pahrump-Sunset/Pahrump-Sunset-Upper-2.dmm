@@ -50,6 +50,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
+"aI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
 "aK" = (
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged{
 	faction = list("raider")
@@ -400,6 +408,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"dO" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "dQ" = (
 /obj/structure/rack/shelf_metal,
 /obj/machinery/light/broken{
@@ -499,6 +514,7 @@
 /area/f13/caves)
 "fg" = (
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "fk" = (
@@ -786,6 +802,16 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"ip" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
 "ir" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/validball_spawner,
@@ -866,6 +892,10 @@
 	dir = 8
 	},
 /turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"jz" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "jG" = (
 /obj/structure/simple_door/dirtyglass,
@@ -981,6 +1011,7 @@
 "kY" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/gloves/color/red/insulated,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "kZ" = (
@@ -1038,6 +1069,8 @@
 "lG" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "lH" = (
@@ -1166,6 +1199,11 @@
 	name = "HVAC Machine"
 	},
 /obj/effect/decal/cleanable/blood/drip,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"ni" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "np" = (
@@ -1723,6 +1761,12 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"sx" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "sE" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/validball_spawner,
@@ -2060,6 +2104,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "we" = (
@@ -2814,8 +2859,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "DP" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "DQ" = (
@@ -3125,6 +3169,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
 /obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Hi" = (
@@ -3285,6 +3330,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"Ip" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Is" = (
 /obj/structure/destructible/tribal_torch/lit,
@@ -3567,6 +3617,7 @@
 "Lj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Lk" = (
@@ -3864,7 +3915,8 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "NX" = (
-/obj/structure/rack/shelf_metal,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Of" = (
@@ -4550,6 +4602,12 @@
 "VX" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Wa" = (
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
@@ -43581,7 +43639,7 @@ dj
 dj
 KI
 dj
-uz
+sx
 Wm
 uz
 uz
@@ -44617,7 +44675,7 @@ Ok
 Ok
 IA
 uz
-uz
+sx
 KI
 Hj
 uz
@@ -46410,7 +46468,7 @@ hm
 CU
 uz
 dj
-uz
+sx
 uz
 uz
 BV
@@ -46676,7 +46734,7 @@ uz
 Ok
 dj
 uz
-uz
+sx
 uz
 uz
 if
@@ -48466,7 +48524,7 @@ hm
 hc
 uz
 Ok
-dj
+dO
 Xj
 uz
 NV
@@ -49751,7 +49809,7 @@ Li
 Li
 vw
 fs
-uz
+sx
 Ok
 KI
 uz
@@ -49962,7 +50020,7 @@ hm
 NT
 xC
 La
-SK
+jz
 xs
 LT
 LT
@@ -50742,7 +50800,7 @@ SK
 ED
 xC
 SK
-SK
+jz
 SK
 DB
 Dm
@@ -50995,7 +51053,7 @@ GH
 GH
 oy
 GH
-HV
+ip
 HV
 tA
 SK
@@ -51039,7 +51097,7 @@ Li
 dj
 ML
 uz
-uz
+sx
 dj
 KI
 dj
@@ -52018,7 +52076,7 @@ hm
 NT
 ZO
 Im
-ce
+Wa
 ce
 rv
 aN
@@ -52278,7 +52336,7 @@ ZD
 ja
 ja
 ce
-Ix
+aI
 ce
 Rs
 St
@@ -52805,7 +52863,7 @@ SK
 xC
 Ik
 SK
-SK
+jz
 Ik
 SK
 SK
@@ -53570,7 +53628,7 @@ SK
 FI
 La
 SK
-xC
+ni
 SK
 SK
 SK
@@ -56124,7 +56182,7 @@ wO
 DL
 GP
 RS
-wo
+NX
 Op
 GP
 RB
@@ -56639,7 +56697,7 @@ GP
 wo
 tg
 GP
-GP
+DP
 wo
 Zy
 SK
@@ -56908,11 +56966,11 @@ Bz
 DL
 GP
 GP
-GP
+DP
 AM
 tg
 GP
-GP
+DP
 GP
 hp
 wo
@@ -57684,7 +57742,7 @@ wo
 wo
 hP
 Df
-GP
+DP
 GP
 Wk
 DL
@@ -57702,7 +57760,7 @@ SK
 Ks
 BJ
 bT
-La
+Ip
 BJ
 SK
 SK
@@ -58728,7 +58786,7 @@ SK
 SK
 SK
 fx
-DP
+gr
 GP
 GP
 bV
@@ -58985,7 +59043,7 @@ SK
 SK
 SK
 fx
-NX
+DL
 wo
 GP
 Wk
@@ -59242,11 +59300,11 @@ SK
 SK
 SK
 fx
-ir
+cT
 IB
 AM
 RS
-GP
+DP
 wo
 fx
 SK
@@ -60002,7 +60060,7 @@ tg
 DL
 Rb
 GP
-wo
+NX
 GP
 uT
 GP
@@ -60018,7 +60076,7 @@ GP
 AM
 wo
 GP
-ir
+cT
 fx
 SK
 AZ
@@ -60271,7 +60329,7 @@ SK
 La
 RB
 GP
-GP
+DP
 GP
 bn
 GP
@@ -60529,7 +60587,7 @@ SK
 RB
 GP
 GP
-GP
+DP
 wo
 GP
 lG
@@ -60758,7 +60816,7 @@ Hu
 wo
 wo
 GP
-wo
+NX
 GP
 yT
 wO
@@ -60777,7 +60835,7 @@ NN
 tg
 Rb
 GP
-GP
+DP
 wo
 fx
 SK
@@ -60789,7 +60847,7 @@ Of
 wo
 GP
 Of
-NX
+uT
 fx
 SK
 AZ
@@ -61029,7 +61087,7 @@ uT
 DL
 DL
 aX
-GP
+DP
 Hu
 GP
 aX
@@ -61265,13 +61323,13 @@ fx
 wO
 wO
 xC
-SK
+jz
 SK
 fx
 XI
 GP
 GP
-GP
+DP
 GP
 wo
 XI
@@ -63345,9 +63403,9 @@ AM
 aK
 Zy
 GP
-GP
+DP
 Rb
-GP
+DP
 AM
 fx
 SK
@@ -63615,7 +63673,7 @@ tg
 xm
 jm
 wo
-GP
+DP
 tg
 ek
 fx
@@ -63872,7 +63930,7 @@ Op
 wo
 EZ
 Bq
-GP
+DP
 GP
 bV
 fx
@@ -64373,7 +64431,7 @@ hm
 hm
 wO
 wo
-wo
+NX
 wo
 wo
 yT

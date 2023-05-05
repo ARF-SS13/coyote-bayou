@@ -16633,6 +16633,7 @@
 /obj/item/circuitboard/machine/gibber,
 /obj/item/circuitboard/machine/biogenerator,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -17152,7 +17153,7 @@
 /area/f13/building/abandoned)
 "bgR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/kirbyplants/random,
+/obj/machinery/mineral/wasteland_trader/brotherhood,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building)
 "bgS" = (
@@ -24916,6 +24917,10 @@
 	icon_state = "outerpavement - SE"
 	},
 /area/f13/wasteland/city)
+"cti" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13,
+/area/f13/building/abandoned)
 "ctn" = (
 /obj/machinery/vending/cola,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -27176,9 +27181,8 @@
 	color = "000000"
 	},
 /obj/structure/table/wood,
-/obj/item/book/granter/crafting_recipe/gunsmith_three,
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -40040,6 +40044,7 @@
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/shovel,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "gzj" = (
@@ -44782,6 +44787,14 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/caves)
+"hMK" = (
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -39;
+	pixel_y = -8
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "hMO" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -48249,6 +48262,7 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/under/f13/brahmin,
 /obj/structure/junk/cabinet,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "iFO" = (
@@ -49455,6 +49469,7 @@
 /obj/item/stack/sheet/glass/ten{
 	amount = 25
 	},
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -50670,6 +50685,7 @@
 /obj/item/pickaxe,
 /obj/item/storage/toolbox/emergency/old,
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -59832,6 +59848,7 @@
 /obj/item/reagent_containers/food/snacks/tuna,
 /obj/item/reagent_containers/food/snacks/tuna,
 /obj/item/reagent_containers/food/snacks/tuna,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building/abandoned)
 "lQz" = (
@@ -71011,13 +71028,12 @@
 	},
 /area/f13/building/abandoned)
 "oLO" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Nash East Road"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+	icon_state = "innermaincornerinner - E"
 	},
 /area/f13/wasteland/city)
 "oLT" = (
@@ -72512,6 +72528,12 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland/city)
+"phJ" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2"
+	},
+/area/f13/wasteland/city)
 "phN" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -73591,6 +73613,13 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city)
+"pwv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/abandoned)
 "pwE" = (
 /obj/machinery/hydroponics/soil/pot,
 /obj/structure/flora/wasteplant/wild_datura{
@@ -78464,6 +78493,13 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland/city)
+"qOy" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13,
+/area/f13/building/abandoned)
 "qOB" = (
 /obj/structure/flora/tallgrass4,
 /obj/effect/turf_decal/weather/dirt{
@@ -91010,13 +91046,9 @@
 	},
 /area/f13/building/hospital)
 "ugG" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
-	},
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2"
+	icon_state = "innermaincornerinner - W"
 	},
 /area/f13/wasteland/city)
 "ugJ" = (
@@ -93748,6 +93780,13 @@
 	icon_state = "outermaincornerouter - N"
 	},
 /area/f13/wasteland/city)
+"uWA" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/abandoned)
 "uWB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -100155,10 +100194,9 @@
 	},
 /area/f13/wasteland/city)
 "wHw" = (
-/obj/structure/car,
-/obj/structure/nest/ghoul,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland/city)
 "wHB" = (
@@ -101792,19 +101830,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/massfusion)
 "xfU" = (
-/obj/effect/decal/marking{
-	icon_state = "doublehorizontalcorroded"
-	},
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "trash mobs";
-	randomizer_tag = "Nash East Road"
-	},
-/obj/structure/spacevine,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland/city)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/abandoned)
 "xfW" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -132007,7 +132036,7 @@ sVn
 aLs
 qUl
 wsB
-wsB
+cmh
 aNc
 jQN
 aNN
@@ -134569,7 +134598,7 @@ wsB
 iqG
 xVl
 gEx
-wsB
+cmh
 nvv
 aFj
 ixY
@@ -135107,7 +135136,7 @@ sCg
 sVn
 muX
 idJ
-kGY
+xfU
 aRx
 aSk
 aqQ
@@ -135593,7 +135622,7 @@ lyL
 rCX
 wsB
 lyL
-cgE
+phJ
 sVn
 cgE
 lyL
@@ -136389,7 +136418,7 @@ taS
 ruc
 jTC
 gvp
-guY
+oLO
 mOZ
 uBb
 uBb
@@ -136676,7 +136705,7 @@ sol
 sol
 sol
 sol
-ugG
+sol
 uxe
 cWO
 pxv
@@ -136882,7 +136911,7 @@ gaA
 oud
 lbq
 oUZ
-oUZ
+wHw
 oUZ
 oUZ
 oUZ
@@ -137155,7 +137184,7 @@ xkK
 iWY
 fei
 ejG
-fCP
+ugG
 wXy
 tsa
 bgT
@@ -138077,7 +138106,7 @@ abj
 aev
 aae
 aae
-aae
+hMK
 aaA
 aaB
 aaB
@@ -139021,7 +139050,7 @@ epK
 nPH
 xUV
 oFO
-xfU
+vik
 oFO
 oFO
 oFO
@@ -141055,7 +141084,7 @@ pCk
 cpo
 rsf
 mnY
-oBz
+bwV
 mnY
 eZJ
 cpo
@@ -150327,7 +150356,7 @@ oSe
 sue
 epK
 oFO
-oLO
+oFO
 oFO
 mef
 nPH
@@ -155974,7 +156003,7 @@ apO
 kff
 bAB
 beq
-oFz
+uWA
 beU
 acT
 rTr
@@ -160597,7 +160626,7 @@ kTu
 sxj
 mFy
 apO
-kff
+pwv
 bAB
 biX
 apO
@@ -161612,7 +161641,7 @@ sIE
 tma
 aKP
 vbt
-asX
+cti
 mLa
 wWt
 kjP
@@ -163668,7 +163697,7 @@ iXx
 aKP
 ats
 tBw
-fFp
+qOy
 asX
 tew
 bhJ
@@ -166733,7 +166762,7 @@ snU
 oFO
 oFO
 oFO
-wHw
+wLX
 ozv
 oFO
 waI
