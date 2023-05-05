@@ -307,8 +307,8 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	salvage_loot = list()
 
 /obj/item/clothing/head/helmet/f13/legion/recruit
-	name = "legion recruit helmet"
-	desc = "It's a leather skullcap issued to recruits."
+	name = "leather skullcap"
+	desc = "It's a leather skullcap commonly worn by more wastey wastelanders."
 	icon_state = "legion-recruit"
 	item_state = "legion-recruit"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -337,8 +337,8 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
-	name = "legion scout hood"
-	desc = "It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
+	name = "padded tanker's cap"
+	desc = "It's a hooded cap with extra padding and built in voids to wear bulky headphones under."
 	icon_state = "legion-explorer"
 	item_state = "legion-explorer"
 
