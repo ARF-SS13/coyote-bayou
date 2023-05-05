@@ -82,6 +82,7 @@ GLOBAL_LIST_INIT(creature_blacklist, list(
 	/mob/living/simple_animal/cow/brahmin/sgtsillyhorn,
 	/mob/living/simple_animal/cow/brahmin/calf,
 	/mob/living/simple_animal/cow/brahmin,
+	/mob/living/simple_animal/cow/brahmin/motorbike,
 	/mob/living/simple_animal/cow/brahmin/horse/honse,
 	/mob/living/simple_animal/pet/cat/cak,
 	/mob/living/simple_animal/pet/cat/kitten,
