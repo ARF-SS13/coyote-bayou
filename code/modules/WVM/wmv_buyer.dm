@@ -99,7 +99,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/animalhide/wolf = 10,
 		/obj/item/stack/sheet/animalhide/radstag = 15,
 		/obj/item/stack/sheet/animalhide/brahmin = 8,
-		/obj/item/stack/sheet/animalhide/human = 1
+		/obj/item/stack/sheet/animalhide/human = 1,
 		/obj/item/stack/sheet/bone = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 15,
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
