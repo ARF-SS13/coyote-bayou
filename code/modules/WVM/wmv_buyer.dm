@@ -101,6 +101,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/animalhide/brahmin = 8,
 		/obj/item/stack/sheet/animalhide/human = 1,
 		/obj/item/stack/sheet/bone = 1,
+		/obj/item/stack/sheet/cloth = 0.1,
+		/obj/item/stack/sheet/leather = 0.2,
 		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 15,
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 3,
