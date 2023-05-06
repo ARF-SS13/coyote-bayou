@@ -138,6 +138,14 @@
 	icon_dead = "sunrise_dead"
 	gender = "male"
 
+//Slugcat OC for Puff
+/mob/living/simple_animal/pet/catslug/cherish
+	name = "Cherish"
+	desc = "A thickly furred, emerald catslug with big, shiny dark eyes that are constantly mooned with mirth. A red sash is wrapped over their chest; A keepsake, perhaps?"
+	icon_state = "saintslug"
+	icon_living = "saintslug"
+	icon_dead = "saintslug_dead"
+	gender = "plural"
 //Mobs from Virgo
 
 /mob/living/simple_animal/pet/wolf/direwolf

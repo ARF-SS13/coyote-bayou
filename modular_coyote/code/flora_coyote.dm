@@ -1043,3 +1043,84 @@
 	icon = 'modular_coyote/icons/objects/trees.dmi'
 	icon_state = "pink_tree"
 	anchored = TRUE
+
+
+//flowers
+
+/obj/structure/flora/wild_plant/flower/orange
+	name = "orange flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_orange"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/blue
+	name = "blue flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_blue"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/purple
+	name = "purple flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_purple"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/red
+	name = "red flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_red"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/white
+	name = "white flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_white"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_two
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/red_two
+	name = "red flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_red2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/blue_two
+	name = "blue flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_blue2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/purple_two
+	name = "purple flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_purple2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/yellowhite
+	name = "yellow and white flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_yw"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_three
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink3"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_four
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink4"
+	anchored = TRUE
