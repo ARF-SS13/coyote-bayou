@@ -259,7 +259,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
@@ -268,6 +268,14 @@
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+
+/obj/item/gun/flintlock/musket/jezail/culverin
+	name = "culverin"
+	desc = "That's a gun gun. Or maybe a baseball bat, it's hard to tell."
+	icon_state = "culverin"
+	force = 25
+	force_unwielded = 25
+	force_wielded = 40
 
 /obj/item/gun/flintlock/musket/tanegashima
 	name = "ancient tanegashima"
