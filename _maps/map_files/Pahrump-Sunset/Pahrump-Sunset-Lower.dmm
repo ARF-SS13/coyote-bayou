@@ -10337,7 +10337,8 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
-/turf/open/water,
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "fvp" = (
 /obj/structure/table,
@@ -14739,15 +14740,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
-"iHV" = (
-/obj/structure/rack,
-/obj/item/export_scanner,
-/obj/item/export_scanner,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "iIr" = (
 /obj/item/trash/sosjerky,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -21070,13 +21062,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
-"ngl" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "ngw" = (
 /obj/structure/fluff/rails,
 /obj/structure/handrail/g_central{
@@ -29157,16 +29142,6 @@
 /obj/item/mine/explosive,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"sKb" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/flora/grass/coyote/twelve,
-/turf/open/water,
-/area/f13/building)
 "sKq" = (
 /obj/structure/chair/stool{
 	icon_state = "bench"
@@ -45447,7 +45422,7 @@ bLL
 bLL
 bLL
 bLL
-iHV
+dlA
 owS
 sdX
 eya
@@ -45703,8 +45678,8 @@ bLL
 pMC
 mNK
 bLL
-ngl
-sKb
+mNK
+bLL
 fvh
 nXC
 kUp
