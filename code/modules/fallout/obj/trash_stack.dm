@@ -48,7 +48,7 @@
 	for(var/i in 1 to rand(1,4))
 		var/list/trash_passthru = list()
 		to_chat(user, span_notice("You scavenge through [src]."))
-		var/obj/effect/spawner/lootdrop/f13/trash/my_trash = new(trash_turf)
+		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(trash_turf)
 		my_trash.spawn_the_stuff(trash_passthru) // fun fact, lists are references, so this'll be populated when the proc runs (cool huh?)
 		
 		for(var/atom/movable/spawned in trash_passthru)

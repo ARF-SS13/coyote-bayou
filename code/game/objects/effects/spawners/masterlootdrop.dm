@@ -3,8 +3,8 @@
 /////////////////////
 
 /obj/effect/spawner/lootdrop/f13/trash
-	name = "trash loot, found in trash"
-	delay_spawn = TRUE
+	name = "trash loot, found everywhere BUT the trash"
+	delay_spawn = FALSE
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/trash_weps = 1,
 		/obj/effect/spawner/lootdrop/f13/trash_mags = 1,
@@ -23,6 +23,10 @@
 		/obj/effect/spawner/lootdrop/f13/trash_trash = 15,
 		/obj/effect/spawner/lootdrop/f13/mice = 1, //the mice are extra~
 	)
+
+/obj/effect/spawner/lootdrop/f13/trash/pile
+	name = "trash loot, found ONLY IN the trash"
+	delay_spawn = TRUE
 
 /obj/effect/spawner/lootdrop/f13/common
 	name = "common loot, found everywhere"

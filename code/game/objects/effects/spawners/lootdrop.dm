@@ -11,11 +11,10 @@
 
 /obj/effect/spawner/lootdrop/Initialize(mapload)
 	. = ..()
-	if(delay_spawn && !mapload) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
+	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
 		return // have fun!
-	spawn_the_stuff() // lov dan
-	return INITIALIZE_HINT_QDEL
+	return spawn_the_stuff(null, TRUE) // lov dan
 
 /obj/effect/spawner/lootdrop/proc/spawn_the_stuff(list/listhack)
 	if(!LAZYLEN(loot))
@@ -38,7 +37,10 @@
 					spawned_loot.pixel_x = pixel_x
 				if(pixel_y != 0)
 					spawned_loot.pixel_y = pixel_y
-	qdel(src)
+	if(delay_spawn)
+		qdel(src)
+		return INITIALIZE_HINT_QDEL
+	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/lootdrop/bedsheet
 	icon = 'icons/obj/bedsheets.dmi'
