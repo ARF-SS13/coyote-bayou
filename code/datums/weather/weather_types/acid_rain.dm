@@ -1,7 +1,7 @@
 /datum/weather/acid_rain
 	name = "acid rain"
 	desc = "The planet's thunderstorms are by nature acidic, and will incinerate anyone standing beneath them without protection."
-	probability = 2
+	probability = 5
 
 	telegraph_duration = 700
 	telegraph_overlay = "acid_rain"
