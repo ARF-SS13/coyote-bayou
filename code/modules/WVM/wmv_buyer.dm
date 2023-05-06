@@ -639,7 +639,7 @@ Fence
 
 */
 
-/obj/machinery/mineral/wasteland_trader/brotherhood
+/obj/machinery/mineral/wasteland_trader/bountyticket
 	name = "Nash Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for caps. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
@@ -649,7 +649,7 @@ Fence
 						/obj/item/card/kingbounty = 800
 								)
 
-/obj/machinery/mineral/wasteland_trader/brotherhood/ui_interact(mob/user)
+/obj/machinery/mineral/wasteland_trader/bountyticket/ui_interact(mob/user)
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
@@ -658,7 +658,7 @@ Fence
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Turn your kills into caps today!</b><br>"
-	dat += "Small Roller Bounty Ticket: 1 copper<br>"
+	dat += "Small Roller Bounty Ticket: 100 copper<br>"
 	dat += "Medium Roller Bounty Ticket: 200 copper<br>"
 	dat += "High Roller Bounty Ticket: 400 copper<br>"
 	dat += "King's Bounty Ticket: 800 copper<br>"
