@@ -650,7 +650,7 @@ datum/gear/head/steelpot_bandolier
 	cost = 2
 
 /datum/gear/head/greekhelmetcrested
-	name = "Hoplite Helmet"
+	name = "Crested Hoplite Helmet"
 	path = /obj/item/clothing/head/coyote/greekcrested
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2

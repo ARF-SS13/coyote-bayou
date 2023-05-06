@@ -638,7 +638,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/greek
-	name = "Hoplie Helmet"
+	name = "Hoplite Helmet"
 	desc = "Shade not included."
 	icon_state = "greek"
 	item_state = "greek"
