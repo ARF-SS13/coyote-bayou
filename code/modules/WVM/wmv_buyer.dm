@@ -92,7 +92,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
-	/list/buyables_tight = list(
+	var/list/buyables_tight = list(
 		/obj/item/stack/sheet/animalhide/chitin = 1,
 		/obj/item/stack/sheet/animalhide/deathclaw = 25,
 		/obj/item/stack/sheet/animalhide/gecko = 3,
@@ -174,7 +174,6 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/goldschlager = 15,
 		/obj/item/export/bottle/patron = 15,
 	)
-	var/list/buyables_loose = list()
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
 	var/sales_timer
