@@ -21,6 +21,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
 	var/trader_key = WVM_SCRAPPER
 
+
 	/// List of things it buys, and allows any of its children into the buy list
 	var/list/buyables_loose = list(
 		/obj/item/stack/sheet/metal = 0.4,
@@ -173,7 +174,6 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/goldschlager = 15,
 		/obj/item/export/bottle/patron = 15,
 	)
-	var/list/goods_list = list()
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
 	var/sales_timer
@@ -599,7 +599,7 @@ ORGAN SELLER
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "organs"
 
-	goods_list = list( /obj/item/organ/heart = 30,
+	buyables_loose = list( /obj/item/organ/heart = 30,
 								/obj/item/organ/ears = 5,
 								/obj/item/organ/eyes = 5,
 								/obj/item/organ/liver = 15,
@@ -639,17 +639,17 @@ Fence
 
 */
 
-/obj/machinery/mineral/wasteland_trader/brotherhood
+/obj/machinery/mineral/wasteland_trader/bountyticket
 	name = "Nash Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for caps. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
-	goods_list = list( 	/obj/item/card/lowbounty = 100,
+	buyables_loose = list( 	/obj/item/card/lowbounty = 100,
 						/obj/item/card/midbounty = 200,
 						/obj/item/card/highbounty = 400,
 						/obj/item/card/kingbounty = 800
 								)
 
-/obj/machinery/mineral/wasteland_trader/brotherhood/ui_interact(mob/user)
+/obj/machinery/mineral/wasteland_trader/bountyticket/ui_interact(mob/user)
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
@@ -658,7 +658,7 @@ Fence
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Turn your kills into caps today!</b><br>"
-	dat += "Small Roller Bounty Ticket: 1 copper<br>"
+	dat += "Small Roller Bounty Ticket: 100 copper<br>"
 	dat += "Medium Roller Bounty Ticket: 200 copper<br>"
 	dat += "High Roller Bounty Ticket: 400 copper<br>"
 	dat += "King's Bounty Ticket: 800 copper<br>"
@@ -673,7 +673,7 @@ Fence
 /obj/machinery/mineral/wasteland_trader/gunbuyer
 	name = "Gun Repository"
 	desc = "Place weapon inside slot. Weapon is sent out of the region for post-processing. Recieve compensation. Yuma Wasteland Supply Inc. thanks you for disarming the wasteland."
-	goods_list = list(/obj/item/gun/ballistic/automatic/hobo/zipgun = 5,
+	buyables_loose = list(/obj/item/gun/ballistic/automatic/hobo/zipgun = 5,
 						/obj/item/gun/ballistic/revolver/hobo = 5,
 						/obj/item/gun/ballistic/revolver/detective = 5,
 						/obj/item/gun/ballistic/revolver/hobo = 8,
