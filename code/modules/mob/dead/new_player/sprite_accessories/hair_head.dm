@@ -1076,3 +1076,111 @@
 /datum/sprite_accessory/hair/halfshavedglamorous
 	name = "Half-shave glamorous"
 	icon_state = "halfshave_glamorous"
+
+/datum/sprite_accessory/hair/voxafro
+	name = "Vox Afro"
+	icon_state = "hair_vox_afro"
+
+/datum/sprite_accessory/hair/voxcrestedquills
+	name = "Vox Crested Quills"
+	icon_state = "hair_vox_crestedquills"
+
+
+/datum/sprite_accessory/hair/voxemperorquills
+	name = "Vox Emperor Quils"
+	icon_state = "hair_vox_emperorquills"
+
+
+/datum/sprite_accessory/hair/voxhorns
+	name = "Vox Horns"
+	icon_state = "hair_vox_horns"
+
+
+/datum/sprite_accessory/hair/voxkeelquills
+	name = "Vox Keel Quills"
+	icon_state = "hair_vox_keelquills"
+
+
+/datum/sprite_accessory/hair/voxkeetquills
+	name = "Vox Keet Quills"
+	icon_state = "hair_vox_keetquills"
+
+
+/datum/sprite_accessory/hair/voxkingly
+	name = "Vox Kingly"
+	icon_state = "hair_vox_kingly"
+
+
+/datum/sprite_accessory/hair/voxmohawk
+	name = "Vox Mohawk"
+	icon_state = "hair_vox_mohawk"
+
+
+/datum/sprite_accessory/hair/voxnights
+	name = "Vox Nights"
+	icon_state = "hair_vox_nights"
+
+
+/datum/sprite_accessory/hair/voxrazorclipped
+	name = "Vox Razorclipped"
+	icon_state = "hair_vox_razorclipped"
+
+
+/datum/sprite_accessory/hair/voxrazor
+	name = "Vox Razor"
+	icon_state = "hair_vox_razor"
+
+
+/datum/sprite_accessory/hair/voxshortquills
+	name = "Vox Short Quills"
+	icon_state = "hair_vox_shortquills"
+
+
+/datum/sprite_accessory/hair/voxtielquills
+	name = "Vox Tiel Quills"
+	icon_state = "hair_vox_tielquills"
+
+
+/datum/sprite_accessory/hair/voxyasu
+	name = "Vox Yasu"
+	icon_state = "hair_vox_yasu"
+
+//  THE LIMIT HAS BEEN REACHED//
+//TIME FOR HAIR 2//
+
+/datum/sprite_accessory/hair/voxsurf
+	name = "Vox Surf"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_surf"
+
+
+/datum/sprite_accessory/hair/voxcropped
+	name = "Vox Cropped"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_cropped"
+
+
+/datum/sprite_accessory/hair/voxrows
+	name = "Vox Rows"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_rows"
+
+
+/datum/sprite_accessory/hair/voxpony
+	name = "Vox Ponytail"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_pony"
+
+
+/datum/sprite_accessory/hair/voxmange
+	name = "Vox Mangy"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_mange"
+
+
+/datum/sprite_accessory/hair/voxruffhawk
+	name = "Vox Hawk"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_ruffhawk"
+
+
