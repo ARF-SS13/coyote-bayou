@@ -280,8 +280,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	gain_text = span_notice("You know everything about magic.")
 	lose_text = span_danger("You forgor how the magic.")
 
-
-/datum/quirk/musician/on_spawn()
+/datum/quirk/wizard/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/spellbook/B = new(get_turf(H))
 	H.put_in_hands(B)

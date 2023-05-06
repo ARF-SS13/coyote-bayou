@@ -355,7 +355,7 @@ datum/spellbook_entry/rod_form
 	name = "Staff of Healing"
 	desc = "An altruistic staff that can heal the lame and raise the dead."
 	item_path = /obj/item/gun/magic/staff/healing
-	cost = 10
+	cost = 9
 	category = "Defensive"
 
 /*
