@@ -506,6 +506,16 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"fb" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_corner_fill"
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_corner_fill";
+	dir = 8
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "fd" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -3445,7 +3455,15 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Jn" = (
-/turf/open/indestructible/ground/outside/desert,
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 4
+	},
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Jo" = (
 /obj/structure/cable{
@@ -12524,13 +12542,13 @@ hm
 hm
 hm
 hm
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 hm
 hm
 hm
@@ -12781,13 +12799,13 @@ hm
 hm
 hm
 hm
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 hm
 hm
 hm
@@ -13038,13 +13056,13 @@ hm
 hm
 hm
 hm
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
-Jn
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 hm
 hm
 hm
@@ -13301,7 +13319,7 @@ qt
 qt
 qt
 BW
-Jn
+hm
 hm
 hm
 hm
@@ -13558,7 +13576,7 @@ aB
 cm
 Wr
 Xv
-Jn
+hm
 hm
 hm
 hm
@@ -13815,7 +13833,7 @@ Wr
 Wr
 Wr
 Xv
-Jn
+hm
 hm
 hm
 hm
@@ -14071,22 +14089,22 @@ Wr
 Wr
 Wr
 mY
-Xv
+fb
 Jn
-nD
 na
 na
 na
 na
-Cv
+na
+sF
 Ht
 hm
 hm
 hm
 hm
 hm
-hm
-hm
+SP
+qt
 qt
 pO
 pO
@@ -14329,7 +14347,7 @@ Wr
 Wr
 Wr
 Xv
-Jn
+uj
 uj
 uj
 uj
@@ -14342,8 +14360,8 @@ hm
 hm
 hm
 hm
-hm
-hm
+nO
+Wr
 mY
 mY
 Wr
@@ -14586,7 +14604,7 @@ Wr
 Wr
 mY
 Xv
-Jn
+hm
 hm
 hm
 hm
