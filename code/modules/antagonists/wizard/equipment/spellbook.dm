@@ -198,7 +198,7 @@ datum/spellbook_entry/rod_form
 	name = "Ethereal Jaunt"
 	spell_type = /obj/effect/proc_holder/spell/targeted/ethereal_jaunt
 	category = "Mobility"
-	cost = 4
+	cost = 99
 
 /datum/spellbook_entry/knock
 	name = "Knock"
@@ -262,7 +262,7 @@ datum/spellbook_entry/rod_form
 	name = "Charge"
 	spell_type = /obj/effect/proc_holder/spell/targeted/charge
 	category = "Assistance"
-	cost = 1
+	cost = 2
 
 
 /datum/spellbook_entry/shapeshift
