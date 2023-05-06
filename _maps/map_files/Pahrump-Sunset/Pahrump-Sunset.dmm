@@ -29072,6 +29072,8 @@
 	req_access_txt = "150";
 	req_one_access_txt = "150"
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "dyw" = (
@@ -44791,14 +44793,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/caves)
-"hMK" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c";
-	pixel_x = -39;
-	pixel_y = -8
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "hMO" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -46145,6 +46139,8 @@
 	req_one_access_txt = "150"
 	},
 /obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "iep" = (
@@ -138147,7 +138143,7 @@ abj
 aev
 aae
 aae
-hMK
+aae
 aaA
 aaB
 aaB
