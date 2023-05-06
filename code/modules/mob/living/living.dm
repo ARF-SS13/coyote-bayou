@@ -30,6 +30,8 @@
 	med_hud_set_status()
 
 /mob/living/Destroy()
+	if(mind)
+		mind.RemoveAllSpells()
 	end_parry_sequence()
 	stop_active_blocking()
 	if(LAZYLEN(status_effects))
