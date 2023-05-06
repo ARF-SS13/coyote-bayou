@@ -477,6 +477,7 @@
 		/obj/item/sord = 20, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/fatman = 10,
+		/obj/item/book/granter/martial/bass = 10,
 	)
 
 ////////////////////////////
@@ -1196,8 +1197,6 @@
 		/obj/item/mop = 1,
 		/obj/item/lockpick_set = 1,
 		/obj/item/stealthboy = 1,
-		/obj/item/book/granter/martial/bass = 1,
-		/obj/item/book/granter/martial/raging_boar = 1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_two = 1,
 		/obj/item/book/granter/crafting_recipe/scav_one = 1,
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
@@ -1227,6 +1226,7 @@
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/flashlight/lamp = 1,
+		/obj/item/book/granter/martial/raging_boar = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_tools
