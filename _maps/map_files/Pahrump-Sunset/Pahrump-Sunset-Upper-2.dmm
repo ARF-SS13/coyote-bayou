@@ -506,6 +506,16 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"fb" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_corner_fill"
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_corner_fill";
+	dir = 8
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "fd" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -3342,16 +3352,6 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
-"It" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill"
-	},
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill";
-	dir = 8
-	},
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
 "Iw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/junk/small/table,
@@ -14089,7 +14089,7 @@ Wr
 Wr
 Wr
 mY
-It
+fb
 Jn
 na
 na
@@ -14103,7 +14103,7 @@ hm
 hm
 hm
 hm
-Wr
+SP
 qt
 qt
 pO
