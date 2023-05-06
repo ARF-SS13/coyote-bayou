@@ -21,6 +21,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
 	var/trader_key = WVM_SCRAPPER
 
+
 	/// List of things it buys, and allows any of its children into the buy list
 	var/list/buyables_loose = list(
 		/obj/item/stack/sheet/metal = 0.4,
@@ -91,7 +92,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
-	var/list/buyables_tight = list(
+	/list/buyables_tight = list(
 		/obj/item/stack/sheet/animalhide/chitin = 1,
 		/obj/item/stack/sheet/animalhide/deathclaw = 25,
 		/obj/item/stack/sheet/animalhide/gecko = 3,
