@@ -913,6 +913,26 @@
 	name = "Gloomy Long"
 	icon_state = "hair_gloomylong"
 
+/datum/sprite_accessory/hair/gloomylongmessy
+	name = "Gloomy Long & Messy"
+	icon_state = "hair_gloomylongmessy"
+
+/datum/sprite_accessory/hair/gloomylongerbedhead
+	name = "Gloomy Longer Bedhead"
+	icon_state = "hair_gloomylongerbedhead"
+
+/datum/sprite_accessory/hair/gloomyrockstar
+	name = "Gloomy Rockstar"
+	icon_state = "hair_gloomyrockstar"
+
+/datum/sprite_accessory/hair/gloomylongcurly
+	name = "Gloomy Long & Curly"
+	icon_state = "hair_gloomycurly"
+
+/datum/sprite_accessory/hair/gloomyskank
+	name = "Gloomy Skank"
+	icon_state = "hair_gloomyskank"
+
 /datum/sprite_accessory/hair/simple
 	name = "Simple"
 	icon_state = "hair_simple"
