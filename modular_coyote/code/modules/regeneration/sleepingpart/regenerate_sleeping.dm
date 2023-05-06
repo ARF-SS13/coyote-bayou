@@ -63,21 +63,24 @@
 	// get a heal amount from 0 to the maxHealAmount.
 	var/healAmount = rand(0,maxHealAmount)
 
-	var/obj/buckled_obj = L.buckled
+	var/turf/hereiam = get_turf(L)
+	var/obj/buckled_obj = (L.buckled || (locate(/obj/structure/bed) in hereiam))
 	if(buckled_obj && istype(buckled_obj, /obj/structure/bed))
 		if(!is_type_in_list(get_area(L), GLOB.outdoor_areas))
 			healAmount += BED_HEAL_BONUS
 
+	var/healbots = isrobotic(L)
+
 	// Now pick a random element from the list, if it is BRUTE, OXY, TOX or BURN, apply the heal amount to one of them.
 	switch(pick(damagedParts))
 		if(BRUTE)
-			L.adjustBruteLoss(-healAmount)
+			L.adjustBruteLoss(-healAmount, include_roboparts = healbots)
 		if(OXY)
 			L.adjustOxyLoss(-healAmount)
 		if(TOX)
 			L.adjustToxLoss(-healAmount)
 		if(BURN)
-			L.adjustFireLoss(-healAmount)
+			L.adjustFireLoss(-healAmount, include_roboparts = healbots)
 	
 	// And that's it! We dont really need to add anything else, it will continue to call this function every tick.
 
