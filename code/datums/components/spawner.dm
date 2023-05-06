@@ -335,7 +335,6 @@
 		sponer.color = despawn_me.color
 		// nobody'll know the difference~
 	qdel(despawn_me)
-	start_spawning()
 
 /// If anything asks if we have a spawner, we say yes.
 /datum/component/spawner/proc/has_spawner()
