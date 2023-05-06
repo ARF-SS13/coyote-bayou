@@ -637,9 +637,47 @@
 	item_state = "raccoonfurcap_hat"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/greek
+	name = "Hoplie Helmet"
+	desc = "Shade not included."
+	icon_state = "greek"
+	item_state = "greek"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/greek
+	name = "Crested Greek Helmet"
+	desc = "Shade included."
+	icon_state = "greek_c"
+	item_state = "greek_c"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/greekcrested
+	name = "Crested Greek Helmet"
+	desc = "Shade included."
+	icon_state = "greek_c"
+	item_state = "greek_c"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/hennin
+	name = "Hennin"
+	desc = "Doesn't make you a maid, fox or not."
+	icon_state = "hennin"
+	item_state = "hennin"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
+/obj/item/clothing/head/coyote/kasa
+	name = "Kasa"
+	desc = "A coin for a wandering monk?"
+	icon_state = "kasa"
+	item_state = "kasa"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
+/obj/item/clothing/head/coyote/jingasa
+	name = "Jingasa"
+	desc = "Shade in hat form, nice."
+	icon_state = "jingasa"
+	item_state = "jingasa"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
 
