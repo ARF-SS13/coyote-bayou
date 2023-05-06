@@ -42915,14 +42915,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/abandoned)
-"hnr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "hnE" = (
 /obj/structure/chair/bench{
 	dir = 8
@@ -43305,6 +43297,16 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"hsY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "htc" = (
 /obj/structure/fence,
 /obj/effect/decal/cleanable/dirt,
@@ -70915,6 +70917,17 @@
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"oKz" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "oKC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -76530,6 +76543,17 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"qnq" = (
+/obj/effect/decal/cleanable/generic,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "qns" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -94145,6 +94169,14 @@
 	color = "#9c9c9c"
 	},
 /area/f13/wasteland)
+"vaZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "vbl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -103187,16 +103219,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
-"xxU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "xyc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -104102,17 +104124,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"xMo" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "xMz" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -114376,7 +114387,7 @@ ogY
 ogY
 qZq
 pPz
-pPz
+fDR
 qZq
 qZq
 fDR
@@ -114633,8 +114644,8 @@ tgI
 uKN
 ucW
 chD
-bVH
-cHn
+bvj
+dVF
 dVF
 dVF
 dVF
@@ -114890,7 +114901,7 @@ bVH
 hQZ
 qFx
 lfi
-ufD
+bVH
 smI
 dVF
 brF
@@ -115154,7 +115165,7 @@ lHK
 cwc
 brF
 brF
-bvj
+qnq
 toE
 iCZ
 aWK
@@ -115662,7 +115673,7 @@ rJI
 fvw
 lfi
 toE
-dVF
+cHn
 dVF
 dVF
 fJz
@@ -116937,7 +116948,7 @@ klf
 pES
 eiJ
 dUj
-xMo
+oKz
 dVF
 sjO
 gbK
@@ -117200,7 +117211,7 @@ rTD
 lgQ
 lGx
 brF
-hnr
+vaZ
 nSY
 xZb
 fvw
@@ -117454,7 +117465,7 @@ dUj
 bdF
 dVF
 gTk
-xxU
+hsY
 xUm
 dVF
 hjp
