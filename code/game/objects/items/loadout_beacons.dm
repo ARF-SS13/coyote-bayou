@@ -2323,7 +2323,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /datum/loadout_box/oldpike/sarissa
 	entry_tag = "Old Sarissa"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
-	entry_class = LOADOUT_CAT_MELEE_ONE
+	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/melee/coyote/oldpike/sarissa
 
 /datum/loadout_box/oldlongsword/spadroon
@@ -2355,4 +2355,33 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/coyote/oldlongsword/xiphos
+
+/datum/loadout_box/gar/
+	entry_tag = "Black Gar Glasses"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/clothing/glasses/sunglasses/garb
+
+
+/datum/loadout_box/blackgiggagar/
+	entry_tag = "Black Gigga Gar Glasses"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/clothing/glasses/sunglasses/garb/supergarb
+
+/datum/loadout_box/orangegar/
+	entry_tag = "Orange Gar Glasses"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/clothing/glasses/sunglasses/gar
+
+/datum/loadout_box/giggagar/
+	entry_tag = "Gigga Gar Glasses"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/clothing/glasses/sunglasses/gar/supergar
+
+
+
+
 
