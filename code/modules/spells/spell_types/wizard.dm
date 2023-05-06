@@ -312,7 +312,6 @@
 /obj/effect/proc_holder/spell/targeted/conjure_item/spellpacket
 	name = "Thrown Lightning"
 	desc = "Forged from eldrich energies, a packet of pure power, known as a spell packet will appear in your hand, that when thrown will stun the target."
-	clothes_req = SPELL_WIZARD_GARB
 	item_type = /obj/item/spellpacket/lightningbolt
 	charge_max = 10
 
@@ -326,6 +325,7 @@
 	desc = "Some birdseed wrapped in cloth that somehow crackles with electricity."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snappop"
+	throwforce = 35
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/spellpacket/lightningbolt/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -333,7 +333,7 @@
 		if(isliving(hit_atom))
 			var/mob/living/M = hit_atom
 			if(!M.anti_magic_check())
-				M.electrocute_act(80, src, null, SHOCK_ILLUSION)
+				M.electrocute_act(10, src, null, SHOCK_ILLUSION)
 		qdel(src)
 
 /obj/item/spellpacket/lightningbolt/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)

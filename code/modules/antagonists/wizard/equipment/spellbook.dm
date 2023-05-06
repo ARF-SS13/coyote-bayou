@@ -111,23 +111,26 @@
 	name = "Fireball"
 	spell_type = /obj/effect/proc_holder/spell/aimed/fireball
 
-/datum/spellbook_entry/rod_form
+datum/spellbook_entry/rod_form
 	name = "Rod Form"
 	spell_type = /obj/effect/proc_holder/spell/targeted/rod_form
+	cost = 99
 
 /datum/spellbook_entry/magicm
 	name = "Magic Missile"
 	spell_type = /obj/effect/proc_holder/spell/targeted/projectile/magic_missile
 	category = "Defensive"
+	cost = 99
 
 /datum/spellbook_entry/disintegrate
 	name = "Disintegrate"
 	spell_type = /obj/effect/proc_holder/spell/targeted/touch/disintegrate
+	cost = 99
 
 /datum/spellbook_entry/nuclearfist
 	name = "Nuclear Fist"
 	spell_type = /obj/effect/proc_holder/spell/targeted/touch/nuclear_fist
-
+	cost = 99
 /datum/spellbook_entry/disabletech
 	name = "Disable Tech"
 	spell_type = /obj/effect/proc_holder/spell/targeted/emplosion/disable_tech
@@ -142,12 +145,13 @@
 /datum/spellbook_entry/lightningPacket
 	name = "Lightning bolt!  Lightning bolt!"
 	spell_type = /obj/effect/proc_holder/spell/targeted/conjure_item/spellpacket
-	category = "Defensive"
+	category = "Offensive"
 
 /datum/spellbook_entry/timestop
 	name = "Time Stop"
 	spell_type = /obj/effect/proc_holder/spell/aoe_turf/timestop
 	category = "Defensive"
+	cost = 9
 
 /datum/spellbook_entry/smoke
 	name = "Smoke"
@@ -160,10 +164,12 @@
 	spell_type = /obj/effect/proc_holder/spell/pointed/trigger/blind
 	cost = 1
 
+
 /datum/spellbook_entry/mindswap
 	name = "Mindswap"
 	spell_type = /obj/effect/proc_holder/spell/pointed/mind_transfer
 	category = "Mobility"
+	cost = 99
 
 /datum/spellbook_entry/forcewall
 	name = "Force Wall"
@@ -176,30 +182,34 @@
 	spell_type = /obj/effect/proc_holder/spell/targeted/turf_teleport/blink
 	category = "Mobility"
 
+
 /datum/spellbook_entry/teleport
 	name = "Teleport"
 	spell_type = /obj/effect/proc_holder/spell/targeted/area_teleport/teleport
 	category = "Mobility"
+	cost = 99
 
 /datum/spellbook_entry/mutate
 	name = "Mutate"
 	spell_type = /obj/effect/proc_holder/spell/targeted/genetic/mutate
+	cost = 5
 
 /datum/spellbook_entry/jaunt
 	name = "Ethereal Jaunt"
 	spell_type = /obj/effect/proc_holder/spell/targeted/ethereal_jaunt
 	category = "Mobility"
+	cost = 4
 
 /datum/spellbook_entry/knock
 	name = "Knock"
 	spell_type = /obj/effect/proc_holder/spell/aoe_turf/knock
 	category = "Mobility"
-	cost = 1
+	cost = 2
 
 /datum/spellbook_entry/fleshtostone
 	name = "Flesh to Stone"
 	spell_type = /obj/effect/proc_holder/spell/targeted/touch/flesh_to_stone
-
+	cost = 99
 /datum/spellbook_entry/summonitem
 	name = "Summon Item"
 	spell_type = /obj/effect/proc_holder/spell/targeted/summonitem
@@ -210,15 +220,18 @@
 	name = "Bind Soul"
 	spell_type = /obj/effect/proc_holder/spell/targeted/lichdom
 	category = "Defensive"
+	cost = 5
 
 /datum/spellbook_entry/teslablast
 	name = "Tesla Blast"
 	spell_type = /obj/effect/proc_holder/spell/targeted/tesla
+	cost = 99
+
 
 /datum/spellbook_entry/lightningbolt
 	name = "Lightning Bolt"
 	spell_type = /obj/effect/proc_holder/spell/aimed/lightningbolt
-	cost = 3
+	cost = 99
 
 /datum/spellbook_entry/lightningbolt/Buy(mob/living/carbon/human/user,obj/item/spellbook/book) //return 1 on success
 	. = ..()
@@ -231,18 +244,19 @@
 /datum/spellbook_entry/infinite_guns
 	name = "Lesser Summon Guns"
 	spell_type = /obj/effect/proc_holder/spell/targeted/infinite_guns/gun
-	cost = 3
+	cost = 99
 	no_coexistance_typecache = /obj/effect/proc_holder/spell/targeted/infinite_guns/arcane_barrage
 
 /datum/spellbook_entry/arcane_barrage
 	name = "Arcane Barrage"
 	spell_type = /obj/effect/proc_holder/spell/targeted/infinite_guns/arcane_barrage
-	cost = 3
+	cost = 99
 	no_coexistance_typecache = /obj/effect/proc_holder/spell/targeted/infinite_guns/gun
 
 /datum/spellbook_entry/barnyard
 	name = "Barnyard Curse"
 	spell_type = /obj/effect/proc_holder/spell/pointed/barnyardcurse
+	cost = 99
 
 /datum/spellbook_entry/charge
 	name = "Charge"
@@ -250,23 +264,28 @@
 	category = "Assistance"
 	cost = 1
 
+
 /datum/spellbook_entry/shapeshift
 	name = "Wild Shapeshift"
 	spell_type = /obj/effect/proc_holder/spell/targeted/shapeshift
 	category = "Assistance"
-	cost = 1
+	cost = 99
+
+
 
 /datum/spellbook_entry/spacetime_dist
 	name = "Spacetime Distortion"
 	spell_type = /obj/effect/proc_holder/spell/spacetime_dist
 	category = "Defensive"
-	cost = 1
+	cost = 99
+
+
 
 /datum/spellbook_entry/the_traps
 	name = "The Traps!"
 	spell_type = /obj/effect/proc_holder/spell/aoe_turf/conjure/the_traps
 	category = "Defensive"
-	cost = 1
+	cost = 99
 
 
 /datum/spellbook_entry/item
@@ -294,59 +313,72 @@
 	name = "Temporal Katana"
 	desc = "An oddly-weighted katana, reinforced to allow parrying, with a temporal anomaly magically shoved into it. Successful ripostes prove devastating to those unprepared."
 	item_path = /obj/item/katana/timestop
+	cost = 5
+
 
 /datum/spellbook_entry/item/staffchange
 	name = "Staff of Change"
 	desc = "An artefact that spits bolts of coruscating energy which cause the target's very form to reshape itself."
 	item_path = /obj/item/gun/magic/staff/change
-	dynamic_requirement = 200
+	cost = 99
+
 
 /datum/spellbook_entry/item/staffanimation
 	name = "Staff of Animation"
 	desc = "An arcane staff capable of shooting bolts of eldritch energy which cause inanimate objects to come to life. This magic doesn't affect machines."
 	item_path = /obj/item/gun/magic/staff/animate
 	category = "Assistance"
+	cost = 99
+
 
 /datum/spellbook_entry/item/staffchaos
 	name = "Staff of Chaos"
 	desc = "A caprious tool that can fire all sorts of magic without any rhyme or reason. Using it on people you care about is not recommended."
 	item_path = /obj/item/gun/magic/staff/chaos
+	cost = 99
 
 /datum/spellbook_entry/item/spellblade
 	name = "Spellblade"
 	desc = "A sword capable of firing blasts of energy which rip targets limb from limb."
 	item_path = /obj/item/gun/magic/staff/spellblade
 
+
 /datum/spellbook_entry/item/staffdoor
 	name = "Staff of Door Creation"
 	desc = "A particular staff that can mold solid metal into ornate doors. Useful for getting around in the absence of other transportation. Does not work on glass."
 	item_path = /obj/item/gun/magic/staff/door
-	cost = 1
+	cost = 99
 	category = "Mobility"
+
 
 /datum/spellbook_entry/item/staffhealing
 	name = "Staff of Healing"
 	desc = "An altruistic staff that can heal the lame and raise the dead."
 	item_path = /obj/item/gun/magic/staff/healing
-	cost = 1
+	cost = 9
 	category = "Defensive"
 
+/*
 /datum/spellbook_entry/item/lockerstaff
 	name = "Staff of the Locker"
 	desc = "A staff that shoots lockers. It eats anyone it hits on its way, leaving a welded locker with your victims behind."
 	item_path = /obj/item/gun/magic/staff/locker
 	category = "Defensive"
+*/
 
 /datum/spellbook_entry/item/scryingorb
 	name = "Scrying Orb"
 	desc = "An incandescent orb of crackling energy, using it will allow you to ghost while alive, allowing you to spy upon the station with ease. In addition, buying it will permanently grant you X-ray vision."
 	item_path = /obj/item/scrying
 	category = "Defensive"
+	cost = 6
+
 
 /datum/spellbook_entry/item/soulstones
 	name = "Six Soul Stone Shards and the spell Artificer"
 	desc = "Soul Stone Shards are ancient tools capable of capturing and harnessing the spirits of the dead and dying. The spell Artificer allows you to create arcane machines for the captured souls to pilot."
 	category = "Assistance"
+	cost = 99
 
 /datum/spellbook_entry/item/soulstones/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
 	. =..()
@@ -359,18 +391,22 @@
 	desc = "A Necromantic stone is able to resurrect three dead individuals as skeletal thralls for you to command."
 	item_path = /obj/item/necromantic_stone
 	category = "Assistance"
+	cost = 99
+
+
 
 /datum/spellbook_entry/item/wands
 	name = "Wand Assortment"
 	desc = "A collection of wands that allow for a wide variety of utility. Wands have a limited number of charges, so be conservative in use. Comes in a handy belt."
 	category = "Defensive"
-	dynamic_requirement = 200
+	cost = 99
 
 /datum/spellbook_entry/item/armor
 	name = "Mastercrafted Armor Set"
 	desc = "An artefact suit of armor that allows you to cast spells while providing more protection against attacks and the void of space."
 	item_path = /obj/item/clothing/suit/space/hardsuit/wizard
 	category = "Defensive"
+	cost = 99
 
 /datum/spellbook_entry/item/armor/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
 	. = ..()
@@ -383,13 +419,16 @@
 	desc = "A magical contract binding an apprentice wizard to your service, using it will summon them to your side."
 	item_path = /obj/item/antag_spawner/contract
 	category = "Assistance"
-	dynamic_requirement = 50
+	cost = 99
+
+
 
 /datum/spellbook_entry/item/plasmafist
 	name = "Plasma Fist"
 	desc = "A forbidden martial art designed on the surging power of plasma. Use it to harness the ancient power."
 	item_path = /obj/item/book/granter/martial/plasma_fist
-	cost = 2
+	cost = 99
+
 
 /datum/spellbook_entry/item/guardian
 	name = "Guardian Deck"
@@ -397,11 +436,13 @@
 	It would be wise to avoid buying these with anything capable of causing you to swap bodies with others."
 	item_path = /obj/item/guardiancreator/choose/wizard
 	category = "Assistance"
+	cost = 99
 
 /datum/spellbook_entry/item/guardian/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
 	. = ..()
 	if(.)
 		new /obj/item/paper/guides/antag/guardian/wizard(get_turf(user))
+
 
 /datum/spellbook_entry/item/bloodbottle
 	name = "Bottle of Blood"
@@ -409,7 +450,7 @@
 	item_path = /obj/item/antag_spawner/slaughter_demon
 	limit = 3
 	category = "Assistance"
-	dynamic_requirement = 60
+	cost = 99
 
 /datum/spellbook_entry/item/hugbottle
 	name = "Bottle of Tickles"
@@ -424,17 +465,21 @@
 	cost = 1 //non-destructive; it's just a jape, sibling!
 	limit = 3
 	category = "Assistance"
-	dynamic_requirement = 40
+	cost = 99
+
 
 /datum/spellbook_entry/item/mjolnir
 	name = "Mjolnir"
 	desc = "A mighty hammer on loan from Thor, God of Thunder. It crackles with barely contained power."
 	item_path = /obj/item/mjollnir
 
+
 /datum/spellbook_entry/item/singularity_hammer
 	name = "Singularity Hammer"
 	desc = "A hammer that creates an intensely powerful field of gravity where it strikes, pulling everything nearby to the point of impact."
 	item_path = /obj/item/singularityhammer
+	cost = 99
+
 
 /datum/spellbook_entry/item/battlemage
 	name = "Battlemage Armour"
@@ -442,20 +487,25 @@
 	item_path = /obj/item/clothing/suit/space/hardsuit/shielded/wizard
 	limit = 1
 	category = "Defensive"
+	cost = 99
 
 /datum/spellbook_entry/item/battlemage_charge
 	name = "Battlemage Armour Charges"
 	desc = "A powerful defensive rune, it will grant eight additional charges to a suit of battlemage armour."
 	item_path = /obj/item/wizard_armour_charge
 	category = "Defensive"
-	cost = 1
+	cost = 99
+
+
 
 /datum/spellbook_entry/item/warpwhistle
 	name = "Warp Whistle"
 	desc = "A strange whistle that will transport you to a distant safe place on the station. There is a window of vulnerability at the beginning of every use."
 	item_path = /obj/item/warpwhistle
 	category = "Mobility"
-	cost = 1
+	cost = 99
+
+
 
 /datum/spellbook_entry/summon
 	name = "Summon Stuff"
@@ -482,7 +532,7 @@
 /datum/spellbook_entry/summon/ghosts
 	name = "Summon Ghosts"
 	desc = "Spook the crew out by making them see dead people. Be warned, ghosts are capricious and occasionally vindicative, and some will use their incredibly minor abilities to frustrate you."
-	cost = 0
+	cost = 99
 
 /datum/spellbook_entry/summon/ghosts/IsAvailible()
 	if(!SSticker.mode)
@@ -503,6 +553,7 @@
 	desc = "Nothing could possibly go wrong with arming a crew of lunatics just itching for an excuse to kill you. Just be careful not to stand still too long!"
 	dynamic_requirement = 60
 	limit = 1
+	cost = 99
 
 /datum/spellbook_entry/summon/guns/IsAvailible()
 	if(!SSticker.mode) // In case spellbook is placed on map
@@ -522,6 +573,7 @@
 	desc = "Share the wonders of magic with the crew and show them why they aren't to be trusted with it at the same time."
 	dynamic_requirement = 60
 	limit = 1
+	cost = 99
 
 /datum/spellbook_entry/summon/magic/IsAvailible()
 	if(!SSticker.mode) // In case spellbook is placed on map
@@ -541,6 +593,7 @@
 	desc = "Give Murphy's law a little push and replace all events with special wizard ones that will confound and confuse everyone. Multiple castings increase the rate of these events."
 	dynamic_requirement = 60
 	var/times = 0
+	cost = 99
 
 /datum/spellbook_entry/summon/events/IsAvailible()
 	if(!SSticker.mode) // In case spellbook is placed on map
@@ -564,7 +617,7 @@
 /datum/spellbook_entry/summon/curse_of_madness
 	name = "Curse of Madness"
 	desc = "Curses the station, warping the minds of everyone inside, causing lasting traumas. Warning: this spell can affect you if not cast from a safe distance."
-	cost = 4
+	cost = 99
 
 /datum/spellbook_entry/summon/curse_of_madness/Buy(mob/living/carbon/human/user, obj/item/spellbook/book)
 	SSblackbox.record_feedback("tally", "wizard_spell_learned", 1, name)
@@ -581,6 +634,7 @@
 	if(!SSticker.mode) // In case spellbook is placed on map
 		return FALSE
 	return (!CONFIG_GET(flag/no_summon_traumas) && ..())
+
 
 /obj/item/spellbook
 	name = "spell book"
@@ -619,6 +673,7 @@
 			qdel(E)
 	tab = categories[1]
 
+
 /obj/item/spellbook/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/antag_spawner/contract))
 		var/obj/item/antag_spawner/contract/contract = O
@@ -638,6 +693,7 @@
 			if(!isnull(BB.limit))
 				BB.limit++
 		qdel(O)
+
 
 /obj/item/spellbook/proc/GetCategoryHeader(category)
 	var/dat = ""
@@ -692,6 +748,8 @@
 /obj/item/spellbook/attack_self(mob/user)
 	if(!owner)
 		to_chat(user, span_notice("You bind the spellbook to yourself."))
+		ADD_TRAIT( user, TRAIT_NOGUNS, src)
+		ADD_TRAIT( user, TRAIT_NODRUGS, src)
 		owner = user
 		return
 	if(user != owner)
