@@ -1300,9 +1300,9 @@
 	name = "trash bombs"
 	loot = list(
 		/obj/item/grenade/f13/dynamite = 500,
-		/obj/item/grenade/homemade/firebomb = 100,
+		/*/obj/item/grenade/homemade/firebomb = 100,*/
 		/obj/item/grenade/homemade/coffeepotbomb = 100,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov = 100,
+		/*/obj/item/reagent_containers/food/drinks/bottle/molotov= 100,*/
 		/obj/item/gun/ballistic/fatman = 1, //we do a lil trolling~
 	)
 
@@ -1310,9 +1310,9 @@
 	name = "common bombs"
 	loot = list(
 		/obj/item/grenade/f13/dynamite = 1,
-		/obj/item/grenade/homemade/firebomb = 1,
+		/*/obj/item/grenade/homemade/firebomb = 1,*/
 		/obj/item/grenade/homemade/coffeepotbomb = 5,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov = 1,
+		/*/obj/item/reagent_containers/food/drinks/bottle/molotov= 1,*/
 		/obj/item/grenade/flashbang = 3,
 		/obj/item/grenade/plastic = 1,
 		/obj/item/grenade/empgrenade = 1,
