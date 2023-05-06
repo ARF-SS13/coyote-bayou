@@ -14,15 +14,18 @@
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
 		return // have fun!
-	return spawn_the_stuff(null, TRUE) // lov dan
+	spawn_the_stuff() // lov dan
+	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/lootdrop/proc/spawn_the_stuff(list/listhack)
 	if(!LAZYLEN(loot))
+		qdel(src)
 		return
 	var/atom/A = spawn_on_turf ? get_turf(src) : loc
 	for(var/tospawn in 1 to min(lootcount, LAZYLEN(loot)))
 		var/lootspawn = pickweight(loot)
 		if(!lootspawn)
+			qdel(src)
 			return
 		if(!lootdoubles)
 			loot.Remove(lootspawn)
@@ -39,8 +42,6 @@
 					spawned_loot.pixel_y = pixel_y
 	if(delay_spawn)
 		qdel(src)
-		return INITIALIZE_HINT_QDEL
-	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/lootdrop/bedsheet
 	icon = 'icons/obj/bedsheets.dmi'
