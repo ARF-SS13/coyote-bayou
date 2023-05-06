@@ -60,7 +60,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Wasteland Wizard", "Master Martial Artist"),
 			list("Wasteland Wizard", "Trained Grappler"),
 			list("Wasteland Wizard", "Fists of Iron"),
-			list("Wasteland Wizard", "Fists of Steel")
+			list("Wasteland Wizard", "Fists of Steel"),
+			list("Wasteland Wizard", "Mute")
 		)
 	return ..()
 
