@@ -927,7 +927,7 @@
 
 /datum/sprite_accessory/hair/gloomylongcurly
 	name = "Gloomy Long & Curly"
-	icon_state = "hair_gloomylongcurly"
+	icon_state = "hair_gloomycurly"
 
 /datum/sprite_accessory/hair/gloomyskank
 	name = "Gloomy Skank"
