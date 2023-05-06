@@ -173,7 +173,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/goldschlager = 15,
 		/obj/item/export/bottle/patron = 15,
 	)
-	var/list/goods_list = list()
+	var/list/buyables_loose = list()
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
 	var/sales_timer
@@ -599,7 +599,7 @@ ORGAN SELLER
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "organs"
 
-	goods_list = list( /obj/item/organ/heart = 30,
+	buyables_loose = list( /obj/item/organ/heart = 30,
 								/obj/item/organ/ears = 5,
 								/obj/item/organ/eyes = 5,
 								/obj/item/organ/liver = 15,
@@ -643,7 +643,7 @@ Fence
 	name = "Nash Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for caps. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
-	goods_list = list( 	/obj/item/card/lowbounty = 100,
+	buyables_loose = list( 	/obj/item/card/lowbounty = 100,
 						/obj/item/card/midbounty = 200,
 						/obj/item/card/highbounty = 400,
 						/obj/item/card/kingbounty = 800
@@ -673,7 +673,7 @@ Fence
 /obj/machinery/mineral/wasteland_trader/gunbuyer
 	name = "Gun Repository"
 	desc = "Place weapon inside slot. Weapon is sent out of the region for post-processing. Recieve compensation. Yuma Wasteland Supply Inc. thanks you for disarming the wasteland."
-	goods_list = list(/obj/item/gun/ballistic/automatic/hobo/zipgun = 5,
+	buyables_loose = list(/obj/item/gun/ballistic/automatic/hobo/zipgun = 5,
 						/obj/item/gun/ballistic/revolver/hobo = 5,
 						/obj/item/gun/ballistic/revolver/detective = 5,
 						/obj/item/gun/ballistic/revolver/hobo = 8,
