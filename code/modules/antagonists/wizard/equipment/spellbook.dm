@@ -216,11 +216,12 @@ datum/spellbook_entry/rod_form
 	category = "Assistance"
 	cost = 1
 
+
 /datum/spellbook_entry/lichdom
 	name = "Bind Soul"
 	spell_type = /obj/effect/proc_holder/spell/targeted/lichdom
 	category = "Defensive"
-	cost = 5
+	cost = 99
 
 /datum/spellbook_entry/teslablast
 	name = "Tesla Blast"
