@@ -74,8 +74,8 @@
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
 /obj/structure/sign/flag_texas
-	name = "Tejas Flag"
-	desc = "\"Texas.\" Tejas. A state in a country far-gone, a lone star on a white and red background. The meanings of its colors are forgotten by almost everyone, but the lone star shines."
+	name = "Tejaxicoana Flag"
+	desc = "Tejas. Mexico. Louisiana. Ancient places with no memory. The states that stood behind or near this flag are long gone, leaving a pale star on a white and red background. The meanings of its colors are forgotten by almost everyone, but the lone star shines."
 	icon_state = "flag_texas"
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
@@ -106,7 +106,7 @@
 
 /obj/structure/sign/flag_arkansas
 	name = "Akansea Flag"
-	desc = "To be quite honest, you don't understand how a word can be pronounced so differently from how it's spelled."
+	desc = "What is there to say of the flag so brave as to be so blood-dyed? It is a land now sun-bleached and ruined. To be quite honest, you don't understand how a word can be pronounced so differently from how it's spelled."
 	icon_state = "flag_arkansas"
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
