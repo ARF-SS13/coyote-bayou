@@ -1305,6 +1305,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/tribal/warclub/PopulateContents()
 	new /obj/item/melee/onehanded/club/warclub(src)
 
+
+
 /obj/item/storage/box/gun/tribal/boneaxe
 	name = "bone axe case"
 
@@ -2059,6 +2061,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/coyote/club
 
+/datum/loadout_box/club/mace
+	entry_tag = "Mace"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/coyote/club/mace
+
+
 /datum/loadout_box/bigclub
 	entry_tag = "Big Club"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2298,6 +2307,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/classic_baton/coyote/oldquarterstaff
+
+/datum/loadout_box/oldquarterstaff/bokken
+	entry_tag = "Old Bokken"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken
 
 /datum/loadout_box/olddervish
 	entry_tag = "Old Dervish Blade"
