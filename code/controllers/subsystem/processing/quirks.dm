@@ -50,8 +50,17 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Pacifist", "Poor Aim"),
 			list("Pacifist", "Fat-Fingered"),
 			list("Speed Walker", "Mobility - Can not Run"),
-			list("Zoomies", "Zoomies - Super")
-			)
+			list("Zoomies", "Zoomies - Super"),
+			list("Swamp Wizard", "Melee - Big Leagues"),
+			list("Swamp Wizard", "Melee - Little Leagues"),
+			list("Swamp Wizard", "Bolt Worker"),
+			list("Swamp Wizard", "Dead Eye"),
+			list("Swamp Wizard", "Straight Shooter"),
+			list("Swamp Wizard", "Sure Strike"),
+			list("Swamp Wizard", "Master Martial Artist"),
+			list("Swamp Wizard", "Trained Grappler"),
+			list("Swamp Wizard", "Fists of Iron"),
+			list("Swamp Wizard", "Fists of Steel"),
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
