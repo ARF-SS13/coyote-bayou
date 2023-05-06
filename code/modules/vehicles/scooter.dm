@@ -249,7 +249,7 @@
 //Wheelys
 /obj/vehicle/ridden/scooter/wheelys
 	name = "Wheely-Heels"
-	desc = "Uses patented retractable wheel technology. Never sacrifice speed for style - not that this provides much of either."
+	desc = "Time-crusted boots made from an ancient design. A single rubber cylinder is buried into the heel of an otherwise normal pair of footwear. Skate along as fast as your heart desires, friend." //Thanks Fel
 	icon = null
 	density = FALSE
 
