@@ -1224,6 +1224,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/flintlock/musket/jezail(src)
 	new /obj/item/ammo_box/flintlock(src)
 
+/obj/item/storage/box/gun/rifle/jezail/culverin
+	name = "culverin case"
+
+/obj/item/storage/box/gun/rifle/jezail/culverin/PopulateContents()
+	new /obj/item/gun/flintlock/musket/jezail/culverin(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+
 /obj/item/storage/box/gun/pistol/type17
 	name = "Type 17 case"
 
@@ -1674,6 +1682,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/jezail
+
+
+/datum/loadout_box/flintlockculverin
+	entry_tag = "Culverin"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/jezail/culverin
+
 
 /datum/loadout_box/junglecarbine
 	entry_tag = "Jungle Carbine"
