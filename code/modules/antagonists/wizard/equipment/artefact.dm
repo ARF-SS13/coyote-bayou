@@ -157,7 +157,7 @@
 		visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
 		user.ghostize(1, voluntary = TRUE)
 		src.scrying_cd = 1
-		sleep(20000)
+		sleep(12000)
 		src.scrying_cd = 0
 		return
 
