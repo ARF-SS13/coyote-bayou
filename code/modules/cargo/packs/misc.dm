@@ -309,18 +309,18 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/misc/capstwofifty
-	name = "Caps Conversion 250"
-	desc = "Converts credits into caps! 250 Version"
+	name = "Coins Conversion 250"
+	desc = "Converts credits into Coins! 250 Version"
 	cost = 2500
 	contains = list(/obj/item/stack/f13Cash/caps/twofivezero)
-	crate_name = "caps crate 1"
+	crate_name = "Coins crate 1"
 
 /datum/supply_pack/misc/capsfivehundred
-	name = "Caps Conversion 500"
-	desc = "Converts credits into caps! 500 Version"
+	name = "Coins Conversion 500"
+	desc = "Converts credits into coins! 500 Version"
 	cost = 5000
 	contains = list(/obj/item/stack/f13Cash/caps/fivezerozero)
-	crate_name = "caps crate 2"
+	crate_name = "coins crate 2"
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Misc + Decor ////////////////////////////////////

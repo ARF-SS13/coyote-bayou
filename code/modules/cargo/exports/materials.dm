@@ -140,7 +140,7 @@
 /datum/export/material/f13cash
 	cost = 10
 	message = " "
-	unit_name = "caps"
+	unit_name = "coins"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)
 
