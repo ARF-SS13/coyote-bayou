@@ -1,13 +1,35 @@
+SUBSYSTEM_DEF(progress_bars)
+	name = "Progress Bars"
+	flags = SS_NO_INIT
+	wait = 0.2 SECONDS
+
+	/// All the progress bars that are currently active and need to be updated
+	/// Not a weakref cus we own them
+	/// format: list(/datum/progressbar-initted)
+	var/list/progbars = list()
+	/// All weakrefs to atoms that are currently using progress bars
+	/// format: list(/datum/weakref/thing = list(/datum/progressbar-initted))
+	var/list/atom_proglist = list()
+
+/datum/controller/subsystem/progress_bars/fire(resumed)
+
+
+
+
+
+
 #define PROGRESSBAR_HEIGHT 6
 #define PROGRESSBAR_ANIMATION_TIME 5
 
 /datum/progressbar
 	///The progress bar visual element.
 	var/image/bar
-	///The target where this progress bar is applied and where it is shown.
-	var/atom/bar_loc
-	///The mob whose client sees the progress bar.
-	var/mob/user
+	///The place where the progress bar is shown.
+	var/datum/weakref/display_loc
+	///The clients who can see this thing.
+	var/list/visible_to = list()
+	///If the progress bar should be visible to everyone. Overrides the above
+	var/visible_to_all = FALSE
 	///The client seeing the progress bar.
 	var/client/user_client
 	///Effectively the number of steps the progress bar will need to do before reaching completion.
@@ -16,54 +38,57 @@
 	var/last_progress = 0
 	///Variable to ensure smooth visual stacking on multiple progress bars.
 	var/listindex = 0
-	///If the progress bar should jusst be treated as a normal image and appear for everyone
-	var/visible_to_all = FALSE
 	///The previous icon state of the progress bar.
 	var/last_icon_state
 
-/datum/progressbar/stored
-	visible_to_all = TRUE
-
-/datum/progressbar/New(mob/User, goal_number, atom/target)
+/datum/progressbar/New(atom/display_loc, list/can_see)
 	. = ..()
-	if (!istype(target))
+	if (!istype(display_loc))
 		EXCEPTION("Invalid target given")
-	if((QDELETED(User) || !istype(User)) && !visible_to_all)
-		stack_trace("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] user")
-		qdel(src)
-		return
-	if(!isnum(goal_number))
-		stack_trace("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] goal_number")
-		qdel(src)
-		return
-	goal = goal_number
-	bar_loc = target
-	bar = image('icons/effects/progessbar.dmi', bar_loc, "prog_bar_0")
-	if(visible_to_all)
-		bar.plane = HUD_PLANE - 100
-	else
-		bar.plane = ABOVE_HUD_PLANE
+	// if((QDELETED(User) || !istype(User)) && !visible_to_all)
+	// 	stack_trace("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] user")
+	// 	qdel(src)
+	// 	return
+	// if(!isnum(goal_number))
+	// 	stack_trace("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] goal_number")
+	// 	qdel(src)
+	// 	return
+	display_loc = owner
+	bar = image('icons/effects/progessbar.dmi', display_loc, "prog_bar_0")
+	bar.plane = display_loc.plane + 100
+	// if(visible_to_all)
+	// 	bar.plane = HUD_PLANE - 100
+	// else
+	// 	bar.plane = ABOVE_HUD_PLANE
 	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	if(visible_to_all)
+	listindex = SSprogress_bars.add_bar(src, display_loc)
+	if(isnull(listindex))
+		qdel(src)
 		return
-	user = User
+	register_visibility(can_see)
 
-	LAZYADDASSOC(user.progressbars, bar_loc, src)
-	var/list/bars = user.progressbars[bar_loc]
-	listindex = bars.len
+	// LAZYADDASSOC(user.progressbars, display_loc, src)
+	// var/list/bars = user.progressbars[display_loc]
+	// listindex = bars.len
 
-	if(user.client)
-		user_client = user.client
-		add_prog_bar_image_to_client()
+	// if(user.client)
+	// 	user_client = user.client
+	// 	add_prog_bar_image_to_client()
 
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
-	RegisterSignal(user, COMSIG_MOB_CLIENT_LOGOUT, .proc/clean_user_client)
-	RegisterSignal(user, COMSIG_MOB_CLIENT_LOGIN, .proc/on_user_login)
+/datum/register_visibility(list/can_see = list())
+	if(LAZYLEN(can_see))
+		for(var/atom/thing in can_see)
+			visible_to |= WEAKREF(thing)
+			RegisterSignal(thing, COMSIG_PARENT_QDELETING, .proc/on_user_delete)
+			RegisterSignal(thing, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_user_logout)
+			RegisterSignal(thing, COMSIG_MOB_CLIENT_LOGIN, .proc/on_user_login)
+		return
+	else
 
 
 /datum/progressbar/Destroy()
 	if(user)
-		for(var/pb in user.progressbars[bar_loc])
+		for(var/pb in user.progressbars[display_loc])
 			var/datum/progressbar/progress_bar = pb
 			if(progress_bar == src || progress_bar.listindex <= listindex)
 				continue
@@ -73,13 +98,13 @@
 			var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.listindex - 1)) - PROGRESSBAR_HEIGHT
 			animate(progress_bar.bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
-		LAZYREMOVEASSOC(user.progressbars, bar_loc, src)
+		LAZYREMOVEASSOC(user.progressbars, display_loc, src)
 		user = null
 
 	if(user_client)
 		clean_user_client()
 
-	bar_loc = null
+	display_loc = null
 
 	if(bar)
 		QDEL_NULL(bar)
@@ -128,7 +153,7 @@
 /datum/progressbar/proc/show_bar()
 	bar.pixel_y = 0
 	bar.alpha = 0
-	bar.loc = bar_loc
+	bar.loc = display_loc
 	animate(bar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
 /datum/progressbar/proc/hide_bar()
@@ -167,3 +192,4 @@
 
 #undef PROGRESSBAR_ANIMATION_TIME
 #undef PROGRESSBAR_HEIGHT
+

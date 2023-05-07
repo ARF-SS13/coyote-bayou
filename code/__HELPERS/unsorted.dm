@@ -1625,3 +1625,17 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return A
 	if(A.loc)
 		return recursive_loc_search(A.loc, needle, max_depth - 1)
+
+/// Goes through the common places a client can be held, and returns the first one it finds
+/proc/get_client(thing_w_client)
+	if(isclient(thing_w_client))
+		return thing_w_client
+	if(ismob(thing_w_client))
+		var/mob/mobby = thing_w_client
+		if(mobby.client)
+			return mobby.client
+
+
+
+
+
