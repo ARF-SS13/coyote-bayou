@@ -302,7 +302,6 @@
 	damage = 15
 	damage_type = BURN
 	flag = "magic"
-	dismemberment = 50
 	nodamage = 0
 
 /obj/item/projectile/magic/spellblade/on_hit(target)
