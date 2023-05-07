@@ -151,7 +151,7 @@ datum/spellbook_entry/rod_form
 	name = "Time Stop"
 	spell_type = /obj/effect/proc_holder/spell/aoe_turf/timestop
 	category = "Defensive"
-	cost = 9
+	cost = 99
 
 /datum/spellbook_entry/smoke
 	name = "Smoke"
