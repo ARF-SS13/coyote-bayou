@@ -54,6 +54,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Wasteland Wizard", "Melee - Big Leagues"),
 			list("Wasteland Wizard", "Melee - Little Leagues"),
 			list("Wasteland Wizard", "Bolt Worker"),
+			list("Wasteland Wizard", "Bow Trained"),
 			list("Wasteland Wizard", "Dead Eye"),
 			list("Wasteland Wizard", "Straight Shooter"),
 			list("Wasteland Wizard", "Sure Strike"),
