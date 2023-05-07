@@ -340,3 +340,21 @@
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/bug)
+
+//Fenny begins going insane
+
+/obj/item/organ/tongue/dutch
+	name = "A somehow dutch tongue"
+	desc = "A tongue that is quite human like, but is used to the dutch accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/dutch)
+
+/*
+/obj/item/organ/tongue/redriver
+	name = "A somehow Red Riverian Tongue"
+	desc = "A tongue that is quite human like, but is used to the Red River basin accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/redriver)
+*/
