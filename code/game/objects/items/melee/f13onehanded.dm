@@ -32,7 +32,7 @@
 
 /obj/item/melee/onehanded/dragonfire //unique. big damage. can parry.
 	name = "Dragonfire Katana"
-	desc = "An impossible lithe sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. The blade seems to guide you to block, twist, and dodge.. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
+	desc = "An impossibly lithe sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. The blade seems to guide you to block, twist, and dodge.. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
 //	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
 //	item_state = "DFkatana"
 	icon_state = "temporalkatana"

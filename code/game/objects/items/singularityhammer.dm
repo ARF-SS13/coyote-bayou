@@ -83,7 +83,7 @@
 
 /obj/item/mjollnir
 	name = "Mjolnir"
-	desc = "A solid mana=hammer of unbearable weight that is lithe and agile in your hands. It crackles with barely contained energy. Words echo in your head: <br> <span class='phobia'>Rise and meet your fate- destiny awaits!</span>"
+	desc = "A solid mana-hammer of unbearable weight that is lithe and agile in your hands. It crackles with barely contained energy. Words echo in your head: <br> <span class='phobia'>Rise and meet your fate- destiny awaits!</span>"
 	icon_state = "mjollnir0"
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
