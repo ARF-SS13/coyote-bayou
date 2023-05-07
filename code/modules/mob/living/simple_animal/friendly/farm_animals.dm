@@ -183,6 +183,7 @@
 /mob/living/simple_animal/cow/Initialize()
 	udder = new(null, milk_reagent)
 	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/cow/Destroy()
 	qdel(udder)

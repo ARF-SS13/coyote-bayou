@@ -178,6 +178,10 @@ mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some atta
 	bare_wound_bonus = 25
 	faction = list("yaoguai")
 
+/mob/living/simple_animal/hostile/bear/yaoguai/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /*mob/living/simple_animal/hostile/bear/yaoguai/frozen
 	name = "frozen yao guai"
 	desc = "A mutated American black bear, sporting razor sharp teeth, claws, and a nasty temper. This one seems to have acclimatized to a harsh, snowy environment."
