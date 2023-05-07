@@ -83,7 +83,7 @@
 
 /obj/item/mjollnir
 	name = "Mjolnir"
-	desc = "A weapon worthy of a god, able to strike with the force of a lightning bolt. It crackles with barely contained energy."
+	desc = "A solid mana=hammer of unbearable weight that is lithe and agile in your hands. It crackles with barely contained energy. Words echo in your head: <br> <span class='phobia'>Rise and meet your fate- destiny awaits!</span>"
 	icon_state = "mjollnir0"
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
@@ -105,7 +105,7 @@
 
 /obj/item/mjollnir/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_multiplier=5, icon_wielded="mjollnir1", attacksound="sparks")
+	AddComponent(/datum/component/two_handed, force_multiplier=1, icon_wielded="mjollnir1", attacksound="sparks")
 
 /// triggered on wield of two handed item
 /obj/item/mjollnir/proc/on_wield(obj/item/source, mob/user)

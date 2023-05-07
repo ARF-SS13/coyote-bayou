@@ -27,12 +27,12 @@
 
 ////////////
 // SWORDS //
-////////////		-block, 34-39 damage
+////////////		-block, unique dungeon item, BIG dmg
 
 
 /obj/item/melee/onehanded/dragonfire //unique. big damage. can parry.
 	name = "Dragonfire Katana"
-	desc = "A sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. The blade seems to guide you to block, twist, and dodge.. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
+	desc = "An impossible lithe sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. The blade seems to guide you to block, twist, and dodge.. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
 //	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
 //	item_state = "DFkatana"
 	icon_state = "temporalkatana"
@@ -42,10 +42,12 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	force = 55
+	wielded_force = 70
 	throwforce = 10
 	block_chance = 20
 	armour_penetration = 0.40
 	w_class = WEIGHT_CLASS_BULKY
+	attack_speed = CLICK_CD_MELEE * 0.8
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
@@ -59,7 +61,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(20, BURN, "chest", M.run_armor_check("chest", "energy"))
+	M.apply_damage(30, BURN, "chest", M.run_armor_check("chest", "energy"))
 
 
 
