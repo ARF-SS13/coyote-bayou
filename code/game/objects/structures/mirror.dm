@@ -114,7 +114,7 @@
 	name = "magic mirror"
 	desc = "Turn and face the strange... face."
 	icon_state = "magic_mirror"
-	var/list/races_blacklist = list("skeleton", "agent", "angel", "military_synth", "memezombies", "clockwork golem servant", "android", "synth", "mush", "zombie", "memezombie")
+	var/list/races_blacklist = list(SPECIES_SKELETON, SPECIES_AGENT, SPECIES_ANGEL, SPECIES_SYNTH_MILITARY, SPECIES_ZOMBIE_MEME, SPECIES_GOLEM_RATVAR_SERVANT, SPECIES_ANDROID, SPECIES_SYNTH, SPECIES_MUSH, SPECIES_ZOMBIE, "memezombie")
 	var/list/choosable_races = list()
 
 /obj/structure/mirror/magic/New()
@@ -193,12 +193,12 @@
 						H.dna.update_ui_block(DNA_SKIN_TONE_BLOCK)
 
 			if(MUTCOLORS in H.dna.species.species_traits)
-				var/new_mutantcolor = input(user, "Choose your skin color:", "Race change","#"+H.dna.features["mcolor"]) as color|null
+				var/new_mutantcolor = input(user, "Choose your skin color:", "Race change","#"+H.dna.features[MBP_COLOR1]) as color|null
 				if(new_mutantcolor)
 					var/temp_hsv = RGBtoHSV(new_mutantcolor)
 
 					if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright
-						H.dna.features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
+						H.dna.features[MBP_COLOR1] = sanitize_hexcolor(new_mutantcolor)
 
 					else
 						to_chat(H, span_notice("Invalid color. Your color is not bright enough."))

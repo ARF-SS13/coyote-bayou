@@ -1,6 +1,6 @@
 /datum/species/synthfurry
 	name = "Synthetic Lizardperson"
-	id = "synthliz"
+	id = SPECIES_SYNTH_LIZARD
 	say_mod = "beeps"
 	default_color = "00FF00"
 	species_traits = list(
@@ -26,17 +26,20 @@
 		)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_REPTILE|MOB_BEAST
 	mutant_bodyparts = list(
-		"ipc_antenna" = "Synthetic Lizard - Antennae",
-		"mam_tail" = "Synthetic Lizard",
-		"mam_snouts" = "Synthetic Lizard - Snout",
-		"legs" = "Digitigrade",
-		"mam_body_markings" = "Synthetic Lizard - Plates",
-		"taur" = "None",
-		"horns" = "None", 
-		"deco_wings" = "None"
+		MBP_ANTENNA_IPC = "Synthetic Lizard - Antennae",
+		MBP_TAIL = "Synthetic Lizard",
+		MBP_SNOUT = "Synthetic Lizard - Snout",
+		MBP_LEGS = LIMB_DIGITIGRADE,
+		MBP_MARKINGS_BODY = "Synthetic Lizard - Plates",
+		MBP_TAUR = "None",
+		MBP_HORNS = "None", 
+		MBP_WINGS_DECORATIVE = "None",
 		)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
-	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
+	gib_types = list(
+		/obj/effect/gibspawner/ipc,
+		/obj/effect/gibspawner/ipc/bodypartless,
+	)
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/ipc
 	mutantlungs = /obj/item/organ/lungs/ipc
@@ -53,10 +56,16 @@
 	exotic_bloodtype = "S"
 	exotic_blood_color = BLOOD_COLOR_OIL
 
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
-	species_type = "robotic"
-	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")
+	tail_type = MBP_TAIL
+	wagging_type = MBP_TAIL_WAGGING
+	species_type = SPECIES_TYPE_ROBOT
+	allowed_limb_ids = list(
+		BODYTYPE_FURRY,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_AVIAN,
+		BODYTYPE_HUMAN,
+		BODYTYPE_SHADEKIN
+	)
 
 /datum/species/synthfurry/spec_life(mob/living/carbon/human/H)
 	if(H.nutrition < NUTRITION_LEVEL_FED)
@@ -71,15 +80,16 @@
 /datum/species/synthfurry/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	return TRUE
 
+/// Basically just Furry, but with synth mechanics
 /datum/species/synthfurry/synth_anthromorph
 	name = "Synthetic Anthromorph"
-	id = "synthfurry"
+	id = SPECIES_SYNTH_FURRY
+	limbs_id = BODYTYPE_FURRY
 
 /datum/species/synthfurry/ipc
 	name = "I.P.C."
-	id = "ipc"
-	limbs_id = "ipc"
-	icon_limbs = "ipc"
+	id = SPECIES_SYNTH_IPC
+	limbs_id = SPECIES_SYNTH_IPC
 	sexes = FALSE // NO WAY MY IPC SEXES ALL THE TIME
 	hair_alpha = 210
 	exotic_bloodtype = "HF"
@@ -108,6 +118,6 @@
 	var/new_ipc_screen = input(usr, "Choose your character's screen:", "Monitor Display") as null|anything in GLOB.ipc_screens_list
 	if(!new_ipc_screen)
 		return
-	H.dna.features["ipc_screen"] = new_ipc_screen
+	H.dna.features[MBP_SCREEN] = new_ipc_screen
 	H.update_body()
 

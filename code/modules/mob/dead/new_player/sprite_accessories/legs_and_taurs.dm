@@ -6,13 +6,13 @@
 *******************************************/
 
 /datum/sprite_accessory/legs/none
-	name = "Plantigrade"
+	name = LIMB_PLANTIGRADE
 
 /datum/sprite_accessory/legs/digitigrade_lizard
-	name = "Digitigrade"
+	name = LIMB_DIGITIGRADE
 
 /datum/sprite_accessory/legs/digitigrade_bird
-	name = "Avian"
+	name = LIMB_AVIAN
 
 
 /******************************************
@@ -24,12 +24,12 @@
 	center = TRUE
 	dimension_x = 64
 	color_src = MATRIXED
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	relevant_layers = list(BODY_ADJ_UPPER_LAYER, BODY_FRONT_LAYER)
 	var/taur_mode = NONE //Must be a single specific tauric suit variation bitflag. Don't do FLAG_1|FLAG_2
 	var/alt_taur_mode = NONE //Same as above.
 	var/hide_legs = USE_QUADRUPED_CLIP_MASK
-	mutant_part_string = "taur"
+	mutant_part_string = MBP_TAUR
 
 /datum/sprite_accessory/taur/is_not_visible(mob/living/carbon/human/H, tauric)
 	return (!tauric || (H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)))

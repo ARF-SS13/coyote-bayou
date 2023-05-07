@@ -5,20 +5,62 @@
 
 /datum/species/ghoul
 	name = "Ghoul"
-	id = "ghoul"
+	id = SPECIES_GHOUL
 	say_mod = "rasps"
-	limbs_id = "ghoul"
-	species_traits = list(HAIR,FACEHAIR,HAS_BONE, NOBLOOD, MUTCOLORS, EYECOLOR,LIPS, HORNCOLOR,WINGCOLOR)
-	inherent_traits = list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_NOBREATH, TRAIT_NOHARDCRIT, TRAIT_NOSOFTCRIT, TRAIT_GHOULMELEE, TRAIT_EASYDISMEMBER, TRAIT_EASYLIMBDISABLE, TRAIT_LIMBATTACHMENT)
-	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID, MOB_BEAST)
-	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None", "mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+	limbs_id = SPECIES_GHOUL
+	species_traits = list(
+		HAIR,
+		FACEHAIR,
+		HAS_BONE,
+		NOBLOOD,
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HORNCOLOR,
+		WINGCOLOR
+	)
+	inherent_traits = list(
+		TRAIT_RADIMMUNE,
+		TRAIT_VIRUSIMMUNE,
+		TRAIT_NOBREATH,
+		TRAIT_NOHARDCRIT,
+		TRAIT_NOSOFTCRIT,
+		TRAIT_GHOULMELEE,
+		TRAIT_EASYDISMEMBER,
+		TRAIT_EASYLIMBDISABLE,
+		TRAIT_LIMBATTACHMENT
+	)
+	inherent_biotypes = list(
+		MOB_ORGANIC,
+		MOB_HUMANOID,
+		MOB_BEAST
+	)
+	mutant_bodyparts = list(
+		MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_SNOUT = "Husky",
+		MBP_TAIL = "Husky",
+		MBP_EARS = "Husky",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_MARKINGS_BODY = "Husky",
+		MBP_TAUR = "None",
+		MBP_HORNS = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_MEAT_TYPE = MEAT_MAMMAL
+	)
 	attack_verb = "claw"
 	punchstunthreshold = 9
-	tail_type = "tail_human"
-	wagging_type = "waggingtail_human"
-	species_type = "human"
+	tail_type = MBP_TAIL_HUMAN
+	wagging_type = MBP_TAIL_WAGGING_HUMAN
+	species_type = SPECIES_HUMAN
 
-	allowed_limb_ids = list("human","mammal","aquatic","avian")
+	allowed_limb_ids = list(
+		BODYTYPE_HUMAN,
+		BODYTYPE_FURRY,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_AVIAN
+	)
 	use_skintones = 0
 	speedmod = 0.3 //slightly slower than humans
 	sexes = 1
@@ -126,7 +168,7 @@
 
 /*/datum/species/ghoul/glowing
 	name = "Glowing Ghoul"
-	id = "glowing ghoul"
+	id = SPECIES_GHOUL_GLOWING
 	limbs_id = "glowghoul"
 	armor = -30
 	speedmod = 0.5

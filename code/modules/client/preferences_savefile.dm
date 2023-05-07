@@ -97,7 +97,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 						var/mutant_string = accessory.mutant_part_string
 						if(!mutant_string)
 							if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
-								mutant_string = "mam_body_markings"
+								mutant_string = MBP_MARKINGS_BODY
 						var/primary_string = "[mutant_string]_primary"
 						var/secondary_string = "[mutant_string]_secondary"
 						var/tertiary_string = "[mutant_string]_tertiary"
@@ -108,39 +108,39 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 						var/secondary_exists = features[secondary_string]
 						var/tertiary_exists = features[tertiary_string]
 						if(accessory.color_src == MATRIXED && !primary_exists && !secondary_exists && !tertiary_exists)
-							features[primary_string] = features["mcolor"]
-							features[secondary_string] = features["mcolor2"]
-							features[tertiary_string] = features["mcolor3"]
+							features[primary_string] = features[MBP_COLOR1]
+							features[secondary_string] = features[MBP_COLOR2]
+							features[tertiary_string] = features[MBP_COLOR3]
 						else if(accessory.color_src == MUTCOLORS && !primary_exists)
-							features[primary_string] = features["mcolor"]
+							features[primary_string] = features[MBP_COLOR1]
 						else if(accessory.color_src == MUTCOLORS2 && !secondary_exists)
-							features[secondary_string] = features["mcolor2"]
+							features[secondary_string] = features[MBP_COLOR2]
 						else if(accessory.color_src == MUTCOLORS3 && !tertiary_exists)
-							features[tertiary_string] = features["mcolor3"]
+							features[tertiary_string] = features[MBP_COLOR3]
 
 		features["color_scheme"] = OLD_CHARACTER_COLORING //advanced is off by default
 
 	if(current_version < 37) //introduction of chooseable eye types/sprites
-		if(S["species"] == "insect")
+		if(S["species"] == SPECIES_INSECT)
 			left_eye_color = "#000000"
 			right_eye_color = "#000000"
-			if(chosen_limb_id == "moth" || chosen_limb_id == "moth_not_greyscale") //these actually have slightly different eyes!
-				eye_type = "moth"
+			if(chosen_limb_id == BODYTYPE_MOTH || chosen_limb_id == BODYTYPE_MOTH_NOT_GREYSCALE) //these actually have slightly different eyes!
+				eye_type = BODYTYPE_MOTH
 			else
-				eye_type = "insect"
+				eye_type = BODYTYPE_INSECT
 
 	if(current_version < 38) //further eye sprite changes
-		if(S["species"] == "plasmaman")
+		if(S["species"] == SPECIES_PLASMAMAN)
 			left_eye_color = "#FFC90E"
 			right_eye_color = "#FFC90E"
 		else
-			if(S["species"] == "skeleton")
+			if(S["species"] == SPECIES_SKELETON)
 				left_eye_color = "#BAB99E"
 				right_eye_color = "#BAB99E"
 
 	if(current_version < 51) //humans can have digi legs now, make sure they dont default to them or human players will murder me in my sleep
-		if(S["species"] == "human")
-			features["legs"] = "Plantigrade"
+		if(S["species"] == SPECIES_HUMAN)
+			features[MBP_LEGS] = LIMB_PLANTIGRADE
 
 	if(current_version < 52) // rp markings means markings are now stored as a list, lizard markings now mam like the rest
 		var/marking_type
@@ -148,11 +148,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		var/datum/species/actual_species = GLOB.species_list[species_id]
 
 		// convert lizard markings to lizard markings
-		if(species_id == "lizard" && S["feature_lizard_body_markings"])
-			features["mam_body_markings"] = features["body_markings"]
+		if(species_id == SPECIES_LIZARD && S["feature_lizard_body_markings"])
+			features[MBP_MARKINGS_BODY] = features["body_markings"]
 
 		// convert mam body marking data to the new rp marking data
-		if(actual_species.mutant_bodyparts["mam_body_markings"] && S["feature_mam_body_markings"]) marking_type = "feature_mam_body_markings"
+		if(actual_species.mutant_bodyparts[MBP_MARKINGS_BODY] && S["feature_mam_body_markings"]) marking_type = "feature_mam_body_markings"
 
 		if(marking_type)
 			var/old_marking_value = S[marking_type]
@@ -181,7 +181,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 							copied_color_list[1] = copied_color_list[2]
 							copied_color_list[2] = copied_color_list[3]
 				marking_list += list(list(part, old_marking_value, copied_color_list))
-			features["mam_body_markings"] = marking_list
+			features[MBP_MARKINGS_BODY] = marking_list
 
 /datum/preferences/proc/update_file(list/missing_updates, savefile/S)
 	if(!LAZYLEN(missing_updates))
@@ -467,43 +467,43 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!S)
 		return FALSE
 	features = list(
-		"mcolor" = "FFFFFF",
-		"mcolor2" = "FFFFFF",
-		"mcolor3" = "FFFFFF",
-		"tail_lizard" = "Smooth",
+		MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_TAIL_LIZARD = "Smooth",
 
-		"tail_human" = "None",
-		"snout" = "Round",
-		"horns" = "None",
+		MBP_TAIL_HUMAN = "None",
+		MBP_SNOUT_LIZARD = "Round",
+		MBP_HORNS = "None",
 		"horns_color" = "85615a",
-		"ears" = "None",
+		MBP_EARS_LIZARD = "None",
 
-		"wings" = "None",
+		MBP_WINGS = "None",
 		"wings_color" = "FFF",
-		"frills" = "None",
-		"deco_wings" = "None",
-		"spines" = "None",
+		MBP_FRILLS = "None",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_TAIL_SPINES = "None",
 
-		"legs" = "Plantigrade",
-		"insect_wings" = "Plain",
-		"insect_fluff" = "None",
-		"insect_markings" = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_WINGS_INSECT = "Plain",
+		MBP_FLUFF = "None",
+		MBP_MARKINGS_INSECT = "None",
 
-		"arachnid_legs" = "Plain",
-		"arachnid_spinneret" = "Plain",
-		"arachnid_mandibles" = "Plain",
+		MBP_ARACHNID_LEGS = "Plain",
+		MBP_ARACHNID_SPINNERET = "Plain",
+		MBP_ARACHNID_MANDIBLES = "Plain",
 
-		"mam_body_markings" = list(),
-		"mam_ears" = "None",
-		"mam_snouts" = "None",
-		"mam_tail" = "None",
+		MBP_MARKINGS_BODY = list(),
+		MBP_EARS = "None",
+		MBP_SNOUT = "None",
+		MBP_TAIL = "None",
 
 		"mam_tail_animated" = "None",
-		"xenodorsal" = "Standard",
-		"xenohead" = "Standard",
-		"xenotail" = "Xenomorph Tail",
+		MBP_XENO_DORSAL = "Standard",
+		MBP_XENO_HEAD = "Standard",
+		MBP_XENO_TAIL = "Xenomorph Tail",
 
-		"taur" = "None",
+		MBP_TAUR = "None",
 		"genitals_use_skintone" = FALSE,
 		"has_cock" = FALSE,
 		"cock_shape" = DEF_COCK_SHAPE,
@@ -562,13 +562,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"genital_hide" = NONE,
 
 
-		"ipc_screen" = "Sunburst",
-		"ipc_antenna" = "None",
+		MBP_SCREEN = "Sunburst",
+		MBP_ANTENNA_IPC = "None",
 		"flavor_text" = "",
 		"silicon_flavor_text" = "",
 
 		"ooc_notes" = OOC_NOTE_TEMPLATE,
-		"meat_type" = "Mammalian",
+		MBP_MEAT_TYPE = MEAT_MAMMAL,
 		"taste" = "something salty",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
@@ -595,12 +595,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["species"]			>> species_id
 	if(species_id) // for ass-backwards compatability
 		switch(species_id)
-			if("avian", "aquatic")
-				species_id = "mammal"
-			if("moth")
-				species_id = "insect"
+			if(BODYTYPE_AQUATIC, BODYTYPE_AVIAN)
+				species_id = SPECIES_FURRY
+			if(SPECIES_MOTH)
+				species_id = BODYTYPE_INSECT
 			if("synthanthro")
-				species_id = "synthliz"
+				species_id = SPECIES_SYNTH_LIZARD
 
 		var/newtype = GLOB.species_list[species_id]
 		if(newtype)
@@ -638,19 +638,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["uplink_loc"]				>> uplink_spawn_loc
 	S["custom_speech_verb"]		>> custom_speech_verb
 	S["custom_tongue"]			>> custom_tongue
-	S["feature_mcolor"]					>> features["mcolor"]
-	S["feature_lizard_tail"]			>> features["tail_lizard"]
-	S["feature_lizard_snout"]			>> features["snout"]
-	S["feature_lizard_horns"]			>> features["horns"]
-	S["feature_lizard_frills"]			>> features["frills"]
-	S["feature_lizard_spines"]			>> features["spines"]
-	S["feature_lizard_legs"]			>> features["legs"]
-	S["feature_human_tail"]				>> features["tail_human"]
-	S["feature_human_ears"]				>> features["ears"]
-	S["feature_deco_wings"]				>> features["deco_wings"]
-	S["feature_insect_wings"]			>> features["insect_wings"]
-	S["feature_insect_fluff"]			>> features["insect_fluff"]
-	S["feature_insect_markings"]		>> features["insect_markings"]
+	S["feature_mcolor"]					>> features[MBP_COLOR1]
+	S["feature_lizard_tail"]			>> features[MBP_TAIL_LIZARD]
+	S["feature_lizard_snout"]			>> features[MBP_SNOUT_LIZARD]
+	S["feature_lizard_horns"]			>> features[MBP_HORNS]
+	S["feature_lizard_frills"]			>> features[MBP_FRILLS]
+	S["feature_lizard_spines"]			>> features[MBP_TAIL_SPINES]
+	S["feature_lizard_legs"]			>> features[MBP_LEGS]
+	S["feature_human_tail"]				>> features[MBP_TAIL_HUMAN]
+	S["feature_human_ears"]				>> features[MBP_EARS_LIZARD]
+	S["feature_deco_wings"]				>> features[MBP_WINGS_DECORATIVE]
+	S["feature_insect_wings"]			>> features[MBP_WINGS_INSECT]
+	S["feature_insect_fluff"]			>> features[MBP_FLUFF]
+	S["feature_insect_markings"]		>> features[MBP_MARKINGS_INSECT]
 	S["feature_horns_color"]			>> features["horns_color"]
 	S["feature_wings_color"]			>> features["wings_color"]
 	S["feature_color_scheme"]			>> features["color_scheme"]
@@ -698,20 +698,20 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["medical_records"]			>>			medical_records
 
 	//Citadel code
-	S["feature_mcolor2"]				>> features["mcolor2"]
-	S["feature_mcolor3"]				>> features["mcolor3"]
+	S["feature_mcolor2"]				>> features[MBP_COLOR2]
+	S["feature_mcolor3"]				>> features[MBP_COLOR3]
 	// note safe json decode will runtime the first time it migrates but this is fine and it solves itself don't worry about it if you see it error
-	features["mam_body_markings"] = safe_json_decode(S["feature_mam_body_markings"])
-	S["feature_mam_tail"]				>> features["mam_tail"]
-	S["feature_mam_ears"]				>> features["mam_ears"]
+	features[MBP_MARKINGS_BODY] = safe_json_decode(S["feature_mam_body_markings"])
+	S["feature_mam_tail"]				>> features[MBP_TAIL]
+	S["feature_mam_ears"]				>> features[MBP_EARS]
 	S["feature_mam_tail_animated"]		>> features["mam_tail_animated"]
-	S["feature_taur"]					>> features["taur"]
-	S["feature_mam_snouts"]				>> features["mam_snouts"]
-	S["feature_meat"]					>> features["meat_type"]
+	S["feature_taur"]					>> features[MBP_TAUR]
+	S["feature_mam_snouts"]				>> features[MBP_SNOUT]
+	S["feature_meat"]					>> features[MBP_MEAT_TYPE]
 	//Xeno features
-	S["feature_xeno_tail"]				>> features["xenotail"]
-	S["feature_xeno_dors"]				>> features["xenodorsal"]
-	S["feature_xeno_head"]				>> features["xenohead"]
+	S["feature_xeno_tail"]				>> features[MBP_XENO_TAIL]
+	S["feature_xeno_dors"]				>> features[MBP_XENO_DORSAL]
+	S["feature_xeno_head"]				>> features[MBP_XENO_HEAD]
 	//cock features
 	S["feature_has_cock"]				>> features["has_cock"]
 	S["feature_cock_shape"]				>> features["cock_shape"]
@@ -891,19 +891,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	backbag							= sanitize_inlist(backbag, GLOB.backbaglist, initial(backbag))
 	jumpsuit_style					= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	uplink_spawn_loc				= sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
-	features["mcolor"]				= sanitize_hexcolor(features["mcolor"], 6, FALSE)
-	features["tail_lizard"]			= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
-	features["tail_human"]			= sanitize_inlist(features["tail_human"], GLOB.tails_list_human)
-	features["snout"]				= sanitize_inlist(features["snout"], GLOB.snouts_list)
-	features["horns"]				= sanitize_inlist(features["horns"], GLOB.horns_list)
-	features["ears"]				= sanitize_inlist(features["ears"], GLOB.ears_list)
-	features["frills"]				= sanitize_inlist(features["frills"], GLOB.frills_list)
-	features["spines"]				= sanitize_inlist(features["spines"], GLOB.spines_list)
-	features["legs"]				= sanitize_inlist(features["legs"], GLOB.legs_list, "Plantigrade")
-	features["deco_wings"] 			= sanitize_inlist(features["deco_wings"], GLOB.deco_wings_list, "None")
-	features["insect_fluff"]		= sanitize_inlist(features["insect_fluff"], GLOB.insect_fluffs_list)
-	features["insect_markings"] 	= sanitize_inlist(features["insect_markings"], GLOB.insect_markings_list, "None")
-	features["insect_wings"] 		= sanitize_inlist(features["insect_wings"], GLOB.insect_wings_list)
+	features[MBP_COLOR1]				= sanitize_hexcolor(features[MBP_COLOR1], 6, FALSE)
+	features[MBP_TAIL_LIZARD]			= sanitize_inlist(features[MBP_TAIL_LIZARD], GLOB.tails_list_lizard)
+	features[MBP_TAIL_HUMAN]			= sanitize_inlist(features[MBP_TAIL_HUMAN], GLOB.tails_list_human)
+	features[MBP_SNOUT_LIZARD]				= sanitize_inlist(features[MBP_SNOUT_LIZARD], GLOB.snouts_list)
+	features[MBP_HORNS]				= sanitize_inlist(features[MBP_HORNS], GLOB.horns_list)
+	features[MBP_EARS_LIZARD]				= sanitize_inlist(features[MBP_EARS_LIZARD], GLOB.ears_list)
+	features[MBP_FRILLS]				= sanitize_inlist(features[MBP_FRILLS], GLOB.frills_list)
+	features[MBP_TAIL_SPINES]				= sanitize_inlist(features[MBP_TAIL_SPINES], GLOB.spines_list)
+	features[MBP_LEGS]				= sanitize_inlist(features[MBP_LEGS], GLOB.legs_list, LIMB_PLANTIGRADE)
+	features[MBP_WINGS_DECORATIVE] 			= sanitize_inlist(features[MBP_WINGS_DECORATIVE], GLOB.deco_wings_list, "None")
+	features[MBP_FLUFF]		= sanitize_inlist(features[MBP_FLUFF], GLOB.insect_fluffs_list)
+	features[MBP_MARKINGS_INSECT] 	= sanitize_inlist(features[MBP_MARKINGS_INSECT], GLOB.insect_markings_list, "None")
+	features[MBP_WINGS_INSECT] 		= sanitize_inlist(features[MBP_WINGS_INSECT], GLOB.insect_wings_list)
 
 	var/static/size_min
 	if(!size_min)
@@ -1016,7 +1016,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 					var/mutant_string = accessory.mutant_part_string
 					if(!mutant_string)
 						if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
-							mutant_string = "mam_body_markings"
+							mutant_string = MBP_MARKINGS_BODY
 					var/primary_string = "[mutant_string]_primary"
 					var/secondary_string = "[mutant_string]_secondary"
 					var/tertiary_string = "[mutant_string]_tertiary"
@@ -1119,22 +1119,22 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["security_records"]		, security_records)
 	WRITE_FILE(S["medical_records"]			, medical_records)
 
-	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
-	WRITE_FILE(S["feature_lizard_tail"]				, features["tail_lizard"])
-	WRITE_FILE(S["feature_human_tail"]				, features["tail_human"])
-	WRITE_FILE(S["feature_lizard_snout"]			, features["snout"])
-	WRITE_FILE(S["feature_lizard_horns"]			, features["horns"])
-	WRITE_FILE(S["feature_human_ears"]				, features["ears"])
-	WRITE_FILE(S["feature_lizard_frills"]			, features["frills"])
-	WRITE_FILE(S["feature_lizard_spines"]			, features["spines"])
-	WRITE_FILE(S["feature_lizard_legs"]				, features["legs"])
-	WRITE_FILE(S["feature_deco_wings"]				, features["deco_wings"])
+	WRITE_FILE(S["feature_mcolor"]					, features[MBP_COLOR1])
+	WRITE_FILE(S["feature_lizard_tail"]				, features[MBP_TAIL_LIZARD])
+	WRITE_FILE(S["feature_human_tail"]				, features[MBP_TAIL_HUMAN])
+	WRITE_FILE(S["feature_lizard_snout"]			, features[MBP_SNOUT_LIZARD])
+	WRITE_FILE(S["feature_lizard_horns"]			, features[MBP_HORNS])
+	WRITE_FILE(S["feature_human_ears"]				, features[MBP_EARS_LIZARD])
+	WRITE_FILE(S["feature_lizard_frills"]			, features[MBP_FRILLS])
+	WRITE_FILE(S["feature_lizard_spines"]			, features[MBP_TAIL_SPINES])
+	WRITE_FILE(S["feature_lizard_legs"]				, features[MBP_LEGS])
+	WRITE_FILE(S["feature_deco_wings"]				, features[MBP_WINGS_DECORATIVE])
 	WRITE_FILE(S["feature_horns_color"]				, features["horns_color"])
 	WRITE_FILE(S["feature_wings_color"]				, features["wings_color"])
-	WRITE_FILE(S["feature_insect_wings"]			, features["insect_wings"])
-	WRITE_FILE(S["feature_insect_fluff"]			, features["insect_fluff"])
-	WRITE_FILE(S["feature_insect_markings"]			, features["insect_markings"])
-	WRITE_FILE(S["feature_meat"]					, features["meat_type"])
+	WRITE_FILE(S["feature_insect_wings"]			, features[MBP_WINGS_INSECT])
+	WRITE_FILE(S["feature_insect_fluff"]			, features[MBP_FLUFF])
+	WRITE_FILE(S["feature_insect_markings"]			, features[MBP_MARKINGS_INSECT])
+	WRITE_FILE(S["feature_meat"]					, features[MBP_MEAT_TYPE])
 
 	WRITE_FILE(S["feature_has_cock"], features["has_cock"])
 	WRITE_FILE(S["feature_cock_shape"], features["cock_shape"])
@@ -1212,7 +1212,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 					var/mutant_string = accessory.mutant_part_string
 					if(!mutant_string)
 						if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
-							mutant_string = "mam_body_markings"
+							mutant_string = MBP_MARKINGS_BODY
 					var/primary_string = "[mutant_string]_primary"
 					var/secondary_string = "[mutant_string]_secondary"
 					var/tertiary_string = "[mutant_string]_tertiary"

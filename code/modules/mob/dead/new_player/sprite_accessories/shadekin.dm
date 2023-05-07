@@ -1,7 +1,7 @@
 
 /datum/sprite_accessory/ears/mam_ears/shadekin
 	name = "Shadekin"
-	icon_state = "shadekin"
+	icon_state = SPECIES_SHADEKIN
 	icon = 'icons/mob/mam/shadekin/shadekin_ears.dmi'
 	color_src = MUTCOLORS
 
@@ -20,13 +20,13 @@
 
 /datum/sprite_accessory/tails/mam_tails/shadekin
 	name = "Shadekin"
-	icon_state = "shadekin"
+	icon_state = SPECIES_SHADEKIN
 	icon = 'icons/mob/mam/shadekin/shadekin_tails.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/shadekin
 	name = "Shadekin"
-	icon_state = "shadekin"
+	icon_state = SPECIES_SHADEKIN
 	icon = 'icons/mob/mam/shadekin/shadekin_tails.dmi'
 	color_src = MUTCOLORS
 

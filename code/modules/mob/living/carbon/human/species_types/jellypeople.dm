@@ -1,16 +1,36 @@
 /datum/species/jelly
 	// Entirely alien beings that seem to be made entirely out of gel. They have three eyes and a skeleton visible within them.
 	name = "Xenobiological Jelly Entity"
-	id = "jelly"
+	id = SPECIES_JELLY
 	default_color = "00FF90"
 	say_mod = "chirps"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,WINGCOLOR,HAS_FLESH)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		HAIR,
+		FACEHAIR,
+		WINGCOLOR,
+		HAS_FLESH
+	)
 	mutantlungs = /obj/item/organ/lungs/slime
 	mutant_heart = /obj/item/organ/heart/slime
-	mutant_bodyparts = list("mcolor" = "FFFFFF", "mam_tail" = "None", "mam_ears" = "None", "mam_snouts" = "None", "taur" = "None", "deco_wings" = "None", "legs" = "Plantigrade")
-	inherent_traits = list(TRAIT_TOXINLOVER)
+	mutant_bodyparts = list(
+		MBP_COLOR1 = "FFFFFF",
+		MBP_TAIL = "None",
+		MBP_EARS = "None",
+		MBP_SNOUT = "None",
+		MBP_TAUR = "None",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE
+	)
+	inherent_traits = list(
+		TRAIT_TOXINLOVER
+	)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
-	gib_types = list(/obj/effect/gibspawner/slime, /obj/effect/gibspawner/slime/bodypartless)
+	gib_types = list(
+		/obj/effect/gibspawner/slime,
+		/obj/effect/gibspawner/slime/bodypartless
+	)
 	exotic_blood = /datum/reagent/blood/jellyblood
 	exotic_bloodtype = "GEL"
 	exotic_blood_color = "BLOOD_COLOR_SLIME"
@@ -26,13 +46,13 @@
 	species_language_holder = /datum/language_holder/jelly
 	mutant_brain = /obj/item/organ/brain/jelly
 
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
-	species_type = "jelly"
+	tail_type = MBP_TAIL
+	wagging_type = MBP_TAIL_WAGGING
+	species_type = SPECIES_TYPE_JELLY
 
 /datum/species/jelly/get_laugh_sound(mob/living/carbon/human/H)
 	//slime have cat ear. slime go nya.
-	if((H.dna.features["mam_ears"] == "Cat") || (H.dna.features["mam_ears"] == "Cat, Big"))
+	if((H.dna.features[MBP_EARS] == "Cat") || (H.dna.features[MBP_EARS] == "Cat, Big"))
 		return pick('sound/voice/jelly/nyahaha1.ogg',
 					'sound/voice/jelly/nyahaha2.ogg',
 					'sound/voice/jelly/nyaha.ogg',
@@ -66,7 +86,7 @@
 /datum/species/jelly/handle_body(mob/living/carbon/human/H)
 	. = ..()
 	//update blood color to body color
-	exotic_blood_color = "#" + H.dna.features["mcolor"]
+	exotic_blood_color = "#" + H.dna.features[MBP_COLOR1]
 
 /datum/species/jelly/spec_life(mob/living/carbon/human/H)
 	if(H.stat == DEAD || HAS_TRAIT(H, TRAIT_NOMARROW)) //can't farm slime jelly from a dead slime/jelly person indefinitely, and no regeneration for blooduskers
@@ -150,13 +170,21 @@
 
 /datum/species/jelly/slime
 	name = "Xenobiological Slime Entity"
-	id = "slime"
+	id = SPECIES_SLIME
+	limbs_id = BODYTYPE_SLIMEPERSON
 	default_color = "00FFFF"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		HAIR,
+		FACEHAIR
+	)
 	say_mod = "says"
 	hair_color = "mutcolor"
 	hair_alpha = 150
-	ignored_by = list(/mob/living/simple_animal/slime)
+	ignored_by = list(
+		/mob/living/simple_animal/slime
+	)
 	var/datum/action/innate/split_body/slime_split
 	var/list/mob/living/carbon/bodies
 	var/datum/action/innate/swap_body/swap_body
@@ -262,7 +290,7 @@
 	spare.undershirt = "Nude"
 	spare.socks = "Nude"
 	H.dna.transfer_identity(spare, transfer_SE=1)
-	spare.dna.features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	spare.dna.features[MBP_COLOR1] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
 	spare.real_name = spare.dna.real_name
 	spare.name = spare.dna.real_name
 	spare.updateappearance(mutcolor_update=1)
@@ -339,7 +367,7 @@
 
 		var/list/L = list()
 		// HTML colors need a # prefix
-		L["htmlcolor"] = "#[body.dna.features["mcolor"]]"
+		L["htmlcolor"] = "#[body.dna.features[MBP_COLOR1]]"
 		L["area"] = get_area_name(body, TRUE)
 		var/stat = "error"
 		switch(body.stat)
@@ -459,12 +487,29 @@
 
 /datum/species/jelly/roundstartslime
 	name = "Xenobiological Slime Hybrid"
-	id = "slimeperson"
-	limbs_id = "slime"
+	id = SPECIES_SLIMEPERSON
+	limbs_id = BODYTYPE_SLIMEPERSON
 	default_color = "00FFFF"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR)
-	inherent_traits = list(TRAIT_TOXINLOVER)
-	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_tail" = "None", "mam_ears" = "None", "mam_body_markings" = "Plain", "mam_snouts" = "None", "taur" = "None", "legs" = "Plantigrade")
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		HAIR,
+		FACEHAIR
+	)
+	inherent_traits = list(
+		TRAIT_TOXINLOVER
+	)
+	mutant_bodyparts = list(
+		MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_TAIL = "None",
+		MBP_EARS = "None",
+		MBP_MARKINGS_BODY = "Plain",
+		MBP_SNOUT = "None",
+		MBP_TAUR = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE
+	)
 	say_mod = "says"
 	hair_color = "mutcolor"
 	hair_alpha = 160 //a notch brighter so it blends better.
@@ -472,7 +517,11 @@
 	heatmod = 1
 	burnmod = 1
 
-	allowed_limb_ids = list("slime","stargazer","lum")
+	allowed_limb_ids = list(
+		SPECIES_SLIME,
+		SPECIES_SLIME_STARGAZER,
+		SPECIES_SLIME_LUMINESCENT
+	)
 
 /datum/action/innate/slime_change
 	name = "Alter Form"
@@ -498,11 +547,11 @@
 	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color","Hair Style", "Genitals", "Tail", "Snout", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Cancel")
 
 	if(select_alteration == "Body Color")
-		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features["mcolor"]) as color|null
+		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features[MBP_COLOR1]) as color|null
 		if(new_color)
 			var/temp_hsv = RGBtoHSV(new_color)
 			if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright
-				H.dna.features["mcolor"] = sanitize_hexcolor(new_color, 6)
+				H.dna.features[MBP_COLOR1] = sanitize_hexcolor(new_color, 6)
 				H.update_body()
 				H.update_hair()
 			else
@@ -552,7 +601,7 @@
 		var/new_ears
 		new_ears = input(owner, "Choose your character's ears:", "Ear Alteration") as null|anything in snowflake_ears_list
 		if(new_ears)
-			H.dna.features["mam_ears"] = new_ears
+			H.dna.features[MBP_EARS] = new_ears
 		H.update_body()
 
 	else if (select_alteration == "Snout")
@@ -566,7 +615,7 @@
 		var/new_snout
 		new_snout = input(owner, "Choose your character's face:", "Face Alteration") as null|anything in snowflake_snouts_list
 		if(new_snout)
-			H.dna.features["mam_snouts"] = new_snout
+			H.dna.features[MBP_SNOUT] = new_snout
 		H.update_body()
 
 	else if (select_alteration == "Markings")
@@ -580,7 +629,7 @@
 		var/new_mam_body_markings
 		new_mam_body_markings = input(H, "Choose your character's body markings:", "Marking Alteration") as null|anything in snowflake_markings_list
 		if(new_mam_body_markings)
-			H.dna.features["mam_body_markings"] = new_mam_body_markings
+			H.dna.features[MBP_MARKINGS_BODY] = new_mam_body_markings
 		for(var/X in H.bodyparts) //propagates the markings changes
 			var/obj/item/bodypart/BP = X
 			BP.update_limb(FALSE, H)
@@ -597,9 +646,9 @@
 		var/new_tail
 		new_tail = input(owner, "Choose your character's Tail(s):", "Tail Alteration") as null|anything in snowflake_tails_list
 		if(new_tail)
-			H.dna.features["mam_tail"] = new_tail
+			H.dna.features[MBP_TAIL] = new_tail
 			if(new_tail != "None")
-				H.dna.features["taur"] = "None"
+				H.dna.features[MBP_TAUR] = "None"
 		H.update_body()
 
 	else if (select_alteration == "Taur body")
@@ -613,9 +662,9 @@
 		var/new_taur
 		new_taur = input(owner, "Choose your character's tauric body:", "Tauric Alteration") as null|anything in snowflake_taur_list
 		if(new_taur)
-			H.dna.features["taur"] = new_taur
+			H.dna.features[MBP_TAUR] = new_taur
 			if(new_taur != "None")
-				H.dna.features["mam_tail"] = "None"
+				H.dna.features[MBP_TAIL] = "None"
 		H.update_body()
 
 	else if (select_alteration == "Penis")
@@ -699,7 +748,8 @@
 
 /datum/species/jelly/luminescent
 	name = "Luminescent Slime Entity"
-	id = "lum"
+	id = SPECIES_SLIME_LUMINESCENT
+	limbs_id = BODYTYPE_SLIME_LUMINESCENT
 	say_mod = "says"
 	var/glow_intensity = LUMINESCENT_DEFAULT_GLOW
 	var/obj/effect/dummy/luminescent_glow/glow
@@ -742,7 +792,7 @@
 /datum/species/jelly/luminescent/proc/update_glow(mob/living/carbon/C, intensity)
 	if(intensity)
 		glow_intensity = intensity
-	glow.set_light_range_power_color(glow_intensity, glow_intensity, C.dna.features["mcolor"])
+	glow.set_light_range_power_color(glow_intensity, glow_intensity, C.dna.features[MBP_COLOR1])
 
 /obj/effect/dummy/luminescent_glow
 	name = "luminescent glow"
@@ -866,7 +916,8 @@
 
 /datum/species/jelly/stargazer
 	name = "Stargazer Slime Entity"
-	id = "stargazer"
+	id = SPECIES_SLIME_STARGAZER
+	limbs_id = BODYTYPE_SLIME_STARGAZER
 	var/datum/action/innate/project_thought/project_thought
 	var/datum/action/innate/link_minds/link_minds
 	var/list/mob/living/linked_mobs = list()

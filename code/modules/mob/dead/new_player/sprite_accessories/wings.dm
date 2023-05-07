@@ -6,14 +6,14 @@
 	relevant_layers = null
 
 /datum/sprite_accessory/wings/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (!H.dna.features["wings"] || H.dna.features["wings"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))
+	return (!H.dna.features[MBP_WINGS] || H.dna.features[MBP_WINGS] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))
 
 /datum/sprite_accessory/wings_open
 	icon = 'icons/mob/wings.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/wings_open/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception)) || H.dna.species.mutant_bodyparts["wings"])
+	return (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception)) || H.dna.species.mutant_bodyparts[MBP_WINGS])
 
 /datum/sprite_accessory/wings_open/angel
 	name = "Angel"
@@ -41,7 +41,7 @@
 /datum/sprite_accessory/deco_wings
 	icon = 'icons/mob/wings.dmi'
 	color_src = WINGCOLOR
-	mutant_part_string = "insect_wings"
+	mutant_part_string = MBP_WINGS_INSECT
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/deco_wings/none

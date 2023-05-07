@@ -430,8 +430,8 @@
 			for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 				SEND_SOUND(H, sound(get_announcer_sound("animes")))
 
-				if(H.dna.species.id == "human")
-					if(H.dna.features["tail_human"] == "None" || H.dna.features["ears"] == "None")
+				if(H.dna.species.id == SPECIES_HUMAN)
+					if(H.dna.features[MBP_TAIL_HUMAN] == "None" || H.dna.features[MBP_EARS_LIZARD] == "None")
 						var/obj/item/organ/ears/cat/ears = new
 						var/obj/item/organ/tail/cat/tail = new
 						ears.Insert(H, drop_if_replaced=FALSE)

@@ -683,16 +683,16 @@
 		color_src = FALSE
 
 		var/datum/species/S = H.dna.species
-		base_bp_icon = S?.icon_limbs || DEFAULT_BODYPART_ICON
+		base_bp_icon = DEFAULT_BODYPART_ICON
 		species_id = S.mutant_bodyparts["limbs_id"]
 		species_flags_list = H.dna.species.species_traits
 
 		//body marking memes
 		var/list/colorlist = list()
 		colorlist.Cut()
-		colorlist += ReadRGB("[H.dna.features["mcolor"]]00")
-		colorlist += ReadRGB("[H.dna.features["mcolor2"]]00")
-		colorlist += ReadRGB("[H.dna.features["mcolor3"]]00")
+		colorlist += ReadRGB("[H.dna.features[MBP_COLOR1]]00")
+		colorlist += ReadRGB("[H.dna.features[MBP_COLOR2]]00")
+		colorlist += ReadRGB("[H.dna.features[MBP_COLOR3]]00")
 		colorlist += list(0,0,0, S.hair_alpha)
 		for(var/index=1, index<=colorlist.len, index++)
 			colorlist[index] = colorlist[index]/255
@@ -713,20 +713,20 @@
 			if(S.fixed_mut_color)
 				species_color = S.fixed_mut_color
 			else
-				species_color = H.dna.features["mcolor"]
+				species_color = H.dna.features[MBP_COLOR1]
 		else
 			species_color = ""
 
-		if(S.mutant_bodyparts["legs"])
+		if(S.mutant_bodyparts[MBP_LEGS])
 			if(body_zone == BODY_ZONE_L_LEG || body_zone == BODY_ZONE_R_LEG)
 				if(DIGITIGRADE in S.species_traits)
-					digitigrade_type = lowertext(H.dna.features["legs"])
+					digitigrade_type = lowertext(H.dna.features[MBP_LEGS])
 			else
 				digitigrade_type = null
 
-		if(S.mutant_bodyparts["mam_body_markings"]) // checks if the species can actually have body markings
+		if(S.mutant_bodyparts[MBP_MARKINGS_BODY]) // checks if the species can actually have body markings
 			// get all markings for this bodypart type
-			for(var/list/marking in H.dna.features["mam_body_markings"])
+			for(var/list/marking in H.dna.features[MBP_MARKINGS_BODY])
 				// marking is a list containing bodypart type, bodymarking name, and then the colour (colour won't be used in v1)
 				if(marking[1] == body_part)
 					var/datum/sprite_accessory/Smark
@@ -735,8 +735,8 @@
 					if(Smark)
 						body_markings_icon = Smark.icon
 					var/marking_value = "" // combination of body and aux markings from old system
-					if(H.dna.features["mam_body_markings"] != "None")
-						marking_value = Smark?.icon_state || lowertext(H.dna.features["mam_body_markings"])
+					if(H.dna.features[MBP_MARKINGS_BODY] != "None")
+						marking_value = Smark?.icon_state || lowertext(H.dna.features[MBP_MARKINGS_BODY])
 					else
 						marking_value = "plain"
 					var/list/color_values
@@ -774,47 +774,76 @@
 	if(dropping_limb)
 		no_update = TRUE //when attached, the limb won't be affected by the appearance changes of its mob owner.
 
+//Is this thing connected to someone?
+/obj/item/bodypart/proc/is_dropped()
+	if(!owner)
+		return TRUE
+	if(!(src in owner.bodyparts))
+		return TRUE
+	return FALSE
+
 //to update the bodypart's icon when not attached to a mob
 /obj/item/bodypart/proc/update_icon_dropped()
 	cut_overlays()
-	var/list/standing = get_limb_icon(1)
-	if(!standing.len)
+	var/list/standing = update_overlays()
+	if(!LAZYLEN(standing))
 		icon_state = initial(icon_state)//no overlays found, we default back to initial icon.
 		return
-	for(var/image/I in standing)
-		I.pixel_x = px_x
-		I.pixel_y = px_y
 	add_overlay(standing)
 
-//Gives you a proper icon appearance for the dismembered limb
-/obj/item/bodypart/proc/get_limb_icon(dropped)
-	cut_overlays()
-	icon_state = "" //to erase the default sprite, we're building the visual aspects of the bodypart through overlays alone.
+/obj/item/bodypart/proc/is_husk()
+	return species_id == "husk"
 
+/obj/item/bodypart/proc/setup_limb_icon(image/limbage)
+	if(ishuman(owner))
+
+	limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
+	if(should_draw_gender)
+		limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
+	else if (use_digitigrade)
+		if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) //Compatibility hack for the current iconset.
+			limb.icon_state = "[digitigrade_type]_[use_digitigrade]_[body_zone]"
+		else
+			limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
+	else
+		limb.icon_state = "[species_id]_[body_zone]"
+
+
+/obj/item/bodypart/proc/get_markings(image_dir)
+	if(!is_organic_limb())
+		return
+	if(!LAZYLEN(body_markings_list))
+		return
+	if(is_husk())
+		if(use_digitigrade)
+			return image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
+		else
+			return image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 	. = list()
-
-	var/image_dir = 0
+	// marking stores icon and value for the specific bodypart
 	var/icon_gender = (body_gender == FEMALE) ? "f" : "m" //gender of the icon, if applicable
+	for(var/list/marking_list in body_markings_list)
+		if(!use_digitigrade)
+			if(body_zone == BODY_ZONE_CHEST)
+				. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
+			else
+				. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
+		else
+			. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 
-	if(dropped)
+//Gives you a proper icon appearance for the limb, dismembered or otherwise
+/obj/item/bodypart/update_overlays()
+	. = ..()
+	icon_state = "" //to erase the default sprite, we're building the visual aspects of the bodypart through overlays alone.
+	var/image_dir = 0
+	if(is_dropped())
 		image_dir = SOUTH
 		if(dmg_overlay_type)
 			if(brutestate)
 				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[body_zone]_[brutestate]0", -DAMAGE_LAYER, image_dir)
 			if(burnstate)
 				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[body_zone]_0[burnstate]", -DAMAGE_LAYER, image_dir)
-
-		if(!isnull(body_markings) && is_organic_limb(FALSE))
-			for(var/list/marking_list in body_markings_list)
-				// marking stores icon and value for the specific bodypart
-				if(!use_digitigrade)
-					if(body_zone == BODY_ZONE_CHEST)
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
-					else
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
-				else
-					. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
-
+		. |= get_markings(image_dir)
 	var/image/limb = image(layer = -onmob_layer, dir = image_dir)
 	var/image/second_limb
 	var/list/aux = list()
@@ -839,45 +868,19 @@
 
 	var/list/markings_list = list()
 	if(is_organic_limb() || render_like_organic == TRUE)
-		limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
-		if(should_draw_gender)
-			limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
-		else if (use_digitigrade)
-			if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) //Compatibility hack for the current iconset.
-				limb.icon_state = "[digitigrade_type]_[use_digitigrade]_[body_zone]"
-			else
-				limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
-		else
-			limb.icon_state = "[species_id]_[body_zone]"
+		setup_limb_icon(limb)
 
-		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
+		. |= get_markings(image_dir)
+
+		if(isleg(src))
 			second_limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
 			second_limb.icon = limb.icon
+			var/original_state = limb.icon_state
+			limb.icon_state = "[original_state]_front"
+			second_limb.icon_state = "[original_state]_behind"
+			second_limb.color = limb.color
 			. += second_limb
 
-		// Body markings
-		if(length(body_markings_list))
-			if(species_id == "husk")
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
-			else if(species_id == "husk" && use_digitigrade)
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
-			else
-				for(var/list/marking_list in body_markings_list)
-					// marking stores icon and value for the specific bodypart
-					if(!use_digitigrade)
-						if(body_zone == BODY_ZONE_CHEST)
-							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir))
-						else
-							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir))
-					else
-						markings_list.Add(image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir))
-
-					if(color_src && length(marking_list) == 3)
-						var/image/I = markings_list[length(markings_list)]
-						I.color = marking_list[3]
-		. += markings_list
-
-		// Citadel End
 
 		if(aux_icons)
 			for(var/I in aux_icons)
@@ -961,12 +964,7 @@
 				if(species_id == "husk")
 					for(var/image/marking in markings_list)
 						marking.color = "#141414"
-
-	if(second_limb)
-		var/original_state = limb.icon_state
-		limb.icon_state = "[original_state]_front"
-		second_limb.icon_state = "[original_state]_behind"
-		second_limb.color = limb.color
+	
 
 /obj/item/bodypart/deconstruct(disassembled = TRUE)
 	drop_organs()

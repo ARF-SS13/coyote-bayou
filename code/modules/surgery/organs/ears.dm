@@ -95,16 +95,16 @@
 	..()
 	if(istype(H))
 		color = H.hair_color
-		H.dna.species.mutant_bodyparts["mam_ears"] = "Cat"
-		H.dna.features["mam_ears"] = "Cat"
+		H.dna.species.mutant_bodyparts[MBP_EARS] = "Cat"
+		H.dna.features[MBP_EARS] = "Cat"
 		H.update_body()
 
 /obj/item/organ/ears/cat/Remove(special = FALSE)
 	if(!QDELETED(owner) && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		color = H.hair_color
-		H.dna.features["mam_ears"] = "None"
-		H.dna.species.mutant_bodyparts -= "mam_ears"
+		H.dna.features[MBP_EARS] = "None"
+		H.dna.species.mutant_bodyparts -= MBP_EARS
 		H.update_body()
 	return ..()
 

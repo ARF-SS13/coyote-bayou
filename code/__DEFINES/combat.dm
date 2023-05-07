@@ -234,10 +234,10 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 
 #define BODY_ZONE_HEAD		"head"
 #define BODY_ZONE_CHEST		"chest"
-#define BODY_ZONE_L_ARM		"l_arm"
-#define BODY_ZONE_R_ARM		"r_arm"
-#define BODY_ZONE_L_LEG		"l_leg"
-#define BODY_ZONE_R_LEG		"r_leg"
+#define BODY_ZONE_L_ARM		"arm_left"
+#define BODY_ZONE_R_ARM		"arm_right"
+#define BODY_ZONE_L_LEG		"leg_left"
+#define BODY_ZONE_R_LEG		"leg_right"
 
 GLOBAL_LIST_INIT(main_body_parts, list(
 	BODY_ZONE_HEAD,
@@ -251,10 +251,30 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BODY_ZONE_PRECISE_EYES		"eyes"
 #define BODY_ZONE_PRECISE_MOUTH		"mouth"
 #define BODY_ZONE_PRECISE_GROIN		"groin"
-#define BODY_ZONE_PRECISE_L_HAND	"l_hand"
-#define BODY_ZONE_PRECISE_R_HAND	"r_hand"
+#define BODY_ZONE_PRECISE_L_HAND	"hand_left"
+#define BODY_ZONE_PRECISE_R_HAND	"hand_right"
 #define BODY_ZONE_PRECISE_L_FOOT	"l_foot"
 #define BODY_ZONE_PRECISE_R_FOOT	"r_foot"
+
+/// BUllshit list used to convert the new bodypart names to old ones
+/// cus there are literal thousands of references to the old ones in the markings DMIs
+/// thanks pooj
+GLOBAL_LIST_INIT(bodypart_zone2legacy = list(
+	BODY_ZONE_HEAD  = "head",
+	BODY_ZONE_CHEST = "chest",
+	BODY_ZONE_L_ARM = "l_arm",
+	BODY_ZONE_R_ARM = "r_arm",
+	BODY_ZONE_L_LEG = "l_leg",
+	BODY_ZONE_R_LEG = "r_leg",
+	BODY_ZONE_PRECISE_EYES	 = "eyes",
+	BODY_ZONE_PRECISE_MOUTH	 = "mouth",
+	BODY_ZONE_PRECISE_GROIN	 = "groin",
+	BODY_ZONE_PRECISE_L_HAND = "l_hand",
+	BODY_ZONE_PRECISE_R_HAND = "r_hand",
+	BODY_ZONE_PRECISE_L_FOOT = "l_foot",
+	BODY_ZONE_PRECISE_R_FOOT = "r_foot",
+	)
+)
 
 
 //We will round to this value in damage calculations.

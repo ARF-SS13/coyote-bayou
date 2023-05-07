@@ -1,6 +1,7 @@
 /datum/species/corporate
 	name = "Corporate Agent"
-	id = "agent"
+	id = SPECIES_AGENT
+	limbs_id = BODYTYPE_AGENT
 	hair_alpha = 0
 	say_mod = "declares"
 	speedmod = -2//Fast
@@ -14,8 +15,19 @@
 	attack_verb = "smash"
 	attack_sound = 'sound/weapons/resonator_blast.ogg'
 	blacklisted = TRUE
-	species_traits = list(NOBLOOD,EYECOLOR,NOGENITALS)
-	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER)
+	species_traits = list(
+		NOBLOOD,
+		EYECOLOR,
+		NOGENITALS
+	)
+	inherent_traits = list(
+		TRAIT_RADIMMUNE,
+		TRAIT_VIRUSIMMUNE,
+		TRAIT_PIERCEIMMUNE,
+		TRAIT_NODISMEMBER,
+		TRAIT_NOLIMBDISABLE,
+		TRAIT_NOHUNGER
+	)
 	sexes = 0
 	gib_types = /obj/effect/gibspawner/robot
-	species_type = "robotic"
+	species_type = SPECIES_TYPE_ROBOT

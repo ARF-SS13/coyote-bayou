@@ -144,8 +144,8 @@ There are several things that need to be remembered:
 			variant_flag |= STYLE_DIGITIGRADE
 
 		var/mask
-		if(dna.species.mutant_bodyparts["taur"])
-			var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features["taur"]]
+		if(dna.species.mutant_bodyparts[MBP_TAUR])
+			var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features[MBP_TAUR]]
 			var/clip_flag = U.mutantrace_variation & T?.hide_legs
 			if(clip_flag)
 				variant_flag |= clip_flag
@@ -285,8 +285,8 @@ There are several things that need to be remembered:
 		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_SHOES]
 		inv.update_icon()
 
-	if(dna.species.mutant_bodyparts["taur"])
-		var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features["taur"]]
+	if(dna.species.mutant_bodyparts[MBP_TAUR])
+		var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features[MBP_TAUR]]
 		if(T?.hide_legs) //If only they actually made shoes unwearable. Please don't making cosmetics, guys.
 			return
 
@@ -357,9 +357,9 @@ There are several things that need to be remembered:
 		var/alt_icon = H.mob_overlay_icon || 'icons/mob/clothing/head.dmi'
 		var/muzzled = FALSE
 		var/variation_flag = NONE
-		if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None")
+		if(dna.species.mutant_bodyparts[MBP_SNOUT] && dna.features[MBP_SNOUT] != "None")
 			muzzled = TRUE
-		else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None")
+		else if(dna.species.mutant_bodyparts[MBP_SNOUT_LIZARD] && dna.features[MBP_SNOUT_LIZARD] != "None")
 			muzzled = TRUE
 		if(muzzled && H.mutantrace_variation & STYLE_MUZZLE && !(H.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 			alt_icon = H.anthro_mob_worn_overlay || 'icons/mob/clothing/head_muzzled.dmi'
@@ -419,8 +419,8 @@ There are several things that need to be remembered:
 		var/dimension_y = 32
 		var/variation_flag = NONE
 		var/datum/sprite_accessory/taur/T
-		if(dna.species.mutant_bodyparts["taur"])
-			T = GLOB.taur_list[dna.features["taur"]]
+		if(dna.species.mutant_bodyparts[MBP_TAUR])
+			T = GLOB.taur_list[dna.features[MBP_TAUR]]
 
 		if(S.mutantrace_variation)
 
@@ -507,9 +507,9 @@ There are several things that need to be remembered:
 		var/variation_flag = NONE
 		if(head && (head.flags_inv & HIDEMASK))
 			return
-		if(dna.species.mutant_bodyparts["mam_snouts"] && dna.features["mam_snouts"] != "None")
+		if(dna.species.mutant_bodyparts[MBP_SNOUT] && dna.features[MBP_SNOUT] != "None")
 			muzzled = TRUE
-		else if(dna.species.mutant_bodyparts["snout"] && dna.features["snout"] != "None")
+		else if(dna.species.mutant_bodyparts[MBP_SNOUT_LIZARD] && dna.features[MBP_SNOUT_LIZARD] != "None")
 			muzzled = TRUE
 		if(muzzled && M.mutantrace_variation & STYLE_MUZZLE && !(M.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 			alt_icon = M.anthro_mob_worn_overlay || 'icons/mob/clothing/mask_muzzled.dmi'
@@ -645,6 +645,9 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 		if(L)
 			standing.pixel_x += L["x"] //+= because of center()ing
 			standing.pixel_y += L["y"]
+	if(OFFSET_INHANDS in dna.species.offset_features)
+		standing.pixel_x += dna.species.offset_features[OFFSET_INHANDS][1]
+		standing.pixel_y += dna.species.offset_features[OFFSET_INHANDS][2]
 
 	standing.alpha = alpha
 	standing.color = color
@@ -683,16 +686,16 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 		. += "-coloured-[skin_tone]"
 	else if(dna.species.fixed_mut_color)
 		. += "-coloured-[dna.species.fixed_mut_color]"
-	else if(dna.features["mcolor"])
-		. += "-coloured-[dna.features["mcolor"]]-[dna.features["mcolor2"]]-[dna.features["mcolor3"]]"
+	else if(dna.features[MBP_COLOR1])
+		. += "-coloured-[dna.features[MBP_COLOR1]]-[dna.features[MBP_COLOR2]]-[dna.features[MBP_COLOR3]]"
 	else
 		. += "-not_coloured"
 
 	. += "-[dna.features["body_model"]]"
 
 	var/is_taur = FALSE
-	if(dna.species.mutant_bodyparts["taur"])
-		var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features["taur"]]
+	if(dna.species.mutant_bodyparts[MBP_TAUR])
+		var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features[MBP_TAUR]]
 		if(T?.hide_legs)
 			is_taur = TRUE
 
@@ -758,8 +761,9 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 		return
 
 	HD.update_limb()
+	HD.update_icon()
 
-	add_overlay(HD.get_limb_icon())
+	add_overlay(HD.managed_overlays)
 	update_damage_overlays()
 
 	if(HD && !(HAS_TRAIT(src, TRAIT_HUSK)))

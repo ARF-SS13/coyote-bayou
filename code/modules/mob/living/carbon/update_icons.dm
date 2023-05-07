@@ -205,8 +205,8 @@
 	remove_overlay(ARMS_PART_LAYER)
 
 	var/is_taur = FALSE
-	if(dna?.species.mutant_bodyparts["taur"])
-		var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features["taur"]]
+	if(dna?.species.mutant_bodyparts[MBP_TAUR])
+		var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features[MBP_TAUR]]
 		if(T?.hide_legs)
 			is_taur = TRUE
 
@@ -227,10 +227,11 @@
 		var/obj/item/bodypart/BP = X
 		if(is_taur && leg_day[BP.type])
 			continue
+		BP.update_icon()
 		if(BP.onmob_layer == ARMS_PART_LAYER)
-			new_arms += BP.get_limb_icon()
+			new_arms |= BP.managed_overlays
 		else
-			new_limbs += BP.get_limb_icon()
+			new_limbs |= BP.managed_overlays
 	if(new_limbs.len)
 		overlays_standing[BODYPARTS_LAYER] = new_limbs
 		overlays_standing[ARMS_PART_LAYER] = new_arms

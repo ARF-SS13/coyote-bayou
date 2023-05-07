@@ -8,7 +8,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_arm
-	category = list("initial","human","lizard","fly","insect","plasmaman","mammal","xeno")
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_FLY,BODYTYPE_INSECT,SPECIES_PLASMAMAN,SPECIES_FURRY,SPECIES_XENO)
 
 /datum/design/rightarm
 	name = "Right Arm"
@@ -16,7 +16,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_arm
-	category = list("initial","human","lizard","fly","insect","plasmaman","mammal","xeno")
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_FLY,BODYTYPE_INSECT,SPECIES_PLASMAMAN,SPECIES_FURRY,SPECIES_XENO)
 
 /datum/design/leftleg
 	name = "Left Leg"
@@ -24,7 +24,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_leg
-	category = list("initial","human","lizard","fly","insect","plasmaman","mammal","xeno")
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_FLY,BODYTYPE_INSECT,SPECIES_PLASMAMAN,SPECIES_FURRY,SPECIES_XENO)
 
 /datum/design/rightleg
 	name = "Right Leg"
@@ -32,7 +32,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_leg
-	category = list("initial","human","lizard","fly","insect","plasmaman","mammal","xeno")
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_FLY,BODYTYPE_INSECT,SPECIES_PLASMAMAN,SPECIES_FURRY,SPECIES_XENO)
 
 /datum/design/armblade
 	name = "Arm Blade"

@@ -90,8 +90,8 @@
 				icon_state += "_s"
 		// else
 		// 	color = "#[owner.dna.features["cock_color"]]"
-		if(genital_flags & GENITAL_CAN_TAUR && S?.taur_icon && (!S.feat_taur || owner.dna.features[S.feat_taur]) && owner.dna.species.mutant_bodyparts["taur"])
-			var/datum/sprite_accessory/taur/T = GLOB.taur_list[owner.dna.features["taur"]]
+		if(genital_flags & GENITAL_CAN_TAUR && S?.taur_icon && (!S.feat_taur || owner.dna.features[S.feat_taur]) && owner.dna.species.mutant_bodyparts[MBP_TAUR])
+			var/datum/sprite_accessory/taur/T = GLOB.taur_list[owner.dna.features[MBP_TAUR]]
 			if(T.taur_mode & S.accepted_taurs) //looks out of place on those.
 				lowershape = "taur, [lowershape]"
 

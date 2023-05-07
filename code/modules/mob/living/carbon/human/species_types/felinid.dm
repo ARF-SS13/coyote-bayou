@@ -1,17 +1,22 @@
 //Subtype of human
 /datum/species/human/felinid
 	name = "Felinid"
-	id = "felinid"
-	limbs_id = "human"
+	id = SPECIES_FELINID
+	limbs_id = BODYTYPE_HUMAN
 
-	mutant_bodyparts = list("mam_tail" = "Cat", "mam_ears" = "Cat", "deco_wings" = "None", "mam_body_markings" = list())
+	mutant_bodyparts = list(
+		MBP_TAIL = "Cat",
+		MBP_EARS = "Cat",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_MARKINGS_BODY = list()
+	)
 
 	mutantears = /obj/item/organ/ears/cat
 	mutanttail = /obj/item/organ/tail/cat
 
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
-	species_type = "furry"
+	tail_type = MBP_TAIL
+	wagging_type = MBP_TAIL_WAGGING
+	species_type = SPECIES_TYPE_FURRY
 	laugh_male = list(
 		'sound/voice/catpeople/nyahaha1.ogg',
 		'sound/voice/catpeople/nyahaha2.ogg',
@@ -29,16 +34,16 @@
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		if(!pref_load)			//Hah! They got forcefully purrbation'd. Force default felinid parts on them if they have no mutant parts in those areas!
-			if(H.dna.features["mam_tail"] == "None")
-				H.dna.features["mam_tail"] = "Cat"
-			if(H.dna.features["mam_ears"] == "None")
-				H.dna.features["mam_ears"] = "Cat"
-		if(H.dna.features["mam_ears"] == "Cat")
+			if(H.dna.features[MBP_TAIL] == "None")
+				H.dna.features[MBP_TAIL] = "Cat"
+			if(H.dna.features[MBP_EARS] == "None")
+				H.dna.features[MBP_EARS] = "Cat"
+		if(H.dna.features[MBP_EARS] == "Cat")
 			var/obj/item/organ/ears/cat/ears = new
 			ears.Insert(H, drop_if_replaced = FALSE)
 		else
 			mutantears = /obj/item/organ/ears
-		if(H.dna.features["mam_tail"] == "Cat")
+		if(H.dna.features[MBP_TAIL] == "Cat")
 			var/obj/item/organ/tail/cat/tail = new
 			tail.Insert(H, drop_if_replaced = FALSE)
 		else

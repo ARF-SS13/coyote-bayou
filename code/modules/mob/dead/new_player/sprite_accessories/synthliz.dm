@@ -1,6 +1,6 @@
 //Synth snouts (This is the most important part)
 /datum/sprite_accessory/snouts/mam_snouts/synthliz
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_snouts.dmi'
 	color_src = MUTCOLORS
 	name = "Synthetic Lizard - Snout"
@@ -41,7 +41,7 @@
 	covered_limbs = list("Chest" = MATRIX_GREEN_BLUE)
 
 /datum/sprite_accessory/mam_body_markings/synthliz
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_body_markings.dmi'
 	name = "Synthetic Lizard - Plates"
 	icon_state = "synthlizscutes"
@@ -49,22 +49,22 @@
 
 //Synth tails
 /datum/sprite_accessory/tails/mam_tails/synthliz
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_tails.dmi'
 	color_src = MUTCOLORS
 	name = "Synthetic Lizard"
-	icon_state = "synthliz"
+	icon_state = SPECIES_SYNTH_LIZARD
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/synthliz
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_tails.dmi'
 	color_src = MUTCOLORS
 	name = "Synthetic Lizard"
-	icon_state = "synthliz"
+	icon_state = SPECIES_SYNTH_LIZARD
 
 //Synth Antennae
 /datum/sprite_accessory/antenna/synthliz
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
 	color_src = MUTCOLORS
 	name = "Synthetic Lizard - Antennae"
@@ -126,7 +126,7 @@
 	name = "Virgo - Synthetic Lizard"
 	icon_state = "synthlizard"
 	taur_mode = STYLE_PAW_TAURIC
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/taur/synthliz/inv

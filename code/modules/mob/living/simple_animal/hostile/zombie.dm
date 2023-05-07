@@ -41,7 +41,7 @@
 		O.r_hand = null
 		O.l_hand = null
 
-	var/icon/P = get_flat_human_icon("zombie_[zombiejob]", J , dummy_prefs, "zombie", outfit_override = O)
+	var/icon/P = get_flat_human_icon("zombie_[zombiejob]", J , dummy_prefs, SPECIES_ZOMBIE, outfit_override = O)
 	icon = P
 	corpse = new(src)
 	corpse.outfit = O

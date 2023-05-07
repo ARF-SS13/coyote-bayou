@@ -105,36 +105,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/split_eye_colors = FALSE
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/list/features = list(
-		"mcolor" = "FFFFFF",
-		"mcolor2" = "FFFFFF",
-		"mcolor3" = "FFFFFF",
-		"tail_lizard" = "Smooth",
-		"tail_human" = "None",
-		"snout" = "Round",
-		"horns" = "None",
+		MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_TAIL_LIZARD = "Smooth",
+		MBP_TAIL_HUMAN = "None",
+		MBP_SNOUT_LIZARD = "Round",
+		MBP_HORNS = "None",
 		"horns_color" = "85615a",
-		"ears" = "None",
-		"wings" = "None",
+		MBP_EARS_LIZARD = "None",
+		MBP_WINGS = "None",
 		"wings_color" = "FFF",
-		"frills" = "None",
-		"deco_wings" = "None",
-		"spines" = "None",
-		"legs" = "Plantigrade",
-		"insect_wings" = "Plain",
-		"insect_fluff" = "None",
-		"insect_markings" = "None",
-		"arachnid_legs" = "Plain",
-		"arachnid_spinneret" = "Plain",
-		"arachnid_mandibles" = "Plain",
-		"mam_body_markings" = list(),
-		"mam_ears" = "None",
-		"mam_snouts" = "None",
-		"mam_tail" = "None",
+		MBP_FRILLS = "None",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_TAIL_SPINES = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_WINGS_INSECT = "Plain",
+		MBP_FLUFF = "None",
+		MBP_MARKINGS_INSECT = "None",
+		MBP_ARACHNID_LEGS = "Plain",
+		MBP_ARACHNID_SPINNERET = "Plain",
+		MBP_ARACHNID_MANDIBLES = "Plain",
+		MBP_MARKINGS_BODY = list(),
+		MBP_EARS = "None",
+		MBP_SNOUT = "None",
+		MBP_TAIL = "None",
 		"mam_tail_animated" = "None",
-		"xenodorsal" = "Standard",
-		"xenohead" = "Standard",
-		"xenotail" = "Xenomorph Tail",
-		"taur" = "None",
+		MBP_XENO_DORSAL = "Standard",
+		MBP_XENO_HEAD = "Standard",
+		MBP_XENO_TAIL = "Xenomorph Tail",
+		MBP_TAUR = "None",
 		"genitals_use_skintone" = FALSE,
 		"has_cock" = FALSE,
 		"cock_shape" = DEF_COCK_SHAPE,
@@ -181,12 +181,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"genital_order" = DEF_COCKSTRING,
 		"genital_hide" = NONE,
 		"genital_whitelist" = "Sammt Bingus, fluntly, theBungus",
-		"ipc_screen" = "Sunburst",
-		"ipc_antenna" = "None",
+		MBP_SCREEN = "Sunburst",
+		MBP_ANTENNA_IPC = "None",
 		"flavor_text" = "",
 		"silicon_flavor_text" = "",
 		"ooc_notes" = "",
-		"meat_type" = "Mammalian",
+		MBP_MEAT_TYPE = MEAT_MAMMAL,
 		"taste" = "something",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
@@ -605,13 +605,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h2>Body Colors</h2>"
 
 				dat += "<b>Primary Color:</b><BR>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features[MBP_COLOR1]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
 
 				dat += "<b>Secondary Color:</b><BR>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features[MBP_COLOR2]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
 
 				dat += "<b>Tertiary Color:</b><BR>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features[MBP_COLOR3]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 				mutant_colors = TRUE
 
 			if (CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
@@ -691,8 +691,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			// rp marking selection
 			// assume you can only have mam markings or regular markings or none, never both
 			var/marking_type
-			if(parent.can_have_part("mam_body_markings"))
-				marking_type = "mam_body_markings"
+			if(parent.can_have_part(MBP_MARKINGS_BODY))
+				marking_type = MBP_MARKINGS_BODY
 			if(marking_type)
 				dat += APPEARANCE_CATEGORY_COLUMN
 				dat += "<h3>[GLOB.all_mutant_parts[marking_type]]</h3>" // give it the appropriate title for the type of marking
@@ -719,12 +719,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								var/first = "#FFFFFF"
 								var/second = "#FFFFFF"
 								var/third = "#FFFFFF"
-								if(features["mcolor"])
-									first = "#[features["mcolor"]]"
-								if(features["mcolor2"])
-									second = "#[features["mcolor2"]]"
-								if(features["mcolor3"])
-									third = "#[features["mcolor3"]]"
+								if(features[MBP_COLOR1])
+									first = "#[features[MBP_COLOR1]]"
+								if(features[MBP_COLOR2])
+									second = "#[features[MBP_COLOR2]]"
+								if(features[MBP_COLOR3])
+									third = "#[features[MBP_COLOR3]]"
 								marking_list += list(list(first, second, third)) // just assume its 3 colours if it isnt it doesnt matter we just wont use the other values
 							// index magic
 							var/primary_index = 1
@@ -756,7 +756,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</table>"
 
 			for(var/mutant_part in GLOB.all_mutant_parts)
-				if(mutant_part == "mam_body_markings")
+				if(mutant_part == MBP_MARKINGS_BODY)
 					continue
 				if(parent.can_have_part(mutant_part))
 					if(!mutant_category)
@@ -780,11 +780,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										var/secondary_feature = "[mutant_string]_secondary"
 										var/tertiary_feature = "[mutant_string]_tertiary"
 										if(!features[primary_feature])
-											features[primary_feature] = features["mcolor"]
+											features[primary_feature] = features[MBP_COLOR1]
 										if(!features[secondary_feature])
-											features[secondary_feature] = features["mcolor2"]
+											features[secondary_feature] = features[MBP_COLOR2]
 										if(!features[tertiary_feature])
-											features[tertiary_feature] = features["mcolor3"]
+											features[tertiary_feature] = features[MBP_COLOR3]
 
 										var/matrixed_sections = accessory.matrixed_sections
 										if(accessory.color_src == MATRIXED && !matrixed_sections)
@@ -848,8 +848,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/tauric_shape = FALSE
 					if(features["cock_taur"])
 						var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[features["cock_shape"]]
-						if(P.taur_icon && parent.can_have_part("taur"))
-							var/datum/sprite_accessory/taur/T = GLOB.taur_list[features["taur"]]
+						if(P.taur_icon && parent.can_have_part(MBP_TAUR))
+							var/datum/sprite_accessory/taur/T = GLOB.taur_list[features[MBP_TAUR]]
 							if(T.taur_mode & P.accepted_taurs)
 								tauric_shape = TRUE
 					dat += "<b>Penis Shape:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_shape;task=input'>[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]</a>"
@@ -1570,8 +1570,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			feature_key = "cock"
 			if(features["cock_taur"]) // darn taurs
 				var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[features["cock_shape"]]
-				if(P.taur_icon && parent.can_have_part("taur"))
-					var/datum/sprite_accessory/taur/T = GLOB.taur_list[features["taur"]]
+				if(P.taur_icon && parent.can_have_part(MBP_TAUR))
+					var/datum/sprite_accessory/taur/T = GLOB.taur_list[features[MBP_TAUR]]
 					if(T.taur_mode & P.accepted_taurs)
 						fuckin_taur_penis = TRUE
 		if("has_belly")
@@ -1897,7 +1897,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				HTML += "<font color=red>[rank]</font></td><td><font color=red> \[IN [(available_in_days)] DAYS\]</font></td></tr>"
 				continue
 			if(!user.client.prefs.pref_species.qualifies_for_rank(rank, user.client.prefs.features))
-				if(user.client.prefs.pref_species.id == "human")
+				if(user.client.prefs.pref_species.id == SPECIES_HUMAN)
 					HTML += "<font color=red>[rank]</font></td><td><font color=red><b> \[MUTANT\]</b></font></td></tr>"
 				else
 					HTML += "<font color=red>[rank]</font></td><td><font color=red><b> \[NON-HUMAN\]</b></font></td></tr>"
@@ -2641,25 +2641,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						pref_species = new newtype()
 						//let's ensure that no weird shit happens on species swapping.
 						custom_species = null
-						if(!parent.can_have_part("mam_body_markings"))
-							features["mam_body_markings"] = list()
-						if(parent.can_have_part("mam_body_markings"))
-							if(features["mam_body_markings"] == "None")
-								features["mam_body_markings"] = list()
-						if(parent.can_have_part("tail_lizard"))
-							features["tail_lizard"] = "Smooth"
-						if(pref_species.id == "felinid")
-							features["mam_tail"] = "Cat"
-							features["mam_ears"] = "Cat"
+						if(!parent.can_have_part(MBP_MARKINGS_BODY))
+							features[MBP_MARKINGS_BODY] = list()
+						if(parent.can_have_part(MBP_MARKINGS_BODY))
+							if(features[MBP_MARKINGS_BODY] == "None")
+								features[MBP_MARKINGS_BODY] = list()
+						if(parent.can_have_part(MBP_TAIL_LIZARD))
+							features[MBP_TAIL_LIZARD] = "Smooth"
+						if(pref_species.id == SPECIES_FELINID)
+							features[MBP_TAIL] = "Cat"
+							features[MBP_EARS] = "Cat"
 
 						//Now that we changed our species, we must verify that the mutant colour is still allowed.
-						var/temp_hsv = RGBtoHSV(features["mcolor"])
-						if(features["mcolor"] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
-							features["mcolor"] = pref_species.default_color
-						if(features["mcolor2"] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
-							features["mcolor2"] = pref_species.default_color
-						if(features["mcolor3"] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
-							features["mcolor3"] = pref_species.default_color
+						var/temp_hsv = RGBtoHSV(features[MBP_COLOR1])
+						if(features[MBP_COLOR1] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+							features[MBP_COLOR1] = pref_species.default_color
+						if(features[MBP_COLOR2] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+							features[MBP_COLOR2] = pref_species.default_color
+						if(features[MBP_COLOR3] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+							features[MBP_COLOR3] = pref_species.default_color
 
 						//switch to the type of eyes the species uses
 						eye_type = pref_species.eye_type
@@ -2684,48 +2684,48 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["chat_color"] = sanitize_hexcolor(new_runecolor, 6)
 
 				if("mutant_color")
-					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
+					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features[MBP_COLOR1]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
-							features["mcolor"] = pref_species.default_color
+							features[MBP_COLOR1] = pref_species.default_color
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
-							features["mcolor"] = sanitize_hexcolor(new_mutantcolor, 6)
+							features[MBP_COLOR1] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mutant_color2")
-					var/new_mutantcolor = input(user, "Choose your character's secondary alien/mutant color:", "Character Preference","#"+features["mcolor2"]) as color|null
+					var/new_mutantcolor = input(user, "Choose your character's secondary alien/mutant color:", "Character Preference","#"+features[MBP_COLOR2]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
-							features["mcolor2"] = pref_species.default_color
+							features[MBP_COLOR2] = pref_species.default_color
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
-							features["mcolor2"] = sanitize_hexcolor(new_mutantcolor, 6)
+							features[MBP_COLOR2] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mutant_color3")
-					var/new_mutantcolor = input(user, "Choose your character's tertiary alien/mutant color:", "Character Preference","#"+features["mcolor3"]) as color|null
+					var/new_mutantcolor = input(user, "Choose your character's tertiary alien/mutant color:", "Character Preference","#"+features[MBP_COLOR3]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
-							features["mcolor3"] = pref_species.default_color
+							features[MBP_COLOR3] = pref_species.default_color
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
-							features["mcolor3"] = sanitize_hexcolor(new_mutantcolor, 6)
+							features[MBP_COLOR3] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mismatched_markings")
 					show_mismatched_markings = !show_mismatched_markings
 
-				if("ipc_screen")
+				if(MBP_SCREEN)
 					var/new_ipc_screen
 					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.ipc_screens_list
 					if(new_ipc_screen)
-						features["ipc_screen"] = new_ipc_screen
+						features[MBP_SCREEN] = new_ipc_screen
 
-				if("ipc_antenna")
+				if(MBP_ANTENNA_IPC)
 					var/list/snowflake_antenna_list = list()
 					//Potential todo: turn all of THIS into a define to reduce copypasta.
 					for(var/path in GLOB.ipc_antennas_list)
@@ -2739,19 +2739,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_ipc_antenna
 					new_ipc_antenna = input(user, "Choose your character's antenna:", "Character Preference") as null|anything in snowflake_antenna_list
 					if(new_ipc_antenna)
-						features["ipc_antenna"] = new_ipc_antenna
+						features[MBP_ANTENNA_IPC] = new_ipc_antenna
 
-				if("tail_lizard")
+				if(MBP_TAIL_LIZARD)
 					var/new_tail
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
 					if(new_tail)
-						features["tail_lizard"] = new_tail
+						features[MBP_TAIL_LIZARD] = new_tail
 						if(new_tail != "None")
-							features["taur"] = "None"
-							features["tail_human"] = "None"
-							features["mam_tail"] = "None"
+							features[MBP_TAUR] = "None"
+							features[MBP_TAIL_HUMAN] = "None"
+							features[MBP_TAIL] = "None"
 
-				if("tail_human")
+				if(MBP_TAIL_HUMAN)
 					var/list/snowflake_tails_list = list()
 					for(var/path in GLOB.tails_list_human)
 						var/datum/sprite_accessory/tails/human/instance = GLOB.tails_list_human[path]
@@ -2764,13 +2764,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_tail
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
 					if(new_tail)
-						features["tail_human"] = new_tail
+						features[MBP_TAIL_HUMAN] = new_tail
 						if(new_tail != "None")
-							features["taur"] = "None"
-							features["tail_lizard"] = "None"
-							features["mam_tail"] = "None"
+							features[MBP_TAUR] = "None"
+							features[MBP_TAIL_LIZARD] = "None"
+							features[MBP_TAIL] = "None"
 
-				if("mam_tail")
+				if(MBP_TAIL)
 					var/list/snowflake_tails_list = list()
 					for(var/path in GLOB.mam_tails_list)
 						var/datum/sprite_accessory/tails/mam_tails/instance = GLOB.mam_tails_list[path]
@@ -2783,19 +2783,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_tail
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
 					if(new_tail)
-						features["mam_tail"] = new_tail
+						features[MBP_TAIL] = new_tail
 						if(new_tail != "None")
-							features["taur"] = "None"
-							features["tail_human"] = "None"
-							features["tail_lizard"] = "None"
+							features[MBP_TAUR] = "None"
+							features[MBP_TAIL_HUMAN] = "None"
+							features[MBP_TAIL_LIZARD] = "None"
 
-				if("meat_type")
+				if(MBP_MEAT_TYPE)
 					var/new_meat
 					new_meat = input(user, "Choose your character's meat type:", "Character Preference") as null|anything in GLOB.meat_types
 					if(new_meat)
-						features["meat_type"] = new_meat
+						features[MBP_MEAT_TYPE] = new_meat
 
-				if("snout")
+				if(MBP_SNOUT_LIZARD)
 					var/list/snowflake_snouts_list = list()
 					for(var/path in GLOB.snouts_list)
 						var/datum/sprite_accessory/snouts/mam_snouts/instance = GLOB.snouts_list[path]
@@ -2808,11 +2808,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_snout
 					new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
 					if(new_snout)
-						features["snout"] = new_snout
-						features["mam_snouts"] = "None"
+						features[MBP_SNOUT_LIZARD] = new_snout
+						features[MBP_SNOUT] = "None"
 
 
-				if("mam_snouts")
+				if(MBP_SNOUT)
 					var/list/snowflake_mam_snouts_list = list()
 					for(var/path in GLOB.mam_snouts_list)
 						var/datum/sprite_accessory/snouts/mam_snouts/instance = GLOB.mam_snouts_list[path]
@@ -2825,14 +2825,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_mam_snouts
 					new_mam_snouts = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_mam_snouts_list
 					if(new_mam_snouts)
-						features["mam_snouts"] = new_mam_snouts
-						features["snout"] = "None"
+						features[MBP_SNOUT] = new_mam_snouts
+						features[MBP_SNOUT_LIZARD] = "None"
 
-				if("horns")
+				if(MBP_HORNS)
 					var/new_horns
 					new_horns = input(user, "Choose your character's horns:", "Character Preference") as null|anything in GLOB.horns_list
 					if(new_horns)
-						features["horns"] = new_horns
+						features[MBP_HORNS] = new_horns
 
 				if("horns_color")
 					var/new_horn_color = input(user, "Choose your character's horn colour:", "Character Preference","#"+features["horns_color"]) as color|null
@@ -2842,11 +2842,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							features["horns_color"] = sanitize_hexcolor(new_horn_color, 6)
 
-				if("wings")
+				if(MBP_WINGS)
 					var/new_wings
 					new_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.r_wings_list
 					if(new_wings)
-						features["wings"] = new_wings
+						features[MBP_WINGS] = new_wings
 
 				if("wings_color")
 					var/new_wing_color = input(user, "Choose your character's wing colour:", "Character Preference","#"+features["wings_color"]) as color|null
@@ -2856,47 +2856,47 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							features["wings_color"] = sanitize_hexcolor(new_wing_color, 6)
 
-				if("frills")
+				if(MBP_FRILLS)
 					var/new_frills
 					new_frills = input(user, "Choose your character's frills:", "Character Preference") as null|anything in GLOB.frills_list
 					if(new_frills)
-						features["frills"] = new_frills
+						features[MBP_FRILLS] = new_frills
 
-				if("spines")
+				if(MBP_TAIL_SPINES)
 					var/new_spines
 					new_spines = input(user, "Choose your character's spines:", "Character Preference") as null|anything in GLOB.spines_list
 					if(new_spines)
-						features["spines"] = new_spines
+						features[MBP_TAIL_SPINES] = new_spines
 
-				if("legs")
+				if(MBP_LEGS)
 					var/new_legs
 					new_legs = input(user, "Choose your character's legs:", "Character Preference") as null|anything in GLOB.legs_list
 					if(new_legs)
-						features["legs"] = new_legs
+						features[MBP_LEGS] = new_legs
 
-				if("insect_wings")
+				if(MBP_WINGS_INSECT)
 					var/new_insect_wings
 					new_insect_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.insect_wings_list
 					if(new_insect_wings)
-						features["insect_wings"] = new_insect_wings
+						features[MBP_WINGS_INSECT] = new_insect_wings
 
-				if("deco_wings")
+				if(MBP_WINGS_DECORATIVE)
 					var/new_deco_wings
 					new_deco_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.deco_wings_list
 					if(new_deco_wings)
-						features["deco_wings"] = new_deco_wings
+						features[MBP_WINGS_DECORATIVE] = new_deco_wings
 
-				if("insect_fluff")
+				if(MBP_FLUFF)
 					var/new_insect_fluff
 					new_insect_fluff = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.insect_fluffs_list
 					if(new_insect_fluff)
-						features["insect_fluff"] = new_insect_fluff
+						features[MBP_FLUFF] = new_insect_fluff
 
-				if("insect_markings")
+				if(MBP_MARKINGS_INSECT)
 					var/new_insect_markings
 					new_insect_markings = input(user, "Choose your character's markings:", "Character Preference") as null|anything in GLOB.insect_markings_list
 					if(new_insect_markings)
-						features["insect_markings"] = new_insect_markings
+						features[MBP_MARKINGS_INSECT] = new_insect_markings
 
 				if("s_tone")
 					var/list/choices = GLOB.skin_tones - GLOB.nonstandard_skin_tones
@@ -2918,7 +2918,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							use_custom_skin_tone = FALSE
 							skin_tone = new_s_tone
 
-				if("taur")
+				if(MBP_TAUR)
 					var/list/snowflake_taur_list = list()
 					for(var/path in GLOB.taur_list)
 						var/datum/sprite_accessory/taur/instance = GLOB.taur_list[path]
@@ -2931,14 +2931,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_taur
 					new_taur = input(user, "Choose your character's tauric body:", "Character Preference") as null|anything in snowflake_taur_list
 					if(new_taur)
-						features["taur"] = new_taur
+						features[MBP_TAUR] = new_taur
 						if(new_taur != "None")
-							features["mam_tail"] = "None"
-							features["xenotail"] = "None"
-							features["tail_human"] = "None"
-							features["tail_lizard"] = "None"
+							features[MBP_TAIL] = "None"
+							features[MBP_XENO_TAIL] = "None"
+							features[MBP_TAIL_HUMAN] = "None"
+							features[MBP_TAIL_LIZARD] = "None"
 
-				if("ears")
+				if(MBP_EARS_LIZARD)
 					var/list/snowflake_ears_list = list()
 					for(var/path in GLOB.ears_list)
 						var/datum/sprite_accessory/ears/instance = GLOB.ears_list[path]
@@ -2951,9 +2951,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_ears
 					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
 					if(new_ears)
-						features["ears"] = new_ears
+						features[MBP_EARS_LIZARD] = new_ears
 
-				if("mam_ears")
+				if(MBP_EARS)
 					var/list/snowflake_ears_list = list()
 					for(var/path in GLOB.mam_ears_list)
 						var/datum/sprite_accessory/ears/mam_ears/instance = GLOB.mam_ears_list[path]
@@ -2966,31 +2966,31 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/new_ears
 					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
 					if(new_ears)
-						features["mam_ears"] = new_ears
+						features[MBP_EARS] = new_ears
 
 				//Xeno Bodyparts
-				if("xenohead")//Head or caste type
+				if(MBP_XENO_HEAD)//Head or caste type
 					var/new_head
 					new_head = input(user, "Choose your character's caste:", "Character Preference") as null|anything in GLOB.xeno_head_list
 					if(new_head)
-						features["xenohead"] = new_head
+						features[MBP_XENO_HEAD] = new_head
 
-				if("xenotail")//Currently one one type, more maybe later if someone sprites them. Might include animated variants in the future.
+				if(MBP_XENO_TAIL)//Currently one one type, more maybe later if someone sprites them. Might include animated variants in the future.
 					var/new_tail
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.xeno_tail_list
 					if(new_tail)
-						features["xenotail"] = new_tail
+						features[MBP_XENO_TAIL] = new_tail
 						if(new_tail != "None")
-							features["mam_tail"] = "None"
-							features["taur"] = "None"
-							features["tail_human"] = "None"
-							features["tail_lizard"] = "None"
+							features[MBP_TAIL] = "None"
+							features[MBP_TAUR] = "None"
+							features[MBP_TAIL_HUMAN] = "None"
+							features[MBP_TAIL_LIZARD] = "None"
 
-				if("xenodorsal")
+				if(MBP_XENO_DORSAL)
 					var/new_dors
 					new_dors = input(user, "Choose your character's dorsal tube type:", "Character Preference") as null|anything in GLOB.xeno_dorsal_list
 					if(new_dors)
-						features["xenodorsal"] = new_dors
+						features[MBP_XENO_DORSAL] = new_dors
 
 				//every single primary/secondary/tertiary colouring done at once
 				if("xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary","xhead_primary","xhead_secondary","xhead_tertiary","tail_primary","tail_secondary","tail_tertiary","insect_markings_primary","insect_markings_secondary","insect_markings_tertiary","insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary","ears_primary","ears_secondary","ears_tertiary","frills_primary","frills_secondary","frills_tertiary","ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary","taur_primary","taur_secondary","taur_tertiary","snout_primary","snout_secondary","snout_tertiary","spines_primary","spines_secondary","spines_tertiary", "mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
@@ -3053,8 +3053,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("cock_shape")
 					var/new_shape
 					var/list/hockeys = list()
-					if(parent.can_have_part("taur"))
-						var/datum/sprite_accessory/taur/T = GLOB.taur_list[features["taur"]]
+					if(parent.can_have_part(MBP_TAUR))
+						var/datum/sprite_accessory/taur/T = GLOB.taur_list[features[MBP_TAUR]]
 						for(var/A in GLOB.cock_shapes_list)
 							var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[A]
 							if(P.taur_icon && T.taur_mode & P.accepted_taurs)
@@ -3851,7 +3851,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		random_character(gender)
 
 	if(roundstart_checks)
-		if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == "human"))
+		if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == SPECIES_HUMAN))
 			var/firstspace = findtext(real_name, " ")
 			var/name_length = length(real_name)
 			if(!firstspace)	//we need a surname
@@ -3919,10 +3919,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.real_name = character.real_name
 	character.dna.custom_species = character.custom_species
 
-	if((parent && parent.can_have_part("meat_type")) || pref_species.mutant_bodyparts["meat_type"])
-		character.type_of_meat = GLOB.meat_types[features["meat_type"]]
+	if((parent && parent.can_have_part(MBP_MEAT_TYPE)) || pref_species.mutant_bodyparts[MBP_MEAT_TYPE])
+		character.type_of_meat = GLOB.meat_types[features[MBP_MEAT_TYPE]]
 
-	if(((parent && parent.can_have_part("legs")) || pref_species.mutant_bodyparts["legs"])  && (character.dna.features["legs"] == "Digitigrade" || character.dna.features["legs"] == "Avian"))
+	if(((parent && parent.can_have_part(MBP_LEGS)) || pref_species.mutant_bodyparts[MBP_LEGS])  && (character.dna.features[MBP_LEGS] == LIMB_DIGITIGRADE || character.dna.features[MBP_LEGS] == LIMB_AVIAN))
 		pref_species.species_traits |= DIGITIGRADE
 	else
 		pref_species.species_traits -= DIGITIGRADE

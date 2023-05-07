@@ -138,8 +138,8 @@
 			podman.ckey = ckey_holder
 		podman.gender = blood_gender
 		podman.faction |= factions
-		if(!features["mcolor"])
-			features["mcolor"] = "#59CE00"
+		if(!features[MBP_COLOR1])
+			features[MBP_COLOR1] = "#59CE00"
 		for(var/V in quirks)
 			new V(podman)
 		podman.hardset_dna(null,null,podman.real_name,blood_type, new /datum/species/pod,features)//Discard SE's and UI's, podman cloning is inaccurate, and always make them a podman

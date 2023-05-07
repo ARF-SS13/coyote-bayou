@@ -307,7 +307,7 @@
 			friendly_check = TRUE
 			if(!(client?.prefs.cit_toggles & NO_AUTO_WAG))
 				if(S?.can_wag_tail(src) && !dna.species.is_wagging_tail())
-					var/static/list/many_tails = list("tail_human", "tail_lizard", "mam_tail")
+					var/static/list/many_tails = list(MBP_TAIL_HUMAN, MBP_TAIL_LIZARD, MBP_TAIL)
 					for(var/T in many_tails)
 						if(S.mutant_bodyparts[T] && dna.features[T] != "None")
 							emote("wag")

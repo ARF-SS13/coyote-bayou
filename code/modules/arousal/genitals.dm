@@ -583,8 +583,8 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			var/do_center = sprite_acc.center
 			var/dim_x = sprite_acc.dimension_x
 			var/dim_y = sprite_acc.dimension_y
-			if(nad.genital_flags & GENITAL_CAN_TAUR && sprite_acc.taur_icon && (!sprite_acc.feat_taur || dna.features[sprite_acc.feat_taur]) && dna.species.mutant_bodyparts["taur"])
-				var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features["taur"]]
+			if(nad.genital_flags & GENITAL_CAN_TAUR && sprite_acc.taur_icon && (!sprite_acc.feat_taur || dna.features[sprite_acc.feat_taur]) && dna.species.mutant_bodyparts[MBP_TAUR])
+				var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features[MBP_TAUR]]
 				if(T?.taur_mode & sprite_acc.accepted_taurs)
 					accessory_icon = sprite_acc.taur_icon
 					do_center = TRUE
@@ -658,10 +658,10 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			dna.features["belly_color"] = "[dna.species.fixed_mut_color]"
 			return
 		//So people who haven't set stuff up don't get rainbow surprises.
-		dna.features["cock_color"] = "[dna.features["mcolor"]]"
-		dna.features["breasts_color"] = "[dna.features["mcolor"]]"
-		dna.features["butt_color"] = "[dna.features["mcolor"]]"
-		dna.features["belly_color"] = "[dna.features["mcolor"]]"
+		dna.features["cock_color"] = "[dna.features[MBP_COLOR1]]"
+		dna.features["breasts_color"] = "[dna.features[MBP_COLOR1]]"
+		dna.features["butt_color"] = "[dna.features[MBP_COLOR1]]"
+		dna.features["belly_color"] = "[dna.features[MBP_COLOR1]]"
 	else //If there's a new organ, make it the same colour.
 		if(breastCheck == FALSE)
 			dna.features["breasts_color"] = dna.features["cock_color"]

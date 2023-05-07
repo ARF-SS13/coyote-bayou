@@ -1,27 +1,46 @@
 /datum/species/mush //mush mush codecuck
 	name = "Anthromorphic Mushroom"
-	id = "mush"
-	mutant_bodyparts = list("caps" = "Round")
+	id = SPECIES_MUSH
+	limbs_id = BODYTYPE_MUSH
+	mutant_bodyparts = list(
+		MBP_SHROOM_CAP = "Round"
+	)
 
 	fixed_mut_color = "DBBF92"
 	hair_color = "FF4B19" //cap color, spot color uses eye color
 	nojumpsuit = TRUE
 
 	say_mod = "poofs" //what does a mushroom sound like
-	species_traits = list(MUTCOLORS, NOEYES, NO_UNDERWEAR,NOGENITALS,NOAROUSAL,HAS_FLESH,HAS_BONE)
-	inherent_traits = list(TRAIT_NOBREATH)
+	species_traits = list(
+		MUTCOLORS,
+		NOEYES,
+		NO_UNDERWEAR,
+		NOGENITALS,
+		NOAROUSAL,
+		HAS_FLESH,
+		HAS_BONE
+	)
+	inherent_traits = list(
+		TRAIT_NOBREATH
+	)
 	speedmod = 1.5 //faster than golems but not by much
 
 	punchdamagelow = 2
 	punchdamagehigh = 12 //still better than humans
 	punchstunthreshold = 10
 
-	no_equip = list(SLOT_WEAR_MASK, SLOT_WEAR_SUIT, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM)
+	no_equip = list(
+		SLOT_WEAR_MASK,
+		SLOT_WEAR_SUIT,
+		SLOT_GLOVES,
+		SLOT_SHOES,
+		SLOT_W_UNIFORM
+	)
 
 	burnmod = 1.25
 	heatmod = 1.5
 
-	species_type = "plant"
+	species_type = SPECIES_TYPE_PLANT
 
 	mutanteyes = /obj/item/organ/eyes/night_vision/mushroom
 	var/datum/martial_art/mushpunch/mush
@@ -32,8 +51,8 @@
 	if(!ishuman(C))
 		return
 	var/mob/living/carbon/human/H = C
-	if(!H.dna.features["caps"])
-		H.dna.features["caps"] = "Round"
+	if(!H.dna.features[MBP_SHROOM_CAP])
+		H.dna.features[MBP_SHROOM_CAP] = "Round"
 		handle_mutant_bodyparts(H)
 	H.faction |= "mushroom"
 	mush = new()

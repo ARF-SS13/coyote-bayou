@@ -1,11 +1,22 @@
 /datum/species/plasmaman
 	name = "Plasmaman"
-	id = "plasmaman"
+	id = SPECIES_PLASMAMAN
+	limbs_id = BODYTYPE_PLASMAMAN
 	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
-	species_traits = list(NOBLOOD,NOTRANSSTING,NOGENITALS,HAS_BONE)
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RADIMMUNE,TRAIT_NOHUNGER,TRAIT_CALCIUM_HEALER)
+	species_traits = list(
+		NOBLOOD,
+		NOTRANSSTING,
+		NOGENITALS,
+		HAS_BONE
+	)
+	inherent_traits = list(
+		TRAIT_RESISTCOLD,
+		TRAIT_RADIMMUNE,
+		TRAIT_NOHUNGER,
+		TRAIT_CALCIUM_HEALER
+	)
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
 	mutantlungs = /obj/item/organ/lungs/plasmaman
 	mutanttongue = /obj/item/organ/tongue/bone/plasmaman
@@ -21,8 +32,9 @@
 	disliked_food = FRUIT
 	liked_food = VEGETABLES
 	outfit_important_for_life = /datum/outfit/plasmaman
+	force_plantigrade = TRUE
 
-	species_type = "skeleton"
+	species_type = SPECIES_TYPE_SKELETON // Not undead! even though they kinda are
 
 /datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
 	var/datum/gas_mixture/environment = H.loc.return_air()

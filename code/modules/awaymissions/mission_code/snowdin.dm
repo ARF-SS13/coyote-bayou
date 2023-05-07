@@ -228,7 +228,7 @@
 
 					for(var/BP in PP.bodyparts)
 						var/obj/item/bodypart/NN = BP
-						if(NN.status == BODYPART_ORGANIC && NN.species_id != "plasmaman") //getting every organic, non-plasmaman limb (augments/androids are immune to this)
+						if(NN.status == BODYPART_ORGANIC && NN.species_id != SPECIES_PLASMAMAN) //getting every organic, non-plasmaman limb (augments/androids are immune to this)
 							plasma_parts += NN
 						if(NN.status == BODYPART_ROBOTIC)
 							robo_parts += NN
@@ -239,7 +239,7 @@
 						if(plasma_parts.len)
 							var/obj/item/bodypart/NB = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs for dismember() to use
 							PP.emote("scream")
-							NB.species_id = "plasmaman"//change the species_id of the limb to that of a plasmaman
+							NB.species_id = SPECIES_PLASMAMAN//change the species_id of the limb to that of a plasmaman
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
 							PP.visible_message(span_warning("[L] screams in pain as [L.p_their()] [NB] melts down to the bone!"), \

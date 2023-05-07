@@ -5,6 +5,7 @@
 // These are all color matrixed and applied per-limb by default. you MUST comply with this if you want to have your markings work --Pooj
 // use the HumanScissors tool to break your sprite up into the zones easier.
 // Although Byond supposedly doesn't have an icon limit anymore of 512 states after 512.1478, just be careful about too many additions.
+// ...or just use more DMI files. baka. --lagg
 
 /datum/sprite_accessory/mam_body_markings
 	extra = FALSE
@@ -12,7 +13,7 @@
 	color_src = MATRIXED
 	gender_specific = 0
 	icon = 'icons/mob/mam/citadel/mam_markings.dmi'
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	matrixed_sections = MATRIX_ALL // this value is used if there is no value in covered_limbs, don't rely on it, it's a backup value
 	var/list/covered_limbs = list("Head", "Chest", "Left Leg", "Right Leg", "Left Arm", "Right Arm")
 
@@ -258,10 +259,10 @@
 	icon = 'icons/mob/wings.dmi'
 	color_src = 0
 	relevant_layers = list(BODY_FRONT_LAYER)
-	mutant_part_string = "insect_fluff"
+	mutant_part_string = MBP_FLUFF
 
 /datum/sprite_accessory/insect_fluff/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (!H.dna.features["insect_fluff"] || H.dna.features["insect_fluff"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+	return (!H.dna.features[MBP_FLUFF] || H.dna.features[MBP_FLUFF] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
 
 /datum/sprite_accessory/insect_fluff/none
 	name = "None"
@@ -703,25 +704,25 @@
 /datum/sprite_accessory/mam_body_markings/eros/moth // sarcoph @ hyperstation, jan 2022
 	name = "Moth (Hyper)"
 	icon_state = "moth"
-	recommended_species = list("insect")
+	recommended_species = list(SPECIES_INSECT)
 	covered_limbs = list("Head" = MATRIX_BLUE, "Chest" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED, "Left Leg" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/eros/bee // sarcoph @ hyperstation, march 2022
 	name = "Bee (Hyper)"
 	icon_state = "bee"
-	recommended_species = list("insect")
+	recommended_species = list(SPECIES_INSECT)
 	covered_limbs = list("Chest" = MATRIX_ALL, "Right Arm" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/eros/bee_fluff // sarcoph @ hyperstation, march 2022
 	name = "Bee - Fluffy (Hyper)"
 	icon_state = "bee_fluff"
-	recommended_species = list("insect")
+	recommended_species = list(SPECIES_INSECT)
 	covered_limbs = list("Chest" = MATRIX_ALL, "Right Arm" = MATRIX_GREEN_BLUE, "Left Arm" = MATRIX_GREEN_BLUE, "Right Leg" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/eros/bug3tone
 	name = "Beetle - 3-tone (Hyper)"
 	icon_state = "bug3tone"
-	recommended_species = list("insect")
+	recommended_species = list(SPECIES_INSECT)
 	covered_limbs = list("Chest" = MATRIX_GREEN_BLUE)
 
 /datum/sprite_accessory/mam_body_markings/eros/chemlight

@@ -248,6 +248,8 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define isclient(A) istype(A, /client)
 
+#define isleg(A) (istype(A, /obj/item/bodypart/l_leg) || istype(A, /obj/item/bodypart/r_leg))
+
 //F13 EDIT
 #define iskey(A) istype(A, /obj/item/key)
 

@@ -1,11 +1,33 @@
 /datum/species/mammal
 	name = "Anthromorph"
-	id = "mammal"
+	id = SPECIES_FURRY
+	limbs_id = BODYTYPE_FURRY
 	default_color = "4B4B4B"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,HAIR,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAIR,
+		HORNCOLOR,
+		WINGCOLOR,
+		HAS_FLESH,
+		HAS_BONE
+	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BEAST
-	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
-						"mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+	mutant_bodyparts = list(
+		MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_SNOUT = "Husky",
+		MBP_TAIL = "Husky",
+		MBP_EARS = "Husky",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_MARKINGS_BODY = "Husky",
+		MBP_TAUR = "None",
+		MBP_HORNS = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_MEAT_TYPE = MEAT_MAMMAL
+	)
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -13,8 +35,13 @@
 	liked_food = MEAT | FRIED
 	disliked_food = TOXIC
 
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
-	species_type = "furry"
+	tail_type = MBP_TAIL
+	wagging_type = MBP_TAIL_WAGGING
+	species_type = SPECIES_TYPE_FURRY
 
-	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
+	allowed_limb_ids = list(
+		BODYTYPE_FURRY,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_AVIAN,
+		BODYTYPE_SHADEKIN
+	)

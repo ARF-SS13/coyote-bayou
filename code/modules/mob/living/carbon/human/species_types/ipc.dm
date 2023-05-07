@@ -1,8 +1,8 @@
+/* 
 /datum/species/synthfurry/ipc
 	name = "I.P.C."
-	id = "ipc"
-	limbs_id = "ipc"
-	icon_limbs = "ipc"
+	id = SPECIES_SYNTH_IPC
+	limbs_id = BODYTYPE_SYNTH_IPC
 	say_mod = "beeps"
 	default_color = "00FF00"
 	blacklisted = 0
@@ -17,7 +17,7 @@
 		HORNCOLOR,
 		WINGCOLOR,
 		NO_DNA_COPY,
-		)
+	)
 	inherent_traits = list(
 		TRAIT_EASYDISMEMBER,
 		TRAIT_LIMBATTACHMENT,
@@ -27,12 +27,18 @@
 		TRAIT_CLONEIMMUNE,
 		TRAIT_VIRUSIMMUNE,
 		TRAIT_MUTATION_STASIS,
-		)
+	)
 	hair_alpha = 210
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
-	mutant_bodyparts = list("ipc_screen" = "Blank", "ipc_antenna" = "None")
+	mutant_bodyparts = list(
+		MBP_SCREEN = "Blank",
+		MBP_ANTENNA_IPC = "None",
+	)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
-	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
+	gib_types = list(
+		/obj/effect/gibspawner/ipc,
+		/obj/effect/gibspawner/ipc/bodypartless,
+	)
 
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/ipc
@@ -45,11 +51,13 @@
 	mutant_brain = /obj/item/organ/brain/ipc
 
 	//special cybernetic organ for getting power from apcs
-	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
+	mutant_organs = list(
+		/obj/item/organ/cyberimp/arm/power_cord
+	)
 
 	exotic_bloodtype = "HF"
 	exotic_blood_color = BLOOD_COLOR_OIL
-	species_type = "robotic"
+	species_type = SPECIES_TYPE_ROBOT
 
 	var/datum/action/innate/monitor_change/screen
 
@@ -75,7 +83,7 @@
 	var/new_ipc_screen = input(usr, "Choose your character's screen:", "Monitor Display") as null|anything in GLOB.ipc_screens_list
 	if(!new_ipc_screen)
 		return
-	H.dna.features["ipc_screen"] = new_ipc_screen
+	H.dna.features[MBP_SCREEN] = new_ipc_screen
 	H.update_body()
 
 /datum/species/synthfurry/ipc/spec_life(mob/living/carbon/human/H)
@@ -91,3 +99,4 @@
 	if(istype(chem) && !chem.synthfriendly)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * 1000)
 	return ..()
+ */

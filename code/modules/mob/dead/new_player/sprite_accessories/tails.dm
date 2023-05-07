@@ -16,7 +16,7 @@
 *******************************************/
 
 /datum/sprite_accessory/tails_animated/lizard/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts["tail_lizard"])
+	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts[MBP_TAIL_LIZARD])
 
 //this goes first regardless of alphabetical order
 /datum/sprite_accessory/tails/lizard/none
@@ -104,7 +104,7 @@
 	relevant_layers = null
 
 /datum/sprite_accessory/tails_animated/human/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric)|| H.dna.species.mutant_bodyparts["tail_human"])
+	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric)|| H.dna.species.mutant_bodyparts[MBP_TAIL_HUMAN])
 
 /datum/sprite_accessory/tails/human/axolotl
 	name = "Axolotl"
@@ -596,7 +596,7 @@
 /datum/sprite_accessory/tails/mam_tails
 	color_src = MATRIXED
 	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/mam_tails/none
@@ -611,7 +611,7 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts["mam_tail"])
+	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts[MBP_TAIL])
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/none
 	name = "None"

@@ -24,13 +24,13 @@
 	var/selected_category
 	var/screen = 1
 	var/list/categories = list(
-							"human",
-							"lizard",
-							"fly",
-							"insect",
-							"plasmaman",
-							"mammal",
-							"xeno",
+							SPECIES_HUMAN,
+							SPECIES_LIZARD,
+							SPECIES_FLY,
+							BODYTYPE_INSECT,
+							SPECIES_PLASMAMAN,
+							SPECIES_FURRY,
+							SPECIES_XENO,
 							"other"
 							)
 
@@ -136,7 +136,7 @@
 	//i need to create a body part manually using a set icon (otherwise it doesnt appear)
 	var/obj/item/bodypart/limb
 	limb = new buildpath(loc)
-	if(selected_category=="human" || selected_category=="lizard") //Species with greyscale parts should be included here
+	if(selected_category==SPECIES_HUMAN || selected_category==SPECIES_LIZARD) //Species with greyscale parts should be included here
 		limb.icon = 'icons/mob/human_parts_greyscale.dmi'
 		limb.base_bp_icon = DEFAULT_BODYPART_ICON_ORGANIC
 		limb.color_src = MUTCOLORS

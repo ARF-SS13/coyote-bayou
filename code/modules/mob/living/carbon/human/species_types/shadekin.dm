@@ -1,16 +1,31 @@
 // Gat1Day's powerless shadekin
 // yoinked from splurt, ported into by gremling.
-#define SPECIES_SHADEKIN	"shadekin"
 
 /datum/species/mammal/shadekin
 	name = "Shadekin"
 	id = SPECIES_SHADEKIN
+	limbs_id = BODYTYPE_SHADEKIN
 	say_mod = "mars"
-	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF", "mcolor3" = "FFFFFF", "mam_tail" = "Shadekin", "mam_ears" = "Shadekin", "deco_wings" = "None",
-						"taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
-	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
+	mutant_bodyparts = list(
+		MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_TAIL = "Shadekin",
+		MBP_EARS = "Shadekin",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_TAUR = "None",
+		MBP_HORNS = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_MEAT_TYPE = MEAT_MAMMAL
+	)
+	allowed_limb_ids = list(
+		BODYTYPE_FURRY,
+		BODYTYPE_AVIAN,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_SHADEKIN
+	)
 	mutanteyes = /obj/item/organ/eyes/shadekin
-	limbs_id = "shadekin"
+	species_type = SPECIES_TYPE_FURRY
 
 /obj/item/organ/eyes/shadekin
 	name = "ipc eyes"

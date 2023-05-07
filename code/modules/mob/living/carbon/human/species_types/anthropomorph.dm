@@ -1,13 +1,14 @@
+/* 
 /datum/species/mammal/synthetic
 	name = "Synthetic Anthromorph"
-	id = "synthfurry"
+	id = SPECIES_SYNTH_FURRY
 
 	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,ROBOTIC_LIMBS,HAS_FLESH,HAS_BONE,WINGCOLOR,HORNCOLOR)
 	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
 
-	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
-						"mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+	mutant_bodyparts = list(MBP_COLOR1 = "FFFFFF",MBP_COLOR2 = "FFFFFF",MBP_COLOR3 = "FFFFFF", MBP_SNOUT = "Husky", MBP_TAIL = "Husky", MBP_EARS = "Husky", MBP_WINGS_DECORATIVE = "None",
+						MBP_MARKINGS_BODY = "Husky", MBP_TAUR = "None", MBP_HORNS = "None", MBP_LEGS = LIMB_PLANTIGRADE, MBP_MEAT_TYPE = MEAT_MAMMAL)
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
@@ -29,8 +30,9 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
+	tail_type = MBP_TAIL
+	wagging_type = MBP_TAIL_WAGGING
 	species_type = "furry"
 
-	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")
+	allowed_limb_ids = list(SPECIES_FURRY,BODYTYPE_AQUATIC,BODYTYPE_AVIAN, SPECIES_HUMAN, SPECIES_SHADEKIN)
+ */

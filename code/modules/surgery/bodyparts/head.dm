@@ -89,7 +89,7 @@
 			facial_hair_style = H.facial_hair_style
 			if(S.hair_color)
 				if(S.hair_color == "mutcolor")
-					facial_hair_color = H.dna.features["mcolor"]
+					facial_hair_color = H.dna.features[MBP_COLOR1]
 				else
 					facial_hair_color = S.hair_color
 			else
@@ -104,7 +104,7 @@
 			hair_style = H.hair_style
 			if(S.hair_color)
 				if(S.hair_color == "mutcolor")
-					hair_color = H.dna.features["mcolor"]
+					hair_color = H.dna.features[MBP_COLOR1]
 				else
 					hair_color = S.hair_color
 			else
@@ -126,16 +126,9 @@
 /obj/item/bodypart/head/update_icon_dropped()
 	if(custom_head)
 		return
-	var/list/standing = get_limb_icon(1)
-	if(!standing.len)
-		icon_state = initial(icon_state)//no overlays found, we default back to initial icon.
-		return
-	for(var/image/I in standing)
-		I.pixel_x = px_x
-		I.pixel_y = px_y
-	add_overlay(standing)
+	. = ..()
 
-/obj/item/bodypart/head/get_limb_icon(dropped)
+/obj/item/bodypart/head/update_overlays()
 	if(custom_head)
 		return
 	cut_overlays()

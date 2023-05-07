@@ -4,18 +4,31 @@
 /datum/species/shadow
 	// Humans cursed to stay in the darkness, lest their life forces drain. They regain health in shadow and die in light.
 	name = "???"
-	id = "shadow"
+	id = SPECIES_SHADOW
+	limbs_id = BODYTYPE_SHADOW
 	sexes = 0
 	blacklisted = 1
-	ignored_by = list(/mob/living/simple_animal/hostile/faithless)
+	ignored_by = list(
+		/mob/living/simple_animal/hostile/faithless
+	)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/shadow
-	species_traits = list(NOBLOOD,NOEYES,HAS_FLESH,HAS_BONE)
-	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH)
+	species_traits = list(
+		NOBLOOD,
+		NOEYES,
+		HAS_FLESH,
+		HAS_BONE
+	)
+	inherent_traits = list(
+		TRAIT_RADIMMUNE,
+		TRAIT_VIRUSIMMUNE,
+		TRAIT_NOBREATH
+	)
+	force_plantigrade = TRUE
 
 	dangerous_existence = 1
 	mutanteyes = /obj/item/organ/eyes/night_vision
 
-	species_type = "shadow"
+	species_type = SPECIES_TYPE_SHADOW
 
 /datum/species/shadow/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
@@ -32,15 +45,40 @@
 
 /datum/species/shadow/nightmare
 	name = "Nightmare"
-	id = "nightmare"
-	limbs_id = "shadow"
+	id = SPECIES_NIGHTMARE
+	limbs_id = BODYTYPE_SHADOW
 	burnmod = 1.5
 	blacklisted = TRUE
-	no_equip = list(SLOT_WEAR_MASK, SLOT_WEAR_SUIT, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE)
-	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYES,NOGENITALS,NOAROUSAL)
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_NOBREATH,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_CHUNKYFINGERS,TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOHUNGER)
+	no_equip = list(
+		SLOT_WEAR_MASK,
+		SLOT_WEAR_SUIT,
+		SLOT_GLOVES,
+		SLOT_SHOES,
+		SLOT_W_UNIFORM,
+		SLOT_S_STORE)
+	species_traits = list(NOBLOOD,
+		NO_UNDERWEAR,
+		NO_DNA_COPY,
+		NOTRANSSTING,
+		NOEYES,
+		NOGENITALS,
+		NOAROUSAL
+	)
+	inherent_traits = list(TRAIT_RESISTCOLD,
+		TRAIT_NOBREATH,
+		TRAIT_RESISTHIGHPRESSURE,
+		TRAIT_RESISTLOWPRESSURE,
+		TRAIT_CHUNKYFINGERS,
+		TRAIT_RADIMMUNE,
+		TRAIT_VIRUSIMMUNE,
+		TRAIT_PIERCEIMMUNE,
+		TRAIT_NODISMEMBER,
+		TRAIT_NOHUNGER
+	)
 	mutanteyes = /obj/item/organ/eyes/night_vision/nightmare
-	mutant_organs = list(/obj/item/organ/heart/nightmare)
+	mutant_organs = list(
+		/obj/item/organ/heart/nightmare
+	)
 	mutant_brain = /obj/item/organ/brain/nightmare
 
 	var/info_text = "You are a <span class='danger'>Nightmare</span>. The ability <span class='warning'>shadow walk</span> allows unlimited, unrestricted movement in the dark while activated. \
@@ -75,7 +113,7 @@
 
 /obj/item/organ/brain/nightmare/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	..()
-	if(M.dna.species.id != "nightmare")
+	if(M.dna.species.id != SPECIES_NIGHTMARE)
 		M.set_species(/datum/species/shadow/nightmare)
 		visible_message(span_warning("[M] thrashes as [src] takes root in [M.p_their()] body!"))
 	var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
@@ -141,7 +179,7 @@
 			playsound(owner,'sound/effects/singlebeat.ogg',40,1)
 	if(respawn_progress >= HEART_RESPAWN_THRESHHOLD)
 		owner.revive(full_heal = TRUE)
-		if(!(owner.dna.species.id == "shadow" || owner.dna.species.id == "nightmare"))
+		if(!(owner.dna.species.id == SPECIES_SHADOW || owner.dna.species.id == SPECIES_NIGHTMARE))
 			var/mob/living/carbon/old_owner = owner
 			Remove(HEART_SPECIAL_SHADOWIFY)
 			old_owner.set_species(/datum/species/shadow)

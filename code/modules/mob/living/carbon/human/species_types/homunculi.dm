@@ -1,17 +1,37 @@
 /datum/species/homunculi
 	name = "homunculi synth"
-	id = "homunculi"
+	id = SPECIES_HOMUNCULUS
 	say_mod = "states"
-	limbs_id = "homunculi"
+	limbs_id = BODYTYPE_HOMUNCULUS
 	default_color = "FFFFFF"
 	blacklisted = 0
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_NO_PROCESS_FOOD,TRAIT_VIRUSIMMUNE,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
-	species_traits = list(NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
+	inherent_traits = list(
+		TRAIT_EASYDISMEMBER,
+		TRAIT_NO_PROCESS_FOOD,
+		TRAIT_VIRUSIMMUNE,
+		TRAIT_NOLIMBDISABLE,
+		TRAIT_NOHUNGER,
+		TRAIT_NOBREATH
+	)
+	species_traits = list(
+		NOEYES,
+		NOTRANSSTING,
+		HAS_FLESH,
+		HAS_BONE,
+		HAIR,
+		ROBOTIC_LIMBS
+	)
 	hair_alpha = 0
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
-	mutant_bodyparts = list("synth chest", "synth head")
+	mutant_bodyparts = list(
+		"synth chest",
+		"synth head"
+	)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
-	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
+	gib_types = list(
+		/obj/effect/gibspawner/ipc,
+		/obj/effect/gibspawner/ipc/bodypartless
+	)
 
 	//Just robo looking parts.
 	mutant_heart = /obj/item/organ/heart/gen2synth
@@ -24,11 +44,13 @@
 	mutant_brain = /obj/item/organ/brain/gen2synth
 
 	//special cybernetic organ for getting power from apcs
-	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
+	mutant_organs = list(
+		/obj/item/organ/cyberimp/arm/power_cord
+	)
 
 	exotic_bloodtype = "HF"
 	exotic_blood_color = BLOOD_COLOR_OIL
-	species_type = "robotic"
+	species_type = SPECIES_TYPE_ROBOT
 
 /datum/species/gen2synth/qualifies_for_rank(rank, list/features)
 	if(rank in GLOB.legion_positions) //Not sure on this one, are the Legion a fan of sentient robots?

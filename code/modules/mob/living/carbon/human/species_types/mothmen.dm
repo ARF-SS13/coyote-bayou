@@ -1,12 +1,24 @@
 /datum/species/moth
 	name = "Mothmen"
-	id = "moth"
+	id = SPECIES_MOTH
+	limbs_id = BODYTYPE_MOTH
 	say_mod = "flutters"
 	default_color = "00FF00"
-	species_traits = list(LIPS, NOEYES)
-	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID, MOB_BUG)
-	mutant_bodyparts = list("moth_wings")
-	default_features = list("moth_wings" = "Plain")
+	species_traits = list(
+		LIPS,
+		NOEYES
+	)
+	inherent_biotypes = list(
+		MOB_ORGANIC,
+		MOB_HUMANOID,
+		MOB_BUG
+	)
+	mutant_bodyparts = list(
+		MBP_WINGS_MOTH
+	)
+	default_features = list(
+		MBP_WINGS_MOTH = "Plain"
+	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -22,8 +34,8 @@
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
-		if(!H.dna.features["moth_wings"])
-			H.dna.features["moth_wings"] = "[(H.client && H.client.prefs && LAZYLEN(H.client.prefs.features) && H.client.prefs.features["moth_wings"]) ? H.client.prefs.features["moth_wings"] : "Plain"]"
+		if(!H.dna.features[MBP_WINGS_MOTH])
+			H.dna.features[MBP_WINGS_MOTH] = "[(H.client && H.client.prefs && LAZYLEN(H.client.prefs.features) && H.client.prefs.features[MBP_WINGS_MOTH]) ? H.client.prefs.features[MBP_WINGS_MOTH] : "Plain"]"
 			handle_mutant_bodyparts(H)
 
 /datum/species/moth/random_name(gender,unique,lastname)
@@ -39,9 +51,9 @@
 
 /datum/species/moth/handle_fire(mob/living/carbon/human/H, no_protection = FALSE)
 	..()
-	if(H.dna.features["moth_wings"] != "Burnt Off" && H.bodytemperature >= 800 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
+	if(H.dna.features[MBP_WINGS_MOTH] != "Burnt Off" && H.bodytemperature >= 800 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
 		to_chat(H, span_danger("Your precious wings burn to a crisp!"))
-		H.dna.features["moth_wings"] = "Burnt Off"
+		H.dna.features[MBP_WINGS_MOTH] = "Burnt Off"
 		handle_mutant_bodyparts(H)
 
 /datum/species/moth/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
@@ -57,7 +69,7 @@
 
 /datum/species/moth/space_move(mob/living/carbon/human/H)
 	. = ..()
-	if(H.loc && !isspaceturf(H.loc) && H.dna.features["moth_wings"] != "Burnt Off")
+	if(H.loc && !isspaceturf(H.loc) && H.dna.features[MBP_WINGS_MOTH] != "Burnt Off")
 		var/datum/gas_mixture/current = H.loc.return_air()
 		if(current && (current.return_pressure() >= ONE_ATMOSPHERE*0.85)) //as long as there's reasonable pressure and no gravity, flight is possible
 			return TRUE

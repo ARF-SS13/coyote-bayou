@@ -1,19 +1,39 @@
 /datum/species/human
 	name = "Human"
-	id = "human"
+	id = SPECIES_HUMAN
 	default_color = "FFFFFF"
 
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,MUTCOLORS_PARTSONLY,WINGCOLOR,HAS_FLESH,HAS_BONE)
-	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
-						"mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+	species_traits = list(
+		EYECOLOR,
+		HAIR,
+		FACEHAIR,
+		LIPS,
+		MUTCOLORS_PARTSONLY,
+		WINGCOLOR,
+		HAS_FLESH,
+		HAS_BONE
+	)
+	mutant_bodyparts = list(MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_SNOUT = "Husky",
+		MBP_TAIL = "Husky",
+		MBP_EARS = "Husky",
+		MBP_WINGS_DECORATIVE = "None",
+		MBP_MARKINGS_BODY = "Husky",
+		MBP_TAUR = "None",
+		MBP_HORNS = "None",
+		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_MEAT_TYPE = MEAT_MAMMAL
+	)
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = GROSS | RAW | LONGPORK
 	liked_food = JUNKFOOD | FRIED
 
-	tail_type = "tail_human"
-	wagging_type = "waggingtail_human"
-	species_type = "human"
+	tail_type = MBP_TAIL_HUMAN
+	wagging_type = MBP_TAIL_WAGGING_HUMAN
+	species_type = SPECIES_TYPE_HUMAN
 
 /datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)

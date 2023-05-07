@@ -117,7 +117,7 @@
 
 /datum/emote/living/carbon/human/wing
 	key = "wing"
-	key_third_person = "wings"
+	key_third_person = MBP_WINGS
 	message = "their wings."
 
 /datum/emote/living/carbon/human/wing/run_emote(mob/user, params)
@@ -132,7 +132,7 @@
 /datum/emote/living/carbon/human/wing/select_message_type(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
-	if(H.dna.species.mutant_bodyparts["wings"])
+	if(H.dna.species.mutant_bodyparts[MBP_WINGS])
 		. = "opens " + message
 	else
 		. = "closes " + message
@@ -141,23 +141,23 @@
 	if(!..())
 		return FALSE
 	var/mob/living/carbon/human/H = user
-	if(H.dna && H.dna.species && (H.dna.features["wings"] != "None"))
+	if(H.dna && H.dna.species && (H.dna.features[MBP_WINGS] != "None"))
 		return TRUE
 
 /mob/living/carbon/human/proc/OpenWings()
 	if(!dna || !dna.species)
 		return
-	if(dna.species.mutant_bodyparts["wings"])
-		dna.species.mutant_bodyparts["wingsopen"] = dna.species.mutant_bodyparts["wings"]
-		dna.species.mutant_bodyparts -= "wings"
+	if(dna.species.mutant_bodyparts[MBP_WINGS])
+		dna.species.mutant_bodyparts[MBP_WINGS_OPEN] = dna.species.mutant_bodyparts[MBP_WINGS]
+		dna.species.mutant_bodyparts -= MBP_WINGS
 	update_body()
 
 /mob/living/carbon/human/proc/CloseWings()
 	if(!dna || !dna.species)
 		return
-	if(dna.species.mutant_bodyparts["wingsopen"])
-		dna.species.mutant_bodyparts["wings"] = dna.species.mutant_bodyparts["wingsopen"]
-		dna.species.mutant_bodyparts -= "wingsopen"
+	if(dna.species.mutant_bodyparts[MBP_WINGS_OPEN])
+		dna.species.mutant_bodyparts[MBP_WINGS] = dna.species.mutant_bodyparts[MBP_WINGS_OPEN]
+		dna.species.mutant_bodyparts -= MBP_WINGS_OPEN
 	update_body()
 	if(isturf(loc))
 		var/turf/T = loc

@@ -608,7 +608,7 @@
 				else
 					H.skin_tone = H.dna.skin_tone_override = tan_mutant_color(H.dna.skin_tone_override, MINIMUM_MUTANT_COLOR)
 			if(MUTCOLORS in H.dna.species.species_traits) //take current alien color and darken it slightly
-				H.dna.features["mcolor"] = tan_mutant_color(H.dna.features["mcolor"])
+				H.dna.features[MBP_COLOR1] = tan_mutant_color(H.dna.features[MBP_COLOR1])
 			H.update_body()
 
 	if(method == INGEST)
@@ -662,7 +662,7 @@
 			else
 				H.skin_tone = "orange"
 		else if(MUTCOLORS in H.dna.species.species_traits) //Aliens with custom colors simply get turned orange
-			H.dna.features["mcolor"] = "f80"
+			H.dna.features[MBP_COLOR1] = "f80"
 		H.update_body()
 
 /datum/reagent/spraytan/overdose_process(mob/living/M)

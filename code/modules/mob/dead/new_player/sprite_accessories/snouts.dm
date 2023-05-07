@@ -1,6 +1,6 @@
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
-	mutant_part_string = "snout"
+	mutant_part_string = MBP_SNOUT_LIZARD
 	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/snouts/is_not_visible(mob/living/carbon/human/H, tauric)
@@ -153,7 +153,7 @@
 /datum/sprite_accessory/snouts/mam_snouts
 	color_src = MATRIXED
 	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
-	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/snouts/mam_snouts/is_not_visible(mob/living/carbon/human/H, tauric)

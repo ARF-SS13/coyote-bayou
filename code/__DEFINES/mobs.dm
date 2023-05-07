@@ -429,6 +429,7 @@
 #define OFFSET_HAIR "hair"
 #define OFFSET_FHAIR "fhair"
 #define OFFSET_MUTPARTS "mutantparts"
+#define OFFSET_INHANDS "inhands"
 
 //MINOR TWEAKS/MISC
 #define PIXELSHIFT_MIN		-12	//more shifted you can be

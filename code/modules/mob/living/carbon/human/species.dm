@@ -67,7 +67,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/punchstunthreshold = 10//damage at which punches from this race will stun //yes it should be to the attacked race but it's not useful that way even if it's logical
 	var/siemens_coeff = 1 //base electrocution coefficient
 	var/damage_overlay_type = "human" //what kind of damage overlays (if any) appear on our species when wounded?
-	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature["mcolor"]
+	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature[MBP_COLOR1]
 	var/inert_mutation = DWARFISM
 
 	var/sharp_blunt_mod = 1 //the damage modifier something does when blunt, which is everything not a projectile or a knife
@@ -109,8 +109,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/fixed_mut_color3 = ""
 	var/whitelisted = 0 		//Is this species restricted to certain players?
 	var/whitelist = list() 		//List the ckeys that can use this species, if it's whitelisted.: list("John Doe", "poopface666", "SeeALiggerPullTheTrigger") Spaces & capitalization can be included or ignored entirely for each key as it checks for both.
-	var/icon_limbs //Overrides the icon used for the limbs of this species. Mainly for downstream, and also because hardcoded icons disgust me. Implemented and maintained as a favor in return for a downstream's implementation of synths.
-	var/species_type
+	/// I bow to no stream but UPSTREAM
+	//var/icon_limbs //Overrides the icon used for the limbs of this species. Mainly for downstream, and also because hardcoded icons disgust me. Implemented and maintained as a favor in return for a downstream's implementation of synths.
+	var/species_type = SPECIES_TYPE_HUMAN
 
 	var/tail_type //type of tail i.e. mam_tail
 	var/wagging_type //type of wagging i.e. waggingtail_lizard
@@ -120,6 +121,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	//the ids you can use for your species, if empty, it means default only and not changeable
 	var/list/allowed_limb_ids
+
+	/// Force the leg icon to be the one specified above, regardless of any other settings
+	var/force_plantigrade = FALSE
 
 	// simple laugh sound overrides
 	/// This is used for every gender other than female
@@ -156,7 +160,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			GLOB.roundstart_race_names["[S.name]"] = S.id
 			qdel(S)
 	if(!GLOB.roundstart_races.len)
-		GLOB.roundstart_races += "human"
+		GLOB.roundstart_races += SPECIES_HUMAN
 
 /datum/species/proc/check_roundstart_eligible()
 	if(id in (CONFIG_GET(keyed_list/roundstart_races)))
@@ -321,7 +325,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		C.hud_used.update_locked_slots()
 
 	// this needs to be FIRST because qdel calls update_body which checks if we have DIGITIGRADE legs or not and if not then removes DIGITIGRADE from species_traits
-	if(C.dna.species.mutant_bodyparts["legs"] && (C.dna.features["legs"] == "Digitigrade" || C.dna.features["legs"] == "Avian"))
+	if(C.dna.species.mutant_bodyparts[MBP_LEGS] && (C.dna.features[MBP_LEGS] == LIMB_DIGITIGRADE || C.dna.features[MBP_LEGS] == LIMB_AVIAN))
 		species_traits |= DIGITIGRADE
 	if(DIGITIGRADE in species_traits)
 		C.Digitigrade_Leg_Swap(FALSE)
@@ -359,12 +363,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/mob/living/carbon/human/H = C
 		if(NOGENITALS in H.dna.species.species_traits)
 			H.give_genitals(TRUE) //call the clean up proc to delete anything on the mob then return.
-		if(mutant_bodyparts["meat_type"]) //I can't believe it's come to the meat
-			H.type_of_meat = GLOB.meat_types[H.dna.features["meat_type"]]
+		if(mutant_bodyparts[MBP_MEAT_TYPE]) //I can't believe it's come to the meat
+			H.type_of_meat = GLOB.meat_types[H.dna.features[MBP_MEAT_TYPE]]
 
 		if(H.physiology)
-			if(mutant_bodyparts["taur"])
-				var/datum/sprite_accessory/taur/T = GLOB.taur_list[H.dna.features["taur"]]
+			if(mutant_bodyparts[MBP_TAUR])
+				var/datum/sprite_accessory/taur/T = GLOB.taur_list[H.dna.features[MBP_TAUR]]
 				switch(T?.taur_mode)
 					if(STYLE_HOOF_TAURIC)
 						H.physiology.footstep_type = FOOTSTEP_MOB_SHOE
@@ -407,8 +411,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	C.remove_movespeed_modifier(/datum/movespeed_modifier/species)
 
-	if(mutant_bodyparts["meat_type"])
-		C.type_of_meat = GLOB.meat_types[C.dna.features["meat_type"]]
+	if(mutant_bodyparts[MBP_MEAT_TYPE])
+		C.type_of_meat = GLOB.meat_types[C.dna.features[MBP_MEAT_TYPE]]
 	else
 		C.type_of_meat = initial(meat)
 
@@ -495,7 +499,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(!forced_colour)
 				if(hair_color)
 					if(hair_color == "mutcolor")
-						facial_overlay.color = "#" + H.dna.features["mcolor"]
+						facial_overlay.color = "#" + H.dna.features[MBP_COLOR1]
 					else
 						facial_overlay.color = "#" + hair_color
 				else
@@ -560,7 +564,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(!forced_colour)
 					if(hair_color)
 						if(hair_color == "mutcolor")
-							hair_overlay.color = "#" + H.dna.features["mcolor"]
+							hair_overlay.color = "#" + H.dna.features[MBP_COLOR1]
 						else
 							hair_overlay.color = "#" + hair_color
 					else
@@ -641,8 +645,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
 		var/datum/sprite_accessory/taur/TA
-		if(mutant_bodyparts["taur"] && H.dna.features["taur"])
-			TA = GLOB.taur_list[H.dna.features["taur"]]
+		if(mutant_bodyparts[MBP_TAUR] && H.dna.features[MBP_TAUR])
+			TA = GLOB.taur_list[H.dna.features[MBP_TAUR]]
 		if(!(TA?.hide_legs) && H.socks && !H.hidden_socks && H.get_num_legs(FALSE) >= 2)
 			if(H.saved_socks)
 				H.socks = H.saved_socks
@@ -710,7 +714,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(!mutant_bodyparts)
 		return
 
-	var/tauric = mutant_bodyparts["taur"] && H.dna.features["taur"] && H.dna.features["taur"] != "None"
+	var/tauric = mutant_bodyparts[MBP_TAUR] && H.dna.features[MBP_TAUR] && H.dna.features[MBP_TAUR] != "None"
 
 	for(var/mutant_part in mutant_bodyparts)
 		var/reference_list = GLOB.mutant_reference_list[mutant_part]
@@ -813,16 +817,16 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/mutant_string = S.mutant_part_string
 			if(mutant_string == "tailwag") //wagging tails should be coloured the same way as your tail
 				mutant_string = "tail"
-			var/primary_string = advanced_color_system ? "[mutant_string]_primary" : "mcolor"
-			var/secondary_string = advanced_color_system ? "[mutant_string]_secondary" : "mcolor2"
-			var/tertiary_string = advanced_color_system ? "[mutant_string]_tertiary" : "mcolor3"
+			var/primary_string = advanced_color_system ? "[mutant_string]_primary" : MBP_COLOR1
+			var/secondary_string = advanced_color_system ? "[mutant_string]_secondary" : MBP_COLOR2
+			var/tertiary_string = advanced_color_system ? "[mutant_string]_tertiary" : MBP_COLOR3
 			//failsafe: if there's no value for any of these, set it to white
 			if(!H.dna.features[primary_string])
-				H.dna.features[primary_string] = advanced_color_system ? H.dna.features["mcolor"] : "FFFFFF"
+				H.dna.features[primary_string] = advanced_color_system ? H.dna.features[MBP_COLOR1] : "FFFFFF"
 			if(!H.dna.features[secondary_string])
-				H.dna.features[secondary_string] = advanced_color_system ? H.dna.features["mcolor2"] : "FFFFFF"
+				H.dna.features[secondary_string] = advanced_color_system ? H.dna.features[MBP_COLOR2] : "FFFFFF"
 			if(!H.dna.features[tertiary_string])
-				H.dna.features[tertiary_string] = advanced_color_system ? H.dna.features["mcolor3"] : "FFFFFF"
+				H.dna.features[tertiary_string] = advanced_color_system ? H.dna.features[MBP_COLOR3] : "FFFFFF"
 
 			if(!husk)
 				if(!forced_colour)
@@ -866,7 +870,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 						if(HAIR)
 							if(hair_color == "mutcolor")
-								accessory_overlay.color = "#[H.dna.features["mcolor"]]"
+								accessory_overlay.color = "#[H.dna.features[MBP_COLOR1]]"
 							else
 								accessory_overlay.color = "#[H.hair_color]"
 						if(FACEHAIR)
@@ -880,7 +884,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				else
 					accessory_overlay.color = forced_colour
 			else
-				if(bodypart == "ears")
+				if(bodypart == MBP_EARS_LIZARD)
 					accessory_overlay.icon_state = "m_ears_none_[layertext]"
 				if(bodypart == "tail")
 					accessory_overlay.icon_state = "m_tail_husk_[layertext]"
@@ -929,7 +933,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 							extra_accessory_overlay.color = "#[H.dna.features[secondary_string]]"
 					if(HAIR)
 						if(hair_color == "mutcolor")
-							extra_accessory_overlay.color = "#[H.dna.features["mcolor3"]]"
+							extra_accessory_overlay.color = "#[H.dna.features[MBP_COLOR3]]"
 						else
 							extra_accessory_overlay.color = "#[H.hair_color]"
 					if(FACEHAIR)
@@ -975,7 +979,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 							extra2_accessory_overlay.color = "#[H.dna.features[tertiary_string]]"
 					if(HAIR)
 						if(hair_color == "mutcolor3")
-							extra2_accessory_overlay.color = "#[H.dna.features["mcolor"]]"
+							extra2_accessory_overlay.color = "#[H.dna.features[MBP_COLOR1]]"
 						else
 							extra2_accessory_overlay.color = "#[H.hair_color]"
 					if(HORNCOLOR)
@@ -2290,9 +2294,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(mutant_bodyparts[tail_type])
 			mutant_bodyparts[wagging_type] = mutant_bodyparts[tail_type]
 			mutant_bodyparts -= tail_type
-			if(tail_type == "tail_lizard") //special lizard thing
-				mutant_bodyparts["waggingspines"] = mutant_bodyparts["spines"]
-				mutant_bodyparts -= "spines"
+			if(tail_type == MBP_TAIL_LIZARD) //special lizard thing
+				mutant_bodyparts[MBP_TAIL_WAGGING_SPINES] = mutant_bodyparts[MBP_TAIL_SPINES]
+				mutant_bodyparts -= MBP_TAIL_SPINES
 			H.update_body()
 
 /datum/species/proc/stop_wagging_tail(mob/living/carbon/human/H)
@@ -2300,9 +2304,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(mutant_bodyparts[wagging_type])
 			mutant_bodyparts[tail_type] = mutant_bodyparts[wagging_type]
 			mutant_bodyparts -= wagging_type
-			if(tail_type == "tail_lizard") //special lizard thing
-				mutant_bodyparts["spines"] = mutant_bodyparts["waggingspines"]
-				mutant_bodyparts -= "waggingspines"
+			if(tail_type == MBP_TAIL_LIZARD) //special lizard thing
+				mutant_bodyparts[MBP_TAIL_SPINES] = mutant_bodyparts[MBP_TAIL_WAGGING_SPINES]
+				mutant_bodyparts -= MBP_TAIL_WAGGING_SPINES
 			H.update_body()
 
 /datum/species/proc/get_laugh_sound(mob/living/carbon/human/H)

@@ -874,7 +874,7 @@
 	glass_name = "Strong sludge"
 	glass_desc = "An incredibly vile mixture made by submerging fissile materials in sugar. Good for ghouls. Not so good for people."
 	ghoulfriendly = TRUE
-	species_required = "ghoul"
+	species_required = SPECIES_GHOUL
 
 /datum/reagent/consumable/ethanol/species_drink/strongsludge/on_mob_life(mob/living/carbon/M)
 	if(isghoul(M))

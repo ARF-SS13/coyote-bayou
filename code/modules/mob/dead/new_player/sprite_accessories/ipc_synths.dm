@@ -131,8 +131,8 @@
 	icon = 'modular_citadel/icons/mob/ipc_antennas.dmi'
 	color_src = MUTCOLORS2
 	relevant_layers = list(BODY_ADJ_LAYER)
-	recommended_species = list("ipc")
-	mutant_part_string = "ipc_antenna"
+	recommended_species = list(SPECIES_SYNTH_IPC)
+	mutant_part_string = MBP_ANTENNA_IPC
 
 /datum/sprite_accessory/antenna/none
 	name = "None"

@@ -2,7 +2,8 @@
 
 /datum/species/ethereal
 	name = "Ethereal"
-	id = "ethereal"
+	id = SPECIES_ETHEREAL
+	limbs_id = BODYTYPE_ETHEREAL
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
@@ -14,9 +15,16 @@
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	damage_overlay_type = "" //We are too cool for regular damage overlays
-	species_traits = list(MUTCOLORS, HAIR, HAS_FLESH, HAS_BONE) // i mean i guess they have blood so they can have wounds too
+	species_traits = list(
+		MUTCOLORS,
+		HAIR,
+		HAS_FLESH,
+		HAS_BONE
+	) // i mean i guess they have blood so they can have wounds too
 	species_language_holder = /datum/language_holder/ethereal
-	inherent_traits = list(TRAIT_NOHUNGER)
+	inherent_traits = list(
+		TRAIT_NOHUNGER
+	)
 	sexes = FALSE
 	toxic_food = NONE
 	/*
@@ -52,7 +60,7 @@
 	.=..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
-		default_color = "#" + H.dna.features["mcolor"]
+		default_color = "#" + H.dna.features[MBP_COLOR1]
 		r1 = GETREDPART(default_color)
 		g1 = GETGREENPART(default_color)
 		b1 = GETBLUEPART(default_color)

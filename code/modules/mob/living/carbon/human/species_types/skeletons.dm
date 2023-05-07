@@ -1,12 +1,23 @@
 /datum/species/skeleton
 	name = "Skeleton"
-	id = "skeleton"
+	id = SPECIES_SKELETON
+	limbs_id = BODYTYPE_SKELETON
 	say_mod = "rattles"
 	blacklisted = 0
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton
-	species_traits = list(NOBLOOD,NOGENITALS,NOAROUSAL,HAS_BONE,NOTRANSSTING)
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_CALCIUM_HEALER)
+	species_traits = list(
+		NOBLOOD,
+		NOGENITALS,
+		NOAROUSAL,
+		HAS_BONE,
+		NOTRANSSTING
+	)
+	inherent_traits = list(
+		TRAIT_EASYDISMEMBER,
+		TRAIT_LIMBATTACHMENT,
+		TRAIT_CALCIUM_HEALER
+	)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/tongue/bone
 	damage_overlay_type = ""//let's not show bloody wounds or burns over bones.
@@ -14,8 +25,9 @@
 	liked_food = GROSS | MEAT | RAW | DAIRY
 	brutemod = 1.25
 	burnmod = 1.25
+	force_plantigrade = TRUE
 
-	species_type = "skeleton" //they have their own category that's disassociated from undead, paired with plasmapeople
+	species_type = SPECIES_SKELETON //they have their own category that's disassociated from undead, paired with plasmapeople
 
 /datum/species/skeleton/New()
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN]) //skeletons are stronger during the spooky season!
@@ -31,8 +43,8 @@
 
 /datum/species/skeleton/space
 	name = "Spooky Spacey Skeleton"
-	id = "spaceskeleton"
-	limbs_id = "skeleton"
+	id = SPECIES_SKELETON_SPACE
+	limbs_id = SPECIES_SKELETON
 	blacklisted = 1
 	inherent_traits = list(TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NOHUNGER,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT, TRAIT_FAKEDEATH, TRAIT_CALCIUM_HEALER)
 

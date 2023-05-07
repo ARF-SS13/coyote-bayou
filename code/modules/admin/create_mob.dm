@@ -33,15 +33,15 @@
 	H.saved_socks = H.socks
 
 	// Mutant randomizing, doesn't affect the mob appearance unless it's the specific mutant.
-	H.dna.features["mcolor"] = random_short_color()
-	H.dna.features["tail_lizard"] = pick(GLOB.tails_list_lizard)
-	H.dna.features["snout"] = pick(GLOB.snouts_list)
-	H.dna.features["horns"] = pick(GLOB.horns_list)
-	H.dna.features["frills"] = pick(GLOB.frills_list)
-	H.dna.features["spines"] = pick(GLOB.spines_list)
-	H.dna.features["insect_wings"] = pick(GLOB.insect_wings_list)
-	H.dna.features["deco_wings"] = pick(GLOB.deco_wings_list)
-	H.dna.features["insect_fluff"] = pick(GLOB.insect_fluffs_list)
+	H.dna.features[MBP_COLOR1] = random_short_color()
+	H.dna.features[MBP_TAIL_LIZARD] = pick(GLOB.tails_list_lizard)
+	H.dna.features[MBP_SNOUT_LIZARD] = pick(GLOB.snouts_list)
+	H.dna.features[MBP_HORNS] = pick(GLOB.horns_list)
+	H.dna.features[MBP_FRILLS] = pick(GLOB.frills_list)
+	H.dna.features[MBP_TAIL_SPINES] = pick(GLOB.spines_list)
+	H.dna.features[MBP_WINGS_INSECT] = pick(GLOB.insect_wings_list)
+	H.dna.features[MBP_WINGS_DECORATIVE] = pick(GLOB.deco_wings_list)
+	H.dna.features[MBP_FLUFF] = pick(GLOB.insect_fluffs_list)
 	H.dna.features["flavor_text"] = "" //Oh no.
 	H.dna.features["body_model"] = H.gender
 

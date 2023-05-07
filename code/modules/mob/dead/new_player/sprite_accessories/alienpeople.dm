@@ -4,11 +4,11 @@
 *******************************************/
 /datum/sprite_accessory/xeno_dorsal
 	icon = 'modular_citadel/icons/mob/xeno_parts_greyscale.dmi'
-	mutant_part_string = "xenodorsal"
+	mutant_part_string = MBP_XENO_DORSAL
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/xeno_dorsal/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (!H.dna.features["xenodorsal"] || H.dna.features["xenodorsal"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT)))
+	return (!H.dna.features[MBP_XENO_DORSAL] || H.dna.features[MBP_XENO_DORSAL] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT)))
 
 /datum/sprite_accessory/xeno_dorsal/standard
 	name = "Standard"
@@ -31,7 +31,7 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/xeno_tail/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (!H.dna.features["xenotail"] || H.dna.features["xenotail"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+	return (!H.dna.features[MBP_XENO_TAIL] || H.dna.features[MBP_XENO_TAIL] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
 
 /datum/sprite_accessory/xeno_tail/none
 	name = "None"
@@ -51,7 +51,7 @@
 
 /datum/sprite_accessory/xeno_head/is_not_visible(mob/living/carbon/human/H, tauric)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-	return (!H.dna.features["xenohead"] || H.dna.features["xenohead"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
+	return (!H.dna.features[MBP_XENO_HEAD] || H.dna.features[MBP_XENO_HEAD] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
 
 /datum/sprite_accessory/xeno_head/standard
 	name = "Standard"

@@ -1,9 +1,16 @@
 /datum/species/pod
 	// A mutation caused by a human being ressurected in a revival pod. These regain health in light, and begin to wither in darkness.
 	name = "Anthromorphic Plant"
-	id = "pod"
+	id = SPECIES_PODPERSON
+	limbs_id = BODYTYPE_PODPERSON
 	default_color = "59CE00"
-	species_traits = list(MUTCOLORS,EYECOLOR,CAN_SCAR,HAS_FLESH,HAS_BONE)
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		CAN_SCAR,
+		HAS_FLESH,
+		HAS_BONE
+	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slice.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -21,7 +28,10 @@
 
 	species_type = "plant"
 
-	allowed_limb_ids = list("pod","mush")
+	allowed_limb_ids = list(
+		BODYTYPE_PODPERSON,
+		BODYTYPE_MUSH
+	)
 
 /datum/species/pod/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
@@ -66,14 +76,33 @@
 
 /datum/species/pod/pseudo_weak
 	name = "Anthropomorphic Plant"
-	id = "podweak"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,MUTCOLORS,CAN_SCAR,HAS_FLESH,HAS_BONE)
-	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "mam_body_markings" = list(), "taur" = "None", "legs" = "Normal Legs")
-	limbs_id = "pod"
+	id = SPECIES_PODPERSON_WEAK
+	species_traits = list(
+		EYECOLOR,
+		HAIR,
+		FACEHAIR,
+		LIPS,
+		MUTCOLORS,
+		CAN_SCAR,
+		HAS_FLESH,
+		HAS_BONE
+	)
+	mutant_bodyparts = list(
+		MBP_COLOR1 = "FFFFFF",
+		MBP_COLOR2 = "FFFFFF",
+		MBP_COLOR3 = "FFFFFF",
+		MBP_SNOUT = "Husky",
+		MBP_TAIL = "Husky",
+		MBP_EARS = "Husky",
+		MBP_MARKINGS_BODY = list(),
+		MBP_TAUR = "None",
+		MBP_LEGS = "Normal Legs"
+	)
+	limbs_id = BODYTYPE_PODPERSON
 	light_nutrition_gain_factor = 3
 	light_bruteheal = -0.2
 	light_burnheal = -0.2
 	light_toxheal = -0.7
 
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
+	tail_type = MBP_TAIL
+	wagging_type = MBP_TAIL_WAGGING

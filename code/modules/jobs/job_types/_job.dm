@@ -158,12 +158,12 @@
 		bank_account.payday(STARTING_PAYCHECKS, TRUE)
 		H.account_id = bank_account.account_id
 	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
-		if(H.dna.species.id != "human")
+		if(H.dna.species.id != SPECIES_HUMAN)
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
 	// F13 EDIT: GHOULS CANNOT BE LEGION, BROTHERHOOD, TRIBAL OR VAULT
 	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions) || (title in GLOB.tribal_positions))
-		if(H.dna.species.id == "ghoul")
+		if(H.dna.species.id == SPECIES_GHOUL)
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
 

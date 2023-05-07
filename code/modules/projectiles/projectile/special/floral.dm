@@ -10,7 +10,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
-		if(C.dna.species.id == "pod")
+		if(C.dna.species.id == SPECIES_PODPERSON)
 			C.randmuti()
 			C.randmut()
 			C.updateappearance()

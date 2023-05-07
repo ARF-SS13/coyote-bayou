@@ -1,27 +1,41 @@
 /datum/species/dullahan
 	name = "Dullahan"
-	id = "dullahan"
+	id = SPECIES_DULLAHAN
 	default_color = "FFFFFF"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,HAS_FLESH,HAS_BONE)
-	inherent_traits = list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
-	mutant_bodyparts = list("tail_human" = "None", "ears" = "None", "deco_wings" = "None")
+	species_traits = list(
+		EYECOLOR,
+		HAIR,
+		FACEHAIR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE
+	)
+	inherent_traits = list(
+		TRAIT_NOHUNGER,
+		TRAIT_NOBREATH
+	)
+	mutant_bodyparts = list(
+		MBP_TAIL_HUMAN = "None",
+		MBP_EARS_LIZARD = "None",
+		MBP_WINGS_DECORATIVE = "None"
+	)
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM
 	mutant_brain = /obj/item/organ/brain/dullahan
 	mutanteyes = /obj/item/organ/eyes/dullahan
 	mutanttongue = /obj/item/organ/tongue/dullahan
 	mutantears = /obj/item/organ/ears/dullahan
 	blacklisted = TRUE
-	limbs_id = "human"
+	limbs_id = SPECIES_HUMAN
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	has_field_of_vision = FALSE //Too much of a trouble, their vision is already bound to their severed head.
-	species_type = "undead"
+	species_type = SPECIES_TYPE_UNDEAD
 	var/pumpkin = FALSE
 
 	var/obj/item/dullahan_relay/myhead
 
 /datum/species/dullahan/pumpkin
 	name = "Pumpkin Head Dullahan"
-	id = "pumpkindullahan"
+	id = SPECIES_DULLAHAN_PUMPKIN
 	pumpkin = TRUE
 
 /datum/species/dullahan/check_roundstart_eligible()
