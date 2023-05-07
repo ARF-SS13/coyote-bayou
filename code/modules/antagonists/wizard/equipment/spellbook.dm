@@ -752,8 +752,8 @@ datum/spellbook_entry/rod_form
 /obj/item/spellbook/attack_self(mob/user)
 	if(!owner)
 		to_chat(user, span_notice("You bind the spellbook to yourself."))
-		ADD_TRAIT( user, TRAIT_NOGUNS, src)
-		ADD_TRAIT( user, TRAIT_NODRUGS, src)
+		//ADD_TRAIT( user, TRAIT_NOGUNS, src) Removed for now due to how many spells we pulled. ~TK
+		//ADD_TRAIT( user, TRAIT_NODRUGS, src)
 		owner = user
 		return
 	if(user != owner)
