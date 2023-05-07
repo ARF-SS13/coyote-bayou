@@ -141,6 +141,7 @@ datum/spellbook_entry/rod_form
 	name = "Repulse"
 	spell_type = /obj/effect/proc_holder/spell/aoe_turf/repulse
 	category = "Defensive"
+	cost = 99
 
 /datum/spellbook_entry/lightningPacket
 	name = "Lightning bolt!  Lightning bolt!"
@@ -315,7 +316,7 @@ datum/spellbook_entry/rod_form
 	name = "Temporal Katana"
 	desc = "An oddly-weighted katana, reinforced to allow parrying, with a temporal anomaly magically shoved into it. Successful ripostes prove devastating to those unprepared."
 	item_path = /obj/item/katana/timestop
-	cost = 5
+	cost = 99
 
 
 /datum/spellbook_entry/item/staffchange
@@ -343,7 +344,7 @@ datum/spellbook_entry/rod_form
 	name = "Spellblade"
 	desc = "A sword capable of firing blasts of energy which rip targets limb from limb."
 	item_path = /obj/item/gun/magic/staff/spellblade
-
+	cost = 99
 
 /datum/spellbook_entry/item/staffdoor
 	name = "Staff of Door Creation"
@@ -354,9 +355,9 @@ datum/spellbook_entry/rod_form
 
 
 /datum/spellbook_entry/item/staffhealing
-	name = "Staff of Healing"
+	name = "Stick of Undeadening"
 	desc = "An altruistic staff that can heal the lame and raise the dead."
-	item_path = /obj/item/gun/magic/staff/healing
+	item_path = /obj/item/gun/magic/wand/resurrection
 	cost = 9
 	category = "Defensive"
 
@@ -474,6 +475,7 @@ datum/spellbook_entry/rod_form
 	name = "Mjolnir"
 	desc = "A mighty hammer on loan from Thor, God of Thunder. It crackles with barely contained power."
 	item_path = /obj/item/mjollnir
+	cost = 99
 
 
 /datum/spellbook_entry/item/singularity_hammer

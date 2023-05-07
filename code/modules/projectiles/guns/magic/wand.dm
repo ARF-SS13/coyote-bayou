@@ -87,12 +87,13 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/resurrection
-	name = "wand of healing"
+	name = "Stick of healing"
 	desc = "This wand uses healing magics to heal and revive. They are rarely utilized within the Wizard Federation for some reason."
 	ammo_type = /obj/item/ammo_casing/magic/heal
 	fire_sound = 'sound/magic/staff_healing.ogg'
 	icon_state = "revivewand"
-	max_charges = 10 //10, 5, 5, 4
+	max_charges = 1 //10, 5, 5, 4
+	recharge_rate = 30 MINUTES
 
 /obj/item/gun/magic/wand/resurrection/zap_self(mob/living/user)
 	..()
