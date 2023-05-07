@@ -127,7 +127,7 @@
 
 /obj/item/scrying
 	name = "scrying orb"
-	desc = "An incandescent orb of otherworldly energy, staring into it gives you vision beyond mortal means."
+	desc = "An incandescent orb of otherworldly energy, made of a cold material from before-war structures arranged in arrays of bizzare geometry. Staring into it gives you vision beyond mortal means."
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state ="bluespace"
 	throw_speed = 3
@@ -136,6 +136,7 @@
 	damtype = BURN
 	force = 15
 	hitsound = 'sound/items/welder2.ogg'
+	var/scrying_cd = 0
 
 	var/xray_granted = FALSE
 
@@ -148,9 +149,17 @@
 	. = ..()
 
 /obj/item/scrying/attack_self(mob/user)
-	to_chat(user, span_notice("You can see...everything!"))
-	visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
-	user.ghostize(1, voluntary = TRUE)
+	if(src.scrying_cd == 1)
+		to_chat(user, span_warning("The orb is murky, your power drained."))
+		return
+	if(src.scrying_cd == 0)
+		to_chat(user, span_notice("You can see...everything!"))
+		visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
+		user.ghostize(1, voluntary = TRUE)
+		src.scrying_cd = 1
+		sleep(10000)
+		src.scrying_cd = 0
+		return
 
 /////////////////////////////////////////Necromantic Stone///////////////////
 
