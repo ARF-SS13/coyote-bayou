@@ -2205,7 +2205,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/dynamite_box
 
 /datum/loadout_box/caps
-	entry_tag = "25 Caps"
+	entry_tag = "25 Coins"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MISC
 	spawn_thing = /obj/item/stack/f13Cash/caps/twofive

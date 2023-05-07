@@ -138,7 +138,7 @@
  */
 /obj/item/toy/gun
 	name = "cap gun"
-	desc = "Looks almost like the real thing! Ages 8 and up. Please recycle in an autolathe when you're out of caps."
+	desc = "Looks almost like the real thing! Ages 8 and up. Please recycle in an autolathe when you're out of coins."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "revolver"
 	item_state = "gun"
@@ -162,7 +162,7 @@
 			to_chat(user, span_warning("It's already fully loaded!"))
 			return 1
 		if (A.amount_left <= 0)
-			to_chat(user, span_warning("There are no more caps!"))
+			to_chat(user, span_warning("There are no more coins!"))
 			return 1
 		if (A.amount_left < (7 - src.bullets))
 			src.bullets += A.amount_left
@@ -514,7 +514,7 @@
 
 /obj/item/toy/snappop/Initialize()
 	. = ..()
-	
+
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
@@ -1547,7 +1547,7 @@
 	icon_state = "deck_nanotrasen_full"
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("declares an attack against")
-	
+
 /obj/item/toy/tragicthegarnering/attack_self(mob/user)
 	if(Adjacent(user))
 		user.visible_message("<span class='notice'>[user] resists the urge to play with his deck of Tragic", \
