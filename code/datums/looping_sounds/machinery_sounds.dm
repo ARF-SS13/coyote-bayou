@@ -104,6 +104,18 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/datum/looping_sound/wand_charge_1
+	start_sound = list(SOUND_LOOP_ENTRY('sound/magic/wand_loop/magic_charge_start.ogg', 1.4 SECONDS, 1))
+	start_length = 5
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/magic/wand_loop/magic_charge_mid.ogg', 1.5 SECONDS, 1), 
+		)
+	mid_length = 5
+	end_sound = list(SOUND_LOOP_ENTRY('sound/magic/wand_loop/magic_charge_end.ogg', 1 SECONDS, 1))
+	volume = 30
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /datum/looping_sound/grill
 	mid_length = 2
 	mid_sounds = list(

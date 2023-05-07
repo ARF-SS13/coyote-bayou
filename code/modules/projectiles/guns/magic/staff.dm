@@ -41,7 +41,7 @@
 	icon_state = "staffofchaos"
 	item_state = "staffofchaos"
 	max_charges = 10
-	recharge_rate = 2
+	recharge_rate = 1 MINUTES
 	no_den_usage = 1
 	var/allowed_projectile_types = list(/obj/item/projectile/magic/change, /obj/item/projectile/magic/animate, /obj/item/projectile/magic/resurrection,
 	/obj/item/projectile/magic/death, /obj/item/projectile/magic/teleport, /obj/item/projectile/magic/door, /obj/item/projectile/magic/aoe/fireball,
@@ -59,7 +59,7 @@
 	icon_state = "staffofdoor"
 	item_state = "staffofdoor"
 	max_charges = 10
-	recharge_rate = 2
+	recharge_rate = 30 SECONDS
 	no_den_usage = 1
 
 /obj/item/gun/magic/staff/spellblade
@@ -92,6 +92,6 @@
 	icon_state = "locker"
 	item_state = "locker"
 	max_charges = 6
-	recharge_rate = 4
+	recharge_rate = 10 SECONDS
 
 
