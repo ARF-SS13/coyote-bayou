@@ -138,6 +138,7 @@
 	hitsound = 'sound/items/welder2.ogg'
 	var/scrying_cd = 0
 
+/* //negative
 	var/xray_granted = FALSE
 
 /obj/item/scrying/equipped(mob/user)
@@ -147,6 +148,7 @@
 			H.dna.add_mutation(XRAY)
 			xray_granted = TRUE
 	. = ..()
+*/
 
 /obj/item/scrying/attack_self(mob/user)
 	if(src.scrying_cd == 1)
@@ -157,7 +159,7 @@
 		visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
 		user.ghostize(1, voluntary = TRUE)
 		src.scrying_cd = 1
-		sleep(12000)
+		sleep(12000) //TODO: this is terrible and i'm genuinely sorry ¯\_(ツ)_/¯
 		src.scrying_cd = 0
 		return
 
