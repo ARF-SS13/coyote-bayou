@@ -153,11 +153,11 @@
 		to_chat(user, span_warning("The orb is murky, your power drained."))
 		return
 	if(src.scrying_cd == 0)
-		to_chat(user, span_notice("You can see...everything!"))
+		to_chat(user, span_notice("Your eyes glaze over. Warmth bathes your body. The mind wanders."))
 		visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
 		user.ghostize(1, voluntary = TRUE)
 		src.scrying_cd = 1
-		sleep(10000)
+		sleep(20000)
 		src.scrying_cd = 0
 		return
 
