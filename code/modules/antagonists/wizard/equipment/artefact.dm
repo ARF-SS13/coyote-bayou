@@ -136,32 +136,21 @@
 	damtype = BURN
 	force = 15
 	hitsound = 'sound/items/welder2.ogg'
-	var/scrying_cd = 0
-
-/* //negative
-	var/xray_granted = FALSE
-
-/obj/item/scrying/equipped(mob/user)
-	if(!xray_granted && ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(!(H.dna.check_mutation(XRAY)))
-			H.dna.add_mutation(XRAY)
-			xray_granted = TRUE
-	. = ..()
-*/
+	var/cooldown_time = 1000 //15 min
+	var/cooldown = 0
 
 /obj/item/scrying/attack_self(mob/user)
-	if(src.scrying_cd == 1)
-		to_chat(user, span_warning("The orb is murky, your power drained."))
-		return
-	if(src.scrying_cd == 0)
+	if(cooldown <= world.time)
 		to_chat(user, span_notice("Your eyes glaze over. Warmth bathes your body. The mind wanders."))
 		visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
 		user.ghostize(1, voluntary = TRUE)
-		src.scrying_cd = 1
-		sleep(12000) //TODO: this is terrible and i'm genuinely sorry ¯\_(ツ)_/¯
-		src.scrying_cd = 0
+		cooldown = world.time + cooldown_time
 		return
+	if(cooldown > world.time)
+		to_chat(user, span_warning("The orb is murky, your power drained."))
+		return
+	return
+
 
 /////////////////////////////////////////Necromantic Stone///////////////////
 
