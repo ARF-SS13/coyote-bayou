@@ -18,7 +18,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 	var/stored_caps = 0	// store caps
 	var/expected_price = 0
-	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
+	var/list/prize_list = list()  // infinite profits should be crap, more limited profits should be good. Should never be better than cargo.
 	var/trader_key = WVM_SCRAPPER
 
 
@@ -49,6 +49,21 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/advanced_crafting_components = 15,
 		/obj/item/stealthboy = 100,
 		/obj/item/blueprint/research = 25,
+		/obj/item/stack/sheet/bone = 4,
+		/obj/item/stack/sheet/cloth = 0.2, // low because botany and because use this for medical supplies you drongo
+		/obj/item/stack/sheet/leather = 0.8,
+		/obj/item/reagent_containers/food/snacks/meat = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/human = 0,
+		/obj/item/stack/sheet/animalhide = 3,
+		/obj/item/clothing/suit/armor = 10,
+		/obj/item/clothing/head/helmet = 10,
+		/obj/item/clothing/suit/armor/heavy/salvaged_pa = 30,
+		/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa = 30,
+		/obj/item/clothing/suit/armor/power_armor = 75,
+		/obj/item/clothing/head/helmet/f13/power_armor = 75,
+		/obj/item/melee = 5,
+		/obj/item/melee/transforming = 5,
+		/obj/item/gun/energy/laser = 15,
 		// pistols/revolvers, 5 caps
 		/obj/item/gun/ballistic/revolver = 5,
 		/obj/item/gun/ballistic/automatic/pistol = 5,
@@ -93,28 +108,40 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(
+		/obj/item/gun/ballistic/automatic/autopipe = 0,
+		/obj/item/gun/ballistic/rifle/hobo/lasmusket = 0,
+		/obj/item/gun/ballistic/rifle/hobo/plasmacaster = 0,
+		/obj/item/gun/ballistic/automatic/hobo/destroyer = 0,
+		/obj/item/gun/ballistic/rifle/hunting/obrez = 0,
+		/obj/item/gun/ballistic/revolver/winchesterrebored = 0,
+		/obj/item/gun/ballistic/revolver/brick = 0,
+		/obj/item/gun/ballistic/revolver/sling/staff = 0,
+		/obj/item/gun/ballistic/automatic/hobo/zipgun = 0,
+		/obj/item/gun/ballistic/revolver/hobo/piperifle = 0,
+		/obj/item/gun/ballistic/revolver/hobo/piperifle/romckit = 0,
+		/obj/item/gun/ballistic/revolver/hobo/pepperbox = 0,
+		/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 0,
+		/obj/item/gun/ballistic/revolver/hobo/knifegun = 0,
+		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 0,
 		/obj/item/stack/sheet/animalhide/chitin = 1,
 		/obj/item/stack/sheet/animalhide/deathclaw = 25,
 		/obj/item/stack/sheet/animalhide/gecko = 3,
-		/obj/item/stack/sheet/animalhide/molerat = 2,
+		/obj/item/stack/sheet/animalhide/molerat = 3,
 		/obj/item/stack/sheet/animalhide/wolf = 10,
 		/obj/item/stack/sheet/animalhide/radstag = 15,
 		/obj/item/stack/sheet/animalhide/brahmin = 8,
-		/obj/item/stack/sheet/animalhide/human = 1,
-		/obj/item/stack/sheet/bone = 1,
-		/obj/item/stack/sheet/cloth = 0.1,
-		/obj/item/stack/sheet/leather = 0.2,
-		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 15,
-		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 3,
+		/obj/item/stack/sheet/animalhide/human = 0,
+		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 25, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 10,
+		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 10,
+		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 10,
+		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 10,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 8,
+		/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 12,
+		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 7,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 7,
 		/obj/item/stock_parts/capacitor/adv = 3,
 		/obj/item/stock_parts/scanning_module/adv = 3,
 		/obj/item/stock_parts/manipulator/nano = 3,
@@ -173,6 +200,10 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/trappist = 15,
 		/obj/item/export/bottle/goldschlager = 15,
 		/obj/item/export/bottle/patron = 15,
+		/obj/item/card/lowbounty = 100,
+		/obj/item/card/midbounty = 200,
+		/obj/item/card/highbounty = 400,
+		/obj/item/card/kingbounty = 800,
 	)
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
@@ -283,10 +314,17 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Bolt Rifles and Shotguns: 10¢<br>"
 	dat += "Automatics and Semiautomatics: 15¢<br>"
 	dat += "Improvised Weapons: 0¢<br>"
-	dat += "Energy Weapons: 0¢ (for now)<br>"
-	dat += "Armor: 0¢ (for now)<br>"
-	dat += "Power Armor: 0¢ (for now)<br>"
-	dat += "Melee Weapons: 0¢ (for now)<br>"
+	dat += "Energy Weapons: 15¢<br>"
+	dat += "Armor: 10¢ (for now)<br>"
+	dat += "Salvaged Power Armor: 30¢<br>"
+	dat += "Power Armor: 75¢<br>"
+	dat += "Melee Weapons: 10¢<br>"
+	dat += "<br>"
+	dat += "<b>Turn your kills into caps today!</b><br>"
+	dat += "Small Roller Bounty Ticket: 100¢<br>"
+	dat += "Medium Roller Bounty Ticket: 200¢<br>"
+	dat += "High Roller Bounty Ticket: 400¢<br>"
+	dat += "King's Bounty Ticket: 800¢<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)
@@ -643,7 +681,8 @@ Fence
 	name = "Nash Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for caps. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
-	buyables_loose = list( 	/obj/item/card/lowbounty = 100,
+	buyables_loose = list(
+						/obj/item/card/lowbounty = 100,
 						/obj/item/card/midbounty = 200,
 						/obj/item/card/highbounty = 400,
 						/obj/item/card/kingbounty = 800
@@ -658,10 +697,10 @@ Fence
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Turn your kills into caps today!</b><br>"
-	dat += "Small Roller Bounty Ticket: 100 copper<br>"
-	dat += "Medium Roller Bounty Ticket: 200 copper<br>"
-	dat += "High Roller Bounty Ticket: 400 copper<br>"
-	dat += "King's Bounty Ticket: 800 copper<br>"
+	dat += "Small Roller Bounty Ticket: 100¢<br>"
+	dat += "Medium Roller Bounty Ticket: 200¢<br>"
+	dat += "High Roller Bounty Ticket: 400¢<br>"
+	dat += "King's Bounty Ticket: 800¢<br>"
 	dat += ""
 	dat += "</div>"
 

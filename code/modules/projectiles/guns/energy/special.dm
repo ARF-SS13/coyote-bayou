@@ -32,7 +32,7 @@
 	desc = "This weapon makes a continual and quiet hum, even when the power cell is removed. Written on the side is 'Type III Pulse Projector,' whatever that means."
 	icon_state = "tesla"
 	item_state = "tesla"
-	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
