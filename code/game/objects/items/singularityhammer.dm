@@ -96,6 +96,7 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_HUGE
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/mjollnir/Initialize()
 	. = ..()

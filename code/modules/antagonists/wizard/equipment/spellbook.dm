@@ -181,6 +181,7 @@ datum/spellbook_entry/rod_form
 	name = "Blink"
 	spell_type = /obj/effect/proc_holder/spell/targeted/turf_teleport/blink
 	category = "Mobility"
+	cost = 99
 
 
 /datum/spellbook_entry/teleport

@@ -97,6 +97,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 35 // oops
 	item_flags = ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/bokken/quick_parry/proj
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/katana/timestop/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 	if(ishuman(owner))

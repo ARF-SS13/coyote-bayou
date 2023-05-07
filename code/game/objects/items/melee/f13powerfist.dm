@@ -292,6 +292,7 @@
 	damtype = "fire"
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 0.3
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 	var/obj/item/shishkebabpack/tank
 
