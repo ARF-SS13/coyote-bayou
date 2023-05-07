@@ -24,6 +24,9 @@
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses magic instead
 	pin = /obj/item/firing_pin/magic
 
+/obj/item/gun/magic/update_icon_state()
+	return // icon_prefix is buhhuuulllllshit and shouldnt be used
+
 /obj/item/gun/magic/afterattack(atom/target, mob/living/user, flag)
 	if(no_den_usage)
 		var/area/A = get_area(user)
@@ -41,14 +44,13 @@
 	return charges
 
 /obj/item/gun/magic/recharge_newshot()
-	if (charges && chambered && !chambered.BB)
+	if (chambered && !chambered.BB)
 		chambered.newshot()
 
 /obj/item/gun/magic/process_chamber()
-	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
-		charges--//... drain a charge
-		recharge_newshot()
-	start_charging()
+	charges-- // deduct a charge
+	recharge_newshot() // Make sure there's still a bullet in the chamber
+	start_charging() // Start charging a new shot
 
 /obj/item/gun/magic/Initialize()
 	. = ..()
@@ -72,16 +74,15 @@
 	charge_timer = addtimer(CALLBACK(src, .proc/charge), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /obj/item/gun/magic/proc/charge()
+	recharge_newshot()
 	if(charges >= max_charges)
 		charges = max_charges
 		charge_full_message()
 		soundloop.stop()
 		charge_timer = null
 		return FALSE
-	if(charges < 1)
-		recharge_newshot()
 	charges++
-	charge_partial_message(FALSE)
+	charge_partial_message()
 	charge_timer = addtimer(CALLBACK(src, .proc/charge), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /obj/item/gun/magic/proc/charge_full_message()
