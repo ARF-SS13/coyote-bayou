@@ -217,6 +217,7 @@
 	sharpness = SHARP_EDGED
 	attack_speed = 4
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/hand_item/clawer
 	name = "Clawer"
