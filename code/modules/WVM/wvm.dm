@@ -10,7 +10,7 @@
 
 /* exchange rates X * CAP*/
 #define CASH_AUR_VENDOR 100 /* 100 caps to 1 AUR */
-#define CASH_DEN_VENDOR 4 /* 4 caps to 1 DEN */
+#define CASH_DEN_VENDOR 10 /* 4 caps to 1 DEN */
 #define CASH_NCR_VENDOR 0.4 /* $100 to 40 caps */
 
 // Total number of caps value spent in the Trading Protectrons Vendors
