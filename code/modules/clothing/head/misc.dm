@@ -723,7 +723,7 @@
 	item_state = "mk2_nettan_5"
 
 /obj/item/clothing/head/m1_standard
-	name = "Standerd Helmet"
+	name = "Standard Helmet"
 	desc = "A helmet, amazing!"
 	icon_state = "m1_standard"
 	item_state = "m1_standard"
