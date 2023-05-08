@@ -1917,3 +1917,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/desert_uniform
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/f13/ranger/modif_ranger
+	name = "Green Ranger Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/f13/ranger/modif_ranger
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

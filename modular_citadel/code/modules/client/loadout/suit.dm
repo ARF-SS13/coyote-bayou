@@ -593,6 +593,18 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/us_coat
+	name = "us coat"
+	path = /obj/item/clothing/suit/ranger/us_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/trench_colorable
+	name = "trench coat, colorable"
+	path = /obj/item/clothing/suit/toggle/labcoat/ranger/trench_colorable
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 
 /datum/gear/suit/christmascoatr

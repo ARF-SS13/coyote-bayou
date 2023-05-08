@@ -1134,3 +1134,17 @@
 	icon_state = "ned"
 	item_state = "ned"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/ranger/us_coat
+	name = "US coat"
+	desc = "A nice enough looking coat"
+	icon_state = "us_coat"
+	item_state = "us_coat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/ranger/trench_colorable
+	name = "Trench, colorable"
+	desc = "Trench coat! Colorable verision."
+	icon_state = "trench_colorable"
+	item_state = "trench_colorable"
+	armor = ARMOR_VALUE_LIGHT
