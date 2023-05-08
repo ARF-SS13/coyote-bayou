@@ -35,7 +35,7 @@
 
 
 /datum/export/item/trashgun
-	cost = 120
+	cost = 100
 	unit_name = "trash guns"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell,
@@ -52,7 +52,7 @@
 		)
 
 /datum/export/item/commongun
-	cost = 170
+	cost = 150
 	unit_name = "common guns"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn,
