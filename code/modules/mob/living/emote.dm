@@ -1633,6 +1633,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	key_third_person = "is being a little <span class='love'>flirty!</span>"
 	message = "is being a little <span class='love'>flirty!</span>"
 	message_param = "is <span class='love'>flirting with</span> %t sneakily!"
+	sound = 'sound/f13effects/sunsetsounds/blush.ogg'
 	message_range = 1
 
 /* For making new flirt/affection options
@@ -1654,14 +1655,12 @@ datum/emote/living/flirt/custom
 	key_third_person = "is <span class='love'>eyeing up</span> somebody!"
 	message = "is <span class='love'>eyeing up</span> somebody!"
 	message_param = "is <span class='love'>eyeing up</span> %t sneakily!"
-	sound = 'sound/effects/blink.ogg'
 
 datum/emote/living/flirt/flirtaccept
 	key = "flirtaccept"
 	key_third_person = "lets whoever continue whatever it is they were <span class='userlove'>doing!</span>"
 	message = "lets whoever continue whatever it is they were <span class='userlove'>doing!</span>"
 	message_param = "lets %t continue whatever it is they were <span class='userlove'>doing!</span>"
-	sound = 'sound/f13effects/sunsetsounds/blush.ogg'
 
 datum/emote/living/flirt/flirtreject
 	key = "flirtreject"
@@ -1675,7 +1674,6 @@ datum/emote/living/flirt/flirtblush
 	key_third_person = "is <span class='love'>blushing deeply</span> at %t, their mind has clearly wandered a bit!"
 	message = "is <span class='love'>blushing deeply</span> at %t, their mind has clearly wandered a bit!"
 	message_param = "is <span class='love'>blushing deeply</span> at %t, their mind has clearly wandered a bit!"
-	sound = 'sound/f13effects/sunsetsounds/blush.ogg'
 
 datum/emote/living/flirt/flirtsniff
 	key = "flirtsniff"
