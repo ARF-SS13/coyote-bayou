@@ -615,6 +615,24 @@
 		/datum/firemode/semi_auto/slow
 	)
 
+// Ballistic Fist			Keywords: Damage max 42, Shotgun
+/obj/item/gun/ballistic/revolver/ballisticfist
+	name = "ballistic fist"
+	desc = "This powerfist has been modified to have two shotgun barrels welded to it, with the trigger integrated into the knuckle guard. For those times when you want to punch someone and shoot them in the face at the same time."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "ballisticfist"
+	item_state = "powerfist"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	weapon_class = WEAPON_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
 // BETA // Obsolete
 /obj/item/gun/ballistic/shotgun/shotttesting
 	name = "shotgun"
