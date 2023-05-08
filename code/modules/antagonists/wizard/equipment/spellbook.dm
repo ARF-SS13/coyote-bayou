@@ -216,7 +216,7 @@ datum/spellbook_entry/rod_form
 	name = "Summon Item"
 	spell_type = /obj/effect/proc_holder/spell/targeted/summonitem
 	category = "Assistance"
-	cost = 1
+	cost = 99
 
 
 /datum/spellbook_entry/lichdom
