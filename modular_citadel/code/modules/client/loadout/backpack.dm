@@ -512,5 +512,10 @@
 
 /datum/gear/backpack/firebow
 	name  = "Tribal Firestarter"
-	path = /obj/item/firebow 
+	path = /obj/item/firebow
+	cost = 0
+
+/datum/gear/backpack/broom
+	name  = "Broom staff"
+	path = /obj/item/staff/broom
 	cost = 0

@@ -622,6 +622,35 @@
 	path = /obj/item/clothing/suit/hooded/wintercoat/christmascoatrg
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/wizardrobe/red
+	name = "Red Wizard Robe"
+	path = /obj/item/clothing/suit/wizrobe/red
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/wizardrobe/yellow
+	name = "Yellow Wizard Robe"
+	path = /obj/item/clothing/suit/wizrobe/yellow
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/wizardrobe/black
+	name = "black Wizard Robe"
+	path = /obj/item/clothing/suit/wizrobe/black
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/wizardrobe/marisa
+	name = "marisa Wizard Robe"
+	path = /obj/item/clothing/suit/wizrobe/marisa
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/wizardrobe/magusred
+	name = "magus red Wizard Robe"
+	path = /obj/item/clothing/suit/wizrobe/magusred
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/wizardrobe/magusblue
+	name = "magus blue Wizard Robe"
+	path = /obj/item/clothing/suit/wizrobe/magusblue
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 // BEGIN_INTERNALS
 // END_INTERNALS

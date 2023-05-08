@@ -926,3 +926,29 @@ datum/gear/head/steelpot_bandolier
 	name = "Standard Helm"
 	path = /obj/item/clothing/head/m1_standard
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/wizard/red
+	name = "red wizard hat"
+	path = /obj/item/clothing/head/wizard/red
+
+/datum/gear/head/wizard/yellow
+	name = "yellow wizard hat"
+	path = /obj/item/clothing/head/wizard/yellow
+
+/datum/gear/head/wizard/black
+	name = "black wizard hat"
+	path = /obj/item/clothing/head/wizard/black
+
+/datum/gear/head/wizard/marisa
+	name = "marisa wizard hat"
+	path = /obj/item/clothing/head/wizard/marisa
+
+/datum/gear/head/wizard/magus
+	name = "magus wizard hat"
+	path = /obj/item/clothing/head/wizard/magus
+
+/datum/gear/head/wizard/violet
+	name = "violet wizard hat"
+	path = /obj/item/clothing/head/wizard/violet
+
+
