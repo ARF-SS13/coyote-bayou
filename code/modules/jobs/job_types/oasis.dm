@@ -1150,7 +1150,7 @@ Mayor
 /datum/outfit/job/den/f13banker
 	name = "Banker"
 	jobtype = /datum/job/oasis/f13banker
-	belt = /obj/item/kit_spawner/lawman
+	belt = /obj/item/kit_spawner/townie/mayor
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
