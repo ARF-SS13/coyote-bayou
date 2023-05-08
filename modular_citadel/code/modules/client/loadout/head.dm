@@ -906,3 +906,23 @@ datum/gear/head/steelpot_bandolier
 	name = "fever blossom"
 	path = /obj/item/reagent_containers/food/snacks/grown/fever_blossom
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/tribal_helmet
+	name = "tribal helmet"
+	path = /obj/item/clothing/head/tribal_helmant
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/adrian
+	name = "adrian helmet"
+	path = /obj/item/clothing/head/adrian
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/mk2_nettan_5
+	name = "Nettan Helm"
+	path = /obj/item/clothing/head/mk2_nettan_5
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/m1_standard
+	name = "Standard Helm"
+	path = /obj/item/clothing/head/m1_standard
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
