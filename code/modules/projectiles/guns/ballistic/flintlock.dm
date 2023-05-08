@@ -201,8 +201,7 @@
 	playsound(src, 'sound/weapons/emitter.ogg', 25, 1)
 
 /obj/item/gun/ballistic/bow/chamber_round()
-	chambered = magazine.stored_ammo[1]
-
+	chambered = LAZYACCESS(magazine.stored_ammo, 1)
 
 //Fenny begins being evil here
 

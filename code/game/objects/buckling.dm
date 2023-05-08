@@ -34,6 +34,14 @@
 	if(buckled_mobs.len)
 		return TRUE
 
+/// Makes the mob buckle itself to whatever's in range
+/mob/living/proc/buckle_up(maxdist = 1)
+	for(var/atom/movable/chair in range(maxdist, src))
+		if(!chair.can_buckle)
+			continue
+		if(chair.buckle_mob(src, TRUE, FALSE))
+			return TRUE
+
 //procs that handle the actual buckling and unbuckling
 /atom/movable/proc/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	LAZYINITLIST(buckled_mobs)

@@ -34,18 +34,12 @@
 	/// A string pointing to a list pointing to a datum pointing to a bunch of sound shit
 	var/sound_properties = CSP_PISTOL_LIGHT
 
-/obj/item/ammo_casing/spent
-	name = "spent bullet casing"
-	BB = null
-
-/obj/item/ammo_casing/spent/Initialize()
-	. = ..()
-	deduct_powder_and_bullet_mats()
-
-/obj/item/ammo_casing/Initialize()
+/obj/item/ammo_casing/Initialize(mapload, spent)
 	setup_sound_datums()
 	. = ..()
-	if(projectile_type)
+	if(spent)
+		spend_casing()
+	if(projectile_type && !spent)
 		BB = new projectile_type(src)
 	pixel_x = rand(-10, 10)
 	pixel_y = rand(-10, 10)
@@ -57,9 +51,19 @@
 		QDEL_NULL(BB)
 	return ..()
 
+/obj/item/ammo_casing/proc/spend_casing()
+	name = "spent [initial(name)]"
+	BB = null
+	deduct_powder_and_bullet_mats()
+	update_icon()
+
 /obj/item/ammo_casing/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? "-live" : ""]"
-	desc = "[initial(desc)][BB ? "" : " This one is spent."]"
+
+/obj/item/ammo_casing/examine(mob/user)
+	. = ..()
+	if(!BB)
+		. += span_alert("This one is spent.")
 
 /// When you shoot a bullet, the bullet and powder go away! wow!
 /obj/item/ammo_casing/proc/deduct_powder_and_bullet_mats()

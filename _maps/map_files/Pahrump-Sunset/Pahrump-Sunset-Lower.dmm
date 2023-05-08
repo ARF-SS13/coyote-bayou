@@ -22084,12 +22084,7 @@
 /area/f13/building/sewers)
 "nSF" = (
 /obj/structure/chair/sofa/left,
-/mob/living/simple_animal/hostile/centaur{
-	faction = list("hostile","supermutant","neutral");
-	buckled = 1;
-	name = "Lazy Larry (and his dog Jeffery)";
-	desc = "That's Larry.  He's aight."
-	},
+/mob/living/simple_animal/hostile/centaur/lazy_larry,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "nSM" = (

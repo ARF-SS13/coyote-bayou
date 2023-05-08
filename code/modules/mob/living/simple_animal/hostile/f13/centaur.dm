@@ -75,6 +75,17 @@
 	armour_penetration = 0.1
 
 
+/mob/living/simple_animal/hostile/centaur/lazy_larry
+	name = "Lazy Larry (and his dog Jeffery)"
+	desc = "That's Larry.  He's aight."
+	faction = list("hostile","supermutant","neutral")
+	despawns_when_lonely = FALSE
+	environment_smash = NONE
+
+/mob/living/simple_animal/hostile/centaur/lazy_larry/Initialize()
+	. = ..()
+	buckle_up()
+
 // -----------------------------------
 // ABOMINATION
 
