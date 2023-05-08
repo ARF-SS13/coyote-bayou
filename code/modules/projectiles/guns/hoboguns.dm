@@ -561,7 +561,7 @@
 
 /obj/item/gun/ballistic/revolver/brick
 	name = "brick launcher"
-	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."
+	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity. You can probably find more bricks with *brick!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "launcher"
 	item_state = "rocketlauncher"
