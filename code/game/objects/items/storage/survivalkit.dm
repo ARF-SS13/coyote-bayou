@@ -34,8 +34,8 @@
 
 /obj/item/storage/survivalkit/tribal/PopulateContents()
 	new /obj/item/flashlight/flare/torch(src)
-	new /obj/item/flashlight/flare/torch(src)
 	new /obj/item/melee/onehanded/knife/bone(src)
+	new /obj/item/firebow(src)
 
 /obj/item/storage/survivalkit/tribal/empty/PopulateContents()
 	return
