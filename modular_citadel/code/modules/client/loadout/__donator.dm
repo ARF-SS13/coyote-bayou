@@ -434,7 +434,6 @@
 /obj/item/storage/box/large/custom_kit/fuzlet/PopulateContents()
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/geiger_counter(src)
-	new /obj/item/toy/plush/mammal/wolf/blue(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 	new /obj/item/stack/marker_beacon/thirty(src)
 	new /obj/item/screwdriver/nuke/nt(src)
@@ -452,14 +451,12 @@
 	new /obj/item/storage/bag/trash/sack(src)
 
 /datum/gear/donator/kits/fuzlet3
-	name = "Thiefy thief Kit"
+	name = "Snowfox Kit"
 	path = /obj/item/storage/box/large/custom_kit/fuzlet3
 	ckeywhitelist = list("fuzlet")
 
 /obj/item/storage/box/large/custom_kit/fuzlet3/PopulateContents()
-	new /obj/item/storage/survivalkit/triple(src)
-	new /obj/item/storage/bag/trash/sack(src)
-	new /obj/item/gun_upgrade/muzzle/silencer(src)
+	new /obj/item/dnainjector/geladikinesis(src)
 
 // G
 
