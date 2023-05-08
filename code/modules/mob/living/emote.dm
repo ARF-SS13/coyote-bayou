@@ -1815,6 +1815,24 @@ datum/emote/living/flirt/hairplay
 	message = "<span class='love'>plays with their hair</span> while looking at somebody."
 	message_param = "<span class='love'>plays with their hair</span> while looking at %t."
 
+datum/emote/living/flirt/sideeye
+	key = "flirtsideeye"
+	key_third_person = "<span class='love'>side-eyes at</span> somebody, getting an eyeful."
+	message = "<span class='love'>side-eyes at</span> somebody, getting an eyeful."
+	message_param = "<span class='love'>side-eyes</span> %t, getting an eyeful."
+
+datum/emote/living/flirt/throwback
+	key = "flirtthrowback"
+	key_third_person = "<span class='love'>throws their behind back at</span> somebody, trying to booty bump them!"
+	message = "<span class='love'>throws their behind back at</span> somebody, trying to booty bump them!"
+	message_param = "<span class='love'>throws their behind back at</span> %t, trying to booty bump them!"
+
+datum/emote/living/flirt/oopstouch
+	key = "flirtoopstouch"
+	key_third_person = "<span class='love'>accidently brushes against</span> somebody, <span class='love'>oops!</span>"
+	message = "<span class='love'>accidently brushes against</span> somebody, <span class='love'>oops!</span>"
+	message_param = "<span class='love'>accidently brushes against</span> %t, <span class='love'>oops!</span>"
+
 
 
 
