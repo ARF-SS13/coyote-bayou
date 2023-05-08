@@ -89,3 +89,6 @@
 	name = "leather bandolier"
 	path = /obj/item/storage/belt/bandolier/boer_band
 
+/datum/gear/belt/webbing/french
+	name = "french webbing"
+	path = /obj/item/storage/belt/military/french_webbing
