@@ -96,7 +96,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Auxilia",
 "Legion Slave",
 
-"Mayor",
+"High Alderperson",
 "Sheriff",
 "Deputy",
 "Texarkana Quartermaster",
@@ -153,8 +153,8 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
-	"Mayor",
-	"Secretary",
+	"High Alderperson",
+	"Councilperson",
 	"Sheriff",
 	"Deputy",
 //	"Farmer",

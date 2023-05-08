@@ -475,9 +475,9 @@ datum/gear/head/steelpot_bandolier
 	/*restricted_desc = "Nash PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
-							"Mayor",
+							"High Alderperson",
 							"Detective",
-							"Secretary",
+							"Councilperson",
 							"Shopkeeper",
 						)*/
 
