@@ -844,12 +844,15 @@
 /obj/effect/spawner/lootdrop/f13/rare_armor
 	name = "rare armor"
 	loot = list(
-		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 10,
+		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 5,
 		/obj/effect/spawner/bundle/f13/armor/riot = 10,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 10,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 5,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 10,
 		/obj/effect/spawner/bundle/f13/armor/hotrodpa = 2,
 		/obj/item/clothing/suit/armor/power_armor/t45d = 1,
+		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 5,
+		/obj/item/clothing/suit/armor/heavy/riot/vault = 5,
+		/obj/item/clothing/suit/armor/heavy/riot/marine = 5
 	)
 
 //////////////////

@@ -4891,6 +4891,7 @@
 /obj/structure/bed{
 	pixel_y = 15
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "asr" = (
@@ -6253,8 +6254,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -9999,8 +10000,8 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/spacevine,
 /obj/structure/flora/tree/pink_tree{
-	pixel_x = -64;
-	color = "#BBBBBB"
+	color = "#BBBBBB";
+	pixel_x = -64
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -10581,6 +10582,9 @@
 /area/f13/building/mall)
 "aKZ" = (
 /obj/structure/closet/crate/freezer/blood,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "aLa" = (
@@ -13044,6 +13048,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/building/abandoned)
 "aSq" = (
@@ -13111,6 +13116,8 @@
 /obj/structure/closet/crate/freezer/blood{
 	anchored = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/abandoned)
 "aSB" = (
@@ -14461,9 +14468,9 @@
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
+	layer = 2;
 	pixel_x = -14;
-	pixel_y = 0;
-	layer = 2
+	pixel_y = 0
 	},
 /obj/structure/fence/wooden{
 	density = 0;
@@ -18406,12 +18413,12 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/fence/wooden{
-	pixel_y = -1;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = -1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -25970,13 +25977,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -27613,8 +27620,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -27898,6 +27905,7 @@
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/item/locked_box/medical/medicine,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "dii" = (
@@ -28682,8 +28690,8 @@
 	pixel_y = 46
 	},
 /obj/structure/sign/barsign{
-	pixel_y = 69;
-	layer = 5
+	layer = 5;
+	pixel_y = 69
 	},
 /obj/structure/fence/wooden{
 	density = 0;
@@ -29836,6 +29844,7 @@
 "dIV" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/surgical,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "dIZ" = (
@@ -31139,12 +31148,12 @@
 	},
 /obj/structure/noticeboard{
 	layer = 5;
-	pixel_y = 45;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 45
 	},
 /obj/item/bedsheet{
-	pixel_y = 41;
-	anchored = 1
+	anchored = 1;
+	pixel_y = 41
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -33613,13 +33622,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -34401,8 +34410,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -34662,6 +34671,7 @@
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/item/locked_box/medical/drugs,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "eZr" = (
@@ -35879,8 +35889,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -36402,13 +36412,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -36655,8 +36665,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -36826,12 +36836,12 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/fence/wooden{
-	pixel_y = -1;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = -1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -36909,6 +36919,7 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "fFF" = (
@@ -37191,13 +37202,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -38197,8 +38208,8 @@
 	},
 /obj/structure/noticeboard{
 	layer = 5;
-	pixel_y = 45;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 45
 	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
@@ -40104,8 +40115,8 @@
 "gzM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/tree/pink_tree{
-	pixel_x = -64;
-	color = "#BBBBBB"
+	color = "#BBBBBB";
+	pixel_x = -64
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -45318,13 +45329,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -50892,13 +50903,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -50998,9 +51009,9 @@
 	dir = 8
 	},
 /obj/structure/mirror{
+	layer = 4;
 	pixel_x = -2;
-	pixel_y = 31;
-	layer = 4
+	pixel_y = 31
 	},
 /obj/structure/sink{
 	pixel_x = -2;
@@ -51217,8 +51228,8 @@
 	pixel_y = -12
 	},
 /obj/structure/table/wood/bar{
-	pixel_y = -10;
-	density = 0
+	density = 0;
+	pixel_y = -10
 	},
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/item/storage/box/drinkingglasses,
@@ -51536,23 +51547,23 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -52663,8 +52674,8 @@
 /area/f13/wasteland)
 "jQo" = (
 /obj/structure/sign/directions/dorms{
-	pixel_y = 16;
-	layer = 6
+	layer = 6;
+	pixel_y = 16
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
@@ -54215,8 +54226,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -56819,8 +56830,8 @@
 /area/f13/ruins)
 "lat" = (
 /obj/structure/flora/tree/pink_tree{
-	pixel_x = -64;
-	color = "#BBBBBB"
+	color = "#BBBBBB";
+	pixel_x = -64
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -56874,8 +56885,8 @@
 /area/f13/building/abandoned)
 "lbo" = (
 /obj/structure/flora/tree/pink_tree{
-	pixel_x = -64;
-	color = "#BBBBBB"
+	color = "#BBBBBB";
+	pixel_x = -64
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
@@ -58601,8 +58612,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -58811,6 +58822,13 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"lAX" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "lBg" = (
 /obj/structure/barricade/wooden,
 /obj/structure/spacevine,
@@ -59057,8 +59075,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -59985,8 +60003,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -61673,13 +61691,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -61695,8 +61713,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -62133,6 +62151,8 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "mtm" = (
@@ -62843,12 +62863,12 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/fence/wooden{
-	pixel_y = -1;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = -1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -64871,12 +64891,12 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/fence/wooden{
-	pixel_y = -1;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = -1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -66661,8 +66681,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -67836,8 +67856,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -69594,9 +69614,9 @@
 /area/f13/wasteland)
 "otv" = (
 /obj/item/clothing/under/misc/bathrobe{
-	pixel_y = 21;
+	anchored = 1;
 	pixel_x = -3;
-	anchored = 1
+	pixel_y = 21
 	},
 /obj/effect/turf_decal/arrows{
 	dir = 4;
@@ -70603,8 +70623,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -72064,12 +72084,12 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/fence/wooden{
-	pixel_y = -1;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = -1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -73728,8 +73748,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -73996,13 +74016,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -74595,13 +74615,13 @@
 "pIz" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -76266,8 +76286,8 @@
 	},
 /obj/structure/noticeboard{
 	layer = 5;
-	pixel_y = 37;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 37
 	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -77944,6 +77964,7 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "qGM" = (
@@ -78146,8 +78167,8 @@
 "qKg" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/tree/pink_tree{
-	pixel_x = -64;
-	color = "#BBBBBB"
+	color = "#BBBBBB";
+	pixel_x = -64
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -79508,13 +79529,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -80196,8 +80217,8 @@
 "rmM" = (
 /obj/structure/closet/crate/bin{
 	density = 0;
-	pixel_y = 16;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 16
 	},
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common{
@@ -80743,8 +80764,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -81087,8 +81108,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -83578,8 +83599,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -83610,8 +83631,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -84389,8 +84410,8 @@
 	color = "#363636"
 	},
 /obj/machinery/washing_machine{
-	pixel_y = 16;
-	density = 0
+	density = 0;
+	pixel_y = 16
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -84632,6 +84653,7 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "syJ" = (
@@ -85820,13 +85842,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -86167,13 +86189,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -87221,8 +87243,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
@@ -87407,12 +87429,12 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/fence/wooden{
-	pixel_y = -1;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = -1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -88174,8 +88196,8 @@
 	icon_state = "tall_grass_3"
 	},
 /obj/structure/flora/tree/pink_tree{
-	pixel_x = -64;
-	color = "#BBBBBB"
+	color = "#BBBBBB";
+	pixel_x = -64
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -90177,13 +90199,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -90995,13 +91017,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -92123,6 +92145,7 @@
 /obj/structure/chair/f13chair1{
 	pixel_x = -3
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/building/abandoned)
 "uyU" = (
@@ -94309,13 +94332,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -94777,13 +94800,13 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -94851,8 +94874,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -95798,8 +95821,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -96350,8 +96373,8 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -96906,13 +96929,13 @@
 /obj/structure/flora/grass/coyote/four,
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3";
-	pixel_y = 5;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -100648,9 +100671,9 @@
 /area/f13/ruins)
 "wNt" = (
 /obj/structure/closet/crate/bin{
-	pixel_y = 19;
 	density = 0;
-	layer = 4
+	layer = 4;
+	pixel_y = 19
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -104837,9 +104860,9 @@
 /area/f13/wasteland/city)
 "xWr" = (
 /obj/item/clothing/under/misc/bathrobe{
-	pixel_y = 7;
+	anchored = 1;
 	pixel_x = -2;
-	anchored = 1
+	pixel_y = 7
 	},
 /turf/closed/wall/mineral/brick,
 /area/f13/building)
@@ -105254,14 +105277,14 @@
 	pixel_y = 28
 	},
 /obj/item/card/id/dogtag/sheriff{
-	pixel_y = 42;
+	anchored = 1;
 	pixel_x = 18;
-	anchored = 1
+	pixel_y = 42
 	},
 /obj/item/gun/ballistic/revolver/colt357{
 	anchored = 1;
-	pixel_y = 38;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 38
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -105917,8 +105940,8 @@
 	icon_state = "tall_grass_4"
 	},
 /obj/structure/flora/tree/pink_tree{
-	pixel_x = -64;
-	color = "#BBBBBB"
+	color = "#BBBBBB";
+	pixel_x = -64
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -148097,7 +148120,7 @@ oxC
 uqJ
 aqQ
 ioR
-mtk
+lAX
 crs
 hCc
 cuO

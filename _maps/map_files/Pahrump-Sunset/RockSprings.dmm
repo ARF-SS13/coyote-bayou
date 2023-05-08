@@ -7329,6 +7329,12 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"dfd" = (
+/obj/structure/table/reinforced,
+/obj/structure/barricade/bars,
+/obj/effect/spawner/lootdrop/f13/rare_cowboy,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "dff" = (
 /obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
@@ -34060,9 +34066,9 @@
 	req_one_access_txt = "150"
 	},
 /obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare_mags,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "oNx" = (
@@ -37754,8 +37760,9 @@
 	req_one_access_txt = "150"
 	},
 /obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /obj/effect/spawner/lootdrop/f13/rare_guns,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "qBx" = (
@@ -119734,7 +119741,7 @@ uPW
 iEG
 huo
 xuI
-irx
+dfd
 irx
 bMz
 uPW
