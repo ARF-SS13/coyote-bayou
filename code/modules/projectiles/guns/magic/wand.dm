@@ -5,11 +5,11 @@
 	icon_state = "nothingwand"
 	item_state = "wand"
 	weapon_class = WEAPON_CLASS_SMALL
-	can_charge = 0
+	can_charge = TRUE
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi' //not really a gun and some toys use these inhands
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	var/variable_charges = 1
+	var/variable_charges = FALSE
 
 /obj/item/gun/magic/wand/Initialize()
 	if(prob(75) && variable_charges) //25% chance of listed max charges, 50% chance of 1/2 max charges, 25% chance of 1/3 max charges
