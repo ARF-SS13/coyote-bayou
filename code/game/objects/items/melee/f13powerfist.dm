@@ -65,27 +65,6 @@
 	force = 35 //needs to fuckin slapp
 	throw_distance = 3
 
-
-// Ballistic Fist			Keywords: Damage max 42, Shotgun
-/obj/item/gun/ballistic/revolver/ballisticfist
-	name = "ballistic fist"
-	desc = "This powerfist has been modified to have two shotgun barrels welded to it, with the trigger integrated into the knuckle guard. For those times when you want to punch someone and shoot them in the face at the same time."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "ballisticfist"
-	item_state = "powerfist"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 30
-	armour_penetration = 0
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
-	w_class = WEIGHT_CLASS_NORMAL
-	item_flags = NEEDS_PERMIT //doesn't slow you down
-	fire_delay = 0
-	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
-
-
 // Mole Miner
 /obj/item/melee/powerfist/f13/moleminer
 	name = "mole miner gauntlet"
