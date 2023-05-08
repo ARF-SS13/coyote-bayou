@@ -515,3 +515,8 @@
 	name = "Type three service shoe"
 	desc = "A post second world war design of the American standard boot, with Canvas leggings. Just modernized its specificly used for Jungle combat or in service in Hotter climates it was also lend leased to other nations in the Pacific. And is used by some wasters to this very day as a highly useful footwear garment."
 	icon_state = "ww2_brown"
+
+/obj/item/clothing/shoes/putt
+	name = "long puttees"
+	desc = "Long woolen leg wraps used sense the first world war"
+	icon_state = "putt"

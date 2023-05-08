@@ -170,6 +170,10 @@
 	name = "Type three service shoes"
 	path = /obj/item/clothing/shoes/ww2brown
 
+/datum/gear/shoes/putt
+	name = "long puttees"
+	path = /obj/item/clothing/shoes/putt
+
 /// Factions Shoes or well NCR boots.
 
 

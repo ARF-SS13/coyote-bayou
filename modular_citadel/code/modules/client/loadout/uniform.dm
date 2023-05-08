@@ -1893,3 +1893,33 @@
 	cost = 1
 	path = /obj/item/clothing/under/tribal_colorful
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/tribal_colorful/top
+	name = "bright outfit top"
+	cost = 1
+	path = /obj/item/clothing/under/tribal_colorful/top
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/flow_dress/red
+	name = "Red flow dress"
+	cost = 1
+	path = /obj/item/clothing/under/flow_dress/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/flow_dress/green
+	name = "Green flow dress"
+	cost = 1
+	path = /obj/item/clothing/under/flow_dress/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/desert_uniform
+	name = "Desert Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/desert_uniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/f13/ranger/modif_ranger
+	name = "Green Ranger Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/f13/ranger/modif_ranger
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

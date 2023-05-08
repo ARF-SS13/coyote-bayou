@@ -1619,3 +1619,35 @@
 	item_state = "tribal_colorful"
 	item_color = "tribal_colorful"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/tribal_colorful/top
+	name = "bright outfit top"
+	desc = "A skimply outfit with bright colors, just the top not the skirt included!"
+	icon_state = "tribal_colorful_top"
+	item_state = "tribal_colorful_top"
+	item_color = "tribal_colorful_top"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flow_dress/green
+	name = "green flow dress"
+	desc = "A soft looking dress, green in color."
+	icon_state = "flow_green"
+	item_state = "flow_green"
+	item_color = "flow_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flow_dress/red
+	name = "red flow dress"
+	desc = "A soft looking dress, red in color."
+	icon_state = "flow_red"
+	item_state = "flow_red"
+	item_color = "flow_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/desert_uniform
+	name = "desert uniform"
+	desc = "A desert uniform used by commonwealth nations"
+	icon_state = "desert_uniform"
+	item_state = "desert_uniform"
+	item_color = "desert_uniform"
+	can_adjust = FALSE
