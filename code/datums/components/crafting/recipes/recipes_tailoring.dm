@@ -310,6 +310,17 @@ datum/crafting_recipe/combathazardhood // sec biohood
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+/datum/crafting_recipe/weldinghelmet
+	name = "Welding Helmet"
+	result = /obj/item/clothing/head/hardhat/weldhat
+	reqs = list(/obj/item/flashlight = 1,
+				/obj/item/weaponcrafting/string = 1,
+				/obj/item/clothing/head/welding = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
 /datum/crafting_recipe/armyhelmetheavy
 	name = "Heavy Steel Helmet"
 	result = /obj/item/clothing/head/helmet/armyhelmet/heavy
