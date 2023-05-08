@@ -315,7 +315,7 @@ datum/crafting_recipe/combathazardhood // sec biohood
 	result = /obj/item/clothing/head/hardhat/weldhat
 	reqs = list(/obj/item/flashlight = 1,
 				/obj/item/weaponcrafting/string = 1,
-				/obj/item/cothing/welding = 1)
+				/obj/item/clothing/head/welding = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
