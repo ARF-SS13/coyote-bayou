@@ -81,7 +81,7 @@
 #define RADIO_KEY_TOWN_COMMERCE "j"
 #define RADIO_TOKEN_TOWN_COMMERCE ":j"
 
-#define RADIO_CHANNEL_TOWN_MAYOR "Mayor"
+#define RADIO_CHANNEL_TOWN_MAYOR "High Alderperson"
 #define RADIO_KEY_TOWN_MAYOR "y"
 #define RADIO_TOKEN_TOWN_MAYOR ":y"
 

@@ -411,8 +411,8 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 1
 	restricted_desc = "Nash"
-	restricted_roles = list("Mayor",
-							"Secretary",
+	restricted_roles = list("High Alderperson",
+							"Councilperson",
 							"Sheriff",
 							"Doctor",
 							"Citizen",
@@ -432,9 +432,9 @@
 	/*restricted_desc = "Nash Police, Nash Officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
-							"Mayor",
+							"High Alderperson",
 							"Detective",
-							"Secretary",
+							"Councilperson",
 							"Shopkeeper",
 						)*/
 
