@@ -273,7 +273,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	load_time = FLINTLOCK_MUSKET_RELOAD_TIME
 	force = 20
-	force_unwielded = 28 //it's kind of long and awkward ~TK
+	force_unwielded = 20 //it's kind of long and awkward ~TK
 	force_wielded = 28
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
