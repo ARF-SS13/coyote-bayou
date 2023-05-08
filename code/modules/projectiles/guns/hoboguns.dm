@@ -523,7 +523,7 @@
 
 /obj/item/gun/ballistic/revolver/sling
 	name = "sling"
-	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed."
+	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Use *rocks to find more rocks!"
 	icon = 'modular_coyote/icons/objects/bows.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
@@ -550,7 +550,7 @@
 
 /obj/item/gun/ballistic/revolver/sling/staff
 	name = "sling staff"
-	desc = "A sling hooked onto a wooden pole, for more leverage."
+	desc = "A sling hooked onto a wooden pole, for more leverage. Use *rocks to find more rocks!"
 	icon_state = "slingstaff"
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY

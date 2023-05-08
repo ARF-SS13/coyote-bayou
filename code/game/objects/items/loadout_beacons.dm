@@ -1130,6 +1130,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/c9mm(src)
 
+
+
 /obj/item/storage/box/gun/pistol/auto9mm
 	name = "9mm Autopistol case"
 
@@ -2381,6 +2383,17 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/clothing/glasses/sunglasses/gar/supergar
 
+/datum/loadout_box/sling
+	entry_tag = "Sling"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_HOBO
+	spawn_thing = /obj/item/gun/ballistic/revolver/sling
+
+/datum/loadout_box/slingstaff
+	entry_tag = "Slingstaff"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_HOBO
+	spawn_thing = /obj/item/gun/ballistic/revolver/sling/staff
 
 
 
