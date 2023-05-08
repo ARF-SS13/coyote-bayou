@@ -357,7 +357,7 @@ datum/spellbook_entry/rod_form
 /datum/spellbook_entry/item/staffhealing
 	name = "Stick of Undeadening"
 	desc = "An altruistic staff that can heal the lame and raise the dead."
-	item_path = /obj/item/gun/magic/wand/resurrection
+	item_path = /obj/item/gun/magic/staff/healing
 	cost = 9
 	category = "Defensive"
 

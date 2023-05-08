@@ -3,6 +3,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	item_flags = NEEDS_PERMIT | NO_MAT_REDEMPTION
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/magic/staff/change
 	name = "staff of change"
@@ -29,6 +30,7 @@
 	item_state = "staffofhealing"
 	max_charges = 1
 	recharge_rate = 30 MINUTES
+
 
 /obj/item/gun/magic/staff/healing/handle_suicide() //Stops people trying to commit suicide to heal themselves
 	return
