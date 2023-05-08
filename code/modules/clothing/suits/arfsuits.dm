@@ -2834,6 +2834,7 @@
 	desc = "(VII) A suit of riot armour adapted from the design of the pre-war U.S.M.C. armour, painted blue and white."
 	icon_state = "vtcc_riot_gear"
 	item_state = "vtcc_riot_gear"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3)
 
 /obj/item/clothing/suit/armor/heavy/riot/marine
 	name = "old United States Marine Corp riot suit"
@@ -2843,11 +2844,10 @@
 
 /obj/item/clothing/suit/armor/heavy/riot/retrofitted
 	name = "retro fitted riot combat armor"
-	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, however most of the plates have been torn out to make room for various storage compartments."
+	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, and has been heavily modified with extra pockets and armor-plates. Heavy as sin."
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
-	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"

@@ -390,7 +390,7 @@
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/advanced_crafting_components/alloys,
 		/obj/item/stack/sheet/plasteel/five,
-		/obj/effect/spawner/lootdrop/f13/armor/tier5
+		/obj/effect/spawner/lootdrop/f13/rare_armor
 		)
 	speak = list(
 		"Death to the Brotherhood!",

@@ -1424,9 +1424,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
 	dir = 4;
-	termtag = "Enclave Outpost, Armory";
+	pixel_x = 4;
 	pixel_y = 5;
-	pixel_x = 4
+	termtag = "Enclave Outpost, Armory"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -1918,6 +1918,7 @@
 /obj/structure/closet,
 /obj/item/storage/box/pillbottles,
 /obj/item/storage/box/beakers,
+/obj/item/reagent_containers/glass/beaker/sulphuric,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "aXr" = (
@@ -4715,7 +4716,7 @@
 "cyC" = (
 /obj/structure/closet/crate/secure/engineering,
 /obj/effect/turf_decal/bot,
-/obj/item/clothing/suit/armor/power_armor/t45d,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/underground/cave)
 "cyH" = (
@@ -5303,13 +5304,13 @@
 /area/f13/tunnel)
 "cJD" = (
 /mob/living/simple_animal/hostile/megafauna/bubblegum{
-	name = "Amalgamation";
 	desc = "A combination of many bodies put together into a vessel and given sentience.";
+	health = 1500;
+	maxHealth = 1500;
 	melee_damage_lower = 17;
 	melee_damage_upper = 25;
-	health = 1500;
-	stat_attack = 0;
-	maxHealth = 1500
+	name = "Amalgamation";
+	stat_attack = 0
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
@@ -5431,8 +5432,8 @@
 "cMe" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtysolid"
@@ -5559,8 +5560,8 @@
 /area/f13/vault)
 "cPg" = (
 /obj/structure/shelf_wood,
-/obj/item/clothing/head/helmet/f13/power_armor/t45d/bos,
-/obj/item/clothing/suit/armor/power_armor/t45d/bos,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#d9cdb9";
 	icon_state = "floorrustysolid"
@@ -10359,9 +10360,9 @@
 /area/f13/building)
 "eZz" = (
 /obj/machinery/door/poddoor/shutters{
+	id = "bubblegumfight";
 	max_integrity = 10000;
-	obj_integrity = 10000;
-	id = "bubblegumfight"
+	obj_integrity = 10000
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
@@ -11864,8 +11865,8 @@
 /obj/item/bedsheet/red,
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /mob/living/simple_animal/hostile/chinese,
 /turf/open/floor/plasteel/f13{
@@ -12919,8 +12920,8 @@
 "gmu" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13{
@@ -13741,6 +13742,7 @@
 	anchored = 1;
 	name = "formal attire cabinet"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
 "gHy" = (
@@ -14106,8 +14108,8 @@
 /obj/item/storage/box/lights/mixed,
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
@@ -14579,8 +14581,8 @@
 /area/f13/brotherhood/offices1st)
 "heQ" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/power_armor/excavator,
-/obj/item/clothing/head/helmet/f13/power_armor/excavator,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "hfm" = (
@@ -14623,8 +14625,8 @@
 	},
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
@@ -15106,6 +15108,7 @@
 /obj/structure/table{
 	layer = 2.9
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/offices1st)
 "huM" = (
@@ -15722,8 +15725,8 @@
 /obj/machinery/workbench,
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
@@ -17909,6 +17912,22 @@
 /obj/item/toy/plush/lizardplushie,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
+"iWN" = (
+/obj/item/clothing/under/f13/bosformsilver_m,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/gloves/color/white/bos,
+/obj/item/clothing/under/f13/bosformsilver_f,
+/obj/item/clothing/under/syndicate/brotherhood,
+/obj/item/clothing/head/f13/boscap,
+/obj/structure/closet/cabinet{
+	anchored = 1;
+	name = "formal attire cabinet"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "darkyellowfull"
+	},
+/area/f13/brotherhood/offices1st)
 "iWZ" = (
 /obj/effect/decal/waste{
 	icon_state = "goo10"
@@ -18328,8 +18347,8 @@
 "jfP" = (
 /obj/structure/sink/greyscale{
 	dir = 8;
-	pixel_y = 5;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building)
@@ -19033,8 +19052,8 @@
 	},
 /obj/machinery/button/door{
 	id = "bubblegumfight";
-	name = "It arises";
 	max_integrity = 10000;
+	name = "It arises";
 	obj_integrity = 10000
 	},
 /turf/open/floor/plasteel/cult,
@@ -19119,8 +19138,8 @@
 /obj/item/paper/pamphlet/ruin/originalcontent/yelling,
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -19297,7 +19316,8 @@
 	dir = 4
 	},
 /obj/structure/decoration/vent/rusty,
-/obj/item/clothing/suit/armor/power_armor/t45d/knightcaptain,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "jFX" = (
@@ -19706,6 +19726,7 @@
 	},
 /obj/structure/rack,
 /obj/item/storage/box/PDAs,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "jPg" = (
@@ -19811,8 +19832,8 @@
 /area/f13/brotherhood/rnd)
 "jTg" = (
 /obj/structure/ladder/unbreakable{
-	id = "hell";
-	height = 1
+	height = 1;
+	id = "hell"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
@@ -21170,8 +21191,8 @@
 "kCv" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/building)
@@ -21613,8 +21634,8 @@
 "kLA" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
@@ -24693,7 +24714,7 @@
 /obj/item/ammo_casing/c9mm,
 /obj/item/ammo_casing/c9mm,
 /obj/item/storage/fancy/heart_box,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large/empty,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "moY" = (
@@ -26356,9 +26377,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "nge" = (
-/obj/effect/spawner/bundle/f13/armor/t51b,
 /obj/effect/decal/remains/human,
 /obj/structure/closet/crate/grave,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/f13/inside/mountain{
 	icon_state = "mountain2"
 	},
@@ -27116,8 +27138,8 @@
 	},
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
@@ -29182,6 +29204,7 @@
 	pixel_x = 4;
 	pixel_y = 7
 	},
+/obj/item/reagent_containers/glass/beaker/waterbottle/large/empty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "oBy" = (
@@ -29279,6 +29302,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
 "oDr" = (
@@ -32446,8 +32470,8 @@
 "qcv" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -34569,8 +34593,8 @@
 	dir = 8
 	},
 /obj/structure/chair/stool/f13stool{
-	pixel_y = 14;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
@@ -35371,8 +35395,8 @@
 "rve" = (
 /obj/machinery/button/door{
 	id = "bubblegumdead";
-	name = "It falls";
 	max_integrity = 10000;
+	name = "It falls";
 	obj_integrity = 10000
 	},
 /turf/open/floor/plasteel/cult,
@@ -36338,8 +36362,8 @@
 	dir = 1
 	},
 /obj/structure/ladder/unbreakable{
-	id = "CHI1";
-	height = 1
+	height = 1;
+	id = "CHI1"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -36909,12 +36933,12 @@
 	pixel_y = 2
 	},
 /obj/item/reagent_containers/glass/beaker/large{
-	pixel_y = -5;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -5
 	},
 /obj/item/reagent_containers/glass/beaker/large{
-	pixel_y = -2;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
@@ -37377,7 +37401,7 @@
 /area/f13/enclave)
 "suQ" = (
 /obj/item/flag/outlaw,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "suY" = (
 /obj/machinery/vending/wardrobe/science_wardrobe,
@@ -38397,8 +38421,8 @@
 "sVe" = (
 /obj/effect/decal/remains/human,
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant{
-	name = "Gentle Greg";
-	faction = list("neutral")
+	faction = list("neutral");
+	name = "Gentle Greg"
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -38751,8 +38775,8 @@
 "teN" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
@@ -40243,9 +40267,9 @@
 "tTn" = (
 /obj/machinery/door/unpowered/securedoor,
 /obj/machinery/door/poddoor/shutters{
+	id = "bubblegumdead";
 	max_integrity = 10000;
-	obj_integrity = 10000;
-	id = "bubblegumdead"
+	obj_integrity = 10000
 	},
 /obj/structure/barricade/wooden/crude,
 /obj/structure/barricade/wooden/crude,
@@ -40560,8 +40584,8 @@
 "ubP" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
@@ -42032,6 +42056,15 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"uLC" = (
+/obj/effect/decal/remains/human,
+/obj/structure/closet/crate/grave,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/f13/inside/mountain{
+	icon_state = "mountain2"
+	},
+/area/f13/underground/cave)
 "uLV" = (
 /obj/structure/lattice{
 	layer = 3
@@ -43097,7 +43130,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/enclave)
 "vnv" = (
-/obj/item/clothing/head/helmet/f13/power_armor/t45b,
+/obj/item/clothing/shoes/wheelys,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "vnO" = (
@@ -44096,9 +44129,9 @@
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
 	dir = 4;
-	termtag = "Enclave Outpost, Armory";
+	pixel_x = 4;
 	pixel_y = 5;
-	pixel_x = 4
+	termtag = "Enclave Outpost, Armory"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -44268,6 +44301,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat/swat,
 /obj/item/storage/belt/military,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
 "vUw" = (
@@ -44604,6 +44638,7 @@
 /area/f13/underground/cave)
 "wdL" = (
 /obj/structure/table,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large/empty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "wdV" = (
@@ -44669,8 +44704,8 @@
 	},
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
@@ -45705,8 +45740,8 @@
 "wEV" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 4
+	dir = 4;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/plating/f13/inside/mountain{
 	icon_state = "mountain2"
@@ -46496,9 +46531,9 @@
 "xbr" = (
 /obj/structure/obstacle/old_locked_door,
 /obj/machinery/door/poddoor/shutters/preopen{
+	id = "bubblegumfight";
 	max_integrity = 10000;
-	obj_integrity = 10000;
-	id = "bubblegumfight"
+	obj_integrity = 10000
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
@@ -47315,8 +47350,8 @@
 /area/f13/building)
 "xzQ" = (
 /mob/living/simple_animal/hostile/chinese{
-	name = "Crazy Xi";
-	melee_damage_lower = 35
+	melee_damage_lower = 35;
+	name = "Crazy Xi"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -48162,8 +48197,8 @@
 /area/f13/brotherhood/dorms)
 "xWL" = (
 /mob/living/simple_animal/hostile/deathclaw/power_armor{
-	mob_armor = list("melee"=35,"bullet"=35,"laser"=35,"energy"=10,"bomb"=0,"bio"=100,"rad"=100,"fire"=0,"acid"=0,"wound"=0,"damage_threshold"=15);
-	faction = list("deathclaw","enclave")
+	faction = list("deathclaw","enclave");
+	mob_armor = list("melee"=35,"bullet"=35,"laser"=35,"energy"=10,"bomb"=0,"bio"=100,"rad"=100,"fire"=0,"acid"=0,"wound"=0,"damage_threshold"=15)
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -74506,7 +74541,7 @@ whv
 whv
 whv
 whv
-nge
+uLC
 cCj
 grA
 dHW
@@ -102967,9 +103002,9 @@ sNt
 put
 wEz
 vBM
-roa
-roa
-roa
+iWN
+iWN
+iWN
 vBM
 hSv
 owt
