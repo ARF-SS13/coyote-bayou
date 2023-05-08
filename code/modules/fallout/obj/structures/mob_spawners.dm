@@ -316,7 +316,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "slimy tunnel"
 	desc = "A vent leading deep into some ill forgotten pit."
 	spawn_time = 120 SECONDS
-	max_mobs = 2
+	max_mobs = 1
 	icon_state = "ventblue"
 	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 10)
 
@@ -324,7 +324,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "horrible debug hole"
 	desc = "If you can see this, yell at Fenny. Or lagg. Or both. Or neither. Either way this is a debug nest."
 	spawn_time = 2 SECONDS
-	max_mobs = 2
+	max_mobs = 1
 	icon_state = "ventblue"
 	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 100)
 

@@ -1312,7 +1312,7 @@
 /obj/effect/spawner/lootdrop/f13/common_bombs
 	name = "common bombs"
 	loot = list(
-		/obj/item/grenade/f13/dynamite = 1,
+		/obj/item/grenade/f13/dynamite = 3,
 		/*/obj/item/grenade/homemade/firebomb = 1,*/
 		/obj/item/grenade/homemade/coffeepotbomb = 5,
 		/*/obj/item/reagent_containers/food/drinks/bottle/molotov= 1,*/
@@ -1325,13 +1325,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_bombs
 	name = "uncommon bombs"
 	loot = list(
-		/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
-		/obj/item/gun/ballistic/shotgun/grenade = 3,
-		/obj/item/ammo_box/a40mm = 10,
-		/obj/item/ammo_box/a40mm/hedp = 5,
-		/obj/item/grenade/stingbang = 1,
+		/obj/item/gun/ballistic/revolver/grenadelauncher = 2,
+		/obj/item/gun/ballistic/shotgun/grenade = 1,
+		/obj/item/ammo_box/a40mm = 5,
+		/obj/item/ammo_box/a40mm/hedp = 1,
+		/obj/item/grenade/stingbang = 3,
 		/obj/item/grenade/plastic/c4 = 1,
-		/obj/item/grenade/f13/frag = 5,
+		/obj/item/grenade/f13/frag = 10,
 		/obj/item/grenade/f13/stinger = 3,
 		/obj/item/grenade/f13/radiation = 1,
 		/obj/item/grenade/empgrenade = 3,
@@ -1344,14 +1344,15 @@
 /obj/effect/spawner/lootdrop/f13/rare_bombs
 	name = "rare bombs"
 	loot = list(
-/obj/item/gun/ballistic/rocketlauncher = 10,
-/obj/item/ammo_casing/caseless/rocket = 20,
-/obj/item/ammo_casing/caseless/rocket/hedp = 10,
+/obj/item/gun/ballistic/rocketlauncher = 5,
+/obj/item/ammo_casing/caseless/rocket = 10,
+/obj/item/ammo_casing/caseless/rocket/hedp = 5,
 //obj/item/ammo_casing/caseless/rocket/incendiary = 1, //you know what? no. these suck. it always feels bad finding an incendiary or chemical rocket instead of a standard one, knowing that they're designed as PVP gamer ammos, and are useless against simple mobs. if you want them? craft them.
 //obj/item/ammo_casing/caseless/rocket/chem = 1,
-/obj/item/ammo_casing/caseless/rocket/big = 10,
+/obj/item/ammo_casing/caseless/rocket/big = 5,
 /obj/item/grenade/plastic/x4 = 10,
-/obj/item/grenade/f13/plasma = 20,
+/obj/item/grenade/f13/plasma = 10,
+/obj/item/grenade/syndieminibomb/concussion = 20,
 /obj/item/grenade/clusterbuster = 1,	//these are all rare fun toys~
 /obj/item/grenade/clusterbuster/soap = 1,
 /obj/item/grenade/clusterbuster/spawner_spesscarp = 1,
@@ -1582,7 +1583,7 @@
 	/obj/item/clothing/suit/hazardvest = 1,
 	/obj/item/clothing/under/misc/vice_officer = 1,
 	/obj/item/clothing/suit/hooded/flashsuit = 2,
-	/obj/item/clothing/accessory/medal/greytide	=	1,
+	/obj/item/clothing/accessory/medal/greytide = 1,
 	/obj/item/assembly/prox_sensor = 4,
 	/obj/item/assembly/timer = 3,
 	/obj/item/stack/cable_coil/random = 4,
@@ -1611,12 +1612,10 @@
 	/obj/item/storage/secure/briefcase = 3,
 	/obj/item/storage/toolbox/artistic = 2,
 	/obj/item/toy/eightball = 1,
-	/obj/item/clothing/shoes/wheelys = 1,
 	/obj/item/clothing/shoes/kindleKicks = 1,
 	/obj/item/storage/box/marshmallow = 2,
 	/obj/item/clothing/gloves/tackler/offbrand = 1,
 	/obj/item/stack/sticky_tape = 1,
-	/obj/item/pipe = 5,
 	/obj/item/trash/f13/electronic/toaster = 5,
 	/obj/item/reagent_containers/glass/bucket = 5,
 	/obj/item/kitchen/knife = 5,

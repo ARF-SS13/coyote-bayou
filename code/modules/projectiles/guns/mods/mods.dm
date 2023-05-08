@@ -394,6 +394,7 @@
 /obj/item/gun_upgrade/scope/better
 	name = "Pre-war sniper scope"
 	desc = "A high resolution scope"
+	icon_state = "Killer"
 
 /obj/item/gun_upgrade/scope/better/New()
 	..()
