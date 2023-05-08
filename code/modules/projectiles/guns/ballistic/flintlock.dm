@@ -7,9 +7,13 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	force = 20
+	force_unwielded = 20
+	force_wielded = 25
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
+	max_upgrades = 1
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -21,6 +25,7 @@
 	var/prefire_randomness = FLINTLOCK_PISTOL_PREFIRE_RANDOMNESS // copilot suggested this
 	var/datum/looping_sound/musket_load/load_loop // for the loading sound
 	var/datum/looping_sound/musket_fuse/fuse_loop // for the loading sound
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock/Initialize()
 	. = ..()
@@ -216,6 +221,9 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	force = 25
+	force_unwielded = 25
+	force_wielded = 30
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
@@ -238,6 +246,9 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	force = 23
+	force_unwielded = 23
+	force_wielded = 28
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
@@ -260,9 +271,15 @@
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = GUN_SPREAD_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	load_time = FLINTLOCK_MUSKET_RELOAD_TIME
+	force = 20
+	force_unwielded = 20 //it's kind of long and awkward ~TK
+	force_wielded = 28
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
+	can_scope = TRUE
+	max_upgrades = 2
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -274,7 +291,7 @@
 	icon_state = "culverin"
 	force = 25
 	force_unwielded = 25
-	force_wielded = 40
+	force_wielded = 40 //murderkill destroy
 
 /obj/item/gun/flintlock/musket/tanegashima
 	name = "ancient tanegashima"
