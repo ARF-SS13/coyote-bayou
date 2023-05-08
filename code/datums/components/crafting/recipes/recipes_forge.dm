@@ -6,14 +6,12 @@
 	name = "Metalworking bench"
 	result = /obj/machinery/workbench/forge
 	reqs = list(
-		/datum/reagent/fuel = 100,
+		/obj/item/stack/sheet/metal = 30,
+		/obj/item/stack/sheet/plasteel = 10,
 		/obj/item/weldingtool = 1,
-		/obj/item/screwdriver = 1,
-		/obj/item/wrench = 1,
-		/obj/item/wirecutters = 1,
-		/obj/item/stack/sheet/metal = 20,
 		)
-	time = 400
+	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH)
+	time = 200
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
