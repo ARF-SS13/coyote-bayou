@@ -259,6 +259,7 @@
 		/obj/item/sord,
 		/obj/item/melee/transforming/plasmacutter/regular/adam,
 		/obj/item/gun/ballistic/fatman,
+		/obj/item/gun/ballistic/rifle/hunting/paciencia,
 	)
 
 /datum/export/item/energycell
