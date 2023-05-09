@@ -955,3 +955,58 @@ CODE FOR BLEEDING STACK
 	icon_state = "machete_imp"
 	item_state = "salvagedmachete"
 	force = 30
+
+//Fenny makes fucking handfans because they're cute and maybe dangerous. ~TK
+/obj/item/melee/handfan
+	name = "handfan"
+	desc = "A foldable fan, made out of some sort of hardwood and pink fabric. Good for coolin off, or looking haughty as fuck."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "handfanclosed_0"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = null
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NONE
+	force = 0
+	var/on = FALSE
+	var/on_sound = 'sound/weapons/batonextend.ogg'
+	var/on_icon_state = "handfanopen_1"
+	var/off_icon_state = "handfanclosed_0"
+	var/on_item_state = "nullrod"
+	attack_verb = list("<span class='love'>fanned %t</span>")
+	var/force_on = 0
+	var/force_off = 0
+	var/weight_class_on = WEIGHT_CLASS_BULKY
+	total_mass = TOTAL_MASS_TINY_ITEM
+	attack_speed = CLICK_CD_MELEE * 0.5
+
+/obj/item/melee/handfan/proc/get_on_off_description()
+	if(on)
+		return span_alert("You open the fan with a smooth flicking motion.")
+	else
+		return span_notice("You collapse the fan with a smooth flicking motion.")
+
+/obj/item/melee/handfan/examine()
+
+/obj/item/melee/handfan/attack_self(mob/user)
+	TOGGLE_VAR(on)
+	if(on)
+		to_chat(user, get_on_off_description())
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list(span_love("fanned"))
+	else
+		to_chat(user, get_on_off_description())
+		icon_state = off_icon_state
+		item_state = null //no sprite for concealment even when in hand
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = force_off
+		attack_verb = list("badgered", "beat")
+	playsound(loc, on_sound, 50, TRUE)
+	add_fingerprint(user)
+
+
