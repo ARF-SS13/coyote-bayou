@@ -839,6 +839,60 @@
 #define ARMOR_MODIFIER_DOWN_LASER_T4 list(\
 		"linelaser" = -200)
 
+/* Energy (Plasma / Tesla) armor
+ * Adds on energy protection
+ * T1 - Thick, heat, and fire resistant clothing
+ * T2 - Heavy duty heat shielding, emergency firesuit-like; big jump from T1
+ * T3 - Dedicated heat shielding,  advanced firesuit-like (atmos firesuit); +1.5 tiers from this alone
+ * * * * * * * * * * * */
+#define ARMOR_MODIFIER_UP_ENERGY_T1 list(\
+		"energy" = 10)
+
+#define ARMOR_MODIFIER_UP_ENERGY_T2 list(\
+		"energy" = 25)
+
+#define ARMOR_MODIFIER_UP_ENERGY_T3 list(\
+		"energy" = 50)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T1 list(\
+		"energy" = -10)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T2 list(\
+		"energy" = -25)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T3 list(\
+		"energy" = -50)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T4 list(\
+		"energy" = -200)
+
+/* Bomb armor
+ * Adds on explosive protection
+ * T1 - Thick clothing
+ * T2 - Thick and padded armor
+ * T3 - Thick armor, padding, and sealed suit
+ * * * * * * * * * * * */
+#define ARMOR_MODIFIER_UP_BOMB_T1 list(\
+		"bomb" = 10)
+
+#define ARMOR_MODIFIER_UP_BOMB_T2 list(\
+		"bomb" = 25)
+
+#define ARMOR_MODIFIER_UP_BOMB_T3 list(\
+		"bomb" = 50)
+
+#define ARMOR_MODIFIER_DOWN_BOMB_T1 list(\
+		"bomb" = -10)
+
+#define ARMOR_MODIFIER_DOWN_BOMB_T2 list(\
+		"bomb" = -25)
+
+#define ARMOR_MODIFIER_DOWN_BOMB_T3 list(\
+		"bomb" = -50)
+
+#define ARMOR_MODIFIER_DOWN_BOMB_T4 list(\
+		"bomb" = -200)
+
 /* DT tokens
  * Adds on damage threshold
  * T1 - Small plated inserts, or heavy leather
