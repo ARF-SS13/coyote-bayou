@@ -1036,7 +1036,7 @@
 	new /obj/item/lockpick_set(src)
 
 /datum/gear/donator/kits/tk420634_4
-	name = "Tri-Heal Staff
+	name = "Tri-Heal Staff"
 	path = /obj/item/storage/box/large/custom_kit/tk420634_4
 	ckeywhitelist = list("tk420634")
 
