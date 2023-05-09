@@ -643,7 +643,9 @@
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
 
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser/twinshot // burst RCW
+	name = "intense twinbeam"
 	damage = 20 // Good for piercing armor, terrible damage
+	flag = "energy" // to bring it on par with the tesla autoshock
 	bare_wound_bonus = -20 // The intensity of the beams are no where near enough to cause lasting prolonged trauma.
 
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser/worn //Compact RCW

@@ -458,7 +458,7 @@
 	name = "twin-shot RCW carbine"
 	desc = "Made by Lone Star Armories, this variant of the compact RCW ironically fires two star-shaped laser blasts in quick succession."
 	icon_state = "export_cannon"
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot)
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot) // 1200 damage per cell vs Tesla Autoshock's 1196
 	init_firemodes = list(
 		/datum/firemode/burst/two/fastest
 	)
