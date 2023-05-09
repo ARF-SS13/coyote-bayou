@@ -1040,7 +1040,7 @@
 	path = /obj/item/storage/box/large/custom_kit/tk420634_4
 	ckeywhitelist = list("tk420634")
 
-/obj/item/storage/box/large/custom_kit/tk420634_3/PopulateContents()
+/obj/item/storage/box/large/custom_kit/tk420634_4/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
 
 /datum/gear/donator/kits/tonyburritos
