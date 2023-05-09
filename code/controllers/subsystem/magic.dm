@@ -23,7 +23,7 @@ SUBSYSTEM_DEF(magic)
 	return LAZYACCESS(magic_spells, index)
 
 /datum/controller/subsystem/magic/proc/can_cast(index, mob/living/caster, atom/target)
-	var/datum/magic_spell/S = GetSpell(index)
+	var/datum/magic_spell/S = get_spell(index)
 	if(!S)
 		return FALSE
 	return S.can_cast(caster, target)

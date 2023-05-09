@@ -177,7 +177,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
 	var/sales_timer
-	var/datum/progressbar/stored/my_bar
+	var/datum/progressbar/my_bar
 	var/start_time = 0
 	var/end_time = 0
 	var/datum/looping_sound/grinding_noises/soundloop
@@ -559,9 +559,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(!goal_time)
 		return
 	if(!istype(my_bar))
-		my_bar = new /datum/progressbar/stored(null, goal_time, src)
+		my_bar = new /datum/progressbar(null, goal_time, src)
 	my_bar.show_bar()
-	my_bar.set_new_goal(goal_time)
+	//my_bar.set_new_goal(goal_time)
 	start_time = world.time
 	end_time = goal_time + world.time
 	START_PROCESSING(SSfastprocess, src)
@@ -569,7 +569,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 /obj/machinery/mineral/wasteland_trader/proc/stop_progress_bar()
 	STOP_PROCESSING(SSfastprocess, src)
 	end_time = 0
-	my_bar.hide_bar()
+	//my_bar.hide_bar()
 	update_overlays()
 
 /obj/machinery/mineral/wasteland_trader/process()
