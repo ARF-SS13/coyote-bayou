@@ -439,7 +439,7 @@
 //Compact RCW
 
 /obj/item/gun/energy/laser/auto
-	name = "compact rcw"
+	name = "compact RCW"
 	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "protolaser"
@@ -453,6 +453,16 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
+
+/obj/item/gun/energy/laser/auto/twin
+	name = "twin-shot RCW carbine"
+	desc = "Made by Lone Star Armories, this variant of the compact RCW ironically fires two star-shaped laser blasts in quick succession."
+	icon_state = "export_cannon"
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot)
+	init_firemodes = list(
+		/datum/firemode/burst/two/fastest
+	)
+
 //Worn compact RCW
 /obj/item/gun/energy/laser/auto/worn
 	name = "worn compact rcw"

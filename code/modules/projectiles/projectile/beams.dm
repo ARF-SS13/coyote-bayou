@@ -642,6 +642,10 @@
 	damage = 9 //Good for piercing armor, terrible damage
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
 
+/obj/item/projectile/beam/laser/rcw/hitscan/autolaser/twinshot // burst RCW
+	damage = 20 // Good for piercing armor, terrible damage
+	bare_wound_bonus = -20 // The intensity of the beams are no where near enough to cause lasting prolonged trauma.
+
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser/worn //Compact RCW
 	damage = 9 //Good for piercing armor, terrible damage
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
