@@ -1264,6 +1264,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return temp
 
 //same as do_mob except for movables and it allows both to drift and doesn't draw progressbar
+/// Used by like one thing, don't use please
 /proc/do_atom(atom/movable/user , atom/movable/target, time = 30, uninterruptible = 0,datum/callback/extra_checks = null)
 	if(!user || !target)
 		return TRUE
@@ -1625,3 +1626,17 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return A
 	if(A.loc)
 		return recursive_loc_search(A.loc, needle, max_depth - 1)
+
+/// Goes through the common places a client can be held, and returns the first one it finds
+/proc/get_client(thing_w_client)
+	if(isclient(thing_w_client))
+		return thing_w_client
+	if(ismob(thing_w_client))
+		var/mob/mobby = thing_w_client
+		if(mobby.client)
+			return mobby.client
+
+
+
+
+
