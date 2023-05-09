@@ -1935,3 +1935,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/shrine_maiden
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/engineer_alt
+	name = "Engineer Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/engineer_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

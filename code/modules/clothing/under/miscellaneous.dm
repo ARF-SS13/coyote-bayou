@@ -1667,3 +1667,11 @@
 	item_state = "striped_clown"
 	item_color = "striped_clown"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/engineer_alt
+	name = "Engineer jumpsuit"
+	desc = "Quick get the engine!"
+	icon_state = "engine_alt"
+	item_state = "engine_alt"
+	item_color = "engine_alt"
+	can_adjust = FALSE
