@@ -1035,6 +1035,14 @@
 	new /obj/item/lockpick_set(src)
 	new /obj/item/lockpick_set(src)
 
+/datum/gear/donator/kits/tk420634_4
+	name = "Tri-Heal Staff
+	path = /obj/item/storage/box/large/custom_kit/tk420634_4
+	ckeywhitelist = list("tk420634")
+
+/obj/item/storage/box/large/custom_kit/tk420634_3/PopulateContents()
+	new /obj/item/gun/magic/staff/healing/triheal(src)
+
 /datum/gear/donator/kits/tonyburritos
 	name = "NCR Scout"
 	path = /obj/item/storage/box/large/custom_kit/tonyburritos
