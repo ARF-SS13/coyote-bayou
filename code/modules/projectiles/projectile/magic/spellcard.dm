@@ -61,3 +61,69 @@
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-5)
 		return
+
+/obj/item/projectile/magic/spellcard/book/healbrute
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/spellcard/book/healbrute/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-35) //HEALS
+		M.adjustOxyLoss(-20)
+		M.adjustBruteLoss(-35)
+		M.adjustFireLoss(-5)
+		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-5)
+		M.adjustStaminaLoss(-20)
+		return
+
+/obj/item/projectile/magic/spellcard/book/healburn
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/spellcard/book/healburn/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-5) //HEALS
+		M.adjustOxyLoss(-20)
+		M.adjustBruteLoss(-5)
+		M.adjustFireLoss(-35)
+		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-5)
+		M.adjustStaminaLoss(-10)
+		return
+
+/obj/item/projectile/magic/spellcard/book/healtoxin
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/spellcard/book/healtoxin/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-5) //HEALS
+		M.adjustOxyLoss(-50)
+		M.adjustBruteLoss(-5)
+		M.adjustFireLoss(-5)
+		M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-50)
+		M.adjustStaminaLoss(-0)
+		return
