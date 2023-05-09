@@ -30,5 +30,8 @@ The var is 'narrate'.
 ty ilu - bear
 */
 
-/area/f13/building
-	narrate = "Test narrate. You've yee'd your last haw here, pardner."
+/area/f13/building/hospital
+	narrate = "The faint drone of medical equipment. The calming hum of medical machinery drones faintly onwards. Quiet pings and chimes echo."
+
+/area/f13/wasteland/redwater
+	narrate = "Bitter dust hangs in the air. The town in the distance looms. When the raiders on the wall see you, they laugh and point their guns at you- this area is dangerous. You feel like you shouldn't be here alone!!"
