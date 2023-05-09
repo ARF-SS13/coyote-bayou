@@ -21544,22 +21544,15 @@
 	},
 /area/f13/wasteland)
 "bLh" = (
-/obj/structure/fence/wooden{
-	density = 0;
+/obj/effect/turf_decal/trimline/neutral{
+	color = "#000000";
 	dir = 1;
-	pixel_x = -14;
-	pixel_y = 0
+	icon_state = "trimline_fill"
 	},
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
-	pixel_x = -14;
-	pixel_y = 32
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14;
+	pixel_x = 14;
 	pixel_y = 32
 	},
 /obj/structure/fence/wooden{
@@ -21568,9 +21561,20 @@
 	pixel_x = 14;
 	pixel_y = 32
 	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14;
+	pixel_y = 32
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14;
+	pixel_y = 32
+	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
+	color = "#555555"
 	},
 /area/f13/building)
 "bLp" = (
@@ -41721,6 +41725,22 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "bar"
+	},
+/area/f13/building)
+"gUA" = (
+/obj/effect/turf_decal/trimline/neutral{
+	color = "#000000";
+	dir = 1;
+	icon_state = "trimline_fill"
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14;
+	pixel_y = 32
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#555555"
 	},
 /area/f13/building)
 "gUB" = (
@@ -115076,8 +115096,8 @@ mct
 dxu
 brF
 gpg
+bLh
 vRK
-uzI
 qqL
 gbV
 oFO
@@ -115333,8 +115353,8 @@ eTM
 mct
 xiP
 mct
+gUA
 vRK
-bLh
 fcm
 leT
 ozv
@@ -116105,7 +116125,7 @@ kFC
 lzV
 iOq
 vRK
-bzq
+vRK
 rkl
 oza
 ozv
