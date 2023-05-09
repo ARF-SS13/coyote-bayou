@@ -1264,6 +1264,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return temp
 
 //same as do_mob except for movables and it allows both to drift and doesn't draw progressbar
+/// Used by like one thing, don't use please
 /proc/do_atom(atom/movable/user , atom/movable/target, time = 30, uninterruptible = 0,datum/callback/extra_checks = null)
 	if(!user || !target)
 		return TRUE

@@ -398,10 +398,10 @@
 			return FALSE
 
 	var/list/things = src_object.contents()
-	var/datum/progressbar/progress = new(user, things.len, src)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, progress)))
+	var/my_bar = SSprogress_bars.add_bar(src, list(), things.len, FALSE, TRUE)
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, my_bar)))
 		stoplag(1)
-	qdel(progress)
+	SSprogress_bars.remove_bar(my_bar)
 
 	return TRUE
 

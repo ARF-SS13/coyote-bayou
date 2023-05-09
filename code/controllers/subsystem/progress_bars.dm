@@ -16,51 +16,61 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	/// format: list(ckey = list("bar_id"))
 	var/list/ckey_proglist = list()
 
-/datum/controller/subsystem/processing/progress_bars/proc/add_bar(atom/owner, list/can_see = list(), duration, automatic)
-	var/datum/progressbar/bar = new(owner, can_see, duration, automatic)
+/datum/controller/subsystem/processing/progress_bars/proc/add_bar(atom/owner, list/can_see = list(), duration = 5 SECONDS, automatic = TRUE, auto_remove = TRUE)
+	var/datum/progressbar/bar = new(owner, can_see, duration, automatic, auto_remove)
 	register_bar(owner, bar)
 	. = bar.bar_id
 	INVOKE_ASYNC(bar, /datum/progressbar.proc/start)
 
 /datum/controller/subsystem/processing/progress_bars/proc/remove_bar(bar_id)
-	var/datum/weakref/weakbar = LAZYACCESS(progbars, bar_id)
-	if(!weakbar)
-		return // Already gone!
-	var/datum/progressbar/bar = RESOLVEWEAKREF(weakbar)
+	var/datum/progressbar/bar = LAZYACCESS(progbars, bar_id)
 	if(!istype(bar))
-		stack_trace("Attempted to resolve non-existant progress bar with id [bar_id] for removal. Was it already removed?")
 		return
 	INVOKE_ASYNC(bar, /datum/progressbar.proc/stop)
 
-/datum/controller/subsystem/processing/progress_bars/proc/destroy_bar(bar_id, update = TRUE)
-	var/datum/weakref/weakbar = LAZYACCESS(progbars, bar_id)
-	if(!weakbar)
-		return // Already gone!
-	var/datum/progressbar/bar = RESOLVEWEAKREF(weakbar)
+/datum/controller/subsystem/processing/progress_bars/proc/update_bar(bar_id, number)
+	var/datum/progressbar/bar = LAZYACCESS(progbars, bar_id)
 	if(!istype(bar))
-		stack_trace("Attempted to resolve non-existant progress bar with id [bar_id] for destruction. Was it already removed?")
+		return FALSE
+	INVOKE_ASYNC(bar, /datum/progressbar.proc/update, number)
+	return number
+
+/datum/controller/subsystem/processing/progress_bars/proc/check_bar(bar_id)
+	var/datum/progressbar/bar = LAZYACCESS(progbars, bar_id)
+	if(!istype(bar))
+		return FALSE
+	return bar.last_progress
+
+/datum/controller/subsystem/processing/progress_bars/proc/bar_exists(bar_id)
+	if(!bar_id)
+		return FALSE
+	return LAZYACCESS(progbars, bar_id)
+
+/datum/controller/subsystem/processing/progress_bars/proc/destroy_bar(bar_id, update = TRUE)
+	var/datum/progressbar/bar = LAZYACCESS(progbars, bar_id)
+	if(!istype(bar))
 		return
-	unregister_bar(bar_id, update)
-	qdel(bar)
+	unregister_bar(bar, update)
+	QDEL_IN(bar, bar.end_animation_time)
 
 /datum/controller/subsystem/processing/progress_bars/proc/register_bar(atom/barowner, datum/progressbar/bar)
 	var/datum/weakref/owner = WEAKREF(barowner)
+	progbars[bar.bar_id] = bar
 	if(LAZYACCESS(atom_proglist, owner))
-		atom_proglist[owner] |= list(bar.bar_id)
+		atom_proglist[owner] |= bar.bar_id
 	else
 		atom_proglist[owner] = list(bar.bar_id)
-	progbars[bar.bar_id] = bar
 	for(var/ckey in bar.visible_to)
 		if(LAZYACCESS(ckey_proglist, ckey))
-			ckey_proglist[ckey] |= list(bar)
+			ckey_proglist[ckey] |= bar.bar_id
 		else
-			ckey_proglist[ckey] = list(bar)
+			ckey_proglist[ckey] = list(bar.bar_id)
 	return TRUE
 
 /datum/controller/subsystem/processing/progress_bars/proc/unregister_bar(datum/progressbar/bar, update = TRUE)
 	progbars -= bar.bar_id
 	for(var/ckey in bar.visible_to)
-		ckey_proglist[ckey] -= bar
+		ckey_proglist[ckey] -= bar.bar_id
 		if(!LAZYLEN(ckey_proglist[ckey]))
 			ckey_proglist -= ckey
 	for(var/thing in atom_proglist)
@@ -79,6 +89,19 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	for(var/datum/weakref/weakbar in ckey_proglist[the_ckey])
 		var/datum/progressbar/bar = RESOLVEWEAKREF(weakbar)
 		INVOKE_ASYNC(bar, /datum/progressbar.proc/show_bar)
+	return TRUE
+
+/// When a client who is supposed to see this connects, we need to show it to their client
+/datum/controller/subsystem/processing/progress_bars/proc/add_viewer(bar_id, the_ckey)
+	var/datum/progressbar/bar = LAZYACCESS(progbars, bar_id)
+	if(!istype(bar))
+		return
+	bar.visible_to |= the_ckey
+	if(LAZYACCESS(ckey_proglist, the_ckey))
+		ckey_proglist[the_ckey] |= bar.bar_id
+	else
+		ckey_proglist[the_ckey] = list(bar.bar_id)
+	bar.add_bar_to_seeing_clients()
 	return TRUE
 
 /datum/controller/subsystem/processing/progress_bars/proc/get_bar_index(datum/weakref/owner, bar_id)
@@ -107,11 +130,11 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	///The ckeys who can see this thing.
 	var/list/visible_to = list()
 	///The start number of the progress bar, if progress is at this or lower, then its empty.
-	var/start_num = 0
+	var/start_time = 0
 	///The goal number of the progress bar, if progress is at this or higher, then its full.
 	var/goal = 1
 	///Where the progress bar is currently at.
-	var/progress = 0
+	var/last_progress = 0
 	///Variable to ensure smooth visual stacking on multiple progress bars.
 	var/listindex = 0
 	///The previous icon state of the progress bar.
@@ -122,37 +145,23 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	var/auto_update = TRUE
 	///Is it currently active? Visible, ect
 	var/is_active = FALSE
+	///Auto-remove itself when time's up?
+	var/auto_remove = TRUE
+	/// How long it takes to play the end-animation
+	var/end_animation_time = PROGRESSBAR_ANIMATION_TIME
 
-/datum/progressbar/New(atom/location, list/can_see, goal, automatic)
+/datum/progressbar/New(atom/location, list/can_see, goal, automatic = TRUE, autoremove = TRUE)
 	. = ..()
 	if (!istype(location))
 		EXCEPTION("Progress Bar needs an atom. Was given ([location]). Invalid target given")
-	// if((QDELETED(User) || !istype(User)) && !visible_to_all)
-	// 	stack_trace("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] user")
-	// 	qdel(src)
-	// 	return
-	// if(!isnum(goal_number))
-	// 	stack_trace("/datum/progressbar created with [isnull(User) ? "null" : "invalid"] goal_number")
-	// 	qdel(src)
-	// 	return
-	// if(visible_to_all)
-	// 	bar.plane = HUD_PLANE - 100
-	// else
-	// 	bar.plane = ABOVE_HUD_PLANE
 	src.goal = goal
 	auto_update = automatic
+	auto_remove = autoremove
+	start_time = world.time
+	display_loc = WEAKREF(location)
 	generate_bar_id()
 	register_visibility(can_see)
 	RegisterSignal(location, COMSIG_PARENT_QDELETING, .proc/master_deleted)
-	display_loc = WEAKREF(location)
-
-	// LAZYADDASSOC(user.progressbars, display_loc, src)
-	// var/list/bars = user.progressbars[display_loc]
-	// listindex = bars.len
-
-	// if(user.client)
-	// 	user_client = user.client
-	// 	add_prog_bar_image_to_client()
 
 /datum/progressbar/proc/register_visibility(list/can_see)
 	if(!LAZYLEN(can_see))
@@ -178,8 +187,6 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	show_bar()
 	is_active = TRUE
 	if(auto_update)
-		start_num = world.time
-		goal = world.time + goal
 		START_PROCESSING(SSprogress_bars, src)
 
 /// Distributes the progress bar to all clients who can see it.
@@ -189,6 +196,14 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 		if(!isclient(clint))
 			continue
 		add_bar_to_client(clint)
+
+/// Distributes the progress bar to all clients who can see it.
+/datum/progressbar/proc/remove_bar_from_seeing_clients()
+	for(var/ck in visible_to)
+		var/client/clint = GLOB.directory[ck]
+		if(!isclient(clint))
+			continue
+		remove_bar_from_client(clint)
 
 /// Adds the progress bar to a client's screen.
 /datum/progressbar/proc/add_bar_to_client(client/clint)
@@ -208,7 +223,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	bar = image('icons/effects/progessbar.dmi', master, "prog_bar_0")
 	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	bar.plane = master.plane + 100
-	bar.pixel_y = 0
+	bar.pixel_y = 32
 	bar.alpha = 0
 
 /// Makes the progress bar visible, and shoot up to where it should be.
@@ -216,19 +231,16 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	animate(bar, pixel_y = get_dist_to_travel(), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
 /datum/progressbar/proc/get_dist_to_travel()
-	BAR_MASTER
 	var/index = SSprogress_bars.get_bar_index(display_loc, bar_id)
 	return 32 + (PROGRESSBAR_HEIGHT * (index - 1))
 
 /datum/progressbar/proc/update_position(index)
-	BAR_MASTER
-	var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (index - 1)) - PROGRESSBAR_HEIGHT
-	animate(bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+	animate(bar, pixel_y = get_dist_to_travel(), time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
 /datum/progressbar/proc/stop()
 	is_active = FALSE
 	STOP_PROCESSING(SSprogress_bars, src)
-	if(progress >= 90)
+	if(last_progress >= goal)
 		success_bar()
 	else
 		fail_bar()
@@ -244,51 +256,43 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	bar.alpha = 255
 	animate(bar, alpha = 0, color = "#FF0000", time = PROGRESSBAR_ANIMATION_TIME)
 
+/// transfers the bar to the turf, then self-destructs
 /datum/progressbar/proc/master_deleted()
 	SIGNAL_HANDLER
-	SSprogress_bars.destroy_bar(bar_id, FALSE) // calls qdel
+	// var/atom/master = display_loc?.resolve()
+	// var/turf/right_here = get_turf(master)
+	// display_loc = WEAKREF(right_here)
+	// bar.loc = right_here
+	INVOKE_ASYNC(src, .proc/stop)
 
+/// Generates a unique ID for the progress bar.
+/// I mean the time of day is unique enough, but I like big dumb numbers
 /datum/progressbar/proc/generate_bar_id()
-	bar_id = "prog_bar_[world.time]_[rand(0, 1000000)]_[rand(0, 1000000)]"
+	var/atom/master = display_loc?.resolve()
+	bar_id = "[master]-[round(world.time, 1)]-[rand(100, 999)]-[rand(1000, 9999)]-[rand(10000, 99999)]"
 	return TRUE
 
 /// Only used on automatic progress bars. Updates the progress bar to the current time
 /datum/progressbar/process()
 	if(!auto_update)
 		return
-	progress = world.time
-	update(world.time - start_num)
+	last_progress = world.time - start_time
+	update()
 
 ///Updates the progress bar image visually.
-/datum/progressbar/proc/update(progress)
+/datum/progressbar/proc/update(prog_override)
 	if(!is_active)
 		return
-	var/newstate = round(((clamp(progress, 0, goal) / goal) * 100), 5)
+	if(prog_override)
+		last_progress = prog_override
+	if(auto_remove && last_progress >= goal)
+		stop()
+		return
+	var/newstate = round(((clamp(last_progress, 0, goal) / goal) * 100), 5)
 	bar.icon_state = "prog_bar_[newstate]"
 
 /datum/progressbar/Destroy()
-	// if(user)
-	// 	for(var/pb in user.progressbars[display_loc])
-	// 		var/datum/progressbar/progress_bar = pb
-	// 		if(progress_bar == src || progress_bar.listindex <= listindex)
-	// 			continue
-	// 		progress_bar.listindex--
-
-	// 		progress_bar.bar.pixel_y = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.listindex - 1))
-	// 		var/dist_to_travel = 32 + (PROGRESSBAR_HEIGHT * (progress_bar.listindex - 1)) - PROGRESSBAR_HEIGHT
-	// 		animate(progress_bar.bar, pixel_y = dist_to_travel, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
-
-	// 	LAZYREMOVEASSOC(user.progressbars, display_loc, src)
-	// 	user = null
-
-	// if(user_client)
-	// 	clean_user_client()
-
-	for(var/ck in visible_to)
-		for(var/client/clint in GLOB.directory[ck])
-			if(!clint.mob)
-				continue
-			remove_bar_from_client(clint)
+	remove_bar_from_seeing_clients()
 	display_loc = null
 	if(bar)
 		QDEL_NULL(bar)
@@ -310,6 +314,49 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	SSprogress_bars.add_bar(src, list(), det_time, TRUE)
 	. = ..()
 
+/obj/item/debug_clicker
+	name = "debug clicker"
+	desc = "A clicker that creates a progress bar on itself. Hopefully this works."
+	icon = 'icons/fallout/objects/guns/explosives.dmi'
+	icon_state = "dynamite"
+	var/timething = 15 SECONDS
+	var/mybar
+	var/mybar2
+	var/mybar3
+	var/mybar_manual
+	var/nummy = 0
+
+/obj/item/debug_clicker/AltClick(mob/user)
+	. = ..()
+	if(!SSprogress_bars.bar_exists(mybar_manual))
+		mybar_manual = SSprogress_bars.add_bar(src, list(), 10, FALSE, TRUE)
+		say("adding bar id: [mybar_manual]")
+		return
+	nummy = SSprogress_bars.update_bar(mybar_manual, nummy + 1)
+	say("updating manual bar to [nummy] / 10")
+
+/obj/item/debug_clicker/attack_self(mob/user)
+	. = ..()
+	if(!SSprogress_bars.check_bar(mybar))
+		mybar = SSprogress_bars.add_bar(src, list(), timething, TRUE)
+		say("adding bar id: [mybar]")
+		return
+	if(!SSprogress_bars.check_bar(mybar2))
+		mybar2 = SSprogress_bars.add_bar(src, list(), timething, TRUE)
+		say("adding bar id: [mybar2]")
+		return
+	if(!SSprogress_bars.check_bar(mybar3))
+		mybar3 = SSprogress_bars.add_bar(src, list(), timething, TRUE)
+		say("adding bar id: [mybar3]")
+		return
+	SSprogress_bars.remove_bar(mybar)
+	SSprogress_bars.remove_bar(mybar2)
+	SSprogress_bars.remove_bar(mybar3)
+	mybar = null
+	mybar2 = null
+	mybar3 = null
+	say("removing bars")
+
 /obj/item/storage/box/debug_progbar
 	name = "debug dynamite crate"
 	desc = "A box full of devshit!"
@@ -322,43 +369,8 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	new /obj/item/grenade/debug_dynamite(src)
 	new /obj/item/grenade/debug_dynamite(src)
 	new /obj/item/grenade/debug_dynamite(src)
-	new /obj/item/grenade/debug_dynamite(src)
-	new /obj/item/grenade/debug_dynamite(src)
-	new /obj/item/grenade/debug_dynamite(src)
-
-///Removes the progress bar image from the user_client and nulls the variable, if it exists.
-// /datum/progressbar/proc/clean_user_client(datum/source)
-// 	SIGNAL_HANDLER
-
-// 	if(!user_client) //Disconnected, already gone.
-// 		return
-// 	user_client.images -= bar
-// 	user_client = null
-
-
-// ///Called by user's Login(), it transfers the progress bar image to the new client.
-// /datum/progressbar/proc/on_user_login(datum/source)
-// 	SIGNAL_HANDLER
-
-// 	if(user_client)
-// 		if(user_client == user.client) //If this was not client handling I'd condemn this sanity check. But clients are fickle things.
-// 			return
-// 		clean_user_client()
-// 	if(!user.client) //Clients can vanish at any time, the bastards.
-// 		return
-// 	user_client = user.client
-// 	add_prog_bar_image_to_client()
-
-
-
-
-// /datum/progressbar/proc/set_new_goal(newgoal)
-// 	goal = newgoal
-// 	last_progress = 0
-// 	update(0)
-
-
-
+	new /obj/item/debug_clicker(src)
+	new /obj/item/debug_clicker(src)
 
 #undef PROGRESSBAR_ANIMATION_TIME
 #undef PROGRESSBAR_HEIGHT

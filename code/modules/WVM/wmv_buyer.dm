@@ -177,7 +177,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
 	var/sales_timer
-	var/datum/progressbar/my_bar
+	var/my_bar
 	var/start_time = 0
 	var/end_time = 0
 	var/datum/looping_sound/grinding_noises/soundloop
@@ -368,7 +368,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	STOP_PROCESSING(SSfastprocess, src)
 	unlock_belt()
 	soundloop.stop()
-	stop_progress_bar()
+	SSprogress_bars.remove_bar(my_bar)
 	playsound(src, 'sound/machines/ding.ogg', 90, 1)
 	deltimer(sales_timer)
 	is_grinding = FALSE
@@ -406,7 +406,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		final_price = S.amount * final_price
 	var/time2sell = final_price * 0.5 SECONDS
 	say("Now processing [thing2sell]!", just_chat = TRUE)
-	start_progress_bar(time2sell)
+	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
 	lock_belt()
 	sales_timer = addtimer(CALLBACK(src, .proc/sell_loop_end, thing2sell), time2sell, TIMER_STOPPABLE)
@@ -555,37 +555,6 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			return thingy
 	return
 
-/obj/machinery/mineral/wasteland_trader/proc/start_progress_bar(goal_time)
-	if(!goal_time)
-		return
-	if(!istype(my_bar))
-		my_bar = new /datum/progressbar(null, goal_time, src)
-	my_bar.show_bar()
-	//my_bar.set_new_goal(goal_time)
-	start_time = world.time
-	end_time = goal_time + world.time
-	START_PROCESSING(SSfastprocess, src)
-
-/obj/machinery/mineral/wasteland_trader/proc/stop_progress_bar()
-	STOP_PROCESSING(SSfastprocess, src)
-	end_time = 0
-	//my_bar.hide_bar()
-	update_overlays()
-
-/obj/machinery/mineral/wasteland_trader/process()
-	if(!my_bar)
-		return
-	update_overlays()
-	if(world.time >= end_time && !is_grinding)
-		stop_progress_bar()
-
-/obj/machinery/mineral/wasteland_trader/update_overlays()
-	. = ..()
-	cut_overlays()
-	if(!my_bar || !is_grinding)
-		return
-	my_bar.update(world.time - start_time)
-	add_overlay(my_bar.bar)
 
 /*
 
