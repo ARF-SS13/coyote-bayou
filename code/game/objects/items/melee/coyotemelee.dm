@@ -385,7 +385,7 @@
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.5
-	weapon_special_component = /datum/component/weapon_special/ranged_spear/longer/pike
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldnaginata
 	name = "Old Naginata"
