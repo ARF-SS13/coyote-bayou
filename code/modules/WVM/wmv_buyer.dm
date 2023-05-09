@@ -132,16 +132,16 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/animalhide/brahmin = 8,
 		/obj/item/stack/sheet/animalhide/human = 0,
 		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 25, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
-		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 10,
-		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 10,
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 5,
 		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 10,
-		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 10,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 8,
+		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 3,
+		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6,
 		/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 12,
-		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 7,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 7,
+		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2,
+		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 4,
 		/obj/item/stock_parts/capacitor/adv = 3,
 		/obj/item/stock_parts/scanning_module/adv = 3,
 		/obj/item/stock_parts/manipulator/nano = 3,
@@ -442,7 +442,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(istype(thing2sell, /obj/item/stack))
 		var/obj/item/stack/S = thing2sell
 		final_price = S.amount * final_price
-	var/time2sell = final_price * 0.5 SECONDS
+	var/time2sell = final_price * 0.1 SECONDS
 	say("Now processing [thing2sell]!", just_chat = TRUE)
 	start_progress_bar(time2sell)
 	soundloop.start()
