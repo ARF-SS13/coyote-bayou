@@ -63,6 +63,7 @@
 		return
 
 /obj/item/projectile/magic/spellcard/book/healbrute
+	icon_state = "bruteheal"
 	damage = 0
 	nodamage  = TRUE
 
@@ -85,6 +86,7 @@
 		return
 
 /obj/item/projectile/magic/spellcard/book/healburn
+	icon_state = "burnheal"
 	damage = 0
 	nodamage  = TRUE
 
@@ -107,6 +109,7 @@
 		return
 
 /obj/item/projectile/magic/spellcard/book/healtoxin
+	icon_state = "toxinheal"
 	damage = 0
 	nodamage  = TRUE
 
