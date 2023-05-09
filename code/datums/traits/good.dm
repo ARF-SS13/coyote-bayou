@@ -274,7 +274,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 
 /datum/quirk/wizard
 	name = "Wasteland Wizard"
-	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit."
+	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit. This isn't a lisence to be a greifer or break rules. "
 	value = 4
 	mob_trait = TRAIT_SWAMPWIZARD
 	gain_text = span_notice("You know everything about magic.")
