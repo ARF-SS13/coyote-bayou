@@ -731,6 +731,36 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/chomp/redjacket
+	name = "Red Hoodie"
+	path = /obj/item/clothing/suit/toggle/labcoat/chomp/redjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/chomp/bluejacket
+	name = "Blue Hoodie"
+	path = /obj/item/clothing/suit/toggle/labcoat/chomp/bluejacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/chomp/greenjacket
+	name = "Green Hoodie"
+	path = /obj/item/clothing/suit/toggle/labcoat/chomp/greenjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/chomp/yellowjacket
+	name = "Yellow Hoodie"
+	path = /obj/item/clothing/suit/toggle/labcoat/chomp/yellowjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/chomp/purplejacket
+	name = "Purple Hoodie"
+	path = /obj/item/clothing/suit/toggle/labcoat/chomp/purplejacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 
 /datum/gear/suit/christmascoatr
