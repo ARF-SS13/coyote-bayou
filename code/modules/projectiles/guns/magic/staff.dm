@@ -95,4 +95,13 @@
 	max_charges = 6
 	recharge_rate = 10 SECONDS
 
+/obj/item/gun/magic/staff/healing/triheal
+	name = "staff of triad blessings"
+	desc = "An artefact that spits bolts of restorative magic. This one has three spells echanted into its crystal. One to heal simple bruises, one that soothes burns, and the other that can heal even the most complex of toxins and cellular damage."
+	fire_sound = 'sound/magic/mystical.ogg'
+	ammo_type = list(/obj/item/ammo_casing/magic/book/healbrute, /obj/item/ammo_casing/magic/book/healburn, /obj/item/ammo_casing/magic/book/healtoxin)
+	icon_state = "triheal"
+	item_state = "broom"
+	max_charges = 3
+	recharge_rate = 10 MINUTES
 
