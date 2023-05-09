@@ -102,7 +102,7 @@
 	ammo_type = /obj/item/ammo_casing/magic/chaos
 	icon_state = "triheal"
 	item_state = "broom"
-	max_charges = 6
-	recharge_rate = 5 MINUTES
+	max_charges = 1
+	recharge_rate = 30 SECONDS
 	var/allowed_projectile_types = list(/obj/item/ammo_casing/magic/book/healbrute, /obj/item/ammo_casing/magic/book/healburn, /obj/item/ammo_casing/magic/book/healtoxin)
 
