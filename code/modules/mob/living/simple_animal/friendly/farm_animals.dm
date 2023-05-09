@@ -1349,6 +1349,28 @@
 	resize = 0.7
 	update_transform()
 
+/mob/living/simple_animal/cow/brahmin/cow //return to bovine
+	name = "Cow"
+	desc = "A black and white cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow"
+	icon_living = "cow"
+	icon_dead = "cow_dead"
+	icon_gib = "brahmin_gib"
+
+/mob/living/simple_animal/cow/brahmin/cow/Initialize()
+	.=..()
+	resize = 0.85
+	update_transform()
+
+/mob/living/simple_animal/cow/brahmin/cow/tan
+	name = "Tan Cow"
+	desc = "A tan cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow_tan"
+	icon_living = "cow_tan"
+	icon_dead = "cow_tan_dead"
+	icon_gib = "brahmin_gib"
 
 /* Seems obsolete with Daves Brahmin packs, marked for death?
 	if(inventory_back && inventory_back.brahmin_fashion)

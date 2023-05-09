@@ -1651,3 +1651,27 @@
 	item_state = "desert_uniform"
 	item_color = "desert_uniform"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/shrine_maiden
+	name = "shrine maiden"
+	desc = "A tradional dress for shrine maidens to wear"
+	icon_state = "shrine_maiden"
+	item_state = "shrine_maiden"
+	item_color = "shrine_maiden"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/striped_clown
+	name = "striped clown overalls"
+	desc = "Honk honk! Oh wait you don't know clown? It's a clown uniform of course!"
+	icon_state = "striped_clown"
+	item_state = "striped_clown"
+	item_color = "striped_clown"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/engineer_alt
+	name = "Engineer jumpsuit"
+	desc = "Quick get the engine!"
+	icon_state = "engine_alt"
+	item_state = "engine_alt"
+	item_color = "engine_alt"
+	can_adjust = FALSE

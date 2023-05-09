@@ -272,9 +272,10 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
 
+/* //placeholder test concluded
 /datum/quirk/wizard
 	name = "Wasteland Wizard"
-	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit."
+	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit. This isn't a lisence to be a greifer or break rules. "
 	value = 4
 	mob_trait = TRAIT_SWAMPWIZARD
 	gain_text = span_notice("You know everything about magic.")
@@ -285,6 +286,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	var/obj/item/spellbook/B = new(get_turf(H))
 	H.put_in_hands(B)
 	H.regenerate_icons()
+*/
 
 /datum/quirk/selfaware
 	name = "Self-Aware"

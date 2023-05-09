@@ -1148,3 +1148,185 @@
 	icon_state = "trench_colorable"
 	item_state = "trench_colorable"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/poncho
+	name = "Rainbow Poncho"
+	desc = "A rainbow poncho"
+	icon_state = "poncho"
+	item_state = "poncho"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek
+	name = "Cyperpunk Brown"
+	desc = "A brown jacket!"
+	icon_state = "cyberpunksleek"
+	item_state = "cyberpunksleek"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_black
+	name = "Cyperpunk Black"
+	desc = "A black jacket!"
+	icon_state = "cyberpunksleek_black"
+	item_state = "cyberpunksleek_black"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_green
+	name = "Cyperpunk Green"
+	desc = "A green jacket!"
+	icon_state = "cyberpunksleek_green"
+	item_state = "cyberpunksleek_green"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_white
+	name = "Cyperpunk White"
+	desc = "A white jacket!"
+	icon_state = "cyberpunksleek_white"
+	item_state = "cyberpunksleek_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long_green
+	name = "Cyperpunk Long Green"
+	desc = "A green jacket!"
+	icon_state = "cyberpunksleek_long_green"
+	item_state = "cyberpunksleek_long_green"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long_black
+	name = "Cyperpunk Long Black"
+	desc = "A black jacket!"
+	icon_state = "cyberpunksleek_long_black"
+	item_state = "cyberpunksleek_long_black"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long_white
+	name = "Cyperpunk Long white"
+	desc = "A white jacket!"
+	icon_state = "cyberpunksleek_long_white"
+	item_state = "cyberpunksleek_long_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long
+	name = "Cyperpunk Long brown"
+	desc = "A brown jacket!"
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/overcoat_brown
+	name = "Brown Overcoat"
+	desc = "A brown jacket!"
+	icon_state = "overcoat_brown"
+	item_state = "overcoat_brown"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/overcoat_black
+	name = "Black Overcoat"
+	desc = "A black jacket!"
+	icon_state = "overcoat_black"
+	item_state = "overcoat_black"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/bladerunner_coat
+	name = "Blade Runner Coat"
+	desc = "A black jacket!"
+	icon_state = "bladerunner_coat"
+	item_state = "bladerunner_coat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/boxer_jacket
+	name = "boxing jacket"
+	desc = "A nice looking jacket"
+	icon_state = "boxer_jacket"
+	item_state = "boxer_jacket"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/drive_jacket
+	name = "drive jacket"
+	desc = "A nice looking jacket"
+	icon_state = "drive_jacket"
+	item_state = "drive_jacket"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/violet_jacket
+	name = "Violet Jacket"
+	desc = "A nice looking jacket"
+	icon_state = "violet_jacket"
+	item_state = "violet_jacket"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/tunnelsnake
+	name = "Tunnel Snake"
+	desc = "A nice looking jacket"
+	icon_state = "tunnelsnake"
+	item_state = "tunnelsnake"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/dante
+	name = "Dante jacket"
+	desc = "A nice looking jacket"
+	icon_state = "dante"
+	item_state = "dante"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/chomp/warden
+	name = "Warden jacket"
+	desc = "A nice looking jacket"
+	icon_state = "warden"
+	item_state = "warden"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/chomp/hos_trench
+	name = "Black Trench Coat"
+	desc = "A nice looking jacket"
+	icon_state = "hos_trench"
+	item_state = "hos_trench"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/talon
+	name = "Dark blue coat"
+	desc = "A nice looking jacket"
+	icon_state = "taloncoat"
+	item_state = "taloncoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/talon
+	name = "Dark blue coat"
+	desc = "A nice looking jacket"
+	icon_state = "taloncoat"
+	item_state = "taloncoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/redjacket
+	name = "Red Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_redtrim"
+	item_state = "hoodie_redtrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/bluejacket
+	name = "Blue Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_bluetrim"
+	item_state = "hoodie_bluetrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/greenjacket
+	name = "Green Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_greentrim"
+	item_state = "hoodie_greentrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/purplejacket
+	name = "Purple Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_purpletrim"
+	item_state = "hoodie_purpletrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/yellowjacket
+	name = "Yellow Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_yellowtrim"
+	item_state = "hoodie_yellowtrim"
+	armor = ARMOR_VALUE_LIGHT

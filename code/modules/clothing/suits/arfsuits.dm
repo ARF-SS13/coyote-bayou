@@ -2858,7 +2858,6 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 
-
 /obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"
 	desc = "A heavily reinforced set of military grade armor."

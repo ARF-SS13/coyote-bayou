@@ -738,6 +738,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/gun/twinrcw
+	name = "Twin-shot RCW Carbine"
+	result = /obj/item/gun/energy/laser/auto/twin
+	reqs = list(/obj/item/gun/energy/laser/auto = 1,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/stack/crafting/electronicparts = 10,
+				/obj/item/stack/cable_coil = 3)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //browning hi-power
 /datum/crafting_recipe/ninemil

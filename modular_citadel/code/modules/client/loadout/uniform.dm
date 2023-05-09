@@ -1923,3 +1923,21 @@
 	cost = 1
 	path = /obj/item/clothing/under/f13/ranger/modif_ranger
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/striped_clown
+	name = "Striped Clown Overalls"
+	cost = 1
+	path = /obj/item/clothing/under/striped_clown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/shrine_maiden
+	name = "Shrine Maiden"
+	cost = 1
+	path = /obj/item/clothing/under/shrine_maiden
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/engineer_alt
+	name = "Engineer Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/engineer_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
