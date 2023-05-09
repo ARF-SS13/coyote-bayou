@@ -39,7 +39,7 @@
 /area/f13/building/church
 	narrate = "Lavender and vanilla oil. The air is surprisingly clean and lacks the characteristic bitter tang of the waste-air. Rust nor radiation has penetrated this holy place."
 
-/area/f13/hospital/clinic
+/area/f13/building/hospital/clinic
 	narrate = "Fans- cold air- a rarity. The floor is sticky and the scent of chemicals makes your eyes water. A gentle hum of medical machinery transcends the clinic's humble appearance."
 
 /area/f13/bar
