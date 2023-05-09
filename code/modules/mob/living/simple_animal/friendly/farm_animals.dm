@@ -1349,7 +1349,7 @@
 	resize = 0.7
 	update_transform()
 
-/mob/living/simple_animal/cow/brahmin/cow
+/mob/living/simple_animal/cow/brahmin/cow //return to bovine
 	name = "Cow"
 	desc = "A black and white cow!"
 	icon = 'modular_coyote/icons/mob/cow.dmi'
@@ -1357,6 +1357,11 @@
 	icon_living = "cow"
 	icon_dead = "cow_dead"
 	icon_gib = "brahmin_gib"
+
+/mob/living/simple_animal/cow/brahmin/cow/Initialize()
+	.=..()
+	resize = .85
+	update_transform()
 
 /mob/living/simple_animal/cow/brahmin/cow/tan
 	name = "Tan Cow"
