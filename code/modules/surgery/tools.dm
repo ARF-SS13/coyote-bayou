@@ -133,7 +133,8 @@
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	item_flags = SURGICAL_TOOL
 	flags_1 = CONDUCT_1
-	force = 15
+	force = 30
+	force_unwielded = 30
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("drilled")
 	tool_behaviour = TOOL_DRILL
@@ -177,7 +178,7 @@
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	flags_1 = CONDUCT_1
-	force = 10
+	force = 20
 	w_class = WEIGHT_CLASS_SMALL
 	toolspeed = 0.5
 	attack_verb = list("drilled")
@@ -190,7 +191,9 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	flags_1 = CONDUCT_1
-	force = 10
+	force = 20
+	force_unwielded = 20
+	force_wielded = 24
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 5
 	throw_speed = 3
@@ -220,7 +223,9 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel_a"
 	hitsound = 'sound/weapons/blade1.ogg'
-	force = 16
+	force = 24
+	force_unwielded = 24
+	force_wielded = 38
 	toolspeed = 0.7
 	light_color = LIGHT_COLOR_GREEN
 	sharpness = SHARP_POINTY
@@ -252,7 +257,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel"
 	flags_1 = CONDUCT_1
-	force = 10
+	force = 20
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 5
 	throw_speed = 3
@@ -278,7 +283,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 6
+	force = 12
+	force_unwielded = 12
+	force_wielded = 24
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
@@ -301,7 +308,9 @@
 	throwhitsound =  'sound/weapons/pierce.ogg'
 	item_flags = SURGICAL_TOOL
 	flags_1 = CONDUCT_1
-	force = 15
+	force = 30
+	force_unwielded = 30
+	force_wielded = 40
 	w_class = WEIGHT_CLASS_NORMAL
 	throwforce = 9
 	throw_speed = 2
@@ -332,7 +341,7 @@
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	throwhitsound =  'sound/weapons/pierce.ogg'
 	flags_1 = CONDUCT_1
-	force = 10
+	force = 25
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 9
 	throw_speed = 2

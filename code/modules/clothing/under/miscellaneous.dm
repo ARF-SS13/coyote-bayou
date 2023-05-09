@@ -1669,9 +1669,11 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/engineer_alt
-	name = "Engineer jumpsuit"
-	desc = "Quick get the engine!"
+	name = "engineering jumpsuit"
+	desc = "A skin tight jumpsuit in bright orange (or is it red?) and yellow."
 	icon_state = "engine_alt"
 	item_state = "engine_alt"
 	item_color = "engine_alt"
-	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
+	can_adjust = TRUE
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)

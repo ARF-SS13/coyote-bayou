@@ -31,6 +31,7 @@
 	throw_range = 7
 	force = 0
 	total_mass = TOTAL_MASS_TINY_ITEM
+	w_class = WEIGHT_CLASS_TINY
 
 
 /*
@@ -589,6 +590,7 @@
 /obj/item/toy/prize/ripley
 	name = "toy Ripley"
 	desc = "Mini-Mecha action figure! Collect them all! 1/12."
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/toy/prize/fireripley
 	name = "toy firefighting Ripley"
@@ -640,7 +642,7 @@
 	desc = "A generic action figure modeled after nothing in particular."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "owlprize"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	var/cooldown = FALSE
 	var/messages = list("I'm super generic!", "Mathematics class is of variable difficulty!")
 	var/span = "danger"

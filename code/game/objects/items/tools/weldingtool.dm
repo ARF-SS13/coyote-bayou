@@ -9,7 +9,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 3
+	force = 7
 	throwforce = 5
 	hitsound = "swing_hit"
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
@@ -67,7 +67,7 @@
 /obj/item/weldingtool/process()
 	switch(welding)
 		if(0)
-			force = 3
+			force = 7
 			damtype = BRUTE
 			update_icon()
 			if(!can_off_process)
@@ -75,7 +75,7 @@
 			return
 	//Welders left on now use up fuel, but lets not have them run out quite that fast
 		if(1)
-			force = 15
+			force = 30
 			damtype = BURN
 			++burned_fuel_for
 			if(burned_fuel_for >= WELDER_FUEL_BURN_INTERVAL)
@@ -281,7 +281,7 @@
 		if(get_fuel() >= 1)
 			to_chat(user, span_notice("You switch [src] on."))
 			playsound(loc, acti_sound, 50, 1)
-			force = 15
+			force = 30
 			damtype = "fire"
 			hitsound = 'sound/items/welder.ogg'
 			update_icon()
@@ -299,7 +299,7 @@
 	welding = 0
 	set_light_on(FALSE)
 
-	force = 3
+	force = 7
 	damtype = "brute"
 	hitsound = "swing_hit"
 	update_icon()

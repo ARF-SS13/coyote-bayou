@@ -7,7 +7,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 12
+	force = 25
+	force_unwielded = 25
+	force_wielded = 30
 	throwforce = 7
 	w_class = WEIGHT_CLASS_SMALL
 	unique_reskin = list("Brass" = "wrench_clock",
