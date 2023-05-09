@@ -707,6 +707,30 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/techpriest
+	name = "Techpriest robes"
+	path = /obj/item/clothing/suit/hooded/techpriest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/chomp/warden
+	name = "warden jacket"
+	path = /obj/item/clothing/suit/chomp/warden
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/chomp/hos_trench
+	name = "black trench jacket"
+	path = /obj/item/clothing/suit/chomp/hos_trench
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/chomp/talon
+	name = "dark blue jacket"
+	path = /obj/item/clothing/suit/toggle/labcoat/chomp/talon
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
 //These should be left commented out until the holidays or special events. //Recommenting these in.
 
 /datum/gear/suit/christmascoatr

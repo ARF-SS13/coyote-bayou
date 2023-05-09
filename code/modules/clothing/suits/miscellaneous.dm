@@ -1267,3 +1267,24 @@
 	icon_state = "dante"
 	item_state = "dante"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/chomp/warden
+	name = "Warden jacket"
+	desc = "A nice looking jacket"
+	icon_state = "warden"
+	item_state = "warden"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/chomp/hos_trench
+	name = "Black Trench Coat"
+	desc = "A nice looking jacket"
+	icon_state = "hos_trench"
+	item_state = "hos_trench"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/talon
+	name = "Dark blue coat"
+	desc = "A nice looking jacket"
+	icon_state = "taloncoat"
+	item_state = "taloncoat"
+	armor = ARMOR_VALUE_LIGHT
