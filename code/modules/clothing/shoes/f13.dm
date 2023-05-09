@@ -20,10 +20,14 @@
 	item_state = "rag"
 
 /obj/item/clothing/shoes/f13/rag/pawb
-	name = "Tough Feet"
+	name = "tough feet"
 	desc = "For one reason or another your feet are too tough to need shoes. Or maybe you're just very agile. Who knows."
 	icon_state = "pawb" //uwu//
 	item_state = "pawb"
+
+/obj/item/clothing/shoes/f13/rag/pawb/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
 /obj/item/clothing/shoes/f13/tan
 	name = "tan shoes"
