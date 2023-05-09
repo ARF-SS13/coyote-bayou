@@ -1360,7 +1360,7 @@
 
 /mob/living/simple_animal/cow/brahmin/cow/Initialize()
 	.=..()
-	resize = .85
+	resize = 0.85
 	update_transform()
 
 /mob/living/simple_animal/cow/brahmin/cow/tan
