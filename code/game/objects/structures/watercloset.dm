@@ -437,6 +437,10 @@
 				H.update_inv_ears()
 			if(H.belt && wash_obj(H.belt))
 				H.update_inv_belt()
+			if(H.wear_neck && wash_obj(H.wear_neck))
+				H.update_inv_neck()
+			if(H.s_store && wash_obj(H.s_store))
+				H.update_inv_s_store()
 		else
 			if(M.wear_mask && wash_obj(M.wear_mask))
 				M.update_inv_wear_mask(0)
