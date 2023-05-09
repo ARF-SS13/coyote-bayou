@@ -1288,3 +1288,45 @@
 	icon_state = "taloncoat"
 	item_state = "taloncoat"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/talon
+	name = "Dark blue coat"
+	desc = "A nice looking jacket"
+	icon_state = "taloncoat"
+	item_state = "taloncoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/redjacket
+	name = "Red Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_redtrim"
+	item_state = "hoodie_redtrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/bluejacket
+	name = "Blue Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_bluetrim"
+	item_state = "hoodie_bluetrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/greenjacket
+	name = "Green Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_greentrim"
+	item_state = "hoodie_greentrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/purplejacket
+	name = "Purple Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_purpletrim"
+	item_state = "hoodie_purpletrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/yellowjacket
+	name = "Yellow Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_yellowtrim"
+	item_state = "hoodie_yellowtrim"
+	armor = ARMOR_VALUE_LIGHT
