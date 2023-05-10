@@ -649,21 +649,33 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot_drop_amount == MOB_LOOT_ALL || !isnum(loot_drop_amount))
-		for(var/drop in loot)
-			for(var/i in 1 to max(1, loot[drop]))
-				new drop(drop_location())
-		return
+		if(loot_drop_amount == MOB_LOOT_ALL)
+			loot_amount_random = FALSE
+		loot_drop_amount = LAZYLEN(loot)
 	var/list/lootlist = loot
+	var/list/droppedstuff = list()
+	var/list/turfs = list()
+	for(var/turf/T in hearers(1, src))
+		if(T.density)
+			continue
+		turfs |= T
+	if(!LAZYLEN(turfs))
+		turfs |= get_turf(src)
 	for(var/i in 1 to loot_amount_random ? rand(1,loot_drop_amount) : loot_drop_amount)
 		if(!LAZYLEN(lootlist))
 			return
 		var/dropthing = pickweight_n_take(lootlist)
 		if(ispath(dropthing))
-			var/atom/newthing = new dropthing(drop_location())
+			var/turf/spawn_here = pick(turfs)
+			var/atom/newthing = new dropthing(spawn_here.drop_location())
 			if(istype(newthing, /obj/effect/spawner/lootdrop))
 				var/obj/effect/spawner/lootdrop/lut = newthing
 				if(lut.delay_spawn)
-					lut.spawn_the_stuff()
+					lut.spawn_the_stuff(droppedstuff)
+				continue
+			droppedstuff |= newthing
+	for(var/atom/thingy in droppedstuff)
+		SEND_SIGNAL(thingy, COMSIG_ITEM_MOB_DROPPED, src)
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
