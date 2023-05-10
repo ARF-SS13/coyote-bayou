@@ -907,7 +907,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	toolspeed = 0.7
 	sharpness = SHARP_EDGED
 	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
-
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 // Hatchet				Force 24
 // Wrench				Force 12
