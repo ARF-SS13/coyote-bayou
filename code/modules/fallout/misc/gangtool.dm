@@ -2,8 +2,8 @@
 
 /* exchange rates X * CAP*/
 #define CASH_AUR_GANG 100 /* 100 caps to 1 AUR */
-#define CASH_DEN_GANG 4 /* 4 caps to 1 DEN */
-#define CASH_NCR_GANG 0.4 /* $100 to 40 caps */
+#define CASH_DEN_GANG 10 /* 4 caps to 1 DEN */
+#define CASH_NCR_GANG 0.5 /* $100 to 40 caps */
 
 //Gangtool device
 /obj/item/device/gangtool
