@@ -549,7 +549,7 @@
 		M.visible_message(span_warning("[src] mends [target]!"))
 		M.adjustBruteLoss(-35) //HEALS
 		M.adjustOxyLoss(-20)
-		M.adjustBruteLoss(-35)
+		M.adjustBruteLoss(-15)
 		M.adjustFireLoss(-5)
 		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
@@ -572,7 +572,7 @@
 		M.visible_message(span_warning("[src] mends [target]!"))
 		M.adjustBruteLoss(-5) //HEALS
 		M.adjustOxyLoss(-20)
-		M.adjustBruteLoss(-5)
+		M.adjustBruteLoss(-35)
 		M.adjustFireLoss(-35)
 		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
@@ -594,7 +594,7 @@
 		M.visible_message(span_warning("[src] mends [target]!"))
 		M.adjustBruteLoss(-5) //HEALS
 		M.adjustOxyLoss(-50)
-		M.adjustBruteLoss(-5)
+		M.adjustBruteLoss(-15)
 		M.adjustFireLoss(-5)
 		M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-50)
