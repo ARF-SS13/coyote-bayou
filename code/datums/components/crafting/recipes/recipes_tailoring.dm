@@ -321,7 +321,7 @@ datum/crafting_recipe/combathazardhood // sec biohood
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
-/datum/crafting_recipe/weldinghelmet
+/datum/crafting_recipe/weldinghelmet/upgr
 	name = "Reinforced Welding Hardhat"
 	result = /obj/item/clothing/head/hardhat/weldhat/upgraded
 	reqs = list(/obj/item/flashlight/lantern = 1,
