@@ -106,3 +106,6 @@
 	recharge_rate = 30 SECONDS
 	var/allowed_projectile_types = list(/obj/item/projectile/magic/healbrute, /obj/item/projectile/magic/healburn, /obj/item/projectile/magic/healtoxin)
 
+/obj/item/gun/magic/staff/healing/triheal/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
+	chambered.projectile_type = pick(allowed_projectile_types)
+	. = ..()
