@@ -18,6 +18,7 @@
 					"Large" = "crowbar_large"
 					)
 	custom_materials = list(/datum/material/iron=450)
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_CROWBAR
