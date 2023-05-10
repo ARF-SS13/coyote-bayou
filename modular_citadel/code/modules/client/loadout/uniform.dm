@@ -24,6 +24,12 @@
 	path = /obj/item/clothing/under/f13/vault
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
+/datum/gear/uniform/engineer
+	name = "engineer jumpsuit"
+	path = /obj/item/clothing/under/engineer_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+	cost = 2
+
 /datum/gear/uniform/wornvault
 	name = "disheveled Dweller jumpsuit"
 	path = /obj/item/clothing/under/f13/exile/vault

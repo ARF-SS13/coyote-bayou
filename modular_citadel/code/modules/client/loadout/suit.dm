@@ -18,6 +18,11 @@
 	path = /obj/item/clothing/suit/suspenders
 	cost = 1
 
+/datum/gear/suit/suit_gear_harness
+	name = "secondary gear harness"
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
+	cost = 1
+
 /datum/gear/suit/labcoat
 	name = "Labcoat"
 	path = /obj/item/clothing/suit/toggle/labcoat

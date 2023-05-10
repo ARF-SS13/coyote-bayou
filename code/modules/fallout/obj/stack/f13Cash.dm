@@ -3,7 +3,7 @@
 
 /* exchange rates X * CAP*/
 #define CASH_AUR 100 /* 100 caps to 1 AUR */
-#define CASH_DEN 4 /* 4 caps to 1 DEN */
+#define CASH_DEN 10 /* 4 caps to 1 DEN */
 #define CASH_NCR 0.4 /* $100 to 40 caps */
 
 /* value of coins to spawn, use as-is for caps */
@@ -35,6 +35,11 @@
 #define BANKER_MIN 2000
 #define BANKER_MAX 15000
 
+// Amounts of coins that, under which, it makes a noise
+#define DINGLE_LOW 5
+#define DINGLE_MED 15
+#define DINGLE_HIGH 30
+
 /obj/item/stack/f13Cash //DO NOT USE THIS
 	name = "copper coin"
 	singular_name = "copper coin"
@@ -54,8 +59,13 @@
 	var/cooldown = 0
 	var/coinflip
 	var/list/sideslist = list("heads","tails")
+	var/pitch = 100
 	merge_type = /obj/item/stack/f13Cash
 	custom_materials = list(/datum/material/f13cash=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/f13Cash/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED, .proc/dingaling)
 
 /obj/item/stack/f13Cash/attack_self(mob/user)
 	if (flippable)
@@ -172,6 +182,51 @@
 		if(501 to 15000)
 			icon_state = "[initial(icon_state)]6"
 
+/obj/item/stack/f13Cash/proc/dingaling()
+	var/snd = 'sound/items/dropped/coin_1.ogg'
+	switch(amount)
+		if(0 to DINGLE_LOW)
+			snd = 'sound/items/dropped/coin_1.ogg'
+		if(DINGLE_LOW to DINGLE_MED)
+			snd = 'sound/items/dropped/coin_low.ogg'
+		if(DINGLE_MED to DINGLE_HIGH)
+			snd = 'sound/items/dropped/coin_med.ogg'
+		if(DINGLE_HIGH to INFINITY)
+			snd = 'sound/items/dropped/coin_high.ogg'
+	playsound(loc, snd, 50, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(pitch, 0, 0))
+	if(!(locate(/mob/living) in loc))
+		return
+	var/list/okplaces = list()
+	for(var/turf/T in range(1, src))
+		if(T.density)
+			continue
+		if(locate(/mob/living) in T)
+			continue
+		okplaces |= T
+	if(LAZYLEN(okplaces))
+		step_to(src, pick(okplaces))
+
+/obj/item/debug_clicker/dingalinger
+	name = "Debug Dingalinger"
+	desc = "Click to dingalinger"
+	icon = 'icons/obj/economy.dmi'
+	icon_state = "rupee"
+	max_reach = 10
+	var/amtt = 1
+
+/obj/item/debug_clicker/dingalinger/attack_self(mob/user)
+	. = ..()
+	amtt = input(user, "How many?") as null|num
+	to_chat(user, "Dingalingering [amtt] times")
+
+/obj/item/debug_clicker/dingalinger/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(isturf(target))
+		var/obj/item/stack/f13Cash/caps/cap = new(get_turf(target), amtt)
+		SEND_SIGNAL(cap, COMSIG_ITEM_MOB_DROPPED)
+		return
+	SEND_SIGNAL(target, COMSIG_ITEM_MOB_DROPPED)
+
 /obj/item/stack/f13Cash/random/low
 	min_qty = LOW_MIN / CASH_CAP
 	max_qty = LOW_MAX / CASH_CAP
@@ -202,6 +257,7 @@
 	icon_state = "denarius"
 	flavor_desc =	"A sliver, shiny coin, used mainly by the middle class. Worth the same as 10 copper coins."
 	merge_type = /obj/item/stack/f13Cash/denarius
+	pitch = 0
 
 /obj/item/stack/f13Cash/random/denarius
 	money_type = /obj/item/stack/f13Cash/denarius
@@ -239,6 +295,7 @@
 	flavor_desc = 	"A golden coin used by aristocrats and upper class-men. Quite rare... a sight to behold, indeed. Also super shiny! Worth 100 copper coins, or 10 silver coins."
 	value = CASH_AUR * CASH_CAP
 	merge_type = /obj/item/stack/f13Cash/aureus
+	pitch = -100
 
 /obj/item/stack/f13Cash/random/aureus
 	money_type = /obj/item/stack/f13Cash/aureus
@@ -264,6 +321,7 @@
 	value = CASH_NCR * CASH_CAP
 	flippable = FALSE
 	merge_type = /obj/item/stack/f13Cash/ncr
+	pitch = 0
 
 /obj/item/stack/f13Cash/ncr/update_icon()
 	switch(amount)

@@ -10,7 +10,7 @@
 	var/chargespeed = 1
 	var/normalspeed = 2
 	var/last_tick = 0
-	var/list/progressbars_by_rider = list()
+	var/my_bar
 
 /obj/vehicle/ridden/secway/Initialize()
 	. = ..()
@@ -18,6 +18,7 @@
 	D.vehicle_move_delay = 1
 	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 4), TEXT_SOUTH = list(0, 4), TEXT_EAST = list(0, 4), TEXT_WEST = list( 0, 4)))
 	START_PROCESSING(SSfastprocess, src)
+	my_bar = SSprogress_bars.add_bar(src, list(), chargemax, FALSE, FALSE)
 
 /obj/vehicle/ridden/secway/process()
 	var/diff = world.time - last_tick
@@ -34,29 +35,14 @@
 			new_speed = chargespeed
 	var/datum/component/riding/D = GetComponent(/datum/component/riding)
 	D.vehicle_move_delay = new_speed
-	for(var/i in progressbars_by_rider)
-		var/datum/progressbar/B = progressbars_by_rider[i]
-		B.update(charge)
+	SSprogress_bars.update_bar(charge)
 	return ..()
 
 /obj/vehicle/ridden/secway/buckle_mob(mob/living/M, force, check_loc)
-	. = ..(M, force, check_loc)
-	if(.)
-		if(progressbars_by_rider[M])
-			qdel(progressbars_by_rider[M])
-		var/datum/progressbar/D = new(M, chargemax, src)
-		D.update(charge)
-		progressbars_by_rider[M] = D
-
-/obj/vehicle/ridden/secway/unbuckle_mob(mob/living/M, force)
-	. = ..(M, force)
-	if(.)
-		qdel(progressbars_by_rider[M])
-		progressbars_by_rider -= M
+	. = ..()
+	SSprogress_bars.add_viewer(my_bar, M)
 
 /obj/vehicle/ridden/secway/Destroy()
-	for(var/i in progressbars_by_rider)
-		qdel(progressbars_by_rider[i])
-	progressbars_by_rider.Cut()
+	SSprogress_bars.remove_bar(my_bar)
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()

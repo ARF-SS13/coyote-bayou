@@ -8,7 +8,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 5
+	force = 15
+	force_unwielded = 15
+	force_wielded = 20
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 5
 	throw_speed = 3

@@ -221,15 +221,15 @@
 	if(!len)
 		to_chat(M, span_notice("You failed to pick up anything with [parent]."))
 		return
-	var/datum/progressbar/progress = new(M, len, I.loc)
+	var/my_bar = SSprogress_bars.add_bar(I.loc, list(), len, FALSE, FALSE)
 	var/list/rejections = list()
-	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, .proc/handle_mass_pickup, things, I.loc, rejections, progress)))
+	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, .proc/handle_mass_pickup, things, I.loc, rejections, my_bar)))
 		stoplag(1)
-	qdel(progress)
+	SSprogress_bars.remove_bar(my_bar)
 	to_chat(M, span_notice("You put everything you could [insert_preposition] [parent]."))
 	A.do_squish(1.4, 0.4)
 
-/datum/component/storage/proc/handle_mass_item_insertion(list/things, datum/component/storage/src_object, mob/user, datum/progressbar/progress)
+/datum/component/storage/proc/handle_mass_item_insertion(list/things, datum/component/storage/src_object, mob/user, my_bar)
 	var/atom/source_real_location = src_object.real_location()
 	for(var/obj/item/I in things)
 		things -= I
@@ -241,13 +241,13 @@
 		if(can_be_inserted(I,FALSE,user))
 			handle_item_insertion(I, TRUE, user)
 		if (TICK_CHECK)
-			progress.update(progress.goal - things.len)
+			SSprogress_bars.update_bar(my_bar, things.len)
 			return TRUE
 
-	progress.update(progress.goal - things.len)
+	SSprogress_bars.update_bar(my_bar, things.len)
 	return FALSE
 
-/datum/component/storage/proc/handle_mass_pickup(list/things, atom/thing_loc, list/rejections, datum/progressbar/progress)
+/datum/component/storage/proc/handle_mass_pickup(list/things, atom/thing_loc, list/rejections, my_bar)
 	var/atom/real_location = real_location()
 	for(var/obj/item/I in things)
 		things -= I
@@ -264,10 +264,10 @@
 		handle_item_insertion(I, TRUE)	//The TRUE stops the "You put the [parent] into [S]" insertion message from being displayed.
 
 		if (TICK_CHECK)
-			progress.update(progress.goal - things.len)
+			SSprogress_bars.update_bar(my_bar, things.len)
 			return TRUE
 
-	progress.update(progress.goal - things.len)
+	SSprogress_bars.update_bar(my_bar, things.len)
 	return FALSE
 
 /datum/component/storage/proc/quick_empty(mob/M)
@@ -280,10 +280,10 @@
 	to_chat(M, span_notice("You start dumping out [parent]."))
 	var/turf/T = get_turf(A)
 	var/list/things = contents()
-	var/datum/progressbar/progress = new(M, length(things), T)
-	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, .proc/mass_remove_from_storage, T, things, progress)))
+	var/my_bar = SSprogress_bars.add_bar(T, list(), length(things), FALSE, FALSE)
+	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, .proc/mass_remove_from_storage, T, things, my_bar)))
 		stoplag(1)
-	qdel(progress)
+	SSprogress_bars.remove_bar(my_bar)
 	A.do_squish(0.8, 1.2)
 
 /datum/component/storage/proc/mass_remove_from_storage(atom/target, list/things, datum/progressbar/progress, trigger_on_found = TRUE)

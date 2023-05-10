@@ -206,6 +206,12 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 	body_parts_hidden = 0 // has a bit of upper window stuff
 
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
+	name = "secondary gear harness"
+	desc = "A collection of practically invisible straps useful for holding items. And that's about it."
+	icon_state = "gear_harness"
+	item_state = "gear_harness"
+
 /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
 	desc = "A practical and armored vest with pockets for tools and such."
