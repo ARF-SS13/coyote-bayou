@@ -432,6 +432,9 @@
 	#define COMPONENT_DEEPSCAN_UNCOVERED_INFORMATION		1
 #define COMSIG_ITEM_MINE_TRIGGERED "itemineboom"						///from [/obj/item/mine/proc/triggermine]:
 
+/// datum/source, mob/spawner
+#define COMSIG_ITEM_MOB_DROPPED "mobdropped"	/// from [/mob/living/simple_animal/proc/drop_loot()]
+
 // /obj/item/grenade signals
 #define COMSIG_GRENADE_PRIME "grenade_prime"					//called in /obj/item/gun/process_fire (user, target, params, zone_override)
 #define COMSIG_GRENADE_ARMED "grenade_armed"					//called in /obj/item/gun/process_fire (user, target, params, zone_override)
