@@ -3519,6 +3519,7 @@
 	desc = "That is fucking PEABUS!";
 	faction = list("gecko")
 	},
+/obj/item/card/highbounty,
 /turf/open/floor/f13/wood{
 	color = "#999999"
 	},
@@ -4189,6 +4190,13 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
+/area/f13/building)
+"Rm" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/card/highbounty,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Rs" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
@@ -61344,7 +61352,7 @@ xC
 jz
 SK
 fx
-XI
+Rm
 GP
 GP
 DP

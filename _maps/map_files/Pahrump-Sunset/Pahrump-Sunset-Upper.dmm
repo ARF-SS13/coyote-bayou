@@ -515,6 +515,7 @@
 /area/f13/building/mall)
 "asW" = (
 /obj/structure/bed,
+/obj/item/card/highbounty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ato" = (
@@ -2004,6 +2005,7 @@
 "bLU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "bLW" = (
@@ -2351,6 +2353,7 @@
 /obj/item/shard,
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/card/midbounty,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "ccL" = (
@@ -4019,6 +4022,7 @@
 /area/f13/building)
 "dMO" = (
 /mob/living/simple_animal/hostile/renegade/meister,
+/obj/item/card/highbounty,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "dNl" = (
@@ -6293,6 +6297,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/validball_spawner,
+/obj/item/card/lowbounty,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "fWH" = (
@@ -6336,6 +6341,7 @@
 /area/f13/building)
 "fXj" = (
 /obj/structure/chair/office,
+/obj/item/card/highbounty,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -6444,12 +6450,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
 "gdV" = (
-/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
@@ -7825,6 +7835,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"hkt" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/lighter,
+/obj/effect/spawner/lootdrop/lighter,
+/obj/item/card/lowbounty,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/mall)
 "hkV" = (
 /obj/structure/fluff/railing{
 	dir = 1
@@ -11629,6 +11649,7 @@
 "kCN" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -15318,6 +15339,12 @@
 "nSB" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
+"nSO" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/midbounty,
+/turf/open/floor/wood_common,
+/area/f13/caves)
 "nSV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust,
@@ -19340,6 +19367,7 @@
 /area/f13/building)
 "rHq" = (
 /obj/structure/table/wood,
+/obj/item/card/midbounty,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building/abandoned)
 "rHv" = (
@@ -23598,6 +23626,11 @@
 	icon_state = "tent11"
 	},
 /area/f13/ruins)
+"vQT" = (
+/obj/structure/table/wood,
+/obj/item/card/lowbounty,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building/abandoned)
 "vRx" = (
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -74795,7 +74828,7 @@ vje
 vje
 vje
 mlh
-kVz
+nSO
 cUE
 wDj
 tNg
@@ -76779,7 +76812,7 @@ oez
 oez
 oez
 vqz
-rws
+gJH
 gdV
 tAq
 sBd
@@ -79093,7 +79126,7 @@ oez
 oez
 vqz
 gJH
-akS
+hkt
 kdF
 pSW
 kwK
@@ -79668,7 +79701,7 @@ cQO
 aKa
 lLE
 vgC
-rHq
+vQT
 mtQ
 mtQ
 mtQ
@@ -79925,7 +79958,7 @@ uhF
 aKa
 qUo
 vgC
-rHq
+vQT
 djU
 hAA
 qPY
