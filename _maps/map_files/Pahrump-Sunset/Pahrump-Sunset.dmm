@@ -163,7 +163,9 @@
 "aaJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small{
-	dir = 1
+	color = "#FF0000";
+	dir = 1;
+	light_color = "#FF0000"
 	},
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -1620,7 +1622,6 @@
 /area/f13/building/massfusion)
 "agf" = (
 /obj/effect/spawner/lootdrop/trash,
-/obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
 	},
@@ -11884,6 +11885,7 @@
 	dir = 8
 	},
 /obj/effect/validball_spawner,
+/obj/item/card/midbounty,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -15408,6 +15410,7 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "baS" = (
@@ -24989,7 +24992,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "ctF" = (
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain1"
 	},
@@ -26457,6 +26463,14 @@
 	icon_state = "innermaincornerinner - E"
 	},
 /area/f13/wasteland/city)
+"cNF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "cNI" = (
 /obj/structure/table/wood,
 /obj/machinery/processor/chopping_block,
@@ -29197,6 +29211,16 @@
 	icon_state = "darkrusty";
 	name = "dirty floor"
 	},
+/area/f13/building/abandoned)
+"dzX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/chair,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 1;
+	light_color = "#FF0000"
+	},
+/turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "dAc" = (
 /obj/effect/decal/remains/human,
@@ -32582,6 +32606,19 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building/abandoned)
+"evI" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood1-broken"
+	},
+/area/f13/building/abandoned)
 "evK" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2bottom"
@@ -35555,13 +35592,14 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "fmb" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/midbounty,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
 	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/wood_common,
-/area/f13/building/abandoned)
+/area/f13/building/museum)
 "fme" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -38055,6 +38093,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "fSX" = (
@@ -38290,8 +38333,10 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "fVq" = (
-/obj/structure/bonfire/prelit,
-/obj/structure/spacevine,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
 	},
@@ -47055,6 +47100,14 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"iom" = (
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 1;
+	light_color = "#FF0000"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "iop" = (
 /turf/closed/wall/f13/wood/interior{
 	icon_state = "interior4"
@@ -47304,6 +47357,15 @@
 	icon_state = "horizontalbottomborderbottom2left"
 	},
 /area/f13/wasteland/city)
+"isb" = (
+/obj/machinery/hydroponics/soil,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/abandoned)
 "isi" = (
 /obj/structure/flora/grass/coyote/one,
 /turf/open/indestructible/ground/outside/road{
@@ -55461,6 +55523,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/validball_spawner,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/item/card/highbounty,
 /turf/open/floor/f13{
 	color = "#ffe9de";
 	icon_state = "darkrusty";
@@ -56761,6 +56824,11 @@
 "kXI" = (
 /obj/structure/sign/poster/contraband/missing_gloves{
 	pixel_y = 32
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 1;
+	light_color = "#FF0000"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -59882,6 +59950,7 @@
 /obj/item/seeds/xander,
 /obj/item/seeds/xander,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "lOD" = (
@@ -63160,6 +63229,10 @@
 "mDR" = (
 /obj/structure/closet/crate/bin/trashbin,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2"
 	},
@@ -67492,9 +67565,9 @@
 	light_color = "#FF0000"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain1"
+	icon_state = "verticaloutermain2"
 	},
-/area/f13/wasteland/city)
+/area/f13/wasteland)
 "nLp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/filingcabinet{
@@ -75051,6 +75124,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"pJZ" = (
+/obj/item/card/midbounty,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
 "pKu" = (
 /obj/structure/flora/grass/coyote/one,
 /obj/structure/flora/grass/wasteland{
@@ -77239,6 +77316,7 @@
 	pixel_y = 17
 	},
 /obj/structure/curtain,
+/obj/item/card/midbounty,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -83630,6 +83708,11 @@
 /obj/structure/sign/poster/contraband/missing_gloves{
 	pixel_y = 32
 	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 1;
+	light_color = "#FF0000"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right"
 	},
@@ -84229,6 +84312,10 @@
 /area/f13/wasteland/city)
 "soy" = (
 /obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000"
+	},
 /turf/open/floor/wood_common{
 	icon_state = "common-broken2"
 	},
@@ -84528,6 +84615,7 @@
 	},
 /area/f13/wasteland)
 "srQ" = (
+/obj/item/card/midbounty,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "ssf" = (
@@ -86689,6 +86777,7 @@
 "sVb" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "sVe" = (
@@ -101838,6 +101927,15 @@
 	icon_state = "verticaloutermain3"
 	},
 /area/f13/building/hospital)
+"xaU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 3;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/abandoned)
 "xaW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -103894,6 +103992,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/midbounty,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -104381,6 +104480,15 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/ruins)
+"xLb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 1;
+	light_color = "#FF0000"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "xLc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -132715,7 +132823,7 @@ aQC
 lUq
 aGR
 ahf
-aGR
+isb
 hft
 hft
 aGR
@@ -133746,7 +133854,7 @@ ygu
 aOW
 ygu
 ygu
-bPp
+evI
 vXc
 mpo
 hCc
@@ -135028,7 +135136,7 @@ cgE
 bcW
 kGY
 aRx
-kGY
+xaU
 rHC
 xpi
 qco
@@ -137479,7 +137587,7 @@ aae
 aaB
 bjo
 bjo
-bjo
+pJZ
 bjo
 adz
 acr
@@ -141563,7 +141671,7 @@ bgS
 oqh
 lYv
 agk
-xDl
+fmb
 aER
 xCC
 sdl
@@ -143596,7 +143704,7 @@ sxj
 wLX
 tej
 cuO
-nLl
+cuO
 hmz
 hmz
 sFb
@@ -143604,7 +143712,7 @@ hVA
 hmz
 hmz
 fOH
-vGC
+nLl
 bdp
 aum
 gMF
@@ -144288,11 +144396,11 @@ wNp
 aTG
 aUb
 hCc
-pbe
+iom
 aVb
 ogz
 vfw
-lqB
+dzX
 tDi
 aVe
 hmT
@@ -147634,7 +147742,7 @@ aUM
 aUM
 aUM
 aUM
-fmb
+luA
 soy
 hCc
 qjl
@@ -151474,7 +151582,7 @@ oJw
 xjm
 qmT
 hCc
-cnK
+xLb
 aVe
 dLL
 kbA
@@ -151743,7 +151851,7 @@ cKp
 aUM
 aVe
 cLB
-cnF
+cNF
 hCc
 uZR
 thr
