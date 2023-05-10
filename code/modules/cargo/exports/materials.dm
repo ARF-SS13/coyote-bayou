@@ -139,17 +139,19 @@
 
 /datum/export/material/f13cash
 	cost = 10
-	message = " "
-	unit_name = "coins"
+	message = ""
+	unit_name = "copper coin"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)
 
 /datum/export/material/f13cash/silver
 	cost = 100
+	unit_name = "silver coin"
 	export_types = list(/obj/item/stack/f13Cash/denarius)
 
 /datum/export/material/f13cash/gold
 	cost = 1000
+	unit_name = "gold coin"
 	export_types = list(/obj/item/stack/f13Cash/aureus)
 
 /datum/export/material/f13cash/scrip
