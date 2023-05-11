@@ -15,6 +15,7 @@
 	if(!(L.ckey in blurbed_stated_to))
 		blurbed_stated_to += L.ckey
 		to_chat(L, span_warning("[narrate]"))
+		SEND_SOUND(L, sound('sound/f13ambience/boodeedoo_deep.ogg'))
 
 
 /************
