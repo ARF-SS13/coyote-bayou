@@ -2,9 +2,9 @@
 #define CASH_CAP 1
 
 /* exchange rates X * CAP*/
-#define CASH_AUR 100 /* 100 caps to 1 AUR */
-#define CASH_DEN 10 /* 4 caps to 1 DEN */
-#define CASH_NCR 0.4 /* $100 to 40 caps */
+#define CASH_AUR 100 /* 100 copper to 1 gold */
+#define CASH_DEN 10 /* 10 copper to 1 silver */
+#define CASH_NCR 0.5 /* $100 to 50 copper */
 
 /* value of coins to spawn, use as-is for caps */
 /* LOW_MIN / AUR = amount in AUR */
@@ -40,13 +40,17 @@
 #define DINGLE_MED 15
 #define DINGLE_HIGH 30
 
+// Scrip vendor stack?
+#define SCRIP_MID 10
+
+
 /obj/item/stack/f13Cash //DO NOT USE THIS
 	name = "copper coin"
 	singular_name = "copper coin"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "bottle_cap"
 	amount = 1
-	max_amount = 15000
+	max_amount = 500
 	throwforce = 0
 	throw_speed = 2
 	throw_range = 2
@@ -313,9 +317,10 @@
 	max_qty = 0 //uses flat values because aurei are worth so much
 
 /obj/item/stack/f13Cash/ncr
-	name = "NCR Dollar"
-	singular_name = "NCR Dollar"  /* same for denarius, we can pretend the legion can't latin properly */
-	flavor_desc = "Paper money used by the NCR."
+	name = "Trade Union scrip"
+	singular_name = "Trade Union scrip"  /* same for denarius, we can pretend the legion can't latin properly */
+	flavor_desc = "Scrip issued by the Texarkana Trade Union that can be exchanged for goods and services. Or copper."
+	max_amount = 15000
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "ncr" /* 10 points to whoever writes flavour text for each bill */
 	value = CASH_NCR * CASH_CAP
@@ -342,6 +347,10 @@
 
 /obj/item/stack/f13Cash/random/ncr
 	money_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/random/ncr/twenty
+	min_qty = SCRIP_MID / CASH_NCR
+	max_qty = SCRIP_MID / CASH_NCR
 
 /obj/item/stack/f13Cash/random/ncr/low
 	min_qty = TEMP3_MIN / CASH_NCR

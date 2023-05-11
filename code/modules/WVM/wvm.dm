@@ -9,9 +9,9 @@
 #define CASH_CAP_VENDOR 1
 
 /* exchange rates X * CAP*/
-#define CASH_AUR_VENDOR 100 /* 100 caps to 1 AUR */
-#define CASH_DEN_VENDOR 10 /* 4 caps to 1 DEN */
-#define CASH_NCR_VENDOR 0.4 /* $100 to 40 caps */
+#define CASH_AUR_VENDOR 100 /* 100 copper to 1 gold */
+#define CASH_DEN_VENDOR 10 /* 10 copper to 1 silver */
+#define CASH_NCR_VENDOR 0.5 /* $100 to 50 copper */
 
 // Total number of caps value spent in the Trading Protectrons Vendors
 GLOBAL_VAR_INIT(vendor_cash, 0)
@@ -137,7 +137,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 		Itm.forceMove(src)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You loaded [Itm.name] to vending machine. New price - [content[Itm]] caps..")
+		to_chat(usr, "You loaded [Itm.name] to vending machine. New price - [content[Itm]] copper.")
 		src.ui_interact(usr)
 	else
 		if(!item_allowed)
@@ -174,13 +174,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(I.use(expected_price))
 			stored_caps += expected_price
 			playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-			to_chat(usr, "You put [expected_price] caps to a vending machine. [vending_item.name] is vended out of it. ")
+			to_chat(usr, "You put [expected_price] copper to a vending machine. [vending_item.name] is vended out of it. ")
 			remove_item(vending_item)
 			set_state(STATE_IDLE)
 			onclose(usr, "vending")
 		else
 			playsound(src, 'sound/machines/DeniedBeep.ogg', 60, 1)
-			to_chat(usr, "Not enough caps.")
+			to_chat(usr, "Not enough copper.")
 
 /* Spawn all caps on world and clear caps storage */
 /obj/machinery/trading_machine/proc/remove_all_caps()
@@ -425,14 +425,14 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 				for(var/obj/item/Itm in content)
 					var/item_name = url_encode(Itm.name)
 					var/price = content[Itm]
-					dat += "<a href='byond://?src=\ref[src];vend=[item_name];current_price=[price]'>[Itm.name] | [price] caps</a> "
+					dat += "<a href='byond://?src=\ref[src];vend=[item_name];current_price=[price]'>[Itm.name] | [price] copper</a> "
 					dat += "<a href='byond://?src=\ref[src];examine=[item_name];current_price=[price]'>Examine</a><br> "
 
 		//--- Service
 		if(STATE_SERVICE)
 			dat += "<h3>Machine setup menu</h3>"
 			dat += "<div class='statusDisplay'>"
-			dat += "<font color='green'>Caps stored - [stored_caps]</font>"
+			dat += "<font color='green'>copper stored - [stored_caps]</font>"
 			dat += "<a href='?src=\ref[src];removecaps=1'>Unload</a>"
 			dat += "<h4> Items </h4> "
 
@@ -842,23 +842,27 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Signaler",	/obj/item/cartridge/signal,								10),
 		)
 
-
 /obj/machinery/mineral/wasteland_vendor/special
-	name = "Wasteland Vending Machine - Special"
+	name = "Nash Vending Machine - Money Exchanger"
+	desc = "An automated machine that exhanges copper coins for more valuable ones. However, it takes a 20% cut."
 	icon_state = "liberationstation_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Random manual",					/obj/item/book/manual/random,									40),
-		new /datum/data/wasteland_equipment("Box of ingredients - American",	/obj/item/storage/box/ingredients/american,						80),
-		new /datum/data/wasteland_equipment("Box of ingredients - Wildcard", 	/obj/item/storage/box/ingredients/wildcard, 						80),
-		//// new /datum/data/wasteland_equipment("Music box",						/obj/item/holodisk/musicbox,								400),
-		new /datum/data/wasteland_equipment("???",								/obj/item/toy/syndicateballoon,									500)
+		new /datum/data/wasteland_equipment("Texarkana Trade Union scrip", 		/obj/item/stack/f13Cash/random/ncr/twenty, 						12),
+		new /datum/data/wasteland_equipment("Silver Edison",					/obj/item/stack/f13Cash/denarius,								12),
+		new /datum/data/wasteland_equipment("Gold Edison",						/obj/item/stack/f13Cash/aureus,									120),
+		new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 		/obj/item/card/lowbounty,										100),
+		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 		/obj/item/card/midbounty, 										200),
+		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 		/obj/item/card/highbounty, 										400),
+		new /datum/data/wasteland_equipment("King's Bounty Ticket", 			/obj/item/card/kingbounty, 										800)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Random manual",					/obj/item/book/manual/random,									40),
-		new /datum/data/wasteland_equipment("Box of ingredients - American",	/obj/item/storage/box/ingredients/american,						80),
-		new /datum/data/wasteland_equipment("Box of ingredients - Wildcard", 	/obj/item/storage/box/ingredients/wildcard,						 80),
-		/// new /datum/data/wasteland_equipment("Music box",						/obj/item/holodisk/musicbox,								400),
-		new /datum/data/wasteland_equipment("???",								/obj/item/toy/syndicateballoon,									500)
+		new /datum/data/wasteland_equipment("Texarkana Trade Union scrip", 		/obj/item/stack/f13Cash/random/ncr/twenty, 						12),
+		new /datum/data/wasteland_equipment("Silver Edison",					/obj/item/stack/f13Cash/denarius,								12),
+		new /datum/data/wasteland_equipment("Gold Edison",						/obj/item/stack/f13Cash/aureus,									120),
+		new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 		/obj/item/card/lowbounty,										100),
+		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 		/obj/item/card/midbounty, 										200),
+		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 		/obj/item/card/highbounty, 										400),
+		new /datum/data/wasteland_equipment("King's Bounty Ticket", 			/obj/item/card/kingbounty, 										800)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents
@@ -996,10 +1000,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Currency conversion rates:</b><br>"
-	dat += "1 Bottle cap = [CASH_CAP_VENDOR] bottle caps value <br>"
-	dat += "1 NCR dollar = [CASH_NCR_VENDOR] bottle caps value <br>"
-	dat += "1 Denarius = [CASH_DEN_VENDOR] bottle caps value <br>"
-	dat += "1 Aureus = [CASH_AUR_VENDOR] bottle caps value <br>"
+	dat += "1 silver Edison = [CASH_DEN_VENDOR] copper Edisons <br>"
+	dat += "1 gold Edison = [CASH_AUR_VENDOR] copper Edisons <br>"
+	dat += "1 Trade Union scrip = [CASH_NCR_VENDOR] copper Edisons <br>"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
@@ -1070,7 +1073,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
-		var/inserted_value = FLOOR(currency.amount * 0.4, 1)
+		var/inserted_value = FLOOR(currency.amount * 0.5, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -1078,7 +1081,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
-		var/inserted_value = FLOOR(currency.amount * 4, 1)
+		var/inserted_value = FLOOR(currency.amount * 10, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
