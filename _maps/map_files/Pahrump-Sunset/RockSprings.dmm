@@ -5977,6 +5977,7 @@
 /obj/effect/turf_decal/bot,
 /obj/structure/table/reinforced,
 /obj/item/locked_box/armor/tier3_5,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "cuN" = (
@@ -8268,6 +8269,12 @@
 /obj/structure/flora/tallgrass9,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
+"doU" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plasteel/barber{
+	icon_state = "plating"
+	},
+/area/f13/building)
 "doV" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt,
@@ -35304,8 +35311,11 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "oFz" = (
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/item/stack/sheet/bone,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plasteel/barber{
+	icon_state = "plating"
+	},
 /area/f13/building)
 "oFI" = (
 /obj/structure/chair/wood/wings{
@@ -35723,7 +35733,6 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier5,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare_mags,
-/obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -39630,8 +39639,6 @@
 /obj/effect/spawner/lootdrop/f13/rare_guns,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "qBx" = (
@@ -40994,7 +41001,7 @@
 "rcy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/locker,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "rcM" = (
@@ -52804,7 +52811,7 @@
 "vSX" = (
 /obj/structure/closet/locker,
 /obj/machinery/light/small/broken,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "vTq" = (
@@ -59126,21 +59133,21 @@ fHN
 nQW
 fHN
 fHN
-fHN
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
+hKV
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 cxN
 wHR
 fhX
@@ -59384,20 +59391,20 @@ nQW
 nQW
 nQW
 nQW
-fHN
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
-nQW
+hKV
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 cxN
 wHR
 aDH
@@ -59653,7 +59660,7 @@ nQW
 nQW
 nQW
 nQW
-nQW
+tRd
 nQW
 cxN
 wHR
@@ -60683,7 +60690,7 @@ nQW
 nQW
 nQW
 lPn
-hYi
+cxN
 wHR
 fhX
 aDH
@@ -113743,7 +113750,7 @@ oSy
 xYs
 gRN
 xuI
-huo
+oiK
 uPW
 rLX
 pbE
@@ -113992,9 +113999,9 @@ tRd
 tRd
 kzG
 uPW
-kDY
+oFz
 pXn
-oSy
+doU
 uPW
 lkc
 xYs
@@ -114249,7 +114256,7 @@ tRd
 tRd
 kzG
 uPW
-oSy
+doU
 tgA
 oSy
 uPW
@@ -114506,7 +114513,7 @@ tRd
 tRd
 kzG
 uPW
-oSy
+doU
 oSy
 oSy
 apl
@@ -114764,8 +114771,8 @@ tRd
 kzG
 uPW
 kDY
-oSy
-oSy
+doU
+doU
 uPW
 oSy
 xYs
@@ -120946,7 +120953,7 @@ iPo
 iPo
 iPo
 xYs
-oFz
+wcd
 laN
 wcB
 vtC
