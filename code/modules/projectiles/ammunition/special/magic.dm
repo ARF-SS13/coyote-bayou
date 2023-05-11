@@ -52,16 +52,16 @@
 	projectile_type = /obj/item/projectile/magic/spellcard/book/heal
 	harmful = FALSE
 
-/obj/item/ammo_casing/magic/book/healbrute
-	projectile_type = /obj/item/projectile/magic/spellcard/book/healbrute
+/obj/item/ammo_casing/magic/healbrute
+	projectile_type = /obj/item/projectile/magic/healbrute
 	harmful = FALSE
 
-/obj/item/ammo_casing/magic/book/healburn
-	projectile_type = /obj/item/projectile/magic/spellcard/book/healburn
+/obj/item/ammo_casing/magic/healburn
+	projectile_type = /obj/item/projectile/magic/healburn
 	harmful = FALSE
 
-/obj/item/ammo_casing/magic/book/healtoxin
-	projectile_type = /obj/item/projectile/magic/spellcard/book/healtoxin
+/obj/item/ammo_casing/magic/healtoxin
+	projectile_type = /obj/item/projectile/magic/healtoxin
 	harmful = FALSE
 
 /obj/item/ammo_casing/magic/book/shock
