@@ -263,6 +263,19 @@
 	merge_type = /obj/item/stack/f13Cash/denarius
 	pitch = 0
 
+/obj/item/stack/f13Cash/denarius/five
+	amount = 5
+	merge_type = /obj/item/stack/f13Cash/denarius
+
+/obj/item/stack/f13Cash/denarius/ten
+	amount = 10
+	merge_type = /obj/item/stack/f13Cash/denarius
+
+/obj/item/stack/f13Cash/denarius/twenty
+	amount = 20
+	merge_type = /obj/item/stack/f13Cash/denarius
+
+
 /obj/item/stack/f13Cash/random/denarius
 	money_type = /obj/item/stack/f13Cash/denarius
 
@@ -301,6 +314,18 @@
 	merge_type = /obj/item/stack/f13Cash/aureus
 	pitch = -100
 
+/obj/item/stack/f13Cash/aureus/five
+	amount = 5
+	merge_type = /obj/item/stack/f13Cash/aureus
+
+/obj/item/stack/f13Cash/aureus/ten
+	amount = 10
+	merge_type = /obj/item/stack/f13Cash/aureus
+
+/obj/item/stack/f13Cash/aureus/twenty
+	amount = 20
+	merge_type = /obj/item/stack/f13Cash/aureus
+
 /obj/item/stack/f13Cash/random/aureus
 	money_type = /obj/item/stack/f13Cash/aureus
 
@@ -327,6 +352,22 @@
 	flippable = FALSE
 	merge_type = /obj/item/stack/f13Cash/ncr
 	pitch = 0
+
+/obj/item/stack/f13Cash/ncr/twenty
+	amount = 20
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/fourty
+	amount = 40
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/eighty
+	amount = 80
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/twohundo
+	amount = 200
+	merge_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/ncr/update_icon()
 	switch(amount)
