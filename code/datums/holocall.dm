@@ -311,15 +311,15 @@
 		var/mob/living/L = nonhuman_mobtype
 		. = image(initial(L.icon),initial(L.icon_state))
 	else
-		var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy("HOLODISK_PRESET")
-		if(species_type)
-			mannequin.set_species(species_type)
-		if(outfit_type)
-			mannequin.equipOutfit(outfit_type,TRUE)
-		mannequin.setDir(SOUTH)
-		COMPILE_OVERLAYS(mannequin)
-		. = image(mannequin)
-		unset_busy_human_dummy("HOLODISK_PRESET")
+		// var/mob/living/carbon/human/dummy/mannequin = SSdummy.get_a_dummy("HOLODISK_PRESET")
+		// if(species_type)
+		// 	mannequin.set_species(species_type)
+		// if(outfit_type)
+		// 	mannequin.equipOutfit(outfit_type,TRUE)
+		// mannequin.setDir(SOUTH)
+		// COMPILE_OVERLAYS(mannequin)
+		. = SSdummy.get_dummy_image("HOLODISK_PRESET", species_type, outfit_type, random_body = TRUE, random_clothes = TRUE, random_species = TRUE)
+		// SSdummy.return_dummy(mannequin, "HOLODISK_PRESET")
 
 /obj/item/disk/holodisk/example
 	preset_image_type = /datum/preset_holoimage/nanotrasenprivatesecurity

@@ -1,0 +1,181 @@
+#define MANNEQUIN_RANDOMIZE_OUTFIT (1<<0)
+#define MANNEQUIN_RANDOMIZE_BODY (1<<1)
+#define MANNEQUIN_RANDOMIZE_SPECIES (1<<2)
+
+#define MANNEQUIN_OVERRIDE_RANDOM_NAKED "nude"
+#define MANNEQUIN_OVERRIDE_RANDOM_CLOTHED "clothed"
+#define MANNEQUIN_OVERRIDE_RANDOM_CLIENT "client"
+
+/obj/item/mannequin
+	name = "some kind of mannequin"
+	desc = "I had to look up how to spell this darn thing."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "nothing"
+	w_class = WEIGHT_CLASS_GIGANTIC
+	var/datum/outfit/dressup
+	var/datum/species/spec
+	var/random_flags = NONE
+	var/random_override
+	var/image/my_overlay
+	var/debug
+
+/obj/item/mannequin/Initialize(mapload)
+	. = ..()
+	if(mapload)
+		addtimer(CALLBACK(src, .proc/set_looks), 30 SECONDS)
+	else
+		set_looks()
+	if(debug)
+		debugify()
+
+/obj/item/mannequin/proc/set_looks(datum/source, mob/living/carbon/human/H, mob/living/carbon/human/target)
+	if(ishuman(target))
+		my_overlay = SSdummy.get_player_image(target, TRUE)
+		update_icon()
+		return
+	else if(ishuman(H))
+		my_overlay = SSdummy.get_player_image(H, TRUE)
+		update_icon()
+		return
+	switch(random_override)
+		if(MANNEQUIN_OVERRIDE_RANDOM_NAKED)
+			my_overlay = SSdummy.get_naked_dummy_image()
+		if(MANNEQUIN_OVERRIDE_RANDOM_CLOTHED)
+			my_overlay = SSdummy.get_clothed_dummy_image()
+		if(MANNEQUIN_OVERRIDE_RANDOM_CLIENT)
+			my_overlay = SSdummy.get_player_image(null, TRUE)
+	if(my_overlay)
+		update_icon()
+		return
+	var/random_outfit = CHECK_BITFIELD(random_flags, MANNEQUIN_RANDOMIZE_OUTFIT)
+	if(random_outfit)
+		dressup = null
+	var/random_body = CHECK_BITFIELD(random_flags, MANNEQUIN_RANDOMIZE_BODY)
+	var/random_species = CHECK_BITFIELD(random_flags, MANNEQUIN_RANDOMIZE_SPECIES)
+	if(random_species)
+		spec = null
+
+	my_overlay = SSdummy.get_dummy_image("mannequin", spec, dressup, null, null, null, random_body, random_species, random_outfit, TRUE, FALSE)
+	update_icon()
+	addtimer(CALLBACK(src, .proc/set_looks), 1 HOURS)
+
+/obj/item/mannequin/update_overlays()
+	. = ..()
+	cut_overlays()
+	if(!my_overlay)
+		my_overlay = image('icons/effects/effects.dmi', "explosion_indef")
+	add_overlay(my_overlay)
+
+/obj/item/mannequin/AltClick(mob/user)
+	. = ..()
+	if(!debug)
+		return
+	set_looks(src, user, user)
+
+/obj/item/mannequin/proc/debugify()
+	RegisterSignal(src, COMSIG_ITEM_ATTACKCHAIN, .proc/set_looks)
+
+/obj/item/mannequin/british_paratrooper
+	name = "british combat mannequin"
+	desc = "A manequin of a paratrooper!"
+	dressup = /datum/outfit/job/ncranger
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/british_paratrooper_2
+	name = "british combat mannequin"
+	desc = "A manequin of a paratrooper!"
+	dressup = /datum/outfit/job/ncranger/british2
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/burma
+	name = "burma combat mannequin"
+	desc = "A manequin of a soldier!"
+	dressup = /datum/outfit/job/ncranger/burma
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/raj
+	name = "raj combat mannequin"
+	desc = "A manequin of a soldier!"
+	dressup = /datum/outfit/job/ncranger/raj
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/canadian
+	name = "canadian combat mannequin"
+	desc = "A manequin of a soldier!"
+	dressup = /datum/outfit/job/ncranger/canadian
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/japanese
+	name = "japanese combat mannequin"
+	desc = "A manequin of a soldier!"
+	dressup = /datum/outfit/job/ncranger/japanese
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/german
+	name = "german combat mannequin"
+	desc = "A manequin of a soldier!"
+	dressup = /datum/outfit/job/ncranger/german
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/american
+	name = "american combat mannequin"
+	desc = "A manequin of a soldier!"
+	dressup = /datum/outfit/job/ncranger/american
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
+
+
+/// shitty debug fuckers
+/obj/item/mannequin/debug_mannequin
+	name = "lizard secretary mannequin"
+	desc = "Confused coder, now %50 off!"
+	dressup = /datum/outfit/job/den/f13secretary
+	spec = /datum/species/lizard
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_OUTFIT
+	debug = TRUE
+
+/obj/item/mannequin/debug_mannequin/random_random
+	name = "lizard secretary mannequin"
+	desc = "Confused coder, now %50 off!"
+	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_OUTFIT | MANNEQUIN_RANDOMIZE_SPECIES
+
+/obj/item/mannequin/debug_mannequin/random_naked
+	name = "a mannequin"
+	desc = "Confused coder, now %50 off!"
+	random_override = MANNEQUIN_OVERRIDE_RANDOM_NAKED
+
+/obj/item/mannequin/debug_mannequin/random_clothed
+	name = "a mannequin"
+	desc = "Confused coder, now %50 off!"
+	random_override = MANNEQUIN_OVERRIDE_RANDOM_CLOTHED
+
+/obj/item/mannequin/debug_mannequin/random_clothed
+	name = "a mannequin"
+	desc = "Confused coder, now %50 off!"
+	random_override = MANNEQUIN_OVERRIDE_RANDOM_CLIENT
+
+// /obj/item/ckey_mannequin
+// 	name = "some kind of mannequin"
+// 	desc = "I can turn into people!"
+// 	icon = 'icons/effects/effects.dmi'
+// 	icon_state = "static"
+// 	w_class = WEIGHT_CLASS_GIGANTIC
+// 	var/my_ckey
+// 	var/my_n
+// 	var/nude = FALSE
+
+// /obj/item/ckey_mannequin/Initialize(mapload)
+// 	. = ..()
+// 	if(mapload)
+// 		return
+// 	become_someone()
+
+// /obj/item/ckey_mannequin/proc/become_someone()
+// 	if(my_ckey)
+// 		var/client/C = pick(GLOB.clients)
+// 		my_ckey = C.ckey
+	
+
+
+
+
+

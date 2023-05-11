@@ -2,7 +2,7 @@
 // Equipment list is slot = path.
 /proc/generate_custom_holoform_from_prefs(datum/preferences/prefs, list/equipment_by_slot, list/inhand_equipment, copy_job = FALSE, apply_loadout = FALSE)
 	ASSERT(prefs)
-	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_HOLOFORM)
+	var/mob/living/carbon/human/dummy/mannequin = SSdummy.get_a_dummy(DUMMY_HUMAN_SLOT_HOLOFORM)
 	prefs.copy_to(mannequin)
 	if(apply_loadout && prefs.parent)
 		SSjob.equip_loadout(prefs.parent.mob, mannequin, bypass_prereqs = TRUE)
@@ -33,7 +33,7 @@
 		combined.Insert(capture, dir = d)
 		CHECK_TICK
 
-	unset_busy_human_dummy(DUMMY_HUMAN_SLOT_HOLOFORM)
+	SSdummy.return_dummy(mannequin, DUMMY_HUMAN_SLOT_HOLOFORM)
 	return combined
 
 /proc/process_holoform_icon_filter(icon/I, filter_type, clone = TRUE)
