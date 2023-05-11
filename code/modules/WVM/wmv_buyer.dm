@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/mineral/wasteland_trader
 	name = "Workshop Scrapper"
-	desc = "A vending machine that's been modified to accept various items in exchange for caps. \
+	desc = "A vending machine that's been modified to accept various items in exchange for copper Edisons. \
 			A sign on it reads, 'Keep your workplace clean and get paid doing it!' \
 			It's better than a trash can, at least."
 	icon = 'icons/WVM/machines.dmi'
@@ -320,7 +320,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Power Armor: 75¢<br>"
 	dat += "Melee Weapons: 10¢<br>"
 	dat += "<br>"
-	dat += "<b>Turn your kills into caps today!</b><br>"
+	dat += "<b>Turn your kills into coins today!</b><br>"
 	dat += "Small Roller Bounty Ticket: 100¢<br>"
 	dat += "Medium Roller Bounty Ticket: 200¢<br>"
 	dat += "High Roller Bounty Ticket: 400¢<br>"
@@ -648,7 +648,7 @@ Fence
 
 /obj/machinery/mineral/wasteland_trader/bountyticket
 	name = "Nash Bounty Ticket Machine"
-	desc = "This vending machine accepts bounty tickets in exchange for caps. Make the Wasteland safer, and yourself richer, one bullet at a time."
+	desc = "This vending machine accepts bounty tickets in exchange for copper. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
 	buyables_loose = list(
 						/obj/item/card/lowbounty = 100,
@@ -665,7 +665,7 @@ Fence
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Turn your kills into caps today!</b><br>"
+	dat += "<b>Turn your kills into copper today!</b><br>"
 	dat += "Small Roller Bounty Ticket: 100¢<br>"
 	dat += "Medium Roller Bounty Ticket: 200¢<br>"
 	dat += "High Roller Bounty Ticket: 400¢<br>"
