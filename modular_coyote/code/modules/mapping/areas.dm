@@ -63,4 +63,18 @@
 
 /area/f13/building/abandoned/renegade
 
+/area/f13/underground/cave/tunnelertemple
+	narrate = "You feel a subtle dread. Something here feels wrong. The world is unrealized for a brief moment; a thin tarp concealing a reality you can't experience, nor want to. You think you might feel safer if you had lots of friends and supplies."
+
+/area/f13/underground/cave/tunnelertemple/void
+	narrate = "Darkness looms ahead. In the void you hear quiet croaks and whispers. Two sharp emerald eyes stare back at you. You're in for a big fight.."
+
+/area/f13/wasteland/enclavehelipad
+	narrate = "As you emerge from the ladder, the sky above you is crowded; the ancient chrome bones of some unbuilt megastructure loom over the buildings ahead, rusting and baking in the hot waste-sun. What is this place? Is it coming, or going? Are you even in Texarkana, anymore? You feel extremely unsafe."
+
+/area/f13/wasteland/massfusion
+	narrate = "A trio of concrete hyperboloids stretch upwards, desperately reaching to the softly-twinkling sky. Their desparation has earned them nothing; they now regulate the temperature of nothing, and their hardened stone facades crumble."
+
+/area/f13/building/massfusion
+	narrate = "A wave of heat hits you as you step inside. Angry shouts and leather soles against weathered tiling echoes round the room. You should probably be a bit more cautious, here..."
 
