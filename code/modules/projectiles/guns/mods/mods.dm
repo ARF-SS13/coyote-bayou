@@ -84,7 +84,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.25,
-		GUN_UPGRADE_CHARGECOST = 1.4
+		GUN_UPGRADE_RECOIL = 1.6,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.6
+		//GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
@@ -459,9 +461,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 1.30,
-	GUN_UPGRADE_CHARGECOST = 1.5)
+	GUN_UPGRADE_RECOIL = 1.75,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
+	GUN_UPGRADE_DAMAGE_MULT = 1.30)
+	//GUN_UPGRADE_CHARGECOST = 1.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
@@ -477,7 +480,8 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 0.9, // lowering the power output of the weapon should realistically lower the recoil - risingstarslash
 	GUN_UPGRADE_DAMAGE_MULT = 0.5,
-	GUN_UPGRADE_CHARGECOST = 0.65)
+	GUN_UPGRADE_FIRE_DELAY_MULT = 0.6)
+	//GUN_UPGRADE_CHARGECOST = 0.65)
 	//GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
