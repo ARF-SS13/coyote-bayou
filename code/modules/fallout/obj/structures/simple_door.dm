@@ -81,7 +81,8 @@
 		user.visible_message(span_notice("[user] adds [P] to [src]."),span_notice("You add [P] to [src]."))
 		padlock = P
 		desc = "[src.desc] Has a lock."
-		add_overlay("[icon_state]_padlock")
+		if(density)
+			add_overlay("[initial(icon_state)]_padlock")
 		return TRUE
 
 /obj/structure/simple_door/proc/remove_padlock(force = FALSE)
@@ -89,7 +90,7 @@
 		return FALSE
 	padlock.forceMove(get_turf(src))
 	padlock = null
-	cut_overlay("[icon_state]_padlock")
+	cut_overlay("[initial(icon_state)]_padlock")
 
 //Very useful proc we have here, excellent work on that one
 /obj/structure/simple_door/bullet_act(obj/item/projectile/Proj)
@@ -107,7 +108,7 @@
 /obj/structure/simple_door/proc/Open(animate)
 	playsound(src.loc, open_sound, 30, 0, 0)
 	if(padlock)
-		cut_overlay("[icon_state]_padlock")
+		cut_overlay("[initial(icon_state)]_padlock")
 	if(animate)
 		moving = 1
 		flick("[door_type]opening", src)
@@ -128,7 +129,7 @@
 	icon_state = door_type
 	set_opacity(base_opacity)
 	if(padlock)
-		add_overlay("[icon_state]_padlock")
+		add_overlay("[initial(icon_state)]_padlock")
 	density = 1
 	moving = 0
 	layer = CLOSED_DOOR_LAYER
