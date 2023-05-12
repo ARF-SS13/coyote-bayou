@@ -946,10 +946,10 @@
 		)
 	milk_reagent = /datum/reagent/toxin
 	ride_offsets = list(
-		"1" = list(15, 8),
-		"2" = list(15, 8),
-		"4" = list(15, 8),
-		"8" = list(15, 8)
+		"1" = list(1, 8),
+		"2" = list(1, 8),
+		"4" = list(1, 8),
+		"8" = list(1, 8)
 		)
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
