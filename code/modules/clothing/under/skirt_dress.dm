@@ -225,3 +225,50 @@
 	item_state = "rainbow"
 	body_parts_covered = CHEST|GROIN|ARMS
 	poly_colors = list("#8CC6FF", "#808080", "#FF3535")
+
+/obj/item/clothing/under/dress/wedding/red
+	name = "red wedding dress"
+	desc = "A big and puffy red dress."
+	icon_state = "bride_red"
+	item_state = "bride_red"
+
+/obj/item/clothing/under/dress/coyote
+	icon = 'icons/obj/clothing/dress.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/dress.dmi'
+	icon_state = "surgical_scrubs"
+
+//From Goon
+/obj/item/clothing/under/dress/coyote/reddress
+	name = "Red Dress"
+	icon_state = "reddress"
+	item_state = "reddress"
+
+/obj/item/clothing/under/dress/coyote/purple
+	name = "Purple Dress"
+	icon_state = "casdress_black"
+	item_state = "casdress_black"
+
+/obj/item/clothing/under/dress/coyote/blue
+	name = "Blue Dress"
+	icon_state = "casdress_blue"
+	item_state = "casdress_blue"
+
+/obj/item/clothing/under/dress/coyote/green
+	name = "Green Dress"
+	icon_state = "casdress_green"
+	item_state = "casdress_green"
+
+/obj/item/clothing/under/dress/coyote/pink
+	name = "Pink Dress"
+	icon_state = "casdress_pink"
+	item_state = "casdress_pink"
+
+/obj/item/clothing/under/dress/coyote/white
+	name = "White Dress"
+	icon_state = "casdress_white"
+	item_state = "casdress_white"
+
+/obj/item/clothing/under/dress/coyote/bolt
+	name = "Bolt Dress"
+	icon_state = "casdress_bolty"
+	item_state = "casdress_bolty"

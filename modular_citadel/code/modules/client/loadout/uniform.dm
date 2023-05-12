@@ -1947,3 +1947,45 @@
 	cost = 1
 	path = /obj/item/clothing/under/engineer_alt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/coy/reddress
+	name = "red dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/reddress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/purpledress
+	name = "purple dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bluedress
+	name = "blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/greendress
+	name = "green dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/pinkdress
+	name = "pink dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/whitedress
+	name = "white dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/boltdress
+	name = "bolt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/bolt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
