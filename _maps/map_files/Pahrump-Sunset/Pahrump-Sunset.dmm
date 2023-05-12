@@ -11886,7 +11886,7 @@
 	dir = 8
 	},
 /obj/effect/validball_spawner,
-/obj/item/card/midbounty,
+/obj/item/card/lowbounty,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -30694,6 +30694,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "dTj" = (
@@ -35565,7 +35566,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/item/card/midbounty,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -55495,7 +55496,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/validball_spawner,
 /obj/effect/spawner/lootdrop/f13/rare,
-/obj/item/card/highbounty,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	color = "#ffe9de";
 	icon_state = "darkrusty";
@@ -72102,7 +72103,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/city)
 "oUP" = (
-/obj/item/card/midbounty,
+/obj/item/card/lowbounty,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "oUV" = (
@@ -76390,12 +76391,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"qgW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/item/card/lowbounty,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/building/mall)
 "qgZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{
@@ -77301,7 +77296,7 @@
 	pixel_y = 17
 	},
 /obj/structure/curtain,
-/obj/item/card/midbounty,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -84613,7 +84608,7 @@
 	},
 /area/f13/wasteland)
 "srQ" = (
-/obj/item/card/midbounty,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "ssf" = (
@@ -98859,6 +98854,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/validball_spawner,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -103998,7 +103994,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/item/card/midbounty,
+/obj/item/card/lowbounty,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -159531,7 +159527,7 @@ xUX
 aKY
 uSc
 sfF
-qgW
+pDa
 pcN
 aPf
 pyG
