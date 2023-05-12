@@ -2,8 +2,7 @@
 
 	var/narrate //A text-based description of what this area is for.
 	var/list/blurbed_stated_to = list() //This list of names is here to make sure we don't state our descriptive blurb to a person more than once.
-
-
+	var/narrate_sound = "sound/f13ambience/boodeedoo_deep.ogg"
 
 /area/proc/do_area_blurb(var/mob/living/L)
 	if(isnull(narrate))
@@ -14,8 +13,9 @@
 */
 	if(!(L.ckey in blurbed_stated_to))
 		blurbed_stated_to += L.ckey
-		to_chat(L, span_warning("[narrate]"))
+		to_chat(L, span_inathneq_small("[narrate]"))
 		SEND_SOUND(L, sound('sound/f13ambience/boodeedoo_deep.ogg'))
+
 
 
 /************
@@ -27,6 +27,7 @@ The var is 'narrate'.
 /area/f13/tunnel/bighorn
 	name = "\improper Bighorn Underground"
 	narrate = "" < This is the important line.
+	narrate_sound = 'soundthatplays.ogg'
 
 ty ilu - bear
 */
