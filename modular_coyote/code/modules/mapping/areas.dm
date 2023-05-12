@@ -72,9 +72,9 @@
 /area/f13/wasteland/enclavehelipad
 	narrate = "As you emerge from the ladder, the sky above you is crowded; the ancient chrome bones of some unbuilt megastructure loom over the buildings ahead, rusting and baking in the hot waste-sun. What is this place? Is it coming, or going? Are you even in Texarkana, anymore? You feel extremely unsafe."
 
-/area/f13/wasteland/massfusion
+/area/f13/wasteland/massfusion/entrance
 	narrate = "A trio of concrete hyperboloids stretch upwards, desperately reaching to the softly-twinkling sky. Their desparation has earned them nothing; they now regulate the temperature of nothing, and their hardened stone facades crumble."
 
-/area/f13/building/massfusion
+/area/f13/building/massfusion/lobby
 	narrate = "A wave of heat hits you as you step inside. Angry shouts and leather soles against weathered tiling echoes round the room. You should probably be a bit more cautious, here..."
 
