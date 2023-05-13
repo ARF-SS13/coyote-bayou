@@ -300,7 +300,7 @@
 
 /datum/admins/proc/makeERTPreviewIcon(list/settings)
 	// Set up the dummy for its photoshoot
-	var/mob/living/carbon/human/dummy/mannequin = SSdummy.get_a_dummy(DUMMY_HUMAN_SLOT_ADMIN)
+	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_ADMIN)
 
 	var/prefs = settings["mainsettings"]
 	var/datum/ert/template = prefs["template"]["value"]
@@ -336,7 +336,7 @@
 	CHECK_TICK
 	preview_icon.Scale(preview_icon.Width() * 2, preview_icon.Height() * 2) // Scaling here to prevent blurring in the browser.
 	CHECK_TICK
-	SSdummy.return_dummy(mannequin, DUMMY_HUMAN_SLOT_ADMIN)
+	unset_busy_human_dummy(DUMMY_HUMAN_SLOT_ADMIN)
 	return preview_icon
 
 /datum/admins/proc/makeEmergencyresponseteam(datum/ert/ertemplate = null)

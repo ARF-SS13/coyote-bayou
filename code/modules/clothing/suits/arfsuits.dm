@@ -340,14 +340,6 @@
 	item_state = "ncrcfjacket"
 	body_parts_hidden = ARMS
 
-/obj/item/clothing/suit/armor/outfit/jacket/denison_smock
-	name = "denison smock"
-	desc = "A brown leafy camo jacket."
-	icon = 'icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
-	icon_state = "denison_smock"
-	item_state = "police_chief"
-
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat

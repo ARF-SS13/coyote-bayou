@@ -120,7 +120,7 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Jump To Validball") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/Getmob(mob/M in GLOB.mob_list - SSdummy.all_dummies)
+/client/proc/Getmob(mob/M in GLOB.mob_list - GLOB.dummy_mob_list)
 	set category = "Admin.Game"
 	set name = "Get Mob"
 	set desc = "Mob to teleport"
