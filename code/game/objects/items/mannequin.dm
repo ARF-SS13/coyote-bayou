@@ -75,51 +75,51 @@
 /obj/item/mannequin/proc/debugify()
 	RegisterSignal(src, COMSIG_ITEM_ATTACKCHAIN, .proc/set_looks)
 
-/obj/item/mannequin/british_paratrooper
-	name = "british combat mannequin"
-	desc = "A manequin of a paratrooper!"
+/obj/item/mannequin/british_infantry
+	name = "british infantry mannequin"
+	desc = "The british infantry uniform standard standard infantry uniform after the british economic collapse."
 	dressup = /datum/outfit/job/ncranger
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
-/obj/item/mannequin/british_paratrooper_2
-	name = "british combat mannequin"
-	desc = "A manequin of a paratrooper!"
+/obj/item/mannequin/british_paratrooper
+	name = "british paratrooper mannequin"
+	desc = "The british paratrooper uniform standard standard infantry uniform after the british economic collapse."
 	dressup = /datum/outfit/job/ncranger/british2
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 /obj/item/mannequin/burma
-	name = "burma combat mannequin"
-	desc = "A manequin of a soldier!"
+	name = "Australian combat mannequin"
+	desc = "The standard issue Australian uniform that was used in jungles."
 	dressup = /datum/outfit/job/ncranger/burma
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 /obj/item/mannequin/raj
 	name = "raj combat mannequin"
-	desc = "A manequin of a soldier!"
+	desc = "A rare uniform of the snipers of the Indian RAJ."
 	dressup = /datum/outfit/job/ncranger/raj
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 /obj/item/mannequin/canadian
 	name = "canadian combat mannequin"
-	desc = "A manequin of a soldier!"
+	desc = "A prewar uniform used by Canada."
 	dressup = /datum/outfit/job/ncranger/canadian
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 /obj/item/mannequin/japanese
 	name = "japanese combat mannequin"
-	desc = "A manequin of a soldier!"
+	desc = "A pre war uniform used by the Japanese on their islands."
 	dressup = /datum/outfit/job/ncranger/japanese
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 /obj/item/mannequin/german
 	name = "german combat mannequin"
-	desc = "A manequin of a soldier!"
+	desc = "German standard issue infantry uniform."
 	dressup = /datum/outfit/job/ncranger/german
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
 /obj/item/mannequin/american
 	name = "american combat mannequin"
-	desc = "A manequin of a soldier!"
+	desc = "The current combat uniform of the United states. ahem, was."
 	dressup = /datum/outfit/job/ncranger/american
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 
@@ -127,30 +127,30 @@
 /// shitty debug fuckers
 /obj/item/mannequin/debug_mannequin
 	name = "lizard secretary mannequin"
-	desc = "Confused coder, now %50 off!"
+	desc = "Hey there, Pushes-The-Papers!"
 	dressup = /datum/outfit/job/den/f13secretary
 	spec = /datum/species/lizard
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_OUTFIT
 	debug = TRUE
 
 /obj/item/mannequin/debug_mannequin/random_random
-	name = "lizard secretary mannequin"
-	desc = "Confused coder, now %50 off!"
+	name = "mannequin"
+	desc = "A life-size action figure that totally didn't just move. It also isn't watching you."
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_OUTFIT | MANNEQUIN_RANDOMIZE_SPECIES
 
 /obj/item/mannequin/debug_mannequin/random_naked
 	name = "a mannequin"
-	desc = "Confused coder, now %50 off!"
+	desc = "A life-size person-doll that lacks clothing and, confusingly, genitals."
 	random_override = MANNEQUIN_OVERRIDE_RANDOM_NAKED
 
 /obj/item/mannequin/debug_mannequin/random_clothed
 	name = "a mannequin"
-	desc = "Confused coder, now %50 off!"
+	desc = "A life-size dude-figurine sporting a snazzy set of clothes that are apparently welded to its skin. The tag says 50% off."
 	random_override = MANNEQUIN_OVERRIDE_RANDOM_CLOTHED
 
-/obj/item/mannequin/debug_mannequin/random_clothed
+/obj/item/mannequin/debug_mannequin/random_client
 	name = "a mannequin"
-	desc = "Confused coder, now %50 off!"
+	desc = "A life-size effigy of... someone oddly familiar."
 	random_override = MANNEQUIN_OVERRIDE_RANDOM_CLIENT
 
 // /obj/item/ckey_mannequin
