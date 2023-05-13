@@ -691,6 +691,23 @@
 // O
 // P
 
+/datum/gear/donator/kits/panzer
+	name = "Val's Equipment"
+	path = /obj/item/storage/box/large/custom_kit/panzer
+	ckeywhitelist = list("panzer1944")
+
+/obj/item/storage/box/large/custom_kit/panzer/PopulateContents()
+	new /obj/item/clothing/suit/armor/medium/duster/armoredcoat/panzer(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	new /obj/item/clothing/under/f13/enclave/officer(src)
+	new /mob/living/simple_animal/pet/dog/eyebot/panzer(src)
+	new /obj/item/gun/ballistic/revolver/m29/alt(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/card/id/selfassign/brotherenclave(src)
+	new /obj/item/pda/warden(src)
+
 /datum/gear/donator/kits/pappavol
 	name = "Tribal Power Kit"
 	path = /obj/item/storage/box/large/custom_kit/pappavol
