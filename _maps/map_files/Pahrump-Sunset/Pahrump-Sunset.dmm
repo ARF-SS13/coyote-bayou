@@ -5040,6 +5040,10 @@
 /obj/structure/decoration/clock{
 	pixel_y = 32
 	},
+/obj/structure/ladder{
+	id = "Followersholdout";
+	height = 2
+	},
 /turf/open/floor/f13/wood,
 /area/f13/store)
 "asJ" = (
@@ -50287,6 +50291,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
+"iyB" = (
+/obj/structure/ladder/unbreakable{
+	id = "winecellar";
+	height = 2
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "iyP" = (
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland/city/nash/downtown)
@@ -99122,7 +99133,10 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/storage/box/actionfigure,
+/obj/structure/ladder{
+	id = "mallcellar";
+	height = 2
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -108564,12 +108578,10 @@
 	},
 /area/f13/building/coyote/nash/firestation)
 "wLP" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
+/obj/structure/ladder{
+	id = "hiddenbar1";
+	height = 2
 	},
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood,
-/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "wLR" = (
@@ -169497,7 +169509,7 @@ oBz
 oBz
 tNm
 tAz
-oBz
+iyB
 hqj
 rUQ
 opK
