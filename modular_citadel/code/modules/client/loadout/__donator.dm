@@ -716,7 +716,7 @@
 	new /obj/item/ammo_box/m44(src)
 	new /obj/item/card/id/selfassign/brotherenclave(src)
 	new /obj/item/pda/warden(src)
-	new /obj/item/clothing/accessory/ncr/LT1(src)
+	new /obj/item/clothing/accessory/enclave/lieutenant(src)
 
 /datum/gear/donator/kits/pappavol
 	name = "Tribal Power Kit"
