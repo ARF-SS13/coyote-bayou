@@ -12,11 +12,9 @@
 	force_wielded = 30
 	throwforce = 7
 	w_class = WEIGHT_CLASS_SMALL
-	unique_reskin = list("Brass" = "wrench_clock",
-					"Bronze" = "wrench_brass"
-					)
 	usesound = 'sound/items/ratchet.ogg'
 	custom_materials = list(/datum/material/iron=500)
+	reskinnable_component = /datum/component/reskinnable/wrench
 
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_WRENCH
@@ -131,6 +129,7 @@
 	icon_state = "wrench"
 	usesound = 'sound/effects/empulse.ogg'
 	toolspeed = 0.2
+	reskinnable_component = null
 
 //DR2 TOOLS
 
@@ -140,6 +139,7 @@
 	icon_state = "crudewrench"
 	item_state = "crudewrench"
 	toolspeed = 6
+	reskinnable_component = null
 
 /obj/item/wrench/basic
 	name = "basic wrench"
@@ -147,6 +147,7 @@
 	icon_state = "basicwrench"
 	item_state = "basicwrench"
 	toolspeed = 2
+	reskinnable_component = null
 
 /obj/item/wrench/hightech
 	name = "advanced locking device"
@@ -154,3 +155,4 @@
 	icon_state = "advancedwrench"
 	item_state = "advancedwrench"
 	toolspeed = 0.1
+	reskinnable_component = null

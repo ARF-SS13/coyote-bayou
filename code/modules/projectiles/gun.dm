@@ -29,7 +29,6 @@ ATTACHMENTS
 	slot_flags = null
 	custom_materials = list(/datum/material/iron=2000)
 	w_class = null
-	var/icon_prefix = null
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
@@ -303,9 +302,6 @@ ATTACHMENTS
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
 	return FALSE
-
-/obj/item/gun/update_icon_state()
-	icon_state = "[icon_prefix]"
 
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot

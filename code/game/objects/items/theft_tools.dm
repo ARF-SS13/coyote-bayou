@@ -97,7 +97,6 @@
 	icon_state = "screwdriver_nuke"
 	item_state = "screwdriver_nuke"
 	toolspeed = 0.5
-	random_color = FALSE
 
 /obj/item/screwdriver/nuke/nt
 	desc = "A screwdriver with an ultra thin diamon tip."

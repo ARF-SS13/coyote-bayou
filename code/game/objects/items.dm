@@ -184,6 +184,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// Weapon special component
 	var/weapon_special_component
 
+	/// Reskinnable component
+	var/reskinnable_component
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -249,6 +252,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(weapon_special_component)
 		AddComponent(weapon_special_component)
+
+	if(reskinnable_component)
+		AddComponent(reskinnable_component)
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
@@ -1036,6 +1042,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if (HAS_TRAIT(src, TRAIT_NODROP))
 		return
 	return ..()
+
+/obj/item/proc/get_current_skin()
+	var/list/skinhack = list()
+	SEND_SIGNAL(src, COMSIG_ITEM_GET_CURRENT_RESKIN, skinhack)
+	return LAZYACCESS(skinhack, 1)
 
 /// Get an item's volume that it uses when being stored.
 /obj/item/proc/get_w_volume()

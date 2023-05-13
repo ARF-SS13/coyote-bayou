@@ -1615,17 +1615,17 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return TRUE
 
 /// REcursively searches through the atom's loc, looking for a specific atom, aborting if it hits a turf
-/proc/recursive_loc_search(atom/A, atom/movable/needle, max_depth = 5)
+/proc/recursive_loc_search(atom/haystack, atom/movable/needle, max_depth = 5)
 	if(max_depth <= 0)
 		return // we've gone too deep
-	if(!istype(A))
+	if(!istype(haystack))
 		return
-	if(isturf(A))
+	if(isturf(haystack))
 		return
-	if(A == needle)
-		return A
-	if(A.loc)
-		return recursive_loc_search(A.loc, needle, max_depth - 1)
+	if(haystack == needle)
+		return haystack
+	if(haystack.loc)
+		return recursive_loc_search(haystack.loc, needle, max_depth - 1)
 
 /// Goes through the common places a client can be held, and returns the first one it finds
 /proc/get_client(thing_w_client)

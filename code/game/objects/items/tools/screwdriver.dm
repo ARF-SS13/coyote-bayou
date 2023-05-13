@@ -1,6 +1,6 @@
 /obj/item/screwdriver
 	name = "screwdriver"
-	desc = "You can be totally screwy with this."
+	desc = "A long, pointy rod with a handy knob on the base. Used to screw things."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "screwdriver_map"
 	item_state = "screwdriver"
@@ -22,17 +22,7 @@
 	tool_behaviour = TOOL_SCREWDRIVER
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
-	var/random_color = TRUE //if the screwdriver uses random coloring
-	var/static/list/screwdriver_colors = list(
-		"blue" = rgb(24, 97, 213),
-		"red" = rgb(255, 0, 0),
-		"pink" = rgb(213, 24, 141),
-		"brown" = rgb(160, 82, 18),
-		"green" = rgb(14, 127, 27),
-		"cyan" = rgb(24, 162, 213),
-		"yellow" = rgb(255, 165, 0)
-	)
-
+	reskinnable_component = /datum/component/reskinnable/screwdriver
 	wound_bonus = -10
 	bare_wound_bonus = 5
 
@@ -42,31 +32,31 @@
 
 /obj/item/screwdriver/Initialize()
 	. = ..()
-	if(random_color) //random colors!
-		icon_state = "screwdriver"
-		var/our_color = pick(screwdriver_colors)
-		add_atom_colour(screwdriver_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
 	if(prob(75))
 		pixel_y = rand(0, 16)
 
-/obj/item/screwdriver/update_overlays()
+/obj/item/wirecutters/update_overlays()
 	. = ..()
-	if(!random_color) //icon override
+	cut_overlays()
+	var/datum/reskin/colorable_tool/myskin = get_current_skin()
+	if(!myskin)
 		return
-	var/mutable_appearance/base_overlay = mutable_appearance(icon, "screwdriver_screwybits")
-	base_overlay.appearance_flags = RESET_COLOR
-	. += base_overlay
+	icon_state = myskin.icon_state
+	if(!myskin.colorize)
+		return
+	add_atom_colour(myskin.get_color(src), FIXED_COLOUR_PRIORITY)
+	. += myskin.get_overlays(src)
 
 /obj/item/screwdriver/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()
-	if(isinhands && random_color)
+	if(isinhands)
 		var/mutable_appearance/M = mutable_appearance(icon_file, "screwdriver_head")
 		M.appearance_flags = RESET_COLOR
 		. += M
 
 /obj/item/screwdriver/get_belt_overlay()
-	if(random_color)
+	var/datum/reskin/colorable_tool/myskin = get_current_skin()
+	if(myskin?.colorize)
 		var/mutable_appearance/body = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver")
 		var/mutable_appearance/head = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver_head")
 		body.color = color
@@ -89,7 +79,6 @@
 	icon_state = "screwdriver_clock"
 	item_state = "screwdriver_brass"
 	toolspeed = 0.5
-	random_color = FALSE
 
 /obj/item/screwdriver/bronze
 	name = "bronze screwdriver"
@@ -97,7 +86,6 @@
 	icon_state = "screwdriver_brass"
 	item_state = "screwdriver_brass"
 	toolspeed = 0.95
-	random_color = FALSE
 
 /obj/item/screwdriver/abductor
 	name = "ultracite screwdriver"
@@ -107,7 +95,7 @@
 	item_state = "screwdriver_nuke"
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.1
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/screwdriver/abductor/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver_nuke")
@@ -129,7 +117,7 @@
 	hitsound = 'sound/items/drill_hit.ogg'
 	usesound = 'sound/items/drill_use.ogg'
 	toolspeed = 0.25
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/screwdriver/power/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -150,7 +138,7 @@
 	hitsound = 'sound/items/drill_hit.ogg'
 	usesound = 'sound/items/drill_use.ogg'
 	toolspeed = 0.5
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/screwdriver/advanced
 	name = "advanced screwdriver"
@@ -160,7 +148,7 @@
 	item_state = "screwdriver_nuke"
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.2
-	random_color = FALSE
+	reskinnable_component = null
 
 //DR2 TOOLS
 
@@ -170,7 +158,7 @@
 	icon_state = "crudescrew"
 	item_state = "crudescrew"
 	toolspeed = 6
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/screwdriver/basic
 	name = "basic screwdriver"
@@ -178,7 +166,7 @@
 	icon_state = "basicscrew"
 	item_state = "basicscrew"
 	toolspeed = 2
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/screwdriver/hightech
 	name = "advanced drill"
@@ -187,4 +175,4 @@
 	item_state = "advancedscrew"
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.1
-	random_color = FALSE
+	reskinnable_component = null
