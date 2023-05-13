@@ -2102,6 +2102,12 @@
 	icon_state = "battlecoat_tan"
 	item_state = "battlecoat_tan"
 
+/obj/item/clothing/suit/armor/medium/duster/armoredcoat/panzer
+	name = "dishevelled tan battlecoat"
+	desc = "A heavy padded leather coat with faded colors, worn over an armor vest. This particular coat is torn around the edges with small holes along the shoulders and arms wherein one might denote their rank, while the underlying armor vest would be marred by burn marks and bullet holes - clearly having seen better days."
+	icon_state = "battlecoat_tan"
+	item_state = "battlecoat_tan"
+
 /obj/item/clothing/suit/armor/medium/duster/duster_renegade
 	name = "renegade duster"
 	desc = "Metal armor worn under a stylish duster. For the bad boy who wants to look good while commiting murder."
