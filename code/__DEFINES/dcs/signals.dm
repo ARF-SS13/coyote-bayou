@@ -431,6 +431,8 @@
 	// Uncovered information
 	#define COMPONENT_DEEPSCAN_UNCOVERED_INFORMATION		1
 #define COMSIG_ITEM_MINE_TRIGGERED "itemineboom"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
 
 /// datum/source, mob/spawner
 #define COMSIG_ITEM_MOB_DROPPED "mobdropped"	/// from [/mob/living/simple_animal/proc/drop_loot()]

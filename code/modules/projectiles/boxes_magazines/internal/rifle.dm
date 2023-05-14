@@ -25,11 +25,6 @@
 	max_ammo = 5
 	multiload = 1
 	
-/obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
-	ammo_type = /obj/item/ammo_casing/a3006
-	max_ammo = 5
-	multiload = 1
-	
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
 	max_ammo = 2 //with 1 in the tube = 3 shots
 

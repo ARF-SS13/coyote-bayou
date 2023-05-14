@@ -2093,8 +2093,7 @@
 	icon_state = "hostrench"
 	item_state = "hostrench"
 	flags_inv = 0
-	unique_reskin = list("Coat" = "hostrench",
-						"Cloak" = "trenchcloak")
+	reskinnable_component = /datum/component/reskinnable/hos_trench_coat
 
 /obj/item/clothing/suit/armor/medium/duster/armoredcoat
 	name = "armored battlecoat"
