@@ -1325,7 +1325,7 @@
 	desc = "Armor in the motorcycle-football style, either with intact original polymer plating, or reinforced with gecko hide."
 	icon_state = "leather_armor_mk2"
 	item_state = "leather_armor_mk2"
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_DOWN_LASER_T1 ARMOR_MODIFIER_UP_DT_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/armor/light/leather/leathersuit
 	name = "leather suit"
