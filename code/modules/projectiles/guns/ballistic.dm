@@ -46,7 +46,7 @@
 	update_icon()
 
 /obj/item/gun/ballistic/update_icon_state()
-	var/datum/reskin/myskin = get_current_skin()
+	var/datum/reskin/gun/myskin = get_current_skin()
 	if(myskin)
 		if(sawn_off)
 			desc = myskin.sawn_desc

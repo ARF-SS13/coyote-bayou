@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 
 /datum/component/reskinnable
 	/// Only living mobs can reskin it
-	var/reskin_flags = RESKIN_BE_ALIVE | RESKIN_MUST_HOLD | RESKIN_MUST_BE_NEAR// | RESKIN_COOLDOWN
+	var/reskin_flags = RESKIN_BE_ALIVE | RESKIN_MUST_HOLD | RESKIN_MUST_BE_NEAR | RESKIN_COOLDOWN
 	/// Holds a list of all the appearances that can be cycled through.
 	/// They're keys to datums! Cool huh?
 	var/list/skins = list()
@@ -73,7 +73,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		if(!the_icon)
 			the_icon = my_original_skin.icon
 		skinnies["[skine.skin]"] = skine.get_preview_image(master)
-	var/choice = show_radial_menu(user, master, skinnies, custom_check = CALLBACK(src, .proc/can_reskin, src, user), radius = 40, require_near = TRUE)
+	var/choice = show_radial_menu(user, master, skinnies, custom_check = CALLBACK(src, .proc/can_reskin, src, user), radius = 40, require_near = TRUE, ultradense = (LAZYLEN(skins) > 7))
 	if(!choice)
 		return FALSE
 	if(QDELETED(master))
@@ -85,8 +85,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		skindatum = LAZYACCESS(GLOB.reskin_list, choice)
 	if(!skindatum)
 		return FALSE
-	skindatum.apply_to_item(master)
 	skindex = skindatum.skin
+	skindatum.apply_to_item(master)
 	COOLDOWN_START(src, reskin_when, reskin_cooldown)
 	return TRUE
 
@@ -1033,23 +1033,45 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		"Research Director PDA",
 		"Captain PDA",
 		"Lieutenant PDA",
-		"Cargo Technician PDA",
-		"Quartermaster PDA",
-		"Shaft Miner PDA",
-		"Chaplain PDA",
-		"Chef PDA",
-		"Botanist PDA",
-		"Syndicate PDA",
-		"Lawyer PDA",
-		"Roboticist PDA",
-		"Bartender PDA",
 		"Atmospheric Technician PDA",
 		"Chemist PDA",
 		"Geneticist PDA",
-		"Clear PDA",
 		"Teachboy PDA",
 		"Curator PDA",
 		"Neko PDA",
+		"Handy Orange PDA",
+		"Handy PDA",
+		"Handy Medical PDA",
+		"Handy Virologist PDA",
+		"Handy Engineer PDA",
+		"Handy Security PDA",
+		"Handy Detective PDA",
+		"Handy Warden PDA",
+		"Handy Janitor PDA",
+		"Handy Scientist PDA",
+		"Handy HoP PDA",
+		"Handy HoS PDA",
+		"Handy CE PDA",
+		"Handy CMO PDA",
+		"Handy RD PDA",
+		"Handy Captain PDA",
+		"Handy Lieutenant PDA",
+		"Handy Cargo PDA",
+		"Handy QM PDA",
+		"Handy Miner PDA",
+		"Handy Chaplain PDA",
+		"Handy Cook PDA",
+		"Handy Garden PDA",
+		"Handy Syndicate PDA",
+		"Handy Lawyer PDA",
+		"Handy Roboticist PDA",
+		"Handy Bartender PDA",
+		"Handy Atmos PDA",
+		"Handy Chemist PDA",
+		"Handy Geneticist PDA",
+		"Handy Clear PDA",
+		"Handy Librarian PDA",
+		"Handy Neko PDA",
 	)
 /datum/reskin/pda
 	skin = "PipBoy 3000"
@@ -1079,93 +1101,136 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	var/pai_on_icon = 'icons/obj/pda.dmi'
 	var/pai_on_icon_state = "pai_overlay"
 
-// /datum/reskin/pda/get_preview_image(obj/item/pda/target)
-// 	var/image/img = image(icon, icon_state)
-// 	var/image/alert = image(alert_icon, alert_icon_state)
-// 	var/image/screen = image(screen_icon, screen_icon_state)
-// 	var/image/id_card = image(id_card_icon, id_card_icon_state)
-// 	var/image/insert = image(insert_icon, insert_icon_state)
-// 	var/image/flashlight = image(flashlight_icon, flashlight_icon_state)
-// 	var/image/pai = image(pai_icon, pai_icon_state)
-// 	var/image/pai_on = image(pai_on_icon, pai_on_icon_state)
-// 	img.overlays += list(alert, screen, id_card, insert, flashlight, pai, pai_on)
-// 	return img
+/datum/reskin/pda/get_preview_image(obj/item/pda/target)
+	var/image/img = image(icon, icon_state)
+	// var/image/alert = image(alert_icon, alert_icon_state)
+	var/image/screen = image(screen_icon, screen_icon_state)
+	var/image/id_card = image(id_card_icon, id_card_icon_state)
+	var/image/insert = image(insert_icon, insert_icon_state)
+	var/image/flashlight = image(flashlight_icon, flashlight_icon_state)
+	// var/image/pai = image(pai_icon, pai_icon_state)
+	// var/image/pai_on = image(pai_on_icon, pai_on_icon_state)
+	img.overlays += list(screen, id_card, insert, flashlight)
+	return img
 
 /datum/reskin/pda/medical
 	skin = "Medical PDA"
 	icon_state = "pda-medical"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/virology
 	skin = "Virology PDA"
 	icon_state = "pda-virology"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/engineering
 	skin = "Engineering PDA"
 	icon_state = "pda-engineer"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/security
 	skin = "Security PDA"
 	icon_state = "pda-security"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/detective
 	skin = "Detective PDA"
 	icon_state = "pda-detective"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/warden
 	skin = "Warden PDA"
 	icon_state = "pda-warden"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/janitor
 	skin = "Janitor PDA"
 	icon_state = "pda-janitor"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/toxins
 	skin = "Scientist PDA"
 	icon_state = "pda-science"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/hop
 	skin = "Head of Personnel PDA"
 	icon_state = "pda-hop"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/hos
 	skin = "Head of Security PDA"
 	icon_state = "pda-hos"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/ce
 	skin = "Chief Engineer PDA"
 	icon_state = "pda-ce"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/cmo
 	skin = "Chief Medical Officer PDA"
 	icon_state = "pda-cmo"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/rd
 	skin = "Research Director PDA"
 	icon_state = "pda-rd"
 /datum/reskin/pda/captain
 	skin = "Captain PDA"
 	icon_state = "pda-captain"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/lieutenant
 	skin = "Lieutenant PDA"
 	icon_state = "pda-lieutenant"
 /datum/reskin/pda/cargo
 	skin = "Cargo Technician PDA"
 	icon_state = "pda-cargo"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/quartermaster
 	skin = "Quartermaster PDA"
-	icon_state = "pda-quartermaster"
+	icon_state = "pda-qm"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/shaftminer
 	skin = "Shaft Miner PDA"
 	icon_state = "pda-miner"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/syndicate
 	skin = "Military PDA"
 	icon_state = "pda-syndi"
+	screen_icon_state = null
+	alert_icon_state = null
 /datum/reskin/pda/chaplain
 	skin = "Chaplain PDA"
 	icon_state = "pda-chaplain"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/lawyer
 	skin = "Lawyer PDA"
 	icon_state = "pda-lawyer"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/botanist
 	skin = "Botanist PDA"
 	icon_state = "pda-hydro"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/roboticist
 	skin = "Roboticist PDA"
-	icon_state = "pda-robotics"
+	icon_state = "pda-roboticist"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/cook
 	skin = "Cook PDA"
 	icon_state = "pda-cook"
 /datum/reskin/pda/bar
 	skin = "Bartender PDA"
 	icon_state = "pda-bartender"
+	screen_icon_state = "old_screen_liney"
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/atmos
 	skin = "Atmospheric Technician PDA"
 	icon_state = "pda-atmos"
@@ -1195,6 +1260,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	insert_icon_state = "insert_overlay"
 	flashlight_icon_state = "light_overlay"
 	pai_on_icon_state = "pai_overlay"
+	screen_icon_state = ""
+	alert_icon_state = "pda_alert-old"
 /datum/reskin/pda/neko
 	skin = "Neko PDA"
 	desc = "A portable microcomputer by RobCo Industries. This model is a special feline edition."
@@ -1215,6 +1282,128 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	pai_icon_state = "pai_overlay"
 	pai_on_icon = 'icons/obj/pda_alt.dmi'
 	pai_on_icon_state = "pai_overlay"
+/datum/reskin/pda/alt
+	skin = "Handy PDA"
+	desc = "A handy-dandy microcomputer."
+	icon = 'icons/obj/pda_alt.dmi'
+	icon_state = "pda"
+	alert_icon = 'icons/obj/pda_alt.dmi'
+	alert_icon_state = "pda-r"
+	screen_icon = 'icons/obj/pda_alt.dmi'
+	screen_icon_state = "screen_default"
+	id_card_icon = 'icons/obj/pda_alt.dmi'
+	id_card_icon_state = "id_overlay"
+	insert_icon = 'icons/obj/pda_alt.dmi'
+	insert_icon_state = "insert_overlay"
+	flashlight_icon = 'icons/obj/pda_alt.dmi'
+	flashlight_icon_state = "light_overlay"
+	pai_icon = 'icons/obj/pda_alt.dmi'
+	pai_icon_state = "pai_overlay_off"
+	pai_on_icon = 'icons/obj/pda_alt.dmi'
+	pai_on_icon_state = "pai_overlay"
+/datum/reskin/pda/alt/orange
+	skin = "Handy Orange PDA"
+	icon_state = "pda-orange"
+/datum/reskin/pda/alt/detective
+	skin = "Handy Detective PDA"
+	icon_state = "pda-detective"
+/datum/reskin/pda/alt/hydro
+	skin = "Handy Garden PDA"
+	icon_state = "pda-hydro"
+/datum/reskin/pda/alt/lawyer
+	skin = "Handy Lawyer PDA"
+	icon_state = "pda-lawyer"
+/datum/reskin/pda/alt/hop
+	skin = "Handy HoP PDA"
+	icon_state = "pda-hop"
+/datum/reskin/pda/alt/mime
+	skin = "Handy Mime PDA"
+	icon_state = "pda-mime"
+/datum/reskin/pda/alt/miner
+	skin = "Handy Miner PDA"
+	icon_state = "pda-miner"
+/datum/reskin/pda/alt/qm
+	skin = "Handy QM PDA"
+	icon_state = "pda-qm"
+/datum/reskin/pda/alt/cargo
+	skin = "Handy Cargo PDA"
+	icon_state = "pda-cargo"
+/datum/reskin/pda/alt/janitor
+	skin = "Handy Janitor PDA"
+	icon_state = "pda-janitor"
+/datum/reskin/pda/alt/engineer
+	skin = "Handy Engineer PDA"
+	icon_state = "pda-engineer"
+/datum/reskin/pda/alt/atmos
+	skin = "Handy Atmos PDA"
+	icon_state = "pda-atmos"
+/datum/reskin/pda/alt/ce
+	skin = "Handy CE PDA"
+	icon_state = "pda-ce"
+/datum/reskin/pda/alt/clown
+	skin = "Handy Clown PDA"
+	icon_state = "pda-clown"
+/datum/reskin/pda/alt/chaplain
+	skin = "Handy Chaplain PDA"
+	icon_state = "pda-chaplain"
+/datum/reskin/pda/alt/bartender
+	skin = "Handy Bartender PDA"
+	icon_state = "pda-bartender"
+/datum/reskin/pda/alt/roboticist
+	skin = "Handy Roboticist PDA"
+	icon_state = "pda-roboticist"
+/datum/reskin/pda/alt/captain
+	skin = "Handy Captain PDA"
+	icon_state = "pda-captain"
+/datum/reskin/pda/alt/security
+	skin = "Handy Security PDA"
+	icon_state = "pda-security"
+/datum/reskin/pda/alt/warden
+	skin = "Handy Warden PDA"
+	icon_state = "pda-warden"
+/datum/reskin/pda/alt/hos
+	skin = "Handy HoS PDA"
+	icon_state = "pda-hos"
+/datum/reskin/pda/alt/cook
+	skin = "Handy Cook PDA"
+	icon_state = "pda-cook"
+/datum/reskin/pda/alt/genetics
+	skin = "Handy Geneticist PDA"
+	icon_state = "pda-genetics"
+/datum/reskin/pda/alt/chemistry
+	skin = "Handy Chemist PDA"
+	icon_state = "pda-chemistry"
+/datum/reskin/pda/alt/medical
+	skin = "Handy Medical PDA"
+	icon_state = "pda-medical"
+/datum/reskin/pda/alt/cmo
+	skin = "Handy CMO PDA"
+	icon_state = "pda-cmo"
+/datum/reskin/pda/alt/science
+	skin = "Handy Scientist PDA"
+	icon_state = "pda-science"
+/datum/reskin/pda/alt/rd
+	skin = "Handy RD PDA"
+	icon_state = "pda-rd"
+/datum/reskin/pda/alt/virology
+	skin = "Handy Virologist PDA"
+	icon_state = "pda-virology"
+/datum/reskin/pda/alt/clear
+	skin = "Handy Clear PDA"
+	icon_state = "pda-clear"
+/datum/reskin/pda/alt/lieutenant
+	skin = "Handy Lieutenant PDA"
+	icon_state = "pda-lieutenant"
+/datum/reskin/pda/alt/library
+	skin = "Handy Librarian PDA"
+	icon_state = "pda-library"
+/datum/reskin/pda/alt/syndi
+	skin = "Handy Syndicate PDA"
+	icon_state = "pda-syndi"
+/datum/reskin/pda/alt/neko
+	skin = "Handy Neko PDA"
+	icon_state = "pda-neko"
+
 
 /// GUN ///
 /datum/reskin/gun
@@ -1499,7 +1688,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Now it'll fit on your dashboard!"
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/kar9k
+/datum/reskin/gun/kar98k
 	skin = "KAR98K"
 	name = "kar98K"
 	desc = "A bolt action rifle chambered in .30-06. Chryslus Motors' eleventh attempt at making a rifle that fit on their dashboard. Reportedly fit better in the cup holder."
@@ -1696,7 +1885,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/no4
 	skin = "Number 4"
 	name = "Number 4"
-	desc = "A semi-automatic en-bloc rifle. The fourth rifle ever made."
+	desc = "A bolt-action rifle. The fourth rifle ever made."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "no_4"
 	item_state = "308"
@@ -1710,7 +1899,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/no4tan
 	skin = "Number 4 Tan"
 	name = "Number 4 Tan"
-	desc = "A semi-automatic en-bloc rifle. The fourth light-brown rifle ever made, senpai."
+	desc = "A bolt-action rifle. The fourth light-brown rifle ever made, senpai."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "no_4_tan"
 	item_state = "308"
@@ -1724,7 +1913,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/p14
 	skin = "P-14"
 	name = "P-14"
-	desc = "A semi-automatic en-bloc rifle. Formerly chambered in 14mm, until they missed a payment to the 14mm board. The 'P' remains a mystery."
+	desc = "A bolt-action rifle. Formerly chambered in 14mm, until they missed a payment to the 14mm board. The 'P' remains a mystery."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "p14"
 	item_state = "308"
@@ -1738,7 +1927,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/arisaka_new
 	skin = "Arisaka PRO"
 	name = "Arisaka PRO"
-	desc = "A semi-automatic en-bloc rifle. Rumor has it, the Japanese made this as a prosumer grade rifle. It's also chambered in .308."
+	desc = "A bolt-action rifle. Rumor has it, the Japanese made this as a prosumer grade rifle. It's also chambered in .308."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "arisaka"
 	item_state = "308"

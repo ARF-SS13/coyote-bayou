@@ -220,6 +220,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /obj/item/pda/update_overlays()
 	. = ..()
+	cut_overlays()
 	var/datum/reskin/pda/myskin = get_current_skin()
 	if(!myskin)
 		return
@@ -227,11 +228,15 @@ GLOBAL_LIST_EMPTY(PDAs)
 	icon_state = myskin.icon_state
 	if(myskin.disable_overlays)
 		return
-	var/screen_icon = new_alert ? myskin.alert_icon : myskin.screen_icon
-	var/screen_state = new_alert ? myskin.alert_icon_state : myskin.screen_icon_state
-	var/mutable_appearance/overlay = mutable_appearance(screen_icon, screen_state)
+	var/mutable_appearance/overlay = mutable_appearance()
 	overlay.pixel_x = myskin.overlay_offset_x
 	overlay.pixel_y = myskin.overlay_offset_y
+	if(new_alert)
+		overlay.icon = myskin.alert_icon
+		overlay.icon_state = myskin.alert_icon_state
+	else
+		overlay.icon = myskin.screen_icon
+		overlay.icon_state = myskin.screen_icon_state
 	. += new /mutable_appearance(overlay)
 	if(id)
 		overlay.icon = myskin.id_card_icon
