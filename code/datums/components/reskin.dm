@@ -523,7 +523,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	item_state = "screwdriver"
 	mob_overlay_icon = null
 	mutantrace_variation = null
-	colorize = "cyan"
+	colorize = "yellow"
 
 /// WIRECUTTERS ///
 /datum/component/reskinnable/wirecutters
@@ -654,7 +654,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	item_state = "cutters"
 	mob_overlay_icon = null
 	mutantrace_variation = null
-	colorize = "cyan"
+	colorize = "yellow"
 
 /// NCR TROOPER HELMET ///
 /datum/component/reskinnable/ncr_helm
