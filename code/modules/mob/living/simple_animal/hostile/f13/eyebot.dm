@@ -163,6 +163,7 @@
 	name = "Pvt. Eye"
 	desc = "This eyebot's weapons module has been removed and replaced with a transmitter of some kind. It appears to be simply observing and feeding information to something passively."
 	emote_see = list("buzzes.","pings.","floats in place","beeps.","bobs left and right","bobs up and down")
+	speak_chance = 1
 
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200
