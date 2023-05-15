@@ -8279,7 +8279,7 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/ranged/biker{
 	name = "Blind Jerry, Keeper of the Canibal Speakeasy";
-	faction = list("raider", "neutral")
+	faction = list("raider","neutral")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/caves)
@@ -33295,7 +33295,7 @@
 /area/f13/radiation)
 "vne" = (
 /obj/structure/ladder{
-	id = "Followersholdout";
+	id = "followersholdout";
 	height = 1
 	},
 /obj/structure/window/reinforced{
