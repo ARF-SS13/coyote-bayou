@@ -364,19 +364,19 @@
 	update_weight()
 	return TRUE
 
-/obj/item/stack/tool_use_check(mob/living/user, amount)
-	if(get_amount() < amount)
-		if(singular_name)
-			if(amount > 1)
-				to_chat(user, span_warning("You need at least [amount] [singular_name]\s to do this!"))
-			else
-				to_chat(user, span_warning("You need at least [amount] [singular_name] to do this!"))
-		else
-			to_chat(user, span_warning("You need at least [amount] to do this!"))
-
+/obj/item/stack/tool_use_check(mob/living/user, amount, silent)
+	if(get_amount() > amount)
+		return TRUE
+	if(silent)
 		return FALSE
-
-	return TRUE
+	if(singular_name)
+		if(amount > 1)
+			to_chat(user, span_warning("You need at least [amount] [singular_name]\s to do this!"))
+		else
+			to_chat(user, span_warning("You need at least [amount] [singular_name] to do this!"))
+	else
+		to_chat(user, span_warning("You need at least [amount] to do this!"))
+	return FALSE
 
 /obj/item/stack/proc/zero_amount()
 	if(is_cyborg)

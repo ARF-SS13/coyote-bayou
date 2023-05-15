@@ -1634,7 +1634,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	message = "is being a little <span class='love'>flirty!</span>"
 	message_param = "is <span class='love'>flirting with</span> %t sneakily!"
 	sound = 'sound/f13effects/sunsetsounds/blush.ogg'
-	message_range = 1
+	message_range = 2
 
 /* For making new flirt/affection options
 datum/emote/living/flirt/blank

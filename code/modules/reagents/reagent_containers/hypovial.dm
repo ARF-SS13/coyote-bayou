@@ -9,16 +9,7 @@
 	possible_transfer_amounts = list(1,2,5,10)
 	container_flags = APTFT_VERB
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("hypovial" = "hypovial",
-						"red hypovial" = "hypovial-b",
-						"blue hypovial" = "hypovial-d",
-						"green hypovial" = "hypovial-a",
-						"orange hypovial" = "hypovial-k",
-						"purple hypovial" = "hypovial-p",
-						"black hypovial" = "hypovial-t",
-						"pink hypovial" = "hypovial-pink"
-						)
-	always_reskinnable = TRUE
+	reskinnable_component = /datum/component/reskinnable/small_hypovial
 	cached_icon = "hypovial"
 
 /obj/item/reagent_containers/glass/bottle/vial/Initialize()
@@ -42,7 +33,7 @@
 	possible_transfer_amounts = list(1,2,5,10,20)
 	name = "bluespace hypovial"
 	icon_state = "hypovialbs"
-	unique_reskin = null
+	reskinnable_component = null
 
 /obj/item/reagent_containers/glass/bottle/vial/large
 	name = "large hypovial"
@@ -50,14 +41,7 @@
 	icon_state = "hypoviallarge"
 	volume = 120
 	possible_transfer_amounts = list(1,2,5,10,20)
-	unique_reskin = list("large hypovial" = "hypoviallarge",
-						"large red hypovial" = "hypoviallarge-b",
-						"large blue hypovial" = "hypoviallarge-d",
-						"large green hypovial" = "hypoviallarge-a",
-						"large orange hypovial" = "hypoviallarge-k",
-						"large purple hypovial" = "hypoviallarge-p",
-						"large black hypovial" = "hypoviallarge-t"
-						)
+	reskinnable_component = /datum/component/reskinnable/large_hypovial
 	cached_icon = "hypoviallarge"
 
 /obj/item/reagent_containers/glass/bottle/vial/large/bluespace
@@ -65,7 +49,7 @@
 	name = "bluespace large hypovial"
 	volume = 240
 	icon_state = "hypoviallargebs"
-	unique_reskin = null
+	reskinnable_component = null
 
 
 /obj/item/reagent_containers/glass/bottle/vial/small/bicaridine

@@ -19,7 +19,7 @@
 	move_to_delay = 3
 	robust_searching = 1
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
-	maxHealth = 40 
+	maxHealth = 40
 	health = 40
 	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
@@ -158,6 +158,12 @@
 		return
 	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
 	adjustBruteLoss(emp_damage)
+
+/mob/living/simple_animal/pet/dog/eyebot/panzer
+	name = "Pvt. Eye"
+	desc = "This eyebot's weapons module has been removed and replaced with a transmitter of some kind. It appears to be simply observing and feeding information to something passively."
+	emote_see = list("buzzes.","pings.","floats in place","beeps.","bobs left and right","bobs up and down")
+	speak_chance = 1
 
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200

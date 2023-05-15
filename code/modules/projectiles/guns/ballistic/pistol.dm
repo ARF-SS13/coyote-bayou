@@ -491,7 +491,6 @@
 	desc = "An obscure pistol that fits a 10mm magazine and is capable of full auto. Fires from an open bolt. Innacurate on the first shot, but it doesn't get much worse. Or better."
 	icon_state = "bornheim"
 	item_state = "pistolchrome"
-	icon_prefix = "bornheim"
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos

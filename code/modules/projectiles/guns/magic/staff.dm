@@ -31,17 +31,6 @@
 	max_charges = 1
 	recharge_rate = 30 MINUTES
 
-/obj/item/gun/magic/staff/healing/triheal
-	name = "staff of triad blessings"
-	desc = "An artefact that spits bolts of restorative magic. This one has three spells echanted into its crystal. One to heal simple bruises, one that soothes burns, and the other that can heal even the most complex of toxins and cellular damage."
-	fire_sound = 'sound/magic/mystical.ogg'
-	ammo_type = list(/obj/item/ammo_casing/magic/book/healbrute, /obj/item/ammo_casing/magic/book/healburn, /obj/item/ammo_casing/magic/book/healtoxin)
-	icon_state = "triheal"
-	item_state = "broom"
-	max_charges = 3
-	recharge_rate = 10 MINUTES
-
-
 /obj/item/gun/magic/staff/healing/handle_suicide() //Stops people trying to commit suicide to heal themselves
 	return
 
@@ -60,6 +49,21 @@
 	/obj/item/projectile/magic/spellblade, /obj/item/projectile/magic/arcane_barrage, /obj/item/projectile/magic/locker)
 
 /obj/item/gun/magic/staff/chaos/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
+	chambered.projectile_type = pick(allowed_projectile_types)
+	. = ..()
+
+/obj/item/gun/magic/staff/healing/triheal
+	name = "staff of unstable blessings"
+	desc = "An artefact that spits bolts of restorative magic. This one has three spells echanted into its crystal. One to heal simple bruises, one that soothes burns, and the other that can heal even the most complex of toxins and cellular damage."
+	fire_sound = 'sound/magic/mystical.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/chaos
+	icon_state = "triheal"
+	item_state = "broom"
+	max_charges = 3
+	recharge_rate = 30 SECONDS
+	var/allowed_projectile_types = list(/obj/item/projectile/magic/healbrute, /obj/item/projectile/magic/healburn, /obj/item/projectile/magic/healtoxin)
+
+/obj/item/gun/magic/staff/healing/triheal/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	chambered.projectile_type = pick(allowed_projectile_types)
 	. = ..()
 
@@ -105,5 +109,3 @@
 	item_state = "locker"
 	max_charges = 6
 	recharge_rate = 10 SECONDS
-
-

@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(statpanels)
 		var/list/global_data = list(
 			"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
-			"Fenny Bites: [GLOB.round_id ? GLOB.round_id : "NULL"]",
+			"Round Number: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [ROUND_TIME]",
 			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",

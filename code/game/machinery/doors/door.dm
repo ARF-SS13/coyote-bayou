@@ -40,6 +40,11 @@
 	var/unres_sides = 0 //Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
 	var/proj_resist = 10
 
+	//Multi-tile doors
+	dir = EAST
+	///How wide this door is, measured in tiles.
+	var/width = 1
+
 /obj/machinery/door/examine(mob/user)
 	. = ..()
 	if(red_alert_access)
@@ -67,6 +72,26 @@
 	//doors only block while dense though so we have to use the proc
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
+	SetBounds()
+
+/obj/machinery/door/proc/SetBounds()
+	if(width>1)
+		if(dir in list(EAST, WEST))
+			bound_width = width * world.icon_size
+			bound_height = world.icon_size
+		else
+			bound_width = world.icon_size
+			bound_height = width * world.icon_size
+		appearance_flags = PIXEL_SCALE|KEEP_TOGETHER|LONG_GLIDE
+		apply_opacity_to_my_turfs(opacity)
+
+/obj/machinery/door/proc/apply_opacity_to_my_turfs(new_opacity)
+	for(var/turf/T in locs)
+		T.set_opacity(new_opacity)
+
+/obj/machinery/door/set_opacity()
+	. = ..()
+	apply_opacity_to_my_turfs(opacity)
 
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)
@@ -124,6 +149,7 @@
 /obj/machinery/door/Move()
 	var/turf/T = loc
 	. = ..()
+	SetBounds()
 	move_update_air(T)
 
 /obj/machinery/door/CanAllowThrough(atom/movable/mover, border_dir)

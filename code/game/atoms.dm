@@ -931,6 +931,8 @@
 	var/atom/L = loc
 	if(!L)
 		return null
+	if(isarea(L))
+		return get_turf(src) // quit dropping things into areas
 	return L.AllowDrop() ? L : L.drop_location()
 
 /atom/proc/vv_auto_rename(newname)
