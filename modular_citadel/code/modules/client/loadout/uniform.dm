@@ -2103,3 +2103,15 @@
 	cost = 1
 	path = /obj/item/clothing/under/dress/coyote/dinerdresspink
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/witchfinder
+	name = "witch finder"
+	cost = 1
+	path = /obj/item/clothing/under/witchfinder
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/jester_muli
+	name = "jester, dark multi"
+	cost = 1
+	path = /obj/item/clothing/under/jester_muli
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

@@ -1677,3 +1677,19 @@
 	mutantrace_variation = STYLE_DIGITIGRADE
 	can_adjust = TRUE
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/under/witchfinder
+	name = "witch finder"
+	desc = "A dark style uniform."
+	icon_state = "witchfinder"
+	item_state = "witchfinder"
+	item_color = "witchfinder"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/jester_muli
+	name = "Jester"
+	desc = "A dark, yet multicolored, jester outfit."
+	icon_state = "jester_muli"
+	item_state = "jester_muli"
+	item_color = "jester_muli"
+	can_adjust = FALSE
