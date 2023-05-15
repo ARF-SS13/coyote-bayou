@@ -153,27 +153,92 @@
 	desc = "A life-size effigy of... someone oddly familiar."
 	random_override = MANNEQUIN_OVERRIDE_RANDOM_CLIENT
 
-// /obj/item/ckey_mannequin
-// 	name = "some kind of mannequin"
-// 	desc = "I can turn into people!"
-// 	icon = 'icons/effects/effects.dmi'
-// 	icon_state = "static"
-// 	w_class = WEIGHT_CLASS_GIGANTIC
-// 	var/my_ckey
-// 	var/my_n
-// 	var/nude = FALSE
+/obj/item/ckey_mannequin
+	name = "Polymannequin"
+	desc = "A shifting mass of unattuned matter. It seems to be trying to take on a form, but can't seem to decide which..."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "static"
+	w_class = WEIGHT_CLASS_GIGANTIC
+	var/image/my_image
+	var/my_ckey
+	var/my_name
+	var/nude = TRUE
+	var/random_clothes = FALSE
 
-// /obj/item/ckey_mannequin/Initialize(mapload)
-// 	. = ..()
-// 	if(mapload)
-// 		return
-// 	become_someone()
+/obj/item/ckey_mannequin/attack_hand(mob/user, act_intent, attackchain_flags)
+	if(!attune_to(user))
+		return ..()
 
-// /obj/item/ckey_mannequin/proc/become_someone()
-// 	if(my_ckey)
-// 		var/client/C = pick(GLOB.clients)
-// 		my_ckey = C.ckey
-	
+/obj/item/ckey_mannequin/proc/attune_to(mob/user)
+	if(!user)
+		return
+	if(!user.ckey)
+		return
+	if(!user.real_name)
+		return
+	if(user.ckey == my_ckey || user.real_name == my_name)
+		return
+	visible_message("[user] touches [src], and it transforms!")
+	my_ckey = user.ckey
+	my_name = user.real_name
+	START_PROCESSING(SSobj, src)
+	update_icon()
+	return TRUE
+
+/obj/item/ckey_mannequin/process()
+	update_icon()
+	if(prob(0.5))
+		switch(rand(1,5))
+			if(1)
+				step_rand(src)
+			if(2)
+				setDir(pick(GLOB.cardinals))
+			if(3)
+				do_jiggle(5, 0.5 SECONDS)
+			if(4)
+				TOGGLE_VAR(nude)
+			if(5)
+				TOGGLE_VAR(random_clothes)
+
+/obj/item/ckey_mannequin/update_overlays()
+	. = ..()
+	cut_overlays()
+	if(!my_ckey)
+		icon = initial(icon)
+		icon_state = initial(icon_state)
+		name = initial(name)
+		desc = initial(desc)
+		return
+	SSdummy.capture_snapshot_of_players(TRUE)
+	var/list/imglist
+	var/list/cool_list
+	if(nude)
+		cool_list = SSdummy.naked_player_cache
+	else if(random_clothes)
+		cool_list = SSdummy.randomclothed_player_cache
+	else
+		cool_list = SSdummy.clothed_player_cache
+	for(var/kye in SSdummy.naked_player_cache)
+		if(findtext(kye, my_ckey) || findtext(kye, my_name))
+			imglist = cool_list[kye]
+	if(!imglist)
+		return
+	if(!my_image)
+		my_image = LAZYACCESS(imglist, 1)
+		. += my_image
+	else
+		my_image = next_list_item(my_image, imglist)
+		. += my_image
+	var/client/userclient = GLOB.directory[my_ckey]
+	if(!userclient)
+		return
+	var/mob/user = userclient.mob
+	if(!user)
+		return
+	name = user.real_name
+	var/list/desctext = user.examine(user)
+	desc = "[jointext(desctext,"\n")]"
+	icon_state = "nothing"
 
 
 

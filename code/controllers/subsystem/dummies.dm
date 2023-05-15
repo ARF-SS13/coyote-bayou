@@ -21,6 +21,10 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 	/// Pictures of everyone at various moments, clothed~
 	/// list("ckey" = list(image, image, image))
 	var/list/clothed_player_cache = list()
+	/// Pictures of everyone at various moments, clothed~
+	/// list("ckey" = list(image, image, image))
+	var/list/randomclothed_player_cache = list()
+	COOLDOWN_DECLARE(snapshot_cooldown)
 
 /datum/controller/subsystem/dummy/fire(resumed)
 	if(LAZYLEN(all_dummies) < DUMMY_PRUNE_SIZE)
@@ -69,8 +73,9 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		random_clothes,
 		copy_equipment,
 		genitals,
+		cache = TRUE
 	)
-	var/image_key = generate_key(slotkey, spec, clothes, template, client_or_prefs, loadout, random_body, random_species, random_clothes, copy_equipment, genitals)
+	var/image_key = generate_key(slotkey, spec, clothes, template, client_or_prefs, loadout, random_body, random_species, random_clothes, copy_equipment, genitals, cache)
 	if(LAZYACCESS(image_cache, image_key))
 		return image_cache[image_key]
 	var/mob/living/carbon/human/dummy/mannequin = get_a_dummy()
@@ -126,7 +131,7 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 	/// and mail out the photo
 	return photo
 
-/datum/controller/subsystem/dummy/proc/generate_key(slotkey, datum/species/spec, datum/outfit/clothes, mob/living/carbon/human/template, client/clint, random_body, random_species, random_clothes, copy_equipment, genitals)
+/datum/controller/subsystem/dummy/proc/generate_key(slotkey, datum/species/spec, datum/outfit/clothes, mob/living/carbon/human/template, client/clint, random_body, random_species, random_clothes, copy_equipment, genitals, cache)
 	. = "dummy"
 	if(slotkey)
 		. += "-[slotkey]"
@@ -156,6 +161,8 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		. += "-RANDOM_SPEC[rand(10000, 99999)]"
 	if(random_clothes)
 		. += "-RANDOM_CLOTHES[rand(10000, 99999)]"
+	if(!cache)
+		. += "-[round(world.time, 1)]"
 	
 
 //This proc attempts to create a dummy which is an exact copy of a passed human, including all of their equipment.
@@ -256,7 +263,10 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 			return LAZYACCESS(image_cache, slutkey)
 	return get_dummy_image("PLAYER", template = H, client_or_prefs = clont, copy_equipment = equipped)
 
-/datum/controller/subsystem/dummy/proc/capture_snapshot_of_players()
+/datum/controller/subsystem/dummy/proc/capture_snapshot_of_players(obey_cooldown)
+	if(obey_cooldown && !COOLDOWN_FINISHED(src, snapshot_cooldown))
+		return
+	COOLDOWN_START(src, snapshot_cooldown, 5 MINUTES)
 	for(var/client/C in GLOB.clients)
 		if(!ishuman(C.mob))
 			continue
@@ -267,10 +277,13 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 			clothed_player_cache["[C.ckey]%%[H.real_name]"] = list()
 		var/image/naked = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE)
 		var/image/clothed = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE, copy_equipment = TRUE)
+		var/image/clothed2 = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = TRUE)
 		if(naked)
 			naked_player_cache["[C.ckey]%%[H.real_name]"] |= naked
 		if(clothed)
-			clothed_player_cache["[C.ckey]%%%[H.real_name]"] |= clothed
+			clothed_player_cache["[C.ckey]%%[H.real_name]"] |= clothed
+		if(clothed2)
+			randomclothed_player_cache["[C.ckey]%%[H.real_name]"] |= clothed2
 
 
 
@@ -299,6 +312,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	set_species(/datum/species/human)
 	dna.initialize_dna("B+", randomise = TRUE)
 	icon_render_key = null
+	transform = initial(transform)
 	cut_overlays()
 
 //Inefficient pooling/caching way.
