@@ -58,7 +58,7 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
-	aggrosound = list('sound/f13npc/eyebot/aggro.ogg')
+	emote_taunt_sound = list('sound/f13npc/eyebot/aggro.ogg')
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
@@ -90,7 +90,7 @@
 	attack_verb_simple = "zaps"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -169,7 +169,6 @@
 	health = 200
 	maxHealth = 200
 	attack_verb_simple = "zaps"
-	aggrosound = null
 	speak_chance = 0
 	idlesound = null
 	see_in_dark = 8

@@ -57,7 +57,7 @@
 	emote_taunt_sound = list('sound/f13npc/centaur/taunt.ogg')
 	emote_taunt = list("grunts", "gurgles", "wheezes", "flops", "scrabbles")
 	taunt_chance = 30
-	aggrosound = list('sound/f13npc/centaur/aggro1.ogg', )
+	emote_taunt_sound = list('sound/f13npc/centaur/aggro1.ogg', )
 	idlesound = list('sound/f13npc/centaur/idle1.ogg', 'sound/f13npc/centaur/idle2.ogg')
 	death_sound = 'sound/f13npc/centaur/centaur_death.ogg'
 	attack_sound = 'sound/f13npc/centaur/lash.ogg'

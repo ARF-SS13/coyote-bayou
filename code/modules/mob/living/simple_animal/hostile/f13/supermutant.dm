@@ -64,7 +64,7 @@
 		'sound/f13npc/supermutant/death1.ogg',
 		'sound/f13npc/supermutant/death2.ogg'
 		)
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/supermutant/alert1.ogg',
 		'sound/f13npc/supermutant/alert2.ogg',
 		'sound/f13npc/supermutant/alert3.ogg',
@@ -80,7 +80,7 @@
 	health = 130
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0

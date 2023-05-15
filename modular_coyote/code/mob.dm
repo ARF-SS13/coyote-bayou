@@ -14,7 +14,7 @@
 	bare_wound_bonus = 25
 	faction = list("yaoguai")
 	emote_taunt_sound = list('sound/f13npc/deathclaw/taunt.ogg')
-	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
+	emote_taunt_sound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = list('sound/f13npc/hellpig/hellpigdead.ogg',)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/reagent_containers/food/snacks/meat/rawbacon = 8)
@@ -206,7 +206,7 @@
 	melee_damage_upper = 20
 	maxHealth = 400
 	health = 400
-	aggrosound = list('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl3.ogg', )
+	emote_taunt_sound = list('sound/alien/Voice/growl1.ogg', 'sound/alien/Voice/growl3.ogg', )
 	idlesound = list('sound/alien/Voice/hiss1.ogg',)
 
 /mob/living/simple_animal/hostile/alligator/Initialize()
