@@ -691,6 +691,15 @@
 // O
 // P
 
+/obj/item/pet_carrier/eye
+    name = "Eyebot Carrier"
+    desc = "An unholy amalgamation of a pet carrier and a jury-rigged charging station- although the latter function probably doesn't work in any capacity."
+
+/obj/item/pet_carrier/eye/Initialize()
+    . = ..()
+    var/mob/living/simple_animal/pet/dog/eyebot/panzer/pvt_eye = new(src)
+    add_occupant(pvt_eye)
+
 /datum/gear/donator/kits/panzer
 	name = "Val's Equipment"
 	path = /obj/item/storage/box/large/custom_kit/panzer
@@ -701,12 +710,13 @@
 	new /obj/item/clothing/mask/gas/sechailer(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/clothing/under/f13/enclave/officer(src)
-	new /mob/living/simple_animal/pet/dog/eyebot/panzer(src)
+	new /obj/item/pet_carrier/eye(src)
 	new /obj/item/gun/ballistic/revolver/m29/alt(src)
 	new /obj/item/ammo_box/m44(src)
 	new /obj/item/ammo_box/m44(src)
 	new /obj/item/card/id/selfassign/brotherenclave(src)
 	new /obj/item/pda/warden(src)
+	new /obj/item/clothing/accessory/enclave/lieutenant(src)
 
 /datum/gear/donator/kits/pappavol
 	name = "Tribal Power Kit"
