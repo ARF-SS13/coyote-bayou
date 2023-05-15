@@ -638,12 +638,6 @@
 	icon_state = "turban_mil"
 	item_state = "turban_mil"
 
-/obj/item/clothing/head/military_turban
-	name = "Military Turban"
-	desc = "A Military green Turban used by pre war Raj recently freed of its British overlords."
-	icon_state = "turban_mil"
-	item_state = "turban_mil"
-
 /obj/item/clothing/head/burma/cowboy/black
 	name = "Burma Cowboy hat, black"
 	desc = "A wide brimmed hat in an aussie style brim more common around the wastes now a days being an easily replicate able style of fur felt hat. This one is a dark colour,...some what stupid if your trying to get heat away from you..."
