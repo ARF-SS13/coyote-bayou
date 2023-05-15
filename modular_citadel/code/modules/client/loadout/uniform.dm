@@ -2043,3 +2043,63 @@
 	cost = 1
 	path = /obj/item/clothing/under/dress/coyote/priestess
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/princess
+	name = "blue princess dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/princess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_red
+	name = "red hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_black
+	name = "black hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_blue
+	name = "blue hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_red_long
+	name = "red long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_red_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_white_long
+	name = "white long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_white_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_blue_long
+	name = "blue long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_blue_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sailermoon
+	name = "Red, white and blue skirt."
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sailermoon
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/dinerdressmint
+	name = "diner dress mint"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/dinerdressmint
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/dinerdresspink
+	name = "diner dress pink"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/dinerdresspink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

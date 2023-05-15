@@ -339,3 +339,93 @@
 	item_color = "priestess"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/princess
+	name = "blue princess"
+	desc = "A blue frilly dress"
+	icon_state = "princess"
+	item_state = "princess"
+	item_color = "princess"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_red
+	name = "Red Hakama"
+	desc = "A red hakama"
+	icon_state = "hakama_1"
+	item_state = "hakama_1"
+	item_color = "hakama_1"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_black
+	name = "Black Hakama"
+	desc = "A red hakama"
+	icon_state = "hakama_2"
+	item_state = "hakama_2"
+	item_color = "hakama_2"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_blue
+	name = "Blue Hakama"
+	desc = "A blue hakama"
+	icon_state = "hakama_3"
+	item_state = "hakama_3"
+	item_color = "hakama_3"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_red_long
+	name = "long red Hakama"
+	desc = "A red hakama with a black top and a long skirt."
+	icon_state = "hakama_4"
+	item_state = "hakama_4"
+	item_color = "hakama_4"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_white_long
+	name = "long white Hakama"
+	desc = "A white hakama with a black top and a long skirt."
+	icon_state = "hakama_5"
+	item_state = "hakama_5"
+	item_color = "hakama_5"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_blue_long
+	name = "long blue Hakama"
+	desc = "A blue hakama with a black top and a long skirt."
+	icon_state = "hakama_6"
+	item_state = "hakama_6"
+	item_color = "hakama_6"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/sailermoon
+	name = "Red, white and blue dress"
+	desc = "A frilly skirt! Makes you think of sailing on the moon.."
+	icon_state = "sailormoon"
+	item_state = "sailormoon"
+	item_color = "sailormoon"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/dinerdressmint
+	name = "Diner dress, mint"
+	desc = "A cute mint colored dress."
+	icon_state = "dinerdress-mint"
+	item_state = "dinerdress-mint"
+	item_color = "dinerdress-mint"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/dinerdresspink
+	name = "Diner dress, pink"
+	desc = "A cute pink colored dress."
+	icon_state = "dinerdress-pink"
+	item_state = "dinerdress-pink"
+	item_color = "dinerdress-pink"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
