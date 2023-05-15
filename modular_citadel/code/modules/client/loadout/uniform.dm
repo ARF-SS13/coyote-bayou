@@ -1984,8 +1984,56 @@
 	path = /obj/item/clothing/under/dress/coyote/white
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/coy/boltdress
-	name = "bolt dress"
+/datum/gear/uniform/coy/boltdressy
+	name = "yellow bolt dress"
 	cost = 1
-	path = /obj/item/clothing/under/dress/coyote/bolt
+	path = /obj/item/clothing/under/dress/coyote/boltyellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/boltdressp
+	name = "purple bolt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/boltpurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/cassleoy
+	name = "yellow flower dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/cassleoy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/cassleop
+	name = "purple flower dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/cassleop
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_red
+	name = "red skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_purple
+	name = "purple skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_blue
+	name = "blue skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_gold
+	name = "gold skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_gold
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/westerndress
+	name = "western dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/western
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

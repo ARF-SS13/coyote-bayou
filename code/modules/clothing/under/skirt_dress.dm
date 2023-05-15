@@ -268,7 +268,47 @@
 	icon_state = "casdress_white"
 	item_state = "casdress_white"
 
-/obj/item/clothing/under/dress/coyote/bolt
-	name = "Bolt Dress"
+/obj/item/clothing/under/dress/coyote/boltyellow
+	name = "Yellow Bolt Dress"
 	icon_state = "casdress_bolty"
 	item_state = "casdress_bolty"
+
+/obj/item/clothing/under/dress/coyote/boltpurple
+	name = "Purple Bolt Dress"
+	icon_state = "casdress_boltp"
+	item_state = "casdress_boltp"
+
+/obj/item/clothing/under/dress/coyote/cassleoy
+	name = "yellow flower dress"
+	icon_state = "casdress_leoy"
+	item_state = "casdress_leoy"
+
+/obj/item/clothing/under/dress/coyote/cassleop
+	name = "purple flower dress"
+	icon_state = "casdress_leop"
+	item_state = "casdress_leop"
+
+/obj/item/clothing/under/dress/coyote/sktdress_red
+	name = "red skirt dress"
+	icon_state = "sktdress_red"
+	item_state = "sktdress_red"
+
+/obj/item/clothing/under/dress/coyote/sktdress_purple
+	name = "purple skirt dress"
+	icon_state = "sktdress_purple"
+	item_state = "sktdress_purple"
+
+/obj/item/clothing/under/dress/coyote/sktdress_blue
+	name = "blue skirt dress"
+	icon_state = "sktdress_blue"
+	item_state = "sktdress_blue"
+
+/obj/item/clothing/under/dress/coyote/sktdress_gold
+	name = "gold skirt dress"
+	icon_state = "sktdress_gold"
+	item_state = "sktdress_gold"
+
+/obj/item/clothing/under/dress/coyote/western
+	name = "western dress"
+	icon_state = "westerndress"
+	item_state = "westerndress"
