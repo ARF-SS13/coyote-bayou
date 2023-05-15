@@ -1747,97 +1747,97 @@
 /datum/gear/uniform/mini_black
 	name = "mini black dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/mini_black
+	path = /obj/item/clothing/under/dress/coyote/mini_black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/mini_black_blue
 	name = "mini black and blue dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/mini_black_blue
+	path = /obj/item/clothing/under/dress/coyote/mini_black_blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/mini_white
 	name = "mini white dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/mini_white
+	path = /obj/item/clothing/under/dress/coyote/mini_white
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/pristess
 	name = "pristess dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/pristess
+	path = /obj/item/clothing/under/dress/coyote/pristess
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/gob/summer
 	name = "summer dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/summer
+	path = /obj/item/clothing/under/dress/coyote/summer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/thot
 	name = "thin white dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/thot
+	path = /obj/item/clothing/under/dress/coyote/thot
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/fem_blue
 	name = "female blue outfit"
 	cost = 1
-	path = /obj/item/clothing/under/gob/fem_blue
+	path = /obj/item/clothing/under/dress/coyote/fem_blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/fem_rose
 	name = "female rose outfit"
 	cost = 1
-	path = /obj/item/clothing/under/gob/fem_rose
+	path = /obj/item/clothing/under/dress/coyote/fem_rose
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/fem_white
 	name = "female white outfit"
 	cost = 1
-	path = /obj/item/clothing/under/gob/fem_white
+	path = /obj/item/clothing/under/dress/coyote/fem_white
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_blue
 	name = "Blue Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_blue
+	path = /obj/item/clothing/under/dress/coyote/vestido_blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_black
 	name = "Black Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_black
+	path = /obj/item/clothing/under/dress/coyote/vestido_black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_pink
 	name = "Pink Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_pink
+	path = /obj/item/clothing/under/dress/coyote/vestido_pink
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_yellow
 	name = "Yellow Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_yellow
+	path = /obj/item/clothing/under/dress/coyote/vestido_yellow
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_white
 	name = "White Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_white
+	path = /obj/item/clothing/under/dress/coyote/vestido_white
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_red
 	name = "red Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_red
+	path = /obj/item/clothing/under/dress/coyote/vestido_red
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_purple
 	name = "Purple Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_purple
+	path = /obj/item/clothing/under/dress/coyote/vestido_purple
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/gorka_alt

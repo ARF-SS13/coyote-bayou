@@ -429,3 +429,139 @@
 	item_color = "dinerdress-pink"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/mini_black
+	name = "Mini Black Dress"
+	desc = "A small black dress."
+	icon_state = "mini_black"
+	item_state = "mini_black"
+	item_color = "mini_black"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/gob/mini_white
+	name = "Mini White"
+	desc = "A small white dress."
+	icon_state = "mini_white"
+	item_state = "mini_white"
+	item_color = "mini_white"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/pristess
+	name = "pristess dress"
+	desc = "A fancy dress"
+	icon_state = "pristess"
+	item_state = "pristess"
+	item_color = "pristess"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/summer
+	name = "Summer dress"
+	desc = "A pink summer dress"
+	icon_state = "summer"
+	item_state = "summer"
+	item_color = "summer"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/thot
+	name = "Thin white dress"
+	desc = "A thin white and kinda revealing dress."
+	icon_state = "thot"
+	item_state = "thot"
+	item_color = "thot"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/fem_blue
+	name = "female blue outfit"
+	desc = "A blue tunic."
+	icon_state = "fem_blue"
+	item_state = "fem_blue"
+	item_color = "fem_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/fem_rose
+	name = "female rose outfit"
+	desc = "A rose tunic."
+	icon_state = "fem_rose"
+	item_state = "fem_rose"
+	item_color = "fem_rose"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/fem_white
+	name = "female white outfit"
+	desc = "A white tunic."
+	icon_state = "fem_white"
+	item_state = "fem_white"
+	item_color = "fem_white"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_blue
+	name = "Blue Vestido Dress"
+	desc = "A very fancy blue dress"
+	icon_state = "vestido_blue"
+	item_state = "vestido_blue"
+	item_color = "vestido_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_black
+	name = "Black Vestido Dress"
+	desc = "A very fancy black dress"
+	icon_state = "vestido_black"
+	item_state = "vestido_black"
+	item_color = "vestido_black"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_pink
+	name = "Pink Vestido Dress"
+	desc = "A very fancy pink dress"
+	icon_state = "vestido_pink"
+	item_state = "vestido_pink"
+	item_color = "vestido_pink"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_yellow
+	name = "Yellow Vestido Dress"
+	desc = "A very fancy yellow dress"
+	icon_state = "vestido_yellow"
+	item_state = "vestido_yellow"
+	item_color = "vestido_yellow"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_white
+	name = "White Vestido Dress"
+	desc = "A very fancy white dress"
+	icon_state = "vestido_white"
+	item_state = "vestido_white"
+	item_color = "vestido_white"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_purple
+	name = "Purple Vestido Dress"
+	desc = "A very fancy purple dress"
+	icon_state = "vestido_purple"
+	item_state = "vestido_purple"
+	item_color = "vestido_purple"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_red
+	name = "Red Vestido Dress"
+	desc = "A very fancy red dress"
+	icon_state = "vestido_red"
+	item_state = "vestido_red"
+	item_color = "vestido_red"
+	can_adjust = FALSE
