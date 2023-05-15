@@ -209,25 +209,25 @@
 	name = "deer"
 	icon_state = "deertail"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
-	extra_color_src = MUTCOLORS2
+	extra_color_src = MUTCOLOR2
 
 /datum/sprite_accessory/tails/mam_tails/deertail
 	name = "deer"
 	icon_state = "deertail"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
-	extra_color_src = MUTCOLORS2
+	extra_color_src = MUTCOLOR2
 
 /datum/sprite_accessory/tails/mam_tails/deertail
 	name = "deer"
 	icon_state = "deertail"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
-	extra_color_src = MUTCOLORS2
+	extra_color_src = MUTCOLOR2
 
 /datum/sprite_accessory/tails/mam_tails/raptor
 	name = "Raptor"
@@ -331,25 +331,25 @@
 	name = "Tail Maw"
 	icon_state = "tailmaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/tails_animated/mam_tails/tailmaw
 	name = "Tail Maw"
 	icon_state = "tailmaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/tails/human/tailmaw
 	name = "Tail Maw"
 	icon_state = "tailmaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/tails_animated/human/tailmaw
 	name = "Tail Maw"
 	icon_state = "tailmaw"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/tails/mam_tails/feathertail
 	name = "Feather Tail"
@@ -430,7 +430,7 @@
 	icon_state = "kangaroo"
 	dimension_x = 64
 	center = TRUE
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/kangaroo/alt
 	name = "kangaroo big"
@@ -438,7 +438,7 @@
 	icon_state = "kangaroo"
 	dimension_x = 64
 	center = TRUE
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/tails/mam_tails/snakelarge
 	name = "Snake Tail (Large)"
@@ -608,13 +608,13 @@
 	name = "succubus"
 	icon_state = "succubus"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/tails/mam_tails/fluffy
 	name = "fluffy"
 	icon_state = "fluffy"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 //Pony tails. From MLP
 

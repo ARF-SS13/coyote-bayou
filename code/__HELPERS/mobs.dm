@@ -164,7 +164,7 @@
 		MBP_EARS_LIZARD				= "None",
 		MBP_FRILLS			= pick(GLOB.frills_list),
 		MBP_TAIL_SPINES			= pick(GLOB.spines_list),
-		MBP_LEGS				= pick(LIMB_PLANTIGRADE,LIMB_DIGITIGRADE),
+		MBP_LEGS				= pick(LEGS_PLANTIGRADE,LEGS_DIGITIGRADE),
 		MBP_SHROOM_CAP				= pick(GLOB.caps_list),
 		MBP_WINGS_INSECT		= pick(GLOB.insect_wings_list),
 		MBP_FLUFF		= "None",

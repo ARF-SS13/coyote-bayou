@@ -211,19 +211,19 @@
 /datum/sprite_accessory/ears/mam_ears/frills/split
 	name = "Split Frill"
 	icon_state = "splitfrill"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/frills/full
 	name = "Full Frill"
 	icon_state = "fullfrill"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/frills/long
 	name = "long Frill"
 	icon_state = "longfrill"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/noodle
@@ -235,31 +235,31 @@
 /datum/sprite_accessory/ears/mam_ears/longbunnyalt
 	name = "long bunny, altt"
 	icon_state = "bunny"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/mousealt
 	name = "mouse, alt"
 	icon_state = "mouse"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/pointy
 	name = "pointy"
 	icon_state = "pointy"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/buny2
 	name = "bunny long, up"
 	icon_state = "bunny2"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/jackal
 	name = "jackal"
 	icon_state = "jackal"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 //Tall ears from Citadel

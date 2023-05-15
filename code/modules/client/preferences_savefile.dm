@@ -1,201 +1,3 @@
-//This is the lowest supported version, anything below this is completely obsolete and the entire savefile will be wiped.
-#define SAVEFILE_VERSION_MIN	37
-
-//This is the current version, anything below this will attempt to update (if it's not obsolete)
-//	You do not need to raise this if you are adding new values that have sane defaults.
-//	Only raise this value when changing the meaning/format/name/layout of an existing value
-//	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX	52
-
-/*
-SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
-	This proc checks if the current directory of the savefile S needs updating
-	It is to be used by the load_character and load_preferences procs.
-	(S.cd=="/" is preferences, S.cd=="/character[integer]" is a character slot, etc)
-
-	if the current directory's version is below SAVEFILE_VERSION_MIN it will simply wipe everything in that directory
-	(if we're at root "/" then it'll just wipe the entire savefile, for instance.)
-
-	if its version is below SAVEFILE_VERSION_MAX but above the minimum, it will load data but later call the
-	respective update_preferences() or update_character() proc.
-	Those procs allow coders to specify format changes so users do not lose their setups and have to redo them again.
-
-	Failing all that, the standard sanity checks are performed. They simply check the data is suitable, reverting to
-	initial() values if necessary.
-
-	Cool system, didnt read, gonna make my own. peace!
-		- Lagg
-*/
-/datum/preferences/proc/savefile_needs_update(savefile/S)
-	var/savefile_version
-	S["version"] >> savefile_version
-
-	if(savefile_version < SAVEFILE_VERSION_MIN)
-		S.dir.Cut()
-		return -2
-	if(savefile_version < SAVEFILE_VERSION_MAX)
-		return savefile_version
-	return -1
-
-/datum/preferences/proc/update_save(savefile/S)
-	current_version = safe_json_decode(S["current_version"])
-	var/list/needs_updating = list()
-	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
-	if(LAZYLEN(needs_updating))
-		update_file(needs_updating, S)
-
-//should these procs get fairly long
-//just increase SAVEFILE_VERSION_MIN so it's not as far behind
-//SAVEFILE_VERSION_MAX and then delete any obsolete if clauses
-//from these procs.
-//This only really meant to avoid annoying frequent players
-//if your savefile is 3 months out of date, then 'tough shit'.
-
-
-/datum/preferences/proc/update_preferences(current_version, savefile/S)
-	if(current_version < 37)	//If you remove this, remove force_reset_keybindings() too.
-		force_reset_keybindings_direct(TRUE)
-		addtimer(CALLBACK(src, .proc/force_reset_keybindings), 30)	//No mob available when this is run, timer allows user choice.
-
-
-/datum/preferences/proc/update_character(current_version, savefile/S)
-	if(current_version < 38)
-		UI_style = GLOB.available_ui_styles[1] // Force the Fallout UI once.
-
-	if(current_version < 47) //loadout save gets changed to json
-		var/text_to_load
-		S["loadout"] >> text_to_load
-		var/list/saved_loadout_paths = splittext(text_to_load, "|")
-		//MAXIMUM_LOADOUT_SAVES save slots per loadout now
-		for(var/i=1, i<= MAXIMUM_LOADOUT_SAVES, i++)
-			loadout_data["SAVE_[i]"] = list()
-		for(var/some_gear_item in saved_loadout_paths)
-			if(!ispath(text2path(some_gear_item)))
-				log_game("Failed to copy item [some_gear_item] to new loadout system when migrating from version [current_version] to 40, issue: item is not a path")
-				continue
-			var/datum/gear/gear_item = text2path(some_gear_item)
-			if(!(initial(gear_item.loadout_flags)))	//removed the can color polychrom since it's not ported
-				loadout_data["SAVE_1"] += list(list(LOADOUT_ITEM = some_gear_item)) //for the migration we put their old save into the first save slot, which is loaded by default!
-			else
-				//the same but we setup some new polychromic data (you can't get the initial value for a list so we have to do this horrible thing here)
-				var/datum/gear/temporary_gear_item = new gear_item
-				loadout_data["SAVE_1"] += list(list(LOADOUT_ITEM = some_gear_item))	//removed loadout color because not porting polychrom
-				qdel(temporary_gear_item)
-			//it's double packed into a list because += will union the two lists contents
-
-		S["loadout"] = safe_json_encode(loadout_data)
-
-	if(current_version < 43) //extreme changes to how things are coloured (the introduction of the advanced coloring system)
-		features["color_scheme"] = OLD_CHARACTER_COLORING //disable advanced coloring system by default
-		for(var/feature in features)
-			var/feature_value = features[feature]
-			if(feature_value)
-				var/ref_list = GLOB.mutant_reference_list[feature]
-				if(ref_list)
-					var/datum/sprite_accessory/accessory = ref_list[feature_value]
-					if(accessory)
-						var/mutant_string = accessory.mutant_part_string
-						if(!mutant_string)
-							if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
-								mutant_string = MBP_MARKINGS_BODY
-						var/primary_string = "[mutant_string]_primary"
-						var/secondary_string = "[mutant_string]_secondary"
-						var/tertiary_string = "[mutant_string]_tertiary"
-						if(accessory.color_src == MATRIXED && !accessory.matrixed_sections && feature_value != "None")
-							message_admins("Sprite Accessory Failure (migration from [current_version] to 39): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
-							continue
-						var/primary_exists = features[primary_string]
-						var/secondary_exists = features[secondary_string]
-						var/tertiary_exists = features[tertiary_string]
-						if(accessory.color_src == MATRIXED && !primary_exists && !secondary_exists && !tertiary_exists)
-							features[primary_string] = features[MBP_COLOR1]
-							features[secondary_string] = features[MBP_COLOR2]
-							features[tertiary_string] = features[MBP_COLOR3]
-						else if(accessory.color_src == MUTCOLORS && !primary_exists)
-							features[primary_string] = features[MBP_COLOR1]
-						else if(accessory.color_src == MUTCOLORS2 && !secondary_exists)
-							features[secondary_string] = features[MBP_COLOR2]
-						else if(accessory.color_src == MUTCOLORS3 && !tertiary_exists)
-							features[tertiary_string] = features[MBP_COLOR3]
-
-		features["color_scheme"] = OLD_CHARACTER_COLORING //advanced is off by default
-
-	if(current_version < 37) //introduction of chooseable eye types/sprites
-		if(S["species"] == SPECIES_INSECT)
-			left_eye_color = "#000000"
-			right_eye_color = "#000000"
-			if(chosen_limb_id == BODYTYPE_MOTH || chosen_limb_id == BODYTYPE_MOTH_NOT_GREYSCALE) //these actually have slightly different eyes!
-				eye_type = BODYTYPE_MOTH
-			else
-				eye_type = BODYTYPE_INSECT
-
-	if(current_version < 38) //further eye sprite changes
-		if(S["species"] == SPECIES_PLASMAMAN)
-			left_eye_color = "#FFC90E"
-			right_eye_color = "#FFC90E"
-		else
-			if(S["species"] == SPECIES_SKELETON)
-				left_eye_color = "#BAB99E"
-				right_eye_color = "#BAB99E"
-
-	if(current_version < 51) //humans can have digi legs now, make sure they dont default to them or human players will murder me in my sleep
-		if(S["species"] == SPECIES_HUMAN)
-			features[MBP_LEGS] = LIMB_PLANTIGRADE
-
-	if(current_version < 52) // rp markings means markings are now stored as a list, lizard markings now mam like the rest
-		var/marking_type
-		var/species_id = S["species"]
-		var/datum/species/actual_species = GLOB.species_list[species_id]
-
-		// convert lizard markings to lizard markings
-		if(species_id == SPECIES_LIZARD && S["feature_lizard_body_markings"])
-			features[MBP_MARKINGS_BODY] = features["body_markings"]
-
-		// convert mam body marking data to the new rp marking data
-		if(actual_species.mutant_bodyparts[MBP_MARKINGS_BODY] && S["feature_mam_body_markings"]) marking_type = "feature_mam_body_markings"
-
-		if(marking_type)
-			var/old_marking_value = S[marking_type]
-			var/list/color_list = list("#FFFFFF","#FFFFFF","#FFFFFF")
-
-			if(S["feature_mcolor"]) color_list[1] = "#" + S["feature_mcolor"]
-			if(S["feature_mcolor2"]) color_list[2] = "#" + S["feature_mcolor2"]
-			if(S["feature_mcolor3"]) color_list[3] = "#" + S["feature_mcolor3"]
-
-			var/list/marking_list = list()
-			for(var/part in list(ARM_LEFT, ARM_RIGHT, LEG_LEFT, LEG_RIGHT, CHEST, HEAD))
-				var/list/copied_color_list = color_list.Copy()
-				var/datum/sprite_accessory/mam_body_markings/mam_marking = GLOB.mam_body_markings_list[old_marking_value]
-				var/part_name = GLOB.bodypart_names[num2text(part)]
-				if(length(mam_marking.covered_limbs) && mam_marking.covered_limbs[part_name])
-					var/matrixed_sections = mam_marking.covered_limbs[part_name]
-					// just trust me this is fine
-					switch(matrixed_sections)
-						if(MATRIX_GREEN)
-							copied_color_list[1] = copied_color_list[2]
-						if(MATRIX_BLUE)
-							copied_color_list[1] = copied_color_list[3]
-						if(MATRIX_RED_BLUE)
-							copied_color_list[2] = copied_color_list[3]
-						if(MATRIX_GREEN_BLUE)
-							copied_color_list[1] = copied_color_list[2]
-							copied_color_list[2] = copied_color_list[3]
-				marking_list += list(list(part, old_marking_value, copied_color_list))
-			features[MBP_MARKINGS_BODY] = marking_list
-
-/datum/preferences/proc/update_file(list/missing_updates, savefile/S)
-	if(!LAZYLEN(missing_updates))
-		return
-	for(var/clog in missing_updates)
-		switch(clog)
-			if(PMC_OOC_NOTES_UPDATE) // ooc notes now come with a cool template
-				var/ooc_notes
-				S["feature_ooc_notes"] >> ooc_notes
-				ooc_notes += OOC_NOTE_TEMPLATE
-				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
-				current_version |= PMC_OOC_NOTES_UPDATE
-	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
-
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
 		return
@@ -466,114 +268,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/savefile/S = new /savefile(path)
 	if(!S)
 		return FALSE
-	features = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_COLOR2 = "FFFFFF",
-		MBP_COLOR3 = "FFFFFF",
-		MBP_TAIL_LIZARD = "Smooth",
-
-		MBP_TAIL_HUMAN = "None",
-		MBP_SNOUT_LIZARD = "Round",
-		MBP_HORNS = "None",
-		"horns_color" = "85615a",
-		MBP_EARS_LIZARD = "None",
-
-		MBP_WINGS = "None",
-		"wings_color" = "FFF",
-		MBP_FRILLS = "None",
-		MBP_WINGS_DECORATIVE = "None",
-		MBP_TAIL_SPINES = "None",
-
-		MBP_LEGS = LIMB_PLANTIGRADE,
-		MBP_WINGS_INSECT = "Plain",
-		MBP_FLUFF = "None",
-		MBP_MARKINGS_INSECT = "None",
-
-		MBP_ARACHNID_LEGS = "Plain",
-		MBP_ARACHNID_SPINNERET = "Plain",
-		MBP_ARACHNID_MANDIBLES = "Plain",
-
-		MBP_MARKINGS_BODY = list(),
-		MBP_EARS = "None",
-		MBP_SNOUT = "None",
-		MBP_TAIL = "None",
-
-		"mam_tail_animated" = "None",
-		MBP_XENO_DORSAL = "Standard",
-		MBP_XENO_HEAD = "Standard",
-		MBP_XENO_TAIL = "Xenomorph Tail",
-
-		MBP_TAUR = "None",
-		"genitals_use_skintone" = FALSE,
-		"has_cock" = FALSE,
-		"cock_shape" = DEF_COCK_SHAPE,
-
-		"cock_size" = COCK_SIZE_DEF,
-		"cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF,
-		"cock_color" = "ffffff",
-
-		"cock_taur" = FALSE,
-		"has_balls" = FALSE,
-		"balls_color" = "ffffff",
-		"balls_shape" = DEF_BALLS_SHAPE,
-
-		"balls_size" = BALLS_SIZE_DEF,
-		"balls_cum_rate" = CUM_RATE,
-		"balls_cum_mult" = CUM_RATE_MULT,
-
-		"balls_efficiency" = CUM_EFFICIENCY,
-		"has_breasts" = FALSE,
-		"breasts_color" = "ffffff",
-
-		"has_butt" = FALSE,
-		"butt_color" = "ffffff",
-		"butt_size" = BUTT_SIZE_DEF,
-
-		"has_belly" = FALSE,
-		"belly_color" = "ffffff",
-		"belly_size" = BELLY_SIZE_DEF,
-		"belly_shape" = DEF_BELLY_SHAPE,
-
-		"breasts_size" = BREASTS_SIZE_DEF,
-		"breasts_shape" = DEF_BREASTS_SHAPE,
-		"breasts_producing" = FALSE,
-
-		"has_vag" = FALSE,
-		"vag_shape" = DEF_VAGINA_SHAPE,
-		"vag_color" = "ffffff",
-		"has_womb" = FALSE,
-
-		"balls_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"breasts_visibility"= GEN_VISIBLE_NO_UNDIES,
-		"butt_visibility"  = GEN_VISIBLE_NO_UNDIES,
-
-		"cock_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"vag_visibility" = GEN_VISIBLE_NO_UNDIES,
-
-		"balls_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"breasts_visibility_flags"= GEN_VIS_FLAG_DEFAULT,
-		"cock_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
-		"genital_order" = DEF_COCKSTRING,
-		"genital_whitelist" = "Mr Bingus, fluntly, Doc Bungus",
-		"genital_hide" = NONE,
-
-
-		MBP_SCREEN = "Sunburst",
-		MBP_ANTENNA_IPC = "None",
-		"flavor_text" = "",
-		"silicon_flavor_text" = "",
-
-		"ooc_notes" = OOC_NOTE_TEMPLATE,
-		MBP_MEAT_TYPE = MEAT_MAMMAL,
-		"taste" = "something salty",
-		"body_model" = MALE,
-		"body_size" = RESIZE_DEFAULT_SIZE,
-		"color_scheme" = OLD_CHARACTER_COLORING,
-		"chat_color" = "whoopsie")
+	features = DEFAULT_FEATURES
 
 	S.cd = "/"
 	if(!slot)
@@ -639,14 +334,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["custom_speech_verb"]		>> custom_speech_verb
 	S["custom_tongue"]			>> custom_tongue
 	S["feature_mcolor"]					>> features[MBP_COLOR1]
-	S["feature_lizard_tail"]			>> features[MBP_TAIL_LIZARD]
-	S["feature_lizard_snout"]			>> features[MBP_SNOUT_LIZARD]
-	S["feature_lizard_horns"]			>> features[MBP_HORNS]
+	// S["feature_lizard_tail"]			>> features[MBP_TAIL_LIZARD]
+	S[MBP_SNOUT]						>> features[MBP_SNOUT]
+	S[MBP_HORNS]						>> features[MBP_HORNS]
 	S["feature_lizard_frills"]			>> features[MBP_FRILLS]
 	S["feature_lizard_spines"]			>> features[MBP_TAIL_SPINES]
-	S["feature_lizard_legs"]			>> features[MBP_LEGS]
-	S["feature_human_tail"]				>> features[MBP_TAIL_HUMAN]
-	S["feature_human_ears"]				>> features[MBP_EARS_LIZARD]
+	S[MBP_LEGS]							>> features[MBP_LEGS]
+	// S["feature_human_tail"]				>> features[MBP_TAIL_HUMAN]
+	// S["feature_human_ears"]				>> features[MBP_EARS_LIZARD]
+	S[MBP_EARS]							>> features[MBP_EARS]
+	S[MBP_TAIL]							>> features[MBP_TAIL]
 	S["feature_deco_wings"]				>> features[MBP_WINGS_DECORATIVE]
 	S["feature_insect_wings"]			>> features[MBP_WINGS_INSECT]
 	S["feature_insect_fluff"]			>> features[MBP_FLUFF]
@@ -702,11 +399,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_mcolor3"]				>> features[MBP_COLOR3]
 	// note safe json decode will runtime the first time it migrates but this is fine and it solves itself don't worry about it if you see it error
 	features[MBP_MARKINGS_BODY] = safe_json_decode(S["feature_mam_body_markings"])
-	S["feature_mam_tail"]				>> features[MBP_TAIL]
-	S["feature_mam_ears"]				>> features[MBP_EARS]
-	S["feature_mam_tail_animated"]		>> features["mam_tail_animated"]
+	// S["feature_mam_tail"]				>> features[MBP_TAIL]
+	S[MBP_TAIL]							>> features[MBP_TAIL]
+	// S["feature_mam_ears"]				>> features[MBP_EARS]
+	//S["feature_mam_tail_animated"]		>> features["feature_tail_animated"]
+	S[MBP_TAIL_ANIMATED]			>> features[MBP_TAIL_ANIMATED]
 	S["feature_taur"]					>> features[MBP_TAUR]
-	S["feature_mam_snouts"]				>> features[MBP_SNOUT]
+	S[MBP_SNOUT]						>> features[MBP_SNOUT]
 	S["feature_meat"]					>> features[MBP_MEAT_TYPE]
 	//Xeno features
 	S["feature_xeno_tail"]				>> features[MBP_XENO_TAIL]
@@ -899,7 +598,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features[MBP_EARS_LIZARD]				= sanitize_inlist(features[MBP_EARS_LIZARD], GLOB.ears_list)
 	features[MBP_FRILLS]				= sanitize_inlist(features[MBP_FRILLS], GLOB.frills_list)
 	features[MBP_TAIL_SPINES]				= sanitize_inlist(features[MBP_TAIL_SPINES], GLOB.spines_list)
-	features[MBP_LEGS]				= sanitize_inlist(features[MBP_LEGS], GLOB.legs_list, LIMB_PLANTIGRADE)
+	features[MBP_LEGS]				= sanitize_inlist(features[MBP_LEGS], GLOB.legs_list, LEGS_PLANTIGRADE)
 	features[MBP_WINGS_DECORATIVE] 			= sanitize_inlist(features[MBP_WINGS_DECORATIVE], GLOB.deco_wings_list, "None")
 	features[MBP_FLUFF]		= sanitize_inlist(features[MBP_FLUFF], GLOB.insect_fluffs_list)
 	features[MBP_MARKINGS_INSECT] 	= sanitize_inlist(features[MBP_MARKINGS_INSECT], GLOB.insect_markings_list, "None")
@@ -1061,7 +760,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 
-	cit_character_pref_load(S)
+	S["feature_ipc_screen"] >> features[MBP_SCREEN]
+	S["feature_ipc_antenna"] >> features[MBP_ANTENNA_IPC]
+
+	features[MBP_SCREEN] 	= sanitize_inlist(features[MBP_SCREEN], GLOB.ipc_screens_list)
+	features[MBP_ANTENNA_IPC] 	= sanitize_inlist(features[MBP_ANTENNA_IPC], GLOB.ipc_antennas_list)
+	//Citadel
+	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
+	if(!features[MBP_COLOR2] || features[MBP_COLOR1] == "#000000")
+		features[MBP_COLOR2] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	if(!features[MBP_COLOR3] || features[MBP_COLOR1] == "#000000")
+		features[MBP_COLOR3] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	features[MBP_COLOR2]	= sanitize_hexcolor(features[MBP_COLOR2], 6, FALSE)
+	features[MBP_COLOR3]	= sanitize_hexcolor(features[MBP_COLOR3], 6, FALSE)
 
 	return 1
 
@@ -1120,14 +831,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["medical_records"]			, medical_records)
 
 	WRITE_FILE(S["feature_mcolor"]					, features[MBP_COLOR1])
-	WRITE_FILE(S["feature_lizard_tail"]				, features[MBP_TAIL_LIZARD])
-	WRITE_FILE(S["feature_human_tail"]				, features[MBP_TAIL_HUMAN])
-	WRITE_FILE(S["feature_lizard_snout"]			, features[MBP_SNOUT_LIZARD])
-	WRITE_FILE(S["feature_lizard_horns"]			, features[MBP_HORNS])
-	WRITE_FILE(S["feature_human_ears"]				, features[MBP_EARS_LIZARD])
+	// WRITE_FILE(S["feature_lizard_tail"]				, features[MBP_TAIL_LIZARD])
+	// WRITE_FILE(S["feature_human_tail"]				, features[MBP_TAIL_HUMAN])
+	WRITE_FILE(S[MBP_TAIL]							, features[MBP_TAIL])
+	WRITE_FILE(S[MBP_SNOUT]							, features[MBP_SNOUT])
+	WRITE_FILE(S[MBP_HORNS]							, features[MBP_HORNS])
+	// WRITE_FILE(S["feature_human_ears"]				, features[MBP_EARS_LIZARD])
+	WRITE_FILE(S["feature_ears"]					, features[MBP_EARS])
 	WRITE_FILE(S["feature_lizard_frills"]			, features[MBP_FRILLS])
 	WRITE_FILE(S["feature_lizard_spines"]			, features[MBP_TAIL_SPINES])
-	WRITE_FILE(S["feature_lizard_legs"]				, features[MBP_LEGS])
+	WRITE_FILE(S[MBP_LEGS]							, features[MBP_LEGS])
 	WRITE_FILE(S["feature_deco_wings"]				, features[MBP_WINGS_DECORATIVE])
 	WRITE_FILE(S["feature_horns_color"]				, features["horns_color"])
 	WRITE_FILE(S["feature_wings_color"]				, features["wings_color"])
@@ -1298,10 +1011,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["belly_prefs"]						, safe_json_encode(belly_prefs))
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 
-	cit_character_pref_save(S)
-
+	//ipcs
+	WRITE_FILE(S["feature_ipc_screen"], features[MBP_SCREEN])
+	WRITE_FILE(S["feature_ipc_antenna"], features[MBP_ANTENNA_IPC])
+	//Citadel
+	WRITE_FILE(S["feature_mcolor2"], features[MBP_COLOR2])
+	WRITE_FILE(S["feature_mcolor3"], features[MBP_COLOR3])
+	WRITE_FILE(S["feature_mam_body_markings"], safe_json_encode(features[MBP_MARKINGS_BODY]))
+	// WRITE_FILE(S["feature_tail"], features[MBP_TAIL])
+	// WRITE_FILE(S["feature_mam_ears"], features[MBP_EARS])
+	// WRITE_FILE(S["feature_mam_tail_animated"], features["mam_tail_animated"])
+	WRITE_FILE(S[MBP_TAIL_ANIMATED], features[MBP_TAIL_ANIMATED])
+	WRITE_FILE(S["feature_taur"], features[MBP_TAUR])
+	// WRITE_FILE(S["feature_mam_snouts"],	features[MBP_SNOUT])
+	//Xeno features
+	WRITE_FILE(S["feature_xeno_tail"], features[MBP_XENO_TAIL])
+	WRITE_FILE(S["feature_xeno_dors"], features[MBP_XENO_DORSAL])
+	WRITE_FILE(S["feature_xeno_head"], features[MBP_XENO_HEAD])
+	//flavor text
+	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])
+	WRITE_FILE(S["silicon_feature_flavor_text"], features["silicon_flavor_text"])
 	return 1
-
 
 #undef SAVEFILE_VERSION_MAX
 #undef SAVEFILE_VERSION_MIN

@@ -6,6 +6,7 @@
 	blacklisted = 0
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton
+	lock_other_parts = TRUE
 	species_traits = list(
 		NOBLOOD,
 		NOGENITALS,

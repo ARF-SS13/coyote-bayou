@@ -3,12 +3,12 @@
 	name = "Synthetic Anthromorph"
 	id = SPECIES_SYNTH_FURRY
 
-	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,ROBOTIC_LIMBS,HAS_FLESH,HAS_BONE,WINGCOLOR,HORNCOLOR)
+	species_traits = list(MUTCOLOR1,NOTRANSSTING,EYECOLOR,LIPS,HAIR,ROBOTIC_LIMBS,HAS_FLESH,HAS_BONE,WINGCOLOR,HORNCOLOR)
 	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
 
 	mutant_bodyparts = list(MBP_COLOR1 = "FFFFFF",MBP_COLOR2 = "FFFFFF",MBP_COLOR3 = "FFFFFF", MBP_SNOUT = "Husky", MBP_TAIL = "Husky", MBP_EARS = "Husky", MBP_WINGS_DECORATIVE = "None",
-						MBP_MARKINGS_BODY = "Husky", MBP_TAUR = "None", MBP_HORNS = "None", MBP_LEGS = LIMB_PLANTIGRADE, MBP_MEAT_TYPE = MEAT_MAMMAL)
+						MBP_MARKINGS_BODY = "Husky", MBP_TAUR = "None", MBP_HORNS = "None", MBP_LEGS = LEGS_PLANTIGRADE, MBP_MEAT_TYPE = MEAT_MAMMAL)
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)

@@ -12,7 +12,7 @@
 
 	say_mod = "poofs" //what does a mushroom sound like
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		NOEYES,
 		NO_UNDERWEAR,
 		NOGENITALS,

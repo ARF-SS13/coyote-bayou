@@ -139,7 +139,7 @@
 	if(selected_category==SPECIES_HUMAN || selected_category==SPECIES_LIZARD) //Species with greyscale parts should be included here
 		limb.icon = 'icons/mob/human_parts_greyscale.dmi'
 		limb.base_bp_icon = DEFAULT_BODYPART_ICON_ORGANIC
-		limb.color_src = MUTCOLORS
+		limb.color_src = MUTCOLOR1
 	else
 		limb.icon = 'icons/mob/human_parts.dmi'
 	// Set this limb up using the specias name and body zone

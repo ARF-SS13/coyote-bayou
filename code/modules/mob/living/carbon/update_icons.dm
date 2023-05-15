@@ -77,9 +77,9 @@
 		var/obj/item/bodypart/BP = X
 		if(BP.dmg_overlay_type)
 			if(BP.brutestate)
-				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")	//we're adding icon_states of the base image as overlays
+				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[GLOB.bodypart_zone2legacy[BP.body_zone]]_[BP.brutestate]0")	//we're adding icon_states of the base image as overlays
 			if(BP.burnstate)
-				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_0[BP.burnstate]")
+				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[GLOB.bodypart_zone2legacy[BP.body_zone]]_0[BP.burnstate]")
 
 	apply_overlay(DAMAGE_LAYER)
 
@@ -262,7 +262,7 @@
 /mob/living/carbon/proc/generate_icon_render_key()
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
-		. += "-[BP.body_zone]"
+		. += "-[GLOB.bodypart_zone2legacy[BP.body_zone]]"
 		if(BP.use_digitigrade)
 			. += "-digitigrade[BP.use_digitigrade]"
 		if(BP.animal_origin)

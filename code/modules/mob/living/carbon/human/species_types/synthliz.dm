@@ -4,7 +4,7 @@
 	say_mod = "beeps"
 	default_color = "00FF00"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		NOTRANSSTING,
 		EYECOLOR,
 		LIPS,
@@ -29,11 +29,8 @@
 		MBP_ANTENNA_IPC = "Synthetic Lizard - Antennae",
 		MBP_TAIL = "Synthetic Lizard",
 		MBP_SNOUT = "Synthetic Lizard - Snout",
-		MBP_LEGS = LIMB_DIGITIGRADE,
+		MBP_LEGS = LEGS_DIGITIGRADE,
 		MBP_MARKINGS_BODY = "Synthetic Lizard - Plates",
-		MBP_TAUR = "None",
-		MBP_HORNS = "None", 
-		MBP_WINGS_DECORATIVE = "None",
 		)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(

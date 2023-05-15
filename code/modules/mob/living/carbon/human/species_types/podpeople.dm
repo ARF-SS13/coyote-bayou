@@ -5,7 +5,7 @@
 	limbs_id = BODYTYPE_PODPERSON
 	default_color = "59CE00"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		CAN_SCAR,
 		HAS_FLESH,
@@ -26,7 +26,7 @@
 	var/light_burnheal = -1
 	var/light_bruteheal = -1
 
-	species_type = "plant"
+	species_type = SPECIES_TYPE_PLANT
 
 	allowed_limb_ids = list(
 		BODYTYPE_PODPERSON,
@@ -82,7 +82,7 @@
 		HAIR,
 		FACEHAIR,
 		LIPS,
-		MUTCOLORS,
+		MUTCOLOR1,
 		CAN_SCAR,
 		HAS_FLESH,
 		HAS_BONE

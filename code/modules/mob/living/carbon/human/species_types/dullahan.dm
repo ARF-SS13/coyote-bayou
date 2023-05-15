@@ -14,11 +14,6 @@
 		TRAIT_NOHUNGER,
 		TRAIT_NOBREATH
 	)
-	mutant_bodyparts = list(
-		MBP_TAIL_HUMAN = "None",
-		MBP_EARS_LIZARD = "None",
-		MBP_WINGS_DECORATIVE = "None"
-	)
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM
 	mutant_brain = /obj/item/organ/brain/dullahan
 	mutanteyes = /obj/item/organ/eyes/dullahan

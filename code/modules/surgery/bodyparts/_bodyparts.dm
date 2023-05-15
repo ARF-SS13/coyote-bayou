@@ -22,7 +22,6 @@
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
 	var/list/aux_icons // associative list, currently used for hands
 	var/body_part = null //bitflag used to check which clothes cover this bodypart
-	var/use_digitigrade = NOT_DIGITIGRADE //Used for alternate legs, useless elsewhere
 	var/list/embedded_objects = list()
 	var/held_index = 0 //are we a hand? if so, which one!
 	var/is_pseudopart = FALSE //For limbs that don't really exist, eg chainsaws
@@ -49,6 +48,7 @@
 	var/skin_tone = ""
 	var/body_gender = ""
 	var/species_id = ""
+	var/datum/weakref/my_species
 	var/color_src
 	var/base_bp_icon //Overrides the icon being used for this limb. This is mainly for downstreams, implemented and maintained as a favor in return for implementing synths. And also because should_draw_* for icon overrides was pretty messy. You're welcome.
 	var/should_draw_gender = FALSE
@@ -60,7 +60,9 @@
 	var/marking_value // combination of old aux_marking and body_marking variables as they were always set together to the same value
 	var/static/default_body_markings_icon = 'icons/mob/mam/citadel/mam_markings.dmi'
 	var/list/markings_color = list()
+	var/use_digitigrade = NOT_DIGITIGRADE //Used for alternate legs, useless elsewhere
 	var/digitigrade_type
+	var/squish_digitigrade = FALSE //Used for alternate legs, useless elsewhere
 
 	var/animal_origin = null //for nonhuman bodypart (e.g. monkey)
 	var/dismemberable = 1 //whether it can be dismembered with a weapon.
@@ -679,89 +681,7 @@
 		return
 
 	if(!animal_origin)
-		var/mob/living/carbon/human/H = C
-		color_src = FALSE
-
-		var/datum/species/S = H.dna.species
-		base_bp_icon = DEFAULT_BODYPART_ICON
-		species_id = S.mutant_bodyparts["limbs_id"]
-		species_flags_list = H.dna.species.species_traits
-
-		//body marking memes
-		var/list/colorlist = list()
-		colorlist.Cut()
-		colorlist += ReadRGB("[H.dna.features[MBP_COLOR1]]00")
-		colorlist += ReadRGB("[H.dna.features[MBP_COLOR2]]00")
-		colorlist += ReadRGB("[H.dna.features[MBP_COLOR3]]00")
-		colorlist += list(0,0,0, S.hair_alpha)
-		for(var/index=1, index<=colorlist.len, index++)
-			colorlist[index] = colorlist[index]/255
-
-		if(S.use_skintones)
-			skin_tone = H.skin_tone
-		else
-			skin_tone = ""
-
-		body_gender = H.dna.features["body_model"]
-		if(GLOB.nongendered_limb_types[species_id])
-			should_draw_gender = FALSE
-		else
-			should_draw_gender = S.sexes
-
-		var/mut_colors = (MUTCOLORS in S.species_traits)
-		if(mut_colors)
-			if(S.fixed_mut_color)
-				species_color = S.fixed_mut_color
-			else
-				species_color = H.dna.features[MBP_COLOR1]
-		else
-			species_color = ""
-
-		if(S.mutant_bodyparts[MBP_LEGS])
-			if(body_zone == BODY_ZONE_L_LEG || body_zone == BODY_ZONE_R_LEG)
-				if(DIGITIGRADE in S.species_traits)
-					digitigrade_type = lowertext(H.dna.features[MBP_LEGS])
-			else
-				digitigrade_type = null
-
-		if(S.mutant_bodyparts[MBP_MARKINGS_BODY]) // checks if the species can actually have body markings
-			// get all markings for this bodypart type
-			for(var/list/marking in H.dna.features[MBP_MARKINGS_BODY])
-				// marking is a list containing bodypart type, bodymarking name, and then the colour (colour won't be used in v1)
-				if(marking[1] == body_part)
-					var/datum/sprite_accessory/Smark
-					Smark = GLOB.mam_body_markings_list[marking[2]]
-					var/body_markings_icon = default_body_markings_icon
-					if(Smark)
-						body_markings_icon = Smark.icon
-					var/marking_value = "" // combination of body and aux markings from old system
-					if(H.dna.features[MBP_MARKINGS_BODY] != "None")
-						marking_value = Smark?.icon_state || lowertext(H.dna.features[MBP_MARKINGS_BODY])
-					else
-						marking_value = "plain"
-					var/list/color_values
-					if(length(marking) == 3)
-						color_values = marking[3]
-					else
-						color_values = list("#FFFFFF", "#FFFFFF", "#FFFFFF")
-					body_markings_list += list(list(body_markings_icon, marking_value, color_values))
-
-			markings_color = list(colorlist)
-		else
-			marking_value = null
-
-		if(species_id in GLOB.greyscale_limb_types) //should they have greyscales?
-			base_bp_icon = DEFAULT_BODYPART_ICON_ORGANIC
-
-		if(base_bp_icon != DEFAULT_BODYPART_ICON)
-			color_src = mut_colors ? MUTCOLORS : ((H.dna.skin_tone_override && S.use_skintones == USE_SKINTONES_GRAYSCALE_CUSTOM) ? CUSTOM_SKINTONE : SKINTONE)
-
-		if(!dropping_limb && H.dna.check_mutation(HULK))
-			mutation_color = "00aa00"
-		else
-			mutation_color = ""
-
-		dmg_overlay_type = S.damage_overlay_type
+		update_human_limb(C)
 
 	else if(animal_origin == MONKEY_BODYPART) //currently monkeys are the only non human mob to have damage overlays.
 		dmg_overlay_type = animal_origin
@@ -773,6 +693,96 @@
 
 	if(dropping_limb)
 		no_update = TRUE //when attached, the limb won't be affected by the appearance changes of its mob owner.
+
+/obj/item/bodypart/proc/update_human_limb(mob/living/carbon/C)
+	if(!iscarbon(C))
+		return
+	var/mob/living/carbon/human/H = C
+	color_src = FALSE
+
+	var/datum/species/S = H.dna.species
+	species = WEAKREF(S)
+	base_bp_icon = SSmobs.get_species_part_icon()
+	species_id = S.mutant_bodyparts["limbs_id"]
+	species_flags_list = H.dna.species.species_traits
+
+	//body marking memes
+	var/list/colorlist = list()
+	colorlist.Cut()
+	colorlist += ReadRGB("[H.dna.features[MBP_COLOR1]]00")
+	colorlist += ReadRGB("[H.dna.features[MBP_COLOR2]]00")
+	colorlist += ReadRGB("[H.dna.features[MBP_COLOR3]]00")
+	colorlist += list(0,0,0, S.hair_alpha)
+	for(var/index=1, index<=colorlist.len, index++)
+		colorlist[index] = colorlist[index]/255
+
+	if(S.use_skintones)
+		skin_tone = H.skin_tone
+	else
+		skin_tone = ""
+
+	body_gender = H.dna.features["body_model"]
+	if(GLOB.nongendered_limb_types[species_id])
+		should_draw_gender = FALSE
+	else
+		should_draw_gender = S.sexes
+
+	var/mut_colors = (MUTCOLOR1 in S.species_traits)
+	if(mut_colors)
+		if(S.fixed_mut_color)
+			species_color = S.fixed_mut_color
+		else
+			species_color = H.dna.features[MBP_COLOR1]
+	else
+		species_color = ""
+
+	if(S.mutant_bodyparts[MBP_LEGS])
+		if(body_zone == BODY_ZONE_L_LEG || body_zone == BODY_ZONE_R_LEG)
+			if(DIGITIGRADE in S.species_traits)
+				digitigrade_type = lowertext(H.dna.features[MBP_LEGS])
+		else
+			digitigrade_type = null
+
+	if(S.mutant_bodyparts[MBP_MARKINGS_BODY]) // checks if the species can actually have body markings
+		// get all markings for this bodypart type
+		for(var/list/marking in H.dna.features[MBP_MARKINGS_BODY])
+			// marking is a list containing bodypart type, bodymarking name, and then the colour (colour won't be used in v1)
+			if(marking[1] == body_part)
+				var/datum/sprite_accessory/Smark
+				Smark = GLOB.mam_body_markings_list[marking[2]]
+				var/body_markings_icon = default_body_markings_icon
+				if(Smark)
+					body_markings_icon = Smark.icon
+				var/marking_value = "" // combination of body and aux markings from old system
+				if(H.dna.features[MBP_MARKINGS_BODY] != "None")
+					marking_value = Smark?.icon_state || lowertext(H.dna.features[MBP_MARKINGS_BODY])
+				else
+					marking_value = "plain"
+				var/list/color_values
+				if(length(marking) == 3)
+					color_values = marking[3]
+				else
+					color_values = list("#FFFFFF", "#FFFFFF", "#FFFFFF")
+				body_markings_list += list(list(body_markings_icon, marking_value, color_values))
+
+		markings_color = list(colorlist)
+	else
+		marking_value = null
+
+	if(species_id in GLOB.greyscale_limb_types) //should they have greyscales?
+		base_bp_icon = DEFAULT_BODYPART_ICON_ORGANIC
+
+	if(base_bp_icon != DEFAULT_BODYPART_ICON)
+		color_src = mut_colors ? MUTCOLOR1 : ((H.dna.skin_tone_override && S.use_skintones == USE_SKINTONES_GRAYSCALE_CUSTOM) ? CUSTOM_SKINTONE : SKINTONE)
+
+	if(!dropping_limb && H.dna.check_mutation(HULK))
+		mutation_color = "00aa00"
+	else
+		mutation_color = ""
+
+	dmg_overlay_type = S.damage_overlay_type
+
+
 
 //Is this thing connected to someone?
 /obj/item/bodypart/proc/is_dropped()
@@ -840,9 +850,9 @@
 		image_dir = SOUTH
 		if(dmg_overlay_type)
 			if(brutestate)
-				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[body_zone]_[brutestate]0", -DAMAGE_LAYER, image_dir)
+				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[GLOB.bodypart_zone2legacy[body_zone]]_[brutestate]0", -DAMAGE_LAYER, image_dir)
 			if(burnstate)
-				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[body_zone]_0[burnstate]", -DAMAGE_LAYER, image_dir)
+				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[GLOB.bodypart_zone2legacy[body_zone]]_0[burnstate]", -DAMAGE_LAYER, image_dir)
 		. |= get_markings(image_dir)
 	var/image/limb = image(layer = -onmob_layer, dir = image_dir)
 	var/image/second_limb
@@ -855,12 +865,12 @@
 		if(is_organic_limb())
 			limb.icon = 'icons/mob/animal_parts.dmi'
 			if(species_id == "husk")
-				limb.icon_state = "[animal_origin]_husk_[body_zone]"
+				limb.icon_state = "[animal_origin]_husk_[GLOB.bodypart_zone2legacy[body_zone]]"
 			else
-				limb.icon_state = "[animal_origin]_[body_zone]"
+				limb.icon_state = "[animal_origin]_[GLOB.bodypart_zone2legacy[body_zone]]"
 		else
 			limb.icon = 'icons/mob/augmentation/augments.dmi'
-			limb.icon_state = "[animal_origin]_[body_zone]"
+			limb.icon_state = "[animal_origin]_[GLOB.bodypart_zone2legacy[body_zone]]"
 		return
 
 	if((body_zone != BODY_ZONE_HEAD && body_zone != BODY_ZONE_CHEST))

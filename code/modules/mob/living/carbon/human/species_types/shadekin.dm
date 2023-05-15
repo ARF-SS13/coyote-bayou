@@ -2,7 +2,7 @@
 // yoinked from splurt, ported into by gremling.
 
 /datum/species/mammal/shadekin
-	name = "Shadekin"
+	name = BODYTYPE_SHADEKIN
 	id = SPECIES_SHADEKIN
 	limbs_id = BODYTYPE_SHADEKIN
 	say_mod = "mars"
@@ -10,12 +10,12 @@
 		MBP_COLOR1 = "FFFFFF",
 		MBP_COLOR2 = "FFFFFF",
 		MBP_COLOR3 = "FFFFFF",
-		MBP_TAIL = "Shadekin",
-		MBP_EARS = "Shadekin",
+		MBP_TAIL = BODYTYPE_SHADEKIN,
+		MBP_EARS = BODYTYPE_SHADEKIN,
 		MBP_WINGS_DECORATIVE = "None",
 		MBP_TAUR = "None",
 		MBP_HORNS = "None",
-		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_LEGS = LEGS_PLANTIGRADE,
 		MBP_MEAT_TYPE = MEAT_MAMMAL
 	)
 	allowed_limb_ids = list(

@@ -104,95 +104,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
-	var/list/features = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_COLOR2 = "FFFFFF",
-		MBP_COLOR3 = "FFFFFF",
-		MBP_TAIL_LIZARD = "Smooth",
-		MBP_TAIL_HUMAN = "None",
-		MBP_SNOUT_LIZARD = "Round",
-		MBP_HORNS = "None",
-		"horns_color" = "85615a",
-		MBP_EARS_LIZARD = "None",
-		MBP_WINGS = "None",
-		"wings_color" = "FFF",
-		MBP_FRILLS = "None",
-		MBP_WINGS_DECORATIVE = "None",
-		MBP_TAIL_SPINES = "None",
-		MBP_LEGS = LIMB_PLANTIGRADE,
-		MBP_WINGS_INSECT = "Plain",
-		MBP_FLUFF = "None",
-		MBP_MARKINGS_INSECT = "None",
-		MBP_ARACHNID_LEGS = "Plain",
-		MBP_ARACHNID_SPINNERET = "Plain",
-		MBP_ARACHNID_MANDIBLES = "Plain",
-		MBP_MARKINGS_BODY = list(),
-		MBP_EARS = "None",
-		MBP_SNOUT = "None",
-		MBP_TAIL = "None",
-		"mam_tail_animated" = "None",
-		MBP_XENO_DORSAL = "Standard",
-		MBP_XENO_HEAD = "Standard",
-		MBP_XENO_TAIL = "Xenomorph Tail",
-		MBP_TAUR = "None",
-		"genitals_use_skintone" = FALSE,
-		"has_cock" = FALSE,
-		"cock_shape" = DEF_COCK_SHAPE,
-		"cock_size" = COCK_SIZE_DEF, // didnt use the same naming convention, what a dick
-		"cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF,
-		"cock_color" = "ffffff",
-		"cock_taur" = FALSE,
-		"has_balls" = FALSE,
-		"balls_color" = "ffffff",
-		"balls_shape" = DEF_BALLS_SHAPE,
-		"balls_size" = BALLS_SIZE_DEF,
-		"balls_cum_rate" = CUM_RATE,
-		"balls_cum_mult" = CUM_RATE_MULT,
-		"balls_efficiency" = CUM_EFFICIENCY,
-		"has_breasts" = FALSE,
-		"breasts_color" = "ffffff",
-		"breasts_size" = BREASTS_SIZE_DEF,
-		"breasts_shape" = DEF_BREASTS_SHAPE,
-		"breasts_producing" = FALSE,
-		"has_butt" = FALSE,
-		"butt_color" = "ffffff",
-		"butt_size" = BUTT_SIZE_DEF,
-		"has_belly" = FALSE,
-		"belly_color" = "ffffff",
-		"belly_size" = BELLY_SIZE_DEF,
-		"belly_shape" = DEF_BELLY_SHAPE,
-		"has_vag" = FALSE,
-		"vag_shape" = DEF_VAGINA_SHAPE,
-		"vag_color" = "ffffff",
-		"has_womb" = FALSE,
-		"balls_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"breasts_visibility"= GEN_VISIBLE_NO_UNDIES,
-		"cock_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"vag_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"butt_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"belly_visibility" = GEN_VISIBLE_NO_UNDIES,
-		"balls_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"breasts_visibility_flags"= GEN_VIS_FLAG_DEFAULT,
-		"cock_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
-		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
-		"genital_order" = DEF_COCKSTRING,
-		"genital_hide" = NONE,
-		"genital_whitelist" = "Sammt Bingus, fluntly, theBungus",
-		MBP_SCREEN = "Sunburst",
-		MBP_ANTENNA_IPC = "None",
-		"flavor_text" = "",
-		"silicon_flavor_text" = "",
-		"ooc_notes" = "",
-		MBP_MEAT_TYPE = MEAT_MAMMAL,
-		"taste" = "something",
-		"body_model" = MALE,
-		"body_size" = RESIZE_DEFAULT_SIZE,
-		"color_scheme" = OLD_CHARACTER_COLORING,
-		"chat_color" = "whoopsie"
-		)
+	var/list/features = DEFAULT_FEATURES
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
 	var/custom_tongue = "default" //if your tongue is to be something other than your races
@@ -595,7 +507,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=s_tone;task=input'>[use_custom_skin_tone ? "custom: <span style='border:1px solid #161616; background-color: [skin_tone];'>&nbsp;&nbsp;&nbsp;</span>" : skin_tone]</a><BR>"
 
 			var/mutant_colors
-			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
+			if((MUTCOLOR1 in pref_species.species_traits) || (MUTCOLOR_PARTSONLY in pref_species.species_traits))
 				if(!use_skintones)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -774,7 +686,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(find_part && find_part != "None" && find_part_list)
 								var/datum/sprite_accessory/accessory = find_part_list[find_part]
 								if(accessory)
-									if(accessory.color_src == MATRIXED || accessory.color_src == MUTCOLORS || accessory.color_src == MUTCOLORS2 || accessory.color_src == MUTCOLORS3) //mutcolors1-3 are deprecated now, please don't rely on these in the future
+									if(accessory.color_src == MATRIXED || accessory.color_src == MUTCOLOR1 || accessory.color_src == MUTCOLOR2 || accessory.color_src == MUTCOLOR3) //MUTCOLOR1-3 are deprecated now, please don't rely on these in the future
 										var/mutant_string = accessory.mutant_part_string
 										var/primary_feature = "[mutant_string]_primary"
 										var/secondary_feature = "[mutant_string]_secondary"
@@ -803,10 +715,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 													secondary_feature = tertiary_feature //swap secondary for tertiary, as second option is blue, which is linked to the tertiary
 										dat += "<b>Primary Color</b><BR>"
 										dat += "<span style='border:1px solid #161616; background-color: #[features[primary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[primary_feature];task=input'>Change</a><BR>"
-										if((accessory.color_src == MATRIXED && (matrixed_sections == MATRIX_RED_BLUE || matrixed_sections == MATRIX_GREEN_BLUE || matrixed_sections == MATRIX_RED_GREEN || matrixed_sections == MATRIX_ALL)) || (accessory.extra && (accessory.extra_color_src == MUTCOLORS || accessory.extra_color_src == MUTCOLORS2 || accessory.extra_color_src == MUTCOLORS3)))
+										if((accessory.color_src == MATRIXED && (matrixed_sections == MATRIX_RED_BLUE || matrixed_sections == MATRIX_GREEN_BLUE || matrixed_sections == MATRIX_RED_GREEN || matrixed_sections == MATRIX_ALL)) || (accessory.extra && (accessory.extra_color_src == MUTCOLOR1 || accessory.extra_color_src == MUTCOLOR2 || accessory.extra_color_src == MUTCOLOR3)))
 											dat += "<b>Secondary Color</b><BR>"
 											dat += "<span style='border:1px solid #161616; background-color: #[features[secondary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[secondary_feature];task=input'>Change</a><BR>"
-											if((accessory.color_src == MATRIXED && matrixed_sections == MATRIX_ALL) || (accessory.extra2 && (accessory.extra2_color_src == MUTCOLORS || accessory.extra2_color_src == MUTCOLORS2 || accessory.extra2_color_src == MUTCOLORS3)))
+											if((accessory.color_src == MATRIXED && matrixed_sections == MATRIX_ALL) || (accessory.extra2 && (accessory.extra2_color_src == MUTCOLOR1 || accessory.extra2_color_src == MUTCOLOR2 || accessory.extra2_color_src == MUTCOLOR3)))
 												dat += "<b>Tertiary Color</b><BR>"
 												dat += "<span style='border:1px solid #161616; background-color: #[features[tertiary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[tertiary_feature];task=input'>Change</a><BR>"
 
@@ -2654,11 +2566,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						//Now that we changed our species, we must verify that the mutant colour is still allowed.
 						var/temp_hsv = RGBtoHSV(features[MBP_COLOR1])
-						if(features[MBP_COLOR1] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+						if(features[MBP_COLOR1] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
 							features[MBP_COLOR1] = pref_species.default_color
-						if(features[MBP_COLOR2] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+						if(features[MBP_COLOR2] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
 							features[MBP_COLOR2] = pref_species.default_color
-						if(features[MBP_COLOR3] == "#000000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+						if(features[MBP_COLOR3] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
 							features[MBP_COLOR3] = pref_species.default_color
 
 						//switch to the type of eyes the species uses
@@ -2689,7 +2601,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
 							features[MBP_COLOR1] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLOR_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 							features[MBP_COLOR1] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
@@ -2700,7 +2612,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
 							features[MBP_COLOR2] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLOR_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 							features[MBP_COLOR2] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
@@ -2711,7 +2623,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
 							features[MBP_COLOR3] = pref_species.default_color
-						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+						else if((MUTCOLOR_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 							features[MBP_COLOR3] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
@@ -3431,7 +3343,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							var/new_marking_color = input(user, "Choose your character's marking color:", "Character Preference","#"+color_list[color_number]) as color|null
 							if(new_marking_color)
 								var/temp_hsv = RGBtoHSV(new_marking_color)
-								if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
+								if((MUTCOLOR_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 									color_list[color_number] = "#[sanitize_hexcolor(new_marking_color, 6)]"
 								else
 									to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
@@ -3922,7 +3834,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if((parent && parent.can_have_part(MBP_MEAT_TYPE)) || pref_species.mutant_bodyparts[MBP_MEAT_TYPE])
 		character.type_of_meat = GLOB.meat_types[features[MBP_MEAT_TYPE]]
 
-	if(((parent && parent.can_have_part(MBP_LEGS)) || pref_species.mutant_bodyparts[MBP_LEGS])  && (character.dna.features[MBP_LEGS] == LIMB_DIGITIGRADE || character.dna.features[MBP_LEGS] == LIMB_AVIAN))
+	if(((parent && parent.can_have_part(MBP_LEGS)) || pref_species.mutant_bodyparts[MBP_LEGS])  && (character.dna.features[MBP_LEGS] == LEGS_DIGITIGRADE || character.dna.features[MBP_LEGS] == LEGS_AVIAN))
 		pref_species.species_traits |= DIGITIGRADE
 	else
 		pref_species.species_traits -= DIGITIGRADE

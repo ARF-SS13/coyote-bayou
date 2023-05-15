@@ -52,6 +52,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/dangerous_existence //A flag for transformation spells that tells them "hey if you turn a person into one of these without preperation, they'll probably die!"
 	var/say_mod = "says"	// affects the speech message
 	var/species_language_holder = /datum/language_holder
+	/// If true, will only allow parts found in mutant_bodyparts to actually appear. Set to false for species intended to be 'wildcards', like furries or humans.
+	var/lock_other_parts = FALSE
 	var/list/mutant_bodyparts = list() 	// Visible CURRENT bodyparts that are unique to a species. Changes to this list for non-species specific bodyparts (ie cat ears and tails) should be assigned at organ level if possible. Layer hiding is handled by handle_mutant_bodyparts() below.
 	var/list/mutant_organs = list()		//Internal organs that are unique to this race.
 	var/speedmod = 0	// this affects the race's speed. positive numbers make it move slower, negative numbers make it move faster
@@ -125,6 +127,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	/// Force the leg icon to be the one specified above, regardless of any other settings
 	var/force_plantigrade = FALSE
 
+
+	var/icon_body = 'icons/mob/parts/body/greyscale/human.dmi'
+	var/icon_arms = 'icons/mob/parts/body/greyscale/human.dmi'
+	var/icon_head = 'icons/mob/parts/body/greyscale/human.dmi'
+	var/icon_plantigrade = 'icons/mob/parts/legs/plantigrade/greyscale/human.dmi'
+	var/icon_digitigrade = 'icons/mob/parts/legs/digitigrade/base.dmi'
+	var/icon_avianlegs = 'icons/mob/parts/legs/avian/base.dmi'
+
 	// simple laugh sound overrides
 	/// This is used for every gender other than female
 	var/laugh_male = list('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
@@ -147,7 +157,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	..()
 
 	//update our mutant bodyparts to include unlocked ones
-	mutant_bodyparts += GLOB.unlocked_mutant_parts
+	mutant_bodyparts |= GLOB.unlocked_mutant_parts
+	if(!lock_other_parts)
+		mutant_bodyparts |= GLOB.default_mutant_parts
 
 /proc/generate_selectable_species(clear = FALSE)
 	if(clear)
@@ -325,7 +337,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		C.hud_used.update_locked_slots()
 
 	// this needs to be FIRST because qdel calls update_body which checks if we have DIGITIGRADE legs or not and if not then removes DIGITIGRADE from species_traits
-	if(C.dna.species.mutant_bodyparts[MBP_LEGS] && (C.dna.features[MBP_LEGS] == LIMB_DIGITIGRADE || C.dna.features[MBP_LEGS] == LIMB_AVIAN))
+	if(C.dna.species.mutant_bodyparts[MBP_LEGS] && (C.dna.features[MBP_LEGS] != LEGS_PLANTIGRADE))
 		species_traits |= DIGITIGRADE
 	if(DIGITIGRADE in species_traits)
 		C.Digitigrade_Leg_Swap(FALSE)
@@ -573,9 +585,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					hair_overlay.color = forced_colour
 				hair_overlay.alpha = hair_alpha
 
-				if(OFFSET_HAIR in H.dna.species.offset_features)
-					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HAIR][1]
-					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HAIR][2]
+				if(OFFSET_HAIR in offset_features)
+					hair_overlay.pixel_x += offset_features[OFFSET_HAIR][1]
+					hair_overlay.pixel_y += offset_features[OFFSET_HAIR][2]
 
 				// Coyote ADD: Gradient hair rendering!
 				var/icon/grad_s = null // temporary icon to apply to the MA
@@ -612,9 +624,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[H.lip_style]", -BODY_LAYER)
 			lip_overlay.color = H.lip_color
 
-			if(OFFSET_LIPS in H.dna.species.offset_features)
-				lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_LIPS][1]
-				lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_LIPS][2]
+			if(OFFSET_LIPS in offset_features)
+				lip_overlay.pixel_x += offset_features[OFFSET_LIPS][1]
+				lip_overlay.pixel_y += offset_features[OFFSET_LIPS][2]
 
 			standing += lip_overlay
 
@@ -691,11 +703,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(H.warpaint)
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
 
-
-	if(standing.len)
-		H.overlays_standing[BODY_LAYER] = standing
-
-
 	if(standing.len)
 		H.overlays_standing[BODY_LAYER] = standing
 
@@ -711,10 +718,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.remove_overlay(BODY_FRONT_LAYER)
 	H.remove_overlay(HORNS_LAYER)
 
-	if(!mutant_bodyparts)
+	if(!LAZYLEN(bodyparts_to_add))
 		return
 
-	var/tauric = mutant_bodyparts[MBP_TAUR] && H.dna.features[MBP_TAUR] && H.dna.features[MBP_TAUR] != "None"
+	var/tauric = mutant_bodyparts[MBP_TAUR] && H.dna.features[MBP_TAUR] && (H.dna.features[MBP_TAUR] != "None")
 
 	for(var/mutant_part in mutant_bodyparts)
 		var/reference_list = GLOB.mutant_reference_list[mutant_part]
@@ -729,32 +736,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				bodyparts_to_add -= mutant_part
 
 	//Digitigrade legs are stuck in the phantom zone between true limbs and mutant bodyparts. Mainly it just needs more agressive updating than most limbs.
-	var/update_needed = FALSE
-	var/not_digitigrade = TRUE
-	for(var/X in H.bodyparts)
-		var/obj/item/bodypart/O = X
-		if(!O.use_digitigrade)
-			continue
-		not_digitigrade = FALSE
-		if(!(DIGITIGRADE in species_traits)) //Someone cut off a digitigrade leg and tacked it on
-			species_traits += DIGITIGRADE
-		var/should_be_squished = FALSE
-		if(H.wear_suit)
-			if(!(H.wear_suit.mutantrace_variation & STYLE_DIGITIGRADE) || (tauric && (H.wear_suit.mutantrace_variation & STYLE_ALL_TAURIC))) //digitigrade/taur suits
-				should_be_squished = TRUE
-		if(H.w_uniform && !H.wear_suit)
-			if(!(H.w_uniform.mutantrace_variation & STYLE_DIGITIGRADE))
-				should_be_squished = TRUE
-		if(O.use_digitigrade == FULL_DIGITIGRADE && should_be_squished)
-			O.use_digitigrade = SQUISHED_DIGITIGRADE
-			update_needed = TRUE
-		else if(O.use_digitigrade == SQUISHED_DIGITIGRADE && !should_be_squished)
-			O.use_digitigrade = FULL_DIGITIGRADE
-			update_needed = TRUE
-	if(update_needed)
-		H.update_body_parts()
-	if(not_digitigrade && (DIGITIGRADE in species_traits)) //Curse is lifted
-		species_traits -= DIGITIGRADE
+	handle_digilegs(H, tauric)
 
 	if(!bodyparts_to_add)
 		return
@@ -790,7 +772,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
 	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
-	var/image/tail_hack // tailhud's a bazinga, innit
 
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
@@ -801,198 +782,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/layernum = text2num(layer)
 		for(var/bodypart in relevant_layers[layer])
 			var/datum/sprite_accessory/S = bodypart
-			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
-			bodypart = S.mutant_part_string || dna_feature_as_text_string[S]
-
-			if(S.gender_specific)
-				accessory_overlay.icon_state = "[g]_[bodypart]_[S.icon_state]_[layertext]"
-			else
-				accessory_overlay.icon_state = "m_[bodypart]_[S.icon_state]_[layertext]"
-
-			if(S.center)
-				accessory_overlay = center_image(accessory_overlay, S.dimension_x, S.dimension_y)
-
-			var/advanced_color_system = (H.dna.features["color_scheme"] == ADVANCED_CHARACTER_COLORING)
-
-			var/mutant_string = S.mutant_part_string
-			if(mutant_string == "tailwag") //wagging tails should be coloured the same way as your tail
-				mutant_string = "tail"
-			var/primary_string = advanced_color_system ? "[mutant_string]_primary" : MBP_COLOR1
-			var/secondary_string = advanced_color_system ? "[mutant_string]_secondary" : MBP_COLOR2
-			var/tertiary_string = advanced_color_system ? "[mutant_string]_tertiary" : MBP_COLOR3
-			//failsafe: if there's no value for any of these, set it to white
-			if(!H.dna.features[primary_string])
-				H.dna.features[primary_string] = advanced_color_system ? H.dna.features[MBP_COLOR1] : "FFFFFF"
-			if(!H.dna.features[secondary_string])
-				H.dna.features[secondary_string] = advanced_color_system ? H.dna.features[MBP_COLOR2] : "FFFFFF"
-			if(!H.dna.features[tertiary_string])
-				H.dna.features[tertiary_string] = advanced_color_system ? H.dna.features[MBP_COLOR3] : "FFFFFF"
-
-			if(!husk)
-				if(!forced_colour)
-					switch(S.color_src)
-						if(SKINTONE)
-							accessory_overlay.color = SKINTONE2HEX(H.skin_tone)
-						if(MUTCOLORS)
-							if(fixed_mut_color)
-								accessory_overlay.color = "#[fixed_mut_color]"
-							else
-								accessory_overlay.color = "#[H.dna.features[primary_string]]"
-						if(MUTCOLORS2)
-							if(fixed_mut_color2)
-								accessory_overlay.color = "#[fixed_mut_color2]"
-							else
-								accessory_overlay.color = "#[H.dna.features[primary_string]]"
-						if(MUTCOLORS3)
-							if(fixed_mut_color3)
-								accessory_overlay.color = "#[fixed_mut_color3]"
-							else
-								accessory_overlay.color = "#[H.dna.features[primary_string]]"
-
-						if(MATRIXED)
-							var/list/accessory_colorlist = list()
-							if(S.matrixed_sections == MATRIX_RED || S.matrixed_sections == MATRIX_RED_GREEN || S.matrixed_sections == MATRIX_RED_BLUE || S.matrixed_sections == MATRIX_ALL)
-								accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[primary_string]]00")
-							else
-								accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("00000000")
-							if(S.matrixed_sections == MATRIX_GREEN || S.matrixed_sections == MATRIX_RED_GREEN || S.matrixed_sections == MATRIX_GREEN_BLUE || S.matrixed_sections == MATRIX_ALL)
-								accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[secondary_string]]00")
-							else
-								accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("00000000")
-							if(S.matrixed_sections == MATRIX_BLUE || S.matrixed_sections == MATRIX_RED_BLUE || S.matrixed_sections == MATRIX_GREEN_BLUE || S.matrixed_sections == MATRIX_ALL)
-								accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[tertiary_string]]00")
-							else
-								accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("00000000")
-							accessory_colorlist += husk ? list(0, 0, 0) : list(0, 0, 0, hair_alpha)
-							for(var/index in 1 to accessory_colorlist.len)
-								accessory_colorlist[index] /= 255
-							accessory_overlay.color = list(accessory_colorlist)
-
-						if(HAIR)
-							if(hair_color == "mutcolor")
-								accessory_overlay.color = "#[H.dna.features[MBP_COLOR1]]"
-							else
-								accessory_overlay.color = "#[H.hair_color]"
-						if(FACEHAIR)
-							accessory_overlay.color = "#[H.facial_hair_color]"
-						if(EYECOLOR)
-							accessory_overlay.color = "#[H.left_eye_color]"
-						if(HORNCOLOR)
-							accessory_overlay.color = "#[H.dna.features["horns_color"]]"
-						if(WINGCOLOR)
-							accessory_overlay.color = "#[H.dna.features["wings_color"]]"
-				else
-					accessory_overlay.color = forced_colour
-			else
-				if(bodypart == MBP_EARS_LIZARD)
-					accessory_overlay.icon_state = "m_ears_none_[layertext]"
-				if(bodypart == "tail")
-					accessory_overlay.icon_state = "m_tail_husk_[layertext]"
-				if(S.color_src == MATRIXED)
-					var/list/accessory_colorlist = list()
-					accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[primary_string]]00")
-					accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[secondary_string]]00")
-					accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[tertiary_string]]00")
-					accessory_colorlist += husk ? list(0, 0, 0) : list(0, 0, 0, hair_alpha)
-					for(var/index in 1 to accessory_colorlist.len)
-						accessory_colorlist[index] /= 255
-					accessory_overlay.color = list(accessory_colorlist)
-
-			if(OFFSET_MUTPARTS in H.dna.species.offset_features)
-				accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
-				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
-
-			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
-				tail_hack = accessory_overlay
-			standing += accessory_overlay
-
-			if(S.extra) //apply the extra overlay, if there is one
-				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
-				if(S.gender_specific)
-					extra_accessory_overlay.icon_state = "[g]_[bodypart]_extra_[S.icon_state]_[layertext]"
-				else
-					extra_accessory_overlay.icon_state = "m_[bodypart]_extra_[S.icon_state]_[layertext]"
-				if(S.center)
-					extra_accessory_overlay = center_image(extra_accessory_overlay, S.dimension_x, S.dimension_y)
-
-				switch(S.extra_color_src) //change the color of the extra overlay
-					if(MUTCOLORS)
-						if(fixed_mut_color)
-							extra_accessory_overlay.color = "#[fixed_mut_color]"
-						else
-							extra_accessory_overlay.color = "#[H.dna.features[secondary_string]]"
-					if(MUTCOLORS2)
-						if(fixed_mut_color2)
-							extra_accessory_overlay.color = "#[fixed_mut_color2]"
-						else
-							extra_accessory_overlay.color = "#[H.dna.features[secondary_string]]"
-					if(MUTCOLORS3)
-						if(fixed_mut_color3)
-							extra_accessory_overlay.color = "#[fixed_mut_color3]"
-						else
-							extra_accessory_overlay.color = "#[H.dna.features[secondary_string]]"
-					if(HAIR)
-						if(hair_color == "mutcolor")
-							extra_accessory_overlay.color = "#[H.dna.features[MBP_COLOR3]]"
-						else
-							extra_accessory_overlay.color = "#[H.hair_color]"
-					if(FACEHAIR)
-						extra_accessory_overlay.color = "#[H.facial_hair_color]"
-					if(EYECOLOR)
-						extra_accessory_overlay.color = "#[H.left_eye_color]"
-
-					if(HORNCOLOR)
-						extra_accessory_overlay.color = "#[H.dna.features["horns_color"]]"
-					if(WINGCOLOR)
-						extra_accessory_overlay.color = "#[H.dna.features["wings_color"]]"
-
-				if(OFFSET_MUTPARTS in H.dna.species.offset_features)
-					extra_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
-					extra_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
-
-				standing += extra_accessory_overlay
-
-			if(S.extra2) //apply the extra overlay, if there is one
-				var/mutable_appearance/extra2_accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
-				if(S.gender_specific)
-					extra2_accessory_overlay.icon_state = "[g]_[bodypart]_extra2_[S.icon_state]_[layertext]"
-				else
-					extra2_accessory_overlay.icon_state = "m_[bodypart]_extra2_[S.icon_state]_[layertext]"
-				if(S.center)
-					extra2_accessory_overlay = center_image(extra2_accessory_overlay, S.dimension_x, S.dimension_y)
-
-				switch(S.extra2_color_src) //change the color of the extra overlay
-					if(MUTCOLORS)
-						if(fixed_mut_color)
-							extra2_accessory_overlay.color = "#[fixed_mut_color]"
-						else
-							extra2_accessory_overlay.color = "#[H.dna.features[tertiary_string]]"
-					if(MUTCOLORS2)
-						if(fixed_mut_color2)
-							extra2_accessory_overlay.color = "#[fixed_mut_color2]"
-						else
-							extra2_accessory_overlay.color = "#[H.dna.features[tertiary_string]]"
-					if(MUTCOLORS3)
-						if(fixed_mut_color3)
-							extra2_accessory_overlay.color = "#[fixed_mut_color3]"
-						else
-							extra2_accessory_overlay.color = "#[H.dna.features[tertiary_string]]"
-					if(HAIR)
-						if(hair_color == "mutcolor3")
-							extra2_accessory_overlay.color = "#[H.dna.features[MBP_COLOR1]]"
-						else
-							extra2_accessory_overlay.color = "#[H.hair_color]"
-					if(HORNCOLOR)
-						extra2_accessory_overlay.color = "#[H.dna.features["horns_color"]]"
-					if(WINGCOLOR)
-						extra2_accessory_overlay.color = "#[H.dna.features["wings_color"]]"
-
-				if(OFFSET_MUTPARTS in H.dna.species.offset_features)
-					extra2_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
-					extra2_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
-
-				standing += extra2_accessory_overlay
-
+			standing |= build_sprite_sandwich(H, S, layernum, layertext, dna_feature_as_text_string)
 		H.overlays_standing[layernum] = standing
 
 	H.apply_overlay(BODY_BEHIND_LAYER)
@@ -1000,8 +790,160 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
-	H.tail_hud_update(tail_hack)
 
+/datum/species/build_sprite_sandwich(mob/living/carbon/human/H, datum/sprite_accessory/S, layernum, layertext, list/dna_feature_as_text_string = list())
+	if(!istype(S, /datum/sprite_accessory))
+		return
+	var/list/standing = list()
+	var/list/sprite_sandwich = list("1" = TRUE, "2" = FALSE, "3" = FALSE)
+	sprite_sandwich["1"] = TRUE
+	if(S.extra)
+		sprite_sandwich["2"] = TRUE
+	if(S.extra2)
+		sprite_sandwich["3"] = TRUE
+	var/image/tail_hack // tailhud's a bazinga, innit
+	for(var/index in sprite_sandwich)
+		if(!sprite_sandwich[index])
+			continue
+		var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
+		var/bodypart = S.mutant_part_string || dna_feature_as_text_string[S]
+		var/middle_text
+		switch(i)
+			if(1)
+				middle_text = ""
+			if(2)
+				middle_text = "extra_"
+			if(3)
+				middle_text = "extra2_"
+
+		if(S.gender_specific)
+			accessory_overlay.icon_state = "[g]_[bodypart]_[middle_text][S.icon_state]_[layertext]"
+		else
+			accessory_overlay.icon_state = "m_[bodypart]_[middle_text][S.icon_state]_[layertext]"
+
+		if(S.center)
+			accessory_overlay = center_image(accessory_overlay, S.dimension_x, S.dimension_y)
+
+		var/advanced_color_system = (H.dna.features["color_scheme"] == ADVANCED_CHARACTER_COLORING)
+
+		var/mutant_string = S.mutant_part_string
+		if(mutant_string == "tailwag") //wagging tails should be coloured the same way as your tail
+			mutant_string = "tail"
+		var/primary_string = advanced_color_system ? "[mutant_string]_primary" : MBP_COLOR1
+		var/secondary_string = advanced_color_system ? "[mutant_string]_secondary" : MBP_COLOR2
+		var/tertiary_string = advanced_color_system ? "[mutant_string]_tertiary" : MBP_COLOR3
+		//failsafe: if there's no value for any of these, set it to white
+		if(!H.dna.features[primary_string])
+			H.dna.features[primary_string] = advanced_color_system ? H.dna.features[MBP_COLOR1] : "FFFFFF"
+		if(!H.dna.features[secondary_string])
+			H.dna.features[secondary_string] = advanced_color_system ? H.dna.features[MBP_COLOR2] : "FFFFFF"
+		if(!H.dna.features[tertiary_string])
+			H.dna.features[tertiary_string] = advanced_color_system ? H.dna.features[MBP_COLOR3] : "FFFFFF"
+
+
+		if(forced_color)
+			accessory_overlay.color = forced_colour
+		else
+			switch(S.color_src)
+				if(SKINTONE)
+					accessory_overlay.color = SKINTONE2HEX(H.skin_tone)
+				if(MUTCOLOR1, MUTCOLOR2, MUTCOLOR3)
+					accessory_overlay.color = colorize_mutcolor(H, S, primary_string, secondary_string, tertiary_string, husk)
+				if(MATRIXED)
+					accessory_overlay.color = colorize_matrix(H, S, primary_string, secondary_string, tertiary_string, husk)
+				if(HAIR)
+					if(hair_color == "mutcolor")
+						switch(index)
+							if("1")
+								accessory_overlay.color = "#[H.dna.features[MBP_COLOR1]]"
+							if("2")
+								accessory_overlay.color = "#[H.dna.features[MBP_COLOR2]]"
+							if("3")
+								accessory_overlay.color = "#[H.dna.features[MBP_COLOR3]]"
+					else
+						accessory_overlay.color = "#[H.hair_color]"
+				if(FACEHAIR)
+					accessory_overlay.color = "#[H.facial_hair_color]"
+				if(EYECOLOR)
+					accessory_overlay.color = "#[H.left_eye_color]"
+				if(HORNCOLOR)
+					accessory_overlay.color = "#[H.dna.features["horns_color"]]"
+				if(WINGCOLOR)
+					accessory_overlay.color = "#[H.dna.features["wings_color"]]"
+		// if(husk)
+		// 	if(bodypart == MBP_EARS_LIZARD)
+		// 		accessory_overlay.icon_state = "m_ears_none_[layertext]"
+		// 	if(bodypart == "tail")
+		// 		accessory_overlay.icon_state = "m_tail_husk_[layertext]"
+
+		if(OFFSET_MUTPARTS in offset_features)
+			accessory_overlay.pixel_x += offset_features[OFFSET_MUTPARTS][1]
+			accessory_overlay.pixel_y += offset_features[OFFSET_MUTPARTS][2]
+
+		if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
+			tail_hack = accessory_overlay
+		standing += accessory_overlay
+	H.tail_hud_update(tail_hack)
+	return standing
+
+/datum/species/proc/colorize_mutcolor(mob/living/carbon/human/H, datum/sprite_accessory/S, primary_string, secondary_string, tertiary_string, husk)
+	if(fixed_mut_color)
+		switch(S.color_src)
+			if(MUTCOLOR1)
+				return "#[fixed_mut_color]"
+			if(MUTCOLOR2)
+				return "#[fixed_mut_color2]"
+			if(MUTCOLOR3)
+				return "#[fixed_mut_color3]"
+	var/mutstring
+	switch(S.color_src)
+		if(MUTCOLOR1)
+			mutstring = primary_string
+		if(MUTCOLOR2)
+			mutstring = secondary_string
+		if(MUTCOLOR3)
+			mutstring = tertiary_string
+	return "#[H.dna.features[mutstring]]"
+		
+/datum/species/proc/colorize_matrix(mob/living/carbon/human/H, datum/sprite_accessory/S, primary_string, secondary_string, tertiary_string, husk)
+	var/list/accessory_colorlist = list()
+	if(S.matrixed_sections == MATRIX_RED || S.matrixed_sections == MATRIX_RED_GREEN || S.matrixed_sections == MATRIX_RED_BLUE || S.matrixed_sections == MATRIX_ALL)
+		accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[primary_string]]00")
+	else
+		accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("00000000")
+	if(S.matrixed_sections == MATRIX_GREEN || S.matrixed_sections == MATRIX_RED_GREEN || S.matrixed_sections == MATRIX_GREEN_BLUE || S.matrixed_sections == MATRIX_ALL)
+		accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[secondary_string]]00")
+	else
+		accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("00000000")
+	if(S.matrixed_sections == MATRIX_BLUE || S.matrixed_sections == MATRIX_RED_BLUE || S.matrixed_sections == MATRIX_GREEN_BLUE || S.matrixed_sections == MATRIX_ALL)
+		accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[tertiary_string]]00")
+	else
+		accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("00000000")
+	accessory_colorlist += husk ? list(0, 0, 0) : list(0, 0, 0, hair_alpha)
+	for(var/index in 1 to accessory_colorlist.len)
+		accessory_colorlist[index] /= 255
+	return list(accessory_colorlist)
+
+/datum/species/proc/handle_digilegs(mob/living/carbon/human/H, tauric)
+	var/not_digitigrade = TRUE
+	for(var/X in H.bodyparts)
+		var/obj/item/bodypart/O = X
+		if(!O.use_digitigrade)
+			continue
+		not_digitigrade = FALSE
+		species_traits |= DIGITIGRADE
+		O.squish_digitigrade = FALSE
+		if(H.wear_suit)
+			if(!CHECK_BITFIELD(H.wear_suit.mutantrace_variation, STYLE_DIGITIGRADE))
+				should_be_squished = TRUE
+			if(tauric && !CHECK_BITFIELD(H.wear_suit.mutantrace_variation, STYLE_ALL_TAURIC))
+				should_be_squished = TRUE
+		else if(H.w_uniform)
+			if(!CHECK_BITFIELD(H.w_uniform.mutantrace_variation, STYLE_DIGITIGRADE))
+				should_be_squished = TRUE
+	H.update_body_parts()
+	if(not_digitigrade && (DIGITIGRADE in species_traits)) //Curse is lifted
+		species_traits -= DIGITIGRADE
 
 /*
  * Equip the outfit required for life. Replaces items currently worn.
@@ -2294,9 +2236,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(mutant_bodyparts[tail_type])
 			mutant_bodyparts[wagging_type] = mutant_bodyparts[tail_type]
 			mutant_bodyparts -= tail_type
-			if(tail_type == MBP_TAIL_LIZARD) //special lizard thing
-				mutant_bodyparts[MBP_TAIL_WAGGING_SPINES] = mutant_bodyparts[MBP_TAIL_SPINES]
-				mutant_bodyparts -= MBP_TAIL_SPINES
+			// if(tail_type == MBP_TAIL_LIZARD) //special lizard thing
+			// 	mutant_bodyparts[MBP_TAIL_WAGGING_SPINES] = mutant_bodyparts[MBP_TAIL_SPINES]
+			// 	mutant_bodyparts -= MBP_TAIL_SPINES
 			H.update_body()
 
 /datum/species/proc/stop_wagging_tail(mob/living/carbon/human/H)
@@ -2304,9 +2246,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(mutant_bodyparts[wagging_type])
 			mutant_bodyparts[tail_type] = mutant_bodyparts[wagging_type]
 			mutant_bodyparts -= wagging_type
-			if(tail_type == MBP_TAIL_LIZARD) //special lizard thing
-				mutant_bodyparts[MBP_TAIL_SPINES] = mutant_bodyparts[MBP_TAIL_WAGGING_SPINES]
-				mutant_bodyparts -= MBP_TAIL_WAGGING_SPINES
+			// if(tail_type == MBP_TAIL_LIZARD) //special lizard thing
+			// 	mutant_bodyparts[MBP_TAIL_SPINES] = mutant_bodyparts[MBP_TAIL_WAGGING_SPINES]
+			// 	mutant_bodyparts -= MBP_TAIL_WAGGING_SPINES
 			H.update_body()
 
 /datum/species/proc/get_laugh_sound(mob/living/carbon/human/H)
@@ -2314,3 +2256,358 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return pick(laugh_male)
 	else
 		return pick(laugh_female)
+
+/datum/species/proc/get_species_part_icon(part_kind)
+	switch(body_type)
+		if(BODYTYPE_INSECT)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/insect.dmi'
+				else
+					return 'icons/mob/parts/body/color/insect.dmi'
+		if(BODYTYPE_APID)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/bee.dmi'
+				else
+					return 'icons/mob/parts/body/color/bee.dmi'
+		if(BODYTYPE_MOTH)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/moth.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/moth.dmi'
+		if(BODYTYPE_MOTH_NOT_GREYSCALE)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/moth.dmi'
+				else
+					return 'icons/mob/parts/body/color/moth.dmi'
+		if(BODYTYPE_HUMAN, BODYTYPE_VAMPIRE, BODYTYPE_ANGEL, BODYTYPE_DULLAHAN, BODYTYPE_DWARF, BODYTYPE_FELINID)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 
+				if(LEGS_DIGITIGRADE)
+					return 
+				if(LEGS_PLANTIGRADE)
+					return 
+				else
+					return 
+		if(BODYTYPE_AGENT)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/agent.dmi'
+				else
+					return 'icons/mob/parts/body/color/agent.dmi'
+		if(BODYTYPE_FURRY, BODYTYPE_SYNTH_FURRY)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base_2.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base_2.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/furry.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/furry.dmi'
+		if(BODYTYPE_AVIAN)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/aquatic.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/aquatic.dmi'
+		if(BODYTYPE_AQUATIC)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/avian.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/avian.dmi'
+		if(BODYTYPE_AVIAN)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/avian.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/avian.dmi'
+		if(BODYTYPE_ETHEREAL)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/etherial.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/etherial.dmi'
+		if(BODYTYPE_FLY)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/fly.dmi'
+				else
+					return 'icons/mob/parts/body/color/fly.dmi'
+		if(BODYTYPE_GHOUL)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/ghoul.dmi'
+				else
+					return 'icons/mob/parts/body/color/ghoul.dmi'
+		if(BODYTYPE_GOLEM)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/golem.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/golem.dmi'
+		if(BODYTYPE_GOLEM_CULT)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/golem_cult.dmi'
+				else
+					return 'icons/mob/parts/body/color/golem_cult.dmi'
+		if(BODYTYPE_GOLEM_RATVAR)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/golem_ratvar.dmi'
+				else
+					return 'icons/mob/parts/body/color/golem_ratvar.dmi'
+		if(BODYTYPE_GOLEM_CLOTH, BODYTYPE_GOLEM_CLOTH)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/golem_cloth.dmi'
+				else
+					return 'icons/mob/parts/body/color/golem_cloth.dmi'
+		if(BODYTYPE_GOLEM_BONE)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/golem_bone.dmi'
+				else
+					return 'icons/mob/parts/body/color/golem_bone.dmi'
+		if(BODYTYPE_HOMUNCULUS)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/homonculus.dmi'
+				else
+					return 'icons/mob/parts/body/color/homonculus.dmi'
+		if(BODYTYPE_JELLY)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/jelly.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/jelly.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/jelly.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/jelly.dmi'
+		if(BODYTYPE_SLIME, BODYTYPE_SLIMEPERSON)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/slime.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/slime.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/slime.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/slime.dmi'
+		if(BODYTYPE_SLIME_LUMINESCENT)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/slimelumi.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/slimelumi.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/slimelumi.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/slimelumi.dmi'
+		if(BODYTYPE_SLIME_STARGAZER)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/slimestargazer.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/slimestargazer.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/slimestargazer.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/slimestargazer.dmi'
+		if(BODYTYPE_LIZARD, BODYTYPE_LIZARD_ASHWALKER)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/lizard.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/lizard.dmi'
+		if(BODYTYPE_MUSH)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base_2.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base_2.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/human.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/mushroom.dmi'
+		if(BODYTYPE_PLASMAMAN)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/plasmaman.dmi'
+				else
+					return 'icons/mob/parts/body/color/plasmaman.dmi'
+		if(BODYTYPE_PODPERSON, BODYTYPE_PODPERSON_WEAK)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/podperson.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/podperson.dmi'
+		if(BODYTYPE_SHADEKIN)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/shadekin.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/shadekin.dmi'
+		if(BODYTYPE_SHADOW, BODYTYPE_NIGHTMARE)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/shadow.dmi'
+				else
+					return 'icons/mob/parts/body/color/shadow.dmi'
+		if(BODYTYPE_SKELETON)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/skeleton.dmi'
+				else
+					return 'icons/mob/parts/body/color/skeleton.dmi'
+		if(BODYTYPE_SUPERMUTANT)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/supermutant.dmi'
+				else
+					return 'icons/mob/parts/body/color/supermutant.dmi'
+		if(BODYTYPE_SYNTH_LIZARD)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/synth_lizard.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/synth_lizard.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/synth_lizard.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/synth_lizard.dmi'
+		if(BODYTYPE_SYNTH, BODYTYPE_SYNTH_MILITARY, BODYTYPE_ANDROID)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/synth.dmi'
+				else
+					return 'icons/mob/parts/body/color/synth.dmi'
+		if(BODYTYPE_XENO)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/xeno.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/xeno.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/greyscale/xeno.dmi'
+				else
+					return 'icons/mob/parts/body/greyscale/xeno.dmi'
+		if(BODYTYPE_ZOMBIE)
+			switch(part_kind)
+				if(LEGS_AVIAN)
+					return 'icons/mob/parts/legs/avian/base_2.dmi'
+				if(LEGS_DIGITIGRADE)
+					return 'icons/mob/parts/legs/digitigrade/base_2.dmi'
+				if(LEGS_PLANTIGRADE)
+					return 'icons/mob/parts/legs/plantigrade/color/zombie.dmi'
+				else
+					return 'icons/mob/parts/body/color/zombie.dmi'
+
+

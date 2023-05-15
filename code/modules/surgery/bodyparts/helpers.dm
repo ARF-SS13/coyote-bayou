@@ -265,7 +265,9 @@
 /mob/living/carbon/proc/Digitigrade_Leg_Swap(swap_back)
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/O = X
-		if((O.body_part == LEG_LEFT || O.body_part == LEG_RIGHT) && ((!O.use_digitigrade && !swap_back) || (O.use_digitigrade && swap_back)))
+		if(!(O.body_part == LEG_LEFT || O.body_part == LEG_RIGHT))
+			continue
+		if((!O.use_digitigrade && !swap_back) || (O.use_digitigrade && swap_back))
 			O.use_digitigrade = swap_back ? NOT_DIGITIGRADE : FULL_DIGITIGRADE
 			O.update_limb(FALSE, src)
 

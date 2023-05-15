@@ -15,8 +15,8 @@
 ************* Lizard Tails ****************
 *******************************************/
 
-/datum/sprite_accessory/tails_animated/lizard/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts[MBP_TAIL_LIZARD])
+// /datum/sprite_accessory/tails_animated/is_not_visible(mob/living/carbon/human/H, tauric)
+// 	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts[MBP_TAIL])
 
 //this goes first regardless of alphabetical order
 /datum/sprite_accessory/tails/lizard/none
@@ -103,8 +103,8 @@
 	icon_state = "none"
 	relevant_layers = null
 
-/datum/sprite_accessory/tails_animated/human/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric)|| H.dna.species.mutant_bodyparts[MBP_TAIL_HUMAN])
+// /datum/sprite_accessory/tails_animated/human/is_not_visible(mob/living/carbon/human/H, tauric)
+// 	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric)|| H.dna.species.mutant_bodyparts[MBP_TAIL_HUMAN])
 
 /datum/sprite_accessory/tails/human/axolotl
 	name = "Axolotl"
@@ -610,8 +610,8 @@
 	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
-/datum/sprite_accessory/tails_animated/mam_tails_animated/is_not_visible(mob/living/carbon/human/H, tauric)
-	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts[MBP_TAIL])
+// /datum/sprite_accessory/tails_animated/mam_tails_animated/is_not_visible(mob/living/carbon/human/H, tauric)
+// 	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts[MBP_TAIL])
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/none
 	name = "None"
@@ -711,13 +711,13 @@
 /datum/sprite_accessory/tails/mam_tails/dtiger
 	name = "Dark Tiger"
 	icon_state = "dtiger"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/dtiger
 	name = "Dark Tiger"
 	icon_state = "dtiger"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails/mam_tails/eevee
@@ -833,13 +833,13 @@ datum/sprite_accessory/tails/mam_tails/insect
 /datum/sprite_accessory/tails/mam_tails/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails/mam_tails/murid
@@ -947,25 +947,25 @@ datum/sprite_accessory/tails/mam_tails/insect
 /datum/sprite_accessory/tails/mam_tails/smooth
 	name = "Smooth"
 	icon_state = "smooth"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/smooth
 	name = "Smooth"
 	icon_state = "smooth"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/spikes
 	name = "Spikes"
 	icon_state = "spikes"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails/mam_tails/spikes
 	name = "Spikes"
 	icon_state = "spikes"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/tails/mam_tails/straighttail

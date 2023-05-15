@@ -6,13 +6,13 @@
 *******************************************/
 
 /datum/sprite_accessory/legs/none
-	name = LIMB_PLANTIGRADE
+	name = LEGS_PLANTIGRADE
 
 /datum/sprite_accessory/legs/digitigrade_lizard
-	name = LIMB_DIGITIGRADE
+	name = LEGS_DIGITIGRADE
 
 /datum/sprite_accessory/legs/digitigrade_bird
-	name = LIMB_AVIAN
+	name = LEGS_AVIAN
 
 
 /******************************************
@@ -54,7 +54,7 @@
 	name = "Canine"
 	icon_state = "canine"
 	taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
 
 /datum/sprite_accessory/taur/cow
@@ -62,7 +62,7 @@
 	icon_state = "cow"
 	taur_mode = STYLE_HOOF_TAURIC
 	alt_taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/taur/cow/spotted
 	name = "Cow (Spotted)"
@@ -75,14 +75,14 @@
 	icon_state = "deer"
 	taur_mode = STYLE_HOOF_TAURIC
 	alt_taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
 
 /datum/sprite_accessory/taur/drake
 	name = "Drake"
 	icon_state = "drake"
 	taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
 
 /datum/sprite_accessory/taur/drake/old
@@ -95,21 +95,21 @@
 /datum/sprite_accessory/taur/drider
 	name = "Drider"
 	icon_state = "drider"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
 
 /datum/sprite_accessory/taur/eevee
 	name = "Eevee"
 	icon_state = "eevee"
 	taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
 
 /datum/sprite_accessory/taur/feline
 	name = "Feline"
 	icon_state = "feline"
 	taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
 
 /datum/sprite_accessory/taur/horse
@@ -136,7 +136,7 @@
 	name = "Scolipede"
 	icon_state = "pede"
 	taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = TRUE
 	extra2 = TRUE
 
@@ -144,28 +144,28 @@
 	name = "Tentacle"
 	icon_state = "tentacle"
 	taur_mode = STYLE_SNEK_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	hide_legs = USE_SNEK_CLIP_MASK
 
 /datum/sprite_accessory/taur/frog
 	name = "Frog"
 	icon_state = "frog"
 	taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = FALSE
 
 /datum/sprite_accessory/taur/wasp
 	name = "Wasp"
 	icon_state = "wasp"
 	taur_mode = STYLE_PAW_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = FALSE
 
 /datum/sprite_accessory/taur/mermaid
 	name = "Mermaid"
 	icon_state = "mermaid"
 	taur_mode = STYLE_SNEK_TAURIC
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra = FALSE
 
 /datum/sprite_accessory/taur/skunk

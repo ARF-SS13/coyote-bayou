@@ -2,7 +2,7 @@
 /datum/sprite_accessory/snouts/mam_snouts/synthliz
 	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_snouts.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard - Snout"
 	icon_state = "synthliz_basic"
 
@@ -51,14 +51,14 @@
 /datum/sprite_accessory/tails/mam_tails/synthliz
 	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard"
 	icon_state = SPECIES_SYNTH_LIZARD
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/synthliz
 	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_tails.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard"
 	icon_state = SPECIES_SYNTH_LIZARD
 
@@ -66,19 +66,19 @@
 /datum/sprite_accessory/antenna/synthliz
 	recommended_species = list(SPECIES_HUMAN, SPECIES_FURRY, SPECIES_XENO, SPECIES_INSECT, SPECIES_SLIMEPERSON, SPECIES_JELLY, SPECIES_PODPERSON_WEAK, SPECIES_SHADEKIN, SPECIES_GHOUL, SPECIES_SYNTH_FURRY, SPECIES_SYNTH_LIZARD, SPECIES_LIZARD, SPECIES_SYNTH_IPC)
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard - Antennae"
 	icon_state = "synth_antennae"
 
 /datum/sprite_accessory/antenna/synthliz/synthliz_curled
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard - Curled"
 	icon_state = "synth_curled"
 
 /datum/sprite_accessory/antenna/synthliz/synth_horns
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard - Horns"
 	icon_state = "synth_horns"
 
@@ -91,13 +91,13 @@
 
 /datum/sprite_accessory/antenna/synthliz/synth_short
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard - Short"
 	icon_state = "synth_short"
 
 /datum/sprite_accessory/antenna/synthliz/synth_sharp
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard - Sharp"
 	icon_state = "synth_sharp"
 
@@ -110,7 +110,7 @@
 
 /datum/sprite_accessory/antenna/synthliz/synthliz_thick
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	name = "Synthetic Lizard - Thick"
 	icon_state = "synth_thick"
 

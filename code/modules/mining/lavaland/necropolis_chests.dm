@@ -997,7 +997,7 @@
 			H.dna.features[MBP_WINGS] = "None"
 			H.dna.features[MBP_FRILLS] = "None"
 			H.dna.features[MBP_TAIL_SPINES] = "Long"
-			H.dna.features[MBP_LEGS] = LIMB_DIGITIGRADE
+			H.dna.features[MBP_LEGS] = LEGS_DIGITIGRADE
 			H.dna.features["taur_body"] = "None"
 			H.left_eye_color = "fee5a3"
 			H.right_eye_color = "fee5a3"

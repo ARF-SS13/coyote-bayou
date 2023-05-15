@@ -117,14 +117,14 @@
 #define CLONER_MATURE_CLONE "mature"
 
 //species traits for mutantraces
-#define MUTCOLORS		1
+#define MUTCOLOR1		1
 #define HAIR			2
 #define FACEHAIR		3
 #define EYECOLOR		4
 #define LIPS			5
 #define NOBLOOD			6
 #define NOTRANSSTING	7
-#define MUTCOLORS_PARTSONLY	8	//Used if we want the mutant colour to be only used by mutant bodyparts. Don't combine this with MUTCOLORS, or it will be useless.
+#define MUTCOLOR_PARTSONLY	8	//Used if we want the mutant colour to be only used by mutant bodyparts. Don't combine this with MUTCOLOR1, or it will be useless.
 #define NOZOMBIE		9
 #define DIGITIGRADE		10	//Uses weird leg sprites. Optional for Lizards, required for ashwalkers. Don't give it to other races unless you make sprites for this (see human_parts_greyscale.dmi)
 #define NO_UNDERWEAR	11
@@ -134,8 +134,8 @@
 #define DRINKSBLOOD		15
 #define NOEYES			16
 #define MARKINGS		17
-#define MUTCOLORS2		18
-#define MUTCOLORS3		19
+#define MUTCOLOR2		18
+#define MUTCOLOR3		19
 #define NOAROUSAL		20	//Stops all arousal effects
 #define NOGENITALS		21	//Cannot create, use, or otherwise have genitals
 #define MATRIXED		22	//if icon is color matrix'd

@@ -201,7 +201,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 
 // increment this number when you update the persistent scarring format in a way that invalidates previous saved scars (new fields, reordering, etc)
 /// saved scars with a version lower than this will be discarded
-#define SCAR_CURRENT_VERSION				1
+#define SCAR_CURRENT_VERSION				2
 
 
 // With the wounds pt. 2 update, general dismemberment now requires 2 things for a limb to be dismemberable (bone only creatures just need the second):

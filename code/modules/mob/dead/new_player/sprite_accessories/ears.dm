@@ -5,7 +5,18 @@
 
 /datum/sprite_accessory/ears/is_not_visible(mob/living/carbon/human/H, tauric)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-	return (!H.dna.features[MBP_EARS_LIZARD] || H.dna.features[MBP_EARS_LIZARD] == "None" || H.head && (H.head.flags_inv & HIDEEARS) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEARS)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
+	if(!HD)
+		return TRUE
+	if(!H.dna.features[MBP_EARS])
+		return TRUE
+	if(ckey(H.dna.features[MBP_EARS]) == "none")
+		return TRUE
+	if(H.head && (H.head.flags_inv & HIDEEARS))
+		return TRUE
+	if(H.wear_mask && (H.wear_mask.flags_inv & HIDEEARS))
+		return TRUE
+	if(HD.status == BODYPART_ROBOTIC && !HD.render_like_organic)
+		return TRUE
 
 /datum/sprite_accessory/ears/none
 	name = "None"
@@ -110,7 +121,7 @@
 	name = "Cobra Hood"
 	icon_state = "cobra"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/ears/human/cow
 	name = "Cow"
@@ -123,7 +134,7 @@
 /datum/sprite_accessory/ears/human/curled
 	name = "Curled Horn"
 	icon_state = "horn1"
-	color_src = MUTCOLORS3
+	color_src = MUTCOLOR3
 
 /datum/sprite_accessory/ears/human/deer
 	name = "Deer"
@@ -152,7 +163,7 @@
 /datum/sprite_accessory/ears/human/elf
 	name = "Elf"
 	icon_state = "elf"
-	color_src = MUTCOLORS3
+	color_src = MUTCOLOR3
 
 /datum/sprite_accessory/ears/human/elephant
 	name = "Elephant"
@@ -297,9 +308,9 @@
 	color_src = MATRIXED
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
-/datum/sprite_accessory/ears/mam_ears/is_not_visible(mob/living/carbon/human/H, tauric)
-	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-	return (!H.dna.features[MBP_EARS] || H.dna.features[MBP_EARS] == "None" || H.head && (H.head.flags_inv & HIDEEARS) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEARS)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
+// /datum/sprite_accessory/ears/mam_ears/is_not_visible(mob/living/carbon/human/H, tauric)
+// 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
+// 	return (!H.dna.features[MBP_EARS] || H.dna.features[MBP_EARS] == "None" || H.head && (H.head.flags_inv & HIDEEARS) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEARS)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
 
 /datum/sprite_accessory/ears/mam_ears/none
 	name = "None"
@@ -372,7 +383,7 @@
 	name = "Cobra Hood"
 	icon_state = "cobra"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/ears/mam_ears/cow
 	name = "Cow"
@@ -382,7 +393,7 @@
 /datum/sprite_accessory/ears/mam_ears/curled
 	name = "Curled Horn"
 	icon_state = "horn1"
-	color_src = MUTCOLORS3
+	color_src = MUTCOLOR3
 
 /datum/sprite_accessory/ears/mam_ears/deer
 	name = "Deer"
@@ -402,7 +413,7 @@
 /datum/sprite_accessory/ears/mam_ears/elf
 	name = "Elf"
 	icon_state = "elf"
-	color_src = MUTCOLORS3
+	color_src = MUTCOLOR3
 
 /datum/sprite_accessory/ears/mam_ears/elephant
 	name = "Elephant"

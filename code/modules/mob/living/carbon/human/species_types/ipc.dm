@@ -8,7 +8,7 @@
 	blacklisted = 0
 	sexes = 0
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		NOTRANSSTING,
 		EYECOLOR,
 		LIPS,

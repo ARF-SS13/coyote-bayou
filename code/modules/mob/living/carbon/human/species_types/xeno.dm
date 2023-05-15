@@ -6,7 +6,7 @@
 	say_mod = "hisses"
 	default_color = "00FF00"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		LIPS,
 		CAN_SCAR,
@@ -22,7 +22,7 @@
 		MBP_COLOR2 = "0F0",
 		MBP_COLOR3 = "0F0",
 		MBP_TAUR = "None",
-		MBP_LEGS = LIMB_DIGITIGRADE,
+		MBP_LEGS = LEGS_DIGITIGRADE,
 		MBP_WINGS_DECORATIVE= "None"
 	)
 	attack_verb = "slash"

@@ -20,7 +20,7 @@
 	icon_state = "sabresune"
 	ckeys_allowed = list("poojawa")
 	extra = TRUE
-	extra_color_src = MUTCOLORS3
+	extra_color_src = MUTCOLOR3
 
 /datum/sprite_accessory/tails/mam_tails/sabresune
 	name = "Sabresune"

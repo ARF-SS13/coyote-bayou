@@ -280,17 +280,17 @@
 /datum/sprite_accessory/insect_fluff/colored1
 	name = "Colored (Primary)"
 	icon_state = "snow"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/insect_fluff/colored2
 	name = "Colored (Secondary)"
 	icon_state = "snow"
-	color_src = MUTCOLORS2
+	color_src = MUTCOLOR2
 
 /datum/sprite_accessory/insect_fluff/colored3
 	name = "Colored (Tertiary)"
 	icon_state = "snow"
-	color_src = MUTCOLORS3
+	color_src = MUTCOLOR3
 
 /datum/sprite_accessory/insect_fluff/colored
 	name = "Colored (Hair)"
@@ -383,17 +383,17 @@
 /datum/sprite_accessory/insect_fluff/colored1_noear
 	name = "Colored (Primary) No Antenna"
 	icon_state = "snow2"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/insect_fluff/colored2_noear
 	name = "Colored (Secondary) No Antenna"
 	icon_state = "snow2"
-	color_src = MUTCOLORS2
+	color_src = MUTCOLOR2
 
 /datum/sprite_accessory/insect_fluff/colored3_noear
 	name = "Colored (Tertiary) No Antenna"
 	icon_state = "snow2"
-	color_src = MUTCOLORS3
+	color_src = MUTCOLOR3
 
 /datum/sprite_accessory/insect_fluff/colored_noear
 	name = "Colored (Hair) No Antenna"
@@ -485,17 +485,17 @@
 /datum/sprite_accessory/insect_fluff/colored1_nofur
 	name = "Colored (Primary) No Fur"
 	icon_state = "snow3"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/insect_fluff/colored2_nofur
 	name = "Colored (Secondary) No Fur"
 	icon_state = "snow3"
-	color_src = MUTCOLORS2
+	color_src = MUTCOLOR2
 
 /datum/sprite_accessory/insect_fluff/colored3_nofur
 	name = "Colored (Tertiary) No Fur"
 	icon_state = "snow3"
-	color_src = MUTCOLORS3
+	color_src = MUTCOLOR3
 
 /datum/sprite_accessory/insect_fluff/colored_nofur
 	name = "Colored (Hair) No Fur"

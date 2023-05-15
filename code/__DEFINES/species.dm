@@ -1,7 +1,7 @@
 
-#define LIMB_PLANTIGRADE "Plantigrade"
-#define LIMB_DIGITIGRADE "Digitigrade"
-#define LIMB_AVIAN "Avian"
+#define LEGS_PLANTIGRADE "Plantigrade"
+#define LEGS_DIGITIGRADE "Digitigrade"
+#define LEGS_AVIAN "Avian"
 
 /// All the fuckin species IDs (NOT the limb IDs!)
 #define SPECIES_ABDUCTOR "abductor" // Ayy lmao
@@ -128,7 +128,7 @@
 #define BODYTYPE_PLASMAMAN "plasmaman" // A horrible purple skeleton thing
 #define BODYTYPE_PODPERSON "pod" // A pod person
 #define BODYTYPE_PODPERSON_WEAK "podweak" // A pod person but weak
-#define BODYTYPE_SHADEKIN "shadekin" // A shadow person
+#define BODYTYPE_SHADEKIN "shadekin" // A shade person
 #define BODYTYPE_SHADOW "shadow" // A shadow person too
 #define BODYTYPE_NIGHTMARE "nightmare" // A shadow person but stronger
 #define BODYTYPE_SKELETON "skeleton" // A skeleton
@@ -155,7 +155,8 @@
 #define MBP_ARACHNID_LEGS "arachnid_legs"
 #define MBP_ARACHNID_SPINNERET "arachnid_spinneret"
 #define MBP_ARACHNID_MANDIBLES "arachnid_mandibles"
-#define MBP_TAIL "mam_tail"
+#define MBP_TAIL "tail"
+#define MBP_TAIL_ANIMATED "tail_animated"
 #define MBP_TAIL_LIZARD "tail_lizard"
 #define MBP_TAIL_HUMAN "tail_human"
 #define MBP_TAIL_SPINES "spines"
@@ -163,14 +164,14 @@
 #define MBP_TAIL_WAGGING_LIZARD "waggingtail_lizard"
 #define MBP_TAIL_WAGGING_HUMAN "MBP_TAIL_WAGGING_HUMAN"
 #define MBP_TAIL_WAGGING_SPINES "waggingspines"
-#define MBP_EARS "mam_ears"
-#define MBP_EARS_LIZARD "ears"
+#define MBP_EARS "ears"
+#define MBP_EARS_LIZARD "ears_lizard"
 #define MBP_TAUR "taur"
 #define MBP_LEGS "legs"
 #define MBP_BODY_MARKINGS "mam_body_markings"
 #define MBP_MARKINGS_INSECT "insect_markings"
-#define MBP_SNOUT "mam_snouts"
-#define MBP_SNOUT_LIZARD "snout"
+#define MBP_SNOUT "snout"
+#define MBP_SNOUT_LIZARD "snout_lizard"
 #define MBP_HORNS "horns"
 #define MBP_FRILLS "frills"
 #define MBP_MEAT_TYPE "meat_type"
@@ -282,6 +283,36 @@ GLOBAL_LIST_INIT(all_mutant_parts, list(
 	MBP_HORNS = "Horns"
 	)
 )
+GLOBAL_LIST_INIT(default_mutant_parts, list(
+	MBP_TAIL_LIZARD,
+	MBP_TAIL,
+	MBP_TAIL_HUMAN,
+	MBP_SNOUT_LIZARD,
+	MBP_FRILLS,
+	MBP_TAIL_SPINES,
+	MBP_MARKINGS_BODY,
+	MBP_EARS,
+	MBP_EARS_LIZARD,
+	MBP_SNOUT,
+	MBP_LEGS,
+	MBP_WINGS_DECORATIVE,
+	MBP_WINGS_INSECT,
+	MBP_FLUFF,
+	MBP_TAUR,
+	MBP_MARKINGS_INSECT,
+	MBP_WINGS,
+	MBP_ARACHNID_LEGS,
+	MBP_ARACHNID_SPINNERET,
+	MBP_ARACHNID_MANDIBLES,
+	MBP_XENO_HEAD,
+	MBP_XENO_TAIL,
+	MBP_XENO_DORSAL,
+	MBP_SCREEN,
+	MBP_ANTENNA_IPC,
+	MBP_MEAT_TYPE,
+	MBP_HORNS
+	)
+)
 GLOBAL_LIST_INIT(unlocked_mutant_parts, list(
 	MBP_HORNS,
 	MBP_FLUFF
@@ -301,7 +332,7 @@ GLOBAL_LIST_INIT(greyscale_limb_types, list(
 	BODYTYPE_MOTH,
 	BODYTYPE_LIZARD,
 	BODYTYPE_PODPERSON,
-	"plant",
+	SPECIES_TYPE_PLANT,
 	BODYTYPE_JELLY,
 	BODYTYPE_SLIME,
 	BODYTYPE_GOLEM,
@@ -362,7 +393,95 @@ GLOBAL_LIST_INIT(eye_types, list(
 	"double2",
 	"double3",
 	"cyclops",
-	"shadekin",
+	BODYTYPE_SHADEKIN,
 	)
 )
+
+#define DEFAULT_FEATURES list(\
+		MBP_COLOR1 = "FFFFFF",\
+		MBP_COLOR2 = "FFFFFF",\
+		MBP_COLOR3 = "FFFFFF",\
+		MBP_TAIL_LIZARD = "None",\
+		MBP_TAIL_HUMAN = "None",\
+		MBP_HORNS = "None",\
+		"horns_color" = "85615a",\
+		MBP_EARS = "None",\
+		MBP_WINGS = "None",\
+		"wings_color" = "FFF",\
+		MBP_FRILLS = "None",\
+		MBP_WINGS_DECORATIVE = "None",\
+		MBP_TAIL_SPINES = "None",\
+		MBP_LEGS = LEGS_PLANTIGRADE,\
+		MBP_WINGS_INSECT = "None",\
+		MBP_FLUFF = "None",\
+		MBP_MARKINGS_INSECT = "None",\
+		MBP_ARACHNID_LEGS = "None",\
+		MBP_ARACHNID_SPINNERET = "None",\
+		MBP_ARACHNID_MANDIBLES = "None",\
+		MBP_MARKINGS_BODY = list(),\
+		MBP_EARS = "None",\
+		MBP_SNOUT = "None",\
+		MBP_TAIL = "None",\
+		MBP_TAIL_ANIMATED = "None",\
+		MBP_XENO_DORSAL = "None",\
+		MBP_XENO_HEAD = "None",\
+		MBP_XENO_TAIL = "None",\
+		MBP_TAUR = "None",\
+		MBP_SCREEN = "Sunburst",\
+		MBP_ANTENNA_IPC = "None",\
+		"genitals_use_skintone" = FALSE,\
+		"has_cock" = FALSE,\
+		"cock_shape" = DEF_COCK_SHAPE,\
+		"cock_size" = COCK_SIZE_DEF,\
+		"cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF,\
+		"cock_color" = "ffffff",\
+		"cock_taur" = FALSE,\
+		"has_balls" = FALSE,\
+		"balls_color" = "ffffff",\
+		"balls_shape" = DEF_BALLS_SHAPE,\
+		"balls_size" = BALLS_SIZE_DEF,\
+		"balls_cum_rate" = CUM_RATE,\
+		"balls_cum_mult" = CUM_RATE_MULT,\
+		"balls_efficiency" = CUM_EFFICIENCY,\
+		"has_breasts" = FALSE,\
+		"breasts_color" = "ffffff",\
+		"has_butt" = FALSE,\
+		"butt_color" = "ffffff",\
+		"butt_size" = BUTT_SIZE_DEF,\
+		"has_belly" = FALSE,\
+		"belly_color" = "ffffff",\
+		"belly_size" = BELLY_SIZE_DEF,\
+		"belly_shape" = DEF_BELLY_SHAPE,\
+		"breasts_size" = BREASTS_SIZE_DEF,\
+		"breasts_shape" = DEF_BREASTS_SHAPE,\
+		"breasts_producing" = FALSE,\
+		"has_vag" = FALSE,\
+		"vag_shape" = DEF_VAGINA_SHAPE,\
+		"vag_color" = "ffffff",\
+		"has_womb" = FALSE,\
+		"balls_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"breasts_visibility"= GEN_VISIBLE_NO_UNDIES,\
+		"butt_visibility"  = GEN_VISIBLE_NO_UNDIES,\
+		"cock_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"vag_visibility" = GEN_VISIBLE_NO_UNDIES,\
+		"balls_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"breasts_visibility_flags"= GEN_VIS_FLAG_DEFAULT,\
+		"cock_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"vag_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,\
+		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,\
+		"genital_order" = DEF_COCKSTRING,\
+		"genital_whitelist" = "Mr Bingus, fluntly, Doc Bungus",\
+		"genital_hide" = NONE,\
+		"flavor_text" = "",\
+		"silicon_flavor_text" = "",\
+		"ooc_notes" = OOC_NOTE_TEMPLATE,\
+		MBP_MEAT_TYPE = MEAT_MAMMAL,\
+		"taste" = "something salty",\
+		"body_model" = MALE,\
+		"body_size" = RESIZE_DEFAULT_SIZE,\
+		"color_scheme" = OLD_CHARACTER_COLORING,\
+		"chat_color" = "whoopsie")
+
 

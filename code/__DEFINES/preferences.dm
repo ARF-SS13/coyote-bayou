@@ -111,7 +111,9 @@
 
 /// Changelog entries
 #define PMC_OOC_NOTES_UPDATE "update_ur_ooc" // Player Master Changelog
+#define PMC_CONDENSE_PARTS "human_mammal_lizard_and_furry_tails"
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
-#define PREFERENCES_MASTER_CHANGELOG list(PMC_OOC_NOTES_UPDATE)
+#define PREFERENCES_MASTER_CHANGELOG list(PMC_OOC_NOTES_UPDATE, PMC_CONDENSE_PARTS)
+

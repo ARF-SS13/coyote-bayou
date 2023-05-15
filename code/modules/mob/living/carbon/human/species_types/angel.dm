@@ -11,8 +11,6 @@
 		HAS_BONE
 	)
 	mutant_bodyparts = list(
-		MBP_TAIL_HUMAN = "None",
-		MBP_EARS_LIZARD = "None",
 		MBP_WINGS = "Angel"
 	)
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM

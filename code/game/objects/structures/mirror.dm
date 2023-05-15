@@ -192,7 +192,7 @@
 						H.skin_tone = new_s_tone
 						H.dna.update_ui_block(DNA_SKIN_TONE_BLOCK)
 
-			if(MUTCOLORS in H.dna.species.species_traits)
+			if(MUTCOLOR1 in H.dna.species.species_traits)
 				var/new_mutantcolor = input(user, "Choose your skin color:", "Race change","#"+H.dna.features[MBP_COLOR1]) as color|null
 				if(new_mutantcolor)
 					var/temp_hsv = RGBtoHSV(new_mutantcolor)

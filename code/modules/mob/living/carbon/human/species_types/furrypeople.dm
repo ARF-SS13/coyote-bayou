@@ -4,7 +4,7 @@
 	limbs_id = BODYTYPE_FURRY
 	default_color = "4B4B4B"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		LIPS,
 		HAIR,
@@ -25,7 +25,7 @@
 		MBP_MARKINGS_BODY = "Husky",
 		MBP_TAUR = "None",
 		MBP_HORNS = "None",
-		MBP_LEGS = LIMB_PLANTIGRADE,
+		MBP_LEGS = LEGS_DIGITIGRADE,
 		MBP_MEAT_TYPE = MEAT_MAMMAL
 	)
 	attack_verb = "claw"

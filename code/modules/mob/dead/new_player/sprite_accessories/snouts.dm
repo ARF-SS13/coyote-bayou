@@ -43,7 +43,7 @@
 	icon_state = "bug"
 	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	extra2 = TRUE
-	extra2_color_src = MUTCOLORS3
+	extra2_color_src = MUTCOLOR3
 
 /datum/sprite_accessory/snouts/elephant
 	name = "Elephant"
@@ -51,7 +51,7 @@
 	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 	extra = TRUE
-	extra_color_src = MUTCOLORS3
+	extra_color_src = MUTCOLOR3
 
 /datum/sprite_accessory/snouts/lcanid
 	name = "Mammal, Long"
@@ -101,7 +101,7 @@
 	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 	extra = TRUE
-	extra_color_src = MUTCOLORS3
+	extra_color_src = MUTCOLOR3
 
 /datum/sprite_accessory/snouts/rodent
 	name = "Rodent"
@@ -179,15 +179,15 @@
 /datum/sprite_accessory/snouts/mam_snouts/bug
 	name = "Bug"
 	icon_state = "bug"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra2 = TRUE
-	extra2_color_src = MUTCOLORS3
+	extra2_color_src = MUTCOLOR3
 
 /datum/sprite_accessory/snouts/mam_snouts/elephant
 	name = "Elephant"
 	icon_state = "elephant"
 	extra = TRUE
-	extra_color_src = MUTCOLORS3
+	extra_color_src = MUTCOLOR3
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/snouts/mam_snouts/fchemlight
@@ -211,7 +211,7 @@
 	name = "Horn"
 	icon_state = "rhino"
 	extra = TRUE
-	extra_color_src = MUTCOLORS3
+	extra_color_src = MUTCOLOR3
 	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/rodent
@@ -268,22 +268,22 @@
 /datum/sprite_accessory/snouts/mam_snouts/round
 	name = "Round"
 	icon_state = "round"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/roundlight
 	name = "Round + Light"
 	icon_state = "roundlight"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/roundclassic
 	name = "Round (Classic)"
 	icon_state = "roundclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/roundlightclassic
 	name = "Round + Light (Classic)"
 	icon_state = "roundlightclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/pede
 	name = "Scolipede"
@@ -308,22 +308,22 @@
 /datum/sprite_accessory/snouts/mam_snouts/sharp
 	name = "Sharp"
 	icon_state = "sharp"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/sharplight
 	name = "Sharp + Light"
 	icon_state = "sharplight"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/sharpclassic
 	name = "Sharp (Classic)"
 	icon_state = "sharpclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/sharplightclassic
 	name = "Sharp + Light (Classic)"
 	icon_state = "sharplightclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/skulldog
 	name = "Skulldog"
@@ -369,22 +369,22 @@
 /datum/sprite_accessory/snouts/mam_snouts/fbug
 	name = "Bug (Top)"
 	icon_state = "fbug"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 	extra2 = TRUE
-	extra2_color_src = MUTCOLORS3
+	extra2_color_src = MUTCOLOR3
 
 /datum/sprite_accessory/snouts/mam_snouts/felephant
 	name = "Elephant (Top)"
 	icon_state = "felephant"
 	extra = TRUE
-	extra_color_src = MUTCOLORS3
+	extra_color_src = MUTCOLOR3
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/snouts/mam_snouts/frhino
 	name = "Horn (Top)"
 	icon_state = "frhino"
 	extra = TRUE
-	extra_color_src = MUTCOLORS3
+	extra_color_src = MUTCOLOR3
 	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/fhusky
@@ -440,22 +440,22 @@
 /datum/sprite_accessory/snouts/mam_snouts/fround
 	name = "Round (Top)"
 	icon_state = "fround"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/froundlight
 	name = "Round + Light (Top)"
 	icon_state = "froundlight"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/froundclassic
 	name = "Round (Top, Classic)"
 	icon_state = "froundclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/froundlightclassic
 	name = "Round + Light (Top, Classic)"
 	icon_state = "froundlightclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/fpede
 	name = "Scolipede (Top)"
@@ -475,22 +475,22 @@
 /datum/sprite_accessory/snouts/mam_snouts/fsharp
 	name = "Sharp (Top)"
 	icon_state = "fsharp"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/fsharplight
 	name = "Sharp + Light (Top)"
 	icon_state = "fsharplight"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/fsharpclassic
 	name = "Sharp (Top, Classic)"
 	icon_state = "fsharpclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/fsharplightclassic
 	name = "Sharp + Light (Top, Classic)"
 	icon_state = "fsharplightclassic"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/ftoucan
 	name = "Toucan (Top)"
@@ -560,12 +560,12 @@
 /datum/sprite_accessory/snouts/mam_snouts/fskullbird
 	name = "female skullbird"
 	icon_state = "fskullbird"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/mskullbird
 	name = "male skullbird"
 	icon_state = "skullbird"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/orca
 	name = "orca"
@@ -675,7 +675,7 @@
 /datum/sprite_accessory/snouts/mam_snouts/beaktiny
 	name = "tiny beak"
 	icon_state = "beaktiny"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/snouts/mam_snouts/deoxys
 	name = "deoxys"

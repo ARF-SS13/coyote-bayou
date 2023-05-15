@@ -6,7 +6,7 @@
 	say_mod = "hisses"
 	default_color = "00FF00"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		HAIR,
 		FACEHAIR,
@@ -31,7 +31,7 @@
 		MBP_FRILLS = "None",
 		MBP_TAIL_SPINES = "None",
 		MBP_MARKINGS_BODY = list(),
-		MBP_LEGS = LIMB_DIGITIGRADE,
+		MBP_LEGS = LEGS_DIGITIGRADE,
 		MBP_TAUR = "None",
 		MBP_WINGS_DECORATIVE = "None",
 		MBP_EARS = "None"
@@ -81,7 +81,7 @@ Lizard subspecies: ASHWALKERS
 	id = SPECIES_LIZARD_ASHWALKER
 	limbs_id = BODYTYPE_LIZARD
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		LIPS,
 		DIGITIGRADE

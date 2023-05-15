@@ -129,7 +129,7 @@
 
 /datum/sprite_accessory/antenna
 	icon = 'modular_citadel/icons/mob/ipc_antennas.dmi'
-	color_src = MUTCOLORS2
+	color_src = MUTCOLOR2
 	relevant_layers = list(BODY_ADJ_LAYER)
 	recommended_species = list(SPECIES_SYNTH_IPC)
 	mutant_part_string = MBP_ANTENNA_IPC

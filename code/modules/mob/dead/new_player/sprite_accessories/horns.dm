@@ -19,7 +19,7 @@
 /datum/sprite_accessory/horns/angler
 	name = "Angeler"
 	icon_state = "angler"
-	color_src = MUTCOLORS
+	color_src = MUTCOLOR1
 
 /datum/sprite_accessory/horns/antler
 	name = "Deer Antlers"

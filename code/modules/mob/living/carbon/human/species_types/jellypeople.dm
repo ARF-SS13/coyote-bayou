@@ -5,7 +5,7 @@
 	default_color = "00FF90"
 	say_mod = "chirps"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		HAIR,
 		FACEHAIR,
@@ -21,7 +21,7 @@
 		MBP_SNOUT = "None",
 		MBP_TAUR = "None",
 		MBP_WINGS_DECORATIVE = "None",
-		MBP_LEGS = LIMB_PLANTIGRADE
+		MBP_LEGS = LEGS_PLANTIGRADE
 	)
 	inherent_traits = list(
 		TRAIT_TOXINLOVER
@@ -174,7 +174,7 @@
 	limbs_id = BODYTYPE_SLIMEPERSON
 	default_color = "00FFFF"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		HAIR,
 		FACEHAIR
@@ -491,7 +491,7 @@
 	limbs_id = BODYTYPE_SLIMEPERSON
 	default_color = "00FFFF"
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		EYECOLOR,
 		HAIR,
 		FACEHAIR
@@ -508,7 +508,7 @@
 		MBP_MARKINGS_BODY = "Plain",
 		MBP_SNOUT = "None",
 		MBP_TAUR = "None",
-		MBP_LEGS = LIMB_PLANTIGRADE
+		MBP_LEGS = LEGS_PLANTIGRADE
 	)
 	say_mod = "says"
 	hair_color = "mutcolor"

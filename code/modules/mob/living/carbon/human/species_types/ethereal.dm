@@ -16,7 +16,7 @@
 	attack_type = BURN //burn bish
 	damage_overlay_type = "" //We are too cool for regular damage overlays
 	species_traits = list(
-		MUTCOLORS,
+		MUTCOLOR1,
 		HAIR,
 		HAS_FLESH,
 		HAS_BONE

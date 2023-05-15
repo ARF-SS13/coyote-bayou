@@ -17,12 +17,6 @@
 		TRAIT_NOBREATH
 	)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
-	mutant_bodyparts = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_TAIL_HUMAN = "None",
-		MBP_EARS_LIZARD = "None",
-		MBP_WINGS_DECORATIVE = "None"
-	)
 	exotic_bloodtype = "U"
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM
 	mutant_heart = /obj/item/organ/heart/vampire

@@ -2,9 +2,10 @@
 	// Animated beings of stone. They have increased defenses, and do not need to breathe. They're also slow as fuuuck.
 	name = "Golem"
 	id = SPECIES_GOLEM_IRON
+	lock_other_parts = TRUE
 	species_traits = list(
 		NOBLOOD,
-		MUTCOLORS,
+		MUTCOLOR1,
 		NO_UNDERWEAR,
 		NOGENITALS,
 		NOAROUSAL
@@ -607,7 +608,7 @@
 		NOEYES,
 		NOGENITALS,
 		NOAROUSAL
-	) //no mutcolors
+	) //no MUTCOLOR
 	prefix = "Runic"
 	special_names = null
 
@@ -743,7 +744,7 @@
 		NO_UNDERWEAR,
 		NOGENITALS,
 		NOAROUSAL,
-	) //no mutcolors, and can burn
+	) //no MUTCOLOR, and can burn
 	inherent_traits = list(
 		TRAIT_RESISTCOLD,
 		TRAIT_NOBREATH,
@@ -961,7 +962,7 @@
 		NO_UNDERWEAR,
 		NOGENITALS,
 		NOAROUSAL,
-		MUTCOLORS,
+		MUTCOLOR1,
 	)
 	inherent_traits = list(
 		TRAIT_NOBREATH,
@@ -1092,7 +1093,7 @@
 		NO_UNDERWEAR,
 		NOGENITALS,
 		NOAROUSAL,
-		MUTCOLORS,
+		MUTCOLOR1,
 	)
 	inherent_traits = list(
 		TRAIT_RESISTHEAT,

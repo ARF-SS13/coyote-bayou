@@ -7,8 +7,6 @@
 	mutant_bodyparts = list(
 		MBP_TAIL = "Cat",
 		MBP_EARS = "Cat",
-		MBP_WINGS_DECORATIVE = "None",
-		MBP_MARKINGS_BODY = list()
 	)
 
 	mutantears = /obj/item/organ/ears/cat

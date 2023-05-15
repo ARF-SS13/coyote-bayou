@@ -8,7 +8,7 @@
 		HAIR,
 		FACEHAIR,
 		LIPS,
-		MUTCOLORS,
+		MUTCOLOR1,
 		HORNCOLOR,
 		WINGCOLOR,
 		HAS_FLESH,
@@ -16,20 +16,6 @@
 	)
 	inherent_traits = list(
 		TRAIT_DWARF
-	)
-	mutant_bodyparts = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_COLOR2 = "FFFFFF",
-		MBP_COLOR3 = "FFFFFF",
-		MBP_SNOUT = "Husky",
-		MBP_TAIL = "Husky",
-		MBP_EARS = "Husky",
-		MBP_WINGS_DECORATIVE = "None",
-		MBP_MARKINGS_BODY = "Husky",
-		MBP_TAUR = "None",
-		MBP_HORNS = "None",
-		MBP_LEGS = LIMB_PLANTIGRADE,
-		MBP_MEAT_TYPE = MEAT_MAMMAL
 	)
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = GROSS | TOXIC
