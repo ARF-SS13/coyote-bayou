@@ -56,7 +56,7 @@
 		)
 	emote_taunt = list("raises a saw")
 
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/handy/aggro1.ogg',
 		'sound/f13npc/handy/aggro2.ogg'
 		)
@@ -84,7 +84,7 @@
 	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = FALSE
@@ -141,7 +141,7 @@
 		)
 	emote_taunt = list("raises a flamer")
 
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/gutsy/aggro1.ogg',
 		'sound/f13npc/gutsy/aggro2.ogg',
 		'sound/f13npc/gutsy/aggro3.ogg',
@@ -174,7 +174,7 @@
 	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	environment_smash = 2 //can break lockers, but not walls
@@ -220,7 +220,7 @@
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
-	aggrosound = list("sound/f13npc/liberator/chineserobotcarinsurance.ogg")
+	emote_taunt_sound = list("sound/f13npc/liberator/chineserobotcarinsurance.ogg")
 	idlesound = null
 	death_sound = null
 	attack_sound = null
@@ -272,7 +272,7 @@
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	death_sound = null
 	attack_sound = null
@@ -374,7 +374,7 @@
 		"takes aim",
 		"holds its ground"
 		)
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/protectron/aggro1.ogg',
 		'sound/f13npc/protectron/aggro2.ogg',
 		'sound/f13npc/protectron/aggro3.ogg',
@@ -409,7 +409,7 @@
 	attack_verb_simple = "clamps"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	environment_smash = 1 //can break lockers, but not walls
@@ -505,7 +505,7 @@
 	emote_taunt_sound = FALSE
 	emote_taunt = FALSE
 
-	aggrosound = FALSE
+	emote_taunt_sound = FALSE
 	idlesound = FALSE
 	desc_short = "A sexy robot."
 
