@@ -37,7 +37,7 @@
 	item_state = "uniform_enclave_intel"
 
 //Vault
-
+/*
 /obj/item/clothing/under/f13/housewifedress50s
 	name = "50s style dress"
 	desc = "Fancy checkered yellow dress with small shoulder puffs."
@@ -55,7 +55,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
-
+*/
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "A blue jumpsuit with a yellow vault pattern printed on it."
@@ -392,7 +392,7 @@
 	item_color = "tacskirt"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
-
+/*
 /obj/item/clothing/under/f13/priestess
 	name = "priestess robes"
 	desc = "The robes worn by a Priestess of Mars."
@@ -401,7 +401,7 @@
 	item_color = "priestess"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
-
+*/
 /obj/item/clothing/under/f13/pmarsrobe
 	name = "priestess of mars robe"
 	desc = "A red robe decorated with bird feathers for the Priestess of Mars."

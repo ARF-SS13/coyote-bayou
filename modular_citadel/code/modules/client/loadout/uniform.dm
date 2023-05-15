@@ -319,11 +319,11 @@
 
 /datum/gear/uniform/dress/housewife
 	name = "yellow pre-war dress"
-	path = /obj/item/clothing/under/f13/housewifedress50s
+	path = /obj/item/clothing/under/dress/coyote/housewifedress50s
 
 /datum/gear/uniform/dress/picnic
 	name = "red pre-war dress"
-	path = /obj/item/clothing/under/f13/picnicdress50s
+	path = /obj/item/clothing/under/dress/coyote/picnicdress50s
 
 /datum/gear/uniform/dress/bandage
 	name = "bandage dress"
@@ -2036,4 +2036,10 @@
 	name = "western dress"
 	cost = 1
 	path = /obj/item/clothing/under/dress/coyote/western
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/redpristess
+	name = "red robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

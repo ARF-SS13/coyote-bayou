@@ -312,3 +312,30 @@
 	name = "western dress"
 	icon_state = "westerndress"
 	item_state = "westerndress"
+
+/obj/item/clothing/under/dress/coyote/housewifedress50s
+	name = "50s style dress"
+	desc = "Fancy checkered yellow dress with small shoulder puffs."
+	icon_state = "dress50s"
+	item_state = "dress50s"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/picnicdress50s
+	name = "50s style dress"
+	desc = "Cheery polkadot casual dress."
+	icon_state = "dresspicnic50s"
+	item_state = "dresspicnic50s"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess
+	name = "red robe dress"
+	desc = "A red dress robe"
+	icon_state = "priestess"
+	item_state = "priestess"
+	item_color = "priestess"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
