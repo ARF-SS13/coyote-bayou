@@ -181,6 +181,17 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/fireplace
+	name = "Stone fireplace"
+	result = /obj/structure/fireplace
+	reqs = list(/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/mineral/sandstone = 20)
+
+	time = 80
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/grill
 	name = "Grill"
 	result = /obj/machinery/grill

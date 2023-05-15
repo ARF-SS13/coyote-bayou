@@ -6,7 +6,40 @@
 	density = TRUE
 	max_integrity = 200
 	var/obj/item/pda/storedpda = null
-	var/list/colorlist = list()
+	var/list/colorlist = list(
+		"PipBoy 3000",
+		"Medical PDA",
+		"Virology PDA",
+		"Engineering PDA",
+		"Security PDA",
+		"Detective PDA",
+		"Warden PDA",
+		"Janitor PDA",
+		"Scientist PDA",
+		"Head of Personnel PDA",
+		"Head of Security PDA",
+		"Chief Engineer PDA",
+		"Chief Medical Officer PDA",
+		"Research Director PDA",
+		"Captain PDA",
+		"Liutenant PDA",
+		"Cargo Technician PDA",
+		"Quartermaster PDA",
+		"Shaft Miner PDA",
+		"Chaplain PDA",
+		"Chef PDA",
+		"Botanist PDA",
+		"Syndicate PDA",
+		"Lawyer PDA",
+		"Roboticist PDA",
+		"Bartender PDA",
+		"Atmospheric Technician PDA",
+		"Chemist PDA",
+		"Geneticist PDA",
+		"Clear PDA",
+		"Teachboy PDA",
+		"Curator PDA",
+		"Neko PDA",)
 
 
 /obj/machinery/pdapainter/update_icon_state()
@@ -31,23 +64,23 @@
 	if(storedpda)
 		. += "[initial(icon_state)]-closed"
 
-/obj/machinery/pdapainter/Initialize()
-	. = ..()
-	var/list/blocked = list(
-		/obj/item/pda/ai/pai,
-		/obj/item/pda/ai,
-		/obj/item/pda/heads,
-		/obj/item/pda/clear,
-		/obj/item/pda/syndicate,
-		/obj/item/pda/chameleon,
-		/obj/item/pda/chameleon/broken,
-		/obj/item/pda/lieutenant)
+// /obj/machinery/pdapainter/Initialize()
+// 	. = ..()
+// 	var/list/blocked = list(
+// 		/datum/pda/ai/pai,
+// 		/datum/pda/ai,
+// 		/datum/pda/heads,
+// 		/datum/pda/clear,
+// 		/datum/pda/syndicate,
+// 		/datum/pda/chameleon,
+// 		/datum/pda/chameleon/broken,
+// 		/datum/pda/lieutenant)
 
-	for(var/A in typesof(/obj/item/pda) - blocked)
-		var/obj/item/pda/P = A
-		var/PDA_name = initial(P.name)
-		colorlist += PDA_name
-		colorlist[PDA_name] = list(initial(P.icon_state), initial(P.desc), initial(P.overlays_offsets), initial(P.overlays_icons))
+// 	for(var/A in typesof(/obj/item/pda) - blocked)
+// 		var/obj/item/pda/P = A
+// 		var/PDA_name = initial(P.name)
+// 		colorlist += PDA_name
+// 		colorlist[PDA_name] = list(initial(P.icon_state), initial(P.desc), initial(P.overlays_offsets), initial(P.overlays_icons))
 
 /obj/machinery/pdapainter/Destroy()
 	QDEL_NULL(storedpda)
@@ -115,12 +148,7 @@
 	var/choice = input(user, "Select the new skin!", "PDA Painting") as null|anything in colorlist
 	if(!choice || !storedpda || !in_range(src, user))
 		return
-	var/list/P = colorlist[choice]
-	storedpda.icon_state = P[1]
-	storedpda.desc = P[2]
-	storedpda.overlays_offsets = P[3]
-	storedpda.overlays_icons = P[4]
-	storedpda.set_new_overlays()
+	storedpda.skindex = choice
 	storedpda.update_icon()
 	ejectpda()
 

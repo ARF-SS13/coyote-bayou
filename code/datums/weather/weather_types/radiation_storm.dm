@@ -1,7 +1,7 @@
 /datum/weather/rad_storm
 	name = "radiation storm"
 	desc = "A thunderstorm of intense radiation passes through the area dealing radiation damage to those who are unprotected."
-	probability = 3
+	probability = 6
 
 	telegraph_duration = 700
 	telegraph_message = span_userdanger("The skies slowly turn into a glowing green, distant distorted thunder can be heard as dark clouds approach.")

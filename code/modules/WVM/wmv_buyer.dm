@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/mineral/wasteland_trader
 	name = "Workshop Scrapper"
-	desc = "A vending machine that's been modified to accept various items in exchange for caps. \
+	desc = "A vending machine that's been modified to accept various items in exchange for copper Edisons. \
 			A sign on it reads, 'Keep your workplace clean and get paid doing it!' \
 			It's better than a trash can, at least."
 	icon = 'icons/WVM/machines.dmi'
@@ -18,18 +18,17 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 	var/stored_caps = 0	// store caps
 	var/expected_price = 0
-	var/list/prize_list = list()  // Once this is readded to the map, I need to do some testing regarding gunpowder. See if I can't bully the commie reloading bench to death.
+	var/list/prize_list = list()  // infinite profits should be crap, more limited profits should be good. Should never be better than cargo.
 	var/trader_key = WVM_SCRAPPER
+
 
 	/// List of things it buys, and allows any of its children into the buy list
 	var/list/buyables_loose = list(
 		/obj/item/stack/sheet/metal = 0.4,
 		/obj/item/stack/sheet/mineral/titanium = 0.8,
 		/obj/item/stack/sheet/plasteel = 2,
-		/obj/item/stack/sheet/cloth = 1,
 		/obj/item/stack/ore/blackpowder = 1,
 		/obj/item/stack/sheet/prewar = 2,
-		/obj/item/stack/sheet/leather = 1,
 		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/mineral/plastitanium = 3,
 		/obj/item/reagent_containers/hypospray = 1,
@@ -50,6 +49,21 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/advanced_crafting_components = 15,
 		/obj/item/stealthboy = 100,
 		/obj/item/blueprint/research = 25,
+		/obj/item/stack/sheet/bone = 4,
+		/obj/item/stack/sheet/cloth = 0.2, // low because botany and because use this for medical supplies you drongo
+		/obj/item/stack/sheet/leather = 0.8,
+		/obj/item/reagent_containers/food/snacks/meat = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/human = 0,
+		/obj/item/stack/sheet/animalhide = 3,
+		/obj/item/clothing/suit/armor = 10,
+		/obj/item/clothing/head/helmet = 10,
+		/obj/item/clothing/suit/armor/heavy/salvaged_pa = 30,
+		/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa = 30,
+		/obj/item/clothing/suit/armor/power_armor = 75,
+		/obj/item/clothing/head/helmet/f13/power_armor = 75,
+		/obj/item/melee = 5,
+		/obj/item/melee/transforming = 5,
+		/obj/item/gun/energy/laser = 15,
 		// pistols/revolvers, 5 caps
 		/obj/item/gun/ballistic/revolver = 5,
 		/obj/item/gun/ballistic/automatic/pistol = 5,
@@ -94,24 +108,40 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(
+		/obj/item/gun/ballistic/automatic/autopipe = 0,
+		/obj/item/gun/ballistic/rifle/hobo/lasmusket = 0,
+		/obj/item/gun/ballistic/rifle/hobo/plasmacaster = 0,
+		/obj/item/gun/ballistic/automatic/hobo/destroyer = 0,
+		/obj/item/gun/ballistic/rifle/hunting/obrez = 0,
+		/obj/item/gun/ballistic/revolver/winchesterrebored = 0,
+		/obj/item/gun/ballistic/revolver/brick = 0,
+		/obj/item/gun/ballistic/revolver/sling/staff = 0,
+		/obj/item/gun/ballistic/automatic/hobo/zipgun = 0,
+		/obj/item/gun/ballistic/revolver/hobo/piperifle = 0,
+		/obj/item/gun/ballistic/revolver/hobo/piperifle/romckit = 0,
+		/obj/item/gun/ballistic/revolver/hobo/pepperbox = 0,
+		/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 0,
+		/obj/item/gun/ballistic/revolver/hobo/knifegun = 0,
+		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 0,
 		/obj/item/stack/sheet/animalhide/chitin = 1,
 		/obj/item/stack/sheet/animalhide/deathclaw = 25,
-		/obj/item/stack/sheet/animalhide/gecko = 2,
-		/obj/item/stack/sheet/animalhide/molerat = 2,
-		/obj/item/stack/sheet/animalhide/wolf = 5,
-		/obj/item/stack/sheet/animalhide/radstag = 5,
-		/obj/item/stack/sheet/animalhide/brahmin = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 15,
-		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 3,
+		/obj/item/stack/sheet/animalhide/gecko = 3,
+		/obj/item/stack/sheet/animalhide/molerat = 3,
+		/obj/item/stack/sheet/animalhide/wolf = 10,
+		/obj/item/stack/sheet/animalhide/radstag = 15,
+		/obj/item/stack/sheet/animalhide/brahmin = 8,
+		/obj/item/stack/sheet/animalhide/human = 0,
+		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 25, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 10,
+		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 3,
+		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6,
+		/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 12,
+		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2,
+		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 4,
 		/obj/item/stock_parts/capacitor/adv = 3,
 		/obj/item/stock_parts/scanning_module/adv = 3,
 		/obj/item/stock_parts/manipulator/nano = 3,
@@ -170,12 +200,15 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/trappist = 15,
 		/obj/item/export/bottle/goldschlager = 15,
 		/obj/item/export/bottle/patron = 15,
+		/obj/item/card/lowbounty = 100,
+		/obj/item/card/midbounty = 200,
+		/obj/item/card/highbounty = 400,
+		/obj/item/card/kingbounty = 800,
 	)
-	var/list/goods_list = list()
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
 	var/sales_timer
-	var/datum/progressbar/stored/my_bar
+	var/my_bar
 	var/start_time = 0
 	var/end_time = 0
 	var/datum/looping_sound/grinding_noises/soundloop
@@ -241,7 +274,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /obj/machinery/mineral/wasteland_trader/examine(mob/user)
 	. = ..()
-	. += span_notice("To use, insert items you want to sell, and then press the big CONFIRM SALE button. This will destroy the items and give you caps.")
+	. += span_notice("To use, insert items you want to sell, and then press the big CONFIRM SALE button. This will destroy the items and give you Edisons.")
 	. += span_notice("ALT-click this machine to open its internal sales-hopper.")
 	. += span_notice("Click the item on the button inside the machine's inventory to see how much it's worth.")
 
@@ -281,10 +314,17 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Bolt Rifles and Shotguns: 10¢<br>"
 	dat += "Automatics and Semiautomatics: 15¢<br>"
 	dat += "Improvised Weapons: 0¢<br>"
-	dat += "Energy Weapons: 0¢ (for now)<br>"
-	dat += "Armor: 0¢ (for now)<br>"
-	dat += "Power Armor: 0¢ (for now)<br>"
-	dat += "Melee Weapons: 0¢ (for now)<br>"
+	dat += "Energy Weapons: 15¢<br>"
+	dat += "Armor: 10¢ (for now)<br>"
+	dat += "Salvaged Power Armor: 30¢<br>"
+	dat += "Power Armor: 75¢<br>"
+	dat += "Melee Weapons: 10¢<br>"
+	dat += "<br>"
+	dat += "<b>Turn your kills into coins today!</b><br>"
+	dat += "Small Roller Bounty Ticket: 100¢<br>"
+	dat += "Medium Roller Bounty Ticket: 200¢<br>"
+	dat += "High Roller Bounty Ticket: 400¢<br>"
+	dat += "King's Bounty Ticket: 800¢<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)
@@ -366,7 +406,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	STOP_PROCESSING(SSfastprocess, src)
 	unlock_belt()
 	soundloop.stop()
-	stop_progress_bar()
+	SSprogress_bars.remove_bar(my_bar)
 	playsound(src, 'sound/machines/ding.ogg', 90, 1)
 	deltimer(sales_timer)
 	is_grinding = FALSE
@@ -402,9 +442,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(istype(thing2sell, /obj/item/stack))
 		var/obj/item/stack/S = thing2sell
 		final_price = S.amount * final_price
-	var/time2sell = final_price * 0.5 SECONDS
+	var/time2sell = final_price * 0.1 SECONDS
 	say("Now processing [thing2sell]!", just_chat = TRUE)
-	start_progress_bar(time2sell)
+	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
 	lock_belt()
 	sales_timer = addtimer(CALLBACK(src, .proc/sell_loop_end, thing2sell), time2sell, TIMER_STOPPABLE)
@@ -432,7 +472,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(fractional)
 		payout_fractional(fractional)
 	var/storedcaps = payout(final_price)
-	say("Sold [I] for [final_price] caps, bringing the total to [storedcaps] copper!")
+	say("Sold [I] for [final_price] Edisons, bringing the total to [storedcaps] copper!")
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()
@@ -553,37 +593,6 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			return thingy
 	return
 
-/obj/machinery/mineral/wasteland_trader/proc/start_progress_bar(goal_time)
-	if(!goal_time)
-		return
-	if(!istype(my_bar))
-		my_bar = new /datum/progressbar/stored(null, goal_time, src)
-	my_bar.show_bar()
-	my_bar.set_new_goal(goal_time)
-	start_time = world.time
-	end_time = goal_time + world.time
-	START_PROCESSING(SSfastprocess, src)
-
-/obj/machinery/mineral/wasteland_trader/proc/stop_progress_bar()
-	STOP_PROCESSING(SSfastprocess, src)
-	end_time = 0
-	my_bar.hide_bar()
-	update_overlays()
-
-/obj/machinery/mineral/wasteland_trader/process()
-	if(!my_bar)
-		return
-	update_overlays()
-	if(world.time >= end_time && !is_grinding)
-		stop_progress_bar()
-
-/obj/machinery/mineral/wasteland_trader/update_overlays()
-	. = ..()
-	cut_overlays()
-	if(!my_bar || !is_grinding)
-		return
-	my_bar.update(world.time - start_time)
-	add_overlay(my_bar.bar)
 
 /*
 
@@ -597,7 +606,7 @@ ORGAN SELLER
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "organs"
 
-	goods_list = list( /obj/item/organ/heart = 30,
+	buyables_loose = list( /obj/item/organ/heart = 30,
 								/obj/item/organ/ears = 5,
 								/obj/item/organ/eyes = 5,
 								/obj/item/organ/liver = 15,
@@ -637,17 +646,18 @@ Fence
 
 */
 
-/obj/machinery/mineral/wasteland_trader/brotherhood
+/obj/machinery/mineral/wasteland_trader/bountyticket
 	name = "Nash Bounty Ticket Machine"
-	desc = "This vending machine accepts bounty tickets in exchange for caps. Make the Wasteland safer, and yourself richer, one bullet at a time."
+	desc = "This vending machine accepts bounty tickets in exchange for copper. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
-	goods_list = list( 	/obj/item/card/lowbounty = 100,
+	buyables_loose = list(
+						/obj/item/card/lowbounty = 100,
 						/obj/item/card/midbounty = 200,
 						/obj/item/card/highbounty = 400,
 						/obj/item/card/kingbounty = 800
 								)
 
-/obj/machinery/mineral/wasteland_trader/brotherhood/ui_interact(mob/user)
+/obj/machinery/mineral/wasteland_trader/bountyticket/ui_interact(mob/user)
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
@@ -655,11 +665,11 @@ Fence
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Turn your kills into caps today!</b><br>"
-	dat += "Small Roller Bounty Ticket: 1 copper<br>"
-	dat += "Medium Roller Bounty Ticket: 200 copper<br>"
-	dat += "High Roller Bounty Ticket: 400 copper<br>"
-	dat += "King's Bounty Ticket: 800 copper<br>"
+	dat += "<b>Turn your kills into copper today!</b><br>"
+	dat += "Small Roller Bounty Ticket: 100¢<br>"
+	dat += "Medium Roller Bounty Ticket: 200¢<br>"
+	dat += "High Roller Bounty Ticket: 400¢<br>"
+	dat += "King's Bounty Ticket: 800¢<br>"
 	dat += ""
 	dat += "</div>"
 
@@ -671,7 +681,7 @@ Fence
 /obj/machinery/mineral/wasteland_trader/gunbuyer
 	name = "Gun Repository"
 	desc = "Place weapon inside slot. Weapon is sent out of the region for post-processing. Recieve compensation. Yuma Wasteland Supply Inc. thanks you for disarming the wasteland."
-	goods_list = list(/obj/item/gun/ballistic/automatic/hobo/zipgun = 5,
+	buyables_loose = list(/obj/item/gun/ballistic/automatic/hobo/zipgun = 5,
 						/obj/item/gun/ballistic/revolver/hobo = 5,
 						/obj/item/gun/ballistic/revolver/detective = 5,
 						/obj/item/gun/ballistic/revolver/hobo = 8,

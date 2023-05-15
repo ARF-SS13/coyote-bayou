@@ -53,7 +53,7 @@
 	regenerate_icons()
 	GLOB.pokemon_list += src
 
-//Can be applied to any mob, not just pokemon
+///Will recenter a mob's icon on their tile if it's wider than 32 pixels. Will do nothing if it's 32 or less. To use correctly, position the mob in the center of the icon_state in your dmi.
 /mob/proc/recenter_wide_sprite()
 	var/icon/I = icon(icon)
 	var/icon_width = I.Width()

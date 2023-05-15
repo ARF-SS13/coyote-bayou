@@ -126,6 +126,8 @@
 	#define COMPONENT_RAD_WAVE_HANDLED (1<<0)
 ///from internal loop in the base of /atom/movable/proc/get_locs(): (list/locs)
 #define COMSIG_ATOM_GET_LOCS "atom_get_locs"
+///When a thing is adminspawned, signal
+#define COMSIG_ATOM_POST_ADMIN_SPAWN "atom_post_admin_spawn"
 
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"		//from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"		//called when teleporting into a protected turf: (channel, turf/origin, turf/destination)
@@ -429,6 +431,11 @@
 	// Uncovered information
 	#define COMPONENT_DEEPSCAN_UNCOVERED_INFORMATION		1
 #define COMSIG_ITEM_MINE_TRIGGERED "itemineboom"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
+
+/// datum/source, mob/spawner
+#define COMSIG_ITEM_MOB_DROPPED "mobdropped"	/// from [/mob/living/simple_animal/proc/drop_loot()]
 
 // /obj/item/grenade signals
 #define COMSIG_GRENADE_PRIME "grenade_prime"					//called in /obj/item/gun/process_fire (user, target, params, zone_override)

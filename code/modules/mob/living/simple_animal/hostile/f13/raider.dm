@@ -15,8 +15,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	melee_damage_lower = 5
 	melee_damage_upper = 14
 	attack_verb_simple = "clobbers"
@@ -108,8 +108,8 @@
 	icon_living = "raider_ranged"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 85
-	health = 85
+	maxHealth = 80
+	health = 80
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
@@ -121,7 +121,7 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
-	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
+	loot = list(/obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	variation_list = list(
@@ -387,8 +387,8 @@
 	icon_living = "firefighter_raider"
 	icon_dead = "firefighter_raider_dead"
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	loot = list(/obj/item/twohanded/fireaxe, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -616,8 +616,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	melee_damage_lower = 10
 	melee_damage_upper = 24
 	attack_verb_simple = "clobbers"
@@ -686,8 +686,8 @@
 	icon_dead = "cultist_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 85
-	health = 85
+	maxHealth = 80
+	health = 80
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
@@ -724,8 +724,8 @@
 	icon_dead = "cultist2_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 85
-	health = 85
+	maxHealth = 80
+	health = 80
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot

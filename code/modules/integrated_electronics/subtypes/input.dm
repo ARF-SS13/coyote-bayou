@@ -347,11 +347,11 @@
 		set_pin_data(IC_OUTPUT, 2, H.desc)
 
 		if(istype(H, /mob/living))
-			var/mob/living/carbon/human/D = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_EXAMINER)
+			var/mob/living/carbon/human/D = SSdummy.get_a_dummy()
 			var/msg = H.examine(D)
 			if(msg)
 				set_pin_data(IC_OUTPUT, 2, msg)
-			unset_busy_human_dummy(DUMMY_HUMAN_SLOT_EXAMINER)
+			SSdummy.return_dummy(D)
 
 		set_pin_data(IC_OUTPUT, 3, H.x-T.x)
 		set_pin_data(IC_OUTPUT, 4, H.y-T.y)

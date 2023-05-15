@@ -320,7 +320,7 @@
 	name = "Auto-pipe rifle"
 	desc = "The pride of wasteland engineering, a fully automatic, belt fed pipe machine gun. Despite looking like the scrap heap it was \
 		made from, and its eagerness to fire before fully chambering, many wasters swear by its overwhelming firepower, capable of delivering \
-		24 or so .357 magnum bullets into some unlucky beast before needing to reload. Not only does its loose receiver accept 9mm, .38 special, \
+		24 or so .357 magnum bullets into some unlucky beast before needing to reload. Not only does its loose receiver accept 9mm, literal fucking rocks, .38 special, \
 		and .357 magnum with ease, but it also can survive dozens of premature detonations without a scratch!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -523,7 +523,7 @@
 
 /obj/item/gun/ballistic/revolver/sling
 	name = "sling"
-	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed."
+	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Use *rocks to find more rocks!"
 	icon = 'modular_coyote/icons/objects/bows.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
@@ -550,7 +550,7 @@
 
 /obj/item/gun/ballistic/revolver/sling/staff
 	name = "sling staff"
-	desc = "A sling hooked onto a wooden pole, for more leverage."
+	desc = "A sling hooked onto a wooden pole, for more leverage. Use *rocks to find more rocks!"
 	icon_state = "slingstaff"
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -561,7 +561,7 @@
 
 /obj/item/gun/ballistic/revolver/brick
 	name = "brick launcher"
-	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."
+	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity. You can probably find more bricks with *brick!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "launcher"
 	item_state = "rocketlauncher"

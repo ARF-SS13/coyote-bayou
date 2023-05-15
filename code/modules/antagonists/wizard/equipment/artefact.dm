@@ -127,7 +127,7 @@
 
 /obj/item/scrying
 	name = "scrying orb"
-	desc = "An incandescent orb of otherworldly energy, staring into it gives you vision beyond mortal means."
+	desc = "An incandescent orb of otherworldly energy, made of a cold material from before-war structures arranged in arrays of bizzare geometry. Staring into it gives you vision beyond mortal means."
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state ="bluespace"
 	throw_speed = 3
@@ -136,21 +136,21 @@
 	damtype = BURN
 	force = 15
 	hitsound = 'sound/items/welder2.ogg'
-
-	var/xray_granted = FALSE
-
-/obj/item/scrying/equipped(mob/user)
-	if(!xray_granted && ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(!(H.dna.check_mutation(XRAY)))
-			H.dna.add_mutation(XRAY)
-			xray_granted = TRUE
-	. = ..()
+	var/cooldown_time = 1000 //15 min
+	var/cooldown = 0
 
 /obj/item/scrying/attack_self(mob/user)
-	to_chat(user, span_notice("You can see...everything!"))
-	visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
-	user.ghostize(1, voluntary = TRUE)
+	if(cooldown <= world.time)
+		to_chat(user, span_notice("Your eyes glaze over. Warmth bathes your body. The mind wanders."))
+		visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
+		user.ghostize(1, voluntary = TRUE)
+		cooldown = world.time + cooldown_time
+		return
+	if(cooldown > world.time)
+		to_chat(user, span_warning("The orb is murky, your power drained."))
+		return
+	return
+
 
 /////////////////////////////////////////Necromantic Stone///////////////////
 

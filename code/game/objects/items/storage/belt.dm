@@ -849,3 +849,9 @@
 	desc = "An old style of bandolier used by primarily those who ride upon horses."
 	icon_state = "boer_band"
 	item_state = "boer_band"
+
+/obj/item/storage/belt/military/french_webbing
+	name = "french webbing"
+	desc = "A versatile chest rig, this one seems to be used in long bread enviroments and such"
+	icon_state = "french_webbing"
+	item_state = "french_webbing"

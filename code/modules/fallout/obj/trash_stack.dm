@@ -8,60 +8,66 @@
 	var/list/loot_players = list()
 	var/list/lootable_trash = list()
 	var/list/garbage_list = list()
-
+/*
 /obj/item/storage/trash_stack/proc/initialize_lootable_trash()
-	garbage_list = list(GLOB.trash_ammo, GLOB.trash_chem, GLOB.trash_clothing, GLOB.trash_craft,
+	lootable_trash = list(/obj/effect/spawner/lootdrop/f13/trash)
+	/*garbage_list = list(GLOB.trash_ammo, GLOB.trash_chem, GLOB.trash_clothing, GLOB.trash_craft,
 						GLOB.trash_gun, GLOB.trash_misc, GLOB.trash_money, GLOB.trash_mob,
 						GLOB.trash_part, GLOB.trash_tool, GLOB.trash_attachment)
 	lootable_trash = list() //we are setting them to an empty list so you can't double the amount of stuff
 	for(var/i in garbage_list)
 		for(var/ii in i)
-			lootable_trash += ii
-
+			lootable_trash += ii*/
+*/
 /obj/item/storage/trash_stack/Initialize()
 	. = ..()
 	icon_state = "trash_[rand(1,3)]"
-	GLOB.trash_piles += src
-	initialize_lootable_trash()
+	GLOB.trash_piles += WEAKREF(src)
+//	initialize_lootable_trash()
 
 /obj/item/storage/trash_stack/Destroy()
-	GLOB.trash_piles -= src
+	GLOB.trash_piles -= WEAKREF(src)
 	. = ..()
 
+/// Called from [code/controllers/subsystem/itemspawners.dm]
+/obj/item/storage/trash_stack/proc/cleanup()
+	loot_players.Cut() //This culls a list safely
+	for(var/obj/item/A in loc.contents)
+		if(A.from_trash)
+			qdel(A)
+
 /obj/item/storage/trash_stack/attack_hand(mob/user)
-	var/turf/ST = get_turf(src)
-	if(user in loot_players)
+	var/turf/trash_turf = get_turf(src)
+	var/ukey = ckey(user?.ckey)
+	if(!ukey)
+		to_chat(user, span_alert("You need a ckey to search the trash! Gratz on not having a ckey, tell Lagg (a coder) about it!"))
+	if(ukey in loot_players)
 		to_chat(user, span_notice("You already have looted [src]."))
 		return
-	for(var/i=0, i<rand(1,4), i++)
-		var/itemtype= pickweight(lootable_trash)
-		//var/itemtypebonus= pickweight(lootable_trash)
-		if(itemtype)
-			to_chat(user, span_notice("You scavenge through [src]."))
-			var/atom/newthing = new itemtype(ST)
-			//if (prob(10+(user.special_l*3.5)))//SPECIAL Integration
-			//	to_chat(user, span_notice("You get lucky and find even more loot!"))
-			//	var/obj/item/bonusitem = new itemtypebonus(ST)
-			//	if(istype(bonusitem))
-			//		bonusitem.from_trash = TRUE
-			if(istype(newthing))
-				var/obj/item/newitem = newthing
-				newitem?.from_trash = TRUE // Fixes some objects not having the "from_trash" var
-				if(isgun(newitem))
-					var/obj/item/gun/trash_gun = newitem
-					var/prob_trash = 80
-					while(prob_trash > 0)
-						if(prob(prob_trash))
-							var/trash_mod_path = pick(GLOB.trash_gunmods)
-							var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
-							if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
-								break
-							QDEL_NULL(trash_mod)
-						prob_trash -= 40
-	loot_players += user
-
-
-
+	loot_players += ukey
+	for(var/i in 1 to rand(1,4))
+		var/list/trash_passthru = list()
+		to_chat(user, span_notice("You scavenge through [src]."))
+		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(trash_turf)
+		my_trash.spawn_the_stuff(trash_passthru) // fun fact, lists are references, so this'll be populated when the proc runs (cool huh?)
+		
+		for(var/atom/movable/spawned in trash_passthru)
+			if(isitem(spawned))
+				var/obj/item/newitem = spawned
+				newitem.from_trash = TRUE
+			if(isgun(spawned))
+				var/obj/item/gun/trash_gun = spawned
+				var/prob_trash = 80
+				for(var/tries in 1 to 3)
+					if(!prob(prob_trash))
+						continue
+					prob_trash -= 40
+					var/trash_mod_path = pick(GLOB.trash_gunmods)
+					var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
+					if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
+						break
+					QDEL_NULL(trash_mod)
+// lov dan
 /obj/item/storage/money_stack
 	name = "payroll safe"
 	desc = "a payroll safe. Use it every hour to recieve your pay."
@@ -87,7 +93,7 @@
 	. = ..()
 
 /obj/item/storage/money_stack/attack_hand(mob/user)
-	var/turf/ST = get_turf(src)
+	var/turf/trash_turf = get_turf(src)
 	if(user?.a_intent != INTENT_HARM)
 		if(user in paid_players)
 			to_chat(user, span_notice("You have already taken your pay from the [src]."))
@@ -96,7 +102,7 @@
 			var/itemtype = pick(pay)
 			if(itemtype)
 				to_chat(user, span_notice("You get your pay from the [src]."))
-				new itemtype(ST)
+				new itemtype(trash_turf)
 		paid_players += user
 	else
 		return ..()
@@ -107,10 +113,11 @@
 	icon = 'icons/fallout/objects/crafting.dmi'
 	icon_state = "trash_1"
 
+/*
 /obj/item/storage/trash_stack/debug_rats/initialize_lootable_trash()
 	garbage_list = list(GLOB.trash_mob) // oops all rats!
 	lootable_trash = list() //we are setting them to an empty list so you can't double the amount of stuff
 	for(var/i in garbage_list)
 		for(var/ii in i)
 			lootable_trash += ii
-
+*/

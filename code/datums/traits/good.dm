@@ -272,6 +272,22 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
 
+/* //placeholder test concluded
+/datum/quirk/wizard
+	name = "Wasteland Wizard"
+	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit. This isn't a lisence to be a greifer or break rules. "
+	value = 4
+	mob_trait = TRAIT_SWAMPWIZARD
+	gain_text = span_notice("You know everything about magic.")
+	lose_text = span_danger("You forgor how the magic.")
+
+/datum/quirk/wizard/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/spellbook/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.regenerate_icons()
+*/
+
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds. Sort of like being a medical scanner for yourself."
@@ -864,7 +880,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "You hit the shots you aim. No ifs, ands, or buts."
-	value = 6
+	value = 4
 	mob_trait = TRAIT_INSANE_AIM
 	gain_text = span_notice("Your aim is legendary, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -873,7 +889,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 /datum/quirk/straightshooter
 	name = "Straight Shooter"
 	desc = "You're a better than average shot."
-	value = 4
+	value = 2
 	mob_trait = TRAIT_NICE_SHOT
 	gain_text = span_notice("Your aim is amazing, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")

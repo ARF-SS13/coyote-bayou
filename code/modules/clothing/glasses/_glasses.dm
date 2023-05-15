@@ -269,37 +269,44 @@
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 0.8
+	block_chance = 10
 
 /obj/item/clothing/glasses/sunglasses/garb/supergarb
 	name = "black giga gar glasses"
 	desc = "Believe in us humans."
 	icon_state = "supergarb"
 	item_state = "garb"
-	force = 12
-	throwforce = 12
-
+	force = 23
+	throwforce = 23
+	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 0.8
+	block_chance = 10
 /obj/item/clothing/glasses/sunglasses/gar
 	name = "gar glasses"
 	desc = "Just who the hell do you think I am?!"
 	icon_state = "gar"
 	item_state = "gar"
-	force = 10
-	throwforce = 10
+	force = 23
+	throwforce = 23
 	throw_speed = 4
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
 	glass_colour_type = /datum/client_colour/glass_colour/orange
-
+	attack_speed = CLICK_CD_MELEE * 0.8
+	block_chance = 10
 /obj/item/clothing/glasses/sunglasses/gar/supergar
 	name = "giga gar glasses"
 	desc = "We evolve past the person we were a minute before. Little by little we advance with each turn. That's how a drill works!"
 	icon_state = "supergar"
 	item_state = "gar"
-	force = 12
-	throwforce = 12
+	force = 23
+	throwforce = 23
+	sharpness = SHARP_EDGED
 	glass_colour_type = /datum/client_colour/glass_colour/red
-
+	attack_speed = CLICK_CD_MELEE * 0.8
+	block_chance = 10
 /obj/item/clothing/glasses/sunglasses/stunglasses
 	name = "stunglasses"
 	desc = "Sunglasses with inbuilt flashes. Made for those who prefer to walk around in style, who needs clumsy flashes anyway?"

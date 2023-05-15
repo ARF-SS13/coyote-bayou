@@ -324,18 +324,18 @@
 	if(!sparkle_tag)
 		qdel(sparkle) // no real point in keeping it if it's empty
 		return
-	var/already_special = !istype(parent, /obj/structure/nest/special) || LAZYLEN(special_mobs)
+	var/be_special = istype(parent, /obj/structure/nest/special)
 	special_mobs |= sparkle
-	if(!already_special)
+	if(be_special)
 		var/atom/sponer = parent
 		sponer.name = despawn_me.name
 		sponer.desc = despawn_me.desc
 		sponer.icon = despawn_me.icon
 		sponer.icon_state = despawn_me.icon_state
 		sponer.color = despawn_me.color
+		start_spawning()
 		// nobody'll know the difference~
 	qdel(despawn_me)
-	start_spawning()
 
 /// If anything asks if we have a spawner, we say yes.
 /datum/component/spawner/proc/has_spawner()

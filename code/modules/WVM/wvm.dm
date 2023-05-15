@@ -9,9 +9,9 @@
 #define CASH_CAP_VENDOR 1
 
 /* exchange rates X * CAP*/
-#define CASH_AUR_VENDOR 100 /* 100 caps to 1 AUR */
-#define CASH_DEN_VENDOR 4 /* 4 caps to 1 DEN */
-#define CASH_NCR_VENDOR 0.4 /* $100 to 40 caps */
+#define CASH_AUR_VENDOR 100 /* 100 copper to 1 gold */
+#define CASH_DEN_VENDOR 10 /* 10 copper to 1 silver */
+#define CASH_NCR_VENDOR 0.5 /* $100 to 50 copper */
 
 // Total number of caps value spent in the Trading Protectrons Vendors
 GLOBAL_VAR_INIT(vendor_cash, 0)
@@ -137,7 +137,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 		Itm.forceMove(src)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You loaded [Itm.name] to vending machine. New price - [content[Itm]] caps..")
+		to_chat(usr, "You loaded [Itm.name] to vending machine. New price - [content[Itm]] copper.")
 		src.ui_interact(usr)
 	else
 		if(!item_allowed)
@@ -174,13 +174,13 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(I.use(expected_price))
 			stored_caps += expected_price
 			playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-			to_chat(usr, "You put [expected_price] caps to a vending machine. [vending_item.name] is vended out of it. ")
+			to_chat(usr, "You put [expected_price] copper to a vending machine. [vending_item.name] is vended out of it. ")
 			remove_item(vending_item)
 			set_state(STATE_IDLE)
 			onclose(usr, "vending")
 		else
 			playsound(src, 'sound/machines/DeniedBeep.ogg', 60, 1)
-			to_chat(usr, "Not enough caps.")
+			to_chat(usr, "Not enough copper.")
 
 /* Spawn all caps on world and clear caps storage */
 /obj/machinery/trading_machine/proc/remove_all_caps()
@@ -425,14 +425,14 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 				for(var/obj/item/Itm in content)
 					var/item_name = url_encode(Itm.name)
 					var/price = content[Itm]
-					dat += "<a href='byond://?src=\ref[src];vend=[item_name];current_price=[price]'>[Itm.name] | [price] caps</a> "
+					dat += "<a href='byond://?src=\ref[src];vend=[item_name];current_price=[price]'>[Itm.name] | [price] copper</a> "
 					dat += "<a href='byond://?src=\ref[src];examine=[item_name];current_price=[price]'>Examine</a><br> "
 
 		//--- Service
 		if(STATE_SERVICE)
 			dat += "<h3>Machine setup menu</h3>"
 			dat += "<div class='statusDisplay'>"
-			dat += "<font color='green'>Caps stored - [stored_caps]</font>"
+			dat += "<font color='green'>copper stored - [stored_caps]</font>"
 			dat += "<a href='?src=\ref[src];removecaps=1'>Unload</a>"
 			dat += "<h4> Items </h4> "
 
@@ -670,7 +670,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Civilian Weapon Kit 		(Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,									50),
 		new /datum/data/wasteland_equipment("Beretta M93R 				(9mm)",						/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,		150),
 		new /datum/data/wasteland_equipment("Sig P220 					(.45)",						/obj/item/gun/ballistic/automatic/pistol/sig,					150),
-		new /datum/data/wasteland_equipment("M1 Carbine 				(10mm)",					/obj/item/gun/ballistic/automatic/m1carbine,					150),
+		new /datum/data/wasteland_equipment("10mm SMG 					(10mm)",					/obj/item/gun/ballistic/automatic/smg/smg10mm,					150),
 		new /datum/data/wasteland_equipment("Lee Enfield 				(.308)",					/obj/item/gun/ballistic/rifle/enfield,							150),
 		new /datum/data/wasteland_equipment("Hunting Rifle 				(.30-06)",					/obj/item/gun/ballistic/rifle/hunting,							150),
 		new /datum/data/wasteland_equipment("Hunting Shotgun 			(12 gauge)",				/obj/item/gun/ballistic/shotgun/hunting,						150),
@@ -678,7 +678,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Surplus Nash Auto Rifle 	(5mm)",						/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,	200),
 		new /datum/data/wasteland_equipment("Compliance Regulator 		(SEC)",						/obj/item/gun/energy/laser/complianceregulator,					200),
 		new /datum/data/wasteland_equipment("AEP-7 						(SEC)",						/obj/item/gun/energy/laser/pistol,								200),
-		new /datum/data/wasteland_equipment("Compact RCW 				(ECP)",						/obj/item/gun/energy/laser/auto,								200),
+		new /datum/data/wasteland_equipment("Pulse Pistol 				(ECP)",						/obj/item/gun/energy/ionrifle/compact,							200),
 		new /datum/data/wasteland_equipment("AER-9 						(MFC)",						/obj/item/gun/energy/laser/aer9,								200),
 		new /datum/data/wasteland_equipment("Seclite Flashlight",			/obj/item/flashlight/seclite,										25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				25),
@@ -690,7 +690,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Civilian Weapon Kit 		(Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,									50),
 		new /datum/data/wasteland_equipment("Beretta M93R 				(9mm)",						/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,		150),
 		new /datum/data/wasteland_equipment("Sig P220 					(.45)",						/obj/item/gun/ballistic/automatic/pistol/sig,					150),
-		new /datum/data/wasteland_equipment("M1 Carbine 				(10mm)",					/obj/item/gun/ballistic/automatic/m1carbine,					150),
+		new /datum/data/wasteland_equipment("10mm SMG 					(10mm)",					/obj/item/gun/ballistic/automatic/smg/smg10mm,					150),
 		new /datum/data/wasteland_equipment("Lee Enfield 				(.308)",					/obj/item/gun/ballistic/rifle/enfield,							150),
 		new /datum/data/wasteland_equipment("Hunting Rifle 				(.30-06)",					/obj/item/gun/ballistic/rifle/hunting,							150),
 		new /datum/data/wasteland_equipment("Hunting Shotgun 			(12 gauge)",				/obj/item/gun/ballistic/shotgun/hunting,						150),
@@ -698,7 +698,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Surplus Nash Auto Rifle 	(5mm)",						/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,	200),
 		new /datum/data/wasteland_equipment("Compliance Regulator 		(SEC)",						/obj/item/gun/energy/laser/complianceregulator,					200),
 		new /datum/data/wasteland_equipment("AEP-7 						(SEC)",						/obj/item/gun/energy/laser/pistol,								200),
-		new /datum/data/wasteland_equipment("Compact RCW 				(ECP)",						/obj/item/gun/energy/laser/auto,								200),
+		new /datum/data/wasteland_equipment("Pulse Pistol 				(ECP)",						/obj/item/gun/energy/ionrifle/compact,							200),
 		new /datum/data/wasteland_equipment("AER-9 						(MFC)",						/obj/item/gun/energy/laser/aer9,								200),
 		new /datum/data/wasteland_equipment("Seclite Flashlight",			/obj/item/flashlight/seclite,										25),
 		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				25),
@@ -842,23 +842,41 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Signaler",	/obj/item/cartridge/signal,								10),
 		)
 
-
 /obj/machinery/mineral/wasteland_vendor/special
-	name = "Wasteland Vending Machine - Special"
+	name = "Nash Vending Machine - Money Exchanger"
+	desc = "An automated machine that exhanges copper coins for more valuable ones. However, it takes a 20% cut."
 	icon_state = "liberationstation_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Random manual",					/obj/item/book/manual/random,									40),
-		new /datum/data/wasteland_equipment("Box of ingredients - American",	/obj/item/storage/box/ingredients/american,						80),
-		new /datum/data/wasteland_equipment("Box of ingredients - Wildcard", 	/obj/item/storage/box/ingredients/wildcard, 						80),
-		//// new /datum/data/wasteland_equipment("Music box",						/obj/item/holodisk/musicbox,								400),
-		new /datum/data/wasteland_equipment("???",								/obj/item/toy/syndicateballoon,									500)
+		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						12),
+		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						24),
+		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						48),
+		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						120),
+		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						60),
+		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						120),
+		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					240),
+		new /datum/data/wasteland_equipment("Silver Dollar x1", 		/obj/item/stack/f13Cash/aureus, 							120),
+		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						600),
+		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1200),
+		new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120),
+		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 			/obj/item/card/midbounty, 						240),
+		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 			/obj/item/card/highbounty, 						480),
+		new /datum/data/wasteland_equipment("King's Bounty Ticket", 				/obj/item/card/kingbounty, 						960)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Random manual",					/obj/item/book/manual/random,									40),
-		new /datum/data/wasteland_equipment("Box of ingredients - American",	/obj/item/storage/box/ingredients/american,						80),
-		new /datum/data/wasteland_equipment("Box of ingredients - Wildcard", 	/obj/item/storage/box/ingredients/wildcard,						 80),
-		/// new /datum/data/wasteland_equipment("Music box",						/obj/item/holodisk/musicbox,								400),
-		new /datum/data/wasteland_equipment("???",								/obj/item/toy/syndicateballoon,									500)
+		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						12),
+		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						24),
+		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						48),
+		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						120),
+		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						60),
+		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						120),
+		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					240),
+		new /datum/data/wasteland_equipment("Silver Dollar x1", 		/obj/item/stack/f13Cash/aureus, 							120),
+		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						600),
+		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1200),
+		new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120),
+		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 			/obj/item/card/midbounty, 						240),
+		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 			/obj/item/card/highbounty, 						480),
+		new /datum/data/wasteland_equipment("King's Bounty Ticket", 				/obj/item/card/kingbounty, 						960)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents
@@ -996,10 +1014,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Currency conversion rates:</b><br>"
-	dat += "1 Bottle cap = [CASH_CAP_VENDOR] bottle caps value <br>"
-	dat += "1 NCR dollar = [CASH_NCR_VENDOR] bottle caps value <br>"
-	dat += "1 Denarius = [CASH_DEN_VENDOR] bottle caps value <br>"
-	dat += "1 Aureus = [CASH_AUR_VENDOR] bottle caps value <br>"
+	dat += "1 silver Edison = [CASH_DEN_VENDOR] copper Edisons <br>"
+	dat += "1 gold Edison = [CASH_AUR_VENDOR] copper Edisons <br>"
+	dat += "1 Trade Union scrip = [CASH_NCR_VENDOR] copper Edisons <br>"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
@@ -1070,7 +1087,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
-		var/inserted_value = FLOOR(currency.amount * 0.4, 1)
+		var/inserted_value = FLOOR(currency.amount * 0.5, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -1078,7 +1095,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
-		var/inserted_value = FLOOR(currency.amount * 4, 1)
+		var/inserted_value = FLOOR(currency.amount * 10, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)

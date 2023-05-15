@@ -143,48 +143,120 @@
 //////////Flags//////////
 /////////////////////////
 
+GLOBAL_LIST_EMPTY(all_flags)
+
 /obj/item/flag
 	name = "empty flag"
-	desc = "You could put some leather on this to make a flag."
-	density = 1
-	anchored = 1
-	w_class = 4
-
+	desc = "An empty post, just looking for someone to hang something up."
+	w_class = WEIGHT_CLASS_HUGE
 	layer = 4.1
 	icon = 'icons/obj/flags.dmi'
 	icon_state = "emptyflag"
 	item_state = "emptyflag"
-	var/faction = null
 	var/removing
 
 /obj/item/flag/Initialize()
 	. = ..()
 	AddComponent(/datum/component/largetransparency, y_size = 1)
+	init_flags()
+
+/obj/item/flag/examine(mob/user)
+	. = ..()
+	. += span_notice("Use a sheet of leather to change the flag's appearance.")
+
+/obj/item/flag/proc/init_flags()
+	if(LAZYLEN(GLOB.all_flags))
+		return
+	for(var/flag in typesof(/obj/item/flag))
+		var/obj/item/flag/F = flag
+		GLOB.all_flags[initial(F.name)] = F
+
+/obj/item/flag/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/stack/sheet/leather))
+		change_the_flag(user, I)
+		return
+	if(I.sharpness && icon_state != "emptyflag")
+		unflag(user, I)
+		return
+	. = ..()
+
+/obj/item/flag/proc/change_the_flag(mob/user, obj/item/stack/sheet/changeup)
+	if(!user)
+		return
+	if(CHECK_BITFIELD(obj_flags, IN_USE))
+		to_chat(user, span_alert("Someone's already messing with this!"))
+		return
+	if(!changeup.tool_use_check(user, 1))
+		to_chat(user, span_alert("You don't have the required materials to make a flag. 10 sheets of leather should do the trick!"))
+		return
+	if(!LAZYLEN(GLOB.all_flags))
+		init_flags()
+	var/new_flag = input(user, "What kind of flag do you want to put up?", "Flagoning") as null|anything in GLOB.all_flags
+	if(!new_flag)
+		to_chat(user, span_alert("Never mind!"))
+		return
+	ENABLE_BITFIELD(obj_flags, IN_USE)
+	to_chat(user, span_notice("You start putting up a [new_flag]..."))
+	if(!do_after(user, 10 SECONDS, target = src, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
+		DISABLE_BITFIELD(obj_flags, IN_USE)
+		to_chat(user, span_alert("You were interrupted!"))
+		return
+	changeup.use(1)
+	DISABLE_BITFIELD(obj_flags, IN_USE)
+	re_flag(GLOB.all_flags[new_flag])
+	to_chat(user, span_notice("You put up a [new_flag]!"))
+
+/obj/item/flag/proc/re_flag(new_flag)
+	if(!ispath(new_flag, /obj/item/flag))
+		return
+	var/obj/item/flag/F = new_flag
+	name = initial(F.name)
+	desc = initial(F.desc)
+	icon_state = initial(F.icon_state)
+	item_state = initial(F.item_state)
+	new /obj/item/stack/sheet/leather(get_turf(src))
+	update_icon()
+
+/obj/item/flag/proc/unflag(mob/user, obj/item/sharpthing)
+	if(!user)
+		return
+	if(CHECK_BITFIELD(obj_flags, IN_USE))
+		to_chat(user, span_alert("Someone's already messing with this!"))
+		return
+	if(!LAZYLEN(GLOB.all_flags))
+		init_flags()
+	ENABLE_BITFIELD(obj_flags, IN_USE)
+	to_chat(user, span_notice("You begin to remove the flag."))
+	if(!do_after(user, 10 SECONDS, target = src, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
+		DISABLE_BITFIELD(obj_flags, IN_USE)
+		to_chat(user, span_alert("You were interrupted!"))
+		return
+	DISABLE_BITFIELD(obj_flags, IN_USE)
+	re_flag(/obj/item/flag)
+	to_chat(user, span_notice("You tear down the flag!"))
+
 
 /obj/item/flag/ncr
-	name = "NCR flag"
-	desc = "A flag with a two headed bear, the symbol of the New California Republic."
+	name = "Two Bear flag"
+	desc = "A flag with a two headed bear, the symbol of the Chibeara Clan. Or something."
 	icon_state = "ncrflag"
 	item_state = "ncrflag"
-	faction = "NCR"
 
 /obj/item/flag/bos
-	name = "Brotherhood of Steel flag"
-	desc = "A red and black flag with a sword surrounded in gears and wings, in a dazzling gold."
+	name = "Flying Sword Magnet flag"
+	desc = "A red and black flag with a sword surrounded in magnets and wings, the symbol of the Fridgeknife clan. Or something."
 	icon_state = "bosflag"
 	item_state = "bosflag"
-	faction = FACTION_BROTHERHOOD
 
 /obj/item/flag/legion
-	name = "Legion flag"
-	desc = "A flag with a golden bull, the symbol of Caesar's Legion."
+	name = "Fat Unicorn flag"
+	desc = "A flag with a fat unicorn, the symbol of the Magiquestrian Pranceliance. Or something."
 	icon_state = "legionflag"
 	item_state = "legionflag"
-	faction = FACTION_LEGION
 
 /obj/item/flag/oasis
-	name = "Oasis flag"
-	desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Oasis."
+	name = "Crossflower flag"
+	desc = "A flag depicting a stylised pink flower on a green background, the symbol of the Feverblossom Family. Or something."
 	icon_state = "oasisflag"
 	item_state = "oasisflag"
 
@@ -193,110 +265,88 @@
 	desc = "A white flag with a turqoise cross on it representing the clinic doctors."
 	icon_state = "followersflag"
 	item_state = "followersflag"
-	faction = FACTION_FOLLOWERS
 
 /// Locust flag but renamed to bandit.
 
 /obj/item/flag/locust
-	name = "Bandit flag"
-	desc = "A flag with a skull, maybe it marking where the cemetary is."
+	name = "Grody Skull flag"
+	desc = "A flag with a skull, the symbol of the Grody Skull Gang. Or something."
 	icon_state = "locustflag"
 	item_state = "locustflag"
-	faction = "Locust"
 
 /// Gunner flag but renamed to Outlaw.
 
 /obj/item/flag/outlaw
-	name = "Outlaw flag"
-	desc = "A ragged flag with a skull emblazoned on it, commonly used by the local raider gangs."
+	name = "Knife Skull flag"
+	desc = "A ragged flag with a skull with a knife through its face, the symbol of the Peeper Pokers. Or something."
 	icon_state = "gunnerflag"
 	item_state = "gunnerflag"
-	faction = "Gunner"
 
 /obj/item/flag/yuma
 	name = "Yuma banner"
 	desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
 	icon_state = "cornflag"
 	item_state = "cornflag"
-	faction = "Oasis"
 
 /obj/item/flag/vtcc
-	name = "Vault-Tec Cityscape Coalition flag"
-	desc = "A flag reminiscent of that from old America. The symbol of Vault-Tec appropriated in place of the old stars sharing their colour, with 4 stripes in 2 colours."
+	name = "Liney-Dot flag"
+	desc = "A flag with a white circle and lines on top of red and white blocks, the symbol of the Stretched Out Asterisk Alliance. Or something"
 	icon_state = "vtccflag"
 	item_state = "vtccflag"
-	faction = "VTCC"
 
 /obj/item/flag/vtcc/highvhills
-	name = "High Valley Hills flag"
-	desc = "A flag with two white stripes, blue border and a red centre with a white Vault-Tec logo, turned on its side and stretched out."
+	name = "Tall Liney-Dot flag"
+	desc = "A flag with the Liney-Dot logo turned on its side and stretched out, the symbol of the Tall Terriers Troupe. Or something."
+	icon_state = "hvhflag"
+	item_state = "vtccflag"
 
 /obj/item/flag/khan
-	name = "Great Khans flag"
-	desc = "A flag worn and weathered from a long cherished history. A decorated smiling skull smiles mockingly upon those who challenge it."
+	name = "Horny Marauder flag"
+	desc = "A flag with a moustached skull wearing a helmet with horns on, the symbol of the Angry Andies. Or something"
 	icon_state = "khanflag"
 	item_state = "khanflag"
-	faction = "Great Khans"
 
-/obj/item/flag/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
-		visible_message(span_notice("[user] begins to make a flag."))
-		if(do_after(user, 60, target = src))
-			var/obj/item/stack/sheet/leather/H = I
-			if(H.use(1))
-				var/list/choices = list("Bandit", "Outlaw", "BOS", "Followers")
-				var/flag = input("Please choose which faction flag you wish to create.") in choices
-				switch(flag)
-					if("Bandit")
-						name = "Bandit flag"
-						desc = "A flag with a skull, maybe it marking where the cemetary is."
-						icon_state = "locustflag"
-						item_state = "locustflag"
-						faction = "Locust"
-					if("Outlaw")
-						name = "Outlaw flag"
-						desc = "A ragged flag with a skull emblazoned on it, commonly used by the local raider gangs."
-						icon_state = "gunnerflag"
-						item_state = "gunnerflag"
-						faction = "Gunner"
-					if(FACTION_BROTHERHOOD)
-						name = "BOS flag"
-						desc = "A red and black flag with a sword surrounded in gears and wings, in a dazzling gold."
-						icon_state = "bosflag"
-						item_state = "bosflag"
-						faction = FACTION_BROTHERHOOD
-					if("Followers")
-						name = "Clinic flag"
-						desc = "A white flag with a turqoise cross on it representing the clinic doctors."
-						icon_state = "followersflag"
-						item_state = "followersflag"
-						faction = FACTION_FOLLOWERS
-				update_icon()
-	else
-		attack_hand(user)
+/obj/item/flag/uk
+	name = "Red Asterisk flag"
+	desc = "A flag with a red asterisk overlaid on blue and white blocks, the symbol of the Criss Cross Crew. Or something."
+	icon_state = "ukflag"
+	item_state = "khanflag"
 
-/obj/item/flag/attack_hand(mob/user)
-	if(!removing && item_state != "emptyflag")
-		visible_message(span_notice("[user] begins to remove a flag."))
-		removing = TRUE
-		if(do_after(user, 30, target = src))
-			new /obj/item/stack/sheet/leather(loc)
-			name = "empty flag"
-			icon_state = "emptyflag"
-			item_state = "emptyflag"
-			faction = null
-			update_icon()
-			removing = FALSE
-	else
-		anchored = 0
-		..()
+/obj/item/flag/straya
+	name = "Mini Blue Asterisk flag"
+	desc = "A flag with a tiny red asterisk in the corner of a blue field with stars on, the symbol of the Criss Cross Correctional Colony. Or something."
+	icon_state = "strayaflag"
+	item_state = "khanflag"
 
-/obj/item/flag/dropped(mob/user)
-	..()
-	anchored = 1
+/obj/item/flag/raj
+	name = "Mini Red Asterisk-and-Circle flag"
+	desc = "A flag with a tiny red asterisk in the corner of a red field with a yellow circle on, the symbol of the Criss Cross Circle Court. Or something."
+	icon_state = "rajflag"
+	item_state = "khanflag"
 
-/obj/item/flag/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first)
-	dropped(thrower)
+/obj/item/flag/canada
+	name = "Mini Red Asterisk-and-Leaf flag"
+	desc = "A flag with a tiny red asterisk in the corner of a red field with a white leaf on, the symbol of the Criss Cross Cultivators. Or something."
+	icon_state = "rajflag"
+	item_state = "khanflag"
+
+/obj/item/flag/japan
+	name = "Red Dot flag"
+	desc = "A flag with a red circle on a white background, the symbol of the Lazor Sytez. Or something."
+	icon_state = "japanflag"
+	item_state = "khanflag"
+
+/obj/item/flag/germany
+	name = "Black Red and Yellow flag"
+	desc = "A flag with black, red, and yellow bars, the symbol of the Rotten Neapolitans. Or something."
+	icon_state = "germanyflag"
+	item_state = "khanflag"
+
+/obj/item/flag/usa
+	name = "Red White and Blue flag"
+	desc = "A flag with red and white stripes and a blue square full of stars, the symbol of the Pajama Pouncers. Or something."
+	icon_state = "usaflag"
+	item_state = "khanflag"
 
 
 /*   OLDER things that isnt the flags in a way, and how to use them in the upper things.

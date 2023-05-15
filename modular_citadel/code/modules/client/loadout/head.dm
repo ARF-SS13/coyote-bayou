@@ -254,13 +254,13 @@
 	name = "flak helmet"
 	path = /obj/item/clothing/head/flakhelm
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
-	cost = 2
+	cost = 1
 
 /datum/gear/head/pot
 	name = "pot helmet"
 	path = /obj/item/clothing/head/f13/pot
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
-	cost = 2
+	cost = 1
 
 //POLICE
 
@@ -475,9 +475,9 @@ datum/gear/head/steelpot_bandolier
 	/*restricted_desc = "Nash PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
-							"Mayor",
+							"High Alderperson",
 							"Detective",
-							"Secretary",
+							"Councilperson",
 							"Shopkeeper",
 						)*/
 
@@ -643,9 +643,17 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/greekhelmet
+	name = "Hoplite Helmet"
+	path = /obj/item/clothing/head/coyote/greek
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
-
-
+/datum/gear/head/greekhelmetcrested
+	name = "Crested Hoplite Helmet"
+	path = /obj/item/clothing/head/coyote/greekcrested
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
 
 
@@ -654,161 +662,179 @@ datum/gear/head/steelpot_bandolier
 	name = "Yellow Tricorne"
 	path = /obj/item/clothing/head/coyote/yellowtricorne
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/whiteandbluetricorne
 	name = "White & Blue Tricorne"
 	path = /obj/item/clothing/head/coyote/whiteandbluetricorne
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 
 /datum/gear/head/orangetricorne
 	name = "Orange Tricorne"
 	path = /obj/item/clothing/head/coyote/orangetricorne
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/kerchief
 	name = "Kerchief"
 	path = /obj/item/clothing/head/coyote/kerchief
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/britishtricorne
 	name = "Black Tricorne"
 	path = /obj/item/clothing/head/coyote/britishtricorne
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/britishtricornetwo
 	name = "Red Tricorne"
 	path = /obj/item/clothing/head/coyote/britishtricornetwo
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/chasseur_pt
 	name = "Chasseur - Green Feather"
 	path = /obj/item/clothing/head/coyote/chasseur_pt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/chasseur_nl
 	name = "Chasseur - Pro"
 	path = /obj/item/clothing/head/coyote/chasseur_nl
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/chasseur_fr
 	name = "Chasseur - Light Blue Feather"
 	path = /obj/item/clothing/head/coyote/chasseur_fr
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/chasseur_br
 	name = "Chasseur - Red Feather"
 	path = /obj/item/clothing/head/coyote/chasseur_br
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/bearpelt
 	name = "Bear Pelt"
 	path = /obj/item/clothing/head/coyote/bearpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/wolfpelt
 	name = "Wolf Pelt"
 	path = /obj/item/clothing/head/coyote/bearpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/mayanheaddress
 	name = "Exotic Headdress"
 	path = /obj/item/clothing/head/coyote/mayanheaddress
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 
 /datum/gear/head/featheredhat
 	name = "Feathered Hat"
 	path = /obj/item/clothing/head/coyote/featheredhat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/lionpelt
 	name = "Lion Pelt"
 	path = /obj/item/clothing/head/coyote/lionpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/foxpelt
 	name = "Fox Pelt"
 	path = /obj/item/clothing/head/coyote/foxpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/whitefoxpelt
 	name = "White Fox Pelt"
 	path = /obj/item/clothing/head/coyote/whitefoxpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/gatorpelt
 	name = "Gator Pelt"
 	path = /obj/item/clothing/head/coyote/gatorpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/blackcape
 	name = "Black Cape"
 	path = /obj/item/clothing/head/coyote/blackcape
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/sheeppelt
 	name = "Sheep Pelt"
 	path = /obj/item/clothing/head/coyote/sheeppelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/goatpelt
 	name = "Goat Pelt"
 	path = /obj/item/clothing/head/coyote/goatpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/lizardpelt
 	name = "Lizard Pelt"
 	path = /obj/item/clothing/head/coyote/lizardpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 
 /datum/gear/head/tengallon
 	name = "Ten Gallon Hat"
 	path = /obj/item/clothing/head/coyote/tengallon
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/cavalier
 	name = "Cavalier"
 	path = /obj/item/clothing/head/coyote/cavalier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /datum/gear/head/bisonpelt
 	name = "Bison Pelt"
 	path = /obj/item/clothing/head/coyote/bisonpelt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
+
+/datum/gear/head/hennin
+	name = "Hennin"
+	path = /obj/item/clothing/head/coyote/hennin
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/kasa
+	name = "Kasa"
+	path = /obj/item/clothing/head/coyote/kasa
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/jingasa
+	name = "Jingasa"
+	path = /obj/item/clothing/head/coyote/jingasa
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
 
 
 /datum/gear/head/raccoonfurhat
 	name = "Raccoon Fur Hat"
 	path = /obj/item/clothing/head/coyote/raccoonfurhat
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	cost = 2
+	cost = 1
 
 /obj/item/clothing/head/fifi
 	name = "fifi"
@@ -880,3 +906,49 @@ datum/gear/head/steelpot_bandolier
 	name = "fever blossom"
 	path = /obj/item/reagent_containers/food/snacks/grown/fever_blossom
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/tribal_helmet
+	name = "tribal helmet"
+	path = /obj/item/clothing/head/tribal_helmant
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/adrian
+	name = "adrian helmet"
+	path = /obj/item/clothing/head/adrian
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/mk2_nettan_5
+	name = "Nettan Helm"
+	path = /obj/item/clothing/head/mk2_nettan_5
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/m1_standard
+	name = "Standard Helm"
+	path = /obj/item/clothing/head/m1_standard
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
+/datum/gear/head/wizard/red
+	name = "red wizard hat"
+	path = /obj/item/clothing/head/wizard/red
+
+/datum/gear/head/wizard/yellow
+	name = "yellow wizard hat"
+	path = /obj/item/clothing/head/wizard/yellow
+
+/datum/gear/head/wizard/black
+	name = "black wizard hat"
+	path = /obj/item/clothing/head/wizard/black
+
+/datum/gear/head/wizard/marisa
+	name = "marisa wizard hat"
+	path = /obj/item/clothing/head/wizard/marisa
+
+/datum/gear/head/wizard/magus
+	name = "magus wizard hat"
+	path = /obj/item/clothing/head/wizard/magus
+
+/datum/gear/head/wizard/violet
+	name = "violet wizard hat"
+	path = /obj/item/clothing/head/wizard/violet
+
+

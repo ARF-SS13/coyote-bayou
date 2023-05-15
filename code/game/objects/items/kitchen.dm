@@ -77,6 +77,7 @@
 	wound_bonus = -5
 	bare_wound_bonus = 10
 	custom_price = PRICE_NORMAL
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/kitchen/knife/Initialize()
 	. = ..()

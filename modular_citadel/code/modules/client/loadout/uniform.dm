@@ -24,6 +24,12 @@
 	path = /obj/item/clothing/under/f13/vault
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
+/datum/gear/uniform/engineer
+	name = "engineer jumpsuit"
+	path = /obj/item/clothing/under/engineer_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+	cost = 2
+
 /datum/gear/uniform/wornvault
 	name = "disheveled Dweller jumpsuit"
 	path = /obj/item/clothing/under/f13/exile/vault
@@ -718,8 +724,8 @@
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 	restricted_desc = "Nash"
-	restricted_roles = list("Mayor",
-							"Secretary",
+	restricted_roles = list("High Alderperson",
+							"Councilperson",
 							"Chief of Police",
 							"Doctor",
 							"Citizen",
@@ -1892,4 +1898,52 @@
 	name = "bright outfit"
 	cost = 1
 	path = /obj/item/clothing/under/tribal_colorful
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/tribal_colorful/top
+	name = "bright outfit top"
+	cost = 1
+	path = /obj/item/clothing/under/tribal_colorful/top
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/flow_dress/red
+	name = "Red flow dress"
+	cost = 1
+	path = /obj/item/clothing/under/flow_dress/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/flow_dress/green
+	name = "Green flow dress"
+	cost = 1
+	path = /obj/item/clothing/under/flow_dress/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/desert_uniform
+	name = "Desert Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/desert_uniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/f13/ranger/modif_ranger
+	name = "Green Ranger Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/f13/ranger/modif_ranger
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/striped_clown
+	name = "Striped Clown Overalls"
+	cost = 1
+	path = /obj/item/clothing/under/striped_clown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/shrine_maiden
+	name = "Shrine Maiden"
+	cost = 1
+	path = /obj/item/clothing/under/shrine_maiden
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/engineer_alt
+	name = "Engineer Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/engineer_alt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

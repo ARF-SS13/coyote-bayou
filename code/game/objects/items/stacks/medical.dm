@@ -727,6 +727,9 @@
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
 	merge_type = /obj/item/stack/medical/suture/medicated
 
+/obj/item/stack/medical/suture/medicated/five
+	amount = 5
+
 /obj/item/stack/medical/ointment
 	name = "ointment"
 	desc = "Basic burn ointment, rated effective for second degree burns with proper bandaging. Not very effective at treating infection, but better than nothing. USE WITH A BANDAGE."
@@ -800,6 +803,9 @@
 
 /obj/item/stack/medical/mesh/advanced/one
 	amount = 1
+
+/obj/item/stack/medical/mesh/advanced/five
+	amount = 5
 
 /obj/item/stack/medical/mesh/Initialize()
 	. = ..()

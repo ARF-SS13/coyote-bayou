@@ -282,7 +282,7 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
@@ -299,7 +299,7 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fastest
+		/datum/firemode/semi_auto/faster
 	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000

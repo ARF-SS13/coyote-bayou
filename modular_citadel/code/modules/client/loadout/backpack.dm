@@ -509,3 +509,13 @@
 	name  = "coldwar camera"
 	path = /obj/item/camera/coldwar
 	cost = 3
+
+/datum/gear/backpack/firebow
+	name  = "Tribal Firestarter"
+	path = /obj/item/firebow
+	cost = 0
+
+/datum/gear/backpack/broom
+	name  = "Broom staff"
+	path = /obj/item/staff/broom
+	cost = 0

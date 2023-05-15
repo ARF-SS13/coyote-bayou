@@ -613,6 +613,7 @@
 		//Disable their mob's AI so they don't wander after the player ghosts out of them
 		C.AIStatus = AI_OFF
 		C.wander = FALSE
+		C.can_have_ai = FALSE
 		//Set them as a player-character simplemob so examine and such changes to show their character prefs
 		C.player_character = ckey
 		C.grant_all_languages()

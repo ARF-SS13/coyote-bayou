@@ -10,16 +10,20 @@
 	for(var/obj/item/ammo_casing/bullet in stored_ammo)
 		if(bullet && (bullet.BB || countempties))
 			boolets++
-
 	return boolets
+
+/obj/item/ammo_box/magazine/internal/cylinder/init_load_bullets(num_bullets)
+	for(var/i in 1 to max_ammo)
+		var/be_spent = FALSE
+		if(i > num_bullets)
+			be_spent = TRUE
+		stored_ammo += new ammo_type(src, be_spent)
 
 /obj/item/ammo_box/magazine/internal/cylinder/get_round(keep = 0)
 	rotate()
-
-	var/b = stored_ammo[1]
+	var/b = LAZYACCESS(stored_ammo, 1)
 	if(!keep)
 		stored_ammo[1] = null
-
 	return b
 
 /obj/item/ammo_box/magazine/internal/cylinder/proc/rotate()

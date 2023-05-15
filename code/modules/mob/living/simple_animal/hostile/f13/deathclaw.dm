@@ -64,6 +64,10 @@
 	)
 	despawns_when_lonely = FALSE
 
+/mob/living/simple_animal/hostile/deathclaw/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null
 	emote_taunt = null

@@ -80,8 +80,6 @@
 /obj/item/hand_item/healable/proc/start_licking(atom/source, atom/licked, mob/living/carbon/user)
 	if(!iscarbon(user))
 		return FALSE
-	if(user.incapacitated())
-		return FALSE
 	if(working)
 		to_chat(user, span_alert("You're already [tend_word] something!"))
 		return FALSE
@@ -107,7 +105,7 @@
 		healthing = new healthing(src)
 	if(!istype(healthing))
 		return FALSE
-	if(!healthing.try_heal(user, mlemmed, TRUE))
+	if(!healthing.try_heal(mlemmed, user, TRUE))
 		return FALSE
 	healthing.attack(mlemmed, user)
 	return TRUE
@@ -219,6 +217,7 @@
 	sharpness = SHARP_EDGED
 	attack_speed = 4
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/hand_item/clawer
 	name = "Clawer"

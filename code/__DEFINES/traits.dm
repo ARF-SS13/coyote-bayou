@@ -223,6 +223,7 @@
 #define TRAIT_PHOTOGRAPHER		"photographer"
 #define TRAIT_JOURNALIST		"journalist"
 #define TRAIT_MUSICIAN			"musician"
+#define TRAIT_SWAMPWIZARD		"swamp_wizard"
 #define TRAIT_PERMABONER		"permanent_arousal"
 #define TRAIT_NEVERBONER		"never_aroused"
 #define TRAIT_MASO              "masochism"

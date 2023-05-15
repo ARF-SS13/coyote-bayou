@@ -256,6 +256,7 @@ GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/throwing_star/spear,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/pitchfork,
+	/obj/item/gun/magic/staff,
 	)))
 
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(

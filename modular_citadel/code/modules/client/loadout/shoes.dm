@@ -53,9 +53,8 @@
 	path = /obj/item/clothing/shoes/f13/rag
 
 /datum/gear/shoes/footcloths/pawb
-	name = "Tough Feet"
+	name = "tough feet"
 	path = /obj/item/clothing/shoes/f13/rag/pawb
-
 
 /datum/gear/shoes/raidertreads
 	name = "raider treads"
@@ -169,6 +168,10 @@
 /datum/gear/shoes/ww2brown
 	name = "Type three service shoes"
 	path = /obj/item/clothing/shoes/ww2brown
+
+/datum/gear/shoes/putt
+	name = "long puttees"
+	path = /obj/item/clothing/shoes/putt
 
 /// Factions Shoes or well NCR boots.
 

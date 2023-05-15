@@ -183,6 +183,7 @@
 /mob/living/simple_animal/cow/Initialize()
 	udder = new(null, milk_reagent)
 	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/cow/Destroy()
 	qdel(udder)
@@ -945,10 +946,10 @@
 		)
 	milk_reagent = /datum/reagent/toxin
 	ride_offsets = list(
-		"1" = list(15, 8),
-		"2" = list(15, 8),
-		"4" = list(15, 8),
-		"8" = list(15, 8)
+		"1" = list(1, 8),
+		"2" = list(1, 8),
+		"4" = list(1, 8),
+		"8" = list(1, 8)
 		)
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
@@ -1348,6 +1349,28 @@
 	resize = 0.7
 	update_transform()
 
+/mob/living/simple_animal/cow/brahmin/cow //return to bovine
+	name = "Cow"
+	desc = "A black and white cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow"
+	icon_living = "cow"
+	icon_dead = "cow_dead"
+	icon_gib = "brahmin_gib"
+
+/mob/living/simple_animal/cow/brahmin/cow/Initialize()
+	.=..()
+	resize = 0.85
+	update_transform()
+
+/mob/living/simple_animal/cow/brahmin/cow/tan
+	name = "Tan Cow"
+	desc = "A tan cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow_tan"
+	icon_living = "cow_tan"
+	icon_dead = "cow_tan_dead"
+	icon_gib = "brahmin_gib"
 
 /* Seems obsolete with Daves Brahmin packs, marked for death?
 	if(inventory_back && inventory_back.brahmin_fashion)

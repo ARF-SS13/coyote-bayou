@@ -271,6 +271,12 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
 
+/obj/item/melee/coyote/club/mace
+	name = "mace"
+	desc = "A fucking metal whacking stick. Whack them with it."
+	icon_state = "mace"
+	item_state = "mace"
+
 /obj/item/melee/coyote/bigclub
 	name = "big club"
 	desc = "At the end of time the weapons of the dawn of man still have a place. This big ass branch of bois'd'arc ain't fucking around."
@@ -379,7 +385,7 @@
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.5
-	weapon_special_component = /datum/component/weapon_special/ranged_spear/longer/pike
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldnaginata
 	name = "Old Naginata"
@@ -503,6 +509,31 @@
 	if(!istype(M))
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken
+	name = "Old Bokken"
+	desc = "That's a wooden... sword? For beating up idiots?"
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "bokken"
+	item_state = "bokken"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 10
+	force_unwielded = 10
+	force_wielded = 20
+	throwforce = 15
+	wound_bonus = 15
+	stam_dmg = 30
+	bare_wound_bonus = 10
+	sharpness = SHARP_NONE
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("slashed", "sliced", "chopped")
+	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.7
+	block_chance = 15
+
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"

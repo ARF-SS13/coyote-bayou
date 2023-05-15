@@ -35,7 +35,7 @@ Mayor
 	faction = FACTION_OASIS
 
 /datum/job/oasis/f13mayor   // /obj/item/card/id/captains_spare for any elected mayors. - Blue
-	title = "Mayor"
+	title = "High Alderperson"
 	flag = F13MAYOR
 	department_flag = DEP_OASIS
 	total_positions = 0
@@ -183,7 +183,7 @@ Mayor
 	)
 
 /datum/outfit/job/den/f13secretary
-	name = "Secretary"
+	name = "Councilperson"
 	jobtype = /datum/job/oasis/f13secretary
 	id = /obj/item/card/id/silver
 	belt = /obj/item/kit_spawner/townie/mayor
@@ -1150,7 +1150,7 @@ Mayor
 /datum/outfit/job/den/f13banker
 	name = "Banker"
 	jobtype = /datum/job/oasis/f13banker
-	belt = /obj/item/kit_spawner/lawman
+	belt = /obj/item/kit_spawner/townie/mayor
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver

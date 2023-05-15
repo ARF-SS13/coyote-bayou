@@ -2062,6 +2062,10 @@
 	start_ammo_count = 100
 	randomize_ammo_count = TRUE
 
+/obj/item/ammo_box/magazine/internal/turret/get_random_bullet_amount(num_bullets = max_ammo)
+	var/amount = FLOOR(rand(num_bullets * 0.5, num_bullets), 1)
+	return amount
+
 /// A packed up turrent
 /obj/item/turret_box
 	name = "packaged port-a-turret"

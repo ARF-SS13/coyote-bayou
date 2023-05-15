@@ -246,3 +246,12 @@
 		/mob/living/simple_animal/hostile/rat/skitter,
 		/mob/living/simple_animal/hostile/rat/skitter,
 	)
+
+/obj/effect/spawner/bundle/mobs/rat/actually_a_deathclaw //hackjob at making a deathclaw spawn instead of rat
+	name = "one totally normal rat spawner"
+	items = list(
+		/mob/living/simple_animal/hostile/deathclaw
+	)
+	alt_spawn = list(
+		/mob/living/simple_animal/hostile/deathclaw
+	)

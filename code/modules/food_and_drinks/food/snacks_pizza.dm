@@ -9,6 +9,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30, /datum/reagent/consumable/tomatojuice = 6, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1)
 	foodtype = GRAIN | DAIRY | VEGETABLES
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /* Death to pizza furniture
 /obj/item/reagent_containers/food/snacks/pizzaslice/attackby(obj/item/I, mob/user, params)

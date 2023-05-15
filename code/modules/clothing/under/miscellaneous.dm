@@ -1619,3 +1619,61 @@
 	item_state = "tribal_colorful"
 	item_color = "tribal_colorful"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/tribal_colorful/top
+	name = "bright outfit top"
+	desc = "A skimply outfit with bright colors, just the top not the skirt included!"
+	icon_state = "tribal_colorful_top"
+	item_state = "tribal_colorful_top"
+	item_color = "tribal_colorful_top"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flow_dress/green
+	name = "green flow dress"
+	desc = "A soft looking dress, green in color."
+	icon_state = "flow_green"
+	item_state = "flow_green"
+	item_color = "flow_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flow_dress/red
+	name = "red flow dress"
+	desc = "A soft looking dress, red in color."
+	icon_state = "flow_red"
+	item_state = "flow_red"
+	item_color = "flow_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/desert_uniform
+	name = "desert uniform"
+	desc = "A desert uniform used by commonwealth nations"
+	icon_state = "desert_uniform"
+	item_state = "desert_uniform"
+	item_color = "desert_uniform"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/shrine_maiden
+	name = "shrine maiden"
+	desc = "A tradional dress for shrine maidens to wear"
+	icon_state = "shrine_maiden"
+	item_state = "shrine_maiden"
+	item_color = "shrine_maiden"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/striped_clown
+	name = "striped clown overalls"
+	desc = "Honk honk! Oh wait you don't know clown? It's a clown uniform of course!"
+	icon_state = "striped_clown"
+	item_state = "striped_clown"
+	item_color = "striped_clown"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/engineer_alt
+	name = "engineering jumpsuit"
+	desc = "A skin tight jumpsuit in bright orange (or is it red?) and yellow."
+	icon_state = "engine_alt"
+	item_state = "engine_alt"
+	item_color = "engine_alt"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	can_adjust = TRUE
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)

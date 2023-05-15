@@ -342,3 +342,7 @@
 	maxHealth = 100
 	health = 100
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
+
+/mob/living/simple_animal/uffalo/Initialize()
+	. = ..()
+	recenter_wide_sprite()

@@ -34,7 +34,7 @@
 	var/list/bullet_cost
 	var/list/base_cost// override this one as well if you override bullet_cost
 	var/start_ammo_count
-	var/randomize_ammo_count = FALSE
+	var/randomize_ammo_count = TRUE //am evil~
 
 /obj/item/ammo_box/Initialize()
 	. = ..()
@@ -46,14 +46,7 @@
 			material_amount *= 0.90 // 10% for the container
 			material_amount /= max_ammo
 			LAZYSET(bullet_cost, material, material_amount) */
-	if(!start_empty)
-		var/num_bullets = max_ammo
-		if(start_ammo_count)
-			num_bullets = min(start_ammo_count, max_ammo)
-			if(randomize_ammo_count)
-				num_bullets = rand(round(start_ammo_count * 0.5, 1), start_ammo_count)
-		for(var/i in 1 to num_bullets)
-			stored_ammo += new ammo_type(src)
+	init_ammo()
 	if(!islist(caliber))
 		caliber = list()
 	if(length(caliber) < 1)
@@ -62,6 +55,24 @@
 		else
 			caliber += CALIBER_ANY // default to accepting any old caliber
 	update_icon()
+
+/obj/item/ammo_box/proc/init_ammo()
+	if(start_empty)
+		return // All done!
+	var/num_bullets = max_ammo
+	if(start_ammo_count)
+		num_bullets = min(start_ammo_count, max_ammo)
+	if(randomize_ammo_count)
+		num_bullets = get_random_bullet_amount(num_bullets)
+	init_load_bullets(num_bullets)
+
+/obj/item/ammo_box/proc/get_random_bullet_amount(num_bullets = max_ammo)
+	var/amount = pick(0, rand(0, num_bullets), num_bullets)
+	return amount
+
+/obj/item/ammo_box/proc/init_load_bullets(num_bullets)
+	for(var/i in 1 to num_bullets)
+		stored_ammo += new ammo_type(src)
 
 /obj/item/ammo_box/proc/get_round(keep = 0)
 	if (!stored_ammo.len)

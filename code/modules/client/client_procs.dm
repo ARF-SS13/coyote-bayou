@@ -354,6 +354,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 
 	// Initialize tgui panel
 	tgui_panel.initialize()
+	addtimer(CALLBACK(src, .proc/nuke_chat), 5 SECONDS)//Reboot it to fix broken chat window instead of making the player do it (bandaid fix)
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 
 

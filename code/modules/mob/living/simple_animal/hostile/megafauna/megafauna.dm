@@ -59,6 +59,7 @@
 	if(small_sprite_type)
 		var/datum/action/small_sprite/small_action = new small_sprite_type()
 		small_action.Grant(src)
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/hostile/megafauna/Destroy()
 	QDEL_NULL(internal)

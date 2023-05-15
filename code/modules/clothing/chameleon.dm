@@ -237,8 +237,7 @@
 	P.desc = initial(picked_item.desc)
 	P.icon_state = initial(picked_item.icon_state)
 	P.item_state = initial(picked_item.item_state)
-	P.overlays_offsets = initial(picked_item.overlays_offsets)
-	P.set_new_overlays()
+	P.skindex = initial(picked_item.skindex)
 	P.update_icon()
 
 /datum/action/item_action/chameleon/change/Trigger()

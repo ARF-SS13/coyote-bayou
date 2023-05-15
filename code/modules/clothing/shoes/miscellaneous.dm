@@ -210,7 +210,7 @@
 
 /obj/item/clothing/shoes/bhop
 	name = "jump boots"
-	desc = "A specialized pair of combat boots with a built-in propulsion system for rapid foward movement."
+	desc = "Boots with a suspiciously jet-shaped protrusion on the bottom that hums and splutters with occasional flame. A hands-free booster, for the brave."
 	icon_state = "jetboots"
 	resistance_flags = FIRE_PROOF
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
@@ -263,7 +263,7 @@
 
 /obj/item/clothing/shoes/wheelys
 	name = "Wheely-Heels"
-	desc = "Uses patented retractable wheel technology. Never sacrifice speed for style - not that this provides much of either." //Thanks Fel
+	desc = "Time-crusted boots made from an ancient design. A single rubber cylinder is buried into the heel of an otherwise normal pair of footwear. Skate along as fast as your heart desires, friend." //Thanks Fel
 	icon_state = "wheelys"
 	actions_types = list(/datum/action/item_action/wheelys)
 	var/wheelToggle = FALSE //False means wheels are not popped out
@@ -301,7 +301,7 @@
 
 /obj/item/clothing/shoes/kindleKicks
 	name = "Kindle Kicks"
-	desc = "They'll sure kindle something in you, and it's not childhood nostalgia..."
+	desc = "A kaleidescope of light bursts from these shoes with every footfall. A scattering of color lights up the night."
 	icon_state = "kindleKicks"
 	actions_types = list(/datum/action/item_action/kindleKicks)
 	light_system = MOVABLE_LIGHT
@@ -515,3 +515,8 @@
 	name = "Type three service shoe"
 	desc = "A post second world war design of the American standard boot, with Canvas leggings. Just modernized its specificly used for Jungle combat or in service in Hotter climates it was also lend leased to other nations in the Pacific. And is used by some wasters to this very day as a highly useful footwear garment."
 	icon_state = "ww2_brown"
+
+/obj/item/clothing/shoes/putt
+	name = "long puttees"
+	desc = "Long woolen leg wraps used sense the first world war"
+	icon_state = "putt"

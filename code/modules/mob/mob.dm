@@ -645,7 +645,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		onclose(usr, "[name]")
 	if(href_list["enlargeImageCreature"])
 		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!")
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",500,500)
 		popup.set_content(dat)
 		popup.open()
 

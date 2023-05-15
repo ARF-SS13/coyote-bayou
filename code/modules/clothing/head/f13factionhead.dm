@@ -307,8 +307,8 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	salvage_loot = list()
 
 /obj/item/clothing/head/helmet/f13/legion/recruit
-	name = "legion recruit helmet"
-	desc = "It's a leather skullcap issued to recruits."
+	name = "leather skullcap"
+	desc = "It's a leather skullcap commonly worn by more wastey wastelanders."
 	icon_state = "legion-recruit"
 	item_state = "legion-recruit"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -337,8 +337,8 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
-	name = "legion scout hood"
-	desc = "It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
+	name = "padded tanker's cap"
+	desc = "It's a hooded cap with extra padding and built in voids to wear bulky headphones under."
 	icon_state = "legion-explorer"
 	item_state = "legion-explorer"
 
@@ -469,7 +469,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	item_state = "ncr_steelpot"
 	strip_delay = 50
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("M1" = "ncr_old")
+	reskinnable_component = /datum/component/reskinnable/ncr_helm
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 1)
 
 /* /obj/item/clothing/head/f13/ncr/Initialize()
@@ -489,6 +489,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	flags_cover = HEADCOVERSEYES
 	visor_flags_cover = HEADCOVERSEYES
 	dog_fashion = null
+	reskinnable_component = null
 
 
 /obj/item/clothing/head/f13/ncr/steelpot_goggles/attack_self(mob/user)
@@ -515,34 +516,31 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 /obj/item/clothing/head/f13/ncr/steelpot_goggles/trenchraider
 	name = "NCR trench storm helmet"
 	desc = "A standard issue NCR steel helmet, issued with extra steel for close quarters fighting."
+	reskinnable_component = null
 
 /obj/item/clothing/head/f13/ncr/steelpot_med
 	name = "NCR medic helmet"
 	desc = "A standard issue NCR steel helmet with the addition of decalling signifying a medic."
 	icon_state = "steelpot_med"
 	item_state = "steelpot_med"
-	unique_reskin = list("M1" = "ncr_old_med")
 
 /obj/item/clothing/head/f13/ncr/steelpot_mp
 	name = "NCR military police helmet"
 	desc = "A standard issue NCR steel helmet emblazoned with the initials of the military police."
 	icon_state = "steelpot_mp"
 	item_state = "steelpot_mp"
-	unique_reskin = list("M1" = "ncr_old_mp")
 
 /obj/item/clothing/head/f13/ncr/steelpot_gambler
 	name = "NCR gambler helmet"
 	desc = "A standard issue NCR steel helmet. Stashed in the strap are decks of cards, dominoes and cigarettes for personal use."
 	icon_state = "steelpot_gambler"
 	item_state = "steelpot_gambler"
-	unique_reskin = list("M1" = "ncr_old_gambler")
 
 /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	desc = "A standard issue NCR steel helmet. This one has clearly seen heavy use, as well as having additional bullets tucked into the strap."
 	icon_state = "steelpot_bandolier"
 	item_state = "steelpot_bandolier"
-	unique_reskin = list("M1" = "ncr_old_bandolier")
 
 /obj/item/clothing/head/hardhat/ncr
 	name = "NCR engineer helmet"
@@ -563,7 +561,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	flags_cover = HEADCOVERSEYES
 	visor_flags_cover = HEADCOVERSEYES
 	dog_fashion = null
-	unique_reskin = list("M1" = "ncr_old")
+	reskinnable_component = /datum/component/reskinnable/ncr_helm
 
 /obj/item/clothing/head/f13/ncr/ncr_flapcap
 	name = "NCR field cap"

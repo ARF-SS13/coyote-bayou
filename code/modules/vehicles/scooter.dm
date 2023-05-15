@@ -249,14 +249,14 @@
 //Wheelys
 /obj/vehicle/ridden/scooter/wheelys
 	name = "Wheely-Heels"
-	desc = "Uses patented retractable wheel technology. Never sacrifice speed for style - not that this provides much of either."
+	desc = "Time-crusted boots made from an ancient design. A single rubber cylinder is buried into the heel of an otherwise normal pair of footwear. Skate along as fast as your heart desires, friend." //Thanks Fel
 	icon = null
 	density = FALSE
 
 /obj/vehicle/ridden/scooter/wheelys/Initialize()
 	. = ..()
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
-	D.vehicle_move_delay = 0
+	D.vehicle_move_delay = 1.5
 	D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
 	D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
 	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)

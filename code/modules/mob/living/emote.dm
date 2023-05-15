@@ -1633,7 +1633,8 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	key_third_person = "is being a little <span class='love'>flirty!</span>"
 	message = "is being a little <span class='love'>flirty!</span>"
 	message_param = "is <span class='love'>flirting with</span> %t sneakily!"
-	message_range = 1
+	sound = 'sound/f13effects/sunsetsounds/blush.ogg'
+	message_range = 2
 
 /* For making new flirt/affection options
 datum/emote/living/flirt/blank
@@ -1654,14 +1655,12 @@ datum/emote/living/flirt/custom
 	key_third_person = "is <span class='love'>eyeing up</span> somebody!"
 	message = "is <span class='love'>eyeing up</span> somebody!"
 	message_param = "is <span class='love'>eyeing up</span> %t sneakily!"
-	sound = 'sound/effects/blink.ogg'
 
 datum/emote/living/flirt/flirtaccept
 	key = "flirtaccept"
 	key_third_person = "lets whoever continue whatever it is they were <span class='userlove'>doing!</span>"
 	message = "lets whoever continue whatever it is they were <span class='userlove'>doing!</span>"
 	message_param = "lets %t continue whatever it is they were <span class='userlove'>doing!</span>"
-	sound = 'sound/f13effects/sunsetsounds/blush.ogg'
 
 datum/emote/living/flirt/flirtreject
 	key = "flirtreject"
@@ -1675,7 +1674,6 @@ datum/emote/living/flirt/flirtblush
 	key_third_person = "is <span class='love'>blushing deeply</span> at %t, their mind has clearly wandered a bit!"
 	message = "is <span class='love'>blushing deeply</span> at %t, their mind has clearly wandered a bit!"
 	message_param = "is <span class='love'>blushing deeply</span> at %t, their mind has clearly wandered a bit!"
-	sound = 'sound/f13effects/sunsetsounds/blush.ogg'
 
 datum/emote/living/flirt/flirtsniff
 	key = "flirtsniff"
@@ -1784,4 +1782,55 @@ datum/emote/living/flirt/kissdeep
 	key_third_person = "is trying to <span class='userlove'>kiss someone deeply!</span>"
 	message = "is trying to <span class='userlove'>kiss someone deeply!</span>"
 	message_param = "is trying to <span class='userlove'>kiss %t deeply!</span>"
+
+datum/emote/living/flirt/smile
+	key = "flirtsmile"
+	key_third_person = "<span class='love'>smiles softly</span> at someone!"
+	message = "<span class='love'>smiles softly</span> at someone!"
+	message_param = "<span class='love'>smiles softly</span> at %t!"
+
+datum/emote/living/flirt/grin
+	key = "flirtgrin"
+	key_third_person = "<span class='love'>grins mischeviously</span> at someone, they're up to no good."
+	message = "<span class='love'>grins mischeviously</span> at someone, they're up to no good."
+	message_param = "<span class='love'>grins mischeviously</span> at %t, they're up to no good."
+
+datum/emote/living/flirt/leer
+	key = "flirtleer"
+	key_third_person = "<span class='love'>leers</span> at somebody."
+	message = "<span class='love'>leers</span> at somebody."
+	message_param = "<span class='love'>leers</span> at %t."
+
+datum/emote/living/flirt/hairflip
+	key = "flirthairflip"
+	key_third_person = "<span class='love'>flips their hair casually</span> while looking at somebody."
+	message = "<span class='love'>flips their hair casually</span> while looking at somebody."
+	message_param = "<span class='love'>flips their hair casually</span> while looking at %t."
+
+datum/emote/living/flirt/hairplay
+	key = "flirthairplay"
+	key_third_person = "<span class='love'>plays with their hair</span> while looking at somebody."
+	message = "<span class='love'>plays with their hair</span> while looking at somebody."
+	message_param = "<span class='love'>plays with their hair</span> while looking at %t."
+
+datum/emote/living/flirt/sideeye
+	key = "flirtsideeye"
+	key_third_person = "<span class='love'>side-eyes at</span> somebody, getting an eyeful."
+	message = "<span class='love'>side-eyes at</span> somebody, getting an eyeful."
+	message_param = "<span class='love'>side-eyes</span> %t, getting an eyeful."
+
+datum/emote/living/flirt/throwback
+	key = "flirtthrowback"
+	key_third_person = "<span class='love'>throws their behind back at</span> somebody, trying to booty bump them!"
+	message = "<span class='love'>throws their behind back at</span> somebody, trying to booty bump them!"
+	message_param = "<span class='love'>throws their behind back at</span> %t, trying to booty bump them!"
+
+datum/emote/living/flirt/oopstouch
+	key = "flirtoopstouch"
+	key_third_person = "<span class='love'>accidently brushes against</span> somebody, <span class='love'>oops!</span>"
+	message = "<span class='love'>accidently brushes against</span> somebody, <span class='love'>oops!</span>"
+	message_param = "<span class='love'>accidently brushes against</span> %t, <span class='love'>oops!</span>"
+
+
+
 

@@ -863,14 +863,14 @@
 	response_disarm_simple = "wiggles"
 	response_harm_simple = "shakes"
 	taunt_chance = 30
-	speed = 8
+	speed = 12
 	maxHealth = 850
 	health = 850
 	harm_intent_damage = 30
 	obj_damage = 15
 	melee_damage_lower = 35
 	melee_damage_upper = 45
-	move_to_delay = 10
+	move_to_delay = 12
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")

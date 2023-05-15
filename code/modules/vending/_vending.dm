@@ -544,7 +544,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 								squish_part.receive_damage(brute=30)
 						C.visible_message(span_danger("[C]'s body is maimed underneath the mass of [src]!"), \
 							span_userdanger("Your body is maimed underneath the mass of [src]!"))
-					if(6) // skull squish!
+					if(0) // skull squish!
 						var/obj/item/bodypart/head/O = C.get_bodypart(BODY_ZONE_HEAD)
 						if(O)
 							C.visible_message(span_danger("[O] explodes in a shower of gore beneath [src]!"), \

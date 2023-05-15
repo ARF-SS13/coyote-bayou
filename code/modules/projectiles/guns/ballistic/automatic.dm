@@ -114,7 +114,7 @@
 	name = "SMG TEMPLATE"
 	desc = "should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_prefix = "uzi"
+	icon_state = "uzi"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -249,7 +249,6 @@
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
-	icon_prefix = "smg10mm"
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -963,7 +962,6 @@
 	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -996,7 +994,6 @@
 		weapon without any risk of damaging it."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -1018,7 +1015,6 @@
 	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces. This one seems aged..."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -1294,7 +1290,6 @@
 	desc = "A pre-war semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
-	icon_prefix = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1436,7 +1431,6 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_prefix = "assault_carbine"
 	icon_state = "rifle-police"
 	item_state = "assault_carbine"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1466,7 +1460,6 @@
 	desc = "A Colt Rangemaster semi-automatic rifle, chambered for .30-06. Single-shot only."
 	icon_state = "rangemaster"
 	item_state = "308"
-	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/w3006
 	init_mag_type = /obj/item/ammo_box/magazine/w3006
@@ -1542,7 +1535,6 @@
 	desc = "The WWII American Classic. Still has that satisfiying ping."
 	icon_state = "m1garand"
 	item_state = "rifle"
-	icon_prefix = "308"
 	mag_type = /obj/item/ammo_box/magazine/garand3006
 	init_mag_type = /obj/item/ammo_box/magazine/garand3006
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1665,7 +1657,6 @@
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Springfield.  With a light polymer body, it's suited for long treks through the desert."
-	icon_prefix = "sniperrifle"
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w3006
@@ -1769,7 +1760,6 @@
 	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. It saw use with pre-war special forces and assault troops, now it's often used by the richest militas and the lucky few to survive looting pre-war depots."
 	icon_state = "R82"
 	item_state = "R84"
-	icon_prefix = "r82"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -1883,7 +1873,6 @@
 	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars. Has a unique burst-fire mechanism, where it fires two bullets very quickly, staying accurate, but leading to an increased pause between follow-up shots. Chambered in 5.56x45."
 	icon_state = "type93"
 	item_state = "handmade_rifle"
-	icon_prefix = "handmade_rifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1971,7 +1960,6 @@
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
-	icon_prefix = "assault_carbine"
 	mag_type = /obj/item/ammo_box/magazine/m5mm
 	init_mag_type = /obj/item/ammo_box/magazine/m5mm
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -2132,7 +2120,6 @@
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	icon_state = "BAR"
 	item_state = "BAR"
-	icon_prefix = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
