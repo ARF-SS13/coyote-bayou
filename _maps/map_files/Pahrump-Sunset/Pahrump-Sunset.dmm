@@ -16982,7 +16982,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/building/trader)
+/area/f13/bar)
 "bfE" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_south_middle"
@@ -77300,6 +77300,12 @@
 	icon_state = "horizontaltopbordertop2left"
 	},
 /area/f13/wasteland/city/nash/starterroad)
+"oYn" = (
+/obj/machinery/computer/cargo/request,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "oYp" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -81899,6 +81905,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/computer/cargo,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -118802,7 +118809,7 @@ fzV
 mkb
 mkb
 uYZ
-mkb
+bfD
 cnf
 tqM
 mwa
@@ -124418,13 +124425,13 @@ bui
 pES
 ifV
 pjk
-huI
+oYn
 iFl
 eWq
 eWq
 eWq
 eWq
-bfD
+huI
 oxw
 lfi
 nXV
@@ -124675,9 +124682,9 @@ fuv
 wdE
 eiJ
 dUj
-dUj
-sMo
 drL
+drL
+sMo
 sdg
 kko
 nxk
