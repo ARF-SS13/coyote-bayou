@@ -1304,6 +1304,14 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/light/kit/dustersmog
+	name = "punk armor kit"
+	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
+	icon_state = "duster_recon_smog"
+	item_state = "duster_recon_smog"
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+
 ///////////////////
 // LEATHER ARMOR //
 ///////////////////
@@ -1412,7 +1420,7 @@
 	name = "armor kit"
 	desc = "Separate armor parts you can wear over your clothing, giving basic protection against bullets entering some of your organs. Very well ventilated."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	mob_overlay_icon = 'iconfs/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "armorkit"
 	item_state = "armorkit"
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
