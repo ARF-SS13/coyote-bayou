@@ -623,7 +623,7 @@
 	attack_verb_simple = "clobbers"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
-	faction = list("raider")
+	faction = list("raider", "hostile")
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
@@ -650,6 +650,7 @@
 	icon_dead = "cultist_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+		faction = list("raider", "hostile")
 	maxHealth = 85
 	health = 85
 	rapid_melee = 2
