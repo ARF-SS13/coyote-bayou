@@ -3120,6 +3120,8 @@
 /obj/structure/closet/crate/footlocker,
 /obj/item/clothing/accessory/armband,
 /obj/item/clothing/mask/bandana/legion/legdecan,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -3529,7 +3531,6 @@
 /obj/item/bedsheet{
 	icon_state = "blanket2"
 	},
-/obj/effect/landmark/start/f13/biker,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -4127,6 +4128,8 @@
 /obj/item/clothing/suit/ianshirt,
 /obj/item/clothing/mask/bandana/legion/legdecan,
 /obj/item/clothing/mask/bandana/red,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -5144,6 +5147,7 @@
 	pixel_y = -2;
 	layer = 3.1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -6136,6 +6140,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"fPf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "fPv" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -6582,10 +6593,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/mall)
 "gix" = (
-/obj/structure/barricade/tentleathercorner{
-	dir = 1;
-	pixel_y = 4
-	},
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -7410,6 +7419,14 @@
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
+	},
+/area/f13/building)
+"gSO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/firefighter,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
 "gSP" = (
@@ -11385,9 +11402,7 @@
 	},
 /area/f13/building)
 "kpy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/tentleathercorner,
+/mob/living/simple_animal/hostile/raider/baseball,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -13107,6 +13122,7 @@
 	pixel_x = 6;
 	pixel_y = -4
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -14525,13 +14541,9 @@
 "nic" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/cabinet,
-/obj/item/twohanded/steelsaw,
-/obj/item/clothing/glasses/f13/biker,
-/obj/item/tattoo_holder/biker,
-/obj/item/tattoo_holder/biker,
-/obj/item/tattoo_holder/biker,
-/obj/item/tattoo_gun,
-/obj/item/razor,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -15165,7 +15177,6 @@
 	icon_state = "blanket2";
 	pixel_y = 1
 	},
-/obj/effect/landmark/start/f13/biker,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -16184,6 +16195,8 @@
 	name = "wooden chest"
 	},
 /obj/item/clothing/head/helmet/f13/khan/bandana,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -16637,7 +16650,6 @@
 /obj/item/bedsheet{
 	icon_state = "blanket2"
 	},
-/obj/effect/landmark/start/f13/biker,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -17139,10 +17151,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "pKI" = (
-/obj/structure/barricade/tentleatheredge{
-	dir = 8;
-	pixel_y = 5
-	},
 /obj/structure/window,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
@@ -17601,6 +17609,8 @@
 	pixel_y = -16
 	},
 /obj/item/shard,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet/royalblack,
 /area/f13/building)
 "qgz" = (
@@ -18145,6 +18155,7 @@
 "qGH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/machinery/porta_turret/f13/turret_556/burstfire/raider,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -19838,6 +19849,7 @@
 /turf/open/transparent/openspace,
 /area/f13/building)
 "sdI" = (
+/mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -21326,8 +21338,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "tzG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/tentflap_leather,
+/mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -22519,6 +22530,7 @@
 	dir = 8;
 	pixel_y = -16
 	},
+/mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -23486,12 +23498,9 @@
 	},
 /area/f13/building)
 "vIh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/tentleatheredge{
-	dir = 4
-	},
+/mob/living/simple_animal/hostile/raider/baseball,
 /turf/open/floor/f13{
-	icon_state = "neutralrustyfull"
+	icon_state = "darkrusty"
 	},
 /area/f13/building)
 "vIy" = (
@@ -23778,6 +23787,7 @@
 	icon_state = "lantern-on";
 	pixel_x = -5
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -24116,11 +24126,7 @@
 	},
 /area/f13/building)
 "wqZ" = (
-/obj/structure/chair/comfy/throne{
-	name = "Cown Throne";
-	desc = "An ornate wooden chair that has a visage of our lord and savior Mama Cown on it."
-	},
-/obj/effect/landmark/start/f13/biker_boss,
+/mob/living/simple_animal/hostile/raider/ranged/boss,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -24379,7 +24385,6 @@
 /obj/item/bedsheet{
 	icon_state = "blanket2"
 	},
-/obj/effect/landmark/start/f13/biker,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -24636,7 +24641,6 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/obj/effect/landmark/start/f13/biker_boss,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -25250,6 +25254,7 @@
 /obj/item/clothing/head/helmet/f13/khan/bandana,
 /obj/item/clothing/mask/bandana/red,
 /obj/item/clothing/shoes/f13/cowboy,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -74880,7 +74885,7 @@ tpK
 eqd
 jMQ
 uEV
-pky
+fPf
 nOD
 dPK
 pky
@@ -75139,7 +75144,7 @@ pky
 rmw
 nMM
 nOD
-xDc
+gSO
 pky
 hpV
 tpK
@@ -75645,7 +75650,7 @@ wqZ
 nCR
 twF
 tOy
-pog
+kpy
 pog
 pog
 pog
@@ -75654,7 +75659,7 @@ pog
 pky
 xvQ
 cNM
-gix
+pog
 pKI
 tpK
 oez
@@ -75906,7 +75911,7 @@ pog
 pky
 pog
 pog
-pog
+tzG
 pog
 pog
 pky
@@ -76167,8 +76172,8 @@ qyy
 vEQ
 tTB
 fSd
-vIh
-kpy
+pky
+xDc
 pog
 tpK
 oez
@@ -76676,9 +76681,9 @@ tpK
 mMF
 rAL
 kCZ
-smZ
+gix
 lcV
-pog
+tzG
 oKs
 fSd
 spX
@@ -76927,7 +76932,7 @@ eaq
 xVM
 xDu
 khL
-nZy
+vIh
 yiF
 tpK
 mbN
