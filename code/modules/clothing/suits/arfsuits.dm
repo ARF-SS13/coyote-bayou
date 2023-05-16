@@ -1420,7 +1420,7 @@
 	name = "armor kit"
 	desc = "Separate armor parts you can wear over your clothing, giving basic protection against bullets entering some of your organs. Very well ventilated."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'iconfs/fallout/onmob/clothes/armor_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "armorkit"
 	item_state = "armorkit"
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
