@@ -1237,8 +1237,8 @@
 	ckeywhitelist = list("saltspider")
 
 /obj/item/storage/box/large/custom_kit/saltspider/PopulateContents()
-	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
-	new /obj/item/melee/onehanded/club/fryingpan/saltspider
+	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider(src)
+	new /obj/item/melee/onehanded/club/fryingpan/saltspider(src)
 
 /datum/gear/donator/kits/kelprunner
 	name = "Kelptastic Kit"
