@@ -295,7 +295,7 @@
 	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_3
 	ckeywhitelist = list("caseapollo58143")
 
-ckeywhitelist = list("caseapollo58143")
+/obj/item/storage/box/large/custom_kit/caseapollo58143_3/PopulateContents())
 	new /obj/item/clothing/glasses/eyepatch/syndicate(src)
 	new /obj/item/grown/rose(src)
 	new /obj/item/clothing/under/rank/security/detective/brown(src)
