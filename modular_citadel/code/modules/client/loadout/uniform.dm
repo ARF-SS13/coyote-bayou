@@ -2145,3 +2145,15 @@
 	cost = 1
 	path = /obj/item/clothing/under/jester_muli
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/oldnursedress
+	name = "Blue Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/oldnursedressred
+	name = "Red Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedressred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

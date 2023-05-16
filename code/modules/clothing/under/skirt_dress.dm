@@ -604,3 +604,19 @@
 	item_state = "vestido_red"
 	item_color = "vestido_red"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/nursedress
+	name = "blue Nurse Dress"
+	desc = "A cute nurse dress! Shot time."
+	icon_state = "nursedress"
+	item_state = "nursedress"
+	item_color = "nursedress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/nursedressred
+	name = "red Nurse Dress"
+	desc = "A cute nurse dress! Shot time."
+	icon_state = "nursedressred"
+	item_state = "nursedressred"
+	item_color = "nursedressred"
+	can_adjust = FALSE
