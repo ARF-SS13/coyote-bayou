@@ -2044,6 +2044,36 @@
 	path = /obj/item/clothing/under/dress/coyote/priestess
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
+/datum/gear/uniform/coy/bluepristess
+	name = "blue robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/purplepristess
+	name = "purple robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/rwpristess
+	name = "red and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_rw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bwpristess
+	name = "blue and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_bw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/pwpristess
+	name = "purple and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_pw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
 /datum/gear/uniform/coy/princess
 	name = "blue princess dress"
 	cost = 1
@@ -2115,3 +2145,15 @@
 	cost = 1
 	path = /obj/item/clothing/under/jester_muli
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/oldnursedress
+	name = "Blue Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/oldnursedressred
+	name = "Red Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedressred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
