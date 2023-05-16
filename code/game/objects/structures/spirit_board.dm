@@ -56,7 +56,7 @@
 	light_amount = T.get_lumcount()
 
 
-	if(light_amount > 0.2)
+	if(light_amount > 1.0)
 		to_chat(M, span_warning("It's too bright here to use [src.name]!"))
 		return 0
 
@@ -69,7 +69,7 @@
 			else
 				users_in_range++
 
-	if(users_in_range < 2)
+	if(users_in_range < 1)
 		to_chat(M, span_warning("There aren't enough people to use the [src.name]!"))
 		return 0
 
