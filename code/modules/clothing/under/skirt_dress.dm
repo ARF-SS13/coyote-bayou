@@ -334,6 +334,51 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
+/obj/item/clothing/under/dress/coyote/priestess_blue
+	name = "blue robe dress"
+	desc = "A blue dress robe"
+	icon_state = "priestess_blue"
+	item_state = "priestess_blue"
+	item_color = "priestess_blue"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_purple
+	name = "purple robe dress"
+	desc = "A purple dress robe"
+	icon_state = "priestess_purple"
+	item_state = "priestess_purple"
+	item_color = "priestess_purple"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_rw
+	name = "red and white robe dress"
+	desc = "A red and whitedress robe"
+	icon_state = "priestess_rw"
+	item_state = "priestess_rw"
+	item_color = "priestess_rw"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_bw
+	name = "blue and white robe dress"
+	desc = "A blue and whitedress robe"
+	icon_state = "priestess_bw"
+	item_state = "priestess_bw"
+	item_color = "priestess_bw"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_pw
+	name = "purple and white robe dress"
+	desc = "A purple and whitedress robe"
+	icon_state = "priestess_pw"
+	item_state = "priestess_pw"
+	item_color = "priestess_pw"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
 /obj/item/clothing/under/dress/coyote/princess
 	name = "blue princess"
 	desc = "A blue frilly dress"
