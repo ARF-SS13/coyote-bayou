@@ -1338,7 +1338,7 @@
 	item_state = "dinosaur"
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	hoodtype = /obj/item/clothing/head/hooded/dinsaur
+	hoodtype = /obj/item/clothing/head/hooded/dinosaur
 
 /obj/item/clothing/head/hooded/dinosaur
 	name = "Dino hood"
