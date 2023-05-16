@@ -105,10 +105,10 @@
 	flash_protect = 1
 
 /obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog
-	name = "broken riot helmet"
+	name = "Winterized riot helmet"
 	icon_state = "modified_usmc_riot_smog"
 	item_state = "modified_usmc_riot_smog"
-	desc = "An old riot police helmet, out of use around the time of the war."
+	desc = "This helmet was originally intended to be a riot helmet meant for cold climates, now it's a part of a generational heirloom, the once functional night vision has been shot out in one eye, rendering it totally useless, a bullet casing hangs from the now useless radio, tuned in to a dead frequency. an old Alaskan flag is emblazoned on the side."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
