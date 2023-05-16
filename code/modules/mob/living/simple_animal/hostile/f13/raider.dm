@@ -650,7 +650,7 @@
 	icon_dead = "cultist_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-		faction = list("raider", "hostile")
+	faction = list("raider", "hostile")
 	maxHealth = 85
 	health = 85
 	rapid_melee = 2
