@@ -104,6 +104,18 @@
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
 
+/obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog
+	name = "broken riot helmet"
+	icon_state = "modified_usmc_riot_smog"
+	item_state = "modified_usmc_riot_smog"
+	desc = "An old riot police helmet, out of use around the time of the war."
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	flash_protect = 1
+
 /obj/item/clothing/head/helmet/f13/combat/swat
 	name = "SWAT combat helmet"
 	desc = "A prewar combat helmet issued to S.W.A.T. personnel."
