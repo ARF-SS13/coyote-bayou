@@ -44,7 +44,7 @@
 	force = 55
 	throwforce = 10
 	block_chance = 20
-	armour_penetration = 0.40
+	armour_penetration = 0.00
 	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -140,7 +140,7 @@
 	item_state = "tribalspear"
 	force = 15
 	throwforce = 40 //clears threshholds for trash mobs
-	armour_penetration = 0.10
+	armour_penetration = 0.00
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
@@ -159,7 +159,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	armour_penetration = 0.05
+	armour_penetration = 0.00
 	throw_speed = 3
 	throw_range = 6
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -252,7 +252,7 @@
 	icon_state = "knife_ritual"
 	item_state = "knife_ritual"
 	force = 25
-	armour_penetration = 0.1
+	armour_penetration = 0.0
 	custom_materials = null
 
 obj/item/melee/onehanded/knife/switchblade
@@ -305,7 +305,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "knife"
 	force = 15
 	throwforce = 10
-	armour_penetration = 0.2
+	armour_penetration = 0.0
 
 // Abraxo my beloved. Can now be used directly to clean the blade.
 /obj/item/melee/onehanded/knife/cosmicdirty/attackby(obj/item/C, mob/user, params)
@@ -329,7 +329,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "knife"
 	force = 25
 	throwforce = 15
-	armour_penetration = 0.2
+	armour_penetration = 0.0
 	toolspeed = 0.8
 
 // Heat it with a welder
@@ -351,7 +351,7 @@ obj/item/melee/onehanded/knife/switchblade
 	damtype = BURN
 	force = 35
 	throwforce = 20
-	armour_penetration = 0.4
+	armour_penetration = 0.0
 	w_class = WEIGHT_CLASS_NORMAL // Its super hot, not comfy to put back in your pocket.
 
 /obj/item/melee/onehanded/knife/throwing
@@ -360,7 +360,7 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "knife_throw"
 	force = 20
 	throwforce = 30
-	armour_penetration = 0.25
+	armour_penetration = 0.00
 	bare_wound_bonus = 15 //keep your arteries covered
 	throw_speed = 5
 	throw_range = 7
@@ -682,7 +682,7 @@ obj/item/melee/onehanded/knife/switchblade
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_NONE
-	armour_penetration = 0.05
+
 	throwforce = 10
 	throw_range = 5
 	attack_verb = list("punched", "jabbed", "whacked")
@@ -758,7 +758,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "spiked"
 	sharpness = SHARP_POINTY
 	force = 28
-	armour_penetration = 0.10
+
 
 // Sappers			Keywords: Damage 27
 /obj/item/melee/unarmed/sappers
@@ -818,7 +818,7 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "punch_dagger"
 	item_state = "punch_dagger"
 	force = 29
-	armour_penetration = 0.12
+	armour_penetration = 0.0
 	sharpness = SHARP_POINTY
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -839,7 +839,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 35
-	armour_penetration = 1
+	armour_penetration = 0 //HAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHA, ONE MY ASS LMFAO ~TK
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
