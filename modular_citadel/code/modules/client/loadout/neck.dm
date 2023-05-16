@@ -343,3 +343,18 @@
 	name = "zulie cloak"
 	path = /obj/item/clothing/neck/tie/zuliecloak
 	cost = 0
+
+/datum/gear/neck/vampire
+	name = "Vampire Cloak"
+	path = /obj/item/clothing/neck/tie/vampire
+	cost = 0
+
+/datum/gear/neck/witchcapep
+	name = "Purple Witch Cape"
+	path = /obj/item/clothing/neck/tie/witchcapep
+	cost = 0
+
+/datum/gear/neck/witchcapem
+	name = "Mint Witch Cape"
+	path = /obj/item/clothing/neck/tie/witchcapem
+	cost = 0
