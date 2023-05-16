@@ -295,13 +295,22 @@
 	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_3
 	ckeywhitelist = list("caseapollo58143")
 
-/obj/item/storage/box/large/custom_kit/caseapollo58143_3/PopulateContents()
+ckeywhitelist = list("caseapollo58143")
 	new /obj/item/clothing/glasses/eyepatch/syndicate(src)
 	new /obj/item/grown/rose(src)
 	new /obj/item/clothing/under/rank/security/detective/brown(src)
 	new /obj/item/clothing/suit/det_suit/forensicsblue(src)
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 	new /obj/item/lighter/bullet(src)
+
+/datum/gear/donator/kits/caseapollo58143_4
+	name = "Smogsuit Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_4
+	ckeywhitelist = list("caseapollo58143")	
+	
+/obj/item/storage/box/large/custom_kit/caseapollo58143_4/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog(src)
+	new /obj/item/clothing/suit/armor/light/kit/dustersmog(src)
 
 /datum/gear/donator/kits/cavusogluzevk
 	name = "Raider Kit"
