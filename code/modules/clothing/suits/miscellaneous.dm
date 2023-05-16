@@ -1330,3 +1330,20 @@
 	icon_state = "hoodie_yellowtrim"
 	item_state = "hoodie_yellowtrim"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/hooded/dinosaur
+	name = "Dinosaur costume"
+	desc = "Life...life finds a way."
+	icon_state = "dinosaur"
+	item_state = "dinosaur"
+	flags_inv = HIDESHOES|HIDEJUMPSUIT
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	hoodtype = /obj/item/clothing/head/hooded/dinsaur
+
+/obj/item/clothing/head/hooded/dinosaur
+	name = "Dino hood"
+	desc = "Life...life finds a way."
+	icon_state = "dinosaur_up"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flash_protect = 0

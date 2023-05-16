@@ -813,6 +813,11 @@
 	path = /obj/item/clothing/suit/wizrobe/magusblue
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/costume/dinosaur
+	name = "dinosaur costume"
+	path = /obj/item/clothing/suit/hooded/dinosaur
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
