@@ -240,7 +240,7 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/closed/wall/f13/wood,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "dV" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -772,19 +772,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "ks" = (
-/obj/structure/decoration/rag,
-/obj/structure/window/fulltile/wood,
-/obj/structure/decoration/rag,
-/obj/structure/barricade/bars{
-	max_integrity = 800;
-	name = "strong metal bars";
-	obj_integrity = 800
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 4
 	},
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/caves)
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "kx" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -2441,13 +2434,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/grass,
-/area/f13/wasteland)
-"Dl" = (
-/obj/structure/railing/corner{
-	color = "#A47449";
-	dir = 4
-	},
-/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Ds" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -59273,7 +59259,7 @@ lw
 jT
 GZ
 jT
-ks
+dT
 Hw
 Hw
 Hw
@@ -59787,7 +59773,7 @@ hn
 hn
 hn
 Ye
-ks
+dT
 Hw
 Hw
 Hw
@@ -60529,7 +60515,7 @@ qm
 uU
 uU
 uU
-Dl
+ks
 Hw
 Hw
 Hw
@@ -69554,7 +69540,7 @@ hn
 jT
 jT
 jT
-eo
+dT
 Hw
 Hw
 Hw
@@ -69811,7 +69797,7 @@ Qe
 JH
 hG
 Yb
-ks
+dT
 Hw
 Hw
 Hw
