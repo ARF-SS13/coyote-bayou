@@ -136,6 +136,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	var/item_state
 	var/mob_overlay_icon
 	var/mutantrace_variation
+	/// Some... extra shit to add at the end of the description. Aftger you examine it twice
+	var/datum/component/lore/my_lore
 	/// the type of thing this thing expects
 	var/expected_type = /obj/item
 
@@ -178,6 +180,10 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		target.mob_overlay_icon = mob_overlay_icon
 	if(!isnull(mutantrace_variation))
 		target.mutantrace_variation = mutantrace_variation
+	// if(my_lore)
+	// 	target.AddComponent(my_lore)
+	// else
+	// 	target.RemoveComponentByType(/datum/component/lore)
 	apply_extra(target)
 	target.update_icon()
 	if(isliving(target.loc))
@@ -1445,7 +1451,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		"Service Rifle",
 		"Revolving Rifle",
 		"Marlin",
-		"Martini Henry",
+		//"Martini Henry", // 8 shot .30-06 martini-henry
+		"P-14",
 		"Madsen M47",
 		"Springfield WW2",
 		"springfield"
@@ -1464,7 +1471,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Gun, but less gun."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "308_sawn"
-/datum/reskin/gun/hypocritical_oath
+/datum/reskin/gun/hunting_rifle/hypocritical_oath
 	skin = "Hypocritical Oath"
 	name = "hypocritical oath"
 	desc = "An old, worn-in hunting rifle with leather wrapping the stock. Do (no) harm."
@@ -1478,7 +1485,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Perfect for doing less harm."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "308_sawn"
-/datum/reskin/gun/remington_700
+/datum/reskin/gun/hunting_rifle/remington_700
 	skin = "Remington 700"
 	name = "Remington 700"
 	desc = "This bolt action rifle was popular among hunters, police, and the military before whatever the heck happened."
@@ -1492,7 +1499,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Somewhere between a Remington 300 and 400."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "308_sawn"
-/datum/reskin/gun/paciencia
+/datum/reskin/gun/hunting_rifle/paciencia
 	skin = "Paciencia"
 	name = "Paciencia"
 	desc = "A modified .30-06 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
@@ -1506,7 +1513,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Someone's patience is running short."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "308_sawn"
-/datum/reskin/gun/mosin
+/datum/reskin/gun/hunting_rifle/mosin
 	skin = "Mosin Nagant"
 	name = "Mosin-Nagant m38"
 	desc = "A rusty old Russian bolt action chambered in .30-06."
@@ -1520,7 +1527,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Looks like this rifle's popping a squat."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/arisaka30
+/datum/reskin/gun/hunting_rifle/arisaka30
 	skin = "Arisaka 30"
 	name = "Arisaka 30"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese only had 30 of these in the second world war. And now you have one of them!"
@@ -1534,7 +1541,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "There's a lot that could be said about this shortened rifle, none of which appropriate for this description."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/arisaka35
+/datum/reskin/gun/hunting_rifle/arisaka35
 	skin = "Arisaka 35"
 	name = "Arisaka 35"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese only had 35 of these in the second world war. That's 5 more than the 30. And that's terrible."
@@ -1548,7 +1555,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Something something Arisaka 17.5, something something gun."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/arisaka38
+/datum/reskin/gun/hunting_rifle/arisaka38
 	skin = "Arisaka 38"
 	name = "Arisaka 38"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese originally chambered it in .38, but changed it to .30-06 once the world's supply ran out."
@@ -1562,7 +1569,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "A snubnose 38 Arisaka."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/arisaka99
+/datum/reskin/gun/hunting_rifle/arisaka99
 	skin = "Arisaka 99"
 	name = "Arisaka 99"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese made this to celebrate 99 years of Arisaka manufacturing. Here's to 99 more!"
@@ -1576,7 +1583,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese made this to celebrate 49.5 years of Arisaka manufacturing. Here's to 49.5 more!"
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/gewehr71
+/datum/reskin/gun/hunting_rifle/gewehr71
 	skin = "Gewehr 71"
 	name = "Gewehr 71"
 	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2171, this rifle went on to become the most popular rifle in the world. That's why it's so hard to find, everyone already has one."
@@ -1590,7 +1597,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 71, and then he invented the Gewehr 71 sawed off. He was a genius."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/gewehr98
+/datum/reskin/gun/hunting_rifle/gewehr98
 	skin = "Gewehr 98"
 	name = "Gewehr 98"
 	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2171, this rifle went on to become the second most popular rifle in the world. That's why it's so hard to find, everyone already had a 71."
@@ -1604,7 +1611,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "John Gewehr was a genius. He invented the Gewehr 71, and then he invented the Gewehr 71 sawed off. He was a genius."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/mauser90
+/datum/reskin/gun/hunting_rifle/mauser90
 	skin = "Mauser 90"
 	name = "Mauser 90"
 	desc = "A bolt action rifle chambered in .30-06. Originally made by Nyanco as a solution to their rat problem. After 89 unsuccessful models, they finally cleared out their basement."
@@ -1618,7 +1625,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Perfect for baby mice."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/mauser93
+/datum/reskin/gun/hunting_rifle/mauser93
 	skin = "Mauser 93"
 	name = "Mauser 93"
 	desc = "A bolt action rifle chambered in .30-06. Nyanco's apology after the Mauser 90 turned out to be a hit with rats."
@@ -1632,7 +1639,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Perfect for baby mice."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/lebel
+/datum/reskin/gun/hunting_rifle/lebel
 	skin = "Lebel"
 	name = "Lebel"
 	desc = "A bolt action rifle chambered in .30-06. A French design known as 'The Bell'."
@@ -1646,7 +1653,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "A French design known as 'The B'."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/murata
+/datum/reskin/gun/hunting_rifle/murata
 	skin = "Murata"
 	name = "Murata"
 	desc = "A bolt action rifle chambered in .30-06. A simple design used for brahmin ranching."
@@ -1660,7 +1667,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "A simple rifle used for veal ranching."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/carcano
+/datum/reskin/gun/hunting_rifle/carcano
 	skin = "Carcano"
 	name = "Carcano"
 	desc = "A bolt action rifle chambered in .30-06. Chryslus Motors' first and only attempt at making a volcanic pistol. As you can see. there's a reason they stuck to making cars."
@@ -1674,7 +1681,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "'Let your imagination erupt!' - Chryslus Motors"
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/kar98a
+/datum/reskin/gun/hunting_rifle/kar98a
 	skin = "KAR98A"
 	name = "kar98A"
 	desc = "A bolt action rifle chambered in .30-06. Chryslus Motors' first attempt at making a rifle that fit on their dashboard. Recalled after numerous reports of it not fitting on the dashboard."
@@ -1688,7 +1695,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Now it'll fit on your dashboard!"
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/kar98k
+/datum/reskin/gun/hunting_rifle/kar98k
 	skin = "KAR98K"
 	name = "kar98K"
 	desc = "A bolt action rifle chambered in .30-06. Chryslus Motors' eleventh attempt at making a rifle that fit on their dashboard. Reportedly fit better in the cup holder."
@@ -1702,7 +1709,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Now it'll fit on your dashboard!"
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/mosin30
+/datum/reskin/gun/hunting_rifle/mosin30
 	skin = "Mosin 30"
 	name = "mosin 30"
 	desc = "A bolt action rifle chambered in .30-06. Developed by Large Lars Francis as a competitor to the Mosin Nagant. Was successful in the fact that it was not a Mosin Nagant."
@@ -1716,7 +1723,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Developed by Tiny Tommy Frank as a competitor to the obrez mosin nagant. Achieved very little success."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/remington11
+/datum/reskin/gun/hunting_rifle/remington11
 	skin = "Remington 11"
 	name = "Remington 11"
 	desc = "A bolt action rifle chambered in .30-06. Developed by 11 of the nodes comprising the Great Eastern Hiveblob in Remington Missouri to prove, once and for all, that they were the best hiveblob."
@@ -1730,7 +1737,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Developed with Node 39-A got hungry."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/servicerifle
+/datum/reskin/gun/hunting_rifle/servicerifle
 	skin = "Service Rifle"
 	name = "bolt-action rifle"
 	desc = "A bolt action rifle chambered in .30-06. Developed by nobody in particular. Just a rifle."
@@ -1744,7 +1751,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Just a short rifle."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/revolving_rifle
+/datum/reskin/gun/hunting_rifle/revolving_rifle
 	skin = "Revolving Rifle"
 	name = "revolving rifle"
 	desc = "A bolt action rifle chambered in .30-06. Developed by the Great Eastern Hiveblob when dared that it couldn't make a rifle that was also a revolver. Turns out it could."
@@ -1758,7 +1765,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "A snubnosed revolving rifle."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/marlin
+/datum/reskin/gun/hunting_rifle/marlin
 	skin = "Marlin"
 	name = "marlin"
 	desc = "A bolt action rifle chambered in .30-06. The first rifle ever approved for fishing. The fish were not impressed."
@@ -1772,21 +1779,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "A goldfish's worst nightmare."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/martini_henry
-	skin = "Martini Henry"
-	name = "martini henry"
-	desc = "A bolt action rifle chambered in .30-06. The shortened version of Henry Martin's 'Kilometer Gun'. Considerably more portable."
-	icon = 'modular_coyote/icons/objects/rifles.dmi'
-	icon_state = "martini_henry"
-	item_state = "308"
-	mob_overlay_icon = null
-	mutantrace_variation = null
-	expected_type = /obj/item/gun
-	sawn_name = "sawed off martini henry"
-	sawn_desc = "The shortened version of the shortened version of Henry Martin's 'Kilometer Gun'. Considerably more portable."
-	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
-	sawn_icon_state = "obrez"
-/datum/reskin/gun/madsenm47
+/datum/reskin/gun/hunting_rifle/madsenm47
 	skin = "Madsen M47"
 	name = "madsen M47"
 	desc = "A bolt action rifle chambered in .30-06. Mad Maddy Madsen's 47th attempt at a bolt action rifle. The previous 46 were okay too."
@@ -1800,7 +1793,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Mad Maddy Madsen's 47-and-a-quarterth attempt at a bolt action rifle."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/springfieldww2
+/datum/reskin/gun/hunting_rifle/springfieldww2
 	skin = "Springfield WW2"
 	name = "springfield WW2"
 	desc = "A bolt action rifle chambered in .30-06. Easily the most rifle of all time."
@@ -1814,7 +1807,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Easily half the most rifle of all time."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
-/datum/reskin/gun/springfield
+/datum/reskin/gun/hunting_rifle/springfield
 	skin = "Springfield"
 	name = "springfield"
 	desc = "A bolt action rifle chambered in .30-06. Easily the most rifle of all time."
@@ -1828,16 +1821,28 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Easily half the most rifle of all time."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
+/datum/reskin/gun/hunting_rifle/p14
+	skin = "P-14"
+	name = "P-14"
+	desc = "A bolt-action rifle. Formerly chambered in 14mm, until they missed a payment to the 14mm board. The 'P' remains a mystery."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "p14"
+	item_state = "308"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	sawn_name = "sawed off P-14"
+	sawn_desc = "Imagine this in 14mm."
+	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	sawn_icon_state = "smle-sawn"
 
 /// ENFIELD ///
 /datum/component/reskinnable/enfield
 	skins = list(
 		"Lee-Enfield rifle",
-		"Jungle Carbine",
 		"SMLE",
 		"Number 4",
 		"Number 4 Tan",
-		"P-14",
 		"Arisaka PRO",
 	)
 /datum/reskin/gun/enfield
@@ -1854,21 +1859,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Golly, someone sawed the smile right off its face!"
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "smle_sawn"
-/datum/reskin/gun/enfield_jungle
-	skin = "Jungle Carbine"
-	name = "Jungle Carbine"
-	desc = "A shortened Enfield used for secondary service in the Australian and New Zealand army for jungle warfare. Made from an SMLE, it holds 10 rounds but sadly cannot fit a scope."
-	icon = 'modular_coyote/icons/objects/rifles.dmi'
-	icon_state = "junglecarbine"
-	item_state = "308"
-	mob_overlay_icon = null
-	mutantrace_variation = null
-	expected_type = /obj/item/gun
-	sawn_name = "sawed off Jungle Carbine"
-	sawn_desc = "On average, one of these are made every 0.0021 seconds."
-	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
-	sawn_icon_state = "junglecarbine_sawn"
-/datum/reskin/gun/smle
+/datum/reskin/gun/enfield/smle
 	skin = "SMLE"
 	name = "SMLE"
 	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
@@ -1882,7 +1873,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "Golly, someone sawed the smile right off its face!"
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "smle-sawn"
-/datum/reskin/gun/no4
+/datum/reskin/gun/enfield/no4
 	skin = "Number 4"
 	name = "Number 4"
 	desc = "A bolt-action rifle. The fourth rifle ever made."
@@ -1896,7 +1887,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "The second rifle ever made."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "smle-sawn"
-/datum/reskin/gun/no4tan
+/datum/reskin/gun/enfield/no4tan
 	skin = "Number 4 Tan"
 	name = "Number 4 Tan"
 	desc = "A bolt-action rifle. The fourth light-brown rifle ever made, senpai."
@@ -1910,21 +1901,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_desc = "The second light-brown rifle ever made, senpai."
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "smle-sawn"
-/datum/reskin/gun/p14
-	skin = "P-14"
-	name = "P-14"
-	desc = "A bolt-action rifle. Formerly chambered in 14mm, until they missed a payment to the 14mm board. The 'P' remains a mystery."
-	icon = 'modular_coyote/icons/objects/rifles.dmi'
-	icon_state = "p14"
-	item_state = "308"
-	mob_overlay_icon = null
-	mutantrace_variation = null
-	expected_type = /obj/item/gun
-	sawn_name = "sawed off P-14"
-	sawn_desc = "Imagine this in 14mm."
-	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
-	sawn_icon_state = "smle-sawn"
-/datum/reskin/gun/arisaka_new
+/datum/reskin/gun/enfield/arisaka_new
 	skin = "Arisaka PRO"
 	name = "Arisaka PRO"
 	desc = "A bolt-action rifle. Rumor has it, the Japanese made this as a prosumer grade rifle. It's also chambered in .308."
@@ -1939,6 +1916,27 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "smle-sawn"
 
+
+/// GRAS ///
+/datum/component/reskinnable/gras
+	skins = list(
+		"Martini Henry",
+	)
+/datum/reskin/gun/gras/martini_henry
+	skin = "Martini Henry"
+	name = "martini henry"
+	desc = "A breech-loading single-shot rifle with a lever action .30-06. The shortened version of Henry Martin's 'Kilometer Gun'. Considerably more portable."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "martini_henry"
+	item_state = "308"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	sawn_name = "sawed off martini henry"
+	sawn_desc = "The shortened version of the shortened version of Henry Martin's 'Kilometer Gun'. Considerably more portable."
+	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	sawn_icon_state = "obrez"
+	// my_lore = /datum/component/lore/martini_henry
 
 /obj/item/storage/backpack/debug_reskins
 	name = "debug reskin crate"
@@ -1956,5 +1954,6 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	new /obj/item/clothing/head/f13/ncr(src)
 	new /obj/item/pda(src)
 	new /obj/item/pda(src)
+	new /obj/item/gun/ballistic/rifle/antique/gras(src)
 
 
