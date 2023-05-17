@@ -1312,6 +1312,12 @@ Raider
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
 */
+
+/datum/job/wasteland/f13wastelander/ashdown
+	title = "Ashdown Wastelander"
+	total_positions = 25
+	spawn_positions = 25
+
 /*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
 	flag = F13ENFORCER
