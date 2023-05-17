@@ -417,13 +417,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/building)
-"fZ" = (
-/obj/structure/decoration/rag,
-/obj/machinery/door/unpowered/securedoor/bikerdoor,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "gg" = (
 /obj/structure/flora/twig3,
 /turf/open/indestructible/ground/outside/dirt,
@@ -855,10 +848,6 @@
 /obj/structure/simple_door/metal/fence/wooden,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"lh" = (
-/obj/machinery/door/unpowered/securedoor/bikerdoor,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "lv" = (
 /obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
@@ -60026,7 +60015,7 @@ eb
 wx
 wx
 wx
-lh
+wx
 dK
 iu
 Ym
@@ -62853,7 +62842,7 @@ GN
 Pg
 pX
 Ib
-lh
+Xm
 cw
 dK
 py
@@ -64404,7 +64393,7 @@ pC
 yc
 yN
 yc
-fZ
+Xm
 py
 Eg
 kq
@@ -65169,7 +65158,7 @@ yi
 py
 py
 py
-fZ
+Xm
 pC
 pC
 SC
@@ -65405,7 +65394,7 @@ zk
 mF
 dR
 ac
-lh
+Xm
 dK
 wx
 Jq
