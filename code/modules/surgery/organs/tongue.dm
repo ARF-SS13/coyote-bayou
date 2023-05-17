@@ -93,8 +93,9 @@
 	if(say_mod && M.dna && M.dna.species)
 		M.dna.species.say_mod = say_mod
 	if(length(initial_accents) || length(accents))
+		M.UnregisterSignal(M, COMSIG_MOB_SAY)
 		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
-	M.UnregisterSignal(M, COMSIG_MOB_SAY)
+
 
 /obj/item/organ/tongue/Remove(special = FALSE)
 	if(!QDELETED(owner))
