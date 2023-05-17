@@ -246,3 +246,12 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 */
+
+/datum/crafting_recipe/brickwall
+	name = "Brick Wall"
+	result = /turf/closed/wall/mineral/brick
+	reqs = list(/obj/item/ammo_casing/caseless/brick = 8)
+	time = 60
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
