@@ -4310,12 +4310,6 @@
 	icon_state = "outerborder - N"
 	},
 /area/f13/wasteland/city)
-"ctm" = (
-/obj/machinery/door/unpowered/securedoor/bikerdoor,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
 "ctn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess/redchess2,
@@ -10890,13 +10884,6 @@
 /obj/item/reagent_containers/food/snacks/salad/edensalad,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
-"fPX" = (
-/obj/structure/decoration/rag,
-/obj/machinery/door/unpowered/securedoor/bikerdoor,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
 "fQj" = (
 /obj/structure/table/wood,
 /obj/structure/barricade/bars,
@@ -101652,7 +101639,7 @@ vse
 nSg
 lWl
 nSg
-fPX
+vtp
 nSg
 hze
 nSg
@@ -102684,7 +102671,7 @@ iFh
 pfv
 eJW
 eJW
-ctm
+vtp
 nSg
 nSg
 nSg
