@@ -1,7 +1,10 @@
 /datum/species/synth
 	name = "Synthetic" //inherited from the real species, for health scanners and things
 	id = SPECIES_SYNTH
-	limbs_id = BODYTYPE_SYNTH
+	limbs_id = BODYTYPE_SYNTH_IPC_DARK
+	allowed_limb_ids = list(
+		BODYTYPE_SYNTH_IPC_DARK,
+	)
 	say_mod = "beep boops" //inherited from a user's real species
 	sexes = 0
 	species_traits = list(
@@ -22,7 +25,6 @@
 	meat = null
 	gib_types = /obj/effect/gibspawner/robot
 	damage_overlay_type = "synth"
-	limbs_id = SPECIES_SYNTH
 	var/list/initial_species_traits = list(
 		NOTRANSSTING
 	) //for getting these values back for assume_disguise()
@@ -99,7 +101,7 @@
 		qdel(fake_species)
 		fake_species = null
 		meat = initial(meat)
-		limbs_id = BODYTYPE_SYNTH
+		limbs_id = BODYTYPE_SYNTH_IPC_DARK
 		use_skintones = FALSE
 		sexes = 0
 		fixed_mut_color = ""

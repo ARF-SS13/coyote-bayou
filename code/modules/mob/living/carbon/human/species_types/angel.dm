@@ -18,7 +18,6 @@
 		SLOT_BACK
 	)
 	blacklisted = 1
-	limbs_id = BODYTYPE_HUMAN
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	species_type = SPECIES_TYPE_HUMAN //they're a kind of human
 

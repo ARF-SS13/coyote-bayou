@@ -603,8 +603,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			// rp marking selection
 			// assume you can only have mam markings or regular markings or none, never both
 			var/marking_type
-			if(parent.can_have_part(MBP_MARKINGS_BODY))
-				marking_type = MBP_MARKINGS_BODY
+			if(parent.can_have_part(MBP_BODY_MARKINGS))
+				marking_type = MBP_BODY_MARKINGS
 			if(marking_type)
 				dat += APPEARANCE_CATEGORY_COLUMN
 				dat += "<h3>[GLOB.all_mutant_parts[marking_type]]</h3>" // give it the appropriate title for the type of marking
@@ -668,7 +668,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</table>"
 
 			for(var/mutant_part in GLOB.all_mutant_parts)
-				if(mutant_part == MBP_MARKINGS_BODY)
+				if(mutant_part == MBP_BODY_MARKINGS)
 					continue
 				if(parent.can_have_part(mutant_part))
 					if(!mutant_category)
@@ -2553,13 +2553,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						pref_species = new newtype()
 						//let's ensure that no weird shit happens on species swapping.
 						custom_species = null
-						if(!parent.can_have_part(MBP_MARKINGS_BODY))
-							features[MBP_MARKINGS_BODY] = list()
-						if(parent.can_have_part(MBP_MARKINGS_BODY))
-							if(features[MBP_MARKINGS_BODY] == "None")
-								features[MBP_MARKINGS_BODY] = list()
-						if(parent.can_have_part(MBP_TAIL_LIZARD))
-							features[MBP_TAIL_LIZARD] = "Smooth"
+						if(!parent.can_have_part(MBP_BODY_MARKINGS))
+							features[MBP_BODY_MARKINGS] = list()
+						if(parent.can_have_part(MBP_BODY_MARKINGS))
+							if(features[MBP_BODY_MARKINGS] == "None")
+								features[MBP_BODY_MARKINGS] = list()
+						// if(parent.can_have_part(MBP_TAIL_LIZARD))
+						// 	features[MBP_TAIL_LIZARD] = "Smooth"
 						if(pref_species.id == SPECIES_FELINID)
 							features[MBP_TAIL] = "Cat"
 							features[MBP_EARS] = "Cat"
@@ -2653,39 +2653,39 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ipc_antenna)
 						features[MBP_ANTENNA_IPC] = new_ipc_antenna
 
-				if(MBP_TAIL_LIZARD)
-					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
-					if(new_tail)
-						features[MBP_TAIL_LIZARD] = new_tail
-						if(new_tail != "None")
-							features[MBP_TAUR] = "None"
-							features[MBP_TAIL_HUMAN] = "None"
-							features[MBP_TAIL] = "None"
+				// if(MBP_TAIL_LIZARD)
+				// 	var/new_tail
+				// 	new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
+				// 	if(new_tail)
+				// 		features[MBP_TAIL_LIZARD] = new_tail
+				// 		if(new_tail != "None")
+				// 			features[MBP_TAUR] = "None"
+				// 			features[MBP_TAIL_HUMAN] = "None"
+				// 			features[MBP_TAIL] = "None"
 
-				if(MBP_TAIL_HUMAN)
-					var/list/snowflake_tails_list = list()
-					for(var/path in GLOB.tails_list_human)
-						var/datum/sprite_accessory/tails/human/instance = GLOB.tails_list_human[path]
-						if(istype(instance, /datum/sprite_accessory))
-							var/datum/sprite_accessory/S = instance
-							if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
-								continue
-							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
-								snowflake_tails_list[S.name] = path
-					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
-					if(new_tail)
-						features[MBP_TAIL_HUMAN] = new_tail
-						if(new_tail != "None")
-							features[MBP_TAUR] = "None"
-							features[MBP_TAIL_LIZARD] = "None"
-							features[MBP_TAIL] = "None"
+				// if(MBP_TAIL_HUMAN)
+				// 	var/list/snowflake_tails_list = list()
+				// 	for(var/path in GLOB.tails_list_human)
+				// 		var/datum/sprite_accessory/tails/human/instance = GLOB.tails_list_human[path]
+				// 		if(istype(instance, /datum/sprite_accessory))
+				// 			var/datum/sprite_accessory/S = instance
+				// 			if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
+				// 				continue
+				// 			if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
+				// 				snowflake_tails_list[S.name] = path
+				// 	var/new_tail
+				// 	new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
+				// 	if(new_tail)
+				// 		features[MBP_TAIL_HUMAN] = new_tail
+				// 		if(new_tail != "None")
+				// 			features[MBP_TAUR] = "None"
+				// 			features[MBP_TAIL_LIZARD] = "None"
+				// 			features[MBP_TAIL] = "None"
 
 				if(MBP_TAIL)
 					var/list/snowflake_tails_list = list()
-					for(var/path in GLOB.mam_tails_list)
-						var/datum/sprite_accessory/tails/mam_tails/instance = GLOB.mam_tails_list[path]
+					for(var/path in GLOB.tails_list)
+						var/datum/sprite_accessory/tails/mam_tails/instance = GLOB.tails_list[path]
 						if(istype(instance, /datum/sprite_accessory))
 							var/datum/sprite_accessory/S = instance
 							if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
@@ -2707,27 +2707,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_meat)
 						features[MBP_MEAT_TYPE] = new_meat
 
-				if(MBP_SNOUT_LIZARD)
-					var/list/snowflake_snouts_list = list()
-					for(var/path in GLOB.snouts_list)
-						var/datum/sprite_accessory/snouts/mam_snouts/instance = GLOB.snouts_list[path]
-						if(istype(instance, /datum/sprite_accessory))
-							var/datum/sprite_accessory/S = instance
-							if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
-								continue
-							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
-								snowflake_snouts_list[S.name] = path
-					var/new_snout
-					new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
-					if(new_snout)
-						features[MBP_SNOUT_LIZARD] = new_snout
-						features[MBP_SNOUT] = "None"
+				// if(MBP_SNOUT_LIZARD)
+				// 	var/list/snowflake_snouts_list = list()
+				// 	for(var/path in GLOB.snouts_list)
+				// 		var/datum/sprite_accessory/snouts/mam_snouts/instance = GLOB.snouts_list[path]
+				// 		if(istype(instance, /datum/sprite_accessory))
+				// 			var/datum/sprite_accessory/S = instance
+				// 			if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
+				// 				continue
+				// 			if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
+				// 				snowflake_snouts_list[S.name] = path
+				// 	var/new_snout
+				// 	new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
+				// 	if(new_snout)
+				// 		features[MBP_SNOUT_LIZARD] = new_snout
+				// 		features[MBP_SNOUT] = "None"
 
 
 				if(MBP_SNOUT)
-					var/list/snowflake_mam_snouts_list = list()
-					for(var/path in GLOB.mam_snouts_list)
-						var/datum/sprite_accessory/snouts/mam_snouts/instance = GLOB.mam_snouts_list[path]
+					var/list/snowflake_snouts_list = list()
+					for(var/path in GLOB.snouts_list)
+						var/datum/sprite_accessory/snouts/instance = GLOB.snouts_list[path]
 						if(istype(instance, /datum/sprite_accessory))
 							var/datum/sprite_accessory/S = instance
 							if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
@@ -2735,7 +2735,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_mam_snouts_list[S.name] = path
 					var/new_mam_snouts
-					new_mam_snouts = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_mam_snouts_list
+					new_mam_snouts = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
 					if(new_mam_snouts)
 						features[MBP_SNOUT] = new_mam_snouts
 						features[MBP_SNOUT_LIZARD] = "None"
@@ -2850,25 +2850,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							features[MBP_TAIL_HUMAN] = "None"
 							features[MBP_TAIL_LIZARD] = "None"
 
-				if(MBP_EARS_LIZARD)
-					var/list/snowflake_ears_list = list()
-					for(var/path in GLOB.ears_list)
-						var/datum/sprite_accessory/ears/instance = GLOB.ears_list[path]
-						if(istype(instance, /datum/sprite_accessory))
-							var/datum/sprite_accessory/S = instance
-							if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
-								continue
-							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
-								snowflake_ears_list[S.name] = path
-					var/new_ears
-					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
-					if(new_ears)
-						features[MBP_EARS_LIZARD] = new_ears
+				// if(MBP_EARS_LIZARD)
+				// 	var/list/snowflake_ears_list = list()
+				// 	for(var/path in GLOB.ears_list)
+				// 		var/datum/sprite_accessory/ears/instance = GLOB.ears_list[path]
+				// 		if(istype(instance, /datum/sprite_accessory))
+				// 			var/datum/sprite_accessory/S = instance
+				// 			if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))
+				// 				continue
+				// 			if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
+				// 				snowflake_ears_list[S.name] = path
+				// 	var/new_ears
+				// 	new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
+				// 	if(new_ears)
+				// 		features[MBP_EARS_LIZARD] = new_ears
 
 				if(MBP_EARS)
 					var/list/snowflake_ears_list = list()
-					for(var/path in GLOB.mam_ears_list)
-						var/datum/sprite_accessory/ears/mam_ears/instance = GLOB.mam_ears_list[path]
+					for(var/path in GLOB.ears_list)
+						var/datum/sprite_accessory/ears/instance = GLOB.ears_list[path]
 						if(istype(instance, /datum/sprite_accessory))
 							var/datum/sprite_accessory/S = instance
 							if(!show_mismatched_markings && S.recommended_species && !S.recommended_species.Find(pref_species.id))

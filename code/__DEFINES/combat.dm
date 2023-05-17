@@ -259,7 +259,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 /// BUllshit list used to convert the new bodypart names to old ones
 /// cus there are literal thousands of references to the old ones in the markings DMIs
 /// thanks pooj
-GLOBAL_LIST_INIT(bodypart_zone2legacy = list(
+GLOBAL_LIST_INIT(bodypart_zone2legacy, list(
 	BODY_ZONE_HEAD  = "head",
 	BODY_ZONE_CHEST = "chest",
 	BODY_ZONE_L_ARM = "l_arm",
@@ -273,8 +273,7 @@ GLOBAL_LIST_INIT(bodypart_zone2legacy = list(
 	BODY_ZONE_PRECISE_R_HAND = "r_hand",
 	BODY_ZONE_PRECISE_L_FOOT = "l_foot",
 	BODY_ZONE_PRECISE_R_FOOT = "r_foot",
-	)
-)
+	))
 
 
 //We will round to this value in damage calculations.

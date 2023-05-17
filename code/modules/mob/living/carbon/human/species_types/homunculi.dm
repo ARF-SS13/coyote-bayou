@@ -3,6 +3,9 @@
 	id = SPECIES_HOMUNCULUS
 	say_mod = "states"
 	limbs_id = BODYTYPE_HOMUNCULUS
+	allowed_limb_ids = list(
+		BODYTYPE_HOMUNCULUS,
+	)
 	default_color = "FFFFFF"
 	blacklisted = 0
 	inherent_traits = list(

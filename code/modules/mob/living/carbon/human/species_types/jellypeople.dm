@@ -2,6 +2,13 @@
 	// Entirely alien beings that seem to be made entirely out of gel. They have three eyes and a skeleton visible within them.
 	name = "Xenobiological Jelly Entity"
 	id = SPECIES_JELLY
+	limbs_id = BODYTYPE_JELLY
+	allowed_limb_ids = list(
+		BODYTYPE_JELLY,
+		BODYTYPE_SLIME,
+		BODYTYPE_SLIME_LUMINESCENT,
+		BODYTYPE_SLIME_STARGAZER,
+	)
 	default_color = "00FF90"
 	say_mod = "chirps"
 	species_traits = list(
@@ -171,7 +178,7 @@
 /datum/species/jelly/slime
 	name = "Xenobiological Slime Entity"
 	id = SPECIES_SLIME
-	limbs_id = BODYTYPE_SLIMEPERSON
+	limbs_id = BODYTYPE_SLIME
 	default_color = "00FFFF"
 	species_traits = list(
 		MUTCOLOR1,
@@ -488,7 +495,7 @@
 /datum/species/jelly/roundstartslime
 	name = "Xenobiological Slime Hybrid"
 	id = SPECIES_SLIMEPERSON
-	limbs_id = BODYTYPE_SLIMEPERSON
+	limbs_id = BODYTYPE_SLIME
 	default_color = "00FFFF"
 	species_traits = list(
 		MUTCOLOR1,
@@ -505,7 +512,7 @@
 		MBP_COLOR3 = "FFFFFF",
 		MBP_TAIL = "None",
 		MBP_EARS = "None",
-		MBP_MARKINGS_BODY = "Plain",
+		MBP_BODY_MARKINGS = "Plain",
 		MBP_SNOUT = "None",
 		MBP_TAUR = "None",
 		MBP_LEGS = LEGS_PLANTIGRADE
@@ -592,7 +599,7 @@
 
 	else if (select_alteration == "Ears")
 		var/list/snowflake_ears_list = list("Normal" = null)
-		for(var/path in GLOB.mam_ears_list)
+		for(var/path in SSfurry.ears)
 			var/datum/sprite_accessory/ears/mam_ears/instance = GLOB.mam_ears_list[path]
 			if(istype(instance, /datum/sprite_accessory))
 				var/datum/sprite_accessory/S = instance
@@ -629,7 +636,7 @@
 		var/new_mam_body_markings
 		new_mam_body_markings = input(H, "Choose your character's body markings:", "Marking Alteration") as null|anything in snowflake_markings_list
 		if(new_mam_body_markings)
-			H.dna.features[MBP_MARKINGS_BODY] = new_mam_body_markings
+			H.dna.features[MBP_BODY_MARKINGS] = new_mam_body_markings
 		for(var/X in H.bodyparts) //propagates the markings changes
 			var/obj/item/bodypart/BP = X
 			BP.update_limb(FALSE, H)

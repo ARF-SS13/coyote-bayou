@@ -5,6 +5,9 @@
 	name = "High-Functioning Zombie"
 	id = SPECIES_ZOMBIE
 	limbs_id = BODYTYPE_ZOMBIE
+	allowed_limb_ids = list(
+		BODYTYPE_ZOMBIE,
+	)
 	say_mod = "moans"
 	sexes = 0
 	blacklisted = 1
@@ -41,7 +44,7 @@
 	species_type = "undead"
 
 /datum/species/zombie/notspaceproof
-	id = BODYTYPE_ZOMBIE_NOT_SPACE_PROOF
+	id = SPECIES_ZOMBIE_NOT_SPACE_PROOF
 	blacklisted = 0
 	inherent_traits = list(TRAIT_RESISTCOLD,
 		TRAIT_RADIMMUNE,
@@ -58,7 +61,7 @@
 
 /datum/species/zombie/infectious
 	name = "Infectious Zombie"
-	id = BODYTYPE_ZOMBIE_MEME
+	id = SPECIES_ZOMBIE_MEME
 	inherent_traits = list(
 		TRAIT_RESISTCOLD,
 		TRAIT_RESISTHIGHPRESSURE,
@@ -137,7 +140,6 @@
 /datum/species/zombie/infectious/ghoul
 	name = "Ravenous Ghoul"
 	id = "ghoulzombies"
-	limbs_id = SPECIES_GHOUL
 	say_mod = "rasps"
 	inherent_traits = list(
 		TRAIT_NODECAP, 
@@ -162,7 +164,6 @@
 /datum/species/krokodil_addict
 	name = "Human"
 	id = "goofzombies"
-	limbs_id = BODYTYPE_ZOMBIE //They look like zombies
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie

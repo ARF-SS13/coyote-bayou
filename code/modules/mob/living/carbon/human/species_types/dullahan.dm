@@ -20,7 +20,6 @@
 	mutanttongue = /obj/item/organ/tongue/dullahan
 	mutantears = /obj/item/organ/ears/dullahan
 	blacklisted = TRUE
-	limbs_id = SPECIES_HUMAN
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	has_field_of_vision = FALSE //Too much of a trouble, their vision is already bound to their severed head.
 	species_type = SPECIES_TYPE_UNDEAD

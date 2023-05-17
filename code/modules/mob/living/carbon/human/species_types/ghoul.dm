@@ -8,6 +8,15 @@
 	id = SPECIES_GHOUL
 	say_mod = "rasps"
 	limbs_id = SPECIES_GHOUL
+	allowed_limb_ids = list(
+		BODYTYPE_HUMAN,
+		BODYTYPE_FURRY,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_AVIAN,
+		BODYTYPE_SHADEKIN,
+		BODYTYPE_GHOUL,
+		BODYTYPE_GHOUL_GLOWING,
+	)
 	species_traits = list(
 		HAIR,
 		FACEHAIR,
@@ -43,7 +52,7 @@
 		MBP_TAIL = "Husky",
 		MBP_EARS = "Husky",
 		MBP_WINGS_DECORATIVE = "None",
-		MBP_MARKINGS_BODY = "Husky",
+		MBP_BODY_MARKINGS = "Husky",
 		MBP_TAUR = "None",
 		MBP_HORNS = "None",
 		MBP_LEGS = LEGS_PLANTIGRADE,
@@ -51,16 +60,7 @@
 	)
 	attack_verb = "claw"
 	punchstunthreshold = 9
-	tail_type = MBP_TAIL_HUMAN
-	wagging_type = MBP_TAIL_WAGGING_HUMAN
 	species_type = SPECIES_HUMAN
-
-	allowed_limb_ids = list(
-		BODYTYPE_HUMAN,
-		BODYTYPE_FURRY,
-		BODYTYPE_AQUATIC,
-		BODYTYPE_AVIAN
-	)
 	use_skintones = 0
 	speedmod = 0.3 //slightly slower than humans
 	sexes = 1

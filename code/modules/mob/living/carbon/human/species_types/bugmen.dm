@@ -2,6 +2,12 @@
 	name = "Anthromorphic Insect"
 	id = SPECIES_INSECT
 	say_mod = "chitters"
+	limbs_id = BODYTYPE_INSECT
+	allowed_limb_ids = list(
+		BODYTYPE_INSECT,
+		BODYTYPE_APID,
+		BODYTYPE_MOTH,
+	)
 	default_color = "00FF00"
 	species_traits = list(
 		LIPS,
@@ -26,7 +32,7 @@
 		MBP_SNOUT = "None",
 		MBP_TAUR = "None",
 		MBP_MARKINGS_INSECT = "None",
-		MBP_MARKINGS_BODY = list()
+		MBP_BODY_MARKINGS = list()
 	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -40,12 +46,5 @@
 	tail_type = MBP_TAIL
 	wagging_type = MBP_TAIL_WAGGING
 	species_type = SPECIES_TYPE_INSECT
-
-	allowed_limb_ids = list(
-		BODYTYPE_INSECT,
-		BODYTYPE_APID,
-		BODYTYPE_MOTH,
-		BODYTYPE_MOTH_NOT_GREYSCALE
-	)
 
 	eye_type = BODYTYPE_INSECT

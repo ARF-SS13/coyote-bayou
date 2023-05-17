@@ -1,9 +1,7 @@
 /datum/species/dwarf //not to be confused with the genetic manlets
 	name = "Dwarf"
 	id = SPECIES_DWARF //Also called Homo sapiens pumilionis
-	limbs_id = BODYTYPE_HUMAN
 	default_color = "FFFFFF"
-
 	species_traits = list(EYECOLOR,
 		HAIR,
 		FACEHAIR,
@@ -24,12 +22,6 @@
 	tail_type = MBP_TAIL_HUMAN
 	wagging_type = MBP_TAIL_WAGGING_HUMAN
 
-	allowed_limb_ids = list(
-		BODYTYPE_HUMAN,
-		BODYTYPE_FURRY,
-		BODYTYPE_AQUATIC,
-		BODYTYPE_AVIAN
-	)
 
 
 /mob/living/carbon/human/species/dwarf //species admin spawn path

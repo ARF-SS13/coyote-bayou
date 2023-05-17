@@ -1,6 +1,15 @@
 /datum/species/synthfurry
 	name = "Synthetic Lizardperson"
 	id = SPECIES_SYNTH_LIZARD
+	limbs_id = BODYTYPE_SYNTH_LIZARD
+	allowed_limb_ids = list(
+		BODYTYPE_FURRY,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_AVIAN,
+		BODYTYPE_HUMAN,
+		BODYTYPE_SHADEKIN,
+		BODYTYPE_SYNTH_LIZARD,
+	)
 	say_mod = "beeps"
 	default_color = "00FF00"
 	species_traits = list(
@@ -30,7 +39,7 @@
 		MBP_TAIL = "Synthetic Lizard",
 		MBP_SNOUT = "Synthetic Lizard - Snout",
 		MBP_LEGS = LEGS_DIGITIGRADE,
-		MBP_MARKINGS_BODY = "Synthetic Lizard - Plates",
+		MBP_BODY_MARKINGS = "Synthetic Lizard - Plates",
 		)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(
@@ -56,13 +65,6 @@
 	tail_type = MBP_TAIL
 	wagging_type = MBP_TAIL_WAGGING
 	species_type = SPECIES_TYPE_ROBOT
-	allowed_limb_ids = list(
-		BODYTYPE_FURRY,
-		BODYTYPE_AQUATIC,
-		BODYTYPE_AVIAN,
-		BODYTYPE_HUMAN,
-		BODYTYPE_SHADEKIN
-	)
 
 /datum/species/synthfurry/spec_life(mob/living/carbon/human/H)
 	if(H.nutrition < NUTRITION_LEVEL_FED)
@@ -86,7 +88,7 @@
 /datum/species/synthfurry/ipc
 	name = "I.P.C."
 	id = SPECIES_SYNTH_IPC
-	limbs_id = SPECIES_SYNTH_IPC
+	limbs_id = BODYTYPE_SYNTH_IPC
 	sexes = FALSE // NO WAY MY IPC SEXES ALL THE TIME
 	hair_alpha = 210
 	exotic_bloodtype = "HF"

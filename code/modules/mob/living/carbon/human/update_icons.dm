@@ -639,15 +639,15 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	standing = center_image(standing, isinhands ? inhand_x_dimension : worn_x_dimension, isinhands ? inhand_y_dimension : worn_y_dimension)
 
 	//Handle held offsets
-	var/mob/M = loc
-	if(istype(M))
+	if(iscarbon(loc))
+		var/mob/living/carbon/C = loc
 		var/list/L = get_held_offsets()
 		if(L)
 			standing.pixel_x += L["x"] //+= because of center()ing
 			standing.pixel_y += L["y"]
-	if(OFFSET_INHANDS in dna.species.offset_features)
-		standing.pixel_x += dna.species.offset_features[OFFSET_INHANDS][1]
-		standing.pixel_y += dna.species.offset_features[OFFSET_INHANDS][2]
+		if(OFFSET_INHANDS in C.dna.species.offset_features)
+			standing.pixel_x += C.dna.species.offset_features[OFFSET_INHANDS][1]
+			standing.pixel_y += C.dna.species.offset_features[OFFSET_INHANDS][2]
 
 	standing.alpha = alpha
 	standing.color = color

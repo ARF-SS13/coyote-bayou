@@ -48,7 +48,6 @@
 	var/skin_tone = ""
 	var/body_gender = ""
 	var/species_id = ""
-	var/datum/weakref/my_species
 	var/color_src
 	var/base_bp_icon //Overrides the icon being used for this limb. This is mainly for downstreams, implemented and maintained as a favor in return for implementing synths. And also because should_draw_* for icon overrides was pretty messy. You're welcome.
 	var/should_draw_gender = FALSE
@@ -668,20 +667,20 @@
 		C = owner
 		no_update = FALSE
 
-	if(HAS_TRAIT(C, TRAIT_HUSK) && (is_organic_limb() || render_like_organic))
-		species_id = "husk" //overrides species_id
-		dmg_overlay_type = "" //no damage overlay shown when husked
-		should_draw_gender = FALSE
-		color_src = FALSE
-		base_bp_icon = DEFAULT_BODYPART_ICON
-		no_update = TRUE
-		marking_value = "husk"
+	// if(HAS_TRAIT(C, TRAIT_HUSK) && (is_organic_limb() || render_like_organic))
+	// 	species_id = "husk" //overrides species_id
+	// 	dmg_overlay_type = "" //no damage overlay shown when husked
+	// 	should_draw_gender = FALSE
+	// 	color_src = FALSE
+	// 	base_bp_icon = DEFAULT_BODYPART_ICON
+	// 	no_update = TRUE
+	// 	marking_value = "husk"
 
 	if(no_update)
 		return
 
 	if(!animal_origin)
-		update_human_limb(C)
+		update_human_limb(C, dropping_limb)
 
 	else if(animal_origin == MONKEY_BODYPART) //currently monkeys are the only non human mob to have damage overlays.
 		dmg_overlay_type = animal_origin
@@ -694,27 +693,24 @@
 	if(dropping_limb)
 		no_update = TRUE //when attached, the limb won't be affected by the appearance changes of its mob owner.
 
-/obj/item/bodypart/proc/update_human_limb(mob/living/carbon/C)
+/obj/item/bodypart/proc/update_human_limb(mob/living/carbon/C, dropping_limb)
 	if(!iscarbon(C))
 		return
 	var/mob/living/carbon/human/H = C
 	color_src = FALSE
 
 	var/datum/species/S = H.dna.species
-	species = WEAKREF(S)
-	base_bp_icon = SSmobs.get_species_part_icon()
 	species_id = S.mutant_bodyparts["limbs_id"]
+	var/datum/species_body_type/SBT = GLOB.species_bodytypes[species_id]
+	if(S.mutant_bodyparts[MBP_LEGS])
+		if(body_zone == BODY_ZONE_L_LEG || body_zone == BODY_ZONE_R_LEG)
+			if(DIGITIGRADE in S.species_traits)
+				digitigrade_type = H.dna.features[MBP_LEGS]
+		else
+			digitigrade_type = null
+	base_bp_icon = SBT.get_icon(body_zone, digitigrade_type)
+	should_draw_gender = SBT.sexes
 	species_flags_list = H.dna.species.species_traits
-
-	//body marking memes
-	var/list/colorlist = list()
-	colorlist.Cut()
-	colorlist += ReadRGB("[H.dna.features[MBP_COLOR1]]00")
-	colorlist += ReadRGB("[H.dna.features[MBP_COLOR2]]00")
-	colorlist += ReadRGB("[H.dna.features[MBP_COLOR3]]00")
-	colorlist += list(0,0,0, S.hair_alpha)
-	for(var/index=1, index<=colorlist.len, index++)
-		colorlist[index] = colorlist[index]/255
 
 	if(S.use_skintones)
 		skin_tone = H.skin_tone
@@ -722,10 +718,6 @@
 		skin_tone = ""
 
 	body_gender = H.dna.features["body_model"]
-	if(GLOB.nongendered_limb_types[species_id])
-		should_draw_gender = FALSE
-	else
-		should_draw_gender = S.sexes
 
 	var/mut_colors = (MUTCOLOR1 in S.species_traits)
 	if(mut_colors)
@@ -736,16 +728,9 @@
 	else
 		species_color = ""
 
-	if(S.mutant_bodyparts[MBP_LEGS])
-		if(body_zone == BODY_ZONE_L_LEG || body_zone == BODY_ZONE_R_LEG)
-			if(DIGITIGRADE in S.species_traits)
-				digitigrade_type = lowertext(H.dna.features[MBP_LEGS])
-		else
-			digitigrade_type = null
-
-	if(S.mutant_bodyparts[MBP_MARKINGS_BODY]) // checks if the species can actually have body markings
+	if(S.mutant_bodyparts[MBP_BODY_MARKINGS]) // checks if the species can actually have body markings
 		// get all markings for this bodypart type
-		for(var/list/marking in H.dna.features[MBP_MARKINGS_BODY])
+		for(var/list/marking in H.dna.features[MBP_BODY_MARKINGS])
 			// marking is a list containing bodypart type, bodymarking name, and then the colour (colour won't be used in v1)
 			if(marking[1] == body_part)
 				var/datum/sprite_accessory/Smark
@@ -754,8 +739,8 @@
 				if(Smark)
 					body_markings_icon = Smark.icon
 				var/marking_value = "" // combination of body and aux markings from old system
-				if(H.dna.features[MBP_MARKINGS_BODY] != "None")
-					marking_value = Smark?.icon_state || lowertext(H.dna.features[MBP_MARKINGS_BODY])
+				if(H.dna.features[MBP_BODY_MARKINGS] != "None")
+					marking_value = Smark?.icon_state || lowertext(H.dna.features[MBP_BODY_MARKINGS])
 				else
 					marking_value = "plain"
 				var/list/color_values
@@ -764,16 +749,26 @@
 				else
 					color_values = list("#FFFFFF", "#FFFFFF", "#FFFFFF")
 				body_markings_list += list(list(body_markings_icon, marking_value, color_values))
-
+		//body marking memes
+		var/list/colorlist = list()
+		colorlist.Cut()
+		colorlist += ReadRGB("[H.dna.features[MBP_COLOR1]]00")
+		colorlist += ReadRGB("[H.dna.features[MBP_COLOR2]]00")
+		colorlist += ReadRGB("[H.dna.features[MBP_COLOR3]]00")
+		colorlist += list(0,0,0, S.hair_alpha)
+		for(var/index=1, index<=colorlist.len, index++)
+			colorlist[index] = colorlist[index]/255
 		markings_color = list(colorlist)
 	else
 		marking_value = null
 
-	if(species_id in GLOB.greyscale_limb_types) //should they have greyscales?
-		base_bp_icon = DEFAULT_BODYPART_ICON_ORGANIC
-
-	if(base_bp_icon != DEFAULT_BODYPART_ICON)
-		color_src = mut_colors ? MUTCOLOR1 : ((H.dna.skin_tone_override && S.use_skintones == USE_SKINTONES_GRAYSCALE_CUSTOM) ? CUSTOM_SKINTONE : SKINTONE)
+	if(SBT.is_greyscale(body_zone, digitigrade_type))
+		if(mut_colors)
+			color_src = MUTCOLOR1
+		else if(H.dna.skin_tone_override && S.use_skintones == USE_SKINTONES_GRAYSCALE_CUSTOM)
+			color_src = CUSTOM_SKINTONE
+		else
+			color_src = SKINTONE
 
 	if(!dropping_limb && H.dna.check_mutation(HULK))
 		mutation_color = "00aa00"
@@ -804,20 +799,25 @@
 /obj/item/bodypart/proc/is_husk()
 	return species_id == "husk"
 
-/obj/item/bodypart/proc/setup_limb_icon(image/limbage)
-	if(ishuman(owner))
-
-	limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
-	if(should_draw_gender)
-		limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
-	else if (use_digitigrade)
-		if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) //Compatibility hack for the current iconset.
-			limb.icon_state = "[digitigrade_type]_[use_digitigrade]_[body_zone]"
+/obj/item/bodypart/proc/setup_human_limb_icon(image/limb)
+	if(!base_bp_icon)
+		if(ishuman(original_owner))
+			update_human_limb(original_owner)
 		else
-			limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
-	else
-		limb.icon_state = "[species_id]_[body_zone]"
+			var/datum/species_body_type/SBT = GLOB.species_bodytypes[BODYTYPE_HUMAN]
+			base_bp_icon = SBT.get_icon(body_zone, digitigrade_type)
 
+	limb.icon = base_bp_icon
+	if(should_draw_gender)
+		var/icon_gender = (body_gender == FEMALE) ? "female" : "male"
+		limb.icon_state = "[body_zone]_[icon_gender]"
+	else
+		limb.icon_state = "[body_zone]"
+	// else if (use_digitigrade)
+	// 	if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) //Compatibility hack for the current iconset.
+	// 		limb.icon_state = "[digitigrade_type]_[use_digitigrade]_[body_zone]"
+	// 	else
+	// 		limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
 
 /obj/item/bodypart/proc/get_markings(image_dir)
 	if(!is_organic_limb())
@@ -826,20 +826,20 @@
 		return
 	if(is_husk())
 		if(use_digitigrade)
-			return image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
+			return image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 		else
-			return image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+			return image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 	. = list()
 	// marking stores icon and value for the specific bodypart
 	var/icon_gender = (body_gender == FEMALE) ? "f" : "m" //gender of the icon, if applicable
 	for(var/list/marking_list in body_markings_list)
 		if(!use_digitigrade)
 			if(body_zone == BODY_ZONE_CHEST)
-				. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
+				. += image(marking_list[1], "[marking_list[2]]_[GLOB.bodypart_zone2legacy[body_zone]]_[icon_gender]", -onmob_markings_layer, image_dir)
 			else
-				. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
+				. += image(marking_list[1], "[marking_list[2]]_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 		else
-			. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+			. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 
 //Gives you a proper icon appearance for the limb, dismembered or otherwise
 /obj/item/bodypart/update_overlays()
@@ -878,7 +878,7 @@
 
 	var/list/markings_list = list()
 	if(is_organic_limb() || render_like_organic == TRUE)
-		setup_limb_icon(limb)
+		setup_human_limb_icon(limb)
 
 		. |= get_markings(image_dir)
 
@@ -908,11 +908,12 @@
 			. += auxmarking
 
 	else
+		var/icon_gender = (body_gender == FEMALE) ? "f" : "m" //gender of the icon, if applicable
 		limb.icon = icon
 		if(should_draw_gender)
-			limb.icon_state = "[body_zone]_[icon_gender]"
+			limb.icon_state = "[GLOB.bodypart_zone2legacy[body_zone]]_[icon_gender]"
 		else
-			limb.icon_state = "[body_zone]"
+			limb.icon_state = "[GLOB.bodypart_zone2legacy[body_zone]]"
 
 		if(aux_icons)
 			for(var/I in aux_icons)
@@ -931,19 +932,19 @@
 
 		if(length(body_markings))
 			if(species_id == "husk")
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
 					if(!use_digitigrade)
 						if(body_zone == BODY_ZONE_CHEST)
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
+							. += image(marking_list[1], "[marking_list[2]]_[GLOB.bodypart_zone2legacy[body_zone]]_[icon_gender]", -onmob_markings_layer, image_dir)
 						else
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
+							. += image(marking_list[1], "[marking_list[2]]_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 					else
-						. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
+						. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[GLOB.bodypart_zone2legacy[body_zone]]", -onmob_markings_layer, image_dir)
 		return
 
 	if(color_src) //TODO - add color matrix support for base species limbs (or dont because color matrixes suck)

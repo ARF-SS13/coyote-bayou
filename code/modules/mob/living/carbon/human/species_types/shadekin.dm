@@ -5,6 +5,12 @@
 	name = BODYTYPE_SHADEKIN
 	id = SPECIES_SHADEKIN
 	limbs_id = BODYTYPE_SHADEKIN
+	allowed_limb_ids = list(
+		BODYTYPE_FURRY,
+		BODYTYPE_AVIAN,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_SHADEKIN
+	)
 	say_mod = "mars"
 	mutant_bodyparts = list(
 		MBP_COLOR1 = "FFFFFF",
@@ -18,12 +24,7 @@
 		MBP_LEGS = LEGS_PLANTIGRADE,
 		MBP_MEAT_TYPE = MEAT_MAMMAL
 	)
-	allowed_limb_ids = list(
-		BODYTYPE_FURRY,
-		BODYTYPE_AVIAN,
-		BODYTYPE_AQUATIC,
-		BODYTYPE_SHADEKIN
-	)
+
 	mutanteyes = /obj/item/organ/eyes/shadekin
 	species_type = SPECIES_TYPE_FURRY
 

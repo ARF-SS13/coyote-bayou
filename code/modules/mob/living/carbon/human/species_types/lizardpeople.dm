@@ -3,6 +3,13 @@
 	name = "Anthromorphic Lizard"
 	id = SPECIES_LIZARD
 	limbs_id = BODYTYPE_LIZARD
+	allowed_limb_ids = list(
+		BODYTYPE_FURRY,
+		BODYTYPE_LIZARD,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_AVIAN,
+		BODYTYPE_SHADEKIN
+	)
 	say_mod = "hisses"
 	default_color = "00FF00"
 	species_traits = list(
@@ -30,7 +37,7 @@
 		MBP_HORNS = "None",
 		MBP_FRILLS = "None",
 		MBP_TAIL_SPINES = "None",
-		MBP_MARKINGS_BODY = list(),
+		MBP_BODY_MARKINGS = list(),
 		MBP_LEGS = LEGS_DIGITIGRADE,
 		MBP_TAUR = "None",
 		MBP_WINGS_DECORATIVE = "None",
@@ -55,12 +62,6 @@
 	tail_type = MBP_TAIL_LIZARD
 	wagging_type = MBP_TAIL_WAGGING_LIZARD
 	species_type = SPECIES_TYPE_LIZARD
-	allowed_limb_ids = list(
-		BODYTYPE_FURRY,
-		BODYTYPE_AQUATIC,
-		BODYTYPE_AVIAN,
-		BODYTYPE_SHADEKIN
-	)
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)

@@ -2,6 +2,9 @@
 	name = "Anthromorphic Mushroom"
 	id = SPECIES_MUSH
 	limbs_id = BODYTYPE_MUSH
+	allowed_limb_ids = list(
+		BODYTYPE_MUSH,
+	)
 	mutant_bodyparts = list(
 		MBP_SHROOM_CAP = "Round"
 	)

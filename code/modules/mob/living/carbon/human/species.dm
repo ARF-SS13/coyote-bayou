@@ -2,10 +2,11 @@
 
 GLOBAL_LIST_EMPTY(roundstart_races)
 GLOBAL_LIST_EMPTY(roundstart_race_names)
+GLOBAL_LIST_EMPTY(species_bodytypes)
 
 /datum/species
 	var/id	// if the game needs to manually check your race to do something not included in a proc here, it will use this
-	var/limbs_id		//this is used if you want to use a different species limb sprites. Mainly used for angels as they look like humans.
+	var/limbs_id = BODYTYPE_HUMAN //this is used if you want to use a different species limb sprites. Mainly used for angels as they look like humans.
 	var/name	// this is the fluff name. these will be left generic (such as 'Lizardperson' for the lizard race) so servers can change them to whatever
 	var/default_color = "#FFFFFF"	// if alien colors are disabled, this is the color that will be used by that race
 
@@ -122,18 +123,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/typing_indicator_state
 
 	//the ids you can use for your species, if empty, it means default only and not changeable
-	var/list/allowed_limb_ids
-
-	/// Force the leg icon to be the one specified above, regardless of any other settings
-	var/force_plantigrade = FALSE
-
-
-	var/icon_body = 'icons/mob/parts/body/greyscale/human.dmi'
-	var/icon_arms = 'icons/mob/parts/body/greyscale/human.dmi'
-	var/icon_head = 'icons/mob/parts/body/greyscale/human.dmi'
-	var/icon_plantigrade = 'icons/mob/parts/legs/plantigrade/greyscale/human.dmi'
-	var/icon_digitigrade = 'icons/mob/parts/legs/digitigrade/base.dmi'
-	var/icon_avianlegs = 'icons/mob/parts/legs/avian/base.dmi'
+	var/list/allowed_limb_ids = list(
+		BODYTYPE_HUMAN,
+		BODYTYPE_FURRY,
+		BODYTYPE_AQUATIC,
+		BODYTYPE_AVIAN,
+		BODYTYPE_SHADEKIN,
+	)
 
 	// simple laugh sound overrides
 	/// This is used for every gender other than female
@@ -149,6 +145,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 ///////////
 
 /datum/species/New()
+	if(!LAZYLEN(GLOB.species_bodytypes))
+		init_species_bodytypes()
 
 	if(!limbs_id)	//if we havent set a limbs id to use, just use our own id
 		mutant_bodyparts["limbs_id"] = id //done this way to be non-intrusive to the existing system
@@ -770,9 +768,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		"[HORNS_LAYER]" = "HORNS",
 		)
 
-	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
-	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
-
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
 		var/layertext = layer_text[layer]
@@ -791,7 +786,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
 
-/datum/species/build_sprite_sandwich(mob/living/carbon/human/H, datum/sprite_accessory/S, layernum, layertext, list/dna_feature_as_text_string = list())
+/datum/species/proc/build_sprite_sandwich(mob/living/carbon/human/H, datum/sprite_accessory/S, layernum, layertext, list/dna_feature_as_text_string = list(), forced_colour)
 	if(!istype(S, /datum/sprite_accessory))
 		return
 	var/list/standing = list()
@@ -802,13 +797,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(S.extra2)
 		sprite_sandwich["3"] = TRUE
 	var/image/tail_hack // tailhud's a bazinga, innit
+	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
+	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
 	for(var/index in sprite_sandwich)
 		if(!sprite_sandwich[index])
 			continue
 		var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
 		var/bodypart = S.mutant_part_string || dna_feature_as_text_string[S]
 		var/middle_text
-		switch(i)
+		switch(index)
 			if(1)
 				middle_text = ""
 			if(2)
@@ -841,7 +838,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			H.dna.features[tertiary_string] = advanced_color_system ? H.dna.features[MBP_COLOR3] : "FFFFFF"
 
 
-		if(forced_color)
+		if(forced_colour)
 			accessory_overlay.color = forced_colour
 		else
 			switch(S.color_src)
@@ -935,12 +932,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		O.squish_digitigrade = FALSE
 		if(H.wear_suit)
 			if(!CHECK_BITFIELD(H.wear_suit.mutantrace_variation, STYLE_DIGITIGRADE))
-				should_be_squished = TRUE
+				O.squish_digitigrade = TRUE
 			if(tauric && !CHECK_BITFIELD(H.wear_suit.mutantrace_variation, STYLE_ALL_TAURIC))
-				should_be_squished = TRUE
+				O.squish_digitigrade = TRUE
 		else if(H.w_uniform)
 			if(!CHECK_BITFIELD(H.w_uniform.mutantrace_variation, STYLE_DIGITIGRADE))
-				should_be_squished = TRUE
+				O.squish_digitigrade = TRUE
 	H.update_body_parts()
 	if(not_digitigrade && (DIGITIGRADE in species_traits)) //Curse is lifted
 		species_traits -= DIGITIGRADE
@@ -2257,357 +2254,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	else
 		return pick(laugh_female)
 
-/datum/species/proc/get_species_part_icon(part_kind)
-	switch(body_type)
-		if(BODYTYPE_INSECT)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/insect.dmi'
-				else
-					return 'icons/mob/parts/body/color/insect.dmi'
-		if(BODYTYPE_APID)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/bee.dmi'
-				else
-					return 'icons/mob/parts/body/color/bee.dmi'
-		if(BODYTYPE_MOTH)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/moth.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/moth.dmi'
-		if(BODYTYPE_MOTH_NOT_GREYSCALE)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/moth.dmi'
-				else
-					return 'icons/mob/parts/body/color/moth.dmi'
-		if(BODYTYPE_HUMAN, BODYTYPE_VAMPIRE, BODYTYPE_ANGEL, BODYTYPE_DULLAHAN, BODYTYPE_DWARF, BODYTYPE_FELINID)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 
-				if(LEGS_DIGITIGRADE)
-					return 
-				if(LEGS_PLANTIGRADE)
-					return 
-				else
-					return 
-		if(BODYTYPE_AGENT)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/agent.dmi'
-				else
-					return 'icons/mob/parts/body/color/agent.dmi'
-		if(BODYTYPE_FURRY, BODYTYPE_SYNTH_FURRY)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base_2.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base_2.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/furry.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/furry.dmi'
-		if(BODYTYPE_AVIAN)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/aquatic.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/aquatic.dmi'
-		if(BODYTYPE_AQUATIC)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/avian.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/avian.dmi'
-		if(BODYTYPE_AVIAN)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/avian.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/avian.dmi'
-		if(BODYTYPE_ETHEREAL)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/etherial.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/etherial.dmi'
-		if(BODYTYPE_FLY)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/fly.dmi'
-				else
-					return 'icons/mob/parts/body/color/fly.dmi'
-		if(BODYTYPE_GHOUL)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/ghoul.dmi'
-				else
-					return 'icons/mob/parts/body/color/ghoul.dmi'
-		if(BODYTYPE_GOLEM)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/golem.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/golem.dmi'
-		if(BODYTYPE_GOLEM_CULT)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/golem_cult.dmi'
-				else
-					return 'icons/mob/parts/body/color/golem_cult.dmi'
-		if(BODYTYPE_GOLEM_RATVAR)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/golem_ratvar.dmi'
-				else
-					return 'icons/mob/parts/body/color/golem_ratvar.dmi'
-		if(BODYTYPE_GOLEM_CLOTH, BODYTYPE_GOLEM_CLOTH)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/golem_cloth.dmi'
-				else
-					return 'icons/mob/parts/body/color/golem_cloth.dmi'
-		if(BODYTYPE_GOLEM_BONE)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/golem_bone.dmi'
-				else
-					return 'icons/mob/parts/body/color/golem_bone.dmi'
-		if(BODYTYPE_HOMUNCULUS)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/homonculus.dmi'
-				else
-					return 'icons/mob/parts/body/color/homonculus.dmi'
-		if(BODYTYPE_JELLY)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/jelly.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/jelly.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/jelly.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/jelly.dmi'
-		if(BODYTYPE_SLIME, BODYTYPE_SLIMEPERSON)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/slime.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/slime.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/slime.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/slime.dmi'
-		if(BODYTYPE_SLIME_LUMINESCENT)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/slimelumi.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/slimelumi.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/slimelumi.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/slimelumi.dmi'
-		if(BODYTYPE_SLIME_STARGAZER)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/slimestargazer.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/slimestargazer.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/slimestargazer.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/slimestargazer.dmi'
-		if(BODYTYPE_LIZARD, BODYTYPE_LIZARD_ASHWALKER)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/lizard.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/lizard.dmi'
-		if(BODYTYPE_MUSH)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base_2.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base_2.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/human.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/mushroom.dmi'
-		if(BODYTYPE_PLASMAMAN)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/plasmaman.dmi'
-				else
-					return 'icons/mob/parts/body/color/plasmaman.dmi'
-		if(BODYTYPE_PODPERSON, BODYTYPE_PODPERSON_WEAK)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/podperson.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/podperson.dmi'
-		if(BODYTYPE_SHADEKIN)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/shadekin.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/shadekin.dmi'
-		if(BODYTYPE_SHADOW, BODYTYPE_NIGHTMARE)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/shadow.dmi'
-				else
-					return 'icons/mob/parts/body/color/shadow.dmi'
-		if(BODYTYPE_SKELETON)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/skeleton.dmi'
-				else
-					return 'icons/mob/parts/body/color/skeleton.dmi'
-		if(BODYTYPE_SUPERMUTANT)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/supermutant.dmi'
-				else
-					return 'icons/mob/parts/body/color/supermutant.dmi'
-		if(BODYTYPE_SYNTH_LIZARD)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/synth_lizard.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/synth_lizard.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/synth_lizard.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/synth_lizard.dmi'
-		if(BODYTYPE_SYNTH, BODYTYPE_SYNTH_MILITARY, BODYTYPE_ANDROID)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/synth.dmi'
-				else
-					return 'icons/mob/parts/body/color/synth.dmi'
-		if(BODYTYPE_XENO)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/xeno.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/xeno.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/greyscale/xeno.dmi'
-				else
-					return 'icons/mob/parts/body/greyscale/xeno.dmi'
-		if(BODYTYPE_ZOMBIE)
-			switch(part_kind)
-				if(LEGS_AVIAN)
-					return 'icons/mob/parts/legs/avian/base_2.dmi'
-				if(LEGS_DIGITIGRADE)
-					return 'icons/mob/parts/legs/digitigrade/base_2.dmi'
-				if(LEGS_PLANTIGRADE)
-					return 'icons/mob/parts/legs/plantigrade/color/zombie.dmi'
-				else
-					return 'icons/mob/parts/body/color/zombie.dmi'
+/datum/species/proc/init_species_bodytypes()
+	for(var/spee in typesof(/datum/species_body_type))
+		var/datum/species_body_type/spbt = new spee()
+		GLOB.species_bodytypes[spbt.name] = spbt
+
 
 

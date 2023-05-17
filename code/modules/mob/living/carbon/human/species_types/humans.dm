@@ -20,7 +20,7 @@
 		MBP_TAIL = "Husky",
 		MBP_EARS = "Husky",
 		MBP_WINGS_DECORATIVE = "None",
-		MBP_MARKINGS_BODY = "Husky",
+		MBP_BODY_MARKINGS = "Husky",
 		MBP_TAUR = "None",
 		MBP_HORNS = "None",
 		MBP_LEGS = LEGS_PLANTIGRADE,

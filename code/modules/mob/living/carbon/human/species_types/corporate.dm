@@ -2,6 +2,9 @@
 	name = "Corporate Agent"
 	id = SPECIES_AGENT
 	limbs_id = BODYTYPE_AGENT
+	allowed_limb_ids = list(
+		BODYTYPE_AGENT,
+	)
 	hair_alpha = 0
 	say_mod = "declares"
 	speedmod = -2//Fast

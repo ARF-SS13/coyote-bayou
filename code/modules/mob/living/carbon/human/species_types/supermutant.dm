@@ -2,6 +2,9 @@
 	name = "Super Mutant"
 	id = SPECIES_SUPERMUTANT
 	limbs_id = SPECIES_SUPERMUTANT
+	allowed_limb_ids = list(
+		SPECIES_SUPERMUTANT,
+	)
 	say_mod = "yells"
 	species_traits = list(
 		NOTRANSSTING,

@@ -4,6 +4,9 @@
 	name = "Ethereal"
 	id = SPECIES_ETHEREAL
 	limbs_id = BODYTYPE_ETHEREAL
+	allowed_limb_ids = list(
+		BODYTYPE_ETHEREAL,
+	)
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'

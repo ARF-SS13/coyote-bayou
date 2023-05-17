@@ -2,6 +2,9 @@
 	name = "Plasmaman"
 	id = SPECIES_PLASMAMAN
 	limbs_id = BODYTYPE_PLASMAMAN
+	allowed_limb_ids = list(
+		BODYTYPE_PLASMAMAN,
+	)
 	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
@@ -32,7 +35,6 @@
 	disliked_food = FRUIT
 	liked_food = VEGETABLES
 	outfit_important_for_life = /datum/outfit/plasmaman
-	force_plantigrade = TRUE
 
 	species_type = SPECIES_TYPE_SKELETON // Not undead! even though they kinda are
 

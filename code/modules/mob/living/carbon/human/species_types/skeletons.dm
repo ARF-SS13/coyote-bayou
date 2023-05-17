@@ -2,6 +2,9 @@
 	name = "Skeleton"
 	id = SPECIES_SKELETON
 	limbs_id = BODYTYPE_SKELETON
+	allowed_limb_ids = list(
+		BODYTYPE_SKELETON,
+	)
 	say_mod = "rattles"
 	blacklisted = 0
 	sexes = 0
@@ -26,7 +29,6 @@
 	liked_food = GROSS | MEAT | RAW | DAIRY
 	brutemod = 1.25
 	burnmod = 1.25
-	force_plantigrade = TRUE
 
 	species_type = SPECIES_SKELETON //they have their own category that's disassociated from undead, paired with plasmapeople
 

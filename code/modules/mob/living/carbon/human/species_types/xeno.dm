@@ -3,6 +3,9 @@
 	name = "Xenomorph Hybrid"
 	id = SPECIES_XENO
 	limbs_id = BODYTYPE_XENO
+	allowed_limb_ids = list(
+		BODYTYPE_XENO,
+	)
 	say_mod = "hisses"
 	default_color = "00FF00"
 	species_traits = list(
@@ -17,7 +20,7 @@
 		MBP_XENO_TAIL="Xenomorph Tail",
 		MBP_XENO_HEAD="Standard",
 		MBP_XENO_DORSAL="Standard",
-		MBP_MARKINGS_BODY = list(),
+		MBP_BODY_MARKINGS = list(),
 		MBP_COLOR1 = "0F0",
 		MBP_COLOR2 = "0F0",
 		MBP_COLOR3 = "0F0",

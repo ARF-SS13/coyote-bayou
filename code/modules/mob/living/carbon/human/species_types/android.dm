@@ -1,6 +1,10 @@
 /datum/species/android
 	name = "Android"
 	id = SPECIES_ANDROID
+	limbs_id = BODYTYPE_SYNTH_IPC_DARK
+	allowed_limb_ids = list(
+		BODYTYPE_SYNTH_IPC_DARK,
+	)
 	say_mod = "states"
 	species_traits = list(
 		NOBLOOD,
@@ -26,10 +30,7 @@
 	damage_overlay_type = "synth"
 	mutanttongue = /obj/item/organ/tongue/robot
 	species_language_holder = /datum/language_holder/synthetic
-	limbs_id = BODYTYPE_SYNTH
 	species_type = SPECIES_TYPE_ROBOT
-
-
 
 /datum/species/android/on_species_gain(mob/living/carbon/C)
 	. = ..()

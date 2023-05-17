@@ -22,7 +22,7 @@
 		MBP_TAIL = "Husky",
 		MBP_EARS = "Husky",
 		MBP_WINGS_DECORATIVE = "None",
-		MBP_MARKINGS_BODY = "Husky",
+		MBP_BODY_MARKINGS = "Husky",
 		MBP_TAUR = "None",
 		MBP_HORNS = "None",
 		MBP_LEGS = LEGS_DIGITIGRADE,
@@ -39,9 +39,3 @@
 	wagging_type = MBP_TAIL_WAGGING
 	species_type = SPECIES_TYPE_FURRY
 
-	allowed_limb_ids = list(
-		BODYTYPE_FURRY,
-		BODYTYPE_AQUATIC,
-		BODYTYPE_AVIAN,
-		BODYTYPE_SHADEKIN
-	)

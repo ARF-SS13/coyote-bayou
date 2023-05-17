@@ -133,7 +133,7 @@
 		return
 	cut_overlays()
 	. = ..()
-	if(dropped) //certain overlays only appear when the limb is being detached from its owner.
+	if(is_dropped()) //certain overlays only appear when the limb is being detached from its owner.
 
 		if(status != BODYPART_ROBOTIC) //having a robotic head hides certain features.
 			//facial hair

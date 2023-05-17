@@ -88,64 +88,49 @@
 #define SPECIES_TYPE_JELLY "jelly" // An hummen
 #define SPECIES_TYPE_PLANT "plant" // An hummen
 #define SPECIES_TYPE_SHADOW "shadow" // An hummen
+#define SPECIES_TYPE_LIZARD "lizard" // An hummen
 
 /// All the fuckin limb IDs
-#define BODYTYPE_ABDUCTOR "abductor" // Ayy lmao
-#define BODYTYPE_APID "bee" // A heavenly being
-#define BODYTYPE_ANGEL "angel" // A heavenly being
-#define BODYTYPE_AQUATIC "aquatic" // Big fat sexy sharks that become whales that marry Dan
-#define BODYTYPE_AVIAN "avian" // Big fat sexy sharks that become whales that marry Dan
-#define BODYTYPE_INSECT "insect" // A small creature with six legs
-#define BODYTYPE_CATSLUG "catslug" // A small creature with four legs
-#define BODYTYPE_AGENT "agent" // A secret agent
-#define BODYTYPE_DULLAHAN "dullahan" // A headless horseman
-#define BODYTYPE_DULLAHAN_PUMPKIN "pumpkindullahan" // A headless horseman with a pumpkin head
-#define BODYTYPE_DWARF "dwarf" // A small creature
-#define BODYTYPE_ETHEREAL "ethereal" // A ghost
-#define BODYTYPE_FELINID "felinid" // A cat-like creature
-#define BODYTYPE_FLY "fly" // A small insect
-#define BODYTYPE_FURRY "mammal" // A mammal
-#define BODYTYPE_GHOUL "ghoul" // A flesh-eating creature
+#define BODYTYPE_ABDUCTOR "Abductor" // Ayy lmao
+#define BODYTYPE_APID "Bee" // A heavenly being
+#define BODYTYPE_AQUATIC "Aquatic" // Big fat sexy sharks that become whales that marry Dan
+#define BODYTYPE_AVIAN "Avian" // Big fat sexy sharks that become whales that marry Dan
+#define BODYTYPE_INSECT "Insect" // A small creature with six legs
+#define BODYTYPE_CATSLUG "Catslug" // A small creature with four legs
+#define BODYTYPE_AGENT "Agent" // A secret agent
+#define BODYTYPE_ETHEREAL "Ethereal" // A ghost
+#define BODYTYPE_FLY "Fly" // A small insect
+#define BODYTYPE_FURRY "Anthromorph" // A mammal
+#define BODYTYPE_GHOUL "Ghoul" // A flesh-eating creature
 #define BODYTYPE_GHOUL_GLOWING "glowing ghoul" // A flesh-eating creature that glows
-#define BODYTYPE_GOLEM "golem" // A golem made of golem
-#define BODYTYPE_GOLEM_BONE "bone golem" // A golem made of bone
-#define BODYTYPE_GOLEM_CARDBOARD "cardboard golem" // A golem made of cardboard
-#define BODYTYPE_GOLEM_CLOTH "cloth golem" // A golem made of cloth
-#define BODYTYPE_GOLEM_CULT "runic golem" // A golem made of cult
-#define BODYTYPE_GOLEM_RATVAR "clockwork golem" // A golem made of ratvar
-#define BODYTYPE_HOMUNCULUS "homunculi" // A small creature
-#define BODYTYPE_HUMAN "human" // A human
-#define BODYTYPE_JELLY "jelly" // A gelatinous creature
-#define BODYTYPE_SLIME "slime" // A slime person
-#define BODYTYPE_SLIMEPERSON "slimeperson" // A slime person too
-#define BODYTYPE_SLIME_LUMINESCENT "luminescent" // A glowing creature
-#define BODYTYPE_SLIME_STARGAZER "stargazer" // A creature that can see the stars
-#define BODYTYPE_LIZARD "lizard" // A lizard
-#define BODYTYPE_LIZARD_ASHWALKER "ashwalker" // A lizard but with ash
-#define BODYTYPE_MOTH "moth" // A small insect
-#define BODYTYPE_MOTH_NOT_GREYSCALE "moth_not_greyscale" // A small insect
-#define BODYTYPE_MUSH "mush" // A mushroom
-#define BODYTYPE_PLASMAMAN "plasmaman" // A horrible purple skeleton thing
-#define BODYTYPE_PODPERSON "pod" // A pod person
-#define BODYTYPE_PODPERSON_WEAK "podweak" // A pod person but weak
-#define BODYTYPE_SHADEKIN "shadekin" // A shade person
-#define BODYTYPE_SHADOW "shadow" // A shadow person too
-#define BODYTYPE_NIGHTMARE "nightmare" // A shadow person but stronger
-#define BODYTYPE_SKELETON "skeleton" // A skeleton
-#define BODYTYPE_SKELETON_SPACE "spaceskeleton" // A skeleton but in space
-#define BODYTYPE_SUPERMUTANT "supermutant" // A super mutant
-#define BODYTYPE_SYNTH "synth" // A synth
-#define BODYTYPE_SYNTH_LIZARD "synthlizard" // A synth but a lizard
-#define BODYTYPE_SYNTH_FURRY "synthfurry" // A synth but a furry
-#define BODYTYPE_SYNTH_IPC "ipc" // A synth but an IPC
-#define BODYTYPE_SYNTH_MILITARY "military_synth" // A synth but a military synth
-#define BODYTYPE_VAMPIRE "vampire" // A vampire
-#define BODYTYPE_XENO "xeno" // A xeno
-#define BODYTYPE_ZOMBIE "zombie" // A zombie
-#define BODYTYPE_ZOMBIE_NOT_SPACE_PROOF "notspaceproofzombie" // A zombie but not space proof
-#define BODYTYPE_ZOMBIE_MEME "memezombies" // A zombie but a meme
-#define BODYTYPE_ZOMBIE_GHOUL "ghoulzombie" // A zombie but a ghoul
-#define BODYTYPE_ZOMBIE_GOOF "goofzombie" // A zombie but a goof
+#define BODYTYPE_GOLEM "Golem" // A golem made of golem
+#define BODYTYPE_GOLEM_BONE "Bone golem" // A golem made of bone
+#define BODYTYPE_GOLEM_CARDBOARD "Cardboard golem" // A golem made of cardboard
+#define BODYTYPE_GOLEM_CLOTH "Cloth golem" // A golem made of cloth
+#define BODYTYPE_GOLEM_CULT "Runic golem" // A golem made of cult
+#define BODYTYPE_GOLEM_RATVAR "Clockwork golem" // A golem made of ratvar
+#define BODYTYPE_HOMUNCULUS "Homunculi" // A small creature
+#define BODYTYPE_HUMAN "Human" // A human
+#define BODYTYPE_JELLY "Jelly" // A gelatinous creature
+#define BODYTYPE_SLIME "Slime" // A slime person
+#define BODYTYPE_SLIME_LUMINESCENT "Luminescent" // A glowing creature
+#define BODYTYPE_SLIME_STARGAZER "Stargazer" // A creature that can see the stars
+#define BODYTYPE_LIZARD "Lizard" // A lizard
+#define BODYTYPE_MOTH "Moth" // A small insect
+#define BODYTYPE_MUSH "Mushroom" // A mushroom
+#define BODYTYPE_PLASMAMAN "Plasma Man" // A horrible purple skeleton thing
+#define BODYTYPE_PODPERSON "Pod" // A pod person
+#define BODYTYPE_SHADEKIN "Shadekin" // A shade person
+#define BODYTYPE_SHADOW "Shadow" // A shadow person too
+#define BODYTYPE_SKELETON "Skeleton" // A skeleton
+#define BODYTYPE_SUPERMUTANT "Supermutant" // A super mutant
+#define BODYTYPE_SYNTH_MILITARY "Military Synth" // A synth but a lizard
+#define BODYTYPE_SYNTH_LIZARD "Synth Lizard" // A synth but a lizard
+#define BODYTYPE_SYNTH_FURRY "Synth Anthromorph" // A synth but a furry
+#define BODYTYPE_SYNTH_IPC "IPC" // A synth but an IPC
+#define BODYTYPE_SYNTH_IPC_DARK "Dark IPC" // A synth but an IPC
+#define BODYTYPE_XENO "Xeno Hybrid" // A xeno
+#define BODYTYPE_ZOMBIE "Zombie" // A zombie
 
 #define MEAT_MAMMAL "Mammalian" // Meat from a mammal
 
@@ -189,8 +174,10 @@
 #define MBP_XENO_TAIL "xenotail"
 
 	//Lizard Bits (all datum lists indexed by name)
-GLOBAL_LIST_EMPTY(tails_list_lizard)
-GLOBAL_LIST_EMPTY(animated_tails_list_lizard)
+// GLOBAL_LIST_EMPTY(tails_list_lizard)
+// GLOBAL_LIST_EMPTY(animated_tails_list_lizard)
+GLOBAL_LIST_EMPTY(tails_list)
+GLOBAL_LIST_EMPTY(animated_tails_list)
 GLOBAL_LIST_EMPTY(snouts_list)
 GLOBAL_LIST_EMPTY(horns_list)
 GLOBAL_LIST_EMPTY(frills_list)
@@ -199,8 +186,8 @@ GLOBAL_LIST_EMPTY(legs_list)
 GLOBAL_LIST_EMPTY(animated_spines_list)
 
 	//Mutant Human bits
-GLOBAL_LIST_EMPTY(tails_list_human)
-GLOBAL_LIST_EMPTY(animated_tails_list_human)
+// GLOBAL_LIST_EMPTY(tails_list_human)
+// GLOBAL_LIST_EMPTY(animated_tails_list_human)
 GLOBAL_LIST_EMPTY(ears_list)
 GLOBAL_LIST_EMPTY(wings_list)
 GLOBAL_LIST_EMPTY(wings_open_list)
@@ -213,16 +200,18 @@ GLOBAL_LIST_EMPTY(caps_list)
 
 //a way to index the right bodypart list given the type of bodypart
 GLOBAL_LIST_INIT(mutant_reference_list, list(
-	MBP_TAIL_LIZARD = GLOB.tails_list_lizard,
-	MBP_TAIL_WAGGING_LIZARD = GLOB.animated_tails_list_lizard,
-	MBP_TAIL_HUMAN = GLOB.tails_list_human,
-	MBP_TAIL_WAGGING_HUMAN = GLOB.animated_tails_list_human,
-	MBP_TAIL_SPINES = GLOB.spines_list,
-	MBP_TAIL_WAGGING_SPINES = GLOB.animated_spines_list,
-	MBP_SNOUT_LIZARD = GLOB.snouts_list,
+	MBP_TAIL = GLOB.tails_list,
+	MBP_TAIL_WAGGING = GLOB.animated_tails_list,
+	// MBP_TAIL_LIZARD = GLOB.tails_list_lizard,
+	// MBP_TAIL_WAGGING_LIZARD = GLOB.animated_tails_list_lizard,
+	// MBP_TAIL_HUMAN = GLOB.tails_list_human,
+	// MBP_TAIL_WAGGING_HUMAN = GLOB.animated_tails_list_human,
+	// MBP_TAIL_SPINES = GLOB.spines_list,
+	// MBP_TAIL_WAGGING_SPINES = GLOB.animated_spines_list,
+	// MBP_SNOUT_LIZARD = GLOB.snouts_list,
 	MBP_FRILLS = GLOB.frills_list,
 	MBP_HORNS = GLOB.horns_list,
-	MBP_EARS_LIZARD = GLOB.ears_list,
+	// MBP_EARS_LIZARD = GLOB.ears_list,
 	MBP_WINGS = GLOB.wings_list,
 	MBP_WINGS_OPEN = GLOB.wings_open_list,
 	MBP_WINGS_DECORATIVE = GLOB.deco_wings_list,
@@ -233,11 +222,11 @@ GLOBAL_LIST_INIT(mutant_reference_list, list(
 	MBP_SHROOM_CAP = GLOB.caps_list,
 	MBP_SCREEN = GLOB.ipc_screens_list,
 	MBP_ANTENNA_IPC = GLOB.ipc_antennas_list,
-	MBP_TAIL = GLOB.mam_tails_list,
-	MBP_TAIL_WAGGING = GLOB.mam_tails_animated_list,
-	MBP_MARKINGS_BODY = GLOB.mam_body_markings_list,
-	MBP_EARS = GLOB.mam_ears_list,
-	MBP_SNOUT = GLOB.mam_snouts_list,
+	// MBP_TAIL = GLOB.mam_tails_list,
+	// MBP_TAIL_WAGGING = GLOB.mam_tails_animated_list,
+	MBP_BODY_MARKINGS = GLOB.mam_body_markings_list,
+	MBP_EARS = GLOB.ears_list,
+	MBP_SNOUT = GLOB.snouts_list,
 	MBP_TAUR = GLOB.taur_list,
 	MBP_XENO_DORSAL = GLOB.xeno_dorsal_list,
 	MBP_XENO_HEAD = GLOB.xeno_head_list,
@@ -254,15 +243,15 @@ GLOBAL_LIST_INIT(mutant_transform_list, list(MBP_WINGS_OPEN = MBP_WINGS,
 //unlocked parts are those that anyone can choose on customisation regardless
 //parts not in unlocked, but in all, are thus locked
 GLOBAL_LIST_INIT(all_mutant_parts, list(
-	MBP_TAIL_LIZARD = "Tail",
+	// MBP_TAIL_LIZARD = "Tail",
 	MBP_TAIL = "Tail",
-	MBP_TAIL_HUMAN = "Tail",
-	MBP_SNOUT_LIZARD = "Snout",
+	// MBP_TAIL_HUMAN = "Tail",
+	// MBP_SNOUT_LIZARD = "Snout",
 	MBP_FRILLS = "Frills",
 	MBP_TAIL_SPINES = "Spines",
-	MBP_MARKINGS_BODY = "Species Markings" ,
+	MBP_BODY_MARKINGS = "Species Markings",
 	MBP_EARS = "Ears",
-	MBP_EARS_LIZARD = "Ears",
+	// MBP_EARS_LIZARD = "Ears",
 	MBP_SNOUT = "Snout",
 	MBP_LEGS = "Legs",
 	MBP_WINGS_DECORATIVE = "Decorative Wings",
@@ -280,9 +269,9 @@ GLOBAL_LIST_INIT(all_mutant_parts, list(
 	MBP_SCREEN = "Screen",
 	MBP_ANTENNA_IPC = "Antenna",
 	MBP_MEAT_TYPE = "Meat Type",
-	MBP_HORNS = "Horns"
-	)
-)
+	MBP_HORNS = "Horns",
+	))
+
 GLOBAL_LIST_INIT(default_mutant_parts, list(
 	MBP_TAIL_LIZARD,
 	MBP_TAIL,
@@ -290,7 +279,7 @@ GLOBAL_LIST_INIT(default_mutant_parts, list(
 	MBP_SNOUT_LIZARD,
 	MBP_FRILLS,
 	MBP_TAIL_SPINES,
-	MBP_MARKINGS_BODY,
+	MBP_BODY_MARKINGS,
 	MBP_EARS,
 	MBP_EARS_LIZARD,
 	MBP_SNOUT,
@@ -311,48 +300,46 @@ GLOBAL_LIST_INIT(default_mutant_parts, list(
 	MBP_ANTENNA_IPC,
 	MBP_MEAT_TYPE,
 	MBP_HORNS
-	)
-)
+	))
+
 GLOBAL_LIST_INIT(unlocked_mutant_parts, list(
 	MBP_HORNS,
 	MBP_FLUFF
-	)
-)
+	))
+
 //parts in either of the above two lists that require a second option that allows them to be coloured
 GLOBAL_LIST_INIT(colored_mutant_parts, list(
 	MBP_WINGS_INSECT = "wings_color",
-	MBP_WINGS_DECORATIVE = "wings_color",,
+	MBP_WINGS_DECORATIVE = "wings_color",
 	MBP_HORNS = "horns_color"
-	)
-)
+	))
 
-//body ids that have greyscale sprites
-GLOBAL_LIST_INIT(greyscale_limb_types, list(
-	BODYTYPE_HUMAN,
-	BODYTYPE_MOTH,
-	BODYTYPE_LIZARD,
-	BODYTYPE_PODPERSON,
-	SPECIES_TYPE_PLANT,
-	BODYTYPE_JELLY,
-	BODYTYPE_SLIME,
-	BODYTYPE_GOLEM,
-	BODYTYPE_SLIME_LUMINESCENT,
-	BODYTYPE_SLIME_STARGAZER,
-	BODYTYPE_MUSH,
-	BODYTYPE_ETHEREAL,
-	"snail",
-	BODYTYPE_GOLEM_CLOTH,
-	BODYTYPE_GOLEM_BONE,
-	BODYTYPE_FURRY,
-	BODYTYPE_XENO,
-	BODYTYPE_SYNTH_IPC,
-	BODYTYPE_INSECT,
-	BODYTYPE_SYNTH_LIZARD,
-	BODYTYPE_AQUATIC,
-	BODYTYPE_AVIAN,
-	BODYTYPE_SHADEKIN,
-	)
-)
+// //body ids that have greyscale sprites
+// GLOBAL_LIST_INIT(greyscale_limb_types, list(
+// 	BODYTYPE_HUMAN,
+// 	BODYTYPE_MOTH,
+// 	BODYTYPE_LIZARD,
+// 	BODYTYPE_PODPERSON,
+// 	SPECIES_TYPE_PLANT,
+// 	BODYTYPE_JELLY,
+// 	BODYTYPE_SLIME,
+// 	BODYTYPE_GOLEM,
+// 	BODYTYPE_SLIME_LUMINESCENT,
+// 	BODYTYPE_SLIME_STARGAZER,
+// 	BODYTYPE_MUSH,
+// 	BODYTYPE_ETHEREAL,
+// 	"snail",
+// 	BODYTYPE_GOLEM_CLOTH,
+// 	BODYTYPE_GOLEM_BONE,
+// 	BODYTYPE_FURRY,
+// 	BODYTYPE_XENO,
+// 	BODYTYPE_SYNTH_IPC,
+// 	BODYTYPE_INSECT,
+// 	BODYTYPE_SYNTH_LIZARD,
+// 	BODYTYPE_AQUATIC,
+// 	BODYTYPE_AVIAN,
+// 	BODYTYPE_SHADEKIN,
+// 	))
 
 //body ids that have prosthetic sprites
 GLOBAL_LIST_INIT(prosthetic_limb_types, list(
@@ -363,23 +350,21 @@ GLOBAL_LIST_INIT(prosthetic_limb_types, list(
 	"hephaestus",
 	"nanotrasen",
 	"talon",
-	)
-)
+	))
 
-//body ids that have non-gendered bodyparts
-GLOBAL_LIST_INIT(nongendered_limb_types, list(
-	BODYTYPE_FLY,
-	BODYTYPE_ZOMBIE,
-	BODYTYPE_SYNTH,
-	BODYTYPE_SHADOW,
-	BODYTYPE_GOLEM_CULT,
-	BODYTYPE_AGENT,
-	BODYTYPE_PLASMAMAN,
-	BODYTYPE_GOLEM_RATVAR,
-	BODYTYPE_GOLEM_CLOTH,
-	BODYTYPE_SUPERMUTANT,
-	)
-)
+// //body ids that have non-gendered bodyparts
+// GLOBAL_LIST_INIT(nongendered_limb_types, list(
+// 	BODYTYPE_FLY,
+// 	BODYTYPE_ZOMBIE,
+// 	BODYTYPE_SYNTH,
+// 	BODYTYPE_SHADOW,
+// 	BODYTYPE_GOLEM_CULT,
+// 	BODYTYPE_AGENT,
+// 	BODYTYPE_PLASMAMAN,
+// 	BODYTYPE_GOLEM_RATVAR,
+// 	BODYTYPE_GOLEM_CLOTH,
+// 	BODYTYPE_SUPERMUTANT,
+// 	))
 
 //list of eye types, corresponding to a respective left and right icon state for the set of eyes
 GLOBAL_LIST_INIT(eye_types, list(
@@ -394,8 +379,7 @@ GLOBAL_LIST_INIT(eye_types, list(
 	"double3",
 	"cyclops",
 	BODYTYPE_SHADEKIN,
-	)
-)
+	))
 
 #define DEFAULT_FEATURES list(\
 		MBP_COLOR1 = "FFFFFF",\
@@ -418,7 +402,7 @@ GLOBAL_LIST_INIT(eye_types, list(
 		MBP_ARACHNID_LEGS = "None",\
 		MBP_ARACHNID_SPINNERET = "None",\
 		MBP_ARACHNID_MANDIBLES = "None",\
-		MBP_MARKINGS_BODY = list(),\
+		MBP_BODY_MARKINGS = list(),\
 		MBP_EARS = "None",\
 		MBP_SNOUT = "None",\
 		MBP_TAIL = "None",\

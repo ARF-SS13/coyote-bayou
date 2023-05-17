@@ -1,7 +1,6 @@
 /datum/species/vampire
 	name = "Vampire"
 	id = SPECIES_VAMPIRE
-	limbs_id = BODYTYPE_HUMAN
 	default_color = "FFFFFF"
 	species_traits = list(
 		EYECOLOR,

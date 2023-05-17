@@ -2,6 +2,10 @@
 	// Animated beings of stone. They have increased defenses, and do not need to breathe. They're also slow as fuuuck.
 	name = "Golem"
 	id = SPECIES_GOLEM_IRON
+	limbs_id = BODYTYPE_GOLEM
+	allowed_limb_ids = list(
+		BODYTYPE_GOLEM,
+	)
 	lock_other_parts = TRUE
 	species_traits = list(
 		NOBLOOD,
@@ -47,7 +51,6 @@
 	// changes, only the Random Golem type can be chosen
 	blacklisted = TRUE
 	dangerous_existence = TRUE
-	limbs_id = BODYTYPE_GOLEM
 	fixed_mut_color = "aaa"
 	var/info_text = "As an <span class='danger'>Iron Golem</span>, you don't have any special traits."
 	var/random_eligible = TRUE //If false, the golem subtype can't be made through golem mutation toxin
@@ -600,6 +603,9 @@
 	name = "Runic Golem"
 	id = SPECIES_GOLEM_CULT
 	limbs_id = BODYTYPE_GOLEM_CULT
+	allowed_limb_ids = list(
+		BODYTYPE_GOLEM_CULT,
+	)
 	sexes = FALSE
 	info_text = "As a <span class='danger'>Runic Golem</span>, you possess eldritch powers granted by the Elder Goddess Nar'Sie."
 	species_traits = list(
@@ -660,6 +666,9 @@
 	id = SPECIES_GOLEM_RATVAR
 	say_mod = "clicks"
 	limbs_id = BODYTYPE_GOLEM_RATVAR
+	allowed_limb_ids = list(
+		BODYTYPE_GOLEM_RATVAR,
+	)
 	info_text = "<span class='bold alloy'>As a </span><span class='bold brass'>Clockwork Golem</span><span class='bold alloy'>, you are faster than other types of golems, and are capable of using guns. On death, you will break down into scrap.</span>"
 	species_traits = list(
 		NOBLOOD,
@@ -736,6 +745,9 @@
 	name = "Cloth Golem"
 	id = SPECIES_GOLEM_CLOTH
 	limbs_id = BODYTYPE_GOLEM_CLOTH
+	allowed_limb_ids = list(
+		BODYTYPE_GOLEM_CLOTH,
+	)
 	sexes = FALSE
 	info_text = "As a <span class='danger'>Cloth Golem</span>, you are able to reform yourself after death, provided your remains aren't burned or destroyed. You are, of course, very flammable. \
 	Being made of cloth, your body is magic resistant and faster than that of other golems, but weaker and less resilient."
@@ -975,7 +987,10 @@
 		TRAIT_NODISMEMBER,
 	)
 	fixed_mut_color = "ffffff"
-	limbs_id = BODYTYPE_GOLEM_CARDBOARD //special sprites
+	limbs_id = BODYTYPE_GOLEM_CARDBOARD
+	allowed_limb_ids = list(
+		BODYTYPE_GOLEM_CARDBOARD,
+	)
 	attack_verb = "bash"
 	armor = 25
 	burnmod = 1.25
@@ -1042,6 +1057,9 @@
 	id = SPECIES_GOLEM_DURATHREAD
 	prefix = "Durathread"
 	limbs_id = BODYTYPE_GOLEM_CLOTH
+	allowed_limb_ids = list(
+		BODYTYPE_GOLEM_CLOTH,
+	)
 	special_names = list(
 		"Boll",
 		"Weave",
@@ -1074,6 +1092,9 @@
 	say_mod = "rattles"
 	prefix = "Bone"
 	limbs_id = BODYTYPE_GOLEM_BONE
+	allowed_limb_ids = list(
+		BODYTYPE_GOLEM_BONE,
+	)
 	special_names = list(
 		"Head",
 		"Broth",

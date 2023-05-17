@@ -3,6 +3,9 @@
 	name = "Anthromorphic Plant"
 	id = SPECIES_PODPERSON
 	limbs_id = BODYTYPE_PODPERSON
+	allowed_limb_ids = list(
+		BODYTYPE_PODPERSON,
+	)
 	default_color = "59CE00"
 	species_traits = list(
 		MUTCOLOR1,
@@ -94,7 +97,7 @@
 		MBP_SNOUT = "Husky",
 		MBP_TAIL = "Husky",
 		MBP_EARS = "Husky",
-		MBP_MARKINGS_BODY = list(),
+		MBP_BODY_MARKINGS = list(),
 		MBP_TAUR = "None",
 		MBP_LEGS = "Normal Legs"
 	)

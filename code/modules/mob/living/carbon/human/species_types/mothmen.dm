@@ -2,6 +2,9 @@
 	name = "Mothmen"
 	id = SPECIES_MOTH
 	limbs_id = BODYTYPE_MOTH
+	allowed_limb_ids = list(
+		BODYTYPE_MOTH,
+	)
 	say_mod = "flutters"
 	default_color = "00FF00"
 	species_traits = list(

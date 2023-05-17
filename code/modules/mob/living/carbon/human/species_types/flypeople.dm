@@ -2,6 +2,9 @@
 	name = "Anthromorphic Fly"
 	id = SPECIES_FLY
 	limbs_id = BODYTYPE_FLY
+	allowed_limb_ids = list(
+		BODYTYPE_FLY,
+	)
 	say_mod = "buzzes"
 	species_traits = list(
 		NOEYES,

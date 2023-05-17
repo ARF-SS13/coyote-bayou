@@ -6,6 +6,9 @@
 	name = "???"
 	id = SPECIES_SHADOW
 	limbs_id = BODYTYPE_SHADOW
+	allowed_limb_ids = list(
+		BODYTYPE_SHADOW,
+	)
 	sexes = 0
 	blacklisted = 1
 	ignored_by = list(
@@ -23,7 +26,6 @@
 		TRAIT_VIRUSIMMUNE,
 		TRAIT_NOBREATH
 	)
-	force_plantigrade = TRUE
 
 	dangerous_existence = 1
 	mutanteyes = /obj/item/organ/eyes/night_vision
