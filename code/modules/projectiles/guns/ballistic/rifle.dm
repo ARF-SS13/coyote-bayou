@@ -516,7 +516,7 @@
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Gras"
 	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
@@ -540,6 +540,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/gras
 
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
