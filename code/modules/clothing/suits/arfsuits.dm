@@ -1304,6 +1304,14 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/light/kit/dustersmog
+	name = "winterized riot coat"
+	desc = "This coat was originally intended to be a riot jacket and armour meant for cold climates, now it's some sort of heirloom, the fur of some animal sewn inside the coat and the armour replaced with some fine leather, it'd probably stop a bullet or two.. maybe."
+	icon_state = "duster_recon_smog"
+	item_state = "duster_recon_smog"
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+
 ///////////////////
 // LEATHER ARMOR //
 ///////////////////

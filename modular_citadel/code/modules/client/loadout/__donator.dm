@@ -303,6 +303,15 @@
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 	new /obj/item/lighter/bullet(src)
 
+/datum/gear/donator/kits/caseapollo58143_4
+	name = "Smogsuit Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_4
+	ckeywhitelist = list("caseapollo58143")	
+	
+/obj/item/storage/box/large/custom_kit/caseapollo58143_4/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog(src)
+	new /obj/item/clothing/suit/armor/light/kit/dustersmog(src)
+
 /datum/gear/donator/kits/cavusogluzevk
 	name = "Raider Kit"
 	path = /obj/item/storage/box/large/custom_kit/cavusogluzevk
@@ -1228,8 +1237,8 @@
 	ckeywhitelist = list("saltspider")
 
 /obj/item/storage/box/large/custom_kit/saltspider/PopulateContents()
-	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
-	new /obj/item/melee/onehanded/club/fryingpan/saltspider
+	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider(src)
+	new /obj/item/melee/onehanded/club/fryingpan/saltspider(src)
 
 /datum/gear/donator/kits/kelprunner
 	name = "Kelptastic Kit"
