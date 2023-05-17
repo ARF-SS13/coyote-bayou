@@ -1053,6 +1053,13 @@
 	message = "makes a gecko sound!"
 	sound = 'sound/f13npc/gecko/geckocall2.ogg'
 
+/datum/emote/aie
+	key = "aie"
+	key_third_person = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
+	message = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
+	sound = 'sound/f13effects/sunsetsounds/aie.ogg'
+
+
 /datum/emote/nightstalker
 	key = "nstalker"
 	key_third_person = "doesn't sound happy!"
