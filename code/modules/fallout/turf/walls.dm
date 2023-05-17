@@ -11,7 +11,7 @@
 
 /turf/closed/wall/f13/ruins
 	name = "ruins"
-	desc = "All what has left from the good old days."
+	desc = "All what has left from the good old days."  //What is this fucking english? ~TK
 	icon = 'icons/turf/walls/f13composite.dmi'
 	icon_state = "ruins"
 	icon_type_smooth = "ruins"
