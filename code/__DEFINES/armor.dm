@@ -608,11 +608,11 @@
  * Plasma melts thru a little
  *
  * heavy DT
- * * * * * * * * * * * */
+ * * * * * * * * * * * */ //lmfao 85 85 90 lmao lol kek whew lad, maybe not. ~TK
 #define ARMOR_VALUE_RENEGADE_POWER_ARMOR list(\
-		"melee" = 85, \
-		"bullet" = 85, \
-		"laser" = 90, \
+		"melee" = 60, \
+		"bullet" = 60, \
+		"laser" = 60, \
 		"energy" = 35, \
 		"bomb" = 0, \
 		"bio" = 0, \
@@ -620,7 +620,7 @@
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 15)
+		"damage_threshold" = 8)
 
 
 /* Ant
