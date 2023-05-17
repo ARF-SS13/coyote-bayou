@@ -848,6 +848,16 @@
 /obj/structure/simple_door/metal/fence/wooden,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"lh" = (
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood1-broken"
+	},
+/area/f13/building)
 "lv" = (
 /obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
@@ -2207,10 +2217,13 @@
 	},
 /area/f13/building)
 "AS" = (
-/obj/machinery/chem_heater,
+/obj/machinery/chem_heater{
+	pixel_y = 11
+	},
 /obj/structure/table,
 /obj/machinery/light{
-	dir = 1
+	dir = 1;
+	pixel_y = 19
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -61815,7 +61828,7 @@ nR
 Tq
 ZR
 Qv
-Yt
+lh
 rG
 ov
 py
