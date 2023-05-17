@@ -3,19 +3,19 @@
 	desc = "Rain will fall on the Wasteland, cleaning it."
 	probability = 45
 
-	telegraph_duration = 300
+	telegraph_duration = 15 SECONDS
 	telegraph_overlay = "rain_gathering"
 	telegraph_message = "<span class='notice'><font size=2>You hear a rainstorm gathering on the horizon.</font></span>"
 	telegraph_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
-
-	weather_message = "<span class='notice'><i>You hear the crack of thunder as the rainstorm grows.</i></span>"
-	weather_overlay = "thunderstorm"
-	weather_duration_lower = 2400
-	weather_duration_upper = 7200
+//	weather_sound = 'sound/weather/rain/outdoors/rain-01.ogg' //credit: soundjay.com
 	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
-	end_duration = 250
+	end_duration = 5 SECONDS
 	end_message = "<span class='notice'><font size=2>You start to hear the last of the rain as the sky begins to clear up.</font></span>"
 	end_overlay = "rain_gathering"
+	weather_message = "<span class='notice'><i>You hear the crack of thunder as the rainstorm grows.</i></span>"
+	weather_overlay = "thunderstorm"
+	weather_duration_lower = 3 MINUTES
+	weather_duration_upper = 15 MINUTES
 	tag_weather = WEATHER_RAIN
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protected_areas = list(/area/shuttle)
@@ -29,9 +29,8 @@
 	affects_turfs = TRUE
 	carbons_only = TRUE
 
-
-	var/datum/looping_sound/rain_sounds/sound_ao = new(list(), FALSE, TRUE)
-	var/datum/looping_sound/indoor_rain_sounds/sound_ai = new(list(), FALSE, TRUE)
+	sound_ao_type = /datum/looping_sound/rain_sounds
+	sound_ai_type = /datum/looping_sound/indoor_rain_sounds
 
 /datum/weather/rain/eventarea
 	area_types = list(/area/f13/wasteland/event)
@@ -145,18 +144,6 @@
 	sound_ao.output_atoms = outside_areas
 	sound_ai.output_atoms = inside_areas
 
-/datum/weather/rain/start()
-	. = ..()
-	sound_ao.start()
-	sound_ai.start()
-
-/datum/weather/rain/end()
-	. = ..()
-	sound_ao.stop()
-	sound_ai.stop()
-
-	return ..()
-
 //Fog
 /datum/weather/rain/fog
 	probability = 60
@@ -185,3 +172,7 @@
 
 	affects_turfs = TRUE
 	carbons_only = TRUE
+
+	//The fog is quiet. It knows that it is quiet because of the way it is.
+	sound_ao_type = null
+	sound_ai_type = null
