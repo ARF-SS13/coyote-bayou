@@ -91,14 +91,14 @@
 		HAS_BONE
 	)
 	mutant_bodyparts = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_COLOR2 = "FFFFFF",
-		MBP_COLOR3 = "FFFFFF",
+		FEATURE_COLOR_1 = "FFFFFF",
+		FEATURE_COLOR_2 = "FFFFFF",
+		FEATURE_COLOR_3 = "FFFFFF",
 		MBP_SNOUT = "Husky",
 		MBP_TAIL = "Husky",
 		MBP_EARS = "Husky",
 		MBP_BODY_MARKINGS = list(),
-		MBP_TAUR = "None",
+		MBP_TAUR = ACCESSORY_NONE,
 		MBP_LEGS = "Normal Legs"
 	)
 	limbs_id = BODYTYPE_PODPERSON

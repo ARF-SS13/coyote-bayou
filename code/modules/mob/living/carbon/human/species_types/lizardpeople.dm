@@ -29,19 +29,19 @@
 	coldmod = 1.5
 	heatmod = 0.67
 	mutant_bodyparts = list(
-		MBP_COLOR1 = "0F0",
-		MBP_COLOR2 = "0F0",
-		MBP_COLOR3 = "0F0",
+		FEATURE_COLOR_1 = "0F0",
+		FEATURE_COLOR_2 = "0F0",
+		FEATURE_COLOR_3 = "0F0",
 		MBP_TAIL_LIZARD = "Smooth",
 		MBP_SNOUT = "Round",
-		MBP_HORNS = "None",
-		MBP_FRILLS = "None",
-		MBP_TAIL_SPINES = "None",
+		MBP_HORNS = ACCESSORY_NONE,
+		MBP_FRILLS = ACCESSORY_NONE,
+		MBP_TAIL_SPINES = ACCESSORY_NONE,
 		MBP_BODY_MARKINGS = list(),
 		MBP_LEGS = LEGS_DIGITIGRADE,
-		MBP_TAUR = "None",
-		MBP_WINGS_DECORATIVE = "None",
-		MBP_EARS = "None"
+		MBP_TAUR = ACCESSORY_NONE,
+		MBP_WINGS_DECORATIVE = ACCESSORY_NONE,
+		MBP_EARS = ACCESSORY_NONE
 	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -97,7 +97,7 @@ Lizard subspecies: ASHWALKERS
 	species_language_holder = /datum/language_holder/lizard/ash
 
 /datum/species/lizard/ashwalker/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
-	if((C.dna.features[MBP_TAIL_SPINES] != "None" ) && (C.dna.features[MBP_TAIL_LIZARD] == "None")) //tbh, it's kinda ugly for them not to have a tail yet have floating spines
+	if((C.dna.features[MBP_TAIL_SPINES] != ACCESSORY_NONE ) && (C.dna.features[MBP_TAIL_LIZARD] == ACCESSORY_NONE)) //tbh, it's kinda ugly for them not to have a tail yet have floating spines
 		C.dna.features[MBP_TAIL_LIZARD] = "Smooth"
 		C.update_body()
 	if(C.dna.features[MBP_LEGS] != "digitigrade")

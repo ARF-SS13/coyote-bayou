@@ -576,7 +576,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			if(!layer_to_put_it)
 				continue // not all nads have all three. in fact none of them do!
 			var/datum/sprite_accessory/sprite_acc = nad.get_sprite_accessory()
-			if(!sprite_acc || sprite_acc.icon_state == "none")
+			if(!sprite_acc || sprite_acc.icon_state == ACCESSORY_ICON_STATE_NONE)
 				continue
 			var/aroused_state = nad.aroused_state && sprite_acc.alt_aroused
 			var/accessory_icon = sprite_acc.icon
@@ -658,10 +658,10 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			dna.features["belly_color"] = "[dna.species.fixed_mut_color]"
 			return
 		//So people who haven't set stuff up don't get rainbow surprises.
-		dna.features["cock_color"] = "[dna.features[MBP_COLOR1]]"
-		dna.features["breasts_color"] = "[dna.features[MBP_COLOR1]]"
-		dna.features["butt_color"] = "[dna.features[MBP_COLOR1]]"
-		dna.features["belly_color"] = "[dna.features[MBP_COLOR1]]"
+		dna.features["cock_color"] = "[dna.features[FEATURE_COLOR_1]]"
+		dna.features["breasts_color"] = "[dna.features[FEATURE_COLOR_1]]"
+		dna.features["butt_color"] = "[dna.features[FEATURE_COLOR_1]]"
+		dna.features["belly_color"] = "[dna.features[FEATURE_COLOR_1]]"
 	else //If there's a new organ, make it the same colour.
 		if(breastCheck == FALSE)
 			dna.features["breasts_color"] = dna.features["cock_color"]

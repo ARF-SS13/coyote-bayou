@@ -89,34 +89,34 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		features["color_scheme"] = OLD_CHARACTER_COLORING //disable advanced coloring system by default
 		for(var/feature in features)
 			var/feature_value = features[feature]
-			if(feature_value)
-				var/ref_list = GLOB.mutant_reference_list[feature]
-				if(ref_list)
-					var/datum/sprite_accessory/accessory = ref_list[feature_value]
-					if(accessory)
-						var/mutant_string = accessory.mutant_part_string
-						if(!mutant_string)
-							if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
-								mutant_string = MBP_BODY_MARKINGS
-						var/primary_string = "[mutant_string]_primary"
-						var/secondary_string = "[mutant_string]_secondary"
-						var/tertiary_string = "[mutant_string]_tertiary"
-						if(accessory.color_src == MATRIXED && !accessory.matrixed_sections && feature_value != "None")
-							message_admins("Sprite Accessory Failure (migration from [current_version] to 39): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
-							continue
-						var/primary_exists = features[primary_string]
-						var/secondary_exists = features[secondary_string]
-						var/tertiary_exists = features[tertiary_string]
-						if(accessory.color_src == MATRIXED && !primary_exists && !secondary_exists && !tertiary_exists)
-							features[primary_string] = features[MBP_COLOR1]
-							features[secondary_string] = features[MBP_COLOR2]
-							features[tertiary_string] = features[MBP_COLOR3]
-						else if(accessory.color_src == MUTCOLOR1 && !primary_exists)
-							features[primary_string] = features[MBP_COLOR1]
-						else if(accessory.color_src == MUTCOLOR2 && !secondary_exists)
-							features[secondary_string] = features[MBP_COLOR2]
-						else if(accessory.color_src == MUTCOLOR3 && !tertiary_exists)
-							features[tertiary_string] = features[MBP_COLOR3]
+			if(!feature_value)
+				continue
+			var/datum/sprite_accessory/accessory = SSfurry.get_accessory(feature, feature_value)
+			if(!accessory)
+				continue
+			var/mutant_string = accessory.mutant_part_string
+			if(!mutant_string)
+				if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
+					mutant_string = MBP_BODY_MARKINGS
+			var/primary_string = "[mutant_string]_primary"
+			var/secondary_string = "[mutant_string]_secondary"
+			var/tertiary_string = "[mutant_string]_tertiary"
+			if(accessory.color_src == MATRIXED && !accessory.matrixed_sections && feature_value != ACCESSORY_NONE)
+				message_admins("Sprite Accessory Failure (migration from [current_version] to 39): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
+				continue
+			var/primary_exists = features[primary_string]
+			var/secondary_exists = features[secondary_string]
+			var/tertiary_exists = features[tertiary_string]
+			if(accessory.color_src == MATRIXED && !primary_exists && !secondary_exists && !tertiary_exists)
+				features[primary_string] = features[FEATURE_COLOR_1]
+				features[secondary_string] = features[FEATURE_COLOR_2]
+				features[tertiary_string] = features[FEATURE_COLOR_3]
+			else if(accessory.color_src == MUTCOLOR1 && !primary_exists)
+				features[primary_string] = features[FEATURE_COLOR_1]
+			else if(accessory.color_src == MUTCOLOR2 && !secondary_exists)
+				features[secondary_string] = features[FEATURE_COLOR_2]
+			else if(accessory.color_src == MUTCOLOR3 && !tertiary_exists)
+				features[tertiary_string] = features[FEATURE_COLOR_3]
 
 		features["color_scheme"] = OLD_CHARACTER_COLORING //advanced is off by default
 
@@ -145,7 +145,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 52) // rp markings means markings are now stored as a list, lizard markings now mam like the rest
 		var/marking_type
 		var/species_id = S["species"]
-		var/datum/species/actual_species = GLOB.species_list[species_id]
+		var/datum/species/actual_species = SSfurry.species_list[species_id]
 
 		// convert lizard markings to lizard markings
 		if(species_id == SPECIES_LIZARD && S["feature_lizard_body_markings"])
@@ -165,7 +165,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			var/list/marking_list = list()
 			for(var/part in list(ARM_LEFT, ARM_RIGHT, LEG_LEFT, LEG_RIGHT, CHEST, HEAD))
 				var/list/copied_color_list = color_list.Copy()
-				var/datum/sprite_accessory/mam_body_markings/mam_marking = GLOB.mam_body_markings_list[old_marking_value]
+				var/datum/sprite_accessory/mam_body_markings/mam_marking = SSfurry.body_markings[old_marking_value]
 				var/part_name = GLOB.bodypart_names[num2text(part)]
 				if(length(mam_marking.covered_limbs) && mam_marking.covered_limbs[part_name])
 					var/matrixed_sections = mam_marking.covered_limbs[part_name]
@@ -209,14 +209,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_lizard_tail"] >> lizard
 	S["feature_mam_tail"] >> mammal
 	S["feature_human_tail"] >> human
-	if(human && human != "" && human != "None")
+	if(human && human != "" && human != ACCESSORY_NONE)
 		out = human
-	if(lizard && lizard != "" && lizard != "None")
+	if(lizard && lizard != "" && lizard != ACCESSORY_NONE)
 		out = lizard
-	if(mammal && mammal != "" && mammal != "None")
+	if(mammal && mammal != "" && mammal != ACCESSORY_NONE)
 		out = mammal
 	if(!out)
-		out = "None"
+		out = ACCESSORY_NONE
 	WRITE_FILE(S[MBP_TAIL], out)
 
 	S["feature_mam_tail_animated"] >> mammal
@@ -225,24 +225,24 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_human_ears"] >> human
 	S["feature_lizard_ears"] >> lizard
 	S["feature_mam_ears"] >> mammal
-	if(human && human != "" && human != "None")
+	if(human && human != "" && human != ACCESSORY_NONE)
 		out = human
-	if(lizard && lizard != "" && lizard != "None")
+	if(lizard && lizard != "" && lizard != ACCESSORY_NONE)
 		out = lizard
-	if(mammal && mammal != "" && mammal != "None")
+	if(mammal && mammal != "" && mammal != ACCESSORY_NONE)
 		out = mammal
 	if(!out)
-		out = "None"
+		out = ACCESSORY_NONE
 	WRITE_FILE(S[MBP_EARS], out)
 
 	S["feature_mam_snouts"] >> mammal
 	S["feature_lizard_snout"] >> lizard
-	if(lizard && lizard != "" && lizard != "None")
+	if(lizard && lizard != "" && lizard != ACCESSORY_NONE)
 		out = lizard
-	if(mammal && mammal != "" && mammal != "None")
+	if(mammal && mammal != "" && mammal != ACCESSORY_NONE)
 		out = mammal
 	if(!out)
-		out = "None"
+		out = ACCESSORY_NONE
 	WRITE_FILE(S[MBP_SNOUT], out)
 
 	S["feature_lizard_legs"] >> lizard
@@ -555,7 +555,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if("synthanthro")
 				species_id = SPECIES_SYNTH_LIZARD
 
-		var/newtype = GLOB.species_list[species_id]
+		var/newtype = SSfurry.species_list[species_id]
 		if(newtype)
 			pref_species = new newtype
 
@@ -591,7 +591,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["uplink_loc"]				>> uplink_spawn_loc
 	S["custom_speech_verb"]		>> custom_speech_verb
 	S["custom_tongue"]			>> custom_tongue
-	S["feature_mcolor"]					>> features[MBP_COLOR1]
+	S["feature_mcolor"]					>> features[FEATURE_COLOR_1]
 	// S["feature_lizard_tail"]			>> features[MBP_TAIL_LIZARD]
 	S[MBP_SNOUT]						>> features[MBP_SNOUT]
 	S[MBP_HORNS]						>> features[MBP_HORNS]
@@ -606,8 +606,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_insect_wings"]			>> features[MBP_WINGS_INSECT]
 	S["feature_insect_fluff"]			>> features[MBP_FLUFF]
 	S["feature_insect_markings"]		>> features[MBP_MARKINGS_INSECT]
-	S["feature_horns_color"]			>> features["horns_color"]
-	S["feature_wings_color"]			>> features["wings_color"]
+	S["feature_horns_color"]			>> features[FEATURE_COLORMODE_HORNS]
+	S["feature_wings_color"]			>> features[FEATURE_COLORMODE_WINGS]
 	S["feature_color_scheme"]			>> features["color_scheme"]
 	S["feature_chat_color"]				>> features["chat_color"]
 	S["persistent_scars"] 				>> persistent_scars
@@ -653,8 +653,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["medical_records"]			>>			medical_records
 
 	//Citadel code
-	S["feature_mcolor2"]				>> features[MBP_COLOR2]
-	S["feature_mcolor3"]				>> features[MBP_COLOR3]
+	S["feature_mcolor2"]				>> features[FEATURE_COLOR_2]
+	S["feature_mcolor3"]				>> features[FEATURE_COLOR_3]
 	// note safe json decode will runtime the first time it migrates but this is fine and it solves itself don't worry about it if you see it error
 	features[MBP_BODY_MARKINGS] = safe_json_decode(S["feature_mam_body_markings"])
 	// S["feature_mam_tail"]				>> features[MBP_TAIL]
@@ -843,12 +843,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		skin_tone					= sanitize_inlist(skin_tone, GLOB.skin_tones - GLOB.nonstandard_skin_tones, initial(skin_tone))
 
-	features["horns_color"]			= sanitize_hexcolor(features["horns_color"], 6, FALSE, "85615a")
-	features["wings_color"]			= sanitize_hexcolor(features["wings_color"], 6, FALSE, "FFFFFF")
+	features[FEATURE_COLORMODE_HORNS]			= sanitize_hexcolor(features[FEATURE_COLORMODE_HORNS], 6, FALSE, "85615a")
+	features[FEATURE_COLORMODE_WINGS]			= sanitize_hexcolor(features[FEATURE_COLORMODE_WINGS], 6, FALSE, "FFFFFF")
 	backbag							= sanitize_inlist(backbag, GLOB.backbaglist, initial(backbag))
 	jumpsuit_style					= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	uplink_spawn_loc				= sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
-	features[MBP_COLOR1]				= sanitize_hexcolor(features[MBP_COLOR1], 6, FALSE)
+	features[FEATURE_COLOR_1]				= sanitize_hexcolor(features[FEATURE_COLOR_1], 6, FALSE)
 	// features[MBP_TAIL_LIZARD]			= sanitize_inlist(features[MBP_TAIL_LIZARD], GLOB.tails_list_lizard)
 	features[MBP_TAIL]			= sanitize_inlist(features[MBP_TAIL], GLOB.tails_list)
 	features[MBP_SNOUT]				= sanitize_inlist(features[MBP_SNOUT], GLOB.snouts_list)
@@ -857,9 +857,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features[MBP_FRILLS]				= sanitize_inlist(features[MBP_FRILLS], GLOB.frills_list)
 	features[MBP_TAIL_SPINES]				= sanitize_inlist(features[MBP_TAIL_SPINES], GLOB.spines_list)
 	features[MBP_LEGS]				= sanitize_inlist(features[MBP_LEGS], GLOB.legs_list, LEGS_PLANTIGRADE)
-	features[MBP_WINGS_DECORATIVE] 			= sanitize_inlist(features[MBP_WINGS_DECORATIVE], GLOB.deco_wings_list, "None")
+	features[MBP_WINGS_DECORATIVE] 			= sanitize_inlist(features[MBP_WINGS_DECORATIVE], GLOB.deco_wings_list, ACCESSORY_NONE)
 	features[MBP_FLUFF]		= sanitize_inlist(features[MBP_FLUFF], GLOB.insect_fluffs_list)
-	features[MBP_MARKINGS_INSECT] 	= sanitize_inlist(features[MBP_MARKINGS_INSECT], GLOB.insect_markings_list, "None")
+	features[MBP_MARKINGS_INSECT] 	= sanitize_inlist(features[MBP_MARKINGS_INSECT], GLOB.insect_markings_list, ACCESSORY_NONE)
 	features[MBP_WINGS_INSECT] 		= sanitize_inlist(features[MBP_WINGS_INSECT], GLOB.insect_wings_list)
 
 	var/static/size_min
@@ -965,27 +965,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//THIS MUST BE DONE AFTER ALL FEATURE SAVES OR IT WILL NOT WORK
 	for(var/feature in features)
 		var/feature_value = features[feature]
-		if(feature_value)
-			var/ref_list = GLOB.mutant_reference_list[feature]
-			if(ref_list)
-				var/datum/sprite_accessory/accessory = ref_list[feature_value]
-				if(accessory)
-					var/mutant_string = accessory.mutant_part_string
-					if(!mutant_string)
-						if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
-							mutant_string = MBP_BODY_MARKINGS
-					var/primary_string = "[mutant_string]_primary"
-					var/secondary_string = "[mutant_string]_secondary"
-					var/tertiary_string = "[mutant_string]_tertiary"
-					if(accessory.color_src == MATRIXED && !accessory.matrixed_sections && feature_value != "None")
-						message_admins("Sprite Accessory Failure (loading data): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
-						continue
-					if(S["feature_[primary_string]"])
-						S["feature_[primary_string]"]		>> features[primary_string]
-					if(S["feature_[secondary_string]"])
-						S["feature_[secondary_string]"]		>> features[secondary_string]
-					if(S["feature_[tertiary_string]"])
-						S["feature_[tertiary_string]"]		>> features[tertiary_string]
+		if(!feature_value)
+			continue
+		var/datum/sprite_accessory/accessory = SSfurry.get_accessory(feature, feature_value)
+		if(!accessory)
+			continue
+		var/mutant_string = accessory.mutant_part_string
+		if(!mutant_string)
+			if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
+				mutant_string = MBP_BODY_MARKINGS
+		var/primary_string = "[mutant_string]_primary"
+		var/secondary_string = "[mutant_string]_secondary"
+		var/tertiary_string = "[mutant_string]_tertiary"
+		if(accessory.color_src == MATRIXED && !accessory.matrixed_sections && feature_value != ACCESSORY_NONE)
+			message_admins("Sprite Accessory Failure (loading data): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
+			continue
+		if(S["feature_[primary_string]"])
+			S["feature_[primary_string]"]		>> features[primary_string]
+		if(S["feature_[secondary_string]"])
+			S["feature_[secondary_string]"]		>> features[secondary_string]
+		if(S["feature_[tertiary_string]"])
+			S["feature_[tertiary_string]"]		>> features[tertiary_string]
 
 	persistent_scars = sanitize_integer(persistent_scars)
 	scars_list["1"] = sanitize_text(scars_list["1"])
@@ -999,7 +999,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	creature_profilepic = sanitize_text(creature_profilepic)
 
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
-	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
+	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, ACCESSORY_ICON_STATE_NONE)
 
 	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds, "Default")
 	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
@@ -1025,12 +1025,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features[MBP_ANTENNA_IPC] 	= sanitize_inlist(features[MBP_ANTENNA_IPC], GLOB.ipc_antennas_list)
 	//Citadel
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
-	if(!features[MBP_COLOR2] || features[MBP_COLOR1] == "#000000")
-		features[MBP_COLOR2] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
-	if(!features[MBP_COLOR3] || features[MBP_COLOR1] == "#000000")
-		features[MBP_COLOR3] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
-	features[MBP_COLOR2]	= sanitize_hexcolor(features[MBP_COLOR2], 6, FALSE)
-	features[MBP_COLOR3]	= sanitize_hexcolor(features[MBP_COLOR3], 6, FALSE)
+	if(!features[FEATURE_COLOR_2] || features[FEATURE_COLOR_1] == "#000000")
+		features[FEATURE_COLOR_2] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	if(!features[FEATURE_COLOR_3] || features[FEATURE_COLOR_1] == "#000000")
+		features[FEATURE_COLOR_3] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	features[FEATURE_COLOR_2]	= sanitize_hexcolor(features[FEATURE_COLOR_2], 6, FALSE)
+	features[FEATURE_COLOR_3]	= sanitize_hexcolor(features[FEATURE_COLOR_3], 6, FALSE)
 
 	return 1
 
@@ -1088,7 +1088,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["security_records"]		, security_records)
 	WRITE_FILE(S["medical_records"]			, medical_records)
 
-	WRITE_FILE(S["feature_mcolor"]					, features[MBP_COLOR1])
+	WRITE_FILE(S["feature_mcolor"]					, features[FEATURE_COLOR_1])
 	// WRITE_FILE(S["feature_lizard_tail"]				, features[MBP_TAIL_LIZARD])
 	// WRITE_FILE(S["feature_human_tail"]				, features[MBP_TAIL_HUMAN])
 	WRITE_FILE(S[MBP_TAIL]							, features[MBP_TAIL])
@@ -1100,8 +1100,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_spines"]			, features[MBP_TAIL_SPINES])
 	WRITE_FILE(S[MBP_LEGS]							, features[MBP_LEGS])
 	WRITE_FILE(S["feature_deco_wings"]				, features[MBP_WINGS_DECORATIVE])
-	WRITE_FILE(S["feature_horns_color"]				, features["horns_color"])
-	WRITE_FILE(S["feature_wings_color"]				, features["wings_color"])
+	WRITE_FILE(S["feature_horns_color"]				, features[FEATURE_COLORMODE_HORNS])
+	WRITE_FILE(S["feature_wings_color"]				, features[FEATURE_COLORMODE_WINGS])
 	WRITE_FILE(S["feature_insect_wings"]			, features[MBP_WINGS_INSECT])
 	WRITE_FILE(S["feature_insect_fluff"]			, features[MBP_FLUFF])
 	WRITE_FILE(S["feature_insect_markings"]			, features[MBP_MARKINGS_INSECT])
@@ -1175,27 +1175,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)
 		var/feature_value = features[feature]
-		if(feature_value)
-			var/ref_list = GLOB.mutant_reference_list[feature]
-			if(ref_list)
-				var/datum/sprite_accessory/accessory = ref_list[feature_value]
-				if(accessory)
-					var/mutant_string = accessory.mutant_part_string
-					if(!mutant_string)
-						if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
-							mutant_string = MBP_BODY_MARKINGS
-					var/primary_string = "[mutant_string]_primary"
-					var/secondary_string = "[mutant_string]_secondary"
-					var/tertiary_string = "[mutant_string]_tertiary"
-					if(accessory.color_src == MATRIXED && !accessory.matrixed_sections && feature_value != "None")
-						message_admins("Sprite Accessory Failure (saving data): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
-						continue
-					if(features[primary_string])
-						WRITE_FILE(S["feature_[primary_string]"], features[primary_string])
-					if(features[secondary_string])
-						WRITE_FILE(S["feature_[secondary_string]"], features[secondary_string])
-					if(features[tertiary_string])
-						WRITE_FILE(S["feature_[tertiary_string]"], features[tertiary_string])
+		if(!feature_value)
+			continue
+		var/datum/sprite_accessory/accessory = SSfurry.get_accessory(feature, feature_value)
+		if(!accessory)
+			continue
+		var/mutant_string = accessory.mutant_part_string
+		if(!mutant_string)
+			if(istype(accessory, /datum/sprite_accessory/mam_body_markings))
+				mutant_string = MBP_BODY_MARKINGS
+		var/primary_string = "[mutant_string]_primary"
+		var/secondary_string = "[mutant_string]_secondary"
+		var/tertiary_string = "[mutant_string]_tertiary"
+		if(accessory.color_src == MATRIXED && !accessory.matrixed_sections && feature_value != ACCESSORY_NONE)
+			message_admins("Sprite Accessory Failure (saving data): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
+			continue
+		if(features[primary_string])
+			WRITE_FILE(S["feature_[primary_string]"], features[primary_string])
+		if(features[secondary_string])
+			WRITE_FILE(S["feature_[secondary_string]"], features[secondary_string])
+		if(features[tertiary_string])
+			WRITE_FILE(S["feature_[tertiary_string]"], features[tertiary_string])
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -1273,8 +1273,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_ipc_screen"], features[MBP_SCREEN])
 	WRITE_FILE(S["feature_ipc_antenna"], features[MBP_ANTENNA_IPC])
 	//Citadel
-	WRITE_FILE(S["feature_mcolor2"], features[MBP_COLOR2])
-	WRITE_FILE(S["feature_mcolor3"], features[MBP_COLOR3])
+	WRITE_FILE(S["feature_mcolor2"], features[FEATURE_COLOR_2])
+	WRITE_FILE(S["feature_mcolor3"], features[FEATURE_COLOR_3])
 	WRITE_FILE(S["feature_mam_body_markings"], safe_json_encode(features[MBP_BODY_MARKINGS]))
 	// WRITE_FILE(S["feature_tail"], features[MBP_TAIL])
 	// WRITE_FILE(S["feature_mam_ears"], features[MBP_EARS])

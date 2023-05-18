@@ -459,7 +459,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 							R = find_record("name", perpname, GLOB.data_core.security)
 							if(R)
 								if(href_list["status"])
-									var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.fields["criminal"]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
+									var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.fields["criminal"]) in list(ACCESSORY_NONE, "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
 									if(setcriminal != "Cancel")
 										if(R)
 											if(H.canUseHUD())
@@ -1239,9 +1239,9 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	if(href_list[VV_HK_SET_SPECIES])
 		if(!check_rights(R_SPAWN))
 			return
-		var/result = input(usr, "Please choose a new species","Species") as null|anything in GLOB.species_list
+		var/result = input(usr, "Please choose a new species","Species") as null|anything in SSfurry.species_list
 		if(result)
-			var/newtype = GLOB.species_list[result]
+			var/newtype = SSfurry.species_list[result]
 			admin_ticket_log("[key_name_admin(usr)] has modified the bodyparts of [src] to [result]")
 			set_species(newtype)
 	if(href_list[VV_HK_PURRBATION])

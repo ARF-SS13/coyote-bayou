@@ -6,7 +6,7 @@
 	icon_state = "severedtail"
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TAIL
-	var/tail_type = "None"
+	var/tail_type = ACCESSORY_NONE
 
 /obj/item/organ/tail/Remove(special = FALSE)
 	if(owner?.dna?.species)
@@ -29,7 +29,7 @@
 /obj/item/organ/tail/cat/Remove(special = FALSE)
 	if(!QDELETED(owner) && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		H.dna.features[MBP_TAIL] = "None"
+		H.dna.features[MBP_TAIL] = ACCESSORY_NONE
 		H.dna.species.mutant_bodyparts -= MBP_TAIL
 		color = H.hair_color
 		H.update_body()
@@ -40,7 +40,7 @@
 	desc = "A severed lizard tail. Somewhere, no doubt, a lizard hater is very pleased with themselves."
 	color = "#116611"
 	tail_type = "Smooth"
-	var/spines = "None"
+	var/spines = ACCESSORY_NONE
 
 /obj/item/organ/tail/lizard/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -66,7 +66,7 @@
 		var/mob/living/carbon/human/H = owner
 		H.dna.species.mutant_bodyparts -= MBP_TAIL_LIZARD
 		H.dna.species.mutant_bodyparts -= MBP_TAIL_SPINES
-		color = "#" + H.dna.features[MBP_COLOR1]
+		color = "#" + H.dna.features[FEATURE_COLOR_1]
 		tail_type = H.dna.features[MBP_TAIL_LIZARD]
 		spines = H.dna.features[MBP_TAIL_SPINES]
 		H.update_body()

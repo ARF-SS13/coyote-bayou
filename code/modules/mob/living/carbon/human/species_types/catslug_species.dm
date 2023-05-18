@@ -9,9 +9,9 @@
 	say_mod = "chitters"
 	lock_other_parts = TRUE
 	mutant_bodyparts = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_COLOR2 = "FFFFFF",
-		MBP_COLOR3 = "FFFFFF",
+		FEATURE_COLOR_1 = "FFFFFF",
+		FEATURE_COLOR_2 = "FFFFFF",
+		FEATURE_COLOR_3 = "FFFFFF",
 		MBP_TAIL = "catslug",
 		MBP_EARS = "catslug",
 		MBP_LEGS = LEGS_PLANTIGRADE,

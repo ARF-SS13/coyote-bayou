@@ -33,7 +33,7 @@
 	H.saved_socks = H.socks
 
 	// Mutant randomizing, doesn't affect the mob appearance unless it's the specific mutant.
-	H.dna.features[MBP_COLOR1] = random_short_color()
+	H.dna.features[FEATURE_COLOR_1] = random_short_color()
 	H.dna.features[MBP_TAIL_LIZARD] = pick(GLOB.tails_list_lizard)
 	H.dna.features[MBP_SNOUT_LIZARD] = pick(GLOB.snouts_list)
 	H.dna.features[MBP_HORNS] = pick(GLOB.horns_list)
@@ -41,19 +41,19 @@
 	H.dna.features[MBP_TAIL_SPINES] = pick(GLOB.spines_list)
 	H.dna.features[MBP_WINGS_INSECT] = pick(GLOB.insect_wings_list)
 	H.dna.features[MBP_WINGS_DECORATIVE] = pick(GLOB.deco_wings_list)
-	H.dna.features[MBP_FLUFF] = "None"
-	H.dna.features[MBP_COLOR1] = "FFF"
-	H.dna.features[MBP_COLOR2] = "FFF"
-	H.dna.features[MBP_COLOR3] = "FFF"
-	H.dna.features[MBP_TAIL_LIZARD] = "None"
+	H.dna.features[MBP_FLUFF] = ACCESSORY_NONE
+	H.dna.features[FEATURE_COLOR_1] = "FFF"
+	H.dna.features[FEATURE_COLOR_2] = "FFF"
+	H.dna.features[FEATURE_COLOR_3] = "FFF"
+	H.dna.features[MBP_TAIL_LIZARD] = ACCESSORY_NONE
 	H.dna.features[MBP_LEGS] = "Plantigrade"
-	H.dna.features[MBP_SNOUT_LIZARD] = "None"
-	H.dna.features[MBP_HORNS] = "None"
-	H.dna.features[MBP_FRILLS] = "None"
-	H.dna.features[MBP_TAIL_SPINES] = "None"
-	H.dna.features[MBP_WINGS_INSECT] = "None"
-	H.dna.features[MBP_WINGS_DECORATIVE] = "None"
-	H.dna.features[MBP_FLUFF] = "None"
+	H.dna.features[MBP_SNOUT_LIZARD] = ACCESSORY_NONE
+	H.dna.features[MBP_HORNS] = ACCESSORY_NONE
+	H.dna.features[MBP_FRILLS] = ACCESSORY_NONE
+	H.dna.features[MBP_TAIL_SPINES] = ACCESSORY_NONE
+	H.dna.features[MBP_WINGS_INSECT] = ACCESSORY_NONE
+	H.dna.features[MBP_WINGS_DECORATIVE] = ACCESSORY_NONE
+	H.dna.features[MBP_FLUFF] = ACCESSORY_NONE
 	H.dna.features["flavor_text"] = "" //Oh no.
 	H.dna.features["body_model"] = H.gender
 

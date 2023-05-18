@@ -135,8 +135,8 @@
 	mutant_part_string = MBP_ANTENNA_IPC
 
 /datum/sprite_accessory/antenna/none
-	name = "None"
-	icon_state = "None"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_NONE
 	recommended_species = null
 
 /datum/sprite_accessory/antenna/antennae

@@ -44,7 +44,7 @@
 	if(H.dna && H.dna.species && (H.dna.features[MBP_WINGS] == "Angel"))
 		if(H.dna.species.mutant_bodyparts[MBP_WINGS])
 			H.dna.species.mutant_bodyparts -= MBP_WINGS
-		H.dna.features[MBP_WINGS] = "None"
+		H.dna.features[MBP_WINGS] = ACCESSORY_NONE
 		H.update_body()
 	REMOVE_TRAIT(H, TRAIT_HOLY, SPECIES_TRAIT)
 	..()

@@ -309,7 +309,7 @@
 				if(S?.can_wag_tail(src) && !dna.species.is_wagging_tail())
 					var/static/list/many_tails = list(MBP_TAIL_HUMAN, MBP_TAIL_LIZARD, MBP_TAIL)
 					for(var/T in many_tails)
-						if(S.mutant_bodyparts[T] && dna.features[T] != "None")
+						if(S.mutant_bodyparts[T] && dna.features[T] != ACCESSORY_NONE)
 							emote("wag")
 
 		else if(check_zone(M.zone_selected) == BODY_ZONE_R_ARM || check_zone(M.zone_selected) == BODY_ZONE_L_ARM)

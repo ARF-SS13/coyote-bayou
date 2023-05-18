@@ -21,12 +21,12 @@
 		MBP_XENO_HEAD="Standard",
 		MBP_XENO_DORSAL="Standard",
 		MBP_BODY_MARKINGS = list(),
-		MBP_COLOR1 = "0F0",
-		MBP_COLOR2 = "0F0",
-		MBP_COLOR3 = "0F0",
-		MBP_TAUR = "None",
+		FEATURE_COLOR_1 = "0F0",
+		FEATURE_COLOR_2 = "0F0",
+		FEATURE_COLOR_3 = "0F0",
+		MBP_TAUR = ACCESSORY_NONE,
 		MBP_LEGS = LEGS_DIGITIGRADE,
-		MBP_WINGS_DECORATIVE= "None"
+		MBP_WINGS_DECORATIVE= ACCESSORY_NONE
 	)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'

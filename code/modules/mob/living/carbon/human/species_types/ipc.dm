@@ -32,7 +32,7 @@
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutant_bodyparts = list(
 		MBP_SCREEN = "Blank",
-		MBP_ANTENNA_IPC = "None",
+		MBP_ANTENNA_IPC = ACCESSORY_NONE,
 	)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(

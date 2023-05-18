@@ -724,7 +724,7 @@
 		if(S.fixed_mut_color)
 			species_color = S.fixed_mut_color
 		else
-			species_color = H.dna.features[MBP_COLOR1]
+			species_color = H.dna.features[FEATURE_COLOR_1]
 	else
 		species_color = ""
 
@@ -734,12 +734,13 @@
 			// marking is a list containing bodypart type, bodymarking name, and then the colour (colour won't be used in v1)
 			if(marking[1] == body_part)
 				var/datum/sprite_accessory/Smark
-				Smark = GLOB.mam_body_markings_list[marking[2]]
+				var/list/marklist = SSfurry.get_accessory_list(MBP_BODY_MARKINGS)
+				Smark = marklist[marking[2]]
 				var/body_markings_icon = default_body_markings_icon
 				if(Smark)
 					body_markings_icon = Smark.icon
 				var/marking_value = "" // combination of body and aux markings from old system
-				if(H.dna.features[MBP_BODY_MARKINGS] != "None")
+				if(H.dna.features[MBP_BODY_MARKINGS] != ACCESSORY_NONE)
 					marking_value = Smark?.icon_state || lowertext(H.dna.features[MBP_BODY_MARKINGS])
 				else
 					marking_value = "plain"
@@ -752,9 +753,9 @@
 		//body marking memes
 		var/list/colorlist = list()
 		colorlist.Cut()
-		colorlist += ReadRGB("[H.dna.features[MBP_COLOR1]]00")
-		colorlist += ReadRGB("[H.dna.features[MBP_COLOR2]]00")
-		colorlist += ReadRGB("[H.dna.features[MBP_COLOR3]]00")
+		colorlist += ReadRGB("[H.dna.features[FEATURE_COLOR_1]]00")
+		colorlist += ReadRGB("[H.dna.features[FEATURE_COLOR_2]]00")
+		colorlist += ReadRGB("[H.dna.features[FEATURE_COLOR_3]]00")
 		colorlist += list(0,0,0, S.hair_alpha)
 		for(var/index=1, index<=colorlist.len, index++)
 			colorlist[index] = colorlist[index]/255

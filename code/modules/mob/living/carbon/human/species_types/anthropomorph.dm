@@ -7,8 +7,8 @@
 	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
 
-	mutant_bodyparts = list(MBP_COLOR1 = "FFFFFF",MBP_COLOR2 = "FFFFFF",MBP_COLOR3 = "FFFFFF", MBP_SNOUT = "Husky", MBP_TAIL = "Husky", MBP_EARS = "Husky", MBP_WINGS_DECORATIVE = "None",
-						MBP_BODY_MARKINGS = "Husky", MBP_TAUR = "None", MBP_HORNS = "None", MBP_LEGS = LEGS_PLANTIGRADE, MBP_MEAT_TYPE = MEAT_MAMMAL)
+	mutant_bodyparts = list(FEATURE_COLOR_1 = "FFFFFF",FEATURE_COLOR_2 = "FFFFFF",FEATURE_COLOR_3 = "FFFFFF", MBP_SNOUT = "Husky", MBP_TAIL = "Husky", MBP_EARS = "Husky", MBP_WINGS_DECORATIVE = ACCESSORY_NONE,
+						MBP_BODY_MARKINGS = "Husky", MBP_TAUR = ACCESSORY_NONE, MBP_HORNS = ACCESSORY_NONE, MBP_LEGS = LEGS_PLANTIGRADE, MBP_MEAT_TYPE = MEAT_MAMMAL)
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)

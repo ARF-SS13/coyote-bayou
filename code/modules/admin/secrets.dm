@@ -328,12 +328,12 @@
 		if("allspecies")
 			if(!check_rights(R_FUN))
 				return
-			var/result = input(usr, "Please choose a new species","Species") as null|anything in GLOB.species_list
+			var/result = input(usr, "Please choose a new species","Species") as null|anything in SSfurry.species_list
 			if(result)
 				SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Mass Species Change", "[result]"))
 				log_admin("[key_name(usr)] turned all humans into [result]", 1)
 				message_admins(span_notice("[key_name_admin(usr)] turned all humans into [result]"))
-				var/newtype = GLOB.species_list[result]
+				var/newtype = SSfurry.species_list[result]
 				for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 					H.set_species(newtype)
 
@@ -431,7 +431,7 @@
 				SEND_SOUND(H, sound(get_announcer_sound("animes")))
 
 				if(H.dna.species.id == SPECIES_HUMAN)
-					if(H.dna.features[MBP_TAIL_HUMAN] == "None" || H.dna.features[MBP_EARS_LIZARD] == "None")
+					if(H.dna.features[MBP_TAIL_HUMAN] == ACCESSORY_NONE || H.dna.features[MBP_EARS_LIZARD] == ACCESSORY_NONE)
 						var/obj/item/organ/ears/cat/ears = new
 						var/obj/item/organ/tail/cat/tail = new
 						ears.Insert(H, drop_if_replaced=FALSE)

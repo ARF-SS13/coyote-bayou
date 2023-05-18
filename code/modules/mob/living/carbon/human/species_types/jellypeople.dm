@@ -22,12 +22,12 @@
 	mutantlungs = /obj/item/organ/lungs/slime
 	mutant_heart = /obj/item/organ/heart/slime
 	mutant_bodyparts = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_TAIL = "None",
-		MBP_EARS = "None",
-		MBP_SNOUT = "None",
-		MBP_TAUR = "None",
-		MBP_WINGS_DECORATIVE = "None",
+		FEATURE_COLOR_1 = "FFFFFF",
+		MBP_TAIL = ACCESSORY_NONE,
+		MBP_EARS = ACCESSORY_NONE,
+		MBP_SNOUT = ACCESSORY_NONE,
+		MBP_TAUR = ACCESSORY_NONE,
+		MBP_WINGS_DECORATIVE = ACCESSORY_NONE,
 		MBP_LEGS = LEGS_PLANTIGRADE
 	)
 	inherent_traits = list(
@@ -93,7 +93,7 @@
 /datum/species/jelly/handle_body(mob/living/carbon/human/H)
 	. = ..()
 	//update blood color to body color
-	exotic_blood_color = "#" + H.dna.features[MBP_COLOR1]
+	exotic_blood_color = "#" + H.dna.features[FEATURE_COLOR_1]
 
 /datum/species/jelly/spec_life(mob/living/carbon/human/H)
 	if(H.stat == DEAD || HAS_TRAIT(H, TRAIT_NOMARROW)) //can't farm slime jelly from a dead slime/jelly person indefinitely, and no regeneration for blooduskers
@@ -297,7 +297,7 @@
 	spare.undershirt = "Nude"
 	spare.socks = "Nude"
 	H.dna.transfer_identity(spare, transfer_SE=1)
-	spare.dna.features[MBP_COLOR1] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	spare.dna.features[FEATURE_COLOR_1] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
 	spare.real_name = spare.dna.real_name
 	spare.name = spare.dna.real_name
 	spare.updateappearance(mutcolor_update=1)
@@ -374,7 +374,7 @@
 
 		var/list/L = list()
 		// HTML colors need a # prefix
-		L["htmlcolor"] = "#[body.dna.features[MBP_COLOR1]]"
+		L["htmlcolor"] = "#[body.dna.features[FEATURE_COLOR_1]]"
 		L["area"] = get_area_name(body, TRUE)
 		var/stat = "error"
 		switch(body.stat)
@@ -507,14 +507,14 @@
 		TRAIT_TOXINLOVER
 	)
 	mutant_bodyparts = list(
-		MBP_COLOR1 = "FFFFFF",
-		MBP_COLOR2 = "FFFFFF",
-		MBP_COLOR3 = "FFFFFF",
-		MBP_TAIL = "None",
-		MBP_EARS = "None",
+		FEATURE_COLOR_1 = "FFFFFF",
+		FEATURE_COLOR_2 = "FFFFFF",
+		FEATURE_COLOR_3 = "FFFFFF",
+		MBP_TAIL = ACCESSORY_NONE,
+		MBP_EARS = ACCESSORY_NONE,
 		MBP_BODY_MARKINGS = "Plain",
-		MBP_SNOUT = "None",
-		MBP_TAUR = "None",
+		MBP_SNOUT = ACCESSORY_NONE,
+		MBP_TAUR = ACCESSORY_NONE,
 		MBP_LEGS = LEGS_PLANTIGRADE
 	)
 	say_mod = "says"
@@ -542,23 +542,24 @@
 	if(!isjellyperson(H))
 		return
 	else
-		H.visible_message("<span class='notice'>[owner] gains a look of \
-		concentration while standing perfectly still.\
-		Their body seems to shift and starts getting more goo-like.</span>",
-		"<span class='notice'>You focus intently on altering your body while \
-		standing perfectly still...</span>")
-		change_form()
-
+		to_chat(H, span_alert("This feature is broken right now. Sorry!"))
+		// H.visible_message("<span class='notice'>[owner] gains a look of \
+		// concentration while standing perfectly still.\
+		// Their body seems to shift and starts getting more goo-like.</span>",
+		// "<span class='notice'>You focus intently on altering your body while \
+		// standing perfectly still...</span>")
+		// change_form()
+/* 
 /datum/action/innate/slime_change/proc/change_form()
 	var/mob/living/carbon/human/H = owner
 	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color","Hair Style", "Genitals", "Tail", "Snout", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Cancel")
 
 	if(select_alteration == "Body Color")
-		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features[MBP_COLOR1]) as color|null
+		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features[FEATURE_COLOR_1]) as color|null
 		if(new_color)
 			var/temp_hsv = RGBtoHSV(new_color)
 			if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright
-				H.dna.features[MBP_COLOR1] = sanitize_hexcolor(new_color, 6)
+				H.dna.features[FEATURE_COLOR_1] = sanitize_hexcolor(new_color, 6)
 				H.update_body()
 				H.update_hair()
 			else
@@ -626,7 +627,7 @@
 		H.update_body()
 
 	else if (select_alteration == "Markings")
-		var/list/snowflake_markings_list = list("None")
+		var/list/snowflake_markings_list = list(ACCESSORY_NONE)
 		for(var/path in GLOB.mam_body_markings_list)
 			var/datum/sprite_accessory/mam_body_markings/instance = GLOB.mam_body_markings_list[path]
 			if(istype(instance, /datum/sprite_accessory))
@@ -654,8 +655,8 @@
 		new_tail = input(owner, "Choose your character's Tail(s):", "Tail Alteration") as null|anything in snowflake_tails_list
 		if(new_tail)
 			H.dna.features[MBP_TAIL] = new_tail
-			if(new_tail != "None")
-				H.dna.features[MBP_TAUR] = "None"
+			if(new_tail != ACCESSORY_NONE)
+				H.dna.features[MBP_TAUR] = ACCESSORY_NONE
 		H.update_body()
 
 	else if (select_alteration == "Taur body")
@@ -670,8 +671,8 @@
 		new_taur = input(owner, "Choose your character's tauric body:", "Tauric Alteration") as null|anything in snowflake_taur_list
 		if(new_taur)
 			H.dna.features[MBP_TAUR] = new_taur
-			if(new_taur != "None")
-				H.dna.features[MBP_TAIL] = "None"
+			if(new_taur != ACCESSORY_NONE)
+				H.dna.features[MBP_TAIL] = ACCESSORY_NONE
 		H.update_body()
 
 	else if (select_alteration == "Penis")
@@ -747,7 +748,7 @@
 
 	else
 		return
-
+ */
 
 ///////////////////////////////////LUMINESCENTS//////////////////////////////////////////
 
@@ -799,7 +800,7 @@
 /datum/species/jelly/luminescent/proc/update_glow(mob/living/carbon/C, intensity)
 	if(intensity)
 		glow_intensity = intensity
-	glow.set_light_range_power_color(glow_intensity, glow_intensity, C.dna.features[MBP_COLOR1])
+	glow.set_light_range_power_color(glow_intensity, glow_intensity, C.dna.features[FEATURE_COLOR_1])
 
 /obj/effect/dummy/luminescent_glow
 	name = "luminescent glow"

@@ -103,7 +103,7 @@
 	if(!QDELETED(owner) && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		color = H.hair_color
-		H.dna.features[MBP_EARS] = "None"
+		H.dna.features[MBP_EARS] = ACCESSORY_NONE
 		H.dna.species.mutant_bodyparts -= MBP_EARS
 		H.update_body()
 	return ..()

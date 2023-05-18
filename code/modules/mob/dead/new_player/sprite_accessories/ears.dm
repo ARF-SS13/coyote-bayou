@@ -1,6 +1,6 @@
 /datum/sprite_accessory/ears
 	icon = 'icons/mob/mutant_bodyparts.dmi'
-	mutant_part_string = MBP_EARS_LIZARD
+	mutant_part_string = MBP_EARS
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/ears/is_not_visible(mob/living/carbon/human/H, tauric)
@@ -9,7 +9,7 @@
 		return TRUE
 	if(!H.dna.features[MBP_EARS])
 		return TRUE
-	if(ckey(H.dna.features[MBP_EARS]) == "none")
+	if(ckey(H.dna.features[MBP_EARS]) == ACCESSORY_ICON_STATE_NONE)
 		return TRUE
 	if(H.head && (H.head.flags_inv & HIDEEARS))
 		return TRUE
@@ -19,14 +19,14 @@
 		return TRUE
 
 /datum/sprite_accessory/ears/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	relevant_layers = null
 
 /******************************************
 *************** Human Ears ****************
 *******************************************/
-
+/* 
 
 /datum/sprite_accessory/ears/human/axolotl
 	name = "Axolotl"
@@ -297,7 +297,7 @@
 
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
-
+ */
 
 /******************************************
 *************** Furry Ears ****************
@@ -310,11 +310,11 @@
 
 // /datum/sprite_accessory/ears/mam_ears/is_not_visible(mob/living/carbon/human/H, tauric)
 // 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-// 	return (!H.dna.features[MBP_EARS] || H.dna.features[MBP_EARS] == "None" || H.head && (H.head.flags_inv & HIDEEARS) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEARS)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
+// 	return (!H.dna.features[MBP_EARS] || H.dna.features[MBP_EARS] == ACCESSORY_NONE || H.head && (H.head.flags_inv & HIDEEARS) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEARS)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
 
 /datum/sprite_accessory/ears/mam_ears/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	relevant_layers = null
 
 /datum/sprite_accessory/ears/mam_ears/axolotl

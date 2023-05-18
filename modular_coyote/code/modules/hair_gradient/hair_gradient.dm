@@ -7,7 +7,7 @@
 
 // Globals/helpers/randomness.
 GLOBAL_LIST_INIT(hair_gradients, list(
-	"None" = "none",
+	ACCESSORY_NONE = ACCESSORY_ICON_STATE_NONE,
 	"Fade (Up)" = "fadeup",
 	"Fade (Down)" = "fadedown",
 	"Fade Low (Up)" = "fadeup_low",
@@ -65,7 +65,7 @@ randomize_human(mob/living/carbon/human/H)
 
 // Preferences + save file/copy_to and stuff.
 /datum/preferences
-	var/list/features_override = list("grad_style" = "None", "grad_color" = "333333")
+	var/list/features_override = list("grad_style" = ACCESSORY_NONE, "grad_color" = "333333")
 
 // Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
 // My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it
@@ -83,7 +83,7 @@ randomize_human(mob/living/carbon/human/H)
 	S["gradient_style"]		>> features_override["grad_style"]
 
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
-	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
+	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, ACCESSORY_ICON_STATE_NONE)
 
 	return 1
 

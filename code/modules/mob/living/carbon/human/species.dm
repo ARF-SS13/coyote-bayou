@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 	var/punchstunthreshold = 10//damage at which punches from this race will stun //yes it should be to the attacked race but it's not useful that way even if it's logical
 	var/siemens_coeff = 1 //base electrocution coefficient
 	var/damage_overlay_type = "human" //what kind of damage overlays (if any) appear on our species when wounded?
-	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature[MBP_COLOR1]
+	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature[FEATURE_COLOR_1]
 	var/inert_mutation = DWARFISM
 
 	var/sharp_blunt_mod = 1 //the damage modifier something does when blunt, which is everything not a projectile or a knife
@@ -509,7 +509,7 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 			if(!forced_colour)
 				if(hair_color)
 					if(hair_color == "mutcolor")
-						facial_overlay.color = "#" + H.dna.features[MBP_COLOR1]
+						facial_overlay.color = "#" + H.dna.features[FEATURE_COLOR_1]
 					else
 						facial_overlay.color = "#" + hair_color
 				else
@@ -574,7 +574,7 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 				if(!forced_colour)
 					if(hair_color)
 						if(hair_color == "mutcolor")
-							hair_overlay.color = "#" + H.dna.features[MBP_COLOR1]
+							hair_overlay.color = "#" + H.dna.features[FEATURE_COLOR_1]
 						else
 							hair_overlay.color = "#" + hair_color
 					else
@@ -719,19 +719,17 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 	if(!LAZYLEN(bodyparts_to_add))
 		return
 
-	var/tauric = mutant_bodyparts[MBP_TAUR] && H.dna.features[MBP_TAUR] && (H.dna.features[MBP_TAUR] != "None")
+	var/tauric = mutant_bodyparts[MBP_TAUR] && H.dna.features[MBP_TAUR] && (H.dna.features[MBP_TAUR] != ACCESSORY_NONE)
 
 	for(var/mutant_part in mutant_bodyparts)
-		var/reference_list = GLOB.mutant_reference_list[mutant_part]
-		if(reference_list)
-			var/datum/sprite_accessory/S
-			var/transformed_part = GLOB.mutant_transform_list[mutant_part]
-			if(transformed_part)
-				S = reference_list[H.dna.features[transformed_part]]
-			else
-				S = reference_list[H.dna.features[mutant_part]]
-			if(!S || S.is_not_visible(H, tauric))
-				bodyparts_to_add -= mutant_part
+		var/datum/sprite_accessory/S = SSfurry.get_accessory(mutant_part, H.dna.features[mutant_part], TRUE)
+		// var/transformed_part = GLOB.mutant_transform_list[mutant_part]
+		// if(transformed_part)
+		// 	S = reference_list[H.dna.features[transformed_part]]
+		// else
+		// 	S = reference_list[H.dna.features[mutant_part]]
+		if(!S || S.is_not_visible(H, tauric))
+			bodyparts_to_add -= mutant_part
 
 	//Digitigrade legs are stuck in the phantom zone between true limbs and mutant bodyparts. Mainly it just needs more agressive updating than most limbs.
 	handle_digilegs(H, tauric)
@@ -743,22 +741,23 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 	var/list/dna_feature_as_text_string = list()
 
 	for(var/bodypart in bodyparts_to_add)
-		var/reference_list = GLOB.mutant_reference_list[bodypart]
-		if(reference_list)
-			var/datum/sprite_accessory/S
-			var/transformed_part = GLOB.mutant_transform_list[bodypart]
-			if(transformed_part)
-				S = reference_list[H.dna.features[transformed_part]]
-			else
-				S = reference_list[H.dna.features[bodypart]]
+		var/datum/sprite_accessory/S = SSfurry.get_accessory(mutant_part, H.dna.features[mutant_part], TRUE)
+		// if(reference_list)
+		// var/datum/sprite_accessory/S
+		// var/transformed_part = GLOB.mutant_transform_list[bodypart]
+		// if(transformed_part)
+		// 	S = reference_list[H.dna.features[transformed_part]]
+		// else
+		// 	S = reference_list[H.dna.features[bodypart]]
+		if(!S || S.icon_state == ACCESSORY_ICON_STATE_NONE)
+			continue
 
-			if(!S || S.icon_state == "none")
-				continue
-
-			for(var/L in S.relevant_layers)
-				LAZYADD(relevant_layers["[L]"], S)
-			if(!S.mutant_part_string)
-				dna_feature_as_text_string[S] = bodypart
+		for(var/L in S.relevant_layers)
+			LAZYADD(relevant_layers["[L]"], S)
+		if(!S.mutant_part_string)
+			dna_feature_as_text_string[S] = bodypart
+		else
+			dna_feature_as_text_string[S] = S.mutant_part_string
 
 	var/static/list/layer_text = list(
 		"[BODY_BEHIND_LAYER]" = "BEHIND",
@@ -826,22 +825,30 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 		var/mutant_string = S.mutant_part_string
 		if(mutant_string == "tailwag") //wagging tails should be coloured the same way as your tail
 			mutant_string = "tail"
-		var/primary_string = advanced_color_system ? "[mutant_string]_primary" : MBP_COLOR1
-		var/secondary_string = advanced_color_system ? "[mutant_string]_secondary" : MBP_COLOR2
-		var/tertiary_string = advanced_color_system ? "[mutant_string]_tertiary" : MBP_COLOR3
+		var/primary_string = advanced_color_system ? "[mutant_string]_primary" : FEATURE_COLOR_1
+		var/secondary_string = advanced_color_system ? "[mutant_string]_secondary" : FEATURE_COLOR_2
+		var/tertiary_string = advanced_color_system ? "[mutant_string]_tertiary" : FEATURE_COLOR_3
 		//failsafe: if there's no value for any of these, set it to white
 		if(!H.dna.features[primary_string])
-			H.dna.features[primary_string] = advanced_color_system ? H.dna.features[MBP_COLOR1] : "FFFFFF"
+			H.dna.features[primary_string] = advanced_color_system ? H.dna.features[FEATURE_COLOR_1] : "FFFFFF"
 		if(!H.dna.features[secondary_string])
-			H.dna.features[secondary_string] = advanced_color_system ? H.dna.features[MBP_COLOR2] : "FFFFFF"
+			H.dna.features[secondary_string] = advanced_color_system ? H.dna.features[FEATURE_COLOR_2] : "FFFFFF"
 		if(!H.dna.features[tertiary_string])
-			H.dna.features[tertiary_string] = advanced_color_system ? H.dna.features[MBP_COLOR3] : "FFFFFF"
+			H.dna.features[tertiary_string] = advanced_color_system ? H.dna.features[FEATURE_COLOR_3] : "FFFFFF"
 
 
 		if(forced_colour)
 			accessory_overlay.color = forced_colour
 		else
-			switch(S.color_src)
+			var/colsrc
+			switch(index)
+				if("1")
+					colsrc = S.color_src
+				if("2")
+					colsrc = S.extra_color_src
+				if("3")
+					colsrc = S.extra2_color_src
+			switch(colsrc)
 				if(SKINTONE)
 					accessory_overlay.color = SKINTONE2HEX(H.skin_tone)
 				if(MUTCOLOR1, MUTCOLOR2, MUTCOLOR3)
@@ -852,11 +859,11 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 					if(hair_color == "mutcolor")
 						switch(index)
 							if("1")
-								accessory_overlay.color = "#[H.dna.features[MBP_COLOR1]]"
+								accessory_overlay.color = "#[H.dna.features[FEATURE_COLOR_1]]"
 							if("2")
-								accessory_overlay.color = "#[H.dna.features[MBP_COLOR2]]"
+								accessory_overlay.color = "#[H.dna.features[FEATURE_COLOR_2]]"
 							if("3")
-								accessory_overlay.color = "#[H.dna.features[MBP_COLOR3]]"
+								accessory_overlay.color = "#[H.dna.features[FEATURE_COLOR_3]]"
 					else
 						accessory_overlay.color = "#[H.hair_color]"
 				if(FACEHAIR)
@@ -864,9 +871,9 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 				if(EYECOLOR)
 					accessory_overlay.color = "#[H.left_eye_color]"
 				if(HORNCOLOR)
-					accessory_overlay.color = "#[H.dna.features["horns_color"]]"
+					accessory_overlay.color = "#[H.dna.features[FEATURE_COLORMODE_HORNS]]"
 				if(WINGCOLOR)
-					accessory_overlay.color = "#[H.dna.features["wings_color"]]"
+					accessory_overlay.color = "#[H.dna.features[FEATURE_COLORMODE_WINGS]]"
 		// if(husk)
 		// 	if(bodypart == MBP_EARS_LIZARD)
 		// 		accessory_overlay.icon_state = "m_ears_none_[layertext]"
@@ -919,7 +926,7 @@ GLOBAL_LIST_EMPTY(species_bodytypes)
 	accessory_colorlist += husk ? list(0, 0, 0) : list(0, 0, 0, hair_alpha)
 	for(var/index in 1 to accessory_colorlist.len)
 		accessory_colorlist[index] /= 255
-	return list(accessory_colorlist)
+	accessory_overlay.color = list(accessory_colorlist)
 
 /datum/species/proc/handle_digilegs(mob/living/carbon/human/H, tauric)
 	var/not_digitigrade = TRUE

@@ -1,6 +1,6 @@
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/mutant_bodyparts.dmi'
-	mutant_part_string = "tail"
+	mutant_part_string = SA_TAIL
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/is_not_visible(mob/living/carbon/human/H, tauric)
@@ -8,7 +8,8 @@
 
 /datum/sprite_accessory/tails_animated
 	icon = 'icons/mob/mutant_bodyparts.dmi'
-	mutant_part_string = "tailwag" //keep this the same, ALWAYS, this is incredibly important for colouring!
+	mutant_part_string = SA_TAIL_WAGGING //keep this the same, ALWAYS, this is incredibly important for colouring!
+	transformed_part_string = SA_TAIL
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /******************************************
@@ -20,13 +21,13 @@
 
 //this goes first regardless of alphabetical order
 /datum/sprite_accessory/tails/lizard/none
-	name = "None"
-	icon_state = "None"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_NONE
 	relevant_layers = null
 
 /datum/sprite_accessory/tails_animated/lizard/none
-	name = "None"
-	icon_state = "None"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_NONE
 	relevant_layers = null
 
 /datum/sprite_accessory/tails/lizard/axolotl
@@ -94,13 +95,13 @@
 *******************************************/
 
 /datum/sprite_accessory/tails/human/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	relevant_layers = null
 
 /datum/sprite_accessory/tails_animated/human/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	relevant_layers = null
 
 // /datum/sprite_accessory/tails_animated/human/is_not_visible(mob/living/carbon/human/H, tauric)
@@ -600,8 +601,8 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/mam_tails/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	recommended_species = null
 	relevant_layers = null
 
@@ -614,8 +615,8 @@
 // 	return (((H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)) || tauric) || H.dna.species.mutant_bodyparts[MBP_TAIL])
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	relevant_layers = null
 
 /datum/sprite_accessory/tails/mam_tails/axolotl

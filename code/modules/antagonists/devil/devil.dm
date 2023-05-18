@@ -247,7 +247,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 		H.underwear = "Nude"
 		H.undershirt = "Nude"
 		H.socks = "Nude"
-		H.dna.features[MBP_COLOR1] = "511" //A deep red
+		H.dna.features[FEATURE_COLOR_1] = "511" //A deep red
 		H.update_body(TRUE)
 	else //Did the devil get hit by a staff of transmutation?
 		owner.current.color = "#501010"
@@ -469,7 +469,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 			H.underwear = "Nude"
 			H.undershirt = "Nude"
 			H.socks = "Nude"
-			H.dna.features[MBP_COLOR1] = "511"
+			H.dna.features[FEATURE_COLOR_1] = "511"
 			H.update_body(TRUE)
 			if(SOULVALUE >= TRUE_THRESHOLD) //Yes, BOTH this and the above if statement are to run if soulpower is high enough.
 				var/mob/living/carbon/true_devil/A = new /mob/living/carbon/true_devil(targetturf)

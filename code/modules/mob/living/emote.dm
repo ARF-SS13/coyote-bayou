@@ -191,7 +191,7 @@
 	if(. && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/open = FALSE
-		if(H.dna.features[MBP_WINGS] != "None")
+		if(H.dna.features[MBP_WINGS] != ACCESSORY_NONE)
 			if(H.dna.species.mutant_bodyparts[MBP_WINGS_OPEN])
 				open = TRUE
 				H.CloseWings()
@@ -1350,7 +1350,7 @@ GLOBAL_LIST_INIT(special_triggers, list(
 	EMOTE_SPECIAL_GEN = list(
 		"x",
 		"non",
-		"none",
+		ACCESSORY_ICON_STATE_NONE,
 		"generic",
 		"something",
 		"else",

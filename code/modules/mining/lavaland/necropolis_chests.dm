@@ -988,17 +988,17 @@
 	switch(random)
 		if(1)
 			to_chat(user, span_danger("Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a freak without the cool abilities."))
-			H.dna.features[MBP_COLOR1] = "A02720"
+			H.dna.features[FEATURE_COLOR_1] = "A02720"
 			H.dna.features[MBP_TAIL_LIZARD] = "Dark Tiger"
-			H.dna.features[MBP_TAIL_HUMAN] = "None"
+			H.dna.features[MBP_TAIL_HUMAN] = ACCESSORY_NONE
 			H.dna.features["mam_snout"] = "Sharp"
 			H.dna.features[MBP_HORNS] = "Curled"
-			H.dna.features[MBP_EARS_LIZARD] = "None"
-			H.dna.features[MBP_WINGS] = "None"
-			H.dna.features[MBP_FRILLS] = "None"
+			H.dna.features[MBP_EARS_LIZARD] = ACCESSORY_NONE
+			H.dna.features[MBP_WINGS] = ACCESSORY_NONE
+			H.dna.features[MBP_FRILLS] = ACCESSORY_NONE
 			H.dna.features[MBP_TAIL_SPINES] = "Long"
 			H.dna.features[MBP_LEGS] = LEGS_DIGITIGRADE
-			H.dna.features["taur_body"] = "None"
+			H.dna.features["taur_body"] = ACCESSORY_NONE
 			H.left_eye_color = "fee5a3"
 			H.right_eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)

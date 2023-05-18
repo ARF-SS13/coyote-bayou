@@ -42,8 +42,8 @@
 			alpha_mask_state = "taur_mask_naga"
 
 /datum/sprite_accessory/taur/none
-	name = "None"
-	icon_state = "None"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_NONE
 	dimension_x = 32
 	center = FALSE
 	recommended_species = null

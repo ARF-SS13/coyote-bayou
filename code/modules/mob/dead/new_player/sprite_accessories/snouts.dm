@@ -161,8 +161,8 @@
 	return ((H.wear_mask && (H.wear_mask.flags_inv & HIDESNOUT)) || (H.head && (H.head.flags_inv & HIDESNOUT)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
 
 /datum/sprite_accessory/snouts/mam_snouts/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	recommended_species = null
 	relevant_layers = null
 

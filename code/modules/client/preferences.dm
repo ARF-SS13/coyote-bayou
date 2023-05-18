@@ -517,13 +517,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h2>Body Colors</h2>"
 
 				dat += "<b>Primary Color:</b><BR>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[features[MBP_COLOR1]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features[FEATURE_COLOR_1]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
 
 				dat += "<b>Secondary Color:</b><BR>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[features[MBP_COLOR2]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features[FEATURE_COLOR_2]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
 
 				dat += "<b>Tertiary Color:</b><BR>"
-				dat += "<span style='border: 1px solid #161616; background-color: #[features[MBP_COLOR3]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
+				dat += "<span style='border: 1px solid #161616; background-color: #[features[FEATURE_COLOR_3]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 				mutant_colors = TRUE
 
 			if (CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
@@ -602,17 +602,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			// rp marking selection
 			// assume you can only have mam markings or regular markings or none, never both
-			var/marking_type
 			if(parent.can_have_part(MBP_BODY_MARKINGS))
-				marking_type = MBP_BODY_MARKINGS
-			if(marking_type)
 				dat += APPEARANCE_CATEGORY_COLUMN
-				dat += "<h3>[GLOB.all_mutant_parts[marking_type]]</h3>" // give it the appropriate title for the type of marking
-				dat += "<a href='?_src_=prefs;preference=marking_add;marking_type=[marking_type];task=input'>Add marking</a>"
+				dat += "<h3>Species Markings</h3>" // give it the appropriate title for the type of marking
+				dat += "<a href='?_src_=prefs;preference=marking_add;marking_type=[MBP_BODY_MARKINGS];task=input'>Add marking</a>"
 				// list out the current markings you have
-				if(length(features[marking_type]))
+				if(length(features[MBP_BODY_MARKINGS]))
 					dat += "<table>"
-					var/list/markings = features[marking_type]
+					var/list/markings = features[MBP_BODY_MARKINGS]
 					if(!islist(markings))
 						// something went terribly wrong
 						markings = list()
@@ -623,7 +620,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/actual_name = GLOB.bodypart_names[num2text(limb_value)] // get the actual name from the bitflag representing the part the marking is applied to
 						var/color_marking_dat = ""
 						var/number_colors = 1
-						var/datum/sprite_accessory/mam_body_markings/S = GLOB.mam_body_markings_list[marking_list[2]]
+						var/datum/sprite_accessory/mam_body_markings/S = SSfurry.get_accessory(MBP_BODY_MARKINGS, marking_list[2])
 						var/matrixed_sections = S.covered_limbs[actual_name]
 						if(S && matrixed_sections)
 							// if it has nothing initialize it to white
@@ -631,12 +628,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								var/first = "#FFFFFF"
 								var/second = "#FFFFFF"
 								var/third = "#FFFFFF"
-								if(features[MBP_COLOR1])
-									first = "#[features[MBP_COLOR1]]"
-								if(features[MBP_COLOR2])
-									second = "#[features[MBP_COLOR2]]"
-								if(features[MBP_COLOR3])
-									third = "#[features[MBP_COLOR3]]"
+								if(features[FEATURE_COLOR_1])
+									first = "#[features[FEATURE_COLOR_1]]"
+								if(features[FEATURE_COLOR_2])
+									second = "#[features[FEATURE_COLOR_2]]"
+								if(features[FEATURE_COLOR_3])
+									third = "#[features[FEATURE_COLOR_3]]"
 								marking_list += list(list(first, second, third)) // just assume its 3 colours if it isnt it doesnt matter we just wont use the other values
 							// index magic
 							var/primary_index = 1
@@ -663,64 +660,108 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(matrixed_sections == MATRIX_ALL)
 								color_marking_dat += "<span style='border: 1px solid #161616; background-color: [marking_list[3][tertiary_index]];'>&nbsp;&nbsp;&nbsp;</span>"
 								number_colors = 3
-							color_marking_dat += " <a href='?_src_=prefs;preference=marking_color;marking_index=[marking_index];marking_type=[marking_type];number_colors=[number_colors];task=input'>Change</a><BR>"
-						dat += "<tr><td>[marking_list[2]] - [actual_name]</td> <td><a href='?_src_=prefs;preference=marking_down;task=input;marking_index=[marking_index];marking_type=[marking_type];'>&#708;</a> <a href='?_src_=prefs;preference=marking_up;task=input;marking_index=[marking_index];marking_type=[marking_type]'>&#709;</a> <a href='?_src_=prefs;preference=marking_remove;task=input;marking_index=[marking_index];marking_type=[marking_type]'>X</a> [color_marking_dat]</td></tr>"
+							color_marking_dat += {" 
+								<a 
+									href=
+										'?_src_=prefs;
+										preference=marking_color;
+										marking_index=[marking_index];
+										marking_type=[MBP_BODY_MARKINGS];
+										number_colors=[number_colors];
+										task=input'>
+									Change
+								</a>
+								<BR>"}
+						dat += {"
+							<tr>
+								<td>
+									[marking_list[2]] - [actual_name]
+								</td>
+								<td>
+									<a 
+										href=
+											'?_src_=prefs;
+											preference=marking_down;
+											task=input;
+											marking_index=[marking_index]
+											;marking_type=[MBP_BODY_MARKINGS]'>
+										&#708;
+									</a>
+									<a 
+										href=
+											'?_src_=prefs;
+											preference=marking_up;
+											task=input;
+											marking_index=[marking_index];
+											marking_type=[MBP_BODY_MARKINGS]'>
+										&#709;
+									</a>
+									<a 
+										href=
+											'?_src_=prefs;
+											preference=marking_remove;
+											task=input;
+											marking_index=[marking_index];
+											marking_type=[MBP_BODY_MARKINGS]'>
+										X
+									</a>
+									[color_marking_dat]
+								</td>
+							</tr>"}
 					dat += "</table>"
 
-			for(var/mutant_part in GLOB.all_mutant_parts)
-				if(mutant_part == MBP_BODY_MARKINGS)
-					continue
-				if(parent.can_have_part(mutant_part))
-					if(!mutant_category)
-						dat += APPEARANCE_CATEGORY_COLUMN
-					dat += "<h3>[GLOB.all_mutant_parts[mutant_part]]</h3>"
-					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=[mutant_part];task=input'>[features[mutant_part]]</a>"
-					var/color_type = GLOB.colored_mutant_parts[mutant_part] //if it can be coloured, show the appropriate button
-					if(color_type)
-						dat += "<span style='border:1px solid #161616; background-color: #[features[color_type]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[color_type];task=input'>Change</a><BR>"
-					else
-						if(features["color_scheme"] == ADVANCED_CHARACTER_COLORING) //advanced individual part colouring system
-							//is it matrixed or does it have extra parts to be coloured?
-							var/find_part = features[mutant_part] || pref_species.mutant_bodyparts[mutant_part]
-							var/find_part_list = GLOB.mutant_reference_list[mutant_part]
-							if(find_part && find_part != "None" && find_part_list)
-								var/datum/sprite_accessory/accessory = find_part_list[find_part]
-								if(accessory)
-									if(accessory.color_src == MATRIXED || accessory.color_src == MUTCOLOR1 || accessory.color_src == MUTCOLOR2 || accessory.color_src == MUTCOLOR3) //MUTCOLOR1-3 are deprecated now, please don't rely on these in the future
-										var/mutant_string = accessory.mutant_part_string
-										var/primary_feature = "[mutant_string]_primary"
-										var/secondary_feature = "[mutant_string]_secondary"
-										var/tertiary_feature = "[mutant_string]_tertiary"
-										if(!features[primary_feature])
-											features[primary_feature] = features[MBP_COLOR1]
-										if(!features[secondary_feature])
-											features[secondary_feature] = features[MBP_COLOR2]
-										if(!features[tertiary_feature])
-											features[tertiary_feature] = features[MBP_COLOR3]
+			var/list/all_parts = SSfurry.get_mutant_accessory_categories(parent)
+			for(var/mutant_part in all_parts)
+				// if(mutant_part == MBP_BODY_MARKINGS)
+				// 	continue
+				// if(!parent.can_have_part(mutant_part))
+				// 	continue
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+				dat += "<h3>[all_parts[mutant_part]]</h3>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=[mutant_part];task=input'>[features[mutant_part]]</a>"
+				var/color_type = SSfurry.get_category_color_type(mutant_part) //if it can be coloured, show the appropriate button
+				if(color_type)
+					dat += "<span style='border:1px solid #161616; background-color: #[features[color_type]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[color_type];task=input'>Change</a><BR>"
+				else if(features["color_scheme"] == ADVANCED_CHARACTER_COLORING) //advanced individual part colouring system
+					var/datum/sprite_accessory/accessory = SSfurry.get_accessory_from_prefs(src, mutant_part)
+					if(!accessory)
+						continue
+					if(accessory.color_src == MATRIXED || accessory.color_src == MUTCOLOR1 || accessory.color_src == MUTCOLOR2 || accessory.color_src == MUTCOLOR3) //MUTCOLOR1-3 are deprecated now, please don't rely on these in the future
+						var/mutant_string = accessory.mutant_part_string
+						var/primary_feature = "[mutant_string]_primary"
+						var/secondary_feature = "[mutant_string]_secondary"
+						var/tertiary_feature = "[mutant_string]_tertiary"
+						if(!features[primary_feature])
+							features[primary_feature] = features[FEATURE_COLOR_1]
+						if(!features[secondary_feature])
+							features[secondary_feature] = features[FEATURE_COLOR_2]
+						if(!features[tertiary_feature])
+							features[tertiary_feature] = features[FEATURE_COLOR_3]
 
-										var/matrixed_sections = accessory.matrixed_sections
-										if(accessory.color_src == MATRIXED && !matrixed_sections)
-											message_admins("Sprite Accessory Failure (customization): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
-											continue
-										else if(accessory.color_src == MATRIXED)
-											switch(matrixed_sections)
-												if(MATRIX_GREEN) //only composed of a green section
-													primary_feature = secondary_feature //swap primary for secondary, so it properly assigns the second colour, reserved for the green section
-												if(MATRIX_BLUE)
-													primary_feature = tertiary_feature //same as above, but the tertiary feature is for the blue section
-												if(MATRIX_RED_BLUE) //composed of a red and blue section
-													secondary_feature = tertiary_feature //swap secondary for tertiary, as blue should always be tertiary
-												if(MATRIX_GREEN_BLUE) //composed of a green and blue section
-													primary_feature = secondary_feature //swap primary for secondary, as first option is green, which is linked to the secondary
-													secondary_feature = tertiary_feature //swap secondary for tertiary, as second option is blue, which is linked to the tertiary
-										dat += "<b>Primary Color</b><BR>"
-										dat += "<span style='border:1px solid #161616; background-color: #[features[primary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[primary_feature];task=input'>Change</a><BR>"
-										if((accessory.color_src == MATRIXED && (matrixed_sections == MATRIX_RED_BLUE || matrixed_sections == MATRIX_GREEN_BLUE || matrixed_sections == MATRIX_RED_GREEN || matrixed_sections == MATRIX_ALL)) || (accessory.extra && (accessory.extra_color_src == MUTCOLOR1 || accessory.extra_color_src == MUTCOLOR2 || accessory.extra_color_src == MUTCOLOR3)))
-											dat += "<b>Secondary Color</b><BR>"
-											dat += "<span style='border:1px solid #161616; background-color: #[features[secondary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[secondary_feature];task=input'>Change</a><BR>"
-											if((accessory.color_src == MATRIXED && matrixed_sections == MATRIX_ALL) || (accessory.extra2 && (accessory.extra2_color_src == MUTCOLOR1 || accessory.extra2_color_src == MUTCOLOR2 || accessory.extra2_color_src == MUTCOLOR3)))
-												dat += "<b>Tertiary Color</b><BR>"
-												dat += "<span style='border:1px solid #161616; background-color: #[features[tertiary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[tertiary_feature];task=input'>Change</a><BR>"
+						var/matrixed_sections = accessory.matrixed_sections
+						if(accessory.color_src == MATRIXED && !matrixed_sections)
+							message_admins("Sprite Accessory Failure (customization): Accessory [accessory.type] is a matrixed item without any matrixed sections set!")
+							continue
+						else if(accessory.color_src == MATRIXED)
+							switch(matrixed_sections)
+								if(MATRIX_GREEN) //only composed of a green section
+									primary_feature = secondary_feature //swap primary for secondary, so it properly assigns the second colour, reserved for the green section
+								if(MATRIX_BLUE)
+									primary_feature = tertiary_feature //same as above, but the tertiary feature is for the blue section
+								if(MATRIX_RED_BLUE) //composed of a red and blue section
+									secondary_feature = tertiary_feature //swap secondary for tertiary, as blue should always be tertiary
+								if(MATRIX_GREEN_BLUE) //composed of a green and blue section
+									primary_feature = secondary_feature //swap primary for secondary, as first option is green, which is linked to the secondary
+									secondary_feature = tertiary_feature //swap secondary for tertiary, as second option is blue, which is linked to the tertiary
+						dat += "<b>Primary Color</b><BR>"
+						dat += "<span style='border:1px solid #161616; background-color: #[features[primary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[primary_feature];task=input'>Change</a><BR>"
+						if((accessory.color_src == MATRIXED && (matrixed_sections == MATRIX_RED_BLUE || matrixed_sections == MATRIX_GREEN_BLUE || matrixed_sections == MATRIX_RED_GREEN || matrixed_sections == MATRIX_ALL)) || (accessory.extra && (accessory.extra_color_src == MUTCOLOR1 || accessory.extra_color_src == MUTCOLOR2 || accessory.extra_color_src == MUTCOLOR3)))
+							dat += "<b>Secondary Color</b><BR>"
+							dat += "<span style='border:1px solid #161616; background-color: #[features[secondary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[secondary_feature];task=input'>Change</a><BR>"
+							if((accessory.color_src == MATRIXED && matrixed_sections == MATRIX_ALL) || (accessory.extra2 && (accessory.extra2_color_src == MUTCOLOR1 || accessory.extra2_color_src == MUTCOLOR2 || accessory.extra2_color_src == MUTCOLOR3)))
+								dat += "<b>Tertiary Color</b><BR>"
+								dat += "<span style='border:1px solid #161616; background-color: #[features[tertiary_feature]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=[tertiary_feature];task=input'>Change</a><BR>"
 
 					mutant_category++
 					if(mutant_category >= MAX_MUTANT_ROWS)
@@ -2549,14 +2590,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("species")
 					var/result = input(user, "Select a species", "Species Selection") as null|anything in GLOB.roundstart_race_names
 					if(result)
-						var/newtype = GLOB.species_list[GLOB.roundstart_race_names[result]]
+						var/newtype = SSfurry.species_list[GLOB.roundstart_race_names[result]]
 						pref_species = new newtype()
 						//let's ensure that no weird shit happens on species swapping.
 						custom_species = null
 						if(!parent.can_have_part(MBP_BODY_MARKINGS))
 							features[MBP_BODY_MARKINGS] = list()
 						if(parent.can_have_part(MBP_BODY_MARKINGS))
-							if(features[MBP_BODY_MARKINGS] == "None")
+							if(features[MBP_BODY_MARKINGS] == ACCESSORY_NONE)
 								features[MBP_BODY_MARKINGS] = list()
 						// if(parent.can_have_part(MBP_TAIL_LIZARD))
 						// 	features[MBP_TAIL_LIZARD] = "Smooth"
@@ -2565,13 +2606,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							features[MBP_EARS] = "Cat"
 
 						//Now that we changed our species, we must verify that the mutant colour is still allowed.
-						var/temp_hsv = RGBtoHSV(features[MBP_COLOR1])
-						if(features[MBP_COLOR1] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
-							features[MBP_COLOR1] = pref_species.default_color
-						if(features[MBP_COLOR2] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
-							features[MBP_COLOR2] = pref_species.default_color
-						if(features[MBP_COLOR3] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
-							features[MBP_COLOR3] = pref_species.default_color
+						var/temp_hsv = RGBtoHSV(features[FEATURE_COLOR_1])
+						if(features[FEATURE_COLOR_1] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+							features[FEATURE_COLOR_1] = pref_species.default_color
+						if(features[FEATURE_COLOR_2] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+							features[FEATURE_COLOR_2] = pref_species.default_color
+						if(features[FEATURE_COLOR_3] == "#000000" || (!(MUTCOLOR_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#202020")[3]))
+							features[FEATURE_COLOR_3] = pref_species.default_color
 
 						//switch to the type of eyes the species uses
 						eye_type = pref_species.eye_type
@@ -2596,35 +2637,35 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["chat_color"] = sanitize_hexcolor(new_runecolor, 6)
 
 				if("mutant_color")
-					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features[MBP_COLOR1]) as color|null
+					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features[FEATURE_COLOR_1]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
-							features[MBP_COLOR1] = pref_species.default_color
+							features[FEATURE_COLOR_1] = pref_species.default_color
 						else if((MUTCOLOR_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
-							features[MBP_COLOR1] = sanitize_hexcolor(new_mutantcolor, 6)
+							features[FEATURE_COLOR_1] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mutant_color2")
-					var/new_mutantcolor = input(user, "Choose your character's secondary alien/mutant color:", "Character Preference","#"+features[MBP_COLOR2]) as color|null
+					var/new_mutantcolor = input(user, "Choose your character's secondary alien/mutant color:", "Character Preference","#"+features[FEATURE_COLOR_2]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
-							features[MBP_COLOR2] = pref_species.default_color
+							features[FEATURE_COLOR_2] = pref_species.default_color
 						else if((MUTCOLOR_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
-							features[MBP_COLOR2] = sanitize_hexcolor(new_mutantcolor, 6)
+							features[FEATURE_COLOR_2] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mutant_color3")
-					var/new_mutantcolor = input(user, "Choose your character's tertiary alien/mutant color:", "Character Preference","#"+features[MBP_COLOR3]) as color|null
+					var/new_mutantcolor = input(user, "Choose your character's tertiary alien/mutant color:", "Character Preference","#"+features[FEATURE_COLOR_3]) as color|null
 					if(new_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_mutantcolor)
 						if(new_mutantcolor == "#000000")
-							features[MBP_COLOR3] = pref_species.default_color
+							features[FEATURE_COLOR_3] = pref_species.default_color
 						else if((MUTCOLOR_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
-							features[MBP_COLOR3] = sanitize_hexcolor(new_mutantcolor, 6)
+							features[FEATURE_COLOR_3] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
 							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
@@ -2658,10 +2699,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				// 	new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
 				// 	if(new_tail)
 				// 		features[MBP_TAIL_LIZARD] = new_tail
-				// 		if(new_tail != "None")
-				// 			features[MBP_TAUR] = "None"
-				// 			features[MBP_TAIL_HUMAN] = "None"
-				// 			features[MBP_TAIL] = "None"
+				// 		if(new_tail != ACCESSORY_NONE)
+				// 			features[MBP_TAUR] = ACCESSORY_NONE
+				// 			features[MBP_TAIL_HUMAN] = ACCESSORY_NONE
+				// 			features[MBP_TAIL] = ACCESSORY_NONE
 
 				// if(MBP_TAIL_HUMAN)
 				// 	var/list/snowflake_tails_list = list()
@@ -2677,10 +2718,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				// 	new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
 				// 	if(new_tail)
 				// 		features[MBP_TAIL_HUMAN] = new_tail
-				// 		if(new_tail != "None")
-				// 			features[MBP_TAUR] = "None"
-				// 			features[MBP_TAIL_LIZARD] = "None"
-				// 			features[MBP_TAIL] = "None"
+				// 		if(new_tail != ACCESSORY_NONE)
+				// 			features[MBP_TAUR] = ACCESSORY_NONE
+				// 			features[MBP_TAIL_LIZARD] = ACCESSORY_NONE
+				// 			features[MBP_TAIL] = ACCESSORY_NONE
 
 				if(MBP_TAIL)
 					var/list/snowflake_tails_list = list()
@@ -2696,10 +2737,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
 					if(new_tail)
 						features[MBP_TAIL] = new_tail
-						if(new_tail != "None")
-							features[MBP_TAUR] = "None"
-							features[MBP_TAIL_HUMAN] = "None"
-							features[MBP_TAIL_LIZARD] = "None"
+						if(new_tail != ACCESSORY_NONE)
+							features[MBP_TAUR] = ACCESSORY_NONE
+							features[MBP_TAIL_HUMAN] = ACCESSORY_NONE
+							features[MBP_TAIL_LIZARD] = ACCESSORY_NONE
 
 				if(MBP_MEAT_TYPE)
 					var/new_meat
@@ -2721,7 +2762,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				// 	new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
 				// 	if(new_snout)
 				// 		features[MBP_SNOUT_LIZARD] = new_snout
-				// 		features[MBP_SNOUT] = "None"
+				// 		features[MBP_SNOUT] = ACCESSORY_NONE
 
 
 				if(MBP_SNOUT)
@@ -2738,7 +2779,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_mam_snouts = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
 					if(new_mam_snouts)
 						features[MBP_SNOUT] = new_mam_snouts
-						features[MBP_SNOUT_LIZARD] = "None"
+						features[MBP_SNOUT_LIZARD] = ACCESSORY_NONE
 
 				if(MBP_HORNS)
 					var/new_horns
@@ -2746,13 +2787,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_horns)
 						features[MBP_HORNS] = new_horns
 
-				if("horns_color")
-					var/new_horn_color = input(user, "Choose your character's horn colour:", "Character Preference","#"+features["horns_color"]) as color|null
+				if(FEATURE_COLORMODE_HORNS)
+					var/new_horn_color = input(user, "Choose your character's horn colour:", "Character Preference","#"+features[FEATURE_COLORMODE_HORNS]) as color|null
 					if(new_horn_color)
 						if (new_horn_color == "#000000")
-							features["horns_color"] = "85615A"
+							features[FEATURE_COLORMODE_HORNS] = "85615A"
 						else
-							features["horns_color"] = sanitize_hexcolor(new_horn_color, 6)
+							features[FEATURE_COLORMODE_HORNS] = sanitize_hexcolor(new_horn_color, 6)
 
 				if(MBP_WINGS)
 					var/new_wings
@@ -2760,13 +2801,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_wings)
 						features[MBP_WINGS] = new_wings
 
-				if("wings_color")
-					var/new_wing_color = input(user, "Choose your character's wing colour:", "Character Preference","#"+features["wings_color"]) as color|null
+				if(FEATURE_COLORMODE_WINGS)
+					var/new_wing_color = input(user, "Choose your character's wing colour:", "Character Preference","#"+features[FEATURE_COLORMODE_WINGS]) as color|null
 					if(new_wing_color)
 						if (new_wing_color == "#000000")
-							features["wings_color"] = "#FFFFFF"
+							features[FEATURE_COLORMODE_WINGS] = "#FFFFFF"
 						else
-							features["wings_color"] = sanitize_hexcolor(new_wing_color, 6)
+							features[FEATURE_COLORMODE_WINGS] = sanitize_hexcolor(new_wing_color, 6)
 
 				if(MBP_FRILLS)
 					var/new_frills
@@ -2844,11 +2885,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_taur = input(user, "Choose your character's tauric body:", "Character Preference") as null|anything in snowflake_taur_list
 					if(new_taur)
 						features[MBP_TAUR] = new_taur
-						if(new_taur != "None")
-							features[MBP_TAIL] = "None"
-							features[MBP_XENO_TAIL] = "None"
-							features[MBP_TAIL_HUMAN] = "None"
-							features[MBP_TAIL_LIZARD] = "None"
+						if(new_taur != ACCESSORY_NONE)
+							features[MBP_TAIL] = ACCESSORY_NONE
+							features[MBP_XENO_TAIL] = ACCESSORY_NONE
+							features[MBP_TAIL_HUMAN] = ACCESSORY_NONE
+							features[MBP_TAIL_LIZARD] = ACCESSORY_NONE
 
 				// if(MBP_EARS_LIZARD)
 				// 	var/list/snowflake_ears_list = list()
@@ -2892,11 +2933,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.xeno_tail_list
 					if(new_tail)
 						features[MBP_XENO_TAIL] = new_tail
-						if(new_tail != "None")
-							features[MBP_TAIL] = "None"
-							features[MBP_TAUR] = "None"
-							features[MBP_TAIL_HUMAN] = "None"
-							features[MBP_TAIL_LIZARD] = "None"
+						if(new_tail != ACCESSORY_NONE)
+							features[MBP_TAIL] = ACCESSORY_NONE
+							features[MBP_TAUR] = ACCESSORY_NONE
+							features[MBP_TAIL_HUMAN] = ACCESSORY_NONE
+							features[MBP_TAIL_LIZARD] = ACCESSORY_NONE
 
 				if(MBP_XENO_DORSAL)
 					var/new_dors
@@ -3282,18 +3323,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(marking_type && features[marking_type])
 						var/selected_limb = input(user, "Choose the limb to apply to.", "Character Preference") as null|anything in list("Head", "Chest", "Left Arm", "Right Arm", "Left Leg", "Right Leg", "All")
 						if(selected_limb)
-							var/list/marking_list = GLOB.mam_body_markings_list
-							var/list/snowflake_markings_list = list()
-							for(var/path in marking_list)
-								var/datum/sprite_accessory/S = marking_list[path]
-								if(istype(S))
-									if(istype(S, /datum/sprite_accessory/mam_body_markings))
-										var/datum/sprite_accessory/mam_body_markings/marking = S
-										if(!(selected_limb in marking.covered_limbs) && selected_limb != "All")
-											continue
-
-									if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
-										snowflake_markings_list[S.name] = path
+							var/list/marking_list = SSfurry.get_markings(selected_limb, user.client.ckey)
 
 							var/selected_marking = input(user, "Select the marking to apply to the limb.") as null|anything in snowflake_markings_list
 							if(selected_marking)
@@ -3324,7 +3354,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(color_option == "Tertiary") color_number = 3
 							// perform some magic on the color number
 							var/list/marking_list = features[marking_type][index]
-							var/datum/sprite_accessory/mam_body_markings/S = GLOB.mam_body_markings_list[marking_list[2]]
+							var/list/marking_marking_list = SSfurry.get_accessory_list(MBP_BODY_MARKINGS)
+							var/datum/sprite_accessory/mam_body_markings/S = marking_marking_list[marking_list[2]]
 							var/matrixed_sections = S.covered_limbs[GLOB.bodypart_names[num2text(marking_list[1])]]
 							if(color_number == 1)
 								switch(matrixed_sections)

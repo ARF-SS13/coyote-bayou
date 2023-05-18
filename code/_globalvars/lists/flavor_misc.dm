@@ -226,23 +226,29 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 	//"ipc tongue" = /obj/item/organ/tongue/robot/ipc
 	))
 
+#define BODY_PART_HEAD "Head"
+#define BODY_PART_CHEST "Chest"
+#define BODY_PART_LEFT_ARM "Left Arm"
+#define BODY_PART_RIGHT_ARM "Right Arm"
+#define BODY_PART_LEFT_LEG "Left Leg"
+#define BODY_PART_RIGHT_LEG "Right Leg"
 
 //list linking bodypart bitflags to their actual names
 GLOBAL_LIST_INIT(bodypart_names, list(
-	num2text(HEAD) = "Head",
-	num2text(CHEST) = "Chest",
-	num2text(LEG_LEFT) = "Left Leg",
-	num2text(LEG_RIGHT) = "Right Leg",
-	num2text(ARM_LEFT) = "Left Arm",
-	num2text(ARM_RIGHT) = "Right Arm",
+	num2text(HEAD) = BODY_PART_HEAD,
+	num2text(CHEST) = BODY_PART_CHEST,
+	num2text(LEG_LEFT) = BODY_PART_LEFT_LEG,
+	num2text(LEG_RIGHT) = BODY_PART_RIGHT_LEG,
+	num2text(ARM_LEFT) = BODY_PART_LEFT_ARM,
+	num2text(ARM_RIGHT) = BODY_PART_RIGHT_ARM,
 	))
 
 // list linking bodypart names back to the bitflags
 GLOBAL_LIST_INIT(bodypart_values, list(
-	"Head" = num2text(HEAD),
-	"Chest" = num2text(CHEST),
-	"Left Leg" = num2text(LEG_LEFT),
-	"Right Leg" = num2text(LEG_RIGHT),
-	"Left Arm" = num2text(ARM_LEFT),
-	"Right Arm" = num2text(ARM_RIGHT),
+	BODY_PART_HEAD = num2text(HEAD),
+	BODY_PART_CHEST = num2text(CHEST),
+	BODY_PART_LEFT_LEG = num2text(LEG_LEFT),
+	BODY_PART_RIGHT_LEG = num2text(LEG_RIGHT),
+	BODY_PART_LEFT_ARM = num2text(ARM_LEFT),
+	BODY_PART_RIGHT_ARM = num2text(ARM_RIGHT),
 	))

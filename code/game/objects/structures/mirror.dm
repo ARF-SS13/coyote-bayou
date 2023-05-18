@@ -164,7 +164,7 @@
 		if("race")
 			var/newrace
 			var/racechoice = input(H, "What are we again?", "Race change") as null|anything in choosable_races
-			newrace = GLOB.species_list[racechoice]
+			newrace = SSfurry.species_list[racechoice]
 
 			if(!newrace)
 				return
@@ -193,12 +193,12 @@
 						H.dna.update_ui_block(DNA_SKIN_TONE_BLOCK)
 
 			if(MUTCOLOR1 in H.dna.species.species_traits)
-				var/new_mutantcolor = input(user, "Choose your skin color:", "Race change","#"+H.dna.features[MBP_COLOR1]) as color|null
+				var/new_mutantcolor = input(user, "Choose your skin color:", "Race change","#"+H.dna.features[FEATURE_COLOR_1]) as color|null
 				if(new_mutantcolor)
 					var/temp_hsv = RGBtoHSV(new_mutantcolor)
 
 					if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright
-						H.dna.features[MBP_COLOR1] = sanitize_hexcolor(new_mutantcolor)
+						H.dna.features[FEATURE_COLOR_1] = sanitize_hexcolor(new_mutantcolor)
 
 					else
 						to_chat(H, span_notice("Invalid color. Your color is not bright enough."))

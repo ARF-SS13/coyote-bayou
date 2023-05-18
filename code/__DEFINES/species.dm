@@ -1,3 +1,5 @@
+#define ACCESSORY_NONE "None"
+#define ACCESSORY_ICON_STATE_NONE "none"
 
 #define LEGS_PLANTIGRADE "Plantigrade"
 #define LEGS_DIGITIGRADE "Digitigrade"
@@ -134,9 +136,15 @@
 
 #define MEAT_MAMMAL "Mammalian" // Meat from a mammal
 
-#define MBP_COLOR1 "mcolor"
-#define MBP_COLOR2 "mcolor2"
-#define MBP_COLOR3 "mcolor3"
+#define FEATURE_COLORMODE_WINGS "wings_color"
+#define FEATURE_COLORMODE_HORNS "horns_color"
+
+#define SA_TAIL "tail"
+#define SA_TAIL_WAGGING "tailwag"
+
+#define FEATURE_COLOR_1 "mcolor"
+#define FEATURE_COLOR_2 "mcolor2"
+#define FEATURE_COLOR_3 "mcolor3"
 #define MBP_ARACHNID_LEGS "arachnid_legs"
 #define MBP_ARACHNID_SPINNERET "arachnid_spinneret"
 #define MBP_ARACHNID_MANDIBLES "arachnid_mandibles"
@@ -147,7 +155,7 @@
 #define MBP_TAIL_SPINES "spines"
 #define MBP_TAIL_WAGGING "mam_waggingtail"
 #define MBP_TAIL_WAGGING_LIZARD "waggingtail_lizard"
-#define MBP_TAIL_WAGGING_HUMAN "MBP_TAIL_WAGGING_HUMAN"
+#define MBP_TAIL_WAGGING_HUMAN "waggingtail_human"
 #define MBP_TAIL_WAGGING_SPINES "waggingspines"
 #define MBP_EARS "ears"
 #define MBP_EARS_LIZARD "ears_lizard"
@@ -162,7 +170,7 @@
 #define MBP_MEAT_TYPE "meat_type"
 #define MBP_WINGS "wings"
 #define MBP_WINGS_DECORATIVE "deco_wings"
-#define MBP_WINGS_INSECT "mam_waggingtail"
+#define MBP_WINGS_INSECT "insect_wings"
 #define MBP_WINGS_OPEN "wingsopen"
 #define MBP_WINGS_MOTH "moth_wings"
 #define MBP_FLUFF "insect_fluff"
@@ -199,78 +207,79 @@ GLOBAL_LIST_EMPTY(insect_markings_list)
 GLOBAL_LIST_EMPTY(caps_list)
 
 //a way to index the right bodypart list given the type of bodypart
-GLOBAL_LIST_INIT(mutant_reference_list, list(
-	MBP_TAIL = GLOB.tails_list,
-	MBP_TAIL_WAGGING = GLOB.animated_tails_list,
-	// MBP_TAIL_LIZARD = GLOB.tails_list_lizard,
-	// MBP_TAIL_WAGGING_LIZARD = GLOB.animated_tails_list_lizard,
-	// MBP_TAIL_HUMAN = GLOB.tails_list_human,
-	// MBP_TAIL_WAGGING_HUMAN = GLOB.animated_tails_list_human,
-	// MBP_TAIL_SPINES = GLOB.spines_list,
-	// MBP_TAIL_WAGGING_SPINES = GLOB.animated_spines_list,
-	// MBP_SNOUT_LIZARD = GLOB.snouts_list,
-	MBP_FRILLS = GLOB.frills_list,
-	MBP_HORNS = GLOB.horns_list,
-	// MBP_EARS_LIZARD = GLOB.ears_list,
-	MBP_WINGS = GLOB.wings_list,
-	MBP_WINGS_OPEN = GLOB.wings_open_list,
-	MBP_WINGS_DECORATIVE = GLOB.deco_wings_list,
-	MBP_LEGS = GLOB.legs_list,
-	MBP_WINGS_INSECT = GLOB.insect_wings_list,
-	MBP_FLUFF = GLOB.insect_fluffs_list,
-	MBP_MARKINGS_INSECT = GLOB.insect_markings_list,
-	MBP_SHROOM_CAP = GLOB.caps_list,
-	MBP_SCREEN = GLOB.ipc_screens_list,
-	MBP_ANTENNA_IPC = GLOB.ipc_antennas_list,
-	// MBP_TAIL = GLOB.mam_tails_list,
-	// MBP_TAIL_WAGGING = GLOB.mam_tails_animated_list,
-	MBP_BODY_MARKINGS = GLOB.mam_body_markings_list,
-	MBP_EARS = GLOB.ears_list,
-	MBP_SNOUT = GLOB.snouts_list,
-	MBP_TAUR = GLOB.taur_list,
-	MBP_XENO_DORSAL = GLOB.xeno_dorsal_list,
-	MBP_XENO_HEAD = GLOB.xeno_head_list,
-	MBP_XENO_TAIL = GLOB.xeno_tail_list))
+// GLOBAL_LIST_INIT(mutant_reference_list, list(
+// 	MBP_TAIL = GLOB.tails_list,
+// 	MBP_TAIL_WAGGING = GLOB.animated_tails_list,
+// 	// MBP_TAIL_LIZARD = GLOB.tails_list_lizard,
+// 	// MBP_TAIL_WAGGING_LIZARD = GLOB.animated_tails_list_lizard,
+// 	// MBP_TAIL_HUMAN = GLOB.tails_list_human,
+// 	// MBP_TAIL_WAGGING_HUMAN = GLOB.animated_tails_list_human,
+// 	// MBP_TAIL_SPINES = GLOB.spines_list,
+// 	// MBP_TAIL_WAGGING_SPINES = GLOB.animated_spines_list,
+// 	// MBP_SNOUT_LIZARD = GLOB.snouts_list,
+// 	MBP_FRILLS = GLOB.frills_list,
+// 	MBP_HORNS = GLOB.horns_list,
+// 	// MBP_EARS_LIZARD = GLOB.ears_list,
+// 	MBP_WINGS = GLOB.wings_list,
+// 	MBP_WINGS_OPEN = GLOB.wings_open_list,
+// 	MBP_WINGS_DECORATIVE = GLOB.deco_wings_list,
+// 	MBP_LEGS = GLOB.legs_list,
+// 	MBP_WINGS_INSECT = GLOB.insect_wings_list,
+// 	MBP_FLUFF = GLOB.insect_fluffs_list,
+// 	MBP_MARKINGS_INSECT = GLOB.insect_markings_list,
+// 	MBP_SHROOM_CAP = GLOB.caps_list,
+// 	MBP_SCREEN = GLOB.ipc_screens_list,
+// 	MBP_ANTENNA_IPC = GLOB.ipc_antennas_list,
+// 	// MBP_TAIL = GLOB.mam_tails_list,
+// 	// MBP_TAIL_WAGGING = GLOB.mam_tails_animated_list,
+// 	MBP_BODY_MARKINGS = GLOB.mam_body_markings_list,
+// 	MBP_EARS = GLOB.ears_list,
+// 	MBP_SNOUT = GLOB.snouts_list,
+// 	MBP_TAUR = GLOB.taur_list,
+// 	MBP_XENO_DORSAL = GLOB.xeno_dorsal_list,
+// 	MBP_XENO_HEAD = GLOB.xeno_head_list,
+// 	MBP_XENO_TAIL = GLOB.xeno_tail_list))
 
 //references wag types to regular types, wings open to wings, etc
-GLOBAL_LIST_INIT(mutant_transform_list, list(MBP_WINGS_OPEN = MBP_WINGS,
-	MBP_TAIL_WAGGING_HUMAN = MBP_TAIL_HUMAN,
-	MBP_TAIL_WAGGING_LIZARD = MBP_TAIL_LIZARD,
-	MBP_TAIL_WAGGING_SPINES = MBP_TAIL_SPINES,
-	MBP_TAIL_WAGGING = MBP_TAIL))
+// GLOBAL_LIST_INIT(mutant_transform_list, list(
+// 	MBP_WINGS_OPEN = MBP_WINGS,
+// 	MBP_TAIL_WAGGING_HUMAN = MBP_TAIL_HUMAN,
+// 	MBP_TAIL_WAGGING_LIZARD = MBP_TAIL_LIZARD,
+// 	MBP_TAIL_WAGGING_SPINES = MBP_TAIL_SPINES,
+// 	MBP_TAIL_WAGGING = MBP_TAIL))
 
 //locked parts are those that your picked species requires to have
 //unlocked parts are those that anyone can choose on customisation regardless
 //parts not in unlocked, but in all, are thus locked
-GLOBAL_LIST_INIT(all_mutant_parts, list(
-	// MBP_TAIL_LIZARD = "Tail",
-	MBP_TAIL = "Tail",
-	// MBP_TAIL_HUMAN = "Tail",
-	// MBP_SNOUT_LIZARD = "Snout",
-	MBP_FRILLS = "Frills",
-	MBP_TAIL_SPINES = "Spines",
-	MBP_BODY_MARKINGS = "Species Markings",
-	MBP_EARS = "Ears",
-	// MBP_EARS_LIZARD = "Ears",
-	MBP_SNOUT = "Snout",
-	MBP_LEGS = "Legs",
-	MBP_WINGS_DECORATIVE = "Decorative Wings",
-	MBP_WINGS_INSECT = "Insect Wings",
-	MBP_FLUFF = "Insect Fluff",
-	MBP_TAUR = "Tauric Body",
-	MBP_MARKINGS_INSECT = "Insect Markings",
-	MBP_WINGS = "Wings",
-	MBP_ARACHNID_LEGS = "Arachnid Legs",
-	MBP_ARACHNID_SPINNERET = "Spinneret",
-	MBP_ARACHNID_MANDIBLES = "Mandibles",
-	MBP_XENO_HEAD = "Caste Head",
-	MBP_XENO_TAIL = "Tail",
-	MBP_XENO_DORSAL = "Dorsal Spines",
-	MBP_SCREEN = "Screen",
-	MBP_ANTENNA_IPC = "Antenna",
-	MBP_MEAT_TYPE = "Meat Type",
-	MBP_HORNS = "Horns",
-	))
+// GLOBAL_LIST_INIT(all_mutant_parts, list(
+// 	// MBP_TAIL_LIZARD = "Tail",
+// 	MBP_TAIL = "Tail",
+// 	// MBP_TAIL_HUMAN = "Tail",
+// 	// MBP_SNOUT_LIZARD = "Snout",
+// 	MBP_FRILLS = "Frills",
+// 	MBP_TAIL_SPINES = "Spines",
+// 	MBP_BODY_MARKINGS = "Species Markings",
+// 	MBP_EARS = "Ears",
+// 	// MBP_EARS_LIZARD = "Ears",
+// 	MBP_SNOUT = "Snout",
+// 	MBP_LEGS = "Legs",
+// 	MBP_WINGS_DECORATIVE = "Decorative Wings",
+// 	MBP_WINGS_INSECT = "Insect Wings",
+// 	MBP_FLUFF = "Insect Fluff",
+// 	MBP_TAUR = "Tauric Body",
+// 	MBP_MARKINGS_INSECT = "Insect Markings",
+// 	MBP_WINGS = "Wings",
+// 	MBP_ARACHNID_LEGS = "Arachnid Legs",
+// 	MBP_ARACHNID_SPINNERET = "Spinneret",
+// 	MBP_ARACHNID_MANDIBLES = "Mandibles",
+// 	MBP_XENO_HEAD = "Caste Head",
+// 	MBP_XENO_TAIL = "Tail",
+// 	MBP_XENO_DORSAL = "Dorsal Spines",
+// 	MBP_SCREEN = "Screen",
+// 	MBP_ANTENNA_IPC = "Antenna",
+// 	MBP_MEAT_TYPE = "Meat Type",
+// 	MBP_HORNS = "Horns",
+// 	))
 
 GLOBAL_LIST_INIT(default_mutant_parts, list(
 	MBP_TAIL_LIZARD,
@@ -307,12 +316,12 @@ GLOBAL_LIST_INIT(unlocked_mutant_parts, list(
 	MBP_FLUFF
 	))
 
-//parts in either of the above two lists that require a second option that allows them to be coloured
-GLOBAL_LIST_INIT(colored_mutant_parts, list(
-	MBP_WINGS_INSECT = "wings_color",
-	MBP_WINGS_DECORATIVE = "wings_color",
-	MBP_HORNS = "horns_color"
-	))
+// //parts in either of the above two lists that require a second option that allows them to be coloured
+// GLOBAL_LIST_INIT(colored_mutant_parts, list(
+// 	MBP_WINGS_INSECT = FEATURE_COLORMODE_WINGS,
+// 	MBP_WINGS_DECORATIVE = FEATURE_COLORMODE_WINGS,
+// 	MBP_HORNS = FEATURE_COLORMODE_HORNS
+// 	))
 
 // //body ids that have greyscale sprites
 // GLOBAL_LIST_INIT(greyscale_limb_types, list(
@@ -382,37 +391,37 @@ GLOBAL_LIST_INIT(eye_types, list(
 	))
 
 #define DEFAULT_FEATURES list(\
-		MBP_COLOR1 = "FFFFFF",\
-		MBP_COLOR2 = "FFFFFF",\
-		MBP_COLOR3 = "FFFFFF",\
-		MBP_TAIL_LIZARD = "None",\
-		MBP_TAIL_HUMAN = "None",\
-		MBP_HORNS = "None",\
-		"horns_color" = "85615a",\
-		MBP_EARS = "None",\
-		MBP_WINGS = "None",\
-		"wings_color" = "FFF",\
-		MBP_FRILLS = "None",\
-		MBP_WINGS_DECORATIVE = "None",\
-		MBP_TAIL_SPINES = "None",\
+		FEATURE_COLOR_1 = "FFFFFF",\
+		FEATURE_COLOR_2 = "FFFFFF",\
+		FEATURE_COLOR_3 = "FFFFFF",\
+		MBP_TAIL_LIZARD = ACCESSORY_NONE,\
+		MBP_TAIL_HUMAN = ACCESSORY_NONE,\
+		MBP_HORNS = ACCESSORY_NONE,\
+		FEATURE_COLORMODE_HORNS = "85615a",\
+		MBP_EARS = ACCESSORY_NONE,\
+		MBP_WINGS = ACCESSORY_NONE,\
+		FEATURE_COLORMODE_WINGS = "FFF",\
+		MBP_FRILLS = ACCESSORY_NONE,\
+		MBP_WINGS_DECORATIVE = ACCESSORY_NONE,\
+		MBP_TAIL_SPINES = ACCESSORY_NONE,\
 		MBP_LEGS = LEGS_PLANTIGRADE,\
-		MBP_WINGS_INSECT = "None",\
-		MBP_FLUFF = "None",\
-		MBP_MARKINGS_INSECT = "None",\
-		MBP_ARACHNID_LEGS = "None",\
-		MBP_ARACHNID_SPINNERET = "None",\
-		MBP_ARACHNID_MANDIBLES = "None",\
+		MBP_WINGS_INSECT = ACCESSORY_NONE,\
+		MBP_FLUFF = ACCESSORY_NONE,\
+		MBP_MARKINGS_INSECT = ACCESSORY_NONE,\
+		MBP_ARACHNID_LEGS = ACCESSORY_NONE,\
+		MBP_ARACHNID_SPINNERET = ACCESSORY_NONE,\
+		MBP_ARACHNID_MANDIBLES = ACCESSORY_NONE,\
 		MBP_BODY_MARKINGS = list(),\
-		MBP_EARS = "None",\
-		MBP_SNOUT = "None",\
-		MBP_TAIL = "None",\
-		MBP_TAIL_ANIMATED = "None",\
-		MBP_XENO_DORSAL = "None",\
-		MBP_XENO_HEAD = "None",\
-		MBP_XENO_TAIL = "None",\
-		MBP_TAUR = "None",\
+		MBP_EARS = ACCESSORY_NONE,\
+		MBP_SNOUT = ACCESSORY_NONE,\
+		MBP_TAIL = ACCESSORY_NONE,\
+		MBP_TAIL_ANIMATED = ACCESSORY_NONE,\
+		MBP_XENO_DORSAL = ACCESSORY_NONE,\
+		MBP_XENO_HEAD = ACCESSORY_NONE,\
+		MBP_XENO_TAIL = ACCESSORY_NONE,\
+		MBP_TAUR = ACCESSORY_NONE,\
 		MBP_SCREEN = "Sunburst",\
-		MBP_ANTENNA_IPC = "None",\
+		MBP_ANTENNA_IPC = ACCESSORY_NONE,\
 		"genitals_use_skintone" = FALSE,\
 		"has_cock" = FALSE,\
 		"cock_shape" = DEF_COCK_SHAPE,\

@@ -31,9 +31,9 @@
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		if(!pref_load)			//Hah! They got forcefully purrbation'd. Force default felinid parts on them if they have no mutant parts in those areas!
-			if(H.dna.features[MBP_TAIL] == "None")
+			if(H.dna.features[MBP_TAIL] == ACCESSORY_NONE)
 				H.dna.features[MBP_TAIL] = "Cat"
-			if(H.dna.features[MBP_EARS] == "None")
+			if(H.dna.features[MBP_EARS] == ACCESSORY_NONE)
 				H.dna.features[MBP_EARS] = "Cat"
 		if(H.dna.features[MBP_EARS] == "Cat")
 			var/obj/item/organ/ears/cat/ears = new

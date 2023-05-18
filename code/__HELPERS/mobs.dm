@@ -48,33 +48,7 @@
 	return pick(GLOB.socks_list)
 
 /proc/random_features(intendedspecies, intended_gender)
-	// if(!GLOB.tails_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list)
-	// if(!GLOB.animated_tails_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.animated_tails_list)
-	// if(!GLOB.snouts_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts, GLOB.snouts_list)
-	// if(!GLOB.horns_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/horns, GLOB.horns_list)
-	// if(!GLOB.ears_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/ears, GLOB.ears_list)
-	// if(!GLOB.frills_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/frills, GLOB.frills_list)
-	// if(!GLOB.spines_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/spines, GLOB.spines_list)
-	// if(!GLOB.legs_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/legs, GLOB.legs_list)
-	// if(!GLOB.wings_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/wings, GLOB.wings_list)
-	// if(!GLOB.deco_wings_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/deco_wings, GLOB.deco_wings_list)
-	// if(!GLOB.insect_wings_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/insect_wings, GLOB.insect_wings_list)
-	// if(!GLOB.insect_fluffs_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/insect_fluff, GLOB.insect_fluffs_list)
-	// if(!GLOB.insect_markings_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/insect_markings, GLOB.insect_markings_list)
-
+	SSfurry.init_furry_parts()
 	//CIT CHANGES - genitals and such
 	if(!GLOB.cock_shapes_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/penis, GLOB.cock_shapes_list)
@@ -88,56 +62,12 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/butt, GLOB.butt_shapes_list)
 	if(!GLOB.belly_shapes_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/belly, GLOB.belly_shapes_list)
-	// if(!GLOB.ipc_screens_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/screen, GLOB.ipc_screens_list)
-	// if(!GLOB.ipc_antennas_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/antenna, GLOB.ipc_antennas_list)
-	// if(!GLOB.mam_body_markings_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/mam_body_markings, GLOB.mam_body_markings_list)
-	// if(!GLOB.mam_tails_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/mam_tails, GLOB.mam_tails_list)
-	// if(!GLOB.mam_ears_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/ears/mam_ears, GLOB.mam_ears_list)
-	// if(!GLOB.mam_snouts_list.len)
-	// 	init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts/mam_snouts, GLOB.mam_snouts_list)
 
 	//snowflake check so people's ckey features don't get randomly put on unmonkeys/spawns
-	var/list/snowflake_mam_tails_list = list()
-	for(var/mtpath in GLOB.mam_tails_list)
-		var/datum/sprite_accessory/tails/mam_tails/instance = GLOB.mam_tails_list[mtpath]
-		if(istype(instance, /datum/sprite_accessory))
-			var/datum/sprite_accessory/S = instance
-			if(intendedspecies && S.recommended_species && !S.recommended_species.Find(intendedspecies))
-				continue
-			if(!S.ckeys_allowed)
-				snowflake_mam_tails_list[S.name] = mtpath
-	var/list/snowflake_ears_list = list()
-	for(var/mepath in GLOB.mam_ears_list)
-		var/datum/sprite_accessory/ears/mam_ears/instance = GLOB.mam_ears_list[mepath]
-		if(istype(instance, /datum/sprite_accessory))
-			var/datum/sprite_accessory/S = instance
-			if(intendedspecies && S.recommended_species && !S.recommended_species.Find(intendedspecies))
-				continue
-			if(!S.ckeys_allowed)
-				snowflake_ears_list[S.name] = mepath
-	var/list/snowflake_mam_snouts_list = list()
-	for(var/mspath in GLOB.mam_snouts_list)
-		var/datum/sprite_accessory/snouts/mam_snouts/instance = GLOB.mam_snouts_list[mspath]
-		if(istype(instance, /datum/sprite_accessory))
-			var/datum/sprite_accessory/S = instance
-			if(intendedspecies && S.recommended_species && !S.recommended_species.Find(intendedspecies))
-				continue
-			if(!S.ckeys_allowed)
-				snowflake_mam_snouts_list[S.name] = mspath
-	var/list/snowflake_ipc_antenna_list = list()
-	for(var/mspath in GLOB.ipc_antennas_list)
-		var/datum/sprite_accessory/snouts/mam_snouts/instance = GLOB.ipc_antennas_list[mspath]
-		if(istype(instance, /datum/sprite_accessory))
-			var/datum/sprite_accessory/S = instance
-			if(intendedspecies && S.recommended_species && !S.recommended_species.Find(intendedspecies))
-				continue
-			if(!S.ckeys_allowed)
-				snowflake_ipc_antenna_list[S.name] = mspath
+	var/list/snowflake_mam_tails_list = SSfurry.get_allowed_parts(MBP_TAIL, intendedspecies, null)
+	var/list/snowflake_ears_list = SSfurry.get_allowed_parts(MBP_EARS, intendedspecies, null)
+	var/list/snowflake_mam_snouts_list = SSfurry.get_allowed_parts(MBP_SNOUT, intendedspecies, null)
+	var/list/snowflake_ipc_antenna_list = SSfurry.get_allowed_parts(MBP_IPC_ANTENNA, intendedspecies, null)
 	var/color1 = random_color()
 	var/color2 = random_color()
 	var/color3 = random_color()
@@ -150,31 +80,31 @@
 			body_model = pick(MALE,FEMALE)
 
 	return(list(
-		MBP_COLOR1			= color1,
-		MBP_COLOR2			= color2,
-		MBP_COLOR3			= color3,
+		FEATURE_COLOR_1			= color1,
+		FEATURE_COLOR_2			= color2,
+		FEATURE_COLOR_3			= color3,
 		MBP_TAIL_LIZARD		= pick(GLOB.tails_list_lizard),
-		MBP_TAIL_HUMAN		= "None",
-		MBP_WINGS				= "None",
-		"wings_color"		= "FFF",
-		MBP_WINGS_DECORATIVE		= "None",
+		MBP_TAIL_HUMAN		= ACCESSORY_NONE,
+		MBP_WINGS				= ACCESSORY_NONE,
+		FEATURE_COLORMODE_WINGS		= "FFF",
+		MBP_WINGS_DECORATIVE		= ACCESSORY_NONE,
 		MBP_SNOUT_LIZARD				= pick(GLOB.snouts_list),
-		MBP_HORNS				= "None",
-		"horns_color"		= "85615a",
-		MBP_EARS_LIZARD				= "None",
+		MBP_HORNS				= ACCESSORY_NONE,
+		FEATURE_COLORMODE_HORNS		= "85615a",
+		MBP_EARS_LIZARD				= ACCESSORY_NONE,
 		MBP_FRILLS			= pick(GLOB.frills_list),
 		MBP_TAIL_SPINES			= pick(GLOB.spines_list),
 		MBP_LEGS				= pick(LEGS_PLANTIGRADE,LEGS_DIGITIGRADE),
 		MBP_SHROOM_CAP				= pick(GLOB.caps_list),
 		MBP_WINGS_INSECT		= pick(GLOB.insect_wings_list),
-		MBP_FLUFF		= "None",
+		MBP_FLUFF		= ACCESSORY_NONE,
 		MBP_MARKINGS_INSECT	= pick(GLOB.insect_markings_list),
-		MBP_TAUR				= "None",
+		MBP_TAUR				= ACCESSORY_NONE,
 		MBP_BODY_MARKINGS = list(),
-		MBP_EARS 			= snowflake_ears_list ? pick(snowflake_ears_list) : "None",
-		MBP_SNOUT		= snowflake_mam_snouts_list ? pick(snowflake_mam_snouts_list) : "None",
-		MBP_TAIL			= snowflake_mam_tails_list ? pick(snowflake_mam_tails_list) : "None",
-		"mam_tail_animated" = "None",
+		MBP_EARS 			= snowflake_ears_list ? pick(snowflake_ears_list) : ACCESSORY_NONE,
+		MBP_SNOUT		= snowflake_mam_snouts_list ? pick(snowflake_mam_snouts_list) : ACCESSORY_NONE,
+		MBP_TAIL			= snowflake_mam_tails_list ? pick(snowflake_mam_tails_list) : ACCESSORY_NONE,
+		"mam_tail_animated" = ACCESSORY_NONE,
 		MBP_XENO_DORSAL 		= "Standard",
 		MBP_XENO_HEAD 			= "Standard",
 		MBP_XENO_TAIL 			= "Xenomorph Tail",
@@ -218,8 +148,8 @@
 		"butt_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
-		MBP_SCREEN		= snowflake_ipc_antenna_list ? pick(snowflake_ipc_antenna_list) : "None",
-		MBP_ANTENNA_IPC		= "None",
+		MBP_SCREEN		= snowflake_ipc_antenna_list ? pick(snowflake_ipc_antenna_list) : ACCESSORY_NONE,
+		MBP_ANTENNA_IPC		= ACCESSORY_NONE,
 		"flavor_text"		= "",
 		"silicon_flavor_text"		= "",
 		MBP_MEAT_TYPE			= MEAT_MAMMAL,

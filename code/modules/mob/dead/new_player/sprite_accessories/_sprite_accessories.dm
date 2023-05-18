@@ -62,6 +62,7 @@
 	var/center = FALSE	//Should we center the sprite?
 	var/list/relevant_layers //list of layers that this accessory uses. As of now only used in species.handle_mutant_bodyparts(), but that's where most sprite accessories are anyway.
 	var/mutant_part_string //Also used in species.handle_mutant_bodyparts() to generate the overlay icon state.
+	var/transformed_part_string //The key to getting the base part of a sprite that turns into another sprite. Used in species.handle_mutant_bodyparts()
 	var/alpha_mask_state
 	var/matrixed_sections = MATRIX_NONE //if color_src is MATRIXED, how many sections does it have? 1-3
 

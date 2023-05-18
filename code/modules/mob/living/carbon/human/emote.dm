@@ -141,7 +141,7 @@
 	if(!..())
 		return FALSE
 	var/mob/living/carbon/human/H = user
-	if(H.dna && H.dna.species && (H.dna.features[MBP_WINGS] != "None"))
+	if(H.dna && H.dna.species && (H.dna.features[MBP_WINGS] != ACCESSORY_NONE))
 		return TRUE
 
 /mob/living/carbon/human/proc/OpenWings()

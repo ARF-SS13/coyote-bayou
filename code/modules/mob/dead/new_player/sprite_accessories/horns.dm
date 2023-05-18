@@ -5,11 +5,11 @@
 
 /datum/sprite_accessory/horns/is_not_visible(mob/living/carbon/human/H, tauric)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-	return (!H.dna.features[MBP_HORNS] || H.dna.features[MBP_HORNS] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
+	return (!H.dna.features[MBP_HORNS] || H.dna.features[MBP_HORNS] == ACCESSORY_NONE || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD || (HD.status == BODYPART_ROBOTIC && !HD.render_like_organic))
 
 /datum/sprite_accessory/horns/none
-	name = "None"
-	icon_state = "none"
+	name = ACCESSORY_NONE
+	icon_state = ACCESSORY_ICON_STATE_NONE
 	relevant_layers = null
 
 /datum/sprite_accessory/horns/curled

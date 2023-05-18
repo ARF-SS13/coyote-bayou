@@ -357,9 +357,9 @@ There are several things that need to be remembered:
 		var/alt_icon = H.mob_overlay_icon || 'icons/mob/clothing/head.dmi'
 		var/muzzled = FALSE
 		var/variation_flag = NONE
-		if(dna.species.mutant_bodyparts[MBP_SNOUT] && dna.features[MBP_SNOUT] != "None")
+		if(dna.species.mutant_bodyparts[MBP_SNOUT] && dna.features[MBP_SNOUT] != ACCESSORY_NONE)
 			muzzled = TRUE
-		else if(dna.species.mutant_bodyparts[MBP_SNOUT_LIZARD] && dna.features[MBP_SNOUT_LIZARD] != "None")
+		else if(dna.species.mutant_bodyparts[MBP_SNOUT_LIZARD] && dna.features[MBP_SNOUT_LIZARD] != ACCESSORY_NONE)
 			muzzled = TRUE
 		if(muzzled && H.mutantrace_variation & STYLE_MUZZLE && !(H.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 			alt_icon = H.anthro_mob_worn_overlay || 'icons/mob/clothing/head_muzzled.dmi'
@@ -507,9 +507,9 @@ There are several things that need to be remembered:
 		var/variation_flag = NONE
 		if(head && (head.flags_inv & HIDEMASK))
 			return
-		if(dna.species.mutant_bodyparts[MBP_SNOUT] && dna.features[MBP_SNOUT] != "None")
+		if(dna.species.mutant_bodyparts[MBP_SNOUT] && dna.features[MBP_SNOUT] != ACCESSORY_NONE)
 			muzzled = TRUE
-		else if(dna.species.mutant_bodyparts[MBP_SNOUT_LIZARD] && dna.features[MBP_SNOUT_LIZARD] != "None")
+		else if(dna.species.mutant_bodyparts[MBP_SNOUT_LIZARD] && dna.features[MBP_SNOUT_LIZARD] != ACCESSORY_NONE)
 			muzzled = TRUE
 		if(muzzled && M.mutantrace_variation & STYLE_MUZZLE && !(M.mutantrace_variation & STYLE_NO_ANTHRO_ICON))
 			alt_icon = M.anthro_mob_worn_overlay || 'icons/mob/clothing/mask_muzzled.dmi'
@@ -686,8 +686,8 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 		. += "-coloured-[skin_tone]"
 	else if(dna.species.fixed_mut_color)
 		. += "-coloured-[dna.species.fixed_mut_color]"
-	else if(dna.features[MBP_COLOR1])
-		. += "-coloured-[dna.features[MBP_COLOR1]]-[dna.features[MBP_COLOR2]]-[dna.features[MBP_COLOR3]]"
+	else if(dna.features[FEATURE_COLOR_1])
+		. += "-coloured-[dna.features[FEATURE_COLOR_1]]-[dna.features[FEATURE_COLOR_2]]-[dna.features[FEATURE_COLOR_3]]"
 	else
 		. += "-not_coloured"
 

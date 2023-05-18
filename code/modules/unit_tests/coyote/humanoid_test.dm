@@ -33,21 +33,21 @@
 /mob/living/carbon/human/dummy/consistent/proc/setup_human_dna()
 	create_dna(src)
 	dna.initialize_dna(null, FALSE)
-	// dna.features["body_markings"] = "None"
-	// dna.features[MBP_EARS_LIZARD] = "None"
+	// dna.features["body_markings"] = ACCESSORY_NONE
+	// dna.features[MBP_EARS_LIZARD] = ACCESSORY_NONE
 	// dna.features["ethcolor"] = COLOR_WHITE
-	// dna.features[MBP_FRILLS] = "None"
-	// dna.features[MBP_HORNS] = "None"
-	// dna.features[MBP_COLOR1] = "00FF00"
+	// dna.features[MBP_FRILLS] = ACCESSORY_NONE
+	// dna.features[MBP_HORNS] = ACCESSORY_NONE
+	// dna.features[FEATURE_COLOR_1] = "00FF00"
 	// dna.features["moth_antennae"] = "Plain"
-	// dna.features["moth_markings"] = "None"
+	// dna.features["moth_markings"] = ACCESSORY_NONE
 	// dna.features[MBP_WINGS_MOTH] = "Plain"
 	// dna.features[MBP_SNOUT_LIZARD] = "Round"
-	// dna.features[MBP_TAIL_SPINES] = "None"
-	// dna.features["tail_cat"] = "None"
+	// dna.features[MBP_TAIL_SPINES] = ACCESSORY_NONE
+	// dna.features["tail_cat"] = ACCESSORY_NONE
 	// dna.features[MBP_TAIL_LIZARD] = "Smooth"
 	// dna.features["pod_hair"] = "Ivy"
-	// dna.features["grad_style"] = "none"
+	// dna.features["grad_style"] = ACCESSORY_ICON_STATE_NONE
 	// dna.features["grad_color"] = COLOR_ALMOST_BLACK
 	facial_hair_style = "Shaved"
 	hair_style = "Bald"
