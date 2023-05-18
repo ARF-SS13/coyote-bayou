@@ -171,7 +171,7 @@
 	name = "dense sandstone"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
 	icon = 'modular_coyote/icons/turfs/walls.dmi'
-	icon_state = "cliff_top"
+	icon_state = "cliff-top-goonorig"
 
 /turf/closed/indestructible/f13vaultrusted
 	name = "rusty vault wall"
