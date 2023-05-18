@@ -1,4 +1,4 @@
-//Dont touch this code, this is what generates the shadow. Simply add this to your game and use
+//Dont touch this code, this is what generates the shadow. Simply add this to your code and use;
 //GenerateShadow(src,DIRECTION)
 
 atom/var/shadows[0]
