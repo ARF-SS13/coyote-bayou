@@ -26,7 +26,7 @@
 	broken_states = list("housewood-dam1", "housewood-dam2", "housewood-dam3", "housewood-dam4", "housewood-dam5")
 //	step_sounds = list("human" = "woodfootsteps")
 
-/turf/open/floor/plating/wooden2
+/turf/open/floor/plating/wooden3
 	name = "ravaged carpet"
 	icon_state = "carpet"
 	icon = 'modular_coyote/icons/turfs/ruinfloors.dmi'
