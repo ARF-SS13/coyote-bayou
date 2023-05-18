@@ -23789,11 +23789,10 @@
 	},
 /area/f13/building)
 "mRU" = (
-/obj/machinery/light/lampost{
-	dir = 1;
-	pixel_x = -32
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/lampost{
+	layer = 5
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
@@ -36004,12 +36003,6 @@
 "tCI" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
-"tCN" = (
-/obj/machinery/light/lampost,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder - W"
-	},
 /area/f13/wasteland)
 "tCQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -54415,7 +54408,7 @@ rMX
 pnb
 pnb
 jlh
-tCN
+vIY
 oFm
 pVV
 fJv
