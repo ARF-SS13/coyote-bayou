@@ -22,7 +22,7 @@
 	var/list/broken_states
 	var/list/burnt_states
 
-	tiled_dirt = TRUE
+	tiled_dirt = FALSE
 
 /turf/open/floor/Initialize(mapload)
 	if (!broken_states)
