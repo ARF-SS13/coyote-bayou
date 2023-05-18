@@ -13,7 +13,6 @@
 	weather_duration_lower = 1500
 	weather_duration_upper = 3000
 	weather_color = "green"
-	weather_sound = 'modular_sunset/sound/weather/radstorm.ogg'
 
 	end_duration = 100
 	end_message = span_userdanger("The air seems to be cooling off again as the radiation storm passes, the sky returning to it's normal color.")
@@ -38,6 +37,9 @@
 	immunity_type = "rad"
 
 	var/radiation_intensity = 100
+
+	sound_ao_type = /datum/looping_sound/rad_storm
+	sound_ai_type = /datum/looping_sound/rad_storm_indoors
 
 /datum/weather/rad_storm/telegraph()
 	..()
