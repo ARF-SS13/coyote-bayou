@@ -2157,3 +2157,65 @@
 	cost = 1
 	path = /obj/item/clothing/under/dress/coyote/nursedressred
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+//Yukata
+
+/datum/gear/uniform/yukataplain/silver
+	name = "Sliver Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/silver
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/black
+	name = "Black Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/white
+	name = "White Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/darkblue
+	name = "Dark Blue Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/darkblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/lightblue
+	name = "Light Blue Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/lightblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florablue
+	name = "Blue Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florablue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/floraorange
+	name = "Orange Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/floraorange
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florayellow
+	name = "Yellow Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florayellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florared
+	name = "Red Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florared
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florapurple
+	name = "Purple Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florapurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
