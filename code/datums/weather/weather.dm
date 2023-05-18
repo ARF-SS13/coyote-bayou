@@ -160,6 +160,8 @@
 	addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
 	sound_ao?.start()
 	sound_ai?.start()
+	for(var/P in GLOB.player_list)
+		handle_looping_sound(P)
 
 /**
  * Weather enters the winding down phase, stops effects
@@ -206,7 +208,11 @@
 	sound_ai?.stop()
 
 /datum/weather/process()
-	if(aesthetic || (stage != MAIN_STAGE))
+	if(stage != MAIN_STAGE)
+		return
+	for(var/P in GLOB.player_list)
+		handle_looping_sound(P)
+	if(aesthetic)
 		return
 	if(!turfs_impacted && affects_turfs)
 		turfs_impacted = TRUE
@@ -218,15 +224,13 @@
 		var/mob/living/L = i
 		if(can_weather_act(L))
 			weather_act(L)
-		if(L.client)
-			handle_looping_sound(L)
 
 /**
  * Adds or removes mobs from the output_atoms list
  * for the weather's looping sound effects
  */
 /datum/weather/proc/handle_looping_sound(mob/living/L)
-	if(!L || (isnull(sound_ao) && isnull(sound_ai)) )
+	if(!L || !ismob(L))
 		return
 	var/turf/mob_turf = get_turf(L)
 	if(mob_turf?.z in impacted_z_levels)

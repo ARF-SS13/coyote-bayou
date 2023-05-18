@@ -39,7 +39,7 @@
 	var/radiation_intensity = 100
 
 	sound_ao_type = /datum/looping_sound/rad_storm
-	sound_ai_type = /datum/looping_sound/active_inside_ashstorm
+	sound_ai_type = /datum/looping_sound/rad_storm_indoors
 
 /datum/weather/rad_storm/telegraph()
 	..()
