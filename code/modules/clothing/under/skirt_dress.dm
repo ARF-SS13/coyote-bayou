@@ -620,3 +620,63 @@
 	item_state = "nursedressred"
 	item_color = "nursedressred"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/yukataplain/silver
+	name = "silver yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain1"
+	item_state = "yukata_plain1"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/black
+	name = "black yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain2"
+	item_state = "yukata_plain2"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/white
+	name = "white yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain3"
+	item_state = "yukata_plain3"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/darkblue
+	name = "Dark blue yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain4"
+	item_state = "yukata_plain4"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/lightblue
+	name = "Light blue yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain5"
+	item_state = "yukata_plain5"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florablue
+	name = "Blue Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral1"
+	item_state = "yukata_floral1"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/floraorange
+	name = "Orange Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral2"
+	item_state = "yukata_floral2"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florayellow
+	name = "Yellow Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral3"
+	item_state = "yukata_floral3"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florared
+	name = "Red Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral3"
+	item_state = "yukata_floral3"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florapurple
+	name = "Purple Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral4"
+	item_state = "yukata_floral4"
