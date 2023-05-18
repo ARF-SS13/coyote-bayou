@@ -29,7 +29,6 @@
 				visible_message(span_warning("[humanAM] runs straight into [src] with a violent impact!"))
 				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
 				playsound(get_turf(src), 'sound/effects/wounds/crack2.ogg', 100, 0, 0)
-				playsound(get_turf(src), 'sound/f13effects/sunsetsounds/aie.ogg', 100, 0, 0)
 			else
 				visible_message(span_warning("[humanAM] runs straight into [src]!"))
 
