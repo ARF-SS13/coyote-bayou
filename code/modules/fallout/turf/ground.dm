@@ -722,4 +722,4 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 /turf/open/indestructible/ground/outside/dirt/desertsand
 	name = "desertsand"
 	icon = 'modular_coyote/icons/turfs/desertsand.dmi'
-	icon_state = sand1
+	icon_state = "sand1"
