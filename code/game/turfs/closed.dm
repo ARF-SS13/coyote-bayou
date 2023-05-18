@@ -167,6 +167,12 @@
 	icon = 'icons/fallout/turfs/mining.dmi' //fortuna edit. fixing icon path.
 	icon_state = "rock"
 
+/turf/closed/indestructible/rock/sand
+	name = "dense sandstone"
+	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
+	icon = 'modular_coyote/icons/turfs/walls.dmi'
+	icon_state = "cliff_top"
+
 /turf/closed/indestructible/f13vaultrusted
 	name = "rusty vault wall"
 	desc = "A rusty chunk of metal used to separate rooms."
