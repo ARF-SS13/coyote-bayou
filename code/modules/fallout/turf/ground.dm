@@ -714,3 +714,12 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	name = "thick snow"
 	icon = 'modular_coyote/icons/turfs/Big_Snow_turf.dmi'
 	icon_state = null
+
+//////////////
+// 	 gob	//
+//////////////
+
+/turf/open/indestructible/ground/outside/dirt/desertsand
+	name = "desertsand"
+	icon = 'modular_coyote/icons/turfs/desertsand.dmi'
+	icon_state = sand1
