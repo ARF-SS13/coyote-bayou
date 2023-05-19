@@ -358,3 +358,22 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("juicy meat" = 1, "mashed potatoes" = 1, "baked veggies" = 1)
 	foodtype = MEAT | DAIRY | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/pie/frenchsilkpie
+	name = "french silk pie"
+	desc = "A decadent pie made of a creamy chocolate mousse filling topped with a layer of whipped cream and chocolate shavings. Sliceable."
+	icon_state = "frenchsilkpie"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 12,
+		/datum/reagent/consumable/nutriment/vitamin = 4,
+	)
+	tastes = list("pie" = 1, "smooth chocolate" = 1, "whipped cream" = 1)
+	foodtype = GRAIN | DAIRY | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/pie/pieslice/frenchsilk
+
+/obj/item/reagent_containers/food/snacks/pie/pieslice/frenchsilk
+	name = "french silk pie slice"
+	desc = "A slice of french silk pie, filled with a chocolate mousse and topped with a layer of whipped cream and chocolate shavings. Delicious enough to make you cry."
+	icon_state = "frenchsilkpieslice"
+	tastes = list("pie" = 1, "smooth chocolate" = 1, "whipped cream" = 1)
+	foodtype = GRAIN | DAIRY | SUGAR
