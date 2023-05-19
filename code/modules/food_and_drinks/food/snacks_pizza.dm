@@ -290,3 +290,63 @@
 	icon_state = "five_cheese_slice"
 	tastes = list("crust" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
 	foodtype = GRAIN | VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/pizza/mothic_white_pie
+	name = "mothic white-pie pizza"
+	desc = "You say to-may-to, I say to-mah-to, and we put neither on this pizza."
+	icon_state = "white_pie_pizza"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 25,
+		/datum/reagent/consumable/tomatojuice = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+	)
+	tastes = list("crust" = 1, "cheese" = 1, "herbs" = 1, "garlic" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
+	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_white_pie
+
+/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_white_pie
+	name = "mothic white-pie slice"
+	desc = "Cheesy, garlicky, herby, delicious!"
+	icon_state = "white_pie_slice"
+	tastes = list("crust" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/pizza/mothic_pesto
+	name = "mothic pesto pizza"
+	desc = "Green as the grass in the garden. Not that there's many of those on mothic ships."
+	icon_state = "pesto_pizza"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 25,
+		/datum/reagent/consumable/tomatojuice = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+	)
+	tastes = list("crust" = 1, "pesto" = 1, "cheese" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
+	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_pesto
+
+/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_pesto
+	name = "mothic pesto slice"
+	desc = "A slice of presto pesto pizza."
+	icon_state = "pesto_slice"
+	tastes = list("crust" = 1, "pesto" = 1, "cheese" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/pizza/mothic_garlic
+	name = "mothic garlic pizzabread"
+	desc = "The best food in the galaxy, hands down."
+	icon_state = "garlic_pizza"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 25,
+		/datum/reagent/consumable/tomatojuice = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+	)
+	tastes = list("crust" = 1, "garlic" = 1, "butter" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
+	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_garlic
+
+/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_garlic
+	name = "mothic garlic pizzabread slice"
+	desc = "The best combination of oily, garlicky, and crusty known to mothkind."
+	icon_state = "garlic_slice"
+	tastes = list("dough" = 1, "garlic" = 1, "butter" = 1)
+	foodtype = GRAIN | VEGETABLES
