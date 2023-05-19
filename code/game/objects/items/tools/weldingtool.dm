@@ -221,7 +221,7 @@
 	return TRUE
  */
  
- /obj/item/weldingtool/use_tool(atom/target, mob/living/user, delay, amount, volume, datum/callback/extra_checks)
+/obj/item/weldingtool/use_tool(atom/target, mob/living/user, delay, amount, volume, datum/callback/extra_checks)
 	target.add_overlay(GLOB.welding_sparks)
 	. = ..()
 	target.cut_overlay(GLOB.welding_sparks)
