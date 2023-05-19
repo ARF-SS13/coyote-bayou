@@ -58,10 +58,6 @@
 "aDV" = (
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/f13)
-"aDZ" = (
-/turf/open/floor/plasteel/dark{
-	icon_state = "bar"
-	})
 "aEe" = (
 /obj/structure/mopbucket,
 /obj/machinery/camera{
@@ -83,11 +79,8 @@
 "aTD" = (
 /obj/structure/rack,
 /obj/item/clothing/head/welding,
-/obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "aTY" = (
 /obj/machinery/mineral/stacking_machine{
 	id_tag = "mining_stacker";
@@ -138,14 +131,6 @@
 "bsY" = (
 /obj/item/trash/semki,
 /turf/open/floor/plasteel/vault)
-"bte" = (
-/obj/machinery/door/airlock{
-	name = "Restroom";
-	req_access_txt = "0"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "freezerfloor"
-	})
 "btT" = (
 /obj/structure/mirror{
 	pixel_x = 28
@@ -251,14 +236,6 @@
 "bZl" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid)
-"ccJ" = (
-/obj/structure/table,
-/obj/machinery/microwave{
-	pixel_y = 8
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "bar"
-	})
 "ceT" = (
 /obj/machinery/door/poddoor{
 	id_tag = "tunnelgate2left";
@@ -328,11 +305,6 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
-"cIS" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark{
-	icon_state = "solarpanel"
-	})
 "cIV" = (
 /obj/machinery/seed_extractor,
 /turf/open/floor/f13/wood)
@@ -345,15 +317,6 @@
 "cMp" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
-"cMS" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plating)
 "cNp" = (
 /obj/structure/bed/roller,
 /turf/open/floor/f13)
@@ -374,10 +337,6 @@
 "cRr" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/f13)
-"cUn" = (
-/turf/open/floor/plasteel/dark{
-	icon_state = "grimy"
-	})
 "cXq" = (
 /obj/machinery/chem_master,
 /turf/open/floor/plasteel/f13/stone)
@@ -435,23 +394,6 @@
 "dxX" = (
 /obj/item/trash/plate,
 /turf/open/indestructible/ground/outside/dirt/desertsand)
-"dyI" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/open/indestructible/ground/outside/dirt/desertsand)
-"dzg" = (
-/obj/structure/closet/radiation,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "dzM" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -528,16 +470,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/vault)
-"dZC" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark{
-	icon_state = "solarpanel"
-	})
 "eda" = (
 /obj/structure/closet/crate,
 /turf/open/floor/f13)
@@ -546,14 +478,6 @@
 	pixel_y = 30
 	},
 /turf/open/floor/f13)
-"egu" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/vending/coffee,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "ehz" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -561,38 +485,15 @@
 	icon_state = "1-2"
 	},
 /turf/open/indestructible/ground/outside/sidewalk)
-"ejD" = (
-/obj/structure/closet/emcloset,
-/obj/machinery/light_switch{
-	pixel_y = 28
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "elI" = (
 /obj/structure/toilet{
 	desc = "The HT-451, a torque rotation-based, waste disposal unit for small matter. This one is a gruesome sight indeed.";
 	dir = 4
 	},
 /turf/open/floor/plasteel/vault)
-"elT" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "enU" = (
-/obj/structure/rack,
-/obj/item/clothing/mask/breath,
-/turf/open/floor/plating)
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/f13/wasteland)
 "eoE" = (
 /obj/structure/closet/secure_closet/miner,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
@@ -602,9 +503,6 @@
 "evD" = (
 /obj/structure/closet/toolcloset,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
-"evP" = (
-/obj/structure/disposalpipe/segment,
-/turf/closed/wall/rust)
 "ewU" = (
 /obj/structure/sink/kitchen{
 	pixel_y = 25
@@ -705,23 +603,6 @@
 /obj/structure/bed,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13)
-"fgo" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/open/indestructible/ground/outside/dirt/desertsand)
 "fke" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -839,15 +720,6 @@
 /turf/open/floor/plasteel/dark{
 	icon_state = "floorgrime"
 	})
-"fNU" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "solarpanel"
-	})
 "fNV" = (
 /obj/structure/sink{
 	dir = 4;
@@ -871,24 +743,10 @@
 /obj/structure/window/reinforced,
 /obj/structure/grille,
 /turf/open/floor/f13/wood)
-"fQh" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "fRD" = (
 /obj/machinery/telecomms/server/presets/science,
 /turf/open/floor/f13,
 /area/f13/wasteland)
-"fTE" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating)
 "fUA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13)
@@ -948,16 +806,6 @@
 /turf/open/floor/plating)
 "gsu" = (
 /turf/closed/wall/mineral/cult)
-"gsy" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/plating)
 "gtM" = (
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/f13,
@@ -1003,9 +851,6 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating)
-"gOE" = (
-/obj/structure/lattice,
-/turf/open/indestructible/ground/outside/dirt/desertsand)
 "gOT" = (
 /obj/machinery/light,
 /turf/open/indestructible/ground/outside/sidewalk)
@@ -1047,35 +892,12 @@
 "hbX" = (
 /obj/machinery/biogenerator,
 /turf/open/floor/f13/wood)
-"hdA" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plating)
-"hed" = (
-/obj/structure/bed,
-/turf/open/floor/plasteel/dark{
-	icon_state = "grimy"
-	})
 "hep" = (
 /obj/machinery/telecomms/server/presets/command,
 /turf/open/floor/f13,
 /area/f13/wasteland)
 "hfk" = (
 /obj/machinery/door/airlock/silver)
-"hgD" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/space_heater,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "hhv" = (
 /obj/structure/table,
 /obj/item/stack/rods{
@@ -1095,12 +917,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/vault)
-"hnu" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/obj/structure/disposaloutlet,
-/turf/open/floor/plating/airless)
 "hpQ" = (
 /obj/structure/cable/yellow,
 /turf/open/floor/plasteel/vault)
@@ -1179,18 +995,6 @@
 "hQp" = (
 /obj/machinery/pipedispenser/disposal,
 /turf/open/floor/plasteel/vault)
-"hUv" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plating)
 "hUW" = (
 /obj/structure/toilet{
 	desc = "The HT-451, a torque rotation-based, waste disposal unit for small matter. This one is a gruesome sight indeed.";
@@ -1229,14 +1033,6 @@
 "hZm" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/f13)
-"icZ" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "solarpanel"
-	})
 "idY" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1247,23 +1043,10 @@
 /turf/open/floor/f13,
 /area/f13/wasteland)
 "igV" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -1272,7 +1055,8 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/open/floor/plasteel/vault)
+/turf/open/floor/plasteel/vault,
+/area/f13/wasteland)
 "ijE" = (
 /obj/machinery/light{
 	dir = 1
@@ -1285,20 +1069,6 @@
 	icon_state = "cabinet_closed"
 	},
 /turf/open/floor/carpet)
-"ikm" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plating)
-"ikv" = (
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/dark{
-	icon_state = "bar"
-	})
 "ilh" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/structure/grille,
@@ -1310,14 +1080,6 @@
 	dir = 8
 	},
 /turf/open/floor/plating)
-"ioK" = (
-/obj/machinery/door/airlock/glass{
-	name = "Kitchen"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "cafeteria";
-	dir = 5
-	})
 "ioL" = (
 /obj/machinery/door/airlock/maintenance_hatch)
 "irL" = (
@@ -1369,21 +1131,6 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating)
-"iBQ" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/structure/cable,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/window/reinforced,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "iCJ" = (
 /obj/machinery/light{
 	dir = 1
@@ -1467,12 +1214,6 @@
 "jmw" = (
 /obj/structure/closet/l3closet/janitor,
 /turf/open/floor/f13)
-"jmZ" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating)
 "joD" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -1514,16 +1255,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13,
 /area/f13/wasteland)
-"juD" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/window/reinforced,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "jvm" = (
 /mob/living/carbon/monkey,
 /turf/open/indestructible/ground/outside/sidewalk)
@@ -1558,21 +1289,6 @@
 "jKh" = (
 /obj/machinery/door/airlock/glass,
 /turf/open/indestructible/ground/outside/sidewalk)
-"jKk" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating)
 "jMe" = (
 /obj/structure/closet/wardrobe/pjs,
 /obj/machinery/camera{
@@ -1651,9 +1367,6 @@
 "kcg" = (
 /obj/item/stack/rods,
 /turf/open/floor/plating/rockcrete_slab)
-"kcE" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plating/airless)
 "kef" = (
 /turf/open/floor/plasteel/dark{
 	icon_state = "cult"
@@ -1678,15 +1391,6 @@
 /obj/item/stack/ore/plasma,
 /obj/item/stack/ore/plasma,
 /turf/open/floor/f13)
-"kmy" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "knQ" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/f13)
@@ -1700,9 +1404,6 @@
 /obj/structure/table,
 /obj/item/stack/medical/bruise_pack,
 /turf/open/floor/plasteel/dark)
-"kyn" = (
-/obj/structure/grille,
-/turf/open/indestructible/ground/outside/dirt/desertsand)
 "kyF" = (
 /obj/structure/sink{
 	pixel_y = 28
@@ -1740,11 +1441,6 @@
 	dir = 10;
 	icon_state = "asteroidwarning"
 	})
-"kMx" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access_txt = "0"
-	},
-/turf/open/floor/plating)
 "kNl" = (
 /obj/machinery/light{
 	dir = 8
@@ -1781,19 +1477,6 @@
 	amount = 50
 	},
 /turf/open/floor/plasteel/vault)
-"laC" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plating)
 "lbB" = (
 /turf/open/floor/f13)
 "lei" = (
@@ -1818,44 +1501,9 @@
 	icon_state = "1-2"
 	},
 /turf/closed/wall/r_wall/rust)
-"lrx" = (
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/dark{
-	icon_state = "grimy"
-	})
-"lrH" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
-"lrI" = (
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "solarpanel"
-	})
 "lrM" = (
 /obj/machinery/light,
 /turf/open/floor/carpet)
-"ltd" = (
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "ltI" = (
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	req_access = null
@@ -1899,19 +1547,6 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
@@ -1922,12 +1557,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/open/floor/plasteel/vault)
-"lAT" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/dark{
-	icon_state = "bar"
-	})
+/turf/open/floor/plasteel/vault,
+/area/f13/wasteland)
 "lCf" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
@@ -1984,13 +1615,6 @@
 	name = "Tunnel Blast Door"
 	},
 /turf/open/indestructible/ground/outside/roaddirt)
-"lPG" = (
-/obj/structure/toilet{
-	pixel_y = 8
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "freezerfloor"
-	})
 "lQT" = (
 /obj/machinery/vending/autodrobe,
 /turf/open/floor/f13)
@@ -1998,9 +1622,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/f13/wasteland)
 "lVX" = (
 /obj/structure/bed,
 /turf/open/floor/plasteel/dark)
@@ -2014,18 +1637,6 @@
 "mdZ" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark)
-"meo" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/open/indestructible/ground/outside/dirt/desertsand)
 "meq" = (
 /obj/effect/landmark/latejoin,
 /turf/open/indestructible/ground/outside/dirt/desertsand)
@@ -2060,10 +1671,6 @@
 "mkJ" = (
 /obj/structure/shuttle/engine/propulsion/left)
 "mkQ" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -2079,7 +1686,8 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/open/floor/plasteel/vault)
+/turf/open/floor/plasteel/vault,
+/area/f13/wasteland)
 "mmF" = (
 /obj/structure/table/glass,
 /obj/machinery/light{
@@ -2127,24 +1735,6 @@
 "myX" = (
 /obj/machinery/computer/message_monitor,
 /turf/open/indestructible/ground/outside/sidewalk)
-"mze" = (
-/obj/structure/closet,
-/obj/item/clothing/ears/earmuffs,
-/turf/open/floor/plasteel/dark{
-	icon_state = "grimy"
-	})
-"mHV" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/floor/plating)
 "mMz" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 10
@@ -2163,13 +1753,6 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark)
-"mQQ" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating)
 "mRy" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -2247,11 +1830,6 @@
 "nmb" = (
 /obj/structure/closet/crate/medical,
 /turf/open/indestructible/ground/outside/sidewalk)
-"nmB" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "nna" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -2260,16 +1838,6 @@
 /obj/structure/cable/yellow{
 	d2 = 8;
 	icon_state = "0-8"
-	},
-/turf/open/floor/plating)
-"noH" = (
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	pixel_x = -24
 	},
 /turf/open/floor/plating)
 "npz" = (
@@ -2336,16 +1904,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
-"nOg" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plating)
 "nOj" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/asteroid)
@@ -2355,18 +1913,6 @@
 	dir = 1
 	},
 /turf/open/floor/f13)
-"nTE" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/open/indestructible/ground/outside/dirt/desertsand)
 "nUY" = (
 /obj/machinery/iv_drip,
 /turf/open/indestructible/ground/outside/sidewalk)
@@ -2394,16 +1940,6 @@
 	},
 /obj/machinery/iv_drip,
 /turf/open/indestructible/ground/outside/sidewalk)
-"ogF" = (
-/obj/machinery/status_display{
-	pixel_x = 32
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "oiw" = (
 /obj/item/trash/candy,
 /turf/open/indestructible/ground/outside/dirt/desertsand)
@@ -2462,15 +1998,6 @@
 	pixel_x = 11
 	},
 /turf/open/floor/f13)
-"oER" = (
-/obj/machinery/door/window{
-	dir = 2;
-	name = "Radiation Zone Door";
-	req_access_txt = "0"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "oFr" = (
 /obj/machinery/door/poddoor{
 	id_tag = "tunnelgate1south";
@@ -2541,14 +2068,6 @@
 "pcH" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/vault)
-"pdP" = (
-/obj/machinery/door/airlock/glass{
-	name = "Cabin"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "cafeteria";
-	dir = 5
-	})
 "pgO" = (
 /obj/structure/sign/poster{
 	pixel_y = 30
@@ -2558,13 +2077,6 @@
 /obj/machinery/telecomms/bus/preset_one,
 /turf/open/floor/f13,
 /area/f13/wasteland)
-"piE" = (
-/obj/machinery/door/airlock/external{
-	name = "Ruskie DJ Station";
-	req_access = null;
-	req_access_txt = "0"
-	},
-/turf/open/floor/plating)
 "plF" = (
 /obj/item/binoculars,
 /obj/item/binoculars,
@@ -2644,36 +2156,9 @@
 	name = "Tunnel Blast Door"
 	},
 /turf/open/indestructible/ground/outside/sidewalk)
-"pBi" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/open/indestructible/ground/outside/dirt/desertsand)
-"pCA" = (
-/turf/open/floor/plasteel/dark{
-	icon_state = "freezerfloor"
-	})
 "pEH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust)
-"pJz" = (
-/obj/structure/table,
-/obj/machinery/cell_charger,
-/turf/open/floor/plasteel/dark{
-	icon_state = "bar"
-	})
 "pOw" = (
 /obj/structure/closet,
 /obj/item/stack/sheet/metal{
@@ -2709,12 +2194,6 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/stone)
-"qdJ" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
-	},
-/turf/open/floor/plating)
 "qew" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13)
@@ -2872,12 +2351,6 @@
 	},
 /obj/structure/window/reinforced,
 /turf/open/floor/plating)
-"qSc" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk,
-/turf/open/floor/plasteel/dark{
-	icon_state = "bar"
-	})
 "qSS" = (
 /obj/structure/table,
 /obj/machinery/camera{
@@ -2969,16 +2442,6 @@
 "rvY" = (
 /obj/machinery/door/airlock/mining,
 /turf/open/floor/f13)
-"rxc" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/dark{
-	icon_state = "freezerfloor"
-	})
 "rxQ" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating{
@@ -2993,20 +2456,6 @@
 "rDN" = (
 /obj/machinery/door/airlock/mining,
 /turf/open/floor/plasteel/vault)
-"rEG" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "rGs" = (
 /obj/machinery/telecomms/broadcaster/preset_right,
 /turf/open/floor/f13,
@@ -3074,53 +2523,9 @@
 "rZl" = (
 /obj/structure/fence/door,
 /turf/open/indestructible/ground/inside/mountain)
-"saf" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plating)
-"saj" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/open/indestructible/ground/outside/dirt/desertsand)
 "sbm" = (
 /obj/machinery/door/airlock/research,
 /turf/open/indestructible/ground/outside/sidewalk)
-"sdg" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating)
-"seq" = (
-/obj/machinery/telecomms/relay/preset/ruskie,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "sfx" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen";
@@ -3130,16 +2535,6 @@
 "siY" = (
 /mob/living/simple_animal/hostile/lizard,
 /turf/open/floor/plasteel/vault)
-"sqY" = (
-/obj/machinery/door/window{
-	dir = 2;
-	icon_state = "right";
-	name = "Radiation Zone Door";
-	req_access_txt = "0"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "stA" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -3155,13 +2550,6 @@
 "sxT" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/indestructible/ground/outside/sidewalk)
-"szo" = (
-/obj/machinery/light_switch{
-	pixel_y = 28
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "grimy"
-	})
 "sCC" = (
 /obj/machinery/blackbox_recorder,
 /turf/open/floor/f13,
@@ -3274,14 +2662,6 @@
 "tkc" = (
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/start)
-"tkY" = (
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "solarpanel"
-	})
 "tla" = (
 /obj/structure/fence{
 	dir = 4
@@ -3335,7 +2715,6 @@
 	},
 /turf/open/floor/plasteel/dark)
 "tGj" = (
-/obj/structure/cable,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
@@ -3344,7 +2723,8 @@
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/f13/wasteland)
 "tGx" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
 "tGF" = (
@@ -3383,16 +2763,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark)
-"tUl" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/rack{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "tWd" = (
 /turf/open/floor/plasteel/cult)
 "tXI" = (
@@ -3421,13 +2791,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13,
 /area/f13/wasteland)
-"uro" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating)
 "utw" = (
 /obj/machinery/conveyor_switch{
 	convdir = -1;
@@ -3511,18 +2874,6 @@
 /obj/structure/table,
 /obj/machinery/light,
 /turf/open/indestructible/ground/outside/sidewalk)
-"uNc" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating)
 "uSR" = (
 /obj/structure/closet/toolcloset,
 /turf/open/floor/f13)
@@ -3581,21 +2932,9 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
-"vxM" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/dark{
-	icon_state = "grimy"
-	})
 "vBy" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating/asteroid)
-"vGV" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating)
 "vHa" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/mineral/random/low_chance_desert)
@@ -3605,23 +2944,6 @@
 "vKQ" = (
 /obj/structure/mopbucket,
 /turf/open/floor/plasteel/vault)
-"vPw" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating)
 "vPN" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -3638,21 +2960,6 @@
 "waA" = (
 /obj/structure/closet/secure_closet/medical1,
 /turf/open/indestructible/ground/outside/sidewalk)
-"wbc" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating)
 "wcR" = (
 /obj/structure/shuttle/engine/heater)
 "wgm" = (
@@ -3667,18 +2974,6 @@
 	name = "mining conveyor"
 	},
 /turf/open/floor/f13)
-"wkJ" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "solarpanel"
-	})
 "wlu" = (
 /obj/item/stack/sheet/mineral/silver,
 /obj/item/stack/sheet/mineral/silver,
@@ -3703,21 +2998,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark)
-"wuF" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating)
 "wvL" = (
 /obj/machinery/mineral/mint,
 /turf/open/floor/f13)
@@ -3751,30 +3031,14 @@
 	id_tag = "generator_internal";
 	dir = 9
 	},
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "wYG" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id_tag = "mining_internal"
 	},
 /turf/open/floor/plasteel/dark)
-"xaR" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/turf/open/floor/plating)
 "xdH" = (
 /obj/effect/decal/remains/human,
 /obj/machinery/light{
@@ -3816,15 +3080,6 @@
 /obj/structure/bed,
 /turf/open/floor/plasteel/dark{
 	icon_state = "cult"
-	})
-"xrJ" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
 	})
 "xsB" = (
 /obj/structure/window/reinforced,
@@ -3878,31 +3133,9 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/inside/mountain)
-"xEo" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/window/reinforced,
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "xHj" = (
 /obj/machinery/door/airlock/freezer,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
-"xHY" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating)
 "xKB" = (
 /turf/closed/wall)
 "xNv" = (
@@ -3914,22 +3147,8 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/vault)
 "xRA" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/f13/wasteland)
 "xUb" = (
 /obj/machinery/telecomms/bus/preset_four,
 /turf/open/floor/f13,
@@ -3949,42 +3168,25 @@
 	id_tag = "generator_internal";
 	dir = 5
 	},
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "xXR" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/indestructible/ground/outside/sidewalk)
-"xXU" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/dark{
-	icon_state = "dark"
-	})
 "xZD" = (
 /obj/machinery/conveyor{
 	id_tag = "generator_internal";
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
 /obj/machinery/conveyor{
 	id_tag = "generator_internal";
 	dir = 8
 	},
-/turf/open/indestructible/ground/outside/sidewalk)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "ydt" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/plasteel/dark{
@@ -30917,30 +30119,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-wTD
-wTD
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -31169,30 +30371,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -31421,30 +30623,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -31673,30 +30875,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -31925,30 +31127,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-kyn
-kyn
-kyn
-kyn
-kyn
-kyn
-kyn
-qrT
-hij
-mHV
-ikm
-hdA
-hij
-qrT
-gOE
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -32177,30 +31379,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-kyn
-fNU
-meo
-dZC
-meo
-cIS
-kyn
-qrT
-hij
-ccJ
-pJz
-qSc
-evP
-kcE
-kcE
-kcE
-hnu
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -32429,30 +31631,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-kyn
-fNU
-fgo
-dZC
-fgo
-cIS
-kyn
-qrT
-hij
-lAT
-aDZ
-ikv
-hij
-gOE
-gOE
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 wTD
@@ -32681,30 +31883,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-gOE
-kyn
-fNU
-fgo
-dZC
-fgo
-cIS
-kyn
-qrT
-hij
-aDZ
-aDZ
-aDZ
-hij
-hij
-hij
-hij
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 wTD
 wTD
@@ -32933,30 +32135,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-gOE
-gOE
-kyn
-fNU
-fgo
-dZC
-fgo
-cIS
-kyn
-qrT
-hij
-aDZ
-aDZ
-aDZ
-bte
-pCA
-rxc
-hij
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 wTD
 wTD
 wTD
@@ -33185,30 +32387,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-kyn
-kyn
-kyn
-kyn
-kyn
-hij
-xaR
-wbc
-hij
-vPw
-saf
-hij
-hij
-hij
-laC
-ioK
-laC
-hij
-hij
-lPG
-hij
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 wTD
 wTD
 wTD
@@ -33437,30 +32639,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-kyn
-tkY
-tkY
-tkY
-tkY
-nOg
-xrJ
-rEG
-oER
-fTE
-bAl
-noH
-hij
-ejD
-ltd
-ltd
-ltd
-ltd
-hij
-hij
-hij
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 wTD
 wTD
@@ -33689,30 +32891,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-kyn
-nTE
-pBi
-pBi
-pBi
-jKk
-xXU
-rEG
-juD
-mQQ
-bAl
-fTE
-hij
-egu
-ltd
-nmB
-nmB
-ltd
-ltd
-nmB
-hij
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 wTD
@@ -33941,30 +33143,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-kyn
-lrI
-wkJ
-wkJ
-wkJ
-hij
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 lUv
-lrH
-iBQ
-qdJ
-uNc
-mQQ
-kMx
-ltd
-ltd
-ltd
-nmB
-ltd
-ltd
-ltd
-hij
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 wTD
@@ -34193,30 +33395,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-kyn
-nTE
-pBi
-pBi
-pBi
-wuF
-xXU
-elT
-xEo
-uro
-fTE
-bAl
-hij
-dzg
-ltd
-nmB
-nmB
-ltd
-hgD
-ltd
-hij
-hij
-hij
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -34445,30 +33647,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-kyn
-icZ
-icZ
-icZ
-icZ
-gsy
-seq
-kmy
-sqY
-fTE
-jmZ
 enU
-hij
-ltd
-ltd
-ltd
-ltd
-ogF
-tUl
-ltd
-piE
-bAl
-piE
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -34697,30 +33899,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-kyn
-kyn
-kyn
-kyn
-kyn
-hij
-xaR
-wbc
-hij
-vPw
-saf
-hij
-hij
-hij
-laC
-pdP
-laC
-hij
-fQh
-ltd
-piE
-bAl
-piE
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -34949,30 +34151,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-gOE
-gOE
-gOE
-kyn
-fNU
-saj
-dZC
-saj
-cIS
-kyn
-qrT
-hij
-cUn
-cUn
-cUn
-hij
-hij
-hij
-hij
-hij
-hij
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -35201,30 +34403,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-gOE
-kyn
-fNU
-saj
-dZC
-saj
-cIS
-kyn
-qrT
-hij
-szo
-cUn
-cUn
-hij
-qrT
-qrT
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -35453,30 +34655,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-gOE
-kyn
-fNU
-saj
-dZC
-saj
-cIS
-kyn
-qrT
-hij
-hed
-cUn
-lrx
-hij
-gOE
-gOE
-gOE
-gOE
-gOE
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -35705,30 +34907,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-kyn
-fNU
-dyI
-dZC
-dyI
-cIS
-kyn
-qrT
-hij
-vxM
-cUn
-mze
-hij
-gOE
-gOE
-gOE
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -35957,30 +35159,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-kyn
-kyn
-kyn
-kyn
-kyn
-kyn
-kyn
-qrT
-hij
-hUv
-cMS
-saf
-hij
-qrT
-gOE
-gOE
-gOE
-gOE
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -36209,30 +35411,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-gOE
-gOE
-qrT
-gOE
-qrT
-qrT
-gOE
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -36461,30 +35663,30 @@ qrT
 qrT
 qrT
 qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
-qrT
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
+enU
 qrT
 qrT
 qrT
@@ -55940,7 +55142,7 @@ kVd
 kVd
 kVd
 kVd
-fTE
+xRA
 wTD
 wTD
 wTD
@@ -56192,7 +55394,7 @@ kVd
 kVd
 kVd
 kVd
-fTE
+xRA
 wTD
 wTD
 wTD
@@ -56444,7 +55646,7 @@ kVd
 kVd
 kVd
 kVd
-fTE
+xRA
 wTD
 wTD
 wTD
@@ -56691,12 +55893,12 @@ qDX
 dCV
 uvM
 xWS
-uro
+xRA
 sOO
 kVd
 kVd
 kVd
-fTE
+xRA
 wTD
 wTD
 wTD
@@ -56943,12 +56145,12 @@ qDX
 dCV
 jXj
 xZD
-xHY
+xRA
 kVd
 kVd
 kVd
 kVd
-fTE
+xRA
 wTD
 wTD
 wTD
@@ -57196,11 +56398,11 @@ dCV
 jXj
 xZD
 xRA
-vGV
-vGV
-vGV
-vGV
-mQQ
+xRA
+xRA
+xRA
+xRA
+xRA
 wTD
 wTD
 wTD
@@ -57447,7 +56649,7 @@ qDX
 dCV
 jXj
 xZD
-sdg
+xRA
 kVd
 kVd
 kVd
@@ -57699,7 +56901,7 @@ qDX
 dCV
 jXj
 xZD
-sdg
+xRA
 jvm
 kVd
 kVd
@@ -57951,7 +57153,7 @@ qDX
 dCV
 gwC
 wXf
-mQQ
+xRA
 kVd
 kVd
 kVd
