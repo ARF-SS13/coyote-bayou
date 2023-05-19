@@ -517,6 +517,14 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/wateringcan
+	name = "Watering Can"
+	result = /obj/item/reagent_containers/glass/bucket/wateringcan
+	reqs = list(/obj/item/stack/sheet/metal = 1, /obj/item/stack/sheet/plastic = 1)
+	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/skyfort_girder
 	name = "Aerial Support Girder"
 	result = /obj/item/stack/rods/scaffold
