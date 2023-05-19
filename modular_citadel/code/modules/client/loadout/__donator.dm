@@ -350,6 +350,7 @@
 	new /obj/item/ammo_box/c45/rubber(src)
 	new /obj/item/storage/belt/legholster(src)
 	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
+	new /obj/item/clothing/suit/armor/light/duster/town/leather(src)
 
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
