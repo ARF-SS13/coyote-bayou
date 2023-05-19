@@ -897,3 +897,14 @@
 	tastes = list("peppers" = 1, "salsa" = 3, "tortilla chips" = 1, "onion" = 1)
 	foodtype = VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/popcorn/caramel
+	name = "caramel popcorn"
+	icon_state = "caramel_popcorn"
+	desc = "Caramel-covered popcorn. Sweet!"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/caramel = 4,
+	)
+	tastes = list("caramel" = 2, "popcorn" = 1)
+	foodtype = JUNKFOOD | SUGAR
