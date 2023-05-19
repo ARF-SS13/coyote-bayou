@@ -992,9 +992,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	return TRUE
 
-	target.add_overlay(GLOB.welding_sparks)
-	. = ..()
-	target.cut_overlay(GLOB.welding_sparks)
+
 
 // Called before use_tool if there is a delay, or by use_tool if there isn't.
 // Only ever used by welding tools and stacks, so it's not added on any other use_tool checks.
