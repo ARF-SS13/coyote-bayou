@@ -483,3 +483,11 @@
 		/datum/reagent/consumable/sugar = 150,
 	)
 	result = /obj/item/reagent_containers/food/snacks/store/cake/wedding
+
+/datum/crafting_recipe/food/dessert/mothmallow
+	name = "mothmallow tray"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/store/cake/plain = 4,
+		/datum/reagent/consumable/sugar = 150,
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/cake/mothmallow

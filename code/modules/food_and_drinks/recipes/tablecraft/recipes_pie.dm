@@ -235,3 +235,4 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pie/frenchsilkpie
 	subcategory = CAT_PIE
+

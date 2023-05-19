@@ -228,3 +228,15 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/crunchy_peanut_butter_tart
 	category = CAT_PASTRY
+
+/datum/crafting_recipe/food/moth_cheese_cakes
+	name = "Ælorölen (Cheesecake balls)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/datum/reagent/consumable/coco = 1,
+		/datum/reagent/consumable/flour = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/datum/reagent/consumable/honey = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/moth_cheese_cakes
+	category = CAT_PASTRY

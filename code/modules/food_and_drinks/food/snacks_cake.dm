@@ -490,3 +490,27 @@ obj/item/reagent_containers/food/snacks/store/cake/pound_cake
 	icon_state = "weddingcake_slice"
 	tastes = list("cake" = 3, "frosting" = 1)
 	foodtype = GRAIN | DAIRY | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/mothmallow
+	name = "mothmallow tray"
+	desc = "A light and fluffy vegan marshmallow flavoured with vanilla and rum and topped with soft chocolate. These are known to the moths as höllflöfstarkken: cloud squares." //höllflöf = cloud (höll = wind, flöf = cotton), starkken = squares
+	icon_state = "mothmallow_tray"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 20,
+		/datum/reagent/consumable/sugar = 20,
+	)
+	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
+	foodtype = VEGETABLES | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
+	slices_num = 6
+
+/obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
+	name = "mothmallow"
+	desc = "Fluffy little clouds of joy- in a strangely moth-like colour."
+	icon_state = "mothmallow_slice"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/sugar = 4,
+	)
+	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
+	foodtype = VEGETABLES | SUGAR
