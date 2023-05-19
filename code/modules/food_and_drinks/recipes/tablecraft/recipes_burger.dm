@@ -401,3 +401,12 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker
 	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mothic_five_cheese
+	name = "Five Cheese Pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 4,
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_five_cheese
+	subcategory = CAT_BURGER

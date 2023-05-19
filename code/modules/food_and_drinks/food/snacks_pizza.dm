@@ -270,3 +270,23 @@
 	icon_state = "firecracker_slice"
 	tastes = list("crust" = 1, "chili" = 1, "corn" = 1, "cheese" = 1, "bbq sauce" = 1)
 	foodtype = GRAIN | VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/pizza/mothic_five_cheese
+	name = "mothic five-cheese pizza"
+	desc = "A favourite amongst mice, rats, and English inventors."
+	icon_state = "five_cheese_pizza"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 25,
+		/datum/reagent/consumable/tomatojuice = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+	)
+	tastes = list("crust" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
+	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_five_cheese
+
+/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_five_cheese
+	name = "mothic five-cheese slice"
+	desc = "It's the cheesiest slice in the galaxy!"
+	icon_state = "five_cheese_slice"
+	tastes = list("crust" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
