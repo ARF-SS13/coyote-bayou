@@ -220,6 +220,12 @@
 	item_heal_robotic(healtarget, user, 15, 0)
 	return TRUE
  */
+ 
+ /obj/item/weldingtool/use_tool(atom/target, mob/living/user, delay, amount, volume, datum/callback/extra_checks)
+	target.add_overlay(GLOB.welding_sparks)
+	. = ..()
+	target.cut_overlay(GLOB.welding_sparks)
+ 
 /obj/item/weldingtool/proc/refil_the_tool(obj/O, mob/user)
 	if(!istype(O))
 		return FALSE
