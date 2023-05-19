@@ -263,8 +263,8 @@
 	desc = "Go beyond impossible and kick reason to the curb!"
 	icon_state = "garb"
 	item_state = "garb"
-	force = 10
-	throwforce = 10
+	force = 23
+	throwforce = 23
 	throw_speed = 4
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
