@@ -981,7 +981,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(delay >= MIN_TOOL_SOUND_DELAY)
 		play_tool_sound(target, volume)
 
-
+	target.add_overlay(GLOB.welding_sparks)
+	. = ..()
+	target.cut_overlay(GLOB.welding_sparks)
+		
 	if(user.mind && used_skills && skill_gain_mult)
 		var/gain = skill_gain + delay/SKILL_GAIN_DELAY_DIVISOR
 		for(var/skill in used_skills)
