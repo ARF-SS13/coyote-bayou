@@ -98,6 +98,9 @@
 // Returns the nth root of x.
 #define ROOT(n, x) ((x) ** (1 / (n)))
 
+/// decrements a number by another number, to a minimum of another number
+#define DECREMENTBY(val, dec, min) (val = max(val - dec, min))
+
 // The quadratic formula. Returns a list with the solutions, or an empty list
 // if they are imaginary.
 /proc/SolveQuadratic(a, b, c)

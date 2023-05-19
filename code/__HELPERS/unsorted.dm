@@ -1636,7 +1636,17 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		if(mobby.client)
 			return mobby.client
 
-
+/proc/get_random_player_name(only_first)
+	var/list/client_mob_names = list()
+	for(var/client/clint in GLOB.clients)
+		if(!ismob(clint.mob))
+			continue
+		client_mob_names += clint.mob.real_name
+	var/rname = pick(client_mob_names)
+	if(only_first)
+		var/list/first_last = splittext(rname, " ")
+		return LAZYACCESS(first_last, 1)
+	return rname
 
 
 
