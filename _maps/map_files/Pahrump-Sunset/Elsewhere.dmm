@@ -144,13 +144,6 @@
 "bwu" = (
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/f13)
-"bwW" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/f13)
 "bxP" = (
 /obj/structure/closet,
 /turf/open/floor/plating)
@@ -478,22 +471,12 @@
 	pixel_y = 30
 	},
 /turf/open/floor/f13)
-"ehz" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
 "elI" = (
 /obj/structure/toilet{
 	desc = "The HT-451, a torque rotation-based, waste disposal unit for small matter. This one is a gruesome sight indeed.";
 	dir = 4
 	},
 /turf/open/floor/plasteel/vault)
-"enU" = (
-/turf/open/indestructible/ground/outside/dirt/desertsand,
-/area/f13/wasteland)
 "eoE" = (
 /obj/structure/closet/secure_closet/miner,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
@@ -543,11 +526,8 @@
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/f13/wasteland)
 "eKY" = (
 /obj/structure/table,
 /obj/machinery/light{
@@ -577,23 +557,6 @@
 "eYg" = (
 /obj/structure/closet/crate,
 /turf/open/floor/plating/rockcrete_slab)
-"fck" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
 "fdf" = (
 /obj/machinery/computer/telecomms/monitor{
 	network = "tcommsat"
@@ -603,6 +566,9 @@
 /obj/structure/bed,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13)
+"fgo" = (
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/f13/wasteland)
 "fke" = (
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -839,18 +805,6 @@
 /obj/machinery/telecomms/processor/preset_two,
 /turf/open/floor/f13,
 /area/f13/wasteland)
-"gHK" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating)
 "gOT" = (
 /obj/machinery/light,
 /turf/open/indestructible/ground/outside/sidewalk)
@@ -918,8 +872,8 @@
 	},
 /turf/open/floor/plasteel/vault)
 "hpQ" = (
-/obj/structure/cable/yellow,
-/turf/open/floor/plasteel/vault)
+/turf/open/floor/plasteel/vault,
+/area/f13/wasteland)
 "hqe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -986,12 +940,8 @@
 	dir = 1;
 	pixel_y = 24
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
-/turf/open/floor/f13)
+/turf/open/floor/f13,
+/area/f13/wasteland)
 "hQp" = (
 /obj/machinery/pipedispenser/disposal,
 /turf/open/floor/plasteel/vault)
@@ -1124,13 +1074,6 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet)
-"iyx" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating)
 "iCJ" = (
 /obj/machinery/light{
 	dir = 1
@@ -1215,12 +1158,8 @@
 /obj/structure/closet/l3closet/janitor,
 /turf/open/floor/f13)
 "joD" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "jsk" = (
 /obj/structure/table,
 /obj/item/clothing/suit/straight_jacket,
@@ -1495,12 +1434,8 @@
 	},
 /turf/open/floor/plasteel/vault)
 "llE" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/closed/wall/r_wall/rust)
+/turf/closed/wall/r_wall/rust,
+/area/f13/wasteland)
 "lrM" = (
 /obj/machinery/light,
 /turf/open/floor/carpet)
@@ -1523,13 +1458,6 @@
 /turf/open/floor/carpet{
 	icon_state = "carpetnoconnect"
 	})
-"lxD" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating)
 "lzr" = (
 /obj/machinery/telecomms/server/presets/supply,
 /turf/open/floor/f13,
@@ -1835,11 +1763,8 @@
 	dir = 1;
 	pixel_y = 24
 	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/f13/wasteland)
 "npz" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/machinery/light/small,
@@ -1927,13 +1852,6 @@
 "nYW" = (
 /obj/structure/door_assembly,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
-"nZa" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
 "nZq" = (
 /obj/machinery/light{
 	dir = 1
@@ -2017,22 +1935,8 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2";
-	d2 = 2
-	},
-/turf/open/floor/plating)
-"oOv" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_y = 24
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
-	},
-/turf/open/floor/plating)
+/turf/open/floor/plating,
+/area/f13/wasteland)
 "oRo" = (
 /obj/mecha/working/clarke,
 /turf/open/floor/plating{
@@ -2043,21 +1947,10 @@
 /obj/effect/landmark/start/janitor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet)
-"oTE" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating)
 "oXK" = (
 /obj/machinery/door/airlock/maintenance_hatch,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/open/floor/f13)
+/turf/open/floor/f13,
+/area/f13/wasteland)
 "pay" = (
 /obj/structure/closet/crate/radiation,
 /turf/open/floor/f13)
@@ -2262,13 +2155,6 @@
 /turf/open/floor/plasteel/dark)
 "qAe" = (
 /turf/open/floor/plasteel/vault)
-"qDq" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
 "qDD" = (
 /mob/living/simple_animal/hostile/lizard,
 /turf/open/floor/plasteel/dark)
@@ -2463,12 +2349,6 @@
 "rJk" = (
 /obj/structure/closet/jcloset,
 /turf/open/floor/f13)
-"rKR" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-4";
-	d2 = 4
-	},
-/turf/open/floor/plating)
 "rMr" = (
 /obj/structure/closet{
 	icon_closed = "cabinet_closed";
@@ -2679,13 +2559,6 @@
 /turf/open/indestructible/ground/outside/sidewalk)
 "tpu" = (
 /turf/open/floor/plating/wooden)
-"trF" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating)
 "ttd" = (
 /obj/item/trash/sosjerky,
 /turf/open/floor/plasteel/dark{
@@ -2714,17 +2587,6 @@
 	name = "Tunnel Blast Door"
 	},
 /turf/open/floor/plasteel/dark)
-"tGj" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
-	},
-/turf/open/floor/plating,
-/area/f13/wasteland)
 "tGx" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid)
 "tGF" = (
@@ -2935,6 +2797,9 @@
 "vBy" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating/asteroid)
+"vGV" = (
+/turf/open/floor/plating,
+/area/f13/wasteland)
 "vHa" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/mineral/random/low_chance_desert)
@@ -2986,11 +2851,8 @@
 	dir = 1;
 	pixel_y = 24
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2";
-	d2 = 2
-	},
-/turf/open/indestructible/ground/outside/sidewalk)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "wrC" = (
 /turf/open/floor/wood_common)
 "wug" = (
@@ -3146,9 +3008,6 @@
 "xNy" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/vault)
-"xRA" = (
-/turf/open/floor/plating,
-/area/f13/wasteland)
 "xUb" = (
 /obj/machinery/telecomms/bus/preset_four,
 /turf/open/floor/f13,
@@ -18681,10 +18540,10 @@ wTD
 wTD
 wTD
 dCV
-rKR
+vGV
 oOk
-iyx
-tGj
+vGV
+eJM
 dCV
 sWq
 sWq
@@ -18933,7 +18792,7 @@ wTD
 wTD
 wTD
 dCV
-oTE
+vGV
 bAl
 bAl
 eJM
@@ -19892,9 +19751,9 @@ dCV
 eda
 eda
 lbB
-rKR
+vGV
 oOk
-tGj
+eJM
 dCV
 mYd
 iYw
@@ -20144,7 +20003,7 @@ dCV
 bHh
 lbB
 lbB
-oTE
+vGV
 bAl
 eJM
 dCV
@@ -20389,14 +20248,14 @@ tpu
 tpu
 dCV
 hPy
-bwW
-bwW
-bwW
+crQ
+crQ
+crQ
 oXK
-bwW
-bwW
-bwW
-trF
+crQ
+crQ
+crQ
+vGV
 bAl
 bAl
 dCV
@@ -30119,30 +29978,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -30371,30 +30230,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -30623,30 +30482,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -30766,10 +30625,10 @@ lYy
 lYy
 lYy
 hij
-rKR
+vGV
 oOk
-iyx
-tGj
+vGV
+eJM
 hij
 wTD
 wTD
@@ -30875,30 +30734,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -31018,7 +30877,7 @@ lYy
 lYy
 lYy
 hij
-oTE
+vGV
 bAl
 bAl
 eJM
@@ -31127,30 +30986,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -31379,30 +31238,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -31631,30 +31490,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 wTD
@@ -31883,30 +31742,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 wTD
 wTD
@@ -32135,30 +31994,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 wTD
 wTD
 wTD
@@ -32387,30 +32246,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 wTD
 wTD
 wTD
@@ -32639,30 +32498,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 wTD
 wTD
@@ -32891,30 +32750,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 wTD
@@ -33143,30 +33002,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 lUv
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 wTD
@@ -33395,30 +33254,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -33647,30 +33506,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -33899,30 +33758,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -34151,30 +34010,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -34403,30 +34262,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -34655,30 +34514,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -34907,30 +34766,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -35159,30 +35018,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -35411,30 +35270,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -35663,30 +35522,30 @@ qrT
 qrT
 qrT
 qrT
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
-enU
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
+fgo
 qrT
 qrT
 qrT
@@ -44743,9 +44602,9 @@ bAl
 bAl
 bAl
 bAl
-rKR
+vGV
 oOk
-tGj
+eJM
 dCV
 hOg
 hOg
@@ -44995,7 +44854,7 @@ oDz
 bAl
 oDz
 bAl
-oTE
+vGV
 bAl
 eJM
 dCV
@@ -45242,12 +45101,12 @@ wTD
 wTD
 wTD
 dCV
-oOv
-iyx
-iyx
-iyx
-iyx
-trF
+nna
+vGV
+vGV
+vGV
+vGV
+vGV
 oDz
 bAl
 dCV
@@ -54380,13 +54239,13 @@ qDX
 qDX
 dCV
 wqe
-qDq
+joD
 kVd
-nZa
+joD
 llE
 hpQ
 oOk
-lxD
+vGV
 wTD
 wTD
 wTD
@@ -54633,12 +54492,12 @@ qDX
 dCV
 kVd
 joD
-ehz
-fck
+joD
+joD
 llE
 hpQ
 oOk
-gHK
+vGV
 wTD
 wTD
 wTD
@@ -54890,7 +54749,7 @@ joD
 llE
 hpQ
 oOk
-gHK
+vGV
 wTD
 wTD
 wTD
@@ -55142,7 +55001,7 @@ kVd
 kVd
 kVd
 kVd
-xRA
+vGV
 wTD
 wTD
 wTD
@@ -55394,7 +55253,7 @@ kVd
 kVd
 kVd
 kVd
-xRA
+vGV
 wTD
 wTD
 wTD
@@ -55646,7 +55505,7 @@ kVd
 kVd
 kVd
 kVd
-xRA
+vGV
 wTD
 wTD
 wTD
@@ -55893,12 +55752,12 @@ qDX
 dCV
 uvM
 xWS
-xRA
+vGV
 sOO
 kVd
 kVd
 kVd
-xRA
+vGV
 wTD
 wTD
 wTD
@@ -56145,12 +56004,12 @@ qDX
 dCV
 jXj
 xZD
-xRA
+vGV
 kVd
 kVd
 kVd
 kVd
-xRA
+vGV
 wTD
 wTD
 wTD
@@ -56397,12 +56256,12 @@ qDX
 dCV
 jXj
 xZD
-xRA
-xRA
-xRA
-xRA
-xRA
-xRA
+vGV
+vGV
+vGV
+vGV
+vGV
+vGV
 wTD
 wTD
 wTD
@@ -56649,7 +56508,7 @@ qDX
 dCV
 jXj
 xZD
-xRA
+vGV
 kVd
 kVd
 kVd
@@ -56901,7 +56760,7 @@ qDX
 dCV
 jXj
 xZD
-xRA
+vGV
 jvm
 kVd
 kVd
@@ -57153,7 +57012,7 @@ qDX
 dCV
 gwC
 wXf
-xRA
+vGV
 kVd
 kVd
 kVd
