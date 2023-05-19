@@ -1205,6 +1205,22 @@
 	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
+ * Knockoff ALR15
+ * Tacticool, literally just a varmint
+ * .223 / 5.56mm
+ * Scopeable maybe?
+ * Same damage, literally GUN_EXTRA_DAMAGE_0
+ * Homie just wanted a resprite
+ * Unique, doesn't have to be, throw it in the loot pool if you wanna be goofy
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/knockoffalr
+	name = "ALR15"
+	desc = "A 5.56x45mm rifle custom built off of a... plastic- that's not polymer, that's just straight-up plastic. What the fuck?"
+	icon_state = "alr15"
+	item_state = "alr15"
+	
+/* * * * * * * * * * *
  * Bushmaster Arm Gun
  * Light semi-auto rifle... pistol thing
  * .223 / 5.56mm
