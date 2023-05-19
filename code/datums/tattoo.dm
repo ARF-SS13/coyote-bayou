@@ -748,7 +748,7 @@
 	name = "tattoo starter kit"
 	desc = "Everything you need as an aspiring skin artist!"
 
-/obj/item/storage/backpack/debug_tattoo/PopulateContents()
+/obj/item/storage/box/tattoo_kit/PopulateContents()
 	. = ..()
 	new /obj/item/tattoo_gun(src)
 	new /obj/item/tattoo_holder/blank(src)
