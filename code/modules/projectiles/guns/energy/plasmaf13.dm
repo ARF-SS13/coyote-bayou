@@ -177,6 +177,3 @@
 	)
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
-/obj/item/gun/energy/laser/plasma/spear/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)

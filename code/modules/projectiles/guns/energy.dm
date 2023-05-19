@@ -74,10 +74,6 @@
 		START_PROCESSING(SSobj, src)
 	update_icon()
 
-/obj/item/gun/energy/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)
-
 /obj/item/gun/energy/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
