@@ -190,7 +190,7 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/arnold
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 30, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/iron = 10, /datum/reagent/medicine/omnizine = 30)
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "pepperoni" = 2, "9 millimeter bullets" = 2)
-	
+
 
 /obj/item/reagent_containers/food/snacks/proc/try_break_off(mob/living/M, mob/living/user) //maybe i give you a pizza maybe i break off your arm
 	var/obj/item/bodypart/l_arm = user.get_bodypart(BODY_ZONE_L_ARM)
@@ -249,3 +249,24 @@
 	filling_color = "#A52A2A"
 	tastes = list("cardboard" = 1, "tomato" = 1, "cheese" = 1, "pepperoni" = 2)
 	foodtype = GRAIN | VEGETABLES | DAIRY | MEAT
+
+/obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker
+	name = "mothic firecracker pizza"
+	desc = "They're not kidding when they call this a hot pizza pie."
+	icon_state = "firecracker_pizza"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 25,
+		/datum/reagent/consumable/bbqsauce = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+		/datum/reagent/consumable/capsaicin = 10,
+	)
+	tastes = list("crust" = 1, "chili" = 1, "corn" = 1, "cheese" = 1, "bbq sauce" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY
+	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_firecracker
+
+/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_firecracker
+	name = "mothic firecracker slice"
+	desc = "A spicy slice of something quite nice."
+	icon_state = "firecracker_slice"
+	tastes = list("crust" = 1, "chili" = 1, "corn" = 1, "cheese" = 1, "bbq sauce" = 1)
+	foodtype = GRAIN | VEGETABLES | DAIRY

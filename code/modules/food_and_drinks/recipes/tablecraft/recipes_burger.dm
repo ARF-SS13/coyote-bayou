@@ -390,3 +390,14 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/white
 	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mothic_firecracker
+	name = "Fire Cracker Pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 4,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker
+	subcategory = CAT_BURGER
