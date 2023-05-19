@@ -1186,6 +1186,14 @@
 	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
 	new /obj/item/coin/gold/dogecoin(src)
 
+/datum/gear/donator/kits/woundedwafflez
+	name = "Airsoft Kit"
+	path = /obj/item/storage/box/large/custom_kit/woundedwafflez
+	ckeywhitelist = list("Woundedwafflez")
+
+/obj/item/storage/box/large/custom_kit/woundedwafflez/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/varmint/knockoffalr(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/small/empty(src)
 
 // X
 // Y
