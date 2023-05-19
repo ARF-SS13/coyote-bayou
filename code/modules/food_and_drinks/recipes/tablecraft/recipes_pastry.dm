@@ -205,3 +205,26 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_brownie_batter
 	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/peanut_butter_brownie_sheet
+	name = "Peanut Butter Brownie Sheet"
+	reqs = list(
+		/datum/reagent/consumable/flour = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/egg = 2,
+		/datum/reagent/consumable/coco = 5,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/obj/item/reagent_containers/food/condiment/peanut_butter = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/brownie_sheet_peanut
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/crunchy_peanut_butter_tart
+	name = "Crunchy peanut butter tart"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
+		/obj/item/reagent_containers/food/condiment/peanut_butter = 5,
+		/datum/reagent/consumable/cream = 5,
+	)
+	result = /obj/item/reagent_containers/food/snacks/crunchy_peanut_butter_tart
+	category = CAT_PASTRY
