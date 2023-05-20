@@ -111,7 +111,15 @@
 #define STIMULUS_AFFAIR_OWNER "bbstimulus_affair_owner" // an affair where it becomes someone else's owned object
 #define STIMULUS_AFFAIR_LOVE "bbstimulus_affair_love" // an affair where it becomes someone else's loved object
 
+#define STIMULUS_WEARER_CRIT "bbstimulus_wearer_crit"
+#define STIMULUS_WEARER_CRIT_YELL_HELP "bbstimulus_wearer_crit_yell_help"
+#define STIMULUS_WEARER_CRIT_PANIC "bbstimulus_wearer_crit_panic"
+#define STIMULUS_WEARER_CRIT_INJECT "bbstimulus_wearer_crit_inject"
+
+#define STIMULUS_WEARER_DIED "bbstimulus_wearer_died"
+
 #define BB_ADJUST_AMOUR "adjust_amour"
+
 
 /// Blender word-to-stimulus keys
 #define BBKEY_STOP "bbk_stop"
@@ -136,7 +144,8 @@
 #define BBKEY_I "bbk_i"
 #define BBKEY_YOU "bbk_you"
 #define BBKEY_NAME "bbk_name"
-#define BBKEY_HEYLISTEN "bbk_heylisten"
+#define BBKEY_HEY "bbk_hail" 
+#define BBKEY_LISTEN "bbk_heylisten"
 
 
 #define BLENDER_BLENDMODE_GRIND "grinding"
@@ -250,6 +259,13 @@
 	#define IMPULSE_CLARIFY_WHO_HATES_ME "clarify_who_hates_me"
 	#define IMPULSE_CLARIFY_CLEAR "clarify_clear"
 	#define IMPULSE_CLARIFY_NEVERMIND "clarify_nm"
+
+#define IMPULSE_WEARER_CRIT "wearer_crit"
+#define IMPULSE_WEARER_CRIT_YELL_HELP "wearer_crit_yell_help"
+#define IMPULSE_WEARER_CRIT_PANIC "wearer_crit_panic"
+#define IMPULSE_WEARER_CRIT_INJECT "wearer_crit_inject"
+
+#define IMPULSE_WEARER_DIED "wearer_died"
 
 ///IMPULSE FLAGS
 #define IMPULSE_FLAG_NEEDS_HOST (1<<0)
@@ -373,6 +389,13 @@
 #define SPEAK_LINE_CLARIFY_WHO_HATES_ME "bbline_clarify_who_hates_me"
 #define SPEAK_LINE_CLARIFY_CLEAR "bbline_clarify_clear"
 #define SPEAK_LINE_CLARIFY_MISHEARD "bbline_clarify_misheard"
+
+#define SPEAK_LINE_WEARER_CRIT "bbline_wearer_crit"
+#define SPEAK_LINE_WEARER_CRIT_YELL_HELP "bbline_wearer_crit_yell_help"
+#define SPEAK_LINE_WEARER_CRIT_PANIC "bbline_wearer_crit_panic"
+#define SPEAK_LINE_WEARER_CRIT_INJECT "bbline_wearer_crit_inject"
+
+#define SPEAK_LINE_WEARER_DIED "bbline_wearer_died"
 
 #define SPEAK_LINE_STATE_NAME "bbline_state_name"
 #define SPEAK_LINE_GREET_NEW_PERSON "bbline_greet_new_person"
