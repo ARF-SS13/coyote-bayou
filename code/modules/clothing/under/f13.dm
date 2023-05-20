@@ -47,15 +47,6 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
-/obj/item/clothing/under/f13/picnicdress50s
-	name = "50s style dress"
-	desc = "Cheery polkadot casual dress."
-	icon_state = "dresspicnic50s"
-	item_state = "dresspicnic50s"
-	mutantrace_variation = STYLE_DIGITIGRADE
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
-
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "A blue jumpsuit with a yellow vault pattern printed on it."
