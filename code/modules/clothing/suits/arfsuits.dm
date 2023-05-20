@@ -1090,6 +1090,13 @@
 	item_state = "hostrench"
 	body_parts_hidden = ARMS
 
+/obj/item/clothing/suit/armor/light/duster/town/leather
+	name = "leather trenchcoat"
+	desc = "A snazzy black trenchcoat, fit for a dragon."
+	icon_state = "leathercoat"
+	item_state = "hostrench"
+	body_parts_hidden = ARMS
+
 /obj/item/clothing/suit/armor/light/duster/town/mayor
 	name = "mayor trenchcoat"
 	desc = "A symbol of the mayor's authority (or lack thereof)."
