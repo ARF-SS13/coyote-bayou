@@ -370,6 +370,14 @@
 			TOGGLE_VAR(myprefs.allow_death_messages)
 			unsaved_changes = TRUE
 			return TRUE
+		if("toggle_seeing_belly_descs")
+			TOGGLE_VAR(myprefs.allow_seeing_belly_descriptions)
+			unsaved_changes = TRUE
+			return TRUE
+		if("toggle_seeing_people_spit_up_trash")
+			TOGGLE_VAR(myprefs.allow_trash_messages)
+			unsaved_changes = TRUE
+			return TRUE
 		if("toggle_smellable")
 			TOGGLE_VAR(myprefs.allow_being_sniffed)
 			unsaved_changes = TRUE
