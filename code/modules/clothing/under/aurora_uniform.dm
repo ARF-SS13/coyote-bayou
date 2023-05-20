@@ -1,7 +1,7 @@
 //All sprites are credit to Aurora station. In here, for easier orangaization as well as credting.
 
 /obj/item/clothing/under/aurora
-	name "Base"
+	name = "Base"
 	icon = 'icons/obj/clothing/aurora_uniform.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/auroria_uniform.dmi'
 
@@ -17,13 +17,13 @@
 	icon_state = "dominia_longsleeve"
 	item_state = "dominia_longsleeve"
 
-/obj/item/clothing/under/aurora/dominia/consular/shortsleevemale
+/obj/item/clothing/under/aurora/dominia/consular/shortsleevefemale
 	name = "dominian Short Sleeve, female"
 	desc = "The traditional red-black-gold uniform of a member of His Majesty's Diplomatic Service. This one has a skirt!"
 	icon_state = "dominia_shortsleeve_fem"
 	item_state = "dominia_shortsleeve_fem"
 
-/obj/item/clothing/under/aurora/dominia/consular/longsleevemale
+/obj/item/clothing/under/aurora/dominia/consular/longsleevefemale
 	name = "dominian long sleeve, female."
 	desc = "The traditional red-black-gold uniform of a member of His Majesty's Diplomatic Service. This one has a skirt!"
 	icon_state = "dominia_longsleeve_fem"

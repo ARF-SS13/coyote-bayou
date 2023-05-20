@@ -2219,3 +2219,70 @@
 	cost = 1
 	path = /obj/item/clothing/under/dress/coyote/yukataplain/florapurple
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+//From Aurora
+/datum/gear/uniform/dominia/shortsleevemale
+	name = "Dominian Short Sleeve, Male"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/shortsleevemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/longsleevemale
+	name = "Dominian Long Sleeve, Male"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/longsleevemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/shortsleevefemale
+	name = "Dominian Short Sleeve, Female"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/shortsleevefemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/longsleevefemale
+	name = "Dominian long Sleeve, Female"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/longsleevefemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/priest
+	name = "Dominian Priest"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/priest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/imperial
+	name = "Red Royal Dress, with bow"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/imperial
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dominia/streltiz
+	name = "Red Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/strelitz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dominia/volvalaad
+	name = "Blue Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/volvalaad
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dominia/kazhkz
+	name = "Orange Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/kazhkz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dominia/caladius
+	name = "Purple Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/caladius
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dominia/zhao
+	name = "White Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/zhao
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
