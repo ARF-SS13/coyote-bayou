@@ -2,8 +2,8 @@
 
 /obj/item/clothing/under/aurora
 	name "Base"
-	icon = 'icons/obj/clothing/auroria_uniform.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/aurora_uniform.dmi'
+	icon = 'icons/obj/clothing/aurora_uniform.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/auroria_uniform.dmi'
 
 /obj/item/clothing/under/aurora/dominia/consular/shortsleevemale
 	name = "dominian Short Sleeve, male"
