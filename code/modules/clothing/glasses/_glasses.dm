@@ -14,6 +14,7 @@
 	var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
 	var/list/icon/current = list() //the current hud icons
 	var/vision_correction = 0 //does wearing these glasses correct some of our vision defects?
+	var/throw_hit_chance = 35
 
 /obj/item/clothing/glasses/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] is stabbing \the [src] into [user.p_their()] eyes! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -263,14 +264,31 @@
 	desc = "Go beyond impossible and kick reason to the curb!"
 	icon_state = "garb"
 	item_state = "garb"
-	force = 10
-	throwforce = 10
+	force = 23
+	throwforce = 23
 	throw_speed = 4
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
+	throw_hit_chance = 99
+
+/obj/item/clothing/glasses/sunglasses/garb/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
+	if(ishuman(thrower))
+		var/mob/living/carbon/human/H = thrower
+		H.throw_mode_off() //so they can catch it on the return.
+	return ..()
+
+/obj/item/clothing/glasses/sunglasses/garb/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+	if(thrownby && !caught)
+		sleep(1)
+		if(!QDELETED(src))
+			throw_at(thrownby, throw_range+2, throw_speed, null, TRUE)
+	else if(!thrownby)
+		return
+	return ..()
 
 /obj/item/clothing/glasses/sunglasses/garb/supergarb
 	name = "black giga gar glasses"
@@ -296,6 +314,23 @@
 	glass_colour_type = /datum/client_colour/glass_colour/orange
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
+
+/obj/item/clothing/glasses/sunglasses/gar/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
+	if(ishuman(thrower))
+		var/mob/living/carbon/human/H = thrower
+		H.throw_mode_off() //so they can catch it on the return.
+	return ..()
+
+/obj/item/clothing/glasses/sunglasses/gar/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+	if(thrownby && !caught)
+		sleep(1)
+		if(!QDELETED(src))
+			throw_at(thrownby, throw_range+2, throw_speed, null, TRUE)
+	else if(!thrownby)
+		return
+	return ..()
+
 /obj/item/clothing/glasses/sunglasses/gar/supergar
 	name = "giga gar glasses"
 	desc = "We evolve past the person we were a minute before. Little by little we advance with each turn. That's how a drill works!"
