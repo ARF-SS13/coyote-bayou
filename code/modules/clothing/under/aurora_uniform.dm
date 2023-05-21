@@ -70,3 +70,27 @@
 	desc = "A high-quality dress that is black and white with an accent of white. Adjustable."
 	icon_state = "dress_zhao"
 	item_state = "dress_zhao"
+
+/obj/item/clothing/under/aurora/voidsman
+	name = "Voids Man Uniform"
+	desc = "A light grey uniform with black pants. Snazzy."
+	icon_state = "voidsman"
+	item_state = "voidsman"
+
+/obj/item/clothing/under/aurora/officer
+	name = "Officer Uniform"
+	desc = "A white uniform with a fancy collar and black pants."
+	icon_state = "officer"
+	item_state = "officer"
+
+/obj/item/clothing/under/aurora/armsman
+	name = "Arms Man Uniform"
+	desc = "A greynish grey uniform that looks to be a bit padded."
+	icon_state = "armsman"
+	item_state = "armsman"
+
+/obj/item/clothing/under/aurora/initiate
+	name = "White initiate Robe"
+	desc = "A white robe with a red sash among the middle."
+	icon_state = "dominia_initiate"
+	item_state = "dominia_initiate"

@@ -2286,3 +2286,22 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/zhao
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/voidsman
+	name = "Voids Man Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/voidsman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/auroraofficer
+	name = "White collored officer uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/officer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/armsman
+	name = "Arms man Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/armsman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+

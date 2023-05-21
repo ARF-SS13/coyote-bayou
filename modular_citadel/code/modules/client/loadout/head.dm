@@ -951,4 +951,14 @@ datum/gear/head/steelpot_bandolier
 	name = "violet wizard hat"
 	path = /obj/item/clothing/head/wizard/violet
 
+/datum/gear/head/aurora/voidsman
+	name = "Voidsman hat"
+	path = /obj/item/clothing/head/aurora/voidsman
 
+/datum/gear/head/wizard/officercap
+	name = "Grey Officer cap"
+	path = /obj/item/clothing/head/aurora/officercap
+
+/datum/gear/head/aurora/armsmancap
+	name = "armsman cap"
+	path = /obj/item/clothing/head/aurora/armsmancap

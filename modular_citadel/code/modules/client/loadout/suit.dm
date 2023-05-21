@@ -868,6 +868,11 @@
 	path = /obj/item/clothing/suit/coat/coyote/rancher_puffer
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/officercoat
+	name = "black officer coat"
+	path = /obj/item/clothing/suit/aurora/officercoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
