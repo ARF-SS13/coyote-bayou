@@ -813,6 +813,61 @@
 	path = /obj/item/clothing/suit/wizrobe/magusblue
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/costume/dinosaur
+	name = "dinosaur costume"
+	path = /obj/item/clothing/suit/toggle/labcoat/dinosaur
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/coat/shortnursedress
+	name = "Short nurse dress"
+	path = /obj/item/clothing/suit/coat/coyote/short_nurse_dress
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/coat/shortnursecoat
+	name = "Short nurse coat"
+	path = /obj/item/clothing/suit/coat/coyote/nurse_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/coat/sciencepuffer
+	name = "science puffer jacket"
+	path = /obj/item/clothing/suit/coat/coyote/science_puffer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/coat/hiviscoat
+	name = "hi-vis coat"
+	path = /obj/item/clothing/suit/coat/coyote/hi_vis_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/engineeringpuffer
+	name = "Engineering puffer jacket"
+	path = /obj/item/clothing/suit/coat/coyote/engineering_puffer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/securityypuffer
+	name = "Security puffer jacket"
+	path = /obj/item/clothing/suit/coat/coyote/security_puffer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/botanyypuffer
+	name = "Botany puffer jacket"
+	path = /obj/item/clothing/suit/coat/coyote/botany_puffer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/geneticistypuffer
+	name = "geneticist puffer jacket"
+	path = /obj/item/clothing/suit/coat/coyote/geneticist_puffer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/janitorpuffer
+	name = "janitor puffer jacket"
+	path = /obj/item/clothing/suit/coat/coyote/janitor_jacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/rancherpuffer
+	name = "rancher puffer jacket"
+	path = /obj/item/clothing/suit/coat/coyote/rancher_puffer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR

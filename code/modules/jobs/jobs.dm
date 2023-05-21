@@ -166,6 +166,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Texarkana Trade Worker",
 	"Barkeep",
 	"Citizen",
+	"Preacher",
 	"Vertibird Pilot",
 ))
 
@@ -238,7 +239,6 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 //	"Outlaw",
 	"Faithful",
 	"Vigilante",
-	"Preacher",
 	"Far-Lands Tribals",
 	"Wastelander",
 ))
@@ -291,7 +291,9 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 ))
 //bikrs
 GLOBAL_LIST_INIT(biker_positions, list(
+	"Overbiker",
 	"Hells Nomad",
+	"Ashdown Wastelander",
 ))
 //bikrs
 GLOBAL_LIST_INIT(debug_positions, list(

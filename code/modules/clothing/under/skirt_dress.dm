@@ -225,3 +225,458 @@
 	item_state = "rainbow"
 	body_parts_covered = CHEST|GROIN|ARMS
 	poly_colors = list("#8CC6FF", "#808080", "#FF3535")
+
+/obj/item/clothing/under/dress/coyote
+	icon = 'icons/obj/clothing/dress.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/dress.dmi'
+	icon_state = "surgical_scrubs"
+
+//From Goon
+/obj/item/clothing/under/dress/coyote/reddress
+	name = "Red Dress"
+	icon_state = "reddress"
+	item_state = "reddress"
+
+/obj/item/clothing/under/dress/coyote/purple
+	name = "Purple Dress"
+	icon_state = "casdress_black"
+	item_state = "casdress_black"
+
+/obj/item/clothing/under/dress/coyote/blue
+	name = "Blue Dress"
+	icon_state = "casdress_blue"
+	item_state = "casdress_blue"
+
+/obj/item/clothing/under/dress/coyote/green
+	name = "Green Dress"
+	icon_state = "casdress_green"
+	item_state = "casdress_green"
+
+/obj/item/clothing/under/dress/coyote/pink
+	name = "Pink Dress"
+	icon_state = "casdress_pink"
+	item_state = "casdress_pink"
+
+/obj/item/clothing/under/dress/coyote/white
+	name = "White Dress"
+	icon_state = "casdress_white"
+	item_state = "casdress_white"
+
+/obj/item/clothing/under/dress/coyote/boltyellow
+	name = "Yellow Bolt Dress"
+	icon_state = "casdress_bolty"
+	item_state = "casdress_bolty"
+
+/obj/item/clothing/under/dress/coyote/boltpurple
+	name = "Purple Bolt Dress"
+	icon_state = "casdress_boltp"
+	item_state = "casdress_boltp"
+
+/obj/item/clothing/under/dress/coyote/cassleoy
+	name = "yellow flower dress"
+	icon_state = "casdress_leoy"
+	item_state = "casdress_leoy"
+
+/obj/item/clothing/under/dress/coyote/cassleop
+	name = "purple flower dress"
+	icon_state = "casdress_leop"
+	item_state = "casdress_leop"
+
+/obj/item/clothing/under/dress/coyote/sktdress_red
+	name = "red skirt dress"
+	icon_state = "sktdress_red"
+	item_state = "sktdress_red"
+
+/obj/item/clothing/under/dress/coyote/sktdress_purple
+	name = "purple skirt dress"
+	icon_state = "sktdress_purple"
+	item_state = "sktdress_purple"
+
+/obj/item/clothing/under/dress/coyote/sktdress_blue
+	name = "blue skirt dress"
+	icon_state = "sktdress_blue"
+	item_state = "sktdress_blue"
+
+/obj/item/clothing/under/dress/coyote/sktdress_gold
+	name = "gold skirt dress"
+	icon_state = "sktdress_gold"
+	item_state = "sktdress_gold"
+
+/obj/item/clothing/under/dress/coyote/western
+	name = "western dress"
+	icon_state = "westerndress"
+	item_state = "westerndress"
+
+/obj/item/clothing/under/dress/coyote/housewifedress50s
+	name = "50s style dress"
+	desc = "Fancy checkered yellow dress with small shoulder puffs."
+	icon_state = "dress50s"
+	item_state = "dress50s"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/picnicdress50s
+	name = "50s style dress"
+	desc = "Cheery polkadot casual dress."
+	icon_state = "dresspicnic50s"
+	item_state = "dresspicnic50s"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess
+	name = "red robe dress"
+	desc = "A red dress robe"
+	icon_state = "priestess"
+	item_state = "priestess"
+	item_color = "priestess"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_blue
+	name = "blue robe dress"
+	desc = "A blue dress robe"
+	icon_state = "priestess_blue"
+	item_state = "priestess_blue"
+	item_color = "priestess_blue"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_purple
+	name = "purple robe dress"
+	desc = "A purple dress robe"
+	icon_state = "priestess_purple"
+	item_state = "priestess_purple"
+	item_color = "priestess_purple"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_rw
+	name = "red and white robe dress"
+	desc = "A red and whitedress robe"
+	icon_state = "priestess_rw"
+	item_state = "priestess_rw"
+	item_color = "priestess_rw"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_bw
+	name = "blue and white robe dress"
+	desc = "A blue and whitedress robe"
+	icon_state = "priestess_bw"
+	item_state = "priestess_bw"
+	item_color = "priestess_bw"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/priestess_pw
+	name = "purple and white robe dress"
+	desc = "A purple and whitedress robe"
+	icon_state = "priestess_pw"
+	item_state = "priestess_pw"
+	item_color = "priestess_pw"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/princess
+	name = "blue princess"
+	desc = "A blue frilly dress"
+	icon_state = "princess"
+	item_state = "princess"
+	item_color = "princess"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_red
+	name = "Red Hakama"
+	desc = "A red hakama"
+	icon_state = "hakama_1"
+	item_state = "hakama_1"
+	item_color = "hakama_1"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_black
+	name = "Black Hakama"
+	desc = "A red hakama"
+	icon_state = "hakama_2"
+	item_state = "hakama_2"
+	item_color = "hakama_2"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_blue
+	name = "Blue Hakama"
+	desc = "A blue hakama"
+	icon_state = "hakama_3"
+	item_state = "hakama_3"
+	item_color = "hakama_3"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_red_long
+	name = "long red Hakama"
+	desc = "A red hakama with a black top and a long skirt."
+	icon_state = "hakama_4"
+	item_state = "hakama_4"
+	item_color = "hakama_4"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_white_long
+	name = "long white Hakama"
+	desc = "A white hakama with a black top and a long skirt."
+	icon_state = "hakama_5"
+	item_state = "hakama_5"
+	item_color = "hakama_5"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/hakama_blue_long
+	name = "long blue Hakama"
+	desc = "A blue hakama with a black top and a long skirt."
+	icon_state = "hakama_6"
+	item_state = "hakama_6"
+	item_color = "hakama_6"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/sailermoon
+	name = "Red, white and blue dress"
+	desc = "A frilly skirt! Makes you think of sailing on the moon.."
+	icon_state = "sailormoon"
+	item_state = "sailormoon"
+	item_color = "sailormoon"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/dinerdressmint
+	name = "Diner dress, mint"
+	desc = "A cute mint colored dress."
+	icon_state = "dinerdress-mint"
+	item_state = "dinerdress-mint"
+	item_color = "dinerdress-mint"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/dinerdresspink
+	name = "Diner dress, pink"
+	desc = "A cute pink colored dress."
+	icon_state = "dinerdress-pink"
+	item_state = "dinerdress-pink"
+	item_color = "dinerdress-pink"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/mini_black
+	name = "Mini Black Dress"
+	desc = "A small black dress."
+	icon_state = "mini_black"
+	item_state = "mini_black"
+	item_color = "mini_black"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/mini_black_blue
+	name = "Mini Black and Blue Dress"
+	desc = "A small black and blue dress."
+	icon_state = "mini_black_blue"
+	item_state = "mini_black_blue"
+	item_color = "mini_black_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/mini_white
+	name = "Mini White"
+	desc = "A small white dress."
+	icon_state = "mini_white"
+	item_state = "mini_white"
+	item_color = "mini_white"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/pristess
+	name = "pristess dress"
+	desc = "A fancy dress"
+	icon_state = "pristess"
+	item_state = "pristess"
+	item_color = "pristess"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/summer
+	name = "Summer dress"
+	desc = "A pink summer dress"
+	icon_state = "summer"
+	item_state = "summer"
+	item_color = "summer"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/thot
+	name = "Thin white dress"
+	desc = "A thin white and kinda revealing dress."
+	icon_state = "thot"
+	item_state = "thot"
+	item_color = "thot"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/fem_blue
+	name = "female blue outfit"
+	desc = "A blue tunic."
+	icon_state = "fem_blue"
+	item_state = "fem_blue"
+	item_color = "fem_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/fem_rose
+	name = "female rose outfit"
+	desc = "A rose tunic."
+	icon_state = "fem_rose"
+	item_state = "fem_rose"
+	item_color = "fem_rose"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/fem_white
+	name = "female white outfit"
+	desc = "A white tunic."
+	icon_state = "fem_white"
+	item_state = "fem_white"
+	item_color = "fem_white"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_blue
+	name = "Blue Vestido Dress"
+	desc = "A very fancy blue dress"
+	icon_state = "vestido_blue"
+	item_state = "vestido_blue"
+	item_color = "vestido_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_black
+	name = "Black Vestido Dress"
+	desc = "A very fancy black dress"
+	icon_state = "vestido_black"
+	item_state = "vestido_black"
+	item_color = "vestido_black"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_pink
+	name = "Pink Vestido Dress"
+	desc = "A very fancy pink dress"
+	icon_state = "vestido_pink"
+	item_state = "vestido_pink"
+	item_color = "vestido_pink"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_yellow
+	name = "Yellow Vestido Dress"
+	desc = "A very fancy yellow dress"
+	icon_state = "vestido_yellow"
+	item_state = "vestido_yellow"
+	item_color = "vestido_yellow"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_white
+	name = "White Vestido Dress"
+	desc = "A very fancy white dress"
+	icon_state = "vestido_white"
+	item_state = "vestido_white"
+	item_color = "vestido_white"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_purple
+	name = "Purple Vestido Dress"
+	desc = "A very fancy purple dress"
+	icon_state = "vestido_purple"
+	item_state = "vestido_purple"
+	item_color = "vestido_purple"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/vestido_red
+	name = "Red Vestido Dress"
+	desc = "A very fancy red dress"
+	icon_state = "vestido_red"
+	item_state = "vestido_red"
+	item_color = "vestido_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/nursedress
+	name = "blue Nurse Dress"
+	desc = "A cute nurse dress! Shot time."
+	icon_state = "nursedress"
+	item_state = "nursedress"
+	item_color = "nursedress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/nursedressred
+	name = "red Nurse Dress"
+	desc = "A cute nurse dress! Shot time."
+	icon_state = "nursedressred"
+	item_state = "nursedressred"
+	item_color = "nursedressred"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/yukataplain/silver
+	name = "silver yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain1"
+	item_state = "yukata_plain1"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/black
+	name = "black yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain2"
+	item_state = "yukata_plain2"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/white
+	name = "white yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain3"
+	item_state = "yukata_plain3"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/darkblue
+	name = "Dark blue yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain4"
+	item_state = "yukata_plain4"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/lightblue
+	name = "Light blue yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_plain5"
+	item_state = "yukata_plain5"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florablue
+	name = "Blue Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral1"
+	item_state = "yukata_floral1"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/floraorange
+	name = "Orange Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral2"
+	item_state = "yukata_floral2"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florayellow
+	name = "Yellow Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral3"
+	item_state = "yukata_floral3"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florared
+	name = "Red Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral3"
+	item_state = "yukata_floral3"
+
+/obj/item/clothing/under/dress/coyote/yukataplain/florapurple
+	name = "Purple Flora yukata"
+	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
+	icon_state = "yukata_floral4"
+	item_state = "yukata_floral4"

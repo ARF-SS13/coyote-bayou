@@ -19,7 +19,7 @@
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	move_resist = MOVE_FORCE_OVERPOWERING // Can't be pulled
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
-	maxHealth = 100 
+	maxHealth = 100
 	health = 100
 	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
@@ -56,7 +56,7 @@
 		)
 	emote_taunt = list("raises a saw")
 
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/handy/aggro1.ogg',
 		'sound/f13npc/handy/aggro2.ogg'
 		)
@@ -79,12 +79,12 @@
 
 /mob/living/simple_animal/hostile/handy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
-	maxHealth = 300 
+	maxHealth = 300
 	health = 300
 	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = FALSE
@@ -113,7 +113,7 @@
 	icon_dead = "robot_dead"
 	can_ghost_into = FALSE
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
-	maxHealth = 100 
+	maxHealth = 100
 	health = 100
 	melee_damage_lower = 18
 	melee_damage_upper = 64
@@ -141,7 +141,7 @@
 		)
 	emote_taunt = list("raises a flamer")
 
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/gutsy/aggro1.ogg',
 		'sound/f13npc/gutsy/aggro2.ogg',
 		'sound/f13npc/gutsy/aggro3.ogg',
@@ -168,13 +168,13 @@
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
-	maxHealth = 100 
+	maxHealth = 100
 	health = 100
 	speed = 1
 	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	environment_smash = 2 //can break lockers, but not walls
@@ -200,7 +200,7 @@
 	icon_dead = "liberator_d"
 	icon_gib = "liberator_g"
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
-	maxHealth = 50 
+	maxHealth = 50
 	health = 50
 	melee_damage_lower = 5
 	melee_damage_upper = 10
@@ -220,7 +220,7 @@
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
-	aggrosound = list("sound/f13npc/liberator/chineserobotcarinsurance.ogg")
+	emote_taunt_sound = list("sound/f13npc/liberator/chineserobotcarinsurance.ogg")
 	idlesound = null
 	death_sound = null
 	attack_sound = null
@@ -252,7 +252,7 @@
 	icon_living = "robobrain"
 	icon_dead = "robobrain_d"
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
-	maxHealth = 110 
+	maxHealth = 110
 	health = 110
 	can_ghost_into = FALSE
 	melee_damage_lower = 15
@@ -272,7 +272,7 @@
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	death_sound = null
 	attack_sound = null
@@ -308,7 +308,7 @@
 	icon_living = "protectron"
 	icon_dead = "protectron_dead"
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
-	maxHealth = 100 
+	maxHealth = 100
 	health = 100
 	speed = 4
 	can_ghost_into = TRUE
@@ -317,12 +317,12 @@
 	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
 	stat_attack = CONSCIOUS
 	ranged = TRUE
-	move_to_delay = 9 //WAY slower than average, 
+	move_to_delay = 9 //WAY slower than average,
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 0 // Mob doesn't retreat
 	//how far they pull back
-	
+
 	minimum_distance = 1
 	// how close you can get before they try to pull back
 
@@ -331,7 +331,7 @@
 
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
-	
+
 	attack_verb_simple = list(
 		"baps",
 		"bops",
@@ -352,7 +352,7 @@
 		/obj/item/stack/crafting/electronicparts/five
 		)
 	attack_phrase = list(
-		"Howdy pardner!", 
+		"Howdy pardner!",
 		"Shoot out at the O.K. Corral!",
 		"Go back to Oklahoma!",
 		"Please assume the position.",
@@ -374,7 +374,7 @@
 		"takes aim",
 		"holds its ground"
 		)
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/protectron/aggro1.ogg',
 		'sound/f13npc/protectron/aggro2.ogg',
 		'sound/f13npc/protectron/aggro3.ogg',
@@ -409,7 +409,7 @@
 	attack_verb_simple = "clamps"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	environment_smash = 1 //can break lockers, but not walls
@@ -461,7 +461,7 @@
 		"bighorner"
 		)
 	speak = list(
-		"Howdy partner! How about you spend some of them there hard earned caps on some of this fine merchandise.",
+		"Howdy partner! How about you spend some of them there hard earned coins on some of this fine merchandise.",
 		"Welcome back partner! Hoo-wee it's a good day to buy some personal protection!",
 		"Stop, this is a robbery! At these prices you are robbing me.",
 		"What a fine day partner. A fine day indeed.",
@@ -486,7 +486,7 @@
 	gender = FEMALE //Pffffffffffffffffffffff
 	icon_dead = "gib7"
 	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
-	maxHealth = 100 
+	maxHealth = 100
 	health = 100
 	can_ghost_into = FALSE
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
@@ -505,7 +505,7 @@
 	emote_taunt_sound = FALSE
 	emote_taunt = FALSE
 
-	aggrosound = FALSE
+	emote_taunt_sound = FALSE
 	idlesound = FALSE
 	desc_short = "A sexy robot."
 

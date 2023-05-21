@@ -340,19 +340,30 @@
 			return 'sound/voice/moth/mothchitter.ogg'
 
 
-/datum/emote/living/look
-	key = "look"
-	key_third_person = "looks"
-	message = "looks."
-	key_third_person = "seems to be looking around for something."
-	message = "seems to be looking around for something."
-
-
 /datum/emote/living/nod
 	key = "nod"
 	key_third_person = "nods"
 	message = "nods."
 	message_param = "nods at %t."
+
+/datum/emote/living/look
+	key = "look"
+	key_third_person = "looks at something."
+	message = "looks at something."
+	message_param = "looks at %t."
+
+/datum/emote/living/nibl
+	key = "nibl"
+	key_third_person = "nibbles on something."
+	message = "nibbles on something."
+	message_param = "nibbles on %t."
+
+/datum/emote/living/fenfrantic
+	key = "fenfrantic"
+	key_third_person = "geckers frantically!"
+	message = "geckers frantically!"
+	message_param = "geckers frantically at %t"
+	sound = 'sound/f13effects/sunsetsounds/fenfrantic.ogg'
 
 /datum/emote/living/nod/run_emote(mob/user, params)
 	. = ..()
@@ -1052,6 +1063,13 @@
 	key_third_person = "makes a gecko sound!"
 	message = "makes a gecko sound!"
 	sound = 'sound/f13npc/gecko/geckocall2.ogg'
+
+/datum/emote/aie
+	key = "aie"
+	key_third_person = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
+	message = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
+	sound = 'sound/f13effects/sunsetsounds/aie.ogg'
+
 
 /datum/emote/nightstalker
 	key = "nstalker"

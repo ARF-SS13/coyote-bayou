@@ -805,6 +805,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Wastelander"
 	icon_state = "Wastelander"
 
+/obj/effect/landmark/start/f13/wastelander/ashdown
+	name = "Ashdown Wastelander"
+	icon_state = "Wastelander"
+
 /obj/effect/landmark/start/f13/raider
 	name = "Outlaw"
 	icon_state = "Raider"
@@ -952,5 +956,5 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Assistant"
 
 /obj/effect/landmark/start/f13/biker_boss
-	name = "Hells Nomad Boss"
+	name = "Overbiker"
 	icon_state = "Captain"

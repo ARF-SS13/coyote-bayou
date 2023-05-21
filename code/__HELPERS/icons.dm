@@ -1054,7 +1054,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 /proc/get_flat_human_icon(icon_id, datum/job/J, datum/preferences/prefs, dummy_key, showDirs = GLOB.cardinals, outfit_override = null)
 	var/static/list/humanoid_icon_cache = list()
 	if(!icon_id || !humanoid_icon_cache[icon_id])
-		var/mob/living/carbon/human/dummy/body = generate_or_wait_for_human_dummy(dummy_key)
+		var/mob/living/carbon/human/dummy/body = SSdummy.get_a_dummy()
 
 		if(prefs)
 			prefs.copy_to(body,TRUE,FALSE)
@@ -1072,7 +1072,7 @@ GLOBAL_LIST_EMPTY(friendly_animal_types)
 			out_icon.Insert(partial,dir=D)
 
 		humanoid_icon_cache[icon_id] = out_icon
-		dummy_key? unset_busy_human_dummy(dummy_key) : qdel(body)
+		dummy_key? SSdummy.return_dummy(body, dummy_key) : qdel(body)
 		return out_icon
 	else
 		return humanoid_icon_cache[icon_id]

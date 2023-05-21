@@ -319,11 +319,11 @@
 
 /datum/gear/uniform/dress/housewife
 	name = "yellow pre-war dress"
-	path = /obj/item/clothing/under/f13/housewifedress50s
+	path = /obj/item/clothing/under/dress/coyote/housewifedress50s
 
 /datum/gear/uniform/dress/picnic
 	name = "red pre-war dress"
-	path = /obj/item/clothing/under/f13/picnicdress50s
+	path = /obj/item/clothing/under/dress/coyote/picnicdress50s
 
 /datum/gear/uniform/dress/bandage
 	name = "bandage dress"
@@ -1747,97 +1747,97 @@
 /datum/gear/uniform/mini_black
 	name = "mini black dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/mini_black
+	path = /obj/item/clothing/under/dress/coyote/mini_black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/mini_black_blue
 	name = "mini black and blue dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/mini_black_blue
+	path = /obj/item/clothing/under/dress/coyote/mini_black_blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/mini_white
 	name = "mini white dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/mini_white
+	path = /obj/item/clothing/under/dress/coyote/mini_white
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/pristess
 	name = "pristess dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/pristess
+	path = /obj/item/clothing/under/dress/coyote/pristess
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/gob/summer
 	name = "summer dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/summer
+	path = /obj/item/clothing/under/dress/coyote/summer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/thot
 	name = "thin white dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/thot
+	path = /obj/item/clothing/under/dress/coyote/thot
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/fem_blue
 	name = "female blue outfit"
 	cost = 1
-	path = /obj/item/clothing/under/gob/fem_blue
+	path = /obj/item/clothing/under/dress/coyote/fem_blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/fem_rose
 	name = "female rose outfit"
 	cost = 1
-	path = /obj/item/clothing/under/gob/fem_rose
+	path = /obj/item/clothing/under/dress/coyote/fem_rose
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/fem_white
 	name = "female white outfit"
 	cost = 1
-	path = /obj/item/clothing/under/gob/fem_white
+	path = /obj/item/clothing/under/dress/coyote/fem_white
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_blue
 	name = "Blue Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_blue
+	path = /obj/item/clothing/under/dress/coyote/vestido_blue
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_black
 	name = "Black Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_black
+	path = /obj/item/clothing/under/dress/coyote/vestido_black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_pink
 	name = "Pink Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_pink
+	path = /obj/item/clothing/under/dress/coyote/vestido_pink
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_yellow
 	name = "Yellow Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_yellow
+	path = /obj/item/clothing/under/dress/coyote/vestido_yellow
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_white
 	name = "White Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_white
+	path = /obj/item/clothing/under/dress/coyote/vestido_white
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_red
 	name = "red Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_red
+	path = /obj/item/clothing/under/dress/coyote/vestido_red
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/vestido_purple
 	name = "Purple Vestido Dress"
 	cost = 1
-	path = /obj/item/clothing/under/gob/vestido_purple
+	path = /obj/item/clothing/under/dress/coyote/vestido_purple
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/gorka_alt
@@ -1947,3 +1947,275 @@
 	cost = 1
 	path = /obj/item/clothing/under/engineer_alt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/coy/reddress
+	name = "red dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/reddress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/purpledress
+	name = "purple dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bluedress
+	name = "blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/greendress
+	name = "green dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/pinkdress
+	name = "pink dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/whitedress
+	name = "white dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/boltdressy
+	name = "yellow bolt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/boltyellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/boltdressp
+	name = "purple bolt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/boltpurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/cassleoy
+	name = "yellow flower dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/cassleoy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/cassleop
+	name = "purple flower dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/cassleop
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_red
+	name = "red skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_purple
+	name = "purple skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_blue
+	name = "blue skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_gold
+	name = "gold skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_gold
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/westerndress
+	name = "western dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/western
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/redpristess
+	name = "red robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bluepristess
+	name = "blue robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/purplepristess
+	name = "purple robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/rwpristess
+	name = "red and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_rw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bwpristess
+	name = "blue and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_bw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/pwpristess
+	name = "purple and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_pw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/princess
+	name = "blue princess dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/princess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_red
+	name = "red hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_black
+	name = "black hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_blue
+	name = "blue hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_red_long
+	name = "red long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_red_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_white_long
+	name = "white long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_white_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_blue_long
+	name = "blue long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_blue_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sailermoon
+	name = "Red, white and blue skirt."
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sailermoon
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/dinerdressmint
+	name = "diner dress mint"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/dinerdressmint
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/dinerdresspink
+	name = "diner dress pink"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/dinerdresspink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/witchfinder
+	name = "witch finder"
+	cost = 1
+	path = /obj/item/clothing/under/witchfinder
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/jester_muli
+	name = "jester, dark multi"
+	cost = 1
+	path = /obj/item/clothing/under/jester_muli
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/oldnursedress
+	name = "Blue Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/oldnursedressred
+	name = "Red Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedressred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+//Yukata
+
+/datum/gear/uniform/yukataplain/silver
+	name = "Sliver Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/silver
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/black
+	name = "Black Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/white
+	name = "White Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/darkblue
+	name = "Dark Blue Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/darkblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/lightblue
+	name = "Light Blue Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/lightblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florablue
+	name = "Blue Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florablue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/floraorange
+	name = "Orange Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/floraorange
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florayellow
+	name = "Yellow Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florayellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florared
+	name = "Red Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florared
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florapurple
+	name = "Purple Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florapurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

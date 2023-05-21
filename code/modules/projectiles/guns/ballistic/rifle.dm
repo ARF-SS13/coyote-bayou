@@ -294,6 +294,7 @@
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
 	desc = "A sturdy hunting rifle, chambered in .30-06 Springfield."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
@@ -309,6 +310,7 @@
 	scope_y_offset = 12
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	reskinnable_component = /datum/component/reskinnable/hunting_rifle
 
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -356,7 +358,7 @@
 /obj/item/gun/ballistic/rifle/hunting/remington
 	name = "Remington 700"
 	desc = "This bolt action rifle was popular among hunters, police, and the military before the War."
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -475,6 +477,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/enfield
 
 /obj/item/gun/ballistic/rifle/enfield/attackby(obj/item/A, mob/user, params)
 	..()
@@ -513,7 +516,7 @@
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Gras"
 	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
@@ -537,6 +540,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/gras
 
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle

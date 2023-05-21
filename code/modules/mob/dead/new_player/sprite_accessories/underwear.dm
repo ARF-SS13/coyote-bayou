@@ -99,7 +99,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
-/*
+
 /datum/sprite_accessory/underwear/bottom/female_beekini
 	name = "Panties - Bee-kini"
 	icon_state = "panties_bee-kini"
@@ -109,14 +109,14 @@
 	name = "Panties - Commie"
 	icon_state = "panties_commie"
 	gender = FEMALE
-*/
+
 
 /datum/sprite_accessory/underwear/bottom/fishnet_lower
 	name = "Panties - Fishnet"
 	icon_state = "fishnet_lower"
 	gender = FEMALE
 
-/*
+
 /datum/sprite_accessory/underwear/bottom/female_usastripe
 	name = "Panties - Freedom"
 	icon_state = "panties_assblastusa"
@@ -132,7 +132,7 @@
 	icon_state = "panties_neko"
 	has_color = TRUE
 	gender = FEMALE
-*/
+
 
 /datum/sprite_accessory/underwear/bottom/panties_slim
 	name = "Panties - Slim"
@@ -158,7 +158,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
-/*
+
 /datum/sprite_accessory/underwear/bottom/panties_uk
 	name = "Panties - UK"
 	icon_state = "panties_uk"
@@ -181,7 +181,7 @@
 	icon_state = "swimming_red"
 	gender = FEMALE
 	covers_chest = TRUE
-*/
+
 
 /datum/sprite_accessory/underwear/bottom/thong
 	name = "Thong"
@@ -194,3 +194,31 @@
 	icon_state = "thong_babydoll"
 	has_color = TRUE
 	gender = FEMALE
+
+/datum/sprite_accessory/underwear/bottom/bowpanties
+	name = "Bow Panties"
+	icon_state = "bowpanties"
+	has_color = TRUE
+	gender = FEMALE
+
+
+/datum/sprite_accessory/underwear/bottom/bowpantiesslim
+	name = "Bow Panties - Slim"
+	icon_state = "bowpanties_slim"
+	has_color = TRUE
+	gender = FEMALE
+
+
+/datum/sprite_accessory/underwear/bottom/bowthong
+	name = "Bow Thong"
+	icon_state = "bowthong"
+	has_color = TRUE
+	gender = FEMALE
+
+/datum/sprite_accessory/underwear/bottom/bowthongbabydoll
+	name = "Bow Thong - Babydoll"
+	icon_state = "bowthong_babydoll"
+	has_color = TRUE
+	gender = FEMALE
+
+

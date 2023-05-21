@@ -303,6 +303,15 @@
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 	new /obj/item/lighter/bullet(src)
 
+/datum/gear/donator/kits/caseapollo58143_4
+	name = "Smogsuit Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_4
+	ckeywhitelist = list("caseapollo58143")	
+	
+/obj/item/storage/box/large/custom_kit/caseapollo58143_4/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog(src)
+	new /obj/item/clothing/suit/armor/light/kit/dustersmog(src)
+
 /datum/gear/donator/kits/cavusogluzevk
 	name = "Raider Kit"
 	path = /obj/item/storage/box/large/custom_kit/cavusogluzevk
@@ -341,6 +350,7 @@
 	new /obj/item/ammo_box/c45/rubber(src)
 	new /obj/item/storage/belt/legholster(src)
 	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
+	new /obj/item/clothing/suit/armor/light/duster/town/leather(src)
 
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
@@ -1177,8 +1187,36 @@
 	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
 	new /obj/item/coin/gold/dogecoin(src)
 
+/datum/gear/donator/kits/woundedwafflez
+	name = "Airsoft Kit"
+	path = /obj/item/storage/box/large/custom_kit/woundedwafflez
+	ckeywhitelist = list("Woundedwafflez")
+
+/obj/item/storage/box/large/custom_kit/woundedwafflez/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/varmint/knockoffalr(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/small/empty(src)
 
 // X
+
+/datum/gear/donator/kits/xxpawnstarrxx
+	name = "Botanical Bounty Box"
+	path = /obj/item/storage/box/large/custom_kit/blindboyo
+	ckeywhitelist = list("xxpawnstarrxx")
+	
+/obj/item/storage/box/large/custom_kit/blindboyo/PopulateContents()
+    new /obj/item/circuitboard/machine/biogenerator(src)
+    new /obj/item/circuitboard/machine/plantgenes(src)
+    new /obj/item/circuitboard/machine/seed_extractor(src)
+    new /obj/item/plant_analyzer(src)
+    new /obj/item/cultivator(src)
+    new /obj/item/shovel/spade(src)
+    new /obj/item/storage/bag/plants(src)
+    new /obj/item/queen_bee(src)
+    new /obj/item/seeds/bee_balm(src)
+    new /obj/item/seeds/pumpkin(src)
+    new /obj/item/seeds/garlic(src)
+    new /obj/item/seeds/onion(src)
+
 // Y
 
 /datum/gear/donator/kits/yawet
@@ -1228,8 +1266,8 @@
 	ckeywhitelist = list("saltspider")
 
 /obj/item/storage/box/large/custom_kit/saltspider/PopulateContents()
-	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider
-	new /obj/item/melee/onehanded/club/fryingpan/saltspider
+	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider(src)
+	new /obj/item/melee/onehanded/club/fryingpan/saltspider(src)
 
 /datum/gear/donator/kits/kelprunner
 	name = "Kelptastic Kit"

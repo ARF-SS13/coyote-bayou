@@ -119,6 +119,14 @@
 	possible_transfer_amounts = list(10,25,50,100,150)
 	volume = 150
 
+/obj/item/reagent_containers/glass/bucket/wateringcan
+	name = "Watering Can"
+	desc = "It's a watering can, made of plastic."
+	icon_state = "watering_can"
+	item_flags = NO_MAT_REDEMPTION
+	possible_transfer_amounts = list(10,25,50,100,150, 200, 250,300)
+	volume = 300
+
 ///////////
 // SPADE //
 /////////// - slower shovel, but can remove plants without removing the soil too
@@ -168,7 +176,7 @@
 // RAKE
 // ------
 
-/obj/item/cultivator/rake 
+/obj/item/cultivator/rake
 	name = "rake"
 	icon_state = "rake"
 	item_state = "rake"

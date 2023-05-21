@@ -357,14 +357,15 @@
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/handle_enter, AM)
 
-/obj/machinery/shower/proc/wash_obj(obj/O)
-	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
-	. = O.clean_blood()
-	O.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
-	if(isitem(O))
-		var/obj/item/I = O
-		I.acid_level = 0
-		I.extinguish()
+/proc/wash_obj(obj/O)
+	if(isobj(O))
+		SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+		O.clean_blood()
+		O.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+		if(isitem(O))
+			var/obj/item/I = O
+			I.acid_level = 0
+			I.extinguish()
 
 /obj/machinery/shower/proc/wash_turf()
 	if(isturf(loc))
@@ -376,17 +377,17 @@
 			if(is_cleanable(E))
 				qdel(E)
 
-/obj/machinery/shower/proc/wash_mob(mob/living/L)
+///Washes a mob as if it were under a shower or rain. Shower object is optional
+proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
+	if(!isliving(L))
+		return FALSE
 	SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 	L.wash_cream()
-	L.ExtinguishMob()
-	L.adjust_fire_stacks(-20) //Douse ourselves with water to avoid fire more easily
 	L.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
-	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "shower", /datum/mood_event/nice_shower)
 	if(iscarbon(L))
 		var/mob/living/carbon/M = L
 		. = TRUE
-		check_heat(M)
+		S?.check_heat(M)
 		for(var/obj/item/I in M.held_items)
 			wash_obj(I)
 		if(M.back)
@@ -449,6 +450,13 @@
 	else
 		L.clean_blood()
 		SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+	
+
+/obj/machinery/shower/proc/wash_mob(mob/living/L)
+	give_mob_washies(L)
+	L.ExtinguishMob()
+	L.adjust_fire_stacks(-20) //Douse ourselves with water to avoid fire more easily
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "shower", /datum/mood_event/nice_shower)
 
 /obj/machinery/shower/proc/contamination_cleanse(atom/movable/thing)
 	var/datum/component/radioactive/healthy_green_glow = thing.GetComponent(/datum/component/radioactive)

@@ -104,6 +104,18 @@
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
 
+/obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog
+	name = "winterized riot helmet"
+	icon_state = "modified_usmc_riot_smog"
+	item_state = "modified_usmc_riot_smog"
+	desc = "This helmet was originally intended to be a riot helmet meant for cold climates, now it's a part of a generational heirloom, the once functional night vision has been shot out in one eye, rendering it totally useless, a bullet casing hangs from the now useless radio, tuned in to a dead frequency. an old Alaskan flag is emblazoned on the side."
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	flash_protect = 1
+
 /obj/item/clothing/head/helmet/f13/combat/swat
 	name = "SWAT combat helmet"
 	desc = "A prewar combat helmet issued to S.W.A.T. personnel."

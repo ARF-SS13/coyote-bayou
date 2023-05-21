@@ -14,6 +14,11 @@
 	path = /obj/item/card/id/denid
 	cost = 0
 
+/datum/gear/backpack/tattoo_kit
+	name = "Tattoo kit"
+	path = /obj/item/storage/box/tattoo_kit
+	cost = 0
+
 /datum/gear/backpack/necklace //this is here because loadout doesn't support proper accessories
 	name = "Renameable Necklace"
 	path = /obj/item/clothing/accessory/necklace

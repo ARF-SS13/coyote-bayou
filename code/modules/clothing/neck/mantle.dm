@@ -331,3 +331,21 @@
 	desc = "A dark black and grey cloak."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "zuliecloak"
+
+/obj/item/clothing/neck/tie/vampire
+	name = "Vampire Cloak"
+	desc = "A dark black cloak."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "vampcape"
+
+/obj/item/clothing/neck/tie/witchcapep
+	name = "purple witch cape"
+	desc = "A purple cape."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "witchcape_purple"
+
+/obj/item/clothing/neck/tie/witchcapem
+	name = "mint witch cape"
+	desc = "A mint cape."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "witchcape_mint"

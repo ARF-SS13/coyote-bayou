@@ -13,10 +13,8 @@
 	force_wielded = 35
 	throwforce = 7
 	w_class = WEIGHT_CLASS_SMALL
-	unique_reskin = list("Brass" = "crowbar_clock",
-					"Bronze" = "crowbar_brass",
-					"Large" = "crowbar_large"
-					)
+	reskinnable_component = /datum/component/reskinnable/crowbar
+
 	custom_materials = list(/datum/material/iron=450)
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
@@ -43,6 +41,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "crowbar_clock"
 	toolspeed = 0.5
+	reskinnable_component = null
 
 /obj/item/crowbar/abductor
 	name = "ultracite crowbar"
@@ -51,6 +50,7 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"
 	toolspeed = 0.1
+	reskinnable_component = null
 
 /obj/item/crowbar/cyborg
 	name = "hydraulic crowbar"
@@ -60,6 +60,7 @@
 	usesound = 'sound/items/jaws_pry.ogg'
 	force = 10
 	toolspeed = 0.5
+	reskinnable_component = null
 
 /obj/item/crowbar/power
 	name = "jaws of life"
@@ -69,6 +70,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25)
+	reskinnable_component = null
 
 	usesound = 'sound/items/jaws_pry.ogg'
 	force = 15
@@ -94,6 +96,7 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"
 	toolspeed = 0.2
+	reskinnable_component = null
 
 //DR2 TOOLS
 
@@ -102,12 +105,14 @@
 	desc = "A flattened piece of rusted pipe, barely enough to squeeze under most things, but helps get a firm grip."
 	icon_state = "crudebar"
 	toolspeed = 6
+	reskinnable_component = null
 
 /obj/item/crowbar/basic
 	name = "basic crowbar"
 	desc = "A flattened and reinforced piece of rebar, bent a to a firm point and pretty flat."
 	icon_state = "basicbar"
 	toolspeed = 2
+	reskinnable_component = null
 
 /obj/item/crowbar/hightech
 	name = "advanced prying device"
@@ -116,3 +121,4 @@
 	item_state = "crowbaradvance"
 	usesound = 'sound/items/jaws_pry.ogg'
 	toolspeed = 0.1
+	reskinnable_component = null

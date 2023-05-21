@@ -3,7 +3,6 @@
 	desc = "base type of bow used to define features for multiple-loading bows"
 	icon_state = "bow"
 	item_state = "bow"
-	icon_prefix = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
@@ -189,7 +188,6 @@
 	desc = "A lightweight bow, rather lacking in firepower"
 	icon_state = "bow"
 	item_state = "bow"
-	icon_prefix = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
 	init_firemodes = list(
@@ -204,7 +202,6 @@
 	desc = "A light bow designed for ease of draw."
 	icon_state = "tribalbow"
 	item_state = "bow"
-	icon_prefix = "bow"
 	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
@@ -217,7 +214,6 @@
 	desc = "A compact crossbow, with decent firepower."
 	icon_state = "xbow"
 	item_state = "xbow"
-	icon_prefix = "xbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
@@ -233,7 +229,6 @@
 	desc = "A finely crafted bow with an excellent draw."
 	icon_state = "tribalbow"
 	item_state = "bow"
-	icon_prefix = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
@@ -246,7 +241,6 @@
 	desc = "A tall, elegant bow, with a good balance of firepower and draw speed."
 	icon_state = "ashenbow"
 	item_state = "bow"
-	icon_prefix = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
 	init_firemodes = list(
@@ -259,7 +253,6 @@
 	desc = "A large crossbow with a heavy draw, for maximum killing power."
 	icon_state = "crossbow"
 	item_state = "crossbow"
-	icon_prefix = "crossbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 //60 damage, brush gun power level
@@ -275,7 +268,6 @@
 	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide."
 	icon_state = "pipebow"
 	item_state = "bow"
-	icon_prefix = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	init_firemodes = list(
@@ -289,7 +281,6 @@
 	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
 	icon_state = "goldbow"
 	item_state = "goldbow"
-	icon_prefix = "goldbow"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -303,7 +294,6 @@
 	desc = "A somewhat primitive projectile weapon. Has a spring-loaded magazine, but still requires drawing back before firing. Fires arrows slightly faster than regular bows, improving damage"
 	icon_state = "xbow"
 	item_state = "xbow"
-	icon_prefix = "xbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	zoom_factor = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/xbow
@@ -316,7 +306,6 @@
 	desc = "A simple wooden bow with small pieces of turquiose, cheaply made and small enough to fit most bags, better then nothing I guess."
 	icon_state = "tribalbow"
 	item_state = "tribalbow"
-	icon_prefix = "tribalbow"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 
@@ -327,7 +316,6 @@
 	desc = "A bone bow, made of pieces of sinew and deathclaw skin for extra structure, it is a fierce weapon that all expert hunters and bowmen carry, allowing for ease of firing many arrows."
 	icon_state = "ashenbow"
 	item_state = "ashenbow"
-	icon_prefix = "ashenbow"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/claw
 	fire_delay = 2
@@ -338,7 +326,6 @@
 	name = "sturdy bow"
 	desc = "A firm sturdy wooden bow with leather handles and sinew wrapping, for extra stopping power in the shot speed of the arrows."
 	icon_state = "bow"
-	icon_prefix = "bow"
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/sturdy
 	extra_speed = 300
@@ -349,7 +336,6 @@
 	desc = "A firm sturdy silver bow created by the earth, its durability and rather strong material allow it to be an excellent option for those looking for the ability to fire more arrows than normally."
 	icon_state = "pipebow"
 	item_state = "pipebow"
-	icon_prefix = "pipebow"
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/silver
 	fire_delay = 1.5
@@ -360,7 +346,6 @@
 	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
 	icon_state = "goldbow"
 	item_state = "goldbow"
-	icon_prefix = "goldbow"
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/gold
 	fire_delay = 1.5
@@ -371,7 +356,6 @@
 	name = "crossbow"
 	desc = "A crossbow."
 	icon_state = "crossbow"
-	icon_prefix = "crossbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/cross

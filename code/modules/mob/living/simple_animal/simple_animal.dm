@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/speed = 1
 
 	var/idlesound = null //What to play when idling, if anything.
-	var/aggrosound = null
+	//var/aggrosound = null
 	/// set to a value between -100 and 100 to change the mob's pitch. Set to 0 for default pitch
 	var/sound_pitch = 0
 	/// How much will the pitch vary? first is how much lower it can go, second is how high it can go. from -100 to 100. please make the first number smaller than the second

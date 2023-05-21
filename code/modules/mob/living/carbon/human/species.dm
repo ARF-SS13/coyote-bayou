@@ -8,7 +8,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/limbs_id		//this is used if you want to use a different species limb sprites. Mainly used for angels as they look like humans.
 	var/name	// this is the fluff name. these will be left generic (such as 'Lizardperson' for the lizard race) so servers can change them to whatever
 	var/default_color = "#FFFFFF"	// if alien colors are disabled, this is the color that will be used by that race
-
 	var/sexes = 1 // whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
 	var/has_field_of_vision = TRUE
 

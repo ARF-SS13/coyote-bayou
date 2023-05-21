@@ -1330,3 +1330,86 @@
 	icon_state = "hoodie_yellowtrim"
 	item_state = "hoodie_yellowtrim"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/dinosaur
+	name = "Dinosaur costume"
+	desc = "Life...life finds a way."
+	icon_state = "dinosaur"
+	item_state = "dinosaur"
+	flags_inv = HIDESHOES|HIDEJUMPSUIT | HIDEEARS | HIDEHAIR
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+
+/obj/item/clothing/suit/coat/coyote
+	icon = 'icons/obj/clothing/coats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/coats.dmi'
+	icon_state = "surgical_scrubs"
+
+/obj/item/clothing/suit/coat/coyote/short_nurse_dress
+	name = "short nurse dress"
+	desc = "A short, easy to move in nurse dress. Give it a twirl!"
+	icon_state = "short-nurse-dress"
+	item_state = "short-nurse-dress"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/nurse_coat
+	name = "nurse coat"
+	desc = "A pristine medical coat, the inside is very soft to the touch."
+	icon_state = "nurse-coat"
+	item_state = "nurse-coat"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/science_puffer
+	name = "science puffer"
+	desc = "A big comfy puffer jacket, perfect for the lab!"
+	icon_state = "science-puffer"
+	item_state = "science-puffer"
+	body_parts_covered = CHEST|ARMS
+
+
+/obj/item/clothing/suit/coat/coyote/hi_vis_coat
+	name = "hi-vis coat"
+	desc = "A coat that makes you even more visible!"
+	icon_state = "hi-vis-coat"
+	item_state = "hi-vis-coat"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/engineering_puffer
+	name = "engineering puffer"
+	desc = "A big comfy puffer jacket, perfect for the engine!"
+	icon_state = "engineering-puffer"
+	item_state = "engineering-puffer"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/security_puffer
+	name = "security puffer"
+	desc = "A big comfy puffer jacket, perfect for catching criminals!"
+	icon_state = "sec-puffer"
+	item_state = "sec-puffer"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/botany_puffer
+	name = "botanist puffer"
+	desc = "A big comfy puffer jacket, perfect for gardening!"
+	icon_state = "botanist-puffer"
+	item_state = "botanist-puffer"
+
+/obj/item/clothing/suit/coat/coyote/geneticist_puffer
+	name = "geneticist puffer"
+	desc = "A big comfy puffer jacket, perfect for defying nature!"
+	icon_state = "geneticist-puffer"
+	item_state = "geneticist-puffer"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/janitor_jacket
+	name = "janitorial jacket"
+	desc = "Sturdy and easy to wash, inevitably going to be splashed with blood."
+	icon_state = "janitor-jacket"
+	item_state = "janitor-jacket"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/rancher_puffer
+	name = "rancher puffer"
+	desc = "A big comfy puffer jacket, perfect for chicken care!"
+	icon_state = "rancher-puffer"
+	item_state = "rancher-puffer"
+	body_parts_covered = CHEST|ARMS

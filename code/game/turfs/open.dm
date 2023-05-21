@@ -52,7 +52,7 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	tiled_dirt = TRUE
+	tiled_dirt = FALSE
 
 /turf/open/indestructible/Melt()
 	to_be_destroyed = FALSE

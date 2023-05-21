@@ -24,8 +24,8 @@
 	var/strikes = 3
 	/// What clarification are we seeking from them?
 	var/clarify = FALSE
-	/// Are we listening to them?
-	var/listening = FALSE
+	/// How closely are we attention_span to them?
+	var/attention_span = 0 // usually goes to 2, decrements by 1 when just said hi to, then to 0 if no command is given
 	/// Batched amour changes
 	var/amour_batch = 0
 	/// The owner of this memory
@@ -110,16 +110,20 @@
 		ENABLE_BITFIELD(relation_flags, BB_MF_WAS_OWNER)
 	return TRUE
 
-/datum/blenderbrain_memory/proc/is_listening()
-	return listening
+/datum/blenderbrain_memory/proc/is_paying_attention()
+	return attention_span
 
-/datum/blenderbrain_memory/proc/set_listening()
-	listening = TRUE
-	return listening
+/datum/blenderbrain_memory/proc/decrease_attention()
+	DECREMENTBY(attention_span, 1, 0)
+	return attention_span
 
-/datum/blenderbrain_memory/proc/set_not_listening()
-	listening = FALSE
-	return listening
+/datum/blenderbrain_memory/proc/set_paying_attention()
+	attention_span = 2
+	return attention_span
+
+/datum/blenderbrain_memory/proc/unset_paying_attention()
+	attention_span = FALSE
+	return attention_span
 
 /datum/blenderbrain_memory/proc/forgive()
 	if(strikes > 0)

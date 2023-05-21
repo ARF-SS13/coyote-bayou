@@ -14,8 +14,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_prefix = "shotgunpump"
-	icon_state = "shotgun"
+	icon_state = "pump"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -119,7 +118,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "caravan"
 	item_state = "shotgundouble"
-	icon_prefix = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/caravan
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -166,7 +164,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
-	icon_prefix = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -250,7 +247,6 @@
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	item_state = "shotgunpump"
-	icon_prefix = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -282,7 +278,6 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
-	icon_prefix = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -325,7 +320,11 @@
 	update_icon()
 
 /obj/item/gun/ballistic/shotgun/police/update_icon_state()
-	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
+	var/datum/reskin/myskin = get_current_skin()
+	if(myskin)
+		icon_state = "[myskin?.icon_state][stock ? "" : "fold"]"
+	else
+		icon_state = "shotgunpolice[stock ? "" : "fold"]"
 
 /* * * * * * * * * * *
  * Trench shotgun
@@ -422,7 +421,6 @@
 	desc = "A speedy pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -451,7 +449,6 @@
 	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "lashotgunstocked"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -476,7 +473,6 @@
 	desc = "A speedy lever action shotgun with a sunrise painted on the furnishings, morbid in context of it's purpose."
 	icon_state = "latribal"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY

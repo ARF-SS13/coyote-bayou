@@ -103,7 +103,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -225,7 +225,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -387,7 +387,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -437,7 +437,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -507,7 +507,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -535,7 +535,7 @@
 	speed = 0
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -659,7 +659,7 @@
 	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -716,7 +716,7 @@
 
 	emote_taunt_sound = list('sound/f13npc/nightstalker/taunt1.ogg', 'sound/f13npc/nightstalker/taunt2.ogg')
 	emote_taunt = list("growls", "snarls")
-	aggrosound = list('sound/f13npc/nightstalker/aggro1.ogg', 'sound/f13npc/nightstalker/aggro2.ogg', 'sound/f13npc/nightstalker/aggro3.ogg')
+	emote_taunt_sound = list('sound/f13npc/nightstalker/aggro1.ogg', 'sound/f13npc/nightstalker/aggro2.ogg', 'sound/f13npc/nightstalker/aggro3.ogg')
 	idlesound = list('sound/f13npc/nightstalker/idle1.ogg')
 	death_sound = 'sound/f13npc/nightstalker/death.ogg'
 	attack_sound = 'sound/f13npc/nightstalker/attack1.ogg'
@@ -729,7 +729,7 @@
 	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -812,7 +812,7 @@
 
 	emote_taunt_sound = list('sound/f13npc/molerat/taunt.ogg')
 	emote_taunt = list("hisses")
-	aggrosound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
+	emote_taunt_sound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
 	idlesound = list('sound/f13npc/molerat/idle.ogg')
 	death_sound = 'sound/f13npc/molerat/death.ogg'
 	waddle_amount = 3
@@ -881,7 +881,7 @@
 
 	emote_taunt_sound = list('sound/effects/bubbles.ogg')
 	emote_taunt = list("blorgles")
-	aggrosound = list('sound/misc/splort.ogg')
+	emote_taunt_sound = list('sound/misc/splort.ogg')
 	idlesound = list('sound/vore/prey/squish_01.ogg') //God forgive me for what I must do. Its just a perfect sound. ~TK
 	death_sound = 'sound/misc/crack.ogg'
 	waddle_amount = 4
@@ -966,7 +966,7 @@
 		'sound/creatures/terrorbird/hoot3.ogg',
 		'sound/creatures/terrorbird/hoot4.ogg',
 		)
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/creatures/terrorbird/growl1.ogg',
 		'sound/creatures/terrorbird/growl2.ogg',
 		'sound/creatures/terrorbird/growl3.ogg',
