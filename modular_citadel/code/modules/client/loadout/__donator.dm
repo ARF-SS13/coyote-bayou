@@ -577,6 +577,39 @@
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/radio(src)
 
+/datum/gear/donator/kits/jaggachi
+	name = "Scug Industries Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/smg10mm/worn(src)
+
+/datum/gear/donator/kits/jaggachi_2
+	name = "NCR Service Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_2
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/m1carbine/compact(src)
+
+/datum/gear/donator/kits/jaggachi_3
+	name = "Hunting Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_3
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_3/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/automatic/combat/auto5(src)
+
+/datum/gear/donator/kits/jaggachi_4
+	name = "Gunslinging Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_4
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_4/PopulateContents()
+	new /obj/item/storage/box/gun/revolver/revolver44(src)
+	new /obj/item/storage/box/gun/revolver/revolver44(src)
+	
 // K
 
 
