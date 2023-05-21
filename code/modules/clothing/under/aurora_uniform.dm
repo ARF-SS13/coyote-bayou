@@ -522,3 +522,10 @@
 	icon_state = "konyang_dress_traditional_national_vest"
 	item_state = "konyang_dress_traditional_national_vest"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyang_dress
+	name = "White Konyang Dress"
+	desc = "A traditional Konyang dress in white."
+	icon_state = "konyang_dress"
+	item_state = "konyang_dress"
+	can_adjust = FALSE

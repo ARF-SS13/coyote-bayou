@@ -2694,3 +2694,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/konyangdresstraditional/vest
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang_dress
+	name = "White Konyang Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
