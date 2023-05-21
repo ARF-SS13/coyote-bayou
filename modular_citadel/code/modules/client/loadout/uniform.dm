@@ -2382,3 +2382,129 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/initiate_black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/suit_imperial
+	name = "Royal suit, red"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_imperial
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_imperial_black
+	name = "Royal suit, black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_imperial_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_volvalaad
+	name = "Fancy suit, blue"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_volvalaad
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_kazhkz
+	name = "Fancy suit, yellow"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_kazhkz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_caladius
+	name = "Fancy suit, purple"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_caladius
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_zhao
+	name = "Fancy suit, white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_zhao
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/dom_sweater
+	name = "Brown Sweater"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dom_sweater
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem
+	name = "Female dark blue skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem_1
+	name = "Purple skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem_1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem_2
+	name = "Blue skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem_2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem_3
+	name = "Yellow skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem_3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc
+	name = "Male dark blue skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc_1
+	name = "Red skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc_1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc_2
+	name = "Pink skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc_2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc_3
+	name = "Green skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc_3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/gadpathuruniform
+	name = "Gadpathur Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/gadpathur_uniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/goldendeep_dress
+	name = "Golden Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/goldendeep_suit
+	name = "Golden Suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_suit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/goldendeep_vest
+	name = "Golden vest"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_vest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/goldendeep_wrap
+	name = "Golden wrap"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_wrap
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/goldendeep_skirtsuit
+	name = "Golden Skirt Suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_skirtsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

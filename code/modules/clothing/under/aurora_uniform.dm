@@ -166,3 +166,129 @@
 	desc = "A very fancy, almost royal dress."
 	icon_state = "altdress_zhaob"
 	item_state = "altdress_zhaob"
+
+/obj/item/clothing/under/aurora/suit_imperial
+	name = "Royal Suit, red"
+	desc = "A very fancy, almost royal suit."
+	icon_state = "suit_imperial"
+	item_state = "suit_imperial"
+
+/obj/item/clothing/under/aurora/suit_imperial_black
+	name = "Royal Suit, black"
+	desc = "A very fancy, almost royal suit."
+	icon_state = "suit_imperial_black"
+	item_state = "suit_imperial_black"
+
+/obj/item/clothing/under/aurora/suit_volvalaad
+	name = "Royal Suit, blue"
+	desc = "A very fancy, almost royal suit."
+	icon_state = "suit_volvalaad"
+	item_state = "suit_volvalaad"
+
+/obj/item/clothing/under/aurora/suit_kazhkz
+	name = "Royal Suit, yellow"
+	desc = "A very fancy, almost royal suit."
+	icon_state = "suit_kazhkz"
+	item_state = "suit_kazhkz"
+
+/obj/item/clothing/under/aurora/suit_caladius
+	name = "Royal Suit, purple"
+	desc = "A very fancy, almost royal suit."
+	icon_state = "suit_caladius"
+	item_state = "suit_caladius"
+
+/obj/item/clothing/under/aurora/suit_zhao
+	name = "Royal Suit, white"
+	desc = "A very fancy, almost royal suit."
+	icon_state = "suit_zhao"
+	item_state = "suit_zhao"
+
+/obj/item/clothing/under/aurora/dom_sweater
+	name = "Grey Sweater"
+	desc = "A nice looking grey sweater with brown pants."
+	icon_state = "dom_sweater"
+	item_state = "dom_sweater"
+
+/obj/item/clothing/under/aurora/holosuit_fem
+	name = "Dark blue skin suit, female"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_fem"
+	item_state = "holosuit_fem"
+
+/obj/item/clothing/under/aurora/holosuit_masc
+	name = "Dark blue skin suit, male"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_masc"
+	item_state = "holosuit_masc"
+
+/obj/item/clothing/under/aurora/holosuit_fem_1
+	name = "Purple skin suit"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_fem_1"
+	item_state = "holosuit_fem_1"
+
+/obj/item/clothing/under/aurora/holosuit_fem_2
+	name = "Blue skin suit"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_fem_2"
+	item_state = "holosuit_fem_2"
+
+/obj/item/clothing/under/aurora/holosuit_fem_3
+	name = "Yellow skin suit"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_fem_3"
+	item_state = "holosuit_fem_3"
+
+/obj/item/clothing/under/aurora/holosuit_masc_1
+	name = "Red skin suit, male"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_masc_1"
+	item_state = "holosuit_masc_1"
+
+/obj/item/clothing/under/aurora/holosuit_masc_2
+	name = "Pink skin suit, male"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_masc_2"
+	item_state = "holosuit_masc_2"
+
+/obj/item/clothing/under/aurora/holosuit_masc_3
+	name = "Green skin suit, male"
+	desc = "A skin tight cozy suit!"
+	icon_state = "holosuit_masc_3"
+	item_state = "holosuit_masc_3"
+
+/obj/item/clothing/under/aurora/gadpathur_uniform
+	name = "Gadpathur Uniform"
+	desc = "A simple black cloth shirt and brown"
+	icon_state = "gadpathur_uniform"
+	item_state = "gadpathur_uniform"
+
+/obj/item/clothing/under/aurora/goldendeep_dress
+	name = "Golden Dress"
+	desc = "A simple dress with a flowing skirt!"
+	icon_state = "goldendeep_dress"
+	item_state = "goldendeep_dress"
+
+/obj/item/clothing/under/aurora/goldendeep_suit
+	name = "Golden Suit"
+	desc = "A two piece suit"
+	icon_state = "goldendeep_suit"
+	item_state = "goldendeep_suit"
+
+/obj/item/clothing/under/aurora/goldendeep_vest
+	name = "Golden Vest"
+	desc = "A light feeling vest"
+	icon_state = "goldendeep_vest"
+	item_state = "goldendeep_vest"
+
+/obj/item/clothing/under/aurora/goldendeep_wrap
+	name = "Golden Wrap"
+	desc = "A simple dress made with a flowing skirt"
+	icon_state = "goldendeep_wrap"
+	item_state = "goldendeep_wrap"
+
+/obj/item/clothing/under/aurora/goldendeep_skirtsuit
+	name = "Golden Skirt Suit"
+	desc = "A flowing skirt suit!"
+	icon_state = "goldendeep_skirtsuit"
+	item_state = "goldendeep_skirtsuit"
