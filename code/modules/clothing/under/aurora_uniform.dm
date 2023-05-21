@@ -238,7 +238,7 @@
 	desc = "A skin tight cozy suit!"
 	icon_state = "holosuit_fem"
 	item_state = "holosuit_fem"
-	can_adjust = FALSEs
+	can_adjust = FALSE
 
 /obj/item/clothing/under/aurora/holosuit_masc
 	name = "Dark blue skin suit, male"
@@ -330,3 +330,10 @@
 	icon_state = "goldendeep_skirtsuit"
 	item_state = "goldendeep_skirtsuit"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/iac
+	name = "Light blue Medical suit"
+	desc = "A light blue medical suit with dark blue stripes"
+	icon_state = "iac"
+	item_state = "iac"
+	can_adjust = TRUE

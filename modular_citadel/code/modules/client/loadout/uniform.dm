@@ -2508,3 +2508,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/goldendeep_skirtsuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/iac
+	name = "Light Blue Suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/iac
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
