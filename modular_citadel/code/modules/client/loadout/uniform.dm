@@ -2634,3 +2634,63 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/kimono
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang
+	name = "Magenta hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang/pink
+	name = "Pink hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang/pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang/blue
+	name = "Blue hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang/male
+	name = "Male hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang/male
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional
+	name = "Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/red
+	name = "Red Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/green
+	name = "Green Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/blue
+	name = "Blue Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/national
+	name = "National Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/national
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/vest
+	name = "Vest Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/vest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
