@@ -2628,3 +2628,9 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/color/pink
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/kimono
+	name = "Ronin Kimono"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/kimono
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL

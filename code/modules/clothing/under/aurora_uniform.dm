@@ -451,3 +451,74 @@
 	desc = "A pink jumpsuit."
 	icon_state = "pink"
 	item_state = "pink"
+
+/obj/item/clothing/under/aurora/kimono
+	name = "Ronin Kimono"
+	desc = "A black flow type kimono."
+	icon_state = "ronin_kimono"
+	item_state = "ronin_kimono"
+
+/obj/item/clothing/under/aurora/konyang
+	name = "magenta hanbok"
+	desc = "A traditional Konyanger hanbok."
+	icon_state = "hanbok_magenta"
+	item_state = "hanbok_magenta"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyang/pink
+	name = "pink hanbok"
+	desc = "A traditional Konyanger hanbok. This one is pink and white."
+	icon_state = "hanbok_pink"
+	item_state = "hanbok_pink"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyang/blue
+	name = "blue hanbok"
+	desc = "A traditional Konyanger hanbok. This one is blue and white."
+	icon_state = "hanbok_blue"
+	item_state = "hanbok_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyang/male
+	name = "hanbok"
+	desc = "A traditional Konyanger hanbok tailored for men."
+	icon_state = "hanbok_male"
+	item_state = "hanbok_male"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyangdresstraditional
+	name = "konyanger traditional dress"
+	desc = "A traditional hakama and kosode. This one features a pink hakama and white kosode."
+	icon_state = "konyang_dress_traditional"
+	item_state = "konyang_dress_traditional"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyangdresstraditional/red
+	desc = "A traditional red hakama and white kosode pairing worn by Shintoist shrine maidens."
+	icon_state = "konyang_dress_traditional_red"
+	item_state = "konyang_dress_traditional_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyangdresstraditional/green
+	desc = "A traditional hakama and kosode. This one features a green hakama and white kosode."
+	icon_state = "konyang_dress_traditional_green"
+	item_state = "konyang_dress_traditional_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyangdresstraditional/blue
+	desc = "A traditional hakama and kosode, This one features a blue hakama and white kosode."
+	icon_state = "konyang_dress_traditional_blue"
+	item_state = "konyang_dress_traditional_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyangdresstraditional/national
+	desc = "A traditional hakama and kosode."
+	icon_state = "konyang_dress_traditional_national"
+	item_state = "konyang_dress_traditional_national"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/konyangdresstraditional/national/vest
+	desc = "A traditional hakama and kosode. This one features a blue hakama, white vest, and yellow kosode."
+	icon_state = "konyang_dress_traditional_national_vest"
+	item_state = "konyang_dress_traditional_national_vest"
+	can_adjust = FALSE
