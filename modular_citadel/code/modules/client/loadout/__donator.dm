@@ -609,7 +609,18 @@
 /obj/item/storage/box/large/custom_kit/jaggachi_4/PopulateContents()
 	new /obj/item/storage/box/gun/revolver/revolver44(src)
 	new /obj/item/storage/box/gun/revolver/revolver44(src)
-	
+
+/datum/gear/donator/kits/jaggachi_5
+	name = "Army Service Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_5
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_5/PopulateContents()
+	new /obj/item/clothing/suit/armor/medium/combat/rusted(src)
+	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken(src)
+	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
+	new /obj/item/ammo_box/m44box(src)
+
 // K
 
 
