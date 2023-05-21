@@ -2514,3 +2514,117 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/iac
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/black
+	name = "Black Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/grey
+	name = "Grey Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/grey
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/white
+	name = "White Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/darkred
+	name = "Darkred Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/darkred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/red
+	name = "Red Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lighred
+	name = "Lightred Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightbrown
+	name = "Lightbrown Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightbrown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/brown
+	name = "Brown Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/brown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/yellow
+	name = "Yellow Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/yellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/yellowgreen
+	name = "Yellowgreen Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/yellowgreen
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightgreen
+	name = "lightgreen Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightgreen
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/green
+	name = "Green Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/aqua
+	name = "Aqua Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/aqua
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightblue
+	name = "Lightblue Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/blue
+	name = "Blue Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/darkblue
+	name = "Darkblue Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/darkblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/purple
+	name = "Purple Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightpurple
+	name = "Lightpurple Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightpurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/pink
+	name = "Pink Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

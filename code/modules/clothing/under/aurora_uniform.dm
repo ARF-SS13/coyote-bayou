@@ -337,3 +337,117 @@
 	icon_state = "iac"
 	item_state = "iac"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/aurora/color/black
+	name = "black jumpsuit"
+	desc = "A black jumpsuit."
+	icon_state = "black"
+	item_state = "black"
+
+/obj/item/clothing/under/aurora/color/grey
+	name = "grey jumpsuit"
+	desc = "A grey jumpsuit."
+	icon_state = "grey"
+	item_state = "grey"
+
+/obj/item/clothing/under/aurora/color/white
+	name = "white jumpsuit"
+	desc = "A white jumpsuit."
+	icon_state = "white"
+	item_state = "white"
+
+/obj/item/clothing/under/aurora/color/darkred
+	name = "darkred jumpsuit"
+	desc = "A dark red jumpsuit."
+	icon_state = "darkred"
+	item_state = "darkred"
+
+/obj/item/clothing/under/aurora/color/red
+	name = "red jumpsuit"
+	desc = "A red jumpsuit."
+	icon_state = "red"
+	item_state = "red"
+
+/obj/item/clothing/under/aurora/color/lightred
+	name = "lightred jumpsuit"
+	desc = "A light red jumpsuit."
+	icon_state = "lightred"
+	item_state = "lightred"
+
+/obj/item/clothing/under/aurora/color/lightbrown
+	name = "lightbrown jumpsuit"
+	desc = "A light brown jumpsuit."
+	icon_state = "lightbrown"
+	item_state = "lightbrown"
+
+/obj/item/clothing/under/aurora/color/brown
+	name = "brown jumpsuit"
+	desc = "A brown jumpsuit."
+	icon_state = "brown"
+	item_state = "brown"
+
+/obj/item/clothing/under/aurora/color/yellow
+	name = "yellow jumpsuit"
+	desc = "A yellow jumpsuit."
+	icon_state = "yellow"
+	item_state = "yellow"
+
+/obj/item/clothing/under/aurora/color/yellowgreen
+	name = "yellowgreen jumpsuit"
+	desc = "A yellow green jumpsuit."
+	icon_state = "yellowgreen"
+	item_state = "yellowgreen"
+
+/obj/item/clothing/under/aurora/color/lightgreen
+	name = "lightgreen jumpsuit"
+	desc = "A light green jumpsuit."
+	icon_state = "lightgreen"
+	item_state = "lightgreen"
+
+/obj/item/clothing/under/aurora/color/green
+	name = "green jumpsuit"
+	desc = "A green jumpsuit."
+	icon_state = "green"
+	item_state = "green"
+
+/obj/item/clothing/under/aurora/color/aqua
+	name = "aqua jumpsuit"
+	desc = "An aqua jumpsuit."
+	icon_state = "aqua"
+	item_state = "aqua"
+
+/obj/item/clothing/under/aurora/color/lightblue
+	name = "lightblue jumpsuit"
+	desc = "A light blue jumpsuit."
+	icon_state = "lightblue"
+	item_state = "lightblue"
+
+/obj/item/clothing/under/aurora/color/blue
+	name = "blue jumpsuit"
+	desc = "A blue jumpsuit."
+	icon_state = "blue"
+	item_state = "blue"
+
+/obj/item/clothing/under/aurora/color/darkblue
+	name = "darkblue jumpsuit"
+	desc = "A dark blue jumpsuit."
+	icon_state = "darkblue"
+	item_state = "darkblue"
+
+/obj/item/clothing/under/aurora/color/purple
+	name = "purple jumpsuit"
+	desc = "A purple jumpsuit."
+	icon_state = "purple"
+	item_state = "purple"
+
+/obj/item/clothing/under/aurora/color/lightpurple
+	name = "lightpurple jumpsuit"
+	desc = "A light purple jumpsuit."
+	icon_state = "lightpurple"
+	item_state = "lightpurple"
+
+/obj/item/clothing/under/aurora/color/pink
+	name = "pink jumpsuit"
+	desc = "A pink jumpsuit."
+	icon_state = "pink"
+	item_state = "pink"
