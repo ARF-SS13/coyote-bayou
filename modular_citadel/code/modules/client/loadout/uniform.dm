@@ -2221,87 +2221,164 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 //From Aurora
-/datum/gear/uniform/dominia/shortsleevemale
+/datum/gear/uniform/dominia/aurora/shortsleevemale
 	name = "Dominian Short Sleeve, Male"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/consular/shortsleevemale
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/dominia/longsleevemale
+/datum/gear/uniform/dominia/aurora/longsleevemale
 	name = "Dominian Long Sleeve, Male"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/consular/longsleevemale
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/dominia/shortsleevefemale
+/datum/gear/uniform/dominia/aurora/shortsleevefemale
 	name = "Dominian Short Sleeve, Female"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/consular/shortsleevefemale
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/dominia/longsleevefemale
+/datum/gear/uniform/dominia/aurora/longsleevefemale
 	name = "Dominian long Sleeve, Female"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/consular/longsleevefemale
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/dominia/priest
+/datum/gear/uniform/dominia/aurora/priest
 	name = "Dominian Priest"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/priest
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/dominia/imperial
+/datum/gear/uniform/dominia/aurora/imperial
 	name = "Red Royal Dress, with bow"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/imperial
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/dominia/streltiz
+/datum/gear/uniform/aurora/dominia/streltiz
 	name = "Red Royal Dress"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/strelitz
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/dominia/volvalaad
+/datum/gear/uniform/aurora/dominia/volvalaad
 	name = "Blue Royal Dress"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/volvalaad
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/dominia/kazhkz
+/datum/gear/uniform/aurora/dominia/kazhkz
 	name = "Orange Royal Dress"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/kazhkz
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/dominia/caladius
+/datum/gear/uniform/vdominia/caladius
 	name = "Purple Royal Dress"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/caladius
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/dominia/zhao
+/datum/gear/uniform/aurora/dominia/zhao
 	name = "White Royal Dress"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/dominia/zhao
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/voidsman
+/datum/gear/uniform/aurora/voidsman
 	name = "Voids Man Uniform"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/voidsman
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/auroraofficer
+/datum/gear/uniform/aurora/auroraofficer
 	name = "White collored officer uniform"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/officer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/armsman
+/datum/gear/uniform/aurora/armsman
 	name = "Arms man Uniform"
 	cost = 1
 	path = /obj/item/clothing/under/aurora/armsman
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/aurora/initiate
+	name = "White Initate Robe"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/initiate
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/dom_dress
+	name = "Fire Red Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dom_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressimperial
+	name = "Fancy royal dress, red and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_imperial
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressimperialb
+	name = "Fancy royal dress, red and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_imperialb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressvolvalaad
+	name = "Fancy royal dress, blue and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_volvalaad
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressvolvalaadb
+	name = "Fancy royal dress, blue and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_volvalaadb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_kazhkkz
+	name = "Fancy royal dress, yellow and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_kazhkz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_kazhkkzb
+	name = "Fancy royal dress, yellow and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_kazhkzb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_caladius
+	name = "Fancy royal dress, purple and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_caladius
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_caladiusb
+	name = "Fancy royal dress, purple and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_caladiusb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/altdress_zhao
+	name = "Fancy royal dress, white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_zhao
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/altdress_zhaob
+	name = "Fancy royal dress, white and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_zhaob
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/initiate_black
+	name = "A black initiate robe with a red sash"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/initiate_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

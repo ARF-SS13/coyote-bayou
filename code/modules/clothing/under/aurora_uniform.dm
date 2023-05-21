@@ -94,3 +94,75 @@
 	desc = "A white robe with a red sash among the middle."
 	icon_state = "dominia_initiate"
 	item_state = "dominia_initiate"
+
+/obj/item/clothing/under/aurora/initiate_black
+	name = "Black initiate Robe"
+	desc = "A black robe with a red sash among the middle."
+	icon_state = "dominia_priest_alt"
+	item_state = "dominia_priest_alt"
+
+/obj/item/clothing/under/aurora/dom_dress
+	name = "Fire red dress"
+	desc = "A long  fire red dress with a slit in the middle, showing a bit of leg."
+	icon_state = "dom_dress"
+	item_state = "dom_dress"
+
+/obj/item/clothing/under/aurora/altdress_imperial
+	name = "Fancy Royal Dress, Red"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_imperial"
+	item_state = "altdress_imperial"
+
+/obj/item/clothing/under/aurora/altdress_imperialb
+	name = "Fancy Royal Dress, red and black"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_imperialb"
+	item_state = "altdress_imperialb"
+
+/obj/item/clothing/under/aurora/altdress_volvalaad
+	name = "Fancy Royal Dress, Blue"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_volvalaad"
+	item_state = "altdress_volvalaad"
+
+/obj/item/clothing/under/aurora/altdress_volvalaadb
+	name = "Fancy Royal Dress, Blue and black"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_volvalaadb"
+	item_state = "altdress_volvalaadb"
+
+/obj/item/clothing/under/aurora/altdress_kazhkz
+	name = "Fancy Royal Dress, yellow"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_kazhkz"
+	item_state = "altdress_kazhkz"
+
+/obj/item/clothing/under/aurora/altdress_kazhkzb
+	name = "Fancy Royal Dress, yellow and black"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_kazhkzb"
+	item_state = "altdress_kazhkzb"
+
+/obj/item/clothing/under/aurora/altdress_caladius
+	name = "Fancy Royal Dress, purple"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_caladius"
+	item_state = "altdress_caladius"
+
+/obj/item/clothing/under/aurora/altdress_caladiusb
+	name = "Fancy Royal Dress, purple and black"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_caladiusb"
+	item_state = "altdress_caladiusb"
+
+/obj/item/clothing/under/aurora/altdress_zhao
+	name = "Fancy Royal Dress, white"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_zhao"
+	item_state = "altdress_zhao"
+
+/obj/item/clothing/under/aurora/altdress_zhaob
+	name = "Fancy Royal Dress, white and black"
+	desc = "A very fancy, almost royal dress."
+	icon_state = "altdress_zhaob"
+	item_state = "altdress_zhaob"
