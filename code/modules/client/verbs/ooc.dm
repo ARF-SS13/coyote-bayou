@@ -218,6 +218,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	to_chat(src, "You are [(C.key in prefs.ignoring) ? "now" : "no longer"] ignoring [C.key] on the OOC channel.")
 	prefs.save_preferences()
 
+/*
 /client/verb/select_ignore()
 	set name = "Ignore"
 	set category = "OOC"
@@ -241,6 +242,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		to_chat(src, "You can't ignore yourself.")
 		return
 	ignore_key(selection)
+*/
 
 /client/proc/show_previous_roundend_report()
 	set name = "Your Last Round"
