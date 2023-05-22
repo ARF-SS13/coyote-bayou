@@ -17,6 +17,8 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	var/list/ckey_proglist = list()
 
 /datum/controller/subsystem/processing/progress_bars/proc/add_bar(atom/owner, list/can_see = list(), duration = 5 SECONDS, automatic = TRUE, auto_remove = TRUE)
+	if(duration <= 0) // imma divide your zero uwu
+		return FALSE // gotta do it safely tho
 	var/datum/progressbar/bar = new(owner, can_see, duration, automatic, auto_remove)
 	register_bar(owner, bar)
 	. = bar.bar_id
