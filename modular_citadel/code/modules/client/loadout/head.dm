@@ -962,3 +962,43 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/aurora/armsmancap
 	name = "armsman cap"
 	path = /obj/item/clothing/head/aurora/armsmancap
+
+/datum/gear/head/aurora/fur
+	name = "green fur cap"
+	path = /obj/item/clothing/head/aurora/fur
+
+/datum/gear/head/aurora/furpurle
+	name = "purple fur cap"
+	path = /obj/item/clothing/head/aurora/furpurple
+
+/datum/gear/head/aurora/furblue
+	name = "blue fur cap"
+	path = /obj/item/clothing/head/aurora/furblue
+
+/datum/gear/head/aurora/furred
+	name = "red fur cap"
+	path = /obj/item/clothing/head/aurora/furred
+
+/datum/gear/head/aurora/joku
+	name = "green joku cap"
+	path = /obj/item/clothing/head/aurora/joku
+
+/datum/gear/head/aurora/jokupurple
+	name = "purple joku cap"
+	path = /obj/item/clothing/head/aurora/jokupurple
+
+/datum/gear/head/aurora/jokublue
+	name = "blue joku cap"
+	path = /obj/item/clothing/head/aurora/jokublue
+
+/datum/gear/head/aurora/jokured
+	name = "red joku cap"
+	path = /obj/item/clothing/head/aurora/jokured
+
+/datum/gear/head/aurora/danishu
+	name = "Danishu cap"
+	path = /obj/item/clothing/head/aurora/dainshu
+
+/datum/gear/head/aurora/tiara
+	name = "Tiara"
+	path = /obj/item/clothing/head/aurora/sayyidah_tiara
