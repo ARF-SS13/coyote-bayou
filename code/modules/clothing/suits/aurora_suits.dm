@@ -52,6 +52,34 @@
 	item_state = "coat_red"
 	armor = ARMOR_VALUE_LIGHT
 
+/obj/item/clothing/suit/aurora/winterchokha
+	name = "Green Winter Chokha coat"
+	desc = "A green fluffy coat."
+	icon_state = "winterchokha"
+	item_state = "winterchokha"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/aurora/winterchokhapurple
+	name = "Purple Winter Chokha coat"
+	desc = "A purple fluffy coat."
+	icon_state = "winterchokha_purple"
+	item_state = "winterchokha_purple"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/aurora/winterchokhablue
+	name = "Blue Winter Chokha coat"
+	desc = "A blue fluffy coat."
+	icon_state = "winterchokha_blue"
+	item_state = "winterchokha_blue"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/aurora/winterchokhared
+	name = "Red Winter Chokha coat"
+	desc = "A red fluffy coat."
+	icon_state = "winterchokha_red"
+	item_state = "winterchokha_red"
+	armor = ARMOR_VALUE_LIGHT
+
 /obj/item/clothing/suit/toggle/labcoat/aurora
 	name = "base"
 	icon = 'icons/obj/clothing/aurora_suit.dmi'
@@ -398,4 +426,11 @@
 	desc = "A half red cape."
 	icon_state = "dominian_cape_red"
 	item_state = "dominian_cape_red"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/ozuhacape
+	name = "Ozuha Cape"
+	desc = "A red and yellow cape"
+	icon_state = "ozuha_cape"
+	item_state = "ozuha_cape"
 	armor = ARMOR_VALUE_LIGHT

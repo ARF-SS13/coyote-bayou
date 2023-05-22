@@ -23,3 +23,10 @@
 	desc = "A green brimmed hat, shaped like an Officers!"
 	icon_state = "armsmancap"
 	item_state = "armsmancap"
+
+/obj/item/clothing/head/aurora/armsmancap
+	name = "Arms man Cap"
+	desc = "A green brimmed hat, shaped like an Officers!"
+	icon_state = "armsmancap"
+	item_state = "armsmancap"
+

@@ -1038,6 +1038,26 @@
 	path = /obj/item/clothing/suit/labcoat/aurora/dominian_surcoat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/winterchokha
+	name = "Green winter Chokha"
+	path = /obj/item/clothing/suit/aurora/winterchokha
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/winterchokhapurple
+	name = "Purple winter Chokha"
+	path = /obj/item/clothing/suit/aurora/winterchokhapurple
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/winterchokhablue
+	name = "Blue winter Chokha"
+	path = /obj/item/clothing/suit/aurora/winterchokhablue
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/winterchokhared
+	name = "Red winter Chokha"
+	path = /obj/item/clothing/suit/aurora/winterchokhared
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR

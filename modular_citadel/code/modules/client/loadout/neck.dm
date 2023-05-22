@@ -453,3 +453,8 @@
 	name = "Dominia Cape, half"
 	path = /obj/item/clothing/neck/tie/aurora/dominian_cape_red
 	cost = 0
+
+/datum/gear/neck/ozhuacape
+	name = "Ozhua cape"
+	path = /obj/item/clothing/neck/tie/aurora/ozuhacape
+	cost = 0

@@ -2742,3 +2742,45 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/aodaip
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/chokha
+	name = "Green Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokha
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/chokhapurple
+	name = "purple Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokhapurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/chokhablue
+	name = "blue Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokhablue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/chokhared
+	name = "red Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokhared
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/sayyidahdress
+	name = "Sayyiadah Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/sayyidah_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/mardress
+	name = "Mar Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/mar_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/amelinedress
+	name = "Ameline Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/ameline_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

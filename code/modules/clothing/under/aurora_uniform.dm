@@ -571,3 +571,52 @@
 	icon_state = "aodaip"
 	item_state = "aodaip"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/chokha
+	name = "green chokha dress"
+	desc = "A green dress tunic"
+	icon_state = "chokha"
+	item_state = "chokha"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/chokhapurple
+	name = "purple chokha dress"
+	desc = "A purple dress tunic"
+	icon_state = "chokha_purple"
+	item_state = "chokha_purple"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/chokhablue
+	name = "blue chokha dress"
+	desc = "A blue dress tunic"
+	icon_state = "chokha_blue"
+	item_state = "chokha_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/chokhared
+	name = "red chokha dress"
+	desc = "A red dress tunic"
+	icon_state = "chokha_red"
+	item_state = "chokha_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/sayyidah_dress
+	name = "Sayyidah dress"
+	desc = "A white dress with a blue tunic"
+	icon_state = "sayyidah_dress"
+	item_state = "sayyidah_dress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/mar_dress
+	name = "Mar dress"
+	desc = "A black bottom dress with green uppers"
+	icon_state = "mar_dress"
+	item_state = "mar_dress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/ameline_dress
+	name = "Ameline dress"
+	desc = "A white dress with red and black tunic"
+	icon_state = "ameline_dress"
+	item_state = "ameline_dress"
+	can_adjust = FALSE
