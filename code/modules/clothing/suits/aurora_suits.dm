@@ -64,9 +64,16 @@
 	item_state = "mid"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/toggle/labcoat/aurora/midleather
-	name = "Leather mid coat"
-	desc = "A short black leather jacket"
-	icon_state = "mid"
-	item_state = "mid"
+/obj/item/clothing/suit/toggle/labcoat/aurora/bomber
+	name = "Domina Bomber short"
+	desc = "A short brown bomber jacket"
+	icon_state = "dominia_bomber"
+	item_state = "dominia_bomber"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/aurora/bomberlong
+	name = "Domina Bomber long"
+	desc = "A short brown bomber jacket"
+	icon_state = "dominia_bomber_long"
+	item_state = "dominia_bomber_long"
 	armor = ARMOR_VALUE_LIGHT
