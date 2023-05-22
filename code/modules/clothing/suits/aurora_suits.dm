@@ -119,3 +119,31 @@
 	icon_state = "coat_himeo_grey"
 	item_state = "coat_himeo_grey"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_coat
+	name = "Idris Coat "
+	desc = "A black coat with Turqoise lining."
+	icon_state = "idris_coat"
+	item_state = "idris_coat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_coatlong
+	name = "Idris long Coat "
+	desc = "A black long coat with Turqoise lining."
+	icon_state = "idris_longcoat"
+	item_state = "idris_longcoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_trenchcoat
+	name = "Idris trench coat "
+	desc = "A black trench coat with Turqoise lining."
+	icon_state = "idris_trenchcoat"
+	item_state = "idris_trenchcoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_duster
+	name = "Idris duster coat "
+	desc = "A black duster coat with Turqoise lining."
+	icon_state = "idris_duster"
+	item_state = "idris_duster"
+	armor = ARMOR_VALUE_LIGHT

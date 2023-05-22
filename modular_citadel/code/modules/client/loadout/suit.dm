@@ -943,6 +943,25 @@
 	path = /obj/item/clothing/suit/labcoat/aurora/coat_himeogrey
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/idris_coat
+	name = "Idris Coat"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_coatlong
+	name = "Idris Long Coat"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatlong
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_trenchcoat
+	name = "Idris Trench Coat"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_trenchcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_duster
+	name = "Idris Duster Coat"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_duster
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 // BEGIN_INTERNALS
 // END_INTERNALS
