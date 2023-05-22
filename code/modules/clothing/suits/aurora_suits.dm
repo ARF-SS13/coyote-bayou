@@ -203,3 +203,10 @@
 	icon_state = "idris_duster_brown"
 	item_state = "idris_duster_brown"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_windbreaker
+	name = "Idris Windbreaker"
+	desc = "A Grey coat with turqoise lining that might help with the wind."
+	icon_state = "idris_windbreaker"
+	item_state = "idris_windbreaker"
+	armor = ARMOR_VALUE_LIGHT

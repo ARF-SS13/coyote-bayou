@@ -965,12 +965,12 @@
 
 /datum/gear/suit/aurora/idris_coatlongwhite
 	name = "Idris Long Coat, white"
-	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatlongwhite
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_longcoatwhite
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/aurora/idris_coatlongbrown
 	name = "Idris Long Coat, brown"
-	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatlongbrown
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_longcoatbrown
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/aurora/idris_trenchcoat
@@ -1001,6 +1001,11 @@
 /datum/gear/suit/aurora/idris_dusterbrown
 	name = "Idris Duster Coat, brown"
 	path = /obj/item/clothing/suit/labcoat/aurora/idris_dusterbrown
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_windbreaker
+	name = "Idris Windbreaker"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_windbreaker
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 // BEGIN_INTERNALS
