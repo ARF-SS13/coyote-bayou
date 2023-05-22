@@ -91,3 +91,31 @@
 	icon_state = "gadpathurleather"
 	item_state = "gadpathurleather"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/gadpathurtrench
+	name = "Gadpathur trench coat"
+	desc = "A tan trench of some sort made of leather."
+	icon_state = "gadpathurtrench"
+	item_state = "gadpathurtrench"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/gadpathurthermal
+	name = "Gadpathur thermal coat"
+	desc = "A thermal Coat of some sort."
+	icon_state = "gadpathurthermal"
+	item_state = "gadpathurthermal"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/coat_himeo
+	name = "Himeo Coat"
+	desc = "A long brown coat outlined in white."
+	icon_state = "coat_himeo"
+	item_state = "coat_himeo"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/coat_himeogrey
+	name = "Himeo Coat, Grey"
+	desc = "A long Grey coat outlined in white."
+	icon_state = "coat_himeo_grey"
+	item_state = "coat_himeo_grey"
+	armor = ARMOR_VALUE_LIGHT

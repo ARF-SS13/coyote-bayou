@@ -923,6 +923,27 @@
 	path = /obj/item/clothing/suit/labcoat/aurora/gadpathurleather
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/gadpathurtrench
+	name = "Gadpathur Coat Trench"
+	path = /obj/item/clothing/suit/labcoat/aurora/gadpathurtrench
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/gadpathurthermal
+	name = "Gadpathur Coat Thermal"
+	path = /obj/item/clothing/suit/labcoat/aurora/gadpathurthermal
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/coat_himeo
+	name = "Himeo Coat"
+	path = /obj/item/clothing/suit/labcoat/aurora/coat_himeo
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/coat_himeogrey
+	name = "Himeo Coat, Grey"
+	path = /obj/item/clothing/suit/labcoat/aurora/coat_himeogrey
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
