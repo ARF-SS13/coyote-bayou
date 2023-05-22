@@ -2692,7 +2692,7 @@
 /datum/gear/uniform/aurora/konyangtraditional/vest
 	name = "Vest Konyanger traditional dress"
 	cost = 1
-	path = /obj/item/clothing/under/aurora/konyangdresstraditional/vest
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/national/vest
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
 /datum/gear/uniform/aurora/konyang_dress

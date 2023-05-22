@@ -51,3 +51,22 @@
 	icon_state = "coat_red"
 	item_state = "coat_red"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/aurora
+	name = "base"
+	icon = 'icons/obj/clothing/aurora_suit.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/aurora_suit.dmi'
+
+/obj/item/clothing/suit/toggle/labcoat/aurora/midleather
+	name = "Leather mid coat"
+	desc = "A short black leather jacket"
+	icon_state = "mid"
+	item_state = "mid"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/aurora/midleather
+	name = "Leather mid coat"
+	desc = "A short black leather jacket"
+	icon_state = "mid"
+	item_state = "mid"
+	armor = ARMOR_VALUE_LIGHT
