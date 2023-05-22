@@ -405,6 +405,23 @@
 	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/worn
+	name = " Venn Family Shotgun"
+	desc = "A semi automatic shotgun with a four round tube. Has an etching into the side."
+	icon_state = "auto5"
+	item_state = "shotgunauto5"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
+	fire_sound = 'sound/f13weapons/auto5.ogg'
+
+
 /* /obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	..()
 	src.pump(user) */

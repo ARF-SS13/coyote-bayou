@@ -1330,7 +1330,7 @@
 		if(is_calf)
 			if((prob(3)))
 				is_calf = 0
-				udder = new()
+				udder = new(null, milk_reagent)
 				if(name == "bighorn lamb")
 					name = "bighorn"
 				else
