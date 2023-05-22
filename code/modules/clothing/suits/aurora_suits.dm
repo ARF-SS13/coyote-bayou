@@ -77,3 +77,17 @@
 	icon_state = "dominia_bomber_long"
 	item_state = "dominia_bomber_long"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/aurora/gadpathurcoat
+	name = "Gadpathur Coat"
+	desc = "A tan coat of some sort."
+	icon_state = "gadpathur_coat"
+	item_state = "gadpathur_coat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/gadpathurleather
+	name = "Gadpathur leather coat"
+	desc = "A tan coat of some sort made of leather."
+	icon_state = "gadpathurleather"
+	item_state = "gadpathurleather"
+	armor = ARMOR_VALUE_LIGHT

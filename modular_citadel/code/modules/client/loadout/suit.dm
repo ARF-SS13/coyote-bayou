@@ -903,6 +903,26 @@
 	path = /obj/item/clothing/suit/aurora/coatblack
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/bomber
+	name = "Domina Bomber Short"
+	path = /obj/item/clothing/suit/toggle/labcoat/aurora/bomber
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/bomberlong
+	name = "Domina Bomber Long"
+	path = /obj/item/clothing/suit/toggle/labcoat/aurora/bomberlong
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/gadpathurcoat
+	name = "Gadpathur Coat"
+	path = /obj/item/clothing/suit/aurora/gadpathurcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/gadpathurcoatleather
+	name = "Gadpathur Coat Leather"
+	path = /obj/item/clothing/suit/labcoat/aurora/gadpathurleather
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
