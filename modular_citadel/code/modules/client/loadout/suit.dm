@@ -1033,6 +1033,11 @@
 	path = /obj/item/clothing/suit/labcoat/aurora/dominian_noble5
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/dominian_surcoat
+	name = "Noble Coat, long red"
+	path = /obj/item/clothing/suit/labcoat/aurora/dominian_surcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR

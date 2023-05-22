@@ -246,6 +246,13 @@
 	item_state = "dominian_noble5"
 	armor = ARMOR_VALUE_LIGHT
 
+/obj/item/clothing/suit/labcoat/aurora/dominian_surcoat
+	name = "Noble Coat, long red"
+	desc = "A long red coat."
+	icon_state = "dominian_surcoat"
+	item_state = "dominian_surcoat"
+	armor = ARMOR_VALUE_LIGHT
+
 //Capes
 
 /obj/item/clothing/neck/tie/aurora
@@ -370,4 +377,25 @@
 	desc = "A Grey mantle."
 	icon_state = "armsman_mantle"
 	item_state = "armsman_mantle"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/dominia_cape_consular
+	name = "Dominia Cape"
+	desc = "A red cape."
+	icon_state = "dominia_cape_consular"
+	item_state = "dominia_cape_consular"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/dominian_doublecape
+	name = "Dominia Cape, full"
+	desc = "A full red cape."
+	icon_state = "dominian_doublecape"
+	item_state = "dominian_doublecape"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/dominian_cape_red
+	name = "Dominia Cape, half"
+	desc = "A half red cape."
+	icon_state = "dominian_cape_red"
+	item_state = "dominian_cape_red"
 	armor = ARMOR_VALUE_LIGHT

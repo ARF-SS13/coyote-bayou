@@ -438,3 +438,18 @@
 	name = "armsman Mantle"
 	path = /obj/item/clothing/neck/tie/aurora/armsman_mantle
 	cost = 0
+
+/datum/gear/neck/domcape
+	name = "Dominia Cape"
+	path = /obj/item/clothing/neck/tie/aurora/dominia_cape_consular
+	cost = 0
+
+/datum/gear/neck/domcapefull
+	name = "Dominia Cape, full"
+	path = /obj/item/clothing/neck/tie/aurora/dominian_doublecape
+	cost = 0
+
+/datum/gear/neck/domcapehalf
+	name = "Dominia Cape, half"
+	path = /obj/item/clothing/neck/tie/aurora/dominian_cape_red
+	cost = 0
