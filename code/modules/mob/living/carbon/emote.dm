@@ -37,6 +37,7 @@
 	key = "gnarl"
 	key_third_person = "gnarls"
 	message = "gnarls and shows thier teeth..."
+	sound = 'sound/alien/voice/gnarl1.ogg'
 
 /datum/emote/living/carbon/moan
 	key = "moan"
