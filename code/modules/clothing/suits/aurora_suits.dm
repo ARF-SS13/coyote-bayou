@@ -245,3 +245,129 @@
 	icon_state = "dominian_noble5"
 	item_state = "dominian_noble5"
 	armor = ARMOR_VALUE_LIGHT
+
+//Capes
+
+/obj/item/clothing/neck/tie/aurora
+	name = "base"
+	icon = 'icons/obj/clothing/aurora_suit.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/aurora_suit.dmi'
+
+/obj/item/clothing/neck/tie/aurora/assunzione_robe
+	name = "Assunzione Robe"
+	desc = "A pink robe."
+	icon_state = "assunzione_robe"
+	item_state = "assunzione_robe"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/assunzione_robe_vine
+	name = "Assunzione Robe, accented"
+	desc = "A pink robe with accents."
+	icon_state = "assunzione_robe_vine"
+	item_state = "assunzione_robe_vine"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/assunzione_robe_gold
+	name = "Assunzione Robe, gold"
+	desc = "A pink robe with gold on it"
+	icon_state = "assunzione_robe_gold"
+	item_state = "assunzione_robe_gold"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/assunzione_robe_gold
+	name = "Assunzione Robe, gold"
+	desc = "A pink robe with gold on it"
+	icon_state = "assunzione_robe_gold"
+	item_state = "assunzione_robe_gold"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/dominian_cape
+	name = "Dominian Cape"
+	desc = "A Black cape with a yellow stripe"
+	icon_state = "dominian_cape"
+	item_state = "dominian_cape"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/dominian_capewhite
+	name = "Dominian Cape, white"
+	desc = "A white cape with a yellow stripe"
+	icon_state = "dominian_capew"
+	item_state = "dominian_capew"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/strelitz_cape
+	name = "Strelitz Cape"
+	desc = "A Black cape with a red stripe"
+	icon_state = "strelitz_cape"
+	item_state = "strelitz_cape"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/strelitz_capew
+	name = "Strelitz Cape, white"
+	desc = "A white cape with a red stripe"
+	icon_state = "strelitz_capew"
+	item_state = "strelitz_capew"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/volvalaad_cape
+	name = "Volvalaad Cape"
+	desc = "A Black cape with a green stripe"
+	icon_state = "volvalaad_cape"
+	item_state = "volvalaad_cape"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/volvalaad_capew
+	name = "Volvalaad Cape, white"
+	desc = "A white cape with a green stripe"
+	icon_state = "volvalaad_capew"
+	item_state = "volvalaad_capew"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/kazhkz_cape
+	name = "Kazhkz Cape"
+	desc = "A Black cape with a yellow stripe"
+	icon_state = "kazhkz_cape"
+	item_state = "kazhkz_cape"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/kazhkz_capew
+	name = "Kazhkz Cape, white"
+	desc = "A white cape with a yellow stripe"
+	icon_state = "kazhkz_capew"
+	item_state = "kazhkz_capew"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/caladius_cape
+	name = "Caladius Cape"
+	desc = "A Black cape with a purple stripe"
+	icon_state = "caladius_cape"
+	item_state = "caladius_cape"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/caladius_capew
+	name = "Caladius Cape, white"
+	desc = "A white cape with a purple stripe"
+	icon_state = "caladius_capew"
+	item_state = "caladius_capew"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/zhao_cape
+	name = "Zhao Cape"
+	desc = "A Black cape with a white stripe"
+	icon_state = "zhao_cape"
+	item_state = "zhao_cape"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/zhao_capew
+	name = "Zhao Cape, white"
+	desc = "A white cape with a white stripe"
+	icon_state = "zhao_capew"
+	item_state = "zhao_capew"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/neck/tie/aurora/armsman_mantle
+	name = "Armsan Mantle"
+	desc = "A Grey mantle."
+	icon_state = "armsman_mantle"
+	item_state = "armsman_mantle"
+	armor = ARMOR_VALUE_LIGHT
