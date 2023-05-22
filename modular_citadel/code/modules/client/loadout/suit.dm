@@ -1008,6 +1008,31 @@
 	path = /obj/item/clothing/suit/labcoat/aurora/idris_windbreaker
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/dominian_noble
+	name = "Noble Coat red with zipper"
+	path = /obj/item/clothing/suit/labcoat/aurora/dominian_noble
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/dominian_noble2
+	name = "Noble Coat red with buttons"
+	path = /obj/item/clothing/suit/labcoat/aurora/dominian_noble2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/dominian_noble3
+	name = "Noble Coat red with clasp"
+	path = /obj/item/clothing/suit/labcoat/aurora/dominian_noble3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/dominian_noble4
+	name = "Noble Coat black with zipper"
+	path = /obj/item/clothing/suit/labcoat/aurora/dominian_noble4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/dominian_noble5
+	name = "Noble Coat black with clasp"
+	path = /obj/item/clothing/suit/labcoat/aurora/dominian_noble5
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR

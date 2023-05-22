@@ -210,3 +210,38 @@
 	icon_state = "idris_windbreaker"
 	item_state = "idris_windbreaker"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/dominian_noble
+	name = "Noble Coat red with zipper"
+	desc = "A zipped up noble coat in red."
+	icon_state = "dominian_noble"
+	item_state = "dominian_noble"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/dominian_noble2
+	name = "Noble Coat red with buttons"
+	desc = "A buttoned up noble coat in red."
+	icon_state = "dominian_noble2"
+	item_state = "dominian_noble2"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/dominian_noble3
+	name = "Noble Coat red with a clasp"
+	desc = "A clasped noble coat in red."
+	icon_state = "dominian_noble3"
+	item_state = "dominian_noble3"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/dominian_noble4
+	name = "Noble Coat black with a zipper"
+	desc = "A zipped up noble coat in black."
+	icon_state = "dominian_noble4"
+	item_state = "dominian_noble4"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/dominian_noble5
+	name = "Noble Coat black with a clasp"
+	desc = "A clasped noble coat in black."
+	icon_state = "dominian_noble5"
+	item_state = "dominian_noble5"
+	armor = ARMOR_VALUE_LIGHT
