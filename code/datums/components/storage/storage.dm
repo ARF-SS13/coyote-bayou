@@ -296,10 +296,9 @@
 		if(trigger_on_found && I.on_found())
 			return FALSE
 		if(TICK_CHECK)
-			SSprogress_bars.update_bar(progress)
-			progress.update(length(things))
+			SSprogress_bars.update_bar(progress, length(things))
 			return TRUE
-	progress.update(length(things))
+	SSprogress_bars.update_bar(progress, length(things))
 	return FALSE
 
 /datum/component/storage/proc/do_quick_empty(atom/_target)
