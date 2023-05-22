@@ -529,3 +529,45 @@
 	icon_state = "konyang_dress"
 	item_state = "konyang_dress"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/fetil
+	name = "Fetil Dress"
+	desc = "A white..blue..? Dress. It's a color I'm sure."
+	icon_state = "fetil_dress"
+	item_state = "fetil_dress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/agent
+	name = "Blue fancy uniform"
+	desc = "A blue fancy uniform with golden trim."
+	icon_state = "sec_agent"
+	item_state = "sec_agent"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/executive
+	name = "Purple fancy uniform"
+	desc = "A purple fancy uniform with golden trim."
+	icon_state = "scc_executive"
+	item_state = "scc_executive"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/thermal
+	name = "White fancy uniform"
+	desc = "A white fancy uniform with golden trim."
+	icon_state = "dom_thermal"
+	item_state = "dom_thermal"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/aodai
+	name = "White aodai tunic"
+	desc = "A white aodai tunic with sleeves"
+	icon_state = "aodai"
+	item_state = "aodai"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/aurora/aodaip
+	name = "White aodai tunic"
+	desc = "A white aodai tunic with no sleeves"
+	icon_state = "aodaip"
+	item_state = "aodaip"
+	can_adjust = FALSE

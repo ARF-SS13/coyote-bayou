@@ -2700,3 +2700,45 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/konyang_dress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/fetil
+	name = "Fetil Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/fetil
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/agent
+	name = "Blue Fancy Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/agent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/executive
+	name = "Purple Fancy Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/executive
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/thermal
+	name = "White Fancy Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/thermal
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/aodai
+	name = "White aodai tunic, with sleeves"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/aodai
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/aodaip
+	name = "White aodai tunic, with no sleeves"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/aodaip
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/aodaip
+	name = "White aodai tunic, with no sleeves"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/aodaip
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
