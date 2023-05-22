@@ -134,6 +134,20 @@
 	item_state = "gadpathurthermal"
 	armor = ARMOR_VALUE_LIGHT
 
+/obj/item/clothing/suit/aurora/abbasi_carrier
+	name = "Abbasi Armor"
+	desc = "A black armor with gold trim."
+	icon_state = "abbasi_carrier"
+	item_state = "abbasi_carrier"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/aurora/bells_zora_cloak
+	name = "Zora Cloak"
+	desc = "A long white cloak/jacket."
+	icon_state = "bells_zora_cloak"
+	item_state = "bells_zora_cloak"
+	armor = ARMOR_VALUE_LIGHT
+
 /obj/item/clothing/suit/labcoat/aurora/coat_himeo
 	name = "Himeo Coat"
 	desc = "A long brown coat outlined in white."
@@ -279,6 +293,13 @@
 	desc = "A long red coat."
 	icon_state = "dominian_surcoat"
 	item_state = "dominian_surcoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/freedom_coat
+	name = "Freedom Coat"
+	desc = "A teal coat with a golden trim"
+	icon_state = "freedom_coat"
+	item_state = "freedom_coat"
 	armor = ARMOR_VALUE_LIGHT
 
 //Capes

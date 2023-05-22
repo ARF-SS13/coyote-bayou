@@ -1058,6 +1058,16 @@
 	path = /obj/item/clothing/suit/aurora/winterchokhared
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/abbasi
+	name = "Abbasi Armor"
+	path = /obj/item/clothing/suit/aurora/abbasi_carrier
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+
+/datum/gear/suit/aurora/freedomcoat
+	name = "Freedom Coat"
+	path = /obj/item/clothing/suit/labcoat/aurora/freedom_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
