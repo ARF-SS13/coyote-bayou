@@ -873,6 +873,36 @@
 	path = /obj/item/clothing/suit/aurora/officercoat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/greatcoatred
+	name = "Red great coat"
+	path = /obj/item/clothing/suit/aurora/greatcoatred
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/greatcoatgold
+	name = "Gold great coat"
+	path = /obj/item/clothing/suit/aurora/greatcoatgold
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/greatcoatblack
+	name = "Black great coat"
+	path = /obj/item/clothing/suit/aurora/greatcoatblack
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/coatred
+	name = "Red short coat"
+	path = /obj/item/clothing/suit/aurora/coatred
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/coatgold
+	name = "Gold short coat"
+	path = /obj/item/clothing/suit/aurora/coatgold
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/coatblack
+	name = "Black short coat"
+	path = /obj/item/clothing/suit/aurora/coatblack
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
