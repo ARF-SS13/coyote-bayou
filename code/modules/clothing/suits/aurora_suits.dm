@@ -147,3 +147,59 @@
 	icon_state = "idris_duster"
 	item_state = "idris_duster"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_coatwhite
+	name = "Idris Coat, white "
+	desc = "A white coat with Turqoise lining."
+	icon_state = "idris_coat_white"
+	item_state = "idris_coat_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_longcoatwhite
+	name = "Idris long Coat, white "
+	desc = "A white long coat with Turqoise lining."
+	icon_state = "idris_longcoat_white"
+	item_state = "idris_longcoat_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_trenchcoatwhite
+	name = "Idris trench Coat, white "
+	desc = "A white trench coat with Turqoise lining."
+	icon_state = "idris_trenchcoat_white"
+	item_state = "idris_trenchcoat_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_dusterwhite
+	name = "Idris Duster Coat, white "
+	desc = "A white duster coat with Turqoise lining."
+	icon_state = "idris_duster_white"
+	item_state = "idris_duster_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_coatbrown
+	name = "Idris Coat, brown"
+	desc = "A brown coat with cream lining."
+	icon_state = "idris_coat_brown"
+	item_state = "idris_coat_brown"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_longcoatbrown
+	name = "Idris Long Coat, brown"
+	desc = "A brown long coat with cream lining."
+	icon_state = "idris_longcoat_brown"
+	item_state = "idris_longcoat_brown"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_trenchcoatbrown
+	name = "Idris Trench Coat, brown"
+	desc = "A brown Trench coat with cream lining."
+	icon_state = "idris_trenchcoat_brown"
+	item_state = "idris_trenchcoat_brown"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/labcoat/aurora/idris_dusterbrown
+	name = "Idris Duster Coat, brown"
+	desc = "A brown duster with cream lining."
+	icon_state = "idris_duster_brown"
+	item_state = "idris_duster_brown"
+	armor = ARMOR_VALUE_LIGHT

@@ -948,9 +948,29 @@
 	path = /obj/item/clothing/suit/labcoat/aurora/idris_coat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/idris_coatwhite
+	name = "Idris Coat, white"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatwhite
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_coatbrown
+	name = "Idris Coat, Brown"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatbrown
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 /datum/gear/suit/aurora/idris_coatlong
 	name = "Idris Long Coat"
 	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatlong
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_coatlongwhite
+	name = "Idris Long Coat, white"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatlongwhite
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_coatlongbrown
+	name = "Idris Long Coat, brown"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_coatlongbrown
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 /datum/gear/suit/aurora/idris_trenchcoat
@@ -958,9 +978,29 @@
 	path = /obj/item/clothing/suit/labcoat/aurora/idris_trenchcoat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/idris_trenchcoatwhite
+	name = "Idris Trench Coat, white"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_trenchcoatwhite
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_trenchcoatbrown
+	name = "Idris Trench Coat, brown"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_trenchcoatbrown
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 /datum/gear/suit/aurora/idris_duster
 	name = "Idris Duster Coat"
 	path = /obj/item/clothing/suit/labcoat/aurora/idris_duster
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_dusterwhite
+	name = "Idris Duster Coat, white"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_dusterwhite
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/idris_dusterbrown
+	name = "Idris Duster Coat, brown"
+	path = /obj/item/clothing/suit/labcoat/aurora/idris_dusterbrown
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
 // BEGIN_INTERNALS
