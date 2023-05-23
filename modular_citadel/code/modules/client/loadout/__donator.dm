@@ -544,8 +544,8 @@
 /obj/item/storage/box/large/custom_kit/irkallaepsilon/PopulateContents()
     new /obj/item/circuitboard/machine/plantgenes(src)
     new /obj/item/circuitboard/machine/biogenerator(src)
-    new /obj/item/circuitboard/machine/seed_extractor
-    new /obj/item/clothing/mask/gas/syndicate
+    new /obj/item/circuitboard/machine/seed_extractor(src)
+    new /obj/item/clothing/mask/gas/syndicate(src)
 	
 // J
 
