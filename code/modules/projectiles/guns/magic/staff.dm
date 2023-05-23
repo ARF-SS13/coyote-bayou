@@ -100,6 +100,29 @@
 		return BLOCK_NONE
 	return ..()
 
+/obj/item/gun/magic/staff/kiblast
+	name = "charged ki blast"
+	desc = "The energy that flows through you, concentrated into the palm of your hand."
+	fire_sound = 'sound/magic/kiblast.wav'
+	ammo_type = /obj/item/ammo_casing/magic/kiblast
+	icon = '/icons/obj/items_and_weapons.dmi'
+	icon_state = "disentegrate"
+	item_state = "defibcompact-emagged"
+	max_charges = 100
+	recharge_rate = 10 SECONDS
+	
+	
+/obj/item/gun/magic/staff/kibeam
+	name = "full powered energy wave"
+	desc = "The energy that flows through you, concentrated into the palm of your hand, now wave-like!"
+	fire_sound = 'sound/magic/basicbeam_fire.ogg'
+	ammo_type = /obj/item/projectile/beam/laser/pistol/badlands/hitscan
+	icon = '/icons/obj/items_and_weapons.dmi'
+	icon_state = "fleshtostone"
+	item_state = "defibcompact-emagged"
+	max_charges = 1
+	recharge_rate = 3 SECONDS
+
 /obj/item/gun/magic/staff/locker
 	name = "staff of the locker"
 	desc = "An artefact that expells encapsulating bolts, for incapacitating thy enemy."
