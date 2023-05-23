@@ -423,10 +423,11 @@
 			ui_interact(user)
 			var/atom/movable/result = construct_item(user, TR)
 			if(!istext(result)) //We made an item and didn't get a fail message
-				if(ismob(user) && isitem(result)) //In case the user is actually possessing a non mob like a machine
-					user.put_in_hands(result)
-				else
-					result.forceMove(user.drop_location())
+				if(ismob(user))
+					if(isitem(result)) //In case the user is actually possessing a non mob like a machine
+						user.put_in_hands(result)
+					else if(!isturf(result))
+						result.forceMove(user.drop_location())
 				to_chat(user, span_notice("[TR.name] constructed."))
 			else
 				to_chat(user, span_warning("Construction failed[result]"))

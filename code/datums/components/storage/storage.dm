@@ -286,7 +286,7 @@
 	SSprogress_bars.remove_bar(my_bar)
 	A.do_squish(0.8, 1.2)
 
-/datum/component/storage/proc/mass_remove_from_storage(atom/target, list/things, datum/progressbar/progress, trigger_on_found = TRUE)
+/datum/component/storage/proc/mass_remove_from_storage(atom/target, list/things, progress, trigger_on_found = TRUE)
 	var/atom/real_location = real_location()
 	for(var/obj/item/I in things)
 		things -= I
@@ -296,9 +296,9 @@
 		if(trigger_on_found && I.on_found())
 			return FALSE
 		if(TICK_CHECK)
-			progress.update(progress.goal - length(things))
+			SSprogress_bars.update_bar(progress, length(things))
 			return TRUE
-	progress.update(progress.goal - length(things))
+	SSprogress_bars.update_bar(progress, length(things))
 	return FALSE
 
 /datum/component/storage/proc/do_quick_empty(atom/_target)
