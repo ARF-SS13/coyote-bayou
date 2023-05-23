@@ -12138,14 +12138,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
-"fMJ" = (
-/obj/item/radio/intercom{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/bunker)
 "fNf" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16834,13 +16826,15 @@
 	},
 /area/f13/bunker)
 "ihO" = (
-/obj/item/radio/intercom{
-	dir = 4
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirty"
-	},
-/area/f13/bunker)
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "ihZ" = (
 /obj/structure/rack,
 /obj/item/target,
@@ -17168,14 +17162,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operating)
-"iqN" = (
-/obj/machinery/smartfridge/bottlerack,
-/obj/item/reagent_containers/food/drinks/bottle/sake,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
 "iqT" = (
 /obj/machinery/light{
 	dir = 1
@@ -17739,14 +17725,6 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/underground/cave)
-"iFE" = (
-/obj/item/radio/intercom{
-	dir = 4
-	},
-/turf/open/floor/carpet{
-	icon_state = "carpetsymbol"
-	},
-/area/f13/bunker)
 "iGh" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -19946,13 +19924,16 @@
 /turf/open/water,
 /area/f13/brotherhood/leisure)
 "jIL" = (
-/obj/item/radio/intercom{
-	dir = 4
+/obj/machinery/smartfridge/bottlerack,
+/obj/item/reagent_containers/food/drinks/bottle/sake,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/bunker)
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "jIV" = (
 /obj/structure/table/wood,
 /obj/item/lighter{
@@ -21535,12 +21516,6 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/underground/cave)
-"kxa" = (
-/obj/item/radio/intercom{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/bunker)
 "kxi" = (
 /obj/structure/decoration/vent,
 /turf/closed/wall/r_wall,
@@ -22591,12 +22566,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/enclave)
-"kXs" = (
-/obj/item/radio/intercom{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
-/area/f13/bunker)
 "kXB" = (
 /obj/structure/table/reinforced,
 /obj/structure/cable{
@@ -31764,16 +31733,14 @@
 	},
 /area/f13/enclave)
 "pqu" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/obj/item/radio/intercom{
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirty"
-	},
-/area/f13/bunker)
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "pqw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -39530,14 +39497,6 @@
 /mob/living/simple_animal/hostile/renegade/guardian,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
-"sYc" = (
-/obj/item/radio/intercom{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
-/area/f13/bunker)
 "sYi" = (
 /obj/structure/closet/fridge{
 	anchored = 1
@@ -40486,14 +40445,6 @@
 /obj/item/healthanalyzer,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/enclave)
-"txG" = (
-/obj/item/radio/intercom{
-	dir = 8
-	},
-/turf/open/floor/carpet{
-	icon_state = "carpetsymbol"
-	},
-/area/f13/bunker)
 "txT" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/spider/stickyweb,
@@ -47863,14 +47814,6 @@
 /obj/item/gun/magic/wand/book/healing,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
-"xeH" = (
-/obj/item/radio/intercom{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
-	},
-/area/f13/bunker)
 "xeU" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
@@ -51281,7 +51224,7 @@ dmm
 qEZ
 wvF
 wvF
-fMJ
+wvF
 wvF
 aKV
 nkQ
@@ -51497,7 +51440,7 @@ qEZ
 lzR
 lzR
 lzR
-ddi
+lzR
 lzR
 lzR
 cJa
@@ -51766,7 +51709,7 @@ wvF
 lzR
 qEZ
 fRX
-jIL
+wvF
 pTt
 wvF
 qEZ
@@ -52278,7 +52221,7 @@ qEZ
 lzR
 wvF
 lzR
-ddi
+lzR
 lzR
 fUh
 lzR
@@ -52308,7 +52251,7 @@ wvF
 lzR
 lzR
 lzR
-ddi
+lzR
 lzR
 lzR
 qEZ
@@ -52525,7 +52468,7 @@ qEZ
 fVE
 fVE
 fVE
-sYc
+fVE
 fVE
 uPF
 hoo
@@ -52832,7 +52775,7 @@ qEZ
 nRI
 nRI
 lzR
-ihO
+lzR
 fsK
 qEZ
 esJ
@@ -53341,10 +53284,10 @@ hXB
 lzR
 cYW
 lzR
-ddi
+lzR
 lzR
 cYW
-ddi
+lzR
 lzR
 ihZ
 jCw
@@ -54364,7 +54307,7 @@ qjc
 qEZ
 dXf
 lzR
-ddi
+lzR
 lzR
 dmm
 qEZ
@@ -55387,7 +55330,7 @@ ieF
 qEZ
 iId
 mlD
-ihO
+lzR
 qjc
 qEZ
 mvy
@@ -55614,7 +55557,7 @@ fVE
 fVE
 fVE
 fVE
-tFX
+fVE
 gHn
 lzR
 wvF
@@ -56625,7 +56568,7 @@ qsj
 sFz
 sFz
 iTn
-kXs
+sFz
 ole
 qEZ
 lzR
@@ -57162,7 +57105,7 @@ wvF
 lzR
 qEZ
 qEZ
-txG
+fQA
 cnq
 cnq
 fQA
@@ -59218,7 +59161,7 @@ wvF
 lzR
 qEZ
 qEZ
-iFE
+fQA
 cnq
 cnq
 fQA
@@ -59488,7 +59431,7 @@ qEZ
 dfT
 sFz
 sFz
-kxa
+sFz
 jeC
 qEZ
 bVO
@@ -59709,7 +59652,7 @@ sFz
 sFz
 sFz
 sFz
-kxa
+sFz
 ole
 qEZ
 lzR
@@ -60522,7 +60465,7 @@ qEZ
 esJ
 qEZ
 rJm
-xeH
+fHs
 qEZ
 fUh
 lzR
@@ -60749,7 +60692,7 @@ qEZ
 ojM
 xrI
 lKN
-pqu
+rwr
 dmm
 lzR
 lzR
@@ -61687,15 +61630,15 @@ whv
 whv
 qxy
 whv
-qxy
-whv
-whv
-whv
-whv
-qxy
-whv
-qxy
-whv
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
 rLB
 rXY
 nLk
@@ -61944,15 +61887,15 @@ whv
 qxy
 qxy
 qxy
-qxy
-whv
-qxy
-qxy
-whv
-qxy
-qxy
-qxy
-whv
+auq
+pEe
+ihO
+pEe
+jIL
+pEe
+pqu
+pEe
+unL
 rLB
 nLk
 rXY
@@ -62073,7 +62016,7 @@ qEZ
 igU
 lzR
 igU
-ihO
+lzR
 jOf
 lzR
 igU
@@ -62084,7 +62027,7 @@ lzR
 cYW
 lzR
 lHa
-ihO
+lzR
 lzR
 qEZ
 esJ
@@ -62201,15 +62144,15 @@ whv
 whv
 qxy
 whv
-qxy
-whv
-whv
-qxy
-whv
-whv
-qxy
-whv
-whv
+unL
+pEe
+ggp
+pEe
+buz
+pEe
+buz
+pEe
+unL
 rLB
 rXY
 nLk
@@ -62458,15 +62401,15 @@ qxy
 whv
 qxy
 whv
-qxy
-qxy
-qxy
-qxy
-qxy
-qxy
-qxy
-qxy
-qxy
+auq
+pEe
+qEy
+pEe
+unL
+pEe
+buz
+pEe
+unL
 rLB
 cJD
 nLk
@@ -62715,16 +62658,16 @@ whv
 whv
 qxy
 qxy
-whv
-whv
-whv
-whv
-qxy
-whv
-whv
-qxy
-whv
-rLB
+unL
+pEe
+pEe
+fKb
+pEe
+pEe
+pEe
+pEe
+pEe
+vXE
 nLk
 rXY
 nLk
@@ -62972,15 +62915,15 @@ qxy
 qxy
 qxy
 whv
-qxy
-qxy
-qxy
-whv
-qxy
-whv
-qxy
-qxy
-qxy
+unL
+pEe
+unL
+pEe
+unL
+pEe
+auq
+pEe
+unL
 rLB
 nLk
 nLk
@@ -63004,7 +62947,7 @@ rLB
 rLB
 rLB
 rLB
-vXE
+rLB
 rLB
 rLB
 rLB
@@ -63229,15 +63172,15 @@ whv
 qxy
 qxy
 whv
-whv
-whv
-qxy
-whv
-qxy
-whv
-whv
-whv
-whv
+buz
+pEe
+unL
+pEe
+buz
+pEe
+auq
+pEe
+fEN
 rLB
 nLk
 rXY
@@ -63258,16 +63201,16 @@ nLk
 nLk
 nLk
 rLB
-auq
-pEe
-mMZ
-pEe
-mMZ
-pEe
-pEe
-pEe
-unL
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 rjb
@@ -63486,15 +63429,15 @@ qxy
 whv
 qxy
 whv
-qxy
-qxy
-qxy
-whv
-qxy
-whv
-qxy
-qxy
-qxy
+jHz
+jMj
+buz
+jMj
+vGR
+jMj
+unL
+jMj
+vGR
 rLB
 nLk
 nLk
@@ -63515,16 +63458,16 @@ nLk
 nLk
 nLk
 rLB
-unL
-pEe
-ggp
-pEe
-buz
-pEe
-buz
-pEe
-unL
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 rjb
@@ -63743,15 +63686,15 @@ whv
 whv
 qxy
 whv
-whv
-whv
-qxy
-qxy
-qxy
-whv
-qxy
-whv
-qxy
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
+rLB
 rLB
 rXY
 nLk
@@ -63772,16 +63715,16 @@ nLk
 nLk
 nLk
 rLB
-auq
-pEe
-qEy
-pEe
-unL
-pEe
-buz
-pEe
-unL
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 rjb
@@ -64029,16 +63972,16 @@ nLk
 nLk
 nLk
 rLB
-unL
-pEe
-auq
-fKb
-iqN
-pEe
-unL
-pEe
-unL
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 sjZ
@@ -64286,16 +64229,16 @@ nLk
 nLk
 nLk
 rLB
-unL
-pEe
-unL
-pEe
-unL
-pEe
-auq
-pEe
-unL
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 rjb
@@ -64543,16 +64486,16 @@ nLk
 nLk
 nLk
 rLB
-buz
-pEe
-unL
-pEe
-buz
-pEe
-auq
-pEe
-fEN
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 rjb
@@ -64654,7 +64597,7 @@ iwG
 qEZ
 rur
 lzR
-ihO
+lzR
 rhW
 qEZ
 esJ
@@ -64800,16 +64743,16 @@ nLk
 nLk
 nLk
 rLB
-jHz
-jMj
-buz
-jMj
-vGR
-jMj
-unL
-jMj
-vGR
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 rjb
@@ -65057,16 +65000,16 @@ nLk
 nLk
 nLk
 rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
+whv
 whv
 hvH
 rjb
