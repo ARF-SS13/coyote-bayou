@@ -306,8 +306,8 @@
 /datum/gear/donator/kits/caseapollo58143_4
 	name = "Smogsuit Kit"
 	path = /obj/item/storage/box/large/custom_kit/caseapollo58143_4
-	ckeywhitelist = list("caseapollo58143")	
-	
+	ckeywhitelist = list("caseapollo58143")
+
 /obj/item/storage/box/large/custom_kit/caseapollo58143_4/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog(src)
 	new /obj/item/clothing/suit/armor/light/kit/dustersmog(src)
@@ -351,6 +351,12 @@
 	new /obj/item/storage/belt/legholster(src)
 	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
 	new /obj/item/clothing/suit/armor/light/duster/town/leather(src)
+
+/datum/gear/donator/kits/dameonowencoat
+	name = "Dragon Coat"
+	path = /obj/item/clothing/suit/armor/light/duster/town/leather
+	ckeywhitelist = list("dameonowen")
+	cost = 1
 
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
@@ -576,6 +582,50 @@
 	new /obj/item/clothing/under/syndicate/camo(src)
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/radio(src)
+
+/datum/gear/donator/kits/jaggachi
+	name = "Scug Industries Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/smg10mm/worn(src)
+
+/datum/gear/donator/kits/jaggachi_2
+	name = "NCR Service Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_2
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/m1carbine/compact(src)
+
+/datum/gear/donator/kits/jaggachi_3
+	name = "Hunting Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_3
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_3/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/automatic/combat/auto5(src)
+
+/datum/gear/donator/kits/jaggachi_4
+	name = "Gunslinging Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_4
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_4/PopulateContents()
+	new /obj/item/storage/box/gun/revolver/revolver44(src)
+	new /obj/item/storage/box/gun/revolver/revolver44(src)
+
+/datum/gear/donator/kits/jaggachi_5
+	name = "Army Service Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_5
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_5/PopulateContents()
+	new /obj/item/clothing/suit/armor/medium/combat/rusted(src)
+	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken(src)
+	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
+	new /obj/item/ammo_box/m44box(src)
 
 // K
 
@@ -1201,17 +1251,13 @@
 /datum/gear/donator/kits/xxpawnstarrxx
 	name = "Botanical Bounty Box"
 	path = /obj/item/storage/box/large/custom_kit/blindboyo
-	ckeywhitelist = list("xxpawnstarrxx")
-	
+	ckeywhitelist = list("XXPawnStarrXx")
+
 /obj/item/storage/box/large/custom_kit/blindboyo/PopulateContents()
     new /obj/item/circuitboard/machine/biogenerator(src)
     new /obj/item/circuitboard/machine/plantgenes(src)
     new /obj/item/circuitboard/machine/seed_extractor(src)
-    new /obj/item/plant_analyzer(src)
-    new /obj/item/cultivator(src)
-    new /obj/item/shovel/spade(src)
-    new /obj/item/storage/bag/plants(src)
-    new /obj/item/queen_bee(src)
+    new /obj/item/queen_bee/bought(src)
     new /obj/item/seeds/bee_balm(src)
     new /obj/item/seeds/pumpkin(src)
     new /obj/item/seeds/garlic(src)
@@ -1275,8 +1321,7 @@
 	ckeywhitelist = list("Kelprunner")
 
 /obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/wt550/worn(src)
-	new /obj/item/ammo_box/magazine/m473/small(src)
+	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/storage/firstaid/emergency(src)
 
 /datum/gear/donator/kits/lucine2

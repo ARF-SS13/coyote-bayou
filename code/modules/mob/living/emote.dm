@@ -331,13 +331,7 @@
 	key_third_person = "chitters"
 	message = "chitters."
 	message_param = "chitters at %t."
-
-/datum/emote/living/audible/chitter/get_sound(mob/living/user)
-	. = ..()
-	if(ishuman(user))
-		var/mob/living/carbon/human/human_user = user
-		if(isinsect(human_user))
-			return 'sound/voice/moth/mothchitter.ogg'
+	sound = 'sound/voice/moth/mothchitter.ogg'
 
 
 /datum/emote/living/nod
@@ -1076,6 +1070,29 @@
 	key_third_person = "doesn't sound happy!"
 	message = "doesn't sound happy!"
 	sound = 'sound/f13npc/nightstalker/aggro3.ogg'
+
+
+/datum/emote/qrattle
+	key = "qrattle"
+	key_third_person = "rattles their quills worriedly."
+	message = "rattles their quills worridly."
+	sound = 'sound/f13effects/sunsetsounds/qrattle.ogg'
+	sound_volume = 90
+
+/datum/emote/whisker
+	key = "whisker"
+	key_third_person = "twitches their whiskers!"
+	message = "twitches their whiskers!"
+
+/datum/emote/awhisker
+	key = "awhisker"
+	key_third_person = "twitches their whiskers like they're annoyed!"
+	message = "twitches their whiskers like they're annoyed!"
+
+/datum/emote/crinkle
+	key = "crinkle"
+	key_third_person = "crinkles their nose!"
+	message = "crinkles their nose!"
 
 /datum/emote/weh
 	key = "weh"

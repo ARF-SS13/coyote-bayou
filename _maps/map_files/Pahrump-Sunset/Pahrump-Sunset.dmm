@@ -19027,6 +19027,12 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
+/obj/effect/turf_decal/arrows{
+	dir = 4;
+	layer = 5;
+	pixel_x = -10;
+	pixel_y = 7
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -21854,9 +21860,9 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/rack/shelf_metal{
-	pixel_y = -1;
+	layer = 7;
 	pixel_x = 11;
-	layer = 7
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
@@ -22398,11 +22404,6 @@
 "bRT" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
-	},
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "tunnelertemple";
-	name = "ancient ladder"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -32910,9 +32911,15 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "emd" = (
-/obj/structure/timeddoor,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 1;
+	light_color = "#FF0000"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "emh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -39651,8 +39658,8 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/machinery/light/small{
 	color = "#FF0000";
-	light_color = "#FF0000";
-	dir = 8
+	dir = 8;
+	light_color = "#FF0000"
 	},
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -48592,8 +48599,8 @@
 	dir = 8
 	},
 /obj/structure/rack/shelf_metal{
-	pixel_y = 15;
-	layer = 7
+	layer = 7;
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
@@ -60616,6 +60623,23 @@
 /obj/structure/closet/crate/trashcart,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"lcq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "tunnelertemple";
+	name = "ancient ladder"
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 4;
+	light_color = "#FF0000"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "lct" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/store,
@@ -61596,9 +61620,9 @@
 /area/f13/wasteland/city/nash/downtown)
 "lnz" = (
 /obj/structure/rack/shelf_metal{
-	pixel_y = -1;
+	layer = 7;
 	pixel_x = 11;
-	layer = 7
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
@@ -69362,8 +69386,8 @@
 	color = "#FF0000";
 	dir = 4;
 	light_color = "#FF0000";
-	pixel_y = 7;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 7
 	},
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/theloop)
@@ -72530,6 +72554,9 @@
 	pixel_x = -6
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -91145,6 +91172,19 @@
 	icon_state = "verticaloutermain0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"syg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	color = "#FF0000";
+	dir = 4;
+	light_color = "#FF0000"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "syi" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -162862,7 +162902,7 @@ oEp
 oEp
 qFv
 umE
-emd
+aaB
 bRT
 aaa
 "}
@@ -163119,8 +163159,8 @@ lTe
 tuk
 vhj
 aaB
-emd
-emd
+aaB
+aaB
 aaa
 "}
 (190,1,1) = {"
@@ -163589,7 +163629,7 @@ rmj
 rMl
 ivj
 ajS
-afS
+emd
 ieJ
 jAv
 sGX
@@ -164103,9 +164143,9 @@ bhU
 bko
 iDe
 ajS
+lcq
 fFf
-fFf
-ivj
+syg
 aaM
 nri
 bnO
@@ -165391,7 +165431,7 @@ bnO
 nRt
 bhy
 bdT
-bko
+afS
 afS
 bnO
 nDc

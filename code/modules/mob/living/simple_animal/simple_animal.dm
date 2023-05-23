@@ -667,7 +667,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/dropthing = pickweight_n_take(lootlist)
 		if(ispath(dropthing))
 			var/turf/spawn_here = pick(turfs)
-			var/atom/newthing = new dropthing(spawn_here.drop_location())
+			var/atom/newthing = new dropthing(get_turf(spawn_here))
 			if(istype(newthing, /obj/effect/spawner/lootdrop))
 				var/obj/effect/spawner/lootdrop/lut = newthing
 				if(lut.delay_spawn)
