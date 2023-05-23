@@ -17,6 +17,12 @@
 /obj/item/flag/usa,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
+"ag" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/vault)
 "ah" = (
 /obj/structure/mirror{
 	pixel_x = 28
@@ -28,6 +34,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
+"aj" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/refine)
 "ak" = (
 /obj/machinery/microwave/white_stove,
 /turf/open/floor/f13,
@@ -46,6 +56,10 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/cult,
 /area/awaymission/wildwest/gov)
+"ar" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/f13/farmhouse)
 "as" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/necropolis,
@@ -94,6 +108,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
+"aA" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plating/snowed/colder,
+/area/awaymission/wildwest/refine)
 "aB" = (
 /mob/living/simple_animal/hostile/retaliate/frog{
 	faction = list("hostile")
@@ -101,8 +119,13 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/dark,
 /area/awaymission/wildwest/refine)
+"aC" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest)
 "aD" = (
 /obj/structure/stairs/north,
 /obj/structure/stairs/north,
@@ -140,6 +163,11 @@
 "aN" = (
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest)
+"aP" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/refine)
 "aR" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -169,6 +197,7 @@
 "aZ" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
 "ba" = (
@@ -225,6 +254,11 @@
 /obj/structure/closet/athletic_mixed,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
+"bj" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/refine)
 "bk" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -234,6 +268,7 @@
 	dir = 8;
 	id_tag = "generator_internal"
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "bm" = (
@@ -246,6 +281,8 @@
 /area/awaymission/wildwest/refine)
 "bq" = (
 /obj/structure/closet/crate/hydroponics,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
 "bs" = (
@@ -304,6 +341,7 @@
 /area/awaymission/wildwest/gov)
 "bE" = (
 /obj/structure/wreck/trash/one_tire,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "bF" = (
@@ -313,6 +351,10 @@
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
+"bG" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/inside/mountain,
+/area/awaymission/wildwest/mines)
 "bH" = (
 /obj/effect/decal/cleanable/blood/gibs/human/limb,
 /turf/open/floor/f13,
@@ -329,6 +371,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
+"bO" = (
+/obj/structure/closet/crate{
+	name = "solar pack crate"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/vault)
+"bQ" = (
+/obj/item/stack/sheet/mineral/diamond,
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating{
+	icon_state = "asteroidfloor"
+	},
+/area/awaymission/wildwest/refine)
 "bT" = (
 /turf/closed/indestructible/rock/sand,
 /area/awaymission/wildwest/refine)
@@ -365,6 +423,7 @@
 	dir = 10;
 	id_tag = "generator_internal"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "cf" = (
@@ -378,6 +437,13 @@
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
+"cg" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13{
+	icon_state = "darkredfull"
+	},
+/area/awaymission/wildwest/refine)
 "ch" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -445,6 +511,10 @@
 "cB" = (
 /turf/closed/wall/r_wall/rust,
 /area/awaymission/wildwest/vault)
+"cE" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/carpet/black,
+/area/awaymission/wildwest/refine)
 "cF" = (
 /obj/structure/simple_door/interior,
 /turf/open/floor/wood_common,
@@ -461,11 +531,28 @@
 /obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/refine)
+"cJ" = (
+/mob/living/simple_animal/hostile/ghoul/reaver{
+	icon_state = "hot_feral";
+	icon_living = "hot_feral";
+	name = "son of the sun";
+	extra_projectiles = 5;
+	rapid_fire_delay = 0;
+	melee_damage_upper = 25;
+	melee_damage_lower = 20;
+	melee_damage_type = "fire";
+	health = 350;
+	projectiletype = /obj/item/projectile/seedling
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/asteroid,
+/area/f13/underground/cave)
 "cK" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen";
 	opened = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "cL" = (
@@ -519,6 +606,11 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
+"dd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/refine)
 "de" = (
 /obj/structure/barricade/bars,
 /turf/open/indestructible/ground/outside/roaddirt,
@@ -544,6 +636,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/farmhouse)
+"di" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/refine)
 "dk" = (
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/rockcrete_slab,
@@ -662,6 +759,7 @@
 /area/awaymission/wildwest)
 "dL" = (
 /obj/item/reagent_containers/food/snacks/meat/slab/gorilla,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/snowed/colder,
 /area/awaymission/wildwest/refine)
 "dM" = (
@@ -678,6 +776,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating,
 /area/f13/farmhouse)
 "dO" = (
@@ -695,9 +794,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/farmhouse)
 "dU" = (
-/obj/structure/table/reinforced,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/awaymission/wildwest/vault)
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/roaddirt,
+/area/awaymission/wildwest)
 "dV" = (
 /obj/machinery/vending/cola,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -765,6 +864,7 @@
 /area/awaymission/wildwest/refine)
 "en" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
 "eo" = (
@@ -777,6 +877,7 @@
 	dir = 4;
 	state = 2
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
 "es" = (
@@ -895,6 +996,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
+"eY" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/awaymission/wildwest/vault)
 "fa" = (
 /obj/machinery/conveyor{
 	id_tag = "mining_internal"
@@ -985,6 +1091,8 @@
 "fs" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/glasses/material/mining/gar,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -1007,6 +1115,7 @@
 	dir = 6;
 	id_tag = "generator_internal"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating,
 /area/awaymission/wildwest/refine)
 "fA" = (
@@ -1019,6 +1128,7 @@
 /area/awaymission/wildwest/refine)
 "fC" = (
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "fE" = (
@@ -1082,6 +1192,10 @@
 /obj/structure/closet/secure_closet/miner,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"fQ" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/asteroid,
+/area/awaymission/wildwest/vault)
 "fR" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -1089,6 +1203,8 @@
 "fS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "fU" = (
@@ -1140,6 +1256,11 @@
 "gj" = (
 /turf/closed/wall/r_wall,
 /area/awaymission/wildwest)
+"gl" = (
+/obj/structure/closet/crate/secure/loot,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/vault)
 "gm" = (
 /obj/machinery/camera{
 	dir = 8;
@@ -1177,6 +1298,13 @@
 /obj/machinery/power/floodlight,
 /turf/open/floor/plating/asteroid,
 /area/f13/underground/cave)
+"gs" = (
+/obj/effect/decal/waste{
+	icon_state = "goo7"
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/awaymission/wildwest)
 "gt" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder{
@@ -1195,6 +1323,10 @@
 "gz" = (
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/f13/farmhouse)
+"gC" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/refine)
 "gH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1245,6 +1377,7 @@
 "hb" = (
 /obj/item/stack/sheet/mineral/adamantine,
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -1269,11 +1402,16 @@
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
+"hi" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plating/wooden,
+/area/awaymission/wildwest/refine)
 "hk" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder{
 	pixel_y = 10
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
 "hl" = (
@@ -1297,10 +1435,12 @@
 	amount = 50
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/refine)
 "ho" = (
 /obj/structure/closet/wardrobe/chemistry_white,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "hr" = (
@@ -1333,11 +1473,12 @@
 /area/awaymission/wildwest)
 "hz" = (
 /obj/structure/table/reinforced,
-/obj/item/melee/sickly_blade/flesh,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/necropolis,
 /area/awaymission/wildwest/gov)
 "hC" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/vault)
 "hD" = (
@@ -1415,6 +1556,11 @@
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"hU" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/awaymission/wildwest/refine)
 "hV" = (
 /obj/effect/decal/waste{
 	icon_state = "goo10"
@@ -1436,6 +1582,7 @@
 /area/awaymission/wildwest)
 "id" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "if" = (
@@ -1479,6 +1626,7 @@
 /area/awaymission/wildwest)
 "ip" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/wooden,
 /area/awaymission/wildwest)
 "iq" = (
@@ -1532,6 +1680,10 @@
 	},
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest/vault)
+"iI" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/refine)
 "iK" = (
 /obj/structure/table,
 /obj/machinery/light{
@@ -1570,6 +1722,10 @@
 /obj/machinery/telecomms/hub/preset,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"iT" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/awaymission/wildwest)
 "iU" = (
 /obj/structure/debris/v1,
 /turf/open/floor/wood_common,
@@ -1624,6 +1780,10 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/refine)
+"jj" = (
+/mob/living/simple_animal/hostile/ghoul/soldier/armored,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/refine)
 "jk" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
 	faction = list("hostile","robot")
@@ -1674,6 +1834,7 @@
 /area/awaymission/wildwest)
 "jv" = (
 /obj/structure/closet/l3closet/janitor,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "jx" = (
@@ -1709,6 +1870,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "Junk_5"
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "jF" = (
@@ -1717,12 +1879,22 @@
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"jH" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/refine)
 "jJ" = (
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
 "jL" = (
 /obj/machinery/iv_drip,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
+"jN" = (
+/obj/structure/closet/crate/medical,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "jO" = (
@@ -1761,12 +1933,15 @@
 /obj/item/stack/sheet/mineral/gold,
 /obj/item/stack/sheet/mineral/gold,
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
 /area/awaymission/wildwest/refine)
 "jU" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "jV" = (
@@ -1801,6 +1976,7 @@
 /area/awaymission/wildwest/vault)
 "kb" = (
 /obj/structure/filingcabinet/filingcabinet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "ke" = (
@@ -1823,6 +1999,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_ammo,
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
+"kk" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/carpet/black,
+/area/awaymission/wildwest/refine)
 "kn" = (
 /obj/machinery/recharge_station/fullupgrade,
 /turf/open/floor/plating{
@@ -1834,8 +2016,14 @@
 	icon_state = "crateopen";
 	opened = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"kp" = (
+/obj/structure/nest/securitron,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/vault)
 "kq" = (
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife{
@@ -1865,6 +2053,7 @@
 /area/awaymission/wildwest)
 "kz" = (
 /obj/structure/bookshelf,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark{
 	icon_state = "cult"
 	},
@@ -1890,6 +2079,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest/refine)
 "kF" = (
@@ -1942,6 +2132,10 @@
 /obj/item/chair/stool/alien,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"kU" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/roaddirt,
+/area/awaymission/wildwest/vaultdoors)
 "kV" = (
 /obj/structure/fence{
 	dir = 4
@@ -1954,6 +2148,11 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
+"lc" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
 "ld" = (
 /obj/machinery/light{
 	dir = 1
@@ -1972,6 +2171,8 @@
 /area/awaymission/wildwest/refine)
 "lg" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
 "lk" = (
@@ -1995,7 +2196,12 @@
 "lq" = (
 /obj/structure/table,
 /obj/machinery/light,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
+"lr" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/dirt/dark,
 /area/awaymission/wildwest/refine)
 "lt" = (
 /obj/structure/statue/bone/rib{
@@ -2006,6 +2212,7 @@
 "lw" = (
 /obj/structure/table,
 /obj/item/key/janitor,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "ly" = (
@@ -2043,6 +2250,7 @@
 /area/awaymission/wildwest)
 "lF" = (
 /obj/structure/table/glass,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/vault)
 "lH" = (
@@ -2130,10 +2338,18 @@
 	icon_state = "cult"
 	},
 /area/awaymission/wildwest/refine)
+"md" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/asteroid,
+/area/f13/underground/cave)
 "me" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
+"mf" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/dirt/dark,
+/area/awaymission/wildwest/refine)
 "mg" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/dark,
@@ -2141,6 +2357,7 @@
 "mi" = (
 /obj/machinery/light,
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "mj" = (
@@ -2183,10 +2400,12 @@
 /obj/structure/closet/crate{
 	name = "Gold Crate"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "mu" = (
 /obj/structure/closet/toolcloset,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
 "mw" = (
@@ -2318,8 +2537,20 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
+"ni" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/vault)
 "nl" = (
 /obj/structure/closet/toolcloset,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -2347,6 +2578,7 @@
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/ore/plasma,
 /obj/item/stack/ore/plasma,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "no" = (
@@ -2380,6 +2612,7 @@
 "ns" = (
 /obj/structure/closet/crate/large,
 /obj/structure/nest/securitron,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/vault)
 "nt" = (
@@ -2392,6 +2625,10 @@
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"ny" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/f13/farmhouse)
 "nz" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/roaddirt,
@@ -2457,11 +2694,19 @@
 /area/awaymission/wildwest)
 "nO" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/refine)
 "nR" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/wood_common,
+/area/awaymission/wildwest/refine)
+"nS" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
 "nT" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -2497,6 +2742,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "Junk_8"
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "oi" = (
@@ -2621,6 +2867,7 @@
 /area/awaymission/wildwest/refine)
 "oT" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "oU" = (
@@ -2667,6 +2914,11 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
+"pb" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/vault)
 "pc" = (
 /obj/item/chair,
 /turf/open/floor/plasteel/dark,
@@ -2680,6 +2932,7 @@
 /area/awaymission/wildwest/refine)
 "pf" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
 "pg" = (
@@ -2689,6 +2942,11 @@
 /obj/machinery/telecomms/broadcaster/preset_left,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"ph" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13,
+/area/awaymission/wildwest)
 "pi" = (
 /obj/machinery/light{
 	dir = 8
@@ -2746,6 +3004,11 @@
 /obj/structure/statue/bos/ladyleft,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"px" = (
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest)
 "py" = (
 /obj/structure/fence/door,
 /turf/open/floor/plating/asteroid,
@@ -2764,10 +3027,19 @@
 /obj/machinery/telecomms/server/presets/engineering,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"pE" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/wood_common,
+/area/awaymission/wildwest/refine)
 "pF" = (
 /obj/structure/filingcabinet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"pH" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/f13/farmhouse)
 "pI" = (
 /turf/closed/mineral/random/low_chance_desert,
 /area/awaymission/wildwest/mines)
@@ -2788,8 +3060,13 @@
 /area/awaymission/wildwest/refine)
 "pQ" = (
 /obj/structure/filingcabinet/chestdrawer,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
+"pS" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/asteroid,
+/area/awaymission/wildwest/mines)
 "pT" = (
 /mob/living/simple_animal/hostile/ghoul/soldier,
 /turf/open/floor/plasteel/vault,
@@ -2840,6 +3117,10 @@
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"ql" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
+/area/f13/farmhouse)
 "qm" = (
 /obj/effect/decal/cleanable/blood/gibs/human/body,
 /turf/open/floor/plating/asteroid,
@@ -2858,8 +3139,14 @@
 /turf/open/floor/plating,
 /area/awaymission/wildwest)
 "qu" = (
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/cult,
 /area/awaymission/wildwest/refine)
+"qv" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
+/area/awaymission/wildwest)
 "qw" = (
 /obj/effect/decal/waste{
 	icon_state = "goo10"
@@ -2875,6 +3162,11 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
+"qB" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13,
+/area/awaymission/wildwest)
 "qD" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/vault)
@@ -2888,6 +3180,7 @@
 /area/awaymission/wildwest)
 "qG" = (
 /obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest/refine)
 "qH" = (
@@ -2901,6 +3194,7 @@
 /area/awaymission/wildwest)
 "qJ" = (
 /obj/structure/closet/secure_closet/chemical,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "qK" = (
@@ -2915,6 +3209,15 @@
 /obj/machinery/power/floodlight,
 /turf/open/floor/plating/asteroid,
 /area/awaymission/wildwest/vault)
+"qQ" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
+"qR" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/refine)
 "qU" = (
 /obj/machinery/chem_master,
 /turf/open/floor/f13,
@@ -2943,6 +3246,7 @@
 /area/awaymission/wildwest)
 "re" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest/refine)
 "rf" = (
@@ -2971,6 +3275,13 @@
 	name = "Tunnel Blast Door"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
+"rm" = (
+/obj/structure/urinal{
+	pixel_y = 32
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest/refine)
 "rn" = (
 /turf/closed/mineral/random/low_chance_desert,
@@ -3084,6 +3395,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
+"rU" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest)
 "rW" = (
 /mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -3143,6 +3460,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "si" = (
@@ -3233,8 +3551,14 @@
 /area/awaymission/wildwest/refine)
 "sH" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
+"sJ" = (
+/obj/item/stack/rods/two,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/roaddirt,
+/area/awaymission/wildwest/refine)
 "sM" = (
 /mob/living/simple_animal/hostile/synth/mk2{
 	icon_state = "fleshitron";
@@ -3289,6 +3613,10 @@
 	},
 /turf/open/indestructible/necropolis,
 /area/awaymission/wildwest/gov)
+"sZ" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/awaymission/wildwest)
 "tc" = (
 /obj/item/pickaxe/silver,
 /turf/open/indestructible/ground/inside/mountain,
@@ -3313,10 +3641,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
+"tk" = (
+/obj/effect/decal/remains/human,
+/obj/structure/lattice/lava,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/lava,
+/area/awaymission/wildwest/gov)
 "tl" = (
 /obj/structure/bedsheetbin,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest/refine)
 "tm" = (
@@ -3324,6 +3659,7 @@
 	dir = 5;
 	id_tag = "generator_internal"
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "to" = (
@@ -3331,6 +3667,10 @@
 	faction = list("wastebot","robot","ghoul","deathclaw")
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
+"tq" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "tt" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
@@ -3351,6 +3691,18 @@
 /obj/item/chair/stool/bar/alien,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/refine)
+"tA" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id_tag = "generator_internal"
+	},
+/obj/machinery/conveyor{
+	dir = 8;
+	id_tag = "generator_internal"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
 "tB" = (
 /obj/machinery/computer/arcade,
 /obj/structure/sign/poster{
@@ -3367,11 +3719,16 @@
 /obj/structure/spider/cocoon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
+"tE" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/wood_common,
+/area/awaymission/wildwest)
 "tG" = (
 /turf/closed/wall/mineral/cult,
 /area/f13/underground/cave)
 "tH" = (
 /obj/effect/decal/cleanable/blood/gibs/human,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "tI" = (
@@ -3403,6 +3760,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
+"tZ" = (
+/obj/structure/bookshelf{
+	icon_state = "book-5"
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark{
+	icon_state = "cult"
+	},
+/area/awaymission/wildwest/refine)
 "ua" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
@@ -3421,11 +3787,13 @@
 /area/awaymission/wildwest)
 "ue" = (
 /obj/structure/kitchenspike,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "uf" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/black,
 /area/awaymission/wildwest/refine)
 "ug" = (
@@ -3440,6 +3808,7 @@
 /obj/item/stack/sheet/metal{
 	amount = 50
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "uk" = (
@@ -3570,6 +3939,7 @@
 /area/awaymission/wildwest/refine)
 "uT" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/farmhouse)
 "uU" = (
@@ -3580,6 +3950,7 @@
 /area/awaymission/wildwest)
 "uV" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/farmhouse)
 "uW" = (
@@ -3601,8 +3972,14 @@
 	},
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest)
+"vh" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest)
 "vi" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/f13/farmhouse)
 "vj" = (
@@ -3654,6 +4031,7 @@
 /area/awaymission/wildwest/gov)
 "vu" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/f13/farmhouse)
 "vv" = (
@@ -3733,6 +4111,10 @@
 /obj/structure/spider/stickyweb,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
+"vL" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/wooden,
+/area/awaymission/wildwest)
 "vN" = (
 /obj/machinery/shower{
 	dir = 4
@@ -3768,6 +4150,7 @@
 "vT" = (
 /obj/structure/table/wood,
 /obj/item/stack/sheet/mineral/silver,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -3800,6 +4183,11 @@
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"vY" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/stone,
+/area/awaymission/wildwest/vault)
 "wb" = (
 /obj/dugpit{
 	alpha = 80;
@@ -3811,6 +4199,15 @@
 "wc" = (
 /obj/machinery/pipedispenser/disposal,
 /turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/refine)
+"wd" = (
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest)
+"we" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/closed/wall/r_wall/rust,
 /area/awaymission/wildwest/refine)
 "wf" = (
 /obj/machinery/light/small{
@@ -3849,6 +4246,7 @@
 "wo" = (
 /obj/structure/table,
 /obj/item/circuitboard/machine/hydroponics/automagic,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
 "wp" = (
@@ -3877,6 +4275,11 @@
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/vault)
+"wu" = (
+/obj/structure/reagent_dispensers/barrel/old,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/vault)
 "wy" = (
 /obj/structure/bedsheetbin/empty,
 /turf/open/floor/f13,
@@ -3888,6 +4291,10 @@
 /obj/machinery/power/floodlight,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
+"wE" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/refine)
 "wG" = (
 /obj/structure/bedsheetbin/color,
 /turf/open/floor/f13,
@@ -3937,6 +4344,7 @@
 	pixel_x = 4;
 	pixel_y = -12
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "wT" = (
@@ -3949,6 +4357,7 @@
 	pixel_x = 2;
 	pixel_y = 14
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "wU" = (
@@ -3976,6 +4385,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "xb" = (
@@ -4001,6 +4411,7 @@
 /area/awaymission/wildwest)
 "xh" = (
 /obj/structure/filingcabinet/chestdrawer,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "xi" = (
@@ -4033,6 +4444,7 @@
 /area/awaymission/wildwest/gov)
 "xn" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "xo" = (
@@ -4092,6 +4504,10 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/floor/plating/snowed/colder,
 /area/awaymission/wildwest/refine)
+"xA" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
+/area/awaymission/wildwest)
 "xB" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
@@ -4114,6 +4530,7 @@
 	dir = 4;
 	name = "Virology Lab"
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "xK" = (
@@ -4122,12 +4539,14 @@
 /area/awaymission/wildwest/refine)
 "xL" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
 "xN" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet/black,
 /area/awaymission/wildwest/refine)
 "xP" = (
@@ -4155,6 +4574,7 @@
 /area/awaymission/wildwest)
 "xT" = (
 /obj/structure/filingcabinet/filingcabinet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/vault)
 "xU" = (
@@ -4190,6 +4610,10 @@
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
+"yc" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/awaymission/wildwest)
 "yd" = (
 /obj/structure/fence{
 	dir = 4
@@ -4198,6 +4622,7 @@
 /area/awaymission/wildwest/refine)
 "yf" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/vault)
 "yg" = (
@@ -4219,6 +4644,11 @@
 "yi" = (
 /turf/open/floor/plating,
 /area/awaymission/wildwest/refine)
+"yk" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
+/area/awaymission/wildwest)
 "ym" = (
 /obj/structure/fence/door,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
@@ -4266,6 +4696,7 @@
 	projectiletype = /obj/item/projectile/beam/laser/solar/hitscan;
 	extra_projectiles = 2
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/awaymission/wildwest/gov)
 "yz" = (
@@ -4294,6 +4725,10 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/awaymission/wildwest)
+"yH" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "yJ" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/farmhouse)
@@ -4315,6 +4750,7 @@
 /area/awaymission/wildwest)
 "yT" = (
 /obj/structure/closet/secure_closet/freezer/meat,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "yV" = (
@@ -4396,6 +4832,7 @@
 /obj/item/stack/sheet/mineral/silver,
 /obj/item/stack/sheet/mineral/silver,
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -4410,6 +4847,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
+"zt" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13,
+/area/f13/farmhouse)
 "zu" = (
 /obj/machinery/chem_master,
 /turf/open/floor/carpet,
@@ -4424,6 +4866,11 @@
 /obj/mecha/medical/medigax,
 /turf/open/floor/plating/rockcrete_slab,
 /area/medical/abandoned)
+"zx" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/refine)
 "zy" = (
 /obj/structure/table,
 /obj/item/clothing/gloves/color/latex,
@@ -4452,6 +4899,11 @@
 	},
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
+"zC" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest)
 "zH" = (
 /turf/open/floor/plating/asteroid,
 /area/awaymission/wildwest/vault)
@@ -4465,6 +4917,7 @@
 /area/awaymission/wildwest/vault)
 "zJ" = (
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest/refine)
 "zN" = (
@@ -4477,8 +4930,16 @@
 /area/awaymission/wildwest)
 "zS" = (
 /mob/living/simple_animal/hostile/eyebot/reinforced,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/vault)
+"zV" = (
+/mob/living/simple_animal/hostile/poison/giant_spider{
+	faction = list("spiders","deathclaw")
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest)
 "zW" = (
 /mob/living/simple_animal/hostile/retaliate/frog/red{
 	faction = list("hostile")
@@ -4523,6 +4984,7 @@
 /area/awaymission/wildwest/refine)
 "Aq" = (
 /obj/structure/closet/jcloset,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Ar" = (
@@ -4531,6 +4993,7 @@
 /area/awaymission/wildwest)
 "As" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest/vault)
 "At" = (
@@ -4574,6 +5037,10 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
+"AD" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/cult,
+/area/awaymission/wildwest/gov)
 "AF" = (
 /obj/structure/sink{
 	pixel_y = 28
@@ -4584,6 +5051,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "AG" = (
@@ -4676,6 +5144,8 @@
 "Be" = (
 /obj/structure/closet/crate/large,
 /mob/living/simple_animal/hostile/eyebot/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest/vault)
 "Bf" = (
@@ -4707,6 +5177,11 @@
 /obj/structure/filingcabinet/filingcabinet,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"Bl" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest)
 "Bp" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -4728,18 +5203,28 @@
 /area/awaymission/wildwest/vault)
 "Bu" = (
 /obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Bv" = (
 /obj/structure/simple_door/brokenglass,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/refine)
+"Bw" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/wood_common,
+/area/awaymission/wildwest)
 "Bx" = (
 /obj/structure/sink{
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
+"Bz" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/refine)
 "BB" = (
 /obj/structure/mirror{
 	pixel_x = 28
@@ -4760,8 +5245,15 @@
 /area/awaymission/wildwest/vault)
 "BH" = (
 /obj/structure/closet/crate/secure/loot,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/vault)
+"BK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest)
 "BN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs{
@@ -4832,12 +5324,29 @@
 /obj/structure/trap/fire,
 /turf/open/lava,
 /area/awaymission/wildwest/gov)
+"Ci" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest)
 "Cj" = (
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
 /turf/open/floor/plating,
 /area/awaymission/wildwest)
+"Ck" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest)
+"Cl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating{
+	icon_state = "asteroidfloor"
+	},
+/area/awaymission/wildwest/refine)
 "Cn" = (
 /obj/structure/weightlifter,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -4984,6 +5493,7 @@
 	dir = 1
 	},
 /obj/structure/table/glass,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/vault)
 "CW" = (
@@ -5001,6 +5511,7 @@
 "CY" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "Dc" = (
@@ -5082,6 +5593,11 @@
 /obj/machinery/telecomms/bus/preset_three,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"Dv" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plating,
+/area/f13/farmhouse)
 "DA" = (
 /obj/structure/closet/toolcloset,
 /turf/open/floor/f13,
@@ -5110,6 +5626,11 @@
 /obj/mecha/medical/odysseus,
 /turf/open/floor/plating/rockcrete_slab,
 /area/medical/abandoned)
+"DJ" = (
+/obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/refine)
 "DN" = (
 /turf/closed/wall,
 /area/f13/farmhouse)
@@ -5135,6 +5656,7 @@
 	icon_state = "crateopen";
 	opened = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
 "DS" = (
@@ -5177,9 +5699,14 @@
 	},
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
+"Ec" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/stone,
+/area/f13/farmhouse)
 "Ed" = (
 /obj/structure/closet/crate/large,
 /mob/living/simple_animal/hostile/handy/gutsy,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "Eg" = (
@@ -5322,6 +5849,10 @@
 /obj/structure/bedsheetbin,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"ER" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest)
 "ET" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -5350,6 +5881,11 @@
 	icon_state = "darkredfull"
 	},
 /area/awaymission/wildwest/refine)
+"EZ" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest)
 "Fa" = (
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
@@ -5391,6 +5927,10 @@
 	},
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
+"Fk" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/roaddirt,
+/area/awaymission/wildwest/refine)
 "Fl" = (
 /obj/item/stack/rods,
 /turf/open/floor/plasteel/dark,
@@ -5421,9 +5961,15 @@
 /obj/structure/sink/puddle,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/f13/farmhouse)
+"Fy" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/refine)
 "Fz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/large,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "FA" = (
@@ -5584,6 +6130,7 @@
 /area/awaymission/wildwest)
 "Gy" = (
 /obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
@@ -5598,6 +6145,10 @@
 	},
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
+"GA" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/vaultdoors)
 "GD" = (
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest)
@@ -5608,6 +6159,11 @@
 /obj/machinery/meter,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
+"GF" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/farmhouse)
 "GH" = (
 /turf/open/floor/f13,
 /area/f13/farmhouse)
@@ -5639,6 +6195,11 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/awaymission/wildwest)
+"GN" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest)
 "GO" = (
 /obj/structure/reagent_dispensers/barrel/old,
 /turf/open/floor/plasteel/dark,
@@ -5658,6 +6219,10 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/awaymission/wildwest/gov)
+"GW" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plating/asteroid,
+/area/f13/underground/cave)
 "GX" = (
 /obj/structure/debris/v3{
 	pixel_x = 8;
@@ -5669,6 +6234,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_guns,
 /turf/open/floor/plating/asteroid,
 /area/awaymission/wildwest/mines)
+"Hd" = (
+/obj/structure/bed,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/carpet/black,
+/area/awaymission/wildwest/refine)
 "Hf" = (
 /mob/living/simple_animal/hostile/eldritch/stalker{
 	faction = list("heretics","institute");
@@ -5759,8 +6330,13 @@
 "HG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
+"HH" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plating/asteroid,
+/area/awaymission/wildwest/mines)
 "HJ" = (
 /obj/structure/closet/secure_closet/medical1,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -5778,11 +6354,19 @@
 /area/awaymission/wildwest/refine)
 "HM" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/f13/farmhouse)
+"HN" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark{
+	icon_state = "cult"
+	},
+/area/awaymission/wildwest/refine)
 "HO" = (
 /obj/item/clothing/under/rank/miner,
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/f13/underground/cave)
 "HP" = (
@@ -5842,6 +6426,7 @@
 /area/awaymission/wildwest/refine)
 "Ih" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
 "Iu" = (
@@ -5849,8 +6434,13 @@
 	dir = 9;
 	id_tag = "generator_internal"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
+"IB" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/awaymission/wildwest/gov)
 "IC" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light/small{
@@ -5918,6 +6508,7 @@
 /obj/structure/bookshelf{
 	icon_state = "book-3"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark{
 	icon_state = "cult"
 	},
@@ -5967,6 +6558,8 @@
 /obj/structure/closet/crate{
 	name = "solar pack crate"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Jk" = (
@@ -5991,8 +6584,18 @@
 /area/medical/abandoned)
 "Jq" = (
 /obj/structure/closet/crate/bin/trash_fallout,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest/refine)
+"Jr" = (
+/mob/living/simple_animal/hostile/eldritch/stalker{
+	faction = list("heretics","institute");
+	health = 300;
+	AIStatus = 2
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/necropolis,
+/area/awaymission/wildwest/gov)
 "Jt" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/awaymission/wildwest)
@@ -6006,6 +6609,7 @@
 /area/awaymission/wildwest/refine)
 "JB" = (
 /obj/structure/closet/secure_closet/freezer/meat,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "JC" = (
@@ -6017,8 +6621,14 @@
 /area/awaymission/wildwest/refine)
 "JE" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/vault)
+"JF" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
+/area/medical/abandoned)
 "JG" = (
 /mob/living/simple_animal/hostile/handy/gutsy/flamer,
 /turf/open/floor/plasteel/vault,
@@ -6083,6 +6693,10 @@
 	},
 /turf/open/floor/plasteel/vault,
 /area/f13/farmhouse)
+"JW" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/asteroid,
+/area/awaymission/wildwest/refine)
 "JX" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
@@ -6091,6 +6705,11 @@
 "JY" = (
 /turf/closed/indestructible/rock/sand,
 /area/awaymission/wildwest/vault)
+"JZ" = (
+/obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest)
 "Ka" = (
 /mob/living/simple_animal/hostile/ghoul/glowing/strong{
 	name = "enlightened son of the sun";
@@ -6175,6 +6794,7 @@
 /area/awaymission/wildwest/refine)
 "Ku" = (
 /obj/structure/closet/secure_closet/engineering_welding,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
 "Kv" = (
@@ -6226,6 +6846,15 @@
 /obj/effect/spawner/lootdrop/f13/rare_ammo,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
+"KH" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/plating/asteroid,
+/area/awaymission/wildwest/vault)
+"KI" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
 "KJ" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/asteroid/basalt/lava,
@@ -6316,6 +6945,14 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/refine)
+"Lm" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/closed/indestructible/riveted/boss,
+/area/awaymission/wildwest/gov)
+"Ln" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/wood_common,
+/area/awaymission/wildwest/refine)
 "Lo" = (
 /obj/machinery/door/airlock/mining,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -6332,6 +6969,7 @@
 "Lu" = (
 /obj/structure/table,
 /obj/structure/closet/wardrobe/chemistry_white,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "Lv" = (
@@ -6406,6 +7044,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "LT" = (
@@ -6427,6 +7066,13 @@
 "LY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
+/area/awaymission/wildwest/refine)
+"Ma" = (
+/mob/living/simple_animal/hostile/retaliate/frog{
+	faction = list("hostile")
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/dirt/dark,
 /area/awaymission/wildwest/refine)
 "Mb" = (
 /obj/structure/closet/crate,
@@ -6463,14 +7109,25 @@
 /area/awaymission/wildwest/refine)
 "Ml" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
+"Mm" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
+/area/medical/abandoned)
 "Mp" = (
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
 /area/awaymission/wildwest/refine)
+"Mr" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/f13/farmhouse)
 "Ms" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/f13,
@@ -6480,6 +7137,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest/refine)
+"Mw" = (
+/obj/effect/decal/waste{
+	icon_state = "goo6"
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/awaymission/wildwest)
 "Mx" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/asteroid,
@@ -6488,6 +7152,12 @@
 /obj/machinery/light,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
+"MC" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating{
+	icon_state = "asteroidfloor"
+	},
+/area/awaymission/wildwest/refine)
 "MF" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -6525,6 +7195,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest)
 "MS" = (
@@ -6572,6 +7243,7 @@
 /area/awaymission/wildwest/refine)
 "Nk" = (
 /obj/structure/closet/crate/large,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "Nn" = (
@@ -6583,6 +7255,11 @@
 "Nq" = (
 /turf/open/floor/plating,
 /area/f13/farmhouse)
+"Nr" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/awaymission/wildwest/refine)
 "Ns" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -6629,6 +7306,11 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/lava,
 /area/awaymission/wildwest/gov)
+"NA" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/refine)
 "NH" = (
 /turf/closed/wall/f13/ruins,
 /area/awaymission/wildwest)
@@ -6642,8 +7324,14 @@
 	icon_state = "asteroidfloor"
 	},
 /area/awaymission/wildwest/refine)
+"NM" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest)
 "NN" = (
 /obj/structure/closet/crate/internals,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest/vault)
 "NO" = (
@@ -6678,6 +7366,17 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/cult,
 /area/awaymission/wildwest/gov)
+"NT" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/carpet/black,
+/area/awaymission/wildwest/refine)
+"NU" = (
+/obj/structure/closet/toolcloset,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13,
+/area/awaymission/wildwest)
 "NW" = (
 /obj/machinery/light,
 /turf/open/floor/f13,
@@ -6707,6 +7406,7 @@
 /area/awaymission/wildwest)
 "Oc" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
 "Of" = (
@@ -6736,10 +7436,17 @@
 "Oq" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet/black,
 /area/awaymission/wildwest/refine)
+"Os" = (
+/obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/rockcrete_slab,
+/area/awaymission/wildwest)
 "Ot" = (
 /obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
 "Ou" = (
@@ -6757,6 +7464,7 @@
 "Oy" = (
 /obj/structure/closet/crate/large,
 /obj/machinery/manned_turret,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Oz" = (
@@ -6778,6 +7486,7 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
 "OF" = (
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/f13/underground/cave)
 "OG" = (
@@ -6898,10 +7607,12 @@
 	dir = 8
 	},
 /obj/structure/bookshelf,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Pm" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/refine)
 "Po" = (
@@ -6937,6 +7648,7 @@
 "Ps" = (
 /obj/structure/table,
 /obj/structure/spider/stickyweb,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "Pt" = (
@@ -6996,6 +7708,10 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
+"PJ" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plating/asteroid,
+/area/awaymission/wildwest/mines)
 "PK" = (
 /obj/effect/decal/waste{
 	alpha = 0
@@ -7037,6 +7753,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/awaymission/wildwest/refine)
+"PX" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/awaymission/wildwest/vault)
 "Qa" = (
 /obj/structure/barricade,
 /obj/structure/barricade/wooden/crude,
@@ -7106,9 +7826,14 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
+"Qp" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/dirt/desertsand,
+/area/awaymission/wildwest)
 "Qq" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest/refine)
 "Qs" = (
@@ -7309,6 +8034,18 @@
 /obj/item/chair/wood/modern,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/vault)
+"RH" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id_tag = "generator_internal"
+	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id_tag = "generator_internal"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
 "RL" = (
 /obj/structure/kitchenspike,
 /obj/structure/spider/stickyweb,
@@ -7342,6 +8079,7 @@
 	projectilesound = 'sound/f13weapons/aer9fire.ogg';
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "RW" = (
@@ -7425,6 +8163,7 @@
 /area/awaymission/wildwest/vault)
 "Sw" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "Sx" = (
@@ -7519,6 +8258,7 @@
 "SV" = (
 /obj/structure/table,
 /obj/item/clothing/head/soft,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "SY" = (
@@ -7569,6 +8309,10 @@
 	icon_state = "asteroidfloor"
 	},
 /area/awaymission/wildwest/refine)
+"Tp" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/stone,
+/area/awaymission/wildwest)
 "Tr" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -7589,6 +8333,12 @@
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"Tu" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/awaymission/wildwest/vault)
 "Ty" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
 	faction = list("wastebot","robot","ghoul","deathclaw")
@@ -7601,8 +8351,15 @@
 	projectilesound = 'sound/f13weapons/aer9fire.ogg';
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/vault)
+"TB" = (
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plating/asteroid/basalt/lava,
+/area/awaymission/wildwest/gov)
 "TC" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -7619,6 +8376,12 @@
 	amount = 50
 	},
 /turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/refine)
+"TI" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/carpet,
 /area/awaymission/wildwest/refine)
 "TJ" = (
 /obj/effect/decal/waste{
@@ -7662,6 +8425,10 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/awaymission/wildwest/gov)
+"TT" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
 "TW" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 6
@@ -7747,6 +8514,7 @@
 /obj/structure/table,
 /obj/item/binoculars,
 /obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark{
 	icon_state = "cult"
 	},
@@ -7806,6 +8574,7 @@
 /area/awaymission/wildwest/refine)
 "UF" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
 "UH" = (
@@ -7825,6 +8594,10 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
+"UM" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/indestructible/ground/inside/mountain,
+/area/awaymission/wildwest/mines)
 "UO" = (
 /obj/dugpit{
 	alpha = 80;
@@ -7850,13 +8623,24 @@
 /obj/item/bedsheet/patriot,
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest/refine)
+"UX" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest)
 "UZ" = (
 /obj/structure/table,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
+"Vb" = (
+/obj/effect/decal/cleanable/blood/gibs/human/body,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plating/asteroid,
+/area/f13/underground/cave)
 "Vc" = (
 /obj/structure/wreck/trash/one_tire,
 /turf/open/floor/plating/rockcrete_slab,
@@ -7867,6 +8651,7 @@
 /area/awaymission/wildwest/refine)
 "Ve" = (
 /obj/structure/closet/crate/internals,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "Vf" = (
@@ -7888,7 +8673,16 @@
 	dir = 4;
 	id_tag = "generator_internal"
 	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/sidewalk,
+/area/awaymission/wildwest/refine)
+"Vn" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave{
+	pixel_y = 10
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
 "Vo" = (
 /obj/machinery/door/poddoor{
@@ -7944,6 +8738,12 @@
 /obj/structure/bed,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
+"VD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/large,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/roaddirt,
+/area/awaymission/wildwest/refine)
 "VE" = (
 /obj/machinery/door/window{
 	base_state = "left";
@@ -7971,6 +8771,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
+"VH" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/refine)
 "VI" = (
 /obj/structure/fence{
 	dir = 4
@@ -7994,6 +8800,10 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/cult,
 /area/awaymission/wildwest/gov)
+"VS" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/awaymission/wildwest/refine)
 "VW" = (
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/f13/wood,
@@ -8017,6 +8827,13 @@
 	},
 /turf/open/floor/plating/asteroid,
 /area/f13/underground/cave)
+"Wb" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/cult,
+/area/awaymission/wildwest/gov)
 "Wc" = (
 /obj/structure/table,
 /obj/item/stack/cable_coil,
@@ -8047,6 +8864,11 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13,
+/area/awaymission/wildwest)
+"Wo" = (
+/obj/structure/nest/deathclaw,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "Wp" = (
 /turf/open/indestructible/ground/outside/dirt/desertsand,
@@ -8254,6 +9076,16 @@
 /obj/structure/statue/bos/ladyright,
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest/refine)
+"XG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/refine)
+"XH" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/f13,
+/area/awaymission/wildwest/refine)
 "XJ" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/dark,
@@ -8272,6 +9104,7 @@
 /obj/item/stack/sheet/mineral/diamond,
 /obj/item/stack/sheet/mineral/diamond,
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -8280,6 +9113,7 @@
 /obj/structure/closet/crate{
 	name = "Silver Crate"
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "XR" = (
@@ -8307,6 +9141,8 @@
 "Yb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/goldcrate,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "Yc" = (
@@ -8326,14 +9162,24 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
+"Ye" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/wildwest/vault)
 "Yf" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
 "Yg" = (
 /obj/structure/table,
 /turf/open/floor/f13,
 /area/f13/farmhouse)
+"Yh" = (
+/obj/structure/reagent_dispensers/barrel/old,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/vault)
 "Yi" = (
 /obj/machinery/mineral/processing_unit{
 	id_tag = "mining_smelter"
@@ -8364,6 +9210,7 @@
 /area/awaymission/wildwest)
 "Yo" = (
 /obj/structure/closet/secure_closet/miner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest)
 "Yp" = (
@@ -8401,6 +9248,10 @@
 "Yv" = (
 /turf/closed/indestructible/rock/sand,
 /area/awaymission/wildwest/gov)
+"Yw" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/floor/plasteel/f13/stone,
+/area/awaymission/wildwest/refine)
 "Yx" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -8493,6 +9344,7 @@
 /area/awaymission/wildwest/refine)
 "Za" = (
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -8573,6 +9425,7 @@
 /area/awaymission/wildwest/refine)
 "Zp" = (
 /obj/structure/closet/toolcloset,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Zq" = (
@@ -8611,6 +9464,10 @@
 "ZC" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/f13,
+/area/awaymission/wildwest)
+"ZD" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/inside/mountain,
 /area/awaymission/wildwest)
 "ZE" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -8672,6 +9529,7 @@
 /area/awaymission/wildwest)
 "ZR" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/refine)
 "ZS" = (
@@ -8681,6 +9539,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
+"ZT" = (
+/obj/structure/reagent_dispensers/barrel/old,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/vault,
+/area/awaymission/wildwest/vault)
 "ZW" = (
 /obj/structure/chair/comfy/shuttle,
 /mob/living/simple_animal/banana_spider,
@@ -8689,6 +9552,7 @@
 /area/awaymission/wildwest)
 "ZY" = (
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest/vault)
 "ZZ" = (
@@ -77903,8 +78767,8 @@ Nx
 Nx
 Nx
 Nx
-Nx
-Nx
+pS
+pS
 Yt
 Ga
 Nx
@@ -78159,6 +79023,8 @@ pI
 Nx
 Nx
 Nx
+PJ
+PJ
 Nx
 Nx
 Nx
@@ -78166,8 +79032,6 @@ Nx
 Nx
 Nx
 Nx
-Nx
-Nx
 pI
 pI
 pI
@@ -78187,26 +79051,6 @@ pI
 pI
 pI
 pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
 pI
 pI
 pI
@@ -78226,6 +79070,26 @@ Nx
 Nx
 Nx
 Nx
+Nx
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+Nx
+pS
+Nx
+Nx
+PJ
 Nx
 Nx
 Nx
@@ -78380,6 +79244,7 @@ kt
 kt
 kt
 kt
+UM
 jO
 jO
 jO
@@ -78388,7 +79253,6 @@ jO
 jO
 jO
 jO
-jO
 kt
 kt
 kt
@@ -78416,14 +79280,14 @@ pI
 Nx
 Nx
 Nx
+PJ
+PJ
 Nx
 Nx
 Nx
 Nx
-Nx
-Nx
-Nx
-Nx
+pS
+pS
 Nx
 pI
 pI
@@ -78433,35 +79297,6 @@ pI
 pI
 pI
 pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
 pI
 pI
 pI
@@ -78483,6 +79318,35 @@ Nx
 Nx
 Nx
 Nx
+Nx
+Nx
+Nx
+Nx
+Nx
+Nx
+Nx
+Nx
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+Nx
+Nx
+Nx
+Nx
+Nx
+PJ
 Nx
 Nx
 Nx
@@ -78738,7 +79602,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -78932,7 +79796,7 @@ pI
 Nx
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -79059,9 +79923,9 @@ uY
 uY
 mE
 Dr
-Sf
+qB
 Dr
-Sf
+qB
 wr
 mE
 Dr
@@ -79135,8 +79999,8 @@ kt
 jO
 jO
 jO
-jO
-jO
+bG
+bG
 jO
 jO
 jO
@@ -79485,7 +80349,7 @@ pI
 pI
 pI
 pI
-Nx
+HH
 Nx
 Nx
 pI
@@ -79799,7 +80663,7 @@ Cz
 Cz
 Cz
 Dr
-GD
+Tp
 ba
 Cz
 Gu
@@ -79831,7 +80695,7 @@ kV
 mE
 dE
 Dr
-Sf
+qB
 oM
 Dr
 mE
@@ -79909,29 +80773,12 @@ jO
 jO
 jO
 jO
+sq
 jO
 jO
 jO
 jO
 jO
-jO
-kt
-kt
-kt
-kt
-kt
-kt
-kt
-kt
-kt
-kt
-jO
-jO
-jO
-kt
-kt
-kt
-kt
 kt
 kt
 kt
@@ -79944,6 +80791,23 @@ kt
 kt
 jO
 jO
+jO
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+kt
+jO
+jO
 kt
 kt
 pI
@@ -80020,8 +80884,8 @@ pI
 pI
 pI
 Nx
-Nx
-Nx
+PJ
+PJ
 Nx
 Nx
 pI
@@ -80051,7 +80915,7 @@ Cz
 ba
 ba
 ba
-ba
+qF
 ba
 ba
 Cz
@@ -80344,7 +81208,7 @@ IN
 kV
 mE
 Dr
-Sf
+qB
 wr
 wr
 Dr
@@ -80424,11 +81288,11 @@ jO
 jO
 jO
 jO
+bG
 jO
 jO
 jO
 jO
-jO
 kt
 kt
 kt
@@ -80533,9 +81397,9 @@ pI
 pI
 pI
 Nx
+PJ
 Nx
-Nx
-Nx
+pS
 Nx
 pI
 pI
@@ -80681,7 +81545,7 @@ jO
 jO
 jO
 jO
-jO
+bG
 jO
 jO
 jO
@@ -80810,7 +81674,7 @@ IN
 XZ
 Jt
 Jt
-Jt
+ZD
 Jt
 Jt
 NH
@@ -80933,8 +81797,8 @@ kt
 kt
 jO
 VK
-jO
-jO
+bG
+bG
 jO
 jO
 jO
@@ -81316,7 +82180,7 @@ pI
 pI
 uY
 NH
-pM
+Wo
 ba
 qq
 NH
@@ -81593,7 +82457,7 @@ Cz
 Gf
 ZP
 Dr
-Dr
+of
 Dr
 Dr
 Cz
@@ -81618,8 +82482,8 @@ qq
 ba
 ba
 qq
-qq
-qq
+PI
+PI
 ba
 ba
 ba
@@ -81743,40 +82607,40 @@ pI
 pI
 Nx
 Nx
+pS
+Nx
+Nx
+Nx
+Nx
+Nx
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
+pI
 Nx
 Nx
 Nx
 Nx
 Nx
 Nx
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
-pI
 Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
-Nx
+HH
 Nx
 Nx
 pI
@@ -81885,7 +82749,7 @@ IN
 IN
 kV
 mE
-DA
+NU
 Dr
 De
 ZC
@@ -81894,7 +82758,7 @@ mE
 qq
 qq
 mE
-Nu
+ph
 Dr
 Dr
 nn
@@ -82106,13 +82970,13 @@ NH
 Cz
 Dr
 Dr
-Dr
+of
 oM
 jo
 Dr
 Cz
 nG
-nG
+MT
 nG
 Cz
 IN
@@ -82378,7 +83242,7 @@ Vj
 qq
 qq
 qq
-Pa
+px
 qq
 qq
 ba
@@ -82573,12 +83437,12 @@ Nx
 Nx
 Nx
 Nx
+PJ
+PJ
 Nx
 Nx
 Nx
-Nx
-Nx
-Nx
+pS
 Nx
 pI
 pI
@@ -82659,7 +83523,7 @@ mE
 qq
 qq
 qq
-qq
+PI
 qq
 qq
 qq
@@ -82757,7 +83621,7 @@ kt
 jO
 jO
 jO
-jO
+UM
 jO
 jO
 jO
@@ -83086,10 +83950,10 @@ pI
 Nx
 Nx
 Nx
+PJ
 Nx
 Nx
-Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -83346,7 +84210,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+pS
 Mx
 Nx
 Nx
@@ -83435,7 +84299,7 @@ qq
 ba
 ba
 qq
-qq
+PI
 qq
 qq
 qq
@@ -83449,7 +84313,7 @@ IN
 IN
 IN
 mE
-qq
+Um
 qq
 GL
 js
@@ -83677,7 +84541,7 @@ Dr
 qq
 qq
 Dr
-Dr
+of
 Dr
 Dr
 Vj
@@ -83712,7 +84576,7 @@ js
 js
 js
 qq
-qq
+Um
 qq
 qq
 qq
@@ -84073,7 +84937,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+HH
 Nx
 pI
 pI
@@ -84400,7 +85264,7 @@ qq
 IN
 NH
 ba
-ba
+qF
 ba
 On
 Sh
@@ -84420,12 +85284,12 @@ IN
 Jt
 ba
 ba
-ba
+qF
 ba
 ba
 Km
 Op
-ba
+qF
 Dr
 ba
 ba
@@ -84491,7 +85355,7 @@ ba
 mE
 Dr
 pF
-Dr
+xA
 Dr
 uL
 aI
@@ -84532,7 +85396,7 @@ kt
 kt
 kt
 jO
-jO
+UM
 jO
 kt
 kt
@@ -84614,7 +85478,7 @@ Nx
 GZ
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 pI
@@ -84667,7 +85531,7 @@ NH
 ba
 GD
 ba
-ba
+qF
 qq
 qq
 qq
@@ -84908,7 +85772,7 @@ IN
 IN
 On
 ba
-ba
+qF
 qq
 NH
 IN
@@ -85383,7 +86247,7 @@ pI
 Nx
 Nx
 Nx
-Nx
+PJ
 Nx
 Nx
 Nx
@@ -85566,12 +86430,12 @@ jO
 jO
 jO
 jO
+sq
 jO
 jO
 jO
 jO
 jO
-jO
 kt
 kt
 kt
@@ -85640,7 +86504,7 @@ pI
 Nx
 Nx
 Nx
-Nx
+PJ
 Nx
 Nx
 Nx
@@ -86011,7 +86875,7 @@ IX
 IX
 IX
 IX
-IX
+dU
 IX
 IX
 IX
@@ -86022,7 +86886,7 @@ ic
 ic
 ba
 ba
-ba
+ER
 qq
 js
 js
@@ -86183,8 +87047,8 @@ eK
 eK
 eK
 NH
-Sf
-Sf
+qB
+qB
 Dr
 NH
 IN
@@ -86192,8 +87056,8 @@ IN
 NH
 nG
 lD
-nG
-nG
+MT
+MT
 nG
 NH
 IN
@@ -86334,9 +87198,9 @@ jO
 jO
 jO
 jO
-jO
-jO
-jO
+bG
+bG
+bG
 jO
 jO
 jO
@@ -86449,8 +87313,8 @@ IN
 NH
 nG
 nG
-nG
-nG
+MT
+MT
 nG
 NH
 IN
@@ -86495,7 +87359,7 @@ eK
 eK
 eK
 eK
-eK
+av
 eK
 eK
 eK
@@ -86631,7 +87495,7 @@ Vw
 Nx
 Nx
 Nx
-Nx
+pS
 Nx
 pI
 pI
@@ -86796,7 +87660,7 @@ ba
 ic
 js
 qq
-qq
+Um
 qq
 qq
 qq
@@ -87143,7 +88007,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -87389,7 +88253,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+HH
 Nx
 Nx
 Nx
@@ -87484,13 +88348,13 @@ IN
 IN
 IN
 NH
+xA
+Dr
+of
+of
 Dr
 Dr
-Dr
-Dr
-Dr
-Dr
-Dr
+of
 Dr
 Dr
 Dr
@@ -87503,13 +88367,13 @@ eK
 IN
 Vj
 EF
-Au
+BK
 Au
 Au
 Au
 Vj
-ze
-ze
+aC
+aC
 ze
 Au
 Vj
@@ -87655,8 +88519,8 @@ Nx
 Nx
 Nx
 Nx
-Nx
-Nx
+PJ
+PJ
 Nx
 Nx
 Nx
@@ -87714,7 +88578,7 @@ uY
 uY
 uY
 NH
-vm
+vh
 ba
 ba
 ba
@@ -87744,19 +88608,19 @@ NH
 Dr
 Cp
 wr
-Dr
+of
 Dr
 wr
 rs
 Dr
-Dr
+of
 Dr
 NH
 IN
 eK
 IX
 IX
-eK
+av
 IN
 Vj
 ze
@@ -87768,7 +88632,7 @@ Vj
 Md
 Au
 ze
-Oc
+UX
 Vj
 aN
 si
@@ -87782,7 +88646,7 @@ On
 js
 qq
 ba
-ba
+qF
 ba
 ba
 NH
@@ -88075,7 +88939,7 @@ IN
 IN
 IN
 mE
-AV
+JZ
 qq
 qq
 qq
@@ -88180,7 +89044,7 @@ pI
 pI
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -88347,10 +89211,10 @@ YJ
 wr
 Dr
 mE
-rq
+zC
 rq
 qq
-rq
+zC
 mE
 ct
 AJ
@@ -88410,7 +89274,7 @@ pI
 pI
 pI
 Nx
-Nx
+pS
 Nx
 pI
 pI
@@ -88541,12 +89405,12 @@ aN
 po
 aN
 aN
-aN
+Bw
 aN
 si
 si
 Vj
-fU
+Os
 IN
 NH
 ba
@@ -88693,7 +89557,7 @@ pI
 pI
 Nx
 Nx
-Nx
+PJ
 Nx
 Nx
 pI
@@ -88770,13 +89634,13 @@ IN
 IN
 NH
 nG
-nG
+MT
 nG
 nG
 IN
 IN
 qq
-Jc
+zV
 ba
 ba
 ba
@@ -88816,7 +89680,7 @@ Jt
 by
 ba
 ba
-qq
+PI
 ba
 qq
 Jt
@@ -89119,7 +89983,7 @@ Dr
 jo
 mE
 rq
-rq
+zC
 rq
 rq
 mE
@@ -89157,8 +90021,8 @@ Nx
 Nx
 Nx
 Nx
-Nx
-Nx
+pS
+PJ
 Nx
 Nx
 Nx
@@ -89412,13 +90276,13 @@ pI
 Nx
 Nx
 lK
+pS
 Nx
 Nx
+PJ
 Nx
-Nx
-Nx
-Nx
-Nx
+PJ
+PJ
 pI
 pI
 kt
@@ -89540,7 +90404,7 @@ NH
 IN
 IN
 NH
-nG
+yc
 nG
 nG
 NH
@@ -89565,7 +90429,7 @@ ze
 Dr
 Vj
 Au
-Au
+BK
 Au
 Au
 Vj
@@ -89668,14 +90532,14 @@ pI
 pI
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
 Mx
 Nx
-Nx
-Nx
+PJ
+PJ
 pI
 pI
 pI
@@ -89931,8 +90795,8 @@ Nx
 Nx
 Nx
 Nx
-Nx
-Nx
+PJ
+PJ
 pI
 pI
 kt
@@ -90182,8 +91046,8 @@ pI
 pI
 Nx
 Nx
-Nx
-Nx
+PJ
+PJ
 Nx
 HC
 Nx
@@ -90319,7 +91183,7 @@ IN
 IN
 NH
 ba
-ba
+ER
 ba
 NH
 NH
@@ -90588,7 +91452,7 @@ IN
 Vj
 ze
 gu
-gu
+EZ
 ze
 Dr
 Vj
@@ -90652,7 +91516,7 @@ IN
 FD
 qq
 qq
-qq
+PI
 qq
 AV
 qq
@@ -90700,7 +91564,7 @@ Nx
 Nx
 Nx
 Nx
-Nx
+PJ
 Nx
 Nx
 Nx
@@ -90830,7 +91694,7 @@ si
 aN
 aN
 aN
-si
+vL
 aN
 si
 aN
@@ -90911,7 +91775,7 @@ ba
 Jc
 qq
 qq
-qq
+PI
 qq
 qq
 ba
@@ -90956,7 +91820,7 @@ pI
 Nx
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -91025,8 +91889,8 @@ pI
 pI
 pI
 Nx
-Nx
-Nx
+PJ
+PJ
 Nx
 Nx
 Nx
@@ -91181,7 +92045,7 @@ mE
 UZ
 Dr
 Dr
-Nu
+qv
 mE
 uY
 uY
@@ -91318,7 +92182,7 @@ IN
 NH
 ba
 qq
-qq
+PI
 qq
 qq
 NH
@@ -91330,7 +92194,7 @@ Dr
 Dr
 qq
 IN
-IN
+ml
 On
 On
 On
@@ -91341,7 +92205,7 @@ vH
 On
 si
 si
-si
+vL
 si
 si
 si
@@ -91380,12 +92244,12 @@ ba
 ic
 nh
 ic
-ba
+ER
 NH
 IN
 IN
 NH
-qq
+PI
 qq
 Wp
 Wp
@@ -91435,7 +92299,7 @@ uY
 uY
 uY
 mE
-Nu
+qv
 Dr
 YY
 Dr
@@ -91652,7 +92516,7 @@ Wp
 qq
 qq
 ba
-ba
+qF
 ic
 NH
 IN
@@ -91770,8 +92634,8 @@ Dr
 Dr
 Dr
 Cz
-Sf
-Sf
+yk
+yk
 Dr
 oJ
 DW
@@ -91797,7 +92661,7 @@ pI
 pI
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -92023,8 +92887,8 @@ Cz
 Cz
 Cz
 Dr
-Dr
-Dr
+of
+of
 Dr
 Cz
 qg
@@ -92034,7 +92898,7 @@ oJ
 oJ
 Cj
 Cz
-EF
+Ci
 ze
 Re
 si
@@ -92111,7 +92975,7 @@ IN
 IN
 NH
 aN
-aN
+tE
 aN
 si
 aN
@@ -92280,8 +93144,8 @@ si
 si
 Cz
 MQ
-Dr
-Dr
+of
+of
 Dr
 rd
 Dr
@@ -92292,7 +93156,7 @@ oJ
 oJ
 Cz
 ze
-ze
+aC
 si
 si
 si
@@ -92417,7 +93281,7 @@ qq
 ba
 ba
 ba
-ba
+qF
 IN
 IN
 IN
@@ -92549,7 +93413,7 @@ oJ
 Bb
 Cz
 ze
-ze
+aC
 TM
 ze
 ze
@@ -92671,7 +93535,7 @@ Wp
 IN
 NH
 ba
-Dr
+of
 ba
 ba
 Dr
@@ -92694,7 +93558,7 @@ IN
 NH
 mE
 qq
-ba
+qF
 hQ
 ba
 te
@@ -92788,8 +93652,8 @@ pI
 pI
 uY
 Cz
-si
-aN
+Re
+Bw
 yv
 aN
 Cz
@@ -92919,7 +93783,7 @@ IN
 On
 NH
 Dr
-Dr
+of
 Dr
 Dr
 Dr
@@ -92950,7 +93814,7 @@ NH
 IN
 NH
 mE
-qq
+PI
 ba
 ba
 Zt
@@ -93023,7 +93887,7 @@ pI
 pI
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 Nx
@@ -93045,8 +93909,8 @@ pI
 pI
 uY
 Cz
-si
-si
+Re
+Re
 aN
 aN
 rd
@@ -93209,7 +94073,7 @@ IN
 mE
 IV
 Sz
-js
+Bl
 ic
 ic
 mE
@@ -93467,7 +94331,7 @@ mE
 ba
 wr
 qq
-Cb
+wd
 WC
 mE
 IN
@@ -93823,7 +94687,7 @@ uY
 Cz
 TC
 Dr
-Nu
+qv
 Dr
 Cz
 MV
@@ -93963,7 +94827,7 @@ NH
 NH
 NH
 qq
-ba
+ER
 Jt
 uJ
 Jt
@@ -94090,7 +94954,7 @@ en
 eK
 eK
 eK
-eK
+dc
 GD
 lX
 Cz
@@ -94168,8 +95032,8 @@ IN
 Vj
 Yf
 eK
-eK
-Yf
+dc
+Ck
 Vj
 Yf
 eK
@@ -94210,7 +95074,7 @@ ba
 ba
 NH
 ba
-ba
+ER
 ba
 ba
 ba
@@ -94957,8 +95821,8 @@ IN
 IN
 qq
 ba
-Jt
-ba
+ZD
+qF
 ba
 qq
 NH
@@ -95202,8 +96066,8 @@ dc
 eK
 oV
 eK
-xL
-xL
+rU
+rU
 Vj
 IN
 eK
@@ -95214,8 +96078,8 @@ IN
 NH
 ba
 ba
-Jt
-Jt
+ZD
+ZD
 qq
 qq
 NH
@@ -95234,7 +96098,7 @@ Wp
 Wp
 Wp
 Wp
-ba
+ER
 ba
 NH
 ba
@@ -95464,7 +96328,7 @@ xL
 Vj
 IN
 eK
-IX
+dU
 IX
 eK
 IN
@@ -95521,7 +96385,7 @@ Wp
 qz
 qz
 cl
-Uc
+JF
 pc
 cl
 cl
@@ -95640,7 +96504,7 @@ uY
 ix
 ix
 ix
-ix
+md
 ix
 ix
 ix
@@ -95778,7 +96642,7 @@ Wp
 bK
 qz
 cl
-Uc
+JF
 Uc
 MS
 cl
@@ -96013,7 +96877,7 @@ ba
 ba
 Wp
 ba
-ba
+ER
 ba
 NH
 Wp
@@ -96039,7 +96903,7 @@ cl
 cl
 cl
 cl
-cl
+Mm
 cl
 bK
 Wl
@@ -96242,8 +97106,8 @@ IN
 IN
 Oz
 ic
-GD
-ba
+Tp
+qF
 ba
 ba
 NH
@@ -96363,7 +97227,7 @@ kt
 pI
 pI
 pI
-Nx
+pS
 Nx
 pI
 pI
@@ -96386,6 +97250,7 @@ IX
 IX
 IX
 IX
+dU
 IX
 IX
 IX
@@ -96422,8 +97287,7 @@ IX
 IX
 IX
 IX
-IX
-IX
+dU
 IX
 IX
 IX
@@ -96499,8 +97363,8 @@ IN
 IN
 js
 ti
-ba
-ba
+qF
+qF
 ba
 ba
 NH
@@ -96543,7 +97407,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+Qp
 Wp
 Wp
 bK
@@ -96710,7 +97574,7 @@ IX
 IX
 IX
 IX
-IX
+dU
 IX
 IX
 IX
@@ -96756,8 +97620,8 @@ IN
 NH
 qq
 ba
-ba
-ba
+qF
+qF
 ba
 ba
 NH
@@ -96767,7 +97631,7 @@ NH
 ba
 GD
 ba
-ba
+ER
 ba
 qq
 Wp
@@ -97291,7 +98155,7 @@ Wp
 Wp
 Wp
 ba
-ba
+ER
 ba
 ba
 ba
@@ -97437,7 +98301,7 @@ nC
 ix
 ix
 ix
-ix
+md
 ix
 ix
 ix
@@ -97747,11 +98611,11 @@ Wp
 Wp
 Wp
 mE
-DA
-DA
+NU
+NU
 nA
 wI
-Nu
+ph
 mE
 NH
 ba
@@ -97904,7 +98768,7 @@ pI
 pI
 Nx
 Nx
-Nx
+pS
 Eo
 Nx
 pI
@@ -98008,7 +98872,7 @@ Dr
 Dr
 Dr
 Dr
-Nu
+ph
 mE
 NH
 ba
@@ -98047,7 +98911,7 @@ wr
 wr
 wr
 Dr
-Dr
+xA
 NH
 Wp
 Wp
@@ -98080,8 +98944,8 @@ Wp
 NH
 Wp
 Wp
-Wp
-Wp
+Qp
+Qp
 Wp
 Wp
 Wp
@@ -98162,7 +99026,7 @@ pI
 Nx
 Nx
 Nx
-Nx
+pS
 Nx
 Nx
 pI
@@ -99746,7 +100610,7 @@ Cz
 nG
 nG
 nG
-nG
+MT
 nG
 Cz
 uY
@@ -99990,14 +100854,14 @@ hR
 hR
 Cz
 DG
-DG
+NM
 DG
 nG
 az
 nG
 ii
 nG
-nG
+MT
 nG
 Cz
 nG
@@ -100065,7 +100929,7 @@ Dr
 ko
 Dr
 Dr
-Dr
+xA
 Dr
 Dr
 Dr
@@ -100254,12 +101118,12 @@ nG
 nG
 nG
 nG
-nG
+MT
 nG
 Cz
 nG
 nG
-nG
+MT
 nG
 Yx
 Cz
@@ -100592,7 +101456,7 @@ mE
 eK
 eK
 eK
-eK
+dw
 eK
 eK
 mE
@@ -100618,7 +101482,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+sZ
 Wp
 Wp
 Wp
@@ -100806,7 +101670,7 @@ eA
 eA
 hw
 hw
-hw
+yH
 hw
 eA
 eA
@@ -101017,11 +101881,11 @@ hR
 hR
 hR
 Cz
-DG
+NM
 GD
 ba
 nG
-nG
+yc
 nG
 nG
 nG
@@ -101030,7 +101894,7 @@ nG
 rd
 qq
 Dr
-Dr
+xA
 Cz
 uY
 uY
@@ -101079,9 +101943,9 @@ SY
 Bj
 Ki
 GH
+zt
 Yg
-Yg
-Yg
+zt
 PU
 SY
 gz
@@ -101298,7 +102162,7 @@ uY
 uY
 ix
 eK
-IX
+dU
 IX
 eK
 ix
@@ -101338,7 +102202,7 @@ Ki
 GH
 Yg
 Yg
-Yg
+zt
 GH
 SY
 gz
@@ -101619,7 +102483,7 @@ gz
 mE
 eK
 eK
-eK
+dw
 eK
 eK
 eK
@@ -101650,7 +102514,7 @@ uZ
 Wp
 Wp
 Wp
-Wp
+Qp
 Wp
 Qh
 Wp
@@ -101793,7 +102657,7 @@ uY
 Cz
 vE
 qq
-qq
+PI
 Cz
 uY
 uY
@@ -101891,7 +102755,7 @@ IN
 eK
 IX
 IX
-eK
+av
 Wp
 Wp
 Wp
@@ -102030,7 +102894,7 @@ lL
 Fa
 Fa
 lL
-Ke
+aj
 Ke
 sS
 Ow
@@ -102049,7 +102913,7 @@ uY
 uY
 Cz
 ct
-GD
+Tp
 ba
 Cz
 uY
@@ -102057,7 +102921,7 @@ uY
 uY
 Cz
 ba
-Dr
+of
 EG
 Cz
 uY
@@ -102091,7 +102955,7 @@ eA
 hw
 hw
 hw
-hw
+yH
 hw
 hw
 hw
@@ -102284,7 +103148,7 @@ hR
 hR
 sS
 lL
-Fa
+Fk
 Fa
 hR
 hR
@@ -102928,7 +103792,7 @@ Wp
 Wp
 Wp
 Wp
-uZ
+gs
 uZ
 Wp
 Wp
@@ -103450,7 +104314,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+sZ
 Wp
 Wp
 Wp
@@ -103636,7 +104500,7 @@ SY
 Nq
 dN
 hu
-hu
+Dv
 SY
 uY
 uY
@@ -103945,7 +104809,7 @@ no
 Wp
 Wp
 eK
-IX
+dU
 IX
 eK
 Wp
@@ -104158,7 +105022,7 @@ SY
 Ki
 Ki
 Ki
-eT
+GF
 SY
 pn
 pn
@@ -104187,7 +105051,7 @@ gz
 gz
 gz
 gz
-gz
+ar
 gz
 gz
 gz
@@ -104202,7 +105066,7 @@ Uo
 Wp
 Wp
 eK
-IX
+dU
 IX
 eK
 Wp
@@ -104379,7 +105243,7 @@ uY
 uY
 uY
 uY
-ix
+md
 ix
 eK
 IX
@@ -104459,7 +105323,7 @@ no
 Wp
 Wp
 eK
-IX
+dU
 IX
 eK
 Wp
@@ -104680,9 +105544,9 @@ SY
 uY
 Cz
 ze
+tI
 ze
-ze
-gu
+GN
 yJ
 es
 es
@@ -105111,7 +105975,7 @@ hR
 hR
 Ke
 lL
-Fa
+Fk
 Fa
 lL
 Ke
@@ -105269,7 +106133,7 @@ Wp
 Wp
 Wp
 Wp
-nZ
+Mw
 Wp
 Wp
 Wp
@@ -105700,7 +106564,7 @@ eA
 uY
 uY
 SY
-fc
+Mr
 Dm
 Dm
 Dm
@@ -105869,7 +106733,7 @@ kf
 Rg
 bc
 bc
-bc
+Bz
 bc
 Rg
 kf
@@ -106124,10 +106988,10 @@ FQ
 FA
 kf
 Rg
+Bz
+Bz
 bc
-bc
-bc
-bc
+di
 Rg
 kf
 FQ
@@ -106373,7 +107237,7 @@ hR
 hR
 hR
 FQ
-Gy
+cg
 Rz
 EX
 Yy
@@ -106744,7 +107608,7 @@ es
 SY
 hZ
 hZ
-Gl
+Ec
 hZ
 hZ
 hZ
@@ -106911,7 +107775,7 @@ hR
 XJ
 lL
 Fa
-Fa
+Fk
 lL
 Ke
 Ke
@@ -107005,9 +107869,9 @@ hZ
 hZ
 hZ
 hZ
-hZ
-hZ
-hZ
+ql
+ql
+ql
 SY
 gz
 gz
@@ -107256,15 +108120,15 @@ uY
 es
 es
 SY
-fc
+Mr
 hZ
 hZ
 hZ
 hZ
 hZ
-hZ
-Dm
-hZ
+ql
+ny
+ql
 SY
 gz
 gz
@@ -107306,7 +108170,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+Qp
 Wp
 Qh
 Wp
@@ -107350,7 +108214,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+Qp
 Wp
 Wp
 Wp
@@ -107403,7 +108267,7 @@ hR
 FQ
 tH
 Gz
-Fa
+tq
 de
 FQ
 ef
@@ -107433,7 +108297,7 @@ FQ
 ZR
 JK
 CR
-jB
+Nr
 FQ
 hR
 hR
@@ -107513,7 +108377,7 @@ uY
 es
 es
 SY
-fc
+Mr
 hZ
 hZ
 hZ
@@ -107552,7 +108416,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+sZ
 Wp
 Wp
 Wp
@@ -107659,15 +108523,15 @@ hR
 hR
 FQ
 bE
-Fa
-QW
+tq
+sJ
 de
 Qa
 wC
 wC
 wC
 wC
-wC
+Fy
 wC
 wC
 wC
@@ -107677,7 +108541,7 @@ Ke
 Lb
 Lb
 Ke
-Ke
+aj
 Ke
 Ke
 lL
@@ -107688,7 +108552,7 @@ Ke
 sS
 FQ
 CR
-CR
+VS
 CR
 CR
 FQ
@@ -107723,7 +108587,7 @@ uY
 ix
 ix
 eK
-IX
+dU
 IX
 eK
 ix
@@ -107770,7 +108634,7 @@ uY
 es
 es
 SY
-fc
+Mr
 hZ
 Gl
 Dm
@@ -107921,11 +108785,11 @@ fV
 de
 Qa
 wC
+Fy
 wC
 wC
 wC
-wC
-wC
+Fy
 wC
 wC
 kf
@@ -108027,7 +108891,7 @@ uY
 es
 es
 SY
-fc
+Mr
 Dm
 hZ
 hZ
@@ -108173,7 +109037,7 @@ hR
 hR
 FQ
 Fa
-Fa
+tq
 Lj
 de
 Qa
@@ -108181,7 +109045,7 @@ wC
 wC
 wC
 wC
-wC
+Fy
 wC
 wC
 wC
@@ -108193,7 +109057,7 @@ Lb
 Ke
 Ke
 Ke
-Ke
+aj
 lL
 Fa
 Fa
@@ -108431,7 +109295,7 @@ hR
 FQ
 fC
 nz
-Fa
+tq
 de
 FQ
 ef
@@ -108554,7 +109418,7 @@ SY
 gz
 gz
 gz
-gz
+pH
 gz
 gz
 gz
@@ -108710,7 +109574,7 @@ hR
 Ke
 lL
 Fa
-Fa
+Fk
 lL
 Ke
 hR
@@ -109011,7 +109875,7 @@ eK
 IX
 IX
 eK
-ix
+GW
 ix
 uY
 uY
@@ -109458,7 +110322,7 @@ hR
 hR
 hR
 FQ
-Zw
+rm
 Ke
 Ke
 FQ
@@ -109776,7 +110640,7 @@ uY
 uY
 uY
 ix
-nC
+cJ
 ix
 eK
 IX
@@ -109868,7 +110732,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+sZ
 Wp
 Wp
 Wp
@@ -109979,12 +110843,12 @@ FQ
 vU
 gp
 ac
-vU
+aA
 FQ
 CM
 wC
 wC
-fM
+hi
 FQ
 hR
 hR
@@ -110764,7 +111628,7 @@ hR
 hR
 hR
 Ke
-lL
+TT
 Fa
 Fa
 lL
@@ -110918,7 +111782,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+sZ
 Wp
 Wp
 Wp
@@ -111124,7 +111988,7 @@ uY
 Wp
 Wp
 Wp
-Wp
+Qp
 Wp
 Wp
 Wp
@@ -111136,7 +112000,7 @@ Wp
 Wp
 Wp
 nU
-Wp
+sZ
 Wp
 Wp
 Wp
@@ -111276,7 +112140,7 @@ hR
 hR
 sS
 sS
-sS
+JW
 Qb
 lL
 Fa
@@ -111579,7 +112443,7 @@ ix
 ix
 eK
 IX
-IX
+dU
 eK
 ix
 ix
@@ -111655,7 +112519,7 @@ Wp
 Wp
 Wp
 eK
-IX
+dU
 IX
 eK
 Wp
@@ -112041,7 +112905,7 @@ vT
 zo
 Za
 XO
-mG
+bQ
 FQ
 NL
 EH
@@ -112089,7 +112953,7 @@ uY
 uY
 uY
 ix
-ix
+md
 ix
 eK
 IX
@@ -112294,7 +113158,7 @@ hR
 hR
 hR
 FQ
-Cq
+MC
 pe
 fF
 AA
@@ -112309,7 +113173,7 @@ Ke
 lL
 Fa
 Fa
-lL
+TT
 Ke
 hR
 FQ
@@ -112554,7 +113418,7 @@ FQ
 pB
 AA
 AA
-AA
+Cl
 Cq
 Kf
 Cq
@@ -112809,7 +113673,7 @@ hR
 hR
 FQ
 zi
-AA
+Cl
 AA
 AA
 JC
@@ -113067,7 +113931,7 @@ hR
 FQ
 LT
 Cq
-Cq
+MC
 hb
 jT
 FQ
@@ -113185,8 +114049,8 @@ Wp
 Wp
 Wp
 Wp
-Wp
-Wp
+Qp
+Qp
 Wp
 mw
 Wp
@@ -113381,7 +114245,7 @@ IX
 IX
 eK
 ix
-ix
+md
 ix
 uY
 uY
@@ -113672,11 +114536,11 @@ uY
 uY
 uY
 ix
+md
 ix
+md
 ix
-ix
-ix
-ix
+md
 ix
 ix
 uY
@@ -114186,14 +115050,14 @@ uY
 uY
 uY
 ix
-qm
+Vb
 ix
 ix
 ix
+md
 ix
 ix
-ix
-ix
+md
 ix
 uY
 uY
@@ -114338,7 +115202,7 @@ hR
 FQ
 se
 se
-kf
+iI
 FQ
 WX
 kf
@@ -114353,7 +115217,7 @@ FQ
 ew
 ew
 Yb
-Fz
+VD
 Yb
 FQ
 Uv
@@ -114382,7 +115246,7 @@ FQ
 fM
 fM
 LY
-LY
+dd
 FQ
 hR
 hR
@@ -114444,12 +115308,12 @@ uY
 uY
 ix
 ix
+md
 ix
 ix
 ix
 ix
-ix
-ix
+md
 ix
 ix
 tT
@@ -114632,7 +115496,7 @@ hR
 FQ
 fM
 LY
-LY
+dd
 LY
 uo
 FQ
@@ -114819,7 +115683,7 @@ Yv
 Yv
 dH
 Ls
-Ls
+IB
 Ls
 Ls
 Ls
@@ -114852,7 +115716,7 @@ hR
 FQ
 JX
 kf
-kf
+iI
 FQ
 kf
 PC
@@ -114889,7 +115753,7 @@ hR
 FQ
 Fo
 LY
-LY
+dd
 LY
 Fo
 FQ
@@ -114959,13 +115823,13 @@ uY
 uY
 uY
 UO
-ix
+md
 tt
 ix
 ix
 ix
 ix
-ix
+md
 ix
 uY
 uY
@@ -115218,11 +116082,11 @@ uY
 uY
 ix
 ix
+md
 ix
 ix
 ix
-ix
-ix
+md
 ix
 uY
 uY
@@ -115477,7 +116341,7 @@ uY
 uY
 ix
 ix
-ix
+md
 ix
 IK
 uY
@@ -115622,7 +116486,7 @@ bT
 hR
 FQ
 wo
-kf
+iI
 kf
 kf
 FQ
@@ -115653,7 +116517,7 @@ Fa
 lL
 Ke
 sS
-sS
+JW
 hR
 hR
 hR
@@ -115663,7 +116527,7 @@ Fo
 Fo
 Fo
 Fo
-FQ
+we
 Fo
 fM
 fM
@@ -115850,7 +116714,7 @@ vj
 vj
 vj
 Ls
-Ls
+mB
 Ls
 vj
 vj
@@ -116026,7 +116890,7 @@ Wp
 eK
 IX
 IX
-eK
+av
 Wp
 uY
 uY
@@ -116280,10 +117144,10 @@ Wp
 Wp
 Wp
 Wp
-eK
+av
 IX
 IX
-eK
+av
 Wp
 uY
 uY
@@ -116412,7 +117276,7 @@ sS
 FQ
 Ke
 Uf
-bc
+Bz
 kT
 kf
 wW
@@ -116528,7 +117392,7 @@ Wp
 Wp
 Wp
 Wp
-Wp
+iT
 Wp
 Wp
 Wp
@@ -116690,7 +117554,7 @@ Fo
 fM
 fM
 fM
-Fo
+pE
 Fo
 Fo
 Fo
@@ -117127,7 +117991,7 @@ os
 os
 yz
 FX
-FX
+ol
 FX
 FX
 FX
@@ -117367,11 +118231,11 @@ vj
 vj
 dH
 Ls
-KJ
+TB
 Ls
 KJ
 Ls
-Ls
+mB
 Ls
 Ls
 dH
@@ -117396,7 +118260,7 @@ FX
 os
 JH
 FX
-FX
+ol
 yz
 os
 vj
@@ -117441,7 +118305,7 @@ Lg
 CR
 CR
 Vd
-bc
+Bz
 kT
 kf
 fd
@@ -117504,7 +118368,7 @@ uY
 SU
 hC
 qD
-qD
+Ss
 qD
 SU
 Sg
@@ -117629,7 +118493,7 @@ Ls
 Ls
 GQ
 Ls
-KJ
+TB
 Ls
 dH
 os
@@ -117651,7 +118515,7 @@ FX
 FX
 os
 os
-FX
+ol
 FX
 yz
 VL
@@ -117947,14 +118811,14 @@ hR
 hR
 hR
 FQ
-bc
+nS
 kf
 kf
 Of
 FQ
 CR
 CR
-CR
+VS
 kf
 LB
 LB
@@ -118130,7 +118994,7 @@ yz
 FX
 yz
 FX
-yz
+AD
 dH
 vj
 vj
@@ -118150,7 +119014,7 @@ os
 Ls
 Ls
 Ls
-Ls
+IB
 Ls
 os
 FX
@@ -118166,7 +119030,7 @@ FX
 FX
 wj
 FX
-yz
+AD
 os
 Ls
 yz
@@ -118204,7 +119068,7 @@ hR
 hR
 hR
 FQ
-em
+Vn
 kf
 kf
 kf
@@ -118214,7 +119078,7 @@ CR
 Vd
 LB
 Ke
-LB
+gC
 il
 Ke
 lL
@@ -118234,7 +119098,7 @@ fM
 fM
 fM
 Fo
-Fo
+Ln
 Fo
 Fo
 FQ
@@ -118274,15 +119138,15 @@ uY
 uY
 SU
 Bs
-Bs
+Ye
 Bs
 hD
-hD
+TZ
 Bs
 Bs
 Bs
 Bs
-Bs
+Ye
 SU
 Sg
 Sg
@@ -118405,7 +119269,7 @@ ng
 dH
 os
 Ls
-Ls
+mB
 Ls
 Ls
 rx
@@ -118413,7 +119277,7 @@ os
 FX
 Ls
 Ls
-Ls
+IB
 Ls
 Ls
 os
@@ -118468,7 +119332,7 @@ kf
 FQ
 qf
 CR
-oH
+hU
 gg
 EI
 Ke
@@ -118516,7 +119380,7 @@ yC
 uk
 yC
 sD
-Br
+GA
 xX
 xX
 Br
@@ -118635,11 +119499,11 @@ dH
 Lf
 dH
 yz
-dH
+Lm
 Pr
 dH
 Cw
-bC
+SH
 bC
 bC
 dH
@@ -118653,7 +119517,7 @@ vj
 dH
 Ls
 Ls
-KJ
+TB
 Ls
 Ls
 KJ
@@ -118680,7 +119544,7 @@ FX
 yz
 os
 os
-yz
+VL
 Ls
 FX
 co
@@ -118748,7 +119612,7 @@ DS
 Fo
 LY
 Qq
-Qq
+TI
 Qq
 LY
 FQ
@@ -118889,11 +119753,11 @@ vj
 vj
 vj
 dH
-yz
+VL
 dH
 co
 dH
-yz
+VL
 bC
 bC
 bC
@@ -119168,7 +120032,7 @@ vj
 FX
 yz
 Ls
-FX
+nY
 FX
 FX
 os
@@ -119255,7 +120119,7 @@ Fo
 LY
 fM
 wC
-LY
+XG
 LY
 FQ
 Fo
@@ -119302,7 +120166,7 @@ uY
 uY
 SU
 le
-Bs
+Ph
 Bs
 hD
 Bs
@@ -119403,13 +120267,13 @@ vj
 vj
 vj
 dH
-FX
+ol
 FX
 yz
-yz
+AD
 yz
 dH
-bC
+SH
 bC
 bC
 bC
@@ -119455,7 +120319,7 @@ yz
 os
 FX
 FX
-Ls
+mB
 Ls
 yz
 FX
@@ -119690,7 +120554,7 @@ FX
 FX
 os
 yz
-yz
+VL
 yz
 os
 Ls
@@ -119710,7 +120574,7 @@ yz
 FX
 FX
 os
-Ls
+mB
 Ls
 Ls
 yz
@@ -119761,7 +120625,7 @@ sS
 Ke
 lL
 Fa
-Fa
+Fk
 lL
 Ke
 FQ
@@ -119787,8 +120651,8 @@ hR
 FQ
 CR
 CR
-jB
-jB
+Nr
+Nr
 FQ
 hR
 hR
@@ -119823,7 +120687,7 @@ Bs
 Bs
 Bs
 Bs
-Bs
+Ph
 Bs
 SU
 Sg
@@ -119924,10 +120788,10 @@ bC
 bC
 dH
 bC
-bC
+SH
 vt
 bC
-bC
+Nz
 dH
 vj
 vj
@@ -119952,7 +120816,7 @@ yz
 os
 GQ
 Ls
-Ls
+IB
 FX
 os
 FX
@@ -119963,14 +120827,14 @@ vj
 vj
 vj
 yz
-yz
+VL
 FX
 FX
 FX
 Ls
 Ls
 Ls
-yz
+AD
 yz
 JH
 yz
@@ -120077,7 +120941,7 @@ Bs
 Bs
 Bs
 hD
-Bs
+Ph
 Bs
 CP
 Bs
@@ -120302,7 +121166,7 @@ FQ
 eI
 CR
 CR
-jB
+Nr
 FQ
 hR
 hR
@@ -120317,8 +121181,8 @@ yC
 sD
 Br
 xX
-xX
-Br
+kU
+GA
 ix
 ix
 ix
@@ -120330,8 +121194,8 @@ uY
 uY
 SU
 hD
-Bs
-xs
+Ye
+mI
 Bs
 Bs
 Bs
@@ -120433,7 +121297,7 @@ vj
 vj
 vj
 dH
-bC
+SH
 bC
 bC
 dH
@@ -120470,7 +121334,7 @@ Ls
 FX
 os
 FX
-FX
+ol
 Ls
 Ls
 os
@@ -120526,7 +121390,7 @@ hR
 hR
 hR
 hR
-sS
+JW
 sS
 sS
 Ke
@@ -120794,7 +121658,7 @@ lL
 Ke
 kf
 Ke
-Ke
+wE
 Ke
 Ke
 Ke
@@ -120836,7 +121700,7 @@ Br
 ix
 ix
 ix
-ix
+GW
 ix
 ix
 ix
@@ -121093,7 +121957,7 @@ Br
 ix
 ix
 ix
-ix
+GW
 ix
 ix
 ix
@@ -121208,7 +122072,7 @@ bC
 bC
 bC
 bC
-bC
+SH
 co
 bC
 aw
@@ -121226,7 +122090,7 @@ yz
 dH
 yz
 FX
-FX
+ol
 FX
 FX
 FX
@@ -121292,7 +122156,7 @@ or
 aB
 yt
 ZF
-yt
+lr
 ZF
 aW
 aW
@@ -121462,7 +122326,7 @@ vj
 vj
 dH
 bC
-bC
+Nz
 bC
 dH
 bC
@@ -121505,13 +122369,13 @@ os
 vj
 vj
 yz
-FX
+nY
 FX
 FX
 os
 Ls
 Ls
-Ls
+IB
 yz
 vj
 vj
@@ -121551,7 +122415,7 @@ bs
 yt
 ZF
 yt
-ZF
+Ma
 aW
 Ke
 Lb
@@ -121564,7 +122428,7 @@ Fa
 lL
 Ke
 Ke
-XJ
+DJ
 Ke
 Ke
 Ke
@@ -121706,7 +122570,7 @@ vj
 vj
 dH
 bC
-bC
+SH
 SH
 bC
 dH
@@ -121723,7 +122587,7 @@ dH
 dH
 dH
 bC
-bC
+Nz
 bC
 bC
 bC
@@ -121752,7 +122616,7 @@ dH
 Ls
 FX
 FX
-FX
+nY
 os
 yz
 FX
@@ -121816,7 +122680,7 @@ Ke
 lL
 lL
 lL
-Fa
+Fk
 Fa
 lL
 lL
@@ -121850,7 +122714,7 @@ lL
 lL
 lL
 lL
-lL
+TT
 lL
 Br
 Br
@@ -122025,7 +122889,7 @@ oU
 os
 yz
 FX
-Ls
+mB
 FX
 yz
 yz
@@ -122087,7 +122951,7 @@ Fa
 Fa
 Fa
 Fa
-Fa
+Fk
 Fa
 Fa
 Fa
@@ -122097,7 +122961,7 @@ Fa
 Fa
 Fa
 Fa
-Fa
+Fk
 Fa
 Fa
 sE
@@ -122225,7 +123089,7 @@ bC
 co
 dH
 bC
-bC
+Nz
 bC
 dH
 Cw
@@ -122312,7 +123176,7 @@ iA
 kz
 ms
 ms
-ms
+HN
 iA
 Ou
 op
@@ -122363,7 +123227,7 @@ Fa
 Fa
 Fa
 Fa
-Fa
+Fk
 Fa
 Fa
 xX
@@ -122377,7 +123241,7 @@ xX
 xX
 xX
 xX
-xX
+kU
 xX
 xX
 xX
@@ -122477,7 +123341,7 @@ vj
 dH
 co
 bC
-bC
+Nz
 bC
 bC
 dH
@@ -122493,7 +123357,7 @@ bC
 bC
 bC
 dH
-bC
+SH
 bC
 co
 bC
@@ -122523,8 +123387,8 @@ dH
 FX
 FX
 FX
+IB
 Ls
-Ls
 yz
 FX
 FX
@@ -122542,7 +123406,7 @@ yz
 FX
 FX
 yz
-yz
+VL
 vj
 vj
 Yv
@@ -122579,7 +123443,7 @@ Tr
 Ym
 Dp
 Ym
-yt
+lr
 aW
 Ke
 Lb
@@ -122596,7 +123460,7 @@ lL
 lL
 lL
 lL
-lL
+TT
 lL
 lL
 lL
@@ -122609,7 +123473,7 @@ Xc
 uR
 lL
 lL
-lL
+TT
 lL
 lL
 lL
@@ -122772,13 +123636,13 @@ vj
 vj
 yz
 FX
-Jd
+Jr
 dH
 FX
 FX
 dH
 FX
-FX
+nY
 Ls
 Ls
 Ls
@@ -122834,7 +123698,7 @@ oN
 Vq
 bs
 yt
-ZF
+Ma
 yt
 ZF
 aW
@@ -122996,7 +123860,7 @@ bC
 bC
 bC
 bC
-bC
+Nz
 bC
 bC
 bC
@@ -123083,13 +123947,13 @@ iA
 fG
 ms
 Un
-ms
+HN
 iA
-yt
+mf
 yt
 yt
 kF
-yt
+lr
 ZF
 yt
 ZF
@@ -123127,7 +123991,7 @@ sS
 ea
 sS
 sS
-sS
+JW
 FQ
 sS
 sS
@@ -123283,7 +124147,7 @@ FX
 FX
 dH
 yz
-yz
+VL
 yz
 FX
 yz
@@ -123419,8 +124283,8 @@ zH
 zH
 zH
 zH
-zH
-zH
+KH
+KH
 zH
 zH
 cB
@@ -123518,16 +124382,16 @@ bC
 co
 dH
 bC
-bC
+Nz
 bC
 dH
-bC
+Nz
 bC
 co
-aw
+tk
 bC
-bC
-bC
+Nz
+Nz
 dH
 Ls
 Ls
@@ -123563,7 +124427,7 @@ FX
 yz
 yz
 FX
-yz
+AD
 os
 dH
 yz
@@ -123599,7 +124463,7 @@ Kb
 Kb
 Kb
 Kb
-Kb
+cE
 ms
 iA
 hR
@@ -123769,7 +124633,7 @@ dH
 bC
 bC
 bC
-dH
+Ui
 bC
 Cw
 bC
@@ -123825,8 +124689,8 @@ os
 dH
 yz
 FX
-yz
-FX
+VL
+ol
 yz
 dH
 vj
@@ -123883,7 +124747,7 @@ LB
 SG
 nI
 kf
-bc
+Bz
 kf
 kf
 kf
@@ -123990,7 +124854,7 @@ Cg
 gM
 Wp
 Wp
-eK
+dw
 IX
 IX
 eK
@@ -124140,7 +125004,7 @@ kf
 NP
 kf
 kf
-bc
+Bz
 kf
 kf
 kf
@@ -124226,7 +125090,7 @@ Sg
 Sg
 Sg
 SU
-BH
+gl
 hD
 hD
 hD
@@ -124280,7 +125144,7 @@ dH
 dH
 dH
 dH
-bC
+Nz
 bC
 ut
 dH
@@ -124289,7 +125153,7 @@ co
 co
 dH
 bC
-bC
+SH
 bC
 dH
 bC
@@ -124364,7 +125228,7 @@ hR
 hR
 hR
 iA
-hf
+tZ
 MJ
 ms
 iA
@@ -124549,9 +125413,9 @@ dH
 dH
 dH
 dH
+SH
 bC
-bC
-bC
+Nz
 bC
 dH
 FX
@@ -124573,12 +125437,12 @@ EM
 FX
 FX
 FX
-FX
+nY
 FX
 wj
 FX
 FX
-FX
+nY
 FX
 FX
 FX
@@ -124743,7 +125607,7 @@ SU
 hD
 Ax
 hD
-hD
+TZ
 Ax
 hD
 hD
@@ -124974,7 +125838,7 @@ Sg
 Sg
 Sg
 Wd
-CP
+qE
 qE
 hg
 Wd
@@ -125079,7 +125943,7 @@ yz
 dH
 Ls
 Ls
-Ls
+mB
 dH
 co
 co
@@ -125175,7 +126039,7 @@ lL
 Ke
 cw
 CR
-CR
+VS
 CR
 ex
 lL
@@ -125258,7 +126122,7 @@ Ax
 ws
 hD
 hD
-Ax
+ZT
 hD
 hD
 SU
@@ -125398,7 +126262,7 @@ hR
 hR
 hR
 Ke
-Ke
+wE
 Fa
 Fa
 Fa
@@ -125472,7 +126336,7 @@ zH
 zH
 zH
 zH
-zH
+fQ
 zH
 zH
 zH
@@ -125488,9 +126352,9 @@ Sg
 Sg
 Sg
 SU
-CP
-CP
-CP
+Ew
+Ew
+Ew
 Ms
 lC
 Bs
@@ -125593,7 +126457,7 @@ yz
 dH
 Ls
 Ls
-Ls
+mB
 dH
 FX
 FX
@@ -125662,6 +126526,7 @@ Fa
 Fa
 Fa
 Fa
+Fk
 Fa
 Fa
 Fa
@@ -125669,8 +126534,7 @@ Fa
 Fa
 Fa
 Fa
-Fa
-Fa
+Fk
 Fa
 Fa
 Fa
@@ -125747,7 +126611,7 @@ Sg
 SU
 sj
 sj
-CP
+qE
 Wd
 Bs
 Bs
@@ -125845,11 +126709,11 @@ dH
 yz
 yz
 yz
-PE
+Wb
 yz
 dH
 Ls
-Ls
+mB
 Ls
 dH
 yz
@@ -125858,7 +126722,7 @@ FX
 yz
 yz
 FX
-FX
+nY
 FX
 FX
 os
@@ -125868,11 +126732,11 @@ FX
 FX
 os
 FX
-FX
-FX
+nY
+nY
 dH
 FX
-FX
+ol
 FX
 FX
 FX
@@ -126121,7 +126985,7 @@ dH
 os
 FX
 FX
-FX
+nY
 FX
 os
 FX
@@ -126135,7 +126999,7 @@ yz
 yz
 yz
 dH
-bC
+Nz
 bC
 bC
 dH
@@ -126202,7 +127066,7 @@ Ke
 Ke
 Ke
 iA
-vG
+jN
 lL
 lL
 lL
@@ -126357,7 +127221,7 @@ FX
 FX
 dH
 yz
-yz
+AD
 yz
 dH
 yz
@@ -126393,7 +127257,7 @@ FX
 yz
 dH
 FX
-FX
+nY
 FX
 dH
 FX
@@ -126459,7 +127323,7 @@ Ke
 Ke
 Ke
 iA
-vG
+jN
 lL
 lL
 lL
@@ -126518,7 +127382,7 @@ SU
 Kq
 Kq
 lP
-CP
+Ew
 SU
 hD
 hD
@@ -126597,16 +127461,16 @@ Yv
 dH
 dH
 Ls
-Ls
+IB
 Ls
 Tl
+IB
 Ls
 Ls
 Ls
 Ls
 Ls
-Ls
-Ls
+IB
 Ls
 Ls
 dH
@@ -126625,7 +127489,7 @@ yz
 dH
 yz
 yz
-yz
+VL
 yz
 vj
 vj
@@ -126700,12 +127564,12 @@ hR
 hR
 hR
 FQ
-Eg
-Eg
-Eg
-Eg
-Eg
-Eg
+zx
+zx
+zx
+zx
+zx
+zx
 FQ
 Ke
 Ke
@@ -126774,7 +127638,7 @@ CP
 Wd
 Ew
 CP
-CP
+Ew
 CP
 Wd
 hD
@@ -126787,7 +127651,7 @@ Bs
 Bs
 yq
 Bs
-Bs
+Ye
 Bs
 Bs
 SU
@@ -126874,7 +127738,7 @@ yz
 yz
 yz
 dH
-yz
+AD
 yz
 ap
 yz
@@ -126898,7 +127762,7 @@ vj
 FX
 FX
 FX
-FX
+ol
 FX
 co
 yz
@@ -126962,7 +127826,7 @@ LB
 LB
 LB
 LB
-Eg
+zx
 FQ
 XJ
 Ke
@@ -126973,7 +127837,7 @@ Ke
 Ke
 Ke
 iA
-vG
+jN
 lL
 lL
 WQ
@@ -127013,7 +127877,7 @@ ix
 zH
 zH
 zH
-zH
+KH
 zH
 zH
 zH
@@ -127039,7 +127903,7 @@ hD
 hD
 hD
 hD
-Ax
+Yh
 Bs
 Bs
 Bs
@@ -127199,7 +128063,7 @@ LB
 LB
 dl
 zh
-Ke
+wE
 Ke
 FQ
 lL
@@ -127216,8 +128080,8 @@ hR
 FQ
 LB
 LB
-Eg
-Eg
+zx
+zx
 LB
 LB
 iA
@@ -127270,7 +128134,7 @@ ix
 zH
 zH
 zH
-zH
+KH
 zH
 zH
 zH
@@ -127286,7 +128150,7 @@ qE
 CP
 CP
 SU
-CP
+qE
 CP
 CP
 lP
@@ -127367,9 +128231,9 @@ dH
 dH
 dH
 dH
+AD
 yz
-yz
-yz
+AD
 Ay
 yz
 dH
@@ -127450,7 +128314,7 @@ hR
 hR
 hR
 LB
-EI
+Yw
 dl
 LB
 LB
@@ -127460,7 +128324,7 @@ Ke
 Ke
 FQ
 lL
-lL
+qQ
 lL
 lL
 FQ
@@ -127473,8 +128337,8 @@ hR
 FQ
 LB
 LB
-Eg
-Eg
+VH
+zx
 LB
 LB
 iA
@@ -127546,7 +128410,7 @@ SU
 Kq
 Kq
 dD
-CP
+qE
 SU
 hD
 hD
@@ -127636,7 +128500,7 @@ Ls
 Ls
 Ls
 Ls
-Ls
+mB
 dH
 FX
 FX
@@ -127646,7 +128510,7 @@ FX
 yz
 yz
 yz
-FX
+ol
 FX
 yz
 yz
@@ -127669,7 +128533,7 @@ vj
 vj
 vj
 vj
-Ls
+mB
 yz
 co
 FX
@@ -127710,8 +128574,8 @@ JJ
 LB
 TG
 Wc
-LU
-LU
+bj
+bj
 iA
 Ke
 Ke
@@ -127760,7 +128624,7 @@ lL
 Ud
 Nn
 mQ
-wP
+KI
 FQ
 bT
 eA
@@ -127909,7 +128773,7 @@ FX
 yz
 yz
 yz
-yz
+VL
 yz
 yz
 yz
@@ -127966,7 +128830,7 @@ hR
 LB
 LB
 LB
-LU
+bj
 LU
 LU
 iA
@@ -127993,7 +128857,7 @@ LB
 LB
 hH
 kf
-kf
+jj
 kf
 FQ
 lL
@@ -128003,12 +128867,12 @@ lL
 iA
 Lu
 sb
-lL
+tv
 wP
 iA
 lL
 UE
-wP
+lc
 iA
 vG
 lL
@@ -128139,7 +129003,7 @@ Ls
 Tl
 dH
 yz
-yz
+VL
 yz
 yz
 yz
@@ -128157,7 +129021,7 @@ FX
 dH
 FX
 FX
-FX
+ol
 FX
 FX
 QL
@@ -128222,7 +129086,7 @@ hR
 hR
 LB
 LB
-LB
+gC
 LB
 LB
 dl
@@ -128247,24 +129111,24 @@ LB
 LB
 LB
 LB
-Eg
+zx
 iA
 kf
 kf
-kf
+NY
 bc
 lL
 lL
 lL
 lL
 iA
-wP
+lc
 lL
 lL
-wP
+lc
 iA
 lL
-lL
+tv
 wP
 iA
 lL
@@ -128303,10 +129167,10 @@ zH
 zH
 zH
 SU
-sH
+ag
 Bs
 xs
-ZY
+pb
 Bs
 SU
 cb
@@ -128314,7 +129178,7 @@ hG
 cb
 cb
 ed
-dU
+ed
 RG
 cb
 cb
@@ -128366,8 +129230,8 @@ eK
 Wp
 Wp
 Wp
-Wp
-Wp
+Qp
+Qp
 Wp
 Wp
 Wp
@@ -128484,7 +129348,7 @@ dl
 dl
 LB
 zh
-Ke
+wE
 Ke
 FQ
 fz
@@ -128499,12 +129363,12 @@ hR
 hR
 hR
 FQ
-Eg
-Eg
+zx
+zx
 LB
 LB
-Eg
-Eg
+zx
+zx
 iA
 kf
 kf
@@ -128521,7 +129385,7 @@ Ai
 wP
 iA
 sb
-lL
+tv
 wP
 YZ
 yK
@@ -128623,7 +129487,7 @@ eK
 eK
 eK
 eK
-eK
+av
 eK
 eK
 eK
@@ -128649,7 +129513,7 @@ ap
 yz
 ap
 yz
-yz
+VL
 ap
 yz
 yz
@@ -128660,7 +129524,7 @@ yz
 yz
 yz
 yz
-yz
+VL
 yz
 yz
 yz
@@ -128698,7 +129562,7 @@ vj
 vj
 vj
 Ls
-FX
+nY
 FX
 FX
 FX
@@ -128710,7 +129574,7 @@ bC
 ut
 dH
 sd
-bC
+Nz
 Cw
 dH
 Yv
@@ -128745,7 +129609,7 @@ Ke
 Ke
 FQ
 Vl
-bk
+tA
 yi
 lL
 lL
@@ -128764,7 +129628,7 @@ FQ
 FQ
 iA
 dg
-kf
+NY
 kf
 bc
 lL
@@ -128778,13 +129642,13 @@ lL
 JQ
 iA
 jL
-wP
-wP
+lc
+lc
 YZ
-wP
+lc
 lL
 FQ
-wP
+lc
 lL
 lL
 lL
@@ -128923,7 +129787,7 @@ yz
 Pr
 yz
 FX
-FX
+nY
 yz
 dH
 FX
@@ -128956,14 +129820,14 @@ vj
 vj
 vj
 Ls
-Ls
+IB
 FX
 FX
 co
 FX
 dH
 bC
-bC
+Nz
 co
 dH
 bC
@@ -129001,7 +129865,7 @@ Ts
 Ke
 Ke
 FQ
-Vl
+RH
 bk
 yi
 yi
@@ -129018,10 +129882,10 @@ LB
 LB
 LB
 LB
-Eg
+zx
 iA
 kf
-kf
+NY
 kf
 FQ
 lL
@@ -129041,10 +129905,10 @@ YZ
 FQ
 FQ
 FQ
-wP
+lc
 lL
 lL
-wP
+KI
 lq
 FQ
 bT
@@ -129076,7 +129940,7 @@ zH
 SU
 Lv
 sH
-mI
+vY
 Bs
 Bs
 Bs
@@ -129183,14 +130047,14 @@ FX
 yz
 FX
 dH
-FX
+ol
 FX
 FX
 FX
 co
 yz
 FX
-FX
+ol
 FX
 dH
 vj
@@ -129259,7 +130123,7 @@ Ke
 Ke
 FQ
 Vl
-bk
+tA
 yi
 lL
 lL
@@ -129275,7 +130139,7 @@ LB
 LB
 ci
 LB
-Eg
+zx
 iA
 kf
 kf
@@ -129547,11 +130411,11 @@ lL
 lL
 CR
 CR
-oH
+hU
 CR
 CR
 CR
-oH
+hU
 CR
 CR
 iA
@@ -129576,7 +130440,7 @@ ix
 ix
 ix
 ix
-ix
+md
 ix
 ix
 ix
@@ -129716,7 +130580,7 @@ Yv
 vj
 vj
 Ls
-FX
+ol
 FX
 os
 os
@@ -129786,13 +130650,13 @@ hR
 Eg
 LB
 LB
-Eg
-Eg
-Eg
-Eg
+zx
+zx
+zx
+zx
 iA
 kf
-kf
+jj
 kf
 FQ
 lL
@@ -129864,7 +130728,7 @@ SU
 JG
 Bs
 Bs
-GO
+wu
 hD
 Bs
 Bs
@@ -129941,7 +130805,7 @@ dH
 FX
 FX
 dH
-yz
+AD
 yz
 yz
 FX
@@ -129976,7 +130840,7 @@ Ls
 FX
 FX
 FX
-FX
+nY
 co
 FX
 yz
@@ -130191,7 +131055,7 @@ dH
 Ls
 ng
 Ls
-Ls
+IB
 GQ
 Ls
 dH
@@ -130239,7 +131103,7 @@ FX
 FX
 FX
 Yu
-FX
+nY
 FX
 os
 FX
@@ -130276,8 +131140,8 @@ hR
 hR
 hR
 iA
-re
-re
+jH
+jH
 re
 wC
 lL
@@ -130289,7 +131153,7 @@ Ot
 Ot
 lL
 lL
-lL
+qQ
 iA
 hR
 hR
@@ -130306,7 +131170,7 @@ Ns
 PV
 pO
 iA
-pO
+Hd
 PV
 PV
 pO
@@ -130314,7 +131178,7 @@ iA
 pO
 Ns
 PV
-pO
+Hd
 iA
 CR
 CR
@@ -130488,7 +131352,7 @@ vj
 os
 os
 Ls
-Ls
+IB
 Ls
 os
 os
@@ -130577,10 +131441,10 @@ CR
 CR
 iA
 oH
-oH
+hU
 oH
 yu
-oH
+hU
 CR
 iA
 hR
@@ -130733,7 +131597,7 @@ Ls
 Ls
 Ls
 Ls
-Ls
+IB
 Ls
 Ls
 vj
@@ -130753,15 +131617,15 @@ FX
 os
 FX
 FX
-FX
+ol
 FX
 os
 FX
-FX
+nY
 os
 dH
 Ls
-Ls
+IB
 Ls
 Ls
 dH
@@ -130815,7 +131679,7 @@ hR
 hR
 LB
 iA
-uf
+kk
 RA
 RA
 Oq
@@ -130828,7 +131692,7 @@ iA
 Oq
 PV
 PV
-uf
+kk
 iA
 CR
 CR
@@ -130969,17 +131833,17 @@ FX
 Wz
 FX
 yz
-yz
+AD
 yz
 yz
 VL
-yz
+VL
 yz
 FX
 FX
 dH
 FX
-FX
+nY
 FX
 yz
 yz
@@ -131075,7 +131939,7 @@ iA
 uf
 PV
 PV
-Oq
+NT
 iA
 PV
 PV
@@ -131140,9 +132004,9 @@ CP
 CP
 SU
 iH
-Bs
+Ph
 SU
-Bg
+ni
 SU
 Bg
 SU
@@ -131158,7 +132022,7 @@ Bs
 hD
 hD
 Bs
-GO
+wu
 SU
 Zq
 Me
@@ -131224,7 +132088,7 @@ FX
 dH
 dH
 FX
-FX
+nY
 dH
 yz
 yz
@@ -131279,9 +132143,9 @@ FX
 FX
 FX
 yz
+VL
 yz
-yz
-yz
+AD
 yz
 dH
 Yv
@@ -131391,7 +132255,7 @@ CP
 xs
 xs
 xs
-CP
+Ew
 Wd
 CP
 CP
@@ -131486,7 +132350,7 @@ dH
 yz
 co
 yz
-yz
+AD
 yz
 co
 yz
@@ -131504,7 +132368,7 @@ vj
 vj
 vj
 Ls
-Ls
+mB
 Ls
 vj
 vj
@@ -131602,7 +132466,7 @@ lL
 lL
 lL
 lL
-lL
+JA
 lL
 lL
 lL
@@ -131610,9 +132474,9 @@ YZ
 kf
 kf
 kf
-yg
+aP
 kf
-eF
+qR
 iA
 bT
 bT
@@ -131672,7 +132536,7 @@ Bs
 hD
 Bs
 xs
-yq
+kp
 SU
 Sg
 Sg
@@ -131735,7 +132599,7 @@ Fm
 dH
 FX
 co
-FX
+nY
 dH
 wj
 FX
@@ -131824,12 +132688,12 @@ hR
 hR
 hR
 iA
-kf
+iI
 Ig
 WW
 kf
 kf
-kf
+iI
 lH
 kf
 iA
@@ -131869,7 +132733,7 @@ dB
 kf
 kf
 kf
-eF
+qR
 iA
 bT
 bT
@@ -131948,7 +132812,7 @@ Zq
 Zq
 Zq
 cB
-Jj
+bO
 CP
 qE
 CP
@@ -132030,7 +132894,7 @@ Yv
 vj
 vj
 os
-FX
+nY
 FX
 FX
 yz
@@ -132053,7 +132917,7 @@ dH
 yz
 yz
 yz
-yz
+AD
 dH
 Yv
 Yv
@@ -132294,7 +133158,7 @@ co
 yz
 yz
 yz
-yz
+AD
 yz
 dH
 vj
@@ -132304,7 +133168,7 @@ FX
 Ui
 yz
 FX
-yz
+AD
 yz
 dH
 yz
@@ -132380,7 +133244,7 @@ lL
 iA
 kf
 kf
-yg
+XH
 NY
 kf
 kf
@@ -132417,8 +133281,8 @@ Sg
 Wd
 tB
 cb
-dU
-dU
+ed
+ed
 cb
 Wd
 CP
@@ -132464,10 +133328,10 @@ Zq
 cB
 Xv
 CP
-CP
+Ew
 CP
 Xv
-CP
+Ew
 cB
 Wp
 Wp
@@ -132515,7 +133379,7 @@ yz
 wj
 FX
 FX
-FX
+nY
 dH
 vj
 vj
@@ -132523,7 +133387,7 @@ vj
 vj
 vj
 Ls
-Ls
+IB
 Ls
 vj
 vj
@@ -132615,7 +133479,7 @@ hR
 hR
 iA
 Ke
-Ke
+Ll
 lM
 Ke
 iA
@@ -132627,12 +133491,12 @@ hR
 Ke
 Ke
 Ke
-YS
+NA
 iA
 lL
 lL
 lL
-lL
+JA
 lL
 iA
 iA
@@ -132854,7 +133718,7 @@ hR
 iA
 So
 kf
-kf
+iI
 kf
 kf
 kf
@@ -132952,10 +133816,10 @@ Sg
 Sg
 SU
 qD
-qD
-qD
+eY
+PX
 SU
-qD
+Ss
 qD
 qD
 SU
@@ -133019,7 +133883,7 @@ dH
 yz
 yz
 FX
-FX
+ol
 FX
 Ay
 vj
@@ -133027,9 +133891,9 @@ yz
 yz
 Ls
 yz
+ol
 FX
-FX
-yz
+AD
 dH
 vj
 vj
@@ -133188,8 +134052,8 @@ Sg
 SU
 pr
 cb
-dU
-dU
+ed
+ed
 cb
 Wd
 CP
@@ -133208,7 +134072,7 @@ Sg
 Sg
 Sg
 SU
-qD
+Ss
 TA
 qD
 bz
@@ -133299,7 +134163,7 @@ Ls
 Ls
 Ls
 Ls
-Ls
+IB
 Ls
 Ls
 Ls
@@ -133317,7 +134181,7 @@ vj
 os
 os
 yz
-FX
+ol
 os
 vj
 vj
@@ -133466,8 +134330,8 @@ Sg
 Sg
 SU
 qD
-qD
-qD
+PX
+Ss
 SU
 lJ
 qD
@@ -133559,7 +134423,7 @@ Ls
 Ls
 Ls
 Ls
-Ls
+mB
 Ls
 Ls
 vj
@@ -133846,7 +134710,7 @@ Fm
 dH
 FX
 Ls
-FX
+nY
 FX
 dH
 Ls
@@ -134051,7 +134915,7 @@ dH
 dH
 dH
 dH
-yz
+VL
 yz
 yz
 yz
@@ -134240,7 +135104,7 @@ Sg
 Sg
 Sg
 SU
-JE
+Tu
 qD
 qD
 SU
@@ -134613,7 +135477,7 @@ yz
 yz
 yz
 yz
-yz
+AD
 Ls
 yz
 Ls
@@ -134866,7 +135730,7 @@ vj
 vj
 vj
 vj
-yz
+AD
 yz
 JH
 yz
