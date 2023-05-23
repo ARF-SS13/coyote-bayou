@@ -108,7 +108,6 @@
 	icon = '/icons/obj/items_and_weapons.dmi'
 	icon_state = "disentegrate"
 	item_state = "defibcompact-emagged"
-	firerate_semi = GUN_FIRE_DELAY_FASTER
 	max_charges = 100
 	recharge_rate = 10 SECONDS
 	
