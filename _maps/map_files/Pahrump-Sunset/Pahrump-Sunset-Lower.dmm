@@ -2455,13 +2455,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"bHi" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "S4"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "bHj" = (
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/inside/subway,
@@ -11016,10 +11009,6 @@
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/caves)
-"fXn" = (
-/obj/item/card/midbounty,
-/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "fXU" = (
 /obj/effect/decal/cleanable/dirt{
@@ -26671,9 +26660,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "qSx" = (
-/obj/item/card/midbounty,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
+/turf/closed/indestructible/f13/matrix/transition,
+/area/f13/caves)
 "qSG" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -34620,12 +34608,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
-"wFy" = (
-/obj/item/card/midbounty,
-/turf/open/indestructible/ground/inside/subway{
-	name = "cave"
-	},
-/area/f13/caves)
 "wFO" = (
 /obj/structure/decoration/rag,
 /turf/closed/wall/f13/wood,
@@ -37046,10 +37028,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+lqn
+qSx
+qSx
+lqn
 aaa
 aaa
 aaa
@@ -37304,8 +37286,8 @@ aae
 aae
 aae
 bFx
-aac
-aac
+aah
+aah
 bFx
 aae
 aae
@@ -37986,7 +37968,7 @@ rQU
 fSX
 qJz
 aaB
-fXn
+pzg
 oIe
 aak
 aak
@@ -40903,7 +40885,7 @@ aah
 aah
 aah
 aah
-bHi
+aah
 bFx
 aae
 aae
@@ -47012,7 +46994,7 @@ aah
 jja
 aah
 pHQ
-qSx
+pHQ
 aah
 jja
 aah
@@ -50575,9 +50557,9 @@ aak
 aak
 aaB
 tRA
-fXn
+pzg
 aaB
-fXn
+pzg
 aaB
 aak
 aak
@@ -99603,7 +99585,7 @@ fze
 oXC
 tbh
 sta
-wFy
+gvM
 iCD
 aaa
 xwF
