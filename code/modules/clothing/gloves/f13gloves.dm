@@ -52,6 +52,13 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
+/obj/item/clothing/gloves/f13/military/engineer
+	name = "military engineering gloves"
+	desc = "Sleek, black leather gloves issued by the U.S. Army centuries ago. They have an extra layer to help protect the wearer from both burns and electrical shocks."
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_FIRE_T1)
+
 /obj/item/clothing/gloves/f13/doom
 	name = "strange gloves"
 	desc = "These gloves look like a part of some sort of space suit, or maybe exquisite armor, but you can't tell for sure."
