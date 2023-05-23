@@ -113,21 +113,21 @@
 	item_state = "gadpathur_coat"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/gadpathurleather
+/obj/item/clothing/suit/toggle/labcoat/aurora/gadpathurleather
 	name = "Gadpathur leather coat"
 	desc = "A tan coat of some sort made of leather."
 	icon_state = "gadpathurleather"
 	item_state = "gadpathurleather"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/gadpathurtrench
+/obj/item/clothing/suit/toggle/labcoat/aurora/gadpathurtrench
 	name = "Gadpathur trench coat"
 	desc = "A tan trench of some sort made of leather."
 	icon_state = "gadpathurtrench"
 	item_state = "gadpathurtrench"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/gadpathurthermal
+/obj/item/clothing/suit/toggle/labcoat/aurora/gadpathurthermal
 	name = "Gadpathur thermal coat"
 	desc = "A thermal Coat of some sort."
 	icon_state = "gadpathurthermal"
@@ -148,154 +148,154 @@
 	item_state = "bells_zora_cloak"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/coat_himeo
+/obj/item/clothing/suit/toggle/labcoat/aurora/coat_himeo
 	name = "Himeo Coat"
 	desc = "A long brown coat outlined in white."
 	icon_state = "coat_himeo"
 	item_state = "coat_himeo"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/coat_himeogrey
+/obj/item/clothing/suit/toggle/labcoat/aurora/coat_himeogrey
 	name = "Himeo Coat, Grey"
 	desc = "A long Grey coat outlined in white."
 	icon_state = "coat_himeo_grey"
 	item_state = "coat_himeo_grey"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_coat
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_coat
 	name = "Idris Coat "
 	desc = "A black coat with Turqoise lining."
 	icon_state = "idris_coat"
 	item_state = "idris_coat"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_coatlong
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_coatlong
 	name = "Idris long Coat "
 	desc = "A black long coat with Turqoise lining."
 	icon_state = "idris_longcoat"
 	item_state = "idris_longcoat"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_trenchcoat
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_trenchcoat
 	name = "Idris trench coat "
 	desc = "A black trench coat with Turqoise lining."
 	icon_state = "idris_trenchcoat"
 	item_state = "idris_trenchcoat"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_duster
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_duster
 	name = "Idris duster coat "
 	desc = "A black duster coat with Turqoise lining."
 	icon_state = "idris_duster"
 	item_state = "idris_duster"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_coatwhite
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_coatwhite
 	name = "Idris Coat, white "
 	desc = "A white coat with Turqoise lining."
 	icon_state = "idris_coat_white"
 	item_state = "idris_coat_white"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_longcoatwhite
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_longcoatwhite
 	name = "Idris long Coat, white "
 	desc = "A white long coat with Turqoise lining."
 	icon_state = "idris_longcoat_white"
 	item_state = "idris_longcoat_white"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_trenchcoatwhite
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_trenchcoatwhite
 	name = "Idris trench Coat, white "
 	desc = "A white trench coat with Turqoise lining."
 	icon_state = "idris_trenchcoat_white"
 	item_state = "idris_trenchcoat_white"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_dusterwhite
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_dusterwhite
 	name = "Idris Duster Coat, white "
 	desc = "A white duster coat with Turqoise lining."
 	icon_state = "idris_duster_white"
 	item_state = "idris_duster_white"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_coatbrown
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_coatbrown
 	name = "Idris Coat, brown"
 	desc = "A brown coat with cream lining."
 	icon_state = "idris_coat_brown"
 	item_state = "idris_coat_brown"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_longcoatbrown
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_longcoatbrown
 	name = "Idris Long Coat, brown"
 	desc = "A brown long coat with cream lining."
 	icon_state = "idris_longcoat_brown"
 	item_state = "idris_longcoat_brown"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_trenchcoatbrown
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_trenchcoatbrown
 	name = "Idris Trench Coat, brown"
 	desc = "A brown Trench coat with cream lining."
 	icon_state = "idris_trenchcoat_brown"
 	item_state = "idris_trenchcoat_brown"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_dusterbrown
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_dusterbrown
 	name = "Idris Duster Coat, brown"
 	desc = "A brown duster with cream lining."
 	icon_state = "idris_duster_brown"
 	item_state = "idris_duster_brown"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/idris_windbreaker
+/obj/item/clothing/suit/toggle/labcoat/aurora/idris_windbreaker
 	name = "Idris Windbreaker"
 	desc = "A Grey coat with turqoise lining that might help with the wind."
 	icon_state = "idris_windbreaker"
 	item_state = "idris_windbreaker"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/dominian_noble
+/obj/item/clothing/suit/toggle/labcoat/aurora/dominian_noble
 	name = "Noble Coat red with zipper"
 	desc = "A zipped up noble coat in red."
 	icon_state = "dominian_noble"
 	item_state = "dominian_noble"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/dominian_noble2
+/obj/item/clothing/suit/toggle/labcoat/aurora/dominian_noble2
 	name = "Noble Coat red with buttons"
 	desc = "A buttoned up noble coat in red."
 	icon_state = "dominian_noble2"
 	item_state = "dominian_noble2"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/dominian_noble3
+/obj/item/clothing/suit/toggle/labcoat/aurora/dominian_noble3
 	name = "Noble Coat red with a clasp"
 	desc = "A clasped noble coat in red."
 	icon_state = "dominian_noble3"
 	item_state = "dominian_noble3"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/dominian_noble4
+/obj/item/clothing/suit/toggle/labcoat/aurora/dominian_noble4
 	name = "Noble Coat black with a zipper"
 	desc = "A zipped up noble coat in black."
 	icon_state = "dominian_noble4"
 	item_state = "dominian_noble4"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/dominian_noble5
+/obj/item/clothing/suit/toggle/labcoat/aurora/dominian_noble5
 	name = "Noble Coat black with a clasp"
 	desc = "A clasped noble coat in black."
 	icon_state = "dominian_noble5"
 	item_state = "dominian_noble5"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/dominian_surcoat
+/obj/item/clothing/suit/toggle/labcoat/aurora/dominian_surcoat
 	name = "Noble Coat, long red"
 	desc = "A long red coat."
 	icon_state = "dominian_surcoat"
 	item_state = "dominian_surcoat"
 	armor = ARMOR_VALUE_LIGHT
 
-/obj/item/clothing/suit/labcoat/aurora/freedom_coat
+/obj/item/clothing/suit/toggle/labcoat/aurora/freedom_coat
 	name = "Freedom Coat"
 	desc = "A teal coat with a golden trim"
 	icon_state = "freedom_coat"
