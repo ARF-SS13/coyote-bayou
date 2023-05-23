@@ -105,7 +105,7 @@
 	desc = "The energy that flows through you, concentrated into the palm of your hand."
 	fire_sound = 'sound/magic/kiblast.wav'
 	ammo_type = /obj/item/projectile/seedling
-	icon = '/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "disentegrate"
 	item_state = "defibcompact-emagged"
 	max_charges = 100
@@ -117,7 +117,7 @@
 	desc = "The energy that flows through you, concentrated into the palm of your hand, now wave-like!"
 	fire_sound = 'sound/magic/basicbeam_fire.ogg'
 	ammo_type = /obj/item/projectile/beam/laser/pistol/badlands/hitscan
-	icon = '/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "fleshtostone"
 	item_state = "defibcompact-emagged"
 	max_charges = 1
