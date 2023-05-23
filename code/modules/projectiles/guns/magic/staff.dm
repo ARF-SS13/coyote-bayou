@@ -104,7 +104,7 @@
 	name = "charged ki blast"
 	desc = "The energy that flows through you, concentrated into the palm of your hand."
 	fire_sound = 'sound/magic/kiblast.wav'
-	ammo_type = /obj/item/ammo_casing/magic/kiblast
+	ammo_type = /obj/item/projectile/seedling
 	icon = '/icons/obj/items_and_weapons.dmi'
 	icon_state = "disentegrate"
 	item_state = "defibcompact-emagged"
