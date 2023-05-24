@@ -4055,6 +4055,10 @@
 /obj/item/stack/sheet/cloth/ten,
 /obj/item/stack/sheet/cloth/ten,
 /obj/item/stack/sheet/cloth/ten,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/sandblock/twenty,
+/obj/item/stack/sheet/sandblock/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "bOZ" = (
@@ -10408,13 +10412,10 @@
 	},
 /area/f13/caves)
 "fCC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/turf/open/floor/f13{
-	color = "#d9c4b9";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
+/obj/structure/rack,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "fCD" = (
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb{
@@ -14487,14 +14488,14 @@
 	},
 /area/f13/bunker)
 "iFf" = (
-/obj/machinery/microwave,
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	color = "#d9c4b9";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
+/obj/structure/rack,
+/obj/item/stack/sheet/prewar/twenty,
+/obj/item/stack/sheet/prewar/twenty,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/metal/five,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "iFL" = (
 /obj/structure/fence,
@@ -16251,14 +16252,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "jRo" = (
-/obj/structure/bed/old,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	color = "#d9c4b9";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building)
+/obj/item/stack/sheet/plastic/fifty,
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "jRC" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt{
@@ -29611,6 +29607,10 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"tkk" = (
+/obj/item/stack/sheet/metal/five,
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "tkA" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/leather/twenty,
@@ -29624,6 +29624,10 @@
 /obj/item/stack/sheet/leather/twenty,
 /obj/item/stack/sheet/leather/twenty,
 /obj/item/stack/sheet/leather/twenty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/mineral/wood/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "tkZ" = (
@@ -44305,7 +44309,7 @@ aae
 aae
 aae
 aae
-aae
+jRo
 niZ
 niZ
 niZ
@@ -44562,7 +44566,7 @@ fEI
 sMz
 aae
 aae
-aae
+tkk
 niZ
 niZ
 niZ
@@ -45095,7 +45099,7 @@ ixO
 ixO
 vAm
 nNV
-jRo
+bOb
 bOb
 aty
 kpv
@@ -45352,7 +45356,7 @@ bdZ
 bdZ
 vAm
 nNV
-adE
+bOb
 bOb
 jGf
 joe
@@ -45609,7 +45613,7 @@ ixO
 ixO
 vAm
 nNV
-adE
+bOb
 bOb
 rwa
 lmU
@@ -45866,7 +45870,7 @@ ixO
 ixO
 vAm
 nNV
-fCC
+bOb
 bOb
 ega
 vCB
@@ -46123,7 +46127,7 @@ ixO
 ixO
 vAm
 nNV
-iFf
+bOb
 bOb
 cHn
 qGD
@@ -47151,7 +47155,7 @@ bGS
 rHB
 rHB
 rHB
-pDR
+jGk
 vjS
 bPw
 xWW
@@ -47665,7 +47669,7 @@ bGS
 rHB
 rHB
 rHB
-joe
+jGk
 bPw
 xow
 iad
@@ -47922,7 +47926,7 @@ bGS
 rHB
 rHB
 rHB
-eFN
+jGk
 ejg
 alc
 gCV
@@ -48179,7 +48183,7 @@ bGS
 rHB
 rHB
 rHB
-eFN
+jGk
 swd
 dUU
 iad
@@ -48424,7 +48428,7 @@ rHB
 rHB
 rHB
 bOD
-xgF
+fCC
 bOA
 bLL
 bLL
@@ -48681,7 +48685,7 @@ rHB
 rHB
 rHB
 bPe
-xgF
+iFf
 bOA
 nUc
 pii

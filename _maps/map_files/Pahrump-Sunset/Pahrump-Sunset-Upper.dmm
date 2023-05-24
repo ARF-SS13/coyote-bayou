@@ -5428,6 +5428,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"ggW" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
+/turf/open/indestructible/cobble,
+/area/f13/building)
 "ggY" = (
 /obj/machinery/photocopier,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10817,6 +10824,14 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building)
+"lOC" = (
+/obj/structure/rug/big/rug_red{
+	pixel_x = -14
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "lOV" = (
@@ -19524,14 +19539,6 @@
 	icon_state = "common-broken4"
 	},
 /area/f13/building/abandoned)
-"vAo" = (
-/obj/structure/rug/big/rug_red{
-	pixel_x = -14
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building)
 "vAv" = (
 /obj/structure/chair{
 	dir = 1
@@ -25627,7 +25634,7 @@ eFm
 sEo
 sEo
 tnK
-tnK
+ggW
 keW
 nEl
 axq
@@ -29779,7 +29786,7 @@ uDL
 pYQ
 eFm
 iKS
-vAo
+lOC
 wBT
 mNn
 odJ
