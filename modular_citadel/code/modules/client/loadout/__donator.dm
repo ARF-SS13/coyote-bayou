@@ -589,7 +589,7 @@
 	ckeywhitelist = list("jaggachi")
 
 /obj/item/storage/box/large/custom_kit/jaggachi/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/smg/smg10mm/worn(src)
+	new /obj/item/gun/ballistic/automatic/smg/cg45/worn(src)
 
 /datum/gear/donator/kits/jaggachi_2
 	name = "NCR Service Kit"
