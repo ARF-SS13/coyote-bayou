@@ -536,9 +536,9 @@
 	new /obj/item/melee/classic_baton/telescopic(src)
 	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
 
-/datum/gear/donator/kits/irkallaepsilon_01
+/datum/gear/donator/kits/irkallaepsilon
     name = "Protective Equipment and Analysis Tools"
-    path = /obj/item/storage/box/large/custom_kit/irkallaepsilon_01
+    path = /obj/item/storage/box/large/custom_kit/irkallaepsilon
     ckeywhitelist = list("irkallaepsilon")
 
 /obj/item/storage/box/large/custom_kit/irkallaepsilon/PopulateContents()
