@@ -470,7 +470,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "awS" = (
-/obj/structure/simple_door/wood/alt/window,
+/obj/structure/simple_door/wood/alt/window{
+	base_opacity = s
+	},
 /turf/open/indestructible/cobble,
 /area/f13/building)
 "axk" = (
@@ -609,6 +611,37 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/hospital)
+"aCq" = (
+/obj/structure/bed/wooden{
+	pixel_y = 17
+	},
+/obj/structure/railing/wood/post{
+	pixel_x = 16;
+	pixel_y = 17
+	},
+/obj/structure/railing/wood/post{
+	pixel_x = -13;
+	pixel_y = 17
+	},
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = 19;
+	pixel_x = 2;
+	layer = 5
+	},
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = 19;
+	pixel_x = 2;
+	layer = 5
+	},
+/obj/effect/spawner/lootdrop/bedsheet{
+	pixel_y = 18
+	},
+/turf/open/floor/f13/wood{
+	color = "#C2B280"
+	},
+/area/f13/building)
 "aCK" = (
 /obj/structure/railing,
 /turf/open/indestructible/cobble,
@@ -1543,6 +1576,16 @@
 	icon_state = "redmark"
 	},
 /area/f13/building/mall)
+"bNj" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
+/area/f13/building)
 "bNw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -4173,6 +4216,9 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/carpet/purple,
 /area/f13/building)
 "eNt" = (
@@ -5262,6 +5308,10 @@
 /obj/structure/table/wood,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "gbV" = (
@@ -8308,6 +8358,10 @@
 /obj/structure/chair/sofa/left{
 	dir = 4
 	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "jla" = (
@@ -8829,6 +8883,9 @@
 /area/f13/building/abandoned)
 "jLf" = (
 /obj/structure/dresser,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "jMb" = (
@@ -9195,6 +9252,10 @@
 /obj/item/candle/infinite{
 	pixel_y = 9
 	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "kgA" = (
@@ -9311,6 +9372,9 @@
 "klm" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -12103,6 +12167,21 @@
 /obj/structure/flora/burnedbush5,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
+"ntA" = (
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder{
+	pixel_y = 13;
+	pixel_x = 5
+	},
+/obj/machinery/processor/chopping_block{
+	pixel_y = -1;
+	pixel_x = 7
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "ntT" = (
 /obj/structure/window/fulltile/house/broken,
 /turf/open/floor/wood_common,
@@ -12179,6 +12258,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
+"nwQ" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "nxN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -13389,7 +13474,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "oMf" = (
-/obj/structure/simple_door/wood/alt,
+/obj/structure/simple_door/wood/alt/window{
+	base_opacity = s
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "oNe" = (
@@ -14133,8 +14220,9 @@
 	pixel_x = 28;
 	pixel_y = 1
 	},
+/obj/structure/table/wood,
 /obj/structure/flora/chomp/potplant1{
-	layer = 6;
+	layer = 6.1;
 	pixel_y = 14;
 	pixel_x = -6
 	},
@@ -15536,14 +15624,15 @@
 	pixel_x = 28;
 	pixel_y = 1
 	},
-/obj/structure/flora/chomp/potplant1{
-	layer = 6;
-	pixel_y = 14;
-	pixel_x = -6
-	},
 /obj/item/flashlight/lantern{
 	pixel_y = 11;
 	pixel_x = 8
+	},
+/obj/structure/table/wood,
+/obj/structure/flora/chomp/potplant1{
+	layer = 6.1;
+	pixel_y = 14;
+	pixel_x = -6
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -15579,6 +15668,10 @@
 	},
 /obj/machinery/light/floor{
 	pixel_y = 5
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
 	},
 /turf/open/floor/plasteel/showroomfloor{
 	color = "#555555"
@@ -18750,6 +18843,74 @@
 /obj/structure/flora/jungle2,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"uNp" = (
+/obj/structure/bed/wooden{
+	pixel_y = 15
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 0;
+	pixel_x = 17;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 22;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 1;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 3;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 6;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 10;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 15;
+	pixel_x = -20;
+	layer = 6;
+	density = 0
+	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/fence/wooden{
+	opacity = 1;
+	pixel_y = 1;
+	pixel_x = -16;
+	layer = 6;
+	density = 0
+	},
+/obj/effect/spawner/lootdrop/bedsheet{
+	pixel_y = 18
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "uNC" = (
 /obj/structure/filingcabinet{
 	pixel_x = -8
@@ -19594,6 +19755,9 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 8;
 	icon_state = "corp_sofacorner"
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/open/floor/carpet/royalblue,
 /area/f13/building)
@@ -23379,8 +23543,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -23636,8 +23800,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -23893,8 +24057,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -24150,8 +24314,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -24407,8 +24571,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 swK
@@ -24664,8 +24828,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 hsD
@@ -24921,8 +25085,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 jZv
@@ -25178,13 +25342,13 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 mDs
 fBS
 cdN
-cdN
+nwQ
 pGP
 vjG
 pGP
@@ -25435,8 +25599,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -25692,8 +25856,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 rrx
@@ -25949,13 +26113,13 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 kBv
 iSp
-oMf
+cdN
 cdN
 jkU
 ylX
@@ -26206,8 +26370,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -26463,8 +26627,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 nAW
@@ -26720,8 +26884,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 gCx
@@ -26977,8 +27141,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 aGZ
 vce
@@ -27234,8 +27398,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -27491,8 +27655,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -27748,8 +27912,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -28005,8 +28169,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -28262,8 +28426,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -28519,8 +28683,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -28776,8 +28940,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -29033,8 +29197,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -29290,8 +29454,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 swK
@@ -29547,8 +29711,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 hsD
@@ -29804,8 +29968,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 jZv
@@ -30061,13 +30225,13 @@ oez
 oez
 oez
 oez
-oez
 tXH
 rrM
+rrM
 mDs
-fBS
+uNp
 cdN
-cdN
+nwQ
 cOy
 sYC
 veV
@@ -30318,8 +30482,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -30575,8 +30739,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 rrx
@@ -30832,13 +30996,13 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 kBv
 iSp
-oMf
+cdN
 cdN
 jkU
 ylX
@@ -31089,8 +31253,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -31346,8 +31510,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 nAW
@@ -31603,8 +31767,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 pEp
@@ -31860,8 +32024,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 aGZ
 vce
@@ -32117,8 +32281,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -32374,8 +32538,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -32631,8 +32795,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -32888,8 +33052,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -33145,8 +33309,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -33402,8 +33566,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -33659,8 +33823,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -33916,8 +34080,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -34173,8 +34337,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 swK
@@ -34235,8 +34399,8 @@ tXH
 rrM
 rrM
 rrM
-rrM
 oez
+rrM
 rrM
 odJ
 oez
@@ -34430,8 +34594,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 hsD
@@ -34687,8 +34851,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 jZv
@@ -34944,13 +35108,13 @@ oez
 oez
 oez
 oez
-oez
 tXH
 rrM
+rrM
 mDs
-fBS
+uNp
 cdN
-cdN
+nwQ
 bYj
 qGU
 wyu
@@ -35201,8 +35365,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -35458,8 +35622,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 rrx
@@ -35715,8 +35879,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 kBv
@@ -35972,8 +36136,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -36229,8 +36393,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 nAW
@@ -36486,8 +36650,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 gCx
@@ -36743,15 +36907,15 @@ oez
 oez
 oez
 oez
-oez
 tXH
 rrM
+rrM
 aGZ
-vce
+aCq
 jla
 evN
 cdN
-eWw
+ntA
 oEj
 eFm
 sEo
@@ -37000,8 +37164,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 eFm
 eFm
@@ -37016,7 +37180,7 @@ sEo
 sEo
 eFm
 rcN
-wqT
+bNj
 eFm
 ykM
 eYX
@@ -37257,8 +37421,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -37514,8 +37678,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -37771,8 +37935,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -38028,8 +38192,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -38285,8 +38449,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -38542,8 +38706,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -38799,8 +38963,8 @@ oez
 oez
 oez
 oez
-oez
 tXH
+rrM
 rrM
 rrM
 rrM
@@ -39366,7 +39530,7 @@ rrM
 rrM
 rrM
 rrM
-rrM
+oez
 rrM
 rrM
 rrM
@@ -39622,8 +39786,8 @@ rrM
 rrM
 rrM
 rrM
-oez
 rrM
+vfM
 rrM
 rrM
 rrM
@@ -39879,7 +40043,7 @@ rrM
 rrM
 rrM
 rrM
-vfM
+rrM
 rrM
 rrM
 rrM

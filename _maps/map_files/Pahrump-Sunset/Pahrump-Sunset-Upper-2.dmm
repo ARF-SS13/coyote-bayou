@@ -897,14 +897,14 @@
 	pixel_x = 28;
 	pixel_y = 1
 	},
-/obj/structure/flora/chomp/potplant1{
-	layer = 6;
-	pixel_y = 14;
-	pixel_x = -6
-	},
 /obj/item/flashlight/lantern{
 	pixel_y = 11;
 	pixel_x = 8
+	},
+/obj/structure/flora/chomp/potplant1{
+	layer = 6.1;
+	pixel_y = 14;
+	pixel_x = -6
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -1661,7 +1661,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "sF" = (
-/obj/structure/simple_door/wood/alt/window,
+/obj/structure/simple_door/wood/alt/window{
+	base_opacity = s
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "sN" = (
@@ -1795,6 +1797,18 @@
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken5"
 	},
+/area/f13/wasteland)
+"uy" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/obj/structure/flora/chomp/potplant1{
+	layer = 6.1;
+	pixel_y = 14;
+	pixel_x = -6
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "uz" = (
 /turf/open/floor/f13/wood{
@@ -3809,6 +3823,42 @@
 /obj/item/twohanded/required/kirbyplants/random,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"PU" = (
+/obj/structure/wood_counter{
+	pixel_y = -1;
+	layer = 6
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 9
+	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	color = "#000000";
+	pixel_y = -1;
+	pixel_x = -3;
+	name = "shadow"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = 28;
+	pixel_y = 1
+	},
+/obj/structure/flora/chomp/potplant1{
+	layer = 6.1;
+	pixel_y = 14;
+	pixel_x = -6
+	},
+/obj/item/flashlight/lantern{
+	pixel_y = 11;
+	pixel_x = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "PW" = (
 /obj/structure/wreck/trash/machinepiletwo{
 	icon_state = "technical_pile3"
@@ -3891,7 +3941,9 @@
 	},
 /area/f13/building/church)
 "QV" = (
-/obj/structure/simple_door/wood/alt,
+/obj/structure/simple_door/wood/alt/window{
+	base_opacity = s
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -8154,13 +8206,13 @@ hm
 hm
 hm
 hm
-NC
+uy
 cv
 Wr
 Wr
 iA
 iA
-BW
+sF
 iA
 iA
 hm
@@ -9445,7 +9497,7 @@ Wr
 Wr
 iA
 iA
-BW
+sF
 iA
 iA
 hm
@@ -9701,7 +9753,7 @@ li
 Wr
 Wr
 iA
-jP
+PU
 uq
 oX
 iA
@@ -13814,7 +13866,7 @@ sF
 Wr
 Wr
 Wr
-BW
+sF
 uq
 uq
 SP
@@ -18697,7 +18749,7 @@ sF
 Wr
 Wr
 Wr
-BW
+sF
 uq
 uq
 SP
