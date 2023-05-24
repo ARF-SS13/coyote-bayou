@@ -97,3 +97,28 @@
 	. = ..()
 	if(!ismob(loc))
 		return INITIALIZE_HINT_QDEL
+
+/// Looks like stairs, but dont actually go anywhere
+/obj/effect/fake_stairs
+	name = "stairs"
+	desc = "CAUTION: Stairs."
+	icon = 'icons/obj/stairs.dmi'
+	icon_state = "stairs"
+	anchored = TRUE
+	density = FALSE
+
+/obj/effect/fake_stairs/north
+	desc = "Perfect place for an oversized spring."
+	dir = NORTH
+
+/obj/effect/fake_stairs/south
+	desc = "Like an escalator, but slower."
+	dir = SOUTH
+
+/obj/effect/fake_stairs/east
+	desc = "Perfect for toning those calves."
+	dir = EAST
+
+/obj/effect/fake_stairs/west
+	desc = "Heed all warnings about this."
+	dir = WEST
