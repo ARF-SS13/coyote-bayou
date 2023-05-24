@@ -2433,7 +2433,9 @@
 	},
 /area/f13/wasteland)
 "BW" = (
-/obj/structure/simple_door/wood/alt,
+/obj/structure/simple_door/wood/alt/window{
+	base_opacity = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "BZ" = (
@@ -3942,7 +3944,7 @@
 /area/f13/building/church)
 "QV" = (
 /obj/structure/simple_door/wood/alt/window{
-	base_opacity = s
+	base_opacity = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -8212,7 +8214,7 @@ Wr
 Wr
 iA
 iA
-sF
+BW
 iA
 iA
 hm
@@ -8981,7 +8983,7 @@ NC
 Wr
 Wr
 Wr
-sF
+BW
 na
 Fg
 Mx
@@ -9497,7 +9499,7 @@ Wr
 Wr
 iA
 iA
-sF
+BW
 iA
 iA
 hm
@@ -13862,7 +13864,7 @@ iA
 Mx
 Fg
 na
-sF
+BW
 Wr
 Wr
 Wr
@@ -17972,7 +17974,7 @@ hm
 hm
 iA
 iA
-BW
+sF
 iA
 iA
 Wr
@@ -19257,7 +19259,7 @@ hm
 hm
 iA
 iA
-BW
+sF
 iA
 iA
 Wr
