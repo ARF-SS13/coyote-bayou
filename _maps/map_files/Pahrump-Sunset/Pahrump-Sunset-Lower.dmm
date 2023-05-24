@@ -957,15 +957,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"aHX" = (
-/obj/structure/flora/junglebush/large,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
-	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "aIM" = (
 /obj/effect/decal/waste{
 	icon_state = "goo10"
@@ -1135,6 +1126,12 @@
 "aRI" = (
 /obj/structure/bonfire/prelit,
 /turf/open/indestructible/ground/outside/ruins,
+/area/f13/caves)
+"aRT" = (
+/obj/structure/flora/wasteplant/wild_xander,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
 /area/f13/caves)
 "aSr" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -1605,13 +1602,24 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/caves)
-"bmR" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	pixel_y = 10
+"bmD" = (
+/obj/structure/flora/junglebush/c,
+/obj/structure/spacevine{
+	name = "vines"
 	},
-/turf/open/floor/plasteel/cult,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/caves)
+"bmR" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
 /area/f13/caves)
 "bnp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1774,9 +1782,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "brR" = (
-/obj/structure/stone_tile/slab,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
+/obj/structure/flora/junglebush/large,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/caves)
 "bsf" = (
 /obj/machinery/light/small/broken{
 	dir = 1
@@ -3795,13 +3808,11 @@
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "bNy" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "tritemp"
+/obj/structure/stairs/west{
+	color = "#A47449"
 	},
-/obj/structure/stone_tile/surrounding/burnt,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
+/turf/open/water,
+/area/f13/building/sewers)
 "bNA" = (
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/f13/wood,
@@ -4024,10 +4035,7 @@
 	},
 /area/f13/tunnel)
 "bOL" = (
-/obj/structure/stone_tile/slab{
-	dir = 2;
-	icon_state = "burnt_block3"
-	},
+/obj/structure/flora/tree/jungle/small,
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -6690,14 +6698,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "cMQ" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
+/obj/structure/stone_tile/slab,
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "cNs" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light{
@@ -6803,9 +6807,9 @@
 	},
 /area/f13/caves)
 "cQy" = (
-/obj/structure/flora/junglebush/large,
-/obj/structure/spacevine{
-	name = "vines"
+/obj/structure/stone_tile/slab{
+	dir = 2;
+	icon_state = "burnt_block3"
 	},
 /turf/open/floor/grass{
 	color = "#444444"
@@ -7451,6 +7455,12 @@
 /obj/structure/junk/drawer,
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
+"drU" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/caves)
 "dsa" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13{
@@ -7653,7 +7663,7 @@
 	},
 /area/f13/caves)
 "dzX" = (
-/obj/structure/flora/junglebush/large,
+/obj/structure/flora/ausbushes/fernybush,
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -9000,10 +9010,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "eya" = (
-/obj/structure/flora/junglebush/c,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
+/obj/structure/stone_tile/slab,
+/obj/structure/stone_tile/slab,
+/turf/open/floor/plasteel/cult,
 /area/f13/caves)
 "eyd" = (
 /obj/structure/table/plasmaglass,
@@ -9248,7 +9257,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "eGv" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/junglebush/large,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -10879,6 +10891,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
+"fWR" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "fXa" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks,
@@ -11893,24 +11913,20 @@
 	},
 /area/f13/caves)
 "gHC" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/simple_door/tent{
-	color = "#444422"
+/obj/structure/spacevine,
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
 	},
-/obj/structure/simple_door/tent{
-	color = "#444422"
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/caves)
+/area/f13/building/tribal)
 "gJb" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
+/obj/structure/necropolis_gate{
+	desc = "A massive stone gateway with a very heavy stone door.";
+	name = "village gate"
 	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
+/obj/structure/stone_tile/slab/burnt,
+/obj/structure/necropolis_arch,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "gJs" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/inside/subway,
@@ -13625,6 +13641,11 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"ibZ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/wood,
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "icm" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -13882,13 +13903,6 @@
 	},
 /turf/open/floor/plasteel/neutral,
 /area/f13/tunnel)
-"ikL" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/flora/wasteplant/wild_mesquite,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "ikO" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
@@ -14295,9 +14309,9 @@
 /area/f13/caves)
 "ixw" = (
 /obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit{
+/obj/structure/chair/wood{
 	dir = 8;
-	pixel_y = 8
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/caves)
@@ -16553,10 +16567,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "kbt" = (
-/obj/structure/stone_tile/surrounding_tile,
-/obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/caves)
 "kdj" = (
 /obj/structure/lattice{
 	layer = 3
@@ -17487,10 +17502,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
 "kOh" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/chair/wood,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "tritemp"
+	},
+/obj/structure/stone_tile/surrounding/burnt,
 /turf/open/floor/plasteel/cult,
-/area/f13/caves)
+/area/f13/building/tribal)
 "kOn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
@@ -17695,16 +17713,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
-"kVi" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
-	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "kVl" = (
 /obj/structure/wreck/trash/machinepile,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -17855,6 +17863,14 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
+	},
+/area/f13/caves)
+"laA" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
 	},
 /area/f13/caves)
 "laM" = (
@@ -20166,12 +20182,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
-"mBn" = (
-/obj/structure/flora/wasteplant/wild_broc,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "mBE" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -20183,11 +20193,11 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/building/museum)
 "mCb" = (
-/obj/structure/spacevine,
-/turf/closed/indestructible/riveted/boss{
-	name = "temple wall"
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/grass{
+	color = "#444444"
 	},
-/area/f13/building/tribal)
+/area/f13/caves)
 "mCl" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/ashplanet/rocky,
@@ -20711,6 +20721,14 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/caves)
+"mXH" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "mXJ" = (
 /obj/machinery/door/airlock/security{
 	name = "Brig";
@@ -20763,10 +20781,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
 "mYz" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/stone_tile/slab/burnt,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/caves)
 "mYD" = (
 /obj/item/circuitboard/machine/gibber,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
@@ -21685,7 +21705,11 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "nID" = (
-/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/structure/flora/wasteplant/wild_prickly,
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -21795,13 +21819,14 @@
 	},
 /area/f13/tunnel)
 "nMs" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
+/obj/structure/stone_tile/slab{
+	dir = 4;
+	icon_state = "burnt_block3"
 	},
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/caves)
 "nMy" = (
 /obj/machinery/light,
 /obj/structure/rack,
@@ -21884,6 +21909,14 @@
 "nOW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/tunnel,
+/area/f13/caves)
+"nPg" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "junglehome";
+	name = "Damp Ladder"
+	},
+/turf/open/floor/plasteel/cult,
 /area/f13/caves)
 "nPj" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -22327,13 +22360,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
-"ohL" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/wasteplant/wild_mutfruit,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "oib" = (
 /obj/structure/barricade/bars{
 	layer = 3.5
@@ -23379,15 +23405,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
-"oVq" = (
-/obj/structure/necropolis_gate{
-	desc = "A massive stone gateway with a very heavy stone door.";
-	name = "village gate"
-	},
-/obj/structure/stone_tile/slab/burnt,
-/obj/structure/necropolis_arch,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "oVs" = (
 /obj/structure/chair/folding{
 	dir = 1
@@ -24039,8 +24056,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pth" = (
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/wasteplant/wild_mutfruit,
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -24070,6 +24087,14 @@
 "pua" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/radiation)
+"pue" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "pup" = (
 /obj/structure/table,
 /obj/structure/barricade/bars,
@@ -24583,6 +24608,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/caves)
 "pJc" = (
+/obj/structure/flora/ausbushes/pointybush,
 /obj/structure/spacevine{
 	name = "vines"
 	},
@@ -25911,6 +25937,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/caves)
+"qzP" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "qAh" = (
 /obj/structure/table,
 /obj/effect/holodeck_effect/cards{
@@ -25945,6 +25975,13 @@
 	},
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
+"qBv" = (
+/obj/structure/flora/junglebush/large,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
 /area/f13/caves)
 "qBT" = (
 /obj/structure/handrail/g_central{
@@ -26626,15 +26663,6 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"qYI" = (
-/obj/structure/flora/ausbushes/pointybush,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "qYS" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/f13{
@@ -27403,10 +27431,10 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
 "rCQ" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/stone_tile/slab,
+/obj/structure/stone_tile/surrounding_tile,
+/obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/cult,
-/area/f13/caves)
+/area/f13/building/tribal)
 "rDj" = (
 /obj/structure/junk/locker,
 /turf/open/floor/plating/tunnel,
@@ -27636,12 +27664,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
 "rLV" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/chair/wood{
-	dir = 8;
-	pixel_y = 10
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = 4;
+	pixel_y = 8
 	},
-/turf/open/floor/plasteel/cult,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
 /area/f13/caves)
 "rLW" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -27893,7 +27922,7 @@
 	},
 /area/f13/tunnel)
 "rVa" = (
-/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/flora/grass/jungle/b,
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -27981,12 +28010,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/building)
-"rXg" = (
-/obj/structure/flora/wasteplant/wild_fungus,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "rXj" = (
 /obj/item/stack/ore/blackpowder,
 /obj/item/stack/ore/iron,
@@ -28259,10 +28282,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/museum)
 "sjg" = (
-/obj/structure/flora/grass/jungle,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
+/obj/structure/glowshroom/shadowshroom,
+/turf/open/floor/grass/fairy/purple,
 /area/f13/caves)
 "sji" = (
 /obj/structure/handrail/g_central{
@@ -29209,6 +29230,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
+"sRz" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/caves)
 "sRH" = (
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleplate"
@@ -29565,6 +29595,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
+/area/f13/caves)
+"tfk" = (
+/obj/structure/flora/wasteplant/wild_broc,
+/turf/open/floor/grass{
+	color = "#444444"
 	},
 /area/f13/caves)
 "tfm" = (
@@ -30536,14 +30572,14 @@
 	},
 /area/f13/caves)
 "tSb" = (
-/obj/structure/flora/ausbushes/fernybush,
-/obj/structure/spacevine{
-	name = "vines"
+/obj/structure/stone_tile/slab,
+/obj/structure/simple_door/tent{
+	color = "#444422"
 	},
-/obj/structure/flora/wasteplant/wild_prickly,
-/turf/open/floor/grass{
-	color = "#444444"
+/obj/structure/simple_door/tent{
+	color = "#444422"
 	},
+/turf/open/floor/plasteel/cult,
 /area/f13/caves)
 "tSi" = (
 /obj/structure/wreck/trash/engine,
@@ -30655,12 +30691,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"tXW" = (
-/obj/structure/flora/wasteplant/wild_xander,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "tYi" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/sheet/plastic/fifty,
@@ -31264,14 +31294,6 @@
 "uvv" = (
 /turf/closed/indestructible/rock,
 /area/f13/building/sewers)
-"uwj" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/caves)
 "uwk" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/indestructible/ground/inside/subway,
@@ -31803,14 +31825,9 @@
 	},
 /area/f13/tunnel)
 "uNX" = (
-/obj/structure/stone_tile/slab{
-	dir = 4;
-	icon_state = "burnt_block3"
-	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
+/obj/structure/stone_tile/slab,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "uOV" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13{
@@ -31908,10 +31925,7 @@
 	},
 /area/f13/caves)
 "uSq" = (
-/obj/structure/flora/ausbushes/sparsegrass{
-	pixel_x = 4;
-	pixel_y = 8
-	},
+/obj/structure/flora/junglebush/c,
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -32040,10 +32054,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
-"uXI" = (
-/obj/structure/stone_tile/slab/cracked,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal)
 "uYm" = (
 /obj/structure/wreck/trash/four_barrels,
 /obj/structure/spider/stickyweb,
@@ -32799,8 +32809,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "vBv" = (
-/obj/structure/glowshroom/shadowshroom,
-/turf/open/floor/grass/fairy/purple,
+/obj/structure/flora/wasteplant/wild_fungus,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
 /area/f13/caves)
 "vBx" = (
 /obj/machinery/light/small,
@@ -34044,10 +34056,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/museum)
 "wxg" = (
-/obj/structure/flora/tree/jungle/small,
-/turf/open/floor/grass{
-	color = "#444444"
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4;
+	pixel_y = 10
 	},
+/turf/open/floor/plasteel/cult,
 /area/f13/caves)
 "wxL" = (
 /obj/structure/chair/f13chair1{
@@ -34980,13 +34994,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
-"xjB" = (
-/obj/structure/flora/junglebush/large,
-/obj/structure/destructible/tribal_torch/wall/lit,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/caves)
 "xjO" = (
 /obj/structure/chair/folding,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
@@ -36029,12 +36036,11 @@
 	},
 /area/f13/caves)
 "xUF" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "junglehome";
-	name = "Damp Ladder"
+/obj/structure/flora/junglebush/c,
+/obj/structure/flora/wasteplant/wild_mesquite,
+/turf/open/floor/grass{
+	color = "#444444"
 	},
-/turf/open/floor/plasteel/cult,
 /area/f13/caves)
 "xUW" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -40815,9 +40821,9 @@ aae
 aae
 aae
 bJS
-mCb
-mCb
-mCb
+gHC
+gHC
+gHC
 bJS
 bJS
 bJS
@@ -41072,11 +41078,11 @@ aae
 aae
 aae
 bJS
-brR
-kbt
-brR
-uXI
-brR
+uNX
+rCQ
+uNX
+qzP
+uNX
 bJS
 bKR
 bKR
@@ -41329,12 +41335,12 @@ aae
 aae
 aae
 bJS
-nMs
-brR
-bNy
-brR
-brR
-oVq
+fWR
+uNX
+kOh
+uNX
+uNX
+gJb
 bKR
 bKR
 bJS
@@ -41567,7 +41573,7 @@ nrb
 wIj
 mEr
 mEr
-bOL
+cQy
 nrb
 nrb
 nrb
@@ -41586,11 +41592,11 @@ aae
 aae
 aae
 bJS
-uXI
-brR
-brR
-brR
-mYz
+qzP
+uNX
+uNX
+uNX
+cMQ
 bJS
 bKR
 bKR
@@ -41824,7 +41830,7 @@ nrb
 wIj
 mEr
 mEr
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -41842,10 +41848,10 @@ aaa
 aaa
 aae
 aae
-mCb
-mCb
+gHC
+gHC
 bJS
-mCb
+gHC
 bJS
 bJS
 bJS
@@ -41887,7 +41893,7 @@ aae
 aae
 aae
 bOb
-tkZ
+jGk
 hXn
 gcv
 lPg
@@ -42081,7 +42087,7 @@ nrb
 wIj
 mEr
 mEr
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -42144,7 +42150,7 @@ aae
 aae
 aae
 bOb
-tkZ
+bNy
 hXn
 gcv
 lPg
@@ -42338,7 +42344,7 @@ nrb
 wIj
 mEr
 eYF
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -42401,7 +42407,7 @@ aae
 aae
 aae
 bOb
-tkZ
+gcv
 hXn
 gcv
 nel
@@ -42595,7 +42601,7 @@ nrb
 wIj
 mEr
 eYF
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -42658,7 +42664,7 @@ rBg
 rBg
 rBg
 bOb
-tkZ
+gcv
 hXn
 gcv
 nel
@@ -42852,7 +42858,7 @@ nrb
 wIj
 mEr
 mEr
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -42915,7 +42921,7 @@ jLS
 jLS
 gcv
 gcv
-tkZ
+gcv
 hXn
 gcv
 bOb
@@ -43109,7 +43115,7 @@ nrb
 wIj
 eYF
 mEr
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -43118,7 +43124,7 @@ mEr
 mEr
 nrb
 mEr
-rCQ
+eya
 wIj
 nFs
 nFs
@@ -43171,8 +43177,8 @@ rBg
 tvi
 wkr
 gcv
-oNM
-roN
+gcv
+gcv
 hXn
 gcv
 bOb
@@ -43362,18 +43368,18 @@ mEr
 mEr
 mEr
 mEr
-gHC
+tSb
 mEr
 mEr
 mEr
-bOL
+cQy
 nrb
 mEr
 mEr
 mEr
 mEr
 mEr
-gHC
+tSb
 eYF
 mEr
 wIj
@@ -43428,8 +43434,8 @@ rBg
 jLS
 oIj
 gcv
-oNM
-roN
+gcv
+gcv
 hXn
 gcv
 bOb
@@ -43619,18 +43625,18 @@ mEr
 mEr
 mEr
 mEr
-gHC
+tSb
 mEr
 mEr
 mEr
-bOL
+cQy
 nrb
 mEr
 mEr
 mEr
 mEr
 mEr
-gHC
+tSb
 mEr
 mEr
 wIj
@@ -43685,8 +43691,8 @@ rBg
 rBg
 rBg
 xAi
-oNM
-roN
+gcv
+gcv
 hXn
 gcv
 bOb
@@ -43880,7 +43886,7 @@ nrb
 wIj
 mEr
 eYF
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -43943,7 +43949,7 @@ eUf
 rBg
 gcv
 gcv
-tkZ
+gcv
 gcv
 uQG
 bOb
@@ -44137,7 +44143,7 @@ nrb
 wIj
 mEr
 mEr
-bOL
+cQy
 nrb
 mEr
 mEr
@@ -44159,8 +44165,8 @@ wIj
 bzP
 aae
 aae
-ohL
-eya
+pth
+uSq
 bJS
 bKR
 bKR
@@ -44394,7 +44400,7 @@ nrb
 wIj
 mEr
 mEr
-bOL
+cQy
 nrb
 nrb
 nrb
@@ -44416,11 +44422,11 @@ wIj
 wIj
 bzP
 aae
-dzX
+kbt
 wIj
-tXW
+aRT
 cob
-cQy
+brR
 bJS
 bJS
 bNg
@@ -44677,11 +44683,11 @@ cob
 cob
 cob
 cob
-pJc
+laA
 aar
-wxg
-ikL
-aHX
+bOL
+xUF
+eGv
 wIj
 wIj
 cob
@@ -44936,7 +44942,7 @@ cob
 cob
 wIj
 aar
-dzX
+kbt
 wIj
 wIj
 wIj
@@ -45154,7 +45160,7 @@ aaa
 wIj
 wIj
 mEr
-rCQ
+eya
 mEr
 mEr
 eYF
@@ -45176,7 +45182,7 @@ mEr
 mEr
 mEr
 mEr
-rCQ
+eya
 mEr
 mEr
 mEr
@@ -45191,16 +45197,16 @@ cob
 cob
 cob
 cob
-eya
+uSq
 kUb
 wIj
-sjg
+mCb
 kUb
 kUb
-nID
+rVa
 cob
 wIj
-rVa
+drU
 bJS
 bKD
 rOw
@@ -45410,50 +45416,50 @@ bFx
 aaa
 wIj
 wIj
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
 mEr
 mEr
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
-uNX
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
+nMs
 aaa
 cob
-xUF
+nPg
 cob
 cob
-xjB
+qBv
 kUb
-kVi
+bmR
 wIj
 wIj
-eya
+uSq
 wIj
 cob
 cob
@@ -45697,7 +45703,7 @@ wIj
 wIj
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aae
@@ -45938,12 +45944,12 @@ nrb
 wsE
 mEr
 mEr
-ixw
+pue
 mEr
 mEr
 mEr
 mEr
-uwj
+mXH
 mEr
 nrb
 mEr
@@ -45953,7 +45959,7 @@ wIj
 wIj
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aae
@@ -45962,15 +45968,15 @@ aae
 wIj
 wIj
 btU
-rVa
+drU
 kUb
-gJb
+sRz
 wIj
 wIj
-nID
+rVa
 btU
-uSq
-pth
+rLV
+mYz
 kUb
 bJS
 bNg
@@ -46202,14 +46208,14 @@ lbK
 lbK
 lbK
 mEr
-gHC
+tSb
 mEr
 mEr
 wIj
 wIj
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aae
@@ -46217,13 +46223,13 @@ aae
 aae
 aae
 wIj
-mBn
+tfk
 wIj
-qYI
+pJc
 kUb
 wIj
 wIj
-wxg
+bOL
 wIj
 jWm
 mMT
@@ -46450,7 +46456,7 @@ wIj
 wIj
 wIj
 nrb
-kOh
+ibZ
 gyz
 gyz
 gyz
@@ -46459,13 +46465,13 @@ gyz
 gyz
 gyz
 mEr
-gHC
+tSb
 mEr
 mEr
 wIj
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aae
@@ -46475,13 +46481,13 @@ aae
 aae
 wIj
 wIj
-pJc
-cQy
+laA
+brR
 bJs
-dzX
+kbt
 wIj
 wIj
-uSq
+rLV
 tJE
 lJE
 tjJ
@@ -46708,20 +46714,20 @@ wIj
 nrb
 nrb
 mEr
-rLV
-rLV
-rLV
-rLV
-rLV
-rLV
-rLV
+ixw
+ixw
+ixw
+ixw
+ixw
+ixw
+ixw
 mEr
-gHC
+tSb
 mEr
 mEr
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aaa
@@ -46729,16 +46735,16 @@ aaa
 aaa
 aaa
 aae
-eGv
+dzX
 wIj
 wIj
-pJc
-cMQ
+laA
+bmD
 aar
-wxg
-nID
-rXg
-nID
+bOL
+rVa
+vBv
+rVa
 uEp
 tjJ
 hEj
@@ -46966,18 +46972,18 @@ nrb
 wsE
 mEr
 mEr
-bmR
+wxg
 mEr
 mEr
 mEr
 mEr
-bmR
+wxg
 mEr
 nrb
 mEr
 mEr
 wIj
-vBv
+sjg
 aae
 aae
 aaa
@@ -46986,10 +46992,10 @@ aae
 aae
 aaa
 aae
-eya
+uSq
 wIj
 wIj
-tSb
+nID
 xwF
 aar
 xwF
@@ -47206,7 +47212,7 @@ bFx
 aah
 aah
 bFx
-vBv
+sjg
 wIj
 wIj
 wIj
@@ -47231,8 +47237,8 @@ nrb
 nrb
 nrb
 nrb
-gHC
-gHC
+tSb
+tSb
 nrb
 aae
 aae
@@ -47464,7 +47470,7 @@ aah
 aah
 bFx
 aae
-vBv
+sjg
 wIj
 wIj
 wIj
@@ -47474,7 +47480,7 @@ wIj
 wIj
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aae
@@ -47722,7 +47728,7 @@ aah
 bFx
 aae
 aae
-vBv
+sjg
 wIj
 wIj
 wIj
@@ -47730,7 +47736,7 @@ wIj
 wIj
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aae
@@ -47979,14 +47985,14 @@ aah
 bFx
 aae
 aae
-vBv
+sjg
 wIj
 wIj
 wIj
 wIj
 wIj
 wIj
-vBv
+sjg
 aae
 aae
 aae
@@ -48494,11 +48500,11 @@ bFx
 aae
 aae
 aae
-vBv
+sjg
 wIj
 wIj
 wIj
-vBv
+sjg
 aak
 aae
 aae

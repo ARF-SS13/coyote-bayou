@@ -24170,6 +24170,12 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"cCy" = (
+/obj/structure/railing,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/building/tribal)
 "cCA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -71677,7 +71683,9 @@
 "pKQ" = (
 /obj/structure/railing,
 /obj/structure/railing,
-/turf/closed/indestructible/rock,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
 /area/f13/building/tribal)
 "pKW" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -72250,6 +72258,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"pUi" = (
+/obj/structure/stone_tile/slab,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/building/tribal)
 "pUp" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain2bottom"
@@ -107456,7 +107470,7 @@ bcI
 fHl
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -107713,7 +107727,7 @@ dBX
 rlk
 xXN
 ddI
-hkC
+cCy
 cwg
 aHP
 cvl
@@ -107970,7 +107984,7 @@ dBX
 dBX
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -108227,7 +108241,7 @@ bcI
 rlk
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -108484,7 +108498,7 @@ maq
 oTf
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -108741,7 +108755,7 @@ maq
 wme
 xXN
 ddI
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -108998,7 +109012,7 @@ nHe
 wme
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 cvl
@@ -109255,7 +109269,7 @@ nHe
 fCX
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -109512,7 +109526,7 @@ iEL
 cLQ
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -109769,7 +109783,7 @@ xXN
 xXN
 xXN
 aga
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -110026,7 +110040,7 @@ txU
 xXN
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -110283,7 +110297,7 @@ nql
 xXN
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -110540,7 +110554,7 @@ gzG
 xXN
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 cvl
@@ -110797,7 +110811,7 @@ iEL
 cLQ
 xXN
 nmh
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -112339,7 +112353,7 @@ mVk
 xXN
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -112596,7 +112610,7 @@ ahk
 xXN
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -112853,7 +112867,7 @@ oUm
 bsh
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -113110,7 +113124,7 @@ ncP
 xXN
 xXN
 nmh
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -113367,7 +113381,7 @@ oUm
 bsh
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -113624,7 +113638,7 @@ opu
 xXN
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -114138,7 +114152,7 @@ paN
 xXN
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -114395,7 +114409,7 @@ fYg
 fYg
 fYg
 ddI
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -114652,7 +114666,7 @@ aMY
 eEA
 fYg
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -114909,7 +114923,7 @@ cWF
 uhY
 rLt
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -115166,7 +115180,7 @@ cWF
 qak
 rLt
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -115423,7 +115437,7 @@ aYx
 gOj
 fYg
 xXN
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -115680,7 +115694,7 @@ rLt
 rLt
 rLt
 ddI
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -117214,15 +117228,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
 fYg
 lCa
 iPA
 awT
 xul
+bcI
 xXN
 bcI
-hkC
+cCy
 cwg
 aHP
 cvl
@@ -117471,15 +117485,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
 vdo
 otx
 vQI
 vQI
 vdo
+bcI
 xXN
 bcI
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -117728,15 +117742,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
 vdo
 wBk
 vQI
 vQI
 vdo
+bcI
 xXN
 bcI
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -117985,15 +117999,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
 vdo
 qPz
 vQI
 vQI
 aXb
+pUi
 xXN
 bcI
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -118242,15 +118256,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
 vdo
 vQI
 vQI
 vQI
 fYg
+bcI
 cLQ
 tzn
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -118499,15 +118513,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
 vdo
 bWu
 esl
 apF
 vdo
+bcI
 xXN
 xXN
-hkC
+cCy
 cwg
 aHP
 cvl
@@ -118756,15 +118770,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
 fYg
 fYg
 fYg
 fYg
 fYg
+bcI
 xXN
 pOA
-hkC
+cCy
 cwg
 aHP
 aHP
@@ -119013,15 +119027,15 @@ fyh
 fyh
 fyh
 hlS
-tqb
-tqb
-tqb
-tqb
-tqb
-tqb
-tqb
-tqb
-hkC
+bcI
+bcI
+bcI
+bcI
+bcI
+bcI
+bcI
+bcI
+cCy
 cwg
 aHP
 aHP
