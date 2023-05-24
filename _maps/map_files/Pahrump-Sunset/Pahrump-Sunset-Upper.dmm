@@ -9882,7 +9882,9 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "kHZ" = (
-/obj/structure/rug/big/rug_fancy,
+/obj/structure/rug/big/rug_fancy{
+	pixel_x = -15
+	},
 /obj/structure/table{
 	layer = 3
 	},
@@ -11734,7 +11736,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "mNZ" = (
-/obj/structure/rug/big/rug_rubber,
+/obj/structure/rug/big/rug_rubber{
+	pixel_x = 13
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -14933,7 +14937,9 @@
 	},
 /area/f13/building)
 "qxM" = (
-/obj/structure/rug/big/rug_red,
+/obj/structure/rug/big/rug_red{
+	pixel_x = 17
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -19518,6 +19524,14 @@
 	icon_state = "common-broken4"
 	},
 /area/f13/building/abandoned)
+"vAo" = (
+/obj/structure/rug/big/rug_red{
+	pixel_x = -14
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "vAv" = (
 /obj/structure/chair{
 	dir = 1
@@ -29765,7 +29779,7 @@ uDL
 pYQ
 eFm
 iKS
-qxM
+vAo
 wBT
 mNn
 odJ
@@ -32588,13 +32602,13 @@ eFm
 eFm
 eFm
 eFm
-tyb
-tyb
+mNn
+rXJ
 eFm
 eFm
 eFm
 eFm
-oez
+rHR
 oez
 tXH
 rrM
@@ -32850,8 +32864,8 @@ mNn
 mNn
 cGS
 pqR
-eFm
-oez
+mNn
+odJ
 oez
 tXH
 rrM
@@ -33107,8 +33121,8 @@ rXJ
 rzG
 lkL
 xiE
-eFm
-oez
+mNn
+odJ
 oez
 tXH
 rrM
@@ -33364,8 +33378,8 @@ mNn
 gvT
 lrE
 aAH
-eFm
-oez
+mNn
+odJ
 oez
 tXH
 rrM
@@ -33621,8 +33635,8 @@ mrM
 mrM
 mrM
 mrM
+mrM
 gsV
-oez
 oez
 tXH
 rrM
