@@ -913,6 +913,14 @@
 /obj/item/storage/box/large/custom_kit/roachwitharoach/PopulateContents()
 	new /obj/item/clothing/under/f13/ncr(src)
 
+/datum/gear/donator/kits/rubeebee
+    name = "Shoddy Armor Kit"
+    path = /obj/item/storage/box/large/custom_kit/rubeebee
+    ckeywhitelist = list("rubeebee")
+
+/obj/item/storage/box/large/custom_kit/rubeebee/PopulateContents()
+    new /obj/item/clothing/suit/armor/light/leather/durathread(src)
+
 // S
 
 /datum/gear/donator/kits/sage1990
