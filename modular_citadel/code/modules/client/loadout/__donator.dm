@@ -382,6 +382,16 @@
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/bedsheet/cult(src)
 
+/datum/gear/donator/kits/ckey
+    name = "Grunt-Cop Kit"
+    path = /obj/item/storage/box/large/custom_kit/Delta_Dav
+    ckeywhitelist = list("Delta_Dav")
+
+/obj/item/storage/box/large/custom_kit/Delta_Dav/PopulateContents()
+    new /obj/item/clothing/head/f13/ncr/steelpot_mp(src)
+    new /obj/item/clothing/under/f13/ncr/ncr_dress(src)
+    new /obj/item/clothing/accessory/armband/black(src)	
+
 // E
 
 /datum/gear/donator/kits/esperkin
