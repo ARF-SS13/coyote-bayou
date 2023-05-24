@@ -457,6 +457,27 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 /* * * * * * * * * * *
+ * Worn Carl Gustaf 10mm SMG
+ * Poor Baseline 10mm SMG
+ * 10mm
+ * Slower firing
+ * Less damage
+ * One-handed
+ * No akimbo
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/cg45
+       name = "Worn Carl Gustaf 10mm"
+      desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design. This one has seen better days"
+    damage_multiplier = GUN_LESS_DAMAGE_T1
+    init_recoil = SMG_RECOIL(1.2)
+    init_firemodes = list(
+        /datum/firemode/automatic/rpm150,
+        /datum/firemode/semi_auto/faster
+    )
+
+/* * * * * * * * * * *
  * Thompson SMG
  * Baseline .45 SMG
  * .45ACP
