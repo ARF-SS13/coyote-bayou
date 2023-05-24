@@ -832,7 +832,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				to_chat(usr, span_warning("[capitalize(R.name)] falls onto the floor!"))
 			SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[R.product_path]"))
 			vend_ready = TRUE
-		if("ejectCoins")
+		if("ejectCaps")
 			remove_all_caps()
 
 /obj/machinery/vending/process()
