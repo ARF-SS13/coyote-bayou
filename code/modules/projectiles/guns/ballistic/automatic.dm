@@ -467,7 +467,7 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/smg/cg45
+/obj/item/gun/ballistic/automatic/smg/cg45/worn
        name = "Worn Carl Gustaf 10mm"
       desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design. This one has seen better days"
     damage_multiplier = GUN_LESS_DAMAGE_T1
