@@ -546,7 +546,7 @@
     new /obj/item/circuitboard/machine/biogenerator(src)
     new /obj/item/circuitboard/machine/seed_extractor(src)
     new /obj/item/clothing/mask/gas/syndicate(src)
-	
+
 // J
 
 /datum/gear/donator/kits/jackalface
