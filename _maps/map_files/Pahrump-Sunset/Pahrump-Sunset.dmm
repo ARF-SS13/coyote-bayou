@@ -18632,6 +18632,14 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ruins)
+"bvf" = (
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -38;
+	pixel_y = -2
+	},
+/turf/open/floor/grass,
+/area/f13/wasteland)
 "bvj" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4;
@@ -24170,12 +24178,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"cCy" = (
-/obj/structure/railing,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/building/tribal)
 "cCA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -32889,6 +32891,11 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"fdC" = (
+/obj/structure/flora/junglebush/large,
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/grass,
+/area/f13/wasteland)
 "fdL" = (
 /obj/vehicle/ridden/wheelchair{
 	desc = "A wheelchair, that seems to be wheels, it seems to be moveable by person on the wheelchair and it picks up bitches.";
@@ -60922,6 +60929,11 @@
 	icon_state = "verticalleftborderright2"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"mPe" = (
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/grass/jungle,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "mPo" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -71683,9 +71695,7 @@
 "pKQ" = (
 /obj/structure/railing,
 /obj/structure/railing,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
+/turf/closed/indestructible/rock,
 /area/f13/building/tribal)
 "pKW" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -72258,12 +72268,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"pUi" = (
-/obj/structure/stone_tile/slab,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/building/tribal)
 "pUp" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain2bottom"
@@ -107470,7 +107474,7 @@ bcI
 fHl
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -107727,7 +107731,7 @@ dBX
 rlk
 xXN
 ddI
-cCy
+hkC
 cwg
 aHP
 cvl
@@ -107984,7 +107988,7 @@ dBX
 dBX
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -108241,7 +108245,7 @@ bcI
 rlk
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -108498,7 +108502,7 @@ maq
 oTf
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -108755,7 +108759,7 @@ maq
 wme
 xXN
 ddI
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -109012,7 +109016,7 @@ nHe
 wme
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 cvl
@@ -109269,7 +109273,7 @@ nHe
 fCX
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -109526,7 +109530,7 @@ iEL
 cLQ
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -109783,7 +109787,7 @@ xXN
 xXN
 xXN
 aga
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -110040,7 +110044,7 @@ txU
 xXN
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -110297,7 +110301,7 @@ nql
 xXN
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -110554,7 +110558,7 @@ gzG
 xXN
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 cvl
@@ -110811,7 +110815,7 @@ iEL
 cLQ
 xXN
 nmh
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -112353,7 +112357,7 @@ mVk
 xXN
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -112610,7 +112614,7 @@ ahk
 xXN
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -112867,7 +112871,7 @@ oUm
 bsh
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -113124,7 +113128,7 @@ ncP
 xXN
 xXN
 nmh
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -113381,7 +113385,7 @@ oUm
 bsh
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -113638,7 +113642,7 @@ opu
 xXN
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -114152,7 +114156,7 @@ paN
 xXN
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -114409,7 +114413,7 @@ fYg
 fYg
 fYg
 ddI
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -114461,7 +114465,7 @@ hlS
 hlS
 crg
 aOk
-aOk
+xFZ
 aOk
 aOk
 aOk
@@ -114666,7 +114670,7 @@ aMY
 eEA
 fYg
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -114718,8 +114722,8 @@ sAN
 hlS
 crg
 aOk
-aOk
-aOk
+cIY
+xFZ
 aOk
 aOk
 ozV
@@ -114923,7 +114927,7 @@ cWF
 uhY
 rLt
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -114975,9 +114979,9 @@ sxp
 hlS
 crg
 aOk
-aOk
-nxL
-aOk
+cIY
+bvf
+xFZ
 aOk
 ozV
 vBQ
@@ -115180,7 +115184,7 @@ cWF
 qak
 rLt
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -115232,10 +115236,10 @@ hlS
 hlS
 crg
 aOk
+cIY
 aOk
-aOk
-aOk
-aOk
+eAK
+eAK
 sns
 rdC
 njV
@@ -115437,7 +115441,7 @@ aYx
 gOj
 fYg
 xXN
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -115489,9 +115493,9 @@ fyh
 hlS
 crg
 aOk
-aOk
-aOk
-aOk
+cIY
+cIY
+xFZ
 aOk
 ozV
 aUo
@@ -115694,7 +115698,7 @@ rLt
 rLt
 rLt
 ddI
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -115747,7 +115751,7 @@ hlS
 crg
 aOk
 aOk
-ncM
+fdC
 aOk
 aOk
 vfs
@@ -116003,7 +116007,7 @@ fyh
 hlS
 crg
 aOk
-aOk
+eAK
 aOk
 aOk
 aOk
@@ -116260,8 +116264,8 @@ fyh
 hlS
 crg
 aOk
-aOk
-aOk
+imr
+xFZ
 ncM
 aOk
 sns
@@ -116518,7 +116522,7 @@ hlS
 crg
 aOk
 aOk
-aOk
+mPe
 aOk
 aOk
 sns
@@ -116774,8 +116778,8 @@ fyh
 hlS
 crg
 aOk
-aOk
-aOk
+cIY
+mPe
 ncM
 ncM
 ozV
@@ -117031,7 +117035,7 @@ fyh
 hlS
 crg
 aOk
-aOk
+cIY
 aOk
 ncM
 ncM
@@ -117228,15 +117232,15 @@ fyh
 fyh
 fyh
 hlS
+tqb
 fYg
 lCa
 iPA
 awT
 xul
-bcI
 xXN
 bcI
-cCy
+hkC
 cwg
 aHP
 cvl
@@ -117288,7 +117292,7 @@ fyh
 hlS
 crg
 aOk
-hRG
+mPe
 aOk
 aOk
 ncM
@@ -117485,15 +117489,15 @@ fyh
 fyh
 fyh
 hlS
+tqb
 vdo
 otx
 vQI
 vQI
 vdo
-bcI
 xXN
 bcI
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -117545,7 +117549,7 @@ fyh
 hlS
 crg
 aOk
-aOk
+xFZ
 ncM
 aOk
 aOk
@@ -117742,15 +117746,15 @@ fyh
 fyh
 fyh
 hlS
+tqb
 vdo
 wBk
 vQI
 vQI
 vdo
-bcI
 xXN
 bcI
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -117802,7 +117806,7 @@ fyh
 hlS
 crg
 aOk
-aOk
+xFZ
 aOk
 aOk
 aOk
@@ -117999,15 +118003,15 @@ fyh
 fyh
 fyh
 hlS
+tqb
 vdo
 qPz
 vQI
 vQI
 aXb
-pUi
 xXN
 bcI
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -118060,7 +118064,7 @@ hlS
 crg
 aOk
 aOk
-ncM
+mkj
 aOk
 aOk
 ozV
@@ -118256,15 +118260,15 @@ fyh
 fyh
 fyh
 hlS
+tqb
 vdo
 vQI
 vQI
 vQI
 fYg
-bcI
 cLQ
 tzn
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -118317,7 +118321,7 @@ hlS
 crg
 aOk
 aOk
-aOk
+cIY
 aOk
 aOk
 ozV
@@ -118513,15 +118517,15 @@ fyh
 fyh
 fyh
 hlS
+tqb
 vdo
 bWu
 esl
 apF
 vdo
-bcI
 xXN
 xXN
-cCy
+hkC
 cwg
 aHP
 cvl
@@ -118574,8 +118578,8 @@ hlS
 crg
 aOk
 aOk
-aOk
-aOk
+cIY
+cIY
 nxL
 sns
 jWU
@@ -118770,15 +118774,15 @@ fyh
 fyh
 fyh
 hlS
+tqb
 fYg
 fYg
 fYg
 fYg
 fYg
-bcI
 xXN
 pOA
-cCy
+hkC
 cwg
 aHP
 aHP
@@ -118830,9 +118834,9 @@ fyh
 hlS
 crg
 aOk
-aOk
-aOk
-aOk
+xFZ
+eAK
+cIY
 aOk
 ozV
 eoE
@@ -119027,15 +119031,15 @@ fyh
 fyh
 fyh
 hlS
-bcI
-bcI
-bcI
-bcI
-bcI
-bcI
-bcI
-bcI
-cCy
+tqb
+tqb
+tqb
+tqb
+tqb
+tqb
+tqb
+tqb
+hkC
 cwg
 aHP
 aHP
@@ -119088,8 +119092,8 @@ hlS
 crg
 aOk
 aOk
-aOk
-aOk
+xFZ
+cIY
 aOk
 oYh
 sae
@@ -119344,9 +119348,9 @@ fyh
 hlS
 crg
 aOk
+nxL
 aOk
-aOk
-aOk
+eAK
 aOk
 hQi
 iEa
@@ -119603,7 +119607,7 @@ crg
 aOk
 aOk
 aOk
-aOk
+eAK
 aOk
 yjQ
 eoE
@@ -119858,9 +119862,9 @@ fyh
 hlS
 crg
 aOk
-aOk
-aOk
-aOk
+xFZ
+nxL
+eAK
 aOk
 dGz
 bgr
@@ -120115,9 +120119,9 @@ fyh
 hlS
 crg
 aOk
+xFZ
 aOk
-aOk
-aOk
+cIY
 aOk
 ozV
 mca
@@ -120372,9 +120376,9 @@ hlS
 hlS
 crg
 aOk
-aOk
-aOk
-aOk
+xFZ
+eAK
+cIY
 aOk
 ozV
 sOr
