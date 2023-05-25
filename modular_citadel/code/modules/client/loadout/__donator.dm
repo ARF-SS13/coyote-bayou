@@ -679,6 +679,21 @@
 	new /obj/item/clothing/head/helmet/knight/f13/metal(src)
 	new /obj/item/gun/energy/mmlbuster(src)
 
+/datum/gear/donator/kits/lowpowermia 
+	name = "Gunslinger Kit"
+	path = /obj/item/storage/box/large/custom_kit/lowpowermia 
+	ckeywhitelist = list("lowpowermia ")
+
+/obj/item/storage/box/large/custom_kit/lowpowermia/PopulateContents()
+	new /obj/item/reagent_containers/pill/antirad_plus(src)
+	new /obj/item/gun/ballistic/revolver/revolver45/gunslinger(src)
+	new /obj/item/gun/ballistic/revolver/revolver45/gunslinger(src)
+	new /obj/item/ammo_box/a45lcbox(src)
+	new /obj/item/ammo_box/a45lcbox(src)
+
+
+
+
 // M
 
 /datum/gear/donator/kits/mathiel
