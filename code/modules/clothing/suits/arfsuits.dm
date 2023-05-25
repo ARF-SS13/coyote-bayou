@@ -364,6 +364,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	body_parts_hidden = CHEST | ARMS
 	toggled_hidden_parts = ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/toggle/labcoat/cmo
 	name = "chief medical officer's labcoat"
@@ -1687,6 +1688,13 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
+/obj/item/clothing/suit/armor/light/pilotformal
+	name = "formal pilot's jacket"
+	desc = "An ostentatious jacket decorated with brass metals and gold cloth. It won't do much to protect the wearer, but it does let them style all over their opponents."
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+	icon_state = "capformal"
+	item_state = "capformal"
+
 /////////////
 // MEDIUM  //
 /////////////
@@ -2499,6 +2507,13 @@
 	desc = "An old set of pre-war combat armor, painted black."
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
+
+/obj/item/clothing/suit/armor/medium/pilotcarapace
+	name = "pilot's combat carapace"
+	desc = "A compact, if bulky, set of armor marking the wearer as one of Nash's pilots. The materials used offer solid physical protection, but does little against heat."
+	icon_state = "capcarapace"
+	item_state = "capcarapace"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 ///////////////////
 // MEDIUM RAIDER //
