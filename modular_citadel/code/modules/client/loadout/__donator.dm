@@ -682,7 +682,7 @@
 /datum/gear/donator/kits/lowpowermia 
 	name = "Gunslinger Kit"
 	path = /obj/item/storage/box/large/custom_kit/lowpowermia 
-	ckeywhitelist = list("lowpowermia ")
+	ckeywhitelist = list("lowpowermia")
 
 /obj/item/storage/box/large/custom_kit/lowpowermia/PopulateContents()
 	new /obj/item/reagent_containers/pill/antirad_plus(src)
