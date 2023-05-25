@@ -1500,6 +1500,7 @@ Mayor
 	backpack_contents = list(
 	/obj/item/clothing/under/rank/medical/paramedic = 1,
 	/obj/item/clothing/suit/toggle/labcoat/paramedic = 1,
+	/obj/item/clothing/gloves/color/latex = 1,
 	/obj/item/storage/firstaid/emergency = 1,
 	/obj/item/defibrillator/compact = 1,
 	/obj/item/pinpointer/crew = 1,
