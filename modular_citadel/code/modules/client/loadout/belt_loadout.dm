@@ -23,6 +23,10 @@
 	name = "toolbelt"
 	path = /obj/item/storage/belt/utility
 
+/datum/gear/belt/explorer
+	name = "explorer's webbing"
+	path = /obj/item/storage/belt/utility/mining
+
 /datum/gear/belt/utility/gardener
 	name = "gardener's toolbelt"
 	path = /obj/item/storage/belt/utility/gardener
