@@ -945,7 +945,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance, delay)
 	if(!target || src.loc == target.loc)
 		return
-	var/list/path_list = AStar(src, target, /turf/proc/Distance, null, 30, minimum_distance)
+	var/list/path_list = AStar(src, target, /turf/proc/Distance, null, 10, minimum_distance)
 	if(!path_list)
 		return
 
