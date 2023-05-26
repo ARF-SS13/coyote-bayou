@@ -1493,9 +1493,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "bGl" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
-	dir = 1
+	dir = 5
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -14423,6 +14422,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/building)
+"pVf" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "pVD" = (
 /obj/structure/junk/machinery,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -16492,8 +16499,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "sdc" = (
-/obj/structure/railing{
-	dir = 4
+/obj/structure/railing/corner{
+	dir = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -32155,7 +32162,7 @@ akj
 dtb
 dtb
 dtb
-oez
+odJ
 oez
 oez
 oez
@@ -34979,7 +34986,7 @@ qsC
 qsC
 mzq
 bGl
-ejB
+shu
 jxp
 dSA
 oez
@@ -35235,8 +35242,8 @@ dSA
 cBX
 qsC
 jxp
-sdc
-shu
+axq
+auo
 jxp
 dSA
 oez
@@ -35492,8 +35499,8 @@ oez
 oez
 dSA
 jxp
-axq
-auo
+pVf
+sdc
 jxp
 qsC
 oez
