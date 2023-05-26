@@ -503,7 +503,7 @@
 		approaching_target = FALSE
 	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
 		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-		walk_to(src, target, minimum_distance, delay)
+		path_to(target, minimum_distance, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
@@ -927,3 +927,19 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	minimum_distance = rand(0, 10)
 	LoseTarget()
 	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))
+
+/* Follow a path given to us by the game.
+	
+	Using byonds built in walk_to gets mobs stug in weird places.
+
+*/
+/mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance, delay)
+	if(!target || src.loc == target.loc)
+		return
+	var/list/path_list = AStar(src, target, /turf/proc/Distance, null, 30, minimum_distance)
+	if(!path_list)
+		return
+
+	for(var/i = 1, i <= path_list.len, i++)
+		walk_to(src, path_list[i], 0)
+		sleep(delay)
