@@ -1068,6 +1068,37 @@
 	path = /obj/item/clothing/suit/toggle/labcoat/aurora/freedom_coat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/armor/ncrkevlar
+	name = "Texas militia vest"
+	path = /obj/item/clothing/suit/armor/texaskevlar
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrlight
+	name = "Texas militia armor"
+	path = /obj/item/clothing/suit/armor/texaslight
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrlight/mantle
+	name = "mantled Texas militia armor"
+	path = /obj/item/clothing/suit/armor/texaslight/mantle
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrmedium
+	name = "Texas militia breastplate"
+	path = /obj/item/clothing/suit/armor/texasmed
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrmedium/mantle
+	name = "mantled Texas militia breastplate"
+	path = /obj/item/clothing/suit/armor/texasmed/mantle
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
