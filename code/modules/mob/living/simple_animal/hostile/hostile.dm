@@ -507,7 +507,7 @@
 		approaching_target = FALSE
 	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
 		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-		path_to(target, minimum_distance, delay)
+		path_to(target, minimum_distance, aggro_vision_range, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
@@ -936,31 +936,26 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	
 	Byonds walk_to doesn't check orthogonally adjacent tiles to see if a diagonal move is valid.
 	SS13 does check both shared Orthogonal neighbours to see if a diagonal move is valid.
-	So mobs get stuck on corners when using byonds walk_to
+	So mobs get stuck on corners when using byonds walk_to.
+
+	This proc handles getting a path to our traget and moving towards it.
 */
-/mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance)
+/mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance, maximum_distance, delay)
 	if(!target || src.loc == target.loc || path_list)
 		return
 	if(!path_list)
-		path_list = AStar(src, target, /turf/proc/Distance, null, 10, minimum_distance)
+		path_list = AStar(src, target, /turf/proc/Distance, null, maximum_distance, minimum_distance)
 	if(!actively_moving)
 		actively_moving = TRUE
-		process_moving()
+		process_moving(delay)
 
-/mob/living/simple_animal/hostile/proc/process_moving()
-	if(!path_list)
+/mob/living/simple_animal/hostile/proc/process_moving(delay)
+	if(!path_list || path_list.len <= 1)
 		moving_halt()
 		return
-	if(!isturf(path_list[1]))
-		stack_trace("Mob [src] got fed non-turf data. Expected turf, got [path_list[1]] .")
-		moving_halt()
-		return
-	if(path_list.len <= 1)
-		moving_halt()
-		return
-	walk_to(src, path_list[1])
+	walk_to(src, path_list[1], delay)
 	path_list -= path_list[1]
-	addtimer(CALLBACK(src, .proc/process_moving), move_to_delay)
+	addtimer(CALLBACK(src, .proc/process_moving), delay)
 
 /mob/living/simple_animal/hostile/proc/moving_halt()
 	actively_moving = FALSE
