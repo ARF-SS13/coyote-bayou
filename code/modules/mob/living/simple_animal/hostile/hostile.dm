@@ -109,6 +109,10 @@
 	var/despawns_when_lonely = TRUE
 	/// timer for despawning when lonely
 	var/lonely_timer_id
+	
+	//Pathfinding Stuff
+	var/list/path_list
+	var/actively_moving = FALSE
 
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
@@ -941,14 +945,33 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	However in ss13 Diagnal movement is mostly cosmetic, and DF Style diagnal movement isn't possible.
 	
 */
-
-/mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance, delay)
-	if(!target || src.loc == target.loc)
+/mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance)
+	if(!target || src.loc == target.loc || path_list)
 		return
-	var/list/path_list = AStar(src, target, /turf/proc/Distance, null, 10, minimum_distance)
 	if(!path_list)
-		return
+		path_list = AStar(src, target, /turf/proc/Distance, null, 10, minimum_distance)
+	if(!actively_moving)
+		actively_moving = TRUE
+		process_moving()
 
-	for(var/i = 1, i <= path_list.len, i++)
-		walk_to(src, path_list[i], 0)
-		sleep(delay)
+/mob/living/simple_animal/hostile/proc/handleAStar(obj/target, minimum_distance)
+	
+
+/mob/living/simple_animal/hostile/proc/process_moving()
+	if(!path_list)
+		moving_halt()
+		return
+	if(!isturf(path_list[1]))
+		stack_trace("Mob [src] got fed non-turf data. Expected turf, got [path_list[1]] .")
+		moving_halt()
+		return
+	if(path_list.len <= 1)
+		moving_halt()
+		return
+	walk_to(src, path_list[1])
+	path_list -= path_list[1]
+	addtimer(CALLBACK(src, .proc/process_moving), move_to_delay)
+
+/mob/living/simple_animal/hostile/proc/moving_halt()
+	actively_moving = FALSE
+	path_list = null
