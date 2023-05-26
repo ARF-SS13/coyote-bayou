@@ -324,7 +324,7 @@ datum/crafting_recipe/combathazardhood // sec biohood
 /datum/crafting_recipe/weldinghelmet/upgr
 	name = "Reinforced Welding Hardhat"
 	result = /obj/item/clothing/head/hardhat/weldhat/upgraded
-	reqs = list(/obj/item/flashlight/lantern = 1,
+	reqs = list(/obj/item/flashlight/seclite = 1,
 				/obj/item/clothing/head/hardhat/weldhat = 1,
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/clothing/head/helmet/f13/combat =1)
