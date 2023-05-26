@@ -110,8 +110,6 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
-	var/last_Path_call = 0
-
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
 
@@ -945,10 +943,9 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 */
 
 /mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance, delay)
-	if(!target || src.loc == target.loc || last_Path_call <= (world.time + 2 SECONDS))
+	if(!target || src.loc == target.loc)
 		return
 	var/list/path_list = AStar(src, target, /turf/proc/Distance, null, 10, minimum_distance)
-	last_Path_call = world.time
 	if(!path_list)
 		return
 
