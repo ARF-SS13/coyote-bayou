@@ -5,8 +5,11 @@
 	icon_state = "pickaxe"
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 15
-	throwforce = 10
+	force = 20
+	force_unwielded = 20
+	force_wielded = 60
+	attack_speed = CLICK_CD_MELEE * 1.35
+	throwforce = 40
 	item_state = "pickaxe"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
@@ -42,8 +45,10 @@
 	name = "compact pickaxe"
 	desc = "A smaller, compact version of the standard pickaxe."
 	icon_state = "minipick"
-	force = 10
-	throwforce = 7
+	force = 15
+	force_unwielded = 15
+	force_wielded = 30
+	throwforce = 15
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=1000)
@@ -54,7 +59,10 @@
 	item_state = "spickaxe"
 	toolspeed = 0.5 //mines faster than a normal pickaxe, bought from mining vendor
 	desc = "A silver-plated pickaxe that mines slightly faster than standard-issue."
-	force = 17
+	force = 15
+	force_unwielded = 15
+	force_wielded = 50
+	attack_speed = CLICK_CD_MELEE * 1.25
 	custom_materials = list(/datum/material/silver=4000)
 
 /obj/item/pickaxe/diamond
@@ -63,7 +71,10 @@
 	item_state = "dpickaxe"
 	toolspeed = 0.3
 	desc = "A pickaxe with a diamond pick head. Extremely robust at cracking rock walls and digging up dirt."
-	force = 19
+	force = 25
+	force_unwielded = 25
+	force_wielded = 65
+	attack_speed = CLICK_CD_MELEE * 1.45
 	custom_materials = list(/datum/material/diamond=4000)
 
 /obj/item/pickaxe/rosegold
@@ -72,7 +83,10 @@
 	item_state = "rgpickaxe"
 	toolspeed = 0.1
 	desc = "A pickaxe with a light rose gold head and some red glowing runes. Extremely robust at cracking rock walls and digging up dirt."
-	force = 19
+	force = 20
+	force_unwielded = 20
+	force_wielded = 60
+	attack_speed = CLICK_CD_MELEE * 1
 	custom_materials = list(/datum/material/gold=4000)
 	digrange = 3
 
@@ -81,7 +95,10 @@
 	icon_state = "titaxe"
 	toolspeed = 0.5
 	desc = "A pickaxe with a plasteel pick head. Less robust at cracking rock walls and digging up dirt than the titanium pickaxe, but better at cracking open skulls."
-	force = 19
+	force = 25
+	force_unwielded = 25
+	force_wielded = 65
+	attack_speed = CLICK_CD_MELEE * 1.45
 	custom_materials = list(/datum/material/iron=2000, /datum/material/plasma=2000)
 
 /obj/item/pickaxe/titanium
@@ -89,7 +106,10 @@
 	icon_state = "psteelaxe"
 	toolspeed = 0.3
 	desc = "A pickaxe with a titanium pick head. Extremely robust at cracking rock walls and digging up dirt, but less than the plasteel pickaxe at cracking open skulls."
-	force = 17
+	force = 20
+	force_unwielded = 20
+	force_wielded = 60
+	attack_speed = CLICK_CD_MELEE * 1.15
 	custom_materials = list(/datum/material/titanium=4000)
 
 /obj/item/pickaxe/drill
@@ -97,6 +117,10 @@
 	icon_state = "handdrill"
 	item_state = "jackhammer"
 	slot_flags = ITEM_SLOT_BELT
+	force = 40
+	force_unwielded = 40
+	force_wielded = 45 // You're drilling people, not smashing them like a pick.
+	attack_speed = CLICK_CD_MELEE * 1.25
 	toolspeed = 0.6 //available from roundstart, faster than a pickaxe.
 	usesound = 'sound/weapons/drill.ogg'
 	hitsound = 'sound/weapons/drill.ogg'
@@ -123,6 +147,10 @@
 	icon_state = "diamonddrill"
 	toolspeed = 0.4
 	digrange = 2
+	force = 45
+	force_unwielded = 45
+	force_wielded = 60 // You're drilling people, not smashing them like a pick.
+	attack_speed = CLICK_CD_MELEE * 1.30
 
 /obj/item/pickaxe/drill/jackhammer
 	name = "sonic jackhammer"
@@ -134,6 +162,10 @@
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
 	desc = "Cracks rocks with sonic blasts, and doubles as a demolition power tool for smashing walls."
 	digrange = 2
+	force = 25
+	force_unwielded = 25
+	force_wielded = 35 // It's a sonic tool, not a weapon. Trades all combat for diggy diggy hole
+	attack_speed = CLICK_CD_MELEE * 1.25
 
 /obj/item/shovel
 	name = "shovel"
@@ -144,11 +176,14 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 8
+	force = 23
+	force_unwielded = 23
+	force_wielded = 32
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 	tool_behaviour = TOOL_SHOVEL
 	toolspeed = 0.1 //Can only dig ash and thats about it, out classed by the picks and drills no more!
 	usesound = 'sound/effects/shovel_dig.ogg'
-	throwforce = 4
+	throwforce = 16
 	item_state = "shovel"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=350)
@@ -168,13 +203,15 @@
 
 /obj/item/shovel/serrated
 	name = "serrated bone shovel"
-	desc = "A wicked tool that cleaves through dirt just as easily as it does flesh. The design was styled after ancient lavaland tribal designs."
+	desc = "A wicked tool that cleaves through dirt just as easily as it does flesh. The design was styled after ancient tribal designs."
 	icon_state = "shovel_bone"
 	item_state = "shovel_bone"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
-	force = 15
-	throwforce = 12
+	force = 25
+	force_unwielded = 25
+	force_wielded = 40
+	throwforce = 23
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
 	attack_verb = list("slashed", "impaled", "stabbed", "sliced")
