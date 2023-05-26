@@ -183,7 +183,7 @@
 	tool_behaviour = TOOL_SHOVEL
 	toolspeed = 0.1 //Can only dig ash and thats about it, out classed by the picks and drills no more!
 	usesound = 'sound/effects/shovel_dig.ogg'
-	throwforce = 16
+	throwforce = 30
 	item_state = "shovel"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=350)
@@ -211,7 +211,7 @@
 	force = 25
 	force_unwielded = 25
 	force_wielded = 40
-	throwforce = 23
+	throwforce = 40
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
 	attack_verb = list("slashed", "impaled", "stabbed", "sliced")
