@@ -930,9 +930,18 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 
 /* Follow a path given to us by the game.
 	
-	Using byonds built in walk_to gets mobs stug in weird places.
+	Using byonds built in walk_to can get mobs stuck in weird places.
 
+	Example:
+	   M 	|	  x M 
+	 T x 	|	  T x 
+	Valid	|	Invalid
+	The game wants our mob M to move into turf T. x is a wall or some other solid movement blocker. T is a clear turf.
+	Byonds walk_to thinks stepping directly into T is possible in both cases, and will try to do so.
+	However in ss13 Diagnal movement is mostly cosmetic, and DF Style diagnal movement isn't possible.
+	
 */
+
 /mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance, delay)
 	if(!target || src.loc == target.loc)
 		return
