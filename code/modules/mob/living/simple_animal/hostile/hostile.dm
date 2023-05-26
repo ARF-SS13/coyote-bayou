@@ -934,16 +934,9 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 
 /* Follow a path given to us by the game.
 	
-	Using byonds built in walk_to can get mobs stuck in weird places.
-
-	Example:
-	   M 	|	  x M 
-	 T x 	|	  T x 
-	Valid	|	Invalid
-	The game wants our mob M to move into turf T. x is a wall or some other solid movement blocker. T is a clear turf.
-	Byonds walk_to thinks stepping directly into T is possible in both cases, and will try to do so.
-	However in ss13 Diagnal movement is mostly cosmetic, and DF Style diagnal movement isn't possible.
-	
+	Byonds walk_to doesn't check orthogonally adjacent tiles to see if a diagonal move is valid.
+	SS13 does check both shared Orthogonal neighbours to see if a diagonal move is valid.
+	So mobs get stuck on corners when using byonds walk_to
 */
 /mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance)
 	if(!target || src.loc == target.loc || path_list)
@@ -953,9 +946,6 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(!actively_moving)
 		actively_moving = TRUE
 		process_moving()
-
-/mob/living/simple_animal/hostile/proc/handleAStar(obj/target, minimum_distance)
-	
 
 /mob/living/simple_animal/hostile/proc/process_moving()
 	if(!path_list)
