@@ -953,10 +953,10 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(!path_list || path_list.len <= 1)
 		moving_halt()
 		return
-	walk_to(src, path_list[1], delay)
+	walk_to(src, path_list[1], 0, delay)
 	path_list -= path_list[1]
-	addtimer(CALLBACK(src, .proc/process_moving), delay)
+	addtimer(CALLBACK(src, .proc/process_moving, delay), delay)
 
 /mob/living/simple_animal/hostile/proc/moving_halt()
-	actively_moving = FALSE
 	path_list = null
+	actively_moving = FALSE
