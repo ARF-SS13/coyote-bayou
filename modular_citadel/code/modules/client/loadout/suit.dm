@@ -307,6 +307,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/coat/chicom
+	name = "Chinese combat armor"
+	path = /obj/item/clothing/suit/armor/medium/combat/chinese
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/ncrkevlar
 	name = "Texas militia vest"
 	path = /obj/item/clothing/suit/armor/texaskevlar
@@ -334,6 +340,18 @@
 /datum/gear/suit/armor/ncrmedium/mantle
 	name = "mantled Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed/mantle
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrheavy
+	name = "heavy Texas militia armor"
+	path = /obj/item/clothing/suit/armor/heavy/texasheavy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrheavy/mantle
+	name = "mantled heavy Texas militia armor"
+	path = /obj/item/clothing/suit/armor/heavy/texasheavy/mantle
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
