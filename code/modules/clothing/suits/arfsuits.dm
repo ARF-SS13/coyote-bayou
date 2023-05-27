@@ -1721,7 +1721,6 @@
 	name = "medium armor template"
 	//icon = 'icons/fallout/clothing/armored_medium.dmi'
 	//mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	slowdown = 0.5
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -2405,7 +2404,6 @@
 	desc = "An old military grade pre war combat armor. This set has seen better days, weathered by time. The composite plates, meant for bullets and lasers, look sound and intact still. Everything else...uh..."
 	icon_state = "rusted_combat_armor"
 	item_state = "rusted_combat_armor"
-	slowdown = 0.6
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/combat/environmental
@@ -2649,7 +2647,6 @@
 	name = "heavy armor template"
 	//icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	//mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
-	slowdown = 1
 	strip_delay = 50
 	equip_delay_other = 50
 	max_integrity = 300
@@ -3469,6 +3466,57 @@
 	max_integrity = 250
 	resistance_flags = NONE
 	togglename = "collar"
+
+// Recycled NCR Armor - all over the place in weight class so it goes in its own place
+
+/obj/item/clothing/suit/armor/texaskevlar
+	name = "Texas militia vest"
+	desc = "A slim kevlar vest with a brown, cloth covering. Originally modified by the First Texas Militia, these vests are now scattered across the wasteland since its fall."
+	icon_state = "ncr_kelvar_vest"
+	item_state = "ncr_kelvar_vest"
+	blood_overlay_type = "armor"
+	dog_fashion = /datum/dog_fashion/back
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+	body_parts_hidden = CHEST
+
+/obj/item/clothing/suit/armor/texaslight
+	name = "Texas militia armor"
+	desc = "A light vest produced by the First Texas Militia over a century ago. Even now it still provides decent protection with minimal encumbrance."
+	icon_state = "ncr_infantry_vest"
+	item_state = "ncr_infantry_vest"
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	stiffness = LIGHT_STIFFNESS
+
+/obj/item/clothing/suit/armor/texaslight/mantle
+	name = "mantled Texas militia armor"
+	desc = "A light vest produced by the First Texas Militia over a century ago. This one has some cloth thrown over the shoulder."
+	icon_state = "ncr_standard_mantle"
+	item_state = "ncr_standard_mantle"
+
+/obj/item/clothing/suit/armor/texasmed
+	name = "Texas militia breastplate"
+	desc = "A medium set of armor used by the First Texas Militia. While once famous for their effectiveness in the Battle of Round Rock, these days it's more known for being popular among caravaneers and salvagers."
+	icon_state = "ncr_reinforced_vest"
+	item_state = "ncr_reinforced_vest"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/suit/armor/texasmed/mantle
+	name = "mantled Texas militia breastplate"
+	desc = "A medium set of armor used by the First Texas Militia. This one has some cloth thrown over the shoulder."
+	icon_state = "ncr_reinforced_mantle"
+	item_state = "ncr_reinforced_mantle"
 
 //Biosuit complete with shoes (in the item sprite)
 /obj/item/clothing/head/bio_hood

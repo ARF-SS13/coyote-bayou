@@ -82,6 +82,12 @@
 	item_state = "ncr_uniform"
 	item_color = "ncr_uniform"
 
+/obj/item/clothing/under/f13/ncr/texas
+	name = "militia fatigues"
+	desc = "A set of fatigues belonging to the now defunct First Texas Militia. Despite being a little too warm for Texas' usual weather, they're surprisingly comfortable."
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
+
 /obj/item/clothing/under/f13/ncr/ncr_officer
 	name = "officer fatigues"
 	desc = "A standard service uniform for commissioned officers."
@@ -97,6 +103,11 @@
 	icon_state = "ncr_conscript"
 	item_state = "ncr_conscript"
 	item_color = "ncr_conscript"
+
+/obj/item/clothing/under/f13/ncr/conscript/texas
+	name = "militia conscript fatigues"
+	desc = "A set of conscript fatigues belonging to the now defunct First Texas Militia. Despite being derided as 'cheap' by the Militia's detractors, some still swear by the design due how cool they keep the wearer. Just be careful around sharp objects."
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/f13/ncr/scout
 	name = "scout fatigues"
