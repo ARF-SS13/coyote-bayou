@@ -1411,11 +1411,17 @@ Mayor
 	title = "Vertibird Pilot"
 	flag = F13PILOT
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "Nash's laws"
-	description = "You are a pilot, hired to drive the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
+	description = "You are a pilot, hired to fly the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
 	selection_color = "#dcba97"
+
+	loadout_options = list(
+	/datum/outfit/loadout/pilotformal,
+	/datum/outfit/loadout/pilotshock,
+	/datum/outfit/loadout/flightsurgeon,
+	/datum/outfit/loadout/pilotparamed)
 
 	outfit = /datum/outfit/job/den/f13pilot
 
@@ -1443,6 +1449,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/kit_spawner/follower/guard,
 		)
 
 /datum/outfit/job/den/f13pilot/pre_equip(mob/living/carbon/human/H)
@@ -1457,3 +1464,45 @@ Mayor
 		/obj/item/clothing/under/f13/cowboyb,
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt)
+
+/datum/outfit/loadout/pilotformal // Formal captain clothes, low surgery, needs something to make it stand out???
+	name = "Town Pilot"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/captain/pilot = 1,
+	/obj/item/clothing/suit/armor/light/pilotformal = 1,
+	/obj/item/storage/firstaid/tactical = 1,
+	/obj/item/book/granter/trait/lowsurgery = 1
+		)
+
+/datum/outfit/loadout/pilotshock // Captain carapace, bonus mid gun
+	name = "LZ Defender"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/captain/pilot = 1,
+	/obj/item/clothing/suit/armor/medium/pilotcarapace = 1,
+	/obj/item/storage/firstaid/emergency = 1,
+	/obj/item/gun/ballistic/automatic/marksman/policerifle = 1,
+	/obj/item/ammo_box/a556 = 2,
+	/obj/item/ammo_box/magazine/m556/rifle = 2
+		)
+
+/datum/outfit/loadout/flightsurgeon // Surgical clothing, mid surgery
+	name = "Flight Surgeon"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/medical/doctor/blue = 1,
+	/obj/item/clothing/gloves/color/latex/nitrile = 1,
+	/obj/item/clothing/suit/toggle/labcoat/depjacket/med = 1,
+	/obj/item/storage/firstaid/emergency = 1,
+	/obj/item/book/granter/trait/midsurgery = 1
+		)
+
+/datum/outfit/loadout/pilotparamed // Paramed clothing, low surgery, tracker/pinpointer for field work
+	name = "Paramedic"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/medical/paramedic = 1,
+	/obj/item/clothing/suit/toggle/labcoat/paramedic = 1,
+	/obj/item/clothing/gloves/color/latex = 1,
+	/obj/item/storage/firstaid/emergency = 1,
+	/obj/item/defibrillator/compact = 1,
+	/obj/item/pinpointer/crew = 1,
+	/obj/item/sensor_device = 1
+		)

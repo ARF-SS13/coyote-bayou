@@ -382,6 +382,16 @@
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/bedsheet/cult(src)
 
+/datum/gear/donator/kits/ckey
+    name = "Grunt-Cop Kit"
+    path = /obj/item/storage/box/large/custom_kit/Delta_Dav
+    ckeywhitelist = list("Delta_Dav")
+
+/obj/item/storage/box/large/custom_kit/Delta_Dav/PopulateContents()
+    new /obj/item/clothing/head/f13/ncr/steelpot_mp(src)
+    new /obj/item/clothing/under/f13/ncr/ncr_dress(src)
+    new /obj/item/clothing/accessory/armband/black(src)	
+
 // E
 
 /datum/gear/donator/kits/esperkin
@@ -535,6 +545,17 @@
 	new /obj/item/clothing/glasses/science/f13(src)
 	new /obj/item/melee/classic_baton/telescopic(src)
 	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
+
+/datum/gear/donator/kits/irkallaepsilon
+    name = "Protective Equipment and Analysis Tools"
+    path = /obj/item/storage/box/large/custom_kit/irkallaepsilon
+    ckeywhitelist = list("irkallaepsilon")
+
+/obj/item/storage/box/large/custom_kit/irkallaepsilon/PopulateContents()
+    new /obj/item/circuitboard/machine/plantgenes(src)
+    new /obj/item/circuitboard/machine/biogenerator(src)
+    new /obj/item/circuitboard/machine/seed_extractor(src)
+    new /obj/item/clothing/mask/gas/syndicate(src)
 
 // J
 
@@ -927,6 +948,14 @@
 
 /obj/item/storage/box/large/custom_kit/roachwitharoach/PopulateContents()
 	new /obj/item/clothing/under/f13/ncr(src)
+
+/datum/gear/donator/kits/rubeebee
+    name = "Shoddy Armor Kit"
+    path = /obj/item/storage/box/large/custom_kit/rubeebee
+    ckeywhitelist = list("rubeebee")
+
+/obj/item/storage/box/large/custom_kit/rubeebee/PopulateContents()
+    new /obj/item/clothing/suit/armor/light/leather/durathread(src)
 
 // S
 

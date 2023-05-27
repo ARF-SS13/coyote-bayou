@@ -1068,6 +1068,16 @@
 	path = /obj/item/clothing/suit/toggle/labcoat/aurora/freedom_coat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+/datum/gear/suit/aurora/ashjacket
+	name = "Ash Jacket"
+	path = /obj/item/clothing/suit/toggle/labcoat/aurora/ashjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/aurora/robesuit
+	name = "Green and Yellow Robe"
+	path = /obj/item/clothing/suit/aurora/robesuit
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
