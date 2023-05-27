@@ -178,6 +178,9 @@
 	var/atom/P = parent
 	if(coverable_by_dense_things)
 		var/turf/our_turf = get_turf(P)
+		if(!our_turf) // mobs keep spawning in nullspace for some bizarre reason
+			qdel(P) // and I aint dealing with that shit
+			return
 		var/atom/movable/previous_heavy_thing = covering_object?.resolve()
 		if(previous_heavy_thing)
 			if(get_turf(previous_heavy_thing) == our_turf)
