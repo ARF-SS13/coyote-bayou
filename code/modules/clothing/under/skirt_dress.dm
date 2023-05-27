@@ -680,3 +680,36 @@
 	desc = "Light cotton robes secured with a large obi tied into a neat bow around the waist. Perfect for the Japanese summer heat, which you're very far away from."
 	icon_state = "yukata_floral4"
 	item_state = "yukata_floral4"
+
+/obj/item/clothing/under/dress/coyote/grassskirt
+	name = "Grass Skirt"
+	desc = "A grass Skirt! Real grass not included. Though it does have a coconut bra."
+	icon_state = "grass_skirt"
+	item_state = "grass_skirt"
+
+/obj/item/clothing/under/dress/coyote/purplegown
+	name = "Short purple gown"
+	desc = "A purple gown with puffy skirt."
+	icon_state = "midnight_gown"
+	item_state = "midnight_gown"
+
+/obj/item/clothing/under/dress/coyote/winegown
+	name = "Short wine gown"
+	desc = "A wine gown with puffy skirt."
+	icon_state = "wine_gown"
+	item_state = "wine_gown"
+
+/obj/item/clothing/under/dress/coyote/tealgown
+	name = "Short teal gown"
+	desc = "A teal gown with puffy skirt."
+	icon_state = "teal_gown"
+	item_state = "teal_gown"
+
+/obj/item/clothing/under/dress/coyote/bluedress
+	name = "Fancy form fitting blue dress"
+	desc = "A long blue dress that fits well to a form."
+	icon_state = "bluedress"
+	item_state = "bluedress"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS

@@ -2784,3 +2784,33 @@
 	cost = 1
 	path = /obj/item/clothing/under/aurora/ameline_dress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/grassskirt
+	name = "Grass Skirt and Coconut Bra"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/grassskirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/purplegown
+	name = "Purple Gown"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/purplegown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/winegown
+	name = "Wine Gown"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/winegown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/tealgown
+	name = "Teal Gown"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/tealgown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/bluedress
+	name = "Long fancy blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/bluedress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

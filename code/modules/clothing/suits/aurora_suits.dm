@@ -455,3 +455,17 @@
 	icon_state = "ozuha_cape"
 	item_state = "ozuha_cape"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/aurora/ashjacket
+	name = "Ash Jacket"
+	desc = "A nice brown leather jacket."
+	icon_state = "ash_jacket"
+	item_state = "ash_jacket"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/aurora/robesuit
+	name = "Green and yellow robe."
+	desc = "A green and yellow robe, simple!."
+	icon_state = "robe_coat"
+	item_state = "robe_coat"
+	armor = ARMOR_VALUE_LIGHT
