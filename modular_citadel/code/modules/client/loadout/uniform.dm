@@ -24,6 +24,16 @@
 	path = /obj/item/clothing/under/f13/vault
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
+/datum/gear/uniform/texasfatigues
+	name = "militia fatigues"
+	path = /obj/item/clothing/under/f13/ncr/texas
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/texasfatigues/conscript
+	name = "militia conscript fatigues"
+	path = /obj/item/clothing/under/f13/ncr/conscript/texas
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
 /datum/gear/uniform/engineer
 	name = "engineer jumpsuit"
 	path = /obj/item/clothing/under/engineer_alt
