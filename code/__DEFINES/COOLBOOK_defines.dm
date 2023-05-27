@@ -1,11 +1,11 @@
-#define BOOKS_DIRECTORY "books/"
+#define BOOKS_DIRECTORY "COOLBOOKs/"
 #define BOOK_INDEX "index.json"
 
 #define BOOKENTRY_KEY "key"
 #define BOOKENTRY_DESC "desc"
 #define BOOKENTRY_TITLE "title"
 #define BOOKENTRY_AUTHOR "author"
-#define BOOKENTRY_DESCRIPTION "description"
+#define BOOKENTRY_DESCRIPTION "desc"
 #define BOOKENTRY_CONTENT "content"
 #define BOOKENTRY_IMAGE "image"
 
@@ -16,6 +16,8 @@
 /// These are keys of the json file, if the chapter file is a json file
 #define BOOK_CHAPTER_JSON_TITLE "title"
 #define BOOK_CHAPTER_JSON_CONTENT "content"
+#define BOOK_CHAPTER_INDEX "index"
+#define BOOK_CHAPTER_IS_INDEX "is_index"
 /// Set this to true if you want the chapter to be automatically split into pages
 /// Otherwise you'll have to manually put page breaks in the chapter file
 #define BOOK_CHAPTER_JSON_AUTOPAGE "autopage"
