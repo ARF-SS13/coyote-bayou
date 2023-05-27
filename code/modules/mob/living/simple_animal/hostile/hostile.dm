@@ -945,12 +945,12 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		return
 	if(!path_list)
 		path_list = AStar(src, target, /turf/proc/Distance, null, maximum_distance, minimum_distance)
-	if(!actively_moving)
+	if(!actively_moving && path_list)
 		actively_moving = TRUE
 		process_moving(delay)
 
 /mob/living/simple_animal/hostile/proc/process_moving(delay)
-	if(!path_list || path_list.len <= 1)
+	if(!path_list || path_list.len <= 0)
 		moving_halt()
 		return
 	walk_to(src, path_list[1], 0, delay)
