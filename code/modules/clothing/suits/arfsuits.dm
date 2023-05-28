@@ -2335,7 +2335,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/chinese
 	name = "chinese combat armor"
-	desc = "(An uncommon suit of pre-war Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	desc = "An uncommon suit of pre-war Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "chicom_armor"
 	item_state = "chicom_armor"
 
@@ -3403,6 +3403,15 @@
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/power_armor/t51b/pony
+	name = "colorful T-51b power armor"
+	desc = "The pinnacle of pre-war technology. Someone's gone and painted a heart on the chest piece."
+	icon = 'icons/obj/clothing/suits.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	icon_state = "t51forpony"
+	item_state = "midwestpa"
+	mutantrace_variation = null
 
 /obj/item/clothing/suit/armor/power_armor/t51b/hardened
 	name = "Hardened T-51b power armor"
@@ -3517,6 +3526,20 @@
 	desc = "A medium set of armor used by the First Texas Militia. This one has some cloth thrown over the shoulder."
 	icon_state = "ncr_reinforced_mantle"
 	item_state = "ncr_reinforced_mantle"
+
+/obj/item/clothing/suit/armor/heavy/texasheavy
+	name = "heavy Texas militia armor"
+	desc = "Some of the heaviest armor the First Texas Militia ever fielded. It remains unpopular centuries later for its bulk and heat, though some still swear by its protective capabilities."
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	mutantrace_variation = 	STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	icon_state = "ncr_lt_armour"
+	item_state = "ncr_lt_armour"
+
+/obj/item/clothing/suit/armor/heavy/texasheavy/mantle
+	name = "mantled heavy Texas militia armor"
+	desc = "Some of the heaviest armor the First Texas Militia ever fielded. Some madman has thrown a heavy, cloth mantle over one shoulder making the already hot armor even warmer."
+	icon_state = "ncr_lt_armour_mantle"
+	item_state = "ncr_lt_armour_mantle"
 
 //Biosuit complete with shoes (in the item sprite)
 /obj/item/clothing/head/bio_hood

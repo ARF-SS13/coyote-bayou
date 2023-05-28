@@ -454,7 +454,7 @@
 /obj/item/gun/ballistic/rifle/hunting/obrez
 	name = "Obrez"
 	desc = "A cut down bolt action rifle. Uses .308."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "308-sawn"
