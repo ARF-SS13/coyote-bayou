@@ -30566,6 +30566,7 @@
 	icon_state = "rune1words";
 	pixel_x = 32
 	},
+/obj/structure/fermenting_barrel,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "esD" = (
@@ -39838,7 +39839,9 @@
 	},
 /area/f13/building)
 "gUu" = (
-/obj/structure/bed/wooden,
+/obj/structure/bed/wooden{
+	layer = 3
+	},
 /obj/item/blanket,
 /turf/open/indestructible/ground/inside/dirt{
 	color = "#CCCCCC"
@@ -48458,11 +48461,14 @@
 	},
 /area/f13/wasteland/city)
 "jlr" = (
-/obj/structure/closet/crate/wicker{
-	anchored = 1
+/obj/machinery/vending/games{
+	pixel_y = 32;
+	density = 0
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar)
 "jlv" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -51045,6 +51051,10 @@
 /obj/item/clothing/suit/hooded/cloak/desert,
 /obj/item/clothing/gloves/f13/handwraps,
 /obj/item/storage/backpack/satchel/bone,
+/obj/item/toy/crayon/white{
+	desc = "Pale chalk. Looks tasty. Mmmm...";
+	name = "chalk"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "jZs" = (
@@ -55941,6 +55951,10 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"lqG" = (
+/obj/item/toy/crayon/white,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal)
 "lqP" = (
 /obj/structure/flora/tree_stump,
 /turf/open/indestructible/ground/outside/desert,
@@ -61975,6 +61989,10 @@
 /obj/item/key,
 /obj/item/clothing/suit/hooded/cloak/desert,
 /obj/item/clothing/gloves/f13/handwraps,
+/obj/item/toy/crayon/white{
+	desc = "Pale chalk. Looks tasty. Mmmm...";
+	name = "chalk"
+	},
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -65489,6 +65507,10 @@
 	pixel_x = 3
 	},
 /obj/structure/flora/wasteplant/wild_fungus,
+/obj/item/toy/crayon/white{
+	desc = "Pale chalk. Looks tasty. Mmmm...";
+	name = "chalk"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
 "nQb" = (
@@ -66471,6 +66493,10 @@
 	pixel_y = 14;
 	light_range = 5
 	},
+/obj/item/toy/crayon/white{
+	desc = "Pale chalk. Looks tasty. Mmmm...";
+	name = "chalk"
+	},
 /turf/open/indestructible/ground/inside/dirt{
 	color = "#CCCCCC"
 	},
@@ -66818,6 +66844,11 @@
 	icon_state = "verticaloutermain2"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
+"ojQ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/fermenting_barrel,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "ojS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -66947,6 +66978,10 @@
 	},
 /obj/item/clothing/head/helmet/f13/deathskull{
 	pixel_y = 15
+	},
+/obj/item/queen_bee{
+	pixel_y = 16;
+	pixel_x = 15
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -68451,16 +68486,18 @@
 /turf/closed/wall/f13/store,
 /area/f13/building/coyote/nash/museum/groundfloor)
 "oFG" = (
-/obj/structure/decoration{
-	icon = 'icons/effects/cult_effects.dmi';
-	icon_state = "rune6inner";
-	pixel_y = 32;
-	pixel_x = 16
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/structure/fermenting_barrel,
+/obj/item/toy/crayon/white{
+	pixel_y = 6;
+	pixel_x = 4
 	},
-/area/f13/building)
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "oFI" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
@@ -78371,8 +78408,15 @@
 	layer = 4.3;
 	pixel_y = 32
 	},
-/obj/item/queen_bee{
-	pixel_y = 16
+/obj/item/custom/leechjar{
+	pixel_x = -7;
+	pixel_y = 21
+	},
+/obj/item/candle/infinite{
+	icon_state = "candle3_lit";
+	pixel_x = 12;
+	pixel_y = 16;
+	light_range = 5
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -88460,6 +88504,7 @@
 	dir = 4;
 	pixel_y = -15
 	},
+/obj/structure/fermenting_barrel,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "ucy" = (
@@ -88934,6 +88979,13 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city)
+"ukS" = (
+/obj/item/toy/crayon/white{
+	pixel_y = 6;
+	pixel_x = 4
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/building/tribal)
 "ukU" = (
 /obj/structure/closet/cardboard,
 /obj/item/reagent_containers/food/snacks/f13/canned/porknbeans,
@@ -93819,6 +93871,12 @@
 /obj/item/melee/onehanded/knife/ritualdagger{
 	pixel_y = 15;
 	pixel_x = -5
+	},
+/obj/item/toy/crayon/white{
+	desc = "Pale chalk. Looks tasty. Mmmm...";
+	name = "chalk";
+	pixel_y = 9;
+	pixel_x = 6
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
@@ -109769,7 +109827,7 @@ bjp
 iGN
 xFZ
 aOk
-jlr
+aOk
 hlS
 fyh
 fyh
@@ -112903,7 +112961,7 @@ nLW
 nLW
 nLW
 nLW
-mkb
+jlr
 wDN
 nQG
 tYt
@@ -113120,7 +113178,7 @@ huq
 vQI
 lZy
 fqS
-xXN
+ojQ
 xXN
 mSM
 fHl
@@ -114459,7 +114517,7 @@ aaT
 gSD
 fyh
 fyh
-fDa
+ykl
 fyh
 qQZ
 crg
@@ -114717,8 +114775,8 @@ hlS
 hlS
 hlS
 hlS
-fyh
-fyh
+fDa
+hlS
 crg
 sFz
 rkl
@@ -115704,7 +115762,7 @@ otQ
 mak
 csd
 qmy
-oFG
+dVF
 xUm
 iAW
 hxf
@@ -118003,7 +118061,7 @@ vHD
 dmG
 vHr
 fYg
-paO
+oFG
 xXN
 kca
 fYg
@@ -118772,7 +118830,7 @@ fyh
 hlS
 fYg
 fyM
-arJ
+lqG
 fYg
 paO
 cWF
@@ -120060,7 +120118,7 @@ nZp
 bWu
 arJ
 fYg
-fHl
+ukS
 arJ
 wxw
 tqb
