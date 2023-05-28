@@ -3403,6 +3403,15 @@
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/power_armor/t51b/pony
+	name = "colorful T-51b power armor"
+	desc = "The pinnacle of pre-war technology. Someone's gone and painted a heart on the chest piece."
+	icon = 'icons/obj/clothing/suits.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	icon_state = "t51forpony"
+	item_state = "midwestpa"
+	mutantrace_variation = null
 
 /obj/item/clothing/suit/armor/power_armor/t51b/hardened
 	name = "Hardened T-51b power armor"
