@@ -2735,6 +2735,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"dgk" = (
+/turf/open/indestructible/cobble/side,
+/area/f13/building)
 "dgW" = (
 /obj/structure/flora/small_bush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -5439,6 +5442,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
+"gfH" = (
+/turf/open/indestructible/cobble/side{
+	dir = 1
+	},
+/area/f13/wasteland)
 "gfV" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -19968,6 +19976,9 @@
 	color = "#779999"
 	},
 /area/f13/building/hospital)
+"wbP" = (
+/turf/open/indestructible/cobble/side,
+/area/f13/wasteland)
 "wbR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -20176,6 +20187,17 @@
 	color = "#d7d7d7"
 	},
 /area/f13/building/mall)
+"woH" = (
+/turf/open/indestructible/cobble/side{
+	dir = 4;
+	color = "#eeeeee"
+	},
+/area/f13/wasteland)
+"woL" = (
+/turf/open/indestructible/cobble/side{
+	dir = 8
+	},
+/area/f13/wasteland)
 "wpB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/wood,
@@ -20498,6 +20520,13 @@
 	color = "#779999"
 	},
 /area/f13/building/hospital)
+"wJv" = (
+/obj/structure/lattice/catwalk{
+	icon_state = "lattice";
+	icon = 'icons/obj/smooth_structures/lattice.dmi'
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "wJQ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/toxin{
@@ -23659,10 +23688,10 @@ rrM
 rrM
 sEo
 sEo
-sEo
-sEo
-sEo
-sEo
+woH
+woH
+woH
+woH
 sEo
 sEo
 sEo
@@ -23915,12 +23944,12 @@ rrM
 rrM
 rrM
 sEo
-sEo
-sEo
-sEo
-sEo
-sEo
-sEo
+wbP
+wJv
+wJv
+wJv
+wJv
+gfH
 sEo
 tnK
 tnK
@@ -24173,10 +24202,10 @@ rrM
 rrM
 sEo
 sEo
-sEo
-sEo
-sEo
-sEo
+woL
+woL
+woL
+woL
 sEo
 sEo
 tnK
@@ -27770,9 +27799,9 @@ rrM
 rrM
 rrM
 tnK
-tnK
-sEo
-sEo
+dgk
+wJv
+gfH
 eFm
 fCM
 sEo
@@ -28028,7 +28057,7 @@ rrM
 rrM
 tnK
 tnK
-sEo
+woL
 sEo
 sEo
 msN
