@@ -92,6 +92,8 @@
 
 	var/peaceful = FALSE //Determines if mob is actively looking to attack something, regardless if hostile by default to the target or not
 
+	var/retreat_melee_chance = 10 //Percent chance we melee things in range before retreating.
+
 //These vars activate certain things on the mob depending on what it hears
 	var/attack_phrase = "" //Makes the mob become hostile (if it wasn't beforehand) upon hearing
 	var/peace_phrase = "" //Makes the mob become peaceful (if it wasn't beforehand) upon hearing
@@ -465,6 +467,8 @@
 			return 1
 		if(retreat_distance != null) //If we have a retreat distance, check if we need to run from our target
 			if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If target's closer than our retreat distance, run
+				if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from) && prob(retreat_melee_chance)) //If they're next to us, think about attacking.
+					MeleeAction()
 				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 				walk_away(src,target,retreat_distance,move_to_delay)
 			else
