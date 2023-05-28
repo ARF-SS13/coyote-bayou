@@ -20521,11 +20521,12 @@
 	},
 /area/f13/building/hospital)
 "wJv" = (
-/obj/structure/lattice/catwalk{
-	icon_state = "lattice";
-	icon = 'icons/obj/smooth_structures/lattice.dmi'
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "wJQ" = (
 /obj/structure/table/reinforced,
@@ -23945,10 +23946,10 @@ rrM
 rrM
 sEo
 wbP
-wJv
-wJv
-wJv
-wJv
+lnM
+lnM
+lnM
+lnM
 gfH
 sEo
 tnK
@@ -24002,8 +24003,8 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
+xTG
+mrM
 oez
 oez
 oez
@@ -27800,7 +27801,7 @@ rrM
 rrM
 tnK
 dgk
-wJv
+lnM
 gfH
 eFm
 fCM
@@ -28890,9 +28891,9 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
-oez
+wJv
+xVM
+xVM
 oez
 oez
 oez
@@ -29147,9 +29148,9 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
-oez
+wJv
+xVM
+xVM
 oez
 oez
 oez
@@ -29404,9 +29405,9 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
-oez
+wJv
+xVM
+xVM
 oez
 oez
 oez
@@ -29661,9 +29662,9 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
-oez
+wJv
+xVM
+xVM
 oez
 oez
 oez
@@ -29918,9 +29919,9 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
-oez
+wJv
+xVM
+xVM
 oez
 oez
 oez
@@ -32231,8 +32232,8 @@ rrM
 oez
 rrM
 rrM
-odJ
-oez
+wJv
+xVM
 oez
 oez
 oez
@@ -32488,8 +32489,8 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
+wJv
+xVM
 oez
 oez
 oez
@@ -32745,8 +32746,8 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
+wJv
+xVM
 oez
 oez
 oez
@@ -33002,8 +33003,8 @@ rrM
 rrM
 rrM
 rrM
-odJ
-oez
+wJv
+xVM
 oez
 oez
 oez
@@ -33259,7 +33260,7 @@ rrM
 rrM
 rrM
 rrM
-odJ
+wJv
 oez
 oez
 oez
@@ -38909,7 +38910,7 @@ rrM
 rrM
 rrM
 rrM
-odJ
+vpb
 oez
 oez
 oez
