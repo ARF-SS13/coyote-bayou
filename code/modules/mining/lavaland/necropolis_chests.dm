@@ -50,7 +50,7 @@
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
 		if(6)
-			new /obj/item/organ/regenerative_core/legion/preserved(src)
+			new /obj/item/organ/regenerative_core/legion(src)
 		if(7)
 			new /obj/item/warp_cube/red(src)
 		if(8)
