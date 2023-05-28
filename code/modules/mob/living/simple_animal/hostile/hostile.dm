@@ -950,7 +950,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		process_moving(delay)
 
 /mob/living/simple_animal/hostile/proc/process_moving(delay)
-	if(!path_list || path_list.len <= 0)
+	if(!path_list || path_list.len <= 0 || stat != CONSCIOUS || !target )
 		moving_halt()
 		return
 	walk_to(src, path_list[1], 0, delay)
