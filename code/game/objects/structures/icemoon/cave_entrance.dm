@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(ore_probability, list(/obj/item/stack/ore/uranium = 50,
 		if(10)
 			new /obj/item/book/granter/spell/summonitem(loc)
 		if(11)
-			new /obj/item/clothing/neck/necklace/memento_mori(loc)
+			new /obj/item/organ/regenerative_core/legion(loc)
 		if(12)
 			new /obj/item/borg/upgrade/modkit/lifesteal(loc)
 			new /obj/item/bedsheet/cult(loc)
