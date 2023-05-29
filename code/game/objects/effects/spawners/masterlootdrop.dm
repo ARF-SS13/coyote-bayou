@@ -852,7 +852,9 @@
 		/obj/item/clothing/suit/armor/power_armor/t45d = 1,
 		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 5,
 		/obj/item/clothing/suit/armor/heavy/riot/vault = 5,
-		/obj/item/clothing/suit/armor/heavy/riot/marine = 5
+		/obj/item/clothing/suit/armor/heavy/riot/marine = 5,
+		/obj/item/clothing/suit/armor/power_armor/t51b = 1,
+		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1
 	)
 
 //////////////////
