@@ -80,6 +80,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
 #define isrobotic(A) (is_species(A, /datum/species/synthfurry/ipc) || is_species(A, /datum/species/synthfurry) || is_species(/datum/species/synth) || is_species(/datum/species/android))
 #define isethereal(A) (is_species(A, /datum/species/ethereal))
+#define issquid(A) (is_species(A, /datum/species/squid))
+#define isshadekin(A) (is_species(A, /datum/species/shadekin))
 
 // Citadel specific species
 #define isipcperson(A) (is_species(A, /datum/species/synthfurry/ipc))
