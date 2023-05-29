@@ -13,7 +13,7 @@
 /obj/item/pen
 	desc = "It's a normal black ink pen."
 	name = "pen"
-	. += span_warning("Alt-Click to toggle renaming mode!")
+	span_notice("Alt-Click to toggle renaming mode!")
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "pen"
 	item_state = "pen"
