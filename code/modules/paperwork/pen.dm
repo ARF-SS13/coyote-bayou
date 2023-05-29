@@ -13,7 +13,6 @@
 /obj/item/pen
 	desc = "It's a normal black ink pen."
 	name = "pen"
-	span_notice("Alt-Click to toggle renaming mode!")
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "pen"
 	item_state = "pen"
@@ -33,6 +32,13 @@
 	embedding = list()
 	sharpness = SHARP_POINTY
 	var/naming = FALSE
+
+/obj/item/pen/examine(mob/user)
+	. = ..()
+	if(naming)
+		. += span_notice("Currently renaming things! Alt-click to disable renaming mode!")
+	else
+		. += span_notice("Alt-click to enable renaming mode!")
 
 /obj/item/pen/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku..."))
