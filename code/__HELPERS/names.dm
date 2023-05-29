@@ -16,6 +16,12 @@
 /proc/moth_name()
 	return "[pick(GLOB.moth_first)] [pick(GLOB.moth_last)]"
 
+/proc/squid_name(gender)
+	if(gender == MALE)
+		return "[pick(GLOB.squid_names_male)]"
+	else
+		return "[pick(GLOB.squid_names_female)]"
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)
