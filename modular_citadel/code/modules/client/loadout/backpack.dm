@@ -551,3 +551,23 @@
 	name  = "Nonbinery Pride Pin"
 	path = /obj/item/clothing/accessory/pride/enby
 	cost = 0
+
+/datum/gear/backpack/pride/lesbian
+	name  = "Lesbian Pride Pin"
+	path = /obj/item/clothing/accessory/pride/lesbian
+	cost = 0
+
+/datum/gear/backpack/pride/intersex
+	name  = "Intersex Pride Pin"
+	path = /obj/item/clothing/accessory/pride/intersex
+	cost = 0
+
+/datum/gear/backpack/deafpin
+	name  = "Deaf Personal Pin"
+	path = /obj/item/clothing/accessory/deafpin
+	cost = 0
+
+/datum/gear/backpack/sheriffvest
+	name  = "Cowboy Vest"
+	path = /obj/item/clothing/accessory/sheriffvest
+	cost = 0

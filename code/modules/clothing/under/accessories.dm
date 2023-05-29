@@ -876,3 +876,23 @@
 	name = "Pansexual Pride"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_pan"
+
+/obj/item/clothing/accessory/pride/lesbian
+	name = "Lesbian Pride"
+	desc = "A bright pin to wear with pride whereever you go!"
+	icon_state = "pride_lesbian"
+
+/obj/item/clothing/accessory/pride/intersex
+	name = "Intersex Pride"
+	desc = "A bright pin to wear with pride whereever you go!"
+	icon_state = "pride_intersex"
+
+/obj/item/clothing/accessory/deafpin
+	name = "Deaf Pin"
+	desc = "A bright pin to showcase the wearer having hearing loss."
+	icon_state = "deaf_pin"
+
+/obj/item/clothing/accessory/sheriffvest
+	name = "Cowboy Vest"
+	desc = "A white vest with black splotches. Yeehaw."
+	icon_state = "vest_sheriff"
