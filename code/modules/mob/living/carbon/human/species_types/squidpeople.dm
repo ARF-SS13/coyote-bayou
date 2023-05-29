@@ -17,9 +17,9 @@
 	
 /datum/species/squid/random_name(gender,unique,lastname)
 	if(unique)
-		return random_unique_moth_name()
+		return random_unique_squid_name(gender)
 
-	var/randname = squid_name()
+	var/randname = squid_name(gender)
 
 	if(lastname)
 		randname += " [lastname]"
