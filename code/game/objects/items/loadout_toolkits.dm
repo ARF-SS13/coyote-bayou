@@ -52,7 +52,7 @@
 	spawn_thing = /obj/item/storage/box/tools/farming
 
 /obj/item/storage/box/tools/ranching
-	name = "ranching tools"
+	name = "riding tools"
 
 /obj/item/storage/box/tools/ranching/PopulateContents()
 	// new /obj/item/brahminbags(src)
@@ -63,7 +63,7 @@
 	new /obj/item/choice_beacon/pet/mountable(src)
 
 /datum/loadout_box/ranching
-	entry_tag = "ranching tools"
+	entry_tag = "riding tools"
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_WORKER
 	spawn_thing = /obj/item/storage/box/tools/ranching
@@ -501,6 +501,24 @@
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
 	entry_class = LOADOUT_CAT_SINISTER
 	spawn_thing = /obj/item/storage/box/tools/mancatcher
+
+/obj/item/storage/box/tools/kidnapper
+	name = "kidnapper tools" //for napin'
+
+/obj/item/storage/box/tools/kidnapper/PopulateContents()
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/electropack/shockcollar(src)
+	new /obj/item/jammer(src)
+	new /obj/item/assembly/signaler(src)
+	new /obj/item/restraints/handcuffs (src)
+	new /obj/item/restraints/legcuffs/beartrap(src)
+	new /obj/item/restraints/legcuffs(src)
+
+/datum/loadout_box/kidnapper
+	entry_tag = "kidnapper tools"
+	entry_flags = LOADOUT_FLAG_TOOL_WASTER
+	entry_class = LOADOUT_CAT_SINISTER
+	spawn_thing = /obj/item/storage/box/tools/kidnapper
 
 /obj/item/storage/box/tools/quack
 	name = "fake medical tools"

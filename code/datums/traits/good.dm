@@ -41,6 +41,11 @@ GLOBAL_LIST_INIT(energyweapon_cell_crafting, list(
 	/datum/crafting_recipe/enhancedmfcell,
 	/datum/crafting_recipe/enhancedecp))
 
+	// armored_hazard_suit is going to get SEVA Mk. 2 and Explorer Mk. 2 in the future. Might tie it to Hardsuits as well.
+GLOBAL_LIST_INIT(armored_hazard_suit, list(
+	/datum/crafting_recipe/combathazardsuit,
+	/datum/crafting_recipe/combathazardhood))
+
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
 	/datum/crafting_recipe/huntingrifle,
@@ -86,6 +91,12 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	/datum/crafting_recipe/aer9_hotwired))
 
+GLOBAL_LIST_INIT(pa_repair, list(
+	/datum/crafting_recipe/repair_t45,
+	/datum/crafting_recipe/repair_t45_helm,
+	/datum/crafting_recipe/scrap_pa,
+	/datum/crafting_recipe/scrap_pa_helm))
+
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
 
@@ -100,12 +111,11 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 
 /datum/quirk/horrifying_tastes
 	name = "Cannibal"
-	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor."
+	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor. ((This is an OOC trait and should only be found out in character and not through technology.))"
 	mob_trait = TRAIT_LONGPORKLOVER
 	value = 1
 	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
 	lose_text = span_notice("The terrible hunger fades - you feel peace at last.")
-	medical_record_text = "Patient refuses to comment on their dietary preferences."
 
 /datum/quirk/horrifying_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -262,6 +272,22 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
 
+/* //placeholder test concluded
+/datum/quirk/wizard
+	name = "Wasteland Wizard"
+	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit. This isn't a lisence to be a greifer or break rules. "
+	value = 4
+	mob_trait = TRAIT_SWAMPWIZARD
+	gain_text = span_notice("You know everything about magic.")
+	lose_text = span_danger("You forgor how the magic.")
+
+/datum/quirk/wizard/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/spellbook/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.regenerate_icons()
+*/
+
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds. Sort of like being a medical scanner for yourself."
@@ -318,6 +344,8 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	H.mind.learned_recipes |= GLOB.tier_three_parts
 	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
 	H.mind.learned_recipes |= GLOB.energyweapon_crafting
+	H.mind.learned_recipes |= GLOB.pa_repair
+	H.mind.learned_recipes |= GLOB.armored_hazard_suit
 
 /datum/quirk/technophreak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -325,6 +353,8 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 		H.mind.learned_recipes -= GLOB.tier_three_parts
 		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
+		H.mind.learned_recipes -= GLOB.pa_repair
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
@@ -395,13 +425,13 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	H.update_sight()
 
 /datum/quirk/nukalover
-	name = "Nuka Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Nuka Cola heals you, sort of."
+	name = "Cola Fiend"
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Cosmic Cola heals you, sort of."
 	value = 1
 	mob_trait = TRAIT_NUKA_LOVER
-	gain_text = span_notice("You want to buy the whole world a nuka-cola!")
-	lose_text = span_danger("What's the big deal about nuka-cola?")
-	medical_record_text = "Patient has an addiction to the soft drink Nuka-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
+	gain_text = span_notice("You want to buy the whole world a cosmic-cola!")
+	lose_text = span_danger("What's the big deal about cosmic-cola?")
+	medical_record_text = "Patient has an addiction to the soft drink Cosmic-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
 
 /datum/quirk/nukalover/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -590,33 +620,16 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
-/datum/quirk/lick_heal
-	name = "Soothing Saliva"
-	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick your injuries."
-	value = 1
-	mob_trait = TRAIT_HEAL_TONGUE
-	gain_text = span_notice("You feel a slight tingle in your mouth.")
-	lose_text = span_danger("The tingle in your mouth fades.")
+/datum/quirk/improved_heal
+	name = "Improved Innate Healing"
+	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. check the neutral traits for these abilities."
+	value = 2
+	mob_trait = TRAIT_IMPROVED_HEALING
+	gain_text = span_notice("You feel well hydrated.")
+	lose_text = span_danger("You feel rather dry.")
 	locked = FALSE
 
-/datum/quirk/lick_heal/on_spawn()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	our_tongue.initialize_lickpack(/obj/item/stack/medical/bruise_pack/lick)
-
-/datum/quirk/lick_heal/remove()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	QDEL_NULL(our_tongue.lick_healer)
-
+/*
 /datum/quirk/lick_bandage
 	name = "Sanguine Saliva"
 	desc = "Your saliva has a mild coagulating effect on open bleeding wounds. Use *lick to lick your lacerations."
@@ -639,7 +652,7 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	if(!our_tongue)
 		return //welp
 	QDEL_NULL(our_tongue.lick_bandage)
-
+*/
 // This does the same thing as basic explosive crafting by giving basic_recipe and adv_recipe. -Possum
 /*
 /datum/quirk/advanced_explosive_crafting
@@ -756,18 +769,18 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	lose_text = span_danger("You know? Being cold kind of sucks actually.")
 	locked =  FALSE
 
-/datum/quirk/radimmune
+/* /datum/quirk/radimmune
 	name = "Radiation - Immune"
 	desc = "Gieger Counters are for suckers."
 	value = 5
 	mob_trait = TRAIT_RADIMMUNE
 	gain_text = span_notice("You've decided radiation just doesn't matter.")
 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
-	locked =  FALSE
+	locked =  FALSE */
 
 /datum/quirk/radimmuneish
 	name = "Radiation - Mostly Immune"
-	desc = "Gieger Counters are for suckers, mostly."
+	desc = "Gieger Counters are for suckers, mostly. Gives 75% innate rad resist."
 	value = 4
 	mob_trait = TRAIT_75_RAD_RESIST
 	gain_text = span_notice("You've decided radiation just doesn't matter much.")
@@ -776,7 +789,7 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 
 /datum/quirk/radimmunesorta
 	name = "Radiation - Sorta Immune"
-	desc = "Gieger Counters are for suckers, sorta."
+	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
 	value = 3
 	mob_trait = TRAIT_50_RAD_RESIST
 	gain_text = span_notice("You've decided radiation only kind of matters.")
@@ -867,7 +880,7 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "You hit the shots you aim. No ifs, ands, or buts."
-	value = 6
+	value = 4
 	mob_trait = TRAIT_INSANE_AIM
 	gain_text = span_notice("Your aim is legendary, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -876,7 +889,7 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 /datum/quirk/straightshooter
 	name = "Straight Shooter"
 	desc = "You're a better than average shot."
-	value = 4
+	value = 2
 	mob_trait = TRAIT_NICE_SHOT
 	gain_text = span_notice("Your aim is amazing, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -898,6 +911,15 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	mob_trait = TRAIT_FAST_PUMP
 	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
+	locked =  FALSE
+
+/datum/quirk/playdead
+	name = "Class Act"
+	desc = "You're good at acting! *deathgasp will be extra convincing to rudimentary tests, such as healthhuds and examine, doing so may deal a small quantity of toxin damage."
+	value = 1
+	mob_trait = TRAIT_PLAY_DEAD
+	gain_text = span_notice("You feel confident at playing dead.")
+	lose_text = span_danger("You feel that laying down in a field of gunfire may not be such a good idea after all.")
 	locked =  FALSE
 
 /datum/quirk/ratfriend
@@ -1004,3 +1026,15 @@ GLOBAL_LIST_INIT(energyweapon_crafting, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
+
+/datum/quirk/zoomies
+	name = "Zoomies"
+	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Just...don't run into things."
+	value = 1
+	mob_trait = TRAIT_ZOOMIES
+
+/datum/quirk/super_zoomies
+	name = "Zoomies - Super"
+	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just...REALLY don't run into things."
+	value = 3
+	mob_trait = TRAIT_SUPER_ZOOMIES

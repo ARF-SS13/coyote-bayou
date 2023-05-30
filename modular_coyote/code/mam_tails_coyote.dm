@@ -635,3 +635,15 @@
 	icon_state = "pony3"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/corgi
+	name = "Corgi tail"
+	icon_state = "corgi"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/corgi
+	name = "Corgi tail"
+	icon_state = "corgi"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED

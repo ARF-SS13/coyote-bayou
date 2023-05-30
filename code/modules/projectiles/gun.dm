@@ -29,7 +29,6 @@ ATTACHMENTS
 	slot_flags = null
 	custom_materials = list(/datum/material/iron=2000)
 	w_class = null
-	var/icon_prefix = null
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
@@ -304,9 +303,6 @@ ATTACHMENTS
 /obj/item/gun/proc/process_chamber(mob/living/user)
 	return FALSE
 
-/obj/item/gun/update_icon_state()
-	icon_state = "[icon_prefix]"
-
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
@@ -516,6 +512,36 @@ ATTACHMENTS
 	if (automatic == 1)
 		return busy_action || firing
 
+/* 
+ * So here is the list of proc calls that happen when you fire a gun:
+ * You click on something with a gun in your hand
+ * The game calls ClickOn() on the gun
+ * ClickOn() calls the gun's afterattack() proc
+ * afterattack() first checks if the gun is on cooldown, if it is, it returns
+ * afterattack() then checks if the gun is empty, if it is, it calls shoot_with_empty_chamber()
+ * afterattack() then calls process_fire() on the gun with the target as an argument
+ * process_fire() first checks if the gun is on cooldown, if it is, it returns
+ * process_fire() then checks if the gun is on safety, if it is, it calls shoot_with_empty_chamber()
+ * process_fire() then sets the gun's firing variable to TRUE
+ * process_fire() then calls do_fire() on the gun with the target as an argument
+ * do_fire() first tries to misfire the gun, if possible. Doesnt really change anything whether it does or not
+ * do_fire() then checks if the gun has a chambered round, if it doesnt, it calls shoot_with_empty_chamber()
+ * do_fire() then gets the user's recoil amount and adds it to the gun's spread
+ * do_fire() then calls chambered's fire_casing() proc with a bunch of args
+ * If fire_casing fails, shoot_with_empty_chamber() is called
+ * Otherwise, call shoot_live_shot() with the same args
+ * If the gun has burst mode, and hasn't fired all of its shots, sleep for the burst delay right now
+ * Then call process_chamber() on the gun with the user as an argument
+ * Congratulation, you just shot someone probably
+ * Then we return to process_fire()
+ * process_fire() then sets the gun's firing variable to FALSE
+ * process_fire() then sets the gun's last_fire variable to the current world time
+ * (last_fire is used to check if the gun is on cooldown, comparing it to the current world time)
+ * THen we return to afterattack()
+ * Then what happens next is up to the wierdass attack chain system that i barely understand
+ * (props to github's copilot for more or less writing this comment)
+ */
+
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", stam_cost = 0)
 	add_fingerprint(user)
 
@@ -530,6 +556,8 @@ ATTACHMENTS
 	if(time_till_draw)
 		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
 		return
+	if(pre_fire(user, target, params, zone_override, stam_cost))
+		return TRUE // pre_fire will handle what comes next~ (like firing at your mouse cursor after a delay)
 	firing = TRUE
 	. = do_fire(target, user, message, params, zone_override, stam_cost)
 	firing = FALSE
@@ -538,6 +566,9 @@ ATTACHMENTS
 	if(user)
 		user.update_inv_hands()
 		SEND_SIGNAL(user, COMSIG_LIVING_GUN_PROCESS_FIRE, target, params, zone_override, stam_cost)
+
+/obj/item/gun/proc/pre_fire(mob/user, atom/target, params, zone_override, stam_cost, message = TRUE)
+	return FALSE
 
 /obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
 	var/sprd = 0

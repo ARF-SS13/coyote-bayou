@@ -37,12 +37,12 @@
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/firstaid/emergency
 	icon_state = "medbriefcase"
@@ -55,7 +55,7 @@
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer/wound = 1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/suture/emergency = 1,
+		/obj/item/stack/medical/suture/emergency = 3,
 		/obj/item/stack/medical/ointment = 1,
 		/obj/item/reagent_containers/hypospray/medipen/ekit = 2)
 	generate_items_inside(items_inside,src)
@@ -439,7 +439,7 @@
 /obj/item/storage/pill_bottle/breast_enlarger/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/breast_enlarger(src)
-	
+
 /obj/item/storage/pill_bottle/butt_enlarger
 	name = "bottle of callipygian capsules"
 	desc = "Ever wish you had a bit more cushion for the pushin'? Not any more with Doctor D-Zels' patented callipygian capsules! \
@@ -677,6 +677,30 @@
 /obj/item/storage/pill_bottle/chem_tin/mentats/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/mentat(src)
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape
+	name = "Grape Mentats tin"
+	desc = "Contains pills used to increase intelligence and perception. Now in three flavors!"
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/mentat/grape(src)
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/orange
+	name = "Orange Mentats tin"
+	desc = "Contains pills used to increase intelligence and perception. Now in three flavors!"
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/orange/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/mentat/orange(src)
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/berry
+	name = "Berry Mentats tin"
+	desc = "Contains pills used to increase intelligence and perception. Now in three flavors!"
+
+/obj/item/storage/pill_bottle/chem_tin/mentats/berry/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/mentat/berry(src)
 
 // ---------------------------------------------
 // FIXER TIN

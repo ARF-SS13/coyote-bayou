@@ -1,8 +1,8 @@
 
 /obj/machinery/vending/cola
-	name = "\improper Nuka-Cola vending machine"
+	name = "\improper Cosmic-Cola vending machine"
 	icon = 'icons/obj/f13vending.dmi'
-	desc = "The Nuka-Cola Corporation was a corporation, best known for its flagship product, Nuka-Cola. The soda is considered to be the most popular drink in the United States both before and after the war."
+	desc = "The Cosmic-Cola Corporation was a corporation, best known for its flagship product, Cosmic-Cola. The soda is considered to be the most popular drink in the United States both before and after the war."
 	icon_state = "nuka_vending"
 	product_slogans = "Take the leap... enjoy a Quantum!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Nothing beats the taste, the taste that'll knock you out!;Please, have a drink!;Drink up!;The best drinks in America."
@@ -12,7 +12,7 @@
 	refill_canister = /obj/item/vending_refill/cola
 
 /obj/item/vending_refill/cola
-	machine_name = "Nuka-Cola vending machine"
+	machine_name = "Cosmic-Cola vending machine"
 	icon_state = "refill_cola"
 
 /obj/machinery/vending/cola/random

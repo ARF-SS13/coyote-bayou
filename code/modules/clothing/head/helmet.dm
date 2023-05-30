@@ -114,8 +114,8 @@
 	tint = 2
 
 /obj/item/clothing/head/helmet/blueshirt
-	name = "light security helmet"
-	desc = "A reliable, blue tinted helmet reminding you that you <i>still</i> owe that engineer a beer."
+	name = "Vault-Tec security helmet"
+	desc = "A light, open-faced helmet commonly worn by Vault-Tec security personnel."
 	icon_state = "blueshift"
 	item_state = "blueshift"
 
@@ -193,7 +193,7 @@
 
 /obj/item/clothing/head/helmet/swat/nanotrasen
 	name = "\improper SWAT helmet"
-	desc = "An extremely robust, space-worthy helmet with the Nanotrasen logo emblazoned on the top."
+	desc = "An extremely robust, space-worthy helmet with the US Government logo emblazoned on the top."
 	icon_state = "swat"
 	item_state = "swat"
 

@@ -144,7 +144,7 @@
 
 /// Allows you to rearrange your guts
 /mob/living/carbon/verb/toggle_genitals()
-	set category = "IC"
+	set category = "Private"
 	set name = "Private Panel"
 	set desc = "Allows you to modify various aspects of your jiggly bits and underwear."
 	show_genital_panel()
@@ -153,10 +153,6 @@
 	var/list/genital_list = list()
 	for(var/obj/item/organ/genital/G in internal_organs)
 		genital_list |= G
-	if(!LAZYLEN(genital_list))
-		show_message(span_alert("You don't have any rearrangeable guts!"))
-		return
-
 	var/list/dat = list("<center>")
 	/// woo lookit me im a web designer from the early 2010s!
 	dat += "<table class='table_genital_list'>"

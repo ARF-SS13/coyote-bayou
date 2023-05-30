@@ -6,7 +6,7 @@
 
 import axios from 'axios';
 import { exec } from 'child_process';
-import { createLogger } from 'common/logging.js';
+import { createLogger } from './logging.js';
 import { promisify } from 'util';
 
 const logger = createLogger('dreamseeker');

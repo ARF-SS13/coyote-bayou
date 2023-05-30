@@ -293,7 +293,8 @@
 
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
-	desc = "A sturdy hunting rifle, chambered in .30-06. and in use before the war."
+	desc = "A sturdy hunting rifle, chambered in .30-06 Springfield."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
@@ -309,6 +310,7 @@
 	scope_y_offset = 12
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	reskinnable_component = /datum/component/reskinnable/hunting_rifle
 
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -354,9 +356,9 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/hunting/remington
-	name = "Remington rifle"
-	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy."
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
+	name = "Remington 700"
+	desc = "This bolt action rifle was popular among hunters, police, and the military before the War."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -437,7 +439,7 @@
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
@@ -451,14 +453,15 @@
 
 /obj/item/gun/ballistic/rifle/enfield
 	name = "Lee-Enfield rifle"
-	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308."
-	icon_state = "enfield2"
-	item_state = "308"
+	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
+	sawn_desc = "This accursed abomination was a common modification for trench warfare. Now some waster is likely using it for close quarters."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "smle"
+	item_state = "smle"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	cock_delay = GUN_COCK_RIFLE_FAST
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(2.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -472,19 +475,29 @@
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/enfield
+
+/obj/item/gun/ballistic/rifle/enfield/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
 
 /obj/item/gun/ballistic/rifle/enfield/jungle
 	name = "Jungle Carbine"
-	desc = "The Rifle No. 5 Mk I, made by the Australian army at Lithgow Small Arms in Australia, its a shortened Enfield used for secondary service in the Australian and New zealand army for jungle warfare other then the L1A1 battle rifle,  made from an SMLE its bolt action holds 10 rounds and sadly cannot fit a scope."
+	desc = "A shortened Enfield used for secondary service in the Australian and New Zealand army for jungle warfare. Made from an SMLE, it holds 10 rounds but sadly cannot fit a scope."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "junglecarbine"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -496,14 +509,14 @@
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 
 	)
 
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Gras"
 	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
@@ -527,6 +540,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/gras
 
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
@@ -649,9 +663,32 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
+	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+
+//no scope, less capacity, more common
+/obj/item/gun/ballistic/rifle/mag/boys
+	name = "Boys anti-tank rifle"
+	desc = "A heavy british rifle boasting a strong kick and an even stronger punch."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "boys"
+	item_state = "boys"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/boys
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HMG_RECOIL(3)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
 

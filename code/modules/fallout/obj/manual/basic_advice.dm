@@ -138,7 +138,7 @@
 
 //Survival guide - Started by Thingpony. My fingers are freezing as I write this. Help.
 
-/obj/item/book/manual/advice_surival
+/obj/item/book/manual/advice_survival
 	name = "Survival Guide to the Wastes" //Was tempted to name it "Try not to keel over and die"
 	desc = "A survival book! At Last! .. it looks well loved and has a lot of little notes all over in and around its pages"
 	icon = 'modular_coyote/icons/objects/survival_guide.dmi'
@@ -168,13 +168,12 @@
 				<li>Punga can help purge radiation, but it can also be addicting if you eat more than a few in one sitting.</li>
 				<li>Nash is on the western side of the middle Z (everyone spawns on this Z), and its main entrance is on the southern wall!</li>
 				<li>While you have tons of slots and can make loads of characters it can sometimes be hard to get started. It takes time and being seen fairly often before people realize you're actually for real about hanging around. Maybe consider sticking to one character for a while!</li>
-				</ol>
-				<p>
-
-				<h3>Other small things</h3>
-
-				<p>
-				<ol>
+				<li>Certain actions are locked behind quirks or books.</li>
+				<li>Rad-X doesn't lower rads, it stops you from getting them in the first place by making you absorb less! Use it!</li>
+				<li>Red Lights -matter-, look out for them. They usually corespond with the fact that you're about to enter a dangerous area, and the number of them are how many players are expected to be used to make the area's difficulty fair!</li>
+				<li>There is one exception to those red lights, and that's Heavens Night under Nash, it's a Red Light as in 'red light district', red light. There's also a warning at the door when you enter to make sure you know what you're getting into!</li>
+				<li>You can click a table with a makeshift ammo reloader to install it onto that table, it's limited in scope but hey. Some bullets are better than none!</li>
+				<li>There are boards set up just to the south of the bar, they have persistence from round to round if you put papers on them!</li>
 				<li>The blue matrix tiles you can just walk right through to another map. The green ones are to leave the region (basically Cryo).</li>
 				<li>There are three map areas. Stacked north to south you have 'Red River', 'Texarkana', and 'Redwater'. The town of Nash is in the Texarkana Z, where you spawned!</li>
 				<li>Remember to close Nash's gate, unless you WANT the wildlife to get in!</li>
@@ -185,7 +184,7 @@
 				</ol>
 				<p>
 
-				And if you ever get lost and have questions, the spirits are always there to guide you along.
+				And if you ever get lost and have questions, the spirits are always there to guide you along. Be that in an ahelp or prayer. 
 
 				</body>
 				</html>

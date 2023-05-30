@@ -23,6 +23,10 @@
 	name = "toolbelt"
 	path = /obj/item/storage/belt/utility
 
+/datum/gear/belt/explorer
+	name = "explorer's webbing"
+	path = /obj/item/storage/belt/utility/mining
+
 /datum/gear/belt/utility/gardener
 	name = "gardener's toolbelt"
 	path = /obj/item/storage/belt/utility/gardener
@@ -85,4 +89,10 @@
 	name = "burma webbing"
 	path = /obj/item/storage/belt/military/commonwealth_brit
 
+/datum/gear/belt/leather/boer
+	name = "leather bandolier"
+	path = /obj/item/storage/belt/bandolier/boer_band
 
+/datum/gear/belt/webbing/french
+	name = "french webbing"
+	path = /obj/item/storage/belt/military/french_webbing

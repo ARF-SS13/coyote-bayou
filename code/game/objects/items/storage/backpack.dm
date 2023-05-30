@@ -157,7 +157,7 @@
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
-	desc = "It's a special backpack made exclusively for Nanotrasen officers."
+	desc = "It's a special backpack made exclusively for US Government officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 	resistance_flags = FIRE_PROOF
@@ -286,7 +286,7 @@
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
-	desc = "An exclusive satchel for Nanotrasen officers."
+	desc = "An exclusive satchel for US Government officers."
 	icon_state = "satchel-cap"
 	item_state = "captainpack"
 	resistance_flags = FIRE_PROOF
@@ -465,7 +465,7 @@
 	component_type = /datum/component/storage/concrete/backpack/duffelbag/syndie
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman
-	desc = "A large duffel bag for holding extra things. There is a Nanotrasen logo on the back."
+	desc = "A large duffel bag for holding extra things. There is a US Government logo on the back."
 	icon_state = "duffel-syndieammo"
 	item_state = "duffel-syndieammo"
 

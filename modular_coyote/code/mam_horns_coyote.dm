@@ -127,7 +127,7 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 
 /datum/sprite_accessory/horns/sheephorns
-	name = "sheep horns"
+	name = "sheep horns" //Credit goes to Guidesa, thank you sheepling these are beautiful. <3
 	icon_state = "sheephorn"
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = MATRIXED

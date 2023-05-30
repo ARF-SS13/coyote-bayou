@@ -75,7 +75,7 @@
 		message = replacetext(message, "ove", "uv")
 		message = replacetext(message, "l", "w")
 		message = replacetext(message, "r", "w")
-	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
 /datum/accent/span
@@ -116,7 +116,7 @@
 		message = replacetext(message, "r", "rr")
 		message = replacetext(message, "h", "'")
 		message = replacetext(message, "i", "e")
-	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
 /datum/accent/scottish/modify_speech(list/speech_args)
@@ -127,7 +127,7 @@
 		message = replacetext(message, "of", "o")
 		message = replacetext(message, "your", "yer")
 		message = replacetext(message, "and", "agus")
-	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
 /datum/accent/bug/modify_speech(list/speech_args)
@@ -139,5 +139,122 @@
 		message = replacetext(message, "th", "zk")
 		message = replacetext(message, "r", "rk")
 		message = replacetext(message, "f", "zk")
-	speech_args[SPEECH_MESSAGE] = lowertext(message)
+	speech_args[SPEECH_MESSAGE] = message
+	return speech_args
+
+/datum/accent/dutch/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "u", "oo")
+		message = replacetext(message, "g", "gh")
+		message = replacetext(message, "j", "y")
+		message = replacetext(message, "a", "aa")
+		message = replacetext(message, "d", "t")
+		message = replacetext(message, "w", "v")
+		message = replacetext(message, "s", "sh")
+		message = replacetext(message, "th", "d")
+		message = replacetext(message, "ea", "ee")
+	speech_args[SPEECH_MESSAGE] = message
+	return speech_args
+
+/datum/accent/redriver/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, " climbed ", " clumb ")
+		message = replacetext(message, "washing", "warshing")
+		message = replacetext(message, "shower", "shawer")
+		message = replacetext(message, "soda", "coke")
+		message = replacetext(message, "pop", "cola")
+		message = replacetext(message, "compass ", "comp-ass ")
+		message = replacetext(message, "there", "yonder")
+		message = replacetext(message, "brahmin", "brimmer")
+		message = replacetext(message, " damnit", " dangit")
+		message = replacetext(message, "god", "gosh")
+		message = replacetext(message, " fuck", " shit")
+		message = replacetext(message, " shit", " ass")
+		message = replacetext(message, "going", "gonna")
+		message = replacetext(message, "let me", "lemme")
+		message = replacetext(message, " I ", " ah ")
+		message = replacetext(message, "you all", "y'all")
+		message = replacetext(message, "you have", " you've ")
+		message = replacetext(message, "got to", "gots-ta")
+		message = replacetext(message, "my ", "mah ")
+		message = replacetext(message, "get", "git")
+		message = replacetext(message, "out of", "outta")
+		message = replacetext(message, "here", "har")
+		message = replacetext(message, "dog", "dawg")
+		message = replacetext(message, "cat", "gahto")
+		message = replacetext(message, "tire", "taar")
+		message = replacetext(message, "I'm", "ah'm")
+		message = replacetext(message, "I'd", "ah'd")
+		message = replacetext(message, "new", "naw")
+		message = replacetext(message, "Orleans", "lins'")
+		message = replacetext(message, "sheriff ", "big lawman")
+		message = replacetext(message, "deputy", "lawman")
+		message = replacetext(message, "bandit", "desperado")
+		message = replacetext(message, "raider", "lunatic")
+		message = replacetext(message, "cap ", "peso ")
+		message = replacetext(message, "coin ", "dinero ")
+		message = replacetext(message, "money", "dollahs")
+		message = replacetext(message, "hang", "sway")
+		message = replacetext(message, "bois'd'arc", "board-ark")
+		message = replacetext(message, "gun", "shooter")
+	speech_args[SPEECH_MESSAGE] = message
+	return speech_args
+
+/datum/accent/swedish/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "j", "y")
+		message = replacetext(message, "ch", "sh")
+		message = replacetext(message, "hu", "yu")
+		message = replacetext(message, "hoo", "yu")
+		message = replacetext(message, "i", "e")
+		message = replacetext(message, "you ", "du ")
+		message = replacetext(message, "you'll ", "du kommer")
+		message = replacetext(message, "you've ", "du har")
+		message = replacetext(message, "so ", "sa ")
+	speech_args[SPEECH_MESSAGE] = message
+	return speech_args
+
+/datum/accent/japanese/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "ay", "ayu")
+		message = replacetext(message, "ow", "au")
+		message = replacetext(message, "I ", "ai ")
+		message = replacetext(message, "l", "r")
+		message = replacetext(message, "v", "b")
+		message = replacetext(message, "f", "")
+		message = replacetext(message, "th", "z")
+		message = replacetext(message, "are ", "ah ")
+	speech_args[SPEECH_MESSAGE] = message
+	return speech_args
+
+/datum/accent/chinese/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "e ", "u ")
+		message = replacetext(message, "s ", "se ")
+		message = replacetext(message, "er", "ah")
+		message = replacetext(message, "ed ", "uh ")
+		message = replacetext(message, "ant ", "ang ")
+		message = replacetext(message, "ra", "ura")
+		message = replacetext(message, "iv", "eev")
+		message = replacetext(message, "is ", "esu ")
+	speech_args[SPEECH_MESSAGE] = message
+	return speech_args
+
+/datum/accent/irish/modify_speech(list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "ing", "eng")
+		message = replacetext(message, "i", "ei")
+		message = replacetext(message, "th", "d")
+		message = replacetext(message, "r", "er")
+		message = replacetext(message, "'l", "'ll")
+		message = replacetext(message, "but ", "ach ")
+		message = replacetext(message, "you ", "tú ")
+		message = replacetext(message, " or ", " nó ")
+	speech_args[SPEECH_MESSAGE] = message
 	return speech_args

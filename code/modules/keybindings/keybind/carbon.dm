@@ -3,7 +3,10 @@
 	weight = WEIGHT_MOB
 
 /datum/keybinding/carbon/can_use(client/user)
-	return iscarbon(user.mob)
+	if(iscarbon(user.mob))
+		return TRUE
+	if(isanimal(user.mob))
+		return TRUE
 
 /datum/keybinding/carbon/toggle_throw_mode
 	hotkey_keys = list("R", "Southwest") // END
@@ -13,9 +16,14 @@
 	category = CATEGORY_CARBON
 
 /datum/keybinding/carbon/toggle_throw_mode/down(client/user)
-	var/mob/living/carbon/C = user.mob
-	C.toggle_throw_mode()
-	return TRUE
+	if(iscarbon(user.mob))
+		var/mob/living/carbon/C = user.mob
+		C.toggle_throw_mode()
+		return TRUE
+	if(isanimal(user.mob))
+		var/mob/living/simple_animal/A = user.mob
+		A.toggle_throw_mode()
+		return TRUE
 
 /datum/keybinding/carbon/select_help_intent
 	hotkey_keys = list("1")
@@ -69,6 +77,11 @@
 	category = CATEGORY_CARBON
 
 /datum/keybinding/carbon/wield/down(client/user)
-	var/mob/living/carbon/C = user.mob
-	C.do_wield()
-	return TRUE
+	if(iscarbon(user.mob))
+		var/mob/living/carbon/C = user.mob
+		C.do_wield()
+		return TRUE
+	else if(isanimal(user.mob))
+		var/mob/living/simple_animal/A = user.mob
+		A.do_wield()
+		return TRUE

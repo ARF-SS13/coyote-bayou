@@ -4,6 +4,9 @@
 	attack_speed = CLICK_CD_MELEE
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
+	block_parry_data = /datum/block_parry_data/bokken
+	item_flags = ITEM_CAN_PARRY
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/melee/onehanded
 	name = "onehand melee template"
@@ -41,7 +44,7 @@
 	force = 55
 	throwforce = 10
 	block_chance = 20
-	armour_penetration = 0.40
+	armour_penetration = 0.00
 	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -137,10 +140,10 @@
 	item_state = "tribalspear"
 	force = 15
 	throwforce = 40 //clears threshholds for trash mobs
-	armour_penetration = 0.10
-	max_reach = 2
+	armour_penetration = 0.00
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 
 
@@ -156,7 +159,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	armour_penetration = 0.05
+	armour_penetration = 0.00
 	throw_speed = 3
 	throw_range = 6
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -188,19 +191,21 @@
 /obj/item/melee/onehanded/knife/hunting
 	name = "hunting knife"
 	icon_state = "knife_hunting"
-	desc = "Dependable hunting knife."
+	desc = "A dependable hunting knife. Good for skinning one's kills."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 23
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	toolspeed = 0.7
 
 /obj/item/melee/onehanded/knife/survival
 	name = "survival knife"
 	icon_state = "knife_survival"
-	desc = "Multi-purpose knife with blackened steel."
+	desc = "A high-quality pre-war survival knife. Perfect for a survivalist or hunter."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 23
 	throwforce = 25
+	toolspeed = 0.3
 
 /obj/item/melee/onehanded/knife/bayonet
 	name = "bayonet knife"
@@ -213,10 +218,11 @@
 	name = "bowie knife"
 	icon_state = "knife_bowie"
 	item_state = "knife_bowie"
-	desc = "A large clip point fighting knife."
+	desc = "Now this is a knife! Better as both a tool and weapon than most knives, but loses out to specialized tools."
 	force = 28
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
+	toolspeed = 0.5
 
 /obj/item/melee/onehanded/knife/trench
 	name = "trench knife"
@@ -246,13 +252,14 @@
 	icon_state = "knife_ritual"
 	item_state = "knife_ritual"
 	force = 25
-	armour_penetration = 0.1
+	armour_penetration = 0.0
 	custom_materials = null
 
 obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."
 	icon_state = "knife_switch"
+	w_class = WEIGHT_CLASS_TINY
 	force = 3
 	throwforce = 5
 	hitsound = 'sound/weapons/genhit.ogg'
@@ -272,7 +279,7 @@ obj/item/melee/onehanded/knife/switchblade
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
 	if(extended)
 		force = extended_force
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		throwforce = extended_throwforce
 		icon_state = extended_icon_state
 		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -280,7 +287,7 @@ obj/item/melee/onehanded/knife/switchblade
 		sharpness = SHARP_EDGED
 	else
 		force = initial(force)
-		w_class = WEIGHT_CLASS_SMALL
+		w_class = WEIGHT_CLASS_TINY
 		throwforce = initial(throwforce)
 		icon_state = retracted_icon_state
 		attack_verb = list("stubbed", "poked")
@@ -298,7 +305,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "knife"
 	force = 15
 	throwforce = 10
-	armour_penetration = 0.2
+	armour_penetration = 0.0
 
 // Abraxo my beloved. Can now be used directly to clean the blade.
 /obj/item/melee/onehanded/knife/cosmicdirty/attackby(obj/item/C, mob/user, params)
@@ -322,7 +329,8 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "knife"
 	force = 25
 	throwforce = 15
-	armour_penetration = 0.2
+	armour_penetration = 0.0
+	toolspeed = 0.8
 
 // Heat it with a welder
 /obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)
@@ -343,7 +351,7 @@ obj/item/melee/onehanded/knife/switchblade
 	damtype = BURN
 	force = 35
 	throwforce = 20
-	armour_penetration = 0.4
+	armour_penetration = 0.0
 	w_class = WEIGHT_CLASS_NORMAL // Its super hot, not comfy to put back in your pocket.
 
 /obj/item/melee/onehanded/knife/throwing
@@ -352,7 +360,7 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "knife_throw"
 	force = 20
 	throwforce = 30
-	armour_penetration = 0.25
+	armour_penetration = 0.00
 	bare_wound_bonus = 15 //keep your arteries covered
 	throw_speed = 5
 	throw_range = 7
@@ -674,7 +682,7 @@ obj/item/melee/onehanded/knife/switchblade
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_NONE
-	armour_penetration = 0.05
+
 	throwforce = 10
 	throw_range = 5
 	attack_verb = list("punched", "jabbed", "whacked")
@@ -750,7 +758,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "spiked"
 	sharpness = SHARP_POINTY
 	force = 28
-	armour_penetration = 0.10
+
 
 // Sappers			Keywords: Damage 27
 /obj/item/melee/unarmed/sappers
@@ -810,7 +818,7 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "punch_dagger"
 	item_state = "punch_dagger"
 	force = 29
-	armour_penetration = 0.12
+	armour_penetration = 0.0
 	sharpness = SHARP_POINTY
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -831,7 +839,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 35
-	armour_penetration = 1
+	armour_penetration = 0 //HAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHA, ONE MY ASS LMFAO ~TK
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -899,7 +907,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	toolspeed = 0.7
 	sharpness = SHARP_EDGED
 	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
-
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 // Hatchet				Force 24
 // Wrench				Force 12
@@ -947,3 +955,58 @@ CODE FOR BLEEDING STACK
 	icon_state = "machete_imp"
 	item_state = "salvagedmachete"
 	force = 30
+
+//Fenny makes fucking handfans because they're cute and maybe dangerous. ~TK
+/obj/item/melee/handfan
+	name = "handfan"
+	desc = "A foldable fan, made out of some sort of hardwood and pink fabric. Good for coolin off, or looking haughty as fuck."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "handfanclosed_0"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = null
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NONE
+	force = 0
+	var/on = FALSE
+	var/on_sound = 'sound/weapons/batonextend.ogg'
+	var/on_icon_state = "handfanopen_1"
+	var/off_icon_state = "handfanclosed_0"
+	var/on_item_state = "nullrod"
+	attack_verb = list("<span class='love'>fanned %t</span>")
+	var/force_on = 0
+	var/force_off = 0
+	var/weight_class_on = WEIGHT_CLASS_BULKY
+	total_mass = TOTAL_MASS_TINY_ITEM
+	attack_speed = CLICK_CD_MELEE * 0.5
+
+/obj/item/melee/handfan/proc/get_on_off_description()
+	if(on)
+		return span_alert("You open the fan with a smooth flicking motion.")
+	else
+		return span_notice("You collapse the fan with a smooth flicking motion.")
+
+/obj/item/melee/handfan/examine()
+
+/obj/item/melee/handfan/attack_self(mob/user)
+	TOGGLE_VAR(on)
+	if(on)
+		to_chat(user, get_on_off_description())
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list(span_love("fanned"))
+	else
+		to_chat(user, get_on_off_description())
+		icon_state = off_icon_state
+		item_state = null //no sprite for concealment even when in hand
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = force_off
+		attack_verb = list("badgered", "beat")
+	playsound(loc, on_sound, 50, TRUE)
+	add_fingerprint(user)
+
+

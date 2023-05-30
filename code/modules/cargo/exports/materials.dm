@@ -114,6 +114,7 @@
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/leather)
+	k_elasticity = 1
 
 /datum/export/material/bone
 	cost = 10
@@ -138,10 +139,25 @@
 
 /datum/export/material/f13cash
 	cost = 10
-	message = " "
-	unit_name = "caps"
+	message = ""
+	unit_name = "copper coin"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)
+
+/datum/export/material/f13cash/silver
+	cost = 100
+	unit_name = "silver coin"
+	export_types = list(/obj/item/stack/f13Cash/denarius)
+
+/datum/export/material/f13cash/gold
+	cost = 1000
+	unit_name = "gold coin"
+	export_types = list(/obj/item/stack/f13Cash/aureus)
+
+/datum/export/material/f13cash/scrip
+	cost = 15 // Texarkana Trade Union scrip. They like people using their money because economics or something
+	unit_name = "scrip"
+	export_types = list(/obj/item/stack/f13Cash/ncr)
 
 /datum/export/material/deathclawhide
 	cost = 1000

@@ -2,9 +2,9 @@
 #define CASH_CAP 1
 
 /* exchange rates X * CAP*/
-#define CASH_AUR 100 /* 100 caps to 1 AUR */
-#define CASH_DEN 4 /* 4 caps to 1 DEN */
-#define CASH_NCR 0.4 /* $100 to 40 caps */
+#define CASH_AUR 100 /* 100 copper to 1 gold */
+#define CASH_DEN 10 /* 10 copper to 1 silver */
+#define CASH_NCR 0.5 /* $100 to 50 copper */
 
 /* value of coins to spawn, use as-is for caps */
 /* LOW_MIN / AUR = amount in AUR */
@@ -35,28 +35,41 @@
 #define BANKER_MIN 2000
 #define BANKER_MAX 15000
 
+// Amounts of coins that, under which, it makes a noise
+#define DINGLE_LOW 5
+#define DINGLE_MED 15
+#define DINGLE_HIGH 30
+
+// Scrip vendor stack?
+#define SCRIP_MID 10
+
+
 /obj/item/stack/f13Cash //DO NOT USE THIS
-	name = "bottle cap"
-	singular_name = "cap"
+	name = "copper coin"
+	singular_name = "copper coin"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "bottle_cap"
 	amount = 1
-	max_amount = 15000
+	max_amount = 500
 	throwforce = 0
 	throw_speed = 2
 	throw_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	var/flavor_desc =	"A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\
-					A common unit of exchange, backed by water in the Hub."
+	var/flavor_desc =	"A copper coin, commonly used for trade."
 	var/value = CASH_CAP
 	var/flippable = TRUE
 	var/cooldown = 0
 	var/coinflip
 	var/list/sideslist = list("heads","tails")
+	var/pitch = 100
 	merge_type = /obj/item/stack/f13Cash
 	custom_materials = list(/datum/material/f13cash=MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/stack/f13Cash/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED, .proc/dingaling)
 
 /obj/item/stack/f13Cash/attack_self(mob/user)
 	if (flippable)
@@ -173,6 +186,51 @@
 		if(501 to 15000)
 			icon_state = "[initial(icon_state)]6"
 
+/obj/item/stack/f13Cash/proc/dingaling()
+	var/snd = 'sound/items/dropped/coin_1.ogg'
+	switch(amount)
+		if(0 to DINGLE_LOW)
+			snd = 'sound/items/dropped/coin_1.ogg'
+		if(DINGLE_LOW to DINGLE_MED)
+			snd = 'sound/items/dropped/coin_low.ogg'
+		if(DINGLE_MED to DINGLE_HIGH)
+			snd = 'sound/items/dropped/coin_med.ogg'
+		if(DINGLE_HIGH to INFINITY)
+			snd = 'sound/items/dropped/coin_high.ogg'
+	playsound(loc, snd, 50, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(pitch, 0, 0))
+	if(!(locate(/mob/living) in loc))
+		return
+	var/list/okplaces = list()
+	for(var/turf/T in range(1, src))
+		if(T.density)
+			continue
+		if(locate(/mob/living) in T)
+			continue
+		okplaces |= T
+	if(LAZYLEN(okplaces))
+		step_to(src, pick(okplaces))
+
+/obj/item/debug_clicker/dingalinger
+	name = "Debug Dingalinger"
+	desc = "Click to dingalinger"
+	icon = 'icons/obj/economy.dmi'
+	icon_state = "rupee"
+	max_reach = 10
+	var/amtt = 1
+
+/obj/item/debug_clicker/dingalinger/attack_self(mob/user)
+	. = ..()
+	amtt = input(user, "How many?") as null|num
+	to_chat(user, "Dingalingering [amtt] times")
+
+/obj/item/debug_clicker/dingalinger/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(isturf(target))
+		var/obj/item/stack/f13Cash/caps/cap = new(get_turf(target), amtt)
+		SEND_SIGNAL(cap, COMSIG_ITEM_MOB_DROPPED)
+		return
+	SEND_SIGNAL(target, COMSIG_ITEM_MOB_DROPPED)
+
 /obj/item/stack/f13Cash/random/low
 	min_qty = LOW_MIN / CASH_CAP
 	max_qty = LOW_MAX / CASH_CAP
@@ -196,16 +254,27 @@
 	max_qty = BANKER_MAX / CASH_CAP
 
 /obj/item/stack/f13Cash/denarius
-	name = "Denarius"
-	latin = 1
-	singular_name = "Denari" // -us or -i
+	name = "silver coin"
+	latin = 0
+	singular_name = "Sliver Coin" // -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "denarius"
-	flavor_desc =	"The inscriptions are in Latin,\n\
-		'Caesar Dictator' on the front and\n\
-		'Magnum Chasma' on the back."
-	value = CASH_DEN * CASH_CAP
+	flavor_desc =	"A sliver, shiny coin, used mainly by the middle class. Worth the same as 10 copper coins."
 	merge_type = /obj/item/stack/f13Cash/denarius
+	pitch = 0
+
+/obj/item/stack/f13Cash/denarius/five
+	amount = 5
+	merge_type = /obj/item/stack/f13Cash/denarius
+
+/obj/item/stack/f13Cash/denarius/ten
+	amount = 10
+	merge_type = /obj/item/stack/f13Cash/denarius
+
+/obj/item/stack/f13Cash/denarius/twenty
+	amount = 20
+	merge_type = /obj/item/stack/f13Cash/denarius
+
 
 /obj/item/stack/f13Cash/random/denarius
 	money_type = /obj/item/stack/f13Cash/denarius
@@ -235,15 +304,26 @@
 	max_qty = HIGH_MAX / CASH_DEN
 
 /obj/item/stack/f13Cash/aureus
-	name = "Aureus"
-	latin = 1
-	singular_name = "Aure"// -us or -i
+	name = "gold coin"
+	latin = 0
+	singular_name = "Gold Coin"// -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "aureus"
-	flavor_desc = 	"The inscriptions are in Latin,\n\
-					'Aeternit Imperi' on the front and\n\
-					'Pax Per Bellum' on the back."
+	flavor_desc = 	"A golden coin used by aristocrats and upper class-men. Quite rare... a sight to behold, indeed. Also super shiny! Worth 100 copper coins, or 10 silver coins."
 	value = CASH_AUR * CASH_CAP
+	merge_type = /obj/item/stack/f13Cash/aureus
+	pitch = -100
+
+/obj/item/stack/f13Cash/aureus/five
+	amount = 5
+	merge_type = /obj/item/stack/f13Cash/aureus
+
+/obj/item/stack/f13Cash/aureus/ten
+	amount = 10
+	merge_type = /obj/item/stack/f13Cash/aureus
+
+/obj/item/stack/f13Cash/aureus/twenty
+	amount = 20
 	merge_type = /obj/item/stack/f13Cash/aureus
 
 /obj/item/stack/f13Cash/random/aureus
@@ -262,13 +342,31 @@
 	max_qty = 0 //uses flat values because aurei are worth so much
 
 /obj/item/stack/f13Cash/ncr
-	name = "NCR Dollar"
-	singular_name = "NCR Dollar"  /* same for denarius, we can pretend the legion can't latin properly */
-	flavor_desc = "Paper money used by the NCR."
+	name = "Trade Union scrip"
+	singular_name = "Trade Union scrip"  /* same for denarius, we can pretend the legion can't latin properly */
+	flavor_desc = "Scrip issued by the Texarkana Trade Union that can be exchanged for goods and services. Or copper."
+	max_amount = 15000
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "ncr" /* 10 points to whoever writes flavour text for each bill */
 	value = CASH_NCR * CASH_CAP
 	flippable = FALSE
+	merge_type = /obj/item/stack/f13Cash/ncr
+	pitch = 0
+
+/obj/item/stack/f13Cash/ncr/twenty
+	amount = 20
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/fourty
+	amount = 40
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/eighty
+	amount = 80
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/twohundo
+	amount = 200
 	merge_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/ncr/update_icon()
@@ -290,6 +388,10 @@
 
 /obj/item/stack/f13Cash/random/ncr
 	money_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/random/ncr/twenty
+	min_qty = SCRIP_MID / CASH_NCR
+	max_qty = SCRIP_MID / CASH_NCR
 
 /obj/item/stack/f13Cash/random/ncr/low
 	min_qty = TEMP3_MIN / CASH_NCR

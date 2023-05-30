@@ -12,7 +12,7 @@
 
 /* /datum/supply_pack/engineering/shieldgen
 	name = "Anti-breach Shield Projector Crate"
-	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
+	desc = "Hull breaches again? Say no more with the US Government Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
 	cost = 2500
 	contains = list(/obj/machinery/shieldgen,
 					/obj/machinery/shieldgen)
@@ -29,7 +29,7 @@
 /datum/supply_pack/engineering/engiequipment
 	name = "Engineering Gear Crate"
 	desc = "Gear up with three toolbelts, high-visibility vests, welding helmets, hardhats, and two pairs of meson goggles!"
-	cost = 1500
+	cost = 1000 // Meson goggles are discount thermals if you know what you're doing, but people are dumb so some discount
 	contains = list(/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
 					/obj/item/storage/belt/utility,
@@ -50,7 +50,7 @@
 /datum/supply_pack/engineering/experimentaltools
 	name = "Experimental Tools Crate"
 	desc = "High tech tools. Comes with an experimental welder, jaws of life, and hand drill!"
-	cost = 15000
+	cost = 8000
 	contains = list(/obj/item/storage/belt/utility/full/engi,
 					/obj/item/storage/belt/utility/full/engi)
 	crate_name = "experimental tools crate"
@@ -59,7 +59,7 @@
 /datum/supply_pack/engineering/advancedtools
 	name = "Ultracite Tools Crate"
 	desc = "The best tools money can buy!"
-	cost = 50000
+	cost = 15000
 	contains = list(/obj/item/weldingtool/abductor,
 					/obj/item/wrench/abductor,
 					/obj/item/wirecutters/abductor,
@@ -156,7 +156,7 @@
 /datum/supply_pack/engineering/power
 	name = "Power Cell Crate"
 	desc = "Looking for power overwhelming? Look no further. Contains three high-voltage power cells."
-	cost = 1000
+	cost = 500
 	contains = list(/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high)
@@ -181,13 +181,13 @@
 					/obj/item/storage/toolbox/mechanical,
 					/obj/item/storage/toolbox/mechanical,
 					/obj/item/storage/toolbox/mechanical)
-	cost = 1200
+	cost = 500
 	crate_name = "toolbox crate"
 	special = TRUE //Department resupply shuttle loan event.
 
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
-	desc = "The pride of Nanotrasen Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
+	desc = "The pride of US Government Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
 	cost = 900000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,
@@ -251,4 +251,35 @@
 	contains = list(/obj/item/storage/box/metalfoam,
 					/obj/item/storage/box/metalfoam)
 	crate_name = "metal foam grenade crate"
+
+/datum/supply_pack/engine/solar // because people have been managing to break power with EMPs lately, and prep for fiat power getting axed
+	name = "Solar Panel Crate"
+	desc = "Go green with this DIY advanced solar array. Contains twenty one solar assemblies, a solar-control circuit board, and tracker. If you have any questions, please check out the enclosed instruction book."
+	cost = 2500
+	contains  = list(/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/solar_assembly,
+					/obj/item/circuitboard/computer/solar_control,
+					/obj/item/electronics/tracker,
+					/obj/item/paper/guides/jobs/engi/solars)
+	crate_name = "solar panel crate"
+	crate_type = /obj/structure/closet/crate/engineering/electrical
 

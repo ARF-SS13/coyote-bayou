@@ -42,7 +42,7 @@
 /datum/supply_pack/organic/randomized/chinese
 	name = "Chinese Food Crate"
 	desc = "Tasty chinese!"
-	cost = 6000
+	cost = 1000
 	num_contained = 8
 	contains = list(/obj/item/reagent_containers/food/snacks/sushie_pro,
 					/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi,
@@ -59,7 +59,7 @@
 /datum/supply_pack/organic/randomized/burgbox
 	name = "BurgerBox Crate"
 	desc = "Juicy and Meaty with bun goodness. Yum!"
-	cost = 5000
+	cost = 1000
 	num_contained = 8
 	contains = list(/obj/item/reagent_containers/food/snacks/burger/plain,
 					/obj/item/reagent_containers/food/snacks/burger/fish,
@@ -77,10 +77,18 @@
 					/obj/item/reagent_containers/food/snacks/burger/cheese)
 	crate_name = "burgerbox crate"
 
+/datum/supply_pack/organic/randomized/mcribbox
+	name = "McRib Crate"
+	desc = "The McRib is back!"
+	cost = 1000
+	num_contained = 8
+	contains = list(/obj/item/reagent_containers/food/snacks/burger/rib)
+	crate_name = "McRib crate"
+
 /datum/supply_pack/organic/randomized/candy
 	name = "Candy Crate"
 	desc = "For people that have an insatiable sweet tooth! Has ten candies to be eaten up."
-	cost = 2500
+	cost = 1500
 	num_contained = 10
 	contains = list(/obj/item/reagent_containers/food/snacks/candy,
 					/obj/item/reagent_containers/food/snacks/lollipop,
@@ -144,7 +152,7 @@
 /datum/supply_pack/organic/pizza
 	name = "Pizza Crate"
 	desc = "Best prices on this side of the Alamo. All deliveries are guaranteed to be 99% rad-free!"
-	cost = 6000 // Best prices this side of the galaxy.
+	cost = 4000 // Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
 					/obj/item/pizzabox/meat,
@@ -207,7 +215,7 @@
 /datum/supply_pack/organic/randomized/fruits
 	name = "Fruit Crate"
 	desc = "Rich in vitamins and possibly sugar. Contains 15 assorted fruits."
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
 					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
 					/obj/item/reagent_containers/food/snacks/grown/banana,
@@ -289,7 +297,7 @@
 /datum/supply_pack/organic/randomized/vegetables
 	name = "Vegetable Crate"
 	desc = "Grown in vats. Contains 15 assorted vegetables."
-	cost = 1300
+	cost = 1000
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
 					/obj/item/reagent_containers/food/snacks/grown/corn,
 					/obj/item/reagent_containers/food/snacks/grown/tomato,
@@ -406,7 +414,7 @@
 /datum/supply_pack/organic/wastelandseeds
 	name = "Seeds Crate (Wasteland)"
 	desc = "A choice selection of the most medicinal herb seeds the wastes have to offer."
-	cost = 1500
+	cost = 5000
 	contains = list(/obj/item/seeds/poppy/broc,
 					/obj/item/seeds/poppy/broc,
 					/obj/item/seeds/buffalogourd,
@@ -623,7 +631,7 @@
 /datum/supply_pack/organic/vday
 	name = "Surplus Valentine Crate"
 	desc = "Turns out we got warehouses of this love-y dove-y crap. We're sending out small bargain buddle of Valentine gear. This crate has two boxes of chocolate, three poppy flowers, five candy hearts, and three cards."
-	cost = 3000
+	cost = 1200
 	contraband = TRUE
 	contains = list(/obj/item/storage/fancy/heart_box,
 					/obj/item/storage/fancy/heart_box,

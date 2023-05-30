@@ -104,6 +104,18 @@
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
 
+/obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog
+	name = "winterized riot helmet"
+	icon_state = "modified_usmc_riot_smog"
+	item_state = "modified_usmc_riot_smog"
+	desc = "This helmet was originally intended to be a riot helmet meant for cold climates, now it's a part of a generational heirloom, the once functional night vision has been shot out in one eye, rendering it totally useless, a bullet casing hangs from the now useless radio, tuned in to a dead frequency. an old Alaskan flag is emblazoned on the side."
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	flash_protect = 1
+
 /obj/item/clothing/head/helmet/f13/combat/swat
 	name = "SWAT combat helmet"
 	desc = "A prewar combat helmet issued to S.W.A.T. personnel."
@@ -353,11 +365,19 @@
 			return "<span class='warning'>The connections ports have been <i>unanchored</i> and only <i>wires</i> remain.</span>"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
-	name = "T-45b helmet"
-	desc = "It's a T-45b power armor helmet."
+	name = "Refurbished T-45b helmet"
+	desc = "It's a refurbished T-45b power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
+	armor = ARMOR_VALUE_SALVAGE
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45b/raider
+	name = "powered scrap helmet"
+	desc = "It's a helmet made of scrap metal and wires, some poor attempt at a power armor helmet."
+	icon_state = "raiderpa_helm"
+	item_state = "raiderpa_helm"
+	salvaged_type = /obj/item/clothing/head/helmet/f13/raidermetal
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"

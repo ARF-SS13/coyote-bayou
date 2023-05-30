@@ -47,7 +47,7 @@
 	tick_interval = 0 //tick as fast as possible
 	status_type = STATUS_EFFECT_REPLACE
 	alert_type = /obj/screen/alert/status_effect/vanguard
-	var/datum/progressbar/progbar
+	var/my_bar
 	var/stamhealed = 0 //How much stamina did we regenerate?
 
 /obj/screen/alert/status_effect/vanguard
@@ -69,8 +69,7 @@
 	..()
 
 /datum/status_effect/vanguard_shield/Destroy()
-	qdel(progbar)
-	progbar = null
+	SSprogress_bars.remove_bar(my_bar)
 	return ..()
 
 /datum/status_effect/vanguard_shield/on_apply()
@@ -78,13 +77,10 @@
 	owner.add_stun_absorption("vanguard", INFINITY, 1, "'s yellow aura momentarily intensifies!", "Your ward absorbs the stun!", " radiating with a soft yellow light!")
 	owner.visible_message(span_warning("[owner] begins to faintly glow!"), span_brass("You will absorb all stuns aswell as quickly regenerate stamina for the next twenty seconds ."))
 	owner.SetAllImmobility(0, FALSE)
-	progbar = new(owner, duration, owner)
-	progbar.bar.color = list("#FAE48C", "#FAE48C", "#FAE48C", rgb(0,0,0))
-	progbar.update(duration - world.time)
+	my_bar = SSprogress_bars.add_bar(owner, list(), duration, TRUE, TRUE)
 	return ..()
 
 /datum/status_effect/vanguard_shield/tick()
-	progbar.update(duration - world.time)
 	var/oldstamloss = owner.getStaminaLoss()
 	owner.adjustStaminaLoss(-6) //up to 30 stam / second for now, lets see...
 	stamhealed += oldstamloss - owner.getStaminaLoss()

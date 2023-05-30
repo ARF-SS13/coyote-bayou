@@ -38,7 +38,7 @@
 //throwin' rock, for throwin'. obtained via *rocks
 /obj/item/ammo_casing/caseless/rock
 	name = "rock"
-	desc = "a nice hefty rock, for bashing over someone's head or throwing at someone's head."
+	desc = "a nice hefty rock, for bashing over someone's head or throwing at someone's head. You can get your own with *rocks!"
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
 	item_state = "rock"
@@ -62,7 +62,7 @@
 
 /obj/item/ammo_casing/caseless/brick
 	name = "brick"
-	desc = "a weighty brick for bashing heads."
+	desc = "a weighty brick for bashing heads. You too might find some laying around with *brick"
 	icon = 'modular_coyote/icons/objects/brick.dmi'
 	icon_state = "brick"
 	item_state = "brick"
@@ -85,13 +85,44 @@
 	sound_properties = CSP_ROCK
 
 /obj/item/ammo_casing/caseless/flintlock
-	name = "blackpowder charge"
+	name = "packed blackpowder cartridge"
 	desc = "a measure of blackpowder and round musket ball."
 	caliber = CALIBER_FLINTLOCK
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "musketball"
+	icon_state = "flintlock_casing"
 	projectile_type = /obj/item/projectile/flintlock
+	custom_materials = list(
+		/datum/material/iron = MATS_FLINTLOCK_LIGHT_BULLET, // what casing? ~ uwu ~
+		/datum/material/blackpowder = MATS_FLINTLOCK_LIGHT_POWDER)
 	sound_properties = CSP_FLINTLOCK
 	custom_materials = list(/datum/material/blackpowder = 500)
+	w_class = WEIGHT_CLASS_SMALL
+	variance = 5
+
+/obj/item/ammo_casing/caseless/flintlock/minie
+	name = "packed blackpowder minie cartridge"
+	desc = "A conical bullet designed to give flintlocks a bit more of a modern edge."
+	caliber = CALIBER_FLINTLOCK
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "flintlock_casing_minie"
+	projectile_type = /obj/item/projectile/flintlock/minie
+	sound_properties = CSP_FLINTLOCK
+	custom_materials = list(
+		/datum/material/iron = MATS_FLINTLOCK_LIGHT_POWDER, // what casing? ~ uwu ~
+		/datum/material/blackpowder = MATS_FLINTLOCK_HEAVY_POWDER)
+	w_class = WEIGHT_CLASS_SMALL
+	variance = -5
+
+/obj/item/ammo_casing/caseless/flintlock/rubber
+	name = "packed blackpowder rubber cartridge"
+	desc = "A superball mashed into a blackpowder cartridge. It's not very effective, but it's fun to shoot. Less than lethal?"
+	caliber = CALIBER_FLINTLOCK
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "flintlock_casing_rubber"
+	projectile_type = /obj/item/projectile/flintlock/rubber
+	sound_properties = CSP_FLINTLOCK
+	custom_materials = list(
+		/datum/material/iron = MATS_FLINTLOCK_LIGHT_POWDER, // what casing? ~ uwu ~
+		/datum/material/blackpowder = MATS_FLINTLOCK_HEAVY_POWDER)
 	w_class = WEIGHT_CLASS_SMALL
 

@@ -19,12 +19,22 @@
 	name = "ion carbine"
 	desc = "The MK.II Prototype Ion Projector is a lightweight carbine version of the larger ion rifle, built to be ergonomic and efficient."
 	icon_state = "ioncarbine"
+	item_state = "ioncarbine4"
 	ammo_type = list(/obj/item/ammo_casing/energy/ion/carbine)
 	ammo_x_offset = 2
 	flight_x_offset = 18
 	flight_y_offset = 11
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
+
+/obj/item/gun/energy/ionrifle/compact // needs a mob sprite assigned, 5/5/2023; this is intended to be a roundstart pistol in the same tier as the Wattz 1k pistol
+	name = "pulse pistol"
+	desc = "This weapon makes a continual and quiet hum, even when the power cell is removed. Written on the side is 'Type III Pulse Projector,' whatever that means."
+	icon_state = "tesla"
+	item_state = "tesla"
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -176,6 +186,15 @@
 
 /obj/item/gun/energy/plasmacutter/use(amount)
 	return cell.use(amount * 100)
+
+/obj/item/gun/energy/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks, skill_gain_mult = STD_USE_TOOL_MULT)
+
+	if(amount)
+		target.add_overlay(GLOB.welding_sparks)
+		. = ..()
+		target.cut_overlay(GLOB.welding_sparks)
+	else
+		. = ..(amount=1)
 
 /obj/item/gun/energy/plasmacutter/adv
 	name = "advanced plasma cutter"

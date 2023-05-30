@@ -114,7 +114,7 @@
 	name = "SMG TEMPLATE"
 	desc = "should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_prefix = "uzi"
+	icon_state = "uzi"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -149,7 +149,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/american180/b180
 	name = "American 18-bee"
-	desc = "They used to call the gun a swarm of angry bees. in this case, it's literal."
+	desc = "They used to call the gun a swarm of angry bees. In this case, it's literal."
 	mag_type = /obj/item/ammo_box/magazine/b180
 	extra_mag_types = /obj/item/ammo_box/magazine/m22smg //lets you use it as a standard .22 when you run out of unobtainable bees.
 	init_mag_type = /obj/item/ammo_box/magazine/b180
@@ -249,7 +249,6 @@
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
-	icon_prefix = "smg10mm"
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -278,7 +277,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/smg10mm/worn
 	name = "worn-out 10mm submachine gun"
-	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
+	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Its grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
 	worn_out = TRUE //a lazy way to overlay the worn sprite variant onto the gun
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = SMG_RECOIL(1.2)
@@ -380,8 +379,8 @@
 	icon_state = "tec9"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	init_mag_type = /obj/item/ammo_box/magazine/m22
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
-	weapon_class = WEAPON_CLASS_SMALL	
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended, /obj/item/ammo_box/magazine/m22/extended/empty)
+	weapon_class = WEAPON_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	can_suppress = FALSE
 
@@ -393,12 +392,28 @@
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
 	disallowed_mags = null
-	weapon_class = WEAPON_CLASS_CARBINE	
+	weapon_class = WEAPON_CLASS_CARBINE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/fast
 	)
 	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun
+	name = "9mm Owen Gun"
+	desc = "A genuine Australian machine carbine! It's favored due to its portability, weight, and reliability."
+	icon_state = "owengun"
+	item_state = "rockwell"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	disallowed_mags = null
+	weapon_class = WEAPON_CLASS_CARBINE
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/fast
+	)
+	can_suppress = FALSE
+
 
 //mac-10: uzi, but compact, softer hitting, harder to control. needs suppressor location adjusted
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10
@@ -440,6 +455,27 @@
 		/datum/firemode/semi_auto/faster
 	)
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+
+/* * * * * * * * * * *
+ * Worn Carl Gustaf 10mm SMG
+ * Poor Baseline 10mm SMG
+ * 10mm
+ * Slower firing
+ * Less damage
+ * One-handed
+ * No akimbo
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/cg45/worn
+	name = "Worn Carl Gustaf 10mm"
+	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design. This one has seen better days"
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = SMG_RECOIL(1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/faster
+	)
 
 /* * * * * * * * * * *
  * Thompson SMG
@@ -787,7 +823,7 @@
 
 /obj/item/gun/ballistic/automatic/m1carbine
 	name = "M1 carbine"
-	desc = "The M1 Carbine was mass produced during some old war, and at some point NCR found stockpiles and rechambered them to 10mm to make up for the fact their service rifle production can't keep up with demand."
+	desc = "Once used by the US Army, it found its way into police and National Guard armories, though it's since been rechambered in a more common caliber. It looks like it can accept a bayonet."
 	icon_state = "m1carbine"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m10mm
@@ -825,14 +861,14 @@
 
 /obj/item/gun/ballistic/automatic/m1carbine/m2
 	name = "M2 carbine"
-	desc = "An M2 Carbine with faded military markings. Looks beat up but functional."
+	desc = "A variant of the M1 carbine that's capable of full auto. Popular with pre-war police, a few of these have managed to survive even today. Looks like it has a lug for a bayonet."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ncr-m1carbine"
 	item_state = "rifle"
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = CARBINE_RECOIL(1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -918,7 +954,7 @@
 
 /obj/item/gun/ballistic/automatic/delisle/commando
 	name = "commando carbine"
-	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. This modified version is often used by the Brotherhood of Steel. Its stock has been replaced by post-war polymer furniture, with space to mount a scope. Chambered in .45 ACP."
+	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. Its stock has been replaced by polymer furniture, with space to mount a scope. Chambered in .45 ACP."
 	icon_state = "commando"
 	item_state = "commando"
 	mag_type = /obj/item/ammo_box/magazine/m45
@@ -947,7 +983,6 @@
 	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -980,7 +1015,6 @@
 		weapon without any risk of damaging it."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -1002,7 +1036,6 @@
 	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces. This one seems aged..."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -1193,6 +1226,22 @@
 	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
+ * Knockoff ALR15
+ * Tacticool, literally just a varmint
+ * .223 / 5.56mm
+ * Scopeable maybe?
+ * Same damage, literally GUN_EXTRA_DAMAGE_0
+ * Homie just wanted a resprite
+ * Unique, doesn't have to be, throw it in the loot pool if you wanna be goofy
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/knockoffalr
+	name = "ALR15"
+	desc = "A 5.56x45mm rifle custom built off of a... plastic- that's not polymer, that's just straight-up plastic. What the fuck?"
+	icon_state = "alr15"
+	item_state = "alr15"
+	
+/* * * * * * * * * * *
  * Bushmaster Arm Gun
  * Light semi-auto rifle... pistol thing
  * .223 / 5.56mm
@@ -1275,10 +1324,9 @@
 
 /obj/item/gun/ballistic/automatic/service
 	name = "service rifle"
-	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
+	desc = "A pre-war semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
-	icon_prefix = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1420,7 +1468,6 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_prefix = "assault_carbine"
 	icon_state = "rifle-police"
 	item_state = "assault_carbine"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1431,6 +1478,10 @@
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 21
+	flight_y_offset = 21
 
 /* * * * * * * * * * *
  * Rangemaster Rifle
@@ -1443,10 +1494,9 @@
 
 /obj/item/gun/ballistic/automatic/rangemaster
 	name = "Colt Rangemaster"
-	desc = "A Colt Rangemaster semi-automatic rifle, chambered for 7.62x51. Single-shot only."
+	desc = "A Colt Rangemaster semi-automatic rifle, chambered for .30-06. Single-shot only."
 	icon_state = "rangemaster"
 	item_state = "308"
-	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/w3006
 	init_mag_type = /obj/item/ammo_box/magazine/w3006
@@ -1480,7 +1530,7 @@
 
 /obj/item/gun/ballistic/automatic/slr
 	name = "Enfield SLR"
-	desc = "A self-loading rifle in 7.62mm NATO. Semi-auto only."
+	desc = "A self-loading rifle in .308. Semi-auto only."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1522,7 +1572,6 @@
 	desc = "The WWII American Classic. Still has that satisfiying ping."
 	icon_state = "m1garand"
 	item_state = "rifle"
-	icon_prefix = "308"
 	mag_type = /obj/item/ammo_box/magazine/garand3006
 	init_mag_type = /obj/item/ammo_box/magazine/garand3006
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1587,7 +1636,7 @@
 
 /obj/item/gun/ballistic/automatic/m1garand/republicspride
 	name = "Republic's Pride"
-	desc = "A well-tuned scoped M1C rifle crafted by master gunsmith from the Gunrunners. Chambered in 7.62x51."
+	desc = "A meticulously restored, scoped M1C Garand. This one is rumored to have originated from some republic out west."
 	icon_state = "republics_pride"
 	item_state = "scoped308"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1609,7 +1658,7 @@
 
 /obj/item/gun/ballistic/automatic/m1garand/sks
 	name = "SKS"
-	desc = "Old hunting rifle taken from disovered stockpiles and refurbished in Phoenix workshops. The standard heavy rifle of the Legion, still rare. .308, semi-auto only, internal magazine."
+	desc = "An old, semi-automatic rifle of communist origin. Still, it packs a punch and has a bayonet lug."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1644,8 +1693,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
-	desc = "A DKS 501, chambered in .308 Springfield.  With a light polymer body, it's suited for long treks through the desert."
-	icon_prefix = "sniperrifle"
+	desc = "A DKS 501, chambered in .30-06 Springfield.  With a light polymer body, it's suited for long treks through the desert."
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w3006
@@ -1694,7 +1742,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/snipervenator
 	name = "Explorer sniper rifle"
-	desc = "The customized sniper rifle, fitted with a telescopic sight for extreme accuracy and chambered for a high-ballistic performance centerfire cartridge. It is a superior version of the regular sniper rifle and is decorated with the flag of the bull and tokens of a hunt."
+	desc = "A customized sniper rifle, fitted with a telescopic sight for extreme accuracy and chambered for a high-ballistic performance centerfire cartridge."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1746,10 +1794,9 @@
 
 /obj/item/gun/ballistic/automatic/service/r82
 	name = "R82 heavy service rifle"
-	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
+	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. It saw use with pre-war special forces and assault troops, now it's often used by the richest militas and the lucky few to survive looting pre-war depots."
 	icon_state = "R82"
 	item_state = "R84"
-	icon_prefix = "r82"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -1806,7 +1853,7 @@
 
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	name = "infiltrator"
-	desc = "A customized R91 assault rifle, with an integrated suppressor, small scope, cut down stock and polymer furniture. The supressor takes away stopping-power, but a cleaner action allows it to fire faster."
+	desc = "A customized R91 assault rifle, with an integrated suppressor, small scope, cut down stock and polymer furniture. Quiet, but deadly."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1834,7 +1881,7 @@
 
 /obj/item/gun/ballistic/automatic/r93
 	name = "R93 PDW"
-	desc = "A lightweight assault rifle manufactured by the Brotherhood of Steel with a folding stock, based on weapons from the R-series platforms. It is generally issued to Brotherhood Knights for scouting missions."
+	desc = "A lightweight, post-war successor of the R91 assault rifle. Exactly who made these is unknown, but it's perfect for a shooter on the move."
 	icon_state = "r93"
 	item_state = "r93"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -1863,7 +1910,6 @@
 	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars. Has a unique burst-fire mechanism, where it fires two bullets very quickly, staying accurate, but leading to an increased pause between follow-up shots. Chambered in 5.56x45."
 	icon_state = "type93"
 	item_state = "handmade_rifle"
-	icon_prefix = "handmade_rifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -1920,7 +1966,7 @@
 
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"
-	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56."
+	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56x45."
 	icon_state = "bozar"
 	item_state = "sniper"
 	slot_flags = ITEM_SLOT_BACK
@@ -1951,7 +1997,6 @@
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
-	icon_prefix = "assault_carbine"
 	mag_type = /obj/item/ammo_box/magazine/m5mm
 	init_mag_type = /obj/item/ammo_box/magazine/m5mm
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -2033,7 +2078,7 @@
 
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "FN FAL"
-	desc = "This rifle has been more widely used by armed forces than any other rifle in history. It's a reliable assault weapon for any terrain or tactical situation."
+	desc = "This rifle has been more widely used by armed forces than any other rifle in history. It's a reliable weapon for any terrain or tactical situation."
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m308
@@ -2073,6 +2118,32 @@
 		/datum/firemode/semi_auto/slow
 	)
 
+
+/* * * * * * * * * * *
+ * L1A1 Self Loading Rifle
+ * .308 semi-auto rifle
+ * .308 / 7.62
+ * Uncommoner
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/l1a1
+	name = "L1A1"
+	desc = "The L1A1 Self-Loading Rifle, The standard issue rifle of All Commonwealth Nations."
+	icon_state = "l1a1"
+	item_state = "slr"
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+
+
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
  * Baseline 7.62 autorifle
@@ -2080,13 +2151,12 @@
  * Uncommon
  * * * * * * * * * * */
 
-obj/item/gun/ballistic/automatic/bar
-	name = "automatic rifle (.308)"
+/obj/item/gun/ballistic/automatic/bar
+	name = "browning automatic rifle"
 	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	icon_state = "BAR"
 	item_state = "BAR"
-	icon_prefix = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -2157,8 +2227,8 @@ obj/item/gun/ballistic/automatic/bar
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/wt550
-	name = "4.73mm carbine"
-	desc = "A WT-550 Personal Defense Weapon, manufactured by West Tek. It fires 4.73mm caseless rounds."
+	name = "WT-550 PDW"
+	desc = "The WT-550 is a Personal Defense Weapon manufactured by West-Tek. Similar to the P90, it was intended to be a concealable weapon able to penetrate body armor. Considering how rare this weapon is, it seems it wasn't very popular."
 	item_state = "m90"
 	icon_state = "WT550"
 	mag_type = /obj/item/ammo_box/magazine/m473/small
@@ -2175,6 +2245,14 @@ obj/item/gun/ballistic/automatic/bar
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
+
+/obj/item/gun/ballistic/automatic/wt550/worn
+	name = "WT-550 Sporting Carbine"
+	desc = "A WT-550 locked to semi-automatic and marketed for sport shooting or home defense. This one looks like it has seen better days."
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 
 /* * * * *
  * LMGs  *
@@ -2236,7 +2314,6 @@ obj/item/gun/ballistic/automatic/bar
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
@@ -2244,6 +2321,66 @@ obj/item/gun/ballistic/automatic/bar
 	zoom_factor = 1
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+//hefty and clonky
+/obj/item/gun/ballistic/automatic/lewis
+	name = "Lewis automatic rifle"
+	desc = "A relic of a gun, featuring an obscenely heavy watercooled barrel and a high capacity pan magazine."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "lewis"
+	item_state = "lewis"
+	mag_type = /obj/item/ammo_box/magazine/lewis
+	init_mag_type = /obj/item/ammo_box/magazine/lewis/l47
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = LMG_RECOIL(1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150
+	)
+
+//less damage than the M1919, but more compact magazines that hold more
+/obj/item/gun/ballistic/automatic/lewis/lanoe
+	name = "Lewis Mark II"
+	desc = "This machinegun came right off a fightercraft from the first World War. It trades an extra heavy cooling system for an extra heavy magazine."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "lanoe"
+	item_state = "lanoe"
+	mag_type = /obj/item/ammo_box/magazine/lewis
+	init_mag_type = /obj/item/ammo_box/magazine/lewis
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = LMG_RECOIL(1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150
+	)
+
+/obj/item/gun/ballistic/automatic/bren
+	name = "Bren gun"
+	desc = "A rather heavy gun that served as the primary British infantry LMG throughout the second world war."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "bren"
+	item_state = "bren"
+	mag_type = /obj/item/ammo_box/magazine/bren
+	init_mag_type = /obj/item/ammo_box/magazine/bren
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = LMG_RECOIL(1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200
+	)
+
 /* * * * * * * * * * *
  * Browning M1919 MMG
  * Big 7.62mm LMG
@@ -2260,7 +2397,6 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
-	slowdown = 1.25
 	mag_type = /obj/item/ammo_box/magazine/mm308
 	init_mag_type = /obj/item/ammo_box/magazine/mm308
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -2367,7 +2503,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/xl70e3
 	name = "xl70e3"
-	desc = "This was an experimental weapon at the time of the war. Manufactured, primarily, from high-strength polymers, the weapon is almost indestructible. It's light, fast firing, accurate, and can be broken down without the use of any tools. Chamebered in 5.56mm."
+	desc = "This was an experimental weapon at the time of the war. Manufactured, primarily, from high-strength polymers, the weapon is almost indestructible. It's light, fast firing, accurate, and can be broken down without the use of any tools. Chambered in 5.56x45mm."
 	icon_state = "xl70e3"
 	item_state = "xl70e3"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle

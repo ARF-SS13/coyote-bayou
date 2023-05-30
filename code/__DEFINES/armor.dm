@@ -608,11 +608,11 @@
  * Plasma melts thru a little
  *
  * heavy DT
- * * * * * * * * * * * */
+ * * * * * * * * * * * */ //lmfao 85 85 90 lmao lol kek whew lad, maybe not. ~TK
 #define ARMOR_VALUE_RENEGADE_POWER_ARMOR list(\
-		"melee" = 85, \
-		"bullet" = 85, \
-		"laser" = 90, \
+		"melee" = 60, \
+		"bullet" = 60, \
+		"laser" = 60, \
 		"energy" = 35, \
 		"bomb" = 0, \
 		"bio" = 0, \
@@ -620,7 +620,7 @@
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 15)
+		"damage_threshold" = 8)
 
 
 /* Ant
@@ -838,6 +838,33 @@
 
 #define ARMOR_MODIFIER_DOWN_LASER_T4 list(\
 		"linelaser" = -200)
+
+/* Energy (Plasma / Tesla) armor
+ * Adds on energy protection
+ * T1 - Thick, heat, and fire resistant clothing
+ * T2 - Heavy duty heat shielding, emergency firesuit-like; big jump from T1
+ * T3 - Dedicated heat shielding,  advanced firesuit-like (atmos firesuit); +1.5 tiers from this alone
+ * * * * * * * * * * * */
+#define ARMOR_MODIFIER_UP_ENERGY_T1 list(\
+		"energy" = 10)
+
+#define ARMOR_MODIFIER_UP_ENERGY_T2 list(\
+		"energy" = 25)
+
+#define ARMOR_MODIFIER_UP_ENERGY_T3 list(\
+		"energy" = 50)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T1 list(\
+		"energy" = -10)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T2 list(\
+		"energy" = -25)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T3 list(\
+		"energy" = -50)
+
+#define ARMOR_MODIFIER_DOWN_ENERGY_T4 list(\
+		"energy" = -200)
 
 /* DT tokens
  * Adds on damage threshold

@@ -8,7 +8,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 6
+	force = 16
+	force_unwielded = 16
+	force_wielded = 22
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
@@ -16,37 +18,25 @@
 	attack_verb = list("pinched", "nipped")
 	hitsound = 'sound/items/wirecutter.ogg'
 	usesound = 'sound/items/wirecutter.ogg'
-
+	reskinnable_component = /datum/component/reskinnable/wirecutters
 	tool_behaviour = TOOL_WIRECUTTER
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
-	var/random_color = TRUE
-	var/static/list/wirecutter_colors = list(
-		"blue" = "#1861d5",
-		"red" = "#951710",
-		"pink" = "#d5188d",
-		"brown" = "#a05212",
-		"green" = "#0e7f1b",
-		"cyan" = "#18a2d5",
-		"yellow" = "#d58c18"
-	)
 
-
-/obj/item/wirecutters/Initialize()
-	. = ..()
-	if(random_color) //random colors!
-		icon_state = "cutters"
-		var/our_color = pick(wirecutter_colors)
-		add_atom_colour(wirecutter_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+/obj/item/wirecutters/proc/colorize(set_color)
+	update_icon()
 
 /obj/item/wirecutters/update_overlays()
 	. = ..()
-	if(!random_color) //icon override
+	cut_overlays()
+	var/datum/reskin/colorable_tool/myskin = get_current_skin()
+	if(!myskin)
 		return
-	var/mutable_appearance/base_overlay = mutable_appearance(icon, "cutters_cutty_thingy")
-	base_overlay.appearance_flags = RESET_COLOR
-	. += base_overlay
+	icon_state = myskin.icon_state
+	if(!myskin.colorize)
+		return
+	add_atom_colour(myskin.get_color(src), FIXED_COLOUR_PRIORITY)
+	. += myskin.get_overlays(src)
 
 /obj/item/wirecutters/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && istype(C.handcuffed, /obj/item/restraints/handcuffs/cable))
@@ -66,15 +56,15 @@
 	desc = "A pair of eloquent wirecutters made of brass. The handle feels freezing cold to the touch."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "cutters_clock"
-	random_color = FALSE
 	toolspeed = 0.5
+	reskinnable_component = null
 
 /obj/item/wirecutters/bronze
 	name = "bronze plated wirecutters"
 	desc = "A pair of wirecutters plated with bronze."
 	icon_state = "cutters_brass"
-	random_color = FALSE
 	toolspeed = 0.95 //Wire cutters have 0 time bars though
+	reskinnable_component = null
 
 /obj/item/wirecutters/abductor
 	name = "ultracite wirecutters"
@@ -82,7 +72,7 @@
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cutters"
 	toolspeed = 0.1
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/wirecutters/cyborg
 	name = "wirecutters"
@@ -90,18 +80,18 @@
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "wirecutters_cyborg"
 	toolspeed = 0.5
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/wirecutters/power
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
 	icon_state = "jaws_cutter"
 	item_state = "jawsoflife"
+	reskinnable_component = null
 
 	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25)
 	usesound = 'sound/items/jaws_cut.ogg'
 	toolspeed = 0.25
-	random_color = FALSE
 
 /obj/item/wirecutters/power/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is wrapping \the [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!"))
@@ -145,7 +135,7 @@
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "cutters"
 	toolspeed = 0.2
-	random_color = FALSE
+	reskinnable_component = null
 
 //DR2 TOOLS
 
@@ -155,7 +145,7 @@
 	item_state = "crudewire"
 	icon_state = "crudewire"
 	toolspeed = 6
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/wirecutters/basic
 	name = "basic cutters"
@@ -163,7 +153,7 @@
 	icon_state = "basicwire"
 	item_state = "basicwire"
 	toolspeed = 2
-	random_color = FALSE
+	reskinnable_component = null
 
 /obj/item/wirecutters/hightech
 	name = "advanced snapping device"
@@ -172,4 +162,4 @@
 	item_state = "advancedwire"
 	toolspeed = 0.1
 	sharpness = SHARP_EDGED
-	random_color = FALSE
+	reskinnable_component = null

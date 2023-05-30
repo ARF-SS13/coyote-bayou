@@ -1,4 +1,5 @@
 GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/effects/fire.dmi', "fire"))
+GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
 
 GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 // if true, everyone item when created will have its name changed to be
@@ -181,6 +182,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	/// extra special transform
 	var/matrix/special_transform
 
+	/// Weapon special component
+	var/weapon_special_component
+
+	/// Reskinnable component
+	var/reskinnable_component
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -243,6 +250,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(sharpness && force > 5) //give sharp objects butchering functionality, for consistency
 		AddComponent(/datum/component/butchering, 80 * toolspeed)
+
+	if(weapon_special_component)
+		AddComponent(weapon_special_component)
+
+	if(reskinnable_component)
+		AddComponent(reskinnable_component)
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
@@ -390,6 +403,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		user.ShiftClickOn(src)
 		return
 
+	if(CHECK_BITFIELD(SEND_SIGNAL(src, COMSIG_ITEM_CLICKED, user), ITEM_CLICKED_NOPICKUP))
+		return
+
 	if(!(interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP)) //See if we're supposed to auto pickup.
 		return
 
@@ -498,6 +514,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_found(mob/finder)
 	return
 
+/* // click code is confusing enough, thank you
 /obj/item/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params) //Copypaste of /atom/MouseDrop() since this requires code in a very specific spot
 	if(!usr || !over)
 		return
@@ -517,7 +534,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	over.MouseDrop_T(src,usr)
 	return
-
+ */
 // called after an item is placed in an equipment slot
 // user is mob that equipped it
 // slot uses the slot_X defines found in setup.dm
@@ -964,7 +981,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(delay >= MIN_TOOL_SOUND_DELAY)
 		play_tool_sound(target, volume)
 
-
 	if(user.mind && used_skills && skill_gain_mult)
 		var/gain = skill_gain + delay/SKILL_GAIN_DELAY_DIVISOR
 		for(var/skill in used_skills)
@@ -974,6 +990,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			user.mind.auto_gain_experience(skill, gain*skill_gain_mult*S.item_skill_gain_multi)
 
 	return TRUE
+
+
 
 // Called before use_tool if there is a delay, or by use_tool if there isn't.
 // Only ever used by welding tools and stacks, so it's not added on any other use_tool checks.
@@ -1026,6 +1044,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if (HAS_TRAIT(src, TRAIT_NODROP))
 		return
 	return ..()
+
+/obj/item/proc/get_current_skin()
+	var/list/skinhack = list()
+	SEND_SIGNAL(src, COMSIG_ITEM_GET_CURRENT_RESKIN, skinhack)
+	return LAZYACCESS(skinhack, 1)
 
 /// Get an item's volume that it uses when being stored.
 /obj/item/proc/get_w_volume()

@@ -354,6 +354,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 
 	// Initialize tgui panel
 	tgui_panel.initialize()
+	addtimer(CALLBACK(src, .proc/nuke_chat), 5 SECONDS)//Reboot it to fix broken chat window instead of making the player do it (bandaid fix)
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 
 
@@ -922,7 +923,8 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		// unfocus the text bar. This removes the red color from the text bar
 		// so that the visual focus indicator matches reality.
 		winset(src, null, "input.background-color=[COLOR_INPUT_DISABLED]")
-
+	// v- This right here calls object's Click() proc.
+	// so basically, this does object.Click(location, control, params)
 	..()
 
 /client/proc/add_verbs_from_config()

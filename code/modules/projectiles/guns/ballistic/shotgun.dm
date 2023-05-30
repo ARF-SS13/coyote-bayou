@@ -14,8 +14,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_prefix = "shotgunpump"
-	icon_state = "shotgun"
+	icon_state = "pump"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -119,7 +118,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "caravan"
 	item_state = "shotgundouble"
-	icon_prefix = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/caravan
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -166,7 +164,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
-	icon_prefix = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -250,7 +247,6 @@
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	item_state = "shotgunpump"
-	icon_prefix = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -282,7 +278,6 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
-	icon_prefix = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -325,7 +320,11 @@
 	update_icon()
 
 /obj/item/gun/ballistic/shotgun/police/update_icon_state()
-	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
+	var/datum/reskin/myskin = get_current_skin()
+	if(myskin)
+		icon_state = "[myskin?.icon_state][stock ? "" : "fold"]"
+	else
+		icon_state = "shotgunpolice[stock ? "" : "fold"]"
 
 /* * * * * * * * * * *
  * Trench shotgun
@@ -406,6 +405,23 @@
 	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/worn
+	name = " Venn Family Shotgun"
+	desc = "A semi automatic shotgun with a four round tube. Has an etching into the side."
+	icon_state = "auto5"
+	item_state = "shotgunauto5"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
+	fire_sound = 'sound/f13weapons/auto5.ogg'
+
+
 /* /obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	..()
 	src.pump(user) */
@@ -422,7 +438,6 @@
 	desc = "A speedy pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -451,7 +466,6 @@
 	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "lashotgunstocked"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -476,7 +490,6 @@
 	desc = "A speedy lever action shotgun with a sunrise painted on the furnishings, morbid in context of it's purpose."
 	icon_state = "latribal"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -612,6 +625,24 @@
 	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/slow
+	)
+
+// Ballistic Fist			Keywords: Damage max 42, Shotgun
+/obj/item/gun/ballistic/revolver/ballisticfist
+	name = "ballistic fist"
+	desc = "This powerfist has been modified to have two shotgun barrels welded to it, with the trigger integrated into the knuckle guard. For those times when you want to punch someone and shoot them in the face at the same time."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "ballisticfist"
+	item_state = "powerfist"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	weapon_class = WEAPON_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
+	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 

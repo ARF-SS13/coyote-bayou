@@ -2,7 +2,7 @@
 //------------------------------------SUPPLY POD-------------------------------------//
 /obj/structure/closet/supplypod
 	name = "supply pod" //Names and descriptions are normally created with the setStyle() proc during initialization, but we have these default values here as a failsafe
-	desc = "A Nanotrasen supply drop pod."
+	desc = "A US Government supply drop pod."
 	icon = 'icons/obj/supplypods.dmi'
 	icon_state = "supplypod"
 	pixel_x = -16 //2x2 sprite

@@ -17,10 +17,16 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	var/timerid
 	/// What weather is currently running?
 	var/datum/weather/current_weather
+	/// direction the wind is blowing in
+	var/wind_direction = NORTH
+	/// wind direction stuff cooldown
+	COOLDOWN_DECLARE(wind_change_cooldown)
 
 /datum/controller/subsystem/processing/weather/fire()
 	. = ..() //Active weather is handled by . = ..() processing subsystem base fire().
-
+	if(COOLDOWN_FINISHED(src, wind_change_cooldown))
+		set_wind_direction()
+		COOLDOWN_START(src, wind_change_cooldown, rand(5 MINUTES, 15 MINUTES))
 	// start random weather on relevant levels - the SAME weather on all those Zs!
 	if(weather_queued || !LAZYLEN(weather_rolls))
 		return FALSE
@@ -82,3 +88,9 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 		return // area cant have weather (or it wasnt set up right), so it doesnt have weather
 	if(current_weather.tag_weather in active_area.weather_tags) // weather affects all affectable areas at once, so if we have a weather, and that area can support it, it'll have that weather
 		return current_weather
+
+/datum/controller/subsystem/processing/weather/proc/set_wind_direction()
+	var/list/possible_directions = list(NORTH, SOUTH, EAST, WEST)
+	wind_direction = pick(possible_directions)
+
+

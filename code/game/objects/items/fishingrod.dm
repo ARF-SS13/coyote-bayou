@@ -111,5 +111,5 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	desc = "In the ancient books, fishermen speak of a technique called spear-fishing. Over time, the tribe has recreated what they must have spoken of; a spear with a fishing line attached. It both fishes, and self-defenses. Truly, the ancients were wise."
 	icon_state = "spearfisher"
 	force = 22
-	force_unwielded = 22
-	force_wielded = 35
+	force_unwielded = 25
+	force_wielded = 55

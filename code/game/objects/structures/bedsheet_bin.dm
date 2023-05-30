@@ -190,8 +190,8 @@ LINEN BINS
 	dream_messages = list("a tome", "a floating red crystal", "a glowing sword", "a bloody symbol", "a massive humanoid figure")
 
 /obj/item/bedsheet/wiz
-	name = "child's bedsheet"
-	desc = "A special blanket for the child that dreams of magical adventure, woven with real* wizard spells. It even glows!"
+	name = "wizards bedsheet"
+	desc = "A special blanket for the waster that dreams of magical adventure, woven with real* wizard spells. It even glows!"
 	icon_state = "sheetwiz"
 	dream_messages = list("a book", "an explosion", "lightning", "a staff", "a skeleton", "a robe", "magic")
 

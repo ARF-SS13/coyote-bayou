@@ -74,7 +74,8 @@
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
 /obj/structure/sign/flag_texas
-	name = "Texas Flag"
+	name = "Tejaxicoana Flag"
+	desc = "Tejas. Mexico. Louisiana. Ancient places with no memory. The states that stood behind or near this flag are long gone, leaving a pale star on a white and red background. The meanings of its colors are forgotten by almost everyone, but the lone star shines."
 	icon_state = "flag_texas"
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
@@ -104,7 +105,8 @@
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
 /obj/structure/sign/flag_arkansas
-	name = "Arkansas Flag"
+	name = "Akansea Flag"
+	desc = "What is there to say of the flag so brave as to be so blood-dyed? It is a land now sun-bleached and ruined. To be quite honest, you don't understand how a word can be pronounced so differently from how it's spelled."
 	icon_state = "flag_arkansas"
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
@@ -368,3 +370,125 @@
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
 	icon_state = "rug_blue"
+
+/obj/structure/rug/mat
+	name = "mat"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mat_blank"
+
+/obj/structure/rug/mat/welcome
+	name = "welcome mat"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mat_welcome"
+
+
+/obj/structure/props/micstand
+	name = "microphone stand"
+	desc = "A mic stand."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "micstand"
+	density = TRUE
+	opacity = TRUE
+	anchored = TRUE
+
+/obj/structure/nightstand
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand"
+	density = TRUE
+	opacity = TRUE
+	anchored = TRUE
+
+/obj/structure/nightstand/small
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand_small"
+
+/obj/structure/nightstand/white
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand_alt"
+
+//From Mojave sun, credit to them for the sprite
+/obj/structure/wood_counter
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter"
+
+/obj/structure/wood_counter/bend
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_bend"
+
+/obj/structure/wood_counter/intersect
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_intersect"
+
+/obj/structure/wood_counter/cross
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_cross"
+
+/obj/structure/craft_counter
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter"
+
+/obj/structure/craft_counter/bend
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_bend"
+
+/obj/structure/craft_counter/intersect
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_intersect"
+
+/obj/structure/craft_counter/cross
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_cross"
+
+/obj/structure/toilet_paper
+	name = "Toilet Paper Holder"
+	desc = "Look before you shit! I mean, sit!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "paper_roller"
+
+/obj/structure/towel_rack
+	name = "Towel Rack"
+	desc = "People still use these?"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "towel_rack"
+
+/obj/structure/mirror/alt
+	name = "mirror"
+	desc = "Mirror mirror on the wall, who's the most robust of them all?"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mirror"
+
+/obj/structure/cupboard
+	name = "cupboard"
+	desc = "Yep. It's a cupboard. Good job."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "cuboard"
+
+/obj/structure/sink/cupboard
+	name = "Sink Cupboard"
+	desc = "A rather nice looking sink. How quint."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "sink"

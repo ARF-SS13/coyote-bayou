@@ -52,6 +52,10 @@
 	name = "footcloths"
 	path = /obj/item/clothing/shoes/f13/rag
 
+/datum/gear/shoes/footcloths/pawb
+	name = "tough feet"
+	path = /obj/item/clothing/shoes/f13/rag/pawb
+
 /datum/gear/shoes/raidertreads
 	name = "raider treads"
 	path = /obj/item/clothing/shoes/f13/raidertreads
@@ -156,6 +160,18 @@
 /datum/gear/shoes/brit
 	name = "commonwealth boots"
 	path = /obj/item/clothing/shoes/brit
+
+/datum/gear/shoes/fifi
+	name = "Fifi Jester Boots"
+	path = /obj/item/clothing/shoes/fifi
+
+/datum/gear/shoes/ww2brown
+	name = "Type three service shoes"
+	path = /obj/item/clothing/shoes/ww2brown
+
+/datum/gear/shoes/putt
+	name = "long puttees"
+	path = /obj/item/clothing/shoes/putt
 
 /// Factions Shoes or well NCR boots.
 

@@ -144,7 +144,7 @@
 	name = "Enhanced Energy Cell"
 	result = /obj/item/stock_parts/cell/ammo/ec/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ec = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
-				/obj/item/stack/crafting/electronicparts = 5,,
+				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -178,7 +178,7 @@
 	name = "Enhanced Microfusion Cell"
 	result = /obj/item/stock_parts/cell/ammo/mfc/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/mfc = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
-				/obj/item/stack/crafting/electronicparts = 5,,
+				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -212,7 +212,7 @@
 	name = "Enhanced Electron Charge Pack"
 	result = /obj/item/stock_parts/cell/ammo/ecp/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ecp = 1, //Don't wanna require 2 cells just to condense them down to 1 slot for not much other benefit.
-				/obj/item/stack/crafting/electronicparts = 5,,
+				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -246,7 +246,8 @@
 /datum/crafting_recipe/flintlock
 	name = "Powderbag and musket balls"
 	result = /obj/item/ammo_box/flintlock
-	reqs = list(/obj/item/stack/ore/blackpowder = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/ore/blackpowder = 3)
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -609,7 +610,7 @@
 
 /datum/crafting_recipe/gun/flintlock
 	name = "flintlock pistol"
-	result = /obj/item/gun/ballistic/bow/flintlock
+	result = /obj/item/gun/flintlock
 	reqs = list(/obj/item/stack/rods = 1,
 				/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/sheet/bronze = 1,
@@ -622,8 +623,8 @@
 
 /datum/crafting_recipe/gun/flintlock_laser
 	name = "flintlock laser pistol"
-	result = /obj/item/gun/ballistic/bow/flintlock/laser
-	reqs = list(/obj/item/gun/ballistic/bow/flintlock = 1,
+	result = /obj/item/gun/flintlock/laser
+	reqs = list(/obj/item/gun/flintlock = 1,
 				/obj/item/stack/crafting/electronicparts = 1,
 				/obj/item/stack/crafting/metalparts = 1)
 	tools = list(TOOL_WORKBENCH)
@@ -737,6 +738,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/gun/twinrcw
+	name = "Twin-shot RCW Carbine"
+	result = /obj/item/gun/energy/laser/auto/twin
+	reqs = list(/obj/item/gun/energy/laser/auto = 1,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/stack/crafting/electronicparts = 10,
+				/obj/item/stack/cable_coil = 3)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //browning hi-power
 /datum/crafting_recipe/ninemil

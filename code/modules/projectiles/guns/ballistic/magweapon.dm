@@ -57,7 +57,7 @@
 
 /obj/item/gun/ballistic/automatic/magrifle/hyperburst
 	name = "\improper Hyper-Burst rifle"
-	desc = "An extremely beefed up version of a stolen Nanotrasen weapon prototype, this 'rifle' is more like a cannon, with an extremely large bore barrel capable of generating several smaller magnetic 'barrels' to simultaneously launch multiple projectiles at once."
+	desc = "An extremely beefed up version of a stolen US Government weapon prototype, this 'rifle' is more like a cannon, with an extremely large bore barrel capable of generating several smaller magnetic 'barrels' to simultaneously launch multiple projectiles at once."
 	icon_state = "hyperburst"
 	slot_flags = NONE //too lazy for the sprites rn and it's pretty stronk anyway.
 	mag_type = /obj/item/ammo_box/magazine/mhyper

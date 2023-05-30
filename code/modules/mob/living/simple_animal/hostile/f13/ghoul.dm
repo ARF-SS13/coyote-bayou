@@ -78,7 +78,7 @@
 		
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
-	faction = list("hostile")
+	faction = list("hostile", "ghoul")
 	decompose = TRUE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
 	guaranteed_butcher_results = list(
@@ -102,7 +102,7 @@
 
 	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
-	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
+	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)

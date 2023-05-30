@@ -24,6 +24,7 @@
 					max_spread += 1.5//This is cripplingly bad. Trust me.
 				if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
 					max_spread *= 0.5 // Nice shot!
+				max_spread = clamp(max_spread, 0, 90)
 				angle_out = clamp(rand(-max_spread, max_spread), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 
 	var/targloc = get_turf(target)
@@ -99,7 +100,7 @@
 		BB.preparePixelProjectile(target, user, params, spread)
 	BB.fire(null, direct_target, spread)
 	BB = null
-	deduct_powder_and_bullet_mats()
+	spend_casing()
 	return 1
 
 /obj/item/ammo_casing/proc/spread(turf/target, turf/current, distro)

@@ -487,6 +487,8 @@
 	if(user.buckle_message_cooldown <= world.time)
 		user.buckle_message_cooldown = world.time + 50
 		to_chat(user, span_warning("You can't move while buckled to [src]!"))
+		SEND_SIGNAL(user, COMSIG_ATOM_RELAYMOVE, src)
+		SEND_SIGNAL(src, COMSIG_ATOM_RELAYMOVE, user)
 
 /atom/proc/contents_explosion(severity, target)
 	return //For handling the effects of explosions on contents that would not normally be effected
@@ -703,11 +705,11 @@
 
 /atom/proc/component_storage_contents_dump_act(datum/component/storage/src_object, mob/user)
 	var/list/things = src_object.contents()
-	var/datum/progressbar/progress = new(user, things.len, src)
+	var/my_bar = SSprogress_bars.add_bar(src, list(), things.len, FALSE, FALSE)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, progress)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, my_bar)))
 		stoplag(1)
-	qdel(progress)
+	SSprogress_bars.remove_bar(my_bar)
 	to_chat(user, span_notice("You dump as much of [src_object.parent]'s contents into [STR.insert_preposition]to [src] as you can."))
 	if(user.active_storage) //refresh the HUD to show the transfered contents
 		user.active_storage.ui_show(user)
@@ -870,6 +872,8 @@
 		if(curturf)
 			. += "<option value='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[curturf.x];Y=[curturf.y];Z=[curturf.z]'>Jump To</option>"
 	VV_DROPDOWN_OPTION(VV_HK_MODIFY_TRANSFORM, "Modify Transform")
+	VV_DROPDOWN_OPTION(VV_HK_SPIN_ANIMATION, "SpinAnimation")
+	VV_DROPDOWN_OPTION(VV_HK_STOP_ALL_ANIMATIONS, "Stop All Animations")
 	VV_DROPDOWN_OPTION(VV_HK_ADD_REAGENT, "Add Reagent")
 	VV_DROPDOWN_OPTION(VV_HK_TRIGGER_EMP, "EMP Pulse")
 	VV_DROPDOWN_OPTION(VV_HK_TRIGGER_EXPLOSION, "Explosion")
@@ -927,6 +931,8 @@
 	var/atom/L = loc
 	if(!L)
 		return null
+	if(isarea(L))
+		return get_turf(src) // quit dropping things into areas
 	return L.AllowDrop() ? L : L.drop_location()
 
 /atom/proc/vv_auto_rename(newname)
@@ -962,6 +968,7 @@
  */
 /atom/Exited(atom/movable/gone, direction)
 	SEND_SIGNAL(src, COMSIG_ATOM_EXITED, gone, direction)
+	SEND_SIGNAL(gone, COMSIG_ATOM_I_EXITED, src, direction)
 
 /atom/proc/return_temperature()
 	return

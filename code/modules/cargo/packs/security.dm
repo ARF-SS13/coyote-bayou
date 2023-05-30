@@ -42,22 +42,21 @@
 /datum/supply_pack/security/raiderarmor //one tier 2 armor from the raider boss, as a treat...
 	name = "Armor - Raider Scraps"
 	desc = "Four sets of armor stripped off of raiders. Cheap, dirty, and quickly supplied. Some of it might even be worthwhile."
-	cost = 500
+	cost = 750
 	num_contained = 3
-	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier1,
-					/obj/effect/spawner/lootdrop/f13/armor/tier1,
-					/obj/effect/spawner/lootdrop/f13/armor/tier1,
-					/obj/effect/spawner/lootdrop/f13/armor/tier2)
+	contains = list(/obj/effect/spawner/lootdrop/f13/trash_armor,
+					/obj/effect/spawner/lootdrop/f13/trash_armor,
+					/obj/effect/spawner/lootdrop/f13/trash_armor)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/armor
 	name = "Armor - Surplus"
 	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
-	cost = 500
+	cost = 1000
 	num_contained = 3
-	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier3,
-					/obj/effect/spawner/lootdrop/f13/armor/tier3,
-					/obj/effect/spawner/lootdrop/f13/armor/tier3)
+	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
+					/obj/effect/spawner/lootdrop/f13/common_armor,
+					/obj/effect/spawner/lootdrop/f13/common_armor)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/ec
@@ -116,7 +115,7 @@
 /datum/supply_pack/security/combatknives_single
 	name = "Combat Knife Single-Pack"
 	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-wasteland boot. You know what's better than one knife? Three of 'em!"
-	cost = 250
+	cost = 100
 	num_contained = 3
 	contains = list(/obj/item/melee/onehanded/knife/hunting,
 					/obj/item/melee/onehanded/knife/hunting,
@@ -432,6 +431,7 @@
 					/obj/item/slimecross/recurring/pink)
 	crate_name = "utility crossbreed crate"
 
+/*disabled pending rework of traitbook lootdrop
 /datum/supply_pack/security/traitbooks
 	name = "Technical manuals"
 	desc = "A box crammed full of manuals, for reading. SCAV issues, Guns and Ammo, how to operate chem-machines, it's all here! Come in groups of three."
@@ -440,6 +440,7 @@
 	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks,
 					/obj/effect/spawner/lootdrop/f13/traitbooks/low,
 					/obj/effect/spawner/lootdrop/f13/traitbooks/low)
+*/
 
 /* energy cargo boxes, replaced by new weapon cargo boxes
 /datum/supply_pack/security/laserlowtier
@@ -467,10 +468,10 @@
 	desc = "Contains four random gun and energy weapon mods, fun for the whole family!"
 	cost = 800
 	num_contained = 4
-	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
-					/obj/effect/spawner/lootdrop/f13/attachments,
-					/obj/effect/spawner/lootdrop/f13/attachments,
-					/obj/effect/spawner/lootdrop/f13/attachments)
+	contains = list(/obj/effect/spawner/lootdrop/f13/trash_mods,
+					/obj/effect/spawner/lootdrop/f13/common_mods,
+					/obj/effect/spawner/lootdrop/f13/common_mods,
+					/obj/effect/spawner/lootdrop/f13/uncommon_mods)
 	crate_name = "gun mods crate"
 
 /datum/supply_pack/security/advmods
@@ -518,40 +519,93 @@
 /datum/supply_pack/security/minigun5mm
 	name = "Weapons - Minigun"
 	desc = "Holy moly, it's here. A refurbished minigun chambered in US five-aught. Heavy, impractical, expensive to buy, expensive to fire, expensive to maintain, and an absolute killer."
-	cost = 50000
+	cost = 20000
 	contains = list(/obj/item/minigunpackbal5mm)
 	crate_name = "minigun crate"
 
 //disclaimer: I...don't actually know how the economy goes, so these costs are spitballs
 
 /datum/supply_pack/security/weapon_wasteland
-	name = "Weapons - Wasteland"
+	name = "Weapons - Common"
 	desc = "Half a dozen commonly found wasteland weaponry. you might find something nice, sifting through these."
-	cost = 3000
+	cost = 1000
 	num_contained = 6
 	contains = list(
-		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
-		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
-		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
-		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
-		/obj/effect/spawner/lootdrop/f13/weapon/wasteland,
-		/obj/effect/spawner/lootdrop/f13/weapon/wasteland
+		/obj/effect/spawner/lootdrop/f13/common_weps,
+		/obj/effect/spawner/lootdrop/f13/common_weps,
+		/obj/effect/spawner/lootdrop/f13/common_weps,
+		/obj/effect/spawner/lootdrop/f13/common_weps,
+		/obj/effect/spawner/lootdrop/f13/common_weps,
+		/obj/effect/spawner/lootdrop/f13/common_weps
 )
 	crate_name = "Wasteland weapon crate"
 
 /datum/supply_pack/security/weapon_dungeon
 	name = "Weapons - Uncommon"
 	desc = "A set of four good quality weapons. Rarely comes with something special."
-	cost = 4000
+	cost = 2000
 	num_contained = 4
 	contains = list(
-		/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
-		/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
-		/obj/effect/spawner/lootdrop/f13/weapon/dungeon,
-		/obj/effect/spawner/lootdrop/f13/weapon/dungeon
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps
 )
 	crate_name = "quality weapon crate"
 
+/datum/supply_pack/security/ammo_shipment
+	name = "Ammunition Shipment"
+	desc = "A crate packed full of ammo boxes."
+	cost = 500
+	num_contained = 8
+	contains = list(
+		/obj/effect/spawner/lootdrop/f13/common_ammo,
+		/obj/effect/spawner/lootdrop/f13/common_ammo,
+		/obj/effect/spawner/lootdrop/f13/common_ammo,
+		/obj/effect/spawner/lootdrop/f13/common_ammo,
+		/obj/effect/spawner/lootdrop/f13/uncommon_ammo,
+		/obj/effect/spawner/lootdrop/f13/uncommon_ammo,
+		/obj/effect/spawner/lootdrop/f13/uncommon_ammo,
+		/obj/effect/spawner/lootdrop/f13/uncommon_ammo,
+)
+	crate_name = "Ammo Crate"
+
+/datum/supply_pack/security/weapon_packed_trash
+	name = "Weapons - Packed, Trash"
+	desc = "A crate full of trashy weapons, packed to order."
+	cost = 500
+	num_contained = 3
+	contains = list(
+		/obj/item/choice_beacon/box/weapons_trash,
+		/obj/item/choice_beacon/box/weapons_trash,
+		/obj/item/choice_beacon/box/weapons_trash,
+)
+	crate_name = "packed trash weapon crate"
+
+/datum/supply_pack/security/weapon_packed_common
+	name = "Weapons - Packed, Common"
+	desc = "A crate full of common weapons, packed to order."
+	cost = 750
+	num_contained = 3
+	contains = list(
+		/obj/item/choice_beacon/box/weapons_common,
+		/obj/item/choice_beacon/box/weapons_common,
+		/obj/item/choice_beacon/box/weapons_common
+)
+	crate_name = "packed common weapon crate"
+
+/datum/supply_pack/security/weapon_packed_uncommon
+	name = "Weapons - Packed, Uncommon"
+	desc = "A crate full of uncommon weapons, packed to order."
+	cost = 1500
+	num_contained = 2
+	contains = list(
+		/obj/item/choice_beacon/box/weapons_uncommon,
+		/obj/item/choice_beacon/box/weapons_uncommon
+)
+	crate_name = "packed uncommon weapon crate"
+
+/*shop should go up to mid tier, and be affordable in doing so
 /datum/supply_pack/security/weapon_boss
 	name = "Weapons - Rare"
 	desc = "A pair of rare, valueable weapons, for all your killing needs."
@@ -562,6 +616,7 @@
 		/obj/effect/spawner/lootdrop/f13/weapon/boss
 )
 	crate_name = "Rare weapon crate"
+*/
 
 /* /datum/supply_pack/security/weapon_unique
 	name = "Weapons - Premium"
@@ -573,6 +628,7 @@
 )
 	crate_name = "Premium weapon crate" */
 
+/*needs reworked
 /datum/supply_pack/security/weapon_milsurplus
 	name = "Weapons -  Military Surplus"
 	desc = "A crate of long forgotten American weapons from the second world war."
@@ -610,7 +666,7 @@
 /datum/supply_pack/security/vault
 	name = "Weapons - Vault"
 	desc = "A crate of common vault security firearms that never made it to their assigned vault. A basic, but reliable selection."
-	cost = 2500
+	cost = 2000
 	num_contained = 6
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/vault,
@@ -625,7 +681,7 @@
 /datum/supply_pack/security/weapon_police
 	name = "Weapons - Law Enforcement"
 	desc = "A crate full of common police and riot weapons. Occasionally contains special SWAT firearms."
-	cost = 3500
+	cost = 3000
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/police,
@@ -638,7 +694,7 @@
 /datum/supply_pack/security/weapon_22
 	name = "Weapons - .22 caliber"
 	desc = "A crate full of low caliber weapons, for either building a lot of turrets, or quickly arming an anti-gecko militia"
-	cost = 3000
+	cost = 2500
 	num_contained = 8 //sadly crates have a max capacity of 8, don't wanna overflow
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/weapon/weapon_22,
@@ -696,6 +752,7 @@
 		/obj/effect/spawner/lootdrop/f13/weapon/western
 )
 	crate_name = "old west weapon crate"
+*/
 
 /*old cargo gun crates. replaced by somethin better~
 /datum/supply_pack/security/gunsuperhightier

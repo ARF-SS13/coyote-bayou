@@ -277,9 +277,15 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 	"cat tongue" = /obj/item/organ/tongue/cat,
 	"dog tongue" = /obj/item/organ/tongue/dog,
 	"french tongue" = /obj/item/organ/tongue/french,
+	"dutch tongue" = /obj/item/organ/tongue/dutch,
+	"red river tongue" = /obj/item/organ/tongue/redriver,
 	"scottish tongue" = /obj/item/organ/tongue/scottish,
+	"swedish tongue" = /obj/item/organ/tongue/swedish,
+	"japanese tongue" = /obj/item/organ/tongue/japanese,
+	"chinese tongue" = /obj/item/organ/tongue/chinese,
+	"irish tongue" = /obj/item/organ/tongue/irish,
 	"bug tongue" = /obj/item/organ/tongue/bug,
-	"vampire tongue" = /obj/item/organ/tongue/vampire,
+	"vampire tongue" = /obj/item/organ/tongue/vampire
 	//"skeleton tongue" = /obj/item/organ/tongue/bone,
 	//"fly tongue" = /obj/item/organ/tongue/fly,
 	//"ipc tongue" = /obj/item/organ/tongue/robot/ipc
@@ -303,7 +309,7 @@ GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","g
 GLOBAL_LIST_INIT(nongendered_limb_types, list("fly", "zombie" ,"synth", "shadow", "cultgolem", "agent", "plasmaman", "clockgolem", "clothgolem", "smutant"))
 
 //list of eye types, corresponding to a respective left and right icon state for the set of eyes
-GLOBAL_LIST_INIT(eye_types, list("normal", "insect", "moth", "double", "double2", "double3", "cyclops", "shadekin"))
+GLOBAL_LIST_INIT(eye_types, list("normal", "anime", "wide", "derpy", "insect", "moth", "double", "double2", "double3", "cyclops", "shadekin"))
 
 //list linking bodypart bitflags to their actual names
 GLOBAL_LIST_INIT(bodypart_names, list(num2text(HEAD) = "Head", num2text(CHEST) = "Chest", num2text(LEG_LEFT) = "Left Leg", num2text(LEG_RIGHT) = "Right Leg", num2text(ARM_LEFT) = "Left Arm", num2text(ARM_RIGHT) = "Right Arm"))

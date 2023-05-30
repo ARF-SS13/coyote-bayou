@@ -152,7 +152,7 @@
 	desc = "A suit that protects against radiation. The label reads, 'Made with lead. Please do not consume insulation.'"
 	icon_state = "rad"
 	item_state = "rad_suit"
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
 	clothing_flags = THICKMATERIAL

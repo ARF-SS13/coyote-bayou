@@ -387,7 +387,7 @@
  */
 /obj/structure/table/plasmaglass
 	name = "plasmaglass table"
-	desc = "A glasstable, but it's pink and more sturdy. What will Nanotrasen design next with plasma?"
+	desc = "A glasstable, but it's pink and more sturdy. What will US Government design next with plasma?"
 	icon = 'icons/obj/smooth_structures/plasmaglass_table.dmi'
 	icon_state = "plasmaglass_table"
 	climbable = TRUE

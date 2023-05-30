@@ -41,6 +41,10 @@
 	death_sound = 'sound/voice/hiss6.ogg'
 	deathmessage = "lets out a waning guttural screech, green blood bubbling from its maw..."
 
+/mob/living/simple_animal/hostile/alien/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/hostile/alien/drone
 	name = "alien drone"
 	icon_state = "aliend"
@@ -186,3 +190,12 @@
 		M.clean_blood()
 		visible_message("[src] polishes \the [target].")
 		return TRUE
+
+/mob/living/simple_animal/pet/catslug/roxy //Yes I'm making her a catslug
+	name = "Roxy"
+	desc = "A xenomorph! This one is wearing a maid dress. Cute! You think."
+	icon = 'icons/mob/alien.dmi'
+	icon_living = "maid"
+	icon_state = "maid"
+	icon_dead = "maid_dead"
+	rotate_on_lying = FALSE // plop~

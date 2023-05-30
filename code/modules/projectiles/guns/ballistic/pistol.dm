@@ -215,7 +215,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	name = "Beretta M93R"
-	desc = "A rare select fire variant of the M93R."
+	desc = "An uncommon model of the M9 pistol that's capable of burst fire. It has a built in foregrip allowing for incredibly accurate shots."
 	icon_state = "m93r"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
@@ -303,6 +303,18 @@
 		/datum/firemode/semi_auto,
 		/datum/firemode/burst/three
 	)
+
+/obj/item/gun/ballistic/automatic/pistol/n99/executive/worn
+	name = "the Executive"
+	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
+	icon_state = "executive"
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
 /* * * * * * * * * * *
  * Crusader Pistol Semi-Auto
  * Cool Medium pistol
@@ -479,7 +491,6 @@
 	desc = "An obscure pistol that fits a 10mm magazine and is capable of full auto. Fires from an open bolt. Innacurate on the first shot, but it doesn't get much worse. Or better."
 	icon_state = "bornheim"
 	item_state = "pistolchrome"
-	icon_prefix = "bornheim"
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
@@ -503,6 +514,7 @@
  * Less melee force
  * More accurate
  * Common
+ * Muh three world wars
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/m1911

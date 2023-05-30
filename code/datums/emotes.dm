@@ -1,6 +1,7 @@
 /datum/emote
 	var/key = "" //What calls the emote
 	var/key_third_person = "" //This will also call the emote
+	var/no_message = FALSE
 	var/message = "" //Message displayed when emote is used
 	var/message_alien = "" //Message displayed if the user is a grown alien
 	var/message_larva = "" //Message displayed if the user is an alien larva
@@ -34,6 +35,7 @@
 	var/audio_cooldown = 2 SECONDS
 	/// emote does not have the player's name on the left.
 	var/omit_left_name = FALSE
+	var/message_range = 7
 
 /datum/emote/New()
 	if(restraint_check)
@@ -57,6 +59,8 @@
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
+	if(no_message)
+		return
 	var/msg = select_message_type(user)
 	if(params && message_param)
 		msg = select_param(user, params)
@@ -88,9 +92,9 @@
 		ENABLE_BITFIELD(message_flags, PUT_NAME_IN)
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags)
+		user.audible_message(msg, deaf_message = msg, audible_message_flags = message_flags, hearing_distance = message_range)
 	else
-		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags)
+		user.visible_message(msg, blind_message = msg, visible_message_flags = message_flags, vision_distance = message_range)
 
 
 /// Sends the given emote message for all ghosts with ghost sight enabled, excluding close enough to listen normally.

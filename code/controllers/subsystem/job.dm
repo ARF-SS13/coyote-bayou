@@ -24,6 +24,7 @@ SUBSYSTEM_DEF(job)
 	if(CONFIG_GET(flag/load_jobs_from_txt))
 		LoadJobs()
 	generate_selectable_species()
+	generate_selectable_creatures()//Coyote add. Found in _pmon_defines.dm
 	set_overflow_role(CONFIG_GET(string/overflow_job))
 	return ..()
 

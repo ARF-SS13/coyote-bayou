@@ -953,6 +953,13 @@
 	icon_state = "lskull"
 	anchored = TRUE
 
+/obj/structure/flora/chomp/bones/lskull_w
+	name = "forested skull"
+	desc = "\"If we are really dying, let us hear the rattle in our throats and feel cold in the extremities; if we are alive, let us go about our business.\" <br> <br> Beast, what were you, how did you die?"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lskull_wood"
+	anchored = TRUE
+
 /obj/structure/flora/chomp/bones/lbone
 	name = "bone"
 	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
@@ -989,8 +996,131 @@
 	icon_state = "lrock4"
 	anchored = TRUE
 
-/obj/structure/flora/thistle
+/obj/structure/flora/wild_plant/thistle
 	name = "thistle"
 	icon = 'modular_coyote/icons/objects/flora.dmi'
 	icon_state = "thistle"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/blue
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_blue"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/purple
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_purple"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/purplewhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_purplewhite"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/redwhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_redwhite"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/bluewhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_bluewhite"
+	anchored = TRUE
+
+/obj/structure/flora/tree/pink_tree
+	name = "Pink tree"
+	icon = 'modular_coyote/icons/objects/trees.dmi'
+	icon_state = "pink_tree"
+	anchored = TRUE
+
+
+//flowers
+
+/obj/structure/flora/wild_plant/flower/orange
+	name = "orange flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_orange"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/blue
+	name = "blue flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_blue"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/purple
+	name = "purple flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_purple"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/red
+	name = "red flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_red"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/white
+	name = "white flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_white"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_two
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/red_two
+	name = "red flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_red2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/blue_two
+	name = "blue flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_blue2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/purple_two
+	name = "purple flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_purple2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/yellowhite
+	name = "yellow and white flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_yw"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_three
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink3"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_four
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink4"
 	anchored = TRUE

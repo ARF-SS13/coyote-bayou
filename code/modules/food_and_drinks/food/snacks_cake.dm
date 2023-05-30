@@ -426,3 +426,91 @@ obj/item/reagent_containers/food/snacks/store/cake/pound_cake
 	icon_state = "pavlova_slice"
 	tastes = list("meringue" = 5, "creaminess" = 1, "berries" = 1)
 	foodtype = DAIRY | FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/fruit
+	name = "english fruitcake"
+	desc = "A proper good cake, innit?"
+	icon_state = "fruitcake"
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/sugar = 10,
+		/datum/reagent/consumable/cherryjelly = 5,
+	)
+	tastes = list("dried fruit" = 5, "treacle" = 2, "christmas" = 2)
+	force = 7
+	throwforce = 7
+	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/fruit
+
+/obj/item/reagent_containers/food/snacks/cakeslice/fruit
+	name = "english fruitcake slice"
+	desc = "A proper good slice, innit?"
+	icon_state = "fruitcake_slice1"
+	tastes = list("dried fruit" = 5, "treacle" = 2, "christmas" = 2)
+	force = 2
+	throwforce = 2
+	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/plum
+	name = "plum cake"
+	desc = "A cake centred with Plums."
+	icon_state = "plumcake"
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 20,
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+	)
+	tastes = list("cake" = 5, "sweetness" = 1, "plum" = 2)
+	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/plum
+
+/obj/item/reagent_containers/food/snacks/cakeslice/plum
+	name = "plum cake slice"
+	desc = "A slice of plum cake."
+	icon_state = "plumcakeslice"
+	tastes = list("cake" = 5, "sweetness" = 1, "plum" = 2)
+	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/wedding
+	name = "wedding cake"
+	desc = "An expensive, multi-tiered cake."
+	slices_num = 15 //It's a wedding cake, lot of slices
+	icon_state = "weddingcake"
+	bonus_reagents = list(
+		/datum/reagent/consumable/nutriment = 40,
+		/datum/reagent/consumable/sugar = 30,
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+	)
+	tastes = list("cake" = 3, "frosting" = 1)
+	foodtype = GRAIN | DAIRY | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/wedding
+
+/obj/item/reagent_containers/food/snacks/cakeslice/wedding
+	name = "wedding cake slice"
+	desc = "Traditionally, those getting married feed each other a slice of cake."
+	icon_state = "weddingcake_slice"
+	tastes = list("cake" = 3, "frosting" = 1)
+	foodtype = GRAIN | DAIRY | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/mothmallow
+	name = "mothmallow tray"
+	desc = "A light and fluffy vegan marshmallow flavoured with vanilla and rum and topped with soft chocolate. These are known to the moths as höllflöfstarkken: cloud squares." //höllflöf = cloud (höll = wind, flöf = cotton), starkken = squares
+	icon_state = "mothmallow_tray"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 20,
+		/datum/reagent/consumable/sugar = 20,
+	)
+	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
+	foodtype = VEGETABLES | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
+	slices_num = 6
+
+/obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
+	name = "mothmallow"
+	desc = "Fluffy little clouds of joy- in a strangely moth-like colour."
+	icon_state = "mothmallow_slice"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/sugar = 4,
+	)
+	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
+	foodtype = VEGETABLES | SUGAR

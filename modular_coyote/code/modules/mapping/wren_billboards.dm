@@ -49,13 +49,13 @@
     icon_state = "radiationking1"
 
 /obj/structure/billboard/nukagirl
-    name = "Nuka cola billboard"
-    desc = "An advertisement for Nuka Cola, featuring Nuka Girl."
+    name = "Cosmic cola billboard"
+    desc = "An advertisement for Cosmic Cola, featuring Cosmic Girl."
     icon_state = "nukagirl1"
 
 /obj/structure/billboard/nukagirl2
-    name = "Nuka cola billboard"
-    desc = "An advertisement for Nuka Cola, featuring Nuka Girl.This one has been worn down by the wasteland"
+    name = "Cosmic cola billboard"
+    desc = "An advertisement for Cosmic Cola, featuring Cosmc Girl.This one has been worn down by the wasteland"
     icon_state = "nukagirl2"
 
 /obj/structure/billboard/redrocket1
@@ -97,4 +97,4 @@
 /obj/structure/billboard/boardedwell
     name = "Boarded up well"
     desc = "An old dryed up well that has been boarded up."
-    icon_state = "well" 
+    icon_state = "well"

@@ -52,7 +52,7 @@
 #define SLOT_S_STORE		17
 #define SLOT_IN_BACKPACK	18
 #define SLOT_LEGCUFFED		19
-#define SLOT_GENERC_DEXTROUS_STORAGE	20
+#define SLOT_GENERIC_DEXTROUS_STORAGE	20
 
 
 #define SLOTS_AMT			20 // Keep this up to date!
@@ -256,6 +256,7 @@ GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/throwing_star/spear,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/pitchfork,
+	/obj/item/gun/magic/staff,
 	)))
 
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
@@ -326,6 +327,7 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/kitchen,
+	/obj/item/kinetic_crusher,
 	/obj/item/toy
 	)))
 
@@ -406,7 +408,7 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/reagent_containers/food/drinks,
 	/obj/item/storage/bag/plants,
 	/obj/item/plant_analyzer,
-	/obj/item/scythe, 
+	/obj/item/scythe,
 	/obj/item/assembly/signaler,
 	/obj/item/grenade/chem_grenade,
 	/obj/item/lightreplacer,
@@ -564,6 +566,7 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/detective,
 	/obj/item/gun/ballistic/revolver/hobo/knifegun,
 	/obj/item/melee/onehanded/knife,
+	/obj/item/melee/smith/dagger,
 	/obj/item/scalpel,
 	/obj/item/gun/energy/laser/retro,
 	/obj/item/gun/ballistic/revolver/police,
@@ -990,4 +993,4 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)
 
 //Slots that won't trigger humans' update_genitals() on equip().
-GLOBAL_LIST_INIT(no_genitals_update_slots, list(SLOT_L_STORE, SLOT_R_STORE, SLOT_S_STORE, SLOT_IN_BACKPACK, SLOT_LEGCUFFED, SLOT_HANDCUFFED, SLOT_HANDS, SLOT_GENERC_DEXTROUS_STORAGE))
+GLOBAL_LIST_INIT(no_genitals_update_slots, list(SLOT_L_STORE, SLOT_R_STORE, SLOT_S_STORE, SLOT_IN_BACKPACK, SLOT_LEGCUFFED, SLOT_HANDCUFFED, SLOT_HANDS, SLOT_GENERIC_DEXTROUS_STORAGE))

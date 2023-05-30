@@ -24,6 +24,22 @@
 	path = /obj/item/clothing/under/f13/vault
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
+/datum/gear/uniform/texasfatigues
+	name = "militia fatigues"
+	path = /obj/item/clothing/under/f13/ncr/texas
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/texasfatigues/conscript
+	name = "militia conscript fatigues"
+	path = /obj/item/clothing/under/f13/ncr/conscript/texas
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/engineer
+	name = "engineer jumpsuit"
+	path = /obj/item/clothing/under/engineer_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+	cost = 2
+
 /datum/gear/uniform/wornvault
 	name = "disheveled Dweller jumpsuit"
 	path = /obj/item/clothing/under/f13/exile/vault
@@ -72,6 +88,11 @@
 /datum/gear/uniform/sleazeball
 	name = "loanshark outfit"
 	path = /obj/item/clothing/under/f13/sleazeball
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/tactiflannel
+	name = "mercenary flannel"
+	path = /obj/item/clothing/under/tactiflannel
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
 /datum/gear/uniform/citizen
@@ -209,6 +230,11 @@
 	path = /obj/item/clothing/under/f13/rag
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_RAIDER
 
+/datum/gear/uniform/raidleather
+	name = "raider leathers"
+	path = /obj/item/clothing/under/f13/raider_leather
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_RAIDER
+
 //suits
 
 /datum/gear/uniform/suit
@@ -308,11 +334,11 @@
 
 /datum/gear/uniform/dress/housewife
 	name = "yellow pre-war dress"
-	path = /obj/item/clothing/under/f13/housewifedress50s
+	path = /obj/item/clothing/under/dress/coyote/housewifedress50s
 
 /datum/gear/uniform/dress/picnic
 	name = "red pre-war dress"
-	path = /obj/item/clothing/under/f13/picnicdress50s
+	path = /obj/item/clothing/under/dress/coyote/picnicdress50s
 
 /datum/gear/uniform/dress/bandage
 	name = "bandage dress"
@@ -435,6 +461,7 @@
 	name = "yellow performer's outfit"
 	path = /obj/item/clothing/under/costume/singer/yellow
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
 
 /*
 /datum/gear/uniform/detbrown
@@ -713,8 +740,8 @@
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 	restricted_desc = "Nash"
-	restricted_roles = list("Mayor",
-							"Secretary",
+	restricted_roles = list("High Alderperson",
+							"Councilperson",
 							"Chief of Police",
 							"Doctor",
 							"Citizen",
@@ -1457,3 +1484,1349 @@
 	cost = 1
 	path = /obj/item/clothing/under/civ/green_hanfu
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/fifi
+	name = "fifi jester"
+	cost = 1
+	path = /obj/item/clothing/under/fifi
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/blueskirt_alt
+	name = "black and blue skirt"
+	cost = 1
+	path = /obj/item/clothing/under/blueskirt_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/priate
+	name = "pirate uniform"
+	path = /obj/item/clothing/under/costume/pirate
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+//swimsuits
+
+/datum/gear/uniform/swimsuit/black
+	name = "black swimsuit"
+	path = /obj/item/clothing/under/swimsuit/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/blue
+	name = "blue swimsuit"
+	path = /obj/item/clothing/under/swimsuit/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/purple
+	name = "purple swimsuit"
+	path = /obj/item/clothing/under/swimsuit/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/green
+	name = "green swimsuit"
+	path = /obj/item/clothing/under/swimsuit/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/red
+	name = "red swimsuit"
+	path = /obj/item/clothing/under/swimsuit/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/striped
+	name = "striped swimsuit"
+	path = /obj/item/clothing/under/swimsuit/striped
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/white
+	name = "white swimsuit"
+	path = /obj/item/clothing/under/swimsuit/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/swimsuit/earth
+	name = "earth swimsuit"
+	path = /obj/item/clothing/under/swimsuit/earth
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/revealingdress
+	name = "revealing dress"
+	cost = 1
+	path = /obj/item/clothing/under/revealingdress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/rippedpunk
+	name = "ripped punk"
+	cost = 1
+	path = /obj/item/clothing/under/rippedpunk
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gothic_dress_virgo
+	name = "gothic dress"
+	cost = 1
+	path = /obj/item/clothing/under/gothic_dress_virgo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fancy_red_formaldress
+	name = "dark red fancy dress"
+	cost = 1
+	path = /obj/item/clothing/under/fancy_red_formaldress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/greenasym
+	name = "green wrapped dress"
+	cost = 1
+	path = /obj/item/clothing/under/greenasym
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/cyberhell
+	name = "cyber hell dress"
+	cost = 1
+	path = /obj/item/clothing/under/cyberhell
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/floofdress
+	name = "floofy dress"
+	cost = 1
+	path = /obj/item/clothing/under/floofdress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/blackngold
+	name = "black and gold dresss"
+	cost = 1
+	path = /obj/item/clothing/under/blackngold
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/sheerblue
+	name = "Sheer blue dresss"
+	cost = 1
+	path = /obj/item/clothing/under/sheerblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/whitegown
+	name = "white gown"
+	cost = 1
+	path = /obj/item/clothing/under/whitegown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/pinksun
+	name = "pink summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/pinksun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/whitesun
+	name = "white summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/whitesun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/bowsun
+	name = "pink summer dress with bow"
+	cost = 1
+	path = /obj/item/clothing/under/bowsun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/bluesun
+	name = "blue summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/bluesun
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/shortpink
+	name = "short pink dress"
+	cost = 1
+	path = /obj/item/clothing/under/shortpink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/twopiece
+	name = "two piece dress"
+	cost = 1
+	path = /obj/item/clothing/under/twopiece
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gothic2
+	name = "gothic dress alt"
+	cost = 1
+	path = /obj/item/clothing/under/gothic2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/wednesday
+	name = "wednesday dress"
+	cost = 1
+	path = /obj/item/clothing/under/wednesday
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gayvampire
+	name = "Vampire uniform"
+	cost = 1
+	path = /obj/item/clothing/under/gayvampire
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/corsetdress
+	name = "Corset dress"
+	cost = 1
+	path = /obj/item/clothing/under/corsetdress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/goldwrap
+	name = "golden wrap dress"
+	cost = 1
+	path = /obj/item/clothing/under/goldwrap
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/golddress
+	name = "golden dress"
+	cost = 1
+	path = /obj/item/clothing/under/golddress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/countess
+	name = "countess dress"
+	cost = 1
+	path = /obj/item/clothing/under/countess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/skyrat/maid
+	name = "maid dress"
+	cost = 1
+	path = /obj/item/clothing/under/skyrat/maid
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/skyrat/flower_kimono
+	name = "flower kimono"
+	cost = 1
+	path = /obj/item/clothing/under/skyrat/flower_kimono
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/hawi/orange
+	name = "orange hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/orange
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/hawi/blue
+	name = "blue hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/hawi/purple
+	name = "purple hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/hawi/green
+	name = "green hawaiian"
+	cost = 1
+	path = /obj/item/clothing/under/hawi/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/toxotai
+	name = "robe with black belt"
+	cost = 1
+	path = /obj/item/clothing/under/civ/toxotai
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/thebes
+	name = "blue swamp hoplite"
+	cost = 1
+	path = /obj/item/clothing/under/civ/thebes
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/corinthia
+	name = "green swamp hoplite"
+	cost = 1
+	path = /obj/item/clothing/under/civ/corinthia
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/greek_commander
+	name = "swamp hoplite commander"
+	cost = 1
+	path = /obj/item/clothing/under/civ/greek_commander
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/athens
+	name = "dark blue swamp hoplite"
+	cost = 1
+	path = /obj/item/clothing/under/civ/athens
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/civ/roman_centurion
+	name = "robe with red belt"
+	cost = 1
+	path = /obj/item/clothing/under/civ/roman_centurion
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/japanese_uniform
+	name = "green uniform"
+	cost = 1
+	path = /obj/item/clothing/under/japanese_uniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/mini_black
+	name = "mini black dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/mini_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/mini_black_blue
+	name = "mini black and blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/mini_black_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/mini_white
+	name = "mini white dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/mini_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/pristess
+	name = "pristess dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/pristess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gob/summer
+	name = "summer dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/summer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/thot
+	name = "thin white dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/thot
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_blue
+	name = "female blue outfit"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/fem_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_rose
+	name = "female rose outfit"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/fem_rose
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/fem_white
+	name = "female white outfit"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/fem_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_blue
+	name = "Blue Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/vestido_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_black
+	name = "Black Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/vestido_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_pink
+	name = "Pink Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/vestido_pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_yellow
+	name = "Yellow Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/vestido_yellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_white
+	name = "White Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/vestido_white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_red
+	name = "red Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/vestido_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vestido_purple
+	name = "Purple Vestido Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/vestido_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/gorka_alt
+	name = "Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/gorka_ss
+	name = "Alt Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_ss
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/gorka_tan
+	name = "Tan Gorka Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/gorka_tan
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/puffydress
+	name = "Puffy Dress"
+	cost = 1
+	path = /obj/item/clothing/under/puffy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/labor_black
+	name = "Black labor suit"
+	cost = 1
+	path = /obj/item/clothing/under/labor_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/divine_robes
+	name = "Divine Robes"
+	cost = 1
+	path = /obj/item/clothing/under/divine_robes
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/blue_kimono
+	name = "Blue Kimono"
+	cost = 1
+	path = /obj/item/clothing/under/blue_kimono
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/miku_bikini
+	name = "Light blue Bikini"
+	cost = 1
+	path = /obj/item/clothing/under/miku_bikini
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/shark
+	name = "Shark Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/shark
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/tribal_colorful
+	name = "bright outfit"
+	cost = 1
+	path = /obj/item/clothing/under/tribal_colorful
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/tribal_colorful/top
+	name = "bright outfit top"
+	cost = 1
+	path = /obj/item/clothing/under/tribal_colorful/top
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/flow_dress/red
+	name = "Red flow dress"
+	cost = 1
+	path = /obj/item/clothing/under/flow_dress/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/flow_dress/green
+	name = "Green flow dress"
+	cost = 1
+	path = /obj/item/clothing/under/flow_dress/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/desert_uniform
+	name = "Desert Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/desert_uniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/f13/ranger/modif_ranger
+	name = "Green Ranger Outfit"
+	cost = 1
+	path = /obj/item/clothing/under/f13/ranger/modif_ranger
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/striped_clown
+	name = "Striped Clown Overalls"
+	cost = 1
+	path = /obj/item/clothing/under/striped_clown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/shrine_maiden
+	name = "Shrine Maiden"
+	cost = 1
+	path = /obj/item/clothing/under/shrine_maiden
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/engineer_alt
+	name = "Engineer Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/engineer_alt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/coy/reddress
+	name = "red dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/reddress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/purpledress
+	name = "purple dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bluedress
+	name = "blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/greendress
+	name = "green dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/pinkdress
+	name = "pink dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/whitedress
+	name = "white dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/boltdressy
+	name = "yellow bolt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/boltyellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/boltdressp
+	name = "purple bolt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/boltpurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/cassleoy
+	name = "yellow flower dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/cassleoy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/cassleop
+	name = "purple flower dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/cassleop
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_red
+	name = "red skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_purple
+	name = "purple skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_blue
+	name = "blue skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sktdress_gold
+	name = "gold skirt dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sktdress_gold
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/westerndress
+	name = "western dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/western
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/redpristess
+	name = "red robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bluepristess
+	name = "blue robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/purplepristess
+	name = "purple robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/rwpristess
+	name = "red and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_rw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/bwpristess
+	name = "blue and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_bw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/pwpristess
+	name = "purple and white robe dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/priestess_pw
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/princess
+	name = "blue princess dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/princess
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_red
+	name = "red hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_black
+	name = "black hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_blue
+	name = "blue hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_red_long
+	name = "red long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_red_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_white_long
+	name = "white long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_white_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/hakama_blue_long
+	name = "blue long hakama"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/hakama_blue_long
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/sailermoon
+	name = "Red, white and blue skirt."
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/sailermoon
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/dinerdressmint
+	name = "diner dress mint"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/dinerdressmint
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/coy/dinerdresspink
+	name = "diner dress pink"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/dinerdresspink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/witchfinder
+	name = "witch finder"
+	cost = 1
+	path = /obj/item/clothing/under/witchfinder
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/jester_muli
+	name = "jester, dark multi"
+	cost = 1
+	path = /obj/item/clothing/under/jester_muli
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/oldnursedress
+	name = "Blue Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/oldnursedressred
+	name = "Red Nurse Dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/nursedressred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+//Yukata
+
+/datum/gear/uniform/yukataplain/silver
+	name = "Sliver Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/silver
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/black
+	name = "Black Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/white
+	name = "White Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/darkblue
+	name = "Dark Blue Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/darkblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/lightblue
+	name = "Light Blue Plain Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/lightblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florablue
+	name = "Blue Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florablue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/floraorange
+	name = "Orange Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/floraorange
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florayellow
+	name = "Yellow Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florayellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florared
+	name = "Red Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florared
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/yukataplain/florapurple
+	name = "Purple Flora Yukata"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/yukataplain/florapurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+//From Aurora
+/datum/gear/uniform/dominia/aurora/shortsleevemale
+	name = "Dominian Short Sleeve, Male"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/shortsleevemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/aurora/longsleevemale
+	name = "Dominian Long Sleeve, Male"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/longsleevemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/aurora/shortsleevefemale
+	name = "Dominian Short Sleeve, Female"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/shortsleevefemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/aurora/longsleevefemale
+	name = "Dominian long Sleeve, Female"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/consular/longsleevefemale
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/aurora/priest
+	name = "Dominian Priest"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/priest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/dominia/aurora/imperial
+	name = "Red Royal Dress, with bow"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/imperial
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/dominia/streltiz
+	name = "Red Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/strelitz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/dominia/volvalaad
+	name = "Blue Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/volvalaad
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/dominia/kazhkz
+	name = "Orange Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/kazhkz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/vdominia/caladius
+	name = "Purple Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/caladius
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/dominia/zhao
+	name = "White Royal Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dominia/zhao
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/voidsman
+	name = "Voids Man Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/voidsman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/auroraofficer
+	name = "White collored officer uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/officer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/armsman
+	name = "Arms man Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/armsman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/initiate
+	name = "White Initate Robe"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/initiate
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/dom_dress
+	name = "Fire Red Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dom_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressimperial
+	name = "Fancy royal dress, red and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_imperial
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressimperialb
+	name = "Fancy royal dress, red and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_imperialb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressvolvalaad
+	name = "Fancy royal dress, blue and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_volvalaad
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dressvolvalaadb
+	name = "Fancy royal dress, blue and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_volvalaadb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_kazhkkz
+	name = "Fancy royal dress, yellow and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_kazhkz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_kazhkkzb
+	name = "Fancy royal dress, yellow and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_kazhkzb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_caladius
+	name = "Fancy royal dress, purple and white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_caladius
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/alt_dress_caladiusb
+	name = "Fancy royal dress, purple and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_caladiusb
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/altdress_zhao
+	name = "Fancy royal dress, white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_zhao
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/altdress_zhaob
+	name = "Fancy royal dress, white and black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/altdress_zhaob
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/initiate_black
+	name = "A black initiate robe with a red sash"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/initiate_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/suit_imperial
+	name = "Royal suit, red"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_imperial
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_imperial_black
+	name = "Royal suit, black"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_imperial_black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_volvalaad
+	name = "Fancy suit, blue"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_volvalaad
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_kazhkz
+	name = "Fancy suit, yellow"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_kazhkz
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_caladius
+	name = "Fancy suit, purple"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_caladius
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/suit_zhao
+	name = "Fancy suit, white"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/suit_zhao
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/dom_sweater
+	name = "Brown Sweater"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/dom_sweater
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem
+	name = "Female dark blue skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem_1
+	name = "Purple skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem_1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem_2
+	name = "Blue skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem_2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_fem_3
+	name = "Yellow skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_fem_3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc
+	name = "Male dark blue skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc_1
+	name = "Red skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc_1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc_2
+	name = "Pink skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc_2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/holosuit_masc_3
+	name = "Green skin suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/holosuit_masc_3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/gadpathuruniform
+	name = "Gadpathur Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/gadpathur_uniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/goldendeep_dress
+	name = "Golden Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/goldendeep_suit
+	name = "Golden Suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_suit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/goldendeep_vest
+	name = "Golden vest"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_vest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/goldendeep_wrap
+	name = "Golden wrap"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_wrap
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/goldendeep_skirtsuit
+	name = "Golden Skirt Suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/goldendeep_skirtsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/iac
+	name = "Light Blue Suit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/iac
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/black
+	name = "Black Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/grey
+	name = "Grey Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/grey
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/white
+	name = "White Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/white
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/darkred
+	name = "Darkred Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/darkred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/red
+	name = "Red Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lighred
+	name = "Lightred Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightbrown
+	name = "Lightbrown Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightbrown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/brown
+	name = "Brown Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/brown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/yellow
+	name = "Yellow Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/yellow
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/yellowgreen
+	name = "Yellowgreen Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/yellowgreen
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightgreen
+	name = "lightgreen Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightgreen
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/green
+	name = "Green Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/aqua
+	name = "Aqua Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/aqua
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightblue
+	name = "Lightblue Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/blue
+	name = "Blue Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/darkblue
+	name = "Darkblue Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/darkblue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/purple
+	name = "Purple Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/purple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/lightpurple
+	name = "Lightpurple Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/lightpurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/color/pink
+	name = "Pink Jumpsuit"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/color/pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/kimono
+	name = "Ronin Kimono"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/kimono
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang
+	name = "Magenta hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang/pink
+	name = "Pink hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang/pink
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang/blue
+	name = "Blue hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang/male
+	name = "Male hanbok"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang/male
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional
+	name = "Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/red
+	name = "Red Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/green
+	name = "Green Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/green
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/blue
+	name = "Blue Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/national
+	name = "National Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/national
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyangtraditional/vest
+	name = "Vest Konyanger traditional dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyangdresstraditional/national/vest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/konyang_dress
+	name = "White Konyang Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/konyang_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/aurora/fetil
+	name = "Fetil Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/fetil
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/agent
+	name = "Blue Fancy Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/agent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/executive
+	name = "Purple Fancy Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/executive
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/thermal
+	name = "White Fancy Uniform"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/thermal
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/aodai
+	name = "White aodai tunic, with sleeves"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/aodai
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/aodaip
+	name = "White aodai tunic, with no sleeves"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/aodaip
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/aodaip
+	name = "White aodai tunic, with no sleeves"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/aodaip
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/aurora/chokha
+	name = "Green Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokha
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/chokhapurple
+	name = "purple Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokhapurple
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/chokhablue
+	name = "blue Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokhablue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/chokhared
+	name = "red Chokha Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/chokhared
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/sayyidahdress
+	name = "Sayyiadah Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/sayyidah_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/mardress
+	name = "Mar Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/mar_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/aurora/amelinedress
+	name = "Ameline Dress"
+	cost = 1
+	path = /obj/item/clothing/under/aurora/ameline_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/grassskirt
+	name = "Grass Skirt and Coconut Bra"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/grassskirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/purplegown
+	name = "Purple Gown"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/purplegown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/winegown
+	name = "Wine Gown"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/winegown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/tealgown
+	name = "Teal Gown"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/tealgown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/bluedress
+	name = "Long fancy blue dress"
+	cost = 1
+	path = /obj/item/clothing/under/dress/coyote/bluedress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

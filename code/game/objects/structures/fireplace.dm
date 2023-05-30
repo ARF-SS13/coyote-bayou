@@ -1,6 +1,6 @@
-#define LOG_BURN_TIMER 150
-#define PAPER_BURN_TIMER 5
-#define MAXIMUM_BURN_TIMER 3000
+#define LOG_BURN_TIMER 6000
+#define PAPER_BURN_TIMER 300
+#define MAXIMUM_BURN_TIMER 60000
 
 /obj/structure/fireplace
 	name = "fireplace"
@@ -110,7 +110,7 @@
 		put_out()
 		return
 
-	playsound(src, 'sound/effects/comfyfire.ogg',50,0, 0, 1)
+	playsound(src, 'sound/effects/comfyfire.ogg',20,0, 0, 1)
 	var/turf/T = get_turf(src)
 	T.hotspot_expose(500, 5)
 	update_icon()

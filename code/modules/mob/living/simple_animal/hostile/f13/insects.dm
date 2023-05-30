@@ -255,7 +255,7 @@
 	emote_taunt = list("snips")
 
 	emote_taunt_sound = list('sound/f13npc/scorpion/taunt1.ogg', 'sound/f13npc/scorpion/taunt2.ogg', 'sound/f13npc/scorpion/taunt3.ogg')
-	aggrosound = list('sound/f13npc/scorpion/aggro.ogg', )
+	emote_taunt_sound = list('sound/f13npc/scorpion/aggro.ogg', )
 	idlesound = list('sound/creatures/radscorpion_snip.ogg', )
 	death_sound = 'sound/f13npc/scorpion/death.ogg'
 
@@ -346,7 +346,7 @@
 	response_harm_simple = "hits"
 	emote_taunt = list("buzzes")
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_alert.ogg')
-	aggrosound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
+	emote_taunt_sound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
 	idlesound = list('sound/creatures/cazador_buzz.ogg')
 	stat_attack = CONSCIOUS
 	robust_searching = TRUE
@@ -561,7 +561,7 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
 	)
 
-	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
+	emote_taunt_sound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
 	desc_short = "One of countless bugs that move in gross hordes."

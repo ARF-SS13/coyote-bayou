@@ -145,6 +145,30 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
+datum/crafting_recipe/combathazardsuit // sec biosuit
+	name = "Reinforced CBRN Suit"
+	result = /obj/item/clothing/suit/bio_suit/security
+	reqs = list(/obj/item/clothing/suit/radiation = 1,
+				/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
+				/obj/item/stack/sheet/prewar = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+datum/crafting_recipe/combathazardhood // sec biohood
+	name = "Reinforced CBRN Hood"
+	result = /obj/item/clothing/head/bio_hood/security
+	reqs = list(/obj/item/clothing/head/helmet/armyhelmet = 1,
+				/obj/item/clothing/head/radiation = 1,
+				/obj/item/stack/sheet/prewar = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
 /datum/crafting_recipe/metalmask
 	name = "Metal Mask"
 	result = /obj/item/clothing/head/helmet/f13/metalmask
@@ -281,6 +305,29 @@ datum/crafting_recipe/steelbib/heavy
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/weldinghelmet
+	name = "Welding Hardhat"
+	result = /obj/item/clothing/head/hardhat/weldhat
+	reqs = list(/obj/item/flashlight = 1,
+				/obj/item/weaponcrafting/string = 1,
+				/obj/item/clothing/head/welding = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/weldinghelmet/upgr
+	name = "Reinforced Welding Hardhat"
+	result = /obj/item/clothing/head/hardhat/weldhat/upgraded
+	reqs = list(/obj/item/flashlight/seclite = 1,
+				/obj/item/clothing/head/hardhat/weldhat = 1,
+				/obj/item/weaponcrafting/string = 1,
+				/obj/item/clothing/head/helmet/f13/combat =1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING

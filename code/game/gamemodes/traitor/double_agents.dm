@@ -17,7 +17,7 @@
 	num_modifier = 4 // Four additional traitors
 	antag_datum = /datum/antagonist/traitor/internal_affairs
 
-	announce_text = "There are Nanotrasen Internal Affairs Agents trying to kill each other!\n\
+	announce_text = "There are US Government Internal Affairs Agents trying to kill each other!\n\
 	<span class='danger'>IAA</span>: Eliminate your targets and protect yourself!\n\
 	<span class='notice'>Crew</span>: Stop the IAA agents before they can cause too much mayhem."
 

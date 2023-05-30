@@ -102,3 +102,8 @@
 /// also a proc cus SSradturf compiles before this one. whatever
 /proc/RESOLVEREF(ref) 
 	return locate(ref)
+
+/proc/RESOLVEWEAKREF(datum/weakref/wr)
+	if(!isweakref(wr))
+		return
+	return wr.resolve()

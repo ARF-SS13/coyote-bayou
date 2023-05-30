@@ -165,7 +165,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/miner)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	sharpness = SHARP_EDGED
-	max_reach = 2
 	scope_y_offset = 16
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -176,7 +175,5 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
-/obj/item/gun/energy/laser/plasma/spear/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)

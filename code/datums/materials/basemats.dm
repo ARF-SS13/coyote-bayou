@@ -58,7 +58,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "gold"
 	desc = "Gold"
 	color = list(340/255, 240/255, 50/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //gold is shiny
-	strength_modifier = 0.8
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
 	value_per_unit = 0.0625
@@ -70,8 +69,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "diamond"
 	desc = "Highly pressurized carbon"
 	color = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
-	strength_modifier = 1.1
-	alpha = 132
+	strength_modifier = 1.15
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
 	value_per_unit = 0.25
@@ -148,7 +146,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "titanium"
 	desc = "Titanium"
 	color = "#b3c0c7"
-	strength_modifier = 1.1
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
 	value_per_unit = 0.0625
@@ -211,7 +208,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Stronk force increase
 /datum/material/adamantine
-	name = "adamantine"
+	name = "pre-war steel"
 	desc = "A powerful material made out of magic, I mean science!"
 	color = "#6d7e8e"
 	strength_modifier = 1.3
@@ -309,7 +306,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "bronze"
 	desc = "Clock Cult? Never heard of it."
 	color = "#92661A"
-	strength_modifier = 1.1
+	strength_modifier = 1.15
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/bronze
 	value_per_unit = 0.025
@@ -402,7 +399,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 /datum/material/f13cash
 	name = "caps"
-	desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\
+	desc = "A standard Cosmic-Cola bottle cap featuring 21 crimps and ridges,\
 					A common unit of exchange, backed by water in the Hub."
 	sheet_type = /obj/item/stack/f13Cash/caps
 

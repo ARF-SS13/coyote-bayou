@@ -125,7 +125,7 @@
 	item_state = "fritz"
 	attack_verb = list("barked", "boofed", "shotgun'd")
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("Goodboye" = "fritz", "Badboye" = "fritz_bad")
+	reskinnable_component = /datum/component/reskinnable/fritz
 	mutantrace_variation = NONE
 
 

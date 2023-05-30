@@ -126,6 +126,8 @@
 	#define COMPONENT_RAD_WAVE_HANDLED (1<<0)
 ///from internal loop in the base of /atom/movable/proc/get_locs(): (list/locs)
 #define COMSIG_ATOM_GET_LOCS "atom_get_locs"
+///When a thing is adminspawned, signal
+#define COMSIG_ATOM_POST_ADMIN_SPAWN "atom_post_admin_spawn"
 
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"		//from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"		//called when teleporting into a protected turf: (channel, turf/origin, turf/destination)
@@ -241,6 +243,7 @@
 	#define COMPONENT_BLOCK_MAGIC 1
 #define COMSIG_MOB_HUD_CREATED "mob_hud_created"				//from base of mob/create_mob_hud(): ()
 #define COMSIG_MOB_ATTACK_HAND "mob_attack_hand"				//from base of
+#define COMSIG_ITEM_ATTACKCHAIN "mob_item_attack_chain"			//from base of /obj/item/attack(): (mob/M, mob/user)
 #define COMSIG_MOB_ITEM_ATTACK "mob_item_attack"				//from base of /obj/item/attack(): (mob/M, mob/user)
 	#define COMPONENT_ITEM_NO_ATTACK 1
 #define COMSIG_MOB_ITEM_AFTERATTACK "mob_item_afterattack"		//from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
@@ -370,7 +373,7 @@
 
 // /obj/item signals
 #define COMSIG_ITEM_ATTACK "item_attack"						//from base of obj/item/attack(): (/mob/living/target, /mob/living/user)
-#define COMSIG_MOB_APPLY_DAMGE	"mob_apply_damage"				//from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
+#define COMSIG_MOB_APPLY_DAMAGE	"mob_apply_damage"				//from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
 #define COMSIG_ITEM_ATTACK_SELF "item_attack_self"				//from base of obj/item/attack_self(): (/mob)
 	#define COMPONENT_NO_INTERACT 1
 #define COMSIG_ITEM_ATTACK_OBJ "item_attack_obj"				//from base of obj/item/attack_obj(): (/obj, /mob)
@@ -386,12 +389,24 @@
 #define COMSIG_ITEM_DROPPED "item_drop"							//from base of obj/item/dropped(): (mob/user)
 	// relocated, tell inventory procs if those called this that the item isn't available anymore.
 	#define COMPONENT_DROPPED_RELOCATION 1
+/// Item was clicked on
+#define COMSIG_ITEM_CLICKED "item_clicked"						//from base of obj/item/pickup(): (/mob/taker)
+	/// button click do thing to thing
+	#define COMSIG_BUTTON_CLICK "button_click"					//from base of obj/item/button/activate(): (/mob/user, /obj/button/src)
+	/// used to update the button with certain things
+	#define COMSIG_BUTTON_UPDATE "button_update"					//from base of obj/item/button/activate(): (/mob/user, params)
+	#define COMSIG_BUTTON_ATTACH "button_attach"					//from base of obj/item/button/activate(): (/mob/user, params)
 #define COMSIG_ITEM_PICKUP "item_pickup"						//from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_ATTACK_ZONE "item_attack_zone"				//from base of mob/living/carbon/attacked_by(): (mob/living/carbon/target, mob/living/user, hit_zone)
 #define COMSIG_ITEM_IMBUE_SOUL "item_imbue_soul" 				//return a truthy value to prevent ensouling, checked in /obj/effect/proc_holder/spell/targeted/lichdom/cast(): (mob/user)
 #define COMSIG_ITEM_PROCESS "item_process" 				//from various procs that run process(): (/atom)
 #define COMSIG_ITEM_HIT_REACT "item_hit_react"					//from base of obj/item/hit_reaction(): (list/args)
 #define COMSIG_ITEM_WEARERCROSSED "wearer_crossed"				//called on item when crossed by something (): (/atom/movable)
+#define COMSIG_ITEM_RECHARGE "item_recharge"				//called on item when crossed by something (): (/atom/movable)
+#define COMSIG_CELL_USED "cell_used"				//called on item when crossed by something (): (/atom/movable)
+/// Something is asked for the charge of their cell
+#define COMSIG_CELL_CHECK_CHARGE "cell_check" 					// returns the charge of the cell
+#define COMSIG_CELL_CHECK_CHARGE_PERCENT "cell_check_percent" 	// returns the percent of the cell
 #define COMSIG_ITEM_RECYCLED "item_recycled"				//called on item when crossed by something (): (/atom/movable)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"					//from base of item/sharpener/attackby(): (amount, max)
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
@@ -416,6 +431,11 @@
 	// Uncovered information
 	#define COMPONENT_DEEPSCAN_UNCOVERED_INFORMATION		1
 #define COMSIG_ITEM_MINE_TRIGGERED "itemineboom"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
+
+/// datum/source, mob/spawner
+#define COMSIG_ITEM_MOB_DROPPED "mobdropped"	/// from [/mob/living/simple_animal/proc/drop_loot()]
 
 // /obj/item/grenade signals
 #define COMSIG_GRENADE_PRIME "grenade_prime"					//called in /obj/item/gun/process_fire (user, target, params, zone_override)
@@ -563,3 +583,115 @@
 //mob spawner signals
 #define COMSIG_SPAWNER_COVERED "spawner_covered" // Mob spawner got covered by a covering
 #define COMSIG_SPAWNER_UNCOVERED "spawner_uncovered" // Mob spawner got uncovered by a covering
+// Mob spawner is told to absorb a mob
+#define COMSIG_SPAWNER_ABSORB_MOB "spawner_unbirth" // (mob/living/absorbed_mob)
+#define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
+#define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
+
+/// Blenderbrain signals
+/// Signals sent from the Persona Core to the host
+/// Tells the host that the core is being inserted into them
+#define COMSIG_BB_PC_TO_HOST_INSERTED "persona_core_inserted" // (datum/source, /obj/item/persona_core/src)
+/// Tells the host that the core is being removed from them
+#define COMSIG_BB_PC_TO_HOST_REMOVED "persona_core_removed" // (datum/source, /obj/item/persona_core/src)
+/// Blenderbrain's output that is being sent to the host
+#define COMSIG_BB_PC_TO_HOST_IMPULSE "persona_core_instructions" // (datum/source, instructions)
+/// REquests some kind of information from the host, like if its running, has a thing in it, etc. Returns a flag, usually TRUE or FALSE
+#define COMSIG_BB_PC_TO_HOST_REQUEST "persona_core_request" // (datum/source, request)
+/// Asks if the potential host can support us. Returns a boolean, usually TRUE or FALSE
+#define COMSIG_BB_PC_TO_HOST_CAN_INSERT "persona_core_can_enter"
+
+/// Signals sent from the host to the Persona Core
+/// A stimulus sent from the host to the core, something that might trigger a response
+#define COMSIG_BB_HOST_TO_PC_STIMULUS "persona_core_stimulus" // (datum/source, stimulus, mob/user, list/extra_things)
+// Requests the core's brain's operation modifier
+#define COMSIG_BB_HOST_TO_PC_AMOUR_MOD "persona_core_amour_mod" // (datum/source, mob/user)
+
+
+
+/// When they look back and see that some fuckin nerd componentized vore, will they be proud? or rightfully confused why someone would spend their time on this?
+/// I know one thing for sure though, and that is that I won't regret any second of it
+/// Vore signals
+// Toggles our voremode
+#define COMSIG_VORE_TOGGLE_VOREMODE "voretoggle"
+// Toggles our voremode
+#define COMSIG_VORE_GET_VOREMODE "is_it_voremode"
+// returns component's voreflags
+#define COMSIG_VORE_GET_VOREFLAGS "voreflags_pls"
+/// returns/sets the component's absorbtion state. pass a TRUE/FALSE in its args to set a new state, leave null just to read it
+#define COMSIG_VORE_ABSORBED_STATE "set_absorbed"		// (datum/source, absorbed = T/F)
+/// Vores an atom
+#define COMSIG_VORE_DEVOUR_ATOM "nyomf"
+/// Sent by a belly to an atom when it enters a belly
+#define COMSIG_VORE_ATOM_DEVOURED "atom_eaten"		// (datum/source, obj/vore_belly/mybelly, mob/living/vorer)
+/// Sent by a belly to an atom when it gets digested -- basically digest_act, but in signal form
+#define COMSIG_VORE_ATOM_DIGESTED "atom_digested"		// (datum/source, obj/vore_belly/mybelly, mob/living/belly_owner)
+/// sets a list to a list of a mob's bellies
+/// DOES NOT RETURN ANYTHING USEFUL! Abuses the fact that list vars are just references, or something
+/// check out COMSIG_TRY_STORAGE_RETURN_INVENTORY, its pretty neat
+/// pass TRUE to make it associated by name
+#define COMSIG_VORE_GET_BELLIES "urguts"			// (datum/source, list/that_gets_updated, make_associated, just_selected_belly)
+/// returns if we have any bellies
+#define COMSIG_VORE_HAS_BELLIES "amgut"
+/// Takes in a belly, and sets our active one to it
+#define COMSIG_VORE_SET_SELECTED_BELLY "setvore"	// (datum/source, obj/vore_belly/newselect)
+/// Takes in a belly, and returns if that belly is one of ours
+#define COMSIG_VORE_VERIFY_BELLY "has_belly"		// (mob/living/source, obj/vore_belly/gut)
+/// Takes in a belly, and returns if that belly is one of ours
+#define COMSIG_VORE_SWAP_BELLY_INDEX "swap_belly"	// (datum/source, index1, index2)
+/// Expels a mob from a belly
+#define COMSIG_BELLY_EXPEL_SPECIFIC "i_unvore_u"		// (datum/source, atom/movable/to_eject, silent)
+/// Expels all mobs from a belly
+#define COMSIG_VORE_EXPEL_ALL "i_unvore_u_all"
+/// Calls an OOC eject
+#define COMSIG_VORE_EXPEL_MOB_OOC "i_unvore_u_ooc"	// (datum/source, mob/living/escaper)
+/// Adds a belly to the mob and component
+#define COMSIG_VORE_ADD_BELLY "add_belly"			// (mob/living/source, obj/vore_belly/gut)
+/// Removes a belly from the mob and component
+#define COMSIG_VORE_REMOVE_BELLY "un_belly"			// (mob/living/source, obj/vore_belly/gut)
+/// Makes the squishing stop!!!
+#define COMSIG_VORE_STOP_SOUNDS "stop_squish"		// (datum/source, mob/living/living_prey)
+/// Gives living_sniffer a description of the componentholder's scent
+#define COMSIG_VORE_SNIFF_LIVING "sniffa"			// (datum/source, mob/living/living_sniffer)
+/// Makes bellies autoemote
+#define COMSIG_VORE_AUTO_EMOTE "voremote"
+/// Updates the vore panel
+#define COMSIG_VORE_UPDATE_PANEL "update_vee_are"
+/// Saves a mob's voreprefs
+#define COMSIG_VORE_SAVE_PREFS "save_vore"
+/// Loads a mob's voreprefs
+#define COMSIG_VORE_LOAD_PREFS "load_vore"
+/// Calls the mob's vore_attack and starts the process of sticking thing A into thing B
+#define COMSIG_VORE_DO_VORE "perform_vore"			// (datum/source, list/that_gets_updated, make_associated, just_selected_belly)
+/// Tries to figure out who or what we want to eat
+#define COMSIG_VORE_DETERMINE_VORE "who_i_eat"		// (datum/source, atom/movable/potential_target)
+/// Tries to figure out who is feeding who
+#define COMSIG_VORE_DETERMINE_FEED "who_feed_who"	// (datum/source, atom/movable/potential_target)
+/// Returns if the componentholder is in any shape to eat someone. null means YES, as does TRUE. FALSE means NO here!
+#define COMSIG_VORE_CAN_EAT "can_i_vore"
+/// Returns if the componentholder/thing is in any shape to be eaten. null means YES, as does TRUE. FALSE means NO here!
+#define COMSIG_VORE_CAN_BE_EATEN "can_i_be_vored"
+/// Returns if the componentholder/thing is in any shape to be vorefed to someone. null means YES, as does TRUE. FALSE means NO here!
+#define COMSIG_VORE_CAN_BE_FED_PREY "can_i_be_fed_to_them_by_vore"	// (datum/source, mob/living/proxy_pred)
+/// Returns if the componentholder's belly contains any mobs
+#define COMSIG_VORE_HAS_VORED_PREY "do_i_have_vored_them"
+/// Returns if the componentholder's belly contains any items
+#define COMSIG_VORE_HAS_VORED_ITEMS "do_i_have_vored_them_items"
+/// Tells the componentholder that vore has occured, and to do whatever it needs to do, like update their icon
+#define COMSIG_VORE_VORE_OCCURED "vore_occured"
+/// Tells the componentholder that vore has occured, and to do whatever it needs to do, like update their slows
+#define COMSIG_VORE_RECALCULATE_SLOWDOWN "vore_slowdown"
+/// Tells the componentholder to have a certain belly do a certain emote
+#define COMSIG_VORE_DO_MESSAGE "vore_message" // (datum/source, obj/vore_belly/belly, message_type, pref_type)
+/// Asks if the componentholder can eat a certain item
+#define COMSIG_VORE_CHECK_EDIBILITY "can_i_eat_item" // (datum/source, obj/item/thing)
+/// Asks the mob if their vore is set up
+#define COMSIG_VORE_EXISTS "is_vore_time"
+
+/// Vore defines specifically for a belly
+/// Tells the belly trash happened
+#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" // (datum/source, obj/item/thetrash)
+
+
+
+

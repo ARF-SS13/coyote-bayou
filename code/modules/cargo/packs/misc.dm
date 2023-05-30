@@ -23,7 +23,7 @@
 /datum/supply_pack/misc/artsupply
 	name = "Art Supplies"
 	desc = "Make some happy little accidents with six canvasses, two easels, two boxes of crayons, and a rainbow crayon!"
-	cost = 800
+	cost = 500
 	contains = list(/obj/structure/easel,
 					/obj/structure/easel,
 					/obj/item/canvas/nineteenXnineteen,
@@ -54,7 +54,7 @@
 /datum/supply_pack/misc/paper
 	name = "Bureaucracy Crate"
 	desc = "High stacks of papers on your desk Are a big problem - make it Pea-sized with these bureaucratic supplies! Contains five pens, some camera film, hand labeler supplies, a paper bin, three folders, two clipboards and two stamps as well as a briefcase."//that was too forced
-	cost = 1500
+	cost = 500
 	contains = list(/obj/structure/filingcabinet/chestdrawer/wheeled,
 					/obj/item/camera_film,
 					/obj/item/hand_labeler,
@@ -90,7 +90,7 @@
 /datum/supply_pack/misc/fountainpens
 	name = "Calligraphy Crate"
 	desc = "Sign death warrants in style with these seven executive fountain pens."
-	cost = 730
+	cost = 750
 	contains = list(/obj/item/storage/box/fountainpens,
 					/obj/item/paper_bin)
 	crate_type = /obj/structure/closet/crate/wooden
@@ -103,7 +103,7 @@
 /datum/supply_pack/misc/coloredsheets
 	name = "Bedsheet Crate"
 	desc = "Give your night life a splash of color with this crate filled with bedsheets! Contains a total of nine different-colored sheets."
-	cost = 1250
+	cost = 250
 	contains = list(/obj/item/bedsheet/blue,
 					/obj/item/bedsheet/green,
 					/obj/item/bedsheet/orange,
@@ -126,7 +126,7 @@
 /datum/supply_pack/misc/bigband
 	name = "Big Band Instrument Collection"
 	desc = "Get your sad station movin' and groovin' with this fine collection! Contains nine different instruments!"
-	cost = 5000
+	cost = 1200
 	crate_name = "Big band musical instruments collection"
 	contains = list(/obj/item/instrument/violin,
 					/obj/item/instrument/guitar,
@@ -142,7 +142,7 @@
 /datum/supply_pack/misc/casinocrate
 	name = "Casino Crate"
 	desc = "Start up your own grand casino with this crate filled with slot machine and arcade boards!"
-	cost = 3000
+	cost = 1500
 	contains = list(/obj/item/circuitboard/computer/arcade/battle,
 					/obj/item/circuitboard/computer/arcade/battle,
 					/obj/item/circuitboard/computer/arcade/orion_trail,
@@ -199,7 +199,7 @@
 /datum/supply_pack/misc/candles
 	name = "Candle Crate"
 	desc = "Set up a romantic dinner or host a séance with these extra candles and crayons."
-	cost = 850
+	cost = 400
 	contains = list(/obj/item/storage/fancy/candle_box,
 					/obj/item/storage/fancy/candle_box,
 					/obj/item/storage/box/matches)
@@ -309,18 +309,18 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/misc/capstwofifty
-	name = "Caps Conversion 250"
-	desc = "Converts credits into caps! 250 Version"
+	name = "Coins Conversion 250"
+	desc = "Converts credits into Coins! 250 Version"
 	cost = 2500
 	contains = list(/obj/item/stack/f13Cash/caps/twofivezero)
-	crate_name = "caps crate 1"
+	crate_name = "Coins crate 1"
 
 /datum/supply_pack/misc/capsfivehundred
-	name = "Caps Conversion 500"
-	desc = "Converts credits into caps! 500 Version"
+	name = "Coins Conversion 500"
+	desc = "Converts credits into coins! 500 Version"
 	cost = 5000
 	contains = list(/obj/item/stack/f13Cash/caps/fivezerozero)
-	crate_name = "caps crate 2"
+	crate_name = "coins crate 2"
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Misc + Decor ////////////////////////////////////

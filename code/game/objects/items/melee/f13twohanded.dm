@@ -11,12 +11,18 @@
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/icon_prefix = null
+	block_parry_data = /datum/block_parry_data/bokken
+	item_flags = ITEM_CAN_PARRY
+	block_chance = 5
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
 
 /obj/item/twohanded/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 	force_unwielded = force
+
 
 /obj/item/twohanded/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
@@ -191,7 +197,6 @@
 	throwforce = 30
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
-	max_reach = 2
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
 	sharpness = SHARP_POINTY
@@ -204,6 +209,7 @@
 	force_wielded = 32
 	var/obj/item/grenade/explosive = null
 	var/war_cry = "AAAAARGH!!!"
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/twohanded/spear/ComponentInitialize()
 	. = ..()
@@ -315,7 +321,6 @@
 	throwforce = 25
 	throw_speed = 4
 	armour_penetration = 0.10
-	max_reach = 2
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	custom_materials = null
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
@@ -323,6 +328,7 @@
 	wielded_icon = "spear-bone2"
 	force_unwielded = 21
 	force_wielded = 36
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 // Deathclaw Spear		Keywords: TRIBAL, Damage 22/48, Armor-piercing +0.3, Reach
 /obj/item/twohanded/spear/bonespear/deathclaw
@@ -353,13 +359,13 @@
 	sharpness = SHARP_EDGED
 	wound_bonus = 5
 	bare_wound_bonus = 10
-	max_reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT + SLOT_BACK
 	force = 20
 	force_unwielded = 25
 	force_wielded = 30
 	attack_speed = CLICK_CD_MELEE * 0.85 // 6.8
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 
 /////////////////
@@ -900,7 +906,7 @@ CODE FOR POISON EFFECT
 /obj/item/twohanded/spear/grey_tide
 	icon_state = "spearglass0"
 	name = "\improper Grey Tide"
-	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualities among Nanotrasen military forces."
+	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualities among US Government military forces."
 	throwforce = 20
 	throw_speed = 4
 	attack_verb = list("gored")

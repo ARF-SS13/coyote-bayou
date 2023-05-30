@@ -493,6 +493,7 @@
 
 	description = "A powerful drug that heals and increases the perception and intelligence of the user."
 	color = "#C8A5DC"
+	taste_mult = 0.2 //lets me flavor it with other stuff
 	reagent_state = SOLID
 	overdose_threshold = 25
 	addiction_threshold = 15

@@ -246,6 +246,8 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define isfinite(n) (isnum(n) && n == n)
 
+#define isclient(A) istype(A, /client)
+
 //F13 EDIT
 #define iskey(A) istype(A, /obj/item/key)
 

@@ -64,7 +64,7 @@
 	//special_screen_obj = "mood_happiness_good" Originally in tg, but I personally think they look dumb
 
 /datum/mood_event/nuka
-	description = "the whole world loves Nuka-cola!"
+	description = "the whole world loves Cosmic-cola!"
 	mood_change = 2
 
 /datum/mood_event/happiness_drug_bad_od

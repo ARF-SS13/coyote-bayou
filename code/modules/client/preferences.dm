@@ -41,6 +41,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
 										//autocorrected this round, not that you'd need to check that.
 
+	// VORE~
+	// see: [code\modules\vore\eating\vore_prefs.dm]
+
 	var/UI_style = null
 	var/buttons_locked = FALSE
 	var/hotkeys = FALSE
@@ -187,7 +190,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"taste" = "something",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
-		"color_scheme" = OLD_CHARACTER_COLORING
+		"color_scheme" = OLD_CHARACTER_COLORING,
+		"chat_color" = "whoopsie"
 		)
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
@@ -204,6 +208,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_ai_core_display = "Blue"
 	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/custom_species = null
+
+	//Creature Preferences
+	var/creature_species = 		"Eevee"
+	var/creature_name = 		"Eevee"
+	var/creature_flavor_text = 	null
+	var/creature_ooc = 			null
+	var/image/creature_image = null
+	var/creature_profilepic = null
 
 	//Quirk list
 	var/list/all_quirks = list()
@@ -295,8 +307,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/special_a = 5
 	var/special_l = 5
 
+	var/custom_pixel_x = 0
+	var/custom_pixel_y = 0
+
 	/// Associative list: matchmaking_prefs[/datum/matchmaking_pref subtype] -> number of desired matches
 	var/list/matchmaking_prefs = list()
+
+	/// Versioning hack! Versioning hack! Versioning hack!
+	var/list/current_version = list()
 
 
 /datum/preferences/New(client/C)
@@ -384,7 +402,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
-			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
+			//Left Column
+			dat += "<table><tr><td width='30%'valign='top'>"
 			dat += "<h2>Identity</h2>"
 			if(jobban_isbanned(user, "appearance"))
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
@@ -397,8 +416,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 			dat += "</td>"
-
-			dat +="<td width='300px' height='300px' valign='top'>"
+			//Middle Column
+			dat +="<td width='30%' valign='top'>"
 			dat += "<h2>Matchmaking preferences:</h2>"
 			if(SSmatchmaking.initialized)
 				for(var/datum/matchmaking_pref/match_pref as anything in SSmatchmaking.all_match_types)
@@ -412,11 +431,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Loading matchmaking preferences...</b><br>"
 				dat += "<b>Refresh once the game has finished setting up...</b><br>"
 			dat += "</td>"
-
-			dat += "<b>Profile Picture:</b><BR>"
+			//Right column
+			dat +="<td width='30%' valign='top'>"
+			dat += "<h2>Profile Picture:</h2><BR>"
 			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Creature Profile Picture:</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[DiscordLink(creature_profilepic)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
-
 			/*
 			dat += "<b>Special Names:</b><BR>"
 			var/old_group
@@ -521,9 +542,50 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><BR>"
+			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><BR>"
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 			dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
+
+			dat += "<h2>Creature Character</h2>"
+			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
+			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
+			if(length(creature_flavor_text) <= 40)
+				if(!length(creature_flavor_text))
+					dat += "\[...\]<br>"
+				else
+					dat += "[creature_flavor_text]<br>"
+			else
+				dat += "[TextPreview(creature_flavor_text)]...<br>"
+			dat += "<a href='?_src_=prefs;preference=creature_ooc;task=input'><b>Set Creature OOC Notes</b></a><br>"
+			if(length(creature_ooc) <= 40)
+				if(!length(creature_ooc))
+					dat += "\[...\]<br>"
+				else
+					dat += "[creature_ooc]<br>"
+			else
+				dat += "[TextPreview(creature_ooc)]...<br>"
+			if(!creature_image && creature_species)
+				if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+					generate_selectable_creatures()
+				if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+					creature_species = initial(creature_species)
+				var/creature_type = GLOB.creature_selectable["[creature_species]"]
+				if(!isnull(creature_type) && isliving(creature_type))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
+					var/mob/living/M = new creature_type(user)
+					creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
+					qdel(M)
+			if(creature_image)
+				dat += "[icon2html(creature_image, user)]<br>"
+
+			dat += "<h3>Pixel Offsets</h3>"
+			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
+			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"
+			dat += "<a href='?_src_=prefs;preference=pixel_x;task=input'>&harr;[px]</a><BR>"
+			dat += ", "
+			dat += "<a href='?_src_=prefs;preference=pixel_y;task=input'>&#8597;[py]</a><BR>"
+
 			var/use_skintones = pref_species.use_skintones
 			if(use_skintones)
 				dat += APPEARANCE_CATEGORY_COLUMN
@@ -1330,6 +1392,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<h2>Vore prefs</h2>"
+			dat += "<b>Master Vore Toggle:</b> <a href='?_src_=prefs;task=input;preference=master_vore_toggle'>[(master_vore_toggle) ? "Per Preferences" : "All Disabled"]</a><br>"
+			if(master_vore_toggle)
+				dat += "<b>Being Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_prey'>[(allow_being_prey) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Being Fed Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_fed_prey'>[(allow_being_fed_prey) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Digestion Damage:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_damage'>[(allow_digestion_damage) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Digestion Death:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_death'>[(allow_digestion_death) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Vore Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_vore_messages'>[(allow_vore_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Trash Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_trash_messages'>[(allow_trash_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Death Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_death_messages'>[(allow_death_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Eating Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_eating_sounds'>[(allow_eating_sounds) ? "Audible" : "Muted"]</a><br>"
+				dat += "<b>Digestion Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_sounds'>[(allow_digestion_sounds) ? "Audible" : "Muted"]</a><br>"
 			dat += "</tr></table>"
 			dat += "<br>"
 
@@ -2344,11 +2418,55 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								player_mob.new_player_panel()
 						else
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+				if("creature_name")
+					var/new_name = input(user, "Choose your creature character's name:", "Character Preference")  as text|null
+					if(new_name)
+						new_name = reject_bad_name(new_name)
+						if(new_name)
+							creature_name = new_name
+							if(isnewplayer(parent.mob)) // Update the player panel with the new name.
+								var/mob/dead/new_player/player_mob = parent.mob
+								player_mob.new_player_panel()
+						else
+							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+				if("creature_species")
+					if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+						generate_selectable_creatures()
+					if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+						creature_species = initial(creature_species)
+					var/result = input(user, "Select a creature species", "Species Selection") as null|anything in GLOB.creature_selectable
+					if(result)
+						creature_species = result
+						var/creature_type = GLOB.creature_selectable["[result]"]
+						var/mob/living/M = new creature_type(user)
+						creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
+						qdel(M)
+
+				if("creature_flavor_text")
+					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb.", "Flavor Text", html_decode(creature_flavor_text), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						creature_flavor_text = msg
+				if("creature_ooc")
+					var/msg = stripped_multiline_input(usr, "Set out of character notes related to roleplaying content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(creature_ooc), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						creature_ooc = msg
 
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
+				if("pixel_x")
+					var/newx = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
+					if(newx)
+						custom_pixel_x = round(clamp(newx, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
+					else
+						custom_pixel_x = 0
+				if("pixel_y")
+					var/newy = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
+					if(newy)
+						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
+					else
+						custom_pixel_y = 0
 /*
 				if("security_records")
 					var/rec = stripped_multiline_input(usr, "Set your security record note section. This should be IC!", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
@@ -2360,7 +2478,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!isnull(rec))
 						medical_records = rec
 */
-
+				////////////////// VORE STUFF /
+				if("master_vore_toggle")
+					TOGGLE_VAR(master_vore_toggle)
+				if("allow_being_prey")
+					TOGGLE_VAR(allow_being_prey)
+				if("allow_being_fed_prey")
+					TOGGLE_VAR(allow_being_fed_prey)
+				if("allow_digestion_damage")
+					TOGGLE_VAR(allow_digestion_damage)
+				if("allow_digestion_death")
+					TOGGLE_VAR(allow_digestion_death)
+				if("allow_trash_messages")
+					TOGGLE_VAR(allow_trash_messages)
+				if("allow_vore_messages")
+					TOGGLE_VAR(allow_vore_messages)
+				if("allow_death_messages")
+					TOGGLE_VAR(allow_death_messages)
+				if("allow_eating_sounds")
+					TOGGLE_VAR(allow_eating_sounds)
+				if("allow_digestion_sounds")
+					TOGGLE_VAR(allow_digestion_sounds)
 				if("flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
@@ -2539,6 +2677,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["taste"] = new_taste
 					else
 						features["taste"] = "something"
+
+				if("chat_color")
+					var/new_runecolor = input(user, "Choose your character's runechat color:", "Character Preference","#"+features["chat_color"]) as color|null
+					if(new_runecolor)
+						features["chat_color"] = sanitize_hexcolor(new_runecolor, 6)
 
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null

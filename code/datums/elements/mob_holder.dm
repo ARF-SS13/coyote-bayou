@@ -101,6 +101,26 @@
 		righthand_file = right_hand
 	slot_flags = slots
 
+/obj/item/clothing/head/mob_holder/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_VORE_ATOM_DEVOURED, .proc/release)
+	RegisterSignal(src, COMSIG_VORE_CAN_EAT, .proc/relay_caneat)
+	RegisterSignal(src, COMSIG_VORE_CAN_BE_EATEN, .proc/relay_can_be_eaten)
+	RegisterSignal(src, COMSIG_VORE_CAN_BE_FED_PREY, .proc/relay_can_be_fed)
+	RegisterSignal(src, COMSIG_VORE_SNIFF_LIVING, .proc/relay_sniff)
+
+/obj/item/clothing/head/mob_holder/proc/relay_caneat()
+	return SEND_SIGNAL(held_mob, COMSIG_VORE_CAN_EAT)
+
+/obj/item/clothing/head/mob_holder/proc/relay_can_be_eaten()
+	return SEND_SIGNAL(held_mob, COMSIG_VORE_CAN_BE_EATEN)
+
+/obj/item/clothing/head/mob_holder/proc/relay_can_be_fed()
+	return SEND_SIGNAL(held_mob, COMSIG_VORE_CAN_BE_FED_PREY)
+
+/obj/item/clothing/head/mob_holder/proc/relay_sniff(datum/source, mob/living/living_sniffer)
+	return SEND_SIGNAL(held_mob, COMSIG_VORE_SNIFF_LIVING, living_sniffer)
+
 /obj/item/clothing/head/mob_holder/proc/assimilate(mob/living/target)
 	target.setDir(SOUTH)
 	held_mob = target
@@ -149,11 +169,11 @@
 	if(held_mob && !ismob(loc) && !istype(loc,/obj/item/storage))//don't release on soft-drops
 		release()
 
-/obj/item/clothing/head/mob_holder/proc/release()
+/obj/item/clothing/head/mob_holder/proc/release(atom/movable/here)
 	if(held_mob)
 		var/mob/living/L = held_mob
 		held_mob = null
-		L.forceMove(get_turf(L))
+		L.forceMove(istype(here) ? here : get_turf(L))
 		L.reset_perspective()
 		L.setDir(SOUTH)
 	if(!QDELETED(src))

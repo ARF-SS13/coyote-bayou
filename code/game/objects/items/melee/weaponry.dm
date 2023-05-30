@@ -94,9 +94,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	block_chance = 0 // oops
-	force = 27.5 // oops
+	force = 35 // oops
 	item_flags = ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/bokken/quick_parry/proj
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/katana/timestop/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 	if(ishuman(owner))
@@ -148,19 +149,19 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /datum/block_parry_data/bokken // fucked up parry data, emphasizing quicker, shorter parries
 	parry_stamina_cost = 8 // be wise about when you parry, though, else you won't be able to fight enough to make it count
 	parry_time_windup = 0
-	parry_time_active = 10 // small parry window
+	parry_time_active = 20 // small parry window
 	parry_time_spindown = 0
 	// parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK		// bokken users can no longer strike while parrying
 	parry_time_perfect = 1.5
 	parry_time_perfect_leeway = 1
 	parry_imperfect_falloff_percent = 7.5
 	parry_efficiency_to_counterattack = 120
-	parry_efficiency_considered_successful = 65		// VERY generous
+	parry_efficiency_considered_successful = 80		// VERY generous
 	parry_efficiency_perfect = 120
 	parry_efficiency_perfect_override = list(
 		TEXT_ATTACK_TYPE_PROJECTILE = 30,
 	)
-	parry_failed_stagger_duration = 3 SECONDS
+	parry_failed_stagger_duration = 2 SECONDS
 	parry_data = list(
 		PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5, // 7*2.5 = 17.5, 8*2.5 = 20, 9*2.5 = 22.5, 10*2.5 = 25
 	)

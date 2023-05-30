@@ -16,7 +16,7 @@
 /datum/supply_pack/vending/bartending
 	name = "Bartending Supply Crate"
 	desc = "Bring on the booze with vending machine refills, as well as a free book containing the well-kept secrets to the bartending trade!"
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/item/vending_refill/boozeomat,
 					/obj/item/vending_refill/coffee,
 					/obj/item/book/granter/action/drink_fling)
@@ -33,7 +33,7 @@
 /datum/supply_pack/vending/cigarette
 	name = "Cigarette Supply Crate"
 	desc = "Don't believe the reports - smoke today! Contains a cigarette vending machine refill."
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/item/vending_refill/cigarette)
 	crate_name = "cigarette supply crate"
 	crate_type = /obj/structure/closet/crate
@@ -41,7 +41,7 @@
 /datum/supply_pack/vending/dinner
 	name = "Dinnerware Supply Crate"
 	desc = "Use a plate and have some utensils! Contains a dinnerware and sustenance vending machine refill."
-	cost = 2500
+	cost = 1000
 	contains = list(/obj/item/vending_refill/sustenance,
 					/obj/item/vending_refill/dinnerware)
 	crate_name = "dinnerware supply crate"
@@ -50,8 +50,8 @@
 /datum/supply_pack/vending/dinner
 	name = "Engineering Supply Crate"
 	desc = "Packs of tools waiting to be used for repairing. Contains a tool and engineering vending machine refill. Requires CE access."
-	cost = 5500 //Powerfull
-	access = ACCESS_CE
+	cost = 2500 //Powerfull
+	/* access = ACCESS_CE */
 	contains = list(/obj/item/vending_refill/tool,
 					/obj/item/vending_refill/engivend)
 	crate_name = "engineering supply crate"
@@ -87,7 +87,7 @@
 	name = "SecTech Supply Crate"
 	desc = "Officer Paul bought all the donuts? Then refill the security vendor with ths crate. Requires Security Access to open."
 	cost = 1500
-	access = ACCESS_SECURITY
+	/* access = ACCESS_SECURITY */
 	contains = list(/obj/machinery/vending/security)
 	crate_name = "SecTech supply crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
@@ -96,21 +96,21 @@
 /datum/supply_pack/vending/snack
 	name = "Snack Supply Crate"
 	desc = "One vending machine refill of cavity-bringin' goodness! The number one dentist recommended order!"
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/item/vending_refill/snack)
 	crate_name = "snacks supply crate"
 
 /datum/supply_pack/vending/cola
 	name = "Softdrinks Supply Crate"
 	desc = "Got whacked by a toolbox, but you still have those pesky teeth? Get rid of those pearly whites with this soda machine refill, today!"
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/item/vending_refill/cola)
 	crate_name = "soft drinks supply crate"
 
 /datum/supply_pack/vending/vendomat
 	name = "Vendomat Supply Crate"
 	desc = "Contains a Vendomat restock unit!"
-	cost = 1200
+	cost = 1000
 	contains = list(/obj/item/vending_refill/assist)
 	crate_name = "vendomat supply crate"
 
@@ -121,21 +121,21 @@
 /datum/supply_pack/vending/wardrobes/autodrobe
 	name = "Autodrobe Supply Crate"
 	desc = "Autodrobe missing your favorite dress? Solve that issue today with this autodrobe refill."
-	cost = 1500
+	cost = 500
 	contains = list(/obj/item/vending_refill/autodrobe)
 	crate_name = "autodrobe supply crate"
 
 /datum/supply_pack/vending/wardrobes/cargo
 	name = "Cargo Wardrobe Supply Crate"
 	desc = "This crate contains a refill for the CargoDrobe."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/vending_refill/wardrobe/cargo_wardrobe)
 	crate_name = "cargo department supply crate"
 
 /datum/supply_pack/vending/wardrobes/engineering
 	name = "Engineering Wardrobe Supply Crate"
 	desc = "This crate contains refills for the EngiDrobe and AtmosDrobe."
-	cost = 1500
+	cost = 750
 	contains = list(/obj/item/vending_refill/wardrobe/engi_wardrobe,
 					/obj/item/vending_refill/wardrobe/atmos_wardrobe)
 	crate_name = "engineering department wardrobe supply crate"
@@ -143,7 +143,7 @@
 /datum/supply_pack/vending/wardrobes/general
 	name = "General Wardrobes Supply Crate"
 	desc = "This crate contains refills for the CuraDrobe, BarDrobe, ChefDrobe, JaniDrobe, ChapDrobe."
-	cost = 3750
+	cost = 1500
 	contains = list(/obj/item/vending_refill/wardrobe/curator_wardrobe,
 					/obj/item/vending_refill/wardrobe/bar_wardrobe,
 					/obj/item/vending_refill/wardrobe/chef_wardrobe,
@@ -161,7 +161,7 @@
 /datum/supply_pack/vending/wardrobes/medical
 	name = "Medical Wardrobe Supply Crate"
 	desc = "This crate contains refills for the MediDrobe, ChemDrobe, GeneDrobe, and ViroDrobe."
-	cost = 3000
+	cost = 1500
 	contains = list(/obj/item/vending_refill/wardrobe/medi_wardrobe,
 					/obj/item/vending_refill/wardrobe/chem_wardrobe,
 					/obj/item/vending_refill/wardrobe/gene_wardrobe,

@@ -52,7 +52,7 @@
 	//var/charging = FALSE
 	move_resist = MOVE_FORCE_OVERPOWERING
 	emote_taunt_sound = list('sound/f13npc/deathclaw/taunt.ogg')
-	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
+	emote_taunt_sound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = 'sound/f13npc/deathclaw/death.ogg'
 	low_health_threshold = 0.5
@@ -62,11 +62,16 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(30),
 	)
+	despawns_when_lonely = FALSE
+
+/mob/living/simple_animal/hostile/deathclaw/Initialize()
+	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/hostile/deathclaw/playable
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = FALSE

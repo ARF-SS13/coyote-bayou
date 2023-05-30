@@ -3,7 +3,10 @@
 	weight = WEIGHT_MOB
 
 /datum/keybinding/human/can_use(client/user)
-	return ishuman(user.mob)
+	if(ishuman(user.mob))
+		return TRUE
+	if(isanimal(user.mob))
+		return TRUE
 
 /datum/keybinding/human/quick_equip
 	hotkey_keys = list("E")
@@ -12,9 +15,14 @@
 	description = "Quickly puts an item in the best slot available"
 
 /datum/keybinding/human/quick_equip/down(client/user)
-	var/mob/living/carbon/human/H = user.mob
-	H.quick_equip()
-	return TRUE
+	if(ishuman(user.mob))
+		var/mob/living/carbon/human/H = user.mob
+		H.quick_equip()
+		return TRUE
+	else if(isanimal(user.mob))
+		var/mob/living/simple_animal/SA = user.mob
+		SA.quick_equip()
+	
 
 /*
 /datum/keybinding/human/quick_equipbelt

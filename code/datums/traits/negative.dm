@@ -636,7 +636,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/mute
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
-	value = 0 //HALP MAINTS
+	value = -2 //HALP MAINTS
 	gain_text = span_danger("You find yourself unable to speak!")
 	lose_text = span_notice("You feel a growing strength in your vocal chords.")
 	medical_record_text = "Functionally mute, patient is unable to use their voice in any capacity."
@@ -681,6 +681,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/blindness/remove()
 	quirk_holder?.cure_blind(ROUNDSTART_TRAIT)
+
+/datum/quirk/deafness
+	name = "Deaf"
+	desc = "You are completely deaf, nothing can counteract this."
+	value = -3
+	mob_trait = TRAIT_DEAF
+	gain_text = span_danger("You can't hear anything.")
+	lose_text = span_notice("You miraculously gain back your hearing.")
+	medical_record_text = "Patient has permanent deafness."
 
 /datum/quirk/coldblooded
 	name = "Cold-blooded"
@@ -767,8 +776,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/maskmask = H.get_item_by_slot(ITEM_SLOT_MASK)
-	if(istype(maskmask) && !istype(maskmask, /obj/item/clothing/mask/cigarette))
+	var/obj/item/clothing/mask/gas = H.get_item_by_slot(SLOT_WEAR_MASK)
+	if(istype(gas))
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 	else
@@ -788,8 +797,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/masked_mook/on_spawn()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/gas/gasmask = new(get_turf(quirk_holder))
-	H.equip_to_slot(gasmask, ITEM_SLOT_MASK)
+	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
+	H.equip_to_slot(gas, SLOT_WEAR_MASK)
 	H.regenerate_icons()
 
 /datum/quirk/paper_skin

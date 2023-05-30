@@ -551,7 +551,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	registered_name = "Zonq"
-	assignment = "Mayor"
+	assignment = "High Alderperson"
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
 
 /obj/item/card/id/centcom
@@ -1371,3 +1371,48 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 		var/choice = input(user, "Select the license type", "License Type Selection") as null|anything in GLOB.fuzzy_license
 		if(!isnull(choice))
 			name = "license to [choice]"
+
+//Bounty Cards//
+/obj/item/card/lowbounty
+	name = "Small Roller Bounty Ticket"
+	color = "#00ff00"
+	desc = "Turn this in at the bank's vending machine for fast coins!"
+	icon = 'icons/obj/card.dmi'
+	icon_state = "data_1"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/card/midbounty
+	name = "Medium Roller Bounty Ticket"
+	color = "#0000ff"
+	desc = "Turn this in at the bank's vending machine for fast coins!"
+	icon = 'icons/obj/card.dmi'
+	icon_state = "data_1"
+	item_state = "card-id"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/card/highbounty
+	name = "High Roller Bounty Ticket"
+	color = "#ff0000"
+	desc = "Turn this in at the bank's vending machine for fast coins!"
+	icon = 'icons/obj/card.dmi'
+	icon_state = "data_1"
+	item_state = "card-id"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/card/kingbounty
+	name = "A King's Bounty Ticket"
+	color = "#ffe600"
+	desc = "At last, your just reward! Turn this in at the bank's vending machine for fast coins!"
+	icon = 'icons/obj/card.dmi'
+	icon_state = "data_1"
+	item_state = "card-id"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+

@@ -13,12 +13,12 @@ SUBSYSTEM_DEF(itemspawners)
 	var/from_trash = FALSE
 
 /datum/controller/subsystem/itemspawners/proc/restock_trash_piles()
-	for(var/obj/item/storage/trash_stack/TS in GLOB.trash_piles)
-		TS.loot_players.Cut() //This culls a list safely
-		CHECK_TICK
-		for(var/obj/item/A in TS.loc.contents)
-			if(A.from_trash)
-				qdel(A)
+	for(var/datum/weakref/TS in GLOB.trash_piles)
+		var/obj/item/storage/trash_stack/tresh = TS?.resolve()
+		if(!tresh)
+			GLOB.trash_piles -= TS
+			continue
+		tresh.cleanup()
 
 //Called when a human swaps hands to a hand which is holding this item
 /obj/item/proc/swapped_to(mob/user)

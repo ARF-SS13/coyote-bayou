@@ -9,18 +9,18 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 25
+	force_unwielded = 25
 	force_wielded = 47
 	throwforce = 23
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "have'd at the")
 	hitsound = 'sound/weapons/slice.ogg'
 	block_chance = 5
 
-/obj/item/melee/coyote/harpoon 
+/obj/item/melee/coyote/harpoon
 	name = "old harpoon"
 	desc = "White whale, holy grail."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -31,15 +31,16 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 2
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/katanaold //Technically a worse scrap sabre, but stylistic as shit so eat my ass I guess ~TK
 	name = "old katana"
@@ -53,11 +54,11 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 28
+	force_unwielded = 28
 	force_wielded = 38
 	throwforce = 23
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
@@ -65,7 +66,7 @@
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 15
 
-/obj/item/melee/coyote/wakazashiold 
+/obj/item/melee/coyote/wakazashiold
 	name = "old wakazashi"
 	desc = "Sharp, and well cared for. Such a strange blade in this land."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -76,19 +77,19 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 28
 	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
 
-/obj/item/melee/coyote/tantoold 
+/obj/item/melee/coyote/tantoold
 	name = "old tanto"
 	desc = "Sharp, and well cared for. This small blade carries a lot of weight for its size."
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -99,19 +100,19 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 15
+	force_unwielded = 15
 	force_wielded = 22
 	throwforce = 15
 	wound_bonus = 10
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 5
 
-/obj/item/melee/coyote/combataxe 
+/obj/item/melee/coyote/combataxe
 	name = "Combat Axe"
 	desc = "An axe made specifically for more modern combats, its got a handguard!"
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
@@ -122,11 +123,11 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 25
+	force_unwielded = 25
 	force_wielded = 35
 	throwforce = 30
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "hacked")
@@ -145,13 +146,13 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 28
 	throwforce = 20
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slashed", "sliced", "ginsu'd")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -169,11 +170,11 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
+	force_unwielded = 28
 	force_wielded = 35
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
@@ -192,13 +193,13 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 10 //Needs to be wielded
+	force_unwielded = 10
 	force_wielded = 55
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("slashed", "sliced", "smashed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.8
@@ -215,13 +216,13 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 10 //Needs to be wielded
+	force_unwielded = 10
 	force_wielded = 55
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_NONE
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("slashed", "sliced", "smashed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.8
@@ -238,13 +239,13 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 10 //Needs to be wielded
+	force_unwielded = 10
 	force_wielded = 65
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 2.5
@@ -259,16 +260,22 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 25
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_NONE
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
+
+/obj/item/melee/coyote/club/mace
+	name = "mace"
+	desc = "A fucking metal whacking stick. Whack them with it."
+	icon_state = "mace"
+	item_state = "mace"
 
 /obj/item/melee/coyote/bigclub
 	name = "big club"
@@ -280,11 +287,11 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	force = 25
+	force_unwielded = 25
 	force_wielded = 40
 	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("wrecked", "bashed", "smashed")
@@ -303,17 +310,35 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
+	force_unwielded = 28
 	force_wielded = 35
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "swashbuckled")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.9
 	block_chance = 8
+
+/obj/item/melee/coyote/oldlongsword/kuddleslongsword
+	name = "Break of Dawn"
+	desc = "This brilliant sword has had its link severed from its source of power, in such a way it can't even call out to the being that forged it. Despite being deprived of its magic, the blade's razor sharp edge never dulls and the light of its crystal never extinguishes. An artifact of its wielder's faith."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "dawnbreaker"
+	light_system = MOVABLE_LIGHT
+	light_range = 3
+	light_on = FALSE
+
+/obj/item/melee/coyote/oldlongsword/kuddleslongsword/Initialize()
+	. = ..()
+	set_light_on(TRUE)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/melee/coyote/oldlongsword/kuddleslongsword/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/item/melee/coyote/oldhalberd
 	name = "Old Halberd"
@@ -327,15 +352,16 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 2
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldpike
 	name = "Old Pike"
@@ -349,17 +375,17 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	min_reach = 2
-	max_reach = 3
-	sharpness = SHARP_EDGED
+	sharpness = SHARP_POINTY
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 1.5
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldnaginata
 	name = "Old Naginata"
@@ -373,16 +399,17 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 20
+	force_unwielded = 20
 	force_wielded = 40
 	throwforce = 35
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 2
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	block_chance = 10
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldashandarei
 	name = "Old Ashandarei"
@@ -396,17 +423,17 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 18
+	force_unwielded = 18
 	force_wielded = 35
 	throwforce = 30
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 1
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("impaled", "gored", "stabbed")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.8
-	block_chance = 5
+	block_chance = 15
 
 /obj/item/melee/coyote/macuahuitl
 	name = "Macuahuitl"
@@ -419,11 +446,11 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 20
+	force_unwielded = 20
 	force_wielded = 30
 	throwforce = 25
 	wound_bonus = 20
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("batter-gashed", "sliced", "diced")
@@ -441,14 +468,164 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 28
+	force_unwielded = 28
 	force_wielded = 38
 	throwforce = 28
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 0
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "chopped")
 	hitsound = 'sound/weapons/slice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.9
 	block_chance = 8
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff
+	name = "Old Quarterstaff"
+	desc = "That's a pole, it's for whomping."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "quarterstaff"
+	item_state = "quarterstaff"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 10
+	force_unwielded = 10
+	force_wielded = 20
+	throwforce = 15
+	wound_bonus = 15
+	stam_dmg = 30
+	bare_wound_bonus = 10
+	sharpness = SHARP_NONE
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("slashed", "sliced", "chopped")
+	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.7
+	block_chance = 15
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken
+	name = "Old Bokken"
+	desc = "That's a wooden... sword? For beating up idiots?"
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "bokken"
+	item_state = "bokken"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 10
+	force_unwielded = 10
+	force_wielded = 20
+	throwforce = 15
+	wound_bonus = 15
+	stam_dmg = 30
+	bare_wound_bonus = 10
+	sharpness = SHARP_NONE
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("slashed", "sliced", "chopped")
+	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.7
+	block_chance = 15
+
+
+/obj/item/melee/coyote/olddervish
+	name = "Old Dervish Blade"
+	desc = "Shall we dance the dance of death, wetlander?"
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "umar_sword"
+	item_state = "umar_sword"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 28
+	force_unwielded = 28
+	force_wielded = 38
+	throwforce = 28
+	wound_bonus = 15
+	bare_wound_bonus = 10
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("slashed", "sliced", "chopped")
+	hitsound = 'sound/weapons/slice.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.9
+	block_chance = 8
+
+/obj/item/melee/coyote/oldpike/sarissa
+	name = "Old Sarissa"
+	desc = "The clouds are blotting out the sun today. We can fight in the shade."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "sarissa"
+	item_state = "sarissa"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+
+/obj/item/melee/coyote/oldlongsword/spadroon
+	name = "Old Spadroon"
+	desc = "A soldiers sword, with tight tolerances."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "spadroon"
+	item_state = "spadroon"
+
+/obj/item/melee/coyote/oldlongsword/broadsword
+	name = "Old Broadsword"
+	desc = "A wide blade for a deep wound."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "broadsword"
+	item_state = "broadsword"
+
+/obj/item/melee/coyote/oldlongsword/armingsword
+	name = "Old Arming Sword"
+	desc = "Disclaimer: Not all that great at chopping arms off."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "armingsword"
+	item_state = "armingsword"
+
+/obj/item/melee/coyote/oldlongsword/longquan
+	name = "Old Chinese Sword"
+	desc = "The Communist blade cuts on both sides, or something."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "longquan"
+	item_state = "longquan"
+
+/obj/item/melee/coyote/oldlongsword/xiphos
+	name = "Old Xiphos"
+	desc = "For what some of its owners may have done in the past this thing ain't all that great."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "xiphos"
+	item_state = "xiphos"
+
+//danimaul//
+//why am I making this
+//please no
+
+/obj/item/melee/coyote/danhead
+	name = "dan's head on a stick"
+	icon = 'modular_coyote/icons/objects/danimaul.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/danimaulinhandleft.dmi'
+	righthand_file = 'modular_coyote/icons/objects/danimaulinhandright.dmi'
+	icon_state = "danimauler"
+	item_state = "danimauler"
+	force = 5
+	force_unwielded = 5
+	force_wielded = 10
+	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
+
+/obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(100, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+
+
+
+

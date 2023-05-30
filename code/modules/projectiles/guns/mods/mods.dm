@@ -51,7 +51,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -65,7 +65,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 0.2,
+	//	GUN_UPGRADE_PEN_MULT = 0.2,
 		GUN_UPGRADE_RICO_MULT = 5,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1.4,
 		GUN_UPGRADE_RECOIL = 1.4
@@ -84,7 +84,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.25,
-		GUN_UPGRADE_CHARGECOST = 1.4
+		GUN_UPGRADE_RECOIL = 1.6,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.6
+		//GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
@@ -102,8 +104,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
-		GUN_UPGRADE_FORCESAFETY = FALSE
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+		GUN_UPGRADE_FORCESAFETY = FALSE,
+		GUN_UPGRADE_RECOIL = 1.3,
 		)
 	I.gun_loc_tag = GUN_TRIGGER
 
@@ -344,7 +347,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.7
+		GUN_UPGRADE_FIRE_DELAY = 0.8
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
@@ -357,7 +360,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.7
+		GUN_UPGRADE_FIRE_DELAY = 0.8
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_BARREL
@@ -393,6 +396,7 @@
 /obj/item/gun_upgrade/scope/better
 	name = "Pre-war sniper scope"
 	desc = "A high resolution scope"
+	icon_state = "Killer"
 
 /obj/item/gun_upgrade/scope/better/New()
 	..()
@@ -416,7 +420,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		//GUN_UPGRADE_PEN_MULT = 1.2,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5
 		)
@@ -457,9 +461,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 1.30,
-	GUN_UPGRADE_CHARGECOST = 1.5)
+	GUN_UPGRADE_RECOIL = 1.75,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
+	GUN_UPGRADE_DAMAGE_MULT = 1.30)
+	//GUN_UPGRADE_CHARGECOST = 1.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
@@ -475,7 +480,8 @@
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 0.9, // lowering the power output of the weapon should realistically lower the recoil - risingstarslash
 	GUN_UPGRADE_DAMAGE_MULT = 0.5,
-	GUN_UPGRADE_CHARGECOST = 0.65)
+	GUN_UPGRADE_FIRE_DELAY_MULT = 0.6)
+	//GUN_UPGRADE_CHARGECOST = 0.65)
 	//GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -529,7 +535,7 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MECHANISM
 */
-
+/* stupid
 /obj/item/gun_upgrade/barrel/gauss
 	name = "Chinese Anti-Material Gauss barrel"
 	desc = "A portable, attachable version of a large caliber gauss rifle. Made in China."
@@ -547,4 +553,4 @@
 	I.removal_time *= 10
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
-
+*/

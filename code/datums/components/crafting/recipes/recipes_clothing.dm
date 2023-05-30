@@ -327,6 +327,131 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 
+///////////
+//GLASSES//
+///////////
+
+/datum/crafting_recipe/glassupgr01
+	name = "Prescription Geist Gazers"
+	result = /obj/item/clothing/glasses/geist_gazers/upgr
+	reqs = list(/obj/item/clothing/glasses/geist_gazers = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/* /datum/crafting_recipe/glassupgr02
+	name = "Prescription Pysch Glasses"
+	result = /obj/item/clothing/glasses/psych/upgr
+	reqs = list(/obj/item/clothing/glasses/psych = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES */
+
+/datum/crafting_recipe/glassupgr03
+	name = "Prescription Biker Goggles"
+	result = /obj/item/clothing/glasses/f13/biker/upgr
+	reqs = list(/obj/item/clothing/glasses/f13/biker/ = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr04
+	name = "Prescription Sandstorm Goggles"
+	result = /obj/item/clothing/glasses/legiongoggles/upgr
+	reqs = list(/obj/item/clothing/glasses/legiongoggles = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr05
+	name = "Prescription Hipster Glasses"
+	result = /obj/item/clothing/glasses/regular/hipster/upgr
+	reqs = list(/obj/item/clothing/glasses/regular/hipster = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr06
+	name = "Prescription Jamjar Glasses"
+	result = /obj/item/clothing/glasses/regular/jamjar/upgr
+	reqs = list(/obj/item/clothing/glasses/regular/jamjar = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr07
+	name = "Prescription Circle Glasses"
+	result = /obj/item/clothing/glasses/regular/circle/upgr
+	reqs = list(/obj/item/clothing/glasses/regular/circle = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr08
+	name = "Prescription Orange Glasses"
+	result = /obj/item/clothing/glasses/orange/upgr
+	reqs = list(/obj/item/clothing/glasses/orange = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr09
+	name = "Prescription Red Glasses"
+	result = /obj/item/clothing/glasses/red/upgr
+	reqs = list(/obj/item/clothing/glasses/red = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr10
+	name = "Prescription Heat Goggles"
+	result = /obj/item/clothing/glasses/heat/upgr
+	reqs = list(/obj/item/clothing/glasses/heat = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/glassupgr11
+	name = "Prescription Cold Goggles"
+	result = /obj/item/clothing/glasses/cold/upgr
+	reqs = list(/obj/item/clothing/glasses/cold = 1,
+				/obj/item/clothing/glasses/regular = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
 /*
 /datum/crafting_recipe/armwraps
 	name = "Armwraps"

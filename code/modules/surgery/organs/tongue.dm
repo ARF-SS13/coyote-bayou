@@ -9,10 +9,13 @@
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")
 	var/list/languages_possible
 	var/say_mod = null
-	var/taste_sensitivity = 15 // lower is more sensitive.
+	///lower is more sensitive.
+	var/taste_sensitivity = 15
 	maxHealth = TONGUE_MAX_HEALTH
-	var/list/initial_accents //the ones the tongue starts with, not what it currently has
-	var/list/accents = list() //done in order of priority (please always apply abductor accent and stuttering last)
+	///the ones the tongue starts with, not what it currently has
+	var/list/initial_accents
+	///done in order of priority (please always apply abductor accent and stuttering last)
+	var/list/accents = list()
 	var/static/list/languages_possible_base = typecacheof(list(
 		/datum/language/common,
 		/datum/language/draconic,
@@ -26,6 +29,7 @@
 		/datum/language/vampiric,
 		/datum/language/dwarf,
 		/datum/language/tribal,
+		/datum/language/signlanguage,
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
@@ -34,9 +38,9 @@
 	/// How much licking someone should heal someone
 	var/lick_heal_burn
 	/// What kind of bandage is applied by licking someone
-	var/obj/item/stack/medical/gauze/lick_bandage
+	//	var/obj/item/stack/medical/gauze/lick_bandage
 	/// What kind of healpack is applied by licking someone
-	var/obj/item/stack/medical/bruise_pack/lick_healer
+	// var/obj/item/stack/medical/bruise_pack/lick_healer
 
 /obj/item/organ/tongue/Initialize(mapload)
 	. = ..()
@@ -49,30 +53,31 @@
 	now_failing = span_warning("Your [name] feels like it's about to fall out!.")
 	now_fixed = span_info("The excruciating pain of your [name] has subsided.")
 	languages_possible = languages_possible_base
-	if(lick_bandage) // ew
-		initialize_bandage(lick_bandage)
-	if(lick_healer) // ew
-		initialize_lickpack(lick_healer)
+	// if(lick_bandage) // ew
+	// 	initialize_bandage(lick_bandage)
+	// if(lick_healer) // ew
+	// 	initialize_lickpack(lick_healer)
 
 /obj/item/organ/tongue/Destroy()
 	. = ..()
-	if(istype(lick_bandage))
-		QDEL_NULL(lick_bandage)
-	if(istype(lick_healer))
-		QDEL_NULL(lick_healer)
+	// if(istype(lick_bandage))
+	// 	QDEL_NULL(lick_bandage)
+	// if(istype(lick_healer))
+	// 	QDEL_NULL(lick_healer)
 
 /// Makes a tongue have a bandage in it, so it can lick wounds and apply some kind of bandage
+/*
 /obj/item/organ/tongue/proc/initialize_bandage(obj/item/stack/medical/gauze/lick_gauze)
 	if(!lick_gauze)
 		return FALSE
 	lick_bandage = new lick_gauze(src)
 	return TRUE
-
+*/
 /// Makes a tongue have a bandage in it, so it can lick wounds and apply some kind of bandage
 /obj/item/organ/tongue/proc/initialize_lickpack(obj/item/stack/medical/bruise_pack/lick_pack)
 	if(!lick_pack)
 		return FALSE
-	lick_healer = new lick_pack(src)
+	//lick_healer = new lick_pack(src)
 	return TRUE
 
 /obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args) //this wont proc unless there's initial_accents on the tongue
@@ -91,15 +96,16 @@
 	if(say_mod && M.dna && M.dna.species)
 		M.dna.species.say_mod = say_mod
 	if(length(initial_accents) || length(accents))
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
-	M.UnregisterSignal(M, COMSIG_MOB_SAY)
+		//M.UnregisterSignal(M, COMSIG_MOB_SAY)
+		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech, override = TRUE)
+
 
 /obj/item/organ/tongue/Remove(special = FALSE)
 	if(!QDELETED(owner))
 		if(say_mod && owner.dna?.species)
 			owner.dna.species.say_mod = initial(owner.dna.species.say_mod)
 		UnregisterSignal(owner, COMSIG_MOB_SAY, .proc/handle_speech)
-		owner.RegisterSignal(owner, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
+		//owner.RegisterSignal(owner, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
 	return ..()
 
 /obj/item/organ/tongue/could_speak_language(language)
@@ -120,7 +126,7 @@
 	say_mod = "purrs"
 	lick_heal_brute = 1
 	lick_heal_burn = 1
-	lick_bandage = /obj/item/stack/medical/gauze/lick
+//	lick_bandage = /obj/item/stack/medical/gauze/lick
 
 /obj/item/organ/tongue/cat
 	name = "cat tongue"
@@ -319,22 +325,64 @@
 	languages_possible = languages_possible_ethereal
 
 /obj/item/organ/tongue/french
-	name = "A somehow french tongue"
-	desc = "A tongue that is quite human like, but is used to the french accent."
+	name = "\improper French tongue"
+	desc = "A tongue that is quite human-like, but speaks with a French accent."
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/french)
 
 /obj/item/organ/tongue/scottish
-	name = "A somehow scottish tongue"
-	desc = "A tongue that is quite human like, but is used to the scottish accent."
+	name = "\improper Scottish tongue"
+	desc = "A tongue that is quite human-like, but speaks with a Scottish accent."
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/scottish)
 
 /obj/item/organ/tongue/bug
-	name = "A buggish tongue"
-	desc = "A tongue that is quite human like, but is used to the bug accent."
+	name = "\improper buggish tongue"
+	desc = "A tongue that is quite human-like, but speaks with a bug accent."
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/bug)
+
+/obj/item/organ/tongue/dutch
+	name = "\improper Dutch tongue"
+	desc = "A tongue that is quite human-like, but speaks with a Dutch accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/dutch)
+
+/obj/item/organ/tongue/redriver
+	name = "\improper Red Riverian tongue"
+	desc = "A tongue that is quite human-like, but speaks with a Red River basin accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/redriver)
+
+/obj/item/organ/tongue/swedish
+	name = "\improper Swedish tongue"
+	desc = "A tongue that is quite human-like, but speaks with a Swedish accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/swedish)
+
+/obj/item/organ/tongue/chinese
+	name = "\improper Chinese tongue"
+	desc = "A tongue that is quite human-like, but speaks with a Chinese accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/chinese)
+
+/obj/item/organ/tongue/japanese
+	name = "\improper Japanese tongue"
+	desc = "A tongue that is quite human-like, but speaks with a Japanese accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/japanese)
+
+/obj/item/organ/tongue/irish
+	name = "\improper Irish tongue"
+	desc = "A tongue that is quite human-like, but speaks with an Irish accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/irish)

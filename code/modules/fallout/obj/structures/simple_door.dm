@@ -33,10 +33,15 @@
 	var/opening_time = 2
 	var/closing_time = 4
 
+	//Multi-tile doors
+	dir = EAST
+	///How wide this door is, measured in tiles.
+	var/width = 1
+
 /obj/structure/simple_door/Initialize()
 	. = ..()
 	icon_state = door_type
-
+	SetBounds()
 
 /obj/structure/simple_door/Destroy()
 	if(padlock)
@@ -48,24 +53,46 @@
 	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
 	return ..()
 
+/obj/structure/simple_door/proc/SetBounds()
+	if(width>1)
+		if(dir in list(EAST, WEST))
+			bound_width = width * world.icon_size
+			bound_height = world.icon_size
+		else
+			bound_width = world.icon_size
+			bound_height = width * world.icon_size
+		apply_opacity_to_my_turfs(opacity)
+
+/obj/structure/simple_door/proc/apply_opacity_to_my_turfs(new_opacity)
+	for(var/turf/T in locs)
+		T.set_opacity(new_opacity)
+
+/obj/structure/simple_door/set_opacity(new_opacity)
+	. = ..()
+	apply_opacity_to_my_turfs(new_opacity)
+
 /obj/structure/simple_door/proc/attach_padlock(obj/item/lock_construct/P, force = FALSE, mob/user)
 	if(!force && (!can_hold_padlock || !P ))
 		return FALSE
 	if(padlock)
 		to_chat(user, "[src] already has \a [padlock] attached")
 		return FALSE
-	padlock = P
-	padlock.forceMove(src)
-	add_cached_overlay("padlock", "[initial(icon_state)]_padlock")
+	if(user.transferItemToLoc(P, src))
+		user.visible_message(span_notice("[user] adds [P] to [src]."),span_notice("You add [P] to [src]."))
+		padlock = P
+		desc = "[src.desc] Has a lock."
+		if(density)
+			add_overlay("[initial(icon_state)]_padlock")
+		return TRUE
 
 /obj/structure/simple_door/proc/remove_padlock(force = FALSE)
 	if(!force && (!padlock))
 		return FALSE
 	padlock.forceMove(get_turf(src))
 	padlock = null
-	remove_cached_overlay("padlock")
+	cut_overlay("[initial(icon_state)]_padlock")
 
-
+//Very useful proc we have here, excellent work on that one
 /obj/structure/simple_door/bullet_act(obj/item/projectile/Proj)
 	..()
 
@@ -80,6 +107,8 @@
 
 /obj/structure/simple_door/proc/Open(animate)
 	playsound(src.loc, open_sound, 30, 0, 0)
+	if(padlock)
+		cut_overlay("[initial(icon_state)]_padlock")
 	if(animate)
 		moving = 1
 		flick("[door_type]opening", src)
@@ -99,6 +128,8 @@
 		sleep(closing_time)
 	icon_state = door_type
 	set_opacity(base_opacity)
+	if(padlock)
+		add_overlay("[initial(icon_state)]_padlock")
 	density = 1
 	moving = 0
 	layer = CLOSED_DOOR_LAYER
@@ -107,7 +138,7 @@
 /obj/structure/simple_door/proc/try_to_crowbar(obj/item/I, mob/user)
 	if(padlock) /* attempt to pry the lock off */
 		if(padlock.pry_off(user,src))
-			qdel(padlock)
+			remove_padlock()
 			padlock = null
 			src.desc = "[initial(desc)]"
 	return
@@ -164,6 +195,9 @@
 				*/
 				//I'll deal with that shit later -harcourt
 	if(istype(I, /obj/item/lock_construct) && can_hold_padlock)
+		if(attach_padlock(I,FALSE,user))
+			return TRUE//Don't open the door when we add a padlock
+		/*
 		if(padlock)
 			to_chat(user, "[src] already has \a [padlock] attached")
 			return
@@ -174,6 +208,7 @@
 				if (istype(I, /obj/item/lock_construct))
 					desc = "[src.desc] Has a lock."//Fuck it im not doing this bullshit tonight. This will do. :) -with love, harcourt
 				padlock = I
+		*/
 	if(istype(I, /obj/item/key))
 		if(!padlock)
 			to_chat(user, "[src] has no lock attached")
@@ -247,14 +282,14 @@
 //	WOODEN DOORS
 
 // weathered white door
-/obj/structure/simple_door/house 
+/obj/structure/simple_door/house
 	icon_state = "house"
 	door_type = "house"
 	can_disasemble = TRUE
 	can_hold_padlock = TRUE
 
 // cleaned and repainted white
-/obj/structure/simple_door/house/clean 
+/obj/structure/simple_door/house/clean
 	icon_state = "houseclean"
 	door_type = "houseclean"
 
@@ -271,6 +306,27 @@
 	door_type = "interior"
 	can_disasemble = 1
 	can_hold_padlock = TRUE
+
+//Example wide doors with terrible sprites but you get the idea
+/obj/structure/simple_door/twowide_example
+	icon = 'icons/fallout/structures/doors_2wide.dmi'
+	name = "wide example door"
+	desc = "Is that just two doors glued together? How come when you open one, the other opens?"
+	icon_state = "interior"
+	door_type = "interior"
+	can_disasemble = 1
+	can_hold_padlock = TRUE
+	width = 2
+
+/obj/structure/simple_door/threewide_example
+	icon = 'icons/fallout/structures/doors_3wide.dmi'
+	name = "wider example door"
+	desc = "God has abandoned us."
+	icon_state = "interior"
+	door_type = "interior"
+	can_disasemble = 1
+	can_hold_padlock = TRUE
+	width = 3
 
 /obj/structure/simple_door/room
 	icon_state = "room"
@@ -360,7 +416,7 @@
 	base_opacity = FALSE
 	can_hold_padlock = TRUE
 	proj_pass_rate = 95
-	pass_flags = LETPASSTHROW 
+	pass_flags = LETPASSTHROW
 
 /obj/structure/simple_door/dirtyglass
 	desc = "The glass is dirty, you can't see a thing behind it."
@@ -400,6 +456,23 @@
 	can_disasemble = 1
 	can_hold_padlock = TRUE
 
+/obj/structure/simple_door/wood/alt/window
+	icon = 'icons/fallout/structures/doors.dmi'
+	icon_state = "housedoor"
+	door_type = "housedoor"
+	opacity = TRUE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_hold_padlock = TRUE
+
+/obj/structure/simple_door/wood/alt
+	icon = 'icons/fallout/structures/doors.dmi'
+	icon_state = "private"
+	door_type = "private"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_disasemble = 1
+	can_hold_padlock = TRUE
 
 // --------------------------------------
 //	BUNKER DOORS

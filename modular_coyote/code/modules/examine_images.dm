@@ -41,7 +41,7 @@
 	return output
 
 // Mob definitions!!!
-/mob/living/carbon/human
+/mob
 	var/profilePicture
 
 /mob/living/carbon/human/verb/SetProfilePic()
@@ -51,7 +51,7 @@
 	if(!client)
 		return
 	
-	var/input = stripped_input(usr,"Right click an image from discord (do not expand the image by clicking it) and click 'Copy Link' and paste it here. Must be a png", i_will_sanitize_dont_worry = TRUE)
+	var/input = stripped_input(usr,"Right click an image from discord (do not expand the image by clicking it) and click 'Copy Link' and paste it here. Must be a png. Preferred image size: 500x500 or smaller.", i_will_sanitize_dont_worry = TRUE)
 	if(length(input))	
 		if(!SanitizeDiscordLink(input))
 			to_chat(usr, span_warning("Link is incorrect, make sure you just right click the image in discord and copy link, do NOT click it to expand the image. It must end in '.png'"))
@@ -132,6 +132,17 @@
 						var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
 						if(deletePicture == "Yes")
 							profilePicture = ""
+				if("CreatureProfilePicture")
+					var/input = stripped_input(usr,"Right click an image from discord (do not expand the image by clicking it) and click 'Copy Link' and paste it here. Must be a png", i_will_sanitize_dont_worry = TRUE)
+					if(input)	
+						if(SanitizeDiscordLink(input))
+							creature_profilepic = StoreDiscordLink(input)
+						else
+							to_chat(usr, span_warning("Link is incorrect, make sure you just right click the image in discord and copy link, do NOT click it to expand the image. It must end in '.png'"))
+					else
+						var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
+						if(deletePicture == "Yes")
+							creature_profilepic = ""
 
 	..()
 

@@ -439,7 +439,7 @@
 //Compact RCW
 
 /obj/item/gun/energy/laser/auto
-	name = "compact rcw"
+	name = "compact RCW"
 	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "protolaser"
@@ -453,6 +453,16 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
+
+/obj/item/gun/energy/laser/auto/twin
+	name = "twin-shot RCW carbine"
+	desc = "Made by Lone Star Armories, this variant of the compact RCW ironically fires two star-shaped laser blasts in quick succession."
+	icon_state = "export_cannon"
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot) // 1200 damage per cell vs Tesla Autoshock's 1196
+	init_firemodes = list(
+		/datum/firemode/burst/two/fastest
+	)
+
 //Worn compact RCW
 /obj/item/gun/energy/laser/auto/worn
 	name = "worn compact rcw"
@@ -608,7 +618,7 @@
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. Fast firing, but not very powerful."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "laser"
-	item_state = "laser-rifle9"
+	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	fire_delay = 1
@@ -734,7 +744,7 @@
 	name = "\improper AER14 laser rifle"
 	desc = "A bleeding-edge, pre-war laser rifle. Extremely powerful, but eats MFCs like nothing else."
 	icon_state = "aer14"
-	item_state = "laser-rifle9"
+	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	scope_state = "AEP7_scope"

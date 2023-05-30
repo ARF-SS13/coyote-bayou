@@ -24,6 +24,7 @@
 	icon_state = "roundlight"
 
 //christ this was a mistake, but it's here just in case someone wants to selectively fix -- Pooj
+//I told you that fucking 7 years ago you insufferable cunt. ~Tk420634
 /************* Lizard compatable snoots ***********
 /datum/sprite_accessory/snouts/bird
 	name = "Beak"
@@ -705,3 +706,8 @@
 	name = "tajaran short"
 	icon_state = "tajaranshort"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/cow
+	name = "cow"
+	icon_state = "cow"
+	matrixed_sections = MATRIX_ALL
