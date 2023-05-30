@@ -38,10 +38,12 @@
 		return
 	switch(action)
 		if("NextPage")
-			page = max(page + 1, SScool_books.get_max_pages(book_key, chapter))
+			page++
+			page = clamp(page, 1, SScool_books.get_max_pages(book_key, chapter))
 			return TRUE
 		if("PrevPage")
-			page = max(page - 1, 1)
+			page--
+			page = max(page, 1)
 			return TRUE
 		if("SetChapter")
 			chapter = params["Chapter2Set"]

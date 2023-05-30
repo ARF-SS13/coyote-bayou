@@ -1,5 +1,13 @@
 {
 	"title" : "My first blog post",
+	"top_images" : {
+		"1" : {"image" : "croppedChatlogs.png", "resize" : "fit"},
+		"2" : {"image" : "croppedCyan.png", "resize" : "fit"}
+	},
+	"bottom_images" : {
+		"1" : {"image" : "croppedCyan.png", "resize" : "stretch"},
+		"2" : {"image" : "croppedGadget.png", "resize" : "stretch"}
+	},
 	"content" : [
 		"This is my first blog post. I hope you like it! :)",
 		"Just kidding this is just an example json chapter for COOLBOOKs!",
@@ -14,10 +22,20 @@
 		"you can also use markdown in your books, which is pretty cool.",
 		"just kidding, you can't use markdown. I'm not that good a coder!",
 		"but you can use html, which is pretty cool.",
+		"--PAGEBREAK--",
 		"you can also use html to make your books look nicer.",
 		"and in addition to that, you can use HTML. It's pretty cool.",
 		"But you know whats <b>even cooler</b>? You can use HTML!",
 		"",
-		"That last paragraph had an HTML in it, did you see it?"
+		"That last paragraph had an HTML in it, did you see it?",
+		"you can also use html to make your books look nicer.",
+		"and in addition to that, you can use HTML. It's pretty cool.",
+		"But you know whats <b>even cooler</b>? You can use HTML!",
+		"",
+		"That last paragraph had an HTML in it, did you see it?",
+		"cus i saw it",
+		"and it was pretty cool",
+		"and in addition to that, you can use HTML. It's pretty cool.",
+		"okaybye!!"
 	]
 }

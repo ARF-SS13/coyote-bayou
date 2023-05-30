@@ -25,12 +25,14 @@ These hold the actual text of the book, and accept HTML for the most part.
 Blank lines will add <br><br>, so it'll break up your paragraphs for you. You can add <br> manually, but it'll just add another line break.
 As chapters can be made from .txt or .json, there are two ways to format them.
 The title of the chapter is also used as the key index for the chapter, so it must be unique.
+They support images, but only on the top and/or bottom of the page. No idea how to make them work in the middle of the page without looking horrible.
 
 #### chapter.txt
 This is the simplest way to make a chapter. It's just a text file full of text. You can use HTML tags to format it, if you want.
 You can set the chapter title by having a line that starts with %TITLE: and then the title of the chapter. Don't put a space between the colon and the title.
 You can force a page break by having a line that is just --PAGEBREAK-- on it's own line. This will force the next line to be on a new page.
 If no --PAGEBREAK--s appear, the chapter will be split into pages automatically. Typically after 20 lines in the file.
+Images are loaded by 
 Everything else that isn't a title or a page break will be treated as text. That's it!
 
 #### chapter.json

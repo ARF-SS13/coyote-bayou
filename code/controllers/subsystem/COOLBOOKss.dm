@@ -12,11 +12,13 @@ SUBSYSTEM_DEF(cool_books)
 	/// The list of cool_book datums
 	/// Format: list("key" = [/datum/cool_book], ...)
 	var/list/all_books = list()
+	/// Not actually used by anything, just a cool list of cool images for cool logging purposes
+	var/list/all_images = list()
 
 /datum/controller/subsystem/cool_books/Initialize()
 	var/boox = build_library()
 	. = ..()
-	to_chat(world, span_announce("Initialized [boox] COOLBOOK(s)!"))
+	to_chat(world, span_announce("Initialized [boox] COOLBOOK(s), with [LAZYLEN(all_images)] pictures!"))
 
 /// Runs through the cool_books/ directory and compiles all the JSONs into datum/cool_book
 /datum/controller/subsystem/cool_books/proc/build_library()
@@ -76,6 +78,7 @@ SUBSYSTEM_DEF(cool_books)
 	data["BookTitle"] = book.title
 	data["BookAuthor"] = book.author
 	data["BookDesc"] = book.desc
+	data["BookDirectory"] = book.book_directory
 	var/list/all_chapters = book.get_chapter_list()
 	data["AllChapters"] = all_chapters
 	var/list/all_chapter_titles = book.get_chapter_titles()
@@ -87,8 +90,15 @@ SUBSYSTEM_DEF(cool_books)
 	data["PageText"] = book.get_text(chapter, page)
 	data["PageNumber"] = page
 	data["PageTotal"] = max_pages
+	var/list/top_image = book.get_top_image(chapter, page)
+	var/list/bottom_image = book.get_bottom_image(chapter, page)
+	data["TopImage"] = LAZYACCESS(top_image, BOOK_IMG_DATA_FILENAME)
+	data["TopImageResize"] = LAZYACCESS(top_image, BOOK_IMG_DATA_RESIZE)
+	data["BottomImage"] = LAZYACCESS(bottom_image, BOOK_IMG_DATA_FILENAME)
+	data["BottomImageResize"] = LAZYACCESS(bottom_image, BOOK_IMG_DATA_RESIZE)
 	data["CanNext"] = (!isindex && page < max_pages)
 	data["CanPrev"] = (!isindex && page > 1)
+	data["IsPlayerMade"] = book.playermade
 	return data
 
 /datum/controller/subsystem/cool_books/proc/get_max_pages(book_key, chapter = BOOK_CHAPTER_INDEX)
@@ -101,23 +111,33 @@ SUBSYSTEM_DEF(cool_books)
 		CRASH("Book [book_key] does not exist!")
 	return mybook.get_max_pages(chapter)
 
+/datum/controller/subsystem/cool_books/proc/add_image_tally(cool_pic_path)
+	if(!fexists(cool_pic_path))
+		CRASH("add_image_tally() called with a path that doesn't exist! Path was [cool_pic_path]!")
+	LAZYADD(all_images, cool_pic_path)
+
 /////////////////////////////////////////////////////////////////////////////////
 /// Our COOLBOOK datum
 /datum/cool_book
 	/// Key by which this darn thing is pulled from the librawry
 	var/key
+	/// The root directory of this book
+	var/book_directory
 	/// The title of the book
 	var/title
 	/// The description of the book
 	var/desc
 	/// The author of the book
 	var/author
+	/// Is the book player-made? If so, sanitize the FUCK out of it
+	var/playermade
 	/// The pages in this book
 	/// Format: list("chapter_key" = [/datum/cool_book_page], ...")
 	var/list/chapters = list()
 
 /datum/cool_book/New(book_directory)
 	. = ..()
+	src.book_directory = book_directory
 	if(!build_book(book_directory))
 		qdel(src)
 		CRASH("COOLBOOK [book_directory] failed to load!")
@@ -170,6 +190,7 @@ SUBSYSTEM_DEF(cool_books)
 	author = LAZYACCESS(chapter_data, BOOKENTRY_AUTHOR)
 	if(!author)
 		author = "Alan Smithee"
+	playermade = LAZYACCESS(chapter_data, BOOKENTRY_PLAYERMADE)
 	return TRUE
 
 /datum/cool_book/proc/get_text(find_chapter = BOOK_CHAPTER_INDEX, page = 1)
@@ -179,20 +200,26 @@ SUBSYSTEM_DEF(cool_books)
 		return "This page (un)intentionally left blank."
 	return chapter.get_text(page)
 
-/datum/cool_book/proc/get_chapter_list()
+/datum/cool_book/proc/get_chapter_list(include_index = FALSE)
 	var/list/chapter_list = list()
 	for(var/chapter in chapters)
+		if(chapter == BOOK_CHAPTER_INDEX && !include_index)
+			continue
 		chapter_list += chapter
 	return chapter_list
 
 /datum/cool_book/proc/get_chapter_titles()
 	var/list/chapter_titles = list()
-	for(var/datum/cool_chapter/chapter in chapters)
-		if(chapter.chapter_title)
-			chapter_titles += chapter.chapter_title
+	for(var/chapter in chapters)
+		var/datum/cool_chapter/chaptie = LAZYACCESS(chapters, chapter)
+		if(!chaptie)
+			stack_trace("COOLBOOK [key] has a chapter that does not exist! [chapter]")
+			continue
+		if(chaptie.chapter_title)
+			chapter_titles += chaptie.chapter_title
 		else
-			stack_trace("COOLBOOK [key] has a chapter with no title! [chapter]")
-			chapter_titles += "Untitled Chapter [chapters.Find(chapter)]"
+			stack_trace("COOLBOOK [key] has a chapter with no title! [chaptie]")
+			chapter_titles += "Untitled Chapter [chapters.Find(chaptie)]"
 	return chapter_titles
 
 /datum/cool_book/proc/get_max_pages(find_chapter = BOOK_CHAPTER_INDEX)
@@ -203,6 +230,21 @@ SUBSYSTEM_DEF(cool_books)
 		stack_trace("COOLBOOK [key] has no chapter [find_chapter]!")
 		return 1
 	return LAZYLEN(chapter.pages)
+
+/datum/cool_book/proc/get_top_image(chapter, page)
+	var/datum/cool_chapter/chaptie = LAZYACCESS(chapters, chapter)
+	if(!chaptie)
+		stack_trace("COOLBOOK [key] has no chapter [chaptie]!")
+		return
+	return chaptie.get_top_image(page)
+
+/// yeah its the same as get_top_image, refactor it if it bothers you =3
+/datum/cool_book/proc/get_bottom_image(chapter, page)
+	var/datum/cool_chapter/chaptie = LAZYACCESS(chapters, chapter)
+	if(!chaptie)
+		stack_trace("COOLBOOK [key] has no chapter [chaptie]!")
+		return
+	return chaptie.get_bottom_image(page)
 
 /datum/cool_book/proc/is_index(find_chapter = BOOK_CHAPTER_INDEX)
 	if(!find_chapter || find_chapter == BOOK_CHAPTER_INDEX)
@@ -223,8 +265,14 @@ SUBSYSTEM_DEF(cool_books)
 /datum/cool_chapter
 	/// The key to the book this is in
 	var/book_key
+	/// The root path to the book this is in
+	var/book_directory
 	/// The title of the chapter
 	var/chapter_title
+	/// The top images
+	var/list/top_images
+	/// The bottom images
+	var/list/bottom_images
 	/// Is this our index?
 	var/is_index = FALSE
 	/// The pages in this chapter
@@ -244,6 +292,7 @@ SUBSYSTEM_DEF(cool_books)
 		stack_trace("Attempted to create a chapter with a nonexistent book! [chapter_path]")
 		qdel(src)
 	book_key = mybook.key
+	book_directory = mybook.book_directory
 	if(findtext(chapter_path, ".txt"))
 		read_txt(chapter_path, mybook)
 	else if(findtext(chapter_path, ".json"))
@@ -267,6 +316,12 @@ SUBSYSTEM_DEF(cool_books)
 		if(automatic_page_breaks && findtext(line, BOOK_CHAPTER_TOKEN_PAGEBREAK))
 			automatic_page_breaks = FALSE
 			continue
+		if(findtext(line, BOOK_TXT_IMG_TOP)) // time to run this fucker a bunch of times =3
+			extract_txt_img(line, BOOK_TXT_IMG_TOP)
+			continue
+		if(findtext(line, BOOK_TXT_IMG_BOTTOM))
+			extract_txt_img(line, BOOK_TXT_IMG_BOTTOM)
+			continue
 		text_out += line
 	if(!LAZYLEN(text_out))
 		text_out += "This chapter (un)intentionally left blank."
@@ -275,6 +330,30 @@ SUBSYSTEM_DEF(cool_books)
 		chapter_title = "Untitled Chapter [rand(1000,9999)]-[rand(1000,9999)]-[rand(1000,9999)]"
 		stack_trace("Chapter [chapter_path] has a txt chapter that lacks a chapter title! Making one up! [chapter_title]")
 	return pagify(text_out)
+
+/// Extracts an image from a txt file
+/// just like teeth
+/datum/cool_chapter/proc/extract_txt_img(line, token)
+	if(!line || !token)
+		return
+	/// should be a breeze with regex. Too bad I dont know regex!
+	var/where_split = findtext(line, ":") // everything after the colon is the filename
+	if(!where_split)
+		return
+	var/img_filename = copytext(line, where_split + 1, length(line) + 1)
+	if(!img_filename)
+		return
+	line = copytext(line, 1, where_split - 1) // everything before the colon is metadata
+	var/img_scalemode
+	if(findtext(line, BOOK_IMG_FLAG_STRETCH))
+		img_scalemode = BOOK_IMG_FLAG_STRETCH
+	else
+		img_scalemode = BOOK_IMG_FLAG_FIT
+	var/lsb = findtext(line, "\[") // to the left of the pagenumber
+	var/pipe = findtext(line, "|") // to the right of the pagenumber
+	var/img_page = copytext(line, lsb+1, pipe) // am smart
+	var/img_page_num = text2num(img_page)
+	register_image(img_filename, img_scalemode, img_page_num, token) // images in react are wierd
 
 /// If our chapter is a json, we just yoink out the data easy as
 /// Also handles defining an index as our index, since indexes are both chapters, and jsons.
@@ -295,11 +374,64 @@ SUBSYSTEM_DEF(cool_books)
 		if(!chapter_title)
 			chapter_title = "Untitled Chapter [rand(1000,9999)]-[rand(1000,9999)]-[rand(1000,9999)]"
 			stack_trace("Chapter [chapter_path] has a json chapter that lacks a chapter title! Making one up! [chapter_title]")
+	extract_json_img(jsoncontents)
 	var/list/text_out = LAZYACCESS(jsoncontents, BOOK_CHAPTER_JSON_CONTENT)
 	if(!LAZYLEN(text_out))
 		text_out += "This chapter (un)intentionally left blank."
 		stack_trace("Chapter [chapter_path] has a json chapter that lacks any text!")
 	return pagify(text_out)
+
+/// Extracts the images from a json file
+/// Thankfully much easier
+/datum/cool_chapter/proc/extract_json_img(list/jsoncontents)
+	if(!LAZYLEN(jsoncontents))
+		return
+	var/list/img_places = list()
+	if(LAZYACCESS(jsoncontents, BOOK_CHAPTER_JSON_TOP_IMAGES))
+		img_places += BOOK_CHAPTER_JSON_TOP_IMAGES
+	if(LAZYACCESS(jsoncontents, BOOK_CHAPTER_JSON_BOTTOM_IMAGES))
+		img_places += BOOK_CHAPTER_JSON_BOTTOM_IMAGES
+	if(!LAZYLEN(img_places))
+		return
+	for(var/img_place in img_places)
+		/// format: list("1" = list("image" = "mydick.png", "scalemode" = "fit))
+		var/list/which_section = LAZYACCESS(jsoncontents, img_place)
+		if(!LAZYLEN(which_section))
+			continue
+		for(var/img_page in which_section)
+			var/list/inner_list = LAZYACCESS(which_section, img_page)
+			if(!LAZYLEN(inner_list))
+				continue
+			var/img_filename = LAZYACCESS(inner_list, BOOK_IMG_DATA_FILENAME)
+			if(!img_filename)
+				continue
+			var/img_scalemode = LAZYACCESS(inner_list, BOOK_IMG_DATA_RESIZE)
+			if(!img_scalemode)
+				img_scalemode = BOOK_IMG_FLAG_FIT
+			. = register_image(img_filename, img_scalemode, img_page, img_place)
+
+/// Registers an image to a page
+/// This is a bit of a mess, but it works
+/datum/cool_chapter/proc/register_image(img_filename, img_scalemode = "fit", img_page = 1, topbottom = BOOK_TXT_IMG_TOP)
+	var/img_fullpath = "[book_directory]images/[img_filename]"
+	if(!fexists(img_fullpath))
+		return
+	if(!SSassets.transport.register_asset(img_filename, "[img_fullpath]")) // images in react are wierd
+		stack_trace("Chapter [src] has an image that failed to register! [img_filename] - [img_fullpath]")
+		return
+	/// Cool, we BYONDed out the image data stuff, now to store it
+	var/list/img_data = list()
+	img_data[BOOK_IMG_DATA_FILENAME] = img_filename
+	img_data[BOOK_IMG_DATA_RESIZE] = img_scalemode
+	switch(topbottom)
+		if(BOOK_TXT_IMG_TOP, BOOK_CHAPTER_JSON_TOP_IMAGES)
+			LAZYSET(top_images, "[img_page]", img_data)
+		if(BOOK_TXT_IMG_BOTTOM, BOOK_CHAPTER_JSON_BOTTOM_IMAGES) // TOP TEXT BOTTOM TEXT INSANITY WOLF
+			LAZYSET(bottom_images, "[img_page]", img_data)
+		else
+			stack_trace("Chapter [src] has a txt chapter with an image that is not a top or bottom image! (NO SWITCHES!!!) [img_filename]")
+	SScool_books.add_image_tally(img_fullpath)
+	return TRUE
 
 /datum/cool_chapter/proc/pagify(list/my_content)
 	LAZYINITLIST(pages)
@@ -318,7 +450,7 @@ SUBSYSTEM_DEF(cool_books)
 				page_number++
 				continue
 		if(line == "")
-			current_page += "<br><br>" // blank lines are treated as a full line break
+			current_page += "\n \n" // blank lines are treated as a full line break
 			continue
 		current_page += "[line] " // concat the line to the current page, with a space, so it looks nice
 	if(current_page != "")
@@ -334,3 +466,22 @@ SUBSYSTEM_DEF(cool_books)
 		stack_trace("Chapter [chapter_title] has no page [page]!")
 		return "This page (un)intentionally left blank."
 	return text_out
+
+/datum/cool_chapter/proc/get_top_image(page = 1)
+	if(is_index)
+		page = 1
+	page = clamp(page, 1, LAZYLEN(pages))
+	var/list/img_data = LAZYACCESS(top_images, "[page]")
+	if(LAZYLEN(img_data) != 2)
+		return
+	return img_data
+
+/// Again, refactor if it bothers you :D
+/datum/cool_chapter/proc/get_bottom_image(page = 1)
+	if(is_index)
+		page = 1
+	page = clamp(page, 1, LAZYLEN(pages))
+	var/list/img_data = LAZYACCESS(bottom_images, "[page]")
+	if(LAZYLEN(img_data) != 2)
+		return
+	return img_data
