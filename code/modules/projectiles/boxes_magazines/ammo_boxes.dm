@@ -482,6 +482,11 @@
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
+/obj/item/ammo_box/a3006box/rubber
+	name = "ammo box (.30-06 rubber)"
+	ammo_type = /obj/item/ammo_casing/a3006/rubber
+
+
 /obj/item/ammo_box/a3006box/improvised
 	name = "bag with reloaded .30-06 bullets"
 	ammo_type = /obj/item/ammo_casing/a3006/improvised
