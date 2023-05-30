@@ -1556,3 +1556,14 @@
 	item_state = "jester_muli"
 	item_color = "jester_muli"
 	can_adjust = FALSE
+
+// Bayou Stuff - started by Kelprunner
+
+/obj/item/clothing/under/tactiflannel
+	name = "mercenary flannel"
+	desc = "A pair of Tiger Stripe or Woodland camoflagued fatigue pants paired with a red flannel shirt. It looks a little worn."
+	icon_state = "tactiflannel"
+	item_state = "tactiflannel"
+	item_color = "tactiflannel"
+	can_adjust = TRUE
+	mutantrace_variation = STYLE_DIGITIGRADE

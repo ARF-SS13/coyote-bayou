@@ -90,6 +90,11 @@
 	path = /obj/item/clothing/under/f13/sleazeball
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
+/datum/gear/uniform/tactiflannel
+	name = "mercenary flannel"
+	path = /obj/item/clothing/under/tactiflannel
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
 /datum/gear/uniform/citizen
 	name = "follower volunteer uniform"
 	path = /obj/item/clothing/under/f13/follower
@@ -456,6 +461,7 @@
 	name = "yellow performer's outfit"
 	path = /obj/item/clothing/under/costume/singer/yellow
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
 
 /*
 /datum/gear/uniform/detbrown
