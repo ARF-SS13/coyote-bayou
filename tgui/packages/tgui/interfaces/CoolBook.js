@@ -102,7 +102,7 @@ const CoolImage = (props, context) => {
       {StretchFit = "cover"}
     else
       {StretchFit = "contain"}
-  const MyCoolImagePath = require(`../../../../` + Directory + "images/" + Image)
+  //const MyCoolImagePath = require(`../../../../` + Directory + "images/" + Image)
   return (
     <Fragment>
       <Box
