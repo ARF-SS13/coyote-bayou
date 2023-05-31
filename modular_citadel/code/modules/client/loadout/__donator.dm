@@ -1377,6 +1377,14 @@
 	new /obj/item/electrostaff(src)
 	new /obj/item/clothing/neck/necklace/memento_mori(src)
 
+/datum/gear/donator/kits/zombotheskunk
+	name = "Royal Kit"
+	path = /obj/item/storage/box/large/custom_kit/zombotheskunk
+	ckeywhitelist = list("ZomboTheSkunk")
+
+/obj/item/storage/box/large/custom_kit/zombotheskunk/PopulateContents()
+	new /obj/item/clothing/head/crown(src)
+
 //Mayor Kit
 
 /datum/gear/donator/kits/Mayor_kit
