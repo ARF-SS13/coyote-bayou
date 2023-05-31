@@ -521,22 +521,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		GLOB.admins -= src
 		GLOB.adminchat -= src //fortuna add
 		if (!GLOB.admins.len && SSticker.IsRoundInProgress()) //Only report this stuff if we are currently playing.
-			var/cheesy_message = pick(
-				"I have no admins online!",\
-				"I'm all alone :(",\
-				"I'm feeling lonely :(",\
-				"I'm so lonely :(",\
-				"Why does nobody love me? :(",\
-				"I want a man :(",\
-				"Where has everyone gone?",\
-				"I need a hug :(",\
-				"Someone come hold me :(",\
-				"I need someone on me :(",\
-				"What happened? Where has everyone gone?",\
-				"Forever alone :("\
-			)
-
-			send2irc("Server", "[cheesy_message] (No admins online)")
+			send2irc("Server", "No admins online") // I am sick of the cheesy quotes
 	QDEL_LIST_ASSOC_VAL(char_render_holders)
 	if(movingmob != null)
 		movingmob.client_mobs_in_contents -= mob
