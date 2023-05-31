@@ -355,9 +355,9 @@
 	icon_state = "cxsword_hilt"
 	item_state = "cxsword"
 	force = 3
-	force_on = 21
+	force_on = 55
 	throwforce = 5
-	throwforce_on = 20
+	throwforce_on = 50
 	hitsound = "swing_hit" //it starts deactivated
 	hitsound_on = 'sound/weapons/nebhit.ogg'
 	attack_verb_off = list("tapped", "poked")
@@ -437,7 +437,7 @@
 /obj/item/melee/transforming/plasmacutter/sword/cx/broken
 	name = "misaligned non-eutactic blade"
 	desc = "The Non-Eutactic Blade utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. This one seems to have a damaged handle and misaligned components, causing the blade to be unstable at best"
-	force_on = 15 //As strong a survival knife/bone dagger
+	force_on = 23 //As strong a survival knife/bone dagger
 
 /obj/item/melee/transforming/plasmacutter/sword/cx/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/melee/transforming/plasmacutter/sword/cx))
@@ -459,7 +459,7 @@
 			which utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. \
 			It appears to have a wooden grip and a shaved down guard."
 	icon_state = "cxsword_hilt_traitor"
-	force_on = 30
+	force_on = 40
 	armour_penetration = 0.65
 	embedding = list("embedded_pain_multiplier" = 10, "embed_chance" = 75, "embedded_fall_chance" = 0, "embedded_impact_pain_multiplier" = 10)
 	block_chance = 50
