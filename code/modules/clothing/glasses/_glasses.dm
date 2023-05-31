@@ -273,7 +273,7 @@
 	attack_speed = CLICK_CD_MELEE * 0.8
 	block_chance = 10
 	throw_hit_chance = 99
-
+/* // Commenting out because we can't have nice things. -Kelp
 /obj/item/clothing/glasses/sunglasses/garb/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
 	if(ishuman(thrower))
 		var/mob/living/carbon/human/H = thrower
@@ -289,7 +289,7 @@
 	else if(!thrownby)
 		return
 	return ..()
-
+*/
 /obj/item/clothing/glasses/sunglasses/garb/supergarb
 	name = "black giga gar glasses"
 	desc = "Believe in us humans."
