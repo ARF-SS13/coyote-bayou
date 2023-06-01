@@ -169,15 +169,16 @@
 
 /obj/item/shovel
 	name = "shovel"
-	desc = "A large tool for digging and moving dirt."
+	desc = "A large tool for digging and moving dirt. Also useful as a weapon if one has nothing better."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "shovel"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 23
-	force_unwielded = 23
+	w_class = WEIGHT_CLASS_BULKY
+	force = 15
+	force_unwielded = 15
 	force_wielded = 32
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 	tool_behaviour = TOOL_SHOVEL
