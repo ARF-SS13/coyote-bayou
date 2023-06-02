@@ -72,6 +72,20 @@
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
+/obj/item/ammo_casing/a3006/rubber
+	name = ".30-06 FMJ bullet casing"
+	desc = "A .30-06 FMJ bullet casing."
+	icon_state = "762-casing"
+	caliber = CALIBER_3006
+	projectile_type = /obj/item/projectile/bullet/a3006/rubber
+	material_class = BULLET_IS_HEAVY_RIFLE
+	custom_materials = list(
+		/datum/material/iron = (MATS_RIFLE_HEAVY_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_RIFLE_HEAVY_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_RIFLE_MEDIUM
+
+
 /obj/item/ammo_casing/a3006/improvised
 	name = "shoddy .30-06 bullet casing"
 	desc = "A handmade .30-06 bullet casing."
