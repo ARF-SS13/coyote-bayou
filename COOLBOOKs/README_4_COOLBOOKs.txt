@@ -42,11 +42,43 @@ The keys are as follows:
 - `content`: The content of the chapter. This is formatted sorta the same as the .txt file. Refer to the example book!
 - `autopage`: Whether or not to automatically split the chapter into pages. Also set to FALSE if any lines contain --PAGEBREAK--
 
+## Images
+You can put cool images on the tops and bottoms of pages! Max height is 150px, max width is the size of the page.
+Supported formats are .png, .jpg, and .gif. I tried webp, but it didn't work. Oh well!
+There are two ways to add images to a book: uploading them to TGS, or a URL.
+If you don't know what TGS is, or do and don't have access to it, dont worry! URLs work just fine, and in a lot of ways, are preferred.
+adding images depends on if the chapter is a json or a txt file.
+
+### TXT images
+To add an image to a txt chapter, you will need at least one line of the following format:
+%TOP_IMAGE<1|fit>:myCoolImage.png
+This will put the image `COOLBOOKs/images/myCoolImage.png` on the TOP part of page 1 of the chapter, scaled down to fit the allowed area.
+You can replace `fit` with `stretch` to make the image stretch to fill the allowed area. fit preserves the image's aspect ratio, stretch does not.
+If you want an image on the bottom of the page, just replace `TOP_IMAGE` with `BOTTOM_IMAGE`. Simple as that!
+For URL images, you'll use a similar format, but with a modification:
+%TOP_IMAGE<1|fit;URL>:https://cdn.discordapp.com/attachments/numbers/more_numbers/image.png
+This will put the image at the URL on the TOP part of page 1 of the chapter, scaled down to fit the allowed area.
+You can add in images from cdn.discordapp.com/ or media.tenor.com/
+
+### JSON images
+To add an image to a json chapter, you will need these keys:
+	"top_images" : {
+		"1" : {"image" : "croppedChatlogs.png", "resize" : "fit"},
+	},
+This will put the image `COOLBOOKs/images/croppedChatlogs.png` on the TOP part of page 1 of the chapter, scaled down to fit the allowed area.
+You can replace `fit` with `stretch` to make the image stretch to fill the allowed area. fit preserves the image's aspect ratio, stretch does not.
+If you want an image on the bottom of the page, just replace `top_images` with `bottom_images`. Simple as that!
+For URL images, you'll use a similar format, but with a modification:
+	"top_images" : {
+		"1" : {"image" : "https://cdn.discordapp.com/attachments/numbers/more_numbers/IMG_8216.jpg", "resize" : "fit", "URL" : true},
+	},
+This will put the image at the URL on the TOP part of page 1 of the chapter, scaled down to fit the allowed area.
+You can add in images from cdn.discordapp.com/ or media.tenor.com/
+
 # Notes for the future
 - Add a way to define the book's icon
 - Add a way for players to make books like these
 - Add a way to make books that are just one page
-- Add images to books
 - Add a way to make books that are just images
 
 

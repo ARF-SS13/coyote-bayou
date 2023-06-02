@@ -2,19 +2,17 @@
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from "../backend";
 import { Box, Button, Flex, Icon,  Section, Stack, Table } from "../components";
-import { resolveAsset } from '../assets';
 import { Window } from "../layouts";
 import { marked } from 'marked';
 import { sanitizeText } from '../sanitize';
-const CoolHeaderColor = 'blue';
+const CoolHeaderColor = 'green';
 const CoolContentColor = "primary";
-const CoolButtonboxWidth = "4em";
 const CoolHeadfootHeight = "4em";
 const CoolContentFontSize = "12px";
 const CoolHeadFootFontSize = "14px";
 const CoolContentButtonFontSize = "16px";
 const CoolImageMaxWidth = "400px";
-const CoolImageMaxHeight = "200px";
+const CoolImageMaxHeight = "150px";
 /**
  * There are three parts to the COOLBOOK, from top to bottom:
  * CoolBookHead - The header, which contains the return button and chapter title.
@@ -28,7 +26,7 @@ export const CoolBook = (props, context) => {
   const { act, data } = useBackend(context);
 
   return (
-    <Window width={400} height={500} resizable>
+    <Window width={400} height={600} theme="hackerman" resizable>
       <Window.Content>
         <Stack fill vertical>
           <Stack.Item>
@@ -56,9 +54,10 @@ export const CoolBookContent = (props, context) => {
   const{
     TopImage,
     TopImageResize,
+    TopImageIsURL,
     BottomImage,
     BottomImageResize,
-    BookDirectory,
+    BottomImageIsURL,
     IsIndex,
     PageText,
   } = data;
@@ -71,12 +70,12 @@ export const CoolBookContent = (props, context) => {
         fontSize={CoolContentFontSize}
         color={CoolContentColor}
         p="1em">
-        <CoolImage Directory={BookDirectory} Image={TopImage} StretchOrFit={TopImageResize} />
+        <CoolImage Image={TopImage} StretchOrFit={TopImageResize} IsURL={TopImageIsURL} />
         <Box dangerouslySetInnerHTML={FormattedText}></Box>
         <Box>
           {!!IsIndex && (<p><CoolBookTableOfContents /></p>)}
         </Box>
-        <CoolImage Directory={BookDirectory} Image={BottomImage} StretchOrFit={BottomImageResize} />
+        <CoolImage Image={BottomImage} StretchOrFit={BottomImageResize} IsURL={BottomImageIsURL} />
       </Section>
     </Fragment>
   );
@@ -89,37 +88,42 @@ export const CoolBookContent = (props, context) => {
 const CoolImage = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    Directory,
     Image,
     StretchOrFit,
+    IsURL,
   } = props;
   var StretchFit
 
   if (!Image)
     {return (null)}
-  else {
-    if (StretchOrFit === "stretch")
-      {StretchFit = "cover"}
-    else
-      {StretchFit = "contain"}
-  //const MyCoolImagePath = require(`../../../../` + Directory + "images/" + Image)
+  if (StretchOrFit === "stretch")
+    {StretchFit = "cover"}
+  else
+    {StretchFit = "contain"}
+  var ImagePath
+  if (IsURL)
+    {ImagePath = Image}
+  else
+    {ImagePath = require("/../COOLBOOKs/images/" + Image)}
   return (
     <Fragment>
       <Box
-        textAlign="center"
-        maxWidth={CoolImageMaxWidth}
-        maxHeight={CoolImageMaxHeight}>
+        width="100%"
+        height={CoolImageMaxHeight}
+        textAlign="center">
         <img
-          src={MyCoolImagePath}
-          style={{
-            width: {CoolImageMaxWidth},
-            height: {CoolImageMaxHeight},
-            objectFit: {StretchFit},
-          }}/>
+          textAlign="center"
+          src={ImagePath}
+          alt="Imagine a cool image here!"
+          width="auto"
+          height={CoolImageMaxHeight}
+          maxWidth={CoolImageMaxWidth}
+          maxHeight={CoolImageMaxHeight}
+          resizeMode={StretchFit}
+          />
       </Box>
     </Fragment>
-    );
-  };
+  );
 };
 
 /// Sanitizes and formats the text for the chapter.

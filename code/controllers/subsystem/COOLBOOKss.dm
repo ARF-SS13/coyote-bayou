@@ -27,6 +27,9 @@ SUBSYSTEM_DEF(cool_books)
 	var/list/all_book_directories = flist("[BOOKS_DIRECTORY]")
 	var/number_of_books = 0
 	for(var/hardcover in all_book_directories)
+		if(findtext(hardcover, BOOKS_DIRECTORY_IMAGES))
+			all_book_directories -= hardcover // found an image! not a directory!
+			continue // While you can put images in here, they won't be read by the system
 		if(findtext(hardcover, ".")) // If it has a period, it's a file, likely a readme or something
 			all_book_directories -= hardcover // found a file! not a directory!
 			continue // While you can put files in here, they won't be read by the system
@@ -94,8 +97,10 @@ SUBSYSTEM_DEF(cool_books)
 	var/list/bottom_image = book.get_bottom_image(chapter, page)
 	data["TopImage"] = LAZYACCESS(top_image, BOOK_IMG_DATA_FILENAME)
 	data["TopImageResize"] = LAZYACCESS(top_image, BOOK_IMG_DATA_RESIZE)
+	data["TopImageIsURL"] = LAZYACCESS(top_image, BOOK_IMG_DATA_ISURL)
 	data["BottomImage"] = LAZYACCESS(bottom_image, BOOK_IMG_DATA_FILENAME)
 	data["BottomImageResize"] = LAZYACCESS(bottom_image, BOOK_IMG_DATA_RESIZE)
+	data["BottomImageIsURL"] = LAZYACCESS(bottom_image, BOOK_IMG_DATA_ISURL)
 	data["CanNext"] = (!isindex && page < max_pages)
 	data["CanPrev"] = (!isindex && page > 1)
 	data["IsPlayerMade"] = book.playermade
@@ -112,8 +117,8 @@ SUBSYSTEM_DEF(cool_books)
 	return mybook.get_max_pages(chapter)
 
 /datum/controller/subsystem/cool_books/proc/add_image_tally(cool_pic_path)
-	if(!fexists(cool_pic_path))
-		CRASH("add_image_tally() called with a path that doesn't exist! Path was [cool_pic_path]!")
+	// if(!fexists(cool_pic_path))
+	// 	CRASH("add_image_tally() called with a path that doesn't exist! Path was [cool_pic_path]!")
 	LAZYADD(all_images, cool_pic_path)
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -349,11 +354,15 @@ SUBSYSTEM_DEF(cool_books)
 		img_scalemode = BOOK_IMG_FLAG_STRETCH
 	else
 		img_scalemode = BOOK_IMG_FLAG_FIT
-	var/lsb = findtext(line, "\[") // to the left of the pagenumber
+	var/isurl = FALSE
+	if(findtext(line, BOOK_IMG_URL)) // Our image is actually a URL (hopefully) pointing to (hopefully) an image (hopefully)
+		isurl = TRUE
+	var/lsb = findtext(line, "<") // to the left of the pagenumber
 	var/pipe = findtext(line, "|") // to the right of the pagenumber
 	var/img_page = copytext(line, lsb+1, pipe) // am smart
 	var/img_page_num = text2num(img_page)
-	register_image(img_filename, img_scalemode, img_page_num, token) // images in react are wierd
+	if(!register_image(img_filename, img_scalemode, img_page_num, token, isurl)) // images in react are wierd
+		stack_trace("Chapter [chapter_title] has a txt chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page_num] [token] [isurl]")
 
 /// If our chapter is a json, we just yoink out the data easy as
 /// Also handles defining an index as our index, since indexes are both chapters, and jsons.
@@ -408,30 +417,45 @@ SUBSYSTEM_DEF(cool_books)
 			var/img_scalemode = LAZYACCESS(inner_list, BOOK_IMG_DATA_RESIZE)
 			if(!img_scalemode)
 				img_scalemode = BOOK_IMG_FLAG_FIT
-			. = register_image(img_filename, img_scalemode, img_page, img_place)
+			var/isurl = LAZYACCESS(inner_list, BOOK_IMG_URL)
+			if(!register_image(img_filename, img_scalemode, img_page, img_place, isurl)) // images in react are wierd
+				stack_trace("Chapter [src] has a json chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page] [img_place] [isurl]")
+				continue
+			. = TRUE
 
 /// Registers an image to a page
 /// This is a bit of a mess, but it works
-/datum/cool_chapter/proc/register_image(img_filename, img_scalemode = "fit", img_page = 1, topbottom = BOOK_TXT_IMG_TOP)
-	var/img_fullpath = "[book_directory]images/[img_filename]"
-	if(!fexists(img_fullpath))
-		return
-	if(!SSassets.transport.register_asset(img_filename, "[img_fullpath]")) // images in react are wierd
-		stack_trace("Chapter [src] has an image that failed to register! [img_filename] - [img_fullpath]")
-		return
-	/// Cool, we BYONDed out the image data stuff, now to store it
+/datum/cool_chapter/proc/register_image(img_filename, img_scalemode = "fit", img_page = 1, topbottom = BOOK_TXT_IMG_TOP, isurl = FALSE)
+	var/img_fullpath
+	if(!isurl)
+		img_fullpath = "[COOLBOOK_IMG_SRC_DIR][img_filename]"
+		if(!fexists(img_fullpath))
+			CRASH("Chapter [src] has a chapter with an image that does not exist! [img_filename] [img_fullpath]")
+	else 
+		img_fullpath = img_filename
+		if(!check_img_url(img_filename))
+			CRASH("Chapter [src] has a chapter with an image URL that is not a valid URL! [img_filename]")
 	var/list/img_data = list()
 	img_data[BOOK_IMG_DATA_FILENAME] = img_filename
 	img_data[BOOK_IMG_DATA_RESIZE] = img_scalemode
+	img_data[BOOK_IMG_DATA_ISURL] = isurl
 	switch(topbottom)
 		if(BOOK_TXT_IMG_TOP, BOOK_CHAPTER_JSON_TOP_IMAGES)
 			LAZYSET(top_images, "[img_page]", img_data)
 		if(BOOK_TXT_IMG_BOTTOM, BOOK_CHAPTER_JSON_BOTTOM_IMAGES) // TOP TEXT BOTTOM TEXT INSANITY WOLF
 			LAZYSET(bottom_images, "[img_page]", img_data)
 		else
-			stack_trace("Chapter [src] has a txt chapter with an image that is not a top or bottom image! (NO SWITCHES!!!) [img_filename]")
+			CRASH("Chapter [src] has a chapter with an image that is not a top or bottom image! (NO SWITCHES!!!) [img_filename]")
 	SScool_books.add_image_tally(img_fullpath)
 	return TRUE
+
+/datum/cool_chapter/proc/check_img_url(img_fullpath)
+	for(var/prefix in BOOK_IMG_URL_PREFIXES)
+		if(!findtext(img_fullpath, prefix))
+			continue
+		for(var/suffix in BOOK_IMG_URL_SUFFIXES)
+			if(findtext(img_fullpath, suffix))
+				return TRUE
 
 /datum/cool_chapter/proc/pagify(list/my_content)
 	LAZYINITLIST(pages)
@@ -472,8 +496,6 @@ SUBSYSTEM_DEF(cool_books)
 		page = 1
 	page = clamp(page, 1, LAZYLEN(pages))
 	var/list/img_data = LAZYACCESS(top_images, "[page]")
-	if(LAZYLEN(img_data) != 2)
-		return
 	return img_data
 
 /// Again, refactor if it bothers you :D
@@ -482,6 +504,4 @@ SUBSYSTEM_DEF(cool_books)
 		page = 1
 	page = clamp(page, 1, LAZYLEN(pages))
 	var/list/img_data = LAZYACCESS(bottom_images, "[page]")
-	if(LAZYLEN(img_data) != 2)
-		return
 	return img_data
