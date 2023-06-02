@@ -174,11 +174,11 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 35
 	force_on = 40
-	tool_behaviour = TOOL_WELDER
 	throwforce = 10
 	block_chance = 20
 	throw_speed = 3
 	throw_range = 5
+	tool_behaviour = TOOL_WELDER
 	hitsound = 'sound/weapons/slash_heavy4.ogg'
 	hitsound_on = 'sound/weapons/fire03.ogg'
 	playsound(user, 'sound/weapons/match.ogg', 20, 1)
