@@ -1368,14 +1368,13 @@
 	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/storage/firstaid/emergency(src)
 
-/datum/gear/donator/kits/lucine2
+/datum/gear/donator/kits/lucine3
 	name = "Gob-lyn Muderbox"
-	path = /obj/item/storage/box/large/custom_kit/lucine2
+	path = /obj/item/storage/box/large/custom_kit/lucine3
 	ckeywhitelist = list("lucine")
 
-/obj/item/storage/box/large/custom_kit/lucine2/PopulateContents()
-	new /obj/item/electrostaff(src)
-	new /obj/item/clothing/neck/necklace/memento_mori(src)
+/obj/item/storage/box/large/custom_kit/lucine3/PopulateContents()
+	new /obj/item/melee/transforming/plasmacutter/regular/flamberg(src)
 
 /datum/gear/donator/kits/zombotheskunk
 	name = "Royal Kit"
