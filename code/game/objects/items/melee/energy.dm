@@ -178,7 +178,6 @@
 	block_chance = 20
 	hitsound = 'sound/weapons/slash_heavy4.ogg'
 	hitsound_on = 'sound/weapons/fire03.ogg'
-	playsound(user, 'sound/weapons/match.ogg', 20, 1)
 	throw_speed = 3
 	throw_range = 5
 	tool_behaviour = TOOL_WELDER
