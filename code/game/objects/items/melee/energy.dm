@@ -204,6 +204,10 @@
 	total_mass = null
 	var/active = 0
 
+	/obj/item/melee/transforming/plasmacutter/regular/flamberge/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(!active)
+		return ..()
+
 	/obj/item/melee/transforming/plasmacutter/regular/flamberge
 	active = !active
 	if (active)
