@@ -184,7 +184,7 @@
 
 /obj/item/melee/transforming/plasmacutter/regular/flamberge
 	name = "Ardent Flamberge"
-	desc = ""As the fire burns away thoughts of defeat, thoughts of victory etch themselves into the steel.""
+	desc = "As the fire burns away thoughts of defeat, thoughts of victory etch themselves into the steel." //Really threw a fit about my fucking description, nice one DM.
 	icon_state = "flamberge"
 	icon_state_on = "ardentflamberge"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
