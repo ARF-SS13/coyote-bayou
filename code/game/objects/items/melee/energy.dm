@@ -164,6 +164,32 @@
 	attack_verb_on = list()
 	light_color = "#FF0000"
 	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular/flamberge
+	name = "Ardent Flamberge"
+	desc = "As the fire burns away thoughts of defeat, thoughts of victory etch themselves into the steel." //Really threw a fit about my fucking description, nice one DM.
+	icon_state = "flamberge"
+	icon_state_on = "ardentflamberge"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 35
+	force_on = 40
+	tool_behaviour = TOOL_WELDER
+	throwforce = 10
+	block_chance = 20
+	hitsound = 'sound/weapons/slash_heavy4.ogg'
+	hitsound_on = 'sound/weapons/fire03.ogg'
+	playsound(user, 'sound/weapons/match.ogg', 20, 1)
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_BULKY
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	attack_verb_off = list("cleaved", "torn", "cut")
+	attack_verb_on = list("burned", "scorched", "roasted")
+	light_color = "#FF7700"
+	total_mass = null
+
 /obj/item/melee/transforming/plasmacutter/sword
 	name = "energy sword"
 	desc = "May the force be within you."
@@ -181,54 +207,7 @@
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/energy_sword
 	var/list/possible_colors = list("red" = LIGHT_COLOR_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
-
-/obj/item/melee/transforming/plasmacutter/regular/flamberge
-	name = "Ardent Flamberge"
-	desc = "As the fire burns away thoughts of defeat, thoughts of victory etch themselves into the steel." //Really threw a fit about my fucking description, nice one DM.
-	icon_state = "flamberge"
-	icon_state_on = "ardentflamberge"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	force = 35
-	throwforce = 10
-	block_chance = 20
-	hitsound = 'sound/weapons/slash_heavy4.ogg'
-	throw_speed = 3
-	throw_range = 5
-	w_class = WEIGHT_CLASS_BULKY
-	w_class_on = WEIGHT_CLASS_HUGE
-	flags_1 = CONDUCT_1
-	attack_verb_off = list("cleaved", "torn", "cut")
-	attack_verb_on = list("burned", "scorched", "roasted")
-	light_color = "#FF7700"
-	total_mass = null
-	var/active = 0
-
-	/obj/item/melee/transforming/plasmacutter/regular/flamberge/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if(!active)
-		return ..()
-
-	/obj/item/melee/transforming/plasmacutter/regular/flamberge
-	active = !active
-	if (active)
-		force = 40
-		icon_state = "ardentflamberge"
-		w_class = WEIGHT_CLASS_HUGE
-		tool_behaviour = TOOL_WELDER
-		throwforce = 30
-		hitsound = 'sound/weapons/fire03.ogg'
-		playsound(user, 'sound/weapons/match.ogg', 20, 1)
-		to_chat(user, span_warning("[src] is now blazing."))
-	else
-		force = 35
-		icon_state = "flamberge"
-		w_class = WEIGHT_CLASS_BULKY
-		damtype = "brute"
-		hitsound = 'sound/weapons/slash_heavy4.ogg'
-		playsound(user, 'sound/weapons/match-sizzle.ogg', 20, 1)
-		to_chat(user, span_warning("[src] has cooled off, it should be safe to conceal."))
-	return
-
+	
 /datum/block_parry_data/energy_sword
 	parry_time_windup = 0
 	parry_time_active = 25
