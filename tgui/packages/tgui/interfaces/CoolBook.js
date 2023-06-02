@@ -94,20 +94,20 @@ const CoolImage = (props, context) => {
 
   if (!Image) {
     return (null);
-  };
+  }
   if (StretchOrFit === "stretch") {
-    StretchFit = "cover"
+    StretchFit = "cover";
   }
   else {
-    StretchFit = "contain"
-  };
+    StretchFit = "contain";
+  }
   let ImagePath;
   if (IsURL) {
-    ImagePath = Image
+    ImagePath = Image;
   }
   else {
     ImagePath = require("/../COOLBOOKs/images/" + Image)
-  };
+  }
   return (
     <Box
       width="100%"
@@ -121,7 +121,7 @@ const CoolImage = (props, context) => {
         height={CoolImageMaxHeight}
         maxWidth={CoolImageMaxWidth}
         maxHeight={CoolImageMaxHeight}
-        resizeMode={StretchFit}/>
+        resizeMode={StretchFit} />
     </Box>
   );
 };
@@ -155,21 +155,21 @@ export const CoolBookFormatText = (text, IsPlayerMade) => {
   let uncoolAttr = ['class', 'style'];
 
   const sanitizedText = sanitizeText(text, coolTags, uncoolAttr);
-  const formattedText = marked(sanitizedText, {smartypants: true, gfm: true, tables: true, sanitize: true, breaks: true, smartLists: true});
+  const formattedText = marked(sanitizedText, { smartypants: true, gfm: true, tables: true, sanitize: true, breaks: true, smartLists: true });
   return { __html: formattedText };
 };
 
 // The Table of Contents, which is only shown on the index page
 const CoolBookTableOfContents = (props, context) => {
   const { act, data } = useBackend(context);
-  const {AllChapters} = data;
+  const { AllChapters } = data;
 
   return (
     <Section title={<center>Table of Contents</center>}>
       <Flex
         direction="column">
         {AllChapters.map((chapter) => (
-          <Flex.Item grow={1}>
+          <Flex.Item grow={1} key={chapter}>
             <Button
               key={chapter}
               fluid
@@ -178,8 +178,8 @@ const CoolBookTableOfContents = (props, context) => {
               content={chapter}
               onClick={() => act("SetChapter", { Chapter2Set: chapter })}/>
           </Flex.Item>
-          ))}
-        </Flex>
+        ))}
+      </Flex>
     </Section>
   );
 };
@@ -202,8 +202,8 @@ const CoolBookHead = (props, context) => {
         <Flex.Item grow={1}>
           <Box py="auto" my="auto">
             {(IsIndex
-            ? <CoolBookIndexTitle />
-            : <CoolBookPageTitle />)}
+              ? <CoolBookIndexTitle />
+              : <CoolBookPageTitle />)}
           </Box>
         </Flex.Item>
         <Flex.Item basis="content">
@@ -213,7 +213,7 @@ const CoolBookHead = (props, context) => {
             icon="arrow-left"
             content="Return"
             disabled={IsIndex}
-            onClick={() => act("SetChapter", { Chapter2Set: "index" })}/>
+            onClick={() => act("SetChapter", { Chapter2Set: "index" })} />
         </Flex.Item>
       </Flex>
     </Section>
@@ -232,7 +232,7 @@ const CoolBookIndexTitle = (props, context) => {
     <Box
       color={CoolHeaderColor}
       textAlign="center">
-      <Icon name="fa-solid fa-book" /> {BookTitle} <br/>
+      <Icon name="fa-solid fa-book" /> {BookTitle} <br />
       <Icon name="fa-solid fa-user" /> {BookAuthor}
     </Box>
   );
@@ -296,7 +296,7 @@ const CoolBookFoot = (props, context) => {
           bottom="50%"
           icon="arrow-left"
           disabled={!CanPrev}
-          onClick={() => act("PrevPage")}/>
+          onClick={() => act("PrevPage")} />
         <Box
           position="relative"
           inline
@@ -315,7 +315,7 @@ const CoolBookFoot = (props, context) => {
           bottom="50%"
           verticalAlign="middle"
           disabled={!CanNext}
-          onClick={() => act("NextPage")}/>
+          onClick={() => act("NextPage")} />
       </Box>
     </Section>
   );
