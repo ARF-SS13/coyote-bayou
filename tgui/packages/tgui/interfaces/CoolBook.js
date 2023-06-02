@@ -106,7 +106,7 @@ const CoolImage = (props, context) => {
     ImagePath = Image;
   }
   else {
-    ImagePath = require("/../COOLBOOKs/images/" + Image)
+    ImagePath = require("/../COOLBOOKs/images/" + Image);
   }
   return (
     <Box
@@ -176,7 +176,7 @@ const CoolBookTableOfContents = (props, context) => {
               fontSize="16px"
               icon="fa-solid fa-book"
               content={chapter}
-              onClick={() => act("SetChapter", { Chapter2Set: chapter })}/>
+              onClick={() => act("SetChapter", { Chapter2Set: chapter })} />
           </Flex.Item>
         ))}
       </Flex>
