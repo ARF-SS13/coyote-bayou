@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from "../backend";
-import { Box, Button, Flex, Icon,  Section, Stack, Table } from "../components";
+import { Box, Button, Flex, Icon, Section, Stack } from "../components";
 import { Window } from "../layouts";
 import { marked } from 'marked';
 import { sanitizeText } from '../sanitize';
@@ -46,12 +46,12 @@ export const CoolBook = (props, context) => {
   );
 };
 
-/// The actual content of the chapter, which is a scrollable section between the header and footer.
-/// The content is a fixed size, and will scroll if the content is too large.
-/// The content will not scroll if the content is too small, but it will still fill the space between the header and footer.
+// The actual content of the chapter, which is a scrollable section between the header and footer.
+// The content is a fixed size, and will scroll if the content is too large.
+// The content will not scroll if the content is too small, but it will still fill the space between the header and footer.
 export const CoolBookContent = (props, context) => {
   const { act, data } = useBackend(context);
-  const{
+  const {
     TopImage,
     TopImageResize,
     TopImageIsURL,
@@ -64,27 +64,25 @@ export const CoolBookContent = (props, context) => {
   const FormattedText = CoolBookFormatText(PageText);
 
   return (
-    <Fragment>
-      <Section
-        overflowY="hide"
-        fontSize={CoolContentFontSize}
-        color={CoolContentColor}
-        p="1em">
-        <CoolImage Image={TopImage} StretchOrFit={TopImageResize} IsURL={TopImageIsURL} />
-        <Box dangerouslySetInnerHTML={FormattedText}></Box>
-        <Box>
-          {!!IsIndex && (<p><CoolBookTableOfContents /></p>)}
-        </Box>
-        <CoolImage Image={BottomImage} StretchOrFit={BottomImageResize} IsURL={BottomImageIsURL} />
-      </Section>
-    </Fragment>
+    <Section
+      overflowY="hide"
+      fontSize={CoolContentFontSize}
+      color={CoolContentColor}
+      p="1em">
+      <CoolImage Image={TopImage} StretchOrFit={TopImageResize} IsURL={TopImageIsURL} />
+      <Box dangerouslySetInnerHTML={FormattedText} />
+      <Box>
+        {!!IsIndex && (<p><CoolBookTableOfContents /></p>)}
+      </Box>
+      <CoolImage Image={BottomImage} StretchOrFit={BottomImageResize} IsURL={BottomImageIsURL} />
+    </Section>
   );
 };
 
-/// An image, which is displayed at the top or bottom of the chapter.
-/// The image will be resized to fit the width of the content.
-/// If resize is true, the image will be scaled down to fit the height of the container.
-/// If resize is false, the image will be stretched to fit the entirety of the container.
+// An image, which is displayed at the top or bottom of the chapter.
+// The image will be resized to fit the width of the content.
+// If resize is true, the image will be scaled down to fit the height of the container.
+// If resize is false, the image will be stretched to fit the entirety of the container.
 const CoolImage = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -92,7 +90,7 @@ const CoolImage = (props, context) => {
     StretchOrFit,
     IsURL,
   } = props;
-  var StretchFit
+  let StretchFit;
 
   if (!Image)
     {return (null)}
@@ -100,33 +98,31 @@ const CoolImage = (props, context) => {
     {StretchFit = "cover"}
   else
     {StretchFit = "contain"}
-  var ImagePath
+  let ImagePath;
   if (IsURL)
     {ImagePath = Image}
   else
     {ImagePath = require("/../COOLBOOKs/images/" + Image)}
   return (
-    <Fragment>
-      <Box
-        width="100%"
+    <Box
+      width="100%"
+      height={CoolImageMaxHeight}
+      textAlign="center">
+      <img
+        textAlign="center"
+        src={ImagePath}
+        alt="Imagine a cool image here!"
+        width="auto"
         height={CoolImageMaxHeight}
-        textAlign="center">
-        <img
-          textAlign="center"
-          src={ImagePath}
-          alt="Imagine a cool image here!"
-          width="auto"
-          height={CoolImageMaxHeight}
-          maxWidth={CoolImageMaxWidth}
-          maxHeight={CoolImageMaxHeight}
-          resizeMode={StretchFit}
-          />
-      </Box>
-    </Fragment>
+        maxWidth={CoolImageMaxWidth}
+        maxHeight={CoolImageMaxHeight}
+        resizeMode={StretchFit}
+        />
+    </Box>
   );
 };
 
-/// Sanitizes and formats the text for the chapter.
+// Sanitizes and formats the text for the chapter.
 export const CoolBookFormatText = (text, IsPlayerMade) => {
 // Default values
   let coolTags = [
@@ -165,23 +161,21 @@ const CoolBookTableOfContents = (props, context) => {
   const {AllChapters} = data;
 
   return (
-    <Fragment>
-      <Section title={<center>Table of Contents</center>}>
-        <Flex
-          direction="column">
-          {AllChapters.map((chapter) => (
-            <Flex.Item grow={1}>
-              <Button
-                fluid
-                fontSize="16px"
-                icon="fa-solid fa-book"
-                content={chapter}
-                onClick={() => act("SetChapter", { Chapter2Set: chapter })}/>
-            </Flex.Item>
-            ))}
-          </Flex>
-      </Section>
-    </Fragment>
+    <Section title={<center>Table of Contents</center>}>
+      <Flex
+        direction="column">
+        {AllChapters.map((chapter) => (
+          <Flex.Item grow={1}>
+            <Button
+              fluid
+              fontSize="16px"
+              icon="fa-solid fa-book"
+              content={chapter}
+              onClick={() => act("SetChapter", { Chapter2Set: chapter })}/>
+          </Flex.Item>
+          ))}
+        </Flex>
+    </Section>
   );
 };
 
@@ -193,34 +187,32 @@ const CoolBookHead = (props, context) => {
   } = data;
 
   return (
-    <Fragment>
-      <Section
-        fluid
-        height={CoolHeadfootHeight}
-        color={CoolHeaderColor}
-        textAlign="center"
-        fontSize={CoolHeadFootFontSize}>
-        <Flex direction="row">
-          <Flex.Item grow={1}>
-            <Box py="auto" my="auto">
-              {(!!IsIndex
-              ? <CoolBookIndexTitle />
-              : <CoolBookPageTitle />)}
-            </Box>
-          </Flex.Item>
-          <Flex.Item basis="content">
-            <Button
-              fluid
-              fontSize={CoolContentButtonFontSize}
-              icon="arrow-left"
-              content="Return"
-              disabled={IsIndex}
-              onClick={() => act("SetChapter", { Chapter2Set: "index" })}>
-            </Button>
-          </Flex.Item>
-        </Flex>
-      </Section>
-    </Fragment>
+    <Section
+      fluid
+      height={CoolHeadfootHeight}
+      color={CoolHeaderColor}
+      textAlign="center"
+      fontSize={CoolHeadFootFontSize}>
+      <Flex direction="row">
+        <Flex.Item grow={1}>
+          <Box py="auto" my="auto">
+            {(!!IsIndex
+            ? <CoolBookIndexTitle />
+            : <CoolBookPageTitle />)}
+          </Box>
+        </Flex.Item>
+        <Flex.Item basis="content">
+          <Button
+            fluid
+            fontSize={CoolContentButtonFontSize}
+            icon="arrow-left"
+            content="Return"
+            disabled={IsIndex}
+            onClick={() => act("SetChapter", { Chapter2Set: "index" })}>
+          </Button>
+        </Flex.Item>
+      </Flex>
+    </Section>
   );
 };
 
@@ -233,14 +225,12 @@ const CoolBookIndexTitle = (props, context) => {
   } = data;
 
   return (
-    <Fragment>
-      <Box
-        color={CoolHeaderColor}
-        textAlign="center">
-        <Icon name="fa-solid fa-book" /> {BookTitle} <br/>
-        <Icon name="fa-solid fa-user" /> {BookAuthor}
-      </Box>
-    </Fragment>
+    <Box
+      color={CoolHeaderColor}
+      textAlign="center">
+      <Icon name="fa-solid fa-book" /> {BookTitle} <br/>
+      <Icon name="fa-solid fa-user" /> {BookAuthor}
+    </Box>
   );
 };
 // The text of the title for the non-index page
@@ -251,13 +241,11 @@ const CoolBookPageTitle = (props, context) => {
   } = data;
 
   return (
-    <Fragment>
-      <Box
-        color={CoolHeaderColor}
-        textAlign="center">
-        <Icon name="fa-solid fa-book" /> {CurrentChapterTitle}
-      </Box>
-    </Fragment>
+    <Box
+      color={CoolHeaderColor}
+      textAlign="center">
+      <Icon name="fa-solid fa-book" /> {CurrentChapterTitle}
+    </Box>
   );
 };
 
@@ -269,13 +257,11 @@ const CoolBookFootText = (props, context) => {
   } = data;
 
   return (
-    <Fragment>
-      <Box
-        color={CoolHeaderColor}
-        textAlign="center">
-        <Icon name="fa-solid fa-trademark" /> {BookAuthor} 20X6
-      </Box>
-    </Fragment>
+    <Box
+      color={CoolHeaderColor}
+      textAlign="center">
+      <Icon name="fa-solid fa-trademark" /> {BookAuthor} 20X6
+    </Box>
   );
 };
 
@@ -290,47 +276,45 @@ const CoolBookFoot = (props, context) => {
   } = data;
 
   return (
-    <Fragment>
-      <Section
-        height={CoolHeadfootHeight}
-        fontSize={CoolContentButtonFontSize}
-        color={CoolHeaderColor}
-        align="center">
+    <Section
+      height={CoolHeadfootHeight}
+      fontSize={CoolContentButtonFontSize}
+      color={CoolHeaderColor}
+      align="center">
+      <Box
+        position="relative"
+        width="fit-content">
+        <Button
+          height="fit-content"
+          width="fit-content"
+          textAlign="center"
+          top="50%"
+          bottom="50%"
+          icon="arrow-left"
+          disabled={!CanPrev}
+          onClick={() => act("PrevPage")}>
+        </Button>
         <Box
           position="relative"
-          width="fit-content">
-          <Button
-            height="fit-content"
-            width="fit-content"
-            textAlign="center"
-            top="50%"
-            bottom="50%"
-            icon="arrow-left"
-            disabled={!CanPrev}
-            onClick={() => act("PrevPage")}>
-          </Button>
-          <Box
-            position="relative"
-            inline
-            fontSize={CoolContentButtonFontSize}
-            color={CoolHeaderColor}
-            mx="1em"
-            my="auto"
-            align="center">
-            {PageNumber} / {PageTotal}
-          </Box>
-          <Button
-            height="fit-content"
-            textAlign="center"
-            icon="arrow-right"
-            top="50%"
-            bottom="50%"
-            verticalAlign="middle"
-            disabled={!CanNext}
-            onClick={() => act("NextPage")}>
-          </Button>
+          inline
+          fontSize={CoolContentButtonFontSize}
+          color={CoolHeaderColor}
+          mx="1em"
+          my="auto"
+          align="center">
+          {PageNumber} / {PageTotal}
         </Box>
-      </Section>
-    </Fragment>
+        <Button
+          height="fit-content"
+          textAlign="center"
+          icon="arrow-right"
+          top="50%"
+          bottom="50%"
+          verticalAlign="middle"
+          disabled={!CanNext}
+          onClick={() => act("NextPage")}>
+        </Button>
+      </Box>
+    </Section>
   );
 };
