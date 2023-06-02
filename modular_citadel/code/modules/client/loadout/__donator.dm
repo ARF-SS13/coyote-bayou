@@ -1374,7 +1374,7 @@
 	ckeywhitelist = list("lucine")
 
 /obj/item/storage/box/large/custom_kit/lucine3/PopulateContents()
-	new /obj/item/melee/transforming/plasmacutter/regular/flamberg(src)
+	new /obj/item/melee/transforming/plasmacutter/regular/flamberge(src)
 
 /datum/gear/donator/kits/zombotheskunk
 	name = "Royal Kit"
