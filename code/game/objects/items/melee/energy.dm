@@ -177,11 +177,11 @@
 	tool_behaviour = TOOL_WELDER
 	throwforce = 10
 	block_chance = 20
+	throw_speed = 3
+	throw_range = 5
 	hitsound = 'sound/weapons/slash_heavy4.ogg'
 	hitsound_on = 'sound/weapons/fire03.ogg'
 	playsound(user, 'sound/weapons/match.ogg', 20, 1)
-	throw_speed = 3
-	throw_range = 5
 	w_class = WEIGHT_CLASS_BULKY
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
