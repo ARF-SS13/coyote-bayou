@@ -92,17 +92,22 @@ const CoolImage = (props, context) => {
   } = props;
   let StretchFit;
 
-  if (!Image)
-    {return (null)}
-  if (StretchOrFit === "stretch")
-    {StretchFit = "cover"}
-  else
-    {StretchFit = "contain"}
+  if (!Image) {
+    return (null);
+  };
+  if (StretchOrFit === "stretch") {
+    StretchFit = "cover"
+  }
+  else {
+    StretchFit = "contain"
+  };
   let ImagePath;
-  if (IsURL)
-    {ImagePath = Image}
-  else
-    {ImagePath = require("/../COOLBOOKs/images/" + Image)}
+  if (IsURL) {
+    ImagePath = Image
+  }
+  else {
+    ImagePath = require("/../COOLBOOKs/images/" + Image)
+  };
   return (
     <Box
       width="100%"
@@ -116,8 +121,7 @@ const CoolImage = (props, context) => {
         height={CoolImageMaxHeight}
         maxWidth={CoolImageMaxWidth}
         maxHeight={CoolImageMaxHeight}
-        resizeMode={StretchFit}
-        />
+        resizeMode={StretchFit}/>
     </Box>
   );
 };
@@ -167,6 +171,7 @@ const CoolBookTableOfContents = (props, context) => {
         {AllChapters.map((chapter) => (
           <Flex.Item grow={1}>
             <Button
+              key={chapter}
               fluid
               fontSize="16px"
               icon="fa-solid fa-book"
@@ -196,7 +201,7 @@ const CoolBookHead = (props, context) => {
       <Flex direction="row">
         <Flex.Item grow={1}>
           <Box py="auto" my="auto">
-            {(!!IsIndex
+            {(IsIndex
             ? <CoolBookIndexTitle />
             : <CoolBookPageTitle />)}
           </Box>
@@ -208,8 +213,7 @@ const CoolBookHead = (props, context) => {
             icon="arrow-left"
             content="Return"
             disabled={IsIndex}
-            onClick={() => act("SetChapter", { Chapter2Set: "index" })}>
-          </Button>
+            onClick={() => act("SetChapter", { Chapter2Set: "index" })}/>
         </Flex.Item>
       </Flex>
     </Section>
@@ -268,7 +272,7 @@ const CoolBookFootText = (props, context) => {
 // The footer, which contains the page number and the page selector buttons
 const CoolBookFoot = (props, context) => {
   const { act, data } = useBackend(context);
-  const{
+  const {
     PageNumber,
     PageTotal,
     CanNext,
@@ -292,8 +296,7 @@ const CoolBookFoot = (props, context) => {
           bottom="50%"
           icon="arrow-left"
           disabled={!CanPrev}
-          onClick={() => act("PrevPage")}>
-        </Button>
+          onClick={() => act("PrevPage")}/>
         <Box
           position="relative"
           inline
@@ -312,8 +315,7 @@ const CoolBookFoot = (props, context) => {
           bottom="50%"
           verticalAlign="middle"
           disabled={!CanNext}
-          onClick={() => act("NextPage")}>
-        </Button>
+          onClick={() => act("NextPage")}/>
       </Box>
     </Section>
   );
