@@ -189,6 +189,7 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO	
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	weapon_special_component = NULL
 
 /obj/item/gun/flintlock/laser/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a laser bullet.
 	BB.name = "musket bolt"
