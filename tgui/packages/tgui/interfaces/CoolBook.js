@@ -120,7 +120,6 @@ const CoolImage = (props, context) => {
         src={ImagePath}
         alt="Imagine a cool image here!"
         width="auto"
-        height={CoolImageMaxHeight}
         maxWidth="100%"
         resizeMode={StretchFit} />
     </Box>
