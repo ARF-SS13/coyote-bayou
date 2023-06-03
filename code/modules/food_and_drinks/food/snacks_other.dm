@@ -675,6 +675,13 @@
 			burn()
 	..()
 
+/obj/item/reagent_containers/food/snacks/welding_fuel
+	name = "Processed Welding Fuel"
+	desc = "A bottle of processed welding fuel, perfect for long road trips."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle3"
+	list_reagents = list(/datum/reagent/fuel = 30)
+
 //Easter Stuff
 
 /obj/item/reagent_containers/food/snacks/chocolatebunny
