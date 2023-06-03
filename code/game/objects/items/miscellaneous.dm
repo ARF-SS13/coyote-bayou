@@ -238,7 +238,14 @@
 "Motorbike?" = /mob/living/simple_animal/cow/brahmin/motorbike,
 "Fennec" = /mob/living/simple_animal/cow/brahmin/horse/fennec,
 "Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker,
-"Hunter Spider" = /mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider
+"Hunter Spider" = /mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider,
+"Yellow Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco,
+"Black Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/black,
+"Blue Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/blue,
+"White Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/white,
+"Purple Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/purple,
+"Red Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/red,
+"Green Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/green
 )
 
 /obj/item/choice_beacon/box/carpet //donator carpet beacon

@@ -92,6 +92,8 @@
 
 	var/peaceful = FALSE //Determines if mob is actively looking to attack something, regardless if hostile by default to the target or not
 
+	var/retreat_melee_chance = 10 //Percent chance we melee things in range before retreating.
+
 //These vars activate certain things on the mob depending on what it hears
 	var/attack_phrase = "" //Makes the mob become hostile (if it wasn't beforehand) upon hearing
 	var/peace_phrase = "" //Makes the mob become peaceful (if it wasn't beforehand) upon hearing
@@ -109,6 +111,10 @@
 	var/despawns_when_lonely = TRUE
 	/// timer for despawning when lonely
 	var/lonely_timer_id
+	
+	//Pathfinding Stuff
+	var/list/path_list
+	var/actively_moving = FALSE
 
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
@@ -461,6 +467,8 @@
 			return 1
 		if(retreat_distance != null) //If we have a retreat distance, check if we need to run from our target
 			if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If target's closer than our retreat distance, run
+				if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from) && prob(retreat_melee_chance)) //If they're next to us, think about attacking.
+					MeleeAction()
 				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 				walk_away(src,target,retreat_distance,move_to_delay)
 			else
@@ -503,7 +511,7 @@
 		approaching_target = FALSE
 	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
 		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-		walk_to(src, target, minimum_distance, delay)
+		path_to(target, minimum_distance, aggro_vision_range, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
@@ -927,3 +935,32 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	minimum_distance = rand(0, 10)
 	LoseTarget()
 	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))
+
+/* Follow a path given to us by the game.
+	
+	Byonds walk_to doesn't check orthogonally adjacent tiles to see if a diagonal move is valid.
+	SS13 does check both shared Orthogonal neighbours to see if a diagonal move is valid.
+	So mobs get stuck on corners when using byonds walk_to.
+
+	This proc handles getting a path to our traget and moving towards it.
+*/
+/mob/living/simple_animal/hostile/proc/path_to(obj/target, minimum_distance, maximum_distance, delay)
+	if(!target || src.loc == target.loc || path_list)
+		return
+	if(!path_list)
+		path_list = AStar(src, target, /turf/proc/Distance, null, maximum_distance, minimum_distance)
+	if(!actively_moving && path_list)
+		actively_moving = TRUE
+		process_moving(delay)
+
+/mob/living/simple_animal/hostile/proc/process_moving(delay)
+	if(!path_list || path_list.len <= 0 || stat != CONSCIOUS || !target )
+		moving_halt()
+		return
+	walk_to(src, path_list[1], 0, delay)
+	path_list -= path_list[1]
+	addtimer(CALLBACK(src, .proc/process_moving, delay), delay)
+
+/mob/living/simple_animal/hostile/proc/moving_halt()
+	path_list = null
+	actively_moving = FALSE

@@ -423,6 +423,12 @@
 	build_path = /obj/item/ammo_box/a3006box
 	category = list("initial", "Basic Ammo")
 
+/datum/design/ammolathe/a3006rubber
+	name = ".30-06 rubber ammo box"
+	id = "a3006_latherubber"
+	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
+	build_path = /obj/item/ammo_box/a3006box/rubber
+	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a22
 	name = ".22lr ammo box"

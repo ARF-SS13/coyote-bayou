@@ -398,7 +398,7 @@
 					/obj/item/slimecross/stabilized/yellow,
 					/obj/item/slimecross/stabilized/darkblue,
 					/obj/item/slimecross/stabilized/silver,
-					/obj/item/slimecross/stabilized/pink,
+					// /obj/item/slimecross/stabilized/pink,
 					/obj/item/slimecross/stabilized/cerulean,
 					/obj/item/slimecross/industrial/grey,
 					/obj/item/slimecross/industrial/metal,
