@@ -676,3 +676,11 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 
+/datum/crafting_recipe/welding_fuel
+	name = "Process Welding Fuel"
+	result = /obj/item/reagent_containers/food/snacks/welding_fuel
+	reqs = list(/datum/reagent/fuel = 30)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MISC
+	subcategory = CAT_MISCELLANEOUS

@@ -843,10 +843,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
-	food_types = list(
-		/obj/item/reagent_containers/glass/bottle/welding_fuel,
-		/obj/item/reagent_containers/glass/bottle/welding_fuel/big
-		)
+	food_types = list(/obj/item/reagent_containers/food/snacks/welding_fuel)
 	young_type = /mob/living/simple_animal/cow/brahmin/motorbike
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
