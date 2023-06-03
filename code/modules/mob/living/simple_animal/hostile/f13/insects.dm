@@ -530,6 +530,7 @@
 	obj_damage = 20
 	melee_damage_lower = 4
 	melee_damage_upper = 6
+	retreat_melee_chance = 35
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
