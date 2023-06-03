@@ -729,7 +729,7 @@
 /obj/machinery/light/fo13colored/Red{
 	desc = "A lighting fixture.";
 	dir = 8;
-	light_color = "#008000";
+	light_color = "#a83131";
 	name = "light tube"
 	},
 /turf/open/floor/f13{
@@ -2130,6 +2130,10 @@
 	},
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"biI" = (
+/obj/structure/window/fulltile/ruins,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "bjc" = (
 /obj/structure/table/reinforced{
@@ -5493,7 +5497,9 @@
 /obj/item/reagent_containers/food/snacks/rawbrahminliver,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
-/obj/machinery/light/fo13colored/Red,
+/obj/machinery/light/fo13colored/Red{
+	light_color = "#a83131"
+	},
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -7194,11 +7200,11 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "dOB" = (
-/obj/machinery/light/fo13colored/Red{
-	dir = 1
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/structure/table/reinforced,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/storage/box/drinkingglasses,
+/turf/open/floor/f13{
+	icon_state = "bar"
 	},
 /area/f13/building)
 "dOP" = (
@@ -9264,10 +9270,9 @@
 	},
 /area/f13/building)
 "eUV" = (
-/obj/structure/sign/poster/contraband/rebels_unite{
-	pixel_x = 32
+/obj/structure/sign/poster/prewar/poster73{
+	pixel_y = 32
 	},
-/obj/machinery/computer/slot_machine,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -11430,7 +11435,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "fYC" = (
-/obj/machinery/light/fo13colored/Red,
+/obj/machinery/light/fo13colored/Red{
+	light_color = "#a83131"
+	},
 /obj/structure/sign/poster/contraband/pinup_ride{
 	pixel_y = -32
 	},
@@ -14015,9 +14022,11 @@
 /area/f13/wasteland)
 "huC" = (
 /obj/structure/chair/stool/retro/backed{
-	dir = 8
+	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/building)
 "huY" = (
 /obj/structure/fence{
@@ -14362,10 +14371,6 @@
 	icon_state = "horizontaloutermain2right"
 	},
 /area/f13/wasteland)
-"hGY" = (
-/obj/structure/simple_door/room,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "hHq" = (
 /obj/structure/chair/stool{
 	dir = 1;
@@ -15148,6 +15153,15 @@
 	icon_state = "outerborder - E"
 	},
 /area/f13/wasteland/city)
+"ibV" = (
+/obj/structure/sign/poster/contraband/rebels_unite{
+	pixel_x = 32
+	},
+/obj/machinery/computer/slot_machine,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "icp" = (
 /obj/structure/fence{
 	dir = 4
@@ -15644,7 +15658,8 @@
 /obj/structure/table/booth,
 /obj/machinery/light/fo13colored/Red{
 	dir = 1;
-	pixel_y = 15
+	pixel_y = 15;
+	light_color = "#a83131"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -16136,7 +16151,9 @@
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "iAq" = (
-/obj/machinery/light/fo13colored/Red,
+/obj/machinery/light/fo13colored/Red{
+	light_color = "#a83131"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "iAL" = (
@@ -16364,9 +16381,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "iFh" = (
-/obj/item/trade_sign,
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
+/obj/structure/chair/stool/retro/backed{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "iFy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -16376,13 +16395,12 @@
 	},
 /area/f13/building)
 "iFJ" = (
-/obj/structure/chair/stool/retro/backed{
-	dir = 4
+/obj/structure/decoration/rag,
+/turf/closed/mineral/random/low_chance{
+	mineralAmt = 6;
+	mineralChance = 10
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
+/area/f13/caves)
 "iFQ" = (
 /turf/open/indestructible/ground/outside/graveldirt{
 	dir = 1
@@ -20481,12 +20499,6 @@
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /turf/open/indestructible/ground/outside/savannah/topright,
 /area/f13/wasteland)
-"kNr" = (
-/obj/structure/fence/wooden{
-	dir = 4
-	},
-/turf/closed/wall/f13/wood,
-/area/f13/building)
 "kOc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -23974,7 +23986,8 @@
 	},
 /obj/machinery/light/fo13colored/Red{
 	dir = 1;
-	pixel_y = 15
+	pixel_y = 15;
+	light_color = "#a83131"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -25510,6 +25523,15 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/abandoned)
+"nzE" = (
+/obj/machinery/light/fo13colored/Red{
+	dir = 4;
+	light_color = "#a83131"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "nzP" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -25705,10 +25727,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city)
-"nGD" = (
-/obj/structure/window/fulltile/ruins,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "nGN" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -27479,14 +27497,6 @@
 	icon_state = "bluedirtychess"
 	},
 /area/f13/building/abandoned)
-"oFj" = (
-/obj/structure/sign/poster/prewar/poster73{
-	pixel_y = 32
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
 "oFm" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -28483,13 +28493,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pfv" = (
-/obj/machinery/light/fo13colored/Red{
-	dir = 4
-	},
-/obj/machinery/computer/arcade/orion_trail,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/structure/simple_door/room,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "pfF" = (
 /obj/structure/closet/crate/large,
@@ -28724,7 +28729,8 @@
 /area/f13/building/abandoned)
 "plJ" = (
 /obj/machinery/light/fo13colored/Red{
-	dir = 4
+	dir = 1;
+	light_color = "#a83131"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -29304,14 +29310,6 @@
 	icon_state = "verticaloutermain2"
 	},
 /area/f13/wasteland/city)
-"pAD" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/drinkingglasses,
-/obj/item/storage/box/drinkingglasses,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
-/area/f13/building)
 "pAF" = (
 /obj/structure/mirelurkegg,
 /turf/open/indestructible/ground/inside/mountain,
@@ -31367,6 +31365,10 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
 	},
+/area/f13/wasteland)
+"qKY" = (
+/obj/item/trade_sign,
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "qLB" = (
 /obj/structure/barricade/sandbags,
@@ -33477,7 +33479,8 @@
 /area/f13/building)
 "rVG" = (
 /obj/machinery/light/fo13colored/Red{
-	dir = 1
+	dir = 1;
+	light_color = "#a83131"
 	},
 /obj/structure/sign/poster/contraband/pinup_topless{
 	pixel_y = 32
@@ -35904,12 +35907,15 @@
 	},
 /area/f13/building)
 "thf" = (
-/obj/structure/decoration/rag,
-/turf/closed/mineral/random/low_chance{
-	mineralAmt = 6;
-	mineralChance = 10
+/obj/machinery/light/fo13colored/Red{
+	dir = 4;
+	light_color = "#a83131"
 	},
-/area/f13/caves)
+/obj/machinery/computer/arcade/orion_trail,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "thh" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -38928,7 +38934,8 @@
 /area/f13/wasteland)
 "uKL" = (
 /obj/machinery/light/fo13colored/Red{
-	dir = 8
+	dir = 8;
+	light_color = "#a83131"
 	},
 /obj/structure/sign/poster/prewar/poster80{
 	pixel_x = -32
@@ -41121,7 +41128,8 @@
 "waZ" = (
 /obj/machinery/light/fo13colored/Red{
 	dir = 1;
-	pixel_y = 15
+	pixel_y = 15;
+	light_color = "#a83131"
 	},
 /obj/structure/table/booth,
 /turf/open/floor/f13/wood{
@@ -41947,6 +41955,12 @@
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
+/area/f13/building)
+"wyI" = (
+/obj/structure/fence/wooden{
+	dir = 4
+	},
+/turf/closed/wall/f13/wood,
 /area/f13/building)
 "wyZ" = (
 /obj/structure/flora/grass/wasteland{
@@ -43111,7 +43125,7 @@
 /obj/machinery/light/fo13colored/Red{
 	desc = "A lighting fixture.";
 	dir = 8;
-	light_color = "#008000";
+	light_color = "#a83131";
 	name = "light tube"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -100889,7 +100903,7 @@ iKf
 iKf
 iKf
 tiN
-iFh
+qKY
 qES
 qES
 iKf
@@ -103720,7 +103734,7 @@ tNo
 qsc
 qsc
 qsc
-oFj
+eUV
 eJW
 twt
 qsc
@@ -103983,7 +103997,7 @@ fYC
 qsc
 sZy
 qsc
-hGY
+pfv
 cYp
 gRn
 gRn
@@ -105009,7 +105023,7 @@ eJW
 eJW
 cur
 qsc
-nGD
+biI
 sZy
 rzY
 xYV
@@ -106034,7 +106048,7 @@ gMW
 gMW
 fJL
 fHz
-dOB
+plJ
 wuW
 ryS
 vYO
@@ -106294,7 +106308,7 @@ eFz
 eJW
 wuW
 ryS
-pAD
+dOB
 ndB
 ryS
 lFI
@@ -106550,10 +106564,10 @@ gRn
 eFz
 eJW
 nSg
-huC
-huC
-huC
-huC
+iFh
+iFh
+iFh
+iFh
 hip
 gRn
 gRn
@@ -107063,12 +107077,12 @@ gRn
 gRn
 fHz
 eJW
-iFJ
+huC
 eJW
-iFJ
+huC
 eJW
-iFJ
-kNr
+huC
+wyI
 gRn
 gRn
 gRn
@@ -107319,12 +107333,12 @@ gRn
 gRn
 gRn
 aLl
-plJ
-eUV
+nzE
+ibV
 eJW
 sAa
 eJW
-pfv
+thf
 cYp
 gRn
 gRn
@@ -107847,7 +107861,7 @@ tCq
 iRq
 wWK
 wWK
-thf
+iFJ
 gRn
 gRn
 gMW
