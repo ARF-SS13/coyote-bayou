@@ -1171,7 +1171,7 @@
 	response_harm_simple = "kick"
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
-	waddle_amount = 3
+	waddle_amount = 4
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
@@ -1187,6 +1187,13 @@
 		/obj/item/stack/sheet/bone = 2
 		)
 	butcher_difficulty = 1
+	ride_offsets = list(
+		"1" = list(0, 8),
+		"2" = list(0, 10),
+		"4" = list(0, 8),
+		"8" = list(0, 8)
+		)
+
 
 /mob/living/simple_animal/cow/brahmin/horse/choco/black
 	name = "black snipe"
