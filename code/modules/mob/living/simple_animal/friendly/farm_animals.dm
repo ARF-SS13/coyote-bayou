@@ -1091,6 +1091,97 @@
 	icon_state = "trekkerpack"
 */
 
+/mob/living/simple_animal/cow/brahmin/horse/choco
+	name = "yellow snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptoryellow"
+	icon_living = "raptoryellow"
+	icon_dead = "raptoryellow_dead"
+	speak = list("*shiver", "*alert")
+	speak_emote = list("chirps","squacks")
+	emote_hear = list("makes a soft friendly chirp noise.")
+	emote_see = list("scratches at the ground.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 200
+	maxHealth = 200
+	ride_move_delay = 1.5
+	can_ghost_into = FALSE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	young_type = /mob/living/simple_animal/cow/brahmin/horse/choco
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/crafting/wonderglue = 1,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/black
+	name = "black snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorblack"
+	icon_living = "raptorblack"
+	icon_dead = "raptorblack_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/blue
+	name = "blue snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorblue"
+	icon_living = "raptorblue"
+	icon_dead = "raptorblue_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/white
+	name = "white snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorwhite"
+	icon_living = "raptorwhite"
+	icon_dead = "raptorwhite_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/purple
+	name = "purple snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorpurple"
+	icon_living = "raptorpurple"
+	icon_dead = "raptorpurple_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/red
+	name = "red snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorred"
+	icon_living = "raptorred"
+	icon_dead = "raptorred_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/green
+	name = "green snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorgreen"
+	icon_living = "raptorgreen"
+	icon_dead = "raptorgreen_dead"
+
 /obj/item/brahmincollar
 	name = "mount collar"
 	desc = "A collar with a piece of etched metal serving as a tag. Use this on a mount you own to rename them."
