@@ -25,7 +25,7 @@
 	var/prefire_randomness = FLINTLOCK_PISTOL_PREFIRE_RANDOMNESS // copilot suggested this
 	var/datum/looping_sound/musket_load/load_loop // for the loading sound
 	var/datum/looping_sound/musket_fuse/fuse_loop // for the loading sound
-	weapon_special_component = /datum/component/weapon_special/single_turf
+	weapon_special_component = null
 
 /obj/item/gun/flintlock/Initialize()
 	. = ..()
@@ -189,7 +189,7 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO	
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	weapon_special_component = NULL
+	weapon_special_component = null
 
 /obj/item/gun/flintlock/laser/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a laser bullet.
 	BB.name = "musket bolt"
@@ -235,6 +235,7 @@
 	load_time = FLINTLOCK_MUSKET_RELOAD_TIME
 	prefire_time = FLINTLOCK_MUSKET_PREFIRE_TIME
 	prefire_randomness = FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock/musketoon
 	name = "ancient musketoon"
@@ -285,6 +286,7 @@
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock/musket/jezail/culverin
 	name = "culverin"
@@ -312,6 +314,7 @@
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock/musketoon/spingarda
 	name = "ancient spingarda"
