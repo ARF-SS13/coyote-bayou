@@ -52,7 +52,7 @@
 #define BOOK_IMG_DATA_ISURL "is_url"
 
 #define BOOK_IMG_URL_PREFIXES list("cdn.discordapp.com/", "media.tenor.com/") // yeah fuck it time to hotlink everything
-#define BOOK_IMG_URL_SUFFIXES list("png", "jpg", "jpeg", "gif", "webp") // no idea if webp works, would be nice tho
+#define BOOK_IMG_URL_SUFFIXES list("png", "jpg", "jpeg", "gif") // yup webp dont work
 
 /// Put this token as a line in either the txt or json file to indicate a page break
 /// nothing else in this line will be read

@@ -23,6 +23,11 @@
 	name = mybook.title
 	desc = mybook.desc
 
+/obj/item/cool_book/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/dynamic/book_images),
+	)
+
 /obj/item/cool_book/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)

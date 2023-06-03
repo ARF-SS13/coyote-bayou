@@ -70,6 +70,32 @@ GLOBAL_LIST_EMPTY(asset_datums)
 	for (var/asset_name in assets)
 		.[asset_name] = SSassets.transport.get_asset_url(asset_name, assets[asset_name])
 
+/// If you know a folder is gonna be full of assets, and you want to dynamically load them.
+/datum/asset/simple/dynamic
+	_abstract = /datum/asset/simple/dynamic
+	/// The folder to load assets from. Format is "folder_name/", from the rootestmost folder
+	var/folder_path
+	/// The file extensions to load assets from. Format is list(".ext", ".ext2", etc)
+	var/list/file_exts = list(".png")
+
+/datum/asset/simple/dynamic/register()
+	build_asset_list()
+	. = ..()
+
+/datum/asset/simple/dynamic/proc/build_asset_list()
+	var/list/all_my_files = flist(folder_path)
+	if(!LAZYLEN(all_my_files))
+		message_admins("ERROR: [type] has no files in [folder_path]")
+		return
+	fileloop:
+		for(var/file in all_my_files)
+			for(var/ext in file_exts)
+				if(findtext(file, ext))
+					break
+				continue fileloop
+			assets["[file]"] = "[folder_path][file]"
+	if(!LAZYLEN(assets))
+		message_admins("ERROR: [type] has files in [folder_path], but none of them are valid [english_list(file_exts)] files.")
 
 // For registering or sending multiple others at once
 /datum/asset/group

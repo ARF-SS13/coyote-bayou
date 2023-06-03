@@ -436,6 +436,7 @@ SUBSYSTEM_DEF(cool_books)
 		img_fullpath = "[COOLBOOK_IMG_SRC_DIR][img_filename]"
 		if(!fexists(img_fullpath))
 			CRASH("Chapter [src] has a chapter with an image that does not exist! [img_filename] [img_fullpath]")
+		SSassets.transport.register_asset(img_filename, img_fullpath)
 	else 
 		img_fullpath = img_filename
 		if(!check_img_url(img_filename))

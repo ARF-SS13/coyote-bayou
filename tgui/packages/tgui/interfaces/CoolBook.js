@@ -2,8 +2,9 @@
 import { useBackend, useLocalState } from "../backend";
 import { Box, Button, Flex, Icon, Section, Stack } from "../components";
 import { Window } from "../layouts";
+import { resolveAsset } from '../assets';
 import { marked } from 'marked';
-import DOMPurify from 'dompurify';
+import { sanitizeText } from '../sanitize';
 const CoolHeaderColor = 'green';
 const CoolContentColor = "primary";
 const CoolHeadfootHeight = "4em";
@@ -105,21 +106,25 @@ const CoolImage = (props, context) => {
     ImagePath = Image;
   }
   else {
-    ImagePath = require("/../COOLBOOK_IMAGES/" + Image);
+    //ImagePath = require("/../COOLBOOK_IMAGES/" + Image); // cursed line that turbofucks everything
+    ImagePath = resolveAsset(Image);
   }
   return (
     <Box
-      width="100%"
+      textAlign="center"
       height={CoolImageMaxHeight}
-      textAlign="center">
-      <img
-        textAlign="center"
+      width="auto">
+      <Box
+        as="img"
+        width="100%"
+        height={CoolImageMaxHeight}
         src={ImagePath}
         alt="Imagine a cool image here!"
         width="auto"
         height={CoolImageMaxHeight}
-        resizeMode={StretchFit} />
-    </Box>
+        maxWidth="100%"
+        resizeMode={StretchFit}/>
+      </Box>
   );
 };
 
@@ -151,8 +156,8 @@ export const CoolBookFormatText = (text, IsPlayerMade) => {
   ];
   let uncoolAttr = ['class', 'style'];
 
-  const sanitizedText = DOMPurify.sanitize(text);
-  const formattedText = marked(sanitizedText, { smartypants: true, gfm: true, tables: true, sanitize: true, breaks: true, smartLists: true });
+  const sanitizedText = sanitizeText(text, coolTags, uncoolAttr);
+  const formattedText = marked(sanitizedText, { smartypants: true, gfm: true, tables: true, sanitize: false, breaks: true, smartLists: true });
   return { __html: formattedText };
 };
 

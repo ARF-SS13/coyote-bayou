@@ -185,6 +185,10 @@
 		"boss6.gif" = 'icons/ui_icons/arcade/boss6.gif',
 	)
 
+/datum/asset/simple/dynamic/book_images
+	folder_path = COOLBOOK_IMG_SRC_DIR
+	file_exts = BOOK_IMG_URL_SUFFIXES
+
 /*
 /datum/asset/spritesheet/simple/achievements
 	name ="achievements"
