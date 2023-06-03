@@ -106,7 +106,7 @@ const CoolImage = (props, context) => {
     ImagePath = Image;
   }
   else {
-    //ImagePath = require("/../COOLBOOK_IMAGES/" + Image); // cursed line that turbofucks everything
+    // ImagePath = require("/../COOLBOOK_IMAGES/" + Image); // cursed line that turbofucks everything
     ImagePath = resolveAsset(Image);
   }
   return (
@@ -116,15 +116,14 @@ const CoolImage = (props, context) => {
       width="auto">
       <Box
         as="img"
-        width="100%"
         height={CoolImageMaxHeight}
         src={ImagePath}
         alt="Imagine a cool image here!"
         width="auto"
         height={CoolImageMaxHeight}
         maxWidth="100%"
-        resizeMode={StretchFit}/>
-      </Box>
+        resizeMode={StretchFit} />
+    </Box>
   );
 };
 
