@@ -1295,17 +1295,15 @@
 /datum/gear/donator/kits/xxpawnstarrxx
 	name = "Botanical Bounty Box"
 	path = /obj/item/storage/box/large/custom_kit/blindboyo
-	ckeywhitelist = list("XXPawnStarrXx")
+	ckeywhitelist = list("xxpawnstarrxx")
 
 /obj/item/storage/box/large/custom_kit/blindboyo/PopulateContents()
-    new /obj/item/circuitboard/machine/biogenerator(src)
-    new /obj/item/circuitboard/machine/plantgenes(src)
-    new /obj/item/circuitboard/machine/seed_extractor(src)
-    new /obj/item/queen_bee/bought(src)
-    new /obj/item/seeds/bee_balm(src)
-    new /obj/item/seeds/pumpkin(src)
-    new /obj/item/seeds/garlic(src)
-    new /obj/item/seeds/onion(src)
+	new /obj/item/circuitboard/machine/biogenerator(src)
+	new /obj/item/circuitboard/machine/plantgenes(src)
+	new /obj/item/circuitboard/machine/seed_extractor(src)
+	new /obj/item/queen_bee/bought(src)
+	new /obj/item/vending_refill/hydroseeds(src)
+	new /obj/machinery/vending/hydroseeds(src)
 
 // Y
 
