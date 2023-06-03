@@ -60,10 +60,10 @@
 		'sound/f13npc/supermutant/idle3.ogg',
 		'sound/f13npc/supermutant/idle4.ogg'
 		)
-	death_sound = list(
+	/*death_sound = list(
 		'sound/f13npc/supermutant/death1.ogg',
 		'sound/f13npc/supermutant/death2.ogg'
-		)
+		)*/
 	emote_taunt_sound = list(
 		'sound/f13npc/supermutant/alert1.ogg',
 		'sound/f13npc/supermutant/alert2.ogg',
