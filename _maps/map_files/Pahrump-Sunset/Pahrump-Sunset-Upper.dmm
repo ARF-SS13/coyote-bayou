@@ -695,6 +695,9 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"aHD" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
 "aIC" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -20374,7 +20377,8 @@
 "woL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/smartfridge/chemistry{
-	pixel_x = -31
+	pixel_x = -31;
+	density = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -26504,7 +26508,7 @@ wbP
 wbP
 wbP
 wbP
-wbP
+uro
 oez
 oez
 oez
@@ -26761,7 +26765,7 @@ wbP
 wbP
 wbP
 wbP
-wbP
+oez
 oez
 oez
 oez
@@ -27018,7 +27022,7 @@ wbP
 wbP
 wbP
 wbP
-wbP
+sRu
 oez
 oez
 oez
@@ -28591,11 +28595,11 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-kWL
-kWL
+aHD
+aHD
+aHD
+cym
+cym
 mYX
 xYx
 xYx
@@ -28848,11 +28852,11 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-kWL
-kWL
+aHD
+aHD
+aHD
+cym
+cym
 mYX
 mYX
 mYX
