@@ -27,13 +27,13 @@ SUBSYSTEM_DEF(cool_books)
 	var/list/all_book_directories = flist("[BOOKS_DIRECTORY]")
 	var/number_of_books = 0
 	for(var/hardcover in all_book_directories)
-		if(findtext(hardcover, BOOKS_DIRECTORY_IMAGES))
-			all_book_directories -= hardcover // found an image! not a directory!
-			continue // While you can put images in here, they won't be read by the system
+		// if(findtext(hardcover, BOOKS_DIRECTORY_IMAGES))
+		// 	all_book_directories -= hardcover // found an image! not a directory!
+		// 	continue // While you can put images in here, they won't be read by the system
 		if(findtext(hardcover, ".")) // If it has a period, it's a file, likely a readme or something
 			all_book_directories -= hardcover // found a file! not a directory!
 			continue // While you can put files in here, they won't be read by the system
-		if(!fexists("[BOOKS_DIRECTORY][hardcover]/[BOOK_CHAPTER_INDEX]")) // no index? it isnt a book!
+		if(!fexists("[BOOKS_DIRECTORY][hardcover]/[BOOK_INDEX]")) // no index? it isnt a book!
 			all_book_directories -= hardcover // found a directory without an index! not a book!
 			continue
 	if(!LAZYLEN(all_book_directories))

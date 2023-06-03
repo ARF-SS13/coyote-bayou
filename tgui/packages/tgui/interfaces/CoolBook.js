@@ -1,10 +1,9 @@
 /* eslint-disable max-len */
-import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from "../backend";
 import { Box, Button, Flex, Icon, Section, Stack } from "../components";
 import { Window } from "../layouts";
 import { marked } from 'marked';
-import { sanitizeText } from '../sanitize';
+import DOMPurify from 'dompurify';
 const CoolHeaderColor = 'green';
 const CoolContentColor = "primary";
 const CoolHeadfootHeight = "4em";
@@ -106,7 +105,7 @@ const CoolImage = (props, context) => {
     ImagePath = Image;
   }
   else {
-    ImagePath = require("/../COOLBOOKs/images/" + Image);
+    ImagePath = require("/../COOLBOOK_IMAGES/" + Image);
   }
   return (
     <Box
@@ -119,8 +118,6 @@ const CoolImage = (props, context) => {
         alt="Imagine a cool image here!"
         width="auto"
         height={CoolImageMaxHeight}
-        maxWidth={CoolImageMaxWidth}
-        maxHeight={CoolImageMaxHeight}
         resizeMode={StretchFit} />
     </Box>
   );
@@ -154,7 +151,7 @@ export const CoolBookFormatText = (text, IsPlayerMade) => {
   ];
   let uncoolAttr = ['class', 'style'];
 
-  const sanitizedText = sanitizeText(text, coolTags, uncoolAttr);
+  const sanitizedText = DOMPurify.sanitize(text);
   const formattedText = marked(sanitizedText, { smartypants: true, gfm: true, tables: true, sanitize: true, breaks: true, smartLists: true });
   return { __html: formattedText };
 };

@@ -1,8 +1,8 @@
-#define BOOKS_DIRECTORY "COOLBOOKs/"
+#define BOOKS_DIRECTORY "COOLBOOK_books/"
 #define BOOKS_DIRECTORY_IMAGES "images/"
 #define BOOK_INDEX "index.json"
 #define COOLBOOK_IMG_DEST_DIR "tgui/public/coolbook_images/"
-#define COOLBOOK_IMG_SRC_DIR "[BOOKS_DIRECTORY]images/"
+#define COOLBOOK_IMG_SRC_DIR "COOLBOOK_IMAGES/"
 
 #define BOOKENTRY_KEY "key"
 #define BOOKENTRY_DESC "desc"
