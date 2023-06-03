@@ -14078,18 +14078,11 @@
 	icon = 'modular_sunset/icons/turfs/walls/brick_small_light.dmi';
 	icon_state = "brick0";
 	icon_type_smooth = "brick";
-	color = "#EEEEEE";
+	color = "#A07777";
 	density = 0
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/tribal)
-"aXZ" = (
-/obj/structure/spacevine,
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
-	},
-/area/f13/wasteland)
 "aYc" = (
 /obj/structure/table/wood/poker,
 /obj/structure/chair/stool/retro/black,
@@ -18322,8 +18315,14 @@
 	icon = 'modular_sunset/icons/turfs/walls/brick_small_light.dmi';
 	icon_state = "brick0";
 	icon_type_smooth = "brick";
-	color = "#CCCCCC";
+	color = "#A07777";
 	density = 0
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
@@ -39343,7 +39342,7 @@
 	icon = 'modular_sunset/icons/turfs/walls/brick_small_light.dmi';
 	icon_state = "brick0";
 	icon_type_smooth = "brick";
-	color = "#EEEEEE";
+	color = "#A07777";
 	density = 0
 	},
 /turf/open/floor/plasteel/cult,
@@ -50132,9 +50131,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/window/reinforced{
-	icon_state = "twindowold"
-	},
+/obj/structure/railing,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "jMw" = (
@@ -77702,7 +77699,7 @@
 	icon = 'modular_sunset/icons/turfs/walls/brick_small_light.dmi';
 	icon_state = "brick0";
 	icon_type_smooth = "brick";
-	color = "#EEEEEE";
+	color = "#A07777";
 	density = 0
 	},
 /turf/open/floor/plasteel/cult,
@@ -107152,7 +107149,7 @@ bgV
 jMH
 dFE
 bcp
-aXZ
+sNY
 bDf
 uAQ
 cYw
@@ -109465,7 +109462,7 @@ tmp
 gEk
 ekN
 oiD
-cnJ
+bDf
 our
 ugE
 seu
@@ -109722,7 +109719,7 @@ tmp
 dFE
 pdj
 mmr
-cnJ
+bDf
 qkw
 ugE
 jac
@@ -109979,7 +109976,7 @@ tmp
 dFE
 pdj
 mmr
-cnJ
+bDf
 ugE
 ugE
 seu
@@ -110236,7 +110233,7 @@ jMH
 dFE
 pdj
 mmr
-cnJ
+bDf
 ugE
 ugE
 seu
@@ -110493,7 +110490,7 @@ jMH
 dFE
 rgw
 sIF
-cnJ
+bDf
 bDf
 bDf
 bDf
@@ -120485,7 +120482,7 @@ fHl
 gJb
 pOA
 hkC
-bsB
+gOj
 rgs
 oLM
 oLM
