@@ -2324,12 +2324,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ajn" = (
-/obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/effect/spawner/lootdrop/f13/medical/surgical,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
-/area/f13/building/hospital)
 "ajr" = (
 /obj/structure/chair,
 /obj/effect/decal/cleanable/dirt,
@@ -14083,7 +14077,7 @@
 "aXZ" = (
 /obj/structure/spacevine,
 /turf/closed/wall/f13/coyote/oldwood,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "aYc" = (
 /obj/structure/table/wood/poker,
 /obj/structure/chair/stool/retro/black,
@@ -15184,9 +15178,38 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city)
 "bdn" = (
-/obj/machinery/computer/operating{
-	dir = 1
+/obj/structure/closet/crate/freezer{
+	storage_capacity = 30
 	},
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "bdo" = (
@@ -16259,10 +16282,6 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
-"bhr" = (
-/obj/structure/spacevine,
-/turf/closed/wall/f13/coyote/oldwood,
-/area/f13/building/hospital)
 "bhu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin/trashbin,
@@ -21540,8 +21559,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "cdS" = (
-/obj/structure/simple_door/metal/dirtystore,
-/turf/open/floor/f13/wood,
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building/hospital)
 "cee" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25122,11 +25140,9 @@
 /turf/open/floor/f13,
 /area/f13/building/abandoned)
 "cPq" = (
-/obj/structure/curtain,
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/effect/spawner/lootdrop/f13/medical/surgical,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "cPt" = (
@@ -25369,10 +25385,13 @@
 	},
 /area/f13/wasteland/massfusion/entrance)
 "cSk" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
+/obj/machinery/light{
+	dir = 4
 	},
-/turf/closed/wall/f13/coyote/oldwood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
 /area/f13/building/hospital)
 "cSm" = (
 /obj/structure/stairs/west{
@@ -27109,8 +27128,7 @@
 	},
 /area/f13/wasteland/massfusion)
 "dti" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/surgical,
+/obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "dtm" = (
@@ -32096,11 +32114,10 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
 "ePJ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/railing/corner{
+	dir = 4;
+	pixel_y = -1
 	},
-/obj/structure/table,
-/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "ePK" = (
@@ -36964,8 +36981,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ggm" = (
-/obj/structure/railing{
-	dir = 1
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12;
+	pixel_y = 8
+	},
+/obj/machinery/iv_drip{
+	pixel_x = 11;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
@@ -37847,8 +37870,8 @@
 	},
 /area/f13/building/coyote/nash/grocery/southloop)
 "gvn" = (
-/obj/structure/curtain,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
+/obj/structure/simple_door/metal/dirtystore,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "gvp" = (
 /turf/open/indestructible/ground/outside/road{
@@ -42325,39 +42348,10 @@
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
 "hGn" = (
-/obj/structure/closet/crate/freezer{
-	storage_capacity = 30
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
-/obj/item/organ/heart,
-/obj/item/organ/heart,
-/obj/item/organ/heart,
-/obj/item/organ/heart,
-/obj/item/organ/lungs,
-/obj/item/organ/lungs,
-/obj/item/organ/lungs,
-/obj/item/organ/lungs,
-/obj/item/organ/stomach,
-/obj/item/organ/stomach,
-/obj/item/organ/stomach,
-/obj/item/organ/stomach,
-/obj/item/organ/liver,
-/obj/item/organ/liver,
-/obj/item/organ/liver,
-/obj/item/organ/liver,
-/obj/item/organ/eyes,
-/obj/item/organ/eyes,
-/obj/item/organ/eyes,
-/obj/item/organ/eyes,
-/obj/item/organ/eyes,
-/obj/item/organ/ears,
-/obj/item/organ/ears,
-/obj/item/organ/ears,
-/obj/item/organ/ears,
-/obj/item/organ/tongue,
-/obj/item/organ/tongue,
-/obj/item/organ/tongue,
-/obj/item/organ/tongue,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building/hospital)
 "hGo" = (
 /obj/effect/spawner/lootdrop/f13/common,
@@ -54175,14 +54169,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "kVo" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12;
-	pixel_y = 8
-	},
-/obj/machinery/iv_drip{
-	pixel_x = 11;
-	pixel_y = -9
+/obj/structure/railing{
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
@@ -75996,10 +75984,9 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "qJW" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "housewindow"
-	},
-/turf/open/floor/f13/wood,
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/medical/surgical,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "qKf" = (
 /obj/structure/decoration/rag{
@@ -80671,7 +80658,12 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city)
 "rYZ" = (
-/turf/open/floor/plating/rockcrete_slab,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/table,
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "rZr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -83580,9 +83572,11 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland/city/nash/starterroad)
 "sNY" = (
-/obj/structure/table,
-/obj/structure/closet/crate/freezer/blood,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
+/obj/structure/bed/roller,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
 /area/f13/building/hospital)
 "sOh" = (
 /obj/machinery/light/small/broken{
@@ -85341,11 +85335,12 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "tnu" = (
-/obj/structure/railing/corner{
-	dir = 4;
-	pixel_y = -1
+/obj/structure/table,
+/obj/structure/barricade/bars,
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "tnx" = (
 /obj/structure/chair/office,
@@ -87988,7 +87983,10 @@
 /turf/open/water,
 /area/f13/building/sewers)
 "tUH" = (
-/turf/closed/wall/f13/coyote/oldwood,
+/obj/structure/window/fulltile/store{
+	icon_state = "housewindow"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "tUJ" = (
 /obj/effect/decal/cleanable/dirt{
@@ -90885,8 +90883,10 @@
 	},
 /area/f13/wasteland/city)
 "uMJ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rockcrete_slab,
+/obj/machinery/computer/operating{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "uML" = (
 /obj/structure/table/wood,
@@ -100730,13 +100730,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city/nash/starterroad)
-"xxo" = (
-/obj/structure/bed/roller,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
-/area/f13/building/hospital)
 "xxs" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -102094,13 +102087,9 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "xQi" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
+/obj/structure/table,
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "xQl" = (
 /obj/structure/flora/grass/wasteland{
@@ -102110,12 +102099,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xQo" = (
-/obj/structure/table,
-/obj/structure/barricade/bars,
-/obj/machinery/light/small{
-	dir = 8
+/obj/structure/curtain,
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/hospital)
 "xQr" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -106649,15 +106638,15 @@ gRW
 vHY
 niE
 gRW
-rYZ
-rYZ
-rYZ
-rYZ
-rYZ
-rYZ
-uMJ
-rYZ
-rYZ
+gRW
+gRW
+gRW
+gRW
+gRW
+gRW
+bgV
+gRW
+gRW
 hCu
 bgV
 lfg
@@ -106906,15 +106895,15 @@ jMH
 dFE
 jFT
 aOk
-tUH
-tUH
+cdS
+cdS
 tbQ
-bhr
-tUH
-tUH
-tUH
-tUH
-tUH
+aXZ
+cdS
+cdS
+cdS
+cdS
+cdS
 gRW
 bgV
 gLM
@@ -107163,15 +107152,15 @@ jMH
 dFE
 bcp
 aXZ
-tUH
+cdS
 uAQ
 cYw
 qZu
-ePJ
-cPq
+rYZ
+xQo
 hFE
-bdn
-tUH
+uMJ
+cdS
 gRW
 gRW
 gRW
@@ -107419,16 +107408,16 @@ bgV
 jMH
 dFE
 uba
-tUH
+cdS
 bcq
 qdw
 hFE
 hFE
-sNY
-gvn
+xQi
+dti
 hFE
 coF
-tUH
+cdS
 bgV
 gRW
 iPp
@@ -107676,16 +107665,16 @@ aVk
 dyM
 xpE
 uba
-tUH
+cdS
 wDO
 hFE
 nCu
 dMx
-tnu
-gvn
+ePJ
+dti
 hFE
-ajn
-bhr
+cPq
+aXZ
 gRW
 gRW
 bcZ
@@ -107933,16 +107922,16 @@ tmp
 dFE
 oLM
 eHU
-tUH
+cdS
 koj
 hFE
 ple
 wGL
-ggm
-gvn
+kVo
+dti
 hFE
-hGn
-tUH
+bdn
+cdS
 gRW
 bgV
 hPZ
@@ -108190,16 +108179,16 @@ jMH
 dFE
 sPU
 cIY
-tUH
+cdS
 eUV
 hFE
 bqK
 hFE
 hFE
-gvn
-kVo
 dti
-tUH
+ggm
+qJW
+cdS
 gRW
 tdh
 bcZ
@@ -108447,16 +108436,16 @@ jMH
 dFE
 uff
 aOk
-tUH
+cdS
 sUt
 sLE
 hFE
 hFE
 hFE
-gvn
-gvn
-tUH
-tUH
+dti
+dti
+cdS
+cdS
 gRW
 bgV
 uba
@@ -108704,7 +108693,7 @@ tmp
 dFE
 owz
 aOk
-tUH
+cdS
 uxv
 ugE
 hFE
@@ -108961,15 +108950,15 @@ jMH
 dFE
 uba
 aOk
-tUH
+cdS
 pqe
 ugE
 hFE
 hFE
 hFE
-tUH
+cdS
 och
-tUH
+cdS
 jPc
 gRW
 bgV
@@ -109218,7 +109207,7 @@ tmp
 dFE
 uba
 aOk
-tUH
+cdS
 mCR
 nZx
 hFE
@@ -109475,13 +109464,13 @@ tmp
 gEk
 ekN
 oiD
-tUH
+cdS
 our
 ugE
 hFE
 hFE
 hFE
-xQo
+tnu
 mAv
 mAv
 vPM
@@ -109732,7 +109721,7 @@ tmp
 dFE
 pdj
 mmr
-tUH
+cdS
 fsI
 ugE
 hFE
@@ -109989,7 +109978,7 @@ tmp
 dFE
 pdj
 mmr
-tUH
+cdS
 eak
 ugE
 hFE
@@ -109998,7 +109987,7 @@ hFE
 tAn
 mAv
 eFD
-qJW
+tUH
 gRW
 gRW
 rpl
@@ -110246,16 +110235,16 @@ jMH
 dFE
 pdj
 mmr
-tUH
-xxo
-xQi
+cdS
+sNY
+cSk
 isu
 hFE
 hFE
 tEi
 mAv
 ftt
-qJW
+tUH
 gRW
 gRW
 rnG
@@ -110503,16 +110492,16 @@ jMH
 dFE
 rgw
 sIF
-tUH
-tUH
-tUH
-tUH
-tUH
-tUH
-cSk
 cdS
 cdS
-bhr
+cdS
+cdS
+cdS
+cdS
+hGn
+gvn
+gvn
+aXZ
 gLM
 gRW
 bcZ
