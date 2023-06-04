@@ -54343,6 +54343,13 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"jCm" = (
+/obj/structure/spacevine,
+/obj/structure/wreck/trash/machinepile,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "jCo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -59930,6 +59937,13 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"kZY" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain0"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "kZZ" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -71639,6 +71653,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "nMr" = (
 /obj/structure/spacevine,
+/obj/machinery/mineral/wasteland_vendor/medical,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
 	},
@@ -146348,7 +146363,7 @@ aSz
 mje
 aSP
 vKX
-sEM
+jCm
 gVf
 pMi
 gOJ
@@ -146862,7 +146877,7 @@ aSp
 eiq
 mBN
 vfw
-gVf
+kZY
 rfn
 pJZ
 oqP
