@@ -325,6 +325,13 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"cx" = (
+/obj/machinery/door/airlock/medical{
+	name = "Roof Access";
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital)
 "cz" = (
 /obj/machinery/light/broken{
 	dir = 8
@@ -499,6 +506,16 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"eN" = (
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "eQ" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
@@ -2192,6 +2209,17 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"vV" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "we" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/segment{
@@ -2358,6 +2386,17 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"yj" = (
+/obj/structure/fence{
+	icon_state = "end";
+	pixel_x = -18
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "yo" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -3482,11 +3521,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital)
 "II" = (
-/obj/effect/turf_decal/trimline/neutral{
-	dir = 5;
-	icon_state = "trimline_fill"
+/obj/structure/railing/corner{
+	dir = 4;
+	color = "#A47449"
 	},
-/turf/open/floor/wood_wide,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "IM" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3677,6 +3720,13 @@
 /turf/open/floor/f13/wood{
 	color = "#999999"
 	},
+/area/f13/wasteland)
+"KQ" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_corner_fill";
+	dir = 8
+	},
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "KT" = (
 /obj/machinery/light{
@@ -4450,6 +4500,12 @@
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
 	dir = 9
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"SR" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_corner_fill"
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
@@ -8554,6 +8610,11 @@ mY
 mY
 mY
 Wr
+KQ
+qt
+qt
+qt
+BW
 FS
 mN
 Hl
@@ -8565,11 +8626,6 @@ Hl
 Hl
 GS
 FS
-hm
-hm
-hm
-hm
-hm
 hm
 xU
 hm
@@ -8811,6 +8867,11 @@ cm
 aB
 cm
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 Qk
 ID
@@ -8822,11 +8883,6 @@ ID
 XR
 fq
 FS
-hm
-hm
-hm
-hm
-hm
 px
 kZ
 ZN
@@ -9068,6 +9124,11 @@ Wr
 Wr
 Wr
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 dA
 HN
@@ -9079,13 +9140,8 @@ HN
 hL
 ES
 FS
-hm
-hm
-hm
-hm
-hm
-CD
 SP
+qt
 qt
 sF
 RH
@@ -9325,6 +9381,11 @@ cm
 aB
 cm
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 ly
 HN
@@ -9336,13 +9397,8 @@ HN
 hL
 ci
 FS
-hm
-hm
-hm
-hm
-hm
-CD
 nO
+Wr
 jb
 Wr
 Wr
@@ -9582,6 +9638,11 @@ Wr
 Wr
 Wr
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 FS
 FS
@@ -9593,13 +9654,8 @@ FS
 sX
 FS
 FS
-hm
-hm
-hm
-hm
-hm
-CD
 nO
+Wr
 Wr
 Wr
 Wr
@@ -9839,6 +9895,11 @@ mY
 mY
 Wr
 Wr
+Wr
+Wr
+Wr
+SR
+Fg
 FS
 Dc
 Gi
@@ -9850,13 +9911,8 @@ Gi
 VU
 Dc
 FS
-hm
-hm
-hm
-hm
-hm
-CD
 nO
+Wr
 Wr
 Wr
 Pp
@@ -10095,6 +10151,11 @@ Om
 mY
 Wr
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 FS
 VU
@@ -10107,13 +10168,8 @@ VU
 VU
 MN
 IW
-hm
-hm
-hm
-hm
-hm
-CD
 nO
+Wr
 Wr
 Wr
 be
@@ -10352,6 +10408,11 @@ nO
 Wr
 Wr
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 yp
 VU
@@ -10364,13 +10425,8 @@ lL
 VU
 jB
 UY
-En
-BW
-hm
-hm
-hm
-CD
 nO
+Wr
 Wr
 Wr
 Pp
@@ -10609,6 +10665,11 @@ Ig
 cm
 aB
 cm
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 pf
 VU
@@ -10621,13 +10682,8 @@ Zf
 VU
 IE
 UY
-Wr
-Xv
-hm
-hm
-hm
-CD
 nO
+Wr
 Wr
 Wr
 be
@@ -10866,6 +10922,11 @@ nO
 Wr
 Wr
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 Nv
 VU
@@ -10878,13 +10939,8 @@ Ay
 VU
 vy
 UY
+nO
 Wr
-Xv
-hm
-hm
-hm
-CD
-bC
 Mx
 Mx
 Ky
@@ -11123,6 +11179,11 @@ nO
 Wr
 Wr
 mY
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 FS
 of
@@ -11135,14 +11196,9 @@ VU
 VU
 MN
 WI
-Wr
+nO
 Xv
-hm
-hm
-hm
-hm
-UZ
-UZ
+yj
 UZ
 UZ
 UZ
@@ -11380,6 +11436,11 @@ nO
 mY
 mY
 mY
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 fG
 Ey
@@ -11392,14 +11453,9 @@ HN
 HN
 BM
 FS
-Wr
+nO
 Xv
-hm
-hm
-hm
-hm
-hm
-hm
+rK
 hm
 hm
 hm
@@ -11637,6 +11693,11 @@ GB
 Nk
 zr
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 BQ
 Pc
@@ -11649,14 +11710,9 @@ HN
 HN
 Lo
 FS
-Wr
+nO
 Xv
-hm
-hm
-hm
-hm
-hm
-hm
+rK
 hm
 hm
 hm
@@ -11894,6 +11950,11 @@ hm
 hm
 nO
 Wr
+Wr
+Wr
+Wr
+Wr
+Xv
 FS
 vG
 ky
@@ -11906,14 +11967,9 @@ HN
 HN
 nX
 FS
-Wr
+nO
 Xv
-hm
-hm
-hm
-hm
-hm
-hm
+rK
 hm
 hm
 hm
@@ -12151,26 +12207,26 @@ hm
 hm
 nO
 Wr
-FS
-FS
-FS
-FS
-FS
-FS
-FS
-FS
-FS
-FS
-FS
-FS
+Wr
+Wr
+Wr
 Wr
 Xv
-hm
-hm
-hm
-hm
-hm
-hm
+FS
+FS
+FS
+FS
+FS
+FS
+FS
+FS
+cx
+FS
+FS
+FS
+nO
+Xv
+rK
 hm
 hm
 hm
@@ -12412,9 +12468,14 @@ Wr
 Wr
 Wr
 Wr
-Xv
-hm
-II
+Wr
+mO
+mO
+mO
+mO
+mO
+mO
+mO
 mO
 mO
 mO
@@ -12422,12 +12483,7 @@ mO
 mO
 mO
 Wg
-hm
-hm
-hm
-hm
-hm
-hm
+rK
 hm
 hm
 hm
@@ -12670,21 +12726,21 @@ Wr
 Wr
 Wr
 Xv
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-LV
-EU
-EU
-EU
-EU
-EU
-Ow
-hm
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+eN
+vV
+vV
+vV
+vV
+vV
+II
+OI
 hm
 hm
 hm
