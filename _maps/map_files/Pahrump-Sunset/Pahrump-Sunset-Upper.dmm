@@ -231,11 +231,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
-"afH" = (
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken1"
-	},
-/area/f13/building)
 "afN" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -245,10 +240,6 @@
 	color = "#444444"
 	},
 /area/f13/wasteland)
-"aga" = (
-/obj/structure/spacevine,
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "agA" = (
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/effect/decal/cleanable/dirt,
@@ -431,11 +422,6 @@
 	color = "#d7d7d7"
 	},
 /area/f13/building/mall)
-"apJ" = (
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken3"
-	},
-/area/f13/building)
 "apS" = (
 /obj/machinery/hydroponics/soil/pot,
 /turf/open/indestructible/ground/outside/roof,
@@ -869,11 +855,6 @@
 	icon_state = "common-broken2"
 	},
 /area/f13/building)
-"aKQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "aLh" = (
 /mob/living/simple_animal/hostile/renegade/soldier,
 /turf/open/indestructible/ground/inside/mountain,
@@ -1207,13 +1188,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/brick,
-/area/f13/building)
-"aZG" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 9
-	},
-/turf/open/floor/wood_wide,
 /area/f13/building)
 "aZI" = (
 /obj/machinery/light/small{
@@ -6034,29 +6008,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"fFr" = (
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -2
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -7
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = 3
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = -12
-	},
-/obj/structure/barricade/wooden/planks{
-	density = 0;
-	pixel_y = 9
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "fFL" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -7408,13 +7359,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
-"gSp" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 1
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "gSO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8833,7 +8777,7 @@
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken6"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "iaH" = (
 /obj/structure/bed/oldalt,
 /obj/effect/decal/cleanable/dirt,
@@ -10055,13 +9999,6 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
-"jla" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/smoke_machine{
-	name = "HVAC Machine"
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "jmr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -11069,12 +11006,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
-"kdQ" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill"
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "keH" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -11082,14 +11013,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"keW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 5
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "kfh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -11121,7 +11044,7 @@
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken5"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "kgc" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -11387,12 +11310,6 @@
 	color = "#9c9c9c"
 	},
 /area/f13/building/tribal)
-"kpX" = (
-/obj/machinery/smoke_machine{
-	name = "HVAC Machine"
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "kqx" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin/towel,
@@ -13497,7 +13414,7 @@
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken5"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "mta" = (
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/f13{
@@ -13857,13 +13774,6 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
-/area/f13/building)
-"mHt" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 8
-	},
-/turf/open/floor/wood_wide,
 /area/f13/building)
 "mHH" = (
 /obj/structure/barricade/wooden,
@@ -15296,15 +15206,6 @@
 /obj/structure/railing,
 /turf/open/transparent/openspace,
 /area/f13/building/massfusion)
-"nVR" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill";
-	dir = 4
-	},
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken3"
-	},
-/area/f13/building)
 "nWh" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_west_north"
@@ -16976,11 +16877,6 @@
 	req_one_access_txt = "121"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
-"pGD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/turf/open/floor/wood_wide,
 /area/f13/building)
 "pGF" = (
 /obj/machinery/teleport/station{
@@ -18705,13 +18601,6 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
-"rnL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill"
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "roa" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -19379,13 +19268,6 @@
 "rLZ" = (
 /turf/open/floor/carpet/arcade,
 /area/f13/building/mall)
-"rMc" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 6
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "rMZ" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
@@ -22243,13 +22125,6 @@
 	color = "#AA5555"
 	},
 /area/f13/building)
-"uvA" = (
-/obj/machinery/power/solar/fake{
-	density = 0;
-	pixel_y = -8
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "uvD" = (
 /obj/structure/stairs/west{
 	color = "#A47449";
@@ -25040,13 +24915,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"xtQ" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 10
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "xub" = (
 /obj/machinery/shower{
 	pixel_y = 18
@@ -25078,13 +24946,6 @@
 /obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"xyv" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 4
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "xyP" = (
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -25573,12 +25434,6 @@
 	color = "#888888"
 	},
 /area/f13/building/tribal)
-"xVi" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill"
-	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
 "xVM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_wide,
@@ -29390,8 +29245,11 @@ mNn
 mNn
 xaY
 rqY
-mHt
-xtQ
+nEl
+wky
+oez
+poH
+nEl
 oce
 oce
 hhC
@@ -29403,10 +29261,7 @@ oce
 oce
 oce
 oce
-oez
-oez
-afb
-sFc
+xyP
 oez
 qZs
 eGR
@@ -29647,8 +29502,11 @@ mNn
 mNn
 bqH
 mPz
-bEN
-kdQ
+dUa
+oeP
+oez
+gWO
+dUa
 oce
 hpb
 kiY
@@ -29660,10 +29518,7 @@ pzS
 pzS
 vOP
 oce
-oez
-oez
-oez
-oIp
+xyP
 xyP
 xyP
 eGR
@@ -29890,13 +29745,13 @@ oez
 oez
 oez
 oez
-aZG
-mHt
-mHt
-mHt
-mHt
-mHt
-xtQ
+poH
+nEl
+nEl
+nEl
+nEl
+nEl
+wky
 oez
 sBw
 eJR
@@ -29904,8 +29759,11 @@ mNn
 slU
 slU
 mPz
-bEN
-kdQ
+dUa
+oeP
+jQu
+gWO
+dUa
 oce
 rKZ
 klm
@@ -29917,10 +29775,7 @@ srE
 srE
 cXk
 oce
-oez
-oez
-oez
-afb
+mrM
 tpU
 cOy
 vTB
@@ -30147,13 +30002,13 @@ oez
 oez
 oez
 oez
-gSp
-uvA
-kpX
-bEN
-bEN
-bEN
-kdQ
+gWO
+aCK
+gQO
+dUa
+dUa
+dUa
+oeP
 oez
 rqY
 oEj
@@ -30161,8 +30016,11 @@ gwz
 mNn
 jze
 mPz
-bEN
-kdQ
+dUa
+oeP
+oez
+gWO
+dUa
 oce
 rcN
 bQR
@@ -30174,9 +30032,6 @@ pZo
 pzS
 srE
 oce
-oez
-oez
-oez
 oez
 eGR
 tEq
@@ -30404,13 +30259,13 @@ oez
 oez
 oez
 oez
-gSp
-aga
-aga
-pGD
-pGD
+gWO
+oqk
+oqk
+qpP
+qpP
 msN
-kdQ
+oeP
 oez
 kqL
 lcB
@@ -30418,8 +30273,11 @@ nCS
 mNn
 lkh
 kqL
-bEN
-kdQ
+dUa
+oeP
+oez
+gWO
+dUa
 oce
 bQR
 bQR
@@ -30431,9 +30289,6 @@ oce
 oce
 oce
 oce
-oez
-oez
-oez
 oez
 eGR
 lak
@@ -30661,13 +30516,13 @@ oez
 oez
 oez
 oez
-gSp
-uvA
+gWO
+aCK
 kga
 iau
-kpX
-bEN
-kdQ
+gQO
+dUa
+oeP
 oez
 oYF
 cNi
@@ -30675,8 +30530,11 @@ jzy
 mNn
 kqL
 cBX
-afH
-kdQ
+gen
+oeP
+oez
+gWO
+dUa
 oce
 veF
 oce
@@ -30688,9 +30546,6 @@ sqT
 lNl
 dXl
 oce
-oez
-oez
-oez
 oez
 hmG
 kBv
@@ -30918,21 +30773,24 @@ oez
 oez
 oez
 oez
-gSp
-bEN
-bEN
-aKQ
-cXu
-bEN
-kdQ
+gWO
+dUa
+dUa
+ctb
+oRM
+dUa
+oeP
 oez
 rqY
 dNl
 eQo
 gIL
 kqL
-bEN
-dXp
+dUa
+xVM
+oez
+oez
+gWO
 oce
 oce
 xYx
@@ -30945,9 +30803,6 @@ lNl
 lNl
 wIL
 wDI
-oez
-oez
-oez
 oez
 uqG
 ohv
@@ -31175,21 +31030,24 @@ oez
 oez
 oez
 oez
-gSp
-uvA
-jla
-uvA
-jla
-bEN
-kdQ
+gWO
+aCK
+jVf
+aCK
+jVf
+dUa
+oeP
 oez
 oYF
 tcf
 mNn
 mNn
 fet
-uvA
-jla
+aCK
+jVf
+oez
+oez
+gWO
 oce
 xYx
 xYx
@@ -31202,9 +31060,6 @@ lNl
 lNl
 uDL
 aOL
-oez
-oez
-oez
 oez
 ohv
 xzL
@@ -31432,21 +31287,24 @@ oez
 oez
 oez
 oez
-gSp
-bEN
-dXp
-bEN
-dXp
-bEN
-kdQ
+gWO
+dUa
+xVM
+dUa
+xVM
+dUa
+oeP
 oez
 kqL
 rty
 mNn
 slU
 aJz
-bEN
-dXp
+dUa
+xVM
+oez
+oez
+gWO
 pUq
 thT
 xYx
@@ -31459,9 +31317,6 @@ lNl
 lNl
 uDL
 aOL
-oez
-oez
-oez
 oez
 ohv
 sbF
@@ -31689,21 +31544,24 @@ oez
 oez
 oez
 oez
-gSp
-bEN
-dXp
-uvA
-kpX
-dLZ
-kdQ
+gWO
+dUa
+xVM
+aCK
+gQO
+xrC
+oeP
 oez
 kqL
 gPk
 mNn
 mNn
 aJz
-uvA
-jla
+aCK
+jVf
+oez
+oez
+gWO
 vtO
 thT
 xYx
@@ -31716,9 +31574,6 @@ lNl
 lNl
 uDL
 aOL
-oez
-oez
-oez
 oez
 cBX
 ohv
@@ -31946,21 +31801,24 @@ oez
 oez
 oez
 oez
-gSp
-bEN
-afH
-apJ
-aga
-dXp
-rnL
+gWO
+dUa
+gen
+cbg
+oqk
+xVM
+mod
 oez
 kqL
 slU
 slU
 mNn
 aJz
-aga
-bEN
+oqk
+dUa
+oez
+oez
+gWO
 vtO
 thT
 xYx
@@ -31973,9 +31831,6 @@ lNl
 lNl
 uDL
 aOL
-oez
-oez
-oez
 oez
 gWO
 dUa
@@ -32203,21 +32058,24 @@ oez
 oez
 oez
 oez
-gSp
-bEN
-bEN
-bEN
-aga
-aga
-kdQ
+gWO
+dUa
+dUa
+dUa
+oqk
+oqk
+oeP
 oez
 oYF
 iYD
 mNn
 iNv
 aMe
-aga
-bEN
+oqk
+dUa
+oez
+oez
+gWO
 vtO
 thT
 xYx
@@ -32230,9 +32088,6 @@ lNl
 lNl
 uDL
 aOL
-oez
-oez
-oez
 oez
 gWO
 dUa
@@ -32460,21 +32315,24 @@ oez
 oez
 oez
 oez
-gSp
-bEN
-bEN
-bEN
-aga
-aga
-kdQ
+gWO
+dUa
+dUa
+dUa
+oqk
+oqk
+oeP
 oez
 iMM
 cNh
 cNh
 aec
 cBX
-bEN
-bEN
+dUa
+dUa
+oez
+oez
+gWO
 uWx
 tnO
 oMf
@@ -32487,9 +32345,6 @@ lNl
 lNl
 uDL
 waE
-oez
-oez
-oez
 oez
 nAu
 gtb
@@ -32717,21 +32572,24 @@ oez
 oez
 oez
 oez
-keW
-xyv
-xyv
-xyv
-xyv
-xyv
-rMc
-fFr
-gSp
-afH
-xVi
-xyv
-xyv
-nVR
-bEN
+nAu
+gtb
+gtb
+gtb
+gtb
+gtb
+vSo
+jQu
+gWO
+gen
+xFm
+gtb
+gtb
+kUk
+dUa
+oez
+oez
+gWO
 oce
 gDZ
 blz
@@ -32744,9 +32602,6 @@ qsC
 psj
 mcX
 oce
-oez
-oez
-oez
 oez
 oez
 tRd
@@ -32982,28 +32837,28 @@ oez
 oez
 oez
 oez
-keW
-xyv
-rMc
+nAu
+gtb
+vSo
 oez
 oez
-keW
-xyv
-oce
-oce
-oce
-oce
-oce
-oce
-oce
-oce
-oce
-oce
-oce
-oce
+nAu
+gtb
 oez
 oez
-oez
+gWO
+oce
+oce
+oce
+oce
+oce
+oce
+oce
+oce
+oce
+oce
+oce
+oce
 oez
 oez
 tRd

@@ -27176,10 +27176,8 @@
 /turf/open/floor/f13,
 /area/f13/building/abandoned)
 "cPq" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowvertical"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/machinery/chem_dispenser,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital)
 "cPt" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -33684,6 +33682,10 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/museum/groundfloor)
+"ewG" = (
+/obj/machinery/chem_heater,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital)
 "ewJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -35469,7 +35471,7 @@
 /area/f13/wasteland/massfusion/entrance)
 "eTU" = (
 /obj/structure/window/fulltile/store{
-	icon_state = "storewindowbottom"
+	icon_state = "storewindowright"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital)
@@ -46362,12 +46364,9 @@
 /area/f13/ruins)
 "hFN" = (
 /obj/structure/window/fulltile/store{
-	icon_state = "storewindowbottom"
+	icon_state = "storewindowleft"
 	},
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "hFP" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -51906,10 +51905,8 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city)
 "iVj" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowvertical"
-	},
-/turf/open/indestructible/ground/outside/desert,
+/obj/machinery/chem_master,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital)
 "iVo" = (
 /obj/machinery/hydroponics/soil/pot,
@@ -54344,6 +54341,13 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/nash/downtown)
+"jCm" = (
+/obj/structure/spacevine,
+/obj/structure/wreck/trash/machinepile,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/city/nash/downtown)
 "jCo" = (
@@ -59933,6 +59937,13 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"kZY" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain0"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "kZZ" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -71642,6 +71653,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "nMr" = (
 /obj/structure/spacevine,
+/obj/machinery/mineral/wasteland_vendor/medical,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
 	},
@@ -91545,6 +91557,10 @@
 	icon_state = "verticalrightborderleft1"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"sLx" = (
+/obj/structure/window/fulltile/store,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital)
 "sLy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -117330,7 +117346,7 @@ iAU
 iAU
 iAU
 mAv
-iVj
+mAv
 mAv
 iAU
 vAc
@@ -118872,7 +118888,7 @@ iAU
 iAU
 iAU
 iAU
-cPq
+mAv
 iAU
 cYw
 iAU
@@ -119892,7 +119908,7 @@ bcy
 tBD
 tfE
 aOk
-aOk
+iAU
 iAU
 iAU
 iAU
@@ -120149,8 +120165,8 @@ bcO
 tBD
 tfE
 aOk
-aOk
 iAU
+cPq
 wTy
 wTy
 wTy
@@ -120406,8 +120422,8 @@ bcf
 cxc
 tfE
 aOk
-aOk
 iAU
+iVj
 jHA
 wTy
 uBk
@@ -120417,7 +120433,7 @@ bGz
 bGz
 bGz
 vIJ
-hFN
+sLx
 bZY
 rLT
 nFA
@@ -120663,8 +120679,8 @@ tBD
 bxH
 tfE
 aOk
-aOk
 iAU
+ewG
 dzD
 hGn
 cLg
@@ -120920,8 +120936,8 @@ uKz
 cxc
 tfE
 aOk
-aOk
 wNX
+iAU
 iAU
 iAU
 iAU
@@ -146347,7 +146363,7 @@ aSz
 mje
 aSP
 vKX
-sEM
+jCm
 gVf
 pMi
 gOJ
@@ -146861,7 +146877,7 @@ aSp
 eiq
 mBN
 vfw
-gVf
+kZY
 rfn
 pJZ
 oqP
