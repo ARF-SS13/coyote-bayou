@@ -399,18 +399,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ft" = (
-/obj/structure/flora/tree/oak_two{
-	pixel_y = 8
+/obj/structure/decoration/rag{
+	icon_state = "skin"
 	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/flora/ausbushes/ppflowers{
-	layer = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/obj/structure/decoration/rag,
+/turf/closed/wall/f13/wood,
+/area/f13/building)
 "fB" = (
 /obj/structure/flora/jungle6,
 /turf/open/indestructible/ground/outside/dirt,
@@ -4126,6 +4120,12 @@
 /obj/structure/decoration/rag,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"UR" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "UU" = (
 /obj/structure/campfire/stove{
 	pixel_y = 9;
@@ -4607,6 +4607,9 @@
 "Zz" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
 "ZA" = (
@@ -64474,7 +64477,7 @@ tK
 Yj
 to
 FN
-dK
+iX
 nR
 iu
 ZV
@@ -65242,7 +65245,7 @@ ef
 Vs
 Vs
 Xm
-nR
+UR
 yb
 wx
 RV
@@ -65499,8 +65502,8 @@ mF
 dK
 dR
 ac
-Xm
-dK
+nR
+nR
 wx
 Jq
 nR
@@ -65755,10 +65758,10 @@ EF
 nR
 nR
 nR
-nR
-nR
-nR
-nR
+dK
+Xm
+ft
+iX
 nR
 nR
 zG
@@ -66009,7 +66012,7 @@ Hw
 Hw
 Hw
 EF
-RV
+nR
 nR
 nR
 nR
@@ -66265,15 +66268,15 @@ Hw
 Hw
 Hw
 Hw
-SE
-vg
-vg
-vg
-vg
-vg
-ti
-NM
-py
+EF
+RV
+nR
+nR
+nR
+nR
+nR
+nR
+nR
 py
 Gz
 VD
@@ -66522,15 +66525,15 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+SE
+vg
+vg
+vg
+vg
+vg
 ti
-xr
-ft
+NM
+py
 py
 dR
 Gz
