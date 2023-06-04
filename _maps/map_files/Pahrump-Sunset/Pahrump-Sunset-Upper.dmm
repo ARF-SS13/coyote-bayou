@@ -5855,7 +5855,8 @@
 "gCx" = (
 /obj/structure/nightstand/small{
 	pixel_x = 2;
-	pixel_y = 22
+	pixel_y = 22;
+	density = 0
 	},
 /obj/item/flashlight/littlelamp{
 	pixel_x = 1;
@@ -6054,21 +6055,6 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"gOa" = (
-/obj/structure/nightstand/small{
-	pixel_x = 2;
-	pixel_y = 22;
-	density = 0
-	},
-/obj/item/flashlight/littlelamp{
-	pixel_x = 1;
-	pixel_y = 25;
-	light_on = 1
-	},
-/turf/open/floor/f13/wood{
-	color = "#C2B280"
-	},
-/area/f13/building)
 "gOF" = (
 /obj/structure/chair/office/dark,
 /turf/open/floor/f13/wood{
@@ -14218,7 +14204,8 @@
 "pEp" = (
 /obj/structure/nightstand/small{
 	pixel_x = 2;
-	pixel_y = 22
+	pixel_y = 22;
+	density = 0
 	},
 /obj/item/flashlight/littlelamp{
 	pixel_x = 1;
@@ -36951,7 +36938,7 @@ tXH
 rrM
 rrM
 eFm
-gOa
+gCx
 knV
 lSv
 cdN
