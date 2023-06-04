@@ -461,10 +461,6 @@
 /obj/item/locked_box/weapon/range/tier3,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"eB" = (
-/obj/effect/landmark/start/f13/followersscientist,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
 "eC" = (
 /mob/living/simple_animal/parrot,
 /turf/open/transparent/openspace,
@@ -1143,10 +1139,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building/church)
-"lL" = (
-/obj/effect/landmark/start/f13/followersdoctor,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
 "lO" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -4689,7 +4681,6 @@
 /obj/structure/sign/departments/restroom{
 	pixel_x = 32
 	},
-/obj/effect/landmark/start/f13/followersscientist,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital)
 "XU" = (
@@ -9931,8 +9922,8 @@ hm
 hm
 sK
 rB
-lL
-eB
+eV
+eV
 eV
 eV
 Td
@@ -10188,8 +10179,8 @@ hm
 hm
 sK
 Js
-lL
-lL
+eV
+eV
 eV
 eV
 kd
@@ -10445,7 +10436,7 @@ hm
 hm
 sK
 GM
-lL
+eV
 XR
 eV
 eV

@@ -25182,11 +25182,11 @@
 /turf/open/floor/f13,
 /area/f13/building/abandoned)
 "cPq" = (
-/obj/machinery/vending/medical/nash,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/obj/machinery/vending/medical/nash,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "cPt" = (
@@ -25429,10 +25429,10 @@
 	},
 /area/f13/wasteland/massfusion/entrance)
 "cSk" = (
-/obj/machinery/defibrillator_mount{
+/obj/structure/table/optable,
+/obj/machinery/defibrillator_mount/loaded{
 	pixel_x = 32
 	},
-/obj/structure/table/optable,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital)
 "cSm" = (
@@ -28534,6 +28534,11 @@
 /obj/item/toy/plush/beeplushie,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital)
+"dMA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersguard,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "dMQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rockcrete_slab{
@@ -43896,6 +43901,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
+"icA" = (
+/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain0"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "icL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -47913,6 +47925,7 @@
 	dir = 1;
 	light_color = "red"
 	},
+/obj/effect/landmark/start/f13/followersscientist,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "jcW" = (
@@ -53487,6 +53500,10 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/ruins)
+"kKW" = (
+/obj/effect/landmark/start/f13/followersadministrator,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "kKX" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/spacevine,
@@ -53642,7 +53659,7 @@
 	},
 /area/f13/building/abandoned)
 "kNn" = (
-/obj/effect/landmark/poster_spawner/prewar{
+/obj/structure/sign/poster/prewar/poster74{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
@@ -61687,6 +61704,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"mRd" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 14
+	},
+/obj/effect/landmark/start/f13/followersdoctor,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "mRk" = (
 /obj/structure/rack,
 /obj/item/wirerod,
@@ -65094,6 +65119,7 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "nMr" = (
+/obj/structure/wreck/trash/machinepiletwo,
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
@@ -66317,6 +66343,12 @@
 	icon_state = "horizontalbottomborderbottom1"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"odY" = (
+/obj/structure/wreck/trash/machinepile,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2left"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "oec" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -72239,6 +72271,7 @@
 /area/f13/wasteland/city/nash/downtown)
 "pEh" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersadministrator,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "pEn" = (
@@ -83270,6 +83303,10 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"sJC" = (
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "sJI" = (
 /obj/item/storage/trash_stack,
 /obj/structure/spacevine,
@@ -87241,6 +87278,10 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
+"tLw" = (
+/obj/effect/landmark/start/f13/followersscientist,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "tLD" = (
 /obj/item/rcl/pre_loaded{
 	pixel_y = 6
@@ -90027,10 +90068,10 @@
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
 "uAQ" = (
-/obj/machinery/defibrillator_mount{
+/obj/structure/table/optable,
+/obj/machinery/defibrillator_mount/loaded{
 	pixel_x = -32
 	},
-/obj/structure/table/optable,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital)
 "uBb" = (
@@ -92573,6 +92614,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"vmq" = (
+/obj/effect/landmark/start/f13/followersguard,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "vmy" = (
 /obj/structure/flora/tree/oak_one,
 /turf/open/indestructible/ground/outside/desert,
@@ -95230,6 +95275,10 @@
 	icon_state = "verticalrightborderleft1"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"vZe" = (
+/obj/effect/landmark/start/f13/followersdoctor,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "vZh" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -110730,8 +110779,8 @@ gRW
 gRW
 jsI
 bkj
-fyh
-pEh
+vmq
+dMA
 wZB
 nDN
 djK
@@ -110987,8 +111036,8 @@ hCu
 gRW
 uHs
 bkj
-fyh
-fyh
+sJC
+sJC
 gnr
 mDi
 xgL
@@ -111245,7 +111294,7 @@ gRW
 uba
 hlS
 jcS
-fyh
+kKW
 pEh
 wux
 ecW
@@ -111503,7 +111552,7 @@ myM
 hlS
 phG
 xRe
-fyh
+tLw
 dNl
 ids
 jxA
@@ -111760,7 +111809,7 @@ dHD
 hlS
 hkZ
 ybq
-fyh
+vZe
 qkr
 hKx
 mJH
@@ -112017,7 +112066,7 @@ uba
 hlS
 tZH
 wtb
-aWc
+mRd
 xUx
 vCH
 mJH
@@ -136640,7 +136689,7 @@ aSp
 aSz
 mBN
 vfw
-gVf
+icA
 rfn
 pJZ
 oqP
@@ -136897,7 +136946,7 @@ aUM
 aUM
 ufV
 cwW
-ccZ
+odY
 rfn
 uZu
 pnF
