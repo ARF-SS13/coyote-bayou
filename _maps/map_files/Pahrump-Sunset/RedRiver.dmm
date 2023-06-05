@@ -1955,6 +1955,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/building/abandoned)
+"bdy" = (
+/obj/structure/decoration/rag,
+/turf/closed/wall/f13/wood,
+/area/f13/building)
 "bdG" = (
 /obj/structure/window/fulltile/house{
 	dir = 2
@@ -5487,22 +5491,11 @@
 	},
 /area/f13/building/abandoned)
 "cUP" = (
-/obj/structure/closet/fridge,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/item/reagent_containers/food/snacks/rawbrahminliver,
-/obj/item/reagent_containers/food/snacks/rawbrahminliver,
-/obj/item/reagent_containers/food/snacks/rawbrahminliver,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/machinery/light/fo13colored/Red{
-	light_color = "#a83131"
-	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/obj/structure/table/reinforced,
+/obj/item/kitchen/rollingpin,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/knife/butcher,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "cUY" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -8243,6 +8236,20 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"epr" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ingredients/carnivore,
+/obj/item/storage/box/ingredients/carnivore,
+/obj/item/storage/box/ingredients/american,
+/obj/item/storage/box/ingredients/american,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/vegetarian,
+/obj/item/storage/box/ingredients/fiesta,
+/obj/item/storage/box/ingredients/fiesta,
+/obj/item/storage/box/ingredients/italian,
+/obj/item/storage/box/ingredients/italian,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "eps" = (
 /obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -8565,6 +8572,11 @@
 	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland/city)
+"ezM" = (
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "ezX" = (
 /obj/item/storage/briefcase,
 /turf/open/floor/f13/wood,
@@ -18774,6 +18786,13 @@
 	},
 /turf/closed/wall/f13/store,
 /area/f13/building)
+"jPB" = (
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "jPF" = (
 /obj/structure/car/rubbish4,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -18844,6 +18863,13 @@
 	},
 /turf/open/water,
 /area/f13/building/abandoned)
+"jSc" = (
+/obj/structure/kitchenspike,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibmid1"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "jSg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -19307,6 +19333,11 @@
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
+/area/f13/building)
+"kew" = (
+/obj/structure/table/reinforced,
+/obj/machinery/processor/chopping_block,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "keP" = (
 /obj/structure/debris/v3,
@@ -24672,11 +24703,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ndB" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microwave,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/obj/machinery/smartfridge/bottlerack/grownbin,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ndL" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -25914,6 +25942,11 @@
 /obj/structure/nest/ghoul,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/abandoned)
+"nMG" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "nMQ" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -34896,6 +34929,34 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"sHS" = (
+/obj/structure/closet/fridge,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/reagent_containers/food/snacks/rawbrahminliver,
+/obj/item/reagent_containers/food/snacks/rawbrahminliver,
+/obj/item/reagent_containers/food/snacks/rawbrahminliver,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/ketchup,
+/obj/item/reagent_containers/food/condiment/ketchup,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/bbqsauce,
+/obj/item/reagent_containers/food/condiment/bbqsauce,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/drinks/bottle/fernet,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/yeast,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/storage/box/condimentbottles,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "sIb" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -37033,6 +37094,11 @@
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"tLb" = (
+/obj/machinery/light,
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "tLr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -38873,6 +38939,10 @@
 /obj/item/clothing/under/stripeddress,
 /obj/item/clothing/head/maid,
 /obj/item/clothing/head/maid,
+/obj/item/clothing/under/misc/stripper,
+/obj/item/clothing/under/misc/stripper,
+/obj/item/clothing/under/misc/stripper/mankini,
+/obj/item/clothing/under/misc/stripper/mankini,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "uJq" = (
@@ -39277,6 +39347,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/clothing/under/misc/gear_harness,
+/obj/item/clothing/under/misc/gear_harness,
+/obj/item/clothing/under/misc/stripper/green,
+/obj/item/clothing/under/misc/stripper/green,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "uTZ" = (
@@ -40197,6 +40271,14 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"vvk" = (
+/obj/machinery/light/fo13colored/Red{
+	light_color = "#a83131"
+	},
+/turf/open/floor/f13{
+	icon_state = "bar"
+	},
+/area/f13/building)
 "vvR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/f13vaultrusted,
@@ -40347,6 +40429,12 @@
 /obj/structure/flora/tree/tall,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"vDB" = (
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/building)
 "vDK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -41574,9 +41662,10 @@
 /turf/open/floor/plasteel/neutral/side,
 /area/f13/building/abandoned)
 "wnb" = (
-/obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/closed/wall/f13/wood/house,
+/obj/structure/sink/kitchen{
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "wnm" = (
 /obj/structure/table/reinforced{
@@ -103484,7 +103573,7 @@ asF
 nSg
 nSg
 nSg
-wnb
+xRG
 gRn
 gRn
 wWK
@@ -104773,8 +104862,8 @@ yjb
 gRn
 gRn
 gRn
-wWK
-iRq
+gRn
+gRn
 gRn
 gRn
 gRn
@@ -105027,11 +105116,11 @@ biI
 sZy
 rzY
 xYV
-gRn
-gRn
-gRn
-wWK
-wWK
+eFz
+fHz
+cYp
+wyI
+lFI
 gRn
 gRn
 gRn
@@ -105284,11 +105373,11 @@ atp
 srD
 vYO
 cYp
-gRn
-gRn
-wWK
-wWK
-wWK
+jPB
+jSc
+epr
+ndB
+bdy
 gRn
 wWK
 wWK
@@ -105541,12 +105630,12 @@ vYO
 vYO
 vYO
 cYp
+nSg
+nSg
+nSg
+nSg
+vDB
 gRn
-wWK
-wWK
-wWK
-wWK
-wWK
 wWK
 wWK
 wWK
@@ -105796,16 +105885,16 @@ wuW
 ryS
 vYO
 vYO
-vYO
+vvk
 tpy
+wnb
+nSg
+nSg
+tLb
+tej
 gRn
-eHB
-iRq
 wWK
 wWK
-wWK
-wWK
-gRn
 gMW
 gMW
 gMW
@@ -106053,16 +106142,16 @@ wuW
 ryS
 vYO
 vYO
+vYO
+rzY
+nSg
+nSg
+nSg
 cUP
-lFI
-gRn
-wWK
-wWK
-tCq
-tCq
-wWK
+tej
 gRn
 gRn
+wWK
 gMW
 gMW
 gMW
@@ -106309,17 +106398,17 @@ eJW
 wuW
 ryS
 dOB
-ndB
+ryS
 ryS
 lFI
+sHS
+nMG
+kew
+ezM
+eFz
 gRn
 gRn
 wWK
-wWK
-gRn
-wWK
-gRn
-gRn
 gMW
 gMW
 gMW
@@ -106569,14 +106658,14 @@ iFh
 iFh
 iFh
 hip
-gRn
-gRn
-gRn
+fHz
+fHz
+cYp
+eFz
+eFz
 gRn
 gRn
 wWK
-gRn
-gRn
 gMW
 gMW
 wJX
@@ -106831,9 +106920,9 @@ gRn
 gRn
 gRn
 gRn
+gRn
 wWK
-gRn
-gRn
+wWK
 gRn
 kOR
 eft
@@ -107089,7 +107178,7 @@ gRn
 gRn
 wWK
 wWK
-gRn
+wWK
 gRn
 gRn
 nsO
