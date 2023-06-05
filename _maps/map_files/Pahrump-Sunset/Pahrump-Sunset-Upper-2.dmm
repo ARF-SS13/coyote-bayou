@@ -1008,6 +1008,11 @@
 "kd" = (
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
+"km" = (
+/obj/structure/table/wood,
+/obj/item/instrument/piano_synth,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "kn" = (
 /mob/living/simple_animal/hostile/gecko/legacy/alpha,
 /turf/open/floor/f13/wood{
@@ -1663,6 +1668,13 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"qu" = (
+/obj/structure/chair/bench{
+	pixel_y = 10
+	},
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "qA" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1674,6 +1686,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"qF" = (
+/obj/structure/chair/stool/retro/black,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "qJ" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -1830,6 +1846,10 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital)
+"st" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "sv" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -1949,6 +1969,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"tF" = (
+/obj/structure/table/wood,
+/obj/item/instrument/guitar,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"tG" = (
+/obj/machinery/grill,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "tM" = (
 /turf/closed/indestructible/riveted,
@@ -2471,6 +2500,12 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"zj" = (
+/obj/structure/table/wood,
+/obj/item/toy/crayon/spraycan,
+/obj/item/toy/crayon/spraycan,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "zp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
@@ -2549,6 +2584,16 @@
 /obj/structure/simple_door/house,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building/hospital)
+"zV" = (
+/obj/item/canvas/twentythreeXnineteen,
+/obj/item/canvas/twentythreeXnineteen,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/canvas/twentythreeXtwentythree,
+/obj/item/canvas/twentythreeXtwentythree,
+/obj/structure/table/wood,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "zY" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 6
@@ -3578,6 +3623,10 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"Jm" = (
+/obj/structure/easel,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "Jn" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
@@ -3809,6 +3858,11 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
+/area/f13/wasteland)
+"Lx" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "LB" = (
 /obj/structure/rack/shelf_metal,
@@ -4191,6 +4245,14 @@
 /area/f13/building)
 "Pp" = (
 /obj/structure/chair/folding,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"Pr" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 8
+	},
+/obj/structure/table/wood,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "PC" = (
@@ -5804,20 +5866,20 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+px
+px
+px
+px
+px
+px
+px
+px
+px
+px
+px
+px
+px
+px
 hm
 hm
 hm
@@ -6060,23 +6122,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+CD
+SP
+qt
+qt
+qt
+qt
+qt
+qt
+qt
+qt
+qt
+qt
+qt
+Pr
+Pr
+BW
+AU
 hm
 hm
 hm
@@ -6317,23 +6379,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+CD
+nO
+qu
+st
+RH
+Wr
+Wr
+Wr
+RH
+Lx
+RH
+Wr
+km
+st
+st
+Xv
+AU
 hm
 hm
 hm
@@ -6574,23 +6636,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+CD
+nO
+RH
+st
+RH
+Wr
+tG
+Wr
+RH
+st
+RH
+Wr
+st
+tF
+st
+Xv
+AU
 hm
 hm
 hm
@@ -6831,23 +6893,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+CD
+nO
+RH
+zj
+RH
+Wr
+Wr
+Wr
+RH
+st
+RH
+Wr
+st
+Lx
+st
+Xv
+AU
 hm
 hm
 hm
@@ -7088,23 +7150,23 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+CD
+nO
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+st
+st
+Xv
+AU
 hm
 hm
 hm
@@ -7345,23 +7407,23 @@ hm
 hm
 hm
 hm
-hm
-px
-px
-px
-px
-px
-px
-px
-px
-px
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+CD
+nO
+zV
+Wr
+Wr
+Wr
+Wr
+Wr
+jb
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Xv
+AU
 hm
 hm
 hm
@@ -7603,15 +7665,15 @@ hm
 hm
 hm
 CD
-SP
-qt
-qt
-qt
-qt
-qt
-qt
-qt
-qt
+nO
+Jm
+qF
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 Zt
 Rg
 Rg
