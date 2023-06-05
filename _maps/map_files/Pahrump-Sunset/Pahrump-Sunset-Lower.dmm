@@ -6653,6 +6653,14 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"cGU" = (
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/trainstation)
 "cHn" = (
 /obj/structure/chair/sofa/corner,
 /turf/open/floor/plating/tunnel,
@@ -12510,6 +12518,9 @@
 /obj/machinery/workbench,
 /obj/item/stack/sheet/plasteel/five,
 /obj/item/gun/ballistic/revolver/hobo/knifegun,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
 "hbF" = (
@@ -14910,6 +14921,9 @@
 "iMZ" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "iNd" = (
@@ -20652,6 +20666,9 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "mMP" = (
@@ -21158,6 +21175,9 @@
 /obj/structure/table,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/sign/painting/library{
+	pixel_y = 32
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -29962,6 +29982,12 @@
 /obj/item/pickaxe,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/caves)
+"tiS" = (
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/caves)
 "tiY" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -37652,7 +37678,7 @@ ehC
 riU
 ehC
 ehC
-ehC
+cGU
 sKq
 bOp
 bOO
@@ -37894,7 +37920,7 @@ blc
 blc
 blc
 blc
-blc
+tiS
 ejI
 mxE
 blc

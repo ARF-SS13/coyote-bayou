@@ -291,6 +291,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"aks" = (
+/obj/structure/table/wood,
+/obj/structure/junk/small/tv,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "akS" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -1197,6 +1207,15 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
+/area/f13/building)
+"baf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "baI" = (
 /obj/structure/flora/brushwood,
@@ -3351,6 +3370,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -3565,6 +3587,16 @@
 /obj/item/storage/bag/trash,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"dqr" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "dre" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -12038,6 +12070,9 @@
 	dir = 1
 	},
 /obj/structure/chair/sofa,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/cyan,
 /area/f13/building)
 "lcQ" = (
@@ -12076,6 +12111,9 @@
 /area/f13/building/massfusion)
 "ldv" = (
 /obj/structure/chair/sofa/corp,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -12638,6 +12676,9 @@
 /obj/item/clothing/head/helmet/f13/goner/green{
 	pixel_y = 4;
 	pixel_x = 6
+	},
+/obj/structure/sign/painting/library{
+	pixel_y = 32
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -15220,6 +15261,13 @@
 	icon_state = "bluedirtychess"
 	},
 /area/f13/building/mall)
+"nWk" = (
+/obj/structure/table,
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building)
 "nXc" = (
 /turf/open/floor/wood_common,
 /area/f13/caves)
@@ -16979,6 +17027,15 @@
 /obj/structure/bookcase,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"pOk" = (
+/obj/structure/table,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "pOP" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -21217,6 +21274,9 @@
 	},
 /obj/structure/table/wood,
 /obj/machinery/microwave,
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -21718,6 +21778,16 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"ucj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/painting/library{
+	pixel_y = -32
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "udF" = (
 /obj/structure/spacevine{
 	color = "#225522"
@@ -22073,6 +22143,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
+"urJ" = (
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building)
 "urR" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -28501,7 +28577,7 @@ bwi
 eJE
 bVz
 lak
-lak
+nWk
 jfC
 lak
 ohv
@@ -30550,17 +30626,17 @@ oez
 hmG
 kBv
 adN
-lhH
+urJ
 dAm
 ohv
 wfd
 bwi
-sZR
+baf
 dAm
 ohv
 kBv
 adN
-lhH
+urJ
 dAm
 ohv
 oeP
@@ -35380,7 +35456,7 @@ akj
 gYZ
 mKa
 eXS
-fRC
+ucj
 gIQ
 ttB
 omU
@@ -35661,7 +35737,7 @@ gUG
 eoY
 slU
 bxP
-frB
+pOk
 eoY
 mNn
 rrs
@@ -36159,7 +36235,7 @@ hKq
 cBX
 oez
 gWO
-eWw
+qIs
 ldv
 ccL
 fRC
@@ -39527,7 +39603,7 @@ oez
 oez
 oez
 fSd
-cSN
+aks
 dSA
 jrK
 dSA
@@ -39539,7 +39615,7 @@ dUa
 oez
 ljF
 qIs
-mEz
+dqr
 mNn
 bnV
 fRC
@@ -40064,7 +40140,7 @@ oeP
 oez
 gWO
 nHL
-mEz
+dqr
 gvT
 hlS
 mNn
