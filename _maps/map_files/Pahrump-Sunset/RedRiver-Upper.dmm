@@ -1964,6 +1964,9 @@
 /area/f13/building)
 "vG" = (
 /obj/structure/barricade/wooden,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "vJ" = (
@@ -2882,6 +2885,9 @@
 /obj/structure/fence/wooden{
 	dir = 4
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "Ex" = (
@@ -3755,10 +3761,6 @@
 	},
 /area/f13/building)
 "Ml" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /obj/structure/chair/bench{
 	dir = 8
 	},
@@ -4487,10 +4489,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "TV" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /obj/structure/chair/bench{
 	dir = 8
 	},
@@ -4504,6 +4502,9 @@
 /obj/structure/barricade/wooden,
 /obj/structure/fence/wooden{
 	dir = 4
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/indestructible/cobble{
 	light_color = null;
