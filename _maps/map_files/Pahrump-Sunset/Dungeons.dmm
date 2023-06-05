@@ -4523,6 +4523,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/enclave)
+"cnV" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/floor/carpet/royalblack,
+/area/f13/underground/cave/tunnelertemple/void)
 "cof" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/light/small{
@@ -4923,19 +4931,13 @@
 	},
 /area/f13/building)
 "cyL" = (
-/obj/structure/closet/secure_closet/goodies{
-	anchorable = 0;
-	anchored = 1;
-	name = "loot locker";
-	req_access_txt = "150";
-	req_one_access_txt = "150"
-	},
-/obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/underground/cave)
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "cyQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/sign/departments/engineering,
@@ -7944,12 +7946,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "dKX" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/plating/f13/inside/mountain{
 	icon_state = "mountain2"
 	},
@@ -12793,20 +12793,13 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/brotherhood/rnd)
 "fZj" = (
-/obj/structure/closet/secure_closet/goodies{
-	anchorable = 0;
-	anchored = 1;
-	name = "loot locker";
-	req_access_txt = "150";
-	req_one_access_txt = "150"
-	},
-/obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/underground/cave)
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave/tunnelertemple/void)
 "fZn" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 5
@@ -24997,19 +24990,11 @@
 	},
 /area/f13/building)
 "man" = (
-/obj/structure/closet/secure_closet/goodies{
-	anchorable = 0;
-	anchored = 1;
-	name = "loot locker";
-	req_access_txt = "150";
-	req_one_access_txt = "150"
-	},
-/obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/underground/cave)
 "maq" = (
@@ -26258,20 +26243,15 @@
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
 "mGa" = (
-/obj/structure/closet/secure_closet/goodies{
-	anchorable = 0;
-	anchored = 1;
-	name = "loot locker";
-	req_access_txt = "150";
-	req_one_access_txt = "150"
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
 	},
-/obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/item/card/midbounty,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/underground/cave)
+/area/f13/caves)
 "mGp" = (
 /obj/machinery/door/airlock{
 	name = "Restrooms"
@@ -41469,13 +41449,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "tPI" = (
-/obj/structure/closet/crate/solarpanel_small,
-/obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/underground/cave)
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/bunker)
 "tPM" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/costumes,
@@ -48591,9 +48571,10 @@
 /area/f13/bunker)
 "xqF" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "xqG" = (
@@ -53904,7 +53885,7 @@ bQT
 bQT
 bQT
 bQT
-gcl
+cyL
 bQT
 bQT
 whv
@@ -75446,7 +75427,7 @@ cCj
 cCj
 sXN
 cCj
-cCj
+dKX
 cCj
 cCj
 cCj
@@ -75956,7 +75937,7 @@ cCj
 tIT
 sXN
 cCj
-cCj
+dKX
 cCj
 cCj
 bMM
@@ -80023,7 +80004,7 @@ wWG
 cyC
 cka
 wWG
-fZj
+man
 cka
 wWG
 dJY
@@ -80537,7 +80518,7 @@ wWG
 aIj
 cka
 wWG
-fZj
+man
 cka
 wWG
 qpo
@@ -80621,10 +80602,10 @@ whv
 whv
 sME
 sME
+tPI
 gZb
 gZb
-gZb
-gZb
+tPI
 sME
 sME
 whv
@@ -81276,7 +81257,7 @@ nqo
 lRK
 vOy
 vOy
-nwu
+cnV
 xQu
 nwu
 vOy
@@ -81565,7 +81546,7 @@ wWG
 gMH
 cka
 wWG
-mGa
+man
 cka
 wWG
 aqu
@@ -81822,7 +81803,7 @@ wWG
 als
 gYU
 wWG
-cyL
+man
 gYU
 wWG
 bCR
@@ -82079,7 +82060,7 @@ wWG
 sOH
 cka
 wWG
-tPI
+man
 cka
 wWG
 mlc
@@ -88358,7 +88339,7 @@ lwM
 enq
 fBb
 odl
-pvP
+xqF
 lwM
 whv
 whv
@@ -92590,7 +92571,7 @@ whv
 gfI
 vnf
 oiP
-qlU
+fZj
 oiP
 oiP
 vOy
@@ -98953,7 +98934,7 @@ aQQ
 hcq
 pFz
 gzh
-pFz
+mGa
 hqd
 hrZ
 hrZ
@@ -99210,7 +99191,7 @@ bfR
 hqd
 arD
 pFz
-pFz
+mGa
 hcq
 hrZ
 hrZ
@@ -99467,7 +99448,7 @@ bfR
 hcq
 xKO
 bpv
-pFz
+mGa
 hqd
 hrZ
 hrZ

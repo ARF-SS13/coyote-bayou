@@ -11714,15 +11714,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"gfS" = (
-/obj/structure/window/fulltile/house{
-	icon_state = "housewindowbroken"
-	},
-/obj/structure/barricade/wooden/planks{
-	icon_state = "board-2"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
 "gge" = (
 /obj/structure/barricade/tentclothedge{
 	pixel_y = -4
@@ -13039,12 +13030,6 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
-"gPz" = (
-/obj/item/stack/sheet/lead/twenty,
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/plating/rust,
-/area/f13/building)
 "gPB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fence/corner{
@@ -20492,10 +20477,11 @@
 /turf/open/water,
 /area/f13/city)
 "kMc" = (
-/obj/structure/closet/crate,
-/obj/item/advanced_crafting_components/alloys,
-/obj/item/advanced_crafting_components/alloys,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/plating/rust,
 /area/f13/building)
 "kMp" = (
@@ -23112,8 +23098,11 @@
 	},
 /area/f13/building)
 "mje" = (
-/obj/structure/filingcabinet,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -24365,15 +24354,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/abandoned)
-"mSc" = (
-/obj/structure/barricade/wooden,
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor3"
-	},
-/turf/open/floor/f13{
-	icon_state = "yellowrustychess"
-	},
-/area/f13/building)
 "mSq" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
@@ -32407,8 +32387,11 @@
 	},
 /area/f13/building/abandoned)
 "rqj" = (
-/obj/structure/bookcase,
-/obj/effect/validball_spawner,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/carpet,
 /area/f13/building)
 "rqv" = (
@@ -33111,13 +33094,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/f13/building/abandoned)
-"rJv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/smartfridge/bottlerack/lootshelf/cans,
-/turf/open/floor/f13{
-	icon_state = "yellowrustyfull"
-	},
-/area/f13/building)
 "rJZ" = (
 /obj/structure/obstacle/barbedwire/end{
 	dir = 8
@@ -34820,8 +34796,14 @@
 /turf/open/indestructible/ground/outside/savannah/bottomleft,
 /area/f13/wasteland)
 "sCK" = (
-/obj/structure/sign/poster/contraband/tools,
-/turf/closed/wall/f13/store,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/floor/plasteel/f13{
+	icon_state = "catwalk"
+	},
 /area/f13/building)
 "sCX" = (
 /obj/item/stack/sheet/mineral/wood,
@@ -39198,11 +39180,12 @@
 /turf/open/water,
 /area/f13/building/abandoned)
 "uPy" = (
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "uPD" = (
 /obj/structure/decoration/clock,
@@ -44079,10 +44062,11 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "xDb" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/item/locked_box/weapon/melee/any_random,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/floor/f13{
 	color = "#ffe9de";
 	icon_state = "darkrusty";
@@ -52941,7 +52925,7 @@ iKf
 rYb
 fSr
 fSr
-gPz
+kMc
 vvX
 pQl
 fSr
@@ -60870,7 +60854,7 @@ iKf
 iKf
 eLd
 gpG
-uPy
+uSf
 iHv
 oes
 uPD
@@ -61127,7 +61111,7 @@ qcl
 frr
 eLd
 tiN
-gfS
+uSf
 kIJ
 wLN
 gEd
@@ -61605,8 +61589,8 @@ uSf
 dZs
 dZs
 dZs
-uSf
-xnp
+mOx
+dZs
 dZs
 xin
 dZs
@@ -62125,7 +62109,7 @@ qzV
 gJi
 dZs
 rvQ
-gVD
+oJH
 dzC
 rjP
 exD
@@ -62380,7 +62364,7 @@ uSf
 uSf
 aZh
 uSf
-oJH
+uSf
 uSf
 bvs
 dzC
@@ -62420,8 +62404,8 @@ uSf
 tli
 uSf
 aZh
-wxt
-mSc
+aZh
+aZh
 aZh
 iXB
 qCb
@@ -62890,7 +62874,7 @@ aZh
 oyb
 ndZ
 dZs
-mOx
+rNh
 dxJ
 dZs
 ndZ
@@ -62937,8 +62921,8 @@ uSf
 wxt
 qCb
 wxt
-rJv
-uSf
+cks
+agt
 qCb
 vWX
 dZs
@@ -63195,7 +63179,7 @@ qLB
 wsL
 gWt
 wxt
-sCK
+agt
 qCb
 vyJ
 bxY
@@ -63401,7 +63385,7 @@ tfn
 iKf
 iKf
 aZh
-ndZ
+dZs
 nnm
 ctE
 rNh
@@ -63712,7 +63696,7 @@ eRe
 uSf
 oMa
 nPB
-rgJ
+gVU
 dlC
 msr
 out
@@ -78085,7 +78069,7 @@ dZs
 dZs
 ndZ
 dZs
-byr
+mQi
 xnX
 xnX
 dxX
@@ -81738,7 +81722,7 @@ tBA
 wFi
 nim
 gVD
-iAX
+sCK
 oGw
 eWp
 oGw
@@ -82757,8 +82741,8 @@ nSg
 nSg
 kzG
 pxh
-oaw
-tBA
+uPy
+uPy
 fHK
 oaw
 kzG
@@ -83023,7 +83007,7 @@ jCj
 bvN
 kzG
 gVD
-iAX
+sCK
 ptH
 bQE
 sgL

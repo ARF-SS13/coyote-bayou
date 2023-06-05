@@ -743,6 +743,7 @@
 "aEo" = (
 /obj/structure/table/wood,
 /obj/item/storage/book/bible,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet,
 /area/f13/building/abandoned)
 "aEP" = (
@@ -977,6 +978,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "aPZ" = (
@@ -2368,6 +2370,7 @@
 "cdx" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "cdM" = (
@@ -2881,6 +2884,7 @@
 /obj/effect/spawner/lootdrop/f13/medical/surgical,
 /obj/effect/validball_spawner,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "cFp" = (
@@ -3647,13 +3651,6 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
-"dsj" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/building/massfusion)
 "dsy" = (
 /mob/living/simple_animal/hostile/ghoul/legendary,
 /obj/effect/decal/waste,
@@ -3678,6 +3675,7 @@
 /obj/machinery/light/broken{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "dvF" = (
@@ -4165,6 +4163,7 @@
 /area/f13/building)
 "dSC" = (
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/carpet,
 /area/f13/building/abandoned)
 "dSF" = (
@@ -5736,8 +5735,11 @@
 	},
 /area/f13/building)
 "fpb" = (
-/obj/structure/closet/fridge/cannibal,
-/obj/effect/spawner/lootdrop/f13/rare,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "fpy" = (
@@ -6247,6 +6249,7 @@
 "fTn" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "fTw" = (
@@ -8267,6 +8270,7 @@
 "hxW" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/seedspawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "hyB" = (
@@ -8575,6 +8579,7 @@
 	pixel_x = -5;
 	pixel_y = 7
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/mall)
 "hNO" = (
@@ -9031,6 +9036,7 @@
 "iiS" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "iiZ" = (
@@ -11644,7 +11650,7 @@
 "kCN" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/item/card/lowbounty,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -13423,18 +13429,18 @@
 	},
 /area/f13/building)
 "mmP" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/gun/ballistic/shotgun/trench,
-/obj/item/gun/ballistic/shotgun/trench,
-/obj/item/gun/ballistic/shotgun/trench,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /obj/effect/turf_decal/stripes/white/box,
-/obj/effect/validball_spawner,
-/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "mnK" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/armor/costumes,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "mob" = (
@@ -13470,11 +13476,8 @@
 	},
 /area/f13/building)
 "mqh" = (
-/obj/structure/closet/fridge/cannibal,
-/obj/effect/validball_spawner,
-/obj/effect/spawner/lootdrop/f13/rare,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/building)
+/turf/closed/wall/rust,
+/area/f13/caves)
 "mqI" = (
 /obj/structure/sign/plaques/kiddie/library{
 	pixel_x = -32
@@ -13643,6 +13646,7 @@
 "mwV" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/toy/figure/cargotech,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "mxG" = (
@@ -14771,11 +14775,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"nzi" = (
-/obj/structure/table/optable,
-/obj/effect/mob_spawn/human/corpse,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/building)
 "nzl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -15999,6 +15998,7 @@
 "oCE" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/reagent_containers/food/snacks/f13/mre,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "oDd" = (
@@ -16238,6 +16238,7 @@
 "oOW" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/gasmask_goner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "oPb" = (
@@ -18293,11 +18294,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital)
 "qRD" = (
-/obj/effect/spawner/lootdrop/ammo/fiftypercent,
-/obj/effect/decal/waste,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrusty"
-	},
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/building/massfusion)
 "qRG" = (
 /obj/effect/decal/waste{
@@ -18889,6 +18891,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "rsw" = (
@@ -21154,13 +21157,6 @@
 /obj/structure/simple_door/tent,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/ruins)
-"tuT" = (
-/obj/item/stock_parts/cell/ammo/ultracite,
-/obj/item/card/highbounty,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/building/massfusion)
 "tuW" = (
 /obj/structure/chair/booth,
 /obj/effect/decal/cleanable/dirt,
@@ -21319,11 +21315,12 @@
 	},
 /area/f13/building/mall)
 "tCQ" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrusty"
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/renegade/guardian{
+	name = "Captain Carbunkle"
 	},
-/area/f13/building/massfusion)
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "tCZ" = (
 /obj/structure/stairs/west{
 	color = "#A47449";
@@ -21654,6 +21651,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/seedspawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "tRs" = (
@@ -25085,6 +25083,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/mall)
 "xsm" = (
@@ -25451,6 +25450,7 @@
 /obj/effect/spawner/lootdrop/f13/seedspawner,
 /obj/effect/spawner/lootdrop/glowstick,
 /obj/effect/validball_spawner,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "xMK" = (
@@ -28345,7 +28345,7 @@ iyw
 jxp
 pvV
 pvV
-pvV
+mmP
 oLE
 oez
 oez
@@ -29116,7 +29116,7 @@ kst
 jxp
 bGT
 bGT
-bGT
+mmP
 oLE
 oez
 oez
@@ -29887,7 +29887,7 @@ jxp
 jxp
 fVt
 fVt
-fVt
+mmP
 oLE
 oez
 oez
@@ -30112,7 +30112,7 @@ hsd
 aKa
 oez
 dTc
-bGT
+mmP
 ujK
 ujK
 kFN
@@ -55281,7 +55281,7 @@ vje
 vje
 vje
 enE
-mqh
+fpb
 nSY
 wrD
 aXU
@@ -55795,7 +55795,7 @@ vje
 vje
 vje
 oLE
-mqh
+fpb
 vAK
 tkm
 sTt
@@ -56052,7 +56052,7 @@ vje
 vje
 vje
 oLE
-eGT
+fpb
 dAp
 dAp
 nSY
@@ -56567,13 +56567,13 @@ vje
 vje
 enE
 nSB
-enE
-enE
+iPD
+iPD
 enE
 nSB
 enE
-nSY
-nSY
+enE
+enE
 enE
 vje
 vje
@@ -56823,15 +56823,15 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
 nSB
 nSY
 rOK
 nSB
+vje
+vje
+vje
+vje
+vje
 vje
 vje
 vje
@@ -57080,15 +57080,15 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
 nSB
 nSY
-dAp
+tCQ
 nSB
+vje
+vje
+vje
+vje
+vje
 vje
 vje
 vje
@@ -57337,15 +57337,15 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
-vje
 enE
 ssH
 lIK
 enE
+vje
+oLE
+oLE
+oLE
+oLE
 oLE
 oLE
 oLE
@@ -57594,10 +57594,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 enE
 dAp
@@ -57851,10 +57851,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 enE
 dAp
@@ -58108,10 +58108,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 eCO
 ixQ
@@ -58365,10 +58365,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 nSB
 fnY
@@ -58622,10 +58622,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+tCQ
+dAp
+enE
 vje
 enE
 sTt
@@ -58879,10 +58879,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 enE
 sTt
@@ -59136,10 +59136,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 nSB
 fnY
@@ -59393,10 +59393,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 enE
 lIK
@@ -59650,10 +59650,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 enE
 dAp
@@ -59907,10 +59907,10 @@ vje
 vje
 vje
 vje
-vje
-vje
-vje
-vje
+enE
+dAp
+dAp
+enE
 vje
 enE
 nSY
@@ -60163,10 +60163,10 @@ vje
 vje
 vje
 vje
-vje
+mqh
 enE
-nSB
-oLE
+iPD
+iPD
 enE
 enE
 nSB
@@ -60420,10 +60420,10 @@ vje
 vje
 vje
 vje
-vje
-nSB
+mqh
 lpw
-nzi
+dAp
+dAp
 aHt
 mSq
 aqR
@@ -60677,9 +60677,9 @@ vje
 vje
 vje
 vje
-vje
-enE
+mqh
 rrR
+dAp
 tNZ
 wuV
 fnY
@@ -60934,7 +60934,7 @@ vje
 vje
 vje
 vje
-vje
+mqh
 enE
 pcC
 nSY
@@ -73270,7 +73270,7 @@ oDo
 beC
 lXn
 bFw
-ygG
+qRD
 qPu
 oDo
 oGZ
@@ -73781,7 +73781,7 @@ vje
 vje
 vje
 oDo
-tuT
+qRD
 aab
 gGa
 qPu
@@ -78921,7 +78921,7 @@ vje
 vje
 vje
 oDo
-tCQ
+ygG
 ygG
 gGa
 qPu
@@ -79435,7 +79435,7 @@ vje
 vje
 vje
 oDo
-dsj
+ygG
 ygG
 ygG
 ygG
@@ -79559,7 +79559,7 @@ cQO
 aKa
 lLE
 vgC
-vQT
+bEu
 mtQ
 mtQ
 mtQ
@@ -79816,7 +79816,7 @@ uhF
 aKa
 qUo
 vgC
-vQT
+bEu
 djU
 hAA
 qPY
