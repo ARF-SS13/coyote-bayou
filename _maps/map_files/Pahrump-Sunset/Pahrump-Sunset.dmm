@@ -51906,6 +51906,10 @@
 /area/f13/wasteland/city)
 "iVj" = (
 /obj/machinery/chem_master,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#e8eaff"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital)
 "iVo" = (
