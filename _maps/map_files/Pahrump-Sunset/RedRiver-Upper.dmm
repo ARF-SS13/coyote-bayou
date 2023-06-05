@@ -1964,6 +1964,9 @@
 /area/f13/building)
 "vG" = (
 /obj/structure/barricade/wooden,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "vJ" = (
@@ -2882,6 +2885,9 @@
 /obj/structure/fence/wooden{
 	dir = 4
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "Ex" = (
@@ -3755,10 +3761,6 @@
 	},
 /area/f13/building)
 "Ml" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /obj/structure/chair/bench{
 	dir = 8
 	},
@@ -4487,10 +4489,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "TV" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /obj/structure/chair/bench{
 	dir = 8
 	},
@@ -4498,12 +4496,18 @@
 /area/f13/building)
 "TY" = (
 /obj/structure/chair/sofa,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "TZ" = (
 /obj/structure/barricade/wooden,
 /obj/structure/fence/wooden{
 	dir = 4
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/indestructible/cobble{
 	light_color = null;
@@ -68634,9 +68638,9 @@ ti
 ti
 ti
 ti
-ti
-ti
-ti
+uK
+uK
+uK
 ti
 ti
 ti
@@ -68890,11 +68894,11 @@ Hw
 ti
 ti
 ti
+uK
+uK
 ti
-ti
-ti
-ti
-ti
+uK
+uK
 ti
 ti
 ti
@@ -69147,10 +69151,10 @@ Hw
 ti
 ti
 ti
-ti
-ti
-ti
-ti
+uK
+uK
+uK
+uK
 ti
 ti
 ti
@@ -69404,11 +69408,11 @@ Hw
 ti
 ti
 ti
+uK
+uK
 ti
-ti
-ti
-ti
-ti
+uK
+uK
 ti
 ti
 ti
@@ -69591,7 +69595,7 @@ ti
 ti
 ti
 ti
-Wn
+Gz
 TY
 tj
 KZ
@@ -69662,9 +69666,9 @@ Hw
 ti
 ti
 ti
-ti
-ti
-ti
+uK
+uK
+uK
 ti
 ti
 ti

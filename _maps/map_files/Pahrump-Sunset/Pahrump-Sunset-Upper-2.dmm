@@ -389,7 +389,7 @@
 /area/f13/wasteland)
 "dA" = (
 /obj/structure/dresser,
-/obj/structure/sign/poster/prewar/poster79{
+/obj/structure/sign/painting/library{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/blue,
@@ -1570,6 +1570,9 @@
 /area/f13/wasteland)
 "ps" = (
 /obj/structure/bookshelf,
+/obj/structure/sign/painting/library{
+	pixel_y = -32
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -3829,11 +3832,10 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
 "LN" = (
-/obj/structure/dresser,
-/obj/structure/sign/poster/prewar/poster82{
+/obj/structure/sign/painting/library{
 	pixel_y = 32
 	},
-/turf/open/floor/carpet/blue,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital)
 "LQ" = (
 /obj/structure/fence{
@@ -9135,7 +9137,7 @@ HN
 hL
 kF
 FS
-LN
+dA
 HN
 hL
 ES
@@ -11702,7 +11704,7 @@ FS
 BQ
 Pc
 FS
-VU
+LN
 Lo
 Lo
 Lo
