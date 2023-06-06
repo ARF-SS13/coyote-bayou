@@ -268,7 +268,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "cm" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -331,7 +331,7 @@
 	req_one_access_txt = "124"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "cz" = (
 /obj/machinery/light/broken{
 	dir = 8
@@ -393,7 +393,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "dD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/validball_spawner,
@@ -524,7 +524,7 @@
 	dir = 4
 	},
 /turf/open/transparent/openspace,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "eZ" = (
 /obj/structure/wreck/trash/machinepiletwo{
 	icon_state = "junk_pile5"
@@ -571,7 +571,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "fs" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -620,7 +620,7 @@
 /obj/structure/mopbucket,
 /obj/item/mop,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "fL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -654,7 +654,7 @@
 	dir = 8
 	},
 /turf/open/transparent/openspace,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "gf" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	pixel_y = 6
@@ -684,6 +684,9 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"gw" = (
+/turf/open/transparent/openspace,
+/area/f13/building/hospital/clinic)
 "gy" = (
 /obj/structure/fence{
 	dir = 4;
@@ -774,7 +777,7 @@
 /area/f13/wasteland)
 "hL" = (
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "hP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/supermutant/rangedmutant{
@@ -956,7 +959,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "jG" = (
 /obj/structure/simple_door/dirtyglass,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1045,13 +1048,13 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "kF" = (
 /obj/structure/table,
 /obj/item/toy/plush/beeplushie,
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "kH" = (
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken6"
@@ -1133,7 +1136,7 @@
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "lG" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
@@ -1163,7 +1166,7 @@
 	dir = 10
 	},
 /turf/open/transparent/openspace,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "lO" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -1224,7 +1227,7 @@
 	icon_state = "storewindowtop"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "mO" = (
 /obj/effect/turf_decal/trimline/neutral{
 	dir = 4;
@@ -1397,7 +1400,7 @@
 	light_color = "#c1caff"
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "nY" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -1425,7 +1428,7 @@
 "of" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "og" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/shelf_metal,
@@ -1540,7 +1543,7 @@
 "pf" = (
 /obj/machinery/vending/wardrobe/chem_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "ph" = (
 /obj/structure/chair/folding{
 	dir = 8
@@ -1549,7 +1552,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "pm" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
@@ -1845,7 +1848,7 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "st" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood_wide,
@@ -1939,7 +1942,7 @@
 "sX" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "tg" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
@@ -2160,7 +2163,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "vB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack{
@@ -2178,7 +2181,7 @@
 /obj/structure/curtain,
 /obj/item/soap/deluxe,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "vI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2418,6 +2421,9 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"ye" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic)
 "yj" = (
 /obj/structure/fence{
 	icon_state = "end";
@@ -2452,7 +2458,7 @@
 "yp" = (
 /obj/machinery/vending/wardrobe/medi_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "yt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/repaired,
@@ -2634,7 +2640,7 @@
 	dir = 6
 	},
 /turf/open/transparent/openspace,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "AI" = (
 /obj/structure/fence{
 	dir = 4;
@@ -2793,7 +2799,7 @@
 /obj/machinery/microwave,
 /obj/structure/table,
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "BQ" = (
 /obj/structure/mirror{
 	dir = 8;
@@ -2803,7 +2809,7 @@
 	pixel_y = 15
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "BS" = (
 /obj/structure/bonfire/prelit,
 /obj/effect/decal/cleanable/blood,
@@ -2966,7 +2972,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Df" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
@@ -3182,7 +3188,7 @@
 /obj/item/toy/plush/lizardplushie,
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "ET" = (
 /obj/structure/bed/dogbed,
 /turf/open/indestructible/ground/outside/roof,
@@ -3228,7 +3234,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "FU" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -3260,7 +3266,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Go" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/dirt{
@@ -3340,7 +3346,7 @@
 	icon_state = "storewindowbottom"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "GW" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -3386,7 +3392,7 @@
 	icon_state = "storewindowvertical"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Ho" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3440,7 +3446,7 @@
 /area/f13/wasteland)
 "HN" = (
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "HQ" = (
 /obj/structure/junk/locker,
 /turf/open/floor/f13/wood{
@@ -3559,7 +3565,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "IE" = (
 /obj/structure/table,
 /obj/structure/curtain{
@@ -3567,7 +3573,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "II" = (
 /obj/structure/railing/corner{
 	dir = 4;
@@ -3602,7 +3608,7 @@
 	icon_state = "storewindowleft"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "IY" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -3834,7 +3840,7 @@
 "Lo" = (
 /obj/structure/table,
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Lr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3890,7 +3896,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "LQ" = (
 /obj/structure/fence{
 	icon_state = "corner";
@@ -4006,7 +4012,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "MV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
@@ -4051,7 +4057,7 @@
 	light_color = "#c1caff"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Nw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
@@ -4210,7 +4216,7 @@
 "Pc" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Pg" = (
 /obj/structure/reagent_dispensers/barrel/two,
 /obj/machinery/light,
@@ -4267,7 +4273,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "PM" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/segment{
@@ -4309,7 +4315,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Ql" = (
 /mob/living/simple_animal/hostile/gecko/fire,
 /turf/open/floor/f13/wood{
@@ -4390,7 +4396,7 @@
 	light_color = "#c1caff"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Rm" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/validball_spawner,
@@ -4627,7 +4633,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "TX" = (
 /obj/structure/railing{
 	dir = 8
@@ -4722,7 +4728,7 @@
 "UY" = (
 /obj/structure/window/fulltile/store,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "UZ" = (
 /obj/structure/fence{
 	icon_state = "end";
@@ -4813,7 +4819,7 @@
 /area/f13/wasteland)
 "VU" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "VW" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 2
@@ -4923,7 +4929,7 @@
 	icon_state = "storewindowright"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "WK" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -4961,7 +4967,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Xj" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -5025,7 +5031,7 @@
 	},
 /obj/machinery/iv_drip,
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "XU" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -5126,7 +5132,7 @@
 "Zf" = (
 /obj/structure/railing,
 /turf/open/transparent/openspace,
-/area/f13/building/hospital)
+/area/f13/building/hospital/clinic)
 "Zh" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/wasteland)
@@ -10740,8 +10746,8 @@ VU
 VU
 VU
 VU
-kd
-kd
+gw
+gw
 Zf
 VU
 IE
@@ -11507,7 +11513,7 @@ Wr
 Xv
 FS
 fG
-Ey
+ye
 FS
 VU
 sq
