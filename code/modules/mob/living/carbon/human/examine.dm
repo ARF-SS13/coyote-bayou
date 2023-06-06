@@ -279,7 +279,7 @@
 			else if(temp < 50)
 				msg += "<B>[t_He] looks nauseous</B>\n"
 			else if (temp < 180)
-				msg += "<B>[t_He] very unwell!</B>\n"
+				msg += "<B>[t_He] looks very unwell!</B>\n"
 			else
 				msg += "<B>[t_He] looks very unwell!</B>\n"
 
