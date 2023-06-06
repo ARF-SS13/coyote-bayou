@@ -9230,12 +9230,10 @@
 	},
 /area/f13/bunker)
 "eoK" = (
-/obj/structure/closet/crate/coffin/meatcoffin{
-	max_integrity = -1
-	},
-/obj/item/gun/magic/staff/healing,
-/obj/item/clothing/neck/necklace/memento_mori,
-/obj/item/gun/energy/beam_rifle,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_weps,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/indestructible/necropolis,
 /area/f13/underground/cave)
 "eoP" = (
@@ -109468,7 +109466,7 @@ vvK
 vvK
 vvK
 vvK
-vvK
+eoK
 vvK
 sAX
 sAX
@@ -109720,7 +109718,7 @@ vvK
 vvK
 sAX
 sAX
-vvK
+eoK
 vvK
 vvK
 vvK
@@ -109732,7 +109730,7 @@ vvK
 vvK
 vvK
 vvK
-vvK
+eoK
 vvK
 maW
 whv
@@ -110500,7 +110498,7 @@ vvK
 vvK
 vvK
 vvK
-vvK
+eoK
 sAX
 vvK
 vvK
@@ -110761,7 +110759,7 @@ vvK
 vvK
 sAX
 vvK
-eoK
+vvK
 kdK
 cFt
 whv
@@ -111520,6 +111518,7 @@ vvK
 vvK
 sAX
 sAX
+eoK
 vvK
 vvK
 vvK
@@ -111527,8 +111526,7 @@ vvK
 vvK
 vvK
 vvK
-vvK
-vvK
+eoK
 vvK
 sAX
 vvK
@@ -112287,10 +112285,10 @@ whv
 maW
 vvK
 sAX
+eoK
 vvK
 vvK
-vvK
-vvK
+eoK
 vvK
 sAX
 sAX
@@ -112554,7 +112552,7 @@ sAX
 sAX
 rss
 vvK
-vvK
+eoK
 vvK
 sAX
 vvK
