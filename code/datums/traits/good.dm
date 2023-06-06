@@ -97,6 +97,15 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	/datum/crafting_recipe/scrap_pa,
 	/datum/crafting_recipe/scrap_pa_helm))
 
+GLOBAL_LIST_INIT(weapons_of_texarkana, list(
+	/datum/crafting_recipe/policepistol,
+	/datum/crafting_recipe/durathread_vest,
+	/datum/crafting_recipe/policerifle,
+	/datum/crafting_recipe/steelbib/heavy,
+	/datum/crafting_recipe/armyhelmetheavy,
+	/datum/crafting_recipe/huntingshotgun))
+
+
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
 
@@ -370,6 +379,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	if(!H.mind.learned_recipes)
 		H.mind.learned_recipes = list()
 	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
+	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
 
 /datum/quirk/gunsmith/remove()
 	var/mob/living/carbon/human/H = quirk_holder
