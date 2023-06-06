@@ -358,4 +358,3 @@
 			stored_decal = selected_decal
 	update_decal_path()
 	. = TRUE
-	
