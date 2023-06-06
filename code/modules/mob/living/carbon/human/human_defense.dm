@@ -700,7 +700,7 @@
 			
 			switch(oxyloss)
 				if(0 to 10)
-					to_send += span_danger("You are breathing normally.\n")
+					to_send += span_info("You are breathing normally.\n")
 				if(10 to 15)
 					to_send += span_danger("You feel lightheaded.\n")
 				if(15 to 30)
