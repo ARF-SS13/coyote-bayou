@@ -87,93 +87,92 @@
 			"Force Z": 3
 		},
 
-	{
-		"Gravity": true,
-		"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-		"Station": 1,
-		"Up": 1,
-		"Down": -1,
-		"No Parallax": true,
-		"Linkage" : "Cross",
-		"Force South": 1,
-		"Name": "Rock Springs",
-		"Force X": 2,
-		"Force Y": 1,
-		"Force Z": 1
-	},
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force South": 1,
+			"Name": "Rock Springs",
+			"Force X": 2,
+			"Force Y": 1,
+			"Force Z": 1
+		},
 
-	{
-		"Gravity": true,
-		"Baseturf": "/turf/open/transparent/openspace",
-		"Up": 1,
-		"Down": -1,
-		"No Parallax": true,
-		"Linkage" : "Cross",
-		"Above": true,
-		"Name": "Rocksprings Upper",
-		"Force X": 2,
-		"Force Y": 1,
-		"Force Z": 2
-	},
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Above": true,
+			"Name": "Rocksprings Upper",
+			"Force X": 2,
+			"Force Y": 1,
+			"Force Z": 2
+		},
 
-	{
-		"Gravity": true,
-		"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-		"Station": 1,
-		"Up": 1,
-		"Down": -1,
-		"No Parallax": true,
-		"Linkage" : "Cross",
-		"Force North": 1,
-		"Name": "Red River",
-		"Force X": 2,
-		"Force Y": 3,
-		"Force Z": 1
-	},
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force North": 1,
+			"Name": "Red River",
+			"Force X": 2,
+			"Force Y": 3,
+			"Force Z": 1
+		},
 
-	{
-		"Gravity": true,
-		"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-		"Station": 1,
-		"Up": 1,
-		"Down": -1,
-		"No Parallax": true,
-		"Linkage" : "Cross",
-		"Force North": 1,
-		"Name": "Red River",
-		"Force X": 2,
-		"Force Y": 3,
-		"Force Z": 2
-	},
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force North": 1,
+			"Name": "Red River",
+			"Force X": 2,
+			"Force Y": 3,
+			"Force Z": 2
+		},
 
-	{
-		"Gravity": true,
-		"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-		"Station": 1,
-		"Up": 1,
-		"Down": -1,
-		"No Parallax": true,
-		"Linkage" : "Cross",
-		"Force East": 1,
-		"Name": "Garland City",
-		"Force X": 3,
-		"Force Y": 2,
-		"Force Z": 1
-	},
-	{
-		"Gravity": true,
-		"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-		"Station": 1,
-		"Up": 1,
-		"Down": -1,
-		"No Parallax": true,
-		"Linkage" : "Cross",
-		"Force West": 1,
-		"Name": "Garland City",
-		"Force X": 1,
-		"Force Y": 2,
-		"Force Z": 1
-	}
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force East": 1,
+			"Name": "Garland City",
+			"Force X": 3,
+			"Force Y": 2,
+			"Force Z": 1
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force West": 1,
+			"Name": "Westlands",
+			"Force X": 1,
+			"Force Y": 2,
+			"Force Z": 1
+		}
 	],
 	"minetype": "none"
 }

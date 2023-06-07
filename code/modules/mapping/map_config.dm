@@ -126,6 +126,17 @@
 						Z_FORCE_X = 3,
 						Z_FORCE_Y = 2,
 						Z_FORCE_Z = 1
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_STATION = 1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_WEST = 1,
+						Z_FORCE_X = 1,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 1
 						)
 					)
 	var/space_ruin_levels = 0
