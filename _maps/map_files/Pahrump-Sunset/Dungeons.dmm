@@ -40705,7 +40705,9 @@
 /area/f13/building)
 "tvx" = (
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/ladder/unbreakable{
+	id = "Westlands1"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/underground/cave)
 "tvB" = (
@@ -46366,6 +46368,10 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave/tunnelertemple/void)
+"wjA" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/underground/cave)
 "wjE" = (
 /obj/structure/reagent_dispensers/barrel/four,
 /turf/open/floor/plating/tunnel,
@@ -81807,7 +81813,7 @@ wWG
 bCR
 gYU
 wWG
-svA
+wjA
 ozL
 wWG
 whv
