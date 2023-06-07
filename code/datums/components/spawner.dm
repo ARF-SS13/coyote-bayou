@@ -354,6 +354,16 @@
 	var/maxHealth
 	var/color
 	var/faction
+	var/AIStatus
+	var/casingtype
+	var/projectiletype
+	var/projectilesound
+	var/sound_after_shooting
+	var/sound_after_shooting_delay
+	var/projectile_sound_properties
+	var/melee_damage_lower
+	var/melee_damage_upper
+	var/list/mob_armor
 	var/mobtag
 
 /// A proc that takes a mob datum and records all the vars that are different from the initial vars, for later use.
@@ -368,6 +378,20 @@
 	maxHealth = cool_mob.maxHealth
 	color = cool_mob.color
 	faction = cool_mob.faction
+	AIStatus = cool_mob.AIStatus
+	projectiletype = cool_mob.projectiletype
+	projectilesound = cool_mob.projectilesound
+	sound_after_shooting = cool_mob.sound_after_shooting
+	sound_after_shooting_delay = cool_mob.sound_after_shooting_delay
+	projectile_sound_properties = cool_mob.projectile_sound_properties
+	melee_damage_lower = cool_mob.melee_damage_lower
+	melee_damage_upper = cool_mob.melee_damage_upper
+	if(ispath(cool_mob.casingtype))
+		casingtype = cool_mob.casingtype
+	/// mob_armor is even specialer
+	if(istype(cool_mob.mob_armor, /datum/armor))
+		var/datum/armor/rmr = cool_mob.mob_armor
+		mob_armor = rmr.getList() // its a datum! aaaand I dont want to save that one
 	return src
 
 /// A proc that spawns a mob from a special mob datum
@@ -387,6 +411,17 @@
 		cool_mob.health = cool_mob.maxHealth
 		cool_mob.color = color
 		cool_mob.faction = faction
+		cool_mob.AIStatus = AIStatus
+		cool_mob.casingtype = casingtype
+		cool_mob.projectiletype = projectiletype
+		cool_mob.projectilesound = projectilesound
+		cool_mob.sound_after_shooting = sound_after_shooting
+		cool_mob.sound_after_shooting_delay = sound_after_shooting_delay
+		cool_mob.projectile_sound_properties = projectile_sound_properties
+		cool_mob.melee_damage_lower = melee_damage_lower
+		cool_mob.melee_damage_upper = melee_damage_upper
+		QDEL_NULL(cool_mob.mob_armor)
+		cool_mob.mob_armor = getArmor(arglist(mob_armor))
 	myspawner.special_mobs -= src
 	cool_mob.do_alert_animation(cool_mob)
 	return cool_mob
