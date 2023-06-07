@@ -316,7 +316,6 @@
 					/obj/item/grenade/clusterbuster/syndieminibomb,
 					/obj/item/grenade/clusterbuster/teargas,
 					/obj/item/grenade/clusterbuster/clf3,
-					/obj/item/grenade/clusterbuster/slime,
 					/obj/item/grenade/clusterbuster/facid)
 	crate_name = "clusterbang grenade pack crate"
 
@@ -326,110 +325,6 @@
 	cost = 1500
 	contains = list(/obj/item/storage/box/stingbangs)
 	crate_name = "stingbang grenade pack crate"
-
-/datum/supply_pack/security/crossbreeddangerous
-	name = "Dangerous Crossbreeds Pack"
-	desc = "Contains five of a various selection of slime cross breed items that are dangerous to use."
-	cost = 25000
-	num_contained = 3
-	contains = list(/obj/item/slimecross/burning/orange,
-					/obj/item/slimecross/burning/metal,
-					/obj/item/slimecross/burning/yellow,
-					/obj/item/slimecross/burning/darkblue,
-					/obj/item/slimecross/burning/green,
-					/obj/item/slimecross/burning/oil,
-					/obj/item/slimecross/burning/lightpink,
-					/obj/item/slimecross/burning/rainbow,
-					/obj/item/slimecross/regenerative/orange,
-					/obj/item/slimecross/regenerative/oil,
-					/obj/item/slimecross/regenerative/adamantine,
-					/obj/item/slimecross/regenerative/rainbow,
-					/obj/item/slimecross/stabilized/sepia,
-					/obj/item/slimecross/stabilized/red,
-					/obj/item/slimecross/stabilized/green,
-					/obj/item/slimecross/stabilized/oil,
-					/obj/item/slimecross/stabilized/black,
-					/obj/item/slimecross/stabilized/adamantine,
-					/obj/item/slimecross/charged/orange,
-					/obj/item/slimecross/charged/oil,
-					/obj/item/slimecross/chilling/orange,
-					/obj/item/slimecross/chilling/sepia,
-					/obj/item/slimecross/chilling/green,
-					/obj/item/slimecross/chilling/adamantine)
-	crate_name = "dangerous crossbreed crate"
-
-/datum/supply_pack/security/crossbreedmedical
-	name = "Medical Crossbreeds Pack"
-	desc = "Contains five of a various selection of slime cross breed items that are effective in treating various injuries."
-	cost = 20000
-	num_contained = 4
-	contains = list(/obj/item/slimecross/burning/purple,
-					/obj/item/slimecross/burning/sepia,
-					/obj/item/slimecross/regenerative/grey,
-					/obj/item/slimecross/regenerative/silver,
-					/obj/item/slimecross/regenerative/sepia,
-					/obj/item/slimecross/regenerative/cerulean,
-					/obj/item/slimecross/regenerative/red,
-					/obj/item/slimecross/regenerative/pink,
-					/obj/item/slimecross/regenerative/gold,
-					/obj/item/slimecross/regenerative/lightpink,
-					/obj/item/slimecross/stabilized/lightpink,
-					/obj/item/slimecross/industrial/black,
-					/obj/item/slimecross/industrial/red,
-					/obj/item/slimecross/charged/purple,
-					/obj/item/slimecross/selfsustaining/purple,
-					/obj/item/slimecross/chilling/purple,
-					/obj/item/slimecross/consuming/purple,
-					/obj/item/slimecross/recurring/purple)
-	crate_name = "medical crossbreed crate"
-
-/datum/supply_pack/security/crossbreedutility
-	name = "Utility Crossbreeds Pack"
-	desc = "Contains five of a various selection of slime cross breed items that are effective in increasing chance of survival."
-	cost = 20000
-	num_contained = 4
-	contains = list(/obj/item/slimecross/burning/black,
-					/obj/item/slimecross/regenerative/metal,
-					/obj/item/slimecross/regenerative/blue,
-					/obj/item/slimecross/regenerative/green,
-					/obj/item/slimecross/regenerative/black,
-					/obj/item/slimecross/stabilized/blue,
-					/obj/item/slimecross/stabilized/metal,
-					/obj/item/slimecross/stabilized/yellow,
-					/obj/item/slimecross/stabilized/darkblue,
-					/obj/item/slimecross/stabilized/silver,
-					// /obj/item/slimecross/stabilized/pink,
-					/obj/item/slimecross/stabilized/cerulean,
-					/obj/item/slimecross/industrial/grey,
-					/obj/item/slimecross/industrial/metal,
-					/obj/item/slimecross/industrial/darkpurple,
-					/obj/item/slimecross/charged/metal,
-					/obj/item/slimecross/charged/yellow,
-					/obj/item/slimecross/charged/bluespace,
-					/obj/item/slimecross/charged/sepia,
-					/obj/item/slimecross/charged/pink,
-					/obj/item/slimecross/charged/lightpink,
-					/obj/item/slimecross/selfsustaining/metal,
-					/obj/item/slimecross/selfsustaining/yellow,
-					/obj/item/slimecross/selfsustaining/darkpurple,
-					/obj/item/slimecross/selfsustaining/silver,
-					/obj/item/slimecross/selfsustaining/pyrite,
-					/obj/item/slimecross/selfsustaining/pink,
-					/obj/item/slimecross/chilling/grey,
-					/obj/item/slimecross/chilling/blue,
-					/obj/item/slimecross/chilling/metal,
-					/obj/item/slimecross/chilling/darkblue,
-					/obj/item/slimecross/chilling/cerulean,
-					/obj/item/slimecross/chilling/pyrite,
-					/obj/item/slimecross/chilling/gold,
-					/obj/item/slimecross/consuming/sepia,
-					/obj/item/slimecross/recurring/metal,
-					/obj/item/slimecross/recurring/yellow,
-					/obj/item/slimecross/recurring/darkpurple,
-					/obj/item/slimecross/recurring/silver,
-					/obj/item/slimecross/recurring/pyrite,
-					/obj/item/slimecross/recurring/pink)
-	crate_name = "utility crossbreed crate"
 
 /*disabled pending rework of traitbook lootdrop
 /datum/supply_pack/security/traitbooks
