@@ -178,7 +178,6 @@
 "aQ" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "mining_internal"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -232,11 +231,9 @@
 "be" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -779,7 +776,6 @@
 /area/awaymission/wildwest)
 "dt" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "FarmRoom2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -866,7 +862,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -935,7 +930,6 @@
 /area/awaymission/wildwest)
 "ea" = (
 /obj/machinery/conveyor{
-	id_tag = "mining_internal"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -1057,7 +1051,6 @@
 /area/awaymission/wildwest/refine)
 "eF" = (
 /obj/machinery/door/airlock{
-	id_tag = "Unit1";
 	name = "Unit 1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1111,7 +1104,6 @@
 /area/awaymission/wildwest)
 "eO" = (
 /obj/machinery/mineral/processing_unit{
-	id_tag = "mining_smelter"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -1182,7 +1174,6 @@
 /area/awaymission/wildwest/vault)
 "fb" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "FarmRoom2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -1344,7 +1335,6 @@
 /area/awaymission/wildwest)
 "fM" = (
 /obj/machinery/door/airlock{
-	id_tag = "Unit2";
 	name = "Unit 2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1354,7 +1344,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -1364,7 +1353,6 @@
 /area/awaymission/wildwest/vaultdoors)
 "fO" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate1south";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1955,7 +1943,6 @@
 "ir" = (
 /obj/machinery/conveyor{
 	dir = 5;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2009,7 +1996,6 @@
 /area/awaymission/wildwest)
 "iy" = (
 /obj/machinery/door/airlock{
-	id_tag = "Unit2";
 	name = "Unit 2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2636,7 +2622,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2668,7 +2653,6 @@
 	name = "Firelock East"
 	},
 /obj/machinery/door/airlock{
-	id_tag = "Dorm2";
 	name = "Dorm 2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3076,7 +3060,6 @@
 /area/awaymission/wildwest)
 "mT" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "FarmRoom2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -3370,7 +3353,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -3566,7 +3548,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -3666,7 +3647,6 @@
 "ph" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/rust,
@@ -3751,7 +3731,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -3786,7 +3765,6 @@
 /area/awaymission/wildwest)
 "pG" = (
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "mining_internal";
 	name = "mining conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3895,7 +3873,6 @@
 /area/awaymission/wildwest)
 "qf" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "Gatehouse3"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -4259,7 +4236,6 @@
 /area/awaymission/wildwest/gov)
 "rO" = (
 /obj/machinery/door/airlock{
-	id_tag = "miningdorm1";
 	name = "Room 1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4793,7 +4769,6 @@
 /area/awaymission/wildwest/refine)
 "uj" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate1south";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4860,7 +4835,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate1north";
 	name = "City Gate";
 	opacity = 0
 	},
@@ -4870,7 +4844,6 @@
 /area/awaymission/wildwest/refine)
 "uv" = (
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "generator_internal";
 	name = "generator"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5022,7 +4995,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -5092,7 +5064,6 @@
 /area/awaymission/wildwest/refine)
 "vu" = (
 /obj/machinery/door/poddoor{
-	id_tag = "TunnelBlastDoorsLord";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5809,7 +5780,6 @@
 	name = "Firelock East"
 	},
 /obj/machinery/door/airlock{
-	id_tag = "Dorm3";
 	name = "Dorm 3"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6083,7 +6053,6 @@
 "zy" = (
 /obj/machinery/conveyor_switch{
 	convdir = -1;
-	id_tag = "mining_external"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -6226,7 +6195,6 @@
 /area/awaymission/wildwest/refine)
 "Aj" = (
 /obj/machinery/conveyor{
-	id_tag = "mining_internal"
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -6501,7 +6469,6 @@
 /area/f13/underground/cave)
 "Bs" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate2left";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6668,7 +6635,6 @@
 /area/awaymission/wildwest/gov)
 "BY" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate2left";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6724,7 +6690,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -6753,11 +6718,9 @@
 "Ct" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6945,11 +6908,9 @@
 "Dd" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7295,7 +7256,6 @@
 /area/awaymission/wildwest/gov)
 "Eu" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "FarmRoom2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
@@ -7675,7 +7635,6 @@
 /area/awaymission/wildwest)
 "FS" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "FarmRoom2"
 	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -7913,7 +7872,6 @@
 /area/awaymission/wildwest/vault)
 "GM" = (
 /obj/machinery/door/poddoor{
-	id_tag = "TunnelBlastDoorsLord";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8038,7 +7996,6 @@
 /area/f13/farmhouse)
 "Hj" = (
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "mining_mint";
 	name = "mining conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8243,7 +8200,6 @@
 "Ia" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8390,7 +8346,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -8654,7 +8609,6 @@
 /area/awaymission/wildwest/refine)
 "JD" = (
 /obj/machinery/door/airlock{
-	id_tag = "Unit1";
 	name = "Unit 1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8682,14 +8636,12 @@
 	},
 /obj/machinery/door/window/brigdoor{
 	dir = 2;
-	id_tag = "Cell 1";
 	name = "Cell 1";
 	req_access_txt = "2"
 	},
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -8957,7 +8909,6 @@
 /area/awaymission/wildwest/gov)
 "KL" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate2left";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8971,7 +8922,6 @@
 "KO" = (
 /obj/machinery/conveyor{
 	dir = 9;
-	id_tag = "mining_internal"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -9027,11 +8977,9 @@
 "KY" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9257,7 +9205,6 @@
 /area/awaymission/wildwest/mines)
 "LW" = (
 /obj/machinery/door/airlock{
-	id_tag = "Unit2";
 	name = "Unit 2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9292,7 +9239,6 @@
 /area/awaymission/wildwest)
 "Mg" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "FarmRoom1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -9460,7 +9406,6 @@
 "MN" = (
 /obj/machinery/conveyor{
 	dir = 6;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9763,7 +9708,6 @@
 "On" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -10048,7 +9992,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -10105,7 +10048,6 @@
 /area/awaymission/wildwest)
 "PT" = (
 /obj/machinery/mineral/stacking_machine{
-	id_tag = "mining_stacker";
 	in_dir = 4;
 	out_dir = 8
 	},
@@ -10137,7 +10079,6 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_external"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark{
@@ -10267,7 +10208,6 @@
 "Qx" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
 	},
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10349,7 +10289,6 @@
 	network = list("MINE")
 	},
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "mining_internal";
 	name = "mining conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10961,7 +10900,6 @@
 	name = "Firelock East"
 	},
 /obj/machinery/door/airlock{
-	id_tag = "Dorm1";
 	name = "Dorm 1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11309,7 +11247,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate1north";
 	name = "City Gate";
 	opacity = 0
 	},
@@ -11658,7 +11595,6 @@
 /area/awaymission/wildwest/gov)
 "Ww" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "Gatehouse2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -11780,7 +11716,6 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -11916,7 +11851,6 @@
 "XF" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -11995,7 +11929,6 @@
 "XV" = (
 /obj/machinery/conveyor{
 	dir = 9;
-	id_tag = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12164,7 +12097,6 @@
 "YC" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id_tag = "anotempload"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -12381,7 +12313,6 @@
 /area/awaymission/wildwest)
 "ZA" = (
 /obj/machinery/door/airlock{
-	id_tag = "Unit1";
 	name = "Unit 1"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12397,7 +12328,6 @@
 /area/awaymission/wildwest)
 "ZC" = (
 /obj/machinery/door/poddoor{
-	id_tag = "TunnelBlastDoorsLord";
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
