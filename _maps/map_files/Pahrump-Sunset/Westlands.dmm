@@ -866,7 +866,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
+	id = 50;
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -1354,7 +1354,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
+	id = 50;
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -1364,7 +1364,7 @@
 /area/awaymission/wildwest/vaultdoors)
 "fO" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate1south";
+	id = 51;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3369,7 +3369,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
+	id = 54;
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -3565,7 +3565,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
+	id = 54;
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -3750,7 +3750,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
+	id = 50;
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -4792,7 +4792,7 @@
 /area/awaymission/wildwest/refine)
 "uj" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate1south";
+	id = 51;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4859,7 +4859,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate1north";
+	id = 52;
 	name = "City Gate";
 	opacity = 0
 	},
@@ -5021,7 +5021,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate2right";
+	id = 50;
 	name = "Tunnel Blast Door";
 	opacity = 0
 	},
@@ -5091,7 +5091,7 @@
 /area/awaymission/wildwest/refine)
 "vu" = (
 /obj/machinery/door/poddoor{
-	id_tag = "TunnelBlastDoorsLord";
+	id = 55;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6499,7 +6499,7 @@
 /area/f13/underground/cave)
 "Bs" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate2left";
+	id = 53;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6666,7 +6666,7 @@
 /area/awaymission/wildwest/gov)
 "BY" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate2left";
+	id = 53;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7910,7 +7910,7 @@
 /area/awaymission/wildwest/vault)
 "GM" = (
 /obj/machinery/door/poddoor{
-	id_tag = "TunnelBlastDoorsLord";
+	id = 55;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8685,7 +8685,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
+	id = 54;
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -8953,7 +8953,7 @@
 /area/awaymission/wildwest/gov)
 "KL" = (
 /obj/machinery/door/poddoor{
-	id_tag = "tunnelgate2left";
+	id = 53;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10101,8 +10101,8 @@
 "PT" = (
 /obj/machinery/mineral/stacking_machine{
 	id_tag = "mining_stacker";
-	in_dir = 4;
-	out_dir = 8
+	input_dir = 4;
+	output_dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -11304,7 +11304,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "tunnelgate1north";
+	id = 52;
 	name = "City Gate";
 	opacity = 0
 	},
@@ -11775,7 +11775,7 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "Brig Cell";
+	id = 54;
 	name = "Security Blast Door";
 	opacity = 0
 	},
@@ -12392,7 +12392,7 @@
 /area/awaymission/wildwest)
 "ZC" = (
 /obj/machinery/door/poddoor{
-	id_tag = "TunnelBlastDoorsLord";
+	id = 55;
 	name = "Tunnel Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
