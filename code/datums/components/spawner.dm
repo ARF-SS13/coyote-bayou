@@ -420,7 +420,6 @@
 		cool_mob.projectile_sound_properties = projectile_sound_properties
 		cool_mob.melee_damage_lower = melee_damage_lower
 		cool_mob.melee_damage_upper = melee_damage_upper
-		QDEL_NULL(cool_mob.mob_armor)
 		cool_mob.mob_armor = getArmor(arglist(mob_armor))
 	myspawner.special_mobs -= src
 	cool_mob.do_alert_animation(cool_mob)
