@@ -14,7 +14,7 @@
 	add_verb(new_leader,/mob/living/proc/set_tribe_welcome)
 	if(!round_start)
 		add_verb(new_leader,/mob/living/proc/set_tribe_color)
-	to_chat(new_leader, span_notice("You have become a new leader of the [name]! You can now invite and remove members at will."))
+	to_chat(new_leader, "<span class='notice'>You have become a new leader of the [name]! You can now invite and remove members at will.</span>")
 
 	var/obj/item/device/gangtool/gangtool = new(new_leader)
 	gangtool.gang = new_leader.gang
@@ -43,7 +43,7 @@
 	if(!round_start)
 		remove_verb(old_leader,/mob/living/proc/set_tribe_color)
 	add_verb(old_leader,/mob/living/proc/assume_tribe_leader)
-	to_chat(old_leader, span_warning("You are no longer the leader of the [name]!"))
+	to_chat(old_leader, "<span class='warning'>You are no longer the leader of the [name]!</span>")
 
 /datum/gang/tribe/add_member(mob/living/carbon/new_member)
 	members |= new_member
@@ -53,7 +53,7 @@
 	add_verb(new_member,/mob/living/proc/leave_tribe)
 
 	add_verb(new_member,/mob/living/proc/assume_tribe_leader)
-	to_chat(new_member, span_notice("You are now a member of the [name]! Everyone can recognize your tribe."))
+	to_chat(new_member, "<span class='notice'>You are now a member of the [name]! Everyone can recognize your tribe.</span>")
 	if(welcome_text)
 		to_chat(new_member, "<span class='notice'>Welcome text: </span><span class='purple'>[welcome_text]</span>")
 
@@ -64,7 +64,7 @@
 	add_verb(member,/mob/living/proc/create_tribe)
 	remove_verb(member,/mob/living/proc/leave_tribe)
 	remove_verb(member,/mob/living/proc/assume_tribe_leader)
-	to_chat(member, span_warning("You are no longer a member of the [name]!"))
+	to_chat(member, "<span class='warning'>You are no longer a member of the [name]!</span>")
 
 	if(!members.len && !round_start)
 		GLOB.gang_names -= lowertext(name)
@@ -115,7 +115,7 @@
 		return
 	input = copytext(sanitize(input), 1, 30)
 	if(lowertext(input) in GLOB.gang_names)
-		to_chat(src, span_notice("This tribe name is already taken!"))
+		to_chat(src, "<span class='notice'>This tribe name is already taken!</span>")
 		return
 	GLOB.gang_names |= lowertext(input)
 
@@ -123,7 +123,7 @@
 	G.name = input
 	GLOB.all_gangs |= G
 	gang = G
-	to_chat(src, span_notice("You have created [G.name]!"))
+	to_chat(src, "<span class='notice'>You have created [G.name]!</span>")
 
 	G.add_member(src)
 	G.add_leader(src)
@@ -152,7 +152,7 @@
 	if(G && G.leader)
 		var/mob/living/L = G.leader
 		if(L.stat != DEAD && L.client)
-			to_chat(src, span_warning("Tribe leader is still alive and well!"))
+			to_chat(src, "<span class='warning'>Tribe leader is still alive and well!</span>")
 			return
 		else
 			G.remove_leader(L)
@@ -183,8 +183,8 @@
 		if(!new_leader || new_leader == src)
 			return
 		var/mob/living/H = new_leader
-		to_chat(src, span_notice("You have transferred tribe leadership of the [G.name] to [H.real_name]!"))
-		to_chat(H, span_notice("You have received tribe leadership of the [G.name] from [src.real_name]!"))
+		to_chat(src, "<span class='notice'>You have transferred tribe leadership of the [G.name] to [H.real_name]!</span>")
+		to_chat(H, "<span class='notice'>You have received tribe leadership of the [G.name] from [src.real_name]!</span>")
 		G.remove_leader(src)
 		G.add_leader(H)
 
@@ -212,8 +212,8 @@
 			return
 
 		var/mob/living/H = kicked_member
-		to_chat(src, span_notice("You have removed [H.real_name] from the [G.name]!"))
-		to_chat(H, span_warning("You have been kicked from the [G.name] by [src.real_name]!"))
+		to_chat(src, "<span class='notice'>You have removed [H.real_name] from the [G.name]!</span>")
+		to_chat(H, "<span class='warning'>You have been kicked from the [G.name] by [src.real_name]!</span>")
 		G.remove_member(H)
 
 /mob/living/proc/set_tribe_welcome()
@@ -228,7 +228,7 @@
 	input = copytext(sanitize(input), 1, 300)
 	G.welcome_text = input
 
-	to_chat(src, span_notice("You have set a welcome text for a new tribe members!"))
+	to_chat(src, "<span class='notice'>You have set a welcome text for a new tribe members!</span>")
 
 /mob/living/proc/set_tribe_color()
 	set name = "Choose Tribe Color"
@@ -241,4 +241,4 @@
 		return
 	G.color = sanitize_color(picked_color)
 
-	to_chat(src, span_notice("You have chosen a new tribe color!"))
+	to_chat(src, "<span class='notice'>You have chosen a new tribe color!</span>")

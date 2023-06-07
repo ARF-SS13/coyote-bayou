@@ -996,7 +996,8 @@ Raider
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
-	..()
+	. = ..()
+	add_verb(H, /mob/living/proc/creategang)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
@@ -1317,6 +1318,11 @@ Raider
 	title = "Ashdown Wastelander"
 	total_positions = 25
 	spawn_positions = 25
+	outfit = /datum/outfit/job/wasteland/f13wastelander/ashdown
+
+/datum/outfit/job/wasteland/f13wastelander/ashdown/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	add_verb(H, /mob/living/proc/creategang)
 
 /*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"

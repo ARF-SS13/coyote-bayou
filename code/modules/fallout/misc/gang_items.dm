@@ -79,13 +79,13 @@
 /datum/gang_item/clothing/glasses/sunglasses
 	name = "Sunglasses"
 	id = "sunglasses"
-	cost = 20
+	cost = 30
 	item_path = /obj/item/clothing/glasses/sunglasses
 
 /datum/gang_item/clothing/raider_uniform
 	name = "Raider uniform"
 	id = "raider_uniform"
-	cost = 20
+	cost = 10
 	item_path = /obj/item/clothing/under/f13/raider_leather
 
 /datum/gang_item/clothing/jester_uniform
@@ -103,19 +103,19 @@
 /datum/gang_item/clothing/scarecrow_uniform
 	name = "Scarecrow uniform"
 	id = "scarecrow_uniform"
-	cost = 20
+	cost = 10
 	item_path = /obj/item/clothing/under/scarecrow
 
 /datum/gang_item/clothing/soviet_uniform
 	name = "Soviet uniform"
 	id = "soviet_uniform"
-	cost = 20
+	cost = 10
 	item_path = /obj/item/clothing/under/soviet
 
 /datum/gang_item/clothing/chairmen_uniform
 	name = "Chairmen uniform"
 	id = "chairmen_uniform"
-	cost = 20
+	cost = 10
 	item_path = /obj/item/clothing/under/f13/bennys/gang
 
 /obj/item/clothing/under/f13/bennys/gang
@@ -137,7 +137,7 @@
 /datum/gang_item/weapon/shuriken
 	name = "Shuriken"
 	id = "shuriken"
-	cost = 30
+	cost = 10
 	item_path = /obj/item/throwing_star
 
 /datum/gang_item/weapon/switchblade
@@ -167,13 +167,13 @@
 /datum/gang_item/weapon/sappers
 	name = "Sappers"
 	id = "sappers"
-	cost = 75
+	cost = 35
 	item_path = /obj/item/melee/unarmed/sappers
 
 /datum/gang_item/weapon/greasegun
 	name = "Grease Gun"
 	id = "greasegun"
-	cost = 300
+	cost = 120
 	item_path = /obj/item/gun/ballistic/automatic/smg/greasegun
 
 /datum/gang_item/weapon/uzi
@@ -191,7 +191,7 @@
 /datum/gang_item/weapon/type93
 	name = "Worn Type 93"
 	id = "worntype93"
-	cost = 500
+	cost = 250
 	item_path = /obj/item/gun/ballistic/automatic/type93/worn
 
 
@@ -205,47 +205,47 @@
 /datum/gang_item/equipment/spraycan
 	name = "Spraycan"
 	id = "spraycan"
-	cost = 10
+	cost = 5
 	item_path = /obj/item/toy/crayon/spraycan
 
 /datum/gang_item/equipment/mentats
 	name = "Mentats"
 	id = "mentats"
-	cost = 30
+	cost = 90
 	item_path = /obj/item/storage/pill_bottle/chem_tin/mentats
 
 /datum/gang_item/equipment/fixer
 	name = "Fixer"
 	id = "fixer"
-	cost = 30
+	cost = 90
 	item_path = /obj/item/storage/pill_bottle/chem_tin/fixer
 
 /datum/gang_item/equipment/emp
 	name = "EMP Grenade"
 	id = "EMP"
-	cost = 95
+	cost = 135
 	item_path = /obj/item/grenade/empgrenade
 
 /datum/gang_item/equipment/necklace
 	name = "Gold Necklace"
 	id = "necklace"
-	cost = 150
+	cost = 70
 	item_path = /obj/item/clothing/neck/necklace/dope
 
 /datum/gang_item/equipment/c4
 	name = "C4 Explosive"
 	id = "c4"
-	cost = 100
+	cost = 150
 	item_path = /obj/item/grenade/plastic/c4
 
 /datum/gang_item/equipment/stinger
 	name = "Stinger"
-	cost = 75
+	cost = 100
 	item_path = /obj/item/grenade/f13/stinger
 
 /datum/gang_item/equipment/he
 	name = "High Explosive Grenade"
-	cost = 100
+	cost = 150
 	item_path = /datum/crafting_recipe/concussion
 
 
@@ -261,7 +261,7 @@
 /datum/gang_item/equipment/bundledenboss
 	name = "Drug Lord Bundle"
 	id = "bundledenboss"
-	cost = 850
+	cost = 420
 	item_path = /obj/item/storage/box/bundledenboss
 
 /obj/item/storage/box/bundledenboss
@@ -296,10 +296,29 @@
 	new /obj/item/grenade/syndieminibomb/concussion(src)
 	new /obj/item/clothing/suit/bomb_suit(src)
 
+/datum/gang_item/equipment/bundleboss
+	name = "Big Boss"
+	id = "bundleboss"
+	cost = 1200
+	item_path = /obj/item/storage/box/bundleboss
+
+/obj/item/storage/box/bundleboss
+	name = "Big Boss"
+	desc = "For the Biggest Outlaw around"
+	
+/obj/item/storage/box/bundleanarchist/PopulateContents()
+	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+	new /obj/item/clothing/suit/armor/power_armor/t45b/raider(src)
+	new /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/t45b/raider(src)
+	new /obj/item/ammo_box/shotgun/slug(src)
+
+
 /datum/gang_item/equipment/bundlegunner
 	name = "Old Soldier Bundle"
 	id = "bundlegunner"
-	cost = 400
+	cost = 350
 	item_path = /obj/item/storage/box/bundlegunner
 
 /obj/item/storage/box/bundlegunner
@@ -310,7 +329,7 @@
 	new /obj/item/gun/ballistic/automatic/smg/greasegun(src)
 	new /obj/item/ammo_box/magazine/greasegun(src)
 	new /obj/item/clothing/head/helmet/armyhelmet(src)
-	new /obj/item/storage/belt/fannypack(src)
+	new /obj/item/storage/belt(src)
 	new /obj/item/clothing/under/f13/army(src)
 	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
 	new /obj/item/grenade/frag(src)
@@ -318,7 +337,7 @@
 /datum/gang_item/equipment/bundleelguapo
 	name = "Bandito Bundle"
 	id = "bundleelguapo"
-	cost = 300
+	cost = 350
 	item_path = /obj/item/storage/box/bundleelguapo
 
 /obj/item/storage/box/bundleelguapo
@@ -330,4 +349,4 @@
 	new /obj/item/ammo_box/a357box/ricochet(src)
 	new /obj/item/gun/ballistic/revolver/colt357(src)
 	new /obj/item/clothing/head/f13/ranger_hat(src)
-	new /obj/item/clothing/suit/armor/light/leather/leathercoat(src)
+	new /obj/item/clothing/suit/armor/medium/raider/combatduster(src)
