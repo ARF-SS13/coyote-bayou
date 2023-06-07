@@ -1110,9 +1110,7 @@
 /turf/open/floor/plasteel/f13/stone,
 /area/awaymission/wildwest)
 "eO" = (
-/obj/machinery/mineral/processing_unit{
-	id_tag = "mining_smelter"
-	},
+/obj/machinery/mineral/processing_unit,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -8678,7 +8676,7 @@
 	},
 /obj/machinery/door/window/brigdoor{
 	dir = 2;
-	id_tag = "Cell 1";
+	id = 56;
 	name = "Cell 1";
 	req_access_txt = "2"
 	},
@@ -10100,7 +10098,6 @@
 /area/awaymission/wildwest)
 "PT" = (
 /obj/machinery/mineral/stacking_machine{
-	id_tag = "mining_stacker";
 	input_dir = 4;
 	output_dir = 8
 	},
