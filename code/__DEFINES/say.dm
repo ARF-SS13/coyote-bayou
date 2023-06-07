@@ -116,7 +116,10 @@
 	- @ moves your name to that position. \n\
 	-- Only works in Emotes and Subtles. \n\
 	-- Example: Takes a deep breath, @(this becomes your characters name) sure is tired. \n\
-    "
+	\n\
+	- ! at the start of a radio comm to emote over the radio \n\
+	--example: say ';! sneezes!'
+	"
 //Dan is the best, <3 ~TK
 //put space before the \ so it reads properly
 // use \ for readability, but one big line. \n for a new line. \n\ for a new line and readability.
