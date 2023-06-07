@@ -104,3 +104,19 @@
 #define ONLY_OVERHEAD (1<<1)
 // Append the player's name to the front
 #define PUT_NAME_IN (1<<2)
+
+#define EMOTE_HEADER_TEXT "\
+	The Following Chat Functions Exist \n\
+	- _text_ underlines text, +text+ bolds text, and |text| italicizes text. \n\
+	-- Works in Emote, Subtle, Say, Whisper and Radio chat. \n\
+	\n\
+	- %text lets you siiiing. \n\
+	-- Only works in non-radio Say. \n\
+	\n\
+	- @ moves your name to that position. \n\
+	-- Only works in Emotes and Subtles. \n\
+	-- Example: Takes a deep breath, @(this becomes your characters name) sure is tired. \n\
+    "
+//Dan is the best, <3 ~TK
+//put space before the \ so it reads properly
+// use \ for readability, but one big line. \n for a new line. \n\ for a new line and readability.
