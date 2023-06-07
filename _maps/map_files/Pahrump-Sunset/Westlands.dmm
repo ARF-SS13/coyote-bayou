@@ -178,7 +178,7 @@
 "aQ" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "mining_internal"
+	id = "mining_internal"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -232,11 +232,11 @@
 "be" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -935,7 +935,7 @@
 /area/awaymission/wildwest)
 "ea" = (
 /obj/machinery/conveyor{
-	id_tag = "mining_internal"
+	id = "mining_internal"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -1955,7 +1955,7 @@
 "ir" = (
 /obj/machinery/conveyor{
 	dir = 5;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2636,7 +2636,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -3666,7 +3665,7 @@
 "ph" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
+	id = "mining_mint"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/rust,
@@ -3786,7 +3785,7 @@
 /area/awaymission/wildwest)
 "pG" = (
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "mining_internal";
+	id = "mining_internal";
 	name = "mining conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4870,7 +4869,7 @@
 /area/awaymission/wildwest/refine)
 "uv" = (
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "generator_internal";
+	id = "generator_internal";
 	name = "generator"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6082,8 +6081,7 @@
 /area/awaymission/wildwest/vault)
 "zy" = (
 /obj/machinery/conveyor_switch{
-	convdir = -1;
-	id_tag = "mining_external"
+	id = "mining_external"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -6226,7 +6224,7 @@
 /area/awaymission/wildwest/refine)
 "Aj" = (
 /obj/machinery/conveyor{
-	id_tag = "mining_internal"
+	id = "mining_internal"
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -6724,7 +6722,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -6753,11 +6750,11 @@
 "Ct" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6945,11 +6942,11 @@
 "Dd" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8038,7 +8035,7 @@
 /area/f13/farmhouse)
 "Hj" = (
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "mining_mint";
+	id = "mining_mint";
 	name = "mining conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8243,7 +8240,7 @@
 "Ia" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8390,7 +8387,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -8971,7 +8967,7 @@
 "KO" = (
 /obj/machinery/conveyor{
 	dir = 9;
-	id_tag = "mining_internal"
+	id = "mining_internal"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -9027,11 +9023,11 @@
 "KY" = (
 /obj/machinery/conveyor{
 	dir = 8;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9460,7 +9456,7 @@
 "MN" = (
 /obj/machinery/conveyor{
 	dir = 6;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -9763,7 +9759,7 @@
 "On" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
+	id = "mining_mint"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
@@ -10048,7 +10044,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced{
 	dir = 4;
-	one_way = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -10137,7 +10132,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_external"
+	id = "mining_external"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark{
@@ -10267,7 +10262,7 @@
 "Qx" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
+	id = "mining_mint"
 	},
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -10349,7 +10344,7 @@
 	network = list("MINE")
 	},
 /obj/machinery/conveyor_switch/oneway{
-	id_tag = "mining_internal";
+	id = "mining_internal";
 	name = "mining conveyor"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11916,7 +11911,7 @@
 "XF" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id_tag = "mining_mint"
+	id = "mining_mint"
 	},
 /obj/machinery/light{
 	dir = 1
@@ -11995,7 +11990,7 @@
 "XV" = (
 /obj/machinery/conveyor{
 	dir = 9;
-	id_tag = "generator_internal"
+	id = "generator_internal"
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12164,7 +12159,7 @@
 "YC" = (
 /obj/machinery/conveyor{
 	dir = 10;
-	id_tag = "anotempload"
+	id = "anotempload"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
