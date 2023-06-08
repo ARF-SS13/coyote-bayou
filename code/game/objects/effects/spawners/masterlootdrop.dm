@@ -75,10 +75,11 @@
 	uptier_list = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon_upgrade = 1,
 	)
-	downtier_chance = 50 // 50% chance to downtier to common
+	downtier_chance = 10 // 10% chance to downtier to common
 	downtier_list = list(
 		/obj/effect/spawner/lootdrop/f13/common = 1,
 	)
+	snap_category = "UNCOMMON"
 
 /obj/effect/spawner/lootdrop/f13/uncommon_upgrade
 	name = "uncommon loot that rolled an upgrade to a limited rare tier, found in dungeons. Do not place in the map!!!"
@@ -97,10 +98,11 @@
 		/obj/effect/spawner/lootdrop/f13/rare_secondary = 5,
 		/obj/effect/spawner/lootdrop/f13/rare_tertiary = 5,
 	)
-	downtier_chance = 25 // 25% chance to downtier to uncommon (and no lower)
+	downtier_chance = 10 // 10% chance to downtier to uncommon (and no lower)
 	downtier_list = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon = 1,
 	)
+	snap_category = "RARE"
 
 
 /obj/effect/spawner/lootdrop/f13/rare_primary

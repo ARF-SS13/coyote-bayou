@@ -18,21 +18,42 @@
 	var/list/downtier_list
 	/// did we adjust tier?
 	var/tier_adjusted = FALSE
+	/// Will we be subject to The Loot Snap? If so, what category of snap?
+	var/snap_category
 
-/obj/effect/spawner/lootdrop/Initialize(mapload, block_tier_swap)
+/obj/effect/spawner/lootdrop/Initialize(mapload, block_tier_swap, survived_snap)
 	. = ..()
-	if(!block_tier_swap)
-		if(LAZYLEN(uptier_list) && prob(uptier_chance))
-			loot = uptier_list
-			tier_adjusted = TRUE
-		else if(LAZYLEN(downtier_list) && prob(downtier_chance))
-			loot = downtier_list
-			tier_adjusted = TRUE
+	return startup_procedure(mapload, block_tier_swap, survived_snap)
+
+/obj/effect/spawner/lootdrop/proc/startup_procedure(mapload, block_tier_swap, survived_snap)
+	adjust_tier(block_tier_swap)
+	if(cull_spawners(mapload, block_tier_swap, survived_snap))
+		return
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
 		return // have fun!
 	spawn_the_stuff() // lov dan
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/spawner/lootdrop/proc/cull_spawners(mapload)
+	if(!mapload || tier_adjusted)
+		snap_category = null
+		return
+	if(snap_category)
+		icon = 'icons/effects/effects.dmi'
+		icon_state = "nothing" // hide it!
+		SSitemspawners.add_to_culling(src, snap_category)
+		return TRUE
+
+/obj/effect/spawner/lootdrop/proc/adjust_tier(block_tier_swap)
+	if(block_tier_swap)
+		return
+	if(LAZYLEN(uptier_list) && prob(uptier_chance))
+		loot = uptier_list
+		tier_adjusted = TRUE
+	else if(LAZYLEN(downtier_list) && prob(downtier_chance))
+		loot = downtier_list
+		tier_adjusted = TRUE
 
 /obj/effect/spawner/lootdrop/proc/spawn_the_stuff(list/listhack)
 	if(!LAZYLEN(loot))
