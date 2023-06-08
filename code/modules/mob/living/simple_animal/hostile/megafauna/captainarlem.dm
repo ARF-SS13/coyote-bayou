@@ -14,7 +14,6 @@
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	weather_immunities = list("snow")
 	speak_emote = list("shouts")
-	armour_penetration = 0
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	vision_range = 15

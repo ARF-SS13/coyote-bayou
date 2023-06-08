@@ -43,7 +43,8 @@
 	if(!T)
 		return FALSE
 	var/totalitemdamage = target.pre_attacked_by(src, user)
-	target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
+	SSdamage.damage_mob(user, target, totalitemdamage)
+	//target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
 	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
 		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)
@@ -159,8 +160,6 @@
 	on_item_state = "prewarrip_on"
 	off_item_state = "prewarrip_off"
 	force_on = 50
-	armour_penetration = 0.15
-
 
 // Shishkebab backpack				The shishkebab weapon base unit
 /obj/item/shishkebabpack

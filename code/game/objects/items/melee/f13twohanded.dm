@@ -320,7 +320,6 @@
 	force = 21
 	throwforce = 25
 	throw_speed = 4
-	armour_penetration = 0.10
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	custom_materials = null
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
@@ -337,7 +336,6 @@
 	icon_state = "spear-claw"
 	icon_prefix = "spear-claw"
 	force = 22
-	armour_penetration = 0.15
 	sharpness = SHARP_EDGED
 	wielded_icon = "spear-claw2"
 	force_unwielded = 22
@@ -500,7 +498,6 @@
 	inhand_y_dimension = 64
 	damtype = "fire"
 	force = 5
-	armour_penetration = 0.3
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
@@ -671,7 +668,6 @@
 	icon_prefix = "hammer-war"
 	force = 25
 	throwforce = 20
-	armour_penetration = 0.2
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	wielded_icon = "hammer-war2"
 	force_unwielded = 34
@@ -864,7 +860,6 @@
 	icon_prefix = "autoaxe"
 	force_on = 33
 	attack_speed = CLICK_CD_MELEE * 1.5
-	armour_penetration = 0.3
 	on_icon_state = "autoaxe_on"
 	off_icon_state = "autoaxe"
 	on_item_state = "autoaxe_on"
