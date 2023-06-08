@@ -1,60 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul/wyomingghost{
-	desc = "A happily proud Enclave commander, mutated and boiled alive by the forced evolutionary virus. His armor looks to be sunken into his flesh.";
-	faction = list("wastebot");
-	health = 1500;
-	maxHealth = 1500;
-	name = "Commander Dirsk";
-	speak = list("For the Enclave!","Long live America!","Die, mutie!","AAAAAGGH!!","AUGUHGHHH!");
-	speak_chance = 10;
-	speed = -1;
-	unarmed_attack_speed = 2
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ab" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant,
 /turf/open/floor/pod,
 /area/awaymission/vr/bos/casino)
-"ac" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/enclave/soldier{
-	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit. This one's got a giant ass pulse sniper!";
-	extra_projectiles = 0;
-	faction = list("wastebot");
-	loot = null;
-	name = "Sergeant Mercer";
-	projectiletype = /obj/item/projectile/beam/pulse;
-	ranged_cooldown_time = 24;
-	ranged_message = "fires the pulse sniper";
-	speak = list("AUUGHGHHH!");
-	speak_emote = list("shouts")
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"ad" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/enclave/soldier{
-	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit.";
-	extra_projectiles = 1;
-	faction = list("wastebot");
-	loot = null;
-	name = "Sergeant Armstrong";
-	speak = list("AUUGHGHHH!");
-	speak_emote = list("shouts")
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ae" = (
 /obj/machinery/light,
 /obj/structure/table/reinforced,
@@ -66,15 +16,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"af" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ag" = (
 /turf/closed/indestructible/f13,
 /area/awaymission/vr/followers)
@@ -93,18 +34,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"ak" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/securitron/sentrybot,
-/turf/open/indestructible/ground/inside/dirt,
-/area/awaymission/vr/bos/enclavebunker)
-"al" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "aq" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -125,20 +54,6 @@
 "au" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/deathmatch/public/blue_2)
-"ay" = (
-/obj/structure/table,
-/obj/machinery/light/small,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"aH" = (
-/obj/machinery/door/window,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "aL" = (
 /turf/closed/wall/rust,
 /area/awaymission/vr/den)
@@ -155,15 +70,6 @@
 "aQ" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/deathmatch/bos/blue_1)
-"aT" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	faction = list("wastebot")
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "aU" = (
 /obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/carpet/green,
@@ -184,13 +90,6 @@
 /obj/structure/rack,
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"bf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/mask/gas/enclave,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "bi" = (
 /turf/closed/wall/f13/supermart,
 /area/awaymission/vr/followers)
@@ -198,12 +97,6 @@
 /obj/effect/vr_clean_master,
 /turf/closed/indestructible/f13,
 /area/awaymission/vr/public)
-"br" = (
-/mob/living/simple_animal/hostile/handy/protectron,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "bs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light,
@@ -232,12 +125,6 @@
 	dir = 8
 	},
 /area/awaymission/vr/public/deathmatch)
-"bG" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "bI" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/stripes/red/line{
@@ -259,13 +146,6 @@
 	},
 /turf/open/indestructible/binary,
 /area/awaymission/vr/bos)
-"bT" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "bV" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/fluff/railing{
@@ -354,10 +234,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/bos/programs/armory)
-"cu" = (
-/obj/structure/reagent_dispensers/barrel,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "cw" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/supermutant/meleemutant,
@@ -381,15 +257,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"cB" = (
-/obj/structure/junk/small/bed2,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "cD" = (
 /obj/structure/window/fulltile/ruins,
 /turf/open/indestructible/binary,
@@ -400,14 +267,6 @@
 "cJ" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/den/sim_2)
-"cO" = (
-/obj/machinery/door/keycard{
-	puzzle_id = "library"
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "cQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stock_parts/cell/bluespace,
@@ -464,17 +323,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"dl" = (
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard{
-	icon_state = "small";
-	pixel_x = -6;
-	pixel_y = 3
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "dn" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
@@ -583,13 +431,6 @@
 /obj/item/gun/energy/laser/wattz/magneto,
 /turf/open/floor/holofloor/plating,
 /area/holodeck/deathmatch/rooms/armory)
-"dG" = (
-/obj/structure/simple_door/bunker/glass,
-/turf/open/floor/f13{
-	dir = 4;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "dH" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 8
@@ -600,13 +441,6 @@
 	dir = 8
 	},
 /area/awaymission/vr/bos/deathmatch)
-"dL" = (
-/obj/structure/reagent_dispensers/barrel,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "dR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -651,16 +485,6 @@
 	},
 /turf/open/floor/pod,
 /area/awaymission/vr/bos/casino)
-"ee" = (
-/obj/item/clothing/suit/radiation,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
-"ef" = (
-/obj/machinery/light/small,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "eg" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
@@ -692,9 +516,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/holodeck/den/programs/medical)
-"em" = (
-/turf/closed/wall/f13/ruins,
-/area/awaymission/vr/bos/enclavebunker)
 "ep" = (
 /obj/machinery/sleeper{
 	density = 1
@@ -716,12 +537,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/holodeck/den/programs/medical)
-"ev" = (
-/obj/structure/reagent_dispensers/barrel/old,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ex" = (
 /obj/machinery/door/poddoor{
 	id = "vrlock1";
@@ -729,14 +544,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"eA" = (
-/obj/structure/table,
-/obj/item/reagent_containers/glass/bottle/mutagen,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "eB" = (
 /obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/dirt,
@@ -808,40 +615,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/holodeck/den/programs/medical)
-"fc" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"ff" = (
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "bluemark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"fi" = (
-/obj/structure/grille/broken,
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard{
-	icon_state = "medium";
-	pixel_x = -7;
-	pixel_y = 5
-	},
-/obj/item/shard{
-	pixel_x = 9;
-	pixel_y = 4
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"fj" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "fn" = (
 /obj/structure/chair/stool/retro/black,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -909,22 +682,6 @@
 "fK" = (
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/vr/public/deathmatch)
-"fL" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"fM" = (
-/obj/structure/table,
-/obj/item/stock_parts/cell/ammo/ec{
-	pixel_y = 7
-	},
-/obj/item/stock_parts/cell/ammo/ec,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "fN" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/darkblue/side{
@@ -979,15 +736,6 @@
 	icon_state = "floorrusty"
 	},
 /area/holodeck/followers/programs/garden)
-"fY" = (
-/obj/structure/closet/crate/large,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "fZ" = (
 /obj/item/storage/part_replacer,
 /turf/open/floor/f13{
@@ -1015,17 +763,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"gd" = (
-/obj/effect/vr_clean_master,
-/turf/closed/indestructible/rock,
-/area/awaymission/vr/bos/enclavebunker)
-"gn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "gr" = (
 /obj/effect/holodeck_effect/machinespawner{
 	machinetype = /obj/machinery/autolathe
@@ -1134,22 +871,6 @@
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/holofloor/plating,
 /area/holodeck/bos/programs/armory)
-"gO" = (
-/obj/effect/decal/cleanable/glass,
-/obj/item/shard{
-	icon_state = "medium";
-	pixel_x = -4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"gQ" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "gS" = (
 /turf/open/indestructible/binary,
 /area/awaymission/vr/bos)
@@ -1175,27 +896,12 @@
 /obj/effect/vr_clean_master,
 /turf/closed/indestructible/f13,
 /area/awaymission/vr/bos)
-"hi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/f13chair2{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "hl" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
 /turf/open/floor/circuit/red,
 /area/awaymission/vr/public/deathmatch)
-"hp" = (
-/obj/structure/fluff/oldturret,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "hr" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1209,20 +915,6 @@
 /mob/living/simple_animal/hostile/supermutant/meleemutant,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"hC" = (
-/mob/living/simple_animal/hostile/enclave/soldier,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"hG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/spawner/lootdrop/f13/weapon/unique,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "hH" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -1234,12 +926,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/vr/bos/deathmatch)
-"hP" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "hQ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -1294,13 +980,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"im" = (
-/obj/structure/frame/machine,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "in" = (
 /obj/effect/vr_clean_master,
 /turf/closed/indestructible/f13,
@@ -1308,12 +987,6 @@
 "iq" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/den/programs/armory)
-"it" = (
-/obj/effect/spawner/lootdrop/f13/weapon/unique,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "iu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -1387,13 +1060,6 @@
 	},
 /turf/open/indestructible/binary,
 /area/awaymission/vr/followers)
-"iP" = (
-/obj/structure/fluff/oldturret,
-/turf/open/floor/f13{
-	dir = 8;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "iS" = (
 /obj/structure/window/reinforced/fulltile{
 	max_integrity = 5000;
@@ -1417,25 +1083,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/pod,
 /area/awaymission/vr/bos/casino)
-"jc" = (
-/obj/structure/frame/machine,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"jd" = (
-/turf/open/indestructible/cobble{
-	desc = "An assortment of broken and battered bricks, stones, rebar, and dust.";
-	name = "rubble"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"jf" = (
-/obj/structure/fluff/oldturret,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "jg" = (
 /obj/item/ammo_casing/c9mm,
 /obj/effect/decal/cleanable/dirt,
@@ -1457,24 +1104,11 @@
 	icon_state = "floorrusty"
 	},
 /area/holodeck/followers/programs/garden)
-"jr" = (
-/obj/structure/junk/small/bed,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "js" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
 /area/holodeck/followers/programs/medical)
-"ju" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/turf/open/indestructible/ground/inside/dirt,
-/area/awaymission/vr/bos/enclavebunker)
 "jv" = (
 /obj/structure/table{
 	layer = 2.9
@@ -1482,27 +1116,12 @@
 /obj/item/stack/ore/blackpowder/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/bos/programs/armory)
-"jw" = (
-/obj/structure/reagent_dispensers/barrel/two,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
-"jx" = (
-/obj/structure/reagent_dispensers/barrel/two,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "jy" = (
 /obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/cards/singlecard,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"jB" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "jF" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/stripes/red/line{
@@ -1529,15 +1148,6 @@
 /obj/item/gun/energy/laser/wattz/magneto,
 /turf/open/floor/holofloor/plating,
 /area/holodeck/bos/programs/armory)
-"jM" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "jO" = (
 /obj/item/ammo_casing/c9mm,
 /obj/effect/decal/cleanable/dirt,
@@ -1592,12 +1202,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/holodeck/bos/programs/medical)
-"ku" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "kx" = (
 /obj/machinery/computer/operating/bos,
 /obj/item/disk/surgery,
@@ -1619,20 +1223,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/holodeck/bos/programs/medical)
-"kD" = (
-/obj/item/beacon/vr/den,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"kE" = (
-/obj/structure/closet/crate/large,
-/obj/item/multitool,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "kF" = (
 /obj/structure/table{
 	layer = 2.9
@@ -1796,17 +1386,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"lm" = (
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor5"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "lo" = (
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/f13{
@@ -1900,13 +1479,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/holodeck/bos/programs/medical)
-"lU" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "lV" = (
 /obj/structure/rack,
 /obj/item/integrated_circuit_printer/upgraded,
@@ -1922,16 +1494,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/den/programs/armory)
-"lY" = (
-/obj/structure/junk/small/bed,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"ma" = (
-/turf/closed/indestructible/vaultdoor{
-	desc = "A wall made out of metal, really fucking tough metal. Someone built this waaaay in advance.";
-	name = "bunker wall"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "mb" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -1939,15 +1501,6 @@
 	},
 /turf/open/floor/circuit,
 /area/awaymission/vr/public/deathmatch)
-"mc" = (
-/obj/structure/table,
-/obj/item/reagent_containers/glass/bottle/mutagen,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/book/granter/trait/pa_wear,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "md" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/stripes/red/line{
@@ -1977,14 +1530,6 @@
 /obj/item/gun/ballistic/revolver/thatgun,
 /turf/open/floor/holofloor/plating,
 /area/holodeck/den/programs/armory)
-"me" = (
-/obj/structure/junk/small/bed2,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "mh" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/stripes/red/line{
@@ -2019,12 +1564,6 @@
 /obj/item/beacon/vr/den,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"mm" = (
-/obj/structure/window/reinforced/spawner/east,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "mo" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /obj/effect/decal/cleanable/dirt,
@@ -2059,19 +1598,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"mz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"mB" = (
-/obj/structure/reagent_dispensers/barrel/three{
-	pixel_x = -14
-	},
-/turf/open/indestructible/ground/inside/dirt,
-/area/awaymission/vr/bos/enclavebunker)
 "mC" = (
 /obj/structure/curtain,
 /turf/open/floor/f13{
@@ -2102,13 +1628,6 @@
 	icon_state = "floorrusty"
 	},
 /area/holodeck/followers/programs/garden)
-"mI" = (
-/obj/structure/simple_door/bunker/glass,
-/turf/open/floor/f13{
-	dir = 6;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "mK" = (
 /turf/closed/wall/f13/supermart,
 /area/holodeck/followers/programs/medical)
@@ -2130,13 +1649,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"mX" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ne" = (
 /obj/machinery/teleport/station,
 /turf/open/indestructible/binary,
@@ -2158,13 +1670,6 @@
 /obj/item/gun/energy/laser/aer12,
 /turf/open/floor/holofloor/plating,
 /area/holodeck/bos/programs/armory)
-"nv" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/structure/window/reinforced/spawner/west,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ny" = (
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/stripes/red/line{
@@ -2179,12 +1684,6 @@
 /obj/item/book/granter/trait/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/bos/programs/medical)
-"nH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "nN" = (
 /obj/item/ammo_casing/shotgun/buckshot,
 /turf/open/floor/f13/wood{
@@ -2293,20 +1792,6 @@
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/den/programs/medical)
-"op" = (
-/obj/structure/table,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"ow" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ox" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
@@ -2320,12 +1805,6 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/den/programs/medical)
-"oE" = (
-/obj/structure/frame/machine,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "oH" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
@@ -2333,14 +1812,6 @@
 "oK" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/den/programs/medical)
-"oL" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
-"oM" = (
-/obj/effect/decal/waste,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "oO" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -2362,12 +1833,6 @@
 /obj/item/card/id/selfassign,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/den/programs/medical)
-"oW" = (
-/obj/structure/junk/small/bed2,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "pe" = (
 /obj/structure/table/glass,
 /obj/machinery/reagentgrinder,
@@ -2383,15 +1848,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"po" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/frame,
-/obj/item/stack/cable_coil/cut/random,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "pq" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 4
@@ -2420,13 +1876,6 @@
 	icon_state = "floorrusty"
 	},
 /area/holodeck/followers/programs/garden)
-"pC" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/awaymission/vr/bos/casino)
 "pD" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -2535,39 +1984,10 @@
 	dir = 4
 	},
 /area/awaymission/vr/public/deathmatch)
-"qr" = (
-/obj/machinery/power/tesla_coil/research{
-	desc = "A modified military-grade tesla coil constantly exchanging energy throughout. It looks to be recently used.";
-	name = "tesla charge inducer"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"qA" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "qE" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/bos/programs/medical)
-"qF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/machinery/light/small,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"qH" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/west,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "qJ" = (
 /obj/effect/holodeck_effect/machinespawner{
 	machinetype = /obj/machinery/chem_dispenser
@@ -2593,13 +2013,6 @@
 "qT" = (
 /turf/open/floor/plating,
 /area/awaymission/vr/public/deathmatch/red)
-"qW" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "qX" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -2617,13 +2030,6 @@
 /mob/living/simple_animal/hostile/supermutant/nightkin,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"rb" = (
-/turf/closed/indestructible/rock,
-/area/awaymission/vr/bos/enclavebunker)
-"rc" = (
-/obj/structure/reagent_dispensers/barrel/old,
-/turf/open/indestructible/ground/inside/dirt,
-/area/awaymission/vr/bos/enclavebunker)
 "rf" = (
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/stripes/red/line{
@@ -2706,18 +2112,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"rS" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"rT" = (
-/turf/open/indestructible/ground/inside/dirt,
-/area/awaymission/vr/bos/enclavebunker)
 "rU" = (
 /obj/effect/holodeck_effect/machinespawner{
 	machinetype = /obj/machinery/autolathe
@@ -2810,27 +2204,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"sl" = (
-/obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"sn" = (
-/obj/item/shard{
-	icon_state = "small";
-	pixel_x = -2;
-	pixel_y = -4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"so" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "sp" = (
 /obj/machinery/door/poddoor{
 	id = "vrlock3";
@@ -2866,14 +2239,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"sG" = (
-/obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "sH" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -2941,14 +2306,6 @@
 	},
 /turf/open/floor/circuit,
 /area/awaymission/vr/bos/deathmatch)
-"te" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/obj/effect/spawner/lootdrop/f13/weapon/unique,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "tg" = (
 /obj/structure/bed{
 	pixel_y = 7
@@ -2963,14 +2320,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/den/programs/medical)
-"th" = (
-/obj/machinery/door/keycard{
-	puzzle_id = "library"
-	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "tn" = (
 /obj/structure/chair/stool/retro/black,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -3024,18 +2373,6 @@
 /obj/structure/barricade/security/ctf,
 /turf/open/floor/circuit/green/off,
 /area/awaymission/vr/public/deathmatch)
-"tQ" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"tS" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ub" = (
 /obj/structure/table/wood,
 /obj/structure/barricade/bars,
@@ -3053,12 +2390,6 @@
 "ui" = (
 /turf/open/floor/plating,
 /area/awaymission/vr/bos/deathmatch)
-"ul" = (
-/obj/item/chair,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "um" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/mineral/gold{
@@ -3077,16 +2408,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"ur" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"us" = (
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "uu" = (
 /obj/structure/bed{
 	pixel_y = 7
@@ -3126,10 +2447,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/public/deathmatch/red)
-"uN" = (
-/obj/item/crowbar,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "uP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
@@ -3293,11 +2610,6 @@
 /obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/followers/programs/medical)
-"vX" = (
-/obj/structure/junk/small/bed,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "wa" = (
 /obj/structure/table/wood/poker,
 /obj/item/stack/sheet/mineral/wood/twenty,
@@ -3358,12 +2670,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/awaymission/vr/bos/casino)
-"wy" = (
-/obj/item/stack/cable_coil/cut/random,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "wz" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -3428,13 +2734,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"wS" = (
-/obj/structure/fluff/oldturret,
-/turf/open/floor/f13{
-	dir = 6;
-	icon_state = "bluemark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "wU" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -3480,30 +2779,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/awaymission/vr/bos)
-"xk" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "xm" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/bos/programs/offline)
-"xo" = (
-/obj/structure/closet/crate/large,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/unique,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"xq" = (
-/obj/effect/decal/cleanable/blood/old{
-	pixel_x = 12
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "xr" = (
 /obj/structure/chair/stool/bar{
 	desc = "The place you sit when all hope is lost.";
@@ -3512,35 +2790,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"xt" = (
-/obj/effect/decal/cleanable/blood/gibs{
-	icon_state = "gibtorso"
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"xB" = (
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "xC" = (
 /turf/open/floor/plasteel/blue,
 /area/awaymission/vr/public/deathmatch/blue)
 "xD" = (
 /turf/closed/indestructible/f13,
 /area/awaymission/vr/bos)
-"xE" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/fakelattice,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "xH" = (
 /obj/effect/decal/cleanable/blood/old{
 	pixel_x = 12
@@ -3618,15 +2873,6 @@
 	},
 /turf/open/floor/wood_worn,
 /area/awaymission/vr/den)
-"yr" = (
-/obj/structure/closet/crate,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ys" = (
 /obj/machinery/computer/holodeck/virtual{
 	dir = 8;
@@ -3665,13 +2911,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"yD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "yF" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/den/programs/bodies)
@@ -3694,19 +2933,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/deathmatch/rooms/armory)
-"ze" = (
-/obj/effect/decal/waste{
-	icon_state = "goo8"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
-"zh" = (
-/obj/structure/table,
-/obj/item/clothing/under/f13/enclave_officer,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "zj" = (
 /obj/structure/rack,
 /obj/item/clothing/under/syndicate/combat,
@@ -3720,9 +2946,6 @@
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"zt" = (
-/turf/closed/mineral/random/low_chance,
-/area/awaymission/vr/bos/enclavebunker)
 "zu" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/carpet/green,
@@ -3737,15 +2960,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"zy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor2"
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "zE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -3774,11 +2988,6 @@
 	},
 /turf/open/floor/wood_worn,
 /area/awaymission/vr/followers)
-"zL" = (
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "zT" = (
 /obj/machinery/computer/holodeck/virtual{
 	dir = 8;
@@ -3837,12 +3046,6 @@
 /obj/item/clothing/suit/armor/power_armor/t60,
 /turf/open/floor/holofloor/plating,
 /area/holodeck/deathmatch/rooms/armory)
-"An" = (
-/obj/machinery/autolathe,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Ar" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/followers/programs/offline)
@@ -3870,17 +3073,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/awaymission/vr/bos)
-"AJ" = (
-/obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/spawner/lootdrop/f13/weapon/unique,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "AM" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -4012,37 +3204,12 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/public/deathmatch/blue)
-"BB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/chem_master/advanced,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"BE" = (
-/obj/machinery/power/tesla_coil/research{
-	desc = "A modified military-grade tesla coil constantly exchanging energy throughout. It looks to be recently used.";
-	name = "tesla charge inducer"
-	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"BF" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "BG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
 /turf/open/floor/circuit,
 /area/awaymission/vr/bos/deathmatch)
-"BJ" = (
-/turf/closed/indestructible/fakeglass,
-/area/awaymission/vr/bos/enclavebunker)
 "BS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor{
@@ -4057,25 +3224,12 @@
 /obj/item/toy/cards/singlecard,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Cb" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Cf" = (
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Ci" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Cn" = (
 /obj/effect/holodeck_effect/mobspawner{
 	mobtype = /mob/living/carbon/human
@@ -4090,13 +3244,6 @@
 "Cu" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/deathmatch/rooms/offline)
-"Cw" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "enclavedbs"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "CC" = (
 /turf/closed/indestructible/f13,
 /area/awaymission/vr/bos/casino)
@@ -4120,13 +3267,6 @@
 "CK" = (
 /turf/open/floor/circuit/green/anim,
 /area/awaymission/vr/bos/deathmatch/red)
-"CM" = (
-/obj/item/clothing/head/helmet/f13/power_armor/x02helmet,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "CR" = (
 /obj/structure/table,
 /turf/open/floor/wood_worn,
@@ -4195,20 +3335,6 @@
 "DA" = (
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/public/deathmatch/red)
-"DC" = (
-/mob/living/simple_animal/hostile/enclave/soldier{
-	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit.";
-	extra_projectiles = 1;
-	faction = list("wastebot");
-	loot = null;
-	name = "Private Downs";
-	speak = list("AUUGHGHHH!");
-	speak_emote = list("shouts")
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "DG" = (
 /obj/effect/landmark/vr_spawn/bos,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4232,22 +3358,6 @@
 	},
 /turf/open/floor/circuit/red,
 /area/awaymission/vr/bos/deathmatch)
-"DV" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"DY" = (
-/obj/structure/fluff/oldturret,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"Ed" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/dirt,
-/area/awaymission/vr/bos/enclavebunker)
 "Ei" = (
 /obj/effect/landmark/vr_spawn/followers,
 /turf/open/indestructible/binary,
@@ -4294,13 +3404,6 @@
 	dir = 1
 	},
 /area/awaymission/vr/public/deathmatch)
-"EI" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/awaymission/vr/den)
 "EJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -4340,16 +3443,6 @@
 /obj/machinery/teleport/hub,
 /turf/open/indestructible/binary,
 /area/awaymission/vr/public)
-"EX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/bed/old,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "EY" = (
 /obj/machinery/smartfridge/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -4385,45 +3478,6 @@
 	dir = 4
 	},
 /area/awaymission/vr/bos/deathmatch)
-"Fx" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"FA" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 30;
-	desc = "A prototype assaultron with (visibly) upgraded leg motors and hydraulics. It's painted in Enclave markings.";
-	dir = 4;
-	health = 1500;
-	maxHealth = 1500;
-	name = "PCU-11";
-	speed = -0.5
-	},
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"FD" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/east,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"FF" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"FI" = (
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"FK" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "FN" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/pod/dark,
@@ -4437,17 +3491,6 @@
 /obj/machinery/teleport/station,
 /turf/open/floor/wood_worn,
 /area/awaymission/vr/followers)
-"FR" = (
-/obj/structure/frame/computer{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "FS" = (
 /obj/structure/curtain{
 	color = "#5c131b";
@@ -4476,15 +3519,6 @@
 /obj/machinery/teleport/station,
 /turf/open/indestructible/binary,
 /area/awaymission/vr/public)
-"Gs" = (
-/obj/structure/chair/f13chair2{
-	dir = 8
-	},
-/obj/effect/spawner/lootdrop/f13/weapon/unique,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Gu" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/deathmatch/public/red_2)
@@ -4531,23 +3565,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"GM" = (
-/obj/structure/junk/small/bed2,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "GO" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 8
 	},
 /area/awaymission/vr/public/deathmatch/red)
-"GQ" = (
-/obj/item/stack/cable_coil/random/five,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "GU" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
@@ -4574,20 +3596,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/awaymission/vr/den)
-"Hc" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
-"He" = (
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor6";
-	pixel_x = -28
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Hg" = (
 /obj/item/ammo_casing/shotgun/rubbershot,
 /turf/open/floor/carpet/green,
@@ -4602,13 +3610,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/awaymission/vr/den)
-"Hk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/chair,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Hq" = (
 /turf/open/floor/wood_worn,
 /area/awaymission/vr/followers)
@@ -4631,31 +3632,12 @@
 	},
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"Hz" = (
-/obj/structure/junk/small/bed2,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "HB" = (
 /obj/structure/chair/office/light{
 	dir = 4
 	},
 /turf/open/floor/wood_worn,
 /area/awaymission/vr/followers)
-"HG" = (
-/obj/machinery/door/window,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"HJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/chair,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "HO" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 4
@@ -4670,21 +3652,6 @@
 /obj/structure/chalkboard,
 /turf/open/floor/wood_worn,
 /area/awaymission/vr/followers)
-"HY" = (
-/obj/structure/closet/crate,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"Ia" = (
-/obj/structure/closet/crate/large,
-/obj/item/storage/box/stockparts/basic,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Ic" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/supermart,
@@ -4706,24 +3673,11 @@
 	},
 /turf/open/floor/circuit,
 /area/awaymission/vr/bos/deathmatch)
-"Ii" = (
-/obj/structure/simple_door/bunker,
-/turf/open/floor/f13{
-	dir = 6;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Ik" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 9
 	},
 /area/awaymission/vr/bos/deathmatch/blue)
-"Il" = (
-/obj/structure/simple_door/bunker,
-/turf/open/floor/f13{
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "In" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 1
@@ -4754,20 +3708,6 @@
 	dir = 4
 	},
 /area/awaymission/vr/public/deathmatch)
-"IA" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"IE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "IF" = (
 /obj/machinery/door/poddoor{
 	id = "vrlock3"
@@ -4775,59 +3715,21 @@
 /obj/item/mine/shrapnel/sting,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"IG" = (
-/obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "IH" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 9
 	},
 /area/awaymission/vr/bos/deathmatch/red)
-"II" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	dir = 4;
-	icon_state = "bluemark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "IK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"IL" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"IR" = (
-/obj/structure/table,
-/obj/item/reagent_containers/glass/bottle/mutagen,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "IT" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 1
 	},
 /area/awaymission/vr/bos/deathmatch/red)
-"IU" = (
-/obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "IY" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
@@ -4862,14 +3764,6 @@
 	dir = 10
 	},
 /area/awaymission/vr/bos/deathmatch/blue)
-"Jj" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Jk" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
@@ -4894,26 +3788,11 @@
 "JC" = (
 /turf/open/floor/plasteel/darkred/side,
 /area/awaymission/vr/bos/deathmatch/red)
-"JD" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/structure/window/reinforced/spawner/east,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "JF" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 6
 	},
 /area/awaymission/vr/bos/deathmatch/red)
-"JI" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "JJ" = (
 /turf/open/floor/plasteel/darkblue/corner{
 	dir = 8
@@ -4933,37 +3812,12 @@
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"JV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs{
-	icon_state = "gibup1"
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "JW" = (
 /turf/open/floor/plasteel/darkblue/corner,
 /area/awaymission/vr/bos/deathmatch)
-"Kb" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Ke" = (
 /turf/open/floor/circuit/green/anim,
 /area/awaymission/vr/bos/deathmatch/blue)
-"Kh" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/effect/decal/fakelattice,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "Kj" = (
 /turf/closed/wall/r_wall,
 /area/holodeck/bos/programs/medical)
@@ -4974,13 +3828,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/awaymission/vr/bos/casino)
-"Kn" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Kp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
@@ -4988,23 +3835,12 @@
 	icon_state = "housewood3-broken"
 	},
 /area/awaymission/vr/bos/casino)
-"Kq" = (
-/obj/structure/reagent_dispensers/barrel/dangerous,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "Kr" = (
 /obj/structure/curtain,
 /turf/open/floor/f13{
 	icon_state = "rampdowntop"
 	},
 /area/holodeck/bos/programs/medical)
-"Kw" = (
-/obj/structure/reagent_dispensers/barrel/explosive,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Kx" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -5015,17 +3851,6 @@
 /obj/machinery/power/emitter/energycannon,
 /turf/open/floor/plating,
 /area/awaymission/vr/bos/deathmatch)
-"KE" = (
-/obj/machinery/light/small,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"KG" = (
-/obj/machinery/light/small,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "KK" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/mineral/gold{
@@ -5061,13 +3886,6 @@
 	dir = 1
 	},
 /area/awaymission/vr/bos/deathmatch)
-"KT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "KY" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -5102,16 +3920,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/bos/deathmatch/blue)
-"Lr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"Ls" = (
-/obj/structure/reagent_dispensers/barrel/three,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "Lt" = (
 /obj/machinery/computer/holodeck/virtual{
 	holodeck_type = /area/holodeck/deathmatch/public/red_1;
@@ -5138,15 +3946,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"LC" = (
-/obj/effect/decal/fakelattice,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "LD" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 8
@@ -5160,44 +3959,17 @@
 	dir = 4
 	},
 /area/awaymission/vr/bos/deathmatch/blue)
-"LK" = (
-/obj/effect/decal/cleanable/blood/gibs{
-	icon_state = "gibtorso"
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "LM" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 1
 	},
 /area/awaymission/vr/bos/deathmatch)
-"LQ" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "LS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /turf/open/floor/plating,
 /area/awaymission/vr/bos/deathmatch)
-"LV" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"LX" = (
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Ma" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/debris/v1,
@@ -5226,12 +3998,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Mi" = (
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Mj" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -5289,13 +4055,6 @@
 	dir = 1
 	},
 /area/awaymission/vr/bos/deathmatch)
-"ME" = (
-/obj/machinery/door/keycard{
-	puzzle_id = "library"
-	},
-/obj/structure/simple_door/metal/ventilation,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "MG" = (
 /turf/closed/indestructible/riveted,
 /area/awaymission/vr/public/deathmatch/red)
@@ -5358,15 +4117,6 @@
 "Nf" = (
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/public/deathmatch)
-"Nj" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Nl" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -5416,10 +4166,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"NI" = (
-/obj/item/clothing/head/radiation,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "NK" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/bos/programs/armory)
@@ -5433,12 +4179,6 @@
 /obj/item/clothing/glasses/night/syndicate,
 /turf/open/floor/pod/dark,
 /area/awaymission/vr/bos/casino)
-"NP" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "NS" = (
 /obj/structure/table/wood/fancy/green,
 /obj/item/candle/infinite{
@@ -5536,37 +4276,12 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/vr/public/deathmatch)
-"OS" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"OW" = (
-/obj/structure/closet/crate/medical,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "OY" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /turf/open/floor/circuit,
 /area/awaymission/vr/public/deathmatch)
-"Pb" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/turf/open/floor/pod/dark,
-/area/awaymission/vr/bos/casino)
-"Pc" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Pd" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/fluff/railing{
@@ -5580,15 +4295,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/bos/deathmatch)
-"Pm" = (
-/obj/machinery/computer/security{
-	dir = 4;
-	network = "vault"
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Pn" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -5604,15 +4310,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Ps" = (
-/obj/structure/closet/crate,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Pv" = (
 /obj/effect/decal/cleanable/robot_debris/old{
 	icon_state = "gib5"
@@ -5644,17 +4341,6 @@
 /obj/item/ammo_casing/c9mm,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"PH" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "PI" = (
 /turf/open/floor/plasteel/darkred/side{
 	dir = 1
@@ -5687,18 +4373,6 @@
 /obj/item/beacon/vr/bos,
 /turf/open/floor/circuit/green/anim,
 /area/awaymission/vr/bos/deathmatch/blue)
-"Qb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"Qh" = (
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Qi" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/bluespace,
@@ -5766,12 +4440,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"QU" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "QX" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/stripes/red/line{
@@ -5789,20 +4457,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Rc" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"Re" = (
-/obj/structure/closet,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Rf" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -5841,13 +4495,6 @@
 	dir = 6
 	},
 /area/awaymission/vr/bos/deathmatch)
-"Rr" = (
-/obj/structure/simple_door/bunker,
-/turf/open/floor/f13{
-	dir = 4;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Rt" = (
 /obj/structure/barricade/security/ctf,
 /turf/open/floor/circuit,
@@ -5873,15 +4520,6 @@
 	dir = 9
 	},
 /area/awaymission/vr/bos/deathmatch)
-"RD" = (
-/obj/effect/decal/cleanable/blood/old{
-	pixel_x = 12
-	},
-/obj/effect/spawner/lootdrop/f13/weapon/unique,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "RI" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 4
@@ -5891,18 +4529,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/circuit/green/off,
 /area/awaymission/vr/bos/deathmatch)
-"RN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/armor/power_armor/advanced/x02,
-/turf/open/floor/f13{
-	dir = 8;
-	icon_state = "bluemark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"RU" = (
-/obj/structure/simple_door/metal/ventilation,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
 "Sg" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/darkred/side{
@@ -5914,10 +4540,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"Sj" = (
-/obj/item/storage/trash_stack,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "Sl" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/darkred/side,
@@ -5934,16 +4556,6 @@
 	dir = 6
 	},
 /area/awaymission/vr/bos/deathmatch)
-"Sq" = (
-/obj/structure/junk/small/bed,
-/obj/effect/decal/fakelattice,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "St" = (
 /turf/closed/indestructible/wood{
 	desc = "A wall with wooden plating. Stiff, and knocking on it indictates that the wood is just a covering for some heavily-reinforced machinery."
@@ -5955,42 +4567,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"SB" = (
-/obj/structure/reagent_dispensers/barrel,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
-"SC" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/west,
-/obj/item/shard{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"SH" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"SJ" = (
-/turf/closed/mineral/random/high_chance,
-/area/awaymission/vr/bos/enclavebunker)
-"SK" = (
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"SN" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "SS" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/circuit/red,
@@ -6005,25 +4581,11 @@
 /obj/structure/chair/stool/retro/black,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/bos/programs/medical)
-"SY" = (
-/obj/structure/reagent_dispensers/barrel/dangerous,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "Tb" = (
 /turf/open/floor/plasteel/darkred/corner{
 	dir = 8
 	},
 /area/awaymission/vr/bos/deathmatch)
-"Te" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Tf" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -6032,12 +4594,6 @@
 	dir = 1
 	},
 /area/awaymission/vr/bos/deathmatch)
-"Th" = (
-/obj/structure/junk/small/bed2,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Tj" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -6052,16 +4608,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Tm" = (
-/obj/structure/table,
-/obj/item/gun/energy/laser/plasma/glock,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "To" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/awaymission/vr/bos)
@@ -6079,21 +4625,6 @@
 /obj/item/toy/cards/deck,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Tv" = (
-/obj/structure/closet/crate/large,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/tier3,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"Tx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "TA" = (
 /obj/item/ammo_casing/c9mm,
 /obj/effect/decal/cleanable/glass/plasma,
@@ -6149,12 +4680,6 @@
 	luminosity = 2
 	},
 /area/awaymission/vr/bos/deathmatch)
-"TU" = (
-/obj/structure/simple_door/bunker/glass,
-/turf/open/floor/f13{
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "TW" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/darkred/side{
@@ -6186,33 +4711,11 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/bos/deathmatch/red)
-"Ul" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Uq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light,
 /turf/open/floor/pod,
 /area/awaymission/vr/bos/casino)
-"Ur" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"Uu" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Uv" = (
 /obj/machinery/computer/holodeck/virtual{
 	holodeck_type = /area/holodeck/deathmatch/public/blue_1;
@@ -6238,14 +4741,6 @@
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"UG" = (
-/obj/structure/simple_door/bunker/glass,
-/obj/effect/decal/cleanable/oil/slippery,
-/turf/open/floor/f13{
-	dir = 6;
-	icon_state = "redmark"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "UI" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/darkred/side{
@@ -6256,25 +4751,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/bos/deathmatch)
-"US" = (
-/obj/structure/frame/machine,
-/obj/item/stack/cable_coil/cut/random,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
-/area/awaymission/vr/bos/enclavebunker)
-"UX" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/armor/tier3,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"Vc" = (
-/obj/item/chair,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "Vd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -6306,14 +4782,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Vo" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Vp" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/holodeck/bos/programs/medical)
@@ -6321,23 +4789,10 @@
 /obj/effect/vr_clean_master,
 /turf/closed/indestructible/riveted,
 /area/awaymission/vr/public/deathmatch/red)
-"Vr" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "Vv" = (
 /obj/structure/debris/v3,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"Vx" = (
-/obj/machinery/workbench,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Vy" = (
 /obj/structure/simple_door/bunker{
 	name = "Training Ground";
@@ -6371,15 +4826,6 @@
 	icon_state = "housewood2"
 	},
 /area/awaymission/vr/bos/casino)
-"VE" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/megafauna/captainarlem{
-	faction = list("mining","boss","enclave")
-	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "VG" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -6388,14 +4834,6 @@
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant,
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
-"VH" = (
-/obj/structure/reagent_dispensers/barrel/old,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
-"VJ" = (
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "VL" = (
 /turf/open/floor/plasteel/darkred,
 /area/awaymission/vr/public/deathmatch)
@@ -6403,17 +4841,6 @@
 /obj/effect/landmark/vr_spawn/bos,
 /turf/open/indestructible/binary,
 /area/awaymission/vr/bos)
-"VS" = (
-/obj/structure/junk/small/bed2,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"VW" = (
-/obj/structure/reagent_dispensers/barrel/four,
-/turf/open/indestructible/ground/inside/mountain,
-/area/awaymission/vr/bos/enclavebunker)
 "VX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
@@ -6424,9 +4851,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/bos/deathmatch)
-"Wb" = (
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "Wc" = (
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant{
 	color = null;
@@ -6469,15 +4893,6 @@
 	dir = 1
 	},
 /area/awaymission/vr/bos/deathmatch)
-"Wn" = (
-/obj/effect/decal/fakelattice,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Wo" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -6518,10 +4933,6 @@
 /obj/effect/vr_clean_master,
 /turf/closed/indestructible/riveted,
 /area/awaymission/vr/bos/deathmatch/blue)
-"WD" = (
-/obj/structure/reagent_dispensers/barrel/two,
-/turf/open/indestructible/ground/inside/subway,
-/area/awaymission/vr/bos/enclavebunker)
 "WF" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/carpet/green,
@@ -6540,30 +4951,6 @@
 "WP" = (
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/vr/bos/deathmatch)
-"WT" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/armor/tier3,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/awaymission/vr/bos/casino)
-"WU" = (
-/obj/structure/table,
-/obj/item/storage/backpack/enclave{
-	pixel_x = 4;
-	pixel_y = 7
-	},
-/obj/item/storage/backpack/enclave{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "WY" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 8
@@ -6594,14 +4981,6 @@
 /obj/effect/vr_clean_master,
 /turf/closed/indestructible/riveted,
 /area/awaymission/vr/bos/deathmatch/red)
-"Xx" = (
-/obj/machinery/computer/secure_data{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "XA" = (
 /obj/machinery/power/emitter/energycannon,
 /turf/open/floor/plating,
@@ -6614,12 +4993,6 @@
 	dir = 4
 	},
 /area/awaymission/vr/public/deathmatch)
-"XH" = (
-/obj/structure/junk/small/bed,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "XI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
@@ -6640,34 +5013,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/pod,
 /area/awaymission/vr/bos/casino)
-"XN" = (
-/obj/structure/junk/small/bed2,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"XO" = (
-/obj/item/shard{
-	icon_state = "medium";
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
-"XP" = (
-/obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "XR" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul,
@@ -6714,14 +5059,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/vr/public/deathmatch)
-"Yp" = (
-/obj/structure/chair/f13chair2{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Yr" = (
 /turf/open/floor/carpet/green,
 /area/awaymission/vr/bos/casino)
@@ -6829,11 +5166,6 @@
 	dir = 6
 	},
 /area/awaymission/vr/public/deathmatch)
-"Zl" = (
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "Zq" = (
 /turf/open/floor/holofloor/plating,
 /area/holodeck/deathmatch/bos/red_2)
@@ -6843,12 +5175,6 @@
 	dir = 4
 	},
 /area/awaymission/vr/public/deathmatch/red)
-"Zw" = (
-/obj/structure/window/reinforced/spawner/west,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/awaymission/vr/bos/enclavebunker)
 "ZH" = (
 /turf/open/floor/plasteel/darkred/corner{
 	dir = 1
@@ -7124,45 +5450,45 @@ Gc
 Gc
 Gc
 Gc
-gd
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
+Gc
 "}
 (2,1,1) = {"
 xD
@@ -7381,45 +5707,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (3,1,1) = {"
 xD
@@ -7638,45 +5964,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-SJ
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (4,1,1) = {"
 xD
@@ -7895,45 +6221,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-SJ
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (5,1,1) = {"
 xD
@@ -8152,45 +6478,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-SJ
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (6,1,1) = {"
 xD
@@ -8409,45 +6735,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-SJ
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-ma
-ma
-ma
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (7,1,1) = {"
 xD
@@ -8666,45 +6992,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-SJ
-SJ
-zt
-zt
-zt
-rb
-rb
-rb
-ma
-ma
-ma
-DY
-ma
-ma
-ma
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (8,1,1) = {"
 xD
@@ -8923,45 +7249,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-SJ
-SJ
-zt
-zt
-zt
-rb
-rb
-ma
-ma
-Vo
-xB
-xB
-Qh
-Vo
-ma
-ma
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (9,1,1) = {"
 xD
@@ -9180,45 +7506,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-SJ
-SJ
-zt
-zt
-zt
-rb
-rb
-ma
-Qh
-ow
-xB
-xB
-OS
-ku
-ku
-ma
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (10,1,1) = {"
 xD
@@ -9437,45 +7763,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-SJ
-zt
-zt
-zt
-rb
-ma
-ma
-fL
-ku
-nv
-Zw
-qH
-ku
-Qh
-ma
-ma
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (11,1,1) = {"
 xD
@@ -9694,45 +8020,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-SJ
-zt
-zt
-rb
-rb
-ma
-hp
-jB
-ow
-sl
-CM
-HG
-ku
-xB
-DY
-ma
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (12,1,1) = {"
 xD
@@ -9951,45 +8277,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-SJ
-zt
-zt
-rb
-rb
-ma
-ma
-Cb
-SK
-JD
-mm
-FD
-ow
-Qh
-ma
-ma
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (13,1,1) = {"
 xD
@@ -10208,45 +8534,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-ma
-Wb
-Wb
-xk
-Cb
-ow
-ow
-xB
-ma
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (14,1,1) = {"
 xD
@@ -10465,45 +8791,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-ma
-ma
-xE
-Wb
-FI
-IL
-Kh
-ma
-ma
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (15,1,1) = {"
 xD
@@ -10722,45 +9048,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-SJ
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-ma
-ma
-BJ
-cO
-BJ
-ma
-ma
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (16,1,1) = {"
 xD
@@ -10979,45 +9305,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-ma
-Qh
-xB
-UX
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (17,1,1) = {"
 xD
@@ -11236,45 +9562,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-ma
-xB
-xB
-ad
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (18,1,1) = {"
 xD
@@ -11493,45 +9819,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-tS
-ow
-Qh
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (19,1,1) = {"
 xD
@@ -11750,45 +10076,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-rb
-ma
-ma
-ma
-ma
-ma
-ma
-gQ
-ku
-Qh
-ma
-ma
-ma
-ma
-ma
-ma
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (20,1,1) = {"
 xD
@@ -12007,45 +10333,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-SJ
-zt
-rb
-rb
-ma
-Th
-oW
-Sq
-lY
-ma
-Pc
-Qh
-qF
-ma
-VS
-me
-Hz
-XH
-ma
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (21,1,1) = {"
 xD
@@ -12264,45 +10590,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-SJ
-zt
-rb
-rb
-ma
-Kn
-gQ
-Ps
-Wb
-ma
-xB
-lU
-xB
-ma
-SK
-FF
-ow
-lU
-ma
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (22,1,1) = {"
 xD
@@ -12521,45 +10847,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-SJ
-zt
-rb
-rb
-ma
-xB
-ow
-it
-Lr
-Ii
-xB
-xB
-Qh
-dG
-br
-Qh
-ku
-bf
-ma
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (23,1,1) = {"
 xD
@@ -12778,45 +11104,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-rb
-rb
-ma
-IE
-bT
-Qh
-HY
-ma
-tQ
-xB
-Yp
-ma
-jM
-br
-xk
-yr
-ma
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (24,1,1) = {"
 xD
@@ -13035,45 +11361,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-rb
-rb
-ma
-XN
-vX
-cB
-Th
-ma
-ow
-zy
-Yp
-ma
-Th
-EX
-GM
-jr
-ma
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (25,1,1) = {"
 xD
@@ -13292,45 +11618,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-rb
-rb
-rb
-ma
-ma
-ma
-ma
-ma
-ma
-Uu
-Qh
-Nj
-ma
-ma
-ma
-ma
-ma
-ma
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (26,1,1) = {"
 xD
@@ -13549,45 +11875,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-rb
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-Il
-ma
-ma
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (27,1,1) = {"
 xD
@@ -13806,45 +12132,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-rb
-rb
-ma
-Xx
-Pm
-FR
-ma
-ma
-ma
-aT
-Vo
-Qh
-LQ
-im
-ma
-ma
-ma
-ma
-ma
-ma
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (28,1,1) = {"
 xD
@@ -14063,45 +12389,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-rb
-rb
-ma
-Qh
-hi
-ow
-xB
-xt
-ma
-xB
-xB
-KT
-fL
-ku
-ma
-iP
-Qh
-LQ
-fL
-em
-Wb
-VJ
-qW
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Sj
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-em
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (29,1,1) = {"
 iC
@@ -14320,45 +12646,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-rb
-rb
-ma
-Qh
-aa
-Qh
-hG
-ow
-UG
-ow
-xB
-LX
-ow
-NP
-mI
-Qh
-xB
-Qh
-tQ
-jd
-Wb
-VJ
-Wb
-Wb
-Wb
-Sj
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Cw
-Wb
-em
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (30,1,1) = {"
 iC
@@ -14577,45 +12903,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-rb
-rb
-ma
-Re
-Qh
-ow
-ow
-Hk
-ma
-yD
-Qh
-gQ
-xB
-JV
-ma
-im
-gQ
-Jj
-Qh
-jd
-uN
-VJ
-Vc
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-Wb
-em
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (31,1,1) = {"
 iC
@@ -14834,45 +13160,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-rb
-rb
-ma
-mz
-zh
-WU
-ma
-ma
-ma
-jf
-Te
-Qh
-Te
-aT
-ma
-ma
-ma
-ma
-ma
-ma
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
-em
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (32,1,1) = {"
 iC
@@ -15091,45 +13417,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-rb
-rb
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-Rr
-ma
-ma
-ma
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (33,1,1) = {"
 iC
@@ -15348,45 +13674,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-rb
-rb
-rb
-ma
-ma
-ma
-ma
-ma
-ma
-Wn
-xB
-Vo
-ma
-ma
-ma
-ma
-ma
-ma
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (34,1,1) = {"
 iC
@@ -15605,45 +13931,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-rb
-rb
-ma
-BB
-ow
-PH
-Kb
-ma
-Rc
-IL
-Qh
-ma
-sG
-AJ
-dL
-ev
-ma
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (35,1,1) = {"
 iC
@@ -15862,45 +14188,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-rb
-rb
-ma
-QU
-Gs
-lU
-Qh
-ma
-Wb
-Cb
-LK
-ma
-OW
-it
-Tx
-Kw
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (36,1,1) = {"
 iC
@@ -16119,45 +14445,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-rb
-ma
-xB
-Qh
-ow
-ow
-Ii
-jB
-FI
-xB
-TU
-ow
-Tv
-RD
-te
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (37,1,1) = {"
 iC
@@ -16376,45 +14702,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-rb
-ma
-Qh
-hC
-ku
-GQ
-ma
-Qh
-gQ
-Qh
-ma
-He
-bT
-ku
-xo
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (38,1,1) = {"
 iC
@@ -16633,45 +14959,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-rb
-ma
-Vx
-An
-fY
-Ia
-ma
-lm
-xB
-KE
-ma
-kE
-XP
-IU
-Ul
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-ma
-ma
-ma
-ma
-ma
-ma
-rb
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (39,1,1) = {"
 iC
@@ -16690,7 +15016,7 @@ ya
 ya
 ya
 yk
-EI
+EC
 EA
 Gx
 aL
@@ -16890,45 +15216,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-rb
-ma
-ma
-ma
-ma
-ma
-ma
-Qh
-Qh
-LV
-ma
-ma
-ma
-ME
-ma
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-wS
-fM
-kD
-so
-jc
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (40,1,1) = {"
 iC
@@ -16947,7 +15273,7 @@ ya
 ya
 ya
 yk
-EI
+EC
 EA
 Ha
 aL
@@ -17147,45 +15473,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-DC
-Qh
-jB
-ma
-rb
-Vr
-oL
-rT
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-IR
-Zl
-fj
-Ur
-ay
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (41,1,1) = {"
 iC
@@ -17204,7 +15530,7 @@ ya
 ya
 ya
 yk
-EI
+EC
 EA
 Hh
 aL
@@ -17404,45 +15730,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-ma
-Qh
-Qh
-xB
-ma
-rb
-VW
-qA
-oL
-VH
-ju
-rb
-ma
-ma
-ma
-ma
-ma
-Zl
-HJ
-xk
-bG
-mc
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (42,1,1) = {"
 iC
@@ -17661,45 +15987,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-ma
-Qh
-Qh
-BF
-ma
-rb
-rb
-Wb
-qA
-oL
-oL
-us
-ma
-qr
-Fx
-BE
-BJ
-Zl
-FA
-Qb
-JI
-al
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (43,1,1) = {"
 iC
@@ -17918,45 +16244,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-ma
-ma
-BJ
-ac
-fi
-ma
-ma
-rb
-rb
-rT
-ze
-oL
-Wb
-RU
-DV
-RN
-DV
-th
-Zl
-Qb
-VE
-mX
-SN
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (44,1,1) = {"
 iC
@@ -18175,45 +16501,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-ma
-ma
-Vo
-Qh
-xB
-Qh
-LC
-ma
-ma
-rb
-rb
-rb
-cu
-jw
-ma
-BE
-rS
-qr
-BJ
-SN
-SN
-Zl
-Zl
-op
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (45,1,1) = {"
 iC
@@ -18432,45 +16758,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-ma
-fc
-XO
-Qh
-Mi
-Qh
-FI
-IA
-ma
-rb
-rb
-rb
-rb
-rb
-ma
-ma
-ma
-ma
-ma
-Ci
-Zl
-SN
-ul
-eA
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (46,1,1) = {"
 iC
@@ -18689,45 +17015,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-ma
-ma
-Qh
-Qh
-Mi
-gO
-SC
-SH
-IL
-ma
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-Tm
-ur
-DV
-DV
-KG
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (47,1,1) = {"
 iC
@@ -18946,45 +17272,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-ma
-DY
-sn
-Mi
-Mi
-IG
-aH
-Qh
-FK
-US
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-zL
-Zl
-DV
-mX
-SN
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (48,1,1) = {"
 iC
@@ -19203,45 +17529,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-ma
-ma
-xB
-xB
-dl
-mm
-po
-xq
-IL
-ma
-ma
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-ff
-ff
-II
-II
-ff
-ma
-rb
-rb
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (49,1,1) = {"
 iC
@@ -19460,45 +17786,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-ma
-Qh
-Qh
-Qh
-Qh
-Qh
-xB
-Qh
-RU
-Wb
-NI
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-SN
-SN
-SN
-nH
-ef
-ma
-rb
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (50,1,1) = {"
 iC
@@ -19717,45 +18043,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-ma
-ma
-Jj
-xB
-Qh
-wy
-af
-ma
-ma
-mB
-Wb
-VH
-rb
-rb
-rb
-rb
-rb
-rb
-ma
-ff
-ff
-II
-II
-ff
-ma
-rb
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (51,1,1) = {"
 iC
@@ -19974,45 +18300,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-ma
-ma
-ma
-oE
-ma
-ma
-ma
-us
-oL
-oL
-rT
-Wb
-ju
-rb
-rb
-rb
-rT
-oL
-rT
-Wb
-oM
-rT
-us
-rb
-rb
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (52,1,1) = {"
 iC
@@ -20231,45 +18557,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-ma
-ma
-ma
-rb
-cu
-ee
-gn
-oL
-rT
-Wb
-Wb
-cu
-jx
-SY
-oL
-qA
-ze
-us
-VW
-Wb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (53,1,1) = {"
 iC
@@ -20488,45 +18814,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-cu
-rc
-oL
-Hc
-Ed
-Wb
-oL
-Ed
-oL
-Wb
-WD
-rT
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (54,1,1) = {"
 iC
@@ -20745,45 +19071,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-Kq
-Ls
-us
-ak
-Wb
-hP
-SB
-rT
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (55,1,1) = {"
 iC
@@ -21002,45 +19328,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-SJ
-SJ
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (56,1,1) = {"
 iC
@@ -21259,45 +19585,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-SJ
-SJ
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (57,1,1) = {"
 ag
@@ -21516,45 +19842,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-zt
-zt
-zt
-zt
-zt
-SJ
-zt
-zt
-SJ
-SJ
-zt
-zt
-zt
-SJ
-zt
-zt
-zt
-zt
-zt
-zt
-rb
-rb
-rb
-rb
-rb
-rb
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (58,1,1) = {"
 ag
@@ -21773,45 +20099,45 @@ Mx
 Mx
 Mx
 Mx
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
-rb
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Mx
+Gc
 "}
 (59,1,1) = {"
 ag
@@ -29492,7 +27818,7 @@ vw
 pM
 vo
 vw
-Pb
+aZ
 AV
 FN
 NN
@@ -30789,7 +29115,7 @@ St
 dd
 zx
 EE
-pC
+EE
 Si
 fq
 Si
@@ -31286,7 +29612,7 @@ Vd
 uP
 Yr
 uX
-WT
+EE
 St
 kG
 VX
