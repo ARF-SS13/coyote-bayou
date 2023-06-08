@@ -8,9 +8,26 @@
 	var/list/loot			//a list of possible items to spawn e.g. list(/obj/item, /obj/structure, /obj/effect)
 	var/fan_out_items = FALSE //Whether the items should be distributed to offsets 0,1,-1,2,-2,3,-3.. This overrides pixel_x/y on the spawner itself
 	var/delay_spawn = FALSE // allows trash spawners to know what it spawned
+	/// Chance of going up a tier. 0-100
+	var/uptier_chance = 0
+	/// List of items to pick from if the spawner rolled to go up a tier
+	var/list/uptier_list
+	/// Chance of going down a tier. 0-100
+	var/downtier_chance = 0
+	/// List of items to pick from if the spawner rolled to go down a tier
+	var/list/downtier_list
+	/// did we adjust tier?
+	var/tier_adjusted = FALSE
 
-/obj/effect/spawner/lootdrop/Initialize(mapload)
+/obj/effect/spawner/lootdrop/Initialize(mapload, block_tier_swap)
 	. = ..()
+	if(!block_tier_swap)
+		if(LAZYLEN(uptier_list) && prob(uptier_chance))
+			loot = uptier_list
+			tier_adjusted = TRUE
+		else if(LAZYLEN(downtier_list) && prob(downtier_chance))
+			loot = downtier_list
+			tier_adjusted = TRUE
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
 		return // have fun!
@@ -30,7 +47,8 @@
 		if(!lootdoubles)
 			loot.Remove(lootspawn)
 		if(lootspawn)
-			var/atom/movable/spawned_loot = new lootspawn(A)
+			var/block_recursive_tier_swap = (tier_adjusted && ispath(lootspawn, /obj/effect/spawner/lootdrop))
+			var/atom/movable/spawned_loot = new lootspawn(A, block_recursive_tier_swap)
 			if(islist(listhack))
 				listhack |= spawned_loot
 			if(fan_out_items)
