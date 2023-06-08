@@ -97,7 +97,7 @@
 		/obj/effect/spawner/lootdrop/f13/rare_secondary = 5,
 		/obj/effect/spawner/lootdrop/f13/rare_tertiary = 5,
 	)
-	downtier_chance = 10 // 20% chance to downtier to uncommon (and no lower)
+	downtier_chance = 25 // 25% chance to downtier to uncommon (and no lower)
 	downtier_list = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon = 1,
 	)
