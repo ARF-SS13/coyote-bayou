@@ -16,7 +16,6 @@
 	var/w_class_on = WEIGHT_CLASS_BULKY
 	hitsound = "swing_hit"
 	var/hitsound_on = 'sound/weapons/blade1.ogg'
-	armour_penetration = 0.65
 	var/saber_color = "green"
 	light_system = MOVABLE_LIGHT
 	light_range = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
@@ -283,7 +282,6 @@
 	desc = "A supermassive weapon envisioned to cleave the very fabric of space and time itself in twain, the hypereutactic blade dynamically flash-forges a hypereutactic crystaline nanostructure capable of passing through most known forms of matter like a hot knife through butter."
 	force = 7
 	hitsound_on = 'sound/weapons/nebhit.ogg'
-	armour_penetration = 0.9
 	light_color = "#37FFF7"
 	rainbow_colors = list("#FF0000", "#FFFF00", "#00FF00", "#00FFFF", "#0000FF","#FF00FF", "#3399ff", "#ff9900", "#fb008b", "#9800ff", "#00ffa3", "#ccff00")
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "destroyed", "ripped", "devastated", "shredded")
@@ -355,7 +353,6 @@
 	name = "divine lightblade"
 	desc = "A giant blade of bright and holy light, said to cut down the wicked with ease."
 	force = 5
-	armour_penetration = 0
 	block_parry_data = /datum/block_parry_data/chaplain
 	var/chaplain_spawnable = TRUE
 	can_reflect = FALSE

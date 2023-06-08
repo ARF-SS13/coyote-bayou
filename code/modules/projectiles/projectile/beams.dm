@@ -32,13 +32,11 @@
 /obj/item/projectile/beam/laser/mech/light
 	name = "laser beam"
 	damage = 30
-	armour_penetration = 0.1
 
 // More energy drain and higher cooldown
 /obj/item/projectile/beam/laser/mech/heavy
 	name = "heavy laser beam"
 	damage = 40
-	armour_penetration = 0.2
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
@@ -47,7 +45,6 @@
 /obj/item/projectile/beam/laser/mech/pulse
 	name = "charged pulse beam"
 	damage = 49
-	armour_penetration = 0.3
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
@@ -80,10 +77,8 @@
 
 /obj/item/projectile/beam/weak
 	damage = 25
-	armour_penetration = 0.1
 
 /obj/item/projectile/beam/weak/penetrator
-	armour_penetration = 0.35
 
 /obj/item/projectile/beam/practice
 	name = "practice laser"
@@ -114,7 +109,6 @@
 	icon_state = "xray"
 	damage = 15 //makes it more useful against mobs
 	flag = "energy"
-	armour_penetration = 1 //it only does 15 damage.
 	damage_type = "burn"
 	irradiate = 100 //incase friendly fire
 	range = 15
@@ -320,7 +314,6 @@
 	icon_state = "plasma_clot"
 	damage_type = BURN
 	damage = 40
-	armour_penetration = 0.0
 	flag = "laser"
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -345,7 +338,6 @@
 /obj/item/projectile/beam/laser/gatling/hitscan //Gatling Laser
 	name = "laser beam"
 	damage = 15
-	armour_penetration = 0
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
@@ -367,7 +359,6 @@
 	name = "debug 10 damage 0 DT pierce"
 	damage = 10
 	hitscan = TRUE
-	armour_penetration = 0
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
@@ -544,7 +535,6 @@
 	icon_state = "plasma_clot"
 	damage_type = BURN
 	damage = 60 //fucc you normies
-	armour_penetration = 0 //no AP, armor shouldnt have more than 20 resist against plasma unless its specialized
 	flag = "energy" //checks vs. energy protection
 	wound_bonus = 90 //being hit with plasma is horrific
 	eyeblur = 0
