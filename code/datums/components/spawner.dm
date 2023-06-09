@@ -411,7 +411,7 @@
 		cool_mob.health = cool_mob.maxHealth
 		cool_mob.color = color
 		cool_mob.faction = faction
-		cool_mob.toggle_ai(AIStatus)
+		cool_mob.toggle_ai(AI_ON) // Mob AI needs all the help it can get
 		cool_mob.casingtype = casingtype
 		cool_mob.projectiletype = projectiletype
 		cool_mob.projectilesound = projectilesound
