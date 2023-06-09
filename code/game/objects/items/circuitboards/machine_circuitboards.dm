@@ -11,6 +11,7 @@
 	name = "Syndicate Sleeper (Machine Board)"
 	build_path = /obj/machinery/sleeper/syndie
 
+/*
 /obj/item/circuitboard/machine/vr_sleeper
 	name = "VR Sleeper (Machine Board)"
 	build_path = /obj/machinery/vr_sleeper
@@ -19,6 +20,7 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stack/sheet/glass = 2)
+
 
 /obj/item/circuitboard/machine/vr_sleeper/bos
 	name = "Brotherhood VR Sleeper (Machine Board)"
@@ -31,6 +33,7 @@
 /obj/item/circuitboard/machine/vr_sleeper/den
 	name = "Den VR Sleeper (Machine Board)"
 	build_path = /obj/machinery/vr_sleeper/den
+*/
 
 /obj/item/circuitboard/machine/announcement_system
 	name = "Announcement System (Machine Board)"
