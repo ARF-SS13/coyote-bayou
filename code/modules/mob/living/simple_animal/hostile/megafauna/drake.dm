@@ -252,7 +252,7 @@ Difficulty: Medium
 	for(var/mob/living/L in orange(1, src))
 		if(L.stat)
 			visible_message(span_warning("[src] slams down on [L], crushing [L.p_them()]!"))
-			L.gib()
+			L.adjustBruteLoss(30)
 		else
 			L.adjustBruteLoss(75)
 			if(L && !QDELETED(L)) // Some mobs are deleted on death
