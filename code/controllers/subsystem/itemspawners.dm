@@ -44,6 +44,7 @@ SUBSYSTEM_DEF(itemspawners)
 		for(var/obj/effect/spawner/lootdrop/winner in lottery_tickets)
 			winner.adjust_tier()
 			winner.spawn_the_stuff()
+			qdel(winner) // jk you die too lol
 		unlucky.Cut()
 		lottery_tickets.Cut()
 		var/output_line = "\n[cat]: [culled[cat]["died"]] culled, [culled[cat]["lived"]] survived."
