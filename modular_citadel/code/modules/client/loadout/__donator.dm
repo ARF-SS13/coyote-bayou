@@ -169,6 +169,17 @@
 	new /obj/item/pda/medical(src)
 	new /obj/item/gun/energy/laser/pistol(src)
 
+/datum/gear/donator/kits/arandomhyena
+	name = "Old Sergant's Kit"
+	path = /obj/item/storage/box/large/custom_kit/arandomhyena
+	ckeywhitelist = list("ARandomHyena")
+
+/obj/item/storage/box/large/custom_kit/arandomhyena/PopulateContents()
+	new /obj/item/clothing/head/f13/enclave/peacekeeper(src)
+	new /obj/item/clothing/accessory/enclave/sergeant(src)
+	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
+	new /obj/item/clothing/head/f13/enclave/peacekeeper(src)
+
 // B
 
 /datum/gear/donator/kits/baticon
