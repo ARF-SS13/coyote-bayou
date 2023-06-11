@@ -92,53 +92,29 @@
 		qdel(src)
 
 /obj/assume_air(datum/gas_mixture/giver)
-	if(loc)
-		return loc.assume_air(giver)
-	else
-		return null
+	return TRUE
 
 /obj/assume_air_moles(datum/gas_mixture/giver, moles)
-	if(loc)
-		return loc.assume_air_moles(giver, moles)
-	else
-		return null
+	return TRUE
 
 /obj/assume_air_ratio(datum/gas_mixture/giver, ratio)
-	if(loc)
-		return loc.assume_air_ratio(giver, ratio)
-	else
-		return null
+	return TRUE
 
 /obj/transfer_air(datum/gas_mixture/taker, moles)
-	if(loc)
-		return loc.transfer_air(taker, moles)
-	else
-		return null
+	return TRUE
 
 /obj/transfer_air_ratio(datum/gas_mixture/taker, ratio)
-	if(loc)
-		return loc.transfer_air_ratio(taker, ratio)
-	else
-		return null
+	return TRUE
 
 
 /obj/remove_air(amount)
-	if(loc)
-		return loc.remove_air(amount)
-	else
-		return null
+	return TRUE
 
 /obj/remove_air_ratio(ratio)
-	if(loc)
-		return loc.remove_air_ratio(ratio)
-	else
-		return null
+	return TRUE
 
 /obj/return_air()
-	if(loc)
-		return loc.return_air()
-	else
-		return null
+	return TRUE
 
 /obj/proc/handle_internal_lifeform(mob/lifeform_inside_me, breath_request)
 	//Return: (NONSTANDARD)

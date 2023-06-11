@@ -16,8 +16,10 @@ SUBSYSTEM_DEF(atoms)
 
 /datum/controller/subsystem/atoms/Initialize(timeofday)
 	GLOB.fire_overlay.appearance_flags = RESET_COLOR
+	to_chat(world, span_boldannounce("Initializing genetics..."))
 	setupGenetics()
 	initialized = INITIALIZATION_INNEW_MAPLOAD
+	to_chat(world, span_boldannounce("Initializing atoms..."))
 	InitializeAtoms()
 	return ..()
 

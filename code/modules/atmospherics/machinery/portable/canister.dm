@@ -202,28 +202,30 @@
 	filled = 1
 	release_pressure = ONE_ATMOSPHERE*2
 
-/obj/machinery/portable_atmospherics/canister/New(loc, datum/gas_mixture/existing_mixture)
-	..()
+/obj/machinery/portable_atmospherics/canister/Initialize()
+	. = ..()
+	return INITIALIZE_HINT_QDEL
 
-	if(existing_mixture)
-		air_contents.copy_from(existing_mixture)
-	else
-		create_gas()
-	update_icon()
+	// if(existing_mixture)
+	// 	air_contents.copy_from(existing_mixture)
+	// else
+	// 	create_gas()
+	// update_icon()
 
 
 /obj/machinery/portable_atmospherics/canister/proc/create_gas()
-	if(gas_type)
-		// air_contents.add_gas(gas_type)
-		if(starter_temp)
-			air_contents.set_temperature(starter_temp)
-		if(!air_contents.return_volume())
-			CRASH("Auxtools is failing somehow! Gas with pointer [air_contents._extools_pointer_gasmixture] is not valid.")
-		air_contents.set_moles(gas_type,(maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+	return TRUE
+	// if(gas_type)
+	// 	// air_contents.add_gas(gas_type)
+	// 	if(starter_temp)
+	// 		air_contents.set_temperature(starter_temp)
+	// 	if(!air_contents.return_volume())
+	// 		CRASH("Auxtools is failing somehow! Gas with pointer [air_contents._extools_pointer_gasmixture] is not valid.")
+	// 	air_contents.set_moles(gas_type,(maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 
-/obj/machinery/portable_atmospherics/canister/air/create_gas()
-	air_contents.set_moles(GAS_O2, (O2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
-	air_contents.set_moles(GAS_N2, (N2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+// /obj/machinery/portable_atmospherics/canister/air/create_gas()
+// 	air_contents.set_moles(GAS_O2, (O2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+// 	air_contents.set_moles(GAS_N2, (N2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 
 /obj/machinery/portable_atmospherics/canister/update_icon_state()
 	if(stat & BROKEN)
@@ -235,15 +237,7 @@
 		. += "can-open"
 	if(connected_port)
 		. += "can-connector"
-	var/pressure = air_contents.return_pressure()
-	if(pressure >= 40 * ONE_ATMOSPHERE)
-		. += "can-o3"
-	else if(pressure >= 10 * ONE_ATMOSPHERE)
-		. += "can-o2"
-	else if(pressure >= 5 * ONE_ATMOSPHERE)
-		. += "can-o1"
-	else if(pressure >= 10)
-		. += "can-o0"
+	. += "can-o0"
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > temperature_resistance)
@@ -267,9 +261,9 @@
 
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
-	var/pressure = air_contents.return_pressure()
-	if(pressure > 300)
-		to_chat(user, span_alert("The pressure gauge on \the [src] indicates a high pressure inside... maybe you want to reconsider?"))
+	// var/pressure = air_contents.return_pressure()
+	// if(pressure > 300)
+	// 	to_chat(user, span_alert("The pressure gauge on \the [src] indicates a high pressure inside... maybe you want to reconsider?"))
 	to_chat(user, span_notice("You begin cutting \the [src] apart..."))
 	if(I.use_tool(src, user, 3 SECONDS, volume=50))
 		to_chat(user, span_notice("You cut \the [src] apart."))
@@ -288,8 +282,8 @@
 /obj/machinery/portable_atmospherics/canister/proc/canister_break()
 	disconnect()
 	var/turf/T = get_turf(src)
-	T.assume_air(air_contents)
-	air_update_turf()
+	// T.assume_air(air_contents)
+	// air_update_turf()
 
 	obj_break()
 	density = FALSE
@@ -314,15 +308,15 @@
 	..()
 	if(stat & BROKEN)
 		return PROCESS_KILL
-	if(timing && valve_timer < world.time)
-		valve_open = !valve_open
-		timing = FALSE
-	if(valve_open)
-		var/turf/T = get_turf(src)
-		var/datum/gas_mixture/target_air = holding ? holding.air_contents : T.return_air()
+	// if(timing && valve_timer < world.time)
+	// 	valve_open = !valve_open
+	// 	timing = FALSE
+	// if(valve_open)
+	// 	var/turf/T = get_turf(src)
+	// 	var/datum/gas_mixture/target_air = holding ? holding.air_contents : T.return_air()
 
-		if(release_gas_to(air_contents, target_air, release_pressure) && !holding)
-			air_update_turf()
+	// 	if(release_gas_to(air_contents, target_air, release_pressure) && !holding)
+	// 		air_update_turf()
 
 	// var/our_pressure = air_contents.return_pressure()
 	// var/our_temperature = air_contents.return_temperature()
@@ -345,8 +339,8 @@
 /obj/machinery/portable_atmospherics/canister/ui_static_data(mob/user)
 	return list(
 		"defaultReleasePressure" = round(CAN_DEFAULT_RELEASE_PRESSURE),
-		"minReleasePressure" = round(can_min_release_pressure),
-		"maxReleasePressure" = round(can_max_release_pressure),
+		"minReleasePressure" = round(CAN_DEFAULT_RELEASE_PRESSURE),
+		"maxReleasePressure" = round(CAN_DEFAULT_RELEASE_PRESSURE),
 		"pressureLimit" = round(1e14),
 		"holdingTankLeakPressure" = round(TANK_LEAK_PRESSURE),
 		"holdingTankFragPressure" = round(TANK_FRAGMENT_PRESSURE)
@@ -355,8 +349,8 @@
 /obj/machinery/portable_atmospherics/canister/ui_data()
 	. = list(
 		"portConnected" = !!connected_port,
-		"tankPressure" = round(air_contents.return_pressure()),
-		"releasePressure" = round(release_pressure),
+		"tankPressure" = round(ONE_ATMOSPHERE),
+		"releasePressure" = round(CAN_DEFAULT_RELEASE_PRESSURE),
 		"valveOpen" = !!valve_open,
 		"isPrototype" = !!prototype,
 		"hasHoldingTank" = !!holding
@@ -377,7 +371,7 @@
 		. += list(
 			"holdingTank" = list(
 				"name" = holding.name,
-				"tankPressure" = round(holding.air_contents.return_pressure())
+				"tankPressure" = round(ONE_ATMOSPHERE)
 			)
 		)
 
@@ -425,30 +419,29 @@
 				release_pressure = clamp(round(pressure), can_min_release_pressure, can_max_release_pressure)
 				investigate_log("was set to [release_pressure] kPa by [key_name(usr)].", INVESTIGATE_ATMOS)
 		if("valve")
-			var/logmsg
 			valve_open = !valve_open
-			if(valve_open)
-				logmsg = "Valve was <b>opened</b> by [key_name(usr)], starting a transfer into \the [holding || "air"].<br>"
-				if(!holding)
-					var/list/danger = list()
-					for(var/id in air_contents.get_gases())
-						var/gas = air_contents.get_moles(id)
-						if(!(GLOB.gas_data.flags[id] & GAS_FLAG_DANGEROUS))
-							continue
-						if(gas > (GLOB.gas_data.visibility[id] || MOLES_GAS_VISIBLE)) //if moles_visible is undefined, default to default visibility
-							danger[GLOB.gas_data.names[id]] = gas //ex. "plasma" = 20
+			// if(valve_open)
+			// 	logmsg = "Valve was <b>opened</b> by [key_name(usr)], starting a transfer into \the [holding || "air"].<br>"
+				// if(!holding)
+				// 	var/list/danger = list()
+				// 	for(var/id in ONE_ATMOSPHERE)
+				// 		var/gas = 100
+				// 		if(!(GLOB.gas_data.flags[id] & GAS_FLAG_DANGEROUS))
+				// 			continue
+				// 		if(gas > (MOLES_GAS_VISIBLE)) //if moles_visible is undefined, default to default visibility
+				// 			danger["plasma"] = gas //ex. "plasma" = 20
 
-					if(danger.len)
-						message_admins("[ADMIN_LOOKUPFLW(usr)] opened a canister that contains the following at [ADMIN_VERBOSEJMP(src)]:")
-						log_admin("[key_name(usr)] opened a canister that contains the following at [AREACOORD(src)]:")
-						for(var/name in danger)
-							var/msg = "[name]: [danger[name]] moles."
-							log_admin(msg)
-							message_admins(msg)
-			else
-				logmsg = "Valve was <b>closed</b> by [key_name(usr)], stopping the transfer into \the [holding || "air"].<br>"
-			investigate_log(logmsg, INVESTIGATE_ATMOS)
-			release_log += logmsg
+				// 	if(danger.len)
+				// 		message_admins("[ADMIN_LOOKUPFLW(usr)] opened a canister that contains the following at [ADMIN_VERBOSEJMP(src)]:")
+				// 		log_admin("[key_name(usr)] opened a canister that contains the following at [AREACOORD(src)]:")
+				// 		for(var/name in danger)
+				// 			var/msg = "[name]: [danger[name]] moles."
+				// 			log_admin(msg)
+				// 			message_admins(msg)
+			// else
+			// 	logmsg = "Valve was <b>closed</b> by [key_name(usr)], stopping the transfer into \the [holding || "air"].<br>"
+			// investigate_log(logmsg, INVESTIGATE_ATMOS)
+			// release_log += logmsg
 			. = TRUE
 		if("timer")
 			var/change = params["change"]
