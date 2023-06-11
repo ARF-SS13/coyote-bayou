@@ -1,3 +1,8 @@
+/// Format: list("/obj/item/gun/thegun" = list("/obj/item/projectile/bullet", "/obj/item/projectile/bullet2", ...))
+GLOBAL_LIST_EMPTY(gun2projectile)
+/// Format: list("/obj/item/projectile/bullet/9mm" = list(fuckhuge statblock)
+GLOBAL_LIST_EMPTY(casing2stats)
+
 /*
 IN THIS DOCUMENT: Universal Gun system rules/keywords. Universal gun template and procs/vars.
 
@@ -137,8 +142,10 @@ ATTACHMENTS
 
 	/// Gun's inherent inaccuracy, basically the minimum spread
 	var/added_spread = GUN_SPREAD_NONE
-	var/datum/recoil/recoil_dat // Reference to the recoil datum in datum/recoil.dm
-	var/list/init_recoil = list(0, 0, 0) // For updating weapon mods
+	/// The tag pointing to the appropriate recoil datum in SSrecoil. Automatically generated~
+	var/recoil_tag
+	/// List of args to be fed into SSrecoil to generate the appropriate recoil tag
+	var/list/init_recoil = list(1,1) // For updating weapon mods
 	var/braced = FALSE
 	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
 
@@ -170,16 +177,15 @@ ATTACHMENTS
 	var/prefered_power
 	/// Does the gun use the bullet's sounds, instead of its own?
 	var/use_casing_sounds
-	/// Cooldown between times the gun will tell you you're holding it wrong, 1 second cus its not super duper important
-	COOLDOWN_DECLARE(hold_it_right_message_antispam)
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
 /obj/item/gun/Initialize()
-	if(!recoil_dat && islist(init_recoil))
-		recoil_dat = getRecoil(arglist(init_recoil))
-	else if(!islist(init_recoil))
-		recoil_dat = getRecoil()
+	recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
+	if(!recoil_tag)
+		stack_trace("[src] has no recoil tag!")
+	else if(!findtext(recoil_tag, "%"))
+		stack_trace("[src] has an invalid recoil tag! It is: '[recoil_tag]'")
 	. = ..()
 	if(no_pin_required)
 		pin = null
@@ -294,10 +300,7 @@ ATTACHMENTS
 			. += "<span class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
-	if(recoil_dat.getRating(RECOIL_TWOHAND) > 0.4)
-		. += span_warning("This gun needs to be held steady to be used effectively.")
-	else if(recoil_dat.getRating(RECOIL_ONEHAND) > 0.6)
-		. += span_warning("This gun needs to be wielded in both hands to be used most effectively.")
+	. |= SSrecoil.get_recoil_examine(recoil_tag)
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
@@ -342,7 +345,7 @@ ATTACHMENTS
 			user.visible_message(span_danger("[user] fires [src] point blank at [pbtarget]!"), null, null, COMBAT_MESSAGE_RANGE)
 		else
 			user.visible_message(span_danger("[user] fires [src]!"), null, null, COMBAT_MESSAGE_RANGE)
-	kickback(user, P)
+	SSrecoil.kickback(user, src, recoil_tag, P?.recoil)
 
 //Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
 /obj/item/gun/pickup(mob/living/user)
@@ -571,11 +574,12 @@ ATTACHMENTS
 	return FALSE
 
 /obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
-	var/sprd = 0
+	/// recoil is read before a burst, so all subsequent shots in a burst will have the same recoil
+	var/sprd = SSrecoil.get_offset(user) /// its still *added* with each shot, so the next burst will be higher
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
 		if(chambered)
-			sprd = user.calculate_offset()
+			LAZYOR(GLOB.gun2projectile["[type]"], "[chambered.type]")
 			before_firing(target,user)
 			var/BB = chambered.BB
 			var/casing_sound = chambered.sound_properties
@@ -972,48 +976,6 @@ ATTACHMENTS
 	. += round(((rand(-100,100) * 0.01) * extra_spread), 0.1)
 */
 
-/obj/item/gun/proc/kickback(mob/living/user, obj/item/projectile/P)
-	var/base_recoil = recoil_dat.getRating(RECOIL_BASE)
-	var/brace_recoil = 0
-	var/unwielded_recoil = 0
-
-	/*if(!braced)
-		brace_recoil = recoil_dat.getRating(RECOIL_TWOHAND)
-	else if(braceable > 1)
-		base_recoil /= 4 // With a bipod, you can negate most of your recoil
-	*/
-	if(!wielded)
-		unwielded_recoil = recoil_dat.getRating(RECOIL_ONEHAND)
-
-	if(COOLDOWN_FINISHED(src, hold_it_right_message_antispam))
-		COOLDOWN_START(src, hold_it_right_message_antispam, GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME)
-		if(unwielded_recoil)
-			switch(recoil_dat.getRating(RECOIL_ONEHAND_LEVEL))
-				if(0.6 to 0.8)
-					if(prob(25)) // Don't need to tell them every single time
-						to_chat(user, span_warning("Your aim wavers slightly."))
-				if(0.8 to 1)
-					if(prob(50))
-						to_chat(user, span_warning("Your aim wavers as you fire \the [src] with just one hand."))
-				if(1 to 1.5)
-					to_chat(user, span_warning("You have trouble keeping \the [src] on target with just one hand."))
-				if(1.5 to INFINITY)
-					to_chat(user, span_warning("You struggle to keep \the [src] on target with just one hand!"))
-
-		else if(brace_recoil)
-			switch(recoil_dat.getRating(RECOIL_BRACE_LEVEL))
-				if(0.6 to 0.8)
-					if(prob(25))
-						to_chat(user, span_warning("Your aim wavers slightly."))
-				if(0.8 to 1)
-					if(prob(50))
-						to_chat(user, span_warning("Your aim wavers as you fire \the [src] while carrying it."))
-				if(1 to 1.2)
-					to_chat(user, span_warning("You have trouble keeping \the [src] on target while carrying it!"))
-				if(1.2 to INFINITY)
-					to_chat(user, span_warning("You struggle to keep \the [src] on target while carrying it!"))
-
-	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
 /obj/item/gun/proc/switch_firemodes()
 	if(LAZYLEN(firemodes) <= 1)
@@ -1138,47 +1100,51 @@ ATTACHMENTS
 /obj/item/gun/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "WeaponInfo", "Weapon Info")
+		ui = new(user, src, "WeaponInfo", "[capitalize(name)]")
 		ui.open()
 
 /obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
-	data["damage_multiplier"] = damage_multiplier
-	//data["pierce_multiplier"] = pierce_multiplier
-	//data["ricochet_multiplier"] = ricochet_multiplier
-	data["penetration_multiplier"] = penetration_multiplier
+	data["gun_damage_multiplier"] = damage_multiplier || 1
+	data["gun_penetration_multiplier"] = penetration_multiplier || 1
+	data["gun_melee"] = force_unwielded || 0
+	data["gun_melee_wielded"] = force_wielded || 0
+	data["gun_armor_penetration"] = armour_penetration || 0
+	var/list/chambered_data = istype(chambered) ? chambered.build_statblock() : list()
+	data["gun_chambered"] = chambered_data
 
-	data["fire_delay"] = fire_delay * 100 //time between shot, in ms
-	data["burst"] = burst_size //How many shots are fired per click
-	data["burst_delay"] = burst_shot_delay * 100 //time between shot in burst mode, in ms
-
-	data["force"] = force
-	data["force_max"] = initial(force)*10
-	data["armor_penetration"] = armour_penetration
-	//data["muzzle_flash"] = muzzle_flash
-
-	var/total_recoil = 0
-	var/list/recoilList = recoil_dat.getFancyList()
-	if(LAZYLEN(recoilList))
-		var/list/recoil_vals = list()
-		for(var/i in recoilList)
-			if(recoilList[i])
-				recoil_vals += list(list(
-					"name" = i,
-					"value" = recoilList[i]
-					))
-				total_recoil += recoilList[i]
-		data["recoil_info"] = recoil_vals
-
+	data |= ui_data_projectile(get_dud_projectile())
+	var/list/recoil_data = SSrecoil.get_tgui_data(recoil_tag)
+	data |= recoil_data
+	var/list/total_recoil = list()
+	if(data["projectile_recoil"])
+		total_recoil["total_recoil_unwielded"] = data["projectile_recoil"] * recoil_data["recoil_unwielded"]
+		total_recoil["total_recoil_wielded"] = data["projectile_recoil"] * recoil_data["recoil_wielded"]
+	else
+		total_recoil["total_recoil_unwielded"] = recoil_data["recoil_unwielded"]
+		total_recoil["total_recoil_wielded"] = recoil_data["recoil_wielded"]
 	data["total_recoil"] = total_recoil
-
-	data += ui_data_projectile(get_dud_projectile())
 
 	if(LAZYLEN(firemodes))
 		var/list/firemodes_info = list()
 		for(var/i = 1 to LAZYLEN(firemodes))
 			data["firemode_count"] += 1
 			var/datum/firemode/F = firemodes[i]
+			if(i == sel_mode)
+				var/action_kind = "Unknown"
+				switch(F.fire_type)
+					if(GUN_FIREMODE_SEMIAUTO)
+						action_kind = "Semi-Automatic"
+					if(GUN_FIREMODE_BURST)
+						var/burstcount = "Multi" && F.settings["burst_size"] // && resolves to the last thing it resolves to
+						action_kind = "[burstcount]-Round Burst"
+				var/sanitized_fire_delay = max(F.settings["fire_delay"], 0.1)
+				var/rounds_per_minute = round((1 / sanitized_fire_delay) * 600, 1)
+				data["firemode_current"] = list(
+					"action_kind" = action_kind,
+					"fire_rate" = "[rounds_per_minute] RPM",
+					"desc" = F.desc,
+				)
 			var/list/firemode_info = list(
 				"index" = i,
 				"current" = (i == sel_mode),
@@ -1188,10 +1154,6 @@ ATTACHMENTS
 				"fire_delay" = F.settings["fire_delay"],
 				//"move_delay" = F.settings["move_delay"],
 				)
-			if(F.settings["projectile_type"])
-				var/proj_path = F.settings["projectile_type"]
-				var/list/proj_data = ui_data_projectile(new proj_path)
-				firemode_info += proj_data
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 
@@ -1215,19 +1177,26 @@ ATTACHMENTS
 		. = TRUE
 	update_icon()
 
-//Returns a projectile that's not for active usage.
+//Returns a statblock that's not for active usage.
 /obj/item/gun/proc/get_dud_projectile()
-	return null
-
-/obj/item/gun/proc/ui_data_projectile(obj/item/projectile/P)
-	if(!P)
+	var/list/proj
+	if(istype(chambered))
+		proj = LAZYACCESS(GLOB.casing2stats, "[chambered.type]")
+	else if(LAZYLEN(GLOB.gun2projectile["[type]"]))
+		var/myprojectile = pick(GLOB.gun2projectile["[type]"])
+		proj = LAZYACCESS(GLOB.casing2stats, "[myprojectile]")
+	if(!proj)
 		return list()
-	var/list/data = list()
-	data["projectile_name"] = P.name
-	data["projectile_damage"] = (P.damage * damage_multiplier)
-	data["projectile_AP"] = P.armour_penetration * penetration_multiplier
-	data["projectile_recoil"] = P.recoil
-	qdel(P)
+	return proj
+
+/obj/item/gun/proc/ui_data_projectile()
+	var/list/data = get_dud_projectile()
+	if(!LAZYLEN(data))
+		return data
+	var/dmg = data["projectile_damage"] || 0
+	data["total_damage"] = dmg * damage_multiplier
+	var/ap = data["projectile_armor_penetration"] || 0
+	data["total_armor_penetration"] = (ap * penetration_multiplier)
 	return data
 
 //Finds the current firemode and calls update on it. This is called from a few places:
@@ -1242,8 +1211,7 @@ ATTACHMENTS
 		new_mode.update(force_state)
 
 /obj/item/gun/proc/generate_guntags()
-	if(recoil_dat.getRating(RECOIL_BASE) < recoil_dat.getRating(RECOIL_TWOHAND))
-		gun_tags |= GUN_GRIP
+	gun_tags |= GUN_GRIP
 	if(can_scope)
 		gun_tags |= GUN_SCOPE
 	if(can_suppress)
@@ -1277,7 +1245,7 @@ ATTACHMENTS
 	armour_penetration = initial(armour_penetration)
 	sharpness = initial(sharpness)
 	braced = initial(braced)
-	recoil_dat = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
+	recoil_tag = SSrecoil.give_recoil_tag(init_recoil[1], init_recoil[2])
 
 	//attack_verb = list()
 	initialize_firemodes()

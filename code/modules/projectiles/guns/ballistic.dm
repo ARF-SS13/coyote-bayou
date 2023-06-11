@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(gun_accepted_magazines)
+
 /obj/item/gun/ballistic
 	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
 	name = "projectile gun"
@@ -42,6 +44,7 @@
 			allowed_mags |= typesof(extra_mag_types)
 	if(LAZYLEN(disallowed_mags))
 		allowed_mags -= disallowed_mags
+	register_magazines()
 	chamber_round()
 	update_icon()
 
@@ -58,6 +61,21 @@
 			icon_state = myskin.icon_state
 	else
 		icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
+
+/obj/item/gun/ballistic/proc/register_magazines()
+	if(LAZYACCESS(GLOB.gun_accepted_magazines, "[type]"))
+		return
+	GLOB.gun_accepted_magazines["[type]"] = ""
+	if(magazine && magazine.fixed_mag)
+		GLOB.gun_accepted_magazines["[type]"] = "This weapon has a fixed magazine that accepts [english_list(magazine.caliber)]."
+		return
+	var/list/names_of_mags = list()
+	for(var/mag in allowed_mags)
+		if(!ispath(mag))
+			continue
+		var/atom/movable/marge = mag
+		names_of_mags += initial(marge.name)
+	GLOB.gun_accepted_magazines["[type]"] = "This weapon accepts: <ul><li>[jointext(names_of_mags, "</li><li>")]</li></ul>"
 
 /// Ejects whatever's chambered, and attempts to load a new one from the magazine
 /// chamber_round wont load another one if something's still in the chamber
@@ -349,7 +367,7 @@
 		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
 		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil_dat.modifyAllRatings(2)
+		recoil_tag = SSrecoil.modify_gun_recoil(recoil_tag, list(2, 2))
 		cock_delay = GUN_COCK_SHOTGUN_FAST
 		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
@@ -366,29 +384,32 @@
 		return 1
 		
 		
-/obj/item/gun/ballistic/get_dud_projectile()
-	var/proj_type
-	if(chambered)
-		if(!chambered.BB)
-			return null
-		proj_type = chambered.BB.type
-	else if(magazine && get_ammo(0,0))
-		var/obj/item/ammo_casing/A = magazine.stored_ammo[1]
-		if(!A)
-			return null
-		if(!A.BB)
-			return null
-		proj_type = A.BB.type
-	if(!proj_type)
-		return null
-	return new proj_type
+// /obj/item/gun/ballistic/get_dud_projectile()
+// 	var/proj_type
+// 	if(chambered)
+// 		if(!chambered.BB)
+// 			return null
+// 		proj_type = chambered.BB.type
+// 	else if(magazine && get_ammo(0,0))
+// 		var/obj/item/ammo_casing/A = magazine.stored_ammo[1]
+// 		if(!A)
+// 			return null
+// 		if(!A.BB)
+// 			return null
+// 		proj_type = A.BB.type
+// 	if(!proj_type)
+// 		return null
+// 	return new proj_type
 
 /obj/item/gun/ballistic/ui_data(mob/user)
 	var/list/data = ..()
-	if(istype(magazine) && length(magazine.caliber))
-		data["caliber"] = english_list(magazine.caliber)
-	data["current_ammo"] = get_ammo()
-	data["max_shells"] = get_max_ammo()
+	data["has_magazine"] = !!magazine
+	data["accepted_magazines"] = LAZYACCESS(GLOB.gun_accepted_magazines, "[type]")
+	if(istype(magazine))
+		data["magazine_name"] = magazine.name
+		data["magazine_calibers"] = english_list(magazine.caliber)
+	data["shots_remaining"] = get_ammo()
+	data["shots_max"] = get_max_ammo()
 
 	return data
 

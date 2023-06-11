@@ -169,7 +169,6 @@
 
 /obj/item/projectile/Initialize()
 	. = ..()
-
 	permutated = list()
 	decayedRange = range
 	if(LAZYLEN(embedding))
@@ -195,6 +194,57 @@
 /obj/item/projectile/proc/on_range() //if we want there to be effects when they reach the end of their range
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
 	qdel(src)
+
+/obj/item/projectile/proc/create_statblock()
+	var/list/my_block = list()
+	my_block["projectile_name"] = name || "Unnamed Projectile"
+	my_block["projectile_damage"] = damage || 0
+	my_block["projectile_damage_type"] = damage_type || "brute"
+	my_block["projectile_flag"] = flag || "bullet"
+	my_block["projectile_stamina"] = stamina || 0
+	my_block["projectile_recoil"] = recoil || 0
+	my_block["projectile_hitscan"] = hitscan || 0
+	my_block["projectile_range"] = range || 1000
+	my_block["projectile_supereffective_damage"] = supereffective_damage || 0
+	my_block["projectile_supereffective_faction"] = english_list(supereffective_faction)
+	my_block["projectile_wound_bonus"] = wound_bonus || 0
+	my_block["projectile_bare_wound_bonus"] = bare_wound_bonus || 0
+	var/speed2use = "[round(pixels_per_second * 0.03125 * 1.8288, 0.1)] m/s" // 32 pixels = 6ish feet, 1.8288 meters = 6 feet
+	if(prob(1))
+		switch(rand(1,10)) // no guarantee any of these are accurate
+			if(1)
+				speed2use = "[round(pixels_per_second * 1.8288, 0.1)] dtm/s" // duotrimeters per second, the unit of measurement for 1/32th of a meter
+			if(2)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 3.6, 0.1)] km/h" // kilometers per hour
+			if(3)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 2.237, 0.1)] mph" // miles per hour
+			if(4)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 1.94384, 0.1)] knots" // knots
+			if(5)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048, 0.1)] ft/s" // feet per second
+			if(6)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 60, 0.1)] ft/m" // feet per minute
+			if(7)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 3600, 0.1)] ft/h" // feet per hour
+			if(8)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048, 0.1)] m/s" // meters per second
+			if(9)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 60, 0.1)] m/m" // meters per minute
+			if(10)
+				speed2use = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 3600, 0.1)] m/h" // meters per hour
+	my_block["projectile_speed"] = speed2use || "40 knots" //convert back to tiles per second
+	var/sharp_word = "None"
+	switch(sharpness)
+		if(SHARP_NONE)
+			sharp_word = "None"
+		if(SHARP_EDGED)
+			sharp_word = "Slash"
+		if(SHARP_POINTY)
+			sharp_word = "Pierce"
+	my_block["projectile_sharpness"] = sharp_word
+	my_block["projectile_spread"] = spread || 0
+	my_block["projectile_armor_penetration"] = armour_penetration || 0 // FUCK YOU FUCK YOU FUCK YOU FUCK 'U'
+	return my_block
 
 //to get the correct limb (if any) for the projectile hit message
 /mob/living/proc/check_limb_hit(hit_zone)

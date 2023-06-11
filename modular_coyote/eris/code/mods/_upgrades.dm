@@ -280,7 +280,7 @@
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.slowdown *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
-		G.recoil_dat = G.recoil_dat.modifyAllRatings(weapon_upgrades[GUN_UPGRADE_RECOIL])
+		G.recoil_tag = SSrecoil.modify_gun_recoil(G.recoil_tag, list(weapon_upgrades[GUN_UPGRADE_RECOIL], weapon_upgrades[GUN_UPGRADE_RECOIL]))
 	//if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 	//	G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
@@ -332,7 +332,7 @@
 	if(weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION])
 		G.armour_penetration += weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION]
 	if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
-		G.recoil_dat = G.recoil_dat.modifyRating(1, 1, weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
+		G.recoil_tag = SSrecoil.modify_gun_recoil(G.recoil_tag, list(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY], 1))
 	if(weapon_upgrades[UPGRADE_COLOR])
 		G.color = weapon_upgrades[UPGRADE_COLOR]
 

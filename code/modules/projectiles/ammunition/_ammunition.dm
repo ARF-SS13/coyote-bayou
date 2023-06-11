@@ -41,6 +41,7 @@
 		spend_casing()
 	if(projectile_type && !spent)
 		BB = new projectile_type(src)
+		register_statblock()
 	pixel_x = rand(-10, 10)
 	pixel_y = rand(-10, 10)
 	setDir(pick(GLOB.alldirs))
@@ -122,6 +123,25 @@
 /obj/item/ammo_casing/proc/newshot() //For energy weapons, syringe gun, shotgun shells and wands (!).
 	if(!BB)
 		BB = new projectile_type(src, src)
+
+/obj/item/ammo_casing/proc/register_statblock()
+	if(LAZYACCESS(GLOB.casing2stats, "[type]"))
+		return
+	if(!istype(BB))
+		return // come back when you're a little... mmm... loaded
+	var/list/my_statblock = build_statblock(BB)
+	LAZYSET(GLOB.casing2stats, "[type]", my_statblock)
+
+/obj/item/ammo_casing/proc/build_statblock(obj/item/projectile/proj)
+	if(!proj && BB)
+		proj = BB
+	var/my_statblock = SANITIZE_LIST(proj.create_statblock())
+	my_statblock["casing_name"] = name || "Ammo Casing"
+	my_statblock["casing_pellets"] = pellets || 1
+	my_statblock["casing_variance"] = variance || 0
+	my_statblock["casing_fire_power"] = fire_power || 0
+	my_statblock["casing_damage_threshold_penetration"] = damage_threshold_penetration
+	return my_statblock
 
 /// Returns our sound data lookup table~
 /obj/item/ammo_casing/proc/get_sound_datum()

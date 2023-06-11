@@ -311,12 +311,12 @@
 		slot_flags = ITEM_SLOT_BACK
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil_dat = getRecoil(RIFLE_RECOIL(2.2)[1],RIFLE_RECOIL(2.2)[2],RIFLE_RECOIL(2.2)[3])
+		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(2.2))
 	else
 		slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil_dat = getRecoil(init_recoil[1],init_recoil[2],init_recoil[3])
+		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
 
 /obj/item/gun/ballistic/shotgun/police/update_icon_state()

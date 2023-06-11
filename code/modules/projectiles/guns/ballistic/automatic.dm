@@ -891,7 +891,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1.2)
+	init_recoil = CARBINE_RECOIL(1.5)
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/AltClick(mob/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -908,11 +908,11 @@
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil_dat = getRecoil(CARBINE_RECOIL(1)[1],CARBINE_RECOIL(1)[2],CARBINE_RECOIL(1)[3])
+		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1))
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil_dat = getRecoil(init_recoil[1],init_recoil[2],init_recoil[3])
+		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/update_icon_state()

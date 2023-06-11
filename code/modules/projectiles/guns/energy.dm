@@ -395,11 +395,14 @@
 /obj/item/gun/energy/ui_data(mob/user)
 	var/list/data = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
+	data["has_magazine"] = !!cell
 	data["charge_cost"] = shot.e_cost * charge_cost_multiplier
+	data["accepted_magazines"] = "This weapon accepts \a [cell_type]."
 	if(cell)
+		data["magazine_calibers"] = "Energy"
 		data["cell_charge"] = cell.percent()
 		data["shots_remaining"] = round(cell.charge / (shot.e_cost * charge_cost_multiplier))
-		data["max_shots"] = round(cell.maxcharge / (shot.e_cost * charge_cost_multiplier))
+		data["shots_max"] = round(cell.maxcharge / (shot.e_cost * charge_cost_multiplier))
 	return data
 
 /obj/item/gun/energy/get_dud_projectile()

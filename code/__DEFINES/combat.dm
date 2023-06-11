@@ -1122,15 +1122,15 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 //#define RECOIL_SPREAD_CALC(x)  (0.0075 * (x ** 4)) // Funky way of exponentiating bullet spread from recoil
 #define RECOIL_SPREAD_CALC(x)  (x) // funky recoil kidna turbofucks things in wierd says, maybe
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
-#define RECOIL_REDUCTION_TIME 1 SECONDS // unused
 
-#define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
-#define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )
-#define SMG_RECOIL(x)          list(1   *x, 0.2*x, 1.2*x )
-#define CARBINE_RECOIL(x)      list(0.85*x, 0.3*x, 1.8*x )
-#define RIFLE_RECOIL(x)        list(0.7 *x, 0.4*x, 2.4*x )
-#define LMG_RECOIL(x)          list(0.55*x, 0.5*x, 3*x   )
-#define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
+/// Projectiles define the recoil amount, guns modify the recoil based on wieldedness
+
+#define HANDGUN_RECOIL(x) list(1   * x, 0.5 * x)
+#define SMG_RECOIL(x)     list(1.5 * x, 1   * x)
+#define CARBINE_RECOIL(x) list(2   * x, 0.9 * x)
+#define RIFLE_RECOIL(x)   list(3   * x, 0.5 * x)
+#define LMG_RECOIL(x)     list(5   * x, 1   * x)
+#define HMG_RECOIL(x)     list(10  * x, 0.9 * x)
 
 //Quick defines for fire modes
 #define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "150 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")
@@ -1372,4 +1372,25 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define FLINTLOCK_PISTOL_PREFIRE_RANDOMNESS 0.5
 #define FLINTLOCK_MINIMUSKET_PREFIRE_RANDOMNESS 0.4
 #define FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS 0.2
+
+/// If you dont move for this long, your next step won't increase recoil
+#define RECOIL_MOVEMENT_GRACE 0.8 SECONDS
+
+#define RECOIL_INDEX_UNWIELDED 1
+#define RECOIL_INDEX_WIELDED 2
+#define IS_RECOIL_TAG(tag) (istext(tag) && findtext(tag, RECOIL_TAG_DIVIDER))
+#define IS_RECOIL_LIST(list) (islist(list) && length(list) == 2)
+
+#define RECOIL_TAG_DIVIDER "%"
+#define RECOIL_TAG_FORMAT "[unwielded]%[wielded]"
+#define RECOIL_ARGS2TAG(unwielded, wielded) jointext(list(unwielded, wielded), RECOIL_TAG_DIVIDER)
+#define RECOIL_LIST2TAG(list) jointext(list, RECOIL_TAG_DIVIDER)
+#define RECOIL_TAG2LIST(tag) splittext(tag, RECOIL_TAG_DIVIDER)
+
+#define RECOIL_TAG_DEFAULT "1[RECOIL_TAG_DIVIDER]1"
+#define RECOIL_LIST_DEFAULT list(1, 1)
+
+#define RECOIL_REDUCTION_BASE_PER_SECOND 5
+#define RECOIL_REDUCTION_TICK2SECOND(tick, mult) (round((0.1 * tick * mult * RECOIL_REDUCTION_BASE_PER_SECOND), 0.5))
+#define RECOIL_REDUCTION_HIGH_SCALE 0.5
 
