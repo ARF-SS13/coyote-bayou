@@ -566,10 +566,6 @@
 /area/f13/wasteland)
 "fq" = (
 /obj/item/twohanded/required/kirbyplants/random,
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "fs" = (
@@ -954,10 +950,6 @@
 /obj/structure/chair/comfy/teal{
 	dir = 4
 	},
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "jG" = (
@@ -1225,6 +1217,9 @@
 "mN" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowtop"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
@@ -2157,10 +2152,6 @@
 "vy" = (
 /obj/structure/chair/comfy/teal{
 	dir = 8
-	},
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
@@ -3343,6 +3334,9 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowbottom"
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "GW" = (
@@ -3388,6 +3382,9 @@
 "Hl" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowvertical"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
@@ -3557,19 +3554,8 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"ID" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
-/turf/open/floor/carpet/blue,
-/area/f13/building/hospital/clinic)
 "IE" = (
 /obj/structure/table,
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "II" = (
@@ -3604,6 +3590,9 @@
 "IW" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowleft"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
@@ -4004,13 +3993,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
-"MN" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital/clinic)
 "MV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
@@ -4308,10 +4290,6 @@
 /area/f13/building/abandoned)
 "Qk" = (
 /obj/structure/closet/secure_closet/personal/patient,
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "Ql" = (
@@ -4725,6 +4703,9 @@
 /area/f13/building)
 "UY" = (
 /obj/structure/window/fulltile/store,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "UZ" = (
@@ -4926,6 +4907,9 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowright"
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "WK" = (
@@ -5023,10 +5007,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "XR" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /obj/machinery/iv_drip,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
@@ -8942,12 +8922,12 @@ Wr
 Xv
 FS
 Qk
-ID
+HN
 XR
 fq
 FS
 Qk
-ID
+HN
 XR
 fq
 FS
@@ -10234,7 +10214,7 @@ VU
 VU
 VU
 VU
-MN
+VU
 IW
 nO
 Wr
@@ -11262,7 +11242,7 @@ VU
 VU
 VU
 VU
-MN
+VU
 WI
 nO
 Xv
