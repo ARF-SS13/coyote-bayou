@@ -125,20 +125,30 @@ we use a hook instead
 	return L
 
 /datum/gas_mixture/proc/heat_capacity() //joules per kelvin
+	return 1
 
 /datum/gas_mixture/proc/partial_heat_capacity(gas_type)
+	return 1
 
 /datum/gas_mixture/proc/total_moles()
+	return 1
 
 /datum/gas_mixture/proc/return_pressure() //kilopascals
+	return ONE_ATMOSPHERE
 
 /datum/gas_mixture/proc/return_temperature() //kelvins
+	return T20C
 
 /datum/gas_mixture/proc/set_min_heat_capacity(n)
+	return 1
 /datum/gas_mixture/proc/set_temperature(new_temp)
+	return 1
 /datum/gas_mixture/proc/set_volume(new_volume)
+	return 1
 /datum/gas_mixture/proc/get_moles(gas_type)
+	return 1
 /datum/gas_mixture/proc/set_moles(gas_type, moles)
+	return 1
 
 // VV WRAPPERS - EXTOOLS HOOKED PROCS DO NOT TAKE ARGUMENTS FROM CALL() FOR SOME REASON.
 /datum/gas_mixture/proc/vv_set_moles(gas_type, moles)

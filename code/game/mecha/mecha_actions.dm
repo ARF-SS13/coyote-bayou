@@ -64,10 +64,6 @@
 /datum/action/innate/mecha/mech_toggle_internals/Activate()
 	if(!owner || !chassis || chassis.occupant != owner)
 		return
-	chassis.use_internal_tank = !chassis.use_internal_tank
-	button_icon_state = "mech_internals_[chassis.use_internal_tank ? "on" : "off"]"
-	chassis.occupant_message("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"].")
-	chassis.mecha_log_message("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"].")
 	UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_cycle_equip

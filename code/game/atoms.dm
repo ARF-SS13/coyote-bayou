@@ -98,13 +98,15 @@
 	/// What does this creature taste like?
 	var/list/tastes = list("something" = 1) // for example list("crisps" = 2, "salt" = 1)
 
-/atom/New(loc, ...)
+/atom/New(loc, ..., adminspawned)
 	//atom creation method that preloads variables at creation
 	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()
 		world.preloader_load(src)
 
 	if(datum_flags & DF_USE_TAG)
 		GenerateTag()
+	if(isnum(adminspawned) && CHECK_BITFIELD(adminspawned, ADMIN_SPAWNED_1))
+		flags_1 |= ADMIN_SPAWNED_1 // hate this hack
 
 	var/do_initialize = SSatoms.initialized
 	if(do_initialize != INITIALIZATION_INSSATOMS)

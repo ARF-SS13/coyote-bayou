@@ -367,7 +367,7 @@ SUBSYSTEM_DEF(cool_books)
 	var/img_page = copytext(line, lsb+1, pipe) // am smart
 	var/img_page_num = text2num(img_page)
 	if(!register_image(img_filename, img_scalemode, img_page_num, token, isurl)) // images in react are wierd
-		stack_trace("Chapter [chapter_title] has a txt chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page_num] [token] [isurl]")
+		log_world("Chapter [chapter_title] has a txt chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page_num] [token] [isurl]")
 
 /// If our chapter is a json, we just yoink out the data easy as
 /// Also handles defining an index as our index, since indexes are both chapters, and jsons.
@@ -424,7 +424,7 @@ SUBSYSTEM_DEF(cool_books)
 				img_scalemode = BOOK_IMG_FLAG_FIT
 			var/isurl = LAZYACCESS(inner_list, BOOK_IMG_URL)
 			if(!register_image(img_filename, img_scalemode, img_page, img_place, isurl)) // images in react are wierd
-				stack_trace("Chapter [src] has a json chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page] [img_place] [isurl]")
+				log_world("Chapter [src] has a json chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page] [img_place] [isurl]")
 				continue
 			. = TRUE
 
@@ -435,7 +435,8 @@ SUBSYSTEM_DEF(cool_books)
 	if(!isurl)
 		img_fullpath = "[COOLBOOK_IMG_SRC_DIR][img_filename]"
 		if(!fexists(img_fullpath))
-			CRASH("Chapter [src] has a chapter with an image that does not exist! [img_filename] [img_fullpath]")
+			log_world("Chapter [src] has a chapter with an image that does not exist! [img_filename] [img_fullpath]")
+			return FALSE
 		SSassets.transport.register_asset(img_filename, img_fullpath)
 	else 
 		img_fullpath = img_filename
