@@ -910,12 +910,12 @@ datum/gear/head/steelpot_bandolier
 	name = "fever blossom"
 	path = /obj/item/reagent_containers/food/snacks/grown/fever_blossom
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-
+/*
 /datum/gear/head/tribal_helmet
 	name = "tribal helmet"
 	path = /obj/item/clothing/head/tribal_helmant
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-
+*/
 /datum/gear/head/adrian
 	name = "adrian helmet"
 	path = /obj/item/clothing/head/adrian
