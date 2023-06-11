@@ -401,7 +401,17 @@
 /obj/item/storage/box/large/custom_kit/Delta_Dav/PopulateContents()
     new /obj/item/clothing/head/f13/ncr/steelpot_mp(src)
     new /obj/item/clothing/under/f13/ncr/ncr_dress(src)
-    new /obj/item/clothing/accessory/armband/black(src)	
+    new /obj/item/clothing/accessory/armband/black(src)
+
+/datum/gear/donator/kits/dumbdumn5
+	name = "Requisitioned IC Printer"
+	path = /obj/item/storage/box/large/custom_kit/dumbdumn5
+	ckeywhitelist = list("dumbdumn5")
+
+/obj/item/storage/box/large/custom_kit/dumbdumn5/PopulateContents()
+	/obj/item/integrated_circuit_printer
+	/obj/item/disk/integrated_circuit/upgrade/advanced
+	/obj/item/disk/integrated_circuit/upgrade/clone
 
 // E
 
