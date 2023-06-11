@@ -1050,8 +1050,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic)
 "kF" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/obj/structure/table,
+/obj/machinery/light,
+/obj/effect/spawner/lootdrop/plush,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "kH" = (
 /turf/open/floor/wood_wide{
@@ -1959,12 +1961,6 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
-"tt" = (
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
-	},
-/area/f13/wasteland)
 "tA" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -3188,10 +3184,8 @@
 	},
 /area/f13/wasteland)
 "ES" = (
-/obj/structure/table,
-/obj/machinery/light,
-/obj/effect/spawner/lootdrop/plush,
-/turf/open/floor/f13/wood,
+/obj/machinery/mineral/wasteland_vendor/medical,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "ET" = (
 /obj/structure/bed/dogbed,
@@ -9207,12 +9201,12 @@ FS
 dA
 HN
 hL
-ES
+kF
 FS
 dA
 HN
 hL
-ES
+kF
 FS
 SP
 qt
@@ -9973,7 +9967,7 @@ Wr
 Wr
 Wr
 Xv
-tt
+FS
 FS
 Dc
 Gi
@@ -10231,7 +10225,7 @@ Wr
 Wr
 Xv
 FS
-kF
+ES
 VU
 VU
 VU
