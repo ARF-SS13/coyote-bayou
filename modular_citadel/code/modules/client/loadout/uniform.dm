@@ -2830,3 +2830,23 @@
 	cost = 1
 	path = /obj/item/clothing/under/dress/coyote/bluedress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/flannel/green
+	name = "Green Flannel"
+	cost = 1
+	path = /obj/item/clothing/under/flannelgreen
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/flannel/red
+	name = "Red Flannel"
+	cost = 1
+	path = /obj/item/clothing/under/flannelred
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/greekdress
+	name = "Greek Dress"
+	cost = 1
+	path = /obj/item/clothing/under/greek_dress
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+

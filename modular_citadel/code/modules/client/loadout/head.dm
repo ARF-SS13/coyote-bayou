@@ -549,6 +549,10 @@ datum/gear/head/steelpot_bandolier
 	name = "khaki slouch hat"
 	path = /obj/item/clothing/head/slouch
 
+/datum/gear/head/slouch/alt
+	name = "khaki slouch hat, alt version"
+	path = /obj/item/clothing/head/slouch/alt
+
 /datum/gear/head/turban
 	name = "Military Turban"
 	path = /obj/item/clothing/head/military_turban

@@ -12,7 +12,7 @@
 	name = "Grey robes"
 	path = /obj/item/clothing/suit/hooded/robes/grey
 	cost = 1
-	
+
 /datum/gear/suit/brownrobes
 	name = "Brown robes"
 	path = /obj/item/clothing/suit/hooded/robes
@@ -1135,6 +1135,12 @@
 	name = "Green and Yellow Robe"
 	path = /obj/item/clothing/suit/aurora/robesuit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/detvest
+	name = "Detective Vest, Colorable"
+	path = /obj/item/clothing/suit/toggle/labcoat/detvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 
 // BEGIN_INTERNALS
 // END_INTERNALS

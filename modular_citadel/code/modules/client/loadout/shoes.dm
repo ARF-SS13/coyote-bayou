@@ -173,6 +173,15 @@
 	name = "long puttees"
 	path = /obj/item/clothing/shoes/putt
 
+/datum/gear/shoes/cowboy/alt
+	name = "Alt Cowboy Boots"
+	path = /obj/item/clothing/shoes/cowboy/alt
+
+/datum/gear/shoes/cowboy/ranger
+	name = "Ranger Cowboy Boots"
+	path = /obj/item/clothing/shoes/cowboy/ranger
+
+
 /// Factions Shoes or well NCR boots.
 
 
