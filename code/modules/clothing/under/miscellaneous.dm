@@ -1557,6 +1557,30 @@
 	item_color = "jester_muli"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/flannelgreen
+	name = "Green Flannel"
+	desc = "A green flannel shirt with blue jeans."
+	icon_state = "fannel_green"
+	item_state = "fannel_green"
+	item_color = "fannel_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flannelred
+	name = "Red Flannel"
+	desc = "A red flannel shirt with blue jeans."
+	icon_state = "fannel_red"
+	item_state = "fannel_red"
+	item_color = "fannel_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/greek_dress
+	name = "Greek Dress"
+	desc = "Make sure this dress doesn't creak."
+	icon_state = "greek_dress"
+	item_state = "greek_dress"
+	item_color = "greek_dress"
+	can_adjust = TRUE
+
 // Bayou Stuff - started by Kelprunner
 
 /obj/item/clothing/under/tactiflannel
