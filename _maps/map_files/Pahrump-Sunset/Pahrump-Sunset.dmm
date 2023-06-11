@@ -24626,10 +24626,6 @@
 /area/f13/wasteland)
 "coF" = (
 /obj/structure/closet/crate/freezer/blood,
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic)
 "coJ" = (
@@ -42229,10 +42225,6 @@
 	},
 /area/f13/building/coyote/nash/cornerdiner)
 "gFz" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /obj/structure/chair/comfy/teal{
 	dir = 4
 	},
@@ -66430,6 +66422,9 @@
 "mAv" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowvertical"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic)
@@ -97462,11 +97457,6 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "ugE" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	layer = 5;
-	pixel_x = 32
-	},
 /obj/machinery/vending/medical/nash,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic)
@@ -99737,15 +99727,20 @@
 	},
 /area/f13/wasteland/city)
 "uMJ" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_x = -32
-	},
 /obj/structure/table/glass,
 /obj/item/clothing/neck/stethoscope,
 /obj/item/storage/box/medicine/stimpaks/stimpaks5,
 /obj/item/storage/box/medicine/stimpaks/stimpaks5,
 /obj/item/clothing/neck/stethoscope,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/blood/radaway{
+	pixel_x = -4;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic)
 "uML" = (
