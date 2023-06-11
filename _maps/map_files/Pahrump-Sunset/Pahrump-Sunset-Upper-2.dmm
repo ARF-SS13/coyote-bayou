@@ -1051,8 +1051,8 @@
 /area/f13/building/hospital/clinic)
 "kF" = (
 /obj/structure/table,
-/obj/item/toy/plush/beeplushie,
 /obj/machinery/light,
+/obj/effect/spawner/lootdrop/plush,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "kH" = (
@@ -3184,10 +3184,8 @@
 	},
 /area/f13/wasteland)
 "ES" = (
-/obj/structure/table,
-/obj/item/toy/plush/lizardplushie,
-/obj/machinery/light,
-/turf/open/floor/f13/wood,
+/obj/machinery/mineral/wasteland_vendor/medical,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "ET" = (
 /obj/structure/bed/dogbed,
@@ -9208,7 +9206,7 @@ FS
 dA
 HN
 hL
-ES
+kF
 FS
 SP
 qt
@@ -9711,8 +9709,8 @@ Wr
 Wr
 Wr
 Wr
-Wr
-Xv
+SR
+Wg
 FS
 FS
 FS
@@ -9968,8 +9966,8 @@ Wr
 Wr
 Wr
 Wr
-SR
-Fg
+Xv
+FS
 FS
 Dc
 Gi
@@ -10227,7 +10225,7 @@ Wr
 Wr
 Xv
 FS
-FS
+ES
 VU
 VU
 VU

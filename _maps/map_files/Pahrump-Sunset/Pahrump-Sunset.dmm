@@ -63673,10 +63673,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/vault,
 /area/f13/ruins)
-"lTP" = (
-/obj/structure/chair/f13chair1,
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic)
 "lTR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -72147,7 +72143,9 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
-/obj/machinery/vending/medical/nash,
+/obj/structure/chair/f13chair1{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "nTt" = (
@@ -97523,7 +97521,8 @@
 	layer = 5;
 	pixel_x = 32
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/machinery/vending/medical/nash,
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic)
 "ugG" = (
 /obj/effect/spawner/lootdrop/f13/common,
@@ -120067,7 +120066,7 @@ wTy
 wTy
 wTy
 xix
-lTP
+bGz
 bGz
 bGz
 bGz
