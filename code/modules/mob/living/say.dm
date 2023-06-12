@@ -118,7 +118,7 @@
 
 	//var/fullcrit = InFullCritical()
 	if(in_critical || message_mode == MODE_WHISPER)
-		message_range = 1
+		message_range = 1 + (!!in_critical * 2)
 		spans |= SPAN_ITALICS
 		src.log_talk(message, LOG_WHISPER)
 		/* if(fullcrit) // no more dying for you!
