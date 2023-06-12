@@ -38,15 +38,6 @@
 
 /obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
-/* 	if (!bullet_cost)
-		for (var/material in custom_materials)
-			var/material_amount = custom_materials[material]
-			LAZYSET(base_cost, material, (material_amount * 0.10))
-
-			material_amount *= 0.90 // 10% for the container
-			material_amount /= max_ammo
-			LAZYSET(bullet_cost, material, material_amount) */
-	init_ammo()
 	if(!islist(caliber))
 		caliber = list()
 	if(length(caliber) < 1)
@@ -54,6 +45,9 @@
 			caliber += initial(ammo_type.caliber)
 		else
 			caliber += CALIBER_ANY // default to accepting any old caliber
+	if(istype(loc, /obj/item/gun))
+		randomize_ammo_count = FALSE // dammit fuz
+	init_ammo()
 
 /obj/item/ammo_box/proc/init_ammo()
 	if(start_empty)
