@@ -6,7 +6,7 @@ export const WeaponInfo = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Window
-      width={500}
+      width={700}
       height={600}
       resizable>
       <Window.Content scrollable>
@@ -195,13 +195,16 @@ export const MagazineInfoLoaded = (props, context) => {
   if (gun_chambered.casing_name) {
     chamberedCasing = <Tooltipify name={cN} tip={cC} />;
   } else {
-    chamberedCasing = <Tooltipify name="Not Chambered!" tip="Bullet goes here." />;
+    chamberedCasing = <Tooltipify name="Empty" tip="Bullet goes here." />;
   }
   const thagomizer = "accepts: " + magazine_calibers; // thanks mike
   return (
     <Section
-      title={<Tooltipify name={magazine_name} tip={thagomizer} big={1} />}>
-      <Box bold textAlign="center">
+      title={<Tooltipify name="Ammunition" tip={thagomizer} big={1} />}>
+      <Box textAlign="center">
+        <Box bold>
+          <Tooltipify name={magazine_name} tip={thagomizer} big={1} />
+        </Box>
         {chamberedCasing}
       </Box>
       <ProgressBar
@@ -611,75 +614,77 @@ const AttachmentInfo = (props, context) => {
 const Damage2Icon = (props) => {
   const { type, armor } = props;
   let type_icon;
-  let type_text;
+  let type_text = "Deals ";
   let armor_icon;
-  let armor_text;
+  let armor_text = "Reduced by";
   switch (type) {
     case "brute":
-      type_icon = "exclamation-triangle";
-      type_text = "Brute";
+      type_icon = "wrench";
+      type_text = type_text + "Brute";
       break;
     case "fire":
       type_icon = "fire";
-      type_text = "Burn";
+      type_text = type_text + "Burn";
       break;
     case "tox":
       type_icon = "biohazard";
-      type_text = "Toxin";
+      type_text = type_text + "Toxin";
       break;
     case "oxy":
       type_icon = "lungs";
-      type_text = "Oxy";
+      type_text = type_text + "Oxy";
       break;
     case "clone":
       type_icon = "user";
-      type_text = "Clone";
+      type_text = type_text + "Clone";
       break;
     case "stamina":
       type_icon = "bed";
-      type_text = "Stamina";
+      type_text = type_text + "Stamina";
       break;
     case "brain":
       type_icon = "brain";
-      type_text = "Brain";
+      type_text = type_text + "Brain";
       break;
     default:
-      armor_icon = "question";
-      armor_text = "Unknown";
+      type_icon = "question";
+      type_text = type_text + "Unknown";
   }
   switch (armor) {
     case "melee":
-      armor_icon = "exclamation-triangle";
-      armor_text = "Melee";
+      armor_icon = "wrench";
+      armor_text = armor_text + "Melee";
       break;
     case "bullet":
       armor_icon = "bullseye";
-      armor_text = "Bullet";
+      armor_text = armor_text + "Bullet";
       break;
     case "laser":
-      armor_icon = "barcode";
-      armor_text = "Laser";
+      armor_icon = "lightbulb";
+      armor_text = armor_text + "Laser";
       break;
     case "energy":
       armor_icon = "bolt";
-      armor_text = "Energy";
+      armor_text = armor_text + "Energy";
       break;
     case "bomb":
       armor_icon = "bomb";
-      armor_text = "Bomb";
+      armor_text = armor_text + "Bomb";
       break;
     case "bio":
       armor_icon = "biohazard";
-      armor_text = "Bio";
+      armor_text = armor_text + "Bio";
       break;
     case "rad":
       armor_icon = "radiation";
-      armor_text = "Rad";
+      armor_text = armor_text + "Rad";
       break;
     default:
       armor_icon = "question";
-      armor_text = "Unknown";
+      armor_text = armor_text + "Unknown";
   }
+  type_text = type_text + " damage.";
+  armor_text = armor_text + " armor.";
   return (
     <Fragment>
       <Tooltipify name={<Icon name={type_icon} />} tip={type_text} />
@@ -694,7 +699,7 @@ const Tooltipify = (props) => {
   let sizefont = bigger ? "1.5em" : "1em";
   if (big) {
     return (
-      <Box bold fontSize="1em" textAlign="center" fluid>
+      <Box bold fontSize={sizefont} textAlign="center" fluid>
         <Button 
           opacity={transparency}
           backgroundColor="transparent"
