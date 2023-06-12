@@ -37,7 +37,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_recoil = PISTOL_RECOIL(1.5)
+	init_recoil = HANDGUN_RECOIL(1.5)
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"

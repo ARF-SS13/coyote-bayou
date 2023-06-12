@@ -235,7 +235,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	init_recoil = PISTOL_RECOIL(1.5)
+	init_recoil = HANDGUN_RECOIL(1.5)
 
 //Wattz 1000 Magneto-laser pistol
 /obj/item/gun/energy/laser/wattz/magneto
@@ -282,7 +282,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = PISTOL_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(2)
 //AEP 7 Laser pistol
 /obj/item/gun/energy/laser/pistol
 	name = "\improper AEP7 laser pistol"
@@ -301,7 +301,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = PISTOL_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1)
 
 // starter kit havin ass
 /obj/item/gun/energy/laser/pistol/worn
@@ -381,7 +381,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
-	init_recoil = PISTOL_RECOIL(1.5)
+	init_recoil = HANDGUN_RECOIL(1.5)
 //Solar Scorcher
 /obj/item/gun/energy/laser/solar
 	name = "\improper Solar Scorcher"
@@ -400,7 +400,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = PISTOL_RECOIL(1.5)
+	init_recoil = HANDGUN_RECOIL(1.5)
 //Badland's Special
 /obj/item/gun/energy/laser/badlands
 	name = "\improper Badland's Special"
@@ -441,7 +441,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_recoil = PISTOL_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(2)
 
 //Compact RCW
 
