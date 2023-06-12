@@ -28,9 +28,9 @@
 	if(spawnwithmagazine)
 		if (!magazine)
 			if(init_mag_type)
-				magazine = new init_mag_type(src, adminspawned = flags_1)
+				magazine = new init_mag_type(src)
 			else
-				magazine = new mag_type(src, adminspawned = flags_1)
+				magazine = new mag_type(src)
 			if(magazine.fixed_mag)
 				gun_tags |= GUN_INTERNAL_MAG
 	allowed_mags |= mag_type
