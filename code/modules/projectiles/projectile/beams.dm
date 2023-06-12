@@ -16,6 +16,7 @@
 	is_reflectable = TRUE
 	wound_bonus = -20
 	bare_wound_bonus = 10
+	recoil = BULLET_RECOIL_PISTOL_9MM
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
