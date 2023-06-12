@@ -996,8 +996,8 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_FIREMODE_AUTO 3
 
 //#define RECOIL_SPREAD_CALC(x)  (0.0075 * (x ** 4)) // Funky way of exponentiating bullet spread from recoil // funky recoil kidna turbofucks things in wierd says, maybe
-#define RECOIL_SPREAD_CALC(x)  (x * 0.5) // 1 recoil = 0.5 degrees spread in either direction (so 1 full degree per recoil)
-#define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
+#define RECOIL_SPREAD_CALC(x) (x)
+#define MAX_ACCURACY_OFFSET 45 //It's both how big gun recoil can build up, and how hard you can miss. Is a plus-or-minus
 
 /// Max spread recoil can add
 #define GUN_RECOIL_MAX_SPREAD MAX_ACCURACY_OFFSET
@@ -1406,7 +1406,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define RECOIL_TAG_DEFAULT "1[RECOIL_TAG_DIVIDER]1"
 #define RECOIL_LIST_DEFAULT list(1, 1)
 
-#define RECOIL_REDUCTION_BASE_PER_SECOND 5
-#define RECOIL_REDUCTION_TICK2SECOND(tick, mult) (round((0.1 * tick * mult * RECOIL_REDUCTION_BASE_PER_SECOND), 0.5))
+#define RECOIL_REDUCTION_BASE_PER_SECOND 1
+#define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((0.1 * tick * mult * base), 0.5))
 #define RECOIL_REDUCTION_HIGH_SCALE 0.5
 

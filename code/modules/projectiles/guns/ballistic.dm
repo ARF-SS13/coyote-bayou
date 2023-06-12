@@ -75,7 +75,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			continue
 		var/atom/movable/marge = mag
 		names_of_mags += initial(marge.name)
-	GLOB.gun_accepted_magazines["[type]"] = "This weapon accepts: <ul><li>[jointext(names_of_mags, "</li><li>")]</li></ul>"
+	GLOB.gun_accepted_magazines["[type]"] = "This weapon accepts: [english_list(names_of_mags)]."
 
 /// Ejects whatever's chambered, and attempts to load a new one from the magazine
 /// chamber_round wont load another one if something's still in the chamber

@@ -424,11 +424,11 @@ ATTACHMENTS
 				user.dropItemToGround(src, TRUE)
 				return
 
-	if(weapon_weight == GUN_TWO_HAND_ONLY && !wielded)
-		wield(user)
-		if(!wielded)
-			to_chat(user, span_userdanger("You need both hands free to fire \the [src]!"))
-			return
+	// if(weapon_weight == GUN_TWO_HAND_ONLY && !wielded)
+	// 	wield(user)
+	// 	if(!wielded)
+	// 		to_chat(user, span_userdanger("You need both hands free to fire \the [src]!"))
+	// 		return
 
 	if(rigged)
 		user.visible_message(
@@ -1108,8 +1108,8 @@ ATTACHMENTS
 	data["gun_name"] = name || "Unknown"
 	data["gun_damage_multiplier"] = damage_multiplier || 1
 	data["gun_penetration_multiplier"] = penetration_multiplier || 1
-	data["gun_melee"] = force_unwielded || 0
-	data["gun_melee_wielded"] = force_wielded || 0
+	data["gun_melee"] = force_unwielded || force
+	data["gun_melee_wielded"] = force_wielded || round(force * FALLBACK_FORCE)
 	data["gun_armor_penetration"] = armour_penetration || 0
 	var/list/chambered_data = istype(chambered) ? chambered.get_statblock() : ui_data_projectile(get_dud_projectile())
 	data["gun_chambered"] = chambered_data

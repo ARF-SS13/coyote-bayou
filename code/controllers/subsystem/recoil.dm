@@ -32,6 +32,9 @@ SUBSYSTEM_DEF(recoil)
 	/// Format: list("tag" = /datum/recoil, ...)
 	var/list/gun_recoils = list()
 
+	var/recoil_reduction_per_second = RECOIL_REDUCTION_BASE_PER_SECOND
+	var/recoil_to_spread_mult = 1
+
 	var/debug_recoil = FALSE
 
 /datum/controller/subsystem/recoil/stat_entry(msg)
@@ -59,7 +62,7 @@ SUBSYSTEM_DEF(recoil)
 		var/ckey = LAZYACCESS(recoil_list, LAZYLEN(recoil_list))
 		var/datum/mob_recoil/my_recoil = LAZYACCESS(recoil_list, ckey)
 		recoil_list.len--
-		if(my_recoil.tick_recoil(wait, delta_time))
+		if(my_recoil.tick_recoil(recoil_reduction_per_second, wait, delta_time))
 			last_recoil_count++
 		if (MC_TICK_CHECK)
 			return
@@ -232,18 +235,18 @@ SUBSYSTEM_DEF(recoil)
 	. = list()
 	switch(wielded_recoil_mod)
 		if(-INFINITY to 0.5)
-			. += span_warning("It'll kick much less when wielded.")
+			. += span_notice("It'll kick much less when wielded.")
 		if(0.5 to 1)
-			. += span_warning("It'll kick less when wielded.")
+			. += span_notice("It'll kick less when wielded.")
 		if(1 to 1.5)
 			. += span_warning("It'll kick more when wielded.")
 		if(1.5 to INFINITY)
 			. += span_warning("It'll kick much more when wielded.")
 	switch(unwielded_recoil_mod)
 		if(-INFINITY to 0.5)
-			. += span_warning("It'll kick much less in one hand.")
+			. += span_notice("It'll kick much less in one hand.")
 		if(0.5 to 1)
-			. += span_warning("It'll kick less in one hand.")
+			. += span_notice("It'll kick less in one hand.")
 		if(1 to 1.5)
 			. += span_warning("It'll kick more in one hand.")
 		if(1.5 to INFINITY)
@@ -281,7 +284,7 @@ SUBSYSTEM_DEF(recoil)
 		user = WEAKREF(shooter) // update our mob ref
 	var/recoil_before = recoil
 	var/mult = get_recoil_mods(shooter, my_gun)
-	recoil += recoil_buildup * mult
+	recoil += round(recoil_buildup * mult, 0.1)
 	update_mob(shooter)
 	if(debug_mode)
 		to_chat(shooter, "Added [recoil_buildup] * [mult] = [recoil] Recoil: [recoil_before] -> [recoil]")
@@ -296,26 +299,26 @@ SUBSYSTEM_DEF(recoil)
 
 /datum/mob_recoil/proc/get_offset(rounded)
 	var/out = recoil
-	out = RECOIL_SPREAD_CALC(out)
+	out *= SSrecoil.recoil_to_spread_mult
 	if(rounded)
 		out = CEILING(out, 1)
 	out = CLAMP(out, 0, MAX_ACCURACY_OFFSET)
 	return out
 
-/datum/mob_recoil/proc/tick_recoil(ticklength, deltatime)
+/datum/mob_recoil/proc/tick_recoil(amount, ticklength, deltatime)
 	var/mob/living/shooter = GET_WEAKREF(user)
 	if(!shooter)
 		return FALSE
 	. = reduce_recoil(ticklength, deltatime, shooter)
 	update_mob(shooter)
 
-/datum/mob_recoil/proc/reduce_recoil(ticklength, deltatime, mob/living/shooter)
+/datum/mob_recoil/proc/reduce_recoil(amount, ticklength, deltatime, mob/living/shooter)
 	if(recoil <= 0)
 		recoil = 0
 		return FALSE
 	var/recoil_before = recoil
 	. = TRUE
-	var/reduction = RECOIL_REDUCTION_TICK2SECOND(ticklength, deltatime)
+	var/reduction = RECOIL_REDUCTION_TICK2SECOND(amount, ticklength, deltatime)
 	if(isliving(shooter))
 		if(HAS_TRAIT(shooter, SPREAD_CONTROL))
 			reduction *= 2
@@ -323,6 +326,7 @@ SUBSYSTEM_DEF(recoil)
 	recoil *= 0.9
 	if(recoil < 0)
 		recoil = 0
+	recoil = round(recoil, 0.1)
 	if(debug_mode)
 		to_chat(shooter, "Reduced recoil from [recoil_before] to [recoil].")
 
@@ -373,4 +377,4 @@ SUBSYSTEM_DEF(recoil)
 	if(debug_mode)
 		to_chat(walker, "Adding [base_recoil] movement recoil.")
 		to_chat(walker, "Move recoil: [move_recoil] max(2 - [walker.last_move_delay]). Stiffness: [total_stffness] + [highest_stiffness] / [num_stiff]. Gun heaviness: [gun_heaviness_recoil] max([G?.slowdown] - 0.10).")
-	add_recoil(walker, null, base_recoil)
+	add_recoil(walker, null, round(base_recoil, 0.1))
