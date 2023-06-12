@@ -83,6 +83,7 @@
 	custom_materials = list(/datum/material/glass = 50)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_ROCK
+	hitsound = 'sound/effects/brickthrow.ogg'
 
 /obj/item/ammo_casing/caseless/flintlock
 	name = "packed blackpowder cartridge"
