@@ -398,7 +398,7 @@
 	data["has_magazine"] = !!cell
 	data["charge_cost"] = shot.e_cost * charge_cost_multiplier
 	data["accepted_magazines"] = "This weapon accepts \a [cell_type]."
-	data["magazine_name"] = cell ? cell.name || "Unknown" // Its a magazine you silly goose
+	data["magazine_name"] = cell ? cell.name : "Unknown" // Its a magazine you silly goose
 	if(cell)
 		data["magazine_calibers"] = "Energy"
 		data["cell_charge"] = cell.percent()

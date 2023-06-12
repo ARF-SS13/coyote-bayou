@@ -61,16 +61,20 @@ export const RangedInfo = (props, context) => {
   const firemode_desc = firemode_current["desc"];
   let damage_value;
   if (gun_is_chambered && !!gun_chambered.projectile_damage) {
-    let unfixed_damage_value = Number(gun_chambered.projectile_damage) * Number(gun_damage_multiplier);
+    const plts = gun_chambered.pellets;
+    const fxdm = fixed_damage_multiplier;
+    const pdv = gun_chambered.projectile_damage;
+    const gdmg = gun_damage_multiplier;
+    let ufdv = Number(pdv) * Number(gdmg);
     if(gun_chambered.pellets > 1) {
-      unfixed_damage_value = unfixed_damage_value * Number(gun_chambered.pellets);
-      damage_value = unfixed_damage_value.toFixed(1) + " = (" + gun_chambered.projectile_damage + "x" + gun_chambered.pellets + ")x" + fixed_damage_multiplier;
+      ufdv = ufdv * Number(plts); // oh yeah thats much more readable, thanks linter
+      damage_value = ufdv.toFixed(1) + " = (" + pdv + "x" + plts + ")x" + fxdm;
     } else {
-      damage_value =  unfixed_damage_value.toFixed(1) + " = " + gun_chambered.projectile_damage + " x " + fixed_damage_multiplier;
-    };
+      damage_value = ufdv.toFixed(1) + " = " + pdv + " x " + fxdm;
+    }
   } else {
-    damage_value = fixed_damage_multiplier + "x"
-  };
+    damage_value = fixed_damage_multiplier + "x";
+  }
   return (
     <Section title={<Tooltipify name={"Ranged Data"} tip={gun_name} big={1} />}>
       <Table
@@ -129,7 +133,7 @@ export const MeleeInfo = (props, context) => {
         className="candystripe"
         width="100%">
         <Table.Row>
-          <Table.Cell bold textAlign="right" width="35%" color='label'>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
             <Tooltipify name={"1H DMG: "} tip={"Damage when wielded in one hand."} />
           </Table.Cell>
           <Table.Cell>
@@ -138,7 +142,7 @@ export const MeleeInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" width="35%" color='label'>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
             <Tooltipify name={"2H DMG: "} tip={"Damage when wielded in two hands."} />
           </Table.Cell>
           <Table.Cell>
@@ -147,7 +151,7 @@ export const MeleeInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" width="35%" color='label'>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
             <Tooltipify name={"AP: "} tip={"Amount of Damage Resistance that this will bypass."} />
           </Table.Cell>
           <Table.Cell>
@@ -172,7 +176,7 @@ export const MagazineInfo = (props, context) => {
     return (
       <MagazineInfoEmpty />
     );
-  };
+  }
 };
 
 export const MagazineInfoLoaded = (props, context) => {
@@ -185,8 +189,10 @@ export const MagazineInfoLoaded = (props, context) => {
     gun_chambered,
   } = data;
   let chamberedCasing;
+  const cN = gun_chambered.casing_name; // FUCK YOU ESLINT IM NOT AFRAID OF LONG LINES
+  const cC = gun_chambered.casing_caliber;
   if (gun_chambered.casing_name) {
-    chamberedCasing = <Tooltipify name={gun_chambered.casing_name} tip={gun_chambered.casing_caliber} />;
+    chamberedCasing = <Tooltipify name={cN} tip={cC} />;
   } else {
     chamberedCasing = <Tooltipify name="Not Chambered!" tip="Bullet goes here." />;
   };
@@ -260,7 +266,7 @@ export const ProjectileInfo = (props, context) => {
     projectile_speed,
   } = gun_chambered;
   let itShoots = "It is " + casing_caliber + " and shoots " + casing_name + "!";
-  if(!gun_chambered_loaded) {
+  if (!gun_chambered_loaded) {
     itShoots = itShoots + " At least it would if it wasn't empty.";
     return (
       <Section
@@ -268,9 +274,13 @@ export const ProjectileInfo = (props, context) => {
         <Tooltipify name="No Data Available!" tip={"This casing is empty!"} />
       </Section>
     );
-  };
-  const damage_icon = <Damage2Icon type = {projectile_damage_type} armor = {projectile_flag} />;
-  let damage_text = <Tooltipify name={projectile_damage} tip={projectile_damage_total} />;
+  }
+  const pD = projectile_damage; // WHY YES LINTERS WHY EVER WOULD I NEED 81 CHARACTERS ON A LINE I AM SUCH A NOOB FOR USING LONG VARIABLE NAMES
+  const pDTP = projectile_damage_total;
+  const pDTy = projectile_damage_type;
+  const pDf = projectile_flag;
+  const damage_icon = <Damage2Icon type={pDTy} armor={pDf} />;
+  let damage_text = <Tooltipify name={pD} tip={pDTP} />;
   if (casing_pellets > 1) {
     damage_text = damage_text + "x" + casing_pellets;
   };
@@ -281,7 +291,7 @@ export const ProjectileInfo = (props, context) => {
         className="candystripe"
         width="100%">
         <Table.Row>
-          <Table.Cell bold textAlign="right" width="35%" color='label'>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
             <Tooltipify name="Damage:" tip="Base damage." />
           </Table.Cell>
           <Table.Cell>
@@ -290,7 +300,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Stamina:" tip="Base stamina (non-lethal) damage." />
           </Table.Cell>
           <Table.Cell>
@@ -299,7 +309,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Spread" tip="Base inaccuracy in degrees from straight ahead, before recoil is factored in." />
           </Table.Cell>
           <Table.Cell>
@@ -308,7 +318,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Recoil:" tip="Base recoil applied to the user when fired, before the gun's modifiers are factored in." />
           </Table.Cell>
           <Table.Cell>
@@ -317,7 +327,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold  textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Speed:" tip="How fast the projectile moves." />
           </Table.Cell>
           <Table.Cell>
@@ -326,7 +336,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="DR Pierce:" tip="Amount of armor damage resistance (percent reduction) it ignores on the target." />
           </Table.Cell>
           <Table.Cell>
@@ -335,7 +345,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="DT Pierce:" tip="Points of armor damage threshold (flat reduction) it ignores on the target." />
           </Table.Cell>
           <Table.Cell>
@@ -344,7 +354,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Range:" tip="Max distance in tiles this projectile can travel." />
           </Table.Cell>
           <Table.Cell>
@@ -353,7 +363,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Firepower" tip="Explosive force imparted to the gun. Mostly relevant to improvised and garbage guns." />
           </Table.Cell>
           <Table.Cell>
@@ -362,7 +372,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Wound" tip="Amount of extra wounding damage applied to a non-simple target (Anything that can have underwear)." />
           </Table.Cell>
           <Table.Cell>
@@ -371,7 +381,7 @@ export const ProjectileInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" color='label'>
+          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Sharpness" tip="Type of wound caused when enough damage is applied to a non-simple target (Anything that can wear a scarf)." />
           </Table.Cell>
           <Table.Cell>
@@ -379,9 +389,10 @@ export const ProjectileInfo = (props, context) => {
           </Table.Cell>
         </Table.Row>
 
-        {!!projectile_supereffective_damage && !!projectile_supereffective_faction && (
+        {!!projectile_supereffective_damage &&
+        !!projectile_supereffective_faction && (
           <Table.Row>
-            <Table.Cell bold textAlign="right" color='label'>
+            <Table.Cell bold textAlign="right" color="label">
               <Tooltipify name="Supereffective" tip="Extra damage caused to specific kinds of targets. Is always brute." />
             </Table.Cell>
             <Table.Cell>
@@ -402,7 +413,10 @@ const RecoilInfo = (props, context) => {
     unmodded_recoil_wielded,
     modded_recoil_wielded,
   } = data;
-  const recoilTip = "These multiply the shot projectile's recoil calculations, based on whether you're wielding the gun or not. The higher the number, the more recoil you'll get. The recoil is calculated by multiplying the recoil of the projectile by the recoil of the gun."
+  const recoilTip = "These multiply the shot projectile's \
+  recoil calculations, based on whether you're wielding the gun or not. \
+  The higher the number, the more recoil you'll get. The recoil is calculated \
+  by multiplying the recoil of the projectile by the recoil of the gun.";
   return (
     <Section
       title={<Tooltipify name="Recoil Multipliers" tip={recoilTip} big={1} />}
@@ -538,7 +552,7 @@ const FiremodeInfo = (props, context) => {
         </Box>
       </Section>
     );
-  };
+  }
   const FiremodeTip = "Firemodes are different ways to fire your gun. They can be switched between by clicking on them! The current firemode is highlighted in green.";
   return (
     <Section title={<Tooltipify name="Firemodes" tip={FiremodeTip} big={1} />}>
@@ -574,7 +588,7 @@ const AttachmentInfo = (props, context) => {
         <Tooltipify name="No attachments!" tip="Vanilla's a good flavor too." />
       </Section>
     );
-  };
+  }
   return (
     <Section title={<Tooltipify name="Attachments" tip={AttachmentTip} big={1} />}>
       <Stack fill vertical>
@@ -630,7 +644,7 @@ const Damage2Icon = (props) => {
     default:
       armor_icon = "question";
       armor_text = "Unknown";
-  };
+  }
   switch (armor) {
     case "melee":
       armor_icon = "exclamation-triangle";
@@ -663,7 +677,7 @@ const Damage2Icon = (props) => {
     default:
       armor_icon = "question";
       armor_text = "Unknown";
-  };
+  }
   return (
     <Fragment>
       <Tooltipify name={<Icon name={type_icon} />} tip={type_text} />
@@ -701,4 +715,4 @@ const Tooltipify = (props) => {
         tooltipPosition="bottom" />
     );
   };
-};
+}
