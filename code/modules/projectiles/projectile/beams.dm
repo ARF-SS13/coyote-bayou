@@ -16,7 +16,7 @@
 	is_reflectable = TRUE
 	wound_bonus = -20
 	bare_wound_bonus = 10
-	recoil = BULLET_RECOIL_PISTOL_9MM
+	recoil = BULLET_RECOIL_LASER
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -551,6 +551,7 @@
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second =  TILES_TO_PIXELS(10) //same as 40mm grenade
+	recoil = BULLET_RECOIL_PLASMA
 
 /obj/item/projectile/plasmacarbine //Plasma carbine
 	name = "plasma bolt"
@@ -562,6 +563,7 @@
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second = TILES_TO_PIXELS(10)
+	recoil = BULLET_RECOIL_PLASMA
 
 /obj/item/projectile/f13plasma/repeater //Plasma repeater
 	name = "plasma stream"

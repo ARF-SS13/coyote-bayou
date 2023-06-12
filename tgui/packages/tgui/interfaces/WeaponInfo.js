@@ -224,8 +224,9 @@ export const MagazineInfoEmpty = (props, context) => {
     accepted_magazines,
   } = data;
   const thagomizer = "accepts: " + accepted_magazines;
+  const emptyMizer = "This weapon doesn't have a magazine!";
   return (
-    <Section title={<Tooltipify name="No Magazine" tip={thagomizer} big={1} />}>
+    <Section title={<Tooltipify name="No Magazine" tip={emptyMizer} big={1} />}>
       <Tooltipify name="Insert one!" tip={thagomizer} />
     </Section>
   );

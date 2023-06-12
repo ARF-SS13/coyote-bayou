@@ -296,8 +296,9 @@ SUBSYSTEM_DEF(recoil)
 
 /datum/mob_recoil/proc/get_offset(rounded)
 	var/out = recoil
+	out = RECOIL_SPREAD_CALC(out)
 	if(rounded)
-		out = round(RECOIL_SPREAD_CALC(out))
+		out = CEILING(out, 1)
 	out = CLAMP(out, 0, MAX_ACCURACY_OFFSET)
 	return out
 

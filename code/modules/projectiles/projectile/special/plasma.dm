@@ -12,6 +12,7 @@
 	tracer_type = /obj/effect/projectile/tracer/plasma_cutter
 	muzzle_type = /obj/effect/projectile/muzzle/plasma_cutter
 	impact_type = /obj/effect/projectile/impact/plasma_cutter
+	recoil = BULLET_RECOIL_PLASMA
 
 /obj/item/projectile/plasma/Initialize()
 	. = ..()

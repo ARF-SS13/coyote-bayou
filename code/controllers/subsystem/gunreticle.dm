@@ -51,8 +51,8 @@ SUBSYSTEM_DEF(reticle)
 		remove_cursor()
 		return
 	//client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-	var/recoil = SSrecoil.get_offset(src) + (G.added_spread * 0.8)
-	var/offset = clamp(round(recoil, 1), 0, MAX_ACCURACY_OFFSET)
+	var/recoil = SSrecoil.get_offset(src)
+	var/offset = clamp(CEILING(recoil, 1), 0, MAX_ACCURACY_OFFSET)
 	var/icon/base = SSreticle.find_cursor_icon(offset)
 	ASSERT(isicon(base))
 	client.mouse_pointer_icon = base
