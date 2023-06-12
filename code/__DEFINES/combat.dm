@@ -1125,12 +1125,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Projectiles define the recoil amount, guns modify the recoil based on wieldedness
 
-#define HANDGUN_RECOIL(x) list(1   * x, 0.5 * x)
-#define SMG_RECOIL(x)     list(1.5 * x, 1   * x)
-#define CARBINE_RECOIL(x) list(2   * x, 0.9 * x)
-#define RIFLE_RECOIL(x)   list(3   * x, 0.5 * x)
-#define LMG_RECOIL(x)     list(5   * x, 1   * x)
-#define HMG_RECOIL(x)     list(10  * x, 0.9 * x)
+/////////////////////////////////1HANDED , 2HANDED
+#define HANDGUN_RECOIL(x)    list(1   * x, 0.5 * x)
+#define AUTOPISTOL_RECOIL(x) list(2   * x, 1   * x)
+#define SMG_RECOIL(x)        list(1.5 * x, 1   * x)
+#define CARBINE_RECOIL(x)    list(2   * x, 0.9 * x)
+#define RIFLE_RECOIL(x)      list(3   * x, 0.5 * x)
+#define LMG_RECOIL(x)        list(5   * x, 1   * x)
+#define HMG_RECOIL(x)        list(10  * x, 0.8 * x)
 
 //Quick defines for fire modes
 #define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "150 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")

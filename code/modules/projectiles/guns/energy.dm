@@ -47,7 +47,7 @@
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)
-	init_recoil = HANDGUN_RECOIL(0.1)
+	init_recoil = RIFLE_RECOIL(1)
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -398,6 +398,7 @@
 	data["has_magazine"] = !!cell
 	data["charge_cost"] = shot.e_cost * charge_cost_multiplier
 	data["accepted_magazines"] = "This weapon accepts \a [cell_type]."
+	data["magazine_name"] = cell ? cell.name || "Unknown" // Its a magazine you silly goose
 	if(cell)
 		data["magazine_calibers"] = "Energy"
 		data["cell_charge"] = cell.percent()

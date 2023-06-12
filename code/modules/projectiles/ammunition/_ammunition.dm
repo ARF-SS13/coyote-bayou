@@ -137,11 +137,17 @@
 		proj = BB
 	var/my_statblock = SANITIZE_LIST(proj.create_statblock())
 	my_statblock["casing_name"] = name || "Ammo Casing"
+	my_statblock["casing_caliber"] = caliber || 0
 	my_statblock["casing_pellets"] = pellets || 1
 	my_statblock["casing_variance"] = variance || 0
 	my_statblock["casing_fire_power"] = fire_power || 0
 	my_statblock["casing_damage_threshold_penetration"] = damage_threshold_penetration
 	return my_statblock
+
+/obj/item/ammo_casing/proc/get_statblock()
+	if(!LAZYLEN(GLOB.casing2stats))
+		register_statblock()
+	return GLOB.casing2stats["[type]"]
 
 /// Returns our sound data lookup table~
 /obj/item/ammo_casing/proc/get_sound_datum()

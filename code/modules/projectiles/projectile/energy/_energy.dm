@@ -5,4 +5,5 @@
 	damage_type = BURN
 	flag = "energy"
 	is_reflectable = TRUE
+	recoil = BULLET_RECOIL_PISTOL_9MM
 

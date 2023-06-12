@@ -1105,25 +1105,22 @@ ATTACHMENTS
 
 /obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
+	data["gun_name"] = name || "Unknown"
 	data["gun_damage_multiplier"] = damage_multiplier || 1
 	data["gun_penetration_multiplier"] = penetration_multiplier || 1
 	data["gun_melee"] = force_unwielded || 0
 	data["gun_melee_wielded"] = force_wielded || 0
 	data["gun_armor_penetration"] = armour_penetration || 0
-	var/list/chambered_data = istype(chambered) ? chambered.build_statblock() : list()
+	var/list/chambered_data = istype(chambered) ? chambered.get_statblock() : ui_data_projectile(get_dud_projectile())
 	data["gun_chambered"] = chambered_data
-
-	data |= ui_data_projectile(get_dud_projectile())
-	var/list/recoil_data = SSrecoil.get_tgui_data(recoil_tag)
-	data |= recoil_data
-	var/list/total_recoil = list()
-	if(data["projectile_recoil"])
-		total_recoil["total_recoil_unwielded"] = data["projectile_recoil"] * recoil_data["recoil_unwielded"]
-		total_recoil["total_recoil_wielded"] = data["projectile_recoil"] * recoil_data["recoil_wielded"]
-	else
-		total_recoil["total_recoil_unwielded"] = recoil_data["recoil_unwielded"]
-		total_recoil["total_recoil_wielded"] = recoil_data["recoil_wielded"]
-	data["total_recoil"] = total_recoil
+	data["gun_is_chambered"] = istype(chambered)
+	data["gun_chambered_loaded"] = chambered ? !!chambered.BB : 0
+	var/list/unmodded_recoil_data = SSrecoil.get_tgui_data(init_recoil)
+	var/list/modded_recoil_data = SSrecoil.get_tgui_data(recoil_tag)
+	data["unmodded_recoil_wielded"] = LAZYACCESS(unmodded_recoil_data, "recoil_wielded") || 1
+	data["unmodded_recoil_unwielded"] = LAZYACCESS(unmodded_recoil_data, "recoil_unwielded") || 1
+	data["modded_recoil_wielded"] = LAZYACCESS(modded_recoil_data, "recoil_wielded") || 1
+	data["modded_recoil_unwielded"] = LAZYACCESS(modded_recoil_data, "recoil_unwielded") || 1
 
 	if(LAZYLEN(firemodes))
 		var/list/firemodes_info = list()
@@ -1134,12 +1131,14 @@ ATTACHMENTS
 				var/action_kind = "Unknown"
 				switch(F.fire_type)
 					if(GUN_FIREMODE_SEMIAUTO)
-						action_kind = "Semi-Automatic"
+						action_kind = "Single Shot"
 					if(GUN_FIREMODE_BURST)
-						var/burstcount = "Multi" && F.settings["burst_size"] // && resolves to the last thing it resolves to
+						var/burstcount = F.settings["burst_size"] || "Multi" // || resolves to the first thing it resolves to
 						action_kind = "[burstcount]-Round Burst"
+					if(GUN_FIREMODE_AUTO)
+						action_kind = "Automatic"
 				var/sanitized_fire_delay = max(F.settings["fire_delay"], 0.1)
-				var/rounds_per_minute = round((1 / sanitized_fire_delay) * 600, 1)
+				var/rounds_per_minute = round((1 / sanitized_fire_delay) * 60, 1)
 				data["firemode_current"] = list(
 					"action_kind" = action_kind,
 					"fire_rate" = "[rounds_per_minute] RPM",
@@ -1152,10 +1151,21 @@ ATTACHMENTS
 				"desc" = F.desc,
 				"burst" = F.settings["burst_size"],
 				"fire_delay" = F.settings["fire_delay"],
-				//"move_delay" = F.settings["move_delay"],
-				)
+			)
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
+	else
+		stack_trace("No firemodes found for [src]!")
+		message_admins("No firemodes found for [src]!")
+		data["firemode_count"] = 1
+		data["firemode_info"] = list(
+			"index" = 1,
+			"current" = TRUE,
+			"name" = "Im a fire mode!",
+			"desc" = "but its broken",
+			"burst" = 1,
+			"fire_delay" = 1,
+		)
 
 	data["attachments"] = list()
 	for(var/atom/A in item_upgrades)
@@ -1177,7 +1187,7 @@ ATTACHMENTS
 		. = TRUE
 	update_icon()
 
-//Returns a statblock that's not for active usage.
+// If the gun isnt chambered, get what the gun would normally fire if it was chambered
 /obj/item/gun/proc/get_dud_projectile()
 	var/list/proj
 	if(istype(chambered))
@@ -1194,9 +1204,9 @@ ATTACHMENTS
 	if(!LAZYLEN(data))
 		return data
 	var/dmg = data["projectile_damage"] || 0
-	data["total_damage"] = dmg * damage_multiplier
+	data["projectile_damage_total"] = dmg * damage_multiplier
 	var/ap = data["projectile_armor_penetration"] || 0
-	data["total_armor_penetration"] = (ap * penetration_multiplier)
+	data["projectile_armor_penetration_total"] = (ap * penetration_multiplier)
 	return data
 
 //Finds the current firemode and calls update on it. This is called from a few places:

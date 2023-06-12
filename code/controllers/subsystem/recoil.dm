@@ -54,7 +54,8 @@ SUBSYSTEM_DEF(recoil)
 	//cache for sanic speed (lists are references anyways)
 	/// yeah this is copied from processing.dm
 	var/list/recoil_list = current_mob_recoils
-	while(LAZYLEN(recoil_list))
+	var/iterations_left = 200
+	while(recoil_list.len && iterations_left--)
 		var/ckey = LAZYACCESS(recoil_list, LAZYLEN(recoil_list))
 		var/datum/mob_recoil/my_recoil = LAZYACCESS(recoil_list, ckey)
 		recoil_list.len--
@@ -200,7 +201,7 @@ SUBSYSTEM_DEF(recoil)
 	index = "[unwielded_recoil_mod]%[wielded_recoil_mod]"
 
 /datum/gun_recoil/proc/should_it_be_wielded()
-	return (unwielded_recoil_mod > wielded_recoil_mod)
+	return (wielded_recoil_mod > (unwielded_recoil_mod * 1.2))
 
 /datum/gun_recoil/proc/get_recoil_mod(mob/living/user, obj/item/held)
 	if(!user || !held)
@@ -225,7 +226,7 @@ SUBSYSTEM_DEF(recoil)
 	if(complained_at_them_then + GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME > world.time)
 		return
 	LAZYSET(complained_at_them, user.ckey, world.time)
-	to_chat(user, span_warning("[src] kicks around in your meager grip!"))
+	to_chat(user, span_warning("[held] kicks around in your meager grip!"))
 
 /datum/gun_recoil/proc/get_recoil_examine()
 	. = list()
@@ -304,7 +305,7 @@ SUBSYSTEM_DEF(recoil)
 	var/mob/living/shooter = GET_WEAKREF(user)
 	if(!shooter)
 		return FALSE
-	. = reduce_recoil(ticklength, deltatime)
+	. = reduce_recoil(ticklength, deltatime, shooter)
 	update_mob(shooter)
 
 /datum/mob_recoil/proc/reduce_recoil(ticklength, deltatime, mob/living/shooter)

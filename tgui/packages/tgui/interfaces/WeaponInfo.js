@@ -1,47 +1,44 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section, ProgressBar, Flex, Stack, Icon, Fragment, Box, Table } from '../components';
+import { Button, LabeledList, Section, ProgressBar, Flex, Stack, Icon, Fragment, Box, Table, Tooltip } from '../components';
 import { Window } from '../layouts';
 
 export const WeaponInfo = (props, context) => {
   const { act, data } = useBackend(context);
-  // Extract `health` and `color` variables from the `data` object.
   return (
     <Window
-      width={400}
+      width={500}
       height={600}
       resizable>
       <Window.Content scrollable>
-        <Flex>
-          <Flex.Item basis="50%">
-            <Stack fill vertical>
-              <Stack.Item>
-                <RangedInfo />
-              </Stack.Item>
-              <Stack.Item>
-                <MeleeInfo />
-              </Stack.Item>
-              <Stack.Item>
-                <MagazineInfo />
-              </Stack.Item>
-              <Stack.Item grow>
-                <ProjectileInfo />
-              </Stack.Item>
-            </Stack>
-          </Flex.Item>
-          <Flex.Item basis="50%">
-            <Stack fill vertical>
-              <Stack.Item>
-                <RecoilInfo />
-              </Stack.Item>
-              <Stack.Item>
-                <FiremodeInfo />
-              </Stack.Item>
-              <Stack.Item>
-                <AttachmentInfo />
-              </Stack.Item>
-            </Stack>
-          </Flex.Item>
-        </Flex>
+        <Table>
+          <Table.Row>
+            <Table.Cell width="50%" >
+              <RangedInfo />
+            </Table.Cell>
+            <Table.Cell width="50%">
+              <MeleeInfo />
+            </Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.Cell width="50%" py="0.5rem">
+              <MagazineInfo />
+              <FiremodeInfo />
+            </Table.Cell>
+            <Table.Cell width="50%">
+              <RecoilInfo />
+            </Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.Cell width="50%">
+              <ProjectileInfo />
+            </Table.Cell>
+            <Table.Cell width="50%">
+              <AttachmentInfo />
+            </Table.Cell>
+          </Table.Row>
+        </Table>
       </Window.Content>
     </Window>
   );
@@ -50,37 +47,69 @@ export const WeaponInfo = (props, context) => {
 export const RangedInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
+    gun_name,
     gun_damage_multiplier,
     gun_penetration_multiplier,
     firemode_current,
     gun_chambered,
+    gun_is_chambered,
   } = data;
   const fixed_damage_multiplier = gun_damage_multiplier.toFixed(2);
   const fixed_penetration_multiplier = gun_penetration_multiplier.toFixed(2);
   const firemode_rpm = firemode_current["fire_rate"];
   const firemode_name = firemode_current["action_kind"];
   const firemode_desc = firemode_current["desc"];
-  let damage_value = Number(gun_chambered.projectile_damage) * Number(gun_damage_multiplier);
-  if (!!gun_chambered){
-    let unfixed_damage_value = gun_chambered.projectile_damage * gun_damage_multiplier;
-    damage_value = gun_chambered.projectile_damage + " x " + fixed_damage_multiplier + " = " + unfixed_damage_value.toFixed(1);
+  let damage_value;
+  if (gun_is_chambered && !!gun_chambered.projectile_damage) {
+    let unfixed_damage_value = Number(gun_chambered.projectile_damage) * Number(gun_damage_multiplier);
+    if(gun_chambered.pellets > 1) {
+      unfixed_damage_value = unfixed_damage_value * Number(gun_chambered.pellets);
+      damage_value = unfixed_damage_value.toFixed(1) + " = (" + gun_chambered.projectile_damage + "x" + gun_chambered.pellets + ")x" + fixed_damage_multiplier;
+    } else {
+      damage_value =  unfixed_damage_value.toFixed(1) + " = " + gun_chambered.projectile_damage + " x " + fixed_damage_multiplier;
+    };
   } else {
     damage_value = fixed_damage_multiplier + "x"
   };
   return (
-    <Section title="Ranged Data">
-      <LabeledList>
-        <LabeledList.Item label="DMG">
-          {damage_value}
-        </LabeledList.Item>
-        <LabeledList.Item label="AP">
-          {fixed_penetration_multiplier}x
-        </LabeledList.Item>
-        <LabeledList.Item label="Fire Delay">
-          {firemode_rpm} RPM
-        </LabeledList.Item>
-      </LabeledList>
-      <Button fluid content={firemode_name} tooltip={firemode_desc} />
+    <Section title={<Tooltipify name={"Ranged Data"} tip={gun_name} big={1} />}>
+      <Table
+        px="1rem"
+        className="candystripe"
+        width="100%">
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color='label'>
+            <Tooltipify name={"Damage: "} tip={"Total Damage = (Projectile Base Damage * Pellets) * Gun Damage Multiplier."} />
+          </Table.Cell>
+          <Table.Cell>
+            {damage_value}
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color='label'>
+            <Tooltipify name={"AP Mult: "} tip={"Multiplier to the AP on any projectile shot."} />
+          </Table.Cell>
+          <Table.Cell>
+            {fixed_penetration_multiplier}x
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color='label'>
+            <Tooltipify name={"Fire Rate: "} tip={"Rounds per minute."} />
+          </Table.Cell>
+          <Table.Cell>
+            {firemode_rpm}
+          </Table.Cell>
+        </Table.Row>
+      </Table>
+      <Box
+        width="100%"
+        height="fit-content"
+        textAlign="center">
+        <Tooltipify name={firemode_name} tip={firemode_desc} bigger={1} />
+      </Box>
     </Section>
   );
 };
@@ -88,20 +117,44 @@ export const RangedInfo = (props, context) => {
 export const MeleeInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
+    gun_name,
     gun_melee,
     gun_melee_wielded,
     gun_armor_penetration,
   } = data;
   return (
-    <Section title="Melee Data">
-      <LabeledList>
-        <LabeledList.Item label="1-2 Hand DMG">
-          {gun_melee} : {gun_melee_wielded}
-        </LabeledList.Item>
-        <LabeledList.Item label="AP">
-          {gun_armor_penetration}
-        </LabeledList.Item>
-      </LabeledList>
+    <Section title={<Tooltipify name={"Melee Data"} tip={gun_name} big={1} />} >
+      <Table
+        px="1rem"
+        className="candystripe"
+        width="100%">
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color='label'>
+            <Tooltipify name={"1H DMG: "} tip={"Damage when wielded in one hand."} />
+          </Table.Cell>
+          <Table.Cell>
+            {gun_melee}
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color='label'>
+            <Tooltipify name={"2H DMG: "} tip={"Damage when wielded in two hands."} />
+          </Table.Cell>
+          <Table.Cell>
+            {gun_melee_wielded}
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color='label'>
+            <Tooltipify name={"AP: "} tip={"Amount of Damage Resistance that this will bypass."} />
+          </Table.Cell>
+          <Table.Cell>
+            {gun_armor_penetration.toFixed(2)}
+          </Table.Cell>
+        </Table.Row>
+      </Table>
     </Section>
   );
 };
@@ -129,22 +182,25 @@ export const MagazineInfoLoaded = (props, context) => {
     magazine_calibers,
     shots_remaining,
     shots_max,
+    gun_chambered,
   } = data;
+  let chamberedCasing;
+  if (gun_chambered.casing_name) {
+    chamberedCasing = <Tooltipify name={gun_chambered.casing_name} tip={gun_chambered.casing_caliber} />;
+  } else {
+    chamberedCasing = <Tooltipify name="Not Chambered!" tip="Bullet goes here." />;
+  };
+  const thagomizer = "accepts: " + magazine_calibers; // thanks mike
   return (
     <Section
-      title={magazine_name}
-      buttons={(
-        <Button
-          content={<Icon name="fa-solid fa-butter" />}
-          tooltip={magazine_calibers}
-          tooltipPosition="right"
-          tooltipStyle="large" >
-        </Button>
-      )}>
+      title={<Tooltipify name={magazine_name} tip={thagomizer} big={1} />}>
+      <Box bold textAlign="center">
+        {chamberedCasing}
+      </Box>
       <ProgressBar
         value={shots_remaining}
         maxValue={shots_max} >
-        <Box color="label" bold textAlign="center">
+        <Box bold textAlign="center">
           {shots_remaining} / {shots_max}
         </Box>
       </ProgressBar>
@@ -157,14 +213,10 @@ export const MagazineInfoEmpty = (props, context) => {
   const {
     accepted_magazines,
   } = data;
+  const thagomizer = "accepts: " + accepted_magazines;
   return (
-    <Section title="NO MAGAZINE">
-      <Button
-        fluid
-        content="Accepts..."
-        tooltip={accepted_magazines}
-        tooltipPosition="right"
-        tooltipStyle="large" />
+    <Section title={<Tooltipify name="No Magazine" tip={thagomizer} big={1} />}>
+      <Tooltipify name="Insert one!" tip={thagomizer} />
     </Section>
   );
 };
@@ -172,13 +224,27 @@ export const MagazineInfoEmpty = (props, context) => {
 export const ProjectileInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
+    gun_chambered,
+    gun_is_chambered,
+    gun_chambered_loaded,
+  } = data;
+  if (!gun_is_chambered) {
+    return (
+      <Section title={<Tooltipify name="NOT CHAMBERED" tip="404: Ammo not found." big={1} />}>
+        <Tooltipify name="No Data Available!" tip={"This gun doesn't have anything loded!"} />
+      </Section>
+    );
+  };
+  const {
     casing_name,
+    casing_caliber,
     casing_pellets,
     casing_variance,
     casing_fire_power,
     casing_damage_threshold_penetration,
     projectile_name,
     projectile_damage,
+    projectile_damage_total,
     projectile_damage_type,
     projectile_flag,
     projectile_stamina,
@@ -188,84 +254,142 @@ export const ProjectileInfo = (props, context) => {
     projectile_supereffective_damage,
     projectile_supereffective_faction,
     projectile_wound_bonus,
-    projectile_bare_wound_bonus,
     projectile_sharpness,
     projectile_spread,
     projectile_armor_penetration,
     projectile_speed,
-    no_data,
-  } = data;
-  if (!casing_name) {
-    return (
-      <Section title="NOT LOADED">
-        No data available!
-      </Section>
-    );
-  };
-  if(!projectile_name) {
+  } = gun_chambered;
+  let itShoots = "It is " + casing_caliber + " and shoots " + casing_name + "!";
+  if(!gun_chambered_loaded) {
+    itShoots = itShoots + " At least it would if it wasn't empty.";
     return (
       <Section
-        title={casing_name} >
-        CASING EMPTY.
+        title={<Tooltipify name={casing_name} tip={itShoots} big={1} />} >
+        <Tooltipify name="No Data Available!" tip={"This casing is empty!"} />
       </Section>
     );
   };
-  let damage_text;
+  const damage_icon = <Damage2Icon type = {projectile_damage_type} armor = {projectile_flag} />;
+  let damage_text = <Tooltipify name={projectile_damage} tip={projectile_damage_total} />;
   if (casing_pellets > 1) {
-    damage_text = projectile_damage + "x" + casing_pellets + " " + projectile_damage_type;
-  } else {
-    damage_text = projectile_damage + " " + projectile_damage_type;
+    damage_text = damage_text + "x" + casing_pellets;
   };
-  const spread_text = "±" + (Number(projectile_spread) + Number(casing_variance)) + " degrees";
   return (
-    <Section
-      title={casing_name}
-      buttons={(
-        <Damage2Icon type = {projectile_damage_type} armor = {projectile_flag} />
-      )}>
-      <LabeledList>
-        <LabeledList.Item label="Damage">
-          {damage_text}
-        </LabeledList.Item>
-        <LabeledList.Item label="Stamina">
-          {projectile_stamina} <Button color="transparent" content="R3Bs" tooltip="Rubber Beany Baby Bags (at 200 meters)" tooltipStyle="large" />
-        </LabeledList.Item>
-        <LabeledList.Item label="AP">
-          {projectile_armor_penetration} <Button color="transparent" content="ABR" tooltip="Armor Bypass Ratio" tooltipStyle="large" />
-        </LabeledList.Item>
-        <LabeledList.Item label="DT Bypass">
-          {casing_damage_threshold_penetration} <Button color="transparent" content="mmNS" tooltip="Millimeters of Nash Steel" tooltipStyle="large" />
-        </LabeledList.Item>
-        <LabeledList.Item label="Spread">
-          {spread_text}
-        </LabeledList.Item>
-        <LabeledList.Item label="Recoil">
-          {projectile_recoil} <Button color="transparent" content="RIF" tooltip="Recoil Impulse Factor" tooltipStyle="large" />
-        </LabeledList.Item>
-        <LabeledList.Item label="Speed">
-          {projectile_hitscan ? "Fast" : projectile_speed}
-        </LabeledList.Item>
-        <LabeledList.Item label="Wound">
-          {projectile_wound_bonus} <Button color="transparent" content="cmS" tooltip="Centimeters of Suture" tooltipStyle="large" />
-        </LabeledList.Item>
-        <LabeledList.Item label="Bare Wound">
-          {projectile_bare_wound_bonus} <Button color="transparent" content="cmS" tooltip="Centimeters of Suture" tooltipStyle="large" />
-        </LabeledList.Item>
-        <LabeledList.Item label="Sharpness">
-          {projectile_sharpness}
-        </LabeledList.Item>
-        <LabeledList.Item label="Firepower">
-          {casing_fire_power} <Button color="transparent" content="dK" tooltip="Deci-Kellies (normalized)" tooltipStyle="large" />
-        </LabeledList.Item>
-        <LabeledList.Item label="Range">
-          {projectile_range}
-        </LabeledList.Item>
-        {projectile_supereffective_damage && (
-          <LabeledList.Item label="Supereffective">
-            {projectile_supereffective_damage} vs {projectile_supereffective_faction}
-          </LabeledList.Item>
+    <Section title={<Tooltipify name={casing_name} tip={itShoots} big={1} />}>
+      <Table
+        px="1rem"
+        className="candystripe"
+        width="100%">
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color='label'>
+            <Tooltipify name="Damage:" tip="Base damage." />
+          </Table.Cell>
+          <Table.Cell>
+            {damage_text} {damage_icon}
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="Stamina:" tip="Base stamina (non-lethal) damage." />
+          </Table.Cell>
+          <Table.Cell>
+            {projectile_stamina} <Tooltipify name="R3Bs" tip="Rubber Beany Baby Bags (at 200 meters)" fade={1} />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="Spread" tip="Base inaccuracy in degrees from straight ahead, before recoil is factored in." />
+          </Table.Cell>
+          <Table.Cell>
+            ± {Number(projectile_spread) + Number(casing_variance)}°
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="Recoil:" tip="Base recoil applied to the user when fired, before the gun's modifiers are factored in." />
+          </Table.Cell>
+          <Table.Cell>
+            {projectile_recoil} <Tooltipify name="RIF" tip="Recoil Impulse Factor" fade={1} />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold  textAlign="right" color='label'>
+            <Tooltipify name="Speed:" tip="How fast the projectile moves." />
+          </Table.Cell>
+          <Table.Cell>
+            {projectile_hitscan ? <Tooltipify name="Fast" tip="Hitscan!" fade={1} /> : projectile_speed}
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="DR Pierce:" tip="Amount of armor damage resistance (percent reduction) it ignores on the target." />
+          </Table.Cell>
+          <Table.Cell>
+            {projectile_armor_penetration} <Tooltipify name="ABR" tip="Armor Bypass Ratio" fade={1} />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="DT Pierce:" tip="Points of armor damage threshold (flat reduction) it ignores on the target." />
+          </Table.Cell>
+          <Table.Cell>
+            {casing_damage_threshold_penetration} <Tooltipify name="mmNS" tip="Millimeters of Nash Steel" fade={1} />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="Range:" tip="Max distance in tiles this projectile can travel." />
+          </Table.Cell>
+          <Table.Cell>
+            {projectile_range} <Tooltipify name="ftm" tip="Fathoms" fade={1} />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="Firepower" tip="Explosive force imparted to the gun. Mostly relevant to improvised and garbage guns." />
+          </Table.Cell>
+          <Table.Cell>
+            {casing_fire_power} <Tooltipify name="dK" tip="deciKellies" fade={1} />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="Wound" tip="Amount of extra wounding damage applied to a non-simple target (Anything that can have underwear)." />
+          </Table.Cell>
+          <Table.Cell>
+            {projectile_wound_bonus} <Tooltipify name="S-M" tip="Suture-Meters" fade={1} />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" color='label'>
+            <Tooltipify name="Sharpness" tip="Type of wound caused when enough damage is applied to a non-simple target (Anything that can wear a scarf)." />
+          </Table.Cell>
+          <Table.Cell>
+            {projectile_sharpness}
+          </Table.Cell>
+        </Table.Row>
+
+        {!!projectile_supereffective_damage && !!projectile_supereffective_faction && (
+          <Table.Row>
+            <Table.Cell bold textAlign="right" color='label'>
+              <Tooltipify name="Supereffective" tip="Extra damage caused to specific kinds of targets. Is always brute." />
+            </Table.Cell>
+            <Table.Cell>
+              {<Tooltipify name={projectile_supereffective_damage} tip={"Effective against: " + projectile_supereffective_faction} />}
+            </Table.Cell>
+          </Table.Row>
         )}
-      </LabeledList>
+      </Table>
     </Section>
   );
 };
@@ -273,101 +397,129 @@ export const ProjectileInfo = (props, context) => {
 const RecoilInfo = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    recoil_unwielded,
-    recoil_wielded,
-    total_recoil_unwielded,
-    total_recoil_wielded,
+    unmodded_recoil_unwielded,
+    modded_recoil_unwielded,
+    unmodded_recoil_wielded,
+    modded_recoil_wielded,
   } = data;
-  let unwielded_bar_number = recoil_unwielded;
-  let wielded_bar_number = recoil_wielded;
-  if (!!total_recoil_unwielded) {
-    unwielded_bar_number = total_recoil_unwielded;
-  };
-  if (!!total_recoil_wielded) {
-    wielded_bar_number = total_recoil_wielded;
-  };
+  const recoilTip = "These multiply the shot projectile's recoil calculations, based on whether you're wielding the gun or not. The higher the number, the more recoil you'll get. The recoil is calculated by multiplying the recoil of the projectile by the recoil of the gun."
   return (
     <Section
-      title="Recoil"
-      width="100%">
-      <Flex direction="row" wrap="wrap">
-        <Flex.Item>
-          1-Handed Base mult penis
-        </Flex.Item>
-        <Flex.Item>
-          <ProgressBar
-            value={recoil_unwielded}
-            maxValue={2}
-            ranges={{
-              good: [-Infinity, 0.9],
-              average: [0.9, 1.7],
-              bad: [1.7, Infinity],
-            }}>
-            <Box
-              width="100%"
-              textAlign="center">
-              {recoil_unwielded}x
-            </Box>
-          </ProgressBar>
-        </Flex.Item>
-        <Flex.Item>
-          1-Handed Modded mult
-        </Flex.Item>
-        <Flex.Item>
-          <ProgressBar
-            value={total_recoil_unwielded}
-            maxValue={2}
-            ranges={{
-              good: [-Infinity, 0.9],
-              average: [0.9, 1.7],
-              bad: [1.7, Infinity],
-            }}>
-            <Box
-              width="100%"
-              textAlign="center">
-              {unwielded_bar_number}x
-            </Box>
-          </ProgressBar>
-        </Flex.Item>
-        <Flex.Item>
-          2-Handed Base mult
-        </Flex.Item>
-        <Flex.Item>
-          <ProgressBar
-            value={recoil_unwielded}
-            maxValue={2}
-            ranges={{
-              good: [-Infinity, 0.9],
-              average: [0.9, 1.7],
-              bad: [1.7, Infinity],
-            }}>
-            <Box
-              width="100%"
-              textAlign="center">
-              {recoil_unwielded}x
-            </Box>
-          </ProgressBar>
-        </Flex.Item>
-        <Flex.Item>
-          2-Handed Modded mult
-        </Flex.Item>
-        <Flex.Item>
-          <ProgressBar
-            value={total_recoil_unwielded}
-            maxValue={2}
-            ranges={{
-              good: [-Infinity, 0.9],
-              average: [0.9, 1.7],
-              bad: [1.7, Infinity],
-            }}>
-            <Box
-              width="100%"
-              textAlign="center">
-              {unwielded_bar_number}x
-            </Box>
-          </ProgressBar>
-        </Flex.Item>
-      </Flex>
+      title={<Tooltipify name="Recoil Multipliers" tip={recoilTip} big={1} />}
+      width="100%"
+      textAlign="center">
+      <Table width="100%" textAlign="center">
+        <Table.Row>
+          <Table.Cell width="25%" bold={1}>
+            <Tooltipify name="1-HAND" tip="Unwielded recoil multipliers." />
+          </Table.Cell>
+          <Table.Cell>
+            <hr />
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row pb="1em">
+          <Table.Cell>
+            <Tooltipify name="Base" tip="Unwielded recoil multipliers, before attachments are factored in." />
+          </Table.Cell>
+          <Table.Cell>
+            <ProgressBar
+              value={unmodded_recoil_unwielded}
+              maxValue={2}
+              ranges={{
+                good: [-Infinity, 0.9],
+                average: [0.9, 1.7],
+                bad: [1.7, Infinity],
+              }}>
+              <Box
+                width="100%"
+                textAlign="center">
+                {unmodded_recoil_unwielded}x
+              </Box>
+            </ProgressBar>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+            <Tooltipify name="Modded" tip="Unwielded recoil multipliers, after attachments are factored in." />
+          </Table.Cell>
+          <Table.Cell>
+            <ProgressBar
+              value={modded_recoil_unwielded}
+              maxValue={2}
+              ranges={{
+                good: [-Infinity, 0.9],
+                average: [0.9, 1.7],
+                bad: [1.7, Infinity],
+              }}>
+              <Box
+                width="100%"
+                textAlign="center">
+                {modded_recoil_unwielded}x
+              </Box>
+            </ProgressBar>
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell>
+            <br />
+          </Table.Cell>
+          <Table.Cell>
+            <br />
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell width="25%" bold={1}>
+            <Tooltipify name="2-HAND" tip="Wielded recoil multipliers." />
+          </Table.Cell>
+          <Table.Cell>
+            <hr />
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+            <Tooltipify name="Base" tip="Wielded recoil multipliers, before attachments are factored in." />
+          </Table.Cell>
+          <Table.Cell>
+            <ProgressBar
+              value={unmodded_recoil_wielded}
+              maxValue={2}
+              ranges={{
+                good: [-Infinity, 0.9],
+                average: [0.9, 1.7],
+                bad: [1.7, Infinity],
+              }}>
+              <Box
+                width="100%"
+                textAlign="center">
+                {unmodded_recoil_wielded}x
+              </Box>
+            </ProgressBar>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+            <Tooltipify name="Modded" tip="Wielded recoil multipliers, after attachments are factored in." />
+          </Table.Cell>
+          <Table.Cell>
+            <ProgressBar
+              value={modded_recoil_wielded}
+              maxValue={2}
+              ranges={{
+                good: [-Infinity, 0.9],
+                average: [0.9, 1.7],
+                bad: [1.7, Infinity],
+              }}>
+              <Box
+                width="100%"
+                textAlign="center">
+                {modded_recoil_wielded}x
+              </Box>
+            </ProgressBar>
+          </Table.Cell>
+        </Table.Row>
+      </Table>
     </Section>
   );
 };
@@ -387,23 +539,25 @@ const FiremodeInfo = (props, context) => {
       </Section>
     );
   };
+  const FiremodeTip = "Firemodes are different ways to fire your gun. They can be switched between by clicking on them! The current firemode is highlighted in green.";
   return (
-    <Section title="Firemodes">
-      <Flex>
+    <Section title={<Tooltipify name="Firemodes" tip={FiremodeTip} big={1} />}>
+      <Stack fill vertical>
         {firemode_info.map(firemodevalue => (
-          <Flex.Item key={firemodevalue.index} basis="45%">
+          <Stack.Item key={firemodevalue.index}>
             <Button
+              fluid
               content={firemodevalue.name}
-              color={firemodevalue.current ? ('red') : (null)}
+              color={firemodevalue.current ? ('green') : (null)}
               tooltip={firemodevalue.desc}
               tooltipPosition="bottom"
               tooltipStyle="max-width: 300px"
               onClick={firemodevalue.current ? (null) : (() => act('firemode', {
                 firemode: firemodevalue.index,
               }))} />
-          </Flex.Item>
+          </Stack.Item>
         ))}
-      </Flex>
+      </Stack>
     </Section>
   );
 };
@@ -413,28 +567,27 @@ const AttachmentInfo = (props, context) => {
   const {
     attachments,
   } = data;
+  const AttachmentTip = "Attachments are things you can add to your gun to make it better*! They can be attached and detached by clicking on them.";
   if (!attachments.length) {
     return (
-      <Section title="Attachments">
-        <Box color="bad">
-          No attachments!
-        </Box>
+      <Section title={<Tooltipify name="Attachments" tip={AttachmentTip} big={1} />}>
+        <Tooltipify name="No attachments!" tip="Vanilla's a good flavor too." />
       </Section>
     );
   };
   return (
-    <Section title="Attachments">
-      <Flex>
+    <Section title={<Tooltipify name="Attachments" tip={AttachmentTip} big={1} />}>
+      <Stack fill vertical>
         {attachments.map(attachmentvalue => (
-          <Flex.Item key={attachmentvalue.name} grow={1}>
+          <Stack.Item key={attachmentvalue.name} grow={1}>
             <Button
               content={attachmentvalue.name}
               tooltip={attachmentvalue.desc}
               tooltipPosition="bottom"
               tooltipStyle="max-width: 300px" />
-          </Flex.Item>
+          </Stack.Item>
         ))}
-      </Flex>
+      </Stack>
     </Section>
   );
 };
@@ -447,80 +600,105 @@ const Damage2Icon = (props) => {
   let armor_text;
   switch (type) {
     case "brute":
-      type_icon = "fa-solid fa-hand-fist";
+      type_icon = "exclamation-triangle";
       type_text = "Brute";
       break;
-    case "burn":
-      type_icon = "fa-solid fa-fire";
+    case "fire":
+      type_icon = "fire";
       type_text = "Burn";
       break;
-    case "toxin":
-      type_icon = "fa-solid fa-biohazard";
+    case "tox":
+      type_icon = "biohazard";
       type_text = "Toxin";
       break;
     case "oxy":
-      type_icon = "fa-solid fa-lungs";
+      type_icon = "lungs";
       type_text = "Oxy";
       break;
     case "clone":
-      type_icon = "fa-regular fa-user";
+      type_icon = "user";
       type_text = "Clone";
       break;
     case "stamina":
-      type_icon = "fa-solid fa-bed";
+      type_icon = "bed";
       type_text = "Stamina";
       break;
     case "brain":
-      type_icon = "fa-solid fa-brain";
+      type_icon = "brain";
       type_text = "Brain";
       break;
-    case "radiation":
-      type_icon = "fa-solid fa-radiation";
-      type_text = "Radiation";
+    default:
+      armor_icon = "question";
+      armor_text = "Unknown";
   };
   switch (armor) {
     case "melee":
-      armor_icon = "fa-solid fa-hand-fist";
+      armor_icon = "exclamation-triangle";
       armor_text = "Melee";
       break;
     case "bullet":
-      armor_icon = "fa-solid fa-bullseye";
+      armor_icon = "bullseye";
       armor_text = "Bullet";
       break;
     case "laser":
-      armor_icon = "fa-solid fa-bullseye";
+      armor_icon = "barcode";
       armor_text = "Laser";
       break;
     case "energy":
-      armor_icon = "fa-solid fa-bolt";
+      armor_icon = "bolt";
       armor_text = "Energy";
       break;
     case "bomb":
-      armor_icon = "fa-solid fa-bomb";
+      armor_icon = "bomb";
       armor_text = "Bomb";
       break;
     case "bio":
-      armor_icon = "fa-solid fa-biohazard";
+      armor_icon = "biohazard";
       armor_text = "Bio";
       break;
     case "rad":
-      armor_icon = "fa-solid fa-radiation";
+      armor_icon = "radiation";
       armor_text = "Rad";
       break;
+    default:
+      armor_icon = "question";
+      armor_text = "Unknown";
   };
   return (
     <Fragment>
-      <Button
-        content={<Icon name={type_icon} />}
-        tooltip={type_text}
-        tooltipPosition="bottom"
-        tooltipStyle="large" />
-      <Button
-        content={<Icon name={armor_icon} />}
-        tooltip={armor_text}
-        tooltipPosition="bottom"
-        tooltipStyle="large" />
+      <Tooltipify name={<Icon name={type_icon} />} tip={type_text} />
+      <Tooltipify name={<Icon name={armor_icon} />} tip={armor_text} />
     </Fragment>
   );
 };
 
+const Tooltipify = (props) => {
+  const { name, tip, big, fade, bigger } = props;
+  let transparency = fade ? 0.5 : 1;
+  let sizefont = bigger ? "1.5em" : "1em";
+  if (big) {
+    return (
+      <Box bold fontSize="1em" textAlign="center" fluid>
+        <Button 
+          opacity={transparency}
+          backgroundColor="transparent"
+          px={0}
+          py={0}
+          content={name}
+          tooltip={tip}
+          tooltipPosition="bottom" />
+      </Box>
+    );
+  } else {
+    return (
+      <Button 
+        opacity={transparency}
+        backgroundColor="transparent"
+        px={0}
+        py={0}
+        content={name}
+        tooltip={tip}
+        tooltipPosition="bottom" />
+    );
+  };
+};
