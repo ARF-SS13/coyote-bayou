@@ -276,7 +276,7 @@ export const ProjectileInfo = (props, context) => {
       </Section>
     );
   }
-  // WHY YES LINTERS WHY EVER WOULD I NEED 81 CHARACTERS ON A LINE I AM SUCH A NOOB
+  // WHY YES LINTES WHY EVER WOULD I NEED 81 CHARACTERS ON A LINE I AM SUH A NOOB
   const pD = projectile_damage;
   const pDTP = projectile_damage_total;
   const pDTy = projectile_damage_type;
