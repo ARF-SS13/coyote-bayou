@@ -66,8 +66,9 @@ export const RangedInfo = (props, context) => {
     const pdv = gun_chambered.projectile_damage;
     const gdmg = gun_damage_multiplier;
     let ufdv = Number(pdv) * Number(gdmg);
-    if(gun_chambered.pellets > 1) {
-      ufdv = ufdv * Number(plts); // oh yeah thats much more readable, thanks linter
+    if (gun_chambered.pellets > 1) {
+      // oh yeah thats much more readable, thanks linter
+      ufdv = ufdv * Number(plts); 
       damage_value = ufdv.toFixed(1) + " = (" + pdv + "x" + plts + ")x" + fxdm;
     } else {
       damage_value = ufdv.toFixed(1) + " = " + pdv + " x " + fxdm;
@@ -82,7 +83,7 @@ export const RangedInfo = (props, context) => {
         className="candystripe"
         width="100%">
         <Table.Row>
-          <Table.Cell bold textAlign="right" width="35%" color='label'>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
             <Tooltipify name={"Damage: "} tip={"Total Damage = (Projectile Base Damage * Pellets) * Gun Damage Multiplier."} />
           </Table.Cell>
           <Table.Cell>
@@ -91,7 +92,7 @@ export const RangedInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" width="35%" color='label'>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
             <Tooltipify name={"AP Mult: "} tip={"Multiplier to the AP on any projectile shot."} />
           </Table.Cell>
           <Table.Cell>
@@ -100,7 +101,7 @@ export const RangedInfo = (props, context) => {
         </Table.Row>
 
         <Table.Row>
-          <Table.Cell bold textAlign="right" width="35%" color='label'>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
             <Tooltipify name={"Fire Rate: "} tip={"Rounds per minute."} />
           </Table.Cell>
           <Table.Cell>
@@ -189,13 +190,13 @@ export const MagazineInfoLoaded = (props, context) => {
     gun_chambered,
   } = data;
   let chamberedCasing;
-  const cN = gun_chambered.casing_name; // FUCK YOU ESLINT IM NOT AFRAID OF LONG LINES
+  const cN = gun_chambered.casing_name; // FUCK YOU ESLINT IM NOT AFRAID OF LO
   const cC = gun_chambered.casing_caliber;
   if (gun_chambered.casing_name) {
     chamberedCasing = <Tooltipify name={cN} tip={cC} />;
   } else {
     chamberedCasing = <Tooltipify name="Not Chambered!" tip="Bullet goes here." />;
-  };
+  }
   const thagomizer = "accepts: " + magazine_calibers; // thanks mike
   return (
     <Section
@@ -240,7 +241,7 @@ export const ProjectileInfo = (props, context) => {
         <Tooltipify name="No Data Available!" tip={"This gun doesn't have anything loded!"} />
       </Section>
     );
-  };
+  }
   const {
     casing_name,
     casing_caliber,
@@ -275,7 +276,8 @@ export const ProjectileInfo = (props, context) => {
       </Section>
     );
   }
-  const pD = projectile_damage; // WHY YES LINTERS WHY EVER WOULD I NEED 81 CHARACTERS ON A LINE I AM SUCH A NOOB FOR USING LONG VARIABLE NAMES
+  // WHY YES LINTERS WHY EVER WOULD I NEED 81 CHARACTERS ON A LINE I AM SUCH A NOOB
+  const pD = projectile_damage;
   const pDTP = projectile_damage_total;
   const pDTy = projectile_damage_type;
   const pDf = projectile_flag;
@@ -283,7 +285,7 @@ export const ProjectileInfo = (props, context) => {
   let damage_text = <Tooltipify name={pD} tip={pDTP} />;
   if (casing_pellets > 1) {
     damage_text = damage_text + "x" + casing_pellets;
-  };
+  }
   return (
     <Section title={<Tooltipify name={casing_name} tip={itShoots} big={1} />}>
       <Table
@@ -389,8 +391,8 @@ export const ProjectileInfo = (props, context) => {
           </Table.Cell>
         </Table.Row>
 
-        {!!projectile_supereffective_damage &&
-        !!projectile_supereffective_faction && (
+        {!!projectile_supereffective_damage 
+        && !!projectile_supereffective_faction && (
           <Table.Row>
             <Table.Cell bold textAlign="right" color="label">
               <Tooltipify name="Supereffective" tip="Extra damage caused to specific kinds of targets. Is always brute." />
@@ -714,5 +716,5 @@ const Tooltipify = (props) => {
         tooltip={tip}
         tooltipPosition="bottom" />
     );
-  };
-}
+  }
+};
