@@ -57,6 +57,13 @@
 		recharge_newshot() //and try to charge a new shot
 		update_icon()
 
+/obj/item/gun/energy/admin_fill_gun()
+	if(!cell)
+		cell = new cell_type(src)
+	cell?.give(INFINITY) // it'll scale down to the maxcharge
+	update_icon()
+	return TRUE
+
 /obj/item/gun/energy/get_cell()
 	return cell
 

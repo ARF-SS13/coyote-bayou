@@ -279,8 +279,11 @@
 		G.burst_shot_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.slowdown *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
-	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
-		G.recoil_tag = SSrecoil.modify_gun_recoil(G.recoil_tag, list(weapon_upgrades[GUN_UPGRADE_RECOIL], weapon_upgrades[GUN_UPGRADE_RECOIL]))
+	if(LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_1H) || LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_2H))
+		var/list/recoil_mods = list(
+			GUN_UPGRADE_RECOIL_1H = LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_1H) || 1,
+			GUN_UPGRADE_RECOIL_2H = LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_2H) || 1)
+		G.recoil_tag = SSrecoil.modify_gun_recoil(G.recoil_tag, recoil_mods)
 	//if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 	//	G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
@@ -481,12 +484,19 @@
 		if(weapon_upgrades[GUN_UPGRADE_DAMAGE_PSY])
 			examine_list += span_notice("Modifies projectile psy damage by [weapon_upgrades[GUN_UPGRADE_DAMAGE_PSY]] damage points")
 
-		if(weapon_upgrades[GUN_UPGRADE_RECOIL])
-			var/amount = weapon_upgrades[GUN_UPGRADE_RECOIL]-1
+		if(weapon_upgrades[GUN_UPGRADE_RECOIL_1H])
+			var/amount = ((weapon_upgrades[GUN_UPGRADE_RECOIL_1H] - 1) * 100)
 			if(amount > 0)
-				examine_list += span_warning("Increases kickback by [amount*100]%")
+				examine_list += span_warning("Increases one-handed recoil by [amount*100]%")
 			else
-				examine_list += span_notice("Decreases kickback by [abs(amount*100)]%")
+				examine_list += span_notice("Decreases one-handed recoil by [abs(amount*100)]%")
+
+		if(weapon_upgrades[GUN_UPGRADE_RECOIL_2H])
+			var/amount = ((weapon_upgrades[GUN_UPGRADE_RECOIL_2H] - 1) * 100)
+			if(amount > 0)
+				examine_list += span_warning("Increases two-handed recoil by [amount*100]%")
+			else
+				examine_list += span_notice("Decreases two-handed recoil by [abs(amount*100)]%")
 
 		if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 			var/amount = weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]-1

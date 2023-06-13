@@ -33,6 +33,14 @@
 	fuse_loop = new(list(src), FALSE)
 	chambered = new /obj/item/ammo_casing/caseless/flintlock(src)
 
+/obj/item/gun/flintlock/admin_fill_gun()
+	if(chambered)
+		return
+	chambered = new /obj/item/ammo_casing/caseless/flintlock(src)
+	cocked = TRUE
+	update_icon()
+	return TRUE
+
 /obj/item/gun/flintlock/attack_self(mob/living/user)
 	cock(user)
 

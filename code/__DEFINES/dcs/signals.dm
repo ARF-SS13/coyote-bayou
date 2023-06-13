@@ -129,6 +129,9 @@
 ///When a thing is adminspawned, signal
 #define COMSIG_ATOM_POST_ADMIN_SPAWN "atom_post_admin_spawn"
 
+///When a gun/mag thing is told to admin reload, signal
+#define COMSIG_GUN_MAG_ADMIN_RELOAD "gun_mag_admin_reload"
+
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"		//from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"		//called when teleporting into a protected turf: (channel, turf/origin, turf/destination)
 	#define COMPONENT_BLOCK_TELEPORT 1

@@ -259,6 +259,14 @@ ATTACHMENTS
 		hud_actions -= action
 		qdel(action)
 
+/obj/item/gun/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_fill_gun)
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_fill_gun)
+
+/obj/item/gun/proc/admin_fill_gun()
+	return
+
 /obj/item/gun/Destroy()
 	if(pin)
 		QDEL_NULL(pin)
@@ -1255,7 +1263,7 @@ ATTACHMENTS
 	armour_penetration = initial(armour_penetration)
 	sharpness = initial(sharpness)
 	braced = initial(braced)
-	recoil_tag = SSrecoil.give_recoil_tag(init_recoil[1], init_recoil[2])
+	recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 
 	//attack_verb = list()
 	initialize_firemodes()
@@ -1620,34 +1628,6 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/gun/ballistic/automatic/shotgun/pancor(src)
 	new /obj/item/ammo_box/magazine/d12g/buck(src)
 	new /obj/item/ammo_box/magazine/d12g/buck(src)
-
-
-/obj/item/storage/backpack/debug_gun_kit_mods
-	name = "Bag of Gunstuff"
-	desc = "Cool shit for testing various guns!"
-
-/obj/item/storage/backpack/debug_gun_kit_mods/PopulateContents()
-	. = ..()
-	new /obj/item/screwdriver/abductor(src)
-	new /obj/item/crowbar/abductor(src)
-	new /obj/item/weldingtool/advanced(src)
-	new /obj/item/gun/ballistic/automatic/smg/american180(src)
-	new /obj/item/ammo_box/magazine/m22smg(src)
-	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
-	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
-	new /obj/item/gun/ballistic/automatic/shotgun/pancor(src)
-	new /obj/item/ammo_box/magazine/d12g/buck(src)
-	new /obj/item/ammo_box/magazine/d12g/buck(src)
-	new /obj/item/gun_upgrade/barrel/forged(src)
-	new /obj/item/gun_upgrade/barrel/forged(src)
-	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
-	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
-	new /obj/item/tool_upgrade/productivity/red_paint(src)
-	new /obj/item/tool_upgrade/productivity/red_paint(src)
-	new /obj/item/tool_upgrade/refinement/ported_barrel(src)
-	new /obj/item/tool_upgrade/refinement/ported_barrel(src)
-
 
 ///////////////////
 //GUNCODE ARCHIVE//

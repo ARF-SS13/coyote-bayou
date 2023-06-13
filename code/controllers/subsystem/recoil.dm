@@ -378,3 +378,137 @@ SUBSYSTEM_DEF(recoil)
 		to_chat(walker, "Adding [base_recoil] movement recoil.")
 		to_chat(walker, "Move recoil: [move_recoil] max(2 - [walker.last_move_delay]). Stiffness: [total_stffness] + [highest_stiffness] / [num_stiff]. Gun heaviness: [gun_heaviness_recoil] max([G?.slowdown] - 0.10).")
 	add_recoil(walker, null, round(base_recoil, 0.1))
+
+/obj/item/storage/debug/debug_gun_mods
+	name = "Bag of Debug Gun Mods"
+	desc = "A cool bag of upgrades and guns for devs to test weapon mods, recoil, etc!"
+
+/obj/item/storage/debug/debug_gun_mods/PopulateContents()
+	. = ..()
+	new /obj/item/storage/debug_box/guns_ballistic_1(src)
+	new /obj/item/storage/debug_box/ammo_ballistic_1(src)
+	new /obj/item/storage/debug_box/guns_energy_1(src)
+	new /obj/item/storage/debug_box/ammo_energy_1(src)
+	new /obj/item/storage/debug_box/gun_mods_recoil(src)
+	new /obj/item/storage/debug_box/tools(src)
+
+/obj/item/storage/debug_box/guns_ballistic_1
+	name = "Debug Guns"
+	desc = "A box of debug guns for devs to test weapon mods, recoil, etc!"
+
+/obj/item/storage/debug_box/guns_ballistic_1/PopulateContents()
+	. = ..()
+	var/list/spawned = list()
+	spawned += new /obj/item/gun/ballistic/automatic/smg/american180(src)
+	spawned += new /obj/item/gun/ballistic/automatic/assault_rifle(src)
+	spawned += new /obj/item/gun/ballistic/automatic/shotgun/pancor(src)
+	spawned += new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	spawned += new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	for(var/obj/item/thingy in spawned)
+		SEND_SIGNAL(thingy, COMSIG_GUN_MAG_ADMIN_RELOAD)
+
+/obj/item/storage/debug_box/ammo_ballistic_1
+	name = "Debug Ammo"
+	desc = "A box of debug ammo for devs to test weapon mods, recoil, etc!"
+
+/obj/item/storage/debug_box/ammo_ballistic_1/PopulateContents()
+	. = ..()
+	var/list/spawned = list()
+	spawned += new /obj/item/ammo_box/magazine/m22smg(src)
+	spawned += new /obj/item/ammo_box/magazine/m22smg(src)
+	spawned += new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	spawned += new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	spawned += new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	spawned += new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	spawned += new /obj/item/ammo_box/magazine/d12g/buck(src)
+	spawned += new /obj/item/ammo_box/magazine/d12g/buck(src)
+	spawned += new /obj/item/ammo_box/magazine/d12g/buck(src)
+	spawned += new /obj/item/ammo_box/magazine/d12g/buck(src)
+	for(var/obj/item/thingy in spawned)
+		SEND_SIGNAL(thingy, COMSIG_GUN_MAG_ADMIN_RELOAD)
+
+/obj/item/storage/debug_box/guns_energy_1
+	name = "Debug Energy Guns"
+	desc = "A box of debug energy guns for devs to test weapon mods, recoil, etc!"
+
+/obj/item/storage/debug_box/guns_energy_1/PopulateContents()
+	. = ..()
+	new /obj/item/gun/energy/laser/wattz2k(src)
+	new /obj/item/gun/energy/laser/wattz2ks(src)
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/gun/energy/laser/wattzs(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/gun/energy/laser/auto(src)
+	new /obj/item/gun/energy/laser/auto(src)
+	new /obj/item/gun/energy/laser/auto/oasis(src)
+	new /obj/item/gun/energy/laser/auto/oasis(src)
+	new /obj/item/gun/energy/laser/rcw(src)
+
+/obj/item/storage/debug_box/ammo_energy_1
+	name = "Debug Energy Ammo"
+	desc = "A box of debug energy ammo for devs to test weapon mods, recoil, etc!"
+
+/obj/item/storage/debug_box/ammo_energy_1/PopulateContents()
+	. = ..()
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+
+/obj/item/storage/debug_box/gun_mods_recoil
+	name = "Debug Gun Mods"
+	desc = "A box of debug gun mods for devs to test weapon mods, recoil, etc!"
+
+/obj/item/storage/debug_box/gun_mods_recoil/PopulateContents()
+	. = ..()
+	new /obj/item/gun_upgrade/underbarrel/bipod(src)
+	new /obj/item/gun_upgrade/underbarrel/bipod(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
+	new /obj/item/gun_upgrade/barrel/excruciator(src)
+	new /obj/item/gun_upgrade/barrel/excruciator(src)
+	new /obj/item/gun_upgrade/barrel/excruciator(src)
+	new /obj/item/gun_upgrade/barrel/excruciator(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/gun_upgrade/scope/killer(src)
+	new /obj/item/gun_upgrade/scope/killer(src)
+	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
+	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
+	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
+	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src)
+	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src)
+	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src)
+
+/obj/item/storage/debug_box/tools
+	name = "Debug Tools"
+	desc = "A box of debug tools for devs to test stuff!"
+
+/obj/item/storage/debug_box/tools/PopulateContents()
+	. = ..()
+	new /obj/item/screwdriver/power(src)
+	new /obj/item/screwdriver/power(src)
+	new /obj/item/crowbar/power(src)
+	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/advanced(src)
+	new /obj/item/weldingtool/advanced(src)
+	new /obj/item/multitool/advanced(src)
+	new /obj/item/multitool/advanced(src)
+	new /obj/item/stack/cable_coil/thirty(src)
+	new /obj/item/stack/cable_coil/thirty(src)

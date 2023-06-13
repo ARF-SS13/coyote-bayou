@@ -48,6 +48,11 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	chamber_round()
 	update_icon()
 
+/obj/item/gun/ballistic/admin_fill_gun()
+	if(!istype(magazine))
+		return
+	return SEND_SIGNAL(magazine, COMSIG_GUN_MAG_ADMIN_RELOAD) // get relayed, noob
+
 /obj/item/gun/ballistic/update_icon_state()
 	var/datum/reskin/gun/myskin = get_current_skin()
 	if(myskin)
