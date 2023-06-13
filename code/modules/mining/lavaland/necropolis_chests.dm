@@ -536,7 +536,6 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	pass_flags = PASSTABLE
 	damage = 25
-	armour_penetration = 1
 	damage_type = BRUTE
 	hitsound = 'sound/effects/splat.ogg'
 	knockdown = 30

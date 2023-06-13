@@ -697,13 +697,13 @@
 	desc = "A pre war japanese cap used for soldiers in the Japanese defense force for pacific and jungle combat."
 	icon_state = "japan_cap"
 	item_state = "japan_cap"
-
+/*
 /obj/item/clothing/head/tribal_helmant
 	name = "tribal helmet"
 	desc = "A helmet, for tribals! Probably."
 	icon_state = "tribal_helmant"
 	item_state = "tribal_helmant"
-
+*/
 /obj/item/clothing/head/adrian
 	name = "adrian helmet"
 	desc = "A helmet, amazing!"

@@ -46,6 +46,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/spawned_by_ckey
 	/// hold off on spawning, gotta set it up first
 	var/delay_start = FALSE
+	/// Some cool factions to override the default ones
+	var/list/faction = list()
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -53,7 +55,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	AddComponent(/datum/component/spawner,\
 		_mob_types = mob_types,\
 		_spawn_time = spawn_time,\
-		_faction = list(),\
+		_faction = faction,\
 		_spawn_text = spawn_text,\
 		_max_mobs = max_mobs,\
 		_range = radius,\

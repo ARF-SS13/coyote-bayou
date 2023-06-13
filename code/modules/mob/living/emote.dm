@@ -616,7 +616,7 @@
 		to_chat(user, "You cannot send IC messages (muted).")
 		return FALSE
 	else if(!params)
-		var/custom_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "Custom Emote", null, MAX_MESSAGE_LEN)
+		var/custom_emote = stripped_multiline_input_or_reflect(user, EMOTE_HEADER_TEXT, "Custom Emote", null, MAX_MESSAGE_LEN)
 		if(!custom_emote)
 			return FALSE
 		if(check_invalid(user, custom_emote))

@@ -364,7 +364,6 @@
 	can_ghost_into = FALSE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
-	armour_penetration = 0.1
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier

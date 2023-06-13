@@ -169,6 +169,17 @@
 	new /obj/item/pda/medical(src)
 	new /obj/item/gun/energy/laser/pistol(src)
 
+/datum/gear/donator/kits/arandomhyena
+	name = "Old Sergant's Kit"
+	path = /obj/item/storage/box/large/custom_kit/arandomhyena
+	ckeywhitelist = list("ARandomHyena")
+
+/obj/item/storage/box/large/custom_kit/arandomhyena/PopulateContents()
+	new /obj/item/clothing/head/f13/enclave/peacekeeper(src)
+	new /obj/item/clothing/accessory/enclave/sergeant(src)
+	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
+	new /obj/item/clothing/head/f13/enclave/peacekeeper(src)
+
 // B
 
 /datum/gear/donator/kits/baticon
@@ -575,9 +586,9 @@
 	ckeywhitelist = list("jackson1112")
 
 /obj/item/storage/box/large/custom_kit/jackson1112/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
-	new /obj/item/ammo_box/magazine/m556/rifle(src)
-	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/gun/ballistic/automatic/smg/cg45/worn(src)
+	new /obj/item/ammo_box/magazine/cg45(src)
+	new /obj/item/ammo_box/magazine/cg45(src)
 	new /obj/item/melee/onehanded/knife/bayonet(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/storage/box/ration/ranger_breakfast(src)

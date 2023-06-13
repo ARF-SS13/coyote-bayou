@@ -97,6 +97,15 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	/datum/crafting_recipe/scrap_pa,
 	/datum/crafting_recipe/scrap_pa_helm))
 
+GLOBAL_LIST_INIT(weapons_of_texarkana, list(
+	/datum/crafting_recipe/policepistol,
+	/datum/crafting_recipe/durathread_vest,
+	/datum/crafting_recipe/policerifle,
+	/datum/crafting_recipe/steelbib/heavy,
+	/datum/crafting_recipe/armyhelmetheavy,
+	/datum/crafting_recipe/huntingshotgun))
+
+
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
 
@@ -370,6 +379,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	if(!H.mind.learned_recipes)
 		H.mind.learned_recipes = list()
 	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
+	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
 
 /datum/quirk/gunsmith/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -805,6 +815,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
 	locked =  FALSE
 
+/*
 /datum/quirk/thickskin
 	name = "Thick Skin"
 	desc = "You just don't get splinters, or shrapnel for that matter.  BROKEN AS OF 2/9/23, TAKE LICK HEALING TO CLOSE WOUNDS."
@@ -813,6 +824,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	gain_text = span_notice("Your skin feels way stronger.")
 	lose_text = span_danger("You feel like your skin is about as tough as tissue paper.")
 	locked =  TRUE
+*/
 
 /datum/quirk/quickercarry
 	name = "Quicker Carry"

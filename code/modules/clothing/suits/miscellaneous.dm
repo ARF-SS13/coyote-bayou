@@ -1413,3 +1413,10 @@
 	icon_state = "rancher-puffer"
 	item_state = "rancher-puffer"
 	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/toggle/labcoat/detvest
+	name = "Colorable Detective Vest"
+	desc = "A colorable detective vest."
+	icon_state = "det_vest"
+	item_state = "det_vest"
+	armor = ARMOR_VALUE_LIGHT

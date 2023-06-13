@@ -113,7 +113,6 @@
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/weapons/blade1.ogg'
-	armour_penetration = 0.6
 	light_color = LIGHT_COLOR_RED
 	status_flags = 0
 	light_system = MOVABLE_LIGHT

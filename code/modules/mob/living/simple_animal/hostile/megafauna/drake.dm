@@ -51,7 +51,6 @@ Difficulty: Medium
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	speak_emote = list("roars")
-	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 40
 	speed = 1
@@ -253,7 +252,7 @@ Difficulty: Medium
 	for(var/mob/living/L in orange(1, src))
 		if(L.stat)
 			visible_message(span_warning("[src] slams down on [L], crushing [L.p_them()]!"))
-			L.gib()
+			L.adjustBruteLoss(30)
 		else
 			L.adjustBruteLoss(75)
 			if(L && !QDELETED(L)) // Some mobs are deleted on death

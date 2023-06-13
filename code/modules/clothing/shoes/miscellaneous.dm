@@ -520,3 +520,14 @@
 	name = "long puttees"
 	desc = "Long woolen leg wraps used sense the first world war"
 	icon_state = "putt"
+
+/obj/item/clothing/shoes/cowboy/alt
+	name = "Cowboy Boots, alt"
+	desc = "A set of cowboy boots. Yeehaw!"
+	icon_state = "cowboy_alt"
+
+/obj/item/clothing/shoes/cowboy/ranger
+	name = "Ranger Cowboy"
+	desc = "A set of cowboy boots. Yeehaw!"
+	icon_state = "cowboy_ranger"
+
