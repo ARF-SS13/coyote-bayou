@@ -140,6 +140,7 @@
 				visible_message(span_notice("\The dead body of the [src] decomposes!"))
 				gib(FALSE, FALSE, FALSE, TRUE)
 		return
+	queue_naptime()
 	check_health()
 
 /mob/living/simple_animal/hostile/proc/check_health()
@@ -198,13 +199,19 @@
 
 /mob/living/simple_animal/hostile/toggle_ai(togglestatus)
 	. = ..()
-	if(consider_despawning())
-		if(!lonely_timer_id)
-			lonely_timer_id = addtimer(CALLBACK(src, .proc/queue_unbirth), 30 SECONDS, TIMER_STOPPABLE)
-	else
+	queue_naptime()
+
+/mob/living/simple_animal/hostile/proc/queue_naptime()
+	var/go2bed = consider_despawning()
+	if(go2bed)
 		if(lonely_timer_id)
-			deltimer(lonely_timer_id)
-			lonely_timer_id = null	
+			return
+		lonely_timer_id = addtimer(CALLBACK(src, .proc/queue_unbirth), 30 SECONDS, TIMER_STOPPABLE)
+	else
+		if(!lonely_timer_id)
+			return
+		deltimer(lonely_timer_id)
+		lonely_timer_id = null	
 		unqueue_unbirth()
 
 /mob/living/simple_animal/hostile/proc/consider_despawning()

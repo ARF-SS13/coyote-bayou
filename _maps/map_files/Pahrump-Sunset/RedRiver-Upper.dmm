@@ -5023,6 +5023,9 @@
 /area/f13/caves)
 "Yt" = (
 /obj/structure/table,
+/obj/machinery/cell_charger{
+	pixel_y = 7
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood1-broken"
 	},

@@ -57,6 +57,8 @@
 		new type(loc, max_amount, FALSE)
 	if(!merge_type)
 		merge_type = type
+	if(amount < 1) // tired of this shit
+		return INITIALIZE_HINT_QDEL
 	if(custom_materials && custom_materials.len)
 		mats_per_unit = list()
 		var/in_process_mat_list = custom_materials.Copy()
@@ -161,7 +163,7 @@
 	. = ..()
 	if (!recipes)
 		return
-	if (!src || get_amount() <= 0)
+	if (!src || get_amount() < 1)
 		user << browse(null, "window=stack")
 	user.set_machine(src) //for correct work of onclose
 	var/list/recipe_list = recipes
@@ -434,6 +436,14 @@
 		CRASH("Stack merge attempted on qdeleted source stack.")
 	if(target_stack == src)
 		CRASH("Stack attempted to merge into itself.")
+	if(!istype(target_stack))
+		CRASH("Stack merge attempted on non-stack target stack. (target_stack = [target_stack]) (src = [src]) motherfucking stacks")
+	if(amount < 1)
+		qdel(src)
+		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. Fuck. Off.")
+	if(target_stack.amount < 1)
+		qdel(target_stack)
+		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. This one the target stack. Fuck. Off.")
 
 	var/transfer = get_amount()
 	if(target_stack.is_cyborg)

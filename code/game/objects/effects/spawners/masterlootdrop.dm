@@ -46,7 +46,10 @@
 		/obj/effect/spawner/lootdrop/f13/common_money = 1,
 		/obj/effect/spawner/lootdrop/f13/common_bombs = 1,
 		/obj/effect/spawner/lootdrop/f13/common_food = 1,
-		/obj/effect/spawner/lootdrop/f13/trash = 15,
+	)
+	downtier_chance = 50 // 50% chance to downtier to trash
+	downtier_list = list(
+		/obj/effect/spawner/lootdrop/f13/trash = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon
@@ -67,28 +70,77 @@
 		/obj/effect/spawner/lootdrop/f13/uncommon_money = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_bombs = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_food = 1,
-		/obj/effect/spawner/lootdrop/f13/common = 15,
+	)
+	uptier_chance = 1 // 1% chance to uptier to a restricted rare
+	uptier_list = list(
+		/obj/effect/spawner/lootdrop/f13/uncommon_upgrade = 1,
+	)
+	downtier_chance = 10 // 10% chance to downtier to common
+	downtier_list = list(
+		/obj/effect/spawner/lootdrop/f13/common = 1,
+	)
+	snap_category = "UNCOMMON"
+
+/obj/effect/spawner/lootdrop/f13/uncommon_upgrade
+	name = "uncommon loot that rolled an upgrade to a limited rare tier, found in dungeons. Do not place in the map!!!"
+	icon_state = "x6"
+	loot = list(
+		/obj/effect/spawner/lootdrop/f13/rare_primary = 1, // 0.25% chance to roll a rare primary, on top of the 1% chance to uptier. This means 0.25% of 1% = 0.0025% chance to roll a rare primary. goot look!
+		/obj/effect/spawner/lootdrop/f13/rare_secondary = 100, // 25% chance to roll a rare secondary
+		/obj/effect/spawner/lootdrop/f13/rare_tertiary = 300, // 75% chance to roll a rare tertiary
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare
 	name = "rare loot, found in dangerous dungeons"
 	icon_state = "x7"
 	loot = list(
+		/obj/effect/spawner/lootdrop/f13/rare_primary = 4,
+		/obj/effect/spawner/lootdrop/f13/rare_secondary = 5,
+		/obj/effect/spawner/lootdrop/f13/rare_tertiary = 5,
+	)
+	downtier_chance = 10 // 10% chance to downtier to uncommon (and no lower)
+	downtier_list = list(
+		/obj/effect/spawner/lootdrop/f13/uncommon = 1,
+	)
+	snap_category = "RARE"
+
+
+/obj/effect/spawner/lootdrop/f13/rare_primary
+	name = "rare high-value loot, found in dangerous dungeons"
+	icon_state = "x7"
+	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_weps = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_armor = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_mods = 1,
+	)
+
+/// Generally decent stuff, but not as good as the rare primary loot. Shouldnt affect tiering if given in uncommon loot rarely.
+/obj/effect/spawner/lootdrop/f13/rare_secondary
+	name = "rare but less valuable loot, found in dangerous dungeons or as a rare upgrade to uncommon loot"
+	icon_state = "x7"
+	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_mags = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_ammo = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_medicine = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_drugs = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_armor = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_toys = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_mats = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_mods = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_parts = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_tools = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_money = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_bombs = 1,
+	)
+
+/// Generally decent stuff, but are mostly consumables or stuff mainly just valuable for selling. Shouldnt affect tiering if given in uncommon loot rarely.
+/obj/effect/spawner/lootdrop/f13/rare_tertiary
+	name = "rare but generally trash loot, found in dangerous dungeons or as a rare additional drop to uncommon+ loot"
+	icon_state = "x7"
+	loot = list(
+		/obj/effect/spawner/lootdrop/f13/rare_medicine = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_drugs = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_toys = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_parts = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_money = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_food = 1,
-		/obj/effect/spawner/lootdrop/f13/uncommon = 15,
 	)
 
 ////////////////////////////
@@ -474,7 +526,7 @@
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
-		/obj/item/sord = 20, //for the meme
+		/obj/item/sord = 5, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
@@ -612,15 +664,14 @@
 		/obj/item/ammo_box/shotgun/buck = 4,
 		/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/ammo_box/a40mm/buck = 5,
+		/obj/effect/spawner/lootdrop/f13/rare_ammo = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_ammo
 	name = "rare ammo boxes"
 	loot = list(
-		/obj/item/ammo_box/c10mm = 5,
 		/obj/item/ammo_box/a556 = 5,
 		/obj/item/ammo_box/c45 = 5,
-		/obj/item/ammo_box/c9mm = 5,
 		/obj/item/ammo_box/a308box = 5,
 		/obj/item/ammo_box/a3006box = 5,
 		/obj/item/ammo_box/m44box = 5,

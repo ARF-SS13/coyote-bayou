@@ -4,7 +4,6 @@
 	damage = 0
 	damage_type = OXY
 	nodamage = 1
-	armour_penetration = 1
 	flag = "magic"
 
 /obj/item/projectile/magic/death
@@ -319,7 +318,6 @@
 	damage = 20
 	damage_type = BURN
 	nodamage = 0
-	armour_penetration = 0
 	flag = "magic"
 	hitsound = 'sound/weapons/barragespellhit.ogg'
 

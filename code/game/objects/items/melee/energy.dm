@@ -390,7 +390,6 @@
 	throw_range = 5
 	sharpness = SHARP_EDGED
 	embedding = list("embedded_pain_multiplier" = 6, "embed_chance" = 20, "embedded_fall_chance" = 60)
-	armour_penetration = 0.2
 	block_chance = 35
 	light_color = "#37FFF7"
 	actions_types = list()
@@ -485,7 +484,6 @@
 			It appears to have a wooden grip and a shaved down guard."
 	icon_state = "cxsword_hilt_traitor"
 	force_on = 40
-	armour_penetration = 0.65
 	embedding = list("embedded_pain_multiplier" = 10, "embed_chance" = 75, "embedded_fall_chance" = 0, "embedded_impact_pain_multiplier" = 10)
 	block_chance = 50
 	hitsound_on = 'sound/weapons/blade1.ogg'

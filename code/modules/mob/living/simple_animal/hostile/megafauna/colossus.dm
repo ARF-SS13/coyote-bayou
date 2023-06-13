@@ -36,7 +36,6 @@ Difficulty: Very Hard
 	friendly_verb_simple = "stare down"
 	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	speak_emote = list("roars")
-	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 40
 	speed = 1
@@ -52,9 +51,11 @@ Difficulty: Very Hard
 	deathmessage = "disintegrates, leaving a glowing core in its wake."
 	death_sound = 'sound/magic/demon_dies.ogg'
 
+/*
 /mob/living/simple_animal/hostile/megafauna/colossus/devour(mob/living/L)
 	visible_message(span_colossus("[src] disintegrates [L]!"))
 	L.dust()
+*/
 
 /mob/living/simple_animal/hostile/megafauna/colossus/OpenFire()
 	anger_modifier = clamp(((maxHealth - health)/50),0,20)
@@ -210,7 +211,6 @@ Difficulty: Very Hard
 	name ="death bolt"
 	icon_state= "chronobolt"
 	damage = 25
-	armour_penetration = 1
 	pixels_per_second = TILES_TO_PIXELS(5)
 	eyeblur = 0
 	damage_type = BRUTE

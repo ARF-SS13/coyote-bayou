@@ -961,6 +961,9 @@
 /area/f13/building/mall)
 "aOL" = (
 /obj/structure/window/fulltile/store,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "aPM" = (
@@ -12021,6 +12024,8 @@
 /area/f13/caves)
 "kWL" = (
 /obj/structure/table,
+/obj/item/circuitboard/machine/ore_silo,
+/obj/item/stack/cable_coil/thirty,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "kXd" = (
@@ -17243,6 +17248,9 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowleft"
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "pVD" = (
@@ -20849,13 +20857,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"thT" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital/clinic)
 "tik" = (
 /obj/structure/railing{
 	dir = 4
@@ -21009,10 +21010,6 @@
 /area/f13/building)
 "tnO" = (
 /obj/structure/chair/sofa/right,
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = 32
-	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "tog" = (
@@ -22419,13 +22416,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
-"uDL" = (
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
-/area/f13/building/hospital/clinic)
 "uEj" = (
 /obj/structure/bed/roller,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
@@ -22495,11 +22485,11 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "uHi" = (
-/obj/structure/closet/crate/bin/trashbin,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "uHj" = (
@@ -22720,6 +22710,9 @@
 "uWx" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowright"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
@@ -23181,6 +23174,9 @@
 /area/f13/caves)
 "vtO" = (
 /obj/structure/window/fulltile/store,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "vua" = (
@@ -23723,6 +23719,9 @@
 "waE" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowright"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
@@ -24310,6 +24309,9 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowleft"
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "wEu" = (
@@ -24377,10 +24379,6 @@
 /area/f13/building/mall)
 "wIL" = (
 /obj/structure/rack/shelf_metal,
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
-	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "wJp" = (
@@ -31269,7 +31267,7 @@ voa
 lNl
 lNl
 lNl
-uDL
+lNl
 aOL
 oez
 ohv
@@ -31517,7 +31515,7 @@ oez
 oez
 gWO
 pUq
-thT
+xYx
 xYx
 pbC
 pbC
@@ -31526,7 +31524,7 @@ clF
 lNl
 lNl
 lNl
-uDL
+lNl
 aOL
 oez
 ohv
@@ -31774,7 +31772,7 @@ oez
 oez
 gWO
 vtO
-thT
+xYx
 xYx
 lem
 lem
@@ -31783,7 +31781,7 @@ oKe
 lNl
 lNl
 lNl
-uDL
+lNl
 aOL
 oez
 cBX
@@ -32031,7 +32029,7 @@ oez
 oez
 gWO
 vtO
-thT
+xYx
 xYx
 xYx
 xYx
@@ -32040,7 +32038,7 @@ lNl
 lNl
 lNl
 lNl
-uDL
+lNl
 aOL
 oez
 gWO
@@ -32288,7 +32286,7 @@ oez
 oez
 gWO
 vtO
-thT
+xYx
 xYx
 xYx
 xYx
@@ -32297,7 +32295,7 @@ lNl
 lNl
 lNl
 lNl
-uDL
+lNl
 aOL
 oez
 gWO
@@ -32554,7 +32552,7 @@ lNl
 lNl
 lNl
 lNl
-uDL
+lNl
 waE
 oez
 nAu

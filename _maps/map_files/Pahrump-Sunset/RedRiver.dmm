@@ -16628,6 +16628,9 @@
 /obj/structure/window/fulltile/house{
 	dir = 2
 	},
+/obj/structure/curtain{
+	color = "#363636"
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -31414,15 +31417,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
-"qKY" = (
-/obj/structure/curtain{
-	color = "#363636";
-	pixel_x = -32
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
 "qLB" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/f13{
@@ -101537,9 +101531,9 @@ iKf
 iKf
 fde
 cCh
-qKY
-qKY
-qKY
+eJW
+eJW
+eJW
 vtp
 eJW
 qsc

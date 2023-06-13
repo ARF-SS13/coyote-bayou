@@ -36,7 +36,7 @@
 	var/start_ammo_count
 	var/randomize_ammo_count = TRUE //am evil~
 
-/obj/item/ammo_box/Initialize()
+/obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
 	init_ammo()
 	if(!islist(caliber))
@@ -46,6 +46,18 @@
 			caliber += initial(ammo_type.caliber)
 		else
 			caliber += CALIBER_ANY // default to accepting any old caliber
+	update_icon()
+
+/obj/item/ammo_box/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_load)
+
+/// An aheal, but for ammo boxes
+/obj/item/ammo_box/proc/admin_load()
+	if(!ammo_type)
+		return
+	. = fill_magazine(max_ammo, TRUE)
 	update_icon()
 
 /obj/item/ammo_box/ComponentInitialize()

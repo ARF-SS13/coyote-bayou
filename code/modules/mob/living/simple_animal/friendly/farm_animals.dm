@@ -66,7 +66,7 @@
 			enemies.Cut()
 			LoseTarget()
 			src.visible_message(span_notice("[src] calms down."))
-		udder.generateMilk(milk_reagent)
+		udder?.generateMilk(milk_reagent)
 		eat_plants()
 		if(!pulledby)
 			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
@@ -335,7 +335,7 @@
 					name = "cow"
 				visible_message(span_alertalien("[src] has fully grown."))
 		else
-			udder.generateMilk(milk_reagent)
+			udder?.generateMilk(milk_reagent)
 			if(COOLDOWN_FINISHED(src, hunger_cooldown))
 				if(prob(5))
 					become_hungry()
@@ -1486,7 +1486,7 @@
 					name = "bighorn"
 				visible_message(span_alertalien("[src] has fully grown."))
 		else
-			udder.generateMilk(milk_reagent)
+			udder?.generateMilk(milk_reagent)
 
 // BIGHORNER CALF
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf

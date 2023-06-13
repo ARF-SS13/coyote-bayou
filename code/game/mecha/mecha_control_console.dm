@@ -28,7 +28,7 @@
 			name = M.name,
 			integrity = round((M.obj_integrity / M.max_integrity) * 100),
 			charge = M.cell ? round(M.cell.percent()) : null,
-			airtank = M.internal_tank ? M.return_pressure() : null,
+			airtank = ONE_ATMOSPHERE,
 			pilot = M.occupant,
 			location = get_area_name(M, TRUE),
 			active_equipment = M.selected,
@@ -95,7 +95,7 @@
 	var/answer = {"<b>Name:</b> [chassis.name]<br>
 				<b>Integrity:</b> [round((chassis.obj_integrity/chassis.max_integrity * 100), 0.01)]%<br>
 				<b>Cell Charge:</b> [isnull(cell_charge) ? "Not Found":"[chassis.cell.percent()]%"]<br>
-				<b>Airtank:</b> [chassis.internal_tank ? "[round(chassis.return_pressure(), 0.01)]" : "Not Equipped"] kPa<br>
+				<b>Airtank:</b> [ONE_ATMOSPHERE]" : "Not Equipped"] kPa<br>
 				<b>Pilot:</b> [chassis.occupant || "None"]<br>
 				<b>Location:</b> [get_area_name(chassis, TRUE) || "Unknown"]<br>
 				<b>Active Equipment:</b> [chassis.selected || "None"]"}

@@ -1,5 +1,5 @@
 {
-	"map_name": "North East Texarkana",
+	"map_name": "North West Texarkana",
 	"map_path": "map_files/Pahrump-Sunset",
 	"map_file": [
 		"Dungeons.dmm",
@@ -9,7 +9,7 @@
 		"Pahrump-Sunset-Upper-2.dmm",
 		"RedRiver.dmm",
 		"RedRiver-Upper.dmm",
-		"Garland-City.dmm"
+		"Westlands.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -118,17 +118,14 @@
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
 			"Station": 1,
-			"Up": 1,
-			"Down": -1,
 			"No Parallax": true,
 			"Linkage" : "Cross",
-			"Force East": 1,
-			"Name": "Garland City",
-			"Force X": 3,
+			"Force West": 1,
+			"Name": "Westlands",
+			"Force X": 1,
 			"Force Y": 2,
 			"Force Z": 1
 		}
-
 	],
 	"minetype": "none"
 }

@@ -337,7 +337,6 @@
 	can_toggle = 1
 	actions_types = list(/datum/action/item_action/toggle)
 
-
 /obj/item/clothing/head/slouch/attack_self(mob/user)
 	if(can_toggle && !user.incapacitated())
 		up = !up
@@ -349,6 +348,24 @@
 			var/mob/living/carbon/C = user
 			C.head_update(src, forced = 1)
 
+/obj/item/clothing/head/slouch/alt
+	name = "Khaki Slouch Hat, Alt"
+	desc = "A khaki fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
+	icon_state = "slouch_khaki_alt"
+	item_state = "slouch_khaki_alt"
+	can_toggle = 1
+	actions_types = list(/datum/action/item_action/toggle)
+
+/obj/item/clothing/head/slouch/alt/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated())
+		up = !up
+		icon_state = "[initial(icon_state)][up ? "up" : ""]"
+		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")
+
+		user.update_inv_head()
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.head_update(src, forced = 1)
 
 
 //////////////////////////////////

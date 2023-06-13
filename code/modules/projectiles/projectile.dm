@@ -985,7 +985,6 @@
 
 /obj/item/projectile/bullet/F13/musketball
 	damage = 60
-	armour_penetration = 0.3
 
 
 

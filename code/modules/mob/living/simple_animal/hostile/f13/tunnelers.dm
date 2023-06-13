@@ -63,7 +63,6 @@
 	speed = 1
 	melee_damage_lower = 18
 	melee_damage_upper = 32
-	armour_penetration = 0.25
 	obj_damage = 150
 	see_in_dark = 8
 	attack_sound = 'sound/weapons/bladeslice.ogg'
