@@ -37,7 +37,7 @@
 	else
 		to_chat(user, span_notice("The scanner has no logs or is in use."))
 
-/obj/item/detective_scanner/attack(mob/living/M, mob/user)
+/obj/item/detective_scanner/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	return
 
 /obj/item/detective_scanner/proc/PrintReport()

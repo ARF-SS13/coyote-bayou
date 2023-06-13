@@ -88,7 +88,7 @@
 	var/too_dry = "Placeholder, tell a coder"
 
 
-/obj/item/stack/medical/attack(mob/living/M, mob/user)
+/obj/item/stack/medical/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	. = ..()
 	INVOKE_ASYNC(src, .proc/try_heal, M, user)
 
@@ -867,7 +867,7 @@
 	grind_results = list(/datum/reagent/medicine/bicaridine = 10)
 	novariants = TRUE
 
-/obj/item/stack/medical/bone_gel/attack(mob/living/M, mob/user)
+/obj/item/stack/medical/bone_gel/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	to_chat(user, span_warning("Bone gel can only be used on fractured limbs while aggressively holding someone!"))
 	return
 

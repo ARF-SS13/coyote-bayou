@@ -1153,7 +1153,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		return ..()
 
-/obj/item/pda/attack(mob/living/carbon/C, mob/living/user)
+/obj/item/pda/attack(mob/living/carbon/C, mob/living/user, attackchain_flags, list/overrides)
 	if(istype(C))
 		switch(scanmode)
 

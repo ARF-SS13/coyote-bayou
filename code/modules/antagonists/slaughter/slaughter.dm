@@ -167,7 +167,7 @@
 	. = ..()
 	AddElement(/datum/element/update_icon_blocker)
 
-/obj/item/organ/heart/demon/attack(mob/M, mob/living/carbon/user, obj/target)
+/obj/item/organ/heart/demon/attack(mob/M, mob/living/carbon/user, obj/target, attackchain_flags, list/overrides)
 	if(M != user)
 		return ..()
 	user.visible_message(span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!"), \

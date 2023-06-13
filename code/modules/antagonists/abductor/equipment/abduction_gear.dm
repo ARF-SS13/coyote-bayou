@@ -183,7 +183,7 @@
 		icon_state = "gizmo_scan"
 	to_chat(user, span_notice("You switch the device to [mode==GIZMO_SCAN? "SCAN": "MARK"] MODE"))
 
-/obj/item/abductor/gizmo/attack(mob/living/M, mob/user)
+/obj/item/abductor/gizmo/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	if(!ScientistCheck(user))
 		return
 	if(!console)
@@ -249,7 +249,7 @@
 	icon_state = "silencer"
 	item_state = "gizmo"
 
-/obj/item/abductor/silencer/attack(mob/living/M, mob/user)
+/obj/item/abductor/silencer/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	if(!AbductorCheck(user))
 		return
 	radio_off(M, user)
@@ -477,7 +477,7 @@
 			icon_state = "wonderprodProbe"
 			item_state = "wonderprodProbe"
 
-/obj/item/abductor/baton/attack(mob/target, mob/living/user)
+/obj/item/abductor/baton/attack(mob/target, mob/living/user, attackchain_flags, list/overrides)
 	if(!AbductorCheck(user))
 		return
 

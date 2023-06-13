@@ -21,7 +21,7 @@
 		src.name = "holodisk #[rand(1,999)]"
 		return ..()
 
-/obj/item/weapon/holodisk/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+/obj/item/weapon/holodisk/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	src.playAudio(user)
 	return ..()
 
@@ -419,7 +419,7 @@ GLOBAL_LIST_EMPTY(all_flags)
 		return
 	paint_color = chosen_color
 
-/obj/item/warpaint_bowl/attack(mob/living/M, mob/living/user, attackchain_flags, damage_multiplier)
+/obj/item/warpaint_bowl/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(!paint_type || !paint_color)
 		to_chat(user, span_warning("You need to select a style first!"))
 		return

@@ -79,7 +79,7 @@ effective or pretty fucking useless.
 	var/ui_x = 320
 	var/ui_y = 335
 
-/obj/item/healthanalyzer/rad_laser/attack(mob/living/M, mob/living/user)
+/obj/item/healthanalyzer/rad_laser/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(!stealth || !irradiate)
 		..()
 	if(!irradiate)

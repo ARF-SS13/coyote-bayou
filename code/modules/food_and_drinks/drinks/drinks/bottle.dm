@@ -16,7 +16,7 @@
 	isGlass = TRUE
 	foodtype = ALCOHOL
 
-/obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
+/obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user, attackchain_flags, list/overrides)
 
 	if(!target)
 		return

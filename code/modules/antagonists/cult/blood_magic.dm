@@ -379,7 +379,7 @@
 /obj/item/melee/blood_magic/attack_self(mob/living/user)
 	afterattack(user, user, TRUE)
 
-/obj/item/melee/blood_magic/attack(mob/living/M, mob/living/carbon/user)
+/obj/item/melee/blood_magic/attack(mob/living/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	if(!iscarbon(user) || !iscultist(user))
 		uses = 0
 		qdel(src)

@@ -298,7 +298,7 @@
 	STR.insert_preposition = "on"
 	STR.max_items = max_items
 
-/obj/item/storage/bag/tray/attack(mob/living/M, mob/living/user)
+/obj/item/storage/bag/tray/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	// Drop all the things. All of them.
 	var/list/obj/item/oldContents = contents.Copy()

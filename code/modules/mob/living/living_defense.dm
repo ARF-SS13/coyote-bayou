@@ -1,37 +1,3 @@
-
-/mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = "Your armor absorbs the blow!", soften_text = "Your armor softens the blow!", armour_penetration, penetrated_text = "Your armor was penetrated!", silent=FALSE)
-	var/armor = getarmor(def_zone, attack_flag)
-
-	if(silent && armor > 0)
-		if(armour_penetration > 1)
-			armour_penetration = 1//Penetrating more than 100% of armour is a bit funky, let's just cap it -- DR2 LINEARMOR
-		if(armor >= 100)//The formula doesn't work for armour values 100 or more and dividing by zero is not fun -- DR2 LINEARMOR
-			return max(0, armor*(1-armour_penetration))
-		if(armor < 100)//Formula turns armor in to linearmor, reduces it by AP%, turns it back into armor. Armor is reduced by a % of its effective benefit rather than its actual value -- DR2 LINEARMOR
-			return max(0, (100*armor/(100-armor)*(1-armour_penetration))/(armor/(100-armor)*(1-armour_penetration)+1))//This might be excessive brackets but I'm taking no chances
-
-	//the if "armor" check is because this is used for everything on /living, including humans
-	if(armor > 0 && armour_penetration)
-		if(armour_penetration > 1)
-			armour_penetration = 1
-		if(armor >= 100)
-			armor = max(0, armor*(1-armour_penetration))
-		if(armor < 100)
-			armor = max(0, (100*armor/(100-armor)*(1-armour_penetration))/(armor/(100-armor)*(1-armour_penetration)+1))
-		if(penetrated_text && COOLDOWN_FINISHED(src, armor_message_antispam))
-			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-			to_chat(src, span_danger("[penetrated_text]"))
-	else if(armor >= 100)
-		if(absorb_text && COOLDOWN_FINISHED(src, armor_message_antispam))
-			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-			to_chat(src, span_danger("[absorb_text]"))
-	else if(armor > 0)
-		if(soften_text && COOLDOWN_FINISHED(src, armor_message_antispam))
-			COOLDOWN_START(src, armor_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-			to_chat(src, span_danger("[soften_text]"))
-	return armor
-
-
 /mob/living/proc/getarmor(def_zone, type)
 	return 0
 
@@ -105,7 +71,7 @@
 		totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
 		staminadamage = block_calculate_resultant_damage(staminadamage, returnlist)
 	var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
-	var/dt = max(run_armor_check(def_zone, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
+	var/dt = max(run_armor_check(def_zone, "damage_threshold", null, null, 0, null) - P.damage_threshold_modifier, 0)
 	if(!P.nodamage)
 		apply_damage(totaldamage, P.damage_type, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = P.sharpness, damage_threshold = dt)
 		if(staminadamage)
@@ -180,7 +146,7 @@
 				if(!I.throwforce)
 					return
 				var/armor = run_armor_check(impacting_zone, "melee", "Your armor has protected your [parse_zone(impacting_zone)].", "Your armor has softened hit to your [parse_zone(impacting_zone)].",I.armour_penetration)
-				var/dt = max(run_armor_check("damage_threshold", "melee", null, null, 0, null) - I.damage_threshold_penetration, 0)
+				var/dt = max(run_armor_check("damage_threshold", "melee", null, null, 0, null) - I.damage_threshold_modifier, 0)
 				apply_damage(I.throwforce, dtype, impacting_zone, armor, sharpness=I.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND), damage_threshold = dt)
 		else
 			return 1

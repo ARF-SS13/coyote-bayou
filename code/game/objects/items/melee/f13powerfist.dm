@@ -35,24 +35,6 @@
 /obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
 	return
 
-/obj/item/melee/powerfist/f13/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
-	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!"))
-		return FALSE
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-	var/totalitemdamage = target.pre_attacked_by(src, user)
-	SSdamage.damage_mob(user, target, totalitemdamage)
-	//target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
-	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
-		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
-	new /obj/effect/temp_visual/kinetic_blast(target.loc)
-	playsound(loc, 'sound/weapons/resonator_blast.ogg', 50, 1)
-	playsound(loc, 'sound/weapons/genhit2.ogg', 50, 1)
-	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
-	target.throw_at(throw_target, 2 * throw_distance, 0.5 + (throw_distance / 2))
-	log_combat(user, target, "power fisted", src)
 
 // Goliath				Throws targets far. Max damage 50.
 /obj/item/melee/powerfist/f13/goliath

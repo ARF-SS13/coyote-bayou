@@ -135,11 +135,13 @@
 	return TRUE
 
 /mob/living/simple_animal/bullet_act(obj/item/projectile/P)
+	if(!P)
+		return
 	var/totaldamage = P.damage
 	var/staminadamage = P.stamina
 	var/final_percent = 0
 	var/armor = run_armor_check(null, P.flag, null, null, P.armour_penetration, null)
-	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
+	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null) - P.damage_threshold_modifier, 0)
 	if(!P.nodamage)
 		apply_damage(totaldamage, P.damage_type, null, armor, null, null, null, damage_threshold = dt)
 		if(staminadamage)
@@ -149,12 +151,6 @@
 	if(missing > 0)
 		final_percent += missing * armor_ratio
 	return P.on_hit(src, final_percent, null) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
-
-/* 	if(!Proj)
-		return
-	apply_damage(Proj.damage, Proj.damage_type)
-	Proj.on_hit(src)
-	return BULLET_ACT_HIT */
 
 /mob/living/simple_animal/ex_act(severity, target, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))

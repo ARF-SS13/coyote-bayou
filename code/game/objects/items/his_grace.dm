@@ -42,7 +42,7 @@
 	if(!awakened)
 		INVOKE_ASYNC(src, .proc/awaken, user)
 
-/obj/item/his_grace/attack(mob/living/M, mob/user)
+/obj/item/his_grace/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	if(awakened && M.stat)
 		consume(M)
 	else

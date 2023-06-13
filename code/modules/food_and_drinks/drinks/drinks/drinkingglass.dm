@@ -162,7 +162,7 @@ obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
 	else
 		..()
 
-/obj/item/reagent_containers/food/drinks/drinkingglass/attack(obj/target, mob/user)
+/obj/item/reagent_containers/food/drinks/drinkingglass/attack(obj/target, mob/user, attackchain_flags, list/overrides)
 	if(user.a_intent == INTENT_HARM && ismob(target) && target.reagents && reagents.total_volume)
 		target.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
 						span_userdanger("[user] splashes the contents of [src] onto [target]!"))

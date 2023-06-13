@@ -35,7 +35,7 @@
 	. = ..()
 	clockwork_desc = initial(clockwork_desc)
 
-/obj/item/clockwork/brass_claw/attack(mob/living/target, mob/living/carbon/human/user)
+/obj/item/clockwork/brass_claw/attack(mob/living/target, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(QDELETED(target) || target.anti_magic_check(chargecost = 0) || is_servant_of_ratvar(target))
 		return

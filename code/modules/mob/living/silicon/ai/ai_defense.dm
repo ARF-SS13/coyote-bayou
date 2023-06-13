@@ -1,4 +1,4 @@
-/mob/living/silicon/ai/attacked_by(obj/item/I, mob/living/user, def_zone, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
+/mob/living/silicon/ai/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
 	. = ..()
 	if(!.)
 		return FALSE

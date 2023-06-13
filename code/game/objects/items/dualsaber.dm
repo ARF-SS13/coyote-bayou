@@ -174,7 +174,7 @@
 		user.visible_message(span_suicide("[user] begins beating [user.p_them()]self to death with \the [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!"))
 	return BRUTELOSS
 
-/obj/item/dualsaber/attack(mob/target, mob/living/carbon/human/user)
+/obj/item/dualsaber/attack(mob/target, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	if(user.has_dna() && user.dna.check_mutation(HULK))
 		to_chat(user, span_warning("You grip the blade too hard and accidentally drop it!"))
 		user.dropItemToGround(src)

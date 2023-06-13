@@ -43,7 +43,7 @@
 	else
 		icon_state = "lipstick"
 
-/obj/item/lipstick/attack(mob/M, mob/user)
+/obj/item/lipstick/attack(mob/M, mob/user, attackchain_flags, list/overrides)
 	if(!open)
 		return
 
@@ -77,7 +77,7 @@
 		to_chat(user, span_warning("Where are the lips on that?"))
 
 //you can wipe off lipstick with paper!
-/obj/item/paper/attack(mob/M, mob/user)
+/obj/item/paper/attack(mob/M, mob/user, attackchain_flags, list/overrides)
 	if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		if(!ismob(M))
 			return
@@ -123,7 +123,7 @@
 	playsound(loc, 'sound/items/welder2.ogg', 20, 1)
 
 
-/obj/item/razor/attack(mob/M, mob/user)
+/obj/item/razor/attack(mob/M, mob/user, attackchain_flags, list/overrides)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/location = user.zone_selected

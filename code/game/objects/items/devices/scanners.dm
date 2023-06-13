@@ -105,7 +105,7 @@ GENETICS SCANNER
 		if(SCANMODE_WOUND)
 			to_chat(user, span_notice("You switch the health analyzer to report extra info on wounds."))
 
-/obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
+/obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
 
 	// Clumsiness/brain damage check
@@ -631,7 +631,7 @@ GENETICS SCANNER
 			L.adjustBruteLoss(4)
 			L.dropItemToGround(src)
 
-/obj/item/healthanalyzer/wound/attack(mob/living/carbon/patient, mob/living/carbon/human/user)
+/obj/item/healthanalyzer/wound/attack(mob/living/carbon/patient, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	add_fingerprint(user)
 	user.visible_message(span_notice("[user] scans [patient] for serious injuries."), span_notice("You scan [patient] for serious injuries."))
 
@@ -874,7 +874,7 @@ GENETICS SCANNER
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=30, /datum/material/glass=20)
 
-/obj/item/slime_scanner/attack(mob/living/M, mob/living/user)
+/obj/item/slime_scanner/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(user.stat || user.eye_blind)
 		return
 	if (!isslime(M))
@@ -933,7 +933,7 @@ GENETICS SCANNER
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=200)
 
-/obj/item/nanite_scanner/attack(mob/living/M, mob/living/carbon/human/user)
+/obj/item/nanite_scanner/attack(mob/living/M, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	user.visible_message(span_notice("[user] has analyzed [M]'s nanites."))
 
 	add_fingerprint(user)
@@ -963,7 +963,7 @@ GENETICS SCANNER
 	var/ready = TRUE
 	var/cooldown = 200
 
-/obj/item/sequence_scanner/attack(mob/living/M, mob/living/carbon/human/user)
+/obj/item/sequence_scanner/attack(mob/living/M, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	add_fingerprint(user)
 	if (!HAS_TRAIT_NOT_FROM(M, TRAIT_RADIMMUNE,BLOODSUCKER_TRAIT)) //no scanning if its a husk or DNA-less Species
 		user.visible_message(span_notice("[user] analyzes [M]'s genetic sequence."), \

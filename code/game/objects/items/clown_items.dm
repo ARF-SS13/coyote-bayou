@@ -115,7 +115,7 @@
 	var/moodlet = "honk" //used to define which kind of moodlet is added to the honked target
 	var/list/honksounds = list('sound/items/bikehorn.ogg' = 1)
 
-/obj/item/bikehorn/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/bikehorn/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, moodlet, /datum/mood_event/honk)
 	return ..()
 

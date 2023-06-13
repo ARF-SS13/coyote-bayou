@@ -20,7 +20,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 
-/obj/item/smelling_salts/attack(mob/target, mob/user)
+/obj/item/smelling_salts/attack(mob/target, mob/user, attackchain_flags, list/overrides)
 	if(in_use)
 		return
 	if(world.time < time_to_use)

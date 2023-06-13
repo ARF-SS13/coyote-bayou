@@ -850,7 +850,7 @@
 		return
 	. = ..()
 
-/obj/item/reagent_containers/food/snacks/f13/canned/attack(mob/living/M, mob/living/user)
+/obj/item/reagent_containers/food/snacks/f13/canned/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(!is_open)
 		to_chat(user, span_warning("You need to open [src] first."))
 		return

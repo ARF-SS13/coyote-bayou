@@ -400,7 +400,7 @@
 	force_unwielded = 26
 	force_wielded = 40
 
-/obj/item/twohanded/baseball/spiked/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/baseball/spiked/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -418,7 +418,7 @@
 	force_unwielded = 28
 	force_wielded = 42
 
-/obj/item/twohanded/baseball/louisville/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/baseball/louisville/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -436,7 +436,7 @@
 	force_unwielded = 22
 	force_wielded = 32
 
-/obj/item/twohanded/baseball/golfclub/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/baseball/golfclub/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -653,7 +653,7 @@
 	force_unwielded = 25
 	force_wielded = 55
 
-/obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -687,7 +687,7 @@
 	force_wielded = 30
 	attack_speed = 8
 
-/obj/item/twohanded/sledgehammer/shamanstaff/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/sledgehammer/shamanstaff/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -706,7 +706,7 @@
 	force_unwielded = 5
 	force_wielded = 10
 
-/obj/item/twohanded/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -891,7 +891,7 @@
 CODE ARCHIVE
 
 CODE FOR POISON EFFECT
-/obj/item/twohanded/spear/ultra/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/spear/ultra/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -935,7 +935,7 @@ CODE FOR POISON EFFECT
 	force_unwielded = 11 //unwielded force decreased to reflect special spear point design and prevent excessive damage during envenomation
 
 
-/obj/item/twohanded/bonespear/venom/attack(mob/living/L, mob/user)
+/obj/item/twohanded/bonespear/venom/attack(mob/living/L, mob/user, attackchain_flags, list/overrides)
 	..()
 	if(!istype(L))
 		return

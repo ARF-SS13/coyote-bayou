@@ -34,6 +34,7 @@
 #define EFFECT_DROWSY		"drowsy"
 #define EFFECT_JITTER		"jitter"
 
+
 // mob/living/var/combat_flags variable.
 /// Default combat flags for those affected by sprinting (combat mode has been made into its own component)
 #define COMBAT_FLAGS_DEFAULT				(COMBAT_FLAG_PARRY_CAPABLE | COMBAT_FLAG_BLOCK_CAPABLE)
@@ -282,7 +283,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define STAM_COST_THROW_MOB			2.5 //multiplied by (mob size + 1)^2.
 
 ///Multiplier of the (STAMINA_NEAR_CRIT - user current stamina loss) : (STAMINA_NEAR_CRIT - STAMINA_SOFTCRIT) ratio used in damage penalties when stam soft-critted.
-#define STAM_CRIT_ITEM_ATTACK_PENALTY	0.66
+#define STAM_CRIT_ITEM_ATTACK_PENALTY	0.85
 /// changeNext_move penalty multiplier of the above.
 #define STAM_CRIT_ITEM_ATTACK_DELAY		1.75
 /// Damage penalty when fighting prone.
@@ -1373,3 +1374,34 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define FLINTLOCK_MINIMUSKET_PREFIRE_RANDOMNESS 0.4
 #define FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS 0.2
 
+/// Damage Var Flags
+#define DAMAGE_FORCE "force"
+#define DAMAGE_STAMINA "stamina"
+#define DAMAGE_TYPE "damtype"
+#define DAMAGE_ARMOR_CHECK "damage_armor"
+#define DAMAGE_WOUND_BONUS "wound_bonus"
+#define DAMAGE_WOUND_NAKED "wound_naked"
+#define DAMAGE_SHARPNESS "sharpness"
+#define DAMAGE_ARMOR_PENETRATION "armour_penetration"
+#define DAMAGE_DT_MODIFIER "damage_threshold_modifier"
+#define DAMAGE_ZONE "defzone"
+#define DAMAGE_FORCE_IT "force_it"
+#define DAMAGE_SPREAD "spread"
+#define DAMAGE_SIGNAL "signal"
+#define DAMAGE_MULTIPLIER "multiplier"
+
+#define DAMAGE_LIST list(\
+	DAMAGE_FORCE = 0,\
+	DAMAGE_STAMINA = 0,\
+	DAMAGE_TYPE = BRUTE,\
+	DAMAGE_ARMOR_CHECK = ARMOR_MELEE,\
+	DAMAGE_WOUND_BONUS = 0,\
+	DAMAGE_WOUND_NAKED = 0,\
+	DAMAGE_SHARPNESS = 0,\
+	DAMAGE_ARMOR_PENETRATION = 0,\
+	DAMAGE_DT_MODIFIER = 0,\
+	DAMAGE_ZONE = BODY_ZONE_CHEST,\
+	DAMAGE_FORCE_IT = 0,\
+	DAMAGE_SPREAD = 0,\
+	DAMAGE_SIGNAL = 0,\
+	)

@@ -22,7 +22,7 @@ This file contains the cult dagger and rune list code
 		. += span_cult("Striking another cultist with it will purge holy water from them.")
 		. += span_cult("Striking a noncultist, however, will tear their flesh.")
 
-/obj/item/melee/cultblade/dagger/attack(mob/living/M, mob/living/user)
+/obj/item/melee/cultblade/dagger/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(iscultist(M))
 		if(M.reagents && M.reagents.has_reagent(/datum/reagent/water/holywater)) //allows cultists to be rescued from the clutches of ordained religion
 			to_chat(user, span_cult("You remove the taint from [M].") )

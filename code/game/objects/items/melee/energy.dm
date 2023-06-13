@@ -257,7 +257,7 @@
 	possible_colors = null
 	var/hitcost = 50
 
-/obj/item/melee/transforming/plasmacutter/sword/cyborg/attack(mob/M, mob/living/silicon/robot/R)
+/obj/item/melee/transforming/plasmacutter/sword/cyborg/attack(mob/M, mob/living/silicon/robot/R, attackchain_flags, list/overrides)
 	if(R.cell)
 		var/obj/item/stock_parts/cell/C = R.cell
 		if(active && !(C.use(hitcost)))

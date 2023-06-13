@@ -36,7 +36,7 @@
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
 	return BRUTELOSS
 
-/obj/item/kitchen/fork/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/kitchen/fork/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	if(!istype(M))
 		return ..()
 

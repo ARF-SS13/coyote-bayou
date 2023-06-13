@@ -32,7 +32,7 @@
 	if(transform_weapon(user))
 		clumsy_transform_effect(user)
 
-/obj/item/melee/transforming/attack(mob/living/target, mob/living/carbon/human/user)
+/obj/item/melee/transforming/attack(mob/living/target, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	var/nemesis_faction = FALSE
 	if(LAZYLEN(nemesis_factions))
 		for(var/F in target.faction)

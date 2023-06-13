@@ -32,7 +32,7 @@
 	user.visible_message(span_suicide("[user] is trying to eat the entire [src]! It looks like [user.p_they()] forgot how food works!"))
 	return OXYLOSS
 
-/obj/item/reagent_containers/food/condiment/attack(mob/M, mob/user, def_zone)
+/obj/item/reagent_containers/food/condiment/attack(mob/M, mob/user, attackchain_flags, list/overrides)
 
 	if(!reagents || !reagents.total_volume)
 		to_chat(user, span_warning("None of [src] left, oh no!"))
@@ -303,7 +303,7 @@
 						/datum/reagent/consumable/mustard = list("condi_mustard", "Mustard", "A spice mixed with enzymes and water."),
 						/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ sauce", "Hand wipes not included."))
 
-/obj/item/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, def_zone) //Can't feed these to people directly.
+/obj/item/reagent_containers/food/condiment/pack/attack(mob/M, mob/user, attackchain_flags, list/overrides) //Can't feed these to people directly.
 	return
 
 /obj/item/reagent_containers/food/condiment/pack/afterattack(obj/target, mob/user , proximity)

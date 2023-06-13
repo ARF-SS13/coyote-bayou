@@ -28,7 +28,7 @@
 				angle_out = clamp(rand(-max_spread, max_spread), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 
 	var/targloc = get_turf(target)
-	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from, damage_threshold_penetration)
+	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from, damage_threshold_modifier)
 	if(pellets == 1)
 		if(!randomspread) //Smart spread
 			angle_out = round(1 - 0.5) * distro
@@ -46,7 +46,7 @@
 	update_icon()
 	return 1
 
-/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)
+/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_modifier = 0)
 	if (!BB)
 		return
 	BB.original = target
@@ -57,7 +57,7 @@
 	else
 		BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
-	BB.damage_threshold_penetration = damage_threshold_penetration
+	BB.damage_threshold_modifier = damage_threshold_modifier
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from

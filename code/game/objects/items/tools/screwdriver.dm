@@ -65,7 +65,7 @@
 	else
 		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
 
-/obj/item/screwdriver/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/screwdriver/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	if(!istype(M))
 		return ..()
 	if(user.zone_selected != BODY_ZONE_PRECISE_EYES && user.zone_selected != BODY_ZONE_HEAD)

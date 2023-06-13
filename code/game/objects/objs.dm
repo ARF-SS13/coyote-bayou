@@ -7,8 +7,14 @@
 	var/obj_flags = CAN_BE_HIT
 	var/set_obj_flags // ONLY FOR MAPPING: Sets flags from a string list, handled in Initialize. Usage: set_obj_flags = "EMAGGED;!CAN_BE_HIT" to set EMAGGED and clear CAN_BE_HIT.
 
+	/// Type of damage dealt to the target. If this is null, it will just default to BRUTE
 	var/damtype = BRUTE
+	/// The armor type that this object checks against when attacking. If this is null, it will just not check armor.
+	var/damage_armor = ARMOR_MELEE
+	/// Base damage caused by this object
 	var/force = 0
+	/// Stamina damage caused by this object
+	var/stamina_force = 0
 
 	/// How good a given object is at causing wounds on carbons. Higher values equal better shots at creating serious wounds.
 	var/wound_bonus = 0

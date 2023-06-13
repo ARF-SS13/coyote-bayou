@@ -22,11 +22,8 @@
 
 //returns the damage value of the attack after processing the obj's various armor protections
 /obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armour_penetration = 0)
-	switch(damage_type)
-		if(BRUTE)
-		if(BURN)
-		else
-			return 0
+	if(damage_type != BRUTE && damage_type != BURN) // got tired of looking at that wierd switch filter
+		return 0
 	var/armor_protection = 0
 	if(damage_flag)
 		armor_protection = armor.getRating(damage_flag)

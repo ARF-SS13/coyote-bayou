@@ -573,7 +573,7 @@ proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 		if(B.cell)
 			if(B.cell.charge > 0 && B.turned_on)
 				flick("baton_active", src)
-				var/stunforce = B.stamforce
+				var/stunforce = B.stamina_force
 				user.DefaultCombatKnockdown(stunforce * 2)
 				user.stuttering = stunforce/20
 				B.deductcharge(B.hitcost)

@@ -71,7 +71,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	matchburnout()
 	. = ..()
 
-/obj/item/match/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/match/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	if(!isliving(M))
 		return
 	if(lit && M.IgniteMob())
@@ -237,7 +237,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		qdel(src)
 	. = ..()
 
-/obj/item/clothing/mask/cigarette/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/clothing/mask/cigarette/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	if(!istype(M))
 		return ..()
 	if(M.on_fire && !lit)
@@ -615,7 +615,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		. = ..()
 
-/obj/item/lighter/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/lighter/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	if(lit && M.IgniteMob())
 		message_admins("[ADMIN_LOOKUPFLW(user)] set [key_name_admin(M)] on fire with [src] at [AREACOORD(user)]")
 		log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
@@ -1109,7 +1109,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		. = ""
 
-/obj/item/bong/attack(mob/living/carbon/M, mob/living/carbon/user, obj/target)
+/obj/item/bong/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	//if it's lit up, some stuff in the bowl and the user is a target, and we're not on cooldown
 
 	if (M != user)

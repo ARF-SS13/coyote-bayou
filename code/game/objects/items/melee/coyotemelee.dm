@@ -504,7 +504,7 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -619,7 +619,8 @@
 	force_wielded = 10
 	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
 
-/obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user)
+// =3
+/obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return

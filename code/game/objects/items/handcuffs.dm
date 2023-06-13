@@ -42,7 +42,7 @@
 	var/cuffsound = 'sound/weapons/handcuffs.ogg'
 	var/trashtype = null //for disposable cuffs
 
-/obj/item/restraints/handcuffs/attack(mob/living/carbon/C, mob/living/user)
+/obj/item/restraints/handcuffs/attack(mob/living/carbon/C, mob/living/user, attackchain_flags, list/overrides)
 	if(!istype(C))
 		return
 

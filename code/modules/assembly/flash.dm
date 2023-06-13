@@ -140,7 +140,7 @@
 			var/diff = power * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
 			M.confused += min(power, diff)
 
-/obj/item/assembly/flash/attack(mob/living/M, mob/user)
+/obj/item/assembly/flash/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	if(!try_use_flash(user))
 		return FALSE
 	if(iscarbon(M))
@@ -199,7 +199,7 @@
 
 /obj/item/assembly/flash/cyborg
 
-/obj/item/assembly/flash/cyborg/attack(mob/living/M, mob/user)
+/obj/item/assembly/flash/cyborg/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	. = ..()
 	new /obj/effect/temp_visual/borgflash(get_turf(src))
 	if(. && !CONFIG_GET(flag/disable_borg_flash_knockdown) && iscarbon(M) && CHECK_MOBILITY(M, MOBILITY_STAND) && !M.get_eye_protection())

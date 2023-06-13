@@ -75,16 +75,13 @@
 		throw_mode_off()
 		return TRUE
 
-/mob/living/carbon/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
-	var/totitemdamage
-	if(damage_override)
-		totitemdamage = damage_override
-	else
-		totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
+/mob/living/carbon/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
+	var/totitemdamage = LAZYACCES(damage_list, DAMAGE_FORCE) || 0
 	var/impacting_zone = (user == src)? check_zone(user.zone_selected) : ran_zone(user.zone_selected)
 	var/list/block_return = list()
 	if((user != src) && (mob_run_block(I, totitemdamage, "the [I]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_TYPE_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, impacting_zone, block_return) & BLOCK_SUCCESS))
 		return FALSE
+	. = TRUE //successful attack
 	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
 	var/obj/item/bodypart/affecting = get_bodypart(impacting_zone)
 	if(!affecting) //missing limb? we select the first bodypart (you can never have zero, because of chest)
@@ -92,29 +89,29 @@
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 	send_item_attack_message(I, user, affecting.name, affecting, totitemdamage)
 	I.do_stagger_action(src, user, totitemdamage)
-	if(totitemdamage)
-		apply_damage(totitemdamage, I.damtype, affecting, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness()) //CIT CHANGE - replaces I.force with totitemdamage
-		if(I.damtype == BRUTE && affecting.status == BODYPART_ORGANIC)
-			var/basebloodychance = affecting.brute_dam + totitemdamage
-			if(prob(basebloodychance))
-				I.add_mob_blood(src)
-				var/turf/location = get_turf(src)
-				add_splatter_floor(location)
-				if(totitemdamage >= 10 && get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
-					user.add_mob_blood(src)
-
-				if(affecting.body_zone == BODY_ZONE_HEAD)
-					if(wear_mask && prob(basebloodychance))
-						wear_mask.add_mob_blood(src)
-						update_inv_wear_mask()
-					if(wear_neck && prob(basebloodychance))
-						wear_neck.add_mob_blood(src)
-						update_inv_neck()
-					if(head && prob(basebloodychance))
-						head.add_mob_blood(src)
-						update_inv_head()
-
-		return TRUE //successful attack
+	if(!totitemdamage)
+		return
+	if(I.damtype != BRUTE || affecting.status != BODYPART_ORGANIC)
+		return
+	var/basebloodychance = affecting.brute_dam + totitemdamage
+	if(!prob(basebloodychance))
+		return
+	I.add_mob_blood(src)
+	var/turf/location = get_turf(src)
+	add_splatter_floor(location)
+	if(totitemdamage >= 10 && get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
+		user.add_mob_blood(src)
+	if(affecting.body_zone != BODY_ZONE_HEAD)
+		return
+	if(wear_mask && prob(basebloodychance))
+		wear_mask.add_mob_blood(src)
+		update_inv_wear_mask()
+	if(wear_neck && prob(basebloodychance))
+		wear_neck.add_mob_blood(src)
+		update_inv_neck()
+	if(head && prob(basebloodychance))
+		head.add_mob_blood(src)
+		update_inv_head()
 
 /mob/living/carbon/attack_drone(mob/living/simple_animal/drone/user)
 	return //so we don't call the carbon's attack_hand().

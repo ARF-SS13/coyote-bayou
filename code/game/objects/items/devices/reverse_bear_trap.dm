@@ -81,7 +81,7 @@
 			return
 	..()
 
-/obj/item/reverse_bear_trap/attack(mob/living/target, mob/living/user)
+/obj/item/reverse_bear_trap/attack(mob/living/target, mob/living/user, attackchain_flags, list/overrides)
 	if(target.get_item_by_slot(SLOT_HEAD))
 		to_chat(user, span_warning("Remove [target.p_their()] headgear first!"))
 		return

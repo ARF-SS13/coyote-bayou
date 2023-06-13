@@ -10,7 +10,7 @@
 	icon_state = "elecarm"
 	var/charge_cost = 30
 
-/obj/item/borg/stun/attack(mob/living/M, mob/living/user)
+/obj/item/borg/stun/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(M.mob_run_block(src, 0, "[M]'s [name]", ATTACK_TYPE_MELEE, 0, user, ran_zone(user.zone_selected), null) & BLOCK_SUCCESS)
 		playsound(M, 'sound/weapons/genhit.ogg', 50, 1)
 		return FALSE
@@ -62,7 +62,7 @@
 		if(3)
 			to_chat(user, "ERROR: ARM ACTUATORS OVERLOADED.")
 
-/obj/item/borg/cyborghug/attack(mob/living/M, mob/living/silicon/robot/user)
+/obj/item/borg/cyborghug/attack(mob/living/M, mob/living/silicon/robot/user, attackchain_flags, list/overrides)
 	if(M == user)
 		return
 	switch(mode)
@@ -870,7 +870,7 @@
 	var/cargo_capacity = 8
 	var/cargo = list()
 
-/obj/item/cyborg_clamp/attack(mob/M, mob/user, def_zone)
+/obj/item/cyborg_clamp/attack(mob/M, mob/user, def_zone, attackchain_flags, list/overrides)
 	return
 
 /obj/item/cyborg_clamp/afterattack(atom/movable/target, mob/user, proximity)

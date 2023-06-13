@@ -198,7 +198,7 @@
 /obj/item/gun_control/CanItemAutoclick()
 	return TRUE
 
-/obj/item/gun_control/attack(mob/living/M, mob/living/user)
+/obj/item/gun_control/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	M.lastattacker = user.real_name
 	M.lastattackerckey = user.ckey
 	M.attacked_by(src, user)

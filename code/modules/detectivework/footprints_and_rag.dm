@@ -78,7 +78,7 @@
 	if(possible_colors)
 		add_atom_colour(pick(possible_colors), FIXED_COLOUR_PRIORITY)
 
-/obj/item/reagent_containers/glass/rag/towel/attack(mob/living/M, mob/living/user)
+/obj/item/reagent_containers/glass/rag/towel/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(user.a_intent == INTENT_HARM)
 		DISABLE_BITFIELD(item_flags, NOBLUDGEON)
 		. = TRUE

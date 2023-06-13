@@ -206,7 +206,7 @@
 		. += inserted_overlay
 		cig_position++
 
-/obj/item/storage/fancy/cigarettes/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+/obj/item/storage/fancy/cigarettes/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob, attackchain_flags, list/overrides)
 	if(M != user || !istype(M))
 		return ..()
 	var/obj/item/clothing/mask/cigarette/cig = locate(/obj/item/clothing/mask/cigarette) in contents

@@ -234,7 +234,7 @@
 /obj/item/melee/rapier/get_worn_belt_overlay(icon_file)
 	return mutable_appearance(icon_file, "-rapier")
 
-/obj/item/melee/rapier/attack(mob/living/target, mob/living/user)
+/obj/item/melee/rapier/attack(mob/living/target, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(iscarbon(target))
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))

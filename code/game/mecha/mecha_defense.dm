@@ -270,7 +270,7 @@
 	else
 		return ..()
 
-/obj/mecha/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+/obj/mecha/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
 	mecha_log_message("Attacked by [I]. Attacker - [user]")
 	return ..()
 

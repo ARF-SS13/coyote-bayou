@@ -81,7 +81,7 @@
 	icon_state = "boritos"
 	grind_results = list(/datum/reagent/aluminium = 1) //from the mylar bag
 
-/obj/item/trash/attack(mob/M, mob/living/user)
+/obj/item/trash/attack(mob/M, mob/living/user, attackchain_flags, list/overrides)
 	return
 
 /obj/item/trash/coal

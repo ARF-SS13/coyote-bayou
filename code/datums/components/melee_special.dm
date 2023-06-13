@@ -342,12 +342,7 @@
 			if(!atomhere)
 				continue
 			var/list/dam_list = list()
-			var/damage
-			if(isliving(atomhere))
-				var/mob/living/livinghere = atomhere
-				damage = livinghere.pre_attacked_by(master, user)
-			else
-				damage = master.force
+			var/damage = master.force
 			var/d_mult = 1
 			if(CHECK_BITFIELD(damage_flags, WS_DAMAGE_FALLOFF_CLOSE_HIGH))
 				if(trudist < 1.5)
@@ -392,15 +387,16 @@
 	for(var/dmge in damage_list)
 		if(QDELETED(hit_this))
 			return
+		var/damage = damage_list[dmge]
+		if(!damage)
+			continue
+		var/list/damage_overrides = list(DAMAGE_OVERRIDE = damage)
 		switch(dmge)
 			if(WS_NORMAL)
-				var/damage = damage_list[dmge]
-				if(!damage)
-					continue
 				if(isliving(hit_this))
-					master.attack(hit_this, user, NONE, 1, damage)
+					master.attack(hit_this, user, NONE, damage_overrides)
 				else if(isobj(hit_this) || iswallturf(hit_this))
-					hit_this.attackby(master, user, damage)
+					hit_this.attackby(master, user, damage_overrides)
 				user.do_attack_animation(hit_this, effect_kind)
 			if(WS_EXTRA_BRUTE, WS_EXTRA_BURN, WS_EXTRA_TOX, WS_EXTRA_OXY, WS_EXTRA_CLONE, WS_EXTRA_STAMINA, WS_EXTRA_BRAIN)
 				if(isliving(hit_this))
@@ -418,11 +414,14 @@
 							armor_type = "bomb"
 						if(WS_EXTRA_CLONE)
 							armor_type = "energy"
-					var/armor_block = hitmob.run_armor_check(d_zone, armor_type, null, null, 0, null, TRUE)
-					armor_block = min(90,armor_block) //cap damage reduction at 90%
-					var/dt = max(hitmob.run_armor_check(d_zone, "damage_threshold"), 0)
-					hitmob.apply_damage(damage, dmge, d_zone, armor_block, FALSE, FALSE, master.wound_bonus, master.bare_wound_bonus, master.sharpness, dt)
-				else if(isobj(hit_this) && (dmge in list(WS_EXTRA_BRUTE, WS_EXTRA_BURN, WS_EXTRA_STAMINA)))
+					damage_overrides[DAMAGE_TYPE] = dmge
+					damage_overrides[DAMAGE_ARMOR_CHECK] = armor_type
+					SSdamage.deal_damage(user, hitmob, master, damage_overrides)
+					// var/armor_block = hitmob.run_armor_check(d_zone, armor_type, null, null, 0, null, TRUE)
+					// armor_block = min(90,armor_block) //cap damage reduction at 90%
+					// var/dt = max(hitmob.run_armor_check(d_zone, "damage_threshold"), 0)
+					// hitmob.apply_damage(damage, dmge, d_zone, armor_block, FALSE, FALSE, master.wound_bonus, master.bare_wound_bonus, master.sharpness, dt)
+				else if(isobj(hit_this) && (dmge in list(WS_EXTRA_BRUTE, WS_EXTRA_BURN)))
 					var/damage = damage_list[dmge]
 					if(!damage)
 						continue

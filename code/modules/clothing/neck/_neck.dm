@@ -61,7 +61,7 @@
 	user.visible_message(span_suicide("[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!"))
 	return OXYLOSS
 
-/obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
+/obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user, attackchain_flags, list/overrides)
 	if(ishuman(M) && isliving(user))
 		if(user.a_intent == INTENT_HELP)
 			var/body_part = parse_zone(user.zone_selected)

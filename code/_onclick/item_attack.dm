@@ -53,24 +53,24 @@
 	if(!(attackchain_flags & ATTACK_IGNORE_CLICKDELAY) && !CheckAttackCooldown(user, A))
 		return STOP_ATTACK_PROC_CHAIN
 
-/atom/proc/attackby(obj/item/W, mob/user, params, damage_override)
+/atom/proc/attackby(obj/item/W, mob/user, params, attackchain_flags, list/damage_overrides)
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return STOP_ATTACK_PROC_CHAIN
 
-/obj/attackby(obj/item/I, mob/living/user, params, damage_override)
+/obj/attackby(obj/item/I, mob/living/user, params, attackchain_flags, list/damage_overrides)
 	. = ..()
 	if(. & STOP_ATTACK_PROC_CHAIN)
 		return
 	if(obj_flags & CAN_BE_HIT)
-		. |= I.attack_obj(src, user, damage_override)
+		. |= I.attack_obj(src, user, damage_overrides)
 	else
-		. |= I.attack_obj_nohit(src, user, damage_override)
+		. |= I.attack_obj_nohit(src, user, damage_overrides)
 
-/mob/living/attackby(obj/item/I, mob/living/user, params, attackchain_flags, damage_multiplier)
+/mob/living/attackby(obj/item/I, mob/living/user, params, attackchain_flags, list/damage_overrides)
 	. = ..()
 	if(. & STOP_ATTACK_PROC_CHAIN)
 		return
-	. |= I.attack(src, user, attackchain_flags, damage_multiplier)
+	. |= I.attack(src, user, attackchain_flags, damage_overrides)
 	if(!(. & NO_AUTO_CLICKDELAY_HANDLING))	// SAFETY NET - unless the proc tells us we should not handle this, give them the basic melee cooldown!
 		I.ApplyAttackCooldown(user, src, attackchain_flags)
 
@@ -83,59 +83,18 @@
  * * mob/living/M - target
  * * mob/living/user - attacker
  * * attackchain_Flags - see [code/__DEFINES/_flags/return_values.dm]
- * * damage_multiplier - what to multiply the damage by
+ * * overrides - The overrides list to use for damage calculation. see [code\controllers\subsystem\damage.dm]
  */
-/obj/item/proc/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_override)
+/obj/item/proc/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, list/overrides)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
 	if(item_flags & NOBLUDGEON)
 		return
-	if((force || damage_override) && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!"))
-		return
 
-	//var/bigleagues = 10 //flat additive
-	//var/littleleagues = 5
-	//var/gentle = -5
-	//var/wimpy = -10
-	//var/FEVbonus = force*0.35 //used to be a flat additive of 20. changed after someone beat someone to death with a book. TODO: balance this further, possibly with a switch statement depending on force value
-	//var/buffout = force*0.25
-	//var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
-	//var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
+	var/list/damage_list = SSdamage.deal_damage(user, M, src, overrides)
 
-	//var/regular = force*(user.special_s/100)//SPECIAL integration
-
-	//force += regular//SPECIAL integration
-
-	var/force_modifier = 0
-	if(force >= 5)
-		if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-			force_modifier += 10
-
-		if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
-			force_modifier += 5
-
-		if(HAS_TRAIT(user, TRAIT_GENTLE))
-			force_modifier += -5
-
-		if(HAS_TRAIT(user, TRAIT_WIMPY))
-			force_modifier += -10
-
-		if(HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-			force_modifier += (force * 0.25)
-
-		if(HAS_TRAIT(user, TRAIT_FEV))
-			force_modifier += (force * 0.35)
-
-		if(HAS_TRAIT(user, TRAIT_SMUTANT))
-			force_modifier += (force * 0.25)
-
-		if(HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
-			force_modifier += (-force * 0.25)
-
-	var/force_out = force + force_modifier
-	if(force_out <= 0)
+	if(LAZYACCESS(damage_list, DAMAGE_FORCE) <= 0)
 		playsound(loc, pokesound, get_clamped_volume(), 1, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), 1, -1)
@@ -144,113 +103,61 @@
 	M.lastattackerckey = user.ckey
 
 	user.do_attack_animation(M)
-	if(damage_override)
-		var/dammod = min(damage_override / max(1, force), 1)
-		damage_override += (force_modifier * dammod)
-	M.attacked_by(src, user, attackchain_flags, damage_multiplier, damage_addition = force_modifier, damage_override = damage_override)
+	M.attacked_by(src, user, attackchain_flags, damage_list)
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
 //the equivalent of the standard version of attack() but for object targets.
-/obj/item/proc/attack_obj(obj/O, mob/living/user, damage_override)
+/obj/item/proc/attack_obj(obj/O, mob/living/user, list/damage_overrides)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 	if(item_flags & NOBLUDGEON)
 		return
 	user.do_attack_animation(O)
-	O.attacked_by(src, user, NONE, 1, 0, damage_override)
+	var/list/damage_list = SSdamage.deal_damage(user, O, src, damage_overrides)
+	O.attacked_by(src, user, NONE, damage_list)
 
-/obj/item/proc/attack_obj_nohit(obj/O, mob/living/user, damage_override)
+/obj/item/proc/attack_obj_nohit(obj/O, mob/living/user, list/damage_overrides)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ_NOHIT, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 
-/atom/movable/proc/attacked_by()
+/// damage list contains the output of SSdamage.deal_damage()
+/atom/movable/proc/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
 	return
 
-/obj/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0, damage_override)
-	var/totitemdamage
-	if(damage_override)
-		totitemdamage = damage_override
-	else
-		totitemdamage = (I.force * damage_multiplier) + damage_addition
-	var/bad_trait
-
-	var/stamloss = user.getStaminaLoss()
-	if(stamloss > STAMINA_NEAR_SOFTCRIT) //The more tired you are, the less damage you do.
-		var/penalty = (stamloss - STAMINA_NEAR_SOFTCRIT)/(STAMINA_NEAR_CRIT - STAMINA_NEAR_SOFTCRIT)*STAM_CRIT_ITEM_ATTACK_PENALTY
-		totitemdamage *= 1 - penalty
-
-	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		bad_trait = SKILL_COMBAT_MODE //blacklist combat skills.
-
-	if(I.used_skills && user.mind)
-		if(totitemdamage)
-			totitemdamage = user.mind.item_action_skills_mod(I, totitemdamage, I.skill_difficulty, SKILL_ATTACK_OBJ, bad_trait)
-		for(var/skill in I.used_skills)
-			if(!(SKILL_TRAIN_ATTACK_OBJ in I.used_skills[skill]))
-				continue
-			user.mind.auto_gain_experience(skill, I.skill_gain)
+/obj/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
+	var/totitemdamage = LAZYACCESS(damage_overrides, DAMAGE_FORCE) || 0
 	if(!(attackchain_flags & NO_AUTO_CLICKDELAY_HANDLING))
 		I.ApplyAttackCooldown(user, src, attackchain_flags)
 	if(totitemdamage)
 		visible_message(span_danger("[user] has hit [src] with [I]!"), null, null, COMBAT_MESSAGE_RANGE)
 		//only witnesses close by and the victim see a hit message.
 		log_combat(user, src, "attacked", I)
-	take_damage(totitemdamage, I.damtype, "melee", 1, attacked_by = user)
 
-/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0, damage_override)
+/mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
 	var/list/block_return = list()
-	var/totitemdamage
-	if(damage_override)
-		totitemdamage = damage_override
-	else
-		totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
+	var/totitemdamage = LAZYACCESS(damage_overrides, DAMAGE_FORCE) || I.force
 	if((user != src) && mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_IS_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, null, block_return) & BLOCK_SUCCESS)
 		return FALSE
+	. = TRUE // successful attack
 	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
 	send_item_attack_message(I, user, null, totitemdamage)
 	I.do_stagger_action(src, user, totitemdamage)
-	if(I.force)
-		apply_damage(totitemdamage, I.damtype)
-		if(I.damtype == BRUTE)
-			if(prob(33))
-				I.add_mob_blood(src)
-				var/turf/location = get_turf(src)
-				add_splatter_floor(location)
-				if(totitemdamage >= 10 && get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
-					user.add_mob_blood(src)
-		return TRUE //successful attack
-
-/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
-	if(I.force < force_threshold || I.damtype == STAMINA)
-		playsound(src, 'sound/weapons/tap.ogg', I.get_clamped_volume(), 1, -1)
-	else
-		return ..()
+	if(!I.force)
+		return
+	if(I.damtype != BRUTE)
+		return
+	if(!prob(33))
+		return
+	I.add_mob_blood(src)
+	var/turf/location = get_turf(src)
+	add_splatter_floor(location)
+	if(totitemdamage >= 10 && get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
+		user.add_mob_blood(src)
 
 /mob/living/proc/pre_attacked_by(obj/item/I, mob/living/user)
-	. = I.force
-	if(!.)
-		return
-
-	var/stamloss = user.getStaminaLoss()
-	var/stam_mobility_mult = 1
-	if(stamloss > STAMINA_NEAR_SOFTCRIT) //The more tired you are, the less damage you do.
-		var/penalty = (stamloss - STAMINA_NEAR_SOFTCRIT)/(STAMINA_NEAR_CRIT - STAMINA_NEAR_SOFTCRIT)*STAM_CRIT_ITEM_ATTACK_PENALTY
-		stam_mobility_mult -= penalty
-	if(stam_mobility_mult > LYING_DAMAGE_PENALTY && !CHECK_MOBILITY(user, MOBILITY_STAND)) //damage penalty for fighting prone, doesn't stack with the above.
-		stam_mobility_mult = LYING_DAMAGE_PENALTY
-	. *= stam_mobility_mult
-
-	if(!user.mind || !I.used_skills)
-		return
-	if(.)
-		. = user.mind.item_action_skills_mod(I, ., I.skill_difficulty, SKILL_ATTACK_MOB)
-	for(var/skill in I.used_skills)
-		if(!(SKILL_TRAIN_ATTACK_MOB in I.used_skills[skill]))
-			continue
-		var/datum/skill/S = GLOB.skill_datums[skill]
-		user.mind.auto_gain_experience(skill, I.skill_gain*S.item_skill_gain_multi)
+	return
 
 /**
  * Called after attacking something if the melee attack chain isn't interrupted before.

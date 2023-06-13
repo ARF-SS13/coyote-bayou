@@ -50,7 +50,7 @@
 	user.visible_message(span_suicide("[user] is putting [src] close to [user.p_their()] eyes and turning it on! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (FIRELOSS)
 
-/obj/item/flashlight/attack(mob/living/carbon/M, mob/living/carbon/human/user)
+/obj/item/flashlight/attack(mob/living/carbon/M, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	add_fingerprint(user)
 	if(istype(M) && on && (user.zone_selected in list(BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH)))
 
@@ -440,7 +440,7 @@
 	emp_cur_charges = min(emp_cur_charges+1, emp_max_charges)
 	return TRUE
 
-/obj/item/flashlight/emp/attack(mob/living/M, mob/living/user)
+/obj/item/flashlight/emp/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(on && (user.zone_selected in list(BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH))) // call original attack when examining organs
 		..()
 	return

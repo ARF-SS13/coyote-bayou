@@ -16,7 +16,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	attack_speed = CLICK_CD_MELEE
 
-	var/stamforce = 35
+	stamina_force = 35
 	var/turned_on = FALSE
 	var/knockdown = TRUE
 	var/obj/item/stock_parts/cell/cell
@@ -139,7 +139,7 @@
 		to_chat(user, span_notice("[src] is now [turned_on ? "on" : "off"]."))
 	add_fingerprint(user)
 
-/obj/item/melee/baton/attack(mob/M, mob/living/carbon/human/user)
+/obj/item/melee/baton/attack(mob/M, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	var/interrupt = common_baton_melee(M, user, FALSE)
 	if(!interrupt)
 		return ..()
@@ -177,7 +177,7 @@
 	if(L.mob_run_block(src, 0, "[user]'s [name]", ATTACK_TYPE_MELEE, 0, user, null, return_list) & BLOCK_SUCCESS) //No message; check_shields() handles that
 		playsound(L, 'sound/weapons/genhit.ogg', 50, 1)
 		return FALSE
-	var/stunpwr = stamforce
+	var/stunpwr = stamina_force
 	stunpwr = block_calculate_resultant_damage(stunpwr, return_list)
 	var/obj/item/stock_parts/cell/our_cell = get_cell()
 	if(!our_cell)
@@ -201,7 +201,7 @@
 	else
 		L.drop_all_held_items()					//no knockdown/stamina damage, instead disarm.
 
-	L.apply_effect(EFFECT_STUTTER, stamforce)
+	L.apply_effect(EFFECT_STUTTER, stamina_force)
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
 	if(user)
 		L.lastattacker = user.real_name
@@ -223,7 +223,7 @@
 	user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
 						span_userdanger("You accidentally hit yourself with [src]!"))
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
-	user.DefaultCombatKnockdown(stamforce*6)
+	user.DefaultCombatKnockdown(stamina_force*6)
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
 	deductcharge(hitcost)
 
@@ -283,7 +283,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 3
 	throwforce = 5
-	stamforce = 25
+	stamina_force = 25
 	hitcost = 7000
 	throw_hit_chance = 10
 	slot_flags = ITEM_SLOT_BACK

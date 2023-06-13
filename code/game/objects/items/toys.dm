@@ -53,7 +53,7 @@
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/toy/balloon/attack(mob/living/carbon/human/M, mob/user)
+/obj/item/toy/balloon/attack(mob/living/carbon/human/M, mob/user, attackchain_flags, list/overrides)
 	return
 
 /obj/item/toy/balloon/afterattack(atom/A as mob|obj, mob/user, proximity)

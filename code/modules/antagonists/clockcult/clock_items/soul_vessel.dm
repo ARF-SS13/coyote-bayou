@@ -54,7 +54,7 @@
 		return FALSE
 	..()
 
-/obj/item/mmi/posibrain/soul_vessel/attack(mob/living/target, mob/living/carbon/human/user)
+/obj/item/mmi/posibrain/soul_vessel/attack(mob/living/target, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	if(!is_servant_of_ratvar(user) || !ishuman(target))
 		..()
 		return

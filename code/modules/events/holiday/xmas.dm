@@ -5,7 +5,7 @@
 	desc = "Directions for use: Requires two people, one to pull each end."
 	var/cracked = 0
 
-/obj/item/toy/xmas_cracker/attack(mob/target, mob/user)
+/obj/item/toy/xmas_cracker/attack(mob/target, mob/user, attackchain_flags, list/overrides)
 	if( !cracked && ishuman(target) && (target.stat == CONSCIOUS) && !target.get_active_held_item() )
 		target.visible_message("[user] and [target] pop \an [src]! *pop*", span_notice("You pull \an [src] with [target]! *pop*"), span_italic("You hear a pop."))
 		var/obj/item/paper/Joke = new /obj/item/paper(user.loc)

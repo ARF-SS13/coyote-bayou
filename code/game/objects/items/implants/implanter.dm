@@ -20,7 +20,7 @@
 	else
 		icon_state = "implanter0"
 
-/obj/item/implanter/attack(mob/living/M, mob/user)
+/obj/item/implanter/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	if(!istype(M))
 		return
 	if(user && imp)

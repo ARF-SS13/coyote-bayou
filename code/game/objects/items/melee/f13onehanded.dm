@@ -54,7 +54,7 @@
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 //	item_flags = ITEM_CAN_PARRY does nothing from what i can tell arghhhggh todo: fix
 
-/obj/item/melee/onehanded/dragonfire/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/dragonfire/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -90,7 +90,7 @@
 	wound_bonus = -20
 	block_chance = 8
 
-/obj/item/melee/onehanded/machete/training/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/machete/training/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -172,7 +172,7 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 80 - force, 100, force - 10) //bonus chance increases depending on force
 
-/obj/item/melee/onehanded/knife/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/melee/onehanded/knife/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	if(user.zone_selected == BODY_ZONE_PRECISE_EYES)
 		return eyestab(M,user)
 	else
@@ -376,7 +376,7 @@ obj/item/melee/onehanded/knife/switchblade
 	sharpness = SHARP_NONE
 	slot_flags = SLOT_BELT
 
-/obj/item/melee/onehanded/club/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/club/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -393,7 +393,7 @@ obj/item/melee/onehanded/knife/switchblade
 	throwforce = 25
 	block_chance = 5
 
-/obj/item/melee/onehanded/club/warclub/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/club/warclub/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -488,7 +488,7 @@ obj/item/melee/onehanded/knife/switchblade
 /obj/item/melee/classic_baton/proc/additional_effects_silicon(mob/living/target, mob/living/user)
 	return
 
-/obj/item/melee/classic_baton/attack(mob/living/target, mob/living/user)
+/obj/item/melee/classic_baton/attack(mob/living/target, mob/living/user, attackchain_flags, list/overrides)
 	if(!on)
 		return ..()
 
@@ -652,7 +652,7 @@ obj/item/melee/onehanded/knife/switchblade
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/whip.ogg'
 
-/obj/item/melee/onehanded/slavewhip/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/slavewhip/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -761,7 +761,7 @@ obj/item/melee/onehanded/knife/switchblade
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 27
 
-/obj/item/melee/unarmed/sappers/attack(mob/living/M, mob/living/user)
+/obj/item/melee/unarmed/sappers/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!istype(M))
 		return
@@ -849,7 +849,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.75 //6
 
-/obj/item/melee/unarmed/yaoguaigauntlet/attack(mob/living/target, mob/living/user)
+/obj/item/melee/unarmed/yaoguaigauntlet/attack(mob/living/target, mob/living/user, attackchain_flags, list/overrides)
 	. = ..()
 	if(!isliving(target))
 		return

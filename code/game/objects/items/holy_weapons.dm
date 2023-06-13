@@ -464,7 +464,7 @@
 	item_state = "multiverse"
 	slot_flags = ITEM_SLOT_BELT
 
-/obj/item/nullrod/claymore/multiverse/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/nullrod/claymore/multiverse/attack(mob/living/carbon/M, mob/living/carbon/user, attackchain_flags, list/overrides)
 	force = rand(1, 30)
 	..()
 
@@ -687,7 +687,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 
-/obj/item/nullrod/claymore/bostaff/attack(mob/target, mob/living/user)
+/obj/item/nullrod/claymore/bostaff/attack(mob/target, mob/living/user, attackchain_flags, list/overrides)
 	add_fingerprint(user)
 	if((HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
 		to_chat(user, "<span class ='warning'>You club yourself over the head with [src].</span>")
@@ -794,7 +794,7 @@
 	else
 		. = ..()
 
-/obj/item/nullrod/rosary/attack(mob/living/M, mob/living/user)
+/obj/item/nullrod/rosary/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 

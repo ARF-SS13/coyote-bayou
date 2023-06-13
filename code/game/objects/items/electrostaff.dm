@@ -175,7 +175,7 @@
 	if(C.charge < min_hit_cost())
 		turn_off()
 
-/obj/item/electrostaff/attack(mob/living/target, mob/living/user)
+/obj/item/electrostaff/attack(mob/living/target, mob/living/user, attackchain_flags, list/overrides)
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes it impossible to baton in stamina softcrit
 		to_chat(user, span_danger("You're too exhausted to use [src] properly."))//CIT CHANGE - ditto
 		return //CIT CHANGE - ditto

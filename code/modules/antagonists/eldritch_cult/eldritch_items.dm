@@ -51,7 +51,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "rended")
 
-/obj/item/melee/sickly_blade/attack(mob/living/M, mob/living/user)
+/obj/item/melee/sickly_blade/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
 	if(!IS_HERETIC(user))
 		to_chat(user,span_danger("You feel a pulse of some alien intellect lash out at your mind!"))
 		var/mob/living/carbon/human/human_user = user

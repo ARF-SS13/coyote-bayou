@@ -28,7 +28,7 @@
 		checkLiked(min(gulp_size/reagents.total_volume, 1), vorer)
 	return TRUE
 
-/obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
+/obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, attackchain_flags, list/overrides)
 	INVOKE_ASYNC(src, .proc/attempt_forcedrink, M, user)
 
 /obj/item/reagent_containers/food/drinks/proc/attempt_forcedrink(mob/living/M, mob/user, force, silent, vorebite)
@@ -503,7 +503,7 @@
 	qdel(src)
 	return BRUTELOSS
 
-/obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
+/obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user, attackchain_flags, list/overrides)
 	if(M == user && !src.reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
 		crush_can(user)
 	..()

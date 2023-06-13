@@ -38,7 +38,7 @@
 	add_atom_colour(myskin.get_color(src), FIXED_COLOUR_PRIORITY)
 	. += myskin.get_overlays(src)
 
-/obj/item/wirecutters/attack(mob/living/carbon/C, mob/user)
+/obj/item/wirecutters/attack(mob/living/carbon/C, mob/user, attackchain_flags, list/overrides)
 	if(istype(C) && C.handcuffed && istype(C.handcuffed, /obj/item/restraints/handcuffs/cable))
 		user.visible_message(span_notice("[user] cuts [C]'s restraints with [src]!"))
 		qdel(C.handcuffed)
@@ -112,7 +112,7 @@
 	qdel(src)
 	user.put_in_active_hand(pryjaws)
 
-/obj/item/wirecutters/power/attack(mob/living/carbon/C, mob/user)
+/obj/item/wirecutters/power/attack(mob/living/carbon/C, mob/user, attackchain_flags, list/overrides)
 	if(istype(C))
 		if(C.handcuffed)
 			user.visible_message(span_notice("[user] cuts [C]'s restraints with [src]!"))

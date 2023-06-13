@@ -110,7 +110,7 @@
 	dyn_explosion(T, plasmaAmount/5)//20 plasma in a standard welder has a 4 power explosion. no breaches, but enough to kill/dismember holder
 	qdel(src)
 
-/obj/item/weldingtool/attack(mob/living/carbon/human/H, mob/user)
+/obj/item/weldingtool/attack(mob/living/carbon/human/H, mob/user, attackchain_flags, list/overrides)
 	if(!istype(H))
 		return ..()
 

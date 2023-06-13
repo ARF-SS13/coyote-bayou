@@ -66,7 +66,7 @@
 	AddComponent(/datum/component/butchering, 40, 100)
 	AddElement(/datum/element/sword_point)
 
-/obj/item/melee/cultblade/attack(mob/living/target, mob/living/carbon/human/user)
+/obj/item/melee/cultblade/attack(mob/living/target, mob/living/carbon/human/user, attackchain_flags, list/overrides)
 	if(!iscultist(user))
 		user.DefaultCombatKnockdown(100)
 		user.dropItemToGround(src, TRUE)

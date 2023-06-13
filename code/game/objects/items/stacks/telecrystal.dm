@@ -10,7 +10,7 @@
 	item_flags = NOBLUDGEON
 	merge_type = /obj/item/stack/telecrystal
 
-/obj/item/stack/telecrystal/attack(mob/target, mob/user)
+/obj/item/stack/telecrystal/attack(mob/target, mob/user, attackchain_flags, list/overrides)
 	if(target == user && isliving(user)) //You can't go around smacking people with crystals to find out if they have an uplink or not.
 		var/mob/living/L = user
 		for(var/obj/item/implant/uplink/I in L.implants)
