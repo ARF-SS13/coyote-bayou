@@ -691,7 +691,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(T)
 				var/state = "[T.icon_state][((DIGITIGRADE in species_traits) && T.has_digitigrade) ? "_d" : ""]"
 				var/mutable_appearance/MA
-				if(H.dna.species.sexes && H.dna.features["body_model"] == FEMALE)
+				if(T.use_sex_mask && H.dna.species.sexes && H.dna.features["body_model"] == FEMALE)
 					MA = wear_alpha_masked_version(state, T.icon, layer_to_put_it_on, FEMALE_UNIFORM_TOP)
 				else
 					MA = mutable_appearance(T.icon, state, -layer_to_put_it_on)

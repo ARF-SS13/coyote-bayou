@@ -653,7 +653,37 @@
 	gender = FEMALE
 	covers_belly = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelypetite
+	name = "Shapely Shirt - Petite"
+	icon_state = "shapely_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelygirlish
+	name = "Shapely Shirt - Girlish"
+	icon_state = "shapely_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelycurvy
+	name = "Shapely Shirt - Curvy"
+	icon_state = "shapely_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelybusty
+	name = "Shapely Shirt - Busty"
+	icon_state = "shapely_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelybackbreaker
+	name = "Shapely Shirt - Backbreakers"
+	icon_state = "shapely_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
