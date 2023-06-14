@@ -583,6 +583,13 @@
 	icon_state = "pawsocks"
 	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
 
+/datum/sprite_accessory/mam_body_markings/palmlessglove
+	name = "Palmless Gloves"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "palmless_glove"
+	covered_limbs = list("Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
+
 /datum/sprite_accessory/mam_body_markings/patches
 	name = "Patches"
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
