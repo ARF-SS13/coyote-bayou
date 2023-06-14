@@ -272,8 +272,8 @@
 	new /obj/item/circuitboard/machine/plantgenes(src)
 	new /obj/item/circuitboard/machine/seed_extractor(src)
 	new obj/item/circuitboard/machine/smartfridge(src)
-    new /obj/item/disk/plantgene(src)
-    new /obj/item/disk/plantgene(src)
+	new /obj/item/disk/plantgene(src)
+	new /obj/item/disk/plantgene(src)
 // C
 
 /datum/gear/donator/kits/caseapollo58143
