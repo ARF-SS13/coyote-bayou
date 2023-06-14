@@ -808,6 +808,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
 	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"] // Typing sounds!
 	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
+	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
 
 	/// Vore stuff!
 	S["master_vore_toggle"]					>> master_vore_toggle
@@ -850,6 +851,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
+	underwear_overhands	= sanitize_integer(underwear_overhands, 0, 1, initial(underwear_overhands))
 
 	hair_style					= sanitize_inlist(hair_style, GLOB.hair_styles_list)
 	facial_hair_style			= sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_list)
@@ -1297,6 +1299,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["allow_being_sniffed"]				, allow_being_sniffed)
 	WRITE_FILE(S["belly_prefs"]						, safe_json_encode(belly_prefs))
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
+
+	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
 
 	cit_character_pref_save(S)
 

@@ -560,6 +560,13 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	switch(href_list["action"])
 		if("open_sockdrawer")
 			show_underwear_panel()
+		if("toggle_underoverhand")
+			var/datum/preferences/P = client?.prefs
+			if(P)
+				TOGGLE_VAR(P.underwear_overhands)
+				P.save_character()
+				update_body(TRUE)
+				show_underwear_panel()
 		if("update_every_fucking_crotch")
 			if(COOLDOWN_FINISHED(GLOB, crotch_call_cooldown))
 				for(var/mob/living/carbon/human/dic in GLOB.human_list)
@@ -726,6 +733,14 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=socks_color'>
 						[socks_color]
+			</a>"}
+	var/datum/preferences/P = client?.prefs
+	dat += {"<a 
+				class='undies_link'
+				href='
+					?src=[REF(src)];
+					action=toggle_underoverhand'>
+						Worn [P?.underwear_overhands ? "over" : "under"] your hands
 			</a>"}
 	dat += "</td>"
 	dat += "</tr>"
