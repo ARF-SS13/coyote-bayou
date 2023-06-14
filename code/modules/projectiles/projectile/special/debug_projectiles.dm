@@ -8,7 +8,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fastest
 	)

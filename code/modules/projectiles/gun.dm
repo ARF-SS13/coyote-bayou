@@ -1176,8 +1176,10 @@ ATTACHMENTS
 		)
 
 	data["attachments"] = list()
+	var/attindex = 1
 	for(var/atom/A in item_upgrades)
-		data["attachments"] += list(list("name" = A.name, "desc" = A.desc))
+		data["attachments"] += list(list("name" = A.name, "desc" = A.desc, "attachment_index" = attindex))
+		attindex += 1
 	return data
 
 /obj/item/gun/ui_act(action, params)
@@ -1192,6 +1194,13 @@ ATTACHMENTS
 		var/mob/living/carbon/human/user = usr
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		to_chat(user, span_notice("\The [src] is now set to [new_mode.name]."))
+		. = TRUE
+	if(action == "ExamineAttachment")
+		var/obj/item/attachmentmaybe = LAZYACCESS(item_upgrades, "[params["AttachmentID"]]")
+		if(!attachmentmaybe || !ismob(usr))
+			return
+		var/mob/user = usr
+		user.true_examinate(attachmentmaybe, TRUE)
 		. = TRUE
 	update_icon()
 

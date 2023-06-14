@@ -373,7 +373,13 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(is_blind())
 		to_chat(src, span_warning("Something is there but you can't see it!"))
 		return
+	return true_examinate(A)
 
+/// Splits the examine verb into two parts, one to determine if examining is possible, and one to actually do the examining.
+/// Allows code to force an examination without checking if its visible.
+/mob/proc/true_examinate(atom/A)
+	if(!A)
+		return
 	face_atom(A)
 	var/list/result
 	if(client)

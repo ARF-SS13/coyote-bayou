@@ -32,8 +32,18 @@ SUBSYSTEM_DEF(recoil)
 	/// Format: list("tag" = /datum/recoil, ...)
 	var/list/gun_recoils = list()
 
+	/// Global recoil reduction per second
 	var/recoil_reduction_per_second = RECOIL_REDUCTION_BASE_PER_SECOND
+	/// Global multiplier to a mob's recoil incurred per tick
+	var/recoil_multiplier_per_tick = 1
+	/// GLobal multiplier to converting recoil into spread
 	var/recoil_to_spread_mult = 1
+	/// Global multiplier to all additions to recoil
+	var/recoil_add_global_mult = 1
+	/// Time a human has to not move before they can move without recoil
+	var/recoil_scooch_time = RECOIL_SCOOCH_TIME
+	/// Distance humans can move without movement recoil if they havent moved in a bit
+	var/scooch_distance = RECOIL_SCOOCH_TILES
 
 	var/debug_recoil = FALSE
 
@@ -152,15 +162,21 @@ SUBSYSTEM_DEF(recoil)
 	return gun_recoil
 
 /datum/controller/subsystem/recoil/proc/modify_gun_recoil(recoil_tag = RECOIL_TAG_DEFAULT, list/modifiers = RECOIL_LIST_DEFAULT)
-	if(!recoil_tag || LAZYLEN(modifiers) != 2)
+	if(!recoil_tag)
 		return give_recoil_tag()
+	if(LAZYLEN(modifiers) != 2)
+		modifiers = RECOIL_LIST_DEFAULT
 	var/list/item_recoil_args = RECOIL_TAG2LIST(recoil_tag)
 	if(LAZYLEN(item_recoil_args) != 2) // "UNWIELD" "WIELD"
-		return give_recoil_tag()
-	for(var/index in modifiers)
-		item_recoil_args[index] = text2num(item_recoil_args[index])
-		item_recoil_args[index] = round((item_recoil_args[index] * modifiers[index]), 0.05)
-	return give_recoil_tag(item_recoil_args)
+		item_recoil_args = RECOIL_LIST_DEFAULT
+	var/my_one_handed_recoil = text2num(item_recoil_args[1])
+	var/my_two_handed_recoil = text2num(item_recoil_args[2])
+	var/mod_two_handed_mult = isnum(modifiers[2]) ? modifiers[1] : text2num(modifiers[1])
+	var/mod_one_handed_mult = isnum(modifiers[1]) ? modifiers[2] : text2num(modifiers[2])
+	var/new_one_handed_recoil = round((my_one_handed_recoil * mod_one_handed_mult), 0.1)
+	var/new_two_handed_recoil = round((my_two_handed_recoil * mod_two_handed_mult), 0.1)
+	var/list/output_list = list(new_one_handed_recoil, new_two_handed_recoil)
+	return give_recoil_tag(output_list)
 
 /datum/controller/subsystem/recoil/proc/get_recoil_examine(recoil_tag = RECOIL_TAG_DEFAULT)
 	var/datum/gun_recoil/gun_recoil = get_gun_recoil_datum(recoil_tag)
@@ -253,7 +269,10 @@ SUBSYSTEM_DEF(recoil)
 			. += span_warning("It'll kick much more in one hand.")
 
 /datum/gun_recoil/proc/tgui_recoil_data()
-	return list("recoil_unwielded" = unwielded_recoil_mod, "recoil_wielded" = wielded_recoil_mod, "recoil_should_wield" = should_be_wielded)
+	return list(
+		"recoil_unwielded" = round(unwielded_recoil_mod, 0.1),
+		"recoil_wielded" = round(wielded_recoil_mod, 0.1),
+		"recoil_should_wield" = should_be_wielded)
 
 /// DATUMIZED RECOIL SYSTEM
 /// Just a datum with a number innit, really.
@@ -269,6 +288,8 @@ SUBSYSTEM_DEF(recoil)
 	COOLDOWN_DECLARE(last_recoil_time)
 	/// Prevents movement recoil from being added if you just scooched a little bit
 	COOLDOWN_DECLARE(last_movement_time)
+	/// Number of tiles you can move without incurring movement recoil
+	var/scooches_left = 0
 	var/debug_mode = FALSE
 
 /datum/mob_recoil/New(ckey)
@@ -284,10 +305,10 @@ SUBSYSTEM_DEF(recoil)
 		user = WEAKREF(shooter) // update our mob ref
 	var/recoil_before = recoil
 	var/mult = get_recoil_mods(shooter, my_gun)
-	recoil += round(recoil_buildup * mult, 0.1)
+	recoil += round(recoil_buildup * mult * SSrecoil.recoil_add_global_mult, 0.1)
 	update_mob(shooter)
 	if(debug_mode)
-		to_chat(shooter, "Added [recoil_buildup] * [mult] = [recoil] Recoil: [recoil_before] -> [recoil]")
+		to_chat(shooter, "Added [recoil_buildup] * [mult] [SSrecoil.recoil_add_global_mult] = [recoil] Recoil: [recoil_before] -> [recoil]")
 	return TRUE
 
 /datum/mob_recoil/proc/get_recoil_mods(mob/living/shooter, obj/item/gun/my_gun)
@@ -309,7 +330,7 @@ SUBSYSTEM_DEF(recoil)
 	var/mob/living/shooter = GET_WEAKREF(user)
 	if(!shooter)
 		return FALSE
-	. = reduce_recoil(ticklength, deltatime, shooter)
+	. = reduce_recoil(amount, ticklength, deltatime, shooter)
 	update_mob(shooter)
 
 /datum/mob_recoil/proc/reduce_recoil(amount, ticklength, deltatime, mob/living/shooter)
@@ -323,7 +344,7 @@ SUBSYSTEM_DEF(recoil)
 		if(HAS_TRAIT(shooter, SPREAD_CONTROL))
 			reduction *= 2
 	recoil -= reduction
-	recoil *= 0.9
+	recoil *= SSrecoil.recoil_multiplier_per_tick
 	if(recoil < 0)
 		recoil = 0
 	recoil = round(recoil, 0.1)
@@ -345,9 +366,12 @@ SUBSYSTEM_DEF(recoil)
 	var/mob/living/walker = GET_WEAKREF(user)
 	if(!isliving(walker))
 		return
+	if(scooches_left--) // Little movements after not moving for a while dont incur movement recoil
+		return // scoochie
 	var/scooch_check = COOLDOWN_FINISHED(src, last_movement_time) // Little scooches wont incur recoil
-	COOLDOWN_START(src, last_movement_time, RECOIL_MOVEMENT_GRACE) // but if you keep moving, you'll get recoil
+	COOLDOWN_START(src, last_movement_time, SSrecoil.recoil_scooch_time) // but if you keep moving, you'll get recoil
 	if(scooch_check)
+		scooches_left = SSrecoil.scooch_distance
 		if(debug_mode)
 			to_chat(walker, "Scooched. Not adding recoil.")
 		return

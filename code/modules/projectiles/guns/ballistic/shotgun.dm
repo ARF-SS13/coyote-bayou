@@ -29,7 +29,7 @@
 	spawnwithmagazine = TRUE
 	cock_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = RIFLE_RECOIL(2, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -311,7 +311,7 @@
 		slot_flags = ITEM_SLOT_BACK
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(2.2))
+		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(2.2, 2.2))
 	else
 		slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 		w_class = WEIGHT_CLASS_NORMAL
@@ -443,7 +443,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2 //can bump to T1 if this is too poor
 	cock_delay = GUN_COCK_SHOTGUN_FAST
-	init_recoil = RIFLE_RECOIL(2.8)
+	init_recoil = CARBINE_RECOIL(1, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -471,7 +471,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = CARBINE_RECOIL(1, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -495,7 +495,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = RIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -518,7 +518,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(2.2)
+	init_recoil = RIFLE_RECOIL(2.8, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -573,7 +573,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(2.8)
+	init_recoil = RIFLE_RECOIL(2.8, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -622,7 +622,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(2.8)
+	init_recoil = RIFLE_RECOIL(2.8, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow

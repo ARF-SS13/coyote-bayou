@@ -280,9 +280,11 @@
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.slowdown *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_1H) || LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_2H))
-		var/list/recoil_mods = list(
-			GUN_UPGRADE_RECOIL_1H = LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_1H) || 1,
-			GUN_UPGRADE_RECOIL_2H = LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_2H) || 1)
+		var/list/recoil_mods = list(1,1)
+		if(LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_1H))
+			recoil_mods[1] = weapon_upgrades[GUN_UPGRADE_RECOIL_1H]
+		if(LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_2H))
+			recoil_mods[2] = weapon_upgrades[GUN_UPGRADE_RECOIL_2H]
 		G.recoil_tag = SSrecoil.modify_gun_recoil(G.recoil_tag, recoil_mods)
 	//if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 	//	G.muzzle_flash *= weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]
@@ -334,8 +336,8 @@
 		G.force += weapon_upgrades[GUN_UPGRADE_MELEEDAMAGE]
 	if(weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION])
 		G.armour_penetration += weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION]
-	if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
-		G.recoil_tag = SSrecoil.modify_gun_recoil(G.recoil_tag, list(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY], 1))
+	// if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
+	// 	G.recoil_tag = SSrecoil.modify_gun_recoil(G.recoil_tag, list(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY], 1))
 	if(weapon_upgrades[UPGRADE_COLOR])
 		G.color = weapon_upgrades[UPGRADE_COLOR]
 
@@ -487,16 +489,16 @@
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL_1H])
 			var/amount = ((weapon_upgrades[GUN_UPGRADE_RECOIL_1H] - 1) * 100)
 			if(amount > 0)
-				examine_list += span_warning("Increases one-handed recoil by [amount*100]%")
+				examine_list += span_warning("Increases one-handed recoil by [amount]%")
 			else
-				examine_list += span_notice("Decreases one-handed recoil by [abs(amount*100)]%")
+				examine_list += span_notice("Decreases one-handed recoil by [abs(amount)]%")
 
 		if(weapon_upgrades[GUN_UPGRADE_RECOIL_2H])
 			var/amount = ((weapon_upgrades[GUN_UPGRADE_RECOIL_2H] - 1) * 100)
 			if(amount > 0)
-				examine_list += span_warning("Increases two-handed recoil by [amount*100]%")
+				examine_list += span_warning("Increases two-handed recoil by [amount]%")
 			else
-				examine_list += span_notice("Decreases two-handed recoil by [abs(amount*100)]%")
+				examine_list += span_notice("Decreases two-handed recoil by [abs(amount)]%")
 
 		if(weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH])
 			var/amount = weapon_upgrades[GUN_UPGRADE_MUZZLEFLASH]-1
@@ -560,12 +562,12 @@
 		if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 			examine_list += span_warning("Rigs the weapon to explode.")
 
-		if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
-			var/amount = weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY]-1
-			if(amount > 0)
-				examine_list += span_warning("Increases one-handed recoil by [amount*100]%")
-			else
-				examine_list += span_notice("Decreases one-handed recoil by [abs(amount*100)]%")
+		// if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
+		// 	var/amount = weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY]-1
+		// 	if(amount > 0)
+		// 		examine_list += span_warning("Increases one-handed recoil by [amount*100]%")
+		// 	else
+		// 		examine_list += span_notice("Decreases one-handed recoil by [abs(amount*100)]%")
 
 		if(weapon_upgrades[GUN_UPGRADE_ZOOM])
 			var/amount = weapon_upgrades[GUN_UPGRADE_ZOOM]

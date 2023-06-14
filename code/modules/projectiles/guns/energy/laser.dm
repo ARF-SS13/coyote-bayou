@@ -235,7 +235,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	init_recoil = HANDGUN_RECOIL(1.5)
+	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
 
 //Wattz 1000 Magneto-laser pistol
 /obj/item/gun/energy/laser/wattz/magneto
@@ -282,7 +282,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(2, 2)
 //AEP 7 Laser pistol
 /obj/item/gun/energy/laser/pistol
 	name = "\improper AEP7 laser pistol"
@@ -301,7 +301,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 
 // starter kit havin ass
 /obj/item/gun/energy/laser/pistol/worn
@@ -381,7 +381,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
-	init_recoil = HANDGUN_RECOIL(1.5)
+	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
 //Solar Scorcher
 /obj/item/gun/energy/laser/solar
 	name = "\improper Solar Scorcher"
@@ -400,7 +400,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1.5)
+	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
 //Badland's Special
 /obj/item/gun/energy/laser/badlands
 	name = "\improper Badland's Special"
@@ -441,7 +441,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_recoil = HANDGUN_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(2, 2)
 
 //Compact RCW
 
@@ -460,7 +460,7 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
-	init_recoil = AUTOPISTOL_RECOIL(1.5)
+	init_recoil = AUTOPISTOL_RECOIL(1.5, 1.5)
 
 /obj/item/gun/energy/laser/auto/twin
 	name = "twin-shot RCW carbine"
@@ -487,7 +487,7 @@
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
-	init_recoil = AUTOPISTOL_RECOIL(2)
+	init_recoil = AUTOPISTOL_RECOIL(2, 2)
 
 /obj/item/gun/energy/laser/auto/nayriin
 	name = "Lucy"
@@ -513,7 +513,7 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
-	init_recoil = AUTOPISTOL_RECOIL(2)
+	init_recoil = AUTOPISTOL_RECOIL(2, 2)
 //Ultracite Laser pistol
 /obj/item/gun/energy/laser/ultra_pistol
 	name = "\improper Ultracite laser pistol"
@@ -530,7 +530,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 
 // The Synth's Lasergun
 /obj/item/gun/energy/laser/sida
@@ -554,7 +554,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 
 ////////////////
 //LASER RIFLES//
@@ -801,7 +801,7 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/slow
 	)
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 
 
 //Alien Blaster
@@ -941,7 +941,7 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300
 	)
-	init_recoil = HMG_RECOIL(1)
+	init_recoil = HMG_RECOIL(1, 1)
 
 /obj/item/gun/energy/minigun/Initialize()
 	if(istype(loc, /obj/item/minigunpack)) //We should spawn inside an ammo pack so let's use that one.

@@ -17,7 +17,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	init_recoil = HANDGUN_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(2, 2)
 //Plasma pistol: Eve
 /obj/item/gun/energy/laser/plasma/pistol/eve
 	name ="eve"
@@ -120,7 +120,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	init_recoil = RIFLE_RECOIL(2)
+	init_recoil = RIFLE_RECOIL(2, 2)
 
 //Plasma carbine
 /obj/item/gun/energy/laser/plasma/carbine
@@ -140,7 +140,7 @@
 	init_firemodes = list(
 		/datum/firemode/burst/two
 	)
-	init_recoil = CARBINE_RECOIL(1.5)
+	init_recoil = CARBINE_RECOIL(1.5, 1.5)
 //Multiplas rifle
 /obj/item/gun/energy/laser/plasma/scatter
 	name = "multiplas rifle"
@@ -155,7 +155,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	init_recoil = LMG_RECOIL(1.5)
+	init_recoil = LMG_RECOIL(1.5, 1.5)
 
 /obj/item/gun/energy/laser/plasma/spear
 	name = "ergonomic plasmacaster"

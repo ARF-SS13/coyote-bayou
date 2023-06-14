@@ -47,7 +47,7 @@
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()

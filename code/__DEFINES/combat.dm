@@ -388,16 +388,16 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define RUBBERY_RECOIL_MULT 0.4
 
 /// Bullet Recoil defines
-#define BULLET_RECOIL_BASE 1
+#define BULLET_RECOIL_BASE (1)
 #define BULLET_RECOIL_PISTOL_SMALL (BULLET_RECOIL_BASE * 0.75)
 #define BULLET_RECOIL_PISTOL_MEDIUM (BULLET_RECOIL_BASE * 1)
 #define BULLET_RECOIL_PISTOL_LARGE (BULLET_RECOIL_BASE * 1.5)
-#define BULLET_RECOIL_RIFLE_SMALL (BULLET_RECOIL_BASE * 2)
-#define BULLET_RECOIL_RIFLE_MEDIUM (BULLET_RECOIL_BASE * 5)
+#define BULLET_RECOIL_RIFLE_SMALL (BULLET_RECOIL_BASE * 1)
+#define BULLET_RECOIL_RIFLE_MEDIUM (BULLET_RECOIL_BASE * 2)
 #define BULLET_RECOIL_RIFLE_LARGE (BULLET_RECOIL_BASE * 25)
-#define BULLET_RECOIL_SHOTGUN (BULLET_RECOIL_BASE * 10)
+#define BULLET_RECOIL_SHOTGUN (BULLET_RECOIL_BASE * 2)
 #define BULLET_RECOIL_GAUSS (BULLET_RECOIL_BASE * 100)
-#define BULLET_RECOIL_LASER (BULLET_RECOIL_BASE * 2)
+#define BULLET_RECOIL_LASER (BULLET_RECOIL_BASE * 5)
 #define BULLET_RECOIL_PLASMA (BULLET_RECOIL_BASE * 5)
 
 
@@ -1139,14 +1139,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Projectiles define the recoil amount, guns modify the recoil based on wieldedness
 
-/////////////////////////////////1HANDED , 2HANDED
-#define HANDGUN_RECOIL(x)    list(1   * x * GUN_RECOIL_GLOBAL_MULT, 0.5 * x * GUN_RECOIL_GLOBAL_MULT)
-#define AUTOPISTOL_RECOIL(x) list(2   * x * GUN_RECOIL_GLOBAL_MULT, 1   * x * GUN_RECOIL_GLOBAL_MULT)
-#define SMG_RECOIL(x)        list(1.5 * x * GUN_RECOIL_GLOBAL_MULT, 1   * x * GUN_RECOIL_GLOBAL_MULT)
-#define CARBINE_RECOIL(x)    list(2   * x * GUN_RECOIL_GLOBAL_MULT, 0.9 * x * GUN_RECOIL_GLOBAL_MULT)
-#define RIFLE_RECOIL(x)      list(3   * x * GUN_RECOIL_GLOBAL_MULT, 0.5 * x * GUN_RECOIL_GLOBAL_MULT)
-#define LMG_RECOIL(x)        list(5   * x * GUN_RECOIL_GLOBAL_MULT, 1   * x * GUN_RECOIL_GLOBAL_MULT)
-#define HMG_RECOIL(x)        list(10  * x * GUN_RECOIL_GLOBAL_MULT, 0.8 * x * GUN_RECOIL_GLOBAL_MULT)
+///////////////////////////////// 1HANDED , 2HANDED
+#define HANDGUN_RECOIL(x,y)    list(1   * x, 0.5 * y)
+#define AUTOPISTOL_RECOIL(x,y) list(2   * x, 1   * y)
+#define SMG_RECOIL(x,y)        list(1.2 * x, 1   * y)
+#define CARBINE_RECOIL(x,y)    list(1.2 * x, 0.9 * y)
+#define RIFLE_RECOIL(x,y)      list(3   * x, 0.5 * y)
+#define LMG_RECOIL(x,y)        list(5   * x, 1   * y)
+#define HMG_RECOIL(x,y)        list(10  * x, 1   * y)
 
 //Quick defines for fire modes
 #define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "150 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")
@@ -1390,7 +1390,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS 0.2
 
 /// If you dont move for this long, your next step won't increase recoil
-#define RECOIL_MOVEMENT_GRACE 0.8 SECONDS
+#define RECOIL_SCOOCH_TIME 0.8 SECONDS
+// The number of free tiles you can move in Scoochmode
+#define RECOIL_SCOOCH_TILES 4
 
 #define RECOIL_INDEX_UNWIELDED 1
 #define RECOIL_INDEX_WIELDED 2
@@ -1406,7 +1408,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define RECOIL_TAG_DEFAULT "1[RECOIL_TAG_DIVIDER]1"
 #define RECOIL_LIST_DEFAULT list(1, 1)
 
-#define RECOIL_REDUCTION_BASE_PER_SECOND 1
-#define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((0.1 * tick * mult * base), 0.5))
+#define RECOIL_REDUCTION_BASE_PER_SECOND 2
+#define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((0.1 * tick * mult * base), 0.005))
 #define RECOIL_REDUCTION_HIGH_SCALE 0.5
 

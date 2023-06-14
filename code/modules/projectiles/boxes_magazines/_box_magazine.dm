@@ -60,18 +60,6 @@
 	. = fill_magazine(max_ammo, TRUE)
 	update_icon()
 
-/obj/item/ammo_box/ComponentInitialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
-	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_load)
-
-/// An aheal, but for ammo boxes
-/obj/item/ammo_box/proc/admin_load()
-	if(!ammo_type)
-		return
-	. = fill_magazine(max_ammo, TRUE)
-	update_icon()
-
 /obj/item/ammo_box/proc/init_ammo()
 	if(start_empty)
 		return // All done!
@@ -96,10 +84,10 @@
 	for(var/i in 1 to to_load)
 		stored_ammo += new ammo_type(src)
 	if(cock && istype(loc, /obj/item/gun/ballistic))
-		var/obj/item/gun/ballistic/my_gun
+		var/obj/item/gun/ballistic/my_gun = loc
 		if(my_gun?.chambered?.BB)
 			return
-		my_gun.chamber_round()
+		my_gun?.chamber_round()
 
 /obj/item/ammo_box/proc/get_round(keep = 0)
 	if (!stored_ammo.len)

@@ -604,7 +604,10 @@ const AttachmentInfo = (props, context) => {
               content={attachmentvalue.name}
               tooltip={attachmentvalue.desc}
               tooltipPosition="bottom"
-              tooltipStyle="max-width: 300px" />
+              tooltipStyle="max-width: 300px" 
+              onClick={() => act('ExamineAttachment', {
+                AttachmentID: attachmentvalue.attachment_index
+              })} />
           </Stack.Item>
         ))}
       </Stack>
