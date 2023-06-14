@@ -61,13 +61,13 @@
 		'sound/f13npc/handy/aggro2.ogg'
 		)
 	idlesound = list(
-		'sound/f13npc/handy/idle1.wav',
+		'sound/f13npc/handy/idle1.ogg',
 		'sound/f13npc/handy/idle2.ogg',
 		'sound/f13npc/handy/idle3.ogg'
 		)
 
 	death_sound = 'sound/f13npc/handy/robo_death.ogg'
-	attack_sound = 'sound/f13npc/handy/attack.wav'
+	attack_sound = 'sound/f13npc/handy/attack.ogg'
 
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	loot = list(
