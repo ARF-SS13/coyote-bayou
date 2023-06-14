@@ -1390,9 +1390,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS 0.2
 
 /// If you dont move for this long, your next step won't increase recoil
-#define RECOIL_SCOOCH_TIME 0.8 SECONDS
+#define RECOIL_SCOOCH_TIME 0.4 SECONDS
 // The number of free tiles you can move in Scoochmode
-#define RECOIL_SCOOCH_TILES 4
+#define RECOIL_SCOOCH_TILES 2
 
 #define RECOIL_INDEX_UNWIELDED 1
 #define RECOIL_INDEX_WIELDED 2
@@ -1409,6 +1409,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define RECOIL_LIST_DEFAULT list(1, 1)
 
 #define RECOIL_REDUCTION_BASE_PER_SECOND 2
-#define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((0.1 * tick * mult * base), 0.005))
+#define RECOIL_REDUCTION_MULT 0.9
+#define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((base * (0.1 * tick) * mult), 0.005))
 #define RECOIL_REDUCTION_HIGH_SCALE 0.5
 

@@ -1,5 +1,5 @@
 // A subsystem? For recoil? In MY BYOND? It'datum/mob_recoils more likely than you think.
-#define RECOIL_DTIME_SHIFT 4
+#define RECOIL_DTIME_SHIFT 5 // 2^5 = 32*2 = 64 deciseconds 
 /// Arg definitions:
 /// gun_recoil = the gun_recoil datum that is being used
 /// recoil_tag = tag relating to the gun recoil
@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(recoil)
 	/// Global recoil reduction per second
 	var/recoil_reduction_per_second = RECOIL_REDUCTION_BASE_PER_SECOND
 	/// Global multiplier to a mob's recoil incurred per tick
-	var/recoil_multiplier_per_tick = 1
+	var/recoil_multiplier_per_tick = RECOIL_REDUCTION_MULT
 	/// GLobal multiplier to converting recoil into spread
 	var/recoil_to_spread_mult = 1
 	/// Global multiplier to all additions to recoil
@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(recoil)
 	//cache for sanic speed (lists are references anyways)
 	/// yeah this is copied from processing.dm
 	var/list/recoil_list = current_mob_recoils
-	var/iterations_left = 200
+	var/iterations_left = 200 // surely we'll never have over 200 players
 	while(recoil_list.len && iterations_left--)
 		var/ckey = LAZYACCESS(recoil_list, LAZYLEN(recoil_list))
 		var/datum/mob_recoil/my_recoil = LAZYACCESS(recoil_list, ckey)
@@ -171,8 +171,8 @@ SUBSYSTEM_DEF(recoil)
 		item_recoil_args = RECOIL_LIST_DEFAULT
 	var/my_one_handed_recoil = text2num(item_recoil_args[1])
 	var/my_two_handed_recoil = text2num(item_recoil_args[2])
-	var/mod_two_handed_mult = isnum(modifiers[2]) ? modifiers[1] : text2num(modifiers[1])
-	var/mod_one_handed_mult = isnum(modifiers[1]) ? modifiers[2] : text2num(modifiers[2])
+	var/mod_one_handed_mult = isnum(modifiers[1]) ? modifiers[1] : text2num(modifiers[1])
+	var/mod_two_handed_mult = isnum(modifiers[2]) ? modifiers[2] : text2num(modifiers[2])
 	var/new_one_handed_recoil = round((my_one_handed_recoil * mod_one_handed_mult), 0.1)
 	var/new_two_handed_recoil = round((my_two_handed_recoil * mod_two_handed_mult), 0.1)
 	var/list/output_list = list(new_one_handed_recoil, new_two_handed_recoil)
@@ -185,16 +185,6 @@ SUBSYSTEM_DEF(recoil)
 /datum/controller/subsystem/recoil/proc/get_tgui_data(recoil_tag = RECOIL_TAG_DEFAULT)
 	var/datum/gun_recoil/recoil = get_gun_recoil_datum(recoil_tag)
 	return (recoil?.tgui_recoil_data()) || list("recoil_unwielded" = 1, "recoil_wielded" = 1, "recoil_should_wield" = FALSE)
-
-
-
-
-
-
-
-
-
-
 
 /// DATUMIZED RECOIL SYSTEM (for items)
 /// Gun recoil is a glorified recoil modifier, really.
@@ -327,18 +317,16 @@ SUBSYSTEM_DEF(recoil)
 	return out
 
 /datum/mob_recoil/proc/tick_recoil(amount, ticklength, deltatime)
-	var/mob/living/shooter = GET_WEAKREF(user)
-	if(!shooter)
-		return FALSE
-	. = reduce_recoil(amount, ticklength, deltatime, shooter)
-	update_mob(shooter)
+	. = reduce_recoil(amount, ticklength, deltatime)
+	update_mob()
 
-/datum/mob_recoil/proc/reduce_recoil(amount, ticklength, deltatime, mob/living/shooter)
+/datum/mob_recoil/proc/reduce_recoil(amount, ticklength, deltatime)
 	if(recoil <= 0)
 		recoil = 0
 		return FALSE
 	var/recoil_before = recoil
 	. = TRUE
+	var/mob/living/shooter = GET_WEAKREF(user)
 	var/reduction = RECOIL_REDUCTION_TICK2SECOND(amount, ticklength, deltatime)
 	if(isliving(shooter))
 		if(HAS_TRAIT(shooter, SPREAD_CONTROL))
@@ -351,22 +339,29 @@ SUBSYSTEM_DEF(recoil)
 	if(debug_mode)
 		to_chat(shooter, "Reduced recoil from [recoil_before] to [recoil].")
 
-/datum/mob_recoil/proc/update_mob(mob/living/shooter)
+/datum/mob_recoil/proc/update_mob(mob/living/updateme)
+	if(isliving(updateme))
+		user = WEAKREF(updateme)
+	var/mob/living/shooter = GET_WEAKREF(user)
 	if(!isliving(shooter))
-		shooter = GET_WEAKREF(user)
-		if(!shooter)
-			return
+		return
+	if(!shooter.client)
+		return
 	var/obj/item/gun/G = shooter.get_active_held_item()
 	if(istype(G))
 		G.check_safety_cursor(shooter)
 		return
 	shooter.remove_cursor()
 
-/datum/mob_recoil/proc/movement_recoil()
-	var/mob/living/walker = GET_WEAKREF(user)
+/datum/mob_recoil/proc/movement_recoil(mob/living/walker)
+	if(isliving(walker))
+		user = WEAKREF(walker)
+	if(!isliving(walker))
+		walker = GET_WEAKREF(user)
 	if(!isliving(walker))
 		return
 	if(scooches_left--) // Little movements after not moving for a while dont incur movement recoil
+		COOLDOWN_START(src, last_movement_time, SSrecoil.recoil_scooch_time) // but if you keep moving, you'll get recoil
 		return // scoochie
 	var/scooch_check = COOLDOWN_FINISHED(src, last_movement_time) // Little scooches wont incur recoil
 	COOLDOWN_START(src, last_movement_time, SSrecoil.recoil_scooch_time) // but if you keep moving, you'll get recoil

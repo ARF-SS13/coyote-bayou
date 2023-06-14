@@ -757,7 +757,7 @@
 		alert("[M.name] is not prisoned.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unprison") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/datum/admins/proc/refill_nearby_ammo(maxrange = 0 as num|null)
+/datum/admins/proc/refill_nearby_ammo(maxrange as num|null)
 	set category = "Debug"
 	set desc = "Refills Nearby Guns and Magazines. Even refills things in containers and inventories!"
 	set name = "Refill Nearby Ammo"
@@ -788,7 +788,7 @@
 		log_admin("[key_name(usr)] has refilled [LAZYLEN(filled)] weapons, including [english_list(short_filled)] at [ADMIN_COORDJMP(here)].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "afilled") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/datum/admins/proc/refill_ammo(atom/origin, multi)
+/proc/refill_ammo(atom/origin, multi)
 	if(!isatom(origin))
 		return
 	var/list/origin_hands = list()
