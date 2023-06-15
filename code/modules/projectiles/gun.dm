@@ -237,7 +237,7 @@ ATTACHMENTS
 		firemodes.Add(new FM(src))
 	update_firemode_hud()
 
-/obj/item/gun/proc/update_firemode_hud() // this has never worked
+/obj/item/gun/proc/update_firemode_hud() // this has never worked -- actually no it works just fine
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
 	if(firemodes.len > 1)
 		if(!action)
@@ -986,8 +986,8 @@ ATTACHMENTS
 
 
 /obj/item/gun/proc/switch_firemodes()
-	if(LAZYLEN(firemodes) <= 1)
-		return null
+	if(!LAZYLEN(firemodes))
+		initialize_firemodes()
 	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
 	sel_mode++
 	if(sel_mode > LAZYLEN(firemodes))
@@ -995,17 +995,8 @@ ATTACHMENTS
 	return set_firemode(sel_mode)
 
 /obj/item/gun/proc/set_firemode(index)
-	//refresh_upgrades()
-	if(index > LAZYLEN(firemodes))
-		index = 1
-	var/datum/firemode/new_mode = firemodes[sel_mode]
-	new_mode.apply_firemode()
-	new_mode.update()
-	update_hud_actions()
-	return new_mode
-
-/// Set firemode , but without a refresh_upgrades at the start
-/obj/item/gun/proc/very_unsafe_set_firemode(index)
+	if(!LAZYLEN(firemodes))
+		initialize_firemodes()
 	if(index > LAZYLEN(firemodes))
 		index = 1
 	var/datum/firemode/new_mode = firemodes[sel_mode]
@@ -1119,7 +1110,7 @@ ATTACHMENTS
 	data["gun_melee"] = force_unwielded || force
 	data["gun_melee_wielded"] = force_wielded || round(force * FALLBACK_FORCE)
 	data["gun_armor_penetration"] = armour_penetration || 0
-	var/list/chambered_data = istype(chambered) ? chambered.get_statblock() : ui_data_projectile(get_dud_projectile())
+	var/list/chambered_data = istype(chambered) ? chambered.get_statblock(TRUE) : ui_data_projectile(get_dud_projectile())
 	data["gun_chambered"] = chambered_data
 	data["gun_is_chambered"] = istype(chambered)
 	data["gun_chambered_loaded"] = chambered ? !!chambered.BB : 0
@@ -1141,15 +1132,13 @@ ATTACHMENTS
 					if(GUN_FIREMODE_SEMIAUTO)
 						action_kind = "Single Shot"
 					if(GUN_FIREMODE_BURST)
-						var/burstcount = F.settings["burst_size"] || "Multi" // || resolves to the first thing it resolves to
+						var/burstcount = F.burst_count || "Multi" // || resolves to the first thing it resolves to
 						action_kind = "[burstcount]-Round Burst"
 					if(GUN_FIREMODE_AUTO)
 						action_kind = "Automatic"
-				var/sanitized_fire_delay = max(F.settings["fire_delay"], 0.1)
-				var/rounds_per_minute = round((1 / sanitized_fire_delay) * 60, 1)
 				data["firemode_current"] = list(
 					"action_kind" = action_kind,
-					"fire_rate" = "[rounds_per_minute] RPM",
+					"fire_rate" = "[F.get_fire_delay(TRUE)] RPM",
 					"desc" = F.desc,
 				)
 			var/list/firemode_info = list(
@@ -1157,8 +1146,8 @@ ATTACHMENTS
 				"current" = (i == sel_mode),
 				"name" = F.name,
 				"desc" = F.desc,
-				"burst" = F.settings["burst_size"],
-				"fire_delay" = F.settings["fire_delay"],
+				"burst" = F.burst_count,
+				"fire_delay" = F.get_fire_delay(TRUE),
 			)
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
@@ -1173,6 +1162,7 @@ ATTACHMENTS
 			"desc" = "but its broken",
 			"burst" = 1,
 			"fire_delay" = 1,
+			"fire_rate" = 1,
 		)
 
 	data["attachments"] = list()
@@ -1196,7 +1186,7 @@ ATTACHMENTS
 		to_chat(user, span_notice("\The [src] is now set to [new_mode.name]."))
 		. = TRUE
 	if(action == "ExamineAttachment")
-		var/obj/item/attachmentmaybe = LAZYACCESS(item_upgrades, "[params["AttachmentID"]]")
+		var/obj/item/attachmentmaybe = LAZYACCESS(item_upgrades, params["AttachmentID"])
 		if(!attachmentmaybe || !ismob(usr))
 			return
 		var/mob/user = usr
@@ -1232,10 +1222,12 @@ ATTACHMENTS
 //When gun is picked up
 //When gun is readied
 /obj/item/gun/proc/update_firemode(force_state = null)
-	if (sel_mode && LAZYLEN(firemodes))
-		var/datum/firemode/new_mode = firemodes[sel_mode]
-		new_mode.apply_firemode()
-		new_mode.update(force_state)
+	if(!LAZYLEN(firemodes))
+		initialize_firemodes()
+	sel_mode = clamp(sel_mode, 1, LAZYLEN(firemodes))
+	var/datum/firemode/new_mode = firemodes[sel_mode]
+	new_mode.update(force_state)
+	new_mode.apply_firemode()
 
 /obj/item/gun/proc/generate_guntags()
 	gun_tags |= GUN_GRIP
@@ -1248,25 +1240,14 @@ ATTACHMENTS
 
 /obj/item/gun/refresh_upgrades()
 	//First of all, lets reset any var that could possibly be altered by an upgrade
-	damage_multiplier = initial(damage_multiplier)
 	penetration_multiplier = initial(penetration_multiplier)
-	//pierce_multiplier = initial(pierce_multiplier)
-	//ricochet_multiplier = initial(ricochet_multiplier)
 	projectile_speed_multiplier = initial(projectile_speed_multiplier)
-	//proj_agony_multiplier = initial(proj_agony_multiplier)
-	fire_delay = initial(fire_delay)
-	burst_shot_delay = initial(burst_shot_delay)
-	//move_delay = initial(move_delay)
-	//muzzle_flash = initial(muzzle_flash)
 	silenced = initial(silenced)
 	restrict_safety = initial(restrict_safety)
 	added_spread = initial(added_spread)
-	//proj_damage_adjust = list()
-	//fire_sound = initial(fire_sound)
 	restrict_safety = initial(restrict_safety)
 	rigged = initial(rigged)
 	zoom_factor = initial(zoom_factor)
-	//darkness_view = initial(darkness_view)
 	vision_flags = initial(vision_flags)
 	force = initial(force)
 	armour_penetration = initial(armour_penetration)
@@ -1275,7 +1256,7 @@ ATTACHMENTS
 	recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 
 	//attack_verb = list()
-	initialize_firemodes()
+	//initialize_firemodes()
 
 	//Now lets have each upgrade reapply its modifications
 	SEND_SIGNAL(src, COMSIG_UPGRADE_ADDVAL, src)
@@ -1286,7 +1267,7 @@ ATTACHMENTS
 	update_hud_actions()
 
 	if(LAZYLEN(firemodes))
-		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
+		set_firemode(sel_mode) // Reset the firemode so it gets the new changes
 
 	update_icon()
 	//then update any UIs with the new stats
@@ -1301,7 +1282,10 @@ ATTACHMENTS
 	return ZONE_WEIGHT_SEMI_AUTO
 
 /obj/item/gun/proc/get_fire_delay(mob/user)
-	. = fire_delay
+	var/datum/firemode/my_mode = LAZYACCESS(firemodes, sel_mode)
+	if(!my_mode)
+		return fire_delay // shrug
+	. = my_mode.get_fire_delay()
 	if(CHECK_BITFIELD(gun_skill_check, AFFECTED_BY_FAST_PUMP))
 		if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
 			. *= GUN_RIFLEMAN_REFIRE_DELAY_MULT

@@ -3,15 +3,7 @@
 	desc = "The part of the gun that makes the laser go pew."
 	caliber = "energy"
 	projectile_type = /obj/item/projectile/energy
-	var/e_cost = 100 //The amount of energy a cell needs to expend to create this shot.
-	var/select_name = "energy"
 	fire_sound = 'sound/weapons/laser.ogg'
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
 	heavy_metal = FALSE
 	damage_threshold_penetration = 5
-
-/obj/item/ammo_casing/energy/build_statblock(obj/item/projectile/proj)
-	var/my_statblock = SANITIZE_LIST(..())
-	my_statblock["casing_select_name"] = select_name || "energy"
-	my_statblock["casing_e_cost"] = e_cost || 100
-	return my_statblock

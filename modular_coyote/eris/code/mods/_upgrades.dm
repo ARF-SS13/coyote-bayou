@@ -42,6 +42,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ_NOHIT, .proc/attempt_install)
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_examine)
 	RegisterSignal(parent, COMSIG_UPGRADE_REMOVE, .proc/uninstall)
+	RegisterSignal(parent, COMSIG_GET_UPGRADES, .proc/get_upgrades)
 
 /datum/component/item_upgrade/proc/attempt_install(datum/source, atom/movable/target, mob/living/user)
 	return can_apply(target, user) && apply(target, user)
@@ -57,94 +58,10 @@
 				if(user)
 					to_chat(user, span_warning("An upgrade of this type is already installed!"))
 				return FALSE
-
-	//if(istool(A))
-	//	return check_tool(A, user)
-
 	if(isgun(A))
 		return check_gun(A, user)
-
 	return FALSE
-/*
-/datum/component/item_upgrade/proc/check_robot(mob/living/silicon/robot/R, mob/living/user)
-	if(!R.opened)
-		if(user)
-			to_chat(user, span_warning("You need to open [R]'s panel to access its tools."))
-		return FALSE
-	var/list/robotools = list()
-	for(var/obj/item/tool/robotool in R.module.modules)
-		robotools.Add(robotool)
-	if(robotools.len)
-		var/obj/item/tool/chosen_tool = input(user,"Which tool are you trying to modify?","Tool Modification","Cancel") in robotools + "Cancel"
-		if(chosen_tool == "Cancel")
-			return FALSE
-		return can_apply(chosen_tool,user)
-	if(user)
-		to_chat(user, span_warning("[R] has no modifiable tools."))
-	return FALSE
-*/
-/*/datum/component/item_upgrade/proc/check_tool(obj/item/tool/T, mob/living/user)
-	if(!tool_upgrades.len)
-		to_chat(user, span_warning("\The [parent] can not be attached to a tool."))
-		return FALSE
 
-	if(T.item_upgrades.len >= T.max_upgrades)
-		if(user)
-			to_chat(user, span_warning("This tool can't fit anymore modifications!"))
-		return FALSE
-
-	if(required_qualities.len)
-		var/qmatch = FALSE
-		for (var/q in required_qualities)
-			if(T.ever_has_quality(q))
-				qmatch = TRUE
-				break
-
-		if(!qmatch)
-			if(user)
-				to_chat(user, span_warning("This tool lacks the required qualities!"))
-			return FALSE
-
-	if(negative_qualities.len)
-		for(var/i in negative_qualities)
-			if(T.ever_has_quality(i))
-				if(user)
-					to_chat(user, span_warning("This tool can not accept the modification!"))
-				return FALSE
-
-	if((req_fuel_cell & REQ_FUEL) && !T.use_fuel_cost)
-		if(user)
-			to_chat(user, span_warning("This tool does not use fuel!"))
-		return FALSE
-
-	if((req_fuel_cell & REQ_CELL) && !T.use_power_cost)
-		if(user)
-			to_chat(user, span_warning("This tool does not use power!"))
-		return FALSE
-
-	if((req_fuel_cell & REQ_FUEL_OR_CELL) && (!T.use_power_cost && !T.use_fuel_cost))
-		if(user)
-			to_chat(user, span_warning("This tool does not use [T.use_power_cost?"fuel":"power"]!"))
-		return FALSE
-
-	if(tool_upgrades[UPGRADE_SANCTIFY])
-		if(SANCTIFIED in T.aspects)
-			if(user)
-				to_chat(user, span_warning("This tool already sanctified!"))
-			return FALSE
-
-	if(tool_upgrades[UPGRADE_CELLPLUS])
-		if(!(T.suitable_cell == /obj/item/cell/medium || T.suitable_cell == /obj/item/cell/small))
-			if(user)
-				to_chat(user, span_warning("This tool does not require a cell holding upgrade."))
-			return FALSE
-		if(T.cell)
-			if(user)
-				to_chat(user, span_warning("Remove the cell from the tool first!"))
-			return FALSE
-
-	return TRUE
-*/
 /datum/component/item_upgrade/proc/check_gun(obj/item/gun/G, mob/living/user)
 	if(!weapon_upgrades.len)
 		if(user)
@@ -220,63 +137,20 @@
 		add_values_gun(I)
 	return TRUE
 
-/*/datum/component/item_upgrade/proc/apply_values_tool(obj/item/tool/T)
-	if(tool_upgrades[UPGRADE_PRECISION])
-		T.precision += tool_upgrades[UPGRADE_PRECISION]
-	if(tool_upgrades[UPGRADE_WORKSPEED])
-		T.workspeed += tool_upgrades[UPGRADE_WORKSPEED]
-	if(tool_upgrades[UPGRADE_DEGRADATION_MULT])
-		T.degradation *= tool_upgrades[UPGRADE_DEGRADATION_MULT]
-	if(tool_upgrades[UPGRADE_FORCE_MULT])
-		T.force_upgrade_mults += tool_upgrades[UPGRADE_FORCE_MULT] - 1
-	if(tool_upgrades[UPGRADE_FORCE_MOD])
-		T.force_upgrade_mods += tool_upgrades[UPGRADE_FORCE_MOD]
-	if(tool_upgrades[UPGRADE_FUELCOST_MULT])
-		T.use_fuel_cost *= tool_upgrades[UPGRADE_FUELCOST_MULT]
-	if(tool_upgrades[UPGRADE_POWERCOST_MULT])
-		T.use_power_cost *= tool_upgrades[UPGRADE_POWERCOST_MULT]
-	if(tool_upgrades[UPGRADE_BULK])
-		T.extra_bulk += tool_upgrades[UPGRADE_BULK]
-	if(tool_upgrades[UPGRADE_HEALTH_THRESHOLD])
-		T.health_threshold += tool_upgrades[UPGRADE_HEALTH_THRESHOLD]
-	if(tool_upgrades[UPGRADE_MAXFUEL])
-		T.max_fuel += tool_upgrades[UPGRADE_MAXFUEL]
-	if(tool_upgrades[UPGRADE_MAXUPGRADES])
-		T.max_upgrades += tool_upgrades[UPGRADE_MAXUPGRADES]
-	if(tool_upgrades[UPGRADE_SHARP])
-		T.sharp = tool_upgrades[UPGRADE_SHARP]
-	if(tool_upgrades[UPGRADE_COLOR])
-		T.color = tool_upgrades[UPGRADE_COLOR]
-	if(tool_upgrades[UPGRADE_ITEMFLAGPLUS])
-		T.item_flags |= tool_upgrades[UPGRADE_ITEMFLAGPLUS]
-	if(tool_upgrades[UPGRADE_CELLPLUS])
-		switch(T.suitable_cell)
-			if(/obj/item/cell/medium)
-				T.suitable_cell = /obj/item/cell/large
-				prefix = "large-cell"
-			if(/obj/item/cell/small)
-				T.suitable_cell = /obj/item/cell/medium
-	T.force = initial(T.force) * T.force_upgrade_mults + T.force_upgrade_mods
-	T.switched_on_force = initial(T.switched_on_force) * T.force_upgrade_mults + T.force_upgrade_mods
-	T.prefixes |= prefix
-*/
+/datum/component/item_upgrade/proc/get_upgrades(datum/source, list/upgrade_list)
+	if(!upgrade_list)
+		return
+	upgrade_list |= tool_upgrades
+	upgrade_list |= weapon_upgrades
+	return
+
 /datum/component/item_upgrade/proc/apply_values_gun(var/obj/item/gun/G)
-	if(weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT])
-		G.damage_multiplier *= weapon_upgrades[GUN_UPGRADE_DAMAGE_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS])
 		G.damage_multiplier += weapon_upgrades[GUN_UPGRADE_DAMAGEMOD_PLUS]
 	if(weapon_upgrades[GUN_UPGRADE_PEN_MULT])
 		G.penetration_multiplier *= weapon_upgrades[GUN_UPGRADE_PEN_MULT]
-	//if(weapon_upgrades[GUN_UPGRADE_PIERC_MULT])
-	//	G.pierce_multiplier += weapon_upgrades[GUN_UPGRADE_PIERC_MULT]
-	//if(weapon_upgrades[GUN_UPGRADE_RICO_MULT])
-	//	G.ricochet_multiplier += weapon_upgrades[GUN_UPGRADE_RICO_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_PROJ_SPEED_MULT])
 		G.projectile_speed_multiplier *= weapon_upgrades[GUN_UPGRADE_PROJ_SPEED_MULT]
-	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
-		G.fire_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-		G.autofire_shot_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-		G.burst_shot_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.slowdown *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_1H) || LAZYACCESS(weapon_upgrades, GUN_UPGRADE_RECOIL_2H))
@@ -344,33 +218,20 @@
 	if(!isnull(weapon_upgrades[GUN_UPGRADE_FORCESAFETY]))
 		G.restrict_safety = TRUE
 		G.safety = weapon_upgrades[GUN_UPGRADE_FORCESAFETY]
-	if(istype(G, /obj/item/gun/energy))
-		var/obj/item/gun/energy/E = G
-		if(weapon_upgrades[GUN_UPGRADE_CHARGECOST])
-			E.charge_cost_multiplier *= weapon_upgrades[GUN_UPGRADE_CHARGECOST]
 
 	if(istype(G, /obj/item/gun/ballistic))
 		var/obj/item/gun/ballistic/P = G
 		if(weapon_upgrades[GUN_UPGRADE_MAGUP])
 			P.magazine?.max_ammo += weapon_upgrades[GUN_UPGRADE_MAGUP]
 
-	for(var/datum/firemode/F in G.firemodes)
-		apply_values_firemode(F)
+	// for(var/datum/firemode/F in G.firemodes)
+	// 	apply_values_firemode(F) // theyll handle it
 
 	G.update_firemode()
 
 /datum/component/item_upgrade/proc/add_values_gun(obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
-		G.firemodes.Add(new /datum/firemode/automatic/rpm200(G))
-
-/datum/component/item_upgrade/proc/apply_values_firemode(datum/firemode/F)
-	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
-		F.settings["fire_delay"] *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-		F.settings["autofire_shot_delay"] *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-		F.settings["burst_shot_delay"] *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-	//if("move_delay")
-	//	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
-	//		F.settings[i] *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
+		G.firemodes.Add(new /datum/firemode/automatic/rpm200(G, parent))
 
 /datum/component/item_upgrade/proc/on_examine(atom/source, mob/user, list/examine_list)
 	if(tool_upgrades[UPGRADE_SANCTIFY])

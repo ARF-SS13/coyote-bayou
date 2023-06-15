@@ -418,6 +418,7 @@
 	#define COMPONENT_BLOCK_SHARPEN_MAXED 8
 #define COMSIG_UPGRADE_APPVAL "apply_values"					//from /atom/refresh_upgrades(): (/src) Called to upgrade specific values
 #define COMSIG_UPGRADE_ADDVAL "add_values" 						//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
+#define COMSIG_GET_UPGRADES "get_upgrades"						//from /atom/refresh_upgrades(): (/src) Called to get the upgrades of the /src
 
 #define COMSIG_UPGRADE_REMOVE "uninstall"
 #define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"                //called on item when microwaved (): (obj/machinery/microwave/M)

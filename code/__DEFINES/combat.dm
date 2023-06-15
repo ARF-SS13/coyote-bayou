@@ -1148,43 +1148,44 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define LMG_RECOIL(x,y)        list(5   * x, 1   * y)
 #define HMG_RECOIL(x,y)        list(10  * x, 1   * y)
 
-//Quick defines for fire modes
-#define FULL_AUTO_150		list(mode_name = "full auto",  mode_desc = "150 rounds per minute",   automatic = 1, autofire_shot_delay = 4, burst_size = 1, icon="auto")
-#define FULL_AUTO_200		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 3, burst_size = 1, icon="auto")
-#define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto")
-#define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto")
-#define FULL_AUTO_600		list(mode_name = "full auto",  mode_desc = "600 rounds per minute",   automatic = 1, autofire_shot_delay = 1, burst_size = 1, icon="auto")
-#define FULL_AUTO_800		list(mode_name = "fuller auto",  mode_desc = "800 rounds per minute",   automatic = 1, autofire_shot_delay = 0.8, burst_size = 1, icon="auto")
-#define FULL_AUTO_1000		list(mode_name = "fullerer auto",  mode_desc = "1000 rounds per minute",   automatic = 1, autofire_shot_delay = 0.6, burst_size = 1, icon="auto")
-#define FULL_AUTO_1200		list(mode_name = "ludicrous auto",  mode_desc = "1200 rounds per minute",   automatic = 1, autofire_shot_delay = 0.5, burst_size = 1, icon="auto")
+/// If you dont move for this long, your next step won't increase recoil
+#define RECOIL_SCOOCH_TIME 0.4 SECONDS
+// The number of free tiles you can move in Scoochmode
+#define RECOIL_SCOOCH_TILES 2
 
-#define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", automatic = 0, burst_size=1, icon="semi")
+#define RECOIL_INDEX_UNWIELDED 1
+#define RECOIL_INDEX_WIELDED 2
+#define IS_RECOIL_TAG(tag) (istext(tag) && findtext(tag, RECOIL_TAG_DIVIDER))
+#define IS_RECOIL_LIST(list) (islist(list) && length(list) == 2)
 
-//Cog firemode
-#define BURST_2_BEAM		list(mode_name="2-beam bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=2, fire_delay=null, icon="burst")
+#define RECOIL_TAG_DIVIDER "%"
+#define RECOIL_TAG_FORMAT "[unwielded]%[wielded]"
+#define RECOIL_ARGS2TAG(unwielded, wielded) jointext(list(unwielded, wielded), RECOIL_TAG_DIVIDER)
+#define RECOIL_LIST2TAG(list) jointext(list, RECOIL_TAG_DIVIDER)
+#define RECOIL_TAG2LIST(tag) splittext(tag, RECOIL_TAG_DIVIDER)
 
-#define BURST_2_ROUND		list(mode_name="2-round bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=2, fire_delay=null, icon="burst")
-#define BURST_3_ROUND		list(mode_name="3-round bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=3, fire_delay=null, icon="burst")
-#define BURST_3_ROUND_RAPID		list(mode_name=" High-delay Rapid 3-round bursts", mode_desc = "Short, fast bursts with a higher delay between bursts", automatic = 0, burst_size=3, fire_delay=15, icon="auto", burst_shot_delay = 0.9)
-#define BURST_5_ROUND		list(mode_name="5-round bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=5, fire_delay=null, icon="burst")
-#define BURST_8_ROUND		list(mode_name="8-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=8, fire_delay=null, icon="burst")
-#define BURST_10_ROUND		list(mode_name="10-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=10, fire_delay=null, icon="burst")
+#define RECOIL_TAG_DEFAULT "1[RECOIL_TAG_DIVIDER]1"
+#define RECOIL_LIST_DEFAULT list(1, 1)
 
-#define WEAPON_NORMAL		list(mode_name="standard", burst_size=1, icon="semi")
+#define RECOIL_REDUCTION_BASE_PER_SECOND 2
+#define RECOIL_REDUCTION_MULT 0.9
+#define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((base * (0.1 * tick) * mult), 0.005))
+#define RECOIL_REDUCTION_HIGH_SCALE 0.5
 
+/// Converts rounds per minute to deciseconds per shot
+#define RPM_TO_FIRE_DELAY(rpm) ((60 / rpm) * 10)
 
-#define GUN_FIRE_RATE_40 15
-#define GUN_FIRE_RATE_75 8
-#define GUN_FIRE_RATE_100 6
-#define GUN_FIRE_RATE_150 4
-#define GUN_FIRE_RATE_200 3
-#define GUN_FIRE_RATE_300 2
-#define GUN_FIRE_RATE_400 1.5
-#define GUN_FIRE_RATE_600 1
-#define GUN_FIRE_RATE_800 0.8
-#define GUN_FIRE_RATE_1000 0.6
-#define GUN_FIRE_RATE_1200 0.5
-
+#define GUN_FIRE_RATE_40 RPM_TO_FIRE_DELAY(40) // 40 RPM = 15 deciseconds per shot
+#define GUN_FIRE_RATE_75 RPM_TO_FIRE_DELAY(75) // 75 RPM = 8 deciseconds per shot
+#define GUN_FIRE_RATE_100 RPM_TO_FIRE_DELAY(100) // 100 RPM = 6 deciseconds per shot
+#define GUN_FIRE_RATE_150 RPM_TO_FIRE_DELAY(150) // 150 RPM = 4 deciseconds per shot
+#define GUN_FIRE_RATE_200 RPM_TO_FIRE_DELAY(200) // 200 RPM = 3 deciseconds per shot
+#define GUN_FIRE_RATE_300 RPM_TO_FIRE_DELAY(300) // 300 RPM = 2 deciseconds per shot
+#define GUN_FIRE_RATE_400 RPM_TO_FIRE_DELAY(400) // 400 RPM = 1.5 deciseconds per shot
+#define GUN_FIRE_RATE_600 RPM_TO_FIRE_DELAY(600) // 600 RPM = 1 decisecond per shot
+#define GUN_FIRE_RATE_800 RPM_TO_FIRE_DELAY(800) // 800 RPM = 0.75 deciseconds per shot
+#define GUN_FIRE_RATE_1000 RPM_TO_FIRE_DELAY(1000) // 1000 RPM = 0.6 deciseconds per shot
+#define GUN_FIRE_RATE_1200 RPM_TO_FIRE_DELAY(1200) // 1200 RPM = 0.5 deciseconds per shot
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
@@ -1323,7 +1324,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	GUN_MF_DUMP_THROW = throw_chance)
 
 /// cooldown for being spammed with messages you're holding the stupid gun wrong
-#define GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME 1 SECONDS
+#define GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME 10 SECONDS
 
 /// cooldown for being spammed with messages that you shot the gun
 #define GUN_SHOOT_MESSAGE_ANTISPAM_TIME 0.5 SECONDS
@@ -1388,28 +1389,4 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define FLINTLOCK_PISTOL_PREFIRE_RANDOMNESS 0.5
 #define FLINTLOCK_MINIMUSKET_PREFIRE_RANDOMNESS 0.4
 #define FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS 0.2
-
-/// If you dont move for this long, your next step won't increase recoil
-#define RECOIL_SCOOCH_TIME 0.4 SECONDS
-// The number of free tiles you can move in Scoochmode
-#define RECOIL_SCOOCH_TILES 2
-
-#define RECOIL_INDEX_UNWIELDED 1
-#define RECOIL_INDEX_WIELDED 2
-#define IS_RECOIL_TAG(tag) (istext(tag) && findtext(tag, RECOIL_TAG_DIVIDER))
-#define IS_RECOIL_LIST(list) (islist(list) && length(list) == 2)
-
-#define RECOIL_TAG_DIVIDER "%"
-#define RECOIL_TAG_FORMAT "[unwielded]%[wielded]"
-#define RECOIL_ARGS2TAG(unwielded, wielded) jointext(list(unwielded, wielded), RECOIL_TAG_DIVIDER)
-#define RECOIL_LIST2TAG(list) jointext(list, RECOIL_TAG_DIVIDER)
-#define RECOIL_TAG2LIST(tag) splittext(tag, RECOIL_TAG_DIVIDER)
-
-#define RECOIL_TAG_DEFAULT "1[RECOIL_TAG_DIVIDER]1"
-#define RECOIL_LIST_DEFAULT list(1, 1)
-
-#define RECOIL_REDUCTION_BASE_PER_SECOND 2
-#define RECOIL_REDUCTION_MULT 0.9
-#define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((base * (0.1 * tick) * mult), 0.005))
-#define RECOIL_REDUCTION_HIGH_SCALE 0.5
 
