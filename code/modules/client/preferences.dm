@@ -85,6 +85,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/be_random_body = 0				//whether we'll have a random body every round
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
+	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type
 	var/undie_color = "FFFFFF"
 	var/undershirt = "Nude"				//undershirt type
@@ -1106,6 +1107,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										?_src_=prefs;
 										preference=clear_scars'>
 											\tClear them?
+								</a>"}
+					dat += "</td>"
+					dat += "<td class='undies_cell'>"
+					dat += "<div class='undies_label'>Underwear Settings</div>"
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=underwear_hands'>
+										Layered [underwear_overhands ? "OVER" : "UNDER"] hands
+							</a>"}
+					dat += {"<a 
+								class='undies_link'>
+									Cuteness: 100%
 								</a>"}
 					dat += "</td>"
 					dat += "</tr>"
@@ -2467,17 +2482,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
 						custom_pixel_y = 0
-/*
-				if("security_records")
-					var/rec = stripped_multiline_input(usr, "Set your security record note section. This should be IC!", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
-					if(!isnull(rec))
-						security_records = rec
-
-				if("medical_records")
-					var/rec = stripped_multiline_input(usr, "Set your medical record note section. This should be IC!", "Security Records", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
-					if(!isnull(rec))
-						medical_records = rec
-*/
 				////////////////// VORE STUFF /
 				if("master_vore_toggle")
 					TOGGLE_VAR(master_vore_toggle)
@@ -3216,17 +3220,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						jumpsuit_style = PREF_SUIT
 
-/*
-				if("uplink_loc")
-					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
-					if(new_loc)
-						uplink_spawn_loc = new_loc
-
-				if("ai_core_icon")
-					var/ai_core_icon = input(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection") as null|anything in GLOB.ai_core_display_screens
-					if(ai_core_icon)
-						preferred_ai_core_display = ai_core_icon
-*/
 				if("sec_dept")
 					var/department = input(user, "Choose your preferred security department:", "Security Departments") as null|anything in GLOB.security_depts_prefs
 					if(department)
@@ -3636,6 +3629,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("persistent_scars")
 					persistent_scars = !persistent_scars
+
+				if("underwear_hands")
+					TOGGLE_VAR(underwear_overhands)
 
 				if("clear_scars")
 					to_chat(user, span_notice("All scar slots cleared. Please save character to confirm."))
