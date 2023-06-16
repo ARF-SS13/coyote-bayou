@@ -16,11 +16,11 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
-	component_type = /datum/component/storage/concrete/debug_sack
+	component_type = /datum/component/storage/concrete/debug_sack/smaller
 
 /obj/item/storage/debug_box
 	name = "debug testbox"
@@ -33,7 +33,7 @@
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
-	component_type = /datum/component/storage/concrete/debug_sack/smaller
+	component_type = /datum/component/storage/concrete/debug_sack
 
 /obj/item/storage/backpack
 	name = "hiking backpack"

@@ -50,6 +50,7 @@ export const RangedInfo = (props, context) => {
     gun_name,
     gun_damage_multiplier,
     gun_penetration_multiplier,
+    gun_spread,
     firemode_current,
     gun_chambered,
     gun_is_chambered,
@@ -68,7 +69,7 @@ export const RangedInfo = (props, context) => {
     let ufdv = Number(pdv) * Number(gdmg);
     if (gun_chambered.pellets > 1) {
       // oh yeah thats much more readable, thanks linter
-      ufdv = ufdv * Number(plts); 
+      ufdv = ufdv * Number(plts);
       damage_value = ufdv.toFixed(1) + " = (" + pdv + "x" + plts + ")x" + fxdm;
     } else {
       damage_value = ufdv.toFixed(1) + " = " + pdv + " x " + fxdm;
@@ -97,6 +98,15 @@ export const RangedInfo = (props, context) => {
           </Table.Cell>
           <Table.Cell>
             {fixed_penetration_multiplier}x
+          </Table.Cell>
+        </Table.Row>
+
+        <Table.Row>
+          <Table.Cell bold textAlign="right" width="35%" color="label">
+            <Tooltipify name={"Base Spread: "} tip={"Inaccuracy inherent to the gun, in degrees from center."} />
+          </Table.Cell>
+          <Table.Cell>
+            ± {gun_spread}°
           </Table.Cell>
         </Table.Row>
 
@@ -268,8 +278,10 @@ export const ProjectileInfo = (props, context) => {
     projectile_sharpness,
     projectile_spread,
     projectile_armor_penetration,
+    projectile_speed_unit,
+    projectile_speed_unit_words,
     projectile_speed,
-  } = gun_chambered;
+    } = gun_chambered;
   let itShoots = "It is " + casing_caliber + " and shoots " + casing_name + "!";
   if (!gun_chambered_loaded) {
     itShoots = itShoots + " At least it would if it wasn't empty.";
@@ -279,6 +291,14 @@ export const ProjectileInfo = (props, context) => {
         <Tooltipify name="No Data Available!" tip={"This casing is empty!"} />
       </Section>
     );
+  }
+  let pS = projectile_speed;
+  let pST = projectile_speed_unit_words;
+  let pSTu = projectile_speed_unit;
+  if (projectile_hitscan) {
+    pS = "∞";
+    pST = "Fast";
+    pSTu = "Hitscan!";
   }
   // WHY YES LINTEr WHY EVER WOULD I NEED 81 CHARACTERS ON A LINE
   const pD = projectile_damage;
@@ -337,7 +357,7 @@ export const ProjectileInfo = (props, context) => {
             <Tooltipify name="Speed:" tip="How fast the projectile moves." />
           </Table.Cell>
           <Table.Cell>
-            {projectile_hitscan ? <Tooltipify name="Fast" tip="Hitscan!" fade={1} /> : projectile_speed}
+            {pS} {<Tooltipify name={pST} tip={pSTu} fade={1} />}
           </Table.Cell>
         </Table.Row>
 
@@ -395,7 +415,7 @@ export const ProjectileInfo = (props, context) => {
           </Table.Cell>
         </Table.Row>
 
-        {!!projectile_supereffective_damage 
+        {!!projectile_supereffective_damage
         && !!projectile_supereffective_faction && (
           <Table.Row>
             <Table.Cell bold textAlign="right" color="label">
@@ -604,7 +624,7 @@ const AttachmentInfo = (props, context) => {
               content={attachmentvalue.name}
               tooltip={attachmentvalue.desc}
               tooltipPosition="bottom"
-              tooltipStyle="max-width: 300px" 
+              tooltipStyle="max-width: 300px"
               onClick={() => act('ExamineAttachment', {
                 AttachmentID: attachmentvalue.attachment_index,
               })} />
@@ -704,7 +724,7 @@ const Tooltipify = (props) => {
   if (big) {
     return (
       <Box bold fontSize={sizefont} textAlign="center" fluid>
-        <Button 
+        <Button
           opacity={transparency}
           backgroundColor="transparent"
           px={0}
@@ -716,7 +736,7 @@ const Tooltipify = (props) => {
     );
   } else {
     return (
-      <Button 
+      <Button
         opacity={transparency}
         backgroundColor="transparent"
         px={0}

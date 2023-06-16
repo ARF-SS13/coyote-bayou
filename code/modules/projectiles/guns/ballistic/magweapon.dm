@@ -12,7 +12,6 @@
 	actions_types = null
 	fire_delay = 3
 	casing_ejector = FALSE
-	dualwield_spread_mult = 1.4
 	weapon_weight = GUN_ONE_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/stock_parts/cell/cell

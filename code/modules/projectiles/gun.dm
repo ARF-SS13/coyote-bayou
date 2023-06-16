@@ -131,8 +131,6 @@ ATTACHMENTS
 	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
 	var/zoom_out_amt = 0
 
-	var/dualwield_spread_mult = 2		//dualwield spread multiplier
-
 	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
 	var/dryfire_sound = "gun_dry_fire"
 	var/dryfire_text = "*click*"
@@ -1120,6 +1118,7 @@ ATTACHMENTS
 	data["unmodded_recoil_unwielded"] = LAZYACCESS(unmodded_recoil_data, "recoil_unwielded") || 1
 	data["modded_recoil_wielded"] = LAZYACCESS(modded_recoil_data, "recoil_wielded") || 1
 	data["modded_recoil_unwielded"] = LAZYACCESS(modded_recoil_data, "recoil_unwielded") || 1
+	data["gun_spread"] = added_spread || 0
 
 	if(LAZYLEN(firemodes))
 		var/list/firemodes_info = list()
@@ -1139,13 +1138,13 @@ ATTACHMENTS
 				data["firemode_current"] = list(
 					"action_kind" = action_kind,
 					"fire_rate" = "[F.get_fire_delay(TRUE)] RPM",
-					"desc" = F.desc,
+					"desc" = "[F.desc] [F.extra_tip]",
 				)
 			var/list/firemode_info = list(
 				"index" = i,
 				"current" = (i == sel_mode),
 				"name" = F.name,
-				"desc" = F.desc,
+				"desc" = "[F.desc] [F.extra_tip]",
 				"burst" = F.burst_count,
 				"fire_delay" = F.get_fire_delay(TRUE),
 			)

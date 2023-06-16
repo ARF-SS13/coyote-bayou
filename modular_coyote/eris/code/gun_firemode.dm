@@ -11,6 +11,7 @@
 /datum/firemode
 	var/name = "default"
 	var/desc = "The default firemode"
+	var/extra_tip = "Shoots!"
 	var/icon_state
 	var/list/settings = list()
 	/// is the gun semi, burst, or fullauto?
@@ -71,7 +72,7 @@
 	gun.burst_size = burst_count
 	gun.fire_delay = shoot_delay
 	gun.burst_shot_delay = burst_delay
-	gun.damage_multiplier *= damage_multiplier
+	gun.damage_multiplier = damage_multiplier
 
 /datum/firemode/proc/update_mods()
 	var/obj/item/gun/gun = GET_WEAKREF(my_gun)
@@ -118,6 +119,9 @@
 /datum/firemode/semi_auto
 	name = "Semi Automatic"
 	desc = "Shoot one shot per trigger pull."
+	extra_tip = "Fires when you release the mouse button. Note that on any intent other than Harm, \
+		if you move your mouse before releasing the button, or your mouse is over a different 'thing' \
+		when let go, you will probably not fire. To more reliably fire, use the Harm intent when shooting!"
 	icon_state = "semi"
 	fire_type_default = GUN_FIREMODE_SEMIAUTO
 	shoot_delay_default = GUN_FIRE_DELAY_NORMAL
@@ -146,6 +150,8 @@
 	name = "Fully Automatic"
 	desc = "Spray and pray."
 	icon_state = "auto"
+	extra_tip = "Fires as long as you hold the mouse click down. Careful when clicking things, \
+		it will rapidly click them."
 	fire_type_default = GUN_FIREMODE_AUTO
 	shoot_delay_default = GUN_FIRE_RATE_1200
 
@@ -200,6 +206,8 @@
 /datum/firemode/burst
 	name = "Burstfire"
 	desc = "Shoot multiple shots per triggerpull."
+	extra_tip = "Fires a several-round burst. Recoil is calculated after the end of the burst, so every shot \
+		in the burst will have more or less the same amount of spread."
 	icon_state = "burst"
 	fire_type_default = GUN_FIREMODE_BURST
 	burst_delay_default = GUN_BURSTFIRE_DELAY_NORMAL
