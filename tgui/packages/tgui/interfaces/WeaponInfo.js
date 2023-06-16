@@ -357,7 +357,7 @@ export const ProjectileInfo = (props, context) => {
             <Tooltipify name="Speed:" tip="How fast the projectile moves." />
           </Table.Cell>
           <Table.Cell>
-            {pS} {<Tooltipify name={pST} tip={pSTu} fade={1} />}
+            {pS} {<Tooltipify name={pSTu} tip={pST} fade={1} />}
           </Table.Cell>
         </Table.Row>
 

@@ -27,15 +27,29 @@ SUBSYSTEM_DEF(recoil)
 	/// Delta Time -- compensates for lag
 	var/delta_time = 1
 
+	/// The inputs for the Weighted Spread Recoil Table (WSRT)
+	/// 
+	var/recoil_equation_start = 100
+	var/recoil_equation_subtract = 0
+	var/recoil_equation_multiply = 0.98
+	var/recoil_equation_exponent = 0.98
+	var/recoil_equation_fuck_it_just_gauss_it = 1
+	var/recoil_equation_gauss_mean_mult = 0.3
+	var/recoil_equation_gauss_std_mult = 1
+	var/list/recoil_equation = list()
+	var/recoil_index = 1
+
 	/// Item recoil datums (cus I am tired of them just floating around in the 'nowhere')
 	/// Define how much recoil an item gives when fired, in various ways.
 	/// Format: list("tag" = /datum/recoil, ...)
 	var/list/gun_recoils = list()
 
 	/// Global recoil reduction per second
-	var/recoil_reduction_per_second = RECOIL_REDUCTION_BASE_PER_SECOND
-	/// Global multiplier to a mob's recoil incurred per tick
-	var/recoil_multiplier_per_tick = RECOIL_REDUCTION_MULT
+	var/recoil_reduction_per_second = 2
+	/// Global multiplier to a mob's recoil reduction per tick
+	var/recoil_multiplier_per_tick = 0.99
+	/// Global exponent to a mob's recoil reduction pr tick
+	var/recoil_exponent_per_tick = 0.98
 	/// GLobal multiplier to converting recoil into spread
 	var/recoil_to_spread_mult = 1
 	/// Global multiplier to all additions to recoil
@@ -57,6 +71,7 @@ SUBSYSTEM_DEF(recoil)
 		message_admins("Recoil system failed to initialize! Shit's broken!")
 	for(var/i in 1 to (1 << RECOIL_DTIME_SHIFT))
 		delta_time_list += wait
+	//generate_recoil_equation()
 	. = ..()
 
 /datum/controller/subsystem/recoil/fire(resumed)
@@ -92,6 +107,45 @@ SUBSYSTEM_DEF(recoil)
 	var/datum/gun_recoil/gun_recoil = new /datum/gun_recoil(RECOIL_LIST_DEFAULT)
 	LAZYSET(gun_recoils, gun_recoil.index, gun_recoil)
 	return LAZYACCESS(gun_recoils, gun_recoil.index)
+
+/datum/controller/subsystem/recoil/proc/generate_recoil_equation()
+	recoil_equation = list()
+	if(recoil_equation_fuck_it_just_gauss_it)
+		possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
+		return
+	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
+		var/list/fucksmall_list_of_numbers = list()
+		for(var/i in 1 to offset)
+			var/random_ass_angle = (offset + 1) - i
+			random_ass_angle -= recoil_equation_subtract
+			random_ass_angle *= recoil_equation_multiply
+			random_ass_angle = random_ass_angle ** recoil_equation_exponent
+			fucksmall_list_of_numbers += random_ass_angle
+			fucksmall_list_of_numbers += -random_ass_angle
+		recoil_equation += fucksmall_list_of_numbers
+
+/// Generates a fuckton of numbers through gaussian distribution, truncates the result to, oh, a decimal, and arranges them in a list
+/// Then, stuffs them into a list to be used as a weighted probability bullshit. Numbers above the list will be clamped to the list of the list
+/datum/controller/subsystem/recoil/proc/possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
+	var/time_now = world.time
+	message_admins("Running an expensive gaussian distribution proc, like, a million times.")
+	recoil_equation = list()
+	recoil_equation.len = MAX_ACCURACY_OFFSET
+	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
+		var/list/fuckhuge_list_of_numbers = list()
+		for(var/i in 1 to (2000)) // lol
+			var/randum_number = gaussian(offset * recoil_equation_gauss_mean_mult, offset * recoil_equation_gauss_std_mult)
+			fuckhuge_list_of_numbers += randum_number
+			fuckhuge_list_of_numbers += -randum_number
+		recoil_equation[offset] = fuckhuge_list_of_numbers
+	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
+
+/datum/controller/subsystem/recoil/proc/get_output_offset(spread)
+	var/mean = spread * recoil_equation_gauss_mean_mult
+	var/std = spread * recoil_equation_gauss_std_mult
+	/// turns out this proc is cheap as fuck
+	var/my_angle = gaussian(mean, std)
+	return clamp(round(my_angle, 0.1), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 
 ////////////// MOB RECOIL STUFF //////////////
 /datum/controller/subsystem/recoil/proc/kickback(mob/living/user, atom/my_weapon, recoil_tag = RECOIL_TAG_DEFAULT, recoil_in = 1)
@@ -333,6 +387,7 @@ SUBSYSTEM_DEF(recoil)
 			reduction *= 2
 	recoil -= reduction
 	recoil *= SSrecoil.recoil_multiplier_per_tick
+	recoil = recoil ** SSrecoil.recoil_exponent_per_tick
 	if(recoil < 0)
 		recoil = 0
 	recoil = round(recoil, 0.1)

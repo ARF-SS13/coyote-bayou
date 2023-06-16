@@ -214,107 +214,107 @@
 		my_wretched_speed = rand(1,300)
 	switch(my_wretched_speed) // no guarantee any of these are accurate
 		if(1) // duotrimeters per second, the unit of measurement for 1/32th of a meter
-			my_block["projectile_speed"] = "[round(pixels_per_second * 1.8288, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 1.8288, 0.1]"
 			my_block["projectile_speed_unit"] = "dtm/s"
 			my_block["projectile_speed_unit_words"] = "duotrimeters per second"
 		if(2) // kilometers per hour
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 3.6, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 3.6, 0.1]"
 			my_block["projectile_speed_unit"] = "km/h"
 			my_block["projectile_speed_unit_words"] = "kilometers per hour"
 		if(3) // miles per hour
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 2.237, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 2.237, 0.1]"
 			my_block["projectile_speed_unit"] = "mph"
 			my_block["projectile_speed_unit_words"] = "miles per hour"
 		if(4) // knots
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 1.94384, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 1.94384, 0.1]"
 			my_block["projectile_speed_unit"] = "knots"
 			my_block["projectile_speed_unit_words"] = "knots"
 		if(5) // feet per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048, 0.1]"
 			my_block["projectile_speed_unit"] = "ft/s"
 			my_block["projectile_speed_unit_words"] = "feet per second"
 		if(6) // feet per minute
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 60, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 60, 0.1]"
 			my_block["projectile_speed_unit"] = "ft/m"
 			my_block["projectile_speed_unit_words"] = "feet per minute"
 		if(7) // feet per hour
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 3600, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 3600, 0.1]"
 			my_block["projectile_speed_unit"] = "ft/h"
 			my_block["projectile_speed_unit_words"] = "feet per hour"
 		if(8) // meters per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048, 0.1]"
 			my_block["projectile_speed_unit"] = "m/s"
 			my_block["projectile_speed_unit_words"] = "meters per second"
 		if(9) // meters per minute
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 60, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 60, 0.1]"
 			my_block["projectile_speed_unit"] = "m/m"
 			my_block["projectile_speed_unit_words"] = "meters per minute"
 		if(10) // meters per hour
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 3600, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 3600, 0.1]"
 			my_block["projectile_speed_unit"] = "m/h"
 			my_block["projectile_speed_unit_words"] = "meters per hour"
 		if(11) // kilometers per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001, 0.1]"
 			my_block["projectile_speed_unit"] = "km/s"
 			my_block["projectile_speed_unit_words"] = "kilometers per second"
 		if(12) // kilometers per minute
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 60, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 60, 0.1]"
 			my_block["projectile_speed_unit"] = "km/m"
 			my_block["projectile_speed_unit_words"] = "kilometers per minute"
 		if(13) // kilometers per hour
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 3600, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 3600, 0.1]"
 			my_block["projectile_speed_unit"] = "km/h"
 			my_block["projectile_speed_unit_words"] = "kilometers per hour"
 		if(14) // fathoms her hour
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048, 0.1]"
 			my_block["projectile_speed_unit"] = "fathoms/h"
 			my_block["projectile_speed_unit_words"] = "fathoms per hour"
 		if(15) // leagues per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048 * 0.0003048, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048 * 0.0003048, 0.1]"
 			my_block["projectile_speed_unit"] = "l/s"
 			my_block["projectile_speed_unit_words"] = "leagues per second"
 		if(16) // hectares per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001, 0.1]"
 			my_block["projectile_speed_unit"] = "hc/s"
 			my_block["projectile_speed_unit_words"] = "hectares per second"
 		if(17) // cubits per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.4572, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.4572, 0.1]"
 			my_block["projectile_speed_unit"] = "c/s"
 			my_block["projectile_speed_unit_words"] = "cubits per second"
 		if(18) // rods per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 5.5, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 5.5, 0.1]"
 			my_block["projectile_speed_unit"] = "r/s"
 			my_block["projectile_speed_unit_words"] = "rods per second"
 		if(19) // furlongs per second
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001, 0.1]"
 			my_block["projectile_speed_unit"] = "f/s"
 			my_block["projectile_speed_unit_words"] = "furlongs per second"
 		if(20) // fraction of light speed
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858, 0.1]"
 			my_block["projectile_speed_unit"] = "c"
 			my_block["projectile_speed_unit_words"] = "fraction of light speed"
 		if(21) // mach number
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858, 0.1]"
 			my_block["projectile_speed_unit"] = "mach"
 			my_block["projectile_speed_unit_words"] = "mach number"
 		if(22) // light nanoseconds per millisecond
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001, 0.1]"
 			my_block["projectile_speed_unit"] = "lns/ms"
 			my_block["projectile_speed_unit_words"] = "light nanoseconds per millisecond"
 		if(23) // light years per eon
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001 * 31557600000000, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001 * 31557600000000, 0.1]"
 			my_block["projectile_speed_unit"] = "ly/eon"
 			my_block["projectile_speed_unit_words"] = "light years per eon"
 		if(24) // parsecs per eon
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001 * 31557600000000 * 0.30660139, 0.1)]"
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001 * 31557600000000 * 0.30660139, 0.1]"
 			my_block["projectile_speed_unit"] = "pc/eon"
 			my_block["projectile_speed_unit_words"] = "parsecs per eon"
 		if(25) // furlongs per fortnight
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.5 * 0.5 * 0.5, 0.1)] fff" // furlongs per fortnight
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.5 * 0.5 * 0.5, 0.1] fff" // furlongs per fortnight
 			my_block["projectile_speed_unit"] = "fff"
 			my_block["projectile_speed_unit_words"] = "furlongs per fortnight"
 		else
-			my_block["projectile_speed"] = "[round(pixels_per_second * 0.03125 * 1.8288, 0.1)]" // 32 pixels = 6ish feet, 1.8288 meters = 6 feet
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288, 0.1]" // 32 pixels = 6ish feet, 1.8288 meters = 6 feet
 			my_block["projectile_speed_unit"] = "m/s"
 			my_block["projectile_speed_unit_words"] = "meters per second"
 	var/sharp_word = "None"

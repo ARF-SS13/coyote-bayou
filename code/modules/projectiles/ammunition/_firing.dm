@@ -50,8 +50,8 @@
 	if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
 		player_spread *= 0.5 // Nice shot!
 	. = max(gun_bullet_spread, player_spread) // Either the gun+casing+bullet's inaccuracy, or your own shitty accuracy
-	. = clamp(., 0, MAX_ACCURACY_OFFSET) * 1000
-	. = rand(-., .) * 0.001
+	. = clamp(round(.), 0, MAX_ACCURACY_OFFSET)
+	. = SSrecoil.get_output_offset(.)
 
 /obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)
 	if (!BB)
