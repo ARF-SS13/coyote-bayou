@@ -145,7 +145,7 @@ SUBSYSTEM_DEF(recoil)
 	var/std = spread * recoil_equation_gauss_std_mult
 	/// turns out this proc is cheap as fuck
 	var/my_angle = gaussian(mean, std)
-	return clamp(round(my_angle, 0.1), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+	return round(my_angle, 0.1)
 
 ////////////// MOB RECOIL STUFF //////////////
 /datum/controller/subsystem/recoil/proc/kickback(mob/living/user, atom/my_weapon, recoil_tag = RECOIL_TAG_DEFAULT, recoil_in = 1)
