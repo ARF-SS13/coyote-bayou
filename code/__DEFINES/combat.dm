@@ -377,26 +377,26 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BULLET_HANDLOAD_MULT_WOUND 0.75
 
 /// Bullet recoil modifier defines
-#define BULLET_MATCH_MULT_RECOIL 1.25
+#define BULLET_MATCH_MULT_RECOIL 2
 #define BULLET_SURPLUS_MULT_RECOIL 1
-#define BULLET_HANDLOAD_MULT_RECOIL 0.75
+#define BULLET_HANDLOAD_MULT_RECOIL 0.5
 
 /// Rubber bullet lethal damage multiplier
 #define RUBBERY_DAMAGE_MULT 0.1
 
 /// Rubber bullet recoil multiplier
-#define RUBBERY_RECOIL_MULT 0.4
+#define RUBBERY_RECOIL_MULT 0.5
 
 /// Bullet Recoil defines
-#define BULLET_RECOIL_BASE (1)
-#define BULLET_RECOIL_PISTOL_SMALL (BULLET_RECOIL_BASE * 0.75)
+#define BULLET_RECOIL_BASE (2)
+#define BULLET_RECOIL_PISTOL_SMALL (BULLET_RECOIL_BASE * 0.5)
 #define BULLET_RECOIL_PISTOL_MEDIUM (BULLET_RECOIL_BASE * 1)
-#define BULLET_RECOIL_PISTOL_LARGE (BULLET_RECOIL_BASE * 1.5)
-#define BULLET_RECOIL_RIFLE_SMALL (BULLET_RECOIL_BASE * 1)
-#define BULLET_RECOIL_RIFLE_MEDIUM (BULLET_RECOIL_BASE * 2)
+#define BULLET_RECOIL_PISTOL_LARGE (BULLET_RECOIL_BASE * 2)
+#define BULLET_RECOIL_RIFLE_SMALL (BULLET_RECOIL_BASE * 1.5)
+#define BULLET_RECOIL_RIFLE_MEDIUM (BULLET_RECOIL_BASE * 3)
 #define BULLET_RECOIL_RIFLE_LARGE (BULLET_RECOIL_BASE * 25)
 #define BULLET_RECOIL_SHOTGUN (BULLET_RECOIL_BASE * 2)
-#define BULLET_RECOIL_GAUSS (BULLET_RECOIL_BASE * 100)
+#define BULLET_RECOIL_GAUSS (BULLET_RECOIL_BASE * 25)
 #define BULLET_RECOIL_LASER (BULLET_RECOIL_BASE * 5)
 #define BULLET_RECOIL_PLASMA (BULLET_RECOIL_BASE * 5)
 
@@ -934,6 +934,13 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BULLET_SPREAD_MATCH 0 // No extra spread~
 #define BULLET_SPREAD_SURPLUS (BULLET_SPREAD_BASE) // Base spread
 #define BULLET_SPREAD_HANDLOAD (BULLET_SPREAD_BASE * 2) // More spread!
+#define BULLET_SPREAD_FLINTLOCK (BULLET_SPREAD_BASE * 4) // Morer spread!
+
+/// Casing spread modifier defines
+#define CASING_SPREAD_MATCH 0 // No extra spread~
+#define CASING_SPREAD_SURPLUS (BULLET_SPREAD_BASE) // Base spread
+#define CASING_SPREAD_HANDLOAD (BULLET_SPREAD_BASE * 2) // More spread!
+#define CASING_SPREAD_FLINTLOCK (BULLET_SPREAD_BASE * 4) // Morer spread!
 
 /// Bullet wound falloff defines
 #define BULLET_WOUND_FALLOFF_PISTOL_LIGHT 0
@@ -998,6 +1005,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 //#define RECOIL_SPREAD_CALC(x)  (0.0075 * (x ** 4)) // Funky way of exponentiating bullet spread from recoil // funky recoil kidna turbofucks things in wierd says, maybe
 #define RECOIL_SPREAD_CALC(x) (x)
 #define MAX_ACCURACY_OFFSET 45 //It's both how big gun recoil can build up, and how hard you can miss. Is a plus-or-minus
+#define MAX_RETICLE_SIZE 32 // it can go offscreen, which is less than ideal
 
 /// Max spread recoil can add
 #define GUN_RECOIL_MAX_SPREAD MAX_ACCURACY_OFFSET
@@ -1013,32 +1021,6 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 // If their other hand is full, multiply recoil by this much
 #define GUN_FULL_OTHER_HAND_RECOIL_MOD 2
-
-// Global recoil modifier
-#define GUN_RECOIL_GLOBAL_MULT 0.75
-
-/// Gun recoil modifier per shot defines
-#define GUN_RECOIL_NONE (GUN_RECOIL_GLOBAL_MULT * 0.1)
-#define GUN_RECOIL_PISTOL_LIGHT (GUN_RECOIL_GLOBAL_MULT * 1)
-#define GUN_RECOIL_PISTOL_MEDIUM (GUN_RECOIL_GLOBAL_MULT * 2)
-#define GUN_RECOIL_PISTOL_HEAVY (GUN_RECOIL_GLOBAL_MULT * 1.5)
-#define GUN_RECOIL_REVOLVER_LIGHT (GUN_RECOIL_GLOBAL_MULT * 1.2)
-#define GUN_RECOIL_REVOLVER_HEAVY (GUN_RECOIL_GLOBAL_MULT * 1.5)
-#define GUN_RECOIL_REPEATER_LIGHT (GUN_RECOIL_GLOBAL_MULT * 1)
-#define GUN_RECOIL_REPEATER_HEAVY (GUN_RECOIL_GLOBAL_MULT * 1.2)
-#define GUN_RECOIL_CARBINE (GUN_RECOIL_GLOBAL_MULT * 0.5)
-#define GUN_RECOIL_SMG_LIGHT (GUN_RECOIL_GLOBAL_MULT * 2)
-#define GUN_RECOIL_SMG_HEAVY (GUN_RECOIL_GLOBAL_MULT * 1.5)
-#define GUN_RECOIL_RIFLE_BOLT (GUN_RECOIL_GLOBAL_MULT * 1)
-#define GUN_RECOIL_RIFLE_LIGHT_SEMI (GUN_RECOIL_GLOBAL_MULT * 1)
-#define GUN_RECOIL_RIFLE_LIGHT_AUTO (GUN_RECOIL_GLOBAL_MULT * 2)
-#define GUN_RECOIL_RIFLE_MEDIUM_SEMI (GUN_RECOIL_GLOBAL_MULT * 1)
-#define GUN_RECOIL_RIFLE_MEDIUM_AUTO (GUN_RECOIL_GLOBAL_MULT * 2)
-#define GUN_RECOIL_RIFLE_LMG (GUN_RECOIL_GLOBAL_MULT * 1)
-#define GUN_RECOIL_RIFLE_GAUSS (GUN_RECOIL_GLOBAL_MULT * 5)
-#define GUN_RECOIL_SHOTGUN_FIXED (GUN_RECOIL_GLOBAL_MULT * 2)
-#define GUN_RECOIL_SHOTGUN_PUMP (GUN_RECOIL_GLOBAL_MULT * 1)
-#define GUN_RECOIL_SHOTGUN_AUTO (GUN_RECOIL_GLOBAL_MULT * 10)
 
 /// Gun recoil timeout Base
 #define GUN_RECOIL_TIMEOUT_BASE (2 SECONDS)
@@ -1139,38 +1121,56 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Projectiles define the recoil amount, guns modify the recoil based on wieldedness
 
-///////////////////////////////// 1HANDED , 2HANDED
-#define HANDGUN_RECOIL(x,y)    list(1   * x, 0.5 * y)
-#define AUTOPISTOL_RECOIL(x,y) list(2   * x, 1   * y)
-#define SMG_RECOIL(x,y)        list(1.2 * x, 1   * y)
-#define CARBINE_RECOIL(x,y)    list(1.2 * x, 0.9 * y)
-#define RIFLE_RECOIL(x,y)      list(3   * x, 0.5 * y)
-#define LMG_RECOIL(x,y)        list(5   * x, 1   * y)
-#define HMG_RECOIL(x,y)        list(10  * x, 1   * y)
+#define BASE_MOVEMENT_RECOIL_MULT 1
+#define SCOOT_FACTOR(x) (x * BASE_MOVEMENT_RECOIL_MULT)
+/// Negative scoot factor (better spread while moving) can only reduce shoot recoil by this percent of the shoot recoil
+#define SCOOT_MAX_REDUCTION 0.75
 
-/// If you dont move for this long, your next step won't increase recoil
-#define RECOIL_SCOOCH_TIME 0.4 SECONDS
+/// TODO: make these actually work
+#define BASE_SPRAY_RECOIL_MULT 1
+#define SPRAY_FACTOR(x) (x * BASE_SPRAY_RECOIL_MULT)
+/// Negative spray factor (better spread while moving) can only reduce shoot recoil by this percent of the shoot recoil
+#define SPRAY_MAX_REDUCTION 0.25
+#define SPRAY_SHOTS_PER_SECOND_THRESHOLD 3
+
+#define RECOIL_SOFTCAP (MAX_ACCURACY_OFFSET * 1.5) // shrug
+
+/////////////////////////////////// 1HANDED , 2HANDED, MOVE RECOIL MULT
+#define HANDGUN_RECOIL(x,y)     list(1   * x, 0.9 * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(1.2) ) // Mobile, but not spammable
+#define AUTOPISTOL_RECOIL(x,y)  list(2   * x, 1   * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   ) // negative numbers actually decrease your output spread while moving!
+#define SMG_RECOIL(x,y)         list(1.2 * x, 1   * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(0.75)) // made for spraying
+#define CARBINE_RECOIL(x,y)     list(2   * x, 0.8 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
+#define AUTOCARBINE_RECOIL(x,y) list(3   * x, 0.9 * y, SCOOT_FACTOR(1)   , SPRAY_FACTOR(1)   )
+#define RIFLE_RECOIL(x,y)       list(5   * x, 0.5 * y, SCOOT_FACTOR(2)   , SPRAY_FACTOR(2)   )
+#define AUTORIFLE_RECOIL(x,y)   list(5   * x, 0.7 * y, SCOOT_FACTOR(1)   , SPRAY_FACTOR(1)   )
+#define LMG_RECOIL(x,y)         list(5   * x, 0.5 * y, SCOOT_FACTOR(10)  , SPRAY_FACTOR(-0.3)) // Everyone grab a negev, we rushin B
+#define HMG_RECOIL(x,y)         list(10  * x, 0.3 * y, SCOOT_FACTOR(20)  , SPRAY_FACTOR(-0.5))
+
+/// If you dont shoot for this long, your recoil is decreased by an exponential rate
+#define RECOIL_SHOOT_TIME 1 SECONDS
+/// If you dont move for this long, your next step won't increase recoil (and your recoil will decrease by an exponential rate)
+#define RECOIL_SCOOCH_TIME 1 SECONDS
 // The number of free tiles you can move in Scoochmode
 #define RECOIL_SCOOCH_TILES 2
 
 #define RECOIL_INDEX_UNWIELDED 1
 #define RECOIL_INDEX_WIELDED 2
+#define RECOIL_INDEX_SCOOT 3
+#define RECOIL_INDEX_SPRAY 4
 #define IS_RECOIL_TAG(tag) (istext(tag) && findtext(tag, RECOIL_TAG_DIVIDER))
-#define IS_RECOIL_LIST(list) (islist(list) && length(list) == 2)
+#define IS_RECOIL_LIST(list) (islist(list) && length(list) == 4)
 
 #define RECOIL_TAG_DIVIDER "%"
-#define RECOIL_TAG_FORMAT "[unwielded]%[wielded]"
-#define RECOIL_ARGS2TAG(unwielded, wielded) jointext(list(unwielded, wielded), RECOIL_TAG_DIVIDER)
+#define RECOIL_ARGS2TAG(unwielded, wielded, scoot, spray) jointext(list(unwielded, wielded, scoot, spray), RECOIL_TAG_DIVIDER)
 #define RECOIL_LIST2TAG(list) jointext(list, RECOIL_TAG_DIVIDER)
 #define RECOIL_TAG2LIST(tag) splittext(tag, RECOIL_TAG_DIVIDER)
 
-#define RECOIL_TAG_DEFAULT "1[RECOIL_TAG_DIVIDER]1"
-#define RECOIL_LIST_DEFAULT list(1, 1)
+#define RECOIL_TAG_DEFAULT "1[RECOIL_TAG_DIVIDER]1[RECOIL_TAG_DIVIDER]1[RECOIL_TAG_DIVIDER]1"
+#define RECOIL_LIST_DEFAULT list(1, 1, 1, 1)
 
 #define RECOIL_REDUCTION_BASE_PER_SECOND 1
 #define RECOIL_REDUCTION_MULT 1
 #define RECOIL_REDUCTION_TICK2SECOND(base, tick, mult) (round((base * (0.1 * tick) * mult), 0.005))
-#define RECOIL_REDUCTION_HIGH_SCALE 0.5
 
 /// Converts rounds per minute to deciseconds per shot
 #define RPM_TO_FIRE_DELAY(rpm) ((60 / rpm) * 10)
@@ -1386,7 +1386,8 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define FLINTLOCK_MINIMUSKET_PREFIRE_TIME 0.5 SECONDS
 #define FLINTLOCK_MUSKET_PREFIRE_TIME 1 SECONDS
 
-#define FLINTLOCK_PISTOL_PREFIRE_RANDOMNESS 0.5
-#define FLINTLOCK_MINIMUSKET_PREFIRE_RANDOMNESS 0.4
-#define FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS 0.2
+/// Multipliers, if flintlock has a prefire time of 0.5 seconds, and the multiplier is 2, then the prefire time standard deviation is 1 second
+#define FLINTLOCK_PISTOL_PREFIRE_STD 2
+#define FLINTLOCK_MINIMUSKET_PREFIRE_STD 1
+#define FLINTLOCK_MUSKET_PREFIRE_STD 1.5
 

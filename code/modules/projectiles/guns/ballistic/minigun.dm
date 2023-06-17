@@ -101,7 +101,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = LMG_RECOIL(0.5, 0.5)
+	init_recoil = HMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300
 	)

@@ -134,7 +134,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
@@ -419,7 +419,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
+	init_recoil = HANDGUN_RECOIL(1, 0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 	init_firemodes = list(
@@ -444,7 +444,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
+	init_recoil = HANDGUN_RECOIL(1, 0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 	init_firemodes = list(
@@ -587,7 +587,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow

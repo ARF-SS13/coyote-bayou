@@ -98,7 +98,7 @@
 	sound_properties = CSP_FLINTLOCK
 	custom_materials = list(/datum/material/blackpowder = 500)
 	w_class = WEIGHT_CLASS_SMALL
-	variance = 5
+	variance = CASING_SPREAD_FLINTLOCK
 
 /obj/item/ammo_casing/caseless/flintlock/minie
 	name = "packed blackpowder minie cartridge"
@@ -112,7 +112,7 @@
 		/datum/material/iron = MATS_FLINTLOCK_LIGHT_POWDER, // what casing? ~ uwu ~
 		/datum/material/blackpowder = MATS_FLINTLOCK_HEAVY_POWDER)
 	w_class = WEIGHT_CLASS_SMALL
-	variance = -5
+	variance = CASING_SPREAD_SURPLUS
 
 /obj/item/ammo_casing/caseless/flintlock/rubber
 	name = "packed blackpowder rubber cartridge"
@@ -122,6 +122,7 @@
 	icon_state = "flintlock_casing_rubber"
 	projectile_type = /obj/item/projectile/flintlock/rubber
 	sound_properties = CSP_FLINTLOCK
+	variance = CASING_SPREAD_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_FLINTLOCK_LIGHT_POWDER, // what casing? ~ uwu ~
 		/datum/material/blackpowder = MATS_FLINTLOCK_HEAVY_POWDER)

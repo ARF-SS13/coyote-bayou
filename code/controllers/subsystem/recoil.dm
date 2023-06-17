@@ -1,5 +1,6 @@
 // A subsystem? For recoil? In MY BYOND? It'datum/mob_recoils more likely than you think.
 #define RECOIL_DTIME_SHIFT 5 // 2^5 = 32*2 = 64 deciseconds 
+#define RECOIL_MOB_SHIFT 3 // 2^3 = 8*2 = 16 deciseconds of shooting to average recoil over
 /// Arg definitions:
 /// gun_recoil = the gun_recoil datum that is being used
 /// recoil_tag = tag relating to the gun recoil
@@ -29,15 +30,15 @@ SUBSYSTEM_DEF(recoil)
 
 	/// The inputs for the Weighted Spread Recoil Table (WSRT)
 	/// 
-	var/recoil_equation_start = 100
-	var/recoil_equation_subtract = 0
-	var/recoil_equation_multiply = 0.98
-	var/recoil_equation_exponent = 0.98
-	var/recoil_equation_fuck_it_just_gauss_it = 1
-	var/recoil_equation_gauss_mean_mult = 0.3
-	var/recoil_equation_gauss_std_mult = 1
-	var/list/recoil_equation = list()
-	var/recoil_index = 1
+	// var/recoil_equation_start = 100
+	// var/recoil_equation_subtract = 0
+	// var/recoil_equation_multiply = 0.98
+	// var/recoil_equation_exponent = 0.98
+	// var/recoil_equation_fuck_it_just_gauss_it = 1
+	// var/list/recoil_equation = list()
+	// var/recoil_index = 1
+	var/recoil_equation_gauss_mean_mult = 0 // recoil of 20 has a mean of 0 degree offset
+	var/recoil_equation_gauss_std_mult = 0.5 // recoil of 20 has a 68% chance to be within +-10 deg offset, 95% chance to be between +-20
 
 	/// Item recoil datums (cus I am tired of them just floating around in the 'nowhere')
 	/// Define how much recoil an item gives when fired, in various ways.
@@ -46,18 +47,33 @@ SUBSYSTEM_DEF(recoil)
 
 	/// Global recoil reduction per second
 	var/recoil_reduction_per_second = 2
-	/// Global multiplier to a mob's recoil reduction per tick
-	var/recoil_multiplier_per_tick = 0.99
-	/// Global exponent to a mob's recoil reduction pr tick
-	var/recoil_exponent_per_tick = 0.98
+	/// Global exponent to a mob's two recoils per tick, used to remove a scaling portion of the mob's recoil
+	/// Only applied to shoot recoil if they arent shooting, and move recoil if they arent moving
+	/// Every tick (0.2 seconds), reduces current recoil by (current recoil ** this var)
+	/// Without the above var, it'll never hit zero!
+	var/recoil_reduction_exponent_per_tick = 0.5
+	var/recoil_reduction_exponent_per_tick_at_softcap = 0.75
+	var/recoil_softcap = RECOIL_SOFTCAP
+	var/recoil_movement_spread_cap = 20
+
+	var/recoil_movement_increase_multiplier = 1
+	var/recoil_shoot_increase_multiplier = 1
+
+	var/recoil_movement_highest_delay = 3
+	var/recoil_movement_lowest_slowdown = 1
+	var/recoil_movement_slowdown_mult = 1
+	var/recoil_movement_speed_mult = 1
+
 	/// GLobal multiplier to converting recoil into spread
 	var/recoil_to_spread_mult = 1
-	/// Global multiplier to all additions to recoil
-	var/recoil_add_global_mult = 1
 	/// Time a human has to not move before they can move without recoil
 	var/recoil_scooch_time = RECOIL_SCOOCH_TIME
 	/// Distance humans can move without movement recoil if they havent moved in a bit
 	var/scooch_distance = RECOIL_SCOOCH_TILES
+	/// Time after shooting that the recoil system applies exponential decay to recoil
+	var/recoil_post_shoot_fast_decay_delay = RECOIL_SHOOT_TIME
+	/// Time between adding/recording average firing rate
+	var/recoil_average_shots_per_second_ticklength = 1 SECONDS
 
 	var/debug_recoil = FALSE
 
@@ -108,43 +124,53 @@ SUBSYSTEM_DEF(recoil)
 	LAZYSET(gun_recoils, gun_recoil.index, gun_recoil)
 	return LAZYACCESS(gun_recoils, gun_recoil.index)
 
-/datum/controller/subsystem/recoil/proc/generate_recoil_equation()
-	recoil_equation = list()
-	if(recoil_equation_fuck_it_just_gauss_it)
-		possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
-		return
-	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
-		var/list/fucksmall_list_of_numbers = list()
-		for(var/i in 1 to offset)
-			var/random_ass_angle = (offset + 1) - i
-			random_ass_angle -= recoil_equation_subtract
-			random_ass_angle *= recoil_equation_multiply
-			random_ass_angle = random_ass_angle ** recoil_equation_exponent
-			fucksmall_list_of_numbers += random_ass_angle
-			fucksmall_list_of_numbers += -random_ass_angle
-		recoil_equation += fucksmall_list_of_numbers
+// /datum/controller/subsystem/recoil/proc/generate_recoil_equation()
+// 	recoil_equation = list()
+// 	if(recoil_equation_fuck_it_just_gauss_it)
+// 		possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
+// 		return
+// 	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
+// 		var/list/fucksmall_list_of_numbers = list()
+// 		for(var/i in 1 to offset)
+// 			var/random_ass_angle = (offset + 1) - i
+// 			random_ass_angle -= recoil_equation_subtract
+// 			random_ass_angle *= recoil_equation_multiply
+// 			random_ass_angle = random_ass_angle ** recoil_equation_exponent
+// 			fucksmall_list_of_numbers += random_ass_angle
+// 			fucksmall_list_of_numbers += -random_ass_angle
+// 		recoil_equation += fucksmall_list_of_numbers
 
-/// Generates a fuckton of numbers through gaussian distribution, truncates the result to, oh, a decimal, and arranges them in a list
-/// Then, stuffs them into a list to be used as a weighted probability bullshit. Numbers above the list will be clamped to the list of the list
-/datum/controller/subsystem/recoil/proc/possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
-	var/time_now = world.time
-	message_admins("Running an expensive gaussian distribution proc, like, a million times.")
-	recoil_equation = list()
-	recoil_equation.len = MAX_ACCURACY_OFFSET
-	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
-		var/list/fuckhuge_list_of_numbers = list()
-		for(var/i in 1 to (2000)) // lol
-			var/randum_number = gaussian(offset * recoil_equation_gauss_mean_mult, offset * recoil_equation_gauss_std_mult)
-			fuckhuge_list_of_numbers += randum_number
-			fuckhuge_list_of_numbers += -randum_number
-		recoil_equation[offset] = fuckhuge_list_of_numbers
-	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
+// /// Generates a fuckton of numbers through gaussian distribution, truncates the result to, oh, a decimal, and arranges them in a list
+// /// Then, stuffs them into a list to be used as a weighted probability bullshit. Numbers above the list will be clamped to the list of the list
+// /datum/controller/subsystem/recoil/proc/possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
+// 	var/time_now = world.time
+// 	message_admins("Running an expensive gaussian distribution proc, like, a million times.")
+// 	recoil_equation = list()
+// 	recoil_equation.len = MAX_ACCURACY_OFFSET
+// 	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
+// 		var/list/fuckhuge_list_of_numbers = list()
+// 		for(var/i in 1 to (2000)) // lol
+// 			var/randum_number = gaussian(offset * recoil_equation_gauss_mean_mult, offset * recoil_equation_gauss_std_mult)
+// 			fuckhuge_list_of_numbers += randum_number
+// 			fuckhuge_list_of_numbers += -randum_number
+// 		recoil_equation[offset] = fuckhuge_list_of_numbers
+// 	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
 
-/datum/controller/subsystem/recoil/proc/get_output_offset(spread)
+/datum/controller/subsystem/recoil/proc/get_output_offset(spread, obj/item/gun/shoot)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
+	var/turbofuck_unwielded_spread = FALSE
+	if(spread > 20 && istype(shoot))
+		var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
+		if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1)
+			turbofuck_unwielded_spread = TRUE // hodl it right
+			mean = spread
+			std = spread //fuck you wield it
 	/// turns out this proc is cheap as fuck
 	var/my_angle = gaussian(mean, std)
+	if(turbofuck_unwielded_spread)
+		if(abs(my_angle) < 10)
+			my_angle += rand(1,15) * SIGN(my_angle)
 	return round(my_angle, 0.1)
 
 ////////////// MOB RECOIL STUFF //////////////
@@ -160,7 +186,7 @@ SUBSYSTEM_DEF(recoil)
 	var/datum/gun_recoil/gun_recoil = get_gun_recoil_datum(recoil_tag)
 	var/recoil_mod = gun_recoil ? gun_recoil.get_recoil_mod(user, my_weapon) : 1
 	recoil *= recoil_mod
-	my_recoil.add_recoil(user, my_weapon, recoil)
+	my_recoil.add_shoot_recoil(user, my_weapon, recoil, TRUE)
 	return TRUE
 
 /datum/controller/subsystem/recoil/proc/get_mob_recoil(mob/living/user)
@@ -197,7 +223,7 @@ SUBSYSTEM_DEF(recoil)
 	if(IS_RECOIL_LIST(recoil_tag))
 		recoil_tag = RECOIL_LIST2TAG(recoil_tag)
 	if(!IS_RECOIL_TAG(recoil_tag))
-		recoil_tag = RECOIL_ARGS2TAG(1,1)
+		recoil_tag = RECOIL_ARGS2TAG(1,1,1,1)
 	var/datum/gun_recoil/gun_recoil = LAZYACCESS(gun_recoils, recoil_tag)
 	if(!gun_recoil)
 		gun_recoil = create_gun_recoil(recoil_tag)
@@ -207,11 +233,13 @@ SUBSYSTEM_DEF(recoil)
 /datum/controller/subsystem/recoil/proc/create_gun_recoil(list/recoil_list = RECOIL_LIST_DEFAULT)
 	if(IS_RECOIL_TAG(recoil_list))
 		recoil_list = RECOIL_TAG2LIST(recoil_list)
-	var/unwielded = LAZYACCESS(recoil_list, 1) ? text2num(LAZYACCESS(recoil_list, 1)) : 1
-	var/wielded = LAZYACCESS(recoil_list, 2) ? text2num(LAZYACCESS(recoil_list, 2)) : 1
-	var/datum/gun_recoil/gun_recoil = LAZYACCESS(gun_recoils, RECOIL_ARGS2TAG(unwielded, wielded))
+	var/unwielded = LAZYACCESS(recoil_list, RECOIL_INDEX_UNWIELDED) ? text2num(LAZYACCESS(recoil_list, RECOIL_INDEX_UNWIELDED)) : 1
+	var/wielded = LAZYACCESS(recoil_list, RECOIL_INDEX_WIELDED) ? text2num(LAZYACCESS(recoil_list, RECOIL_INDEX_WIELDED)) : 1
+	var/scoot = LAZYACCESS(recoil_list, RECOIL_INDEX_SCOOT) ? text2num(LAZYACCESS(recoil_list, RECOIL_INDEX_SCOOT)) : 1
+	var/spray = LAZYACCESS(recoil_list, RECOIL_INDEX_SPRAY) ? text2num(LAZYACCESS(recoil_list, RECOIL_INDEX_SPRAY)) : 1
+	var/datum/gun_recoil/gun_recoil = LAZYACCESS(gun_recoils, RECOIL_ARGS2TAG(unwielded, wielded, scoot, spray))
 	if(!istype(gun_recoil))
-		gun_recoil = new /datum/gun_recoil(text2num(unwielded), text2num(wielded))
+		gun_recoil = new /datum/gun_recoil(text2num(unwielded), text2num(wielded), text2num(scoot), text2num(spray))
 	LAZYSET(gun_recoils, gun_recoil.index, gun_recoil)
 	return gun_recoil
 
@@ -223,13 +251,15 @@ SUBSYSTEM_DEF(recoil)
 	var/list/item_recoil_args = RECOIL_TAG2LIST(recoil_tag)
 	if(LAZYLEN(item_recoil_args) != 2) // "UNWIELD" "WIELD"
 		item_recoil_args = RECOIL_LIST_DEFAULT
-	var/my_one_handed_recoil = text2num(item_recoil_args[1])
-	var/my_two_handed_recoil = text2num(item_recoil_args[2])
-	var/mod_one_handed_mult = isnum(modifiers[1]) ? modifiers[1] : text2num(modifiers[1])
-	var/mod_two_handed_mult = isnum(modifiers[2]) ? modifiers[2] : text2num(modifiers[2])
-	var/new_one_handed_recoil = round((my_one_handed_recoil * mod_one_handed_mult), 0.1)
-	var/new_two_handed_recoil = round((my_two_handed_recoil * mod_two_handed_mult), 0.1)
-	var/list/output_list = list(new_one_handed_recoil, new_two_handed_recoil)
+	var/my_one_handed_recoil = text2num(item_recoil_args[RECOIL_INDEX_UNWIELDED])
+	var/my_two_handed_recoil = text2num(item_recoil_args[RECOIL_INDEX_WIELDED])
+	var/my_scoot = text2num(item_recoil_args[RECOIL_INDEX_SCOOT])
+	var/my_spray = text2num(item_recoil_args[RECOIL_INDEX_SPRAY])
+	var/mod_one_handed_mult = isnum(modifiers[RECOIL_INDEX_UNWIELDED]) ? modifiers[RECOIL_INDEX_UNWIELDED] : text2num(modifiers[RECOIL_INDEX_UNWIELDED])
+	var/mod_two_handed_mult = isnum(modifiers[RECOIL_INDEX_WIELDED]) ? modifiers[RECOIL_INDEX_WIELDED] : text2num(modifiers[RECOIL_INDEX_WIELDED])
+	var/new_one_handed_recoil = round((my_one_handed_recoil * mod_one_handed_mult), 0.01)
+	var/new_two_handed_recoil = round((my_two_handed_recoil * mod_two_handed_mult), 0.01)
+	var/list/output_list = list(new_one_handed_recoil, new_two_handed_recoil, my_scoot, my_spray)
 	return give_recoil_tag(output_list)
 
 /datum/controller/subsystem/recoil/proc/get_recoil_examine(recoil_tag = RECOIL_TAG_DEFAULT)
@@ -238,7 +268,7 @@ SUBSYSTEM_DEF(recoil)
 
 /datum/controller/subsystem/recoil/proc/get_tgui_data(recoil_tag = RECOIL_TAG_DEFAULT)
 	var/datum/gun_recoil/recoil = get_gun_recoil_datum(recoil_tag)
-	return (recoil?.tgui_recoil_data()) || list("recoil_unwielded" = 1, "recoil_wielded" = 1, "recoil_should_wield" = FALSE)
+	return (recoil?.tgui_recoil_data()) || list("recoil_unwielded" = 1, "recoil_wielded" = 1, "recoil_scoot" = 1, "recoil_spray" = 1, "recoil_should_wield" = FALSE)
 
 /// DATUMIZED RECOIL SYSTEM (for items)
 /// Gun recoil is a glorified recoil modifier, really.
@@ -253,18 +283,24 @@ SUBSYSTEM_DEF(recoil)
 	var/wielded_recoil_mod = 1
 	/// Should the gun be wielded? If not, the gun'll complain at you
 	var/should_be_wielded = TRUE
+	/// How the gun handles moving and shooting
+	var/scoot = FALSE
+	/// How the gun handles spraying and shooting
+	var/spray = FALSE
 	/// list of ckeys we complained at and when we complained at them
 	/// Format: list("ckey" = time, ...)
 	var/list/complained_at_them = list()
 
-/datum/gun_recoil/New(unwielded_recoil_mod, wielded_recoil_mod)
+/datum/gun_recoil/New(unwielded_recoil_mod, wielded_recoil_mod, scootable, sprayable)
 	src.unwielded_recoil_mod = text2num(unwielded_recoil_mod)
 	src.wielded_recoil_mod = text2num(wielded_recoil_mod)
+	src.scoot = text2num(scootable)
+	src.spray = text2num(sprayable)
 	should_be_wielded = should_it_be_wielded()
-	index = "[unwielded_recoil_mod]%[wielded_recoil_mod]"
+	index = "[unwielded_recoil_mod]%[wielded_recoil_mod]%[scootable]%[sprayable]"
 
 /datum/gun_recoil/proc/should_it_be_wielded()
-	return (wielded_recoil_mod > (unwielded_recoil_mod * 1.2))
+	return (wielded_recoil_mod > (unwielded_recoil_mod))
 
 /datum/gun_recoil/proc/get_recoil_mod(mob/living/user, obj/item/held)
 	if(!user || !held)
@@ -275,6 +311,12 @@ SUBSYSTEM_DEF(recoil)
 		return wielded_recoil_mod
 	complain(user, held)
 	return unwielded_recoil_mod
+
+/datum/gun_recoil/proc/get_scoot()
+	return scoot
+
+/datum/gun_recoil/proc/get_spray()
+	return spray
 
 /datum/gun_recoil/proc/complain(mob/living/user, obj/item/held)
 	if(!should_be_wielded)
@@ -316,6 +358,8 @@ SUBSYSTEM_DEF(recoil)
 	return list(
 		"recoil_unwielded" = round(unwielded_recoil_mod, 0.1),
 		"recoil_wielded" = round(wielded_recoil_mod, 0.1),
+		"recoil_scoot" = round(scoot, 0.1),
+		"recoil_spray" = round(spray, 0.1),
 		"recoil_should_wield" = should_be_wielded)
 
 /// DATUMIZED RECOIL SYSTEM
@@ -324,12 +368,19 @@ SUBSYSTEM_DEF(recoil)
 	/// the ckey of the user experiencing recoil
 	var/ckey
 	/// the mob experiencing recoil
-	var/datum/weakref/user
 	/// The thing that did recoil last
-	/// the amount of recoil the user has
-	var/recoil = 0
+	var/datum/weakref/user
+	/// the amount of shootment recoil the user has
+	var/shoot_recoil = 0
+	/// The amount of *movement* recoil the user has
+	var/movement_recoil = 0
+	var/ticks_per_second
+	var/shots_did_this_tick = 0
+	var/list/firing_rate_to_average[1 << RECOIL_MOB_SHIFT]
+	// /// roughly 1 second
+	// COOLDOWN_DECLARE(average_shots_per_second)
 	/// last time recoil was added
-	COOLDOWN_DECLARE(last_recoil_time)
+	COOLDOWN_DECLARE(last_shoot_time)
 	/// Prevents movement recoil from being added if you just scooched a little bit
 	COOLDOWN_DECLARE(last_movement_time)
 	/// Number of tiles you can move without incurring movement recoil
@@ -342,57 +393,150 @@ SUBSYSTEM_DEF(recoil)
 	if(maybeclient?.mob)
 		user = WEAKREF(maybeclient.mob)
 
-/datum/mob_recoil/proc/add_recoil(mob/living/shooter, obj/item/gun/my_gun, recoil_buildup)
+/datum/mob_recoil/proc/add_shoot_recoil(mob/living/shooter, obj/item/gun/my_gun, recoil_buildup)
 	if(isliving(shooter))
 		if(!shooter.ckey)
 			return
 		user = WEAKREF(shooter) // update our mob ref
-	var/recoil_before = recoil
-	var/mult = get_recoil_mods(shooter, my_gun)
-	recoil += round(recoil_buildup * mult * SSrecoil.recoil_add_global_mult, 0.1)
+	COOLDOWN_START(src, last_shoot_time, SSrecoil.recoil_post_shoot_fast_decay_delay)
+	var/recoil_before = shoot_recoil
+	shots_did_this_tick++
+	var/mult = get_shoot_recoil_mods(shooter, my_gun)
+	var/modify_by_this_much = round(recoil_buildup * mult * SSrecoil.recoil_shoot_increase_multiplier, 0.1)
+	shoot_recoil += modify_by_this_much
 	update_mob(shooter)
 	if(debug_mode)
-		to_chat(shooter, "Added [recoil_buildup] * [mult] [SSrecoil.recoil_add_global_mult] = [recoil] Recoil: [recoil_before] -> [recoil]")
+		to_chat(shooter, "Added shoot [recoil_buildup] * [mult] * [SSrecoil.recoil_shoot_increase_multiplier] = [modify_by_this_much]. Recoil: [recoil_before] -> [shoot_recoil]")
 	return TRUE
 
-/datum/mob_recoil/proc/get_recoil_mods(mob/living/shooter, obj/item/gun/my_gun)
+/datum/mob_recoil/proc/get_shoot_recoil_mods(mob/living/shooter, obj/item/gun/my_gun)
 	var/mult = 1
-	if(isliving(shooter))
-		if(HAS_TRAIT(shooter, SPREAD_CONTROL))
-			mult *= 0.5
+	//mult *= get_spray_factor()
 	return mult
 
-/datum/mob_recoil/proc/get_offset(rounded)
-	var/out = recoil
+/datum/mob_recoil/proc/get_scoot_factor()
+	/// If they're just scooching, then they are not scoot n shooting
+	if(!is_on_the_move(FALSE))
+		return SCOOT_FACTOR(1)
+	var/mob/living/scooter = GET_WEAKREF(user)
+	if(!isliving(scooter))
+		return SCOOT_FACTOR(1)
+	var/obj/item/gun/scootgun = scooter.get_active_held_item() || scooter.get_inactive_held_item()
+	if(!scootgun || !istype(scootgun))
+		return SCOOT_FACTOR(1)
+	var/datum/gun_recoil/recoilgun = SSrecoil.get_gun_recoil_datum(scootgun.recoil_tag)
+	if(!recoilgun)
+		return SCOOT_FACTOR(1)
+	/// okay we've confirmed they have been moving and have a gun that has a recoil datum, lets get the scoot factor
+	var/scoot_factor = recoilgun.get_scoot() // that was easy
+	return scoot_factor
+
+/datum/mob_recoil/proc/get_spray_factor()
+	var/mob/living/sprayer = GET_WEAKREF(user)
+	if(!isliving(sprayer))
+		return SPRAY_FACTOR(1)
+	var/obj/item/gun/spraygun = sprayer.get_active_held_item() || sprayer.get_inactive_held_item()
+	if(!spraygun || !istype(spraygun))
+		return SPRAY_FACTOR(1)
+	var/datum/gun_recoil/recoilgun = SSrecoil.get_gun_recoil_datum(spraygun.recoil_tag)
+	if(!recoilgun)
+		return SPRAY_FACTOR(1)
+	/// okay we've confirmed they have been moving and have a gun that has a recoil datum, lets get the scoot factor
+	var/spray_factor = recoilgun.get_scoot() // that was easy
+	var/list/shoot_stats = get_shots_per_second()
+	if(LAZYACCESS(shoot_stats, 2) > SPRAY_SHOTS_PER_SECOND_THRESHOLD)
+		var/spray_mult = ((LAZYACCESS(shoot_stats, 2) / SPRAY_SHOTS_PER_SECOND_THRESHOLD) * spray_factor)
+		if(debug_mode)
+			to_chat(sprayer, "Spray factor increased by [spray_mult] due to [LAZYACCESS(shoot_stats, 2)] shots per second. Fired [LAZYACCESS(shoot_stats, 1)] shots in [SSrecoil.wait << RECOIL_MOB_SHIFT] seconds.")
+		return spray_mult
+	return SPRAY_FACTOR(1)
+
+/datum/mob_recoil/proc/get_shots_per_second()
+	var/shots_did = 0
+	for(var/spt in firing_rate_to_average)
+		shots_did += spt
+	var/shots_per_second = (shots_did / (1 << RECOIL_MOB_SHIFT)) / SSrecoil.wait
+	return list(shots_per_second, shots_did)
+
+/datum/mob_recoil/proc/get_offset(rounded, obj/item/gun/my_gun, hide_crud)
+	var/mob/living/shooter = GET_WEAKREF(user)
+	var/shootcoil = shoot_recoil
+	if(isliving(shooter))
+		if(HAS_TRAIT(shooter, TRAIT_INSANE_AIM))
+			shootcoil = 0
+		else if(HAS_TRAIT(shooter, SPREAD_CONTROL))
+			shootcoil *= 0.5
+	var/movecoil = movement_recoil
+	var/out
+	if(!hide_crud)
+		var/scoot_factor = get_scoot_factor()
+		movecoil *= scoot_factor
+		if(movecoil < 0)
+			shootcoil = max(movecoil, -(shootcoil * SCOOT_MAX_REDUCTION), 0)
+			movecoil = 0
+		out = max(movecoil + shootcoil, 0)
+	else
+		out = max(shootcoil + (movecoil * 0.5), 0)
+	/// TO DO: Make the spray factor a function of the gun's spray factor
 	out *= SSrecoil.recoil_to_spread_mult
 	if(rounded)
-		out = CEILING(out, 1)
-	out = CLAMP(out, 0, MAX_ACCURACY_OFFSET)
+		out = round(out, 1)
+	out = clamp(out, 0, MAX_ACCURACY_OFFSET)
 	return out
 
 /datum/mob_recoil/proc/tick_recoil(amount, ticklength, deltatime)
 	. = reduce_recoil(amount, ticklength, deltatime)
+	if(.)
+		tick_shots()
 	update_mob()
 
+/datum/mob_recoil/proc/tick_shots()
+	firing_rate_to_average.Cut(1,2)
+	firing_rate_to_average += shots_did_this_tick
+	shots_did_this_tick = 0
+	if(!debug_mode)
+		return
+	if(world.time % 2 SECONDS)
+		return
+	var/mob/living/tickie = GET_WEAKREF(user)
+	if(!isliving(tickie))
+		return
+	var/list/shootverage = get_shots_per_second()
+	var/average_shoots = LAZYACCESS(shootverage, 1)
+	var/total_shoots = LAZYACCESS(shootverage, 2)
+	if(total_shoots > 0)
+		to_chat(tickie, "Average shots per second: [average_shoots] over [SSrecoil.wait << RECOIL_MOB_SHIFT] seconds. Total shots: [total_shoots].")
+
 /datum/mob_recoil/proc/reduce_recoil(amount, ticklength, deltatime)
-	if(recoil <= 0)
-		recoil = 0
+	if(shoot_recoil <= 0 && movement_recoil <= 0)
+		shoot_recoil = 0
+		movement_recoil = 0
 		return FALSE
-	var/recoil_before = recoil
+	movement_recoil = min(movement_recoil, RECOIL_SOFTCAP)
+	var/shoot_recoil_before = shoot_recoil
+	var/movement_recoil_before = movement_recoil
 	. = TRUE
 	var/mob/living/shooter = GET_WEAKREF(user)
-	var/reduction = RECOIL_REDUCTION_TICK2SECOND(amount, ticklength, deltatime)
-	if(isliving(shooter))
-		if(HAS_TRAIT(shooter, SPREAD_CONTROL))
-			reduction *= 2
-	recoil -= reduction
-	recoil *= SSrecoil.recoil_multiplier_per_tick
-	recoil = recoil ** SSrecoil.recoil_exponent_per_tick
-	if(recoil < 0)
-		recoil = 0
-	recoil = round(recoil, 0.1)
+	var/base_reduction = RECOIL_REDUCTION_TICK2SECOND(amount, ticklength, deltatime)
+	var/shoot_reduction = base_reduction
+	var/movement_reduction = base_reduction
+	var/done_shooting = COOLDOWN_FINISHED(src, last_shoot_time)
+	var/done_moving = COOLDOWN_FINISHED(src, last_movement_time)
+	if(done_shooting)
+		shoot_reduction += shoot_recoil ** (shoot_recoil > SSrecoil.recoil_softcap ? SSrecoil.recoil_reduction_exponent_per_tick_at_softcap : SSrecoil.recoil_reduction_exponent_per_tick)
+	if(done_moving)
+		movement_reduction += movement_recoil ** (movement_recoil > SSrecoil.recoil_softcap ? SSrecoil.recoil_reduction_exponent_per_tick_at_softcap : SSrecoil.recoil_reduction_exponent_per_tick)
+	shoot_recoil -= shoot_reduction
+	movement_recoil -= movement_reduction
+	if(shoot_recoil < 0)
+		shoot_recoil = 0
+	shoot_recoil = round(shoot_recoil, 0.1)
+	if(movement_recoil < 0)
+		movement_recoil = 0
+	movement_recoil = round(movement_recoil, 0.1)
 	if(debug_mode)
-		to_chat(shooter, "Reduced recoil from [recoil_before] to [recoil].")
+		to_chat(shooter, "Reduced shoot recoil from [shoot_recoil_before] to [shoot_recoil]. Was not shooting: [done_shooting]. Reduction: [shoot_reduction]")
+		to_chat(shooter, "Reduced movement recoil from [movement_recoil_before] to [movement_recoil]. Was not moving: [done_moving]. Reduction: [movement_reduction]")
 
 /datum/mob_recoil/proc/update_mob(mob/living/updateme)
 	if(isliving(updateme))
@@ -408,6 +552,25 @@ SUBSYSTEM_DEF(recoil)
 		return
 	shooter.remove_cursor()
 
+/datum/mob_recoil/proc/is_on_the_move(tick_scooch = TRUE)
+	/// first check if we moved before the cooldown finished
+	var/mob/living/walker = GET_WEAKREF(user)
+	var/stood_still = COOLDOWN_FINISHED(src, last_movement_time)
+	COOLDOWN_START(src, last_movement_time, SSrecoil.recoil_scooch_time)
+	if(scooches_left > 0)
+		if(tick_scooch)
+			scooches_left--
+		if(debug_mode)
+			to_chat(walker, "Still scooching. [scooches_left] tile(s) remaining. Not adding recoil.")
+		return FALSE
+	if(stood_still && !scooches_left) // If we stood still and we're out of scooches, we're not moving
+		if(tick_scooch)
+			scooches_left = SSrecoil.scooch_distance
+		if(debug_mode)
+			to_chat(walker, "Scooched. Not adding recoil. [scooches_left] tile(s) remaining.")
+		return FALSE
+	return TRUE
+
 /datum/mob_recoil/proc/movement_recoil(mob/living/walker)
 	if(isliving(walker))
 		user = WEAKREF(walker)
@@ -415,24 +578,18 @@ SUBSYSTEM_DEF(recoil)
 		walker = GET_WEAKREF(user)
 	if(!isliving(walker))
 		return
-	if(scooches_left--) // Little movements after not moving for a while dont incur movement recoil
-		COOLDOWN_START(src, last_movement_time, SSrecoil.recoil_scooch_time) // but if you keep moving, you'll get recoil
-		return // scoochie
-	var/scooch_check = COOLDOWN_FINISHED(src, last_movement_time) // Little scooches wont incur recoil
-	COOLDOWN_START(src, last_movement_time, SSrecoil.recoil_scooch_time) // but if you keep moving, you'll get recoil
-	if(scooch_check)
-		scooches_left = SSrecoil.scooch_distance
-		if(debug_mode)
-			to_chat(walker, "Scooched. Not adding recoil.")
+	if(!is_on_the_move())
+		return
+	if(movement_recoil > SSrecoil.recoil_movement_spread_cap)
 		return
 	var/base_recoil = 1
 	/// The lower your move delay (the faster you move), the more recoil you get.
-	var/move_recoil = max(2 - walker.last_move_delay, 0)
+	var/move_recoil = max((SSrecoil.recoil_movement_highest_delay - walker.last_move_delay)*SSrecoil.recoil_movement_speed_mult, 0)
 	var/gun_heaviness_recoil = 0
 	var/obj/item/gun/G = walker.get_active_held_item()
-	if(istype(G) && !G.wielded)
+	if(istype(G))
 		/// Heavier guns add more recoil, if not wielded with both hands.
-		gun_heaviness_recoil = max(G.slowdown - GUN_SLOWDOWN_PISTOL_MEDIUM, 0)
+		gun_heaviness_recoil = max((G.slowdown - SSrecoil.recoil_movement_lowest_slowdown)*SSrecoil.recoil_movement_slowdown_mult, 0)
 	var/highest_stiffness = 0
 	var/total_stffness = 0
 	var/num_stiff = 0
@@ -446,12 +603,15 @@ SUBSYSTEM_DEF(recoil)
 		num_stiff++
 	var/stiffness_recoil = 0
 	if(num_stiff >= 1 && total_stffness >= 1)
-		stiffness_recoil = ((total_stffness + highest_stiffness) / num_stiff)
+		stiffness_recoil = (total_stffness + highest_stiffness)
 	base_recoil += move_recoil + stiffness_recoil + gun_heaviness_recoil
+	base_recoil *= SSrecoil.recoil_movement_increase_multiplier
+	movement_recoil += round(base_recoil, 0.1)
+	update_mob(walker)
 	if(debug_mode)
 		to_chat(walker, "Adding [base_recoil] movement recoil.")
-		to_chat(walker, "Move recoil: [move_recoil] max(2 - [walker.last_move_delay]). Stiffness: [total_stffness] + [highest_stiffness] / [num_stiff]. Gun heaviness: [gun_heaviness_recoil] max([G?.slowdown] - 0.10).")
-	add_recoil(walker, null, round(base_recoil, 0.1))
+		to_chat(walker, "Move recoil: [move_recoil] max(([SSrecoil.recoil_movement_highest_delay] - [walker.last_move_delay])*[SSrecoil.recoil_movement_speed_mult], 0). Stiffness: [total_stffness] + [highest_stiffness] / [num_stiff]. Gun heaviness: [gun_heaviness_recoil] max(([G?.slowdown] - [SSrecoil.recoil_movement_lowest_slowdown])*[SSrecoil.recoil_movement_slowdown_mult], 0).")
+	return TRUE
 
 /obj/item/storage/debug/debug_gun_mods
 	name = "Bag of Debug Gun Mods"

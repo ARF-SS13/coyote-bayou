@@ -198,6 +198,8 @@ export const MagazineInfoLoaded = (props, context) => {
     shots_remaining,
     shots_max,
     gun_chambered,
+    cockable,
+    cocked,
   } = data;
   let chamberedCasing;
   const cN = gun_chambered.casing_name; // FUCK YOU ESLINT IM NOT AFRAID OF LO
@@ -207,6 +209,30 @@ export const MagazineInfoLoaded = (props, context) => {
   } else {
     chamberedCasing = <Tooltipify name="Empty" tip="Bullet goes here." />;
   }
+  let cockRead;
+  let cockColored;
+  if (cockable) {
+    let cKnm;
+    let cKtt;
+    let cKcl;
+    if (cocked) {
+      if (gun_chambered) {
+        cKnm = "Cocked";
+        cKtt = "Gun is cocked and ready to fire!";
+        cKcl = 'green';
+      } else {
+        cKnm = "Cocked";
+        cKtt = "Gun is cocked, but still needs something to fire!";
+        cKcl = 'green';
+      }
+    } else {
+      cKnm = "Uncocked";
+      cKtt = "This gun needs to be cocked before you can shoot it!";
+      cKcl = 'red';
+    }
+    cockRead = <Tooltipify name={cKnm} tip={cKtt} />;
+    cockColored = <Box color={cKcl} />;
+  }
   const thagomizer = "accepts: " + magazine_calibers; // thanks mike
   return (
     <Section
@@ -215,6 +241,7 @@ export const MagazineInfoLoaded = (props, context) => {
         <Box bold>
           <Tooltipify name={magazine_name} tip={thagomizer} big={1} />
         </Box>
+        {cockColored}
         {chamberedCasing}
       </Box>
       <ProgressBar
@@ -438,6 +465,8 @@ const RecoilInfo = (props, context) => {
     modded_recoil_unwielded,
     unmodded_recoil_wielded,
     modded_recoil_wielded,
+    gun_recoil_scoot_title,
+    gun_recoil_scoot_stats,
   } = data;
   const recoilTip = "These multiply the shot projectile's \
   recoil calculations, based on whether you're wielding the gun or not. \
@@ -560,6 +589,11 @@ const RecoilInfo = (props, context) => {
           </Table.Cell>
         </Table.Row>
       </Table>
+      <Box
+        width="100%"
+        textAlign="center">
+        <Tooltipify name={gun_recoil_scoot_title} tip={gun_recoil_scoot_stats} />
+      </Box>
     </Section>
   );
 };

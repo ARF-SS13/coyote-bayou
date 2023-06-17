@@ -34,8 +34,6 @@
 		return
 	if(!isliving(user))
 		return
-	if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
-		return // nice shot
 	var/gun_bullet_spread = 0
 	gun_bullet_spread += BB?.spread || 0
 	gun_bullet_spread += distro || 0

@@ -89,26 +89,25 @@
 	volume = 50
 
 /datum/looping_sound/musket_fuse
-	start_sound = list(SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_01.ogg', 0.3 SECONDS, 1))
-	start_length = 4
 	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_02.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_03.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_04.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_05.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_06.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_07.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_08.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_09.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_10.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_11.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_12.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_13.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_14.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_15.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_16.ogg', 0.3 SECONDS, 1), 
-		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_17.ogg', 0.3 SECONDS, 1), 
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_01.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_02.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_03.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_04.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_05.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_06.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_07.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_08.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_09.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_10.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_11.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_12.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_13.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_14.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_15.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_16.ogg', 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/weapons/fuse_loop/fuse_17.ogg', 0.2 SECONDS, 1),
 		)
-	mid_length = 4
+	mid_length = 2
 	volume = 20
 

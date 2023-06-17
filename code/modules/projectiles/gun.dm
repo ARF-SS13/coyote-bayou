@@ -1118,6 +1118,32 @@ ATTACHMENTS
 	data["unmodded_recoil_unwielded"] = LAZYACCESS(unmodded_recoil_data, "recoil_unwielded") || 1
 	data["modded_recoil_wielded"] = LAZYACCESS(modded_recoil_data, "recoil_wielded") || 1
 	data["modded_recoil_unwielded"] = LAZYACCESS(modded_recoil_data, "recoil_unwielded") || 1
+	var/scoot_title = "Scoot"
+	var/scoot_stats = "1"
+	var/recoil_scoot = LAZYACCESS(modded_recoil_data, "recoil_scoot") || 1
+	switch(recoil_scoot)
+		if(0)
+			scoot_title = "Unaffected by movement"
+			scoot_stats = "Movement does not affect aim."
+		if(1)
+			scoot_title = "Affected by movement"
+			scoot_stats = "Movement applies its full recoil amount."
+		else
+			switch(recoil_scoot)
+				if(-INFINITY to 0)
+					scoot_title = "Steadied by movement"
+					scoot_stats = "Movement reduces overall recoil by [round(-recoil_scoot * 100, 10)]% while running."
+				if(0 to 1)
+					scoot_title = "Less affected by movement"
+					scoot_stats = "Movement recoil is reduced by [round(1-recoil_scoot * 100, 10)]%."
+				if(1 to INFINITY)
+					scoot_title = "Greatly affected by movement"
+					scoot_stats = "Movement recoil is increased by [round(1-recoil_scoot * 100, 10)]%. Move slowly to reduce recoil."
+				else
+					scoot_title = "Unknown"
+					scoot_stats = "Unknown"
+	data["gun_recoil_scoot_title"] = scoot_title
+	data["gun_recoil_scoot_stats"] = scoot_stats
 	data["gun_spread"] = added_spread || 0
 
 	if(LAZYLEN(firemodes))

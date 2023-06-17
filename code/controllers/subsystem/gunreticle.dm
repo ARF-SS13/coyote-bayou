@@ -12,21 +12,23 @@ SUBSYSTEM_DEF(reticle)
 /datum/controller/subsystem/reticle/proc/build_reticle_icons()
 	for(var/offset in 0 to MAX_ACCURACY_OFFSET)
 		var/icon/base = icon('modular_coyote/eris/icons/96x96.dmi')
-		var/icon/scaled = icon('modular_coyote/eris/icons/standard.dmi') //Default cursor, cut into pieces according to their direction
+		var/icon/scaled = icon('modular_coyote/eris/icons/standard_grayscale.dmi') //Default cursor, cut into pieces according to their direction
 		base.Blend(scaled, ICON_OVERLAY, x = 32, y = 32)
 		for(var/dir in list(NORTHEAST,NORTHWEST,SOUTHEAST,SOUTHWEST))
-			var/icon/overlay = icon('modular_coyote/eris/icons/standard.dmi', "[dir]")
+			var/icon/overlay = icon('modular_coyote/eris/icons/standard_grayscale.dmi', "[dir]")
 			var/pixel_y
 			var/pixel_x
 			if(dir & NORTH)
-				pixel_y = CLAMP(offset, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+				pixel_y = CLAMP(offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			if(dir & SOUTH)
-				pixel_y = CLAMP(-offset, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+				pixel_y = CLAMP(-offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			if(dir & EAST)
-				pixel_x = CLAMP(offset, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+				pixel_x = CLAMP(offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			if(dir & WEST)
-				pixel_x = CLAMP(-offset, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+				pixel_x = CLAMP(-offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			base.Blend(overlay, ICON_OVERLAY, x=32+pixel_x, y=32+pixel_y)
+		var/spread_color = gradient("#00FF00", "#FF0000", (offset/MAX_ACCURACY_OFFSET))
+		base.Blend(spread_color, ICON_MULTIPLY)
 		reticle_icons["reticle-[offset]"] = base
 		SSassets.transport.register_asset("reticle-[offset]", base)
 
@@ -51,7 +53,7 @@ SUBSYSTEM_DEF(reticle)
 		remove_cursor()
 		return
 	//client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-	var/recoil = SSrecoil.get_offset(src)
+	var/recoil = SSrecoil.get_offset(src, G, TRUE)
 	var/offset = clamp(CEILING(recoil, 1), 0, MAX_ACCURACY_OFFSET)
 	var/icon/base = SSreticle.find_cursor_icon(offset)
 	ASSERT(isicon(base))

@@ -19,7 +19,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_BIPOD = TRUE,
 		GUN_UPGRADE_RECOIL_1H = 2,
-		GUN_UPGRADE_RECOIL_2H = 0.9,
+		GUN_UPGRADE_RECOIL_2H = 0.75,
 		)
 	I.gun_loc_tag = GUN_UNDERBARREL
 
