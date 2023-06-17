@@ -157,6 +157,8 @@ SUBSYSTEM_DEF(recoil)
 // 	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
 
 /datum/controller/subsystem/recoil/proc/get_output_offset(spread, obj/item/gun/shoot)
+	if(spread <= 3)
+		return (rand(-300, 300) * 0.01)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
 	var/turbofuck_unwielded_spread = FALSE
