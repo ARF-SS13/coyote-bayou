@@ -45,7 +45,9 @@
 		player_spread += 2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
 	if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
 		player_spread += 2//This is cripplingly bad. Trust me.
-	if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
+	if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
+		player_spread *= 0.1 // nicer shot
+	else if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
 		player_spread *= 0.5 // Nice shot!
 	. = max(gun_bullet_spread, player_spread) // Either the gun+casing+bullet's inaccuracy, or your own shitty accuracy
 	. = clamp(round(.), 0, MAX_ACCURACY_OFFSET)
