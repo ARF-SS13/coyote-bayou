@@ -476,7 +476,7 @@ SUBSYSTEM_DEF(recoil)
 			movecoil = 0
 		out = max(movecoil + shootcoil, 0)
 	else
-		out = max(shootcoil + (movecoil * 0.5), 0)
+		out = max(shootcoil, 0)
 	/// TO DO: Make the spray factor a function of the gun's spray factor
 	out *= SSrecoil.recoil_to_spread_mult
 	if(rounded)
