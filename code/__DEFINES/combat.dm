@@ -1141,6 +1141,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define SMG_RECOIL(x,y)         list(1.2 * x, 1   * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(0.75)) // made for spraying
 #define CARBINE_RECOIL(x,y)     list(2   * x, 0.8 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
 #define AUTOCARBINE_RECOIL(x,y) list(3   * x, 0.9 * y, SCOOT_FACTOR(1)   , SPRAY_FACTOR(1)   )
+#define SHOTGUN_RECOIL(x,y)     list(2   * x, 0.5 * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(2)   )
 #define RIFLE_RECOIL(x,y)       list(5   * x, 0.5 * y, SCOOT_FACTOR(2)   , SPRAY_FACTOR(2)   )
 #define AUTORIFLE_RECOIL(x,y)   list(5   * x, 0.7 * y, SCOOT_FACTOR(1)   , SPRAY_FACTOR(1)   )
 #define LMG_RECOIL(x,y)         list(5   * x, 0.5 * y, SCOOT_FACTOR(10)  , SPRAY_FACTOR(-0.3)) // Everyone grab a negev, we rushin B
