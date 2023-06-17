@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(reticle)
 			if(dir & WEST)
 				pixel_x = CLAMP(-offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			base.Blend(overlay, ICON_OVERLAY, x=32+pixel_x, y=32+pixel_y)
-		var/spread_color = gradient("#00FF00", "#FF0000", (offset/MAX_ACCURACY_OFFSET))
+		var/spread_color = gradient("#0000FF", "#FFFF00", (offset/MAX_ACCURACY_OFFSET))
 		base.Blend(spread_color, ICON_MULTIPLY)
 		reticle_icons["reticle-[offset]"] = base
 		SSassets.transport.register_asset("reticle-[offset]", base)
