@@ -308,7 +308,7 @@ export const ProjectileInfo = (props, context) => {
     projectile_speed_unit,
     projectile_speed_unit_words,
     projectile_speed,
-    } = gun_chambered;
+  } = gun_chambered;
   let itShoots = "It is " + casing_caliber + " and shoots " + casing_name + "!";
   if (!gun_chambered_loaded) {
     itShoots = itShoots + " At least it would if it wasn't empty.";
@@ -472,6 +472,7 @@ const RecoilInfo = (props, context) => {
   recoil calculations, based on whether you're wielding the gun or not. \
   The higher the number, the more recoil you'll get. The recoil is calculated \
   by multiplying the recoil of the projectile by the recoil of the gun.";
+  const grst = gun_recoil_scoot_title;
   return (
     <Section
       title={<Tooltipify name="Recoil Multipliers" tip={recoilTip} big={1} />}
@@ -592,7 +593,7 @@ const RecoilInfo = (props, context) => {
       <Box
         width="100%"
         textAlign="center">
-        <Tooltipify name={gun_recoil_scoot_title} tip={gun_recoil_scoot_stats} />
+        <Tooltipify name={grst} tip={gun_recoil_scoot_stats} />
       </Box>
     </Section>
   );
