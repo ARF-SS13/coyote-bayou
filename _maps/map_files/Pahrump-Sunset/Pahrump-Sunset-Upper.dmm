@@ -12024,6 +12024,8 @@
 /area/f13/caves)
 "kWL" = (
 /obj/structure/table,
+/obj/item/circuitboard/machine/ore_silo,
+/obj/item/stack/cable_coil/thirty,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "kXd" = (
@@ -22487,7 +22489,7 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
-/obj/machinery/ore_silo,
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "uHj" = (

@@ -1314,7 +1314,7 @@ Raider
 */
 
 /datum/job/wasteland/f13wastelander/ashdown
-	title = "Ashdown Wastelander"
+	title = "Ashdown Citizen"
 	total_positions = 25
 	spawn_positions = 25
 

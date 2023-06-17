@@ -293,7 +293,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 GLOBAL_LIST_INIT(biker_positions, list(
 	"Overbiker",
 	"Hells Nomad",
-	"Ashdown Wastelander",
+	"Ashdown Citizen",
 ))
 //bikrs
 GLOBAL_LIST_INIT(debug_positions, list(

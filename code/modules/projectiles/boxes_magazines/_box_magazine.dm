@@ -68,7 +68,7 @@
 
 /obj/item/ammo_box/proc/init_load_bullets(num_bullets)
 	for(var/i in 1 to num_bullets)
-		stored_ammo += new ammo_type(src, adminspawned = flags_1)
+		stored_ammo += new ammo_type(src)
 
 /obj/item/ammo_box/proc/get_round(keep = 0)
 	if (!stored_ammo.len)
