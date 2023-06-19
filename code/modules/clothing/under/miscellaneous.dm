@@ -8,6 +8,7 @@
 	icon_state = "red_pyjamas"
 	item_state = "w_suit"
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/misc/pj/blue
 	name = "blue pj's"
@@ -15,6 +16,7 @@
 	icon_state = "blue_pyjamas"
 	item_state = "w_suit"
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/misc/patriotsuit
 	name = "Patriotic Suit"
