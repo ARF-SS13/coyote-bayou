@@ -2578,15 +2578,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
-"buu" = (
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/obj/structure/curtain{
-	color = "#363636"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building)
 "buG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -16094,16 +16085,6 @@
 	icon_state = "verticalleftborderleft2"
 	},
 /area/f13/wasteland)
-"iyK" = (
-/obj/structure/stairs/east{
-	color = "#A47449"
-	},
-/obj/structure/fluff/railing{
-	dir = 1;
-	color = "#A47449"
-	},
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
 "iyT" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/jet,
@@ -16642,10 +16623,22 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"iKR" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "iKV" = (
-/obj/structure/barricade/wooden/planks/pregame,
-/obj/structure/barricade/wooden,
-/turf/closed/wall/f13/wood,
+/obj/structure/window/fulltile/house{
+	dir = 2
+	},
+/obj/structure/curtain{
+	color = "#363636"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/building)
 "iKY" = (
 /obj/effect/decal/waste{
@@ -16747,15 +16740,6 @@
 /obj/structure/closet/crate/footchest,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/abandoned)
-"iPr" = (
-/obj/structure/stairs/east{
-	color = "#A47449"
-	},
-/obj/structure/fluff/railing{
-	color = "#A47449"
-	},
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
 "iPs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -17473,6 +17457,11 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building/abandoned)
+"jjI" = (
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/barricade/wooden,
+/turf/closed/wall/f13/wood,
+/area/f13/building)
 "jjP" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13{
@@ -29416,6 +29405,16 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
 	},
+/area/f13/wasteland)
+"pBW" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/obj/structure/fluff/railing{
+	dir = 1;
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "pCC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -41752,12 +41751,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
-"wnO" = (
-/obj/structure/stairs/east{
-	color = "#A47449"
-	},
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
 "wnP" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_8"
@@ -43780,6 +43773,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/abandoned)
+"xsT" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/obj/structure/fluff/railing{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "xtq" = (
 /obj/structure/wreck/trash/engine,
 /obj/structure/car/rubbish1,
@@ -101050,9 +101052,9 @@ iKf
 iKf
 qES
 yky
-iyK
-wnO
-iPr
+pBW
+iKR
+xsT
 qES
 lqe
 qES
@@ -101304,8 +101306,8 @@ iKf
 iKf
 aLl
 aLl
-iKV
-iKV
+jjI
+jjI
 lFI
 cYp
 lFI
@@ -101816,7 +101818,7 @@ iKf
 iKf
 iKf
 iKf
-buu
+iKV
 eJW
 azf
 sdR
@@ -102073,7 +102075,7 @@ iKf
 iKf
 iKf
 iKf
-buu
+iKV
 hze
 xRG
 ngB
@@ -102330,7 +102332,7 @@ iKf
 tiN
 tiN
 iKf
-buu
+iKV
 eJW
 azf
 oDo
