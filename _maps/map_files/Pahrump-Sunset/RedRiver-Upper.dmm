@@ -1351,6 +1351,22 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"nh" = (
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 9
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4;
+	pixel_y = 14;
+	pixel_x = -18
+	},
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "nn" = (
 /obj/machinery/hydroponics/soil{
 	name = "riverbed soil";
@@ -2239,6 +2255,22 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"wg" = (
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 9
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4;
+	pixel_y = 14;
+	pixel_x = -18
+	},
+/obj/structure/railing/corner{
+	dir = 4;
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "wh" = (
 /obj/structure/bedsheetbin/towel,
 /obj/structure/table/wood,
@@ -64052,13 +64084,13 @@ Hw
 Hw
 Hw
 eS
-RV
+wg
 nR
 Hh
 VK
 KK
 nR
-RV
+nh
 uS
 Hw
 Hw
