@@ -127,6 +127,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bF" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/bench,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -971,6 +972,7 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
+/obj/structure/simple_door/interior,
 /turf/open/indestructible/cobble{
 	light_color = null;
 	color = "#777777"
@@ -1363,8 +1365,10 @@
 	},
 /area/f13/building)
 "px" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/bench,
+/obj/structure/simple_door/interior,
+/obj/effect/step_trigger/player_choice_log{
+	question = "Welcome to Ashdown's Bar, this location is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "py" = (
@@ -1404,10 +1408,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pT" = (
-/obj/structure/simple_door/interior,
-/obj/effect/step_trigger/player_choice_log{
-	question = "Welcome to Ashdown's Bar, this location is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
-	},
+/obj/structure/chair/bench,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pU" = (
@@ -61392,9 +61393,9 @@ nL
 nR
 KZ
 nR
-bF
+pT
 nR
-bF
+pT
 PG
 gh
 gh
@@ -61649,9 +61650,9 @@ nR
 nR
 nR
 nR
-bF
+pT
 nR
-bF
+pT
 PG
 uF
 ia
@@ -61906,9 +61907,9 @@ We
 nR
 nR
 KZ
-bF
+pT
 nR
-bF
+pT
 PG
 vs
 nR
@@ -62163,9 +62164,9 @@ nL
 nR
 nR
 nR
-bF
+pT
 nR
-bF
+pT
 PG
 nR
 nR
@@ -62420,9 +62421,9 @@ nR
 nR
 nR
 nR
-bF
+pT
 KZ
-px
+bF
 PG
 nR
 nR
@@ -66274,7 +66275,7 @@ nR
 nR
 nR
 dK
-pT
+px
 ft
 iX
 nR
