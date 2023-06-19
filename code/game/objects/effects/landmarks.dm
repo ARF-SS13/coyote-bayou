@@ -806,7 +806,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/wastelander/ashdown
-	name = "Ashdown Wastelander"
+	name = "Ashdown Citizen"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/raider

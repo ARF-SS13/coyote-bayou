@@ -155,7 +155,7 @@
 	export_types = list(/obj/item/stack/f13Cash/aureus)
 
 /datum/export/material/f13cash/scrip
-	cost = 15 // Texarkana Trade Union scrip. They like people using their money because economics or something
+	cost = 6 // Texarkana Trade Union scrip. They like people using their money because economics or something; 1 copper = 2 scrip; if abused again, set to 5
 	unit_name = "scrip"
 	export_types = list(/obj/item/stack/f13Cash/ncr)
 
