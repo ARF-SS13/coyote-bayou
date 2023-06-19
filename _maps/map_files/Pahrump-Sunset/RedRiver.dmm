@@ -6334,7 +6334,7 @@
 "dua" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/tires,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "due" = (
 /turf/open/indestructible/ground/outside/sidewalk_s,
@@ -9325,6 +9325,11 @@
 "eVO" = (
 /turf/open/floor/plasteel/darkbrown,
 /area/f13/building/abandoned)
+"eVV" = (
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/barricade/wooden,
+/turf/closed/wall/f13/wood,
+/area/f13/building)
 "eWc" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/cultist/ranged/smg,
@@ -10055,8 +10060,14 @@
 	},
 /area/f13/building/abandoned)
 "fnh" = (
-/obj/structure/nest/cazador,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/obj/structure/fluff/railing{
+	dir = 1;
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "fnu" = (
 /obj/structure/closet/crate,
@@ -11714,6 +11725,17 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"gfO" = (
+/obj/structure/window/fulltile/house{
+	dir = 2
+	},
+/obj/structure/curtain{
+	color = "#363636"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood1-broken"
+	},
+/area/f13/building)
 "gge" = (
 /obj/structure/barricade/tentclothedge{
 	pixel_y = -4
@@ -14153,9 +14175,6 @@
 /obj/structure/chair/stool/bar,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/structure/sign/painting/library{
-	pixel_y = 32
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -24576,6 +24595,12 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"mZZ" = (
+/obj/structure/barricade/sandbags{
+	pixel_x = 7
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "nam" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/fence/wooden,
@@ -32398,6 +32423,12 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland/city)
+"rqG" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "rqJ" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
@@ -35225,6 +35256,9 @@
 /area/f13/wasteland)
 "sOU" = (
 /obj/structure/simple_door/glass,
+/obj/effect/step_trigger/player_choice_log{
+	question = "Welcome to Ashdown's Bar, this location is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "sOX" = (
@@ -44865,6 +44899,15 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "innermaincornerouter - W"
 	},
+/area/f13/wasteland)
+"xXa" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/obj/structure/fluff/railing{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "xXu" = (
 /obj/structure/spacevine,
@@ -98959,9 +99002,9 @@ iKf
 iKf
 iKf
 iKf
-iKf
-iKf
-iKf
+qES
+qES
+qES
 whc
 iKf
 iKf
@@ -99215,11 +99258,11 @@ fJi
 iKf
 iKf
 iKf
-iKf
-iKf
-iKf
-iKf
-iKf
+qES
+qES
+uhb
+qES
+qES
 iKf
 iKf
 tiN
@@ -99472,11 +99515,11 @@ qZY
 iKf
 iKf
 iKf
-tiN
-hia
-lmY
-lmY
-frx
+yky
+qES
+uhb
+qES
+qES
 frx
 iKf
 fqZ
@@ -99728,12 +99771,12 @@ hRF
 tiN
 gEj
 iKf
-tiN
-pkw
-hia
-iKf
+yky
+kVN
 qES
-uhb
+eVJ
+qES
+qES
 qES
 qES
 kVN
@@ -99985,12 +100028,12 @@ tiN
 iKf
 tiN
 iKf
-iKf
-iKf
-iKf
 qES
 qES
-uhb
+qES
+qES
+qES
+qES
 qES
 qES
 qES
@@ -100243,11 +100286,11 @@ iKf
 iKf
 tiN
 iKf
-iKf
-iKf
 qES
 qES
-eVJ
+qES
+qES
+qES
 qES
 qES
 yky
@@ -100500,8 +100543,7 @@ iKf
 tiN
 iKf
 rQm
-tiN
-iKf
+yky
 qES
 qES
 qES
@@ -100510,7 +100552,8 @@ qES
 qES
 qES
 qES
-iKf
+qES
+qES
 egf
 qES
 yky
@@ -100758,16 +100801,16 @@ iKf
 wEK
 tDc
 iKf
-iKf
-iKf
 qES
 qES
 qES
 qES
 qES
-iKf
+qES
+qES
+qES
 dua
-iKf
+qES
 qES
 qES
 iKf
@@ -101016,14 +101059,14 @@ wEK
 iKf
 tiN
 iKf
-tiN
-qES
-qES
-qES
-qES
 iKf
 iKf
-dSf
+qES
+yky
+fnh
+rqG
+xXa
+qES
 lqe
 qES
 iKf
@@ -101274,13 +101317,13 @@ iKf
 iKf
 aLl
 aLl
-iKV
-iKV
-iKV
+eVV
+eVV
+lFI
 cYp
 lFI
 lFI
-dSf
+mZZ
 dSf
 qES
 iKf
@@ -101786,7 +101829,7 @@ iKf
 iKf
 iKf
 iKf
-lFI
+gfO
 eJW
 azf
 sdR
@@ -102043,7 +102086,7 @@ iKf
 iKf
 iKf
 iKf
-lFI
+iKV
 hze
 xRG
 ngB
@@ -102300,7 +102343,7 @@ iKf
 tiN
 tiN
 iKf
-lFI
+iKV
 eJW
 azf
 oDo
@@ -102548,15 +102591,15 @@ egf
 iKf
 iKf
 iKf
-fnh
+iKf
 iKf
 iKf
 iKf
 pkw
 iKf
 iKf
-cqd
-cqd
+lmY
+lmY
 lFI
 iyT
 eJW
@@ -102811,7 +102854,7 @@ iKf
 iKf
 tiN
 tiN
-wEK
+iKf
 tiN
 iKf
 tej
