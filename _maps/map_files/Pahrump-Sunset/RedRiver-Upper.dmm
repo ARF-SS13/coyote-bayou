@@ -127,8 +127,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bF" = (
-/obj/structure/rug/carpet,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/bench,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bG" = (
@@ -1364,10 +1363,8 @@
 	},
 /area/f13/building)
 "px" = (
-/obj/structure/rug/mat{
-	color = "#EE5555"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/bench,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "py" = (
@@ -1407,8 +1404,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pT" = (
-/obj/structure/chair/stool/retro/black,
-/obj/item/binoculars,
+/obj/structure/simple_door/interior,
+/obj/effect/step_trigger/player_choice_log{
+	question = "Welcome to Ashdown's Bar, this location is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pU" = (
@@ -60876,13 +60875,13 @@ uU
 uU
 uU
 uU
+Tz
+Hw
+qm
 uU
 uU
 uU
 ks
-Hw
-Hw
-Hw
 Hw
 Hw
 wj
@@ -61128,18 +61127,18 @@ Hw
 Hw
 Hw
 EF
-pT
 nR
 nR
 nR
 nR
-PG
 nR
 nR
-YU
-uU
-uU
-ks
+nR
+nR
+RV
+nR
+nR
+Jl
 Hw
 Hw
 wj
@@ -61387,15 +61386,15 @@ Hw
 EF
 nR
 nR
+nL
+We
+nL
 nR
-nR
-nR
-PG
 KZ
 nR
+bF
 nR
-nR
-nR
+bF
 PG
 gh
 gh
@@ -61643,16 +61642,16 @@ Hw
 Hw
 EF
 nR
-nR
-nR
 RV
 nR
-PG
+EP
 nR
 nR
 nR
 nR
+bF
 nR
+bF
 PG
 uF
 ia
@@ -61900,16 +61899,16 @@ Hw
 Hw
 EF
 nR
+uf
+We
+EP
+We
 nR
-nR
-nR
-nR
-JS
 nR
 KZ
-RV
+bF
 nR
-nR
+bF
 PG
 vs
 nR
@@ -62157,16 +62156,16 @@ Hw
 Hw
 EF
 nR
-nR
-nR
 RV
-nR
-Xm
-nR
-nR
-nR
+nL
+EP
+nL
 nR
 nR
+nR
+bF
+nR
+bF
 PG
 nR
 nR
@@ -62416,14 +62415,14 @@ EF
 nR
 nR
 nR
-nR
-zm
-JS
-nR
-nL
 We
+nR
+nR
+nR
+nR
 bF
 KZ
+px
 PG
 nR
 nR
@@ -62670,15 +62669,15 @@ Hw
 Hw
 Hw
 EF
-pT
-nR
-dK
-dK
-dK
-PG
 nR
 nR
-EP
+nR
+nR
+nR
+nR
+nR
+nR
+RV
 nR
 KZ
 iD
@@ -62933,10 +62932,10 @@ Cf
 Jq
 nR
 nR
-uf
-px
-EP
-px
+nR
+KZ
+nR
+KZ
 KZ
 PG
 bx
@@ -63191,9 +63190,9 @@ nR
 nR
 nR
 nR
-nL
-EP
-nL
+nR
+nR
+nR
 nR
 PG
 dK
@@ -63449,7 +63448,7 @@ nR
 nR
 KZ
 nR
-px
+KZ
 nR
 nR
 Ay
@@ -66275,7 +66274,7 @@ nR
 nR
 nR
 dK
-Xm
+pT
 ft
 iX
 nR

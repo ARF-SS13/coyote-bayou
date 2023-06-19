@@ -2578,6 +2578,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"buu" = (
+/obj/structure/window/fulltile/house{
+	dir = 2
+	},
+/obj/structure/curtain{
+	color = "#363636"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/building)
 "buG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -6334,7 +6343,7 @@
 "dua" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/tires,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "due" = (
 /turf/open/indestructible/ground/outside/sidewalk_s,
@@ -10055,8 +10064,10 @@
 	},
 /area/f13/building/abandoned)
 "fnh" = (
-/obj/structure/nest/cazador,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/barricade/sandbags{
+	pixel_x = 7
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "fnu" = (
 /obj/structure/closet/crate,
@@ -14154,9 +14165,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/sign/painting/library{
-	pixel_y = 32
-	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -16086,6 +16094,16 @@
 	icon_state = "verticalleftborderleft2"
 	},
 /area/f13/wasteland)
+"iyK" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/obj/structure/fluff/railing{
+	dir = 1;
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "iyT" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/jet,
@@ -16625,15 +16643,9 @@
 	},
 /area/f13/building)
 "iKV" = (
-/obj/structure/window/fulltile/house{
-	dir = 2
-	},
-/obj/structure/curtain{
-	color = "#363636"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/barricade/wooden,
+/turf/closed/wall/f13/wood,
 /area/f13/building)
 "iKY" = (
 /obj/effect/decal/waste{
@@ -16735,6 +16747,15 @@
 /obj/structure/closet/crate/footchest,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/abandoned)
+"iPr" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/obj/structure/fluff/railing{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "iPs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -35225,6 +35246,9 @@
 /area/f13/wasteland)
 "sOU" = (
 /obj/structure/simple_door/glass,
+/obj/effect/step_trigger/player_choice_log{
+	question = "Welcome to Ashdown's Bar, this location is considered a public 'free erp' area where players can safetly choose to be lewd in public without worry of breaking peoples prefs.  This means that you may see things you are not personally interested within, though the rules for player consent and no underaged play still stand.  Do you wish to continue onwards?"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "sOX" = (
@@ -41727,6 +41751,12 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
+/area/f13/wasteland)
+"wnO" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "wnP" = (
 /obj/structure/flora/grass/wasteland{
@@ -98959,9 +98989,9 @@ iKf
 iKf
 iKf
 iKf
-iKf
-iKf
-iKf
+qES
+qES
+qES
 whc
 iKf
 iKf
@@ -99215,11 +99245,11 @@ fJi
 iKf
 iKf
 iKf
-iKf
-iKf
-iKf
-iKf
-iKf
+qES
+qES
+uhb
+qES
+qES
 iKf
 iKf
 tiN
@@ -99472,11 +99502,11 @@ qZY
 iKf
 iKf
 iKf
-tiN
-hia
-lmY
-lmY
-frx
+yky
+qES
+uhb
+qES
+qES
 frx
 iKf
 fqZ
@@ -99728,12 +99758,12 @@ hRF
 tiN
 gEj
 iKf
-tiN
-pkw
-hia
-iKf
+yky
+kVN
 qES
-uhb
+eVJ
+qES
+qES
 qES
 qES
 kVN
@@ -99985,12 +100015,12 @@ tiN
 iKf
 tiN
 iKf
-iKf
-iKf
-iKf
 qES
 qES
-uhb
+qES
+qES
+qES
+qES
 qES
 qES
 qES
@@ -100243,11 +100273,11 @@ iKf
 iKf
 tiN
 iKf
-iKf
-iKf
 qES
 qES
-eVJ
+qES
+qES
+qES
 qES
 qES
 yky
@@ -100500,8 +100530,7 @@ iKf
 tiN
 iKf
 rQm
-tiN
-iKf
+yky
 qES
 qES
 qES
@@ -100510,7 +100539,8 @@ qES
 qES
 qES
 qES
-iKf
+qES
+qES
 egf
 qES
 yky
@@ -100758,16 +100788,16 @@ iKf
 wEK
 tDc
 iKf
-iKf
-iKf
 qES
 qES
 qES
 qES
 qES
-iKf
+qES
+qES
+qES
 dua
-iKf
+qES
 qES
 qES
 iKf
@@ -101016,14 +101046,14 @@ wEK
 iKf
 tiN
 iKf
-tiN
-qES
-qES
-qES
-qES
 iKf
 iKf
-dSf
+qES
+yky
+iyK
+wnO
+iPr
+qES
 lqe
 qES
 iKf
@@ -101276,11 +101306,11 @@ aLl
 aLl
 iKV
 iKV
-iKV
+lFI
 cYp
 lFI
 lFI
-dSf
+fnh
 dSf
 qES
 iKf
@@ -101786,7 +101816,7 @@ iKf
 iKf
 iKf
 iKf
-lFI
+buu
 eJW
 azf
 sdR
@@ -102043,7 +102073,7 @@ iKf
 iKf
 iKf
 iKf
-lFI
+buu
 hze
 xRG
 ngB
@@ -102300,7 +102330,7 @@ iKf
 tiN
 tiN
 iKf
-lFI
+buu
 eJW
 azf
 oDo
@@ -102548,15 +102578,15 @@ egf
 iKf
 iKf
 iKf
-fnh
+iKf
 iKf
 iKf
 iKf
 pkw
 iKf
 iKf
-cqd
-cqd
+lmY
+lmY
 lFI
 iyT
 eJW
@@ -102811,7 +102841,7 @@ iKf
 iKf
 tiN
 tiN
-wEK
+iKf
 tiN
 iKf
 tej
