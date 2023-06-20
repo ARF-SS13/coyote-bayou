@@ -14905,7 +14905,6 @@
 	},
 /area/f13/building)
 "gvX" = (
-/obj/effect/mob_spawn/human/corpse/vault/security,
 /obj/effect/spawner/lootdrop/wrange_middle,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -36164,11 +36163,6 @@
 /obj/item/circuitboard/machine/pacman/mrs,
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operating)
-"pSG" = (
-/obj/effect/mob_spawn/human/corpse/vault/security,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/underground/cave/vault/fourfivefour)
 "pSI" = (
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/tunnel,
@@ -51914,20 +51908,6 @@
 	dir = 8
 	},
 /area/f13/vault)
-"wNd" = (
-/obj/effect/mob_spawn/human/corpse/vault/security,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/underground/cave/vault/fourfivefour)
 "wNg" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /obj/structure/cable{
@@ -97115,7 +97095,7 @@ qCA
 xIc
 nxC
 gvX
-wNd
+dAb
 dAb
 mYL
 lna
@@ -97368,7 +97348,7 @@ qiS
 uBS
 qCA
 qCA
-pSG
+qCA
 qCA
 qCA
 qCA
