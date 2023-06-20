@@ -152,9 +152,9 @@
 /area/f13/brotherhood/rnd)
 "acg" = (
 /obj/machinery/shower,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "acA" = (
@@ -634,8 +634,7 @@
 "ank" = (
 /obj/machinery/door/airlock/titanium/glass,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "ann" = (
@@ -745,9 +744,9 @@
 	icon_state = "computer"
 	},
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "aqc" = (
@@ -858,9 +857,9 @@
 	dir = 8;
 	icon_state = "plasmawindow"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "arS" = (
@@ -1169,9 +1168,9 @@
 /area/f13/building)
 "awI" = (
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "awL" = (
@@ -1427,6 +1426,7 @@
 /area/f13/vault)
 "aCJ" = (
 /obj/machinery/power/apc/unlocked,
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/underground/cave/vault/fourfivefour)
 "aCT" = (
@@ -1744,6 +1744,7 @@
 /obj/machinery/power/port_gen/pacman{
 	icon_state = "teg-broken"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "aMS" = (
@@ -1935,8 +1936,7 @@
 "aPS" = (
 /obj/machinery/door/airlock/medical/glass,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "aQj" = (
@@ -2111,6 +2111,7 @@
 /obj/structure/rack,
 /obj/item/weldingtool/hugetank,
 /obj/item/weldingtool/hugetank,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "aUc" = (
@@ -2205,7 +2206,7 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "aVI" = (
 /obj/effect/turf_decal/bot_white,
@@ -3585,9 +3586,9 @@
 	dir = 4;
 	icon_state = "window"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "bFq" = (
@@ -3685,6 +3686,7 @@
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -4262,7 +4264,7 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "bVK" = (
 /obj/machinery/door/airlock/hatch{
@@ -4565,8 +4567,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "cdp" = (
@@ -4694,9 +4695,9 @@
 "cfN" = (
 /obj/structure/rack,
 /obj/item/storage/pill_bottle/chem_tin/fixer,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "cfS" = (
@@ -4976,9 +4977,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "cnh" = (
@@ -5750,6 +5751,13 @@
 /obj/machinery/light/small,
 /turf/open/water,
 /area/f13/brotherhood/offices1st)
+"cDH" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "cDP" = (
 /obj/structure/chair/f13chair1,
 /obj/effect/decal/cleanable/dirt,
@@ -6023,7 +6031,7 @@
 "cHU" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/rock/pile/largejungle,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "cHV" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -6613,6 +6621,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "cTs" = (
@@ -6971,9 +6980,9 @@
 /area/f13/brotherhood/dorms)
 "dbL" = (
 /obj/structure/wreck/trash/machinepile,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "dbM" = (
@@ -7127,9 +7136,9 @@
 "dfv" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/toxin,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "dfy" = (
@@ -8157,6 +8166,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "dAi" = (
@@ -9019,6 +9029,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
+"dQV" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "dRg" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -9351,9 +9371,9 @@
 /area/f13/bunker)
 "dYB" = (
 /obj/structure/table/optable,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "dYO" = (
@@ -9417,6 +9437,7 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/item/reagent_containers/food/snacks/grown/vanillapod,
 /obj/item/reagent_containers/food/snacks/grown/vanillapod,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -9456,6 +9477,7 @@
 "eaW" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "ebd" = (
@@ -9495,6 +9517,7 @@
 /area/f13/brotherhood/rnd)
 "ebW" = (
 /obj/structure/wreck/trash/secway,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -10909,6 +10932,7 @@
 "eJb" = (
 /obj/structure/rack,
 /obj/item/storage/box/teargas,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -12692,6 +12716,7 @@
 "fyt" = (
 /obj/structure/safe/floor,
 /obj/machinery/flasher/portable,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -12757,14 +12782,23 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 30
 	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "fzA" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
 /turf/open/floor/f13{
-	icon_state = "purplechess";
-	tag = "icon-grass2"
+	icon_state = "purplechess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "fzD" = (
@@ -13424,6 +13458,15 @@
 /obj/structure/debris/v1,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/brotherhood/operations)
+"fOw" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "fOT" = (
 /obj/structure/rack{
 	dir = 8;
@@ -13469,9 +13512,9 @@
 /area/f13/bunker/bighornbunker)
 "fPZ" = (
 /obj/machinery/clonepod/experimental,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "fQc" = (
@@ -14867,6 +14910,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "gwb" = (
@@ -16038,9 +16082,9 @@
 /obj/structure/spacevine{
 	name = "Mutant Vines"
 	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "gXR" = (
@@ -16178,9 +16222,9 @@
 	dir = 4;
 	icon_state = "window"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "haE" = (
@@ -16558,6 +16602,7 @@
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/melee/classic_baton,
 /obj/item/clothing/mask/gas,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -16937,9 +16982,9 @@
 /obj/item/bedsheet/green{
 	icon_state = "sheetwhite"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "hrk" = (
@@ -17107,6 +17152,12 @@
 "hwi" = (
 /obj/item/flashlight/lantern,
 /obj/structure/rack,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -18604,9 +18655,9 @@
 /obj/structure/rack,
 /obj/item/storage/box/medsprays,
 /obj/item/storage/box/pillbottles,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "iiU" = (
@@ -18711,6 +18762,12 @@
 "ilh" = (
 /obj/structure/door_assembly/door_assembly_eng,
 /obj/structure/barricade/wooden/crude,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "ilj" = (
@@ -18729,6 +18786,7 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/item/reagent_containers/food/snacks/grown/pumpkin,
 /obj/item/reagent_containers/food/snacks/grown/pumpkin,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -18903,6 +18961,7 @@
 "iqD" = (
 /obj/item/wrench/power,
 /obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "iqI" = (
@@ -19318,6 +19377,7 @@
 	dir = 1;
 	termtag = "Business"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -19538,7 +19598,7 @@
 /area/f13/enclave)
 "iFF" = (
 /obj/machinery/microwave/stove,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "iGh" = (
 /obj/effect/decal/cleanable/dirt{
@@ -19883,6 +19943,7 @@
 	},
 /area/f13/building)
 "iOl" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -20044,9 +20105,11 @@
 /area/f13/brotherhood/reactor)
 "iSq" = (
 /obj/machinery/light/broken,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
 /turf/open/floor/f13{
-	icon_state = "purplechess";
-	tag = "icon-grass2"
+	icon_state = "purplechess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "iSs" = (
@@ -20311,7 +20374,7 @@
 "iYL" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "iYR" = (
 /obj/structure/reagent_dispensers/barrel/dangerous,
@@ -20472,6 +20535,7 @@
 /area/f13/brotherhood/mining)
 "jcK" = (
 /obj/machinery/light/broken,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "jda" = (
@@ -20782,9 +20846,9 @@
 /obj/structure/rack,
 /obj/item/storage/box/rxglasses,
 /obj/item/storage/box/syringes,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "jjv" = (
@@ -21009,6 +21073,7 @@
 /area/f13/brotherhood/offices1st)
 "jnN" = (
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -21583,6 +21648,7 @@
 /area/f13/building)
 "jCH" = (
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -22290,6 +22356,19 @@
 /obj/structure/life_candle,
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
+"jTx" = (
+/obj/structure/spacevine{
+	name = "Mutant Vines"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "jTF" = (
 /obj/machinery/door/airlock/public,
 /obj/effect/mapping_helpers/airlock/locked,
@@ -22321,6 +22400,18 @@
 /obj/item/flag/outlaw,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/operations)
+"jUY" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "jVi" = (
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/plasteel/f13{
@@ -22367,6 +22458,10 @@
 /obj/structure/spacevine{
 	name = "Mutant Vines"
 	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
 	},
@@ -22411,6 +22506,15 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building)
+"jYo" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "jYs" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -22780,6 +22884,18 @@
 /mob/living/simple_animal/hostile/vault/dweller/dweller5,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
+"kgp" = (
+/obj/structure/spacevine{
+	name = "Mutant Vines"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "kgs" = (
 /obj/machinery/shower{
 	dir = 4
@@ -22904,6 +23020,16 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker/bighornbunker)
+"kiR" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "kiS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -24321,9 +24447,9 @@
 	dir = 8;
 	icon_state = "window"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "kMO" = (
@@ -24548,6 +24674,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "kTP" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/underground/cave/vault/fourfivefour)
 "kTQ" = (
@@ -25206,6 +25335,7 @@
 /area/f13/building)
 "llp" = (
 /obj/machinery/door/airlock/glass_large,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "llX" = (
@@ -25570,9 +25700,12 @@
 "lsg" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (EAST)"
+	icon_state = "comfychair"
 	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -26049,6 +26182,15 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"lDP" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "dark"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "lDW" = (
 /obj/machinery/light/small{
 	light_color = "#ad1b1b"
@@ -26081,10 +26223,13 @@
 	},
 /area/f13/underground/cave/tunnelertemple)
 "lEk" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/turf/open/floor/grass,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "bar"
+	},
 /area/f13/underground/cave/vault/fourfivefour)
 "lEF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26126,6 +26271,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
+"lFw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "lFE" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/dirt,
@@ -26219,6 +26371,18 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/armory)
+"lGF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "lGI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/debris/v2,
@@ -26910,6 +27074,7 @@
 /area/f13/vault)
 "lYi" = (
 /obj/vehicle/ridden/secway,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -27434,6 +27599,12 @@
 /mob/living/simple_animal/chicken,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood/leisure)
+"mjY" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "mko" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -28061,7 +28232,7 @@
 /area/f13/vault)
 "mAh" = (
 /obj/structure/flora/wild_plant/flower/red_two,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "mAi" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -28429,9 +28600,9 @@
 /area/f13/building)
 "mIB" = (
 /obj/structure/closet/wardrobe/genetics_white,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "mID" = (
@@ -28922,9 +29093,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "mSR" = (
@@ -29190,6 +29361,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "mYP" = (
@@ -29273,9 +29445,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "naJ" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "naQ" = (
@@ -29400,9 +29572,9 @@
 	dir = 4;
 	icon_state = "window"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "ndr" = (
@@ -29433,6 +29605,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
+"ndQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "ndX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -29750,6 +29931,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "njF" = (
@@ -30277,6 +30459,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "nxS" = (
@@ -30354,9 +30537,9 @@
 /obj/structure/table,
 /obj/item/storage/pill_bottle/chem_tin/mentats,
 /obj/item/storage/pill_bottle/chem_tin/mentats,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "nzj" = (
@@ -30438,6 +30621,9 @@
 	},
 /obj/structure/spacevine{
 	name = "Mutant Vines"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/underground/cave/vault/fourfivefour)
@@ -30583,6 +30769,7 @@
 	dir = 8;
 	icon_state = "tube-broken"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -30896,6 +31083,16 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building)
+"nMf" = (
+/obj/structure/flora/grass/jungle,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "nMq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -31719,6 +31916,11 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
+"ofy" = (
+/obj/machinery/door/airlock/public,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "ofW" = (
 /obj/machinery/sleeper{
 	density = 1;
@@ -32065,6 +32267,7 @@
 	dir = 1;
 	icon_state = "tube-broken"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "onW" = (
@@ -32117,6 +32320,11 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood/operations)
+"opA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "opF" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/mining)
@@ -33014,8 +33222,7 @@
 "oHQ" = (
 /obj/machinery/door/window{
 	dir = 4;
-	icon_state = "left";
-	tag = "icon-left (EAST)"
+	icon_state = "left"
 	},
 /turf/open/floor/grass,
 /area/f13/underground/cave/vault/fourfivefour)
@@ -33135,9 +33342,9 @@
 "oLb" = (
 /obj/structure/closet/secure_closet/medical2,
 /obj/item/organ/heart/cybernetic,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "oLc" = (
@@ -33280,9 +33487,9 @@
 /area/f13/enclave)
 "oOb" = (
 /obj/machinery/iv_drip,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "oOi" = (
@@ -33361,6 +33568,7 @@
 /obj/item/reagent_containers/food/snacks/icecreamsandwich,
 /obj/item/reagent_containers/food/snacks/icecreamsandwich,
 /obj/item/reagent_containers/food/snacks/icecreamsandwich,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -34053,7 +34261,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "pdZ" = (
 /obj/effect/decal/marking{
@@ -34409,8 +34617,7 @@
 /obj/machinery/door/airlock/titanium/glass,
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "plC" = (
@@ -34891,9 +35098,9 @@
 /obj/structure/rack,
 /obj/item/defibrillator,
 /obj/item/defibrillator,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "pvF" = (
@@ -35562,6 +35769,16 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
+"pKl" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "pKm" = (
 /obj/structure/barricade/sandbags,
 /obj/machinery/light/small/broken{
@@ -35591,15 +35808,24 @@
 /area/f13/building)
 "pKB" = (
 /obj/machinery/computer/operating,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "pKC" = (
 /mob/living/simple_animal/hostile/handy/assaultron,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
+"pKQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "pLp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/chem_master/advanced,
@@ -35940,6 +36166,7 @@
 /area/f13/brotherhood/operating)
 "pSG" = (
 /obj/effect/mob_spawn/human/corpse/vault/security,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "pSI" = (
@@ -36906,6 +37133,18 @@
 	icon_state = "mountain2"
 	},
 /area/f13/underground/cave)
+"qmm" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "qmr" = (
 /obj/structure/chair/right{
 	dir = 4
@@ -37177,6 +37416,7 @@
 "qrT" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -37634,8 +37874,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "qCA" = (
-/obj/structure/flora/wild_plant/flower/orange,
-/turf/open/floor/grass,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "qCB" = (
 /obj/structure/chair/middle{
@@ -37750,6 +37990,7 @@
 	dir = 1;
 	icon_state = "tube-broken"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "qEy" = (
@@ -38446,9 +38687,9 @@
 "qTj" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/o2,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "qTy" = (
@@ -38829,9 +39070,9 @@
 /obj/structure/table,
 /obj/item/storage/firstaid/ancient,
 /obj/item/storage/firstaid/ancient,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "rcx" = (
@@ -39131,6 +39372,16 @@
 /obj/machinery/light,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
+"rgZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "rhu" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
@@ -39391,6 +39642,16 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/offices1st)
+"rom" = (
+/obj/structure/flora/grass/jungle,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "ror" = (
 /obj/structure/flora/wasteplant/wild_broc,
 /turf/open/floor/grass,
@@ -40345,7 +40606,7 @@
 /area/f13/vault)
 "rMC" = (
 /obj/structure/table,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "rME" = (
 /obj/machinery/computer/arcade/battle,
@@ -41668,16 +41929,17 @@
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
 /obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "sqU" = (
 /obj/structure/wreck/trash/machinepiletwo,
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "sqY" = (
@@ -42706,9 +42968,16 @@
 /obj/structure/spacevine{
 	name = "Mutant Vines"
 	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "sNf" = (
@@ -42973,6 +43242,7 @@
 /area/f13/bunker)
 "sUB" = (
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "sUE" = (
@@ -43135,9 +43405,9 @@
 	dir = 8;
 	icon_state = "window"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "sYc" = (
@@ -43235,9 +43505,9 @@
 "tau" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/surgical,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "taw" = (
@@ -43376,6 +43646,7 @@
 /area/f13/vault)
 "tdo" = (
 /obj/structure/flora/grass/jungle,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -43434,6 +43705,7 @@
 /area/f13/vault)
 "tec" = (
 /obj/effect/mob_spawn/human/corpse/vault,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -43629,6 +43901,7 @@
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/item/reagent_containers/food/snacks/grown/pineapple,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -44526,7 +44799,7 @@
 /area/f13/bunker)
 "tGb" = (
 /obj/structure/flora/wasteplant/wild_feracactus,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave/vault/fourfivefour)
 "tGr" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -45704,9 +45977,9 @@
 /obj/structure/rack,
 /obj/item/storage/box/medipens,
 /obj/item/storage/box/masks,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "ugX" = (
@@ -45830,6 +46103,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"ujM" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "ujN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -46004,9 +46283,9 @@
 /area/f13/bunker)
 "unA" = (
 /obj/machinery/dna_scannernew,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "unL" = (
@@ -46613,6 +46892,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
+"uBS" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "uBU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
@@ -46941,6 +47227,16 @@
 /obj/structure/chair/stool/retro/black,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
+"uIT" = (
+/obj/structure/flora/grass/jungle,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "uJk" = (
 /obj/item/clothing/head/radiation,
 /turf/open/indestructible/ground/inside/mountain,
@@ -47333,9 +47629,9 @@
 "uRO" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "uRR" = (
@@ -47471,6 +47767,7 @@
 "uUH" = (
 /obj/structure/dresser,
 /obj/machinery/light/broken,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "uUP" = (
@@ -47655,6 +47952,13 @@
 /mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
+"uZB" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "vak" = (
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
@@ -47787,6 +48091,7 @@
 /turf/open/floor/grass,
 /area/f13/underground/cave/vault/fourfivefour)
 "vcW" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -48475,9 +48780,9 @@
 	dir = 8;
 	icon_state = "window"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "vrt" = (
@@ -49245,6 +49550,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "vIM" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
 	},
@@ -49558,6 +49867,7 @@
 	desc = "A heavily modified toy light machine gun, built for riot control in non-lethal situations.";
 	name = "Riot Router"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -50963,6 +51273,18 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/building)
+"wxp" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "bar"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "wxN" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -51202,6 +51524,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/medical)
 "wAX" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -51528,6 +51851,10 @@
 /area/f13/brotherhood/offices1st)
 "wKn" = (
 /obj/structure/table/reinforced,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -51605,6 +51932,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "wNg" = (
@@ -51743,9 +52071,9 @@
 "wRk" = (
 /obj/item/gun/syringe/rapidsyringe,
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "wRp" = (
@@ -51980,6 +52308,15 @@
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/leisure)
+"wVJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greendirtysolid"
+	},
+/area/f13/underground/cave/vault/fourfivefour)
 "wVS" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -52048,6 +52385,14 @@
 /area/f13/caves)
 "wWF" = (
 /obj/structure/flora/grass/jungle,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
 	},
@@ -52980,6 +53325,7 @@
 /area/f13/bunker)
 "xvL" = (
 /obj/machinery/door/airlock/public,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -53128,6 +53474,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "xyJ" = (
@@ -53509,6 +53856,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/underground/cave/vault/fourfivefour)
 "xIt" = (
@@ -53523,6 +53871,12 @@
 /obj/item/bedsheet/black,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building)
+"xIN" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/underground/cave/vault/fourfivefour)
 "xIP" = (
 /obj/structure/table{
 	layer = 2.9
@@ -53726,6 +54080,7 @@
 "xNA" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/monitor/secret,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -54328,9 +54683,9 @@
 /obj/structure/table,
 /obj/item/stock_parts/cell/high/plus,
 /obj/item/stock_parts/cell/high/plus,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2";
-	tag = "icon-bluedirtychess2"
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "ydo" = (
@@ -87527,12 +87882,12 @@ xBQ
 cRV
 rZb
 iFF
-jWs
-wAX
+cnh
+lEk
 oPH
 rZb
 eaW
-nRs
+qCA
 rJb
 rZb
 pWN
@@ -87783,13 +88138,13 @@ pAD
 fpQ
 fpQ
 sEb
-jWs
-wAX
+cnh
+wxp
 wAX
 jCH
 rZb
 onK
-nRs
+qCA
 cnh
 oPb
 jWs
@@ -88040,16 +88395,16 @@ pAD
 erp
 cnh
 bAa
-jWs
-wAX
+cnh
+lEk
 wAX
 eat
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-nRs
+qCA
 rZb
 rJb
 tYz
@@ -88280,7 +88635,7 @@ naJ
 naJ
 naJ
 naJ
-naJ
+lFw
 naJ
 apU
 rZb
@@ -88298,7 +88653,7 @@ xBQ
 pWN
 rMC
 jWs
-wAX
+lEk
 wAX
 qrT
 rZb
@@ -88537,7 +88892,7 @@ naJ
 naJ
 naJ
 naJ
-naJ
+lFw
 naJ
 fPZ
 rZb
@@ -88560,13 +88915,13 @@ tec
 tiq
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-nRs
+qCA
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
 esX
@@ -88794,7 +89149,7 @@ naJ
 naJ
 naJ
 naJ
-naJ
+lFw
 naJ
 wRk
 rZb
@@ -88817,13 +89172,13 @@ wAX
 bII
 rZb
 qEu
-nRs
-nRs
+qCA
+qCA
+ofy
+qCA
 vqO
-nRs
-vqO
-nRs
-nRs
+qCA
+qCA
 sUB
 rZb
 esX
@@ -89074,13 +89429,13 @@ wAX
 ilr
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-nRs
+qCA
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
 esX
@@ -89334,7 +89689,7 @@ rZb
 rZb
 rZb
 rZb
-nRs
+qCA
 rZb
 rZb
 rZb
@@ -89588,13 +89943,13 @@ xBQ
 wSz
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-nRs
+qCA
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
 esX
@@ -89845,13 +90200,13 @@ fpQ
 xBQ
 rZb
 onK
-nRs
-nRs
+qCA
+qCA
+ofy
+qCA
 vqO
-nRs
-vqO
-nRs
-nRs
+qCA
+qCA
 uUH
 rZb
 rZb
@@ -90102,20 +90457,20 @@ cnh
 wer
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-nRs
+qCA
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-sAl
-sAl
+ujM
+ujM
 nDp
-sAl
-sAl
+ujM
+ujM
 rZb
 whv
 whv
@@ -90368,11 +90723,11 @@ rZb
 rZb
 rZb
 rZb
-sAl
+ndQ
 xNA
-sAl
+ujM
 izu
-sAl
+ujM
 rZb
 whv
 whv
@@ -90616,20 +90971,20 @@ fzA
 iSq
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-nRs
+qCA
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
 cnh
 cqf
 lsg
 wKn
-sAl
+ujM
 rZb
 whv
 sME
@@ -90873,20 +91228,20 @@ xBQ
 uBx
 rZb
 onK
-nRs
-nRs
-vqO
-nRs
-vqO
-nRs
-nRs
+qCA
+qCA
+ofy
+qCA
+ofy
+opA
+qCA
 jcK
 rZb
 cnh
 vgz
 xnf
 iSC
-sAl
+qmm
 rZb
 sME
 sME
@@ -91130,13 +91485,13 @@ qGZ
 jIC
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
-nRs
+qCA
 rZb
 eaW
-nRs
+qCA
 eaW
 rZb
 sAl
@@ -91623,8 +91978,8 @@ wzR
 cnh
 iSn
 dbM
-xBQ
-xBQ
+fpQ
+fpQ
 uDV
 uBx
 jWs
@@ -91646,9 +92001,9 @@ rZb
 jWs
 xBQ
 pbz
-nRs
-nRs
-nRs
+fOw
+xIN
+uZB
 jWs
 jWs
 cnh
@@ -91656,7 +92011,7 @@ rZb
 jWs
 xBQ
 xBQ
-vcW
+lDP
 vcW
 rZb
 sME
@@ -92394,11 +92749,11 @@ cnh
 ihb
 pbz
 wWF
-wWF
-vIM
-vIM
-vIM
-vIM
+rom
+wVJ
+wVJ
+wVJ
+wVJ
 jXo
 qiS
 qiS
@@ -92426,7 +92781,7 @@ jWs
 aAD
 pAD
 rpb
-nRs
+mjY
 slA
 mvm
 rZb
@@ -92650,7 +93005,7 @@ rZb
 cnh
 ihb
 xBQ
-wWF
+nMf
 qEg
 qEg
 qEg
@@ -93418,7 +93773,7 @@ cnh
 cnh
 pVL
 rZb
-jWs
+cnh
 aVG
 jWs
 vIM
@@ -93675,7 +94030,7 @@ eRs
 ror
 hiJ
 rZb
-mJc
+fbl
 bVI
 oUH
 vIM
@@ -93932,8 +94287,8 @@ jWs
 jWs
 qDI
 rZb
-jWs
-jWs
+cnh
+cnh
 oUH
 vIM
 qEg
@@ -94209,7 +94564,7 @@ wJu
 naJ
 naJ
 naJ
-naJ
+cDH
 jWs
 tXr
 rHe
@@ -94449,14 +94804,14 @@ rZb
 jWs
 mAh
 dJb
-vIM
-vIM
-vIM
-vIM
-vIM
-wWF
-vIM
-vIM
+jUY
+pKQ
+pKQ
+pKQ
+pKQ
+uIT
+pKQ
+kiR
 xBQ
 vcS
 pMu
@@ -94467,11 +94822,11 @@ naJ
 naJ
 naJ
 naJ
-naJ
+jYo
 gXN
 kcy
-gXN
-gXN
+kgp
+jTx
 qiS
 qiS
 qiS
@@ -94727,11 +95082,11 @@ naJ
 naJ
 gXN
 kcy
-naJ
+pKl
 qiS
 qiS
-naJ
-naJ
+lGF
+jYo
 mPK
 rZb
 esX
@@ -94961,10 +95316,10 @@ cnh
 qDI
 rZb
 jWs
-wbA
-jWs
-jWs
-jWs
+gDY
+cnh
+cnh
+cnh
 dbM
 xBQ
 wbA
@@ -95218,8 +95573,8 @@ tBe
 qDI
 rZb
 jWs
-jWs
-jWs
+cnh
+cnh
 jWs
 xBQ
 jWs
@@ -95240,7 +95595,7 @@ sXV
 kMB
 vro
 oOb
-naJ
+jYo
 qEg
 ydh
 nzh
@@ -95475,7 +95830,7 @@ cnh
 hBK
 rZb
 pWN
-qCA
+mPK
 oUH
 pAD
 pAD
@@ -96247,7 +96602,7 @@ rZb
 rZb
 vNT
 jWs
-nRs
+dQV
 rZb
 rZb
 rZb
@@ -96503,13 +96858,13 @@ jWs
 pWN
 rZb
 jWs
-nRs
-nRs
+dQV
+qCA
 rZb
-nRs
+qCA
 aMO
 aMO
-nRs
+qCA
 njE
 njE
 njE
@@ -96760,10 +97115,10 @@ jWs
 bnA
 rZb
 tDX
-nRs
-nRs
+uBS
+qCA
 llp
-nRs
+qCA
 xIc
 nxC
 gvX
@@ -96771,7 +97126,7 @@ wNd
 dAb
 mYL
 lna
-lEk
+hbE
 pdU
 qEE
 ygT
@@ -97017,19 +97372,19 @@ lyY
 fcH
 rZb
 qiS
-nRs
-nRs
-nRs
+uBS
+qCA
+qCA
 pSG
-nRs
-nRs
-nRs
+qCA
+qCA
+qCA
 cTj
 cTj
 cTj
 rZb
-jWs
-qEE
+cnh
+iSn
 pAD
 jYe
 rZb
@@ -97274,10 +97629,10 @@ cnh
 kaZ
 rZb
 qiS
-nRs
-nRs
+uBS
+qCA
 rZb
-nRs
+qCA
 aCJ
 aTZ
 iqD
@@ -97285,8 +97640,8 @@ xyz
 xyz
 xyz
 rZb
-jWs
-pAD
+cnh
+ovs
 cHU
 kLC
 rZb
@@ -97531,8 +97886,8 @@ pbz
 uxp
 rZb
 aQy
-nRs
-nRs
+rgZ
+qCA
 rZb
 rZb
 rZb
@@ -97542,9 +97897,9 @@ rZb
 rZb
 rZb
 rZb
-uBx
-pAk
-pAD
+tYz
+jnd
+ovs
 jYe
 rZb
 naJ
@@ -97800,8 +98155,8 @@ kcy
 akA
 rZb
 jWs
-xBQ
-jWs
+fpQ
+cnh
 wDh
 rZb
 naJ
