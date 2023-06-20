@@ -814,12 +814,11 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "jx" = (
-/obj/structure/railing{
-	climbable = 0;
-	color = "#A47449";
-	resistance_flags = 64
+/obj/structure/table,
+/obj/structure/rug/big/rug_red{
+	layer = 1
 	},
-/turf/closed/wall/f13/wood,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "jz" = (
 /obj/structure/chair/stool,
@@ -1877,6 +1876,10 @@
 	},
 /obj/structure/spacevine,
 /turf/closed/wall/f13/wood,
+/area/f13/building)
+"uS" = (
+/obj/structure/rug/carpet2,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "uU" = (
 /obj/structure/railing{
@@ -4409,6 +4412,9 @@
 "Tg" = (
 /obj/structure/table,
 /obj/item/storage/box/dice,
+/obj/structure/rug/big/rug_red{
+	layer = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Ti" = (
@@ -4877,7 +4883,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Xr" = (
-/obj/structure/chair/sofa,
+/obj/structure/table,
+/obj/item/kitchen/knife/butcher,
+/obj/item/kitchen/rollingpin,
+/obj/item/kitchen/knife{
+	pixel_x = 5
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Xx" = (
@@ -65735,7 +65749,7 @@ cw
 cw
 dK
 dK
-jx
+dK
 nR
 nR
 nR
@@ -65986,13 +66000,13 @@ Hw
 Hw
 ti
 ti
-dK
+vE
 Hs
 Tg
 nR
-zs
+Xr
 NZ
-jx
+vc
 nR
 nR
 nR
@@ -66244,12 +66258,12 @@ Hw
 ti
 ti
 dK
-Xr
-IE
-nR
-nR
-hX
+TY
 jx
+nR
+uS
+hX
+vc
 nR
 nR
 nR
@@ -66500,13 +66514,13 @@ Hw
 Hw
 ti
 ti
-dK
+vc
 yD
 IE
 nR
 nR
 hz
-dK
+Gz
 nR
 nR
 nR
@@ -66757,7 +66771,7 @@ ti
 ti
 ti
 ti
-dK
+Gz
 lC
 nR
 nR
@@ -67014,9 +67028,9 @@ ti
 ti
 ti
 ti
-dK
+Gz
 qI
-nR
+sy
 nR
 nR
 nR
@@ -67271,10 +67285,10 @@ ti
 ti
 ti
 ti
-dK
-dK
-dK
-dK
+Gz
+Gz
+vc
+dR
 dK
 dK
 dK
