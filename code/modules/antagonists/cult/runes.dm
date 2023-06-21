@@ -87,6 +87,7 @@ Runes can either be invoked by one's self or with many different cultists. Each 
 			attack_hand(M)
 		else
 			to_chat(M, span_warning("You are unable to invoke the rune!"))
+	return TRUE
 
 /obj/effect/rune/proc/conceal() //for talisman of revealing/hiding
 	visible_message(span_danger("[src] fades away."))

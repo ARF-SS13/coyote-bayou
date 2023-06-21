@@ -148,13 +148,10 @@
 	idle_power_usage = 2
 	active_power_usage = 6
 	power_channel = ENVIRON
+	monkey_can_use = FALSE
 
 /obj/machinery/readybutton/attack_ai(mob/user as mob)
 	to_chat(user, "The station AI is not to interact with these devices.")
-	return
-
-/obj/machinery/readybutton/attack_paw(mob/user as mob)
-	to_chat(user, span_warning("You are too primitive to use this device!"))
 	return
 
 /obj/machinery/readybutton/attackby(obj/item/W as obj, mob/user as mob, params)

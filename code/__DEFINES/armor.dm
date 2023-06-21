@@ -34,6 +34,85 @@
 		ARMOR_WOUND = 0, \
 		ARMOR_DAMAGE_THRESHOLD = 0)
 
+/* 
+ * OBJECT ARMOR VALUES FOR THINGS THAT ARENT ITEMS!!!
+ */
+
+/* Generic machines, robust but kinda flimsy
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_MACHINE list(\
+		ARMOR_MELEE = 10, \
+		ARMOR_BULLET = 10, \
+		ARMOR_LASER = -20, \
+		ARMOR_ENERGY = -10, \
+		ARMOR_BOMB = 0, \
+		ARMOR_BIO = 0, \
+		ARMOR_RAD = 0, \
+		ARMOR_FIRE = 0, \
+		ARMOR_ACID = 0, \
+		ARMOR_WOUND = 0, \
+		ARMOR_DAMAGE_THRESHOLD = 8)
+
+/* Doors, sturdy but melts easily
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DOOR list(\
+		ARMOR_MELEE = 10, \
+		ARMOR_BULLET = 10, \
+		ARMOR_LASER = -20, \
+		ARMOR_ENERGY = -20, \
+		ARMOR_BOMB = 0, \
+		ARMOR_BIO = 0, \
+		ARMOR_RAD = 0, \
+		ARMOR_FIRE = 0, \
+		ARMOR_ACID = 0, \
+		ARMOR_WOUND = 0, \
+		ARMOR_DAMAGE_THRESHOLD = 15)
+
+/* Secure Lockers, sturdy but smashes open easily
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_LOCKER list(\
+		ARMOR_MELEE = -30, \
+		ARMOR_BULLET = 50, \
+		ARMOR_LASER = 25, \
+		ARMOR_ENERGY = 25, \
+		ARMOR_BOMB = 0, \
+		ARMOR_BIO = 0, \
+		ARMOR_RAD = 0, \
+		ARMOR_FIRE = 0, \
+		ARMOR_ACID = 0, \
+		ARMOR_WOUND = 0, \
+		ARMOR_DAMAGE_THRESHOLD = 10)
+
+/* Spider webs, flammable but tough
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SPIDERWEB list(\
+		ARMOR_MELEE = 50, \
+		ARMOR_BULLET = 85, \
+		ARMOR_LASER = -100, \
+		ARMOR_ENERGY = -100, \
+		ARMOR_BOMB = 0, \
+		ARMOR_BIO = 0, \
+		ARMOR_RAD = 0, \
+		ARMOR_FIRE = 100, \
+		ARMOR_ACID = 0, \
+		ARMOR_WOUND = 0, \
+		ARMOR_DAMAGE_THRESHOLD = 0)
+
+/* A big mean robot! Tough and strong, but lasers and energy weapons are its weakness
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_MECHA list(\
+		ARMOR_MELEE = 50, \
+		ARMOR_BULLET = 40, \
+		ARMOR_LASER = 10, \
+		ARMOR_ENERGY = -10, \
+		ARMOR_BOMB = 0, \
+		ARMOR_BIO = 0, \
+		ARMOR_RAD = 0, \
+		ARMOR_FIRE = 100, \
+		ARMOR_ACID = 0, \
+		ARMOR_WOUND = 0, \
+		ARMOR_DAMAGE_THRESHOLD = 10)
+
 /* Generic item armor
  * Usually isnt actual armor
  * Has some good fire resist, but thats about it

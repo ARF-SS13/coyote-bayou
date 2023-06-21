@@ -43,7 +43,7 @@
 		if(new_turf.density)
 			break
 	throw_at(target_turf, throw_range, throw_speed)
-	return TRUE
+	return src
 
 /obj/item/bodypart/head/dismember()
 	if(HAS_TRAIT(owner, TRAIT_NODECAP))

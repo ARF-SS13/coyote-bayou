@@ -101,8 +101,8 @@
 		else
 			bullet_hole.icon_state = "dent"
 		add_overlay(bullet_hole)
-		return BULLET_ACT_HIT
-	return BULLET_ACT_FORCE_PIERCE
+		return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_HIT)
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_FORCE_PIERCE)
 
 #undef DECALTYPE_SCORCH
 #undef DECALTYPE_BULLET

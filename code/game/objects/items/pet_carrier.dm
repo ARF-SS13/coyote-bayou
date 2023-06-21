@@ -91,7 +91,7 @@
 	update_icon()
 	return TRUE
 
-/obj/item/pet_carrier/attack(mob/living/target, mob/living/user), attackchain_flags, list/overrides
+/obj/item/pet_carrier/attack(mob/living/target, mob/living/user, attackchain_flags, list/overrides)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(!open)

@@ -13,7 +13,7 @@
 		if(!CHECK_MOBILITY(L, MOBILITY_USE) && !(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
 			to_chat(L, span_warning("You are unable to swing [src] right now!"))
 			return
-		if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACKCHAIN, user, target, params) & COMPONENT_ITEM_NO_ATTACK)
+		if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACKCHAIN, user, target, params, attackchain_flags) & COMPONENT_ITEM_NO_ATTACK)
 			return
 		if(min_reach && GET_DIST_EUCLIDEAN(user, target) < min_reach)
 			return
@@ -53,6 +53,7 @@
 	if(!(attackchain_flags & ATTACK_IGNORE_CLICKDELAY) && !CheckAttackCooldown(user, A))
 		return STOP_ATTACK_PROC_CHAIN
 
+/// Called when user clicks on us using W.
 /atom/proc/attackby(obj/item/W, mob/user, params, attackchain_flags, list/damage_overrides)
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return STOP_ATTACK_PROC_CHAIN
@@ -92,9 +93,10 @@
 	if(item_flags & NOBLUDGEON)
 		return
 
-	var/list/damage_list = SSdamage.deal_damage(user, M, src, overrides)
+	/// The part that deals damage
+	var/list/damage_list = SSdamage.whack_target(user, M, src, attackchain_flags, overrides)
 
-	if(LAZYACCESS(damage_list, DAMAGE_FORCE) <= 0)
+	if(GET_DAMAGE(damage_list) <= 0)
 		playsound(loc, pokesound, get_clamped_volume(), 1, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), 1, -1)
@@ -108,52 +110,57 @@
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
-//the equivalent of the standard version of attack() but for object targets.
+/// Damage dealing proc for when this object src is used to attack another object O
+/// USER is using SRC to attack O
 /obj/item/proc/attack_obj(obj/O, mob/living/user, list/damage_overrides)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 	if(item_flags & NOBLUDGEON)
 		return
+	/// The part that does the damage
+	var/list/damage_list = SSdamage.whack_target(user, O, src, NONE, damage_overrides)
 	user.do_attack_animation(O)
-	var/list/damage_list = SSdamage.deal_damage(user, O, src, damage_overrides)
+	/// O was attacked with SRC by USER
 	O.attacked_by(src, user, NONE, damage_list)
 
 /obj/item/proc/attack_obj_nohit(obj/O, mob/living/user, list/damage_overrides)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ_NOHIT, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 
-/// damage list contains the output of SSdamage.deal_damage()
+/// Handles the resulting non-damage parts of an attack
+/// Damage has already been dealt by SSdamage.damage_target_with_obj
+/// Dont rely on I actually being anything, it might be null, get the usable values from damage_list
+/// USER is using I to attack SRC
+/// SRC is being hit by I, wielded by USER
 /atom/movable/proc/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
 	return
 
 /obj/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
-	var/totitemdamage = LAZYACCESS(damage_overrides, DAMAGE_FORCE) || 0
+	var/totitemdamage = GET_DAMAGE(damage_list) || 0
+	var/weapon_name = I?.name || GET_WEAPON_NAME(damage_list)
 	if(!(attackchain_flags & NO_AUTO_CLICKDELAY_HANDLING))
-		I.ApplyAttackCooldown(user, src, attackchain_flags)
+		I?.ApplyAttackCooldown(user, src, attackchain_flags)
 	if(totitemdamage)
-		visible_message(span_danger("[user] has hit [src] with [I]!"), null, null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_danger("[user] has hit [src] with [weapon_name]!"), null, null, COMBAT_MESSAGE_RANGE)
 		//only witnesses close by and the victim see a hit message.
-		log_combat(user, src, "attacked", I)
+		log_combat(user, src, "attacked", I || "[weapon_name]")
 
 /mob/living/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
-	var/list/block_return = list()
-	var/totitemdamage = LAZYACCESS(damage_overrides, DAMAGE_FORCE) || I.force
-	if((user != src) && mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_IS_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, null, block_return) & BLOCK_SUCCESS)
-		return FALSE
-	. = TRUE // successful attack
-	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
-	send_item_attack_message(I, user, null, totitemdamage)
-	I.do_stagger_action(src, user, totitemdamage)
-	if(!I.force)
+	var/damage = GET_DAMAGE(damage_list)
+	var/damage_type = GET_DAMAGE_TYPE(damage_list)
+	var/hit_zone = GET_ZONE(damage_list)
+	send_item_attack_message(I, user, hit_zone, null, damage_list)
+	I?.do_stagger_action(src, user, damage)
+	if(!damage)
 		return
-	if(I.damtype != BRUTE)
+	if(damage_type != BRUTE)
 		return
-	if(!prob(33))
+	if(prob(65))
 		return
-	I.add_mob_blood(src)
+	I?.add_mob_blood(src)
 	var/turf/location = get_turf(src)
 	add_splatter_floor(location)
-	if(totitemdamage >= 10 && get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
+	if(damage >= 10 && get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
 		user.add_mob_blood(src)
 
 /mob/living/proc/pre_attacked_by(obj/item/I, mob/living/user)
@@ -198,25 +205,50 @@
 		else
 			return clamp(w_class * 6, 10, 100) // Multiply the item's weight class by 6, then clamp the value between 10 and 100
 
-/mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area, obj/item/bodypart/hit_bodypart)
-	var/message_verb = "attacked"
-	if(length(I.attack_verb))
-		message_verb = "[pick(I.attack_verb)]"
-	else if(!I.force)
+/mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area, obj/item/bodypart/hit_bodypart, list/damage_list = DAMAGE_LIST)
+	if(!I && !LAZYACCESS(damage_list, DAMAGE_SHOW_MESSAGE))
 		return
+	var/message_verb = "attacked"
+	var/list/verbiage = I?.attack_verb || GET_ATTACK_VERBS(damage_list) || list("hit")
+	var/sharpness = I?.get_sharpness() || GET_SHARPNESS(damage_list)    || 0
+	var/damage_type = I?.damtype       || GET_DAMAGE_TYPE(damage_list)  || BRUTE
+	var/damage = I?.force              || GET_DAMAGE(damage_list)       || 0
+	var/weapon_name = I?.name          || GET_WEAPON_NAME(damage_list)  || "something"
+	if(length(verbiage))
+		message_verb = "[pick(verbiage)]"
+	if(!damage)
+		return
+
+	var/extra_wound_details = ""
+	if(iscarbon(src) && damage_type == BRUTE)
+		if(!hit_bodypart)
+			if(!hit_area)
+				hit_area = GET_ZONE(damage_list) || ran_zone(BODY_ZONE_CHEST, 65)
+			hit_bodypart = get_bodypart(hit_area)
+		if(hit_bodypart?.can_dismember())
+			var/mob/living/carbon/im_carbon = src // I'm carbon? ('  u  ')
+			var/mangled_state = hit_bodypart.get_mangled_state()
+			var/bio_state = im_carbon.get_biological_state()
+			if(mangled_state == BODYPART_MANGLED_BOTH)
+				extra_wound_details = ", threatening to sever it entirely"
+			else if((mangled_state == BODYPART_MANGLED_FLESH && sharpness) || (mangled_state & BODYPART_MANGLED_BONE && bio_state == BIO_JUST_BONE))
+				extra_wound_details = ", [sharpness == SHARP_EDGED ? "slicing" : "piercing"] through to the bone"
+			else if((mangled_state == BODYPART_MANGLED_BONE && sharpness) || (mangled_state & BODYPART_MANGLED_FLESH && bio_state == BIO_JUST_FLESH))
+				extra_wound_details = ", [sharpness == SHARP_EDGED ? "slicing" : "piercing"] at the remaining tissue"
+
 	var/message_hit_area = ""
 	if(hit_area)
 		message_hit_area = " in the [hit_area]"
-	var/attack_message = "[src] is [message_verb][message_hit_area] with [I]!"
-	var/attack_message_local = "You're [message_verb][message_hit_area] with [I]!"
+	var/attack_message = "[src] is [message_verb][message_hit_area] with [weapon_name][extra_wound_details]!"
+	var/attack_message_local = "You're [message_verb][message_hit_area] with [weapon_name][extra_wound_details]!"
 	if(user in viewers(src, null))
-		attack_message = "[user] [message_verb] [src][message_hit_area] with [I]!"
-		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
+		attack_message = "[user] [message_verb] [src][message_hit_area] with [weapon_name][extra_wound_details]!"
+		attack_message_local = "[user] [message_verb] you[message_hit_area] with [weapon_name][extra_wound_details]!"
 	if(user == src)
-		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
+		attack_message_local = "You [message_verb] yourself[message_hit_area] with [weapon_name][extra_wound_details]"
 	visible_message(span_danger("[attack_message]"),\
 		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE)
-	return 1
+	return TRUE
 
 /// How much stamina this takes to swing this is not for realism purposes hecc off.
 /obj/item/proc/getweight(mob/living/user, multiplier = 1, trait = SKILL_STAMINA_COST)

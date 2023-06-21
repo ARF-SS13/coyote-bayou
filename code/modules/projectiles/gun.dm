@@ -1468,17 +1468,15 @@ ATTACHMENTS
 	var/obj/item/bodypart/affecting = user.get_bodypart(ran_zone(user.get_active_hand()))
 	if(!affecting)
 		affecting = user.get_bodypart(BODY_ZONE_CHEST)
-	var/armor = user.run_armor_check(affecting, "melee")
-	var/dt = max(user.run_armor_check(affecting, "damage_threshold"), 0)
+	var/damage = SSdamage.calculate_damage(null, user, src, damage, affecting.body_zone, ARMOR_MELEE, 0, 0)
+
 	user.apply_damages(
-		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & BRUTELOSS ? damage / dmg_divisor : 0,
-		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & FIRELOSS ? damage / dmg_divisor : 0,
-		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & TOXLOSS ? damage / dmg_divisor : 0,
-		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & OXYLOSS ? damage / dmg_divisor : 0,
-		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & CLONELOSS ? damage / dmg_divisor : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & BRUTELOSS ? damage : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & FIRELOSS ? damage : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & TOXLOSS ? damage : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & OXYLOSS ? damage : 0,
+		misfire_possibilities[GUN_MF_HURTS_YOU][GUN_MF_HURTS_YOU_DAMAGE_TYPE] & CLONELOSS ? damage : 0,
 		def_zone = affecting,
-		blocked = armor,
-		damagethreshold = dt
 	)
 
 GLOBAL_LIST_INIT(gun_yeet_words, list(

@@ -1,6 +1,3 @@
-/mob/living/proc/getarmor(def_zone, type)
-	return 0
-
 //this returns the mob's protection against eye damage (number between -1 and 2) from bright lights
 /mob/living/proc/get_eye_protection()
 	return 0
@@ -47,57 +44,55 @@
 		else
 			CRASH("Invalid rediretion mode [redirection_mode]")
 
-/mob/living/bullet_act(obj/item/projectile/P, def_zone)
-	if(ranged_mob_grief(P))
-		if(ismob(P.firer))
-			var/mob/shootier = P.firer
-			shootier.show_message(span_alert("Your shot honorably misses your sleeping or wounded target!"))
-		return FALSE
-	var/totaldamage = P.damage
-	var/staminadamage = P.stamina
-	var/final_percent = 0
-	if(P.original != src || P.firer != src) //try to block or reflect the bullet, can't do so when shooting oneself
-		var/list/returnlist = list()
-		var/returned = mob_run_block(P, P.damage, "the [P.name]", ATTACK_TYPE_PROJECTILE, P.armour_penetration, P.firer, def_zone, returnlist)
-		final_percent = returnlist[BLOCK_RETURN_PROJECTILE_BLOCK_PERCENTAGE]
-		if(returned & BLOCK_SHOULD_REDIRECT)
-			handle_projectile_attack_redirection(P, returnlist[BLOCK_RETURN_REDIRECT_METHOD])
-			return BULLET_ACT_FORCE_PIERCE
-		if(returned & BLOCK_REDIRECTED)
-			return BULLET_ACT_FORCE_PIERCE
-		if(returned & BLOCK_SUCCESS)
-			P.on_hit(src, final_percent, def_zone)
-			return BULLET_ACT_BLOCK
-		totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
-		staminadamage = block_calculate_resultant_damage(staminadamage, returnlist)
-	var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
-	var/dt = max(run_armor_check(def_zone, "damage_threshold", null, null, 0, null) - P.damage_threshold_modifier, 0)
-	if(!P.nodamage)
-		apply_damage(totaldamage, P.damage_type, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = P.sharpness, damage_threshold = dt)
-		if(staminadamage)
-			apply_damage(staminadamage, STAMINA, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = SHARP_NONE, damage_threshold = dt)
-		if(P.dismemberment)
-			check_projectile_dismemberment(P, def_zone)
-	var/missing = 100 - final_percent
-	var/armor_ratio = armor * 0.01
-	if(missing > 0)
-		final_percent += missing * armor_ratio
-	return P.on_hit(src, final_percent, def_zone) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+// /mob/living/bullet_act(obj/item/projectile/P, def_zone)
+// 	if(!istype(P)) // No projectile, no problem (here at least)
+// 		return
+// 	var/list/damage_list = SSdamage.shoot_target(P.firer, src, P, NONE, list())
+// 	var/damage = GET_DAMAGE(damage_list)
+// 	var/damage_in = max(P.damage, 0.01)
+// 	knock_off_buckled_mobs(P, damage_list)
+// 	var/final_percent = 100 - ((damage / damage_in) * 100)
+// 	return P.on_hit(src, final_percent, def_zone) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
-/// Returns TRUE if the thing is fired by a player controlled mob, and we're too wounded to be killed
-/mob/living/proc/ranged_mob_grief(obj/item/projectile/P)
-	if(!istype(P)) // No projectile, no problem (here at least)
-		return FALSE
-	if(!isanimal(P.firer)) // Only simplemobs here pls
-		return FALSE
-	var/mob/living/simple_animal/shootre = P.firer
-	if(!shootre.ckey) // Only player controlled mobs here pls
-		return FALSE
-	if(stat) // Only if the person getting wrecked is not awake (crit, sleeping, etc)
-		return TRUE
-	return FALSE
 
-/mob/living/proc/check_projectile_dismemberment(obj/item/projectile/P, def_zone)
+
+	// if(ranged_mob_grief(P))
+	// 	if(ismob(P.firer))
+	// 		var/mob/shootier = P.firer
+	// 		shootier.show_message(span_alert("Your shot honorably misses your sleeping or wounded target!"))
+	// 	return FALSE
+	// var/totaldamage = P.damage
+	// var/staminadamage = P.stamina
+	// var/final_percent = 0
+	// if(P.original != src || P.firer != src) //try to block or reflect the bullet, can't do so when shooting oneself
+	// 	var/list/returnlist = list()
+	// 	var/returned = mob_run_block(P, P.damage, "the [P.name]", ATTACK_TYPE_PROJECTILE, P.armour_penetration, P.firer, def_zone, returnlist)
+	// 	final_percent = returnlist[BLOCK_RETURN_PROJECTILE_BLOCK_PERCENTAGE]
+	// 	if(returned & BLOCK_SHOULD_REDIRECT)
+	// 		handle_projectile_attack_redirection(P, returnlist[BLOCK_RETURN_REDIRECT_METHOD])
+	// 		return BULLET_ACT_FORCE_PIERCE
+	// 	if(returned & BLOCK_REDIRECTED)
+	// 		return BULLET_ACT_FORCE_PIERCE
+	// 	if(returned & BLOCK_SUCCESS)
+	// 		P.on_hit(src, final_percent, def_zone)
+	// 		return BULLET_ACT_BLOCK
+	// 	totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
+	// 	staminadamage = block_calculate_resultant_damage(staminadamage, returnlist)
+	// var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
+	// var/dt = max(run_armor_check(def_zone, "damage_threshold", null, null, 0, null) - P.damage_threshold_modifier, 0)
+	// if(!P.nodamage)
+	// 	apply_damage(totaldamage, P.damage_type, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = P.sharpness, damage_threshold = dt)
+	// 	if(staminadamage)
+	// 		apply_damage(staminadamage, STAMINA, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = SHARP_NONE, damage_threshold = dt)
+	// 	if(P.dismemberment)
+	// 		check_damage_dismemberment(damage_list)
+	// var/missing = 100 - final_percent
+	// var/armor_ratio = armor * 0.01
+	// if(missing > 0)
+	// 	final_percent += missing * armor_ratio
+
+
+/mob/living/proc/check_damage_dismemberment(obj/item/projectile/P, list/damage_list = DAMAGE_LIST)
 	return 0
 
 /obj/item/proc/get_volume_by_throwforce_and_or_w_class()
@@ -114,46 +109,50 @@
 /mob/living/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
 	// Throwingdatum can be null if someone had an accident() while slipping with an item in hand.
 	var/obj/item/I
-	var/throwpower = 30
+	var/throwpower = AM.throwforce || 30
 	if(isitem(AM))
 		I = AM
 		throwpower = I.throwforce
-	var/impacting_zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
-	var/list/block_return = list()
-	var/total_damage = AM.throwforce
-	if(mob_run_block(AM, throwpower, "\the [AM.name]", ATTACK_TYPE_THROWN, 0, throwingdatum?.thrower, impacting_zone, block_return) & BLOCK_SUCCESS)
-		hitpush = FALSE
-		skipcatch = TRUE
-		blocked = TRUE
-		total_damage = block_calculate_resultant_damage(total_damage, block_return)
-	if(I)
-		var/nosell_hit = SEND_SIGNAL(I, COMSIG_MOVABLE_IMPACT_ZONE, src, impacting_zone, throwingdatum, FALSE, blocked)
-		if(nosell_hit)
-			skipcatch = TRUE
-			hitpush = FALSE
-		if(!skipcatch && isturf(I.loc) && catch_item(I))
-			return TRUE
-		var/dtype = BRUTE
-
-		dtype = I.damtype
-
-		if(!blocked)
-			if(!nosell_hit)
-				if(COOLDOWN_FINISHED(src, projectile_message_antispam))
-					COOLDOWN_START(src, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-					visible_message(span_danger("[src] is hit by [I]!"), \
-									span_userdanger("You're hit by [I]!"))
-				if(!I.throwforce)
-					return
-				var/armor = run_armor_check(impacting_zone, "melee", "Your armor has protected your [parse_zone(impacting_zone)].", "Your armor has softened hit to your [parse_zone(impacting_zone)].",I.armour_penetration)
-				var/dt = max(run_armor_check("damage_threshold", "melee", null, null, 0, null) - I.damage_threshold_modifier, 0)
-				apply_damage(I.throwforce, dtype, impacting_zone, armor, sharpness=I.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND), damage_threshold = dt)
-		else
-			return 1
 	else
 		playsound(loc, 'sound/weapons/genhit.ogg', 50, 1, -1)
-	..()
+		return ..()
 
+	// var/list/block_return = list()
+	// var/total_damage = AM.throwforce
+	// if(mob_run_block(AM, throwpower, "\the [AM.name]", ATTACK_TYPE_THROWN, 0, throwingdatum?.thrower, impacting_zone, block_return) & BLOCK_SUCCESS)
+	// 	hitpush = FALSE
+	// 	skipcatch = TRUE
+	// 	blocked = TRUE
+	// 	total_damage = block_calculate_resultant_damage(total_damage, block_return)
+	var/list/damage_list = SSdamage.collide_with_target(
+		throwingdatum?.thrower,
+		src,
+		AM,
+		throwpower,
+		impacting_zone,
+		attackchain_flags,
+	)
+	var/block_flags = LAZYACCESS(damage_list, DAMAGE_BLOCK_FLAGS)
+	if(CHECK_BITFIELD(block_flags, BLOCK_SUCCESS))
+		blocked = TRUE
+	if(blocked)
+		return TRUE
+	var/nosell_hit = SEND_SIGNAL(I, COMSIG_MOVABLE_IMPACT_ZONE, src, impacting_zone, throwingdatum, FALSE, blocked)
+	if(nosell_hit)
+		skipcatch = TRUE
+		hitpush = FALSE
+	if(!skipcatch && isturf(I.loc) && catch_item(I))
+		return TRUE
+	var/damage = GET_DAMAGE(damage_list)
+	var/dtype = GET_DAMAGE_TYPE(damage_list)
+
+	if(COOLDOWN_FINISHED(src, projectile_message_antispam))
+		COOLDOWN_START(src, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
+		visible_message(
+			span_danger("[src] is hit by [I]!"),
+			span_userdanger("You're hit by [I]!")
+		)
+	return TRUE
 
 /mob/living/mech_melee_attack(obj/mecha/M)
 	if(M.occupant.a_intent == INTENT_HARM)
@@ -294,132 +293,69 @@
 	if(!SSticker.HasRoundStarted())
 		to_chat(M, "You cannot attack people before the game has started.")
 		return
-
 	if(M.buckled)
 		if(M in buckled_mobs)
 			M.Feedstop()
 		return // can't attack while eating!
-
-	if(HAS_TRAIT(M, TRAIT_PACIFISM))
-		to_chat(M, span_notice("You don't want to hurt anyone!"))
-		return FALSE
-
-	var/damage = rand(5, 35)
-	if(M.is_adult)
-		damage = rand(20, 40)
-	var/list/block_return = list()
-	if(mob_run_block(M, damage, "the [M.name]", ATTACK_TYPE_MELEE, null, M, check_zone(M.zone_selected), block_return) & BLOCK_SUCCESS)
-		return FALSE
-	damage = block_calculate_resultant_damage(damage, block_return)
-
-	if (stat != DEAD)
-		log_combat(M, src, "attacked")
-		M.do_attack_animation(src)
-		visible_message(span_danger("The [M.name] glomps [src]!"), \
-				span_userdanger("The [M.name] glomps [src]!"), null, COMBAT_MESSAGE_RANGE, null,
-				M, span_danger("You glomp [src]!"))
-		return TRUE
-
-/mob/living/attack_animal(mob/living/simple_animal/M)
-	M.face_atom(src)
-	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
-		return
-	M.DelayNextAction()
-	if(M.ckey && stat && ckey && !(M.player_character)) // if both you and your attacker have ckeys, and you're not awake, disallow further attacks
-		M.show_message(span_alert("As an honorable creature of the wastes, you're morally (and mechanically) forbidden from attacking [src] while they're too injured or too sleepy to fight back!"))
-		return FALSE
-	var/list/attack_phrases = list()
-	if(M.melee_damage_upper == 0 || (M.player_character && M.a_intent == INTENT_HELP))
-		attack_phrases = list(
-		"continuous" = islist(M.friendly_verb_continuous) ? pick(M.friendly_verb_continuous) : M.friendly_verb_continuous,
-		"simple" = islist(M.friendly_verb_simple) ? pick(M.friendly_verb_simple) : M.friendly_verb_simple
-		)
-		M.visible_message(span_notice("\The [M] [attack_phrases["continuous"]] [src]!"),
-			span_notice("You [attack_phrases["simple"]] [src]!"), target = src,
-			target_message = span_notice("\The [M] [attack_phrases["continuous"]] you!"))
-		return 0
-	else
-		attack_phrases = list(
-		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
-		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
-		)
-		if(HAS_TRAIT(M, TRAIT_PACIFISM))
-			to_chat(M, span_notice("You don't want to hurt anyone!"))
-			return FALSE
-		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
-		var/list/return_list = list()
-		if(mob_run_block(M, damage, "the [M.name]", ATTACK_TYPE_MELEE, M.armour_penetration, M, check_zone(M.zone_selected), return_list) & BLOCK_SUCCESS)
-			return 0
-		damage = block_calculate_resultant_damage(damage, return_list)
-		if(M.attack_sound)
-			playsound(src, M.attack_sound, 50, 1, 1)
-		M.do_attack_animation(src)
-		visible_message(span_danger("\The [M] [attack_phrases["continuous"]] [src]!"), \
-						span_userdanger("\The [M] [attack_phrases["continuous"]] you!"), null, COMBAT_MESSAGE_RANGE, null,
-						M, span_danger("You [attack_phrases["simple"]] [src]!"))
-		log_combat(M, src, "attacked")
-		return damage
+	var/list/damage_list = SSdamage.slime_attack(attacker = M, defender = src)
+	log_combat(M, src, "attacked")
+	M.do_attack_animation(src)
+	visible_message(
+		span_danger("The [M.name] glomps [src]!"),
+		span_userdanger("The [M.name] glomps [src]!"),
+		null,
+		COMBAT_MESSAGE_RANGE,
+		null,
+		M,
+		span_danger("You glomp [src]!")
+	)
+	return damage_list
 
 /mob/living/attack_paw(mob/living/carbon/monkey/M)
 	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	M.DelayNextAction()
 	if (M.a_intent == INTENT_HARM)
-		if(HAS_TRAIT(M, TRAIT_PACIFISM))
-			to_chat(M, span_notice("You don't want to hurt anyone!"))
-			return FALSE
-		if(M.is_muzzled() || (M.wear_mask && M.wear_mask.flags_cover & MASKCOVERSMOUTH))
-			to_chat(M, span_warning("You can't bite with your mouth covered!"))
-			return FALSE
-		if(mob_run_block(M, 0, "the [M.name]", ATTACK_TYPE_MELEE | ATTACK_TYPE_UNARMED, 0, M, check_zone(M.zone_selected), null) & BLOCK_SUCCESS)
-			return FALSE
-		M.do_attack_animation(src, ATTACK_EFFECT_BITE)
-		if (prob(75))
-			log_combat(M, src, "attacked")
-			playsound(loc, 'sound/weapons/bite.ogg', 50, 1, -1)
-			visible_message(span_danger("[M.name] bites [src]!"), \
-					span_userdanger("[M.name] bites you!"), null, COMBAT_MESSAGE_RANGE, null,
-					M, span_danger("You bite [src]!"))
-			return TRUE
-		else
-			visible_message(span_danger("[M.name] has attempted to bite [src]!"), \
-				span_userdanger("[M.name] has attempted to bite [src]!"), null, COMBAT_MESSAGE_RANGE, null,
-				M, span_danger("You have attempted to bite [src]!"))
-			return TRUE
-	return FALSE
+		var/list/damage_list = SSdamage.monkey_attack(attacker = M, defender = src)
+		log_combat(M, src, "attacked")
+		playsound(loc, 'sound/weapons/bite.ogg', 50, 1, -1)
+		visible_message(
+			span_danger("[M.name] bites [src]!"),
+			span_userdanger("[M.name] bites you!"),
+			null,
+			COMBAT_MESSAGE_RANGE,
+			null,
+			M,
+			span_danger("You bite [src]!")
+		)
+		return TRUE
 
 /mob/living/attack_larva(mob/living/carbon/alien/larva/L)
-	switch(L.a_intent)
-		if(INTENT_HELP)
-			visible_message(span_notice("[L.name] rubs its head against [src]."),
-				span_notice("[L.name] rubs its head against you."), target = L, \
-				target_message = span_notice("You rub your head against [src]."))
-			return FALSE
-
-		else
-			if(HAS_TRAIT(L, TRAIT_PACIFISM))
-				to_chat(L, span_notice("You don't want to hurt anyone!"))
-				return FALSE
-			if(L != src && (mob_run_block(L, rand(1, 3), "the [L.name]", ATTACK_TYPE_MELEE | ATTACK_TYPE_UNARMED, 0, L, check_zone(L.zone_selected), null) & BLOCK_SUCCESS))
-				return FALSE
-			L.do_attack_animation(src)
-			if(prob(90))
-				log_combat(L, src, "attacked")
-				visible_message(span_danger("[L.name] bites [src]!"), \
-					span_userdanger("[L.name] bites you!"), null, COMBAT_MESSAGE_RANGE, null, L, \
-					span_danger("You bite [src]!"))
-				playsound(loc, 'sound/weapons/bite.ogg', 50, 1, -1)
-				return TRUE
-			else
-				visible_message(span_danger("[L.name] has attempted to bite [src]!"), \
-					span_userdanger("[L.name] has attempted to bite you!"), null, COMBAT_MESSAGE_RANGE, null, L, \
-					span_danger("You have attempted to bite [src]!"))
+	if(L.a_intent == INTENT_HELP)
+		visible_message(
+			span_notice("[L.name] rubs its head against [src]."),
+			span_notice("[L.name] rubs its head against you."),
+			target = L,
+			target_message = span_notice("You rub your head against [src].")
+		)
+		return FALSE
+	var/list/damage_list = SSdamage.larva_attack(attacker = L, defender = src)
+	var/damage = GET_DAMAGE(damage_list)
+	L.amount_grown = min(L.amount_grown + damage, L.max_grown)
+	log_combat(L, src, "attacked")
+	visible_message(
+		span_danger("[L.name] bites [src]!"),
+		span_userdanger("[L.name] bites you!"), 
+		null,
+		COMBAT_MESSAGE_RANGE,
+		null,
+		L,
+		span_danger("You bite [src]!")
+	)
+	playsound(loc, 'sound/weapons/bite.ogg', 50, 1, -1)
+	return TRUE
 
 /mob/living/attack_alien(mob/living/carbon/alien/humanoid/M)
-	if((M != src) && M.a_intent != INTENT_HELP && (mob_run_block(M, 0, "the [M.name]", ATTACK_TYPE_MELEE | ATTACK_TYPE_UNARMED, 0, M, check_zone(M.zone_selected), null) & BLOCK_SUCCESS))
-		visible_message(span_danger("[M] attempted to touch [src]!"),
-			span_danger("[M] attempted to touch you!"))
-		return FALSE
 	switch(M.a_intent)
 		if (INTENT_HELP)
 			if(!isalien(src)) //I know it's ugly, but the alien vs alien attack_alien behaviour is a bit different.
@@ -431,12 +367,10 @@
 			grabbedby(M)
 			return FALSE
 		if(INTENT_HARM)
-			if(HAS_TRAIT(M, TRAIT_PACIFISM))
-				to_chat(M, span_notice("You don't want to hurt anyone!"))
-				return FALSE
-			if(!isalien(src))
-				M.do_attack_animation(src)
-			return TRUE
+			if(isalien(src))
+				return TRUE
+			var/list/damage_list = SSdamage.alien_attack(attacker = M, defender = src)
+			return DAMAGE_LIST
 		if(INTENT_DISARM)
 			if(!isalien(src))
 				M.do_attack_animation(src, ATTACK_EFFECT_DISARM)

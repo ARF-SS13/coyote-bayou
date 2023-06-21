@@ -350,7 +350,7 @@
 	visible_message(span_danger("[P] smacks into [src] and rapidly flashes to ash."),\
 	span_italic("You hear a loud crack as you are washed with a wave of heat."))
 	consume_everything(P)
-	return BULLET_ACT_HIT
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_HIT)
 
 /obj/item/melee/supermatter_sword/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] touches [src]'s blade. It looks like [user.p_theyre()] tired of waiting for the radiation to kill [user.p_them()]!"))

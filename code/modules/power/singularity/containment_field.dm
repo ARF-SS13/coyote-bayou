@@ -60,6 +60,7 @@
 		M.visible_message(span_warning("[M] glows fiercely as the containment field flickers out!"))
 		FG1.calc_power(INFINITY) //rip that 'containment' field
 		M.adjustHealth(-M.obj_damage)
+		return TRUE
 	else
 		..()
 

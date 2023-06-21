@@ -1453,12 +1453,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return 1
 
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style, attackchain_flags = NONE)
-	if(!attacker_style && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm [target]!"))
-		return FALSE
 	if(IS_STAMCRIT(user)) //CITADEL CHANGE - makes it impossible to punch while in stamina softcrit
 		to_chat(user, span_warning("You're too exhausted.")) //CITADEL CHANGE - ditto
 		return FALSE //CITADEL CHANGE - ditto
+
 	if(target.check_martial_melee_block())
 		target.visible_message(span_warning("[target] blocks [user]'s attack!"), target = user, \
 			target_message = span_warning("[target] blocks your attack!"))
@@ -1472,98 +1470,65 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	if(attacker_style && attacker_style.harm_act(user,target))
 		return TRUE
+
+	var/atk_verb = user.dna.species.attack_verb
+	if(!(target.mobility_flags & MOBILITY_STAND))
+		atk_verb = ATTACK_EFFECT_KICK
+
+	var/list/damage_list = SSdamage.punch_target(
+		user,
+		target,
+		damage_low = punchdamagelow,
+		damage_high = punchdamagehigh,
+		stamina_low = punchdamagelow,
+		stamina_high = punchdamagehigh,
+		damage_type = BRUTE,
+		target_zone = user.zone_selected,
+		armor_type = ARMOR_MELEE,
+		attackchain_flags = attackchain_flags,
+	)
+	var/damage = GET_DAMAGE(damage_list)
+	var/punchedstam = target.getStaminaLoss()
+	var/punchedbrute = target.getBruteLoss()
+	var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(user.zone_selected))
+
+	if(!affecting) //Maybe the bodypart is missing? Or things just went wrong..
+		affecting = target.get_bodypart(BODY_ZONE_CHEST) //target chest instead, as failsafe. Or hugbox? You decide.
+
+	if(!damage || !affecting)//future-proofing for species that have 0 damage/weird cases where no zone is targeted
+		playsound(target.loc, user.dna.species.miss_sound, 25, TRUE, -1)
+		target.visible_message(
+			span_danger("[user]'s [atk_verb] misses [target]!"),
+			span_danger("You avoid [user]'s [atk_verb]!"),
+			span_hear("You hear a swoosh!"),
+			COMBAT_MESSAGE_RANGE,
+			null,
+			user,
+			span_warning("Your [atk_verb] misses [target]!")
+		)
+		log_combat(user, target, "attempted to punch")
+		return FALSE
+	playsound(target.loc, user.dna.species.attack_sound, 25, 1, -1)
+	target.visible_message(
+		span_danger("[user] [atk_verb]s [target]!"),
+		span_userdanger("[user] [atk_verb]s you!"),
+		null,
+		COMBAT_MESSAGE_RANGE,
+		null,
+		user,
+		span_danger("You [atk_verb] [target]!")
+	)
+
+	target.lastattacker = user.real_name
+	target.lastattackerckey = user.ckey
+	user.dna.species.spec_unarmedattacked(user, target)
+
+	if(atk_verb == ATTACK_EFFECT_KICK)
+		log_combat(user, target, "kicked")
 	else
-
-		var/atk_verb = user.dna.species.attack_verb
-		if(!(target.mobility_flags & MOBILITY_STAND))
-			atk_verb = ATTACK_EFFECT_KICK
-
-		switch(atk_verb)
-			if(ATTACK_EFFECT_KICK)
-				user.do_attack_animation(target, ATTACK_EFFECT_KICK)
-			if(ATTACK_EFFECT_CLAW)
-				user.do_attack_animation(target, ATTACK_EFFECT_CLAW)
-			if(ATTACK_EFFECT_SMASH)
-				user.do_attack_animation(target, ATTACK_EFFECT_SMASH)
-			else
-				user.do_attack_animation(target, ATTACK_EFFECT_PUNCH)
-
-		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
-		if(HAS_TRAIT(user, TRAIT_PERFECT_ATTACKER)) // unit test no-miss trait
-			damage = user.dna.species.punchdamagehigh
-		var/punchedstam = target.getStaminaLoss()
-		var/punchedbrute = target.getBruteLoss()
-
-		//CITADEL CHANGES - makes resting and disabled combat mode reduce punch damage, makes being out of combat mode result in you taking more damage
-		//if(!SEND_SIGNAL(target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		//	damage *= 1.2
-		if(!CHECK_MOBILITY(user, MOBILITY_STAND))
-			damage *= 0.65
-		//if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		//	damage *= 0.8
-		//END OF CITADEL CHANGES
-
-		var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(user.zone_selected))
-
-		if(!affecting) //Maybe the bodypart is missing? Or things just went wrong..
-			affecting = target.get_bodypart(BODY_ZONE_CHEST) //target chest instead, as failsafe. Or hugbox? You decide.
-
-		if(!damage || !affecting)//future-proofing for species that have 0 damage/weird cases where no zone is targeted
-			playsound(target.loc, user.dna.species.miss_sound, 25, TRUE, -1)
-			target.visible_message(span_danger("[user]'s [atk_verb] misses [target]!"), \
-							span_danger("You avoid [user]'s [atk_verb]!"), span_hear("You hear a swoosh!"), null, COMBAT_MESSAGE_RANGE, null, \
-							user, span_warning("Your [atk_verb] misses [target]!"))
-			log_combat(user, target, "attempted to punch")
-			return FALSE
-
-
-		var/armor_block = target.run_armor_check(affecting, "melee")
-
-		playsound(target.loc, user.dna.species.attack_sound, 25, 1, -1)
-
-		target.visible_message(span_danger("[user] [atk_verb]s [target]!"), \
-					span_userdanger("[user] [atk_verb]s you!"), null, COMBAT_MESSAGE_RANGE, null, \
-					user, span_danger("You [atk_verb] [target]!"))
-
-		target.lastattacker = user.real_name
-		target.lastattackerckey = user.ckey
-		user.dna.species.spec_unarmedattacked(user, target)
-
-		if(user.limb_destroyer)
-			target.dismembering_strike(user, affecting.body_zone)
-
-		if(atk_verb == ATTACK_EFFECT_KICK)//kicks deal 1.5x raw damage + 0.5x stamina damage
-			target.apply_damage(damage*1.5, attack_type, affecting, armor_block)
-			target.apply_damage(damage*0.5, STAMINA, affecting, armor_block)
-			log_combat(user, target, "kicked")
-		else//other attacks deal full raw damage + 2x in stamina damage
-			target.apply_damage(damage, attack_type, affecting, armor_block)
-			target.apply_damage(damage*2, STAMINA, affecting, armor_block)
-			log_combat(user, target, "punched")
-
-		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
-			if((punchedstam > 50) && prob(punchedstam*0.5)) //If our punch victim has been hit above the threshold, and they have more than 50 stamina damage, roll for stun, probability of 1% per 2 stamina damage
-
-				target.visible_message(span_danger("[user] knocks [target] down!"), \
-								span_userdanger("You're knocked down by [user]!"),
-								span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, null,
-								user, span_danger("You knock [target] down!"))
-
-				var/knockdown_duration = 40 + (punchedstam + (punchedbrute*0.5))*0.8 - armor_block
-				target.DefaultCombatKnockdown(knockdown_duration)
-				target.forcesay(GLOB.hit_appends)
-				log_combat(user, target, "got a stun punch with their previous punch")
-
-				if(HAS_TRAIT(user, TRAIT_KI_VAMPIRE) && !HAS_TRAIT(target, TRAIT_NOBREATH) && (punchedbrute < 100)) //If we're a ki vampire we also sap them of lifeforce, but only if they're not too beat up. Also living organics only.
-					user.adjustBruteLoss(-5)
-					user.adjustFireLoss(-5)
-					user.adjustStaminaLoss(-20)
-
-					target.adjustCloneLoss(10)
-					target.adjustBruteLoss(10)
-
-		else if(!(target.mobility_flags & MOBILITY_STAND))
-			target.forcesay(GLOB.hit_appends)
+		log_combat(user, target, "punched")
+	if(!(target.mobility_flags & MOBILITY_STAND))
+		target.forcesay(GLOB.hit_appends)
 
 /datum/species/proc/spec_unarmedattacked(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return
@@ -1728,84 +1693,44 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if("disarm")
 			disarm(M, H, attacker_style)
 
+/// Our parent H is being attacked by user, with item I, on bodypart affecting, with intent intent. H is us. damage_list is a readout of the damage we've already taken.
+/// Damage has already been dealt to us, this is mainly to allow us to react to it.
 /datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
-	var/totitemdamage = LAZYACCESS()
-	if(damage_override)
-		totitemdamage = damage_override
-	else
-		totitemdamage = (H.pre_attacked_by(I, user) * damage_multiplier) + damage_addition
-
+	var/totitemdamage = GET_DAMAGE(damage_list)
 	if(!affecting) //Something went wrong. Maybe the limb is missing?
-		affecting = H.get_bodypart(BODY_ZONE_CHEST) //If the limb is missing, or something went terribly wrong, just hit the chest instead
-
-	// Allows you to put in item-specific reactions based on species
-	if(user != H)
-		var/list/block_return = list()
-		if(H.mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_TYPE_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, affecting.body_zone, block_return) & BLOCK_SUCCESS)
-			return 0
-		totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
-	if(H.check_martial_melee_block())
-		H.visible_message(span_warning("[H] blocks [I]!"))
-		return 0
-
-	var/hit_area
-
-	hit_area = affecting.name
-	var/def_zone = affecting.body_zone
-
-	var/armor_block = H.run_armor_check(affecting, "melee", span_notice("Your armor has protected your [hit_area]."), span_notice("Your armor has softened a hit to your [hit_area]."),I.armour_penetration)
-	armor_block = min(90,armor_block) //cap damage reduction at 90%
-	var/dt = max(H.run_armor_check(def_zone, "damage_threshold") - I.damage_threshold_modifier, 0)
-	var/Iforce = totitemdamage //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
-	var/Iwound_bonus = I.wound_bonus
-
-	// this way, you can't wound with a surgical tool on help intent if they have a surgery active and are laying down, so a misclick with a circular saw on the wrong limb doesn't bleed them dry (they still get hit tho)
-	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP && (H.mobility_flags & ~MOBILITY_STAND) && (LAZYLEN(H.surgeries) > 0))
-		Iwound_bonus = CANT_WOUND
-
+		affecting = H.get_bodypart(BODY_ZONE_CHEST) //If the limb is missing, or something went terribly wrong, just hit the chest instead. If the chest is missing? we've got bigger problems
+	var/hit_area = affecting?.name || "chest"
+	var/def_zone = affecting?.body_zone || BODY_ZONE_CHEST
 	var/weakness = H.check_weakness(I, user)
-	apply_damage(totitemdamage * weakness, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), damage_threshold = dt)
-
-
-	H.send_item_attack_message(I, user, hit_area, affecting, totitemdamage)
-
-	I.do_stagger_action(H, user, totitemdamage)
-
+	//apply_damage(totitemdamage * weakness, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), damage_threshold = dt)
+	H.send_item_attack_message(I, user, hit_area, affecting, totitemdamage, damage_list)
+	I?.do_stagger_action(H, user, totitemdamage)
 	if(!totitemdamage)
-		return 0 //item force is zero
-
-	var/bloody = 0
-	if(((I.damtype == BRUTE) && totitemdamage && prob(25 + (totitemdamage * 2))))
-		if(affecting.status == BODYPART_ORGANIC)
-			I.add_mob_blood(H)	//Make the weapon bloody, not the person.
-			if(prob(totitemdamage * 2))	//blood spatter!
-				bloody = 1
-				var/turf/location = H.loc
-				if(istype(location))
-					H.add_splatter_floor(location)
-				if(get_dist(user, H) <= 1)	//people with TK won't get smeared with blood
-					user.add_mob_blood(H)
+		return damage_list
+	var/damage_type = GET_DAMAGE_TYPE(damage_list)
+	var/sharpness = GET_SHARPNESS(damage_list)
+	var/armor_blocked = GET_ARMOR_BLOCKED(damage_list)
+	var/bloody = FALSE
+	if(damage_type != BRUTE)
+		return damage_list
+	if(!totitemdamage)
+		return damage_list
+	if(!prob(25 + (totitemdamage * 2)))
+		return damage_list
+	if(affecting.status == BODYPART_ORGANIC)
+		I?.add_mob_blood(H)	//Make the weapon bloody, not the person.
+		if(prob(totitemdamage * 2))	//blood spatter!
+			bloody = TRUE
+			var/turf/location = H.loc
+			if(istype(location))
+				H.add_splatter_floor(location)
+			if(get_dist(user, H) <= 1)	//people with TK won't get smeared with blood
+				user.add_mob_blood(H)
 
 		switch(hit_area)
 			if(BODY_ZONE_HEAD)
-				if(!I.get_sharpness() && armor_block < 50)
-					if(prob(totitemdamage))
-						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
-						if(H.stat == CONSCIOUS)
-							H.visible_message(span_danger("[H] has been knocked senseless!"), \
-											span_userdanger("You have been knocked senseless!"))
-							H.confused = max(H.confused, 20)
-							H.adjust_blurriness(10)
-						if(prob(10))
-							H.gain_trauma(/datum/brain_trauma/mild/concussion)
-					else
-						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, totitemdamage * 0.2)
-
-					if(H.stat == CONSCIOUS && H != user && prob(totitemdamage + ((100 - H.health) * 0.5))) // rev deconversion through blunt trauma.
-						var/datum/antagonist/rev/rev = H.mind.has_antag_datum(/datum/antagonist/rev)
-						if(rev)
-							rev.remove_revolutionary(FALSE, user)
-
+				knock_senseless(H, user, totitemdamage, sharpness, armor_blocked)
+				de_rev(H, user, totitemdamage, sharpness, armor_blocked)
 				if(bloody)	//Apply blood
 					if(H.wear_mask)
 						H.wear_mask.add_mob_blood(H)
@@ -1818,12 +1743,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 						H.update_inv_glasses()
 
 			if(BODY_ZONE_CHEST)
-				if(H.stat == CONSCIOUS && !I.get_sharpness() && armor_block < 50)
-					if(prob(totitemdamage))
-						H.visible_message(span_danger("[H] has been knocked down!"), \
-									span_userdanger("[H] has been knocked down!"))
-						H.apply_effect(60, EFFECT_KNOCKDOWN, armor_block)
-
+				// if(H.stat == CONSCIOUS && !sharpness && armor_blocked < 0.5)
+				// 	if(prob(totitemdamage))
+				// 		H.visible_message(span_danger("[H] has been knocked down!"), \
+				// 					span_userdanger("[H] has been knocked down!"))
+				// 		H.apply_effect(60, EFFECT_KNOCKDOWN, armor_blocked * 10)
 				if(bloody)
 					if(H.wear_suit)
 						H.wear_suit.add_mob_blood(H)
@@ -1832,9 +1756,46 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 						H.w_uniform.add_mob_blood(H)
 						H.update_inv_w_uniform()
 
-		if(Iforce > 10 || Iforce >= 5 && prob(33))
+		if(totitemdamage >= 5)
 			H.forcesay(GLOB.hit_appends)	//forcesay checks stat already.
 	return TRUE
+
+/datum/species/proc/knock_senseless(mob/living/carbon/human/defender, mob/living/carbon/human/attacker, damage_amount, sharpness, armor_blocked)
+	if(!sharpness)
+		return
+	if(armor_blocked > 0.5)
+		return
+	var/brain_damage = 0.2 * damage_amount
+	if(prob(damage_amount))
+		brain_damage = 20
+	H.adjustOrganLoss(ORGAN_SLOT_BRAIN, brain_damage)
+	if(H.stat == CONSCIOUS)
+		H.visible_message(
+			span_danger("[H] has been knocked senseless!"),
+			span_userdanger("You have been knocked senseless!")
+		)
+		H.confused = max(H.confused, 20)
+		H.adjust_blurriness(10)
+	if(prob(10))
+		H.gain_trauma(/datum/brain_trauma/mild/concussion)
+
+
+/datum/species/proc/de_rev(mob/living/carbon/human/defender, mob/living/carbon/human/attacker, damage_amount, sharpness, armor_blocked)
+	if(!sharpness)
+		return
+	if(armor_blocked > 0.5)
+		return
+	if(defender.stat != CONSCIOUS)
+		return
+	if(!defender.mind)
+		return
+	if(!defender.mind.has_antag_datum(/datum/antagonist/rev))
+		return
+	if(!prob(damage_amount + ((100 - defender.health) * 0.5)))
+		return
+	var/datum/antagonist/rev/rev = defender.mind.has_antag_datum(/datum/antagonist/rev)
+	if(rev)
+		rev.remove_revolutionary(FALSE, attacker)
 
 /datum/species/proc/alt_spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	if(!istype(M))
@@ -1971,45 +1932,44 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		target.ShoveOffBalance(SHOVE_OFFBALANCE_DURATION)
 		log_combat(user, target, "shoved", append_message)
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0, sendsignal = TRUE)
+/datum/species/proc/apply_damage(
+		damage,
+		damagetype = BRUTE,
+		def_zone = null,
+		blocked = 0,
+		mob/living/carbon/human/H,
+		forced = FALSE,
+		spread_damage = FALSE,
+		wound_bonus = 0,
+		bare_wound_bonus = 0,
+		sharpness = SHARP_NONE,
+		damage_threshold = 0,
+		sendsignal = TRUE
+	)
 	if(sendsignal)
 		SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!forced && hit_percent <= 0)
-		return 0
-
-	var/sharp_mod = 1 //this line of code here is meant for species to have various damage modifiers to their brute intake based on the flag of the weapon.
-	switch(sharpness)
-		if(SHARP_NONE)
-			sharp_mod = sharp_blunt_mod
-		if(SHARP_EDGED)
-			sharp_mod = sharp_edged_mod
-		if(SHARP_POINTY)
-			sharp_mod = sharp_pointy_mod
-	var/obj/item/bodypart/BP = null
-	if(!spread_damage)
-		if(isbodypart(def_zone))
-			if(damagetype == STAMINA && istype(def_zone, /obj/item/bodypart/head))
-				BP = H.get_bodypart(check_zone(BODY_ZONE_CHEST))
-			else
-				BP = def_zone
-		else
-			if(!def_zone)
-				def_zone = ran_zone(def_zone)
-			if(damagetype == STAMINA && def_zone == BODY_ZONE_HEAD)
-				def_zone = BODY_ZONE_CHEST
-			BP = H.get_bodypart(check_zone(def_zone))
-		if(!BP)
-			BP = H.bodyparts[1]
+		return FALSE
 
 	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
 		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
+	var/damage_amount = damage
+	if(!forced)
+		damage_amount = damage * hit_percent
+		switch(sharpness)
+			if(SHARP_NONE)
+				damage_amount *= sharp_blunt_mod
+			if(SHARP_EDGED)
+				damage_amount *= sharp_edged_mod
+			if(SHARP_POINTY)
+				damage_amount *= sharp_pointy_mod
 
 	switch(damagetype)
 		if(BRUTE)
+			damage_amount *= brutemod
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod * sharp_mod
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2019,33 +1979,30 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			else//no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage_amount)
 		if(BURN)
+			damage_amount *= burnmod
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage_amount)
 		if(TOX)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.tox_mod
 			H.adjustToxLoss(damage_amount)
 		if(OXY)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.oxy_mod
 			H.adjustOxyLoss(damage_amount)
 		if(CLONE)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.clone_mod
 			H.adjustCloneLoss(damage_amount)
 		if(STAMINA)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.stamina_mod
 			if(BP)
-				if(damage > 0 ? BP.receive_damage(0, 0, damage_amount) : BP.heal_damage(0, 0, abs(damage * hit_percent * H.physiology.stamina_mod), only_robotic = FALSE, only_organic = FALSE))
+				if(damage > 0)
+					BP.receive_damage(0, 0, damage_amount)
+				else(BP.heal_damage(0, 0, abs(damage * hit_percent), only_robotic = FALSE, only_organic = FALSE))
 					H.update_stamina()
 			else
 				H.adjustStaminaLoss(damage_amount)
 		if(BRAIN)
-			var/damage_amount = forced ? damage : damage * hit_percent * H.physiology.brain_mod
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, damage_amount)
-	return 1
+	return TRUE
 
 /datum/species/proc/on_hit(obj/item/projectile/P, mob/living/carbon/human/H)
 	// called when hit by a projectile

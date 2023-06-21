@@ -129,6 +129,12 @@
 ///When a thing is adminspawned, signal
 #define COMSIG_ATOM_POST_ADMIN_SPAWN "atom_post_admin_spawn"
 
+/// An attacking atom is being requested for override values versus a defending atom
+#define COMSIG_ATOM_ATTACKER_OVERRIDES "atom_attacker_override" // (datum/source, atom/attacker, atom/defender, list/damage_list)
+/// A defending atom is being requested for override values versus an attacking atom
+#define COMSIG_ATOM_DEFENDER_OVERRIDES "atom_defender_override" // (datum/source, atom/defender, atom/attacker, list/damage_list)
+#define COMSIG_ATOM_GET_ATTACK_OVERRIDES "atom_get_attack_overrides" // (datum/source, atom/attacker, atom/defender, list/damage_list, list/overrides)
+
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"		//from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"		//called when teleporting into a protected turf: (channel, turf/origin, turf/destination)
 	#define COMPONENT_BLOCK_TELEPORT 1

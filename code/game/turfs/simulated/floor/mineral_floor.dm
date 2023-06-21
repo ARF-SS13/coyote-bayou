@@ -170,9 +170,8 @@
 		radiate()
 
 /turf/open/floor/mineral/uranium/attack_paw(mob/user)
+	radiate()
 	.=..()
-	if(!.)
-		radiate()
 
 /turf/open/floor/mineral/uranium/proc/radiate()
 	if(!active)

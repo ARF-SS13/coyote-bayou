@@ -5,31 +5,6 @@
 	else
 		..()
 
-/mob/living/carbon/monkey/attack_paw(mob/living/M)
-	. = ..()
-	if(!.) //unsuccessful monkey bite.
-		return
-	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-	if(!affecting)
-		affecting = get_bodypart(BODY_ZONE_CHEST)
-	if(M.limb_destroyer)
-		dismembering_strike(M, affecting.body_zone)
-	var/dmg = rand(1, 5)
-	apply_damage(dmg, BRUTE, affecting)
-
-/mob/living/carbon/monkey/attack_larva(mob/living/carbon/alien/larva/L)
-	. = ..()
-	if(!.) //unsuccessful larva bite
-		return
-	var/damage = rand(1, 3)
-	if(stat != DEAD)
-		L.amount_grown = min(L.amount_grown + damage, L.max_grown)
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(L.zone_selected))
-		if(!affecting)
-			affecting = get_bodypart(BODY_ZONE_CHEST)
-		apply_damage(damage, BRUTE, affecting)
-
 /mob/living/carbon/monkey/attack_hulk(mob/living/carbon/human/user, does_attack_animation = FALSE)
 	. = ..(user, TRUE)
 	if(.)
@@ -96,32 +71,25 @@
 	if(!.) // the attack was blocked or was help/grab intent
 		return
 	if (M.a_intent == INTENT_HARM)
-		if ((prob(95) && health > 0))
-			playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
-			var/damage = rand(15, 30)
-			if (damage >= 25)
-				damage = rand(20, 40)
-				if(AmountUnconscious() < 300)
-					Unconscious(rand(200, 300))
-				visible_message(span_danger("[M] has wounded [name]!"), \
-						span_userdanger("[M] has wounded [name]!"), null, COMBAT_MESSAGE_RANGE)
-			else
-				visible_message(span_danger("[M] has slashed [name]!"), \
-						span_userdanger("[M] has slashed [name]!"), null, COMBAT_MESSAGE_RANGE)
-
-			var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
-			log_combat(M, src, "attacked")
-			if(!affecting)
-				affecting = get_bodypart(BODY_ZONE_CHEST)
-			if(!dismembering_strike(M, affecting.body_zone)) //Dismemberment successful
-				return 1
-			apply_damage(damage, BRUTE, affecting)
-
+		var/list/damage_return = islist(.) ? . : list()
+		playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
+		var/damage = GET_DAMAGE(damage_return)
+		if (damage >= 25)
+			if(AmountUnconscious() < 300)
+				Unconscious(rand(200, 300))
+			visible_message(
+				span_danger("[M] has wounded [name]!"),
+				span_userdanger("[M] has wounded [name]!"), 
+				null, 
+				COMBAT_MESSAGE_RANGE
+			)
 		else
-			playsound(loc, 'sound/weapons/slashmiss.ogg', 25, 1, -1)
-			visible_message(span_danger("[M] has attempted to lunge at [name]!"), \
-					span_userdanger("[M] has attempted to lunge at [name]!"), null, COMBAT_MESSAGE_RANGE)
-
+			visible_message(
+				span_danger("[M] has slashed [name]!"),
+				span_userdanger("[M] has slashed [name]!"),
+				null,
+				COMBAT_MESSAGE_RANGE
+			)
 	else
 		var/obj/item/I = null
 		playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
@@ -137,33 +105,6 @@
 				I = null
 		log_combat(M, src, "disarmed", "[I ? " removing \the [I]" : ""]")
 		updatehealth()
-
-/mob/living/carbon/monkey/attack_animal(mob/living/simple_animal/M)
-	. = ..()
-	if(.)
-		var/damage = .
-		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-		if(!dam_zone) //Dismemberment successful
-			return TRUE
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-		if(!affecting)
-			affecting = get_bodypart(BODY_ZONE_CHEST)
-		apply_damage(damage, M.melee_damage_type, affecting)
-
-/mob/living/carbon/monkey/attack_slime(mob/living/simple_animal/slime/M)
-	. = ..()
-	if(!.) //unsuccessful slime attack
-		return
-	var/damage = rand(5, 35)
-	if(M.is_adult)
-		damage = rand(20, 40)
-	var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-	if(!dam_zone) //Dismemberment successful
-		return 1
-	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-	if(!affecting)
-		affecting = get_bodypart(BODY_ZONE_CHEST)
-	apply_damage(damage, BRUTE, affecting)
 
 /mob/living/carbon/monkey/acid_act(acidpwr, acid_volume, bodyzone_hit)
 	. = 1

@@ -96,7 +96,8 @@
 			step(src,mob_direction)
 		if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from) && isliving(target))
 			var/mob/living/L = target
-			L.attack_animal(src)
+			simple_attack_target(L, TRUE)
+			//L.attack_animal(src)
 			return
 		var/swing_turf = get_step(src,mob_direction)
 		new /obj/effect/temp_visual/kinetic_blast(swing_turf)
@@ -152,7 +153,8 @@
 	if(isliving(hit_atom) && attack_state == MOOK_ATTACK_ACTIVE)
 		var/mob/living/L = hit_atom
 		if(CanAttack(L))
-			L.attack_animal(src)
+			simple_attack_target(L, TRUE)
+			// L.attack_animal(src)
 			struck_target_leap = TRUE
 			density = TRUE
 			update_icons()
@@ -166,7 +168,8 @@
 			var/mob/living/ML = A
 			if(!struck_target_leap && CanAttack(ML))//Check if some joker is attempting to use rest to evade us
 				struck_target_leap = TRUE
-				ML.attack_animal(src)
+				simple_attack_target(ML, TRUE)
+				//ML.attack_animal(src)
 				density = TRUE
 				struck_target_leap = TRUE
 				update_icons()

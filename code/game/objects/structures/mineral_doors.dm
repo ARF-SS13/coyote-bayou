@@ -47,9 +47,6 @@
 		if(get_dist(user,src) <= 1) //not remotely though
 			return TryToSwitchState(user)
 
-/obj/structure/mineral_door/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/structure/mineral_door/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	return TryToSwitchState(user)
 

@@ -129,7 +129,11 @@
 /mob/living/UnarmedAttack(atom/A, proximity, intent = a_intent, flags = NONE)
 	A.attack_animal(src, intent, flags)
 
+/// Called before the animal attacks the user. Return TRUE to stop the attack
 /atom/proc/attack_animal(mob/user)
+	SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_ANIMAL, user)
+
+/atom/proc/post_attack_animal(mob/user, list/damage_list)
 	SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_ANIMAL, user)
 
 /mob/living/RestrainedClickOn(atom/A)
@@ -146,7 +150,7 @@
 /atom/proc/attack_paw(mob/user)
 	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_PAW, user) & COMPONENT_NO_ATTACK_HAND)
 		return TRUE
-	return FALSE
+	return attack_hand(user)
 
 /*
 	Monkey RestrainedClickOn() was apparently the
@@ -171,18 +175,12 @@
 		if(ishuman(ML))
 			var/mob/living/carbon/human/H = ML
 			affecting = H.get_bodypart(ran_zone(dam_zone))
-		var/armor = ML.run_armor_check(affecting, "melee")
-		if(prob(75))
-			ML.apply_damage(rand(1,3), BRUTE, affecting, armor)
-			ML.visible_message(span_danger("[name] bites [ML]!"), \
-							span_userdanger("[name] bites [ML]!"))
-			if(armor >= 2)
-				return
-			for(var/thing in diseases)
-				var/datum/disease/D = thing
-				ML.ForceContractDisease(D)
-		else
-			ML.visible_message(span_danger("[src] has attempted to bite [ML]!"))
+		var/list/damage_list = SSdamage.monkey_attack(src, ML)
+		ML.visible_message(span_danger("[name] bites [ML]!"), \
+						span_userdanger("[name] bites [ML]!"))
+		for(var/thing in diseases)
+			var/datum/disease/D = thing
+			ML.ForceContractDisease(D)
 	DelayNextAction()
 
 /*
@@ -252,15 +250,15 @@
 	Simple animals
 */
 /mob/living/simple_animal/UnarmedAttack(atom/A, proximity, intent = a_intent, flags = NONE)
-	if(!dextrous)
-		return ..()
-	if(!ismob(A))
-		A.attack_hand(src, intent, flags)
-		update_inv_hands()
 //Coyote edit
 	if(dextrous && ismob(A) && LAZYLEN(held_items))//Dextrous mob who has hand slots
 		if(isnull(held_items["[active_hand_index]"]))//Attacking with an empty hand
-			return ..()
+			return simple_attack_target(A, proximity, intent, flags)
+	if(!ismob(A))
+		A.attack_hand(src, intent, flags)
+		update_inv_hands()
+	return simple_attack_target(A, proximity, intent, flags)
+	
 //End Coyote edit
 
 /*

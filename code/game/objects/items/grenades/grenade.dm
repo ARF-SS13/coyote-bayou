@@ -217,9 +217,6 @@
 	else
 		return ..()
 
-/obj/item/grenade/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/item/grenade/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(attack_type & ATTACK_TYPE_PROJECTILE)
 		var/obj/item/projectile/P = object

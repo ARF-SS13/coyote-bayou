@@ -294,9 +294,6 @@
 		handle_automated_speech(1) //assured speak/emote
 	return
 
-/mob/living/simple_animal/parrot/attack_paw(mob/living/carbon/monkey/M)
-	return attack_hand(M)
-
 /mob/living/simple_animal/parrot/attack_alien(mob/living/carbon/alien/M)
 	return attack_hand(M)
 
@@ -584,7 +581,7 @@
 			else
 				attack_verb_continuous = "chomps"
 				attack_verb_simple = "chomp"
-			L.attack_animal(src)//Time for the hurt to begin!
+			simple_attack_target(L, TRUE, INTENT_HARM)
 		//Otherwise, fly towards the mob!
 		else
 			walk_to(src, parrot_interest, 1, parrot_speed)

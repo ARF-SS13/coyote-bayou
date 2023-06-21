@@ -47,9 +47,6 @@
 	. = ..()
 	update_icon()
 
-/obj/item/reagent_containers/syringe/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/item/reagent_containers/syringe/attackby(obj/item/I, mob/user, params)
 	return
 

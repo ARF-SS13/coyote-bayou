@@ -47,7 +47,8 @@
 	mob_exit(M, silent)
 	return TRUE
 
-/obj/vehicle/sealed/car/pre_attack(obj/item/I, mob/living/user, params, attackchain_flags, damage_multiplier)
+/obj/vehicle/sealed/car/attacked_by(obj/item/I, mob/living/user, attackchain_flags, list/damage_list)
+	. = ..()
 	if(!I.force)
 		return FALSE
 	if(occupants[user])

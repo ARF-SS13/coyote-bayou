@@ -58,9 +58,6 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 		return
 	open()
 
-/obj/structure/bodycontainer/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/structure/bodycontainer/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(locked)
 		to_chat(user, span_danger("It's locked."))
@@ -313,9 +310,6 @@ GLOBAL_LIST_EMPTY(crematoriums)
 /obj/structure/tray/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/metal (loc, 2)
 	qdel(src)
-
-/obj/structure/tray/attack_paw(mob/user)
-	return attack_hand(user)
 
 /obj/structure/tray/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if (src.connected)

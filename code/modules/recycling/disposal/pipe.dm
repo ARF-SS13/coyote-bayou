@@ -137,13 +137,6 @@
 	if(H)
 		H.contents_explosion(severity, target)
 
-
-/obj/structure/disposalpipe/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee" && damage_amount < 10)
-		return 0
-	return ..()
-
-
 //welding tool: unfasten and convert to obj/disposalconstruct
 /obj/structure/disposalpipe/welder_act(mob/living/user, obj/item/I)
 	if(!can_be_deconstructed(user))

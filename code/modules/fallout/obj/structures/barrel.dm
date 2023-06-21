@@ -72,15 +72,18 @@
 
 obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile/P)
 	..()
-	if(!QDELETED(src)) //wasn't deleted by the projectile's effects.
-		if(!P.nodamage && ((P.damage_type == BURN) || (P.damage_type == BRUTE)))
-			var/boom_message = "[ADMIN_LOOKUPFLW(P.firer)] triggered a fueltank explosion via projectile."
-			GLOB.bombers += boom_message
-			message_admins(boom_message)
-			var/log_message = "triggered a fueltank explosion via projectile."
-			P.firer.log_message(log_message, INDIVIDUAL_ATTACK_LOG)
-			log_attack("[key_name(P.firer)] [log_message]")
-			boom()
+	if(QDELETED(src)) //wasn't deleted by the projectile's effects.
+		return
+	if(P.nodamage || !P.damage)
+		return
+	if((P.damage_type == BURN) || (P.damage_type == BRUTE))
+		var/boom_message = "[ADMIN_LOOKUPFLW(P.firer)] triggered a fueltank explosion via projectile."
+		GLOB.bombers += boom_message
+		message_admins(boom_message)
+		var/log_message = "triggered a fueltank explosion via projectile."
+		P.firer.log_message(log_message, INDIVIDUAL_ATTACK_LOG)
+		log_attack("[key_name(P.firer)] [log_message]")
+		boom()
 
 /obj/structure/reagent_dispensers/barrel/explosive/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))

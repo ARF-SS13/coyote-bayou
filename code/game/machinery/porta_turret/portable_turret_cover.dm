@@ -67,14 +67,17 @@
 	else
 		return ..()
 
-/obj/machinery/porta_turret_cover/attacked_by(obj/item/I, mob/user, attackchain_flags = NONE, list/damage_overrides)
-	return parent_turret.attacked_by(I, user, attackchain_flags, damage_overrides)
+/obj/machinery/porta_turret_cover/attacked_by(obj/item/I, mob/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
+	return parent_turret.attacked_by(I, user, attackchain_flags, damage_list)
 
 /obj/machinery/porta_turret_cover/attack_alien(mob/living/carbon/alien/humanoid/user)
 	parent_turret.attack_alien(user)
 
 /obj/machinery/porta_turret_cover/attack_animal(mob/living/simple_animal/user)
 	parent_turret.attack_animal(user)
+
+/obj/machinery/porta_turret_cover/post_attack_animal(mob/living/simple_animal/user, list/damage_list)
+	parent_turret.post_attack_animal(user, damage_list)
 
 /obj/machinery/porta_turret_cover/attack_hulk(mob/living/carbon/human/user, does_attack_animation = 0)
 	return parent_turret.attack_hulk(user)

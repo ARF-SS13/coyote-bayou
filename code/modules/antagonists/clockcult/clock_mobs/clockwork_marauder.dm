@@ -371,10 +371,6 @@
 	if(istype(M, /mob/living/simple_animal/hostile/clockwork/marauder/guardian) || !blockOrCounter(M, M)) //we don't want infinite blockcounter loops if fighting another guardian
 		return ..()
 
-/mob/living/simple_animal/hostile/clockwork/marauder/guardian/attack_paw(mob/living/carbon/monkey/M)
-	if(!blockOrCounter(M, M))
-		return ..()
-
 /mob/living/simple_animal/hostile/clockwork/marauder/guardian/attack_alien(mob/living/carbon/alien/humanoid/M)
 	if(!blockOrCounter(M, M))
 		return ..()

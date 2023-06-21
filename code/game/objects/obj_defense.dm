@@ -4,12 +4,11 @@
 	if(QDELETED(src))
 		log_qdel("[src] taking damage after deletion")
 		return
+	if(damage_amount < DAMAGE_PRECISION)
+		return
 	if(sound_effect)
 		play_attack_sound(damage_amount, damage_type, damage_flag)
 	if((resistance_flags & INDESTRUCTIBLE) || obj_integrity <= 0)
-		return
-	damage_amount = run_obj_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
-	if(damage_amount < DAMAGE_PRECISION)
 		return
 	. = damage_amount
 	obj_integrity = max(obj_integrity - damage_amount, 0)
@@ -20,16 +19,6 @@
 	if(obj_integrity <= 0)
 		obj_destruction(damage_flag)
 
-//returns the damage value of the attack after processing the obj's various armor protections
-/obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armour_penetration = 0)
-	if(damage_type != BRUTE && damage_type != BURN) // got tired of looking at that wierd switch filter
-		return 0
-	var/armor_protection = 0
-	if(damage_flag)
-		armor_protection = armor.getRating(damage_flag)
-	if(armor_protection > 0)		//Only apply weak-against-armor/hollowpoint effects if there actually IS armor.
-		armor_protection = clamp(armor_protection*(1-armour_penetration), 0, 100) //FO13 AP OVERHAUL - just using simple % reduction here instead of full formula
-	return round(damage_amount * (100 - armor_protection)*0.01, DAMAGE_PRECISION)
 
 //the sound played when the obj is damaged.
 /obj/proc/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
@@ -74,7 +63,11 @@
 	if(P.suppressed != SUPPRESSED_VERY)
 		visible_message(span_danger("[src] is hit by \a [P]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
-		take_damage(P.damage, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armour_penetration, attacked_by = P.firer)
+		SSdamage.shoot_target(
+			attacker = P.firer,
+			defender = src,
+			weapon = P,
+		)
 
 /obj/proc/hulk_damage()
 	return 150 //the damage hulks do on punches to this object, is affected by melee armor
@@ -100,34 +93,28 @@
 	take_damage(400, BRUTE, "melee", 0, get_dir(src, B), attacked_by = B)
 
 /obj/proc/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0) //used by attack_alien, attack_animal, and attack_slime
-	if(SEND_SIGNAL(src, COMSIG_OBJ_ATTACK_GENERIC, user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration) & COMPONENT_STOP_GENERIC_ATTACK)
-		return FALSE
-	if(!user.CheckActionCooldown(CLICK_CD_MELEE))
-		return
-	user.do_attack_animation(src)
-	. = take_damage(damage_amount, damage_type, damage_flag, sound_effect, get_dir(src, user), armor_penetration)
-	user.DelayNextAction(CLICK_CD_MELEE)
+	user?.do_attack_animation(src)
+	var/list/damage_list = SSdamage.deal_damage(
+		attacker = user,
+		defender = src,
+		weapon = "hitters",
+		damage = damage_amount,
+		damage_type = damage_type,
+		armor_type = damage_flag,
+		armor_piercing = armor_penetration,
+	)
+	user?.DelayNextAction(CLICK_CD_MELEE)
+	return damage_list
 
 /obj/attack_alien(mob/living/carbon/alien/humanoid/user)
 	if(attack_generic(user, 60, BRUTE, "melee", 0))
 		playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
 
-/obj/attack_animal(mob/living/simple_animal/M)
-	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
+/obj/post_attack_animal(mob/living/attacker, list/damage_list = DAMAGE_LIST)
+	var/damage_did = GET_DAMAGE(damage_list)
+	if(!damage_did)
 		return
-	if(!M.melee_damage_upper && !M.obj_damage)
-		M.emote("custom", message = "[M.friendly_verb_continuous] [src].")
-		return 0
-	else
-		var/play_soundeffect = 1
-		if(M.environment_smash)
-			play_soundeffect = 0
-		if(M.obj_damage)
-			. = attack_generic(M, M.obj_damage, M.melee_damage_type, "melee", play_soundeffect, M.armour_penetration)
-		else
-			. = attack_generic(M, rand(M.melee_damage_lower,M.melee_damage_upper), M.melee_damage_type, "melee", play_soundeffect, M.armour_penetration)
-		if(. && !play_soundeffect)
-			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
+	playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
 
 /obj/force_pushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return TRUE
@@ -299,3 +286,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 //returns how much the object blocks an explosion
 /obj/proc/GetExplosionBlock()
 	CRASH("Unimplemented GetExplosionBlock()")
+
+/obj/getarmor(def_zone, type = ARMOR_MELEE)
+	return armor?.getRating(type)
+

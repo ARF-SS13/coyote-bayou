@@ -21,7 +21,7 @@
 	/// If this attacks a human with no wound armor on the affected body part, add this to the wound mod. Some attacks may be significantly worse at wounding if there's even a slight layer of armor to absorb some of it vs bare flesh
 	var/bare_wound_bonus = 0
 
-	var/datum/armor/armor
+	var/datum/armor/armor = ARMOR_VALUE_ZERO
 	/// Additional armor modifiers that are applied to the actual armor value
 	var/armor_tokens = list()
 	var/obj_integrity	//defaults to max_integrity

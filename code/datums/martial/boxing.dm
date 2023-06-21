@@ -26,7 +26,8 @@
 		return TRUE
 
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
-	var/armor_block = D.run_armor_check(affecting, "melee")
+	var/list/armors = SSdamage.calculate_armor_values(D, null, ran_zone(A.zone_selected), ARMOR_MELEE)
+	var/armor_block = LAZYACCESS(armors, ARMOR_DR)
 
 	playsound(D.loc, A.dna.species.attack_sound, 25, 1, -1)
 

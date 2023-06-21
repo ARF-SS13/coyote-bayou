@@ -20,9 +20,6 @@
 	baseturf_icon = icon_state
 	baseturf_dir = dir
 
-/turf/open/indestructible/ground/attack_paw(mob/user)
-	return src.attack_hand(user)
-
 /turf/open/indestructible/ground/attackby(obj/item/C, mob/user, params)
 	if(istype(C,/obj/item/stack/tile/plasteel))
 		var/obj/item/stack/tile/plasteel/S = C

@@ -21,7 +21,7 @@
 /mob/living/simple_animal/bot/secbot/grievous/bullet_act(obj/item/projectile/P)
 	visible_message("[src] deflects [P] with its energy swords!")
 	playsound(src, 'sound/weapons/blade1.ogg', 50, TRUE)
-	return BULLET_ACT_BLOCK
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_BLOCK) 
 
 /mob/living/simple_animal/bot/secbot/grievous/on_entered(atom/movable/AM)
 	..()

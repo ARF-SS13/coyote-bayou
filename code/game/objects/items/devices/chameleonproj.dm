@@ -135,7 +135,7 @@
 /obj/effect/dummy/chameleon/on_attack_hand()
 	master.disrupt()
 
-/obj/effect/dummy/chameleon/attack_animal()
+/obj/effect/dummy/chameleon/post_attack_animal()
 	master.disrupt()
 
 /obj/effect/dummy/chameleon/attack_slime()

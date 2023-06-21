@@ -122,9 +122,6 @@
 		update_icon()
 		return
 
-/obj/structure/fireaxecabinet/attack_paw(mob/living/user)
-	return attack_hand(user)
-
 /obj/structure/fireaxecabinet/attack_ai(mob/user)
 	toggle_lock(user)
 	return

@@ -17,6 +17,17 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
+//9mm doublestack
+/obj/item/ammo_box/magazine/m9mm/doublestack/unbirth
+	name = "doublestack unbirth magazine (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "m9mmds"
+	ammo_type = /obj/item/ammo_casing/c9mm/unbirth
+	caliber = list(CALIBER_9MM)
+	max_ammo = 15
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
+
 /obj/item/ammo_casing/c9mm/unbirth
 	name = "9mm FMJ unbirther casing"
 	desc = "A wretched casing for unmaking mobs."
@@ -29,17 +40,6 @@
 		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_9MM
-
-//9mm doublestack
-/obj/item/ammo_box/magazine/m9mm/doublestack/unbirth
-	name = "doublestack unbirth magazine (9mm)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "m9mmds"
-	ammo_type = /obj/item/ammo_casing/c9mm/unbirth
-	caliber = list(CALIBER_9MM)
-	max_ammo = 15
-	multiple_sprites = 2
-	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
 /// Makes a mob go and crawl into a nest
 /obj/item/projectile/bullet/unbirth

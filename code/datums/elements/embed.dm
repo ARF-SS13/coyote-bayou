@@ -81,10 +81,10 @@
 	var/actual_chance = embed_chance
 
 	if(!weapon.isEmbedHarmless()) // all the armor in the world won't save you from a kick me sign
-		var/armor = max(victim.run_armor_check(hit_zone, "bullet", silent=TRUE), victim.run_armor_check(hit_zone, "bomb", silent=TRUE)) * 0.5 // we'll be nice and take the better of bullet and bomb armor, halved
+		var/list/armor = SSdamage.calculate_armor_values(victim,weapon,hit_zone,ARMOR_BOMB,weapon.armour_penetration)
 
 		if(armor) // we only care about armor penetration if there's actually armor to penetrate
-			var/pen_mod = -armor*(1-weapon.armour_penetration) // even a little bit of armor can make a big difference for shrapnel with large negative armor pen -- FO13 AP OVERHAUL made percentage reduction
+			var/pen_mod = -LAZYACCESS(armor, ARMOR_DR) // even a little bit of armor can make a big difference for shrapnel with large negative armor pen -- FO13 AP OVERHAUL made percentage reduction
 			actual_chance += pen_mod // doing the armor pen as a separate calc just in case this ever gets expanded on
 			if(actual_chance <= 0)
 				victim.visible_message(span_danger("[weapon] bounces off [victim]'s armor, unable to embed!"), span_notice("[weapon] bounces off your armor, unable to embed!"), vision_distance = COMBAT_MESSAGE_RANGE)

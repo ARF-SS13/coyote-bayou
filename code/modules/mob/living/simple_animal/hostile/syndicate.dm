@@ -127,7 +127,7 @@
 	if(prob(25))
 		return ..()
 	visible_message(span_danger("[src] blocks [Proj] with its shield!"))
-	return BULLET_ACT_BLOCK
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_BLOCK) 
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space
 	icon_state = "syndicate_space_sword"

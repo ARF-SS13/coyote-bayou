@@ -27,6 +27,38 @@
 
 	/// footstep type override for both shoeless and not footstep sounds.
 	var/footstep_type
+	var/mob/living/carbon/human/owner
 
-/datum/physiology/New()
+/datum/physiology/New(mob/living/carbon/human/new_owner)
 	armor = new
+	owner = new_owner
+	RegisterSignal(owner, COMSIG_ATOM_DEFENDER_OVERRIDES, .proc/modify_incoming_attack)
+
+/datum/physiology/Del()
+	owner = null
+	UnregisterSignal(owner, COMSIG_ATOM_DEFENDER_OVERRIDES)
+	. = ..()
+
+/datum/physiology/proc/modify_incoming_attack(datum/source, mob/living/carbon/human/defender, atom/attacker, list/damage_list)
+	if(!islist(damage_list)) // wont work otherwise
+		return
+	var/damage = GET_DAMAGE(damage_list)
+	var/stamage = GET_STAMINA(damage_list)
+	var/damage_type = GET_DAMAGE_TYPE(damage_list)
+	switch(damage_type)
+		if(BRUTE)
+			damage *= brute_mod
+		if(BURN)
+			damage *= burn_mod
+		if(TOX)
+			damage *= tox_mod
+		if(OXY)
+			damage *= oxy_mod
+		if(CLONE)
+			damage *= clone_mod
+		if(BRAIN)
+			damage *= brain_mod
+	stamage *= stamina_mod
+	SET_STAMINA(damage_list, stamage)
+	SET_DAMAGE(damage_list, damage)
+	return TRUE

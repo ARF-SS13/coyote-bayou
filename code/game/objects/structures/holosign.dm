@@ -127,14 +127,6 @@
 	max_integrity = 10
 	allow_walk = 0
 
-/obj/structure/holosign/barrier/cyborg/bullet_act(obj/item/projectile/P)
-	take_damage((P.damage / 5) , BRUTE, "melee", 1, attacked_by = P.firer)	//Doesn't really matter what damage flag it is.
-	if(istype(P, /obj/item/projectile/energy/electrode))
-		take_damage(10, BRUTE, "melee", 1, attacked_by = P.firer)	//Tasers aren't harmful.
-	if(istype(P, /obj/item/projectile/beam/disabler))
-		take_damage(5, BRUTE, "melee", 1, attacked_by = P.firer)	//Disablers aren't harmful.
-	return BULLET_ACT_HIT
-
 /obj/structure/holosign/barrier/medical
 	name = "\improper PENLITE holobarrier"
 	desc = "A holobarrier that uses biometrics to detect human viruses. Denies passing to personnel with easily-detected, malicious viruses. Good for quarantines."
@@ -178,10 +170,6 @@
 	desc = "A powerful energy field that blocks movement. Energy arcs off it."
 	max_integrity = 20
 	var/shockcd = 0
-
-/obj/structure/holosign/barrier/cyborg/hacked/bullet_act(obj/item/projectile/P)
-	take_damage(P.damage, BRUTE, "melee", 1, attacked_by = P.firer)	//Yeah no this doesn't get projectile resistance.
-	return BULLET_ACT_HIT
 
 /obj/structure/holosign/barrier/cyborg/hacked/proc/cooldown()
 	shockcd = FALSE

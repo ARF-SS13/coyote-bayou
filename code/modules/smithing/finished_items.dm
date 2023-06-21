@@ -341,14 +341,8 @@
 	icon_state = "mace_smith"
 	overlay_state = "shaft_mace"
 	force = 35
+	stamina_force = 30
 	block_chance = 5
-
-/obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "melee"))
-
 
 //////////////////////////
 //						//
@@ -440,17 +434,12 @@
 	icon_prefix = "crusher_smith"
 	overlay_state = "shaft_crusher"
 	force = 20
+	stamina_force = 70 // it was 70 before, not my fault!!!
 	block_chance = 5
 	force_wielded = 50
 	force_unwielded = 20
 	attack_speed = CLICK_CD_MELEE * 1.5
 	sharpness = SHARP_NONE
-
-/obj/item/melee/smith/twohand/axe/crusher/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(70, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 /obj/item/melee/smith/twohand/axe/scrapblade
 	name = "homewrecker"

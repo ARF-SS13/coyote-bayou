@@ -757,7 +757,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 				has_been_powered = TRUE
 	else if(takes_damage)
 		matter_power += Proj.damage * bullet_energy
-	return BULLET_ACT_HIT
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_HIT)
 
 /obj/machinery/power/supermatter_crystal/singularity_act()
 	var/gain = 100
@@ -811,6 +811,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	span_danger("[S] unwisely [murder] [src], and [S.p_their()] body burns brilliantly before flashing into ash!"), \
 	span_userdanger("You unwisely touch [src], and your vision glows brightly as your body crumbles to dust. Oops."), \
 	"simple animal attack")
+	return TRUE // as if it mattered
 
 /obj/machinery/power/supermatter_crystal/attack_robot(mob/user)
 	if(Adjacent(user))

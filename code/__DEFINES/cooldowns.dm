@@ -69,3 +69,18 @@
 #define COOLDOWN_RESET(cd_source, cd_index) cd_source.cd_index = 0
 
 #define COOLDOWN_TIMELEFT(cd_source, cd_index) (max(0, cd_source.cd_index - world.time))
+
+/* 
+ * Cooldown system based on storing an entry with a cooldown time on a list, plus world.time.
+ * Allows for one thing to keep track of multiple cooldowns!
+ */
+#define COOLDOWN_LIST_DECLARE(cd_index) var/list/##cd_index = list()
+
+#define COOLDOWN_LIST_START(cd_source, cd_list, cd_index, cd_time) (cd_source.cd_list[cd_index] = world.time + cd_time)
+
+//Returns true if the cooldown has run its course, false otherwise
+#define COOLDOWN_LIST_FINISHED(cd_source, cd_list, cd_index) (cd_source.cd_list[cd_index] && cd_source.cd_list[cd_index] < world.time)
+
+#define COOLDOWN_LIST_RESET(cd_source, cd_list, cd_index) cd_source.cd_list[cd_index] = 0
+
+#define COOLDOWN_LIST_TIMELEFT(cd_source, cd_list, cd_index) (max(0, cd_source.cd_list[cd_index] && (cd_source.cd_list[cd_index] - world.time)))

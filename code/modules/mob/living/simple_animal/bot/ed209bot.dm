@@ -506,7 +506,7 @@ Auto Patrol[]"},
 			spawn(100)
 				disabled = 0
 				icon_state = "[lasercolor]ed2091"
-			return BULLET_ACT_HIT
+			return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_HIT) 
 		return ..()
 	return ..()
 

@@ -607,5 +607,8 @@
 
 /turf/bullet_act(obj/item/projectile/P)
 	. = ..()
-	if(. != BULLET_ACT_FORCE_PIERCE)
-		. =  BULLET_ACT_TURF
+	var/list/damage_return = islist(.) ? . : DAMAGE_LIST
+	var/bullet_return = GET_BULLET_RETURN(damage_return)
+	if(bullet_return != BULLET_ACT_FORCE_PIERCE)
+		LAZYSET(damage_return, BULLET_ACT_RETURN_VALUE, BULLET_ACT_TURF)
+	return damage_return

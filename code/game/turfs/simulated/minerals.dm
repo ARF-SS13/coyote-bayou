@@ -102,7 +102,9 @@
 /turf/closed/mineral/attack_animal(mob/living/simple_animal/user)
 	if((user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		gets_drilled()
+		return TRUE
 	..()
+	return TRUE
 
 /turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
 	to_chat(M, span_notice("You start digging into the rock..."))

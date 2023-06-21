@@ -140,7 +140,8 @@
 
 /datum/martial_art/krav_maga/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
-	var/armor_block = D.run_armor_check(affecting, "melee")
+	var/list/armors = SSdamage.calculate_armor_values(D, null, ran_zone(A.zone_selected), ARMOR_MELEE)
+	var/armor_block = LAZYACCESS(armors, ARMOR_DR)
 	if(check_streak(A,D))
 		return TRUE
 	log_combat(A, D, "punched")
@@ -165,7 +166,8 @@
 	if(check_streak(A,D))
 		return TRUE
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
-	var/armor_block = D.run_armor_check(affecting, "melee")
+	var/list/armors = SSdamage.calculate_armor_values(D, null, ran_zone(A.zone_selected), ARMOR_MELEE)
+	var/armor_block = LAZYACCESS(armors, ARMOR_DR)
 	var/damage = damage_roll(A,D)
 	var/stunthreshold = A.dna.species.punchstunthreshold
 	if(CHECK_MOBILITY(D, MOBILITY_STAND))

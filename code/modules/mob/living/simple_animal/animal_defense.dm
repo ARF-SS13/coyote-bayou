@@ -1,5 +1,5 @@
 
-
+/// human mob M is punching SRC (us!) with a bare hand
 /mob/living/simple_animal/on_attack_hand(mob/living/carbon/human/M)
 	. = ..()
 	if(.) //the attack was blocked
@@ -44,7 +44,16 @@
 							span_userdanger("[M] [response_harm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, null, \
 							M, span_danger("You [response_harm_simple] [src]!"))
 			playsound(loc, attacked_sound, 25, 1, -1)
-			attack_threshold_check(M.dna?.species.punchdamagehigh, M.dna?.species.attack_type, "melee")
+			SSdamage.punch_target(
+				attacker = M,
+				defender = src,
+				weapon = "fists of fury",
+				damage_low = M.dna?.species.punchdamagelow || 0,
+				damage_high = M.dna?.species.punchdamagehigh || 0,
+				damage_type = M.dna?.species.attack_type || BRUTE,
+				target_zone = M.zone_selected || BODY_ZONE_CHEST,
+				armor_type = ARMOR_MELEE,
+			)
 			log_combat(M, src, "attacked")
 			updatehealth()
 			return TRUE
@@ -61,19 +70,6 @@
 		adjustBruteLoss(15)
 		return TRUE
 
-/mob/living/simple_animal/attack_paw(mob/living/carbon/monkey/M)
-	. = ..()
-	if(.) //successful larva bite
-		var/damage = rand(1, 3)
-		attack_threshold_check(damage, BRUTE, "melee")
-		return 1
-	if (M.a_intent == INTENT_HELP)
-		if (health > 0)
-			visible_message(span_notice("[M.name] [response_help_continuous] [src]."), \
-							span_notice("[M.name] [response_help_continuous] you."), \
-							target = M, target_message = span_notice("You [response_help_simple] [src]."))
-			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-
 /mob/living/simple_animal/attack_alien(mob/living/carbon/alien/humanoid/M)
 	. = ..()
 	if(!.) // the attack was blocked or was help/grab intent
@@ -89,30 +85,13 @@
 				span_userdanger("[M] has slashed at [src]!"), null, COMBAT_MESSAGE_RANGE, null, \
 				M, span_danger("[M] has slashed at [src]!"))
 		playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
-		attack_threshold_check(M.meleeSlashSAPower, BRUTE, "melee")
 		log_combat(M, src, "attacked")
 
-/mob/living/simple_animal/attack_larva(mob/living/carbon/alien/larva/L)
-	. = ..()
-	if(. && stat != DEAD) //successful larva bite
-		var/damage = rand(5, 10)
-		. = attack_threshold_check(damage, BRUTE, "melee")
-		if(.)
-			L.amount_grown = min(L.amount_grown + damage, L.max_grown)
-
-/mob/living/simple_animal/attack_animal(mob/living/simple_animal/M)
-	. = ..()
-	if(.)
-		var/damage = .
-		return attack_threshold_check(damage, M.melee_damage_type, "melee")
-
-/mob/living/simple_animal/attack_slime(mob/living/simple_animal/slime/M)
-	. = ..()
-	if(.) //successful slime shock
-		var/damage = rand(15, 25)
-		if(M.is_adult)
-			damage = rand(20, 35)
-		return attack_threshold_check(damage, BRUTE, "melee")
+// /mob/living/simple_animal/attack_animal(mob/living/simple_animal/M)
+// 	. = ..()
+// 	if(.)
+// 		var/damage = .
+// 		return attack_threshold_check(damage, M.melee_damage_type, "melee")
 
 /mob/living/simple_animal/attack_drone(mob/living/simple_animal/drone/M)
 	if(M.a_intent == INTENT_HARM) //No kicking dogs even as a rogue drone. Use a weapon.
@@ -134,23 +113,23 @@
 	apply_damage(temp_damage, damagetype, null, armor, null, null, null, damage_threshold = dt)
 	return TRUE
 
-/mob/living/simple_animal/bullet_act(obj/item/projectile/P)
-	if(!P)
-		return
-	var/totaldamage = P.damage
-	var/staminadamage = P.stamina
-	var/final_percent = 0
-	var/armor = run_armor_check(null, P.flag, null, null, P.armour_penetration, null)
-	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null) - P.damage_threshold_modifier, 0)
-	if(!P.nodamage)
-		apply_damage(totaldamage, P.damage_type, null, armor, null, null, null, damage_threshold = dt)
-		if(staminadamage)
-			apply_damage(staminadamage, STAMINA, null, armor, null, null, null, damage_threshold = dt)
-	var/missing = 100 - final_percent
-	var/armor_ratio = armor * 0.01
-	if(missing > 0)
-		final_percent += missing * armor_ratio
-	return P.on_hit(src, final_percent, null) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+// /mob/living/simple_animal/bullet_act(obj/item/projectile/P)
+// 	if(!P)
+// 		return
+// 	var/totaldamage = P.damage
+// 	var/staminadamage = P.stamina
+// 	var/final_percent = 0
+// 	var/armor = run_armor_check(null, P.flag, null, null, P.armour_penetration, null)
+// 	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null) - P.damage_threshold_modifier, 0)
+// 	if(!P.nodamage)
+// 		apply_damage(totaldamage, P.damage_type, null, armor, null, null, null, damage_threshold = dt)
+// 		if(staminadamage)
+// 			apply_damage(staminadamage, STAMINA, null, armor, null, null, null, damage_threshold = dt)
+// 	var/missing = 100 - final_percent
+// 	var/armor_ratio = armor * 0.01
+// 	if(missing > 0)
+// 		final_percent += missing * armor_ratio
+// 	return P.on_hit(src, final_percent, null) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
 /mob/living/simple_animal/ex_act(severity, target, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
@@ -188,5 +167,5 @@
 			visual_effect_icon = ATTACK_EFFECT_SMASH
 	..()
 
-/mob/living/simple_animal/getarmor(def_zone = null, type)
+/mob/living/simple_animal/getarmor(def_zone = BODY_ZONE_CHEST, type = ARMOR_MELEE)
 	return mob_armor.getRating(type)

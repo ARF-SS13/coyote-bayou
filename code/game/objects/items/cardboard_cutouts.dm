@@ -97,7 +97,7 @@
 	playsound(src, 'sound/weapons/slice.ogg', 50, 1)
 	if(prob(P.damage))
 		push_over()
-	return BULLET_ACT_HIT
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_HIT)
 
 /**
  * change_appearance: Changes a skin of the cardboard cutout based on a user's choice

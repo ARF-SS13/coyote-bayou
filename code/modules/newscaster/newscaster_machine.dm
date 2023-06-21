@@ -32,6 +32,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 	var/c_locked=0
 	var/datum/news/feed_channel/viewing_channel = null
 	var/allow_comments = 1
+	monkey_can_use = FALSE
 
 /obj/machinery/newscaster/security_unit
 	name = "administrative news terminal"
@@ -610,13 +611,6 @@ GLOBAL_LIST_EMPTY(allCasters)
 		stat |= BROKEN
 		playsound(loc, 'sound/effects/glassbr3.ogg', 100, 1)
 		update_icon()
-
-
-/obj/machinery/newscaster/attack_paw(mob/user)
-	if(user.a_intent != INTENT_HARM)
-		to_chat(user, span_warning("The news terminal controls are far too complicated for your tiny brain!"))
-	else
-		take_damage(5, BRUTE, "melee", attacked_by = user)
 
 /obj/machinery/newscaster/proc/AttachPhoto(mob/user)
 	var/obj/item/photo/photo = user.is_holding_item_of_type(/obj/item/photo)

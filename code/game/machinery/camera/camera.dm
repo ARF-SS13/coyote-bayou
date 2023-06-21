@@ -15,7 +15,6 @@
 
 	resistance_flags = FIRE_PROOF
 
-	armor = ARMOR_VALUE_MEDIUM
 	max_integrity = 100
 	integrity_failure = 0.5
 	var/list/network = list("ss13")
@@ -271,11 +270,6 @@
 		return
 
 	return ..()
-
-/obj/machinery/camera/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee" && damage_amount < 12 && !(stat & BROKEN))
-		return 0
-	. = ..()
 
 /obj/machinery/camera/obj_break(damage_flag)
 	if(status && !(flags_1 & NODECONSTRUCT_1))

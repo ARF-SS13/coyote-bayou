@@ -12,50 +12,33 @@
 	if(!.) // the attack was blocked or was help/grab intent
 		return
 	if(M.a_intent == INTENT_HARM)
-		var/damage = 20
-		if (prob(90))
-			log_combat(M, src, "attacked")
-			playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
-			visible_message(span_danger("[M] has slashed at [src]!"), \
-							span_userdanger("[M] has slashed at you!"), target = M, \
-							target_message = span_danger("You have slashed at [src]!"))
-			if(prob(8))
-				flash_act(affect_silicon = 1)
-			log_combat(M, src, "attacked")
-			adjustBruteLoss(damage)
-			updatehealth()
-		else
-			playsound(loc, 'sound/weapons/slashmiss.ogg', 25, 1, -1)
-			visible_message(span_danger("[M] take a swipe at [src]!"), \
-							span_userdanger("[M] take a swipe at you!"), target = M, \
-							target_message = span_danger("You take a swipe at [src]!"))
+		var/list/damage_return = islist(.) ? . : list()
+		var/damage = GET_DAMAGE(damage_return)
+		log_combat(M, src, "attacked")
+		playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
+		visible_message(
+			span_danger("[M] has slashed at [src]!"),
+			span_userdanger("[M] has slashed at you!"),
+			target = M,
+			target_message = span_danger("You have slashed at [src]!")
+		)
+		if(prob(8))
+			flash_act(affect_silicon = 1)
+		log_combat(M, src, "attacked")
+		updatehealth()
 
-/mob/living/silicon/attack_animal(mob/living/simple_animal/M)
+/mob/living/silicon/post_attack_animal(mob/living/simple_animal/M, list/damage_list = DAMAGE_LIST)
 	. = ..()
-	if(.)
-		var/damage = .
-		if(prob(damage))
-			for(var/mob/living/N in buckled_mobs)
-				N.DefaultCombatKnockdown(20)
-				unbuckle_mob(N)
-				N.visible_message(span_boldwarning("[N] is knocked off of [src] by [M]!"),
-					span_boldwarning("You are knocked off of [src] by [M]!"))
-		switch(M.melee_damage_type)
-			if(BRUTE)
-				adjustBruteLoss(damage)
-			if(BURN)
-				adjustFireLoss(damage)
-			if(TOX)
-				adjustToxLoss(damage)
-			if(OXY)
-				adjustOxyLoss(damage)
-			if(CLONE)
-				adjustCloneLoss(damage)
-			if(STAMINA)
-				adjustStaminaLoss(damage)
-
-/mob/living/silicon/attack_paw(mob/living/user)
-	return attack_hand(user)
+	var/damage = GET_DAMAGE(damage_list)
+	if(!prob(damage))
+		return damage_list
+	for(var/mob/living/N in buckled_mobs)
+		N.DefaultCombatKnockdown(20)
+		unbuckle_mob(N)
+		N.visible_message(span_boldwarning(
+			"[N] is knocked off of [src] by [M]!"),
+			span_boldwarning("You are knocked off of [src] by [M]!")
+		)
 
 /mob/living/silicon/attack_hulk(mob/living/carbon/human/user, does_attack_animation = FALSE)
 	if(user.a_intent == INTENT_HARM)
@@ -114,30 +97,6 @@
 			M.visible_message(span_boldwarning("[M] is thrown off of [src]!"),
 				span_boldwarning("You are thrown off of [src]!"))
 	flash_act(affect_silicon = 1)
-
-/mob/living/silicon/bullet_act(obj/item/projectile/P, def_zone)
-	var/totaldamage = P.damage
-	if(P.original != src || P.firer != src) //try to block or reflect the bullet, can't do so when shooting oneself
-		var/list/returnlist = list()
-		var/returned = mob_run_block(P, P.damage, "the [P.name]", ATTACK_TYPE_PROJECTILE, P.armour_penetration, P.firer, def_zone, returnlist)
-		if(returned & BLOCK_SHOULD_REDIRECT)
-			handle_projectile_attack_redirection(P, returnlist[BLOCK_RETURN_REDIRECT_METHOD])
-		if(returned & BLOCK_REDIRECTED)
-			return BULLET_ACT_FORCE_PIERCE
-		if(returned & BLOCK_SUCCESS)
-			P.on_hit(src, returnlist[BLOCK_RETURN_PROJECTILE_BLOCK_PERCENTAGE], def_zone)
-			return BULLET_ACT_BLOCK
-		totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
-	if((P.damage_type == BRUTE || P.damage_type == BURN))
-		adjustBruteLoss(totaldamage)
-	if((P.damage >= 10) || P.stun || P.knockdown || (P.stamina >= 20))
-		for(var/mob/living/M in buckled_mobs)
-			M.visible_message(span_boldwarning("[M] is knocked off of [src] by the [P]!"),
-				span_boldwarning("You are knocked off of [src] by the [P]!"))
-			unbuckle_mob(M)
-			M.DefaultCombatKnockdown(40)
-	P.on_hit(src, 0, def_zone)
-	return BULLET_ACT_HIT
 
 /mob/living/silicon/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /obj/screen/fullscreen/flash/static)
 	if(affect_silicon)

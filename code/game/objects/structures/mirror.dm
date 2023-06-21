@@ -48,8 +48,8 @@
 		return // no message spam
 	..()
 
-/obj/structure/mirror/attacked_by(obj/item/I, mob/living/user)
-	if(broken || !istype(user) || !I.force)
+/obj/structure/mirror/attacked_by(obj/item/I, mob/living/user, list/damage_list = DAMAGE_LIST)
+	if(broken || !istype(user) || !GET_DAMAGE(damage_list))
 		return ..()
 
 	. = ..()

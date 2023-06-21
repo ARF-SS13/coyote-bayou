@@ -109,4 +109,4 @@
 	return
 
 /obj/effect/dummy/phased_mob/spell_jaunt/bullet_act(blah)
-	return BULLET_ACT_FORCE_PIERCE
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_FORCE_PIERCE)

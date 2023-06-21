@@ -97,7 +97,7 @@
 	. = ..()
 	UnregisterSignal(parent, list(COMSIG_ITEM_ATTACKCHAIN))
 
-/datum/component/weapon_special/proc/item_attackchain(datum/source, mob/user, atom/target, params)
+/datum/component/weapon_special/proc/item_attackchain(datum/source, mob/user, atom/target, params, attackchain_flags)
 	if(!user || !target)
 		return
 	WEAPON_MASTER
@@ -108,12 +108,12 @@
 	if(!COOLDOWN_FINISHED(src, fuckin_fuck))
 		return
 	COOLDOWN_START(src, fuckin_fuck, 0.5 SECONDS)
-	if(run_special(user, target, params))
+	if(run_special(user, target, params, attackchain_flags))
 		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
 		return TRUE
 
-/datum/component/weapon_special/proc/run_special(mob/user, atom/target, params)
+/datum/component/weapon_special/proc/run_special(mob/user, atom/target, params, attackchain_flags)
 	if(!user || !target)
 		return
 	if(!check_intent(user))
@@ -140,16 +140,16 @@
 		moblist[livom] = damages[livom]
 		damages -= livom
 	if(LAZYLEN(moblist))
-		hit_list(user, moblist, target)
+		hit_list(user, moblist, target, attackchain_flags)
 	if(LAZYLEN(damages))
-		hit_list(user, damages, target)
+		hit_list(user, damages, target, attackchain_flags)
 
-/datum/component/weapon_special/proc/hit_list(mob/user, list/to_hit, atom/target)
+/datum/component/weapon_special/proc/hit_list(mob/user, list/to_hit, atom/target, attackchain_flags)
 	if(!user || !target || !LAZYLEN(to_hit))
 		return
 	for(var/times in 1 to max_mobs_hit)
 		var/atom/lucky_sob = pick(to_hit)
-		do_a_hit(user, lucky_sob, to_hit[lucky_sob], target)
+		do_a_hit(user, lucky_sob, to_hit[lucky_sob], target, attackchain_flags)
 		to_hit -= lucky_sob
 		if(!LAZYLEN(to_hit))
 			return
@@ -377,7 +377,7 @@
 			LAZYSET(., atomhere, dam_list)
 
 /// Attempts to attack a mob with the weapon.
-/datum/component/weapon_special/proc/do_a_hit(mob/user, atom/hit_this, list/damage_list, atom/original_target)
+/datum/component/weapon_special/proc/do_a_hit(mob/user, atom/hit_this, list/damage_list, atom/original_target, attackchain_flags)
 	if(!isatom(hit_this) || !user || !LAZYLEN(damage_list))
 		return
 	WEAPON_MASTER
@@ -394,7 +394,7 @@
 		switch(dmge)
 			if(WS_NORMAL)
 				if(isliving(hit_this))
-					master.attack(hit_this, user, NONE, damage_overrides)
+					master.attack(hit_this, user, attackchain_flags, damage_overrides)
 				else if(isobj(hit_this) || iswallturf(hit_this))
 					hit_this.attackby(master, user, damage_overrides)
 				user.do_attack_animation(hit_this, effect_kind)
@@ -414,9 +414,21 @@
 							armor_type = "bomb"
 						if(WS_EXTRA_CLONE)
 							armor_type = "energy"
-					damage_overrides[DAMAGE_TYPE] = dmge
-					damage_overrides[DAMAGE_ARMOR_CHECK] = armor_type
-					SSdamage.deal_damage(user, hitmob, master, damage_overrides)
+					SSdamage.deal_damage(
+						attacker = user,
+						defender = hitmob,
+						damage =  (dmge != WS_EXTRA_STAMINA ? damage : 0),
+						stamina = (dmge == WS_EXTRA_STAMINA ? damage : 0),
+						damage_type = dmge,
+						target_zone = d_zone,
+						armor_type = armor_type,
+						armor_piercing = master.armour_penetration,
+						wound_bonus = master.wound_bonus,
+						bare_wound_bonus = master.bare_wound_bonus,
+						sharpness = master.sharpness,
+						weapon = master,
+						trait_checks = CHECK_TRAIT_MELEE,
+					)
 					// var/armor_block = hitmob.run_armor_check(d_zone, armor_type, null, null, 0, null, TRUE)
 					// armor_block = min(90,armor_block) //cap damage reduction at 90%
 					// var/dt = max(hitmob.run_armor_check(d_zone, "damage_threshold"), 0)
@@ -535,7 +547,9 @@
 	variation_list = list(
 	)
 
-/mob/living/simple_animal/hostile/rat/skitter/melee_debug/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
-	say("I took damage! [damage_override] to be exact! Weapon's damage is [I.force]! Thanks [user]!")
+/mob/living/simple_animal/hostile/rat/skitter/melee_debug/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_list = DAMAGE_LIST)
+	var/damage = GET_DAMAGE(damage_list)
+	var/damage_type = GET_DAMAGE_TYPE(damage_list)
+	say("I took damage! [damage] [damage_type] to be exact! Weapon's damage is [I.force]! Thanks [user]!")
 	return ..()
 

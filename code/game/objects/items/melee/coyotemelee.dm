@@ -504,12 +504,6 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
-
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/oldbokken
 	name = "Old Bokken"
 	desc = "That's a wooden... sword? For beating up idiots?"
@@ -615,16 +609,10 @@
 	icon_state = "danimauler"
 	item_state = "danimauler"
 	force = 5
+	stamina_force = 100 // =3
 	force_unwielded = 5
 	force_wielded = 10
 	hitsound = 'sound/f13effects/sunsetsounds/geck.ogg'
-
-// =3
-/obj/item/melee/coyote/danhead/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(100, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 
 

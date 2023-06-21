@@ -314,15 +314,17 @@
 		qdel(src)
 
 /obj/structure/spacevine/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
-	var/damage_dealt = I.force * damage_multiplier
-	if(I.get_sharpness())
+	var/damage_dealt = GET_DAMAGE(damage_list)
+	var/sharp = GET_SHARPNESS(damage_list)
+	var/damage_type = GET_DAMAGE_TYPE(damage_list)
+	if(sharp)
 		damage_dealt *= 4
-	if(I.damtype == BURN)
+	if(damage_type == BURN)
 		damage_dealt *= 4
 	user.DelayNextAction()
 	for(var/datum/spacevine_mutation/SM in mutations)
 		damage_dealt = SM.on_hit(src, user, I, damage_dealt) //on_hit now takes override damage as arg and returns new value for other mutations to permutate further
-	take_damage(damage_dealt, I.damtype, "melee", 1, attacked_by = user)
+	take_damage(damage_dealt, damage_type, "melee", 1, attacked_by = user)
 
 /obj/structure/spacevine/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -347,12 +349,6 @@
 		SM.on_hit(src, user)
 	user_unbuckle_mob(user, user)
 	. = ..()
-
-/obj/structure/spacevine/attack_paw(mob/living/user)
-	for(var/datum/spacevine_mutation/SM in mutations)
-		SM.on_hit(src, user)
-	user_unbuckle_mob(user,user)
-	return ..()
 
 /obj/structure/spacevine/attack_alien(mob/living/user)
 	eat(user)

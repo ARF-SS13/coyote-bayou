@@ -273,7 +273,8 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 			DisperseTarget(target)
 		else
 			var/mob/living/L = target
-			L.attack_animal(src)
+			simple_attack_target(L, TRUE)
+			//L.attack_animal(src)
 			L.electrocute_act(10, src, flags = SHOCK_NOGLOVES)
 		return TRUE
 	else

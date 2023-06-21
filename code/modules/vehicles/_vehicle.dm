@@ -171,5 +171,5 @@
 /obj/vehicle/bullet_act(obj/item/projectile/Proj) //wrapper
 	if (!enclosed && length(occupants) && !Proj.force_hit && (Proj.def_zone == BODY_ZONE_HEAD || Proj.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit drivers
 		occupants[1].bullet_act(Proj) // driver dinkage
-		return BULLET_ACT_HIT
+		return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_HIT)
 	. = ..()

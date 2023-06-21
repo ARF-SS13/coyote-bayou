@@ -27,7 +27,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	//initialise organs
 	create_internal_organs() //most of it is done in set_species now, this is only for parent call
-	physiology = new()
+	physiology = new(src)
 
 	AddComponent(/datum/component/personal_crafting)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 0.3, 5)
@@ -52,6 +52,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	AddElement(/datum/element/flavor_text, "", "Set Pose/Leave OOC Message", "This should be used only for things pertaining to the current round!")
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _always_show = TRUE, _save_key = "ooc_notes", _examine_no_preview = TRUE)
 	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS, .proc/signal_update_genitals)
+	RegisterSignal(src, COMSIG_ATOM_DEFENDER_OVERRIDES, .proc/modify_incoming_attack)
+
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)

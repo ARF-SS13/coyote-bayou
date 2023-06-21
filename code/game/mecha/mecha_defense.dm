@@ -25,36 +25,32 @@
 				playsound(loc, 'sound/mecha/mecha_critical.ogg', 40, 1, -1)
 		log_append_to_last("Took [damage_amount] points of damage. Damage type: \"[damage_type]\".",1)
 
-/obj/mecha/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	. = ..()
-	if(!damage_amount)
-		return 0
-	var/booster_deflection_modifier = 1
+/obj/mecha/proc/modify_incoming_attack(datum/source, atom/defender, atom/attacker, list/damage_list)
+	var/damage = GET_DAMAGE(damage_list)
+	var/armor_type = GET_ARMOR_CHECK(damage_list)
+	var/attack_direction = get_dir(src, attacker)
+
+	if(!damage)
+		return
 	var/booster_damage_modifier = 1
-	if(damage_flag == "bullet" || damage_flag == "laser" || damage_flag == "energy")
-		for(var/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster/B in equipment)
-			if(B.projectile_react())
-//				booster_deflection_modifier = B.deflect_coeff
-				booster_damage_modifier = B.damage_coeff
-				break
-	else if(damage_flag == "melee")
-		for(var/obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/B in equipment)
-			if(B.attack_react())
-//				booster_deflection_modifier *= B.deflect_coeff
-				booster_damage_modifier *= B.damage_coeff
-				break
+	switch(armor_type)
+		if(ARMOR_BULLET, ARMOR_LASER, ARMOR_ENERGY)
+			for(var/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster/B in equipment)
+				if(B.projectile_react())
+					booster_damage_modifier = B.damage_coeff
+					break
+		else
+			for(var/obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/B in equipment)
+				if(B.attack_react())
+					booster_damage_modifier *= B.damage_coeff
+					break
 
-	if(attack_dir)
-		var/facing_modifier = get_armour_facing(abs(dir2angle(dir) - dir2angle(attack_dir)))
+	if(attack_direction)
+		var/facing_modifier = get_armour_facing(abs(dir2angle(dir) - dir2angle(attack_direction)))
 		booster_damage_modifier /= facing_modifier
-		booster_deflection_modifier *= facing_modifier
-	if(prob(deflect_chance * booster_deflection_modifier))
-		visible_message(span_danger("[src]'s armour deflects the attack!"))
-		log_append_to_last("Armor saved.")
-		return 0
-	if(.)
-		. *= booster_damage_modifier
-
+	damage *= booster_damage_modifier
+	SET_DAMAGE(damage_list, damage)
+	return TRUE
 
 /obj/mecha/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
@@ -63,26 +59,19 @@
 	mecha_log_message("Attack by hand/paw. Attacker - [user].", color="red")
 	log_append_to_last("Armor saved.")
 
-/obj/mecha/attack_paw(mob/user as mob)
-	return attack_hand(user)
-
-
 /obj/mecha/attack_alien(mob/living/user)
 	mecha_log_message("Attack by alien. Attacker - [user].", color="red")
 	playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
 	attack_generic(user, 15, BRUTE, "melee", 0)
 
-/obj/mecha/attack_animal(mob/living/simple_animal/user)
+/obj/mecha/post_attack_animal(mob/living/simple_animal/user, list/damage_list = DAMAGE_LIST)
 	mecha_log_message("Attack by simple animal. Attacker - [user].", color="red")
-	if(!user.melee_damage_upper && !user.obj_damage)
+	var/damage_did = GET_DAMAGE(damage_list)
+	if(!damage_did)
 		user.emote("custom", message = "[user.friendly_verb_continuous] [src].")
-		return 0
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
-		log_combat(user, src, "attacked")
-		var/animal_damage = rand(user.melee_damage_lower,user.melee_damage_upper)
-		attack_generic(user, animal_damage, user.melee_damage_type, "melee")
-		return 1
+		log_combat(user, src, "attacked") // No damage caused here, will cause it in whatever called this proc
 
 
 /obj/mecha/hulk_damage()

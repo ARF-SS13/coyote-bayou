@@ -146,6 +146,7 @@ field_generator power level display
 		state = FG_UNSECURED
 		anchored = FALSE
 		M.visible_message(span_warning("[M] rips [src] free from its moorings!"))
+		return TRUE
 	else
 		..()
 	if(!anchored)

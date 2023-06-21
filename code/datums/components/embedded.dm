@@ -152,8 +152,8 @@
 		to_chat(victim, span_userdanger("[weapon] sticks itself to your [limb.name]!"))
 
 	if(damage > 0)
-		var/armor = victim.run_armor_check(limb.body_zone, "melee", "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].",weapon.armour_penetration)
-		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, blocked=armor, sharpness = weapon.get_sharpness())
+		var/damage_out = SSdamage.calculate_damage(victim, weapon, damage, limb.body_zone, ARMOR_MELEE, weapon.armour_penetration)
+		limb.receive_damage(brute=(1-pain_stam_pct) * damage_out, stamina=pain_stam_pct * damage_out, sharpness = weapon.get_sharpness())
 
 /// Called every time a carbon with a harmful embed moves, rolling a chance for the item to cause pain. The chance is halved if the carbon is crawling or walking.
 /datum/component/embedded/proc/jostleCheck()

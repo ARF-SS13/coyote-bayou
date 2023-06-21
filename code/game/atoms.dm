@@ -360,10 +360,41 @@
 	if(!(protection & EMP_PROTECT_WIRES) && istype(wires))
 		wires.emp_pulse(severity)
 	return protection // Pass the protection value collected here upwards
-
+/* 
+ * Called when the atom is hit by a projectile. This proc deals damage to the atom and returns a flag telling the projectile what to do next
+ * Damage dealing procs are done on the living and obj overrides of this proc
+ * MUST return a list with BULLET_ACT_RETURN_VALUE set to a BULLET_ACT_* define!
+ * The rest of the damage list isnt important for that purpose, it can just be list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_BLOCK)
+ */
 /atom/proc/bullet_act(obj/item/projectile/P, def_zone)
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, P, def_zone)
-	. = P.on_hit(src, 0, def_zone)
+	var/list/damage_list = SSdamage.shoot_target(P.firer, src, P, def_zone, NONE, list())
+	var/final_percent = GET_BLOCKED_PERCENT(damage_list)
+	var/bullet_return = P.on_hit(src, final_percent, def_zone) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+	LAZYSET(damage_list, BULLET_ACT_RETURN_VALUE, bullet_return)
+	return damage_list
+
+/atom/movable/bullet_act(obj/item/projectile/P, def_zone)
+	. = ..()
+	if(islist(.))
+	knock_off_buckled_mobs(P, .)
+
+/atom/movable/proc/knock_off_buckled_mobs(obj/item/projectile/P, list/damage_list = DAMAGE_LIST)
+	if(!istype(P)) // No projectile, no problem (here at least)
+		return
+	if(!LAZYLEN(buckled_mobs))
+		return
+	var/damage = GET_DAMAGE(damage_list)
+	var/stamina_damage = GET_STAMINA(damage_list)
+	if((P.damage >= 10) || (P.stamina >= 20))
+		for(var/mob/living/M in buckled_mobs)
+			M.visible_message(
+				span_boldwarning("[M] is knocked off of [src] by the [P]!"),
+				span_boldwarning("You are knocked off of [src] by the [P]!")
+			)
+			unbuckle_mob(M)
+			M.DefaultCombatKnockdown(40)
+
 
 //used on altdisarm() for special interactions between the shoved victim (target) and the src, with user being the one shoving the target on it.
 // IMPORTANT: if you wish to add a new own shove_act() to a certain object, remember to add SHOVABLE_ONTO to its obj_flags bitfied var first.

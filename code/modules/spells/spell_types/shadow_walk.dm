@@ -91,7 +91,7 @@
 	return
 
 /obj/effect/dummy/phased_mob/shadow/bullet_act()
-	return BULLET_ACT_FORCE_PIERCE
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_FORCE_PIERCE)
 
 /obj/effect/dummy/phased_mob/shadow/singularity_act()
 	return

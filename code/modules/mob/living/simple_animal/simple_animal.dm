@@ -63,18 +63,6 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	/// Description line for their armor, cached nice and sweet
 	var/mob_armor_description = span_phobia("Oh deary me all my armor fell off uwu") // dear god dont let this show up
 
-	///Temperature effect.
-	var/minbodytemp = 250
-	var/maxbodytemp = 350
-
-	///Healable by medical stacks? Defaults to yes.
-	var/healable = 1
-
-	///Atmos effect - Yes, you can make creatures that require plasma or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
-	var/list/atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0) //Leaving something at 0 means it's off - has no maximum
-	///This damage is taken when atmos doesn't fit all the requirements above.
-	var/unsuitable_atmos_damage = 2
-
 	///LETTING SIMPLE ANIMALS ATTACK? WHAT COULD GO WRONG. Defaults to zero so Ian can still be cuddly.
 	var/melee_damage_lower = 0
 	var/melee_damage_upper = 0
@@ -84,6 +72,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/armour_penetration = 0
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
+	///Armor to check for a simple mob's melee attack, should it do damage.
+	var/melee_armor_check = ARMOR_MELEE
 	/// 1 for full damage , 0 for none , -1 for 1:1 heal from that source.
 	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 1, OXY = 1)
 	///Attacking verb in present continuous tense.
@@ -97,6 +87,25 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/friendly_verb_simple = "nuzzle"
 	///Set to 1 to allow breaking of crates,lockers,racks,tables; 2 for walls; 3 for Rwalls.
 	var/environment_smash = ENVIRONMENT_SMASH_NONE
+	//How much wounding power it has
+	var/wound_bonus = 0
+	//How much bare wounding power it has
+	var/bare_wound_bonus = 0
+	//If the attacks from this are sharp
+	var/sharpness = SHARP_NONE
+
+	///Temperature effect.
+	var/minbodytemp = 250
+	var/maxbodytemp = 350
+
+	///Healable by medical stacks? Defaults to yes.
+	var/healable = 1
+
+	///Atmos effect - Yes, you can make creatures that require plasma or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
+	var/list/atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0) //Leaving something at 0 means it's off - has no maximum
+	///This damage is taken when atmos doesn't fit all the requirements above.
+	var/unsuitable_atmos_damage = 2
+
 
 	///LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster.
 	/// Breaks everything, makes player controlled mobs wayyyyy tooo slow
@@ -165,12 +174,6 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
-	//How much wounding power it has
-	var/wound_bonus = 0
-	//How much bare wounding power it has
-	var/bare_wound_bonus = 0
-	//If the attacks from this are sharp
-	var/sharpness = SHARP_NONE
 	//Generic flags
 	var/simple_mob_flags = NONE
 	//Mob may be offset randomly on both axes by this much
@@ -1368,3 +1371,121 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_on"
 //End Coyote Add
+
+/mob/living/simple_animal/proc/snuggle(atom/movable/target)
+	damage_message(target, DAMAGE_LIST)
+//End Coyote Add
+
+/// SIMPLE ATTACK PROCS
+/// Used for default simplemob-attack-target behavior. Override these to change how mobs attack.
+/// theres nothing simple about these, tbh
+
+/// Used to make US do a damage to TARGET. Calls attack_animal to get overrides
+/mob/living/simple_animal/proc/simple_attack_target(atom/target, proximity, intent, flags = NONE, list/overrides = list())
+	if(!istype(target))
+		return
+	if(!simple_pre_attack_target(target, proximity, intent, flags, overrides)) // override pass-thru
+		return
+	var/list/damage_list = simple_deal_damage_to_target(target, proximity, intent, flags, overrides)
+	simple_post_attack_target(target, proximity, intent, flags, damage_list) // can modify the damage list
+	return damage_list
+
+/// Does something before the main attack proc can do its thing.
+/// Override with fancy checks and mods to damagestuffs.
+/// Return TRUE to cancel the attack.
+/mob/living/simple_animal/proc/simple_pre_attack_target(atom/target, proximity, intent, flags = NONE, list/overrides = list())
+	if(!istype(target))
+		return TRUE
+	face_atom(src)
+	if(client)
+		if(!CheckActionCooldown(CLICK_CD_MELEE))
+			return
+		DelayNextAction()
+		if(intent != INTENT_HARM)
+			snuggle(target)
+			return TRUE
+	do_attack_animation(src)
+	var/attret = attack_animal(src, proximity, intent, flags, overrides)
+	if(isturf(target))
+		TRUE
+	return attret
+
+/// Does the actual attack to the target. Override at your own risk
+/// Returns the All Fabulous Damage List
+/mob/living/simple_animal/proc/simple_deal_damage_to_target(atom/target, proximity, intent, flags = NONE, list/overrides = list())
+	if(!istype(target))
+		return
+	var/dam_low = melee_damage_lower
+	var/dam_high = melee_damage_upper
+	if(isobj(target))
+		dam_low = obj_damage
+		dam_high = obj_damage
+	var/list/damage_list = SSdamage.punch_target(
+		attacker = src,
+		defender = target,
+		damage_low = dam_low,
+		damage_high = dam_high,
+		stamina_low = 0,
+		stamina_high = 0,
+		damage_type = melee_damage_type,
+		target_zone = ran_zone(BODY_ZONE_CHEST, 35, ZONE_WEIGHT_LIST_MOB),
+		armor_type = melee_armor_check,
+		armor_piercing = armour_penetration,
+		damage_threshold_modifier = damage_threshold_penetration_mob,
+		wound_bonus = wound_bonus,
+		bare_wound_bonus = bare_wound_bonus,
+		sharpness = sharpness,
+		overrides = overrides,
+		attack_kind = ATTACK_EFFECT_CLAW,
+	)
+	return damage_list
+
+/// Dooes something after the main attack proc has done its thing.
+/// Override with fancy messages and stuff.
+/mob/living/simple_animal/proc/simple_post_attack_target(atom/target, proximity, intent, flags = NONE, list/damage_list = DAMAGE_LIST)
+	if(!istype(target))
+		return
+	post_attack_animal(src, damage_list)
+	damage_message(target, damage_list)
+	return damage_list
+
+/mob/living/simple_animal/proc/damage_message(mob/living/target, list/damage_list = DAMAGE_LIST)
+	if(!target)
+		return
+	var/damage_did = GET_DAMAGE(damage_list)
+	var/dam_high = GET_DAMAGE_HIGH(damage_list)
+	var/dam_type = GET_DAMAGE_TYPE(damage_list)
+
+	var/nuzzled_them = (!damage_did || !dam_high || (player_character && a_intent == INTENT_HELP))
+	var/attack_simple = list()
+	var/attack_continuous = list()
+	if(nuzzled_them)
+		attack_simple = islist(friendly_verb_simple) ? pick(friendly_verb_simple) : friendly_verb_simple
+		attack_continuous = islist(friendly_verb_continuous) ? pick(friendly_verb_continuous) : friendly_verb_continuous
+		visible_message(
+			span_notice("\The [src] [attack_continuous] [target]!"),
+			span_notice("You [attack_simple] [src]!")
+			null,
+			COMBAT_MESSAGE_RANGE,
+			null,
+			target,
+			span_notice("\The [src] [attack_continuous] you!"),
+		)
+		return FALSE
+	attack_simple = islist(attack_verb_simple) ? pick(attack_verb_simple) : attack_verb_simple
+	attack_continuous = islist(attack_verb_continuous) ? pick(attack_verb_continuous) : attack_verb_continuous
+	if(attack_sound)
+		playsound(target, attack_sound, 50, 1, 1)
+	do_attack_animation(src)
+	visible_message(
+		span_danger("\The [src] [attack_continuous] [target]!"),
+		span_danger("You [attack_simple] [src]!")
+		null,
+		COMBAT_MESSAGE_RANGE,
+		null,
+		target,
+		span_userdanger("\The [src] [attack_continuous] you!"),
+	)
+	log_combat(src, target, "attacked")
+	return damage_did
+

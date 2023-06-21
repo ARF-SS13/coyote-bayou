@@ -59,9 +59,6 @@
 	qdel(src)
 	new /obj/structure/table/reinforced/brass(A)
 
-/obj/structure/table/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/structure/table/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(Adjacent(user) && user.pulling)
 		if(isliving(user.pulling))
@@ -767,9 +764,6 @@
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
 		return 1
-
-/obj/structure/rack/attack_paw(mob/living/user)
-	attack_hand(user)
 
 /obj/structure/rack/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()

@@ -534,7 +534,10 @@
 	in_melee = TRUE
 	if(prob(alternate_attack_prob) && AlternateAttackingTarget(target))
 		return FALSE
-	return target.attack_animal(src)
+	var/my_intent = INTENT_HARM
+	if(player_character && ckey)
+		my_intent = a_intent
+	return simple_attack_target(target, Adjacent(target), my_intent)
 
 /// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
 /mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
@@ -685,10 +688,12 @@
 	var/turf/T = get_step(targets_from, direction)
 	if(T && T.Adjacent(targets_from))
 		if(CanSmashTurfs(T))
-			T.attack_animal(src)
+			simple_attack_target(T, TRUE)
+			//T.attack_animal(src)
 		for(var/obj/O in T)
 			if(O.density && environment_smash >= ENVIRONMENT_SMASH_STRUCTURES && !O.IsObscured())
-				O.attack_animal(src)
+				simple_attack_target(O, TRUE)
+				//O.attack_animal(src)
 				return
 
 
@@ -716,10 +721,12 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 
 /mob/living/simple_animal/hostile/proc/EscapeConfinement()
 	if(buckled)
-		buckled.attack_animal(src)
+		simple_attack_target(buckled, TRUE)
+		//buckled.attack_animal(src)
 	if(!isturf(targets_from.loc) && targets_from.loc != null)//Did someone put us in something?
 		var/atom/A = targets_from.loc
-		A.attack_animal(src)//Bang on it till we get out
+		simple_attack_target(A, TRUE)
+		//A.attack_animal(src)//Bang on it till we get out
 
 
 /mob/living/simple_animal/hostile/proc/FindHidden()
@@ -727,7 +734,8 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		var/atom/A = target.loc
 		Goto(A,move_to_delay,minimum_distance)
 		if(A.Adjacent(targets_from))
-			A.attack_animal(src)
+			simple_attack_target(A, TRUE)
+			//A.attack_animal(src)
 		return 1
 
 /mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing

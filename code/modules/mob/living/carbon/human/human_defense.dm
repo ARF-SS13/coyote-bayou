@@ -53,16 +53,17 @@
 
 
 /mob/living/carbon/human/bullet_act(obj/item/projectile/P, def_zone)
+	var/list/damage_list = list()
 	if(dna && dna.species)
-		var/spec_return = dna.species.bullet_act(P, src)
-		if(spec_return)
+		damage_list = dna.species.bullet_act(P, src)
+		if(LAZYACCESS(spec_return, BULLET_ACT_RETURN_VALUE))
 			return spec_return
 
 	if(mind) //martial art stuff
 		if(mind.martial_art && mind.martial_art.can_use(src)) //Some martial arts users can deflect projectiles!
 			var/martial_art_result = mind.martial_art.on_projectile_hit(src, P, def_zone)
 			if(!(martial_art_result == BULLET_ACT_HIT))
-				return martial_art_result
+				return list(BULLET_ACT_RETURN_VALUE = martial_art_result)
 	return ..()
 
 /mob/living/carbon/human/proc/check_martial_melee_block()
@@ -88,15 +89,11 @@
 
 /mob/living/carbon/human/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, list/damage_list = DAMAGE_LIST)
 	if(!I || !user)
-		return 0
+		return
 
-	var/obj/item/bodypart/affecting
-	if(user == src)
-		affecting = get_bodypart(check_zone(user.zone_selected)) //stabbing yourself always hits the right target
-	else
-		affecting = get_bodypart(ran_zone(user.zone_selected))
-	var/target_area = parse_zone(check_zone(user.zone_selected)) //our intended target
-
+	var/bodyzone = GET_ZONE(damage_list)
+	var/obj/item/bodypart/affecting = get_bodypart(check_zone(bodyzone))
+	var/target_area = parse_zone(check_zone(bodyzone)) //our intended target
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 
 	SSblackbox.record_feedback("nested tally", "item_used_for_combat", 1, list("[I.force]", "[I.type]"))
@@ -119,7 +116,18 @@
 		visible_message(span_danger("[user] [hulk_verb_continous] [src]!"), \
 						span_userdanger("[user] [hulk_verb_continous] you!"), null, COMBAT_MESSAGE_RANGE, null, user,
 						span_danger("You [hulk_verb_simple] [src]!"))
-		apply_damage(15, BRUTE, wound_bonus=10)
+		SSdamage.punch_target(
+			attacker = user,
+			defender = src,
+			weapon = "hulkfists",
+			damage_low = 15,
+			damage_high = 25,
+			damage_type = BRUTE,
+			target_zone = user.zone_selected,
+			armor_type = ARMOR_MELEE,
+			wound_bonus = 20,
+			dismember_damage = 10,
+		)
 		return 1
 
 /mob/living/carbon/human/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
@@ -157,12 +165,22 @@
 				span_danger("You have tackled [src] down!"))
 
 	if(M.limb_destroyer)
-		dismembering_strike(M, affecting.body_zone)
+		SSdamage.check_damage_dismemberment(M, src, null, affecting.body_zone)
 
 	if(can_inject(M, 1, affecting))//Thick suits can stop monkey bites.
 		if(..()) //successful monkey bite, this handles disease contraction.
-			var/damage = rand(1, 3)
-			apply_damage(damage, BRUTE, affecting, run_armor_check(affecting, "melee"))
+			SSdamage.punch_target(
+				attacker = M,
+				defender = src,
+				weapon = "monkey bite",
+				damage_low = 2,
+				damage_high = 5,
+				damage_type = BRUTE,
+				target_zone = M.zone_selected || BODY_ZONE_CHEST,
+				armor_type = ARMOR_MELEE,
+				wound_bonus = 20,
+				dismember_damage = 10,
+			)
 		return 1
 
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/humanoid/M)
@@ -170,28 +188,21 @@
 	if(!.)
 		return
 	if(M.a_intent == INTENT_HARM)
-		if (w_uniform)
+		var/list/damage_return = islist(.) ? . : list()
+		if(w_uniform)
 			w_uniform.add_fingerprint(M)
-		var/damage = prob(90) ? M.meleeSlashHumanPower : 0
+		var/damage = GET_DAMAGE(damage_return)
 		if(!damage)
 			playsound(loc, 'sound/weapons/slashmiss.ogg', 50, 1, -1)
 			visible_message(span_danger("[M] has lunged at [src]!"), \
 				span_userdanger("[M] has lunged at you!"), target = M, \
 				target_message = span_danger("You have lunged at [src]!"))
 			return 0
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
-		if(!affecting)
-			affecting = get_bodypart(BODY_ZONE_CHEST)
-		var/armor_block = run_armor_check(affecting, "melee", null, null,10)
-
 		playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
 		visible_message(span_danger("[M] has slashed at [src]!"), \
 			span_userdanger("[M] has slashed at you!"), target = M, \
 			target_message = span_danger("You have slashed at [src]!"))
 		log_combat(M, src, "attacked")
-		if(!dismembering_strike(M, M.zone_selected)) //Dismemberment successful
-			return 1
-		apply_damage(damage, BRUTE, affecting, armor_block)
 
 	if(M.a_intent == INTENT_DISARM) //Always drop item in hand, if no item, get stun instead.
 		var/obj/item/I = get_active_held_item()
@@ -208,53 +219,13 @@
 				span_userdanger("[M] has tackled you down!"), target = M, \
 				target_message = span_danger("You have tackled down [src]!"))
 
-/mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L)
+/mob/living/carbon/human/post_attack_animal(mob/living/simple_animal/M, list/damage_list = DAMAGE_LIST)
 	. = ..()
-	if(!.) //unsuccessful larva bite.
-		return
-	var/damage = rand(1, 3)
-	if(stat != DEAD)
-		L.amount_grown = min(L.amount_grown + damage, L.max_grown)
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(L.zone_selected))
-		if(!affecting)
-			affecting = get_bodypart(BODY_ZONE_CHEST)
-		var/armor_block = run_armor_check(affecting, "melee")
-		apply_damage(damage, BRUTE, affecting, armor_block)
-
-
-/mob/living/carbon/human/attack_animal(mob/living/simple_animal/M)
-	. = ..()
-	if(.)
-		var/damage = .
-		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-		if(!dam_zone) //Dismemberment successful
-			return TRUE
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-		if(!affecting)
-			affecting = get_bodypart(BODY_ZONE_CHEST)
-		var/armor = run_armor_check(affecting, "melee", armour_penetration = M.armour_penetration)
-		var/dt = max(run_armor_check(affecting, "damage_threshold") - M.damage_threshold_penetration_mob, 0)
-		apply_damage(damage, M.melee_damage_type, affecting, armor, wound_bonus = M.wound_bonus, bare_wound_bonus = M.bare_wound_bonus, sharpness = M.sharpness, damage_threshold = dt)
-
-/mob/living/carbon/human/attack_slime(mob/living/simple_animal/slime/M)
-	. = ..()
-	if(!.) //unsuccessful slime attack
-		return
-	var/damage = rand(5, 25)
-	var/wound_mod = -45 // 25^1.4=90, 90-45=45
-	if(M.is_adult)
-		damage = rand(10, 35)
-		wound_mod = -90 // 35^1.4=145, 145-90=55
-
-	var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	var/damage = GET_DAMAGE(damage_list)
+	var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 	if(!dam_zone) //Dismemberment successful
-		return 1
+		return TRUE
 
-	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-	if(!affecting)
-		affecting = get_bodypart(BODY_ZONE_CHEST)
-	var/armor_block = run_armor_check(affecting, "melee")
-	apply_damage(damage, BRUTE, affecting, armor_block, wound_bonus=wound_mod)
 
 /mob/living/carbon/human/mech_melee_attack(obj/mecha/M)
 	if(M.occupant.a_intent == INTENT_HARM)

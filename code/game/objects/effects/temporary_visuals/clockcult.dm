@@ -129,7 +129,7 @@
 			span_userdanger("Your [I.name] shields you from [src]!"))
 			continue
 		L.visible_message(span_warning("[L] is struck by a [name]!"), span_userdanger("You're struck by a [name]!"))
-		L.apply_damage(damage, BURN, "chest", L.run_armor_check("chest", "laser", "Your armor absorbs [src]!", "Your armor blocks part of [src]!", 0, "Your armor was penetrated by [src]!"))
+		//L.apply_damage(damage, BURN, "chest", L.run_armor_check("chest", "laser", "Your armor absorbs [src]!", "Your armor blocks part of [src]!", 0, "Your armor was penetrated by [src]!"))
 		log_combat(user, L, "struck with a volt blast")
 		hit_amount++
 	for(var/obj/mecha/M in T)

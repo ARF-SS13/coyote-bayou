@@ -37,18 +37,15 @@
 	new /obj/item/stack/sheet/metal(src, 2)
 
 /turf/closed/wall/r_wall/attack_animal(mob/living/simple_animal/M)
-	if(!M.CheckActionCooldown())
-		return
-	M.do_attack_animation(src)
 	if(!M.environment_smash)
-		return
+		return TRUE
 	if(M.environment_smash & ENVIRONMENT_SMASH_RWALLS)
 		dismantle_wall(1)
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, 1)
 		to_chat(M, span_warning("This wall is far too strong for you to destroy."))
-	M.DelayNextAction()
+	return TRUE
 
 /turf/closed/wall/r_wall/try_destroy(obj/item/I, mob/user, turf/T)
 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))

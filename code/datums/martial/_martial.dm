@@ -54,11 +54,34 @@
 	return damage
 
 /// lets actually check armor, aight?
-/datum/martial_art/proc/deal_damage(mob/living/carbon/human/attacker, mob/living/defender, damage, damage_type = BRUTE, zone = BODY_ZONE_CHEST, armor_type = "melee", woundbonus = 0)
+/datum/martial_art/proc/deal_damage(
+		mob/living/carbon/human/attacker, 
+		mob/living/defender, 
+		damage = 0,
+		damage_mod = 1,
+		stamina_low = 0,
+		stamina_high = 0,
+		damage_type = BRUTE, 
+		zone = BODY_ZONE_CHEST, 
+		armor_type = "melee", 
+		woundbonus = 0
+	)
 	if(!isliving(defender))
 		return
-	var/armormult = clamp(defender.getarmor(zone, armor_type), 0, 1)
-	defender.apply_damage(damage, damage_type, BODY_ZONE_CHEST, blocked = armormult, wound_bonus = woundbonus)
+	var/dam_low = (attacker.dna.species.punchdamagelow + damage) * damage_mod
+	var/dam_high = (attacker.dna.species.punchdamagehigh + damage) * damage_mod
+	. = SSdamage.punch_target(
+		attacker = attacker,
+		defender = defender,
+		damage_low = attacker.dna.species.punchdamagelow + damage * damage_mod,
+		damage_high = attacker.dna.species.punchdamagehigh + damage * damage_mod,
+		stamina_low = stamina_low,
+		stamina_high = stamina_high,
+		damage_type = damage_type,
+		target_zone = zone,
+		armor_type = armor_type,
+		wound_bonus = woundbonus,
+	)
 	log_combat(attacker, defender, "martial art ([src])")
 
 /datum/martial_art/proc/teach(mob/living/carbon/human/H, make_temporary = FALSE)

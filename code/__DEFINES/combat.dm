@@ -1,27 +1,5 @@
 /*ALL DEFINES RELATED TO COMBAT GO HERE*/
 
-//Damage and status effect defines
-
-//Damage defines //TODO: merge these down to reduce on defines
-#define BRUTE		"brute"
-#define BURN		"fire"
-#define TOX			"tox"
-#define OXY			"oxy"
-#define CLONE		"clone"
-#define STAMINA 	"stamina"
-#define BRAIN		"brain"
-
-//bitflag damage defines used for suicide_act -- also useful for bitflags, not just suicide!!!
-#define BRUTELOSS 		(1<<0)
-#define FIRELOSS 		(1<<1)
-#define TOXLOSS 		(1<<2)
-#define OXYLOSS 		(1<<3)
-#define SHAME 			(1<<4)
-#define MANUAL_SUICIDE	(1<<5)	//suicide_act will do the actual killing.
-#define RADIATIONLOSS	(1<<6)
-#define CLONELOSS		(1<<7)
-#define EMPLOSS			(1<<8)
-
 #define DAMAGES_LIST list(BRUTELOSS, FIRELOSS, TOXLOSS, OXYLOSS, RADIATIONLOSS, CLONELOSS, EMPLOSS)
 
 #define EFFECT_STUN		"stun"
@@ -33,7 +11,6 @@
 #define EFFECT_EYE_BLUR	"eye_blur"
 #define EFFECT_DROWSY		"drowsy"
 #define EFFECT_JITTER		"jitter"
-
 
 // mob/living/var/combat_flags variable.
 /// Default combat flags for those affected by sprinting (combat mode has been made into its own component)
@@ -1255,6 +1232,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	BODY_ZONE_R_ARM = 22,\
 	BODY_ZONE_L_LEG = 22,\
 	BODY_ZONE_R_LEG = 22)
+/// Mob Attack Zone List thing
+#define ZONE_WEIGHT_LIST_MOB list(\
+	BODY_ZONE_HEAD = 5,\
+	BODY_ZONE_CHEST = 9,\
+	BODY_ZONE_L_ARM = 9,\
+	BODY_ZONE_R_ARM = 9,\
+	BODY_ZONE_L_LEG = 9,\
+	BODY_ZONE_R_LEG = 9)
 
 /// Gun skill flags
 /// Gun is affected by rifleman skill
@@ -1317,11 +1302,15 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define PUNCH_DAMAGE_LOW 1
 #define PUNCH_DAMAGE_MAX 10
 #define PUNCH_DAMAGE_AVERAGE FLOOR((PUNCH_DAMAGE_LOW + PUNCH_DAMAGE_MAX) * 0.5, 1)
-#define IRON_FIST_PUNCH_DAMAGE_LOW 6
-#define IRON_FIST_PUNCH_DAMAGE_MAX 12
+#define IRON_FIST_LOW_ADD 5
+#define IRON_FIST_MAX_ADD 2
+#define IRON_FIST_PUNCH_DAMAGE_LOW (PUNCH_DAMAGE_LOW + IRON_FIST_LOW_ADD)
+#define IRON_FIST_PUNCH_DAMAGE_MAX (PUNCH_DAMAGE_MAX + IRON_FIST_MAX_ADD)
 #define IRON_FIST_PUNCH_DAMAGE_AVERAGE FLOOR((IRON_FIST_PUNCH_DAMAGE_LOW + IRON_FIST_PUNCH_DAMAGE_MAX) * 0.5, 1)
-#define STEEL_FIST_PUNCH_DAMAGE_LOW 10
-#define STEEL_FIST_PUNCH_DAMAGE_MAX 16
+#define STEEL_FIST_LOW_ADD 9
+#define STEEL_FIST_MAX_ADD 6
+#define STEEL_FIST_PUNCH_DAMAGE_LOW (PUNCH_DAMAGE_LOW + STEEL_FIST_LOW_ADD)
+#define STEEL_FIST_PUNCH_DAMAGE_MAX (PUNCH_DAMAGE_MAX + STEEL_FIST_MAX_ADD)
 #define STEEL_FIST_PUNCH_DAMAGE_AVERAGE FLOOR((STEEL_FIST_PUNCH_DAMAGE_LOW + STEEL_FIST_PUNCH_DAMAGE_MAX) * 0.5, 1)
 
 //weapon class defines for standardized stats
@@ -1374,34 +1363,3 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define FLINTLOCK_MINIMUSKET_PREFIRE_RANDOMNESS 0.4
 #define FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS 0.2
 
-/// Damage Var Flags
-#define DAMAGE_FORCE "force"
-#define DAMAGE_STAMINA "stamina"
-#define DAMAGE_TYPE "damtype"
-#define DAMAGE_ARMOR_CHECK "damage_armor"
-#define DAMAGE_WOUND_BONUS "wound_bonus"
-#define DAMAGE_WOUND_NAKED "wound_naked"
-#define DAMAGE_SHARPNESS "sharpness"
-#define DAMAGE_ARMOR_PENETRATION "armour_penetration"
-#define DAMAGE_DT_MODIFIER "damage_threshold_modifier"
-#define DAMAGE_ZONE "defzone"
-#define DAMAGE_FORCE_IT "force_it"
-#define DAMAGE_SPREAD "spread"
-#define DAMAGE_SIGNAL "signal"
-#define DAMAGE_MULTIPLIER "multiplier"
-
-#define DAMAGE_LIST list(\
-	DAMAGE_FORCE = 0,\
-	DAMAGE_STAMINA = 0,\
-	DAMAGE_TYPE = BRUTE,\
-	DAMAGE_ARMOR_CHECK = ARMOR_MELEE,\
-	DAMAGE_WOUND_BONUS = 0,\
-	DAMAGE_WOUND_NAKED = 0,\
-	DAMAGE_SHARPNESS = 0,\
-	DAMAGE_ARMOR_PENETRATION = 0,\
-	DAMAGE_DT_MODIFIER = 0,\
-	DAMAGE_ZONE = BODY_ZONE_CHEST,\
-	DAMAGE_FORCE_IT = 0,\
-	DAMAGE_SPREAD = 0,\
-	DAMAGE_SIGNAL = 0,\
-	)

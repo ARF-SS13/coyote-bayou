@@ -257,7 +257,7 @@
 
 /obj/structure/blob/attack_animal(mob/living/simple_animal/M)
 	if(ROLE_BLOB in M.faction) //sorry, but you can't kill the blob as a blobbernaut
-		return
+		return TRUE
 	..()
 
 /obj/structure/blob/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
@@ -270,22 +270,14 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, 1)
 
-/obj/structure/blob/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	switch(damage_type)
-		if(BRUTE)
-			damage_amount *= brute_resist
-		if(BURN)
-			damage_amount *= fire_resist
-		if(CLONE)
-		else
-			return 0
-	var/armor_protection = 0
-	if(damage_flag)
-		armor_protection = armor.getRating(damage_flag)
-	damage_amount = round(damage_amount * (100 - armor_protection)*0.01, 0.1)
-	if(overmind && damage_flag)
-		damage_amount = overmind.blobstrain.damage_reaction(src, damage_amount, damage_type, damage_flag)
-	return damage_amount
+/obj/structure/blob/proc/modify_incoming_attack(datum/source, atom/defender, atom/attacker, list/damage_list)
+	var/damage = GET_DAMAGE(damage_list)
+	var/damage_type = GET_DAMAGE_TYPE(damage_list)
+	var/armor_check = GET_ARMOR_CHECK(damage_list)
+	if(overmind && armor_check)
+		damage = overmind.blobstrain.damage_reaction(src, damage, damage_type, armor_check)
+	SET_DAMAGE(damage_list, damage)
+	return TRUE
 
 /obj/structure/blob/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	. = ..()

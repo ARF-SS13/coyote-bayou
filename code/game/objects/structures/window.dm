@@ -201,7 +201,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	user.DelayNextAction()
 	return attack_hand(user)
 
-/obj/structure/window/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)	//used by attack_alien, attack_animal, and attack_slime
+/obj/structure/window/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	if(!can_be_reached(user))
 		return
 	..()
@@ -867,6 +867,14 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		user.visible_message("[user] knocks on [src].")
 		playsound(src, "pageturn", 50, 1)
 	else
+		SSdamage.deal_damage(
+			attacker = user,
+			defender = src,
+			weapon = "fists",
+			damage = 4,
+			damage_type = BRUTE,
+			armor_type = ARMOR_MELEE,
+		)
 		take_damage(4,BRUTE,"melee", 0, attacked_by = user)
 		playsound(src, hitsound, 50, 1)
 		if(!QDELETED(src))

@@ -97,6 +97,7 @@ Class Procs:
 	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
 	ricochet_chance_mod = 0.3
 	drag_delay = 0.15 SECONDS
+	armor = ARMOR_VALUE_MACHINE
 
 	anchored = TRUE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
@@ -128,6 +129,7 @@ Class Procs:
 	var/init_process = TRUE //Stop processing from starting on init
 	var/interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
 	var/tooadvanced = FALSE
+	var/monkey_can_use = TRUE
 	var/fair_market_price = 69
 	var/market_verb = "Customer"
 	var/payment_department = ACCOUNT_ENG
@@ -135,8 +137,6 @@ Class Procs:
 	var/proj_pass_rate = 65 //percentage change for bullets to fly over, if barricade=1
 
 /obj/machinery/Initialize()
-	if(!armor)
-		armor = ARMOR_VALUE_LIGHT
 	. = ..()
 	var/obj/machinery/hydroponics/T = src
 	if(!istype(T))
@@ -334,14 +334,13 @@ Class Procs:
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-/obj/machinery/attack_paw(mob/living/user)
-	if(user.a_intent != INTENT_HARM)
+/obj/machinery/attack_paw(mob/living/user) // updated
+	if(!monkey_can_use)
+		to_chat(user, span_alert("[src] confuses and ENRAGES you!"))
+	else if(user.a_intent != INTENT_HARM)
 		return attack_hand(user)
-	else
-		user.DelayNextAction(CLICK_CD_MELEE)
-		user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-		user.visible_message(span_danger("[user.name] smashes against \the [src.name] with its paws."), null, null, COMBAT_MESSAGE_RANGE)
-		take_damage(4, BRUTE, "melee", 1, attacked_by = user)
+	var/list/damage_return = SSdamage.monkey_attack(user, src)
+	user.visible_message(span_danger("[user.name] smashes against \the [src.name] with its paws."), null, null, COMBAT_MESSAGE_RANGE)
 
 /obj/machinery/attack_robot(mob/user)
 	if(!(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON) && !IsAdminGhost(user))

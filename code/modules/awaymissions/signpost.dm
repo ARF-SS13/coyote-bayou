@@ -50,7 +50,8 @@
 	return interact(user)
 
 /obj/structure/signpost/attack_animal(mob/user)
-	return interact(user)
+	interact(user)
+	return TRUE
 
 /obj/structure/signpost/salvation
 	name = "\proper salvation"

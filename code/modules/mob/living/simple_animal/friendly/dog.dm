@@ -453,7 +453,7 @@
 						return
 
 					if(isturf(movement_target.loc) )
-						movement_target.attack_animal(src)
+						simple_attack_target(movement_target, TRUE)
 					else if(ishuman(movement_target.loc) )
 						if(prob(20))
 							emote("me", EMOTE_VISIBLE, "stares at [movement_target.loc]'s [movement_target] with a sad puppy-face")

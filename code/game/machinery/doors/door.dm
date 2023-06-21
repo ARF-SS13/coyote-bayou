@@ -336,16 +336,6 @@
 				return TRUE
 	return ..()
 
-/obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee" && damage_amount < damage_deflection)
-		return 0
-	. = ..()
-
-/obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "bullet" | damage_flag == "laser" && damage_amount < proj_resist)
-		return 0
-	. = ..()
-
 /obj/machinery/door/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	. = ..()
 	if(. && obj_integrity > 0)

@@ -335,9 +335,6 @@ LINEN BINS
 		to_chat(user, span_notice("You hide [I] among the sheets."))
 
 
-/obj/structure/bedsheetbin/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/structure/bedsheetbin/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(user.incapacitated())
 		return

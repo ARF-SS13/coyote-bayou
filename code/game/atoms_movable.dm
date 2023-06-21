@@ -870,3 +870,6 @@
 	. = ..()
 	if(mover in buckled_mobs)
 		return TRUE
+
+/atom/movable/proc/getarmor(def_zone = BODY_ZONE_CHEST, type = ARMOR_MELEE)
+	return 0

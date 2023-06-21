@@ -1,52 +1,87 @@
+// depending on the species, it will run the corresponding apply_damage code there
+// just kidding, it's all here
+/mob/living/carbon/human/apply_damage(
+		damage = 0,
+		damagetype = BRUTE,
+		def_zone = null,
+		blocked = FALSE,
+		forced = FALSE,
+		spread_damage = FALSE,
+		wound_bonus = 0,
+		bare_wound_bonus = 0,
+		sharpness = SHARP_NONE,
+		damage_threshold = 0,
+		sendsignal = TRUE
+	)
+	if(dna.species.apply_damage(
+			damage,
+			damagetype,
+			def_zone,
+			blocked,
+			src,
+			forced,
+			spread_damage,
+			wound_bonus,
+			bare_wound_bonus,
+			sharpness,
+			damage_threshold,
+			sendsignal = TRUE))
+		return TRUE
+	. = ..()
 
 
 /mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0, sendsignal = TRUE)
 	if(sendsignal)
 		SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold)
-	var/hit_percent = (100-blocked)/100
-	if(!forced && hit_percent <= 0)
-		return 0
+	// var/hit_percent = (100-blocked)/100
+	// if(!forced && hit_percent <= 0)
+	// 	return 0
 
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
-		if(isbodypart(def_zone)) //we specified a bodypart object
-			BP = def_zone
+		if(isbodypart(def_zone))
+			if(damagetype == STAMINA && istype(def_zone, /obj/item/bodypart/head))
+				BP = get_bodypart(check_zone(BODY_ZONE_CHEST))
+			else
+				BP = def_zone
 		else
 			if(!def_zone)
 				def_zone = ran_zone(def_zone)
+			if(damagetype == STAMINA && def_zone == BODY_ZONE_HEAD)
+				def_zone = BODY_ZONE_CHEST
 			BP = get_bodypart(check_zone(def_zone))
-			if(!BP)
-				BP = bodyparts[1]
+		if(!BP)
+			BP = bodyparts[1]
 
-	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
-		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
-	var/damage_amount = forced ? damage : damage * hit_percent
+	// if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
+	// 	damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
+	// var/damage = forced ? damage : damage * hit_percent
 
 	switch(damagetype)
 		if(BRUTE)
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
+				if(BP.receive_damage(damage, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
-				adjustBruteLoss(damage_amount, forced = forced)
+				adjustBruteLoss(damage, forced = forced)
 		if(BURN)
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
+				if(BP.receive_damage(0, damage, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					update_damage_overlays()
 			else
-				adjustFireLoss(damage_amount, forced = forced)
+				adjustFireLoss(damage, forced = forced)
 		if(TOX)
-			adjustToxLoss(damage_amount, forced = forced)
+			adjustToxLoss(damage, forced = forced)
 		if(OXY)
-			adjustOxyLoss(damage_amount, forced = forced)
+			adjustOxyLoss(damage, forced = forced)
 		if(CLONE)
-			adjustCloneLoss(damage_amount, forced = forced)
+			adjustCloneLoss(damage, forced = forced)
 		if(STAMINA)
 			if(BP)
-				if(damage > 0 ? BP.receive_damage(0, 0, damage_amount) : BP.heal_damage(0, 0, abs(damage_amount), FALSE, FALSE))
+				if(damage > 0 ? BP.receive_damage(0, 0, damage) : BP.heal_damage(0, 0, abs(damage), FALSE, FALSE))
 					update_damage_overlays()
 			else
-				adjustStaminaLoss(damage_amount, forced = forced)
+				adjustStaminaLoss(damage, forced = forced)
 	return TRUE
 
 

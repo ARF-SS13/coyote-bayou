@@ -571,11 +571,6 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("Your fists feel calm again.")
 	locked = FALSE
 
-/datum/quirk/iron_fist/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.dna.species.punchdamagelow = IRON_FIST_PUNCH_DAMAGE_LOW
-	H.dna.species.punchdamagehigh = IRON_FIST_PUNCH_DAMAGE_MAX
-
 /datum/quirk/steel_fist
 	name = "Fists of Steel"
 	desc = "You have MASSIVE fists of kung-fury! Even MORE increases unarmed damage."
@@ -584,11 +579,6 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your fists feel MASSIVELY furious!")
 	lose_text = span_danger("Your fists feel calm again, what a relief.")
 	locked = FALSE
-
-/datum/quirk/steel_fist/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
-	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
 
 /datum/quirk/light_step
 	name = "Glass Walker"

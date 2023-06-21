@@ -66,7 +66,7 @@
 		return ..()
 	if(auto_reflect(P, pdir, ploc, pangle) != BULLET_ACT_FORCE_PIERCE)
 		return ..()
-	return BULLET_ACT_FORCE_PIERCE
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_FORCE_PIERCE)
 
 /obj/structure/reflector/proc/auto_reflect(obj/item/projectile/P, pdir, turf/ploc, pangle)
 	P.ignore_source_check = TRUE

@@ -678,13 +678,15 @@
 					span_userdanger("[src] drives over you!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, TRUE)
 
-	var/damage = rand(5,15)
-	H.apply_damage(2*damage, BRUTE, BODY_ZONE_HEAD, run_armor_check(BODY_ZONE_HEAD, "melee"))
-	H.apply_damage(2*damage, BRUTE, BODY_ZONE_CHEST, run_armor_check(BODY_ZONE_CHEST, "melee"))
-	H.apply_damage(0.5*damage, BRUTE, BODY_ZONE_L_LEG, run_armor_check(BODY_ZONE_L_LEG, "melee"))
-	H.apply_damage(0.5*damage, BRUTE, BODY_ZONE_R_LEG, run_armor_check(BODY_ZONE_R_LEG, "melee"))
-	H.apply_damage(0.5*damage, BRUTE, BODY_ZONE_L_ARM, run_armor_check(BODY_ZONE_L_ARM, "melee"))
-	H.apply_damage(0.5*damage, BRUTE, BODY_ZONE_R_ARM, run_armor_check(BODY_ZONE_R_ARM, "melee"))
+	SSdamage.deal_damage(
+		attacker = src,
+		defender = H,
+		weapon = src,
+		damage = rand(5,15) * 10,
+		damage_type = BRUTE,
+		armor_type = ARMOR_MELEE,
+		spread_damage = TRUE,
+	)
 
 	var/turf/T = get_turf(src)
 	T.add_mob_blood(H)

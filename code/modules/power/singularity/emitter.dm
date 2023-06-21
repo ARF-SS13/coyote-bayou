@@ -152,6 +152,7 @@
 		state = EMITTER_UNWRENCHED
 		anchored = FALSE
 		M.visible_message(span_warning("[M] rips [src] free from its moorings!"))
+		return TRUE
 	else
 		..()
 	if(!anchored)

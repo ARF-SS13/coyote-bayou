@@ -16,9 +16,6 @@
 
 	var/used = 0
 
-/obj/item/dnainjector/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/item/dnainjector/proc/inject(mob/living/carbon/M, mob/user)
 	if(M.has_dna() && !HAS_TRAIT_NOT_FROM(M, TRAIT_RADIMMUNE,BLOODSUCKER_TRAIT) && !HAS_TRAIT(M, TRAIT_NOCLONE) && M.mob_biotypes & MOB_ORGANIC)
 		M.radiation += rand(20/(damage_coeff  ** 2),50/(damage_coeff  ** 2))

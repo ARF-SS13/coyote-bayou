@@ -195,7 +195,7 @@ Featuring:
 					LoseTarget()
 					return
 
-		return target.attack_animal(src)
+		return simple_attack_target(target, TRUE)
 
 
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot/handle_automated_action()

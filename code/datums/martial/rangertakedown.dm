@@ -56,7 +56,8 @@
 
 /datum/martial_art/rangertakedown/proc/ranger_takedown(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected)) //Applies damage to selected area.
-	var/armor_block = D.run_armor_check(affecting, "melee") //Checks Defender's armour.
+	var/list/armors = SSdamage.calculate_armor_values(D, null, ran_zone(A.zone_selected), ARMOR_MELEE)
+	var/armor_block = LAZYACCESS(armors, ARMOR_DR)
 	var/damage = (damage_roll(A,D) + 5) //Rolls damage based on the Attacker and Defender and if they have combat mode on or not, along with a flat +5 brute damage.
 	if(!CHECK_MOBILITY(D, MOBILITY_STAND)) //If the target is not upright, it is a regular disarm.
 		return FALSE

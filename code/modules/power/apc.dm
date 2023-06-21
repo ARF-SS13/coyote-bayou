@@ -792,20 +792,9 @@
 	last_nightshift_switch = world.time
 	set_nightshift(!nightshift_lights)
 
-/obj/machinery/power/apc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee" && damage_amount < 10 && (!(stat & BROKEN) || malfai))
-		return 0
-	. = ..()
-
-
 /obj/machinery/power/apc/obj_break(damage_flag)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		set_broken()
-
-/obj/machinery/power/apc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee" && damage_amount < damage_deflection)
-		return 0
-	. = ..()
 
 /obj/machinery/power/apc/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

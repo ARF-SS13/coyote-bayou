@@ -265,9 +265,6 @@
 	. = ..()
 	// move_update_air(T)
 
-/obj/structure/foamedmetal/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/structure/foamedmetal/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	playsound(src.loc, 'sound/weapons/tap.ogg', 100, 1)
 

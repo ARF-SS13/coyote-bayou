@@ -86,15 +86,12 @@
 
 /obj/structure/grille/attack_animal(mob/user)
 	. = ..()
-	if(!user.CheckActionCooldown(CLICK_CD_MELEE))
+	if(.)
 		return
-	user.DelayNextAction(flush = TRUE)
-	user.do_attack_animation(src)
-	if(!shock(user, 70) && !QDELETED(src)) //Last hit still shocks but shouldn't deal damage to the grille)
-		take_damage(rand(5,10), BRUTE, "melee", 1, attacked_by = user)
-
-/obj/structure/grille/attack_paw(mob/user)
-	return attack_hand(user)
+	if(shock(user, 70))
+		return TRUE
+	if(QDELETED(src)) //Last hit still shocks but shouldn't deal damage to the grille)
+		return TRUE
 
 /obj/structure/grille/hulk_damage()
 	return 60

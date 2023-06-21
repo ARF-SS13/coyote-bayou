@@ -54,13 +54,18 @@
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 //	item_flags = ITEM_CAN_PARRY does nothing from what i can tell arghhhggh todo: fix
 
-/obj/item/melee/onehanded/dragonfire/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
+/obj/item/melee/onehanded/dragonfire/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	if(!istype(M))
+	if(!istype(target))
 		return
-	M.apply_damage(20, BURN, "chest", M.run_armor_check("chest", "energy"))
-
-
+	SSdamage.deal_damage(
+		attacker = user,
+		defender = target,
+		damage = 20,
+		damage_type = BURN,
+		target_zone = ran_zone(user.zone_selected),
+		armor_type = ARMOR_ENERGY,
+	)
 
 /obj/item/melee/onehanded/machete
 	name = "simple machete"
@@ -86,15 +91,10 @@
 	desc = "A training machete made of tough wood."
 	icon_state = "machete_training"
 	force = 1
+	stamina_force = 20
 	throwforce = 5
 	wound_bonus = -20
 	block_chance = 8
-
-/obj/item/melee/onehanded/machete/training/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(20, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 /obj/item/melee/onehanded/machete/gladius
 	name = "gladius"
@@ -370,17 +370,12 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "pipe"
 	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
 	force = 26
+	stamina
 	throwforce = 10
 	throw_speed = 3
 	throw_range = 3
 	sharpness = SHARP_NONE
 	slot_flags = SLOT_BELT
-
-/obj/item/melee/onehanded/club/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(10, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 // War Club
 /obj/item/melee/onehanded/club/warclub
@@ -390,14 +385,9 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "warclub"
 	attack_verb = list("mashed", "bashed", "hit", "bludgeoned", "whacked")
 	force = 30
+	stamina_force = 20
 	throwforce = 25
 	block_chance = 5
-
-/obj/item/melee/onehanded/club/warclub/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(20, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 // Tire Iron
 /obj/item/melee/onehanded/club/tireiron
@@ -760,12 +750,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "sapper"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 27
-
-/obj/item/melee/unarmed/sappers/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(20, STAMINA, "head", M.run_armor_check("head", "melee"))
+	stamina_force = 20
 
 // Tiger claws		Keywords: Damage 33, Pointy
 /obj/item/melee/unarmed/tigerclaw

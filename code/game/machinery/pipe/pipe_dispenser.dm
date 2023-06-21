@@ -10,9 +10,6 @@
 	var/wait = 0
 	var/piping_layer = PIPING_LAYER_DEFAULT
 
-/obj/machinery/pipedispenser/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/machinery/pipedispenser/ui_interact(mob/user)
 	. = ..()
 	var/dat = "PIPING LAYER: <A href='?src=[REF(src)];layer_down=1'>--</A><b>[piping_layer]</b><A href='?src=[REF(src)];layer_up=1'>++</A><BR>"

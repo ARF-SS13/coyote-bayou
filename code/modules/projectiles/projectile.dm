@@ -209,7 +209,12 @@
 
 /obj/item/projectile/proc/prehit(atom/target)
 	return TRUE
-
+/* 
+ * An extra effect that happens after the projectile hits something and does damage.
+ * This is something that the projectile does, optionally considering the target.
+ * For things teh target does when hit, see bullet_act
+ * should return a BULLET_ACT_* define, don't wrap it in a list, bullet_act will do that
+ */
 /obj/item/projectile/proc/on_hit(atom/target, blocked = FALSE)
 	if(fired_from)
 		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle)
@@ -394,13 +399,14 @@
 	if(!prehit(target))
 		return process_hit(T, select_target(T), qdel_self, hit_something)		//Hit whatever else we can since that didn't work.
 	SEND_SIGNAL(target, COMSIG_PROJECTILE_PREHIT, args)
-	var/result = target.bullet_act(src, def_zone)
-	if(result == BULLET_ACT_FORCE_PIERCE)
+	var/list/damage_list = target.bullet_act(src, def_zone)
+	var/bullet_result = GET_BULLET_RETURN(damage_list)
+	if(bullet_result == BULLET_ACT_FORCE_PIERCE)
 		if(!CHECK_BITFIELD(movement_type, UNSTOPPABLE))
 			temporary_unstoppable_movement = TRUE
 			ENABLE_BITFIELD(movement_type, UNSTOPPABLE)
 		return process_hit(T, select_target(T), qdel_self, TRUE)		//Hit whatever else we can since we're piercing through but we're still on the same tile.
-	else if(result == BULLET_ACT_TURF)									//We hit the turf but instead we're going to also hit something else on it.
+	else if(bullet_result == BULLET_ACT_TURF)									//We hit the turf but instead we're going to also hit something else on it.
 		return process_hit(T, select_target(T), QDEL_SELF, TRUE)
 	else		//Whether it hit or blocked, we're done!
 		qdel_self = QDEL_SELF

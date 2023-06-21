@@ -257,6 +257,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(reskinnable_component)
 		AddComponent(reskinnable_component)
 
+	RegisterSignal(src, COMSIG_ATOM_GET_ATTACK_OVERRIDES, .proc/get_overrides)
+
+/obj/item/proc/get_overrides(atom/movable/attacker, atom/movable/defender, list/damage_list, list/overrides)
+	return
+
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
 		return 0
@@ -442,24 +447,21 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return
 	if(anchored)
 		return
-	if(loc == user && current_equipped_slot && current_equipped_slot != SLOT_HANDS)
-		if(current_equipped_slot in user.check_obscured_slots())
-			to_chat(src, span_warning("You are unable to unequip that while wearing other garments over it!"))
-			return FALSE
-
-
-	SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
-
-	if(throwing)
-		throwing.finalize(FALSE)
-	if(loc == user)
-		if(!user.temporarilyRemoveItemFromInventory(src))
-			return
-
-	pickup(user)
-	add_fingerprint(user)
-	if(!user.put_in_active_hand(src, FALSE, FALSE))
-		user.dropItemToGround(src)
+	return attack_hand(user)
+	// if(loc == user && current_equipped_slot && current_equipped_slot != SLOT_HANDS)
+	// 	if(current_equipped_slot in user.check_obscured_slots())
+	// 		to_chat(src, span_warning("You are unable to unequip that while wearing other garments over it!"))
+	// 		return FALSE
+	// SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE)
+	// if(throwing)
+	// 	throwing.finalize(FALSE)
+	// if(loc == user)
+	// 	if(!user.temporarilyRemoveItemFromInventory(src))
+	// 		return
+	// pickup(user)
+	// add_fingerprint(user)
+	// if(!user.put_in_active_hand(src, FALSE, FALSE))
+	// 	user.dropItemToGround(src)
 
 /obj/item/attack_alien(mob/user)
 	var/mob/living/carbon/alien/A = user
@@ -852,9 +854,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	return 0
 
 /obj/item/attack_animal(mob/living/simple_animal/M)
-	if (obj_flags & CAN_BE_HIT)
-		return ..()
-	return 0
+	if (!CHECK_BITFIELD(obj_flags, CAN_BE_HIT))
+		return TRUE // true prevents attacks
+	. = ..()
 
 /obj/item/mech_melee_attack(obj/mecha/M)
 	return 0

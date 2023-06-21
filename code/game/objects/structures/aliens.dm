@@ -10,15 +10,7 @@
 /obj/structure/alien
 	icon = 'icons/mob/alien.dmi'
 	max_integrity = 100
-
-/obj/structure/alien/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee")
-		switch(damage_type)
-			if(BRUTE)
-				damage_amount *= 0.25
-			if(BURN)
-				damage_amount *= 2
-	. = ..()
+	armor = ARMOR_VALUE_SPIDERWEB
 
 /obj/structure/alien/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -93,10 +85,6 @@
 	max_integrity = 160
 	resintype = "membrane"
 	canSmoothWith = list(/obj/structure/alien/resin/wall, /obj/structure/alien/resin/membrane)
-
-/obj/structure/alien/resin/attack_paw(mob/user)
-	return attack_hand(user)
-
 
 /obj/structure/alien/resin/CanAllowThrough(atom/movable/mover, border_dir)
 	..()
@@ -243,9 +231,6 @@
 			icon_state = "[base_icon]"
 		if(BURST)
 			icon_state = "[base_icon]_hatched"
-
-/obj/structure/alien/egg/attack_paw(mob/living/user)
-	return attack_hand(user)
 
 /obj/structure/alien/egg/attack_alien(mob/living/carbon/alien/user)
 	return attack_hand(user)

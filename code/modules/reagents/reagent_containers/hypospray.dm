@@ -17,9 +17,6 @@
 	var/ignore_flags = 0
 	var/infinite = FALSE
 
-/obj/item/reagent_containers/hypospray/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/item/reagent_containers/hypospray/attack(mob/living/M, mob/user)
 	if(!reagents.total_volume)
 		to_chat(user, span_warning("[src] is empty!"))

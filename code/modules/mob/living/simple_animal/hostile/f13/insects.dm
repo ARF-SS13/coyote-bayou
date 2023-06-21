@@ -497,7 +497,7 @@
 		return
 	if(prob(50))
 		visible_message(span_danger("[src] dodges [Proj]!"))
-		return BULLET_ACT_FORCE_PIERCE
+		return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_FORCE_PIERCE)
 	else
 		. = ..()
 

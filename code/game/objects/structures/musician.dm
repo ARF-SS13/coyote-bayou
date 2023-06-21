@@ -360,9 +360,6 @@
 		return
 	interact(user)
 
-/obj/structure/piano/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/structure/piano/interact(mob/user)
 	ui_interact(user)
 

@@ -49,18 +49,15 @@
 	. = ..()
 	if(!.) //unsuccessful slime shock
 		return
-	var/stunprob = M.powerlevel * 7 + 10
-	var/damage = M.powerlevel * rand(6,10)
+	if(!islist(.))
+		return
+	var/list/damage_list = .
+	var/damage = GET_DAMAGE(damage_list)
+	var/stunprob = ((damage * 7) + 10)
 	if(prob(stunprob) && M.powerlevel >= 8)
-		flash_act(affect_silicon = TRUE) //my borg eyes!
-	if(M.is_adult)
-		damage += rand(10, 20)
-	else
-		damage += rand(2, 17)
-	adjustBruteLoss(damage)
+		flash_act(stunprob, affect_silicon = TRUE) //my borg eyes!
 	updatehealth()
-
-	return
+	return damage_list
 
 /mob/living/silicon/robot/on_attack_hand(mob/living/carbon/human/user)
 	add_fingerprint(user)

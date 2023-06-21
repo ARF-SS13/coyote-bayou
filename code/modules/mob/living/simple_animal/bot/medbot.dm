@@ -152,9 +152,6 @@
 	text_dehack = "You reset [name]'s reagent processor circuits."
 	text_dehack_fail = "[name] seems damaged and does not respond to reprogramming!"
 
-/mob/living/simple_animal/bot/medbot/attack_paw(mob/user)
-	return attack_hand(user)
-
 /mob/living/simple_animal/bot/medbot/get_controls(mob/user)
 	var/dat
 	dat += hack(user)

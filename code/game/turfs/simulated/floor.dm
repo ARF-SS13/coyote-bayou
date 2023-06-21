@@ -109,9 +109,6 @@
 	. = ..()
 	update_visuals()
 
-/turf/open/floor/attack_paw(mob/user)
-	return attack_hand(user)
-
 /turf/open/floor/proc/gets_drilled()
 	return
 

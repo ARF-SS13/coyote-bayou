@@ -119,18 +119,11 @@
 			playsound(src, 'sound/effects/spray2.ogg', 100, 1)
 			return FALSE
 
-/turf/closed/wall/attack_paw(mob/living/user)
-	return attack_hand(user)
-
 /turf/closed/wall/attack_animal(mob/living/simple_animal/M)
-	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
-		return
-	M.DelayNextAction()
-	M.do_attack_animation(src)
 	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
 		dismantle_wall(1)
-		return
+		return TRUE
 
 /turf/closed/wall/attack_hulk(mob/living/carbon/user)
 	..()

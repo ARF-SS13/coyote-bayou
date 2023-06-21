@@ -77,7 +77,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/bullet_act(obj/item/projectile/P)
 	visible_message(span_danger("The [P.name] was repelled by [name]'s girth!"))
-	return BULLET_ACT_BLOCK
+	return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_BLOCK) 
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	vision_range = 9

@@ -234,7 +234,7 @@
 	if((Proj.damage_type == BURN))
 		adjustBruteLoss(-abs(Proj.damage)) //fire projectiles heals slimes.
 		Proj.on_hit(src)
-		return BULLET_ACT_BLOCK
+		return list(BULLET_ACT_RETURN_VALUE = BULLET_ACT_BLOCK) 
 	return ..()
 
 /mob/living/simple_animal/slime/emp_act(severity)
@@ -267,12 +267,16 @@
 		Feedstop(silent = TRUE)
 		visible_message(span_danger("[M] pulls [src] off!"))
 		return
+	if(!islist(.))
+		return
+	var/list/damage_list = .
+	var/damage = GET_DAMAGE(damage_list)
 	attacked += 5
 	if(nutrition >= 100) //steal some nutrition. negval handled in life()
-		adjust_nutrition(-50 - (40 * M.is_adult))
-		M.adjust_nutrition(50 + (40 * M.is_adult), get_max_nutrition(), TRUE)
+		adjust_nutrition(-damage*2 - (40 * M.is_adult))
+		M.adjust_nutrition(damage*2 + (40 * M.is_adult), get_max_nutrition(), TRUE)
 	if(health > 0)
-		M.adjustBruteLoss(-10 + (-10 * M.is_adult))
+		M.adjustBruteLoss(-damage + (-damage * M.is_adult))
 		M.updatehealth()
 
 /mob/living/simple_animal/slime/attack_animal(mob/living/simple_animal/M)
@@ -490,3 +494,37 @@
 
 /mob/living/simple_animal/slime/random/Initialize(mapload, new_colour, new_is_adult)
 	. = ..(mapload, pick(slime_colours), prob(50))
+
+/mob/living/simple_animal/slime/proc/electrozap(mob/living/defender)
+	if(!isliving(defender))
+		return
+	if(powerlevel <= 0)
+		return
+	var/stunprob = powerlevel * 7 + 10  // 17 at level 1, 80 at level 10
+	if(!prob(stunprob))
+		return
+	powerlevel -= 3
+	if(powerlevel < 0)
+		powerlevel = 0
+	visible_message(
+		span_danger("The [src] has shocked [defender]!"),
+		target = src,
+		target_message = span_danger("You have shocked [src]!")
+	)
+	do_sparks(5, TRUE, defender)
+	var/power = powerlevel + rand(0,3)
+	defender.DefaultCombatKnockdown(power*20)
+	if(defender.stuttering < power)
+		defender.stuttering = power
+	if (prob(stunprob) && powerlevel >= 8)
+		SSdamage.deal_damage(
+			attacker = src,
+			defender = defender,
+			weapon = "slime zap",
+			damage = powerlevel * rand(6,10),
+			damage_type = BURN,
+			target_zone = ran_zone(BODY_ZONE_CHEST),
+			armor_type = ARMOR_ENERGY,
+		)
+		defender.updatehealth()
+

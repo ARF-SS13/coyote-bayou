@@ -10,14 +10,11 @@
 	var/selected_id
 	var/list/obj/machinery/launchpad/launchpads
 	var/maximum_pads = 4
+	monkey_can_use = FALSE
 
 /obj/machinery/computer/launchpad/Initialize()
 	launchpads = list()
 	. = ..()
-
-/obj/machinery/computer/launchpad/attack_paw(mob/user)
-	to_chat(user, span_warning("You are too primitive to use this computer!"))
-	return
 
 /obj/machinery/computer/launchpad/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_MULTITOOL)

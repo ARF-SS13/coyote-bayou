@@ -758,13 +758,10 @@
 		if(user)
 			src.attack_ai(user)
 
-/obj/machinery/door/airlock/attack_animal(mob/user)
+/obj/machinery/door/airlock/post_attack_animal(mob/user, list/damage_list)
 	. = ..()
 	if(isElectrified())
 		shock(user, 100)
-
-/obj/machinery/door/airlock/attack_paw(mob/user)
-	return attack_hand(user)
 
 /obj/machinery/door/airlock/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!(issilicon(user) || IsAdminGhost(user)))

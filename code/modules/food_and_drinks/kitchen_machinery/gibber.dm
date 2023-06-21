@@ -54,9 +54,6 @@
 	else
 		. += "gridle"
 
-/obj/machinery/gibber/attack_paw(mob/user)
-	return attack_hand(user)
-
 /obj/machinery/gibber/container_resist(mob/living/user)
 	go_out()
 

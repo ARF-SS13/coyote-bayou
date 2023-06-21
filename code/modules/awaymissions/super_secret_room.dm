@@ -108,7 +108,8 @@
 	return interact(user)
 
 /obj/structure/speaking_tile/attack_animal(mob/user)
-	return interact(user)
+	interact(user)
+	return TRUE
 
 /obj/structure/speaking_tile/proc/SpeakPeace(list/statements)
 	for(var/i in 1 to statements.len)

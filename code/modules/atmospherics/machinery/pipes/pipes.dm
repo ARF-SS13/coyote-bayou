@@ -105,11 +105,6 @@
 /obj/machinery/atmospherics/pipe/returnPipenets()
 	. = list(parent)
 
-/obj/machinery/atmospherics/pipe/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	if(damage_flag == "melee" && damage_amount < 12)
-		return 0
-	. = ..()
-
 /obj/machinery/atmospherics/pipe/proc/paint(paint_color)
 	add_atom_colour(paint_color, FIXED_COLOUR_PRIORITY)
 	pipe_color = paint_color

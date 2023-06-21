@@ -86,9 +86,6 @@
 	if(forced)
 		return ..()
 
-/turf/open/floor/engine/attack_paw(mob/user)
-	return attack_hand(user)
-
 /turf/open/floor/engine/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	user.Move_Pulled(src)
 
