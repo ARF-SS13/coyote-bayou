@@ -7222,14 +7222,11 @@
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building/abandoned)
 "dPc" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
+/obj/effect/landmark/vertibird{
+	id = "Redlick - Ashdown";
+	name = "Redlick - Ashdown"
 	},
-/obj/structure/flora/tree/jungle/small{
-	color = "#d9b51c"
-	},
-/obj/structure/flora/small_bush,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "dPh" = (
 /obj/structure/barricade/wooden/strong,
@@ -10222,11 +10219,6 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/wasteland)
-"fqZ" = (
-/obj/structure/flora/small_bush,
-/obj/structure/flora/grass/jungle,
-/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "frh" = (
 /turf/open/floor/plasteel/neutral/side{
@@ -17519,13 +17511,6 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland/city)
-"jlc" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
 "jlh" = (
 /obj/structure/fence{
 	dir = 4
@@ -25141,15 +25126,6 @@
 /turf/open/indestructible/ground/outside/savannah/edgesnew{
 	dir = 10
 	},
-/area/f13/wasteland)
-"nmT" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
-	},
-/obj/structure/flora/tree/jungle/small{
-	color = "#d9b51c"
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nmX" = (
 /turf/closed/indestructible/rock{
@@ -38302,14 +38278,6 @@
 /area/f13/building)
 "umo" = (
 /obj/structure/nest/mirelurk,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"ump" = (
-/obj/structure/flora/tree/jungle/small{
-	color = "#d9b51c"
-	},
-/obj/structure/flora/small_bush,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "umO" = (
@@ -97581,10 +97549,10 @@ iKf
 iKf
 afz
 iKf
-tiN
-iKf
-iKf
-pkw
+yky
+qES
+qES
+qES
 iKf
 tfn
 tfn
@@ -97834,15 +97802,15 @@ whc
 iKf
 iKf
 lmY
-smZ
-iKf
-afz
-lmY
-iKf
 tiN
 iKf
 iKf
-iKf
+qES
+qES
+yky
+qES
+qES
+qES
 iKf
 tfn
 iKf
@@ -98092,15 +98060,15 @@ iKf
 lmY
 iKf
 iKf
-dPc
-nmT
-iKf
 pkw
 iKf
-pkw
-iKf
-iKf
-iKf
+qES
+qES
+qES
+qES
+qES
+qES
+qES
 iKf
 iKf
 iKf
@@ -98351,13 +98319,13 @@ iKf
 iKf
 iKf
 iKf
-ump
-pkw
-iKf
-iKf
-iKf
-iKf
-iKf
+yky
+qES
+qES
+qES
+dPc
+qES
+qES
 iKf
 iKf
 qES
@@ -98607,14 +98575,14 @@ iKf
 iKf
 iKf
 iKf
-iKf
-whc
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
+qES
+qES
+qES
+qES
+qES
+qES
+qES
+qES
 iKf
 iKf
 iKf
@@ -98864,13 +98832,13 @@ iKf
 iKf
 iKf
 iKf
-iKf
-iKf
-wEK
-iKf
-iKf
-tiN
-iKf
+qES
+qES
+qES
+qES
+qES
+yky
+qES
 tiN
 lmY
 qES
@@ -99122,12 +99090,12 @@ iKf
 qES
 qES
 qES
-whc
-iKf
-iKf
-tfn
-iKf
-iKf
+qES
+qES
+qES
+qES
+qES
+qES
 lmY
 iKf
 qES
@@ -99380,12 +99348,12 @@ qES
 uhb
 qES
 qES
-iKf
-iKf
+qES
+qES
+yky
+qES
 tiN
-egf
-tiN
-jlc
+yky
 yky
 qES
 iKf
@@ -99637,9 +99605,9 @@ qES
 uhb
 qES
 qES
-frx
-iKf
-fqZ
+qES
+qES
+qES
 eQD
 qES
 qES
@@ -99896,7 +99864,7 @@ qES
 qES
 qES
 qES
-kVN
+qES
 qES
 qES
 qES
