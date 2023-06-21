@@ -393,18 +393,13 @@
 	icon_state = "baseballspike"
 	icon_prefix = "baseballspike"
 	force = 26
+	stamina_force = 15
 	throwforce = 15
 	wound_bonus = 5
 	sharpness = SHARP_POINTY
 	wielded_icon = "baseballspike2"
 	force_unwielded = 26
 	force_wielded = 40
-
-/obj/item/twohanded/baseball/spiked/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(15, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 // Louisville Slugger		Keywords: Damage 28/42, Damage bonus Stamina
 /obj/item/twohanded/baseball/louisville
@@ -415,14 +410,9 @@
 	attack_verb = list("thwacked", "bashed", "louisville slugged", "hit", "bludgeoned", "whacked", "bonked")
 	wielded_icon = "louisville2"
 	force = 25
+	stamina_force = 25
 	force_unwielded = 28
 	force_wielded = 42
-
-/obj/item/twohanded/baseball/louisville/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(25, STAMINA, null, 0)
 
 // Golf Club		Keywords: Damage 22/32, Damage bonus Stamina
 /obj/item/twohanded/baseball/golfclub
@@ -433,16 +423,9 @@
 	attack_verb = list("smashed", "bashed", "fored", "hit", "bludgeoned", "whacked")
 	wielded_icon = "golfclub2"
 	force = 22
+	stamina_force = 20
 	force_unwielded = 22
 	force_wielded = 32
-
-/obj/item/twohanded/baseball/golfclub/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(20, STAMINA, "chest", M.run_armor_check("chest", "melee"))
-
-
 
 ///////////////////
 // SLEDGEHAMMERS //
@@ -464,7 +447,6 @@
 	. = ..()
 	AddComponent(/datum/component/jousting/sledge)
 
-
 // Sledgehammer			Keywords: Damage 25/45, Blacksmithing
 /obj/item/twohanded/sledgehammer/simple
 	icon_state = "hammer-sledge"
@@ -478,8 +460,13 @@
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
 	if(istype(A, /obj/structure))
-		var/obj/structure/W = A
-		W.take_damage(20, BRUTE, "melee", 0, attacked_by = user)
+		SSdamage.deal_damage(
+			attacker = user,
+			defender = A,
+			damage = 20,
+			damage_type = BRUTE,
+			armor_type = ARMOR_MELEE,
+		)
 
 /////////////////////////////////
 // ADVANCED TWO HANDED WEAPONS //
@@ -511,24 +498,22 @@
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
+	var/extra_damage = 0
 	if(istype(A, /obj/machinery/door/airlock))
-		var/obj/machinery/door/airlock/M = A
-		M.take_damage(40, BRUTE, "melee", 0, attacked_by = user)
-		playsound(loc, hitsound, 70, TRUE)
+		extra_damage = 40
 	else if(istype(A, /obj/structure/simple_door/metal))
-		var/obj/structure/simple_door/metal/G = A
-		G.take_damage(30, BRUTE, "melee", 0, attacked_by = user)
-		playsound(loc, hitsound, 70, TRUE)
+		extra_damage = 30
 	else if(istype(A, /obj/machinery/door/unpowered))
-		var/obj/machinery/door/unpowered/U = A
-		U.take_damage(20, BRUTE, "melee", 0, attacked_by = user)
+		extra_damage = 20
+	if(extra_damage)
 		playsound(loc, hitsound, 70, TRUE)
-	else if(istype(A, /obj/structure))
-		playsound(loc, hitsound, 70, TRUE)
-	else if(istype(A, /obj/machinery))
-		playsound(loc, hitsound, 70, TRUE)
-	else if(istype(A, /turf/closed))
-		playsound(loc, hitsound, 70, TRUE)
+		SSdamage.deal_damage(
+			attacker = user,
+			defender = A,
+			damage = extra_damage,
+			damage_type = BRUTE,
+			armor_type = ARMOR_MELEE,
+		)
 
 // Proton axe			Keywords: Damage 28/55 fire axe but with a twist, if this works. I've either given it a cool gimmick, or broken everything
 /obj/item/melee/transforming/energy/axe/protonaxe
@@ -573,14 +558,18 @@
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
+	var/extra_damage = 0
 	if(istype(A, /obj/structure))
-		var/obj/structure/W = A
-		W.take_damage(25, BRUTE, "melee", 0, attacked_by = user)
-		playsound(loc, hitsound, 80, TRUE)
-	else if(istype(A, /obj/machinery))
-		playsound(loc, hitsound, 80, TRUE)
-	else if(istype(A, /turf/closed))
-		playsound(loc, hitsound, 80, TRUE)
+		extra_damage = 25
+	if(extra_damage)
+		playsound(loc, hitsound, 70, TRUE)
+		SSdamage.deal_damage(
+			attacker = user,
+			defender = A,
+			damage = extra_damage,
+			damage_type = BRUTE,
+			armor_type = ARMOR_MELEE,
+		)
 
 // Rocket-assisted Sledgehammer			Keywords: Damage 20/56, Mining  Issues left: mining only when dual wielded, sound to play always on hit
 /obj/item/twohanded/sledgehammer/rockethammer
@@ -612,12 +601,14 @@
 		return
 	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
-		W.take_damage(10, BRUTE, "melee", 0, attacked_by = user)
+		SSdamage.deal_damage(
+			attacker = user,
+			defender = A,
+			damage = 30,
+			damage_type = BRUTE,
+			armor_type = ARMOR_MELEE,
+		)
 		playsound(loc, hitsound, 50, TRUE)
-	else if(istype(A, /obj/machinery))
-		playsound(loc, hitsound, 80, TRUE)
-	else if(istype(A, /turf/closed))
-		playsound(loc, hitsound, 80, TRUE)
 
 // The Court Martial	Keywords: UNIQUE, Damage 20/52, Inferior mining
 /obj/item/twohanded/sledgehammer/rockethammer/courtmartial
@@ -628,19 +619,6 @@
 	icon_state = "hammer-courtmartial"
 	icon_prefix = "hammer-courtmartial"
 	toolspeed = 0.8
-
-/obj/item/twohanded/sledgehammer/rockethammer/courtmartial/afterattack(atom/A, mob/living/user, proximity)
-	. = ..()
-	if(!proximity || !wielded || IS_STAMCRIT(user))
-		return
-	if(istype(A, /obj/structure))
-		var/obj/structure/W = A
-		W.take_damage(10, BRUTE, "melee", 0, attacked_by = user)
-		playsound(loc, hitsound, 80, TRUE)
-	else if(istype(A, /obj/machinery))
-		playsound(loc, hitsound, 80, TRUE)
-	else if(istype(A, /turf/closed))
-		playsound(loc, hitsound, 80, TRUE)
 
 // Atom's Judgement			Keywords: UNIQUE, Damage 25/55, Damage bonus Rad
 /obj/item/twohanded/sledgehammer/atomsjudgement
@@ -653,10 +631,11 @@
 	force_unwielded = 25
 	force_wielded = 55
 
-/obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
+/obj/item/twohanded/sledgehammer/atomsjudgement/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
-	if(!istype(M))
+	if(!isliving(A))
 		return
+	var/mob/living/M = A
 	M.apply_effect(300, EFFECT_IRRADIATE, 0)
 
 
@@ -681,17 +660,12 @@
 	icon_state = "staff-shaman"
 	icon_prefix = "staff-shaman"
 	force = 15
+	stamina_force = 25
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	wielded_icon = "staff-shaman2"
 	force_unwielded = 15
 	force_wielded = 30
 	attack_speed = 8
-
-/obj/item/twohanded/sledgehammer/shamanstaff/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(25, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 // Staff of Mars			Keywords: Damage 10/10, Damage bonus Burn + Stamina
 /obj/item/twohanded/sledgehammer/marsstaff
@@ -705,26 +679,6 @@
 	force = 5
 	force_unwielded = 5
 	force_wielded = 10
-
-/obj/item/twohanded/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user, attackchain_flags, list/overrides)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(2, BURN, 0)
-	M.apply_damage(25, STAMINA, "chest", M.run_armor_check("chest", "melee"))
-
-/obj/item/twohanded/sledgehammer/marsstaff/pickup(mob/living/user, slot)
-	..()
-	if(ishuman(user))
-		var/mob/living/carbon/human/U = user
-		if(U.job in list("Priestess of Mars"))
-		else
-			to_chat(user, span_userdanger("You invoke the wrath of Mars!"))
-			user.emote("scream")
-			user.apply_damage(30, BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-			user.dropItemToGround(src, TRUE)
-			user.Knockdown(50)
-		return
 
 // Chainsaw			Keywords: Damage 25/55, big bonus vs wooden barricades
 /obj/item/twohanded/chainsaw
