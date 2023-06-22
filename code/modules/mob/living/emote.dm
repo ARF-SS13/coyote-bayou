@@ -207,6 +207,14 @@
 	wing_time = 10
 */
 
+/datum/emote/living/fchuckle
+	key = "fchuckle"
+	key_third_person = "fchuckles"
+	message = "chuckles."
+	message_param = "chuckles at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
+
 /datum/emote/living/frown
 	key = "frown"
 	key_third_person = "frowns"
