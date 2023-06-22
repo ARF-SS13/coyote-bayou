@@ -460,7 +460,7 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
-	init_recoil = AUTOPISTOL_RECOIL(1.5, 1.5)
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
 
 /obj/item/gun/energy/laser/auto/twin
 	name = "twin-shot RCW carbine"
@@ -487,7 +487,7 @@
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
-	init_recoil = AUTOPISTOL_RECOIL(2, 2)
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
 
 /obj/item/gun/energy/laser/auto/nayriin
 	name = "Lucy"

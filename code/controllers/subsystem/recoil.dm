@@ -46,18 +46,18 @@ SUBSYSTEM_DEF(recoil)
 	var/list/gun_recoils = list()
 
 	/// Global recoil reduction per second
-	var/recoil_reduction_per_second = 2
+	var/recoil_reduction_per_second = 4
 	/// Global exponent to a mob's two recoils per tick, used to remove a scaling portion of the mob's recoil
 	/// Only applied to shoot recoil if they arent shooting, and move recoil if they arent moving
 	/// Every tick (0.2 seconds), reduces current recoil by (current recoil ** this var)
 	/// Without the above var, it'll never hit zero!
-	var/recoil_reduction_exponent_per_tick = 0.5
+	var/recoil_reduction_exponent_per_tick = 0.65
 	var/recoil_reduction_exponent_per_tick_at_softcap = 0.75
-	var/recoil_softcap = RECOIL_SOFTCAP
+	var/recoil_softcap = 40
 	var/recoil_movement_spread_cap = 20
 
-	var/recoil_movement_increase_multiplier = 1
-	var/recoil_shoot_increase_multiplier = 1
+	var/recoil_movement_increase_multiplier = 0.5
+	var/recoil_shoot_increase_multiplier = 0.25
 
 	var/recoil_movement_highest_delay = 3
 	var/recoil_movement_lowest_slowdown = 1
@@ -69,7 +69,7 @@ SUBSYSTEM_DEF(recoil)
 	/// Time a human has to not move before they can move without recoil
 	var/recoil_scooch_time = RECOIL_SCOOCH_TIME
 	/// Distance humans can move without movement recoil if they havent moved in a bit
-	var/scooch_distance = RECOIL_SCOOCH_TILES
+	var/scooch_distance = 4
 	/// Time after shooting that the recoil system applies exponential decay to recoil
 	var/recoil_post_shoot_fast_decay_delay = RECOIL_SHOOT_TIME
 	/// Time between adding/recording average firing rate
@@ -157,6 +157,8 @@ SUBSYSTEM_DEF(recoil)
 // 	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
 
 /datum/controller/subsystem/recoil/proc/get_output_offset(spread, obj/item/gun/shoot)
+	if(spread <= 3)
+		return (rand(-300, 300) * 0.01)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
 	var/turbofuck_unwielded_spread = FALSE
