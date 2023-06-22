@@ -55,8 +55,10 @@ export const RangedInfo = (props, context) => {
     gun_chambered,
     gun_is_chambered,
   } = data;
-  const fixed_damage_multiplier = gun_damage_multiplier.toFixed(2);
-  const fixed_penetration_multiplier = gun_penetration_multiplier.toFixed(2);
+  const prefixed_dm = gun_damage_multiplier || 0;
+  const prefixed_pm = gun_penetration_multiplier || 0;
+  const fixed_damage_multiplier = prefixed_dm.toFixed(2);
+  const fixed_penetration_multiplier = prefixed_pm.toFixed(2);
   const firemode_rpm = firemode_current["fire_rate"];
   const firemode_name = firemode_current["action_kind"];
   const firemode_desc = firemode_current["desc"];
@@ -64,8 +66,8 @@ export const RangedInfo = (props, context) => {
   if (gun_is_chambered && !!gun_chambered.projectile_damage) {
     const plts = gun_chambered.pellets;
     const fxdm = fixed_damage_multiplier;
-    const pdv = gun_chambered.projectile_damage;
-    const gdmg = gun_damage_multiplier;
+    const pdv = gun_chambered.projectile_damage || 0;
+    const gdmg = gun_damage_multiplier || 0;
     let ufdv = Number(pdv) * Number(gdmg);
     if (gun_chambered.pellets > 1) {
       // oh yeah thats much more readable, thanks linter
@@ -137,6 +139,7 @@ export const MeleeInfo = (props, context) => {
     gun_melee_wielded,
     gun_armor_penetration,
   } = data;
+  const prefixed_gap = gun_armor_penetration || 0;
   return (
     <Section title={<Tooltipify name={"Melee Data"} tip={gun_name} big={1} />} >
       <Table
@@ -166,7 +169,7 @@ export const MeleeInfo = (props, context) => {
             <Tooltipify name={"AP: "} tip={"Amount of Damage Resistance that this will bypass."} />
           </Table.Cell>
           <Table.Cell>
-            {gun_armor_penetration.toFixed(2)}
+            {prefixed_gap.toFixed(2)}
           </Table.Cell>
         </Table.Row>
       </Table>

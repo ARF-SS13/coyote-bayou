@@ -44,7 +44,7 @@
 /obj/item/gun/flintlock/ui_data(mob/user)
 	var/list/data = ..()
 	data["cockable"] = TRUE
-	data["cocked"] = cocked
+	data["cocked"] = cocked || FALSE
 	data["flintlock_load_time"] = (load_time * 0.1) || 0
 	data["flintlock_prefire_time"] = (prefire_time * 0.1) || 0
 	data["has_magazine"] = TRUE

@@ -1105,8 +1105,8 @@ ATTACHMENTS
 	data["gun_name"] = name || "Unknown"
 	data["gun_damage_multiplier"] = damage_multiplier || 1
 	data["gun_penetration_multiplier"] = penetration_multiplier || 1
-	data["gun_melee"] = force_unwielded || force
-	data["gun_melee_wielded"] = force_wielded || round(force * FALLBACK_FORCE)
+	data["gun_melee"] = force_unwielded || force || 0
+	data["gun_melee_wielded"] = force_wielded || round(force * FALLBACK_FORCE) || 0
 	data["gun_armor_penetration"] = armour_penetration || 0
 	var/list/chambered_data = istype(chambered) ? chambered.get_statblock(TRUE) : ui_data_projectile(get_dud_projectile())
 	data["gun_chambered"] = chambered_data
