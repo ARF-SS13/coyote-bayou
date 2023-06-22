@@ -246,3 +246,7 @@
 	path = /obj/item/shield/coyote/pegasusshield
 	cost = 2
 
+/datum/gear/hands/shield/riotweathered
+	name = "Weathered Riot Shield"
+	path = /obj/item/shield/coyote/riotweathered
+	cost = 2
