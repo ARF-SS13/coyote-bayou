@@ -209,10 +209,30 @@
 	if((user != src) && mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_IS_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, null, block_return) & BLOCK_SUCCESS)
 		return FALSE
 	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
+	var/armorcheck = "melee"
+	switch(I.damtype)
+		if(BRUTE)
+			armorcheck = "melee"
+		if(BURN)
+			armorcheck = "laser"		
+	var/armor = run_armor_check(null, armorcheck, null, null, 0, null)
+	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null), 0)
 	send_item_attack_message(I, user, null, totitemdamage)
 	I.do_stagger_action(src, user, totitemdamage)
 	if(I.force)
-		apply_damage(totitemdamage, I.damtype)
+		apply_damage(
+			totitemdamage, 
+			I.damtype,
+			BODY_ZONE_CHEST,
+			armor,
+			FALSE,
+			FALSE,
+			0,
+			0,
+			I.sharpness,
+			dt,
+			TRUE
+		)
 		if(I.damtype == BRUTE)
 			if(prob(33))
 				I.add_mob_blood(src)

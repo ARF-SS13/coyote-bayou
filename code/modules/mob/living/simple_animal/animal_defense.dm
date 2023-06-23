@@ -120,18 +120,9 @@
 	return ..()
 
 /mob/living/simple_animal/proc/attack_threshold_check(damage, damagetype = BRUTE, armorcheck = "melee")
-	var/temp_damage = damage
-	if(!damage_coeff[damagetype])
-		temp_damage = 0
-	else
-		temp_damage *= damage_coeff[damagetype]
-	if(temp_damage <= 0)
-		visible_message(span_warning("[src] looks unharmed!"))
-		return FALSE
-	
 	var/armor = run_armor_check(null, armorcheck, null, null, 0, null)
 	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null), 0)
-	apply_damage(temp_damage, damagetype, null, armor, null, null, null, damage_threshold = dt)
+	apply_damage(damage, damagetype, null, armor, null, null, null, damage_threshold = dt)
 	return TRUE
 
 /mob/living/simple_animal/bullet_act(obj/item/projectile/P)
