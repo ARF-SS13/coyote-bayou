@@ -1277,6 +1277,8 @@ ATTACHMENTS
 	force = initial(force)
 	if(isnull(force))
 		force = LAZYACCESS(weapon_class, "force")
+		if(isnull(force))
+			force = WEAPON_FORCE_BLUNT_SMALL
 	armour_penetration = initial(armour_penetration)
 	sharpness = initial(sharpness)
 	braced = initial(braced)
