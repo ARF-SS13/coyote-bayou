@@ -1275,6 +1275,8 @@ ATTACHMENTS
 	zoom_factor = initial(zoom_factor)
 	vision_flags = initial(vision_flags)
 	force = initial(force)
+	if(isnull(force))
+		force = LAZYACCESS(weapon_class, "force")
 	armour_penetration = initial(armour_penetration)
 	sharpness = initial(sharpness)
 	braced = initial(braced)
