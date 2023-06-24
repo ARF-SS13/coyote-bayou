@@ -975,6 +975,31 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			Export("##action=load_rsc", file)
 			stoplag()
 		#endif
+		preload_every_fucking_sound_file() // ha ha what a great idea
+
+GLOBAL_LIST_EMPTY(every_fucking_sound_file)
+
+/// Okay maybe not every sound file, just the important ones
+/client/proc/populate_every_fucking_sound_file()
+	if(LAZYLEN(GLOB.every_fucking_sound_file))
+		return
+	var/list/fucking_sound_folders = list(
+		"sounds/f13npc/",
+		"sounds/f13weapons/",
+		"sounds/creatures/",
+		"sounds/voice/",
+	)
+	for(var/folder in fucking_sound_folders)
+		GLOB.every_fucking_sound_file |= pathwalk(folder)
+
+/// Goes through every sound file in the universe and forcefeeds them all to the client
+/// Cus this game doesnt have enough loading
+/client/proc/preload_every_fucking_sound_file()
+	if(!LAZYLEN(GLOB.every_fucking_sound_file))
+		populate_every_fucking_sound_file()
+	for (var/file in GLOB.every_fucking_sound_file)
+		Export("##action=load_rsc", file)
+		stoplag()
 
 
 //Hook, override it to run code when dir changes
