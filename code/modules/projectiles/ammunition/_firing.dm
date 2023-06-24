@@ -35,22 +35,23 @@
 	if(!isliving(user))
 		return
 	var/gun_bullet_spread = 0
-	gun_bullet_spread += BB?.spread || 0
-	gun_bullet_spread += distro || 0
-	gun_bullet_spread += variance || 0
-	var/player_spread = spread
-	if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
-		player_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
-	if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
-		player_spread += 2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
-	if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
-		player_spread += 2//This is cripplingly bad. Trust me.
+	gun_bullet_spread += BB?.spread || 0 // bullet's inherent inaccuracy
+	gun_bullet_spread += distro || 0 // gun's inaccuracy
+	gun_bullet_spread += variance || 0 // cartridge's inaccuracy
+	var/player_spread = spread // spread is the player's recoil
 	if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
-		player_spread *= 0.1 // nicer shot
-	else if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
-		player_spread *= 0.5 // Nice shot!
-	. = max(gun_bullet_spread, player_spread) // Either the gun+casing+bullet's inaccuracy, or your own shitty accuracy
-	. = clamp(round(.), 0, MAX_ACCURACY_OFFSET)
+		player_spread = 0 // nice shot
+	else
+		if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
+			player_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
+		if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
+			player_spread *= 2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties! - jk they do
+		if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
+			player_spread *= 2//This is cripplingly bad. Trust me.
+		else if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
+			player_spread *= 0.5 // Nice shot!
+	// . = max(gun_bullet_spread, player_spread) // Either the gun+casing+bullet's inaccuracy, or your own shitty accuracy
+	. = gun_bullet_spread + player_spread // Note that this *can* be brought below zero
 	. = SSrecoil.get_output_offset(.)
 
 /obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)

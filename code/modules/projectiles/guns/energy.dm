@@ -44,7 +44,7 @@
 	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
 	dryfire_text = "*power failure*"
 
-	init_recoil = RIFLE_RECOIL(1, 1)
+	init_recoil = LASER_RIFLE_RECOIL(1, 1)
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()

@@ -235,20 +235,24 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 
-//Wattz 1000 Magneto-laser pistol
+//Wattz 1000 smart-laser pistol
 /obj/item/gun/energy/laser/wattz/magneto
-	name = "Wattz 1000 magneto-laser pistol"
-	desc = "This Wattz 1000 laser pistol has been upgraded with a magnetic field targeting system that tightens the laser emission, giving this pistol extra penetrating power."
+	name = "Wattz 1000 smart-laser pistol"
+	desc = "This Wattz 1000 has been modified with a 'smart' free-floating magnetic aperture, capable of compensating for the user's \
+			movement and firing position, effectively ensuring that each shot goes exactly where the gun is pointed. Uses small energy cells."
 	icon_state = "magnetowattz"
 	item_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/magneto)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
+	added_spread = -100
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+	init_recoil = LASER_HANDGUN_RECOIL_RARE(1, 1)
+
 //Wattz 1000s Laser pistol
 /obj/item/gun/energy/laser/wattzs
 	name = "Wattz 1000s laser pistol"
@@ -266,6 +270,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
 //Recharger Pistol
 /obj/item/gun/energy/laser/wattz/recharger
 	name = "Recharger Pistol"
@@ -282,7 +287,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
+
 //AEP 7 Laser pistol
 /obj/item/gun/energy/laser/pistol
 	name = "\improper AEP7 laser pistol"
@@ -301,7 +307,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 
 // starter kit havin ass
 /obj/item/gun/energy/laser/pistol/worn
@@ -381,7 +387,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
-	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
 //Solar Scorcher
 /obj/item/gun/energy/laser/solar
 	name = "\improper Solar Scorcher"
@@ -400,7 +407,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
 //Badland's Special
 /obj/item/gun/energy/laser/badlands
 	name = "\improper Badland's Special"
@@ -441,7 +449,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
 //Compact RCW
 
@@ -460,7 +468,7 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
-	init_recoil = AUTOPISTOL_RECOIL(1, 1)
+	init_recoil = LASER_SMG_RECOIL(1, 1)
 
 /obj/item/gun/energy/laser/auto/twin
 	name = "twin-shot RCW carbine"
@@ -487,7 +495,7 @@
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
-	init_recoil = AUTOPISTOL_RECOIL(1, 1)
+	init_recoil = LASER_SMG_RECOIL(2, 2)
 
 /obj/item/gun/energy/laser/auto/nayriin
 	name = "Lucy"
@@ -513,7 +521,8 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fastest
 	)
-	init_recoil = AUTOPISTOL_RECOIL(2, 2)
+	init_recoil = LASER_SMG_RECOIL(1, 1)
+
 //Ultracite Laser pistol
 /obj/item/gun/energy/laser/ultra_pistol
 	name = "\improper Ultracite laser pistol"
@@ -530,7 +539,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 
 // The Synth's Lasergun
 /obj/item/gun/energy/laser/sida
@@ -554,7 +563,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
-	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 
 ////////////////
 //LASER RIFLES//
@@ -644,6 +653,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+
 /obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
@@ -703,6 +714,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+
 /obj/item/gun/energy/laser/scatter/nonlethal
 	name = "tribeam stunrifle"
 	desc = "A modified AER9 equipped with a refraction kit that divides the laser shot into three separate beams. This one has its power consumption lowered, delivering only non-lethal strikes and charging faster."
@@ -801,8 +814,7 @@
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/slow
 	)
-	init_recoil = RIFLE_RECOIL(1, 1)
-
+	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
 
 //Alien Blaster
 /obj/item/gun/energy/laser/plasma/pistol/alien

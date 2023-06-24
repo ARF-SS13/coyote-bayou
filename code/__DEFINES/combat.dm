@@ -389,7 +389,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Bullet Recoil defines
 #define BULLET_RECOIL_BASE (2)
-#define BULLET_RECOIL_PISTOL_SMALL (BULLET_RECOIL_BASE * 0.5)
+#define BULLET_RECOIL_PISTOL_SMALL (BULLET_RECOIL_BASE * 1)
 #define BULLET_RECOIL_PISTOL_MEDIUM (BULLET_RECOIL_BASE * 1)
 #define BULLET_RECOIL_PISTOL_LARGE (BULLET_RECOIL_BASE * 2)
 #define BULLET_RECOIL_RIFLE_SMALL (BULLET_RECOIL_BASE * 1.5)
@@ -397,7 +397,8 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BULLET_RECOIL_RIFLE_LARGE (BULLET_RECOIL_BASE * 25)
 #define BULLET_RECOIL_SHOTGUN (BULLET_RECOIL_BASE * 2)
 #define BULLET_RECOIL_GAUSS (BULLET_RECOIL_BASE * 25)
-#define BULLET_RECOIL_LASER (BULLET_RECOIL_BASE * 5)
+#define BULLET_RECOIL_LASER (BULLET_RECOIL_BASE * 1)
+#define BULLET_RECOIL_HEAVY_LASER (BULLET_RECOIL_BASE * 3)
 #define BULLET_RECOIL_PLASMA (BULLET_RECOIL_BASE * 5)
 
 
@@ -1137,20 +1138,28 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /////////////////////////////////// 1HANDED , 2HANDED, MOVE RECOIL MULT
 #define HANDGUN_RECOIL(x,y)     list(1   * x, 0.9 * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(1.2) ) // Mobile, but not spammable
-#define AUTOPISTOL_RECOIL(x,y)  list(2   * x, 1   * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   ) // negative numbers actually decrease your output spread while moving!
-#define SMG_RECOIL(x,y)         list(1.2 * x, 1   * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(0.75)) // made for spraying
-#define CARBINE_RECOIL(x,y)     list(2   * x, 0.8 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
-#define AUTOCARBINE_RECOIL(x,y) list(3   * x, 0.9 * y, SCOOT_FACTOR(1)   , SPRAY_FACTOR(1)   )
+#define AUTOPISTOL_RECOIL(x,y)  list(1.3 * x, 1   * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   ) // negative numbers actually decrease your output spread while moving!
+#define SMG_RECOIL(x,y)         list(1   * x, 1   * y, SCOOT_FACTOR(-1)  , SPRAY_FACTOR(0.75)) // made for spraying
+#define CARBINE_RECOIL(x,y)     list(2   * x, 0.8 * y, SCOOT_FACTOR(0.3) , SPRAY_FACTOR(1)   )
+#define AUTOCARBINE_RECOIL(x,y) list(3   * x, 0.9 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
 #define SHOTGUN_RECOIL(x,y)     list(2   * x, 0.5 * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(2)   )
 #define RIFLE_RECOIL(x,y)       list(5   * x, 0.5 * y, SCOOT_FACTOR(2)   , SPRAY_FACTOR(2)   )
-#define AUTORIFLE_RECOIL(x,y)   list(5   * x, 0.7 * y, SCOOT_FACTOR(1)   , SPRAY_FACTOR(1)   )
+#define AUTORIFLE_RECOIL(x,y)   list(5   * x, 0.7 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
+#define AUTOSHOTGUN_RECOIL(x,y) list(10  * x, 1   * y, SCOOT_FACTOR(-2)  , SPRAY_FACTOR(1)   )
 #define LMG_RECOIL(x,y)         list(5   * x, 0.5 * y, SCOOT_FACTOR(10)  , SPRAY_FACTOR(-0.3)) // Everyone grab a negev, we rushin B
 #define HMG_RECOIL(x,y)         list(10  * x, 0.3 * y, SCOOT_FACTOR(20)  , SPRAY_FACTOR(-0.5))
 
+#define LASER_HANDGUN_RECOIL_RARE(x,y) list(0.2 * x, 0.1 * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(1.2) ) // Mobile, but not spammable
+#define LASER_HANDGUN_RECOIL(x,y)      list(1   * x, 1   * y, SCOOT_FACTOR(0)   , SPRAY_FACTOR(1.2) ) // Mobile, but not spammable
+#define LASER_SMG_RECOIL(x,y)          list(1.5 * x, 1   * y, SCOOT_FACTOR(-1)  , SPRAY_FACTOR(0.75)) // made for spraying
+#define LASER_CARBINE_RECOIL(x,y)      list(2   * x, 0.8 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
+#define LASER_RIFLE_RECOIL(x,y)        list(2   * x, 0.2 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
+#define LASER_AUTORIFLE_RECOIL(x,y)    list(4   * x, 0.5 * y, SCOOT_FACTOR(0.5) , SPRAY_FACTOR(1)   )
+
 /// If you dont shoot for this long, your recoil is decreased by an exponential rate
-#define RECOIL_SHOOT_TIME 1 SECONDS
+#define RECOIL_SHOOT_TIME 0.8 SECONDS
 /// If you dont move for this long, your next step won't increase recoil (and your recoil will decrease by an exponential rate)
-#define RECOIL_SCOOCH_TIME 1 SECONDS
+#define RECOIL_SCOOCH_TIME 0.8 SECONDS
 // The number of free tiles you can move in Scoochmode
 #define RECOIL_SCOOCH_TILES 2
 

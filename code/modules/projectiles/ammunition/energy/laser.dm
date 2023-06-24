@@ -205,6 +205,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/pistol/wattz/magneto
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto
 	damage_threshold_penetration = 7
+	variance = -100
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/hitscan

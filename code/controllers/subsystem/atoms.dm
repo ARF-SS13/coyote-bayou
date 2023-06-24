@@ -87,7 +87,7 @@ SUBSYSTEM_DEF(atoms)
 					rates += batch_rate
 					batch_start = REALTIMEOFDAY
 					this_batch = 0
-					to_chat(world, span_boldannounce("Init'd [shorten_number(atoms_did, 2)]/[shorten_number(all_atoms, 2)] ([round(batch_percent)]%) atoms in [DisplayTimeText(start_timery - REALTIMEOFDAY)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
+					to_chat(world, span_boldannounce("Init'd [shorten_number(atoms_did, 2)]/[shorten_number(all_atoms, 2)] ([round(batch_percent)]%) atoms in [DisplayTimeText(REALTIMEOFDAY - start_timery)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
 #endif
 				CHECK_TICK
 #ifdef PRINT_ATOM_STATS

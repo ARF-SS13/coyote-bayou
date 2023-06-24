@@ -574,8 +574,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
 /* * * * * * * * * * *
  * Riot shotgun
@@ -601,6 +601,7 @@
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
 /* * * * * * * * * * *
  * Jackhammer shotgun
@@ -623,6 +624,7 @@
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow
 	)
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 0.8)
 
 // Ballistic Fist			Keywords: Damage max 42, Shotgun
 /obj/item/gun/ballistic/revolver/ballisticfist
@@ -641,6 +643,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+	init_recoil = SHOTGUN_RECOIL(1, 1)
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/shotgun/shotttesting

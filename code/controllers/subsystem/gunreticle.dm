@@ -10,7 +10,9 @@ SUBSYSTEM_DEF(reticle)
 	. = ..()
 
 /datum/controller/subsystem/reticle/proc/build_reticle_icons()
-	for(var/offset in 0 to MAX_ACCURACY_OFFSET)
+	for(var/offset in 0 to SSrecoil.recoil_max_spread*2)
+		var/true_offset = offset - SSrecoil.recoil_max_spread // -SSrecoil.recoil_max_spread to SSrecoil.recoil_max_spread
+		var/apparent_offset = max(true_offset, 0) // The negatives just get color differences
 		var/icon/base = icon('modular_coyote/eris/icons/96x96.dmi')
 		var/icon/scaled = icon('modular_coyote/eris/icons/standard_grayscale.dmi') //Default cursor, cut into pieces according to their direction
 		base.Blend(scaled, ICON_OVERLAY, x = 32, y = 32)
@@ -19,26 +21,28 @@ SUBSYSTEM_DEF(reticle)
 			var/pixel_y
 			var/pixel_x
 			if(dir & NORTH)
-				pixel_y = CLAMP(offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
+				pixel_y = CLAMP(apparent_offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			if(dir & SOUTH)
-				pixel_y = CLAMP(-offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
+				pixel_y = CLAMP(-apparent_offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			if(dir & EAST)
-				pixel_x = CLAMP(offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
+				pixel_x = CLAMP(apparent_offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			if(dir & WEST)
-				pixel_x = CLAMP(-offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
+				pixel_x = CLAMP(-apparent_offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			base.Blend(overlay, ICON_OVERLAY, x=32+pixel_x, y=32+pixel_y)
-		var/spread_color = gradient("#0000FF", "#FFFF00", (offset/MAX_ACCURACY_OFFSET))
+		var/spread_color = gradient("#00FF00", "#0000FF", "#FFFF00", (offset/(SSrecoil.recoil_max_spread*2)))
 		base.Blend(spread_color, ICON_MULTIPLY)
-		reticle_icons["reticle-[offset]"] = base
+		reticle_icons["reticle-[round(true_offset)]"] = base
 		SSassets.transport.register_asset("reticle-[offset]", base)
 
 /datum/controller/subsystem/reticle/proc/find_cursor_icon(offset)
-	offset = CLAMP(offset, 0, MAX_ACCURACY_OFFSET)
+	var/my_cursor = LAZYACCESS(reticle_icons, "reticle-[offset]")
+	if(!my_cursor)
+		return LAZYACCESS(reticle_icons, "reticle-0")
 	return LAZYACCESS(reticle_icons, "reticle-[offset]")
 
 /datum/controller/subsystem/reticle/proc/send_all_cursor_icons(client/C)
-	for(var/icon/reticle in reticle_icons)
-		C << reticle
+	for(var/reticle in reticle_icons)
+		C << LAZYACCESS(reticle_icons, reticle)
 
 /mob/living/proc/update_cursor(obj/item/gun/G)
 	if(!client)
@@ -53,8 +57,8 @@ SUBSYSTEM_DEF(reticle)
 		remove_cursor()
 		return
 	//client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-	var/recoil = SSrecoil.get_offset(src, G, TRUE)
-	var/offset = clamp(CEILING(recoil, 1), 0, MAX_ACCURACY_OFFSET)
+	var/recoil = SSrecoil.get_offset(src, FALSE, TRUE)
+	var/offset = clamp(round(recoil, 1), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 	var/icon/base = SSreticle.find_cursor_icon(offset)
 	ASSERT(isicon(base))
 	client.mouse_pointer_icon = base

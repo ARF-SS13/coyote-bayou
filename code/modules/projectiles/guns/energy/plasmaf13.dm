@@ -18,6 +18,7 @@
 		/datum/firemode/semi_auto/slow
 	)
 	init_recoil = HANDGUN_RECOIL(1, 1)
+
 //Plasma pistol: Eve
 /obj/item/gun/energy/laser/plasma/pistol/eve
 	name ="eve"
@@ -141,6 +142,7 @@
 		/datum/firemode/burst/two
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+
 //Multiplas rifle
 /obj/item/gun/energy/laser/plasma/scatter
 	name = "multiplas rifle"
