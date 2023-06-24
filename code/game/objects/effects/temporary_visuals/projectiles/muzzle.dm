@@ -39,3 +39,12 @@
 /obj/effect/projectile/muzzle/laser/emitter
 	name = "emitter flash"
 	icon_state = "muzzle_emitter"
+
+/obj/effect/projectile/muzzle/twin_laser
+	icon_state = "muzzle_eye"
+
+/obj/effect/projectile/muzzle/purple_laser
+	icon_state = "muzzle_hcult"
+
+/obj/effect/projectile/muzzle/plasma
+	icon_state = "muzzle_bfg"

@@ -8,8 +8,8 @@
 	desc = "A HellBurn PRO portable battery bank, used to charge your devices on the go."
 	icon = 'icons/obj/powerbox.dmi'
 	icon_state = "powerbox"
-	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	flags_1 = CONDUCT_1 // | HEAR_1
 	custom_price = 2000
 	custom_premium_price = 2000
@@ -33,8 +33,9 @@
 
 /// The blender itself
 /datum/component/storage/concrete/box/portable_charger
-	max_items = 4 // Batbox, switch, and a couple batteries
-	max_w_class = WEIGHT_CLASS_SMALL
+	max_items = 7 // Batbox, switch, and a few batteries
+	max_combined_w_class = 7 // two tiny components, and room for 5 tiny batteries / 2 smol / 1 normal
+	max_w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/battery_box/Initialize()
 	. = ..()
@@ -265,7 +266,7 @@
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
 	item_state = "cell"
-	maxcharge = 900
+	maxcharge = 36000
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_SHIFT
 	w_class = WEIGHT_CLASS_SMALL
 	ratingdesc = FALSE

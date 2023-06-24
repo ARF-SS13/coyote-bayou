@@ -377,10 +377,26 @@
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	..()
 	if (istype(A, /obj/item/stock_parts/cell/ammo))
-		var/obj/item/stock_parts/cell/ammo/AM = A
-		if (!cell && istype(AM, cell_type))
-			if(user.transferItemToLoc(AM, src))
-				cell = AM
+		var/obj/item/stock_parts/cell/ammo/new_cell = A
+		if(!istype(new_cell, cell_type))
+			return FALSE
+		var/obj/item/stock_parts/cell/ammo/old_cell
+		if(istype(cell))
+			old_cell = cell
+			eject_cell(user, TRUE)
+		if(user.transferItemToLoc(new_cell, src))
+			cell = new_cell
+			if(old_cell && user.put_in_hands(old_cell))
+				to_chat(user, span_notice("You load a new cell into \the [src], keeping hold of the old one."))
+			else
+				to_chat(user, span_notice("You load a new magazine into \the [src]."))
+		else
+			to_chat(user, span_warning("You cannot seem to get \the [new_cell] out of your hands!"))
+			return FALSE
+/*
+		if (!cell && istype(new_cell, cell_type))
+			if(user.transferItemToLoc(new_cell, src))
+				cell = new_cell
 				to_chat(user, span_notice("You load a new cell into \the [src]."))
 				A.update_icon()
 				update_icon()
@@ -390,6 +406,7 @@
 				return
 		//else if (cell)
 			//to_chat(user, span_notice("There's already a cell in \the [src]."))
+*/
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()

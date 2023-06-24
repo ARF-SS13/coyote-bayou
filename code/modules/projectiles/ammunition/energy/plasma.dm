@@ -27,12 +27,12 @@
 	e_cost = 160//12
 
 /obj/item/ammo_casing/energy/plasma/scatter
-	projectile_type = /obj/item/projectile/f13plasma/scatter
+	projectile_type = /obj/item/ammo_casing/energy/fifty
 	pellets = 3
-	variance = 14
+	variance = 40
 	select_name = "scatter"
 	fire_sound = 'sound/f13weapons/multiplas_rifle.ogg'
-	e_cost = 200 //10 shots
+	e_cost = 1500
 
 /obj/item/ammo_casing/energy/plasma/pistol
 	projectile_type = /obj/item/projectile/f13plasma/pistol

@@ -8,7 +8,7 @@
 	hitsound = 'sound/weapons/sear.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	flag = "laser"
-	eyeblur = 2
+	eyeblur = 0
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_color = LIGHT_COLOR_RED
 	ricochets_max = 50	//Honk!
@@ -382,7 +382,7 @@
 
 /obj/item/projectile/beam/laser/pistol/hitscan/stun //compliance regulator beam
 	name = "compliance beam"
-	damage = 33
+	damage = 72
 	damage_type = STAMINA
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
@@ -390,6 +390,15 @@
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
 
+/obj/item/projectile/beam/laser/pistol/hitscan/stun/tribeam
+	name = "compliance beam"
+	damage = 50
+	damage_type = STAMINA
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+	tracer_type = /obj/effect/projectile/tracer/disabler
+	muzzle_type = /obj/effect/projectile/muzzle/disabler
+	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol
 	name = "recharger beam"
@@ -508,7 +517,7 @@
 
 /obj/item/projectile/beam/laser/pistol/freeblade //Freeblade Blaster
 	name = "freeblade beam"
-	damage = 15
+	damage = 20
 	icon_state = "freeblade"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_color = LIGHT_COLOR_RED
@@ -519,7 +528,7 @@
 
 /obj/item/projectile/beam/laser/tribeam/hitscan
 	name = "tribeam laser"
-	damage = 25 //if all bullets connect, this will do 75.
+	damage = 20
 	hitscan = TRUE
 	bare_wound_bonus = -30 //tribeam is bad at wounding, as basically its only real downside
 	tracer_type = /obj/effect/projectile/tracer/laser

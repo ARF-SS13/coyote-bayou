@@ -474,7 +474,7 @@
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 2000
+	maxcharge = 9000
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
@@ -490,11 +490,19 @@
 // Enhanced Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc/large
 	name = "enhanced microfusion cell"
-	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has been modified to hold double the normal charge."
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has been modified to resist EMP and charge faster."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 3000
+	maxcharge = 9000
+	chargerate = 200
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/stock_parts/cell/ammo/mfc/large/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF)
+
+/obj/item/stock_parts/cell/ammo/mfc/large/corrupt()
+	return
 
 // Crafted Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc/bad
@@ -502,8 +510,9 @@
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one looks a little dubious though."
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: give these bad icons
 	icon_state = "mfc-full"
-	maxcharge = 1000
+	maxcharge = 9000
 	w_class = WEIGHT_CLASS_SMALL
+	cancharge = 0
 
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
@@ -518,7 +527,7 @@
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
-	maxcharge = 1500
+	maxcharge = 3000
 
 /obj/item/stock_parts/cell/ammo/ec/update_icon()
 	switch(charge)
@@ -535,10 +544,19 @@
 // Enhanced energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec/large
 	name = "enhanced energy cell"
-	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one has been modified to hold far more energy."
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one has been modified to resist EMP and charge faster."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
-	maxcharge = 2250
+	maxcharge = 3000
+	chargerate = 200
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stock_parts/cell/ammo/ec/large/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF)
+
+/obj/item/stock_parts/cell/ammo/ec/large/corrupt()
+	return
 
 // Crafted Energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec/bad
@@ -546,7 +564,8 @@
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one looks a little suspect though."
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give these a new icon
 	icon_state = "ec-full"
-	maxcharge = 750
+	maxcharge = 3000
+	cancharge = 0
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder
@@ -554,12 +573,12 @@
 	desc = "A miniature microfusion reactor connected to capacitor banks. This is not a removable part, you messed up."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
-	maxcharge = 2000
+	maxcharge = 3000
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder/xal
 	name = "S.I.D.A. breeder"
-	maxcharge = 1100
+	maxcharge = 3000
 
 
 
@@ -569,8 +588,8 @@
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ecp-full"
-	maxcharge = 2400
-	w_class = WEIGHT_CLASS_SMALL
+	maxcharge = 18000
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
 	switch(charge)
@@ -585,11 +604,18 @@
 // Enhanced electron charge pack - rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp/large
 	name = "enhanced electron charge pack"
-	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has been modified to hold far more energy."
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has been modified to resist EMP and charge faster."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ecp-full"
-	maxcharge = 3600
-	w_class = WEIGHT_CLASS_SMALL
+	maxcharge = 18000
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/stock_parts/cell/ammo/ecp/large/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF)
+
+/obj/item/stock_parts/cell/ammo/ecp/large/corrupt()
+	return
 
 // Crafted Electron charge pack - bad rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp/bad
@@ -597,8 +623,9 @@
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one looks slightly off, somehow."
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give a shitty icon
 	icon_state = "ecp-full"
-	maxcharge = 1200
-	w_class = WEIGHT_CLASS_SMALL
+	maxcharge = 18000
+	w_class = WEIGHT_CLASS_NORMAL
+	cancharge = 0
 
 // Alien power cell
 /obj/item/stock_parts/cell/ammo/alien

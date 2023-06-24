@@ -75,3 +75,15 @@
 /obj/effect/projectile/tracer/laser/emitter
 	name = "emitter beam"
 	icon_state = "emitter"
+
+/obj/effect/projectile/tracer/twin_laser
+	name = "twin laser"
+	icon_state = "eye"
+
+/obj/effect/projectile/tracer/purple_laser
+	name = "purple laser"
+	icon_state = "hcult"
+
+/obj/effect/projectile/tracer/plasma
+	name = "plasma stream"
+	icon_state = "bfg"

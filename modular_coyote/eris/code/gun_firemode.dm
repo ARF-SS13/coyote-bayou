@@ -152,7 +152,7 @@
 	name = "Fully Automatic"
 	desc = "Automatic - 150 RPM."
 	fire_type = GUN_FIREMODE_AUTO
-	firerate_auto = GUN_FIRE_RATE_200
+	firerate_auto = GUN_FIRE_RATE_150
 
 /datum/firemode/burst
 	name = "Burstfire"

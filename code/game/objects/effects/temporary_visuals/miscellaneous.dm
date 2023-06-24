@@ -345,6 +345,10 @@
 	icon_state = "impact_laser"
 	duration = 4
 
+/obj/effect/temp_visual/impact_effect/white_laser
+	icon_state = "punch"
+	duration = 4
+
 /obj/effect/temp_visual/impact_effect/red_laser/wall
 	icon_state = "impact_laser_wall"
 	duration = 10
@@ -359,6 +363,14 @@
 
 /obj/effect/temp_visual/impact_effect/purple_laser
 	icon_state = "impact_laser_purple"
+	duration = 4
+
+/obj/effect/temp_visual/impact_effect/cyan_laser
+	icon_state = "impact_laser_cyan"
+	duration = 4
+
+/obj/effect/temp_visual/impact_effect/yellow_laser
+	icon_state = "electricity2"
 	duration = 4
 
 /obj/effect/temp_visual/impact_effect/shrink

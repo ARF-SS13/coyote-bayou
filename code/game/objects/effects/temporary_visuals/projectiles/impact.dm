@@ -48,3 +48,15 @@
 /obj/effect/projectile/impact/laser/emitter
 	name = "emitter impact"
 	icon_state = "impact_emitter"
+
+/obj/effect/projectile/impact/twin_laser
+	name = "twin laser impact"
+	icon_state = "impact_eye"
+
+/obj/effect/projectile/impact/purple_laser
+	name = "purple laser impact"
+	icon_state = "impact_hcult"
+
+/obj/effect/projectile/impact/plasma
+	name = "plasma stream impact"
+	icon_state = "impact_bfg"
