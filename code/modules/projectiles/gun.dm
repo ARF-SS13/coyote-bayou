@@ -1146,32 +1146,34 @@ ATTACHMENTS
 	data["gun_recoil_scoot_stats"] = scoot_stats
 	data["gun_spread"] = added_spread || 0
 
+	var/datum/firemode/my_firemode = LAZYACCESS(firemodes, sel_mode)
+	var/action_kind = "Unknown"
+	switch(my_firemode.fire_type)
+		if(GUN_FIREMODE_SEMIAUTO)
+			action_kind = "Single Shot"
+		if(GUN_FIREMODE_BURST)
+			var/burstcount = my_firemode.burst_count || "Multi" // || resolves to the first thing it resolves to
+			action_kind = "[burstcount]-Round Burst"
+		if(GUN_FIREMODE_AUTO)
+			action_kind = "Automatic"
+	data["firemode_current"] = list(
+		"action_kind" = action_kind || "Single-Fire",
+		"fire_rate" = "[my_firemode.get_fire_delay(TRUE)] RPM" || "Unspecified RPM",
+		"desc" = "[my_firemode.desc] [my_firemode.extra_tip]" || "Some kind of firing method. Supposedly shoots.",
+	)
+
 	if(LAZYLEN(firemodes))
 		var/list/firemodes_info = list()
 		for(var/i = 1 to LAZYLEN(firemodes))
 			data["firemode_count"] += 1
-			var/datum/firemode/F = firemodes[i]
-			if(i == sel_mode)
-				var/action_kind = "Unknown"
-				switch(F.fire_type)
-					if(GUN_FIREMODE_SEMIAUTO)
-						action_kind = "Single Shot"
-					if(GUN_FIREMODE_BURST)
-						var/burstcount = F.burst_count || "Multi" // || resolves to the first thing it resolves to
-						action_kind = "[burstcount]-Round Burst"
-					if(GUN_FIREMODE_AUTO)
-						action_kind = "Automatic"
-				data["firemode_current"] = list(
-					"action_kind" = action_kind,
-					"fire_rate" = "[F.get_fire_delay(TRUE)] RPM",
-					"desc" = "[F.desc] [F.extra_tip]",
-				)
+			var/datum/firemode/F = LAZYACCESS(firemodes, i)
 			var/list/firemode_info = list(
 				"index" = i,
 				"current" = (i == sel_mode),
 				"name" = F.name,
 				"desc" = "[F.desc] [F.extra_tip]",
 				"burst" = F.burst_count,
+				"fire_rate" = F.get_fire_delay(TRUE),
 				"fire_delay" = F.get_fire_delay(TRUE),
 			)
 			firemodes_info += list(firemode_info)
