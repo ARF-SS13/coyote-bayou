@@ -194,7 +194,7 @@
 		E.pixel_x = rand(-6,6)
 		E.pixel_y = rand(-6,6)
 		if(eggsFertile)
-			if(deathclaw_mother_count < MAX_CHICKENS && prob(25))
+			if(deathclaw_mother_count < MAX_MOTHERCLAWS && prob(25))
 				START_PROCESSING(SSobj, E)
 
 /obj/item/reagent_containers/food/snacks/f13/deathclawegg/var/amount_grown = 0
