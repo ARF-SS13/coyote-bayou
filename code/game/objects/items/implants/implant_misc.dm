@@ -17,7 +17,7 @@
 	name = "adrenal implant"
 	desc = "Removes all stuns."
 	icon_state = "adrenal"
-	uses = 3
+	uses = 1
 
 /obj/item/implant/adrenalin/get_data()
 	var/dat = {"<b>Implant Specifications:</b><BR>
@@ -33,7 +33,7 @@
 /obj/item/implant/adrenalin/activate()
 	. = ..()
 	uses--
-	imp_in.do_adrenaline(150, TRUE, 0, 0, TRUE, list(/datum/reagent/medicine/inaprovaline = 3, /datum/reagent/medicine/synaptizine = 10, /datum/reagent/medicine/regen_jelly = 10, /datum/reagent/medicine/stimulants = 10), span_boldnotice("You feel a sudden surge of energy!"))
+	imp_in.do_adrenaline(150, TRUE, 0, 0, TRUE, list(/datum/reagent/medicine/inaprovaline = 3, /datum/reagent/medicine/synaptizine = 5, /datum/reagent/medicine/regen_jelly = 5, /datum/reagent/medicine/stimulants = 5), span_boldnotice("You feel a sudden surge of energy!"))
 	to_chat(imp_in, span_notice("You feel a sudden surge of energy!"))
 	if(!uses)
 		qdel(src)
