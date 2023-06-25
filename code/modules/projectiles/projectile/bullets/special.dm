@@ -43,7 +43,7 @@
 	icon_state = "musket"
 	damage = BULLET_DAMAGE_FLINTLOCK_MATCH
 	stamina = BULLET_STAMINA_FLINTLOCK
-	spread = 15
+	spread = BULLET_SPREAD_FLINTLOCK
 	recoil = BULLET_RECOIL_FLINTLOCK
 	wound_bonus = BULLET_WOUND_FLINTLOCK_MATCH
 
@@ -60,7 +60,7 @@
 	name = "minie ball"
 	damage = BULLET_DAMAGE_FLINTLOCK
 	stamina = BULLET_STAMINA_FLINTLOCK
-	spread = -15 // shockingly accurate
+	spread = BULLET_SPREAD_SURPLUS // shockingly accurate
 	recoil = BULLET_RECOIL_FLINTLOCK
 	wound_bonus = BULLET_WOUND_FLINTLOCK
 	
@@ -80,7 +80,7 @@
 	icon_state = "musket_rubber"
 	damage = RUBBERY_DAMAGE_FLINTLOCK
 	stamina = RUBBERY_STAMINA_FLINTLOCK
-	spread = BULLET_SPREAD_SURPLUS
+	spread = BULLET_SPREAD_HANDLOAD
 	recoil = BULLET_RECOIL_FLINTLOCK
 	wound_bonus = RUBBERY_WOUND_FLINTLOCK
 

@@ -1627,6 +1627,30 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(haystack.loc)
 		return recursive_loc_search(haystack.loc, needle, max_depth - 1)
 
+/// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.
+/proc/get_all_in_turf(turf/search_me, include_turf = FALSE, max_depth = 5)
+	if(!isturf(search_me))
+		if(!isatom(search_me))
+			return list()
+		else
+			search_me = get_turf(search_me)
+	var/list/atoms_in_turf = search_me.contents?.Copy()
+	if(!LAZYLEN(atoms_in_turf))
+		return list()
+	var/list/atoms_found = list()
+	var/iterations_left = 1000
+	while(LAZYLEN(atoms_in_turf) && iterations_left--)
+		var/atom/atom = LAZYACCESS(atoms_in_turf, LAZYLEN(atoms_in_turf))
+		atoms_in_turf.len--
+		if(!isatom(atom))
+			continue
+		if(LAZYLEN(atom.contents))
+			atoms_in_turf |= atom.contents
+		atoms_found += atom
+	if(include_turf)
+		atoms_found += search_me
+	return atoms_found
+
 /// Goes through the common places a client can be held, and returns the first one it finds
 /proc/get_client(thing_w_client)
 	if(isclient(thing_w_client))

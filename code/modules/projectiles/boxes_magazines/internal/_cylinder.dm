@@ -12,12 +12,17 @@
 			boolets++
 	return boolets
 
-/obj/item/ammo_box/magazine/internal/cylinder/init_load_bullets(num_bullets)
-	for(var/i in 1 to max_ammo)
+/obj/item/ammo_box/magazine/internal/cylinder/fill_magazine(num_bullets)
+	if(LAZYLEN(stored_ammo))
+		QDEL_LIST(stored_ammo)
+	LAZYLENGTHEN(stored_ammo, max_ammo)
+	num_bullets = clamp(num_bullets, 0, LAZYLEN(stored_ammo))
+	for(var/i in 1 to LAZYLEN(stored_ammo))
 		var/be_spent = FALSE
 		if(i > num_bullets)
 			be_spent = TRUE
-		stored_ammo += new ammo_type(src, be_spent)
+		var/bluuet = new ammo_type(src, be_spent)
+		LAZYSET(stored_ammo, i, bluuet)
 
 /obj/item/ammo_box/magazine/internal/cylinder/get_round(keep = 0)
 	rotate()

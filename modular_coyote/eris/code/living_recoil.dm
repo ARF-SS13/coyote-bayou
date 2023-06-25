@@ -1,3 +1,7 @@
+/************************************************************************************
+ * DEPRICATED AS FUCK - SEE [code\datums\recoil.dm] for the REAL recoil! =3
+ */
+
 /mob/living/proc/handle_recoil(var/obj/item/gun/G, var/recoil_buildup)
 	deltimer(recoil_reduction_timer)
 

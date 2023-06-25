@@ -1672,7 +1672,7 @@
 
 //magneto
 /datum/crafting_recipe/magnetowattz
-	name = "Wattz 1000 Magneto-laser Pistol"
+	name = "Wattz 1000 smart-laser Pistol"
 	result = /obj/item/gun/energy/laser/wattz/magneto
 	reqs = list(/obj/item/gun/energy/laser/wattz = 1,
 				/obj/item/stack/crafting/electronicparts = 2)

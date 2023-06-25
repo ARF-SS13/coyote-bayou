@@ -38,6 +38,7 @@
 
 /obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
+	init_ammo()
 	if(!islist(caliber))
 		caliber = list()
 	if(length(caliber) < 1)
@@ -45,30 +46,48 @@
 			caliber += initial(ammo_type.caliber)
 		else
 			caliber += CALIBER_ANY // default to accepting any old caliber
-	if(istype(loc, /obj/item/gun))
-		randomize_ammo_count = FALSE // dammit fuz
-	init_ammo()
+	update_icon()
+
+/obj/item/ammo_box/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
+	RegisterSignal(src, COMSIG_GUN_MAG_ADMIN_RELOAD, .proc/admin_load)
+
+/// An aheal, but for ammo boxes
+/obj/item/ammo_box/proc/admin_load()
+	if(!ammo_type)
+		return
+	. = fill_magazine(max_ammo, TRUE)
+	update_icon()
 
 /obj/item/ammo_box/proc/init_ammo()
 	if(start_empty)
 		return // All done!
-	if(CHECK_BITFIELD(flags_1, ADMIN_SPAWNED_1))
-		randomize_ammo_count = FALSE
+	if(!ammo_type)
+		return // No ammo type, no ammo
 	var/num_bullets = max_ammo
 	if(start_ammo_count)
 		num_bullets = min(start_ammo_count, max_ammo)
 	if(randomize_ammo_count)
 		num_bullets = get_random_bullet_amount(num_bullets)
-	init_load_bullets(num_bullets)
-	update_icon()
+	fill_magazine(num_bullets)
 
 /obj/item/ammo_box/proc/get_random_bullet_amount(num_bullets = max_ammo)
 	var/amount = pick(0, rand(0, num_bullets), num_bullets)
 	return amount
 
-/obj/item/ammo_box/proc/init_load_bullets(num_bullets)
-	for(var/i in 1 to num_bullets)
+/obj/item/ammo_box/proc/fill_magazine(num_bullets = max_ammo, cock)
+	var/to_load = clamp(num_bullets, 0, max(0, max_ammo - LAZYLEN(stored_ammo)))
+	if(to_load < 1)
+		return
+	. = to_load
+	for(var/i in 1 to to_load)
 		stored_ammo += new ammo_type(src)
+	if(cock && istype(loc, /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/my_gun = loc
+		if(my_gun?.chambered?.BB)
+			return
+		my_gun?.chamber_round()
 
 /obj/item/ammo_box/proc/get_round(keep = 0)
 	if (!stored_ammo.len)
