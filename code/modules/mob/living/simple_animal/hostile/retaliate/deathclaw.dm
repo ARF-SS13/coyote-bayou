@@ -149,7 +149,7 @@
 	color = rgb(95,104,94)
 	color_mad = rgb(113, 105, 100)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/f13/deathclawegg
-	var/food_type = /obj/item/reagent_containers/food/snacks/meat
+	var/food_type = /obj/item/reagent_containers/food/snacks/meat/slab
 	var/eggsleft = 0
 	var/eggsFertile = TRUE
 	var/list/feedMessages = list("It rips the meat from your grasp.","It glares at you as it swallows the meat whole.")
