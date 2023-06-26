@@ -431,6 +431,20 @@
 		/datum/firemode/semi_auto/faster
 	)
 
+//mac-10 but shit.
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/worn
+	name = "Knockoff Ingram Model 10" //I like naming things quirkily
+	desc = "A compact machine pistol with a blistering fire rate. Or so they claim."
+	icon = 	'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "mac10"
+	weapon_class = WEAPON_CLASS_NORMAL //kinda bulky for a compact gun
+	damage_multiplier = GUN_LESS_DAMAGE_T2 //this spits lots of bullets and is compact and can be dual wielded
+	init_recoil = SMG_RECOIL(2.3, 2.3)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/fast
+	)
+
 /* * * * * * * * * * *
  * Carl Gustaf 10mm SMG
  * Another 10mm SMG
