@@ -1166,7 +1166,7 @@
 		M.adjustFireLoss(-1*REM, FALSE)
 	M.AdjustAllImmobility(-60, FALSE)
 	M.AdjustUnconscious(-60, FALSE)
-	M.adjustStaminaLoss(-20*REM, FALSE)
+	M.adjustStaminaLoss(-7.5*REM, FALSE)
 	..()
 	. = 1
 
