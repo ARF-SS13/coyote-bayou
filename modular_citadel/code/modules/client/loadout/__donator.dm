@@ -1326,6 +1326,7 @@
 	new /obj/item/queen_bee/bought(src)
 	new /obj/item/vending_refill/hydroseeds(src)
 	new /obj/machinery/vending/hydroseeds(src)
+	new /obj/item/storage/box/disks_plantgene(src)
 
 // Y
 
