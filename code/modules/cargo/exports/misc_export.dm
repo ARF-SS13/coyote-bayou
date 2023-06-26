@@ -524,6 +524,31 @@
 	export_types = list(/obj/item/fishy/eel,
 	)
 
+/datum/export/item/forged
+	cost = 200
+	unit_name = "forged weapons"
+	export_types = list(/obj/item/melee/smith/sword,
+	/obj/item/melee/smith/sword/spatha,
+	/obj/item/melee/smith/sword/sabre,
+	/obj/item/melee/smith/dagger,
+	/obj/item/melee/smith/dagger/bowie,
+	/obj/item/melee/smith/machete,
+	/obj/item/melee/smith/machete/gladius,
+	/obj/item/melee/smith/machete/reforged,
+	/obj/item/melee/smith/wakizashi,
+	/obj/item/melee/smith/mace,
+	/obj/item/melee/smith/twohand/katana,
+	/obj/item/melee/smith/twohand/longsword,
+	/obj/item/melee/smith/twohand/axe,
+	/obj/item/melee/smith/twohand/axe/warhoned,
+	/obj/item/melee/smith/twohand/axe/crusher,
+	/obj/item/melee/smith/twohand/axe/scrapblade,
+	/obj/item/melee/smith/twohand/spear,
+	/obj/item/melee/smith/twohand/spear/lance,
+	/obj/item/melee/smith/twohand/spear/trident,
+	/obj/item/melee/smith/javelin,
+	/obj/item/melee/smith/throwingknife,
+	)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
 
