@@ -21,12 +21,44 @@
 	make_reagents = list(/datum/reagent/consumable/cream = 10)
 	category = list("initial","Food")
 
+/datum/design/soymilk
+	name = "10u Soymilk"
+	id = "soymilk"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 30)
+	make_reagents = list(/datum/reagent/consumable/soymilk = 10)
+	category = list("initial","Food")
+
+/datum/design/flour
+	name = "10u Flour"
+	id = "flour"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 25)
+	make_reagents = list(/datum/reagent/consumable/flour = 10)
+	category = list("initial","Food")
+
 /datum/design/black_pepper
 	name = "10u Black Pepper"
 	id = "black_pepper"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 25)
 	make_reagents = list(/datum/reagent/consumable/blackpepper = 10)
+	category = list("initial","Food")
+
+/datum/design/table_salt
+	name = "10u Table Salt"
+	id = "table_salt"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 25)
+	make_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)
+	category = list("initial","Food")
+
+/datum/design/sugar
+	name = "10u Sugar"
+	id = "sugar"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 25)
+	make_reagents = list(/datum/reagent/consumable/sugar = 10)
 	category = list("initial","Food")
 
 /datum/design/enzyme

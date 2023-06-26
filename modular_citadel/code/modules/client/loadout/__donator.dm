@@ -892,6 +892,15 @@
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriotweak(src)
 	new /obj/item/gun/ballistic/revolver/revolver44/desert_ranger(src)
 
+/datum/gear/donator/kits/PotatoPerson993
+	name = "Gobbo Gear"
+	path = /obj/item/storage/box/large/custom_kit/PotatoPerson993
+	ckeywhitelist = list("PotatoPerson993")
+
+/obj/item/storage/box/large/custom_kit/PotatoPerson993/PopulateContents()
+	new /obj/item/clothing/under/f13/recon/outcast(src)
+	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
+
 // Q
 // R
 
@@ -1317,6 +1326,7 @@
 	new /obj/item/queen_bee/bought(src)
 	new /obj/item/vending_refill/hydroseeds(src)
 	new /obj/machinery/vending/hydroseeds(src)
+	new /obj/item/storage/box/disks_plantgene(src)
 
 // Y
 

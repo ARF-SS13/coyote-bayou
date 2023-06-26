@@ -9,6 +9,32 @@
  * Backpack
  */
 
+/obj/item/storage/debug
+	name = "debug testsack"
+	desc = "A testing device used to hold various debug things for testing."
+	icon_state = "eq_backpack"
+	item_state = "backpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	resistance_flags = NONE
+	max_integrity = 300
+	component_type = /datum/component/storage/concrete/debug_sack/smaller
+
+/obj/item/storage/debug_box
+	name = "debug testbox"
+	desc = "A testing device used to hold various debug things for testing."
+	icon_state = "eq_box"
+	item_state = "backpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	resistance_flags = NONE
+	max_integrity = 300
+	component_type = /datum/component/storage/concrete/debug_sack
+
 /obj/item/storage/backpack
 	name = "hiking backpack"
 	desc = "You wear this on your back and put items into it."

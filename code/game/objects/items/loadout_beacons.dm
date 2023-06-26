@@ -2398,6 +2398,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_HOBO
 	spawn_thing = /obj/item/gun/ballistic/revolver/sling/staff
 
-
-
-
+/datum/loadout_box/riotweathered
+	entry_tag = "Weathered Riot Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_SHIELD
+	spawn_thing = /obj/item/shield/coyote/riotweathered

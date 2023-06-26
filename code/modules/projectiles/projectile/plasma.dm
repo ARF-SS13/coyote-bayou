@@ -1,4 +1,4 @@
-obj/item/projectile/energy/plasmabolt
+/obj/item/projectile/energy/plasmabolt
 	name = "plasma bolt"
 	icon_state = "plasma"
 	flag = "energy"
@@ -7,13 +7,14 @@ obj/item/projectile/energy/plasmabolt
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	light_range = 3
 	light_color = LIGHT_COLOR_GREEN
+	recoil = BULLET_RECOIL_PLASMA
 
 /obj/item/projectile/energy/plasmabolt/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(isturf(target) || istype(target, /obj/structure/))
 		target.ex_act(EXPLODE_LIGHT)
 
-obj/item/projectile/energy/evebolt
+/obj/item/projectile/energy/plasmabolt/eve
 	name = "eve bolt"
 	icon = 'icons/fallout/objects/guns/projectiles.dmi'
 	icon_state = "eve"

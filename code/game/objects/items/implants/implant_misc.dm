@@ -17,7 +17,7 @@
 	name = "adrenal implant"
 	desc = "Removes all stuns."
 	icon_state = "adrenal"
-	uses = 3
+	uses = 1
 
 /obj/item/implant/adrenalin/get_data()
 	var/dat = {"<b>Implant Specifications:</b><BR>

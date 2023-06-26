@@ -197,3 +197,6 @@
 	var/waddle_up_time
 	/// How long is a sideways bob for wobbling?
 	var/waddle_side_time
+
+	/// How fast your previous step was
+	var/last_move_delay = 0

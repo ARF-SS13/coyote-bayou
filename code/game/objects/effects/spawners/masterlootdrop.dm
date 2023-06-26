@@ -900,11 +900,11 @@
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 10,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 10,
 		/obj/effect/spawner/bundle/f13/armor/hotrodpa = 2,
-		/obj/item/clothing/suit/armor/power_armor/t45d = 1,
+		/obj/effect/spawner/bundle/f13/armor/t45d = 1,
 		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 5,
 		/obj/item/clothing/suit/armor/heavy/riot/vault = 5,
 		/obj/item/clothing/suit/armor/heavy/riot/marine = 5,
-		/obj/item/clothing/suit/armor/power_armor/t51b = 1,
+		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
 		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1
 	)
 

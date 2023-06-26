@@ -56,6 +56,7 @@
 	flag = "energy"
 	wound_bonus = -5
 	bare_wound_bonus = 35
+	recoil = BULLET_RECOIL_LASER
 
 /obj/item/projectile/energy/teslacannon/oasis/on_hit(atom/target, blocked = FALSE)
 	. = ..()

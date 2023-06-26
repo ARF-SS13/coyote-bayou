@@ -144,7 +144,6 @@
 	fire_sound = 'sound/weapons/magrifle.ogg'
 	can_suppress = FALSE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	dualwield_spread_mult = 1.4
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three,
@@ -158,7 +157,6 @@
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/mag
 	fire_sound = 'sound/weapons/magpistol.ogg'
-	dualwield_spread_mult = 1.4
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
