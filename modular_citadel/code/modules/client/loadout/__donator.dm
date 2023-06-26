@@ -1139,19 +1139,17 @@
 	ckeywhitelist = list("tk420634")
 
 /obj/item/storage/box/large/custom_kit/tk420634/PopulateContents()
-	new /obj/item/clothing/head/beret/sec/navyofficer(src)
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun(src)
-	new /obj/item/ammo_box/a308box/improvised(src)
-	new /obj/item/ammo_box/a308box/improvised(src)
-	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/magazine/uzim9mm/(src)
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
 	new /obj/item/binoculars(src)
 	new /obj/item/gun_upgrade/barrel/forged(src)
 	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
-	new /obj/item/gun/ballistic/revolver/thatgun(src)
-	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/worn(src)
+	new /obj/item/ammo_box/c9mm(src)
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"
