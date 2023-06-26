@@ -42,7 +42,7 @@
 	response_harm_simple   = "hits"
 	attack_verb_simple = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	faction = list("deathclaw")
+	faction = list("neutral")
 	gold_core_spawnable = HOSTILE_SPAWN
 	//var/charging = FALSE
 	move_resist = MOVE_FORCE_OVERPOWERING
