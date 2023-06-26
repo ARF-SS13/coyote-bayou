@@ -20,7 +20,7 @@
 
 	allowed_limb_ids = list("human","mammal","aquatic","avian")
 	use_skintones = 0
-	speedmod = 0.3 //slightly slower than humans
+	speedmod = 0.4 //slightly slower than humans
 	sexes = 1
 	sharp_blunt_mod = 1.5 //Since I'm effectively taking 50 HP away, they get some more defense to make up for it.
 	sharp_edged_mod = 1.5
@@ -110,12 +110,12 @@
 			is_healing = FALSE
 			H.set_light(0)
 		else
-			healpwr = 3
+			healpwr = 1.5
 			is_healing = TRUE
 			H.set_light(2, 15, LIGHT_COLOR_GREEN)
 	H.adjustCloneLoss(-healpwr)
 	H.adjustToxLoss(-0.3) //ghouls always heal toxin very slowly no matter what
-	H.adjustStaminaLoss(-20) //ghouls don't get tired ever
+	H.adjustStaminaLoss(-5) //ghouls don't get tired ever
 	H.heal_overall_damage(healpwr, healpwr, healpwr)
 	if(is_healing)
 		H.apply_status_effect(/datum/status_effect/ghoulheal)
