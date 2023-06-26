@@ -33,7 +33,21 @@
 /obj/item/implant/adrenalin/activate()
 	. = ..()
 	uses--
-	imp_in.do_adrenaline(150, TRUE, 0, 0, TRUE, list(/datum/reagent/medicine/inaprovaline = 3, /datum/reagent/medicine/synaptizine = 10, /datum/reagent/medicine/regen_jelly = 10, /datum/reagent/medicine/stimulants = 10), span_boldnotice("You feel a sudden surge of energy!"))
+	imp_in.do_adrenaline(
+		stamina_boost = 150,
+		put_on_feet = TRUE,
+		clamp_unconsciousness_to = 0,
+		clamp_immobilty_to = 0,
+		reset_misc = TRUE,
+		healing_chems = list(
+			/datum/reagent/medicine/epinephrine = 10,
+			/datum/reagent/medicine/coagulant = 19,
+			/datum/reagent/medicine/salglu_solution = 100,
+			/datum/reagent/medicine/regen_jelly = 10,
+			/datum/reagent/medicine/stimulants = 10),
+		message = span_boldnotice("You feel a sudden surge of energy!")
+	)
+
 	to_chat(imp_in, span_notice("You feel a sudden surge of energy!"))
 	if(!uses)
 		qdel(src)

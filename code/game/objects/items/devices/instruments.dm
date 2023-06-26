@@ -55,7 +55,7 @@
 /obj/item/instrument/violin/golden
 	name = "golden violin"
 	desc = "A golden musical instrument with four strings and a bow."
-		force_wielded = 45
+	force_wielded = 45
 	icon_state = "golden_violin"
 	item_state = "golden_violin"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF

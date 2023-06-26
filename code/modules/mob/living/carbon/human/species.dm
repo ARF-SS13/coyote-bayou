@@ -1491,6 +1491,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
 		if(HAS_TRAIT(user, TRAIT_PERFECT_ATTACKER)) // unit test no-miss trait
 			damage = user.dna.species.punchdamagehigh
+		if(HAS_TRAIT(user, TRAIT_PANICKED_ATTACKER))
+			damage *= 0.2 // too scared!
 		var/punchedstam = target.getStaminaLoss()
 		var/punchedbrute = target.getBruteLoss()
 

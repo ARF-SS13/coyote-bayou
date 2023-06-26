@@ -3,10 +3,12 @@
 	doSprintBufferRegen(FALSE)		//first regen.
 	if(sprint_buffer)
 		var/use = min(tiles, sprint_buffer)
-		if(HAS_TRAIT(src, TRAIT_ZOOMIES))
-			sprint_buffer -= use * 1.3
-		if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
-			sprint_buffer -= use * 2
+		if(HAS_TRAIT(src, TRAIT_ENDLESS_RUNNER))
+			use = 0
+		else if(HAS_TRAIT(src, TRAIT_ZOOMIES))
+			use *= 0.65
+		else if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
+			use *= 0.35
 		else
 			sprint_buffer -= use
 		tiles -= use
@@ -18,11 +20,12 @@
 	if(!client || !((client in sprint_bind.is_down) || (client in sprint_hold_bind.is_down))) // there are two keybinds, apparently
 		disable_intentional_sprint_mode()
 		return // if you're not holding it, you stop sprinting when you run out
-	if(HAS_TRAIT(src, TRAIT_ZOOMIES))
-		adjustStaminaLoss(tiles * sprint_stamina_cost * -0.7)
-	if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
-		adjustStaminaLoss(tiles * sprint_stamina_cost * -0.5)
-		return
+	if(HAS_TRAIT(src, TRAIT_ENDLESS_RUNNER))
+		return // you don't stop sprinting if you have this trait
+	else if(HAS_TRAIT(src, TRAIT_ZOOMIES))
+		adjustStaminaLoss(tiles * sprint_stamina_cost * 0.7)
+	else if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
+		adjustStaminaLoss(tiles * sprint_stamina_cost * 0.5)
 	else
 		adjustStaminaLoss(tiles * sprint_stamina_cost)		//use stamina to cover deficit.
 

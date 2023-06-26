@@ -1803,3 +1803,36 @@
 	for(var/i in user.all_wounds)
 		var/datum/wound/iter_wound = i
 		iter_wound.blood_flow = max(0, iter_wound.blood_flow - bleed_reduction_rate)
+
+//used for changeling's adrenaline power
+/datum/reagent/medicine/adrenaline
+	name = "Synthetic Adrenaline"
+	description = "A synthetic cocktail of drugs designed to set a person's fight or flight to FLIGHT."
+	color = "#918e53"
+	value = REAGENT_VALUE_VERY_RARE
+	metabolization_rate = 5 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/medicine/adrenaline/on_mob_metabolize(mob/living/L)
+	..()
+	ADD_TRAIT(L, TRAIT_PANICKED_ATTACKER, type)
+	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
+	L.add_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
+	ADD_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
+	to_chat(L, span_danger("Your body surges with panicked energy! You feel like you could run forever, but your shaking \
+		hands make it next to impossible to fight!"))
+
+/datum/reagent/medicine/adrenaline/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_PANICKED_ATTACKER, type)
+	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
+	L.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
+	REMOVE_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
+	..()
+
+/datum/reagent/medicine/adrenaline/on_mob_life(mob/living/carbon/M as mob)
+	M.AdjustUnconscious(-20, 0)
+	M.AdjustAllImmobility(-20, 0)
+	M.AdjustSleeping(-20, 0)
+	..()
+	return TRUE
+
