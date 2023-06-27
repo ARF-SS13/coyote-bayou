@@ -121,7 +121,7 @@
 
 //aphrodisiac & anaphrodisiac
 
-/datum/reagent/drug/aphrodisiac
+/datum/reagent/consumable/aphrodisiac
 	name = "Crocin"
 	id = "aphro"
 	description = "Naturally found in the crocus and gardenia flowers, this drug acts as a natural and safe aphrodisiac."
@@ -129,7 +129,7 @@
 	taste_mult = 2 //Hide the roofies in stronger flavors
 	color = "#FFADFF"//PINK, rgb(255, 173, 255)
 
-/datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/M)
+/datum/reagent/consumable/aphrodisiac/on_mob_life(mob/living/M)
 	if(M && M.canbearoused && !HAS_TRAIT(M, TRAIT_CROCRIN_IMMUNE))
 		if(prob(33))
 			M.adjustArousalLoss(2)
@@ -140,7 +140,7 @@
 			to_chat(M, span_userlove("[aroused_message]"))
 	..()
 
-/datum/reagent/drug/aphrodisiacplus
+/datum/reagent/consumable/aphrodisiacplus
 	name = "Hexacrocin"
 	id = "aphro+"
 	description = "Chemically condensed form of basic crocin. This aphrodisiac is extremely powerful and addictive in most animals.\
@@ -151,7 +151,7 @@
 	addiction_threshold = 20
 	overdose_threshold = 20
 
-/datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/on_mob_life(mob/living/M)
 	if(M && M.canbearoused && !HAS_TRAIT(M, TRAIT_CROCRIN_IMMUNE))
 		if(prob(33))
 			M.adjustArousalLoss(6)//not quite six times as powerful, but still considerably more powerful.
@@ -169,21 +169,21 @@
 			to_chat(M, span_userlove("[aroused_message]"))
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/addiction_act_stage2(mob/living/M)
 	if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/addiction_act_stage3(mob/living/M)
 	if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3)
 
 		..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage4(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/addiction_act_stage4(mob/living/M)
 	if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/overdose_process(mob/living/M)
 	if(M && M.canbearoused && !HAS_TRAIT(M, TRAIT_CROCRIN_IMMUNE) && prob(33))
 		if(prob(5) && M.getArousalLoss() >= 100 && ishuman(M) && M.has_dna())
 			if(prob(5)) //Less spam
@@ -195,7 +195,7 @@
 		M.adjustArousalLoss(2)
 	..()
 
-/datum/reagent/drug/anaphrodisiac
+/datum/reagent/consumable/anaphrodisiac
 	name = "Camphor"
 	id = "anaphro"
 	description = "Naturally found in some species of evergreen trees, camphor is a waxy substance. When injested by most animals, it acts as an anaphrodisiac\
@@ -205,12 +205,12 @@
 	color = "#D9D9D9"//rgb(217, 217, 217)
 	reagent_state = SOLID
 
-/datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/M)
+/datum/reagent/consumable/anaphrodisiac/on_mob_life(mob/living/M)
 	if(M && M.canbearoused && prob(33))
 		M.adjustArousalLoss(-2)
 	..()
 
-/datum/reagent/drug/anaphrodisiacplus
+/datum/reagent/consumable/anaphrodisiacplus
 	name = "Hexacamphor"
 	id = "anaphro+"
 	description = "Chemically condensed camphor. Causes an extreme reduction in libido and a permanent one if overdosed. Non-addictive."
@@ -219,12 +219,12 @@
 	reagent_state = SOLID
 	overdose_threshold = 20
 
-/datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/M)
+/datum/reagent/consumable/anaphrodisiacplus/on_mob_life(mob/living/M)
 	if(M && M.canbearoused && prob(33))
 		M.adjustArousalLoss(-4)
 	..()
 
-/datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/M)
+/datum/reagent/consumable/anaphrodisiacplus/overdose_process(mob/living/M)
 	if(M && M.canbearoused && prob(33))
 		if(M.min_arousal > 0)
 			M.min_arousal -= 1
