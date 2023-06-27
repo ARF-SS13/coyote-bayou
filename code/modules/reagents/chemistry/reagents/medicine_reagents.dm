@@ -1866,11 +1866,13 @@
 	..()
 	return TRUE
 
-/datum/reagent/medicine/adrenaline/overdose_process(mob/living/M)
+/datum/reagent/medicine/adrenaline/overdose_process(mob/living/carbon/M)
 	. = ..()
+	if(!iscarbon(M))
+		return
 	if(prob(50))
 		return
-	switch(rand(1,9))
+	switch(rand(1,10))
 		if(1)
 			to_chat(M, span_danger("Your legs wont stop shaking!"))
 			M.confused = clamp(M.confused + 2, 1, 200)
@@ -1878,7 +1880,7 @@
 			to_chat(M, span_danger("Your eyes ache!"))
 			M.blur_eyes(5)
 		if(3)
-			emote("gasp")
+			M.emote("gasp")
 			M.losebreath = clamp(M.losebreath + 3, 1, 10)
 		if(4)
 			to_chat(M, span_danger("You feel your veins burn!"))
