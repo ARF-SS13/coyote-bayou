@@ -117,18 +117,6 @@
 	icon_dead = "calicoslug_dead"
 	gender = "female"
 
-//Slugcat OC for Cosmic
-/mob/living/simple_animal/pet/catslug/shroomslug
-	name = "Myca Rashee"
-	desc = "A slugcat that seems to be idly sitting there their fur seems a bit odd to look at as they give off a odd glow from the mushroom cap on their head. They seem somewhat timid and shy? Their seems to be fungal growths along the blanket of moss on their body..https://media.discordapp.net/attachments/1020998258669129758/1025891405605912626/cosmic_mushroom_cat_1_1.png?width=773&height=805"
-	icon_state = "shroomslug"
-	icon_living = "shroomslug"
-	icon_dead = "shroomslug_dead"
-	gender = "plural"
-	light_color ="#728FCE"
-	light_range = 1.4
-	light_power = 4
-
 //Slugcat OC for Gamma
 /mob/living/simple_animal/pet/catslug/sunrise
 	name = "Falling Sunrise"
