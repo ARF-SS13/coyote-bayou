@@ -1,16 +1,13 @@
 /// Sprint buffer ///
 /mob/living/carbon/doSprintLossTiles(tiles)
 	doSprintBufferRegen(FALSE)		//first regen.
-	if(sprint_buffer)
+	if(sprint_buffer && !HAS_TRAIT(src, TRAIT_ENDLESS_RUNNER))
 		var/use = min(tiles, sprint_buffer)
-		if(HAS_TRAIT(src, TRAIT_ENDLESS_RUNNER))
-			use = 0
-		else if(HAS_TRAIT(src, TRAIT_ZOOMIES))
+		if(HAS_TRAIT(src, TRAIT_ZOOMIES))
 			use *= 0.65
 		else if(HAS_TRAIT(src, TRAIT_SUPER_ZOOMIES))
 			use *= 0.35
-		else
-			sprint_buffer -= use
+		sprint_buffer -= use
 		tiles -= use
 	update_hud_sprint_bar()
 	if(!tiles)		//we had enough, we're done!

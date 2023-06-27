@@ -1810,29 +1810,96 @@
 	description = "A synthetic cocktail of drugs designed to set a person's fight or flight to FLIGHT."
 	color = "#918e53"
 	value = REAGENT_VALUE_VERY_RARE
-	metabolization_rate = 5 * REAGENTS_METABOLISM
+	overdose_threshold = 100
+	metabolization_rate = 20 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/adrenaline/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_PANICKED_ATTACKER, type)
+	ADD_TRAIT(L, TRAIT_ENDLESS_RUNNER, type)
 	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	L.add_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 	ADD_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 	to_chat(L, span_danger("Your body surges with panicked energy! You feel like you could run forever, but your shaking \
 		hands make it next to impossible to fight!"))
+	L.resist_a_rest(automatic = TRUE, ignoretimer = TRUE, silent = TRUE)
 
 /datum/reagent/medicine/adrenaline/on_mob_end_metabolize(mob/living/L)
+	to_chat(L, span_danger("Your body's panicked energy fades away. The shakes are gone, but you feel exhausted."))
 	REMOVE_TRAIT(L, TRAIT_PANICKED_ATTACKER, type)
+	REMOVE_TRAIT(L, TRAIT_ENDLESS_RUNNER, type)
 	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	L.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 	REMOVE_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
+	L.adjustStaminaLoss(200)
 	..()
 
 /datum/reagent/medicine/adrenaline/on_mob_life(mob/living/carbon/M as mob)
 	M.AdjustUnconscious(-20, 0)
 	M.AdjustAllImmobility(-20, 0)
 	M.AdjustSleeping(-20, 0)
+	M.jitteriness = 20
+	switch(rand(1,100))
+		if(1 to 10)
+			M.emote("scream")
+		if(10 to 15)
+			M.emote("twitch")
+			var/obj/item/mainhand = M.get_active_held_item()
+			if(mainhand)
+				M.drop_all_held_items()
+				to_chat(M, span_userdanger("Your hands flinch and fumble your [mainhand] to the ground!!"))
+		else
+			if(prob(50))
+				var/emote_to_do = pick(
+					"twitch",
+					"shake",
+					"shiver",
+					"tremble",
+					"twitch_s",
+					"sway",
+					"whimper",
+					"drool",
+					"scrungy",
+				)
+				M.emote(emote_to_do)
 	..()
 	return TRUE
+
+/datum/reagent/medicine/adrenaline/overdose_process(mob/living/M)
+	. = ..()
+	if(prob(50))
+		return
+	switch(rand(1,9))
+		if(1)
+			to_chat(M, span_danger("Your legs wont stop shaking!"))
+			M.confused = clamp(M.confused + 2, 1, 200)
+		if(2)
+			to_chat(M, span_danger("Your eyes ache!"))
+			M.blur_eyes(5)
+		if(3)
+			emote("gasp")
+			M.losebreath = clamp(M.losebreath + 3, 1, 10)
+		if(4)
+			to_chat(M, span_danger("You feel your veins burn!"))
+			M.adjustToxLoss(2)
+		if(5)
+			to_chat(M, span_danger("Your insides feel like they're on fire!"))
+			M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
+			M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1, 40)
+			M.adjustOrganLoss(ORGAN_SLOT_HEART, 1, 40)
+			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, BRAIN_DAMAGE_MILD)
+		if(6)
+			to_chat(M, span_danger("You feel sick to your stomach!"))
+			M.disgust = max(0, M.disgust+50)
+		if(7)
+			to_chat(M, span_danger("Your heart is beating so fast you can feel it in your throat!"))
+			M.adjustStaminaLoss(10*REAGENTS_EFFECT_MULTIPLIER)
+		if(8)
+			M.Jitter(20)
+		if(9)
+			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
+		if(10)
+			to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
+			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
 
