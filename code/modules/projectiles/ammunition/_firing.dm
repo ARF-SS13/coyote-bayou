@@ -39,7 +39,9 @@
 	gun_bullet_spread += distro || 0 // gun's inaccuracy
 	gun_bullet_spread += variance || 0 // cartridge's inaccuracy
 	var/player_spread = spread // spread is the player's recoil
-	if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
+	if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
+		player_spread = 100 // lol
+	else if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
 		player_spread = 0 // nice shot
 	else
 		if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
@@ -66,6 +68,8 @@
 		BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
 	BB.damage_threshold_penetration = damage_threshold_penetration
+	if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
+		BB.damage *= 0.2 // lol
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from

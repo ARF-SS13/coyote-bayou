@@ -110,29 +110,24 @@
 
 	var/force_modifier = 0
 	if(force >= 5)
-		if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-			force_modifier += 10
-
-		if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
-			force_modifier += 5
-
-		if(HAS_TRAIT(user, TRAIT_GENTLE))
-			force_modifier += -5
-
-		if(HAS_TRAIT(user, TRAIT_WIMPY))
-			force_modifier += -10
-
-		if(HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-			force_modifier += (force * 0.25)
-
-		if(HAS_TRAIT(user, TRAIT_FEV))
-			force_modifier += (force * 0.35)
-
-		if(HAS_TRAIT(user, TRAIT_SMUTANT))
-			force_modifier += (force * 0.25)
-
-		if(HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
-			force_modifier += (-force * 0.25)
+		if(HAS_TRAIT(user, TRAIT_PANICKED_ATTACKER) || HAS_TRAIT(user, TRAIT_GHOULMELEE))
+			force_modifier = (-force * 0.8) // You do 20% damage cus ur scared
+		else
+			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
+				force_modifier += 5
+			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
+				force_modifier += 3
+			if(HAS_TRAIT(user, TRAIT_GENTLE))
+				force_modifier += -5
+			if(HAS_TRAIT(user, TRAIT_WIMPY))
+				force_modifier += -10
+			if(HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
+				force_modifier += (force * 0.25) // maxes out your damage
+			if(HAS_TRAIT(user, TRAIT_FEV))
+				force_modifier += (force * 0.1)
+			if(HAS_TRAIT(user, TRAIT_SMUTANT))
+				force_modifier += (force * 0.1)
+	force_modifier = clamp(force_modifier, -force, force * 0.25)
 
 	var/force_out = force + force_modifier
 	if(force_out <= 0)
