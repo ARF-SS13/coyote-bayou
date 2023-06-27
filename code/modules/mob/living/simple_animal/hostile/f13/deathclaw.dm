@@ -473,4 +473,3 @@
 	charging = FALSE
 	charging = FALSE
  */
- 
