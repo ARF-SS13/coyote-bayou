@@ -677,6 +677,11 @@
 	path = /obj/item/clothing/under/f13/navy/officer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
+/datum/gear/uniform/usnavy
+	name = "US Navy jumpsuit"
+	path = /obj/item/clothing/under/f13/navy/officer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
 //CHINA
 
 /datum/gear/uniform/chinese
