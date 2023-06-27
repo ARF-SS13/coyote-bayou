@@ -684,7 +684,7 @@
 		if(!C.undergoing_cardiac_arrest())
 			C.set_heartattack(TRUE)
 
-/datum/reagent/drug/aphrodisiac
+/datum/reagent/consumable/aphrodisiac
 	name = "Crocin"
 	description = "Naturally found in the crocus and gardenia flowers, this drug acts as a natural and safe aphrodisiac."
 	taste_description = "strawberries"
@@ -692,7 +692,7 @@
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE // robots can honry too
 
-/datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/M)
+/datum/reagent/consumable/aphrodisiac/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))
 		. = TRUE
 		..()
@@ -711,7 +711,7 @@
 				to_chat(M, span_userlove("[G.arousal_verb]!"))
 	..()
 
-/datum/reagent/drug/aphrodisiacplus
+/datum/reagent/consumable/aphrodisiacplus
 	name = "Hexacrocin"
 	description = "Chemically condensed form of basic crocin. This aphrodisiac is extremely powerful and addictive in most animals.\
 					Addiction withdrawals can cause brain damage and shortness of breath. Overdosage can lead to brain damage and a \
@@ -723,7 +723,7 @@
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE
 
-/datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))
 		. = TRUE
 		..()
@@ -750,21 +750,21 @@
 				to_chat(M, span_userlove("[G.arousal_verb]!"))
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/addiction_act_stage2(mob/living/M)
 	if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/addiction_act_stage3(mob/living/M)
 	if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3)
 
 		..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage4(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/addiction_act_stage4(mob/living/M)
 	if(prob(30))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/M)
+/datum/reagent/consumable/aphrodisiacplus/overdose_process(mob/living/M)
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO) && prob(33))
 		if(prob(5) && ishuman(M) && M.has_dna() && (M.client?.prefs.cit_toggles & BIMBOFICATION))
 			if(!HAS_TRAIT(M,TRAIT_PERMABONER))
@@ -773,7 +773,7 @@
 				ADD_TRAIT(M,TRAIT_PERMABONER,APHRO_TRAIT)
 	..()
 
-/datum/reagent/drug/anaphrodisiac
+/datum/reagent/consumable/anaphrodisiac
 	name = "Camphor"
 	description = "Naturally found in some species of evergreen trees, camphor is a waxy substance. When injested by most animals, it acts as an anaphrodisiac\
 					, reducing libido and calming them. Non-habit forming and not addictive."
@@ -784,7 +784,7 @@
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE // robots can horno too
 
-/datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/M)
+/datum/reagent/consumable/anaphrodisiac/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))
 		. = TRUE
 		..()
@@ -797,7 +797,7 @@
 				to_chat(M, "<span class='notice'>You no longer feel aroused.")
 	..()
 
-/datum/reagent/drug/anaphrodisiacplus
+/datum/reagent/consumable/anaphrodisiacplus
 	name = "Hexacamphor"
 	description = "Chemically condensed camphor. Causes an extreme reduction in libido and a permanent one if overdosed. Non-addictive."
 	taste_description = "tranquil celibacy"
@@ -807,7 +807,7 @@
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE
 
-/datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/M)
+/datum/reagent/consumable/anaphrodisiacplus/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))
 		. = TRUE
 		..()
@@ -822,7 +822,7 @@
 
 	..()
 
-/datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/M)
+/datum/reagent/consumable/anaphrodisiacplus/overdose_process(mob/living/M)
 	if(M && M.client?.prefs.arousable && prob(5))
 		to_chat(M, span_userlove("You feel like you'll never feel aroused again..."))
 		ADD_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
