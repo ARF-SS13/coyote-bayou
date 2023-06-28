@@ -139,7 +139,7 @@
 /datum/crafting_recipe/pico_manip
 	name = "Delicate Mechanism"
 	result = /obj/item/stock_parts/manipulator/pico
-	reqs = list(/obj/item/stack/craftingoodpartsg/ = 2,
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stock_parts/manipulator/nano = 1)
 	time = 5
 	category = CAT_CRAFTING
