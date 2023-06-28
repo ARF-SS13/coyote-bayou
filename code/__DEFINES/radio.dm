@@ -90,8 +90,8 @@
 #define RADIO_TOKEN_REDWATER ":d"
 
 #define RADIO_CHANNEL_RESPONDERS "Responders"
-#define RADIO_KEY_RESPONDERS "9"
-#define RADIO_TOKEN_RESPONDERS ":9"
+#define RADIO_KEY_RESPONDERS "d"
+#define RADIO_TOKEN_RESPONDERS ":d"
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
@@ -120,7 +120,7 @@
 #define FREQ_TOWN_MAYOR 1375 //Den
 #define FREQ_TOWN_COMMERCE 1376 //Khans
 #define FREQ_BIKER 1379 //Khans
-#define FREQ_RESPONDERS 1381 //Responders
+#define FREQ_RESPONDERS 1209 //Responders
 
 ///hey guess what, telecomm's a fuckin cock, so im making the list here
 ///update this list with all the frequenties the fuckin bus fuckin listens to (which is all of them, fuck you its all of them)
@@ -143,8 +143,8 @@
 		FREQ_TOWN_PD,\
 		FREQ_RANGER,\
 		FREQ_TOWN_COMMERCE,\
-		FREQ_BIKER,\
-		FREQ_RESPONDERS
+		FREQ_RESPONDERS,\
+		FREQ_BIKER
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435
