@@ -66,7 +66,7 @@ em						{font-style: normal;	font-weight: bold;}
 .legionradio			{color: #c24d44;}
 .rangerradio			{color: #83733c;}
 .khansradio				{color: #f0420d;}
-.respondersradio		{color: #a30000;}
+.respondersradio		{color: #dd3535;}
 
 .yell					{					font-weight: bold;}
 
