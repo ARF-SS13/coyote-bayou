@@ -781,7 +781,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				20),
 		new /datum/data/wasteland_equipment("Craftsmanship Monthly",		/obj/item/book/granter/trait/techno,								150),
 		new /datum/data/wasteland_equipment("Scav! Vol.1",					/obj/item/book/granter/crafting_recipe/scav_one,					250),
-		new /datum/data/wasteland_equipment("Weapons of Texarkana and the Nash Defense Force", /obj/item/book/granter/crafting_recipe/ODF		350)
+		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
@@ -791,7 +791,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				20),
 		new /datum/data/wasteland_equipment("Craftsmanship Monthly",		/obj/item/book/granter/trait/techno,								150),
 		new /datum/data/wasteland_equipment("Scav! Vol.1",					/obj/item/book/granter/crafting_recipe/scav_one,					250),
-		new /datum/data/wasteland_equipment("Weapons of Texarkana and the Nash Defense Force", /obj/item/book/granter/crafting_recipe/ODF		350)
+		new /datum/data/wasteland_equipment("Weapons of Texarkana", 		/obj/item/book/granter/crafting_recipe/ODF,							350)
 		)
 
 /* These are shit, don't add them.
