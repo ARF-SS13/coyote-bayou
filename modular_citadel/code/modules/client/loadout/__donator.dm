@@ -1326,6 +1326,14 @@
 	new /obj/machinery/vending/hydroseeds(src)
 	new /obj/item/storage/box/disks_plantgene(src)
 
+/datum/gear/donator/kits/xxpawnstarrxx
+	name = "Justice's notes"
+	path = /obj/item/storage/box/large/custom_kit/cachejustice
+	ckeywhitelist = list("xxpawnstarrxx")
+
+/obj/item/storage/box/large/custom_kit/cachejustice/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/polis(src)
+
 // Y
 
 /datum/gear/donator/kits/yawet
