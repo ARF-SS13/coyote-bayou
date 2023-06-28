@@ -250,8 +250,8 @@
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_BIKER = 1)
 
-/obj/item/encryptionkey/headset_sec
-	name = "An old radio encryption key; seems to be set to an encrypted frequency"
+/obj/item/encryptionkey/headset_responders
+	name = "An jerry-rigged radio key; seems to be set to an encrypted frequency"
 	icon_state = "sec_cypherkey"
 	channels = list(RADIO_CHANNEL_RESPONDERS = 1)
 
