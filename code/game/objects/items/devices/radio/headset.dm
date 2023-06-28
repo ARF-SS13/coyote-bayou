@@ -91,16 +91,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		return ..(freq, level)
 	return FALSE
 
-/obj/item/radio/headset/upgraded
-	name = "radio headset"
-	desc = "An updated, modular intercom that fits over the head. Takes encryption keys and protects the ears."
-	icon_state = "headset"
-	item_state = "headset"
-	subspace_transmission = TRUE
-	slot_flags = ITEM_SLOT_EARS
-	var/obj/item/encryptionkey/keyslot2 = null
-	var/bowman = TRUE
-
 /obj/item/radio/headset/syndicate //disguised to look like a normal headset for stealth ops
 
 /obj/item/radio/headset/syndicate/alt //undisguised bowman with flash protection
@@ -252,6 +242,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "cent_headset"
 	keyslot = new /obj/item/encryptionkey/headset_com
 	keyslot2 = new /obj/item/encryptionkey/headset_cent
+
+/obj/item/radio/headset/upgraded
+	name = "padded radio headset"
+	desc = "An updated, modular intercom that fits over the head. Takes encryption keys and protects the ears."
+	icon_state = "headset"
+	item_state = "headset"
+	keyslot = null
+	var/bowman = TRUE
 
 /obj/item/radio/headset/headset_cent/empty
 	keyslot = null
