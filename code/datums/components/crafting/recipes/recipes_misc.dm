@@ -241,6 +241,7 @@
 	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
 				/obj/item/stack/crafting/metalparts = 1)
 	tools = list(/obj/item/multitool)
+	always_available = FALSE
 
 /datum/crafting_recipe/bowman
 	name = "Reinforced radioheadset"
@@ -250,6 +251,7 @@
 				/obj/item/stack/sheet/cloth = 2)
 	tools = list(/obj/item/multitool,
 				/obj/item/screwdriver)
+	always_available = FALSE
 
 //////////////////////
 //Burial & Execution//
