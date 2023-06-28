@@ -45,6 +45,7 @@
 /obj/item/implant/adrenalin/proc/prejuice(datum/source, newstat)
 	if(juicing)
 		return
+	juicing = TRUE
 	if(newstat == CONSCIOUS)
 		return
 	playsound(imp_in, 'sound/effects/autoinjector_beeps.ogg', 75, TRUE)
