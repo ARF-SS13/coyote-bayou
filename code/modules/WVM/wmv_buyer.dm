@@ -130,6 +130,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/animalhide/wolf = 10,
 		/obj/item/stack/sheet/animalhide/radstag = 15,
 		/obj/item/stack/sheet/animalhide/brahmin = 8,
+		/obj/item/clothing/head/f13/stalkerpelt = 10,
+		/obj/item/clothing/head/bearpelt = 25,
 		/obj/item/stack/sheet/animalhide/human = 0,
 		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 25, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 5,
