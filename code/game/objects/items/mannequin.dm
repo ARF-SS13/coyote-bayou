@@ -165,6 +165,12 @@
 	var/nude = TRUE
 	var/random_clothes = FALSE
 
+/obj/item/ckey_mannequin/clothed
+	nude = FALSE
+
+/obj/item/ckey_mannequin/clothed/random
+	random_clothes = TRUE
+
 /obj/item/ckey_mannequin/attack_hand(mob/user, act_intent, attackchain_flags)
 	if(!attune_to(user))
 		return ..()
@@ -187,7 +193,7 @@
 
 /obj/item/ckey_mannequin/process()
 	update_icon()
-	if(prob(0.5))
+	if(prob(1))
 		switch(rand(1,5))
 			if(1)
 				step_rand(src)
@@ -209,7 +215,7 @@
 		name = initial(name)
 		desc = initial(desc)
 		return
-	SSdummy.capture_snapshot_of_players(TRUE)
+	SSdummy.snapshot_player(my_ckey)
 	var/list/imglist
 	var/list/cool_list
 	if(nude)
@@ -222,6 +228,7 @@
 		if(findtext(kye, my_ckey) || findtext(kye, my_name))
 			imglist = cool_list[kye]
 	if(!imglist)
+		visible_message("[src] panics and disappears!")
 		return
 	if(!my_image)
 		my_image = LAZYACCESS(imglist, 1)

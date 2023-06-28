@@ -268,24 +268,36 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		return
 	COOLDOWN_START(src, snapshot_cooldown, 5 MINUTES)
 	for(var/client/C in GLOB.clients)
-		if(!ishuman(C.mob))
-			continue
-		var/mob/living/carbon/human/H = C.mob
-		if(!LAZYACCESS(naked_player_cache, "[C.ckey]%%[H.real_name]"))
-			naked_player_cache["[C.ckey]%%[H.real_name]"] = list()
-		if(!LAZYACCESS(clothed_player_cache, "[C.ckey]%%[H.real_name]"))
-			clothed_player_cache["[C.ckey]%%[H.real_name]"] = list()
-		var/image/naked = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE)
-		var/image/clothed = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE, copy_equipment = TRUE)
-		var/image/clothed2 = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = TRUE)
-		if(naked)
-			naked_player_cache["[C.ckey]%%[H.real_name]"] |= naked
-		if(clothed)
-			clothed_player_cache["[C.ckey]%%[H.real_name]"] |= clothed
-		if(clothed2)
-			randomclothed_player_cache["[C.ckey]%%[H.real_name]"] |= clothed2
+		snapshot_player(C)
 
-
+/datum/controller/subsystem/dummy/proc/snapshot_player(client_or_ckey)
+	var/mob/living/carbon/human/H
+	var/client/C
+	if(isclient(client_or_ckey))
+		C = client_or_ckey
+		H = C.mob
+	else if(istext(client_or_ckey))
+		C = LAZYACCESS(GLOB.directory, client_or_ckey)
+		if(!C)
+			return
+		H = C.mob
+	if(!ishuman(H))
+		return
+	if(!LAZYACCESS(naked_player_cache, "[C.ckey]%%[H.real_name]"))
+		naked_player_cache["[C.ckey]%%[H.real_name]"] = list()
+	if(!LAZYACCESS(clothed_player_cache, "[C.ckey]%%[H.real_name]"))
+		clothed_player_cache["[C.ckey]%%[H.real_name]"] = list()
+	if(!LAZYACCESS(randomclothed_player_cache, "[C.ckey]%%[H.real_name]"))
+		randomclothed_player_cache["[C.ckey]%%[H.real_name]"] = list()
+	var/image/naked = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE)
+	var/image/clothed = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE, copy_equipment = TRUE)
+	var/image/clothed2 = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = TRUE)
+	if(naked)
+		naked_player_cache["[C.ckey]%%[H.real_name]"] |= naked
+	if(clothed)
+		clothed_player_cache["[C.ckey]%%[H.real_name]"] |= clothed
+	if(clothed2)
+		randomclothed_player_cache["[C.ckey]%%[H.real_name]"] |= clothed2
 
 /mob/living/carbon/human/dummy
 	real_name = "Test Dummy"
