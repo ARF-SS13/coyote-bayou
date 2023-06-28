@@ -897,3 +897,39 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/head/hat/polis
+	name = "police officer's hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "police_officer"
+	item_state = "police_officer"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
+/obj/item/clothing/head/hat/polislt
+	name = "police lieutenant's hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has silver decorations."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
+
+/obj/item/clothing/head/hat/polischief
+	name = "police chief's hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has gold decorations."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
+/obj/item/clothing/head/hat/polissnr
+	name = "police search and rescue hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has search and rescue insignia."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "police_snr"
+	item_state = "police_snr"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
