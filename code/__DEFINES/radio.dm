@@ -90,8 +90,8 @@
 #define RADIO_TOKEN_REDWATER ":d"
 
 #define RADIO_CHANNEL_RESPONDERS "Responders"
-#define RADIO_KEY_RESPONDERS "x"
-#define RADIO_TOKEN_RESPONDERS ":x"
+#define RADIO_KEY_RESPONDERS "9"
+#define RADIO_TOKEN_RESPONDERS ":9"
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
