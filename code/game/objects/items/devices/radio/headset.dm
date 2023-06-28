@@ -249,7 +249,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "headset"
 	item_state = "headset"
 	keyslot = null
-	var/bowman = TRUE
+	bowman = TRUE
 
 /obj/item/radio/headset/headset_cent/empty
 	keyslot = null
