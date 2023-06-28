@@ -900,7 +900,8 @@
 /obj/item/clothing/head/hat/polis
 	name = "police officer's hat"
 	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong."
-	icon = 'icons/fallout/clothing/hats.dmi'
+	item = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "police_officer"
 	item_state = "police_officer"
 	armor = ARMOR_VALUE_LIGHT
@@ -909,7 +910,8 @@
 /obj/item/clothing/head/hat/polislt
 	name = "police lieutenant's hat"
 	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has silver decorations."
-	icon = 'icons/fallout/clothing/hats.dmi'
+	item = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "police_lieutenant"
 	item_state = "police_lieutenant"
 	armor = ARMOR_VALUE_LIGHT
@@ -919,7 +921,8 @@
 /obj/item/clothing/head/hat/polischief
 	name = "police chief's hat"
 	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has gold decorations."
-	icon = 'icons/fallout/clothing/hats.dmi'
+	item = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "police_chief"
 	item_state = "police_chief"
 	armor = ARMOR_VALUE_LIGHT
@@ -928,7 +931,8 @@
 /obj/item/clothing/head/hat/polissnr
 	name = "police search and rescue hat"
 	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has search and rescue insignia."
-	icon = 'icons/fallout/clothing/hats.dmi'
+	item = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "police_snr"
 	item_state = "police_snr"
 	armor = ARMOR_VALUE_LIGHT
