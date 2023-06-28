@@ -1364,3 +1364,21 @@
 	crafting_recipe_types = list(
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5)
+
+/obj/item/book/granter/crafting_recipe/polis
+	name = "A scribbled, bloody journal"
+	desc = "An old journal, writted by someone with the will to do right but cut short..."
+	remarks = list("Durathread works much like oldworld kevlar.", "Leadership isn't always a bad thing.", "Layer the fibers correctly.", "Don't forget to look good while you're doing it.")
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/polis,
+		/datum/crafting_recipe/polislt,
+		/datum/crafting_recipe/polischief,
+		/datum/crafting_recipe/polissnr,
+		/datum/crafting_recipe/poliscoat,
+		/datum/crafting_recipe/polisltcoat,
+		/datum/crafting_recipe/polischiefcoat,
+		/datum/crafting_recipe/polissnrcoat,
+		/datum/crafting_recipe/polishat,
+		/datum/crafting_recipe/polislthat,
+		/datum/crafting_recipe/polischiefhat,
+		/datum/crafting_recipe/polissnrhat)
