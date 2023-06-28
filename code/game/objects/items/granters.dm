@@ -1381,4 +1381,7 @@
 		/datum/crafting_recipe/polishat,
 		/datum/crafting_recipe/polislthat,
 		/datum/crafting_recipe/polischiefhat,
-		/datum/crafting_recipe/polissnrhat)
+		/datum/crafting_recipe/polissnrhat,
+		/datum/crafting_recipe/tommygun,
+		/datum/crafting_recipe/m1911,
+		/datum/crafting_recipe/policebaton)
