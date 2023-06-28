@@ -1855,7 +1855,7 @@
 	name = "police jacket"
 	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
-	mob_overlay_icon = 'icons/mob/clothes/suit.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_officer"
 	item_state = "police_officer"
@@ -1864,7 +1864,7 @@
 	name = "police lieutenant's jacket"
 	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies, This one's got silver on it."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
-	mob_overlay_icon = 'icons/mob/clothes/suit.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_lieutenant"
 	item_state = "police_lieutenant"
@@ -1873,7 +1873,7 @@
 	name = "police chief's jacket"
 	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies, This one's got silver on it."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
-	mob_overlay_icon = 'icons/mob/clothes/suit.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_chief"
 	item_state = "police_chief"
@@ -1882,7 +1882,7 @@
 	name = "police search and rescue jacket"
 	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies, This one's got search and rescue markings."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
-	mob_overlay_icon = 'icons/mob/clothes/suit.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_snr"
 	item_state = "police_snr"
