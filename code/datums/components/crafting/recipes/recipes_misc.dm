@@ -235,6 +235,24 @@
 	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
 	tools = list(/obj/item/multitool)
 
+/datum/crafting_recipe/radiokeyresponder
+	name = "Responders Encryption Key"
+	result = /obj/item/encryptionkey/headset_responders
+	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(/obj/item/multitool)
+	always_available = FALSE
+
+/datum/crafting_recipe/bowman
+	name = "Reinforced radioheadset"
+	result = /obj/item/radio/headset/upgraded
+	reqs = list(/obj/item/radio/headset = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/sheet/cloth = 2)
+	tools = list(/obj/item/multitool,
+				/obj/item/screwdriver)
+	always_available = FALSE
+
 //////////////////////
 //Burial & Execution//
 //////////////////////

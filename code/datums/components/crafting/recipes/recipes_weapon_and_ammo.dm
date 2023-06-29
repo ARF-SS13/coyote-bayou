@@ -115,6 +115,18 @@
 	subcategory = CAT_MELEE
 	always_available = FALSE
 
+/datum/crafting_recipe/policebaton
+	name = "Police Baton"
+	result = /obj/item/melee/classic_baton/police
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/prewar = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
 ////////////////
 ///POWER CELLS//
 ///////////////
@@ -960,6 +972,18 @@
 /datum/crafting_recipe/policerifle
 	name = "Police Rifle"
 	result = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/tommygun
+	name = "Thompson Submachinegun"
+	result = /obj/item/gun/ballistic/automatic/smg/tommygun
+	tools = list(TOOL_WORKBENCH)
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 2)

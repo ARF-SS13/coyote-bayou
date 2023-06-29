@@ -127,6 +127,11 @@ export const RADIO_CHANNELS = [
     color: '#dd3535',
   },
   {
+    name: 'Responders',
+    freq: 1209,
+    color: '#dd3535',
+  },
+  {
     name: 'AI Private',
     freq: 1447,
     color: '#d65d95',

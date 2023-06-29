@@ -21,8 +21,9 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_TOWN_MAYOR = RADIO_TOKEN_TOWN_MAYOR,
 	RADIO_CHANNEL_TOWN_PD = RADIO_TOKEN_TOWN_PD,
 	RADIO_CHANNEL_RANGER = RADIO_TOKEN_RANGER,
+	RADIO_CHANNEL_RESPONDERS = RADIO_TOKEN_RESPONDERS,
 	RADIO_CHANNEL_TOWN_COMMERCE = RADIO_TOKEN_TOWN_COMMERCE
-))
+	))
 
 /obj/item/radio/headset
 	name = "radio headset"
@@ -241,6 +242,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "cent_headset"
 	keyslot = new /obj/item/encryptionkey/headset_com
 	keyslot2 = new /obj/item/encryptionkey/headset_cent
+
+/obj/item/radio/headset/upgraded
+	name = "padded radio headset"
+	desc = "An updated, modular intercom that fits over the head. Takes encryption keys and protects the ears."
+	icon_state = "headset"
+	item_state = "headset"
+	keyslot = null
+	bowman = TRUE
 
 /obj/item/radio/headset/headset_cent/empty
 	keyslot = null
