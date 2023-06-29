@@ -426,6 +426,8 @@
 	weapon_class = WEAPON_CLASS_NORMAL //kinda bulky for a compact gun
 	damage_multiplier = GUN_LESS_DAMAGE_T2 //this spits lots of bullets and is compact and can be dual wielded
 	init_recoil = SMG_RECOIL(2, 2)
+	suppressor_x_offset = 28
+	suppressor_y_offset = 20
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/faster
