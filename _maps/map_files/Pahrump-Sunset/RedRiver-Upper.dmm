@@ -1,15 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ab" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/structure/fence/wooden{
-	pixel_y = 6
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "ac" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -785,17 +774,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
-/area/f13/wasteland)
-"iA" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/structure/fence/wooden{
-	pixel_y = 7
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "iD" = (
 /obj/structure/simple_door/interior,
@@ -3317,26 +3295,6 @@
 	color = "#777777"
 	},
 /area/f13/caves)
-"Ho" = (
-/obj/effect/turf_decal/weather/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/fence/wooden{
-	pixel_x = -8;
-	pixel_y = 5
-	},
-/obj/structure/fence/wooden{
-	pixel_y = 3;
-	pixel_x = 12;
-	dir = 2
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Hs" = (
 /obj/structure/chair/sofa/right,
 /turf/open/floor/f13/wood,
@@ -3840,18 +3798,6 @@
 "Mb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt,
-/obj/structure/fence/wooden{
-	pixel_x = -14;
-	pixel_y = 6;
-	layer = 4
-	},
-/obj/structure/fence/wooden{
-	pixel_y = 6
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 4
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Mh" = (
@@ -67765,7 +67711,7 @@ py
 Ym
 py
 nn
-ab
+hL
 Ym
 tO
 zJ
@@ -68022,7 +67968,7 @@ Ym
 mz
 Ym
 nn
-ab
+hL
 py
 Eo
 jI
@@ -68279,7 +68225,7 @@ py
 rt
 py
 nn
-iA
+hL
 py
 tO
 zJ
@@ -68536,7 +68482,7 @@ py
 gJ
 py
 nn
-Ho
+iQ
 Ym
 wD
 iQ
