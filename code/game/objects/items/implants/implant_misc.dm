@@ -61,6 +61,7 @@
 		clamp_immobility_to = 0,
 		reset_misc = TRUE,
 		healing_chems = list(
+			/datum/reagent/medicine/atropine = 3,
 			/datum/reagent/medicine/epinephrine = 25,
 			/datum/reagent/medicine/coagulant = 19,
 			/datum/reagent/medicine/protozine = 20,
