@@ -44,6 +44,14 @@
 	var/mob/dead/observer/G = usr
 	G.open_spawners_menu()
 
+/obj/screen/ghost/second_wind
+	name = "Revive yourself"
+	icon_state = "second_wind"
+
+/obj/screen/ghost/spawners/Click()
+	var/mob/dead/observer/G = usr
+	G.open_second_wind_menu()
+
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/obj/screen/using
