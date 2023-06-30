@@ -40,7 +40,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/head
-	category = list("initial","other")
+	category = list("initial","human")
 
 /datum/design/lungs
 	name = "Lungs"
@@ -105,6 +105,14 @@
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/organ/tongue
 	category = list("initial","other")
+
+/datum/design/human
+	name = "Torso"
+	id = "torso"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 300)
+	build_path = /mob/living/carbon/twoman
+	category = list("initial","human")
 
 /*
 	/datum/design/armblade
