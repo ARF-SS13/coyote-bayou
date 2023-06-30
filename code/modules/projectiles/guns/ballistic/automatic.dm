@@ -155,6 +155,33 @@
 	extra_mag_types = /obj/item/ammo_box/magazine/m22smg //lets you use it as a standard .22 when you run out of unobtainable bees.
 	init_mag_type = /obj/item/ammo_box/magazine/b180
 
+/* * * * * * * * * * * 
+ * VSS Vintorez
+ * 9mm
+ * suppressed
+ * two handed
+ * fast shooting
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/vss
+	name = "VSS"
+	desc = "An integrally suppressed compact chambered in the rare 9x39. Where did you even GET this?!"
+	icon_state = "vss"
+	item_state = "vss"
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	mag_type = /obj/item/ammo_box/magazine/vss
+	init_mag_type = /obj/item/ammo_box/magazine/vss
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/faster
+	)
+	silenced = TRUE
+	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
+
 /* * * * * * * * * * *
  * 14mm SMG
  * Heavy SMG
