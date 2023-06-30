@@ -136,7 +136,7 @@
 	icon_state = "bus1"
 	bound_width = 32
 	bound_height = 32
-	var/uses_left = 2
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented1
 	name = "wrecked bus"
@@ -145,6 +145,7 @@
 	icon_state = "bus2"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented2
 	name = "wrecked bus"
@@ -153,6 +154,7 @@
 	icon_state = "bus3"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented3
 	name = "wrecked bus"
@@ -161,6 +163,7 @@
 	icon_state = "bus4"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented4
 	name = "wrecked bus"
@@ -169,6 +172,7 @@
 	icon_state = "bus5"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented5
 	name = "wrecked bus"
@@ -177,6 +181,7 @@
 	icon_state = "bus6"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented6
 	name = "wrecked bus"
@@ -186,6 +191,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented7
 	name = "wrecked bus"
@@ -194,6 +200,7 @@
 	icon_state = "bus8"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented8
 	name = "wrecked bus"
@@ -202,6 +209,7 @@
 	icon_state = "bus9"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented9
 	name = "wrecked bus"
@@ -210,6 +218,7 @@
 	icon_state = "bus10"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented10
 	name = "wrecked bus"
@@ -218,6 +227,7 @@
 	icon_state = "bus11"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented11
 	name = "wrecked bus"
@@ -226,6 +236,7 @@
 	icon_state = "bus12"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented12
 	name = "wrecked bus"
@@ -234,6 +245,7 @@
 	icon_state = "bus13"
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented13
 	name = "wrecked bus"
@@ -243,6 +255,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented14
 	name = "wrecked bus"
@@ -252,6 +265,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented15
 	name = "wrecked bus"
@@ -261,6 +275,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented16
 	name = "wrecked bus"
@@ -270,6 +285,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented17
 	name = "wrecked bus"
@@ -279,6 +295,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented18
 	name = "wrecked bus"
@@ -288,6 +305,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented19
 	name = "wrecked bus"
@@ -297,6 +315,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/bus/rusted/segmented20
 	name = "wrecked bus"
@@ -306,6 +325,7 @@
 	density = 0
 	bound_width = 32
 	bound_height = 32
+	uses_left = 2
 
 /obj/structure/wreck/trash/five_tires
 	name = "tire pile"
@@ -408,8 +428,7 @@
 	icon_state = "secwaybroke"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
-	inuse = FALSE
+	var/inuse = FALSE
 
 /obj/structure/wreck/trash/secway/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
@@ -455,8 +474,7 @@
 	icon_state = "technical_pile3"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
-	inuse = FALSE
+	var/inuse = FALSE
 
 /obj/structure/wreck/trash/brokenvendor/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
@@ -502,8 +520,7 @@
 	icon_state = "technical_pile1"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
-	inuse = FALSE
+	var/inuse = FALSE
 
 /obj/structure/wreck/trash/machinepile/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
@@ -550,8 +567,7 @@
 	icon_state = "technical_pile2"
 	bound_width = 32
 	bound_height = 32
-	uses_left = 2
-	inuse = FALSE
+	var/inuse = FALSE
 
 /obj/structure/wreck/trash/machinepiletwo/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
