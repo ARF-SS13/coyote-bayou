@@ -168,6 +168,7 @@
 	desc = "An integrally suppressed compact chambered in the rare 9x39. Where did you even GET this?!"
 	icon_state = "vss"
 	item_state = "vss"
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	mag_type = /obj/item/ammo_box/magazine/vss
 	init_mag_type = /obj/item/ammo_box/magazine/vss
 	weapon_class = WEAPON_CLASS_CARBINE
