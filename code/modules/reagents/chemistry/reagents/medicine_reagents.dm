@@ -1810,9 +1810,11 @@
 	description = "A synthetic cocktail of drugs designed to set a person's fight or flight to FLIGHT."
 	color = "#918e53"
 	value = REAGENT_VALUE_VERY_RARE
-	overdose_threshold = 100
-	metabolization_rate = 20 * REAGENTS_METABOLISM
+	overdose_threshold = 150
+	metabolization_rate = 10 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
+	var/gave_damage_resist
+	var/removed_damage_resist
 
 /datum/reagent/medicine/adrenaline/on_mob_metabolize(mob/living/L)
 	..()
@@ -1824,6 +1826,14 @@
 	to_chat(L, span_danger("Your body surges with panicked energy! You feel like you could run forever, but your shaking \
 		hands make it next to impossible to fight!"))
 	L.resist_a_rest(automatic = TRUE, ignoretimer = TRUE, silent = TRUE)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/adrenaline)
+	if(!gave_damage_resist)
+		gave_damage_resist = TRUE
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			H.physiology?.brute_mod *= 0.5
+			H.physiology?.burn_mod *= 0.5
+
 
 /datum/reagent/medicine/adrenaline/on_mob_end_metabolize(mob/living/L)
 	to_chat(L, span_danger("Your body's panicked energy fades away. The shakes are gone, but you feel exhausted."))
@@ -1833,6 +1843,13 @@
 	L.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 	REMOVE_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 	L.adjustStaminaLoss(200)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/adrenaline)
+	if(!removed_damage_resist)
+		removed_damage_resist = TRUE
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			H.physiology?.brute_mod *= 2
+			H.physiology?.burn_mod *= 2
 	..()
 
 /datum/reagent/medicine/adrenaline/on_mob_life(mob/living/carbon/M as mob)
@@ -1849,20 +1866,21 @@
 			if(mainhand)
 				M.drop_all_held_items()
 				to_chat(M, span_userdanger("Your hands flinch and fumble your [mainhand] to the ground!!"))
+		if(15 to 80)
+			var/emote_to_do = pick(
+				"twitch",
+				"shake",
+				"shiver",
+				"tremble",
+				"twitch_s",
+				"sway",
+				"whimper",
+				"drool",
+				"scrungy", "scrungy", "scrungy", "scrungy", "scrungy", "scrungy", "scrungy",
+			)
+			M.emote(emote_to_do)
 		else
-			if(prob(50))
-				var/emote_to_do = pick(
-					"twitch",
-					"shake",
-					"shiver",
-					"tremble",
-					"twitch_s",
-					"sway",
-					"whimper",
-					"drool",
-					"scrungy",
-				)
-				M.emote(emote_to_do)
+			M.emote("scrungy")
 	..()
 	return TRUE
 
