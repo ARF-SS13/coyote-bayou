@@ -55,8 +55,8 @@
 	name = "wrecked motorcycle"
 	desc = "An old pre-war motorcycle, rusted and destroyed with age and weathering."
 	icon_state = "rust_light_no_wheels"
-	var/uses_left = 2
-	var/inuse = FALSE
+	uses_left = 2
+	inuse = FALSE
 
 /obj/structure/wreck/car/bike/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
@@ -103,8 +103,8 @@
 	bound_width = 192
 	bound_height = 64
 	icon = 'icons/obj/vehicles/bus1.dmi'
-	var/uses_left = 4
-	var/inuse = FALSE
+	uses_left = 4
+	inuse = FALSE
 
 /obj/structure/wreck/bus/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
@@ -177,8 +177,8 @@
 	icon_state = "bus1"
 	bound_width = 32
 	bound_height = 32
-	var/uses_left = 2
-	var/inuse = FALSE
+	uses_left = 2
+	inuse = FALSE
 
 /obj/structure/wreck/bus/rusted/segmented1
 	name = "wrecked bus"
@@ -450,8 +450,8 @@
 	icon_state = "secwaybroke"
 	bound_width = 32
 	bound_height = 32
-	var/uses_left = 2
-	var/inuse = FALSE
+	uses_left = 2
+	inuse = FALSE
 
 /obj/structure/wreck/trash/secway/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
@@ -497,8 +497,8 @@
 	icon_state = "technical_pile3"
 	bound_width = 32
 	bound_height = 32
-	var/uses_left = 2
-	var/inuse = FALSE
+	uses_left = 2
+	inuse = FALSE
 
 /obj/structure/wreck/trash/brokenvendor/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
@@ -544,8 +544,8 @@
 	icon_state = "technical_pile1"
 	bound_width = 32
 	bound_height = 32
-	var/uses_left = 2
-	var/inuse = FALSE
+	uses_left = 2
+	inuse = FALSE
 
 /obj/structure/wreck/trash/machinepile/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
@@ -592,8 +592,8 @@
 	icon_state = "technical_pile2"
 	bound_width = 32
 	bound_height = 32
-	var/uses_left = 2
-	var/inuse = FALSE
+	uses_left = 2
+	inuse = FALSE
 
 /obj/structure/wreck/trash/machinepiletwo/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
