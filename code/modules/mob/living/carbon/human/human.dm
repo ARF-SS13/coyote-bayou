@@ -86,8 +86,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
 	GLOB.human_list += src
 
-	var/datum/atom_hud/data/twoman/genital/pornHud = GLOB.huds[GENITAL_PORNHUD]
-	pornHud.add_to_hud(src)
 	update_body(TRUE)
 
 /mob/living/carbon/twoman/ComponentInitialize()
@@ -98,7 +96,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	AddElement(/datum/element/flavor_text/carbon, _name = "Flavor Text", _save_key = "flavor_text")
 	AddElement(/datum/element/flavor_text, "", "Set Pose/Leave OOC Message", "This should be used only for things pertaining to the current round!")
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _always_show = TRUE, _save_key = "ooc_notes", _examine_no_preview = TRUE)
-	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS, .proc/signal_update_genitals)
 
 
 /mob/living/carbon/human/Destroy()
