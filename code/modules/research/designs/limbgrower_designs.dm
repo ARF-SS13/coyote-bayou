@@ -106,10 +106,12 @@
 	build_path = /obj/item/organ/tongue
 	category = list("initial","other")
 
-//*datum/design/armblade
+/*
+	/datum/design/armblade
 	name = "Arm Blade"
 	id = "armblade"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 75)
 	build_path = /obj/item/melee/synthetic_arm_blade
-	category = list("other","emagged")*/
+	category = list("other","emagged")
+*/
