@@ -64,7 +64,7 @@
 			/datum/reagent/medicine/atropine = 3,
 			/datum/reagent/medicine/epinephrine = 25,
 			/datum/reagent/medicine/coagulant = 19,
-			/datum/reagent/medicine/protozine = 20,
+			/datum/reagent/medicine/omnizine/protozine = 20,
 			/datum/reagent/water = 100,
 			/datum/reagent/medicine/adrenaline = 100
 		)
