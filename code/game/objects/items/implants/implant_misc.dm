@@ -61,15 +61,15 @@
 		clamp_immobility_to = 0,
 		reset_misc = TRUE,
 		healing_chems = list(
-			/datum/reagent/medicine/epinephrine = 10,
+			/datum/reagent/medicine/epinephrine = 25,
 			/datum/reagent/medicine/coagulant = 19,
+			/datum/reagent/medicine/protozine = 20,
 			/datum/reagent/water = 100,
 			/datum/reagent/medicine/adrenaline = 100
 		)
 	)
 	to_chat(imp_in, span_userdanger("You feel your adrenal implant burst!"))
-	if(uses-- <= 0)
-		qdel(src)
+	qdel(src)
 
 /obj/item/implant/warp
 	name = "warp implant"
