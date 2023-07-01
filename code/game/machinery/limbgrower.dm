@@ -31,6 +31,7 @@
 							"plasmaman",
 							"mammal",
 							"xeno",
+							"genitals",
 							"other"
 							)
 
