@@ -75,14 +75,14 @@
 		//D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
 		//D.DefaultCombatKnockdown(10, null, TRUE)
 		//D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
-		//D.visible_message(span_warning("[A] grabs [D] by the throat, slamming them face first into the ground!"), \
+		//D.visible_message(span_warning("[A] grabs [D] by the throat, slamming them face first into the ground!"),
 					//span_userdanger("[A] grabs you by the throat, slammed your head into the ground!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
 		//to_chat(A, span_danger("You chokeslam [D]!"))
 	//else
 		//D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
 		//D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
 		//D.drop_all_held_items()
-		//D.visible_message(span_warning("[A] pummels [D]!"), \
+		//D.visible_message(span_warning("[A] pummels [D]!"),
 					//span_userdanger("You are kicked in the head by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
 		//to_chat(A, span_danger("You pummel [D]!"))
 	//log_combat(A, D, "chokeslammed (Berserker")
