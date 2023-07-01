@@ -114,6 +114,54 @@
 	build_path = /mob/living/carbon/twoman
 	category = list("initial","human")
 
+/datum/design/vagina
+	name = "Vagina"
+	id = "vagina"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/genital/vagina
+	category = list("initial","genitals")
+
+/datum/design/womb
+	name = "Womb"
+	id = "womb"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/genital/womb
+	category = list("initial","genitals")
+
+/datum/design/breasts
+	name = "Breasts"
+	id = "breasts"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/genital/breasts
+	category = list("initial","genitals")
+
+/datum/design/butt
+	name = "Butt"
+	id = "butt"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/genital/butt
+	category = list("initial","genitals")
+
+/datum/design/penis
+	name = "Penis"
+	id = "penis"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/genital/penis
+	category = list("initial","genitals")
+
+/datum/design/testicles
+	name = "Testicles"
+	id = "testicles"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
+	build_path = /obj/item/organ/genital/testicles
+	category = list("initial","genitals")
+
 /*
 	/datum/design/armblade
 	name = "Arm Blade"
