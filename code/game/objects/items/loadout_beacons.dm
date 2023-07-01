@@ -2164,7 +2164,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/storage/box/gun/tribal/bmprsword
-*/ 
+*/
 
 /datum/loadout_box/warmace
 	entry_tag = "Warmace"
@@ -2416,3 +2416,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_SHIELD
 	spawn_thing = /obj/item/shield/coyote/riotweathered
+
+/datum/loadout_box/beserker
+	entry_tag = "Berserker's rites"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/book/granter/martial/berserker
