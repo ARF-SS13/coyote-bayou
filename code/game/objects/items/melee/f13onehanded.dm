@@ -646,8 +646,8 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "boomerang"
 	item_state = "boomerang"
 	force = 30
-	throwforce = 35 //so it can kill weak trash mobs in one throw
-	throw_speed = 3
+	throwforce = 18 //so it can kill weak trash mobs in one throw, a bug causes boomerang type weapons to deal double the intended damage, so this is  a bandaid fix meanwhile
+	throw_speed = 4
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	sharpness = SHARP_NONE
 	attack_speed = CLICK_CD_MELEE
@@ -667,7 +667,7 @@ obj/item/melee/onehanded/knife/switchblade
 			throw_at(thrownby, throw_range+2, throw_speed, null, TRUE)
 	else if(!thrownby)
 		return
-	return ..()
+	return
 
 
 
