@@ -640,6 +640,37 @@ obj/item/melee/onehanded/knife/switchblade
 	add_fingerprint(user)
 
 
+/obj/item/melee/f13onehanded/boomerang
+	name = "boomerang"
+	desc = "An ancient, primitive weapon used by hunters, able to return when thrown and surprisingly powerful for a piece of wood, this one seems to be equipped with non functioning electronics"
+	icon_state = "boomerang"
+	item_state = "boomerang"
+	force = 30
+	throwforce = 35 //so it can kill weak trash mobs in one throw
+	throw_speed = 3
+	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
+	sharpness = SHARP_NONE
+	attack_speed = CLICK_CD_MELEE
+	var/throw_hit_chance = 99
+
+/obj/item/melee/f13onehanded/boomerang/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
+	if(ishuman(thrower))
+		var/mob/living/carbon/human/H = thrower
+		H.throw_mode_on() //so they can catch it on the return.
+	return ..()
+
+/obj/item/melee/f13onehanded/boomerang/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+	if(thrownby && !caught)
+		sleep(1)
+		if(!QDELETED(src))
+			throw_at(thrownby, throw_range+2, throw_speed, null, TRUE)
+	else if(!thrownby)
+		return
+	return ..()
+
+
+
 // Slave whip
 /obj/item/melee/onehanded/slavewhip
 	name = "slave whip"
