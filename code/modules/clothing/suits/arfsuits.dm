@@ -3653,6 +3653,7 @@
 	name = "reinforced hazard suit"
 	desc = "A CBRN hazard suit that's been paired with a ballistic vest. Surprisingly lightweight for all of its bulk."
 	icon_state = "bio_security"
+	w_class = WEIGHT_CLASS_NORMAL
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T3)
 
 //Janitor's biosuit, grey with purple arms
