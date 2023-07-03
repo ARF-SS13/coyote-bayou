@@ -3399,7 +3399,7 @@
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
 	armor = ARMOR_VALUE_SALVAGE
-	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
 
 /obj/item/clothing/suit/armor/power_armor/t45b/raider
