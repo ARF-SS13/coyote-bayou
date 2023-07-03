@@ -34,6 +34,15 @@
 	item_state = "t45hotrod_helm"
 	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3)
 
+/obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod
+	name = "Refurbished T-45b Hotrod helmet"
+	desc = "This power armor helmet was restored and modified to protect against flames and high intensity lasers at the cost of some protection against blunt trauma."
+	icon_state = "t45hotrod_helm"
+	item_state = "t45hotrod_helm"
+	armor = ARMOR_VALUE_SALVAGE
+	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod
+	armor_tokens = list( ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3,)
+
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal
 	name = "tribal t-45b headdress"
 	desc = "A salvaged T-45b powered armor, with the servos removed and a feathered headdress. Certain bits of plating have been stripped out to retain more freedom of movement."
