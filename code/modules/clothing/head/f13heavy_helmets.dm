@@ -28,7 +28,6 @@
 	icon_state = "t45hotrod_helm"
 	item_state = "t45hotrod_helm"
 	armor = ARMOR_VALUE_SALVAGE
-	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod
 	armor_tokens = list( ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3,)
 
 
