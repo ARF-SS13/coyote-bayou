@@ -24,7 +24,7 @@
 
  /obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod
 	name = "Refurbished T-45b Hotrod helmet"
-	desc = "This power armor helmet was restored and modified to protect against flames and high intensity lasers at the cost of some protection against blunt trauma."
+	desc = "This power armor helmet was restored and modified to protect against fire and high intensity lasers at the cost of some protection against blunt trauma."
 	icon_state = "t45hotrod_helm"
 	item_state = "t45hotrod_helm"
 	armor = ARMOR_VALUE_SALVAGE
