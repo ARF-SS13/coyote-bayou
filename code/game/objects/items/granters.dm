@@ -511,7 +511,7 @@
 	martial = /datum/martial_art/berserker
 	name = "berserker's rites"
 	martialname = "berserkers rites"
-	desc = "A paper scroll detailing the sacred rites of the berserker. It is against the law of the Legion for any not walking the path of the berserker to read this."
+	desc = "A paper scroll detailing the sacred rites of a tribal berserker, the words are awash with primal, barely contained fury."
 	greet = span_sciradio("You have mastered the rites of the berserker. Use the help verb to see your combos.")
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
