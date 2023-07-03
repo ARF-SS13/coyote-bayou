@@ -30,8 +30,6 @@
 	armor = ARMOR_VALUE_SALVAGE
 	armor_tokens = list( ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3,)
 
-
-
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/ncr
 	name = "ncr salvaged T-45b helmet"
 	desc = "It's an NCR salvaged T-45b power armor helmet, better repaired than regular salvaged PA, and decorated with the NCR flag and other markings for an NCR Heavy Trooper."
