@@ -36,12 +36,14 @@
 	icon_state = "t45bhelmet_ncr"
 	item_state = "t45bhelmet_ncr"
 
+
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod
 	name = "hotrod T-45b power helmet"
 	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm."
 	icon_state = "t45hotrod_helm"
 	item_state = "t45hotrod_helm"
 	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3)
+
 
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal
 	name = "tribal t-45b headdress"
@@ -99,4 +101,6 @@
 	icon_state = "advanced"
 	item_state = "advanced"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_LASER_T3)
+
+
 
