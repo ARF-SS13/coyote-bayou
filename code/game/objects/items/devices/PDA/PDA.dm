@@ -393,6 +393,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=pai;option=2'>Eject pAI Device</a></li>"
 				dat += "</ul>"
 
+				if (cartridge)
+					if(cartridge.access & CART_RESIZE)
+						dat += "<h4>Experimental</h4>"
+						dat += "<ul>"
+						dat += "<li><a href='byond://?src=[REF(src)];choice=50'>[PDAIMG(medical)]Experimental Nanite-Factory</a></li>"
+						dat += "</ul>"
+
 			if (1)
 				dat += "<h4>[PDAIMG(notes)] Notekeeper V2.2</h4>"
 				dat += "<a href='byond://?src=[REF(src)];choice=Edit'>Edit</a><br>"

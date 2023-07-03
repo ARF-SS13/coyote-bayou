@@ -371,6 +371,11 @@
 	ckeywhitelist = list("dameonowen")
 	cost = 1
 
+/datum/gear/donator/kits/dameonowencart
+	name = "Experimental Nanite Factory Cartridge"
+	path = /obj/item/cartridge/resize
+	ckeywhitelist = list("dameonowen")
+
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
 	path = /obj/item/storage/box/large/custom_kit/darknova92
