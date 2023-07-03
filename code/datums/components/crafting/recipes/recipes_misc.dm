@@ -675,6 +675,31 @@
 	subcategory = CAT_SCAVENGING
 	always_available = FALSE
 
+/datum/crafting_recipe/repair_t45/hotrod
+	name = "Refurbished T-45b Hotrod Power Armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b/hotrod
+	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/stock_parts/cell/ammo/mfc = 1)
+	time = 35
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45_helm/hotrod
+	name = "Refurbished T-45b Hotrod Power Armor Helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 2)
+	time = 25
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+
 /datum/crafting_recipe/teachboy
 	name = "Refurbish Educational Pip-Boy 2000"
 	result = /obj/item/pda/teachboy

@@ -960,6 +960,12 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 
 
 /*
+ * Refurbished Power Armor
+ * Basically driving a crappy car
+*/
+#define ARMOR_SLOWDOWN_REPA 1.2
+
+/*
  * Power Armor
  * Basically driving a car
 */

@@ -81,13 +81,14 @@ SUBSYSTEM_DEF(atoms)
 					var/batch_time = ((batch_end - batch_start) * 0.1)
 					var/batch_rate = (this_batch / batch_time)
 					var/batch_percent = (atoms_did / all_atoms) * 100
-					var/batch_time_left = ((all_atoms - atoms_did) / batch_rate)
 					portion++
 					next_milestone = round(all_atoms * (portion * portion_amount))
 					rates += batch_rate
 					batch_start = REALTIMEOFDAY
 					this_batch = 0
-					to_chat(world, span_boldannounce("Init'd [shorten_number(atoms_did, 2)]/[shorten_number(all_atoms, 2)] ([round(batch_percent)]%) atoms in [DisplayTimeText(REALTIMEOFDAY - start_timery)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
+					var/current_time = REALTIMEOFDAY - start_timery
+					var/batch_time_left = (current_time / atoms_did) * (all_atoms - atoms_did)
+					to_chat(world, span_boldannounce("Init'd [shorten_number(atoms_did, 2)]/[shorten_number(all_atoms, 2)] ([round(batch_percent)]%) atoms in [DisplayTimeText(current_time)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
 #endif
 				CHECK_TICK
 #ifdef PRINT_ATOM_STATS

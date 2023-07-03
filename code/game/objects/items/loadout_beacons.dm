@@ -2422,3 +2422,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_SHIELD
 	spawn_thing = /obj/item/shield/coyote/riotweathered
+
+/datum/loadout_box/beserker
+	entry_tag = "Berserker's rites"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/book/granter/martial/berserker
