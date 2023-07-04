@@ -84,7 +84,7 @@
 	icon_living = "wolf"
 	icon_dead = "wolf_dead"
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
-	maxHealth = 100
+	maxHealth = 70
 	health = 100
 	melee_damage_lower = 20
 	melee_damage_upper = 28
