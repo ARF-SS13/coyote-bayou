@@ -22969,12 +22969,12 @@
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "ccu" = (
-/obj/structure/fence{
-	dir = 4
+/obj/structure/bed/mattress{
+	icon_state = "mattress2";
+	pixel_y = 7
 	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "ccy" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical"
@@ -29218,9 +29218,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
-/obj/structure/simple_door/metal/fence/wooden,
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
+/turf/closed/wall/f13/coyote/fortress_brick{
+	color = "#775555"
+	},
+/area/f13/building)
 "dtk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_fancy/wood_fancy_dark{
@@ -37360,8 +37361,12 @@
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "fwh" = (
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/obj/structure/bed/mattress{
+	icon_state = "mattress2";
+	pixel_y = 5
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "fwj" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/sandbags,
@@ -46949,11 +46954,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/abandoned)
 "hQZ" = (
-/obj/structure/window/fulltile/wood{
-	layer = 3
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubble";
+	dir = 1
 	},
-/turf/open/floor/wood_common,
-/area/f13/building)
+/area/f13/ruins)
 "hRd" = (
 /obj/structure/fence{
 	dir = 4
@@ -48195,6 +48200,12 @@
 	color = "#779999"
 	},
 /area/f13/building/workshop)
+"ifI" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress5"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "ifK" = (
 /obj/item/pickaxe,
 /turf/open/indestructible/ground/inside/dirt,
@@ -56164,13 +56175,11 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "kfc" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Depot Degenerates"
+/obj/structure/bed/mattress{
+	pixel_y = 15
 	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland/city)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "kff" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -70636,15 +70645,12 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "nCX" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+/obj/structure/bed/mattress{
+	icon_state = "mattress2";
+	pixel_y = 8
 	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "nDc" = (
 /obj/structure/closet/crate/bin/trashbin,
 /obj/machinery/light/broken{
@@ -79235,14 +79241,12 @@
 	},
 /area/f13/building/abandoned)
 "pGx" = (
-/obj/structure/stairs/west{
-	color = "#A47449"
+/obj/structure/bed/mattress{
+	pixel_x = 1;
+	pixel_y = -1
 	},
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building/abandoned)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "pGA" = (
 /obj/structure/fence/corner{
 	dir = 1;
@@ -83178,9 +83182,6 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "qJM" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
 /obj/structure/sink/deep_water{
 	pixel_x = -2;
 	pixel_y = 1
@@ -118931,8 +118932,8 @@ bjb
 aOk
 hCc
 auW
-uEn
-pGx
+oBz
+oBz
 vif
 mTh
 tGT
@@ -119809,8 +119810,8 @@ aOk
 flt
 ksL
 jxf
-nCX
 sAN
+lVH
 mOQ
 vRK
 pKW
@@ -127188,10 +127189,10 @@ puU
 bie
 dQs
 dVF
-hQZ
+bVH
 vaN
 vaN
-hQZ
+bVH
 btt
 tbq
 osp
@@ -127446,8 +127447,8 @@ xul
 xul
 uSF
 bVH
-fwh
-fwh
+vaN
+vaN
 bVH
 aoj
 xul
@@ -129275,7 +129276,7 @@ eTM
 eTM
 mct
 eTM
-fwh
+eTM
 mct
 eTM
 eTM
@@ -131704,7 +131705,7 @@ aaa
 (72,1,1) = {"
 aaa
 aae
-aae
+aaB
 aae
 aae
 aOk
@@ -131961,8 +131962,8 @@ aaa
 (73,1,1) = {"
 aaa
 aae
-aae
-aae
+aaB
+aaB
 abV
 aOk
 aOk
@@ -132219,7 +132220,7 @@ aaa
 aaa
 aae
 aaa
-aae
+aaB
 aaB
 aae
 aae
@@ -132475,8 +132476,8 @@ aaa
 (75,1,1) = {"
 aaa
 aae
-aae
-aae
+aaB
+aaB
 aaB
 aae
 aae
@@ -132732,8 +132733,8 @@ aaa
 (76,1,1) = {"
 aaa
 aae
-aae
-aaa
+aaB
+aaB
 kiu
 aae
 aae
@@ -132989,10 +132990,10 @@ aaa
 (77,1,1) = {"
 aaa
 aae
-aae
 aaB
 aaB
-aaa
+aaB
+aaB
 aaa
 aae
 aae
@@ -133246,10 +133247,10 @@ aaa
 (78,1,1) = {"
 aaa
 aae
-aak
+lUC
 aaB
 aaB
-aae
+nCX
 aaa
 aaa
 aae
@@ -133503,13 +133504,13 @@ aaa
 (79,1,1) = {"
 aaa
 aae
-aak
-aae
+nCX
 aaB
 aaB
+fwh
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -133566,7 +133567,7 @@ von
 abd
 qcF
 kUQ
-iRP
+hQZ
 mlQ
 mlQ
 vuZ
@@ -133760,13 +133761,13 @@ aaa
 (80,1,1) = {"
 aaa
 aae
-aak
-aae
-aae
+kfc
+qRS
 aaB
-aaB
+pGx
 aae
 aae
+aaa
 vVo
 vVo
 vVo
@@ -133823,7 +133824,7 @@ von
 dUY
 qlR
 kUQ
-tUq
+hQZ
 fPb
 mlQ
 vuZ
@@ -134017,13 +134018,13 @@ aaa
 (81,1,1) = {"
 aaa
 aae
-aae
-aak
-aak
+ccu
 aaB
+aaB
+ifI
 aae
 aak
-aae
+aaa
 vVo
 iiZ
 aal
@@ -134280,7 +134281,7 @@ aak
 aae
 aak
 aae
-aae
+aaa
 vVo
 ipH
 rIo
@@ -134530,14 +134531,14 @@ aaa
 "}
 (83,1,1) = {"
 aaa
-aae
+aaa
 aae
 aae
 aak
 aak
-aae
-aae
-aae
+aaa
+aaa
+aaa
 gTK
 gDS
 rIo
@@ -134787,11 +134788,11 @@ aaa
 "}
 (84,1,1) = {"
 aaa
-aae
-aae
-aae
-aae
-aak
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aak
@@ -135355,7 +135356,7 @@ gCB
 iRP
 ejY
 ejY
-kfc
+ejY
 dUY
 von
 ejY
@@ -136887,7 +136888,7 @@ fDn
 fDn
 wEp
 fDn
-aBf
+wij
 cgE
 ybm
 fDn
@@ -138429,7 +138430,7 @@ vLn
 vLn
 hRd
 dUY
-iRI
+wij
 ejY
 ejY
 qTv
@@ -138943,7 +138944,7 @@ dIt
 dIt
 iRI
 ejY
-iRI
+wij
 ejY
 ejY
 cgE
@@ -142284,7 +142285,7 @@ aLT
 tej
 xyC
 ejY
-iRI
+wij
 ejY
 ejY
 ejY
@@ -142506,7 +142507,7 @@ aaB
 aaB
 aaB
 aae
-aaY
+aaB
 aaB
 aae
 aae
@@ -142516,7 +142517,7 @@ aaB
 aaB
 aae
 aae
-jEw
+aaB
 iBZ
 aae
 aae
@@ -142798,7 +142799,7 @@ knR
 tej
 xyC
 ejY
-ccu
+tTl
 ejY
 dUY
 mHu
@@ -143020,7 +143021,7 @@ aaB
 aae
 aae
 aae
-abV
+aak
 aae
 aae
 aak
@@ -143312,7 +143313,7 @@ ouO
 dhl
 xyC
 ejY
-iRI
+wij
 ejY
 von
 eau
@@ -144835,23 +144836,23 @@ aae
 aak
 aae
 aaB
-aaY
-aaB
-aae
-aae
-aae
-aaD
-aaD
-aaD
-aaD
-aaD
-aaD
-aaD
-aae
-aae
 aaB
 aaB
-abV
+aae
+aae
+aae
+aaD
+aaD
+aaD
+aaD
+aaD
+aaD
+aaD
+aae
+aae
+aaB
+aaB
+aaB
 aaB
 aaB
 aae
@@ -145109,7 +145110,7 @@ aae
 aaB
 aaB
 aaB
-abV
+aaB
 aae
 aae
 aae
@@ -145348,7 +145349,7 @@ drp
 iZj
 aae
 aaB
-jEw
+aaB
 aae
 aaB
 aaB
@@ -145877,7 +145878,7 @@ aae
 aae
 aae
 aaB
-jEw
+aaB
 aak
 aak
 aae
@@ -146133,7 +146134,7 @@ aaB
 aae
 aae
 aaB
-aaY
+aaB
 aaB
 aae
 aak
@@ -147672,8 +147673,8 @@ aae
 aak
 aak
 aak
-aaB
-aaB
+aak
+aak
 aae
 aae
 aae
