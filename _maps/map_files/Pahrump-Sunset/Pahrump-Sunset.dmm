@@ -45,11 +45,13 @@
 	},
 /area/f13/building/abandoned)
 "aam" = (
-/obj/effect/decal/marking{
-	icon_state = "doubleverticalbottom"
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel/northeast)
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city)
 "aan" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
@@ -122,8 +124,13 @@
 	icon_state = "smoke";
 	name = "steam"
 	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city)
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/turf/open/water,
+/area/f13/caves)
 "aaA" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/caves)
@@ -46228,8 +46235,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "hHx" = (
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel/northeast)
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "hHy" = (
 /obj/structure/simple_door/room/dirty,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -60574,11 +60586,7 @@
 	},
 /area/f13/wasteland/city)
 "ljV" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam"
-	},
+/obj/structure/spacevine,
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -78834,13 +78842,8 @@
 	},
 /area/f13/building/abandoned)
 "pAP" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel/northeast)
 "pAQ" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt{
@@ -82612,8 +82615,8 @@
 	icon_state = "smoke";
 	name = "steam"
 	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland)
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "qBW" = (
 /turf/open/indestructible/ground/outside/dirt{
 	icon_state = "dirt"
@@ -88112,20 +88115,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
-"rXs" = (
-/obj/structure/spacevine,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam"
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam"
-	},
-/turf/open/water,
-/area/f13/caves)
 "rXt" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_west_north"
@@ -112775,6 +112764,11 @@
 /area/f13/building/abandoned)
 "ydv" = (
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -172085,12 +172079,12 @@ kEE
 gGm
 mlW
 mlW
-hHx
+pAP
 aaf
 aaf
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 aaf
 aaf
 aaf
@@ -172340,14 +172334,14 @@ kEE
 "}
 (230,1,1) = {"
 opW
-hHx
+pAP
 aao
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 aao
 aao
-hHx
+pAP
 aao
 aao
 acL
@@ -172597,16 +172591,16 @@ kEE
 "}
 (231,1,1) = {"
 opW
-hHx
-hHx
+pAP
+pAP
 aao
 mlW
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 aao
-hHx
-hHx
+pAP
+pAP
 aaf
 aax
 aaE
@@ -172854,17 +172848,17 @@ kEE
 "}
 (232,1,1) = {"
 opW
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 aas
 aao
-hHx
+pAP
 dKg
 mlW
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 oFO
 ozv
 oFO
@@ -173111,17 +173105,17 @@ kEE
 "}
 (233,1,1) = {"
 opW
-hHx
-hHx
-hHx
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
+pAP
+pAP
+pAP
 mlW
-hHx
-hHx
+pAP
+pAP
 lqh
-hHx
+pAP
 gIw
 vjU
 ozv
@@ -173368,14 +173362,14 @@ aaa
 "}
 (234,1,1) = {"
 opW
-hHx
-hHx
-aam
-hHx
+pAP
+pAP
+pAP
+pAP
 mlW
 aaS
 aao
-hHx
+pAP
 aao
 aao
 aao
@@ -173626,15 +173620,15 @@ aaa
 (235,1,1) = {"
 opW
 mlW
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 mlW
 aaS
-hHx
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
+pAP
 aao
 xUV
 oFO
@@ -173882,17 +173876,17 @@ aaa
 "}
 (236,1,1) = {"
 opW
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 mlW
-hHx
+pAP
 aao
 aao
 aao
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
 xUV
 oFO
 oFO
@@ -174139,15 +174133,15 @@ aaa
 "}
 (237,1,1) = {"
 opW
-hHx
-hHx
-hHx
-hHx
-hHx
-hHx
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
+pAP
+pAP
+pAP
+pAP
+pAP
+pAP
 aao
 aaf
 aay
@@ -174396,11 +174390,11 @@ aaa
 "}
 (238,1,1) = {"
 opW
-hHx
-hHx
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
+pAP
+pAP
 aao
 aao
 aao
@@ -174653,12 +174647,12 @@ aaa
 "}
 (239,1,1) = {"
 aaf
-hHx
-hHx
-hHx
-hHx
-hHx
-hHx
+pAP
+pAP
+pAP
+pAP
+pAP
+pAP
 aaf
 aaf
 aaf
@@ -174666,7 +174660,7 @@ aaf
 aaf
 fit
 vXb
-aaz
+aam
 bfC
 fit
 oFI
@@ -175168,8 +175162,8 @@ aaa
 (241,1,1) = {"
 aaa
 aae
-pAP
-pAP
+qBQ
+qBQ
 cwz
 pFn
 aae
@@ -175179,8 +175173,8 @@ aaB
 aae
 aae
 hVd
-qBQ
-qBQ
+hHx
+hHx
 aOk
 aOk
 heG
@@ -175427,15 +175421,15 @@ aaa
 euu
 euu
 xzI
-ydv
-ydv
+ljV
+ljV
 bat
-ydv
+ljV
 xzI
 aae
 aae
+ljV
 ydv
-rXs
 keN
 aOk
 bmJ
@@ -175687,12 +175681,12 @@ aae
 aae
 xzI
 mKl
-ljV
-ljV
+aaz
+aaz
 iNC
-ydv
 ljV
-ydv
+aaz
+ljV
 aae
 adg
 mdh
@@ -175946,8 +175940,8 @@ aae
 aae
 aae
 xzI
+aaz
 ljV
-ydv
 xzI
 aae
 aae
