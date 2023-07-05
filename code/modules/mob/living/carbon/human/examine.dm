@@ -275,9 +275,9 @@
 		temp = getToxLoss()
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] looks sick\n"
+				msg += "[t_He] looks sick.\n"
 			else if(temp < 50)
-				msg += "<B>[t_He] looks nauseous</B>\n"
+				msg += "<B>[t_He] looks nauseous.</B>\n"
 			else if (temp < 180)
 				msg += "<B>[t_He] looks very unwell!</B>\n"
 			else
@@ -286,7 +286,7 @@
 		temp = getOxyLoss()
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] looks pale\n"
+				msg += "[t_He] looks pale.\n"
 			else if(temp < 50)
 				msg += "<B>[t_He] Is struggling to breathe!</B>\n"
 			else if (temp < 100)

@@ -873,4 +873,17 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	resistance_flags = null
 
 
-
+/obj/item/shield/coyote/riotweathered
+	name = "Weathered Riot Shield"
+	icon = 'icons/fallout/objects/melee/shields.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/shields_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/shields_righthand.dmi'
+	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
+	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	desc = "A heavily weathered riot shield that has seen much use, it seems to have been modified to be foldable for storage, at the cost of some protection."
+	icon_state = "shield_riot"
+	item_state = "shield_riot"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	max_integrity = -1
+	resistance_flags = null

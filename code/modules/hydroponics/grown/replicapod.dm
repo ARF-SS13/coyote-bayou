@@ -1,6 +1,6 @@
 // A very special plant, deserving it's own file.
 
-/*
+
 
 /obj/item/seeds/replicapod
 	name = "pack of replica pod seeds"
@@ -158,4 +158,4 @@
 	parent.update_tray()
 	return result
 
-*/
+

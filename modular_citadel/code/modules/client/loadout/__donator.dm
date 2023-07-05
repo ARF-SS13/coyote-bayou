@@ -371,6 +371,11 @@
 	ckeywhitelist = list("dameonowen")
 	cost = 1
 
+/datum/gear/donator/kits/dameonowencart
+	name = "Experimental Nanite Factory Cartridge"
+	path = /obj/item/cartridge/resize
+	ckeywhitelist = list("dameonowen")
+
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
 	path = /obj/item/storage/box/large/custom_kit/darknova92
@@ -892,6 +897,15 @@
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriotweak(src)
 	new /obj/item/gun/ballistic/revolver/revolver44/desert_ranger(src)
 
+/datum/gear/donator/kits/PotatoPerson993
+	name = "Gobbo Gear"
+	path = /obj/item/storage/box/large/custom_kit/PotatoPerson993
+	ckeywhitelist = list("PotatoPerson993")
+
+/obj/item/storage/box/large/custom_kit/PotatoPerson993/PopulateContents()
+	new /obj/item/clothing/under/f13/recon/outcast(src)
+	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
+
 // Q
 // R
 
@@ -1130,19 +1144,14 @@
 	ckeywhitelist = list("tk420634")
 
 /obj/item/storage/box/large/custom_kit/tk420634/PopulateContents()
-	new /obj/item/clothing/head/beret/sec/navyofficer(src)
-	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun(src)
-	new /obj/item/ammo_box/a308box/improvised(src)
-	new /obj/item/ammo_box/a308box/improvised(src)
-	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/magazine/uzim9mm/(src)
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
 	new /obj/item/binoculars(src)
-	new /obj/item/gun_upgrade/barrel/forged(src)
-	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
-	new /obj/item/gun/ballistic/revolver/thatgun(src)
-	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/worn(src)
+	new /obj/item/ammo_box/c9mm(src)
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"
@@ -1317,6 +1326,15 @@
 	new /obj/item/queen_bee/bought(src)
 	new /obj/item/vending_refill/hydroseeds(src)
 	new /obj/machinery/vending/hydroseeds(src)
+	new /obj/item/storage/box/disks_plantgene(src)
+
+/datum/gear/donator/kits/xxpawnstarrxx
+	name = "Justice's notes"
+	path = /obj/item/storage/box/large/custom_kit/cachejustice
+	ckeywhitelist = list("xxpawnstarrxx")
+
+/obj/item/storage/box/large/custom_kit/cachejustice/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/polis(src)
 
 // Y
 

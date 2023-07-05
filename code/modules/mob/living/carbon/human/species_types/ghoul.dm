@@ -8,7 +8,7 @@
 	id = "ghoul"
 	say_mod = "rasps"
 	limbs_id = "ghoul"
-	species_traits = list(HAIR,FACEHAIR,HAS_BONE, NOBLOOD, MUTCOLORS, EYECOLOR,LIPS, HORNCOLOR,WINGCOLOR)
+	species_traits = list(HAIR,FACEHAIR,HAS_BONE, MUTCOLORS, EYECOLOR,LIPS, HORNCOLOR,WINGCOLOR)
 	inherent_traits = list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_NOBREATH, TRAIT_NOSOFTCRIT, TRAIT_GHOULMELEE, TRAIT_EASYDISMEMBER, TRAIT_EASYLIMBDISABLE, TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID, MOB_BEAST)
 	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None", "mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
@@ -20,7 +20,7 @@
 
 	allowed_limb_ids = list("human","mammal","aquatic","avian")
 	use_skintones = 0
-	speedmod = 0.3 //slightly slower than humans
+	speedmod = 0.4 //slightly slower than humans
 	sexes = 1
 	sharp_blunt_mod = 1.5 //Since I'm effectively taking 50 HP away, they get some more defense to make up for it.
 	sharp_edged_mod = 1.5
@@ -110,12 +110,12 @@
 			is_healing = FALSE
 			H.set_light(0)
 		else
-			healpwr = 3
+			healpwr = 2
 			is_healing = TRUE
 			H.set_light(2, 15, LIGHT_COLOR_GREEN)
 	H.adjustCloneLoss(-healpwr)
 	H.adjustToxLoss(-0.3) //ghouls always heal toxin very slowly no matter what
-	H.adjustStaminaLoss(-20) //ghouls don't get tired ever
+	H.adjustStaminaLoss(-5) //ghouls don't get tired ever
 	H.heal_overall_damage(healpwr, healpwr, healpwr)
 	if(is_healing)
 		H.apply_status_effect(/datum/status_effect/ghoulheal)

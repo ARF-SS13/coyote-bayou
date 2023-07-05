@@ -16,6 +16,7 @@
 	is_reflectable = TRUE
 	wound_bonus = -20
 	bare_wound_bonus = 10
+	recoil = BULLET_RECOIL_LASER
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -431,6 +432,7 @@
 	icon_state = "heavylaser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_color = LIGHT_COLOR_RED
+	spread = -100
 
 /obj/item/projectile/beam/laser/pistol/wattz/magneto/hitscan
 	name = "penetrating laser beam"
@@ -540,6 +542,7 @@
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second =  TILES_TO_PIXELS(10) //same as 40mm grenade
+	recoil = BULLET_RECOIL_PLASMA
 
 /obj/item/projectile/plasmacarbine //Plasma carbine
 	name = "plasma bolt"
@@ -551,6 +554,7 @@
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second = TILES_TO_PIXELS(10)
+	recoil = BULLET_RECOIL_PLASMA
 
 /obj/item/projectile/f13plasma/repeater //Plasma repeater
 	name = "plasma stream"
@@ -656,6 +660,7 @@
 	damage = 45
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 /obj/item/projectile/beam/laser/laer/hitscan
 	hitscan = TRUE
@@ -670,6 +675,7 @@
 	icon_state = "omnilaser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 /obj/item/projectile/beam/laser/aer14/hitscan
 	damage = 32
@@ -694,6 +700,7 @@
 	icon_state = "xray"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 /obj/item/projectile/beam/laser/aer12/hitscan
 	name = "laser beam"
@@ -715,6 +722,7 @@
 /obj/item/projectile/beam/laser/wattz2k
 	name = "laser bolt"
 	damage = 35
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 /obj/item/projectile/beam/laser/wattz2k/hitscan
 	name = "sniper laser bolt"
@@ -739,6 +747,7 @@
 /obj/item/projectile/beam/laser/wattz2ks
 	name = "laser bolt"
 	damage = 35
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 /obj/item/projectile/beam/laser/wattz2ks/hitscan
 	name = "sniper laser bolt"
@@ -753,7 +762,7 @@
 /obj/item/projectile/beam/laser/musket //musket
 	name = "laser bolt"
 	damage = 40
-
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 
 // BETA // Obsolete

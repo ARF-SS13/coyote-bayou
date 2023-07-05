@@ -20,6 +20,16 @@
 	desc = "a raider's attempt to duplicate a power armor helmet. The result is a fuzed mass of metal and ceramic that nonetheless provides protection"
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
+	armor = ARMOR_VALUE_SALVAGE
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod
+	name = "Refurbished T-45b Hotrod helmet"
+	desc = "This power armor helmet was restored and modified to protect against flames and high intensity lasers at the cost of some protection against blunt trauma."
+	icon_state = "t45hotrod_helm"
+	item_state = "t45hotrod_helm"
+	armor = ARMOR_VALUE_SALVAGE
+	armor_tokens = list( ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3,)
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/ncr
 	name = "ncr salvaged T-45b helmet"
@@ -90,4 +100,6 @@
 	icon_state = "advanced"
 	item_state = "advanced"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_LASER_T3)
+
+
 

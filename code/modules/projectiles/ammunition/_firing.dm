@@ -7,25 +7,7 @@
  * Final spread out, for shotguns, is the angle that the spray pattern will be centered on
  */
 /obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, atom/fired_from)
-	var/angle_out = 0
-	if(randomspread) // usually true
-		if(istype(user))
-			if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
-				angle_out = 0 // nice shot
-			else
-				var/max_spread = spread + distro + (pellets == 1 ? variance : 0) // hooray vars doing double duty
-				if(istype(BB))
-					max_spread += BB.spread
-				if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
-					max_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
-				if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
-					max_spread += 0.2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
-				if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
-					max_spread += 1.5//This is cripplingly bad. Trust me.
-				if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
-					max_spread *= 0.5 // Nice shot!
-				max_spread = clamp(max_spread, 0, 90)
-				angle_out = clamp(rand(-max_spread, max_spread), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+	var/angle_out = calc_spread(user, spread, distro, (pellets == 1 ? variance : 0))
 
 	var/targloc = get_turf(target)
 	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from, damage_threshold_penetration)
@@ -46,6 +28,34 @@
 	update_icon()
 	return 1
 
+/obj/item/ammo_casing/proc/calc_spread(mob/living/user, spread = 0, distro = 0, variance = 0)
+	. = 0
+	if(!randomspread) // usually true
+		return
+	if(!isliving(user))
+		return
+	var/gun_bullet_spread = 0
+	gun_bullet_spread += BB?.spread || 0 // bullet's inherent inaccuracy
+	gun_bullet_spread += distro || 0 // gun's inaccuracy
+	gun_bullet_spread += variance || 0 // cartridge's inaccuracy
+	var/player_spread = spread // spread is the player's recoil
+	if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
+		player_spread = 100 // lol
+	else if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
+		player_spread = 0 // nice shot
+	else
+		if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
+			player_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
+		if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
+			player_spread *= 2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties! - jk they do
+		if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
+			player_spread *= 2//This is cripplingly bad. Trust me.
+		else if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
+			player_spread *= 0.5 // Nice shot!
+	// . = max(gun_bullet_spread, player_spread) // Either the gun+casing+bullet's inaccuracy, or your own shitty accuracy
+	. = gun_bullet_spread + player_spread // Note that this *can* be brought below zero
+	. = SSrecoil.get_output_offset(.)
+
 /obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)
 	if (!BB)
 		return
@@ -58,6 +68,8 @@
 		BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
 	BB.damage_threshold_penetration = damage_threshold_penetration
+	if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
+		BB.damage *= 0.2 // lol
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from

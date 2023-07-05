@@ -21,7 +21,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	can_suppress = TRUE
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	init_recoil = HANDGUN_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -55,7 +55,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.6)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // plug em in the skull!
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fastest
@@ -80,7 +80,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -181,7 +181,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -201,6 +201,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/burst/two/fast,
 		/datum/firemode/semi_auto/fast
@@ -223,7 +224,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(1.2)
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster,
 		/datum/firemode/burst/three/faster,
@@ -245,7 +246,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(1.2)
+	init_recoil = AUTOPISTOL_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster,
 		/datum/firemode/burst/three/faster
@@ -299,6 +300,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto,
 		/datum/firemode/burst/three
@@ -331,7 +333,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -342,7 +344,6 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ponycrusader"
 	item_state = "ponycrusader"
-	init_recoil = HANDGUN_RECOIL(0.8)
 
 /* * * * * * * * * * *
  * Type 17 Semi-Auto
@@ -359,7 +360,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.6)
+	init_recoil = HANDGUN_RECOIL(0.6, 0.6)
 
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
@@ -407,7 +408,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(1.1)
+	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -426,7 +427,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(1.1)
+	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -445,7 +446,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1.1)
+	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -494,7 +495,7 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
-	init_recoil = HANDGUN_RECOIL(2.3)
+	init_recoil = HANDGUN_RECOIL(2.3, 2.3)
 	disallowed_mags = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/ext,
 		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
@@ -532,8 +533,8 @@
 		/datum/firemode/semi_auto
 	)
 	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+	suppressor_x_offset = 28
+	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 /* * * * * * * * * * *
@@ -586,7 +587,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -621,7 +622,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(1.2)
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -720,7 +721,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(1.2)
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -742,7 +743,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)

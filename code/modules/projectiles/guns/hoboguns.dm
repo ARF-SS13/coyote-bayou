@@ -72,7 +72,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = HANDGUN_RECOIL(2.1)
+	init_recoil = HANDGUN_RECOIL(2.1, 2.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -111,7 +111,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(3, 3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -177,7 +177,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(2.4)
+	init_recoil = HANDGUN_RECOIL(2.4, 2.4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
 		/datum/firemode/burst/four/fastest/hobo
@@ -218,7 +218,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = RIFLE_RECOIL(3.1)
+	init_recoil = RIFLE_RECOIL(3.1, 3.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -257,7 +257,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -292,7 +292,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1.6)
+	init_recoil = HANDGUN_RECOIL(1.6, 1.6)
 	init_firemodes = list(
 		/datum/firemode/burst/four/fastest/hobo
 	)
@@ -331,7 +331,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(2.7)
+	init_recoil = RIFLE_RECOIL(2.7, 2.7)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three/slow,
@@ -440,7 +440,7 @@
 	scope_state = "scope_medium"
 	scope_x_offset = 6
 	scope_y_offset = 14
-	init_recoil = CARBINE_RECOIL(2.3)
+	init_recoil = CARBINE_RECOIL(2.3, 2.3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -463,7 +463,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = HANDGUN_RECOIL(4)
+	init_recoil = HANDGUN_RECOIL(4, 4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -489,7 +489,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(3, 3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed,
 		/datum/firemode/burst/two/shotgun_fixed

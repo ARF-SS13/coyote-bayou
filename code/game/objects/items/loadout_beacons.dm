@@ -783,6 +783,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/switchblade/PopulateContents()
 	new /obj/item/melee/onehanded/knife/switchblade(src)
 
+/datum/loadout_box/boomerang
+	entry_tag = "Boomerang"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/f13onehanded/boomerang
+
 /obj/item/storage/box/gun/melee/throwing
 	name = "throwing knife case"
 
@@ -820,6 +826,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/baseball/PopulateContents()
 	new /obj/item/twohanded/baseball(src)
 
+/*
 /obj/item/storage/box/gun/melee/sledgehammer
 	name = "sledgehammer case"
 	w_class = WEIGHT_CLASS_BULKY
@@ -833,6 +840,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/melee/fireaxe/PopulateContents()
 	new /obj/item/twohanded/fireaxe(src)
+*/
 
 /obj/item/storage/box/gun/melee/pitchfork
 	name = "pitchfork case"
@@ -841,9 +849,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/pitchfork/PopulateContents()
 	new /obj/item/pitchfork(src)
 
+/*
 /obj/item/storage/box/gun/melee/chainsaw
 	name = "chainsaw case"
 	w_class = WEIGHT_CLASS_BULKY
+*/
 
 /obj/item/storage/box/gun/melee/chainsaw/PopulateContents()
 	new /obj/item/twohanded/chainsaw(src)
@@ -902,11 +912,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/crudeblade/PopulateContents()
 	new /obj/item/melee/coyote/crudeblade(src)
 
+/*
 /obj/item/storage/box/gun/melee/oldkanobo/PopulateContents()
 	new /obj/item/melee/coyote/oldkanobo(src)
 
 /obj/item/storage/box/gun/melee/mauler/PopulateContents()
 	new /obj/item/melee/coyote/mauler(src)
+*/
 
 /obj/item/storage/box/gun/melee/club/PopulateContents()
 	new /obj/item/melee/coyote/club(src)
@@ -931,7 +943,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/melee/oldlongsword/spadroon/PopulateContents()
 	new /obj/item/melee/coyote/oldlongsword/spadroon(src)
-
 
 /obj/item/storage/box/gun/melee/oldlongsword/broadsword/PopulateContents()
 	new /obj/item/melee/coyote/oldlongsword/broadsword(src)
@@ -1958,6 +1969,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/storage/box/gun/melee/baseball
 
+/*
 /datum/loadout_box/sledgehammer
 	entry_tag = "Sledgehammer"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
@@ -1969,6 +1981,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/storage/box/gun/melee/fireaxe
+*/
 
 /datum/loadout_box/pitchfork
 	entry_tag = "pitchfork"
@@ -1976,11 +1989,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/storage/box/gun/melee/pitchfork
 
+/*
 /datum/loadout_box/chainsaw
 	entry_tag = "Chainsaw"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/storage/box/gun/melee/chainsaw
+*/
 
 /datum/loadout_box/fist_of_the_swampstar // pornstar
 	entry_tag = "Bands of the Swamp Star gloves"
@@ -2048,6 +2063,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/coyote/oldcutlass
 
+/*
 /datum/loadout_box/crudeblade
 	entry_tag = "Crude Blade"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2059,6 +2075,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/melee/coyote/mauler
+*/
 
 /datum/loadout_box/club
 	entry_tag = "Club"
@@ -2147,11 +2164,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/tribal/forgedmachete
 
+/*
 /datum/loadout_box/bmprsword
 	entry_tag = "Bumper Sword"
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/storage/box/gun/tribal/bmprsword
+*/
 
 /datum/loadout_box/warmace
 	entry_tag = "Warmace"
@@ -2398,6 +2417,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_HOBO
 	spawn_thing = /obj/item/gun/ballistic/revolver/sling/staff
 
+/datum/loadout_box/riotweathered
+	entry_tag = "Weathered Riot Shield"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_SHIELD
+	spawn_thing = /obj/item/shield/coyote/riotweathered
 
-
-
+/datum/loadout_box/beserker
+	entry_tag = "Berserker's rites"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/book/granter/martial/berserker

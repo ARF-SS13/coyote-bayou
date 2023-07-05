@@ -158,6 +158,11 @@
 	freq_listening = list(FREQ_COMMAND)
 	autolinkers = list("command")
 
+/obj/machinery/telecomms/server/presets/responders
+	id = "Responders Server"
+	freq_listening = list(FREQ_RESPONDERS)
+	autolinkers = list("responders")
+
 /obj/machinery/telecomms/server/presets/engineering
 	id = "Engineering Server"
 	freq_listening = list(FREQ_ENGINEERING)

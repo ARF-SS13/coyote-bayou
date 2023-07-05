@@ -511,7 +511,7 @@
 	martial = /datum/martial_art/berserker
 	name = "berserker's rites"
 	martialname = "berserkers rites"
-	desc = "A paper scroll detailing the sacred rites of the berserker. It is against the law of the Legion for any not walking the path of the berserker to read this."
+	desc = "A paper scroll detailing the sacred rites of a tribal berserker, the words are awash with primal, barely contained fury."
 	greet = span_sciradio("You have mastered the rites of the berserker. Use the help verb to see your combos.")
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
@@ -1364,3 +1364,26 @@
 	crafting_recipe_types = list(
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5)
+
+/obj/item/book/granter/crafting_recipe/polis
+	name = "A scribbled, bloody journal"
+	desc = "An old journal, writted by someone with the will to do right but cut short..."
+	remarks = list("Durathread works much like oldworld kevlar.", "Leadership isn't always a bad thing.", "Layer the fibers correctly.", "Don't forget to look good while you're doing it.")
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/polis,
+		/datum/crafting_recipe/polislt,
+		/datum/crafting_recipe/polischief,
+		/datum/crafting_recipe/polissnr,
+		/datum/crafting_recipe/poliscoat,
+		/datum/crafting_recipe/polisltcoat,
+		/datum/crafting_recipe/polischiefcoat,
+		/datum/crafting_recipe/polissnrcoat,
+		/datum/crafting_recipe/polishat,
+		/datum/crafting_recipe/polislthat,
+		/datum/crafting_recipe/polischiefhat,
+		/datum/crafting_recipe/polissnrhat,
+		/datum/crafting_recipe/tommygun,
+		/datum/crafting_recipe/m1911,
+		/datum/crafting_recipe/policebaton,
+		/datum/crafting_recipe/bowman,
+		/datum/crafting_recipe/radiokeyresponder)

@@ -388,3 +388,35 @@
 	item_color = "fifi"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+/obj/item/clothing/under/f13/police/officer
+	name = "police officer's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_officer"
+	item_state = "police_officer"
+
+/obj/item/clothing/under/f13/police/lieutenant
+	name = "police lieutenant's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+
+/obj/item/clothing/under/f13/police/chief
+	name = "police chief's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_chief"
+	item_state = "police_chief"
+
+/obj/item/clothing/under/f13/police/snr
+	name = "police snr uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie. This one comes with search and rescue markings!"
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_snr"
+	item_state = "police_snr"

@@ -74,8 +74,9 @@
 		"town", 
 		"legion", 
 		"ranger", 
-		"khans", 
-		"bikers")
+		"responders", 
+		"bikers",
+		"khans")
 
 /obj/machinery/telecomms/bus/preset_four
 	id = "Bus 4"

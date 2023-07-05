@@ -380,6 +380,7 @@
 
 
 #define MAX_CHICKENS 50
+#define MAX_MOTHERCLAWS 25
 
 ///Flags used by the flags parameter of electrocute act.
 

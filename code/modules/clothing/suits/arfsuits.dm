@@ -1851,6 +1851,42 @@
 	icon_state = "vest_flak"
 	item_state = "vest_flak"
 
+/obj/item/clothing/suit/armor/medium/vest/polis
+	name = "police jacket"
+	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_officer"
+	item_state = "police_officer"
+
+/obj/item/clothing/suit/armor/medium/vest/polislt
+	name = "police lieutenant's jacket"
+	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies, This one's got silver on it."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+
+/obj/item/clothing/suit/armor/medium/vest/polischief
+	name = "police chief's jacket"
+	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies, This one's got silver on it."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_chief"
+	item_state = "police_chief"
+
+/obj/item/clothing/suit/armor/medium/vest/polissnr
+	name = "police search and rescue jacket"
+	desc = "A sturdy durathread police coat; It's not going to stop anything good but it's better than your undies, This one's got search and rescue markings."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_snr"
+	item_state = "police_snr"
+
 /obj/item/clothing/suit/armor/medium/vest/kevlar
 	name = "kevlar vest"
 	desc = "Worn but serviceable, the vest is is effective against ballistic impacts."
@@ -3363,7 +3399,7 @@
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
 	armor = ARMOR_VALUE_SALVAGE
-	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
 
 /obj/item/clothing/suit/armor/power_armor/t45b/raider
@@ -3371,6 +3407,8 @@
 	desc = "A monumentously heavy suit of rusty metal and car parts. Either an actual power armor exoskeleton or some home-built substitute sits embedded under all that rust. Is this some attempt at power armor???"
 	icon_state = "raiderpa"
 	item_state = "raiderpa"
+	armor = ARMOR_VALUE_SALVAGE
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mutantrace_variation = STYLE_DIGITIGRADE
 	salvaged_type = /obj/item/clothing/suit/armor/medium/raider/raidermetal
 
@@ -3426,6 +3464,17 @@
 	desc = "The pinnacle of pre-war technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
 	icon_state = "t51bpowerarmor_bos"
 	item_state = "t51bpowerarmor_bos"
+
+/obj/item/clothing/suit/armor/power_armor/t45b/hotrod
+	name = "Refurbished T-45b Hotrod power armor"
+	desc = "It's a set of T-45b power armor with a with some of its plating replaced by ablative, fire resistant armor. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
+	icon_state = "t45hotrod"
+	item_state = "t45hotrod"
+	armor = ARMOR_VALUE_SALVAGE
+	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
+	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
+	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, )
+
 
 /obj/item/clothing/suit/armor/power_armor/excavator
 	name = "excavator power armor"
@@ -3617,6 +3666,7 @@
 	name = "reinforced hazard suit"
 	desc = "A CBRN hazard suit that's been paired with a ballistic vest. Surprisingly lightweight for all of its bulk."
 	icon_state = "bio_security"
+	w_class = WEIGHT_CLASS_NORMAL
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T3)
 
 //Janitor's biosuit, grey with purple arms

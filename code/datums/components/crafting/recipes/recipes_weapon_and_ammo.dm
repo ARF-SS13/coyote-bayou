@@ -115,6 +115,18 @@
 	subcategory = CAT_MELEE
 	always_available = FALSE
 
+/datum/crafting_recipe/policebaton
+	name = "Police Baton"
+	result = /obj/item/melee/classic_baton/police
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/prewar = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
 ////////////////
 ///POWER CELLS//
 ///////////////
@@ -968,6 +980,20 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+/datum/crafting_recipe/tommygun
+	name = "Thompson Submachinegun"
+	result = /obj/item/gun/ballistic/automatic/smg/tommygun
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 /datum/crafting_recipe/dks
 	name = "Marksman Sniper Rifle"
 	result = /obj/item/gun/ballistic/automatic/marksman/sniper
@@ -1672,7 +1698,7 @@
 
 //magneto
 /datum/crafting_recipe/magnetowattz
-	name = "Wattz 1000 Magneto-laser Pistol"
+	name = "Wattz 1000 smart-laser Pistol"
 	result = /obj/item/gun/energy/laser/wattz/magneto
 	reqs = list(/obj/item/gun/energy/laser/wattz = 1,
 				/obj/item/stack/crafting/electronicparts = 2)

@@ -1,6 +1,6 @@
 #define HARD_PUNCH_COMBO "HH"
 #define SHOULDERCHECK_COMBO "HD"
-#define CHOKE_SLAM_COMBO "HG"
+#define WRIST_WRENCH_COMBO "DD"
 
 /datum/martial_art/berserker
 	name = "Berserker Rites"
@@ -18,9 +18,9 @@
 		streak = ""
 		shoulderCheck(A,D)
 		return TRUE
-	if(findtext(streak,CHOKE_SLAM_COMBO))
+	if(findtext(streak,WRIST_WRENCH_COMBO))
 		streak = ""
-		chokeSlam(A,D)
+		wristWrench(A,D)
 		return TRUE
 	return FALSE
 
@@ -65,28 +65,44 @@
 	return TRUE
 
 ///chokeslam: Harm Grab combo, knocks people down, deals stamina damage while they're on the floor
-/datum/martial_art/berserker/proc/chokeSlam(mob/living/carbon/human/A, mob/living/carbon/human/D)
-	var/damage = damage_roll(A,D)
-	A.do_attack_animation(D, ATTACK_EFFECT_KICK)
-	var/obj/item/bodypart/affecting = D.get_bodypart(BODY_ZONE_HEAD)
-	var/armor_block = D.run_armor_check(affecting, "melee")
-	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
-	if((D.mobility_flags & MOBILITY_STAND))
-		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
-		D.DefaultCombatKnockdown(10, null, TRUE)
-		D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
-		D.visible_message(span_warning("[A] grabs [D] by the throat, slamming them face first into the ground!"), \
-					span_userdanger("[A] grabs you by the throat, slammed your head into the ground!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, span_danger("You chokeslam [D]!"))
-	else
-		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
-		D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
-		D.drop_all_held_items()
-		D.visible_message(span_warning("[A] pummels [D]!"), \
-					span_userdanger("You are kicked in the head by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, span_danger("You pummel [D]!"))
-	log_combat(A, D, "chokeslammed (Berserker")
-	return TRUE
+//datum/martial_art/berserker/proc/chokeSlam(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	//var/damage = damage_roll(A,D)
+	//A.do_attack_animation(D, ATTACK_EFFECT_KICK)
+	//var/obj/item/bodypart/affecting = D.get_bodypart(BODY_ZONE_HEAD)
+	//var/armor_block = D.run_armor_check(affecting, "melee")
+	//playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
+	//if((D.mobility_flags & MOBILITY_STAND))
+		//D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
+		//D.DefaultCombatKnockdown(10, null, TRUE)
+		//D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
+		//D.visible_message(span_warning("[A] grabs [D] by the throat, slamming them face first into the ground!"),
+					//span_userdanger("[A] grabs you by the throat, slammed your head into the ground!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
+		//to_chat(A, span_danger("You chokeslam [D]!"))
+	//else
+		//D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
+		//D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
+		//D.drop_all_held_items()
+		//D.visible_message(span_warning("[A] pummels [D]!"),
+					//span_userdanger("You are kicked in the head by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
+		//to_chat(A, span_danger("You pummel [D]!"))
+	//log_combat(A, D, "chokeslammed (Berserker")
+	//return TRUE
+
+/datum/martial_art/berserker/proc/wristWrench(mob/living/carbon/human/A, mob/living/carbon/human/D)
+		log_combat(A, D, "wrist wrenched (Berserker)")
+		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
+		D.visible_message("<span class='warning'>[A] grabs [D]'s wrist and wrenches it sideways!</span>", \
+						  "<span class='userdanger'>[A] grabs your wrist and violently wrenches it to the side!</span>")
+		playsound(get_turf(A), 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+		D.emote("scream")
+		D.dropItemToGround(D.get_active_held_item())
+		D.apply_damage(10, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		D.apply_damage(20, STAMINA, pick(A.zone_selected))
+		to_chat(A, span_danger("You wrench [D]'s wrist!"))
+		log_combat(A, D, "wrist wrenched (Berserker)")
+
+		return TRUE
+
 
 /datum/martial_art/berserker/grab_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	add_to_streak("G",D)
@@ -124,20 +140,24 @@
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(H, TRAIT_NOGUNS, BERSERKER_TRAIT)
-	ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, BERSERKER_TRAIT)
-	ADD_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)
-	ADD_TRAIT(H, TRAIT_BERSERKER, BERSERKER_TRAIT)
+	ADD_TRAIT(H, TRAIT_NODRUGS, TRAIT_BERSERKER)
+	ADD_TRAIT(H, TRAIT_NOGUNS, TRAIT_BERSERKER)
+	//ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, BERSERKER_TRAIT)
+	//ADD_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)
+	ADD_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, TRAIT_BERSERKER)
+	ADD_TRAIT(H, TRAIT_BERSERKER, TRAIT_BERSERKER)
 	H.physiology.stamina_mod *= 0.3 //more stamina
 	H.physiology.stun_mod *= 0.3 //better stun resistance
 
 
 /datum/martial_art/berserker/on_remove(mob/living/carbon/human/H)
 	. = ..()
-	REMOVE_TRAIT(H, TRAIT_NOGUNS, BERSERKER_TRAIT)
-	REMOVE_TRAIT(H, TRAIT_PIERCEIMMUNE, BERSERKER_TRAIT)
-	REMOVE_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)
+	REMOVE_TRAIT(H, TRAIT_NODRUGS, TRAIT_BERSERKER)
+	REMOVE_TRAIT(H, TRAIT_NOGUNS, TRAIT_BERSERKER)
+	//REMOVE_TRAIT(H, TRAIT_PIERCEIMMUNE, BERSERKER_TRAIT)
+	//REMOVE_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_BERSERKER, BERSERKER_TRAIT)
+	REMOVE_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, TRAIT_BERSERKER)
 	H.physiology.stamina_mod = initial(H.physiology.stamina_mod)
 	H.physiology.stun_mod = initial(H.physiology.stun_mod)
 
@@ -150,6 +170,6 @@
 
 	to_chat(usr, "<span class='notice'>Gutpunch</span>: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
 	to_chat(usr, "<span class='notice'>Shoulder Check</span>: Harm Disarm. Launch people brutally across rooms, and away from you.")
-	to_chat(usr, "<span class='notice'>Chokeslam</span>: Harm  Grab. Chokeslam to the floor. Against prone targets, deal additional stamina damage and disarm them.")
+	to_chat(usr, span_notice("<span class='notice'>Wrist Wrench</span>: Disarm Disarm. Grab and painfully wrench someone's wrist, disarming them and dealing minor brute and stamina damage."))
 	to_chat(usr, span_notice("In addition, your body is better conditioned, giving you further stamina and increased stun resistance."))
-
+	//to_chat(usr, "<span class='notice'>Chokeslam</span>: Harm  Grab. Chokeslam to the floor. Against prone targets, deal additional stamina damage and disarm them.")

@@ -604,6 +604,13 @@
 	filling_color = "#F0E68C"
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/f13/deathclawegg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(!..()) //was it caught by a mob?
+		var/turf/T = get_turf(hit_atom)
+		new/obj/effect/decal/cleanable/egg_smudge(T)
+		reagents.reaction(hit_atom, TOUCH)
+		qdel(src)
+
 /obj/item/reagent_containers/food/snacks/f13/giantantegg
 	name = "giant ant egg"
 	desc = "A giant ant egg.<br>You'd thought it be bigger but its white and squishy to the touch."

@@ -1378,6 +1378,7 @@
 	update_stamina()
 	update_mobility()
 	if(healing_chems)
+		reagents.remove_all(999)
 		reagents.add_reagent_list(healing_chems)
 
 /mob/living/canface()

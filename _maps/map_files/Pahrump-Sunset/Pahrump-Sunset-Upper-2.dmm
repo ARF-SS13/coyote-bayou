@@ -740,6 +740,11 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"hi" = (
+/obj/item/binoculars,
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "hm" = (
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
@@ -1003,6 +1008,10 @@
 "kd" = (
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
+"ki" = (
+/obj/item/reagent_containers/glass/bucket/wood,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "km" = (
 /obj/structure/table/wood,
 /obj/item/instrument/piano_synth,
@@ -4110,6 +4119,12 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Og" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "Oi" = (
 /obj/structure/chair/f13chair2,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -4486,14 +4501,15 @@
 	},
 /area/f13/wasteland)
 "RV" = (
-/obj/machinery/smoke_machine{
-	name = "HVAC Machine"
+/obj/structure/curtain{
+	color = "#845f58"
 	},
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/f13/wood{
-	color = "#999999"
-	},
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
+"RY" = (
+/obj/structure/bed,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "Sc" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant{
 	faction = list("raider")
@@ -4610,6 +4626,10 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
+"TU" = (
+/obj/structure/window/fulltile/house,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "TX" = (
 /obj/structure/railing{
 	dir = 8
@@ -5075,6 +5095,12 @@
 /obj/structure/spacevine,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"Yy" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "YB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/rag{
@@ -40252,14 +40278,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+lH
+TU
+RV
+TU
+lH
+zC
+zC
+zC
 hm
 hm
 hm
@@ -40509,14 +40535,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+TU
+hi
+Kz
+Yy
+TU
+zC
+zC
+zC
 hm
 hm
 hm
@@ -40766,14 +40792,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+RV
+Kz
+RY
+Yy
+RV
+zC
+zC
+zC
 hm
 hm
 hm
@@ -41023,14 +41049,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+TU
+Kz
+Kz
+Kz
+TU
+zC
+zC
+zC
 hm
 hm
 hm
@@ -41280,14 +41306,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+TU
+Yy
+Kj
+ki
+RV
+zC
+zC
+zC
 hm
 hm
 hm
@@ -41537,14 +41563,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+lH
+RV
+Og
+TU
+lH
+zC
+zC
+zC
 hm
 hm
 hm
@@ -43090,7 +43116,7 @@ uz
 uz
 uz
 uz
-RV
+Li
 uz
 KI
 uz

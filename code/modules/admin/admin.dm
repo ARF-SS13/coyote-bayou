@@ -757,6 +757,69 @@
 		alert("[M.name] is not prisoned.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unprison") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/refill_nearby_ammo()
+	set category = "Debug"
+	set desc = "Refills Nearby Guns and Magazines. Even refills things in containers and inventories!"
+	set name = "Refill Nearby Ammo"
+
+	var/maxrange = max(input(usr, "How far away should we look for guns/mags?", "Refill Ammo", 1) as num|null, 1)
+	var/multi = alert(usr, "Fill all guns/mags within [maxrange] units, or just the closest one?", "Admin Fill Ammo", "All", "Closest")
+	if(multi == "All")
+		multi = TRUE
+	else
+		multi = FALSE
+
+	var/list/filled = refill_ammo(usr, multi, maxrange)
+	if(!LAZYLEN(filled))
+		to_chat(usr, "Couldn't find anything to refill!")
+		return
+	to_chat(usr, "Refilled [english_list(filled)].")
+	var/list/short_filled = filled.Copy(1,min(3,LAZYLEN(filled)))
+	if(LAZYLEN(filled) > 3)
+		short_filled += "[LAZYLEN(filled) - 3] more weapons.]"
+	var/turf/here = get_turf(usr)
+	if(LAZYLEN(filled) == 1)
+		message_admins("[key_name_admin(usr)] has refilled [LAZYACCESS(filled, 1)] at [ADMIN_COORDJMP(here)].")
+		log_admin("[key_name(usr)] has refilled [LAZYACCESS(filled, 1)] at [ADMIN_COORDJMP(here)].")
+	else
+		message_admins("[key_name_admin(usr)] has refilled [LAZYLEN(filled)] weapons, including [english_list(short_filled)] at [ADMIN_COORDJMP(here)].")
+		log_admin("[key_name(usr)] has refilled [LAZYLEN(filled)] weapons, including [english_list(short_filled)] at [ADMIN_COORDJMP(here)].")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "afilled") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/proc/refill_ammo(atom/origin, multi, range)
+	if(!isatom(origin))
+		return
+	var/list/origin_hands = list()
+	var/list/origin_contents = list()
+	var/list/all_in_range = list()
+	/// First check the origin for guns
+	if(isliving(origin))
+		var/mob/living/live_origin = origin
+		if(live_origin.get_active_held_item())
+			origin_hands += live_origin.get_active_held_item()
+		if(live_origin.get_inactive_held_item())
+			origin_contents += live_origin.get_inactive_held_item()
+	if(multi)
+		for(var/obj/item/contained in origin.contents)
+			origin_contents += contained
+			var/list/scrape = list()
+			SEND_SIGNAL(contained, COMSIG_TRY_STORAGE_RETURN_INVENTORY, scrape, TRUE) // Recursive search!
+			origin_contents |= scrape
+		/// now get *everything* in range. EVERYTHING!!!
+		var/list/turf_spiral = spiral_range_turfs(range, origin, TRUE)
+		for(var/turf/spiral_turf in turf_spiral)
+			all_in_range |= get_all_in_turf(spiral_turf, TRUE, 10) // EV ERY THING
+	var/list/load_these = origin_hands + origin_contents + all_in_range
+	if(!LAZYLEN(load_these))
+		return FALSE
+	. = list()
+	for(var/obj/item/load_this in load_these) // Will fill up held items first, then contents, then everything else
+		if(!SEND_SIGNAL(load_this, COMSIG_GUN_MAG_ADMIN_RELOAD))
+			continue
+		. |= load_this
+		if(!multi)
+			return
+
 ////////////////////////////////////////////////////////////////////////////////////////////////ADMIN HELPER PROCS
 
 /datum/admins/proc/spawn_atom(object as text)
