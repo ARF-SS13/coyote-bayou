@@ -44,5 +44,5 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 		H.adjustStaminaLoss(7)

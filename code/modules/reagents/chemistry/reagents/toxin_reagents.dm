@@ -1214,3 +1214,21 @@
 		if(initial(liber.filterToxins))
 			liber.filterToxins = TRUE
 	L.metabolism_efficiency += metab_inibition
+
+/datum/reagent/toxin/cazadorvenom
+	name = "cazador venom"
+	description = "A painful but relatively harmless venom, originally synthesized by tarantula hawks."
+	reagent_state = LIQUID
+	color = "#F0FFF0"
+	toxpwr = 0.5
+
+/datum/reagent/toxin/cazadorvenom/on_mob_life(mob/living/carbon/M)
+	M.adjustStaminaLoss(8, 0)
+	M.damageoverlaytemp = 60
+	M.update_damage_hud()
+	M.blur_eyes(3)
+	M.confused += 5
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_notice("[pain_message]"))
+	..()
