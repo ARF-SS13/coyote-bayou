@@ -48,7 +48,7 @@
 /obj/effect/decal/marking{
 	icon_state = "doubleverticalbottom"
 	},
-/turf/closed/indestructible/rock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel/northeast)
 "aan" = (
 /obj/effect/decal/cleanable/dirt,
@@ -117,13 +117,13 @@
 	},
 /area/f13/wasteland/city)
 "aaz" = (
-/obj/effect/decal/marking{
-	icon_state = "doublevertical"
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/tunnel/northeast)
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city)
 "aaA" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/caves)
@@ -240,9 +240,7 @@
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
 "aaS" = (
 /obj/effect/spawner/lootdrop/trash,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel/northeast)
 "aaT" = (
 /turf/open/indestructible/ground/outside/dirt,
@@ -15317,6 +15315,16 @@
 "bat" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
 /turf/open/water,
 /area/f13/caves)
 "bau" = (
@@ -16828,6 +16836,11 @@
 "bfC" = (
 /obj/structure/sink/deep_water,
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city)
 "bfD" = (
@@ -25606,7 +25619,7 @@
 /area/f13/wasteland/city/nash/suburbs)
 "cwz" = (
 /obj/structure/flora/tallgrass1,
-/turf/open/water,
+/turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "cwC" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -46210,7 +46223,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "hHx" = (
-/turf/closed/indestructible/rock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel/northeast)
 "hHy" = (
 /obj/structure/simple_door/room/dirty,
@@ -56136,6 +56149,11 @@
 /area/f13/wasteland/city/nash/theloop)
 "keN" = (
 /obj/structure/flora/tallgrass1,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "keU" = (
@@ -60547,11 +60565,18 @@
 	},
 /area/f13/wasteland/city)
 "ljV" = (
-/obj/structure/debris/v1{
-	pixel_x = -16
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/turf/closed/indestructible/rock,
-/area/f13/tunnel/northeast)
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/turf/open/water,
+/area/f13/caves)
 "lkl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -65075,7 +65100,7 @@
 /area/f13/underground/cave/coyote/antmound)
 "mlW" = (
 /obj/structure/spacevine,
-/turf/closed/indestructible/rock,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel/northeast)
 "mlY" = (
 /obj/structure/flora/grass/wasteland{
@@ -78803,11 +78828,13 @@
 	},
 /area/f13/building/abandoned)
 "pAP" = (
-/obj/effect/decal/marking{
-	icon_state = "doublevertical"
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/turf/closed/indestructible/rock,
-/area/f13/tunnel/northeast)
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "pAQ" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt{
@@ -82576,13 +82603,13 @@
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "qBQ" = (
-/obj/structure/debris/v1{
-	pixel_x = -16
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/tunnel/northeast)
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "qBW" = (
 /turf/open/indestructible/ground/outside/dirt{
 	icon_state = "dirt"
@@ -88085,16 +88112,19 @@
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "rXs" = (
-/obj/effect/decal/marking{
-	icon_state = "doublevertical"
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/obj/structure/debris/v1{
-	pixel_x = -16
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/tunnel/northeast)
+/turf/open/water,
+/area/f13/caves)
 "rXt" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_west_north"
@@ -112744,13 +112774,13 @@
 /area/f13/building/abandoned)
 "ydv" = (
 /obj/structure/spacevine,
-/obj/structure/debris/v1{
-	pixel_x = -16
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/tunnel/northeast)
+/turf/open/water,
+/area/f13/caves)
 "ydE" = (
 /obj/machinery/shower{
 	dir = 4
@@ -170770,9 +170800,9 @@ aaa
 aae
 aae
 aae
-aae
-aae
-aae
+aaB
+aaB
+aaB
 aae
 aae
 aae
@@ -171026,11 +171056,11 @@ kEE
 aaa
 aae
 aae
+aaB
+aaB
+aaB
 aae
-aae
-aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -171282,12 +171312,12 @@ kEE
 (226,1,1) = {"
 aaa
 aae
+aaB
+aaB
 aae
 aae
-aae
-aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aae
@@ -171539,14 +171569,14 @@ kEE
 (227,1,1) = {"
 aaa
 aae
+aaB
+aae
+aaB
+aaB
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aOk
@@ -171795,15 +171825,15 @@ kEE
 "}
 (228,1,1) = {"
 aaa
+aaB
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
 aae
 aae
 bna
@@ -172052,14 +172082,14 @@ kEE
 "}
 (229,1,1) = {"
 gGm
-gGm
-gGm
+mlW
+mlW
+hHx
 aaf
 aaf
-aaf
-aaf
-aaf
-aaf
+hHx
+hHx
+hHx
 aaf
 aaf
 aaf
@@ -172310,13 +172340,13 @@ kEE
 (230,1,1) = {"
 opW
 hHx
-qBQ
+aao
+hHx
+hHx
+hHx
 aao
 aao
-aao
-aao
-aao
-aao
+hHx
 aao
 aao
 acL
@@ -172568,14 +172598,14 @@ kEE
 opW
 hHx
 hHx
-qBQ
-dKg
 aao
+mlW
+hHx
+hHx
+hHx
 aao
-aao
-aao
-aao
-aao
+hHx
+hHx
 aaf
 aax
 aaE
@@ -172825,15 +172855,15 @@ kEE
 opW
 hHx
 hHx
-ljV
+hHx
 aas
 aao
-aao
+hHx
 dKg
-dKg
-aas
-aao
-aao
+mlW
+hHx
+hHx
+hHx
 oFO
 ozv
 oFO
@@ -173083,15 +173113,15 @@ opW
 hHx
 hHx
 hHx
-qBQ
-aas
-aao
-dKg
-aao
-aao
+hHx
+hHx
+hHx
+mlW
+hHx
+hHx
 lqh
-aao
-oFO
+hHx
+gIw
 vjU
 ozv
 ozv
@@ -173337,15 +173367,15 @@ aaa
 "}
 (234,1,1) = {"
 opW
-pAP
-pAP
+hHx
+hHx
 aam
-rXs
-dKg
+hHx
+mlW
 aaS
-aaz
-aaz
-aaz
+aao
+hHx
+aao
 aao
 aao
 xUV
@@ -173598,12 +173628,12 @@ mlW
 hHx
 hHx
 hHx
-ydv
+mlW
 aaS
-aao
-aao
-aao
-aao
+hHx
+hHx
+hHx
+hHx
 aao
 xUV
 oFO
@@ -173854,14 +173884,14 @@ opW
 hHx
 hHx
 hHx
-ydv
-aas
+mlW
+hHx
 aao
 aao
 aao
-aao
-aas
-aao
+hHx
+hHx
+hHx
 xUV
 oFO
 oFO
@@ -174111,12 +174141,12 @@ opW
 hHx
 hHx
 hHx
-qBQ
-aao
-aao
-aao
-aao
-aao
+hHx
+hHx
+hHx
+hHx
+hHx
+hHx
 aao
 aaf
 aay
@@ -174367,9 +174397,9 @@ aaa
 opW
 hHx
 hHx
-qBQ
-aao
-aao
+hHx
+hHx
+hHx
 aao
 aao
 aao
@@ -174622,12 +174652,12 @@ aaa
 "}
 (239,1,1) = {"
 aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+hHx
+hHx
+hHx
+hHx
+hHx
+hHx
 aaf
 aaf
 aaf
@@ -174635,7 +174665,7 @@ aaf
 aaf
 fit
 vXb
-vXb
+aaz
 bfC
 fit
 oFI
@@ -174880,14 +174910,14 @@ aaa
 (240,1,1) = {"
 aaa
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
 aae
 aOk
 fit
@@ -175137,19 +175167,19 @@ aaa
 (241,1,1) = {"
 aaa
 aae
-xzI
-xzI
+pAP
+pAP
 cwz
-iNC
+pFn
 aae
 aae
 aae
-aae
+aaB
 aae
 aae
 hVd
-lVH
-lVH
+qBQ
+qBQ
 aOk
 aOk
 heG
@@ -175396,15 +175426,15 @@ aaa
 euu
 euu
 xzI
-iNC
-iNC
+ydv
+ydv
 bat
-iNC
+ydv
 xzI
 aae
 aae
-iNC
-iNC
+ydv
+rXs
 keN
 aOk
 bmJ
@@ -175656,12 +175686,12 @@ aae
 aae
 xzI
 mKl
-xzI
-xzI
+ljV
+ljV
 iNC
-iNC
-bzQ
-iNC
+ydv
+ljV
+ydv
 aae
 adg
 mdh
@@ -175914,10 +175944,10 @@ aae
 aae
 aae
 aae
-bzQ
-bzQ
-iNC
-bzQ
+xzI
+ljV
+ydv
+xzI
 aae
 aae
 aae
