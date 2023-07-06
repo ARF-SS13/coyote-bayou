@@ -103,7 +103,7 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		if(ispath(spec))
 			mannequin.set_species(spec)
 		if(random_body)
-			randomize_human(mannequin, spec)
+			randomize_human(mannequin, spec, random_clothes, genitals)
 	if(copy_equipment && (istype(template) || istype(clint)))
 		copy_equipped(template, mannequin)
 	else
@@ -112,8 +112,7 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		if(ispath(clothes))
 			random_clothes = FALSE
 			clothes = new clothes()
-			var/datum/preferences/P = clint?.prefs
-			clothes.equip(mannequin, TRUE, P)
+			clothes.equip(mannequin, TRUE, clint)
 	if(!genitals)
 		for(var/obj/item/organ/genital/nad in mannequin.internal_organs)
 			qdel(nad) // say bye to ur naddies

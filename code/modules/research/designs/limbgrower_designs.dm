@@ -111,7 +111,7 @@
 	id = "torso"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 300)
-	build_path = /mob/living/carbon/twoman
+	build_path = /mob/living/carbon/human/twoman
 	category = list("initial","human")
 
 /datum/design/vagina
