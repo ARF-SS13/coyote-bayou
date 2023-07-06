@@ -30,7 +30,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	physiology = new()
 
 	AddComponent(/datum/component/personal_crafting)
-	AddComponent(/datum/component/second_wind)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 0.3, 5)
 	. = ..()
 

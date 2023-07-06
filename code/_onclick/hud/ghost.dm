@@ -48,41 +48,46 @@
 	name = "Revive yourself"
 	icon_state = "second_wind"
 
-/obj/screen/ghost/spawners/Click()
+/obj/screen/ghost/second_wind/Click()
 	var/mob/dead/observer/G = usr
-	G.open_second_wind_menu()
+	SSsecondwind.show_menu_to(G)
 
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/obj/screen/using
 
 	using = new /obj/screen/ghost/jumptomob()
-	using.screen_loc = ui_ghost_jumptomob
+	using.screen_loc = ui_ghost_jumptomob // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/orbit()
-	using.screen_loc = ui_ghost_orbit
+	using.screen_loc = ui_ghost_orbit // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/reenter_corpse()
-	using.screen_loc = ui_ghost_reenter_corpse
+	using.screen_loc = ui_ghost_reenter_corpse // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/teleport()
-	using.screen_loc = ui_ghost_teleport
+	using.screen_loc = ui_ghost_teleport // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/spawners()
-	using.screen_loc = ui_ghost_spawners
+	using.screen_loc = ui_ghost_spawners // THIS IS A DEFINE!!!
+	using.hud = src
+	static_inventory += using
+
+	using = new /obj/screen/ghost/second_wind()
+	using.screen_loc = ui_ghost_second_wind // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/language_menu
-	using.icon = ui_style
+	using.icon = ui_style // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 

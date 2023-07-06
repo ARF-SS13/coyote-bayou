@@ -158,11 +158,12 @@
 
 //Ghosts
 
-#define ui_ghost_jumptomob "SOUTH:6,CENTER-2:24"
-#define ui_ghost_orbit "SOUTH:6,CENTER-1:24"
+#define ui_ghost_jumptomob      "SOUTH:6,CENTER-2:24"
+#define ui_ghost_orbit          "SOUTH:6,CENTER-1:24"
 #define ui_ghost_reenter_corpse "SOUTH:6,CENTER:24"
-#define ui_ghost_teleport "SOUTH:6,CENTER+1:24"
-#define ui_ghost_spawners "SOUTH: 6, CENTER+2:24"
+#define ui_ghost_teleport       "SOUTH:6,CENTER+1:24"
+#define ui_ghost_spawners       "SOUTH:6,CENTER+2:24"
+#define ui_ghost_second_wind    "WEST+1:8,SOUTH+3:11"
 
 
 //UI position overrides for 1:1 screen layout. (default is 7:5)

@@ -1,24 +1,25 @@
 import { useBackend } from '../backend';
-import { Button, Section, ProgressBar, Flex, Table, Stack, Fragment, Box, Tooltip } from '../components';
+import { Button, Section, ProgressBar, Flex, Stack, Box } from '../components';
 import { Window } from '../layouts';
 
 export const SecondWind = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Window
-      width={400}
-      height={300}
+      title="Second Wind"
+      width={640}
+      height={480}
       resizable>
       <Window.Content>
         <Stack fill vertical>
           <Stack.Item>
-            <TopBar />
+            <SecondWindTopBar />
           </Stack.Item>
           <Stack.Item grow>
-            <Body />
+            <SecondWindBody />
           </Stack.Item>
           <Stack.Item>
-            <BottomBar />
+            <SecondWindBottomBar />
           </Stack.Item>
         </Stack>
       </Window.Content>
@@ -26,198 +27,162 @@ export const SecondWind = (props, context) => {
   );
 };
 
-const TopBar = (props, context) => {
+const SecondWindTopBar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    UIState,
-    TimeLeft,
-    PercentLeft,
-  } = data;
-  if (UIState == "SWThirdWinded") {
-    return (
-      <Box>
-        <Flex>
-          <Flex.Item grow>
-          <ProgressBar
-            value={100}
-            minValue={0}
-            maxValue={100}
-            ranges={{
-              bad: [0, 100],
-            }}
-            color="bad"
-            tooltip="Third Winded">
-              THIRD WINDED
-          </ProgressBar>
-          </Flex.Item>
-          <Flex.Item>
-            <InfoButton />
-          </Flex.Item>
-        </Flex>
-      </Box>
-    );
-  } else {
-    return (
-      <Box>
-        <Flex>
-          <Flex.Item grow>
-          <ProgressBar
-            value={PercentLeft}
-            minValue={0}
-            maxValue={100}
-            ranges={{
-              good: [0, 100],
-            }}>
-              {TimeLeft}
-          </ProgressBar>
-          </Flex.Item>
-          <Flex.Item>
-            <InfoButton />
-          </Flex.Item>
-        </Flex>
-      </Box>
-    );
-  }
-};
-
-const InfoButton = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    UIState,
-  } = data;
-  let ActDo = 'HelpMe';
-  let ButtonIcon = 'info';
-  if (UIState == "SWReadMe") {
-    ActDo = 'GoBack';
-    ButtonIcon = 'times';
+    PBarColors,
+    TimeText,
+    Percentage,
+    TargTime,
+  } = data.TimeData;
+  let LowCol = "good";
+  let MedCol = "average";
+  let HighCol = "bad";
+  switch (PBarColors) {
+    case "good":
+      LowCol = "good";
+      MedCol = "good";
+      HighCol = "good";
+      break;
+    case "average":
+      LowCol = "average";
+      MedCol = "average";
+      HighCol = "average";
+      break;
+    case "bad":
+      LowCol = "bad";
+      MedCol = "bad";
+      HighCol = "bad";
+      break;
   }
   return (
-    <Box
-      width="30px"
-      height="30px">
-      <Button
-        icon="info"
-        tooltip="Second Wind Info"
-        onClick={() => act(ActDo)}>
-      </Button>
+    <Box>
+      <Flex>
+        <Flex.Item grow>
+          <ProgressBar
+            value={Percentage}
+            minValue={0}
+            maxValue={100}
+            ranges={{
+              LowCol: [0, 35],
+              MedCol: [35, 65],
+              HighCol: [65, 100],
+            }}
+            color="bad">
+              {TimeText} / {TargTime}
+          </ProgressBar>
+        </Flex.Item>
+        <Flex.Item shrink>
+          <InfoButton />
+        </Flex.Item>
+      </Flex>
     </Box>
   );
 };
 
-const Body = (props, context) => {
+const SecondWindInfoButton = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     UIState,
-    RezCode,
-    ThirdWindWarning,
-    ReviveConfirmMsg,
-    ReadMe,
   } = data;
-  const {
-    CodeName,
-    CodeDesc,
-    CodeColor,
-  } = RezCode;
+  let ActDo = 'GoReadme';
+  let ButtonIcon = 'info';
   if (UIState == "SWReadMe") {
-    return (
-      <Section
-        title="Second Wind Info">
-          {ReadMe}
-      </Section>
-    );
-  } else if (UIState == "SWThirdWindWarning")
-    return (
-      <Section
-        title="WARNING!!!">
-          {ThirdWindWarning}
-      </Section>
-    );
-  else if (UIState == "SWReviveConfirm")
-    return (
-      <Section
-        title="Revive Confirmation">
-          {ReviveConfirmMsg}
-      </Section>
-    );
-  else {
-    return (
-      <Section
-        title={<Box
-          inline
-          color={CodeColor}>
-            CodeName
-          </Box>}>
-          {CodeDesc}
-      </Section>
-    );
+    ActDo = 'GoHome';
+    ButtonIcon = 'times';
+  }
+  return (
+    <Button
+      icon={ButtonIcon}
+      tooltip="Second Wind Info"
+      onClick={() => act(ActDo)}>
+    </Button>
+  );
+};
+
+const SecondWindBody = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    BodyHead,
+    BodyFill,
+    BodyHeadColor,
+    ShowButtons,
+  } = data.BodyData;
+  return (
+    <Section
+      fill
+      scrollable
+      title={BodyHead}
+      titleColor={BodyHeadColor}>
+      {BodyFill}
+    </Section>
+  );
+};
+
+const SecondWindBottomBar = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    ShowButtons,
+  } = data.BodyData;
+  switch (ShowButtons) {
+    case "OnlyConfirm":
+      return (
+        <SecondWindRevive />
+      );
+      break;
+    case "OnlyBack":
+      return (
+        <SecondWindBack />
+      );
+      break;
+    default:
+      return (
+        <Section />
+      );
+      break;
   }
 };
 
-const BottomBar = (props, context) => {
+const SecondWindRevive = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     UIState,
-    ShowButtons,
   } = data;
-  if (UIState == "SWReadMe" ) {
-    return (
-      <Section>
-        <Stack fill>
-          <Stack.Item>
-            <Button
-              color="good"
-              content="Back"
-              icon="times"
-              onClick={() => act('GoBack')} />
-          </Stack.Item>
-        </Stack>
-      </Section>
-    );
-  } else if (!!ShowButtons) {
-    return (
-      <Section/>
-    );
-  } else if (UIState == "SWThirdWindWarning") {
-    return (
-      <Section>
-        <Stack fill>
-          <Stack.Item>
-            <Button.Confirm
-              color="good"
-              content="Third Wind"
-              icon="heartbeat"
-              onClick={() => act('ThirdWindMe')} />
-          </Stack.Item>
-          <Stack.Item>
-            <Button
-              color="bad"
-              content="Nevermind!"
-              icon="times"
-              onClick={() => act('GoBack')} />
-          </Stack.Item>
-        </Stack>
-      </Section>
-    );
-  } else {
-    return (
-      <Section>
-        <Stack fill>
-          <Stack.Item>
-            <Button.Confirm
-              color="good"
-              content="Revive"
-              icon="heartbeat"
-              onClick={() => act('Revive')} />
-          </Stack.Item>
-          <Stack.Item>
-            <Button
-              color="bad"
-              content="Nevermind!"
-              icon="times"
-              onClick={() => act('GoBack')} />
-          </Stack.Item>
-        </Stack>
-      </Section>
-    );
+  let ButtonLabel = "Revive";
+  let ButtonIcon = "heartbeat";
+  if (UIState == "SWConfirm") {
+    ButtonLabel = "Confirm";
+    ButtonIcon = "check";
   }
+  return (
+    <Section>
+      <Button
+        color="good"
+        content={ButtonLabel}
+        icon={ButtonIcon}
+        onClick={() => act('ClickedRevive')} />
+    </Section>
+  );
+};
+
+const SecondWindBack = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    UIState,
+  } = data;
+  let ButtonLabel = "Back";
+  let ButtonIcon = "times";
+  if (UIState == "SWConfirm") {
+    ButtonLabel = "Cancel";
+    ButtonIcon = "times";
+  }
+  return (
+    <Section>
+      <Button
+        color="bad"
+        content={ButtonLabel}
+        icon={ButtonIcon}
+        onClick={() => act('GoHome')} />
+    </Section>
+  );
 };
