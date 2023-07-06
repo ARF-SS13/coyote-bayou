@@ -46,7 +46,7 @@
 
 /obj/screen/ghost/second_wind
 	name = "Revive yourself"
-	icon_state = "second_wind"
+	icon_state = "reenter_corpse"
 
 /obj/screen/ghost/second_wind/Click()
 	var/mob/dead/observer/G = usr

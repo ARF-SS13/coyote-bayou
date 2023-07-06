@@ -80,7 +80,7 @@ SUBSYSTEM_DEF(secondwind)
 		CRASH("get_second_wind_datum called with no key_lookup!")
 	var/key_lookup = get_ckey(client_mob_or_ckey)
 	if(!key_lookup)
-		CRASH("get_second_wind_datum called with something that lacked a ckey! (mob_or_ckey: '[mob_or_ckey]')")
+		CRASH("get_second_wind_datum called with something that lacked a ckey! (mob_or_ckey: '[client_mob_or_ckey]')")
 	return LAZYACCESS(second_winders, key_lookup)
 
 ///////////////////////////////////////////////////////////////////////////
