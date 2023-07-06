@@ -671,7 +671,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -742,7 +742,43 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
+
+/datum/reagent/toxin/rattler_venom
+	name = "rattler venom"
+	description = "A dangerous venom that causes intense pain and internal bleeding."
+	reagent_state = LIQUID
+	color = "#801E28" // rgb: 128, 30, 40
+	toxpwr = 0.5
+	taste_description = "pain"
+	taste_mult = 1.3
+	var/bleed_strength = 20 //increasing this number makes the effect weaker
+
+/datum/reagent/toxin/rattler_venom/on_mob_life(mob/living/carbon/M)
+	if(M.get_blood() > 10)
+		M.blood_volume -= M.blood_volume/bleed_strength //starts out strong, then slows as you grow woozy. allows it to kick in quick but then not make you a empty juicebox
+	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/rattler_venom)
+	M.damageoverlaytemp = concentration * 10
+	M.update_damage_hud()
+	if (M.eye_blurry < 20)
+		M.blur_eyes(3)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_warning("[pain_message]"))
+	..()
+
+/datum/reagent/toxin/rattler_venom/on_mob_life_synth(mob/living/M)
+	M.adjustStaminaLoss(10, 0)
+	if (M.eye_blurry < 20)
+		M.blur_eyes(3)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(5))
+		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		to_chat(M, span_notice("[pain_message]"))
+	..()
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"
