@@ -10,18 +10,26 @@
 
 	user << browse(create_panel_helper(create_mob_html), "window=create_mob;size=425x475")
 
-/proc/randomize_human(mob/living/carbon/human/H, species, undies = TRUE, genitals = TRUE)
+/mob/living/carbon/human/proc/randomize(species, undies, genitals)
+	return randomize_human(src, species, undies, genitals)
+
+/proc/randomize_human(mob/living/carbon/human/H, species, undies = TRUE, genitals)
+	if(!ishuman(H))
+		return
 	H.gender = pick(MALE, FEMALE)
 	H.real_name = random_unique_name(H.gender)
 	H.name = H.real_name
 	if(undies)
 		H.underwear = random_underwear(H.gender)
 		H.undershirt = random_undershirt(H.gender)
+		H.socks = random_socks(H.gender)
 	else
 		H.underwear = "Nude"
 		H.undershirt = "Nude"
+		H.socks = "Nude"
 	H.undie_color = random_short_color()
 	H.shirt_color = random_short_color()
+	H.socks_color = random_short_color()
 	H.dna.skin_tone_override = null
 	H.skin_tone = random_skin_tone()
 	H.hair_style = random_hair_style(H.gender)
@@ -122,36 +130,32 @@
 		var/static/belly_size_max
 		if(!belly_size_max)
 			belly_size_max = CONFIG_GET(number/belly_max_size_prefs)
-		var/inner_genital_color
-		var/outer_genital_color
-		if(species_type == "human")
-			inner_genital_color = H.dna.features["mcolor"]
-			outer_genital_color = H.dna.features["mcolor"]
-		else
-			inner_genital_color = H.dna.features["mcolor2"]
-			outer_genital_color = H.dna.features["mcolor"]
 		if(prob(50))
 			H.dna.features["has_butt"] = TRUE
-			H.dna.features["butt_color"] = outer_genital_color
-			H.dna.features["butt_size"] = WeightedCascadingPickerRange(butt_size_min, butt_size_max, 2, TRUE)
-		if(prob(50))
-			H.dna.features["has_belly"] = TRUE
-			H.dna.features["belly_color"] = inner_genital_color
-			H.dna.features["belly_size"] = WeightedCascadingPickerRange(belly_size_min, belly_size_max, 3, TRUE)
-			H.dna.features["belly_shape"] = pick(GLOB.belly_shapes_list)
-		if(H.gender == FEMALE || prob(5))
+			H.dna.features["butt_color"] = H.dna.features["mcolor"]
+			H.dna.features["butt_size"] = GaussianRangePicker(butt_size_min, butt_size_max, 4, 3)
+			if(prob(80))
+				H.dna.features["has_belly"] = TRUE
+				H.dna.features["belly_color"] = H.dna.features["mcolor"]
+				H.dna.features["belly_size"] = GaussianRangePicker(belly_size_min, belly_size_max, 4, 3)
+				H.dna.features["belly_shape"] = pick(GLOB.belly_shapes_list)
+		if(H.gender == FEMALE || H.gender == NEUTER || H.gender == PLURAL || prob(10))
 			H.dna.features["has_vag"] = TRUE // they only get the normal vag cus the rest are scary D:
-			H.dna.features["vag_color"] = inner_genital_color
+			H.dna.features["vag_color"] = H.dna.features["mcolor"]
+
 			H.dna.features["has_womb"] = TRUE
+
 			H.dna.features["has_breasts"] = TRUE
-			H.dna.features["breasts_color"] = inner_genital_color
-			H.dna.features["breasts_size"] = WeightedCascadingPicker(boob_cup_sizes, 1.5, TRUE)
-		if(H.gender == MALE || prob(5))
+			H.dna.features["breasts_color"] = H.dna.features["mcolor"]
+			H.dna.features["breasts_size"] = GaussianListPicker(boob_cup_sizes, 5, 2) // The wasteland has a buxomness epidemic
+		if(H.gender == MALE || H.gender == NEUTER || H.gender == PLURAL || prob(10))
 			H.dna.features["has_balls"] = TRUE
-			H.dna.features["balls_color"] = inner_genital_color
+			H.dna.features["balls_color"] = H.dna.features["mcolor"]
+
 			H.dna.features["has_cock"] = TRUE
-			H.dna.features["cock_size"] = WeightedCascadingPickerRange(penis_inches_min, penis_inches_max, 3, TRUE)
+			H.dna.features["cock_size"] = GaussianRangePicker(penis_inches_min, penis_inches_max, 7, 3) // fuck it, everyone's got a HUUUUUGE COCK =3
 			H.dna.features["cock_shape"] = pick(GLOB.cock_shapes_list)
+		H.give_genitals(TRUE)
 	SEND_SIGNAL(H, COMSIG_HUMAN_ON_RANDOMIZE)
 
 	H.update_body(TRUE)
