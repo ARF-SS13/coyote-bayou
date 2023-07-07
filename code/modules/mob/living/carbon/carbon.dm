@@ -1208,7 +1208,7 @@
 		stomach_contents.Add(C)
 		log_combat(src, C, "devoured")
 
-/mob/living/carbon/proc/create_bodyparts()
+/mob/living/carbon/proc/create_bodyparts(actually_dont)
 	var/l_arm_index_next = -1
 	var/r_arm_index_next = 0
 	for(var/X in bodyparts)
@@ -1224,6 +1224,11 @@
 			r_arm_index_next += 2
 			O.held_index = r_arm_index_next //2, 4, 6, 8...
 			hand_bodyparts += O
+	if(actually_dont)
+		for(var/obj/item/bodypart/O in bodyparts)
+			if(O.body_zone == BODY_ZONE_CHEST)
+				continue
+			qdel(O)
 
 /mob/living/carbon/do_after_coefficent()
 	. = ..()
