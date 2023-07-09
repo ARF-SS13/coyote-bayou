@@ -4,8 +4,6 @@
 /area/survivalpod)
 "e" = (
 /obj/structure/table/wood,
-/obj/item/stock_parts/cell,
-/obj/item/stock_parts/cell,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -19,9 +17,7 @@
 	},
 /area/survivalpod)
 "m" = (
-/turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirtcorner"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "o" = (
 /obj/effect/overlay/desert_side,
@@ -31,15 +27,13 @@
 /area/survivalpod)
 "s" = (
 /obj/structure/table/wood,
-/obj/machinery/microwave,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
-	},
-/area/survivalpod)
-"u" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirtcorner"
 	},
 /area/survivalpod)
 "y" = (
@@ -49,16 +43,13 @@
 	icon_state = "housewood2"
 	},
 /area/survivalpod)
-"z" = (
-/obj/machinery/space_heater,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/survivalpod)
 "E" = (
 /obj/structure/table/wood,
-/obj/machinery/chem_dispenser/drinks/beer,
 /obj/item/storage/box/drinkingglasses,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -76,28 +67,16 @@
 	icon_state = "housewood2"
 	},
 /area/survivalpod)
-"J" = (
-/obj/structure/reagent_dispensers/beerkeg,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/survivalpod)
 "K" = (
 /obj/structure/bonfire{
 	pixel_x = -15;
 	pixel_y = 21
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 1;
-	icon_state = "dirtcorner"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "M" = (
 /obj/effect/overlay/desert_side,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 4;
-	icon_state = "dirtcorner"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "O" = (
 /obj/structure/chair/bench,
@@ -172,7 +151,7 @@ a
 "}
 (4,1,1) = {"
 a
-J
+G
 G
 G
 O
@@ -222,7 +201,7 @@ T
 a
 e
 o
-u
+m
 K
 j
 G
@@ -232,7 +211,7 @@ T
 "}
 (9,1,1) = {"
 a
-z
+G
 G
 R
 R
@@ -244,7 +223,7 @@ a
 "}
 (10,1,1) = {"
 a
-z
+G
 G
 G
 O
@@ -281,7 +260,7 @@ a
 (13,1,1) = {"
 a
 Q
-J
+G
 G
 G
 G

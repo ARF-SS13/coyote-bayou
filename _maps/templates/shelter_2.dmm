@@ -1,55 +1,46 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "e" = (
-/obj/structure/closet/crate/wicker,
-/obj/item/reagent_containers/food/snacks/grown/xander,
-/obj/item/reagent_containers/food/snacks/grown/xander,
-/obj/item/reagent_containers/food/snacks/grown/tato,
-/obj/item/reagent_containers/food/snacks/grown/tato,
-/obj/item/reagent_containers/food/snacks/grown/mutfruit,
-/obj/item/reagent_containers/food/snacks/grown/mutfruit,
-/turf/open/floor/carpet/black,
+/obj/structure/campfire/stove,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "f" = (
 /obj/structure/table/wood/settler,
-/obj/item/reagent_containers/food/snacks/grown/buffalogourd,
-/obj/item/kitchen/knife{
-	attack_verb = list("slashed","filled");
-	desc = "A razor sharp filet knife made for camping and precise cooking. Not the ideal stabbing tool.";
-	icon_state = "bowie_knife";
-	name = "filet knife"
+/obj/item/kitchen/knife/butcher/tribal,
+/obj/item/melee/onehanded/knife/bone,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "i" = (
-/obj/item/bedsheet,
-/obj/structure/bed,
-/turf/open/floor/carpet/black,
+/obj/structure/sink/puddle,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"k" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1
+	},
+/turf/open/floor/carpet,
 /area/survivalpod)
 "p" = (
-/obj/machinery/workbench,
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "q" = (
 /obj/item/flashlight/lantern,
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "r" = (
-/obj/structure/chair/wood/fancy,
-/turf/open/floor/carpet/black,
+/obj/structure/chair/bench,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "s" = (
-/obj/structure/chair/wood/fancy,
-/obj/item/cardboard_cutout{
-	desc = "Your best friend in the wastes.";
-	icon_state = "cutout_ian";
-	name = "Conga the Corgi"
-	},
-/turf/open/floor/carpet/black,
+/obj/structure/table/wood/settler,
+/obj/machinery/processor/chopping_block,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "t" = (
-/obj/item/storage/backpack/duffelbag,
-/obj/structure/table/wood/settler,
-/turf/open/floor/carpet/black,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "w" = (
 /obj/structure/table/wood/settler,
@@ -58,28 +49,27 @@
 	icon_state = "porknbeans";
 	name = "deathclaw dinner"
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "x" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/loadedbakedpotato,
 /obj/item/storage/fancy/candle_box,
 /obj/item/lighter/greyscale,
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "A" = (
-/turf/open/floor/carpet/black,
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "B" = (
-/obj/structure/chair/wood/fancy{
-	dir = 1;
-	icon_state = "wooden_chair_fancy"
-	},
-/turf/open/floor/carpet/black,
+/obj/structure/chair/bench,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "D" = (
 /obj/structure/simple_door/tent,
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "E" = (
 /turf/closed/wall/f13/tentwall,
@@ -97,34 +87,34 @@ E
 (2,1,1) = {"
 E
 e
-A
 p
-t
+p
+A
 A
 E
 "}
 (3,1,1) = {"
 E
 f
-A
-A
-A
-A
+p
+p
+p
+t
 E
 "}
 (4,1,1) = {"
 E
-A
-A
+s
+p
 q
-A
-A
+p
+p
 D
 "}
 (5,1,1) = {"
 E
-A
-A
+k
+p
 r
 w
 B
@@ -133,10 +123,10 @@ E
 (6,1,1) = {"
 E
 i
-A
-s
+p
+r
 x
-B
+r
 E
 "}
 (7,1,1) = {"

@@ -1,89 +1,34 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"c" = (
-/obj/structure/chair/f13foldupchair{
-	dir = 4;
-	icon_state = "f13foldupchair"
-	},
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"f" = (
-/obj/structure/bed,
-/obj/item/bedsheet/black,
-/turf/open/floor/f13/wood,
-/area/survivalpod)
 "j" = (
-/obj/structure/table/wood,
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"m" = (
-/obj/structure/closet/crate/wooden,
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"q" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "u" = (
 /turf/closed/wall/f13/tentwall,
 /area/survivalpod)
 "v" = (
-/obj/structure/campfire/stove,
-/turf/open/floor/f13/wood,
+/obj/structure/rack/shelf_metal,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "x" = (
-/obj/item/stack/sheet/mineral/wood/fifty,
-/obj/structure/closet/crate/wooden,
-/obj/item/storage/box/matches,
-/turf/open/floor/f13/wood,
+/obj/structure/bed/wooden,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "y" = (
-/obj/structure/chair/f13foldupchair{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "D" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "G" = (
-/obj/machinery/workbench,
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"I" = (
-/obj/structure/chair/f13foldupchair,
-/turf/open/floor/f13/wood,
+/obj/structure/simple_door/tent,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "K" = (
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"N" = (
-/obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"O" = (
-/obj/structure/table/wood,
-/obj/machinery/chem_dispenser/drinks{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"P" = (
+/obj/structure/chair/wood,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"R" = (
-/obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood,
 /area/survivalpod)
 
 (1,1,1) = {"
@@ -95,128 +40,59 @@ u
 u
 u
 u
-u
-u
-P
 "}
 (2,1,1) = {"
 u
-f
-K
-R
-K
-K
 D
-I
+K
 j
 u
-P
+j
+D
+u
 "}
 (3,1,1) = {"
 u
-m
 K
+j
+j
+G
+j
+x
 u
-K
-K
-K
-K
-y
-u
-P
 "}
 (4,1,1) = {"
+G
+j
+j
+y
 u
-m
-K
 u
-K
-K
-K
-K
-K
 u
-P
+u
 "}
 (5,1,1) = {"
 u
-f
-q
-u
+v
+j
+j
+G
+j
 x
-K
-K
-K
-K
-u
 u
 "}
 (6,1,1) = {"
 u
-u
-u
-u
 v
-K
-K
-K
-K
-K
-R
+j
+j
+u
+j
+D
+u
 "}
 (7,1,1) = {"
 u
-f
-D
-u
-N
-K
-K
-K
-K
-u
-u
-"}
-(8,1,1) = {"
-u
-m
-K
-u
-G
-K
-K
-K
-K
-u
-P
-"}
-(9,1,1) = {"
-u
-m
-K
-u
-K
-K
-K
-K
-c
-u
-P
-"}
-(10,1,1) = {"
-u
-f
-K
-R
-K
-K
-q
-I
-O
-u
-P
-"}
-(11,1,1) = {"
 u
 u
 u
@@ -224,8 +100,4 @@ u
 u
 u
 u
-u
-u
-u
-P
 "}

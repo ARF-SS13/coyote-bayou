@@ -1,217 +1,146 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/structure/fence/corner/wooden{
-	dir = 8
-	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"e" = (
-/obj/item/shovel,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"f" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/f13/wood,
 /area/survivalpod)
 "g" = (
-/obj/structure/fence/corner/wooden,
+/obj/structure/fence/wooden,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"i" = (
-/obj/structure/fermenting_barrel,
-/turf/open/floor/f13/wood,
 /area/survivalpod)
 "j" = (
-/obj/item/reagent_containers/glass/bucket,
+/obj/machinery/smartfridge/bottlerack/seedbin,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"l" = (
-/obj/structure/table/wood,
-/obj/item/kitchen/knife,
-/obj/item/flashlight/lamp,
-/turf/open/floor/f13/wood,
 /area/survivalpod)
-"m" = (
-/obj/structure/flora/tallgrass1,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"n" = (
-/obj/structure/flora/grass/wasteland,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"p" = (
+"l" = (
 /obj/structure/legion_extractor,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/survivalpod)
+"m" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/poppy/broc,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"p" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/datura,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
 "r" = (
-/obj/structure/bed,
-/obj/item/bedsheet/brown,
-/turf/open/floor/f13/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/cultivator,
+/obj/item/shovel/spade,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "s" = (
-/obj/structure/sink/puddle,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"u" = (
-/obj/structure/table/wood,
-/obj/machinery/microwave,
-/turf/open/floor/f13/wood,
-/area/survivalpod)
-"v" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"y" = (
-/turf/closed/wall/f13/tentwall,
-/area/survivalpod)
-"A" = (
-/obj/machinery/biogenerator,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"B" = (
-/obj/structure/fence/wooden{
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"D" = (
-/obj/structure/fence/wooden{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"E" = (
-/obj/structure/fence/wooden{
-	pixel_y = -8
-	},
-/obj/structure/fence/wooden{
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"F" = (
 /obj/structure/reagent_dispensers/compostbin,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"G" = (
+/area/survivalpod)
+"v" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"H" = (
-/obj/machinery/vending/hydronutrients,
-/turf/open/floor/f13/wood,
 /area/survivalpod)
-"J" = (
-/obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+"y" = (
+/obj/structure/simple_door/metal/fence/wooden{
+	dir = 1
 	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"A" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/yucca,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"C" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/xander,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"E" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/punga,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"F" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/coyotetobacco,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"G" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/mutfruit,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "K" = (
-/turf/open/indestructible/ground/outside/dirt/dark,
-/area/f13/wasteland)
-"M" = (
-/obj/structure/flora/tallgrass2,
+/obj/structure/fence/corner/wooden,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"O" = (
-/turf/open/floor/f13/wood,
 /area/survivalpod)
-"Q" = (
-/obj/structure/fence/corner/wooden{
-	dir = 4
-	},
+"O" = (
+/obj/structure/sink/puddle,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"S" = (
-/obj/item/reagent_containers/food/snacks/grown/wheat,
-/obj/item/reagent_containers/food/snacks/grown/wheat,
-/obj/item/reagent_containers/food/snacks/grown/wheat,
-/obj/item/reagent_containers/food/snacks/grown/wheat,
-/obj/item/reagent_containers/food/snacks/grown/wheat,
-/obj/item/reagent_containers/food/snacks/grown/wheat,
-/turf/open/floor/f13/wood,
 /area/survivalpod)
 "T" = (
-/obj/structure/fence/wooden{
-	pixel_y = 2
-	},
+/obj/machinery/smartfridge/bottlerack/grownbin,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"V" = (
-/mob/living/simple_animal/cow/brahmin,
+/area/survivalpod)
+"W" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/fungus,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/survivalpod)
 "X" = (
-/obj/machinery/smartfridge/bottlerack/seedbin,
-/turf/open/floor/f13/wood,
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/feracactus,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "Y" = (
-/obj/structure/simple_door/metal/fence{
-	dir = 8
-	},
+/obj/machinery/hydroponics/soil,
+/obj/item/seeds/agave,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"Z" = (
-/obj/machinery/vending/hydroseeds,
-/turf/open/floor/f13/wood,
 /area/survivalpod)
 
 (1,1,1) = {"
-a
 T
-T
-T
-T
-T
-T
-T
-E
-a
+K
+g
+g
+g
+g
+g
+K
 "}
 (2,1,1) = {"
-D
-A
 s
-e
-p
-F
-G
-G
-G
-D
+g
+m
+X
+A
+Y
+E
+g
 "}
 (3,1,1) = {"
-D
-v
 j
-v
-v
-v
+g
+C
+p
+F
+W
 G
-G
-G
-D
+g
 "}
 (4,1,1) = {"
-y
-y
-y
-y
+a
 y
 v
-G
-G
-G
-D
+v
+v
+v
+v
+g
 "}
 (5,1,1) = {"
-y
-f
 l
-Z
-y
+g
+v
 v
 v
 v
@@ -219,98 +148,22 @@ v
 g
 "}
 (6,1,1) = {"
-y
-u
 O
-O
-y
-y
-K
-K
-K
-K
+g
+v
+v
+v
+v
+v
+g
 "}
 (7,1,1) = {"
-y
-H
-O
-O
-O
-J
-K
-K
-K
-K
-"}
-(8,1,1) = {"
-y
-X
-O
-S
-y
-y
-K
-K
-K
-K
-"}
-(9,1,1) = {"
-y
 r
-O
-i
-y
-a
-T
-Y
-B
-a
-"}
-(10,1,1) = {"
-y
-y
-y
-y
-y
-D
-v
-m
-V
-D
-"}
-(11,1,1) = {"
-v
-v
-v
-v
-v
-D
-V
-v
-n
-D
-"}
-(12,1,1) = {"
-v
-v
-v
-v
-v
-D
-n
-M
-V
-D
-"}
-(13,1,1) = {"
-v
-v
-v
-v
-v
-Q
-E
-B
-B
+K
 g
+g
+g
+g
+g
+K
 "}

@@ -3,46 +3,29 @@
 /turf/closed/wall/f13/tentwall,
 /area/survivalpod)
 "f" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/obj/machinery/workbench,
+/turf/open/floor/f13/wood,
 /area/survivalpod)
 "g" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/survivalpod)
-"s" = (
-/obj/structure/campfire/stove,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/survivalpod)
-"x" = (
 /obj/structure/rack,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
 /area/survivalpod)
 "y" = (
 /obj/structure/table/wood,
+/obj/structure/simple_door/tent,
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
-"z" = (
-/obj/structure/table/wood,
-/obj/machinery/microwave,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+"F" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1
 	},
+/turf/open/floor/f13/wood,
 /area/survivalpod)
 "G" = (
-/obj/structure/barricade/bars,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/f13/wood,
 /area/survivalpod)
 "J" = (
 /obj/structure/simple_door/tent,
@@ -50,42 +33,11 @@
 	icon_state = "housewood2"
 	},
 /area/survivalpod)
-"L" = (
-/obj/structure/rack,
-/obj/item/stack/sheet/plasteel/twenty,
-/obj/item/stack/sheet/paperframes/twenty,
-/obj/item/stack/sheet/mineral/wood/twenty,
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/leather/twenty,
-/obj/item/stack/sheet/glass/ten,
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
-"N" = (
-/obj/structure/simple_door/metal/barred,
+"Q" = (
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
-"O" = (
-/obj/structure/dresser,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/survivalpod)
-"P" = (
-/obj/machinery/workbench,
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
-"Q" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"R" = (
-/obj/item/bedsheet/cult,
-/obj/structure/bed,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/floor/f13/wood,
 /area/survivalpod)
 "S" = (
 /obj/structure/simple_door/tent,
@@ -95,11 +47,14 @@
 	},
 /area/survivalpod)
 "V" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
-"X" = (
-/obj/machinery/autolathe/constructionlathe,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/rack,
+/obj/item/stack/sheet/plasteel/twenty,
+/obj/item/stack/sheet/paperframes/twenty,
+/obj/item/stack/sheet/mineral/wood/twenty,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/leather/twenty,
+/obj/item/stack/sheet/glass/ten,
+/turf/open/floor/f13/wood,
 /area/survivalpod)
 
 (1,1,1) = {"
@@ -109,47 +64,42 @@ S
 c
 c
 c
-y
-y
+c
 "}
 (2,1,1) = {"
 c
-x
-V
+g
+G
 c
-x
-V
-V
+g
+G
 y
 "}
 (3,1,1) = {"
 c
-L
 V
 G
-V
-V
-V
+Q
+G
+G
 y
 "}
 (4,1,1) = {"
 c
-P
-V
-N
-V
-V
-V
+f
+G
+Q
+G
+G
 y
 "}
 (5,1,1) = {"
 c
-X
-V
+F
+G
 c
-x
-V
-V
+g
+G
 y
 "}
 (6,1,1) = {"
@@ -159,46 +109,5 @@ J
 c
 c
 c
-y
-y
-"}
-(7,1,1) = {"
 c
-f
-g
-z
-c
-Q
-Q
-Q
-"}
-(8,1,1) = {"
-c
-g
-g
-g
-c
-Q
-Q
-Q
-"}
-(9,1,1) = {"
-c
-R
-O
-s
-c
-Q
-Q
-Q
-"}
-(10,1,1) = {"
-c
-c
-c
-c
-c
-Q
-Q
-Q
 "}
