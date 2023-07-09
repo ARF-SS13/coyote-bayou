@@ -33,10 +33,7 @@
 /datum/map_template/shelter/alpha
 	name = "Shelter Alpha"
 	shelter_id = "shelter_alpha"
-	description = "A cosy self-contained pressurized shelter, with \
-		built-in navigation, entertainment, medical facilities and a \
-		sleeping area! Order now, and we'll throw in a TINY FAN, \
-		absolutely free!"
+	description = "A small tent, containing the basic ammenities."
 	mappath = "_maps/templates/shelter_1.dmm"
 
 /datum/map_template/shelter/alpha/New()
@@ -47,11 +44,7 @@
 /datum/map_template/shelter/beta
 	name = "Shelter Beta"
 	shelter_id = "shelter_beta"
-	description = "An extremely luxurious shelter, containing all \
-		the amenities of home, including carpeted floors, hot and cold \
-		running water, a gourmet three course meal, cooking facilities, \
-		and a deluxe companion to keep you from getting lonely during \
-		an ash storm."
+	description = "A tent containing a small bench and some cooking ammenities."
 	mappath = "_maps/templates/shelter_2.dmm"
 
 /datum/map_template/shelter/beta/New()
@@ -62,7 +55,7 @@
 /datum/map_template/shelter/charlie
 	name = "Shelter Charlie"
 	shelter_id = "shelter_charlie"
-	description = "A standard four bed living arrangement"
+	description = "A cosy tent containing space for two."
 	mappath = "_maps/templates/shelter_3.dmm"
 
 /datum/map_template/shelter/charlie/New()
@@ -117,7 +110,7 @@
 /datum/map_template/shelter/hotel
 	name = "Shelter Hotel"
 	shelter_id = "shelter_hotel"
-	description = "A fortune tellers shack."
+	description = "A pen for brahmin."
 	mappath = "_maps/templates/shelter_8.dmm"
 
 /datum/map_template/shelter/hotel/New()
@@ -128,7 +121,7 @@
 /datum/map_template/shelter/india
 	name = "Shelter India"
 	shelter_id = "shelter_india"
-	description = "A blacksmiths tent."
+	description = "A compact tent for three."
 	mappath = "_maps/templates/shelter_9.dmm"
 
 /datum/map_template/shelter/india/New()
@@ -139,10 +132,21 @@
 /datum/map_template/shelter/juliett
 	name = "Shelter Juliett"
 	shelter_id = "shelter_juliett"
-	description = "An ultra-deluxe, top of the line, bar non-ammenity held living area for four or more people."
+	description = "A tent containing the supplies to get yourself started forging!"
 	mappath = "_maps/templates/shelter_10.dmm"
 
 /datum/map_template/shelter/juliett/New()
+	. = ..()
+	whitelisted_turfs = typecacheof(/turf/closed/mineral)
+	banned_objects = typecacheof(/obj/structure/stone_tile)
+
+/datum/map_template/shelter/kilo
+	name = "Shelter Kilo"
+	shelter_id = "shelter_kilo"
+	description = "A tent containing the supplies for a medicine man!"
+	mappath = "_maps/templates/shelter_11.dmm"
+
+/datum/map_template/shelter/kilo/New()
 	. = ..()
 	whitelisted_turfs = typecacheof(/turf/closed/mineral)
 	banned_objects = typecacheof(/obj/structure/stone_tile)
