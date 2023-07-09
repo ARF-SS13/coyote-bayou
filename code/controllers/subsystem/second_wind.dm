@@ -1,5 +1,5 @@
-#define FLOOR_MASTER var/mob/living/master = GET_WEAKREF(ownermob); if(!master) return;
-#define BODY_PLAYED var/mob/played = ckey2mob(ownerkey); if(!played) return;
+#define FLOOR_MASTER var/mob/living/master = get_revivable_body(); if(!master) return;
+#define BODY_PLAYED var/mob/played = get_currently_played_mob(); if(!played) return;
 
 #define SW_ERROR_NO_ERROR       0
 #define SW_ERROR_NO_BODY        (0 << 1 )
@@ -12,6 +12,7 @@
 #define SW_ERROR_ON_COOLDOWN    (0 << 8 )
 #define SW_ERROR_CUFFED         (0 << 9 )
 #define SW_ERROR_NO_LIVES       (0 << 10)
+#define SW_ERROR_DISABLED       (0 << 11)
 
 #define SW_UI_DEFAULT "SWDefault"
 #define SW_UI_README  "SWReadMe"
@@ -33,7 +34,9 @@ SUBSYSTEM_DEF(secondwind)
 	var/list/second_winders = list()
 	var/life_cooldown = 2 HOURS
 	var/max_lives = 1
+	var/start_lives = 1
 	var/allow_third_wind = TRUE
+	var/master_toggle = TRUE
 
 	var/used_a_second_wind = 0
 	var/died_at_least_once = 0
@@ -50,6 +53,8 @@ SUBSYSTEM_DEF(secondwind)
 	. = ..()
 
 /datum/controller/subsystem/secondwind/fire(resumed)
+	if(!master_toggle)
+		return
 	var/adustment = world.time - last_life_tick
 	used_a_second_wind = 0
 	died_at_least_once = 0
@@ -81,7 +86,18 @@ SUBSYSTEM_DEF(secondwind)
 	var/key_lookup = get_ckey(client_mob_or_ckey)
 	if(!key_lookup)
 		CRASH("get_second_wind_datum called with something that lacked a ckey! (mob_or_ckey: '[client_mob_or_ckey]')")
-	return LAZYACCESS(second_winders, key_lookup)
+	var/datum/second_wind/my_wind = LAZYACCESS(second_winders, key_lookup)
+	if(!my_wind)
+		my_wind = new /datum/second_wind(key_lookup)
+	return my_wind
+
+/datum/controller/subsystem/secondwind/proc/grant_one_up(ckey)
+	if(!ckey)
+		CRASH("grant_one_up called with no key_lookup!")
+	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
+	if(!my_wind)
+		my_wind = new /datum/second_wind(ckey)
+	my_wind.one_up()
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -100,13 +116,27 @@ SUBSYSTEM_DEF(secondwind)
 	var/times_second_winded = 0
 	var/times_died = 0
 
-/datum/second_wind/New(mob/living/owner)
-	if(!istype(owner))
-		qdel(src)
-		CRASH("Second Wind created with no owner!")
-	ownerkey = owner.ckey
-	ownermob = WEAKREF(owner)
+/datum/second_wind/New(new_key)
+	ownerkey = new_key
+	lives_left = SSsecondwind.start_lives
 	SSsecondwind.second_winders[ownerkey] = src
+	get_revivable_body()
+
+/datum/second_wind/proc/get_revivable_body()
+	var/mob/corpse = GET_WEAKREF(ownermob)
+	var/mob/current = get_currently_played_mob() // should always be *something*
+	if(!current)
+		CRASH("get_revivable_body failed to get the player's current body! Did someone banish them to the shadow realm (nullspace)?")
+	if(isliving(current) && (!corpse || current != corpse))
+		corpse = current
+		ownermob = WEAKREF(corpse)
+	return corpse
+
+/datum/second_wind/proc/get_currently_played_mob()
+	if(!ownerkey)
+		CRASH("get_currently_played_mob called on a second wind with no ownerkey! wtf")
+	var/mob/maybemob = ckey2mob(ownerkey)
+	return maybemob
 
 /datum/second_wind/proc/living_tick(time_shift)
 	. = get_stats()
@@ -133,6 +163,8 @@ SUBSYSTEM_DEF(secondwind)
 
 /datum/second_wind/proc/one_up(silent)
 	lives_left = clamp(lives_left + 1, 0, SSsecondwind.max_lives)
+	if(third_winded)
+		third_winded = FALSE // Third Wind prevents this from being called naturall, but admins can still force it
 	if(silent)
 		return
 	BODY_PLAYED
@@ -162,6 +194,9 @@ SUBSYSTEM_DEF(secondwind)
 			return
 		if(SW_ERROR_CUFFED)
 			to_chat(played, span_danger("Your body is cuffed! You can't revive!"))
+			return
+		if(SW_ERROR_DISABLED)
+			to_chat(played, span_danger("Second Wind is disabled!"))
 			return
 	if(!revive_me())
 		return
@@ -293,7 +328,9 @@ SUBSYSTEM_DEF(secondwind)
 
 /datum/second_wind/proc/can_revive(freebie)
 	FLOOR_MASTER
-	if(!freebie)
+	if(!SSsecondwind.master_toggle)
+		return SW_ERROR_DISABLED
+	if(freebie)
 		return SW_ERROR_NO_ERROR
 	if(!isliving(master))
 		return SW_ERROR_NO_BODY
@@ -370,6 +407,11 @@ SUBSYSTEM_DEF(secondwind)
 			.["BodyFill"] = "You don't have a body to revive!"
 			.["BodyHeadColor"] = "bad"
 			.["ShowButtons"] = "None"
+		if(SW_ERROR_DISABLED)
+			.["BodyHead"] = "DISABLED"
+			.["BodyFill"] = "Second Wind is disabled. Sorry!"
+			.["BodyHeadColor"] = "bad"
+			.["ShowButtons"] = "None"
 		if(SW_ERROR_QDELLED_BODY)
 			.["BodyHead"] = "Body deleted"
 			.["BodyFill"] = "Your body is in the trash where it belongs (its been deleted, sorry!) You can't revive yourself!"
@@ -422,6 +464,12 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/proc/get_confirm_text()
 	FLOOR_MASTER
 	. = list()
+	if(!SSsecondwind.master_toggle)
+		.["BodyHead"] = "DISALBED!"
+		.["BodyFill"] = "Second Wind is disabled. Sorry! (How'd you even get here =3)"
+		.["BodyHeadColor"] = "good"
+		.["ShowButtons"] = "OnlyBack" // hey come check out my OnlyBack
+		return
 	if(master.stat != DEAD)
 		.["BodyHead"] = "You're not dead!"
 		.["BodyFill"] = "You need to be dead to revive yourself, silly!"

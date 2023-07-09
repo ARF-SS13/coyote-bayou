@@ -16,7 +16,9 @@ export const SecondWind = (props, context) => {
             <SecondWindTopBar />
           </Stack.Item>
           <Stack.Item grow>
-            <SecondWindBody />
+            <Section fill scrollable>
+              <SecondWindBody />
+            </Section>
           </Stack.Item>
           <Stack.Item>
             <SecondWindBottomBar />
@@ -111,7 +113,6 @@ const SecondWindBody = (props, context) => {
   return (
     <Section
       fill
-      scrollable
       title={BodyHead}
       titleColor={BodyHeadColor}>
       {BodyFill}

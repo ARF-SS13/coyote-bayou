@@ -93,6 +93,8 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/toggle_sleep,
 	/datum/admins/proc/toggle_sleep_area,
 	/datum/admins/proc/refill_nearby_ammo,
+	/datum/admins/proc/toggle_reviving,
+	/datum/admins/proc/give_one_up,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -838,3 +840,79 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 				perp.SetAdminSleep(remove = TRUE)
 			log_admin("[key_name(usr)] has unslept everyone in view.")
 			message_admins("[ADMIN_TPMONTY(usr)] has unslept everyone in view.")
+
+/datum/admins/proc/toggle_reviving()
+	set category = "Admin.Game"
+	set name = "Toggle Self Reviving"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with toggle_reviving() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with toggle_reviving() without admin perms.")
+		return
+
+	var/current_setting
+	if(SSsecondwind.master_toggle)
+		current_setting = "ENABLED!"
+	else
+		current_setting = "DISABLED!"
+
+	var/choice = tgui_alert(
+		usr,
+		"Second Wind is currently [current_setting]. What do you want to set it to?",
+		"Toggle Second Wind",
+		list(
+			"ENABLED",
+			"DISABLED",
+			"Nevermind",
+		),
+	)
+	switch(choice)
+		if("ENABLED")
+			SSsecondwind.master_toggle = TRUE
+			log_admin("[key_name(usr)] has set Second Wind to ENABLED.")
+			message_admins("[ADMIN_TPMONTY(usr)] has set Second Wind to ENABLED.")
+		if("DISABLED")
+			SSsecondwind.master_toggle = FALSE
+			log_admin("[key_name(usr)] has set Second Wind to DISABLED.")
+			message_admins("[ADMIN_TPMONTY(usr)] has set Second Wind to DISABLED.")
+		else
+			to_chat(usr, "Nevermind then.")
+
+/// Never gonna give one up, never gonna give one down
+/datum/admins/proc/give_one_up()
+	set category = "Admin.Game"
+	set name = "Give 1UP"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with give_one_up() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with give_one_up() without admin perms.")
+		return
+
+	var/list/ppl = list()
+	var/list/pplnames = list()
+	for(var/kye in SSsecondwind.second_winders)
+		var/datum/second_wind/SW = LAZYACCESS(SSsecondwind.second_winders, kye)
+		if(!SW)
+			continue
+		var/mob/living/perp = SW.get_revivable_body()
+		if(!perp)
+			continue
+		ppl[perp.real_name] = kye
+		pplnames += perp.real_name
+	
+	var/whotorez = tgui_input_list(
+		usr,
+		"Who do you want to give a 1UP to?",
+		"Give 1UP",
+		pplnames,
+	)
+	if(!whotorez)
+		to_chat(usr, "Nevermind then.")
+		return
+	var/keytorez = LAZYACCESS(ppl, whotorez)
+	SSsecondwind.grant_one_up(keytorez)
+	log_admin("[key_name(usr)] has granted a 1UP to [keytorez].")
+	message_admins("[ADMIN_TPMONTY(usr)] has granted a 1UP to [keytorez].")
+
+
+
