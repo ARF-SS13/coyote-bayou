@@ -1931,12 +1931,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_fancy,
 /area/f13/caves)
-"buY" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/tunnel)
 "bvl" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
@@ -2360,13 +2354,6 @@
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
-	},
-/area/f13/tunnel)
-"bEq" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/plasteel/f13/vault_floor/red{
-	icon_state = "redrustyfull"
 	},
 /area/f13/tunnel)
 "bEv" = (
@@ -4475,7 +4462,6 @@
 /area/f13/tunnel)
 "bQf" = (
 /obj/item/crowbar/red,
-/mob/living/simple_animal/hostile/centaur,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -7003,10 +6989,6 @@
 /obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
-"cRv" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/tunnel)
 "cRX" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -16875,9 +16857,11 @@
 	},
 /area/f13/building)
 "jPK" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
+/obj/structure/handrail/g_central{
+	pixel_y = -16
+	},
+/turf/closed/wall/rust,
+/area/f13/building/sewers)
 "jPY" = (
 /obj/structure/dresser{
 	pixel_x = -3;
@@ -23064,15 +23048,6 @@
 	},
 /turf/open/water,
 /area/f13/caves)
-"nXG" = (
-/obj/structure/fluff/fokoff_sign{
-	pixel_y = 6;
-	pixel_x = -11
-	},
-/turf/open/floor/plasteel/f13/vault_floor/red{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/tunnel)
 "nYc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -23479,11 +23454,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "onm" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/plasteel/f13/vault_floor/yellow{
-	icon_state = "yellowdirtyfull"
+/obj/structure/fluff/fokoff_sign{
+	pixel_y = 24;
+	pixel_x = 4
 	},
-/area/f13/tunnel)
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/building/sewers)
 "onH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/handrail/g_central{
@@ -30143,12 +30121,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/building/hospital)
-"sGj" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/plasteel/f13/vault_floor/red{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/tunnel)
 "sGn" = (
 /obj/structure/timeddoor,
 /turf/closed/wall/r_wall/rust,
@@ -73039,11 +73011,11 @@ wiP
 vsB
 rcD
 bsC
-aae
-aae
-aae
-aae
-aae
+bsC
+bsC
+bsC
+bsC
+bsC
 bsC
 oNM
 tkZ
@@ -73295,14 +73267,14 @@ luo
 wiP
 luo
 rcD
-bsC
-aae
-aae
-aae
-aae
-aae
-bsC
-oNM
+jJZ
+bQe
+bQe
+bQe
+bQe
+bQe
+jJZ
+onm
 tkZ
 tkZ
 bQs
@@ -73553,11 +73525,11 @@ xSV
 vsB
 rcD
 bsC
-aae
-aae
-aae
-aae
-aae
+bsC
+bsC
+bsC
+bsC
+bsC
 bsC
 oNM
 tkZ
@@ -74073,8 +74045,8 @@ aae
 aae
 aae
 bsC
-oNM
-tkZ
+jPK
+jGk
 tkZ
 bQs
 jGk
@@ -74831,7 +74803,7 @@ bsC
 bsC
 bsC
 bsC
-bQe
+bsC
 bsC
 bsC
 bsC
@@ -75087,9 +75059,9 @@ aae
 aae
 aae
 aae
-bsC
-jJZ
-bsC
+aae
+aae
+aae
 aae
 aae
 aae
@@ -75345,7 +75317,7 @@ bsC
 bsC
 bsC
 bsC
-nXG
+bsC
 bsC
 bsC
 aae
@@ -75858,7 +75830,7 @@ ikD
 bOl
 uuK
 mfT
-bEq
+mfT
 uuK
 nFo
 bsC
@@ -76114,7 +76086,7 @@ uln
 aah
 bHI
 lRL
-sGj
+uuK
 lRL
 uuK
 bQh
@@ -77659,7 +77631,7 @@ bPY
 bQb
 oOp
 wxX
-onm
+wxX
 rBL
 bQe
 kyo
@@ -78427,7 +78399,7 @@ bsC
 bsC
 bsC
 bPZ
-buY
+bKb
 bKb
 bKb
 bNY
@@ -78681,12 +78653,12 @@ aah
 aah
 aah
 aah
-bHl
 aah
 aah
 aah
 aah
-jPK
+aah
+aah
 aah
 aah
 aah
@@ -78949,7 +78921,7 @@ aah
 aah
 aah
 aah
-bHl
+aah
 aah
 aah
 aah
@@ -79455,7 +79427,7 @@ aae
 aae
 bsC
 bQe
-cRv
+ceQ
 wxX
 bQg
 bsC
@@ -79713,7 +79685,7 @@ aae
 bsC
 rUU
 wxX
-onm
+wxX
 nyY
 bsC
 aae
