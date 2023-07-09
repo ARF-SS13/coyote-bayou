@@ -301,15 +301,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"akS" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/lighter,
-/obj/effect/spawner/lootdrop/lighter,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "alf" = (
 /obj/structure/wreck/trash/machinepile,
 /turf/open/floor/plasteel/f13{
@@ -436,13 +427,6 @@
 /obj/machinery/hydroponics/soil/pot,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"aqk" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "aqv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -4525,18 +4509,6 @@
 /obj/effect/decal/fakelattice,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"ejd" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/bed/mattress{
-	icon_state = "mattress4"
-	},
-/obj/effect/mob_spawn/human/corpse/damaged,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/validball_spawner,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "ejq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -8828,15 +8800,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/arcade,
 /area/f13/building/mall)
-"hSD" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/sign/poster/contraband/red_rum{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "hSH" = (
 /obj/structure/chair/booth,
 /obj/item/trash/sosjerky,
@@ -11123,15 +11086,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"jQL" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "jQX" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -14803,14 +14757,6 @@
 	},
 /turf/closed/wall/mineral/brick,
 /area/f13/building)
-"ngU" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "nhH" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_corner_fill";
@@ -15511,14 +15457,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
-"nPr" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "nPE" = (
@@ -16578,13 +16516,6 @@
 /obj/structure/simple_door/house,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"oNN" = (
-/obj/structure/bookcase/manuals/engineering{
-	anchored = 1;
-	opacity = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/mall)
 "oNZ" = (
 /obj/structure/table,
 /obj/structure/junk/small/tv,
@@ -17613,19 +17544,6 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
-"pSt" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	icon_type_smooth = "supermart";
-	name = "supermart wall";
-	smooth = 1
-	},
-/area/f13/building/mall)
 "pSB" = (
 /obj/structure/fermenting_barrel{
 	name = "XANDER"
@@ -17875,16 +17793,6 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
-/area/f13/building/mall)
-"qdI" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/validball_spawner,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "qeo" = (
 /turf/open/transparent/glass,
@@ -26319,15 +26227,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/building/mall)
-"yfn" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "yfr" = (
 /obj/structure/rack,
@@ -79792,9 +79691,9 @@ oez
 oez
 oez
 vqz
-eFw
-qdI
-jQL
+olL
+olL
+nAT
 pSW
 kdv
 vAz
@@ -80049,9 +79948,9 @@ oez
 oez
 oez
 vqz
-eFw
-ngU
-kdF
+olL
+olL
+nAT
 aFS
 vAz
 rpo
@@ -80306,9 +80205,9 @@ oez
 oez
 oez
 vqz
-gJH
-akS
-kdF
+olL
+olL
+nAT
 aFS
 vAz
 rpo
@@ -80563,9 +80462,9 @@ oez
 oez
 oez
 vqz
-gJH
-gJH
-pSt
+olL
+olL
+nAT
 azb
 gta
 rpo
@@ -80820,9 +80719,9 @@ oez
 oez
 oez
 vqz
-gJH
-ejd
-kdF
+olL
+olL
+nAT
 azb
 sdV
 rpo
@@ -81077,9 +80976,9 @@ oez
 oez
 oez
 vqz
-gJH
-hSD
-aqk
+olL
+olL
+nAT
 azb
 dnR
 rpo
@@ -81334,9 +81233,9 @@ oez
 oez
 oez
 vqz
-gJH
-gJH
-oNN
+olL
+olL
+nAT
 azb
 vNv
 rpo
@@ -81591,9 +81490,9 @@ oez
 oez
 oez
 vqz
-gJH
-kdF
-jQL
+olL
+olL
+nAT
 cvT
 dnR
 rpo
@@ -81848,9 +81747,9 @@ oez
 oez
 oez
 vqz
-gJH
-nPr
-kdF
+olL
+olL
+nAT
 pSW
 vqz
 dnR
@@ -82105,9 +82004,9 @@ oez
 oez
 oez
 vqz
-gJH
-yfn
-kdF
+olL
+olL
+nAT
 pSW
 vqz
 dnR
@@ -82362,9 +82261,9 @@ oez
 oez
 oez
 vqz
-gJH
-nPr
-kdF
+olL
+olL
+nAT
 azb
 wjY
 qaU
