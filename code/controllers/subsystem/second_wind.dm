@@ -1,4 +1,4 @@
-#define FLOOR_MASTER var/mob/living/master = get_revivable_body(); if(!master) return;
+#define FLOOR_MASTER var/mob/living/master = get_revivable_body();
 #define BODY_PLAYED var/mob/played = get_currently_played_mob(); if(!played) return;
 
 #define SW_ERROR_NO_ERROR       0
@@ -332,7 +332,7 @@ SUBSYSTEM_DEF(secondwind)
 		return SW_ERROR_DISABLED
 	if(freebie)
 		return SW_ERROR_NO_ERROR
-	if(!isliving(master))
+	if(!isliving(master) || !master)
 		return SW_ERROR_NO_BODY
 	if(QDELETED(master))
 		return SW_ERROR_QDELLED_BODY
@@ -363,7 +363,7 @@ SUBSYSTEM_DEF(secondwind)
 		.["PBarColors"] = "bad"
 		.["TimeText"] = "Never!"
 		return
-	if(master.stat == DEAD)
+	if(master?.stat == DEAD)
 		.["PBarColors"] = "average"
 		.["TimeText"] = "Paused!"
 		return
@@ -388,20 +388,20 @@ SUBSYSTEM_DEF(secondwind)
 	if(ui_state == SW_UI_CONFIRM)
 		return get_confirm_text()
 	var/revive_error = can_revive()
-	var/am_dead = master.stat == DEAD
+	var/am_alive = master?.stat == DEAD
 	. = list()
 	switch(revive_error)
 		if(SW_ERROR_NO_ERROR)
-			if(am_dead)
-				.["BodyHead"] = "Clear to revive"
-				.["BodyFill"] = "You can revive yourself!"
-				.["BodyHeadColor"] = "good"
-				.["ShowButtons"] = "OnlyRevive"
-			else
+			if(am_alive)
 				.["BodyHead"] = "Second Wind Ready"
 				.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
 				.["BodyHeadColor"] = "good"
 				.["ShowButtons"] = "None"
+			else
+				.["BodyHead"] = "Clear to revive"
+				.["BodyFill"] = "You can revive yourself!"
+				.["BodyHeadColor"] = "good"
+				.["ShowButtons"] = "OnlyRevive"
 		if(SW_ERROR_NO_BODY)
 			.["BodyHead"] = "No body"
 			.["BodyFill"] = "You don't have a body to revive!"
@@ -439,26 +439,26 @@ SUBSYSTEM_DEF(secondwind)
 			.["ShowButtons"] = "None"
 		if(SW_ERROR_THIRD_WINDED)
 			.["BodyHead"] = "Third winded"
-			if(am_dead)
-				.["BodyFill"] = "You've already used your third wind, you can't revive yourself! You'll need to be rescued, or hop on a different character if you want to keep playing!"
-			else
+			if(am_alive)
 				.["BodyFill"] = "You've already used your third wind, you won't be able to revive yourself if you die!"
 				if(prob(1))
 					.["BodyFill"] += " YOLO~"
+			else
+				.["BodyFill"] = "You've already used your third wind, you can't revive yourself! You'll need to be rescued, or hop on a different character if you want to keep playing!"
 			.["BodyHeadColor"] = "bad"
 			.["ShowButtons"] = "None"
 		if(SW_ERROR_NO_LIVES)
 			.["BodyHead"] = "Out of lives"
-			if(am_dead)
-				.["BodyFill"] = "You have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
-					If you die again after reviving, you'll need to be rescued, or hop on a different character if you want to keep playing!"
-				.["ShowButtons"] = "OnlyRevive"
-			else
+			if(am_alive)
 				.["BodyFill"] = "You have revived yourself recently, and you'll need to wait a while before you can do it again safely! \
 					If you die, you will still be able to revive yourself, but it'll be your last! Try to stay alive!"
 				if(prob(1))
 					.["BodyFill"] += " YOLO~"
 				.["ShowButtons"] = "None"
+			else
+				.["BodyFill"] = "You have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
+					If you die again after reviving, you'll need to be rescued, or hop on a different character if you want to keep playing!"
+				.["ShowButtons"] = "OnlyRevive"
 			.["BodyHeadColor"] = "bad"
 
 /datum/second_wind/proc/get_confirm_text()
@@ -470,7 +470,7 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadColor"] = "good"
 		.["ShowButtons"] = "OnlyBack" // hey come check out my OnlyBack
 		return
-	if(master.stat != DEAD)
+	if(master?.stat != DEAD)
 		.["BodyHead"] = "You're not dead!"
 		.["BodyFill"] = "You need to be dead to revive yourself, silly!"
 		.["BodyHeadColor"] = "good"
