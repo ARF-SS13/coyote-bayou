@@ -752,9 +752,9 @@
 	toxpwr = 0.5
 	taste_description = "pain"
 	taste_mult = 1.3
-	var/base_bleed = 10
-	var/bleed_tier_divisor = 2 //increasing this number makes the effect weaker
-	var/blood_loss_tier = 200 // Losing a multiple of this much will stack on an extra divisor
+	var/base_bleed = 15
+	var/bleed_tier_divisor = 3 //increasing this number makes the effect weaker
+	var/blood_loss_tier = 250 // Losing a multiple of this much will stack on an extra divisor
 
 /datum/reagent/toxin/rattler_venom/on_mob_life(mob/living/carbon/M)
 	var/divisor = 1
