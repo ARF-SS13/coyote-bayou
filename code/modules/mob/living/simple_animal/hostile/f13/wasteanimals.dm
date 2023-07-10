@@ -762,7 +762,7 @@
 	while(blood_i_lost > blood_loss_tier)
 		blood_i_lost -= blood_loss_tier
 		divisor *= bleed_tier_divisor
-	var/blood_to_lose = max(round(base_bleed / tobleed), 1)
+	var/blood_to_lose = max(round(base_bleed / max(divisor,1)), 1)
 	M.bleed(blood_to_lose)
 	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/rattler_venom)
 	M.damageoverlaytemp = concentration * 10
