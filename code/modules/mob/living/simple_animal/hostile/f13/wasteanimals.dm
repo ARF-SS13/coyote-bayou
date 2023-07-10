@@ -752,16 +752,23 @@
 	toxpwr = 0.5
 	taste_description = "pain"
 	taste_mult = 1.3
-	var/bleed_strength = 20 //increasing this number makes the effect weaker
+	var/base_bleed = 15
+	var/bleed_tier_divisor = 3 //increasing this number makes the effect weaker
+	var/blood_loss_tier = 250 // Losing a multiple of this much will stack on an extra divisor
 
 /datum/reagent/toxin/rattler_venom/on_mob_life(mob/living/carbon/M)
-	if(M.get_blood() > 10)
-		M.blood_volume -= M.blood_volume/bleed_strength //starts out strong, then slows as you grow woozy. allows it to kick in quick but then not make you a empty juicebox
+	var/divisor = 1
+	var/blood_i_lost = clamp(BLOOD_VOLUME_NORMAL - M.get_blood(), 0, BLOOD_VOLUME_NORMAL)
+	while(blood_i_lost > blood_loss_tier)
+		blood_i_lost -= blood_loss_tier
+		divisor *= bleed_tier_divisor
+	var/blood_to_lose = max(round(base_bleed / max(divisor,1)), 1)
+	M.bleed(blood_to_lose)
 	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/rattler_venom)
 	M.damageoverlaytemp = concentration * 10
 	M.update_damage_hud()
-	if (M.eye_blurry < 20)
-		M.blur_eyes(3)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
 	if (M.confused < 20)
 		M.confused += 3
 	if(prob(10))
@@ -771,8 +778,8 @@
 
 /datum/reagent/toxin/rattler_venom/on_mob_life_synth(mob/living/M)
 	M.adjustStaminaLoss(10, 0)
-	if (M.eye_blurry < 20)
-		M.blur_eyes(3)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
 	if (M.confused < 20)
 		M.confused += 3
 	if(prob(5))

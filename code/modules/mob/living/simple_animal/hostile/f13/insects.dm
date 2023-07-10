@@ -421,8 +421,8 @@
 	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/cazador_venom)
 	M.damageoverlaytemp = concentration * 10
 	M.update_damage_hud()
-	if (M.eye_blurry < 20)
-		M.blur_eyes(3)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
 	if (M.confused < 20)
 		M.confused += 3
 	if(prob(10))
@@ -432,8 +432,8 @@
 
 /datum/reagent/toxin/cazador_venom/on_mob_life_synth(mob/living/M)
 	M.adjustStaminaLoss(10, 0)
-	if (M.eye_blurry < 20)
-		M.blur_eyes(3)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
 	if (M.confused < 20)
 		M.confused += 3
 	if(prob(5))
