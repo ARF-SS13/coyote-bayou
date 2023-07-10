@@ -753,8 +753,8 @@
 	taste_description = "pain"
 	taste_mult = 1.3
 	var/base_bleed = 10
-	var/bleed_tier_divisor = 3 //increasing this number makes the effect weaker
-	var/blood_loss_tier = 300 // Losing a multiple of this much will stack on an extra divisor
+	var/bleed_tier_divisor = 2 //increasing this number makes the effect weaker
+	var/blood_loss_tier = 200 // Losing a multiple of this much will stack on an extra divisor
 
 /datum/reagent/toxin/rattler_venom/on_mob_life(mob/living/carbon/M)
 	var/divisor = 1
@@ -762,7 +762,8 @@
 	while(blood_i_lost > blood_loss_tier)
 		blood_i_lost -= blood_loss_tier
 		divisor *= bleed_tier_divisor
-	M.bleed(base_bleed / tobleed)
+	var/blood_to_lose = max(round(base_bleed / tobleed)), 1)
+	M.bleed(blood_to_lose)
 	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/rattler_venom)
 	M.damageoverlaytemp = concentration * 10
 	M.update_damage_hud()
