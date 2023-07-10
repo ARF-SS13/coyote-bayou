@@ -13,6 +13,7 @@
 #define SW_ERROR_CUFFED         (0 << 9 )
 #define SW_ERROR_NO_LIVES       (0 << 10)
 #define SW_ERROR_DISABLED       (0 << 11)
+#define SW_ERROR_NOT_STARTED    (0 << 12)
 
 #define SW_UI_DEFAULT "SWDefault"
 #define SW_UI_README  "SWReadMe"
@@ -76,9 +77,9 @@ SUBSYSTEM_DEF(secondwind)
 			full_life_consequences++
 	last_life_tick = world.time
 
-/datum/controller/subsystem/secondwind/proc/show_menu_to(mob/M)
-	var/datum/second_wind/my_wind = get_second_wind_datum(M)
-	return my_wind?.ui_interact(M)
+/datum/controller/subsystem/secondwind/proc/show_menu_to(client_mob_or_ckey)
+	var/datum/second_wind/my_wind = get_second_wind_datum(client_mob_or_ckey)
+	return my_wind?.open_window()
 
 /datum/controller/subsystem/secondwind/proc/get_second_wind_datum(client_mob_or_ckey)
 	if(!client_mob_or_ckey)
@@ -111,7 +112,7 @@ SUBSYSTEM_DEF(secondwind)
 	var/third_winded = FALSE
 	var/life_meter = 0
 
-	var/ui_state = SW_UI_DEFAULT
+	var/window_state = SW_UI_DEFAULT
 
 	var/times_second_winded = 0
 	var/times_died = 0
@@ -330,6 +331,8 @@ SUBSYSTEM_DEF(secondwind)
 	FLOOR_MASTER
 	if(!SSsecondwind.master_toggle)
 		return SW_ERROR_DISABLED
+	if(SSticker.current_state < GAME_STATE_PLAYING)
+		return SW_ERROR_NOT_STARTED
 	if(freebie)
 		return SW_ERROR_NO_ERROR
 	if(!isliving(master) || !master)
@@ -383,9 +386,9 @@ SUBSYSTEM_DEF(secondwind)
 
 /datum/second_wind/proc/get_body_text()
 	FLOOR_MASTER
-	if(ui_state == SW_UI_README)
+	if(window_state == SW_UI_README)
 		return get_readme_text()
-	if(ui_state == SW_UI_CONFIRM)
+	if(window_state == SW_UI_CONFIRM)
 		return get_confirm_text()
 	var/revive_error = can_revive()
 	var/am_alive = master?.stat == DEAD
@@ -410,6 +413,16 @@ SUBSYSTEM_DEF(secondwind)
 		if(SW_ERROR_DISABLED)
 			.["BodyHead"] = "DISABLED"
 			.["BodyFill"] = "Second Wind is disabled. Sorry!"
+			.["BodyHeadColor"] = "bad"
+			.["ShowButtons"] = "None"
+		if(SW_ERROR_NOT_STARTED)
+			.["BodyHead"] = "Round Hasn't Started"
+			.["BodyFill"] = "Hold your horses, the world isn't even alive yet!"
+			.["BodyHeadColor"] = "bad"
+			.["ShowButtons"] = "None"
+		if(SW_ERROR_NO_BODY)
+			.["BodyHead"] = "No body"
+			.["BodyFill"] = "You don't have a body to revive!"
 			.["BodyHeadColor"] = "bad"
 			.["ShowButtons"] = "None"
 		if(SW_ERROR_QDELLED_BODY)
@@ -470,11 +483,17 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadColor"] = "good"
 		.["ShowButtons"] = "OnlyBack" // hey come check out my OnlyBack
 		return
+	if(!SSticker.current_state < GAME_STATE_PLAYING)
+		.["BodyHead"] = "Round Hasn't Started"
+		.["BodyFill"] = "Hold your horses, the world isn't even alive yet! (How'd you even get here =3)"
+		.["BodyHeadColor"] = "good"
+		.["ShowButtons"] = "OnlyBack"
+		return
 	if(master?.stat != DEAD)
 		.["BodyHead"] = "You're not dead!"
 		.["BodyFill"] = "You need to be dead to revive yourself, silly!"
 		.["BodyHeadColor"] = "good"
-		.["ShowButtons"] = "OnlyBack" // hey come check out my OnlyBack
+		.["ShowButtons"] = "OnlyBack"
 		return
 	if(third_winded)
 		.["BodyHead"] = "You cannot revive yourself!"
@@ -529,17 +548,24 @@ SUBSYSTEM_DEF(secondwind)
 	.["BodyHeadColor"] = "good"
 	.["ShowButtons"] = "OnlyBack"
 
+/datum/second_wind/proc/open_window()
+	BODY_PLAYED
+	ui_interact(played)
+
 /datum/second_wind/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "SecondWind")
 		ui.open()
 
+/datum/second_wind/ui_state(mob/user)
+	return GLOB.always_state
+
 /datum/second_wind/ui_data(mob/user)
 	var/list/data = list()
 	data["TimeData"] = get_time_text()
 	data["BodyData"] = get_body_text()
-	data["UIState"] = ui_state
+	data["UIState"] = window_state
 	return data
 
 /datum/second_wind/ui_act(action, params)
@@ -564,7 +590,7 @@ SUBSYSTEM_DEF(secondwind)
 	set_ui_state(SW_UI_README)
 
 /datum/second_wind/proc/clicked_revive()
-	if(ui_state != SW_UI_CONFIRM)
+	if(window_state != SW_UI_CONFIRM)
 		set_ui_state(SW_UI_CONFIRM)
 		return
 	attempt_revival()
@@ -572,7 +598,7 @@ SUBSYSTEM_DEF(secondwind)
 
 /datum/second_wind/proc/set_ui_state(state)
 	BODY_PLAYED
-	ui_state = state
+	window_state = state
 	ui_interact(played)
 
 ////////////////////////////////////////////////////////////////////////
