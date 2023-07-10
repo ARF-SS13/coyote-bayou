@@ -21,6 +21,7 @@
 /datum/component/storage/concrete/belt/specialized/medical/Initialize()
 	. = ..()
 	can_hold = GLOB.medibelt_allowed
+	max_w_class = WEIGHT_CLASS_NORMAL
 
 /// Bandolier
 /datum/component/storage/concrete/belt/specialized/bandolier/Initialize()
