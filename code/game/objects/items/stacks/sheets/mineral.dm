@@ -382,7 +382,7 @@ GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
  * Adamantine
  */
 GLOBAL_LIST_INIT(adamantine_recipes, list(
-	//new /datum/stack_recipe("incomplete servant golem shell", /obj/item/golem_shell/servant, req_amount=1, res_amount=1), //we don't need golems running around till they rebalanced
+	new /datum/stack_recipe("incomplete servant golem shell", /obj/item/golem_shell/servant, req_amount=1, res_amount=1),
 	new/datum/stack_recipe("adamant ingot", /obj/item/ingot/adamantine, 6, time = 100), \
 	))
 
