@@ -49,6 +49,7 @@
 	to_chat(user, span_notice("Nothing happened... This slime extract cannot be activated this way."))
 	return 0
 
+/*no crossbreeding till it gets overhauled for wasteland balance
 //Core-crossing: Feeding adult slimes extracts to obtain a much more powerful, single extract.
 /obj/item/slime_extract/attack(mob/living/simple_animal/slime/M, mob/user)
 	if(!isslime(M))
@@ -73,6 +74,7 @@
 
 	if(M.applied >= SLIME_EXTRACT_CROSSING_REQUIRED)
 		M.spawn_corecross()
+*/
 
 /obj/item/slime_extract/grey
 	name = "grey slime extract"
