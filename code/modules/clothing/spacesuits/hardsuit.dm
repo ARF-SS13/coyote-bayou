@@ -656,7 +656,7 @@ armor	//Baseline hardsuits
 	hardsuit_type = "soviet"
 	icon_state = "rig0-soviet"
 	mutantrace_variation = NONE
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T3)
 
 
 
@@ -669,7 +669,7 @@ armor	//Baseline hardsuits
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/soviet
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	mutantrace_variation = NONE
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T3)
 
 /////////////SHIELDED//////////////////////////////////
 
