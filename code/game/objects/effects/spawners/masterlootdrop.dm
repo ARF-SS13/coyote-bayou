@@ -1683,5 +1683,6 @@
 	/obj/item/reagent_containers/syringe = 5,
 	/obj/item/restraints/handcuffs = 5,
 	/obj/item/toy/crayon/spraycan = 5,
-	/obj/item/laser_pointer = 5
+	/obj/item/laser_pointer = 5,
+	/obj/item/coin/dvd = 5
 	)
