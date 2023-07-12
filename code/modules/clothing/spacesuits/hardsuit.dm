@@ -655,6 +655,7 @@ armor	//Baseline hardsuits
 	item_state = "rig0-soviet"
 	hardsuit_type = "soviet"
 	icon_state = "rig0-soviet"
+	armor = ARMOR_VALUE_MEDIUM
 	mutantrace_variation = NONE
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T3)
 
@@ -665,6 +666,8 @@ armor	//Baseline hardsuits
 	desc = "Crafted with the pride of the proletariat. The last thing the enemy sees is the bottom of this armor's boot."
 	item_state = "rig-soviet"
 	icon_state = "rig-soviet"
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/soviet
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
