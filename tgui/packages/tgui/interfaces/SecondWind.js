@@ -154,7 +154,14 @@ const SecondWindInfoButton = (props, context) => {
 
 const FormatSecondWindBody = (Text2Format) => {
   const sanitizedText = sanitizeText(Text2Format);
-  const formattedText = marked(sanitizedText, { smartypants: true, gfm: true, tables: true, sanitize: false, breaks: true, smartLists: true });
+  const formattedText = marked(sanitizedText, {
+    smartypants: true,
+    gfm: true,
+    tables: true,
+    sanitize: false,
+    breaks: true,
+    smartLists: true
+  });
   return { __html: formattedText };
 };
 
