@@ -900,12 +900,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		ppl[perp.real_name] = kye
 		pplnames += perp.real_name
 	
-	var/whotorez = tgui_input_list(
-		usr,
-		"Who do you want to give a 1UP to?",
-		"Give 1UP",
-		pplnames,
-	)
+	var/whotorez = input(usr, "Who do you want to give a 1UP to?", "Give 1UP") as null|anything in pplnames
 	if(!whotorez)
 		to_chat(usr, "Nevermind then.")
 		return

@@ -1,3 +1,6 @@
+/mob/living/carbon
+	var/datum/action/innate/second_windify/SWplz
+
 /mob/living/carbon/death(gibbed)
 	if(stat == DEAD)
 		return
@@ -7,6 +10,8 @@
 
 	if(!gibbed)
 		INVOKE_ASYNC(src, .proc/emote, "deathgasp")
+		SWplz = new
+		SWplz.Grant(src)
 
 	. = ..()
 
@@ -26,6 +31,11 @@
 		M.visible_message(span_danger("[M] bursts out of [src]!"),
 			span_danger("You burst out of [src]!"))
 	..()
+
+//proc used to ressuscitate a mob
+/mob/living/carbon/revive(full_heal = FALSE, admin_revive = FALSE, force_revive = FALSE)
+	. = ..()
+	QDEL_NULL(SWplz) // they got this when they died, so we remove it now
 
 /mob/living/carbon/spill_organs(no_brain, no_organs, no_bodyparts)
 	var/atom/Tsec = drop_location()

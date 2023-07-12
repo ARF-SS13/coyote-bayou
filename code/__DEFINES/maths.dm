@@ -269,3 +269,20 @@
 			unit = "QQQ"
 	var/roundie = 1 * (0.1**decimals)
 	return "[round(number, roundie)][unit]"
+
+/proc/pad_number(number, decimals = 0) // this proc doesnt work, lol
+	if(decimals <= 0)
+		return "[number]"
+	var/digits_in_number = 0
+	var/number_copy = number
+	while(number_copy > 10)
+		number_copy /= 10
+		digits_in_number++
+	if(digits_in_number >= decimals)
+		return "[number]"
+	var/return_string = ""
+	for(var/i in 1 to decimals - digits_in_number)
+		return_string += "0"
+	return_string += "[number]"
+	return return_string
+

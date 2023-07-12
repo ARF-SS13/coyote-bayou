@@ -1,14 +1,31 @@
 import { useBackend } from '../backend';
-import { Button, Section, ProgressBar, Flex, Stack, Box } from '../components';
+import { Button, Section, ProgressBar, Flex, Stack, Box, Icon } from '../components';
 import { Window } from '../layouts';
+import { sanitizeText } from '../sanitize';
+import { marked } from 'marked';
 
 export const SecondWind = (props, context) => {
   const { act, data } = useBackend(context);
+  const {
+    UIState,
+  } = data;
+  const {
+    BodyHead,
+    BodyFill,
+    BodyHeadIconColor,
+    BodyHeadIconImg,
+    ShowButtons,
+  } = data.BodyData;
+  const FormattedTxt = FormatSecondWindBody(BodyFill);
+  let VertSize = 250;
+  if(UIState == "SWReadMe") {
+    VertSize = 400;
+  }
   return (
     <Window
       title="Second Wind"
-      width={640}
-      height={480}
+      width={300}
+      height={VertSize}
       resizable>
       <Window.Content>
         <Stack fill vertical>
@@ -16,8 +33,43 @@ export const SecondWind = (props, context) => {
             <SecondWindTopBar />
           </Stack.Item>
           <Stack.Item grow>
-            <Section fill scrollable>
-              <SecondWindBody />
+            <Section
+              fill
+              scrollable>
+              <Flex direction="row">
+                <Flex.Item grow={1}>
+                  <Box
+                    width="auto"
+                    mt={1}
+                    mb={1}
+                    textAlign="center">
+                    <Icon
+                      size={1.5}
+                      color={BodyHeadIconColor}
+                      name={BodyHeadIconImg} />
+                  </Box>
+                </Flex.Item>
+                <Flex.Item shrink={1}>
+                  <Box
+                    fluid
+                    bold
+                    fontSize="1.5em"
+                    textAlign="center"
+                    mt={1}
+                    mb={1}>
+                    {BodyHead}
+                  </Box>
+                </Flex.Item>
+                <Flex.Item grow={1} />
+              </Flex>
+              <Box fontSize="1pt">
+                <hr />
+              </Box>
+              <Box
+                dangerouslySetInnerHTML={FormattedTxt}
+                fluid
+                mb={1}
+                mt={1} />
             </Section>
           </Stack.Item>
           <Stack.Item>
@@ -37,9 +89,9 @@ const SecondWindTopBar = (props, context) => {
     Percentage,
     TargTime,
   } = data.TimeData;
-  let LowCol = "good";
+  let LowCol = "bad";
   let MedCol = "average";
-  let HighCol = "bad";
+  let HighCol = "good";
   switch (PBarColors) {
     case "good":
       LowCol = "good";
@@ -58,27 +110,26 @@ const SecondWindTopBar = (props, context) => {
       break;
   }
   return (
-    <Box>
-      <Flex>
-        <Flex.Item grow>
-          <ProgressBar
-            value={Percentage}
-            minValue={0}
-            maxValue={100}
-            ranges={{
-              LowCol: [0, 35],
-              MedCol: [35, 65],
-              HighCol: [65, 100],
-            }}
-            color="bad">
-              {TimeText} / {TargTime}
-          </ProgressBar>
-        </Flex.Item>
-        <Flex.Item shrink>
-          <InfoButton />
-        </Flex.Item>
-      </Flex>
-    </Box>
+    <Flex>
+      <Flex.Item grow>
+        <ProgressBar
+          value={Percentage}
+          minValue={0}
+          maxValue={100}
+          ranges={{
+            LowCol: [0, 35],
+            MedCol: [35, 65],
+            HighCol: [65, 100],
+          }}
+          color="good"
+          textAlign="center">
+          {TimeText}
+        </ProgressBar>
+      </Flex.Item>
+      <Flex.Item shrink>
+        <SecondWindInfoButton />
+      </Flex.Item>
+    </Flex>
   );
 };
 
@@ -96,28 +147,17 @@ const SecondWindInfoButton = (props, context) => {
   return (
     <Button
       icon={ButtonIcon}
+
       tooltip="Second Wind Info"
       onClick={() => act(ActDo)}>
     </Button>
   );
 };
 
-const SecondWindBody = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    BodyHead,
-    BodyFill,
-    BodyHeadColor,
-    ShowButtons,
-  } = data.BodyData;
-  return (
-    <Section
-      fill
-      title={BodyHead}
-      titleColor={BodyHeadColor}>
-      {BodyFill}
-    </Section>
-  );
+const FormatSecondWindBody = (Text2Format) => {
+  const sanitizedText = sanitizeText(Text2Format);
+  const formattedText = marked(sanitizedText, { smartypants: true, gfm: true, tables: true, sanitize: false, breaks: true, smartLists: true });
+  return { __html: formattedText };
 };
 
 const SecondWindBottomBar = (props, context) => {
@@ -125,23 +165,46 @@ const SecondWindBottomBar = (props, context) => {
   const {
     ShowButtons,
   } = data.BodyData;
+  let ShowButtonOne = false;
+  let ShowButtonTwo = false;
+  let ButtonHeight = "0px";
   switch (ShowButtons) {
-    case "OnlyConfirm":
-      return (
-        <SecondWindRevive />
-      );
+    case "OnlyRevive":
+      ShowButtonOne = true;
+      ButtonHeight = "2em";
       break;
-    case "OnlyBack":
-      return (
-        <SecondWindBack />
-      );
+      case "OnlyBack":
+      ShowButtonTwo = true;
+      ButtonHeight = "2em";
       break;
-    default:
-      return (
-        <Section />
-      );
+      case "Both":
+      ShowButtonOne = true;
+      ShowButtonTwo = true;
+      ButtonHeight = "2em";
+      break;
+      default:
+      ShowButtonOne = false;
+      ShowButtonTwo = false;
+      ButtonHeight = "0px";
       break;
   }
+  return (
+    <Box
+      fluid
+      height={ButtonHeight}
+      bold
+      mb={1}
+      mt={1}>
+      <Flex>
+        <Flex.Item basis="50%">
+          {!!ShowButtonOne && <SecondWindRevive Ht={ButtonHeight}/>}
+        </Flex.Item>
+        <Flex.Item basis="50%">
+          {!!ShowButtonTwo && <SecondWindBack Ht={ButtonHeight}/>}
+        </Flex.Item>
+      </Flex>
+    </Box>
+  );
 };
 
 const SecondWindRevive = (props, context) => {
@@ -149,6 +212,9 @@ const SecondWindRevive = (props, context) => {
   const {
     UIState,
   } = data;
+  const {
+    Ht,
+  } = props;
   let ButtonLabel = "Revive";
   let ButtonIcon = "heartbeat";
   if (UIState == "SWConfirm") {
@@ -156,13 +222,18 @@ const SecondWindRevive = (props, context) => {
     ButtonIcon = "check";
   }
   return (
-    <Section>
-      <Button
-        color="good"
-        content={ButtonLabel}
-        icon={ButtonIcon}
-        onClick={() => act('ClickedRevive')} />
-    </Section>
+    <Button
+      color="good"
+      fill
+      fluid
+      height={Ht}
+      onClick={() => act('ClickedRevive')}>
+      <Icon
+        size={1}
+        color="white"
+        name={ButtonIcon} />
+      {ButtonLabel}
+    </Button>
   );
 };
 
@@ -171,6 +242,9 @@ const SecondWindBack = (props, context) => {
   const {
     UIState,
   } = data;
+  const {
+    Ht,
+  } = props;
   let ButtonLabel = "Back";
   let ButtonIcon = "times";
   if (UIState == "SWConfirm") {
@@ -178,12 +252,17 @@ const SecondWindBack = (props, context) => {
     ButtonIcon = "times";
   }
   return (
-    <Section>
-      <Button
-        color="bad"
-        content={ButtonLabel}
-        icon={ButtonIcon}
-        onClick={() => act('GoHome')} />
-    </Section>
+    <Button
+      color="bad"
+      fill
+      fluid
+      height={Ht}
+      onClick={() => act('GoHome')}>
+      <Icon
+        size={1}
+        color="white"
+        name={ButtonIcon} />
+      {ButtonLabel}
+    </Button>
   );
 };
