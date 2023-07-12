@@ -3,7 +3,7 @@ Town access doors
 Sheriff/Deputy, Gatehouse etc: 62 ACCESS_GATEWAY
 General access: 25 ACCESS_BAR
 Clinic surgery/storage: 68 ACCESS_CLONING
-Shopkeeper: 34 ACCESS_CARGO_BOT
+Shopkeeper: 34 ACCESS_CARGO_BOT / 31 ACCESS CARGO
 Barkeep : 28 ACCESS_KITCHEN - you jebronis made default bar for no reason bruh
 Prospector : 48 ACCESS_MINING
 Detective : 4 ACCESS_FORENSICS_LOCKERS
@@ -298,10 +298,11 @@ Mayor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/box/deputy_badges = 1,
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/melee/classic_baton = 1,
+		/obj/item/melee/baton/loaded = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
-		/obj/item/storage/belt/army = 1
+		/obj/item/storage/belt/army = 1,
+		/obj/item/gun/energy/taser = 1
 		)
 
 /datum/outfit/loadout/thelaw
@@ -310,7 +311,7 @@ Mayor
 	head = /obj/item/clothing/head/f13/town/sheriff
 	uniform = /obj/item/clothing/under/f13/police/formal
 	neck = /obj/item/storage/belt/shoulderholster
-	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
+	//r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 
 	//backpack_contents = list(
@@ -417,7 +418,8 @@ Mayor
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/flashlight/seclite = 1,
-		/obj/item/storage/belt/army/assault = 1
+		/obj/item/storage/belt/army/assault = 1,
+		/obj/item/gun/energy/taser = 1
 		)
 
 /datum/outfit/loadout/frontierjustice
@@ -1224,8 +1226,8 @@ Mayor
 	)
 
 	outfit = /datum/outfit/job/den/f13quartermaster
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -1321,8 +1323,8 @@ Mayor
 	)
 
 	outfit = /datum/outfit/job/den/f13shopkeeper
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis

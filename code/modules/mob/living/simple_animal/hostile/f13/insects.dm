@@ -374,7 +374,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -408,21 +408,37 @@
 	update_transform()
 
 /datum/reagent/toxin/cazador_venom
-	name = "Cazador venom"
-	description = "A potent toxin resulting from cazador stings that quickly kills if too much remains in the body."
+	name = "cazador venom"
+	description = "A painful but relatively harmless venom, originally synthesized by tarantula hawks."
+	reagent_state = LIQUID
 	color = "#801E28" // rgb: 128, 30, 40
-	toxpwr = 1
+	toxpwr = 0.5
 	taste_description = "pain"
 	taste_mult = 1.3
 
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 15)
-		M.adjustToxLoss(5, 0)
+/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/carbon/M)
+	M.adjustStaminaLoss(10, 0)
+	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/cazador_venom)
+	M.damageoverlaytemp = concentration * 10
+	M.update_damage_hud()
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_warning("[pain_message]"))
 	..()
 
 /datum/reagent/toxin/cazador_venom/on_mob_life_synth(mob/living/M)
-	if(volume >= 15)
-		M.adjustFireLoss(5, 0)
+	M.adjustStaminaLoss(10, 0)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(5))
+		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		to_chat(M, span_notice("[pain_message]"))
 	..()
 
 //////////////

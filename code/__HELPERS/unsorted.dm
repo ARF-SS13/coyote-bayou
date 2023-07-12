@@ -1698,3 +1698,23 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return null
 	return clint.mob
 
+/// Makes a gaussian distribution, returning a positive integer
+/proc/GaussianReacharound(mean, stddev, min, max)
+	var/cool_input = gaussian(mean, stddev)
+	cool_input = abs(cool_input)
+	cool_input = round(cool_input)
+	cool_input = clamp(cool_input, min, max)
+	return cool_input
+
+/proc/GaussianListPicker(list/input, mean, stddev)
+	if(!LAZYLEN(input))
+		return
+	var/index = GaussianReacharound(mean, stddev, 0, LAZYLEN(input))
+	var/output = LAZYACCESS(input, index)
+	if(!output)
+		output = pick(input) // shruggaroni
+	return output
+
+/proc/GaussianRangePicker(min, max, mean, stddev)
+	var/index = GaussianReacharound(mean, stddev, min, max)
+	return index

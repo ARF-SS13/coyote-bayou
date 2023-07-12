@@ -986,6 +986,8 @@
 	tools = list(TOOL_WORKBENCH)
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	time = 120
 	category = CAT_WEAPONRY

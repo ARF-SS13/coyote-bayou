@@ -35,21 +35,21 @@ SUBSYSTEM_DEF(nightcycle)
 
 	// Variables for badmining
 	var/sunrise_sun_color = "#ffd1b3"
-	var/sunrise_sun_power = 80
+	var/sunrise_sun_power = 95
 	var/morning_sun_color = "#fba52b"
-	var/morning_sun_power = 130
+	var/morning_sun_power = 145
 	var/latemorn_sun_color = "#fba52b"
-	var/latemorn_sun_power = 170
+	var/latemorn_sun_power = 185
 	var/daytime_sun_color = "#faf7cb"
-	var/daytime_sun_power = 200
+	var/daytime_sun_power = 215
 	var/afternoon_sun_color = "#faf7cb"
-	var/afternoon_sun_power = 180
+	var/afternoon_sun_power = 195
 	var/lateafternoon_sun_color = "#faf7cb"
-	var/lateafternoon_sun_power = 160
+	var/lateafternoon_sun_power = 175
 	var/sunset_sun_color = "#f5b151"
-	var/sunset_sun_power = 120
+	var/sunset_sun_power = 135
 	var/fullsunset_sun_color = "#f37588"
-	var/fullsunset_sun_power = 70
+	var/fullsunset_sun_power = 85
 	var/nighttime_sun_color = "#676b74"
 	var/nighttime_sun_power = 40
 
@@ -132,7 +132,7 @@ SUBSYSTEM_DEF(nightcycle)
 			current_sun_color = sunset_sun_color
 			current_sun_power = sunset_sun_power
 		if (FULLSUNSET)
-			message_admins("Transitioning into full sunset...")
+			message_admins("Transitioning into full sunset (title drop)...")
 			current_sun_color = fullsunset_sun_color
 			current_sun_power = fullsunset_sun_power
 			for(var/obj/structure/lamp_post/lamp as anything in GLOB.lamppost)

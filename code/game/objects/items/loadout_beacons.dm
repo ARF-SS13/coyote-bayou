@@ -783,6 +783,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/switchblade/PopulateContents()
 	new /obj/item/melee/onehanded/knife/switchblade(src)
 
+/datum/loadout_box/boomerang
+	entry_tag = "Boomerang"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/melee/f13onehanded/boomerang
+
 /obj/item/storage/box/gun/melee/throwing
 	name = "throwing knife case"
 
@@ -2164,7 +2170,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/storage/box/gun/tribal/bmprsword
-*/ 
+*/
 
 /datum/loadout_box/warmace
 	entry_tag = "Warmace"
@@ -2416,3 +2422,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_SHIELD
 	spawn_thing = /obj/item/shield/coyote/riotweathered
+
+/datum/loadout_box/beserker
+	entry_tag = "Berserker's rites"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/book/granter/martial/berserker

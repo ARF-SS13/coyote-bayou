@@ -377,7 +377,7 @@
 	name = "A cat!"
 	desc = "You identify as a cat! (Mostly to help identify your species mechanically)"
 	value = 0
-	mob_trait = TRAIT_RAT
+	mob_trait = TRAIT_CAT
 /datum/quirk/rat
 	name = "A rat!"
 	desc = "You identify as a rat! (Mostly to help identify your species mechanically)"

@@ -265,7 +265,7 @@
 	icon_state = "garb"
 	item_state = "garb"
 	force = 23
-	throwforce = 23
+	throwforce = 12
 	throw_speed = 4
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -306,7 +306,7 @@
 	icon_state = "gar"
 	item_state = "gar"
 	force = 23
-	throwforce = 23
+	throwforce = 12
 	throw_speed = 4
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -337,7 +337,7 @@
 	icon_state = "supergar"
 	item_state = "gar"
 	force = 23
-	throwforce = 23
+	throwforce = 12
 	sharpness = SHARP_EDGED
 	glass_colour_type = /datum/client_colour/glass_colour/red
 	attack_speed = CLICK_CD_MELEE * 0.8

@@ -163,6 +163,7 @@
 	var/my_ckey
 	var/my_name
 	var/nude = TRUE
+	var/very_nude = FALSE
 	var/random_clothes = FALSE
 
 /obj/item/ckey_mannequin/clothed
@@ -170,6 +171,9 @@
 
 /obj/item/ckey_mannequin/clothed/random
 	random_clothes = TRUE
+
+/obj/item/ckey_mannequin/very_nude
+	very_nude = TRUE
 
 /obj/item/ckey_mannequin/attack_hand(mob/user, act_intent, attackchain_flags)
 	if(!attune_to(user))
@@ -187,13 +191,13 @@
 	visible_message("[user] touches [src], and it transforms!")
 	my_ckey = user.ckey
 	my_name = user.real_name
+	SSdummy.snapshot_player(my_ckey)
 	START_PROCESSING(SSobj, src)
 	update_icon()
 	return TRUE
 
 /obj/item/ckey_mannequin/process()
-	update_icon()
-	if(prob(1))
+	if(prob(5))
 		switch(rand(1,5))
 			if(1)
 				step_rand(src)
@@ -205,6 +209,7 @@
 				TOGGLE_VAR(nude)
 			if(5)
 				TOGGLE_VAR(random_clothes)
+	update_icon()
 
 /obj/item/ckey_mannequin/update_overlays()
 	. = ..()
@@ -215,10 +220,11 @@
 		name = initial(name)
 		desc = initial(desc)
 		return
-	SSdummy.snapshot_player(my_ckey)
 	var/list/imglist
 	var/list/cool_list
-	if(nude)
+	if(very_nude)
+		cool_list = SSdummy.very_naked_player_cache
+	else if(nude)
 		cool_list = SSdummy.naked_player_cache
 	else if(random_clothes)
 		cool_list = SSdummy.randomclothed_player_cache

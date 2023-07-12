@@ -95,7 +95,10 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	/datum/crafting_recipe/repair_t45,
 	/datum/crafting_recipe/repair_t45_helm,
 	/datum/crafting_recipe/scrap_pa,
-	/datum/crafting_recipe/scrap_pa_helm))
+	/datum/crafting_recipe/scrap_pa_helm,
+	/datum/crafting_recipe/repair_t45/hotrod,
+	/datum/crafting_recipe/repair_t45_helm/hotrod))
+
 
 GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	/datum/crafting_recipe/policepistol,

@@ -533,8 +533,8 @@
 		/datum/firemode/semi_auto
 	)
 	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+	suppressor_x_offset = 28
+	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 /* * * * * * * * * * *

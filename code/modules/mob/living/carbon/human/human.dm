@@ -7,6 +7,15 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	icon = 'icons/mob/human.dmi'
 	icon_state = "caucasian_m"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE|LONG_GLIDE
+	var/potato = FALSE
+
+/mob/living/carbon/human/twoman
+
+/mob/living/carbon/human/twoman/Initialize()
+	. = ..()
+	underwear = "Nude"
+	undershirt = "Nude"
+	update_body(TRUE)
 
 /mob/living/carbon/human/Initialize()
 	add_verb(src, /mob/living/proc/mob_sleep)
@@ -19,7 +28,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	//initialize dna. for spawned humans; overwritten by other code
 	create_dna(src)
-	randomize_human(src)
+	randomize_human(src, TRUE, TRUE)
 	dna.initialize_dna()
 
 	if(dna.species)

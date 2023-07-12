@@ -371,6 +371,11 @@
 	ckeywhitelist = list("dameonowen")
 	cost = 1
 
+/datum/gear/donator/kits/dameonowencart
+	name = "Experimental Nanite Factory Cartridge"
+	path = /obj/item/cartridge/resize
+	ckeywhitelist = list("dameonowen")
+
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
 	path = /obj/item/storage/box/large/custom_kit/darknova92
@@ -403,7 +408,7 @@
 /obj/item/storage/box/large/custom_kit/Delta_Dav/PopulateContents()
     new /obj/item/clothing/head/f13/ncr/steelpot_mp(src)
     new /obj/item/clothing/under/f13/ncr/ncr_dress(src)
-    new /obj/item/clothing/accessory/armband/black(src)	
+    new /obj/item/clothing/accessory/armband/black(src)
 
 // E
 
@@ -713,9 +718,9 @@
 	new /obj/item/clothing/head/helmet/knight/f13/metal(src)
 	new /obj/item/gun/energy/mmlbuster(src)
 
-/datum/gear/donator/kits/lowpowermia 
+/datum/gear/donator/kits/lowpowermia
 	name = "Gunslinger Kit"
-	path = /obj/item/storage/box/large/custom_kit/lowpowermia 
+	path = /obj/item/storage/box/large/custom_kit/lowpowermia
 	ckeywhitelist = list("lowpowermia")
 
 /obj/item/storage/box/large/custom_kit/lowpowermia/PopulateContents()
@@ -1033,6 +1038,8 @@
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox(src)
 	new /obj/item/ammo_box/magazine/uzim9mm/rockwell(src)
+	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
+	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
