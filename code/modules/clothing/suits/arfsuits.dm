@@ -3422,7 +3422,7 @@
 	if(armour_penetration > 0)
 		return ..()
 	block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
-	cell.use(round(cell.maxcharge * (rand(1, damage) * 0.005), 10))
+	cell.use(round(rand(1, damage*15), 10)) // A normal capacity cell gets 30ish shots on average
 	do_sparks(2, FALSE, owner)
 	SSrecoil.kickback(owner, recoil_in = 10)
 	var/soundplay = pick("sound/weapons/bullet_ricochet_1.ogg", "sound/weapons/bullet_ricochet_2.ogg")
