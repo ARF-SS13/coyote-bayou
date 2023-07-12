@@ -3353,6 +3353,12 @@
 			. += "The power meter shows [round(cell.percent(), 0.1)]% charge remaining."
 		else
 			. += "The power cell slot is currently empty."
+	if(deflecting && powered && cell)
+		. += "The deflector shield is currently active."
+	else if(!COOLDOWN_FINISHED(src, emp_cooldown))
+		. += "The deflector shield is respooling!"
+	else
+		. += "The deflector shield is currently inactive."
 	if(ispath(salvaged_type))
 		. += salvage_hint()
 
