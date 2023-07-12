@@ -236,6 +236,7 @@ SUBSYSTEM_DEF(secondwind)
 		SStgui.on_transfer(src, ghost.mind.current) // Transfer NanoUIs.
 		ghost.mind?.current?.client?.init_verbs()
 		to_chat(master, span_greentext("You feel drawn back into your body!"))
+		master.playsound_local(get_turf(src), "sound/effects/ghost_succ.ogg")
 	master_reagents.remove_all(999) // First purge all their reagents
 	master.adjustOxyLoss(-999)
 	master.adjust_fire_stacks(-20)
@@ -325,6 +326,8 @@ SUBSYSTEM_DEF(secondwind)
 		master_reagents.remove_all(999)
 		message_admins("Second Wind: [master] tried to revive, but they're still dead!")
 		return
+	master.playsound_local(get_turf(master), "sound/effects/molly_revived.ogg", 35, TRUE)
+	master.emote("scrungy")
 	return TRUE
 
 /datum/second_wind/proc/spend_life(free_life)
