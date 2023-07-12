@@ -492,3 +492,15 @@
 	desc = "A rather nice looking sink. How quint."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "sink"
+
+/obj/structure/dvd_player
+	name = "Dvd Player"
+	desc = "An old and dusty looking machine. Maybe it even still works.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "dvd_player"
+
+/obj/item/coin/dvd
+	name = "Dvd"
+	desc = "A shiny disk! Don't scratch it."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "dvd"
