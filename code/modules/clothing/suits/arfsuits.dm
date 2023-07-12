@@ -3107,7 +3107,7 @@
 	/// How much slowdown is added when suit is unpowered
 	var/unpowered_slowdown = 3
 	/// Projectiles below this damage will get deflected
-	var/deflect_damage = 18
+	var/deflect_damage = BULLET_DAMAGE_PISTOL_10MM
 	/// If TRUE - it requires PA training trait to be worn
 	var/requires_training = TRUE
 	/// If TRUE - the suit will give its user specific traits when worn
@@ -3118,6 +3118,10 @@
 	var/obj/item/salvaged_type = null
 	/// Used to track next tool required to salvage the suit
 	var/salvage_step = 0
+	var/deflecting = TRUE
+	COOLDOWN_DECLARE(emp_cooldown)
+	COOLDOWN_DECLARE(deflect_cd)
+	var/deflect_cooldown = 0.5 SECONDS
 	slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_PA
 	armor_tier_desc = ARMOR_CLOTHING_PA
@@ -3321,6 +3325,17 @@
 		toggle_cell(user)
 	return
 
+/obj/item/clothing/suit/armor/power_armor/CtrlShiftClick(mob/user)
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return ..()
+	if(!COOLDOWN_FINISHED(src, emp_cooldown))
+		to_chat(user, span_warning("Deflector shields still respooling!"))
+	TOGGLE_VAR(deflecting)
+	if(deflecting)
+		to_chat(user, span_notice("You activate the suit's deflector shield."))
+	else
+		to_chat(user, span_alert("You deactivate the suit's deflector shield."))
+
 /obj/item/clothing/suit/armor/power_armor/proc/toggle_cell(mob/living/user)
 	if(cell)
 		user.visible_message(span_notice("[user] removes \the [cell] from [src]!"), \
@@ -3338,6 +3353,12 @@
 			. += "The power meter shows [round(cell.percent(), 0.1)]% charge remaining."
 		else
 			. += "The power cell slot is currently empty."
+	if(deflecting && powered && cell)
+		. += "The deflector shield is currently active."
+	else if(!COOLDOWN_FINISHED(src, emp_cooldown))
+		. += "The deflector shield is respooling!"
+	else
+		. += "The deflector shield is currently inactive."
 	if(ispath(salvaged_type))
 		. += salvage_hint()
 
@@ -3358,6 +3379,11 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
+	if(deflecting)
+		deflecting = FALSE
+		to_chat(owner, span_alert("Deflector shield overloaded!"))
+		playsound(get_turf(src), "sound/effects/electric_hiss.ogg", 100, TRUE)
+		COOLDOWN_START(src, emp_cooldown, 30 SECONDS)
 	if(!powered)
 		return
 	if(cell)
@@ -3387,11 +3413,30 @@
 		L.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if((attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
-		if(prob(70) && (damage < deflect_damage) && (armour_penetration <= 0)) // Weak projectiles like shrapnel get deflected
-			block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
-			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-	return ..()
+	if(!COOLDOWN_FINISHED(src, deflect_cooldown))
+		return ..()
+	if(!deflecting)
+		return ..()
+	if(attack_type != ATTACK_TYPE_PROJECTILE)
+		return ..()
+	if(!(def_zone in protected_zones))
+		return ..()
+	if(!powered || !cell || cell.charge <= 0)
+		return ..()
+	if(damage > deflect_damage)
+		return ..()
+	if(armour_penetration > 0)
+		return ..()
+	block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+	cell.use(round(rand(1, damage*15), 10)) // A normal capacity cell gets 30ish shots on average
+	do_sparks(2, FALSE, owner)
+	SSrecoil.kickback(owner, recoil_in = 10)
+	var/soundplay = pick("sound/weapons/bullet_ricochet_1.ogg", "sound/weapons/bullet_ricochet_2.ogg")
+	playsound(get_turf(src), soundplay, 100, TRUE)
+	playsound(get_turf(src), "sound/weapons/metal_clank.ogg", 100, TRUE)
+	playsound(get_turf(src), "sound/effects/bworp.ogg", 75, TRUE)
+	COOLDOWN_START(src, deflect_cd, deflect_cooldown)
+	return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 
 /obj/item/clothing/suit/armor/power_armor/t45b
 	name = "Refurbished T-45b power armor"
@@ -3401,6 +3446,11 @@
 	armor = ARMOR_VALUE_SALVAGE
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
+
+/obj/item/clothing/suit/armor/power_armor/t45b/debug_pa
+	name = "Debug T-45b power armor"
+	desc = "Its comfy and easy to wear!"
+	requires_training = FALSE
 
 /obj/item/clothing/suit/armor/power_armor/t45b/raider
 	name = "powered scrap suit"
