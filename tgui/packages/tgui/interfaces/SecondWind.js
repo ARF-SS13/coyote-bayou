@@ -89,6 +89,12 @@ const SecondWindTopBar = (props, context) => {
     Percentage,
     TargTime,
   } = data.TimeData;
+  const {
+    DedPBarColors,
+    DedTimeText,
+    DedPercentage,
+    DedTargTime,
+  } = data.DeadData;
   let LowCol = "bad";
   let MedCol = "average";
   let HighCol = "good";
@@ -112,19 +118,36 @@ const SecondWindTopBar = (props, context) => {
   return (
     <Flex>
       <Flex.Item grow>
-        <ProgressBar
-          value={Percentage}
-          minValue={0}
-          maxValue={100}
-          ranges={{
-            LowCol: [0, 35],
-            MedCol: [35, 65],
-            HighCol: [65, 100],
-          }}
-          color="good"
-          textAlign="center">
-          {TimeText}
-        </ProgressBar>
+        <Stack fill vertical>
+          <Stack.Item>
+            <ProgressBar
+              value={DedPercentage}
+              minValue={0}
+              maxValue={100}
+              ranges={{
+                good: [0, 100],
+              }}
+              color='good'
+              textAlign="center">
+              {DedTimeText}
+            </ProgressBar>
+          </Stack.Item>
+          <Stack.Item>
+            <ProgressBar
+              value={Percentage}
+              minValue={0}
+              maxValue={100}
+              ranges={{
+                LowCol: [0, 35],
+                MedCol: [35, 65],
+                HighCol: [65, 100],
+              }}
+              color="good"
+              textAlign="center">
+              {TimeText}
+            </ProgressBar>
+          </Stack.Item>
+        </Stack>
       </Flex.Item>
       <Flex.Item shrink>
         <SecondWindInfoButton />

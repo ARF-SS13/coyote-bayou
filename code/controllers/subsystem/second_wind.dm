@@ -16,6 +16,7 @@
 #define SW_ERROR_DISABLED       (1 << 11)
 #define SW_ERROR_NOT_STARTED    (1 << 12)
 #define SW_ERROR_RUNTIMED       (1 << 13)
+#define SW_ERROR_DEAD_DELAYED   (1 << 16)
 
 #define SW_UI_DEFAULT "SWDefault"
 #define SW_UI_README  "SWReadMe"
@@ -36,6 +37,7 @@ SUBSYSTEM_DEF(secondwind)
 	/// format: list("ckey" = datum/second_wind)
 	var/list/second_winders = list()
 	var/life_cooldown = 2 HOURS
+	var/death_delay = 15 MINUTES
 	var/max_lives = 1
 	var/start_lives = 1
 	var/allow_third_wind = TRUE
@@ -113,6 +115,7 @@ SUBSYSTEM_DEF(secondwind)
 	var/lives_left = 1
 	var/third_winded = FALSE
 	var/life_meter = 0
+	var/death_meter = 0
 
 	var/window_state = SW_UI_DEFAULT
 
@@ -158,13 +161,18 @@ SUBSYSTEM_DEF(secondwind)
 	if(third_winded)
 		return
 	FLOOR_MASTER
-	if(!master || master.stat == DEAD)
+	if(!master)
 		return
 	if(lives_left >= SSsecondwind.max_lives)
 		life_meter = 0
 		lives_left = SSsecondwind.max_lives
 		return
-	life_meter += time_shift
+	if(master.stat == DEAD)
+		death_meter += time_shift
+		return
+	else
+		death_meter = 0
+		life_meter += time_shift
 	if(life_meter > SSsecondwind.life_cooldown)
 		one_up()
 		life_meter = 0
@@ -215,6 +223,9 @@ SUBSYSTEM_DEF(secondwind)
 			return
 		if(SW_ERROR_DISABLED)
 			to_chat(played, span_danger("Second Wind is disabled!"))
+			return
+		if(SW_ERROR_DEAD_DELAYED)
+			to_chat(played, span_danger("You're not ready to revive! Check back in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"))
 			return
 	if(!revive_me())
 		return
@@ -364,6 +375,8 @@ SUBSYSTEM_DEF(secondwind)
 		return SW_ERROR_CANNOT_REENTER
 	if(master.restrained(TRUE))
 		return SW_ERROR_CUFFED
+	if(death_meter < SSsecondwind.death_delay)
+		return SW_ERROR_DEAD_DELAYED
 	if(QDELETED(master))
 		return SW_ERROR_QDELLED_BODY
 	if(third_winded)
@@ -405,6 +418,35 @@ SUBSYSTEM_DEF(secondwind)
 			.["Percentage"] = round((life_meter / SSsecondwind.life_cooldown) * 100, 0.1)
 			.["TimeText"] = "[DisplayTimeText(timeleft, 1, TRUE, TRUE)]"
 
+/datum/second_wind/proc/get_dead_time_text()
+	FLOOR_MASTER
+	. = list(
+		"DedPBarColors" = "average",
+		"DedTimeText" = "Soon!",
+		"DedPercentage" = 100,
+		"DedTargTime" = SSsecondwind.death_delay,
+	)
+	if(third_winded)
+		.["DedPBarColors"] = "bad"
+		.["DedTimeText"] = "Never!"
+		.["DedPercentage"] = 0
+		return
+	if(master?.stat != DEAD)
+		.["DedPBarColors"] = "good"
+		.["DedTimeText"] = "You're alive!"
+		.["DedPercentage"] = 100
+		return
+	var/timeleft = (SSsecondwind.death_delay - death_meter)
+	if(timeleft < 1)
+		.["DedPBarColors"] = "good"
+		.["DedTimeText"] = "Now!"
+		.["DedPercentage"] = 100
+		return
+	else
+		.["DedPBarColors"] = "good"
+		.["DedPercentage"] = round((death_meter / SSsecondwind.death_delay) * 100, 0.1)
+		.["DedTimeText"] = "[DisplayTimeText(timeleft, 1, TRUE, TRUE)]"
+
 /datum/second_wind/proc/get_body_text()
 	FLOOR_MASTER
 	. = list(
@@ -439,6 +481,12 @@ SUBSYSTEM_DEF(secondwind)
 		if(SW_ERROR_RUNTIMED)
 			.["BodyHead"] = "OH"
 			.["BodyFill"] = "Something happened that didnt work!!"
+			.["BodyHeadIconColor"] = "bad"
+			.["BodyHeadIconImg"] = "times"
+			.["ShowButtons"] = "None"
+		if(SW_ERROR_DEAD_DELAYED)
+			.["BodyHead"] = "COOLING DOWN"
+			.["BodyFill"] = "You're dead, but you're not ready to revive yet! You'll be able to revive yourself in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
@@ -547,6 +595,13 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
 		return
+	if(death_meter < SSsecondwind.death_delay)
+		.["BodyHead"] = "COOLING DOWN"
+		.["BodyFill"] = "You're dead, but you're not ready to revive yet! You'll be able to revive yourself in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"
+		.["BodyHeadIconColor"] = "bad"
+		.["BodyHeadIconImg"] = "times"
+		.["ShowButtons"] = "OnlyBack"
+		return
 	if(lives_left >= 1)
 		.["BodyHead"] = "Revive yourself?"
 		.["BodyFill"] = "You have [lives_left] lives left. Reviving yourself will cost one of them, \
@@ -618,6 +673,7 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/ui_data(mob/user)
 	var/list/data = list()
 	data["TimeData"] = get_time_text()
+	data["DeadData"] = get_dead_time_text()
 	data["BodyData"] = get_body_text()
 	data["UIState"] = window_state
 	return data
