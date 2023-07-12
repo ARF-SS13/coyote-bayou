@@ -166,7 +166,6 @@ SUBSYSTEM_DEF(secondwind)
 	if(lives_left >= SSsecondwind.max_lives)
 		life_meter = 0
 		lives_left = SSsecondwind.max_lives
-		return
 	if(master.stat == DEAD)
 		death_meter += time_shift
 		return
@@ -446,7 +445,7 @@ SUBSYSTEM_DEF(secondwind)
 	else
 		.["DedPBarColors"] = "good"
 		.["DedPercentage"] = round((death_meter / SSsecondwind.death_delay) * 100, 0.1)
-		.["DedTimeText"] = "[DisplayTimeText(timeleft, 1, TRUE, TRUE)]"
+		.["DedTimeText"] = "[DisplayTimeText(timeleft, 1)]"
 
 /datum/second_wind/proc/get_body_text()
 	FLOOR_MASTER
@@ -486,11 +485,18 @@ SUBSYSTEM_DEF(secondwind)
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
 		if(SW_ERROR_DEAD_DELAYED)
-			.["BodyHead"] = "COOLING DOWN"
-			.["BodyFill"] = "You're dead, but you're not ready to revive yet! You'll be able to revive yourself in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"
-			.["BodyHeadIconColor"] = "bad"
-			.["BodyHeadIconImg"] = "times"
-			.["ShowButtons"] = "None"
+			if(am_alive)
+				.["BodyHead"] = "COOLING DOWN"
+				.["BodyFill"] = "You're dead, but you're not ready to revive yet! You'll be able to revive yourself in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"
+				.["BodyHeadIconColor"] = "bad"
+				.["BodyHeadIconImg"] = "times"
+				.["ShowButtons"] = "None"
+			else
+				.["BodyHead"] = "You're alive!"
+				.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
+				.["BodyHeadIconColor"] = "good"
+				.["BodyHeadIconImg"] = "check"
+				.["ShowButtons"] = "None"
 		if(SW_ERROR_NO_BODY)
 			.["BodyHead"] = "NO BODY"
 			.["BodyFill"] = "You don't have a body to revive!"
