@@ -160,7 +160,7 @@ const FormatSecondWindBody = (Text2Format) => {
     tables: true,
     sanitize: false,
     breaks: true,
-    smartLists: true
+    smartLists: true,
   });
   return { __html: formattedText };
 };
