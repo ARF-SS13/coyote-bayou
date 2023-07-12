@@ -18,7 +18,7 @@ export const SecondWind = (props, context) => {
   } = data.BodyData;
   const FormattedTxt = FormatSecondWindBody(BodyFill);
   let VertSize = 250;
-  if(UIState == "SWReadMe") {
+  if (UIState === "SWReadMe") {
     VertSize = 400;
   }
   return (
@@ -140,17 +140,15 @@ const SecondWindInfoButton = (props, context) => {
   } = data;
   let ActDo = 'GoReadme';
   let ButtonIcon = 'info';
-  if (UIState == "SWReadMe") {
+  if (UIState === "SWReadMe") {
     ActDo = 'GoHome';
     ButtonIcon = 'times';
   }
   return (
     <Button
       icon={ButtonIcon}
-
       tooltip="Second Wind Info"
-      onClick={() => act(ActDo)}>
-    </Button>
+      onClick={() => act(ActDo)} />
   );
 };
 
@@ -173,16 +171,16 @@ const SecondWindBottomBar = (props, context) => {
       ShowButtonOne = true;
       ButtonHeight = "2em";
       break;
-      case "OnlyBack":
+    case "OnlyBack":
       ShowButtonTwo = true;
       ButtonHeight = "2em";
       break;
-      case "Both":
+    case "Both":
       ShowButtonOne = true;
       ShowButtonTwo = true;
       ButtonHeight = "2em";
       break;
-      default:
+    default:
       ShowButtonOne = false;
       ShowButtonTwo = false;
       ButtonHeight = "0px";
@@ -197,10 +195,10 @@ const SecondWindBottomBar = (props, context) => {
       mt={1}>
       <Flex>
         <Flex.Item basis="50%">
-          {!!ShowButtonOne && <SecondWindRevive Ht={ButtonHeight}/>}
+          {!!ShowButtonOne && <SecondWindRevive Ht={ButtonHeight} />}
         </Flex.Item>
         <Flex.Item basis="50%">
-          {!!ShowButtonTwo && <SecondWindBack Ht={ButtonHeight}/>}
+          {!!ShowButtonTwo && <SecondWindBack Ht={ButtonHeight} />}
         </Flex.Item>
       </Flex>
     </Box>
@@ -217,7 +215,7 @@ const SecondWindRevive = (props, context) => {
   } = props;
   let ButtonLabel = "Revive";
   let ButtonIcon = "heartbeat";
-  if (UIState == "SWConfirm") {
+  if (UIState === "SWConfirm") {
     ButtonLabel = "Confirm";
     ButtonIcon = "check";
   }
@@ -247,7 +245,7 @@ const SecondWindBack = (props, context) => {
   } = props;
   let ButtonLabel = "Back";
   let ButtonIcon = "times";
-  if (UIState == "SWConfirm") {
+  if (UIState === "SWConfirm") {
     ButtonLabel = "Cancel";
     ButtonIcon = "times";
   }
