@@ -339,6 +339,7 @@ SUBSYSTEM_DEF(secondwind)
 		return
 	master.playsound_local(get_turf(master), "sound/effects/molly_revived.ogg", 35, TRUE)
 	master.emote("scrungy")
+	times_second_winded++
 	return TRUE
 
 /datum/second_wind/proc/spend_life(free_life)
