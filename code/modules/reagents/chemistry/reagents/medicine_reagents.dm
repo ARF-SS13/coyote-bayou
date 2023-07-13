@@ -1933,6 +1933,7 @@
 	pH = 7.45
 	value = REAGENT_VALUE_COMMON
 	synth_metabolism_use_human = TRUE
+	ghoulfriendly = TRUE
 	var/thresholded
 	var/health_threshold = 5
 	var/bruteheal = 0

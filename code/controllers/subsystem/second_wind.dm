@@ -100,9 +100,19 @@ SUBSYSTEM_DEF(secondwind)
 	if(!ckey)
 		CRASH("grant_one_up called with no key_lookup!")
 	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
-	if(!my_wind)
-		my_wind = new /datum/second_wind(ckey)
 	my_wind.one_up()
+
+/datum/controller/subsystem/secondwind/proc/init_my_second_wind(ckey)
+	if(!ckey)
+		CRASH("grant_one_up called with no key_lookup!")
+	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
+	my_wind.get_revivable_body()
+
+/datum/controller/subsystem/secondwind/proc/i_died(ckey)
+	if(!ckey)
+		CRASH("i_died called with no key_lookup!")
+	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
+	my_wind.i_died()
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -125,6 +135,7 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/New(new_key)
 	ownerkey = new_key
 	SSsecondwind.second_winders[ownerkey] = src
+	initialize_lives()
 	get_revivable_body()
 
 /datum/second_wind/proc/get_revivable_body()
@@ -155,6 +166,12 @@ SUBSYSTEM_DEF(secondwind)
 	lives_left = SSsecondwind.start_lives
 	third_winded = FALSE
 	life_meter = 0
+	death_meter = 0
+
+/datum/second_wind/proc/i_died()
+	death_meter = 0
+	life_meter = 0
+	times_died++
 
 /datum/second_wind/proc/living_tick(time_shift)
 	. = get_stats()
@@ -247,6 +264,12 @@ SUBSYSTEM_DEF(secondwind)
 		ghost.mind?.current?.client?.init_verbs()
 		to_chat(master, span_greentext("You feel drawn back into your body!"))
 		master.playsound_local(get_turf(src), "sound/effects/ghost_succ.ogg")
+	if(isanimal(master))
+		master.revive(TRUE, TRUE, TRUE) // heck it, simplemobs get a rez
+		playsound(get_turf(master), "sound/effects/molly_revived.ogg", 100, TRUE)
+		master.emote("scrungy")
+		times_second_winded++
+		return TRUE
 	master_reagents.remove_all(999) // First purge all their reagents
 	master.adjustOxyLoss(-999)
 	master.adjust_fire_stacks(-20)
@@ -266,7 +289,7 @@ SUBSYSTEM_DEF(secondwind)
 	var/tox_heal = 0
 	var/oxy_heal = 0
 	var/iterations_left = 1000
-	while(total_damage > 190 && iterations_left-- > 0)
+	while(total_damage > 180 && iterations_left-- > 0)
 		var/list/can_heal = list()
 		if(my_brute >= 1)
 			can_heal += BRUTE
@@ -336,8 +359,8 @@ SUBSYSTEM_DEF(secondwind)
 		master_reagents.remove_all(999)
 		message_admins("Second Wind: [master] tried to revive, but they're still dead!")
 		return
-	master.playsound_local(get_turf(master), "sound/effects/molly_revived.ogg", 35, TRUE)
-	master.emote("scrungy")
+	playsound(get_turf(master), "sound/effects/molly_revived.ogg", 75)
+	master.emote("scrungy", forced = TRUE)
 	times_second_winded++
 	return TRUE
 
@@ -345,6 +368,7 @@ SUBSYSTEM_DEF(secondwind)
 	BODY_PLAYED
 	if(!free_life)
 		lives_left--
+		death_meter = 0
 	if(lives_left < 0)
 		third_winded = TRUE
 		to_chat(played, span_alert("You feel a dull warmth seep its way through your body, clamping wounds closed and purging foreign agents with its presence. \
@@ -361,7 +385,6 @@ SUBSYSTEM_DEF(secondwind)
 
 /datum/second_wind/proc/can_revive(freebie)
 	FLOOR_MASTER
-	. = SW_ERROR_RUNTIMED
 	if(!SSsecondwind.master_toggle)
 		return SW_ERROR_DISABLED
 	if(SSticker.current_state < GAME_STATE_PLAYING)
@@ -373,17 +396,18 @@ SUBSYSTEM_DEF(secondwind)
 	var/mob/dead/observer/myghost = master.get_ghost()
 	if((myghost && !myghost.can_reenter_corpse) || master.suiciding)
 		return SW_ERROR_CANNOT_REENTER
-	if(master.restrained(TRUE))
-		return SW_ERROR_CUFFED
-	if(death_meter < SSsecondwind.death_delay)
-		return SW_ERROR_DEAD_DELAYED
 	if(QDELETED(master))
 		return SW_ERROR_QDELLED_BODY
+	if(master.restrained(TRUE))
+		return SW_ERROR_CUFFED
 	if(third_winded)
 		return SW_ERROR_THIRD_WINDED
+	if(death_meter < SSsecondwind.death_delay)
+		. |= SW_ERROR_DEAD_DELAYED
 	if(lives_left <= 0)
-		return SW_ERROR_NO_LIVES
-	return SW_ERROR_NO_ERROR
+		. |= SW_ERROR_NO_LIVES
+		return
+	. |= SW_ERROR_NO_ERROR // man it was so clean till this
 
 /datum/second_wind/proc/get_time_text()
 	FLOOR_MASTER
@@ -463,88 +487,69 @@ SUBSYSTEM_DEF(secondwind)
 	var/revive_error = can_revive()
 	var/am_alive = master?.stat != DEAD
 	switch(revive_error)
-		if(SW_ERROR_NO_ERROR)
-			if(am_alive)
-				.["BodyHead"] = "You're alive!"
-				.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
-				.["BodyHeadIconColor"] = "good"
-				.["BodyHeadIconImg"] = "check"
-				.["ShowButtons"] = "None"
-			else
-				.["BodyHead"] = "READY TO REVIVE"
-				.["BodyFill"] = "You can revive yourself! Just click the button below, and you'll be back on your feet in no time! \
-					Do note that you should wait at least [DisplayTimeText(SSsecondwind.life_cooldown, 1)] before you do it again, \
-					otherwise your next time will be your last!"
-				.["BodyHeadIconColor"] = "good"
-				.["BodyHeadIconImg"] = "heartbeat"
-				.["ShowButtons"] = "OnlyRevive"
 		if(SW_ERROR_RUNTIMED)
 			.["BodyHead"] = "OH"
 			.["BodyFill"] = "Something happened that didnt work!!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
-		if(SW_ERROR_DEAD_DELAYED)
-			if(am_alive)
-				.["BodyHead"] = "COOLING DOWN"
-				.["BodyFill"] = "You're dead, but you're not ready to revive yet! You'll be able to revive yourself in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"
-				.["BodyHeadIconColor"] = "bad"
-				.["BodyHeadIconImg"] = "times"
-				.["ShowButtons"] = "None"
-			else
-				.["BodyHead"] = "You're alive!"
-				.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
-				.["BodyHeadIconColor"] = "good"
-				.["BodyHeadIconImg"] = "check"
-				.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_NO_BODY)
 			.["BodyHead"] = "NO BODY"
 			.["BodyFill"] = "You don't have a body to revive!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_DISABLED)
 			.["BodyHead"] = "DISABLED"
 			.["BodyFill"] = "Second Wind is disabled. Sorry!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_NOT_STARTED)
 			.["BodyHead"] = "NOT STARTED"
 			.["BodyFill"] = "Hold your horses, we're still getting everything set up!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_QDELLED_BODY)
 			.["BodyHead"] = "NO BODY"
 			.["BodyFill"] = "Your body is in the trash where it belongs (its been deleted, sorry!) You can't revive yourself!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_NO_GHOST)
 			.["BodyHead"] = "NO GHOST"
 			.["BodyFill"] = "You somehow lack a ghost! This is probably a bug."
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_BODY_OCCUPIED)
 			.["BodyHead"] = "BODY FULL"
 			.["BodyFill"] = "Your body is occupied by someone else! You can't revive yourself!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_CANNOT_REENTER)
 			.["BodyHead"] = "CANNOT REENTER"
 			.["BodyFill"] = "You have elected to stay dead, or something along those lines."
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_CUFFED)
 			.["BodyHead"] = "CUFFED"
 			.["BodyFill"] = "Your body is handcuffed! You can't revive yourself!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
+			return
 		if(SW_ERROR_THIRD_WINDED)
 			.["BodyHead"] = "THIRD WINDED"
 			if(am_alive)
@@ -556,20 +561,56 @@ SUBSYSTEM_DEF(secondwind)
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
-		if(SW_ERROR_NO_LIVES)
-			.["BodyHead"] = "OUT OF LIVES"
-			if(am_alive)
-				.["BodyFill"] = "You have revived yourself recently, and you'll need to wait a while before you can do it again safely! \
-					If you die, you will still be able to revive yourself, but it'll be your last! Try to stay alive!"
-				if(prob(1))
-					.["BodyFill"] += " YOLO~"
+
+	if(CHECK_BITFIELD(revive_error, SW_ERROR_NO_LIVES))
+		.["BodyHead"] = "OUT OF LIVES"
+		if(am_alive)
+			.["BodyFill"] = "You have revived yourself recently, and you'll need to wait a while before you can do it again safely! \
+				If you die, you will still be able to revive yourself, but it'll be your last! Try to stay alive!"
+			if(prob(1))
+				.["BodyFill"] += " YOLO~"
+			.["ShowButtons"] = "None"
+		else
+			if(CHECK_BITFIELD(revive_error, SW_ERROR_DEAD_DELAYED))
+				.["BodyFill"] = "You have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
+					If you die again after reviving, you'll need to be rescued, or hop on a different character if you want to keep playing! <br><br> \
+					Furthermore, you also died recently, and won't be able to revive yourself anyway for another [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)] or so!"
 				.["ShowButtons"] = "None"
+				.["BodyHeadIconColor"] = "bad"
+				.["BodyHeadIconImg"] = "exclamation-triangle"
 			else
 				.["BodyFill"] = "You have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
 					If you die again after reviving, you'll need to be rescued, or hop on a different character if you want to keep playing!"
 				.["ShowButtons"] = "OnlyRevive"
-			.["BodyHeadIconColor"] = "average"
-			.["BodyHeadIconImg"] = "exclamation-triangle"
+				.["BodyHeadIconColor"] = "average"
+				.["BodyHeadIconImg"] = "exclamation-triangle"
+		return
+
+	if(CHECK_BITFIELD(revive_error, SW_ERROR_NO_ERROR))
+		if(am_alive)
+			.["BodyHead"] = "You're alive!"
+			.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
+			.["BodyHeadIconColor"] = "good"
+			.["BodyHeadIconImg"] = "check"
+			.["ShowButtons"] = "None"
+		else
+			if(CHECK_BITFIELD(revive_error, SW_ERROR_DEAD_DELAYED))
+				.["BodyHead"] = "SOON TO REVIVE"
+				.["BodyFill"] = "In [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)], you can revive yourself! \
+					Do note that you should wait at least [DisplayTimeText(SSsecondwind.life_cooldown, 1)] after you're alive before you do it again, \
+					otherwise your next time will be your last!"
+				.["BodyHeadIconColor"] = "bad"
+				.["BodyHeadIconImg"] = "heartbeat"
+				.["ShowButtons"] = "None"
+			else
+				.["BodyHead"] = "READY TO REVIVE"
+				.["BodyFill"] = "You can revive yourself! Just click the button below, and you'll be back on your feet in no time! \
+					Do note that you should wait at least [DisplayTimeText(SSsecondwind.life_cooldown, 1)] before you do it again, \
+					otherwise your next time will be your last!"
+				.["BodyHeadIconColor"] = "good"
+				.["BodyHeadIconImg"] = "heartbeat"
+				.["ShowButtons"] = "OnlyRevive"
+		return
 
 /datum/second_wind/proc/get_confirm_text(list/input_list = list())
 	FLOOR_MASTER

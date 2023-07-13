@@ -7,7 +7,8 @@
 
 	silent = FALSE
 	losebreath = 0
-
+	if(ckey)
+		SSsecondwind.i_died(ckey)
 	if(!gibbed)
 		INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 		SWplz = new
