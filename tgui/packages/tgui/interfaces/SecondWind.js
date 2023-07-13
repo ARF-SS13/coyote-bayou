@@ -127,7 +127,7 @@ const SecondWindTopBar = (props, context) => {
               ranges={{
                 good: [0, 100],
               }}
-              color='good'
+              color="good"
               textAlign="center">
               {DedTimeText}
             </ProgressBar>
