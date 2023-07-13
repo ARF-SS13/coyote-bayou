@@ -119,8 +119,8 @@
 */
 /datum/martial_art/the_sleeping_carp/on_projectile_hit(mob/living/carbon/human/A, obj/item/projectile/P, def_zone)
 	. = ..()
-	if(P.hitscan && prob(50))
-		return BULLET_ACT_HIT //AKTUALLY U CANNOT DEFLECT HITSKANS UNLESS UWrE A NINJA ADNJ EVEN THEN ITS A 50% CHANCE
+	//if(P.hitscan && prob(50))
+	//	return BULLET_ACT_HIT //AKTUALLY U CANNOT DEFLECT HITSKANS UNLESS UWrE A NINJA ADNJ EVEN THEN ITS A 50% CHANCE
 	if(A.incapacitated(FALSE, TRUE)) //NO STUN
 		return BULLET_ACT_HIT
 	if(!CHECK_ALL_MOBILITY(A, MOBILITY_USE|MOBILITY_STAND)) //NO UNABLE TO USE, NO DEFLECTION ON THE FLOOR
