@@ -1,5 +1,5 @@
 PROCESSING_SUBSYSTEM_DEF(progress_bars)
-	name = "Progress Bars"
+	name = "ProgBars" // jitter jitter jitter
 	flags = SS_NO_INIT
 	wait = 0.2 SECONDS
 
@@ -15,6 +15,8 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	/// List of visible progress bars by ckey
 	/// format: list(ckey = list("bar_id"))
 	var/list/ckey_proglist = list()
+
+	var/debug_make_visible_to_everyone = FALSE
 
 /datum/controller/subsystem/processing/progress_bars/proc/add_bar(atom/owner, list/can_see = list(), duration = 5 SECONDS, automatic = TRUE, auto_remove = TRUE)
 	if(duration <= 0) // imma divide your zero uwu
@@ -166,7 +168,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	RegisterSignal(location, COMSIG_PARENT_QDELETING, .proc/master_deleted)
 
 /datum/progressbar/proc/register_visibility(list/can_see)
-	if(!LAZYLEN(can_see))
+	if(!LAZYLEN(can_see) || SSprogress_bars.debug_make_visible_to_everyone) // heh
 		for(var/ckey in GLOB.directory)
 			visible_to |= ckey
 		return
