@@ -109,7 +109,7 @@
 	name = "rare high-value loot, found in dangerous dungeons"
 	icon_state = "x7"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/rare_weps = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_weps = 3,
 		/obj/effect/spawner/lootdrop/f13/rare_armor = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_mods = 1,
 	)
@@ -895,15 +895,15 @@
 /obj/effect/spawner/lootdrop/f13/rare_armor
 	name = "rare armor"
 	loot = list(
-		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 5,
-		/obj/effect/spawner/bundle/f13/armor/riot = 10,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 10,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 10,
+		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 20,
+		/obj/effect/spawner/bundle/f13/armor/riot = 40,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 40,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 40,
 		/obj/effect/spawner/bundle/f13/armor/hotrodpa = 2,
 		/obj/effect/spawner/bundle/f13/armor/t45d = 1,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 5,
-		/obj/item/clothing/suit/armor/heavy/riot/vault = 5,
-		/obj/item/clothing/suit/armor/heavy/riot/marine = 5,
+		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 20,
+		/obj/item/clothing/suit/armor/heavy/riot/vault = 20,
+		/obj/item/clothing/suit/armor/heavy/riot/marine = 20,
 		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
 		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1
 	)
