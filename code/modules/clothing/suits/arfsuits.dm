@@ -3107,7 +3107,7 @@
 	/// How much slowdown is added when suit is unpowered
 	var/unpowered_slowdown = 3
 	/// Projectiles below this damage will get deflected
-	var/deflect_damage = BULLET_DAMAGE_PISTOL_10MM
+	var/deflect_damage = BULLET_DAMAGE_PISTOL_9MM_HANDLOAD
 	/// If TRUE - it requires PA training trait to be worn
 	var/requires_training = TRUE
 	/// If TRUE - the suit will give its user specific traits when worn
@@ -3121,7 +3121,7 @@
 	var/deflecting = TRUE
 	COOLDOWN_DECLARE(emp_cooldown)
 	COOLDOWN_DECLARE(deflect_cd)
-	var/deflect_cooldown = 0.5 SECONDS
+	var/deflect_cooldown = 2 SECONDS
 	slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_PA
 	armor_tier_desc = ARMOR_CLOTHING_PA
@@ -3417,18 +3417,23 @@
 		return ..()
 	if(!deflecting)
 		return ..()
+	if(CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCKING) || CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCK_STARTING))
+		return ..()
 	if(attack_type != ATTACK_TYPE_PROJECTILE)
 		return ..()
 	if(!(def_zone in protected_zones))
 		return ..()
 	if(!powered || !cell || cell.charge <= 0)
 		return ..()
-	if(damage > deflect_damage)
+	if(!istype(object, /obj/item/projectile))
 		return ..()
-	if(armour_penetration > 0)
+	var/obj/item/projectile/P = object
+	if(P.damage > deflect_damage)
+		return ..()
+	if(P.armour_penetration > 0)
 		return ..()
 	block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
-	cell.use(round(rand(1, damage*15), 10)) // A normal capacity cell gets 30ish shots on average
+	cell.use(round(rand(damage*40, damage*80), 10))
 	do_sparks(2, FALSE, owner)
 	SSrecoil.kickback(owner, recoil_in = 10)
 	var/soundplay = pick("sound/weapons/bullet_ricochet_1.ogg", "sound/weapons/bullet_ricochet_2.ogg")
