@@ -47,6 +47,7 @@
 	shoot_delay = shoot_delay_default
 	burst_delay = burst_delay_default
 	burst_count = burst_count_default
+	damage_multiplier_default = _gun.damage_multiplier
 	damage_multiplier = damage_multiplier_default
 	shot_cost_multiplier = shot_cost_multiplier_default
 	my_gun = WEAKREF(_gun)
