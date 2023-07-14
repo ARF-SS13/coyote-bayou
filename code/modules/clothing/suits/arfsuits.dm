@@ -3107,7 +3107,7 @@
 	/// How much slowdown is added when suit is unpowered
 	var/unpowered_slowdown = 3
 	/// Projectiles below this damage will get deflected
-	var/deflect_damage = BULLET_DAMAGE_PISTOL_9MM_HANDLOAD
+	var/deflect_damage = 20 // blocks handload 9mm, which simplemobs shoot
 	/// If TRUE - it requires PA training trait to be worn
 	var/requires_training = TRUE
 	/// If TRUE - the suit will give its user specific traits when worn
@@ -3119,9 +3119,11 @@
 	/// Used to track next tool required to salvage the suit
 	var/salvage_step = 0
 	var/deflecting = TRUE
+	var/deflect_power_mult = 20
 	COOLDOWN_DECLARE(emp_cooldown)
 	COOLDOWN_DECLARE(deflect_cd)
-	var/deflect_cooldown = 2 SECONDS
+	var/deflect_cooldown = 1 SECONDS
+	var/can_deflect_while_blocking = TRUE
 	slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_PA
 	armor_tier_desc = ARMOR_CLOTHING_PA
@@ -3417,7 +3419,7 @@
 		return ..()
 	if(!deflecting)
 		return ..()
-	if(CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCKING) || CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCK_STARTING))
+	if(!can_deflect_while_blocking && (CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCKING) || CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCK_STARTING)))
 		return ..()
 	if(attack_type != ATTACK_TYPE_PROJECTILE)
 		return ..()
@@ -3433,7 +3435,7 @@
 	if(P.armour_penetration > 0)
 		return ..()
 	block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
-	cell.use(round(rand(damage*40, damage*80), 10))
+	cell.use(round(rand(damage*(deflect_power_mult*0.5), damage*(deflect_power_mult*2)), 100))
 	do_sparks(2, FALSE, owner)
 	SSrecoil.kickback(owner, recoil_in = 10)
 	var/soundplay = pick("sound/weapons/bullet_ricochet_1.ogg", "sound/weapons/bullet_ricochet_2.ogg")
@@ -3451,6 +3453,9 @@
 	armor = ARMOR_VALUE_SALVAGE
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
+	deflect_power_mult = 80
+	deflect_cooldown = 2 SECONDS
+	can_deflect_while_blocking = FALSE
 
 /obj/item/clothing/suit/armor/power_armor/t45b/debug_pa
 	name = "Debug T-45b power armor"
@@ -3466,6 +3471,16 @@
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mutantrace_variation = STYLE_DIGITIGRADE
 	salvaged_type = /obj/item/clothing/suit/armor/medium/raider/raidermetal
+
+/obj/item/clothing/suit/armor/power_armor/t45b/hotrod
+	name = "Refurbished T-45b Hotrod power armor"
+	desc = "It's a set of T-45b power armor with a with some of its plating replaced by ablative, fire resistant armor. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
+	icon_state = "t45hotrod"
+	item_state = "t45hotrod"
+	armor = ARMOR_VALUE_SALVAGE
+	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
+	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
+	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, )
 
 /obj/item/clothing/suit/armor/power_armor/t45d
 	name = "T-45d power armor"
@@ -3519,17 +3534,6 @@
 	desc = "The pinnacle of pre-war technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
 	icon_state = "t51bpowerarmor_bos"
 	item_state = "t51bpowerarmor_bos"
-
-/obj/item/clothing/suit/armor/power_armor/t45b/hotrod
-	name = "Refurbished T-45b Hotrod power armor"
-	desc = "It's a set of T-45b power armor with a with some of its plating replaced by ablative, fire resistant armor. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
-	icon_state = "t45hotrod"
-	item_state = "t45hotrod"
-	armor = ARMOR_VALUE_SALVAGE
-	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
-	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
-	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, )
-
 
 /obj/item/clothing/suit/armor/power_armor/excavator
 	name = "excavator power armor"
