@@ -159,6 +159,40 @@
 	)
 	init_recoil = SHOTGUN_RECOIL(1, 1)
 
+//Eve Caster
+/obj/item/gun/energy/laser/plasma/castereve
+	name ="Eve 3.0"
+	item_state = "Aldric-Plasma-CasterEve"
+	icon_state = "Aldric-Plasma-CasterEve"
+	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words "Pick a god and pray." etched into the side."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/caster)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/burst/five
+	)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+
+//Normal Plasma Caster
+/obj/item/gun/energy/laser/plasma/caster
+	name ="Plasma Caster"
+	item_state = "Aldric-Plasma-Caster"
+	icon_state = "Aldric-Plasma-Caster"
+	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unfortunate soul."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/caster)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/burst/five
+	)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+
 /obj/item/gun/energy/laser/plasma/spear
 	name = "ergonomic plasmacaster"
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'
