@@ -162,7 +162,7 @@
 //Eve Caster
 /obj/item/gun/energy/laser/plasma/castereve
 	name ="Eve 3.0"
-	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon = 'icons/fallout/objects/guns/longenergy.dmi'
 	item_state = "Aldric-Plasma-CasterEve"
 	icon_state = "Aldric-Plasma-CasterEve"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words "Pick a god and pray." etched into the side."
@@ -180,7 +180,7 @@
 //Normal Plasma Caster
 /obj/item/gun/energy/laser/plasma/caster
 	name ="Plasma Caster"
-	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon = 'icons/fallout/objects/guns/longenergy.dmi'
 	item_state = "Aldric-Plasma-Caster"
 	icon_state = "Aldric-Plasma-Caster"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unfortunate soul."
