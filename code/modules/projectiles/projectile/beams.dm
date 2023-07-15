@@ -458,6 +458,13 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/pistol/AK470M //AK470M
+	name = "laser beam"
+	damage = 20
+	icon_state = "arcane_barrage"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	light_color = LIGHT_COLOR_PURPLE
+
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
 	damage = 28
