@@ -156,7 +156,7 @@
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
-	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
+	new /obj/item/gun/energy/laser/plasma/castereve(src)
 
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"
@@ -427,6 +427,15 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/smelling_salts(src)
 	new /obj/item/circuitboard/machine/chem_dispenser(src)
+
+/datum/gear/donator/kits/Escamado
+	name = "Blacksmith's Kit"
+	path = /obj/item/storage/box/large/custom_kit/Escamado
+	ckeywhitelist = list("Escamado")
+
+/obj/item/storage/box/large/custom_kit/Escamado/PopulateContents()
+	new /obj/item/survivalcapsule/blacksmith(src)
+	new /obj/item/melee/smith/hammer/premadeadam(src)
 
 // F
 
