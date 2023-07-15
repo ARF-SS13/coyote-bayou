@@ -387,6 +387,16 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"dp" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowvertical"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "dA" = (
 /obj/structure/dresser,
 /obj/structure/sign/painting/library{
@@ -721,6 +731,16 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"gS" = (
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowvertical"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "gT" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -1965,6 +1985,16 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"tu" = (
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbroken"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "tA" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -3074,6 +3104,15 @@
 /obj/item/circuitboard/machine/smes,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"DW" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "Ef" = (
 /obj/item/stock_parts/cell/super/empty,
 /turf/open/indestructible/ground/outside/roof,
@@ -4022,6 +4061,16 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"Nb" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbroken"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "Ne" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -4120,8 +4169,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Og" = (
-/obj/structure/window/fulltile/house{
-	icon_state = "housewindowbrokenvertical"
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -4338,6 +4388,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"QQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "QS" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 4
@@ -4501,9 +4561,7 @@
 	},
 /area/f13/wasteland)
 "RV" = (
-/obj/structure/curtain{
-	color = "#845f58"
-	},
+/obj/structure/simple_door/interior,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "RY" = (
@@ -4627,7 +4685,13 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "TU" = (
-/obj/structure/window/fulltile/house,
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "TX" = (
@@ -40275,21 +40339,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
+zC
+zC
+zC
+zC
 lH
+gS
 TU
-RV
-TU
+DW
+DW
 lH
 zC
 zC
 zC
-hm
-hm
-hm
-hm
+zC
+zC
 hm
 hm
 hm
@@ -40532,21 +40596,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-TU
+zC
+zC
+zC
+zC
+Og
 hi
-Kz
 Yy
-TU
+Kz
+Kz
+Og
 zC
 zC
 zC
-hm
-hm
-hm
-hm
+zC
+zC
 hm
 hm
 hm
@@ -40789,21 +40853,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-RV
-Kz
+zC
+zC
+zC
+zC
+tu
 RY
 Yy
-RV
+Kz
+Kz
+Og
 zC
 zC
 zC
-hm
-hm
-hm
-hm
+zC
+zC
 hm
 hm
 hm
@@ -41046,21 +41110,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-TU
-Kz
-Kz
-Kz
-TU
 zC
 zC
 zC
-hm
-hm
-hm
-hm
+zC
+lH
+Kz
+Yy
+Yy
+Kz
+lH
+zC
+zC
+zC
+zC
+zC
 hm
 hm
 hm
@@ -41303,21 +41367,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-TU
-Yy
+zC
+zC
+zC
+zC
+QQ
 Kj
 ki
-RV
+Kz
+Kz
+Nb
 zC
 zC
 zC
-hm
-hm
-hm
-hm
+zC
+zC
 hm
 hm
 hm
@@ -41560,21 +41624,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-lH
+zC
+zC
+zC
+zC
 RV
-Og
-TU
-lH
+Kz
+Kz
+Kz
+Kz
+RV
 zC
 zC
 zC
-hm
-hm
-hm
-hm
+zC
+zC
 hm
 hm
 hm
@@ -41817,21 +41881,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+zC
+zC
+zC
+zC
+lH
+DW
+DW
+dp
+dp
+lH
+zC
+zC
+zC
+zC
+zC
 hm
 hm
 hm
