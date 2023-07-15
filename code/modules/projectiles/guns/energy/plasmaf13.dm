@@ -165,7 +165,7 @@
 	icon = 'icons/fallout/objects/guns/longenergy.dmi'
 	item_state = "Aldric-Plasma-CasterEve"
 	icon_state = "Aldric-Plasma-CasterEve"
-	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words "Pick a god and pray." etched into the side."
+	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words; Pick a god and pray. etched into the side."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/caster)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	can_scope = FALSE
