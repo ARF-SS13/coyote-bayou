@@ -63,7 +63,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 
-/obj/item/gun/energy/laser/LaserAK/
+/obj/item/gun/energy/laser/LaserAK
 	name = "Laser AK470"
 	desc = "An experimental soviet energy weapon with an integrated uranium based breeder cell. Death solves all problems -- No man, no problem."
 	can_remove = 0
