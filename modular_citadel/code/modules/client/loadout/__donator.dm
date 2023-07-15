@@ -428,6 +428,15 @@
 	new /obj/item/smelling_salts(src)
 	new /obj/item/circuitboard/machine/chem_dispenser(src)
 
+/datum/gear/donator/kits/Escamado
+	name = Blacksmith's Kit"
+	path = /obj/item/storage/box/large/custom_kit/Escamado
+	ckeywhitelist = list("Escamado")
+
+/obj/item/storage/box/large/custom_kit/EscamadoPopulateContents()
+new /obj/item/survivalcapsule/blacksmith(src)
+new /obj/item/melee/smith/hammer/premadeadam(src)
+
 // F
 
 /datum/gear/donator/kits/ferisramsay
