@@ -665,7 +665,7 @@
 	new /obj/item/storage/box/gun/revolver/revolver44(src)
 
 /datum/gear/donator/kits/jaggachi_5
-	name = "Army Service Kit"
+	name = "Soviet Service Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi_5
 	ckeywhitelist = list("jaggachi")
 
