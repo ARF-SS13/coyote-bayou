@@ -2959,6 +2959,8 @@
 
 /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn
 	name = "retrofit worn riot combat armor"
+	icon_state = "foxranger"
+	item_state = "foxranger"
 	desc = "A suit of pre-war combat armor redesigned to handle riots. This one looks worn down, and has had its heavier components stripped away."
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2, ARMOR_MODIFIER_DOWN_LASER_T1)
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
