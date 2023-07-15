@@ -156,7 +156,7 @@
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
-	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
+	new /obj/item/gun/energy/laser/plasma/castereve(src)
 
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"
