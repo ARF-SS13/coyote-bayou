@@ -434,8 +434,8 @@
 	ckeywhitelist = list("Escamado")
 
 /obj/item/storage/box/large/custom_kit/Escamado/PopulateContents()
-new /obj/item/survivalcapsule/blacksmith(src)
-new /obj/item/melee/smith/hammer/premadeadam(src)
+	new /obj/item/survivalcapsule/blacksmith(src)
+	new /obj/item/melee/smith/hammer/premadeadam(src)
 
 // F
 
