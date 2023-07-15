@@ -381,6 +381,7 @@
 	tracer_type = /obj/effect/projectile/tracer/disabler
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
+	is_reflectable = FALSE
 
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol

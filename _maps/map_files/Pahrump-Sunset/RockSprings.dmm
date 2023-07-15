@@ -3886,10 +3886,6 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
 	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#ff0000"
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "bEe" = (
@@ -4149,16 +4145,6 @@
 	icon_state = "gib3-old"
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/redwater)
-"bJw" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland/redwater)
 "bJB" = (
 /obj/effect/decal/cleanable/dirt{
@@ -13636,12 +13622,6 @@
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland/redwater)
-"fyb" = (
-/obj/structure/stone_tile/block/burnt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/redwater)
 "fyu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -21838,13 +21818,6 @@
 "iPN" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/building/abandoned)
-"iPU" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/water/running,
-/area/f13/wasteland/redwater)
 "iPX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -31856,15 +31829,6 @@
 /obj/structure/flora/grass/coyote/nine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
-"ncw" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/stone_tile/surrounding,
-/obj/structure/stone_tile/center,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/redwater)
 "ncy" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -36079,13 +36043,6 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/redwater)
-"oPE" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/stone_tile/slab/cracked{
-	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
@@ -51915,12 +51872,6 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland/redwater)
-"vsk" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/redwater)
 "vsq" = (
 /obj/structure/table,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
@@ -66655,8 +66606,8 @@ nQW
 nQW
 bBV
 bBV
-fyb
-ncw
+nQW
+cGO
 cqo
 nXe
 lZQ
@@ -66912,8 +66863,8 @@ dkG
 oiu
 igB
 caE
-vsk
-oPE
+tRd
+tRd
 uiq
 hUS
 jpO
@@ -70258,7 +70209,7 @@ tRd
 tRd
 tRd
 tRd
-iPU
+tRd
 eff
 eff
 eff
@@ -70515,8 +70466,8 @@ tRd
 tRd
 iac
 qnc
-eff
-eFu
+tRd
+tRd
 pKQ
 kKS
 eff
@@ -70772,7 +70723,7 @@ nEP
 feV
 ekC
 eff
-bJw
+eff
 tRd
 tRd
 tRd
@@ -93415,7 +93366,7 @@ nQW
 bLw
 nQW
 mdg
-nQW
+hfG
 nQW
 pvT
 dzx

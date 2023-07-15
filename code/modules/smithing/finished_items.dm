@@ -82,6 +82,9 @@
 //	qualitymod = 1
 	custom_materials = list(/datum/material/iron = 1000)
 
+/obj/item/melee/smith/hammer/premadeadam
+	custom_materials = list(/datum/material/adamantine = 1000)
+
 // The true manual mining scanner, knock it on rock to scan. Could use a cooldown, can't be bothered to sort it. Lowest quality got too short range to test out.
 /obj/item/mining_scanner/prospector
 	name = "prospectors pick"

@@ -284,7 +284,7 @@ SUBSYSTEM_DEF(recoil)
 	if(LAZYLEN(modifiers) != 2)
 		modifiers = RECOIL_LIST_DEFAULT
 	var/list/item_recoil_args = RECOIL_TAG2LIST(recoil_tag)
-	if(LAZYLEN(item_recoil_args) != 2) // "UNWIELD" "WIELD"
+	if(!IS_RECOIL_LIST(item_recoil_args)) // "UNWIELD" "WIELD"
 		item_recoil_args = RECOIL_LIST_DEFAULT
 	var/my_one_handed_recoil = text2num(item_recoil_args[RECOIL_INDEX_UNWIELDED])
 	var/my_two_handed_recoil = text2num(item_recoil_args[RECOIL_INDEX_WIELDED])
