@@ -429,7 +429,7 @@
 	new /obj/item/circuitboard/machine/chem_dispenser(src)
 
 /datum/gear/donator/kits/Escamado
-	name = Blacksmith's Kit"
+	name = "Blacksmith's Kit"
 	path = /obj/item/storage/box/large/custom_kit/Escamado
 	ckeywhitelist = list("Escamado")
 
