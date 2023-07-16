@@ -14426,7 +14426,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "giW" = (
-/obj/machinery/vending/sovietvend,
+/obj/structure/table,
+/obj/item/paper/fluff,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -20660,6 +20661,7 @@
 /area/f13/vault)
 "jff" = (
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/vending/sovietvend,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtysolid"
 	},
