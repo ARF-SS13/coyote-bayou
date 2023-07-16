@@ -153,7 +153,8 @@ SUBSYSTEM_DEF(secondwind)
 			ownermob = WEAKREF(corpse)
 			initialize_lives()
 	if(!corpse)
-		CRASH("get_revivable_body for [ownerkey] called with no corpse and no currently played mob! wtf")
+		return
+		//CRASH("get_revivable_body for [ownerkey] called with no corpse and no currently played mob! wtf") // turns out disconnected players count, I guess?
 	return corpse
 
 /datum/second_wind/proc/get_currently_played_mob()
