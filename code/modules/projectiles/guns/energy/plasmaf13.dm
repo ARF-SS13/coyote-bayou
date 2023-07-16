@@ -168,8 +168,8 @@
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words; Pick a god and pray. etched into the side."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/caster)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	lefthand_file = 'icons/fallout/onmob/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/guns_righthand.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	can_scope = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	weapon_class = WEAPON_CLASS_CARBINE
