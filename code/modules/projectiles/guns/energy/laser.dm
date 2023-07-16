@@ -639,7 +639,7 @@
 	item_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	cell_type = "/obj/item/stock_parts/cell/ammo/mfc"
-	ammo_type = list(/obj/item/projectile/beam/laser/pistol/AK470M)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
 	ammo_x_offset = 4
 	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
