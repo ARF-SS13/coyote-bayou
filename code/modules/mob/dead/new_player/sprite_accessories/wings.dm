@@ -415,6 +415,14 @@
 	name = "Insect"
 	icon_state = "insect"
 
+/datum/sprite_accessory/insect_wings/mantis
+	name = "Mantis Arms"
+	icon_state = "mantis"
+
+/datum/sprite_accessory/insect_wings/spider
+	name = "Spider Legs"
+	icon_state = "spider"
+
 //insect markings
 /datum/sprite_accessory/insect_markings // Extra markings for insects ported from tg.
 	icon = 'icons/mob/insect_markings.dmi'
