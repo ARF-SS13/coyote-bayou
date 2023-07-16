@@ -87,7 +87,11 @@
 
 	var/turf/T = get_turf(src)
 	if(mind && mind.name && mind.active && !istype(T.loc, /area/ctf) && !(signal & COMPONENT_BLOCK_DEATH_BROADCAST))
-		var/rendered = "<span class='deadsay'><b>[mind.name]</b> has died at <b>[get_area_name(T)]</b>.</span>"
+		var/rendered
+		if(HAS_TRAIT(mind, TRAIT_PENANCE))
+			rendered = "<span class='deadsay'><b>[mind.name]</b> has died at <b>[get_area_name(T)]</b>. They bore their penance to the grave. Perhaps the Gods will have mercy on them.</span>"
+		else
+			rendered = "<span class='deadsay'><b>[mind.name]</b> has died at <b>[get_area_name(T)]</b>.</span>"
 		deadchat_broadcast(rendered, follow_target = src, turf_target = T, message_type=DEADCHAT_DEATHRATTLE)
 	if (client && client.prefs && client.prefs.auto_ooc)
 		if (!(client.prefs.chat_toggles & CHAT_OOC))

@@ -374,6 +374,7 @@
 
 // item traits
 #define TRAIT_NODROP "nodrop"
+#define TRAIT_PENANCE "penance"
 /// Dont put it in storage things, simple as
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
 /// Can't leave a storage!
