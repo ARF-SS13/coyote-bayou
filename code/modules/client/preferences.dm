@@ -1,4 +1,4 @@
-#define DEFAULT_SLOT_AMT	2
+#define MAX_FREE_PER_CAT	4
 #define HANDS_SLOT_AMT		2
 #define BACKPACK_SLOT_AMT	4
 
@@ -1304,7 +1304,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<table align='center' width='100%'>"
 			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> loadout points remaining.</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
-			dat += "<tr><td colspan=4><center>You can only choose one item per category, unless it's an item that spawns in your backpack or hands.</center></td></tr>"
+			dat += "<tr><td colspan=4><center>You can choose up to [MAX_FREE_PER_CAT] free items per category.</center></td></tr>"
 			dat += "<tr><td colspan=4><center><b>"
 
 			if(!length(GLOB.loadout_items))
@@ -3794,11 +3794,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!toggle && has_loadout_gear(loadout_slot, "[G.type]"))//toggling off and the item effectively is in chosen gear)
 				remove_gear_from_loadout(loadout_slot, "[G.type]")
 			else if(toggle && !(has_loadout_gear(loadout_slot, "[G.type]")))
-				/*
-				if(!is_loadout_slot_available(G.category))
-					to_chat(user, span_danger("You cannot take this loadout, as you've already chosen too many of the same category!"))
+				
+				if(!is_loadout_slot_available(G.category, G.cost))
+					to_chat(user, span_danger("You can only take [MAX_FREE_PER_CAT] free items from this category!"))
 					return
-				*/
+				
 				if(G.donoritem && !G.donator_ckey_check(user.ckey))
 					to_chat(user, span_danger("This is an item intended for donator use only. You are not authorized to use this item."))
 					return
@@ -4044,14 +4044,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			key_bindings[key] = oldkeys[key]
 	parent?.ensure_keys_set(src)
 
-/datum/preferences/proc/is_loadout_slot_available(slot)
+/datum/preferences/proc/is_loadout_slot_available(category, cost)
+	if(cost)
+		return TRUE
 	var/list/L
 	LAZYINITLIST(L)
 	for(var/i in loadout_data["SAVE_[loadout_slot]"])
-		var/datum/gear/G = i[LOADOUT_ITEM]
+		var/loadie = i[LOADOUT_ITEM]
+		var/datum/gear/G = text2path(loadie)
+		if(initial(G.cost) > 0) // oh right, these are uninitialized, mb
+			continue // non-free items are self limiting
+		if(initial(G.category) != category)
+			continue
 		var/occupied_slots = L[initial(G.category)] ? L[initial(G.category)] + 1 : 1
 		LAZYSET(L, initial(G.category), occupied_slots)
-	switch(slot)
+	for(var/things_got in L)
+		if(L[things_got] > MAX_FREE_PER_CAT)
+			return FALSE
+	return TRUE
+	/* switch(slot)
 		if(SLOT_IN_BACKPACK)
 			if(L[LOADOUT_CATEGORY_BACKPACK] < BACKPACK_SLOT_AMT)
 				return TRUE
@@ -4059,8 +4070,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(L[LOADOUT_CATEGORY_HANDS] < HANDS_SLOT_AMT)
 				return TRUE
 		else
-			if(L[slot] < DEFAULT_SLOT_AMT)
-				return TRUE
+			if(L[slot] < MAX_FREE_PER_CAT)
+				return TRUE */
 
 /datum/preferences/proc/has_loadout_gear(save_slot, gear_type)
 	var/list/gear_list = loadout_data["SAVE_[save_slot]"]
@@ -4086,6 +4097,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				to_chat(parent, span_userdanger("Something went wrong! Your quirks have been reset, and you'll need to set up your quirks again."))
 
 
-#undef DEFAULT_SLOT_AMT
+#undef MAX_FREE_PER_CAT
 #undef HANDS_SLOT_AMT
 #undef BACKPACK_SLOT_AMT
