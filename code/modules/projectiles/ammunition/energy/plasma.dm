@@ -76,12 +76,12 @@
 /obj/item/ammo_casing/energy/plasma/pistol/eve/caster
 	projectile_type = /obj/item/projectile/f13plasma/pistol/eve/worn
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
-	e_cost = 25 //should be 5 shots of a stream of 5.
+	e_cost = 80 //should be 5 shots of a stream of 5.
 
 /obj/item/ammo_casing/energy/plasma/pistol/caster
 	projectile_type = /obj/item/projectile/f13plasma/pistol
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
-	e_cost = 12.5 //should be double of the eve caster
+	e_cost = 40 //should be double of the eve caster
 
 /obj/item/ammo_casing/energy/plasma/miner
 	projectile_type = /obj/item/projectile/f13plasma/repeater/mining
