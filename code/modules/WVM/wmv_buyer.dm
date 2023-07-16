@@ -471,7 +471,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		var/obj/item/stack/S = I
 		final_price = S.amount * final_price
 	var/fractional = final_price - FLOOR(final_price, 1)
-	if(fractional)
+	if(fractional || prob(5))
 		payout_fractional(fractional)
 	var/storedcaps = payout(final_price)
 	say("Sold [I] for [final_price] Edisons, bringing the total to [storedcaps] copper!")
@@ -527,7 +527,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/obj/item/paper/our_paper = new(src)
 	if(!our_paper)
 		return FALSE
-	var/true_luck = rand(1, (fractional * 100))
+	var/true_luck = rand(1, clamp(fractional * 10, 1, 100))
 	our_paper.name = "[whos_it_for.name]'s fortune"
 	our_paper.info += "<br>"
 	our_paper.info += write_contents(true_luck, whos_it_for.name)
@@ -561,26 +561,27 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 				if(1)
 					msg_out += "\tA bird in the hand is worth two in the bush, but a cat in the bag is worth nothing at all.<br>"
 				if(2)
-					msg_out += "\tThe sun is shining brightly today, and the birds are singing their melodious songs. I feel happy and grateful for this wonderful day. Life is full of surprises and opportunities, and I am ready to embrace them all.<br>"
+					msg_out += "\tThe sun is shining brightly today, and the birds are singing their melodious songs. You feel happy and grateful for this wonderful day. Life is full of surprises and opportunities, and you are ready to embrace them all.<br>"
 				if(3)
-					msg_out += "\tSometimes I like to wander around the city, and explore new places and people. I enjoy the diversity and richness of cultures and experiences. There is so much to learn and discover in this world, and I am curious and open-minded.<br>"
+					msg_out += "\tSometimes you like to wander around the city, and explore new places and people. You enjoy the diversity and richness of cultures and experiences. There is so much to learn and discover in this world, and you are curious and open-minded.<br>"
 				if(4)
-					msg_out += "\tI love reading books, especially fantasy and science fiction. They transport me to different worlds and realities, where anything is possible. I admire the creativity and imagination of the authors, and I feel inspired by their stories.<br>"
+					msg_out += "\tI love reading books, especially fantasy and science fiction. They transport you to different worlds and realities, where anything is possible. You admire the creativity and imagination of the authors, and you feel inspired by their stories.<br>"
 				if(5)
 					msg_out += "\tBitch.<br>"
 		if(66 to 100)
 			switch(rand(1,5))
 				if(1)
-					msg_out += "\tThe sun is dazzling today, and the birds are serenading me with their heavenly songs. I feel ecstatic and blessed for this magnificent day. Life is overflowing with miracles and possibilities, and I am eager to seize them all.<br>"
+					msg_out += "\tThe sun is dazzling today, and the birds are serenading you with their heavenly songs. You feel ecstatic and blessed for this magnificent day. Life is overflowing with miracles and possibilities, and you are eager to seize them all.<br>"
 				if(2)
-					msg_out += "\tSometimes I like to roam around the city, and discover new wonders and friends. I delight in the variety and richness of cultures and experiences. There is so much to learn and explore in this world, and I am adventurous and open-hearted.<br>"
+					msg_out += "\tSometimes you like to roam around the city, and discover new wonders and friends. You delight in the variety and richness of cultures and experiences. There is so much to learn and explore in this world, and you are adventurous and open-hearted.<br>"
 				if(3)
-					msg_out += "\tI adore reading books, especially fantasy and science fiction. They whisk me away to different worlds and realities, where anything is achievable. I marvel at the creativity and imagination of the authors, and I feel motivated by their stories.<br>"
+					msg_out += "\tI adore reading books, especially fantasy and science fiction. They whisk you away to different worlds and realities, where anything is achievable. You marvel at the creativity and imagination of the authors, and you feel motivated by their stories.<br>"
 				if(4)
-					msg_out += "\tMusic is my joy and my healing. It calms my soul and elevates my spirit. I like to listen to different genres and artists, and appreciate the beauty and emotion of their songs. Music bonds me to myself and others, and conveys what words cannot.<br>"
+					msg_out += "\tMusic is my joy and my healing. It calms my soul and elevates my spirit. You like to listen to different genres and artists, and appreciate the beauty and emotion of their songs. Music bonds you to myself and others, and conveys what words cannot.<br>"
 				if(5)
 					msg_out += "\tBitch.<br>"
 
+	msg_out += "<hr><br>"
 	msg_out += "<center>YOU HAVE BEEN WARNED!</center><br>"
 	msg_out += "<center>- END OF REPORT -</center><br>"
 	return span_robot(msg_out.Join())
