@@ -141,7 +141,9 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/proc/get_revivable_body()
 	var/mob/corpse = GET_WEAKREF(ownermob)
 	var/mob/current = get_currently_played_mob() // should always be *something*
-	var/mob/currenter = current.mind?.current
+	if(!current) // though turns out it might not???
+		return // i guess??????
+	var/mob/currenter = current?.mind?.current
 	if(isliving(currenter))
 		if(!corpse || currenter != corpse)
 			corpse = currenter
