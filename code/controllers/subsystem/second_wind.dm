@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(secondwind)
 	/// format: list("ckey" = datum/second_wind)
 	var/list/second_winders = list()
 	var/life_cooldown = 2 HOURS
-	var/death_delay = 15 MINUTES
+	var/death_delay = 5 MINUTES
 	var/max_lives = 1
 	var/start_lives = 1
 	var/allow_third_wind = TRUE
