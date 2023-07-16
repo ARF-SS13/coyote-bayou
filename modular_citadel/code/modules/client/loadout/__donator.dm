@@ -665,7 +665,7 @@
 	new /obj/item/storage/box/gun/revolver/revolver44(src)
 
 /datum/gear/donator/kits/jaggachi_5
-	name = "Army Service Kit"
+	name = "Soviet Service Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi_5
 	ckeywhitelist = list("jaggachi")
 
@@ -674,6 +674,17 @@
 	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken(src)
 	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
 	new /obj/item/ammo_box/m44box(src)
+
+/datum/gear/donator/kits/jaggachi_6
+	name = "Army Service Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_6
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_6/PopulateContents()
+	new /obj/item/clothing/under/soviet(src)
+	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
+	new /obj/item/clothing/suit/armor/light/vest/russian(src)
+	new /obj/item/gun/energy/laser/LaserAK/worn(src)
 
 // K
 
