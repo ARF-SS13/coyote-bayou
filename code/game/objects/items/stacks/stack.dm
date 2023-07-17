@@ -57,8 +57,6 @@
 		new type(loc, max_amount, FALSE)
 	if(!merge_type)
 		merge_type = type
-	if(amount < 1) // tired of this shit
-		return INITIALIZE_HINT_QDEL
 	if(custom_materials && custom_materials.len)
 		mats_per_unit = list()
 		var/in_process_mat_list = custom_materials.Copy()
