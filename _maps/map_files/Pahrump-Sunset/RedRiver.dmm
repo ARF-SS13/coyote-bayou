@@ -28768,7 +28768,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "oBn" = (
-/obj/machinery/porta_turret/f13/turret_22lr,
+/obj/machinery/porta_turret/f13/turret_22lr{
+	faction = list("raider","hostile")
+	},
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "oBB" = (
