@@ -57,7 +57,7 @@
 		new type(loc, max_amount, FALSE)
 	if(!merge_type)
 		merge_type = type
-	if(amount < 1) // tired of this shit
+	if(zero_amount()) // tired of this shit
 		return INITIALIZE_HINT_QDEL
 	if(custom_materials && custom_materials.len)
 		mats_per_unit = list()
@@ -90,6 +90,7 @@
 					recipes += temp
 	update_weight()
 	update_icon()
+	return INITIALIZE_HINT_NORMAL
 
 /obj/item/stack/proc/get_main_recipes()
 	return list()//empty list
