@@ -57,7 +57,7 @@
 		new type(loc, max_amount, FALSE)
 	if(!merge_type)
 		merge_type = type
-	if(amount < 1) // tired of this shit // It seems it fails to initialize if we do dis...so... yea
+	if(amount < 1) // tired of this shit
 		return INITIALIZE_HINT_QDEL
 	if(custom_materials && custom_materials.len)
 		mats_per_unit = list()
