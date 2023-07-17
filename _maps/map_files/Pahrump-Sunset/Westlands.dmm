@@ -2221,7 +2221,7 @@
 /area/awaymission/wildwest)
 "jo" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","deathclaw","mining")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -9516,7 +9516,9 @@
 /area/awaymission/wildwest/vault)
 "MX" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter{
+	faction = list("mining","boss","wastebot")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
@@ -10551,7 +10553,9 @@
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
 "RH" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter{
+	faction = list("mining","boss","wastebot")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
