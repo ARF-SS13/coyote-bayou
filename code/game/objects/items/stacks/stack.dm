@@ -58,7 +58,6 @@
 	if(!merge_type)
 		merge_type = type
 	if(zero_amount()) // tired of this shit
-		log_world("[src] - @[x],[y],[z] zero_amount() triggered")
 		return INITIALIZE_HINT_QDEL
 	if(custom_materials && custom_materials.len)
 		mats_per_unit = list()
@@ -79,7 +78,6 @@
 			if(can_merge(item_stack))
 				INVOKE_ASYNC(src, .proc/merge_without_del, item_stack)
 				if(zero_amount())
-					log_world("[src] - @[x],[y],[z] zero_amount() triggered")
 					return INITIALIZE_HINT_QDEL
 	var/list/temp_recipes = get_main_recipes()
 	recipes = temp_recipes.Copy()
