@@ -1549,7 +1549,7 @@
 /area/f13/farmhouse)
 "gG" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -4182,7 +4182,7 @@
 /area/awaymission/wildwest)
 "rB" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -6215,7 +6215,7 @@
 /area/awaymission/wildwest)
 "Af" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wooden2,
@@ -9435,7 +9435,7 @@
 /area/awaymission/wildwest/refine)
 "MK" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -12231,7 +12231,7 @@
 /area/awaymission/wildwest)
 "YR" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockcrete_slab,
