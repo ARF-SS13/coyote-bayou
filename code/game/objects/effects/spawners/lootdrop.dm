@@ -71,7 +71,7 @@
 			var/block_recursive_tier_swap = (tier_adjusted && ispath(lootspawn, /obj/effect/spawner/lootdrop))
 			if(istype(lootspawn, /obj/item/stack))
 				block_recursive_tier_swap = 1 // Honestly dunno what I'm doing here, if I leave this be, it sets the stack to spawn as 0 :(
-				world_log("Spawning [lootspawn] with [block_recursive_tier_swap] amount")
+				log_world("Spawning [lootspawn] with [block_recursive_tier_swap] amount")
 			var/atom/movable/spawned_loot = new lootspawn(A, block_recursive_tier_swap)
 			if(islist(listhack))
 				listhack |= spawned_loot
