@@ -28,10 +28,10 @@
 /obj/effect/spawner/lootdrop/proc/startup_procedure(mapload, block_tier_swap, survived_snap)
 	adjust_tier(block_tier_swap)
 	if(cull_spawners(mapload, block_tier_swap, survived_snap))
-		return
+		return INITIALIZE_HINT_NORMAL
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
-		return // have fun!
+		return INITIALIZE_HINT_NORMAL // have fun!
 	spawn_the_stuff() // lov dan
 	return INITIALIZE_HINT_QDEL
 
