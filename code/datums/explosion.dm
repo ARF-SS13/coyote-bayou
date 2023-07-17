@@ -175,6 +175,9 @@ GLOBAL_LIST_EMPTY(explosions)
 
 	//lists are guaranteed to contain at least 1 turf at this point
 
+	if(!cached_exp_block)
+		cached_exp_block = list() // This is the safety net to stop explosions from eating poop in linters.
+
 	var/iteration = 0
 	var/affTurfLen = affected_turfs.len
 	var/expBlockLen = cached_exp_block.len
