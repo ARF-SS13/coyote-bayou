@@ -197,7 +197,7 @@
 /mob/living/simple_animal/hostile/megafauna/dragon{
 	name = "Osto";
 	health = 4000;
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique, /obj/effect/spawner/lootdrop/f13/rare_unique);
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique);
 	crusher_loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique);
 	loot_amount_random = 3
 	},
@@ -523,7 +523,7 @@
 /area/awaymission/wildwest/refine)
 "cq" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("robot")
+	faction = list("wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall,
@@ -2633,7 +2633,7 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -5168,7 +5168,7 @@
 /area/awaymission/wildwest/vault)
 "vM" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("robot")
+	faction = list("wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/r_wall/rust,
@@ -6719,7 +6719,7 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -7974,7 +7974,7 @@
 /area/awaymission/wildwest/refine)
 "Ha" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("robot")
+	faction = list("wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/rust,
@@ -8384,7 +8384,7 @@
 "IA" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -10041,7 +10041,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
