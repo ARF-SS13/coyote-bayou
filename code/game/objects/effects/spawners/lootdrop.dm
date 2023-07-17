@@ -69,7 +69,7 @@
 			loot.Remove(lootspawn)
 		if(lootspawn)
 			var/block_recursive_tier_swap = (tier_adjusted && ispath(lootspawn, /obj/effect/spawner/lootdrop))
-			if(istype(A, /obj/item/stack))
+			if(istype(lootspawn, /obj/item/stack))
 				block_recursive_tier_swap = rand(1, 3) // Honestly dunno what I'm doing here, if I leave this be, it sets the stack to spawn as 0 :(
 			var/atom/movable/spawned_loot = new lootspawn(A, block_recursive_tier_swap)
 			if(islist(listhack))
