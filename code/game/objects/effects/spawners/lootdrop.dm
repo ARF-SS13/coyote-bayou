@@ -68,11 +68,7 @@
 		if(!lootdoubles)
 			loot.Remove(lootspawn)
 		if(lootspawn)
-			var/block_recursive_tier_swap = (tier_adjusted && ispath(lootspawn, /obj/effect/spawner/lootdrop))
-			if(istype(lootspawn, /obj/item/stack))
-				block_recursive_tier_swap = 1 // Honestly dunno what I'm doing here, if I leave this be, it sets the stack to spawn as 0 :(
-				log_world("Spawning [lootspawn] with [block_recursive_tier_swap] amount")
-			var/atom/movable/spawned_loot = new lootspawn(A, block_recursive_tier_swap)
+			var/atom/movable/spawned_loot = SpawnTheLootDrop(A, lootspawn)
 			if(islist(listhack))
 				listhack |= spawned_loot
 			if(fan_out_items)
@@ -84,6 +80,17 @@
 					spawned_loot.pixel_y = pixel_y
 	if(delay_spawn)
 		qdel(src)
+
+/obj/effect/spawner/lootdrop/proc/SpawnTheLootDrop(loc, path) // This makes sure the item is properly casted to the correct type, as /obj/item/stack doesn't like new() when you cast it as atom/movable :(
+	if(istype(path, /obj/item/stack))
+		var/amount = rand(1,3)
+		var/obj/item/stack/S = new path(loc, amount)
+		return S
+	
+	var/block_recursive_tier_swap = (tier_adjusted && ispath(path, /obj/effect/spawner/lootdrop))
+	var/atom/movable/spawned_loot = new path(loc, block_recursive_tier_swap)
+	return spawned_loot
+
 
 /obj/effect/spawner/lootdrop/bedsheet
 	icon = 'icons/obj/bedsheets.dmi'
