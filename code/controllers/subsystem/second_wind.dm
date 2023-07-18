@@ -16,7 +16,8 @@
 #define SW_ERROR_DISABLED       (1 << 11)
 #define SW_ERROR_NOT_STARTED    (1 << 12)
 #define SW_ERROR_RUNTIMED       (1 << 13)
-#define SW_ERROR_DEAD_DELAYED   (1 << 16)
+#define SW_ERROR_DEAD_DELAYED   (1 << 14)
+#define SW_ERROR_HARDCORE       (1 << 15)
 
 #define SW_UI_DEFAULT "SWDefault"
 #define SW_UI_README  "SWReadMe"
@@ -26,6 +27,7 @@
 #define SW_I_SECOND_WINDED        (1 << 1)
 #define SW_I_DIED_BEFORE          (1 << 2)
 #define SW_FULL_LIFE_CONSEQUENCES (1 << 3)
+#define SW_HC                     (1 << 4)
 
 /// Yeah this is gonna be important later
 SUBSYSTEM_DEF(secondwind)
@@ -47,10 +49,12 @@ SUBSYSTEM_DEF(secondwind)
 	var/died_at_least_once = 0
 	var/third_winded_folk = 0
 	var/full_life_consequences = 0
+	var/hardcores = 0
+
 	var/last_life_tick = 0
 
 /datum/controller/subsystem/secondwind/stat_entry(msg)
-	msg = "#:[LAZYLEN(second_winders)]-F:[full_life_consequences]-D:[died_at_least_once]-SW:[used_a_second_wind]-TW:[third_winded_folk]-C:[round(cost,0.005)]"
+	msg = "#:[LAZYLEN(second_winders)]-F:[full_life_consequences]-D:[died_at_least_once]-SW:[used_a_second_wind]-TW:[third_winded_folk]-HC:[hardcores]-C:[round(cost,0.005)]"
 	return ..()
 
 /datum/controller/subsystem/secondwind/Initialize(start_timeofday)
@@ -65,6 +69,7 @@ SUBSYSTEM_DEF(secondwind)
 	died_at_least_once = 0
 	third_winded_folk = 0
 	full_life_consequences = 0
+	hardcores = 0
 	for(var/mob_key in second_winders)
 		var/datum/second_wind/my_wind = second_winders[mob_key]
 		if(!my_wind)
@@ -79,6 +84,8 @@ SUBSYSTEM_DEF(secondwind)
 			died_at_least_once++
 		if(CHECK_BITFIELD(stats, SW_FULL_LIFE_CONSEQUENCES))
 			full_life_consequences++
+		if(CHECK_BITFIELD(stats, SW_HC))
+			hardcores++
 	last_life_tick = world.time
 
 /datum/controller/subsystem/secondwind/proc/show_menu_to(client_mob_or_ckey)
@@ -114,6 +121,12 @@ SUBSYSTEM_DEF(secondwind)
 	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
 	my_wind.i_died()
 
+/datum/controller/subsystem/secondwind/proc/is_hardcore(ckey)
+	if(!ckey)
+		CRASH("i_died called with no key_lookup!")
+	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
+	return my_wind.hardcore
+
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -126,6 +139,7 @@ SUBSYSTEM_DEF(secondwind)
 	var/third_winded = FALSE
 	var/life_meter = 0
 	var/death_meter = 0
+	var/hardcore = FALSE
 
 	var/window_state = SW_UI_DEFAULT
 
@@ -139,6 +153,7 @@ SUBSYSTEM_DEF(secondwind)
 	get_revivable_body()
 
 /datum/second_wind/proc/get_revivable_body()
+	hardcore = FALSE
 	var/mob/corpse = GET_WEAKREF(ownermob)
 	var/mob/current = get_currently_played_mob() // should always be *something*
 	if(!current) // though turns out it might not???
@@ -157,6 +172,8 @@ SUBSYSTEM_DEF(secondwind)
 	if(!corpse)
 		return
 		//CRASH("get_revivable_body for [ownerkey] called with no corpse and no currently played mob! wtf") // turns out disconnected players count, I guess?
+	if(HAS_TRAIT(corpse, TRAIT_NO_SECOND_WIND))
+		hardcore = TRUE
 	return corpse
 
 /datum/second_wind/proc/get_currently_played_mob()
@@ -205,6 +222,8 @@ SUBSYSTEM_DEF(secondwind)
 		. |= SW_I_SECOND_WINDED
 	if(lives_left >= SSsecondwind.max_lives)
 		. |= SW_FULL_LIFE_CONSEQUENCES
+	if(hardcore)
+		. |= SW_HC
 
 /datum/second_wind/proc/one_up(silent)
 	lives_left = clamp(lives_left + 1, 0, SSsecondwind.max_lives)
@@ -401,6 +420,8 @@ SUBSYSTEM_DEF(secondwind)
 		return SW_ERROR_CANNOT_REENTER
 	if(QDELETED(master))
 		return SW_ERROR_QDELLED_BODY
+	if(HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
+		return SW_ERROR_HARDCORE
 	if(master.restrained(TRUE))
 		return SW_ERROR_CUFFED
 	if(third_winded)
@@ -420,7 +441,7 @@ SUBSYSTEM_DEF(secondwind)
 		"Percentage" = 100,
 		"TargTime" = SSsecondwind.life_cooldown,
 	)
-	if(third_winded)
+	if(third_winded || HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
 		.["PBarColors"] = "bad"
 		.["TimeText"] = "Never!"
 		.["Percentage"] = 0
@@ -453,7 +474,7 @@ SUBSYSTEM_DEF(secondwind)
 		"DedPercentage" = 100,
 		"DedTargTime" = SSsecondwind.death_delay,
 	)
-	if(third_winded)
+	if(third_winded || HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
 		.["DedPBarColors"] = "bad"
 		.["DedTimeText"] = "Never!"
 		.["DedPercentage"] = 0
@@ -500,6 +521,19 @@ SUBSYSTEM_DEF(secondwind)
 		if(SW_ERROR_NO_BODY)
 			.["BodyHead"] = "NO BODY"
 			.["BodyFill"] = "You don't have a body to revive!"
+			.["BodyHeadIconColor"] = "bad"
+			.["BodyHeadIconImg"] = "times"
+			.["ShowButtons"] = "None"
+			return
+		if(SW_ERROR_HARDCORE)
+			.["BodyHead"] = "HARDCORE"
+			if(am_alive)
+				.["BodyFill"] = "You've opted out of Second Wind! If you die, the only way you're getting back up \
+					is if someone else revives you! Don't expect much help from divine intervention, so be careful \
+					and bring a friend!"
+			else
+				.["BodyFill"] = "You've opted out of Second Wind! The only way you're getting back up is if someone else revives you! \
+					Don't expect much help from divine intervention!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
@@ -631,6 +665,15 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadIconColor"] = "bad"
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
+		return
+	if(HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
+		.["BodyHead"] = "HARDCORE"
+		.["BodyFill"] = "You've opted out of Second Wind! If you die, the only way you're getting back up \
+			is if someone else revives you! Don't expect much help from divine intervention, so be careful \
+			and bring a friend!"
+		.["BodyHeadIconColor"] = "bad"
+		.["BodyHeadIconImg"] = "times"
+		.["ShowButtons"] = "None"
 		return
 	if(master?.stat != DEAD)
 		.["BodyHead"] = "You're not dead!"
