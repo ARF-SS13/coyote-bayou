@@ -47,25 +47,43 @@
 	if(!isnull(chance))
 		src.chance = chance
 
+/datum/artifact_effect/proc/pre_effect(mob/living/target, obj/item/holder, obj/item/parent)
+	if(!isliving(target))
+		return
+	if(!isitem(holder))
+		return
+	if(!isitem(parent))
+		return
+	if(!COOLDOWN_FINISHED(src, cooldown))
+		return
+	COOLDOWN_START(src, cooldown, tick_length)
+	if(!prob(chance))
+		return
+	return TRUE
+
 /datum/artifact_effect/proc/on_equip(mob/living/target, obj/item/holder, obj/item/parent)
-	return
+	return pre_effect(target, holder, parent)
 
 /datum/artifact_effect/proc/on_unequip(mob/living/target, obj/item/holder, obj/item/parent)
-	return
+	return pre_effect(target, holder, parent)
 
 /datum/artifact_effect/proc/on_tick(mob/living/target, obj/item/holder, obj/item/parent)
-	return
+	return pre_effect(target, holder, parent)
 
 //// MAX HP MODIFIER ////
 /datum/artifact_effect/max_hp_modifier
 	kind = ARTMOD_MAX_HP
 
 /datum/artifact_effect/max_hp_modifier/on_equip(mob/living/target)
+	if(!..())
+		return
 	if(!istype(target))
 		return
 	target.maxHealth += amount
 
 /datum/artifact_effect/max_hp_modifier/on_unequip(mob/living/target)
+	if(!..())
+		return
 	if(!istype(target))
 		return
 	target.maxHealth -= amount
@@ -92,7 +110,7 @@
 	var/organ = 0
 
 /datum/artifact_effect/passive_damage/on_tick(mob/living/target, obj/item/holder, obj/item/parent)
-	if(!istype(target))
+	if(!..())
 		return
 	if(target.health < min_health)
 		return
@@ -106,5 +124,23 @@
 		organ,
 	)
 
+/// STAMINA ADJUSTER ///
+/// Dont use for healing, it just wont work ///
+/datum/artifact_effect/stamina
+	kind = ARTMOD_STAMINA
+	/// How much to adjust stamina by
+	var/stamina_adjustment = 0
+	/// Cooldown if it stamcrits the user
+	var/stamcrit_cooldown = 45 SECONDS
 
+/datum/artifact_effect/stamina/on_tick(mob/living/target, obj/item/holder, obj/item/parent)
+	if(!..())
+		return
+	if(stamina_adjustment < 0)
+		return do_stamage(target, holder, parent)
+	else
+		return do_stamheal(target, holder, parent)
+
+/datum/artifact_effect/stamina/proc/do_stamage(mob/living/target, obj/item/holder, obj/item/parent)
+	if(!COOLDOWN_FINISHED(src, ))
 
