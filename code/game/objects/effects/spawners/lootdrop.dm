@@ -82,7 +82,7 @@
 		qdel(src)
 
 /obj/effect/spawner/lootdrop/proc/SpawnTheLootDrop(loc, path) // This makes sure the item is properly casted to the correct type, as /obj/item/stack doesn't like new() when you cast it as atom/movable :(
-	if(istype(path, /obj/item/stack))
+	if(ispath(path, /obj/item/stack))
 		var/amount = rand(1,3)
 		var/obj/item/stack/S = new path(loc, amount)
 		return S
