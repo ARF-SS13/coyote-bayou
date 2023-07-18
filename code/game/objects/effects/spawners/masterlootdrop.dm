@@ -1084,7 +1084,7 @@
 	loot = list(
 		/obj/item/stack/sheet/mineral/diamond/twentyfive = 1,
 		/obj/item/stack/sheet/mineral/plasma/twentyfive = 5,
-		/obj/item/stack/sheet/mineral/gold/twnetyfive = 3,
+		/obj/item/stack/sheet/mineral/gold/twentyfive = 3,
 		/obj/item/stack/sheet/mineral/plastitanium/twentyfive = 5,
 		/obj/item/ingot/adamantine = 20,
 		/obj/item/stack/sheet/mineral/abductor/ten = 5,
