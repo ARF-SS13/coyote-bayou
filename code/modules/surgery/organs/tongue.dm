@@ -386,3 +386,10 @@
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/irish)
+
+/obj/item/organ/tongue/slurry
+	name = "\improper Slurry tongue"
+	desc = "A tongue that is quite human-like, but speaks with a slurred and kind of goofy accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/slurry)
