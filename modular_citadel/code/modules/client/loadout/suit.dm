@@ -1141,6 +1141,25 @@
 	path = /obj/item/clothing/suit/toggle/labcoat/detvest
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 
+//Soviet Gear
+
+/datum/gear/suit/russianjacket
+	name = "Russian Officer Jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/navyblue/russian
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 1
+
+/datum/gear/suit/sovietjacket
+	name = "Soviet Officer Jacket"
+	path = /obj/item/clothing/suit/armor/light/duster/russian_coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/sovietlightvest
+	name = "Soviet Vest"
+	path = /obj/item/clothing/suit/armor/light/vest/russian
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 // BEGIN_INTERNALS
 // END_INTERNALS
