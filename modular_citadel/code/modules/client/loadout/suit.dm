@@ -1151,7 +1151,7 @@
 
 /datum/gear/suit/sovietjacket
 	name = "Soviet Officer Jacket"
-	path = obj/item/clothing/suit/armor/light/duster/russian_coat
+	path = /obj/item/clothing/suit/armor/light/duster/russian_coat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
