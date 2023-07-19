@@ -2865,6 +2865,6 @@
 /datum/gear/uniform/russianuniform
 	name = "Russian Officers Uniform"
 	cost = 0
-	path = obj/item/clothing/under/costume/russian_officer
+	path = /obj/item/clothing/under/costume/russian_officer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
