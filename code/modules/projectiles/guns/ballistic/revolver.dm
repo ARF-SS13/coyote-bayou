@@ -249,7 +249,7 @@
  * Uncommon
  * * * * * * * * * * */
 
-	/obj/item/gun/ballistic/revolver/medusa
+/obj/item/gun/ballistic/revolver/medusa
 	name = "Medusa Multi-Caliber Revolver"
 	desc = "A hefty pre-war revolver with an unusual multi-caliber cylinder, able to fit from .22 up to .44, though the loose chambering makes it quite innacurate"
 	icon_state = "medusa" 
