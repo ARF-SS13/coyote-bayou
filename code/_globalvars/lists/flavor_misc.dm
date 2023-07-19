@@ -284,6 +284,7 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 	"japanese tongue" = /obj/item/organ/tongue/japanese,
 	"chinese tongue" = /obj/item/organ/tongue/chinese,
 	"irish tongue" = /obj/item/organ/tongue/irish,
+	"slurry tongue" = /obj/item/organ/tongue/slurry,
 	"bug tongue" = /obj/item/organ/tongue/bug,
 	"vampire tongue" = /obj/item/organ/tongue/vampire
 	//"skeleton tongue" = /obj/item/organ/tongue/bone,
