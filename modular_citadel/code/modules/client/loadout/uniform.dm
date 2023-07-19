@@ -2854,4 +2854,17 @@
 	path = /obj/item/clothing/under/greek_dress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
+// Soviet Uniforms
+
+/datum/gear/uniform/sovietuniform
+	name = "Soviet Uniform"
+	cost = 0
+	path = /obj/item/clothing/under/costume/soviet
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/russianuniform
+	name = "Russian Officers Uniform"
+	cost = 0
+	path = obj/item/clothing/under/costume/russian_officer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
