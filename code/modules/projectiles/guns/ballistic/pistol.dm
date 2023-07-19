@@ -678,6 +678,15 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+/* * * * * * * * * *
+* .44 automag copycat. same as the original one
+* * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun
+	name = "Custom M6G Magnum"
+	desc = "A custom gold plated M6G magnum. The magnum itself has a built in smart scope alongside black wooden furniture."
+	icon_state = "m6gold"
+	item_state = "m6gold"
 
 /* * * * * * * * * * *
  * 14mm Semi-Auto
