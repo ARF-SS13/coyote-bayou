@@ -7,7 +7,7 @@
 /datum/gear/shoes/laceup
 	name = "laceup shoes"
 	path = /obj/item/clothing/shoes/laceup
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/workboots
 	name = "work boots"
@@ -63,22 +63,22 @@
 /datum/gear/shoes/wraps
 	name = "golden leg wraps"
 	path = /obj/item/clothing/shoes/wraps
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapssilver
 	name = "silver leg wraps"
 	path = /obj/item/clothing/shoes/wraps/silver
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapsblue
 	name = "blue leg wraps"
 	path = /obj/item/clothing/shoes/wraps/blue
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapsred
 	name = "red leg wraps"
 	path = /obj/item/clothing/shoes/wraps/red
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wornboots
 	name = "worn boots"
