@@ -388,8 +388,8 @@
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/coyote/oldnaginata
-	name = "Old Naginata"
-	desc = "An oriental looking blade on a stick."
+	name = "Old Naginata" // Nobushi kick spammer was here.
+	desc = "An oriental looking blade on a stick." /* ForHonor */
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
 	icon_state = "naginata"
 	item_state = "naginata"
