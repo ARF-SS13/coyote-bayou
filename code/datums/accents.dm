@@ -259,13 +259,13 @@
 	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
-/datum/accent/slurry/modify_speech(list/speech_args)
+/datum/accent/slurry/modify_speech(list/speech_args) // https://youtu.be/w2_0mhkbrzg ~TK
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message[1] != "*")
 		message = replacetext(message, "r", "w")
 		message = replacetext(message, "l", "w")
 		message = replacetext(message, "th", "ff")
-		message = replacetext(message, "you", "chu")
+		message = replacetext(message, "you ", "chu ")
 	speech_args[SPEECH_MESSAGE] = message
 	return speech_args
 
