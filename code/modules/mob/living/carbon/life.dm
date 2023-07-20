@@ -143,8 +143,9 @@
 
 	//CRIT
 	if(health <= HEALTH_THRESHOLD_FULLCRIT || !lungs || lungs.failed)
-		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
-			return
+		if(reagents) // I know this is scuffed, but it stops unit testing from getting upset :')
+			if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
+				return
 		adjustOxyLoss(0.5)
 
 		failed_last_breath = 1
