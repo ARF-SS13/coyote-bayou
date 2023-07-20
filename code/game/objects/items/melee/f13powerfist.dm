@@ -42,19 +42,19 @@
 		H.dna.species.punchdamagehigh -= enhancement
 		H.dna.species.punchdamagelow -= enhancement
 	return ..()
-/obj/item/melee/powerfist/f13/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/wrench))
-		switch(fisto_setting)
-			if(1)
-				fisto_setting = 2
-			if(2)
-				fisto_setting = 1
-		W.play_tool_sound(src)
-		to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
-		attack_speed = CLICK_CD_MELEE * fisto_setting
+//obj/item/melee/powerfist/f13/attackby(obj/item/W, mob/user, params)
+	//if(istype(W, /obj/item/wrench))
+		//switch(fisto_setting)
+			//if(1)
+				//fisto_setting = 2
+			//.if(2)
+				//fisto_setting = 1
+		//W.play_tool_sound(src)
+		//to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
+		//attack_speed = CLICK_CD_MELEE * fisto_setting
 
-/obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
-	return
+//obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
+	//return
 
 /obj/item/melee/powerfist/f13/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
