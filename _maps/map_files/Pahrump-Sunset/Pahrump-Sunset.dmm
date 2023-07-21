@@ -6540,15 +6540,19 @@
 /area/f13/wasteland/city/nash/theloop)
 "axu" = (
 /obj/effect/landmark/latejoin,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop3"
 	},
 /area/f13/tunnel/southwest)
 "axv" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right"
 	},
@@ -75890,6 +75894,12 @@
 	icon_state = "bar"
 	},
 /area/f13/building)
+"oLh" = (
+/obj/machinery/gear_painter,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop0"
+	},
+/area/f13/caves)
 "oLj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -115626,7 +115636,7 @@ ayO
 ayO
 apq
 lxp
-adg
+oLh
 axv
 ayl
 aCb

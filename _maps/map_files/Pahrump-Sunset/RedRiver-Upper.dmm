@@ -134,18 +134,6 @@
 /obj/structure/chair/bench,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"bG" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 32;
-	layer = 4
-	},
-/turf/open/indestructible/cobble{
-	light_color = null;
-	color = "#777777"
-	},
-/area/f13/caves)
 "bM" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -3276,12 +3264,6 @@
 /area/f13/caves)
 "Hc" = (
 /obj/effect/landmark/start/f13/biker_boss,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 32;
-	layer = 4
-	},
 /turf/open/indestructible/cobble{
 	light_color = null;
 	color = "#777777"
@@ -4348,11 +4330,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "RQ" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress5"
-	},
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
+	dir = 1;
+	pixel_x = 1;
+	pixel_y = 32;
+	layer = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -5047,7 +5029,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "XR" = (
-/obj/structure/reagent_dispensers/barrel/three,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
@@ -69500,9 +69481,9 @@ re
 nR
 nR
 nR
-jZ
 yI
-bG
+Fr
+On
 On
 On
 je
@@ -69757,8 +69738,8 @@ jZ
 nR
 Jw
 nR
-nR
 LV
+nR
 On
 je
 On
@@ -70014,8 +69995,8 @@ ee
 nR
 nR
 nR
-RQ
 iX
+RQ
 Hc
 Bw
 Bw
