@@ -603,6 +603,7 @@
 	name = "Hephestus Ferromagnetic Rifle"
 	desc = "a damaged, juryrigged prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_prefix = "magriflev"
 	icon_state = "magriflev"
 	item_state = "magrifle"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
