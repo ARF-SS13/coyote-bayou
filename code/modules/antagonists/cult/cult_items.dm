@@ -253,7 +253,7 @@
 	holder = user
 
 /datum/action/innate/cult/spin2win/IsAvailable(silent = FALSE)
-	if(iscarbon (holder) && cooldown <= world.time)
+	if(iscarbon(holder) && cooldown <= world.time)
 		return TRUE
 	else
 		return FALSE
