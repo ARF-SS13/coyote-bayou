@@ -1107,8 +1107,12 @@
 	name = "bubblegum chest"
 
 /obj/structure/closet/crate/necropolis/bubblegum/PopulateContents()
-	new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor/old(src)
-	new /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor/old(src)
+	//new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor/old(src)
+	//new /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor/old(src)
+	new /obj/item/cult_bastard(src)
+	new /obj/item/clothing/head/culthood(src)
+	new /obj/item/clothing/suit/cultrobes(src)
+	new /obj/item/reagent_containers/food/snacks/f13/bubblegum (src)
 	var/loot = rand(1,3)
 	switch(loot)
 		if(1)
