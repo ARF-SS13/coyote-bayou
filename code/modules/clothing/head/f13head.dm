@@ -204,6 +204,14 @@
 	item_state = "metal_mask2"
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_MELEE_T3)
 
+
+/obj/item/clothing/head/helmet/f13/metalmask/custom
+	name = "hockey mask"
+	desc = "A hockey mask made out of some pretty tough plastic, it's covered in scratches"
+	icon_state = "metal_mask2"
+	item_state = "metal_mask2"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1)
+
 /obj/item/clothing/head/helmet/f13/tesla
 	name = "tesla helmet"
 	desc = "A prewar armor design by Nikola Tesla before being confiscated by the U.S. government. Provides high energy weapons resistance."

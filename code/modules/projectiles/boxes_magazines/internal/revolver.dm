@@ -174,3 +174,9 @@
 	ammo_type = /obj/item/ammo_casing/a3006
 	caliber = list(CALIBER_3006)
 	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/magnetic
+	name = "Hephestus Internal Magazine"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = list(CALIBER_556)
+	max_ammo = 20
