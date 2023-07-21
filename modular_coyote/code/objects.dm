@@ -502,5 +502,5 @@
 /obj/item/coin/dvd
 	name = "Dvd"
 	desc = "A shiny disk! Don't scratch it."
-	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd"
