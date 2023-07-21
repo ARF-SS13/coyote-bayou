@@ -557,6 +557,17 @@
 		/datum/firemode/semi_auto
 	)
 
+///////////////////
+//// M6 SOCOM pistol///////////////
+/// Uses M1911 custom as a base ////
+////////////////////////////////////
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom/M6_SOCOM
+	name = "M6 SOCOM"
+	desc = "A variant of the M6 series of pistols. This version is made for orbital shock troops as their main service pistol."
+	icon_state = "M6SOCOM"
+	item_state = "M6SOCOM"
+
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal
 	name = "Santa Muerte"
 	desc = "A custom built 1911 with a brushed brass plated grip, a shiny chrome finish, and a custom muzzle brake.. It has an excerpt of a prayer to lady death etched neatly in it's slide, evoking her protection from evil forces."

@@ -897,6 +897,36 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
+
+/obj/item/gun/ballistic/automatic/m1carbine/covcarbine
+	name = "Type 51 Carbine"
+	desc = "A Type 51 Carbine of unknown origin."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "covdmr"
+	item_state = "covrifle"
+	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+	fire_sound = 'sound/f13weapons/aep7fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/m10mm
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = CARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE) //need to check what this do
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	can_bayonet = FALSE
+	can_scope = TRUE
+	scope_state = "scope_medium"
+	scope_x_offset = 5
+	scope_y_offset = 14
+	can_suppress = FALSE
+
 /* * * * * * * * * * *
  * M2 Carbine
  * 10mm
