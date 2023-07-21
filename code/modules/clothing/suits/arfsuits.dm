@@ -1842,6 +1842,23 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
+///////////////////////////////////
+//// Halo Variation armor   //////
+//////////////////////////////////
+
+// Just variations of any armors to be put here if unable to make into Power Armor variations.
+/obj/item/clothing/suit/armor/medium/vest/SpartanTox
+	name = "MIRAGE Class Assault Armor"
+	desc = "A set of MIRAGE Class Assault armor. Used for infiltration while providing a good set of resistance. Performs very well for enviromental hazards"
+	icon_state = "miragearmor"
+	item_state = "miragearmor"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+		
 
 /obj/item/clothing/suit/armor/medium/vest/flak
 	name = "ancient flak vest"
