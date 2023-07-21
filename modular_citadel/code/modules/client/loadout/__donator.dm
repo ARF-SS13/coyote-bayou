@@ -158,6 +158,15 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 
+/datum/gear/donator/kits/rinpin
+	name = "Lee's stash"
+	path = /obj/item/storage/box/large/custom_kit/rinpin
+	ckeywhitelist = list("Pootismaniac")
+
+/obj/item/storage/box/large/custom_kit/rinpin/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/metalmask/custom(src)
+	new /obj/item/gun/ballistic/rifle/magnetic(src)
+
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"
 	path = /obj/item/storage/box/large/custom_kit/archyzt

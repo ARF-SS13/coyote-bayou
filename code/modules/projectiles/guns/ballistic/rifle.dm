@@ -584,6 +584,65 @@
 	can_scope = TRUE
 	casing_ejector = TRUE
 
+
+
+
+
+/* * * * * * * * * * *
+ * snowflake varmint rifle
+ * identical to a varmint rifle excepting in projectile cosmetics
+ * .223 / 5.56mm
+ * Scopeable
+ * Same damage, literally GUN_EXTRA_DAMAGE_0
+ * Homie just wanted a resprite
+ * Unique, doesn't have to be, throw it in the loot pool if you wanna be goofy
+ * * * * * * * * * * */
+
+
+/obj/item/gun/ballistic/rifle/magnetic
+	name = "Hephestus Ferromagnetic Rifle"
+	desc = "a damaged, juryrigged prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "magriflev"
+	item_state = "magrifle"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	scope_state = "scope_short"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+	fire_sound = 'sound/weapons/magrifle.ogg'
+	can_scope = TRUE
+	casing_ejector = TRUE
+	weapon_special_component = null
+
+/obj/item/gun/ballistic/rifle/magnetic/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a mag bullet.
+	BB.name = "ferromagnetic bullet"
+	BB.icon = 'icons/obj/projectiles.dmi'
+	BB.icon_state = "magjectile-large"
+	BB.pass_flags = PASSTABLE
+	BB.light_range = 3
+	BB.damage_type = BRUTE
+	BB.flag = "bullet"
+	BB.impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	BB.light_color = LIGHT_COLOR_RED
+	BB.is_reflectable = TRUE
+	BB.hitsound = 'sound/weapons/elecfire.ogg'
+	BB.hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+
 /* * * * * * * * * * * * * * * * * *
  * Magazine-Fed Bolt-Action Rifles *
  * * * * * * * * * * * * * * * * * */
