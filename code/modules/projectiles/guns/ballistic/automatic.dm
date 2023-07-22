@@ -898,14 +898,14 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 
-/obj/item/gun/ballistic/automatic/m1carbine/covcarbine
-	name = "Type 51 Carbine"
-	desc = "A Type 51 Carbine of unknown origin."
+/obj/item/gun/ballistic/automatic/m1carbine/aliencarbine
+	name = "T-25 Carbine"
+	desc = "A T-25 Carbine of unknown origin."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "covdmr"
-	item_state = "covrifle"
+	icon_state = "aliendmr"
+	item_state = "alienrifle"
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	fire_sound = 'sound/f13weapons/aep7fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m10mm

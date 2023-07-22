@@ -562,9 +562,9 @@
 /// Uses M1911 custom as a base ////
 ////////////////////////////////////
 
-/obj/item/gun/ballistic/automatic/pistol/m1911/custom/M6_SOCOM
-	name = "M6 SOCOM"
-	desc = "A variant of the M6 series of pistols. This version is made for orbital shock troops as their main service pistol."
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m97socom
+	name = "M97 SOCOM"
+	desc = "A variant of the M series of KiloTech pistols. This version is made for orbital shock troops as their main service pistol."
 	icon_state = "M6SOCOM"
 	item_state = "M6SOCOM"
 
@@ -694,8 +694,8 @@
 * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun
-	name = "Custom M6G Magnum"
-	desc = "A custom gold plated M6G magnum. The magnum itself has a built in smart scope alongside black wooden furniture."
+	name = "Custom SP-M7 Magnum"
+	desc = "A custom gold plated SP series M7 magnum. The magnum itself has a built in smart scope alongside black wooden furniture."
 	icon_state = "m6gold"
 	item_state = "m6gold"
 
