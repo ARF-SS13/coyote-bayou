@@ -162,8 +162,8 @@
 				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing
 		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
-		visible_message("[src] falls apart, the final components having been removed.")
-		qdel(src)
+			visible_message("[src] falls apart, the final components having been removed.")
+			qdel(src)
 
 /obj/structure/gas_pump/oilpump2X
 	name = "Gas Pump"
@@ -210,8 +210,8 @@
 				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing
 		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
-		visible_message("[src] falls apart, the final components having been removed.")
-		qdel(src)
+			visible_message("[src] falls apart, the final components having been removed.")
+			qdel(src)
 
 /obj/structure/gas_pump/oilpump3X
 	name = "Gas Pump"
