@@ -533,7 +533,7 @@ GLOBAL_LIST_INIT(loot_t4_melee, list(
 	/obj/item/melee/unarmed/lacerator,
 	/obj/item/melee/unarmed/maceglove,
 	/obj/item/melee/unarmed/punchdagger,
-	/obj/item/melee/powerfist/f13,
+	/obj/item/melee/unarmed/tigerclaw,
 	/obj/item/shield/riot
 ))
 
@@ -545,7 +545,7 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/gun/ballistic/revolver/ballisticfist,
 	/obj/item/twohanded/sledgehammer/supersledge,
 	/obj/item/shishkebabpack,
-	/obj/item/melee/powerfist/f13/goliath,
+	/obj/item/melee/unarmed/powerfist,
 	/obj/item/melee/unarmed/deathclawgauntlet,
 	/obj/item/melee/powerfist/f13/moleminer
 ))
