@@ -194,6 +194,8 @@
 	desc = "A slick, well machined 9mm revolver made for olympic target shooting, extremely accurate and fast firing, though lacking in stopping power"
 	icon_state = "hermes"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/hermes
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -253,6 +255,8 @@
 	name = "Medusa Multi-Caliber Revolver"
 	desc = "A hefty pre-war revolver with an unusual multi-caliber cylinder, able to fit from .22 up to .44, though the loose chambering makes it quite innacurate"
 	icon_state = "medusa" 
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/medusa
 	weapon_class = WEAPON_CLASS_SMALL
@@ -265,8 +269,8 @@
 
 	can_flashlight = TRUE
 	scope_state = "flight"
-	flight_x_offset = 16
-	flight_y_offset = 18
+	flight_x_offset = 22
+	flight_y_offset = 15
 
 	use_casing_sounds = TRUE
 
