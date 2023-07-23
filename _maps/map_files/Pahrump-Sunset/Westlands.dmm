@@ -88,7 +88,6 @@
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
 "ax" = (
-/obj/machinery/meter,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
@@ -583,11 +582,6 @@
 /area/awaymission/wildwest/refine)
 "cA" = (
 /obj/structure/closet/wardrobe/pjs,
-/obj/machinery/camera{
-	dir = 1;
-	name = "Surgery Operating";
-	pixel_x = 22
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/medical/abandoned)
@@ -667,7 +661,6 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "cX" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
@@ -1011,10 +1004,6 @@
 /area/awaymission/wildwest/refine)
 "et" = (
 /obj/structure/mopbucket,
-/obj/machinery/camera{
-	dir = 1;
-	name = "Custodial Closet"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -1201,7 +1190,6 @@
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "ff" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -2423,7 +2411,6 @@
 /turf/open/floor/plating/asteroid,
 /area/f13/underground/cave)
 "jY" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -2472,7 +2459,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/awaymission/wildwest/refine)
 "ki" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -2673,10 +2659,6 @@
 /area/awaymission/wildwest/refine)
 "lc" = (
 /obj/structure/mopbucket,
-/obj/machinery/camera{
-	dir = 1;
-	name = "Custodial Closet"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
@@ -2855,7 +2837,6 @@
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "lV" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -3706,7 +3687,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/refine)
 "pp" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -4780,10 +4760,6 @@
 /area/awaymission/wildwest)
 "ug" = (
 /obj/structure/table,
-/obj/machinery/camera{
-	dir = 4;
-	name = "Virology Lab"
-	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -6918,7 +6894,6 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "Da" = (
-/obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -7459,10 +7434,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/farmhouse)
 "EX" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 4
-	},
-/obj/machinery/meter,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
@@ -7935,7 +7906,6 @@
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/vault)
 "GS" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -8583,7 +8553,6 @@
 /turf/closed/wall/rust,
 /area/f13/farmhouse)
 "Jo" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -9087,7 +9056,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/awaymission/wildwest/gov)
 "Lj" = (
-/obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
@@ -10161,9 +10129,6 @@
 /area/awaymission/wildwest)
 "Qe" = (
 /obj/machinery/telecomms/server/presets/security,
-/obj/machinery/camera{
-	name = "Telecomms Server Room"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
@@ -10337,11 +10302,6 @@
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "QQ" = (
-/obj/machinery/camera{
-	dir = 8;
-	name = "Production Room";
-	network = list("MINE")
-	},
 /obj/machinery/conveyor_switch/oneway{
 	id = "mining_internal";
 	name = "mining conveyor"
@@ -12094,15 +12054,10 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "Yr" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Ys" = (
-/obj/machinery/camera{
-	dir = 8;
-	name = "Medbay Recovery Room"
-	},
 /obj/structure/bed,
 /obj/machinery/light{
 	dir = 4
@@ -12305,7 +12260,6 @@
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Zj" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)

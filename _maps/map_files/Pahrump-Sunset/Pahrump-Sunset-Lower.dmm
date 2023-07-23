@@ -2786,7 +2786,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bIx" = (
@@ -2795,7 +2794,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/museum)
 "bIy" = (
-/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bIz" = (
@@ -2806,7 +2804,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bIB" = (
@@ -2855,7 +2852,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bIU" = (
-/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bIV" = (
@@ -2920,7 +2916,6 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "bJo" = (
-/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bJp" = (
@@ -5794,7 +5789,6 @@
 	name = "Control Room";
 	req_access_txt = "19; 61"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/f13/tcoms)
 "cjZ" = (
@@ -7132,10 +7126,6 @@
 /area/f13/tunnel)
 "cYz" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/camera/autoname{
-	dir = 5;
-	network = list("Vault")
-	},
 /turf/open/floor/plasteel/darkred/side{
 	dir = 8
 	},
@@ -8689,10 +8679,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "edF" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
-	network = list("Vault")
-	},
 /obj/item/radio/intercom{
 	frequency = 1361;
 	name = "Vault Intercom";
@@ -24306,9 +24292,6 @@
 /obj/machinery/newscaster/security_unit{
 	pixel_y = 32
 	},
-/obj/machinery/camera/autoname{
-	network = list("Vault")
-	},
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
@@ -26447,10 +26430,6 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
-	},
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Vault")
 	},
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/darkred/side,
