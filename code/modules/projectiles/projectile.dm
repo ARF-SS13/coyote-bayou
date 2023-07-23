@@ -638,11 +638,11 @@
 			CRASH("Invalid return value for projectile ricochet check from [A].")
 
 /obj/item/projectile/proc/check_ricochet_flag(atom/A)
-	if((flag in list("energy", "laser")) && (A.flags_ricochet & RICOCHET_SHINY))
-		return TRUE
-	if((flag in list("bomb", "bullet")) && (A.flags_ricochet & RICOCHET_HARD))
-		return TRUE
-	return FALSE
+	//if((flag in list("energy", "laser")) && (A.flags_ricochet & RICOCHET_SHINY))
+		//return TRUE
+	//if((flag in list("bomb", "bullet")) && (A.flags_ricochet & RICOCHET_HARD))
+		//return TRUE
+	return TRUE
 
 /// one move is a tile.
 /obj/item/projectile/proc/return_predicted_turf_after_moves(moves, forced_angle)		//I say predicted because there's no telling that the projectile won't change direction/location in flight.
