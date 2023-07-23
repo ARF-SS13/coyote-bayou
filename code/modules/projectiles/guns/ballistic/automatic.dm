@@ -904,8 +904,8 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "aliendmr"
-	item_state = "alienrifle"
+	icon_state = "covdmr"
+	item_state = "covrifle"
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	fire_sound = 'sound/f13weapons/aep7fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m10mm
@@ -919,13 +919,14 @@
 	)
 	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE) //need to check what this do
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	auto_eject = 1
 	can_bayonet = FALSE
 	can_scope = TRUE
 	scope_state = "scope_medium"
 	scope_x_offset = 5
 	scope_y_offset = 14
 	can_suppress = FALSE
+	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 
 /* * * * * * * * * * *
  * M2 Carbine
@@ -2001,6 +2002,39 @@
 	suppressor_y_offset = 27
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+///////////////////////////////
+////  M41 Battle Rifle /////// 
+/// + fast burst fire rate////
+//  + .308 ammunition. ////// 
+//  + Has zoom built in ///// 
+//  -Takes only 10 round magazines/////
+//  - Burns ammo like a ford pickup does gas ///
+/////////////////////////////////////// 
+
+/obj/item/gun/ballistic/automatic/m41br
+	name = " M41 battle rifle"
+	desc = "This rifle is a Jaeger company battle rifle. This battle rifle comes with a built in scope, ammo counter. This rifle is chambered in 7.62 but can use .308. It seems the magazines it can use is only small .308 magazines."
+	icon_state = "m41r"
+	item_state = "m41r"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	disallowed_mags = /obj/item/ammo_box/magazine/m308/ext
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
+	init_firemodes = list(/datum/firemode/burst/three/fastest
+	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	can_flashlight = FALSE
+	zoom_factor = 1.2
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
 /* * * * * * * * * * *
  * Worn Type 93 assault rifle
  * Chinese 5.56mm autorifle
@@ -2121,6 +2155,34 @@
 	)
 	can_scope = FALSE
 
+/////////////////////////
+/// M5A1 Assault rifle////
+/////////////////////////
+
+/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1
+	name = "M5A1 rifle"
+	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It takes only extended magazines of 5.56 but makes up for such a odd ordeal with an increased fire rate."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "m5a1"
+	item_state = "m5a1"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small, /obj/item/ammo_box/magazine/m556/rifle/, /obj/item/ammo_box/magazine/m556 )
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = AUTORIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE 
+	can_flashlight = FALSE
+
 /* * * * * * * * * * *
  * Police Assault Rifle
  * Baseline 5mm autorifle
@@ -2167,6 +2229,31 @@
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow
 	)
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/fnfal/ak47
+	name = "Retro AK-47"
+	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture. Comes with a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines"
+	icon_state = "trueak"
+	item_state = "trueak"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	disallowed_mags = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/slow
+	)
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_flashlight = FALSE 
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 
