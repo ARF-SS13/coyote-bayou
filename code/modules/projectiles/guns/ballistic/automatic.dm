@@ -899,13 +899,13 @@
 
 
 /obj/item/gun/ballistic/automatic/m1carbine/covcarbine
-	name = "Type 51 Carbine"
-	desc = "A Type 51 Carbine of unknown origin."
+	name = "T25 Assault Carbine"
+	desc = "A T25 Assault Carbine. This unique futuristic looking carbine comes from a company known as Latos Systems."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "covdmr"
-	item_state = "covrifle"
+	icon_state = "aliendmr"
+	item_state = "alienrifle"
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	fire_sound = 'sound/f13weapons/aep7fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m10mm
