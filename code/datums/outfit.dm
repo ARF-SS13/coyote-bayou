@@ -210,7 +210,7 @@
 
 	for (var/obj/a in items)
 		if (location.GetComponent(/datum/component/storage))
-			SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, a, null, TRUE, TRUE)
+			SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, a, null, TRUE, TRUE, null, null)
 		else
 			a.forceMove(location)
 

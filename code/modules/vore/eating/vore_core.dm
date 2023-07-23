@@ -323,7 +323,7 @@
 		return FALSE
 	if(isitem(movable_prey))
 		var/obj/item/item_prey = movable_prey
-		if(CHECK_BITFIELD(SEND_SIGNAL(item_prey.loc, COMSIG_TRY_STORAGE_TAKE, living_pred, master.loc, TRUE), NO_REMOVE_FROM_STORAGE))
+		if(CHECK_BITFIELD(SEND_SIGNAL(item_prey.loc, COMSIG_TRY_STORAGE_TAKE, living_pred, master.loc, TRUE, living_pred.loc, item_prey.current_equipped_slot), NO_REMOVE_FROM_STORAGE))
 			to_chat(master,span_alert("[src] can't be eaten out of [item_prey.loc]!"))
 			return
 

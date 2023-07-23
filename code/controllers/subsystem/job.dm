@@ -740,7 +740,7 @@ SUBSYSTEM_DEF(job)
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
 					var/obj/item/storage/backpack/B = C.back
-					if(!B || !SEND_SIGNAL(B, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE)) // Otherwise, try to put it in the backpack, for carbons.
+					if(!B || !SEND_SIGNAL(B, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE, null, null)) // Otherwise, try to put it in the backpack, for carbons.
 						if(can_drop)
 							I.forceMove(get_turf(C))
 						else

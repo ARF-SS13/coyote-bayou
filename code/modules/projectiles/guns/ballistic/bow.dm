@@ -113,7 +113,7 @@
 	for(var/obj/item/ammo_casing/isit_pointy in got_quiver.contents)
 		if(!isit_pointy.BB)
 			continue
-		if(!SEND_SIGNAL(got_quiver, COMSIG_TRY_STORAGE_TAKE, isit_pointy, magazine))
+		if(!SEND_SIGNAL(got_quiver, COMSIG_TRY_STORAGE_TAKE, isit_pointy, magazine, FALSE, isit_pointy.loc, current_equipped_slot))
 			continue
 		if(magazine.give_round(isit_pointy))
 			return TRUE

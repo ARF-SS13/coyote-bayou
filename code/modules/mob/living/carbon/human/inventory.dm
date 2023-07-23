@@ -313,7 +313,7 @@
 			to_chat(src, span_warning("You can't fit anything in!"))
 		return
 	if(thing) // put thing in backpack
-		if(!SEND_SIGNAL(equipped_back, COMSIG_TRY_STORAGE_INSERT, thing, src))
+		if(!SEND_SIGNAL(equipped_back, COMSIG_TRY_STORAGE_INSERT, thing, src, TRUE, TRUE, thing.loc, null))
 			to_chat(src, span_warning("You can't fit anything in!"))
 		return
 	if(!equipped_back.contents.len) // nothing to take out
@@ -344,7 +344,7 @@
 			to_chat(src, span_warning("You can't fit anything in!"))
 		return
 	if(thing) // put thing in belt
-		if(!SEND_SIGNAL(equipped_belt, COMSIG_TRY_STORAGE_INSERT, thing, src))
+		if(!SEND_SIGNAL(equipped_belt, COMSIG_TRY_STORAGE_INSERT, thing, src, TRUE, TRUE, thing.loc, null))
 			to_chat(src, span_warning("You can't fit anything in!"))
 		return
 	if(!equipped_belt.contents.len) // nothing to take out

@@ -1627,6 +1627,17 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(haystack.loc)
 		return recursive_loc_search(haystack.loc, needle, max_depth - 1)
 
+/// REcursively searches through the atom's loc, looking for a type path, aborting if it hits a turf
+/proc/recursive_loc_path_search(atom/haystack, pathtype, max_depth = 5)
+	if(max_depth <= 0)
+		return // we've gone too deep
+	if(istype(haystack, pathtype))
+		return haystack
+	if(isturf(haystack))
+		return
+	if(haystack.loc)
+		return recursive_loc_path_search(haystack.loc, needle, max_depth - 1)
+
 /// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.
 /proc/get_all_in_turf(turf/search_me, include_turf = FALSE, max_depth = 5)
 	if(!isturf(search_me))
