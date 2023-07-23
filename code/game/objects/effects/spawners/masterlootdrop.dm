@@ -239,6 +239,7 @@
 		/obj/item/gun/ballistic/shotgun/hunting = 2,
 		/obj/item/gun/ballistic/automatic/m1carbine/covcarbine = 2,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2, 
 
 	)
 
@@ -264,6 +265,8 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 2,
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
+		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
+		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 2
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -298,6 +301,8 @@
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 1,
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/bar = 1,
+		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
+		/obj/item/gun/ballistic/automatic/m41br = 1,
 	)
 
 ///////////////////////////
