@@ -558,13 +558,13 @@
 	)
 
 ///////////////////
-//// M6 SOCOM pistol///////////////
+//// M6 (renammed) SOCOM pistol///////////////
 /// Uses M1911 custom as a base ////
 ////////////////////////////////////
 
-/obj/item/gun/ballistic/automatic/pistol/m1911/custom/M6_SOCOM
-	name = "M6 SOCOM"
-	desc = "A variant of the M6 series of pistols. This version is made for orbital shock troops as their main service pistol."
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom
+	name = "M3 SOCOM"
+	desc = "A variant of the M3 series of pistols. This version is made for United Nations Marine Corps Spec Ops as their main service pistol."
 	icon_state = "M6SOCOM"
 	item_state = "M6SOCOM"
 

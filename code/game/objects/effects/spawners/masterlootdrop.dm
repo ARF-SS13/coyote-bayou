@@ -237,6 +237,9 @@
 		/obj/item/gun/ballistic/rifle/mosin = 1,
 		/obj/item/gun/ballistic/rifle/enfield = 1,
 		/obj/item/gun/ballistic/shotgun/hunting = 2,
+		/obj/item/gun/ballistic/automatic/m1carbine/covcarbine = 2,
+		/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom = 1,
+
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
