@@ -19,6 +19,10 @@
 	projectile_type = /obj/item/projectile/plasma/weak
 	e_cost = 100
 
+/obj/item/ammo_casing/energy/plasma/bouncy
+	projectile_type = /obj/item/projectile/energy/nuclear_particle/plasmabounce
+	e_cost = 200
+
 /obj/item/ammo_casing/energy/plasmacarbine
 	projectile_type = /obj/item/projectile/plasmacarbine
 	select_name = "plasma burst"
