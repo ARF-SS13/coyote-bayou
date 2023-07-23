@@ -46,7 +46,7 @@
 	irradiate = 0
 	is_reflectable = TRUE
 	movement_type = FLYING
-	pixels_per_second = TILES_TO_PIXELS(5)
+	pixels_per_second = TILES_TO_PIXELS(15)
 	hitsound = 'sound/weapons/emitter2.ogg'
 	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue
