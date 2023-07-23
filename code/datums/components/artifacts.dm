@@ -1,40 +1,51 @@
+#define ART_MASTER var/obj/item/master = parent
+
 /datum/component/artifact
-	var/list/effect_on_equip = list()
-	var/list/effect_on_unequip = list()
-	var/list/effect_on_tick = list()
-	var/buff_text
-	var/debuff_text
+	var/list/effects = list()
+	var/list/description = list()
+	var/list/identified_by = list()
+	/// Quick lookup what our parent is contained in
+	var/datum/weakref/container
+	var/beatitude = UNCURSED
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
 /datum/component/artifact/Initialize(rads_per_second, list/ref_n_type)
-	if(!isobj(parent))
+	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
-	if(!isnull(rads_per_second))
-		rads = rads_per_second
-	if(!rads)
-		return COMPONENT_INCOMPATIBLE // gotta have some rads
-	if(!ref_n_type)
-		return COMPONENT_INCOMPATIBLE // gotta have something irradiating us
-	for(var/reff in ref_n_type)
-		radioactive_things[reff] = ref_n_type[reff]
-	var/turf/our_turf = parent
-	our_coordinates = "[our_turf.x]:[our_turf.y]:[our_turf.z]"
-	RegisterSignal(parent, list(COMSIG_TURF_CHECK_RADIATION), .proc/im_still_here)
+	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, .proc/on_equipped)
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/on_drop)
+	RegisterSignal(parent, COMSIG_ITEM_PICKUP, .proc/on_pickup)
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE, .proc/on_storage_removal)
+	RegisterSignal(parent, COMSIG_ITEM_CLICKED, .proc/on_clicked)
+	RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, .proc/on_microwave) //c:
 
-/datum/component/artifact/proc/do_passive_effect_mob(mob/living/target)
-	for(var/effect in effect_on_tick)
-		effect(target)
 
+/datum/component/artifact/proc/on_equipped(datum/source, mob/living/equipper, slot)
+	ART_MASTER
+	for(var/artifact_effect/effect in effects)
+		effect.on_equip(equipper, master.loc, master, slot)
+
+
+////////////////////////////
+/// The actual effectors ///
 /datum/artifact_effect
 	var/is_buff
 	var/kind
 	var/name
 	var/amount
 	var/tick_length
+	var/datum/weakref/holder
 	COOLDOWN_DECLARE(cooldown)
 	var/chance = 100
 
-/datum/artifact_effect/New(amount, name, is_buff, tick_length, chance)
+/datum/artifact_effect/New(
+	obj/item/my_holder, 
+	amount,
+	name,
+	is_buff,
+	tick_length,
+	chance
+)
 	. = ..()
 	if(!isnull(amount))
 		src.amount = amount
@@ -61,11 +72,11 @@
 		return
 	return TRUE
 
-/datum/artifact_effect/proc/on_equip(mob/living/target, obj/item/holder, obj/item/parent)
-	return pre_effect(target, holder, parent)
+/datum/artifact_effect/proc/on_equip(mob/living/target, obj/item/holder, obj/item/parent, slot)
+	return pre_effect(target, holder, parent, slot)
 
-/datum/artifact_effect/proc/on_unequip(mob/living/target, obj/item/holder, obj/item/parent)
-	return pre_effect(target, holder, parent)
+/datum/artifact_effect/proc/on_unequip(mob/living/target, obj/item/holder, obj/item/parent, slot)
+	return pre_effect(target, holder, parent, slot)
 
 /datum/artifact_effect/proc/on_tick(mob/living/target, obj/item/holder, obj/item/parent)
 	return pre_effect(target, holder, parent)
