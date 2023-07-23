@@ -25,10 +25,6 @@
 	icon_state = "pawb" //uwu//
 	item_state = "pawb"
 
-/obj/item/clothing/shoes/f13/rag/pawb/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
-
 /obj/item/clothing/shoes/f13/tan
 	name = "tan shoes"
 	desc = "A pair of tanned leather shoes."
