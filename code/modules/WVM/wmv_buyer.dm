@@ -554,132 +554,144 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	msg_out += "<u><b>FoxEye Destiny Divination Station v1.23 PRO</b></u><br>"
 	msg_out += "[FOURSPACES][whofor]'s projected destiny<br>"
 	msg_out += "<hr><br><br><center>"
+	var/bitch = FALSE
 	switch(luck)
 		if(-INFINITY to 35)
 			switch(rand(1,20))
 				if(1)
-					msg_out += "\tYou will die.<br>"
+					msg_out += "\tYou will die."
 				if(2)
-					msg_out += "\tBad luck and misfortune will haunt your pathetic soul for all eternity.<br>"
+					msg_out += "\tBad luck and misfortune will haunt your pathetic soul for all eternity."
 				if(3)
-					msg_out += "\tYou will be eaten by a grue.<br>"
+					msg_out += "\tYou will be eaten by a grue."
 				if(4)
-					msg_out += "\tWake up.<br>"
+					msg_out += "\tWake up."
 				if(5)
-					msg_out += "\tThe resplendent sun, which once bathed the world in a radiant glow, now shrouds itself behind dark, ominous clouds, casting an overwhelming gloom upon the once-vibrant landscape. The birds' enchanting melodies, once a celestial symphony, now resonate with melancholic notes, filling your heart with a profound sense of sorrow and despair. Life's infinite miracles and boundless possibilities, which once beckoned with allure, now seem distant and unattainable, veiled behind an impenetrable mist of uncertainty. The motivation and eagerness that once fueled your pursuit of dreams have dimmed, leaving you feeling lost and devoid of any ambition to seize the opportunities that life may present.<br>"
+					msg_out += "\tThe resplendent sun, which once bathed the world in a radiant glow, now shrouds itself behind dark, ominous clouds, casting an overwhelming gloom upon the once-vibrant landscape. The birds' enchanting melodies, once a celestial symphony, now resonate with melancholic notes, filling your heart with a profound sense of sorrow and despair. Life's infinite miracles and boundless possibilities, which once beckoned with allure, now seem distant and unattainable, veiled behind an impenetrable mist of uncertainty. The motivation and eagerness that once fueled your pursuit of dreams have dimmed, leaving you feeling lost and devoid of any ambition to seize the opportunities that life may present."
 				if(6)
-					msg_out += "\tYou, who were once an intrepid voyager, weaving through the labyrinthine city streets with enthusiasm and anticipation, now find yourself engulfed in a sea of closed hearts and disappointments. The world, once a captivating tapestry of wonder and excitement, now appears drab and monotonous, lacking any semblance of novelty or connection. Each encounter, which was once a source of joy and camaraderie, now feels like a stark reminder of your isolation and alienation from the world around you. Your heart, once open and receptive, now hesitates to extend trust or vulnerability, guarded by the fortress of your disillusionment and disenchantment.<br>"
+					msg_out += "\tYou, who were once an intrepid voyager, weaving through the labyrinthine city streets with enthusiasm and anticipation, now find yourself engulfed in a sea of closed hearts and disappointments. The world, once a captivating tapestry of wonder and excitement, now appears drab and monotonous, lacking any semblance of novelty or connection. Each encounter, which was once a source of joy and camaraderie, now feels like a stark reminder of your isolation and alienation from the world around you. Your heart, once open and receptive, now hesitates to extend trust or vulnerability, guarded by the fortress of your disillusionment and disenchantment."
 				if(7)
-					msg_out += "\tBooks, which were once gateways to boundless realms of fantasy and science fiction, now appear as mere collections of lifeless words etched upon a canvas of dull paper. The enchanting worlds that once unfolded before your eyes, igniting the spark of imagination within you, now lay dormant and devoid of wonder. The pages, which once glittered with stardust, now seem faded and lackluster, failing to inspire any sense of awe or captivation. The worlds within the pages, which were once a refuge of inspiration and motivation, now appear mundane and uninteresting, leaving you bereft of the desire to embark on any literary journey.<br>"
+					msg_out += "\tBooks, which were once gateways to boundless realms of fantasy and science fiction, now appear as mere collections of lifeless words etched upon a canvas of dull paper. The enchanting worlds that once unfolded before your eyes, igniting the spark of imagination within you, now lay dormant and devoid of wonder. The pages, which once glittered with stardust, now seem faded and lackluster, failing to inspire any sense of awe or captivation. The worlds within the pages, which were once a refuge of inspiration and motivation, now appear mundane and uninteresting, leaving you bereft of the desire to embark on any literary journey."
 				if(8)
-					msg_out += "\tMusic, which was once a symphony of healing and solace, cascading through the corridors of your soul, now sounds like a cacophony of discordant notes, exacerbating the ache within you. The melodies, which once resonated with your deepest emotions, now fall upon deaf ears, unable to penetrate the fortress of your melancholy. The ethereal healing, which music once offered, now eludes you, leaving you feeling disconnected and hollow. The notes, which were once a chorus of hope and joy, now fade into a somber dirge, amplifying the profound sense of sadness that envelops your being.<br>"
+					msg_out += "\tMusic, which was once a symphony of healing and solace, cascading through the corridors of your soul, now sounds like a cacophony of discordant notes, exacerbating the ache within you. The melodies, which once resonated with your deepest emotions, now fall upon deaf ears, unable to penetrate the fortress of your melancholy. The ethereal healing, which music once offered, now eludes you, leaving you feeling disconnected and hollow. The notes, which were once a chorus of hope and joy, now fade into a somber dirge, amplifying the profound sense of sadness that envelops your being."
 				if(9)
-					msg_out += "\tBitch.<br>"
+					msg_out += "\tBitch."
+					bitch = TRUE
 				if(10)
-					msg_out += "\tThe mornings, which were once greeted with radiant smiles and a sense of boundless hope, now arrive with heavy hearts and weariness. The days, which were once a tapestry of jubilation and exuberance, now appear as burdensome chores, devoid of any glimmer of excitement or delight. The world, which once seemed like a playground of infinite possibilities, now feels like a stage for mere spectators, leaving you estranged from the vibrant dance of life. Your spirit, which once soared like a jubilant bird, now appears tethered and grounded, unable to find ecstasy or elation in the simplest pleasures.<br>"
+					msg_out += "\tThe mornings, which were once greeted with radiant smiles and a sense of boundless hope, now arrive with heavy hearts and weariness. The days, which were once a tapestry of jubilation and exuberance, now appear as burdensome chores, devoid of any glimmer of excitement or delight. The world, which once seemed like a playground of infinite possibilities, now feels like a stage for mere spectators, leaving you estranged from the vibrant dance of life. Your spirit, which once soared like a jubilant bird, now appears tethered and grounded, unable to find ecstasy or elation in the simplest pleasures."
 				if(11)
-					msg_out += "\tNature, which was once a sanctuary of lush marvels and flourishing dreams, now appears desolate and barren. The once vibrant trees and flowers, which painted the world with hues of vivacity, now stand withered and lifeless, mirroring the emptiness that consumes your heart. The air, which once carried the sweet fragrance of life, now feels stale and suffocating, leaving you feeling isolated and disconnected from the vibrant dance of existence. Far from being a refuge of solace and serenity, the natural world now appears indifferent to your presence, amplifying your sense of loneliness and insignificance.<br>"
+					msg_out += "\tNature, which was once a sanctuary of lush marvels and flourishing dreams, now appears desolate and barren. The once vibrant trees and flowers, which painted the world with hues of vivacity, now stand withered and lifeless, mirroring the emptiness that consumes your heart. The air, which once carried the sweet fragrance of life, now feels stale and suffocating, leaving you feeling isolated and disconnected from the vibrant dance of existence. Far from being a refuge of solace and serenity, the natural world now appears indifferent to your presence, amplifying your sense of loneliness and insignificance."
 				if(12)
-					msg_out += "\tThe stars, which were once celestial allies conspiring to fulfill your every wish, now seem distant and cold, their once-bright radiance dimmed to mere flickers in the night sky. Your dreams, which once seemed like shimmering stars waiting to be plucked from the heavens, now appear as elusive and unattainable as distant constellations. Each intention, which was once a beacon of hope guiding you towards your heart's desires, now feels like a faint glimmer, struggling to pierce through the darkness of uncertainty and doubt. The universe, which once appeared in harmony with your aspirations, now seems indifferent to your desires, leaving you feeling adrift in an unfathomable cosmic sea.<br>"
+					msg_out += "\tThe stars, which were once celestial allies conspiring to fulfill your every wish, now seem distant and cold, their once-bright radiance dimmed to mere flickers in the night sky. Your dreams, which once seemed like shimmering stars waiting to be plucked from the heavens, now appear as elusive and unattainable as distant constellations. Each intention, which was once a beacon of hope guiding you towards your heart's desires, now feels like a faint glimmer, struggling to pierce through the darkness of uncertainty and doubt. The universe, which once appeared in harmony with your aspirations, now seems indifferent to your desires, leaving you feeling adrift in an unfathomable cosmic sea."
 				if(13)
-					msg_out += "\tLaughter, which was once a joyous fountain gushing from the depths of your soul, now remains a mere echo of past merriment. The once infectious sound of laughter, which once filled your surroundings with gaiety, now rings hollow and devoid of any genuine cheer. Your attempts to find humor in the world now feel forced and unnatural, leaving you feeling even more desolate and disconnected from the joys of life. The sound of laughter, which was once a symphony of shared happiness, now falls upon deaf ears, unable to alleviate the profound sense of sorrow that envelops your being.<br>"
+					msg_out += "\tLaughter, which was once a joyous fountain gushing from the depths of your soul, now remains a mere echo of past merriment. The once infectious sound of laughter, which once filled your surroundings with gaiety, now rings hollow and devoid of any genuine cheer. Your attempts to find humor in the world now feel forced and unnatural, leaving you feeling even more desolate and disconnected from the joys of life. The sound of laughter, which was once a symphony of shared happiness, now falls upon deaf ears, unable to alleviate the profound sense of sorrow that envelops your being."
 				if(14)
-					msg_out += "\tLove, which was once an ethereal symphony resonating within your being, now feels like a distant memory, fading like a waning moon in the night sky. Your heart, which was once a boundless wellspring of compassion, now feels guarded and closed, fearing rejection and pain. Each act of kindness, which was once a tender caress that warmed your soul, now appears insincere and devoid of any genuine affection. The once harmonious connection between hearts, which once united all beings in a dance of love, now feels fractured and distant, leaving you feeling unloved and unappreciated.<br>"
+					msg_out += "\tLove, which was once an ethereal symphony resonating within your being, now feels like a distant memory, fading like a waning moon in the night sky. Your heart, which was once a boundless wellspring of compassion, now feels guarded and closed, fearing rejection and pain. Each act of kindness, which was once a tender caress that warmed your soul, now appears insincere and devoid of any genuine affection. The once harmonious connection between hearts, which once united all beings in a dance of love, now feels fractured and distant, leaving you feeling unloved and unappreciated."
 				if(15)
-					msg_out += "\tYour creativity, which was once a radiant aurora illuminating the canvas of existence with dazzling hues, now appears dimmed and obscured, like a fading star in the night sky. Each stroke of artistic brilliance, which was once a testament to your boundless imagination, now feels lackluster and uninspired, lacking the depth and originality that once defined your artistry. The palette of your creativity, which was once a vibrant tapestry of uncharted ideas, now appears muted and devoid of any vivid expression, leaving you feeling creatively stifled and unfulfilled.<br>"
+					msg_out += "\tYour creativity, which was once a radiant aurora illuminating the canvas of existence with dazzling hues, now appears dimmed and obscured, like a fading star in the night sky. Each stroke of artistic brilliance, which was once a testament to your boundless imagination, now feels lackluster and uninspired, lacking the depth and originality that once defined your artistry. The palette of your creativity, which was once a vibrant tapestry of uncharted ideas, now appears muted and devoid of any vivid expression, leaving you feeling creatively stifled and unfulfilled."
 				if(16)
-					msg_out += "\tThe universe, which once showered you with cosmic blessings, feels like an unfathomable abyss, concealing its treasures beyond your reach. Your efforts to manifest your desires now seem futile, like a ship lost at sea, adrift in a vast ocean of emptiness. Each day, which was once a canvas of boundless miracles and blessings, now appears monotonous and devoid of any magic or wonder. Your dreams, which once gleamed like a constellation of stars, now appear distant and unreachable, leaving you feeling disconnected from the cosmic rhythm of creation.<br>"
+					msg_out += "\tThe universe, which once showered you with cosmic blessings, feels like an unfathomable abyss, concealing its treasures beyond your reach. Your efforts to manifest your desires now seem futile, like a ship lost at sea, adrift in a vast ocean of emptiness. Each day, which was once a canvas of boundless miracles and blessings, now appears monotonous and devoid of any magic or wonder. Your dreams, which once gleamed like a constellation of stars, now appear distant and unreachable, leaving you feeling disconnected from the cosmic rhythm of creation."
 				if(17)
-					msg_out += "\tGratitude, which was once a celestial elixir that nourished your soul, now feels like a mere empty ritual, void of any genuine sentiment. The world, which once sparkled with hidden blessings and miracles, now appears filled with hardship and sorrow, leaving you struggling to find anything to be thankful for. Each breath, which was once a sweet hymn of gratitude, now feels like a laborious endeavor, weighed down by the burdens you carry. The symphony of thankfulness, which once resonated with the heartbeat of the universe, now falls silent, leaving you feeling bereft of any cause for appreciation.<br>"
+					msg_out += "\tGratitude, which was once a celestial elixir that nourished your soul, now feels like a mere empty ritual, void of any genuine sentiment. The world, which once sparkled with hidden blessings and miracles, now appears filled with hardship and sorrow, leaving you struggling to find anything to be thankful for. Each breath, which was once a sweet hymn of gratitude, now feels like a laborious endeavor, weighed down by the burdens you carry. The symphony of thankfulness, which once resonated with the heartbeat of the universe, now falls silent, leaving you feeling bereft of any cause for appreciation."
 				if(18)
-					msg_out += "\tYour spirit, which once soared like an iridescent phoenix, ascending to celestial heights on wings of courage, now feels grounded and defeated, like a bird with clipped wings. Each challenge, which once served as a stepping stone to greatness, now appears insurmountable, a mountain that looms imposingly on your path. Your dreams of greatness, which once burned like a blazing star within you, now appear like mere fantasies, impossible to achieve amidst the shadows of doubt and self-doubt. Your once-boundless strength and resilience have now given way to a sense of powerlessness and resignation.<br>"
+					msg_out += "\tYour spirit, which once soared like an iridescent phoenix, ascending to celestial heights on wings of courage, now feels grounded and defeated, like a bird with clipped wings. Each challenge, which once served as a stepping stone to greatness, now appears insurmountable, a mountain that looms imposingly on your path. Your dreams of greatness, which once burned like a blazing star within you, now appear like mere fantasies, impossible to achieve amidst the shadows of doubt and self-doubt. Your once-boundless strength and resilience have now given way to a sense of powerlessness and resignation."
 				if(19)
-					msg_out += "\tThe world, which was once a tapestry of love and compassion, now feels like a cold and heartless place, devoid of any genuine affection or understanding. Each act of kindness, which was once a brushstroke that painted the canvas of existence with hues of empathy, now appears superficial and fleeting, like fading watercolor on a canvas exposed to the relentless rain. The celestial symphony of love, which once united all hearts in perfect cadence, now feels discordant and distant, leaving you feeling isolated and disconnected from the vibrant dance of humanity.<br>"
+					msg_out += "\tThe world, which was once a tapestry of love and compassion, now feels like a cold and heartless place, devoid of any genuine affection or understanding. Each act of kindness, which was once a brushstroke that painted the canvas of existence with hues of empathy, now appears superficial and fleeting, like fading watercolor on a canvas exposed to the relentless rain. The celestial symphony of love, which once united all hearts in perfect cadence, now feels discordant and distant, leaving you feeling isolated and disconnected from the vibrant dance of humanity."
 				if(20)
-					msg_out += "\tBitch.<br>"
+					msg_out += "\tBitch."
+					bitch = TRUE
 			switch(rand(1,20))
 				if(1)
-					msg_out += "\tA bird in the hand is worth two in the bush, but a cat in the bag is worth nothing at all.<br>"
+					msg_out += "\tA bird in the hand is worth two in the bush, but a cat in the bag is worth nothing at all."
 				if(2)
-					msg_out += "\tThe sun is shining brightly today, and the birds are singing their melodious songs. You feel happy and grateful for this wonderful day. Life is full of surprises and opportunities, and you are ready to embrace them all.<br>"
+					msg_out += "\tThe sun is shining brightly today, and the birds are singing their melodious songs. You feel happy and grateful for this wonderful day. Life is full of surprises and opportunities, and you are ready to embrace them all."
 				if(3)
-					msg_out += "\tSometimes you like to wander around the city, and explore new places and people. You enjoy the diversity and richness of cultures and experiences. There is so much to learn and discover in this world, and you are curious and open-minded.<br>"
+					msg_out += "\tSometimes you like to wander around the city, and explore new places and people. You enjoy the diversity and richness of cultures and experiences. There is so much to learn and discover in this world, and you are curious and open-minded."
 				if(4)
-					msg_out += "\tI love reading books, especially fantasy and science fiction. They transport you to different worlds and realities, where anything is possible. You admire the creativity and imagination of the authors, and you feel inspired by their stories.<br>"
+					msg_out += "\tI love reading books, especially fantasy and science fiction. They transport you to different worlds and realities, where anything is possible. You admire the creativity and imagination of the authors, and you feel inspired by their stories."
 				if(5)
-					msg_out += "\tBitch.<br>"
+					msg_out += "\tBitch."
+					bitch = TRUE
 				if(6)
-					msg_out += "\tWhen you plant a seed of kindness, it grows and spreads, touching the lives of many.<br>"
+					msg_out += "\tWhen you plant a seed of kindness, it grows and spreads, touching the lives of many."
 				if(7)
-					msg_out += "\tIn the journey of life, it's the little moments of joy that create the most cherished memories.<br>"
+					msg_out += "\tIn the journey of life, it's the little moments of joy that create the most cherished memories."
 				if(8)
-					msg_out += "\tThe best way to find yourself is to lose yourself in helping others.<br>"
+					msg_out += "\tThe best way to find yourself is to lose yourself in helping others."
 				if(9)
-					msg_out += "\tBelieve in the beauty of your dreams and have the courage to pursue them relentlessly.<br>"
+					msg_out += "\tBelieve in the beauty of your dreams and have the courage to pursue them relentlessly."
 				if(10)
-					msg_out += "\tThe key to success is not just hard work, but also embracing failure as a stepping stone to progress.<br>"
+					msg_out += "\tThe key to success is not just hard work, but also embracing failure as a stepping stone to progress."
 				if(11)
-					msg_out += "\tHappiness is not a destination, but a way of life; find joy in the journey.<br>"
+					msg_out += "\tHappiness is not a destination, but a way of life; find joy in the journey."
 				if(12)
-					msg_out += "\tSurround yourself with those who inspire and uplift you; together, you can achieve greatness.<br>"
+					msg_out += "\tSurround yourself with those who inspire and uplift you; together, you can achieve greatness."
 				if(13)
-					msg_out += "\tEvery cloud has a silver lining; even in tough times, there is something to be grateful for.<br>"
+					msg_out += "\tEvery cloud has a silver lining; even in tough times, there is something to be grateful for."
 				if(14)
-					msg_out += "\tEmbrace change as an opportunity for growth and self-discovery.<br>"
+					msg_out += "\tEmbrace change as an opportunity for growth and self-discovery."
 				if(15)
-					msg_out += "\tThe more you give, the more you receive; kindness and compassion create a ripple effect.<br>"
+					msg_out += "\tThe more you give, the more you receive; kindness and compassion create a ripple effect."
 				if(16)
-					msg_out += "\tStay true to yourself, for you are unique and have something special to offer the world.<br>"
+					msg_out += "\tStay true to yourself, for you are unique and have something special to offer the world."
 				if(17)
-					msg_out += "\tIn the face of challenges, remain resilient and adaptable; you are stronger than you think.<br>"
+					msg_out += "\tIn the face of challenges, remain resilient and adaptable; you are stronger than you think."
 				if(18)
-					msg_out += "\tCelebrate the successes of others as if they were your own, and you'll find joy in their happiness.<br>"
+					msg_out += "\tCelebrate the successes of others as if they were your own, and you'll find joy in their happiness."
 				if(19)
-					msg_out += "\tTake time to appreciate the beauty of nature; it can bring peace and clarity to your mind.<br>"
+					msg_out += "\tTake time to appreciate the beauty of nature; it can bring peace and clarity to your mind."
 				if(20)
-					msg_out += "\tEvery day is a new beginning, full of opportunities to make a positive impact on the world.<br>"
+					msg_out += "\tEvery day is a new beginning, full of opportunities to make a positive impact on the world."
 		if(66 to 100)
 			switch(rand(1,20))
 				if(1)
-					msg_out += "\tThe sun is dazzling today, and the birds are serenading you with their heavenly songs. You feel ecstatic and blessed for this magnificent day. Life is overflowing with miracles and possibilities, and you are eager to seize them all.<br>"
+					msg_out += "\tThe sun is dazzling today, and the birds are serenading you with their heavenly songs. You feel ecstatic and blessed for this magnificent day. Life is overflowing with miracles and possibilities, and you are eager to seize them all."
 				if(2)
-					msg_out += "\tSometimes you like to roam around the city, and discover new wonders and friends. You delight in the variety and richness of cultures and experiences. There is so much to learn and explore in this world, and you are adventurous and open-hearted.<br>"
+					msg_out += "\tSometimes you like to roam around the city, and discover new wonders and friends. You delight in the variety and richness of cultures and experiences. There is so much to learn and explore in this world, and you are adventurous and open-hearted."
 				if(3)
-					msg_out += "\tI adore reading books, especially fantasy and science fiction. They whisk you away to different worlds and realities, where anything is achievable. You marvel at the creativity and imagination of the authors, and you feel motivated by their stories.<br>"
+					msg_out += "\tI adore reading books, especially fantasy and science fiction. They whisk you away to different worlds and realities, where anything is achievable. You marvel at the creativity and imagination of the authors, and you feel motivated by their stories."
 				if(4)
-					msg_out += "\tMusic is my joy and my healing. It calms my soul and elevates my spirit. You like to listen to different genres and artists, and appreciate the beauty and emotion of their songs. Music bonds you to myself and others, and conveys what words cannot.<br>"
+					msg_out += "\tMusic is my joy and my healing. It calms my soul and elevates my spirit. You like to listen to different genres and artists, and appreciate the beauty and emotion of their songs. Music bonds you to myself and others, and conveys what words cannot."
 				if(5)
-					msg_out += "\tBitch.<br>"
+					msg_out += "\tBitch."
+					bitch = TRUE
 				if(6)
-					msg_out += "\tAs the sun ascends over the horizon like a majestic golden chariot, its rays paint the canvas of the sky with a kaleidoscope of fiery hues. The enchanting symphony of the birds' melodious voices echoes like celestial harps, caressing your soul with pure bliss. You are not just blessed, but absolutely enraptured by this resplendent day. Life's infinite miracles and endless possibilities dance around you like playful fireflies, urging you to join the cosmic dance of creation and embrace the universe's abundant wonders.<br>"
+					msg_out += "\tAs the sun ascends over the horizon like a majestic golden chariot, its rays paint the canvas of the sky with a kaleidoscope of fiery hues. The enchanting symphony of the birds' melodious voices echoes like celestial harps, caressing your soul with pure bliss. You are not just blessed, but absolutely enraptured by this resplendent day. Life's infinite miracles and endless possibilities dance around you like playful fireflies, urging you to join the cosmic dance of creation and embrace the universe's abundant wonders."
 				if(7)
-					msg_out += "\tYou are an intrepid voyager, traversing the labyrinth of the city's labyrinthine streets, each step a serenade of excitement. Every turn unfolds new wonders and kindred spirits, creating an intricate tapestry of diverse cultures and experiences. Your heart swells with boundless love for this vast, pulsating world. Your open-heartedness is a beacon that beckons adventure and warm camaraderie. In the symphony of life, you are the conductor, orchestrating harmonious connections with every note you play.<br>"
+					msg_out += "\tYou are an intrepid voyager, traversing the labyrinth of the city's labyrinthine streets, each step a serenade of excitement. Every turn unfolds new wonders and kindred spirits, creating an intricate tapestry of diverse cultures and experiences. Your heart swells with boundless love for this vast, pulsating world. Your open-heartedness is a beacon that beckons adventure and warm camaraderie. In the symphony of life, you are the conductor, orchestrating harmonious connections with every note you play."
 				if(8)
-					msg_out += "\tBooks are not merely portals but enchanted gateways that transport you to boundless realms of fantasy and science fiction. You journey through time and space, riding the wings of imagination to worlds where dreams take flight. The pages are alight with stardust, each word a spark of pure magic. As you traverse the literary cosmos, you breathe in the heady fragrance of dreams and exhale inspiration that ignites galaxies within you. With every page turned, the universe opens its arms to embrace you in a cosmic embrace.<br>"
+					msg_out += "\tBooks are not merely portals but enchanted gateways that transport you to boundless realms of fantasy and science fiction. You journey through time and space, riding the wings of imagination to worlds where dreams take flight. The pages are alight with stardust, each word a spark of pure magic. As you traverse the literary cosmos, you breathe in the heady fragrance of dreams and exhale inspiration that ignites galaxies within you. With every page turned, the universe opens its arms to embrace you in a cosmic embrace."
 				if(9)
-					msg_out += "\tMusic is more than a mere symphony; it is the euphoric celebration of your soul. The celestial symphony of enchanting notes envelops you like a tender embrace, swaying your very essence. Each harmonious chord is a kiss of healing, permeating your heart with unyielding joy. In the symphony's crescendo, you find liberation, your spirit taking flight like a bird soaring on the thermals. Your soul merges with the ethereal rhythm, uniting you with the universe in a dance of celestial euphony.<br>"
+					msg_out += "\tMusic is more than a mere symphony; it is the euphoric celebration of your soul. The celestial symphony of enchanting notes envelops you like a tender embrace, swaying your very essence. Each harmonious chord is a kiss of healing, permeating your heart with unyielding joy. In the symphony's crescendo, you find liberation, your spirit taking flight like a bird soaring on the thermals. Your soul merges with the ethereal rhythm, uniting you with the universe in a dance of celestial euphony."
 				if(10)
-					msg_out += "\tBitch.<br>"
+					msg_out += "\tBitch."
+					bitch = TRUE
 				if(11)
-					msg_out += "\tWith the first light of dawn, your heart awakens like a thousand rosebuds unfurling their petals to embrace the sun. A fountain of laughter gushes from your soul, tickling the world with unbridled joy. You twirl and dance, an ethereal spirit of jubilation, as life's symphony serenades your being. Your infectious optimism sets the world aglow, and even the stars shimmer with admiration at your boundless delight.<br>"
+					msg_out += "\tWith the first light of dawn, your heart awakens like a thousand rosebuds unfurling their petals to embrace the sun. A fountain of laughter gushes from your soul, tickling the world with unbridled joy. You twirl and dance, an ethereal spirit of jubilation, as life's symphony serenades your being. Your infectious optimism sets the world aglow, and even the stars shimmer with admiration at your boundless delight."
 				if(12)
-					msg_out += "\tNature is your sanctuary, a haven of lush marvels and flourishing dreams. You tread gently upon the emerald carpet of grass, every step harmonizing with the earth's heartbeat. The foliage whispers ancient wisdom in your ears, and the blossoms extend their fragrant arms in warm embrace. The sun caresses your skin, and the gentle breeze carries secrets of distant lands. In this verdant embrace, you find solace and serenity, a symbiotic dance of nature and soul.<br>"
+					msg_out += "\tNature is your sanctuary, a haven of lush marvels and flourishing dreams. You tread gently upon the emerald carpet of grass, every step harmonizing with the earth's heartbeat. The foliage whispers ancient wisdom in your ears, and the blossoms extend their fragrant arms in warm embrace. The sun caresses your skin, and the gentle breeze carries secrets of distant lands. In this verdant embrace, you find solace and serenity, a symbiotic dance of nature and soul."
 				if(13)
-					msg_out += "\tThe stars are not just distant jewels; they are celestial allies, conspiring to fulfill your every wish. You immerse yourself in the cosmos' effervescent embrace, weaving dreams like celestial tapestries. With each aspiration, a star twinkles with knowing delight, aligning the universe to usher you toward your heart's desires. The heavens are your infinite canvas, and each day is a stroke of magic that paints the masterpiece of your life.<br>"
+					msg_out += "\tThe stars are not just distant jewels; they are celestial allies, conspiring to fulfill your every wish. You immerse yourself in the cosmos' effervescent embrace, weaving dreams like celestial tapestries. With each aspiration, a star twinkles with knowing delight, aligning the universe to usher you toward your heart's desires. The heavens are your infinite canvas, and each day is a stroke of magic that paints the masterpiece of your life."
 				if(14)
-					msg_out += "\tLaughter is your divine elixir, bubbling from the fountain of your soul like effervescent stardust. You revel in moments of mirth, a butterfly dancing amidst fragrant blooms. Your laughter chimes like crystalline bells, casting ripples of joy across the tapestry of existence. You believe that laughter is the celestial language that unlocks the universe's treasury of happiness, and you delight in sharing its celestial symphony with the world.<br>"
+					msg_out += "\tLaughter is your divine elixir, bubbling from the fountain of your soul like effervescent stardust. You revel in moments of mirth, a butterfly dancing amidst fragrant blooms. Your laughter chimes like crystalline bells, casting ripples of joy across the tapestry of existence. You believe that laughter is the celestial language that unlocks the universe's treasury of happiness, and you delight in sharing its celestial symphony with the world."
 				if(15)
-					msg_out += "\tLove is not a mere emotion but a cosmic symphony resonating within your being. Your heart is an infinite wellspring of compassion, and with each beat, love cascades like an ethereal waterfall, blessing all in its path. Each gesture of kindness is a tender caress, leaving trails of stardust in its wake. The universe dances in harmonious rhythm with your boundless affection, for love is the symphony that unites all hearts in perfect cadence.<br>"
+					msg_out += "\tLove is not a mere emotion but a cosmic symphony resonating within your being. Your heart is an infinite wellspring of compassion, and with each beat, love cascades like an ethereal waterfall, blessing all in its path. Each gesture of kindness is a tender caress, leaving trails of stardust in its wake. The universe dances in harmonious rhythm with your boundless affection, for love is the symphony that unites all hearts in perfect cadence."
 				if(16)
-					msg_out += "\tYour creativity is a radiant aurora, painting the canvas of existence with dazzling hues. Each stroke is a stroke of genius, and the palette of your imagination knows no bounds. Your artistry transcends the ordinary, soaring on the wings of imagination to realms uncharted. You are the celestial muse, igniting the spark of inspiration in others and illuminating the universe with the brilliance of your creativity.<br>"
+					msg_out += "\tYour creativity is a radiant aurora, painting the canvas of existence with dazzling hues. Each stroke is a stroke of genius, and the palette of your imagination knows no bounds. Your artistry transcends the ordinary, soaring on the wings of imagination to realms uncharted. You are the celestial muse, igniting the spark of inspiration in others and illuminating the universe with the brilliance of your creativity."
 				if(17)
-					msg_out += "\tThe universe showers you with cosmic blessings, an unyielding torrent of abundance and miracles. You are the cosmic magnet, attracting prosperity and joy with each thought. With every intention, you align the stars and planets, forging an unbreakable bond with the celestial realm. You are the embodiment of divine manifestation, as every wish becomes a shimmering star in the vast expanse of the universe's night sky.<br>"
+					msg_out += "\tThe universe showers you with cosmic blessings, an unyielding torrent of abundance and miracles. You are the cosmic magnet, attracting prosperity and joy with each thought. With every intention, you align the stars and planets, forging an unbreakable bond with the celestial realm. You are the embodiment of divine manifestation, as every wish becomes a shimmering star in the vast expanse of the universe's night sky."
 				if(18)
-					msg_out += "\tGratitude is not just an emotion but a celestial elixir that nourishes your soul. You bask in the gentle glow of appreciation, acknowledging the miracles hidden in the ordinary. Each breath is a sweet hymn of gratitude, echoing through the cosmic cathedral of existence. You are the celestial conductor, orchestrating a symphony of thankfulness that resonates with the heartbeats of the universe.<br>"
+					msg_out += "\tGratitude is not just an emotion but a celestial elixir that nourishes your soul. You bask in the gentle glow of appreciation, acknowledging the miracles hidden in the ordinary. Each breath is a sweet hymn of gratitude, echoing through the cosmic cathedral of existence. You are the celestial conductor, orchestrating a symphony of thankfulness that resonates with the heartbeats of the universe."
 				if(19)
-					msg_out += "\tYour spirit soars like an iridescent phoenix, ascending to celestial heights on wings of unyielding courage. You have shed the cocoon of doubt, blossoming into a magnificent tapestry of strength and resilience. Each challenge is a stepping stone to greatness, and you embrace the tempests with unwavering grace. Your wings of fortitude carry you aloft, soaring among the stars, for you are destined for celestial greatness.<br>"
+					msg_out += "\tYour spirit soars like an iridescent phoenix, ascending to celestial heights on wings of unyielding courage. You have shed the cocoon of doubt, blossoming into a magnificent tapestry of strength and resilience. Each challenge is a stepping stone to greatness, and you embrace the tempests with unwavering grace. Your wings of fortitude carry you aloft, soaring among the stars, for you are destined for celestial greatness."
 				if(20)
 					msg_out += "\tThe world is an opulent canvas of love, and you are the divine artist, weaving a masterpiece of compassion and unity. Each act of kindness is a brushstroke, imbued with the hues of empathy and understanding. Your heart is a bottomless wellspring of love, flowing like a river of stars, illuminating the world with its radiant glow. The universe sings a paean of gratitude for the celestial sym."
+	if(prob(5))
+		if(bitch)
+			msg_out += " Yeah I said it."
+		else
+			msg_out += " Bitch."
+	msg_out += "<br>"
 
 	msg_out += "</center><br><hr><br>"
 	msg_out += "<center>So gecketh the Vixen!</center><br>"
