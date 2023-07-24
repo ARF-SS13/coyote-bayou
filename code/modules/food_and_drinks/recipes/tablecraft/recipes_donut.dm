@@ -369,6 +369,16 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/sugarcookie
 
+/datum/crafting_recipe/food/dessert/oreocookie
+	time = 15
+	name = "Oreo cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/oreocookie
+
 ////////////////////////////////////////////////WAFFLES AND PANCAKES////////////////////////////////////////////////
 
 /datum/crafting_recipe/food/dessert/waffles

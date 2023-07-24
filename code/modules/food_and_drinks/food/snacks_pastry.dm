@@ -621,6 +621,17 @@
 	foodtype = GRAIN | JUNKFOOD | SUGAR
 	dunkable = TRUE
 
+/obj/item/reagent_containers/food/snacks/oreocookie
+	name = "oreo cookie"
+	desc = "Are you a dunker, or a 'tear it apart' type of oreo eater?"
+	icon_state = "oreo"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1, "chocolate" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
 /obj/item/reagent_containers/food/snacks/chococornet
 	name = "chocolate cornet"
 	desc = "Which side's the head, the fat end or the thin end?"
