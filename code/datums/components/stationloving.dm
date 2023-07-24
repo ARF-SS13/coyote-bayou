@@ -9,7 +9,7 @@
 	/// Just dunk the thing somewhere random if it goes out of its zone
 	var/put_somewhere_random = TRUE
 	/// Z levels its allowed to be
-	var/list/allowed_z = COMMON_Z_LEVELS
+	var/list/allowed_z = VALIDBALL_Z_LEVELS
 	/// List of turfs we've recorded as okay to be
 	var/list/put_it_here[LOCATION_LIST_MAX]
 	/// The index of put_it_here to add the new turf reference
@@ -17,7 +17,7 @@
 	/// Turf record cooldown
 	COOLDOWN_DECLARE(turf_record_cooldown)
 
-/datum/component/stationloving/Initialize(inform_admins = FALSE, allow_death = FALSE, put_somewhere_random = TRUE, allowed_z = ABOVE_GROUND_Z_LEVELS)
+/datum/component/stationloving/Initialize(inform_admins = FALSE, allow_death = FALSE, put_somewhere_random = TRUE, allowed_z = VALIDBALL_Z_LEVELS)
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, list(COMSIG_MOVABLE_Z_CHANGED), .proc/check_in_bounds)
@@ -49,7 +49,9 @@
 		return FALSE
 	if(is_turf_okay_to_use(you_are_here))
 		put_it_here[put_here_index] = WEAKREF(you_are_here)
-		put_here_index = (put_here_index >= LOCATION_LIST_MAX ? 1 : (put_here_index + 1))
+		put_here_index++
+		if(put_here_index > LOCATION_LIST_MAX)
+			put_here_index = 1
 		COOLDOWN_START(src, turf_record_cooldown, 10 SECONDS)
 		return TRUE
 

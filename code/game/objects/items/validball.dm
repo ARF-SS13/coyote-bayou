@@ -275,6 +275,14 @@
 		if(!isturf(hereturf))
 			return "??UNKNOWN??"
 	switch(hereturf.z)
+		if(Z_LEVEL_GARLAND)
+			return "Garland City - Common"
+		if(Z_LEVEL_REDLICK_UPPER)
+			return "Ashdown - Common"
+		if(Z_LEVEL_TRANSIT)
+			return "Moving along Rail Route 14-2 Delta"
+		if(Z_LEVEL_CENTCOM)
+			return "Somewhere far away~"
 		if(Z_LEVEL_NASH_UNDERGROUND)
 			return "Nash Wastes - Underground"
 		if(Z_LEVEL_NASH_COMMON)
