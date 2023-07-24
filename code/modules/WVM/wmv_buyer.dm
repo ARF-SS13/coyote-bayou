@@ -694,7 +694,11 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	msg_out += "<br>"
 
 	msg_out += "</center><br><hr><br>"
-	msg_out += "<center>So gecketh the Vixen!</center><br>"
+	switch(rand(1,5))
+		if(1)
+			msg_out += "<center>So gecketh the Vixen!</center><br>"
+		if(2 to 5)
+			msg_out += "<center>YOU HAVE BEEN WARNED!</center><br>"
 	msg_out += "<center>- END OF REPORT -</center><br>"
 	return span_robot(msg_out.Join())
 
