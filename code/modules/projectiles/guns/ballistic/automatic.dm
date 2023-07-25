@@ -619,6 +619,42 @@
 		/datum/firemode/semi_auto/fast
 	)
 
+
+
+/* * * * * * * * * * *
+* M22 SMG
+*-weak damage
+*+fast fire rate
+*- takes only uzi magazines
+* - high recoil
+* + comes supressed
+* * * * * * * * * * * */ 
+
+/obj/item/gun/ballistic/automatic/smg/m22
+	name = "M22 Night Ops SMG"
+	desc = "An integrally suppressed submachinegun chambered in 9mm. Produced by Jaeger Company, this special version of the M22 SMG was in use by pre-war UNMC troopers when parachuting behind enemy lines. Now it falls in the hands of the wasteland, itching for the trigger to be pulled. Comes with a built in holographic sight."
+	icon_state = "m22so"
+	item_state = "m22so"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m9mm/doublestack,/obj/item/ammo_box/magazine/m9mm/doublestack/empty , /obj/item/ammo_box/magazine/uzim9mm/rockwell )
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
+	init_recoil = AUTORIFLE_RECOIL(1.7 , 1.7)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/fast
+	)
+	silenced = TRUE
+	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
+
+
 /* * * * * * * * * * *
  * MP-5 SD SMG
  * Silent 9mm SMG
@@ -2204,9 +2240,9 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small, /obj/item/ammo_box/magazine/m556/rifle/, /obj/item/ammo_box/magazine/m556 )
 	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = AUTORIFLE_RECOIL(1, 1)
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = AUTORIFLE_RECOIL(1.7, 1.7)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto
@@ -2277,9 +2313,9 @@
 	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow
@@ -2288,6 +2324,32 @@
 	can_suppress = FALSE
 	can_flashlight = FALSE 
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
+	name = "G3M99"
+	desc = "A battle rifle chambered n 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308"
+	icon_state = "g3"
+	item_state = "slr"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	disallowed_mags = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2.3, 2.3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/automatic/rpm150
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE 
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
 
 
 /* * * * * * * * * * *
