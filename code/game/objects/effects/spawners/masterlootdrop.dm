@@ -266,7 +266,8 @@
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
 		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
-		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 2
+		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 2,
+		/obj/item/gun/ballistic/automatic/famas = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -302,7 +303,6 @@
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/bar = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
-		/obj/item/gun/ballistic/automatic/m41br = 1,
 	)
 
 ///////////////////////////
@@ -497,6 +497,7 @@
 		/obj/item/gun/ballistic/automatic/service/carbine = 5,
 		/obj/item/gun/energy/laser/wattz/recharger = 5,
 		/obj/item/gun/energy/laser/wattz2ks = 5,
+		/obj/item/gun/ballistic/automatic/m41br = 4,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot

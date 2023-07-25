@@ -1419,6 +1419,39 @@
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
+
+	//////////////////////////////
+	//// Famas G80{generation}	//////////////
+	//// -weakened 5.56                   ////
+	//// + three round burst fire         ////
+	/// - weak 5mm assault rifle to be found /////
+	/// - Takes 20 mags only ////////////////////
+	////// - Muh bullpup          ////////
+     /////////////////////////////////////////
+/obj/item/gun/ballistic/automatic/famas
+	name = "fusil d'assaut G80"
+	desc = "An assault rifle,resembling a FAMAS, used by the pre-war GIGN. Produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
+	icon_state = "famas"
+	item_state = "famas"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault )
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slow
+	)
+	can_bayonet = FALSE
+	can_scope = FALSE
+	can_suppress = TRUE
+
 /* * * * * * * * * * *
  * ALR15 Rifle
  * Tacticool semi-auto rifle
@@ -2012,7 +2045,7 @@
 /////////////////////////////////////// 
 
 /obj/item/gun/ballistic/automatic/m41br
-	name = " M41 battle rifle"
+	name = "m41 battle rifle"
 	desc = "This rifle is a Jaeger company battle rifle. This battle rifle comes with a built in scope, ammo counter. This rifle is chambered in 7.62 but can use .308. It seems the magazines it can use is only small .308 magazines."
 	icon_state = "m41r"
 	item_state = "m41r"
@@ -2021,12 +2054,12 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308
-	disallowed_mags = /obj/item/ammo_box/magazine/m308/ext
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m308/ext, /obj/item/ammo_box/magazine/m308/ext/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
+	init_recoil = AUTORIFLE_RECOIL(2, 1.5)
 	init_firemodes = list(/datum/firemode/burst/three/fastest
 	)
 	can_suppress = FALSE
@@ -2244,9 +2277,9 @@
 	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow
