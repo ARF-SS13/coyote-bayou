@@ -711,9 +711,10 @@
 
 /obj/item/gun/ballistic/automatic/pistol/automag/m6
 	name = "M3 Magnum"
-	desc = "Another M3 series pistol. This one is akin to the M3 magnums used by Leo Arments. The magnum is chambered in .44"
+	desc = "Another M3 series pistol. This one is akin to the M3 magnums used by Leo Arments. The magnum is chambered in .44 and comes with a built in 2x holo-scope."
 	icon_state = "m3magnum"
 	item_state = "m3magnum"
+	zoom_factor = 1.1
 
 /obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun
 	name = "Custom M6G Magnum"
