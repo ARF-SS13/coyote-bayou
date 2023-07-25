@@ -515,15 +515,15 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 /obj/machinery/mineral/wasteland_trader/proc/generate_fortune(fractional)
 	var/mob/whos_it_for
 	if(prob(50))
-		var/list/allclients = GLOB.clients
+		var/list/allclients = GLOB.player_list
 		var/list/coolclients = allclients.Copy()
 		for(var/i in 1 to LAZYLEN(allclients))
-			var/client/C = pick(coolclients)
-			if(!isnewplayer(C.mob))
+			var/mob/C = pick(coolclients)
+			if(isnewplayer(C))
 				coolclients -= C
 				continue
-			if(ismob(C.mob)) // juuuust in case
-				whos_it_for = C.mob
+			if(ismob(C)) // juuuust in case
+				whos_it_for = C
 	else
 		for(var/mob/who in view(7, src)) // this also counts ghosts
 			if(!whos_it_for)
