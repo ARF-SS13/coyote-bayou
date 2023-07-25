@@ -1420,14 +1420,14 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 
-	//////////////////////////////
-	//// Famas G80{generation}	//////////////
-	//// -weakened 5.56                   ////
-	//// + three round burst fire         ////
-	/// - weak 5mm assault rifle to be found /////
-	/// - Takes 20 mags only ////////////////////
-	////// - Muh bullpup          ////////
-     /////////////////////////////////////////
+//////////////////////////////////////////////
+//// Famas G80{generation}	              ////
+//// -weakened 5.56                       ////
+//// + three round burst fire             ////
+//// - weak 5mm assault rifle to be found ////
+//// - Takes 20 mags only                 ////
+//// - Muh bullpup                        ////
+//////////////////////////////////////////////
 /obj/item/gun/ballistic/automatic/famas
 	name = "fusil d'assaut G80"
 	desc = "An assault rifle,resembling a FAMAS, used by the pre-war GIGN. Produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
