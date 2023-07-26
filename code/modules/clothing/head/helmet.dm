@@ -253,6 +253,50 @@
 	// Offer about the same protection as a hardhat.
 	dog_fashion = null
 
+/obj/item/clothing/head/helmet/unmchelmet
+	name = "Standard issue UNMC helmet"
+	desc = "A standard issued UNMC Helmet. The flashlight mount doesn't work and it has no visor. Despite that, it seems to be in good condition. Don't lose your head now, soldier."
+	icon_state = "unmch"
+	item_state = "unmch"
+	flags_inv = HIDEHAIR
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/retrohazmathelmet
+	name = "Old Hazmat helmet"
+	desc = "A old style hazmat helmet. It's a bit well worn and the visor has a crack on it. But other than that, it seems to still work."
+	icon_state = "rhazhelm"
+	item_state = "rhazhelm"
+	flags_inv = HIDEHAIR
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_ENV_T4) 
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/unmcstealthhelmet
+	name = "American infiltrator helmet"
+	desc = "A helmet belonging, albeit dysfunctional, to the American stealth suit. Now when you get to look cool while chanting 'USA' from the shadows"
+	icon_state = "usainfilhelm"
+	item_state = "usainfilhelm"
+	flags_inv = HIDEHAIR|HIDESNOUT
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/unmcwinterhelmet
+	name = "Winter UNMC Helmet"
+	desc = "A standard issued UNMC Helmet.This version seems to have white paint all over it, a type of camoflauge. As an added bonus, it seems a bit more sturdy to laser based weaponary. The flashlight mount doesn't work and it has no visor. Despite that, it seems to be in good condition. Don't lose your head now, soldier."
+	icon_state = "unmcwh"
+	item_state = "unmcwh"
+	flags_inv = HIDEHAIR
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 , ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
 /obj/item/clothing/head/helmet/bluetaghelm
 	name = "blue laser tag helmet"
 	desc = "They'll need more men."

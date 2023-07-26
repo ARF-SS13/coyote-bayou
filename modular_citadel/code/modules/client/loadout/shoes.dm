@@ -181,6 +181,12 @@
 	name = "Ranger Cowboy Boots"
 	path = /obj/item/clothing/shoes/cowboy/ranger
 
+/datum/gear/shoes/unmcboots
+	name = "UNMC Standard boots"
+	path = /obj/item/clothing/shoes/unmcb
+	cost = 3
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
+
 
 /// Factions Shoes or well NCR boots.
 

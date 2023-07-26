@@ -341,6 +341,18 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/armor/unmcmarine
+	name = "Standard UNMC Armor"
+	path = /obj/item/clothing/suit/armor/medium/unmcmarine
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/unmcinfiltrator
+	name = "American dysfunctional stealth suit"
+	path = /obj/item/clothing/suit/armor/medium/unmcinfiltrator
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+	
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed

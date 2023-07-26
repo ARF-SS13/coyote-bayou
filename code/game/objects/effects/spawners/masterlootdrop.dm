@@ -901,7 +901,9 @@
 		/obj/item/clothing/head/helmet/f13/raidermetal = 1,
 		/obj/effect/spawner/bundle/f13/armor/combat/dark = 3,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris = 1,
-		/obj/item/clothing/suit/armor/medium/odstcqb = 1
+		/obj/item/clothing/suit/armor/medium/odstcqb = 1,
+		/obj/item/clothing/suit/armor/medium/unmcwinter = 1, 
+		/obj/item/clothing/head/helmet/unmcwinterhelmet = 1, 
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_armor
