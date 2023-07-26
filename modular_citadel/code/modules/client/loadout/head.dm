@@ -1018,3 +1018,9 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/aurora/tiara
 	name = "Tiara"
 	path = /obj/item/clothing/head/aurora/sayyidah_tiara
+	
+/datum/gear/head/templarhelmet
+    name = "Templar Helmet"
+    path = /obj/item/clothing/head/helmet/knight/templar
+    subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+    cost = 2
