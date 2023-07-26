@@ -976,7 +976,7 @@
 	access = list()
 
 /obj/item/card/id/dogtag/town/legion
-	name = "Legion citizenship permit"
+	name = "Larper Shitizen Snermit"
 	desc = "A permit identifying the holder as a citizen of Caesar's Legion."
 	assignment = "Legion Citizen"
 	access = list()

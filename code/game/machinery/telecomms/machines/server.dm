@@ -133,7 +133,7 @@
 	autolinkers = list("den")
 
 /obj/machinery/telecomms/server/presets/legion
-	id = "Legion Server"
+	id = "Larper Server (Ask for their manager, they love that)"
 	freq_listening = list(FREQ_TOWN_PD)
 	autolinkers = list("legion")
 ///man fuck telecomms

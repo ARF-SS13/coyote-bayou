@@ -314,8 +314,8 @@ obj/item/shield/riot/bullet_proof
 
 //Legion shield
 /obj/item/shield/riot/legion
-	name = "legion shield"
-	desc = "Heavy shield with metal pieces bolted to a wood backing, with a painted yellow bull insignia in the centre. Repair with metal."
+	name = "Larper shield"
+	desc = "Heavy shield with metal pieces bolted to a wood backing, with a painted yellow baby cow insignia in the centre. Repair with metal."
 	icon_state = "shield_legion"
 	item_state = "shield_legion"
 	block_parry_data = /datum/block_parry_data/shield/legion

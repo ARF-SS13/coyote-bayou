@@ -358,7 +358,7 @@ GLOBAL_LIST_EMPTY(all_flags)
 						item_state = "ncrflag"
 						faction = "NCR"
 					if(FACTION_LEGION)
-						name = "Legion flag"
+						name = "Larper flag"
 						desc = "A flag with a golden bull, the symbol of Caesar's Legion."
 						icon_state = "legionflag"
 						item_state = "legionflag"

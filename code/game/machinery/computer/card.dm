@@ -502,18 +502,18 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 /obj/machinery/computer/card/legion
 	name = "\improper Legion identification console"
 	circuit = /obj/item/circuitboard/computer/card/legion
-	// tl;dr - We don't need more Centurions.
+	// tl;dr - We don't need more Centurions. //Maybe you guys should actually make the legion like they are in the game, instead of making FO13 into fucking Night at the Museum FO Edition. ~TK
 	job_list = list(
-		"Legion Slave",
-		"Legion Citizen",
-		"Recruit Legionnaire",
-		"Prime Legionnaire",
-		"Veteran Legionnaire",
+		"Larper Butt-Slave",
+		"Larper Citizen",
+		"Recruit Larperinaire",
+		"Prime Larperinaire",
+		"Veteran Butt-Larperinaire",
 		)
 	job_req = list(
-		"Legate",
-		"Legion Centurion",
-		"Legion Veteran Decanus",
+		"Leg-ater",
+		"Larper Centurion (CN9-D)",
+		"Larper Veteran Dec-anus (Diez Ano)",
 		)
 
 /obj/machinery/computer/card/enclave
