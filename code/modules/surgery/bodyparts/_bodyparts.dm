@@ -1212,6 +1212,7 @@
 			span_danger("\The [current_gauze] on your [name] rip to shreds from the impact, falling away in a heap!"),
 			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_gauze)
+		playsound(get_turf(src), "sound/effects/bandagetear.ogg")
 		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
 	needs_processing = TRUE
 	return TRUE
@@ -1334,6 +1335,7 @@
 			span_danger("\The [current_suture] on your [name] pops wide open, shredded to bloody fragments!"),
 			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_suture)
+		playsound(get_turf(src), "sound/effects/bandagetear.ogg")
 		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
 	needs_processing = TRUE
 	return TRUE
