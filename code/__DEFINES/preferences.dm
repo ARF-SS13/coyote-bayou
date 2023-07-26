@@ -76,7 +76,7 @@
 #define EXP_TYPE_BROTHERHOOD	"Southern BoS Outcasts"
 #define EXP_TYPE_NCR			"Ncr"
 #define EXP_TYPE_OASIS "Oasis"
-#define EXP_TYPE_LEGION			"Legion"
+#define EXP_TYPE_LEGION			"Lil Ceasars Pizza Legion"
 #define EXP_TYPE_WASTELAND		"Wasteland"
 #define EXP_TYPE_ENCLAVE		"Enclave"
 #define EXP_TYPE_NCRCOMMAND     "NCRCommand"

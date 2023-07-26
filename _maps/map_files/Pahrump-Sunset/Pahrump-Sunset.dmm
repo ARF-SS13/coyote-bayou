@@ -29815,17 +29815,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"dzL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building/abandoned)
 "dzS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -43939,14 +43928,11 @@
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
 "haj" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/effect/landmark/start/f13/explorer,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/green,
-/area/f13/building/abandoned)
+/area/f13/tunnel/southwest)
 "hat" = (
 /obj/structure/window/fulltile/wood,
 /turf/open/indestructible/ground/outside/desert,
@@ -80719,15 +80705,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"pVH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building/abandoned)
 "pVI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red,
@@ -115354,7 +115331,7 @@ sON
 qDo
 adg
 axu
-ayl
+haj
 aCb
 aHG
 aII
@@ -134967,7 +134944,7 @@ aJb
 pov
 rIo
 xDz
-haj
+loV
 vVo
 aVr
 bFu
@@ -135226,7 +135203,7 @@ qmI
 aEN
 gDS
 vzf
-pVH
+jnG
 bFu
 hVk
 luo
@@ -135484,7 +135461,7 @@ xDz
 iaJ
 vVo
 tSe
-pVH
+jnG
 taW
 vVo
 aae
@@ -136508,7 +136485,7 @@ vVo
 aXm
 kPu
 vVo
-pVH
+jnG
 bFu
 vVo
 kPu
@@ -137025,7 +137002,7 @@ agZ
 bFu
 kNl
 vVo
-pVH
+jnG
 bFu
 vVo
 rJt
@@ -137534,7 +137511,7 @@ vVo
 bFu
 vbl
 kNl
-pVH
+jnG
 fOB
 aXm
 aXm
@@ -137793,7 +137770,7 @@ pzz
 stC
 bFu
 aXm
-dzL
+bFu
 vVo
 vVo
 vVo
@@ -138042,14 +138019,14 @@ aae
 aae
 vQm
 kNl
-pVH
+jnG
 gca
 vVo
 vxK
 nsb
 pzz
 kNl
-pVH
+jnG
 jHs
 vVo
 bCy
@@ -138311,7 +138288,7 @@ aXm
 fTf
 aXm
 wFN
-pVH
+jnG
 kVM
 ijd
 aUL
@@ -138555,15 +138532,15 @@ aak
 aae
 aae
 vVo
-pVH
+jnG
 gIt
 kEo
 vVo
 pet
 kNl
 pzz
-pVH
-pVH
+jnG
+jnG
 jHs
 vVo
 itY
@@ -139073,7 +139050,7 @@ xbv
 oEd
 cmJ
 vVo
-pVH
+jnG
 bFu
 kNl
 bFu
@@ -139081,7 +139058,7 @@ ybe
 kNl
 aXm
 fOO
-pVH
+jnG
 bFu
 fTf
 pPO
@@ -139589,7 +139566,7 @@ cvs
 vVo
 aXm
 vVo
-pVH
+jnG
 aXm
 vVo
 aXm
@@ -139844,16 +139821,16 @@ csL
 aJb
 aJb
 cIE
-pVH
+jnG
 vVo
 ahT
 aXm
 vVo
 wFJ
-pVH
+jnG
 vVo
 uaB
-pVH
+jnG
 vVo
 eSV
 fjo
@@ -140101,7 +140078,7 @@ kUE
 hoM
 aJb
 cIE
-pVH
+jnG
 agZ
 bFu
 kPu
@@ -140875,9 +140852,9 @@ kNl
 kNl
 bFu
 ocI
-pVH
+jnG
 mrf
-pVH
+jnG
 cys
 vhM
 cnA
@@ -141906,9 +141883,9 @@ bFu
 kNl
 gjz
 bFu
-pVH
+jnG
 fOO
-pVH
+jnG
 ekd
 vVo
 aae

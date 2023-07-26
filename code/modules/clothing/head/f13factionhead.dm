@@ -431,7 +431,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 
 /obj/item/clothing/head/helmet/f13/legion/legate
 	name = "canibal leg-ater helmet"
-	desc = "A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Lil Caesar, given to his second leg-ater in exchange for his undying loyalty to the pizza chain."
+	desc = "A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Lil' Caesar, given to his second leg-ater in exchange for his undying loyalty to the pizza chain."
 	icon_state = "legion-legate"
 	item_state = "legion-legate"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH

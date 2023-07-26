@@ -12,5 +12,7 @@
 /datum/job/ncr/config_check()
 	return FALSE
 
+/*
 /datum/job/CaesarsLegion/config_check()
 	return FALSE
+*/
