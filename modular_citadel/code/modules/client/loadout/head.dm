@@ -256,6 +256,18 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/unmchelmet
+	name = "Standard UNMC Helmet"	
+	path = /obj/item/clothing/head/helmet/unmchelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/unmcstealthhelmet
+	name = "American infiltrator helmet"
+	path = /obj/item/clothing/head/helmet/unmcstealthhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
 /datum/gear/head/pot
 	name = "pot helmet"
 	path = /obj/item/clothing/head/f13/pot
