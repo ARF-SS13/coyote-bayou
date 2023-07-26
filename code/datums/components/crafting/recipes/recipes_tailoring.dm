@@ -551,7 +551,7 @@ datum/crafting_recipe/combathazardhood // sec biohood
 	subcategory = CAT_GENCLOTHES
 	always_available = FALSE
 /datum/crafting_recipe/tailor/legionuniform
-	name = "Legion Uniform"
+	name = "Larper Uniform"
 	result = /obj/item/clothing/under/f13/legskirt
 	reqs = list(/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_WORKBENCH)

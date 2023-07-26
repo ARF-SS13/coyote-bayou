@@ -281,7 +281,7 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/legionlance
-	name = "Legion Lance"
+	name = "Larper Lance"
 	result = /obj/item/twohanded/spear/lance
 	reqs = list(
 		/obj/item/stack/sheet/metal = 18,
@@ -296,7 +296,7 @@
 
 
 /datum/crafting_recipe/legionshield
-	name = "Legion Shield"
+	name = "Larper Shield"
 	result = /obj/item/shield/riot/legion
 	reqs = list(
 		/obj/item/stack/sheet/metal = 8,

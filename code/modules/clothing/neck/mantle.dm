@@ -55,8 +55,8 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
 /obj/item/clothing/neck/mantle/legion
-	name = "Legion Cape"
-	desc = "A deep crimson cape woven by fine legionnaire craftsmanship. A shoulder holster is added beneath for utility."
+	name = "Pizza Legion Cape"
+	desc = "A deep crimson cape (it resembles marinara) woven by finest kitchen craftsman. A shoulder holster is added beneath for utility (it smells like old pepperonis.)"
 	icon_state = "legion"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 

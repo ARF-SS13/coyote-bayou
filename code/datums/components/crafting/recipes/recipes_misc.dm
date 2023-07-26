@@ -23,7 +23,7 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/legiongate
-	name = "Legion iron gate"
+	name = "Larper iron gate"
 	result = /obj/machinery/door/unpowered/secure_legion
 	reqs = list(/obj/item/stack/sheet/metal = 25)
 	time = 60
@@ -292,7 +292,7 @@
 	time = 20
 
 /datum/crafting_recipe/rip/crossexecution
-	name = "Legion Cross"
+	name = "Merciless Cross"
 	result = /obj/structure/cross
 	time = 15
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10)
