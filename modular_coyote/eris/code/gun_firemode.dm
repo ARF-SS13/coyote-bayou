@@ -202,7 +202,7 @@
 	name = "Fully Automatic"
 	desc = "Automatic - 150 RPM."
 	fire_type_default = GUN_FIREMODE_AUTO
-	shoot_delay_default = GUN_FIRE_RATE_200
+	shoot_delay_default = GUN_FIRE_RATE_150
 
 /datum/firemode/burst
 	name = "Burstfire"
