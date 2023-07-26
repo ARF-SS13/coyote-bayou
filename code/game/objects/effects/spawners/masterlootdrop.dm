@@ -266,8 +266,10 @@
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
 		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
-		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 2,
+		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 1,
 		/obj/item/gun/ballistic/automatic/famas = 1,
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 2,
+		/obj/item/gun/ballistic/automatic/smg/m22 = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -899,6 +901,7 @@
 		/obj/item/clothing/head/helmet/f13/raidermetal = 1,
 		/obj/effect/spawner/bundle/f13/armor/combat/dark = 3,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris = 1,
+		/obj/item/clothing/suit/armor/medium/odstcqb = 1
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_armor
@@ -914,7 +917,9 @@
 		/obj/item/clothing/suit/armor/heavy/riot/vault = 20,
 		/obj/item/clothing/suit/armor/heavy/riot/marine = 20,
 		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
-		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1
+		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1,
+		/obj/item/clothing/suit/armor/medium/odst = 2,
+		/obj/item/clothing/suit/armor/medium/odstlead = 1,
 	)
 
 //////////////////
