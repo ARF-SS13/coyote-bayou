@@ -290,6 +290,18 @@
 	name = "Spider Legs"
 	icon_state = "spider"
 
+/datum/sprite_accessory/deco_wings/sfuzzy
+	name = "Alt Spider Legs (Fuzzy)"
+	icon_state = "sfuzzy"
+
+/datum/sprite_accessory/deco_wings/splain
+	name = "Alt Spider Legs (Plain)"
+	icon_state = "splain"
+
+/datum/sprite_accessory/deco_wings/sspiky
+	name = "Alt Spider Legs (Spiky)"
+	icon_state = "sspiky"
+
 /datum/sprite_accessory/deco_wings/xeno
 	name = "Xeno Backplate"
 	icon_state = "backplate"
@@ -422,6 +434,18 @@
 /datum/sprite_accessory/insect_wings/spider
 	name = "Spider Legs"
 	icon_state = "spider"
+
+/datum/sprite_accessory/insect_wings/sfuzzy
+	name = "Alt Spider Legs (Fuzzy)"
+	icon_state = "sfuzzy"
+
+/datum/sprite_accessory/insect_wings/splain
+	name = "Alt Spider Legs (Plain)"
+	icon_state = "splain"
+
+/datum/sprite_accessory/insect_wings/sspiky
+	name = "Alt Spider Legs (Spiky)"
+	icon_state = "sspiky"
 
 //insect markings
 /datum/sprite_accessory/insect_markings // Extra markings for insects ported from tg.
