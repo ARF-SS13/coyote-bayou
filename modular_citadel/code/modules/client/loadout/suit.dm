@@ -1173,6 +1173,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/crusaderweak
+	name = "Crusader Chainmail w/ Tabard"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR

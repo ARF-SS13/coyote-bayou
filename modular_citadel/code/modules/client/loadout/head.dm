@@ -671,7 +671,11 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
-
+/datum/gear/head/crusaderhelmetweak
+    name = "Crusader Helmet"
+    path = /obj/item/clothing/head/coyote/crusaderhelmweak
+    subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+    cost = 2
 
 //Hat hats
 /datum/gear/head/yellowtricorne
@@ -1018,3 +1022,5 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/aurora/tiara
 	name = "Tiara"
 	path = /obj/item/clothing/head/aurora/sayyidah_tiara
+	
+
