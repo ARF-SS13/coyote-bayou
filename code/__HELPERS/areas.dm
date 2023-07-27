@@ -171,6 +171,9 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 		newA.set_dynamic_lighting()
 		newA.has_gravity = oldA.has_gravity
 		newA.noteleport = oldA.noteleport
+		newA.power_light = oldA.power_light
+		newA.power_environ = oldA.power_environ
+		newA.power_equip = oldA.power_equip
 	else
 		newA = area_choice
 
