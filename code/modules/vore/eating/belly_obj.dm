@@ -1114,13 +1114,27 @@
 		living_prey.Stun(5)
 
 /// Host takes damage? Vored critters do too
-/obj/vore_belly/proc/pass_damage(datum/source, damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold)
+/obj/vore_belly/proc/pass_damage(datum/source, list/damlist)
 	SIGNAL_HANDLER
+	if(!islist(damlist))
+		return
 	var/someone_hurt
 	for(var/mob/living/living_prey in get_vored_mobs(FALSE))
 		if(living_prey.status_flags & GODMODE)
 			continue
-		living_prey.apply_damage(damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold, sendsignal = FALSE)
+		living_prey.apply_damage(
+			damage = damlist[AD_DAMAGE],
+			damagetype = damlist[AD_DAMAGETYPE],
+			def_zone = damlist[AD_DEF_ZONE],
+			blocked = damlist[AD_BLOCKED],
+			forced = damlist[AD_FORCED],
+			spread_damage = damlist[AD_SPREAD_DAMAGE],
+			wound_bonus = damlist[AD_WOUND_BONUS],
+			bare_wound_bonus = damlist[AD_BARE_WOUND_BONUS],
+			sharpness = damlist[AD_SHARPNESS],
+			damage_threshold = damlist[AD_DAMAGE_THRESHOLD],
+			sendsignal = FALSE
+		)
 		to_chat(living_prey, span_userdanger("The injury to [owner] hurts you as well!"), pref_check = VOREPREF_VORE_MESSAGES)
 		someone_hurt = TRUE
 	if(someone_hurt)

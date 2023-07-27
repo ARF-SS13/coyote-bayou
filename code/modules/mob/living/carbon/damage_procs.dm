@@ -1,8 +1,31 @@
 
 
 /mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0, sendsignal = TRUE)
+	var/list/damlist = list(
+		AD_DAMAGE = damage,
+		AD_DAMAGETYPE = damagetype,
+		AD_DEF_ZONE = def_zone,
+		AD_BLOCKED = blocked,
+		AD_FORCED = forced,
+		AD_SPREAD_DAMAGE = spread_damage,
+		AD_WOUND_BONUS = wound_bonus,
+		AD_BARE_WOUND_BONUS = bare_wound_bonus,
+		AD_SHARPNESS = sharpness,
+		AD_DAMAGE_THRESHOLD = damage_threshold,
+		AD_SENDSIGNAL = sendsignal)
 	if(sendsignal)
-		SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold)
+		SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damlist)
+		damage = damlist[AD_DAMAGE]
+		damagetype = damlist[AD_DAMAGETYPE]
+		def_zone = damlist[AD_DEF_ZONE]
+		blocked = damlist[AD_BLOCKED]
+		forced = damlist[AD_FORCED]
+		spread_damage = damlist[AD_SPREAD_DAMAGE]
+		wound_bonus = damlist[AD_WOUND_BONUS]
+		bare_wound_bonus = damlist[AD_BARE_WOUND_BONUS]
+		sharpness = damlist[AD_SHARPNESS]
+		damage_threshold = damlist[AD_DAMAGE_THRESHOLD]
+
 	var/hit_percent = (100-blocked)/100
 	if(!forced && hit_percent <= 0)
 		return 0

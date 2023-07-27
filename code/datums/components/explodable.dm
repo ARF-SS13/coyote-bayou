@@ -46,12 +46,14 @@
 	check_if_detonate(target)
 
 ///Called when you attack a specific body part of the thing this is equipped on. Useful for exploding pants.
-/datum/component/explodable/proc/explodable_attack_zone(datum/source, damage, damagetype, def_zone)
-	if(!def_zone)
+/datum/component/explodable/proc/explodable_attack_zone(datum/source, list/damlist)
+	if(!islist(damlist))
 		return
-	if(damagetype != BURN) //Don't bother if it's not fire.
+	if(!LAZYACCESS(damlist, AD_DEF_ZONE)) //If we don't have a damage type, we don't care.
 		return
-	if(!is_hitting_zone(def_zone)) //You didn't hit us! ha!
+	if(LAZYACCESS(damlist, AD_DAMAGETYPE) != BURN) //Don't bother if it's not fire.
+		return
+	if(!is_hitting_zone(LAZYACCESS(damlist, AD_DEF_ZONE))) //You didn't hit us! ha!
 		return
 	detonate()
 

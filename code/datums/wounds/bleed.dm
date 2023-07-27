@@ -297,6 +297,10 @@
 	if(limb.check_suture_time() & SUTURE_STILL_INTACT)
 		. *= WOUND_BLEED_SUTURE_MULTIPLIER // its 0 lol
 
+	var/signal_mod = SEND_SIGNAL(victim, COMSIG_CARBON_GET_BLEED_MOD, src, limb)
+	if(!isnull(signal_mod))
+		. *= signal_mod
+
 	if(victim.reagents?.reagent_list)
 		for(var/datum/reagent/bleed_changer in victim.reagents.reagent_list)
 			. *= bleed_changer.bleed_mult
