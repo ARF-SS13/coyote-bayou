@@ -766,12 +766,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
-	desc = "For some reason you don't feel... Right without wearing some kind of gas mask. You will need to find one."
-	gain_text = "<span class='danger'>You start feeling unwell without any gas mask on.</span>"
-	lose_text = "<span class='notice'>You no longer have a need to wear some gas mask.</span>"
+	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
+	gain_text = "<span class='danger'>You start feeling unwell without a mask on.</span>"
+	lose_text = "<span class='notice'>You no longer have a need to wear a mask.</span>"
 	value = -1
 	mood_quirk = TRUE
-	medical_record_text = "Patient feels more secure when wearing a gas mask."
+	medical_record_text = "Patient feels more secure when wearing a mask."
 	var/mood_category = "masked_mook"
 
 /datum/quirk/masked_mook/on_process()
