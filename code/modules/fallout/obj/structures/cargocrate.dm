@@ -51,6 +51,7 @@
 				new /obj/item/salvage/high(usr_turf)
 			if(prob(10))
 				new /obj/item/salvage/tool(usr_turf)
+		uses_left-
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing
 		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
 			visible_message("[src] falls apart, the final components having been removed.")
