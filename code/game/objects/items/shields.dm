@@ -887,3 +887,17 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	max_integrity = -1
 	resistance_flags = null
+
+/obj/item/shield/coyote/crusader
+	name = "Iron Crusader Shield"
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
+	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	icon_state = "semioval_shield_templar2"
+	item_state = "semioval_shield_templar2"
+	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
+	max_integrity = -1
+	resistance_flags = null

@@ -1539,6 +1539,15 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
+/obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
+	name = "crusader chainmail with tabard"
+	desc = "A full set of chainmail that covers the torso and arms. This one has a tabard with a red cross!"
+	icon_state = "knight_templar"
+	item_state = "knight_templar"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
 /obj/item/clothing/suit/armor/light/kit/punk/ironchestplatered
 	name = "iron chestplate with red cape"
 	desc = "An iron breastplate made after the fall of the old world, includes a dashing red cape."

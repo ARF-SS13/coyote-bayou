@@ -696,6 +696,12 @@
 	item_state = "jingasa"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/crusaderhelmweak
+	name = "Crusader Helmet"
+	desc = "A full, closed plate helmet with a cross engraved into it. Deus vult!"
+	icon_state = "knight_templar"
+	item_state = "knight_templar"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
 
