@@ -766,7 +766,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
-	desc = "For some reason you don't feel... right without wearing some kind of gas mask."
+	desc = "For some reason you don't feel... Right without wearing some kind of gas mask. You will need to find one."
 	gain_text = "<span class='danger'>You start feeling unwell without any gas mask on.</span>"
 	lose_text = "<span class='notice'>You no longer have a need to wear some gas mask.</span>"
 	value = -1
@@ -776,8 +776,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/gas = H.get_item_by_slot(SLOT_WEAR_MASK)
-	if(istype(gas))
+	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_WEAR_MASK)
+	if(istype(mask))
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 	else
@@ -794,12 +794,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mood_change = -3
 	timeout = 0
 
-/datum/quirk/masked_mook/on_spawn()
+/* /datum/quirk/masked_mook/on_spawn()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
 	H.equip_to_slot(gas, SLOT_WEAR_MASK)
-	H.regenerate_icons()
+	H.regenerate_icons()*/
 
 /datum/quirk/paper_skin
 	name = "Paper Skin"
