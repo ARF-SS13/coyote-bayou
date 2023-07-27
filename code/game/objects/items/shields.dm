@@ -896,6 +896,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	desc = "An oblong shield with a red cross on it."
 	icon_state = "semioval_shield_templar2"
 	item_state = "semioval_shield_templar2"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
