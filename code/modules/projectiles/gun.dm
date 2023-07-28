@@ -911,6 +911,7 @@ ATTACHMENTS
 	spawn(time_till_gun_is_ready)
 		if(user.get_active_held_item() == src)
 			user.show_message(span_notice("\The [src] is ready to fire."))
+			playsound(user, 'sound/weapons/selector.ogg', 50, 1)
 
 /obj/item/gun/proc/play_equip_sound(src, volume=50)
 	if(src && equipsound && volume)
