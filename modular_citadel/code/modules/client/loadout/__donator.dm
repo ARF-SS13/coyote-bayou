@@ -786,13 +786,11 @@
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/biker(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault113(src)
 	new /obj/item/lighter/moff(src)
-	new /obj/item/clothing/under/f13/bos/fatigues(src)
 	new /obj/item/gun/energy/laser/wattzs(src)
 	new /obj/item/radio/headset/headset_sci(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/executive/worn(src)
+	new /obj/item/camera/coldwar(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
 	new /obj/item/clothing/ears/headphones(src)
-	new /obj/item/reagent_containers/food/snacks/grown/tea/catnip(src)
-	new /obj/item/reagent_containers/food/snacks/grown/citrus/lemon(src)
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
