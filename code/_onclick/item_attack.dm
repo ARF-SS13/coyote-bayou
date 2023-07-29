@@ -111,7 +111,7 @@
 	var/force_modifier = 0
 	if(force >= 5)
 		if(HAS_TRAIT(user, TRAIT_PANICKED_ATTACKER) || HAS_TRAIT(user, TRAIT_GHOULMELEE))
-			force_modifier = (-force * 0.2) // You do 20% damage cus ur scared
+			force_modifier = (-force * 0.2) // You do 80% damage cause you're a walking corpse
 		else
 			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 				force_modifier += 8
