@@ -2741,7 +2741,7 @@
 	init_firemodes = list(
 		 /datum/firemode/semi_auto/slower
 
-    )
+	)
 	zoom_factor = 1.5
 	can_suppress = FALSE
 	can_bayonet = FALSE 
