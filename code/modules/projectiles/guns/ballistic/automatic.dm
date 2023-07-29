@@ -1460,7 +1460,7 @@
 //// Famas G80{generation}	              ////
 //// -weakened 5.56                       ////
 //// + three round burst fire             ////
-//// - weak 5mm assault rifle to be found ////
+//// - weak 5.56mm assault rifle to be found ////
 //// - Takes 20 mags only                 ////
 //// - Muh bullpup                        ////
 //////////////////////////////////////////////
@@ -1474,7 +1474,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault )
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty )
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
@@ -2720,6 +2720,31 @@
 ////////
 //MISC//
 ////////
+
+
+/obj/item/gun/ballistic/automatic/unmcamr
+	name = "Unktehila"
+	desc = "A green colored TG78 anti material rifle or 'tank gewehr-78' is a .50 cal anti material rifle. This one has odd native american themed imprints on the reciever and stock. The scope on top has an imprint of some odd serpent creature..how peculiar"
+	icon_state = "tg78"
+	item_state = "tg78"
+	mag_type = /obj/item/ammo_box/magazine/highcaliber
+	init_mag_type = /obj/item/ammo_box/magazine/highcaliber
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+
+	init_recoil = HMG_RECOIL (4 , 4)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	zoom_factor = 1.5
+	can_suppress = FALSE
+	can_bayonet = FALSE 
+	can_flashlight = FALSE
 
 /* * * * * * * * * * *
  * M72 Gauss Rifle
