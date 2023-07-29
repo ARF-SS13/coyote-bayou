@@ -2739,7 +2739,7 @@
 	init_recoil = HMG_RECOIL (4 , 4)
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-        /datum/firemode/semi_auto/slower
+		 /datum/firemode/semi_auto/slower
 
     )
 	zoom_factor = 1.5
