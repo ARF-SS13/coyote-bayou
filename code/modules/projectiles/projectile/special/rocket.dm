@@ -33,7 +33,7 @@
 	desc = "Fwoosh."
 	icon_state = "missile" //temp until sprites
 	ricochets_max = 0
-	damage = 150 / it's a fucking rocket
+	damage = 150 // its a fucking rocket
 	var/fire_stacks = 8
 	damage_type = BURN
 
@@ -63,7 +63,7 @@
 	desc = "Rocket propelled chemical warfare."
 	icon_state = "missile"
 	ricochets_max = 0 //it's a MISSILE
-	damage = 75 / it's a rocket with less boom
+	damage = 75 // its a rocket with less boom
 
 /obj/item/projectile/bullet/a84mm_chem/Initialize()
 	. = ..()
