@@ -92,7 +92,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // LEGATE
 
 /datum/job/CaesarsLegion/Legionnaire/f13legate
-	title = "Legion Legate"
+	title = "Lil Ceasar's Legate"
 	flag = F13LEGATE
 	head_announce = list("Security")
 	supervisors = "Caesar"
@@ -138,7 +138,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // ORATOR
 
 /datum/job/CaesarsLegion/Legionnaire/f13orator
-	title = "Legion Orator"
+	title = "Lil Ceasar's Talking Head"
 	flag = F13ORATOR
 	supervisors = "Centurion"
 	selection_color = "#ffdddd"
@@ -186,7 +186,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // CENTURION
 
 /datum/job/CaesarsLegion/Legionnaire/f13centurion
-	title = "Legion Centurion"
+	title = "Lil Ceasar's Legion Centurion"
 	flag = F13CENTURION
 	head_announce = list("Security")
 	total_positions = 1

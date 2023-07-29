@@ -33,20 +33,17 @@
 	var/fire_power = CASING_POWER_NONE * CASING_POWER_MOD_SURPLUS
 	/// A string pointing to a list pointing to a datum pointing to a bunch of sound shit
 	var/sound_properties = CSP_PISTOL_LIGHT
+	var/e_cost = 100 //The amount of energy a cell needs to expend to create this shot.
+	var/select_name = "energy"
 
-/obj/item/ammo_casing/spent
-	name = "spent bullet casing"
-	BB = null
-
-/obj/item/ammo_casing/spent/Initialize()
-	. = ..()
-	deduct_powder_and_bullet_mats()
-
-/obj/item/ammo_casing/Initialize()
+/obj/item/ammo_casing/Initialize(mapload, spent)
 	setup_sound_datums()
 	. = ..()
-	if(projectile_type)
+	if(spent)
+		spend_casing()
+	if(projectile_type && !spent)
 		BB = new projectile_type(src)
+		register_statblock()
 	pixel_x = rand(-10, 10)
 	pixel_y = rand(-10, 10)
 	setDir(pick(GLOB.alldirs))
@@ -57,9 +54,19 @@
 		QDEL_NULL(BB)
 	return ..()
 
+/obj/item/ammo_casing/proc/spend_casing()
+	name = "spent [initial(name)]"
+	BB = null
+	deduct_powder_and_bullet_mats()
+	update_icon()
+
 /obj/item/ammo_casing/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? "-live" : ""]"
-	desc = "[initial(desc)][BB ? "" : " This one is spent."]"
+
+/obj/item/ammo_casing/examine(mob/user)
+	. = ..()
+	if(!BB)
+		. += span_alert("This one is spent.")
 
 /// When you shoot a bullet, the bullet and powder go away! wow!
 /obj/item/ammo_casing/proc/deduct_powder_and_bullet_mats()
@@ -118,6 +125,34 @@
 /obj/item/ammo_casing/proc/newshot() //For energy weapons, syringe gun, shotgun shells and wands (!).
 	if(!BB)
 		BB = new projectile_type(src, src)
+
+/obj/item/ammo_casing/proc/register_statblock(update)
+	if(LAZYACCESS(GLOB.casing2stats, "[type]") && !update)
+		return
+	if(!istype(BB))
+		return // come back when you're a little... mmm... loaded
+	var/list/my_statblock = build_statblock(BB)
+	LAZYSET(GLOB.casing2stats, "[type]", my_statblock)
+
+/obj/item/ammo_casing/proc/build_statblock(obj/item/projectile/proj)
+	if(!BB)
+		return
+	if(!proj && BB)
+		proj = BB
+	var/my_statblock = SANITIZE_LIST(proj.create_statblock())
+	my_statblock["casing_name"] = name || "Ammo Casing"
+	my_statblock["casing_caliber"] = caliber || 0
+	my_statblock["casing_pellets"] = pellets || 1
+	my_statblock["casing_variance"] = variance || 0
+	my_statblock["casing_fire_power"] = fire_power || 0
+	my_statblock["casing_damage_threshold_penetration"] = damage_threshold_penetration
+	my_statblock["casing_select_name"] = select_name || "energy"
+	my_statblock["casing_e_cost"] = e_cost || 100
+	return my_statblock
+
+/obj/item/ammo_casing/proc/get_statblock(update)
+	register_statblock(update)
+	return GLOB.casing2stats["[type]"]
 
 /// Returns our sound data lookup table~
 /obj/item/ammo_casing/proc/get_sound_datum()

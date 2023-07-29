@@ -102,7 +102,7 @@
 
 	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
-	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
+	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
@@ -364,7 +364,6 @@
 	can_ghost_into = FALSE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
-	armour_penetration = 0.1
 
 //Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier

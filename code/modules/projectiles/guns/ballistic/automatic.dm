@@ -21,7 +21,7 @@
 	//var/alarmed = 0 //for a funky, annoying sound when ammo runs out. broken code
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
-	init_recoil = SMG_RECOIL(1)
+	init_recoil = SMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
@@ -114,10 +114,11 @@
 	name = "SMG TEMPLATE"
 	desc = "should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_prefix = "uzi"
+	icon_state = "uzi"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
+	init_recoil = SMG_RECOIL(1, 1)
 
 /* * * * * * * * * * *
  * American 180 SMG
@@ -139,7 +140,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(0.7)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/faster
@@ -153,6 +154,33 @@
 	mag_type = /obj/item/ammo_box/magazine/b180
 	extra_mag_types = /obj/item/ammo_box/magazine/m22smg //lets you use it as a standard .22 when you run out of unobtainable bees.
 	init_mag_type = /obj/item/ammo_box/magazine/b180
+
+/* * * * * * * * * * * 
+ * VSS Vintorez
+ * 9mm
+ * suppressed
+ * two handed
+ * fast shooting
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/vss
+	name = "VSS"
+	desc = "An integrally suppressed compact chambered in the rare 9x39. Where did you even GET this?!"
+	icon_state = "vss"
+	item_state = "vss"
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	mag_type = /obj/item/ammo_box/magazine/vss
+	init_mag_type = /obj/item/ammo_box/magazine/vss
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/faster
+	)
+	silenced = TRUE
+	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
 /* * * * * * * * * * *
  * 14mm SMG
@@ -175,7 +203,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(0.8)
+	init_recoil = AUTOCARBINE_RECOIL(2, 1.5)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/burst/three/slow,
@@ -204,7 +232,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(1)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
@@ -228,7 +256,7 @@
 	name = "beat up .45ACP submachine gun"
 	desc = "What was once an inexpensive, but reliable submachine gun is now an inexpensive piece of shit. It's impressive this thing still fires at all."
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = SMG_RECOIL(1.2)
+	init_recoil = AUTOCARBINE_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
 	)
@@ -249,13 +277,12 @@
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
-	icon_prefix = "smg10mm"
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(1)
+	init_recoil = SMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
@@ -281,7 +308,7 @@
 	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Its grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
 	worn_out = TRUE //a lazy way to overlay the worn sprite variant onto the gun
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = SMG_RECOIL(1.2)
+	init_recoil = SMG_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
@@ -341,7 +368,7 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	added_spread = GUN_SPREAD_POOR
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(0.75)
+	init_recoil = SMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
@@ -367,6 +394,7 @@
 	icon_state = "mp5"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	weapon_class = WEAPON_CLASS_NORMAL //high class, one of the few smol smgs
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -402,7 +430,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun
 	name = "9mm Owen Gun"
-	desc = "A common design out in the wastes due to its portability, weight, and reliability."
+	desc = "A genuine Australian machine carbine! It's favored due to its portability, weight, and reliability."
 	icon_state = "owengun"
 	item_state = "rockwell"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
@@ -424,10 +452,26 @@
 	icon_state = "mac10"
 	weapon_class = WEAPON_CLASS_NORMAL //kinda bulky for a compact gun
 	damage_multiplier = GUN_LESS_DAMAGE_T2 //this spits lots of bullets and is compact and can be dual wielded
-	init_recoil = SMG_RECOIL(2)
+	init_recoil = SMG_RECOIL(2, 2)
+	suppressor_x_offset = 28
+	suppressor_y_offset = 20
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/faster
+	)
+
+//mac-10 but shit.
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/worn
+	name = "Knockoff Ingram Model 10" //I like naming things quirkily
+	desc = "A compact machine pistol with a blistering fire rate. Or so they claim."
+	icon = 	'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "mac10"
+	weapon_class = WEAPON_CLASS_NORMAL //kinda bulky for a compact gun
+	damage_multiplier = GUN_LESS_DAMAGE_T2 //this spits lots of bullets and is compact and can be dual wielded
+	init_recoil = SMG_RECOIL(2.3, 2.3)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/fast
 	)
 
 /* * * * * * * * * * *
@@ -450,12 +494,33 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(0.8)
+	init_recoil = SMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+
+/* * * * * * * * * * *
+ * Worn Carl Gustaf 10mm SMG
+ * Poor Baseline 10mm SMG
+ * 10mm
+ * Slower firing
+ * Less damage
+ * One-handed
+ * No akimbo
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/cg45/worn
+	name = "Worn Carl Gustaf 10mm"
+	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design. This one has seen better days"
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = SMG_RECOIL(1.2, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/faster
+	)
 
 /* * * * * * * * * * *
  * Thompson SMG
@@ -475,7 +540,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(1)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/fast
@@ -521,7 +586,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = SMG_RECOIL(0.8)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three/fast,
@@ -553,6 +618,42 @@
 		/datum/firemode/burst/five/slow,
 		/datum/firemode/semi_auto/fast
 	)
+
+
+
+/* * * * * * * * * * *
+* M22 SMG
+*-weak damage
+*+fast fire rate
+*- takes only uzi magazines
+* - high recoil
+* + comes supressed
+* * * * * * * * * * * */ 
+
+/obj/item/gun/ballistic/automatic/smg/m22
+	name = "M22 Night Ops SMG"
+	desc = "An integrally suppressed submachinegun chambered in 9mm. Produced by Jaeger Company, this special version of the M22 SMG was in use by pre-war UNMC troopers when parachuting behind enemy lines. Now it falls in the hands of the wasteland, itching for the trigger to be pulled. Comes with a built in holographic sight."
+	icon_state = "m22so"
+	item_state = "m22so"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m9mm/doublestack,/obj/item/ammo_box/magazine/m9mm/doublestack/empty , /obj/item/ammo_box/magazine/uzim9mm/rockwell )
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
+	init_recoil = AUTORIFLE_RECOIL(1.7 , 1.7)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/fast
+	)
+	silenced = TRUE
+	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
+
 
 /* * * * * * * * * * *
  * MP-5 SD SMG
@@ -811,7 +912,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(0.8)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -832,6 +933,37 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
+
+/obj/item/gun/ballistic/automatic/m1carbine/covcarbine
+	name = "T25 Assault Carbine"
+	desc = "A T25 Assault Carbine. This unique futuristic looking carbine comes from a company known as Latos Systems."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "covdmr"
+	item_state = "covrifle"
+	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+	fire_sound = 'sound/f13weapons/aep7fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/m10mm
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = CARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE) //need to check what this do
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	auto_eject = 1
+	can_bayonet = FALSE
+	can_scope = TRUE
+	scope_state = "scope_medium"
+	scope_x_offset = 5
+	scope_y_offset = 14
+	can_suppress = FALSE
+	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
+
 /* * * * * * * * * * *
  * M2 Carbine
  * 10mm
@@ -849,7 +981,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto
@@ -871,7 +1003,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1.2)
+	init_recoil = CARBINE_RECOIL(1.5, 1.5)
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/AltClick(mob/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -888,11 +1020,11 @@
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil_dat = getRecoil(CARBINE_RECOIL(1)[1],CARBINE_RECOIL(1)[2],CARBINE_RECOIL(1)[3])
+		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil_dat = getRecoil(init_recoil[1],init_recoil[2],init_recoil[3])
+		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/update_icon_state()
@@ -915,7 +1047,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1.1)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -942,7 +1074,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(0.8, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -963,13 +1095,12 @@
 	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -996,14 +1127,13 @@
 		weapon without any risk of damaging it."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_HEAVIER
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	added_spread = GUN_SPREAD_POOR
 
 /* * * * * * * * * * *
@@ -1018,13 +1148,12 @@
 	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces. This one seems aged..."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
-	icon_prefix = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = CARBINE_RECOIL(1, 1)
 
 /* * * * * * * * * * *
  * 10/22ish carbine
@@ -1043,7 +1172,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 // its a weakass cartridge
-	init_recoil = CARBINE_RECOIL(0.5)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
@@ -1080,7 +1209,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
 	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1 // its a weakass cartridge
-	init_recoil = CARBINE_RECOIL(1.2)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto,
 		/datum/firemode/automatic/rpm200
@@ -1131,7 +1260,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(0.8)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -1209,6 +1338,22 @@
 	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
+ * Knockoff ALR15
+ * Tacticool, literally just a varmint
+ * .223 / 5.56mm
+ * Scopeable maybe?
+ * Same damage, literally GUN_EXTRA_DAMAGE_0
+ * Homie just wanted a resprite
+ * Unique, doesn't have to be, throw it in the loot pool if you wanna be goofy
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/knockoffalr
+	name = "ALR15"
+	desc = "A 5.56x45mm rifle custom built off of a... plastic- that's not polymer, that's just straight-up plastic. What the fuck?"
+	icon_state = "alr15"
+	item_state = "alr15"
+	
+/* * * * * * * * * * *
  * Bushmaster Arm Gun
  * Light semi-auto rifle... pistol thing
  * .223 / 5.56mm
@@ -1237,7 +1382,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = CARBINE_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -1294,14 +1439,13 @@
 	desc = "A pre-war semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
-	icon_prefix = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -1310,6 +1454,39 @@
 	knife_x_offset = 22
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
+
+//////////////////////////////////////////////
+//// Famas G80{generation}	              ////
+//// -weakened 5.56                       ////
+//// + three round burst fire             ////
+//// - weak 5.56mm assault rifle to be found ////
+//// - Takes 20 mags only                 ////
+//// - Muh bullpup                        ////
+//////////////////////////////////////////////
+/obj/item/gun/ballistic/automatic/famas
+	name = "fusil d'assaut G80"
+	desc = "An assault rifle,resembling a FAMAS, used by the pre-war GIGN. Produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
+	icon_state = "famas"
+	item_state = "famas"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty )
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slow
+	)
+	can_bayonet = FALSE
+	can_scope = FALSE
+	can_suppress = TRUE
 
 /* * * * * * * * * * *
  * ALR15 Rifle
@@ -1348,7 +1525,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(0.8)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	can_scope = TRUE
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -1374,7 +1551,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -1404,7 +1581,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = RIFLE_RECOIL(1.4)
+	init_recoil = RIFLE_RECOIL(1.4, 1.4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -1436,17 +1613,20 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_prefix = "assault_carbine"
 	icon_state = "rifle-police"
 	item_state = "assault_carbine"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 21
+	flight_y_offset = 21
 
 /* * * * * * * * * * *
  * Rangemaster Rifle
@@ -1462,14 +1642,13 @@
 	desc = "A Colt Rangemaster semi-automatic rifle, chambered for .30-06. Single-shot only."
 	icon_state = "rangemaster"
 	item_state = "308"
-	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/w3006
 	init_mag_type = /obj/item/ammo_box/magazine/w3006
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(1, 1.6)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -1507,7 +1686,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -1538,13 +1717,12 @@
 	desc = "The WWII American Classic. Still has that satisfiying ping."
 	icon_state = "m1garand"
 	item_state = "rifle"
-	icon_prefix = "308"
 	mag_type = /obj/item/ammo_box/magazine/garand3006
 	init_mag_type = /obj/item/ammo_box/magazine/garand3006
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -1589,7 +1767,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 
 /* * * * * * * * * * *
  * Republic's Pride Rifle
@@ -1609,7 +1787,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 
 	zoom_factor = 1.2
 	can_scope = FALSE
@@ -1636,7 +1814,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
@@ -1660,8 +1838,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
-	desc = "A DKS 501, chambered in .308 Springfield.  With a light polymer body, it's suited for long treks through the desert."
-	icon_prefix = "sniperrifle"
+	desc = "A DKS 501, chambered in .30-06 Springfield.  With a light polymer body, it's suited for long treks through the desert."
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w3006
@@ -1669,7 +1846,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(/datum/firemode/semi_auto/slower)
 
@@ -1734,7 +1911,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger
 	name = "compact sniper rifle"
-	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert. This particular model is lighter and faster."
+	desc = "A DKS 501, chambered in .30-06.  With a light polymer body, it's suited for long treks through the desert. This particular model is lighter and faster."
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -1765,12 +1942,11 @@
 	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. It saw use with pre-war special forces and assault troops, now it's often used by the richest militas and the lucky few to survive looting pre-war depots."
 	icon_state = "R82"
 	item_state = "R84"
-	icon_prefix = "r82"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(0.8)
+	init_recoil = LMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto
@@ -1798,7 +1974,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = AUTORIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/fast
@@ -1829,7 +2005,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2 //needs a lil edge at least
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto
@@ -1858,7 +2034,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/fast
@@ -1879,14 +2055,13 @@
 	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars. Has a unique burst-fire mechanism, where it fires two bullets very quickly, staying accurate, but leading to an increased pause between follow-up shots. Chambered in 5.56x45."
 	icon_state = "type93"
 	item_state = "handmade_rifle"
-	icon_prefix = "handmade_rifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1)
+	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
 	init_firemodes = list(
 		/datum/firemode/burst/two/fastest,
 	)
@@ -1895,6 +2070,39 @@
 	suppressor_x_offset = 27
 	suppressor_y_offset = 27
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+///////////////////////////////
+////  M41 Battle Rifle /////// 
+/// + fast burst fire rate////
+//  + .308 ammunition. ////// 
+//  + Has zoom built in ///// 
+//  -Takes only 10 round magazines/////
+//  - Burns ammo like a ford pickup does gas ///
+/////////////////////////////////////// 
+
+/obj/item/gun/ballistic/automatic/m41br
+	name = "m41 battle rifle"
+	desc = "This rifle is a Jaeger company battle rifle. This battle rifle comes with a built in scope, ammo counter. This rifle is chambered in 7.62 but can use .308. It seems the magazines it can use is only small .308 magazines."
+	icon_state = "m41r"
+	item_state = "m41r"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m308/ext, /obj/item/ammo_box/magazine/m308/ext/empty)
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 1.5)
+	init_firemodes = list(/datum/firemode/burst/three/fastest
+	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	can_flashlight = FALSE
+	zoom_factor = 1.2
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /* * * * * * * * * * *
  * Worn Type 93 assault rifle
@@ -1916,7 +2124,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3.4)
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/burst/five/slow
 	)
@@ -1946,7 +2154,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(0.8)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/burst/two/fast
@@ -1967,13 +2175,12 @@
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
-	icon_prefix = "assault_carbine"
 	mag_type = /obj/item/ammo_box/magazine/m5mm
 	init_mag_type = /obj/item/ammo_box/magazine/m5mm
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = CARBINE_RECOIL(1)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three,
@@ -2010,12 +2217,40 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = AUTORIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto
 	)
 	can_scope = FALSE
+
+/////////////////////////
+/// M5A1 Assault rifle////
+/////////////////////////
+
+/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1
+	name = "M5A1 rifle"
+	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It takes only extended magazines of 5.56 but makes up for such a odd ordeal with an increased fire rate."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "m5a1"
+	item_state = "m5a1"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small, /obj/item/ammo_box/magazine/m556/rifle/, /obj/item/ammo_box/magazine/m556 )
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = AUTORIFLE_RECOIL(1.7, 1.7)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE 
+	can_flashlight = FALSE
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2034,7 +2269,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = CARBINE_RECOIL(1.2)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/burst/five/fast,
 		/datum/firemode/semi_auto
@@ -2058,12 +2293,63 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = AUTORIFLE_RECOIL(1, 1.5)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/fnfal/ak47
+	name = "Retro AK-47"
+	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture. Comes with a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines"
+	icon_state = "trueak"
+	item_state = "trueak"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	disallowed_mags = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/slow
+	)
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_flashlight = FALSE 
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
+	name = "G3M99"
+	desc = "A battle rifle chambered n 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308"
+	icon_state = "g3"
+	item_state = "slr"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	disallowed_mags = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2.3, 2.3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/automatic/rpm150
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE 
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
 
 
 /* * * * * * * * * * *
@@ -2084,7 +2370,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(1.5, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -2108,7 +2394,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(1, 0.9)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -2128,14 +2414,13 @@
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	icon_state = "BAR"
 	item_state = "BAR"
-	icon_prefix = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.3)
+	init_recoil = AUTORIFLE_RECOIL(2, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow
@@ -2162,7 +2447,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(0.8)
+	init_recoil = SMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/burst/three/fastest,
 		/datum/firemode/semi_auto
@@ -2184,7 +2469,6 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -2199,8 +2483,8 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/wt550
-	name = "4.73mm carbine"
-	desc = "A WT-550 Personal Defense Weapon, manufactured by West Tek. It fires 4.73mm caseless rounds."
+	name = "WT-550 PDW"
+	desc = "The WT-550 is a Personal Defense Weapon manufactured by West-Tek. Similar to the P90, it was intended to be a concealable weapon able to penetrate body armor. Considering how rare this weapon is, it seems it wasn't very popular."
 	item_state = "m90"
 	icon_state = "WT550"
 	mag_type = /obj/item/ammo_box/magazine/m473/small
@@ -2209,7 +2493,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = CARBINE_RECOIL(1.2)
+	init_recoil = CARBINE_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/fast
@@ -2217,6 +2501,14 @@
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
+
+/obj/item/gun/ballistic/automatic/wt550/worn
+	name = "WT-550 Sporting Carbine"
+	desc = "A WT-550 locked to semi-automatic and marketed for sport shooting or home defense. This one looks like it has seen better days."
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
 
 /* * * * *
  * LMGs  *
@@ -2251,7 +2543,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = LMG_RECOIL(1)
+	init_recoil = LMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
 	)
@@ -2278,7 +2570,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = LMG_RECOIL(1)
+	init_recoil = LMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
 	)
@@ -2300,7 +2592,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = LMG_RECOIL(1.2)
+	init_recoil = LMG_RECOIL(1.2, 1.2)
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
@@ -2320,7 +2612,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = LMG_RECOIL(1.2)
+	init_recoil = LMG_RECOIL(1.2, 1.2)
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
@@ -2339,7 +2631,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = LMG_RECOIL(1.2)
+	init_recoil = LMG_RECOIL(1.2, 1.2)
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
@@ -2368,7 +2660,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = LMG_RECOIL(1.2)
+	init_recoil = LMG_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
 	)
@@ -2429,6 +2721,31 @@
 //MISC//
 ////////
 
+
+/obj/item/gun/ballistic/automatic/unmcamr
+	name = "Unktehila"
+	desc = "A green colored TG78 anti material rifle or 'tank gewehr-78' is a .50 cal anti material rifle. This one has odd native american themed imprints on the reciever and stock. The scope on top has an imprint of some odd serpent creature..how peculiar"
+	icon_state = "tg78"
+	item_state = "tg78"
+	mag_type = /obj/item/ammo_box/magazine/highcaliber
+	init_mag_type = /obj/item/ammo_box/magazine/highcaliber
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+
+	init_recoil = HMG_RECOIL (4 , 4)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	zoom_factor = 1.5
+	can_suppress = FALSE
+	can_bayonet = FALSE 
+	can_flashlight = FALSE
+
 /* * * * * * * * * * *
  * M72 Gauss Rifle
  * Biggest Baddest Superrifle
@@ -2448,7 +2765,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -2475,7 +2792,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(0.6)
+	init_recoil = RIFLE_RECOIL(1, 0.8)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three,

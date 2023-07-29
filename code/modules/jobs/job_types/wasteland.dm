@@ -1312,6 +1312,12 @@ Raider
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
 */
+
+/datum/job/wasteland/f13wastelander/ashdown
+	title = "Ashdown Citizen"
+	total_positions = 25
+	spawn_positions = 25
+
 /*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
 	flag = F13ENFORCER
@@ -1361,7 +1367,7 @@ Raider
 	title = "Preacher"
 	flag = F13PREACHER
 	faction = FACTION_WASTELAND
-	total_positions = 1
+	total_positions = 3
 	spawn_positions = 1
 	supervisors = "your faith"
 	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
@@ -1772,7 +1778,7 @@ datum/job/wasteland/f13dendoctor
 	faction = FACTION_WASTELAND
 	total_positions = 0
 	spawn_positions = 0
-	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
+	description = "You have come a long way to reach this heaven forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
 	supervisors = "your moral code"
 	selection_color = "#76885f"
 	exp_requirements = 0

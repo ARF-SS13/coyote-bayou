@@ -21,12 +21,44 @@
 	make_reagents = list(/datum/reagent/consumable/cream = 10)
 	category = list("initial","Food")
 
+/datum/design/soymilk
+	name = "10u Soymilk"
+	id = "soymilk"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 30)
+	make_reagents = list(/datum/reagent/consumable/soymilk = 10)
+	category = list("initial","Food")
+
+/datum/design/flour
+	name = "10u Flour"
+	id = "flour"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 25)
+	make_reagents = list(/datum/reagent/consumable/flour = 10)
+	category = list("initial","Food")
+
 /datum/design/black_pepper
 	name = "10u Black Pepper"
 	id = "black_pepper"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 25)
 	make_reagents = list(/datum/reagent/consumable/blackpepper = 10)
+	category = list("initial","Food")
+
+/datum/design/table_salt
+	name = "10u Table Salt"
+	id = "table_salt"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 25)
+	make_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)
+	category = list("initial","Food")
+
+/datum/design/sugar
+	name = "10u Sugar"
+	id = "sugar"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 25)
+	make_reagents = list(/datum/reagent/consumable/sugar = 10)
 	category = list("initial","Food")
 
 /datum/design/enzyme
@@ -41,7 +73,7 @@
 	name = "Biomass Meat Slab"
 	id = "smeat"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 175)
+	materials = list(/datum/material/biomass = 100)
 	build_path = /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat
 	category = list("initial", "Food")
 
@@ -132,13 +164,15 @@
 	build_path = /obj/item/reagent_containers/food/drinks/bottle/bio_carton
 	category = list("initial", "Organic Materials")
 
+/* //and the three men i admired most:
 /datum/design/cloth
 	name = "Roll of Cloth"
 	id = "cloth"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 50)
+	materials = list(/datum/material/biomass = 150)
 	build_path = /obj/item/stack/sheet/cloth
 	category = list("initial","Organic Materials")
+*/
 
 /datum/design/cardboard
 	name = "Sheet of Cardboard"
@@ -148,13 +182,15 @@
 	build_path = /obj/item/stack/sheet/cardboard
 	category = list("initial","Organic Materials")
 
+/* //the father, son, and the holy ghost:
 /datum/design/leather
 	name = "Sheet of Leather"
 	id = "leather"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 150)
+	materials = list(/datum/material/biomass = 225)
 	build_path = /obj/item/stack/sheet/leather
 	category = list("initial","Organic Materials")
+*/
 
 /*/datum/design/secbelt
 	name = "Security Belt"

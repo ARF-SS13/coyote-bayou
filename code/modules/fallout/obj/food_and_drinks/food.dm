@@ -35,7 +35,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/wolf
 	name = "dog meat"
-	desc = "Some asians love this stuff.<br>It does not taste too bad actually."
+	desc = "Chewy."
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 2
@@ -603,6 +603,13 @@
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 40)
 	filling_color = "#F0E68C"
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/deathclawegg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(!..()) //was it caught by a mob?
+		var/turf/T = get_turf(hit_atom)
+		new/obj/effect/decal/cleanable/egg_smudge(T)
+		reagents.reaction(hit_atom, TOUCH)
+		qdel(src)
 
 /obj/item/reagent_containers/food/snacks/f13/giantantegg
 	name = "giant ant egg"

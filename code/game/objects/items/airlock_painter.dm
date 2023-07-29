@@ -234,3 +234,127 @@
 /obj/item/airlock_painter/decal/debug/Initialize()
 	. = ..()
 	ink = new /obj/item/toner/extreme(src)
+
+
+/obj/item/airlock_painter/tile
+	name = "tile painter"
+	desc = "An industrial tool for painting different designs onto tiles - a must-have gadget for aesthetic chasers. Alt-Click to change design."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "tile_sprayer"
+	item_state = "tilesprayer"
+	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
+	var/stored_dir = 2
+	var/stored_color = ""
+	var/stored_decal = "floor"
+	var/stored_decal_total = "floor"
+	var/color_list = list("","red","white")
+	var/dir_list = list(1,2,4,8)
+	var/decal_list = list(list("Grey Tile","floor"),
+			list("Grey Solid","floorsolid"),
+			list("White Tile","white"),
+			list("White Solid","whitesolid"),
+			list("Dark Tile","dark"),
+			list("Dark Solid","darksolid"),
+			list("Red Tile","redfull"),
+			list("Red Solid","redsolid"),
+			list("Red-Grey Checkers","redchess"),
+			list("Red-White Checkers","whiteredchess"),
+			list("Green Tile","greenfull"),
+			list("Green Solid","greensolid"),
+			list("Green-Grey Checkers","greenchess"),
+			list("Green-White Checkers","whitegreenchess"),
+			list("Yellow Tile","yellowfull"),
+			list("Yellow Solid","darkbrownfull"),
+			list("Yellow-Grey Checkers","yellowchess"),
+			list("Yellow-White Checkers","whiteyellowchess"),
+			list("Blue Tile","bluefull"),
+			list("Blue Solid","bluesolid"),
+			list("Blue-Grey Checkers","bluechess"),
+			list("Blue-White Checkers","whitebluechess"),
+			list("Purple Tile","purplefull"),
+			list("Purple Solid","purplesolid"),
+			list("Purple-Grey Checkers","purplechess"),
+			list("Purple-White Checkers","whitepurplechess"),
+			list("Teal Tile","neutralfull2"),
+			list("Teal Solid","neutralsolid"),
+			list("Teal-Grey Checkers","neutralchess"),
+			list("Teal-White Checkers","whiteneutralchess"),
+			list("Dark Brown Tile","darkbrownfull"),
+			list("Red-Yellow Checkers","redyellowfull"),
+			list("Red-Blue Checkers","redbluefull"),
+			list("Red-Green Checkers","redgreenfull"),
+			list("Green-Yellow Checkers","greenyellowfull"),
+			list("Green-Blue Checkers","greenbluefull"),
+			list("Blue-Yellow Checkers","blueyellowfull"),
+			list("Bar","bar"),
+			list("Cafeteria","cafeteria"),
+			list("Freezer","freezerfloor"),
+			list("Hydroponics","hydrofloor"),
+			list("Showroom","showroomfloor"),
+			list("Vault","vault"))
+
+/obj/item/airlock_painter/tile/proc/isValidSurface(surface)
+	return istype(surface, /turf/open/floor/plasteel)
+
+/obj/item/airlock_painter/tile/afterattack(atom/target, mob/user, proximity)
+	. = ..()
+	var/turf/open/floor/F = target
+	if(!proximity)
+		to_chat(user, "<span class='notice'>You need to get closer!</span>")
+		return
+	if(use_paint(user) && isValidSurface(F))
+		playsound(src.loc, 'sound/effects/spray2.ogg', 50, 1)
+		F.AddElement(/datum/element/decal, 'icons/fallout/turfs/floors.dmi', stored_decal_total, CLEAN_STRONG, null, null, alpha)
+	else
+		to_chat(user, "<span class='notice'>The tile painter can only be used on freshly laid tiles!</span>")
+		return
+
+/obj/item/airlock_painter/tile/attack_self(mob/user)
+	if((ink) && (ink.charges >= 1))
+		to_chat(user, "<span class='notice'>[src] beeps to prevent you from removing the toner until out of charges.</span>")
+		return
+	. = ..()
+
+/obj/item/airlock_painter/tile/AltClick(mob/user)
+	. = ..()
+	ui_interact(user)
+
+/obj/item/airlock_painter/tile/Initialize()
+	. = ..()
+	ink = new /obj/item/toner/large(src)
+
+/obj/item/airlock_painter/tile/proc/update_decal_path()
+	var/yellow_fix = "" //This will have to do until someone refactor's markings.dm
+	if (stored_color)
+		yellow_fix = "_"
+	stored_decal_total = "[stored_decal][yellow_fix][stored_color]"
+	return
+
+/obj/item/airlock_painter/tile/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "DecalPainter", name)
+		ui.open()
+
+/obj/item/airlock_painter/tile/ui_data(mob/user)
+	var/list/data = list()
+	data["decal_style"] = stored_decal
+	data["decal_list"] = list()
+
+	for(var/i in decal_list)
+		data["decal_list"] += list(list(
+			"name" = i[1],
+			"decal" = i[2]
+		))
+	return data
+
+/obj/item/airlock_painter/tile/ui_act(action,list/params)
+	if(..())
+		return
+	switch(action)
+		//Lists of decals and designs
+		if("select decal")
+			var/selected_decal = params["decals"]
+			stored_decal = selected_decal
+	update_decal_path()
+	. = TRUE

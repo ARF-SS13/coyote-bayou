@@ -18,7 +18,7 @@
 	speed = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 4 // damage range is punch min, average is 15 when in melee
-	melee_damage_upper = 20 
+	melee_damage_upper = 20
 	ranged = TRUE
 	wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_CRAWL
@@ -30,7 +30,7 @@
 
 	retreat_distance = 0 // Mob doesn't retreat
 	//how far they pull back
-	
+
 	minimum_distance = 0 //Mob pushes up to melee, leading with its ranged attacks to soften up player.
 	// how close you can get before they try to pull back
 
@@ -57,7 +57,7 @@
 	emote_taunt_sound = list('sound/f13npc/centaur/taunt.ogg')
 	emote_taunt = list("grunts", "gurgles", "wheezes", "flops", "scrabbles")
 	taunt_chance = 30
-	aggrosound = list('sound/f13npc/centaur/aggro1.ogg', )
+	emote_taunt_sound = list('sound/f13npc/centaur/aggro1.ogg', )
 	idlesound = list('sound/f13npc/centaur/idle1.ogg', 'sound/f13npc/centaur/idle2.ogg')
 	death_sound = 'sound/f13npc/centaur/centaur_death.ogg'
 	attack_sound = 'sound/f13npc/centaur/lash.ogg'
@@ -72,8 +72,18 @@
 	health = 400
 	melee_damage_lower = 35
 	melee_damage_upper = 35
-	armour_penetration = 0.1
 
+
+/mob/living/simple_animal/hostile/centaur/lazy_larry
+	name = "Lazy Larry (and his dog Jeffery)"
+	desc = "That's Larry.  He's aight."
+	faction = list("hostile","supermutant","neutral")
+	despawns_when_lonely = FALSE
+	environment_smash = NONE
+
+/mob/living/simple_animal/hostile/centaur/lazy_larry/Initialize()
+	. = ..()
+	buckle_up()
 
 // -----------------------------------
 // ABOMINATION
@@ -92,7 +102,6 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 40
-	armour_penetration = 0.1
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	environment_smash = ENVIRONMENT_SMASH_RWALLS
@@ -104,14 +113,14 @@
 	deathmessage = "wails as its form shudders and violently comes to a stop."
 	death_sound = 'sound/voice/abomburning.ogg'
 	despawns_when_lonely = FALSE // too ANGRY to despawn
-
+/*
 /mob/living/simple_animal/hostile/abomination/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		var/choice = pick(1, 1, 2, 2, 3, 4)
 		H.reagents.add_reagent(/datum/reagent/toxin/FEV_solution, choice)
-
+*/
 /mob/living/simple_animal/hostile/abomination/Initialize()
 	. = ..()
 	abom_sounds = list('sound/voice/abomination1.ogg', 'sound/voice/abomscream.ogg', 'sound/voice/abommoan.ogg', 'sound/voice/abomscream2.ogg', 'sound/voice/abomscream3.ogg')
@@ -121,7 +130,7 @@
 	if(stat)
 		return
 	var/chosen_sound = pick(abom_sounds)
-	playsound(src, chosen_sound, 50, TRUE)
+	playsound(src, chosen_sound, 25, TRUE)
 
 /mob/living/simple_animal/hostile/abomination/Life()
 	..()

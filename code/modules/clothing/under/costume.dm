@@ -282,19 +282,21 @@
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/qipao/white
 	name = "White Qipao"
 	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is white."
 	icon_state = "qipao_white"
 	item_state = "qipao_white"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/qipao/red
 	name = "Red Qipao"
 	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is red."
 	icon_state = "qipao_red"
 	item_state = "qipao_red"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/cheongsam
 	name = "Black Cheongsam"
@@ -303,7 +305,7 @@
 	item_state = "cheong"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
-	mutantrace_variation = USE_TAUR_CLIP_MASK
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/cheongsam/white
 	name = "White Cheongsam"
@@ -312,7 +314,7 @@
 	item_state = "cheongw"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/cheongsam/red
 	name = "Red Cheongsam"
@@ -321,6 +323,7 @@
 	item_state = "cheongr"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/cloud
 	name = "cloud"
@@ -385,3 +388,35 @@
 	item_color = "fifi"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+/obj/item/clothing/under/f13/police/officer
+	name = "police officer's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_officer"
+	item_state = "police_officer"
+
+/obj/item/clothing/under/f13/police/lieutenant
+	name = "police lieutenant's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+
+/obj/item/clothing/under/f13/police/chief
+	name = "police chief's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_chief"
+	item_state = "police_chief"
+
+/obj/item/clothing/under/f13/police/snr
+	name = "police snr uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie. This one comes with search and rescue markings!"
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "police_snr"
+	item_state = "police_snr"

@@ -28,9 +28,6 @@
 	var/acid_level = 0 //how much acid is on that obj
 
 	var/persistence_replacement //have something WAY too amazing to live to the next round? Set a new path here. Overuse of this var will make me upset.
-	var/current_skin //the item reskin
-	var/list/unique_reskin //List of options to reskin.
-	var/always_reskinnable = FALSE
 
 	// Access levels, used in modules\jobs\access.dm
 	var/list/req_access
@@ -95,53 +92,29 @@
 		qdel(src)
 
 /obj/assume_air(datum/gas_mixture/giver)
-	if(loc)
-		return loc.assume_air(giver)
-	else
-		return null
+	return TRUE
 
 /obj/assume_air_moles(datum/gas_mixture/giver, moles)
-	if(loc)
-		return loc.assume_air_moles(giver, moles)
-	else
-		return null
+	return TRUE
 
 /obj/assume_air_ratio(datum/gas_mixture/giver, ratio)
-	if(loc)
-		return loc.assume_air_ratio(giver, ratio)
-	else
-		return null
+	return TRUE
 
 /obj/transfer_air(datum/gas_mixture/taker, moles)
-	if(loc)
-		return loc.transfer_air(taker, moles)
-	else
-		return null
+	return TRUE
 
 /obj/transfer_air_ratio(datum/gas_mixture/taker, ratio)
-	if(loc)
-		return loc.transfer_air_ratio(taker, ratio)
-	else
-		return null
+	return TRUE
 
 
 /obj/remove_air(amount)
-	if(loc)
-		return loc.remove_air(amount)
-	else
-		return null
+	return TRUE
 
 /obj/remove_air_ratio(ratio)
-	if(loc)
-		return loc.remove_air_ratio(ratio)
-	else
-		return null
+	return TRUE
 
 /obj/return_air()
-	if(loc)
-		return loc.return_air()
-	else
-		return null
+	return TRUE
 
 /obj/proc/handle_internal_lifeform(mob/lifeform_inside_me, breath_request)
 	//Return: (NONSTANDARD)
@@ -330,32 +303,8 @@
 	. = ..()
 	if(obj_flags & UNIQUE_RENAME)
 		. += span_notice("Use a pen on it to rename it or change its description.")
-	if(unique_reskin && (!current_skin || always_reskinnable))
-		. += span_notice("Alt-click it to reskin it.")
-
-/obj/AltClick(mob/user)
-	. = ..()
-	if(unique_reskin && (!current_skin || always_reskinnable) && user.canUseTopic(src, BE_CLOSE, NO_DEXTERY))
-		reskin_obj(user)
-		return TRUE
-
-/obj/proc/reskin_obj(mob/M)
-	if(!LAZYLEN(unique_reskin))
-		return
-	var/list/skins = list()
-	for(var/S in unique_reskin)
-		skins[S] = image(icon = icon, icon_state = unique_reskin[S])
-	var/choice = show_radial_menu(M, src, skins, custom_check = CALLBACK(src, .proc/check_skinnable, M), radius = 40, require_near = TRUE)
-	if(!choice)
-		return FALSE
-	icon_state = unique_reskin[choice]
-	current_skin = choice
-	return
-
-/obj/proc/check_skinnable(/mob/M)
-	if(current_skin && !always_reskinnable)
-		return FALSE
-	return TRUE
+	if(SEND_SIGNAL(src, COMSIG_ITEM_RESKINNABLE))
+		. += span_notice("Ctrl-Shift-Click this to reskin it!")
 
 /obj/update_overlays()
 	. = ..()

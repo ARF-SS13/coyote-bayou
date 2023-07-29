@@ -14,7 +14,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 		language = get_selected_language()
 	send_speech(message, 7, src, , spans, message_language=language, just_chat = just_chat)
 
-/atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
+/atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 
 /atom/movable/proc/can_speak()
@@ -24,7 +24,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
-		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source)
+		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source, just_chat)
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source)
 	if(!source)

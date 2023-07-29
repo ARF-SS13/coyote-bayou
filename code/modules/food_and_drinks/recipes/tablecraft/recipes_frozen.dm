@@ -47,7 +47,7 @@
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/freezy
-	name ="Nuka Freezy"
+	name ="Cosmic Freezy"
 	reqs = list(
 		/datum/reagent/consumable/bluecherryjelly = 5,
 		/datum/reagent/consumable/nuka_cola = 15,
@@ -214,7 +214,7 @@
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/soda_sc
-	name = "Nuka Cola snowcone"
+	name = "Cosmic Cola snowcone"
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,

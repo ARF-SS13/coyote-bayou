@@ -206,7 +206,6 @@
 	M.AdjustStun(-25, 0)
 	M.AdjustKnockdown(-25, 0)
 	M.AdjustUnconscious(-25, 0)
-	M.adjustStaminaLoss(-5, 0)
 	M.Jitter(2)
 	if(M.mind)
 		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)

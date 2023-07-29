@@ -7,7 +7,7 @@
 /datum/gear/shoes/laceup
 	name = "laceup shoes"
 	path = /obj/item/clothing/shoes/laceup
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/workboots
 	name = "work boots"
@@ -53,9 +53,8 @@
 	path = /obj/item/clothing/shoes/f13/rag
 
 /datum/gear/shoes/footcloths/pawb
-	name = "Tough Feet"
+	name = "tough feet"
 	path = /obj/item/clothing/shoes/f13/rag/pawb
-
 
 /datum/gear/shoes/raidertreads
 	name = "raider treads"
@@ -64,22 +63,22 @@
 /datum/gear/shoes/wraps
 	name = "golden leg wraps"
 	path = /obj/item/clothing/shoes/wraps
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapssilver
 	name = "silver leg wraps"
 	path = /obj/item/clothing/shoes/wraps/silver
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapsblue
 	name = "blue leg wraps"
 	path = /obj/item/clothing/shoes/wraps/blue
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapsred
 	name = "red leg wraps"
 	path = /obj/item/clothing/shoes/wraps/red
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wornboots
 	name = "worn boots"
@@ -169,6 +168,25 @@
 /datum/gear/shoes/ww2brown
 	name = "Type three service shoes"
 	path = /obj/item/clothing/shoes/ww2brown
+
+/datum/gear/shoes/putt
+	name = "long puttees"
+	path = /obj/item/clothing/shoes/putt
+
+/datum/gear/shoes/cowboy/alt
+	name = "Alt Cowboy Boots"
+	path = /obj/item/clothing/shoes/cowboy/alt
+
+/datum/gear/shoes/cowboy/ranger
+	name = "Ranger Cowboy Boots"
+	path = /obj/item/clothing/shoes/cowboy/ranger
+
+/datum/gear/shoes/unmcboots
+	name = "UNMC Standard boots"
+	path = /obj/item/clothing/shoes/unmcb
+	cost = 3
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
+
 
 /// Factions Shoes or well NCR boots.
 

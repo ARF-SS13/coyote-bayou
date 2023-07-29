@@ -9,6 +9,32 @@
  * Backpack
  */
 
+/obj/item/storage/debug
+	name = "debug testsack"
+	desc = "A testing device used to hold various debug things for testing."
+	icon_state = "eq_backpack"
+	item_state = "backpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	resistance_flags = NONE
+	max_integrity = 300
+	component_type = /datum/component/storage/concrete/debug_sack/smaller
+
+/obj/item/storage/debug_box
+	name = "debug testbox"
+	desc = "A testing device used to hold various debug things for testing."
+	icon_state = "eq_box"
+	item_state = "backpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	resistance_flags = NONE
+	max_integrity = 300
+	component_type = /datum/component/storage/concrete/debug_sack
+
 /obj/item/storage/backpack
 	name = "hiking backpack"
 	desc = "You wear this on your back and put items into it."
@@ -157,7 +183,7 @@
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
-	desc = "It's a special backpack made exclusively for Nanotrasen officers."
+	desc = "It's a special backpack made exclusively for US Government officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 	resistance_flags = FIRE_PROOF
@@ -286,7 +312,7 @@
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
-	desc = "An exclusive satchel for Nanotrasen officers."
+	desc = "An exclusive satchel for US Government officers."
 	icon_state = "satchel-cap"
 	item_state = "captainpack"
 	resistance_flags = FIRE_PROOF
@@ -465,7 +491,7 @@
 	component_type = /datum/component/storage/concrete/backpack/duffelbag/syndie
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman
-	desc = "A large duffel bag for holding extra things. There is a Nanotrasen logo on the back."
+	desc = "A large duffel bag for holding extra things. There is a US Government logo on the back."
 	icon_state = "duffel-syndieammo"
 	item_state = "duffel-syndieammo"
 
@@ -664,13 +690,13 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	item_state = "satchel_enclave"
 
 /obj/item/storage/backpack/legionr
-	name = "Legion red flag"
-	desc = "Legion cape made from what looks like red piece of cloth, with a golden bull on the back. With a lot of pockets underneath"
+	name = "Larper 'red' flag"
+	desc = "A larper cape made from what looks like red piece of cloth, with a golden baby cow on the back. With a lot of pockets underneath"
 	icon_state = "legioncaper"
 	item_state = "legioncaper"
 
 /obj/item/storage/backpack/legionb
-	name = "Legion black flag"
-	desc = "Legion cape made from what looks like black piece of cloth, with a golden bull on the back. With a lot of pockets underneath"
+	name = "Larper purple flag"
+	desc = "Lee-gion brand cape made from what looks like pinkish dark blue piece of cluth, with a golden bull cucking a sheep on the back. With a lot of pockets underneath"
 	icon_state = "legioncapeb"
 	item_state = "legioncapeb"

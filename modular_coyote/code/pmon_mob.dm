@@ -4,8 +4,6 @@
 	name = "eevee"
 	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
 	icon = 'modular_coyote/icons/mob/pokemon64.dmi'
-	//The width of the icon file in use. Used to center sprites on their respective tiles.
-	var/icon_size_width = 64
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
@@ -14,15 +12,20 @@
 	maxbodytemp = T0C + 40
 	health = 200
 	maxHealth = 200
-	speed = 0.5
+	speed = 0
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "bops"
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	attack_verb_continuous = "nuzzles"
-	attack_verb_simple = "nuzzle"
+	attack_verb_continuous = "attacks"
+	attack_verb_simple = "attack"
+	friendly_verb_continuous = "nuzzles"
+	friendly_verb_simple = "nuzzle"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	melee_damage_lower = 5
+	melee_damage_upper = 15
 	turns_per_move = 5
 	pass_flags = PASSTABLE //Impossible to climb tables so just pass over them for now
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
@@ -30,33 +33,38 @@
 	rotate_on_lying = FALSE
 	//Can use hands
 	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
 	//Need this to have the hands appear on the HUD
 	held_items = list(null, null)
-	//The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
+	///The pokemon-types that this mob has. Used to auto-generate moves(abilities) and some other attributes.
 	var/list/p_types = list()
-	//Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
-	var/list/additional_moves = list()
-	//List of passive traits/flags
+	///Moves that aren't automatically granted based on their type. Will be assigned during Initialize()
+	var/list/p_additional_moves = list()
+	///List of passive traits/flags
 	var/list/p_traits = list()
-	//Moves/Abilities that this mob is currently using
-	var/list/active_moves = list()
-	//If this is filled in by the player, it overrides their default description. Can be imported from the player's current character slot
-	var/flav_text = null
-	//Roleplaying preferences
-	var/ooc_text = null
+	///Moves/Abilities that this mob is currently using
+	var/list/p_active_moves = list()
 
 /mob/living/simple_animal/pokemon/Initialize()
 	. = ..()
-	if(icon_size_width>32)
-		transform = transform.Translate(-((icon_size_width-32)/2),0) //Adjust pixel offset left by half of their icon's width above 32
+	recenter_wide_sprite()
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
 	GLOB.pokemon_list += src
 
+///Will recenter a mob's icon on their tile if it's wider than 32 pixels. Will do nothing if it's 32 or less. To use correctly, position the mob in the center of the icon_state in your dmi.
+/mob/proc/recenter_wide_sprite()
+	var/icon/I = icon(icon)
+	var/icon_width = I.Width()
+	if(icon_width>32) //This proc only fixes sprites that are too wide.
+		var/matrix/M = matrix() //Use a fresh matrix so we start at 0,0
+		transform = M.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
+		return TRUE
+	return FALSE
+
 /mob/living/simple_animal/pokemon/Life()
 	. = ..()
-	regenerate_icons()
 
 /mob/living/simple_animal/pokemon/regenerate_icons()
 	if(stat == DEAD)
@@ -83,6 +91,14 @@
 	icon_state = "absol"
 	icon_living = "absol"
 	icon_dead = "absol_d"
+	p_types = list(P_TYPE_DARK)
+	p_traits = list(P_TRAIT_RIDEABLE)
+
+/mob/living/simple_animal/pokemon/megaabsol
+	name = "mega absol"
+	icon_state = "megaabsol"
+	icon_living = "megaabsol"
+	icon_dead = "megaabsol_d"
 	p_types = list(P_TYPE_DARK)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
@@ -118,7 +134,6 @@
 	icon_living = "articuno"
 	icon_dead = "articuno_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_ICE, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
@@ -152,7 +167,7 @@
 	icon_living = "ditto"
 	icon_dead = "ditto_d"
 	p_types = list(P_TYPE_NORM)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)//amogus
+//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)//amogus
 	mob_size = MOB_SIZE_SMALL
 
 /mob/living/simple_animal/pokemon/dragonair
@@ -163,7 +178,7 @@
 	icon_dead = "dragonair_d"
 	p_types = list(P_TYPE_DRAGON)
 //	aquatic_movement = 1
-//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
@@ -248,7 +263,7 @@
 	icon_living = "flygon"
 	icon_dead = "flygon_d"
 	p_types = list(P_TYPE_GROUND, P_TYPE_DRAGON)
-//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
@@ -316,7 +331,7 @@
 	icon_living = "jirachi"
 	icon_dead = "jirachi_d"
 	p_types = list(P_TYPE_STEEL, P_TYPE_PSYCH)
-//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 
 /mob/living/simple_animal/pokemon/jolteon
@@ -330,7 +345,7 @@
 
 /mob/living/simple_animal/pokemon/jolteon/bud
 	name = "Bud"
-	active_moves = list(M_SHOCK) //Shocks you by default
+	p_active_moves = list(M_SHOCK) //Shocks you by default
 
 /mob/living/simple_animal/pokemon/kirlia
 	name = "kirlia"
@@ -372,7 +387,6 @@
 	icon_living = "lugia"
 	icon_dead = "lugia_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
@@ -445,6 +459,24 @@
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)
 
+/mob/living/simple_animal/pokemon/snivy
+	name = "snivy"
+	desc = "Being exposed to sunlight makes its movements swifter. It uses vines more adeptly than its hands."
+	icon_state = "snivy"
+	icon_living = "snivy"
+	icon_dead = "snivy_d"
+	mob_size = MOB_SIZE_SMALL
+	p_types = list(P_TYPE_GRASS)
+
+/mob/living/simple_animal/pokemon/sprigatito
+	name = "sprigatito"
+	desc = "Its fluffy fur is similar in composition to plants. This Pokémon frequently washes its face to keep it from drying out."
+	icon_state = "sprigatito"
+	icon_living = "sprigatito"
+	icon_dead = "sprigatito_d"
+	mob_size = MOB_SIZE_SMALL
+	p_types = list(P_TYPE_GRASS)
+
 /mob/living/simple_animal/pokemon/sylveon
 	name = "sylveon"
 	desc = "Sylveon, the Intertwining Pokemon. Sylveon affectionately wraps its ribbon-like feelers around its Trainer's arm as they walk together."
@@ -494,7 +526,7 @@
 	icon_living = "ninetales"
 	icon_dead = "ninetales_d"
 	p_types = list(P_TYPE_FIRE)
-//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_telepathy)
+//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_telepathy)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
 /mob/living/simple_animal/pokemon/ponyta
@@ -567,6 +599,14 @@
 	p_types = list(P_TYPE_WATER)
 	p_traits = list(P_TRAIT_RIDEABLE)
 
+/mob/living/simple_animal/pokemon/lycanroc
+	name = "lycanroc"
+	desc = "Its quick movements confuse its enemies. Well equipped with claws and fangs, it also uses the sharp rocks in its mane as weapons."
+	icon_state = "lycanroc"
+	icon_living = "lycanroc"
+	icon_dead = "lycanroc_d"
+	p_types = list(P_TYPE_ROCK)
+
 /mob/living/simple_animal/pokemon/kabuto
 	name = "kabuto"
 	icon_state = "Kabuto"
@@ -603,7 +643,7 @@
 	icon_living = "mew"
 	icon_dead = "mew_d"
 	p_types = list(P_TYPE_PSYCH)
-//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover,
 //							/mob/living/simple_animal/pokemon/proc/move_imposter,
 //							/mob/living/simple_animal/pokemon/proc/move_invisibility)
@@ -615,7 +655,7 @@
 	icon_living = "mewtwo"
 	icon_dead = "mewtwo_d"
 	p_types = list(P_TYPE_PSYCH)
-//	additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
+//	p_additional_moves = list(/mob/living/simple_animal/pokemon/proc/move_fly,
 //							/mob/living/simple_animal/pokemon/proc/move_hover)
 
 /mob/living/simple_animal/pokemon/purrloin
@@ -640,7 +680,6 @@
 	icon_living = "rayquaza"
 	icon_dead = "rayquaza_d"
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
-	icon_size_width = 96
 	p_types = list(P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
@@ -675,7 +714,7 @@
 	icon_living = "zoroark"
 	icon_dead = "zoroark_d"
 	p_types = list(P_TYPE_DARK)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
+//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 
 /mob/living/simple_animal/pokemon/zorua
 	name = "zorua"
@@ -683,7 +722,7 @@
 	icon_living = "zorua"
 	icon_dead = "zorua_d"
 	p_types = list(P_TYPE_DARK)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
+//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 	mob_size = MOB_SIZE_SMALL
 
 /mob/living/simple_animal/pokemon/zorua_hisuian
@@ -692,7 +731,7 @@
 	icon_living = "zorua_hisuian"
 	icon_dead = "zorua_hisuian_d"
 	p_types = list(P_TYPE_NORM, P_TYPE_GHOST)
-//	additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
+//	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/pokemon/proc/move_imposter)
 	mob_size = MOB_SIZE_SMALL
 
 ///////////////////////

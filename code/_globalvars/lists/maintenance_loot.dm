@@ -208,6 +208,9 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 20,
 	/obj/item/reagent_containers/food/drinks/bottle/cognac = 10,
 	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 20,
+	/obj/item/export/bottle/whiskey = 10,
+	/obj/item/export/bottle/vodka = 10,
+	/obj/item/export/bottle/nukashine = 1,
 	/obj/item/stock_parts/chem_cartridge/garbage = 10,
 	/obj/item/stock_parts/chem_cartridge/simple = 1,
 	/obj/item/reagent_containers/pill/patch/jet = 5,
@@ -530,7 +533,7 @@ GLOBAL_LIST_INIT(loot_t4_melee, list(
 	/obj/item/melee/unarmed/lacerator,
 	/obj/item/melee/unarmed/maceglove,
 	/obj/item/melee/unarmed/punchdagger,
-	/obj/item/melee/powerfist/f13,
+	/obj/item/melee/unarmed/powerfist/moleminer,
 	/obj/item/shield/riot
 ))
 
@@ -542,9 +545,9 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/gun/ballistic/revolver/ballisticfist,
 	/obj/item/twohanded/sledgehammer/supersledge,
 	/obj/item/shishkebabpack,
-	/obj/item/melee/powerfist/f13/goliath,
+	/obj/item/melee/unarmed/powerfist,
 	/obj/item/melee/unarmed/deathclawgauntlet,
-	/obj/item/melee/powerfist/f13/moleminer
+	/obj/item/melee/unarmed/powerfist/moleminer
 ))
 
 GLOBAL_LIST_INIT(loot_t1_range, list(
@@ -594,7 +597,9 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/gun/ballistic/automatic/m1carbine,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/delisle,
-	/obj/item/ammo_box/magazine/m9mm/doublestack
+	/obj/item/ammo_box/magazine/m9mm/doublestack,
+	/obj/item/gun/ballistic/revolver/medusa,
+	/obj/item/gun/ballistic/revolver/hermes
 ))
 
 GLOBAL_LIST_INIT(loot_t3_range, list(

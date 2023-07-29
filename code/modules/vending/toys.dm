@@ -6,7 +6,9 @@
 	product_ads = "Feel like a real soldier with your Red Ryder BB Gun!;Express your inner child today!;Don't shoot your eye out!;Slash and slay like Grognak!;Who needs responsibilities when you have toy weapons?;Make your next game of cops and commies FUN!"
 	vend_reply = "Come back for more!"
 	circuit = /obj/item/circuitboard/machine/vending/donksofttoyvendor
-	products = list(
+	products = list(/obj/item/tattoo_gun = 5,
+		/obj/item/tattoo_holder/blank = 20,
+		/obj/item/tattoo_holder/blank/temporary = 20,
 		/obj/item/gun/ballistic/automatic/toy/unrestricted = 10,
 		/obj/item/gun/ballistic/automatic/toy/pistol/unrestricted = 10,
 		/obj/item/gun/ballistic/shotgun/toy/unrestricted = 10,
@@ -66,7 +68,9 @@
 	product_ads = "Need some 'Fun Enhancers'? We got 'em here!"
 	icon_state = "kink"
 	vend_reply = "Have fun!"
-	products = list(
+	products = list(/obj/item/tattoo_gun = 5,
+		/obj/item/tattoo_holder/blank = 20,
+		/obj/item/tattoo_holder/blank/temporary = 20,
 		/obj/item/storage/pill_bottle/breast_enlarger = 5,
 		/obj/item/storage/pill_bottle/butt_enlarger = 5,
 		/obj/item/storage/pill_bottle/penis_enlarger = 5,

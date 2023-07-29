@@ -463,7 +463,7 @@
 
 /obj/item/clothing/suit/jacket/letterman_nanotrasen
 	name = "blue letterman jacket"
-	desc = "A blue letterman jacket with a proud Nanotrasen N on the back. The tag says that it was made in Space China."
+	desc = "A blue letterman jacket with a proud US Government N on the back. The tag says that it was made in Space China."
 	icon_state = "letterman_n"
 	item_state = "letterman_n"
 
@@ -1126,4 +1126,297 @@
 	desc = "A Steel coat! Jet fuel might melt this.."
 	icon_state = "steel"
 	item_state = "steel"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/ranger/ned
+	name = "Ned Armor"
+	desc = "Maybe it will protect you, maybe it won't. Who's to know."
+	icon_state = "ned"
+	item_state = "ned"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/ranger/us_coat
+	name = "US coat"
+	desc = "A nice enough looking coat"
+	icon_state = "us_coat"
+	item_state = "us_coat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/ranger/trench_colorable
+	name = "Trench, colorable"
+	desc = "Trench coat! Colorable verision."
+	icon_state = "trench_colorable"
+	item_state = "trench_colorable"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/poncho
+	name = "Rainbow Poncho"
+	desc = "A rainbow poncho"
+	icon_state = "poncho"
+	item_state = "poncho"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek
+	name = "Cyperpunk Brown"
+	desc = "A brown jacket!"
+	icon_state = "cyberpunksleek"
+	item_state = "cyberpunksleek"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_black
+	name = "Cyperpunk Black"
+	desc = "A black jacket!"
+	icon_state = "cyberpunksleek_black"
+	item_state = "cyberpunksleek_black"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_green
+	name = "Cyperpunk Green"
+	desc = "A green jacket!"
+	icon_state = "cyberpunksleek_green"
+	item_state = "cyberpunksleek_green"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_white
+	name = "Cyperpunk White"
+	desc = "A white jacket!"
+	icon_state = "cyberpunksleek_white"
+	item_state = "cyberpunksleek_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long_green
+	name = "Cyperpunk Long Green"
+	desc = "A green jacket!"
+	icon_state = "cyberpunksleek_long_green"
+	item_state = "cyberpunksleek_long_green"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long_black
+	name = "Cyperpunk Long Black"
+	desc = "A black jacket!"
+	icon_state = "cyberpunksleek_long_black"
+	item_state = "cyberpunksleek_long_black"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long_white
+	name = "Cyperpunk Long white"
+	desc = "A white jacket!"
+	icon_state = "cyberpunksleek_long_white"
+	item_state = "cyberpunksleek_long_white"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/cyberpunksleek_long
+	name = "Cyperpunk Long brown"
+	desc = "A brown jacket!"
+	icon_state = "cyberpunksleek_long"
+	item_state = "cyberpunksleek_long"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/overcoat_brown
+	name = "Brown Overcoat"
+	desc = "A brown jacket!"
+	icon_state = "overcoat_brown"
+	item_state = "overcoat_brown"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/overcoat_black
+	name = "Black Overcoat"
+	desc = "A black jacket!"
+	icon_state = "overcoat_black"
+	item_state = "overcoat_black"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/bladerunner_coat
+	name = "Blade Runner Coat"
+	desc = "A black jacket!"
+	icon_state = "bladerunner_coat"
+	item_state = "bladerunner_coat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/boxer_jacket
+	name = "boxing jacket"
+	desc = "A nice looking jacket"
+	icon_state = "boxer_jacket"
+	item_state = "boxer_jacket"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/drive_jacket
+	name = "drive jacket"
+	desc = "A nice looking jacket"
+	icon_state = "drive_jacket"
+	item_state = "drive_jacket"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/violet_jacket
+	name = "Violet Jacket"
+	desc = "A nice looking jacket"
+	icon_state = "violet_jacket"
+	item_state = "violet_jacket"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/tunnelsnake
+	name = "Tunnel Snake"
+	desc = "A nice looking jacket"
+	icon_state = "tunnelsnake"
+	item_state = "tunnelsnake"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/eris/dante
+	name = "Dante jacket"
+	desc = "A nice looking jacket"
+	icon_state = "dante"
+	item_state = "dante"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/chomp/warden
+	name = "Warden jacket"
+	desc = "A nice looking jacket"
+	icon_state = "warden"
+	item_state = "warden"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/chomp/hos_trench
+	name = "Black Trench Coat"
+	desc = "A nice looking jacket"
+	icon_state = "hos_trench"
+	item_state = "hos_trench"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/talon
+	name = "Dark blue coat"
+	desc = "A nice looking jacket"
+	icon_state = "taloncoat"
+	item_state = "taloncoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/talon
+	name = "Dark blue coat"
+	desc = "A nice looking jacket"
+	icon_state = "taloncoat"
+	item_state = "taloncoat"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/redjacket
+	name = "Red Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_redtrim"
+	item_state = "hoodie_redtrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/bluejacket
+	name = "Blue Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_bluetrim"
+	item_state = "hoodie_bluetrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/greenjacket
+	name = "Green Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_greentrim"
+	item_state = "hoodie_greentrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/purplejacket
+	name = "Purple Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_purpletrim"
+	item_state = "hoodie_purpletrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/chomp/yellowjacket
+	name = "Yellow Hoodie"
+	desc = "A nice looking jacket"
+	icon_state = "hoodie_yellowtrim"
+	item_state = "hoodie_yellowtrim"
+	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/toggle/labcoat/dinosaur
+	name = "Dinosaur costume"
+	desc = "Life...life finds a way."
+	icon_state = "dinosaur"
+	item_state = "dinosaur"
+	flags_inv = HIDESHOES|HIDEJUMPSUIT | HIDEEARS | HIDEHAIR
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+
+/obj/item/clothing/suit/coat/coyote
+	icon = 'icons/obj/clothing/coats.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/coats.dmi'
+	icon_state = "surgical_scrubs"
+
+/obj/item/clothing/suit/coat/coyote/short_nurse_dress
+	name = "short nurse dress"
+	desc = "A short, easy to move in nurse dress. Give it a twirl!"
+	icon_state = "short-nurse-dress"
+	item_state = "short-nurse-dress"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/nurse_coat
+	name = "nurse coat"
+	desc = "A pristine medical coat, the inside is very soft to the touch."
+	icon_state = "nurse-coat"
+	item_state = "nurse-coat"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/science_puffer
+	name = "science puffer"
+	desc = "A big comfy puffer jacket, perfect for the lab!"
+	icon_state = "science-puffer"
+	item_state = "science-puffer"
+	body_parts_covered = CHEST|ARMS
+
+
+/obj/item/clothing/suit/coat/coyote/hi_vis_coat
+	name = "hi-vis coat"
+	desc = "A coat that makes you even more visible!"
+	icon_state = "hi-vis-coat"
+	item_state = "hi-vis-coat"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/engineering_puffer
+	name = "engineering puffer"
+	desc = "A big comfy puffer jacket, perfect for the engine!"
+	icon_state = "engineering-puffer"
+	item_state = "engineering-puffer"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/security_puffer
+	name = "security puffer"
+	desc = "A big comfy puffer jacket, perfect for catching criminals!"
+	icon_state = "sec-puffer"
+	item_state = "sec-puffer"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/botany_puffer
+	name = "botanist puffer"
+	desc = "A big comfy puffer jacket, perfect for gardening!"
+	icon_state = "botanist-puffer"
+	item_state = "botanist-puffer"
+
+/obj/item/clothing/suit/coat/coyote/geneticist_puffer
+	name = "geneticist puffer"
+	desc = "A big comfy puffer jacket, perfect for defying nature!"
+	icon_state = "geneticist-puffer"
+	item_state = "geneticist-puffer"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/janitor_jacket
+	name = "janitorial jacket"
+	desc = "Sturdy and easy to wash, inevitably going to be splashed with blood."
+	icon_state = "janitor-jacket"
+	item_state = "janitor-jacket"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/coat/coyote/rancher_puffer
+	name = "rancher puffer"
+	desc = "A big comfy puffer jacket, perfect for chicken care!"
+	icon_state = "rancher-puffer"
+	item_state = "rancher-puffer"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/toggle/labcoat/detvest
+	name = "Colorable Detective Vest"
+	desc = "A colorable detective vest."
+	icon_state = "det_vest"
+	item_state = "det_vest"
 	armor = ARMOR_VALUE_LIGHT

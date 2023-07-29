@@ -343,3 +343,118 @@
 	name = "zulie cloak"
 	path = /obj/item/clothing/neck/tie/zuliecloak
 	cost = 0
+
+/datum/gear/neck/vampire
+	name = "Vampire Cloak"
+	path = /obj/item/clothing/neck/tie/vampire
+	cost = 0
+
+/datum/gear/neck/witchcapep
+	name = "Purple Witch Cape"
+	path = /obj/item/clothing/neck/tie/witchcapep
+	cost = 0
+
+/datum/gear/neck/witchcapem
+	name = "Mint Witch Cape"
+	path = /obj/item/clothing/neck/tie/witchcapem
+	cost = 0
+
+/datum/gear/neck/assunzionerobe
+	name = "Assunzione Robe"
+	path = /obj/item/clothing/neck/tie/aurora/assunzione_robe
+	cost = 0
+
+/datum/gear/neck/assunzionerobevine
+	name = "Assunzione Robe, accented"
+	path = /obj/item/clothing/neck/tie/aurora/assunzione_robe_vine
+	cost = 0
+
+/datum/gear/neck/assunzionerobegold
+	name = "Assunzione Robe, gold"
+	path = /obj/item/clothing/neck/tie/aurora/assunzione_robe_gold
+	cost = 0
+
+/datum/gear/neck/dominian_cape
+	name = "Dominian Cape"
+	path = /obj/item/clothing/neck/tie/aurora/dominian_cape
+	cost = 0
+
+/datum/gear/neck/dominian_capew
+	name = "Dominian Cape, white"
+	path = /obj/item/clothing/neck/tie/aurora/dominian_capewhite
+	cost = 0
+
+/datum/gear/neck/strelitz_cape
+	name = "Strelitz Cape"
+	path = /obj/item/clothing/neck/tie/aurora/strelitz_cape
+	cost = 0
+
+/datum/gear/neck/strelitz_capew
+	name = "Strelitz Cape white"
+	path = /obj/item/clothing/neck/tie/aurora/strelitz_capew
+	cost = 0
+
+/datum/gear/neck/volvaleed_cape
+	name = "Volvalaad Cape"
+	path = /obj/item/clothing/neck/tie/aurora/volvalaad_cape
+	cost = 0
+
+/datum/gear/neck/volvaleed_capew
+	name = "Volvalaad Cape white"
+	path = /obj/item/clothing/neck/tie/aurora/volvalaad_capew
+	cost = 0
+
+/datum/gear/neck/kazhkz_cape
+	name = "Kazhkz Cape"
+	path = /obj/item/clothing/neck/tie/aurora/kazhkz_cape
+	cost = 0
+
+/datum/gear/neck/kazhkz_capew
+	name = "Kazhkz Cape white"
+	path = /obj/item/clothing/neck/tie/aurora/kazhkz_capew
+	cost = 0
+
+/datum/gear/neck/caladius_cape
+	name = "Caladius Cape"
+	path = /obj/item/clothing/neck/tie/aurora/caladius_cape
+	cost = 0
+
+/datum/gear/neck/caladius_capew
+	name = "Caladius Cape white"
+	path = /obj/item/clothing/neck/tie/aurora/caladius_capew
+	cost = 0
+
+/datum/gear/neck/zhao_cape
+	name = "Zhao Cape"
+	path = /obj/item/clothing/neck/tie/aurora/zhao_cape
+	cost = 0
+
+/datum/gear/neck/zhao_capew
+	name = "Zhao Cape white"
+	path = /obj/item/clothing/neck/tie/aurora/zhao_capew
+	cost = 0
+
+/datum/gear/neck/armsman_mantle
+	name = "armsman Mantle"
+	path = /obj/item/clothing/neck/tie/aurora/armsman_mantle
+	cost = 0
+
+/datum/gear/neck/domcape
+	name = "Dominia Cape"
+	path = /obj/item/clothing/neck/tie/aurora/dominia_cape_consular
+	cost = 0
+
+/datum/gear/neck/domcapefull
+	name = "Dominia Cape, full"
+	path = /obj/item/clothing/neck/tie/aurora/dominian_doublecape
+	cost = 0
+
+/datum/gear/neck/domcapehalf
+	name = "Dominia Cape, half"
+	path = /obj/item/clothing/neck/tie/aurora/dominian_cape_red
+	cost = 0
+
+/datum/gear/neck/ozhuacape
+	name = "Ozhua cape"
+	path = /obj/item/clothing/neck/tie/aurora/ozuhacape
+	cost = 0

@@ -131,8 +131,6 @@
 
 	var/list/observers = null	//The list of people observing this mob.
 
-	var/list/progressbars = null	//for stacking do_after bars
-
 	///For storing what do_after's someone has, in case we want to restrict them to only one of a certain do_after at a time
 	var/list/do_afters
 
@@ -199,3 +197,6 @@
 	var/waddle_up_time
 	/// How long is a sideways bob for wobbling?
 	var/waddle_side_time
+
+	/// How fast your previous step was
+	var/last_move_delay = 0

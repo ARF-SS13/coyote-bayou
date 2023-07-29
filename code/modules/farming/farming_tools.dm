@@ -28,7 +28,7 @@
 		SLOT_EARS, SLOT_GLASSES,\
 		SLOT_BELT, SLOT_S_STORE,\
 		SLOT_L_STORE, SLOT_R_STORE,\
-		SLOT_GENERC_DEXTROUS_STORAGE
+		SLOT_GENERIC_DEXTROUS_STORAGE
 	)
 	container_flags = APTFT_ALTCLICK|APTFT_VERB
 	container_HP = 1
@@ -119,6 +119,14 @@
 	possible_transfer_amounts = list(10,25,50,100,150)
 	volume = 150
 
+/obj/item/reagent_containers/glass/bucket/wateringcan
+	name = "Watering Can"
+	desc = "It's a watering can, made of plastic."
+	icon_state = "watering_can"
+	item_flags = NO_MAT_REDEMPTION
+	possible_transfer_amounts = list(10,25,50,100,150, 200, 250,300)
+	volume = 300
+
 ///////////
 // SPADE //
 /////////// - slower shovel, but can remove plants without removing the soil too
@@ -168,7 +176,7 @@
 // RAKE
 // ------
 
-/obj/item/cultivator/rake 
+/obj/item/cultivator/rake
 	name = "rake"
 	icon_state = "rake"
 	item_state = "rake"
@@ -249,7 +257,6 @@
 	attack_speed = CLICK_CD_MELEE
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.4
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	hitsound = 'sound/weapons/bladeslice.ogg'

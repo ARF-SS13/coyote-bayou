@@ -3,7 +3,7 @@ Town access doors
 Sheriff/Deputy, Gatehouse etc: 62 ACCESS_GATEWAY
 General access: 25 ACCESS_BAR
 Clinic surgery/storage: 68 ACCESS_CLONING
-Shopkeeper: 34 ACCESS_CARGO_BOT
+Shopkeeper: 34 ACCESS_CARGO_BOT / 31 ACCESS CARGO
 Barkeep : 28 ACCESS_KITCHEN - you jebronis made default bar for no reason bruh
 Prospector : 48 ACCESS_MINING
 Detective : 4 ACCESS_FORENSICS_LOCKERS
@@ -35,7 +35,7 @@ Mayor
 	faction = FACTION_OASIS
 
 /datum/job/oasis/f13mayor   // /obj/item/card/id/captains_spare for any elected mayors. - Blue
-	title = "Mayor"
+	title = "High Alderperson"
 	flag = F13MAYOR
 	department_flag = DEP_OASIS
 	total_positions = 0
@@ -84,7 +84,7 @@ Mayor
 */
 
 /datum/outfit/job/den/f13mayor
-	name = "Mayor"
+	name = "High Alderperson"
 	jobtype = /datum/job/oasis/f13mayor
 	id = /obj/item/card/id/silver/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
@@ -105,7 +105,7 @@ Mayor
 
 
 /datum/outfit/loadout/dictator
-	name = "Mayor for Life"
+	name = "Alderman for Life"
 	backpack_contents = list(
 	/obj/item/clothing/under/f13/general/oasis = 1,
 	/obj/item/clothing/head/f13/army/general = 1,
@@ -152,16 +152,17 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13secretary
-	title = "Secretary"
+	title = "Councilperson"
 	flag = F13SECRETARY
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "The Mayor"
-	description = "The settlement of Nash is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
-	enforces = "You are the stand-in leader of Nash if a Mayor does not exist."
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "your constituents, your greed, and realpolitik"
+	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place on the Parliamentary Council of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, and just maybe they'll vote you back in...or won't, you know, toss you into the moat."
+	enforces = "You serve as the de-facto leader of Nash with your co-Council, if another is awake."
 	selection_color = "#d7b088"
 	exp_requirements = 0
+
 
 	outfit = /datum/outfit/job/den/f13secretary
 
@@ -182,7 +183,7 @@ Mayor
 	)
 
 /datum/outfit/job/den/f13secretary
-	name = "Secretary"
+	name = "Councilperson"
 	jobtype = /datum/job/oasis/f13secretary
 	id = /obj/item/card/id/silver
 	belt = /obj/item/kit_spawner/townie/mayor
@@ -297,10 +298,11 @@ Mayor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/box/deputy_badges = 1,
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/melee/classic_baton = 1,
+		/obj/item/melee/baton/loaded = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
-		/obj/item/storage/belt/army = 1
+		/obj/item/storage/belt/army = 1,
+		/obj/item/gun/energy/taser = 1
 		)
 
 /datum/outfit/loadout/thelaw
@@ -309,7 +311,7 @@ Mayor
 	head = /obj/item/clothing/head/f13/town/sheriff
 	uniform = /obj/item/clothing/under/f13/police/formal
 	neck = /obj/item/storage/belt/shoulderholster
-	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
+	//r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 
 	//backpack_contents = list(
@@ -416,7 +418,8 @@ Mayor
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/flashlight/seclite = 1,
-		/obj/item/storage/belt/army/assault = 1
+		/obj/item/storage/belt/army/assault = 1,
+		/obj/item/gun/energy/taser = 1
 		)
 
 /datum/outfit/loadout/frontierjustice
@@ -1149,7 +1152,7 @@ Mayor
 /datum/outfit/job/den/f13banker
 	name = "Banker"
 	jobtype = /datum/job/oasis/f13banker
-	belt = /obj/item/kit_spawner/lawman
+	belt = /obj/item/kit_spawner/townie/mayor
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
@@ -1223,8 +1226,8 @@ Mayor
 	)
 
 	outfit = /datum/outfit/job/den/f13quartermaster
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -1320,8 +1323,8 @@ Mayor
 	)
 
 	outfit = /datum/outfit/job/den/f13shopkeeper
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -1410,11 +1413,17 @@ Mayor
 	title = "Vertibird Pilot"
 	flag = F13PILOT
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "Nash's laws"
-	description = "You are a pilot, hired to drive the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
+	description = "You are a pilot, hired to fly the town's vertibird. Your job is to provide transport for people and aid in search and rescue. Don't forget to charge a fare."
 	selection_color = "#dcba97"
+
+	loadout_options = list(
+	/datum/outfit/loadout/pilotformal,
+	/datum/outfit/loadout/pilotshock,
+	/datum/outfit/loadout/flightsurgeon,
+	/datum/outfit/loadout/pilotparamed)
 
 	outfit = /datum/outfit/job/den/f13pilot
 
@@ -1442,6 +1451,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/kit_spawner/follower/guard,
 		)
 
 /datum/outfit/job/den/f13pilot/pre_equip(mob/living/carbon/human/H)
@@ -1456,3 +1466,45 @@ Mayor
 		/obj/item/clothing/under/f13/cowboyb,
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt)
+
+/datum/outfit/loadout/pilotformal // Formal captain clothes, low surgery, needs something to make it stand out???
+	name = "Town Pilot"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/captain/pilot = 1,
+	/obj/item/clothing/suit/armor/light/pilotformal = 1,
+	/obj/item/storage/firstaid/tactical = 1,
+	/obj/item/book/granter/trait/lowsurgery = 1
+		)
+
+/datum/outfit/loadout/pilotshock // Captain carapace, bonus mid gun
+	name = "LZ Defender"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/captain/pilot = 1,
+	/obj/item/clothing/suit/armor/medium/pilotcarapace = 1,
+	/obj/item/storage/firstaid/emergency = 1,
+	/obj/item/gun/ballistic/automatic/marksman/policerifle = 1,
+	/obj/item/ammo_box/a556 = 2,
+	/obj/item/ammo_box/magazine/m556/rifle = 2
+		)
+
+/datum/outfit/loadout/flightsurgeon // Surgical clothing, mid surgery
+	name = "Flight Surgeon"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/medical/doctor/blue = 1,
+	/obj/item/clothing/gloves/color/latex/nitrile = 1,
+	/obj/item/clothing/suit/toggle/labcoat/depjacket/med = 1,
+	/obj/item/storage/firstaid/emergency = 1,
+	/obj/item/book/granter/trait/midsurgery = 1
+		)
+
+/datum/outfit/loadout/pilotparamed // Paramed clothing, low surgery, tracker/pinpointer for field work
+	name = "Paramedic"
+	backpack_contents = list(
+	/obj/item/clothing/under/rank/medical/paramedic = 1,
+	/obj/item/clothing/suit/toggle/labcoat/paramedic = 1,
+	/obj/item/clothing/gloves/color/latex = 1,
+	/obj/item/storage/firstaid/emergency = 1,
+	/obj/item/defibrillator/compact = 1,
+	/obj/item/pinpointer/crew = 1,
+	/obj/item/sensor_device = 1
+		)

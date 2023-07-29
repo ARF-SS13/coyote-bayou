@@ -90,52 +90,52 @@
 	list_reagents = list(/datum/reagent/consumable/space_cola = 50)
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola
-	name = "Nuka Cola"
+	name = "Cosmic Cola"
 	list_reagents = list(/datum/reagent/consumable/nuka_cola = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape
-	name = "Nuka Grape"
+	name = "Cosmic Grape"
 	list_reagents = list(/datum/reagent/consumable/nukagrape = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange
-	name = "Nuka Orange"
+	name = "Cosmic Orange"
 	list_reagents = list(/datum/reagent/consumable/nukaorange = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry
-	name = "Nuka Cherry"
+	name = "Cosmic Cherry"
 	list_reagents = list(/datum/reagent/consumable/nukacherry = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaberry
-	name = "Nuka Berry"
+	name = "Cosmic Berry"
 	list_reagents = list(/datum/reagent/consumable/nukaberry = 50)
 	foodtype = NUKA
 
 obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_float
-	name = "Nuka Float"
+	name = "Cosmic Float"
 	list_reagents = list(/datum/reagent/consumable/nukafloat = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukadark
-	name = "Nuka Dark"
+	name = "Cosmic Dark"
 	list_reagents = list(/datum/reagent/consumable/ethanol/nukadark = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacide
-	name = "Nukacide"
+	name = "Cosmiccide"
 	list_reagents = list(/datum/reagent/consumable/ethanol/nukacide = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaxtreme
-	name = "Nuka X-Treme"
+	name = "Cosmic X-Treme"
 	list_reagents = list(/datum/reagent/consumable/ethanol/nukaxtreme = 50)
 	foodtype = NUKA
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukabomb
-	name = "Nuka Bombdrop"
+	name = "Cosmic Bombdrop"
 	list_reagents = list(/datum/reagent/consumable/ethanol/nukabomb = 50)
 	foodtype = NUKA
 

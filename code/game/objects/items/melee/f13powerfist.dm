@@ -12,7 +12,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
 	attack_verb = list("whacked", "fisted", "power-punched")
-	force = 30 //needs more hefty damage to be worthwhile outside pvp. will have to test
+	force = 45 //needs more hefty damage to be worthwhile outside pvp. will have to test
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
@@ -21,19 +21,40 @@
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
 
-/obj/item/melee/powerfist/f13/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/wrench))
-		switch(fisto_setting)
-			if(1)
-				fisto_setting = 2
-			if(2)
-				fisto_setting = 1
-		W.play_tool_sound(src)
-		to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
-		attack_speed = CLICK_CD_MELEE * fisto_setting
+	///Extra damage through the punch.
+	var/enhancement = 45 // makes it add 45 to the user punches , replace that number with whatever you want the punch damage to be
 
-/obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
-	return
+
+/obj/item/melee/powerfist/f13/equipped(mob/user, slot)
+	. = ..()
+	if(slot == SLOT_GLOVES)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			ADD_TRAIT(H, TRAIT_PUGILIST, GLOVE_TRAIT)
+			H.dna.species.punchdamagehigh += enhancement
+			H.dna.species.punchdamagelow += enhancement
+
+/obj/item/clothing/gloves/fingerless/pugilist/dropped(mob/user)
+
+	REMOVE_TRAIT(user, TRAIT_PUGILIST, GLOVE_TRAIT)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.dna.species.punchdamagehigh -= enhancement
+		H.dna.species.punchdamagelow -= enhancement
+	return ..()
+//obj/item/melee/powerfist/f13/attackby(obj/item/W, mob/user, params)
+	//if(istype(W, /obj/item/wrench))
+		//switch(fisto_setting)
+			//if(1)
+				//fisto_setting = 2
+			//.if(2)
+				//fisto_setting = 1
+		//W.play_tool_sound(src)
+		//to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
+		//attack_speed = CLICK_CD_MELEE * fisto_setting
+
+//obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
+	//return
 
 /obj/item/melee/powerfist/f13/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -43,7 +64,8 @@
 	if(!T)
 		return FALSE
 	var/totalitemdamage = target.pre_attacked_by(src, user)
-	target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
+	SSdamage.damage_mob(user, target, totalitemdamage)
+	//target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
 	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
 		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)
@@ -62,30 +84,9 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "goliath"
 	item_state = "goliath"
-	force = 35 //needs to fuckin slapp
+	force = 55 //legendary tier power fist, one of a kind, why should it hit for less than a machete
 	throw_distance = 3
-
-
-// Ballistic Fist			Keywords: Damage max 42, Shotgun
-/obj/item/gun/ballistic/revolver/ballisticfist
-	name = "ballistic fist"
-	desc = "This powerfist has been modified to have two shotgun barrels welded to it, with the trigger integrated into the knuckle guard. For those times when you want to punch someone and shoot them in the face at the same time."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "ballisticfist"
-	item_state = "powerfist"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 30
-	armour_penetration = 0
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
-	w_class = WEIGHT_CLASS_NORMAL
-	item_flags = NEEDS_PERMIT //doesn't slow you down
-	fire_delay = 0
-	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
-
-
+	enhancement = 50
 // Mole Miner
 /obj/item/melee/powerfist/f13/moleminer
 	name = "mole miner gauntlet"
@@ -95,9 +96,10 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
-	force = 25 //It shouldn't be both a mid fist weapon and a digging tool dangit! Especially for the resources it takes! 5 less dmg than a power fist
+	force = 38 //weaker but it should atleast 1 tap trash mobs
 	throwforce = 10
 	throw_range = 7
+	enhancement = 30 //mace tier
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_behaviour = TOOL_MINING
@@ -180,8 +182,6 @@
 	on_item_state = "prewarrip_on"
 	off_item_state = "prewarrip_off"
 	force_on = 50
-	armour_penetration = 0.15
-
 
 // Shishkebab backpack				The shishkebab weapon base unit
 /obj/item/shishkebabpack
@@ -292,6 +292,7 @@
 	damtype = "fire"
 	tool_behaviour = TOOL_WELDER
 	toolspeed = 0.3
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 	var/obj/item/shishkebabpack/tank
 

@@ -744,6 +744,20 @@
 	new /obj/item/tattoo_holder/biker(src)
 	new /obj/item/tattoo_holder/biker(src)
 
+/obj/item/storage/box/tattoo_kit
+	name = "tattoo starter kit"
+	desc = "Everything you need as an aspiring skin artist!"
+
+/obj/item/storage/box/tattoo_kit/PopulateContents()
+	. = ..()
+	new /obj/item/tattoo_gun(src)
+	new /obj/item/tattoo_holder/blank(src)
+	new /obj/item/tattoo_holder/blank(src)
+	new /obj/item/tattoo_holder/blank(src)
+	new /obj/item/tattoo_holder/blank(src)
+	new /obj/item/tattoo_holder/blank/temporary(src)
+	new /obj/item/tattoo_holder/blank/temporary(src)
+
 
 
 

@@ -86,7 +86,7 @@
 	return 5-(max(SSticker.station_integrity*4,320)/80)
 */
 /datum/sabotage_objective/cloner
-	name = "Destroy all Nanotrasen cloning machines."
+	name = "Destroy all US Government cloning machines."
 	sabotage_type = "cloner"
 
 /datum/sabotage_objective/cloner/check_conditions()

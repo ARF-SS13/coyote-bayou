@@ -32,10 +32,8 @@
 
 	barometer_predictable = TRUE
 
-	var/datum/looping_sound/active_outside_ashstorm/sound_ao = new(list(), FALSE, TRUE)
-	var/datum/looping_sound/active_inside_ashstorm/sound_ai = new(list(), FALSE, TRUE)
-	var/datum/looping_sound/weak_outside_ashstorm/sound_wo = new(list(), FALSE, TRUE)
-	var/datum/looping_sound/weak_inside_ashstorm/sound_wi = new(list(), FALSE, TRUE)
+	sound_ao_type = /datum/looping_sound/active_outside_ashstorm
+	sound_ai_type = /datum/looping_sound/active_inside_ashstorm
 
 /datum/weather/ash_storm/telegraph()
 	. = ..()
@@ -57,32 +55,6 @@
 
 	sound_ao.output_atoms = outside_areas
 	sound_ai.output_atoms = inside_areas
-	sound_wo.output_atoms = outside_areas
-	sound_wi.output_atoms = inside_areas
-
-	sound_wo.start()
-	sound_wi.start()
-
-/datum/weather/ash_storm/start()
-	. = ..()
-	sound_wo.stop()
-	sound_wi.stop()
-
-	sound_ao.start()
-	sound_ai.start()
-
-/datum/weather/ash_storm/wind_down()
-	. = ..()
-	sound_ao.stop()
-	sound_ai.stop()
-
-	sound_wo.start()
-	sound_wi.start()
-
-/datum/weather/ash_storm/end()
-	. = ..()
-	sound_wo.stop()
-	sound_wi.stop()
 
 /datum/weather/ash_storm/proc/is_ash_immune(atom/L)
 	while (L && !isturf(L))
@@ -126,6 +98,9 @@
 	obscures_sight = TRUE // try seeing stuff now! YOU CANT!
 
 	target_trait = ZTRAIT_STATION
+
+	sound_ao_type = /datum/looping_sound/active_outside_ashstorm
+	sound_ai_type = /datum/looping_sound/active_inside_ashstorm
 
 /datum/weather/ash_storm/dust_event
 	name = "toxic cloud"

@@ -125,7 +125,7 @@ SUBSYSTEM_DEF(matchmaking)
 	for(var/mob/living/bachelor as anything in bachelors)
 		if(bachelor == pref_holder || bachelor.stat != CONSCIOUS || !bachelor.mind || !bachelor.client)
 			continue
-		
+
 		var/bachelor_ref = REF(bachelor)
 		if(bachelor_ref in SSmatchmaking.matches_made[candidate_ref])
 			continue // Already matched with this one.
@@ -280,7 +280,7 @@ SUBSYSTEM_DEF(matchmaking)
 	if(!photo)
 		CRASH("No photo for [target.real_name]")
 	var/description = "Notice to all Regulators seeking Lawful Bounties in the Capital Wastes:\
-	<br>Let it be known that the following individual is offered for bounty in the sum of 1,000 caps or similar compensation of expended equipment and/or medical expense, for crimes against the good people of the Capital Wasteland and environs:\
+	<br>Let it be known that the following individual is offered for bounty in the sum of 1,000 coins or similar compensation of expended equipment and/or medical expense, for crimes against the good people of the Capital Wasteland and environs:\
 	<br><br>Name: [perp_name]\
 	<br><br>Wanted dead or alive.\
 	<br>Bounty will be paid upon delivery of body or proof of death."

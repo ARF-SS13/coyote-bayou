@@ -85,7 +85,7 @@
 		qdel(src)
 		return
 	core = thecore
-	my_name = pick(GLOB.first_names_female)
+	setup_name()
 
 /datum/blender_brain/Destroy(force, ...)
 	wipe_memory()
@@ -97,8 +97,15 @@
 	core.output_say(SPEAK_LINE_CRUSHED)
 	playsound(get_turf(core), "sound/machines/machinery_break_1.ogg", 100)
 
+/datum/blender_brain/proc/setup_name()
+	my_name = "Claire"
+	if(prob(25))
+		my_name = get_random_player_name(TRUE)
+	if(!my_name)
+		my_name = "Claire"
+
 /datum/blender_brain/proc/wipe_memory()
-	my_name = pick(GLOB.first_names_female)
+	setup_name()
 	if(LAZYLEN(memories))
 		QDEL_LIST_ASSOC_VAL(memories)
 	core.clear_impulses()
@@ -333,17 +340,17 @@
 	var/datum/blenderbrain_memory/mem = get_memory(target)
 	return mem.check_clarify()
 
-/datum/blender_brain/proc/is_listening(mob/target)
+/datum/blender_brain/proc/is_paying_attention(mob/target)
 	var/datum/blenderbrain_memory/mem = get_memory(target)
-	return mem.is_listening()
+	return mem.is_paying_attention()
 
-/datum/blender_brain/proc/set_listening(mob/target)
+/datum/blender_brain/proc/set_paying_attention(mob/target)
 	var/datum/blenderbrain_memory/mem = get_memory(target)
-	return mem.set_listening()
+	return mem.set_paying_attention()
 
-/datum/blender_brain/proc/set_not_listening(mob/target)
+/datum/blender_brain/proc/unset_paying_attention(mob/target)
 	var/datum/blenderbrain_memory/mem = get_memory(target)
-	return mem.set_not_listening()
+	return mem.unset_paying_attention()
 
 /datum/blender_brain/proc/check_social_flags(flagz)
 	return CHECK_BITFIELD(social_flags, flagz)
@@ -560,22 +567,29 @@
 	if(clarify(speaker, need_clarifying, sayparts))
 		return
 	/// first, check if we're being addressed
-	var/attn = mem.is_listening()
+	var/attn = mem.is_paying_attention()
 	if(!attn)
+		var/hey
+		var/listen
+		var/list/bbhey = strings(script_file, BBKEY_HEY)
+		var/list/bblisten = strings(script_file, BBKEY_LISTEN)
 		for(var/word in sayparts)
 			var/cword = ckey(word)
 			if(cword == ckey(my_name))
 				attn = TRUE
-				mem.set_listening()
+				mem.set_paying_attention()
 				break
-			var/list/bbheylisten = strings(script_file, BBKEY_HEYLISTEN)
-			if(cword in bbheylisten)
+			if(cword in bbhey)
+				hey = TRUE
+				continue
+			if(hey)
+				if(cword in bblisten)
+					listen = TRUE
+			if(hey && listen) // We need a HEY and CUTIE, in that order, to pay attention. Or its name
 				attn = TRUE
-				mem.set_listening()
+				mem.set_paying_attention()
 				break
-	if(!attn)
-		if(prob(20))
-			core.input_stimulus(src, STIMULUS_SPOKEN_TO, speaker)
+	if(!attn && !mem.is_owner())
 		return
 
 	var/command
@@ -585,98 +599,101 @@
 	var/you_pos
 	var/index = 1
 	var/pain
+	var/list/bbstop = strings(script_file, BBKEY_STOP)
+	var/list/bbmodea = strings(script_file, BBKEY_MODE_A)
+	var/list/bbmodeb = strings(script_file, BBKEY_MODE_B)
+	var/list/bbmodec = strings(script_file, BBKEY_MODE_C)
+	var/list/bbmoded = strings(script_file, BBKEY_MODE_D)
+	var/list/bbswap = strings(script_file, BBKEY_SWAP_MODE)
+	var/list/bbdump = strings(script_file, BBKEY_EJECT)
+	var/list/bbexamine = strings(script_file, BBKEY_EXAMINE)
+	var/list/bbmute = strings(script_file, BBKEY_MUTE)
+	var/list/bbunmute = strings(script_file, BBKEY_UNMUTE)
+	var/list/bbname = strings(script_file, BBKEY_NAME)
+	var/list/bblove = strings(script_file, BBKEY_LOVE)
+	var/list/bbhate = strings(script_file, BBKEY_HATE)
+	var/list/bbnegate = strings(script_file, BBKEY_NEGATE)
+	var/list/bbimeme = strings(script_file, BBKEY_I)
+	var/list/bbyou = strings(script_file, BBKEY_YOU)
+	// yeah I know there are better ways to see if a word is in a list
+	// but we also need the order of the words found
+	/// and I'm under the impression that `in` is faster than `bblist.Find(word)`
 	for(var/word in sayparts)
 		var/cword = ckey(word)
 		/// Cus fuck performance~
-		var/list/bbstop = strings(script_file, BBKEY_STOP)
 		if(cword in bbstop)
 			command = STIMULUS_SOFT_ABORT
 			command_pos = index
 			index++
 			continue
-		var/list/bbmodea = strings(script_file, BBKEY_MODE_A)
 		if(cword in bbmodea)
 			command = STIMULUS_GRIND_NOW
 			command_pos = index
 			index++
 			continue
-		var/list/bbmodeb = strings(script_file, BBKEY_MODE_B)
 		if(cword in bbmodeb)
 			command = STIMULUS_JUICE_NOW
 			command_pos = index
 			index++
 			continue
-		var/list/bbmodec = strings(script_file, BBKEY_MODE_C)
 		if(cword in bbmodec)
 			command = STIMULUS_SET_TO_DISPENSER
 			command_pos = index
 			index++
 			continue
-		var/list/bbmoded = strings(script_file, BBKEY_MODE_D)
 		if(cword in bbmoded)
 			command = STIMULUS_SET_TO_BLENDER
 			command_pos = index
 			index++
 			continue
-		var/list/bbswap = strings(script_file, BBKEY_SWAP_MODE)
 		if(cword in bbswap)
 			command = STIMULUS_SWAP_MODE
 			command_pos = index
 			index++
 			continue
-		var/list/bbdump = strings(script_file, BBKEY_EJECT)
 		if(cword in bbdump)
 			command = STIMULUS_DUMP
 			command_pos = index
 			index++
 			continue
-		var/list/bbexamine = strings(script_file, BBKEY_EXAMINE)
 		if(cword in bbexamine)
 			command = STIMULUS_EXAMINE_TRY
 			command_pos = index
 			index++
 			continue
-		var/list/bbmute = strings(script_file, BBKEY_MUTE)
 		if(cword in bbmute)
 			command = STIMULUS_MUTE
 			command_pos = index
 			index++
 			continue
-		var/list/bbunmute = strings(script_file, BBKEY_UNMUTE)
 		if(cword in bbunmute)
 			command = STIMULUS_UNMUTE
 			command_pos = index
 			index++
 			continue
-		var/list/bbname = strings(script_file, BBKEY_NAME)
 		if(cword in bbname)
 			command = STIMULUS_STATE_NAME
 			command_pos = index
 			index++
 			continue
-		var/list/bblove = strings(script_file, BBKEY_LOVE)
 		if(cword in bblove)
 			command = STIMULUS_HEARD_LOVE
 			command_pos = index
 			index++
 			continue
-		var/list/bbhate = strings(script_file, BBKEY_HATE)
 		if(cword in bbhate)
 			command = STIMULUS_HEARD_HATE
 			command_pos = index
 			index++
 			continue
-		var/list/bbnegate = strings(script_file, BBKEY_NEGATE)
 		if(cword in bbnegate)
 			negate_pos = index
 			index++
 			continue
-		var/list/bbimeme = strings(script_file, BBKEY_I)
 		if(cword in bbimeme)
 			i_me_pos = index
 			index++
 			continue
-		var/list/bbyou = strings(script_file, BBKEY_YOU)
 		if(cword in bbyou)
 			you_pos = index
 			index++
@@ -691,21 +708,38 @@
 			continue
 		index++
 
-	if(!command) // No commands, but heard my name? Just say hi
-		core.input_stimulus(src, STIMULUS_SPOKEN_TO, speaker)
-		return
-
-	/// Is it just a command? No professions of love or pain?
-	if(!(command == STIMULUS_HEARD_HATE || command == STIMULUS_HEARD_LOVE))
-		return spoken_command(speaker, command)
-	/// anything else will be some kind of funky blender relationship thing
-	/// first, does it contain a negation? Not hate, or love dont
-	if(negate_pos) // dont hate
+	if(negate_pos && negate_pos < command_pos) // dont hate
 		switch(command)
+			// love <-> hate
 			if(STIMULUS_HEARD_LOVE)
 				command = STIMULUS_HEARD_HATE
 			if(STIMULUS_HEARD_HATE)
 				command = STIMULUS_HEARD_LOVE
+			// mute <-> unmute
+			if(STIMULUS_MUTE)
+				command = STIMULUS_UNMUTE
+			if(STIMULUS_UNMUTE)
+				command = STIMULUS_MUTE
+			// dispenser <-> blender
+			if(STIMULUS_SET_TO_DISPENSER)
+				command = STIMULUS_SET_TO_BLENDER
+			if(STIMULUS_SET_TO_BLENDER)
+				command = STIMULUS_SET_TO_DISPENSER
+			// stop <-> go
+			if(STIMULUS_GRIND_NOW, STIMULUS_JUICE_NOW)
+				command = STIMULUS_STOP_RUNNING
+			if(STIMULUS_SOFT_ABORT) // oh fuck, oh fuck, dont stop, dont staaaaaaph~~~!
+				command = STIMULUS_GRIND_NOW
+			else
+				command = null
+	if(!command)
+		if(mem.decrease_attention()) // No commands, but heard my name? Just say hi
+			core.input_stimulus(src, STIMULUS_SPOKEN_TO, speaker)
+		return
+	/// Is it just a command? No professions of love or pain?
+	if(command != STIMULUS_HEARD_HATE && command != STIMULUS_HEARD_LOVE)
+		return spoken_command(speaker, command)
+	// From here on, we're dealing with love/hate relationship bungus
 	// is the command before the subject?
 	var/referring_to_me // This is incorrect! The correct answer is "you"!
 	if(you_pos && (command_pos < you_pos)) // fuck you
@@ -798,7 +832,7 @@
 			core.input_stimulus(src, STIMULUS_UNMUTE, speaker)
 		if(STIMULUS_STATE_NAME)
 			core.input_stimulus(src, STIMULUS_STATE_NAME, speaker)
-	set_not_listening(speaker)
+	unset_paying_attention(speaker)
 
 /datum/blender_brain/proc/clarify(mob/speaker, need_clarifying, list/sayparts)
 	if(!ismob(speaker) || !LAZYLEN(sayparts) || !need_clarifying)
@@ -806,27 +840,27 @@
 	. = TRUE
 	var/who = "idk"
 	var/yesno = "idk"
+	var/list/bbyou = strings(script_file, BBKEY_YOU) // refering to you, the blender
+	var/list/bbimeme = strings(script_file, BBKEY_I) // refering to me, the blingus
+	var/list/bbnegate = strings(script_file, BBKEY_NEGATE)
+	var/list/bbyes = strings(script_file, BBKEY_YES)
 	for(var/yn in sayparts)
 		var/cword = ckey(yn)
 		/// Cus fuck performance~
-		var/list/bbyou = strings(script_file, BBKEY_YOU) // refering to you, the blender
 		if(cword in bbyou)
 			who = "you"
 			break
 		if(cword == ckey(my_name))
 			who = "you"
-		var/list/bbimeme = strings(script_file, BBKEY_I) // refering to me, the blingus
 		if(cword in bbimeme)
 			who = "me"
 			break
 		if(cword == "pain")
 			who = "pain"
 			break
-		var/list/bbnegate = strings(script_file, BBKEY_NEGATE)
 		if(cword in bbnegate)
 			yesno = "no"
 			break
-		var/list/bbyes = strings(script_file, BBKEY_YES)
 		if(cword in bbyes)
 			yesno = "yes"
 			break
@@ -1077,7 +1111,7 @@
 /// Takes in a message index, and outputs the message associated with it.
 /// Takes into account the user's personality and amorousness.
 /// Yes I know its been bouncing this shit around like 6-7 times
-/obj/item/persona_core/proc/output_say(key, mob/user, list/extras, force_amour, direct)
+/obj/item/persona_core/proc/output_say(key, mob/user, list/extras, force_amour, direct, unimportant)
 	MASTER_HOLDER
 	if(!can_speak)
 		return
@@ -1087,13 +1121,13 @@
 	else
 		message_out = brain.key2words(key, user, extras, force_amour)
 	if(master)
-		master.say(message_out)
+		master.say(message_out, null, null, null, null, null, unimportant)
 	else
-		say(message_out)
+		say(message_out, null, null, null, null, null, unimportant)
 	var/saysound = brain.get_say_sound(user)
 	playsound(get_turf(src), saysound, 70, TRUE)
 
-/// Called when the blenderbrain wants to speak.
+/// Called when the blenderbrain wants to emote.
 /obj/item/persona_core/proc/output_audible_message(key, mob/user, list/extras, force_amour, direct)
 	MASTER_HOLDER
 	if(!can_speak)
@@ -1199,11 +1233,11 @@
 /obj/item/persona_core/proc/event_finished(mob/target, event)
 	return brain.event_finished(target, event)
 
-/obj/item/persona_core/proc/set_not_listening(mob/target)
-	return brain.set_not_listening(target)
+/obj/item/persona_core/proc/unset_paying_attention(mob/target)
+	return brain.unset_paying_attention(target)
 
-/obj/item/persona_core/proc/set_listening(mob/target)
-	return brain.set_listening(target)
+/obj/item/persona_core/proc/set_paying_attention(mob/target)
+	return brain.set_paying_attention(target)
 
 /obj/item/persona_core/proc/set_can_speak(mute)
 	can_speak = mute

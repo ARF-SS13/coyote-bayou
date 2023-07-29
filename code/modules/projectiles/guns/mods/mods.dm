@@ -18,7 +18,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_BIPOD = TRUE,
-		GUN_UPGRADE_RECOIL = 1.2
+		GUN_UPGRADE_RECOIL_1H = 2,
+		GUN_UPGRADE_RECOIL_2H = 0.75,
 		)
 	I.gun_loc_tag = GUN_UNDERBARREL
 
@@ -36,7 +37,8 @@
 		GUN_UPGRADE_SILENCER = TRUE,
 		GUN_UPGRADE_MUZZLEFLASH = 0.8,
 		GUN_UPGRADE_DAMAGE_PLUS = -0.1,
-		GUN_UPGRADE_RECOIL = 0.9
+		GUN_UPGRADE_RECOIL_1H = 1.2,
+		GUN_UPGRADE_RECOIL_2H = 0.9,
 		)
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
@@ -51,7 +53,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -65,10 +67,11 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 0.2,
+	//	GUN_UPGRADE_PEN_MULT = 0.2,
 		GUN_UPGRADE_RICO_MULT = 5,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1.4,
-		GUN_UPGRADE_RECOIL = 1.4
+		GUN_UPGRADE_RECOIL_1H = 1.5,
+		GUN_UPGRADE_RECOIL_2H = 1.5,
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -84,7 +87,10 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.25,
-		GUN_UPGRADE_CHARGECOST = 1.4
+		GUN_UPGRADE_RECOIL_1H = 1.6,
+		GUN_UPGRADE_RECOIL_2H = 1.6,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.6
+		//GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
@@ -102,8 +108,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
-		GUN_UPGRADE_FORCESAFETY = FALSE
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+		GUN_UPGRADE_FORCESAFETY = FALSE,
+		GUN_UPGRADE_RECOIL_1H = 1.3,
+		GUN_UPGRADE_RECOIL_2H = 1.3,
 		)
 	I.gun_loc_tag = GUN_TRIGGER
 
@@ -169,7 +177,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FULLAUTO = TRUE,
-		GUN_UPGRADE_RECOIL = 1.2
+		GUN_UPGRADE_RECOIL_1H = 2,
+		GUN_UPGRADE_RECOIL_2H = 2,
 	)
 	I.req_gun_tags = list(GUN_FA_MODDABLE)
 	I.gun_loc_tag = GUN_MECHANISM
@@ -216,8 +225,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = 1.1,
-		GUN_UPGRADE_ZOOM = 1.2
+		GUN_UPGRADE_RECOIL_1H = 2,
+		GUN_UPGRADE_RECOIL_2H = 0.9,
+		GUN_UPGRADE_ZOOM = 1.2,
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
@@ -231,8 +241,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = 1.3,
-		GUN_UPGRADE_ZOOM = 2
+		GUN_UPGRADE_RECOIL_1H = 1.2,
+		GUN_UPGRADE_RECOIL_2H = 0.8,
+		GUN_UPGRADE_ZOOM = 2,
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
@@ -264,8 +275,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = rand(12,30)/10,
-		GUN_UPGRADE_FIRE_DELAY_MULT = rand(11,18)/10
+		GUN_UPGRADE_RECOIL_1H = rand(8,30) * 0.1,
+		GUN_UPGRADE_RECOIL_2H = rand(8,30) * 0.1,
+		GUN_UPGRADE_FIRE_DELAY_MULT = rand(11,18) * 0.1,
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
@@ -282,7 +294,9 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = rand(5,15),
 		GUN_UPGRADE_PEN_MULT = rand(0.8,1.2),
-		GUN_UPGRADE_DAMAGE_MULT = rand(0.8,1.2)
+		GUN_UPGRADE_DAMAGE_MULT = rand(0.8,1.2),
+		GUN_UPGRADE_RECOIL_1H = rand(0.8,1.2),
+		GUN_UPGRADE_RECOIL_2H = rand(0.8,1.2),
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_BARREL
@@ -297,9 +311,11 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = rand(4,9)/10,
-		GUN_UPGRADE_PROJ_SPEED_MULT = rand(8,10)/10,
-		GUN_UPGRADE_SILENCER = TRUE
+		GUN_UPGRADE_PEN_MULT = rand(4,9)*0.1,
+		GUN_UPGRADE_PROJ_SPEED_MULT = rand(8,10)*0.1,
+		GUN_UPGRADE_SILENCER = TRUE,
+		GUN_UPGRADE_RECOIL_1H = 1.3,
+		GUN_UPGRADE_RECOIL_2H = 1.1,
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MUZZLE
@@ -314,7 +330,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = rand(5, 20)/10
+		GUN_UPGRADE_RECOIL_1H = rand(5, 20)*0.1,
+		GUN_UPGRADE_RECOIL_2H = rand(5, 20)*0.1,
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MECHANISM
@@ -330,7 +347,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = rand(1,3),
-		GUN_UPGRADE_ZOOM = rand(4,8)/10
+		GUN_UPGRADE_ZOOM = rand(4,8)*0.1
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_SCOPE
@@ -344,7 +361,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.7
+		GUN_UPGRADE_FIRE_DELAY = 0.8
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
@@ -357,7 +374,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.7
+		GUN_UPGRADE_FIRE_DELAY = 0.8
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_BARREL
@@ -385,7 +402,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = 0.8,
+		GUN_UPGRADE_RECOIL_1H = 0.8,
+		GUN_UPGRADE_RECOIL_2H = 0.8,
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_MECHANISM
@@ -393,6 +411,7 @@
 /obj/item/gun_upgrade/scope/better
 	name = "Pre-war sniper scope"
 	desc = "A high resolution scope"
+	icon_state = "Killer"
 
 /obj/item/gun_upgrade/scope/better/New()
 	..()
@@ -416,36 +435,12 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 1.2,
+		//GUN_UPGRADE_PEN_MULT = 1.2,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
-
-/*
-//Adds +10 burn damage to a bullet, lowers armor penetration, adds a constant projectile offset, increases recoil and fire delay. Acquired via science
-/obj/item/gun_upgrade/barrel/overheat
-	name = "Moebius \"Caster\" magnetic overheat barrel"
-	desc = "Uses magnetic induction to heat the projectile of a weapon. Arguable combat effectiveness, but flashy nonetheless."
-	icon_state = "Caster"
-	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 1)
-	rarity_value = 30
-	spawn_blacklisted = TRUE
-
-/obj/item/gun_upgrade/barrel/overheat/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 0.8,
-		GUN_UPGRADE_DAMAGE_BURN = 10,
-		GUN_UPGRADE_OFFSET = 5,
-		GUN_UPGRADE_RECOIL = 1.5,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.2
-		)
-	I.gun_loc_tag = GUN_BARREL
-	I.req_gun_tags = list(GUN_PROJECTILE)
-*/
 
 // Double damage at the cost of more recoil and a tripled energy consumption
 /obj/item/gun_upgrade/mechanism/battery_shunt
@@ -457,9 +452,11 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 1.30,
-	GUN_UPGRADE_CHARGECOST = 1.5)
+	GUN_UPGRADE_RECOIL_1H = 2,
+	GUN_UPGRADE_RECOIL_2H = 2,
+	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
+	GUN_UPGRADE_DAMAGE_MULT = 1.30)
+	//GUN_UPGRADE_CHARGECOST = 1.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
@@ -473,78 +470,12 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 0.9, // lowering the power output of the weapon should realistically lower the recoil - risingstarslash
+	GUN_UPGRADE_RECOIL_1H = 0.8,
+	GUN_UPGRADE_RECOIL_2H = 0.8,
 	GUN_UPGRADE_DAMAGE_MULT = 0.5,
-	GUN_UPGRADE_CHARGECOST = 0.65)
+	GUN_UPGRADE_FIRE_DELAY_MULT = 0.6)
+	//GUN_UPGRADE_CHARGECOST = 0.65)
 	//GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
-
-/*
-// Add toxin damage to your weapon
-/obj/item/gun_upgrade/barrel/toxin_coater
-	name = "Moebius \"Black Mamba\" toxin coater"
-	desc = "This experimental barrel coats bullets with a thin layer of toxins just before they leave the weapon. Do not lick it."
-	icon_state = "toxin_coater"
-	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_GOLD = 2)
-	spawn_blacklisted = TRUE
-
-/obj/item/gun_upgrade/barrel/toxin_coater/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_TOX = 5)
-	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = GUN_BARREL
-
-// Add radiation damage to your weapon
-/obj/item/gun_upgrade/barrel/isotope_diffuser
-	name = "Moebius \"Atomik\" isotope diffuser"
-	desc = "This experimental barrel constantly sprays a thin mist of radioactive isotopes to make projectiles leaving the weapons deadlier. Do not put it in your mouth."
-	icon_state = "isotope_diffuser"
-	matter = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1, MATERIAL_URANIUM = 2)
-	spawn_blacklisted = TRUE
-
-/obj/item/gun_upgrade/barrel/isotope_diffuser/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_RADIATION = 30)
-	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = GUN_BARREL
-
-// Add psy damage to your weapon
-/obj/item/gun_upgrade/mechanism/psionic_catalyst
-	name = "Moebius \"Mastermind\" psionic catalyst"
-	desc = "This controversial device greatly amplifies the natural psionic ability of the user and allows them to project their will into the world. Before the development of the Psi Amp, psionic disciplines were mostly detectable only in a lab environment."
-	icon_state = "psionic_catalyst"
-	matter = list(MATERIAL_SILVER = 3, MATERIAL_PLASTEEL = 3, MATERIAL_URANIUM = 3)
-	spawn_blacklisted = TRUE
-
-/obj/item/gun_upgrade/mechanism/psionic_catalyst/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_PSY = 0.4)
-	I.req_gun_tags = list(GUN_PROJECTILE)
-	I.gun_loc_tag = GUN_MECHANISM
-*/
-
-/obj/item/gun_upgrade/barrel/gauss
-	name = "Chinese Anti-Material Gauss barrel"
-	desc = "A portable, attachable version of a large caliber gauss rifle. Made in China."
-	icon_state = "Gauss"
-
-/obj/item/gun_upgrade/barrel/gauss/New()
-	..()
-	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
-	I.weapon_upgrades = list(
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.2,
-		GUN_UPGRADE_PEN_MULT = 1.3,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.4,
-		GUN_UPGRADE_RECOIL = 1.4
-		)
-	I.removal_time *= 10
-	I.gun_loc_tag = GUN_BARREL
-	I.req_gun_tags = list(GUN_PROJECTILE)
 

@@ -210,7 +210,7 @@ obj/item/ammo_casing/shotgun/executioner
 	ENABLE_BITFIELD(reagents.reagents_holder_flags, NO_REACT)
 
 /obj/item/ammo_casing/shotgun/dart/bioterror
-	desc = "A shotgun dart filled with an obscene amount of lethal reagents. God help whoever is shot with this."
+	desc = "A shotgun dart filled with an obscene amount of lethal reagents. Heaven help whoever is shot with this."
 	projectile_type = /obj/item/projectile/bullet/dart/piercing
 	reagent_amount = 50
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_MATCH

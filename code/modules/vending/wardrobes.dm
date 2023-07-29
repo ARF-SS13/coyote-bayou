@@ -547,7 +547,7 @@
 
 /obj/machinery/vending/wardrobe/cap_wardrobe
 	name = "Captain's Wardrobe"
-	desc = "The latest and greatest in Nanotrasen fashion for your great leader."
+	desc = "The latest and greatest in US Government fashion for your great leader."
 	icon_state = "capsdrobe"
 	icon_deny = "capsdrobe-deny"
 	product_ads = "Only the greatest for a commander such as ours."

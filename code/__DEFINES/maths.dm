@@ -98,6 +98,9 @@
 // Returns the nth root of x.
 #define ROOT(n, x) ((x) ** (1 / (n)))
 
+/// decrements a number by another number, to a minimum of another number
+#define DECREMENTBY(val, dec, min) (val = max(val - dec, min))
+
 // The quadratic formula. Returns a list with the solutions, or an empty list
 // if they are imaginary.
 /proc/SolveQuadratic(a, b, c)
@@ -240,3 +243,29 @@
 /// Gives the number of pixels in an orthogonal line of tiles.
 #define TILES_TO_PIXELS(tiles)			(tiles * PIXELS)
 // )
+
+/proc/shorten_number(number, decimals = 2)
+	var/unit = ""
+	var/thousands = 0
+	while(number > 1000)
+		number *= 0.001
+		thousands++
+	switch(thousands)
+		if(-INFINITY to 0)
+			return "[number]"
+		if(1)
+			unit = "K"
+		if(2)
+			unit = "M"
+		if(3)
+			unit = "G"
+		if(4)
+			unit = "T"
+		if(5)
+			unit = "Q"
+		if(6)
+			unit = "QQ"
+		else
+			unit = "QQQ"
+	var/roundie = 1 * (0.1**decimals)
+	return "[round(number, roundie)][unit]"

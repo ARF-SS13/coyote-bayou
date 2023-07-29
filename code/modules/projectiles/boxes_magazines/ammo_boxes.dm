@@ -15,6 +15,7 @@
 	multiple_sprites = 1
 	caliber = list(CALIBER_SHOTGUN)
 	w_class = WEIGHT_CLASS_SMALL
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/shotgun/slug
 	name = "Slug shotgun ammo box"
@@ -77,6 +78,7 @@
 	multiple_sprites = 0
 	caliber = list(CALIBER_FLINTLOCK)
 	w_class = WEIGHT_CLASS_SMALL
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/flintlock/minie
 	name = "powderbag and minie balls"
@@ -113,6 +115,7 @@
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/m22/rubber
 	name = "ammo box (.22lr rubber)"
@@ -136,6 +139,7 @@
 	max_ammo = 45
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/c9mm/rubber
 	name = "ammo box (9mm rubber)"
@@ -198,6 +202,7 @@
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/c10mm/fire
 	name = "ammo box (10mm incendiary-tipped)"
@@ -227,6 +232,7 @@
 	max_ammo = 25
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	w_class = WEIGHT_CLASS_SMALL
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a357box/ratshot
 	name = "ammo box (.357 Magnum Ratshot)"
@@ -262,6 +268,7 @@
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/m44box/incendiary
 	name = "ammo box (.44 magnum incendiary-tipped)"
@@ -304,6 +311,7 @@
 	max_ammo = 25
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/c45/rubber
 	name = "ammo box (.45 rubber)"
@@ -336,6 +344,7 @@
 	max_ammo = 15
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/c4570box/ratshot
 	name = "ammo box (.45-70 Forager)"
@@ -372,6 +381,7 @@
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/m5mmbox/shock
 	name = "ammo box (5mm ESD)"
@@ -396,6 +406,7 @@
 	max_ammo = 25
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
+	randomize_ammo_count = FALSE
 /*
 /obj/item/ammo_box/a556/sport
 	name = "ammo box (.223 sport)"
@@ -449,6 +460,7 @@
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a308box/improvised
 	name = "bag with reloaded .308 bullets"
@@ -468,6 +480,12 @@
 	max_ammo = 15
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/a3006box/rubber
+	name = "ammo box (.30-06 rubber)"
+	ammo_type = /obj/item/ammo_casing/a3006/rubber
+
 
 /obj/item/ammo_box/a3006box/improvised
 	name = "bag with reloaded .30-06 bullets"
@@ -528,6 +546,7 @@
 	max_ammo = 12
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_HEAVY_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a50MGbox/rubber
 	name = "ammo box (.50 rubber)"
@@ -567,6 +586,7 @@
 	max_ammo = 18
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/m14mm/contam
 	name = "ammo box (14mm contaminated)"
@@ -591,6 +611,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 50
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/m473/rubber
 	name = "ammo box (4.73mm less-than-lethal)"
@@ -633,6 +654,7 @@
 	max_ammo = 18
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	w_class = WEIGHT_CLASS_SMALL
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/plasmamusket
 	name = "Canister box (Plasma musket)"
@@ -644,6 +666,7 @@
 	caliber = list(CALIBER_MUSKET_PLASMA)
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	w_class = WEIGHT_CLASS_SMALL
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm HE)"
@@ -654,6 +677,7 @@
 	max_ammo = 4
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 1
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a40mm/hedp
 	name = "ammo box (40mm HEDP)"
@@ -676,6 +700,7 @@
 	custom_materials = list(/datum/material/iron = MATS_TUBE)
 	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 1
+	randomize_ammo_count = TRUE
 /*
 //.38
 /obj/item/ammo_box/c38
@@ -703,6 +728,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/c22/empty
 	start_empty = 1
@@ -718,6 +744,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/l10mm/empty
 	start_empty = 1
@@ -734,6 +761,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/a357/empty
 	start_empty = 1
@@ -742,6 +770,7 @@
 	name = "speed loader (.357 ratshot)"
 	desc = "A .357 speedloader. this one is preloaded with ratshot"
 	ammo_type = /obj/item/ammo_casing/a357/ratshot
+	randomize_ammo_count = FALSE
 /*
 /obj/item/ammo_box/a357/match
 	name = "speed loader (.357 Match)"
@@ -777,6 +806,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/m44/empty
 	start_empty = 1
@@ -805,6 +835,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/c45rev/empty
 	start_empty = 1
@@ -819,6 +850,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/a45lcrev/empty
 	start_empty = 1
@@ -835,6 +867,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/rev308/empty
 	start_empty = 1
@@ -850,11 +883,13 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/c4570/ratshot
 	name = "speed loader (.45-70 forager)"
 	desc = "Designed to quickly reload revolvers. This one is preloaded with forager shotshells"
 	ammo_type = /obj/item/ammo_casing/c4570/ratshot
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/c4570/empty
 	start_empty = 1
@@ -863,6 +898,7 @@
 	name = "speed loader (.45-70 explosive)"
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/c4570/explosive
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/tube/c4570
 	name = "speed loader tube (.45-70)"
@@ -921,6 +957,7 @@
 	max_ammo = 15
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
+	randomize_ammo_count = FALSE
 
 //7.62x51, .308 Winchester
 /obj/item/ammo_box/a3006
@@ -933,6 +970,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/a308
 	name = "stripper clip (.308)"
@@ -944,6 +982,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/a308/empty
 	start_empty = 1
@@ -957,6 +996,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/a308/doublestacked/empty
 	start_empty = 1
@@ -972,6 +1012,7 @@
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_TINY
+	randomize_ammo_count = TRUE
 
 
 //Needler
@@ -985,6 +1026,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = TRUE
 
 //.50 BMG
 /obj/item/ammo_box/a50MG
@@ -998,6 +1040,7 @@
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = TRUE
 
 /obj/item/ammo_box/a50MG/incendiary
 	name = "anti-materiel incendiary ammo rack (.50MG)"
@@ -1045,6 +1088,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 6 // 3 bursts, you need 2 cans
 	custom_materials = list(/datum/material/iron = MATS_MISC)
+	randomize_ammo_count = FALSE
 
 
 /*
@@ -1113,6 +1157,7 @@
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/foambox/mag
 	name = "ammo box (Magnetic Foam Darts)"

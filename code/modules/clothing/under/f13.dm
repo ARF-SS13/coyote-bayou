@@ -3,8 +3,8 @@
 	fitted = FEMALE_UNIFORM_FULL
 	can_adjust = FALSE
 	resistance_flags = NONE
-	mutantrace_variation = NONE // Temporal fix until digitigrade-adapted sprites are done
-	has_sensor = NO_SENSORS //kek
+	mutantrace_variation = NONE // Temp fix until digitigrade-adapted sprites are done
+	has_sensor = HAS_SENSORS // kelp fix :D
 
 /obj/item/clothing/under/f13/female
 	fitted = FEMALE_UNIFORM_TOP
@@ -47,15 +47,6 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
-/obj/item/clothing/under/f13/picnicdress50s
-	name = "50s style dress"
-	desc = "Cheery polkadot casual dress."
-	icon_state = "dresspicnic50s"
-	item_state = "dresspicnic50s"
-	mutantrace_variation = STYLE_DIGITIGRADE
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
-
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "A blue jumpsuit with a yellow vault pattern printed on it."
@@ -91,6 +82,12 @@
 	item_state = "ncr_uniform"
 	item_color = "ncr_uniform"
 
+/obj/item/clothing/under/f13/ncr/texas
+	name = "militia fatigues"
+	desc = "A set of fatigues belonging to the now defunct First Texas Militia. Despite being a little too warm for Texas' usual weather, they're surprisingly comfortable."
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
+
 /obj/item/clothing/under/f13/ncr/ncr_officer
 	name = "officer fatigues"
 	desc = "A standard service uniform for commissioned officers."
@@ -106,6 +103,11 @@
 	icon_state = "ncr_conscript"
 	item_state = "ncr_conscript"
 	item_color = "ncr_conscript"
+
+/obj/item/clothing/under/f13/ncr/conscript/texas
+	name = "militia conscript fatigues"
+	desc = "A set of conscript fatigues belonging to the now defunct First Texas Militia. Despite being derided as 'cheap' by the Militia's detractors, some still swear by the design due how cool they keep the wearer. Just be careful around sharp objects."
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/f13/ncr/scout
 	name = "scout fatigues"

@@ -77,7 +77,7 @@
 	impulse(master)
 	master.impulses_to_process -= src
 	if(finishes_conversation)
-		master.set_not_listening(user)
+		master.unset_paying_attention(user)
 	qdel(src)
 
 /// Does the actual script thing
@@ -91,13 +91,13 @@
 	return
 
 /// Shorthand for outputting a phrase
-/datum/blenderbrain_impulse/proc/speak(message)
+/datum/blenderbrain_impulse/proc/speak(message, only_chat)
 	MASTER_CORE
 	USER_USER
 	if(message)
-		master.output_say(message, user, extras)
+		master.output_say(message, user, extras, unimportant = only_chat)
 	else
-		master.output_say(speak_index, user, extras)
+		master.output_say(speak_index, user, extras, unimportant = only_chat)
 
 /// Shorthand for outputting an emote
 /datum/blenderbrain_impulse/proc/emote(message)
@@ -250,9 +250,9 @@
 		return
 	master.event_cooldown(user, BB_EV_SAID_HI_TO, BB_CD_SAID_HI_TO)
 	if(prob(50))
-		speak(SPEAK_LINE_HIYA_AGAIN)
+		speak(SPEAK_LINE_HIYA_AGAIN, only_chat = TRUE)
 	else
-		speak(SPEAK_LINE_HIYA)
+		speak(SPEAK_LINE_HIYA, only_chat = TRUE)
 
 /// Sets mute-mode
 /datum/blenderbrain_impulse/mute
@@ -266,7 +266,7 @@
 
 /// Sets mute-mode
 /datum/blenderbrain_impulse/unmute
-	index = IMPULSE_MUTE
+	index = IMPULSE_UNMUTE
 	impulse_flags = NONE
 
 /datum/blenderbrain_impulse/unmute/impulse()
@@ -652,11 +652,11 @@
 	if(master.is_owner(user))
 		speak(SPEAK_LINE_PICKED_UP_OWNER)
 	else if(!master.has_owner())
-		speak(SPEAK_LINE_PICKED_UP_NO_OWNER)
+		speak(SPEAK_LINE_PICKED_UP_NO_OWNER, only_chat = TRUE)
 	else if(prob(50))
-		speak(SPEAK_LINE_PICKED_UP_AGAIN)
+		speak(SPEAK_LINE_PICKED_UP_AGAIN, only_chat = TRUE)
 	else
-		speak(SPEAK_LINE_PICKED_UP)
+		speak(SPEAK_LINE_PICKED_UP, only_chat = TRUE)
 
 /// When someone picks you up
 /datum/blenderbrain_impulse/picked_up
@@ -680,11 +680,11 @@
 	if(master.is_owner(user))
 		speak(SPEAK_LINE_PICKED_UP_OWNER)
 	else if(!master.has_owner())
-		speak(SPEAK_LINE_PICKED_UP_NO_OWNER)
+		speak(SPEAK_LINE_PICKED_UP_NO_OWNER, only_chat = TRUE)
 	else if(prob(50))
-		speak(SPEAK_LINE_PICKED_UP_AGAIN)
+		speak(SPEAK_LINE_PICKED_UP_AGAIN, only_chat = TRUE)
 	else
-		speak(SPEAK_LINE_PICKED_UP)
+		speak(SPEAK_LINE_PICKED_UP, only_chat = TRUE)
 
 /datum/blenderbrain_impulse/giggle
 	index = IMPULSE_GIGGLE
@@ -719,9 +719,9 @@
 	if(master.is_owner(user))
 		speak(SPEAK_LINE_EQUIPPED_OWNER)
 	else if(prob(50))
-		speak(SPEAK_LINE_EQUIPPED_AGAIN)
+		speak(SPEAK_LINE_EQUIPPED_AGAIN, only_chat = TRUE)
 	else
-		speak(SPEAK_LINE_EQUIPPED)
+		speak(SPEAK_LINE_EQUIPPED, only_chat = TRUE)
 
 /// When someone drops you, and you don't like it
 /datum/blenderbrain_impulse/dislike_dropped
@@ -739,9 +739,9 @@
 	if(master.is_owner(user))
 		speak(SPEAK_LINE_DISLIKE_DROPPED_OWNER)
 	else if(master.brain.check_relationship(user, BB_MF_IS_LOVER))
-		speak(SPEAK_LINE_DISLIKE_DROPPED_LOVER)
+		speak(SPEAK_LINE_DISLIKE_DROPPED_LOVER, only_chat = TRUE)
 	else
-		speak(SPEAK_LINE_DISLIKE_DROPPED)
+		speak(SPEAK_LINE_DISLIKE_DROPPED, only_chat = TRUE)
 
 /// When someone drops you, and you don't like it
 /datum/blenderbrain_impulse/check_if_met
@@ -810,11 +810,11 @@
 	USER_USER
 	if(!user)
 		return
-	master.set_listening(user, FALSE)
+	master.set_paying_attention(user)
 	if(!master.event_finished(user, BB_EV_AM_LISTENING))
 		return
 	master.event_cooldown(user, BB_EV_AM_LISTENING, BB_CD_AM_LISTENING)
-	speak(SPEAK_LINE_AM_LISTENING)
+	speak(SPEAK_LINE_AM_LISTENING, only_chat = TRUE)
 
 /// Clarification requests!
 /datum/blenderbrain_impulse/clarify
@@ -929,6 +929,32 @@
 /datum/blenderbrain_impulse/clarify/clear/impulse()
 	. = ..()
 	speak(SPEAK_LINE_CLARIFY_CLEAR)
+
+// /// Our wearer is entering crit!
+// /datum/blenderbrain_impulse/wearer_enter_crit
+// 	index = IMPULSE_WEARER_CRIT
+// 	impulse_flags = NONE
+// 	clarification = null
+// 	finishes_conversation = TRUE
+
+// /datum/blenderbrain_impulse/wearer_enter_crit/impulse()
+// 	. = ..()
+// 	USER_USER
+// 	if(!isliving(user))
+// 		return
+// 	var/mob/living/livemob = user
+// 	if(livemob.stat == DEAD)
+// 		MASTER_CORE
+// 		master.input_stimulus(src, STIMULUS_WEARER_DIED, livemob)
+// 		return
+// 	if(livemob.stat == CONSCIOUS)
+// 		return
+// 	speak(SPEAK_LINE_WEARER_CRIT)
+// 	switch(rand(1,100))
+// 		if(1 to 25)
+// 			master.input_stimulus(src, STIMULUS_WEARER_CRIT_YELL_HELP, livemob)
+// 		if(26 to 50)
+// 			master.input_stimulus(src, STIMULUS_WEARER_CRIT_PANIC, livemob)
 
 
 

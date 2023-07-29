@@ -60,11 +60,11 @@
 		'sound/f13npc/supermutant/idle3.ogg',
 		'sound/f13npc/supermutant/idle4.ogg'
 		)
-	death_sound = list(
+	/*death_sound = list(
 		'sound/f13npc/supermutant/death1.ogg',
 		'sound/f13npc/supermutant/death2.ogg'
-		)
-	aggrosound = list(
+		)*/
+	emote_taunt_sound = list(
 		'sound/f13npc/supermutant/alert1.ogg',
 		'sound/f13npc/supermutant/alert2.ogg',
 		'sound/f13npc/supermutant/alert3.ogg',
@@ -80,7 +80,7 @@
 	health = 130
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -475,7 +475,7 @@
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain
 	name = "nightkin guardian rain priest"
-	desc = "A nightkin that spreads the word of the Cult Of Rain. They are covered in dark blue markings, indicating that they have been blessed by the rain god Ignacio."
+	desc = "A nightkin that spreads the word of the Cult Of Rain. They are covered in dark blue markings, indicating that they have been blessed by the rain lord Ignacio."
 	color = "#6666FF"
 	speak_chance = 10
 	speak = list("The rain speaks through me!", "Witness the gifts of rain!", "The great flood will come upon us! Do not fear it!", "My life for the rain gods!", "The rain gods can always use more sacrifices!")
@@ -532,10 +532,10 @@
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/rain
 	name = "nightkin rain lord"
-	desc = "A nightkin that writes the word of the Cult Of Rain. They are covered in dark blue markings and are adorned in pieces of bone armor, indicating that they are blessed by the rain god Hyacinth."
+	desc = "A nightkin that writes the word of the Cult Of Rain. They are covered in dark blue markings and are adorned in pieces of bone armor, indicating that they are blessed by the rain lord Hyacinth."
 	color = "#6666FF"
 	speak_chance = 10
-	speak = list("The great flood will come, I will make sure of it!", "Rain god Odile, I call upon you for wrath!", "Rain god Hyacinth, I call upon you for a tranquil mind!", "Rain god Ignacio, I call upon you for protection!", "The storm rages within!")
+	speak = list("The great flood will come, I will make sure of it!", "Rain lord Odile, I call upon you for wrath!", "Rain creator Hyacinth, I call upon you for a tranquil mind!", "Rain lord Ignacio, I call upon you for protection!", "The storm rages within!")
 	maxHealth = 440
 	health = 440
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)

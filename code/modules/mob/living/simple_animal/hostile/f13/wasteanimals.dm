@@ -103,7 +103,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -225,7 +225,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -387,7 +387,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -437,7 +437,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -507,7 +507,7 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
@@ -535,7 +535,7 @@
 	speed = 0
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -650,12 +650,16 @@
 	waddle_up_time = 1
 	waddle_side_time = 1
 
+/mob/living/simple_animal/hostile/stalker/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/hostile/stalker/playable
 	health = 80
 	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -667,7 +671,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -712,7 +716,7 @@
 
 	emote_taunt_sound = list('sound/f13npc/nightstalker/taunt1.ogg', 'sound/f13npc/nightstalker/taunt2.ogg')
 	emote_taunt = list("growls", "snarls")
-	aggrosound = list('sound/f13npc/nightstalker/aggro1.ogg', 'sound/f13npc/nightstalker/aggro2.ogg', 'sound/f13npc/nightstalker/aggro3.ogg')
+	emote_taunt_sound = list('sound/f13npc/nightstalker/aggro1.ogg', 'sound/f13npc/nightstalker/aggro2.ogg', 'sound/f13npc/nightstalker/aggro3.ogg')
 	idlesound = list('sound/f13npc/nightstalker/idle1.ogg')
 	death_sound = 'sound/f13npc/nightstalker/death.ogg'
 	attack_sound = 'sound/f13npc/nightstalker/attack1.ogg'
@@ -725,7 +729,7 @@
 	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -738,7 +742,50 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
+
+/datum/reagent/toxin/rattler_venom
+	name = "rattler venom"
+	description = "A dangerous venom that causes intense pain and internal bleeding."
+	reagent_state = LIQUID
+	color = "#801E28" // rgb: 128, 30, 40
+	toxpwr = 0.5
+	taste_description = "pain"
+	taste_mult = 1.3
+	var/base_bleed = 15
+	var/bleed_tier_divisor = 3 //increasing this number makes the effect weaker
+	var/blood_loss_tier = 250 // Losing a multiple of this much will stack on an extra divisor
+
+/datum/reagent/toxin/rattler_venom/on_mob_life(mob/living/carbon/M)
+	var/divisor = 1
+	var/blood_i_lost = clamp(BLOOD_VOLUME_NORMAL - M.get_blood(), 0, BLOOD_VOLUME_NORMAL)
+	while(blood_i_lost > blood_loss_tier)
+		blood_i_lost -= blood_loss_tier
+		divisor *= bleed_tier_divisor
+	var/blood_to_lose = max(round(base_bleed / max(divisor,1)), 1)
+	M.bleed(blood_to_lose)
+	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/rattler_venom)
+	M.damageoverlaytemp = concentration * 10
+	M.update_damage_hud()
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_warning("[pain_message]"))
+	..()
+
+/datum/reagent/toxin/rattler_venom/on_mob_life_synth(mob/living/M)
+	M.adjustStaminaLoss(10, 0)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(5))
+		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		to_chat(M, span_notice("[pain_message]"))
+	..()
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"
@@ -808,7 +855,7 @@
 
 	emote_taunt_sound = list('sound/f13npc/molerat/taunt.ogg')
 	emote_taunt = list("hisses")
-	aggrosound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
+	emote_taunt_sound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
 	idlesound = list('sound/f13npc/molerat/idle.ogg')
 	death_sound = 'sound/f13npc/molerat/death.ogg'
 	waddle_amount = 3
@@ -859,14 +906,14 @@
 	response_disarm_simple = "wiggles"
 	response_harm_simple = "shakes"
 	taunt_chance = 30
-	speed = 8
+	speed = 12
 	maxHealth = 850
 	health = 850
 	harm_intent_damage = 30
 	obj_damage = 15
 	melee_damage_lower = 35
 	melee_damage_upper = 45
-	move_to_delay = 10
+	move_to_delay = 12
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")
@@ -877,7 +924,7 @@
 
 	emote_taunt_sound = list('sound/effects/bubbles.ogg')
 	emote_taunt = list("blorgles")
-	aggrosound = list('sound/misc/splort.ogg')
+	emote_taunt_sound = list('sound/misc/splort.ogg')
 	idlesound = list('sound/vore/prey/squish_01.ogg') //God forgive me for what I must do. Its just a perfect sound. ~TK
 	death_sound = 'sound/misc/crack.ogg'
 	waddle_amount = 4
@@ -962,7 +1009,7 @@
 		'sound/creatures/terrorbird/hoot3.ogg',
 		'sound/creatures/terrorbird/hoot4.ogg',
 		)
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/creatures/terrorbird/growl1.ogg',
 		'sound/creatures/terrorbird/growl2.ogg',
 		'sound/creatures/terrorbird/growl3.ogg',

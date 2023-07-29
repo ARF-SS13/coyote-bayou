@@ -164,6 +164,31 @@
 	attack_verb_on = list()
 	light_color = "#FF0000"
 	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular/flamberge
+	name = "Ardent Flamberge"
+	desc = "As the fire burns away thoughts of defeat, thoughts of victory etch themselves into the steel." //Really threw a fit about my fucking description, nice one DM.
+	icon_state = "flamberge"
+	icon_state_on = "ardentflamberge"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 35
+	force_on = 40
+	throwforce = 10
+	block_chance = 20
+	hitsound = 'sound/weapons/slash_heavy4.ogg'
+	hitsound_on = 'sound/weapons/fire03.ogg'
+	throw_speed = 3
+	throw_range = 5
+	tool_behaviour = TOOL_WELDER
+	w_class = WEIGHT_CLASS_BULKY
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	attack_verb_off = list("cleaved", "torn", "cut")
+	attack_verb_on = list("burned", "scorched", "roasted")
+	light_color = "#FF7700"
+	total_mass = null
+
 /obj/item/melee/transforming/plasmacutter/sword
 	name = "energy sword"
 	desc = "May the force be within you."
@@ -181,7 +206,7 @@
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/energy_sword
 	var/list/possible_colors = list("red" = LIGHT_COLOR_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
-
+	
 /datum/block_parry_data/energy_sword
 	parry_time_windup = 0
 	parry_time_active = 25
@@ -355,9 +380,9 @@
 	icon_state = "cxsword_hilt"
 	item_state = "cxsword"
 	force = 3
-	force_on = 21
+	force_on = 55
 	throwforce = 5
-	throwforce_on = 20
+	throwforce_on = 50
 	hitsound = "swing_hit" //it starts deactivated
 	hitsound_on = 'sound/weapons/nebhit.ogg'
 	attack_verb_off = list("tapped", "poked")
@@ -365,7 +390,6 @@
 	throw_range = 5
 	sharpness = SHARP_EDGED
 	embedding = list("embedded_pain_multiplier" = 6, "embed_chance" = 20, "embedded_fall_chance" = 60)
-	armour_penetration = 0.2
 	block_chance = 35
 	light_color = "#37FFF7"
 	actions_types = list()
@@ -437,7 +461,7 @@
 /obj/item/melee/transforming/plasmacutter/sword/cx/broken
 	name = "misaligned non-eutactic blade"
 	desc = "The Non-Eutactic Blade utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. This one seems to have a damaged handle and misaligned components, causing the blade to be unstable at best"
-	force_on = 15 //As strong a survival knife/bone dagger
+	force_on = 23 //As strong a survival knife/bone dagger
 
 /obj/item/melee/transforming/plasmacutter/sword/cx/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/melee/transforming/plasmacutter/sword/cx))
@@ -459,8 +483,7 @@
 			which utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. \
 			It appears to have a wooden grip and a shaved down guard."
 	icon_state = "cxsword_hilt_traitor"
-	force_on = 30
-	armour_penetration = 0.65
+	force_on = 40
 	embedding = list("embedded_pain_multiplier" = 10, "embed_chance" = 75, "embedded_fall_chance" = 0, "embedded_impact_pain_multiplier" = 10)
 	block_chance = 50
 	hitsound_on = 'sound/weapons/blade1.ogg'

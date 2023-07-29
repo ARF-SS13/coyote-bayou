@@ -255,7 +255,7 @@
 
 		if(user.grab_state) //only the first upgrade is instantaneous
 			var/old_grab_state = user.grab_state
-			var/grab_upgrade_time = instant ? 0 : 30
+			var/grab_upgrade_time = instant ? 0 : 3 SECONDS
 			visible_message(span_danger("[user] starts to tighten [user.p_their()] grip on [src]!"), \
 				span_userdanger("[user] starts to tighten [user.p_their()] grip on you!"), target = user,
 				target_message = span_danger("You start to tighten your grip on [src]!"))
@@ -264,7 +264,7 @@
 					log_combat(user, src, "attempted to neck grab", addition="neck grab")
 				if(GRAB_NECK)
 					log_combat(user, src, "attempted to strangle", addition="kill grab")
-			if(!do_mob(user, src, grab_upgrade_time))
+			if(!do_mob(user, src, grab_upgrade_time, allow_movement = TRUE, public_progbar = TRUE))
 				return 0
 			if(!user.pulling || user.pulling != src || user.grab_state != old_grab_state || user.a_intent != INTENT_GRAB)
 				return 0
@@ -359,19 +359,24 @@
 	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	M.DelayNextAction()
-	if(M.ckey && stat && ckey) // if both you and your attacker have ckeys, and you're not awake, disallow further attacks
+	if(M.ckey && stat && ckey && !(M.player_character)) // if both you and your attacker have ckeys, and you're not awake, disallow further attacks
 		M.show_message(span_alert("As an honorable creature of the wastes, you're morally (and mechanically) forbidden from attacking [src] while they're too injured or too sleepy to fight back!"))
 		return FALSE
-	var/list/attack_phrases = list(
-		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
-		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
-	)
-	if(M.melee_damage_upper == 0)
+	var/list/attack_phrases = list()
+	if(M.melee_damage_upper == 0 || (M.player_character && M.a_intent == INTENT_HELP))
+		attack_phrases = list(
+		"continuous" = islist(M.friendly_verb_continuous) ? pick(M.friendly_verb_continuous) : M.friendly_verb_continuous,
+		"simple" = islist(M.friendly_verb_simple) ? pick(M.friendly_verb_simple) : M.friendly_verb_simple
+		)
 		M.visible_message(span_notice("\The [M] [attack_phrases["continuous"]] [src]!"),
 			span_notice("You [attack_phrases["simple"]] [src]!"), target = src,
 			target_message = span_notice("\The [M] [attack_phrases["continuous"]] you!"))
 		return 0
 	else
+		attack_phrases = list(
+		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
+		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
+		)
 		if(HAS_TRAIT(M, TRAIT_PACIFISM))
 			to_chat(M, span_notice("You don't want to hurt anyone!"))
 			return FALSE

@@ -3,7 +3,10 @@
 	desc = "Vends things that the Captain is probably not going to appreciate you fiddling with instead of your job..."
 	product_ads = "Escape to a fantasy world!;Fuel your gambling addiction!;Ruin your friendships!;Roll for initiative!;Elves and dwarves!;Paranoid computers!;Totally not satanic!;Fun times forever!"
 	icon_state = "games"
-	products = list(/obj/item/toy/cards/deck = 5,
+	products = list(/obj/item/tattoo_gun = 5,
+					/obj/item/tattoo_holder/blank = 20,
+					/obj/item/tattoo_holder/blank/temporary = 20,
+					/obj/item/toy/cards/deck = 5,
 					/obj/item/storage/box/dice = 10,
 					/obj/item/toy/cards/deck/cas = 3,
 					/obj/item/toy/cards/deck/cas/black = 3,

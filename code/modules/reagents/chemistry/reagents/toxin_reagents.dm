@@ -1214,3 +1214,5 @@
 		if(initial(liber.filterToxins))
 			liber.filterToxins = TRUE
 	L.metabolism_efficiency += metab_inibition
+
+

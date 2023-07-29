@@ -44,7 +44,6 @@
 	force = 55
 	throwforce = 10
 	block_chance = 20
-	armour_penetration = 0.40
 	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -140,7 +139,6 @@
 	item_state = "tribalspear"
 	force = 15
 	throwforce = 40 //clears threshholds for trash mobs
-	armour_penetration = 0.10
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
@@ -159,7 +157,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	armour_penetration = 0.05
 	throw_speed = 3
 	throw_range = 6
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -252,7 +249,6 @@
 	icon_state = "knife_ritual"
 	item_state = "knife_ritual"
 	force = 25
-	armour_penetration = 0.1
 	custom_materials = null
 
 obj/item/melee/onehanded/knife/switchblade
@@ -305,7 +301,6 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "knife"
 	force = 15
 	throwforce = 10
-	armour_penetration = 0.2
 
 // Abraxo my beloved. Can now be used directly to clean the blade.
 /obj/item/melee/onehanded/knife/cosmicdirty/attackby(obj/item/C, mob/user, params)
@@ -329,7 +324,6 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "knife"
 	force = 25
 	throwforce = 15
-	armour_penetration = 0.2
 	toolspeed = 0.8
 
 // Heat it with a welder
@@ -351,7 +345,6 @@ obj/item/melee/onehanded/knife/switchblade
 	damtype = BURN
 	force = 35
 	throwforce = 20
-	armour_penetration = 0.4
 	w_class = WEIGHT_CLASS_NORMAL // Its super hot, not comfy to put back in your pocket.
 
 /obj/item/melee/onehanded/knife/throwing
@@ -360,7 +353,6 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "knife_throw"
 	force = 20
 	throwforce = 30
-	armour_penetration = 0.25
 	bare_wound_bonus = 15 //keep your arteries covered
 	throw_speed = 5
 	throw_range = 7
@@ -648,6 +640,37 @@ obj/item/melee/onehanded/knife/switchblade
 	add_fingerprint(user)
 
 
+/obj/item/melee/f13onehanded/boomerang
+	name = "boomerang"
+	desc = "An ancient, primitive weapon used by hunters, able to return when thrown and surprisingly powerful for a piece of wood, this one seems to be equipped with non functioning electronics"
+	icon_state = "boomerang"
+	item_state = "boomerang"
+	force = 30
+	throwforce = 18 //so it can kill weak trash mobs in one throw, a bug causes boomerang type weapons to deal double the intended damage, so this is  a bandaid fix meanwhile
+	throw_speed = 4
+	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
+	sharpness = SHARP_NONE
+	attack_speed = CLICK_CD_MELEE
+	var/throw_hit_chance = 99
+
+/obj/item/melee/f13onehanded/boomerang/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
+	if(ishuman(thrower))
+		var/mob/living/carbon/human/H = thrower
+		H.throw_mode_on() //so they can catch it on the return.
+	return ..()
+
+/obj/item/melee/f13onehanded/boomerang/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+	if(thrownby && !caught)
+		sleep(1)
+		if(!QDELETED(src))
+			throw_at(thrownby, throw_range+2, throw_speed, null, TRUE)
+	else if(!thrownby)
+		return
+	return
+
+
+
 // Slave whip
 /obj/item/melee/onehanded/slavewhip
 	name = "slave whip"
@@ -682,7 +705,7 @@ obj/item/melee/onehanded/knife/switchblade
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_NONE
-	armour_penetration = 0.05
+
 	throwforce = 10
 	throw_range = 5
 	attack_verb = list("punched", "jabbed", "whacked")
@@ -758,7 +781,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "spiked"
 	sharpness = SHARP_POINTY
 	force = 28
-	armour_penetration = 0.10
+
 
 // Sappers			Keywords: Damage 27
 /obj/item/melee/unarmed/sappers
@@ -818,7 +841,6 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "punch_dagger"
 	item_state = "punch_dagger"
 	force = 29
-	armour_penetration = 0.12
 	sharpness = SHARP_POINTY
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -839,7 +861,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 35
-	armour_penetration = 1
+	armour_penetration = 0 //HAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHA, ONE MY ASS LMFAO ~TK
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -864,6 +886,80 @@ obj/item/melee/unarmed/punchdagger/cyborg
 		return
 	target.apply_status_effect(/datum/status_effect/stacking/saw_bleed/yaoguaigauntlet)
 
+
+/////////////////
+// POWER FISTS //
+/////////////////		-Uses power (gas currently) for knockback. Heavy AP, specialized for attacking heavy armor
+
+// Power Fist			Throws targets. Max damage 52. Full AP.
+/obj/item/melee/unarmed/powerfist
+	name = "power fist"
+	desc = "A metal gauntlet with a piston-powered ram on top for that extra 'oomph' in your punch."
+	icon_state = "powerfist"
+	item_state = "powerfist"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	flags_1 = CONDUCT_1
+	attack_verb = list("whacked", "fisted", "power-punched")
+	force = 45 //needs more hefty damage to be worthwhile outside pvp. will have to test
+	throwforce = 10
+	throw_range = 3
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
+	var/throw_distance = 1
+	attack_speed = CLICK_CD_MELEE
+
+/obj/item/melee/unarmed/powerfist/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_warning("You don't want to harm other living beings!"))
+		return FALSE
+	var/turf/T = get_turf(src)
+	if(!T)
+		return FALSE
+	var/totalitemdamage = target.pre_attacked_by(src, user)
+	SSdamage.damage_mob(user, target, totalitemdamage)
+	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
+		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
+	new /obj/effect/temp_visual/kinetic_blast(target.loc)
+	playsound(loc, 'sound/weapons/resonator_blast.ogg', 50, 1)
+	playsound(loc, 'sound/weapons/genhit2.ogg', 50, 1)
+	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
+	target.throw_at(throw_target, 2 * throw_distance, 0.5 + (throw_distance / 2))
+	log_combat(user, target, "power fisted", src)
+
+// Goliath				Throws targets far. Max damage 50.
+/obj/item/melee/unarmed/powerfist/goliath
+	name = "Goliath"
+	desc = "A massive, experimental metal gauntlet crafted by some poor bastard in Redwater that since outlived their usefulness. The piston-powered ram on top is designed to throw targets very, very far."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "goliath"
+	item_state = "goliath"
+	force = 55 //legendary tier power fist, one of a kind, why should it hit for less than a machete
+	throw_distance = 5
+// Mole Miner
+/obj/item/melee/unarmed/powerfist/moleminer
+	name = "mole miner gauntlet"
+	desc = "A hand-held mining and cutting implement, repurposed into a deadly melee weapon.  Its name origins are a mystery..."
+	icon_state = "mole_miner_g"
+	item_state = "mole_miner_g"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	flags_1 = CONDUCT_1
+	force = 33 //tiger claws tier
+	throwforce = 10
+	throw_range = 7
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	tool_behaviour = TOOL_MINING
+	var/digrange = 2 //This should give it the 3x2 dig range that drills and some picks have
+	toolspeed = 0.2 //This should make it dig really quick. Like a moleminer!
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	armor = ARMOR_VALUE_GENERIC_ITEM
 
 ///////////
 // TOOLS //
@@ -907,7 +1003,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	toolspeed = 0.7
 	sharpness = SHARP_EDGED
 	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
-
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 // Hatchet				Force 24
 // Wrench				Force 12
@@ -955,3 +1051,58 @@ CODE FOR BLEEDING STACK
 	icon_state = "machete_imp"
 	item_state = "salvagedmachete"
 	force = 30
+
+//Fenny makes fucking handfans because they're cute and maybe dangerous. ~TK
+/obj/item/melee/handfan
+	name = "handfan"
+	desc = "A foldable fan, made out of some sort of hardwood and pink fabric. Good for coolin off, or looking haughty as fuck."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "handfanclosed_0"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = null
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NONE
+	force = 0
+	var/on = FALSE
+	var/on_sound = 'sound/weapons/batonextend.ogg'
+	var/on_icon_state = "handfanopen_1"
+	var/off_icon_state = "handfanclosed_0"
+	var/on_item_state = "nullrod"
+	attack_verb = list("<span class='love'>fanned %t</span>")
+	var/force_on = 0
+	var/force_off = 0
+	var/weight_class_on = WEIGHT_CLASS_BULKY
+	total_mass = TOTAL_MASS_TINY_ITEM
+	attack_speed = CLICK_CD_MELEE * 0.5
+
+/obj/item/melee/handfan/proc/get_on_off_description()
+	if(on)
+		return span_alert("You open the fan with a smooth flicking motion.")
+	else
+		return span_notice("You collapse the fan with a smooth flicking motion.")
+
+/obj/item/melee/handfan/examine()
+
+/obj/item/melee/handfan/attack_self(mob/user)
+	TOGGLE_VAR(on)
+	if(on)
+		to_chat(user, get_on_off_description())
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list(span_love("fanned"))
+	else
+		to_chat(user, get_on_off_description())
+		icon_state = off_icon_state
+		item_state = null //no sprite for concealment even when in hand
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = force_off
+		attack_verb = list("badgered", "beat")
+	playsound(loc, on_sound, 50, TRUE)
+	add_fingerprint(user)
+
+

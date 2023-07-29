@@ -95,7 +95,19 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	/datum/crafting_recipe/repair_t45,
 	/datum/crafting_recipe/repair_t45_helm,
 	/datum/crafting_recipe/scrap_pa,
-	/datum/crafting_recipe/scrap_pa_helm))
+	/datum/crafting_recipe/scrap_pa_helm,
+	/datum/crafting_recipe/repair_t45/hotrod,
+	/datum/crafting_recipe/repair_t45_helm/hotrod))
+
+
+GLOBAL_LIST_INIT(weapons_of_texarkana, list(
+	/datum/crafting_recipe/policepistol,
+	/datum/crafting_recipe/durathread_vest,
+	/datum/crafting_recipe/policerifle,
+	/datum/crafting_recipe/steelbib/heavy,
+	/datum/crafting_recipe/armyhelmetheavy,
+	/datum/crafting_recipe/huntingshotgun))
+
 
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
@@ -272,6 +284,22 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
 
+/* //placeholder test concluded
+/datum/quirk/wizard
+	name = "Wasteland Wizard"
+	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit. This isn't a lisence to be a greifer or break rules. "
+	value = 4
+	mob_trait = TRAIT_SWAMPWIZARD
+	gain_text = span_notice("You know everything about magic.")
+	lose_text = span_danger("You forgor how the magic.")
+
+/datum/quirk/wizard/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/spellbook/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.regenerate_icons()
+*/
+
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds. Sort of like being a medical scanner for yourself."
@@ -354,6 +382,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	if(!H.mind.learned_recipes)
 		H.mind.learned_recipes = list()
 	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
+	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
 
 /datum/quirk/gunsmith/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -409,13 +438,13 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	H.update_sight()
 
 /datum/quirk/nukalover
-	name = "Nuka Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Nuka Cola heals you, sort of."
+	name = "Cola Fiend"
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Cosmic Cola heals you, sort of."
 	value = 1
 	mob_trait = TRAIT_NUKA_LOVER
-	gain_text = span_notice("You want to buy the whole world a nuka-cola!")
-	lose_text = span_danger("What's the big deal about nuka-cola?")
-	medical_record_text = "Patient has an addiction to the soft drink Nuka-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
+	gain_text = span_notice("You want to buy the whole world a cosmic-cola!")
+	lose_text = span_danger("What's the big deal about cosmic-cola?")
+	medical_record_text = "Patient has an addiction to the soft drink Cosmic-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
 
 /datum/quirk/nukalover/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -604,33 +633,16 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
-/datum/quirk/lick_heal
-	name = "Soothing Saliva"
-	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick your injuries."
-	value = 1
-	mob_trait = TRAIT_HEAL_TONGUE
-	gain_text = span_notice("You feel a slight tingle in your mouth.")
-	lose_text = span_danger("The tingle in your mouth fades.")
+/datum/quirk/improved_heal
+	name = "Improved Innate Healing"
+	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. check the neutral traits for these abilities."
+	value = 2
+	mob_trait = TRAIT_IMPROVED_HEALING
+	gain_text = span_notice("You feel well hydrated.")
+	lose_text = span_danger("You feel rather dry.")
 	locked = FALSE
 
-/datum/quirk/lick_heal/on_spawn()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	our_tongue.initialize_lickpack(/obj/item/stack/medical/bruise_pack/lick)
-
-/datum/quirk/lick_heal/remove()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(!quirk_holder)
-		return //oh no
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	QDEL_NULL(our_tongue.lick_healer)
-
+/*
 /datum/quirk/lick_bandage
 	name = "Sanguine Saliva"
 	desc = "Your saliva has a mild coagulating effect on open bleeding wounds. Use *lick to lick your lacerations."
@@ -653,7 +665,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	if(!our_tongue)
 		return //welp
 	QDEL_NULL(our_tongue.lick_bandage)
-
+*/
 // This does the same thing as basic explosive crafting by giving basic_recipe and adv_recipe. -Possum
 /*
 /datum/quirk/advanced_explosive_crafting
@@ -806,6 +818,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
 	locked =  FALSE
 
+/*
 /datum/quirk/thickskin
 	name = "Thick Skin"
 	desc = "You just don't get splinters, or shrapnel for that matter.  BROKEN AS OF 2/9/23, TAKE LICK HEALING TO CLOSE WOUNDS."
@@ -814,6 +827,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 	gain_text = span_notice("Your skin feels way stronger.")
 	lose_text = span_danger("You feel like your skin is about as tough as tissue paper.")
 	locked =  TRUE
+*/
 
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
@@ -881,7 +895,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "You hit the shots you aim. No ifs, ands, or buts."
-	value = 6
+	value = 4
 	mob_trait = TRAIT_INSANE_AIM
 	gain_text = span_notice("Your aim is legendary, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -890,7 +904,7 @@ GLOBAL_LIST_INIT(pa_repair, list(
 /datum/quirk/straightshooter
 	name = "Straight Shooter"
 	desc = "You're a better than average shot."
-	value = 4
+	value = 2
 	mob_trait = TRAIT_NICE_SHOT
 	gain_text = span_notice("Your aim is amazing, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -1027,3 +1041,15 @@ GLOBAL_LIST_INIT(pa_repair, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
+
+/datum/quirk/zoomies
+	name = "Zoomies"
+	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Just...don't run into things."
+	value = 1
+	mob_trait = TRAIT_ZOOMIES
+
+/datum/quirk/super_zoomies
+	name = "Zoomies - Super"
+	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just...REALLY don't run into things."
+	value = 3
+	mob_trait = TRAIT_SUPER_ZOOMIES

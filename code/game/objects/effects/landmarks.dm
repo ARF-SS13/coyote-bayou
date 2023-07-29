@@ -598,67 +598,67 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Legate"
 
 /obj/effect/landmark/start/f13/centurion
-	name = "Legion Centurion"
+	name = "Leg-anus Centurion"
 	icon_state = "Centurion"
 
 /obj/effect/landmark/start/f13/orator
-	name = "Legion Orator"
+	name = "Leg-anus Orator"
 
 /obj/effect/landmark/start/f13/immune
-	name = "Legion Immune"
+	name = "Leg-anus Immune to literally nothing"
 
 /obj/effect/landmark/start/f13/priestess
-	name = "Priestess of Mars"
+	name = "Priestess of Mars Bars"
 
 /obj/effect/landmark/start/f13/decanvet
-	name = "Legion Veteran Decanus"
+	name = "The man with ten buttholes"
 	icon_state = "Decanus"
 
 /obj/effect/landmark/start/f13/vexillarius
-	name = "Legion Vexillarius"
+	name = "Larping Vexillarius - Definitely a Ratchet & Clank Boss Edition"
 	icon_state = "Vexillarius"
 
 /obj/effect/landmark/start/f13/vetlegionary
-	name = "Veteran Legionnaire"
+	name = "Beteran Barperinaire"
 	icon_state = "Veteran Legionnaire"
 
 /obj/effect/landmark/start/f13/decan
-	name = "Legion Prime Decanus"
+	name = "Leg Ion Amazon Prime Ten Butted Delivery Dog"
 	icon_state = "Decanus"
 
 /obj/effect/landmark/start/f13/legionary
-	name = "Prime Legionnaire"
+	name = "Primed Leg-o-Nayriin"
 	icon_state = "Veteran Legionnaire"
 
 /obj/effect/landmark/start/f13/decanrec
-	name = "Legion Recruit Decanus"
+	name = "One whole virgin butthole"
 	icon_state = "Decanus"
 
 /obj/effect/landmark/start/f13/recleg
-	name = "Recruit Legionnaire"
+	name = "A Level 1 Fighter - Fallout Edition"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/slavemaster
-	name = "Legion Slavemaster"
+	name = "Legions of Raw Daddies"
 
 /obj/effect/landmark/start/f13/explorer
-	name = "Legion Scout"
+	name = "Leg-er-ion Scunt"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/venator
-	name = "Legion Explorer"
+	name = "Chiropractor"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia
-	name = "Legion Auxilia"
+	name = "Bitters Woman"
 	icon_state = "Auxilla"
 
 /obj/effect/landmark/start/f13/campfollower
-	name = "Legion Forgemaster"
+	name = "Perrin Aybara but actually horribly nationalist and terrible"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/slave
-	name = "Legion Slave"
+	name = "It's whats for dinner"
 	icon_state = "Wastelander"
 
 // Brotherhood of Steel
@@ -744,11 +744,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 // Oasis
 
 /obj/effect/landmark/start/f13/mayor
-	name = "Mayor"
+	name = "High Alderperson"
 	icon_state = "Banker"
 
 /obj/effect/landmark/start/f13/secretary
-	name = "Secretary"
+	name = "Councilperson"
 	icon_state = "Lawyer"
 
 /obj/effect/landmark/start/f13/sheriff
@@ -803,6 +803,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/wastelander
 	name = "Wastelander"
+	icon_state = "Wastelander"
+
+/obj/effect/landmark/start/f13/wastelander/ashdown
+	name = "Ashdown Citizen"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/raider
@@ -952,5 +956,5 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Assistant"
 
 /obj/effect/landmark/start/f13/biker_boss
-	name = "Hells Nomad Boss"
+	name = "Overbiker"
 	icon_state = "Captain"

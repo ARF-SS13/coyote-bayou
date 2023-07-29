@@ -38,7 +38,7 @@
 //throwin' rock, for throwin'. obtained via *rocks
 /obj/item/ammo_casing/caseless/rock
 	name = "rock"
-	desc = "a nice hefty rock, for bashing over someone's head or throwing at someone's head."
+	desc = "a nice hefty rock, for bashing over someone's head or throwing at someone's head. You can get your own with *rocks!"
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
 	item_state = "rock"
@@ -62,7 +62,7 @@
 
 /obj/item/ammo_casing/caseless/brick
 	name = "brick"
-	desc = "a weighty brick for bashing heads."
+	desc = "a weighty brick for bashing heads. You too might find some laying around with *brick"
 	icon = 'modular_coyote/icons/objects/brick.dmi'
 	icon_state = "brick"
 	item_state = "brick"
@@ -83,6 +83,7 @@
 	custom_materials = list(/datum/material/glass = 50)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_ROCK
+	hitsound = 'sound/effects/brickthrow.ogg'
 
 /obj/item/ammo_casing/caseless/flintlock
 	name = "packed blackpowder cartridge"
@@ -97,7 +98,7 @@
 	sound_properties = CSP_FLINTLOCK
 	custom_materials = list(/datum/material/blackpowder = 500)
 	w_class = WEIGHT_CLASS_SMALL
-	variance = 5
+	variance = CASING_SPREAD_FLINTLOCK
 
 /obj/item/ammo_casing/caseless/flintlock/minie
 	name = "packed blackpowder minie cartridge"
@@ -111,7 +112,7 @@
 		/datum/material/iron = MATS_FLINTLOCK_LIGHT_POWDER, // what casing? ~ uwu ~
 		/datum/material/blackpowder = MATS_FLINTLOCK_HEAVY_POWDER)
 	w_class = WEIGHT_CLASS_SMALL
-	variance = -5
+	variance = CASING_SPREAD_SURPLUS
 
 /obj/item/ammo_casing/caseless/flintlock/rubber
 	name = "packed blackpowder rubber cartridge"
@@ -121,6 +122,7 @@
 	icon_state = "flintlock_casing_rubber"
 	projectile_type = /obj/item/projectile/flintlock/rubber
 	sound_properties = CSP_FLINTLOCK
+	variance = CASING_SPREAD_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_FLINTLOCK_LIGHT_POWDER, // what casing? ~ uwu ~
 		/datum/material/blackpowder = MATS_FLINTLOCK_HEAVY_POWDER)

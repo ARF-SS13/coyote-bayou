@@ -544,7 +544,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 								squish_part.receive_damage(brute=30)
 						C.visible_message(span_danger("[C]'s body is maimed underneath the mass of [src]!"), \
 							span_userdanger("Your body is maimed underneath the mass of [src]!"))
-					if(6) // skull squish!
+					if(0) // skull squish!
 						var/obj/item/bodypart/head/O = C.get_bodypart(BODY_ZONE_HEAD)
 						if(O)
 							C.visible_message(span_danger("[O] explodes in a shower of gore beneath [src]!"), \
@@ -749,7 +749,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	for (var/datum/data/vending_product/R in product_records + coin_records + hidden_records)
 		.["stock"][R.name] = R.amount
 	.["extended_inventory"] = extended_inventory
-	.["insertedCaps"] = stored_caps ? stored_caps : "0"
+	.["insertedCoins"] = stored_caps ? stored_caps : "0"
 	.["forceFree"] = force_free
 
 /obj/machinery/vending/ui_act(action, params)
@@ -772,20 +772,20 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if(!R || !istype(R) || !R.product_path)
 				vend_ready = TRUE
 				return
-			
+
 			//debug
 			if(product_records.Find(R) && hidden_records.Find(R))
 				log_runtime("WARN - vendor [src] @ [loc] has Duplicate [R] accross normal and hidden product tables!")
 			if(product_records.Find(R) && coin_records.Find(R))
 				log_runtime("WARN - vendor [src] @ [loc] has Duplicate [R] accross normal and premium product tables!")
-			
+
 			//Set price for the item we're using.
 			var/price_to_use = default_price
 			if(R.custom_price)
 				price_to_use = R.custom_price
 			if(coin_records.Find(R) || hidden_records.Find(R))
 				price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
-			
+
 			//Make sure we actually have the item.
 			if(R in hidden_records)
 				if(!extended_inventory)
@@ -800,7 +800,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				flick(icon_deny,src)
 				vend_ready = TRUE
 				return
-			
+
 			//Thank them like any megaglobal corp should.
 			if(last_shopper != usr || purchase_message_cooldown < world.time)
 				say("Thank you for shopping with [src]!")
@@ -809,14 +809,14 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 			//Do we have the money inserted to buy this item?
 			if(price_to_use > stored_caps && !force_free)
-				to_chat(usr, span_alert("Not enough caps to pay for [R.name]!"))
+				to_chat(usr, span_alert("Not enough coins to pay for [R.name]!"))
 				vend_ready = TRUE
 				return
-			
+
 			//Deduct that price if we're not overridden to be free.
 			if(!force_free)
 				stored_caps = stored_caps - price_to_use
-			
+
 			//use power, play animations and sounds.
 			use_power(5)
 			if(icon_vend) //Show the vending animation if needed
@@ -974,7 +974,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
@@ -982,15 +982,15 @@ GLOBAL_LIST_EMPTY(vending_products)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
-		var/inserted_value = FLOOR(currency.amount * 4, 1)
+		var/inserted_value = FLOOR(currency.amount * 10, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
@@ -998,7 +998,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else
 		to_chat(usr, "Invalid currency!")

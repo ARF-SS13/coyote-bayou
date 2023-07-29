@@ -55,8 +55,8 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
 /obj/item/clothing/neck/mantle/legion
-	name = "Legion Cape"
-	desc = "A deep crimson cape woven by fine legionnaire craftsmanship. A shoulder holster is added beneath for utility."
+	name = "Pizza Legion Cape"
+	desc = "A deep crimson cape (it resembles marinara) woven by finest kitchen craftsman. A shoulder holster is added beneath for utility (it smells like old pepperonis.)"
 	icon_state = "legion"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
@@ -331,3 +331,21 @@
 	desc = "A dark black and grey cloak."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "zuliecloak"
+
+/obj/item/clothing/neck/tie/vampire
+	name = "Vampire Cloak"
+	desc = "A dark black cloak."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "vampcape"
+
+/obj/item/clothing/neck/tie/witchcapep
+	name = "purple witch cape"
+	desc = "A purple cape."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "witchcape_purple"
+
+/obj/item/clothing/neck/tie/witchcapem
+	name = "mint witch cape"
+	desc = "A mint cape."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "witchcape_mint"

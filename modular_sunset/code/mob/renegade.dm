@@ -106,8 +106,8 @@
 	casingtype = /obj/item/ammo_casing/shotgun
 	loot = list(
 		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/bomb/tier1,
-		/obj/effect/spawner/lootdrop/f13/crafting
+		/obj/effect/spawner/lootdrop/f13/common_bombs,
+		/obj/effect/spawner/lootdrop/f13/uncommon_mats
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -154,7 +154,7 @@
 	projectilesound = 'sound/f13weapons/combatrifle.ogg'
 	loot = list(
 		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2
+		/obj/effect/spawner/lootdrop/f13/uncommon_mags
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -238,7 +238,7 @@
 	loot = list(
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/gun/ballistic/rifle/hunting,
-		/obj/effect/spawner/lootdrop/f13/armor/random
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -282,7 +282,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(
 		/obj/item/gun/ballistic/shotgun/trench,
-		/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_mags,
 		/obj/item/stack/f13Cash/random/low,
 		/obj/item/clothing/suit/armor/medium/vest/breastplate/light
 		)
@@ -390,7 +390,7 @@
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/advanced_crafting_components/alloys,
 		/obj/item/stack/sheet/plasteel/five,
-		/obj/effect/spawner/lootdrop/f13/armor/tier5
+		/obj/effect/spawner/lootdrop/f13/rare_armor
 		)
 	speak = list(
 		"Death to the Brotherhood!",
@@ -446,7 +446,7 @@
 	speak_emote = list("says")
 	speak_chance = 1
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/medical/vault/meds,
+		/obj/effect/spawner/lootdrop/f13/common_medicine,
 		/obj/item/gun/ballistic/revolver/m29,
 		/obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
 

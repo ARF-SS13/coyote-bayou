@@ -419,7 +419,6 @@
 	direct = TRUE
 	loop_delay = 1 MINUTES
 	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/music/rocketridersprayer.ogg', 370 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
 		SOUND_LOOP_ENTRY('sound/f13/hanging_me.ogg', 185 SECONDS, 10),
 		SOUND_LOOP_ENTRY('sound/f13/rainmustfall.ogg', 148 SECONDS, 10),

@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/holder_var_type = "bruteloss" //only used if charge_type equals to "holder_var"
 	var/holder_var_amount = 20 //same. The amount adjusted with the mob's var when the spell is used
 
-	var/clothes_req = SPELL_WIZARD_GARB //see if it requires clothes
+	var/clothes_req = NONE //see if it requires clothes
 	var/list/mobs_whitelist //spell can only be casted by mobs in this typecache.
 	var/list/mobs_blacklist //The opposite of the above.
 	var/stat_allowed = 0 //see if it requires being conscious/alive, need to set to 1 for ghostpells
@@ -482,6 +482,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 			to_chat(user, span_notice("[name] cannot be cast unless you are completely manifested in the material plane."))
 		return FALSE
 
+
 	if(clothes_req && !(magic_flags & SPELL_SKIP_CLOTHES))
 		var/met_requirements = magic_flags & (clothes_req)
 		if(met_requirements != clothes_req)
@@ -491,6 +492,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 				var/without_hat_robe = the_many_suits ? "a proper headwear" : the_many_hats ? "a proper suit" : "proper garments"
 				to_chat(user, span_notice("I don't feel strong enough to cast this spell without [without_hat_robe]."))
 			return FALSE
+
 
 	if(!antimagic_allowed && !(magic_flags & SPELL_SKIP_ANTIMAGIC) && user.anti_magic_check(TRUE, FALSE, chargecost = 0, self = TRUE))
 		return FALSE

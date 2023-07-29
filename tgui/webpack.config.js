@@ -8,7 +8,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractCssPlugin = require('mini-css-extract-plugin');
 const { createBabelConfig } = require('./babel.config.js');
- 
+
 const createStats = verbose => ({
   assets: verbose,
   builtAt: verbose,
@@ -23,7 +23,7 @@ const createStats = verbose => ({
   timings: verbose,
   version: verbose,
 });
- 
+
 module.exports = (env = {}, argv) => {
   const mode = argv.mode === 'production' ? 'production' : 'development';
   const config = {
@@ -102,6 +102,7 @@ module.exports = (env = {}, argv) => {
         chunks: 'initial',
         name: 'tgui-common',
       },
+      chunkIds: 'named'
     },
     performance: {
       hints: false,
@@ -127,7 +128,7 @@ module.exports = (env = {}, argv) => {
       }),
     ],
   };
- 
+
   // Add a bundle analyzer to the plugins array
   if (argv.analyze) {
     const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -136,7 +137,7 @@ module.exports = (env = {}, argv) => {
       new BundleAnalyzerPlugin(),
     ];
   }
- 
+
   // Production build specific options
   if (argv.mode === 'production') {
     const TerserPlugin = require('terser-webpack-plugin');
@@ -153,12 +154,12 @@ module.exports = (env = {}, argv) => {
       }),
     ];
   }
- 
+
   // Development build specific options
   if (argv.mode !== 'production') {
     config.devtool = 'cheap-module-source-map';
   }
- 
+
   // Development server specific options
   if (argv.devServer) {
     config.devServer = {
@@ -169,7 +170,6 @@ module.exports = (env = {}, argv) => {
       stats: createStats(false),
     };
   }
- 
+
   return config;
 };
- 

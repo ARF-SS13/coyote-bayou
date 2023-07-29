@@ -104,6 +104,18 @@
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
 
+/obj/item/clothing/head/helmet/f13/combat/rangerbroken/smog
+	name = "winterized riot helmet"
+	icon_state = "modified_usmc_riot_smog"
+	item_state = "modified_usmc_riot_smog"
+	desc = "This helmet was originally intended to be a riot helmet meant for cold climates, now it's a part of a generational heirloom, the once functional night vision has been shot out in one eye, rendering it totally useless, a bullet casing hangs from the now useless radio, tuned in to a dead frequency. an old Alaskan flag is emblazoned on the side."
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	flash_protect = 1
+
 /obj/item/clothing/head/helmet/f13/combat/swat
 	name = "SWAT combat helmet"
 	desc = "A prewar combat helmet issued to S.W.A.T. personnel."
@@ -191,6 +203,14 @@
 	icon_state = "metal_mask2"
 	item_state = "metal_mask2"
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_MELEE_T3)
+
+
+/obj/item/clothing/head/helmet/f13/metalmask/custom
+	name = "hockey mask"
+	desc = "A hockey mask made out of some pretty tough plastic, it's covered in scratches"
+	icon_state = "metal_mask2"
+	item_state = "metal_mask2"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/head/helmet/f13/tesla
 	name = "tesla helmet"
@@ -448,6 +468,7 @@
 	desc = "The helmet of the excavator power armor suit."
 	icon_state = "excavator"
 	item_state = "excavator"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced
@@ -885,3 +906,39 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/head/hat/polis
+	name = "police officer's hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "police_officer"
+	item_state = "police_officer"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
+/obj/item/clothing/head/hat/polislt
+	name = "police lieutenant's hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has silver decorations."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
+
+/obj/item/clothing/head/hat/polischief
+	name = "police chief's hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has gold decorations."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+
+/obj/item/clothing/head/hat/polissnr
+	name = "police search and rescue hat"
+	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong, this one has search and rescue insignia."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "police_snr"
+	item_state = "police_snr"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)

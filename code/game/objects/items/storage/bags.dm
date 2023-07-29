@@ -236,7 +236,7 @@
 
 /obj/item/storage/bag/sheetsnatcher
 	name = "sheet snatcher"
-	desc = "A patented Nanotrasen storage system designed for any kind of mineral sheet."
+	desc = "A patented US Government storage system designed for any kind of mineral sheet."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "sheetsnatcher"
 	component_type = /datum/component/storage/concrete/stack
@@ -506,6 +506,7 @@ obj/item/storage/bag/chemistry/tribal
 	icon_state = "tribal_quiver"
 	item_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
 	component_type = /datum/component/storage/concrete/bag/quiver
 
 /obj/item/storage/bag/tribe_quiver/full/PopulateContents()
@@ -529,8 +530,6 @@ obj/item/storage/bag/chemistry/tribal
 	desc = "A large quiver worn on the back, made to hold all the arrows you might need."
 	icon_state = "militiabelt"
 	item_state = "tribal_quiver"
-	slot_flags = ITEM_SLOT_BACK //will this make it go in both backpack and suit slot?
-	w_class = WEIGHT_CLASS_HUGE
 	component_type = /datum/component/storage/concrete/bag/heavy_quiver
 
 /obj/item/storage/bag/tribe_quiver/heavy/full/PopulateContents()

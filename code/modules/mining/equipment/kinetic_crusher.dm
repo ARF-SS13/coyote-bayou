@@ -13,7 +13,6 @@
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 40
 	throw_speed = 4
-	armour_penetration = 0.2
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
@@ -177,7 +176,6 @@
 	item_state = "crusher0-glaive"
 	detonation_damage = 20
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
-	armour_penetration = 0.1
 	block_parry_data = /datum/block_parry_data/crusherglaive
 	//ideas: altclick that lets you pummel people with the handguard/handle?
 	//parrying functionality?

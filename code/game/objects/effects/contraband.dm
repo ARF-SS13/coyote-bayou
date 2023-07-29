@@ -320,8 +320,8 @@
 	icon_state = "poster33"
 
 /obj/structure/sign/poster/contraband/robust_softdrinks
-	name = "Nuka Cola"
-	desc = "Nuka Cola: Consumed on average by Americans more than water!"
+	name = "Cosmic Cola"
+	desc = "Cosmic Cola: Consumed on average by Americans more than water!"
 	icon_state = "poster37"
 
 /obj/structure/sign/poster/contraband/shamblers_juice
@@ -330,7 +330,7 @@
 	icon_state = "poster38"
 
 /obj/structure/sign/poster/contraband/space_cola
-	name = "Nuka Cola"
+	name = "Cosmic Cola"
 	desc = "Your favorite cola, now in a can!"
 	icon_state = "poster41"
 

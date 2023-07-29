@@ -126,6 +126,11 @@
 	#define COMPONENT_RAD_WAVE_HANDLED (1<<0)
 ///from internal loop in the base of /atom/movable/proc/get_locs(): (list/locs)
 #define COMSIG_ATOM_GET_LOCS "atom_get_locs"
+///When a thing is adminspawned, signal
+#define COMSIG_ATOM_POST_ADMIN_SPAWN "atom_post_admin_spawn"
+
+///When a gun/mag thing is told to admin reload, signal
+#define COMSIG_GUN_MAG_ADMIN_RELOAD "gun_mag_admin_reload"
 
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"		//from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"		//called when teleporting into a protected turf: (channel, turf/origin, turf/destination)
@@ -413,6 +418,7 @@
 	#define COMPONENT_BLOCK_SHARPEN_MAXED 8
 #define COMSIG_UPGRADE_APPVAL "apply_values"					//from /atom/refresh_upgrades(): (/src) Called to upgrade specific values
 #define COMSIG_UPGRADE_ADDVAL "add_values" 						//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
+#define COMSIG_GET_UPGRADES "get_upgrades"						//from /atom/refresh_upgrades(): (/src) Called to get the upgrades of the /src
 
 #define COMSIG_UPGRADE_REMOVE "uninstall"
 #define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"                //called on item when microwaved (): (obj/machinery/microwave/M)
@@ -429,6 +435,11 @@
 	// Uncovered information
 	#define COMPONENT_DEEPSCAN_UNCOVERED_INFORMATION		1
 #define COMSIG_ITEM_MINE_TRIGGERED "itemineboom"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
+
+/// datum/source, mob/spawner
+#define COMSIG_ITEM_MOB_DROPPED "mobdropped"	/// from [/mob/living/simple_animal/proc/drop_loot()]
 
 // /obj/item/grenade signals
 #define COMSIG_GRENADE_PRIME "grenade_prime"					//called in /obj/item/gun/process_fire (user, target, params, zone_override)
@@ -678,6 +689,8 @@
 #define COMSIG_VORE_DO_MESSAGE "vore_message" // (datum/source, obj/vore_belly/belly, message_type, pref_type)
 /// Asks if the componentholder can eat a certain item
 #define COMSIG_VORE_CHECK_EDIBILITY "can_i_eat_item" // (datum/source, obj/item/thing)
+/// Asks the mob if their vore is set up
+#define COMSIG_VORE_EXISTS "is_vore_time"
 
 /// Vore defines specifically for a belly
 /// Tells the belly trash happened

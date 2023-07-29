@@ -337,7 +337,6 @@
 	can_toggle = 1
 	actions_types = list(/datum/action/item_action/toggle)
 
-
 /obj/item/clothing/head/slouch/attack_self(mob/user)
 	if(can_toggle && !user.incapacitated())
 		up = !up
@@ -349,6 +348,24 @@
 			var/mob/living/carbon/C = user
 			C.head_update(src, forced = 1)
 
+/obj/item/clothing/head/slouch/alt
+	name = "Khaki Slouch Hat, Alt"
+	desc = "A khaki fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
+	icon_state = "slouch_khaki_alt"
+	item_state = "slouch_khaki_alt"
+	can_toggle = 1
+	actions_types = list(/datum/action/item_action/toggle)
+
+/obj/item/clothing/head/slouch/alt/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated())
+		up = !up
+		icon_state = "[initial(icon_state)][up ? "up" : ""]"
+		to_chat(user, "you button \the [src]'s brim [up ? "up" : "down"]")
+
+		user.update_inv_head()
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.head_update(src, forced = 1)
 
 
 //////////////////////////////////
@@ -637,10 +654,54 @@
 	item_state = "raccoonfurcap_hat"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/greek
+	name = "Hoplite Helmet"
+	desc = "Shade not included."
+	icon_state = "greek"
+	item_state = "greek"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/greek
+	name = "Crested Greek Helmet"
+	desc = "Shade included."
+	icon_state = "greek_c"
+	item_state = "greek_c"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/greekcrested
+	name = "Crested Greek Helmet"
+	desc = "Shade included."
+	icon_state = "greek_c"
+	item_state = "greek_c"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/hennin
+	name = "Hennin"
+	desc = "Doesn't make you a maid, fox or not."
+	icon_state = "hennin"
+	item_state = "hennin"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/kasa
+	name = "Kasa"
+	desc = "A coin for a wandering monk?"
+	icon_state = "kasa"
+	item_state = "kasa"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
+/obj/item/clothing/head/coyote/jingasa
+	name = "Jingasa"
+	desc = "Shade in hat form, nice."
+	icon_state = "jingasa"
+	item_state = "jingasa"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
+/obj/item/clothing/head/coyote/crusaderhelmweak
+	name = "Crusader Helmet"
+	desc = "A full, closed plate helmet with a cross engraved into it. Deus vult!"
+	icon_state = "knight_templar"
+	item_state = "knight_templar"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
 

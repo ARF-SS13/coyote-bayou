@@ -72,7 +72,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = HANDGUN_RECOIL(2.1)
+	init_recoil = HANDGUN_RECOIL(2.1, 2.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -111,7 +111,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(3, 3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -177,7 +177,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(2.4)
+	init_recoil = HANDGUN_RECOIL(2.4, 2.4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
 		/datum/firemode/burst/four/fastest/hobo
@@ -218,7 +218,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = RIFLE_RECOIL(3.1)
+	init_recoil = RIFLE_RECOIL(3.1, 3.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -257,7 +257,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(2)
+	init_recoil = HANDGUN_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -292,7 +292,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1.6)
+	init_recoil = HANDGUN_RECOIL(1.6, 1.6)
 	init_firemodes = list(
 		/datum/firemode/burst/four/fastest/hobo
 	)
@@ -320,7 +320,7 @@
 	name = "Auto-pipe rifle"
 	desc = "The pride of wasteland engineering, a fully automatic, belt fed pipe machine gun. Despite looking like the scrap heap it was \
 		made from, and its eagerness to fire before fully chambering, many wasters swear by its overwhelming firepower, capable of delivering \
-		24 or so .357 magnum bullets into some unlucky beast before needing to reload. Not only does its loose receiver accept 9mm, .38 special, \
+		24 or so .357 magnum bullets into some unlucky beast before needing to reload. Not only does its loose receiver accept 9mm, literal fucking rocks, .38 special, \
 		and .357 magnum with ease, but it also can survive dozens of premature detonations without a scratch!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -331,7 +331,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(2.7)
+	init_recoil = RIFLE_RECOIL(2.7, 2.7)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three/slow,
@@ -440,7 +440,7 @@
 	scope_state = "scope_medium"
 	scope_x_offset = 6
 	scope_y_offset = 14
-	init_recoil = CARBINE_RECOIL(2.3)
+	init_recoil = CARBINE_RECOIL(2.3, 2.3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -454,7 +454,7 @@
 /obj/item/gun/ballistic/rifle/hunting/obrez
 	name = "Obrez"
 	desc = "A cut down bolt action rifle. Uses .308."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "308-sawn"
@@ -463,7 +463,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = HANDGUN_RECOIL(4)
+	init_recoil = HANDGUN_RECOIL(4, 4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -489,7 +489,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(3, 3)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed,
 		/datum/firemode/burst/two/shotgun_fixed
@@ -523,7 +523,7 @@
 
 /obj/item/gun/ballistic/revolver/sling
 	name = "sling"
-	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed."
+	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Use *rocks to find more rocks!"
 	icon = 'modular_coyote/icons/objects/bows.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
@@ -550,7 +550,7 @@
 
 /obj/item/gun/ballistic/revolver/sling/staff
 	name = "sling staff"
-	desc = "A sling hooked onto a wooden pole, for more leverage."
+	desc = "A sling hooked onto a wooden pole, for more leverage. Use *rocks to find more rocks!"
 	icon_state = "slingstaff"
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -561,7 +561,7 @@
 
 /obj/item/gun/ballistic/revolver/brick
 	name = "brick launcher"
-	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."
+	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity. You can probably find more bricks with *brick!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "launcher"
 	item_state = "rocketlauncher"

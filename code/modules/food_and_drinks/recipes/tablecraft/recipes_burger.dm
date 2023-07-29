@@ -390,3 +390,55 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/white
 	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mothic_firecracker
+	name = "Fire Cracker Pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 4,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mothic_five_cheese
+	name = "Five Cheese Pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 4,
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_five_cheese
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mothic_white_pie
+	name = "White Pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_white_pie
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mothic_pesto
+	name = "Pesto Pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_pesto
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mothic_garlic
+	name = "Garlic Pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 2,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_garlic
+	subcategory = CAT_BURGER

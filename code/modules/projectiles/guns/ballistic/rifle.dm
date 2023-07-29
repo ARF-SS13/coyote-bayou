@@ -24,7 +24,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.2)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -95,7 +95,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = CARBINE_RECOIL(1, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -117,7 +117,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -139,7 +139,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(3.3)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -161,7 +161,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(3.3)
+	init_recoil = RIFLE_RECOIL(1, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -183,7 +183,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(3.6)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -206,7 +206,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(3.6)
+	init_recoil = RIFLE_RECOIL(1, 2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -229,7 +229,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(2.4)
+	init_recoil = RIFLE_RECOIL(1, 0.9)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -252,7 +252,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(2.4)
+	init_recoil = RIFLE_RECOIL(1, 2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -293,7 +293,8 @@
 
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
-	desc = "A sturdy hunting rifle, chambered in .30-06. and in use before the war."
+	desc = "A sturdy hunting rifle, chambered in .30-06 Springfield."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
@@ -301,7 +302,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 	scope_state = "scope_long"
@@ -309,6 +310,7 @@
 	scope_y_offset = 12
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	reskinnable_component = /datum/component/reskinnable/hunting_rifle
 
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -332,7 +334,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 	scope_state = "scope_long"
@@ -354,9 +356,9 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/hunting/remington
-	name = "Remington rifle"
-	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy."
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
+	name = "Remington 700"
+	desc = "This bolt action rifle was popular among hunters, police, and the military before the War."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -389,7 +391,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = RIFLE_RECOIL(2.2)
+	init_recoil = RIFLE_RECOIL(1, 1)
 
 	zoomable = TRUE
 	zoom_amt = 10
@@ -417,13 +419,14 @@
 /obj/item/gun/ballistic/rifle/mosin
 	name = "Mosin-Nagant m38"
 	desc = "A rusty old Russian bolt action chambered in 7.62."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "mosin"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 	scope_state = "scope_mosin"
@@ -460,7 +463,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(2.8)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 	scope_state = "scope_mosin"
@@ -475,6 +478,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/enfield
 
 /obj/item/gun/ballistic/rifle/enfield/attackby(obj/item/A, mob/user, params)
 	..()
@@ -496,7 +500,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_FAST
-	init_recoil = RIFLE_RECOIL(2.8)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = FALSE
 	can_bayonet = TRUE
@@ -513,7 +517,7 @@
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Gras"
 	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
@@ -522,7 +526,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // will see if it's too much
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 	scope_state = "scope_mosin"
@@ -537,6 +541,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/gras
 
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
@@ -562,7 +567,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(0.95)
+	init_recoil = RIFLE_RECOIL(1, 0.5)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -578,6 +583,65 @@
 	fire_sound = 'sound/f13weapons/salvaged.ogg'
 	can_scope = TRUE
 	casing_ejector = TRUE
+
+
+
+
+
+/* * * * * * * * * * *
+ * snowflake varmint rifle
+ * identical to a varmint rifle excepting in projectile cosmetics
+ * .223 / 5.56mm
+ * Scopeable
+ * Same damage, literally GUN_EXTRA_DAMAGE_0
+ * Homie just wanted a resprite
+ * Unique, doesn't have to be, throw it in the loot pool if you wanna be goofy
+ * * * * * * * * * * */
+
+
+/obj/item/gun/ballistic/rifle/magnetic
+	name = "Hephestus Ferromagnetic Rifle"
+	desc = "a damaged, juryrigged prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "magriflev"
+	item_state = "magrifle"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	scope_state = "scope_short"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+	fire_sound = 'sound/weapons/magrifle.ogg'
+	can_scope = TRUE
+	casing_ejector = TRUE
+	weapon_special_component = null
+
+/obj/item/gun/ballistic/rifle/magnetic/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a mag bullet.
+	BB.name = "ferromagnetic bullet"
+	BB.icon = 'icons/obj/projectiles.dmi'
+	BB.icon_state = "magjectile-large"
+	BB.pass_flags = PASSTABLE
+	BB.light_range = 3
+	BB.damage_type = BRUTE
+	BB.flag = "bullet"
+	BB.impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	BB.light_color = LIGHT_COLOR_RED
+	BB.is_reflectable = TRUE
+	BB.hitsound = 'sound/weapons/elecfire.ogg'
+	BB.hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 
 /* * * * * * * * * * * * * * * * * *
  * Magazine-Fed Bolt-Action Rifles *
@@ -654,7 +718,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HMG_RECOIL(3)
+	init_recoil = HMG_RECOIL(3, 3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -679,7 +743,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HMG_RECOIL(3)
+	init_recoil = HMG_RECOIL(3, 3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower

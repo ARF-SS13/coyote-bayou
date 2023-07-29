@@ -11,6 +11,7 @@
 #define CART_QUARTERMASTER		(1<<12)
 #define CART_HYDROPONICS		(1<<13)
 #define CART_DRONEPHONE			(1<<14)
+#define CART_RESIZE				(1<<15)
 
 
 /obj/item/cartridge
@@ -99,7 +100,7 @@
 
 /obj/item/cartridge/lawyer
 	name = "\improper S.P.A.M. cartridge"
-	desc = "Introducing the Station Public Announcement Messenger cartridge, featuring the unique ability to broadcast-mark messages, designed for lawyers across Nanotrasen to advertise their useful and important services."
+	desc = "Introducing the Station Public Announcement Messenger cartridge, featuring the unique ability to broadcast-mark messages, designed for lawyers across US Government to advertise their useful and important services."
 	icon_state = "cart-law"
 	access = CART_SECURITY
 	spam_enabled = 1
@@ -191,6 +192,11 @@
 /obj/item/cartridge/captain/New()
 	..()
 	radio = new(src)
+
+/obj/item/cartridge/resize
+	name = "\improper Experimental Nanite-Factory cartridge"
+	icon_state = "cart-mi"
+	access = CART_RESIZE
 
 /obj/item/cartridge/proc/post_status(command, data1, data2)
 
@@ -599,6 +605,14 @@ Code:
 			menu += "<br> To use an emoji in a pda message, refer to the guide and add \":\" around the emoji. Your PDA supports the following emoji:<br>"
 			menu += emoji_table
 
+		if (50)
+			menu = "<h4>[PDAIMG(medical)] Nanite-Factory Experimental Size-Alteration Cartridge Menu</h4>"
+			menu += {"
+<h5> /!\\ Warning! This cartridge is experimental! Use at your own risk! /!\\ </h5><br>
+Current Size: [usr.transform.a]<br><br>
+<a href='byond://?src=[REF(src)];choice=Resize'>Activate Nanite Factory</a>
+"}
+
 		if (99) //Newscaster message permission error
 			menu = "<h5> ERROR : NOT AUTHORIZED [host_pda.id ? "" : "- ID SLOT EMPTY"] </h5>"
 
@@ -696,6 +710,28 @@ Code:
 		if("Newscaster Switch Channel")
 			current_channel = host_pda.msg_input()
 			host_pda.Topic(null,list("choice"=num2text(host_pda.mode)))
+			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)
+			return
+		
+		if("Resize")
+			var/mob/living/U = usr
+			if(!istype(U, /mob/living/carbon/human))
+				return
+
+			if (usr.transform.a == U.transform.e)
+				var/current_size = U.transform.a
+				var/desired_size = input(usr, "Enter desired size in percent", "Choose Size", RESIZE_DEFAULT_SIZE * 100) as num
+				
+				if(!isnum(desired_size))
+					desired_size = 100
+				var/scaled_size = desired_size / 100
+				var/size_max = CONFIG_GET(number/body_size_max)
+				var/size_min = CONFIG_GET(number/body_size_min)
+				var/size_to_use = clamp(scaled_size, size_min, size_max)
+
+				U.resize = size_to_use / current_size
+				U.update_transform()
+
 			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)
 			return
 

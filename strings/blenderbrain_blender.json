@@ -482,7 +482,7 @@
 	},
 	"bbline_unmute" : {
 		"horny" : [
-			"Très bien, vous entendrez ma belle voix encore une fois!"
+			"Très bien, vous entendrez ma belle voix encore une fois! Ahem, I will speak again!"
 		],
 		"normal" : [
 			"Oui! I will speak again!"
@@ -1333,7 +1333,10 @@
 	"bbk_heylisten" : [
 		"blender", "grinder", "foodco", "kitchen", "buddy", "mate", "pal", "friendo", "belt", "fucker", "mistress", "girlfriend",
 		"appliance", "beautiful", "gorgeous", "cutie", "kitten", "gurl", "girl", "gal", "galpal", "miss", "missy", "maam", "partner",
-		"friend", "food", "processor", "lady", "device", "you"
+		"friend", "food", "processor", "lady", "device"
+	],
+	"bbk_hail" : [
+		"hey", "heya", "yo", "excuse", "hello", "hi", "hiya", "wassup", "sup", "soup", "sceuse", "fucking", "fuckin"
 	],
 	"__SECTION3__" : [
 		"The following is a lookup table of stimuli and its associated impulse",
@@ -1958,7 +1961,6 @@
 	},	
 	"bbstimulus_introduce_self" : {
 		"greet_new_person" : true,
-		"listening" : true,
 		"adjust_amour" : {
 			"horny" : 1,
 			"normal" : 1,
@@ -2020,6 +2022,14 @@
 			"horny" : 10,
 			"normal" : 0,
 			"dislike" : -10
+		}
+	},
+	"bbstimulus_wearer_crit" : {
+		"wearer_entered_crit" : true,
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -1
 		}
 	}
 }

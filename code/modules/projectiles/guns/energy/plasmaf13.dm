@@ -17,6 +17,8 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+	init_recoil = HANDGUN_RECOIL(1, 1)
+
 //Plasma pistol: Eve
 /obj/item/gun/energy/laser/plasma/pistol/eve
 	name ="eve"
@@ -119,6 +121,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	init_recoil = CARBINE_RECOIL(1, 1)
 
 //Plasma carbine
 /obj/item/gun/energy/laser/plasma/carbine
@@ -138,6 +141,8 @@
 	init_firemodes = list(
 		/datum/firemode/burst/two
 	)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+
 //Multiplas rifle
 /obj/item/gun/energy/laser/plasma/scatter
 	name = "multiplas rifle"
@@ -152,6 +157,65 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	init_recoil = SHOTGUN_RECOIL(1, 1)
+
+
+//Bouncy Plasma
+/obj/item/gun/energy/laser/plasma/bouncy
+	name ="Neptune-35 matter modulator"
+	icon_state = "instagibblue"
+	item_state = "instagibblue"
+	desc = "A  experimental, miniaturized plasma caster that fires orbs of magnetically accelerated, quasi-stable toroidal plasma towards an unlucky target, has a tendency to bounce on contact with solid surfaces."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/bouncy)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	init_recoil = CARBINE_RECOIL(1, 1)
+
+
+//Eve Caster
+/obj/item/gun/energy/laser/plasma/castereve
+	name ="Eve 3.0"
+	icon = 'icons/fallout/objects/guns/longenergy.dmi'
+	item_state = "Aldric-Plasma-CasterEve"
+	icon_state = "Aldric-Plasma-CasterEve"
+	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words; Pick a god and pray. etched into the side."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/caster)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/burst/five
+	)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+
+//Normal Plasma Caster
+/obj/item/gun/energy/laser/plasma/caster
+	name ="Plasma Caster"
+	icon = 'icons/fallout/objects/guns/longenergy.dmi'
+	item_state = "Aldric-Plasma-Caster"
+	icon_state = "Aldric-Plasma-Caster"
+	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unfortunate soul."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/caster)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/burst/five
+	)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 
 /obj/item/gun/energy/laser/plasma/spear
 	name = "ergonomic plasmacaster"
@@ -177,6 +241,3 @@
 	)
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
-/obj/item/gun/energy/laser/plasma/spear/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)

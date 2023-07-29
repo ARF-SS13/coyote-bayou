@@ -5,11 +5,15 @@
 	item_state = "flintlock"
 	weapon_class = WEAPON_CLASS_SMALL // yarr harr fiddle dee dee, something something gundolier
 	weapon_weight = GUN_ONE_HAND_AKIMBO //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_AWFUL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	force = 20
+	force_unwielded = 20
+	force_wielded = 25
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
+	max_upgrades = 1
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -18,15 +22,37 @@
 	var/my_caliber = CALIBER_FLINTLOCK // Wretched
 	var/load_time = FLINTLOCK_PISTOL_RELOAD_TIME // copilot suggested this
 	var/prefire_time = FLINTLOCK_PISTOL_PREFIRE_TIME // copilot suggested this
-	var/prefire_randomness = FLINTLOCK_PISTOL_PREFIRE_RANDOMNESS // copilot suggested this
+	var/prefire_randomness = FLINTLOCK_PISTOL_PREFIRE_STD // copilot suggested this
 	var/datum/looping_sound/musket_load/load_loop // for the loading sound
 	var/datum/looping_sound/musket_fuse/fuse_loop // for the loading sound
+	weapon_special_component = null
 
 /obj/item/gun/flintlock/Initialize()
 	. = ..()
 	load_loop = new(list(src), FALSE)
 	fuse_loop = new(list(src), FALSE)
 	chambered = new /obj/item/ammo_casing/caseless/flintlock(src)
+
+/obj/item/gun/flintlock/admin_fill_gun()
+	if(chambered)
+		return
+	chambered = new /obj/item/ammo_casing/caseless/flintlock(src)
+	cocked = TRUE
+	update_icon()
+	return TRUE
+
+/obj/item/gun/flintlock/ui_data(mob/user)
+	var/list/data = ..()
+	data["cockable"] = TRUE
+	data["cocked"] = cocked || FALSE
+	data["flintlock_load_time"] = (load_time * 0.1) || 0
+	data["flintlock_prefire_time"] = (prefire_time * 0.1) || 0
+	data["has_magazine"] = TRUE
+	data["accepted_magazines"] = "powder, and ball"
+	data["magazine_name"] = "Metal Tube"
+	data["magazine_calibers"] = "powder, and ball"
+	data["shots_remaining"] = !!chambered
+	data["shots_max"] = 1
 
 /obj/item/gun/flintlock/attack_self(mob/living/user)
 	cock(user)
@@ -148,9 +174,7 @@
 	playsound(get_turf(src), 'sound/weapons/hammer_click.ogg', 90, 1)
 	playsound(get_turf(src), 'sound/weapons/strike_sizzle.ogg', 45, 1)
 	firing = TRUE
-	var/rand_low = prefire_time - (prefire_time * prefire_randomness)
-	var/rand_high = prefire_time + (prefire_time * prefire_randomness)
-	var/shoot_delay = rand(rand_low, rand_high)
+	var/shoot_delay = round(max(gaussian(prefire_time, prefire_time * prefire_randomness), prefire_time * 0.75), 0.1)
 	fuse_loop.start()
 	addtimer(CALLBACK(src, .proc/fire_at_cursor, user), shoot_delay)
 	update_icon()
@@ -182,8 +206,9 @@
 	item_state = "flintlock_laser"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO	
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_AWFUL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	weapon_special_component = null
 
 /obj/item/gun/flintlock/laser/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a laser bullet.
 	BB.name = "musket bolt"
@@ -201,8 +226,7 @@
 	playsound(src, 'sound/weapons/emitter.ogg', 25, 1)
 
 /obj/item/gun/ballistic/bow/chamber_round()
-	chambered = magazine.stored_ammo[1]
-
+	chambered = LAZYACCESS(magazine.stored_ammo, 1)
 
 //Fenny begins being evil here
 
@@ -215,8 +239,11 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_AWFUL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	force = 25
+	force_unwielded = 25
+	force_wielded = 30
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
@@ -226,7 +253,8 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
 	load_time = FLINTLOCK_MUSKET_RELOAD_TIME
 	prefire_time = FLINTLOCK_MUSKET_PREFIRE_TIME
-	prefire_randomness = FLINTLOCK_MUSKET_PREFIRE_RANDOMNESS
+	prefire_randomness = FLINTLOCK_MUSKET_PREFIRE_STD
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock/musketoon
 	name = "ancient musketoon"
@@ -237,8 +265,11 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_AWFUL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	force = 23
+	force_unwielded = 23
+	force_wielded = 28
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
@@ -248,7 +279,7 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
 	load_time = FLINTLOCK_MINIMUSKET_RELOAD_TIME
 	prefire_time = FLINTLOCK_MINIMUSKET_PREFIRE_TIME
-	prefire_randomness = FLINTLOCK_MINIMUSKET_PREFIRE_RANDOMNESS
+	prefire_randomness = FLINTLOCK_MINIMUSKET_PREFIRE_STD
 
 /obj/item/gun/flintlock/musket/jezail
 	name = "ancient jezail"
@@ -259,15 +290,30 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	load_time = FLINTLOCK_MUSKET_RELOAD_TIME
+	force = 20
+	force_unwielded = 20 //it's kind of long and awkward ~TK
+	force_wielded = 28
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
+	can_scope = TRUE
+	max_upgrades = 2
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/gun/flintlock/musket/jezail/culverin
+	name = "culverin"
+	desc = "That's a gun gun. Or maybe a baseball bat, it's hard to tell."
+	icon_state = "culverin"
+	force = 25
+	force_unwielded = 25
+	force_wielded = 40 //murderkill destroy
 
 /obj/item/gun/flintlock/musket/tanegashima
 	name = "ancient tanegashima"
@@ -278,7 +324,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_AWFUL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
@@ -287,6 +333,7 @@
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock/musketoon/spingarda
 	name = "ancient spingarda"
@@ -297,7 +344,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_AWFUL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
@@ -316,7 +363,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	added_spread = GUN_SPREAD_POOR
+	added_spread = GUN_SPREAD_AWFUL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm

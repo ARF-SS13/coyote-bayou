@@ -20,7 +20,7 @@
 	item_state = "rag"
 
 /obj/item/clothing/shoes/f13/rag/pawb
-	name = "Tough Feet"
+	name = "tough feet"
 	desc = "For one reason or another your feet are too tough to need shoes. Or maybe you're just very agile. Who knows."
 	icon_state = "pawb" //uwu//
 	item_state = "pawb"
@@ -242,11 +242,7 @@
 	desc = "A pair of laced old combat boots used by pre-war riot police. These have a very shining front as if they were made from rubber. (can be reskinned by alt clicking once)"
 	icon_state = "duty"
 	item_state = "duty"
-	unique_reskin = list(
-						"Standard" = "duty",
-						"Alternative" = "duty_alt",
-						"Tall" = "duty_long"
-						)
+	reskinnable_component = /datum/component/reskinnable/khan_boots
 
 /obj/item/clothing/shoes/f13/military/patrol
 	name = "patrol boots"

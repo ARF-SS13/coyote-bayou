@@ -94,9 +94,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	block_chance = 0 // oops
-	force = 27.5 // oops
+	force = 35 // oops
 	item_flags = ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/bokken/quick_parry/proj
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/katana/timestop/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 	if(ishuman(owner))
@@ -346,7 +347,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 12
 	throw_speed = 4
 	embedding = list("pain_mult" = 2, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 75)
-	armour_penetration = 0.15
 
 	w_class = WEIGHT_CLASS_SMALL
 	sharpness = SHARP_EDGED
@@ -385,7 +385,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_speed = 2
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	armour_penetration = 1
 	attack_verb = list("bludgeoned", "whacked", "disciplined")
 	resistance_flags = FLAMMABLE
 
@@ -666,7 +665,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "vibro sword"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
-	armour_penetration = 1
 	block_chance = 40
 	throwforce = 20
 	throw_speed = 4

@@ -65,14 +65,14 @@ Moving interrupts
 	var/interrupted = FALSE
 	var/remaining_time = sculpting_time - (prepared_block.completion * sculpting_time)
 
-	var/datum/progressbar/total_progress_bar = new(user, sculpting_time, prepared_block )
+	var/my_bar = SSprogress_bars.add_bar(prepared_block, list(), sculpting_time, TRUE, TRUE)
 	while(remaining_time > 0 && !interrupted)
 		if(do_after(user,sculpting_period, target = prepared_block, progress = FALSE))
 			remaining_time -= sculpting_period
 			prepared_block.set_completion((sculpting_time - remaining_time)/sculpting_time)
-			total_progress_bar.update(sculpting_time - remaining_time)
 		else
 			interrupted = TRUE
+	SSprogress_bars.remove_bar(my_bar)
 	if(!interrupted && !QDELETED(prepared_block))
 		prepared_block.create_statue()
 		to_chat(user,span_notice("The statue is finished!"))

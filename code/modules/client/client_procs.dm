@@ -354,6 +354,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 
 	// Initialize tgui panel
 	tgui_panel.initialize()
+	addtimer(CALLBACK(src, .proc/nuke_chat), 5 SECONDS)//Reboot it to fix broken chat window instead of making the player do it (bandaid fix)
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 
 
@@ -520,6 +521,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		GLOB.admins -= src
 		GLOB.adminchat -= src //fortuna add
 		if (!GLOB.admins.len && SSticker.IsRoundInProgress()) //Only report this stuff if we are currently playing.
+			/*
 			var/cheesy_message = pick(
 				"I have no admins online!",\
 				"I'm all alone :(",\
@@ -536,6 +538,9 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			)
 
 			send2irc("Server", "[cheesy_message] (No admins online)")
+			*/
+			send2irc("Server", "No admins online")
+
 	QDEL_LIST_ASSOC_VAL(char_render_holders)
 	if(movingmob != null)
 		movingmob.client_mobs_in_contents -= mob
@@ -970,6 +975,31 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			Export("##action=load_rsc", file)
 			stoplag()
 		#endif
+		preload_every_fucking_sound_file() // ha ha what a great idea
+
+GLOBAL_LIST_EMPTY(every_fucking_sound_file)
+
+/// Okay maybe not every sound file, just the important ones
+/client/proc/populate_every_fucking_sound_file()
+	if(LAZYLEN(GLOB.every_fucking_sound_file))
+		return
+	var/list/fucking_sound_folders = list(
+		"sounds/f13npc/",
+		"sounds/f13weapons/",
+		"sounds/creatures/",
+		"sounds/voice/",
+	)
+	for(var/folder in fucking_sound_folders)
+		GLOB.every_fucking_sound_file |= pathwalk(folder)
+
+/// Goes through every sound file in the universe and forcefeeds them all to the client
+/// Cus this game doesnt have enough loading
+/client/proc/preload_every_fucking_sound_file()
+	if(!LAZYLEN(GLOB.every_fucking_sound_file))
+		populate_every_fucking_sound_file()
+	for (var/file in GLOB.every_fucking_sound_file)
+		Export("##action=load_rsc", file)
+		stoplag()
 
 
 //Hook, override it to run code when dir changes

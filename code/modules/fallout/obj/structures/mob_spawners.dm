@@ -46,6 +46,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/spawned_by_ckey
 	/// hold off on spawning, gotta set it up first
 	var/delay_start = FALSE
+	/// Some cool factions to override the default ones
+	var/list/faction = list()
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -53,7 +55,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	AddComponent(/datum/component/spawner,\
 		_mob_types = mob_types,\
 		_spawn_time = spawn_time,\
-		_faction = list(),\
+		_faction = faction,\
 		_spawn_text = spawn_text,\
 		_max_mobs = max_mobs,\
 		_range = radius,\
@@ -127,7 +129,9 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	S.use(4)
 	if(!made_loot)
 		made_loot = TRUE
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid(src.loc)
+		var/obj/effect/spawner/lootdrop/f13/common/junk = new(get_turf(src))
+		if(junk && !QDELETED(junk))
+			qdel(junk)
 		if(istype(user))
 			to_chat(user, span_warning("You find something while covering the hole!"))
 	do_seal(itempath, cover_state, timer)
@@ -314,7 +318,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "slimy tunnel"
 	desc = "A vent leading deep into some ill forgotten pit."
 	spawn_time = 120 SECONDS
-	max_mobs = 2
+	max_mobs = 1
 	icon_state = "ventblue"
 	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 10)
 
@@ -322,7 +326,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "horrible debug hole"
 	desc = "If you can see this, yell at Fenny. Or lagg. Or both. Or neither. Either way this is a debug nest."
 	spawn_time = 2 SECONDS
-	max_mobs = 2
+	max_mobs = 1
 	icon_state = "ventblue"
 	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 100)
 

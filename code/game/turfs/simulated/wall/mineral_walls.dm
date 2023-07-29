@@ -12,6 +12,7 @@
 	desc = "Sturdy wall made of bricks and mortar"
 	icon = 'icons/turf/walls/brick_wall.dmi'
 	icon_state = "brickwall"
+	hardness = 150
 	sheet_type = /obj/item/stack/rods
 	canSmoothWith = list(/turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick)
 

@@ -14,6 +14,11 @@
 	path = /obj/item/card/id/denid
 	cost = 0
 
+/datum/gear/backpack/tattoo_kit
+	name = "Tattoo kit"
+	path = /obj/item/storage/box/tattoo_kit
+	cost = 0
+
 /datum/gear/backpack/necklace //this is here because loadout doesn't support proper accessories
 	name = "Renameable Necklace"
 	path = /obj/item/clothing/accessory/necklace
@@ -473,3 +478,96 @@
 	name = "headset"
 	path = /obj/item/radio/headset
 	cost = 1
+
+/datum/gear/backpack/twocolorcollar
+	name = "Two Color Lockable Leather Collar"
+	path = /obj/item/clothing/neck/petcollar/choker
+
+/datum/gear/backpack/onecolorcollar
+	name = "One Color Lockable Leather Collar"
+	path = /obj/item/clothing/neck/petcollar/locked
+	cost = 1
+
+/datum/gear/backpack/shockcollar
+	name = "Kinky Shock Collar"
+	path = /obj/item/electropack/shockcollar
+	cost = 1
+
+/datum/gear/backpack/shockcollarshimusa
+	name = "Kinky Shock Collar w/ Shackles"
+	path = /obj/item/electropack/shockcollar/shimsusa_shackles
+	cost = 1
+
+//Cameras
+
+/datum/gear/backpack/camera/early
+	name  = "early camera"
+	path = /obj/item/camera/early
+	cost = 3
+
+/datum/gear/backpack/camera/earlymodern
+	name  = "early modern camera"
+	path = /obj/item/camera/earlymodern
+	cost = 3
+
+/datum/gear/backpack/camera/coldwar
+	name  = "coldwar camera"
+	path = /obj/item/camera/coldwar
+	cost = 3
+
+/datum/gear/backpack/firebow
+	name  = "Tribal Firestarter"
+	path = /obj/item/firebow
+	cost = 0
+
+/datum/gear/backpack/broom
+	name  = "Broom staff"
+	path = /obj/item/staff/broom
+	cost = 0
+
+//pride pins
+
+/datum/gear/backpack/pride
+	name  = "Pride Pin"
+	path = /obj/item/clothing/accessory/pride
+	cost = 0
+
+/datum/gear/backpack/pride/bi
+	name  = "Bisexual Pride Pin"
+	path = /obj/item/clothing/accessory/pride/bi
+	cost = 0
+
+/datum/gear/backpack/pride/trans
+	name  = "Transexual Pride Pin"
+	path = /obj/item/clothing/accessory/pride/trans
+	cost = 0
+
+/datum/gear/backpack/pride/ace
+	name  = "Asexual Pride Pin"
+	path = /obj/item/clothing/accessory/pride/ace
+	cost = 0
+
+/datum/gear/backpack/pride/enby
+	name  = "Nonbinery Pride Pin"
+	path = /obj/item/clothing/accessory/pride/enby
+	cost = 0
+
+/datum/gear/backpack/pride/lesbian
+	name  = "Lesbian Pride Pin"
+	path = /obj/item/clothing/accessory/pride/lesbian
+	cost = 0
+
+/datum/gear/backpack/pride/intersex
+	name  = "Intersex Pride Pin"
+	path = /obj/item/clothing/accessory/pride/intersex
+	cost = 0
+
+/datum/gear/backpack/deafpin
+	name  = "Deaf Personal Pin"
+	path = /obj/item/clothing/accessory/deafpin
+	cost = 0
+
+/datum/gear/backpack/sheriffvest
+	name  = "Cowboy Vest"
+	path = /obj/item/clothing/accessory/sheriffvest
+	cost = 0

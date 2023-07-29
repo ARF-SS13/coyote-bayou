@@ -1,6 +1,9 @@
 /datum/movespeed_modifier/reagent
 	blacklisted_movetypes = (FLYING|FLOATING)
 
+/datum/movespeed_modifier/reagent/adrenaline
+	multiplicative_slowdown = -0.2
+
 /datum/movespeed_modifier/reagent/stimulants
 	multiplicative_slowdown = -0.5
 

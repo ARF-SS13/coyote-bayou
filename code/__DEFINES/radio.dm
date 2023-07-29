@@ -81,13 +81,17 @@
 #define RADIO_KEY_TOWN_COMMERCE "j"
 #define RADIO_TOKEN_TOWN_COMMERCE ":j"
 
-#define RADIO_CHANNEL_TOWN_MAYOR "Mayor"
+#define RADIO_CHANNEL_TOWN_MAYOR "High Alderperson"
 #define RADIO_KEY_TOWN_MAYOR "y"
 #define RADIO_TOKEN_TOWN_MAYOR ":y"
 
 #define RADIO_CHANNEL_REDWATER "Redwater"
 #define RADIO_KEY_REDWATER "d"
 #define RADIO_TOKEN_REDWATER ":d"
+
+#define RADIO_CHANNEL_RESPONDERS "Responders"
+#define RADIO_KEY_RESPONDERS "k"
+#define RADIO_TOKEN_RESPONDERS ":k"
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
@@ -116,6 +120,7 @@
 #define FREQ_TOWN_MAYOR 1375 //Den
 #define FREQ_TOWN_COMMERCE 1376 //Khans
 #define FREQ_BIKER 1379 //Khans
+#define FREQ_RESPONDERS 1209 //Responders
 
 ///hey guess what, telecomm's a fuckin cock, so im making the list here
 ///update this list with all the frequenties the fuckin bus fuckin listens to (which is all of them, fuck you its all of them)
@@ -138,6 +143,7 @@
 		FREQ_TOWN_PD,\
 		FREQ_RANGER,\
 		FREQ_TOWN_COMMERCE,\
+		FREQ_RESPONDERS,\
 		FREQ_BIKER
 
 #define FREQ_HOLOGRID_SOLUTION 1433
@@ -255,7 +261,8 @@ GLOBAL_LIST_INIT(radiochannels, list(
 	RADIO_CHANNEL_TOWN_PD = FREQ_TOWN_PD,
 	RADIO_CHANNEL_TOWN_MAYOR = FREQ_TOWN_MAYOR,
 	RADIO_CHANNEL_RANGER = FREQ_RANGER,
-	RADIO_CHANNEL_TOWN_COMMERCE = FREQ_TOWN_COMMERCE
+	RADIO_CHANNEL_TOWN_COMMERCE = FREQ_TOWN_COMMERCE,
+	RADIO_CHANNEL_RESPONDERS = FREQ_RESPONDERS
 	))
 
 GLOBAL_LIST_INIT(reverseradiochannels, list(
@@ -281,8 +288,9 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 	"[FREQ_TOWN_MAYOR]" = RADIO_CHANNEL_TOWN_MAYOR,
 	"[FREQ_TOWN_PD]" = RADIO_CHANNEL_TOWN_PD,
 	"[FREQ_RANGER]" = RADIO_CHANNEL_RANGER,
-	"[FREQ_TOWN_COMMERCE]" = RADIO_CHANNEL_TOWN_COMMERCE
-))
+	"[FREQ_TOWN_COMMERCE]" = RADIO_CHANNEL_TOWN_COMMERCE,
+	"[FREQ_RESPONDERS]" = RADIO_CHANNEL_RESPONDERS
+	))
 
 GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_SCIENCE]" = "sciradio",
@@ -306,7 +314,8 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_TOWN_COMMERCE]" = "servradio",
 	"[FREQ_TOWN_PD]" = "secradio",
 	"[FREQ_TOWN_MAYOR]" = "comradio",
-	"[FREQ_RANGER]" = "rangerradio"
+	"[FREQ_RANGER]" = "rangerradio",
+	"[FREQ_RESPONDERS]" = "respondersradio"
 	))
 
 GLOBAL_LIST_INIT(department_radio_prefixes, list(":", "."))
@@ -341,6 +350,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_TOWN_PD = RADIO_CHANNEL_TOWN_PD,
 	RADIO_KEY_RANGER = RADIO_CHANNEL_RANGER,
 	RADIO_KEY_TOWN_MAYOR = RADIO_CHANNEL_TOWN_MAYOR,
+	RADIO_KEY_RESPONDERS = RADIO_CHANNEL_RESPONDERS,
 	RADIO_KEY_TOWN_COMMERCE = RADIO_CHANNEL_TOWN_COMMERCE,
 
 	// Admin
