@@ -582,7 +582,7 @@
 /datum/crafting_recipe/ratling_gun_ammobox
 	name = "Ratling gun ammo box"
 	result = /obj/item/ammo_box/magazine/ratling/empty
-	reqs = list(/obj/item/stack/crafting/metal = 2,
+	reqs = list(/obj/item/stack/sheet/metal = 2,
 	)
 	tools = list(TOOL_WORKBENCH)
 	time = 5
