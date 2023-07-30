@@ -155,7 +155,7 @@
 	extra_mag_types = /obj/item/ammo_box/magazine/m22smg //lets you use it as a standard .22 when you run out of unobtainable bees.
 	init_mag_type = /obj/item/ammo_box/magazine/b180
 
-/* * * * * * * * * * * 
+/* * * * * * * * * * *
  * VSS Vintorez
  * 9mm
  * suppressed
@@ -1285,7 +1285,7 @@
 	desc = "A 5.56x45mm rifle custom built off of a... plastic- that's not polymer, that's just straight-up plastic. What the fuck?"
 	icon_state = "alr15"
 	item_state = "alr15"
-	
+
 /* * * * * * * * * * *
  * Bushmaster Arm Gun
  * Light semi-auto rifle... pistol thing
@@ -2424,6 +2424,32 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
 	)
+
+
+/* * * * * * * * * * *
+ * Ratling Gun
+ * A getto minigun
+ * Terrible overall
+ * Except that it shoots a lot of ammo and fast
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/ratling_gun
+	name = "Ratling Gun"
+	desc = "This 'machinegun' looks like junk, some one took a old gatling gun and bolted on a motor of some kind and box hooked on the side with welded on 'grips'. Some how it seems to work."
+	icon = 'icons/obj/guns/minigun.dmi'
+	icon_state = "ratling"
+	item_state = "minigun"
+	mag_type = /obj/item/ammo_box/magazine/ratling
+	init_mag_type = /obj/item/ammo_box/magazine/ratling
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = LMG_RECOIL(1, 1)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
+
 
 /* * * * * * * * * * *
  * Browning M1919 MMG
