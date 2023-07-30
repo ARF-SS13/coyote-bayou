@@ -312,6 +312,7 @@
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
+	sharpness = SHARP_EDGED
 	force = 27
 	throwforce= 30
 	block_chance = 10
