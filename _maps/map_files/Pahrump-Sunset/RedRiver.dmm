@@ -15645,13 +15645,6 @@
 	icon_state = "asteroidfloor"
 	},
 /area/f13/building/abandoned)
-"hJx" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/structure/window/reinforced/spawner,
-/turf/open/floor/plasteel/f13{
-	icon_state = "catwalk"
-	},
-/area/f13/building)
 "hJG" = (
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/wasteland)
@@ -23472,11 +23465,6 @@
 /obj/structure/wreck/trash/halftire,
 /turf/open/indestructible/ground/outside/savannah/cornersnew,
 /area/f13/wasteland)
-"lrT" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2right"
-	},
-/area/f13/wasteland)
 "lrX" = (
 /obj/structure/spacevine,
 /turf/closed/wall/f13/wood/house/broken,
@@ -24503,7 +24491,8 @@
 /area/f13/wasteland)
 "lVQ" = (
 /obj/structure/sign/barsign{
-	dir = 8
+	dir = 8;
+	req_access = null
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -25054,11 +25043,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/savannah/cornersnew,
 /area/f13/wasteland)
-"mkj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13,
-/area/f13/building)
 "mkl" = (
 /obj/item/toy/beach_ball/holoball/dodgeball,
 /turf/open/indestructible/ground/outside/road{
@@ -30283,10 +30267,6 @@
 	icon_state = "asteroidfloor"
 	},
 /area/f13/building/abandoned)
-"oRg" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13,
-/area/f13/building)
 "oRh" = (
 /obj/item/storage/secure/safe{
 	name = "apartment mailbox";
@@ -30719,12 +30699,6 @@
 /mob/living/simple_animal/hostile/raider/cultist/ranged/shotgun,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
-"pbw" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "dark"
-	},
-/area/f13/building)
 "pbC" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plating/f13/outside/road{
@@ -39562,12 +39536,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner - N"
-	},
-/area/f13/wasteland)
-"tuC" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2right"
 	},
 /area/f13/wasteland)
 "tuF" = (
@@ -48622,13 +48590,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland)
-"xVp" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/wreck/trash/engine,
-/turf/open/floor/f13{
-	icon_state = "dark"
-	},
-/area/f13/building)
 "xVz" = (
 /obj/machinery/light/small/broken{
 	dir = 1
@@ -53858,7 +53819,7 @@ oOC
 vsM
 vsM
 ffz
-lrT
+kPs
 oFm
 oMa
 gTy
@@ -55400,7 +55361,7 @@ ebw
 ebw
 ega
 lrX
-lrT
+kPs
 nhN
 oMa
 fJv
@@ -61577,7 +61538,7 @@ pVV
 qaR
 kRp
 cQC
-lrT
+kPs
 iKf
 lmY
 fym
@@ -64918,7 +64879,7 @@ pVV
 oMa
 oWN
 tJk
-lrT
+kPs
 lmY
 tiN
 nZZ
@@ -65955,7 +65916,7 @@ dlq
 rMX
 uSZ
 ime
-lrT
+kPs
 bxV
 oMa
 pVV
@@ -69619,7 +69580,7 @@ iKf
 iKf
 iKf
 lOH
-lrT
+kPs
 nGN
 xVg
 nGN
@@ -77343,7 +77304,7 @@ eQa
 fHN
 sSU
 hyW
-tuC
+iob
 voZ
 skh
 ohu
@@ -81020,7 +80981,7 @@ gVD
 xsg
 aqU
 eIq
-mkj
+nqA
 aqU
 chb
 maU
@@ -82820,7 +82781,7 @@ kiT
 xaV
 sYX
 mhl
-mkj
+nqA
 bvs
 maU
 cUn
@@ -83847,7 +83808,7 @@ nYO
 dUF
 els
 srk
-oRg
+els
 ikx
 gVD
 maU
@@ -84115,7 +84076,7 @@ iNs
 ahd
 gVD
 fGW
-pbw
+fGW
 sfQ
 gVD
 dXu
@@ -84356,8 +84317,8 @@ syA
 syA
 rYb
 gVD
-xVp
-xVp
+lhx
+lhx
 iGL
 fYr
 oiM
@@ -84371,7 +84332,7 @@ vyt
 ycO
 mvE
 bvs
-pbw
+fGW
 fQz
 miZ
 gVD
@@ -84628,7 +84589,7 @@ jAQ
 eeA
 ahd
 gVD
-pbw
+fGW
 twq
 viM
 gVD
@@ -85391,7 +85352,7 @@ jXj
 jSg
 pyl
 fQz
-pbw
+fGW
 ode
 lVj
 eeA
@@ -85648,7 +85609,7 @@ jSg
 wms
 bDe
 shz
-pbw
+fGW
 eeA
 eeA
 bcS
@@ -86145,7 +86106,7 @@ tBA
 vaJ
 dZk
 gVD
-hJx
+gTv
 rSX
 xMd
 kwO
@@ -87186,7 +87147,7 @@ gVD
 xJb
 xJb
 shz
-pbw
+fGW
 fQz
 fQz
 xYK
@@ -91569,7 +91530,7 @@ oMa
 kRp
 vGR
 diG
-lrT
+kPs
 uYw
 nGN
 pXU
@@ -92340,7 +92301,7 @@ pVV
 oWN
 cQC
 diG
-lrT
+kPs
 iYX
 isU
 uYw
