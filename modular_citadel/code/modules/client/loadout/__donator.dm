@@ -150,9 +150,7 @@
 	ckeywhitelist = list("aldrictalvalin")
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom(src)
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
-	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
@@ -1041,9 +1039,12 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/claymore(src)
-	new /obj/item/clothing/suit/armor/light/knight(src)
-	new /obj/item/clothing/head/helmet/f13/knighthelmet(src)
+	new /obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun(src)
+	new /obj/item/ammo_box/m44box(src)
+	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+	new /obj/item/gun/ballistic/automatic/unmcamr/toxcustom(src)
+	new /obj/item/clothing/head/helmet/toxinfil(src)
+	new /obj/item/ammo_box/a50MGbox(src)
 
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"

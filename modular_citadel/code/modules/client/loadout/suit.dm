@@ -352,7 +352,19 @@
 	path = /obj/item/clothing/suit/armor/medium/unmcinfiltrator
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-	
+
+/datum/gear/suit/armor/unmcwinter
+	name = "Winterized UNMC armor"
+	path = /obj/item/clothing/suit/armor/medium/unmcwinter
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/unmcmedicarmor
+	name = "Medical UNMC Armor"
+	path = /obj/item/clothing/suit/armor/medium/unmcmedic
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed
