@@ -89,6 +89,22 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
+	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol.
+/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ
+	name = "M3 Civillian Pistol"
+	desc = "This pistol is the civillian or police version of the M3 Magnum, uses common and abundant 9mm"
+	icon_state = "m3civ"
+	item_state = "m3civ"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+
 //9mm automatic pistol. smol magazine, zippy gun
 /obj/item/gun/ballistic/automatic/pistol/ninemil/auto
 	name = "9mm autopistol"
@@ -557,6 +573,17 @@
 		/datum/firemode/semi_auto
 	)
 
+///////////////////
+//// M6 (renammed) SOCOM pistol///////////////
+/// Uses M1911 custom as a base ////
+////////////////////////////////////
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom
+	name = "M3 SOCOM"
+	desc = "A variant of the M3 series of pistols. This version is made for United Nations Marine Corps Spec Ops as their main service pistol."
+	icon_state = "M6SOCOM"
+	item_state = "M6SOCOM"
+
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal
 	name = "Santa Muerte"
 	desc = "A custom built 1911 with a brushed brass plated grip, a shiny chrome finish, and a custom muzzle brake.. It has an excerpt of a prayer to lady death etched neatly in it's slide, evoking her protection from evil forces."
@@ -678,6 +705,22 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+/* * * * * * * * * *
+* .44 automag copycats. same as the original one with or without added flavor * 
+* * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/automag/m6
+	name = "M3 Magnum"
+	desc = "Another M3 series pistol. This one is akin to the M3 magnums used by Leo Arments. The magnum is chambered in .44 and comes with a built in 2x holo-scope."
+	icon_state = "m3magnum"
+	item_state = "m3magnum"
+	zoom_factor = 1.1
+
+/obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun
+	name = "Custom M6G Magnum"
+	desc = "A custom gold plated M6G magnum. The magnum itself has a built in smart scope alongside black wooden furniture."
+	icon_state = "m6gold"
+	item_state = "m6gold"
 
 /* * * * * * * * * * *
  * 14mm Semi-Auto

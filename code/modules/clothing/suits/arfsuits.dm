@@ -1539,6 +1539,15 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
+/obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
+	name = "crusader chainmail with tabard"
+	desc = "A full set of chainmail that covers the torso and arms. This one has a tabard with a red cross!"
+	icon_state = "knight_templar"
+	item_state = "knight_templar"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
 /obj/item/clothing/suit/armor/light/kit/punk/ironchestplatered
 	name = "iron chestplate with red cape"
 	desc = "An iron breastplate made after the fall of the old world, includes a dashing red cape."
@@ -1842,10 +1851,130 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
+///////////////////////////////////
+//// Halo Variation armor   //////
+//////////////////////////////////
 
+// Just variations of any armors to be put here if unable to make into Power Armor variations.
+
+
+/obj/item/clothing/suit/armor/medium/odst
+	name = "UNMC Shock Armor"
+	desc = "A set of United Nations Marine Corps Shock Armor. This armor is in pristine condition and can take quite a beating. Albeit it's very prone to breaking due to any melee or plasma/laser based attacks. A wise man once said, In times like these, it pays to be the strong, silent type."
+	icon_state = "odst1"
+	item_state = "odst1"
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T3 ,  ARMOR_MODIFIER_UP_ENV_T3,ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+
+/obj/item/clothing/suit/armor/medium/unmcmarine
+	name = "UNMC standard armor"
+	desc = "A set of UNMC standard issue armor. It's generally weak and only really made to stop light projectiles and blows. Albeit whack it lacks in light to null armor, it makes up for sub-par enviromental resistance. OORAH soldier, double time!"
+	icon_state = "unmct"
+	item_state = "unmct"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+
+/obj/item/clothing/suit/armor/medium/retrohazmat
+	name = "Old Hazmat suit"
+	desc = "A old set of some sort of hazmat suit. Just shy better than most hazmat suits, but has extra pocket space and one hell of a color scheme."
+	icon_state = "rhaz"
+	item_state = "rhaz"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T4 , ARMOR_MODIFIER_UP_LASER_T1 , ARMOR_MODIFIER_UP_ENERGY_T1 )
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/unmcinfiltrator
+	name = "American dysfunctional stealth suit"
+	desc = "A suit of dysfunctional, albeit repaired to look good enough, American made stealth gear. Offers little protection."
+	icon_state = "usainfil"
+	item_state = "usainfil"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/unmcwinter
+	name = "UNMC Winter armor"
+	desc = "A set of UNMC standard issue armor.This one seems to be a winter camo painted version. It's generally weak and only really made to stop light projectiles and blows. Albeit whack it lacks in light to null armor, it makes up for sub-par enviromental resistance. The winter coating gives it a boost in more unconventional based attacks. Let's get a move on, the enemy won't kick its own ass!"
+	icon_state = "unmcwi"
+	item_state = "unmcwi"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_UP_LASER_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/odstlead
+	name = "UNMC Leader Armor"
+	desc = "A set of United Nations Marine Corps Leader Armor. This armor is in pristine condition and is suited for true hardened combat. The armor itself has quite the padding, but leaves the user slow and a sitting duck. Due to the material it is made from, it's weak to laser fire. Painted on the chest is a skull with the words below it 'get sum' "
+	icon_state = "odstlead"
+	item_state = "odstlead"
+	equip_delay_self = 60
+	equip_delay_other = 60
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_MORE_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_SALVAGE
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+/obj/item/clothing/suit/armor/medium/odstcqb
+	name = "UNMC CQB Armor"
+	desc = "A set of United Nations Marine Corps CQB Armor. This armor is in pristine condition and is suited for CQC related situations. Weaker than its bulkier more armored counterparts and has far less padding and less enviromental equipment. But with less padding, means greater speed."
+	icon_state = "odstcqb"
+	item_state = "odstcqb"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2,ARMOR_MODIFIER_DOWN_ENERGY_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	
+/obj/item/clothing/suit/armor/medium/vest/zeroodst
+	name = "Custom fitted UNMC Trooper armor"
+	desc = "A set of modified UNMC Trooper armor. This one has red accents on it and seems to have been designed to withstand the harshness of the wastes. The name 'Corrigan' is stenciled on the chestplate."
+	icon_state = "zeroodst"
+	item_state = "zeroodst"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/vest/SpartanTox
+	name = "MIRAGE Class Assault Armor"
+	desc = "A set of MIRAGE Class Assault armor. Used for infiltration while providing a good set of resistance. Performs very well for enviromental hazards"
+	icon_state = "miragearmor"
+	item_state = "miragearmor"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+		
 /obj/item/clothing/suit/armor/medium/vest/flak
 	name = "ancient flak vest"
-	desc = "Poorly maintained, this patched vest will still still stop some bullets, but don't expect any miracles. The ballistic nylon used in its construction is inferior to kevlar, and very weak to acid, but still quite tough."
+	desc = "Poorly maintained, this patched vest will still still stop some bullets, but don't expect any miracles! The ballistic nylon used in its construction is inferior to kevlar, and very weak to acid, but still quite tough."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_flak"
@@ -1915,7 +2044,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	name = "security vest"
-	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces."
+	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces?"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "vest_armor"
@@ -2959,6 +3088,8 @@
 
 /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn
 	name = "retrofit worn riot combat armor"
+	icon_state = "foxranger"
+	item_state = "foxranger"
 	desc = "A suit of pre-war combat armor redesigned to handle riots. This one looks worn down, and has had its heavier components stripped away."
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2, ARMOR_MODIFIER_DOWN_LASER_T1)
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
@@ -3107,7 +3238,7 @@
 	/// How much slowdown is added when suit is unpowered
 	var/unpowered_slowdown = 3
 	/// Projectiles below this damage will get deflected
-	var/deflect_damage = 18
+	var/deflect_damage = 20 // blocks handload 9mm, which simplemobs shoot
 	/// If TRUE - it requires PA training trait to be worn
 	var/requires_training = TRUE
 	/// If TRUE - the suit will give its user specific traits when worn
@@ -3118,6 +3249,12 @@
 	var/obj/item/salvaged_type = null
 	/// Used to track next tool required to salvage the suit
 	var/salvage_step = 0
+	var/deflecting = TRUE
+	var/deflect_power_mult = 20
+	COOLDOWN_DECLARE(emp_cooldown)
+	COOLDOWN_DECLARE(deflect_cd)
+	var/deflect_cooldown = 1 SECONDS
+	var/can_deflect_while_blocking = TRUE
 	slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_PA
 	armor_tier_desc = ARMOR_CLOTHING_PA
@@ -3321,6 +3458,17 @@
 		toggle_cell(user)
 	return
 
+/obj/item/clothing/suit/armor/power_armor/CtrlShiftClick(mob/user)
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return ..()
+	if(!COOLDOWN_FINISHED(src, emp_cooldown))
+		to_chat(user, span_warning("Deflector shields still respooling!"))
+	TOGGLE_VAR(deflecting)
+	if(deflecting)
+		to_chat(user, span_notice("You activate the suit's deflector shield."))
+	else
+		to_chat(user, span_alert("You deactivate the suit's deflector shield."))
+
 /obj/item/clothing/suit/armor/power_armor/proc/toggle_cell(mob/living/user)
 	if(cell)
 		user.visible_message(span_notice("[user] removes \the [cell] from [src]!"), \
@@ -3338,6 +3486,12 @@
 			. += "The power meter shows [round(cell.percent(), 0.1)]% charge remaining."
 		else
 			. += "The power cell slot is currently empty."
+	if(deflecting && powered && cell)
+		. += "The deflector shield is currently active."
+	else if(!COOLDOWN_FINISHED(src, emp_cooldown))
+		. += "The deflector shield is respooling!"
+	else
+		. += "The deflector shield is currently inactive."
 	if(ispath(salvaged_type))
 		. += salvage_hint()
 
@@ -3358,6 +3512,11 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
+	if(deflecting)
+		deflecting = FALSE
+		to_chat(owner, span_alert("Deflector shield overloaded!"))
+		playsound(get_turf(src), "sound/effects/electric_hiss.ogg", 100, TRUE)
+		COOLDOWN_START(src, emp_cooldown, 30 SECONDS)
 	if(!powered)
 		return
 	if(cell)
@@ -3387,11 +3546,35 @@
 		L.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if((attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
-		if(prob(70) && (damage < deflect_damage) && (armour_penetration <= 0)) // Weak projectiles like shrapnel get deflected
-			block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
-			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-	return ..()
+	if(!COOLDOWN_FINISHED(src, deflect_cooldown))
+		return ..()
+	if(!deflecting)
+		return ..()
+	if(!can_deflect_while_blocking && (CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCKING) || CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCK_STARTING)))
+		return ..()
+	if(attack_type != ATTACK_TYPE_PROJECTILE)
+		return ..()
+	if(!(def_zone in protected_zones))
+		return ..()
+	if(!powered || !cell || cell.charge <= 0)
+		return ..()
+	if(!istype(object, /obj/item/projectile))
+		return ..()
+	var/obj/item/projectile/P = object
+	if(P.damage > deflect_damage)
+		return ..()
+	if(P.armour_penetration > 0)
+		return ..()
+	block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+	cell.use(round(rand(damage*(deflect_power_mult*0.5), damage*(deflect_power_mult*2)), 100))
+	do_sparks(2, FALSE, owner)
+	SSrecoil.kickback(owner, recoil_in = 10)
+	var/soundplay = pick("sound/weapons/bullet_ricochet_1.ogg", "sound/weapons/bullet_ricochet_2.ogg")
+	playsound(get_turf(src), soundplay, 100, TRUE)
+	playsound(get_turf(src), "sound/weapons/metal_clank.ogg", 100, TRUE)
+	playsound(get_turf(src), "sound/effects/bworp.ogg", 75, TRUE)
+	COOLDOWN_START(src, deflect_cd, deflect_cooldown)
+	return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 
 /obj/item/clothing/suit/armor/power_armor/t45b
 	name = "Refurbished T-45b power armor"
@@ -3401,6 +3584,14 @@
 	armor = ARMOR_VALUE_SALVAGE
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
+	deflect_power_mult = 80
+	deflect_cooldown = 2 SECONDS
+	can_deflect_while_blocking = FALSE
+
+/obj/item/clothing/suit/armor/power_armor/t45b/debug_pa
+	name = "Debug T-45b power armor"
+	desc = "Its comfy and easy to wear!"
+	requires_training = FALSE
 
 /obj/item/clothing/suit/armor/power_armor/t45b/raider
 	name = "powered scrap suit"
@@ -3411,6 +3602,16 @@
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mutantrace_variation = STYLE_DIGITIGRADE
 	salvaged_type = /obj/item/clothing/suit/armor/medium/raider/raidermetal
+
+/obj/item/clothing/suit/armor/power_armor/t45b/hotrod
+	name = "Refurbished T-45b Hotrod power armor"
+	desc = "It's a set of T-45b power armor with a with some of its plating replaced by ablative, fire resistant armor. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
+	icon_state = "t45hotrod"
+	item_state = "t45hotrod"
+	armor = ARMOR_VALUE_SALVAGE
+	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
+	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
+	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, )
 
 /obj/item/clothing/suit/armor/power_armor/t45d
 	name = "T-45d power armor"
@@ -3465,23 +3666,12 @@
 	icon_state = "t51bpowerarmor_bos"
 	item_state = "t51bpowerarmor_bos"
 
-/obj/item/clothing/suit/armor/power_armor/t45b/hotrod
-	name = "Refurbished T-45b Hotrod power armor"
-	desc = "It's a set of T-45b power armor with a with some of its plating replaced by ablative, fire resistant armor. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
-	icon_state = "t45hotrod"
-	item_state = "t45hotrod"
-	armor = ARMOR_VALUE_SALVAGE
-	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
-	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
-	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, )
-
-
 /obj/item/clothing/suit/armor/power_armor/excavator
 	name = "excavator power armor"
 	desc = "Developed by Garrahan Mining Co. in collaboration with West Tek, the Excavator-class power armor was designed to protect miners from rockfalls and airborne contaminants while increasing the speed at which they could work. "
 	icon_state = "excavator"
 	item_state = "excavator"
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T4, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_DOWN_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/power_armor/advanced
 	name = "advanced power armor"

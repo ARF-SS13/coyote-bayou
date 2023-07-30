@@ -156,7 +156,16 @@
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
-	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
+	new /obj/item/gun/energy/laser/plasma/castereve(src)
+
+/datum/gear/donator/kits/rinpin
+	name = "Lee's stash"
+	path = /obj/item/storage/box/large/custom_kit/rinpin
+	ckeywhitelist = list("Pootismaniac")
+
+/obj/item/storage/box/large/custom_kit/rinpin/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/metalmask/custom(src)
+	new /obj/item/gun/ballistic/rifle/magnetic(src)
 
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"
@@ -428,6 +437,15 @@
 	new /obj/item/smelling_salts(src)
 	new /obj/item/circuitboard/machine/chem_dispenser(src)
 
+/datum/gear/donator/kits/Escamado
+	name = "Blacksmith's Kit"
+	path = /obj/item/storage/box/large/custom_kit/Escamado
+	ckeywhitelist = list("Escamado")
+
+/obj/item/storage/box/large/custom_kit/Escamado/PopulateContents()
+	new /obj/item/survivalcapsule/blacksmith(src)
+	new /obj/item/melee/smith/hammer/premadeadam(src)
+
 // F
 
 /datum/gear/donator/kits/ferisramsay
@@ -666,6 +684,17 @@
 	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
 	new /obj/item/ammo_box/m44box(src)
 
+/datum/gear/donator/kits/jaggachi_6
+	name = "Soviet Service Kit"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_6
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_6/PopulateContents()
+	new /obj/item/clothing/under/soviet(src)
+	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
+	new /obj/item/clothing/suit/armor/light/vest/russian(src)
+	new /obj/item/gun/energy/laser/LaserAK/worn(src)
+
 // K
 
 
@@ -757,13 +786,11 @@
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/biker(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault113(src)
 	new /obj/item/lighter/moff(src)
-	new /obj/item/clothing/under/f13/bos/fatigues(src)
 	new /obj/item/gun/energy/laser/wattzs(src)
 	new /obj/item/radio/headset/headset_sci(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/executive/worn(src)
+	new /obj/item/camera/coldwar(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
 	new /obj/item/clothing/ears/headphones(src)
-	new /obj/item/reagent_containers/food/snacks/grown/tea/catnip(src)
-	new /obj/item/reagent_containers/food/snacks/grown/citrus/lemon(src)
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"

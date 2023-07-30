@@ -6911,6 +6911,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "cZN" = (
@@ -11772,6 +11775,15 @@
 /obj/effect/decal/cleanable/blood/gibs/slime,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
+"fat" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/area/f13/vault)
 "fbg" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -14414,7 +14426,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "giW" = (
-/obj/machinery/vending/sovietvend,
+/obj/structure/table,
+/obj/item/paper/fluff,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -16430,6 +16443,9 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "hfm" = (
@@ -20645,6 +20661,7 @@
 /area/f13/vault)
 "jff" = (
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/vending/sovietvend,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtysolid"
 	},
@@ -22636,7 +22653,7 @@
 "kbf" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/megafauna/captainarlem{
-	faction = list("mining","boss","enclave")
+	faction = list("mining","boss","enclave","wastebot")
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtyfull"
@@ -30228,6 +30245,9 @@
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre";
 	req_access_txt = "45; 5"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
@@ -47236,6 +47256,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/recharge_station,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "uJL" = (
@@ -59463,7 +59486,7 @@ sCn
 wEI
 mAc
 oVJ
-qMQ
+qhb
 kRh
 fSa
 uQS
@@ -59978,7 +60001,7 @@ eOc
 wum
 xxD
 uQS
-wLo
+bBi
 uQS
 uQS
 pMy
@@ -61767,7 +61790,7 @@ uFT
 mGP
 mAc
 mAc
-qMQ
+qhb
 mAc
 mAc
 nbm
@@ -69490,7 +69513,7 @@ uQS
 hAL
 kmw
 hAL
-bks
+fat
 nsh
 nBW
 npV

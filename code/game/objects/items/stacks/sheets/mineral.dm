@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	. = ..()
 	. += GLOB.gold_recipes
 
-/obj/item/stack/sheet/mineral/gold/twnetyfive
+/obj/item/stack/sheet/mineral/gold/twentyfive
 	amount = 25
 
 /obj/item/stack/sheet/mineral/gold/fifty

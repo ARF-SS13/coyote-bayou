@@ -695,7 +695,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(deathmessage || !del_on_death)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
-		..()
+		..(gibbed)
 		//Prevent infinite loops if the mob Destroy() is overridden in such
 		//a manner as to cause a call to death() again
 		del_on_death = FALSE
@@ -705,7 +705,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		icon_state = icon_dead
 		density = FALSE
 		lying = 1
-		..()
+		..(gibbed)
 
 /mob/living/simple_animal/drop_all_held_items(skip_worn = FALSE)
 	if(internal_storage && !skip_worn)

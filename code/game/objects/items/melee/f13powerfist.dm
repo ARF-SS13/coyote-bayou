@@ -12,7 +12,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
 	attack_verb = list("whacked", "fisted", "power-punched")
-	force = 30 //needs more hefty damage to be worthwhile outside pvp. will have to test
+	force = 45 //needs more hefty damage to be worthwhile outside pvp. will have to test
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
@@ -21,19 +21,40 @@
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
 
-/obj/item/melee/powerfist/f13/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/wrench))
-		switch(fisto_setting)
-			if(1)
-				fisto_setting = 2
-			if(2)
-				fisto_setting = 1
-		W.play_tool_sound(src)
-		to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
-		attack_speed = CLICK_CD_MELEE * fisto_setting
+	///Extra damage through the punch.
+	var/enhancement = 45 // makes it add 45 to the user punches , replace that number with whatever you want the punch damage to be
 
-/obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
-	return
+
+/obj/item/melee/powerfist/f13/equipped(mob/user, slot)
+	. = ..()
+	if(slot == SLOT_GLOVES)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			ADD_TRAIT(H, TRAIT_PUGILIST, GLOVE_TRAIT)
+			H.dna.species.punchdamagehigh += enhancement
+			H.dna.species.punchdamagelow += enhancement
+
+/obj/item/clothing/gloves/fingerless/pugilist/dropped(mob/user)
+
+	REMOVE_TRAIT(user, TRAIT_PUGILIST, GLOVE_TRAIT)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.dna.species.punchdamagehigh -= enhancement
+		H.dna.species.punchdamagelow -= enhancement
+	return ..()
+//obj/item/melee/powerfist/f13/attackby(obj/item/W, mob/user, params)
+	//if(istype(W, /obj/item/wrench))
+		//switch(fisto_setting)
+			//if(1)
+				//fisto_setting = 2
+			//.if(2)
+				//fisto_setting = 1
+		//W.play_tool_sound(src)
+		//to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
+		//attack_speed = CLICK_CD_MELEE * fisto_setting
+
+//obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
+	//return
 
 /obj/item/melee/powerfist/f13/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -63,9 +84,9 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "goliath"
 	item_state = "goliath"
-	force = 35 //needs to fuckin slapp
+	force = 55 //legendary tier power fist, one of a kind, why should it hit for less than a machete
 	throw_distance = 3
-
+	enhancement = 50
 // Mole Miner
 /obj/item/melee/powerfist/f13/moleminer
 	name = "mole miner gauntlet"
@@ -75,9 +96,10 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
-	force = 25 //It shouldn't be both a mid fist weapon and a digging tool dangit! Especially for the resources it takes! 5 less dmg than a power fist
+	force = 38 //weaker but it should atleast 1 tap trash mobs
 	throwforce = 10
 	throw_range = 7
+	enhancement = 30 //mace tier
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_behaviour = TOOL_MINING

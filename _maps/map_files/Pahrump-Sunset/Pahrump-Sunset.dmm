@@ -6540,15 +6540,19 @@
 /area/f13/wasteland/city/nash/theloop)
 "axu" = (
 /obj/effect/landmark/latejoin,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop3"
 	},
 /area/f13/tunnel/southwest)
 "axv" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right"
 	},
@@ -13401,9 +13405,6 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/camera{
-	dir = 6
-	},
 /obj/machinery/reagentgrinder,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -17060,10 +17061,15 @@
 	},
 /area/f13/wasteland/city/nash/starterroad)
 "bgv" = (
-/obj/structure/car/rubbish3,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2"
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -39;
+	pixel_y = -8;
+	layer = 2;
+	desc = "This tree is odd, it has the imprint of some sort of cats face on it at about average head height for a male.  Very strange."
 	},
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/starterroad)
 "bgx" = (
 /obj/structure/flora/grass/wasteland{
@@ -18401,7 +18407,7 @@
 /mob/living/simple_animal/pet/dog/eyebot{
 	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
 	name = "Bighorn eyebot";
-	speak = list("Need a drink? Want to trade? Need your cuts and bruises mended? Head on over to Bighorn!")
+	speak = list("Need    a    drink?    Want    to    trade?    Need    your    cuts    and    bruises    mended?    Head    on    over    to    Bighorn!")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
@@ -21255,16 +21261,15 @@
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
 "bFu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/car/rubbish3{
+	layer = 5;
+	pixel_y = -4;
+	pixel_x = 3
 	},
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
 	},
-/area/f13/building/abandoned)
+/area/f13/wasteland/city/nash/starterroad)
 "bFz" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -29815,9 +29820,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dzL" = (
-/obj/machinery/camera{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -46046,9 +46048,6 @@
 	},
 /area/f13/wasteland/city)
 "hCV" = (
-/obj/machinery/camera{
-	dir = 6
-	},
 /obj/machinery/workbench,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -51514,9 +51513,6 @@
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "iQP" = (
-/obj/machinery/camera{
-	dir = 6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/kirbyplants/random{
 	pixel_y = 8
@@ -53198,18 +53194,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/interior{
 	icon_state = "interior4"
-	},
-/area/f13/building/abandoned)
-"jnG" = (
-/obj/machinery/camera{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
 	},
 /area/f13/building/abandoned)
 "jog" = (
@@ -59621,9 +59605,6 @@
 /area/f13/wasteland)
 "kWI" = (
 /obj/machinery/vending/nukacolavend,
-/obj/machinery/camera{
-	dir = 6
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	color = "#ffe9de";
@@ -61265,18 +61246,6 @@
 	},
 /obj/structure/barricade/tentleatheredge,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/building/abandoned)
-"loV" = (
-/obj/structure/table,
-/obj/machinery/camera{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/building/abandoned)
 "loW" = (
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -72631,9 +72600,6 @@
 /area/f13/ruins)
 "nXn" = (
 /obj/structure/table,
-/obj/machinery/camera{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -75890,6 +75856,12 @@
 	icon_state = "bar"
 	},
 /area/f13/building)
+"oLh" = (
+/obj/machinery/gear_painter,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop0"
+	},
+/area/f13/caves)
 "oLj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -76623,9 +76595,6 @@
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
 "oTE" = (
-/obj/machinery/camera{
-	dir = 1
-	},
 /obj/machinery/vending/snack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -100769,15 +100738,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city/nash/downtown)
-"uVV" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c";
-	pixel_x = -39;
-	pixel_y = -8
-	},
-/obj/structure/spacevine,
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city/nash/starterroad)
 "uWc" = (
 /obj/structure/sign/poster/prewar/poster82{
 	pixel_y = -32
@@ -115626,7 +115586,7 @@ ayO
 ayO
 apq
 lxp
-adg
+oLh
 axv
 ayl
 aCb
@@ -130278,7 +130238,7 @@ vRK
 bzq
 ozV
 mca
-vSe
+obw
 nEP
 bSK
 xyK
@@ -130793,7 +130753,7 @@ pKW
 sns
 jWU
 bgv
-wXv
+bFu
 bSK
 xyK
 aOk
@@ -131050,7 +131010,7 @@ bzq
 ozV
 eoE
 cGE
-uVV
+obw
 bSK
 xyK
 aOk
@@ -134727,7 +134687,7 @@ vek
 clw
 qli
 aJb
-loV
+haj
 vVo
 lRc
 ety
@@ -134987,7 +134947,7 @@ xDz
 haj
 vVo
 aVr
-bFu
+dzL
 vwR
 vVo
 aae
@@ -135244,7 +135204,7 @@ aEN
 gDS
 vzf
 pVH
-bFu
+dzL
 hVk
 luo
 aae
@@ -136520,13 +136480,13 @@ gWD
 ojS
 rIo
 vVo
-bFu
+dzL
 vVo
 aXm
 kPu
 vVo
 pVH
-bFu
+dzL
 vVo
 kPu
 aXm
@@ -137034,16 +136994,16 @@ aJb
 rIo
 rIo
 vVo
-bFu
+dzL
 vVo
-bFu
+dzL
 aXm
 agZ
-bFu
+dzL
 kNl
 vVo
 pVH
-bFu
+dzL
 vVo
 rJt
 amq
@@ -137548,7 +137508,7 @@ vVo
 vVo
 vVo
 vVo
-bFu
+dzL
 vbl
 kNl
 pVH
@@ -137808,7 +137768,7 @@ vVo
 vVo
 pzz
 stC
-bFu
+dzL
 aXm
 dzL
 vVo
@@ -138322,7 +138282,7 @@ fTf
 kNl
 kNl
 xvW
-bFu
+dzL
 chd
 aXm
 fTf
@@ -138837,8 +138797,8 @@ pzz
 pzz
 pzz
 aXm
-bFu
-jnG
+dzL
+pVH
 vVo
 vVo
 vVo
@@ -139091,15 +139051,15 @@ oEd
 cmJ
 vVo
 pVH
-bFu
+dzL
 kNl
-bFu
+dzL
 ybe
 kNl
 aXm
 fOO
 pVH
-bFu
+dzL
 fTf
 pPO
 uqJ
@@ -139612,7 +139572,7 @@ vVo
 aXm
 kPu
 vVo
-bFu
+dzL
 kNl
 vVo
 iQP
@@ -140120,13 +140080,13 @@ aJb
 cIE
 pVH
 agZ
-bFu
+dzL
 kPu
 vVo
-bFu
+dzL
 aXm
 vVo
-bFu
+dzL
 kPu
 vVo
 cmL
@@ -140890,7 +140850,7 @@ aak
 vVo
 kNl
 kNl
-bFu
+dzL
 ocI
 pVH
 mrf
@@ -141919,10 +141879,10 @@ vVo
 kWI
 uMj
 gcR
-bFu
+dzL
 kNl
 gjz
-bFu
+dzL
 pVH
 fOO
 pVH

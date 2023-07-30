@@ -1067,6 +1067,27 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/c45rev(src)
 	new /obj/item/ammo_box/c45(src)
 
+/datum/loadout_box/medusa
+	entry_tag = "Medusa Revolver"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/medusa
+
+/obj/item/storage/box/gun/revolver/medusa/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/medusa(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44box(src)
+
+/datum/loadout_box/hermes
+	entry_tag = "Hermes Revolver"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/hermes	
+
+/obj/item/storage/box/gun/revolver/hermes/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/hermes(src)
+	new /obj/item/ammo_box/c9mm(src)
+
 /obj/item/storage/box/gun/revolver/colt357
 	name = ".357 magnum revolver case" //what does \improper mean, is needed here?
 

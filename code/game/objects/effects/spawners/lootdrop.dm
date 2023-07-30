@@ -28,10 +28,10 @@
 /obj/effect/spawner/lootdrop/proc/startup_procedure(mapload, block_tier_swap, survived_snap)
 	adjust_tier(block_tier_swap)
 	if(cull_spawners(mapload, block_tier_swap, survived_snap))
-		return
+		return INITIALIZE_HINT_NORMAL
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
-		return // have fun!
+		return INITIALIZE_HINT_NORMAL // have fun!
 	spawn_the_stuff() // lov dan
 	return INITIALIZE_HINT_QDEL
 
@@ -68,8 +68,7 @@
 		if(!lootdoubles)
 			loot.Remove(lootspawn)
 		if(lootspawn)
-			var/block_recursive_tier_swap = (tier_adjusted && ispath(lootspawn, /obj/effect/spawner/lootdrop))
-			var/atom/movable/spawned_loot = new lootspawn(A, block_recursive_tier_swap)
+			var/atom/movable/spawned_loot = SpawnTheLootDrop(A, lootspawn)
 			if(islist(listhack))
 				listhack |= spawned_loot
 			if(fan_out_items)
@@ -81,6 +80,17 @@
 					spawned_loot.pixel_y = pixel_y
 	if(delay_spawn)
 		qdel(src)
+
+/obj/effect/spawner/lootdrop/proc/SpawnTheLootDrop(loc, path) // This makes sure the item is properly casted to the correct type, as /obj/item/stack doesn't like new() when you cast it as atom/movable :(
+	if(ispath(path, /obj/item/stack))
+		var/amount = rand(1,3)
+		var/obj/item/stack/S = new path(loc, amount)
+		return S
+	
+	var/block_recursive_tier_swap = (tier_adjusted && ispath(path, /obj/effect/spawner/lootdrop))
+	var/atom/movable/spawned_loot = new path(loc, block_recursive_tier_swap)
+	return spawned_loot
+
 
 /obj/effect/spawner/lootdrop/bedsheet
 	icon = 'icons/obj/bedsheets.dmi'

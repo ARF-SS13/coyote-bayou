@@ -653,6 +653,9 @@
 	gender = FEMALE
 	covers_belly = FALSE
 
+
+// Shapley Shirts//
+
 /datum/sprite_accessory/underwear/top/shapelypetite
 	name = "Shapely Shirt - Petite"
 	icon_state = "shapely_petite"
@@ -684,6 +687,117 @@
 /datum/sprite_accessory/underwear/top/shapelybackbreaker
 	name = "Shapely Shirt - Backbreakers"
 	icon_state = "shapely_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+	//Shapely Shoulderless (ss)
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlesspetite
+	name = "Shapely Shoulderless Shirt - Petite"
+	icon_state = "shapelyss_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlessgirlish
+	name = "Shapely Shoulderless Shirt - Girlish"
+	icon_state = "shapelyss_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlesscurvy
+	name = "Shapely Shoulderless Shirt - Curvy"
+	icon_state = "shapelyss_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlessbusty
+	name = "Shapely Shoulderless Shirt - Busty"
+	icon_state = "shapelyss_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlessbackbreaker
+	name = "Shapely Shoulderless Shirt - Backbreakers"
+	icon_state = "shapelyss_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+	//Shapely Tube Top (tt)
+
+/datum/sprite_accessory/underwear/top/shapelytubetoppetite
+	name = "Shapely Tube Top Shirt - Petite"
+	icon_state = "shapelytt_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopgirlish
+	name = "Shapely Tube Top Shirt - Girlish"
+	icon_state = "shapelytt_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopcurvy
+	name = "Shapely Tube Top Shirt - Curvy"
+	icon_state = "shapelytt_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopbusty
+	name = "Shapely Tube Top Shirt - Busty"
+	icon_state = "shapelytt_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopbackbreaker
+	name = "Shapely Tube Top Shirt - Backbreakers"
+	icon_state = "shapelytt_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+	
+	//Shapely Bra (bra)
+
+/datum/sprite_accessory/underwear/top/shapelybrapetite
+	name = "Shapely Bra - Petite"
+	icon_state = "shapelybra_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybragirlish
+	name = "Shapely Bra - Girlish"
+	icon_state = "shapelybra_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybracurvy
+	name = "Shapely Bra - Curvy"
+	icon_state = "shapelybra_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrabusty
+	name = "Shapely Bra - Busty"
+	icon_state = "shapelybra_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrabackbreaker
+	name = "Shapely Bra - Backbreakers"
+	icon_state = "shapelybra_backbreaker"
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE

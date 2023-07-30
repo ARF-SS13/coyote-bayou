@@ -15,8 +15,8 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	attack_speed = CLICK_CD_MELEE * 1.5
-	var/fisto_setting = 1
-	var/gasperfist = 3
+	//var/fisto_setting = 1
+	//var/gasperfist = 3
 	var/obj/item/tank/internals/tank = null //Tank used for the gauntlet's piston-ram.
 
 /obj/item/melee/powerfist/examine(mob/user)
@@ -28,27 +28,27 @@
 		. += span_notice("[icon2html(tank, user)] It has \a [tank] mounted onto it.")
 
 
-/obj/item/melee/powerfist/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/tank/internals))
-		if(!tank)
-			var/obj/item/tank/internals/IT = W
-			if(IT.volume <= 3)
-				to_chat(user, span_warning("\The [IT] is too small for \the [src]."))
-				return
-			updateTank(W, 0, user)
-	else if(istype(W, /obj/item/wrench))
-		switch(fisto_setting)
-			if(1)
-				fisto_setting = 2
-			if(2)
-				fisto_setting = 3
-			if(3)
-				fisto_setting = 1
-		W.play_tool_sound(src)
-		to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
-	else if(istype(W, /obj/item/screwdriver))
-		if(tank)
-			updateTank(tank, 1, user)
+//obj/item/melee/powerfist/attackby(obj/item/W, mob/user, params)
+	//if(istype(W, /obj/item/tank/internals))
+		//if(!tank)
+			//var/obj/item/tank/internals/IT = W
+			//if(IT.volume <= 3)
+				//to_chat(user, span_warning("\The [IT] is too small for \the [src]."))
+				//return
+			//updateTank(W, 0, user)
+	//else if(istype(W, /obj/item/wrench))
+		//switch(fisto_setting)
+			//if(1)
+				//fisto_setting = 2
+			//if(2)
+				//fisto_setting = 3
+			//if(3)
+				//fisto_setting = 1
+		//W.play_tool_sound(src)
+		//to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
+	//else if(istype(W, /obj/item/screwdriver))
+		//if(tank)
+			//updateTank(tank, 1, user)
 
 /obj/item/melee/powerfist/proc/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
 	if(removing)
@@ -116,7 +116,7 @@
 	playsound(loc, 'sound/weapons/genhit2.ogg', 50, 1)
 
 	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
-	target.throw_at(throw_target, 2 * fisto_setting, 0.5 + (fisto_setting / 2))
+	target.throw_at(throw_target, 2 * 2, 0.5 + (2))
 
 	log_combat(user, target, "power fisted", src)
 

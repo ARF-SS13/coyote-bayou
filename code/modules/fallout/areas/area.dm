@@ -258,7 +258,7 @@
 	icon_state = "ncrex"
 
 /area/f13/wasteland/legion
-	name = "Legion Fortress Exterior"
+	name = "Lil Ceasar's Pizza Legion Fortress Exterior"
 	icon_state = "legionex"
 
 /area/f13/forest

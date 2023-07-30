@@ -171,6 +171,9 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 		newA.set_dynamic_lighting()
 		newA.has_gravity = oldA.has_gravity
 		newA.noteleport = oldA.noteleport
+		newA.power_light = oldA.power_light
+		newA.power_environ = oldA.power_environ
+		newA.power_equip = oldA.power_equip
 	else
 		newA = area_choice
 
@@ -187,7 +190,7 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 		var/obj/machinery/door/firedoor/FD = door
 		FD.CalculateAffectingAreas()
 
-	to_chat(creator, span_notice("You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered."))
+	to_chat(creator, span_notice("You have created a new area, named [newA.name], and have weather proofed it."))
 	return TRUE
 
 

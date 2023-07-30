@@ -181,6 +181,33 @@
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
+
+/* * * * * * * * * * *
+ * Hermes revolver
+ * Light, Fast and hyper accurate 
+ * 9mm
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/hermes
+	name = "Hermes Sporting Revolver"
+	desc = "A slick, well machined 9mm revolver made for olympic target shooting, extremely accurate and fast firing, though lacking in stopping power"
+	icon_state = "hermes"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/hermes
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster,
+		/datum/firemode/automatic/rpm300,
+	)
+	use_casing_sounds = TRUE
+
 /* * * * * * * * * *
  * HEAVY REVOLVERS *
  * * * * * * * * * */
@@ -216,6 +243,36 @@
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
 	)
+
+/* * * * * * * * * * *
+ * Medusa Revolver
+ * Slow, innacurate but convenient
+ * From .22 up to .44
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/medusa
+	name = "Medusa Multi-Caliber Revolver"
+	desc = "A hefty pre-war revolver with an unusual multi-caliber cylinder, able to fit from .22 up to .44, though the loose chambering makes it quite innacurate"
+	icon_state = "medusa" 
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/medusa
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	added_spread = GUN_SPREAD_POOR
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+	can_flashlight = TRUE
+	scope_state = "flight"
+	flight_x_offset = 22
+	flight_y_offset = 15
+
+	use_casing_sounds = TRUE
 
 /* * * * * * * * * * *
  * Mateba revolver

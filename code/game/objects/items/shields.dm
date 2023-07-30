@@ -314,8 +314,8 @@ obj/item/shield/riot/bullet_proof
 
 //Legion shield
 /obj/item/shield/riot/legion
-	name = "legion shield"
-	desc = "Heavy shield with metal pieces bolted to a wood backing, with a painted yellow bull insignia in the centre. Repair with metal."
+	name = "Larper shield"
+	desc = "Heavy shield with metal pieces bolted to a wood backing, with a painted yellow baby cow insignia in the centre. Repair with metal."
 	icon_state = "shield_legion"
 	item_state = "shield_legion"
 	block_parry_data = /datum/block_parry_data/shield/legion
@@ -885,5 +885,20 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	icon_state = "shield_riot"
 	item_state = "shield_riot"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	max_integrity = -1
+	resistance_flags = null
+
+/obj/item/shield/coyote/crusader
+	name = "Iron Crusader Shield"
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
+	slowdown = 0
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	desc = "An oblong shield with a red cross on it."
+	icon_state = "semioval_shield_templar2"
+	item_state = "semioval_shield_templar2"
+	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
 	max_integrity = -1
 	resistance_flags = null

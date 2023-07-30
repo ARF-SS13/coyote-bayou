@@ -109,7 +109,7 @@
 	name = "rare high-value loot, found in dangerous dungeons"
 	icon_state = "x7"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/rare_weps = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_weps = 3,
 		/obj/effect/spawner/lootdrop/f13/rare_armor = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_mods = 1,
 	)
@@ -237,6 +237,10 @@
 		/obj/item/gun/ballistic/rifle/mosin = 1,
 		/obj/item/gun/ballistic/rifle/enfield = 1,
 		/obj/item/gun/ballistic/shotgun/hunting = 2,
+		/obj/item/gun/ballistic/automatic/m1carbine/covcarbine = 2,
+		/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2, 
+
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -261,6 +265,11 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 2,
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
+		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
+		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 1,
+		/obj/item/gun/ballistic/automatic/famas = 1,
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 2,
+		/obj/item/gun/ballistic/automatic/smg/m22 = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -295,6 +304,7 @@
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 1,
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/bar = 1,
+		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
 	)
 
 ///////////////////////////
@@ -489,6 +499,7 @@
 		/obj/item/gun/ballistic/automatic/service/carbine = 5,
 		/obj/item/gun/energy/laser/wattz/recharger = 5,
 		/obj/item/gun/energy/laser/wattz2ks = 5,
+		/obj/item/gun/ballistic/automatic/m41br = 4,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
@@ -522,7 +533,7 @@
 		/obj/item/gun/energy/tesla/teslacannon = 10, //it'll be fiiiiine
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
 		/obj/item/melee/unarmed/deathclawgauntlet = 20,
-		/obj/item/melee/powerfist/f13/goliath = 20,
+		/obj/item/melee/unarmed/powerfist/goliath = 20,
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
@@ -890,22 +901,27 @@
 		/obj/item/clothing/head/helmet/f13/raidermetal = 1,
 		/obj/effect/spawner/bundle/f13/armor/combat/dark = 3,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris = 1,
+		/obj/item/clothing/suit/armor/medium/odstcqb = 1,
+		/obj/item/clothing/suit/armor/medium/unmcwinter = 1, 
+		/obj/item/clothing/head/helmet/unmcwinterhelmet = 1, 
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_armor
 	name = "rare armor"
 	loot = list(
-		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 5,
-		/obj/effect/spawner/bundle/f13/armor/riot = 10,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 10,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 10,
+		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 20,
+		/obj/effect/spawner/bundle/f13/armor/riot = 40,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 40,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 40,
 		/obj/effect/spawner/bundle/f13/armor/hotrodpa = 2,
 		/obj/effect/spawner/bundle/f13/armor/t45d = 1,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 5,
-		/obj/item/clothing/suit/armor/heavy/riot/vault = 5,
-		/obj/item/clothing/suit/armor/heavy/riot/marine = 5,
+		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 20,
+		/obj/item/clothing/suit/armor/heavy/riot/vault = 20,
+		/obj/item/clothing/suit/armor/heavy/riot/marine = 20,
 		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
-		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1
+		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1,
+		/obj/item/clothing/suit/armor/medium/odst = 2,
+		/obj/item/clothing/suit/armor/medium/odstlead = 1,
 	)
 
 //////////////////
@@ -1084,7 +1100,7 @@
 	loot = list(
 		/obj/item/stack/sheet/mineral/diamond/twentyfive = 1,
 		/obj/item/stack/sheet/mineral/plasma/twentyfive = 5,
-		/obj/item/stack/sheet/mineral/gold/twnetyfive = 3,
+		/obj/item/stack/sheet/mineral/gold/twentyfive = 3,
 		/obj/item/stack/sheet/mineral/plastitanium/twentyfive = 5,
 		/obj/item/ingot/adamantine = 20,
 		/obj/item/stack/sheet/mineral/abductor/ten = 5,
@@ -1683,5 +1699,6 @@
 	/obj/item/reagent_containers/syringe = 5,
 	/obj/item/restraints/handcuffs = 5,
 	/obj/item/toy/crayon/spraycan = 5,
-	/obj/item/laser_pointer = 5
+	/obj/item/laser_pointer = 5,
+	/obj/item/coin/dvd = 5
 	)

@@ -1,4 +1,4 @@
-	//Baseline hardsuits
+armor	//Baseline hardsuits
 /obj/item/clothing/head/helmet/space/hardsuit
 	name = "hardsuit helmet"
 	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Has radiation shielding."
@@ -655,20 +655,24 @@
 	item_state = "rig0-soviet"
 	hardsuit_type = "soviet"
 	icon_state = "rig0-soviet"
+	armor = ARMOR_VALUE_MEDIUM
 	mutantrace_variation = NONE
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T3)
+
+
 
 /obj/item/clothing/suit/space/hardsuit/soviet
 	name = "soviet hardsuit"
 	desc = "Crafted with the pride of the proletariat. The last thing the enemy sees is the bottom of this armor's boot."
 	item_state = "rig-soviet"
 	icon_state = "rig-soviet"
-	slowdown = 0.8
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/soviet
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	mutantrace_variation = NONE
-
-/obj/item/clothing/suit/space/hardsuit/soviet/Initialize()
-	. = ..()
-	allowed = GLOB.security_hardsuit_allowed
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T3)
 
 /////////////SHIELDED//////////////////////////////////
 
