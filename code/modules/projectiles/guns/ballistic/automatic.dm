@@ -2443,8 +2443,8 @@
 	init_mag_type = /obj/item/ammo_box/magazine/ratling
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = LMG_RECOIL(1, 1)
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = LMG_RECOIL(1.2, 1.2)
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300
