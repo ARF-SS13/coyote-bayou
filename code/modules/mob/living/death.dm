@@ -85,14 +85,7 @@
 
 	var/signal = SEND_SIGNAL(src, COMSIG_MOB_DEATH, gibbed)
 
-	var/turf/T = get_turf(src)
-	if(mind && mind.name && mind.active && !istype(T.loc, /area/ctf) && !(signal & COMPONENT_BLOCK_DEATH_BROADCAST))
-		var/rendered
-		if(HAS_TRAIT(mind, TRAIT_PENANCE))
-			rendered = "<span class='deadsay'><b>[mind.name]</b> has died at <b>[get_area_name(T)]</b>. They bore their penance to the grave. Perhaps the Gods will have mercy on them.</span>"
-		else
-			rendered = "<span class='deadsay'><b>[mind.name]</b> has died at <b>[get_area_name(T)]</b>.</span>"
-		deadchat_broadcast(rendered, follow_target = src, turf_target = T, message_type=DEADCHAT_DEATHRATTLE)
+	broadcast_death(signal)
 	if (client && client.prefs && client.prefs.auto_ooc)
 		if (!(client.prefs.chat_toggles & CHAT_OOC))
 			client.prefs.chat_toggles ^= CHAT_OOC
@@ -106,3 +99,30 @@
 		var/datum/soullink/S = s
 		S.sharerDies(gibbed)
 	return TRUE
+
+/mob/living/proc/broadcast_death(signal = NONE)
+	if(!mind)
+		return
+	if(!mind.name)
+		return
+	if(!mind.active)
+		return
+	var/turf/T = get_turf(src)
+	if(istype(T.loc, /area/ctf))
+		return
+	if(signal & COMPONENT_BLOCK_DEATH_BROADCAST)
+		return
+
+	var/rendered = "<b>[mind.name]</b> has died at <b>[get_area_name(T)]</b>."
+	var/penetant = HAS_TRAIT(mind, TRAIT_PENANCE)
+	var/very_penetant = HAS_TRAIT(mind, TRAIT_PENANCE_COMPLETE)
+	if(penetant && !very_penetant)
+		rendered += " [p_they()] [p_were()] unable to bear [p_their()] penance. Perhaps the Gods will have mercy on [p_them()]?"
+	else if(penetant && very_penetant)
+		rendered += " [p_they()] bore the full brunt of [p_their()] penance to the grave. Perhaps the Gods will have mercy on [p_them()]?"
+		message_admins("[src] won the penance game! Tell them what they won! And or grant a wish, or something.")
+	else if(!penetant && very_penetant)
+		rendered += " [p_they()] bore the full brunt of [p_their()] penance, but did not carry it to [p_their()] grave. Perhaps the Gods will have mercy on them?"
+	rendered = span_deadsay("[rendered]")
+	deadchat_broadcast(rendered, follow_target = src, turf_target = T, message_type=DEADCHAT_DEATHRATTLE)
+

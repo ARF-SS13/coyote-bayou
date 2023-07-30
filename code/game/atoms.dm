@@ -379,24 +379,23 @@
 	return FALSE
 
 /atom/proc/get_examine_name(mob/user)
-	. = "\a [src]"
-	var/list/override = list(gender == PLURAL ? "some" : "a", " ", "[name]")
-	if(article)
-		. = "[article] [src]"
-		override[EXAMINE_POSITION_ARTICLE] = article
+	var/list/ex_name[EXAMINE_LIST_LEN]
+	ex_name[EXAMINE_POSITION_ARTICLE] = "[article ? article : gender == PLURAL ? "some" : "\a"]"
+	ex_name[EXAMINE_POSITION_GRODY] = list()
+	ex_name[EXAMINE_POSITION_PREFIX]
+	ex_name[EXAMINE_POSITION_NAME] = "[src]"
+	ex_name[EXAMINE_POSITION_SUFFIX]
 
-	var/should_override = FALSE
-
-	if(SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, override) & COMPONENT_EXNAME_CHANGED)
-		should_override = TRUE
-
+	SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, ex_name)
 
 	if(blood_DNA && !istype(src, /obj/effect/decal))
-		override[EXAMINE_POSITION_BEFORE] = " blood-stained "
-		should_override = TRUE
+		ex_name[EXAMINE_POSITION_GRODY] += "blood-stained"
 
-	if(should_override)
-		. = override.Join("")
+	var/list/grode = ex_name[EXAMINE_POSITION_GRODY]
+	ex_name[EXAMINE_POSITION_GRODY] = LAZYLEN(grode) ? english_list(grode) : null
+	listclearnulls(ex_name)
+
+	return ex_name.Join(" ")
 
 ///Generate the full examine string of this atom (including icon for goonchat)
 /atom/proc/get_examine_string(mob/user, thats = FALSE)

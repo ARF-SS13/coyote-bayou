@@ -374,7 +374,8 @@
 
 // item traits
 #define TRAIT_NODROP "nodrop"
-#define TRAIT_PENANCE "penance"
+#define TRAIT_PENANCE "penance" // died with the wretched thing
+#define TRAIT_PENANCE_COMPLETE "penance_complete" // held that wretched thing for a long time
 /// Dont put it in storage things, simple as
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
 /// Can't leave a storage!

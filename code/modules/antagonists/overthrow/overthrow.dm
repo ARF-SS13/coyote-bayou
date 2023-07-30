@@ -113,7 +113,7 @@
 	var/I = pick(possible_useful_items)
 	if(ispath(I)) // in case some admin decides to fuck the list up for fun
 		I = new I()
-		SEND_SIGNAL(S, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE, I.loc, null)
+		SEND_SIGNAL(S, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE)
 
 // Equip the initial overthrow agent. Manually called in overthrow gamemode, when the initial agents are chosen. Gives uplink, AI module board and the converter.
 /datum/antagonist/overthrow/proc/equip_initial_overthrow_agent()
