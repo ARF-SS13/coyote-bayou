@@ -544,6 +544,7 @@
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
 	)
 
 ////////////////////////////
