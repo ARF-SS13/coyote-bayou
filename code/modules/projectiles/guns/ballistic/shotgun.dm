@@ -231,6 +231,15 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
+/obj/item/gun/ballistic/revolver/shotpistol/flair_gun
+	name = "Flair Gun"
+	desc = "This plastic orange flare gun has been reinforced with a high strength prewar alloy pipe insert, allowing it to fit a .50 bmg cartridge. Hopefully your hand is reinforced too."
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "flaregun50_civ"
+	item_state = "gun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/single/fifty
+
+
 /* * * * * * * * *
  * Pump shotguns *
  * * * * * * * * */
