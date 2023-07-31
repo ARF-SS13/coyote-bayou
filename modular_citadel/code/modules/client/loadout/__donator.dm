@@ -372,6 +372,15 @@
 	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
 	new /obj/item/clothing/suit/armor/light/duster/town/leather(src)
 
+/datum/gear/donator/kits/DeadWolf411
+	name = "Drop Shock Orian"
+	path = /obj/item/storage/box/large/custom_kit/DeadWolf411
+	ckeywhitelist = list("DeadWolf411")
+
+/obj/item/storage/box/large/custom_kit/DeadWolf411/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom(src)
+	
 /datum/gear/donator/kits/dameonowencoat
 	name = "Dragon Coat"
 	path = /obj/item/clothing/suit/armor/light/duster/town/leather
@@ -693,6 +702,16 @@
 	new /obj/item/clothing/suit/armor/light/vest/russian(src)
 	new /obj/item/gun/energy/laser/LaserAK/worn(src)
 
+
+/datum/gear/donator/kits/jaggachi_7
+	name = "Medical wardrobe"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_7
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_7/PopulateContents()
+	new /obj/item/clothing/suit/coat/coyote/nurse_coat(src)
+	new /obj/item/clothing/head/f13/nursehat(src)
+	new /obj/item/clothing/under/rank/medical/doctor/nurse
 // K
 
 
