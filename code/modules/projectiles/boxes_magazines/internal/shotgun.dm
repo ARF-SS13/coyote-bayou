@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = list(CALIBER_SHOTGUN)
+	
 	max_ammo = 4
 	multiload = 0
 
@@ -44,6 +44,12 @@
 /obj/item/ammo_box/magazine/internal/shot/single
 	name = "single-barrel shotgun internal magazine"
 	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/shot/single/fifty
+	name = "single-barrel fifty cal internal magazine"
+	max_ammo = 1
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
 
 /obj/item/ammo_box/magazine/internal/shot/dual
 	name = "double-barrel shotgun internal magazine"
