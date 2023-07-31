@@ -1288,7 +1288,7 @@
 
 /obj/item/gun/ballistic/automatic/matildar
 	name = "A11 'Matilda' Rifle"
-	desc = "A Latos Systems low caliber battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in a high powered version of 5.56 NATO"
+	desc = "A Latos Systems high powered caliber 5.56 battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in a high powered version of 5.56 NATO"
 	icon_state = "matilda"
 	item_state = "matilda"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
