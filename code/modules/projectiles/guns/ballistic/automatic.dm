@@ -1275,6 +1275,40 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
 
+
+
+/* * * * * * * * * * * *
+* Matilda Rifle
+* Lightweight low damage dealing rifle with a 20 mag only
+* - MUCH slower than a varmint
+* + Higher damage than a varmint 
+* - Unable to be modified with bayonets, flashlights or a scope
+* + common tier rifle
+* * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/matildar
+	name = "A11 'Matilda' Rifle"
+	desc = "A Latos Systems high powered caliber 5.56 battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in a high powered version of 5.56 NATO"
+	icon_state = "matilda"
+	item_state = "matilda"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_firemodes = list(/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
 /* * * * * * * * * * *
  * Varmint Rifle w/ 20rd mag
  * Light semi-auto rifle
