@@ -1,4 +1,4 @@
-#define REAGENTS_BASE_VOLUME 100 // actual volume is REAGENTS_BASE_VOLUME plus REAGENTS_BASE_VOLUME * rating for each matterbin
+#define REAGENTS_BASE_VOLUME 1 // actual volume is REAGENTS_BASE_VOLUME plus REAGENTS_BASE_VOLUME * rating for each matterbin
 
 /obj/machinery/smoke_machine
 	name = "smoke machine"
