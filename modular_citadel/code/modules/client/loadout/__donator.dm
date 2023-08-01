@@ -87,6 +87,14 @@
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
+/obj/item/clothing/suit/armor/light/kit/punk/labcoat/trailsworth
+	name = "salvaged medical labcoat" //modified from the already-custom armored labcoat sprite.
+	desc = "A mix of lightweight salvaged Brotherhood armor and an old labcoat. Not nearly as protective as it used to be, however. It seems to have blue medical crosses spray-painted on, and a name patch on the side. 'Trailsworth'."
+	icon_state = "armored_labcoat_trailsworth"
+	item_state = "armored_labcoat_trailsworth"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 /obj/item/melee/onehanded/club/fryingpan/saltspider
 	name = "well-cleaned frying pan"
 	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around. This one seems to be kept in remarkable condition. Along the outside edge of the pan is a series of engravings- it reads 'Dolorem Ipsum'"
@@ -963,6 +971,18 @@
 	new /obj/item/clothing/accessory/bos/seniorscribe(src)
 	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat(src)
 	new /obj/item/card/id/dogtag/radiantflash(src)
+
+/datum/gear/donator/kits/rainbyplays
+	name = "Trailsworth's Gear"
+	path = /obj/item/storage/box/large/custom_kit/rainbyplays
+	ckeywhitelist = list("rainbyplays")
+
+/obj/item/storage/box/large/custom_kit/rainbyplays/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat/trailsworth(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/melee/powered/ripper/dull(src)
 
 /datum/gear/donator/kits/risingstarslash
 	name = "Blue's Kit"

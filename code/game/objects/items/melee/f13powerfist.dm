@@ -183,6 +183,11 @@
 	off_item_state = "prewarrip_off"
 	force_on = 50
 
+/obj/item/melee/powered/ripper/dull
+	name = "worn ripper"
+	desc = "A Ripper vibroblade, cutting edges dulled from overuse. Still decent for cutting, though not as good as a well-maintained one."
+	force_on = 27 //it still gets the block. I think this makes sense.
+
 // Shishkebab backpack				The shishkebab weapon base unit
 /obj/item/shishkebabpack
 	name = "shishkebab backpack"
