@@ -176,6 +176,10 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 /obj/item/stack/sheet/metal/five
 	amount = 5
 
+GLOBAL_LIST_INIT(lead_recipes, list ( \
+	new/datum/stack_recipe("lead-lined artifact container", /obj/item/storage/box/artifactcontainer, 1, time = 30, on_floor = TRUE),
+	))
+
 /obj/item/stack/sheet/lead
 	name = "lead"
 	desc = "Sheets made out of lead."
@@ -203,6 +207,10 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 
 /obj/item/stack/sheet/lead/five
 	amount = 5
+
+/obj/item/stack/sheet/lead/get_main_recipes()
+	. = ..()
+	. += GLOB.lead_recipes
 
 /obj/item/stack/sheet/metal/cyborg
 	custom_materials = null

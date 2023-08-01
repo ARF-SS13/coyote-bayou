@@ -374,12 +374,16 @@
 
 // item traits
 #define TRAIT_NODROP "nodrop"
-#define TRAIT_PENANCE "penance" // died with the wretched thing
-#define TRAIT_PENANCE_COMPLETE "penance_complete" // held that wretched thing for a long time
 /// Dont put it in storage things, simple as
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
 /// Can't leave a storage!
 #define TRAIT_NO_STORAGE_REMOVE "TRAIT_NO_STORAGE_REMOVE"
+#define TRAIT_ARTIFACT_BLOCKER "TRAIT_ARTIFACT_BLOCKER"
+
+/// Artifact traits
+#define TRAIT_PENANCE "penance" // died with the wretched thing
+#define TRAIT_PENANCE_COMPLETE "penance_complete" // held that wretched thing for a long time
+#define TRAIT_ARTIFACT_IDENTIFY "artifact_identify" // always knows everything about artifacts
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

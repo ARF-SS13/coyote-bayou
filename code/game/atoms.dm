@@ -380,22 +380,30 @@
 
 /atom/proc/get_examine_name(mob/user)
 	var/list/ex_name[EXAMINE_LIST_LEN]
-	ex_name[EXAMINE_POSITION_ARTICLE] = "[article ? article : gender == PLURAL ? "some" : "\a"]"
-	ex_name[EXAMINE_POSITION_GRODY] = list()
-	ex_name[EXAMINE_POSITION_PREFIX]
+	ex_name[EXAMINE_POSITION_ARTICLE] = null
+	ex_name[EXAMINE_POSITION_GRODY] = null
+	ex_name[EXAMINE_POSITION_PREFIX] = null
 	ex_name[EXAMINE_POSITION_NAME] = "[src]"
-	ex_name[EXAMINE_POSITION_SUFFIX]
+	ex_name[EXAMINE_POSITION_SUFFIX] = null
 
-	SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, ex_name)
+	var/sigret = SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, ex_name)
+	if(CHECK_BITFIELD(sigret, COMPONENT_EXNAME_CHANGED))
+		if(blood_DNA && !istype(src, /obj/effect/decal))
+			ex_name[EXAMINE_POSITION_GRODY] = "blood-stained"
+		listclearnulls(ex_name)
+		var/outname = ex_name.Join(" ")
+		if(isnull(ex_name[EXAMINE_POSITION_ARTICLE]))
+			outname = "\a [outname]"
+		return outname
 
+	var/grode = ""
 	if(blood_DNA && !istype(src, /obj/effect/decal))
-		ex_name[EXAMINE_POSITION_GRODY] += "blood-stained"
+		grode = "blood-stained "
 
-	var/list/grode = ex_name[EXAMINE_POSITION_GRODY]
-	ex_name[EXAMINE_POSITION_GRODY] = LAZYLEN(grode) ? english_list(grode) : null
-	listclearnulls(ex_name)
-
-	return ex_name.Join(" ")
+	if(article)
+		return "[article] [grode][src]"
+	else
+		return "\a [src]"
 
 ///Generate the full examine string of this atom (including icon for goonchat)
 /atom/proc/get_examine_string(mob/user, thats = FALSE)

@@ -2005,8 +2005,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!BP)
 			BP = H.bodyparts[1]
 
-	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
-		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
+	if(!forced && damage > 0 && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
+		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 0.1)
 
 	switch(damagetype)
 		if(BRUTE)

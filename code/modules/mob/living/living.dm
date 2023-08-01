@@ -1153,9 +1153,10 @@
 	. = ..()
 
 	if(!amount || (amount < RAD_MOB_SKIN_PROTECTION))
-		return
+		if(!skip_protection)
+			return
 
-	amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
+	// amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
 	
 	if(!skip_protection)
 		if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))

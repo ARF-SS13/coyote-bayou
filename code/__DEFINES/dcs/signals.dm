@@ -444,12 +444,14 @@
 #define COMSIG_ITEM_GET_COST "get_cost"
 
 /// Artifact/effect signals
-#define COMSIG_ITEM_ARTIFACT_GET_EFFECTS "artifact_get_effects" // (datum/source, )
-#define COMSIG_ITEM_ARTIFACT_COMPONENT "artifact_component"     // just returns if theres this component there
-#define COMSIG_ITEM_ARTIFACT_EXISTS "artifact_exists"           // (datum/source, )
-#define COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE "artifact_make_unique" // (datum/source, )
-#define COMSIG_ITEM_ARTIFACT_IDENTIFIED "artifact_identified"   // (datum/source, )
-#define COMSIG_ITEM_ARTIFACT_ADD_EFFECT "artifact_add_effect"   // (datum/source, )
+#define COMSIG_ITEM_ARTIFACT_GET_EFFECTS "artifact_get_effects" // (datum/source, list/effect)
+#define COMSIG_ITEM_ARTIFACT_COMPONENT "artifact_component"     // returns the component. unused
+#define COMSIG_ITEM_ARTIFACT_EXISTS "artifact_exists"           // just returns if theres this component there
+#define COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE "artifact_make_unique" // (datum/source, datum/artifact_unique/AU)
+#define COMSIG_ITEM_ARTIFACT_IDENTIFIED "artifact_identified"   // (datum/source, mob/user)
+#define COMSIG_ITEM_ARTIFACT_ADD_EFFECT "artifact_add_effect"   // (datum/source, datum/artifact_effect/AE_path, list/parameters = list())
+#define COMSIG_ITEM_ARTIFACT_FINALIZE "artifact_finalize"       // tells the artifact we're done adding effects, and to crud it up, if applicable
+#define COMSIG_ITEM_ARTIFACT_READ_PARAMETERS "artifact_read_parameters"       // tells the artifact we're done adding effects, and to crud it up, if applicable
 
 #define COMSIG_ATOM_GET_VALUE "get_value"						/// returns the value of the atom
 

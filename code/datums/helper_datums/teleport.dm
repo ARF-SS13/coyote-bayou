@@ -102,7 +102,7 @@
 			zlevels = list(zlevel)
 		else
 			zlevels = SSmapping.levels_by_trait(ZTRAIT_STATION)
-	var/cycles = 1000
+	var/cycles = 10000
 	mainloop:
 		for(var/cycle in 1 to cycles)
 			// DRUNK DIALLING WOOOOOOOOO

@@ -20,11 +20,14 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_UNIQUE = 0,
 	)
 
-	var/spawn_chance = 0.1 // chance for an artifact to spawn per tick
-	var/use_valid_ball_spawner_chance = 75 // chance for an artifact to use a valid ball spawner
+	var/spawn_chance = 3 // chance for an artifact to spawn per tick
+	var/use_valid_ball_spawner_chance = 50 // chance for an artifact to use a valid ball spawner
 
-	var/buff_ratio_chance = 85 // chance for an artifact to use the buff ratio
-	var/buff_ratio = 0.5 // half will be buffs, half will be bad. rounds up. or down. i forget which
+	var/list/buffs_by_rarity = list(
+		ART_RARITY_COMMON = 1,
+		ART_RARITY_UNCOMMON = 2,
+		ART_RARITY_RARE = 3,
+	)
 	var/list/max_effects_by_rarity = list(
 		ART_RARITY_COMMON = 2,
 		ART_RARITY_UNCOMMON = 4,
@@ -56,9 +59,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/list/unique_templates = list()
 
 	var/list/all_effects = list()
-	var/list/all_effects_stripped = list()
 	var/list/bad_effects = list()
-	var/list/bad_effects_stripped = list()
 
 	var/list/allowed_effects_by_rarity = list(
 		ART_RARITY_COMMON = list(),
@@ -68,9 +69,9 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 	var/list/common_spawner_distribution = list(
 		ART_RARITY_COMMON = 100,
-		ART_RARITY_UNCOMMON = 10,
-		ART_RARITY_RARE = 1,
-		ART_RARITY_UNIQUE = 0.00000001, // lol
+		ART_RARITY_UNCOMMON = 50,
+		ART_RARITY_RARE = 10,
+		ART_RARITY_UNIQUE = 0.1,
 	)
 	var/list/uncommon_spawner_distribution = list(
 		ART_RARITY_COMMON = 25,
@@ -111,136 +112,221 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/obj/item/taster,
 		/obj/item/candle,
 		/obj/item/extinguisher/mini,
-		/obj/item/toy/plush,
+		/obj/item/toy/plush/carpplushie,
+		/obj/item/toy/plush/bubbleplush,
+		/obj/item/toy/plush/narplush/hugbox,
+		/obj/item/toy/plush/lizardplushie,
+		/obj/item/toy/plush/slimeplushie,
+		/obj/item/toy/plush/beeplushie,
+		/obj/item/toy/plush/mothplushie,
+		/obj/item/toy/plush/lampplushie,
+		/obj/item/toy/plush/box,
+		/obj/item/toy/plush/slaggy,
+		/obj/item/toy/plush/mr_buckety,
+		/obj/item/toy/plush/dr_scanny,
+		/obj/item/toy/plush/borgplushie,
+		/obj/item/toy/plush/borgplushie/medihound,
+		/obj/item/toy/plush/borgplushie/scrubpuppy,
+		/obj/item/toy/plush/aiplush,
+		/obj/item/toy/plush/snakeplushie,
+		/obj/item/toy/plush/mammal/fox,
+		/obj/item/toy/plush/mammal/fox/fuzzy,
+		/obj/item/toy/plush/catgirl/fermis,
+		/obj/item/toy/plush/hairball,
 		/obj/item/laser_pointer,
 		/obj/item/healthanalyzer,
 	)
 	var/list/unartifactible_items = list(
 		/obj/item/candle/tribal_torch,
+		/obj/item/toy/plush/mammal/fox/squishfox, // its too powerful
 	)
+	
+	var/identify_time = ART_IDENT_TIME
+	var/identify_max_delta = ART_IDENT_MAX_DELTA
+	var/identify_trait = TRAIT_ARTIFACT_IDENTIFY
 
-	var/blood_target_common_minimum = BLOOD_VOLUME_SYMPTOMS_MINOR
-	var/blood_target_uncommon_minimum = BLOOD_VOLUME_SYMPTOMS_ANNOYING
-	var/blood_target_rare_minimum = BLOOD_VOLUME_SYMPTOMS_WORST
-	var/blood_rate_common_maximum = 0.5
-	var/blood_rate_uncommon_maximum = 3
-	var/blood_rate_rare_maximum = 10
+	var/blood_target_good_common_min = BLOOD_VOLUME_SAFE
+	var/blood_target_good_common_max = BLOOD_VOLUME_SAFE
+	var/blood_target_good_uncommon_min = BLOOD_VOLUME_SAFE
+	var/blood_target_good_uncommon_max = BLOOD_VOLUME_SAFE
+	var/blood_target_good_rare_min = BLOOD_VOLUME_SAFE
+	var/blood_target_good_rare_max = BLOOD_VOLUME_SAFE
+	var/blood_target_bad_common_min = BLOOD_VOLUME_SYMPTOMS_ANNOYING
+	var/blood_target_bad_common_max = BLOOD_VOLUME_SAFE
+	var/blood_target_bad_uncommon_min = BLOOD_VOLUME_SYMPTOMS_DEBILITATING
+	var/blood_target_bad_uncommon_max = BLOOD_VOLUME_SYMPTOMS_WARN
+	var/blood_target_bad_rare_min = BLOOD_VOLUME_SYMPTOMS_WORST
+	var/blood_target_bad_rare_max = BLOOD_VOLUME_SYMPTOMS_ANNOYING
+	var/blood_rate_common_min = 1
+	var/blood_rate_common_max = 3
+	var/blood_rate_uncommon_min = 3
+	var/blood_rate_uncommon_max = 4
+	var/blood_rate_rare_min = 5
+	var/blood_rate_rare_max = 10
 	var/blood_discrete = 0.1
 
-	var/radiation_target_common_maximum = 1000
-	var/radiation_target_uncommon_maximum = 3000
-	var/radiation_target_rare_maximum = INFINITY
-	var/radiation_rate_common_maximum = 2
-	var/radiation_rate_common_minimum = 0
-	var/radiation_rate_uncommon_maximum = 5
-	var/radiation_rate_uncommon_minimum = 0
-	var/radiation_rate_rare_maximum = 10
-	var/radiation_rate_rare_minimum = 0
-	var/radiation_discrete = 0.1
+	var/radiation_target_bad_common_min = 600
+	var/radiation_target_bad_common_max = 1000
+	var/radiation_target_bad_uncommon_min = 1000
+	var/radiation_target_bad_uncommon_max = 3000
+	var/radiation_target_bad_rare_min = 2000
+	var/radiation_target_bad_rare_max = 10000
+	var/radiation_target_good_common_min = 400
+	var/radiation_target_good_common_max = 500
+	var/radiation_target_good_uncommon_min = 300
+	var/radiation_target_good_uncommon_max = 400
+	var/radiation_target_good_rare_min = 0
+	var/radiation_target_good_rare_max = 400
+	var/radiation_rate_common_min = 10
+	var/radiation_rate_common_max = 15
+	var/radiation_rate_uncommon_min = 15
+	var/radiation_rate_uncommon_max = 20
+	var/radiation_rate_rare_min = 5
+	var/radiation_rate_rare_max = 100
+	var/radiation_discrete = 1
 
-	var/health_common_maximum = 5
-	var/health_common_minimum = -10
-	var/health_uncommon_maximum = 10
-	var/health_uncommon_minimum = -20
-	var/health_rare_maximum = 50
-	var/health_rare_minimum = -90
+	var/health_bad_common_min = -2
+	var/health_bad_common_max = -5
+	var/health_bad_uncommon_min = -10
+	var/health_bad_uncommon_max = -25
+	var/health_bad_rare_min = -50
+	var/health_bad_rare_max = -75
+	var/health_good_common_max = 2
+	var/health_good_common_min = 5
+	var/health_good_uncommon_min = 5
+	var/health_good_uncommon_max = 15
+	var/health_good_rare_min = 5
+	var/health_good_rare_max = 75
 	var/health_discrete = 1
 
-	var/stamina_rate_common_maximum = 3
-	var/stamina_rate_common_minimum = -3
-	var/stamina_rate_uncommon_maximum = 5
-	var/stamina_rate_uncommon_minimum = -5
-	var/stamina_rate_rare_maximum = 10
-	var/stamina_rate_rare_minimum = -20
-	var/stamina_discrete = 1
+	var/stamina_bad_common_min = 6
+	var/stamina_bad_common_max = 8
+	var/stamina_bad_uncommon_min = 8
+	var/stamina_bad_uncommon_max = 10
+	var/stamina_bad_rare_min = 5
+	var/stamina_bad_rare_max = 65
+	var/stamina_good_common_min = -3
+	var/stamina_good_common_max = -1
+	var/stamina_good_uncommon_min = -5
+	var/stamina_good_uncommon_max = -3
+	var/stamina_good_rare_min = -65
+	var/stamina_good_rare_max = -3
+	var/stamina_discrete = 0.1
 
-	var/speed_common_maximum = 0.5
-	var/speed_common_minimum = -0.1
-	var/speed_uncommon_maximum = 1
-	var/speed_uncommon_minimum = -0.5
-	var/speed_rare_maximum = 3
-	var/speed_rare_minimum = -1
+	var/speed_bad_common_min = 0.2
+	var/speed_bad_common_max = 0.5
+	var/speed_bad_uncommon_min = 0.5
+	var/speed_bad_uncommon_max = 1
+	var/speed_bad_rare_min = 1
+	var/speed_bad_rare_max = 2
+	var/speed_good_common_min = -0.05
+	var/speed_good_common_max = -0.15
+	var/speed_good_uncommon_min = -0.15
+	var/speed_good_uncommon_max = -0.25
+	var/speed_good_rare_min = -0.25
+	var/speed_good_rare_max = -1 // lol
 	var/speed_discrete = 0.05
 
-	var/nutrition_target_common_maximum = NUTRITION_LEVEL_FULL
-	var/nutrition_rate_common_minimum = 1
-	var/nutrition_rate_common_maximum = 2
-	var/nutrition_target_uncommon_maximum = NUTRITION_LEVEL_FAT
-	var/nutrition_rate_uncommon_minimum = 1
-	var/nutrition_rate_uncommon_maximum = 3
-	var/nutrition_target_rare_maximum = NUTRITION_LEVEL_FAT * 2 // uwu~
-	var/nutrition_rate_rare_minimum = 2
-	var/nutrition_rate_rare_maximum = 20
+	var/nutrition_rate_bad_common_min = -2
+	var/nutrition_rate_bad_common_max = -1
+	var/nutrition_rate_bad_uncommon_min = -10
+	var/nutrition_rate_bad_uncommon_max = -5
+	var/nutrition_rate_bad_rare_min = -20
+	var/nutrition_rate_bad_rare_max = -10
+	var/nutrition_rate_good_common_min = 1
+	var/nutrition_rate_good_common_max = 2
+	var/nutrition_rate_good_uncommon_min = 3
+	var/nutrition_rate_good_uncommon_max = 5
+	var/nutrition_rate_good_rare_min = 10
+	var/nutrition_rate_good_rare_max = 20
 	var/nutrition_discrete = 1
 
-	var/damage_common_cutoff_minimum = 75
-	var/damage_uncommon_cutoff_minimum = 25
-	var/damage_rare_cutoff_minimum = 10
+	var/damage_common_cutoff_min = 50
+	var/damage_uncommon_cutoff_min = 25
+	var/damage_rare_cutoff_min = 10
 	var/damage_discrete = 0.1
 
 	var/damage_max_types_common = 1
 	var/damage_max_types_uncommon = 2
 	var/damage_max_types_rare = 3
 
-	var/damage_dps_brute_common_maximum = 1
-	var/damage_dps_brute_uncommon_maximum = 5
-	var/damage_dps_brute_rare_maximum = 10
+	var/damage_dps_brute_common_max = 0.5
+	var/damage_dps_brute_common_min = 0.3
+	var/damage_dps_brute_uncommon_max = 1
+	var/damage_dps_brute_uncommon_min = 0.5
+	var/damage_dps_brute_rare_max = 2
+	var/damage_dps_brute_rare_min = 0.5
 
-	var/damage_dps_burn_common_maximum = 1
-	var/damage_dps_burn_uncommon_maximum = 5
-	var/damage_dps_burn_rare_maximum = 10
+	var/damage_dps_burn_common_max = 0.5
+	var/damage_dps_burn_common_min = 0.3
+	var/damage_dps_burn_uncommon_max = 1
+	var/damage_dps_burn_uncommon_min = 0.5
+	var/damage_dps_burn_rare_max = 2
+	var/damage_dps_burn_rare_min = 0.5
 
-	var/damage_dps_toxin_common_maximum = 1
-	var/damage_dps_toxin_uncommon_maximum = 5
-	var/damage_dps_toxin_rare_maximum = 10
+	var/damage_dps_toxin_common_max = 0.5
+	var/damage_dps_toxin_common_min = 0.3
+	var/damage_dps_toxin_uncommon_max = 1
+	var/damage_dps_toxin_uncommon_min = 0.5
+	var/damage_dps_toxin_rare_max = 2
+	var/damage_dps_toxin_rare_min = 0.5
 
-	var/damage_dps_oxy_common_maximum = 2
-	var/damage_dps_oxy_uncommon_maximum = 5
-	var/damage_dps_oxy_rare_maximum = 10
+	var/damage_dps_oxy_common_max = 0.5
+	var/damage_dps_oxy_common_min = 0.3
+	var/damage_dps_oxy_uncommon_max = 1
+	var/damage_dps_oxy_uncommon_min = 0.5
+	var/damage_dps_oxy_rare_max = 2
+	var/damage_dps_oxy_rare_min = 0.5
 
-	var/damage_dps_clone_common_maximum = 2
-	var/damage_dps_clone_uncommon_maximum = 5
-	var/damage_dps_clone_rare_maximum = 10
+	var/damage_dps_clone_common_max = 0.5
+	var/damage_dps_clone_common_min = 0.3
+	var/damage_dps_clone_uncommon_max = 1
+	var/damage_dps_clone_uncommon_min = 0.5
+	var/damage_dps_clone_rare_max = 2
+	var/damage_dps_clone_rare_min = 0.5
 
-	var/damage_dps_brain_common_maximum = 2
-	var/damage_dps_brain_uncommon_maximum = 5
-	var/damage_dps_brain_rare_maximum = 10
+	var/damage_dps_brain_common_max = 0.5
+	var/damage_dps_brain_common_min = 0.3
+	var/damage_dps_brain_uncommon_max = 1
+	var/damage_dps_brain_uncommon_min = 0.5
+	var/damage_dps_brain_rare_max = 2
+	var/damage_dps_brain_rare_min = 0.5
 
-	var/heal_common_minimum_health = 50
-	var/heal_common_maximum_health = 100
-	var/heal_uncommon_minimum_health = 25
-	var/heal_uncommon_maximum_health = 100
-	var/heal_rare_minimum_health = 10
-	var/heal_rare_maximum_health = 100
+	var/heal_common_min_health = 50
+	var/heal_common_max_health = 100
+	var/heal_uncommon_min_health = 25
+	var/heal_uncommon_max_health = 100
+	var/heal_rare_min_health = 10
+	var/heal_rare_max_health = 100
 	var/heal_discrete = 0.1
 
-	var/heal_dps_brute_common_maximum = 0.1
-	var/heal_dps_brute_uncommon_maximum = 0.2
-	var/heal_dps_brute_rare_maximum = 0.5
+	var/heal_dps_brute_common = 0.1
+	var/heal_dps_brute_uncommon = 0.2
+	var/heal_dps_brute_rare = 0.5
 
-	var/heal_dps_burn_common_maximum = 0.1
-	var/heal_dps_burn_uncommon_maximum = 0.2
-	var/heal_dps_burn_rare_maximum = 0.5
+	var/heal_dps_burn_common = 0.1
+	var/heal_dps_burn_uncommon = 0.2
+	var/heal_dps_burn_rare = 0.5
 
-	var/heal_dps_toxin_common_maximum = 0.1
-	var/heal_dps_toxin_uncommon_maximum = 0.2
-	var/heal_dps_toxin_rare_maximum = 0.5
+	var/heal_dps_toxin_common = 0.1
+	var/heal_dps_toxin_uncommon = 0.2
+	var/heal_dps_toxin_rare = 0.5
 
-	var/heal_dps_oxy_common_maximum = 0.1
-	var/heal_dps_oxy_uncommon_maximum = 0.2
-	var/heal_dps_oxy_rare_maximum = 0.5
+	var/heal_dps_oxy_common = 0.1
+	var/heal_dps_oxy_uncommon = 0.2
+	var/heal_dps_oxy_rare = 0.5
 
-	var/heal_dps_clone_common_maximum = 0.1
-	var/heal_dps_clone_uncommon_maximum = 0.2
-	var/heal_dps_clone_rare_maximum = 0.5
+	var/heal_dps_clone_common = 0.1
+	var/heal_dps_clone_uncommon = 0.2
+	var/heal_dps_clone_rare = 0.5
 
-	var/heal_dps_brain_common_maximum = 0.1
-	var/heal_dps_brain_uncommon_maximum = 0.2
-	var/heal_dps_brain_rare_maximum = 0.5
+	var/heal_dps_brain_common = 0.1
+	var/heal_dps_brain_uncommon = 0.2
+	var/heal_dps_brain_rare = 0.5
 
-	var/damage_max_types_common = 1
-	var/damage_max_types_uncommon = 2
-	var/damage_max_types_rare = 3
+	var/heal_max_types_common = 1
+	var/heal_max_types_uncommon = 2
+	var/heal_max_types_rare = 3
 
 	var/list/prefixes_speed_good = list()
 	var/list/prefixes_speed_bad = list()
@@ -302,31 +388,41 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 	var/list/prefixes_unidentified = list()
 
+	var/art_effect_colorwobble_delay = 6 SECONDS
+	var/art_effect_colorwobble_length = 6 SECONDS
+
+	var/debug_easy_identify = FALSE
+	var/debug_insta_identify = FALSE
+	var/debug_spawn_message_admemes = FALSE
+
 /datum/controller/subsystem/processing/artifacts/Initialize(start_timeofday)
 	populate_affix_lists()
 	populate_effect_lists()
 	populate_artifactibles()
+	if(debug_insta_identify || debug_easy_identify || debug_spawn_message_admemes || spawn_chance > 25)
+		to_chat(world, span_phobia("Dan left the debug vars on, point and laugh!"))
 	. = ..()
 
 /datum/controller/subsystem/processing/artifacts/stat_entry(msg)
-	var/allarts = LAZYLEN(all_artifacts[ART_RARITY_COMMON]) + LAZYLEN(all_artifacts[ART_RARITY_UNCOMMON]) + LAZYLEN(all_artifacts[ART_RARITY_RARE])
-	var/artc = LAZYLEN(all_artifacts[ART_RARITY_COMMON])
-	var/artu = LAZYLEN(all_artifacts[ART_RARITY_UNCOMMON])
-	var/artr = LAZYLEN(all_artifacts[ART_RARITY_RARE])
+	var/allarts = (LAZYACCESS(number_of_artifacts, ART_RARITY_COMMON)) + (LAZYACCESS(number_of_artifacts, ART_RARITY_UNCOMMON)) + (LAZYACCESS(number_of_artifacts, ART_RARITY_RARE))
+	var/artc = (LAZYACCESS(number_of_artifacts, ART_RARITY_COMMON))
+	var/artu = (LAZYACCESS(number_of_artifacts, ART_RARITY_UNCOMMON))
+	var/artr = (LAZYACCESS(number_of_artifacts, ART_RARITY_RARE))
 	var/plen = LAZYLEN(processing)
-	var/alleffects = LAZYLEN(all_effects[ART_RARITY_COMMON]) + LAZYLEN(all_effects[ART_RARITY_UNCOMMON]) + LAZYLEN(all_effects[ART_RARITY_RARE])
-	var/aec = LAZYLEN(all_effects[ART_RARITY_COMMON])
-	var/aeu = LAZYLEN(all_effects[ART_RARITY_UNCOMMON])
-	var/aer = LAZYLEN(all_effects[ART_RARITY_RARE])
+	var/alleffects = (LAZYACCESS(number_of_effects, ART_RARITY_COMMON)) + (LAZYACCESS(number_of_effects, ART_RARITY_UNCOMMON)) + (LAZYACCESS(number_of_effects, ART_RARITY_RARE))
+	var/aec = (LAZYACCESS(number_of_effects, ART_RARITY_COMMON))
+	var/aeu = (LAZYACCESS(number_of_effects, ART_RARITY_UNCOMMON))
+	var/aer = (LAZYACCESS(number_of_effects, ART_RARITY_RARE))
 	msg = "A:[allarts]([artc]:[artu]:[artr]-P:[plen])/E[alleffects]([aec]:[aeu]:[aer]):-C:[round(cost,0.005)]"
-	return ..()
+	return msg
 
 /datum/controller/subsystem/processing/artifacts/fire(resumed = 0)
+	if(prob(spawn_chance))
+		INVOKE_ASYNC(src, .proc/attempt_spawn_artifact)
 	if (!resumed)
 		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
 	var/list/current_run = currentrun
-
 	while(current_run.len)
 		var/datum/thing = current_run[current_run.len]
 		current_run.len--
@@ -335,27 +431,33 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		else if(thing.process(wait) == PROCESS_KILL)
 			// fully stop so that a future START_PROCESSING will work
 			STOP_PROCESSING(src, thing)
-		if (MC_TICK_CHECK)
+		if(MC_TICK_CHECK)
 			return
-	attempt_spawn_artifact()
 
 /datum/controller/subsystem/processing/artifacts/proc/attempt_spawn_artifact()
-	if(!prob(spawn_chance))
-		return
-	var/turf/put_here
-	if(prob(use_valid_ball_spawner_chance))
-		var/coordz = pick(SSvalidball.valid_ball_spawner_coords)
-		put_here = coords2turf(coordz)
-		if(!isturf(put_here))
-			return // shrug
-	else
-		put_here = find_safe_turf(zlevels = 1)
-
-
+	var/turf/put_here = get_artifactible_turf()
+	if(!isturf(put_here))
+		return // shrug
 	var/randomitem = pick(artifactible_items)
 	if(!ispath(randomitem))
 		return
-	var/obj/item/chunk = new randomitem()
+	var/obj/item/chunk = new randomitem(put_here)
+	for(var/atom/movable/AM in get_turf(chunk))
+		if(SEND_SIGNAL(AM, COMSIG_CONTAINS_STORAGE))
+			SEND_SIGNAL(AM, COMSIG_TRY_STORAGE_INSERT, chunk)
+			break
+		if(istype(AM, /obj/structure/closet))
+			chunk.forceMove(AM)
+	chunk.w_class = clamp(chunk.w_class, WEIGHT_CLASS_SMALL, WEIGHT_CLASS_NORMAL)
+	artifactify(chunk, overrides = list(ARTVAR_CRUD_IT_UP = TRUE))
+	message_admins("Spawned [chunk] at [ADMIN_VERBOSEJMP(put_here)].")
+	SEND_SIGNAL(chunk, COMSIG_ITEM_ARTIFACT_FINALIZE)
+
+/datum/controller/subsystem/processing/artifacts/proc/get_artifactible_turf()
+	if(prob(use_valid_ball_spawner_chance))
+		return coords2turf(pick(SSvalidball.valid_ball_spawner_coords))
+	else
+		return find_safe_turf(zlevels = ARTIFACT_Z_LEVELS, extended_safety_checks = TRUE)
 
 /datum/controller/subsystem/processing/artifacts/proc/populate_artifactibles()
 	var/list/output = list()
@@ -373,13 +475,11 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		var/kye = AE.kind
 		var/isbad = AE.is_only_harmful
 		LAZYSET(all_effects, kye, AE)
-		LAZYADD(all_effects_stripped, kye)
 		if(isbad)
 			LAZYSET(bad_effects, kye, AE)
-			LAZYADD(bad_effects_stripped, kye)
 		if(AE.special_spawn_only)
 			continue
-		switch(AE.minimum_rarity_to_spawn)
+		switch(AE.min_rarity_to_spawn)
 			if(ART_RARITY_COMMON)
 				allowed_effects_by_rarity[ART_RARITY_COMMON][kye] = AE.chance_weight
 				allowed_effects_by_rarity[ART_RARITY_UNCOMMON][kye] = AE.chance_weight
@@ -389,6 +489,10 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 				allowed_effects_by_rarity[ART_RARITY_RARE][kye] = AE.chance_weight
 			if(ART_RARITY_RARE)
 				allowed_effects_by_rarity[ART_RARITY_RARE][kye] = AE.chance_weight
+	for(var/unq in subtypesof(/datum/artifact_unique))
+		var/datum/artifact_unique/AQ = new unq(src)
+		var/kye = AQ.key
+		LAZYSET(unique_templates, kye, AQ)
 
 
 /datum/controller/subsystem/processing/artifacts/proc/populate_affix_lists()
@@ -458,10 +562,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/datum/artifact_unique/unique_template = LAZYACCESS(unique_templates, unique_tag)
 	if(!istype(unique_template))
 		CRASH("uniqueify() called with invalid unique tag [unique_tag]!!!!!!!!!!!!!!!!!!!!!!!")
-	var/list/effects = unique_template.get_unique_effects(thing)
-	effectify(thing, effects)
-	sig_reg(thing)
-	catalogue_artifact()
+	overrides |= unique_template.get_unique_effects() // this is the important thing =3
 
 /datum/controller/subsystem/processing/artifacts/proc/roll_unique(obj/item/thing)
 	if(!isitem(thing))
@@ -484,33 +585,64 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 /datum/controller/subsystem/processing/artifacts/proc/artifactify(obj/item/thing, rarity_class = ART_RARITY_COMMON, rarity_override, list/overrides = list())
 	if(!isitem(thing))
 		CRASH("artifactify() called on non-item! yeah it only works on items.")
+	if(!islist(overrides))
+		overrides = list()
 	///first, generate a rarity!
+	if(!SEND_SIGNAL(thing, COMSIG_ITEM_ARTIFACT_EXISTS))
+		thing.AddComponent(/datum/component/artifact) // welcome to life, little artifact!
 	var/rarity = ART_RARITY_COMMON
 	if(rarity_override)
 		rarity = rarity_override
 	else
 		rarity = roll_rarity(rarity_class)
-	if(rarity >= ART_RARITY_UNIQUE)
+	if(rarity == ART_RARITY_UNIQUE)
 		uniqueify(thing, overrides)
-		return
-	var/datum/artifact_unique
-	var/list/effectlist = roll_effects(rarity, thing, overrides)
-	var/rolled_buff = prob(LAZYACCESS(helpful_chances, rarity))
-	var/list/parms = generate_override_lists(effectlist, rolled_buff, overrides)
+	if(!LAZYACCESS(overrides, ARTCOMP_PREROLLED))
+		if(rarity == ART_RARITY_UNIQUE)
+			uniqueify(thing, overrides)
+			return
+		var/num_buffs = LAZYACCESS(buffs_by_rarity, rarity)
+		roll_effects(rarity, thing, overrides, num_buffs)
 	/// now, roll some effects
 	/// check if our item has an artifact component
-	if(!SEND_SIGNAL(thing, COMSIG_ITEM_ARTIFACT_EXISTS))
-		AddComponent(thing, /datum/component/artifact) // welcome to life, little artifact!
 	/// and now the actual artifactification!
-	effectify(thing, effectlist, parms)
+	effectify(thing, overrides)
 	sig_reg(thing)
-	catalogue_artifact(thing, effectlist, rarity)
+	catalogue_artifact(thing, overrides, rarity)
 
-/datum/controller/subsystem/processing/artifacts/proc/effectify(obj/item/thing, list/effectlist, list/parms, datum/artifact_unique/unique)
-	for(var/fx in effectlist)
-		SEND_SIGNAL(thing, COMSIG_ITEM_ARTIFACT_ADD_EFFECT, fx, LAZYACCESS(parms, fx))
-	if(istype(unique, /datum/artifact_unique))
-		SEND_SIGNAL(thing, COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE, unique)
+/datum/controller/subsystem/processing/artifacts/proc/effectify(obj/item/thing, list/parameters)
+	SEND_SIGNAL(thing, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, parameters)
+
+/datum/controller/subsystem/processing/artifacts/proc/roll_effects(rarity = ART_RARITY_COMMON,  obj/item/thing, list/overrides, buffs = 0)
+	if(!islist(overrides))
+		CRASH("roll_effects() called with non-list overrides!!!!!!!!!!!!!!!!!!!!!!!!")
+	var/number_of_effects = LAZYACCESS(max_effects_by_rarity, rarity)
+	var/list/effect_pool = list()
+	var/list/good_pool = list()
+	var/list/rarity_effects = LAZYACCESS(allowed_effects_by_rarity, rarity)
+	for(var/fx_path in rarity_effects) // todo: this
+		var/datum/artifact_effect/AE = LAZYACCESS(all_effects, fx_path)
+		if(AE.chance_weight <= 0)
+			continue
+		if(AE.special_spawn_only)
+			continue
+		LAZYSET(effect_pool, AE.kind, AE.chance_weight)
+		if(AE.is_only_harmful)
+			continue
+		LAZYSET(good_pool, AE.kind, AE.chance_weight)
+
+	// var/list/only_effects = overrides & allowed_effects_by_rarity[rarity]
+	for(var/i in 1 to min(number_of_effects, LAZYLEN(effect_pool)))
+		if(!LAZYLEN(effect_pool)) // we... ran out?
+			overrides[ARTMOD_RADIATION] = list() // fuck it, its radioactive
+			break
+		var/rolled_effect = buffs >= 1 ? pickweight(good_pool) : pickweight(effect_pool)
+		if(!islist(LAZYACCESS(overrides, rolled_effect)))
+			overrides[rolled_effect] = list()
+		overrides[rolled_effect][ARTVAR_IS_BUFF] = !!buffs
+		buffs = max(buffs - 1, 0)
+		effect_pool -= rolled_effect
+		good_pool -= rolled_effect
 
 /datum/controller/subsystem/processing/artifacts/proc/catalogue_artifact(obj/item/thing, list/effectlist, rarity, unique_tag)
 	if(unique_tag)
@@ -551,55 +683,6 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		if(istype(AU))
 			AU.num_available = min(AU.num_available + 1, initial(AU.num_available))
 
-/datum/controller/subsystem/processing/artifacts/proc/generate_override_lists(list/effectlist, rolled_buff, list/overrides = list())
-	var/list/parm_out = list()
-	for(var/fx in effectlist)
-		parm_out[fx] = list()
-		if(rolled_buff)
-			parm_out[fx][ARTVAR_IS_BUFF] = TRUE
-		if(fx in overrides)
-			parm_out[fx] |= overrides[fx]
-	return parm_out
-
-/datum/controller/subsystem/processing/artifacts/proc/roll_effects(rarity = ART_RARITY_COMMON, obj/item/thing, list/overrides = list())
-	var/list/effectlist = list()
-	var/max_effects = LAZYACCESS(max_effects_by_rarity, rarity)
-	var/min_effects = LAZYACCESS(min_effects_by_rarity, rarity)
-	var/number_of_effects = rand(round(max_effects * 0.5), max_effects)
-	for(var/over_fx in overrides)
-		if(over_fx in all_effects)
-			effectlist += over_fx
-	/// now adjust the number of effects based on the overrides
-	if(LAZYLEN(effectlist) >= number_of_effects)
-		return effectlist // all done!
-	number_of_effects -= LAZYLEN(effectlist)
-	var/effect_pool = filter_effect_pool(rarity, thing, LAZYACCESS(allowed_effects_by_rarity, rarity))
-	var/num_buffs = 0
-	if(prob(buff_ratio_chance))
-		num_buffs = round(number_of_effects * buff_ratio)
-	for(var/i in 1 to min(number_of_effects, LAZYLEN(effect_pool)))
-		if(!LAZYLEN(effect_pool)) // we... ran out?
-			effectlist += ARTMOD_RADIATION // fuck it, its radioactive
-			break
-		var/rolled_effect = pickweight(effect_pool)
-		var/datum/artifact_effect/effect = LAZYACCESS(all_effects, rolled_effect)
-		if(!effect.allow_dupes)
-			effect_pool -= rolled_effect
-		effectlist += rolled_effect
-	return effectlist
-
-/datum/controller/subsystem/processing/artifacts/proc/filter_effect_pool(rarity = ART_RARITY_COMMON, obj/item/thing, list/effects = list())
-	if(!LAZYLEN(effects))
-		return list(ARTMOD_RADIATION)
-	var/fx_puddle = list()
-	for(var/fx in effects) // todo: this
-		// if(rolled_buff && (fx in bad_effects))
-		// 	fx_puddle -= fx
-		var/datum/artifact_effect/effect = LAZYACCESS(all_effects, fx)
-		// if(!effect.thing_can_take_effect(thing))
-		// 	fx_puddle -= fx
-		fx_puddle[fx] = effect.chance_weight
-	return fx_puddle
 
 /datum/controller/subsystem/processing/artifacts/proc/roll_rarity(rarity_class = ART_RARITY_COMMON)
 	var/rareness = ART_RARITY_COMMON
@@ -641,9 +724,12 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 /datum/artifact_unique/proc/generate_base_overrides()
 	base_overrides[ART_UNIQUE_TAG] = "[key]" // for getting the right vars n shit
+	base_overrides[ARTCOMP_PREROLLED] = TRUE // for getting the right vars n shit
 
-/datum/artifact_unique/proc/get_unique_effects()
-	return list()
+/datum/artifact_unique/proc/get_unique_effects(list/overrides)
+	if(!islist(overrides))
+		CRASH("get_unique_effects() called with non-list overrides!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	overrides |= base_overrides
 
 /datum/artifact_unique/apotheosis
 	key = ART_UNIQUE_APOTHEOSIS
@@ -672,48 +758,40 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/nut_heal =    0.5
 	var/max_nut =     NUTRITION_LEVEL_FED
 
-/datum/artifact_unique/apotheosis/get_unique_effects()
-	var/list/heal_vars = list(
-		ARTVAR_BRUTE = round(rand(0.1, brute_heal)),
-		ARTVAR_BURN = round(rand(0.1, burn_heal)),
-		ARTVAR_TOXIN = round(rand(0.1, tox_heal)),
-		ARTVAR_OXY = round(rand(0.1, oxy_heal)),
-		ARTVAR_CLONE = round(rand(0.1, clone_heal)),
-		ARTVAR_BRAIN = round(rand(0.1, brain_heal)),
-		ARTVAR_MIN_HEALTH = min_heal,
-		ARTVAR_MAX_HEALTH = max_heal,
-	)
-	var/list/stam_vars = list(
-		ARTVAR_STAMINA_ADJUSTMENT = round(rand(0.1, stam_heal)),
-	)
-	var/list/blood_vars = list(
-		ARTVAR_BLOOD_ADJUSTMENT = round(rand(0.1, blood_heal)),
-		ARTVAR_TARGET_BLOOD = blood_max,
-	)
-	var/list/rad_vars = list(
-		ARTVAR_RADIATION_ADJUSTMENT = round(rand(0.1, rad_heal)),
-		ARTVAR_TARGET_RADIATION = rad_target,
-	)
-	var/list/speed_vars = list(
-		ARTVAR_SPEED_ADJUSTMENT = round(rand(0.1, speed_up)),
-	)
-	var/list/nut_vars = list(
-		ARTVAR_NUTRITION_ADJUSTMENT = round(rand(0.1, nut_heal)),
-		ARTVAR_TARGET_NUTRITION = max_nut,
-	)
-	var/list/hp_vars = list(
-		ARTVAR_HP_CHANGE = max_hp,
-	)
-	var/list/overrides = list(
-		ARTMOD_MAX_HP =	hp_vars.Copy(),
-		ARTMOD_SPEED = speed_vars.Copy(),
-		ARTMOD_PASSIVE_HEAL = heal_vars.Copy(),
-		ARTMOD_STAMINA = stam_vars.Copy(),
-		ARTMOD_RADIATION = rad_vars.Copy(),
-		ARTMOD_BLOOD = blood_vars.Copy(),
-		ARTMOD_FEEDER = nut_vars.Copy(),
-	)
-	return overrides
+/datum/artifact_unique/apotheosis/get_unique_effects(list/overrides)
+	. = ..()
+	if(!.)
+		CRASH("get_unique_effects() called with non-list overrides!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	overrides[ARTMOD_PASSIVE_HEAL] = list()
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BRUTE] = round(rand(0.1, brute_heal))
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BURN] = round(rand(0.1, burn_heal))
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_TOXIN] = round(rand(0.1, tox_heal))
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_OXY] = round(rand(0.1, oxy_heal))
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_CLONE] = round(rand(0.1, clone_heal))
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BRAIN] = round(rand(0.1, brain_heal))
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MIN_HEALTH] = min_heal
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MAX_HEALTH] = max_heal
+
+	overrides[ARTMOD_STAMINA] = list()
+	overrides[ARTMOD_STAMINA][ARTVAR_STAMINA_ADJUSTMENT] = round(rand(0.1, stam_heal))
+
+	overrides[ARTMOD_BLOOD] = list()
+	overrides[ARTMOD_BLOOD][ARTVAR_BLOOD_ADJUSTMENT] = round(rand(0.1, blood_heal))
+	overrides[ARTMOD_BLOOD][ARTVAR_TARGET_BLOOD] = blood_max
+
+	overrides[ARTMOD_RADIATION] = list()
+	overrides[ARTMOD_RADIATION][ARTVAR_RADIATION_ADJUSTMENT] = round(rand(0.1, rad_heal))
+	overrides[ARTMOD_RADIATION][ARTVAR_TARGET_RADIATION] = rad_target
+
+	overrides[ARTMOD_RADIATION] = list()
+	overrides[ARTMOD_RADIATION][ARTVAR_SPEED_ADJUSTMENT] = round(rand(0.1, speed_up))
+
+	overrides[ARTMOD_FEEDER] = list()
+	overrides[ARTMOD_FEEDER][ARTVAR_NUTRITION_ADJUSTMENT] = round(rand(0.1, nut_heal))
+	overrides[ARTMOD_FEEDER][ARTVAR_TARGET_NUTRITION] = max_nut
+
+	overrides[ARTMOD_FEEDER] = list()
+	overrides[ARTMOD_FEEDER][ARTVAR_HP_CHANGE] = max_hp
 
 /datum/artifact_unique/perfection
 	key = ART_UNIQUE_PERFECTION
@@ -725,47 +803,53 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	icon_state = "pustishka_q"
 	value = 6000
 	var/max_mod = 2
-	var/min_mod = 1.5
+	var/min_mod = 1
 
-/datum/artifact_unique/perfection/get_unique_effects()
+/datum/artifact_unique/perfection/get_unique_effects(list/overrides)
+	. = ..()
+	if(!.)
+		CRASH("get_unique_effects() called with non-list overrides!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 	var/effect = pick(SSartifacts.all_effects - SSartifacts.bad_effects)
-	var/list/output = list()
-	var/list/best_effects = list()
 	var/multiplier = rand(min_mod, max_mod)
 	switch(effect)
 		if(ARTMOD_BLOOD)
-			best_effects[ARTVAR_BLOOD_ADJUSTMENT] = SSartifacts.blood_rate_rare_maximum * multiplier
-			best_effects[ARTVAR_TARGET_BLOOD] = BLOOD_VOLUME_NORMAL
+			overrides[ARTMOD_BLOOD] = list()
+			overrides[ARTMOD_BLOOD][ARTVAR_BLOOD_ADJUSTMENT] = SSartifacts.blood_rate_rare_max * multiplier
+			overrides[ARTMOD_BLOOD][ARTVAR_TARGET_BLOOD] = BLOOD_VOLUME_NORMAL
 		if(ARTMOD_FEEDER)
-			best_effects[ARTVAR_NUTRITION_ADJUSTMENT] = SSartifacts.nutrition_rate_rare_maximum * multiplier
-			best_effects[ARTVAR_TARGET_NUTRITION] = NUTRITION_LEVEL_FAT
+			overrides[ARTMOD_FEEDER] = list()
+			overrides[ARTMOD_FEEDER][ARTVAR_NUTRITION_ADJUSTMENT] = SSartifacts.nutrition_rate_good_rare_max * multiplier
+			overrides[ARTMOD_FEEDER][ARTVAR_TARGET_NUTRITION] = NUTRITION_LEVEL_FAT
 		if(ARTMOD_MAX_HP)
-			best_effects[ARTVAR_HP_CHANGE] = SSartifacts.health_rare_maximum * multiplier
+			overrides[ARTMOD_MAX_HP] = list()
+			overrides[ARTMOD_MAX_HP][ARTVAR_HP_CHANGE] = SSartifacts.health_good_rare_max * multiplier
 		if(ARTMOD_PASSIVE_HEAL)
+			overrides[ARTMOD_PASSIVE_HEAL] = list()
 			switch(rand(1, 6))
 				if(1)
-					best_effects[ARTVAR_BRUTE] = SSartifacts.heal_dps_brute_rare_maximum * multiplier
+					overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BRUTE] = SSartifacts.heal_dps_brute_rare * multiplier
 				if(2)
-					best_effects[ARTVAR_BURN] = SSartifacts.heal_dps_burn_rare_maximum * multiplier
+					overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BURN] = SSartifacts.heal_dps_burn_rare * multiplier
 				if(3)
-					best_effects[ARTVAR_TOXIN] = SSartifacts.heal_dps_toxin_rare_maximum * multiplier
+					overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_TOXIN] = SSartifacts.heal_dps_toxin_rare * multiplier
 				if(4)
-					best_effects[ARTVAR_OXY] = SSartifacts.heal_dps_oxy_rare_maximum * multiplier
+					overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_OXY] = SSartifacts.heal_dps_oxy_rare * multiplier
 				if(5)
-					best_effects[ARTVAR_CLONE] = SSartifacts.heal_dps_clone_rare_maximum * multiplier
+					overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_CLONE] = SSartifacts.heal_dps_clone_rare * multiplier
 				if(6)
-					best_effects[ARTVAR_BRAIN] = SSartifacts.heal_dps_brain_rare_maximum * multiplier
-			best_effects[ARTVAR_MIN_HEALTH] = -100
-			best_effects[ARTVAR_MAX_HEALTH] = 200
+					overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BRAIN] = SSartifacts.heal_dps_brain_rare * multiplier
+			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MIN_HEALTH] = -100
+			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MAX_HEALTH] = 200
 		if(ARTMOD_RADIATION)
-			best_effects[ARTVAR_RADIATION_ADJUSTMENT] = SSartifacts.radiation_rate_rare_maximum * multiplier
-			best_effects[ARTVAR_TARGET_RADIATION] = 0
+			overrides[ARTMOD_RADIATION] = list()
+			overrides[ARTMOD_RADIATION][ARTVAR_RADIATION_ADJUSTMENT] = SSartifacts.radiation_rate_rare_max * multiplier
+			overrides[ARTMOD_RADIATION][ARTVAR_TARGET_RADIATION] = 0
 		if(ARTMOD_SPEED)
-			best_effects[ARTVAR_SLOWDOWN] = SSartifacts.speed_rare_maximum * multiplier
+			overrides[ARTMOD_SPEED] = list()
+			overrides[ARTMOD_SPEED][ARTVAR_SPEED_ADJUSTMENT] = SSartifacts.speed_good_rare_max * multiplier
 		if(ARTMOD_STAMINA)
-			best_effects[ARTVAR_STAMINA_ADJUSTMENT] = SSartifacts.stamina_rate_rare_maximum * multiplier
-	output[effect] = best_effects
-	return output
+			overrides[ARTMOD_STAMINA] = list()
+			overrides[ARTMOD_STAMINA][ARTVAR_STAMINA_ADJUSTMENT] = SSartifacts.stamina_good_rare_max * multiplier
 
 /datum/artifact_unique/penance
 	key = ART_UNIQUE_PENANCE
@@ -792,45 +876,34 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/nut_eat =    -0.5
 	var/max_nut =     0
 
-/datum/artifact_unique/penance/get_unique_effects()
-	var/list/harm_vars = list(
-		ARTVAR_BRUTE = brute_harm,
-		ARTVAR_BURN = burn_harm,
-		ARTVAR_TOXIN = tox_harm,
-		ARTVAR_OXY = oxy_harm,
-		ARTVAR_MIN_HEALTH = min_damage,
-	)
-	var/list/stam_vars = list(
-		ARTVAR_STAMINA_ADJUSTMENT = stam_harm,
-	)
-	var/list/blood_vars = list(
-		ARTVAR_BLOOD_ADJUSTMENT = blood_heal,
-		ARTVAR_TARGET_BLOOD = blood_max,
-	)
-	var/list/rad_vars = list(
-		ARTVAR_RADIATION_ADJUSTMENT = rad_heal,
-		ARTVAR_TARGET_RADIATION = rad_target,
-	)
-	var/list/speed_vars = list(
-		ARTVAR_SPEED_ADJUSTMENT = speed_down,
-	)
-	var/list/nut_vars = list(
-		ARTVAR_NUTRITION_ADJUSTMENT = nut_eat,
-		ARTVAR_TARGET_NUTRITION = max_nut,
-	)
-	var/list/hp_vars = list(
-		ARTVAR_HP_CHANGE = max_hp,
-	)
-	var/list/overrides = list(
-		ARTMOD_MAX_HP =	hp_vars.Copy(),
-		ARTMOD_SPEED = speed_vars.Copy(),
-		ARTMOD_PASSIVE_DOT_RANDOM = harm_vars.Copy(),
-		ARTMOD_STAMINA = stam_vars.Copy(),
-		ARTMOD_RADIATION = rad_vars.Copy(),
-		ARTMOD_BLOOD = blood_vars.Copy(),
-		ARTMOD_FEEDER = nut_vars.Copy(),
-	)
-	return overrides
+/datum/artifact_unique/penance/get_unique_effects(list/overrides)
+	. = ..()
+	if(!.)
+		CRASH("get_unique_effects() called with non-list overrides!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	
+	overrides[ARTMOD_PASSIVE_DOT] = list()
+	overrides[ARTMOD_PASSIVE_DOT][ARTVAR_BRUTE] = brute_harm
+	overrides[ARTMOD_PASSIVE_DOT][ARTVAR_BURN] = burn_harm
+	overrides[ARTMOD_PASSIVE_DOT][ARTVAR_TOXIN] = tox_harm
+	overrides[ARTMOD_PASSIVE_DOT][ARTVAR_OXY] = oxy_harm
+	overrides[ARTMOD_PASSIVE_DOT][ARTVAR_MIN_HEALTH] = min_damage
+
+	overrides[ARTMOD_PASSIVE_HEAL] = list()
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BLOOD_ADJUSTMENT] = blood_heal
+	overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_TARGET_BLOOD] = blood_max
+
+	overrides[ARTMOD_RADIATION] = list()
+	overrides[ARTMOD_RADIATION][ARTVAR_RADIATION_ADJUSTMENT] = rad_heal
+	overrides[ARTMOD_RADIATION][ARTVAR_TARGET_RADIATION] = rad_target
+
+	overrides[ARTMOD_SPEED] = list()
+	overrides[ARTMOD_SPEED][ARTVAR_SPEED_ADJUSTMENT] = speed_down
+
+	overrides[ARTMOD_STAMINA] = list()
+	overrides[ARTMOD_STAMINA][ARTVAR_STAMINA_ADJUSTMENT] = stam_harm
+
+	overrides[ARTMOD_FEEDER] = list()
+	overrides[ARTMOD_FEEDER][ARTVAR_NUTRITION_ADJUSTMENT] = nut_eat
 
 /datum/artifact_unique/bubble
 	key = ART_UNIQUE_BUBBLE
@@ -845,10 +918,10 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/nut_target = NUTRITION_LEVEL_FAT * 2
 	var/nut_rate = 4
 
-/datum/artifact_unique/penance/get_unique_effects()
+/datum/artifact_unique/bubble/get_unique_effects()
 	var/list/nut_vars = list(
-		ARTVAR_NUTRITION_ADJUSTMENT = nut_eat,
-		ARTVAR_TARGET_NUTRITION = max_nut,
+		ARTVAR_NUTRITION_ADJUSTMENT = nut_rate,
+		ARTVAR_TARGET_NUTRITION = nut_target,
 	)
 	var/list/overrides = list(
 		ARTMOD_FEEDER = nut_vars.Copy(),

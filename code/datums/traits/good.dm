@@ -1053,3 +1053,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just...REALLY don't run into things."
 	value = 3
 	mob_trait = TRAIT_SUPER_ZOOMIES
+
+/datum/quirk/artifact_identify
+	name = "Artifact Hunter"
+	desc = "You have a keen eye for identifying magical otherworldly trash! You can identify artifacts with a glance."
+	value = 4
+	mob_trait = TRAIT_ARTIFACT_IDENTIFY
+	gain_text = span_notice("You feel perceptive!.")
+	lose_text = span_danger("You feel imperceptive.")
+	locked =  FALSE
+
+
