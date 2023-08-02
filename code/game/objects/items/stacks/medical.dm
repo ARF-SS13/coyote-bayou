@@ -605,6 +605,15 @@
 	cost = 250
 	merge_type = /obj/item/stack/medical/gauze/cyborg
 
+/obj/item/stack/medical/gauze/second_wind
+	name = "tough film"
+	singular_name = "tough film"
+	desc = "A wad of goop that, when spread over a patch of skin (or cyberskin), forms a tough oily film that prevents bloodloss."
+	covering_hitpoints = 3
+	heal_per_tick = 0.01
+	bandage_power = 0.01
+	is_bandage = TRUE
+
 /// ...
 /*
 /obj/item/stack/medical/gauze/lick

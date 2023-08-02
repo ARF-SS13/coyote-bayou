@@ -940,3 +940,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("You feel like a winner!")
 	lose_text = span_danger("You feel like a loser!")
 	locked =  FALSE
+
+/datum/quirk/hardcore
+	name = "Hardcore"
+	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
+		and the only way you'll be able to live again is if someone finds and revives your body! Furthermore, you're unlikely to \
+		recieve any sort of divine intervention if you die, so be careful!"
+	value = -1
+	mob_trait = TRAIT_NO_SECOND_WIND
+	gain_text = span_boldannounce("You have opted out of Second Wind! If you die, you will not be able to revive yourself! \
+		You will also not be able to be revived by divine intervention! Be careful!")
+	lose_text = span_notice("You are no longer opted out of Second Wind! If you die, you will be able to revive yourself!")
+	locked =  FALSE
