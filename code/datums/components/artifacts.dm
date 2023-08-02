@@ -1353,7 +1353,7 @@
 		return
 	if(target.health < min_health)
 		return
-	if(target.getOrganLoss(BRAIN) > (100 - min_health))
+	if(target.getOrganLoss(BRAIN) > (min_health))
 		return
 	var/mult = lag_comp_factor()
 	var/zone = pick(GLOB.main_body_parts)
@@ -1720,8 +1720,6 @@
 	if(target.health < min_health)
 		return
 	if(target.health > (target.getMaxHealth() - max_health))
-		return
-	if(target.getOrganLoss(BRAIN) > max_health)
 		return
 	var/mult = lag_comp_factor()
 	var/dr = 1
