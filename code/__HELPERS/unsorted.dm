@@ -1663,13 +1663,33 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return atoms_found
 
 /// Goes through the common places a client can be held, and returns the first one it finds
-/proc/get_client(thing_w_client)
-	if(isclient(thing_w_client))
-		return thing_w_client
-	if(ismob(thing_w_client))
-		var/mob/mobby = thing_w_client
+/proc/get_client(clientthing)
+	if(isclient(clientthing))
+		return clientthing
+	if(ismob(clientthing))
+		var/mob/mobby = clientthing
 		if(mobby.client)
 			return mobby.client
+	if(istext(clientthing))
+		var/client/clint = LAZYACCESS(GLOB.directory, clientthing)
+		if(clint)
+			return clint
+
+/// Takes in a client, mob, or ckey, and returns the ckey
+/proc/get_ckey(clientthing)
+	var/client/clint
+	if(isclient(clientthing))
+		clint = clientthing
+		return clint.ckey
+	if(ismob(clientthing))
+		var/mob/mobby = clientthing
+		if(mobby.client)
+			return mobby.client.ckey
+		if(mobby.ckey)
+			return mobby.ckey
+	if(istext(clientthing))
+		if(clientthing in GLOB.directory)
+			return clientthing
 
 /proc/get_random_player_name(only_first)
 	var/list/client_mob_names = list()
@@ -1682,6 +1702,12 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		var/list/first_last = splittext(rname, " ")
 		return LAZYACCESS(first_last, 1)
 	return rname
+
+/proc/ckey2mob(ckey)
+	var/client/clint = LAZYACCESS(GLOB.directory, ckey)
+	if(!clint)
+		return null
+	return clint.mob
 
 /// Makes a gaussian distribution, returning a positive integer
 /proc/GaussianReacharound(mean, stddev, min, max)

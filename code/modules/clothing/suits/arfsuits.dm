@@ -1910,6 +1910,17 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
+/obj/item/clothing/suit/armor/medium/unmcmedic
+	name = "UNMC standard medical armor"
+	desc = "A set of a medic's armor set from the UNMC before pre-war times. Repainted, repaired, and now in-use by the wearer, it's mainly used by frontline medics to tank in just a tiny bit extra punishment as they tend to the fallen and wounded."
+	icon_state = "unmcmedic"
+	item_state = "unmcmedic"
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 ,)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
 /obj/item/clothing/suit/armor/medium/unmcwinter
 	name = "UNMC Winter armor"
 	desc = "A set of UNMC standard issue armor.This one seems to be a winter camo painted version. It's generally weak and only really made to stop light projectiles and blows. Albeit whack it lacks in light to null armor, it makes up for sub-par enviromental resistance. The winter coating gives it a boost in more unconventional based attacks. Let's get a move on, the enemy won't kick its own ass!"
@@ -1919,7 +1930,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_UP_LASER_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -3087,15 +3098,17 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn
-	name = "retrofit worn riot combat armor"
-	icon_state = "foxranger"
-	item_state = "foxranger"
-	desc = "A suit of pre-war combat armor redesigned to handle riots. This one looks worn down, and has had its heavier components stripped away."
+	name = "Enclave exile armor"
+	icon_state = "unmct"
+	item_state = "unmct"
+	desc = "A slimmed down set of reinforced combat armor. While not as effective as the standard issue, it makes up for it in more room for holding things and keeping you light on your feet."
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2, ARMOR_MODIFIER_DOWN_LASER_T1)
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
 /obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"

@@ -1923,3 +1923,143 @@
 			to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
 			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
 
+/datum/reagent/medicine/critmed
+	name = "UNIDENTIFIED SUBSTANCE ERROR: 0x000000"
+	description = "Unidentifiable substance - 0x000000"
+	reagent_state = LIQUID
+	color = "#000000"
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
+	overdose_threshold = 2000
+	pH = 7.45
+	value = REAGENT_VALUE_COMMON
+	synth_metabolism_use_human = TRUE
+	ghoulfriendly = TRUE
+	var/thresholded
+	var/health_threshold = 5
+	var/bruteheal = 0
+	var/burnheal = 0
+	var/toxheal = 0
+	var/oxyheal = 0
+	var/radheal = 0
+	var/blood_regen = 0
+
+/datum/reagent/medicine/critmed/on_mob_life(mob/living/carbon/M)
+	if(check_threshold(M))
+		thresholdify()
+	M.adjustBruteLoss(-bruteheal)
+	M.adjustFireLoss(-burnheal)
+	M.adjustToxLoss(-toxheal)
+	M.adjustOxyLoss(-oxyheal)
+	M.radiation = max(M.radiation - radheal, 0)
+	M.blood_volume = min(M.blood_volume + blood_regen, BLOOD_VOLUME_NORMAL)
+	. = 1
+	..()
+
+/datum/reagent/medicine/critmed/proc/check_threshold(mob/living/carbon/M)
+	if(M.health < health_threshold || thresholded)
+		return
+	return TRUE
+
+/datum/reagent/medicine/critmed/proc/thresholdify(mob/living/carbon/M)
+	thresholded = TRUE
+	metabolization_rate = 5 * REAGENTS_METABOLISM
+	bruteheal *= 0.1
+	burnheal *= 0.1
+	toxheal *= 0.1
+	oxyheal *= 0.1
+	radheal *= 0.1
+	blood_regen *= 0.1
+
+/datum/reagent/medicine/critmed/all_damage
+	name = "UNKNOWN SUBSTANCE ERROR: 0x99990D"
+	description = "Unidentifiable substance - 0x99990D"
+	color = "#99990D"
+	health_threshold = -70
+	bruteheal = 10
+	burnheal = 10
+	toxheal = 10
+	oxyheal = 10
+
+/datum/reagent/medicine/critmed/all_damage/toxin_lover
+	name = "UNKNOWN SUBSTANCE ERROR: 0x99990F"
+	description = "Unidentifiable substance - 0x99990F"
+	color = "#99990F"
+	toxheal = -10
+
+/datum/reagent/medicine/critmed/oxy
+	name = "UNKNOWN SUBSTANCE ERROR: 0x1212FF"
+	description = "Unidentifiable substance - 0x1212FF"
+	color = "#1212FF"
+	oxyheal = 10
+
+/datum/reagent/medicine/critmed/brute
+	name = "UNKNOWN SUBSTANCE ERROR: 0x037037"
+	description = "Unidentifiable substance - 0x037037"
+	color = "#037037"
+	bruteheal = 2
+
+/datum/reagent/medicine/critmed/burn
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFDED5E"
+	description = "Unidentifiable substance - 0xFDED5E"
+	color = "#FDED5E"
+	burnheal = 2
+
+/datum/reagent/medicine/critmed/toxin
+	name = "UNKNOWN SUBSTANCE ERROR: 0x121212"
+	description = "Unidentifiable substance - 0x121212"
+	color = "#121212"
+	toxheal = 2
+
+/datum/reagent/medicine/critmed/toxin_lover
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFAE123"
+	description = "Unidentifiable substance - 0xFAE123"
+	color = "#FAE123"
+	toxheal = -2
+
+/datum/reagent/medicine/critmed/radheal
+	name = "UNKNOWN SUBSTANCE ERROR: 0x00FF00"
+	description = "Unidentifiable substance - 0x00FF00"
+	color = "#00FF00"
+	radheal = 10
+
+/datum/reagent/medicine/critmed/blood
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFF0000"
+	description = "Unidentifiable substance - 0xFF0000"
+	color = "#FF0000"
+	var/blood_threshold = BLOOD_VOLUME_SYMPTOMS_DEBILITATING
+	blood_regen = 5
+	effective_blood_multiplier = 15
+	effective_blood_max = 1000
+
+/datum/reagent/medicine/critmed/blood/stabilizer
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFF0E00"
+	description = "Unidentifiable substance - 0xFF0E00"
+	color = "#FF0E00"
+	blood_threshold = BLOOD_VOLUME_SYMPTOMS_ANNOYING
+	blood_regen = 5
+	bleed_mult = 0.05
+	effective_blood_multiplier = 15
+	effective_blood_max = 1000
+
+/datum/reagent/medicine/critmed/blood/check_threshold(mob/living/carbon/M)
+	if(M.get_blood(TRUE) > blood_threshold || thresholded)
+		return
+	return TRUE
+
+/datum/reagent/medicine/critmed/runfast
+	name = "UNKNOWN SUBSTANCE ERROR: 0xE62100"
+	description = "Unidentifiable substance - 0xE62100"
+	color = "#E62100"
+	health_threshold = 25
+
+/datum/reagent/medicine/critmed/runfast/on_mob_metabolize(mob/living/M)
+	. = ..()
+	M.add_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
+
+/datum/reagent/medicine/critmed/runfast/on_mob_end_metabolize(mob/living/M)
+	. = ..()
+	M.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
+
+
+
+

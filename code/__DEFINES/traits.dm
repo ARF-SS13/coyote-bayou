@@ -345,6 +345,7 @@
 //#define TRAIT_BANDAGE_TONGUE "coagulating tongue"
 /// You're hooked on punga!
 #define TRAIT_PUNGAPOWER "pungaful"
+#define TRAIT_NO_SECOND_WIND "no_second_wind"
 
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"

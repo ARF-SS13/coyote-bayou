@@ -264,6 +264,24 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
+/obj/item/clothing/head/helmet/toxinfil
+	name = "Gen 3 Leo MIRAGE Helmet"
+	desc = "A third generation Leo Armaments MIRAGE Helmet. This helmet has no visor due to the fact the visor was not 'anthromorphic' friendly. The area around the eyes allows the installiation of gun-spec, or G.S, eyewear."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	icon_state = "custominfil"
+	item_state = "custominfil"
+
+/obj/item/clothing/head/helmet/unmchelmet/medic
+	name = "Standard issue UNMC Medical Helmet"
+	desc = "A standard issued UNMC Helmet, this one seems to be resembling that of a medical personal's color scheme with a white paint and a red cross."
+	icon_state = "unmcmh"
+	item_state = "unmcmh"
+	flags_inv = HIDEHAIR
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
 /obj/item/clothing/head/helmet/retrohazmathelmet
 	name = "Old Hazmat helmet"
 	desc = "A old style hazmat helmet. It's a bit well worn and the visor has a crack on it. But other than that, it seems to still work."

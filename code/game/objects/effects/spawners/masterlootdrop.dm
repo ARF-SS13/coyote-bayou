@@ -244,6 +244,7 @@
 		/obj/item/gun/ballistic/automatic/m1carbine/covcarbine = 2,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2, 
+		/obj/item/gun/ballistic/automatic/matildar = 1,
 
 	)
 
@@ -309,6 +310,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/bar = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
+		/obj/item/gun/ballistic/automatic/unmcamr = 1,
 	)
 
 ///////////////////////////
@@ -503,7 +505,8 @@
 		/obj/item/gun/ballistic/automatic/service/carbine = 5,
 		/obj/item/gun/energy/laser/wattz/recharger = 5,
 		/obj/item/gun/energy/laser/wattz2ks = 5,
-		/obj/item/gun/ballistic/automatic/m41br = 4,
+		/obj/item/gun/ballistic/automatic/m41br = 2,
+		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
@@ -545,6 +548,7 @@
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
 	)
 
 ////////////////////////////
@@ -906,8 +910,6 @@
 		/obj/effect/spawner/bundle/f13/armor/combat/dark = 3,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris = 1,
 		/obj/item/clothing/suit/armor/medium/odstcqb = 1,
-		/obj/item/clothing/suit/armor/medium/unmcwinter = 1, 
-		/obj/item/clothing/head/helmet/unmcwinterhelmet = 1, 
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_armor

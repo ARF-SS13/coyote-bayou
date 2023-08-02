@@ -32,6 +32,7 @@
 /datum/mind
 	var/key
 	var/name				//replaces mob/var/original_name
+	/// The mind's current body.
 	var/mob/living/current
 	var/active = 0
 

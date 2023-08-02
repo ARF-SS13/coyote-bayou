@@ -307,6 +307,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
 
+	if (force > 0 || force_unwielded > 0 || force_wielded > 0 || throwforce > 0) //if it does any damage at all, display the thing
+		. += "<span class='notice'>You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.</span>"
+
 	if(item_flags & (ITEM_CAN_BLOCK | ITEM_CAN_PARRY))
 		var/datum/block_parry_data/data = return_block_parry_datum(block_parry_data)
 		. += "[src] has the capacity to be used to block and/or parry. <a href='?src=[REF(data)];name=[name];block=[item_flags & ITEM_CAN_BLOCK];parry=[item_flags & ITEM_CAN_PARRY];render=1'>\[Show Stats\]</a>"
@@ -347,6 +350,23 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		research_msg += "None"
 	research_msg += "."
 	. += research_msg.Join()
+
+/obj/item/Topic(href, href_list)
+	. = ..()
+
+	if(href_list["list_melee"])
+		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
+		if(force_unwielded > 0)
+			readout += "\nONE HANDED [force_unwielded]"
+			readout += "\nTWO HANDED [force_wielded]"
+		else
+			readout += "\nDAMAGE [force]"
+		readout += "\nTHROW DAMAGE [throwforce]"
+		readout += "\nATTACKS / SECOND [10 / attack_speed]"
+		readout += "\nBLOCK CHANCE [block_chance]"
+		readout += "</span>"
+
+		to_chat(usr, "[readout.Join()]")
 
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
@@ -1222,4 +1242,4 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/refresh_upgrades()
 	return
-	
+

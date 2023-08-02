@@ -315,6 +315,9 @@
 #define COMSIG_LIVING_MINOR_SHOCK "living_minor_shock"			//sent by stuff like stunbatons and tasers: ()
 #define COMSIG_LIVING_REVIVE "living_revive"					//from base of mob/living/revive() (full_heal, admin_revive)
 
+/// Attempts to revive the mob via the second wind mechanic.
+#define COMSIG_LIVING_SECOND_WIND "living_second_wind" // (datum/source, /mob/dead/observer/reviver)
+
 #define COMSIG_MOB_RESET_PERSPECTIVE "mob_reset_perspective"		//from base of /mob/reset_perspective(): (atom/target)
 #define COMSIG_LIVING_GUN_PROCESS_FIRE "living_gun_process_fire"	//from base of /obj/item/gun/proc/process_fire(): (atom/target, params, zone_override)
 // This returns flags as defined for block in __DEFINES/combat.dm!

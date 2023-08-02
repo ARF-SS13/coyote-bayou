@@ -1407,9 +1407,12 @@
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
 	pH = 4
 	ghoulfriendly = TRUE
+	var/flammable = TRUE
+	var/heal_amount = -0.5
+	var/heal_amount_crit = -0.5
 
 /datum/reagent/fuel/reaction_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
-	if(method == TOUCH || method == VAPOR)
+	if(flammable && (method == TOUCH || method == VAPOR))
 		M.adjust_fire_stacks(reac_volume / 10)
 		return
 	..()
@@ -1421,12 +1424,21 @@
 
 /datum/reagent/fuel/on_mob_life_synth(mob/living/carbon/M)
 	M.adjustStaminaLoss(-1, 0)
-	M.adjustBruteLoss(-0.5, 0, include_roboparts = TRUE)
-	M.adjustFireLoss(-0.5, 0, include_roboparts = TRUE)
-	if(M.fire_stacks < 1)
+	var/heal_to_do = M.health < 25 ? heal_amount_crit : heal_amount
+	M.adjustBruteLoss(heal_to_do, TRUE, include_roboparts = TRUE)
+	M.adjustFireLoss(heal_to_do, TRUE, include_roboparts = TRUE)
+	if(flammable && M.fire_stacks < 1)
 		M.adjust_fire_stacks(1)
 	..()
 	return TRUE
+
+/datum/reagent/fuel/robo_repair_gel
+	name = "Synthetic repair gel"
+	description = "A synthetic gel that can be used to repair damage to synthetic bodies."
+	color = "#33ff00" // rgb: 102, 0, 0
+	flammable = FALSE
+	heal_amount = 1
+	heal_amount_crit = 4
 
 /datum/reagent/abraxo_cleaner
 	name = "Abraxo cleaner"

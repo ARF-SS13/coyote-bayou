@@ -52,6 +52,19 @@
 /obj/item/ammo_box/magazine/lmg/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/ratling
+	name = "Ratling box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "ammobox"
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock
+	caliber = list(CALIBER_FLINTLOCK)
+	max_ammo = 200
+	w_class = WEIGHT_CLASS_GIGANTIC // It holds 200 my guy
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
+
+/obj/item/ammo_box/magazine/ratling/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/lewis
 	name = "extended pan magazine (.308)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -137,7 +150,7 @@
 /obj/item/ammo_box/magazine/mm308/can_load()
 	return 0
 */
-	
+
 /obj/item/ammo_box/magazine/mm308/update_icon()
 	..()
 	icon_state = "762belt-[round(ammo_count(),20)]"

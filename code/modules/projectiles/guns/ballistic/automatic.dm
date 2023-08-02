@@ -155,7 +155,7 @@
 	extra_mag_types = /obj/item/ammo_box/magazine/m22smg //lets you use it as a standard .22 when you run out of unobtainable bees.
 	init_mag_type = /obj/item/ammo_box/magazine/b180
 
-/* * * * * * * * * * * 
+/* * * * * * * * * * *
  * VSS Vintorez
  * 9mm
  * suppressed
@@ -1275,6 +1275,40 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
 
+
+
+/* * * * * * * * * * * *
+* Matilda Rifle
+* Lightweight low damage dealing rifle with a 20 mag only
+* - MUCH slower than a varmint
+* + Higher damage than a varmint 
+* - Unable to be modified with bayonets, flashlights or a scope
+* + common tier rifle
+* * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/matildar
+	name = "A11 'Matilda' Rifle"
+	desc = "A Latos Systems high powered caliber 5.56 battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in a high powered version of 5.56 NATO"
+	icon_state = "matilda"
+	item_state = "matilda"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_firemodes = list(/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
 /* * * * * * * * * * *
  * Varmint Rifle w/ 20rd mag
  * Light semi-auto rifle
@@ -1352,7 +1386,7 @@
 	desc = "A 5.56x45mm rifle custom built off of a... plastic- that's not polymer, that's just straight-up plastic. What the fuck?"
 	icon_state = "alr15"
 	item_state = "alr15"
-	
+
 /* * * * * * * * * * *
  * Bushmaster Arm Gun
  * Light semi-auto rifle... pistol thing
@@ -2637,6 +2671,32 @@
 		/datum/firemode/automatic/rpm200
 	)
 
+
+/* * * * * * * * * * *
+ * Ratling Gun
+ * A getto minigun
+ * Terrible overall
+ * Except that it shoots a lot of ammo and fast
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/ratling_gun
+	name = "Ratling Gun"
+	desc = "This 'machinegun' looks like junk, some one took a old gatling gun and bolted on a motor of some kind and box hooked on the side with welded on 'grips'. Some how it seems to work."
+	icon = 'icons/obj/guns/minigun.dmi'
+	icon_state = "ratling"
+	item_state = "minigun"
+	mag_type = /obj/item/ammo_box/magazine/ratling
+	init_mag_type = /obj/item/ammo_box/magazine/ratling
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = LMG_RECOIL(1.2, 1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
+
+
 /* * * * * * * * * * *
  * Browning M1919 MMG
  * Big 7.62mm LMG
@@ -2744,6 +2804,30 @@
 	zoom_factor = 1.5
 	can_suppress = FALSE
 	can_bayonet = FALSE 
+	can_flashlight = FALSE
+
+
+/obj/item/gun/ballistic/automatic/unmcamr/toxcustom
+	name = "Blossom's Whisper"
+	desc = "A custom TG78. This model is modeled after the original TG78. The caliber is still the same but the sniper is modified with a 2x holo-scope. Alongside this, the AMR hits less harder than a normal TG78. Etched onto the rifle's reciever is a etching of the letters T and S alongside a phrase below the two letters that reads 'To the fallen, I watch'. Chambered in .50 BMG"
+	icon_state = "tg78c"
+	item_state = "tg78c"
+	mag_type = /obj/item/ammo_box/magazine/highcaliber
+	init_mag_type = /obj/item/ammo_box/magazine/highcaliber
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = HMG_RECOIL (5 , 5)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+	/datum/firemode/semi_auto/slower
+	)
+	zoom_factor = 1.1
+	can_suppress = FALSE
+	can_bayonet = FALSE
 	can_flashlight = FALSE
 
 /* * * * * * * * * * *

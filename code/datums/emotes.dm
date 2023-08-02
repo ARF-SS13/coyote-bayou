@@ -55,7 +55,7 @@
 	mob_type_blacklist_typecache = typecacheof(mob_type_blacklist_typecache)
 	mob_type_ignore_stat_typecache = typecacheof(mob_type_ignore_stat_typecache)
 
-/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE, only_overhead)
+/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE, only_overhead, forced)
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
@@ -78,7 +78,7 @@
 	user.log_message(msg, LOG_EMOTE)
 
 	var/tmp_sound = get_sound(user)
-	if(tmp_sound && should_play_sound(user, intentional) &&	(!intentional || !(TIMER_COOLDOWN_CHECK(user, type))))
+	if(tmp_sound && (forced || (should_play_sound(user, intentional) && (!intentional || !(TIMER_COOLDOWN_CHECK(user, type))))))
 		playsound(user, tmp_sound, sound_volume, sound_vary)
 		TIMER_COOLDOWN_START(user, type, audio_cooldown)
 
