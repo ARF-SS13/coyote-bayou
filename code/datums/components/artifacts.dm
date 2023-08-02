@@ -387,7 +387,7 @@
 	SIGNAL_HANDLER
 	ART_MASTER
 	update_color()
-	update_scanner_name()
+	//update_scanner_name()
 	INVOKE_ASYNC(src, .proc/floatycool)
 
 /datum/component/artifact/proc/floatycool()
