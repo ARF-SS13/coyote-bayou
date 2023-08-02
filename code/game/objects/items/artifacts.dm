@@ -17,18 +17,18 @@
 	var/debuff_strength
 
 /obj/item/artifact/common
-	buff_strength_high = 60
-	buff_strength_low = 40
+	buff_strength_high = 30
+	buff_strength_low = 20
 	rareness = ART_RARITY_COMMON
 
 /obj/item/artifact/uncommon
-	buff_strength_high = 120
-	buff_strength_low = 80
+	buff_strength_high = 60
+	buff_strength_low = 30
 	rareness = ART_RARITY_UNCOMMON
 
 /obj/item/artifact/rare
-	buff_strength_high = 160
-	buff_strength_low = 110
+	buff_strength_high = 90
+	buff_strength_low = 40
 	rareness = ART_RARITY_RARE
 
 /obj/item/artifact/Initialize(mapload)
@@ -57,19 +57,19 @@
 			overrides[ARTMOD_PASSIVE_HEAL] = list()
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MIN_HEALTH] = 5
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MAX_HEALTH] = 100
-			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BRUTE] = -(buff_strength/100)
+			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BRUTE] = -(buff_strength/200)
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_IS_BUFF] = TRUE
 		if(2) //burn
 			overrides[ARTMOD_PASSIVE_HEAL] = list()
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MIN_HEALTH] = 5
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MAX_HEALTH] = 100
-			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BURN] = -(buff_strength/100)
+			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_BURN] = -(buff_strength/200)
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_IS_BUFF] = TRUE
 		if(3) //toxin
 			overrides[ARTMOD_PASSIVE_HEAL] = list()
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MAX_HEALTH] = 100
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_MIN_HEALTH] = 5
-			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_TOXIN] = -(buff_strength/100)
+			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_TOXIN] = -(buff_strength/200)
 			overrides[ARTMOD_PASSIVE_HEAL][ARTVAR_IS_BUFF] = TRUE
 		if(4) //health
 			overrides[ARTMOD_MAX_HP] = list()
@@ -77,11 +77,11 @@
 			overrides[ARTMOD_MAX_HP][ARTVAR_IS_BUFF] = TRUE
 		if(5) //stamina
 			overrides[ARTMOD_STAMINA] = list()
-			overrides[ARTMOD_STAMINA][ARTVAR_STAMINA_ADJUSTMENT] = (buff_strength/100)
+			overrides[ARTMOD_STAMINA][ARTVAR_STAMINA_ADJUSTMENT] = (buff_strength/25)
 			overrides[ARTMOD_STAMINA][ARTVAR_IS_BUFF] = TRUE
 		if(6) //speed
 			overrides[ARTMOD_SPEED] = list()
-			overrides[ARTMOD_SPEED][ARTVAR_SPEED_ADJUSTMENT] = -(buff_strength/100)
+			overrides[ARTMOD_SPEED][ARTVAR_SPEED_ADJUSTMENT] = -(buff_strength/90)
 			overrides[ARTMOD_SPEED][ARTVAR_IS_BUFF] = TRUE
 		if(7) //blood
 			overrides[ARTMOD_BLOOD] = list()
