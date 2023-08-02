@@ -755,7 +755,7 @@
 	return
 
 /datum/artifact_effect/proc/update_value()
-	value = abs(base_value * get_magnitude())
+	value = abs(base_value * get_magnitude() * 4)
 
 /datum/artifact_effect/proc/update_prefix()
 	prefix = "Parental"
