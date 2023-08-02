@@ -809,6 +809,18 @@
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
 	new /obj/item/clothing/ears/headphones(src)
 
+/datum/gear/donator/kits/merek22
+	name = "UNMC Kit"
+	path = /obj/item/storage/box/large/custom_kit/merek22
+	ckeywhitelist = list("merek2")
+
+/obj/item/storage/box/large/custom_kit/merek22/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
+	new /obj/item/gun/ballistic/automatic/p47merek (src)
+	new /obj/item/ammo_box/a556(src)
+	new /obj/item/clothing/suit/armor/medium/merek (src)
+	new /obj/item/clothing/head/helmet/merekcustom(src)
+	
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
 	path = /obj/item/storage/box/large/custom_kit/exoticjazz
@@ -1322,6 +1334,8 @@
 /obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
+	new /obj/item/gun/ballistic/automatic/m1carbine/covcarbine(src)
+	new /obj/item/ammo_box/c10mm(src)
 	// /obj/item/gun/energy/alien(src)
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)

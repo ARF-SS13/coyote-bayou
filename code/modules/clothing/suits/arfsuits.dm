@@ -1947,6 +1947,19 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
+/obj/item/clothing/suit/armor/medium/merek
+	name = "Salvaged UNMC Leader armor"
+	desc = "A set of salvaged UNMC leader armor. Most of what made this armor completely terrifying to deal with is now gone or repurposed. It feels much lighter and offers much less protection than the usual set of UNMC Leader armor. Personalized by the scavenger who found this."
+	icon_state = "odstlead"
+	item_state = "odstlead"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
 /obj/item/clothing/suit/armor/medium/odstcqb
 	name = "UNMC CQB Armor"
 	desc = "A set of United Nations Marine Corps CQB Armor. This armor is in pristine condition and is suited for CQC related situations. Weaker than its bulkier more armored counterparts and has far less padding and less enviromental equipment. But with less padding, means greater speed."
@@ -3102,7 +3115,7 @@
 	icon_state = "unmct"
 	item_state = "unmct"
 	desc = "A slimmed down set of reinforced combat armor. While not as effective as the standard issue, it makes up for it in more room for holding things and keeping you light on your feet."
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2, ARMOR_MODIFIER_DOWN_LASER_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2)
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT

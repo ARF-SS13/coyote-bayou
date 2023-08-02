@@ -360,6 +360,43 @@
 		icon_state = "[initial(icon_state)]"
 
 
+
+
+/* * * * * * * * * * * *
+* s163 minotaur shotgun
+* + pump action shotgun
+* + Can be supressed
+* + Common 'police' shotgun used by I.C police forces
+* - doesn't have a folding stock and can not be modified heavily like the police shotgun
+* * * * * * * * * * * * */
+/obj/item/gun/ballistic/shotgun/s163
+	name = "S163 Minotaur shotgun"
+	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 6+1 magazine tube capacity alongside a built in small ammo counter"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
+	icon_state = "s163"
+	item_state = "s163"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_suppress = TRUE
+	casing_ejector = FALSE
+	spawnwithmagazine = TRUE
+	cock_sound = 'sound/weapons/shotgunpump.ogg'
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	init_recoil = SHOTGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
+/obj/item/gun/ballistic/shotgun/
 /* * * * * * * * * * * *
  * Semi-auto shotguns  *
  * * * * * * * * * * * */
