@@ -104,6 +104,15 @@
 	can_flashlight = 1
 	dog_fashion = null
 
+
+/obj/item/clothing/head/helmet/merekcustom
+	name = "Salvaged bullet resistant Helmet"
+	desc = "A salvaged bullet resistant helmet. It's made of a much weaker material..still looks badass however"
+	icon_state = "helmetalt"
+	item_state = "helmetalt"
+	armor = ARMOR_VALUE_LIGHT
+	can_flashlight = FALSE
+
 /obj/item/clothing/head/helmet/alt/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)

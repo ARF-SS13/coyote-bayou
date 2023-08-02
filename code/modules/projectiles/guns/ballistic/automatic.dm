@@ -2138,6 +2138,65 @@
 	zoom_factor = 1.2
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+
+/* * * * * * * * * *
+* P47 Battle rifle
+* + Uncommon version of the M41 BR
+* - Lower damage and caliber 
+* + Takes 20 and 10 round magazines compared to M41 10 round standard
+* + Less recoil
+* + Takes modifications unlike the M41 BR
+* * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/p47
+	name = "P47 Battle rifle"
+	desc = "A P47 Battle Rifle or 'P47BR'. A collaboration between Jaeger company and Leo Armaments to appeal to the civilian and hunter markets, this rifle is chambered in 5.45mm. The rifle has a bullpup configuration and has a built in ammo counter. It's also lightweight, allowing it to be holstered around the hip or the back for ease of carry."
+	icon_state = "p47"
+	item_state = "p47"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault ,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(/datum/firemode/burst/three/slow ,
+	/datum/firemode/semi_auto/slow
+	)
+	can_suppress = TRUE
+	can_scope = FALSE
+	can_flashlight = FALSE
+	zoom_factor = 1
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/p47merek
+	name = "custom P47 Rifle"
+	desc = "A personalized P47 battle rifle, the firemode has been changed to become much slower while missing a built in scope which has to be replaced. The ammo counter still works"
+	icon_state = "p47"
+	item_state = "p47"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault ,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_firemodes = list(/datum/firemode/burst/two/slower ,
+	/datum/firemode/semi_auto/slower
+	)
+	can_suppress = FALSE
+	can_scope = TRUE
+	can_flashlight = FALSE
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
 /* * * * * * * * * * *
  * Worn Type 93 assault rifle
  * Chinese 5.56mm autorifle
