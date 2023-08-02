@@ -1719,8 +1719,8 @@
 		return
 	if(target.health < min_health)
 		return
-	if(target.health > (target.getMaxHealth() - max_health))
-		return
+	//if(target.health > (target.getMaxHealth() - max_health))
+	//	return
 	var/mult = lag_comp_factor()
 	var/dr = 1
 	var/dt = 0
@@ -1887,19 +1887,19 @@
 /datum/artifact_effect/passive_damage/healer/update_desc()
 	var/list/out = list()
 	var/the_min_health = clamp(min_health, -100, 200)
-	var/the_max_health = clamp(max_health, -100, 200)
+	// var/the_max_health = clamp(max_health, -100, 200)
 	if(abs(d_brute) != 0)
-		out += span_green("Heals [abs(d_brute)] brute damage per second while the wearer is above [the_min_health] and below [the_max_health] when stored [translate_slots()].")
+		out += span_green("Heals [abs(d_brute)] brute damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	if(abs(d_burn) != 0)
-		out += span_green("Heals [abs(d_burn)] burn damage per second while the wearer is above [the_min_health] and below [the_max_health] when stored [translate_slots()].")
+		out += span_green("Heals [abs(d_burn)] burn damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	if(abs(d_toxin) != 0)
-		out += span_green("Heals [abs(d_toxin)] toxin damage per second while the wearer is above [the_min_health] and below [the_max_health] when stored [translate_slots()].")
+		out += span_green("Heals [abs(d_toxin)] toxin damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	if(abs(d_oxy) != 0)
-		out += span_green("Heals [abs(d_oxy)] oxy damage per second while the wearer is above [the_min_health] and below [the_max_health] when stored [translate_slots()].")
+		out += span_green("Heals [abs(d_oxy)] oxy damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	if(abs(d_clone) != 0)
-		out += span_green("Heals [abs(d_clone)] clone damage per second while the wearer is above [the_min_health] and below [the_max_health] when stored [translate_slots()].")
+		out += span_green("Heals [abs(d_clone)] clone damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	if(abs(d_brain) != 0)
-		out += span_green("Heals [abs(d_brain)] brain damage per second while the wearer is above [the_min_health] and below [the_max_health] when stored [translate_slots()].")
+		out += span_green("Heals [abs(d_brain)] brain damage per second while the wearer is above [the_min_health] when stored [translate_slots()].")
 	out += span_notice("Heals at [undesirable_mult]x the rate while stored anywhere else.")
 	descriptions = out
 
