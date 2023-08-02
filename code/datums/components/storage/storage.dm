@@ -605,7 +605,7 @@
 		var/obj/O = parent
 		O.update_icon()
 
-/datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE, atom/prev_loc, prev_slot)
+/datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE)
 	if((!force && !can_be_inserted(I, TRUE, M)) || (I == parent))
 		return FALSE
 	return handle_item_insertion(I, silent, M)
@@ -692,7 +692,7 @@
 		if(M.active_storage == src)
 			close(M)
 
-/datum/component/storage/proc/signal_take_obj(datum/source, atom/movable/AM, new_loc, force = FALSE, atom/prev_loc, prev_slot)
+/datum/component/storage/proc/signal_take_obj(datum/source, atom/movable/AM, new_loc, force = FALSE)
 	if(!(AM in real_location()))
 		return FALSE
 	if(HAS_TRAIT(AM, TRAIT_NO_STORAGE_REMOVE))

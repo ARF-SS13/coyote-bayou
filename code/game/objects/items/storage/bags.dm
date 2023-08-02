@@ -144,7 +144,7 @@
 						user.transferItemToLoc(ore, box)
 				user.transferItemToLoc(A, box)
 				show_message = TRUE
-			else if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE, TRUE))
+			else if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
 				show_message = TRUE
 			else
 				if(!spam_protection)
@@ -483,7 +483,7 @@ obj/item/storage/bag/chemistry/tribal
 				continue
 			if(!loosie.is_pickable)
 				continue
-			if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, loosie, user, TRUE, TRUE, loosie.loc, current_equipped_slot))
+			if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, loosie, user, TRUE))
 				loosie.transform = initial(loosie.transform)
 				loosie.dir = initial(loosie.dir)
 				show_message = TRUE
@@ -545,13 +545,13 @@ obj/item/storage/bag/chemistry/tribal
 		return
 	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
 	if(L)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user, FALSE, L.loc, current_equipped_slot)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
 		to_chat(user, span_notice("You take \a [L] out of the quiver."))
 		return TRUE
 	var/obj/item/ammo_casing/caseless/W = locate() in contents
 	if(W && contents.len > 0)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user, FALSE, W.loc, current_equipped_slot)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
 		to_chat(user, span_notice("You take \a [W] out of the quiver."))
 	else

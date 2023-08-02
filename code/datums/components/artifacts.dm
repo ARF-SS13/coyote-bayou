@@ -267,6 +267,11 @@
 	SIGNAL_HANDLER
 	if(!is_identified(source, user))
 		examine_list += "[unidentified_desc]"
+		var/timeleft_to_identify = get_identify_time_left(user)
+		if(!timeleft_to_identify)
+			return
+		var/reply = span_notice("You figure it'll take about [timeleft_to_identify] more to truly understand this thing.")
+		examine_list += reply
 		return
 	var/list/descs = list()
 	for(var/datum/artifact_effect/AE in effects)
@@ -274,10 +279,21 @@
 	var/out = descs.Join("\n")
 	examine_list += out
 
+/datum/component/artifact/proc/get_identify_time_left(mob/user)
+	if(!istype(user))
+		return
+	var/datum/counter_holder/id_plz = LAZYACCESS(identifying, ckey(user.ckey))
+	if(!id_plz)
+		return
+	var/timeleft = (SSartifacts.identify_time - id_plz.progress)
+	if(SSartifacts.fuzzy_time)
+		timeleft = rand(timeleft*SSartifacts.fuzzy_time_low, SSartifacts.fuzzy_time_high)
+	return DisplayTimeText(timeleft)
+
 /datum/component/artifact/proc/is_identified(datum/source, mob/user)
 	if(!ismob(user))
 		return
-	if(IsAdminGhost(user))
+	if(IsAdminGhost(user, TRUE))
 		return TRUE
 	if(SSartifacts.debug_insta_identify && isliving(user))
 		return TRUE
@@ -434,13 +450,16 @@
 		master.add_atom_colour(cool_color, FIXED_COLOUR_PRIORITY)
 
 /datum/export/artifact
-	cost = 1000
+	cost = 400
 	unit_name = "artifacts"
-	export_types = list(/obj/item/artifact)
+	export_types = list(/obj/item/storage/box/artifactcontainer)
 
 //ratio of 3 to 1 positive to negative is based on low artifacts where negative can be up to three times more than positive
 /datum/export/artifact/get_cost(atom/movable/AM)
-	return SEND_SIGNAL(AM, COMSIG_ATOM_GET_VALUE)
+	var/value = 0
+	for(var/atom/movable/thing in AM.contents)
+		value += SEND_SIGNAL(thing, COMSIG_ATOM_GET_VALUE)
+	return value
 	// var/obj/item/artifact/H = AM
 	// return (H.buff_strength*3 - H.debuff_strength)*10 //only change the last number to adjust value
 
@@ -487,7 +506,7 @@
 	var/my_unique_trait_id = ""
 	var/list/overridden = list()
 	var/value = 0
-	var/base_value = 0
+	var/base_value = 200
 	var/last_tick = 0
 
 /datum/artifact_effect/New(obj/item/parent, list/parameters = list())
@@ -611,6 +630,8 @@
 
 /// Applies our statud effect, if any
 /datum/artifact_effect/proc/apply_status_effect(obj/item/master, mob/living/target, obj/item/holder)
+	if(!istype(target))
+		return
 	if(HAS_TRAIT(target, my_unique_trait_id)) // already affecting them!
 		return
 	if(!in_desired_slot())
@@ -620,6 +641,8 @@
 
 /// Applies our statud effect, if any
 /datum/artifact_effect/proc/remove_status_effect(obj/item/master, mob/living/target, obj/item/holder)
+	if(!istype(target))
+		return
 	if(!HAS_TRAIT(target, my_unique_trait_id)) // we arent affecting them!
 		return
 	REMOVE_TRAIT(target, my_unique_trait_id, my_unique_trait_id)
@@ -712,7 +735,7 @@
 	return
 
 /datum/artifact_effect/proc/update_value()
-	value = (base_value * get_magnitude())
+	value = abs(base_value * get_magnitude())
 
 /datum/artifact_effect/proc/update_prefix()
 	prefix = "Parental"
@@ -720,10 +743,14 @@
 /datum/artifact_effect/proc/update_suffix()
 	suffix = "Parenthood"
 
+/datum/artifact_effect/proc/get_affix_index()
+	return 1
+
 /datum/artifact_effect/proc/get_magnitude() // pop pop
 	return 1
 
 /datum/artifact_effect/proc/get_value()
+	update_value()
 	return value
 
 /datum/artifact_effect/proc/translate_slots()
@@ -849,22 +876,27 @@
 	hp_change = round(hp_change, SSartifacts.health_discrete)
 	. = ..()
 
-/datum/artifact_effect/max_hp_modifier/get_magnitude(isprefix)
+/datum/artifact_effect/max_hp_modifier/get_magnitude()
+	if(is_buff)
+		return (abs(hp_change) / SSartifacts.health_good_rare_max)
+	return (abs(hp_change) / abs(SSartifacts.health_bad_rare_max))
+
+/datum/artifact_effect/max_hp_modifier/get_affix_index(isprefix)
 	var/possy = 1
 	if(is_buff)
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_health_good) * (abs(hp_change) / SSartifacts.health_good_rare_max), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_health_good) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_health_good) * (abs(hp_change) / SSartifacts.health_good_rare_max), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_health_good) * get_magnitude(), 1)
 	else
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_health_bad) * (abs(hp_change) / abs(SSartifacts.health_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_health_bad) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_health_bad) * (abs(hp_change) / abs(SSartifacts.health_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_health_bad) * get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/max_hp_modifier/update_prefix()
-	var/index = get_magnitude(TRUE)
+	var/index = get_affix_index(TRUE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.prefixes_health_good) : LAZYLEN(SSartifacts.prefixes_health_bad))
 	if(is_buff)
@@ -873,7 +905,7 @@
 		return SSartifacts.prefixes_health_bad[index]
 
 /datum/artifact_effect/max_hp_modifier/update_suffix()
-	var/index = get_magnitude(FALSE)
+	var/index = get_affix_index(FALSE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.suffixes_health_good) : LAZYLEN(SSartifacts.suffixes_health_bad))
 	if(is_buff)
@@ -934,7 +966,7 @@
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)
 	. = ..()
 
-/datum/artifact_effect/trait_giver/get_magnitude(isprefix)
+/datum/artifact_effect/trait_giver/get_affix_index(isprefix)
 	return 1
 
 /datum/artifact_effect/trait_giver/update_prefix()
@@ -1009,7 +1041,7 @@
 /datum/artifact_effect/timer/randomize(rarity, force_buff)
 	. = ..()
 
-/datum/artifact_effect/timer/get_magnitude(isprefix)
+/datum/artifact_effect/timer/get_affix_index(isprefix)
 	return 1
 
 /datum/artifact_effect/timer/update_prefix()
@@ -1026,7 +1058,7 @@
 /// what thing? thats up to you! ///
 /datum/artifact_effect/timer/penance
 	kind = ARTMOD_TIMER_PENANCE
-	base_value = 1000
+	base_value = 400
 	chance_weight = 0
 	special_spawn_only = TRUE
 	custom_desc = span_alert("Might do something if you hold on to it?")
@@ -1092,22 +1124,27 @@
 	target.remove_movespeed_modifier(my_unique_id, update = TRUE)
 	return TRUE
 
-/datum/artifact_effect/speed/get_magnitude(isprefix)
+/datum/artifact_effect/speed/get_magnitude()
+	if(is_buff)
+		return (abs(multiplicative_slowdown) / SSartifacts.speed_good_rare_max)
+	return (abs(multiplicative_slowdown) / abs(SSartifacts.speed_bad_rare_max))
+
+/datum/artifact_effect/speed/get_affix_index(isprefix)
 	var/possy = 1
 	if(is_buff)
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_speed_good) * (abs(multiplicative_slowdown) / SSartifacts.speed_good_rare_max), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_speed_good) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_speed_good) * (abs(multiplicative_slowdown) / SSartifacts.speed_good_rare_max), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_speed_good) * get_magnitude(), 1)
 	else
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_speed_bad) * (abs(multiplicative_slowdown) / abs(SSartifacts.speed_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_speed_bad) *  get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_speed_bad) * (abs(multiplicative_slowdown) / abs(SSartifacts.speed_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_speed_bad) *  get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/speed/update_prefix()
-	var/index = get_magnitude(TRUE)
+	var/index = get_affix_index(TRUE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.prefixes_speed_good) : LAZYLEN(SSartifacts.prefixes_speed_bad))
 	if(is_buff)
@@ -1117,7 +1154,7 @@
 	return prefix
 
 /datum/artifact_effect/speed/update_suffix()
-	var/index = get_magnitude(FALSE)
+	var/index = get_affix_index(FALSE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.suffixes_speed_good) : LAZYLEN(SSartifacts.suffixes_speed_bad))
 	if(is_buff)
@@ -1168,7 +1205,7 @@
 	var/injured = "%SRC is harming you."
 	var/armor_flag = "melee"
 	var/highest_damage = BRUTE
-	base_value = 1000 // it'll do damage anywhere in your inventory, so, should be worth something!
+	base_value = 400 // it'll do damage anywhere in your inventory, so, should be worth something!
 	allow_dupes = TRUE
 	is_only_harmful = TRUE
 	is_only_helpful = FALSE
@@ -1213,7 +1250,7 @@
 /datum/artifact_effect/passive_damage/randomize(rarity, force_buff)
 	if(LAZYACCESS(overridden, ARTFLAG_BLOCK_DAMAGE_RANDOM))
 		return ..() // =3
-	var/list/alltypes = list(BRUTE, BURN, TOX, OXY, CLONE, BRAIN)
+	var/list/alltypes = list(BRUTE, BURN, TOX, OXY)
 	var/num_damages = 0
 	if(min_health == initial(min_health))
 		switch(rarity)
@@ -1322,44 +1359,59 @@
 	//send_message(target, zone)
 	return TRUE
 
-/datum/artifact_effect/passive_damage/get_magnitude(isprefix)
+/datum/artifact_effect/passive_damage/get_magnitude()
+	switch(highest_damage)
+		if(BRUTE)
+			return (abs(d_brute) / SSartifacts.damage_dps_brute_rare_max)
+		if(BURN)
+			return (abs(d_burn) / SSartifacts.damage_dps_burn_rare_max)
+		if(TOX)
+			return (abs(d_toxin) / SSartifacts.damage_dps_toxin_rare_max)
+		if(OXY)
+			return (abs(d_oxy) / SSartifacts.damage_dps_oxy_rare_max)
+		if(CLONE)
+			return (abs(d_clone) / SSartifacts.damage_dps_clone_rare_max)
+		if(BRAIN)
+			return (abs(d_brain) / SSartifacts.damage_dps_brain_rare_max)
+
+/datum/artifact_effect/passive_damage/get_affix_index(isprefix)
 	var/possy = 1
 	switch(highest_damage)
 		if(BRUTE)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_damage_brute) * (abs(d_brute) / SSartifacts.damage_dps_brute_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_damage_brute) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_damage_brute) * (abs(d_brute) / SSartifacts.damage_dps_brute_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_damage_brute) * get_magnitude(), 1)
 		if(BURN)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_damage_burn) * (abs(d_burn) / SSartifacts.damage_dps_burn_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_damage_burn) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_damage_burn) * (abs(d_burn) / SSartifacts.damage_dps_burn_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_damage_burn) * get_magnitude(), 1)
 		if(TOX)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_damage_toxin) * (abs(d_toxin) / SSartifacts.damage_dps_toxin_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_damage_toxin) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_damage_toxin) * (abs(d_toxin) / SSartifacts.damage_dps_toxin_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_damage_toxin) * get_magnitude(), 1)
 		if(OXY)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_damage_oxy) * (abs(d_oxy) / SSartifacts.damage_dps_oxy_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_damage_oxy) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_damage_oxy) * (abs(d_oxy) / SSartifacts.damage_dps_oxy_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_damage_oxy) * get_magnitude(), 1)
 		if(CLONE)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_damage_clone) * (abs(d_clone) / SSartifacts.damage_dps_clone_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_damage_clone) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_damage_clone) * (abs(d_clone) / SSartifacts.damage_dps_clone_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_damage_clone) * get_magnitude(), 1)
 		if(BRAIN)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_damage_brain) * (abs(d_brain) / SSartifacts.damage_dps_brain_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_damage_brain) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_damage_brain) * (abs(d_brain) / SSartifacts.damage_dps_brain_rare_max), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_damage_brain) * get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/passive_damage/update_prefix()
 	update_highest_damage()
-	var/index = get_magnitude(TRUE)
+	var/index = get_affix_index(TRUE)
 	index += rand(-3, 3)
 	switch(highest_damage)
 		if(BRUTE)
@@ -1384,7 +1436,7 @@
 
 /datum/artifact_effect/passive_damage/update_suffix()
 	update_highest_damage()
-	var/index = get_magnitude(FALSE)
+	var/index = get_affix_index(FALSE)
 	index += rand(-3, 3)
 	switch(highest_damage)
 		if(BRUTE)
@@ -1534,6 +1586,7 @@
 /datum/artifact_effect/passive_damage/healer
 	kind = ARTMOD_PASSIVE_HEAL
 	chance_weight = 1
+	base_value = 400
 	/// Stop healing if their health is below this
 	min_health = 5
 	/// Stop healing if they're health is above this
@@ -1713,44 +1766,59 @@
 	if(abs(d_clone) < abs(d_brain))
 		highest_damage = BRAIN
 
-/datum/artifact_effect/passive_damage/healer/get_magnitude(isprefix)
+/datum/artifact_effect/passive_damage/healer/get_magnitude()
+	switch(highest_damage)
+		if(BRUTE)
+			return (abs(d_brute) / SSartifacts.heal_dps_brute_rare)
+		if(BURN)
+			return (abs(d_burn) / SSartifacts.heal_dps_burn_rare)
+		if(TOX)
+			return (abs(d_toxin) / SSartifacts.heal_dps_toxin_rare)
+		if(OXY)
+			return (abs(d_oxy) / SSartifacts.heal_dps_oxy_rare)
+		if(CLONE)
+			return (abs(d_clone) / SSartifacts.heal_dps_clone_rare)
+		if(BRAIN)
+			return (abs(d_brain) / SSartifacts.heal_dps_brain_rare)
+
+/datum/artifact_effect/passive_damage/healer/get_affix_index(isprefix)
 	var/possy = 1
 	switch(highest_damage)
 		if(BRUTE)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_heal_brute) * (abs(d_brute) / SSartifacts.heal_dps_brute_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_heal_brute) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_heal_brute) * (abs(d_brute) / SSartifacts.heal_dps_brute_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_heal_brute) * get_magnitude(), 1)
 		if(BURN)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_heal_burn) * (abs(d_burn) / SSartifacts.heal_dps_burn_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_heal_burn) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_heal_burn) * (abs(d_burn) / SSartifacts.heal_dps_burn_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_heal_burn) * get_magnitude(), 1)
 		if(TOX)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_heal_toxin) * (abs(d_toxin) / SSartifacts.heal_dps_toxin_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_heal_toxin) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_heal_toxin) * (abs(d_toxin) / SSartifacts.heal_dps_toxin_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_heal_toxin) * get_magnitude(), 1)
 		if(OXY)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_heal_oxy) * (abs(d_oxy) / SSartifacts.heal_dps_oxy_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_heal_oxy) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_heal_oxy) * (abs(d_oxy) / SSartifacts.heal_dps_oxy_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_heal_oxy) * get_magnitude(), 1)
 		if(CLONE)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_heal_clone) * (abs(d_clone) / SSartifacts.heal_dps_clone_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_heal_clone) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_heal_clone) * (abs(d_clone) / SSartifacts.heal_dps_clone_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_heal_clone) * get_magnitude(), 1)
 		if(BRAIN)
 			if(isprefix)
-				possy = round(LAZYLEN(SSartifacts.prefixes_heal_brain) * (abs(d_brain) / SSartifacts.heal_dps_brain_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.prefixes_heal_brain) * get_magnitude(), 1)
 			else
-				possy = round(LAZYLEN(SSartifacts.suffixes_heal_brain) * (abs(d_brain) / SSartifacts.heal_dps_brain_rare), 1)
+				possy = round(LAZYLEN(SSartifacts.suffixes_heal_brain) * get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/passive_damage/healer/update_prefix()
 	update_highest_damage()
-	var/index = get_magnitude(TRUE)
+	var/index = get_affix_index(TRUE)
 	index += rand(-3, 3)
 	switch(highest_damage)
 		if(BRUTE)
@@ -1775,7 +1843,7 @@
 
 /datum/artifact_effect/passive_damage/healer/update_suffix()
 	update_highest_damage()
-	var/index = get_magnitude(FALSE)
+	var/index = get_affix_index(FALSE)
 	index += rand(-3, 3)
 	switch(highest_damage)
 		if(BRUTE)
@@ -1876,22 +1944,27 @@
 	target.adjustStaminaLossBuffered(stamina_adjustment)
 	return TRUE
 
-/datum/artifact_effect/stamina/get_magnitude(isprefix)
+/datum/artifact_effect/stamina/get_magnitude()
+	if(is_buff)
+		return (abs(stamina_adjustment) / abs(SSartifacts.stamina_good_rare_max))
+	return (abs(stamina_adjustment) / abs(SSartifacts.stamina_bad_rare_max))
+
+/datum/artifact_effect/stamina/get_affix_index(isprefix)
 	var/possy = 1
 	if(is_buff)
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_stamina_good) * (abs(stamina_adjustment) / abs(SSartifacts.stamina_good_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_stamina_good) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_stamina_good) * (abs(stamina_adjustment) / abs(SSartifacts.stamina_good_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_stamina_good) * get_magnitude(), 1)
 	else
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_stamina_bad) * (abs(stamina_adjustment) / abs(SSartifacts.stamina_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_stamina_bad) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_stamina_bad) * (abs(stamina_adjustment) / abs(SSartifacts.stamina_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_stamina_bad) * get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/stamina/update_prefix()
-	var/index = get_magnitude(TRUE)
+	var/index = get_affix_index(TRUE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.prefixes_stamina_good) : LAZYLEN(SSartifacts.prefixes_stamina_bad))
 	if(is_buff)
@@ -1901,7 +1974,7 @@
 	return prefix
 
 /datum/artifact_effect/stamina/update_suffix()
-	var/index = get_magnitude(FALSE)
+	var/index = get_affix_index(FALSE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.suffixes_stamina_good) : LAZYLEN(SSartifacts.suffixes_stamina_bad))
 	if(is_buff)
@@ -1926,6 +1999,7 @@
 /datum/artifact_effect/radiation
 	kind = ARTMOD_RADIATION
 	chance_weight = 10
+	base_value = 300
 	var/target_radiation = 0
 	var/radiation_adjustment = 0
 
@@ -1987,22 +2061,27 @@
 	is_buff = (target_radiation < RAD_MOB_SAFE)
 	. = ..()
 
-/datum/artifact_effect/radiation/get_magnitude(isprefix)
+/datum/artifact_effect/radiation/get_magnitude()
+	if(is_buff)
+		return (abs(radiation_adjustment) / abs(SSartifacts.radiation_rate_rare_max))
+	return (abs(radiation_adjustment) / abs(SSartifacts.radiation_rate_rare_max))
+
+/datum/artifact_effect/radiation/get_affix_index(isprefix)
 	var/possy = 1
 	if(is_buff)
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_radiation_good) * (abs(radiation_adjustment) / abs(SSartifacts.radiation_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_radiation_good) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_radiation_good) * (abs(radiation_adjustment) / abs(SSartifacts.radiation_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_radiation_good) * get_magnitude(), 1)
 	else
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_radiation_bad) * (abs(radiation_adjustment) / abs(SSartifacts.radiation_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_radiation_bad) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_radiation_bad) * (abs(radiation_adjustment) / abs(SSartifacts.radiation_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_radiation_bad) * get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/radiation/update_prefix()
-	var/index = get_magnitude(TRUE)
+	var/index = get_affix_index(TRUE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.prefixes_radiation_good) : LAZYLEN(SSartifacts.prefixes_radiation_bad))
 	if(is_buff)
@@ -2012,7 +2091,7 @@
 	return prefix
 
 /datum/artifact_effect/radiation/update_suffix()
-	var/index = get_magnitude(FALSE)
+	var/index = get_affix_index(FALSE)
 	index += rand(-3, 3)
 	index = clamp(index, 1, is_buff ? LAZYLEN(SSartifacts.suffixes_radiation_good) : LAZYLEN(SSartifacts.suffixes_radiation_bad))
 	if(is_buff)
@@ -2038,6 +2117,7 @@
 /datum/artifact_effect/blood
 	kind = ARTMOD_BLOOD
 	chance_weight = 2
+	base_value = 300
 	/// Target blood amount, if any
 	var/target_blood = 0
 	/// How much to adjust blood by per second
@@ -2093,18 +2173,23 @@
 	target.blood_volume += (blood_adjustment * mult * up_or_down)
 	return TRUE
 
-/datum/artifact_effect/blood/get_magnitude(isprefix)
+/datum/artifact_effect/blood/get_magnitude()
+	if(is_buff)
+		return (abs(blood_adjustment) / abs(SSartifacts.blood_rate_rare_max))
+	return (abs(blood_adjustment) / abs(SSartifacts.blood_rate_rare_max))
+
+/datum/artifact_effect/blood/get_affix_index(isprefix)
 	var/possy = 1
 	if(is_buff)
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_blood_good) * (abs(blood_adjustment) / abs(SSartifacts.blood_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_blood_good) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_blood_good) * (abs(blood_adjustment) / abs(SSartifacts.blood_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_blood_good) * get_magnitude(), 1)
 	else
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_blood_bad) * (abs(blood_adjustment) / abs(SSartifacts.blood_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_blood_bad) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_blood_bad) * (abs(blood_adjustment) / abs(SSartifacts.blood_rate_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_blood_bad) * get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/blood/update_suffix(is_buff, index)
@@ -2140,6 +2225,7 @@
 /datum/artifact_effect/feeder
 	kind = ARTMOD_FEEDER
 	chance_weight = 1
+	base_value = 300
 	/// How much to adjust nutrition by per second
 	var/nutrition_adjustment = 0
 
@@ -2177,18 +2263,23 @@
 	target.adjust_nutrition(nutrition_adjustment * mult) // you gonna get fat, or skinny, or something
 	return TRUE
 
-/datum/artifact_effect/feeder/get_magnitude(isprefix)
+/datum/artifact_effect/feeder/get_magnitude()
+	if(is_buff)
+		return (abs(nutrition_adjustment) / abs(SSartifacts.nutrition_rate_good_rare_max))
+	return (abs(nutrition_adjustment) / abs(SSartifacts.nutrition_rate_bad_rare_max))
+
+/datum/artifact_effect/feeder/get_affix_index(isprefix)
 	var/possy = 1
 	if(is_buff)
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_nutrition_good) * (abs(nutrition_adjustment) / abs(SSartifacts.nutrition_rate_good_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_nutrition_good) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_nutrition_good) * (abs(nutrition_adjustment) / abs(SSartifacts.nutrition_rate_good_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_nutrition_good) * get_magnitude(), 1)
 	else
 		if(isprefix)
-			possy = round(LAZYLEN(SSartifacts.prefixes_nutrition_bad) * (abs(nutrition_adjustment) / abs(SSartifacts.nutrition_rate_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.prefixes_nutrition_bad) * get_magnitude(), 1)
 		else
-			possy = round(LAZYLEN(SSartifacts.suffixes_nutrition_bad) * (abs(nutrition_adjustment) / abs(SSartifacts.nutrition_rate_bad_rare_max)), 1)
+			possy = round(LAZYLEN(SSartifacts.suffixes_nutrition_bad) * get_magnitude(), 1)
 	return possy
 
 /datum/artifact_effect/feeder/update_suffix(is_buff, index)
@@ -2227,17 +2318,25 @@
 
 /// A smoll container that can hold a few artifacts, but it blocks their effects
 /obj/item/storage/box/artifactcontainer
-	name = "lead-lined box"
-	desc = "A heavy-walled container that'll safely contain the effects of an artifact. Any artifact placed inside will be unable to affect the outside world -- including you."
+	name = "anomalous artifact exclusion cube"
+	desc = "A big thick-walled box that'll safely contain the effects of an artifact. Any artifact placed inside will be unable to affect the outside world -- including you."
 	icon_state = "lead-lined-container"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = SLOT_L_STORE | SLOT_R_STORE | SLOT_BELT | SLOT_WEAR_ID
-	slowdown = 0.1
+	foldable = FALSE
+	custom_materials = list(/datum/material/lead = MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/lead = 20)
 	component_type = /datum/component/storage/concrete/box/artifact
 
 /obj/item/storage/box/artifactcontainer/ComponentInitialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_ARTIFACT_BLOCKER, "[name]")
+
+/obj/item/storage/box/artifactcontainer/attackby(obj/item/W, mob/user, params)
+	if(SEND_SIGNAL(W, COMSIG_ITEM_ARTIFACT_EXISTS))
+		. = ..()
+	else
+		to_chat(user, span_alert("[src] can only fit anomalous doodads inside!"))
 
 /datum/component/storage/concrete/box/artifact
 	max_items = 3
@@ -2246,6 +2345,73 @@
 	max_volume = STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE
 	rustle_sound = TRUE
 
+/obj/item/storage/box/artifactcontainer/metal
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
+
+/obj/item/storage/box/artifactcontainer/titanium
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
+
+/obj/item/storage/box/artifactcontainer/plastitanium
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
+
+/obj/item/storage/box/artifactcontainer/adamantine
+	color = COLOR_BLUE_GRAY
+	custom_materials = list(/datum/material/adamantine=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
+
+/obj/item/storage/box/artifactcontainer/abductor
+	color = COLOR_PALE_PURPLE_GRAY
+	custom_materials = list(/datum/material/adamantine=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20)
+
+/obj/item/storage/box/artifactcontainer/gold
+	color = COLOR_PALE_ORANGE
+	custom_materials = list(/datum/material/gold=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/gold = 20)
+
+/obj/item/storage/box/artifactcontainer/bronze
+	color = COLOR_ORANGE
+	custom_materials = list(/datum/material/bronze = MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 5, /datum/reagent/copper = 3)
+
+/obj/item/storage/box/artifactcontainer/silver
+	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/silver = 20)
+
+/obj/item/storage/box/artifactcontainer/wood
+	color = COLOR_BROWN
+	grind_results = list(/datum/reagent/cellulose = 30)
+
+/obj/item/storage/box/artifactcontainer/bone
+	color = COLOR_BROWN
+	grind_results = list(/datum/reagent/carbon = 10)
+
+/obj/item/storage/box/artifactcontainer/plasteel
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
+
+/obj/item/storage/box/artifactcontainer/diamond
+	alpha = 200
+	color = COLOR_BLUE_LIGHT
+	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/carbon = 20)
+
+/obj/item/storage/box/artifactcontainer/uranium
+	color = COLOR_GREEN_GRAY
+	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/uranium = 20)
+
+/obj/item/storage/box/artifactcontainer/prewar
+	color = COLOR_PALE_BLUE_GRAY
+	custom_materials = list(
+		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
+		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,
+		/datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5
+		)
+	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
 
 
 

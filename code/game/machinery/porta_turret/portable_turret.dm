@@ -1961,7 +1961,7 @@
 		if(!casing.BB)
 			continue
 		if(our_mag.give_round(casing))
-			SEND_SIGNAL(saq, COMSIG_TRY_STORAGE_TAKE, casing, our_mag, FALSE, casing.loc, null)
+			SEND_SIGNAL(saq, COMSIG_TRY_STORAGE_TAKE, casing, our_mag, FALSE)
 		else
 			continue
 		count++

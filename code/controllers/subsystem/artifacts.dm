@@ -145,6 +145,10 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/identify_max_delta = ART_IDENT_MAX_DELTA
 	var/identify_trait = TRAIT_ARTIFACT_IDENTIFY
 
+	var/fuzzy_time = FALSE
+	var/fuzzy_time_low = 0.9
+	var/fuzzy_time_high = 1.1
+
 	var/blood_target_good_common_min = BLOOD_VOLUME_SAFE
 	var/blood_target_good_common_max = BLOOD_VOLUME_SAFE
 	var/blood_target_good_uncommon_min = BLOOD_VOLUME_SAFE

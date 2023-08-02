@@ -17,24 +17,22 @@
 	var/debuff_strength
 
 /obj/item/artifact/common
-	buff_strength_high = 30
-	buff_strength_low = 10
+	buff_strength_high = 60
+	buff_strength_low = 40
 	rareness = ART_RARITY_COMMON
 
 /obj/item/artifact/uncommon
-	buff_strength_high = 60
-	buff_strength_low = 40
+	buff_strength_high = 120
+	buff_strength_low = 80
 	rareness = ART_RARITY_UNCOMMON
 
 /obj/item/artifact/rare
-	buff_strength_high = 100
-	buff_strength_low = 50
+	buff_strength_high = 160
+	buff_strength_low = 110
 	rareness = ART_RARITY_RARE
 
-/obj/item/artifact/Initialize(mapload, rarity_override)
+/obj/item/artifact/Initialize(mapload)
 	. = ..()
-	if(!isnull(rarity_override))
-		rareness = rarity_override
 	artifact_me()
 	update_icon()
 

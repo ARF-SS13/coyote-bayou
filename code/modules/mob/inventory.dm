@@ -352,7 +352,7 @@
 				dropItemToGround(wornthing, TRUE, FALSE)
 				if(LAZYLEN(wornthing.contents)) // If anything's in here, put it in the thing
 					for(var/atom/heldinside in wornthing.contents)
-						if(!SEND_SIGNAL(wornthing, COMSIG_TRY_STORAGE_INSERT, heldinside, null, TRUE, TRUE, heldinside.loc, null)) // Try and transfer whats in the thing to the new thing that'll be there
+						if(!SEND_SIGNAL(wornthing, COMSIG_TRY_STORAGE_INSERT, heldinside, null, TRUE, TRUE)) // Try and transfer whats in the thing to the new thing that'll be there
 							dropItemToGround(heldinside, TRUE, FALSE)
 				qdel(wornthing)
 				failedequip = FALSE
@@ -434,7 +434,7 @@
 		if(equip_delay_self)
 			return
 
-	if(M.active_storage && M.active_storage.parent && SEND_SIGNAL(M.active_storage.parent, COMSIG_TRY_STORAGE_INSERT, src, M, TRUE, TRUE, M.loc, null))
+	if(M.active_storage && M.active_storage.parent && SEND_SIGNAL(M.active_storage.parent, COMSIG_TRY_STORAGE_INSERT, src,M))
 		return TRUE
 
 	var/list/obj/item/possible = list(M.get_inactive_held_item(), M.get_item_by_slot(SLOT_BELT), M.get_item_by_slot(SLOT_GENERIC_DEXTROUS_STORAGE), M.get_item_by_slot(SLOT_BACK))
@@ -442,7 +442,7 @@
 		if(!i)
 			continue
 		var/obj/item/I = i
-		if(SEND_SIGNAL(I, COMSIG_TRY_STORAGE_INSERT, src, M, TRUE, TRUE, M.loc, null))
+		if(SEND_SIGNAL(I, COMSIG_TRY_STORAGE_INSERT, src, M))
 			return TRUE
 
 	to_chat(M, span_warning("You are unable to equip that!"))

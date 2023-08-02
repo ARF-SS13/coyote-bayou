@@ -42,7 +42,7 @@
 
 	if(!isturf(I.loc)) //If it isn't on the floor. Do some checks to see if it's in our hands or a box. Otherwise give up.
 		if(SEND_SIGNAL(I.loc, COMSIG_CONTAINS_STORAGE))	//in a container.
-			SEND_SIGNAL(I.loc, COMSIG_TRY_STORAGE_TAKE, I, src, FALSE, I.loc, current_equipped_slot)
+			SEND_SIGNAL(I.loc, COMSIG_TRY_STORAGE_TAKE, I, src, FALSE)
 		if(!user.dropItemToGround(I))
 			return
 

@@ -67,7 +67,7 @@
 		var/list/fruits = list()
 		for(var/obj/item in storage_contents)
 			fruit = item
-			if(!istype(fruit) || !fruit.can_distill || !SEND_SIGNAL(I, COMSIG_TRY_STORAGE_TAKE, fruit, src, FALSE, fruit.loc, I.current_equipped_slot))
+			if(!istype(fruit) || !fruit.can_distill || !SEND_SIGNAL(I, COMSIG_TRY_STORAGE_TAKE, fruit, src))
 				continue
 			fruits += fruit
 		if (length(fruits))
@@ -189,7 +189,7 @@
 	else if(istype(W, /obj/item/storage/bag/plants))
 		var/obj/item/storage/bag/plants/PB = W
 		for(var/obj/item/G in PB.contents)// This check can be less than thorough because the bag has already authenticated the contents, hopefully
-			if(SEND_SIGNAL(PB, COMSIG_TRY_STORAGE_TAKE, G, src, FALSE, G.loc, G.current_equipped_slot))
+			if(SEND_SIGNAL(PB, COMSIG_TRY_STORAGE_TAKE, G, src))
 				to_chat(user, span_info("You empty the [PB] into the [src]."))
 				playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 				process_compost()
@@ -263,7 +263,7 @@
 		if(F.seed)
 			if(user && !user.temporarilyRemoveItemFromInventory(O)) //couldn't drop the item
 				return
-			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null, FALSE, O.loc, O.current_equipped_slot)) // couldn't remove from storage
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null)) // couldn't remove from storage
 				return
 			while(t_amount < t_max)
 				var/obj/item/seeds/t_prod = F.seed.Copy()
@@ -275,7 +275,7 @@
 		if(F.seed)
 			if(user && !user.temporarilyRemoveItemFromInventory(O))
 				return
-			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null, FALSE, O.loc, O.current_equipped_slot))
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null))
 				return
 			while(t_amount < t_max)
 				var/obj/item/seeds/t_prod = F.seed.Copy()
