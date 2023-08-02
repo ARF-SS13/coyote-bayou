@@ -20,7 +20,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_UNIQUE = 0,
 	)
 
-	var/spawn_chance = 3 // chance for an artifact to spawn per tick
+	var/spawn_chance = 0.5 // chance for an artifact to spawn per tick
 	var/use_valid_ball_spawner_chance = 50 // chance for an artifact to use a valid ball spawner
 
 	var/list/buffs_by_rarity = list(
@@ -454,7 +454,8 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 			chunk.forceMove(AM)
 	chunk.w_class = clamp(chunk.w_class, WEIGHT_CLASS_SMALL, WEIGHT_CLASS_NORMAL)
 	artifactify(chunk, overrides = list(ARTVAR_CRUD_IT_UP = TRUE))
-	message_admins("Spawned [chunk] at [ADMIN_VERBOSEJMP(put_here)].")
+	if(debug_spawn_message_admemes)
+		message_admins("Spawned [chunk] at [ADMIN_VERBOSEJMP(put_here)].")
 	SEND_SIGNAL(chunk, COMSIG_ITEM_ARTIFACT_FINALIZE)
 
 /datum/controller/subsystem/processing/artifacts/proc/get_artifactible_turf()

@@ -36,6 +36,7 @@
 	var/color_2 = "#FFFFFF"
 	var/beatitude = UNCURSED
 	var/override_flags = NONE
+	var/list/scanner_entry = list()
 	COOLDOWN_DECLARE(colorwobble)
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
@@ -386,6 +387,7 @@
 	SIGNAL_HANDLER
 	ART_MASTER
 	update_color()
+	update_scanner_name()
 	INVOKE_ASYNC(src, .proc/floatycool)
 
 /datum/component/artifact/proc/floatycool()
@@ -415,7 +417,25 @@
 	// animate(color = c2, time = 5 SECONDS, easing = CIRCULAR_EASING)
 	// animate(color = c3, time = 5 SECONDS, easing = CIRCULAR_EASING)
 	// animate(color = c4, time = 5 SECONDS, easing = CIRCULAR_EASING)
-
+/* 
+/datum/component/artifact/proc/update_scanner_name()
+	if(!LAZYLEN(effects))
+		scanner_name = list("YANCEY INDIGO FOXTROT FOXTROT 2-3")
+		return
+	var/num_fx = LAZYLEN(effects)
+	var/average_magnitude = 0
+	for(var/datum/artifact_effect/effect in effects)
+		average_magnitude += effect.magnitude
+	average_magnitude /= max(num_fx, 1)
+	var/ixii = round(1000 * average_magnitude)
+	var/pho_1 = uppertext(pick(SSartifacts.phonetic_alphabet))
+	var/pho_2 = uppertext(pick(SSartifacts.phonetic_alphabet))
+	var/thingname = "[pho_1]-[pho_2]-[num_fx]-\Roman[ixii]"
+	var/rep_fx = pick(effects)
+	if(istype(rep_fx, /datum/artifact_effect))
+		thingname = "[thingname] [rep_fx.get_prefix()]-[rand(1000,9999)]"
+	scanner_name = list("[thingname]")
+ */
 /datum/component/artifact/proc/make_unique(datum/source, unique_label) // effects already appplied, now gussy up the itussy
 	SIGNAL_HANDLER
 	ART_MASTER

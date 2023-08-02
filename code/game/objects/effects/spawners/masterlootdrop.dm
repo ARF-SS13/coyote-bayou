@@ -70,8 +70,7 @@
 		/obj/effect/spawner/lootdrop/f13/uncommon_money = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_bombs = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_food = 1,
-		/obj/effect/spawner/lootdrop/f13/uncommon_artifacts = 1,
-		/obj/effect/spawner/lootdrop/f13/common_artifacts = 3,
+		/obj/effect/spawner/lootdrop/f13/uncommon_artifacts = 0.5,
 	)
 	uptier_chance = 1 // 1% chance to uptier to a restricted rare
 	uptier_list = list(
@@ -130,7 +129,7 @@
 		/obj/effect/spawner/lootdrop/f13/rare_tools = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_money = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_bombs = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_artifacts = 1
+		/obj/effect/spawner/lootdrop/f13/rare_artifacts = 0.5
 	)
 
 /// Generally decent stuff, but are mostly consumables or stuff mainly just valuable for selling. Shouldnt affect tiering if given in uncommon loot rarely.
@@ -144,7 +143,6 @@
 		/obj/effect/spawner/lootdrop/f13/rare_parts = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_money = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_food = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_artifacts = 1
 	)
 
 ////////////////////////////
