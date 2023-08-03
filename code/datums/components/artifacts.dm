@@ -73,7 +73,7 @@
 		COOLDOWN_START(src, colorwobble, SSartifacts.art_effect_colorwobble_delay)
 		colorwobble(master, my_color)
 		if(isitem(current_holder))
-			colorwobble(current_holder, my_color)
+			colorwobble(current_holder, current_holder.color)
 		if(isliving(current_target))
 			colorwobble(current_target, current_target.color)
 	update_identification()
