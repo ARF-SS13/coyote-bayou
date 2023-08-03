@@ -452,7 +452,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 			break
 		if(istype(AM, /obj/structure/closet))
 			chunk.forceMove(AM)
-	chunk.w_class = clamp(chunk.w_class, WEIGHT_CLASS_SMALL, WEIGHT_CLASS_NORMAL)
+	chunk.w_class = WEIGHT_CLASS_SMALL
 	artifactify(chunk, overrides = list(ARTVAR_CRUD_IT_UP = TRUE))
 	if(debug_spawn_message_admemes)
 		message_admins("Spawned [chunk] at [ADMIN_VERBOSEJMP(put_here)].")
