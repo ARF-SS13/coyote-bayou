@@ -287,7 +287,7 @@
 		return
 	var/obj/item/reagent_containers/pill/P = locate() in contents
 	if(P)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, P, user)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, P, user, FALSE)
 		if(!user.put_in_hands(P))
 			P.forceMove(user.drop_location())	// make sure it's not stuck in the user if the put in hands somehow fails
 			to_chat(user, span_warning("[P] drops to the floor!"))

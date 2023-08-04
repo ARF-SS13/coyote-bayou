@@ -145,3 +145,7 @@
 /datum/movespeed_modifier/shared_slowdown
 	flags = IGNORE_NOSLOW
 	variable = TRUE
+
+/datum/movespeed_modifier/artifact
+	flags = IGNORE_NOSLOW
+	variable = TRUE

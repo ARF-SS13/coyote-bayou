@@ -89,7 +89,7 @@
 	if(stamina)
 		apply_damage(stamina, STAMINA, def_zone, blocked, damage_threshold = damagethreshold)
 	if(brain)
-		apply_damage(brain, BRAIN, def_zone, blocked, damage_threshold = damagethreshold)
+		adjustOrganLoss(ORGAN_SLOT_BRAIN, ((brain - damagethreshold) * blocked))
 	return 1
 
 /mob/living/proc/apply_effect(effect = 0,effecttype = EFFECT_STUN, blocked = FALSE, knockdown_stamoverride, knockdown_stammax)

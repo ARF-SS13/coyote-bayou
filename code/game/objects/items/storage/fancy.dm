@@ -175,7 +175,7 @@
 	var/obj/item/lighter/L = locate() in contents
 	if(!L)
 		return FALSE
-	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user, FALSE)
 	user.put_in_hands(L)
 	to_chat(user, span_notice("You take \a [L] out of the pack."))
 	return TRUE
@@ -213,7 +213,7 @@
 	if(cig)
 		if(!user.wear_mask && !(SLOT_WEAR_MASK in M.check_obscured_slots()))
 			var/obj/item/clothing/mask/cigarette/W = cig
-			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, M)
+			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, M, FALSE)
 			M.equip_to_slot_if_possible(W, SLOT_WEAR_MASK)
 			contents -= W
 			to_chat(user, span_notice("You take \a [W] out of the pack."))

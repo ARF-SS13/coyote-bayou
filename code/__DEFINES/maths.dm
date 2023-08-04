@@ -270,6 +270,10 @@
 	var/roundie = 1 * (0.1**decimals)
 	return "[round(number, roundie)][unit]"
 
+
+
+#define RANDOM(min, max) (rand(min*1000, max*1000)*0.001)
+
 /proc/pad_number(number, decimals = 0) // this proc doesnt work, lol
 	if(decimals <= 0)
 		return "[number]"

@@ -360,7 +360,7 @@
 	if(!istype(thing))
 		return
 	var/turf/here = get_turf(src)
-	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thing, here))
+	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thing, here, FALSE))
 		if(!silent)
 			BLENDER_GET_SUBJECT
 			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_STUCK_INSIDE, subject)

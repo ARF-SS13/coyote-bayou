@@ -104,13 +104,13 @@
 		return
 	var/obj/item/throwing_star/L = locate() in contents
 	if(L)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user, FALSE)
 		user.put_in_hands(L)
 		to_chat(user, span_notice("You take a spear out of the quiver."))
 		return TRUE
 	var/obj/item/restraints/legcuffs/W = locate() in contents
 	if(W && contents.len > 0)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user, FALSE)
 		user.put_in_hands(W)
 		to_chat(user, span_notice("You take a bola out of the quiver."))
 	else

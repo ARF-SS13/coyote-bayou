@@ -69,8 +69,12 @@
 #define COMSIG_ATOM_GET_EXAMINE_NAME "atom_examine_name"
 #define COMSIG_PARENT_EXAMINE_MORE "atom_examine_more"                    ///from base of atom/examine_more(): (/mob)
 	//Positions for overrides list
-	#define EXAMINE_POSITION_ARTICLE (1<<0)
-	#define EXAMINE_POSITION_BEFORE (1<<1)
+	#define EXAMINE_POSITION_ARTICLE 1
+	#define EXAMINE_POSITION_GRODY 2
+	#define EXAMINE_POSITION_PREFIX 3
+	#define EXAMINE_POSITION_NAME 4
+	#define EXAMINE_POSITION_SUFFIX 5
+	#define EXAMINE_LIST_LEN 5
 	//End positions
 	#define COMPONENT_EXNAME_CHANGED (1<<0)
 #define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"				//from base of atom/update_icon(): ()
@@ -440,6 +444,19 @@
 #define COMSIG_ITEM_MINE_TRIGGERED "itemineboom"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
+#define COMSIG_ITEM_GET_COST "get_cost"
+
+/// Artifact/effect signals
+#define COMSIG_ITEM_ARTIFACT_GET_EFFECTS "artifact_get_effects" // (datum/source, list/effect)
+#define COMSIG_ITEM_ARTIFACT_COMPONENT "artifact_component"     // returns the component. unused
+#define COMSIG_ITEM_ARTIFACT_EXISTS "artifact_exists"           // just returns if theres this component there
+#define COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE "artifact_make_unique" // (datum/source, datum/artifact_unique/AU)
+#define COMSIG_ITEM_ARTIFACT_IDENTIFIED "artifact_identified"   // (datum/source, mob/user)
+#define COMSIG_ITEM_ARTIFACT_ADD_EFFECT "artifact_add_effect"   // (datum/source, datum/artifact_effect/AE_path, list/parameters = list())
+#define COMSIG_ITEM_ARTIFACT_FINALIZE "artifact_finalize"       // tells the artifact we're done adding effects, and to crud it up, if applicable
+#define COMSIG_ITEM_ARTIFACT_READ_PARAMETERS "artifact_read_parameters"       // tells the artifact we're done adding effects, and to crud it up, if applicable
+
+#define COMSIG_ATOM_GET_VALUE "get_value"						/// returns the value of the atom
 
 /// datum/source, mob/spawner
 #define COMSIG_ITEM_MOB_DROPPED "mobdropped"	/// from [/mob/living/simple_animal/proc/drop_loot()]

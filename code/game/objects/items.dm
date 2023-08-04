@@ -439,7 +439,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 
 	//If the item is in a storage item, take it out. Unless it cant be removed. Then... dont
-	if(CHECK_BITFIELD(SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE), NO_REMOVE_FROM_STORAGE))
+	if(CHECK_BITFIELD(SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src), NO_REMOVE_FROM_STORAGE))
 		to_chat(user,span_alert("[src] can't be taken out of [loc]!"))
 		return
 
@@ -562,7 +562,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 // note this isn't called during the initial dressing of a player
 /obj/item/proc/equipped(mob/user, slot)
 	SHOULD_CALL_PARENT(TRUE)
-	. = SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
+	. = SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot, current_equipped_slot)
 	current_equipped_slot = slot
 	if(!(. & COMPONENT_NO_GRANT_ACTIONS))
 		for(var/X in actions)
@@ -791,7 +791,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!newLoc)
 		return FALSE
 	if(SEND_SIGNAL(loc, COMSIG_CONTAINS_STORAGE))
-		return SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, newLoc, TRUE)
+		return SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, newLoc, FALSE)
 	return FALSE
 
 /obj/item/proc/get_belt_overlay() //Returns the icon used for overlaying the object on a belt
