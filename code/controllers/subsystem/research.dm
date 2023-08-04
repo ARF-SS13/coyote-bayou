@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(research)
 	var/list/techweb_nodes_experimental = list()	//Node ids that are exclusive to the BEPIS.
 
 	var/list/techweb_point_items = list(		//path = list(point type = value)
-	//   -   Weapons - No craftables
+	//   -   Weapons!
 	/obj/item/gun/energy/laser/scatter             = list(TECHWEB_POINT_TYPE_GENERIC = 4000), // Low weight rare energy, more expensive
 	/obj/item/gun/energy/laser/rcw                 = list(TECHWEB_POINT_TYPE_GENERIC = 2750), // Medium weight rare energy.
 	/obj/item/gun/energy/laser/plasma              = list(TECHWEB_POINT_TYPE_GENERIC = 2750),
@@ -64,12 +64,26 @@ SUBSYSTEM_DEF(research)
 	/obj/item/melee/unarmed/powerfist/goliath      = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
 	/obj/item/gun/energy/laser/wattz/recharger     = list(TECHWEB_POINT_TYPE_GENERIC = 5000), // Low weight uncommon unique
 	//   -   Misc!
+	/obj/item/gun_upgrade/scope/better             = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+	/obj/item/gun_upgrade/mechanism/battery_shunt  = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+	/obj/item/tool_upgrade/augment/ai_tool         = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+	/obj/item/reagent_containers/glass/bottle/FEV_solution = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+	/obj/item/reagent_containers/glass/bottle/FEV_solution/two = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+	/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 	/obj/item/documents/syndicate/blue             = list(TECHWEB_POINT_TYPE_GENERIC = 15000),	// Super rare tech-faction documents item. Very limited.
-	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 4500),
+	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 3750),
 	/obj/item/scrap/research                       = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
 	/obj/item/stock_parts/chem_cartridge/pristine  = list(TECHWEB_POINT_TYPE_GENERIC = 10000), 
-
 	/obj/item/assembly/signaler/anomaly            = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
+	//   -   Artifacts!   (Placeholder)
+	/obj/item/artifact/common                      = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
+	/obj/item/artifact/uncommon                    = list(TECHWEB_POINT_TYPE_GENERIC = 6000),
+	/obj/item/artifact/rare                        = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+	/obj/item/artifact/unique                      = list(TECHWEB_POINT_TYPE_GENERIC = 9000),
+	/obj/item/artifact/unique/apotheosis           = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
+	/obj/item/artifact/unique/perfection           = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
+	/obj/item/artifact/unique/penance              = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
+	/obj/item/artifact/unique/bubble               = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
 	//   -   Slime Extracts!   - Basics
 	/obj/item/slime_extract/grey                   = list(TECHWEB_POINT_TYPE_GENERIC = 500),
 	/obj/item/slime_extract/metal                  = list(TECHWEB_POINT_TYPE_GENERIC = 750),
