@@ -814,7 +814,6 @@
 	new /obj/item/gun/energy/laser/wattzs(src)
 	new /obj/item/radio/headset/headset_sci(src)
 	new /obj/item/camera/coldwar(src)
-	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
 	new /obj/item/clothing/ears/headphones(src)
 
 /datum/gear/donator/kits/merek22
@@ -823,7 +822,6 @@
 	ckeywhitelist = list("merek2")
 
 /obj/item/storage/box/large/custom_kit/merek22/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
 	new /obj/item/gun/ballistic/automatic/p47merek (src)
 	new /obj/item/ammo_box/a556(src)
 	new /obj/item/clothing/suit/armor/medium/merek (src)

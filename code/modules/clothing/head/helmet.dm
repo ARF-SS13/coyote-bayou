@@ -106,8 +106,8 @@
 
 
 /obj/item/clothing/head/helmet/merekcustom
-	name = "Salvaged bullet resistant Helmet"
-	desc = "A salvaged bullet resistant helmet. It's made of a much weaker material..still looks badass however"
+	name = "salvaged battle helmet"
+	desc = "A salvaged bullet resistant helmet. It's made of a much weaker material."
 	icon_state = "helmetalt"
 	item_state = "helmetalt"
 	armor = ARMOR_VALUE_LIGHT
