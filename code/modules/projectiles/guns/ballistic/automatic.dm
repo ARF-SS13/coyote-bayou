@@ -2174,8 +2174,8 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/p47merek
-	name = "custom P47 Rifle"
-	desc = "A personalized P47 battle rifle, the firemode has been changed to become much slower while missing a built in scope which has to be replaced. The ammo counter still works"
+	name = "Custom P47 Rifle"
+	desc = "A personalized P47 battle rifle, the firemode has been changed to become much slower while missing a built in scope which has to be replaced. The ammo counter still works."
 	icon_state = "p47"
 	item_state = "p47"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'

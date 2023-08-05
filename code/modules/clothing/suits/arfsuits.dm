@@ -1921,6 +1921,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 ,)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
 /obj/item/clothing/suit/armor/medium/unmcwinter
 	name = "UNMC Winter armor"
 	desc = "A set of UNMC standard issue armor.This one seems to be a winter camo painted version. It's generally weak and only really made to stop light projectiles and blows. Albeit whack it lacks in light to null armor, it makes up for sub-par enviromental resistance. The winter coating gives it a boost in more unconventional based attacks. Let's get a move on, the enemy won't kick its own ass!"
@@ -1947,11 +1948,12 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
 /obj/item/clothing/suit/armor/medium/merek
-	name = "Salvaged UNMC Leader armor"
-	desc = "A set of salvaged UNMC leader armor. Most of what made this armor completely terrifying to deal with is now gone or repurposed. It feels much lighter and offers much less protection than the usual set of UNMC Leader armor. Personalized by the scavenger who found this."
-	icon_state = "odstlead"
-	item_state = "odstlead"
+	name = "salvaged UNMC armor"
+	desc = "A set of salvaged UNMC armor. Most of what made this armor completely terrifying to deal with is now gone or repurposed. It feels much lighter and offers much less protection than the usual set of UNMC armor. Personalized by the scavenger who found this."
+	icon_state = "odst1"
+	item_state = "odst1"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	armor = ARMOR_VALUE_LIGHT
