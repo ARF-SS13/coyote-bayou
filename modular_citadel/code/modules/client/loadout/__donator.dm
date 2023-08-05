@@ -865,6 +865,17 @@
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 
 // O
+
+/datum/gear/donator/kits/octanerockwell
+	name = "Baa and squeak loadout"
+	path = /obj/item/storage/box/large/custom_kit/octanerockwell
+	ckeywhitelist = list("octanerockwell")
+
+/obj/item/storage/box/large/custom_kit/octanerockwell/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/Lemat(src)
+	new /obj/item/gun/ballistic/automatic/z34rifle/custom(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/a308(src)
 // P
 
 /obj/item/pet_carrier/eye

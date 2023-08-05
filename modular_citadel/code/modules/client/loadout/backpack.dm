@@ -176,6 +176,11 @@
 	name = "trekker satchel"
 	path = /obj/item/storage/backpack/satchel/trekker
 
+/datum/gear/backpack/backpack/trekker/marinepack
+	name = "UNMC Standard issue backpack"
+	path = /obj/item/storage/backpack/trekker/marinepack
+	cost = 1
+
 /datum/gear/backpack/backpack/sec
 	name = "security backpack"
 	path = /obj/item/storage/backpack/security
