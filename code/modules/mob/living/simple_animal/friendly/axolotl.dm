@@ -22,5 +22,5 @@
 	gold_core_spawnable = FRIENDLY_SPAWN
 //	can_be_held = TRUE
 	mob_size = MOB_SIZE_SMALL
-//	worn_slot_flags = ITEM_SLOT_HEAD
+//	worn_slot_flags = INV_SLOTBIT_HEAD
 //	head_icon = 'icons/mob/clothing/head/animal_item_head.dmi'

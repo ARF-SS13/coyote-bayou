@@ -4,7 +4,7 @@
 	icon_state = "wallet"
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
-	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	var/no_refresh = FALSE
 
 	var/obj/item/card/id/front_id = null

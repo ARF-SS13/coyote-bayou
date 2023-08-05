@@ -139,7 +139,7 @@
 /mob/living/silicon/pai/ComponentInitialize()
 	. = ..()
 	if(possible_chassis[chassis])
-		AddElement(/datum/element/mob_holder, chassis, 'icons/mob/pai_item_head.dmi', 'icons/mob/pai_item_rh.dmi', 'icons/mob/pai_item_lh.dmi', ITEM_SLOT_HEAD)
+		AddElement(/datum/element/mob_holder, chassis, 'icons/mob/pai_item_head.dmi', 'icons/mob/pai_item_rh.dmi', 'icons/mob/pai_item_lh.dmi', INV_SLOTBIT_HEAD)
 
 /mob/living/silicon/pai/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))

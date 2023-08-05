@@ -292,7 +292,7 @@
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
 	
 	var/stock = FALSE
 	can_flashlight = TRUE
@@ -317,12 +317,12 @@
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
-		slot_flags = ITEM_SLOT_BACK
+		slot_flags = INV_SLOTBIT_BACK
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
-		slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
@@ -684,7 +684,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	weapon_class = WEAPON_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow

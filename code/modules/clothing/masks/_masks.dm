@@ -3,7 +3,7 @@
 	icon = 'icons/obj/clothing/masks.dmi'
 	body_parts_covered = HEAD
 	w_class = WEIGHT_CLASS_SMALL 
-	slot_flags = ITEM_SLOT_MASK
+	slot_flags = INV_SLOTBIT_MASK
 	strip_delay = 40
 	equip_delay_other = 40
 	var/modifies_speech = FALSE

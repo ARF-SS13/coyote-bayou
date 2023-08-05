@@ -22,7 +22,7 @@
 	actions_types = list(/datum/action/item_action/flightpack/toggle_flight, /datum/action/item_action/flightpack/engage_boosters, /datum/action/item_action/flightpack/toggle_stabilizers, /datum/action/item_action/flightpack/change_power, /datum/action/item_action/flightpack/toggle_airbrake)
 	armor = ARMOR_VALUE_LIGHT
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	resistance_flags = FIRE_PROOF
 
 	var/processing_mode = FLIGHTSUIT_PROCESSING_FULL
@@ -548,7 +548,7 @@
 	..()
 
 /obj/item/flightpack/item_action_slot_check(slot)
-	if(slot == ITEM_SLOT_BACK)
+	if(slot == INV_SLOTBIT_BACK)
 		return TRUE
 
 /obj/item/flightpack/equipped(mob/user, slot)

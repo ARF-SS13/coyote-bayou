@@ -857,7 +857,7 @@
 	..()
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
-			slot_flags = ITEM_SLOT_BACK
+			slot_flags = INV_SLOTBIT_BACK
 			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_icon()

@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
 	/// MUST be set
 	var/allowed_flags
