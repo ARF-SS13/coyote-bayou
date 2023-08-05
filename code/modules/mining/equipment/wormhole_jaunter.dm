@@ -11,7 +11,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 5
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/wormhole_jaunter/attack_self(mob/user)
 	user.visible_message(span_notice("[user.name] activates the [src.name]!"))

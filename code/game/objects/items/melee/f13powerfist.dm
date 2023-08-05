@@ -16,7 +16,7 @@
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
@@ -107,7 +107,7 @@
 	toolspeed = 0.3 //This should make it dig really quick. Like a moleminer!
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 
 
@@ -125,7 +125,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BELT
 	force = 10
 	wound_bonus = 25
 	block_chance = 15
@@ -167,7 +167,7 @@
 		item_state = off_item_state
 		w_class = WEIGHT_CLASS_NORMAL
 		force = force_off
-		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BELT
 		attack_verb = list("poked", "scraped")
 	add_fingerprint(user)
 
@@ -196,7 +196,7 @@
 	icon_state = "shishkebabpack"
 	item_state = "shishkebabpack"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 //	actions_types = list(/datum/action/item_action/toggle_shishkebab)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF

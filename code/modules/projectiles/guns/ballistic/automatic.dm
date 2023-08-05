@@ -2240,7 +2240,7 @@
 	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56x45."
 	icon_state = "bozar"
 	item_state = "sniper"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -2901,7 +2901,7 @@
 	desc = "The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled."
 	icon_state = "m72"
 	item_state = "sniper"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	init_mag_type = /obj/item/ammo_box/magazine/m2mm
 	weapon_class = WEAPON_CLASS_RIFLE

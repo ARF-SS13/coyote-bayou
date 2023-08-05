@@ -183,7 +183,7 @@
 	item_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-	slot_flags = ITEM_SLOT_ID
+	slot_flags = INV_SLOTBIT_ID
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/assignment_name = "identification card"

@@ -617,7 +617,7 @@ obj/item/storage/box/stingbangs
 	icon_state = "matchbox"
 	item_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	custom_price = PRICE_REALLY_CHEAP
 	component_type = /datum/component/storage/concrete/box/big/match
 

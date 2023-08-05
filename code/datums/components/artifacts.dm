@@ -2340,7 +2340,7 @@
 	desc = "A big thick-walled box that'll safely contain the effects of an artifact. Any artifact placed inside will be unable to affect the outside world -- including you."
 	icon_state = "lead-lined-container"
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = SLOT_L_STORE | SLOT_R_STORE | SLOT_BELT | SLOT_WEAR_ID
+	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_POCKET | INV_SLOTBIT_BACKPACK | INV_SLOTBIT_SUITSTORE
 	foldable = FALSE
 	custom_materials = list(/datum/material/lead = MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/lead = 20)

@@ -139,7 +139,7 @@
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK | ITEM_SLOT_NECK //sling these big belts all over your fuckin self
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_NECK //sling these big belts all over your fuckin self
 	caliber = list(CALIBER_308)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_BELT_MAGAZINE)
 

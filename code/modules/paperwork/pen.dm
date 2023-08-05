@@ -18,7 +18,7 @@
 	item_state = "pen"
 	// inhand_icon_state = "pen"
 	// worn_icon_state = "pen"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_EARS
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3

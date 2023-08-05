@@ -14,7 +14,7 @@
 	/// If parent is an item, this is the person currently holding/wearing the parent (or the parent if no one is holding it)
 	var/mob/living/holder
 	/// Whitelist of item slots the parent can be equipped in that make the holder slippery. If null or empty, it will always make the holder slippery.
-	var/list/slot_whitelist = list(ITEM_SLOT_OCLOTHING, ITEM_SLOT_ICLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_HEAD, ITEM_SLOT_MASK, ITEM_SLOT_BELT, ITEM_SLOT_NECK)
+	var/list/slot_whitelist = list(INV_SLOTBIT_OCLOTHING, INV_SLOTBIT_ICLOTHING, INV_SLOTBIT_GLOVES, INV_SLOTBIT_FEET, INV_SLOTBIT_HEAD, INV_SLOTBIT_MASK, INV_SLOTBIT_BELT, INV_SLOTBIT_NECK)
 	///what we give to connect_loc by default, makes slippable mobs moving over us slip
 	var/static/list/default_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/Slip,

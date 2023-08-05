@@ -17,7 +17,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	component_type = /datum/component/storage/concrete/debug_sack/smaller
@@ -30,7 +30,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	component_type = /datum/component/storage/concrete/debug_sack
@@ -43,7 +43,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	component_type = /datum/component/storage/concrete/backpack
@@ -82,7 +82,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "spearquiver"
 	item_state = "spearquiver"
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/backpack/spear_quiver
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
@@ -308,7 +308,7 @@
 	desc = "A grotesque satchel made of sinews and bones."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "goliath_saddle"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"

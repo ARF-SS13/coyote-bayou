@@ -2,7 +2,7 @@
 	name = "necklace"
 	icon = 'icons/obj/clothing/neck.dmi'
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	strip_delay = 40
 	equip_delay_other = 40
 	var/mood_event_on_equip = /datum/mood_event/equipped_necklace/any

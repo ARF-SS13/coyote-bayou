@@ -1353,35 +1353,35 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 //weapon class defines for standardized stats
 #define WEAPON_CLASS_TINY list(\
 "w_class" = WEIGHT_CLASS_TINY,\
-"slot_flags" = ITEM_SLOT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_LIGHT,\
 "force" = GUN_MELEE_FORCE_PISTOL_LIGHT,\
 "draw_time" = GUN_DRAW_QUICK,\
 )
 #define WEAPON_CLASS_SMALL list(\
 "w_class" = WEIGHT_CLASS_SMALL,\
-"slot_flags" = ITEM_SLOT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_MEDIUM,\
 "force" = GUN_MELEE_FORCE_PISTOL_LIGHT,\
 "draw_time" = GUN_DRAW_NORMAL,\
 )
 #define WEAPON_CLASS_NORMAL list(\
 "w_class" = WEIGHT_CLASS_NORMAL,\
-"slot_flags" = ITEM_SLOT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_HEAVY,\
 "force" = GUN_MELEE_FORCE_PISTOL_HEAVY,\
 "draw_time" = GUN_DRAW_NORMAL,\
 )
 #define WEAPON_CLASS_CARBINE list(\
 "w_class" = WEIGHT_CLASS_BULKY,\
-"slot_flags" = ITEM_SLOT_BELT | ITEM_SLOT_BACK,\
+"slot_flags" = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_CARBINE,\
 "force" = GUN_MELEE_FORCE_RIFLE_LIGHT,\
 "draw_time" = GUN_DRAW_LONG,\
 )
 #define WEAPON_CLASS_RIFLE list(\
 "w_class" = WEIGHT_CLASS_BULKY,\
-"slot_flags" = ITEM_SLOT_BACK,\
+"slot_flags" = INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_RIFLE_BOLT,\
 "force" = GUN_MELEE_FORCE_RIFLE_HEAVY,\
 "draw_time" = GUN_DRAW_LONG,\
