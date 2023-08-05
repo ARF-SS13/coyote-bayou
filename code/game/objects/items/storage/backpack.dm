@@ -667,6 +667,14 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	icon_state = "satchel-trekker"
 	item_state = "satchel-trekker"
 
+/obj/item/storage/backpack/trekker/marinepack
+	name = "UNMC Standard issue backpack"
+	desc = "A standard issued lightweight UNMC backpack. Used in pre-war times, it know finds use by those who equip it. Quite streamline looking too."
+	icon_state = "marinepack"
+	item_state = "marinepack"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_bags.dmi'
+
 /obj/item/storage/backpack/satchel/old
 	name = "old satchel"
 	desc = "The leather is stiff and cracking, but the satchel still works."

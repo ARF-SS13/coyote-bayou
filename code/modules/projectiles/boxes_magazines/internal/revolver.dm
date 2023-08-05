@@ -23,6 +23,13 @@
 	caliber = list(CALIBER_357)
 	max_ammo = 6
 
+
+/obj/item/ammo_box/magazine/internal/cylinder/lemat
+	name = "Lemat cylnder"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 9
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	name = "6520 10mm cylinder"
 	ammo_type = /obj/item/ammo_casing/c10mm

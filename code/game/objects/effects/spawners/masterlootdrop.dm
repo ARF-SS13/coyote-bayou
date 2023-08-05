@@ -239,9 +239,11 @@
 		/obj/item/gun/ballistic/shotgun/hunting = 2,
 		/obj/item/gun/ballistic/automatic/m1carbine/covcarbine = 2,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2, 
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2,
 		/obj/item/gun/ballistic/automatic/matildar = 2,
-		/obj/item/gun/ballistic/shotgun/s163 = 1, 
+		/obj/item/gun/ballistic/shotgun/s163 = 1,
+		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
+		/obj/item/gun/ballistic/revolver/Lemat = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -272,6 +274,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 2,
 		/obj/item/gun/ballistic/automatic/smg/m22 = 1,
 		/obj/item/gun/ballistic/automatic/p47 = 1,
+		/obj/item/gun/ballistic/automatic/z34rifle = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
