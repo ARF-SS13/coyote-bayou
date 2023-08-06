@@ -50,6 +50,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_ADD_EFFECT, .proc/add_effect)
 	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, .proc/read_parameters)
 	RegisterSignal(parent, COMSIG_ITEM_ARTIFACT_FINALIZE, .proc/finalize)
+	RegisterSignal(parent, COMSIG_ITEM_WELLABLE, .proc/tabulate_wellability)
 	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/update_everything)
 	// RegisterSignal(parent, COMSIG_ITEM_CLICKED, .proc/on_clicked)
@@ -237,6 +238,10 @@
 		total_value += AE.get_value()
 	total_value /= max(LAZYLEN(effects), 1)
 	return round(total_value, 25)
+
+/datum/component/artifact/proc/tabulate_wellability()
+	SIGNAL_HANDLER
+	return (tabulate_value() * 0.8)
 
 /datum/component/artifact/proc/get_name(datum/source, mob/user, list/override)
 	SIGNAL_HANDLER
