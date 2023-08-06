@@ -422,7 +422,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 /datum/controller/subsystem/processing/artifacts/fire(resumed = 0)
 	if(prob(spawn_chance))
-		INVOKE_ASYNC(src, .proc/attempt_spawn_artifact)
+		INVOKE_ASYNC(src, .proc/spawn_random_artifact)
 	if (!resumed)
 		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -438,8 +438,8 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/processing/artifacts/proc/attempt_spawn_artifact()
-	var/turf/put_here = get_artifactible_turf()
+/datum/controller/subsystem/processing/artifacts/proc/spawn_random_artifact(turf/spawn_here, rarity)
+	var/turf/put_here = spawn_here || get_artifactible_turf()
 	if(!isturf(put_here))
 		return // shrug
 	var/randomitem = pick(artifactible_items)
@@ -453,7 +453,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		if(istype(AM, /obj/structure/closet))
 			chunk.forceMove(AM)
 	chunk.w_class = WEIGHT_CLASS_SMALL
-	artifactify(chunk, overrides = list(ARTVAR_CRUD_IT_UP = TRUE))
+	artifactify(chunk, null, rarity, list(ARTVAR_CRUD_IT_UP = TRUE))
 	if(debug_spawn_message_admemes)
 		message_admins("Spawned [chunk] at [ADMIN_VERBOSEJMP(put_here)].")
 	SEND_SIGNAL(chunk, COMSIG_ITEM_ARTIFACT_FINALIZE)
@@ -946,6 +946,38 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 /datum/atom_hud/alternate_appearance/basic/artifact/mobShouldSee(mob/M)
 	return SEND_SIGNAL(target, COMSIG_ITEM_ARTIFACT_IDENTIFIED, visible_jobs)
+
+
+/obj/item/debug_artifact_wand
+	name = "Thing that makes artifacts"
+	desc = "This is a thing that makes artifacts. Just point and click and wow, arti-fun!"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "ltube"
+	var/rarity = ART_RARITY_COMMON
+
+/obj/item/debug_artifact_wand/attack_self(mob/user)
+	. = ..()
+	var/rarrrty = alert(user, "Set rarity to what?", "Cool stuff", "Common", "Uncommon", "Rare")
+	switch(rarrrty)
+		if("Common")
+			rarity = ART_RARITY_COMMON
+		if("Uncommon")
+			rarity = ART_RARITY_UNCOMMON
+		if("Rare")
+			rarity = ART_RARITY_RARE
+		else
+			rarity = ART_RARITY_COMMON
+	to_chat(user, span_phobia("Rarity set to [rarity]!"))
+
+/obj/item/debug_artifact_wand/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(!target)
+		return
+	var/turf/there = get_turf(target)
+	if(!there)
+		return
+	SSartifacts.spawn_random_artifact(there, rarity)
+	to_chat(user, span_green("Artifact spawned!"))
 
 
 /// anomalous bread

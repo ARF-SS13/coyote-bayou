@@ -406,6 +406,7 @@
 	/// used to update the button with certain things
 	#define COMSIG_BUTTON_UPDATE "button_update"					//from base of obj/item/button/activate(): (/mob/user, params)
 	#define COMSIG_BUTTON_ATTACH "button_attach"					//from base of obj/item/button/activate(): (/mob/user, params)
+#define COMSIG_ITEM_WELLABLE "item_wellable"						//from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_PICKUP "item_pickup"						//from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_ATTACK_ZONE "item_attack_zone"				//from base of mob/living/carbon/attacked_by(): (mob/living/carbon/target, mob/living/user, hit_zone)
 #define COMSIG_ITEM_IMBUE_SOUL "item_imbue_soul" 				//return a truthy value to prevent ensouling, checked in /obj/effect/proc_holder/spell/targeted/lichdom/cast(): (mob/user)
