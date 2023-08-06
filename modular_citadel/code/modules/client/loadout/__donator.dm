@@ -815,6 +815,8 @@
 	new /obj/item/radio/headset/headset_sci(src)
 	new /obj/item/camera/coldwar(src)
 	new /obj/item/clothing/ears/headphones(src)
+	new /obj/item/clothing/neck/mantle/bos(src)
+	new /obj/item/clothing/neck/mantle/treasurer(src)
 
 /datum/gear/donator/kits/merek22
 	name = "UNMC Kit"
