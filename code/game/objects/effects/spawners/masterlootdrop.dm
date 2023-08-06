@@ -650,6 +650,7 @@
 		/obj/item/ammo_box/m14mm/improvised = 1,
 		/obj/item/ammo_box/c4570box/improvised = 1,
 		/obj/item/ammo_box/m22 = 1,
+		/obj/item/ammo_box/rock/improvised = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_ammo

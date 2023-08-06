@@ -298,6 +298,13 @@
 				/obj/item/stack/sheet/glass = 4)
 	category = CAT_PRIMAL
 */
+/datum/crafting_recipe/tribalwar/rockbag
+	name = "Bag for Rocks"
+	result = /obj/item/ammo_box/rock/improvised
+	time = 10
+	reqs = list(/obj/item/weaponcrafting/string = 1,
+					/obj/item/stack/sheet/cloth = 1)
+	category = CAT_PRIMAL
 
 /datum/crafting_recipe/tribalwar/sling
 	name = "Sling"
