@@ -201,6 +201,7 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/m14mm/improvised = 1,
 	/obj/item/ammo_box/c4570box/improvised = 1,
 	/obj/item/ammo_box/m22 = 3,
+	/obj/item/ammo_box/rock/improvised = 3
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(
