@@ -1329,7 +1329,7 @@
 	toysay = "Suit sensors!"
 
 /obj/item/toy/figure/assistant
-	name = "Assistant action figure"
+	name = "Wastelander action figure"
 	icon_state = "assistant"
 	toysay = "Grey tide world wide!"
 
@@ -1341,7 +1341,7 @@
 /obj/item/toy/figure/bartender
 	name = "Bartender action figure"
 	icon_state = "bartender"
-	toysay = "Where is Pun Pun?"
+	toysay = "More whiskey!"
 
 /obj/item/toy/figure/borg
 	name = "Cyborg action figure"
@@ -1355,24 +1355,24 @@
 	toysay = "Blaze it!"
 
 /obj/item/toy/figure/captain
-	name = "Captain action figure"
+	name = "Overseer action figure"
 	icon_state = "captain"
-	toysay = "Any heads of staff?"
+	toysay = "Someone come get this Wastelander!"
 
 /obj/item/toy/figure/cargotech
 	name = "Cargo Technician action figure"
 	icon_state = "cargotech"
-	toysay = "For Cargonia!"
+	toysay = "Put him on the train."
 
 /obj/item/toy/figure/ce
 	name = "Chief Engineer action figure"
 	icon_state = "ce"
-	toysay = "Wire the solars!"
+	toysay = "Activate the Antimatter Reactor!"
 
 /obj/item/toy/figure/chaplain
 	name = "Chaplain action figure"
 	icon_state = "chaplain"
-	toysay = "Praise Space Jesus!"
+	toysay = "Praise Jesus!"
 
 /obj/item/toy/figure/chef
 	name = "Chef action figure"
@@ -1382,7 +1382,7 @@
 /obj/item/toy/figure/chemist
 	name = "Chemist action figure"
 	icon_state = "chemist"
-	toysay = "Get your pills!"
+	toysay = "Get your stims!"
 
 /obj/item/toy/figure/ian
 	name = "Ian action figure"
@@ -1392,7 +1392,7 @@
 /obj/item/toy/figure/detective
 	name = "Detective action figure"
 	icon_state = "detective"
-	toysay = "This airlock has grey jumpsuit and insulated glove fibers on it."
+	toysay = "I'm not investigating the 100th bomb this week."
 
 /obj/item/toy/figure/dsquad
 	name = "Death Squad Officer action figure"
@@ -1402,7 +1402,7 @@
 /obj/item/toy/figure/engineer
 	name = "Engineer action figure"
 	icon_state = "engineer"
-	toysay = "Oh god, the singularity is loose!"
+	toysay = "The photonic stabilizer is exploding!"
 
 /obj/item/toy/figure/geneticist
 	name = "Geneticist action figure"
@@ -1410,12 +1410,12 @@
 	toysay = "Smash!"
 
 /obj/item/toy/figure/hop
-	name = "Head of Personnel action figure"
+	name = "Council action figure"
 	icon_state = "hop"
-	toysay = "Giving out all access!"
+	toysay = "I am the Law!"
 
 /obj/item/toy/figure/hos
-	name = "Head of Security action figure"
+	name = "Sheriff action figure"
 	icon_state = "hos"
 	toysay = "Go ahead, make my day."
 
@@ -1432,7 +1432,7 @@
 /obj/item/toy/figure/lawyer
 	name = "Lawyer action figure"
 	icon_state = "lawyer"
-	toysay = "My client is a dirty traitor!"
+	toysay = "My client is a dirty raider!"
 
 /obj/item/toy/figure/curator
 	name = "Curator action figure"
@@ -1445,9 +1445,9 @@
 	toysay = "The patient is already dead!"
 
 /obj/item/toy/figure/miner
-	name = "Shaft Miner action figure"
+	name = "Miner action figure"
 	icon_state = "miner"
-	toysay = "COLOSSUS RIGHT OUTSIDE THE BASE!"
+	toysay = "There are so many ants!"
 
 /obj/item/toy/figure/ninja
 	name = "Ninja action figure"
@@ -1483,9 +1483,9 @@
 	toysay = "Get that fucking disk!"
 
 /obj/item/toy/figure/secofficer
-	name = "Security Officer action figure"
+	name = "Deputy action figure"
 	icon_state = "secofficer"
-	toysay = "I am the law!"
+	toysay = "Another bomb!"
 	toysound = 'sound/runtime/complionator/dredd.ogg'
 
 /obj/item/toy/figure/virologist
@@ -1496,7 +1496,7 @@
 /obj/item/toy/figure/warden
 	name = "Warden action figure"
 	icon_state = "warden"
-	toysay = "Seventeen minutes for coughing at an officer!"
+	toysay = "Execute them!"
 
 
 /obj/item/toy/dummy
