@@ -1317,6 +1317,25 @@ Raider
 	title = "Ashdown Citizen"
 	total_positions = 25
 	spawn_positions = 25
+	outfit = /datum/outfit/job/wasteland/ashdown
+
+/datum/outfit/job/wasteland/ashdown
+	name = "Ashdown Citizen"
+	jobtype = /datum/job/wasteland/f13raider
+	id = null
+	ears = /obj/item/radio/headset/headset_ashdown
+	belt = /obj/item/kit_spawner/waster
+	l_pocket = /obj/item/storage/wallet/stash/low
+	r_pocket = /obj/item/flashlight/flare
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
+		)
+
 
 /*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
