@@ -877,7 +877,7 @@
 	new /obj/item/gun/ballistic/revolver/Lemat(src)
 	new /obj/item/gun/ballistic/automatic/z34rifle/custom(src)
 	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/ammo_box/a308(src)
+	new /obj/item/ammo_box/a308box(src)
 // P
 
 /obj/item/pet_carrier/eye
