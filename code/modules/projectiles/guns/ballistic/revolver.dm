@@ -567,6 +567,64 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 
+
+
+/* * * * * * * * * * * *
+* Colt Buntline revolver
+* - 6 shots only like any else revolver
+* + Revolver rifle configuration, allows use of scopes
+* + Carbine class
+* + .357 ammo
+* + Uncommon
+* * * * * * * * * * * * */
+/obj/item/gun/ballistic/revolver/buntline
+	name = "Colt Buntline"
+	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .45 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
+	icon_state = "coltcarbine"
+	item_state = "coltcarbine"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = SMG_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+/* * * * * * * * * * *
+* Judge revolver
+* + 3 shot shotgun revolver for balance
+* - less damage
+* - Two handed only
+* + Lightweight, compact, and rare uncommon
+* * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/taurjudge
+	name = "Taurus Judge"
+	desc = "A Taurus manfactured Judge. This model specifically takes 3 shotgun shells, useful for unloading hell upon the enemy. Do they feel lucky?"
+	icon_state = "judge"
+	item_state = "judge"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/judge
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HMG_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
 /* * * * * * * * * * *
  * Hunting revolver
  * Super heavy revolver

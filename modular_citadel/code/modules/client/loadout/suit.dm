@@ -365,6 +365,48 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/armor/ballisticvest
+	name = "Civilian Ballistic Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/civvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no2
+	name = "6b3 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no3
+	name = "6b45 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no4
+	name = "War Press vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/newsvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no5
+	name = "Ghillie suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bushsuit
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no6
+	name = "511 PMC Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no7
+	name = "Police Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed

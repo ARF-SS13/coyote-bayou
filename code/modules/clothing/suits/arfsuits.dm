@@ -1851,6 +1851,78 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
+
+
+
+///////////////////////////////////
+//// Ballistic Vests //////////////
+///////////////////////////////////
+
+/obj/item/clothing/suit/armor/medium/ballisticvest
+	name = "A base for kevlar vest"
+	desc = "A base for kevlar vest electric boogaloo"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
+	name = "6b3 body armor"
+	desc = "A 6b3 plate carrier. This plate carrier saw primary usage in the Russian Army."
+	icon_state = "russianlight"
+	item_state = "russianlight"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/rusvest2
+	name = "6b45 body armor"
+	desc = "A 6b45 plate carrier. This plate carrier saw primary usage in the Russian Army. Even despite looking like it has extra padding, the extras are but for show sadly."
+	icon_state = "russianheavy"
+	item_state = "russianheavy"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/newsvest
+	name = "War Press vest"
+	desc = "A War correspondent ballistic vest. It's lightweight and quite slim with the words 'WAR PRESS' on the back. It's a blue colored with the text being white."
+	icon_state = "warpressvest"
+	item_state = "warpressvest"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/civvest
+	name = "Civilian grade bodyarmor"
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	icon_state = "civplate"
+	item_state = "civplate"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
+	name = "5.11 Tactical plate carrier"
+	desc = "A 5.11 Tact Plate Carrier. This plate carrier was made by the famous 5.11 company during pre-war times. Now it finds usage by the wearer who finds such armor"
+	icon_state = "511tact"
+	item_state = "511tact"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/bushsuit
+	name = "Ghillie suit"
+	desc = "A basic kevlar vest with a whole ghillie suit over it. The ghillie suit is a macabre of leaves, plants, grass, and flora patterns by the wearer. Meant to disguise the user in grassy enviroments. A man once said 'Keep a low profile and hold your fire. Try to anticipate their paths'"
+	icon_state = "ghilliesuit"
+	item_state = "ghilliesuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/leovest
+	name = "Police vest"
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	icon_state = "nashpolicevest"
+	item_state = "nashpolicevest"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 ///////////////////////////////////
 //// Halo Variation armor   //////
 //////////////////////////////////

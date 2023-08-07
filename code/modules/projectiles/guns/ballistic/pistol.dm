@@ -160,6 +160,19 @@
 	desc = "A classy german 9mm pistol, which takes single stack magazines."
 	icon_state = "luger"
 
+//9mm coldwar-modern sidearms. Same as the browning hipower pistol
+/obj/item/gun/ballistic/automatic/pistol/ninemil/glock
+	name = "glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	icon_state = "glock"
+	item_state = "glock"
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
+	name = "Pink glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	icon_state = "plock"
+	item_state = "plock"
+
 /* * * * * * * * * * *
  * Maria
  * Gaudy Light pistol
