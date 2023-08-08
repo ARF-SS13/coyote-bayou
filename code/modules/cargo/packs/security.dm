@@ -59,6 +59,20 @@
 					/obj/effect/spawner/lootdrop/f13/common_armor)
 	crate_name = "armor crate"
 
+/datum/supply_pack/security/armorplus
+	name = "Armor - Advanced"
+	desc = "Three sets of specialized armor, express requisition for those in need. Stocks tend to fluctuate."
+	cost = 5000
+	num_contained = 3
+	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/rare_armor,)
+	crate_name = "armor crate"
+
 /datum/supply_pack/security/ec
 	name = "Ammo - Energy Cell"
 	desc = "Three fully charged energy cells."
@@ -438,14 +452,28 @@
 /datum/supply_pack/security/weapon_dungeon
 	name = "Weapons - Uncommon"
 	desc = "A set of four good quality weapons. Rarely comes with something special."
-	cost = 2000
+	cost = 2500
 	num_contained = 4
 	contains = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
 		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
 		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
-		/obj/effect/spawner/lootdrop/f13/uncommon_weps
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
+		/obj/effect/spawner/lootdrop/f13/rare_weps
 )
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/weapon_plus
+	name = "Weapons - Rare"
+	desc = "A set of three superb quality weapons. Stocks may fluctuate."
+	cost = 5000
+	num_contained = 3
+	contains = list(
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
+		/obj/effect/spawner/lootdrop/f13/rare_weps,
+		/obj/effect/spawner/lootdrop/f13/rare_weps,
+		/obj/effect/spawner/lootdrop/f13/rare_weps
+		)
 	crate_name = "quality weapon crate"
 
 /datum/supply_pack/security/ammo_shipment

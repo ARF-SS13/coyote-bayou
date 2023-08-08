@@ -117,8 +117,8 @@
 
 /datum/supply_pack/misc/bicycle
 	name = "Bicycle"
-	desc = "Nanotrasen reminds all employees to never toy with powers outside their control."
-	cost = 1000000
+	desc = "The council reminds all citizens to never toy with powers outside their control."
+	cost = 250000 // 75% cheaper. Unlikely that someone will be able to get this much, but if they do, why not reward the dedication?
 	contains = list(/obj/vehicle/ridden/bicycle)
 	crate_name = "Bicycle Crate"
 	crate_type = /obj/structure/closet/crate/large

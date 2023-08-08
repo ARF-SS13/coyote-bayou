@@ -71,6 +71,19 @@
 					/obj/item/ingot/adamantine,
 					/obj/item/ingot/adamantine
 					)
+
+/datum/supply_pack/materials/deathclawhide
+	goody = PACK_GOODY_PUBLIC
+	name = "Five Deathclaw Hides"
+	desc = "Intimidate your enemies by modifying your kit with some deathclaw skin!"
+	cost = 6000
+	contains = list(/obj/item/stack/sheet/animalhide/deathclaw,
+	                /obj/item/stack/sheet/animalhide/deathclaw,
+					/obj/item/stack/sheet/animalhide/deathclaw,
+					/obj/item/stack/sheet/animalhide/deathclaw,
+					/obj/item/stack/sheet/animalhide/deathclaw
+	)
+
 /* disabled pending rework of advcrafting lootdrop
 /datum/supply_pack/materials/weaponparts
 	goody = PACK_GOODY_PUBLIC
