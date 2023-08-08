@@ -49650,14 +49650,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"ivw" = (
-/obj/effect/decal/cleanable/oil/slippery,
-/obj/structure/gas_pump/oilpump1X,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland/city)
 "ivI" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -53028,7 +53020,6 @@
 	},
 /obj/structure/fence/post,
 /obj/structure/fence/post,
-/obj/structure/gas_pump/oilpump1X,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright0"
 	},
@@ -100067,13 +100058,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/workshop)
-"uMX" = (
-/obj/structure/gas_pump/oilpump1X,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland/city)
 "uNa" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -122240,7 +122224,7 @@ mLh
 mnP
 mhp
 lfd
-uMX
+bay
 qrx
 bay
 dUw
@@ -123782,7 +123766,7 @@ bRy
 uBu
 mhp
 bay
-ivw
+uLl
 lnH
 fLx
 jyn
