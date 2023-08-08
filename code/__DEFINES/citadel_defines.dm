@@ -180,7 +180,7 @@
 #define DEFAULT_NO_EYE_STATE		"no_eye"
 
 //special species definitions
-#define MINIMUM_MUTANT_COLOR	"#202020" //this is how dark players mutant parts and skin can be
+#define MINIMUM_MUTANT_COLOR	"#000000" //I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa ~TK
 
 //defines for different matrix sections
 #define MATRIX_RED			"red"
