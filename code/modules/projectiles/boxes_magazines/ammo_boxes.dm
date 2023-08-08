@@ -926,7 +926,7 @@
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "shotgunclip"
 	caliber = "shotgun" // slapped in to allow shell mix n match
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_POCKET
 	w_class = WEIGHT_CLASS_NORMAL
 	w_volume = ITEM_VOLUME_STRIPPER_CLIP
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -1147,6 +1147,14 @@
 
 */
 
+//rockbag
+/obj/item/ammo_box/rock/improvised
+	name = "rock bag"
+	desc = "Something tells you this bag was just purpose made for putting rocks in."
+	icon_state = "improvshotbag"
+	multiple_sprites = 3
+	ammo_type = /obj/item/ammo_casing/caseless/rock
+
 //Trash for removal
 /obj/item/ammo_box/foambox
 	name = "ammo box (Foam Darts)"
@@ -1170,3 +1178,6 @@
 	icon_state = "foambox_riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
+
+
+

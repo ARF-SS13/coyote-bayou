@@ -107,7 +107,7 @@
 	name = "bloody bastard sword"
 	desc = "An enormous rune covered sword, used by cultists of dark gods to rapidly cut down non-believers."
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BACK
 	block_chance = 40
 	throwforce = 20
 	force = 30
@@ -379,7 +379,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_CULT_HELMET, ITEM_SLOT_HEAD)
+	AddElement(/datum/element/spellcasting, SPELL_CULT_HELMET, INV_SLOTBIT_HEAD)
 
 /obj/item/clothing/suit/space/hardsuit/cult
 	name = "\improper Nar'Sien hardened armor"
@@ -392,7 +392,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_CULT_ARMOR, ITEM_SLOT_OCLOTHING)
+	AddElement(/datum/element/spellcasting, SPELL_CULT_ARMOR, INV_SLOTBIT_OCLOTHING)
 
 /obj/item/sharpener/cult
 	name = "eldritch whetstone"

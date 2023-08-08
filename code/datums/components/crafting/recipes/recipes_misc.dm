@@ -547,10 +547,7 @@
 	name = "Aerial Support Girder"
 	result = /obj/item/stack/rods/scaffold
 	reqs = list(
-		/obj/item/stack/sheet/metal = 5,
-		/obj/item/stack/sheet/plastic = 1,
-		/obj/item/stack/sheet/prewar = 5,
-		/obj/item/stack/sheet/bronze = 1
+		/obj/item/stack/sheet/metal = 10,
 		)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -561,10 +558,7 @@
 	name = "Aerial Support Girder (x10)"
 	result = /obj/item/stack/rods/scaffold/ten
 	reqs = list(
-		/obj/item/stack/sheet/metal = 50,
-		/obj/item/stack/sheet/plastic = 10,
-		/obj/item/stack/sheet/prewar = 50,
-		/obj/item/stack/sheet/bronze = 10
+		/obj/item/stack/sheet/metal = 100,
 		)
 	tools = list(TOOL_WORKBENCH)
 	time = 20

@@ -9,7 +9,7 @@
 	mob_overlay_icon = 'code/modules/smithing/icons/onmob/slot.dmi'
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON //yeah ok
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	force = WEAPON_FORCE_TOOL_SMALL
 	obj_flags = UNIQUE_RENAME
@@ -125,7 +125,7 @@
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
 	item_state = "pickaxe"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	sharpness = SHARP_POINTY
 	digrange = 2
 	toolspeed = 0.2
@@ -312,6 +312,7 @@
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
+	sharpness = SHARP_EDGED
 	force = 27
 	throwforce= 30
 	block_chance = 10
@@ -372,7 +373,7 @@
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	layer = MOB_UPPER_LAYER
 
 /obj/item/melee/smith/twohand/longsword
@@ -386,7 +387,7 @@
 	force_unwielded = 28
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	layer = MOB_UPPER_LAYER
 
 /datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
@@ -415,7 +416,7 @@
 	block_chance = 8
 	force_wielded = 55
 	force_unwielded = 25
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	layer = MOB_UPPER_LAYER
 
 /obj/item/melee/smith/twohand/axe/afterattack(atom/A, mob/living/user, proximity)

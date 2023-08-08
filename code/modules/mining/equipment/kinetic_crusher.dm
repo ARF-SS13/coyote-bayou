@@ -10,7 +10,7 @@
 			kludged together to create an incredibly effective weapon and mining tool. Good at obliterating rock, steel, and flesh alike."
 	force = 25 // clunky and heavy, not good for one hand
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	throwforce = 40
 	throw_speed = 4
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)

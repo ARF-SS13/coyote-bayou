@@ -345,6 +345,7 @@
 //#define TRAIT_BANDAGE_TONGUE "coagulating tongue"
 /// You're hooked on punga!
 #define TRAIT_PUNGAPOWER "pungaful"
+#define TRAIT_NO_SECOND_WIND "no_second_wind"
 
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"
@@ -378,6 +379,12 @@
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
 /// Can't leave a storage!
 #define TRAIT_NO_STORAGE_REMOVE "TRAIT_NO_STORAGE_REMOVE"
+#define TRAIT_ARTIFACT_BLOCKER "TRAIT_ARTIFACT_BLOCKER"
+
+/// Artifact traits
+#define TRAIT_PENANCE "penance" // died with the wretched thing
+#define TRAIT_PENANCE_COMPLETE "penance_complete" // held that wretched thing for a long time
+#define TRAIT_ARTIFACT_IDENTIFY "artifact_identify" // always knows everything about artifacts
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

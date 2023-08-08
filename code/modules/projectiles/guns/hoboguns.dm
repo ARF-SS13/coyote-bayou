@@ -287,7 +287,7 @@
 		less than an inch from your fingers. Fires all four rounds at once, and if your hand still exists, delivers a solid punch too."
 	icon_state = "knucklegun"
 	item_state = "knucklegun"
-	slot_flags = ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_GLOVES
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY

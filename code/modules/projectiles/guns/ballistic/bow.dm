@@ -282,7 +282,7 @@
 	icon_state = "goldbow"
 	item_state = "goldbow"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow

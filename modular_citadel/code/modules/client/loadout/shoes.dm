@@ -184,7 +184,13 @@
 /datum/gear/shoes/unmcboots
 	name = "UNMC Standard boots"
 	path = /obj/item/clothing/shoes/unmcb
-	cost = 3
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
+
+/datum/gear/shoes/unmcbootswinter
+	name = "Winterized UNMC Standard boots"
+	path= /obj/item/clothing/shoes/unmcb/winter
+	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
 

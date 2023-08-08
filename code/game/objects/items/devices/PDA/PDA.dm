@@ -26,7 +26,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	item_state = "Pip-boy"
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)

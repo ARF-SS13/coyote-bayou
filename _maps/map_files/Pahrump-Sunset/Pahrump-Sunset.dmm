@@ -17065,10 +17065,15 @@
 	},
 /area/f13/wasteland/city/nash/starterroad)
 "bgv" = (
-/obj/structure/car/rubbish3,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2"
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -39;
+	pixel_y = -8;
+	layer = 2;
+	desc = "This tree is odd, it has the imprint of some sort of cats face on it at about average head height for a male.  Very strange."
 	},
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/starterroad)
 "bgx" = (
 /obj/structure/flora/grass/wasteland{
@@ -21259,16 +21264,15 @@
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
 "bFu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4;
-	pixel_y = -5
+/obj/structure/car/rubbish3{
+	layer = 5;
+	pixel_y = -4;
+	pixel_x = 3
 	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
 	},
-/area/f13/wasteland)
+/area/f13/wasteland/city/nash/starterroad)
 "bFz" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -53165,15 +53169,6 @@
 	icon_state = "interior4"
 	},
 /area/f13/building/abandoned)
-"jnG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building/abandoned)
 "jog" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
@@ -61225,15 +61220,6 @@
 	},
 /obj/structure/barricade/tentleatheredge,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/building/abandoned)
-"loV" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/building/abandoned)
 "loW" = (
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -100694,15 +100680,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city/nash/downtown)
-"uVV" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c";
-	pixel_x = -39;
-	pixel_y = -8
-	},
-/obj/structure/spacevine,
-/turf/open/indestructible/ground/outside/dirthole,
-/area/f13/wasteland/city/nash/starterroad)
 "uWc" = (
 /obj/structure/sign/poster/prewar/poster82{
 	pixel_y = -32
@@ -130196,7 +130173,7 @@ vRK
 bzq
 ozV
 mca
-vSe
+obw
 nEP
 bSK
 xyK
@@ -130711,7 +130688,7 @@ pKW
 sns
 jWU
 bgv
-wXv
+bFu
 bSK
 xyK
 aOk
@@ -130968,7 +130945,7 @@ bzq
 ozV
 eoE
 cGE
-uVV
+obw
 bSK
 xyK
 aOk
@@ -134645,7 +134622,7 @@ vek
 clw
 qli
 aJb
-loV
+haj
 vVo
 lRc
 ety
@@ -135161,7 +135138,7 @@ qmI
 aEN
 gDS
 vzf
-jnG
+pVH
 dzL
 hVk
 luo
@@ -136443,7 +136420,7 @@ vVo
 aXm
 kPu
 vVo
-jnG
+pVH
 dzL
 vVo
 kPu
@@ -136960,7 +136937,7 @@ agZ
 dzL
 kNl
 vVo
-jnG
+pVH
 dzL
 vVo
 rJt
@@ -138756,7 +138733,7 @@ pzz
 pzz
 aXm
 dzL
-jnG
+pVH
 vVo
 vVo
 vVo
@@ -139008,7 +138985,7 @@ xbv
 oEd
 cmJ
 vVo
-jnG
+pVH
 dzL
 kNl
 dzL
@@ -139016,7 +138993,7 @@ ybe
 kNl
 aXm
 fOO
-jnG
+pVH
 dzL
 fTf
 pPO
@@ -141841,7 +141818,7 @@ dzL
 kNl
 gjz
 dzL
-jnG
+pVH
 fOO
 jnG
 ekd

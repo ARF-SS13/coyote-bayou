@@ -213,7 +213,7 @@
 	item_state = "harmonica"
 	instrumentId = "harmonica"
 	instrumentExt = "mid"
-	slot_flags = ITEM_SLOT_MASK
+	slot_flags = INV_SLOTBIT_MASK
 	force = 5
 	w_class = WEIGHT_CLASS_SMALL
 	actions_types = list(/datum/action/item_action/instrument)

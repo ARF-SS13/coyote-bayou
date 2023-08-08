@@ -12,7 +12,7 @@
 	name ="\improper HEDP rocket"
 	desc = "USE A WEEL GUN"
 	icon_state= "84mm-hedp"
-	damage = 0
+	damage = 150 // its's a fucking rocket
 	ricochets_max = 0
 	var/anti_armour_damage = 200
 
@@ -33,7 +33,7 @@
 	desc = "Fwoosh."
 	icon_state = "missile" //temp until sprites
 	ricochets_max = 0
-	damage = 15
+	damage = 150 // its a fucking rocket
 	var/fire_stacks = 8
 	damage_type = BURN
 
@@ -63,7 +63,7 @@
 	desc = "Rocket propelled chemical warfare."
 	icon_state = "missile"
 	ricochets_max = 0 //it's a MISSILE
-	damage = 0
+	damage = 75 // its a rocket with less boom
 
 /obj/item/projectile/bullet/a84mm_chem/Initialize()
 	. = ..()
@@ -86,7 +86,7 @@
 	name ="\improper low yield HE missile"
 	desc = "Boom."
 	icon_state = "missile"
-	damage = 25
+	damage = 125 // it's a slightly less boomier rocket
 	ricochets_max = 0 //it's a MISSILE
 
 /obj/item/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)
@@ -99,7 +99,7 @@
 	name ="\improper high yield HE missile"
 	desc = "Boom plus."
 	icon_state = "missile"
-	damage = 15
+	damage = 150 // it's a rocket
 	ricochets_max = 0 //it's a MISSILE
 
 /obj/item/projectile/bullet/a84mm_he_big/on_hit(atom/target, blocked=0)
@@ -112,7 +112,7 @@
 	name ="\improper APHE missile"
 	desc = "Boom."
 	icon_state = "missile"
-	damage = 20
+	damage = 125 // still a rocket
 	ricochets_max = 0 //Guess what? Still a MISSILE
 	var/sturdy = list(
 	/turf/closed,

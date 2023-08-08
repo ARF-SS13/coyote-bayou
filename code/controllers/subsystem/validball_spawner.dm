@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(validball)
 	var/num_validballs_override // set this and run spawn_validballs to override how many validballs to spawn
 	var/list/valid_balls = list() // for tracking the individual object
 	var/list/valid_ball_spawners = list() // for making sure the spawners spawn the right amount of them
+	var/list/valid_ball_spawner_coords = list() // for making sure the spawners spawn the right amount of them
 	var/list/vb_reports = list() // holds a list of strings: the name of the ball, who held it last, and who else held it
 	
 /datum/controller/subsystem/validball/Initialize(timeofday)
@@ -52,6 +53,7 @@ SUBSYSTEM_DEF(validball)
 		selected_validball_spawners -= vb_spawner
 	//and clean up all the spawners
 	for(var/obj/effect/validball_spawner/valid_spawner in valid_ball_spawners)
+		valid_ball_spawner_coords += "[atom2coords(valid_spawner)]]" // imma keep track of these
 		qdel(valid_spawner)
 		valid_ball_spawners -= valid_spawner
 	if(LAZYLEN(valid_ball_spawners))

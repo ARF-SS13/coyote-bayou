@@ -45,32 +45,57 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 
 //Takes a value of time in deciseconds.
 //Returns a text value of that number in hours, minutes, or seconds.
-/proc/DisplayTimeText(time_value, round_seconds_to = 0.1)
+/proc/DisplayTimeText(time_value, round_seconds_to = 0.1, show_zeroes, abbreviated, fixed_digits = 0)
 	var/second = FLOOR(time_value * 0.1, round_seconds_to)
+	var/second_fixed = pad_number(FLOOR(MODULUS(second, 60), round_seconds_to), fixed_digits)
 	if(!second)
 		return "right now"
 	if(second < 60)
-		return "[second] second[(second != 1)? "s":""]"
+		if(abbreviated)
+			return "[second_fixed]s"
+		else
+			return "[second_fixed] second[(second != 1)? "s":""]"
 	var/minute = FLOOR(second / 60, 1)
+	var/minute_fixed = pad_number(MODULUS(round(minute), 60), fixed_digits)
 	second = FLOOR(MODULUS(second, 60), round_seconds_to)
 	var/secondT
-	if(second)
-		secondT = " and [second] second[(second != 1)? "s":""]"
+	if(second || show_zeroes)
+		if(abbreviated)
+			secondT = ":[second_fixed]s"
+		else
+			secondT = " and [second_fixed] second[(second != 1)? "s":""]"
 	if(minute < 60)
-		return "[minute] minute[(minute != 1)? "s":""][secondT]"
+		if(abbreviated)
+			return "[minute_fixed]m[secondT]"
+		else
+			return "[minute_fixed] minute[(minute != 1)? "s":""][secondT]"
 	var/hour = FLOOR(minute / 60, 1)
+	var/hour_fixed = pad_number(MODULUS(round(hour), 24), fixed_digits)
 	minute = MODULUS(minute, 60)
 	var/minuteT
-	if(minute)
-		minuteT = " and [minute] minute[(minute != 1)? "s":""]"
+	if(minute || show_zeroes)
+		if(abbreviated)
+			minuteT = ":[minute_fixed]m"
+		else
+			minuteT = " and [minute_fixed] minute[(minute != 1)? "s":""]"
 	if(hour < 24)
-		return "[hour] hour[(hour != 1)? "s":""][minuteT][secondT]"
+		if(abbreviated)
+			return "[hour_fixed]h[minuteT][secondT]"
+		else
+			return "[hour_fixed] hour[(hour != 1)? "s":""][minuteT][secondT]"
 	var/day = FLOOR(hour / 24, 1)
+	var/day_fixed = pad_number(round(minute), fixed_digits)
 	hour = MODULUS(hour, 24)
 	var/hourT
-	if(hour)
-		hourT = " and [hour] hour[(hour != 1)? "s":""]"
-	return "[day] day[(day != 1)? "s":""][hourT][minuteT][secondT]"
+	if(hour || show_zeroes)
+		if(abbreviated)
+			hourT = ":[hour_fixed]h"
+		else
+			hourT = " and [hour_fixed] hour[(hour != 1)? "s":""]"
+	if(abbreviated)
+		return "[day_fixed]d[hourT][minuteT][secondT]"
+	else
+		return "[day_fixed] day[(day != 1)? "s":""][hourT][minuteT][secondT]"
 
 /proc/daysSince(realtimev)
 	return round((world.realtime - realtimev) / (24 HOURS))

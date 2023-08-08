@@ -180,6 +180,30 @@
 	path = /obj/item/clothing/under/f13/dbdu
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/modernbdu
+	name = "Modern Russian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/chineseuniform
+	name = "Modern Chinese uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/chinese
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/cadpatuniform
+	name = "Modern Canadian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/cadpat
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/americanstormuniform
+	name = "American DCU uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americanstorm
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/hueypilotuniform
+	name = "Pilot uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/hueyuniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 /datum/gear/uniform/syndicate
 	name = "tactical turtleneck"
 	path = /obj/item/clothing/under/syndicate

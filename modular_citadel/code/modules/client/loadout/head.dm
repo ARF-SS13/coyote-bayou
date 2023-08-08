@@ -256,12 +256,22 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/unmchelmetwinter
+	name = "Winterized UNMC helmet"
+	path = /obj/item/clothing/head/helmet/unmcwinterhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
 /datum/gear/head/unmchelmet
 	name = "Standard UNMC Helmet"	
 	path = /obj/item/clothing/head/helmet/unmchelmet
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/unmcmedichelmet
+	name = "Standard medical UNMC helmet"
+	path = /obj/item/clothing/head/helmet/unmchelmet/medic
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
 /datum/gear/head/unmcstealthhelmet
 	name = "American infiltrator helmet"
 	path = /obj/item/clothing/head/helmet/unmcstealthhelmet
@@ -671,7 +681,71 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/crusaderhelmetweak
+	name = "Crusader Helmet"
+	path = /obj/item/clothing/head/coyote/crusaderhelmweak
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
+/datum/gear/head/ballistichelmets
+	name = "Modern Russian Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/rus1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number2
+	name = "KGB Russian Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/rus2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number3
+	name = "Canadian Ballistic Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/canadian
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number4
+	name = "U.N Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/unitednation
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number5
+	name = "U.N Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/unitednation/medical
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number6
+	name = "War Press Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/newshelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number7
+	name = "PASGT Desert Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/americandesert
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number8
+	name = "Modern Chinese Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/china1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number8
+	name = "Aircrewman Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/hueypilot
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number9
+	name = "Ghillie Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ghillie
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
 //Hat hats
 /datum/gear/head/yellowtricorne
@@ -1018,3 +1092,5 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/aurora/tiara
 	name = "Tiara"
 	path = /obj/item/clothing/head/aurora/sayyidah_tiara
+	
+

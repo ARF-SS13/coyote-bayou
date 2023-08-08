@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(user?.a_intent == INTENT_HARM)
 		return ..()
 	appraise_item(I)
-	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user, FALSE)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user)
 
 /obj/machinery/mineral/wasteland_trader/proc/appraise_item(obj/item/I, looping)
 	if(!I)
