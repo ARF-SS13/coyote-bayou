@@ -1437,25 +1437,25 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/dress2
-	name = "blue pheasent dress"
+	name = "blue peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dress2
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dress3
-	name = "brown pheasent dress"
+	name = "brown peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dress3
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dressg
-	name = "green pheasent dress"
+	name = "green peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dressg
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dressr
-	name = "red pheasent dress"
+	name = "red peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dressr
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
