@@ -2449,3 +2449,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MISC
 	spawn_thing = /obj/item/book/granter/martial/berserker
+
+/datum/loadout_box/bagorocks
+	entry_tag = "A bag for carrying rocks"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/ammo_box/rock/improvised
