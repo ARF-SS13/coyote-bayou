@@ -3441,16 +3441,11 @@
 	},
 /area/f13/building)
 "ddf" = (
-/obj/structure/table,
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/curtain{
+	color = "#845f58"
 	},
-/obj/structure/sign/painting/library{
-	pixel_y = 32
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/obj/structure/window/fulltile/house,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "ddz" = (
 /obj/structure/table,
@@ -3503,8 +3498,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "dfN" = (
-/turf/closed/wall/f13/wood/interior{
-	icon_state = "interior14"
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/obj/structure/chair/f13chair2{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "dfR" = (
@@ -5129,6 +5130,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/hospital)
+"eHt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "eIa" = (
 /obj/structure/spacevine,
 /turf/closed/indestructible/riveted/boss{
@@ -10919,6 +10930,14 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/tribal)
+"jCP" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "jCQ" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /obj/machinery/light/broken{
@@ -19294,6 +19313,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"rkm" = (
+/obj/machinery/mineral/wasteland_vendor/specialplus,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "rkA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -21240,6 +21263,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"sYJ" = (
+/obj/structure/chair/f13chair2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "sYU" = (
 /obj/structure/spacevine{
 	color = "#225522"
@@ -22381,6 +22411,20 @@
 	icon_state = "darkredfull"
 	},
 /area/f13/building)
+"tUA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/fence/wooden{
+	dir = 1;
+	icon_state = "post_wood"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "tUG" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -24048,6 +24092,10 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
+"vEZ" = (
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/floorgrime,
+/area/f13/building)
 "vFs" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
@@ -24683,9 +24731,12 @@
 	},
 /area/f13/building/mall)
 "wpB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/wood,
-/turf/open/floor/f13/wood,
+/obj/structure/chair/f13chair2{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "wqd" = (
 /obj/structure/chair,
@@ -26384,22 +26435,14 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "xUi" = (
-/obj/structure/fence/wooden{
-	dir = 1;
-	icon_state = "post_wood"
+/obj/structure/table,
+/obj/machinery/light/small{
+	dir = 4
 	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 2
-	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/wasteland)
+/area/f13/building)
 "xUq" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -34801,11 +34844,11 @@ qSl
 qSl
 mha
 tmU
-tmU
-tmU
-mha
-mha
-xUi
+tUA
+osH
+xyP
+xyP
+xyP
 xyP
 xyP
 xyP
@@ -35058,11 +35101,11 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
+xyP
+xyP
+xyP
+xyP
 eJa
 xyP
 aRd
@@ -35315,10 +35358,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -35347,15 +35386,19 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+poH
+nEl
+nEl
+nEl
+nEl
+nEl
+nEl
+nEl
+nEl
+nEl
+nEl
+nEl
+wky
 oIp
 gWO
 dUa
@@ -35572,10 +35615,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -35604,15 +35643,19 @@ oez
 oez
 oez
 oez
-poH
-nEl
-nEl
-nEl
-nEl
-wky
-oez
-oez
-oez
+gWO
+dUa
+dUa
+dUa
+dUa
+dUa
+dUa
+dUa
+dUa
+dUa
+dUa
+dUa
+oeP
 oIp
 gWO
 dUa
@@ -35829,10 +35872,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -35865,8 +35904,12 @@ cBX
 pyX
 pyX
 pyX
-uqG
 qIs
+pyX
+pyX
+pyX
+uqG
+pyX
 pyX
 lxx
 uqG
@@ -36086,10 +36129,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -36122,6 +36161,10 @@ uuw
 eTm
 mNn
 wOR
+qBy
+eTm
+mNn
+uRt
 qBy
 eTm
 mNn
@@ -36343,10 +36386,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -36383,6 +36422,10 @@ bxP
 jAx
 slU
 mNn
+bxP
+jAx
+slU
+mNn
 rrs
 oIp
 gWO
@@ -36415,7 +36458,7 @@ cqK
 tyb
 nSB
 tTI
-cqK
+rkm
 nSB
 oez
 ljF
@@ -36600,10 +36643,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -36636,6 +36675,10 @@ kjX
 gUG
 eoY
 slU
+bxP
+pOk
+eoY
+mNn
 bxP
 pOk
 eoY
@@ -36857,10 +36900,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -36892,6 +36931,10 @@ oez
 kjX
 jYw
 cGe
+mNn
+bxP
+jYw
+sTp
 mNn
 bxP
 jYw
@@ -37114,10 +37157,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -37153,7 +37192,11 @@ gIL
 byZ
 qWC
 eQo
-lnR
+gIL
+byZ
+qWC
+eQo
+gIL
 uqG
 oez
 oez
@@ -37371,10 +37414,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -37407,6 +37446,10 @@ kjX
 bFI
 mNn
 slU
+jCP
+mNn
+mNn
+mNn
 mfA
 slU
 slU
@@ -37628,10 +37671,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -37664,10 +37703,14 @@ kjX
 iHO
 slU
 slU
-slU
-jAx
-fRC
 mNn
+mNn
+mNn
+mNn
+slU
+slU
+fRC
+uSO
 rrs
 oez
 oez
@@ -37885,10 +37928,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -37922,9 +37961,13 @@ vCZ
 gIL
 nZt
 mZU
-ddf
-eoY
+dfN
 mNn
+mNn
+mNn
+mNn
+sYJ
+xUi
 rrs
 oez
 oez
@@ -38142,10 +38185,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -38177,11 +38216,15 @@ oez
 qIs
 xub
 wex
-wex
-dfN
+vEZ
+bxP
+frB
+mNn
+mNn
+nZt
 qWC
-eQo
-wpB
+qWC
+omU
 cBX
 dmX
 oez
@@ -38399,10 +38442,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -38436,9 +38475,13 @@ xYM
 mCO
 kvu
 rWG
+wpB
+mNn
+mNn
+gIL
+eHt
 eJR
 lWG
-slU
 fmJ
 odJ
 oez
@@ -38656,10 +38699,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -38692,6 +38731,10 @@ uqG
 uuw
 qIs
 qIs
+qIs
+ddf
+ddf
+ddf
 qIs
 mIf
 slU
@@ -38913,10 +38956,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -38944,6 +38983,10 @@ kwW
 hSU
 gen
 oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -39170,10 +39213,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -39207,6 +39246,10 @@ eFm
 nEl
 nEl
 wky
+oez
+oez
+oez
+oez
 oez
 mrM
 mrM
@@ -39427,10 +39470,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -39467,6 +39506,10 @@ tiW
 nEl
 nEl
 wtj
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -39684,10 +39727,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -39724,6 +39763,10 @@ dUa
 dUa
 dUa
 oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -39941,10 +39984,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -39981,6 +40020,10 @@ dUa
 gen
 dUa
 oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -40198,10 +40241,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 xyP
 xyP
@@ -40238,6 +40277,10 @@ sEo
 lgu
 lgu
 mod
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -40454,10 +40497,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 hOH
 hOH
 bmB
@@ -40495,6 +40534,10 @@ tPg
 aHY
 lgu
 oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -40710,10 +40753,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 mRK
 hOH
 hOH
@@ -40752,6 +40791,10 @@ mNn
 mNn
 sEo
 oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -40967,10 +41010,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 mNn
 knV
@@ -41009,6 +41048,10 @@ mNn
 mNn
 anX
 mod
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -41224,10 +41267,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 rrM
 mNn
@@ -41266,6 +41305,10 @@ mNn
 mNn
 lgu
 oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -41481,10 +41524,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 afb
 hOH
 xbW
@@ -41523,6 +41562,10 @@ sEo
 lgu
 sEo
 mod
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -41739,10 +41782,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 hOH
 hOH
 tPg
@@ -41780,6 +41819,10 @@ dUa
 dUa
 dUa
 oeP
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -41997,10 +42040,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 afb
 mrM
 mrM
@@ -42037,6 +42076,10 @@ rrx
 rrx
 rrx
 qGU
+sRu
+sRu
+sRu
+sRu
 sRu
 sRu
 sRu
@@ -42274,10 +42317,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 mNn
 mNn
@@ -42285,6 +42324,10 @@ mNn
 mNn
 mNn
 bmB
+xyP
+xyP
+xyP
+xyP
 xyP
 xyP
 xyP
@@ -42531,10 +42574,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 oIp
 mNn
 rrM
@@ -42542,6 +42581,10 @@ mNn
 mNn
 mNn
 bmB
+xyP
+xyP
+xyP
+xyP
 xyP
 xyP
 xyP
@@ -42788,10 +42831,6 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 afb
 hOH
 xbW
@@ -42799,6 +42838,10 @@ mNn
 tCZ
 hOH
 pEa
+mrM
+mrM
+mrM
+mrM
 mrM
 mrM
 mrM
@@ -43046,16 +43089,16 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 hOH
 hOH
 tPg
 kwP
 hOH
 pEa
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -43304,14 +43347,14 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
 afb
 mrM
 mrM
 uiW
+oez
+oez
+oez
+oez
 oez
 oez
 oez
