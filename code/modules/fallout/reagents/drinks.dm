@@ -328,7 +328,7 @@
 	glass_name = "Nuka Float"
 	glass_desc = "A delicious blend of ice-cream and classic Nuka-Cola!"
 
-	/datum/reagent/consumable/nukafloat/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/nukafloat/on_mob_life(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
 		M.adjustBruteLoss(-0.1)
 		M.adjustFireLoss(-0.1)
