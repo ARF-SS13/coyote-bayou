@@ -166,6 +166,7 @@
 	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
 	icon_state = "glock"
 	item_state = "glock"
+	reskinnable_component = /datum/component/reskinnable/glock
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
 	name = "Pink glock Pistol"

@@ -17,6 +17,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	var/skindex
 	/// our original skin
 	var/datum/reskin/my_original_skin
+	/// Actually use the original skin thing
+	var/use_original_skin = TRUE
 	/// The cooldown between reskins
 	var/reskin_cooldown = 5 MINUTES
 	COOLDOWN_DECLARE(reskin_when)
@@ -30,6 +32,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	initialize_skins()
 	RegisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT), .proc/open_skin_picker)
 	RegisterSignal(parent, list(COMSIG_ITEM_RESKINNABLE), .proc/is_reskinnable)
+	RegisterSignal(parent, list(COMSIG_ITEM_UPDATE_RESKIN), .proc/update_skin)
 	RegisterSignal(parent, list(COMSIG_ITEM_GET_CURRENT_RESKIN), .proc/get_current_skin)
 
 /datum/component/reskinnable/UnregisterFromParent()
@@ -42,8 +45,9 @@ GLOBAL_LIST_EMPTY(reskin_list)
 
 /datum/component/reskinnable/proc/initialize_skins(list/newskins = list())
 	init_skins_if_they_havent_yet()
-	my_original_skin = new /datum/reskin(parent)
-	skindex = RESKIN_SKINDEX_ORIGINAL
+	if(use_original_skin)
+		my_original_skin = new /datum/reskin(parent)
+		skindex = RESKIN_SKINDEX_ORIGINAL
 
 /datum/component/reskinnable/proc/init_skins_if_they_havent_yet()
 	if(LAZYLEN(GLOB.reskin_list))
@@ -63,7 +67,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/component/reskinnable/proc/actually_open_skin_picker(mob/user)
 	var/obj/item/master = parent
 	var/list/skinnies = list()
-	skinnies[RESKIN_SKINDEX_ORIGINAL] = image(icon = my_original_skin.icon, icon_state = my_original_skin.icon_state, dir = SOUTH)
+	if(use_original_skin)
+		skinnies[RESKIN_SKINDEX_ORIGINAL] = image(icon = my_original_skin.icon, icon_state = my_original_skin.icon_state, dir = SOUTH)
 	for(var/sken in skins)
 		var/datum/reskin/skine = LAZYACCESS(GLOB.reskin_list, sken)
 		if(!skine)
@@ -125,6 +130,15 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return
 	liststate |= myskin
 	return TRUE
+
+/datum/component/reskinnable/proc/update_skin(obj/item/skinme)
+	SIGNAL_HANDLER
+	if(!isitem(skinme))
+		return
+	var/datum/reskin/myskin = LAZYACCESS(GLOB.reskin_list, skindex)
+	if(!myskin)
+		return
+	return myskin.update_skin(skinme)
 
 /datum/reskin
 	/// The name the item will be called after reskinning
@@ -209,6 +223,9 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	var/the_icon = isnull(icon) ? target.icon : icon
 	var/the_icon_state = isnull(icon_state) ? target.icon_state : icon_state
 	return image(icon = the_icon, icon_state = the_icon_state, dir = SOUTH)
+
+/datum/reskin/proc/update_skin(obj/item/target)
+	return
 
 /// CROWBAR ///
 /datum/component/reskinnable/crowbar
@@ -1427,6 +1444,19 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	var/sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	var/sawn_icon_state = "308_sawn"
 
+/datum/reskin/gun/update_skin(obj/item/gun/target)
+	if(!istype(target))
+		return
+	. = TRUE
+	if(target.sawn_off)
+		target.desc = sawn_desc
+		target.icon = sawn_icon
+		target.icon_state = sawn_icon_state
+	else
+		target.desc = desc
+		target.icon = icon
+		target.icon_state = icon_state
+
 /// HUNTING RIFLES ///
 /datum/component/reskinnable/hunting_rifle
 	skins = list(
@@ -1917,8 +1947,10 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_icon_state = "smle-sawn"
 
 
+
 /// GRAS ///
 /datum/component/reskinnable/gras
+	use_original_skin = FALSE
 	skins = list(
 		"Martini Henry",
 	)
@@ -1937,6 +1969,312 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	sawn_icon = 'modular_coyote/icons/objects/rifles.dmi'
 	sawn_icon_state = "obrez"
 	// my_lore = /datum/component/lore/martini_henry
+
+
+
+/// GUN WITH MAG (bird with pie) (no pistols) ///
+/datum/reskin/gun/pistol
+	skin = "Pistol"
+	name = "gun"
+	desc = "Bang!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "m3civ"
+	item_state = "m3civ"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	/// These are the fallbacks if we don't have a specific icon for the magazine
+	var/chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	var/chambered_state = "m3civ"
+	var/empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	var/empty_state = "m3civ-e"
+
+/datum/reskin/gun/pistol/get_preview_image(obj/item/target)
+	var/image/img = image(chambered_icon, chambered_state)
+	return img
+
+/datum/reskin/gun/pistol/update_skin(obj/item/gun/ballistic/target)
+	if(!istype(target))
+		return
+	. = TRUE
+	var/chambered = !!target.chambered
+	if(chambered)
+		target.icon = chambered_icon
+		target.icon_state = chambered_state
+	else
+		target.icon = empty_icon
+		target.icon_state = empty_state
+
+//////////////////////////
+/// GLOCKS ///////////////
+/datum/component/reskinnable/glock
+	use_original_skin = FALSE
+	skins = list(
+		"Glock",
+		"Plock",
+	)
+/datum/reskin/gun/pistol/glock
+	skin = "Glock"
+	name = "glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "glock"
+	item_state = "glock"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "glock"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "glock-e"
+/datum/reskin/gun/pistol/plock
+	skin = "Plock"
+	name = "Pink glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "plock"
+	item_state = "plock"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "plock"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "plock-e"
+
+//////////////////////////
+/// VOLCANIC PISTOL //////
+/datum/component/reskinnable/volcanic
+	use_original_skin = FALSE
+	skins = list(
+		"Volcanic",
+		"Custom Volcanic",
+	)
+/datum/reskin/gun/pistol/volcanic
+	skin = "Volcanic"
+	name = "Lever action pistol"
+	desc = "A Volcanic Pistol from the Volcanic Repeating Arms Company. The pistol itself is a 6 round capacity rechambered in a much more fitting .45 ACP. The gun's original problems have been seemingly taken care of as to not allow your hand or hands to blow off when using the gun itself."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "volcanic"
+	item_state = "volcanic"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "volcanic"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "volcanic-e"
+/datum/reskin/gun/pistol/volcanic_custom
+	skin = "Custom Volcanic"
+	name = "Custom lever action pistol"
+	desc = "A Volcanic Pistol from the Volcanic Repeating Arms Company. The pistol itself is a 6 round capacity rechambered in a much more fitting .45 ACP. The gun's original problems have been seemingly taken care of as to not allow your hand or hands to blow off when using the gun itself. Now in lemon-cream flavor."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "customvolcanic"
+	item_state = "customvolcanic"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "customvolcanic"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "customvolcanic-e"
+
+/// GUN WITH MAG (bird with pie) (no pistols) ///
+/datum/reskin/gun/magazine
+	skin = "GunWithMaggie-nousepls"
+	name = "gun"
+	desc = "Bang!"
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "308"
+	item_state = "308"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	/// Which magazines we'll visually support
+	/// Format: list(10, 15,...) gotta be numbers, not strings
+	var/list/supported_sizes = list()
+	/// These are the fallbacks if we don't have a specific icon for the magazine
+	var/loaded_chambered_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	var/loaded_chambered_state = "308_loaded"
+	var/loaded_empty_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	var/loaded_empty_state = "308_empty"
+	var/unloaded_chambered_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	var/unloaded_chambered_state = "308_loaded"
+	var/unloaded_empty_icon = 'modular_coyote/icons/objects/rifles.dmi'
+	var/unloaded_empty_state = "308_empty"
+
+/datum/reskin/gun/magazine/get_preview_image(obj/item/pda/target)
+	if(LAZYLEN(supported_sizes))
+		var/loadnumber = LAZYACCESS(supported_sizes, 1)
+		var/image/img = image(icon, "[icon_state]-[loadnumber]")
+		return img
+	var/image/img = image(loaded_chambered_icon, loaded_chambered_state)
+	return img
+
+/datum/reskin/gun/magazine/update_skin(obj/item/gun/ballistic/target)
+	if(!istype(target))
+		return
+	. = TRUE
+	var/obj/item/ammo_box/magazine/mag = target.magazine
+	var/loaded = istype(mag)
+	var/chambered = !!target.chambered
+	if(loaded) // gonna use the fancy magazine stuff
+		var/magsize = mag.max_ammo
+		if(magsize in supported_sizes)
+			var/state_to_use = "[icon_state]-[magsize]"
+			if(!chambered)
+				state_to_use = "[state_to_use]-e"
+			target.icon = icon
+			target.icon_state = state_to_use
+			return
+		if(chambered)
+			target.icon = loaded_chambered_icon
+			target.icon_state = loaded_chambered_state
+			return
+		target.icon = loaded_empty_icon
+		target.icon_state = loaded_empty_state
+		return
+	if(chambered) // chambered and unloaded
+		target.icon = unloaded_chambered_icon
+		target.icon_state = unloaded_chambered_state
+		return
+	target.icon = unloaded_empty_icon
+	target.icon_state = unloaded_empty_state
+
+///////////////////////
+/// SERVICE RIFLES ///
+/datum/component/reskinnable/service_rifle
+	use_original_skin = FALSE
+	skins = list(
+		"Service Rifle",
+		"ALR-15",
+	)
+/datum/reskin/gun/magazine/service_rifle
+	skin = "Service Rifle"
+	name = "service rifle"
+	desc = "A pre-war semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "service_rifle"
+	item_state = "servicerifle"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	supported_sizes = list(10, 20, 30, 50)
+	loaded_chambered_icon = 'icons/obj/guns/projectile.dmi'
+	loaded_chambered_state = "service_rifle-20"
+	loaded_empty_icon = 'icons/obj/guns/projectile.dmi'
+	loaded_empty_state = "service_rifle-20-e"
+	unloaded_chambered_icon = 'icons/obj/guns/projectile.dmi'
+	unloaded_chambered_state = "service_rifle"
+	unloaded_empty_icon = 'icons/obj/guns/projectile.dmi'
+	unloaded_empty_state = "service_rifle-e"
+/datum/reskin/gun/magazine/alr
+	skin = "ALR-15"
+	name = "ALR-15"
+	desc = "Built entirely out of space-age plastic, the Abby-Lante Reciprocator weighs only 15 grams. The rest of the gun is made out of steel, and weighs 15 kilograms. The ALR-15 is chambered in 5.56x45mm, and is capable of accepting bayonets."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "alr15"
+	item_state = "alr15"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	supported_sizes = list(10, 20, 30, 50)
+	loaded_chambered_icon = 'icons/obj/guns/projectile.dmi'
+	loaded_chambered_state = "alr15-20"
+	loaded_empty_icon = 'icons/obj/guns/projectile.dmi'
+	loaded_empty_state = "alr15-20-e"
+	unloaded_chambered_icon = 'icons/obj/guns/projectile.dmi'
+	unloaded_chambered_state = "alr15"
+	unloaded_empty_icon = 'icons/obj/guns/projectile.dmi'
+	unloaded_empty_state = "alr15-e"
+
+///////////////////////
+/// 556 AUTO RIFLES ///
+/datum/component/reskinnable/auto_556
+	use_original_skin = FALSE
+	skins = list(
+		"Assault Carbine",
+		"SCAR-L",
+	)
+/datum/reskin/gun/magazine/ass_cabine
+	skin = "Assault Carbine"
+	name = "assault carbine"
+	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "assault_carbine"
+	item_state = "assault_carbine"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	supported_sizes = list(10, 20, 30, 50)
+	loaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	loaded_chambered_state = "assault_carbine-20"
+	loaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	loaded_empty_state = "assault_carbine-20-e"
+	unloaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	unloaded_chambered_state = "assault_carbine-e"
+	unloaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	unloaded_empty_state = "assault_carbine-e"
+/datum/reskin/gun/magazine/scar_l
+	skin = "SCAR-L"
+	name = "SCAR-L"
+	desc = "As an ancient modern rifle chambered in 5.56mm, the Sierra Catgirl Army Rifle - (maLe) is a popular choice for those wanting to patrol the Northwestern Silvervine."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "unused556rifle"
+	item_state = "servicerifle"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	supported_sizes = list()
+	loaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	loaded_chambered_state = "unused556rifle"
+	loaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	loaded_empty_state = "unused556rifle"
+	unloaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	unloaded_chambered_state = "unused556rifle-e"
+	unloaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	unloaded_empty_state = "unused556rifle-e"
+
+////////////////////////////
+/// DEBUG SERVICE RIFLE ///
+/datum/component/reskinnable/service_rifle/debug
+	use_original_skin = FALSE
+	skins = list(
+		"Service Rifle",
+		"Service Rifle (180)",
+	)
+/datum/reskin/gun/magazine/debug
+	skin = "Service Rifle (180)"
+	name = "Debug Service Rifle skin 180"
+	desc = "Its a gun. It shoots bullets. If it kinda looks like an American 180 by default, something fucked up. but its not."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "smg22"
+	item_state = "308"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun
+	supported_sizes = list(180)
+	loaded_chambered_icon = 'icons/obj/guns/projectile.dmi'
+	loaded_chambered_state = "m72-10"
+	loaded_empty_icon = 'icons/obj/guns/projectile.dmi'
+	loaded_empty_state = "mini-uzi-32-e"
+	unloaded_chambered_icon = 'icons/obj/guns/projectile.dmi'
+	unloaded_chambered_state = "sten"
+	unloaded_empty_icon = 'icons/obj/guns/projectile.dmi'
+	unloaded_empty_state = "smg10mm-e"
+
+/obj/item/gun/ballistic/automatic/service/debug_skin
+	name = "debug rifle"
+	desc = "its a service rifle that turns into other shit. if you see this, call 1-800-IMC-ODER"
+	icon_state = "service_rifle"
+	item_state = "servicerifle"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	extra_mag_types = list(/obj/item/ammo_box/magazine/m22smg)
+	reskinnable_component = /datum/component/reskinnable/service_rifle/debug
+
+
+
 
 /obj/item/storage/backpack/debug_reskins
 	name = "debug reskin crate"

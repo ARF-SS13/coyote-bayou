@@ -54,18 +54,9 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	return SEND_SIGNAL(magazine, COMSIG_GUN_MAG_ADMIN_RELOAD) // get relayed, noob
 
 /obj/item/gun/ballistic/update_icon_state()
-	var/datum/reskin/gun/myskin = get_current_skin()
-	if(myskin)
-		if(sawn_off)
-			desc = myskin.sawn_desc
-			icon = myskin.sawn_icon
-			icon_state = myskin.sawn_icon_state
-		else
-			desc = myskin.desc
-			icon = myskin.icon
-			icon_state = myskin.icon_state
-	else
-		icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
+	icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
 
 /obj/item/gun/ballistic/proc/register_magazines()
 	if(LAZYACCESS(GLOB.gun_accepted_magazines, "[type]"))

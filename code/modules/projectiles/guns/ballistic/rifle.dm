@@ -128,6 +128,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+	reskinnable_component = /datum/component/reskinnable/volcanic
 
 /* * * * * * * * * * *
  * Coyote Repeater

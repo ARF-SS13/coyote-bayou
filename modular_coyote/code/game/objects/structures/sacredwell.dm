@@ -17,25 +17,6 @@ GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/advanced
 #define WELL_MID "sacredwellitems_mid"
 #define WELL_HIGH "sacredwellitems_high"
 
-GLOBAL_LIST_INIT(sacred_well_items, list(
-	WELL_HIGH = typecacheof(list(
-		/obj/item/gun/energy/laser/plasma,
-		/obj/item/clothing/suit/armor/power_armor,
-		/obj/item/clothing/head/helmet/f13/power_armor)),
-	WELL_MID = typecacheof(list(
-		/obj/item/gun/energy/laser,
-		/obj/item/gun/ballistic/automatic/service)),
-	WELL_LOW = typecacheof(list(
-		/obj/item/gun/energy/laser/pistol,
-		/obj/item/stock_parts/cell/ammo,
-		/obj/item/gun/ballistic)),
-	WELL_MISC = typecacheof(list(
-		/obj/item/stock_parts/chem_cartridge,
-		/obj/item/stock_parts/cell)),
-	WELL_COMPONENTS = typecacheof(list(
-		/obj/item/advanced_crafting_components,
-		/obj/item/stock_parts))))
-
 GLOBAL_LIST_INIT(sacred_well_prices, list(
 	WELL_HIGH = 200,
 	WELL_MID = 150,
@@ -43,6 +24,8 @@ GLOBAL_LIST_INIT(sacred_well_prices, list(
 	WELL_MISC = 50,
 	WELL_COMPONENTS = 25,
 ))
+
+GLOBAL_LIST_EMPTY(sacred_well_items)
 
 
 // objects
@@ -125,6 +108,36 @@ GLOBAL_LIST_INIT(sacred_well_prices, list(
 	var/sacredmeter_max = 1000 //how much charge it needs before it does the thing
 	var/cooling = FALSE
 	var/debug = FALSE
+
+/obj/structure/sacredwell/Initialize()
+	. = ..()
+	if(!LAZYLEN(GLOB.sacred_well_items)) /// Stop. Fucking. Erroring.
+		init_well_shit()
+
+/obj/structure/sacredwell/proc/init_well_shit()
+	var/list/high = typecacheof(list(
+		/obj/item/gun/energy/laser/plasma,
+		/obj/item/clothing/suit/armor/power_armor,
+		/obj/item/clothing/head/helmet/f13/power_armor))
+	var/list/mid = typecacheof(list(
+		/obj/item/gun/energy/laser,
+		/obj/item/gun/ballistic/automatic/service))
+	var/list/low = typecacheof(list(
+		/obj/item/gun/energy/laser/pistol,
+		/obj/item/stock_parts/cell/ammo,
+		/obj/item/gun/ballistic))
+	var/list/misc = typecacheof(list(
+		/obj/item/stock_parts/chem_cartridge,
+		/obj/item/stock_parts/cell))
+	var/list/comp = typecacheof(list(
+		/obj/item/advanced_crafting_components,
+		/obj/item/stock_parts))
+	GLOB.sacred_well_items[WELL_HIGH] = high
+	GLOB.sacred_well_items[WELL_MID] = mid
+	GLOB.sacred_well_items[WELL_LOW] = low
+	GLOB.sacred_well_items[WELL_MISC] = misc
+	GLOB.sacred_well_items[WELL_COMPONENTS] = comp
+	///fuck
 
 /obj/structure/sacredwell/examine()
 	. = ..()
