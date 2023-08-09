@@ -40,6 +40,8 @@
 	*/
 
 /obj/item/gun/ballistic/automatic/update_icon_state()
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
 /* /obj/item/gun/ballistic/automatic/attackby(obj/item/A, mob/user, params)
@@ -1488,7 +1490,7 @@
 	knife_x_offset = 22
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-
+	reskinnable_component = /datum/component/reskinnable/service_rifle
 
 //////////////////////////////////////////////
 //// Famas G80{generation}	              ////
@@ -1566,6 +1568,7 @@
 	scope_y_offset = 15
 	suppressor_x_offset = 26
 	suppressor_y_offset = 28
+	reskinnable_component = null
 
 /* * * * * * * * * * *
  * Marksman carbine
@@ -1989,6 +1992,7 @@
 	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 27
 	suppressor_y_offset = 28
+	reskinnable_component = null
 
 /* * * * * * * * * * *
  * R91 assault rifle
@@ -2189,8 +2193,9 @@
 	damage_multiplier = GUN_LESS_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(/datum/firemode/burst/two/slower ,
-	/datum/firemode/semi_auto/slower
+	init_firemodes = list(
+		/datum/firemode/burst/two/slower,
+		/datum/firemode/semi_auto/slower
 	)
 	can_suppress = FALSE
 	can_scope = TRUE
@@ -2292,6 +2297,7 @@
 	flight_x_offset = 21
 	flight_y_offset = 21
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
+	reskinnable_component = /datum/component/reskinnable/auto_556
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2316,6 +2322,7 @@
 		/datum/firemode/semi_auto
 	)
 	can_scope = FALSE
+	reskinnable_component = null
 
 /////////////////////////
 /// M5A1 Assault rifle////
@@ -2344,6 +2351,7 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE 
 	can_flashlight = FALSE
+	reskinnable_component = null
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2367,6 +2375,7 @@
 		/datum/firemode/burst/five/fast,
 		/datum/firemode/semi_auto
 	)
+	reskinnable_component = null
 
 /* * * * * * * * * * *
  * FN FAL Rifle
