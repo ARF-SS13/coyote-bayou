@@ -19,13 +19,13 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	//so you can't fish from multiple spots!
 	var/inuse = FALSE
 	//customization, allow rods to "... go the distance"
-	var/fish_range = 1
+	var/fish_range = 2
 	//customization, some rods are faster (or slower) than others
 	//maybe in the future, lets add some kind of skill for this?
-	var/min_fishtime = 6 SECONDS
-	var/max_fishtime = 12 SECONDS
+	var/min_fishtime = 1 SECONDS
+	var/max_fishtime = 30 SECONDS
 	//customization, you have two seconds to catch your fish
-	var/max_afterfish = 2 SECONDS
+	var/max_afterfish = 4 SECONDS
 	//these two vars are basically the timers
 	var/current_wait = 0
 	var/current_waitfail = 0
@@ -62,11 +62,15 @@ GLOBAL_LIST_INIT(fish_rates, list(
 			switch(fish_result)
 				if(1)
 					to_chat(current_user, span_warning("You got trash, lame..."))
+					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(2)
 					to_chat(current_user, span_warning("You got nothing, lame..."))
+					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(3)
 					to_chat(current_user, span_green("You got a fish, nice!"))
+					playsound(src.loc, 'sound/f13effects/karma_up.ogg', 100, TRUE, -1)
 		to_chat(current_user, span_notice("You pull back your line!"))
+		playsound(src.loc, 'sound/f13items/youpullbackyourline.ogg', 100, TRUE, -1)
 		inuse = FALSE
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
 	inuse = TRUE
@@ -75,6 +79,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	current_wait = world.time + random_fishtime
 	current_waitfail = current_wait + max_afterfish
 	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))
+	playsound(src.loc, 'sound/f13items/youcastyourfishingline.ogg', 100, TRUE, -1)
 	current_turf = get_turf(current_user)
 
 /obj/item/fishingrod/proc/falsify_inuse()
@@ -82,7 +87,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 
 /obj/item/fishingrod/proc/play_readysound()
 	if(inuse)
-		playsound(src.loc, 'sound/f13items/fishready.ogg', 100, TRUE, -1)
+		playsound(src.loc, 'sound/f13items/youvegotsomething.ogg', 100, TRUE, -1)
 		to_chat(current_user,"You've got something...")
 
 /obj/item/fishingrod/proc/complete_fishing()
