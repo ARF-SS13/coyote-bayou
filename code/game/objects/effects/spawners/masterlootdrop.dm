@@ -234,6 +234,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/type17 = 1,
 		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
 		/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/glock = 1,
 		/obj/item/gun/ballistic/rifle/hunting = 2,
 		/obj/item/gun/ballistic/rifle/antique/gras = 1,
 		/obj/item/gun/ballistic/rifle/mosin = 1,
@@ -277,6 +278,9 @@
 		/obj/item/gun/ballistic/automatic/smg/m22 = 1,
 		/obj/item/gun/ballistic/automatic/p47 = 1,
 		/obj/item/gun/ballistic/automatic/z34rifle = 1,
+		/obj/item/gun/ballistic/revolver/buntline = 1,
+		/obj/item/gun/ballistic/revolver/taurjudge = 1,
+		/obj/item/gun/ballistic/automatic/ak556 = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns

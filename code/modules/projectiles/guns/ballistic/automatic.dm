@@ -2345,6 +2345,40 @@
 	can_bayonet = FALSE 
 	can_flashlight = FALSE
 
+
+/* * * * * * * * * * *
+* AK74
+* + fast firerate
+* - HEAVY damage nerf 556 damage than baseline 556 assault rifles, at 27 and could be lower
+* - 20 and 30 magazines only. No drums nor 10 mags
+* + Uncommon
+* * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/ak556
+	name = "Ak74"
+	desc = "A fast firing AK74"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74"
+	icon_state = "ak74"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small , /obj/item/ammo_box/magazine/m556/rifle/extended/hobo , /obj/item/ammo_box/magazine/m556/rifle/small/empty , /obj/item/ammo_box/magazine/m556 , /obj/item/ammo_box/magazine/m556/rifle/extended ,/obj/item/ammo_box/magazine/m556/rifle/extended/empty )
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto
+	)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_scope = TRUE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
 /* * * * * * * * * * *
  * Police Assault Rifle
  * Baseline 5mm autorifle

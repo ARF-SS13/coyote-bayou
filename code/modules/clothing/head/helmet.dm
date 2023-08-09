@@ -196,6 +196,15 @@
 	item_state = "ghillie"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ukhelmet
+	name = "MK6 Helmet"
+	desc = "A British MK6 helmet. It was outphased by the MK7, but the MK6 saw extensive use by the British military, PMCs, and foreign countries. Reliable, hardy, and cool looking. Who dares wins."
+	icon_state = "mk6"
+	item_state = "mk6"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
 /obj/item/clothing/head/helmet/merekcustom
 	name = "salvaged battle helmet"
 	desc = "A salvaged bullet resistant helmet. It's made of a much weaker material."
@@ -361,7 +370,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
-/obj/item/clothing/head/helmet/toxinfil
+/obj/item/clothing/head/kevlarhelmet/toxinfil
 	name = "Gen 3 Leo MIRAGE Helmet"
 	desc = "A third generation Leo Armaments MIRAGE Helmet. This helmet has no visor due to the fact the visor was not 'anthromorphic' friendly. The area around the eyes allows the installiation of gun-spec, or G.S, eyewear."
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'

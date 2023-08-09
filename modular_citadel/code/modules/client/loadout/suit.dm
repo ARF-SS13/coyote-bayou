@@ -379,7 +379,7 @@
 
 /datum/gear/suit/armor/ballisticvest/no3
 	name = "6b45 Body Armor"
-	path = /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest2
+	path = /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
@@ -404,6 +404,12 @@
 /datum/gear/suit/armor/ballisticvest/no7
 	name = "Police Vest"
 	path = /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no8
+	name = "Foreign Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/foreign
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 

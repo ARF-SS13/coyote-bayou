@@ -1867,6 +1867,16 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 
+
+/obj/item/clothing/suit/armor/medium/heavierballisticvest
+	name = "A heavier version of a bv"
+	desc = "I'm still standing, YEAH YEAH YEAH"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_DOWN_ENERGY_T1 , ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_DT_T1)
+
+
 /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
 	name = "6b3 body armor"
 	desc = "A 6b3 plate carrier. This plate carrier saw primary usage in the Russian Army."
@@ -1875,9 +1885,17 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
-/obj/item/clothing/suit/armor/medium/ballisticvest/rusvest2
+/obj/item/clothing/suit/armor/medium/ballisticvest/foreign
+	name = "Foreign body armor"
+	desc = "A foreign plate carrier. This plate carrier saw primary usage by foreign nations and PMCs"
+	icon_state = "foreignplate"
+	item_state = "foreignplate"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
 	name = "6b45 body armor"
-	desc = "A 6b45 plate carrier. This plate carrier saw primary usage in the Russian Army. Even despite looking like it has extra padding, the extras are but for show sadly."
+	desc = "A 6b45 plate carrier. This plate carrier saw primary usage in the Russian Army. It's bulkier than its lightweight cousins."
 	icon_state = "russianheavy"
 	item_state = "russianheavy"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'

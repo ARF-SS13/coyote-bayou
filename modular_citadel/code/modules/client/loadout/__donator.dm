@@ -705,9 +705,10 @@
 	ckeywhitelist = list("jaggachi")
 
 /obj/item/storage/box/large/custom_kit/jaggachi_6/PopulateContents()
-	new /obj/item/clothing/under/soviet(src)
+	new /obj/item/clothing/under/f13/modernbdu(src)
 	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
-	new /obj/item/clothing/suit/armor/light/vest/russian(src)
+	new /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2(src)
+	new /obj/item/clothing/head/kevlarhelmet/rus1(src)
 	new /obj/item/gun/energy/laser/LaserAK/worn(src)
 
 
@@ -1101,11 +1102,11 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun(src)
-	new /obj/item/ammo_box/m44box(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
 	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
 	new /obj/item/gun/ballistic/automatic/unmcamr/toxcustom(src)
-	new /obj/item/clothing/head/helmet/toxinfil(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxinfil(src)
 	new /obj/item/ammo_box/a50MGbox(src)
 
 /datum/gear/donator/kits/seermankhajiit002

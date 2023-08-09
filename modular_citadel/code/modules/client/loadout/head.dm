@@ -747,6 +747,12 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/ballistichelmets/number10
+	name = "MK6 Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ukhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 //Hat hats
 /datum/gear/head/yellowtricorne
 	name = "Yellow Tricorne"
