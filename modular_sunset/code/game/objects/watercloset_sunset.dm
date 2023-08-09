@@ -4,3 +4,4 @@
 	icon_state = "water_spot"
 	icon = 'modular_sunset/icons/structures/misc.dmi'
 	resistance_flags = UNACIDABLE
+	alpha = 150

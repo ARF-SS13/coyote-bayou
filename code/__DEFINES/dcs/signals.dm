@@ -69,8 +69,12 @@
 #define COMSIG_ATOM_GET_EXAMINE_NAME "atom_examine_name"
 #define COMSIG_PARENT_EXAMINE_MORE "atom_examine_more"                    ///from base of atom/examine_more(): (/mob)
 	//Positions for overrides list
-	#define EXAMINE_POSITION_ARTICLE (1<<0)
-	#define EXAMINE_POSITION_BEFORE (1<<1)
+	#define EXAMINE_POSITION_ARTICLE 1
+	#define EXAMINE_POSITION_GRODY 2
+	#define EXAMINE_POSITION_PREFIX 3
+	#define EXAMINE_POSITION_NAME 4
+	#define EXAMINE_POSITION_SUFFIX 5
+	#define EXAMINE_LIST_LEN 5
 	//End positions
 	#define COMPONENT_EXNAME_CHANGED (1<<0)
 #define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"				//from base of atom/update_icon(): ()
@@ -311,6 +315,9 @@
 #define COMSIG_LIVING_MINOR_SHOCK "living_minor_shock"			//sent by stuff like stunbatons and tasers: ()
 #define COMSIG_LIVING_REVIVE "living_revive"					//from base of mob/living/revive() (full_heal, admin_revive)
 
+/// Attempts to revive the mob via the second wind mechanic.
+#define COMSIG_LIVING_SECOND_WIND "living_second_wind" // (datum/source, /mob/dead/observer/reviver)
+
 #define COMSIG_MOB_RESET_PERSPECTIVE "mob_reset_perspective"		//from base of /mob/reset_perspective(): (atom/target)
 #define COMSIG_LIVING_GUN_PROCESS_FIRE "living_gun_process_fire"	//from base of /obj/item/gun/proc/process_fire(): (atom/target, params, zone_override)
 // This returns flags as defined for block in __DEFINES/combat.dm!
@@ -399,6 +406,7 @@
 	/// used to update the button with certain things
 	#define COMSIG_BUTTON_UPDATE "button_update"					//from base of obj/item/button/activate(): (/mob/user, params)
 	#define COMSIG_BUTTON_ATTACH "button_attach"					//from base of obj/item/button/activate(): (/mob/user, params)
+#define COMSIG_ITEM_WELLABLE "item_wellable"						//from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_PICKUP "item_pickup"						//from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_ATTACK_ZONE "item_attack_zone"				//from base of mob/living/carbon/attacked_by(): (mob/living/carbon/target, mob/living/user, hit_zone)
 #define COMSIG_ITEM_IMBUE_SOUL "item_imbue_soul" 				//return a truthy value to prevent ensouling, checked in /obj/effect/proc_holder/spell/targeted/lichdom/cast(): (mob/user)
@@ -437,6 +445,20 @@
 #define COMSIG_ITEM_MINE_TRIGGERED "itemineboom"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
+#define COMSIG_ITEM_UPDATE_RESKIN "reskin_me" // (obj/item/thing_to_skin)
+#define COMSIG_ITEM_GET_COST "get_cost"
+
+/// Artifact/effect signals
+#define COMSIG_ITEM_ARTIFACT_GET_EFFECTS "artifact_get_effects" // (datum/source, list/effect)
+#define COMSIG_ITEM_ARTIFACT_COMPONENT "artifact_component"     // returns the component. unused
+#define COMSIG_ITEM_ARTIFACT_EXISTS "artifact_exists"           // just returns if theres this component there
+#define COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE "artifact_make_unique" // (datum/source, datum/artifact_unique/AU)
+#define COMSIG_ITEM_ARTIFACT_IDENTIFIED "artifact_identified"   // (datum/source, mob/user)
+#define COMSIG_ITEM_ARTIFACT_ADD_EFFECT "artifact_add_effect"   // (datum/source, datum/artifact_effect/AE_path, list/parameters = list())
+#define COMSIG_ITEM_ARTIFACT_FINALIZE "artifact_finalize"       // tells the artifact we're done adding effects, and to crud it up, if applicable
+#define COMSIG_ITEM_ARTIFACT_READ_PARAMETERS "artifact_read_parameters"       // tells the artifact we're done adding effects, and to crud it up, if applicable
+
+#define COMSIG_ATOM_GET_VALUE "get_value"						/// returns the value of the atom
 
 /// datum/source, mob/spawner
 #define COMSIG_ITEM_MOB_DROPPED "mobdropped"	/// from [/mob/living/simple_animal/proc/drop_loot()]

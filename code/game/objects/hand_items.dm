@@ -233,6 +233,7 @@
 	sharpness = SHARP_EDGED
 	attack_speed = 2
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/hand_item/shover
 	name = "shover"

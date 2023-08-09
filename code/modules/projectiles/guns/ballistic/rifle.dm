@@ -101,6 +101,35 @@
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+/* * * * * * * * * * * * * * * *
+* Volcanic pistol
+* -6 round capacity
+* + Slightly better than the .45 ACP base damage
+* +/- Muh lever action
+* + Based off RDO, can be dual wielded
+* + Uses .45 acp, the lord's caliber
+* * * * * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/rifle/repeater/volcanic
+	name = "Lever action pistol"
+	desc = "A Volcanic Pistol from the Volcanic Repeating Arms Company. The pistol itself is a 6 round capacity rechambered in a much more fitting .45 ACP. The gun's original problems have been seemingly taken care of as to not allow your hand or hands to blow off when using the gun itself."
+	icon_state = "volcanic"
+	item_state = "volcanic"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/volcanic
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL (1.2 , 1.2)
+	can_suppress = FALSE
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	reskinnable_component = /datum/component/reskinnable/volcanic
+
 /* * * * * * * * * * *
  * Coyote Repeater
  * Baseline Repeater Tribal Skin

@@ -6,7 +6,7 @@
 	item_state = "utility"
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
 	w_class = WEIGHT_CLASS_NORMAL // Okay they can go back in ur backpack
@@ -274,7 +274,7 @@
 	desc = "A mean-looking belt sack for holding lots of ammo."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
@@ -422,7 +422,7 @@
 	desc = "An over-the-shoulder length of webbing that can hold all sorts of ammostuffs."
 	icon_state = "bandolier"
 	item_state = "bandolier"
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/neckpron/specialized/bandolier
 
@@ -431,7 +431,7 @@
 	desc = "A drab looking bandolier that goes on your upper body."
 	icon_state = "bandolier-durathread"
 	item_state = "bandolier-durathread"
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	resistance_flags = FIRE_PROOF
 
 /////////////////
@@ -444,7 +444,7 @@
 	icon_state = "holster_shoulder"
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/shoulderholster/full/PopulateContents()
@@ -490,7 +490,7 @@
 	icon_state = "outlaws_cloak"
 	item_state = "outlaws_cloak"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/peacefulcoat
@@ -501,7 +501,7 @@
 	icon_state = "peacefulcoat"
 	item_state = "peacefulcoat"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/poachercoat
@@ -512,7 +512,7 @@
 	icon_state = "poachercoat"
 	item_state = "poachercoat"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/poachervest
@@ -523,7 +523,7 @@
 	icon_state = "poachervest"
 	item_state = "poachervest"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/dantecoat
@@ -534,7 +534,7 @@
 	icon_state = "dantecoat"
 	item_state = "dantecoat"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 //////////////////
@@ -545,7 +545,7 @@
 	desc = "An over the shoulder medical holder, lifts and separates medical supplies to make you a more appealing healer."
 	icon_state = "medolier"
 	item_state = "medolier"
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/medical
 
 /*	STR.max_items = 15
@@ -691,7 +691,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	starting_sword = null
 
 /obj/item/storage/belt/sabre/heavy/ComponentInitialize()
@@ -711,7 +711,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	starting_sword = null
 
 /obj/item/storage/belt/sabre/knife/ComponentInitialize()
@@ -746,7 +746,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 
 /obj/item/storage/belt/sword/ComponentInitialize()
 	. = ..()
@@ -763,7 +763,7 @@
 	desc = "A set of sheathes and straps for carrying two curved japanese style swords."
 	icon_state = "sheath_twin"
 	item_state = "sheath_twin"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/storage/belt/sword/twin/ComponentInitialize()
 	. = ..()

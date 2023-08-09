@@ -160,6 +160,20 @@
 	desc = "A classy german 9mm pistol, which takes single stack magazines."
 	icon_state = "luger"
 
+//9mm coldwar-modern sidearms. Same as the browning hipower pistol
+/obj/item/gun/ballistic/automatic/pistol/ninemil/glock
+	name = "glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	icon_state = "glock"
+	item_state = "glock"
+	reskinnable_component = /datum/component/reskinnable/glock
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
+	name = "Pink glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	icon_state = "plock"
+	item_state = "plock"
+
 /* * * * * * * * * * *
  * Maria
  * Gaudy Light pistol
@@ -721,6 +735,24 @@
 	desc = "A custom gold plated M6G magnum. The magnum itself has a built in smart scope alongside black wooden furniture."
 	icon_state = "m6gold"
 	item_state = "m6gold"
+
+/obj/item/gun/ballistic/automatic/pistol/goldendeag
+	name = "Aureum Tactum"
+	desc = "The golden gun, er..well somewhat. Chambered in a lesser form of .44 magnum, the Aureum Tactum golden desert eagle is fully automatic. Albeit it requires a good grip for obvious reasons."
+	icon_state = "uniquedeag"
+	item_state = "uniquedeag"
+	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
+	mag_type = /obj/item/ammo_box/magazine/m44/automag
+	init_recoil = LMG_RECOIL (2, 2)
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150
+	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 /* * * * * * * * * * *
  * 14mm Semi-Auto

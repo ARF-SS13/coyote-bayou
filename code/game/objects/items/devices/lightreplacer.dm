@@ -50,7 +50,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 8
 
 	var/max_uses = 20

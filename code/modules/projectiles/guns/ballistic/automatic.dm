@@ -40,6 +40,8 @@
 	*/
 
 /obj/item/gun/ballistic/automatic/update_icon_state()
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
 /* /obj/item/gun/ballistic/automatic/attackby(obj/item/A, mob/user, params)
@@ -155,7 +157,7 @@
 	extra_mag_types = /obj/item/ammo_box/magazine/m22smg //lets you use it as a standard .22 when you run out of unobtainable bees.
 	init_mag_type = /obj/item/ammo_box/magazine/b180
 
-/* * * * * * * * * * * 
+/* * * * * * * * * * *
  * VSS Vintorez
  * 9mm
  * suppressed
@@ -1275,6 +1277,40 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
 
+
+
+/* * * * * * * * * * * *
+* Matilda Rifle
+* Lightweight low damage dealing rifle with a 20 mag only
+* - MUCH slower than a varmint
+* + Higher damage than a varmint 
+* - Unable to be modified with bayonets, flashlights or a scope
+* + common tier rifle
+* * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/matildar
+	name = "A11 'Matilda' Rifle"
+	desc = "A Latos Systems high powered caliber 5.56 battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in a high powered version of 5.56 NATO"
+	icon_state = "matilda"
+	item_state = "matilda"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_firemodes = list(/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
 /* * * * * * * * * * *
  * Varmint Rifle w/ 20rd mag
  * Light semi-auto rifle
@@ -1352,7 +1388,7 @@
 	desc = "A 5.56x45mm rifle custom built off of a... plastic- that's not polymer, that's just straight-up plastic. What the fuck?"
 	icon_state = "alr15"
 	item_state = "alr15"
-	
+
 /* * * * * * * * * * *
  * Bushmaster Arm Gun
  * Light semi-auto rifle... pistol thing
@@ -1454,13 +1490,13 @@
 	knife_x_offset = 22
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-
+	reskinnable_component = /datum/component/reskinnable/service_rifle
 
 //////////////////////////////////////////////
 //// Famas G80{generation}	              ////
 //// -weakened 5.56                       ////
 //// + three round burst fire             ////
-//// - weak 5mm assault rifle to be found ////
+//// - weak 5.56mm assault rifle to be found ////
 //// - Takes 20 mags only                 ////
 //// - Muh bullpup                        ////
 //////////////////////////////////////////////
@@ -1474,7 +1510,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault )
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty )
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
@@ -1532,6 +1568,7 @@
 	scope_y_offset = 15
 	suppressor_x_offset = 26
 	suppressor_y_offset = 28
+	reskinnable_component = null
 
 /* * * * * * * * * * *
  * Marksman carbine
@@ -1955,6 +1992,7 @@
 	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 27
 	suppressor_y_offset = 28
+	reskinnable_component = null
 
 /* * * * * * * * * * *
  * R91 assault rifle
@@ -2104,6 +2142,66 @@
 	zoom_factor = 1.2
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+
+/* * * * * * * * * *
+* P47 Battle rifle
+* + Uncommon version of the M41 BR
+* - Lower damage and caliber 
+* + Takes 20 and 10 round magazines compared to M41 10 round standard
+* + Less recoil
+* + Takes modifications unlike the M41 BR
+* * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/p47
+	name = "P47 Battle rifle"
+	desc = "A P47 Battle Rifle or 'P47BR'. A collaboration between Jaeger company and Leo Armaments to appeal to the civilian and hunter markets, this rifle is chambered in 5.45mm. The rifle has a bullpup configuration and has a built in ammo counter. It's also lightweight, allowing it to be holstered around the hip or the back for ease of carry."
+	icon_state = "p47"
+	item_state = "p47"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault ,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(/datum/firemode/burst/three/slow ,
+	/datum/firemode/semi_auto/slow
+	)
+	can_suppress = TRUE
+	can_scope = FALSE
+	can_flashlight = FALSE
+	zoom_factor = 1
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/p47merek
+	name = "Custom P47 Rifle"
+	desc = "A personalized P47 battle rifle, the firemode has been changed to become much slower while missing a built in scope which has to be replaced. The ammo counter still works."
+	icon_state = "p47"
+	item_state = "p47"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault ,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/burst/two/slower,
+		/datum/firemode/semi_auto/slower
+	)
+	can_suppress = FALSE
+	can_scope = TRUE
+	can_flashlight = FALSE
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
 /* * * * * * * * * * *
  * Worn Type 93 assault rifle
  * Chinese 5.56mm autorifle
@@ -2147,7 +2245,7 @@
 	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56x45."
 	icon_state = "bozar"
 	item_state = "sniper"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -2199,6 +2297,7 @@
 	flight_x_offset = 21
 	flight_y_offset = 21
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
+	reskinnable_component = /datum/component/reskinnable/auto_556
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2223,6 +2322,7 @@
 		/datum/firemode/semi_auto
 	)
 	can_scope = FALSE
+	reskinnable_component = null
 
 /////////////////////////
 /// M5A1 Assault rifle////
@@ -2251,6 +2351,41 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE 
 	can_flashlight = FALSE
+	reskinnable_component = null
+
+
+/* * * * * * * * * * *
+* AK74
+* + fast firerate
+* - HEAVY damage nerf 556 damage than baseline 556 assault rifles, at 27 and could be lower
+* - 20 and 30 magazines only. No drums nor 10 mags
+* + Uncommon
+* * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/ak556
+	name = "Ak74"
+	desc = "A fast firing AK74"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74"
+	icon_state = "ak74"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small , /obj/item/ammo_box/magazine/m556/rifle/extended/hobo , /obj/item/ammo_box/magazine/m556/rifle/small/empty , /obj/item/ammo_box/magazine/m556 , /obj/item/ammo_box/magazine/m556/rifle/extended ,/obj/item/ammo_box/magazine/m556/rifle/extended/empty )
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto
+	)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_scope = TRUE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2274,6 +2409,7 @@
 		/datum/firemode/burst/five/fast,
 		/datum/firemode/semi_auto
 	)
+	reskinnable_component = null
 
 /* * * * * * * * * * *
  * FN FAL Rifle
@@ -2300,6 +2436,64 @@
 	)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+
+
+
+/* * * * * * * * * * * *
+* Zastava Rifle
+* + takes all 308 magazines
+* + uncommon
+* - slowest firerate
+* + built in scope
+* - unable to be heavily modified like any else rifle
+* * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/automatic/z34rifle
+	name = "Z34 Battle Rifle"
+	desc = "The Soviet Z34 battle rifle. Based off the SLR or FN FAL, it is chambered in 7.62 Soviet. Now rechambered in .308, the weapon itself comes with a scope and seems to have a much heavy trigger than usual rifles"
+	icon_state = "zastava"
+	item_state = "zastava"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
+	init_firemodes = list (
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_flashlight = FALSE
+	zoom_factor = 1.1
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/z34rifle/custom
+	name = "Z34 Battle Rifle"
+	desc = "The Soviet Z34 battle rifle. Based off the SLR or FN FAL, it is chambered in 7.62 Soviet. Now rechambered in .308, the weapon itself comes with a scope and seems to have a much heavy trigger than usual rifles"
+	icon_state = "zastava"
+	item_state = "zastava"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(3, 3)
+	init_firemodes = list (
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+	zoom_factor = 1
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 /obj/item/gun/ballistic/automatic/fnfal/ak47
 	name = "Retro AK-47"
 	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture. Comes with a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines"
@@ -2637,6 +2831,32 @@
 		/datum/firemode/automatic/rpm200
 	)
 
+
+/* * * * * * * * * * *
+ * Ratling Gun
+ * A getto minigun
+ * Terrible overall
+ * Except that it shoots a lot of ammo and fast
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/ratling_gun
+	name = "Ratling Gun"
+	desc = "This 'machinegun' looks like junk, some one took a old gatling gun and bolted on a motor of some kind and box hooked on the side with welded on 'grips'. Some how it seems to work."
+	icon = 'icons/obj/guns/minigun.dmi'
+	icon_state = "ratling"
+	item_state = "minigun"
+	mag_type = /obj/item/ammo_box/magazine/ratling
+	init_mag_type = /obj/item/ammo_box/magazine/ratling
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = LMG_RECOIL(1.2, 1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300
+	)
+
+
 /* * * * * * * * * * *
  * Browning M1919 MMG
  * Big 7.62mm LMG
@@ -2721,6 +2941,55 @@
 //MISC//
 ////////
 
+
+/obj/item/gun/ballistic/automatic/unmcamr
+	name = "Unktehila"
+	desc = "A green colored TG78 anti material rifle or 'tank gewehr-78' is a .50 cal anti material rifle. This one has odd native american themed imprints on the reciever and stock. The scope on top has an imprint of some odd serpent creature..how peculiar"
+	icon_state = "tg78"
+	item_state = "tg78"
+	mag_type = /obj/item/ammo_box/magazine/highcaliber
+	init_mag_type = /obj/item/ammo_box/magazine/highcaliber
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+
+	init_recoil = HMG_RECOIL (4 , 4)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	zoom_factor = 1.5
+	can_suppress = FALSE
+	can_bayonet = FALSE 
+	can_flashlight = FALSE
+
+
+/obj/item/gun/ballistic/automatic/unmcamr/toxcustom
+	name = "Blossom's Whisper"
+	desc = "A custom TG78. This model is modeled after the original TG78. The caliber is still the same but the sniper is modified with a 2x holo-scope. Alongside this, the AMR hits less harder than a normal TG78. Etched onto the rifle's reciever is a etching of the letters T and S alongside a phrase below the two letters that reads 'To the fallen, I watch'. Chambered in .50 BMG"
+	icon_state = "tg78c"
+	item_state = "tg78c"
+	mag_type = /obj/item/ammo_box/magazine/highcaliber
+	init_mag_type = /obj/item/ammo_box/magazine/highcaliber
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = HMG_RECOIL (5 , 5)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+	/datum/firemode/semi_auto/slower
+	)
+	zoom_factor = 1.1
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
 /* * * * * * * * * * *
  * M72 Gauss Rifle
  * Biggest Baddest Superrifle
@@ -2733,7 +3002,7 @@
 	desc = "The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled."
 	icon_state = "m72"
 	item_state = "sniper"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	init_mag_type = /obj/item/ammo_box/magazine/m2mm
 	weapon_class = WEAPON_CLASS_RIFLE

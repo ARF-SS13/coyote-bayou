@@ -36,6 +36,109 @@
 	icon_state = "uniform_enclave_intel"
 	item_state = "uniform_enclave_intel"
 
+// Modern-Cold War uniforms
+/obj/item/clothing/under/f13/modernbdu
+	name = "Russian uniform with telnyashka"
+	desc = "A military uniform from Russia, it comes with a summer longe sleeve telnyashka, which is a 100% pure cotton shirt. Quite comfortable"
+	icon_state = "milrus"
+	item_state = "milrus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/chinese
+	name = "Modern Chinese uniform"
+	desc = "A modern Chinese Type 07 uniform. Mainly used by the PLA's Navy. Quite comfortable."
+	icon_state = "type07"
+	item_state = "type07"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/cadpat
+	name = "Modern Canadian uniform"
+	desc = "A modern CadPat Canadian uniform. It was in service by the Canadian army. Quite comfortable."
+	icon_state = "cadpat"
+	item_state = "cadpat"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/americanstorm
+	name = "American DCU uniform"
+	desc = "An American DCU uniform, saw extensive use during the Gulf War."
+	icon_state = "usdcu"
+	item_state = "usdcu"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/hueyuniform
+	name = "Pilot Uniform"
+	desc = "An American themed pilot's uniform. Doesn't offer much aside from covering the bare essentials. Might wanna pair this with a bright white helmet and a flak vest. 'This is..someone, arriving at LZ'"
+	icon_state = "uspilot"
+	item_state = "uspilot"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/navalcamo
+	name = "Universal Navy BDU"
+	desc = "A Universal Navy Camo or UNC BDU. This naval based camo was used extensively by many nations before the war. Very good against blue backgrounds, horrible if you decide to hide in a bush. "
+	icon_state = "navycamo"
+	item_state = "navycamo"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/americanmulticam
+	name = "Multicam uniform"
+	desc = "An Multicam camo uniform, saw extensive use by numerous PMCs and nations. Also was favored heavily by American citizens."
+	icon_state = "multicam"
+	item_state = "multicam"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/russianamoeba
+	name = "KLMK camo suit"
+	desc = "A Soviet era Russian KLMK camo suit. This camo suit saw usage because of the widespread usage of NVG by NATO troops."
+	icon_state = "sovcamo"
+	item_state = "sovcamo"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/serbwinter
+	name = "Serbian winter suit"
+	desc = "A Serbian winter suit. This specific suit is a copy of a Russian Amoeba winter suit, which was the winter camo version of the russian 'amoeba' pattern. Quite comfy to wear actually, toasty."
+	icon_state = "sovwinter"
+	item_state = "sovwinter"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/russianemr
+	name = "EMR Russian uniform"
+	desc = "A more modern Russian uniform. Painting it is the EMR camoflauge scheme. Comes with a Telyshanka underneath."
+	icon_state = "modernrus"
+	item_state = "modernrus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+//civilian based clothing/emergency services
+
+/obj/item/clothing/under/f13/nursescrubs
+	name = "Green nursing scrubs"
+	desc = "A set of medical scrubs that mainly saw use by nurses across the world. This one is in a pleasant green color, white shoes and medical badge not included."
+	icon_state = "scrubs"
+	item_state = "scrubs"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/nursescrubs/blue
+	name = "Blue nursing scrubs"
+	desc = "A set of medical scrubs that mainly saw use by nurses across the world. This one is in a refreshing blue color, white shoes and medical badge not included."
+	icon_state = "scrubs2"
+	item_state = "scrubs2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 //Vault
 
 /obj/item/clothing/under/f13/housewifedress50s

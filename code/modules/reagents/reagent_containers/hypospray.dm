@@ -12,7 +12,7 @@
 	possible_transfer_amounts = list()
 	resistance_flags = ACID_PROOF
 	reagent_flags = OPENCONTAINER
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	custom_price = PRICE_ABOVE_EXPENSIVE
 	var/ignore_flags = 0
 	var/infinite = FALSE

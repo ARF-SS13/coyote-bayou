@@ -7,7 +7,7 @@
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "chisel"
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 5
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 5

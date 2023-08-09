@@ -9,6 +9,19 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/ammo_box/magazine/highcaliber
+	name = ".50 cal magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "hcmag"
+	max_ammo = 4
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	multiple_sprites= 2
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/highcaliber/empty
+	start_empty= TRUE
 /obj/item/ammo_box/magazine/amr/empty
 	start_empty = TRUE
 

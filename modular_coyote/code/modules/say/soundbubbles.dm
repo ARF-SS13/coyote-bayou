@@ -56,6 +56,8 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		"Dial Up" = 'modular_coyote/sound/typing/arfs1sounds/robot1.ogg',
 		"Yappy Dog" = 'modular_coyote/sound/typing/arfs1sounds/shihtzu1.ogg',
 		"Cat Mrowl" = 'modular_coyote/sound/typing/arfs1sounds/siamese1.ogg',
+		"Cat Meow" = 'modular_coyote/sound/typing/catmeow.ogg',
+		"Cat Trill" = 'modular_coyote/sound/typing/cattrill.ogg',
 		"Skunk Chitter" = 'modular_coyote/sound/typing/arfs1sounds/skunk1.ogg',
 		"Big Cat Chuff" = 'modular_coyote/sound/typing/arfs1sounds/tiger1.ogg',
 		"Vulture" = 'modular_coyote/sound/typing/arfs1sounds/vulture1.ogg',

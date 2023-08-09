@@ -180,6 +180,67 @@
 	path = /obj/item/clothing/under/f13/dbdu
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/modernbdu
+	name = "Modern Russian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/chineseuniform
+	name = "Modern Chinese uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/chinese
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/cadpatuniform
+	name = "Modern Canadian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/cadpat
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/americanstormuniform
+	name = "American DCU uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americanstorm
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/hueypilotuniform
+	name = "Pilot uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/hueyuniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/multicamuniform
+	name = "Multicam uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americanmulticam
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/serbsuit
+	name = "Serbian Winter suit"
+	path = /obj/item/clothing/under/f13/modernbdu/serbwinter
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/universalnaval
+	name = "Universal Navy uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/navalcamo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/sovietcamo
+	name = "Soviet KLMK Suit"
+	path = /obj/item/clothing/under/f13/modernbdu/russianamoeba
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+
+/datum/gear/uniform/modernbdu/modernrussian
+	name = "EMR Russian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/russianemr
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/emergencyservices/medical/blue
+	name = "Blue medical scrubs"
+	path = /obj/item/clothing/under/f13/nursescrubs/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/emergencyservices/medical/green
+	name = "Green medical scrubs"
+	path = /obj/item/clothing/under/f13/nursescrubs
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
 /datum/gear/uniform/syndicate
 	name = "tactical turtleneck"
 	path = /obj/item/clothing/under/syndicate
@@ -1413,25 +1474,25 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/dress2
-	name = "blue pheasent dress"
+	name = "blue peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dress2
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dress3
-	name = "brown pheasent dress"
+	name = "brown peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dress3
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dressg
-	name = "green pheasent dress"
+	name = "green peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dressg
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dressr
-	name = "red pheasent dress"
+	name = "red peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dressr
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES

@@ -1539,6 +1539,15 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
+/obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
+	name = "crusader chainmail with tabard"
+	desc = "A full set of chainmail that covers the torso and arms. This one has a tabard with a red cross!"
+	icon_state = "knight_templar"
+	item_state = "knight_templar"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
 /obj/item/clothing/suit/armor/light/kit/punk/ironchestplatered
 	name = "iron chestplate with red cape"
 	desc = "An iron breastplate made after the fall of the old world, includes a dashing red cape."
@@ -1842,6 +1851,96 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
+
+
+
+///////////////////////////////////
+//// Ballistic Vests //////////////
+///////////////////////////////////
+
+/obj/item/clothing/suit/armor/medium/ballisticvest
+	name = "A base for kevlar vest"
+	desc = "A base for kevlar vest electric boogaloo"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
+
+
+/obj/item/clothing/suit/armor/medium/heavierballisticvest
+	name = "A heavier version of a bv"
+	desc = "I'm still standing, YEAH YEAH YEAH"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_DOWN_ENERGY_T1 , ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_DT_T1)
+
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
+	name = "6b3 body armor"
+	desc = "A 6b3 plate carrier. This plate carrier saw primary usage in the Russian Army."
+	icon_state = "russianlight"
+	item_state = "russianlight"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/foreign
+	name = "Foreign body armor"
+	desc = "A foreign plate carrier. This plate carrier saw primary usage by foreign nations and PMCs"
+	icon_state = "foreignplate"
+	item_state = "foreignplate"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
+	name = "6b45 body armor"
+	desc = "A 6b45 plate carrier. This plate carrier saw primary usage in the Russian Army. It's bulkier than its lightweight cousins."
+	icon_state = "russianheavy"
+	item_state = "russianheavy"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/newsvest
+	name = "War Press vest"
+	desc = "A War correspondent ballistic vest. It's lightweight and quite slim with the words 'WAR PRESS' on the back. It's a blue colored with the text being white."
+	icon_state = "warpressvest"
+	item_state = "warpressvest"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/civvest
+	name = "Civilian grade bodyarmor"
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	icon_state = "civplate"
+	item_state = "civplate"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
+	name = "5.11 Tactical plate carrier"
+	desc = "A 5.11 Tact Plate Carrier. This plate carrier was made by the famous 5.11 company during pre-war times. Now it finds usage by the wearer who finds such armor"
+	icon_state = "511tact"
+	item_state = "511tact"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/bushsuit
+	name = "Ghillie suit"
+	desc = "A basic kevlar vest with a whole ghillie suit over it. The ghillie suit is a macabre of leaves, plants, grass, and flora patterns by the wearer. Meant to disguise the user in grassy enviroments. A man once said 'Keep a low profile and hold your fire. Try to anticipate their paths'"
+	icon_state = "ghilliesuit"
+	item_state = "ghilliesuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/leovest
+	name = "Police vest"
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	icon_state = "nashpolicevest"
+	item_state = "nashpolicevest"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 ///////////////////////////////////
 //// Halo Variation armor   //////
 //////////////////////////////////
@@ -1901,6 +2000,18 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
+/obj/item/clothing/suit/armor/medium/unmcmedic
+	name = "UNMC standard medical armor"
+	desc = "A set of a medic's armor set from the UNMC before pre-war times. Repainted, repaired, and now in-use by the wearer, it's mainly used by frontline medics to tank in just a tiny bit extra punishment as they tend to the fallen and wounded."
+	icon_state = "unmcmedic"
+	item_state = "unmcmedic"
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 ,)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
 /obj/item/clothing/suit/armor/medium/unmcwinter
 	name = "UNMC Winter armor"
 	desc = "A set of UNMC standard issue armor.This one seems to be a winter camo painted version. It's generally weak and only really made to stop light projectiles and blows. Albeit whack it lacks in light to null armor, it makes up for sub-par enviromental resistance. The winter coating gives it a boost in more unconventional based attacks. Let's get a move on, the enemy won't kick its own ass!"
@@ -1910,7 +2021,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_UP_LASER_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -1927,6 +2038,20 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/merek
+	name = "salvaged UNMC armor"
+	desc = "A set of salvaged UNMC armor. Most of what made this armor completely terrifying to deal with is now gone or repurposed. It feels much lighter and offers much less protection than the usual set of UNMC armor. Personalized by the scavenger who found this."
+	icon_state = "odst1"
+	item_state = "odst1"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
 /obj/item/clothing/suit/armor/medium/odstcqb
 	name = "UNMC CQB Armor"
 	desc = "A set of United Nations Marine Corps CQB Armor. This armor is in pristine condition and is suited for CQC related situations. Weaker than its bulkier more armored counterparts and has far less padding and less enviromental equipment. But with less padding, means greater speed."
@@ -3078,15 +3203,17 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn
-	name = "retrofit worn riot combat armor"
-	icon_state = "foxranger"
-	item_state = "foxranger"
-	desc = "A suit of pre-war combat armor redesigned to handle riots. This one looks worn down, and has had its heavier components stripped away."
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2, ARMOR_MODIFIER_DOWN_LASER_T1)
+	name = "Enclave exile armor"
+	icon_state = "unmct"
+	item_state = "unmct"
+	desc = "A slimmed down set of reinforced combat armor. While not as effective as the standard issue, it makes up for it in more room for holding things and keeping you light on your feet."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2)
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
 /obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"

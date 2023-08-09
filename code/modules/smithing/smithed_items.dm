@@ -358,7 +358,7 @@
 
 /obj/item/smithing/special/jewelry/ring
 	name = "ring"
-	slot_flags = ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_GLOVES
 	attack_verb = list("proposed")
 
 /obj/item/smithing/special/jewelry/ring/equipped(mob/user, slot)

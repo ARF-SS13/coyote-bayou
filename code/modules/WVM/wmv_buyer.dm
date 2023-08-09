@@ -53,6 +53,12 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/cloth = 0.2, // low because botany and because use this for medical supplies you drongo
 		/obj/item/stack/sheet/leather = 0.8,
 		/obj/item/reagent_containers/food/snacks/meat = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat = 0, // To prevent people from printing effortless money at a biogen
+		/obj/item/fishy/carp		= 5,
+		/obj/item/fishy/salmon		= 10,
+		/obj/item/fishy/eel			= 2,
+		/obj/item/fishy/crawdad		= 7,
+		/obj/item/fishy/shrimp		= 3,
 		/obj/item/reagent_containers/food/snacks/meat/slab/human = 0,
 		/obj/item/stack/sheet/animalhide = 3,
 		/obj/item/clothing/suit/armor = 10,
@@ -363,7 +369,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(user?.a_intent == INTENT_HARM)
 		return ..()
 	appraise_item(I)
-	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user, FALSE)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user)
 
 /obj/machinery/mineral/wasteland_trader/proc/appraise_item(obj/item/I, looping)
 	if(!I)

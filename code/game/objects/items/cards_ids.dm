@@ -202,7 +202,7 @@
 	item_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
-	slot_flags = ITEM_SLOT_ID
+	slot_flags = INV_SLOTBIT_ID
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/assignment_name = "identification card"
@@ -1395,7 +1395,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 /obj/item/card/lowbounty
 	name = "Small Roller Bounty Ticket"
 	color = "#00ff00"
-	desc = "Turn this in at the bank's vending machine for fast coins!"
+	desc = "Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -1407,7 +1407,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"
 	color = "#0000ff"
-	desc = "Turn this in at the bank's vending machine for fast coins!"
+	desc = "Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"
 	item_state = "card-id"
@@ -1420,7 +1420,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 /obj/item/card/highbounty
 	name = "High Roller Bounty Ticket"
 	color = "#ff0000"
-	desc = "Turn this in at the bank's vending machine for fast coins!"
+	desc = "Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"
 	item_state = "card-id"
@@ -1433,7 +1433,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 /obj/item/card/kingbounty
 	name = "A King's Bounty Ticket"
 	color = "#ffe600"
-	desc = "At last, your just reward! Turn this in at the bank's vending machine for fast coins!"
+	desc = "At last, your just reward! Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"
 	item_state = "card-id"

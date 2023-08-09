@@ -87,6 +87,14 @@
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
+/obj/item/clothing/suit/armor/light/kit/punk/labcoat/trailsworth
+	name = "salvaged medical labcoat" //modified from the already-custom armored labcoat sprite.
+	desc = "A mix of lightweight salvaged Brotherhood armor and an old labcoat. Not nearly as protective as it used to be, however. It seems to have blue medical crosses spray-painted on, and a name patch on the side. 'Trailsworth'."
+	icon_state = "armored_labcoat_trailsworth"
+	item_state = "armored_labcoat_trailsworth"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 /obj/item/melee/onehanded/club/fryingpan/saltspider
 	name = "well-cleaned frying pan"
 	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around. This one seems to be kept in remarkable condition. Along the outside edge of the pan is a series of engravings- it reads 'Dolorem Ipsum'"
@@ -150,9 +158,7 @@
 	ckeywhitelist = list("aldrictalvalin")
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom(src)
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
-	new /obj/item/clothing/shoes/f13/enclave/serviceboots(src)
 	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
@@ -374,6 +380,15 @@
 	new /obj/item/gun/ballistic/automatic/marksman/worn(src)
 	new /obj/item/clothing/suit/armor/light/duster/town/leather(src)
 
+/datum/gear/donator/kits/DeadWolf411
+	name = "Drop Shock Orian"
+	path = /obj/item/storage/box/large/custom_kit/DeadWolf411
+	ckeywhitelist = list("DeadWolf411")
+
+/obj/item/storage/box/large/custom_kit/DeadWolf411/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom(src)
+	
 /datum/gear/donator/kits/dameonowencoat
 	name = "Dragon Coat"
 	path = /obj/item/clothing/suit/armor/light/duster/town/leather
@@ -690,11 +705,22 @@
 	ckeywhitelist = list("jaggachi")
 
 /obj/item/storage/box/large/custom_kit/jaggachi_6/PopulateContents()
-	new /obj/item/clothing/under/soviet(src)
+	new /obj/item/clothing/under/f13/modernbdu(src)
 	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
-	new /obj/item/clothing/suit/armor/light/vest/russian(src)
+	new /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2(src)
+	new /obj/item/clothing/head/kevlarhelmet/rus1(src)
 	new /obj/item/gun/energy/laser/LaserAK/worn(src)
 
+
+/datum/gear/donator/kits/jaggachi_7
+	name = "Medical wardrobe"
+	path = /obj/item/storage/box/large/custom_kit/jaggachi_7
+	ckeywhitelist = list("jaggachi")
+
+/obj/item/storage/box/large/custom_kit/jaggachi_7/PopulateContents()
+	new /obj/item/clothing/suit/coat/coyote/nurse_coat(src)
+	new /obj/item/clothing/head/f13/nursehat(src)
+	new /obj/item/clothing/under/rank/medical/doctor/nurse
 // K
 
 
@@ -786,14 +812,24 @@
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/biker(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault113(src)
 	new /obj/item/lighter/moff(src)
-	new /obj/item/clothing/under/f13/bos/fatigues(src)
 	new /obj/item/gun/energy/laser/wattzs(src)
 	new /obj/item/radio/headset/headset_sci(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/executive/worn(src)
+	new /obj/item/camera/coldwar(src)
 	new /obj/item/clothing/ears/headphones(src)
-	new /obj/item/reagent_containers/food/snacks/grown/tea/catnip(src)
-	new /obj/item/reagent_containers/food/snacks/grown/citrus/lemon(src)
+	new /obj/item/clothing/neck/mantle/bos(src)
+	new /obj/item/clothing/neck/mantle/treasurer(src)
 
+/datum/gear/donator/kits/merek22
+	name = "UNMC Kit"
+	path = /obj/item/storage/box/large/custom_kit/merek22
+	ckeywhitelist = list("merek2")
+
+/obj/item/storage/box/large/custom_kit/merek22/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/p47merek (src)
+	new /obj/item/ammo_box/a556(src)
+	new /obj/item/clothing/suit/armor/medium/merek (src)
+	new /obj/item/clothing/head/helmet/merekcustom(src)
+	
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
 	path = /obj/item/storage/box/large/custom_kit/exoticjazz
@@ -832,6 +868,17 @@
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 
 // O
+
+/datum/gear/donator/kits/octanerockwell
+	name = "Baa and squeak loadout"
+	path = /obj/item/storage/box/large/custom_kit/octanerockwell
+	ckeywhitelist = list("octanerockwell")
+
+/obj/item/storage/box/large/custom_kit/octanerockwell/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/Lemat(src)
+	new /obj/item/gun/ballistic/automatic/z34rifle/custom(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/a308box(src)
 // P
 
 /obj/item/pet_carrier/eye
@@ -949,6 +996,18 @@
 	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat(src)
 	new /obj/item/card/id/dogtag/radiantflash(src)
 
+/datum/gear/donator/kits/rainbyplays
+	name = "Trailsworth's Gear"
+	path = /obj/item/storage/box/large/custom_kit/rainbyplays
+	ckeywhitelist = list("rainbyplays")
+
+/obj/item/storage/box/large/custom_kit/rainbyplays/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat/trailsworth(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/melee/powered/ripper/dull(src)
+
 /datum/gear/donator/kits/risingstarslash
 	name = "Blue's Kit"
 	path = /obj/item/storage/box/large/custom_kit/risingstarslash
@@ -1043,9 +1102,12 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/claymore(src)
-	new /obj/item/clothing/suit/armor/light/knight(src)
-	new /obj/item/clothing/head/helmet/f13/knighthelmet(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
+	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+	new /obj/item/gun/ballistic/automatic/unmcamr/toxcustom(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxinfil(src)
+	new /obj/item/ammo_box/a50MGbox(src)
 
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
@@ -1304,6 +1366,8 @@
 /obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
+	new /obj/item/gun/ballistic/automatic/m1carbine/covcarbine(src)
+	new /obj/item/ammo_box/c10mm(src)
 	// /obj/item/gun/energy/alien(src)
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)

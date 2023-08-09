@@ -352,7 +352,67 @@
 	path = /obj/item/clothing/suit/armor/medium/unmcinfiltrator
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-	
+
+/datum/gear/suit/armor/unmcwinter
+	name = "Winterized UNMC armor"
+	path = /obj/item/clothing/suit/armor/medium/unmcwinter
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/unmcmedicarmor
+	name = "Medical UNMC Armor"
+	path = /obj/item/clothing/suit/armor/medium/unmcmedic
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest
+	name = "Civilian Ballistic Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/civvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no2
+	name = "6b3 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no3
+	name = "6b45 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no4
+	name = "War Press vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/newsvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no5
+	name = "Ghillie suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bushsuit
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no6
+	name = "511 PMC Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no7
+	name = "Police Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no8
+	name = "Foreign Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/foreign
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed
@@ -1170,6 +1230,12 @@
 /datum/gear/suit/sovietlightvest
 	name = "Soviet Vest"
 	path = /obj/item/clothing/suit/armor/light/vest/russian
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/crusaderweak
+	name = "Crusader Chainmail w/ Tabard"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 

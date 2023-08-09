@@ -70,6 +70,7 @@
 		/obj/effect/spawner/lootdrop/f13/uncommon_money = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_bombs = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_food = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_artifacts = 0.5,
 	)
 	uptier_chance = 1 // 1% chance to uptier to a restricted rare
 	uptier_list = list(
@@ -128,6 +129,7 @@
 		/obj/effect/spawner/lootdrop/f13/rare_tools = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_money = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_bombs = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_artifacts = 0.5
 	)
 
 /// Generally decent stuff, but are mostly consumables or stuff mainly just valuable for selling. Shouldnt affect tiering if given in uncommon loot rarely.
@@ -232,6 +234,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/type17 = 1,
 		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
 		/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/glock = 1,
 		/obj/item/gun/ballistic/rifle/hunting = 2,
 		/obj/item/gun/ballistic/rifle/antique/gras = 1,
 		/obj/item/gun/ballistic/rifle/mosin = 1,
@@ -239,8 +242,11 @@
 		/obj/item/gun/ballistic/shotgun/hunting = 2,
 		/obj/item/gun/ballistic/automatic/m1carbine/covcarbine = 2,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2, 
-
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2,
+		/obj/item/gun/ballistic/automatic/matildar = 2,
+		/obj/item/gun/ballistic/shotgun/s163 = 1,
+		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
+		/obj/item/gun/ballistic/revolver/Lemat = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -267,9 +273,14 @@
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
 		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
 		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 1,
-		/obj/item/gun/ballistic/automatic/famas = 1,
+		/obj/item/gun/ballistic/automatic/famas = 2,
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 2,
 		/obj/item/gun/ballistic/automatic/smg/m22 = 1,
+		/obj/item/gun/ballistic/automatic/p47 = 1,
+		/obj/item/gun/ballistic/automatic/z34rifle = 1,
+		/obj/item/gun/ballistic/revolver/buntline = 1,
+		/obj/item/gun/ballistic/revolver/taurjudge = 1,
+		/obj/item/gun/ballistic/automatic/ak556 = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -305,6 +316,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/bar = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
+		/obj/item/gun/ballistic/automatic/unmcamr = 1,
 	)
 
 ///////////////////////////
@@ -499,7 +511,8 @@
 		/obj/item/gun/ballistic/automatic/service/carbine = 5,
 		/obj/item/gun/energy/laser/wattz/recharger = 5,
 		/obj/item/gun/energy/laser/wattz2ks = 5,
-		/obj/item/gun/ballistic/automatic/m41br = 4,
+		/obj/item/gun/ballistic/automatic/m41br = 2,
+		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
@@ -541,6 +554,7 @@
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
 	)
 
 ////////////////////////////
@@ -640,6 +654,7 @@
 		/obj/item/ammo_box/m14mm/improvised = 1,
 		/obj/item/ammo_box/c4570box/improvised = 1,
 		/obj/item/ammo_box/m22 = 1,
+		/obj/item/ammo_box/rock/improvised = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_ammo
@@ -902,8 +917,6 @@
 		/obj/effect/spawner/bundle/f13/armor/combat/dark = 3,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris = 1,
 		/obj/item/clothing/suit/armor/medium/odstcqb = 1,
-		/obj/item/clothing/suit/armor/medium/unmcwinter = 1, 
-		/obj/item/clothing/head/helmet/unmcwinterhelmet = 1, 
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_armor
@@ -1594,6 +1607,30 @@
 		/obj/item/export/bottle/trappist = 1,
 		/obj/item/export/bottle/goldschlager = 1,
 		/obj/item/export/bottle/patron = 1,
+	)
+
+/obj/effect/spawner/lootdrop/f13/common_artifacts
+	name = "common artifacts"
+	loot = list(
+		/obj/item/artifact/common = 10,
+		/obj/item/artifact/uncommon = 1,
+		/obj/item/artifact/rare = 1,
+	)
+
+/obj/effect/spawner/lootdrop/f13/uncommon_artifacts
+	name = "uncommon artifacts"
+	loot = list(
+		/obj/item/artifact/common = 10,
+		/obj/item/artifact/uncommon = 5,
+		/obj/item/artifact/rare = 1,
+	)
+
+/obj/effect/spawner/lootdrop/f13/rare_artifacts
+	name = "rare artifacts"
+	loot = list(
+		/obj/item/artifact/common = 1,
+		/obj/item/artifact/uncommon = 2,
+		/obj/item/artifact/rare = 10,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_food

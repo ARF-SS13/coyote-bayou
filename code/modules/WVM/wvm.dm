@@ -863,10 +863,10 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							120),
 		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						600),
 		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1200),
-		new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120),
+		/*new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120), // Disabled to prevent money duping through cargo
 		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 			/obj/item/card/midbounty, 						240),
 		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 			/obj/item/card/highbounty, 						480),
-		new /datum/data/wasteland_equipment("King's Bounty Ticket", 				/obj/item/card/kingbounty, 						960)
+		new /datum/data/wasteland_equipment("King's Bounty Ticket", 				/obj/item/card/kingbounty, 						960)*/
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						12),
@@ -879,10 +879,55 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							120),
 		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						600),
 		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1200),
-		new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120),
+		/*new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120),
 		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 			/obj/item/card/midbounty, 						240),
 		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 			/obj/item/card/highbounty, 						480),
-		new /datum/data/wasteland_equipment("King's Bounty Ticket", 				/obj/item/card/kingbounty, 						960)
+		new /datum/data/wasteland_equipment("King's Bounty Ticket", 				/obj/item/card/kingbounty, 						960)*/
+		)
+
+/obj/machinery/mineral/wasteland_vendor/specialplus
+	name = "Automatic Teller Machine"
+	desc = "An automated machine that exhanges copper coins for more valuable currency. This teller is specialized for bankers to provide better exchange rates."
+	icon_state = "liberationstation_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
+		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
+		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
+		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						50),
+		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						100),
+		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					200),
+		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							100),
+		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						500),
+		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1000),
+		)
+	highpop_list = list(
+		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
+		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
+		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
+		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						50),
+		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						100),
+		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					200),
+		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							100),
+		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						500),
+		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1000),
+		)
+/obj/machinery/mineral/wasteland_vendor/traderspecial
+	name = "Union Vending Machine - Scrip Exchanger"
+	desc = "An automated machine that exchanges currency for union backed tender."
+	icon_state = "trade_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
+		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
+		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
+		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		)
+	highpop_list = list(
+		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
+		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
+		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
+		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents

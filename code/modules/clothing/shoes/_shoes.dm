@@ -8,7 +8,7 @@
 	armor = ARMOR_VALUE_CLOTHES
 
 	body_parts_covered = FEET
-	slot_flags = ITEM_SLOT_FEET
+	slot_flags = INV_SLOTBIT_FEET
 
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN

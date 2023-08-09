@@ -267,7 +267,7 @@
 /obj/item/clothing/head/foilhat/Initialize(mapload)
 	. = ..()
 	if(!warped)
-		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD, 6, TRUE, null, CALLBACK(src, .proc/warp_up))
+		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, INV_SLOTBIT_HEAD, 6, TRUE, null, CALLBACK(src, .proc/warp_up))
 	else
 		warp_up()
 
@@ -696,6 +696,12 @@
 	item_state = "jingasa"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/coyote/crusaderhelmweak
+	name = "Crusader Helmet"
+	desc = "A full, closed plate helmet with a cross engraved into it. Deus vult!"
+	icon_state = "knight_templar"
+	item_state = "knight_templar"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
 

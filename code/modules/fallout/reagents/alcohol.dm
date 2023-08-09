@@ -435,8 +435,8 @@
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.1)
-		M.adjustFireLoss(-0.1)
+		M.adjustBruteLoss(-0.2)
+		M.adjustFireLoss(-0.2)
 	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M

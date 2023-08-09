@@ -518,7 +518,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	light_power = 0.6
