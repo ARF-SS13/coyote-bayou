@@ -2952,8 +2952,8 @@
 	},
 /area/f13/wasteland)
 "akY" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_north"
+/obj/structure/chair/right{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -6006,8 +6006,8 @@
 	},
 /area/f13/building)
 "avP" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
+/obj/structure/chair/right{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -9736,8 +9736,8 @@
 	},
 /area/f13/building/hospital)
 "aHU" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
+/obj/structure/chair/right{
+	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
@@ -16839,9 +16839,7 @@
 	},
 /area/f13/bar)
 "bfE" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_middle"
-	},
+/obj/structure/chair/right,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -18893,8 +18891,8 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "box" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_north"
+/obj/structure/chair/right{
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -18993,8 +18991,8 @@
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building/abandoned)
 "bpn" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/structure/chair/left{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -20715,12 +20713,12 @@
 	},
 /area/f13/building/tribal)
 "bzT" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_south"
-	},
 /obj/machinery/light/small{
 	dir = 4;
 	light_color = "red"
+	},
+/obj/structure/chair/left{
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -28676,8 +28674,8 @@
 	},
 /area/f13/wasteland/city)
 "dje" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/structure/chair/left{
+	dir = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -31378,8 +31376,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dQs" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_north_middle"
+/obj/structure/chair/middle{
+	dir = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -33421,13 +33419,13 @@
 	},
 /area/f13/wasteland)
 "esS" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
+/obj/structure/chair/left{
+	dir = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/bar)
+/area/f13/building)
 "esY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerpavement - S"
@@ -38080,9 +38078,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "fBM" = (
-/obj/structure/chair/right{
-	dir = 1;
-	icon_state = "booth_north_west"
+/obj/structure/chair/left{
+	dir = 1
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -43530,8 +43527,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "gRR" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_north_east"
+/obj/structure/chair/right{
+	dir = 1
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -44073,10 +44070,10 @@
 /area/f13/wasteland/massfusion)
 "gYY" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/right{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/wooden2{
 	icon_state = "torncarpet5"
 	},
@@ -45931,8 +45928,8 @@
 	},
 /area/f13/building)
 "hxD" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/structure/chair/left{
+	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
@@ -45971,8 +45968,8 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/underground/cave/coyote/antmound)
 "hye" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_south"
+/obj/structure/chair/left{
+	dir = 8
 	},
 /obj/item/storage/box/papersack,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -46089,10 +46086,8 @@
 	},
 /area/f13/wasteland/city)
 "hzz" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_middle"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/middle,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -47124,8 +47119,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "hNz" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_south"
+/obj/structure/chair/left{
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -47154,8 +47149,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "hNI" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_south"
+/obj/structure/chair/left{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -49607,11 +49602,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/chair/right{
-	dir = 1;
-	icon_state = "booth_north_middle"
-	},
-/obj/machinery/computer/cargo{
+/obj/structure/chair/middle{
 	dir = 1
 	},
 /turf/open/floor/wood_common,
@@ -55029,8 +55020,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "jIe" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/structure/chair/left{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -55502,8 +55493,8 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "jOL" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
+/obj/structure/chair/right{
+	dir = 4
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
@@ -56109,8 +56100,8 @@
 	},
 /area/f13/building)
 "jVI" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_middle"
+/obj/structure/chair/middle{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -56821,9 +56812,8 @@
 /area/f13/building/coyote/nash/massfus/lobby)
 "kgr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/right{
-	dir = 1;
-	icon_state = "booth_north_middle"
+/obj/structure/chair/middle{
+	dir = 1
 	},
 /turf/open/floor/wood_common{
 	icon_state = "common-broken2"
@@ -57177,14 +57167,14 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "kko" = (
-/obj/structure/barricade/bars{
-	layer = 2.8
-	},
 /obj/structure/table/wood,
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
 	name = "counter shutters";
 	req_one_access_txt = null
+	},
+/obj/structure/barricade/bars{
+	layer = 3.5
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -57770,10 +57760,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/abandoned)
 "krU" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/right{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/wooden2{
 	icon_state = "torncarpet1"
 	},
@@ -60911,8 +60901,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "lhl" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
+/obj/structure/chair/right{
+	dir = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -64497,12 +64487,12 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "lXV" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_middle"
-	},
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
+	},
+/obj/structure/chair/middle{
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -66706,8 +66696,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "mwD" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_north"
+/obj/structure/chair/right{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -68975,9 +68965,7 @@
 	},
 /area/f13/building/abandoned)
 "naF" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_leftend"
-	},
+/obj/structure/chair/left,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -70382,9 +70370,8 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/chair/right{
-	dir = 1;
-	icon_state = "booth_north_middle"
+/obj/structure/chair/middle{
+	dir = 1
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -71774,8 +71761,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/chair/booth{
-	icon_state = "booth_east_middle"
+/obj/structure/chair/middle{
+	dir = 4
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
@@ -73735,8 +73722,8 @@
 	},
 /area/f13/building/tribal)
 "ofz" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_south"
+/obj/structure/chair/left{
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -77732,8 +77719,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pdj" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_north"
+/obj/structure/chair/right{
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -79075,13 +79062,11 @@
 /turf/open/water,
 /area/f13/building/sewers)
 "puU" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_south_middle"
-	},
 /obj/machinery/light/small{
 	dir = 4;
 	light_color = "red"
 	},
+/obj/structure/chair/middle,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -79221,11 +79206,11 @@
 	},
 /area/f13/building/abandoned)
 "pwK" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_north_middle"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/middle{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -85042,8 +85027,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "qUn" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
+/obj/structure/chair/right{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -89155,8 +89140,8 @@
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "rXt" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_north"
+/obj/structure/chair/right{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -89595,7 +89580,6 @@
 /area/f13/ruins)
 "sdg" = (
 /obj/structure/table/wood,
-/obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars{
 	layer = 3.5
@@ -90273,9 +90257,8 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/structure/chair/right{
-	dir = 1;
-	icon_state = "booth_north_west"
+/obj/structure/chair/left{
+	dir = 1
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -92369,15 +92352,15 @@
 	},
 /area/f13/wasteland)
 "sMo" = (
-/obj/structure/barricade/bars{
-	layer = 2.8
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
 	name = "counter shutters";
 	req_one_access_txt = null
+	},
+/obj/structure/barricade/bars{
+	layer = 3.5
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -92635,8 +92618,8 @@
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/f13/building/abandoned)
 "sOS" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
+/obj/structure/chair/right{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -94546,10 +94529,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "tly" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/right{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/wooden3{
 	icon_state = "housewood-dam3"
 	},
@@ -100789,8 +100772,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "uND" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_north"
+/obj/structure/chair/right{
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -105326,8 +105309,8 @@
 	},
 /area/f13/wasteland)
 "vTG" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/structure/chair/left{
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -107266,8 +107249,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "wsD" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/structure/chair/left{
+	dir = 4
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
@@ -109579,6 +109562,21 @@
 /obj/item/candle/tribal_torch,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"wVW" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	id = "countershutters";
+	name = "counter shutters";
+	req_one_access_txt = null
+	},
+/obj/structure/barricade/bars{
+	layer = 3.5
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "wWa" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 4;
@@ -111051,8 +111049,8 @@
 	},
 /area/f13/ruins)
 "xqf" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_south"
+/obj/structure/chair/left{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -113710,8 +113708,8 @@
 	},
 /area/f13/wasteland/city)
 "xYL" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/structure/chair/left{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -120918,7 +120916,7 @@ flt
 bsh
 vTG
 jVI
-esS
+eHU
 mkb
 mkb
 naF
@@ -124738,7 +124736,7 @@ dUj
 dUj
 sdg
 kko
-sdg
+wVW
 sdg
 drL
 qwm
@@ -128310,7 +128308,7 @@ mct
 mGY
 bfE
 anG
-dQs
+esS
 dVF
 bVH
 bVH
