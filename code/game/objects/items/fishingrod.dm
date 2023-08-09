@@ -118,3 +118,59 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	force = 22
 	force_unwielded = 25
 	force_wielded = 55
+
+/obj/item/fishingrod/sleepyrod
+	name = "fishing rod"
+	desc = "A long pole that was once used to capture mighty beasts from the sea. Or it would be, but you didn't put any bait on it and are just wasting time."
+	icon = 'icons/obj/fish/fish_items.dmi'
+	icon_state = "fishingrod"
+	color = "#6666FF"
+	inuse = FALSE
+	//customization, allow rods to "... go the distance"
+	fish_range = 3
+	//customization, some rods are faster (or slower) than others
+	//maybe in the future, lets add some kind of skill for this?
+	min_fishtime = 105 SECONDS
+	max_fishtime = 1200 SECONDS
+	//customization, you have two seconds to catch your fish
+	max_afterfish = 4 SECONDS
+	//these two vars are basically the timers
+	current_wait = 0
+	current_waitfail = 0
+	//customization, some rods catch trash better than others, if you really want that I guess
+	//default is 40, which is 40 percent chance
+	trash_chance = 40
+
+/obj/item/fishingrod/sleepyrod/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	if(!istype(target, /turf/open/water) && !istype(target, /turf/open/indestructible/ground/outside/water))
+		return ..()
+	if(!(target in range(fish_range, user)))
+		to_chat(current_user, span_warning("The line cannot reach that far, move closer!"))
+		return
+	if(inuse)
+		if(current_wait <= world.time && world.time <= current_waitfail)
+			var/fish_result = complete_fishing()
+			switch(fish_result)
+				if(1)
+					to_chat(current_user, span_warning("You got trash, lame..."))
+					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
+				if(2)
+					to_chat(current_user, span_warning("You got nothing, lame..."))
+					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
+				if(3)
+					to_chat(current_user, span_green("You got a fish, nice!"))
+					playsound(src.loc, 'sound/f13effects/karma_up.ogg', 100, TRUE, -1)
+		to_chat(current_user, span_notice("You pull back your line!"))
+		playsound(src.loc, 'sound/f13items/youpullbackyourline.ogg', 100, TRUE, -1)
+		inuse = FALSE
+		return //yea, we aren't terraria with a fishing rod that has multiple lines
+	inuse = TRUE
+	var/random_fishtime = rand(min_fishtime, max_fishtime)
+	addtimer(CALLBACK(src, .proc/play_readysound), random_fishtime)
+	current_wait = world.time + random_fishtime
+	current_waitfail = current_wait + max_afterfish
+	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))
+	playsound(src.loc, 'sound/f13items/fishing.ogg', 60, TRUE, -1)
+	current_turf = get_turf(current_user)
+
+
