@@ -204,6 +204,43 @@
 	name = "Pilot uniform"
 	path = /obj/item/clothing/under/f13/modernbdu/hueyuniform
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/multicamuniform
+	name = "Multicam uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americanmulticam
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/serbsuit
+	name = "Serbian Winter suit"
+	path = /obj/item/clothing/under/f13/modernbdu/serbwinter
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/universalnaval
+	name = "Universal Navy uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/navalcamo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/sovietcamo
+	name = "Soviet KLMK Suit"
+	path = /obj/item/clothing/under/f13/modernbdu/russianamoeba
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+
+/datum/gear/uniform/modernbdu/modernrussian
+	name = "EMR Russian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/russianemr
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/emergencyservices/medical/blue
+	name = "Blue medical scrubs"
+	path = /obj/item/clothing/under/f13/nursescrubs/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/emergencyservices/medical/green
+	name = "Green medical scrubs"
+	path = /obj/item/clothing/under/f13/nursescrubs
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
 /datum/gear/uniform/syndicate
 	name = "tactical turtleneck"
 	path = /obj/item/clothing/under/syndicate
