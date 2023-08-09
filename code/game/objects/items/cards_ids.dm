@@ -15,11 +15,30 @@
 	icon = 'icons/obj/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
 
+	/// Can this card be punched in the card puncher?
+	var/punchable = FALSE
+	/// Has it been punched?
+	var/punched = FALSE
+	/// what icon_state to use when punched
+	var/punched_state
 	var/list/files = list()
 
 /obj/item/card/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
+
+/obj/item/card/proc/punch(mob/living/user)
+	if(!punchable)
+		to_chat(user, span_alert("[src] can't be punched!"))
+		return
+	if(punched)
+		to_chat(user, span_alert("There's no more room to punch [src]!"))
+		return
+	to_chat(user, span_good("You punch [src]!"))
+	icon_state = punched_state
+	name = "punched [name]"
+	punched = TRUE
+	return TRUE
 
 /obj/item/card/data
 	name = "data card"
@@ -1382,6 +1401,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "newstate"
 
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"
@@ -1393,6 +1414,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "newstate"
 
 /obj/item/card/highbounty
 	name = "High Roller Bounty Ticket"
@@ -1404,6 +1427,8 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "newstate"
 
 /obj/item/card/kingbounty
 	name = "A King's Bounty Ticket"
@@ -1415,4 +1440,6 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "newstate"
 
