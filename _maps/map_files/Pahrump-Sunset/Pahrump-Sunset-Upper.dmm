@@ -12918,6 +12918,12 @@
 	dir = 8
 	},
 /area/f13/building/hospital)
+"lsC" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "ltv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
@@ -22382,6 +22388,14 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
+"tTH" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood1-broken"
+	},
+/area/f13/wasteland)
 "tTI" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/f13Cash/random/banker,
@@ -30267,10 +30281,10 @@ ohv
 gtb
 gtb
 vSo
-oez
-oez
-oez
-tXH
+dtb
+dtb
+dtb
+lsC
 xyP
 xyP
 xyP
@@ -30524,10 +30538,10 @@ ohv
 oez
 oez
 oez
-oez
-oez
-oez
-tXH
+dtb
+dDl
+dtb
+lsC
 xyP
 xyP
 xyP
@@ -30781,10 +30795,10 @@ cBX
 oez
 oez
 oez
-oez
-oez
-oez
-tXH
+tBo
+dtb
+dtb
+tTH
 xyP
 xyP
 xyP
@@ -31038,10 +31052,10 @@ oeP
 oez
 oez
 oez
-oez
-oez
-oez
-tXH
+dtb
+dtb
+dDl
+lsC
 xyP
 xyP
 xyP
@@ -31295,10 +31309,10 @@ oeP
 oez
 oez
 oez
-oez
-oez
-oez
-tXH
+dtb
+dDl
+tBo
+lsC
 xyP
 xyP
 xyP
@@ -31552,10 +31566,10 @@ oeP
 oez
 oez
 oez
-oez
-oez
-oez
-tXH
+dtb
+dtb
+dtb
+lsC
 xyP
 xyP
 xyP
