@@ -14,8 +14,8 @@
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.05)
-		M.adjustFireLoss(-0.05)
+		M.adjustBruteLoss(-0.075)
+		M.adjustFireLoss(-0.075)
 	..()
 
 /datum/reagent/consumable/nuka_cola/overdose_start(mob/living/M)
@@ -208,8 +208,8 @@
 	M.drowsyness = 0
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.075)
-		M.adjustFireLoss(-0.075)
+		M.adjustBruteLoss(-0.1)
+		M.adjustFireLoss(-0.1)
 	..()
 	. = TRUE
 
@@ -365,6 +365,13 @@
 	glass_icon_state = "nukafloatglass"
 	glass_name = "Nuka Cosmic"
 	glass_desc = "A delicious blend of ice-cream and classic Cosmic-Cola!"
+
+/datum/reagent/consumable/nukafloat/on_mob_life(mob/living/carbon/M)
+	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
+		M.adjustBruteLoss(-0.1)
+		M.adjustFireLoss(-0.1)
+	..()
+	. = 1
 
 /datum/reagent/consumable/sunsetfloat
 	name = "Sunset Float"
