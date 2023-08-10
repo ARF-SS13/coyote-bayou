@@ -15,16 +15,14 @@
 /obj/machinery/cardpuncher/attackby(obj/item/I, mob/living/user, params, damage_override)
 	if(istype(I, /obj/item/card))
 		punch_card(user, I)
-		new /obj/item/stack/f13Cash/random/bankerticket(get_turf(src))
 	else
 		. = ..()
-	
+
 /obj/machinery/cardpuncher/proc/punch_card(mob/living/user, obj/item/card/thecard)
 	if(!istype(thecard) || !isliving(user))
 		return
 	if(thecard.punch(user))
-		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg')
-		visible_message("[user] punches [thecard]!")
-
+		new /obj/item/stack/f13Cash/random/bankerticket(get_turf(src))
+		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
 
 
