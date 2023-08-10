@@ -584,6 +584,12 @@
 	var/list/validColors = list("brown","black","white")
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/static/chicken_count = 0
+	idlesound = list(
+		'sound/creatures/chicken/chicken1.ogg',
+		'sound/creatures/chicken/chicken2.ogg',
+		'sound/creatures/chicken/chicken3.ogg',
+		'sound/creatures/chicken/chicken4.ogg',
+		)
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -702,6 +708,12 @@
 	waddle_side_time = 2
 	can_ghost_into = TRUE
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list( 
+		'sound/creatures/cow/cow1.ogg',
+		'sound/creatures/cow/cow2.ogg',
+		'sound/creatures/cow/cow3.ogg',
+		'sound/creatures/cow/cow4.ogg',
+		)
 	young_type = /mob/living/simple_animal/cow/brahmin/calf
 	var/obj/item/inventory_back
 	footstep_type = FOOTSTEP_MOB_HOOF
@@ -746,6 +758,8 @@
 	waddle_side_time = 2
 	can_ghost_into = TRUE
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+
 	footstep_type = FOOTSTEP_MOB_HOOF
 	ride_offsets = list(
 		"1" = list(0, 8),
@@ -794,6 +808,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/horse
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
@@ -843,6 +858,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	food_types = list(/obj/item/reagent_containers/food/snacks/welding_fuel)
 	young_type = /mob/living/simple_animal/cow/brahmin/motorbike
 	footstep_type = FOOTSTEP_MOB_HOOF
@@ -889,6 +905,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/horse
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
@@ -936,6 +953,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
 	food_types = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
@@ -991,6 +1009,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
 	food_types = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
@@ -1044,6 +1063,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
 	food_types = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
@@ -1111,6 +1131,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 3
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/horse
 	footstep_type = FOOTSTEP_MOB_HOOF
 	food_types = list(
@@ -1172,6 +1193,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/horse/choco
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
