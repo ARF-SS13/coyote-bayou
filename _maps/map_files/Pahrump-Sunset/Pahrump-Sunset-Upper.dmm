@@ -19038,6 +19038,10 @@
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/item/stack/f13Cash/random/denarius/high,
+/obj/machinery/cardpuncher{
+	pixel_y = 34;
+	density = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
@@ -23512,6 +23516,10 @@
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
+/area/f13/building)
+"vas" = (
+/obj/structure/barricade/bars,
+/turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "vaQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36178,9 +36186,9 @@ kmJ
 ouQ
 hIX
 nSB
-nSB
-nSB
-nSB
+vas
+vas
+vas
 oez
 hOU
 gQO
@@ -36437,7 +36445,7 @@ tyb
 nSB
 tTI
 rkm
-nSB
+vas
 oez
 ljF
 dUa
@@ -36694,7 +36702,7 @@ qxM
 nSB
 tTI
 cqK
-nSB
+vas
 oez
 mNZ
 gQO
@@ -36951,7 +36959,7 @@ nSB
 nSB
 dMJ
 ujK
-nSB
+vas
 oez
 gWO
 dUa
@@ -37208,7 +37216,7 @@ lfZ
 nSB
 qZv
 cqK
-nSB
+vas
 oez
 ljF
 dUa
@@ -37465,7 +37473,7 @@ gPM
 ssW
 cqK
 cqK
-nSB
+vas
 oez
 gWO
 oqk
@@ -37720,9 +37728,9 @@ gXC
 axq
 jJx
 nSB
-nSB
-nSB
-nSB
+vas
+vas
+vas
 oez
 gWO
 xel

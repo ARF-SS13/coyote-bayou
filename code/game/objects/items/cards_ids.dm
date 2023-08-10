@@ -15,11 +15,37 @@
 	icon = 'icons/obj/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
 
+	/// Can this card be punched in the card puncher?
+	var/punchable = FALSE
+	/// Has it been punched?
+	var/punched = FALSE
+	/// what icon_state to use when punched
+	var/punched_state
 	var/list/files = list()
 
 /obj/item/card/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
+
+/obj/item/card/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
+
+/obj/item/card/proc/tabulate_value()
+	return 0
+
+/obj/item/card/proc/punch(mob/living/user)
+	if(!punchable)
+		to_chat(user, span_alert("[src] can't be punched!"))
+		return
+	if(punched)
+		to_chat(user, span_alert("There's no more room to punch [src]!"))
+		return
+	to_chat(user, span_good("You punch [src]!"))
+	icon_state = punched_state
+	name = "Punched [name]"
+	punched = TRUE
+	return TRUE
 
 /obj/item/card/data
 	name = "data card"
@@ -1382,6 +1408,14 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "punchedticket"
+
+/obj/item/card/lowbounty/tabulate_value()
+	if(punched)
+		return 1500
+	else
+		return 1125
 
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"
@@ -1393,6 +1427,14 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "punchedticket"
+
+/obj/item/card/midbounty/tabulate_value()
+	if(punched)
+		return 2812
+	else
+		return 2250
 
 /obj/item/card/highbounty
 	name = "High Roller Bounty Ticket"
@@ -1404,9 +1446,17 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "punchedticket"
+
+/obj/item/card/highbounty/tabulate_value()
+	if(punched)
+		return 5250
+	else
+		return 4500
 
 /obj/item/card/kingbounty
-	name = "A King's Bounty Ticket"
+	name = "King's Bounty Ticket"
 	color = "#ffe600"
 	desc = "At last, your just reward! Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
@@ -1415,4 +1465,12 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	punchable = TRUE
+	punched_state = "punchedticket"
+
+/obj/item/card/kingbounty/tabulate_value()
+	if(punched)
+		return 10500
+	else
+		return 9000
 

@@ -7897,6 +7897,9 @@
 /obj/structure/barricade/bars,
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	id = "bankdeskshutters"
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "aCb" = (
@@ -23520,7 +23523,7 @@
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
-/area/f13/building/trader)
+/area/f13/wasteland)
 "chF" = (
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/building)
@@ -41242,6 +41245,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/banker,
+/obj/machinery/button/door{
+	pixel_x = -7;
+	pixel_y = 28;
+	name = "counter shutters";
+	id = "bankdeskshutters"
+	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "gqY" = (
@@ -56738,9 +56747,6 @@
 	id = "countershutters";
 	name = "counter shutters";
 	req_one_access_txt = null
-	},
-/obj/machinery/trading_machine/armor{
-	layer = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -83091,24 +83097,6 @@
 	color = "#444444"
 	},
 /area/f13/building/tribal)
-"qwm" = (
-/obj/structure/barricade/bars{
-	layer = 2.8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/obj/machinery/door/poddoor/shutters{
-	id = "countershutters";
-	name = "counter shutters";
-	req_one_access_txt = null
-	},
-/obj/machinery/trading_machine/ammo{
-	layer = 4
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/trader)
 "qwr" = (
 /obj/structure/fence,
 /obj/machinery/light/small{
@@ -89993,6 +89981,11 @@
 	color = "#a98c5d";
 	dir = 8
 	},
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c";
+	pixel_x = -39;
+	pixel_y = -4
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "sgZ" = (
@@ -90193,6 +90186,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/stack/f13Cash/aureus,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -106845,11 +106839,6 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
-	},
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c";
-	pixel_x = -39;
-	pixel_y = -4
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -124739,7 +124728,7 @@ kko
 wVW
 sdg
 drL
-qwm
+kfa
 kfa
 kko
 sMo
