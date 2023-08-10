@@ -13,10 +13,10 @@
 	circuit = /obj/item/circuitboard/machine/cardpuncher
 
 /obj/machinery/cardpuncher/attackby(obj/item/I, mob/living/user, params, damage_override)
-    if(istype(I, /obj/item/card))
-        punch_card(user, I)
-    else
-        . = ..()
+	if(istype(I, /obj/item/card))
+		punch_card(user, I)
+	else
+		. = ..()
 
 /obj/machinery/cardpuncher/proc/punch_card(mob/living/user, obj/item/card/thecard)
 	if(!istype(thecard) || !isliving(user))
