@@ -73,7 +73,7 @@ SUBSYSTEM_DEF(research)
 	/obj/item/documents/syndicate/blue             = list(TECHWEB_POINT_TYPE_GENERIC = 15000),	// Super rare tech-faction documents item. Very limited.
 	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 3750),
 	/obj/item/scrap/research                       = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
-	/obj/item/stock_parts/chem_cartridge/pristine  = list(TECHWEB_POINT_TYPE_GENERIC = 10000), 
+	/obj/item/stock_parts/chem_cartridge/pristine  = list(TECHWEB_POINT_TYPE_GENERIC = 5000), 
 	/obj/item/assembly/signaler/anomaly            = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
 	//   -   Artifacts!   (Placeholder)
 	/obj/item/artifact/common                      = list(TECHWEB_POINT_TYPE_GENERIC = 5000),

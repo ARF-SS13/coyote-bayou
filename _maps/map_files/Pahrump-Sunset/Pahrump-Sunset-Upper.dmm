@@ -19039,7 +19039,8 @@
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/machinery/cardpuncher{
-	pixel_y = 34
+	pixel_y = 34;
+	density = 0
 	},
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
