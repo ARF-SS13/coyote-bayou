@@ -61,9 +61,6 @@
 			new_size = 3
 		if(35 to INFINITY) //If comical
 			new_size = 4 //no new sprites for anything larger yet
-	if(linked_organ)
-		linked_organ.size = clamp(size + new_size, BALLS_SIZE_MIN, BALLS_SIZE_MAX)
-		linked_organ.update()
 	size = new_size
 
 	if(owner)
