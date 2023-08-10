@@ -709,10 +709,10 @@
 	can_ghost_into = TRUE
 	attack_sound = 'sound/weapons/punch1.ogg'
 	idlesound = list( 
-		'sound/creatures/chicken/cow1.ogg',
-		'sound/creatures/chicken/cow2.ogg',
-		'sound/creatures/chicken/cow3.ogg',
-		'sound/creatures/chicken/cow4.ogg',
+		'sound/creatures/cow/cow1.ogg',
+		'sound/creatures/cow/cow2.ogg',
+		'sound/creatures/cow/cow3.ogg',
+		'sound/creatures/cow/cow4.ogg',
 		)
 	young_type = /mob/living/simple_animal/cow/brahmin/calf
 	var/obj/item/inventory_back
