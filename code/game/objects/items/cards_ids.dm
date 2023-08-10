@@ -27,6 +27,13 @@
 	user.visible_message(span_suicide("[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
+/obj/item/card/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
+
+/obj/item/card/proc/tabulate_value()
+	return 0
+
 /obj/item/card/proc/punch(mob/living/user)
 	if(!punchable)
 		to_chat(user, span_alert("[src] can't be punched!"))
@@ -36,7 +43,7 @@
 		return
 	to_chat(user, span_good("You punch [src]!"))
 	icon_state = punched_state
-	name = "punched [name]"
+	name = "Punched [name]"
 	punched = TRUE
 	return TRUE
 
@@ -1402,7 +1409,13 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
-	punched_state = "newstate"
+	punched_state = "punchedticket"
+
+/obj/item/card/lowbounty/tabulate_value()
+	if(punched)
+		return 1500
+	else
+		return 1125
 
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"
@@ -1415,7 +1428,13 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
-	punched_state = "newstate"
+	punched_state = "punchedticket"
+
+/obj/item/card/midbounty/tabulate_value()
+	if(punched)
+		return 2812
+	else
+		return 2250
 
 /obj/item/card/highbounty
 	name = "High Roller Bounty Ticket"
@@ -1428,10 +1447,16 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
-	punched_state = "newstate"
+	punched_state = "punchedticket"
+
+/obj/item/card/highbounty/tabulate_value()
+	if(punched)
+		return 5250
+	else
+		return 4500
 
 /obj/item/card/kingbounty
-	name = "A King's Bounty Ticket"
+	name = "King's Bounty Ticket"
 	color = "#ffe600"
 	desc = "At last, your just reward! Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
@@ -1441,5 +1466,11 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	punchable = TRUE
-	punched_state = "newstate"
+	punched_state = "punchedticket"
+
+/obj/item/card/kingbounty/tabulate_value()
+	if(punched)
+		return 10500
+	else
+		return 9000
 

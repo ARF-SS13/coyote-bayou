@@ -35,6 +35,10 @@
 #define BANKER_MIN 2000
 #define BANKER_MAX 15000
 
+// The amount of money a ticket puncher can give.
+#define TICKET_MIN 50
+#define TICKET_MAX 200
+
 // Amounts of coins that, under which, it makes a noise
 #define DINGLE_LOW 5
 #define DINGLE_MED 15
@@ -252,6 +256,10 @@
 /obj/item/stack/f13Cash/random/banker
 	min_qty = BANKER_MIN / CASH_CAP
 	max_qty = BANKER_MAX / CASH_CAP
+
+/obj/item/stack/f13Cash/random/bankerticket
+	min_qty = TICKET_MIN / CASH_CAP
+	max_qty = TICKET_MAX / CASH_CAP
 
 /obj/item/stack/f13Cash/denarius
 	name = "silver coin"

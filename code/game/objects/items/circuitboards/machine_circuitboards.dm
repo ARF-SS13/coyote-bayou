@@ -1274,7 +1274,7 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 2)
 
-/obj/item/circuitboard/machine/card_puncher
+/obj/item/circuitboard/machine/cardpuncher
 	name = "Card Puncher (Machine Board)"
 	build_path = /obj/machinery/cardpuncher
 	req_components = list(

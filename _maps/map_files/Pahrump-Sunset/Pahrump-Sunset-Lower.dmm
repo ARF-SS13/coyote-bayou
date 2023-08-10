@@ -2177,6 +2177,8 @@
 /obj/machinery/status_display/supply{
 	pixel_y = 32
 	},
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "bBl" = (
@@ -2948,6 +2950,8 @@
 "bJo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "bJp" = (
@@ -4087,7 +4091,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/trading_machine/armor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "bOH" = (
@@ -4247,6 +4250,8 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/stack/f13Cash/random/high,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
 /obj/item/stack/f13Cash/random/high,
 /obj/item/stack/f13Cash/random/high,
 /obj/item/stack/f13Cash/random/high,
@@ -11242,7 +11247,12 @@
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/tunnel)
 "fVO" = (
-/obj/machinery/trading_machine/armor,
+/obj/structure/rack,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "fVR" = (
@@ -18370,6 +18380,10 @@
 /obj/structure/window/reinforced/spawner/north,
 /turf/open/indestructible/ground/outside/river,
 /area/f13/caves)
+"kQr" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "kQv" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
@@ -20790,6 +20804,14 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"mrg" = (
+/obj/structure/rack,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "mrm" = (
 /obj/machinery/shower{
 	layer = 2.8;
@@ -26381,6 +26403,10 @@
 /area/f13/caves)
 "qdA" = (
 /obj/machinery/workbench/forge,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "qef" = (
@@ -32123,9 +32149,6 @@
 	name = "lower shutters";
 	pixel_x = 32
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "tRY" = (
@@ -33320,7 +33343,10 @@
 	},
 /area/f13/building/sewers)
 "uJl" = (
-/obj/machinery/trading_machine/ammo,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "uJx" = (
@@ -47849,7 +47875,7 @@ bOA
 mxS
 eya
 tkA
-bPn
+dKc
 hOu
 bPe
 aae
@@ -48354,7 +48380,7 @@ aae
 aae
 aae
 bPe
-dKc
+mrg
 bLL
 bLL
 bOA
@@ -48616,10 +48642,10 @@ bLL
 bPn
 bLL
 sAn
-bLL
+kQr
 xqd
 bLL
-bPn
+dKc
 bLL
 bPn
 bPe
@@ -49392,7 +49418,7 @@ mxS
 cvH
 bPn
 bJo
-dte
+fVO
 uUw
 jGk
 xiw
@@ -49897,7 +49923,7 @@ bLL
 bOL
 bLL
 bPE
-fVO
+bLL
 uJl
 bLL
 uTw
@@ -50926,11 +50952,11 @@ mNK
 bLL
 bPE
 bOG
-uJl
+mNK
 tRE
 gbC
 bLL
-bLL
+mNK
 bLL
 bPE
 rHB
