@@ -41,7 +41,7 @@
 	if(punched)
 		to_chat(user, span_alert("There's no more room to punch [src]!"))
 		return
-	to_chat(user, span_good("You punch [src]!"))
+	user.visible_message(span_good("[user] punches [src]!"))
 	icon_state = punched_state
 	name = "Punched [name]"
 	punched = TRUE
