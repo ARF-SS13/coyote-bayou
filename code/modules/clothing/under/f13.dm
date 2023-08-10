@@ -39,7 +39,7 @@
 // Modern-Cold War uniforms
 /obj/item/clothing/under/f13/modernbdu
 	name = "Russian uniform with telnyashka"
-	desc = "A military uniform from Russia, it comes with a summer longe sleeve telnyashka, which is a 100% pure cotton shirt. Quite comfortable"
+	desc = "A military uniform from Russia, it comes with a summer long sleeve telnyashka, which is a 100% pure cotton shirt. Quite comfortable"
 	icon_state = "milrus"
 	item_state = "milrus"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
