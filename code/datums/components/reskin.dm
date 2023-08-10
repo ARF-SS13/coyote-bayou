@@ -1448,6 +1448,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	if(!istype(target))
 		return
 	. = TRUE
+	target.item_state = item_state
 	if(target.sawn_off)
 		target.desc = sawn_desc
 		target.icon = sawn_icon
@@ -1996,6 +1997,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/pistol/update_skin(obj/item/gun/ballistic/target)
 	if(!istype(target))
 		return
+	target.item_state = item_state
 	. = TRUE
 	var/chambered = !!target.chambered
 	if(chambered)
@@ -2115,6 +2117,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	if(!istype(target))
 		return
 	. = TRUE
+	target.item_state = item_state
 	var/obj/item/ammo_box/magazine/mag = target.magazine
 	var/loaded = istype(mag)
 	var/chambered = !!target.chambered
