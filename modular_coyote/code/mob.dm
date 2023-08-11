@@ -455,3 +455,19 @@
 /mob/living/simple_animal/uffalo/Initialize()
 	. = ..()
 	recenter_wide_sprite()
+
+/mob/living/simple_animal/pokemon/tenderclawmale
+	name = "male tenderclaw"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'modular_coyote/icons/mob/newclaws.dmi'
+	icon_state = "newclaw"
+	icon_living = "newclaw"
+	icon_dead = "newclaw_d"
+
+/mob/living/simple_animal/pokemon/tenderclawfemale
+	name = "female tenderclaw"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'modular_coyote/icons/mob/newclaws.dmi'
+	icon_state = "femclaw"
+	icon_living = "femclaw"
+	icon_dead = "femclaw_d"
