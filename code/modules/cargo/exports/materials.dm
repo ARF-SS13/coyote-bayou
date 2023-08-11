@@ -109,7 +109,7 @@
 	material_id = /datum/material/runite
 
 /datum/export/material/leather
-	cost = 15
+	cost = 20
 	message = " "
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
@@ -117,7 +117,7 @@
 	k_elasticity = 1
 
 /datum/export/material/bone
-	cost = 10
+	cost = 20
 	message = " "
 	unit_name = "bone"
 	material_id = /datum/material/bone
