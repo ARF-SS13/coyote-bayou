@@ -42,6 +42,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/match/proc/matchignite()
 	if(!lit && !burnt)
+		playsound(src, 'sound/f13items/matchstick_lit.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 		lit = TRUE
 		icon_state = "match_lit"
 		damtype = "fire"
@@ -56,6 +57,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/match/proc/matchburnout()
 	if(lit)
+		playsound(src, 'sound/f13items/matchstick_hit.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 		lit = FALSE
 		burnt = TRUE
 		damtype = "brute"
@@ -138,6 +140,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/attackby(obj/item/W, mob/user, params)
 	if(!lit && smoketime > 0)
+		playsound(src, 'sound/f13items/cig_light.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 		var/lighting_text = W.ignition_effect(src, user)
 		if(lighting_text)
 			light(lighting_text)
@@ -159,6 +162,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/proc/light(flavor_text = null)
 	if(lit)
+
 		return
 	if(!(flags_1 & INITIALIZED_1))
 		icon_state = icon_on
@@ -585,6 +589,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(user.is_holding(src))
 		if(!lit)
 			set_lit(TRUE)
+			playsound(src, 'sound/f13items/zippo_on.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 			if(fancy)
 				user.visible_message("Without even breaking stride, [user] flips open and lights [src] in one smooth movement.", span_notice("Without even breaking stride, you flip open and light [src] in one smooth movement."))
 			else
@@ -608,6 +613,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 		else
 			set_lit(FALSE)
+			playsound(src, 'sound/f13items/zippo_off.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 			if(fancy)
 				user.visible_message("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow.", span_notice("You quietly shut off [src] without even looking at what you're doing. Wow."))
 			else
