@@ -69,7 +69,7 @@
 	name = "Pair of testicles" //Clarifies it for something else
 
 /datum/sprite_accessory/testicles/sheath
-	icon_state = "single"
+	icon_state = "sheath"
 	name = "Sheath"
 
 //Vaginas
