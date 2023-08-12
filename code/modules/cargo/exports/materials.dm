@@ -87,11 +87,13 @@
 	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
 	/obj/item/ingot/adamantine)
 
-/* /datum/export/material/prewar
+/* 
+/datum/export/material/prewar
 	cost = 15
 	material_id = /datum/material/prewar
 	message = "cm3 of prewar alloy"
-	export_types = (/obj/item/stack/sheet/prewar) */
+	export_types = (/obj/item/stack/sheet/prewar) 
+*/
 
 /datum/export/material/mythril
 	cost = 1000
