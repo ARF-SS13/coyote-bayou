@@ -471,3 +471,11 @@
 	icon_state = "femclaw"
 	icon_living = "femclaw"
 	icon_dead = "femclaw_d"
+
+/mob/living/simple_animal/pokemon/tenderclawherm
+	name = "herm tenderclaw"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'modular_coyote/icons/mob/newclaws.dmi'
+	icon_state = "hermclaw"
+	icon_living = "hermclaw"
+	icon_dead = "hermclaw_d"
