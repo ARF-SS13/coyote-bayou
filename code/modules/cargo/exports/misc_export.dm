@@ -311,16 +311,18 @@
 	cost = 100
 	unit_name = "low-quality meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat,
 						/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
+						/obj/item/reagent_containers/food/snacks/rawantbrain,
 						/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat)
 
 /datum/export/item/commonmeat // Real meat. Yum. Stuff high in important minerals.
 	cost = 250
 	unit_name = "common meat products"
-	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/gecko,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab,
+						/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
 						/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk,
 						/obj/item/reagent_containers/food/snacks/meat/slab/molerat)
 
@@ -329,6 +331,14 @@
 	unit_name = "high-quality meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/wolf,
 						/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw)
+
+/datum/export/item/processedmeats
+	cost = 20 // Gotta be small so people cant cheese the meat with a food processor
+	unit_name = "meat portion"
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+						/obj/item/reagent_containers/food/snacks/rawmeatball
+
+	)
 
 /datum/export/item/traitbookslow
 	cost = 800
@@ -539,19 +549,19 @@
 	)
 
 /datum/export/item/prewarsalvage
-	cost = 50 // 1600 credits or 160 caps for the shop per full bag. Avg 80 caps for customers per bag
+	cost = 62.5 // 2000 credits or 200 caps for the shop per full bag. Avg 80 caps for customers per bag
 	unit_name = "saleable scrap"
 	export_types = list(/obj/item/salvage/low,
 	)
 
 /datum/export/item/toolsalvage
-	cost = 500 // Tools are nice, but often clutter places up. This should help.
+	cost = 2500 // Tools are nice, but often clutter places up. This should help.
 	unit_name = "tool salvage"
 	export_types = list(/obj/item/salvage/tool,
 	)
 
 /datum/export/item/advancedsalvage
-	cost = 1500 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
+	cost = 2500 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
 	unit_name = "quality salvage"
 	export_types = list(/obj/item/salvage/high,
 	)

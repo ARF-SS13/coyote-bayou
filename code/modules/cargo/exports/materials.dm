@@ -87,11 +87,13 @@
 	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
 	/obj/item/ingot/adamantine)
 
-/* /datum/export/material/prewar
+/* 
+/datum/export/material/prewar
 	cost = 15
 	material_id = /datum/material/prewar
 	message = "cm3 of prewar alloy"
-	export_types = (/obj/item/stack/sheet/prewar) */
+	export_types = (/obj/item/stack/sheet/prewar) 
+*/
 
 /datum/export/material/mythril
 	cost = 1000
@@ -109,7 +111,7 @@
 	material_id = /datum/material/runite
 
 /datum/export/material/leather
-	cost = 15
+	cost = 20
 	message = " "
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
@@ -117,7 +119,7 @@
 	k_elasticity = 1
 
 /datum/export/material/bone
-	cost = 10
+	cost = 20
 	message = " "
 	unit_name = "bone"
 	material_id = /datum/material/bone
