@@ -315,7 +315,7 @@
 						/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat,
 	                    /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
 	                    /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
-                        /obj/item/reagent_containers/food/snacks/rawantbrain,
+            			/obj/item/reagent_containers/food/snacks/rawantbrain,
 						/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat)
 
 /datum/export/item/commonmeat // Real meat. Yum. Stuff high in important minerals.
