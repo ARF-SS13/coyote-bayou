@@ -1028,19 +1028,45 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	randomize_ammo_count = TRUE
 
+//gauss
+/obj/item/ammo_box/gauss
+	name = "gauss projectile rack (2mm)"
+	desc = "A rack of 2mm gauss ammo, for when you need something dead on the other side of a building."
+	icon_state = "50mg"
+	caliber = "a50mg"
+	ammo_type = /obj/item/ammo_casing/c2mm
+	caliber = list(CALIBER_2MM)
+	max_ammo = 5
+	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = FALSE
+
+//gauss blander
+/obj/item/ammo_box/gauss_blender
+	name = "gauss blender rack (2mm)"
+	desc = "A rack of 2mm gauss blender ammo, for when you want to die and take everyone with you."
+	icon_state = "50ap"
+	ammo_type = /obj/item/ammo_casing/c2mm/blender
+	caliber = list(CALIBER_2MM)
+	max_ammo = 5
+	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = FALSE
+
 //.50 BMG
 /obj/item/ammo_box/a50MG
 	name = "anti-materiel ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead."
 	icon_state = "50mg"
-	caliber = "a50mg"
 	ammo_type = /obj/item/ammo_casing/a50MG
 	caliber = list(CALIBER_50MG)
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
-	randomize_ammo_count = TRUE
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a50MG/incendiary
 	name = "anti-materiel incendiary ammo rack (.50MG)"
