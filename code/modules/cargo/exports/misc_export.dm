@@ -311,18 +311,18 @@
 	cost = 100
 	unit_name = "low-quality meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat,
 						/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
-            			/obj/item/reagent_containers/food/snacks/rawantbrain,
+						/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
+						/obj/item/reagent_containers/food/snacks/rawantbrain,
 						/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat)
 
 /datum/export/item/commonmeat // Real meat. Yum. Stuff high in important minerals.
 	cost = 250
 	unit_name = "common meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+						/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
 						/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk,
 						/obj/item/reagent_containers/food/snacks/meat/slab/molerat)
 
@@ -336,7 +336,7 @@
 	cost = 20 // Gotta be small so people cant cheese the meat with a food processor
 	unit_name = "meat portion"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-	                    /obj/item/reagent_containers/food/snacks/rawmeatball
+						/obj/item/reagent_containers/food/snacks/rawmeatball
 
 	)
 
