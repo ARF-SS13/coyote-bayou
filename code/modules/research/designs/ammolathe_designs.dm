@@ -770,7 +770,7 @@
 	name = "2mm Blender Clip"
 	id = "2mm_gauss_clip"
 	materials = list(/datum/material/iron = 12500, /datum/material/titanium = 7500)
-	build_path = /obj/item/ammo_box/gauss/blender
+	build_path = /obj/item/ammo_box/gauss_blender
 	category = list("initial", "Advanced Ammo")
 
 /datum/design/ammolathe/m473fmj
