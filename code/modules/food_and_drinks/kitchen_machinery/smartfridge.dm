@@ -694,7 +694,8 @@
 		/obj/item/stack/medical/poultice,
 		/obj/item/smelling_salts,
 		/obj/item/reagent_containers/pill/healingpowder,
-		/obj/item/reagent_containers/pill/antivenom
+		/obj/item/reagent_containers/pill/antivenom,
+		/obj/item/reagent_containers/pill/fiery_purgative
 	))
 	if(is_type_in_typecache(O, alchemyrack_typecache))
 		return TRUE
