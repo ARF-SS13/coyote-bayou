@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MATS_SHOTGUN_BULLET (MATS_AMMO_BULLET_BASE * 5)
 #define MATS_GRENADE_BULLET (MATS_AMMO_BULLET_BASE * 20)
 #define MATS_ROCKET_BULLET (MATS_AMMO_BULLET_BASE * 1)
-#define MATS_GAUSS_BULLET (MATS_AMMO_BULLET_BASE * 100)
+#define MATS_GAUSS_BULLET (MATS_AMMO_BULLET_BASE * 20)
 #define MATS_FLINTLOCK_LIGHT_BULLET (MATS_AMMO_BULLET_BASE * 5)
 #define MATS_FLINTLOCK_HEAVY_BULLET (MATS_AMMO_BULLET_BASE * 8)
 
@@ -242,10 +242,12 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MATS_AMMO_GLOBAL_COST_MULT 1
 #define MATS_AMMO_METAL_COST_MULT (1.5 * MATS_AMMO_GLOBAL_COST_MULT)
 #define MATS_AMMO_POWDER_COST_MULT (1.1 * MATS_AMMO_GLOBAL_COST_MULT)
+#define MATS_AMMO_TIT_COST_MULT (1.1 * MATS_AMMO_GLOBAL_COST_MULT)
 
 GLOBAL_LIST_INIT(ammo_material_multipliers, list(
 	/datum/material/iron = MATS_AMMO_METAL_COST_MULT,
-	/datum/material/blackpowder = MATS_AMMO_POWDER_COST_MULT
+	/datum/material/blackpowder = MATS_AMMO_POWDER_COST_MULT,
+	/datum/material/titanium = MATS_AMMO_TIT_COST_MULT,
 ))
 
 /// Just so I dont have to do bespoke shit for deducting powder and bullet costs

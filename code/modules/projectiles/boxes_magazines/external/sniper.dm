@@ -3,6 +3,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "50mag"
 	max_ammo = 8
+	randomize_ammo_count = FALSE
 	ammo_type = /obj/item/ammo_casing/a50MG
 	caliber = list(CALIBER_50MG)
 	multiple_sprites = 2
