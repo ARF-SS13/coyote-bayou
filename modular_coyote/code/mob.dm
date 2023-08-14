@@ -479,3 +479,12 @@
 	icon_state = "hermclaw"
 	icon_living = "hermclaw"
 	icon_dead = "hermclaw_d"
+
+/mob/living/simple_animal/pokemon/nightstalker
+	name = "nightstalker"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
+	icon_state = "nightstalker"
+	icon_living = "nightstalker"
+	icon_dead = "nightstalker-dead"
+
