@@ -64,13 +64,12 @@
 	desc = "Three sets of specialized armor, express requisition for those in need. Stocks tend to fluctuate."
 	cost = 5000
 	num_contained = 3
-	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
+	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor,)
+					/obj/effect/spawner/lootdrop/f13/rare_armor,
+					/obj/effect/spawner/lootdrop/f13/rare_armor,
+					/obj/effect/spawner/lootdrop/f13/rare_armor)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/ec

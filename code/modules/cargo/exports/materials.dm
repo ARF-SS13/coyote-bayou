@@ -118,6 +118,13 @@
 	export_types = list(/obj/item/stack/sheet/leather)
 	k_elasticity = 1/1000
 
+/datum/export/material/expalloy
+	cost = 100 // Limited, unless clinic goes out of their way, which takes time.
+	message = " "
+	unit_name = "polymer alloy"
+	material_id = /datum/material/leather
+	export_types = list(/obj/item/stack/sheet/mineral/abductor)
+
 /datum/export/material/bone
 	cost = 20
 	message = " "
