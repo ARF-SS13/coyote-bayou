@@ -28800,6 +28800,15 @@
 /obj/item/trash/can,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"dkL" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubbleslab"
+	},
+/area/f13/building/coyote/nash/mall/groundfloor)
 "dlf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -44351,6 +44360,14 @@
 /obj/structure/closet/crate/footlocker,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
+"hbP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubblepillar"
+	},
+/area/f13/building/coyote/nash/mall/groundfloor)
 "hbT" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -114611,6 +114628,14 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/museum/groundfloor)
+"yha" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubbleslab"
+	},
+/area/f13/building/coyote/nash/mall/groundfloor)
 "yhd" = (
 /obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
@@ -169867,9 +169892,9 @@ uLP
 xuf
 lhE
 bxQ
-eHZ
-cEs
-rtG
+aNn
+dkL
+hbP
 waH
 waH
 aNL
@@ -170124,8 +170149,8 @@ uLP
 xuf
 cHu
 ljG
-eHZ
-cEs
+yha
+dkL
 stq
 stq
 vxR
