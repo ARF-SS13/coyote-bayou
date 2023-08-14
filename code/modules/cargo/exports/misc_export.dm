@@ -560,6 +560,26 @@
 	export_types = list(/obj/item/salvage/tool,
 	)
 
+/datum/export/item/advancedtools
+	cost = 500 // Tools are useful. Good tools are better. Makes selling to shop better than scrapping them.
+	unit_name = "quality tools"
+	export_types = list(/obj/item/weldingtool/advanced,
+					/obj/item/crowbar/hightech,
+					/obj/item/screwdriver/hightech,
+					/obj/item/wrench/hightech,
+					/obj/item/wirecutters/hightech,
+					/obj/item/multitool/advanced)
+
+/datum/export/item/ultratools
+	cost = 2750 // Super expensive so theyre worth something when sold. Difficult for clinic to reproduce these.
+	unit_name = "ultracite tools"
+	export_types = list(/obj/item/weldingtool/abductor,
+						/obj/item/wrench/abductor,
+						/obj/item/wirecutters/abductor,
+						/obj/item/screwdriver/abductor,
+						/obj/item/crowbar/abductor,
+						/obj/item/multitool/abductor)
+
 /datum/export/item/advancedsalvage
 	cost = 2500 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
 	unit_name = "quality salvage"
@@ -578,6 +598,11 @@
 	export_types = list(/obj/item/clothing/suit/armor,
 	)
 
+/datum/export/item/stealthboy
+	cost = 1200
+	unit_name = "cloaking device"
+	export_types = list(/obj/item/stealthboy
+	)
 /datum/export/item/lowfish
 	cost = 150
 	unit_name = "common fish"

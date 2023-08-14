@@ -1,5 +1,5 @@
 /datum/export/material
-	k_elasticity = 0
+	k_elasticity = 1/1000
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
 	message = "cm3 of developer's tears. Please, report this on github"
 	var/material_id = null
@@ -116,7 +116,7 @@
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/leather)
-	k_elasticity = 1
+	k_elasticity = 1/1000
 
 /datum/export/material/bone
 	cost = 20
@@ -160,6 +160,8 @@
 	cost = 6 // Texarkana Trade Union scrip. They like people using their money because economics or something; 1 copper = 2 scrip; if abused again, set to 5
 	unit_name = "scrip"
 	export_types = list(/obj/item/stack/f13Cash/ncr)
+	k_elasticity = 0/1000
+
 
 /datum/export/material/deathclawhide
 	cost = 1000
@@ -167,6 +169,8 @@
 	unit_name = "deathclaw hide"
 	material_id = /datum/material/deathclawhide
 	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
+	k_elasticity = 0/1000
+
 
 /datum/export/material/geckohide
 	cost = 100 //will see if this works out...
