@@ -103,5 +103,6 @@ GLOBAL_LIST_INIT(creature_whitelist, list(
 	/mob/living/simple_animal/pet/sheep,
 	/mob/living/simple_animal/pokemon/tenderclawmale,
 	/mob/living/simple_animal/pokemon/tenderclawfemale,
-	/mob/living/simple_animal/pokemon/tenderclawherm
+	/mob/living/simple_animal/pokemon/tenderclawherm,
+	/mob/living/simple_animal/pokemon/nightstalker
 	))
