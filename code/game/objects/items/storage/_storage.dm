@@ -12,6 +12,7 @@
 /obj/item/storage/Initialize()
 	. = ..()
 	PopulateContents()
+	PostPopulateContents()
 
 /obj/item/storage/ComponentInitialize()
 	AddComponent(component_type)
@@ -28,6 +29,9 @@
 
 //Cyberboss says: "USE THIS TO FILL IT, NOT INITIALIZE OR NEW"
 /obj/item/storage/proc/PopulateContents()
+
+//In case we ant to do smth 2 da stuf aftr spwn D:
+/obj/item/storage/proc/PostPopulateContents()
 
 /obj/item/storage/proc/dump_everything(datum/source, obj/vore_belly/gut, mob/living/vorer)
 	SIGNAL_HANDLER

@@ -414,6 +414,10 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	if(contents.len == 0)
 		qdel(src)
 
+/obj/item/storage/box/gun/PostPopulateContents()
+	for(var/obj/item/thing in contents)
+		SEND_SIGNAL(thing, COMSIG_GUN_MAG_ADMIN_RELOAD) // no more empty clippazines
+
 /// Guns for the LAWman
 /obj/item/storage/box/gun/law
 	name = "American 180 case" //it was meant to be a police rifle anyways~

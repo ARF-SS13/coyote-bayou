@@ -112,6 +112,7 @@
 	icon_state = "enbloc-8"
 	ammo_type = /obj/item/ammo_casing/a3006
 	caliber = list(CALIBER_3006)
+	randomize_ammo_count = FALSE
 	max_ammo = 8
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
@@ -129,6 +130,7 @@
 /obj/item/ammo_box/magazine/sks
 	name = ".308 SKS clip"
 	icon_state = "enbloc-8"
+	randomize_ammo_count = FALSE
 	ammo_type = /obj/item/ammo_casing/a308
 	caliber = list(CALIBER_308)
 	max_ammo = 8
@@ -149,6 +151,7 @@
 	name = "rifle magazine (.308)"
 	icon_state = "mag308"
 	ammo_type = /obj/item/ammo_casing/a308
+	randomize_ammo_count = FALSE
 	caliber = list(CALIBER_308)
 	max_ammo = 10
 	multiple_sprites = 2
@@ -203,10 +206,14 @@
 	icon_state = "2mm"
 	ammo_type = /obj/item/ammo_casing/c2mm
 	caliber = list(CALIBER_2MM)
+	randomize_ammo_count = FALSE
 	max_ammo = 10
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MISC)
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m2mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m2mm/blender
 	name = "2mm \"Blender\" electromagnetic magazine"

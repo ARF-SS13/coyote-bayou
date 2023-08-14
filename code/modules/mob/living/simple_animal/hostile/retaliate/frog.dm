@@ -50,6 +50,11 @@
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255))
 
 /mob/living/simple_animal/hostile/retaliate/frog/Initialize()
+	.=..()
+	resize = 0.5
+	update_transform()
+
+/mob/living/simple_animal/hostile/retaliate/frog/Initialize()
 	. = ..()
 	if(prob(1))
 		name = "rare frog"

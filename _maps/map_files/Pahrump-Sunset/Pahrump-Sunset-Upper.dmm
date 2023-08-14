@@ -6841,7 +6841,7 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "gkm" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/book/manual/wiki/medicine,
@@ -11742,6 +11742,8 @@
 /obj/structure/shelf_wood,
 /obj/item/storage/box/ingredients/carnivore,
 /obj/item/storage/box/ingredients/carnivore,
+/obj/item/storage/box/ingredients/delights,
+/obj/item/storage/box/ingredients/delights,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -19014,14 +19016,14 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building/massfusion)
 "qZs" = (
-/obj/structure/stairs/west{
+/obj/structure/railing{
 	color = "#A47449";
-	dir = 2
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "qZv" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/f13Cash/random/denarius/high,
@@ -19038,6 +19040,10 @@
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/item/stack/f13Cash/random/denarius/high,
+/obj/machinery/cardpuncher{
+	pixel_y = 34;
+	density = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
@@ -20449,9 +20455,9 @@
 /area/f13/building/hospital)
 "sfC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/shelf_wood,
-/obj/item/storage/box/ingredients/delights,
-/obj/item/storage/box/ingredients/delights,
+/obj/structure/railing{
+	color = "#A47449"
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -23512,6 +23518,10 @@
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
+/area/f13/building)
+"vas" = (
+/obj/structure/barricade/bars,
+/turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "vaQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -30002,8 +30012,8 @@ oez
 oez
 oIp
 gjV
-xyP
-xyP
+mNn
+mNn
 ikS
 bwi
 lhH
@@ -30017,7 +30027,7 @@ lhH
 lhH
 hmG
 kow
-mNn
+qZs
 mNn
 cty
 ohv
@@ -30258,9 +30268,9 @@ oce
 oce
 oce
 oce
-xyP
-oez
-qZs
+mNn
+axq
+wKl
 eGR
 bwi
 lhH
@@ -30275,7 +30285,7 @@ lhH
 cOy
 sfC
 axq
-wKl
+mNn
 cBX
 ohv
 gtb
@@ -30515,9 +30525,9 @@ pzS
 pzS
 vOP
 oce
-xyP
-xyP
-xyP
+mNn
+cGe
+mNn
 eGR
 bwi
 swu
@@ -36178,9 +36188,9 @@ kmJ
 ouQ
 hIX
 nSB
-nSB
-nSB
-nSB
+vas
+vas
+vas
 oez
 hOU
 gQO
@@ -36437,7 +36447,7 @@ tyb
 nSB
 tTI
 rkm
-nSB
+vas
 oez
 ljF
 dUa
@@ -36694,7 +36704,7 @@ qxM
 nSB
 tTI
 cqK
-nSB
+vas
 oez
 mNZ
 gQO
@@ -36951,7 +36961,7 @@ nSB
 nSB
 dMJ
 ujK
-nSB
+vas
 oez
 gWO
 dUa
@@ -37208,7 +37218,7 @@ lfZ
 nSB
 qZv
 cqK
-nSB
+vas
 oez
 ljF
 dUa
@@ -37465,7 +37475,7 @@ gPM
 ssW
 cqK
 cqK
-nSB
+vas
 oez
 gWO
 oqk
@@ -37720,9 +37730,9 @@ gXC
 axq
 jJx
 nSB
-nSB
-nSB
-nSB
+vas
+vas
+vas
 oez
 gWO
 xel

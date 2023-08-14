@@ -59,7 +59,7 @@
 /datum/supply_pack/engineering/advancedtools
 	name = "Ultracite Tools Crate"
 	desc = "The best tools money can buy!"
-	cost = 15000
+	cost = 20000
 	contains = list(/obj/item/weldingtool/abductor,
 					/obj/item/wrench/abductor,
 					/obj/item/wirecutters/abductor,

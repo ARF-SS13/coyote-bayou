@@ -277,39 +277,52 @@
 	unit_name = "electron charge pack"
 	export_types = list(/obj/item/stock_parts/cell/ammo/ecp)
 
-/datum/export/item/lowbounty
-	cost = 1500 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+/datum/export/item/bountycard
+	cost = 0 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
 	unit_name = "small roller bounty ticket"
-	export_types = list(/obj/item/card/lowbounty)
+	export_types = list(/obj/item/card)
 
-/datum/export/item/midbounty
-	cost = 3000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
-	unit_name = "medium roller bounty ticket"
-	export_types = list(/obj/item/card/midbounty)
+/datum/export/item/bountycard/get_cost(atom/movable/AM)
+	return SEND_SIGNAL(AM, COMSIG_ATOM_GET_VALUE)
 
-/datum/export/item/highbounty
-	cost = 6000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
-	unit_name = "high roller bounty ticket"
-	export_types = list(/obj/item/card/highbounty)
 
-/datum/export/item/kingbounty
-	cost = 12000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
-	unit_name = "a king's  bounty ticket"
-	export_types = list(/obj/item/card/kingbounty)
+
+// /datum/export/item/lowbounty
+// 	cost = 1500 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "small roller bounty ticket"
+// 	export_types = list(/obj/item/card/lowbounty)
+
+// /datum/export/item/midbounty
+// 	cost = 3000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "medium roller bounty ticket"
+// 	export_types = list(/obj/item/card/midbounty)
+
+// /datum/export/item/highbounty
+// 	cost = 6000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "high roller bounty ticket"
+// 	export_types = list(/obj/item/card/highbounty)
+
+// /datum/export/item/kingbounty
+// 	cost = 12000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "a king's  bounty ticket"
+// 	export_types = list(/obj/item/card/kingbounty)
 
 /datum/export/item/trashmeat // Bugs, nasty things. Gross.
 	cost = 100
 	unit_name = "low-quality meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat,
 						/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
+						/obj/item/reagent_containers/food/snacks/rawantbrain,
 						/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat)
 
 /datum/export/item/commonmeat // Real meat. Yum. Stuff high in important minerals.
 	cost = 250
 	unit_name = "common meat products"
-	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab,
+						/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
 						/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk,
 						/obj/item/reagent_containers/food/snacks/meat/slab/molerat)
 
@@ -317,8 +330,15 @@
 	cost = 450
 	unit_name = "high-quality meat products"
 	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/wolf,
-	                    /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
 						/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw)
+
+/datum/export/item/processedmeats
+	cost = 20 // Gotta be small so people cant cheese the meat with a food processor
+	unit_name = "meat portion"
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+						/obj/item/reagent_containers/food/snacks/rawmeatball
+
+	)
 
 /datum/export/item/traitbookslow
 	cost = 800
@@ -529,13 +549,13 @@
 	)
 
 /datum/export/item/prewarsalvage
-	cost = 50 // 1600 credits or 160 caps for the shop per full bag. Avg 80 caps for customers per bag
+	cost = 62.5 // 2000 credits or 200 caps for the shop per full bag. Avg 80 caps for customers per bag
 	unit_name = "saleable scrap"
 	export_types = list(/obj/item/salvage/low,
 	)
 
 /datum/export/item/toolsalvage
-	cost = 1000 // Tools are nice, but often clutter places up. This should help.
+	cost = 2500 // Tools are nice, but often clutter places up. This should help.
 	unit_name = "tool salvage"
 	export_types = list(/obj/item/salvage/tool,
 	)

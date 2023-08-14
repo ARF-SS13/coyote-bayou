@@ -225,7 +225,7 @@ obj/item/seeds/proc/is_gene_forbidden(typepath)
 	if(getYield() >= 1)
 		SSblackbox.record_feedback("tally", "food_harvested", getYield(), product_name)
 	parent.update_tray(user)
-
+	playsound(src, 'sound/effects/grabgrass.ogg', 100, TRUE, -1)
 	return result
 
 /obj/item/seeds/proc/harvest_userless()
