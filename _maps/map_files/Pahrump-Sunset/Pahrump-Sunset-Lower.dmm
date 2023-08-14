@@ -1105,6 +1105,8 @@
 /mob/living/simple_animal/hostile/eyebot/reinforced{
 	faction = list("raider","wastebot","Neutral")
 	},
+/obj/item/electropack/shockcollar,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "aNf" = (
@@ -18694,6 +18696,10 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"kZz" = (
+/obj/machinery/chem_master/primitive,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "lag" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/stockparts/deluxe,
@@ -19996,6 +20002,8 @@
 /area/f13/caves)
 "lRc" = (
 /obj/structure/closet/cabinet/anchored,
+/obj/effect/spawner/lootdrop/f13/common_medicine,
+/obj/effect/spawner/lootdrop/f13/common_medicine,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lRf" = (
@@ -28790,6 +28798,12 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/caves)
+"rFY" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "rGb" = (
 /obj/structure/simple_door/metal/fence{
 	dir = 8
@@ -31236,6 +31250,25 @@
 "tjJ" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/water,
+/area/f13/caves)
+"tjX" = (
+/obj/structure/closet/crate/footlocker{
+	pixel_x = 7;
+	pixel_y = -2;
+	anchored = 1
+	},
+/obj/item/clothing/under/f13/enclave/science,
+/obj/item/storage/backpack/satchel/enclave,
+/obj/item/storage/belt/army/assault/enclave,
+/obj/item/card/id/rusted/brokenholodog/enclave{
+	name = "US dogtags";
+	icon_state = "enclavetrooper"
+	},
+/obj/item/gun/energy/gammagun,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/under/f13/doctorm,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "tkA" = (
 /obj/structure/rack,
@@ -33769,6 +33802,11 @@
 	},
 /obj/effect/mob_spawn/human/corpse/vault,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/area/f13/caves)
+"vbI" = (
+/obj/structure/closet/cabinet/anchored,
+/obj/item/organ/cyberimp/brain/anti_drop,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vbM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37490,6 +37528,19 @@
 /obj/structure/closet/radiation,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
+/area/f13/caves)
+"xBB" = (
+/obj/structure/table/optable,
+/obj/item/clothing/under/f13/doctorm{
+	pixel_x = -7;
+	pixel_y = 2
+	},
+/obj/machinery/iv_drip{
+	pixel_x = -15;
+	pixel_y = -5
+	},
+/obj/item/clothing/gloves/f13/crudemedical,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xBE" = (
 /obj/structure/barricade/sandbags,
@@ -57157,8 +57208,8 @@ aae
 aae
 aae
 bOn
-mSv
-aaB
+tjX
+rFY
 bOn
 gus
 lXg
@@ -57415,7 +57466,7 @@ aae
 aae
 bOn
 sWE
-aaB
+rFY
 lqn
 fMl
 lXg
@@ -57928,7 +57979,7 @@ aae
 aae
 aae
 bOn
-snM
+vbI
 xku
 bOn
 bOn
@@ -58442,7 +58493,7 @@ aae
 aae
 aae
 bOn
-xAh
+xBB
 aaB
 nNJ
 rRc
@@ -58701,7 +58752,7 @@ aae
 bOn
 aae
 duY
-aae
+kZz
 aae
 nTS
 oDt
