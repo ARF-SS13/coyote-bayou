@@ -29,7 +29,7 @@
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3)
 	crate_name = "ammo crate" */
 
-/datum/supply_pack/security/50powder
+/datum/supply_pack/security/powder50
 	name = "50 Gunpowder Clumps"
 	desc = "For when ammunition is in low supply."
 	cost = 2000
