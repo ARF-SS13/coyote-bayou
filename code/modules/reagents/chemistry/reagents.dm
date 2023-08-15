@@ -1,4 +1,3 @@
-#define REM REAGENTS_EFFECT_MULTIPLIER
 GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 
 /proc/build_name2reagent()
@@ -66,6 +65,11 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/effective_blood_max = 0
 	/// How much this reagent slows bleeding to by while in you
 	var/bleed_mult = 1
+	/// The fraction of this reagent compared against metabolization rate
+	/// Prevents microdosing from being too effective
+	var/effect_mult = 1
+	/// How much to divide non-full dose multipliers
+	var/fractional_mult_divisor = 1
 
 /datum/reagent/New()
 	. = ..()
@@ -107,6 +111,14 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 
 /datum/reagent/proc/reaction_turf(turf/T, volume)
 	return
+
+/datum/reagent/proc/pre_metabolize(mob/living/carbon/C)
+	if(volume >= metabolization_rate)
+		effect_mult = 1
+		return
+	effect_mult = round(min(volume / max(0.0001, metabolization_rate), 1), 0.01)
+	if(effect_mult < 1)
+		effect_mult =/ fractional_mult_divisor
 
 /datum/reagent/proc/on_mob_life(mob/living/carbon/M)
 	current_cycle++
