@@ -109,21 +109,21 @@
 	contains = list(/obj/item/storage/firstaid/tactical)
 
 /datum/supply_pack/medical/potions
-	name = "Ichor Potions Batch"
-	desc = "Two bottles of precious red healing brews. May contain greens or blues."
+	name = "Ambrosia Elixirs"
+	desc = "Two bottles of precious Elixir Vitae. May contain greens or blues."
 	cost = 5000
 	num_contained = 2
 	contains = list(
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/red,
-		/obj/item/reagent_containers/glass/bottle/ichor/blue,
-		/obj/item/reagent_containers/glass/bottle/ichor/green,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/blueambrosia,
+		/obj/item/reagent_containers/pill/greenambrosia,
 )
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.

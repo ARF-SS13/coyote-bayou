@@ -204,7 +204,7 @@
 	new /obj/item/defibrillator/compact/combat/loaded(src)
 	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
 	new /obj/item/healthanalyzer/advanced(src)
-	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
+	new /obj/item/reagent_containers/pill/blueambrosia(src)
 
 /obj/item/storage/firstaid/tactical/nukeop
 	name = "improved combat medical kit"

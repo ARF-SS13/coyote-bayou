@@ -557,7 +557,10 @@
 )
 	crate_name = "Stealth Mercenary Kit"
 
-/datum/supply_pack/security/incendiary44
+
+// Commented out temporarily. Could be a good change, could be a terrible idea
+
+/*/datum/supply_pack/security/incendiary44
 	name = "Ammunition - Incendiary .44"
 	desc = "A crate with 100 incendiary bullets chambered in .44"
 	cost = 1500
@@ -687,7 +690,7 @@
 		/obj/item/ammo_box/m22/shock,
 		/obj/item/ammo_box/m22/shock,
 		/obj/item/ammo_box/m22/shock,
-)
+)*/
 
 /*shop should go up to mid tier, and be affordable in doing so
 /datum/supply_pack/security/weapon_boss

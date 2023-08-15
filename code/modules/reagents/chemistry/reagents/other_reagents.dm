@@ -2829,33 +2829,35 @@
 			return
 	..()
 
-/datum/reagent/red_ichor
-	name = "Red Ichor"
+/datum/reagent/red_ambrosia
+	name = "Red Ambrosia"
 	can_synth = FALSE
 	description = "A unknown red liquid, linked to healing of most mortal wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	taste_description = "sickly sweet relief"
 
-/datum/reagent/red_ichor/on_mob_life(mob/living/carbon/M)
+/datum/reagent/red_ambrosia/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-50)
 	M.adjustOxyLoss(-50)
 	M.adjustBruteLoss(-50)
 	M.adjustFireLoss(-50)
 	M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
 	M.adjustCloneLoss(-50)
-	M.adjustStaminaLoss(-50)
+	M.adjustStaminaLoss(20)
 	..()
 
-/datum/reagent/green_ichor
-	name = "Green Ichor"
+/datum/reagent/green_ambrosia
+	name = "Green Ambrosia"
 	can_synth = FALSE
 	description = "A unknown green liquid, linked to healing of most internal wounds."
 	color = "#158c00"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	taste_description = "sickly sweet balance"
 
-/datum/reagent/green_ichor/on_mob_life(mob/living/carbon/M)
+/datum/reagent/green_ambrosia/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -100)
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, -100)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -100)
@@ -2865,15 +2867,16 @@
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, -100)
 	..()
 
-/datum/reagent/blue_ichor
-	name = "Blue Ichor"
+/datum/reagent/blue_ambrosia
+	name = "Blue Ambrosia"
 	can_synth = FALSE
 	description = "A unknown blue liquid, linked to healing the mind."
 	color = "#0914e0"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	taste_description = "sickly sweet serenity"
 
-/datum/reagent/blue_ichor/on_mob_life(mob/living/carbon/M)
+/datum/reagent/blue_ambrosia/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -100)
 	M.cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
 	M.hallucination = 0
