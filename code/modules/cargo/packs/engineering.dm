@@ -56,7 +56,7 @@
 	crate_name = "experimental tools crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
-/datum/supply_pack/engineering/advancedtools
+/datum/supply_pack/engineering/advancedbench
 	name = "Advanced Workbench"
 	desc = "For all your crafting needs!"
 	cost = 20000
