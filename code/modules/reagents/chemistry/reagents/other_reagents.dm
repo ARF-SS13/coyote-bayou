@@ -2838,14 +2838,19 @@
 	ghoulfriendly = TRUE
 	taste_description = "sickly sweet relief"
 
-/datum/reagent/red_ambrosia/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-50)
-	M.adjustOxyLoss(-50)
-	M.adjustBruteLoss(-50)
-	M.adjustFireLoss(-50)
-	M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
-	M.adjustCloneLoss(-50)
-	M.adjustStaminaLoss(20)
+/datum/reagent/red_ambrosia/reaction_mob(mob/living/carbon/M, method=INGEST, reac_volume)
+	if(iscarbon(M))
+		if(M.stat == DEAD)
+			return
+		if(method != INGEST)
+			return
+		M.adjustBruteLoss(-50*reac_volume)
+		M.adjustOxyLoss(-50*reac_volume)
+		M.adjustBruteLoss(-50*reac_volume)
+		M.adjustFireLoss(-50*reac_volume)
+		M.adjustToxLoss(-50*reac_volume, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-50*reac_volume)
+		M.adjustStaminaLoss(50*reac_volume)
 	..()
 
 /datum/reagent/green_ambrosia
