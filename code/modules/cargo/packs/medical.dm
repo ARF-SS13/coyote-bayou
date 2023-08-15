@@ -11,6 +11,13 @@
 	crate_type = /obj/structure/closet/crate/medical
 	var/num_contained = 1
 
+/datum/supply_pack/medical/randomized
+	num_contained = 15
+
+/datum/supply_pack/medical/fill(obj/structure/closet/crate/C)
+	for(var/i in 1 to num_contained)
+		var/item = pick(contains)
+		new item(C)
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// Equipment ////////////////////////////////////
