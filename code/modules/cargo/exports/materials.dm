@@ -102,8 +102,9 @@
 
 /datum/export/material/bscrystal
 	cost = 150
-	message = "cm3 of bluespace crystals"
+	message = "cm3 of ultracite crystals"
 	material_id = /datum/material/bluespace
+	export_types = list(/obj/item/stack/sheet/bluespace_crystal)
 
 /datum/export/material/runite
 	cost = 300
