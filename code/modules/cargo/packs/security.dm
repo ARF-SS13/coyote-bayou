@@ -549,7 +549,7 @@
 		/obj/item/clothing/under/f13/locust,
 		/obj/item/clothing/shoes/combat/coldres,
 		/obj/item/clothing/mask/chameleon,
-		/obj/item/clothing/suit/armor/medium/vest/zeroodst,
+		/obj/item/clothing/suit/armor/medium/odstcqb,
 		/obj/item/stealthboy,
 		/obj/item/stock_parts/cell/bluespace,
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle,
