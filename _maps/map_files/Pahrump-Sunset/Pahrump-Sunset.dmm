@@ -79112,6 +79112,14 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"ptY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
+/obj/effect/landmark/start/f13/shopkeeper,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "pub" = (
 /obj/structure/noticeboard,
 /obj/structure/fence/wooden{
@@ -104779,6 +104787,12 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"vLv" = (
+/obj/effect/landmark/start/f13/shopkeeper,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "vLB" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -125477,11 +125491,11 @@ dUj
 nTR
 iFl
 oXG
+vLv
 iFl
 iFl
 iFl
-iFl
-iFl
+vLv
 lTV
 eWq
 eQZ
@@ -126250,7 +126264,7 @@ iFl
 rTD
 sPU
 iFl
-uvE
+ptY
 iFl
 eJb
 hsY

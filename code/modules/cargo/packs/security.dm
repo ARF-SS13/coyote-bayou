@@ -29,6 +29,13 @@
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3)
 	crate_name = "ammo crate" */
 
+/datum/supply_pack/security/powder50
+	name = "50 Gunpowder Clumps"
+	desc = "For when ammunition is in low supply."
+	cost = 2000
+	contains = list(/obj/item/stack/ore/blackpowder/fifty)
+	crate_name = "Gunpowder Restock"
+
 /datum/supply_pack/security/helmets
 	name = "Armor - Metal Helmets"
 	desc = "Contains three surplus, but solid, metal helmets. Keep that militia safe!"
@@ -64,13 +71,12 @@
 	desc = "Three sets of specialized armor, express requisition for those in need. Stocks tend to fluctuate."
 	cost = 5000
 	num_contained = 3
-	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
+	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor,)
+					/obj/effect/spawner/lootdrop/f13/rare_armor,
+					/obj/effect/spawner/lootdrop/f13/rare_armor,
+					/obj/effect/spawner/lootdrop/f13/rare_armor)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/ec
@@ -432,6 +438,13 @@
 	contains = list(/obj/item/minigunpackbal5mm)
 	crate_name = "minigun crate"
 
+/datum/supply_pack/security/minigun
+	name = "Weapons - Gatling Laser"
+	desc = "For when you REALLY need to cook a steak from twenty yards away."
+	cost = 50000
+	contains = list(/obj/item/minigunpack)
+	crate_name = "gatling laser crate"
+
 //disclaimer: I...don't actually know how the economy goes, so these costs are spitballs
 
 /datum/supply_pack/security/weapon_wasteland
@@ -527,6 +540,157 @@
 		/obj/item/choice_beacon/box/weapons_uncommon
 )
 	crate_name = "packed uncommon weapon crate"
+
+/datum/supply_pack/security/stealthkit
+	name = "Kit - Stealth Mercenary"
+	desc = "All your needs for covert operations. Contains a stealth boy and ultracite cell, dark clothing, boots, and a chameleon mask. Even comes with some light weight armor and a specialized rifle with a scope rail and silencer."
+	cost = 10000
+	contains = list(
+		/obj/item/clothing/under/f13/locust,
+		/obj/item/clothing/shoes/combat/coldres,
+		/obj/item/clothing/mask/chameleon,
+		/obj/item/clothing/suit/armor/medium/odstcqb,
+		/obj/item/stealthboy,
+		/obj/item/stock_parts/cell/bluespace,
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle,
+		/obj/item/gun_upgrade/muzzle/silencer,
+)
+	crate_name = "Stealth Mercenary Kit"
+
+
+// Commented out temporarily. Could be a good change, could be a terrible idea
+
+/*/datum/supply_pack/security/incendiary44
+	name = "Ammunition - Incendiary .44"
+	desc = "A crate with 100 incendiary bullets chambered in .44"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+)
+
+/datum/supply_pack/security/incendiary50mg
+	name = "Ammunition - Incendiary .50MG"
+	desc = "A crate with 25 incendiary bullets chambered in .50MG"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+)
+
+/datum/supply_pack/security/incendiary473
+	name = "Ammunition - Incendiary 4.73mm"
+	desc = "A crate with 250 incendiary bullets chambered in 4.73mm"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+)
+
+/datum/supply_pack/security/incendiary45
+	name = "Ammunition - Incendiary .45"
+	desc = "A crate with 125 incendiary bullets chambered in .45"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+)
+
+/datum/supply_pack/security/incendiaryshotgun
+	name = "Ammunition - Incendiary Shells"
+	desc = "A crate with 60 dragon's breath shotgun shells"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+)
+
+/datum/supply_pack/security/incendiary9mm
+	name = "Ammunition - Incendiary 9mm"
+	desc = "A crate with 225 incendiary bullets chambered in 9mm"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+)
+
+/datum/supply_pack/security/incendiary357
+	name = "Ammunition - Incendiary .357"
+	desc = "A crate with 125 incendiary bullets chambered in .357"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+)
+
+/datum/supply_pack/security/incendiary10mm
+	name = "Ammunition - Incendiary 10mm"
+	desc = "A crate with 150 incendiary bullets chambered in 10mm"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+)
+
+/datum/supply_pack/security/esd5mm
+	name = "Ammunition - ESD 5mm"
+	desc = "A crate with 150 electrostatic discharger bullets chambered in 5mm"
+	cost = 3000
+	contains = list(
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+)
+
+/datum/supply_pack/security/esd473mm
+	name = "Ammunition - ESD 4.73mm"
+	desc = "A crate with 250 electrostatic discharger bullets chambered in 4.73mm"
+	cost = 3000
+	contains = list(
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+)
+
+/datum/supply_pack/security/esd22lr
+	name = "Ammunition - ESD .22lr"
+	desc = "A crate with 300 electrostatic discharger bullets chambered in .22lr"
+	cost = 3000
+	contains = list(
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+)*/
 
 /*shop should go up to mid tier, and be affordable in doing so
 /datum/supply_pack/security/weapon_boss

@@ -1991,9 +1991,9 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/bitterdrink5,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
-		//datum/crafting_recipe/redpotion,
-		//datum/crafting_recipe/bluepotion,
-		//datum/crafting_recipe/greenpotion,
+		/datum/crafting_recipe/redambrosia,
+		/datum/crafting_recipe/blueambrosia,
+		/datum/crafting_recipe/greenambrosia,
 		/datum/crafting_recipe/food/pemmican,
 		/datum/crafting_recipe/tribal/bonebag
 	)
