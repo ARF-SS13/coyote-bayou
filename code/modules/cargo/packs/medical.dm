@@ -100,6 +100,29 @@
 	cost = 250
 	contains = list(/obj/item/storage/firstaid/toxin)
 
+/datum/supply_pack/medical/tacticalkit
+	name = "Tactical Treatment Kit Single-Pack"
+	desc = "A single first aid kit focused on getting people out of a bad situation."
+	cost = 7500
+	contains = list(/obj/item/storage/firstaid/tactical)
+
+/datum/supply_pack/medical/potions
+	name = "Ichor Potions Batch"
+	desc = "Two bottles of precious red healing brews. May contain greens or blues."
+	cost = 5000
+	num_contained = 2
+	contains = list(
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/red,
+		/obj/item/reagent_containers/glass/bottle/ichor/blue,
+		/obj/item/reagent_containers/glass/bottle/ichor/green,
+)
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
 	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."

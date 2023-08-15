@@ -62,10 +62,16 @@
 	contains = list(/obj/item/book/granter/trait/trekking)
 
 /datum/supply_pack/skillbooks/trapper
-	name = "guide to minelaying"
+	name = "Guide to Minelaying"
 	desc = ""
 	cost = 10000
 	contains = list(/obj/item/book/granter/trait/trekking)
+
+/datum/supply_pack/skillbooks/polis
+	name = "Vigilante's Journal"
+	desc = "An old journal, writted by someone with the will to do right but cut short..."
+	cost = 5000
+	contains = list(/obj/item/book/granter/crafting_recipe/polis)
 
 //////////////////////////////////////////////////////////////////////////////
 ///////////////////////// Medical / Science //////////////////////////////////
@@ -92,14 +98,14 @@
 /datum/supply_pack/skillbooks/poultice
 	name = "On the subject of healing poultice"
 	desc = "An old book written by a missionary studying the postwar tribes of the midwest."
-	cost = 3000
-	contains = list(/obj/item/book/granter/trait/poultice)
+	cost = 2500
+	contains = list(/obj/item/book/granter/crafting_recipe/poultice)
 
 /datum/supply_pack/skillbooks/bitters
 	name = "Healing techniques of the midwestern tribes"
 	desc = "An old book written by a missionary studying the postwar tribes of the midwest."
-	cost = 1500
-	contains = list(/obj/item/book/granter/trait/bitters)
+	cost = 5000
+	contains = list(/obj/item/book/granter/crafting_recipe/bitters)
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Blueprints ////////////////////////////////////

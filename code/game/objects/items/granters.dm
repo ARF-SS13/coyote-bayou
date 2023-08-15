@@ -1366,7 +1366,7 @@
 		/datum/crafting_recipe/healpoultice5)
 
 /obj/item/book/granter/crafting_recipe/polis
-	name = "A scribbled, bloody journal"
+	name = "Vigilante's Journal"
 	desc = "An old journal, writted by someone with the will to do right but cut short..."
 	remarks = list("Durathread works much like oldworld kevlar.", "Leadership isn't always a bad thing.", "Layer the fibers correctly.", "Don't forget to look good while you're doing it.")
 	crafting_recipe_types = list(
