@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 		return
 	effect_mult = round(min(volume / max(0.0001, metabolization_rate), 1), 0.01)
 	if(effect_mult < 1)
-		effect_mult =/ fractional_mult_divisor
+		effect_mult /= fractional_mult_divisor
 
 /datum/reagent/proc/on_mob_life(mob/living/carbon/M)
 	current_cycle++
