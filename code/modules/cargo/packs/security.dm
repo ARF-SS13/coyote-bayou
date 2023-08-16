@@ -545,6 +545,7 @@
 	name = "Kit - Stealth Mercenary"
 	desc = "All your needs for covert operations. Contains a stealth boy and ultracite cell, dark clothing, boots, and a chameleon mask. Even comes with some light weight armor and a specialized rifle with a scope rail and silencer."
 	cost = 10000
+	num_contained = 8
 	contains = list(
 		/obj/item/clothing/under/f13/locust,
 		/obj/item/clothing/shoes/combat/coldres,

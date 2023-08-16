@@ -1355,7 +1355,11 @@
 		/datum/crafting_recipe/bitterdrink,
 		/datum/crafting_recipe/bitterdrink5,
 		/datum/crafting_recipe/healpoultice,
-		/datum/crafting_recipe/healpoultice5)
+		/datum/crafting_recipe/healpoultice5,
+		/datum/crafting_recipe/redambrosia,
+		/datum/crafting_recipe/blueambrosia,
+		/datum/crafting_recipe/greenambrosia
+)
 
 /obj/item/book/granter/crafting_recipe/poultice
 	name = "On the subject of healing poultice"
