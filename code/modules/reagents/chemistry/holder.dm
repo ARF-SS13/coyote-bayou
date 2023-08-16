@@ -295,6 +295,7 @@
 			continue
 		if(!C)
 			C = R.holder.my_atom
+		R.pre_metabolize(C)
 		if(!R.metabolizing)
 			R.metabolizing = TRUE
 			if(isrobotic(C) && !R.synth_metabolism_use_human)
