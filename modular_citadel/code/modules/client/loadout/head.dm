@@ -712,7 +712,7 @@ datum/gear/head/steelpot_bandolier
 	cost = 2
 
 /datum/gear/head/ballistichelmets/number5
-	name = "U.N Helmet"
+	name = "U.N Helmet Medical"
 	path = /obj/item/clothing/head/kevlarhelmet/unitednation/medical
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2

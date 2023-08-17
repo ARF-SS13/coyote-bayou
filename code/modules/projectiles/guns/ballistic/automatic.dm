@@ -1492,14 +1492,14 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	reskinnable_component = /datum/component/reskinnable/service_rifle
 
-//////////////////////////////////////////////
-//// Famas G80{generation}	              ////
-//// -weakened 5.56                       ////
-//// + three round burst fire             ////
-//// - weak 5.56mm assault rifle to be found ////
-//// - Takes 20 mags only                 ////
-//// - Muh bullpup                        ////
-//////////////////////////////////////////////
+/* * * * * * * * * * * * * * * *
+* Famas G80{generation}
+* -weakened 5.56
+* + three round burst fire
+*- weak 5.56mm assault rifle to be found
+* - Takes 20 mags only
+* - Muh bullpup
+* * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/famas
 	name = "fusil d'assaut G80"
 	desc = "An assault rifle,resembling a FAMAS, used by the pre-war GIGN. Produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
@@ -2110,13 +2110,13 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 ///////////////////////////////
-////  M41 Battle Rifle /////// 
+//// M41 Battle Rifle ///////
 /// + fast burst fire rate////
-//  + .308 ammunition. ////// 
-//  + Has zoom built in ///// 
-//  -Takes only 10 round magazines/////
-//  - Burns ammo like a ford pickup does gas ///
-/////////////////////////////////////// 
+// + .308 ammunition. //////
+// + Has zoom built in /////
+// -Takes only 10 round magazines/////
+// - Burns ammo like a ford pickup does gas ///
+///////////////////////////////////////
 
 /obj/item/gun/ballistic/automatic/m41br
 	name = "m41 battle rifle"
@@ -2364,7 +2364,7 @@
 
 /obj/item/gun/ballistic/automatic/ak556
 	name = "Ak74"
-	desc = "A fast firing AK74"
+	desc = "A AK74 assault rifle. Rechambered in 5.56x45 NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2373,12 +2373,12 @@
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small , /obj/item/ammo_box/magazine/m556/rifle/extended/hobo , /obj/item/ammo_box/magazine/m556/rifle/small/empty , /obj/item/ammo_box/magazine/m556 , /obj/item/ammo_box/magazine/m556/rifle/extended ,/obj/item/ammo_box/magazine/m556/rifle/extended/empty )
-	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T4
-	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = AUTORIFLE_RECOIL(1.3, 1.3)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm300,
+		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto
 	)
 	can_flashlight = FALSE
@@ -2634,7 +2634,7 @@
 	name = "G11"
 	desc = "This experimental gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm."
 	icon_state = "g11"
-	item_state = "arg"
+	item_state = "g11"
 	mag_type = /obj/item/ammo_box/magazine/m473
 	init_mag_type = /obj/item/ammo_box/magazine/m473
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m473/small, /obj/item/ammo_box/magazine/m473/small/empty)
@@ -2653,22 +2653,27 @@
 
 /obj/item/gun/ballistic/automatic/g11/tox
 	name = "Tox's G11M"
-	desc = "A unique G11. With a built in scope and semi-automatic only option, this G11 was bought and repurposed by a wealthy felid named Tox Mckit. Etched on the reciever is a lovely motif of moths and felines surrounding one singular feline under a full moon. On the scope is a engraving that says 'To the sands we stride on'"
-	icon_state = "g11"
-	item_state = "arg"
-	mag_type = /obj/item/ammo_box/magazine/m473
-	init_mag_type = /obj/item/ammo_box/magazine/m473
+	desc = "A unique G11. With a built in scope, this G11 was bought and repurposed by a wealthy felid named Tox Mckit. Etched on the reciever is a lovely motif of moths and felines surrounding one singular feline under a full moon. On the scope is a engraving that says 'To the sands we stride on'"
+	icon_state = "g11c"
+	item_state = "g11c"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m473custom
+	init_mag_type = /obj/item/ammo_box/magazine/m473custom
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m473/small, /obj/item/ammo_box/magazine/m473/small/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow ,
+		/datum/firemode/burst/three/slower
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = FALSE
 	zoom_factor = 1
+
 /* * * * * * * * * * *
  * WT-550 Carbine
  * 4.73mm caseless
@@ -2705,8 +2710,8 @@
 	)
 
 /* * * * *
- * LMGs  *
- * * * * */
+* LMGs*
+* * * * */
 
 /* * * * * * * * * * *
  * Automatic rifles, but bigger
@@ -2858,6 +2863,40 @@
 
 
 /* * * * * * * * * * *
+* RPD-72
+* 7.62 russian LMG
+* - custom magazine capacity only, takes nothing else.
+* - low ROF
+* - debuffed damage to compensate it having high drum capacity
+* - Rare LMG
+* - High recoil with slowdown
+* * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/automatic/rpd
+	name = "Russian LMG"
+	desc = "A soviet made Russian LMG. Known as the RPD, ths LMG was champered in 7.62 Soviet. Now rechambered to .308 with a 40 drum mag, it has quite the kick for recoil and a bit heavy."
+	icon_state = "rpd"
+	item_state = "rpd"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/rpd
+	init_mag_type = /obj/item/ammo_box/magazine/rpd
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
+
+/* * * * * * * * * * *
  * Browning M1919 MMG
  * Big 7.62mm LMG
  * .308 / 7.62mm
@@ -2941,6 +2980,48 @@
 //MISC//
 ////////
 
+/* * * * * * * * * *
+* Recoiless rifle
+* - Potential for two rounds but always will use a single shot magazine
+* + auto-ejects the casing
+* + T2 buff damage
+* - Long draw time, heavy recoil, heavy slow down, two handed only and only able to be placed on the back
+* * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/recoilessrifle
+	name = "Xototl Recoiless Rifle"
+	desc = "A AT92RR or 'recoiless rifle'. Packing one hell of a punch, this weapon seems to have Aztec like motifs on the grips. This weapon seems extremely bulky and quite heavy to use. But what it makes up for slowness, it makes up for damage."
+	icon_state = "spaag"
+	item_state = "spaag"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/spaagrifle
+	init_mag_type = /obj/item/ammo_box/magazine/spaagrifle/empty
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2.2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	auto_eject = 1
+	en_bloc = 1
+	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_LONG
+	init_recoil = HMG_RECOIL(4, 4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
+
+/* * * * * * * * * *
+* TG78 Anti Material Rifle.
+* Uses .50 cal
+* Semi-automatic
+* * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/unmcamr
 	name = "Unktehila"
@@ -2962,30 +3043,6 @@
 		/datum/firemode/semi_auto/slower
 	)
 	zoom_factor = 1.5
-	can_suppress = FALSE
-	can_bayonet = FALSE 
-	can_flashlight = FALSE
-
-
-/obj/item/gun/ballistic/automatic/unmcamr/toxcustom
-	name = "Blossom's Whisper"
-	desc = "A custom TG78. This model is modeled after the original TG78. The caliber is still the same but the sniper is modified with a 2x holo-scope. Alongside this, the AMR hits less harder than a normal TG78. Etched onto the rifle's reciever is a etching of the letters T and S alongside a phrase below the two letters that reads 'To the fallen, I watch'. Chambered in .50 BMG"
-	icon_state = "tg78c"
-	item_state = "tg78c"
-	mag_type = /obj/item/ammo_box/magazine/highcaliber
-	init_mag_type = /obj/item/ammo_box/magazine/highcaliber
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T4
-	init_recoil = HMG_RECOIL (5 , 5)
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_firemodes = list(
-	/datum/firemode/semi_auto/slower
-	)
-	zoom_factor = 1.1
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
