@@ -92,7 +92,7 @@
 	name = ".45acp internal tube magazine"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = list(CALIBER_45ACP)
-	max_ammo = 6
+	max_ammo = 5
 	multiload = 0
 
 /obj/item/ammo_box/magazine/internal/shot/tube357

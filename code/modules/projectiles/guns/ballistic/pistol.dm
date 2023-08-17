@@ -282,16 +282,48 @@
 		/datum/firemode/burst/three/faster
 	)
 
+/* * * * * * * * *
+* VG77 Pistol
+* + Common burst pistol
+* - lower damage
+* + burst fire
+* - slowest burst fire rate but normal semi-automatic
+* - Unreskinnable due to lack of sprites
+* + Able to be dual wielded
+* * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/vg77
+	name = "MP77 Pistol"
+	desc = "A MP77 pistol from the H&K company. This pistol is based off the VP70, a pistol created by the same company. Made for much more cheaper markets, it's chambered in 9mm and comes with a three burst fire mode. Albeit it seems to be slow in such a ROF. Quite stylish however."
+	icon_state = "mp77"
+	item_state = "mp77"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast,
+		/datum/firemode/burst/three/slower,
+	)
+	can_bayonet = FALSE
+	can_suppress = TRUE
+	can_scope = FALSE
+
 /* * * * * * * * * *
- * MEDIUM PISTOLS  *
- * * * * * * * * * */
+* MEDIUM PISTOLS
+* * * * * * * * * */
 
 /* * * * * * * * * * *
- * N99 Pistol Semi-Auto
- * Baseline Medium pistol
- * 10mm
- * Common
- * * * * * * * * * * */
+* N99 Pistol Semi-Auto
+* Baseline Medium pistol
+* 10mm
+* Common
+* * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "10mm pistol"

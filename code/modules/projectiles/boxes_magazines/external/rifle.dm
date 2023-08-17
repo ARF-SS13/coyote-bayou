@@ -182,6 +182,20 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/ammo_box/magazine/m473custom
+	name = "g11 magazine (4.73mm)"
+	icon_state = "473mmc"
+	caliber = list(CALIBER_CASELESS)
+	ammo_type = /obj/item/ammo_casing/caseless/g11
+	max_ammo = 30
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
+/obj/item/ammo_box/magazine/m473custom/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m473/explosive
 	name = "g11 magazine (4.73mm explosive)"
 	icon_state = "473mm"
