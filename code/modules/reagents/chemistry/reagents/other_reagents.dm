@@ -2840,9 +2840,6 @@
 	fractional_mult_divisor = 10
 
 /datum/reagent/red_ambrosia/on_mob_life(mob/living/carbon/M)
-	var/volumult = 1
-	if(volume < metabolization_rate)
-
 	M.adjustBruteLoss(-50 * effect_mult)
 	M.adjustOxyLoss(-50 * effect_mult)
 	M.adjustBruteLoss(-50 * effect_mult)
