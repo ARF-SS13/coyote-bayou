@@ -35557,8 +35557,13 @@
 	},
 /area/f13/wasteland/massfusion/entrance)
 "eTU" = (
-/obj/structure/window/fulltile/store{
+/obj/structure/window/fulltile/house{
+	dir = 2;
 	icon_state = "storewindowright"
+	},
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
@@ -46601,8 +46606,13 @@
 	},
 /area/f13/ruins)
 "hFN" = (
-/obj/structure/window/fulltile/store{
+/obj/structure/window/fulltile/house{
+	dir = 2;
 	icon_state = "storewindowleft"
+	},
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
@@ -55428,11 +55438,11 @@
 "jMq" = (
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/machinery/door/poddoor/shutters{
 	id = "NashClinicFront"
 	},
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "jMw" = (
@@ -67096,9 +67106,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "mAv" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowvertical"
+/obj/structure/window/fulltile/house{
+	icon_state = "storewindowbottom"
 	},
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 5
+	},
+/obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic)
 "mAy" = (
@@ -92460,7 +92475,13 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "sLx" = (
-/obj/structure/window/fulltile/store,
+/obj/structure/window/fulltile/house{
+	icon_state = "storewindowhorizontal"
+	},
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 5
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "sLy" = (
@@ -96741,6 +96762,7 @@
 /obj/item/storage/box/gloves,
 /obj/item/storage/box/masks,
 /obj/item/storage/box/masks,
+/obj/item/reagent_containers/blood/radaway,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic)
 "tIE" = (
@@ -98559,12 +98581,15 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "ugE" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "storewindowbottom"
+	},
 /obj/structure/curtain{
 	color = "#845f58";
-	layer = 5;
-	pixel_x = 32
+	layer = 5
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/barricade/bars,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/building/hospital/clinic)
 "ugG" = (
 /obj/effect/spawner/lootdrop/f13/common,
@@ -118578,7 +118603,7 @@ iAU
 iAU
 iAU
 iAU
-iAU
+ugE
 iAU
 iAU
 vAc
@@ -119863,7 +119888,7 @@ kSu
 cSk
 uvY
 tIt
-ugE
+tPz
 tPz
 tPz
 iAU
@@ -120890,9 +120915,9 @@ riA
 pqC
 pqC
 uFF
-rYZ
 bcq
 rYZ
+bcq
 bcq
 miR
 rfD
@@ -121147,9 +121172,9 @@ iAU
 aXn
 iAU
 iAU
-jMq
 wGL
 jMq
+wGL
 cOL
 iAU
 aXa
