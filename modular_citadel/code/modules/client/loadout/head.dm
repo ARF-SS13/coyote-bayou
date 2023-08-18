@@ -689,7 +689,7 @@ datum/gear/head/steelpot_bandolier
 
 /datum/gear/head/samuraiwarriorfive
 	name = "Stylish Samurai Helmet - White"
-	path = /obj/item/clothing/head/coyote/samuraiwarriorwhite
+	path = /obj/item/clothing/head/coyote/samuraiwarriorfive
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
