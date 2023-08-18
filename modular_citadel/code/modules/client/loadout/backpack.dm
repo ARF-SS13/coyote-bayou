@@ -197,6 +197,14 @@
 	name = "old satchel"
 	path = /obj/item/storage/backpack/satchel/old
 
+/datum/gear/backpack/coinpouch
+	name = "coin pouch"
+	path = /obj/item/storage/wallet/stash/pouch
+
+/datum/gear/backpack/backpack/snailshell
+	name = "snail shell"
+	path = /obj/item/storage/backpack/satchel/snailshell
+
 /////////////////////
 //Coyote Additions//
 ////////////////////
