@@ -1330,6 +1330,10 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/bow/shortbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
+/obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
+	new /obj/item/gun/ballistic/bow/shortbow/yumi(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
+
 /*dunno if we should have roundstart crossbow simply cause we want a lil more progression
 /obj/item/storage/box/gun/bow/crossbow
 	name = "crossbow case"
@@ -2228,6 +2232,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow
+
+/datum/loadout_box/shortbow
+	entry_tag = "Shortbow"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_BOW
+	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
+
+
 
 /*
 /datum/loadout_box/crossbow
