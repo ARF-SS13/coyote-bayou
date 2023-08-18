@@ -356,7 +356,7 @@
 /obj/item/gun_upgrade/trigger/better
 	name = "Pre-war trigger"
 	desc = "This trigger seems to be made of pre-war alloys and cut to the precision of milimeters."
-	icon_state = "dna_lock"
+	icon_state = "DNA_lock"
 
 /obj/item/gun_upgrade/trigger/better/New()
 	..()
@@ -385,7 +385,7 @@
 /obj/item/gun_upgrade/muzzle/better
 	name = "Pre-war muzzle"
 	desc = "A pre-war muzzle, with an integrated silencer."
-	icon_state = "glass_widow"
+	icon_state = "Glass_Widow"
 
 /obj/item/gun_upgrade/muzzle/better/New()
 	..()
