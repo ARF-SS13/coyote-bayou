@@ -375,7 +375,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 		GUN_UPGRADE_PROJ_SPEED_MULT = 1.10,
 		)
 	I.gun_loc_tag = GUN_BARREL
