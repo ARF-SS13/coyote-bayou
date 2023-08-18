@@ -358,7 +358,7 @@
 		/obj/item/twohanded/baseball = 5,
 		/obj/item/twohanded/baseball/spiked = 1,
 		/obj/item/twohanded/baseball/golfclub = 2,
-		/obj/item/twohanded/sledgehammer = 2,
+		/obj/item/twohanded/sledgehammer/simple = 2,
 		/obj/item/twohanded/chainsaw = 1,
 		/obj/item/melee/transforming/plasmacutter/regular/celestia = 1,
 		/obj/item/melee/transforming/plasmacutter/regular/eve = 1,

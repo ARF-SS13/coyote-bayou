@@ -369,15 +369,17 @@
 /obj/item/gun_upgrade/barrel/better
 	name = "High-temperature forged barrel"
 	desc = "A barrel forged in high temperature, making the metal more resistant."
+	icon_state = "gravbarrel"
 
 /obj/item/gun_upgrade/barrel/better/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.8
-	)
-	I.destroy_on_removal = TRUE
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1.10,
+		)
 	I.gun_loc_tag = GUN_BARREL
+	I.req_gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/gun_upgrade/muzzle/better
 	name = "Pre-war muzzle"
