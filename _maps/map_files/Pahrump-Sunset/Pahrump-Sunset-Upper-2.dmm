@@ -22,6 +22,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"au" = (
+/obj/effect/turf_decal/trimline/neutral{
+	dir = 6;
+	icon_state = "trimline_fill"
+	},
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
+	},
+/area/f13/building/hospital/clinic)
 "av" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2469,6 +2479,10 @@
 "xv" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/pda/heads/hos,
+/obj/machinery/cardpuncher{
+	pixel_y = 34;
+	density = 0
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -2662,6 +2676,10 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
+"zH" = (
+/obj/machinery/vending/medical/researchgrants,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic)
 "zJ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -5290,6 +5308,16 @@
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Zr" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill"
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 4
+	},
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "Zt" = (
 /turf/closed/wall/mineral/brick,
@@ -9596,8 +9624,8 @@ Wr
 Wr
 Wr
 Wr
-Wr
-Xv
+SR
+Zr
 FS
 ly
 HN
@@ -9853,8 +9881,8 @@ Wr
 Wr
 Wr
 Wr
-SR
-Wg
+Xv
+au
 FS
 FS
 FS
@@ -10112,7 +10140,7 @@ Wr
 Wr
 Xv
 FS
-FS
+zH
 Dc
 Gi
 VU
