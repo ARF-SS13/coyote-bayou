@@ -2234,7 +2234,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow
 
 /datum/loadout_box/shortbow/yumi
-	entry_tag = "Shortbow"
+	entry_tag = "Yumi Bow"
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi
