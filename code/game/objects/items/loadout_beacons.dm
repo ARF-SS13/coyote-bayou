@@ -2237,7 +2237,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_tag = "Shortbow"
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
+	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi
 
 
 
