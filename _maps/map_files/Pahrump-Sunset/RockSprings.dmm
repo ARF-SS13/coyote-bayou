@@ -44998,7 +44998,9 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "svW" = (
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 2
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
 "svY" = (
