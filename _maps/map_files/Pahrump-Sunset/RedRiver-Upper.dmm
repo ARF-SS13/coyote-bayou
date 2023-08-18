@@ -4579,6 +4579,12 @@
 /obj/structure/flora/grass/coyote/thirty,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"HP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "HQ" = (
 /obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -6384,6 +6390,11 @@
 	icon_state = "greenrustysolid"
 	},
 /area/f13/building/abandoned)
+"TQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "TR" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -51786,11 +51797,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+TQ
+TQ
+TQ
+TQ
+TQ
 Hw
 Hw
 Hw
@@ -52043,11 +52054,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+TQ
+TQ
+TQ
+TQ
+TQ
 Hw
 Hw
 Hw
@@ -52300,11 +52311,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+HP
+HP
+HP
+HP
+HP
 Hw
 Hw
 Hw
@@ -52557,11 +52568,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+HP
+HP
+HP
+HP
+HP
 Hw
 Hw
 Hw
@@ -52814,11 +52825,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+TQ
+TQ
+TQ
+TQ
+TQ
 Hw
 Hw
 Hw
@@ -53071,11 +53082,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+TQ
+TQ
+TQ
+TQ
+TQ
 Hw
 Hw
 Hw
@@ -53328,11 +53339,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+HP
+HP
+HP
+HP
+HP
 Hw
 Hw
 Hw
@@ -53585,11 +53596,11 @@ Hw
 Hw
 Hw
 Hw
-Hw
-Hw
-Hw
-Hw
-Hw
+HP
+HP
+HP
+HP
+HP
 Hw
 Hw
 Hw
