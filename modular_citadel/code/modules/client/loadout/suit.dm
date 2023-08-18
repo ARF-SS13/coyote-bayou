@@ -277,10 +277,73 @@
 	cost = 1
 
 /datum/gear/suit/samurai  //added by TK420634 ~ 5/29/2022 "Samurai Wasteland WeebShit Edition (tm)
-	name = "Rusted Samurai Armor"
+	name = "Yoroi - Rusted"
 	path = /obj/item/clothing/suit/samurai
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
+
+/datum/gear/suit/samurai1
+	name = "Yoroi - Reddish Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samurai2
+	name = "Yoroi - Blue"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samurai3
+	name = "Yoroi - Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samurai4
+	name = "Yoroi - Black"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+	
+/datum/gear/suit/samurai5
+	name = "Yoroi - White"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai5
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+	
+/datum/gear/suit/samuraiwar1
+	name = "Padded Yoroi - Reddish Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+	
+/datum/gear/suit/samuraiwar2
+	name = "Padded Yoroi - Blue"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+	
+/datum/gear/suit/samuraiwar3
+	name = "Padded Yoroi - Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+		
+/datum/gear/suit/samuraiwar4
+	name = "Padded Yoroi - Black"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+	
+/datum/gear/suit/samuraiwar5
+	name = "Padded Yoroi - White"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar5
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+
+
 
 /datum/gear/suit/rustedcowboy
 	name = "Rusted Cowboy Outfit"

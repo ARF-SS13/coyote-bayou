@@ -1664,6 +1664,98 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
+/obj/item/clothing/suit/armor/light/kit/punk/samurai1
+	name = "Yoroi - Reddish Brown"
+	desc = "A samurais true armor is their ability to not be cringe."
+	icon_state = "samurai1"
+	item_state = "samurai1"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samurai2
+	name = "Yoroi - Blue"
+	desc = "A samurais true armor is their ability to not be cringe."
+	icon_state = "samurai2"
+	item_state = "samurai2"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samurai3
+	name = "Yoroi - Brown"
+	desc = "A samurais true armor is their ability to not be cringe."
+	icon_state = "samurai3"
+	item_state = "samurai3"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samurai4
+	name = "Yoroi - Black"
+	desc = "A samurais true armor is their ability to not be cringe."
+	icon_state = "samurai4"
+	item_state = "samurai4"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+
+/obj/item/clothing/suit/armor/light/kit/punk/samurai5
+	name = "Yoroi - Black"
+	desc = "A samurais true armor is their ability to not be cringe. This one should be good for painting."
+	icon_state = "samurai5"
+	item_state = "samurai5"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraiwar1
+	name = "Padded Yoroi - Red"
+	desc = "A slightly higher quality samurai armor that still won't stop anything more than the occasion melee attack."
+	icon_state = "samurai_warrior1"
+	item_state = "samurai_warrior1"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraiwar2
+	name = "Padded Yoroi - Blue"
+	desc = "A slightly higher quality samurai armor that still won't stop anything more than the occasion melee attack."
+	icon_state = "samurai_warrior2"
+	item_state = "samurai_warrior2"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraiwar3
+	name = "Padded Yoroi - Brown"
+	desc = "A slightly higher quality samurai armor that still won't stop anything more than the occasion melee attack."
+	icon_state = "samurai_warrior3"
+	item_state = "samurai_warrior3"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraiwar4
+	name = "Padded Yoroi - Black"
+	desc = "A slightly higher quality samurai armor that still won't stop anything more than the occasion melee attack."
+	icon_state = "samurai_warrior4"
+	item_state = "samurai_warrior4"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraiwar5
+	name = "Padded Yoroi - White"
+	desc = "A slightly higher quality samurai armor that still won't stop anything more than the occasion melee attack."
+	icon_state = "samurai_warrior5"
+	item_state = "samurai_warrior5"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
+
+
 ////////////////
 // OTHER //
 ////////////////
