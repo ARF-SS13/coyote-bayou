@@ -708,3 +708,9 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "Lee-gion brand cape made from what looks like pinkish dark blue piece of cluth, with a golden bull cucking a sheep on the back. With a lot of pockets underneath"
 	icon_state = "legioncapeb"
 	item_state = "legioncapeb"
+
+/obj/item/storage/backpack/satchel/snailshell
+	name = "Snail shell"
+	desc = "A hard brown spiral of a shell that fits well on a back. You can somehow store items in it..huh! Snailtastic."
+	icon_state = "snailshell"
+	item_state = "snailshell"
