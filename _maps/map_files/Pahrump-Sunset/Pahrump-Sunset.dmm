@@ -23173,7 +23173,6 @@
 	},
 /area/f13/building/workshop)
 "cdS" = (
-/obj/item/twohanded/required/kirbyplants/random,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
@@ -23181,6 +23180,7 @@
 /obj/structure/sign/poster/prewar/poster62{
 	pixel_x = 32
 	},
+/obj/machinery/vending/medical/nash,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "cee" = (
@@ -26862,8 +26862,9 @@
 	pixel_y = -6
 	},
 /obj/machinery/button/door{
-	pixel_y = -32;
-	id = "NashClinicChem"
+	pixel_y = 6;
+	id = "NashClinicChem";
+	pixel_x = 26
 	},
 /obj/item/storage/box/beakers{
 	pixel_x = 7;
@@ -55438,11 +55439,16 @@
 "jMq" = (
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = -24;
+	layer = 2.8;
+	density = 0
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "NashClinicFront"
 	},
-/obj/item/paper_bin,
-/obj/item/pen,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "jMw" = (
@@ -61004,7 +61010,6 @@
 	},
 /area/f13/building)
 "lhi" = (
-/obj/structure/table,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/uncommon_medicine,
 /obj/effect/spawner/lootdrop/f13/uncommon_medicine,
@@ -70651,7 +70656,6 @@
 "nrC" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal{
-	dir = 4;
 	termtag = "Public"
 	},
 /turf/open/floor/wood_common{
@@ -72854,7 +72858,7 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
-/obj/machinery/vending/medical/nash,
+/obj/item/twohanded/required/kirbyplants/random,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "nTt" = (
@@ -88316,7 +88320,6 @@
 /area/f13/caves)
 "rKy" = (
 /obj/structure/wreck/trash/brokenvendor,
-/obj/structure/wreck/trash/brokenvendor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "yellowrustyfull"
@@ -91066,9 +91069,6 @@
 	color = "000000"
 	},
 /obj/structure/table/booth,
-/obj/structure/curtain{
-	color = "#8A806B"
-	},
 /obj/structure/curtain{
 	color = "#8A806B"
 	},
@@ -100321,7 +100321,10 @@
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "uFF" = (
 /obj/machinery/smartfridge/chemistry,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
+	},
 /area/f13/building/hospital/clinic)
 "uFJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -110771,7 +110774,14 @@
 	},
 /area/f13/building/abandoned)
 "xix" = (
-/obj/machinery/trading_machine/medical,
+/obj/structure/table/reinforced,
+/obj/structure/barricade/bars,
+/obj/machinery/door/poddoor/shutters{
+	id = "NashClinicChem"
+	},
+/obj/machinery/trading_machine/medical{
+	layer = 3.13
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "xiA" = (
@@ -112370,12 +112380,11 @@
 /area/f13/wasteland)
 "xCW" = (
 /obj/machinery/button/door{
-	id = "NashClinicFront"
+	id = "NashClinicFront";
+	pixel_x = 7;
+	pixel_y = 7
 	},
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
-	},
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "xCZ" = (
 /obj/structure/flora/grass/wasteland{
@@ -120146,7 +120155,7 @@ iAU
 iAU
 iAU
 mAv
-xCW
+iAU
 cYw
 iAU
 aOk
@@ -120915,9 +120924,9 @@ riA
 pqC
 pqC
 uFF
-bcq
 rYZ
-bcq
+xCW
+rYZ
 bcq
 miR
 rfD
@@ -121427,7 +121436,7 @@ cPq
 wTy
 wTy
 wTy
-xix
+pPP
 lTP
 bGz
 bGz
@@ -121941,7 +121950,7 @@ ewG
 dzD
 hGn
 cLg
-iAU
+xix
 nTr
 bGz
 bGz
@@ -124516,7 +124525,7 @@ hxf
 dVF
 brF
 xvP
-nrC
+iAW
 uow
 hxf
 tfE
@@ -124772,7 +124781,7 @@ mak
 hCu
 usp
 brF
-qPy
+nrC
 oTy
 twY
 baZ
@@ -125545,7 +125554,7 @@ qmy
 dVF
 xUm
 brF
-iAW
+qPy
 hxf
 bvo
 flt
