@@ -55441,11 +55441,6 @@
 /obj/structure/barricade/bars,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/structure/filingcabinet/chestdrawer{
-	pixel_x = -24;
-	layer = 2.8;
-	density = 0
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "NashClinicFront"
 	},
@@ -110774,15 +110769,17 @@
 	},
 /area/f13/building/abandoned)
 "xix" = (
-/obj/structure/table/reinforced,
-/obj/structure/barricade/bars,
-/obj/machinery/door/poddoor/shutters{
-	id = "NashClinicChem"
+/obj/machinery/button/door{
+	id = "NashClinicFront";
+	pixel_x = 8;
+	pixel_y = 7
 	},
-/obj/machinery/trading_machine/medical{
-	layer = 3.13
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = 8;
+	layer = 2.8;
+	density = 0
 	},
-/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "xiA" = (
 /obj/structure/flora/grass/wasteland{
@@ -112379,12 +112376,15 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xCW" = (
-/obj/machinery/button/door{
-	id = "NashClinicFront";
-	pixel_x = 7;
-	pixel_y = 7
+/obj/structure/table/reinforced,
+/obj/structure/barricade/bars,
+/obj/machinery/door/poddoor/shutters{
+	id = "NashClinicChem"
 	},
-/turf/open/floor/carpet/blue,
+/obj/machinery/trading_machine/medical{
+	layer = 3.13
+	},
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "xCZ" = (
 /obj/structure/flora/grass/wasteland{
@@ -120925,7 +120925,7 @@ pqC
 pqC
 uFF
 rYZ
-xCW
+xix
 rYZ
 bcq
 miR
@@ -121950,7 +121950,7 @@ ewG
 dzD
 hGn
 cLg
-xix
+xCW
 nTr
 bGz
 bGz
