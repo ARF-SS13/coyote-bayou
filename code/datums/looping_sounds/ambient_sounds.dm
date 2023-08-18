@@ -253,7 +253,7 @@
 /datum/looping_sound/ambient/swamp/quiet
 	chance = 100
 	vary = FALSE
-	volume = SOUND_LOOP_VOL_RANGE(69, 69)
+	volume = SOUND_LOOP_VOL_RANGE(85, 90)
 	direct = TRUE
 	loop_delay = 0
 	mid_sounds = list(
