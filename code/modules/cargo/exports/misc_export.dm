@@ -628,6 +628,17 @@
 	export_types = list(/obj/item/salvage/high,
 	)
 
+/datum/export/item/advancedsalvageloot
+	cost = 800 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
+	unit_name = "quality components"
+	export_types = list(/obj/item/advanced_crafting_components/receiver,
+				/obj/item/advanced_crafting_components/assembly,
+				/obj/item/advanced_crafting_components/alloys,
+				/obj/item/advanced_crafting_components/conductors,
+				/obj/item/advanced_crafting_components/lenses,
+				/obj/item/advanced_crafting_components/flux,
+)
+
 /datum/export/item/nightstalkerpelt
 	cost = 200 
 	unit_name = "nightstalker pelt"
