@@ -587,6 +587,13 @@
 	icon_state = "samurai_warrior4"
 	item_state = "samurai_warrior4"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
+/obj/item/clothing/head/coyote/samuraiwarriorfive
+	name = "Stylish Samurai Helmet - White"
+	desc = "Oda Nobunag-on-my-balls."
+	icon_state = "samurai_warrior5"
+	item_state = "samurai_warrior5"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 	
 /obj/item/clothing/head/coyote/samuraiguard1
 	name = "Simple Samurai Helmet - Reddish Brown"
