@@ -420,6 +420,7 @@
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
 	desc = "An over-the-shoulder length of webbing that can hold all sorts of ammostuffs."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bandolier"
 	item_state = "bandolier"
 	slot_flags = INV_SLOTBIT_NECK
@@ -429,8 +430,8 @@
 /obj/item/storage/belt/bandolier/durathread
 	name = "durathread bandolier"
 	desc = "A drab looking bandolier that goes on your upper body."
-	icon_state = "bandolier-durathread"
-	item_state = "bandolier-durathread"
+	icon_state = "bandolier"
+	item_state = "bandolier"
 	slot_flags = INV_SLOTBIT_NECK
 	resistance_flags = FIRE_PROOF
 
@@ -706,6 +707,7 @@
 /obj/item/storage/belt/sabre/knife
 	name = "knife bandolier"
 	desc = "A bandolier lined with loops, perfect for slipping in a few small blades."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bandolier"
 	item_state = "bandolier"
 	w_class = WEIGHT_CLASS_BULKY
