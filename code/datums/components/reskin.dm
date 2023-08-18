@@ -1449,6 +1449,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return
 	. = TRUE
 	target.item_state = item_state
+	target.mob_overlay_icon = mob_overlay_icon
 	if(target.sawn_off)
 		target.desc = sawn_desc
 		target.icon = sawn_icon
@@ -1563,6 +1564,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Arisaka 30"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese only had 30 of these in the second world war. And now you have one of them!"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "arisaka30"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1577,6 +1579,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Arisaka 35"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese only had 35 of these in the second world war. That's 5 more than the 30. And that's terrible."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "arisaka35"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1593,7 +1596,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "arisaka38"
 	item_state = "308"
-	mob_overlay_icon = null
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	sawn_name = "sawed off Arisaka 38"
@@ -1607,7 +1610,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "arisaka99"
 	item_state = "308"
-	mob_overlay_icon = null
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	sawn_name = "sawed off Arisaka 99"
@@ -1619,6 +1622,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Gewehr 71"
 	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2171, this rifle went on to become the most popular rifle in the world. That's why it's so hard to find, everyone already has one."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gewehr71"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1633,6 +1637,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Gewehr 98"
 	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2171, this rifle went on to become the second most popular rifle in the world. That's why it's so hard to find, everyone already had a 71."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gewehr98"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1689,6 +1694,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Murata"
 	desc = "A bolt action rifle chambered in .30-06. A simple design used for brahmin ranching."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "murata"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1703,6 +1709,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Carcano"
 	desc = "A bolt action rifle chambered in .30-06. Chryslus Motors' first and only attempt at making a volcanic pistol. As you can see. there's a reason they stuck to making cars."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "carcano"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1733,7 +1740,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "kar98k"
 	item_state = "308"
-	mob_overlay_icon = null
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	sawn_name = "sawed off kar98k"
@@ -1881,6 +1888,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Lee-Enfield rifle"
 	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "smle"
 	item_state = "smle"
 	mob_overlay_icon = null
@@ -1895,6 +1903,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "SMLE"
 	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "smle"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1999,6 +2008,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return
 	target.item_state = item_state
 	. = TRUE
+	target.mob_overlay_icon = mob_overlay_icon
 	var/chambered = !!target.chambered
 	if(chambered)
 		target.icon = chambered_icon
@@ -2118,6 +2128,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return
 	. = TRUE
 	target.item_state = item_state
+	target.mob_overlay_icon = mob_overlay_icon
 	var/obj/item/ammo_box/magazine/mag = target.magazine
 	var/loaded = istype(mag)
 	var/chambered = !!target.chambered

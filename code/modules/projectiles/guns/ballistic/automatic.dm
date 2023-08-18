@@ -385,6 +385,7 @@
 	name = "Maschinenpistole 40"
 	desc = "An open bolt blowback submachine gun that served in the German Army. It's a long way from home."
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "mp40"
 	item_state = "smg9mm"
 
@@ -393,6 +394,7 @@
 	name = "HK MP-5"
 	desc = "A lightweight submachine gun that earned its place as one of the most popular SMGs in the world"
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "mp5"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
@@ -535,6 +537,7 @@
 /obj/item/gun/ballistic/automatic/smg/tommygun
 	name = "Thompson SMG"
 	desc = "A powerful submachinegun chambered in .45 ACP, this weapon fires at a blistering rate with a heavy pistol cartridge, and can accept very high capacity magazines, to boot."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "tommygun"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
@@ -670,6 +673,7 @@
 /obj/item/gun/ballistic/automatic/smg/mp5
 	name = "MP-5 SD"
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "mp5"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
@@ -702,6 +706,7 @@
 	icon_state = "pps"
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
 	init_mag_type = /obj/item/ammo_box/magazine/pps9mm
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -1752,6 +1757,7 @@
 /obj/item/gun/ballistic/automatic/m1garand
 	name = "M1 Garand"
 	desc = "The WWII American Classic. Still has that satisfiying ping."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "m1garand"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/garand3006
@@ -1844,6 +1850,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "sks"
 	item_state = "sks"
 	mag_type = /obj/item/ammo_box/magazine/sks
@@ -2421,6 +2428,7 @@
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "FN FAL"
 	desc = "This rifle has been more widely used by armed forces than any other rifle in history. It's a reliable weapon for any terrain or tactical situation."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m308
@@ -2606,6 +2614,7 @@
 	name = "browning automatic rifle"
 	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
 	icon = 'icons/fallout/objects/guns/bar.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "BAR"
 	item_state = "BAR"
 	mag_type = /obj/item/ammo_box/magazine/m308

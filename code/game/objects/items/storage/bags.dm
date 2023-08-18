@@ -503,7 +503,8 @@ obj/item/storage/bag/chemistry/tribal
 	name = "belt quiver"
 	desc = "A simple leather quiver designed for holding arrows."
 	icon = 'icons/obj/clothing/belts.dmi'
-	icon_state = "tribal_quiver"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "quiver"
 	item_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT
@@ -516,6 +517,7 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/light
 	name = "light quiver"
 	desc = "A compact, lightweight quiver, that can be tucked just about anywhere to hold some arrows."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "quiver"
 	item_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_SMALL
@@ -528,7 +530,8 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/heavy
 	name = "back quiver"
 	desc = "A large quiver worn on the back, made to hold all the arrows you might need."
-	icon_state = "militiabelt"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "quiver"
 	item_state = "tribal_quiver"
 	component_type = /datum/component/storage/concrete/bag/heavy_quiver
 
