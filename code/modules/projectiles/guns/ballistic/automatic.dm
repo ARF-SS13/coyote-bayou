@@ -2664,7 +2664,7 @@
 	name = "Tox's G11M"
 	desc = "A unique G11. With a built in scope, this G11 was bought and repurposed by a wealthy felid named Tox Mckit. Etched on the reciever is a lovely motif of moths and felines surrounding one singular feline under a full moon. On the scope is a engraving that says 'To the sands we stride on'"
 	icon_state = "g11c"
-	item_state = "g11c"
+	item_state = "g11"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'

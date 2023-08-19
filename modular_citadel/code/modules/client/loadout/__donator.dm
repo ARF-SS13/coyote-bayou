@@ -1121,16 +1121,17 @@
 	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
 
 /datum/gear/donator/kits/seermankhajiit003
-	name = "The Director"
+	name = "The Latos Agent"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit003
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
-	new /obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox(src)
-	new /obj/item/ammo_box/magazine/uzim9mm/rockwell(src)
-	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
-	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxinfil(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
