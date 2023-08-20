@@ -1710,6 +1710,44 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
+/obj/item/clothing/suit/armor/light/kit/punk/samuraipoor1
+	name = "Yoroi Lightened - Reddish Brown"
+	desc = "You're one broke ass samurai, pal."
+	icon_state = "samuraipoor1"
+	item_state = "samuraipoor1"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraipoor2
+	name = "Yoroi Lightened - Blue"
+	desc = "You're one broke ass samurai, pal."
+	icon_state = "samuraipoor2"
+	item_state = "samuraipoor2"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraipoor3
+	name = "Yoroi Lightened - Brown"
+	desc = "You're one broke ass samurai, pal."
+	icon_state = "samuraipoor3"
+	item_state = "samuraipoor3"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/samuraipoor4
+	name = "Yoroi Lightened - Black"
+	desc = "You're one broke ass samurai, pal."
+	icon_state = "samuraipoor4"
+	item_state = "samuraipoor4"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+
 /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar1
 	name = "Padded Yoroi - Red"
 	desc = "A slightly higher quality samurai armor that still won't stop anything more than the occasion melee attack."

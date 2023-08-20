@@ -311,6 +311,30 @@
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai5
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
+
+/datum/gear/suit/samuraipoor1
+	name = "Yoroi Lightened - Reddish Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraipoor2
+	name = "Yoroi Lightened - Blue"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraipoor3
+	name = "Yoroi Lightened - Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraipoor4
+	name = "Yoroi Lightened - Black"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 	
 /datum/gear/suit/samuraiwar1
 	name = "Padded Yoroi - Reddish Brown"
