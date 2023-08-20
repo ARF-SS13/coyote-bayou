@@ -2160,6 +2160,18 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
+"bSp" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/obj/structure/mirror{
+	pixel_x = 24
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "bTh" = (
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5791,22 +5803,11 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "flg" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = 30
+/obj/structure/toilet{
+	dir = 4
 	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = -25;
-	pixel_y = -8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid"
+	icon_state = "floorrusty"
 	},
 /area/f13/building)
 "flo" = (
@@ -8665,13 +8666,9 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "hIX" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/table/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "hJG" = (
 /obj/effect/decal/cleanable/dirt{
@@ -11081,7 +11078,9 @@
 	pixel_y = -27;
 	req_one_access_txt = "52"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "jKa" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -11450,6 +11449,14 @@
 /obj/item/clothing/glasses/orange,
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
+"kda" = (
+/obj/item/storage/secure/safe{
+	name = "safety deposit box";
+	pixel_x = 5;
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "kdf" = (
 /obj/structure/flora/grass/coyote/five,
 /turf/open/indestructible/ground/outside/dirt,
@@ -11673,12 +11680,11 @@
 	},
 /area/f13/building/hospital)
 "kmJ" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = 30
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/chair/sofa/left,
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "kmU" = (
 /obj/effect/decal/cleanable/dirt{
@@ -11821,6 +11827,12 @@
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
+/area/f13/building)
+"krw" = (
+/obj/structure/chair/sofa/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "ksd" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -12640,8 +12652,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "lfZ" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/window/fulltile/wood_window,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "lgq" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -13688,19 +13702,7 @@
 	},
 /area/f13/building)
 "mcS" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = -25;
-	pixel_y = -8
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
+/turf/open/floor/wood_common,
 /area/f13/building)
 "mcX" = (
 /obj/machinery/rnd/destructive_analyzer,
@@ -14310,12 +14312,10 @@
 	},
 /area/f13/building/mall)
 "mFs" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 4
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "mFI" = (
 /obj/structure/rack/shelf_metal,
@@ -14757,11 +14757,13 @@
 	},
 /area/f13/building/abandoned)
 "mYf" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 4
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/secure/safe{
+	name = "safety deposit box";
+	pixel_x = 5;
+	pixel_y = -30
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "mYA" = (
 /obj/structure/railing{
@@ -14903,10 +14905,13 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "neB" = (
-/obj/machinery/light{
-	dir = 1
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "neQ" = (
 /obj/structure/table/wood,
@@ -16347,8 +16352,12 @@
 	},
 /area/f13/building)
 "ouQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid"
+	icon_state = "floorrusty"
 	},
 /area/f13/building)
 "ouR" = (
@@ -17041,7 +17050,7 @@
 	dir = 8;
 	pixel_y = 8
 	},
-/turf/open/transparent/glass,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "pbC" = (
 /turf/open/transparent/openspace,
@@ -17102,7 +17111,9 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "phh" = (
-/obj/structure/simple_door/metal/fence/wooden,
+/obj/structure/simple_door/metal/fence/wooden{
+	dir = 2
+	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -17641,6 +17652,16 @@
 /obj/item/organ/liver,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
+"pJd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "pJe" = (
 /obj/structure/window/fulltile/house{
@@ -18508,17 +18529,8 @@
 	},
 /area/f13/building)
 "qxM" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 32;
-	pixel_y = -8
-	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "qxT" = (
 /obj/structure/flora/rock/pile/largejungle{
@@ -19135,7 +19147,7 @@
 	dir = 8;
 	pixel_y = 8
 	},
-/turf/open/transparent/glass,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "reY" = (
 /obj/structure/table/wood,
@@ -21342,11 +21354,13 @@
 	},
 /area/f13/building)
 "tcj" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 6
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/corner{
+	color = "#A47449"
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/building)
 "tcD" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -21482,13 +21496,17 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "tgm" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = -25;
-	pixel_y = -8
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_y = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
+/obj/effect/turf_decal/trimline/neutral{
+	dir = 1;
+	icon_state = "trimline_corner_fill"
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "tgJ" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin/towel,
@@ -21872,9 +21890,7 @@
 /area/f13/building/abandoned)
 "twI" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
+/turf/open/floor/wood_common,
 /area/f13/building)
 "twW" = (
 /obj/structure/simple_door/house,
@@ -21893,14 +21909,9 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "tyb" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
+/obj/item/storage/box/cups,
+/obj/structure/table/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "tzj" = (
 /obj/structure/dresser,
@@ -21928,11 +21939,9 @@
 /obj/item/storage/secure/safe{
 	name = "safety deposit box";
 	pixel_x = 5;
-	pixel_y = 30
+	pixel_y = -30
 	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
+/turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "tAq" = (
 /obj/structure/chair/office/dark{
@@ -24301,7 +24310,11 @@
 /obj/structure/railing{
 	color = "#A47449"
 	},
-/turf/open/transparent/glass,
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 4
+	},
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "vTB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25018,20 +25031,11 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "wBT" = (
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 32;
-	pixel_y = -8
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/right{
+	dir = 4
 	},
-/obj/item/storage/secure/safe{
-	name = "safety deposit box";
-	pixel_x = 5;
-	pixel_y = 30
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "wBX" = (
 /obj/structure/bed/wooden,
@@ -25433,13 +25437,11 @@
 	},
 /area/f13/wasteland)
 "wXH" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill"
+/obj/structure/simple_door/glass,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/turf/open/floor/wood_wide{
-	icon_state = "wide-broken3"
-	},
-/area/f13/wasteland)
+/area/f13/building)
 "wXJ" = (
 /obj/structure/flora/branch_broken,
 /turf/open/indestructible/ground/outside/desert,
@@ -35411,14 +35413,14 @@ ioS
 cBX
 uiW
 oez
-oez
-oez
-poH
-nEl
-nEl
-nEl
-nEl
-wky
+nSB
+nSB
+nSB
+nSB
+nSB
+nSB
+nSB
+nSB
 oez
 oez
 oez
@@ -35668,14 +35670,14 @@ ejB
 ohv
 oez
 oez
-oez
 nSB
+krw
+wBT
+twI
+twI
 nSB
+flg
 nSB
-nSB
-nSB
-dUa
-oeP
 oez
 oez
 oez
@@ -35686,9 +35688,9 @@ hdV
 hdV
 kZs
 wky
-qeo
-qeo
-vTk
+oez
+oez
+tXH
 tPg
 oPb
 axq
@@ -35925,14 +35927,14 @@ jxp
 uEt
 oez
 oez
-oez
 nSB
-flg
-tgm
+kmJ
+bwi
 mcS
+mcS
+cjk
+bSp
 nSB
-dUa
-wXH
 oez
 oez
 poH
@@ -35943,9 +35945,9 @@ slU
 slU
 bqm
 oeP
-qeo
-qeo
-vTk
+oez
+oez
+tXH
 hEV
 mNn
 pWv
@@ -36182,13 +36184,13 @@ rtZ
 cOy
 oez
 oez
-oez
 nSB
-kmJ
-ouQ
+wJJ
+lhH
+mcS
 hIX
 nSB
-vas
+nSB
 vas
 vas
 oez
@@ -36200,10 +36202,10 @@ slU
 aqO
 nxq
 oeP
-qeo
-qeo
-qeo
-reP
+oez
+oez
+poH
+tgm
 reP
 paM
 xyP
@@ -36439,12 +36441,12 @@ rtZ
 ioS
 oez
 oez
-poH
 nSB
-tAc
-cqK
+mFs
+mcS
+mcS
 tyb
-nSB
+tAc
 tTI
 rkm
 vas
@@ -36457,12 +36459,12 @@ slU
 bsb
 xPZ
 oeP
-qeo
-qeo
-qeo
-qeo
-qeo
-vTk
+oez
+oez
+gWO
+dUa
+dUa
+ecJ
 xyP
 xyP
 qmq
@@ -36696,9 +36698,9 @@ lom
 ohv
 oez
 oez
-gWO
 nSB
-wBT
+mcS
+mcS
 twI
 qxM
 nSB
@@ -36714,12 +36716,12 @@ slU
 mNn
 fBp
 oeP
-qeo
-qeo
-qeo
-qeo
-qeo
-vTk
+oez
+oez
+gWO
+dUa
+dUa
+ecJ
 xyP
 xyP
 alz
@@ -36953,14 +36955,14 @@ rtZ
 uEt
 oez
 oez
-ljF
-nSB
-nSB
-cqK
-nSB
+gXC
+lfZ
+lfZ
+wXH
+lfZ
 nSB
 dMJ
-ujK
+mYf
 vas
 oez
 gWO
@@ -36971,12 +36973,12 @@ vWm
 vtu
 goG
 oeP
-qeo
-qeo
-qeo
-qeo
-qeo
-vTk
+oez
+oez
+gWO
+dUa
+dUa
+ecJ
 xyP
 xyP
 xyP
@@ -37210,14 +37212,14 @@ jDF
 cOy
 oez
 oez
-gWO
-dUa
 nSB
-cqK
-lfZ
+jxp
+jxp
+jxp
+knP
 nSB
 qZv
-cqK
+kda
 vas
 oez
 ljF
@@ -37228,12 +37230,12 @@ cUT
 cdN
 dTT
 oeP
-qeo
-qeo
-qeo
-qeo
-qeo
-vTk
+oez
+oez
+gWO
+dUa
+dUa
+ecJ
 kmY
 xyP
 tPz
@@ -37467,11 +37469,11 @@ jxp
 ohv
 oez
 oez
-gWO
-xVM
-gXC
+nSB
+ouQ
+tcj
 neB
-gPM
+nHV
 ssW
 cqK
 cqK
@@ -37485,12 +37487,12 @@ cdN
 cdN
 gqw
 oeP
-qeo
-qeo
-qeo
-qeo
-qeo
-vTk
+oez
+oez
+gWO
+dUa
+dUa
+ecJ
 xyP
 xyP
 xyP
@@ -37724,9 +37726,9 @@ ohv
 cBX
 oez
 oez
-ljF
-xVM
 gXC
+ejB
+pJd
 axq
 jJx
 nSB
@@ -37742,12 +37744,12 @@ dUa
 dUa
 dUa
 oeP
-qeo
-qeo
-qeo
-qeo
-qeo
-vTk
+oez
+oez
+gWO
+dUa
+dUa
+ecJ
 xyP
 xyP
 xyP
@@ -37981,12 +37983,12 @@ jxp
 cOy
 oez
 oez
-nAu
-gtb
-mFs
-mFs
-mYf
-tcj
+gXC
+nSB
+gXC
+gXC
+nSB
+nSB
 oez
 oez
 oez
@@ -37999,11 +38001,11 @@ gtb
 pRA
 gtb
 vSo
-qeo
-qeo
-qeo
-qeo
-qeo
+oez
+oez
+amZ
+gtb
+gtb
 vTk
 xyP
 xyP
