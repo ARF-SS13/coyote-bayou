@@ -620,3 +620,33 @@
 	icon_state = "ameline_dress"
 	item_state = "ameline_dress"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/civ13/haori
+	name = "haori"
+	desc = "This makes you feel like you need to clap wood blocks together."
+	icon_state = "haori"
+	item_state = "haori"
+
+/obj/item/clothing/under/civ13/haori2
+	name = "haori - red"
+	desc = "This makes you feel like you need to clap wood blocks together."
+	icon_state = "haori2"
+	item_state = "haori2"	
+
+/obj/item/clothing/under/civ13/haori3
+	name = "haori - gray"
+	desc = "This makes you feel like you need to clap wood blocks together."
+	icon_state = "haori3"
+	item_state = "haori3"	
+
+	/obj/item/clothing/under/civ13/haorisamurai
+	name = "haori w/ Jacket - grey"
+	desc = "A sort of jacket, or something. Looks odd."
+	icon_state = "haori_samurai"
+	item_state = "haori_samurai"
+
+/obj/item/clothing/under/civ13/haorisamurai3
+	name = "haori w/ Jacket - red"
+	desc = "A sort of jacket, or something. Looks odd."
+	icon_state = "haori_samurai3"
+	item_state = "haori_samurai3"
