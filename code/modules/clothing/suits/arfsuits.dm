@@ -1738,7 +1738,6 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
-
 /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor4
 	name = "Yoroi Lightened - Black"
 	desc = "You're one broke ass samurai, pal."
