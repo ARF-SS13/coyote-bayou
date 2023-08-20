@@ -142,6 +142,11 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_8.ogg', 10 SECONDS, 1),
 	)
 
+/datum/looping_sound/ambient/critters/birds/louder
+	chance = 80
+	loop_delay = 0
+	volume = SOUND_LOOP_VOL_RANGE(70, 100)
+
 /datum/looping_sound/ambient/critters/birds/crow
 	chance = 40
 	vary = FALSE
@@ -153,6 +158,12 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/crow_1.ogg', 17 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/crow_2.ogg', 25 SECONDS, 1),
 	)
+
+/datum/looping_sound/ambient/critters/birds/crow/louder
+	chance = 80
+	loop_delay = 0
+	volume = SOUND_LOOP_VOL_RANGE(70, 100)
+
 //////////////
 //End Birds//
 /////////////
@@ -459,3 +470,39 @@
 	)
 // Radio Texarkana End//
 
+//Sound Rocks
+/datum/looping_sound/soundrock/frogs
+	chance = 80
+	vary = TRUE
+	extra_range = SOUND_DISTANCE(7)
+	volume = SOUND_LOOP_VOL_RANGE(30, 90)
+	direct = FALSE // sound rocks need non-direct set
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog1.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog2.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog3.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog4.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog5.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog6.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog7.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog8.ogg', 4 SECONDS, 10),
+		)
+
+/datum/looping_sound/soundrock/creek
+	chance = 100
+	vary = TRUE
+	extra_range = SOUND_DISTANCE(15)
+	volume = SOUND_LOOP_VOL_RANGE(80, 100)
+	direct = FALSE // sound rocks need non-direct set
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_01.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_02.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_03.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_04.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_05.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_06.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_07.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_08.ogg', 2 SECONDS, 10),
+		)
