@@ -2735,10 +2735,10 @@
 	path = /obj/item/clothing/under/civ13/haori3
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
-/datum/gear/uniform/civ13/haorisamurai
+/datum/gear/uniform/civ13/haorisamurai2
 	name = "Haori w/ jacket - grey"
 	cost = 0
-	path = /obj/item/clothing/under/civ13/haorisamurai
+	path = /obj/item/clothing/under/civ13/haorisamurai2
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
 /datum/gear/uniform/civ13/haorisamurai3

@@ -621,6 +621,12 @@
 	item_state = "ameline_dress"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/civ13
+	name = "Civ13base"
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform.dmi'
+	can_adjust = FALSE
+
 /obj/item/clothing/under/civ13/haori
 	name = "haori"
 	desc = "This makes you feel like you need to clap wood blocks together."
@@ -639,11 +645,11 @@
 	icon_state = "haori3"
 	item_state = "haori3"	
 
-	/obj/item/clothing/under/civ13/haorisamurai
+/obj/item/clothing/under/civ13/haorisamurai2
 	name = "haori w/ Jacket - grey"
 	desc = "A sort of jacket, or something. Looks odd."
-	icon_state = "haori_samurai"
-	item_state = "haori_samurai"
+	icon_state = "haori_samurai2"
+	item_state = "haori_samurai2"
 
 /obj/item/clothing/under/civ13/haorisamurai3
 	name = "haori w/ Jacket - red"
