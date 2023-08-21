@@ -9,15 +9,6 @@
 /datum/supply_pack/medical
 	group = "Medical"
 	crate_type = /obj/structure/closet/crate/medical
-	var/num_contained = 1
-
-/datum/supply_pack/medical/randomized
-	num_contained = 15
-
-/datum/supply_pack/medical/fill(obj/structure/closet/crate/C)
-	for(var/i in 1 to num_contained)
-		var/item = pick(contains)
-		new item(C)
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// Equipment ////////////////////////////////////
@@ -117,16 +108,9 @@
 
 /datum/supply_pack/medical/potions
 	name = "Ambrosia Elixirs"
-	desc = "Two bottles of precious Elixir Vitae. May contain greens or blues."
+	desc = "Four bottles of precious Ambrosia Elixirs. Two reds, one blue, and one green included.."
 	cost = 5000
-	num_contained = 2
 	contains = list(
-		/obj/item/reagent_containers/pill/redambrosia,
-		/obj/item/reagent_containers/pill/redambrosia,
-		/obj/item/reagent_containers/pill/redambrosia,
-		/obj/item/reagent_containers/pill/redambrosia,
-		/obj/item/reagent_containers/pill/redambrosia,
-		/obj/item/reagent_containers/pill/redambrosia,
 		/obj/item/reagent_containers/pill/redambrosia,
 		/obj/item/reagent_containers/pill/redambrosia,
 		/obj/item/reagent_containers/pill/blueambrosia,
