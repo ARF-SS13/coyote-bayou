@@ -16031,9 +16031,10 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "bdp" = (
-/obj/structure/simple_door/metal/fence,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/wood_fancy/wood_fancy_light,
+/area/f13/building/bank)
 "bdr" = (
 /obj/structure/chair/stool/retro,
 /turf/open/floor/f13{
@@ -41433,9 +41434,6 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "gqS" = (
-/obj/structure/chair{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/banker,
 /obj/machinery/button/door{
@@ -41443,6 +41441,9 @@
 	pixel_y = 28;
 	name = "counter shutters";
 	id = "bankdeskshutters"
+	},
+/obj/structure/chair{
+	dir = 8
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
@@ -81926,7 +81927,9 @@
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "qba" = (
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 2
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2"
 	},
@@ -82517,12 +82520,15 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "qiM" = (
-/obj/machinery/photocopier,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/campfire/stove{
+	pixel_y = 10
+	},
+/obj/item/grown/log/tree,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "qiS" = (
@@ -111370,13 +111376,10 @@
 	},
 /area/f13/building/abandoned)
 "xjA" = (
-/obj/structure/campfire/stove{
-	pixel_y = 10
-	},
-/obj/item/grown/log/tree,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/filingcabinet,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "xjB" = (
@@ -114081,10 +114084,10 @@
 	},
 /area/f13/caves)
 "xSQ" = (
-/obj/structure/closet/crate/bin,
 /obj/structure/decoration/clock/active{
 	pixel_x = 28
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "xSX" = (
@@ -114268,13 +114271,15 @@
 	},
 /area/f13/caves)
 "xVH" = (
-/obj/structure/simple_door/metal/fence/wooden,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
 /obj/structure/stone_tile/slab,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
+	},
+/obj/structure/simple_door/metal/fence/wooden{
+	dir = 2
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/tribal)
@@ -126089,7 +126094,7 @@ eHM
 hNd
 eHM
 eHM
-eHM
+bdp
 nLW
 jQu
 bRJ
@@ -134242,7 +134247,7 @@ cFK
 aOk
 bjb
 cFK
-bdp
+mzM
 aQZ
 fsY
 bMM

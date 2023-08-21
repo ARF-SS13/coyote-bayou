@@ -2717,6 +2717,41 @@
 	path = /obj/item/clothing/under/aurora/kimono
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
+/datum/gear/uniform/civ13/haori
+	name = "Haori"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haori2
+	name = "Haori - red"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haori3
+	name = "Haori - grey"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haorisamurai2
+	name = "Haori w/ jacket - grey"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haorisamurai2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haorisamurai3
+	name = "Haori w/ jacket - red"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haorisamurai3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+
+
+
+
+
 /datum/gear/uniform/aurora/konyang
 	name = "Magenta hanbok"
 	cost = 0
