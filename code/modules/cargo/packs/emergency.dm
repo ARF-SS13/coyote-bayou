@@ -7,7 +7,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/emergency
-	group = "Emergency"
+	group = "Kits"
 
 /datum/supply_pack/emergency/stealthkit
 	name = "Kit - Stealth Mercenary"
@@ -78,7 +78,7 @@
 	crate_type = /obj/structure/closet/crate/internals */
 
 /datum/supply_pack/emergency/medicalemergency
-	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
+	name = "Kit - Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
 	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a medical HUD, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
 	cost = 10000
 	contains = list(/obj/item/storage/box/bodybags,
@@ -96,7 +96,7 @@
 	crate_type = /obj/structure/closet/crate/medical
 
 /datum/supply_pack/emergency/medemergencylite
-	name = "Emergency Medical Supplies (Lite)"
+	name = "Kit - Surplus Medical Supplies"
 	desc = "A less than optimal, but still effective, set of tools for emergency care. Contains a box of bodybags, some normal (and advanced) health analyzers, healing sprays, a single first aid kit, charcoal, some gauze, a bottle of toxins, and some spare medipens."
 	cost = 2800
 	contains = list(/obj/item/storage/box/bodybags,
