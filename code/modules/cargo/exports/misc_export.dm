@@ -577,6 +577,7 @@
 
 
 /datum/export/item/toyslow
+	k_elasticity = 1/100 // Toy lathe is scary
 	cost = 500
 	unit_name = "basic toy"
 	export_types = list(/obj/item/toy,
@@ -584,6 +585,7 @@
 
 
 /datum/export/item/toyshigh
+	k_elasticity = 1/100 // Toy lathe is scary
 	cost = 1000
 	unit_name = "advanced toy"
 	export_types = list(/obj/item/toy/prize,
