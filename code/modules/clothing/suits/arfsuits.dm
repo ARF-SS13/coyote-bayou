@@ -991,6 +991,7 @@
 	desc = "A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
 	icon_state = "sadist"
 	item_state = "sadist"
+
 /obj/item/clothing/suit/armor/light/raider/painspike
 	name = "painspike raider armor"
 	desc = "A particularly unhuggable armor, even by raider standards. Extremely spiky."
@@ -1747,7 +1748,6 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
-
 /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar1
 	name = "Padded Yoroi - Red"
 	desc = "A slightly higher quality samurai armor that still won't stop anything more than the occasion melee attack."
@@ -1792,6 +1792,51 @@
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
+	
+/obj/item/clothing/suit/armor/light/kit/punk/scraparmor
+	name = "Beefy Scrap Armor"
+	desc = "This is a whole pile of trash, just sitting on your chest.  Maybe it'll even stop someone from beating you to death. No promises though."
+	icon_state = "scraparmor"
+	item_state = "scraparmor"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
+
+/obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur
+	name = "Messy furs"
+	desc = "That is definitely something you could wear."
+	icon_state = "prehistoric_fur1"
+	item_state = "prehistoric_fur1"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/two
+	name = "Messier furs"
+	desc = "That is definitely something you could wear."
+	icon_state = "prehistoric_fur2"
+	item_state = "prehistoric_fur2"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/three
+	name = "Messier furs - White"
+	desc = "That is definitely something you could wear."
+	icon_state = "prehistoric_fur3"
+	item_state = "prehistoric_fur3"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
+/obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/four
+	name = "Messier furs - Gray"
+	desc = "That is definitely something you could wear."
+	icon_state = "prehistoric_fur4"
+	item_state = "prehistoric_fur4"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 
 ////////////////
